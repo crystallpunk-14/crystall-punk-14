@@ -7,8 +7,8 @@ namespace Content.Server.Corvax.CrystallPunk.SpawnMapBiome;
 /// allows you to initialize a planet on a specific map at initialization time.
 /// </summary>
 
-[RegisterComponent, Access(typeof(SpawnMapBiomeSystem))]
-public sealed partial class SpawnMapBiomeComponent : Component
+[RegisterComponent, Access(typeof(StationBiomeSystem))]
+public sealed partial class StationBiomeComponent : Component
 {
     [DataField]
     public ProtoId<BiomeTemplatePrototype> Biome = "Grasslands";

@@ -390,9 +390,7 @@ entities:
     - type: LoadedMap
     - type: GridTree
     - type: MovedGrids
-    - type: MapLight    
-    - type: SpawnMapBiome
-      biome: Grasslands
+    - type: MapLight
     - type: DayCycle
       timeEntries:
       - startColor: "#754a4a" #Рассвет
