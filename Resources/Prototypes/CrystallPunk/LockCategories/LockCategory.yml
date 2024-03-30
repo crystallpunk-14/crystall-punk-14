@@ -1,16 +1,16 @@
 - type: CPLockCategory
   id: Debug
-  name: что-то дебажное
+  name: cp-lock-debug-1
   complexity: 5
 
 - type: CPLockCategory
   id: Debug2
-  name: что-то другое
+  name: cp-lock-debug-2
   complexity: 3
 
 - type: CPLockCategory
   id: Debug3
-  name: что-то третье
+  name: cp-lock-debug-3
   complexity: 4
   
 - type: entity

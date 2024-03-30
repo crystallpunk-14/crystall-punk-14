@@ -1,4 +1,5 @@
 
+using Content.Server.GameTicking.Events;
 using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.Examine;
 using Robust.Shared.Prototypes;
@@ -21,10 +22,17 @@ public sealed partial class CPLockKeySystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
+
         SubscribeLocalEvent<CPLockComponent, MapInitEvent>(OnLockInit);
         SubscribeLocalEvent<CPKeyComponent, ExaminedEvent>(OnKeyExamine);
         SubscribeLocalEvent<CPKeyComponent, MapInitEvent>(OnKeyInit);
 
+    }
+
+    private void OnRoundStart(RoundStartingEvent ev)
+    {
+        _roundKeyData = new();
     }
 
     private void OnKeyExamine(Entity<CPKeyComponent> key, ref ExaminedEvent args)
@@ -48,7 +56,7 @@ public sealed partial class CPLockKeySystem : EntitySystem
 
     private void OnLockInit(Entity<CPLockComponent> lockEnt, ref MapInitEvent args)
     {
-        throw new NotImplementedException();
+       
     }
 
     private List<int> GetKeyLockData(ProtoId<CPLockCategoryPrototype> category)
