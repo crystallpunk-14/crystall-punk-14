@@ -1,13 +1,13 @@
-﻿#- type: construction
-#  name: metal rod
-#  id: MetalRod
-#  graph: MetalRod
-#  startNode: start
-#  targetNode: MetalRod
-#  category: construction-category-materials
-#  description: A sturdy metal rod that can be used for various purposes.
-#  icon: { sprite: Objects/Materials/parts.rsi, state: rods }
-#  objectType: Item
+﻿- type: construction
+  name: metal rod
+  id: MetalRod
+  graph: MetalRod
+  startNode: start
+  targetNode: MetalRod
+  category: construction-category-materials
+  description: A sturdy metal rod that can be used for various purposes.
+  icon: { sprite: Objects/Materials/parts.rsi, state: rods }
+  objectType: Item
 #
 #- type: construction
 #  name: reinforced glass
