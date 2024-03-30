@@ -12,4 +12,7 @@ public sealed partial class CPLockComponent : Component
 
     [DataField]
     public float LockPickBreakChance = 0.3f;
+
+    [DataField]
+    public bool Locked = true;
 }

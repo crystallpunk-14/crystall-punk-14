@@ -36,3 +36,12 @@
   components: 
   - type: CPKey
     autoGenerateKey: Debug3
+
+- type: entity
+  parent: WoodDoor
+  id: WoodDoorTest
+  name: дверь дебаг ключа
+  description: Тут есть замок?
+  components:
+  - type: CPLock
+    #autoGenerateLock: Debug2

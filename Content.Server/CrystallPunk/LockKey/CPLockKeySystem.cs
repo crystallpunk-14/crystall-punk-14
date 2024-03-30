@@ -2,6 +2,7 @@
 using Content.Server.GameTicking.Events;
 using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.Examine;
+using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
@@ -28,6 +29,29 @@ public sealed partial class CPLockKeySystem : EntitySystem
         SubscribeLocalEvent<CPKeyComponent, ExaminedEvent>(OnKeyExamine);
         SubscribeLocalEvent<CPKeyComponent, MapInitEvent>(OnKeyInit);
 
+        SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnUtilityVerb);
+
+    }
+
+    private void OnUtilityVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+        if (!TryComp<CPLockComponent>(args.Target, out var lockComp))
+            return;
+
+        var verb = new UtilityVerb()
+        {
+            Act = () =>
+            {
+                Log.Debug("^-^");
+            },
+            IconEntity = GetNetEntity(key),
+            Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-open" : "cp-lock-verb-use-key-text-close"),
+            Message = Loc.GetString("cp-lock-verb-use-key-message")
+        };
+
+        args.Verbs.Add(verb);
     }
 
     private void OnRoundStart(RoundStartingEvent ev)
