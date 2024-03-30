@@ -2,6 +2,8 @@
 using Content.Server.GameTicking.Events;
 using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.Examine;
+using Content.Shared.Interaction;
+using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -14,6 +16,7 @@ public sealed partial class CPLockKeySystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private Dictionary<ProtoId<CPLockCategoryPrototype>, List<int>> _roundKeyData = new();
 
@@ -32,6 +35,23 @@ public sealed partial class CPLockKeySystem : EntitySystem
 
         SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToDoorVerb);
 
+        SubscribeLocalEvent<CPKeyComponent, AfterInteractEvent>(OnKeyInteract);
+
+    }
+
+    private void OnKeyInteract(Entity<CPKeyComponent> key, ref AfterInteractEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!args.CanReach || args.Target is not { Valid: true } target)
+            return;
+
+        if (!TryComp<CPLockComponent>(args.Target, out var lockComp))
+            return;
+
+        if (TryUseKeyOnLock(args.User, key, new Entity<CPLockComponent>(target, lockComp)))
+            args.Handled = true;
     }
 
     private void OnKeyToDoorVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
@@ -40,23 +60,17 @@ public sealed partial class CPLockKeySystem : EntitySystem
             return;
         if (!TryComp<CPLockComponent>(args.Target, out var lockComp))
             return;
+        var user = args.User;
         var target = args.Target;
 
         var verb = new UtilityVerb()
         {
             Act = () =>
             {
-                var allow = TryUseKeyOnLock(key, new Entity<CPLockComponent>(target, lockComp));
-                if (allow)
-                {
-                    Log.Debug("=(^-^)=");
-                } else
-                {
-                    Log.Debug("NO!");
-                }
+                TryUseKeyOnLock(user, key, new Entity<CPLockComponent>(target, lockComp));
             },
             IconEntity = GetNetEntity(key),
-            Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-open" : "cp-lock-verb-use-key-text-close", ("item", MetaData(args.Target).EntityName)),
+            Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-close" : "cp-lock-verb-use-key-text-open", ("item", MetaData(args.Target).EntityName)),
             Message = Loc.GetString("cp-lock-verb-use-key-message", ("item", MetaData(args.Target).EntityName))
         };
 
@@ -81,7 +95,7 @@ public sealed partial class CPLockKeySystem : EntitySystem
     {
         if (lockEnt.Comp.AutoGenerateLock != null)
         {
-            lockEnt.Comp.LockShape = InvertLockData(GetKeyLockData(lockEnt.Comp.AutoGenerateLock.Value));
+            lockEnt.Comp.LockShape = GetKeyLockData(lockEnt.Comp.AutoGenerateLock.Value);
         }
     }
     #endregion
@@ -159,25 +173,37 @@ public sealed partial class CPLockKeySystem : EntitySystem
         return newKeyData; //FUCK
     }
 
-    private List<int> InvertLockData(List<int> input)
-    {
-        var newKeyData = input;
-        for (int i = 0; i < input.Count; i++)
-        {
-            newKeyData[i] = input[i] * -1;
-        }
-        return newKeyData;
-    }
-
-    private bool TryUseKeyOnLock(Entity<CPKeyComponent> keyEnt, Entity<CPLockComponent> lockEnt)
+    private bool TryUseKeyOnLock(EntityUid user, Entity<CPKeyComponent> keyEnt, Entity<CPLockComponent> lockEnt)
     {
         var keyShape = keyEnt.Comp.LockShape;
         var lockShape = lockEnt.Comp.LockShape;
 
-        if (keyShape != null && lockShape != null)
+        if (keyShape == null || lockShape == null)
+            return false;
+
+        var keyFits = keyShape == lockShape;
+        if (keyFits)
         {
-            return keyShape.SequenceEqual(InvertLockData(lockShape));
+            if (lockEnt.Comp.Locked)
+                return TryUnlockLock(lockEnt);
+            else
+                return TryLockLock(lockEnt);
+        } else
+        {
+            _popup.PopupEntity(Loc.GetString("cp-lock-key-use-nofit"), lockEnt, user);
         }
         return false;
+    }
+
+    private bool TryLockLock(Entity<CPLockComponent> lockEnt)
+    {
+        lockEnt.Comp.Locked = true;
+        return true;
+    }
+
+    private bool TryUnlockLock(Entity<CPLockComponent> lockEnt)
+    {
+        lockEnt.Comp.Locked = false;
+        return true;
     }
 }
