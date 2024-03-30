@@ -51,25 +51,25 @@
 #  canBuildInImpassable: false
 #  conditions:
 #    - !type:TileNotBlocked
-#
-#- type: construction
-#  name: wall
-#  id: Wall
-#  graph: Girder
-#  startNode: start
-#  targetNode: wall
-#  category: construction-category-structures
-#  description: Keeps the air in and the greytide out.
-#  icon:
-#    sprite: Structures/Walls/solid.rsi
-#    state: full
-#  objectType: Structure
-#  placementMode: SnapgridCenter
-#  canRotate: false
-#  canBuildInImpassable: false
-#  conditions:
-#    - !type:TileNotBlocked
-#
+
+- type: construction
+  name: wall
+  id: Wall
+  graph: Girder
+  startNode: start
+  targetNode: wall
+  category: construction-category-structures
+  description: Keeps the air in and the greytide out.
+  icon:
+    sprite: Structures/Walls/solid.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 #- type: construction
 #  name: reinforced wall
 #  id: ReinforcedWall
@@ -303,25 +303,25 @@
 #  canBuildInImpassable: false
 #  conditions:
 #  - !type:TileNotBlocked
-#
-#- type: construction
-#  name: grille
-#  id: Grille
-#  graph: Grille
-#  startNode: start
-#  targetNode: grille
-#  category: construction-category-structures
-#  description: A flimsy framework of iron rods.
-#  conditions:
-#    - !type:TileNotBlocked
-#      failIfSpace: false
-#  icon:
-#    sprite: Structures/Walls/grille.rsi
-#    state: grille
-#  objectType: Structure
-#  placementMode: SnapgridCenter
-#  canRotate: false
-#
+
+- type: construction
+  name: grille
+  id: Grille
+  graph: Grille
+  startNode: start
+  targetNode: grille
+  category: construction-category-structures
+  description: A flimsy framework of iron rods.
+  conditions:
+    - !type:TileNotBlocked
+      failIfSpace: false
+  icon:
+    sprite: Structures/Walls/grille.rsi
+    state: grille
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
 #- type: construction
 #  name: clockwork grille
 #  id: ClockGrille
@@ -373,26 +373,26 @@
 #    state: ratvargrille_diagonal
 #  objectType: Structure
 #  placementMode: SnapgridCenter
-#
-#- type: construction
-#  name: window
-#  id: Window
-#  graph: Window
-#  startNode: start
-#  targetNode: window
-#  category: construction-category-structures
-#  description: Clear.
-#  canBuildInImpassable: true
-#  conditions:
-#    - !type:EmptyOrWindowValidInTile
-#    - !type:NoWindowsInTile
-#  icon:
-#    sprite: Structures/Windows/window.rsi
-#    state: full
-#  objectType: Structure
-#  placementMode: SnapgridCenter
-#  canRotate: false
-#
+
+- type: construction
+  name: window
+  id: Window
+  graph: Window
+  startNode: start
+  targetNode: window
+  category: construction-category-structures
+  description: Clear.
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  icon:
+    sprite: Structures/Windows/window.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
 #- type: construction
 #  name: diagonal window
 #  id: WindowDiagonal
@@ -410,26 +410,26 @@
 #    state: state1
 #  objectType: Structure
 #  placementMode: SnapgridCenter
-#
-#- type: construction
-#  name: reinforced window
-#  id: ReinforcedWindow
-#  graph: Window
-#  startNode: start
-#  targetNode: reinforcedWindow
-#  category: construction-category-structures
-#  description: Clear but tough.
-#  canBuildInImpassable: true
-#  conditions:
-#    - !type:EmptyOrWindowValidInTile
-#    - !type:NoWindowsInTile
-#  icon:
-#    sprite: Structures/Windows/reinforced_window.rsi
-#    state: full
-#  objectType: Structure
-#  placementMode: SnapgridCenter
-#  canRotate: false
-#
+
+- type: construction
+  name: reinforced window
+  id: ReinforcedWindow
+  graph: Window
+  startNode: start
+  targetNode: reinforcedWindow
+  category: construction-category-structures
+  description: Clear but tough.
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  icon:
+    sprite: Structures/Windows/reinforced_window.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
 #- type: construction
 #  name: diagonal reinforced window
 #  id: ReinforcedWindowDiagonal
