@@ -1,0 +1,38 @@
+- type: CPLockCategory
+  id: Debug
+  name: что-то дебажное
+  complexity: 5
+
+- type: CPLockCategory
+  id: Debug2
+  name: что-то другое
+  complexity: 3
+
+- type: CPLockCategory
+  id: Debug3
+  name: что-то третье
+  complexity: 4
+  
+- type: entity
+  parent: Paper
+  id: TestKey
+  name: ключ тест
+  components: 
+  - type: CPKey
+    autoGenerateKey: Debug
+  
+- type: entity
+  parent: Paper
+  id: TestKey2
+  name: ключ тест 2
+  components: 
+  - type: CPKey
+    autoGenerateKey: Debug2
+  
+- type: entity
+  parent: Paper
+  id: TestKey3
+  name: ключ тест 3
+  components: 
+  - type: CPKey
+    autoGenerateKey: Debug3
