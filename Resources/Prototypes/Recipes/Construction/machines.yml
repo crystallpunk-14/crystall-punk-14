@@ -1,16 +1,16 @@
-﻿#- type: construction
-#  name: computer
-#  id: Computer
-#  graph: Computer
-#  startNode: start
-#  targetNode: computer
-#  category: construction-category-machines
-#  description: A frame used to construct anything with a computer circuitboard.
-#  placementMode: SnapgridCenter
-#  canBuildInImpassable: false
-#  icon:
-#    sprite: Structures/Machines/parts.rsi
-#    state: 4
+﻿- type: construction
+  name: computer
+  id: Computer
+  graph: Computer
+  startNode: start
+  targetNode: computer
+  category: construction-category-machines
+  description: A frame used to construct anything with a computer circuitboard.
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Machines/parts.rsi
+    state: 4
 #
 #- type: construction
 #  name: machine frame
