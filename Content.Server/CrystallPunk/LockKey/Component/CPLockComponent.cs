@@ -1,3 +1,5 @@
+using Content.Shared.CrystallPunk.LockKey;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.CrystallPunk.LockKey;
 
@@ -15,4 +17,10 @@ public sealed partial class CPLockComponent : Component
 
     [DataField]
     public bool Locked = true;
+
+    /// <summary>
+    /// If not null, automatically generates a lock for the specified category on initialization. This ensures that the lock will be opened with a key of the same category.
+    /// </summary>
+    [DataField]
+    public ProtoId<CPLockCategoryPrototype>? AutoGenerateLock = null;
 }

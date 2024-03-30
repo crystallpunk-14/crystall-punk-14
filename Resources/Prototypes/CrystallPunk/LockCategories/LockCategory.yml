@@ -44,4 +44,13 @@
   description: Тут есть замок?
   components:
   - type: CPLock
-    #autoGenerateLock: Debug2
+    autoGenerateLock: Debug
+
+- type: entity
+  parent: Paper
+  id: TestLock1
+  name: замок тест 1
+  components:
+  - type: CPLock
+    autoGenerateLock: Debug
+    

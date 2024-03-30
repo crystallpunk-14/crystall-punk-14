@@ -26,48 +26,47 @@ public sealed partial class CPLockKeySystem : EntitySystem
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
 
         SubscribeLocalEvent<CPLockComponent, MapInitEvent>(OnLockInit);
-        SubscribeLocalEvent<CPKeyComponent, ExaminedEvent>(OnKeyExamine);
+        SubscribeLocalEvent<CPLockComponent, ExaminedEvent>(OnLockExamine);
         SubscribeLocalEvent<CPKeyComponent, MapInitEvent>(OnKeyInit);
+        SubscribeLocalEvent<CPKeyComponent, ExaminedEvent>(OnKeyExamine);
 
-        SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnUtilityVerb);
+        SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToDoorVerb);
 
     }
 
-    private void OnUtilityVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
+    private void OnKeyToDoorVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
         if (!TryComp<CPLockComponent>(args.Target, out var lockComp))
             return;
+        var target = args.Target;
 
         var verb = new UtilityVerb()
         {
             Act = () =>
             {
-                Log.Debug("^-^");
+                var allow = TryUseKeyOnLock(key, new Entity<CPLockComponent>(target, lockComp));
+                if (allow)
+                {
+                    Log.Debug("=(^-^)=");
+                } else
+                {
+                    Log.Debug("NO!");
+                }
             },
             IconEntity = GetNetEntity(key),
-            Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-open" : "cp-lock-verb-use-key-text-close"),
-            Message = Loc.GetString("cp-lock-verb-use-key-message")
+            Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-open" : "cp-lock-verb-use-key-text-close", ("item", MetaData(args.Target).EntityName)),
+            Message = Loc.GetString("cp-lock-verb-use-key-message", ("item", MetaData(args.Target).EntityName))
         };
 
         args.Verbs.Add(verb);
     }
 
+    #region Init
     private void OnRoundStart(RoundStartingEvent ev)
     {
         _roundKeyData = new();
-    }
-
-    private void OnKeyExamine(Entity<CPKeyComponent> key, ref ExaminedEvent args)
-    {
-        if (key.Comp.LockShape == null)
-            return;
-
-        foreach (var item in key.Comp.LockShape)
-        {
-            args.PushMarkup($"{item}");
-        }
     }
 
     private void OnKeyInit(Entity<CPKeyComponent> keyEnt, ref MapInitEvent args)
@@ -80,7 +79,31 @@ public sealed partial class CPLockKeySystem : EntitySystem
 
     private void OnLockInit(Entity<CPLockComponent> lockEnt, ref MapInitEvent args)
     {
-       
+        if (lockEnt.Comp.AutoGenerateLock != null)
+        {
+            lockEnt.Comp.LockShape = InvertLockData(GetKeyLockData(lockEnt.Comp.AutoGenerateLock.Value));
+        }
+    }
+    #endregion
+
+    private void OnKeyExamine(Entity<CPKeyComponent> key, ref ExaminedEvent args)
+    {
+        if (key.Comp.LockShape == null)
+            return;
+
+        var markup = Loc.GetString("cp-lock-examine-key", ("item", MetaData(key).EntityName));
+        markup += " (";
+        foreach (var item in key.Comp.LockShape)
+        {
+            markup += $"{item} ";
+        }
+        markup += ")";
+        args.PushMarkup(markup);
+    }
+
+    private void OnLockExamine(Entity<CPLockComponent> lockEnt, ref ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString(lockEnt.Comp.Locked ? "cp-lock-examine-lock-open" : "cp-lock-examine-lock-closed", ("item", MetaData(lockEnt).EntityName)));
     }
 
     private List<int> GetKeyLockData(ProtoId<CPLockCategoryPrototype> category)
@@ -144,5 +167,17 @@ public sealed partial class CPLockKeySystem : EntitySystem
             newKeyData[i] = input[i] * -1;
         }
         return newKeyData;
+    }
+
+    private bool TryUseKeyOnLock(Entity<CPKeyComponent> keyEnt, Entity<CPLockComponent> lockEnt)
+    {
+        var keyShape = keyEnt.Comp.LockShape;
+        var lockShape = lockEnt.Comp.LockShape;
+
+        if (keyShape != null && lockShape != null)
+        {
+            return keyShape.SequenceEqual(InvertLockData(lockShape));
+        }
+        return false;
     }
 }
