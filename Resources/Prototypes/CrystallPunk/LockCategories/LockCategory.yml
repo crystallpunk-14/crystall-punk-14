@@ -43,8 +43,20 @@
   name: дверь дебаг ключа
   description: Тут есть замок?
   components:
-  - type: CPLock
-    autoGenerateLock: Debug
+  - type: CPLockSlot
+    lockSlotId: lock_slot
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        startingItem: TestLock1
+        whitelist:
+          components:
+          - CPLock
+  - type: ContainerContainer
+    containers:
+      lock_slot: !type:ContainerSlot
+    
 
 - type: entity
   parent: Paper

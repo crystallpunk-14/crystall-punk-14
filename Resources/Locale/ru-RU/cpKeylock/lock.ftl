@@ -1,3 +1,5 @@
+cp-lock-slot-component-slot-name-default = Замок
+
 cp-lock-examine-key = Высота зубчиков на ключе выстраивается в следующую последовательность:
 
 cp-lock-examine-lock-open = [color=#14ba4e]{$item} открыт[/color]
