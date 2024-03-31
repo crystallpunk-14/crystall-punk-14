@@ -16,13 +16,7 @@ public sealed partial class CPLockComponent : Component
     public float LockPickBreakChance = 0.3f;
 
     [DataField]
-    public bool Locked = true;
-
-    /// <summary>
-    /// Shitcode moment. locked locks can't be hung on doors. Locked locks must be hung by roundstart. This is a one-time exception for roundstart locks.
-    /// </summary>
-    [DataField]
-    public bool RoundstartLockInit = false;
+    public bool Locked = false;
 
     /// <summary>
     /// If not null, automatically generates a lock for the specified category on initialization. This ensures that the lock will be opened with a key of the same category.

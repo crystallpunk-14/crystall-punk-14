@@ -1,8 +1,10 @@
 
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.CrystallPunk.LockKey;
+using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Robust.Shared.Containers;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.CrystallPunk.LockKey;
 
@@ -21,8 +23,11 @@ public abstract class SharedCPLockKeySystem : EntitySystem
 
         SubscribeLocalEvent<CPLockSlotComponent, ContainerIsInsertingAttemptEvent>(OnLockInsertAttempt);
         SubscribeLocalEvent<CPLockSlotComponent, ContainerIsRemovingAttemptEvent>(OnLockRemovingAttempt);
-        //SubscribeLocalEvent<CPLockSlotComponent, EntRemovedFromContainerMessage>(OnLockRemoveAttempt);
+
+        SubscribeLocalEvent<CPLockSlotComponent, EntInsertedIntoContainerMessage>(OnLockInserted);
+        SubscribeLocalEvent<CPLockSlotComponent, EntRemovedFromContainerMessage>(OnLockRemoved);
     }
+
 
     private void OnLockRemovingAttempt(Entity<CPLockSlotComponent> lockSlot, ref ContainerIsRemovingAttemptEvent args)
     {
@@ -58,7 +63,7 @@ public abstract class SharedCPLockKeySystem : EntitySystem
         if (lockComp == null)
             return;
 
-        if (lockComp.Locked && lockComp.RoundstartLockInit)
+        if (lockComp.Locked)
         {
             _popup.PopupEntity(Loc.GetString(
                 "cp-lock-lock-insert-fail-locked",
@@ -66,45 +71,37 @@ public abstract class SharedCPLockKeySystem : EntitySystem
                 ("target", MetaData(lockSlot).EntityName)), lockSlot);
             args.Cancel();
         }
-        lockComp.RoundstartLockInit = true;
     }
 
-    protected bool TryUseKeyOnLock(EntityUid user, Entity<CPKeyComponent> keyEnt, Entity<CPLockComponent> lockEnt)
+    private void OnLockInserted(Entity<CPLockSlotComponent> lockSlot, ref EntInsertedIntoContainerMessage args)
     {
-        var keyShape = keyEnt.Comp.LockShape;
-        var lockShape = lockEnt.Comp.LockShape;
+        if (!lockSlot.Comp.Initialized)
+            return;
 
-        if (keyShape == null || lockShape == null)
-            return false;
+        if (args.Container.ID != lockSlot.Comp.LockSlotId)
+            return;
 
-        var keyFits = keyShape == lockShape;
-        if (keyFits)
-        {
-            if (lockEnt.Comp.Locked)
-            {
-                _popup.PopupEntity(Loc.GetString("cp-lock-unlock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), lockEnt.Owner, user);
-                UnlockLock(lockEnt.Comp);
-            }
-            else
-            {
-                _popup.PopupEntity(Loc.GetString("cp-lock-lock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), lockEnt.Owner, user);
-                LockLock(lockEnt.Comp);
-            }
-            return true;
-        }
-        else
-        {
-            _popup.PopupEntity(Loc.GetString("cp-lock-key-use-nofit"), lockEnt, user);
-        }
-        return false;
+        if (!TryComp<CPLockComponent>(args.Entity, out var lockComp))
+            return;
+
+        LockLock(lockComp);
+        _appearance.SetData(lockSlot, LockSlotVisuals.LockExist, true);
     }
-    private void LockLock(CPLockComponent lockEnt)
+
+    private void OnLockRemoved(Entity<CPLockSlotComponent> lockSlot, ref EntRemovedFromContainerMessage args)
     {
-        lockEnt.Locked = true;
+        if (args.Container.ID != lockSlot.Comp.LockSlotId)
+            return;
+        _appearance.SetData(lockSlot, LockSlotVisuals.LockExist, false);
     }
 
-    private void UnlockLock(CPLockComponent lockEnt)
-    {
-        lockEnt.Locked = false;
-    }
+    public abstract bool TryUseKeyOnLock(EntityUid user, Entity<CPKeyComponent> keyEnt, Entity<CPLockComponent> lockEnt);
+    public abstract void LockLock(CPLockComponent lockEnt);
+    public abstract void UnlockLock(CPLockComponent lockEnt);
+}
+
+[Serializable, NetSerializable]
+public enum LockSlotVisuals : byte
+{
+    LockExist
 }
