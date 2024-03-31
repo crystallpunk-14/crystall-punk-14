@@ -12,7 +12,7 @@ using System.Linq;
 namespace Content.Server.CrystallPunk.LockKey;
 
 
-public sealed partial class CPLockKeySystem : EntitySystem
+public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -117,7 +117,7 @@ public sealed partial class CPLockKeySystem : EntitySystem
 
     private void OnLockExamine(Entity<CPLockComponent> lockEnt, ref ExaminedEvent args)
     {
-        args.PushMarkup(Loc.GetString(lockEnt.Comp.Locked ? "cp-lock-examine-lock-open" : "cp-lock-examine-lock-closed", ("item", MetaData(lockEnt).EntityName)));
+        args.PushMarkup(Loc.GetString(lockEnt.Comp.Locked ? "cp-lock-examine-lock-closed" : "cp-lock-examine-lock-open", ("item", MetaData(lockEnt).EntityName)));
     }
 
     private List<int> GetKeyLockData(ProtoId<CPLockCategoryPrototype> category)
@@ -173,37 +173,4 @@ public sealed partial class CPLockKeySystem : EntitySystem
         return newKeyData; //FUCK
     }
 
-    private bool TryUseKeyOnLock(EntityUid user, Entity<CPKeyComponent> keyEnt, Entity<CPLockComponent> lockEnt)
-    {
-        var keyShape = keyEnt.Comp.LockShape;
-        var lockShape = lockEnt.Comp.LockShape;
-
-        if (keyShape == null || lockShape == null)
-            return false;
-
-        var keyFits = keyShape == lockShape;
-        if (keyFits)
-        {
-            if (lockEnt.Comp.Locked)
-                return TryUnlockLock(lockEnt);
-            else
-                return TryLockLock(lockEnt);
-        } else
-        {
-            _popup.PopupEntity(Loc.GetString("cp-lock-key-use-nofit"), lockEnt, user);
-        }
-        return false;
-    }
-
-    private bool TryLockLock(Entity<CPLockComponent> lockEnt)
-    {
-        lockEnt.Comp.Locked = true;
-        return true;
-    }
-
-    private bool TryUnlockLock(Entity<CPLockComponent> lockEnt)
-    {
-        lockEnt.Comp.Locked = false;
-        return true;
-    }
 }

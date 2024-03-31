@@ -2,13 +2,13 @@
 using Content.Shared.CrystallPunk.LockKey;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.CrystallPunk.LockKey;
+namespace Content.Shared.CrystallPunk.LockKey;
 
 
 /// <summary>
 /// a key component that can be used to unlock and lock locks from CPLockComponent
 /// </summary>
-[RegisterComponent, Access(typeof(CPLockKeySystem))]
+[RegisterComponent, Access(typeof(SharedCPLockKeySystem))]
 public sealed partial class CPKeyComponent : Component
 {
     [DataField]

@@ -56,6 +56,25 @@
   - type: ContainerContainer
     containers:
       lock_slot: !type:ContainerSlot
+      
+- type: entity
+  parent: WoodDoor
+  id: WoodDoorTest2
+  name: дверь дебаг ключа 2
+  description: Тут есть замок?
+  components:
+  - type: CPLockSlot
+    lockSlotId: lock_slot
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        whitelist:
+          components:
+          - CPLock
+  - type: ContainerContainer
+    containers:
+      lock_slot: !type:ContainerSlot
     
 
 - type: entity
@@ -65,4 +84,5 @@
   components:
   - type: CPLock
     autoGenerateLock: Debug
+    
     
