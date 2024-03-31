@@ -3,6 +3,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.Doors;
 using Content.Shared.Examine;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Containers;
 using Robust.Shared.Serialization;
@@ -29,8 +30,23 @@ public abstract class SharedCPLockKeySystem : EntitySystem
         SubscribeLocalEvent<CPLockSlotComponent, EntRemovedFromContainerMessage>(OnLockRemoved);
 
         SubscribeLocalEvent<CPLockSlotComponent, BeforeDoorOpenedEvent>(OnBeforeDoorOpened);
+        SubscribeLocalEvent<CPLockSlotComponent, ActivateInWorldEvent>(OnActivateInWorld);
     }
 
+    private void OnActivateInWorld(EntityUid uid, CPLockSlotComponent component, ActivateInWorldEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryGetLockFromSlot(uid, out var lockEnt))
+            return;
+
+        if (lockEnt.Value.Comp.Locked)
+        {
+            _popup.PopupEntity(Loc.GetString("cp-lock-target-use-failed-locked", ("target", MetaData(uid).EntityName)), uid, args.User);
+            args.Handled = true;
+        }
+    }
     private void OnBeforeDoorOpened(EntityUid uid, CPLockSlotComponent component, BeforeDoorOpenedEvent args)
     {
         if (!TryGetLockFromSlot(uid, out var lockEnt))

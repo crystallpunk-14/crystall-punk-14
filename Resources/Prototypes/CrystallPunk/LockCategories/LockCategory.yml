@@ -14,7 +14,7 @@
   complexity: 4
   
 - type: entity
-  parent: Paper
+  parent: SurvivalKnife
   id: TestKey
   name: ключ тест
   components: 
@@ -22,7 +22,7 @@
     autoGenerateKey: Debug
   
 - type: entity
-  parent: Paper
+  parent: SurvivalKnife
   id: TestKey2
   name: ключ тест 2
   components: 
@@ -30,7 +30,7 @@
     autoGenerateKey: Debug2
   
 - type: entity
-  parent: Paper
+  parent: SurvivalKnife
   id: TestKey3
   name: ключ тест 3
   components: 
@@ -40,7 +40,7 @@
 - type: entity
   parent: WoodDoor
   id: WoodDoorTest
-  name: тест дверь закрытая
+  name: тестовая дверь закрытая
   description: Тут есть замок?
   components:
   - type: CPLockSlot
@@ -61,7 +61,7 @@
 - type: entity
   parent: WoodDoorTest
   id: WoodDoorTest2
-  name: тест дверь открытая
+  name: тестовая дверь открытая
   description: Тут есть замок?
   components:
   - type: ItemSlots
@@ -71,14 +71,56 @@
         whitelist:
           components:
           - CPLock
-    
+
+- type: entity
+  parent: CrateGenericBiosuit
+  id: CrateGenericBiosuitTEST
+  name: тестовый ящик
+  components:
+  - type: CPLockSlot
+    lockSlotId: lock_slot
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        startingItem: TestLock2
+        disableEject: true
+        whitelist:
+          components:
+          - CPLock
+  - type: ContainerContainer
+    containers:
+      lock_slot: !type:ContainerSlot
+
+- type: entity
+  parent: CrateGenericBiosuitTEST
+  id: CrateGenericBiosuitTEST2
+  name: тестовый ящик открытый
+  components:
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        disableEject: true
+        whitelist:
+          components:
+          - CPLock
+  
 
 - type: entity
   parent: Paper
   id: TestLock1
-  name: замок тест 1
+  name: тестовый первый замок
   components:
   - type: CPLock
     autoGenerateLock: Debug
+    
+- type: entity
+  parent: Paper
+  id: TestLock2
+  name: тестовый второй замок
+  components:
+  - type: CPLock
+    autoGenerateLock: Debug2
     
     
