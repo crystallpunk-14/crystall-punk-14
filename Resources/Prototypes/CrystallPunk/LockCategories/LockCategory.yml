@@ -50,6 +50,7 @@
       lock_slot:
         name: cp-lock-slot-component-slot-name-default
         startingItem: TestLock1
+        disableEject: true
         whitelist:
           components:
           - CPLock
@@ -58,13 +59,11 @@
       lock_slot: !type:ContainerSlot
       
 - type: entity
-  parent: WoodDoor
+  parent: WoodDoorTest
   id: WoodDoorTest2
   name: тест дверь открытая
   description: Тут есть замок?
   components:
-  - type: CPLockSlot
-    lockSlotId: lock_slot
   - type: ItemSlots
     slots: 
       lock_slot:
@@ -72,9 +71,6 @@
         whitelist:
           components:
           - CPLock
-  - type: ContainerContainer
-    containers:
-      lock_slot: !type:ContainerSlot
     
 
 - type: entity

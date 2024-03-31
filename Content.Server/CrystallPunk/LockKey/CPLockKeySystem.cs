@@ -5,6 +5,7 @@ using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Content.Shared.Lock;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -20,6 +21,7 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly LockSystem _lock = default!;
 
     private Dictionary<ProtoId<CPLockCategoryPrototype>, List<int>> _roundKeyData = new();
 
@@ -34,7 +36,7 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
         SubscribeLocalEvent<CPLockComponent, MapInitEvent>(OnLockInit);
         SubscribeLocalEvent<CPKeyComponent, MapInitEvent>(OnKeyInit);
 
-        SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToDoorVerb);
+        SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
 
         SubscribeLocalEvent<CPKeyComponent, AfterInteractEvent>(OnKeyInteract);
 
@@ -66,14 +68,25 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
         }
     }
 
-    private void OnKeyToDoorVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
+    private void OnKeyToLockVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
-        if (!TryComp<CPLockComponent>(args.Target, out var lockComp))
-            return;
-        var user = args.User;
+
         var target = args.Target;
+        CPLockComponent? lockComp = null;
+
+        TryComp(args.Target, out lockComp);
+        if (lockComp == null && TryComp<CPLockSlotComponent>(args.Target, out var lockSlot) && TryGetLockFromSlot(args.Target, out var lockEnt))
+        {
+            lockComp = lockEnt.Value.Comp;
+            target = lockEnt.Value.Owner;
+        }
+
+        if (lockComp == null)
+            return;
+
+        var user = args.User;
 
         var verb = new UtilityVerb()
         {
@@ -82,7 +95,7 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
                 TryUseKeyOnLock(user, key, new Entity<CPLockComponent>(target, lockComp));
             },
             IconEntity = GetNetEntity(key),
-            Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-close" : "cp-lock-verb-use-key-text-open", ("item", MetaData(args.Target).EntityName)),
+            Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-open" : "cp-lock-verb-use-key-text-close", ("item", MetaData(args.Target).EntityName)),
             Message = Loc.GetString("cp-lock-verb-use-key-message", ("item", MetaData(args.Target).EntityName))
         };
 
@@ -154,7 +167,7 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
         }
     }
 
-    public bool TryGetLockFromSlot(EntityUid uid,
+    public override bool TryGetLockFromSlot(EntityUid uid,
     [NotNullWhen(true)] out Entity<CPLockComponent>? lockEnt,
     CPLockSlotComponent? component = null)
     {
@@ -170,7 +183,8 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
             {
                 lockEnt = new Entity<CPLockComponent>(slot.Item.Value, lockComp);
                 return true;
-            } else
+            }
+            else
             {
                 lockEnt = null;
                 return false;
@@ -235,13 +249,13 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
         {
             if (lockEnt.Comp.Locked)
             {
-                _popup.PopupEntity(Loc.GetString("cp-lock-unlock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), lockEnt.Owner, user);
-                UnlockLock(lockEnt.Comp);
+                _popup.PopupEntity(Loc.GetString("cp-lock-unlock-lock", ("lock", MetaData(lockEnt).EntityName)), lockEnt, user);
+                UnlockLock(lockEnt);
             }
             else
             {
-                _popup.PopupEntity(Loc.GetString("cp-lock-lock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), lockEnt.Owner, user);
-                LockLock(lockEnt.Comp);
+                _popup.PopupEntity(Loc.GetString("cp-lock-lock-lock", ("lock", MetaData(lockEnt).EntityName)), lockEnt, user);
+                LockLock(lockEnt);
             }
             return true;
         }
@@ -252,13 +266,14 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
         return false;
     }
 
-    public override void LockLock(CPLockComponent lockEnt)
+    public override void LockLock(Entity<CPLockComponent> lockEnt)
     {
-        lockEnt.Locked = true;
+        lockEnt.Comp.Locked = true;
+
     }
 
-    public override void UnlockLock(CPLockComponent lockEnt)
+    public override void UnlockLock(Entity<CPLockComponent> lockEnt)
     {
-        lockEnt.Locked = false;
+        lockEnt.Comp.Locked = false;
     }
 }
