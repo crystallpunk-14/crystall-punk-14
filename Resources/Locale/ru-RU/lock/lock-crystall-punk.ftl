@@ -1,11 +1,8 @@
 cp-lock-slot-component-slot-name-default = Замок
 
 cp-lock-examine-key = Высота зубчиков на ключе выстраивается в следующую последовательность:
-cp-lock-examine-lock-open = [color=#14ba4e]{$lock} открыт[/color]
-cp-lock-examine-lock-closed = [color=#ba1417]{$lock} заперт[/color]
-cp-lock-examine-lock-slot-unlocked = Здесь висит {$lock}. [color=#14ba4e]Не заперто[/color]
-cp-lock-examine-lock-slot-locked = Здесь висит {$lock}. [color=#ba1417]Заперто[/color]
-
+cp-lock-examine-lock-slot = Здесь висит {$lock}.
+cp-lock-examine-lock-null = Сюда можно прикрепить замок.
 
 cp-lock-verb-use-key-text-open = Открыть {$item}
 cp-lock-verb-use-key-text-close = Закрыть {$item}

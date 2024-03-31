@@ -1,6 +1,8 @@
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.DoAfter;
+using Content.Shared.Doors;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
@@ -26,6 +28,7 @@ public sealed class LockSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _sharedPopupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedCPLockKeySystem _lockCP = default!; //CrystallPunk Lock System Adapt
 
     /// <inheritdoc />
     public override void Initialize()
@@ -40,6 +43,7 @@ public sealed class LockSystem : EntitySystem
         SubscribeLocalEvent<LockComponent, GotEmaggedEvent>(OnEmagged);
         SubscribeLocalEvent<LockComponent, LockDoAfter>(OnDoAfterLock);
         SubscribeLocalEvent<LockComponent, UnlockDoAfter>(OnDoAfterUnlock);
+        SubscribeLocalEvent<LockComponent, BeforeDoorOpenedEvent>(OnBeforeDoorOpened); //CrystallPunk Lock System Adapt
     }
 
     private void OnStartup(EntityUid uid, LockComponent lockComp, ComponentStartup args)
@@ -53,16 +57,23 @@ public sealed class LockSystem : EntitySystem
             return;
 
         // Only attempt an unlock by default on Activate
-        if (lockComp.Locked)
-        {
-            TryUnlock(uid, args.User, lockComp);
-            args.Handled = true;
-        }
-        else if (lockComp.LockOnClick)
-        {
-            TryLock(uid, args.User, lockComp);
-            args.Handled = true;
-        }
+        //if (lockComp.Locked)
+        //{
+        //    TryUnlock(uid, args.User, lockComp);
+        //    args.Handled = true;
+        //}
+        //else if (lockComp.LockOnClick)
+        //{
+        //    TryLock(uid, args.User, lockComp);
+        //    args.Handled = true;
+        //}
+    }
+    private void OnBeforeDoorOpened(EntityUid uid, LockComponent component, BeforeDoorOpenedEvent args)
+    {
+        if (!component.Locked)
+            return;
+
+        args.Cancel();
     }
 
     private void OnStorageOpenAttempt(EntityUid uid, LockComponent component, ref StorageOpenAttemptEvent args)
@@ -78,10 +89,20 @@ public sealed class LockSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, LockComponent lockComp, ExaminedEvent args)
     {
-        args.PushText(Loc.GetString(lockComp.Locked
-                ? "lock-comp-on-examined-is-locked"
-                : "lock-comp-on-examined-is-unlocked",
-            ("entityName", Identity.Name(uid, EntityManager))));
+        //CrystallPunk Lock System Adapt Start
+        if (lockComp.LockSlotId != null && _lockCP.TryGetLockFromSlot(uid, out var lockEnt))
+        {
+            args.PushText(Loc.GetString("cp-lock-examine-lock-slot", ("lock", MetaData(lockEnt.Value).EntityName)));
+
+            args.PushText(Loc.GetString(lockComp.Locked
+                    ? "lock-comp-on-examined-is-locked"
+                    : "lock-comp-on-examined-is-unlocked",
+                ("entityName", Identity.Name(uid, EntityManager))));
+        } else
+        {
+            args.PushText(Loc.GetString("cp-lock-examine-lock-null"));
+        }
+        //CrystallPunk Lock System Adapt End
     }
 
     /// <summary>
@@ -226,20 +247,20 @@ public sealed class LockSystem : EntitySystem
 
     private void AddToggleLockVerb(EntityUid uid, LockComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract || !CanToggleLock(uid, args.User))
-            return;
-
-        AlternativeVerb verb = new()
-        {
-            Act = component.Locked ?
-                () => TryUnlock(uid, args.User, component) :
-                () => TryLock(uid, args.User, component),
-            Text = Loc.GetString(component.Locked ? "toggle-lock-verb-unlock" : "toggle-lock-verb-lock"),
-            Icon = component.Locked ?
-                new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/unlock.svg.192dpi.png")) :
-                new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png")),
-        };
-        args.Verbs.Add(verb);
+        //if (!args.CanAccess || !args.CanInteract || !CanToggleLock(uid, args.User))
+        //    return;
+        //
+        //AlternativeVerb verb = new()
+        //{
+        //    Act = component.Locked ?
+        //        () => TryUnlock(uid, args.User, component) :
+        //        () => TryLock(uid, args.User, component),
+        //    Text = Loc.GetString(component.Locked ? "toggle-lock-verb-unlock" : "toggle-lock-verb-lock"),
+        //    Icon = component.Locked ?
+        //        new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/unlock.svg.192dpi.png")) :
+        //        new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png")),
+        //};
+        //args.Verbs.Add(verb);
     }
 
     private void OnEmagged(EntityUid uid, LockComponent component, ref GotEmaggedEvent args)
