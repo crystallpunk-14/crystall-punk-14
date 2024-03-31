@@ -52,11 +52,18 @@ public sealed partial class CPLockKeySystem : SharedCPLockKeySystem
         if (!args.CanReach || args.Target is not { Valid: true } target)
             return;
 
-        if (!TryComp<CPLockComponent>(args.Target, out var lockComp))
+        if (TryComp<CPLockComponent>(args.Target, out var lockComp))
+        {
+            if (TryUseKeyOnLock(args.User, key, new Entity<CPLockComponent>(target, lockComp)))
+                args.Handled = true;
             return;
-
-        if (TryUseKeyOnLock(args.User, key, new Entity<CPLockComponent>(target, lockComp)))
-            args.Handled = true;
+        }
+        if (TryComp<CPLockSlotComponent>(args.Target, out var lockSlot) && TryGetLockFromSlot(args.Target.Value, out var lockEnt))
+        {
+            if (TryUseKeyOnLock(args.User, key, lockEnt.Value))
+                args.Handled = true;
+            return;
+        }
     }
 
     private void OnKeyToDoorVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
