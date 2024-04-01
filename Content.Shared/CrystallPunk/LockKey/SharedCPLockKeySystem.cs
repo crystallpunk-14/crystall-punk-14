@@ -65,6 +65,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
                 args.Handled = true;
                 return;
             }
+            _popup.PopupEntity(Loc.GetString("cp-lock-keyring-use-nofit"), args.Target.Value, args.User);
         }
     }
 

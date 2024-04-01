@@ -161,15 +161,19 @@
   
 
 - type: entity
-  parent: SurvivalKnife
+  parent: BaseItem
   id: TestLock1
   name: тестовый первый замок
   components:
   - type: CPLock
     autoGenerateShape: Debug
+  - type: Sprite
+    sprite: CrystallPunk/Objects/keys.rsi
+    layers:
+    - state: lock
     
 - type: entity
-  parent: SurvivalKnife
+  parent: TestLock1
   id: TestLock2
   name: тестовый второй замок
   components:

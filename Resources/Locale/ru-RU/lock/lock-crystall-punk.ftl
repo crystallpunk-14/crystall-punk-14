@@ -12,6 +12,7 @@ cp-lock-unlock-lock = Вы открыли {$lock}
 cp-lock-lock-lock = Вы заблокировали {$lock}
 
 cp-lock-key-use-nofit = Кажется, этот ключ сюда не подходит...
+cp-lock-keyring-use-nofit = Кажется, ни один из ключей отсюда не подходит...
 cp-lock-lock-insert-fail-locked = Сначала разблокируйте {$lock}, чтобы повесить его на {$target}
 cp-lock-lock-remove-fail-locked = Сначала разблокируйте {$lock}, чтобы снять его с {$target}
 cp-lock-target-use-failed-locked = {$target} не открывается
