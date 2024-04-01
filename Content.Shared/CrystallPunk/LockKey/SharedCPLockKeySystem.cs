@@ -1,16 +1,14 @@
 
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.CrystallPunk.LockKey;
-using Content.Shared.Doors;
-using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Lock;
-using Content.Shared.Medical;
 using Content.Shared.Popups;
 using Robust.Shared.Containers;
 using Robust.Shared.Serialization;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Verbs;
+using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Storage;
 
 namespace Content.Shared.CrystallPunk.LockKey;
 
@@ -24,6 +22,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly LockSystem _lock = default!;
+    [Dependency] private readonly SharedStorageSystem _storage = default!;
 
     public override void Initialize()
     {
@@ -35,8 +34,40 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         SubscribeLocalEvent<LockComponent, EntRemovedFromContainerMessage>(OnLockRemoved);
 
         SubscribeLocalEvent<CPKeyComponent, AfterInteractEvent>(OnKeyInteract);
+        SubscribeLocalEvent<CPKeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
         SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
     }
+    private void OnKeyRingInteract(Entity<CPKeyRingComponent> keyring, ref AfterInteractEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!args.CanReach || args.Target is not { Valid: true } target)
+            return;
+
+        if (!TryComp<StorageComponent>(keyring, out var storageComp))
+            return;
+
+
+        if (TryComp<LockComponent>(args.Target, out var lockComp) &&
+            TryGetLockFromSlot(args.Target.Value, out var lockEnt))
+        {
+
+            foreach (var item in storageComp.StoredItems)
+            {
+                if (!TryComp<CPKeyComponent>(item.Key, out var keyComp))
+                    continue;
+
+                if (keyComp.LockShape != lockEnt.Value.Comp.LockShape)
+                    continue;
+
+                TryUseKeyOnLock(args.User, args.Target.Value, new Entity<CPKeyComponent>(item.Key, keyComp), lockEnt.Value);
+                args.Handled = true;
+                return;
+            }
+        }
+    }
+
     private void OnKeyInteract(Entity<CPKeyComponent> key, ref AfterInteractEvent args)
     {
         if (args.Handled)

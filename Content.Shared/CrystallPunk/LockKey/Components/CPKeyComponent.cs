@@ -1,9 +1,6 @@
-
-using Content.Shared.CrystallPunk.LockKey;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.CrystallPunk.LockKey;
-
 
 /// <summary>
 /// a key component that can be used to unlock and lock locks from CPLockComponent

@@ -57,6 +57,7 @@
   name: кольцо для ключей
   description: Позволяет комфортно хранить большое количество ключей в одном месте.
   components:
+  - type: CPKeyRing
   - type: Sprite
     sprite: CrystallPunk/Objects/keys.rsi
     layers:
