@@ -38,7 +38,7 @@
 
 - type: entity
   parent: BaseKey
-  id: KeyTavern
+  id: KeyKitchen
   name: ключ от кухни
   components:
   - type: Sprite
