@@ -14,28 +14,73 @@
   complexity: 4
   
 - type: entity
-  parent: SurvivalKnife
+  parent: BaseItem
   id: TestKey
-  name: ключ тест
+  name: дебажный ключ
+  suffix: 1
   components: 
+  - type: Tag
+    tags:
+    - CPKey
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: CrystallPunk/Objects/keys.rsi
+    state: key1
   - type: CPKey
     autoGenerateShape: Debug
   
 - type: entity
-  parent: SurvivalKnife
+  parent: TestKey
   id: TestKey2
-  name: ключ тест 2
+  suffix: 2
   components: 
+  - type: Sprite
+    state: key2
   - type: CPKey
     autoGenerateShape: Debug2
   
 - type: entity
-  parent: SurvivalKnife
+  parent: TestKey
   id: TestKey3
-  name: ключ тест 3
+  suffix: 3
   components: 
+  - type: Sprite
+    state: key3
   - type: CPKey
     autoGenerateShape: Debug3
+
+- type: entity
+  parent: BaseItem
+  id: BaseKeyRing
+  suffix: Пустое
+  name: кольцо для ключей
+  description: Позволяет комфортно хранить большое количество ключей в одном месте.
+  components:
+  - type: Sprite
+    sprite: CrystallPunk/Objects/keys.rsi
+    layers:
+    - state: keyring
+    - state: ring-0
+      map: ["enum.StorageFillLayers.Fill"]
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 4
+    fillBaseName: ring
+  - type: Storage
+    grid:
+    - 0,0,5,0
+    maxItemSize: Small
+    whitelist:
+      tags:
+        - CPKey
+  - type: UserInterface
+    interfaces:
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
 
 - type: entity
   parent: WoodDoor
