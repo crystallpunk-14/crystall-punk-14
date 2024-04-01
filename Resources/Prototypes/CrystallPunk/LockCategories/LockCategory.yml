@@ -1,89 +1,16 @@
 - type: CPLockCategory
   id: Debug
-  name: cp-lock-debug-1
-  complexity: 5
+  complexity: 10
 
 - type: CPLockCategory
-  id: Debug2
-  name: cp-lock-debug-2
+  id: Tavern
   complexity: 3
 
 - type: CPLockCategory
-  id: Debug3
-  name: cp-lock-debug-3
-  complexity: 4
-  
-- type: entity
-  parent: BaseItem
-  id: TestKey
-  name: дебажный ключ
-  suffix: 1
-  components: 
-  - type: Tag
-    tags:
-    - CPKey
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: CrystallPunk/Objects/keys.rsi
-    state: key1
-  - type: CPKey
-    autoGenerateShape: Debug
-  
-- type: entity
-  parent: TestKey
-  id: TestKey2
-  suffix: 2
-  components: 
-  - type: Sprite
-    state: key2
-  - type: CPKey
-    autoGenerateShape: Debug2
-  
-- type: entity
-  parent: TestKey
-  id: TestKey3
-  suffix: 3
-  components: 
-  - type: Sprite
-    state: key3
-  - type: CPKey
-    autoGenerateShape: Debug3
+  id: Kitchen
+  complexity: 3
 
-- type: entity
-  parent: BaseItem
-  id: BaseKeyRing
-  suffix: Пустое
-  name: кольцо для ключей
-  description: Позволяет комфортно хранить большое количество ключей в одном месте.
-  components:
-  - type: CPKeyRing
-  - type: Sprite
-    sprite: CrystallPunk/Objects/keys.rsi
-    layers:
-    - state: keyring
-    - state: ring-0
-      map: ["enum.StorageFillLayers.Fill"]
-  - type: Appearance
-  - type: StorageFillVisualizer
-    maxFillLevels: 4
-    fillBaseName: ring
-  - type: Storage
-    grid:
-    - 0,0,5,0
-    maxItemSize: Small
-    whitelist:
-      tags:
-        - CPKey
-  - type: UserInterface
-    interfaces:
-    - key: enum.StorageUiKey.Key
-      type: StorageBoundUserInterface
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-
-- type: entity
+- type: entity #TODO remove outside
   parent: WoodDoor
   id: WoodDoorTest
   name: тестовая дверь
@@ -97,7 +24,7 @@
     slots: 
       lock_slot:
         name: cp-lock-slot-component-slot-name-default
-        startingItem: TestLock1
+        startingItem: LockTavern
         disableEject: true
         whitelist:
           components:
@@ -105,97 +32,3 @@
   - type: ContainerContainer
     containers:
       lock_slot: !type:ContainerSlot
-      
-- type: entity
-  parent: WoodDoorTest
-  id: WoodDoorTest2
-  name: тестовая дверь
-  suffix: Открыто
-  description: Тут есть замок?
-  components:
-  - type: Lock
-    locked: false
-    lockSlotId: lock_slot
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        disableEject: true
-        whitelist:
-          components:
-          - CPLock
-
-- type: entity
-  parent: CrateGenericBiosuit
-  id: CrateGenericBiosuitTEST
-  name: тестовый ящик
-  components:
-  - type: Lock
-    lockSlotId: lock_slot
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: TestLock2
-        disableEject: true
-        whitelist:
-          components:
-          - CPLock
-  - type: ContainerContainer
-    containers:
-      lock_slot: !type:ContainerSlot
-
-- type: entity
-  parent: CrateGenericBiosuitTEST
-  id: CrateGenericBiosuitTEST2
-  name: тестовый ящик открытый
-  components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        disableEject: true
-        whitelist:
-          components:
-          - CPLock
-  
-- type: entity
-  parent: BaseItem
-  id: TestLock1
-  name: тестовый первый замок
-  components:
-  - type: CPLock
-    autoGenerateShape: Debug
-  - type: Sprite
-    sprite: CrystallPunk/Objects/keys.rsi
-    layers:
-    - state: lock
-    
-- type: entity
-  parent: TestLock1
-  id: TestLock2
-  name: тестовый второй замок
-  components:
-  - type: CPLock
-    autoGenerateShape: Debug2
-    
-- type: entity
-  parent: BaseItem
-  id: LockpickBase
-  name: отмычка
-  description: Воровской инструмент, при должном умении и сноровке позволяющий взламывать любые замки.
-  components:
-  - type: Sprite
-    sprite: CrystallPunk/Objects/keys.rsi
-    state: lockpick
-  - type: CPLockpick
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 10
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]

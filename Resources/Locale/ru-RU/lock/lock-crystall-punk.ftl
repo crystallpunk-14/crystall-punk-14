@@ -3,6 +3,8 @@ cp-lock-slot-component-slot-name-default = Замок
 cp-lock-examine-key = Высота зубчиков на ключе выстраивается в следующую последовательность:
 cp-lock-examine-lock-slot = Здесь висит {$lock}.
 cp-lock-examine-lock-null = Сюда можно прикрепить замок.
+cp-lock-examine-lock-lockpicked = [color=#b57c3c]{$lock} выглядит потрепанным, словно в нем кто-то копался.[/color]
+
 
 cp-lock-verb-use-key-text-open = Открыть {$item}
 cp-lock-verb-use-key-text-close = Закрыть {$item}
@@ -23,7 +25,5 @@ verb-categories-lockpick = Взлом
 
 cp-lock-lockpick-success = Что-то в замке сдвигается...
 cp-lock-lockpick-failed = {$lock} с громким щелчком встает на место.
-
-cp-lock-debug-1 = дебаг 1
-cp-lock-debug-2 = дебаг 2
-cp-lock-debug-3 = дебаг 3
+cp-lock-lockpick-failed-damage = {$lock} с громким щелчком встает на место, надломив отмчычку.
+cp-lock-lockpick-failed-break = {$lock} с громким щелчком встает на место, ломая вашу отмычку.

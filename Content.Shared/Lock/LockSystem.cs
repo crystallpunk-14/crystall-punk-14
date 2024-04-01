@@ -98,6 +98,8 @@ public sealed class LockSystem : EntitySystem
                     ? "lock-comp-on-examined-is-locked"
                     : "lock-comp-on-examined-is-unlocked",
                 ("entityName", Identity.Name(uid, EntityManager))));
+            if (lockEnt.Value.Comp.LockpickeddFailMarkup)
+                args.PushMarkup(Loc.GetString("cp-lock-examine-lock-lockpicked", ("lock", MetaData(lockEnt.Value).EntityName)));
         } else
         {
             args.PushText(Loc.GetString("cp-lock-examine-lock-null"));

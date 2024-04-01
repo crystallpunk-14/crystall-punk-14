@@ -13,11 +13,6 @@ public sealed partial class CPLockCategoryPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// user-friendly category name
-    /// </summary>
-    [DataField(required: true)] public LocId Name = "Default";
-
-    /// <summary>
     /// The number of elements that will be generated for the category.
     /// </summary>
     [DataField] public int Complexity = 3;

@@ -15,19 +15,19 @@ public sealed partial class CPLockComponent : Component
     public List<int>? LockShape = null;
 
     [DataField]
-    public float LockPickDamageChance = 0.3f;
-
-    /// <summary>
-    /// how much damage the lock pick takes
-    /// </summary>
-    [DataField]
-    public DamageSpecifier LockpickDamage = new();
+    public float LockPickDamageChance = 0.2f;
 
     /// <summary>
     /// On which element of the shape sequence the lock is now located. It's necessary for the mechanics of breaking and entering.
     /// </summary>
     [DataField]
     public int LockpickStatus = 0;
+
+    /// <summary>
+    /// after a lock is broken into, it leaves a description on it that it's been tampered with.
+    /// </summary>
+    [DataField]
+    public bool LockpickeddFailMarkup = false;
 
     /// <summary>
     /// If not null, automatically generates a lock for the specified category on initialization. This ensures that the lock will be opened with a key of the same category.

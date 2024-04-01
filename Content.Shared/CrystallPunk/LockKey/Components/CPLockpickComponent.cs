@@ -10,4 +10,6 @@ namespace Content.Shared.CrystallPunk.LockKey;
 [RegisterComponent]
 public sealed partial class CPLockpickComponent : Component
 {
+    [DataField]
+    public int Health = 3;
 }

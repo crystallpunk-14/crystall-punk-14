@@ -9,6 +9,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Verbs;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Storage;
+using Robust.Shared.Random;
 
 namespace Content.Shared.CrystallPunk.LockKey;
 
@@ -22,7 +23,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly LockSystem _lock = default!;
-    [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private const int DepthCompexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
 
@@ -89,7 +90,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         }
     }
 
-    private void OnLockpickToLockVerb(Entity<CPLockpickComponent> key, ref GetVerbsEvent<UtilityVerb> args)
+    private void OnLockpickToLockVerb(Entity<CPLockpickComponent> lockpick, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -113,7 +114,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
             {
                 Act = () =>
                 {
-                    TryHackDoorElement(user, target, lockItemComp, lockComp, height);
+                    TryHackDoorElement(user, target, lockpick, lockItemComp, lockComp, height);
                 },
                 Text = Loc.GetString("cp-lock-verb-lockpick-use-text") + $" {height}",
                 Message = Loc.GetString("cp-lock-verb-lockpick-use-message"),
@@ -125,7 +126,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         }
     }
 
-    private bool TryHackDoorElement(EntityUid user, EntityUid target, CPLockComponent lockEnt, LockComponent lockComp, int height)
+    private bool TryHackDoorElement(EntityUid user, EntityUid target, Entity<CPLockpickComponent> lockpick,  CPLockComponent lockEnt, LockComponent lockComp, int height)
     {
         if (lockEnt.LockShape == null)
             return true;
@@ -155,8 +156,24 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         }
         else //Fail
         {
+            if (_random.Prob(lockEnt.LockPickDamageChance)) // Damage lockpick
+            {
+                lockpick.Comp.Health--;
+                if (lockpick.Comp.Health > 0)
+                {
+                    _popup.PopupEntity(Loc.GetString("cp-lock-lockpick-failed-damage", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
+                } else
+                {
+                    _popup.PopupEntity(Loc.GetString("cp-lock-lockpick-failed-break", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
+                    QueueDel(lockpick);
+                }
+            }
+            else
+            {
+                _popup.PopupEntity(Loc.GetString("cp-lock-lockpick-failed", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
+            }
+            lockEnt.LockpickeddFailMarkup = true;
             lockEnt.LockpickStatus = 0;
-            _popup.PopupEntity(Loc.GetString("cp-lock-lockpick-failed", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
             return false;
         }
     }
