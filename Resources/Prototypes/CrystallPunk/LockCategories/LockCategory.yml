@@ -159,7 +159,6 @@
           components:
           - CPLock
   
-
 - type: entity
   parent: BaseItem
   id: TestLock1
@@ -180,4 +179,23 @@
   - type: CPLock
     autoGenerateShape: Debug2
     
-    
+- type: entity
+  parent: BaseItem
+  id: LockpickBase
+  name: отмычка
+  description: Воровской инструмент, при должном умении и сноровке позволяющий взламывать любые замки.
+  components:
+  - type: Sprite
+    sprite: CrystallPunk/Objects/keys.rsi
+    state: lockpick
+  - type: CPLockpick
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

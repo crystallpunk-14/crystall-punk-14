@@ -36,9 +36,7 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
         SubscribeLocalEvent<CPLockComponent, MapInitEvent>(OnLockInit);
         SubscribeLocalEvent<CPKeyComponent, MapInitEvent>(OnKeyInit);
 
-
         SubscribeLocalEvent<CPKeyComponent, ExaminedEvent>(OnKeyExamine);
-
     }
 
     #region Init

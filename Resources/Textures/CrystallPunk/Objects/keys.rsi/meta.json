@@ -65,6 +65,9 @@
       "name": "lock"
     },
     {
+      "name": "lockpick"
+    },
+    {
       "name": "keyring"
     },
     {

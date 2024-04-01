@@ -94,7 +94,7 @@ public sealed class LockSystem : EntitySystem
         {
             args.PushText(Loc.GetString("cp-lock-examine-lock-slot", ("lock", MetaData(lockEnt.Value).EntityName)));
 
-            args.PushText(Loc.GetString(lockComp.Locked
+            args.PushMarkup(Loc.GetString(lockComp.Locked
                     ? "lock-comp-on-examined-is-locked"
                     : "lock-comp-on-examined-is-unlocked",
                 ("entityName", Identity.Name(uid, EntityManager))));

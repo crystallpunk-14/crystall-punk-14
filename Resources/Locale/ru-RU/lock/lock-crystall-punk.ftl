@@ -17,6 +17,12 @@ cp-lock-lock-insert-fail-locked = Сначала разблокируйте {$lo
 cp-lock-lock-remove-fail-locked = Сначала разблокируйте {$lock}, чтобы снять его с {$target}
 cp-lock-target-use-failed-locked = {$target} не открывается
 
+cp-lock-verb-lockpick-use-text = Имитировать:
+cp-lock-verb-lockpick-use-message = Попытаться имитировать элемент формы ключа.
+verb-categories-lockpick = Взлом
+
+cp-lock-lockpick-success = Что-то в замке сдвигается...
+cp-lock-lockpick-failed = {$lock} с громким щелчком встает на место.
 
 cp-lock-debug-1 = дебаг 1
 cp-lock-debug-2 = дебаг 2

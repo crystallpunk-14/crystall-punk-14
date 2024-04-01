@@ -1,4 +1,5 @@
 using Content.Shared.CrystallPunk.LockKey;
+using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -14,7 +15,19 @@ public sealed partial class CPLockComponent : Component
     public List<int>? LockShape = null;
 
     [DataField]
-    public float LockPickBreakChance = 0.3f;
+    public float LockPickDamageChance = 0.3f;
+
+    /// <summary>
+    /// how much damage the lock pick takes
+    /// </summary>
+    [DataField]
+    public DamageSpecifier LockpickDamage = new();
+
+    /// <summary>
+    /// On which element of the shape sequence the lock is now located. It's necessary for the mechanics of breaking and entering.
+    /// </summary>
+    [DataField]
+    public int LockpickStatus = 0;
 
     /// <summary>
     /// If not null, automatically generates a lock for the specified category on initialization. This ensures that the lock will be opened with a key of the same category.

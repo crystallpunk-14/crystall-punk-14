@@ -24,6 +24,9 @@ public sealed class SharedCPLockKeySystem : EntitySystem
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
 
+    private const int DepthCompexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
+
+
     public override void Initialize()
     {
         base.Initialize();
@@ -36,6 +39,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         SubscribeLocalEvent<CPKeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CPKeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
         SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
+        SubscribeLocalEvent<CPLockpickComponent, GetVerbsEvent<UtilityVerb>>(OnLockpickToLockVerb);
     }
     private void OnKeyRingInteract(Entity<CPKeyRingComponent> keyring, ref AfterInteractEvent args)
     {
@@ -82,6 +86,78 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         {
             TryUseKeyOnLock(args.User, args.Target.Value, key, new Entity<CPLockComponent>(lockEnt.Value.Owner, lockEnt.Value.Comp));
             args.Handled = true;
+        }
+    }
+
+    private void OnLockpickToLockVerb(Entity<CPLockpickComponent> key, ref GetVerbsEvent<UtilityVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        if (!TryComp<LockComponent>(args.Target, out var lockComp) || !lockComp.Locked)
+            return;
+
+        if (!TryGetLockFromSlot(args.Target, out var lockItem))
+            return;
+
+        if (!TryComp<CPLockComponent>(lockItem, out var lockItemComp))
+            return;
+
+        var target = args.Target;
+        var user = args.User;
+
+        for (int i = DepthCompexity; i >= -DepthCompexity; i--)
+        {
+            var height = i;
+            var verb = new UtilityVerb()
+            {
+                Act = () =>
+                {
+                    TryHackDoorElement(user, target, lockItemComp, lockComp, height);
+                },
+                Text = Loc.GetString("cp-lock-verb-lockpick-use-text") + $" {height}",
+                Message = Loc.GetString("cp-lock-verb-lockpick-use-message"),
+                Category = VerbCategory.Lockpick,
+                Priority = height,
+            };
+
+            args.Verbs.Add(verb);
+        }
+    }
+
+    private bool TryHackDoorElement(EntityUid user, EntityUid target, CPLockComponent lockEnt, LockComponent lockComp, int height)
+    {
+        if (lockEnt.LockShape == null)
+            return true;
+
+        if (height == lockEnt.LockShape[lockEnt.LockpickStatus]) //Success
+        {
+            lockEnt.LockpickStatus++;
+            if (lockEnt.LockpickStatus >= lockEnt.LockShape.Count) // Final success
+            {
+                if (lockComp.Locked)
+                {
+                    _lock.TryUnlock(target, user, lockComp);
+                    _popup.PopupEntity(Loc.GetString("cp-lock-unlock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
+                    lockEnt.LockpickStatus = 0;
+                    return true;
+                }
+                else
+                {
+                    _lock.TryLock(target, user, lockComp);
+                    _popup.PopupEntity(Loc.GetString("cp-lock-lock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
+                    lockEnt.LockpickStatus = 0;
+                    return true;
+                }
+            }
+            _popup.PopupEntity(Loc.GetString("cp-lock-lockpick-success"), target, user);
+            return true;
+        }
+        else //Fail
+        {
+            lockEnt.LockpickStatus = 0;
+            _popup.PopupEntity(Loc.GetString("cp-lock-lockpick-failed", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
+            return false;
         }
     }
 
