@@ -1,5 +1,5 @@
 using Content.Server.Atmos.Components;
-using Content.Server.CrystallPunk.FlammableEntityHeater;
+using Content.Server.CrystallPunk.Temperature;
 using Content.Server.Power.Components;
 using Content.Server.Temperature.Components;
 using Content.Shared.Examine;
@@ -55,7 +55,7 @@ public sealed class EntityHeaterSystem : EntitySystem
             if (!flammable.OnFire)
                 return;
 
-            var energy = flammable.FireStacks * deltaTime * 1000;
+            var energy = flammable.FireStacks * deltaTime * 300;
             foreach (var ent in placer.PlacedEntities)
             {
                 _temperature.ChangeHeat(ent, energy);

@@ -21,7 +21,7 @@
         - Impassable
         - MidImpassable
         - LowImpassable
-        hard: false
+        hard: true
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -40,12 +40,9 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-          #- !type:SpawnEntitiesBehavior
-          #  spawn:
-          #    CPBonfireFading:
-          #      min: 1
-          #      max: 1
+  - type: CPFlammableAmbientSound
   - type: AmbientSound
+    enabled: false
     volume: -5
     range: 5
     sound:
@@ -62,9 +59,11 @@
     canExtinguish: true
     firestacksOnIgnite: 0.5
     firestackFade: 0.3
+    firestackFadeOnIgnite: 0.3
+    firestackFadeFade: -0.2
     damage:
       types:
-        Heat: 0.05
+        Heat: 0.01
   - type: FireVisuals
     sprite: CrystallPunk/Structures/Decoration/bonfire.rsi
     normalState: burning
@@ -74,36 +73,3 @@
       components:
       - Temperature
   - type: CPFlammableEntityHeater
-
-- type: entity
-  id: CPBonfireFading
-  parent: CPBonfire
-  components:
-  - type: Sprite
-    noRot: true
-    sprite: CrystallPunk/Structures/Decoration/bonfire.rsi
-    layers:
-      - state: bonfire
-      - state: bonfire_extinguished
-        shader: unshaded
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 25
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Flammable
-    onFire: true
-    fireStacks: 10
-    fireSpread: false
-    canResistFire: false
-    alwaysCombustible: true
-    canExtinguish: true
-    firestacksOnIgnite: 0.5
-    firestackFade: -0.1
-    damage:
-      types:
-        Heat: 0.03
-  
