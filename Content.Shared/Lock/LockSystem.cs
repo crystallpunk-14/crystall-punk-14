@@ -56,6 +56,8 @@ public sealed class LockSystem : EntitySystem
         if (args.Handled)
             return;
 
+        //CrystallPunk LockSystem Adapt
+
         // Only attempt an unlock by default on Activate
         //if (lockComp.Locked)
         //{
@@ -67,6 +69,8 @@ public sealed class LockSystem : EntitySystem
         //    TryLock(uid, args.User, lockComp);
         //    args.Handled = true;
         //}
+
+        //CrystallPunk LockSystem Adapt End
     }
     private void OnBeforeDoorOpened(EntityUid uid, LockComponent component, BeforeDoorOpenedEvent args)
     {
@@ -249,6 +253,8 @@ public sealed class LockSystem : EntitySystem
 
     private void AddToggleLockVerb(EntityUid uid, LockComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
+        //CrystallPunk Lock System Adapt
+
         //if (!args.CanAccess || !args.CanInteract || !CanToggleLock(uid, args.User))
         //    return;
         //
@@ -263,6 +269,8 @@ public sealed class LockSystem : EntitySystem
         //        new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png")),
         //};
         //args.Verbs.Add(verb);
+
+        //CrystallPunk Lock System Adapt End
     }
 
     private void OnEmagged(EntityUid uid, LockComponent component, ref GotEmaggedEvent args)

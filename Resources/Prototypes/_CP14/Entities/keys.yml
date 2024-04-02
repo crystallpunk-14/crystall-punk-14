@@ -14,6 +14,11 @@
     sprite: CrystallPunk/Objects/keys.rsi
   - type: CPKey
     autoGenerateShape: Debug
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/key_drop.ogg
+      params:
+        variation: 0.05
 
 - type: entity
   parent: BaseItem
@@ -35,13 +40,3 @@
     state: key1
   - type: CPKey
     autoGenerateShape: Tavern
-
-- type: entity
-  parent: BaseKey
-  id: KeyKitchen
-  name: ключ от кухни
-  components:
-  - type: Sprite
-    state: key2
-  - type: CPKey
-    autoGenerateShape: Kitchen

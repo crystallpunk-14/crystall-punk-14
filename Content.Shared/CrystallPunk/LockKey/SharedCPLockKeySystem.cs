@@ -10,6 +10,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Storage;
 using Robust.Shared.Random;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared.CrystallPunk.LockKey;
 
@@ -24,6 +25,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     private const int DepthCompexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
 
@@ -133,6 +135,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
 
         if (height == lockEnt.LockShape[lockEnt.LockpickStatus]) //Success
         {
+            _audio.PlayPvs(lockpick.Comp.SuccessSound, target);
             lockEnt.LockpickStatus++;
             if (lockEnt.LockpickStatus >= lockEnt.LockShape.Count) // Final success
             {
@@ -156,6 +159,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         }
         else //Fail
         {
+            _audio.PlayPvs(lockpick.Comp.FailSound, target);
             if (_random.Prob(lockEnt.LockPickDamageChance)) // Damage lockpick
             {
                 lockpick.Comp.Health--;
