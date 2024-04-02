@@ -64,6 +64,10 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
 
     private void OnKeyExamine(Entity<CPKeyComponent> key, ref ExaminedEvent args)
     {
+        var parent = Transform(key).ParentUid;
+        if (parent != args.Examiner)
+            return;
+
         if (key.Comp.LockShape == null)
             return;
 
