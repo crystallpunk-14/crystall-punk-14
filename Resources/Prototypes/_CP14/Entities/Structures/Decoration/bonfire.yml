@@ -1,0 +1,84 @@
+- type: entity
+  id: CPBonfire
+  parent: BaseStructure
+  name: костёр
+  description: Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: CrystallPunk/Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTypeTrigger
+          damageType: Heat
+          damage: 50
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CPBonfireFading:
+                min: 1
+                max: 1
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 0.5
+    firestackFade: 0.3
+    damage:
+      types:
+        Heat: 0.05
+  - type: FireVisuals
+    sprite: CrystallPunk/Structures/Decoration/bonfire.rsi
+    normalState: burning
+
+- type: entity
+  id: CPBonfireFading
+  parent: CPBonfire
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: CrystallPunk/Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+      - state: bonfire_extinguished
+        shader: unshaded
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 25
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: Flammable
+    onFire: true
+    fireStacks: 10
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 0.5
+    firestackFade: -0.1
+    damage:
+      types:
+        Heat: 0.03
+  
