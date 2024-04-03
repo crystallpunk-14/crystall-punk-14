@@ -1000,7 +1000,7 @@
   conditions:
   - !type:TileNotBlocked
 
- Chain link fencing
+# Chain link fencing
 - type: construction
   name: chain link fence
   id: FenceMetal
@@ -1155,7 +1155,7 @@ Wooden fence high
   conditions:
   - !type:TileNotBlocked
 
-Wooden fence small
+# Wooden fence small
 - type: construction
   name: wooden small fence
   id: FenceWoodSmall
@@ -1241,7 +1241,7 @@ Wooden fence small
   conditions:
   - !type:TileNotBlocked
 
-Airlocks
+#Airlocks
 - type: construction
   name: airlock
   id: Airlock
@@ -1397,7 +1397,7 @@ Airlocks
   conditions:
     - !type:TileNotBlocked
 
-lighting
+#lighting
 - type: construction
   name: wall light
   id: LightTubeFixture
@@ -1455,7 +1455,7 @@ lighting
   conditions:
     - !type:TileNotBlocked
 
-conveyor
+#conveyor
 - type: construction
   name: conveyor belt
   id: ConveyorBelt
