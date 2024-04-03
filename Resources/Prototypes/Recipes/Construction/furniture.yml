@@ -606,7 +606,7 @@
   description: A human excrement flushing apparatus.
   icon:
     sprite: Structures/Furniture/toilet.rsi
-    state: disposal
+    state: closed_toilet_seat_up
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

@@ -105,7 +105,7 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
- #here
+# here
 - type: construction
   name: wood wall
   id: WoodWall
@@ -1069,7 +1069,7 @@
   conditions:
   - !type:TileNotBlocked
 
-Wooden fence high
+#Wooden fence high
 - type: construction
   name: wooden high fence
   id: FenceWood
@@ -1155,7 +1155,7 @@ Wooden fence high
   conditions:
   - !type:TileNotBlocked
 
-# Wooden fence small
+#Wooden fence small
 - type: construction
   name: wooden small fence
   id: FenceWoodSmall
@@ -1321,7 +1321,7 @@ Wooden fence high
   icon:
     sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
     state: closed
-    state: assembly
+  #  state: assembly
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -1339,7 +1339,7 @@ Wooden fence high
   icon:
     sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
     state: closed
-    state: assembly
+  #  state: assembly
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -1414,8 +1414,8 @@ Wooden fence high
   canRotate: true
   canBuildInImpassable: false
   conditions:
-   Need an *additional* condition here that forces there to be a wall in the opposite direction to the one used for placement.
-   Also see below. Didn't add it b/c construction ECS work going on. Cheers, - 20kdc
+  # Need an *additional* condition here that forces there to be a wall in the opposite direction to the one used for placement.
+  # Also see below. Didn't add it b/c construction ECS work going on. Cheers, - 20kdc
     - !type:TileNotBlocked
 
 - type: construction
@@ -1434,7 +1434,7 @@ Wooden fence high
   canRotate: true
   canBuildInImpassable: false
   conditions:
-   Same here. - 20kdc
+  # Same here. - 20kdc
     - !type:TileNotBlocked
 
 - type: construction
