@@ -46,7 +46,6 @@ public sealed class LockSystem : EntitySystem
         SubscribeLocalEvent<LockComponent, LockDoAfter>(OnDoAfterLock);
         SubscribeLocalEvent<LockComponent, UnlockDoAfter>(OnDoAfterUnlock);
         SubscribeLocalEvent<LockComponent, BeforeDoorOpenedEvent>(OnBeforeDoorOpened); //CrystallPunk Lock System Adapt
-    }
 
         SubscribeLocalEvent<LockedWiresPanelComponent, LockToggleAttemptEvent>(OnLockToggleAttempt);
         SubscribeLocalEvent<LockedWiresPanelComponent, AttemptChangePanelEvent>(OnAttemptChangePanel);
@@ -259,27 +258,27 @@ public sealed class LockSystem : EntitySystem
 
     private void AddToggleLockVerb(EntityUid uid, LockComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-    //CrystallPunk Lock System Adapt
+        //CrystallPunk Lock System Adapt
 
-    //if (!args.CanAccess || !args.CanInteract)
-    //    return;
-    //
-    //AlternativeVerb verb = new()
-    //{
-    //    Act = component.Locked
-    //        ? () => TryUnlock(uid, args.User, component)
-    //        : () => TryLock(uid, args.User, component),
-    //    Text = Loc.GetString(component.Locked ? "toggle-lock-verb-unlock" : "toggle-lock-verb-lock"),
-    //    Icon = !component.Locked
-    //        ? new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png"))
-    //        : new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/unlock.svg.192dpi.png")),
-    //};
-    //args.Verbs.Add(verb);
+        //if (!args.CanAccess || !args.CanInteract)
+        //    return;
+        //
+        //AlternativeVerb verb = new()
+        //{
+        //    Act = component.Locked
+        //        ? () => TryUnlock(uid, args.User, component)
+        //        : () => TryLock(uid, args.User, component),
+        //    Text = Loc.GetString(component.Locked ? "toggle-lock-verb-unlock" : "toggle-lock-verb-lock"),
+        //    Icon = !component.Locked
+        //        ? new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png"))
+        //        : new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/unlock.svg.192dpi.png")),
+        //};
+        //args.Verbs.Add(verb);
 
-    //CrystallPunk Lock System Adapt End
-}
+        //CrystallPunk Lock System Adapt End
+    }
 
-    private void OnEmagged(EntityUid uid, LockComponent component, ref GotEmaggedEvent args)
+private void OnEmagged(EntityUid uid, LockComponent component, ref GotEmaggedEvent args)
     {
         if (!component.Locked || !component.BreakOnEmag)
             return;
