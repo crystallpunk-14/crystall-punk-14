@@ -1,9 +1,60 @@
+- type: entity
+  id: CPBaseWeaponChemical
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 4
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionInjectOnEmbed
+    transferAmount: 2
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 2
+
+- type: entity
+  id: CPBaseWeaponThrowable
+  abstract: true
+  components: 
+  - type: ThrowingAngle
+    angle: 225
+  - type: EmbeddableProjectile
+    offset: 0.15,0.15
+    removalTime: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 10
+  - type: DamageOnLand
+    damage:
+      types:
+        Piercing: 10
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.40,-0.30
+            - -0.30,-0.40
+            - 0.40,0.30
+            - 0.30,0.40
+        density: 10
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+
 # Simple melee weapons
 
 # Battle Staff
 # Mace
 # Stick
-# Dagger
 # Spear
 # Light Hammer
 # Throwing spear
@@ -17,31 +68,6 @@
 # Warhammer
 # Battle axe
 # Glaive
-
-- type: entity
-  name: двуручный меч
-  abstract: true
-  parent: BaseItem
-  id: CPBaseTwoHandedSword
-  description: Мощное оружие, требующее огромной силы и умения для эффективного использования.
-  components:
-  - type: Sharp
-  - type: MeleeWeapon
-    attackRate: 0.75
-    damage:
-      types:
-        Slash: 10
-        Structural: 5
-    soundHit:
-      collection: MetalThud
-  - type: Wieldable
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Slash: 30
-        Structural: 5
-  - type: Item
-    size: Ginormous
 
 # Long spear
 # Long sword

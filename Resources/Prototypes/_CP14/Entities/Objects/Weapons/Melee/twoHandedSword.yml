@@ -1,11 +1,11 @@
-
 - type: entity
-  name: цвайхендер
-  parent: CPBaseTwoHandedSword
-  id: CPZweichender
+  name: цвайхендер #ToDo - сделать базовый двуручник
+  parent: 
+  - BaseItem
+  - CPBaseWeaponChemical
+  id: CPBaseTwoHandedSword
+  description: Мощное оружие, требующее огромной силы и умения для эффективного использования.
   components:
-  - type: MeleeWeapon
-    wideAnimationRotation: 225
   - type: Sprite
     sprite: CrystallPunk/Objects/Weapons/Melee/zweichhender.rsi
     state: icon
@@ -14,4 +14,24 @@
     quickEquip: false
     slots:
     - back
-    #TODO двуручный хват требует перчаток чтобы не получать урона самому
+  - type: Sharp
+  - type: MeleeWeapon
+    attackRate: 0.5
+    animationLength: 0.8
+    range: 3.5
+    wideAnimationRotation: 225
+    wideAnimation: CPWeaponArcSlashLight
+    damage:
+      types:
+        Slash: 10
+        Structural: 5
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 30
+        Structural: 5
+  - type: Item
+    size: Ginormous
