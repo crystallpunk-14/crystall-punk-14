@@ -22,11 +22,6 @@
   id: CPBaseWeaponThrowable
   abstract: true
   components: 
-  - type: ThrowingAngle
-    angle: 225
-  - type: EmbeddableProjectile
-    offset: 0.15,0.15
-    removalTime: 1
   - type: DamageOtherOnHit
     damage:
       types:

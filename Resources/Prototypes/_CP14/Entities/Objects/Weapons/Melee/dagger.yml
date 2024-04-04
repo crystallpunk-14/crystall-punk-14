@@ -6,7 +6,7 @@
   - CPBaseWeaponThrowable
   - CPBaseWeaponLight
   id: CPBaseDagger
-  description: Мебольшое острое лезвие, сгодится и для ближнего боя, и как метательное оружие.
+  description: Небольшое острое лезвие, сгодится и для ближнего боя, и как метательное оружие.
   components:
   - type: Item
     storedRotation: -45
@@ -19,11 +19,17 @@
     attackRate: 1.8
     animationLength: 0.15
     range: 1.0
+    angle: 40
     wideAnimationRotation: 225
     wideAnimation: CPWeaponArcSlashLight
     damage:
       types:
-        Slash: 8
-        Piercing: 8
+        Slash: 5
+        Piercing: 5
     soundHit:
       collection: MetalThud
+  - type: EmbeddableProjectile
+    offset: 0.15,0.15
+    removalTime: 1
+  - type: ThrowingAngle
+    angle: 225

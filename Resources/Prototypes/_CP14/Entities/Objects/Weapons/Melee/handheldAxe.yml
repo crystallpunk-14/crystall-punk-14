@@ -1,0 +1,32 @@
+- type: entity
+  name: ручной топор
+  parent: 
+  - BaseItem
+  - CPBaseWeaponChemical
+  - CPBaseWeaponThrowable
+  - CPBaseWeaponLight
+  id: CPBaseDagger
+  description: Небольшой, надежный топорик.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: CrystallPunk/Objects/Weapons/Melee/HandheldAxe/handheldAxe.rsi
+    layers:
+    - state: icon
+  - type: Sharp
+  - type: MeleeWeapon
+    attackRate: 1.4
+    animationLength: 0.25
+    range: 1.2
+    wideAnimationRotation: 225
+    wideAnimation: CPWeaponArcSlashLight
+    damage:
+      types:
+        Slash: 10
+        Piercing: 5
+    soundHit:
+      collection: MetalThud
+  - type: EmbeddableProjectile
+    offset: 0.15,0.15
+    removalTime: 1
