@@ -4,6 +4,7 @@
   - BaseItem
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
+  - CPBaseWeaponLight
   id: CPBaseDagger
   description: Мебольшое острое лезвие, сгодится и для ближнего боя, и как метательное оружие.
   components:

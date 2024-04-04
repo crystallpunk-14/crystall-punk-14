@@ -50,6 +50,13 @@
         restitution: 0.3
         friction: 0.2
 
+- type: entity
+  id: CPBaseWeaponLight
+  abstract: true
+  components:
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    
 # Simple melee weapons
 
 # Battle Staff
