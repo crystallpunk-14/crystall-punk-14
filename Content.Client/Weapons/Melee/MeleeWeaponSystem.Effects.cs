@@ -46,6 +46,8 @@ public sealed partial class MeleeWeaponSystem
 
         var length = 1f; //CrystallPunk Melee upgrade
         var scale = 1f; //CrystallPunk Melee upgrade
+        var offset = -1f; //CrystallPunk Melee upgrade
+
         var spriteRotation = Angle.Zero;
         if (arcComponent.Animation != WeaponArcAnimation.None
             && TryComp(weapon, out MeleeWeaponComponent? meleeWeaponComponent))
@@ -59,8 +61,9 @@ public sealed partial class MeleeWeaponSystem
             if (meleeWeaponComponent.SwingLeft)
                 angle *= -1;
 
-            length = meleeWeaponComponent.AnimationLength; //CrystallPunk Melee upgrade
-            scale = meleeWeaponComponent.AnimationScale; //CrystallPunk Melee upgrade
+            length = meleeWeaponComponent.CPAnimationLength; //CrystallPunk Melee upgrade
+            scale = meleeWeaponComponent.CPAnimationScale; //CrystallPunk Melee upgrade
+            offset = meleeWeaponComponent.CPAnimationOffset; //CrystallPunk Melee upgrade
         }
         sprite.NoRotation = true;
         sprite.Rotation = localPos.ToWorldAngle();
@@ -94,7 +97,7 @@ public sealed partial class MeleeWeaponSystem
                 break;
             //CrystallPunk MeleeUpgrade
             case WeaponArcAnimation.CPSlashLight:
-                _animation.Play(animationUid, CPGetSlashLightAnimation(sprite, angle, spriteRotation, length), CPSlashLightAnimationKey);
+                _animation.Play(animationUid, CPGetSlashLightAnimation(sprite, angle, spriteRotation, length, offset), CPSlashLightAnimationKey);
                 TransformSystem.SetParent(animationUid, xform, user, userXform);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, length * 0.5f, length + 0.15f), FadeAnimationKey);
@@ -225,13 +228,13 @@ public sealed partial class MeleeWeaponSystem
     }
 
     //CrystallPunk MeleeUpgrade start
-    private Animation CPGetSlashLightAnimation(SpriteComponent sprite, Angle arc, Angle spriteRotation, float length)
+    private Animation CPGetSlashLightAnimation(SpriteComponent sprite, Angle arc, Angle spriteRotation, float length, float offset = -1f)
     {
         var startRotation = sprite.Rotation + (arc * 0.5f);
         var endRotation = sprite.Rotation - (arc * 0.5f);
 
-        var startRotationOffset = startRotation.RotateVec(new Vector2(0f, -1f));
-        var endRotationOffset = endRotation.RotateVec(new Vector2(0f, -1f));
+        var startRotationOffset = startRotation.RotateVec(new Vector2(0f, offset));
+        var endRotationOffset = endRotation.RotateVec(new Vector2(0f, offset));
 
         startRotation += spriteRotation;
         endRotation += spriteRotation;

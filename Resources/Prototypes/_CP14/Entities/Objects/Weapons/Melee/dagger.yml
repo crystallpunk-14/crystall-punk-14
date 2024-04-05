@@ -18,7 +18,6 @@
   - type: Sharp
   - type: MeleeWeapon
     attackRate: 1.8
-    animationLength: 0.15
     wideAnimationRotation: 225
     wideAnimation: CPWeaponArcSlashLight
     damage:
@@ -27,6 +26,7 @@
         Piercing: 5
     soundHit:
       collection: MetalThud
+    cPAnimationLength: 0.15
   - type: EmbeddableProjectile
     offset: 0.15,0.15
     removalTime: 1

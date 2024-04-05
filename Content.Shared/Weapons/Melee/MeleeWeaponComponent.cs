@@ -123,13 +123,19 @@ public sealed partial class MeleeWeaponComponent : Component
     /// CrystallPunk Melee upgrade. Modifier of wide attack animation speed
     /// </summary>
     [DataField]
-    public float AnimationLength = 1f;
+    public float CPAnimationLength = 0.5f;
 
     /// <summary>
     /// CrystallPunk Melee upgrade. Scale arc (for small knife ex.)
     /// </summary>
     [DataField]
-    public float AnimationScale = 1f;
+    public float CPAnimationScale = 1f;
+
+    /// <summary>
+    /// CrystallPunk Melee upgrade. how far away from the player the animation should be played.
+    /// </summary>
+    [DataField]
+    public float CPAnimationOffset = -1f;
 
     // Sounds
 

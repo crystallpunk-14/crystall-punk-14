@@ -17,9 +17,9 @@
     - state: icon
   - type: MeleeWeapon
     attackRate: 1.5
-    animationLength: 0.18
     wideAnimationRotation: 225
     wideAnimation: CPWeaponArcSlashLight
+    cPAnimationLength: 0.18
     damage:
       types:
         Blunt: 10
