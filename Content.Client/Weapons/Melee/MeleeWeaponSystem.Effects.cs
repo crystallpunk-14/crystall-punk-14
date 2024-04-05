@@ -14,7 +14,7 @@ public sealed partial class MeleeWeaponSystem
     private const string SlashAnimationKey = "melee-slash";
     private const string ThrustAnimationKey = "melee-thrust";
 
-    private const string CPSlashLightAnimationKey = "cp-melee-slash-light";
+    private const string CPSlashLightAnimationKey = "cp-melee-slash-light"; //CrystallPunk Melee upgrade
 
     /// <summary>
     /// Does all of the melee effects for a player that are predicted, i.e. character lunge and weapon animation.
@@ -44,8 +44,8 @@ public sealed partial class MeleeWeaponSystem
             return;
         }
 
-        var length = 1f;
-        var scale = 1f;
+        var length = 1f; //CrystallPunk Melee upgrade
+        var scale = 1f; //CrystallPunk Melee upgrade
         var spriteRotation = Angle.Zero;
         if (arcComponent.Animation != WeaponArcAnimation.None
             && TryComp(weapon, out MeleeWeaponComponent? meleeWeaponComponent))
@@ -59,12 +59,12 @@ public sealed partial class MeleeWeaponSystem
             if (meleeWeaponComponent.SwingLeft)
                 angle *= -1;
 
-            length = meleeWeaponComponent.AnimationLength;
-            scale = meleeWeaponComponent.AnimationScale;
+            length = meleeWeaponComponent.AnimationLength; //CrystallPunk Melee upgrade
+            scale = meleeWeaponComponent.AnimationScale; //CrystallPunk Melee upgrade
         }
         sprite.NoRotation = true;
         sprite.Rotation = localPos.ToWorldAngle();
-        sprite.Scale = new Vector2(scale);
+        sprite.Scale = new Vector2(scale); //CrystallPunk Melee upgrade
         var distance = Math.Clamp(localPos.Length() / 2f, 0.2f, 1f);
 
         var xform = _xformQuery.GetComponent(animationUid);
@@ -100,6 +100,7 @@ public sealed partial class MeleeWeaponSystem
                     _animation.Play(animationUid, GetFadeAnimation(sprite, length * 0.5f, length + 0.15f), FadeAnimationKey);
 
                 break;
+            //CrystallPunk MeleeUpgrade end
         }
     }
 
@@ -200,7 +201,7 @@ public sealed partial class MeleeWeaponSystem
     /// </summary>
     private Animation GetLungeAnimation(Vector2 direction)
     {
-        const float length = 0.2f;
+        const float length = 0.2f; // 0.1 original, CrystallPunk update
 
         return new Animation
         {
@@ -214,8 +215,8 @@ public sealed partial class MeleeWeaponSystem
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f),
-                        new AnimationTrackProperty.KeyFrame(direction.Normalized() * 0.15f, length/2),
+                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f), //CrystallPunk MeleeUpgrade 
+                        new AnimationTrackProperty.KeyFrame(direction.Normalized() * 0.15f, length/2), //CrystallPunk MeleeUpgrade
                         new AnimationTrackProperty.KeyFrame(Vector2.Zero, length)
                     }
                 }
@@ -223,6 +224,7 @@ public sealed partial class MeleeWeaponSystem
         };
     }
 
+    //CrystallPunk MeleeUpgrade start
     private Animation CPGetSlashLightAnimation(SpriteComponent sprite, Angle arc, Angle spriteRotation, float length)
     {
         var startRotation = sprite.Rotation + (arc * 0.5f);
@@ -265,5 +267,6 @@ public sealed partial class MeleeWeaponSystem
             }
         };
     }
+    //CrystallPunk MeleeUpgrade end
 
 }
