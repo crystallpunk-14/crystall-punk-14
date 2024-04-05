@@ -1,5 +1,5 @@
 - type: entity
-  name: цвайхендер #ToDo - сделать базовый двуручник
+  name: двуручный меч #ToDo - сделать базовый двуручник
   parent: 
   - BaseItem
   - CPBaseWeaponChemical
@@ -7,10 +7,10 @@
   description: Мощное оружие, требующее огромной силы и умения для эффективного использования.
   components:
   - type: Sprite
-    sprite: CrystallPunk/Objects/Weapons/Melee/zweichhender.rsi
+    sprite: CrystallPunk/Objects/Weapons/Melee/TwoHandedSword/twoHandedSword.rsi
     state: icon
   - type: Clothing
-    sprite: CrystallPunk/Objects/Weapons/Melee/zweichhender.rsi
+    sprite: CrystallPunk/Objects/Weapons/Melee/TwoHandedSword/twoHandedSword.rsi
     quickEquip: false
     slots:
     - back
@@ -18,12 +18,12 @@
   - type: MeleeWeapon
     attackRate: 0.5
     animationLength: 0.8
-    range: 3.5
-    wideAnimationRotation: 225
+    wideAnimationRotation: 225 #TODO fix
     wideAnimation: CPWeaponArcSlashLight
     damage:
       types:
-        Slash: 10
+        Slash: 5
+        Blunt: 3
         Structural: 5
     soundHit:
       collection: MetalThud
@@ -31,7 +31,10 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 30
+        Slash: 20
+        Blunt: 10
         Structural: 5
   - type: Item
     size: Ginormous
+    #Slow on equip
+    #Slow in hands

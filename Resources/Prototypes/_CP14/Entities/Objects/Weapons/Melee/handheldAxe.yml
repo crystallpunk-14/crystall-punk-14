@@ -5,7 +5,7 @@
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
   - CPBaseWeaponLight
-  id: CPBaseDagger
+  id: CPBaseHandheldAxe
   description: Небольшой, надежный топорик.
   components:
   - type: Item

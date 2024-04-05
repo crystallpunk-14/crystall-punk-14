@@ -51,35 +51,13 @@
   components:
   - type: MeleeWeapon
     resetOnHandSelected: false
-    
-# Simple melee weapons
 
-# Battle Staff
-# Mace
-# Stick
-# Spear
-# Light Hammer
-# Throwing spear
-# Hand axe
-# Sickle
+- type: entity
+  id: CPBaseWeaponShort
+  abstract: true
+  components: 
+  - type: MeleeWeapon
+    range: 1.0 # 1.5 standart
+    animationSize: 0.8
+    #animationOffset: 0.8 # TODO
 
-# Military melee weapons
-
-# Halberd
-# Battle pick
-# Warhammer
-# Battle axe
-# Glaive
-
-# Long spear
-# Long sword
-# Whip
-# Short sword
-# Hammer
-# Morgenstern
-# Pika
-# Rapier
-# Axe
-# Scimitar
-# Trident
-# Chain
