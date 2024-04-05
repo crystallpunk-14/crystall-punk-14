@@ -391,6 +391,14 @@ entities:
     - type: GridTree
     - type: MovedGrids
     - type: MapLight
+    - type: CPMapEventsScheduler
+      minimumTimeUntilFirstEvent: 5
+      minimumTimeBetweenEvents: 50
+      maximumTimeBetweenEvents: 120
+      whitelistedEvents:
+      - CPWeatherRain
+      - CPWeatherStorm
+      - CPWeatherAshfallHeavy
     - type: DayCycle
       timeEntries:
       - startColor: "#754a4a" #Рассвет

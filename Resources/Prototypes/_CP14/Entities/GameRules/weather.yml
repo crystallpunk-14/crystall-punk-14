@@ -1,0 +1,29 @@
+- type: entity
+  id: CPWeatherStorm
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: CPWeatherRule
+    weather: Storm
+    minimumLength: 30
+    maximumLength: 120
+
+- type: entity
+  id: CPWeatherRain
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: CPWeatherRule
+    weather: Rain
+    minimumLength: 30
+    maximumLength: 120
+
+- type: entity
+  id: CPWeatherAshfallHeavy
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: CPWeatherRule
+    weather: AshfallHeavy
+    minimumLength: 30
+    maximumLength: 120
