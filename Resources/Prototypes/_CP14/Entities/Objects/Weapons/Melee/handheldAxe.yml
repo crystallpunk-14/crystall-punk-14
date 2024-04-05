@@ -30,3 +30,13 @@
   - type: EmbeddableProjectile
     offset: 0.15,0.15
     removalTime: 1.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 5
+        Piercing: 5
+  - type: DamageOnLand
+    damage:
+      types:
+        Slash: 5
+        Piercing: 5

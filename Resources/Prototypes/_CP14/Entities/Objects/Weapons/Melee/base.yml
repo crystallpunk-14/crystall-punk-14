@@ -58,6 +58,6 @@
   components: 
   - type: MeleeWeapon
     range: 1.0 # 1.5 standart
-    animationSize: 0.8
+    #animationSize: 0.8
     #animationOffset: 0.8 # TODO
 
