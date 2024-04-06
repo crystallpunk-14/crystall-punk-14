@@ -18,6 +18,10 @@
     {
       "name": "ears3",
       "directions": 4
+    },
+    {
+      "name": "ears3_broken",
+      "directions": 4
     }
   ]
 }
