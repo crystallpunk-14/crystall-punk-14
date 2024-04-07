@@ -27,6 +27,7 @@
 - type: entity
   id: CPStoneRuinWall
   name: каменная стена руин
+  suffix: Устаревший формат спрайта!
   parent: CPBaseWall
   description: Эти стены повидали многое, и осталось им недолго.
   components:
@@ -55,6 +56,7 @@
 - type: entity
   id: CPCaveStoneWall
   name: каменная порода
+  suffix: Устаревший формат спрайта!
   parent: CPBaseWall
   description: Прочная каменная природная стена. От нее веет пещерным холодом.
   components:
