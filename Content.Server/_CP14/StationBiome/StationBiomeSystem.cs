@@ -5,7 +5,7 @@ using Content.Server.Station.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.CrystallPunk.SpawnMapBiome;
+namespace Content.Server._CP14.StationBiome;
 public sealed partial class StationBiomeSystem : EntitySystem
 {
     [Dependency] private readonly BiomeSystem _biome = default!;

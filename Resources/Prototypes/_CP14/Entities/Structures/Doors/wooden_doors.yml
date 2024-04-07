@@ -65,3 +65,18 @@
         whitelist:
           components:
           - CPLock
+
+- type: entity
+  parent: CPBaseWoodDoor
+  id: CPDebugDungeonDoor
+  suffix: Dungeon
+  components:
+  - type: CPDungeonEntrance
+
+- type: entity
+  parent: Crowbar
+  id: CPDebugDungeonCrowbar
+  suffix: Dungeon
+  name: генеративный лом
+  components:
+  - type: CPDungeonEntrance

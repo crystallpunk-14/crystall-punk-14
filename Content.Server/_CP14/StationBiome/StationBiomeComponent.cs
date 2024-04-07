@@ -1,7 +1,7 @@
 using Content.Shared.Parallax.Biomes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.CrystallPunk.SpawnMapBiome;
+namespace Content.Server._CP14.StationBiome;
 
 /// <summary>
 /// allows you to initialize a planet on a specific map at initialization time.
