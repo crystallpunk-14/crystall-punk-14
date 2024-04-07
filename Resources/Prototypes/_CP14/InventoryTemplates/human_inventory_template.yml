@@ -7,69 +7,69 @@
       slotTexture: ring
       slotFlags: GLOVES
       uiWindowPos: 0,1
-      strippingWindowPos: 0,0
+      strippingWindowPos: 0,3
       displayName: Ring
     - name: neck
       slotTexture: neck
       slotFlags: NECK
       uiWindowPos: 0,2
-      strippingWindowPos: 0,0
+      strippingWindowPos: 1,2
       displayName: Neck
     - name: eyes
       slotTexture: eyes
       slotFlags: EYES
       uiWindowPos: 0,3
-      strippingWindowPos: 0,0
+      strippingWindowPos: 0,1
       displayName: Eyes
     # 1, y
     - name: shoes
       slotTexture: shoes
       slotFlags: FEET
       uiWindowPos: 1,0
-      strippingWindowPos: 0,0
+      strippingWindowPos: 1,5
       displayName: Shoes
     - name: pants
       slotTexture: pants
       slotFlags: GLOVES
       uiWindowPos: 1,1
-      strippingWindowPos: 0,0
+      strippingWindowPos: 1,4
       displayName: Pants
     - name: shirt
       slotTexture: shirt
       slotFlags: GLOVES
       uiWindowPos: 1,2
-      strippingWindowPos: 0,0
+      strippingWindowPos: 1,3
       displayName: Shirt
     - name: head
       slotTexture: head
       slotFlags: HEAD
       uiWindowPos: 1,3
-      strippingWindowPos: 0,0
+      strippingWindowPos: 1,1
       displayName: Head
     # 2, y
     - name: gloves
       slotTexture: gloves
       slotFlags: GLOVES
       uiWindowPos: 2,0
-      strippingWindowPos: 0,0
+      strippingWindowPos: 0,2
       displayName: Gloves
     - name: ring2
       slotTexture: ring
       slotFlags: GLOVES
       uiWindowPos: 2,1
-      strippingWindowPos: 0,0
+      strippingWindowPos: 2,3
       displayName: Ring
     - name: cloak
       slotTexture: cloak
       slotFlags: GLOVES
       uiWindowPos: 2,2
-      strippingWindowPos: 0,0
+      strippingWindowPos: 2,2
       displayName: Cloak
     - name: mask
       slotTexture: mask
       slotFlags: MASK
       uiWindowPos: 2,3
-      strippingWindowPos: 0,0
+      strippingWindowPos: 2,1
       displayName: Mask
     # Main hotbar
     - name: belt1
@@ -77,14 +77,14 @@
       slotFlags: BELT
       slotGroup: SecondHotbar
       uiWindowPos: 0,0
-      strippingWindowPos: 0,0
+      strippingWindowPos: 0,4
       displayName: Belt
     - name: keys
       slotTexture: keys
       slotFlags: GLOVES
       slotGroup: SecondHotbar
       uiWindowPos: 0,0
-      strippingWindowPos: 0,0
+      strippingWindowPos: 2,5
       displayName: Keys
       stripHidden: true
     - name: back
@@ -92,7 +92,7 @@
       slotFlags: BACK
       slotGroup: SecondHotbar
       uiWindowPos: 0,0
-      strippingWindowPos: 0,0
+      strippingWindowPos: 0,5
       displayName: Back
     # Right hand
     # Left hand
@@ -110,7 +110,7 @@
       slotFlags: POCKET
       slotGroup: MainHotbar
       uiWindowPos: 1,0
-      strippingWindowPos: 0,0
+      strippingWindowPos: 1,0
       dependsOn: pants
       displayName: Pocket
       stripHidden: true
@@ -119,5 +119,5 @@
       slotFlags: BELT
       slotGroup: MainHotbar
       uiWindowPos: 2,0
-      strippingWindowPos: 0,0
+      strippingWindowPos: 2,4
       displayName: Belt
