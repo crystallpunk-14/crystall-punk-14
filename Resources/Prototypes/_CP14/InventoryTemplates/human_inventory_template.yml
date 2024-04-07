@@ -1,107 +1,123 @@
 ﻿- type: inventoryTemplate
   id: CPHuman
   slots:
-    - name: shoes
-      slotTexture: shoes
-      slotFlags: FEET
-      stripTime: 3
-      uiWindowPos: 1,0
-      strippingWindowPos: 1,3
-      displayName: Shoes
-    - name: jumpsuit
-      slotTexture: uniform
-      slotFlags: INNERCLOTHING
-      stripTime: 6
-      uiWindowPos: 0,1
-      strippingWindowPos: 0,2
-      displayName: Jumpsuit
-    - name: outerClothing
-      slotTexture: suit
-      slotFlags: OUTERCLOTHING
-      stripTime: 6
-      uiWindowPos: 1,1
-      strippingWindowPos: 1,2
-      displayName: Suit
-    - name: gloves
-      slotTexture: gloves
+    # Left hotbar
+    # 0, y
+    - name: ring1
+      slotTexture: ring
       slotFlags: GLOVES
-      uiWindowPos: 2,1
-      strippingWindowPos: 2,2
-      displayName: Gloves
+      uiWindowPos: 0,1
+      strippingWindowPos: 0,0
+      displayName: Ring
     - name: neck
       slotTexture: neck
       slotFlags: NECK
       uiWindowPos: 0,2
-      strippingWindowPos: 0,1
+      strippingWindowPos: 0,0
       displayName: Neck
-    - name: mask
-      slotTexture: mask
-      slotFlags: MASK
-      uiWindowPos: 1,2
-      strippingWindowPos: 1,1
-      displayName: Mask
     - name: eyes
-      slotTexture: glasses
+      slotTexture: eyes
       slotFlags: EYES
-      stripTime: 3
       uiWindowPos: 0,3
       strippingWindowPos: 0,0
       displayName: Eyes
-    - name: ears
-      slotTexture: ears
-      slotFlags: EARS
-      stripTime: 3
-      uiWindowPos: 2,2
-      strippingWindowPos: 2,0
-      displayName: Ears
+    # 1, y
+    - name: shoes
+      slotTexture: shoes
+      slotFlags: FEET
+      uiWindowPos: 1,0
+      strippingWindowPos: 0,0
+      displayName: Shoes
+    - name: pants
+      slotTexture: pants
+      slotFlags: GLOVES
+      uiWindowPos: 1,1
+      strippingWindowPos: 0,0
+      displayName: Pants
+    - name: shirt
+      slotTexture: shirt
+      slotFlags: GLOVES
+      uiWindowPos: 1,2
+      strippingWindowPos: 0,0
+      displayName: Shirt
     - name: head
       slotTexture: head
       slotFlags: HEAD
       uiWindowPos: 1,3
-      strippingWindowPos: 1,0
+      strippingWindowPos: 0,0
       displayName: Head
+    # 2, y
+    - name: gloves
+      slotTexture: gloves
+      slotFlags: GLOVES
+      uiWindowPos: 2,0
+      strippingWindowPos: 0,0
+      displayName: Gloves
+    - name: ring2
+      slotTexture: ring
+      slotFlags: GLOVES
+      uiWindowPos: 2,1
+      strippingWindowPos: 0,0
+      displayName: Ring
+    - name: cloak
+      slotTexture: cloak
+      slotFlags: GLOVES
+      uiWindowPos: 2,2
+      strippingWindowPos: 0,0
+      displayName: Cloak
+    - name: mask
+      slotTexture: mask
+      slotFlags: MASK
+      uiWindowPos: 2,3
+      strippingWindowPos: 0,0
+      displayName: Mask
+    # Main hotbar
+    - name: belt1
+      slotTexture: belt
+      slotFlags: BELT
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,0
+      displayName: Belt
+    - name: keys
+      slotTexture: keys
+      slotFlags: GLOVES
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,0
+      displayName: Keys
+      stripHidden: true
+    - name: back
+      slotTexture: back
+      slotFlags: BACK
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,0
+      displayName: Back
+    # Right hand
+    # Left hand
     - name: pocket1
       slotTexture: pocket
       slotFlags: POCKET
       slotGroup: MainHotbar
-      stripTime: 3
-      uiWindowPos: 0,3
-      strippingWindowPos: 0,4
-      dependsOn: jumpsuit
-      displayName: Pocket 1
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,0
+      dependsOn: pants
+      displayName: Pocket
       stripHidden: true
     - name: pocket2
       slotTexture: pocket
       slotFlags: POCKET
       slotGroup: MainHotbar
-      stripTime: 3
-      uiWindowPos: 2,3
-      strippingWindowPos: 1,4
-      dependsOn: jumpsuit
-      displayName: Pocket 2
+      uiWindowPos: 1,0
+      strippingWindowPos: 0,0
+      dependsOn: pants
+      displayName: Pocket
       stripHidden: true
-    - name: suitstorage
-      slotTexture: suit_storage
-      slotFlags:   SUITSTORAGE
-      slotGroup: MainHotbar
-      stripTime: 3
-      uiWindowPos: 2,0
-      strippingWindowPos: 2,5
-      dependsOn: outerClothing
-      displayName: Suit Storage
-    - name: belt
+    - name: belt2
       slotTexture: belt
       slotFlags: BELT
-      slotGroup: SecondHotbar
-      stripTime: 6
-      uiWindowPos: 3,1
-      strippingWindowPos: 1,5
+      slotGroup: MainHotbar
+      uiWindowPos: 2,0
+      strippingWindowPos: 0,0
       displayName: Belt
-    - name: back
-      slotTexture: back
-      slotFlags: BACK
-      slotGroup: SecondHotbar
-      stripTime: 6
-      uiWindowPos: 3,0
-      strippingWindowPos: 0,5
-      displayName: Back
