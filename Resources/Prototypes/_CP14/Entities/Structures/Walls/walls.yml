@@ -8,6 +8,10 @@
     mode: SnapgridCenter
     snap:
     - Wall
+  components:
+  - type: Tag
+    tags:
+    - Wall
     
 - type: entity
   id: CPDebugWall

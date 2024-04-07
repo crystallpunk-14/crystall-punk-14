@@ -1,16 +1,21 @@
 using System.Threading;
+using Content.Server.Atmos.EntitySystems;
+using Content.Server.Parallax;
 using Content.Server.Procedural;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Dungeon;
+using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Teleportation.Systems;
+using FastAccessors;
 using Robust.Server.Audio;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Dungeon;
 
@@ -27,6 +32,9 @@ public sealed partial class CPDungeonSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly AtmosphereSystem _atmos = default!;
+    [Dependency] private readonly BiomeSystem _biome = default!;
+    [Dependency] private readonly AnchorableSystem _anchorable = default!;
 
 
 
@@ -47,15 +55,26 @@ public sealed partial class CPDungeonSystem : EntitySystem
         var tempLevelParams = new CPDungeonLevelParams();
         tempLevelParams.Seed = _random.Next(0,1000);
         tempLevelParams.Depth = 0;
-        tempLevelParams.DungeonConfig = "Haunted";
+        tempLevelParams.DungeonConfig = "CPDungeonTest";
+        tempLevelParams.MobFaction = "Xenos";
+        tempLevelParams.BiomeTemplate = "CPSolidRock";
         SpawnDungeonLevel(tempLevelParams);
     }
 
     private void SpawnDungeonLevel(CPDungeonLevelParams levelParams)
     {
+        if (_station.GetStations().FirstOrNull() is not { } station)
+            return;
+
+        if (!TryComp<CPStationDungeonDataComponent>(station, out var dunData))
+            return;
+
         var cancelToken = new CancellationTokenSource();
         var job = new CPSpawnDungeonLevelJob(
             DungeonGenTime,
+            _anchorable,
+            _atmos,
+            _biome,
             EntityManager,
             _logManager,
             _mapManager,
@@ -63,6 +82,7 @@ public sealed partial class CPDungeonSystem : EntitySystem
             _dungeon,
             _metaData,
             levelParams,
+            dunData,
             cancelToken.Token);
 
         _dungeonGenJobs.Add((job, cancelToken));

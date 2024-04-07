@@ -1,5 +1,6 @@
 
 using Content.Shared.Procedural;
+using Content.Shared.Procedural.Loot;
 using Robust.Shared.Prototypes;
 
 /// <summary>
@@ -9,5 +10,14 @@ using Robust.Shared.Prototypes;
 public sealed partial class CPStationDungeonDataComponent : Component
 {
     [DataField]
-    public ProtoId<DungeonConfigPrototype> config = "Haunted";
+    public float StartLootBudget = 15f;
+
+    [DataField]
+    public float StartMobBudget = 10f;
+
+    [DataField]
+    public float LootBudgetPerLevel = 2f;
+
+    [DataField]
+    public float MobBudgetPerLevel = 2f;
 }

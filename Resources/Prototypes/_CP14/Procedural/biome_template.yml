@@ -1,0 +1,20 @@
+- type: biomeTemplate
+  id: CPSolidRock
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorBasalt
+    - !type:BiomeEntityLayer
+      threshold: -0.75
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.1
+        gain: 0.5
+      allowedTiles:
+        - FloorBasalt
+      entities:
+        - CPCaveStoneWall

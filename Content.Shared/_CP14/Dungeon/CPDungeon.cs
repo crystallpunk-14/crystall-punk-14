@@ -1,4 +1,6 @@
+using Content.Shared.Parallax.Biomes;
 using Content.Shared.Procedural;
+using Content.Shared.Salvage.Expeditions;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -15,4 +17,10 @@ public sealed record CPDungeonLevelParams
 
     [DataField]
     public ProtoId<DungeonConfigPrototype> DungeonConfig;
+
+    [DataField]
+    public ProtoId<SalvageFactionPrototype> MobFaction;
+
+    [DataField]
+    public ProtoId<BiomeTemplatePrototype> BiomeTemplate;
 }

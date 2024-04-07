@@ -68,8 +68,34 @@
 
 - type: entity
   parent: CPBaseWoodDoor
-  id: CPDebugDungeonDoor
-  name: спуск в подземелье
+  id: CPDebugDungeonGenerator
+  name: спуск в подземелье (генератор)
   suffix: Dungeon
   components:
   - type: CPDungeonEntrance
+
+- type: entity
+  parent: PortalBlue
+  id: CPDebugExitDungeon
+  name: выход из данжа
+  components:
+  - type: Tag
+    tags:
+    - Wall
+  - type: Portal
+    canTeleportToOtherMaps: true
+    randomTeleport: false
+  - type: CPAutoLink
+
+- type: entity
+  parent: PortalRed
+  id: CPDebugEntranceDungeon
+  name: вход в данж
+  components:
+  - type: Tag
+    tags:
+    - Wall
+  - type: Portal
+    canTeleportToOtherMaps: true
+    randomTeleport: false
+  - type: CPAutoLink
