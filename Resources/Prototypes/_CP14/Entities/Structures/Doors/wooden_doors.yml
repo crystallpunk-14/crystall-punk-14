@@ -69,14 +69,7 @@
 - type: entity
   parent: CPBaseWoodDoor
   id: CPDebugDungeonDoor
+  name: спуск в подземелье
   suffix: Dungeon
-  components:
-  - type: CPDungeonEntrance
-
-- type: entity
-  parent: Crowbar
-  id: CPDebugDungeonCrowbar
-  suffix: Dungeon
-  name: генеративный лом
   components:
   - type: CPDungeonEntrance

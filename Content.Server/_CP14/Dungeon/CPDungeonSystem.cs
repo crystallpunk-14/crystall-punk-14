@@ -9,13 +9,13 @@ using Robust.Server.Audio;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Dungeon;
 
 public sealed partial class CPDungeonSystem : EntitySystem
 {
-    [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -25,6 +25,8 @@ public sealed partial class CPDungeonSystem : EntitySystem
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly DungeonSystem _dungeon = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
 
 
@@ -38,7 +40,6 @@ public sealed partial class CPDungeonSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CPDungeonEntranceComponent, ActivateInWorldEvent>(OnActivateInWorld);
-        SubscribeLocalEvent<CPDungeonEntranceComponent, UseInHandEvent>(OnUseInHand);
     }
 
     private void OnActivateInWorld(Entity<CPDungeonEntranceComponent> entrance, ref ActivateInWorldEvent args)
@@ -46,14 +47,7 @@ public sealed partial class CPDungeonSystem : EntitySystem
         var tempLevelParams = new CPDungeonLevelParams();
         tempLevelParams.Seed = _random.Next(0,1000);
         tempLevelParams.Depth = 0;
-        SpawnDungeonLevel(tempLevelParams);
-    }
-
-    private void OnUseInHand(Entity<CPDungeonEntranceComponent> entrance, ref UseInHandEvent args)
-    {
-        var tempLevelParams = new CPDungeonLevelParams();
-        tempLevelParams.Seed = _random.Next(0,1000);
-        tempLevelParams.Depth = 0;
+        tempLevelParams.DungeonConfig = "Haunted";
         SpawnDungeonLevel(tempLevelParams);
     }
 
@@ -65,6 +59,8 @@ public sealed partial class CPDungeonSystem : EntitySystem
             EntityManager,
             _logManager,
             _mapManager,
+            _prototypeManager,
+            _dungeon,
             _metaData,
             levelParams,
             cancelToken.Token);
