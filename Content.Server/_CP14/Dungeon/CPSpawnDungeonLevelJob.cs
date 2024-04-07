@@ -36,8 +36,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
     protected override async Task<bool> Process()
     {
         //Init empty map
-        _sawmill.Debug("dungeon",$"Spawning new dungeon level?");
-        _sawmill.Debug("dungeon",$"Spawning new dungeon level with seed {_levelParams.Seed}. Depth: {_levelParams.Depth}");
+        _sawmill.Debug($"Spawning new dungeon level with seed {_levelParams.Seed}. Depth: {_levelParams.Depth}");
         var mapId = _mapManager.CreateMap();
         var mapUid = _mapManager.GetMapEntityId(mapId);
         _mapManager.AddUninitializedMap(mapId);
@@ -45,6 +44,9 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
         var random = new Random(_levelParams.Seed);
         _metaData.SetEntityName(mapUid,$"MapId: {mapId}, Depth: {_levelParams.Depth}");
+
+        //Setup level configs
+
 
         return true;
     }

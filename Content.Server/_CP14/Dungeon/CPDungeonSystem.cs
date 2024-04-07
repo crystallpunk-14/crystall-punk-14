@@ -59,8 +59,6 @@ public sealed partial class CPDungeonSystem : EntitySystem
 
     private void SpawnDungeonLevel(CPDungeonLevelParams levelParams)
     {
-        _logManager.GetSawmill("dungeonGen").Debug("Try Start Async task");
-
         var cancelToken = new CancellationTokenSource();
         var job = new CPSpawnDungeonLevelJob(
             DungeonGenTime,
@@ -73,5 +71,6 @@ public sealed partial class CPDungeonSystem : EntitySystem
 
         _dungeonGenJobs.Add((job, cancelToken));
         _dungeonGenQueue.EnqueueJob(job);
+        _dungeonGenQueue.Process();
     }
 }
