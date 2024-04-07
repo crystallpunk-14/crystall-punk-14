@@ -102,18 +102,16 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         moles[(int) Gas.Oxygen] = 21.824779f;
         moles[(int) Gas.Nitrogen] = 82.10312f;
 
-        _mapManager.DoMapInitialize(mapId);
-        _mapManager.SetMapPaused(mapId, false);
         var mixture = new GasMixture(moles, Atmospherics.T20C);
 
         _atmos.SetMapAtmosphere(mapUid, false, mixture);
+        _mapManager.DoMapInitialize(mapId);
 
         //Spawn dungeon
         _sawmill.Debug($"Spawn Dungeon");
         var config = _prototypeManager.Index(_levelParams.DungeonConfig);
         var dungeon = await WaitAsyncTask(_dungeon.GenerateDungeonAsync(config, mapUid, grid, Vector2i.Zero, _levelParams.Seed));
 
-        _sawmill.Debug($"Bruh");
         // Aborty
         if (dungeon.Rooms.Count == 0)
         {
@@ -153,6 +151,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         //Loot
         var lootBudget = _dungeonData.StartLootBudget + _dungeonData.LootBudgetPerLevel * _levelParams.Depth;
 
+        _mapManager.SetMapPaused(mapId, false);
         return true;
     }
 
