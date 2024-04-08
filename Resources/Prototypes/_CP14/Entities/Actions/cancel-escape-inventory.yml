@@ -1,0 +1,10 @@
+- type: entity
+  id: ActionCancelEscape
+  name: Прекратить вырываться
+  description: Успокоиться, и прекратить вырываться.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: _NF/Actions/escapeinventory.rsi/cancel-escape.png
+    event: !type:EscapeInventoryCancelActionEvent
+    useDelay: 2

@@ -1,2 +1,5 @@
 - type: Tag
   id: CPKey
+
+- type: Tag
+  id: PreventLabel
