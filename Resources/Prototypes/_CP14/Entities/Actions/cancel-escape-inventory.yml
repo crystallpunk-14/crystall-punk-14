@@ -5,6 +5,6 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: _NF/Actions/escapeinventory.rsi/cancel-escape.png
+    icon: _CP14/Actions/escapeinventory.rsi/cancel-escape.png
     event: !type:EscapeInventoryCancelActionEvent
     useDelay: 2
