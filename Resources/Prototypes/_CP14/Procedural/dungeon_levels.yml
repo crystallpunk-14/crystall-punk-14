@@ -1,0 +1,14 @@
+- type: dungeonLevel
+  id: TestProceduralLevel
+  level: !type: RandomDungeonLevel
+    dungeonConfig: CPDungeonTest
+    lootBudgetPerDepth: 5
+    lootPrototype: SalvageLoot
+    mobBudgetPerDepth: 5
+    mobFaction: Xenos
+
+- type: dungeonLevel
+  id: TestMappingLevel
+  level: !type: MappingGridDungeonLevel
+    path: "/Maps/Shuttles/cargo.yml"
+
