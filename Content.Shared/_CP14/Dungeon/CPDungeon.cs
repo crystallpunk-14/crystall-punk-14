@@ -1,5 +1,6 @@
 using Content.Shared.Parallax.Biomes;
 using Content.Shared.Procedural;
+using Content.Shared.Procedural.Loot;
 using Content.Shared.Salvage.Expeditions;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -23,4 +24,7 @@ public sealed record CPDungeonLevelParams
 
     [DataField]
     public ProtoId<BiomeTemplatePrototype> BiomeTemplate;
+
+    [DataField]
+    public ProtoId<SalvageLootPrototype> LootPrototype;
 }

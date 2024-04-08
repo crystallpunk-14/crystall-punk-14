@@ -76,10 +76,11 @@ public sealed partial class CPDungeonSystem : EntitySystem
     {
         var tempLevelParams = new CPDungeonLevelParams();
         tempLevelParams.Seed = _random.Next(0,1000);
-        tempLevelParams.Depth = 0;
+        tempLevelParams.Depth = 10;
         tempLevelParams.DungeonConfig = "CPDungeonTest";
         tempLevelParams.MobFaction = "Xenos";
         tempLevelParams.BiomeTemplate = "CPSolidRock";
+        tempLevelParams.LootPrototype = "SalvageLoot";
         SpawnDungeonLevel(tempLevelParams);
     }
 

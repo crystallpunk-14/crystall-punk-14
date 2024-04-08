@@ -150,6 +150,36 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
 
         //Loot
         var lootBudget = _dungeonData.StartLootBudget + _dungeonData.LootBudgetPerLevel * _levelParams.Depth;
+        var loot = _prototypeManager.Index<SalvageLootPrototype>(_levelParams.LootPrototype);
+
+        foreach (var rule in loot.LootRules)
+        {
+            switch (rule)
+            {
+                case RandomSpawnsLoot randomLoot:
+                    budgetEntries.Clear();
+                    foreach (var entry in randomLoot.Entries)
+                    {
+                        budgetEntries.Add(entry);
+                    }
+
+                    probSum = budgetEntries.Sum(x => x.Prob);
+
+                    while (lootBudget > 0f)
+                    {
+                        var entry = randomSystem.GetBudgetEntry(ref lootBudget, ref probSum, budgetEntries, random);
+                        if (entry == null)
+                            break;
+
+                        _sawmill.Debug($"Spawning dungeon loot {entry.Proto}");
+                        await SpawnRandomEntry(grid, entry, dungeon, random);
+                    }
+
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+        }
 
         _mapManager.SetMapPaused(mapId, false);
         return true;
