@@ -15,4 +15,8 @@ public sealed partial class CanEscapeInventoryComponent : Component
 
     [DataField("doAfter")]
     public DoAfterId? DoAfter;
+
+    //CrystallPunk: Port Carrying from Frontier
+    [DataField]
+    public EntityUid? EscapeCancelAction;
 }

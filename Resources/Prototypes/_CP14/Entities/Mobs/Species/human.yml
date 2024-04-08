@@ -20,3 +20,4 @@
   - type: Body
     prototype: CPHuman
     requiredLegs: 2
+  - type: Carriable
