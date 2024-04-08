@@ -7,14 +7,17 @@ using Content.Shared._CP14.Dungeon;
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Salvage.Expeditions;
 using Content.Shared.Teleportation.Systems;
 using FastAccessors;
 using Robust.Server.Audio;
+using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Dungeon;
@@ -26,6 +29,7 @@ public sealed partial class CPDungeonSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -48,6 +52,24 @@ public sealed partial class CPDungeonSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CPDungeonEntranceComponent, ActivateInWorldEvent>(OnActivateInWorld);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var currentTime = _timing.CurTime;
+        _dungeonGenQueue.Process();
+
+        foreach (var (job, cancelToken) in _dungeonGenJobs.ToArray())
+        {
+            switch (job.Status)
+            {
+                case JobStatus.Finished:
+                    _dungeonGenJobs.Remove((job, cancelToken));
+                    break;
+            }
+        }
     }
 
     private void OnActivateInWorld(Entity<CPDungeonEntranceComponent> entrance, ref ActivateInWorldEvent args)
@@ -87,6 +109,5 @@ public sealed partial class CPDungeonSystem : EntitySystem
 
         _dungeonGenJobs.Add((job, cancelToken));
         _dungeonGenQueue.EnqueueJob(job);
-        _dungeonGenQueue.Process();
     }
 }
