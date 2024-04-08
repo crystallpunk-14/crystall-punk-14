@@ -15,7 +15,7 @@ public sealed partial class CPDungeonLevelPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 
-    [DataField]
+    [DataField(required: true)]
     public IDungeonLevel Level = default!;
 }
 

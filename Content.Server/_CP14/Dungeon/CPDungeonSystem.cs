@@ -74,17 +74,11 @@ public sealed partial class CPDungeonSystem : EntitySystem
 
     private void OnActivateInWorld(Entity<CPDungeonEntranceComponent> entrance, ref ActivateInWorldEvent args)
     {
-        var tempLevelParams = new CPDungeonLevelParams();
-        tempLevelParams.Seed = _random.Next(0,1000);
-        tempLevelParams.Depth = 10;
-        tempLevelParams.DungeonConfig = "CPDungeonTest";
-        tempLevelParams.MobFaction = "Xenos";
-        tempLevelParams.BiomeTemplate = "CPSolidRock";
-        tempLevelParams.LootPrototype = "SalvageLoot";
-        SpawnDungeonLevel(tempLevelParams);
+        //Вообще тут должна быть генерация всего данжа целиком в будущем
+        SpawnDungeonLevel("TestProceduralLevel");
     }
 
-    private void SpawnDungeonLevel(CPDungeonLevelParams levelParams)
+    private void SpawnDungeonLevel(ProtoId<CPDungeonLevelPrototype> levelParams)
     {
         if (_station.GetStations().FirstOrNull() is not { } station)
             return;

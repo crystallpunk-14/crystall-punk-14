@@ -1,6 +1,6 @@
 - type: dungeonLevel
   id: TestProceduralLevel
-  level: !type: RandomDungeonLevel
+  level: !type:RandomDungeonLevel
     dungeonConfig: CPDungeonTest
     lootBudgetPerDepth: 5
     lootPrototype: SalvageLoot
@@ -9,6 +9,6 @@
 
 - type: dungeonLevel
   id: TestMappingLevel
-  level: !type: MappingGridDungeonLevel
+  level: !type:MappingGridDungeonLevel
     path: "/Maps/Shuttles/cargo.yml"
 

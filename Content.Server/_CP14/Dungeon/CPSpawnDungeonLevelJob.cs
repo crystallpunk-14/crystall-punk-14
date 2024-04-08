@@ -33,7 +33,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
     private readonly IPrototypeManager _prototypeManager;
     private readonly DungeonSystem _dungeon;
     private readonly MetaDataSystem _metaData;
-    private readonly CPDungeonLevelParams _levelParams;
+    private readonly ProtoId<CPDungeonLevelPrototype> _levelProto;
     private readonly AtmosphereSystem _atmos;
     private readonly BiomeSystem _biome;
     private readonly AnchorableSystem _anchorable;
@@ -52,7 +52,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         IPrototypeManager protoManager,
         DungeonSystem dungeon,
         MetaDataSystem metaData,
-        CPDungeonLevelParams levelParams,
+        ProtoId<CPDungeonLevelPrototype> levelPrototype,
         CPStationDungeonDataComponent dungeonData,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {
@@ -64,7 +64,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         _prototypeManager = protoManager;
         _metaData = metaData;
         _dungeon = dungeon;
-        _levelParams = levelParams;
+        _levelProto = levelPrototype;
         _dungeonData = dungeonData;
         _sawmill = logManager.GetSawmill("CRYSTALL PUNK DUNGEON LEVEL");
     }
@@ -72,23 +72,21 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
     protected override async Task<bool> Process()
     {
         //Init empty map
-        _sawmill.Debug($"Spawning new dungeon level with seed {_levelParams.Seed}. Depth: {_levelParams.Depth}");
         var mapId = _mapManager.CreateMap();
         var mapUid = _mapManager.GetMapEntityId(mapId);
         _mapManager.AddUninitializedMap(mapId);
         MetaDataComponent? metadata = null;
         var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
-        var random = new Random(_levelParams.Seed);
-        _metaData.SetEntityName(mapUid,$"MapId: {mapId}, Depth: {_levelParams.Depth}");
+        _metaData.SetEntityName(mapUid,$"MapId: {mapId}, Depth: Unknown?");
 
         //Biome spawn
-        _sawmill.Debug($"Biome");
-        var levelBiome = _prototypeManager.Index(_levelParams.BiomeTemplate);
-
-        var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
-        var biomeSystem = _entManager.System<BiomeSystem>();
-        biomeSystem.SetTemplate(mapUid, biome, levelBiome);
-        _entManager.Dirty(mapUid, biome);
+        //_sawmill.Debug($"Biome");
+        //var levelBiome = _prototypeManager.Index(_levelParams.BiomeTemplate);
+        //
+        //var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
+        //var biomeSystem = _entManager.System<BiomeSystem>();
+        //biomeSystem.SetTemplate(mapUid, biome, levelBiome);
+        //_entManager.Dirty(mapUid, biome);
 
         // Gravity
         _sawmill.Debug($"Gravity");
@@ -107,16 +105,41 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         _atmos.SetMapAtmosphere(mapUid, false, mixture);
         _mapManager.DoMapInitialize(mapId);
 
+
+        var levelParams = _prototypeManager.Index(_levelProto);
+
+        switch (levelParams.Level)
+        {
+            case MappingGridDungeonLevel mappingLevel:
+
+                _sawmill.Debug($"Spawning new mapped dungeon level {levelParams.ID}. Depth: Unknown?");
+
+                break;
+            case RandomDungeonLevel randomLevel:
+                await SpawnRandomDungeonLevel(randomLevel, mapUid, grid, 15);
+                break;
+        }
+
+        _mapManager.SetMapPaused(mapId, false);
+        return true;
+    }
+
+    private async Task SpawnRandomDungeonLevel(RandomDungeonLevel settings, EntityUid mapUid, MapGridComponent grid, float Depth)
+    {
+        _sawmill.Debug($"Spawning new random dungeon level with seed {settings.Seed}. Depth: {Depth}");
+        var random = new Random(settings.Seed);
+
         //Spawn dungeon
         _sawmill.Debug($"Spawn Dungeon");
-        var config = _prototypeManager.Index(_levelParams.DungeonConfig);
-        var dungeon = await WaitAsyncTask(_dungeon.GenerateDungeonAsync(config, mapUid, grid, Vector2i.Zero, _levelParams.Seed));
+        var config = _prototypeManager.Index(settings.DungeonConfig);
+        var dungeon =
+            await WaitAsyncTask(_dungeon.GenerateDungeonAsync(config, mapUid, grid, Vector2i.Zero, settings.Seed));
 
-        // Aborty
+        // Abort
         if (dungeon.Rooms.Count == 0)
         {
             _sawmill.Error($"Dungeon Level aborting!!!! PANIKA PANIKA");
-            return false;
+            return;
         }
 
         // FILLING DUNGEON
@@ -127,8 +150,8 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         //var exitProto = _prototypeManager.Index<SalvageLootPrototype>("CPDungeonExit");
 
         //Mobs
-        var mobBudget = _dungeonData.StartMobBudget + _dungeonData.MobBudgetPerLevel * _levelParams.Depth;
-        var faction = _prototypeManager.Index(_levelParams.MobFaction);
+        var mobBudget = settings.MobBudgetPerDepth * Depth;
+        var faction = _prototypeManager.Index(settings.MobFaction);
 
         _sawmill.Debug($"Mob Budget: {mobBudget}. Factions: ${faction}");
 
@@ -149,8 +172,8 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         }
 
         //Loot
-        var lootBudget = _dungeonData.StartLootBudget + _dungeonData.LootBudgetPerLevel * _levelParams.Depth;
-        var loot = _prototypeManager.Index<SalvageLootPrototype>(_levelParams.LootPrototype);
+        var lootBudget = settings.LootBudgetPerDepth * Depth;
+        var loot = _prototypeManager.Index(settings.LootPrototype);
 
         foreach (var rule in loot.LootRules)
         {
@@ -180,9 +203,6 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
                     throw new NotImplementedException();
             }
         }
-
-        _mapManager.SetMapPaused(mapId, false);
-        return true;
     }
 
     private async Task SpawnDungeonLoot(SalvageLootPrototype loot, EntityUid gridUid)

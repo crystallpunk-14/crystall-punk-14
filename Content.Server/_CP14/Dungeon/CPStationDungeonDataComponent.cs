@@ -9,15 +9,15 @@ using Robust.Shared.Prototypes;
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class CPStationDungeonDataComponent : Component
 {
-    [DataField]
-    public float StartLootBudget = 15f;
-
-    [DataField]
-    public float StartMobBudget = 10f;
-
-    [DataField]
-    public float LootBudgetPerLevel = 2f;
-
-    [DataField]
-    public float MobBudgetPerLevel = 2f;
+    //[DataField]
+    //public float StartLootBudget = 15f;
+    //
+    //[DataField]
+    //public float StartMobBudget = 10f;
+    //
+    //[DataField]
+    //public float LootBudgetPerLevel = 2f;
+    //
+    //[DataField]
+    //public float MobBudgetPerLevel = 2f;
 }
