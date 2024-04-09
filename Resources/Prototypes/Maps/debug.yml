@@ -25,6 +25,10 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: CPStationDungeonData
+          startLootBudget: 100
+          startMobBudget: 100
+          allowedLayers:
+          - LayerSolidRock
         - type: StationBiome
         - type: StationNameSetup
           mapNameTemplate: "Dev"

@@ -2,6 +2,7 @@ using System.Threading;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
+using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Dungeon;
 using Content.Shared.Construction.EntitySystems;
@@ -52,6 +53,12 @@ public sealed partial class CPDungeonSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CPDungeonEntranceComponent, ActivateInWorldEvent>(OnActivateInWorld);
+        SubscribeLocalEvent<CPStationDungeonDataComponent, StationPostInitEvent>(OnStationPostInit);
+    }
+
+    private void OnStationPostInit(Entity<CPStationDungeonDataComponent> station, ref StationPostInitEvent args)
+    {
+        SpawnDungeon("TestProceduralLevel");
     }
 
     public override void Update(float frameTime)
@@ -75,10 +82,10 @@ public sealed partial class CPDungeonSystem : EntitySystem
     private void OnActivateInWorld(Entity<CPDungeonEntranceComponent> entrance, ref ActivateInWorldEvent args)
     {
         //Вообще тут должна быть генерация всего данжа целиком в будущем
-        SpawnDungeonLevel("TestProceduralLevel");
+        SpawnDungeon("TestProceduralLevel");
     }
 
-    private void SpawnDungeonLevel(ProtoId<CPDungeonLevelPrototype> levelParams)
+    private void SpawnDungeon(ProtoId<CPDungeonLevelPrototype> levelParams)
     {
         if (_station.GetStations().FirstOrNull() is not { } station)
             return;

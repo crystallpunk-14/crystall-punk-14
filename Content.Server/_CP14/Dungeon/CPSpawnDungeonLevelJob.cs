@@ -71,56 +71,63 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
 
     protected override async Task<bool> Process()
     {
-        //Init empty map
-        var mapId = _mapManager.CreateMap();
-        var mapUid = _mapManager.GetMapEntityId(mapId);
-        _mapManager.AddUninitializedMap(mapId);
-        MetaDataComponent? metadata = null;
-        var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
-        _metaData.SetEntityName(mapUid,$"MapId: {mapId}, Depth: Unknown?");
-
-        //Biome spawn
-        //_sawmill.Debug($"Biome");
-        //var levelBiome = _prototypeManager.Index(_levelParams.BiomeTemplate);
-        //
-        //var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
-        //var biomeSystem = _entManager.System<BiomeSystem>();
-        //biomeSystem.SetTemplate(mapUid, biome, levelBiome);
-        //_entManager.Dirty(mapUid, biome);
-
-        // Gravity
-        _sawmill.Debug($"Gravity");
-        var gravity = _entManager.EnsureComponent<GravityComponent>(mapUid);
-        gravity.Enabled = true;
-        _entManager.Dirty(mapUid, gravity, metadata);
-
-        //Atmos
-        _sawmill.Debug($"Atmos");
-        var moles = new float[Atmospherics.AdjustedNumberOfGases];
-        moles[(int) Gas.Oxygen] = 21.824779f;
-        moles[(int) Gas.Nitrogen] = 82.10312f;
-
-        var mixture = new GasMixture(moles, Atmospherics.T20C);
-
-        _atmos.SetMapAtmosphere(mapUid, false, mixture);
-        _mapManager.DoMapInitialize(mapId);
-
-
-        var levelParams = _prototypeManager.Index(_levelProto);
-
-        switch (levelParams.Level)
+        foreach (var layer in _dungeonData.AllowedLayers)
         {
-            case MappingGridDungeonLevel mappingLevel:
+            var layerData = _prototypeManager.Index(layer);
+            //Init empty map
+            var mapId = _mapManager.CreateMap();
+            var mapUid = _mapManager.GetMapEntityId(mapId);
+            _mapManager.AddUninitializedMap(mapId);
+            MetaDataComponent? metadata = null;
+            var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
+            _metaData.SetEntityName(mapUid,$"MapId: {mapId}, Depth: Unknown?");
 
-                _sawmill.Debug($"Spawning new mapped dungeon level {levelParams.ID}. Depth: Unknown?");
+            //Biome spawn
+            _sawmill.Debug($"Biome");
+            var levelBiome = _prototypeManager.Index(layerData.BiomeTemplate);
 
-                break;
-            case RandomDungeonLevel randomLevel:
-                await SpawnRandomDungeonLevel(randomLevel, mapUid, grid, 15);
-                break;
+            var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
+            var biomeSystem = _entManager.System<BiomeSystem>();
+            biomeSystem.SetTemplate(mapUid, biome, levelBiome);
+            _entManager.Dirty(mapUid, biome);
+
+            // Gravity
+            if (layerData.GravityEnabled)
+            {
+                _sawmill.Debug($"Gravity");
+                var gravity = _entManager.EnsureComponent<GravityComponent>(mapUid);
+                gravity.Enabled = true;
+                _entManager.Dirty(mapUid, gravity, metadata);
+            }
+
+            //Atmos
+            _sawmill.Debug($"Atmos");
+            var moles = new float[Atmospherics.AdjustedNumberOfGases];
+            moles[(int) Gas.Oxygen] = 21.824779f;
+            moles[(int) Gas.Nitrogen] = 82.10312f;
+
+            var mixture = new GasMixture(moles, Atmospherics.T20C);
+
+            _atmos.SetMapAtmosphere(mapUid, false, mixture);
+            _mapManager.DoMapInitialize(mapId);
+
+            var levelParams = _prototypeManager.Index(_levelProto);
+
+            switch (levelParams.Level)
+            {
+                case MappingGridDungeonLevel mappingLevel:
+
+                    _sawmill.Debug($"Spawning new mapped dungeon level {levelParams.ID}. Depth: Unknown?");
+
+                    break;
+                case RandomDungeonLevel randomLevel:
+                    await SpawnRandomDungeonLevel(randomLevel, mapUid, grid, 15);
+                    break;
+            }
+
+            _mapManager.SetMapPaused(mapId, false);
         }
 
-        _mapManager.SetMapPaused(mapId, false);
         return true;
     }
 

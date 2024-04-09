@@ -1,4 +1,5 @@
 
+using Content.Shared._CP14.Dungeon;
 using Content.Shared.Procedural;
 using Content.Shared.Procedural.Loot;
 using Robust.Shared.Prototypes;
@@ -9,15 +10,12 @@ using Robust.Shared.Prototypes;
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class CPStationDungeonDataComponent : Component
 {
-    //[DataField]
-    //public float StartLootBudget = 15f;
-    //
-    //[DataField]
-    //public float StartMobBudget = 10f;
-    //
-    //[DataField]
-    //public float LootBudgetPerLevel = 2f;
-    //
-    //[DataField]
-    //public float MobBudgetPerLevel = 2f;
+    [DataField]
+    public float StartLootBudget = 15f;
+
+    [DataField]
+    public float StartMobBudget = 10f;
+
+    [DataField]
+    public List<ProtoId<CPDungeonLayerPrototype>> AllowedLayers = new ();
 }
