@@ -1,0 +1,18 @@
+- type: dungeonModifier
+  id: BlueLightCycle
+  components:
+  - type: MapLight
+  - type: DayCycle
+    timeEntries:
+    - startColor: "#000000"
+      duration: 30
+      isNight: true
+    - startColor: "#000000"
+      duration: 30
+      isNight: true
+    - startColor: "#0d1b29" 
+      duration: 30
+      isNight: true
+    - startColor: "#130d29"
+      duration: 30
+      isNight: true

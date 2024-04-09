@@ -12,9 +12,6 @@ public sealed partial class CPDungeonLayerPrototype : IPrototype
     [DataField]
     public ProtoId<BiomeTemplatePrototype> BiomeTemplate;
 
-    [DataField]
-    public bool GravityEnabled = true;
-
     /// <summary>
     /// minimum and maximum depth for this layer
     /// </summary>
@@ -22,5 +19,5 @@ public sealed partial class CPDungeonLayerPrototype : IPrototype
     public Vector2i Depths = new Vector2i(0, 0);
 
     [DataField]
-    public ComponentRegistry MapComponents = default!;
+    public List<ProtoId<CPDungeonLayerModifierPrototype>> AllowedModifiers = new();
 }

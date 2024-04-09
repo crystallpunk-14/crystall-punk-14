@@ -28,7 +28,6 @@ public sealed partial class CPDungeonSystem : EntitySystem
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -40,6 +39,7 @@ public sealed partial class CPDungeonSystem : EntitySystem
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly AnchorableSystem _anchorable = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
 
 
@@ -105,6 +105,7 @@ public sealed partial class CPDungeonSystem : EntitySystem
             _prototypeManager,
             _dungeon,
             _metaData,
+            _random,
             levelParams,
             dunData,
             cancelToken.Token);

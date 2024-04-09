@@ -2,28 +2,5 @@
   id: LayerSolidRock
   biomeTemplate: CPSolidRock
   depths: 0,10
-  mapComponents:
-  - type: MapLight
-  - type: DayCycle
-    timeEntries:
-    - startColor: "#754a4a" #Рассвет
-      duration: 30
-      isNight: false
-    - startColor: "#e0ba87" #Полдень
-      duration: 30
-      isNight: false
-    - startColor: "#bfeeff" #Полдень
-      duration: 30
-      isNight: false
-    - startColor: "#385163" #Вечер
-      duration: 30
-      isNight: true
-    - startColor: "#060d12" #Ночь
-      duration: 30
-      isNight: true
-    - startColor: "#000000" #Ночь
-      duration: 30
-      isNight: true
-    - startColor: "#120906" #Ночь
-      duration: 30
-      isNight: false
+  allowedModifiers:
+  - BlueLightCycle
