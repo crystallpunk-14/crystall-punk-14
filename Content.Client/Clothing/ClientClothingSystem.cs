@@ -36,13 +36,20 @@ public sealed class ClientClothingSystem : ClothingSystem
         {Jumpsuit, "INNERCLOTHING"},
         {"neck", "NECK"},
         {"back", "BACKPACK"},
-        {"belt", "BELT"},
+        {"belt1", "BELT1"},
+        {"belt2", "BELT2"},
         {"gloves", "HAND"},
         {"shoes", "FEET"},
         {"id", "IDCARD"},
         {"pocket1", "POCKET1"},
         {"pocket2", "POCKET2"},
         {"suitstorage", "SUITSTORAGE"},
+        {"ring1", "RING1"},
+        {"ring2", "RING2"},
+        {"pants", "PANTS"},
+        {"shirt", "SHIRT"},
+        {"cloak", "CLOAK"},
+        {"keys", "KEYS"},
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
