@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseMobSpeciesOrganic
+  id: CPBaseMobTiefling
+  name: Mr. Tiefling
+  abstract: true
+  components:
+    - type: HumanoidAppearance
+      species: CPTiefling
+    - type: Body
+      prototype: CPTiefling
+      requiredLegs: 2
+    - type: Hunger
+    - type: Icon
+      sprite: CrystallPunk/Mobs/Species/Tiefling/parts.rsi
+      state: full
+    - type: Thirst
+    - type: Wagging
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: CPMobTieflingDummy
+  noSpawn: true
+  components:
+    - type: HumanoidAppearance
+      species: CPTiefling
