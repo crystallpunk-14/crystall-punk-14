@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: CPClothingOuterArmoredCloak
+  name: бронированная накидка
+  description: Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/redguardarmor.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/redguardarmor.rsi
+  - type: Armor #same as regular sec armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.80

@@ -67,7 +67,7 @@
 - type: humanoidBaseSprite
   id: CPMobTieflingEyes
   baseSprite:
-    sprite: Mobs/Customization/eyes.rsi
+    sprite: _CP14/Mobs/Customization/eyes.rsi
     state: eyes
 
 - type: humanoidBaseSprite
