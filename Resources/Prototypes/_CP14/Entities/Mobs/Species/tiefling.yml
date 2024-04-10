@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseMobSpeciesOrganic
+  parent: CPBaseMobSpeciesOrganic
   id: CPBaseMobTiefling
   name: Mr. Tiefling
   abstract: true
@@ -14,7 +14,9 @@
       sprite: CrystallPunk/Mobs/Species/Tiefling/parts.rsi
       state: full
     - type: Thirst
-    - type: Wagging
+    - type: Wagging  
+    - type: Inventory
+      templateId: CPHuman
 
 - type: entity
   parent: BaseSpeciesDummy
