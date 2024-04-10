@@ -1,6 +1,6 @@
 # Anything human specific (e.g. UI, input) goes under MobHuman
 - type: entity
-  parent: BaseMobSpeciesOrganic
+  parent: CPBaseMobSpeciesOrganic
   id: CPBaseMobHuman
   name: человеческая оболочка
   abstract: true
@@ -15,8 +15,8 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-    - id: FoodMeatHuman
-      amount: 5
+      - id: FoodMeatHuman
+        amount: 5
   - type: Body
     prototype: CPHuman
     requiredLegs: 2

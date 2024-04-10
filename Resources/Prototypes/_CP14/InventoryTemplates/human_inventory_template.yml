@@ -5,7 +5,7 @@
     # 0, y
     - name: ring1
       slotTexture: ring
-      slotFlags: GLOVES
+      slotFlags: RING
       uiWindowPos: 0,1
       strippingWindowPos: 0,3
       displayName: Ring
@@ -30,13 +30,13 @@
       displayName: Shoes
     - name: pants
       slotTexture: pants
-      slotFlags: GLOVES
+      slotFlags: PANTS
       uiWindowPos: 1,1
       strippingWindowPos: 1,4
       displayName: Pants
     - name: shirt
       slotTexture: shirt
-      slotFlags: GLOVES
+      slotFlags: SHIRT
       uiWindowPos: 1,2
       strippingWindowPos: 1,3
       displayName: Shirt
@@ -55,13 +55,13 @@
       displayName: Gloves
     - name: ring2
       slotTexture: ring
-      slotFlags: GLOVES
+      slotFlags: RING
       uiWindowPos: 2,1
       strippingWindowPos: 2,3
       displayName: Ring
     - name: cloak
       slotTexture: cloak
-      slotFlags: GLOVES
+      slotFlags: CLOAK
       uiWindowPos: 2,2
       strippingWindowPos: 2,2
       displayName: Cloak
@@ -81,7 +81,7 @@
       displayName: Belt
     - name: keys
       slotTexture: keys
-      slotFlags: GLOVES
+      slotFlags: KEYS
       slotGroup: SecondHotbar
       uiWindowPos: 0,0
       strippingWindowPos: 2,5
