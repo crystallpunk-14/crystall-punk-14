@@ -1,0 +1,27 @@
+- type: entity
+  id: CPBaseSharpeningStone
+  name: точильный камень
+  description: Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/sharpening_stone.rsi
+    state: base
+  - type: UseDelay
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassCrack
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: CPSharpeningStone
+    sharpnessHeal: 1

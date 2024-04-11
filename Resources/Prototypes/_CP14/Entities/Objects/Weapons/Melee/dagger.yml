@@ -2,6 +2,7 @@
   id: CPBaseDagger
   parent: 
   - BaseItem
+  - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
   - CPBaseWeaponLight
@@ -15,7 +16,6 @@
     sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     layers:
     - state: icon
-  - type: Sharp
   - type: MeleeWeapon
     attackRate: 1.8
     wideAnimationRotation: 225
@@ -32,3 +32,17 @@
     removalTime: 1
   - type: ThrowingAngle
     angle: 225
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
