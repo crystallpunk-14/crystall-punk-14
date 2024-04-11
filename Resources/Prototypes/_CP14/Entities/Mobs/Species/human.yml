@@ -8,7 +8,7 @@
   - type: HumanoidAppearance
     species: CPHuman
   - type: Hunger
-  - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
+  - type: Icon
     sprite: _CP14/Mobs/Species/Human/parts.rsi
     state: full
   - type: Thirst
@@ -22,3 +22,11 @@
     requiredLegs: 2
   - type: Inventory
     templateId: CPHuman
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: CPMobHumanDummy
+  noSpawn: true
+  components:
+    - type: HumanoidAppearance
+      species: CPHuman

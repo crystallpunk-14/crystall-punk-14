@@ -11,7 +11,7 @@
       requiredLegs: 2
     - type: Hunger
     - type: Icon
-      sprite: CrystallPunk/Mobs/Species/Tiefling/parts.rsi
+      sprite: _CP14/Mobs/Species/Tiefling/parts.rsi
       state: full
     - type: Thirst
     - type: Wagging  

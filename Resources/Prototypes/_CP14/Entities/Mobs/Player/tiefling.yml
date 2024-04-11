@@ -1,5 +1,5 @@
 - type: entity
-  parent: CPBaseMobTiefling
-  id: CPMobTiefling
-  name: Mr. Tiefling
   save: false
+  parent: CPBaseMobTiefling
+  name: Mr. Tiefling
+  id: CPMobTiefling
