@@ -1,6 +1,9 @@
 
 namespace Content.Server._CP14.MeleeWeapon;
 
+/// <summary>
+/// allows the object to become blunt with use
+/// </summary>
 [RegisterComponent, Access(typeof(CPSharpeningSystem))]
 public sealed partial class CPSharpenedComponent : Component
 {
