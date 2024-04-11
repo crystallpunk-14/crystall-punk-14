@@ -22,6 +22,7 @@ using Content.Client.Stylesheets;
 using Content.Client.Viewport;
 using Content.Client.Voting;
 using Content.Shared.Ame.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
 using Robust.Client;
@@ -157,7 +158,7 @@ namespace Content.Client.Entry
             _clientPreferencesManager.Initialize();
             _euiManager.Initialize();
             _voteManager.Initialize();
-            _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
+            _userInterfaceManager.SetDefaultTheme(_configManager.GetCVar(CCVars.UIDefaultInterfaceTheme));
             _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
             _documentParsingManager.Initialize();
 
