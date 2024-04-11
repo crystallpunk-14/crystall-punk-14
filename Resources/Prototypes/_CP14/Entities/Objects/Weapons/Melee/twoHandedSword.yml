@@ -43,6 +43,7 @@
     walkModifier: 0.9
     sprintModifier: 0.8
   - type: HeldSpeedModifier
+  - type: CPSharpened
     sharpnessDamageByHit: 0.04
   - type: Damageable
     damageContainer: Inorganic
