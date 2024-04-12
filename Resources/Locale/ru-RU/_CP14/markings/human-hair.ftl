@@ -8,4 +8,5 @@ marking-CPHumanHairBeeHive = Аристократия в крови
 marking-CPHumanHairBigBraid = Хвост во весь рост
 marking-CPHumanHairBigDoubleBun = Два пунпона
 marking-CPHumanHairBigPompadour = Бард
+marking-CPHumanHairCrazyBald = Безумная проплешина
 marking-CPHumanHairBob = Неприметливая

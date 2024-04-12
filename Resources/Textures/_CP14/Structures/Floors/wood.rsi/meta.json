@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Made pace Station 14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "wood_1"
+    },
+    {
+      "name": "wood_2"
+    },
+    {
+      "name": "wood_3"
+    },
+    {
+      "name": "wood_4"
+    }
+  ]
+}

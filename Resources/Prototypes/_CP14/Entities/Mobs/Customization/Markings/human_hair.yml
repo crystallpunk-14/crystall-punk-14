@@ -79,6 +79,14 @@
       state: braid
       
 - type: marking
+  id: CPHumanHairCrazyBald
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: crazybald
+      
+- type: marking
   id: CPHumanHairBigDoubleBun
   bodyPart: Hair
   markingCategory: Hair

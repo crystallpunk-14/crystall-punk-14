@@ -1,0 +1,62 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CPClothingCloakBase
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - cloak
+  - type: Sprite
+    state: icon
+
+- type: entity
+  parent: CPClothingCloakBase
+  id: CPClothingCloakArmoredRed
+  name: бронированная красная накидка
+  description: Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
+  - type: Armor #same as regular sec armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.80
+
+- type: entity
+  parent: 
+  - CPClothingCloakBase
+  - ClothingSlotBase
+  id: CPClothingCloakBlacksmithArpon
+  name: фартук кузнеца
+  description: Свободные кожанные полоски, все еще фактически являющиеся одеждой. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
+
+- type: entity
+  parent: CPClothingCloakBase
+  id: CPClothingCloakHoodieYellow
+  name: желтый короткий плащ с капюшоном
+  description: Защищает ваши плечи и голову от холода и интереса противоположного пола.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
+  - type: ToggleableClothing
+    clothingPrototype: CPClothingHeadHoodieYellow
+    requiredSlot:
+    - cloak
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}

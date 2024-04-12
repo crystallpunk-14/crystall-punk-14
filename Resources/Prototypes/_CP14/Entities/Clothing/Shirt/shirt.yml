@@ -1,0 +1,24 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CPClothingShirtBase
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - shirt
+  - type: Sprite
+    state: icon
+     
+- type: entity
+  parent: CPClothingShirtBase
+  id: CPClothingShirtHarlequineRed  
+  name: красная рубаха арлекина
+  description: На ней не видно пятен крови, которые остаются после неудачных шуток.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
+     

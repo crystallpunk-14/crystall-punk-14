@@ -1,0 +1,23 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CPClothingPantsBase
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - pants
+  - type: Sprite
+    state: icon
+    
+- type: entity
+  parent: CPClothingPantsBase
+  id: CPClothingPantsHarlequinRed
+  name: красно-желтые штаны арлекина
+  description: С одной стороны кроваво красные, с другой стороны солнечно желтые. Дуальность жизни и смерти всегда хороший повод для шуток.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/harlequin.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/harlequin.rsi

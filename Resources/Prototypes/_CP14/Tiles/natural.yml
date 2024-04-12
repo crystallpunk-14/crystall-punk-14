@@ -1,8 +1,36 @@
 - type: tile
-  id: FloorPlanetGrassCP
-  name: травяной покров
-  sprite: /Textures/_CP14/Tiles/Grass/grass.png
-  variants: 8
+  id: CPFloorPlanetGrass
+  name: cp-tiles-planet-grass
+  sprite: /Textures/Tiles/Planet/Grass/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    South: /Textures/Tiles/Planet/Grass/double_edge.png
+    East: /Textures/Tiles/Planet/Grass/double_edge.png
+    North: /Textures/Tiles/Planet/Grass/double_edge.png
+    West: /Textures/Tiles/Planet/Grass/double_edge.png
+  baseTurf: CPFloorPlanetDirt
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: CPFloorPlanetStone
+  name: cp-tiles-planet-stone
+  sprite: /Textures/_CP14/Tiles/cave.png
+  variants: 14
   placementVariants:
   - 1.0
   - 1.0
@@ -12,20 +40,46 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 1
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/Grass/single_edge.png
-    NorthEast: /Textures/_CP14/Tiles/Grass/single_edge.png
-    NorthWest: /Textures/_CP14/Tiles/Grass/single_edge.png
-    SouthWest: /Textures/_CP14/Tiles/Grass/single_edge.png
-    South: /Textures/_CP14/Tiles/Grass/double_edge.png
-    East: /Textures/_CP14/Tiles/Grass/double_edge.png
-    North: /Textures/_CP14/Tiles/Grass/double_edge.png
-    West: /Textures/_CP14/Tiles/Grass/double_edge.png
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
   baseTurf: FloorPlanetGrass
   isSubfloor: true
   footstepSounds:
-    collection: FootstepGrass
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: CPFloorPlanetDirt
+  name: cp-tiles-planet-dirt
+  sprite: /Textures/_CP14/Tiles/cavedrought.png
+  variants: 16
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: FloorPlanetGrass
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
   indestructible: true
