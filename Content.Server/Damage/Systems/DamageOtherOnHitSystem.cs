@@ -1,3 +1,4 @@
+using Content.Server._CP14.MeleeWeapon;
 using Content.Server.Administration.Logs;
 using Content.Server.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
@@ -32,7 +33,14 @@ namespace Content.Server.Damage.Systems
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
         {
-            var dmg = _damageable.TryChangeDamage(args.Target, component.Damage, component.IgnoreResistances, origin: args.Component.Thrower);
+            //CrystallPunk Melee upgrade
+            var damage = component.Damage;
+
+            if (TryComp<CPSharpenedComponent>(uid, out var sharp))
+                damage *= sharp.Sharpness;
+
+            var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
+            //CrystallPunk Melee pgrade end
 
             // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
             if (dmg != null && HasComp<MobStateComponent>(args.Target))
@@ -59,7 +67,12 @@ namespace Content.Server.Damage.Systems
 
         private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
         {
-            _damageExamine.AddDamageExamine(args.Message, component.Damage, Loc.GetString("damage-throw"));
+            var damage = component.Damage;
+
+            if (TryComp<CPSharpenedComponent>(uid, out var sharp))
+                damage *= sharp.Sharpness;
+
+            _damageExamine.AddDamageExamine(args.Message, damage, Loc.GetString("damage-throw"));
         }
     }
 }

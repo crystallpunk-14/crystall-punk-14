@@ -2,6 +2,7 @@
   id: CPBaseMace
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
   name: булава
   description: Тяжелый кусок металла на длинной палке. Что может быть проще?
   components:

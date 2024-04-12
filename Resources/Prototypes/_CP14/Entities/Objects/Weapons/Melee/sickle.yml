@@ -2,6 +2,8 @@
   id: CPBaseSickle
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
+  - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponLight
   - CPBaseWeaponShort

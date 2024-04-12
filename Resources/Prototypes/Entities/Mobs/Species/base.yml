@@ -28,6 +28,8 @@
       state: unisex_full
       visible: false
     - map: ["jumpsuit"]
+    - map: [ "pants" ]
+    - map: [ "shirt" ]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
@@ -40,6 +42,7 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "neck" ]
+    - map: [ "cloak" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
@@ -347,12 +350,16 @@
       state: body-overlay-2
       visible: false
     - map: [ "gloves" ]
+    - map: [ "ring1" ]
+    - map: [ "ring2" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
+    - map: [ "belt1" ]
+    - map: [ "belt2" ]
     - map: [ "id" ]
+    - map: [ "keys" ]
     - map: [ "neck" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
