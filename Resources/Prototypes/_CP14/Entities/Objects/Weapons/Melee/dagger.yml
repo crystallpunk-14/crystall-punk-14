@@ -2,6 +2,8 @@
   id: CPBaseDagger
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
+  - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
   - CPBaseWeaponLight
@@ -15,7 +17,6 @@
     sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     layers:
     - state: icon
-  - type: Sharp
   - type: MeleeWeapon
     attackRate: 1.8
     wideAnimationRotation: 225

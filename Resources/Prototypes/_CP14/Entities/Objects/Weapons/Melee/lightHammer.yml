@@ -2,6 +2,7 @@
   id: CPBaseLightHammer
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
   - CPBaseWeaponLight

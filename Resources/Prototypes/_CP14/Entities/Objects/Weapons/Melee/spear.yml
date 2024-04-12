@@ -2,6 +2,8 @@
   id: CPBaseThrowableSpear
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
+  - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
   name: метательное копье
@@ -14,7 +16,6 @@
     sprite: _CP14/Objects/Weapons/Melee/ThrowableSpear/throwableSpear.rsi
     layers:
     - state: icon
-  - type: Sharp
   - type: MeleeWeapon
     attackRate: 1
     wideAnimationRotation: -115

@@ -2,6 +2,8 @@
   id: CPBaseHandheldAxe
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
+  - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
   - CPBaseWeaponLight
@@ -14,7 +16,6 @@
     sprite: _CP14/Objects/Weapons/Melee/HandheldAxe/handheldAxe.rsi
     layers:
     - state: icon
-  - type: Sharp
   - type: MeleeWeapon
     attackRate: 1.4
     range: 1.2
