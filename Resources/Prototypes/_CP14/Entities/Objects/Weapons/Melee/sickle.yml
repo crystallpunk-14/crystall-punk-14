@@ -2,6 +2,7 @@
   id: CPBaseSickle
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
   - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponLight
@@ -26,17 +27,3 @@
         Piercing: 4
     soundHit:
       collection: MetalThud
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]

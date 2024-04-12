@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -21,9 +22,18 @@ public sealed class CPSharpeningSystem : EntitySystem
 
         SubscribeLocalEvent<CPSharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: new[] { typeof(WieldableSystem) });
         SubscribeLocalEvent<CPSharpenedComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<CPSharpenedComponent, MeleeHitEvent>(OnMeleeHit);
 
         SubscribeLocalEvent<CPSharpeningStoneComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<CPSharpeningStoneComponent, ActivateInWorldEvent>(OnInteract);
+    }
+
+    private void OnMeleeHit(Entity<CPSharpenedComponent> sharpened, ref MeleeHitEvent args)
+    {
+        if (!args.HitEntities.Any())
+            return;
+
+        sharpened.Comp.Sharpness = MathHelper.Clamp(sharpened.Comp.Sharpness - sharpened.Comp.SharpnessDamageByHit, 0.1f, 1f);
     }
 
     private void OnInteract(Entity<CPSharpeningStoneComponent> stone, ref ActivateInWorldEvent args)
@@ -73,6 +83,13 @@ public sealed class CPSharpeningSystem : EntitySystem
 
     private void OnExamined(Entity<CPSharpenedComponent> sharpened, ref ExaminedEvent args)
     {
+
+        if (sharpened.Comp.Sharpness > 0.95f)
+        {
+            args.PushMarkup(Loc.GetString("sharpening-examined-95"));
+            return;
+        }
+
         if (sharpened.Comp.Sharpness > 0.75f)
         {
             args.PushMarkup(Loc.GetString("sharpening-examined-75"));
@@ -90,6 +107,6 @@ public sealed class CPSharpeningSystem : EntitySystem
     private void OnGetMeleeDamage(Entity<CPSharpenedComponent> sharpened, ref GetMeleeDamageEvent args)
     {
         args.Damage *= sharpened.Comp.Sharpness;
-        sharpened.Comp.Sharpness = MathHelper.Clamp(sharpened.Comp.Sharpness - sharpened.Comp.SharpnessDamageByHit, 0.1f, 1f);
     }
+
 }

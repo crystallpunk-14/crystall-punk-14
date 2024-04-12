@@ -2,6 +2,7 @@
   id: CPBaseDagger
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
   - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
@@ -32,17 +33,3 @@
     removalTime: 1
   - type: ThrowingAngle
     angle: 225
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]

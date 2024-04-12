@@ -1,0 +1,7 @@
+﻿- type: examinableDamage
+  id: CPWeaponMessages
+  messages:
+    - damageable-weapon-1
+    - damageable-weapon-2
+    - damageable-weapon-3
+    - damageable-weapon-4

@@ -2,6 +2,7 @@
   id: CPBaseMace
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
   name: булава
   description: Тяжелый кусок металла на длинной палке. Что может быть проще?
   components:
@@ -23,17 +24,3 @@
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]

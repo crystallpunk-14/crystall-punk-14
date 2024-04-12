@@ -2,6 +2,7 @@
   id: CPBaseHandheldAxe
   parent: 
   - BaseItem
+  - CPBaseWeaponDestructible
   - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
@@ -40,17 +41,3 @@
       types:
         Slash: 5
         Piercing: 5
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]

@@ -1,5 +1,18 @@
 - type: entity
-  parent: ClothingOuterStorageBase
+  abstract: true
+  parent: Clothing
+  id: CPClothingCloakBase
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - cloak
+  - type: Sprite
+    state: icon
+
+- type: entity
+  parent: CPClothingCloakBase
   id: CPClothingOuterArmoredCloak
   name: бронированная накидка
   description: Огромные металлические наплечники дают дополнительную защиту от отрубания головы.

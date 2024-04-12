@@ -67,3 +67,24 @@
   - type: Sharp
   - type: CPSharpened
   - type: CPSharpeningStone
+  - type: UseDelay
+
+- type: entity
+  id: CPBaseWeaponDestructible
+  abstract: true
+  components:
+  - type: ExaminableDamage
+    messages: CPWeaponMessages
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

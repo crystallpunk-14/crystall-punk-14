@@ -10,7 +10,7 @@
 - type: startingGear
   id: CPTestGear
   equipment:
-    outerClothing: CPClothingOuterArmoredCloak
+    cloak: CPClothingOuterArmoredCloak
   innerClothingSkirt: ClothingUniformJumpskirtCargo
   satchel: ClothingBackpackSatchelCargoFilled
   duffelbag: ClothingBackpackDuffelCargoFilled

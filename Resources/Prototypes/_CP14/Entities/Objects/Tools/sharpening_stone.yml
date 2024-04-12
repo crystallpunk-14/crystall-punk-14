@@ -24,4 +24,4 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: CPSharpeningStone
-    sharpnessHeal: 1
+    sharpnessHeal: 0.1
