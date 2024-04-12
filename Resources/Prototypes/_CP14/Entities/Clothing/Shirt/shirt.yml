@@ -10,17 +10,6 @@
     - shirt
   - type: Sprite
     state: icon
-    
-- type: entity
-  parent: CPClothingShirtBase
-  id: CPClothingShirtCanvas
-  name: холщовая рубаха
-  description: Дешево и сердито.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/canvas.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/canvas.rsi
      
 - type: entity
   parent: CPClothingShirtBase

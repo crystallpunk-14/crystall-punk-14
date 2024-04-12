@@ -44,3 +44,6 @@
     requiredSlot:
     - cloak
     slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
