@@ -30,6 +30,19 @@
         Heat: 0.80
 
 - type: entity
+  parent: 
+  - CPClothingCloakBase
+  - ClothingSlotBase
+  id: CPClothingCloakBlacksmithArpon
+  name: фартук кузнеца
+  description: Свободные кожанные полоски, все еще фактически являющиеся одеждой. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
+
+- type: entity
   parent: CPClothingCloakBase
   id: CPClothingCloakHoodieYellow
   name: желтый короткий плащ с капюшоном
