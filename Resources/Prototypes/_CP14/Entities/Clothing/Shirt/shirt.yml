@@ -13,7 +13,7 @@
     
 - type: entity
   parent: CPClothingShirtBase
-  id: CPClothingCanvasShirt
+  id: CPClothingShirtCanvas
   name: холщовая рубаха
   description: Дешево и сердито.
   components:
@@ -21,4 +21,15 @@
     sprite: _CP14/Clothing/Shirt/canvas.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/canvas.rsi
+     
+- type: entity
+  parent: CPClothingShirtBase
+  id: CPClothingShirtHarlequineRed  
+  name: красная рубаха арлекина
+  description: На ней не видно пятен крови, которые остаются после неудачных шуток.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
      

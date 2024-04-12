@@ -1,0 +1,30 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CPClothingHeadBase
+  components:
+  - type: Clothing
+    equipDelay: 0.3
+    unequipDelay: 0.3
+    slots:
+    - HEAD
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Small
+    storedRotation: -90
+
+- type: entity
+  parent: CPClothingHeadBase
+  id: CPClothingHeadHoodieYellow
+  noSpawn: true
+  name: желтый капюшон
+  description: Вы получаете +2 к броскам скрытности от внимания противоположного пола.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/yellowhoodie.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/yellowhoodie.rsi
+  - type: Tag
+    tags:
+    - HidesHair

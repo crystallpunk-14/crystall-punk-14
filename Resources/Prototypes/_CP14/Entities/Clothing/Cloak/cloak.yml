@@ -13,8 +13,8 @@
 
 - type: entity
   parent: CPClothingCloakBase
-  id: CPClothingOuterArmoredCloak
-  name: бронированная накидка
+  id: CPClothingCloakArmoredRed
+  name: бронированная красная накидка
   description: Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
   components:
   - type: Sprite
@@ -28,3 +28,19 @@
         Slash: 0.70
         Piercing: 0.70
         Heat: 0.80
+
+- type: entity
+  parent: CPClothingCloakBase
+  id: CPClothingCloakHoodieYellow
+  name: желтый короткий плащ с капюшоном
+  description: Защищает ваши плечи и голову от холода и интереса противоположного пола.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
+  - type: ToggleableClothing
+    clothingPrototype: CPClothingHeadHoodieYellow
+    requiredSlot:
+    - cloak
+    slot: head
