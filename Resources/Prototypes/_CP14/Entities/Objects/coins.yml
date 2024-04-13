@@ -32,10 +32,10 @@
   name: copper crown
   description: The minimum unit of currency in the world of Eberron. One tenth of a silver sovereign.
   suffix: 10 coins
-  components: 
+  components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/cp_coin.rsi
-    layers: 
+    layers:
     - state: coin10
       map: ["base"]
   - type: Stack
@@ -69,10 +69,10 @@
   name: silver sovereign
   description: Equivalent to 10 copper crowns, and is 1 tenth of a gold galifar.
   suffix: 10 coins
-  components: 
+  components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/sp_coin.rsi
-    layers: 
+    layers:
     - state: coin10
       map: ["base"]
   - type: Stack
@@ -106,10 +106,10 @@
   name: gold galifar
   description: Equivalent to 10 silver sovereign, and is 1 tenth of a platinum coin.
   suffix: 10 coins
-  components: 
+  components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
-    layers: 
+    layers:
     - state: coin10
       map: ["base"]
   - type: Stack
@@ -143,10 +143,10 @@
   name: platinum dragon
   description: Equivalent to 10 gold galifar, and is the most expensive coin in Eberron's world.
   suffix: 10 coins
-  components: 
+  components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
-    layers: 
+    layers:
     - state: coin10
       map: ["base"]
   - type: Stack
