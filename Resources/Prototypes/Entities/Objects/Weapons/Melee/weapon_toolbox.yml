@@ -3,6 +3,7 @@
   id: WeaponMeleeToolboxRobust
   name: robust toolbox
   description: A tider's weapon.
+  noSpawn: true
   suffix: DO NOT MAP
   components:
   - type: Sprite

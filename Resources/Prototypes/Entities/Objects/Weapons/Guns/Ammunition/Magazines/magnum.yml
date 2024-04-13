@@ -51,6 +51,7 @@
   id: MagazineMagnum
   name: pistol magazine (.45 magnum)
   parent: BaseMagazineMagnum
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum
@@ -65,6 +66,7 @@
   id: MagazineMagnumPractice
   name: pistol magazine (.45 magnum practice)
   parent: BaseMagazineMagnum
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumPractice
@@ -79,6 +81,7 @@
   id: MagazineMagnumRubber
   name: pistol magazine (.45 magnum rubber)
   parent: BaseMagazineMagnum
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumRubber
@@ -93,6 +96,7 @@
   id: MagazineMagnumUranium
   name: pistol magazine (.45 magnum uranium)
   parent: BaseMagazineMagnum
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumUranium
@@ -107,6 +111,7 @@
   id: MagazineMagnumAP
   name: pistol magazine (.45 magnum armor-piercing)
   parent: BaseMagazineMagnum
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumAP
@@ -121,6 +126,7 @@
   id: MagazineMagnumSubMachineGun
   name: "Vector magazine (.45 magnum)"
   parent: BaseMagazineMagnumSubMachineGun
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum
@@ -135,6 +141,7 @@
   id: MagazineMagnumSubMachineGunPractice
   name: "Vector magazine (.45 magnum practice)"
   parent: BaseMagazineMagnumSubMachineGun
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumPractice
@@ -149,6 +156,7 @@
   id: MagazineMagnumSubMachineGunRubber
   name: "Vector magazine (.45 magnum rubber)"
   parent: BaseMagazineMagnumSubMachineGun
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumRubber
@@ -163,6 +171,7 @@
   id: MagazineMagnumSubMachineGunUranium
   name: "Vector magazine (.45 magnum uranium)"
   parent: BaseMagazineMagnumSubMachineGun
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumUranium
@@ -177,6 +186,7 @@
   id: MagazineMagnumSubMachineGunPiercing
   name: "Vector magazine (.45 magnum armor-piercing)"
   parent: BaseMagazineMagnumSubMachineGun
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumAP

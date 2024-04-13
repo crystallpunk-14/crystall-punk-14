@@ -22,6 +22,7 @@
   id: CartridgeMagnum
   name: cartridge (.45 magnum)
   parent: BaseCartridgeMagnum
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletMagnum
@@ -30,6 +31,7 @@
   id: CartridgeMagnumPractice
   name: cartridge (.45 magnum practice)
   parent: BaseCartridgeMagnum
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumPractice
@@ -45,6 +47,7 @@
   id: CartridgeMagnumRubber
   name: cartridge (.45 magnum rubber)
   parent: BaseCartridgeMagnum
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumRubber
@@ -60,6 +63,7 @@
   id: CartridgeMagnumIncendiary
   name: cartridge (.45 magnum incendiary)
   parent: BaseCartridgeMagnum
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumIncendiary
@@ -75,6 +79,7 @@
   id: CartridgeMagnumAP
   name: cartridge (.45 magnum armor-piercing)
   parent: BaseCartridgeMagnum
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumAP
@@ -90,6 +95,7 @@
   id: CartridgeMagnumUranium
   name: cartridge (.45 magnum uranium)
   parent: BaseCartridgeMagnum
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletMagnumUranium

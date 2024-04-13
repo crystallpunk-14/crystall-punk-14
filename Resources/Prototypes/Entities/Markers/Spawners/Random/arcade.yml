@@ -2,6 +2,7 @@
   id: RandomArcade
   name: random arcade spawner
   parent: MarkerBase
+  noSpawn: true
   components:
   - type: Sprite
     layers:

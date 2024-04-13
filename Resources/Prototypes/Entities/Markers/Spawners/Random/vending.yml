@@ -3,6 +3,7 @@
   name: random vending machine spawner
   suffix: Any
   parent: MarkerBase
+  noSpawn: true
   components:
   - type: Sprite
     layers:

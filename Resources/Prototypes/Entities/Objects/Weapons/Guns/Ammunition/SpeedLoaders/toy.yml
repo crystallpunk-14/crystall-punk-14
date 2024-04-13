@@ -33,6 +33,7 @@
   id: SpeedLoaderCap
   name: "cap gun loader"
   parent: BaseSpeedLoaderCap
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCap

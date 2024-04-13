@@ -3,6 +3,7 @@
   suffix: 70%
   id: CrystalSpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:

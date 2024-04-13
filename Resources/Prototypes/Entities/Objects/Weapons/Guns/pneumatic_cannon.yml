@@ -2,6 +2,7 @@
   name: improvised pneumatic cannon
   parent: BaseStorageItem
   id: WeaponImprovisedPneumaticCannon
+  noSpawn: true
   description: Improvised using nothing but a pipe, some zipties, and a pneumatic cannon. Doesn't accept tanks without enough gas.
   components:
   - type: Sprite
@@ -113,6 +114,7 @@
   parent: WeaponImprovisedPneumaticCannon
   id: WeaponImprovisedPneumaticCannonGun
   suffix: Gun
+  noSpawn: true
   components:
   - type: PneumaticCannon
     throwItems: false
@@ -122,6 +124,7 @@
   parent: WeaponImprovisedPneumaticCannonGun
   id: WeaponImprovisedPneumaticCannonAdmeme
   suffix: Admeme
+  noSpawn: true
   components:
   - type: Item
     size: Ginormous

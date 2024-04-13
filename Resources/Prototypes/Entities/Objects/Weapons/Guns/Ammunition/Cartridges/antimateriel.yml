@@ -2,6 +2,7 @@
   parent: BaseCartridge
   id: CartridgeAntiMateriel
   name: cartridge (.60 anti-materiel)
+  noSpawn: true
   components:
   - type: Tag
     tags:

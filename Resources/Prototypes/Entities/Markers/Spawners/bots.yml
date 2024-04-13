@@ -2,6 +2,7 @@
   name: medibot spawner
   id: SpawnMobMedibot
   parent: MarkerBase
+  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -16,6 +17,7 @@
   name: cleanbot spawner
   id: SpawnMobCleanBot
   parent: MarkerBase
+  noSpawn: true
   components:
   - type: Sprite
     layers:

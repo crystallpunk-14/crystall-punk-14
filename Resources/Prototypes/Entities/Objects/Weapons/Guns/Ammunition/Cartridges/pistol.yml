@@ -22,6 +22,7 @@
   id: CartridgePistol
   name: cartridge (.35 auto)
   parent: BaseCartridgePistol
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletPistol
@@ -30,6 +31,7 @@
   id: CartridgePistolPractice
   name: cartridge (.35 auto practice)
   parent: BaseCartridgePistol
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletPistolPractice
@@ -45,6 +47,7 @@
   id: CartridgePistolRubber
   name: cartridge (.35 auto rubber)
   parent: BaseCartridgePistol
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletPistolRubber
@@ -60,6 +63,7 @@
   id: CartridgePistolIncendiary
   name: cartridge (.35 auto incendiary)
   parent: BaseCartridgePistol
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletPistolIncendiary
@@ -75,6 +79,7 @@
   id: CartridgePistolUranium
   name: cartridge (.35 auto uranium)
   parent: BaseCartridgePistol
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletPistolUranium

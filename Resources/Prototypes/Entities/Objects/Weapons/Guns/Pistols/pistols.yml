@@ -70,6 +70,7 @@
   name: viper
   parent: BaseWeaponPistol
   id: WeaponPistolViper
+  noSpawn: true
   description: A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses .35 auto ammo.
   components:
   - type: Sprite
@@ -105,6 +106,7 @@
   name: cobra
   parent: BaseWeaponPistol
   id: WeaponPistolCobra
+  noSpawn: true
   description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
   components:
   - type: Sprite
@@ -153,6 +155,7 @@
   name: mk 58
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
+  noSpawn: true
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
   components:
   - type: Sprite
@@ -174,6 +177,7 @@
 - type: entity
   id: WeaponPistolMk58Nonlethal
   parent: WeaponPistolMk58
+  noSpawn: true
   suffix: Non-lethal
   components:
   - type: ItemSlots
@@ -200,6 +204,7 @@
   parent: BaseWeaponPistol
   id: WeaponPistolN1984 # the spaces in description are for formatting.
   description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber. 
+  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
@@ -243,6 +248,7 @@
   name: N1984
   parent: WeaponPistolN1984
   id: WeaponPistolN1984Nonlethal
+  noSpawn: true
   suffix: Non-lethal
   components:
   - type: ItemSlots

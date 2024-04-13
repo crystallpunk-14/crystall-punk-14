@@ -2,6 +2,7 @@
   name: bola
   parent: BaseItem
   id: Bola
+  noSpawn: true
   description: Linked together with some spare cuffs and metal.
   components:
   - type: Item

@@ -2,6 +2,7 @@
   name: Empty Crate Spawner
   id: CrateEmptySpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -28,6 +29,7 @@
   id: CrateFilledSpawner
   suffix: Low Value
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:

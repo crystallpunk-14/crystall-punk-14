@@ -2,6 +2,7 @@
   id: RandomArtifactSpawner
   name: random artifact spawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -27,6 +28,7 @@
   id: RandomArtifactSpawner20
   name: random artifact spawner [20]
   parent: RandomArtifactSpawner
+  noSpawn: true
   components:
     - type: RandomSpawner
       chance: 0.2

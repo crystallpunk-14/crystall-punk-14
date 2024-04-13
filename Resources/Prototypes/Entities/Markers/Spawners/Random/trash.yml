@@ -3,6 +3,7 @@
   id: RandomSpawner
   parent: MarkerBase
   suffix: 50
+  noSpawn: true
   components:
     - type: Sprite
       layers:

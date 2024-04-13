@@ -42,6 +42,7 @@
   id: SpawnPointQuartermaster
   parent: SpawnPointJobBase
   name: quartermaster
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Quartermaster
@@ -55,6 +56,7 @@
   id: SpawnPointCargoTechnician
   parent: SpawnPointJobBase
   name: cargotechnician
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: CargoTechnician
@@ -67,6 +69,7 @@
   id: SpawnPointSalvageSpecialist
   parent: SpawnPointJobBase
   name: salvagespecialist
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: SalvageSpecialist
@@ -81,6 +84,7 @@
   id: SpawnPointPassenger
   parent: SpawnPointJobBase
   name: passenger
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Passenger
@@ -93,6 +97,7 @@
   id: SpawnPointTechnicalAssistant
   parent: SpawnPointJobBase
   name: technical assistant
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: TechnicalAssistant
@@ -105,6 +110,7 @@
   id: SpawnPointMedicalIntern
   parent: SpawnPointJobBase
   name: medical intern
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: MedicalIntern
@@ -117,6 +123,7 @@
   id: SpawnPointSecurityCadet
   parent: SpawnPointJobBase
   name: security cadet
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: SecurityCadet
@@ -129,6 +136,7 @@
   id: SpawnPointResearchAssistant
   parent: SpawnPointJobBase
   name: research assistant
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ResearchAssistant
@@ -141,6 +149,7 @@
   id: SpawnPointServiceWorker
   parent: SpawnPointJobBase
   name: service worker
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ServiceWorker
@@ -153,6 +162,7 @@
   id: SpawnPointBartender
   parent: SpawnPointJobBase
   name: bartender
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Bartender
@@ -165,6 +175,7 @@
   id: SpawnPointChef
   parent: SpawnPointJobBase
   name: chef
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Chef
@@ -177,6 +188,7 @@
   id: SpawnPointBotanist
   parent: SpawnPointJobBase
   name: botanist
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Botanist
@@ -189,6 +201,7 @@
   id: SpawnPointClown
   parent: SpawnPointJobBase
   name: clown
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Clown
@@ -201,6 +214,7 @@
   id: SpawnPointMime
   parent: SpawnPointJobBase
   name: mime
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Mime
@@ -213,6 +227,7 @@
   id: SpawnPointChaplain
   parent: SpawnPointJobBase
   name: chaplain
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Chaplain
@@ -225,6 +240,7 @@
   id: SpawnPointLibrarian
   parent: SpawnPointJobBase
   name: librarian
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Librarian
@@ -237,6 +253,7 @@
   id: SpawnPointLawyer
   parent: SpawnPointJobBase
   name: lawyer
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Lawyer
@@ -249,6 +266,7 @@
   id: SpawnPointJanitor
   parent: SpawnPointJobBase
   name: janitor
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Janitor
@@ -261,6 +279,7 @@
   id: SpawnPointMusician
   parent: SpawnPointJobBase
   name: musician
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Musician
@@ -273,6 +292,7 @@
   id: SpawnPointBoxer
   parent: SpawnPointJobBase
   name: boxer
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Boxer
@@ -285,6 +305,7 @@
   id: SpawnPointBorg
   parent: SpawnPointJobBase
   name: cyborg
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Borg
@@ -302,6 +323,7 @@
   id: SpawnPointCaptain
   parent: SpawnPointJobBase
   name: captain
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Captain
@@ -314,6 +336,7 @@
   id: SpawnPointHeadOfPersonnel
   parent: SpawnPointJobBase
   name: headofpersonnel
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: HeadOfPersonnel
@@ -328,6 +351,7 @@
   id: SpawnPointChiefEngineer
   parent: SpawnPointJobBase
   name: chiefengineer
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ChiefEngineer
@@ -340,6 +364,7 @@
   id: SpawnPointStationEngineer
   parent: SpawnPointJobBase
   name: stationengineer
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: StationEngineer
@@ -352,6 +377,7 @@
   id: SpawnPointAtmos
   parent: SpawnPointJobBase
   name: atmospherics
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: AtmosphericTechnician
@@ -366,6 +392,7 @@
   id: SpawnPointChiefMedicalOfficer
   parent: SpawnPointJobBase
   name: chiefmedicalofficer
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ChiefMedicalOfficer
@@ -378,6 +405,7 @@
   id: SpawnPointMedicalDoctor
   parent: SpawnPointJobBase
   name: medicaldoctor
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: MedicalDoctor
@@ -390,6 +418,7 @@
   id: SpawnPointParamedic
   parent: SpawnPointJobBase
   name: paramedic
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Paramedic
@@ -402,6 +431,7 @@
   id: SpawnPointChemist
   parent: SpawnPointJobBase
   name: chemist
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Chemist
@@ -416,6 +446,7 @@
   id: SpawnPointResearchDirector
   parent: SpawnPointJobBase
   name: researchdirector
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ResearchDirector
@@ -428,6 +459,7 @@
   id: SpawnPointScientist
   parent: SpawnPointJobBase
   name: scientist
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Scientist
@@ -442,6 +474,7 @@
   id: SpawnPointHeadOfSecurity
   parent: SpawnPointJobBase
   name: headofsecurity
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: HeadOfSecurity
@@ -454,6 +487,7 @@
   id: SpawnPointWarden
   parent: SpawnPointJobBase
   name: warden
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Warden
@@ -466,6 +500,7 @@
   id: SpawnPointSecurityOfficer
   parent: SpawnPointJobBase
   name: securityofficer
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: SecurityOfficer
@@ -478,6 +513,7 @@
   id: SpawnPointDetective
   parent: SpawnPointJobBase
   name: detective
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Detective
@@ -490,6 +526,7 @@
   id: SpawnPointBrigmedic
   parent: SpawnPointJobBase
   name: brigmedic
+  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -502,6 +539,7 @@
   id: SpawnPointERTLeader
   parent: SpawnPointJobBase
   name: ERTleader
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ERTLeader
@@ -514,6 +552,7 @@
   id: SpawnPointERTChaplain
   parent: SpawnPointJobBase
   name: ERTchaplain
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ERTChaplain
@@ -526,6 +565,7 @@
   id: SpawnPointERTEngineer
   parent: SpawnPointJobBase
   name: ERTengineer
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ERTEngineer
@@ -538,6 +578,7 @@
   id: SpawnPointERTMedical
   parent: SpawnPointJobBase
   name: ERTmedical
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ERTMedical
@@ -550,6 +591,7 @@
   id: SpawnPointERTSecurity
   parent: SpawnPointJobBase
   name: ERTsecurity
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ERTSecurity
@@ -562,6 +604,7 @@
   id: SpawnPointERTJanitor
   parent: SpawnPointJobBase
   name: ERTjanitor
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: ERTJanitor
@@ -576,6 +619,7 @@
   id: SpawnPointReporter
   parent: SpawnPointJobBase
   name: reporter
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Reporter
@@ -588,6 +632,7 @@
   id: SpawnPointPsychologist
   parent: SpawnPointJobBase
   name: psychologist
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Psychologist
@@ -600,6 +645,7 @@
   id: SpawnPointZookeeper
   parent: SpawnPointJobBase
   name: zookeeper
+  noSpawn: true
   components:
   - type: SpawnPoint
     job_id: Zookeeper

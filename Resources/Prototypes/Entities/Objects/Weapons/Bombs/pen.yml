@@ -3,6 +3,7 @@
   suffix: Exploding
   parent: PenEmbeddable
   description: A dark ink pen.
+  noSpawn: true
   id: PenExploding
   components:
   - type: OnUseTimerTrigger
@@ -25,6 +26,7 @@
   parent: BaseItem
   id: PenExplodingBox
   name: exploding pen box
+  noSpawn: true
   description: A small box containing an exploding pen. Packaging disintegrates when opened, leaving no evidence behind.
   components:
   - type: Item

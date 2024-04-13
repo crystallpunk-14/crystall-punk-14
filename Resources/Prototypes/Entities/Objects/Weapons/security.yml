@@ -2,6 +2,7 @@
   name: stun baton
   parent: BaseItem
   id: Stunbaton
+  noSpawn: true
   description: A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
   components:
   - type: Sprite
@@ -87,6 +88,7 @@
   name: truncheon
   parent: BaseItem
   id: Truncheon
+  noSpawn: true
   description: A rigid, steel-studded baton, meant to harm.
   components:
   - type: Sprite
@@ -120,6 +122,7 @@
   name: flash
   parent: BaseItem
   id: Flash
+  noSpawn: true
   description: An ultrabright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. Useless when burnt out.
   components:
     - type: Sprite
@@ -164,6 +167,7 @@
 - type: entity
   name: flash
   parent: Flash
+  noSpawn: true
   suffix: 2 charges
   id: SciFlash
   components:
@@ -175,6 +179,7 @@
   name: portable flasher
   parent: BaseStructure
   id: PortableFlasher
+  noSpawn: true
   description: An ultrabright flashbulb with a proximity trigger, useful for making an area security-only.
   components:
     - type: EmitSoundOnTrigger

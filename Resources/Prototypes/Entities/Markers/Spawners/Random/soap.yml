@@ -1,6 +1,7 @@
 - type: entity
   id: RandomSoap
   name: random soap spawner
+  noSpawn: true
   parent: MarkerBase
   components:
   - type: Sprite

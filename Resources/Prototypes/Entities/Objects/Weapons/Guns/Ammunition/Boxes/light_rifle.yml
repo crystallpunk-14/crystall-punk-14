@@ -29,6 +29,7 @@
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifleBig
   name: ammunition box (.30 rifle)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -49,6 +50,7 @@
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifle
   name: ammunition box (.30 rifle)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle
@@ -63,6 +65,7 @@
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRiflePractice
   name: ammunition box (.30 rifle practice)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRiflePractice
@@ -78,6 +81,7 @@
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifleRubber
   name: ammunition box (.30 rifle rubber)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleRubber
@@ -93,6 +97,7 @@
   id: MagazineBoxLightRifleIncendiary
   parent: BaseMagazineBoxLightRifle
   name: ammunition box (.30 rifle incendiary)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleIncendiary
@@ -108,6 +113,7 @@
   parent: BaseMagazineBoxLightRifle
   id: MagazineBoxLightRifleUranium
   name: ammunition box (.30 rifle uranium)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifleUranium

@@ -2,6 +2,7 @@
   name: captain's sabre
   parent: BaseItem
   id: CaptainSabre
+  noSpawn: true
   description: A ceremonial weapon belonging to the captain of the station.
   components:
   - type: Sharp
@@ -32,6 +33,7 @@
   name: katana
   parent: BaseItem
   id: Katana
+  noSpawn: true
   description: Ancient craftwork made with not so ancient plasteel.
   components:
   - type: Sharp
@@ -57,6 +59,7 @@
   name: energy katana
   parent: Katana
   id: EnergyKatana
+  noSpawn: true
   description: A katana infused with strong energy.
   components:
   - type: Sprite
@@ -88,6 +91,7 @@
   name: machete
   parent: BaseItem
   id: Machete
+  noSpawn: true
   description: A large, vicious looking blade.
   components:
   - type: Sharp
@@ -113,6 +117,7 @@
   name: claymore
   parent: BaseItem
   id: Claymore
+  noSpawn: true
   description: An ancient war blade.
   components:
   - type: Sharp
@@ -139,6 +144,7 @@
   name: cutlass
   parent: BaseItem
   id: Cutlass
+  noSpawn: true
   description: A wickedly curved blade, often seen in the hands of space pirates.
   components:
   - type: Sharp
@@ -164,6 +170,7 @@
   name: The Throngler
   parent: BaseItem
   id: Throngler
+  noSpawn: true
   description: Why would you make this?
   components:
     - type: Sharp
