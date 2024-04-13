@@ -17,6 +17,14 @@
     {
       "name": "inhand-right",
       "directions": 4
+    },
+    {
+      "name": "equipped-BELT1",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BELT2",
+      "directions": 4
     }
   ]
 }

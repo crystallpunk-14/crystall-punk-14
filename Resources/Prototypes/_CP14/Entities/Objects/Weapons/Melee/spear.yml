@@ -6,8 +6,8 @@
   - CPBaseWeaponSharp
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
-  name: метательное копье
-  description: Оружие, исправно выполняющее свой долг еще со времен эпохи драконов.
+  name:  throwing javelin
+  description: A weapon that has done its duty since the age of the giants.
   components:
   - type: Item
     storedRotation: 0

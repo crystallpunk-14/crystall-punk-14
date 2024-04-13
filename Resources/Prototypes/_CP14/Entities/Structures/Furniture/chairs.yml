@@ -1,6 +1,6 @@
 - type: entity
-  name: деревянный стул
-  description: Сколочен из самых обычных досок. Просто и эффективно!    
+  name: wooden chair
+  description: Made of the most common planks. Simple and effective!    
   id: CPChairWooden
   parent: UnanchoredChairBase
   components:

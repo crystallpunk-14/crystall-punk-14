@@ -14,8 +14,8 @@
 - type: entity
   parent: CPClothingPantsBase
   id: CPClothingPantsHarlequinRed
-  name: красно-желтые штаны арлекина
-  description: С одной стороны кроваво красные, с другой стороны солнечно желтые. Дуальность жизни и смерти всегда хороший повод для шуток.
+  name: red-and-yellow harlequin pants
+  description: Blood red on one side, sunny yellow on the other. The duality of life and death is always a good joke.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Pants/harlequin.rsi

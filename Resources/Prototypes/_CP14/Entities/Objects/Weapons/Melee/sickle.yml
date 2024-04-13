@@ -7,11 +7,19 @@
   - CPBaseWeaponChemical
   - CPBaseWeaponLight
   - CPBaseWeaponShort
-  name: серп
-  description: Изначально разработанное как оружие против травы, серп внезапно показал себя хорош и в более кровавой жатве.
+  name: sickle
+  description: Originally developed as a weapon against grass, the sickle suddenly proved itself good at the bloodier harvest as well.
   components:
   - type: Item
+    size: Normal
     storedRotation: -45 
+  - type: Clothing
+    equipDelay: 0.45
+    unequipDelay: 0.45
+    sprite: _CP14/Objects/Weapons/Melee/Sickle/sickle.rsi
+    quickEquip: false
+    slots:
+    - belt
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Sickle/sickle.rsi
     layers:
