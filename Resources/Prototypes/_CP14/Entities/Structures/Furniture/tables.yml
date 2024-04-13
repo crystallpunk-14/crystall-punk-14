@@ -1,8 +1,8 @@
 - type: entity
   parent: TableBase
   id: CPTableWooden
-  name: деревянный стол
-  description: Простой стол, сколоченный из досок.
+  name: wooden table
+  description: A simple table made of boards.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi

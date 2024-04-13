@@ -3,8 +3,8 @@
   parent: 
   - BaseItem
   - CPBaseWeaponDestructible
-  name: булава
-  description: Тяжелый кусок металла на длинной палке. Что может быть проще?
+  name: mace
+  description: A heavy piece of metal on a long stick. What could be simpler than that?
   components:
   - type: Item
     size: Large

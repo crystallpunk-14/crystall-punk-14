@@ -5,8 +5,8 @@
   - CPBaseWeaponDestructible
   - CPBaseWeaponSharp
   - CPBaseWeaponChemical
-  name: двуручный меч
-  description: Мощное оружие, требующее огромной силы и умения для эффективного использования.
+  name: two-handed sword
+  description: A powerful weapon that requires tremendous strength and skill to use effectively.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/twoHandedSword.rsi

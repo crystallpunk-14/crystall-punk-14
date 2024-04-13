@@ -1,6 +1,6 @@
 - type: body
   id: CPHuman
-  name: "человек"
+  name: human
   root: torso
   slots:
     head:

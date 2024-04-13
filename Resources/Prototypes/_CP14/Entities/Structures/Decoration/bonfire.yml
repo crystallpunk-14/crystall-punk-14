@@ -1,8 +1,8 @@
 - type: entity
   id: CPBonfire
   parent: BaseStructure
-  name: костёр
-  description: Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
+  name: bonfire
+  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
   components:
   - type: Sprite
     noRot: true

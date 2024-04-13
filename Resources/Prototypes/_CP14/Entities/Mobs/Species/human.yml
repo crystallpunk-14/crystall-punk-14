@@ -2,7 +2,7 @@
 - type: entity
   parent: CPBaseMobSpeciesOrganic
   id: CPBaseMobHuman
-  name: человеческая оболочка
+  name: Mr. Human
   abstract: true
   components:
   - type: HumanoidAppearance

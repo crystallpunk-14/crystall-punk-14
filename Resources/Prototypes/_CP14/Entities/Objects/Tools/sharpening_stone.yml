@@ -1,7 +1,7 @@
 - type: entity
   id: CPBaseSharpeningStone
-  name: точильный камень
-  description: Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
+  name: sharpening stone
+  description: Allows you to sharpen blunted weapons. If you overdo it, you may well sharpen the weapon completely.
   parent: BaseItem
   components:
   - type: Item

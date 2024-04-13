@@ -1,7 +1,7 @@
 - type: entity
   id: CPBaseSharpeningStoneStructure
-  name: стационарный точильный камень
-  description: прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
+  name: stationary sharpening stone
+  description: A strong, durable sharpening stone capable of sharpening weapons without much damage to them.
   parent: BaseStructure
   components:
   - type: Clickable
