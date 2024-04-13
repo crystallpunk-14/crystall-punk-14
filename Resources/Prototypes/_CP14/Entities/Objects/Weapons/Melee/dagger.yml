@@ -12,7 +12,15 @@
   description: A small, multi-purpose, sharp blade. You can cut meat or throw it at a goblin.
   components:
   - type: Item
+    size: Normal
     storedRotation: -45 
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
+    quickEquip: false
+    slots:
+    - belt
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     layers:
