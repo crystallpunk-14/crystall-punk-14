@@ -105,6 +105,7 @@
 - type: entity
   name: svalinn laser pistol
   parent: BaseWeaponPowerCellSmall
+  noSpawn: true
   id: WeaponLaserSvalinn
   description: A cheap and widely used laser pistol.
   components:
@@ -127,6 +128,7 @@
   name: retro laser blaster
   parent: BaseWeaponBatterySmall
   id: WeaponLaserGun
+  noSpawn: true
   description: A weapon using light amplified by the stimulated emission of radiation.
   components:
   - type: Sprite
@@ -150,6 +152,7 @@
   name: makeshift laser pistol
   parent: BaseWeaponBatterySmall
   id: WeaponMakeshiftLaser
+  noSpawn: true
   description: Better pray it won't burn your hands off.
   components:
   - type: Sprite
@@ -173,6 +176,7 @@
   name: tesla gun
   parent: BaseWeaponBattery
   id: WeaponTeslaGun
+  noSpawn: true
   description: The power of the primordial element of lightning in your hands.
   components:
   - type: Sprite
@@ -202,6 +206,7 @@
   name: laser rifle
   parent: BaseWeaponBattery
   id: WeaponLaserCarbine
+  noSpawn: true
   description: Favoured by Nanotrasen Security for being cheap and easy to use.
   components:
   - type: Sprite
@@ -228,6 +233,7 @@
   name: practice laser rifle
   parent: WeaponLaserCarbine
   id: WeaponLaserCarbinePractice
+  noSpawn: true
   description: This modified laser rifle fires nearly harmless beams in the 40-watt range, for target practice.
   components:
   - type: HitscanBatteryAmmoProvider
@@ -240,6 +246,7 @@
   name: pulse pistol
   parent: BaseWeaponBatterySmall
   id: WeaponPulsePistol
+  noSpawn: true
   description: A state of the art energy pistol favoured as a sidearm by the NT operatives.
   components:
   - type: Sprite
@@ -269,6 +276,7 @@
   name: pulse carbine
   parent: BaseWeaponBattery
   id: WeaponPulseCarbine
+  noSpawn: true
   description: A high tech energy carbine favoured by the NT-ERT operatives.
   components:
   - type: Sprite
@@ -300,6 +308,7 @@
   name: pulse rifle
   parent: BaseWeaponBattery
   id: WeaponPulseRifle
+  noSpawn: true
   description: A weapon that is almost as infamous as its users.
   components:
   - type: Sprite
@@ -327,6 +336,7 @@
   name: laser cannon
   parent: BaseWeaponBattery
   id: WeaponLaserCannon
+  noSpawn: true
   description: A heavy duty, high powered laser weapon.
   components:
   - type: Sprite
@@ -351,6 +361,7 @@
   name: portable particle decelerator
   parent: BaseWeaponBattery
   id: WeaponParticleDecelerator
+  noSpawn: true
   description: A portable particle decelerator capable of decomposing a tesla or singularity.
   components:
     - type: Item
@@ -382,6 +393,7 @@
   name: x-ray cannon
   parent: BaseWeaponBattery
   id: WeaponXrayCannon
+  noSpawn: true
   description: An experimental weapon that uses concentrated x-ray energy against its target.
   components:
   - type: Sprite
@@ -410,6 +422,7 @@
   name: disabler
   parent: BaseWeaponBatterySmall
   id: WeaponDisabler
+  noSpawn: true
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
   components:
     - type: Tag
@@ -450,6 +463,7 @@
   name: disabler SMG
   parent: BaseWeaponBattery
   id: WeaponDisablerSMG
+  noSpawn: true
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
   components:
   - type: Item
@@ -489,6 +503,7 @@
   parent: WeaponDisabler
   id: WeaponDisablerPractice
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one has been undertuned for cadets making it mostly harmless.
+  noSpawn: true
   components:
     - type: Sprite
       sprite: Objects/Weapons/Guns/Battery/practice_disabler.rsi
@@ -513,6 +528,7 @@
   name: taser
   parent: BaseWeaponBatterySmall
   id: WeaponTaser
+  noSpawn: true
   description: A low-capacity, energy-based stun gun used by security teams to subdue targets at range.
   components:
   - type: Tag
@@ -549,6 +565,7 @@
   name: antique laser pistol
   parent: BaseWeaponBatterySmall
   id: WeaponAntiqueLaser
+  noSpawn: true
   description: This is an antique laser pistol. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy.
   components:
   - type: Sprite
@@ -589,6 +606,7 @@
   name: advanced laser pistol
   parent: BaseWeaponBatterySmall
   id: WeaponAdvancedLaser
+  noSpawn: true
   description: An experimental high-energy laser pistol with a self-charging nuclear battery.
   components:
   - type: Item
@@ -624,6 +642,7 @@
   name: C.H.I.M.P. handcannon
   parent: BaseWeaponBatterySmall
   id: WeaponPistolCHIMP
+  noSpawn: true
   description: Just because it's a little C.H.I.M.P. doesn't mean it can't punch like an A.P.E.
   components:
   - type: Sprite
@@ -670,6 +689,7 @@
   name: experimental C.H.I.M.P. handcannon
   parent: WeaponPistolCHIMP
   id: WeaponPistolCHIMPUpgraded
+  noSpawn: true
   description: This C.H.I.M.P. seems to have a greater punch than is usual...
   components:
   - type: BatteryWeaponFireModes
@@ -689,6 +709,7 @@
   name: eye of a behonker
   parent: BaseWeaponBatterySmall
   id: WeaponBehonkerLaser
+  noSpawn: true
   description: The eye of a behonker, it fires a laser when squeezed.
   components:
   - type: Sprite

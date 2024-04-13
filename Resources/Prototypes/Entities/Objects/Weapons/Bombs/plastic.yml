@@ -39,6 +39,7 @@
   name: composition C-4
   description: Used to put holes in specific areas without too much extra hole. A saboteur's favorite.
   parent: BasePlasticExplosive
+  noSpawn: true
   id: C4
   components:
   - type: Sprite
@@ -77,6 +78,7 @@
   name: seismic charge
   description: Concussion based explosive designed to destroy large amounts of rock.
   parent: BasePlasticExplosive
+  noSpawn: true
   id: SeismicCharge
   components:
   - type: Sprite

@@ -4,6 +4,7 @@
   name: staff of healing
   parent: WeaponStaffBase
   id: WeaponStaffHealing
+  noSpawn: true
   description: You don't foresee having to use this in your quest for carnage too often.
   components:
   - type: Sprite

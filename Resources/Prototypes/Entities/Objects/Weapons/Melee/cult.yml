@@ -3,6 +3,7 @@
   parent: BaseItem
   id: RitualDagger
   description: A strange dagger used by sinister groups for rituals and sacrifices.
+  noSpawn: true
   components:
   - type: Sharp
   - type: Sprite
@@ -26,6 +27,7 @@
   name: eldritch blade
   parent: BaseItem
   id: EldritchBlade
+  noSpawn: true
   description: A sword humming with unholy energy.
   components:
   - type: Sharp
@@ -50,6 +52,7 @@
   name: unholy halberd
   parent: BaseItem
   id: UnholyHalberd
+  noSpawn: true
   description: A poleaxe that seems to be linked to its wielder.
   components:
   - type: Tag

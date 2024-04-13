@@ -6,6 +6,7 @@
   id: FireBomb
   name: fire bomb
   description: A weak, improvised incendiary device.
+  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Weapons/Bombs/ied.rsi
@@ -60,6 +61,7 @@
   name: fire bomb
   suffix: empty
   description: A weak, improvised incendiary device. This one has no fuel.
+  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Weapons/Bombs/ied.rsi
@@ -87,6 +89,7 @@
   id: FireBombFuel
   suffix: fuel
   description: A weak, improvised incendiary device. This one is missing wires.
+  noSpawn: true
   components:
   - type: Sprite
     layers:

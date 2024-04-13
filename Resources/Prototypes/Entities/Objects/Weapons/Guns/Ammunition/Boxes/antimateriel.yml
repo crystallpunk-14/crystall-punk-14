@@ -29,6 +29,7 @@
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielBig
   name: ammunition box (.60 anti-materiel)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     capacity: 30
@@ -49,6 +50,7 @@
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMateriel
   name: ammunition box (.60 anti-materiel)
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMateriel

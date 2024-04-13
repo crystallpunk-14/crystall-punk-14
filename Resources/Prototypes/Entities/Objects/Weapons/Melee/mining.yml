@@ -3,6 +3,7 @@
   parent: BaseItem
   id: BaseWeaponCrusher # Crusher? But I...
   name: crusher
+  noSpawn: true
   description: An early design of the proto-kinetic accelerator.
   components:
   - type: Sharp
@@ -15,6 +16,7 @@
 - type: entity
   parent: BaseWeaponCrusher
   id: WeaponCrusher
+  noSpawn: true
   components:
   - type: Tag
     tags:
@@ -71,6 +73,7 @@
   parent: BaseWeaponCrusher
   id: WeaponCrusherDagger
   name: crusher dagger
+  noSpawn: true
   description: A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.
   components:
   - type: Sprite
@@ -92,6 +95,7 @@
   parent: WeaponCrusher
   id: WeaponCrusherGlaive
   name: crusher glaive
+  noSpawn: true
   description: An early design of the proto-kinetic accelerator, in glaive form.
   components:
   - type: Sprite

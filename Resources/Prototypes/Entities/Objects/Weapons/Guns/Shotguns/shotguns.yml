@@ -48,6 +48,7 @@
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: BaseItem
   id: WeaponShotgunBulldog
+  noSpawn: true
   description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
   components:
   - type: Sprite
@@ -104,6 +105,7 @@
   parent: BaseWeaponShotgun
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. Uses .50 shotgun shells.
+  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
@@ -126,6 +128,7 @@
   name: double-barreled shotgun
   parent: WeaponShotgunDoubleBarreled
   id: WeaponShotgunDoubleBarreledRubber
+  noSpawn: true
   description: An immortal classic. Uses .50 shotgun shells.
   suffix: Non-Lethal
   components:
@@ -136,6 +139,7 @@
   name: Enforcer
   parent: BaseWeaponShotgun
   id: WeaponShotgunEnforcer
+  noSpawn: true
   description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. .50 shotgun shells.
   components:
   - type: Sprite
@@ -150,6 +154,7 @@
 - type: entity
   parent: WeaponShotgunEnforcer
   id: WeaponShotgunEnforcerRubber
+  noSpawn: true
   suffix: Non-Lethal
   components:
   - type: BallisticAmmoProvider
@@ -160,6 +165,7 @@
   parent: BaseWeaponShotgun
   id: WeaponShotgunKammerer
   description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses .50 shotgun shells.
+  noSpawn: true
   components:
   - type: Item
     size: Normal
@@ -180,6 +186,7 @@
 - type: entity
   name: sawn-off shotgun
   parent: BaseWeaponShotgun
+  noSpawn: true
   id: WeaponShotgunSawn
   description: Groovy! Uses .50 shotgun shells.
   components:
@@ -204,6 +211,7 @@
   name: sawn-off shogun
   parent: WeaponShotgunSawn
   id: WeaponShotgunSawnEmpty
+  noSpawn: true
   description: Groovy! Uses .50 shotgun shells.
   suffix: Empty
   components:
@@ -218,6 +226,7 @@
   name: handmade pistol
   parent: BaseWeaponShotgun
   id: WeaponShotgunHandmade
+  noSpawn: true
   description: Looks unreliable. Uses .50 shotgun shells.
   components:
   - type: Item
@@ -242,6 +251,7 @@
   name: blunderbuss
   parent: BaseWeaponShotgun
   id: WeaponShotgunBlunderbuss
+  noSpawn: true
   suffix: Pirate
   description: Deadly at close range.
   components:
@@ -262,6 +272,7 @@
   name: improvised shotgun
   parent: BaseWeaponShotgun
   id: WeaponShotgunImprovised
+  noSpawn: true
   description: A shitty, hand-made shotgun that uses .50 shotgun shells. It can only hold one round in the chamber.
   components:
   - type: Sprite
@@ -289,6 +300,7 @@
   name: improvised shotgun
   parent: WeaponShotgunImprovised
   suffix: Loaded
+  noSpawn: true
   id: WeaponShotgunImprovisedLoaded
   components:
   - type: BallisticAmmoProvider

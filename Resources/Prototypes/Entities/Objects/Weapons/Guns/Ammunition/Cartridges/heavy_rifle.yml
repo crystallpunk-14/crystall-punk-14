@@ -24,6 +24,7 @@
   id: CartridgeMinigun
   name: cartridge (.10 rifle)
   parent: BaseCartridgeHeavyRifle
+  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletMinigun

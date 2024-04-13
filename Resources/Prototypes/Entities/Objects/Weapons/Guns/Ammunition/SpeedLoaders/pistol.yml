@@ -24,6 +24,7 @@
   id: SpeedLoaderPistol
   name: "speed loader (.35 auto)"
   parent: BaseSpeedLoaderPistol
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -43,6 +44,7 @@
   id: SpeedLoaderPistolPractice
   name: "speed loader (.35 auto practice)"
   parent: BaseSpeedLoaderPistol
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -62,6 +64,7 @@
   id: SpeedLoaderPistolRubber
   name: "speed loader (.35 auto rubber)"
   parent: BaseSpeedLoaderPistol
+  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolRubber

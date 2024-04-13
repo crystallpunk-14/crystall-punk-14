@@ -2,6 +2,7 @@
   name: sledgehammer
   parent: BaseItem
   id: Sledgehammer
+  noSpawn: true
   description: The perfect tool for wanton carnage.
   components:
   - type: Sprite

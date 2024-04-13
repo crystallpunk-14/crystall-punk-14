@@ -54,6 +54,7 @@
   id: WeaponWaterPistol
   parent: WeaponWaterGunBase
   name: water pistol
+  noSpawn: true
   description: The dinkiest of water-based weaponry. You swear the trigger doesn't do anything.
   components:
   - type: Sprite
@@ -71,6 +72,7 @@
   id: WeaponWaterBlaster
   parent: WeaponWaterGunBase
   name: water blaster
+  noSpawn: true
   description: With this bad boy, you'll be the cooleste kid at the summer barbecue.
   components:
   - type: Gun
@@ -108,6 +110,7 @@
   id: WeaponWaterBlasterSuper
   parent: WeaponWaterGunBase
   name: super water blaster
+  noSpawn: true
   description: No! No! Not in the eyes!
   components:
   - type: Gun
