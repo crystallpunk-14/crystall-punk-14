@@ -2,6 +2,7 @@
   parent: MarkerBase
   id: PottedPlantRandom
   name: random potted plant spawner
+  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -42,6 +43,7 @@
   parent: MarkerBase
   id: PottedPlantRandomPlastic
   name: random plastic potted plant spawner
+  noSpawn: true
   components:
   - type: Sprite
     layers:

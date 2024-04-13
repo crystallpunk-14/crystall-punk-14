@@ -2,6 +2,7 @@
   name: Random Folder Spawner
   id: FolderSpawner
   parent: MarkerBase
+  noSpawn: true
   placement:
     mode: PlaceFree
   components:

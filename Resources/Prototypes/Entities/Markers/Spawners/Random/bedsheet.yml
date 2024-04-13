@@ -2,6 +2,7 @@
   name: Random Sheet Spawner
   id: BedsheetSpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:

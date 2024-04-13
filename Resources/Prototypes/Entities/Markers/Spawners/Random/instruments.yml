@@ -2,6 +2,7 @@
   id: RandomInstruments
   name: random instruments spawner
   parent: MarkerBase
+  noSpawn: true
   components:
   - type: Sprite
     layers:

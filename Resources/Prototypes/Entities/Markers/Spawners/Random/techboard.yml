@@ -2,6 +2,7 @@
   id: RandomBoard
   name: random board spawner
   parent: MarkerBase
+  noSpawn: true
   components:
   - type: Sprite
     layers:

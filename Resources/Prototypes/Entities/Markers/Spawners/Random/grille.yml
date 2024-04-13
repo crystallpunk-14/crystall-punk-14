@@ -2,6 +2,7 @@
   name: Random Grille Spawner
   id: GrilleSpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:

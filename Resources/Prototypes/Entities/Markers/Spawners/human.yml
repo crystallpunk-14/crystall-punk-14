@@ -2,6 +2,7 @@
   name: syndicate footsoldier spawner
   id: SpawnMobSyndicateFootSoldier
   parent: MarkerBase
+  noSpawn: true
   components:
 #God forgive me for what I'm about to do
   - type: Sprite
@@ -29,6 +30,7 @@
   name: syndicate shuttle pilot spawner
   id: SpawnMobSyndicateFootsoldierPilot
   parent: SpawnMobSyndicateFootSoldier
+  noSpawn: true
   components:
   - type: ConditionalSpawner
     prototypes:

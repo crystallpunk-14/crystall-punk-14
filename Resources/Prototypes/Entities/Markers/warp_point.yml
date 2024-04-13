@@ -11,6 +11,7 @@
   id: WarpPointBeacon
   parent: WarpPoint
   name: warp point (beacon)
+  noSpawn: true
   components:
   - type: NavMapBeacon
   - type: WarpPoint
@@ -20,6 +21,7 @@
   parent: WarpPoint
   id: WarpPointBombing
   name: warp point
+  noSpawn: true
   suffix: ninja bombing target
   components:
   - type: BombingTarget

@@ -3,6 +3,7 @@
   suffix: Fluff+Clothes
   id: MaintenanceFluffSpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -135,6 +136,7 @@
   suffix: Tools+Cells+Mats
   id: MaintenanceToolSpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -211,6 +213,7 @@
   suffix: Scrap+Weapons
   id: MaintenanceWeaponSpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -263,6 +266,7 @@
   suffix: Plants
   id: MaintenancePlantSpawner
   parent: MarkerBase
+  noSpawn: true
   components:
     - type: Sprite
       layers:
