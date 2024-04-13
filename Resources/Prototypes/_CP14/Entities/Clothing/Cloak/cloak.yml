@@ -14,8 +14,8 @@
 - type: entity
   parent: CPClothingCloakBase
   id: CPClothingCloakArmoredRed
-  name: бронированная красная накидка
-  description: Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
+  name: armored red cape
+  description: Huge metal shoulder pads give extra protection from getting your head chopped off.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
@@ -34,8 +34,8 @@
   - CPClothingCloakBase
   - ClothingSlotBase
   id: CPClothingCloakBlacksmithArpon
-  name: фартук кузнеца
-  description: Свободные кожанные полоски, все еще фактически являющиеся одеждой. 
+  name: blacksmith's apron
+  description: Loose leather strips, still actually being clothing. 
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
@@ -45,8 +45,8 @@
 - type: entity
   parent: CPClothingCloakBase
   id: CPClothingCloakHoodieYellow
-  name: желтый короткий плащ с капюшоном
-  description: Защищает ваши плечи и голову от холода и интереса противоположного пола.
+  name: yellow short hooded cape
+  description: Protects your shoulders and head from the cold and the interest of the opposite sex.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
