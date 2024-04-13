@@ -1,6 +1,6 @@
 - type: entity
-  parent: ChestGeneric
-  id: WoodenChest
+  parent: CPChestGeneric
+  id: CPWoodenChest
   name: wooden chest
   description: Good wooden chest.
   components:
