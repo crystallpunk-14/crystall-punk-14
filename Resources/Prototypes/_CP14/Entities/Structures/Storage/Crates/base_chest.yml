@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseStructureDynamic
-  id: ChestGeneric
+  id: CPChestGeneric
   noSpawn: true
   name: Chest
   description: Chest.
