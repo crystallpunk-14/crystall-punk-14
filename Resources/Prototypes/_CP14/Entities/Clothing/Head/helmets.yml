@@ -18,8 +18,8 @@
   parent: CPClothingHeadBase
   id: CPClothingHeadHoodieYellow
   noSpawn: true
-  name: желтый капюшон
-  description: Вы получаете +2 к броскам скрытности от внимания противоположного пола.
+  name: yellow hood
+  description: You gain +2 to stealth rolls against the attention of the opposite sex.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Head/yellowhoodie.rsi

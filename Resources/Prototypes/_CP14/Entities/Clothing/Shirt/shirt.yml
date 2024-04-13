@@ -14,8 +14,8 @@
 - type: entity
   parent: CPClothingShirtBase
   id: CPClothingShirtHarlequineRed  
-  name: красная рубаха арлекина
-  description: На ней не видно пятен крови, которые остаются после неудачных шуток.
+  name: red harlequin shirt
+  description: It doesn't show the bloodstains that are left behind after bad jokes.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/harlequine_red.rsi

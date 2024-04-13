@@ -7,8 +7,8 @@
   - CPBaseWeaponChemical
   - CPBaseWeaponThrowable
   - CPBaseWeaponLight
-  name: ручной топор
-  description: Небольшой, надежный топорик.
+  name: hand axe
+  description: A small axe, great for chopping wood or sinew.
   components:
   - type: Item
     size: Normal
