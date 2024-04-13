@@ -1,0 +1,38 @@
+- type: entity
+  parent: CPChestGeneric
+  id: CPWoodenChest
+  name: wooden chest
+  description: Good wooden chest.
+  components:
+  - type: Icon
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Damageable
+    damageModifierSet: Web
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 3
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg

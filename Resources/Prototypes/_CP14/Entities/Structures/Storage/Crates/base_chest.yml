@@ -1,0 +1,69 @@
+- type: entity
+  parent: BaseStructureDynamic
+  id: CPChestGeneric
+  noSpawn: true
+  name: Chest
+  description: Chest.
+  components:
+  - type: Transform
+    noRot: true
+  - type: Icon
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: icon
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 50
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: EntityStorage
+  - type: PlaceableSurface
+    isPlaceable: false # defaults to closed.
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: Attach Label
+      ejectVerbText: Remove Label
+      whitelist:
+        components:
+        - Paper
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+      paper_label: !type:ContainerSlot
+  - type: ItemSlots
+  - type: StaticPrice
+    price: 50
+  
