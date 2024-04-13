@@ -26,10 +26,10 @@
 
 - type: entity
   id: CPStoneRuinWall
-  name: каменная стена руин
-  suffix: Устаревший формат спрайта!
+  name: stone wall ruin
+  suffix: Outdated sprite format!
   parent: CPBaseWall
-  description: Эти стены повидали многое, и осталось им недолго.
+  description: These walls have seen a lot, and they don't have long to live.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/ruin_stone.rsi
@@ -41,9 +41,9 @@
 
 - type: entity
   id: CPWoodFullWall
-  name: деревянная стена
+  name: wooden wall
   parent: CPBaseWall
-  description: Доска к доске, и вместе образуют они защиту и уют.
+  description: Board to board, and together they form protection and comfort.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/wood_full.rsi
@@ -55,10 +55,10 @@
 
 - type: entity
   id: CPCaveStoneWall
-  name: каменная порода
-  suffix: Устаревший формат спрайта!
+  name: rock
+  suffix: Outdated sprite format!
   parent: CPBaseWall
-  description: Прочная каменная природная стена. От нее веет пещерным холодом.
+  description: A solid stone natural wall. It has a cave-like coldness to it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/cave_stone.rsi
@@ -71,8 +71,8 @@
 - type: entity
   id: CPStoneRuinFragment
   parent: BaseRock
-  name: обломки каменных стен
-  description: Это все, что осталось от былого величия. 
+  name: stone wall fragments
+  description: It's all that's left of former greatness. 
   placement:
     mode: SnapgridCenter
     snap:
