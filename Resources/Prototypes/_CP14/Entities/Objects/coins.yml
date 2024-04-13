@@ -3,6 +3,9 @@
   parent: BaseItem
   abstract: true
   components:
+  - type: Tag
+    tags:
+    - CPCoin
   - type: Item
     size: Tiny
   - type: Stack
