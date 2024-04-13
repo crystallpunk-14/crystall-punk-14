@@ -8,6 +8,7 @@ ent-CPBaseWoodDoor = деревянная дверь
     .suffix = Без замка
 
 ent-CPWoodDoorTavern = { ent-CPBaseWoodDoor }
+    .desc = { ent-CPBaseWoodDoor.desc }
     .suffix = Таверна
 
 # Furniture
