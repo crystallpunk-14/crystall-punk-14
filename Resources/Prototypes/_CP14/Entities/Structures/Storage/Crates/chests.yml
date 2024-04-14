@@ -1,5 +1,7 @@
 - type: entity
-  parent: CPChestGeneric
+  parent: 
+  - CPChestGeneric
+  - CPBaseWooden
   id: CPWoodenChest
   name: wooden chest
   description: Good wooden chest.
@@ -14,9 +16,20 @@
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
   - type: Damageable
-    damageModifierSet: Web
+    damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
     - trigger:
         !type:DamageTrigger
         damage: 150

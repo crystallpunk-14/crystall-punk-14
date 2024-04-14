@@ -42,7 +42,9 @@
 - type: entity
   id: CPWoodFullWall
   name: wooden wall
-  parent: CPBaseWall
+  parent: 
+  - CPBaseWall
+  - CPBaseWooden
   description: Board to board, and together they form protection and comfort.
   components:
   - type: Sprite
@@ -52,6 +54,35 @@
   - type: IconSmooth
     key: CPwallswood
     base: wood 
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 3
 
 - type: entity
   id: CPCaveStoneWall
