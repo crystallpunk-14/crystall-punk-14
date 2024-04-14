@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: CPWoodenChest
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CPWoodenChest
+          steps:
+            - material: WoodPlank
+              amount: 5
+              doAfter: 2
+              
+    - node: CPWoodenChest
+      entity: CPWoodenChest

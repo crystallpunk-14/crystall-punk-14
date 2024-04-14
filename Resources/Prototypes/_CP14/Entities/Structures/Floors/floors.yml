@@ -96,6 +96,9 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
+  - type: Construction
+    graph: CPFloor
+    node: CPFloorWood
 
 - type: entity
   parent: CPFloorWood
@@ -113,3 +116,6 @@
           wood_big_2: ""
           wood_big_3: ""
           wood_big_4: ""
+  - type: Construction
+    graph: CPFloor
+    node: CPFloorWoodBig

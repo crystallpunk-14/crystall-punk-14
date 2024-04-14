@@ -1,7 +1,7 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Деревянный стул
-  description: Сколочен из самых обычных досок. Просто и эффективно!    
+  name: Wooden chair
+  description: Made of the most common planks. Simple and effective!
   id: CPChairWooden
   graph: CPSeat
   startNode: start
@@ -18,8 +18,8 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Деревянный стол
-  description: Простой стол, сколоченный из досок.
+  name: Wooden table
+  description: A simple table made of boards.
   id: CPTableWooden
   graph: CPTable
   startNode: start
@@ -36,8 +36,8 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Костёр
-  description: Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
+  name: Bonfire
+  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
   id: CPBonfire
   graph: CPBonfire
   startNode: start
@@ -46,6 +46,24 @@
   icon:
     sprite: _CP14/Structures/Decoration/bonfire.rsi
     state: bonfire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden chest
+  description: a simple wooden chest for easy storage of junk.
+  id: CPWoodenChest
+  graph: CPWoodenChest
+  startNode: start
+  targetNode: CPWoodenChest
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
