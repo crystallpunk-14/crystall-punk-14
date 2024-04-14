@@ -1,0 +1,110 @@
+- type: entity
+  id: CPMobWanderingLight
+  parent: [ BaseMob, MobCombat ]
+  name: блуждающий огонёк
+  description: Похожий на дымку шар света, внушающий надежду и безопасность.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: MovementIgnoreGravity
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Mobs/Monsters/firefly.rsi
+    layers:
+      - state: wanderinglight
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      22: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      18: 0.6
+  - type: StatusEffects
+    allowed:
+    - Corporeal
+    - StaminaModifier
+    - Pacified
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 60
+        mask:
+          - FlyingMobMask
+        layer:
+          - FlyingMobLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CPLightning
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 21
+    damage:
+      groups:
+        Brute: -0.3
+        Burn: -0.3
+  - type: MeleeWeapon
+    damage:
+      types:
+        Shock: 9
+    soundHit:
+      collection: sparks
+    animation: WeaponArcPunch
+  - type: StaminaDamageOnHit
+    damage: 10
+  - type: NoSlip
+  - type: Pullable
+  - type: ZombieImmune
+  - type: GhostTakeoverAvailable
+  - type: PointLight
+    radius: 4.0
+    energy: 1
+    color: "#FFA500FF"
+  - type: Stealth
+    maxVisibility: 1.2
+  - type: StealthOnMove
+    passiveVisibilityRate: -0.26
+    movementVisibilityRate: 0.26
+  - type: Speech
+    speechVerb: Ghost
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 22
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+
+- type: damageModifierSet
+  id: CPLightning # Модификатор урона по существу, иммунитет ко многим типам урона
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.7
+    Piercing: 0.7
+    Shock: 0.0
+    Cold: 0.6
+    Poison: 0.0
+    Radiation: 0.0
+    Cellular: 0.0
+    Heat: 0.6
+    Caustic: 0.6
