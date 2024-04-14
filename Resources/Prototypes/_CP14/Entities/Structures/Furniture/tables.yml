@@ -1,33 +1,41 @@
 - type: entity
-  parent: TableBase
+  parent: 
+  - TableBase
+  - CPBaseWooden
   id: CPTableWooden
   name: wooden table
   description: A simple table made of boards.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: full
   - type: Icon
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: full
   - type: Construction
     graph: CPTable
     node: CPTableWooden
   - type: Damageable
+    damageContainer: Inorganic
     damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors: #excess damage (nuke?). avoid computational cost of spawning entities.
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          collection: GlassBreak
+          collection: WoodDestroy
     - trigger:
         !type:DamageTrigger
-        damage: 15
+        damage: 60
       behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
@@ -36,14 +44,12 @@
           MaterialWoodPlank:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Tag
-    tags:
-    - Wooden
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
   - type: IconSmooth
     key: state
     base: state
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full

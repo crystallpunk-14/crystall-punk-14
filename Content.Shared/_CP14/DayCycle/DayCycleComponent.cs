@@ -1,7 +1,7 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.CrystallPunk.DayCycle;
+namespace Content.Shared._CP14.DayCycle;
 
 /// <summary>
 /// Stores all the necessary data for the day and night cycle system to work

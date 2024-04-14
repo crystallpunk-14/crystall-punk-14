@@ -1,0 +1,38 @@
+- type: entity
+  id: CPBaseWooden
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Tag
+    tags:
+    - Wooden
+  - type: CPFlammableAmbientSound
+  - type: AmbientSound
+    enabled: false
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg #TODO replace
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: Flammable
+    fireSpread: true
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 0.5
+    firestackFade: 0.3
+    firestackFadeOnIgnite: 0.3
+    firestackFadeFade: -0.2
+    damage:
+      types:
+        Heat: 0.5
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: small
+  - type: CPFireSpread
