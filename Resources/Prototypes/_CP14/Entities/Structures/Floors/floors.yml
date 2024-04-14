@@ -61,7 +61,7 @@
           wood_4: ""
   - type: FootstepModifier
     footstepSoundCollection:
-      collection: BarestepWood
+      collection: FootstepFloor
       params:
         volume: 8
   - type: Damageable
