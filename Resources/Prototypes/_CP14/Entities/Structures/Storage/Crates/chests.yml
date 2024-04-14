@@ -53,3 +53,5 @@
   - type: Construction
     graph: CPWoodenChest
     node: CPWoodenChest
+    containers:
+    - entity_storage
