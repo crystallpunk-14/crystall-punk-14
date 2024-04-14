@@ -1,0 +1,31 @@
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden floor
+  description: Made of the most common planks. Simple and effective!
+  id: CPFloorWood
+  graph: CPFloor
+  startNode: start
+  targetNode: CPFloorWood
+  category: construction-category-floor
+  icon:
+    sprite: _CP14/Structures/Floors/wood.rsi
+    state: wood_1
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden big floor
+  description: Made of the most common planks. Simple and effective!
+  id: CPFloorWood
+  graph: CPFloor
+  startNode: start
+  targetNode: CPFloorWoodBig
+  category: construction-category-floor
+  icon:
+    sprite: _CP14/Structures/Floors/wood_big.rsi
+    state: wood_big_1
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
