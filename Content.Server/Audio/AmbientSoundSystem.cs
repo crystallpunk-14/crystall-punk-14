@@ -2,6 +2,7 @@ using Content.Server.CrystallPunk.Temperature;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Audio;
+using Content.Shared.Mobs;
 
 namespace Content.Server.Audio;
 
