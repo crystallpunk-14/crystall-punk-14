@@ -4,7 +4,7 @@
   - CPBaseWooden
   id: CPWoodenChest
   name: wooden chest
-  description: Good wooden chest.
+  description: A simple wooden chest for easy storage of junk.
   components:
   - type: Icon
     sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
@@ -50,3 +50,6 @@
       path: /Audio/Effects/woodenclosetclose.ogg
     openSound:
       path: /Audio/Effects/woodenclosetopen.ogg
+  - type: Construction
+    graph: CPWoodenChest
+    node: CPWoodenChest

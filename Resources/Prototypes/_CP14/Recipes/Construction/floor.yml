@@ -18,7 +18,7 @@
   crystallPunkAllowed: true
   name: Wooden big floor
   description: Made of the most common planks. Simple and effective!
-  id: CPFloorWood
+  id: CPFloorWoodBig
   graph: CPFloor
   startNode: start
   targetNode: CPFloorWoodBig

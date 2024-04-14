@@ -51,3 +51,21 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden chest
+  description: a simple wooden chest for easy storage of junk.
+  id: CPWoodenChest
+  graph: CPWoodenChest
+  startNode: start
+  targetNode: CPWoodenChest
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
