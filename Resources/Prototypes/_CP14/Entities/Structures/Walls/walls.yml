@@ -51,6 +51,7 @@
     sprite: _CP14/Structures/Walls/wood_full.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/wood_full.rsi
+    state: full
   - type: IconSmooth
     key: CPwallswood
     base: wood 

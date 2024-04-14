@@ -8,6 +8,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: full
   - type: Icon
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
   - type: Construction

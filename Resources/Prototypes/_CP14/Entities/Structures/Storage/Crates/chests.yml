@@ -8,6 +8,7 @@
   components:
   - type: Icon
     sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: icon
   - type: Sprite
     sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
     layers:
