@@ -45,6 +45,7 @@
   name: steel tile
   parent: FloorTileItemBase
   id: FloorTileItemSteel
+  noSpawn: true
   components:
   - type: Sprite
     state: steel
@@ -64,6 +65,7 @@
   name: steel dark checker tile
   parent: FloorTileItemSteel
   id: FloorTileItemSteelCheckerDark
+  noSpawn: true
   components:
   - type: Sprite
     state: checker-dark
@@ -76,6 +78,7 @@
   name: steel light checker tile
   parent: FloorTileItemSteel
   id: FloorTileItemSteelCheckerLight
+  noSpawn: true
   components:
   - type: Sprite
     state: checker-light
@@ -88,6 +91,7 @@
   name: steel tile
   parent: FloorTileItemBase
   id: FloorTileItemMetalDiamond
+  noSpawn: true
   components:
   - type: Sprite
     state: metaldiamond
@@ -107,6 +111,7 @@
   name: wood floor
   parent: FloorTileItemBase
   id: FloorTileItemWood
+  noSpawn: true
   components:
   - type: Sprite
     state: wood
@@ -126,6 +131,7 @@
   name: white tile
   parent: FloorTileItemBase
   id: FloorTileItemWhite
+  noSpawn: true
   components:
   - type: Sprite
     state: white
@@ -145,6 +151,7 @@
   name: dark tile
   parent: FloorTileItemBase
   id: FloorTileItemDark
+  noSpawn: true
   components:
   - type: Sprite
     state: dark
@@ -164,6 +171,7 @@
   name: techmaint floor
   parent: FloorTileItemBase
   id: FloorTileItemTechmaint
+  noSpawn: true
   components:
   - type: Sprite
     state: techfloor
@@ -180,6 +188,7 @@
   name: reinforced tile
   parent: FloorTileItemBase
   id: FloorTileItemReinforced
+  noSpawn: true
   components:
   - type: Sprite
     state: reinforced
@@ -198,6 +207,7 @@
   name: mono tile
   parent: FloorTileItemBase
   id: FloorTileItemMono
+  noSpawn: true
   components:
   - type: Sprite
     state: monofloor
@@ -214,6 +224,7 @@
   name: linoleum floor
   parent: FloorTileItemBase
   id: FloorTileItemLino
+  noSpawn: true
   components:
   - type: Sprite
     state: lino
@@ -230,6 +241,7 @@
   name: filled brass plate
   parent: FloorTileItemBase
   id: FloorTileItemBrassFilled
+  noSpawn: true
   components:
   - type: Sprite
     state: brass-filled
@@ -249,6 +261,7 @@
   name: smooth brass plate
   parent: FloorTileItemBase
   id: FloorTileItemBrassReebe
+  noSpawn: true
   components:
   - type: Sprite
     state: reebe
@@ -268,6 +281,7 @@
   name: dirty tile
   parent: FloorTileItemBase
   id: FloorTileItemDirty
+  noSpawn: true
   components:
   - type: Sprite
     state: dirty
@@ -284,6 +298,7 @@
   name: elevator shaft tile
   parent: FloorTileItemBase
   id: FloorTileItemElevatorShaft
+  noSpawn: true
   components:
   - type: Sprite
     state: dark
@@ -300,6 +315,7 @@
   name: rock vault tile
   parent: FloorTileItemBase
   id: FloorTileItemRockVault
+  noSpawn: true
   components:
   - type: Sprite
     state: rockvault
@@ -316,6 +332,7 @@
   name: blue tile
   parent: FloorTileItemBase
   id: FloorTileItemBlue
+  noSpawn: true
   components:
   - type: Sprite
     state: blue
@@ -332,6 +349,7 @@
   name: lime tile
   parent: FloorTileItemBase
   id: FloorTileItemLime
+  noSpawn: true
   components:
   - type: Sprite
     state: lime
@@ -348,6 +366,7 @@
   name: mining tile
   parent: FloorTileItemBase
   id: FloorTileItemMining
+  noSpawn: true
   components:
   - type: Sprite
     state: mining
@@ -364,6 +383,7 @@
   name: dark mining tile
   parent: FloorTileItemBase
   id: FloorTileItemMiningDark
+  noSpawn: true
   components:
   - type: Sprite
     state: miningdark
@@ -380,6 +400,7 @@
   name: light mining tile
   parent: FloorTileItemBase
   id: FloorTileItemMiningLight
+  noSpawn: true
   components:
   - type: Sprite
     state: mininglight
@@ -397,6 +418,7 @@
   name: freezer tile
   parent: FloorTileItemBase
   id: FloorTileItemFreezer
+  noSpawn: true
   components:
   - type: Sprite
     state: showroom
@@ -413,6 +435,7 @@
   name: showroom tile
   parent: FloorTileItemBase
   id: FloorTileItemShowroom
+  noSpawn: true
   components:
   - type: Sprite
     state: showroom
@@ -429,6 +452,7 @@
   name: hydro tile
   parent: FloorTileItemBase
   id: FloorTileItemHydro
+  noSpawn: true
   components:
   - type: Sprite
     state: hydro
@@ -445,6 +469,7 @@
   name: bar tile
   parent: FloorTileItemBase
   id: FloorTileItemBar
+  noSpawn: true
   components:
   - type: Sprite
     state: bar
@@ -461,6 +486,7 @@
   name: clown tile
   parent: FloorTileItemBase
   id: FloorTileItemClown
+  noSpawn: true
   components:
   - type: Sprite
     state: clown
@@ -477,6 +503,7 @@
   name: mime tile
   parent: FloorTileItemBase
   id: FloorTileItemMime
+  noSpawn: true
   components:
   - type: Sprite
     state: mime
@@ -493,6 +520,7 @@
   name: kitchen tile
   parent: FloorTileItemBase
   id: FloorTileItemKitchen
+  noSpawn: true
   components:
   - type: Sprite
     state: kitchen
@@ -509,6 +537,7 @@
   name: laundry tile
   parent: FloorTileItemBase
   id: FloorTileItemLaundry
+  noSpawn: true
   components:
   - type: Sprite
     state: laundry
@@ -525,6 +554,7 @@
 - type: entity
   parent: FloorTileItemBase
   id: FloorTileItemConcrete
+  noSpawn: true
   name: concrete tile
   components:
   - type: Sprite
@@ -542,6 +572,7 @@
   parent: FloorTileItemBase
   id: FloorTileItemGrayConcrete
   name: gray concrete tile
+  noSpawn: true
   components:
   - type: Sprite
     state: grayconcrete
@@ -558,6 +589,7 @@
   parent: FloorTileItemBase
   id: FloorTileItemOldConcrete
   name: old concrete tile
+  noSpawn: true
   components:
   - type: Sprite
     state: oldconcrete
@@ -575,6 +607,7 @@
   name: blue arcade floor
   parent: FloorTileItemBase
   id: FloorTileItemArcadeBlue
+  noSpawn: true
   components:
   - type: Sprite
     state: arcadeblue
@@ -591,6 +624,7 @@
   name: blue arcade floor
   parent: FloorTileItemBase
   id: FloorTileItemArcadeBlue2
+  noSpawn: true
   components:
   - type: Sprite
     state: arcadeblue2
@@ -607,6 +641,7 @@
   name: red arcade floor
   parent: FloorTileItemBase
   id: FloorTileItemArcadeRed
+  noSpawn: true
   components:
   - type: Sprite
     state: arcadered
@@ -623,6 +658,7 @@
   name: eighties floor
   parent: FloorTileItemBase
   id: FloorTileItemEighties
+  noSpawn: true
   components:
   - type: Sprite
     state: eighties
@@ -639,6 +675,7 @@
   name: clown carpet floor
   parent: FloorTileItemBase
   id: FloorTileItemCarpetClown
+  noSpawn: true
   components:
   - type: Sprite
     state: carpetclown
@@ -655,6 +692,7 @@
   name: office carpet floor
   parent: FloorTileItemBase
   id: FloorTileItemCarpetOffice
+  noSpawn: true
   components:
   - type: Sprite
     state: carpetoffice
@@ -671,6 +709,7 @@
   name: boxing ring floor
   parent: FloorTileItemBase
   id: FloorTileItemBoxing
+  noSpawn: true
   components:
   - type: Sprite
     state: boxing
@@ -687,6 +726,7 @@
   name: gym floor
   parent: FloorTileItemBase
   id: FloorTileItemGym
+  noSpawn: true
   components:
   - type: Sprite
     state: gym
@@ -704,6 +744,7 @@
   name: white shuttle floor
   parent: FloorTileItemBase
   id: FloorTileItemShuttleWhite
+  noSpawn: true
   components:
   - type: Sprite
     state: shuttlewhite
@@ -720,6 +761,7 @@
   name: blue shuttle floor
   parent: FloorTileItemBase
   id: FloorTileItemShuttleBlue
+  noSpawn: true
   components:
   - type: Sprite
     state: shuttleblue
@@ -736,6 +778,7 @@
   name: orange shuttle floor
   parent: FloorTileItemBase
   id: FloorTileItemShuttleOrange
+  noSpawn: true
   components:
   - type: Sprite
     state: shuttleorange
@@ -752,6 +795,7 @@
   name: purple shuttle floor
   parent: FloorTileItemBase
   id: FloorTileItemShuttlePurple
+  noSpawn: true
   components:
   - type: Sprite
     state: shuttlepurple
@@ -768,6 +812,7 @@
   name: red shuttle floor
   parent: FloorTileItemBase
   id: FloorTileItemShuttleRed
+  noSpawn: true
   components:
   - type: Sprite
     state: shuttlered
@@ -784,6 +829,7 @@
   name: grey shuttle floor
   parent: FloorTileItemBase
   id: FloorTileItemShuttleGrey
+  noSpawn: true
   components:
   - type: Sprite
     state: shuttlegrey
@@ -800,6 +846,7 @@
   name: black shuttle floor
   parent: FloorTileItemBase
   id: FloorTileItemShuttleBlack
+  noSpawn: true
   components:
   - type: Sprite
     state: shuttleblack
@@ -817,6 +864,7 @@
   name: gold floor
   parent: FloorTileItemBase
   id: FloorTileItemGold
+  noSpawn: true
   components:
   - type: Sprite
     state: gold
@@ -833,6 +881,7 @@
   name: silver tile
   parent: FloorTileItemBase
   id: FloorTileItemSilver
+  noSpawn: true
   components:
   - type: Sprite
     state: silver
@@ -850,6 +899,7 @@
   name: green circuit floor
   parent: FloorTileItemBase
   id: FloorTileItemGCircuit
+  noSpawn: true
   components:
   - type: Sprite
     state: gcircuit
@@ -866,6 +916,7 @@
   name: blue circuit floor
   parent: FloorTileItemBase
   id: FloorTileItemBCircuit
+  noSpawn: true
   components:
   - type: Sprite
     state: bcircuit
@@ -883,6 +934,7 @@
 - type: entity
   parent: FloorTileItemGCircuit
   id: FloorTileItemGCircuit4
+  noSpawn: true
   suffix: 4
   components:
   - type: Stack
@@ -891,6 +943,7 @@
 - type: entity
   parent: FloorTileItemBCircuit
   id: FloorTileItemBCircuit4
+  noSpawn: true
   suffix: 4
   components:
   - type: Stack
@@ -901,6 +954,7 @@
   name: grass tile
   parent: FloorTileItemBase
   id: FloorTileItemGrass
+  noSpawn: true
   components:
   - type: Sprite
     state: grass
@@ -917,6 +971,7 @@
   name: jungle grass tile
   parent: FloorTileItemBase
   id: FloorTileItemGrassJungle
+  noSpawn: true
   components:
   - type: Sprite
     state: grassjungle
@@ -933,6 +988,7 @@
   name: snow tile
   parent: FloorTileItemBase
   id: FloorTileItemSnow
+  noSpawn: true
   components:
   - type: Sprite
     state: snow
@@ -949,6 +1005,7 @@
   name: wood pattern floor
   parent: FloorTileItemBase
   id: FloorTileItemWoodPattern
+  noSpawn: true
   components:
   - type: Sprite
     state: woodpatternfloor
@@ -965,6 +1022,7 @@
   id: FloorTileItemFlesh
   parent: FloorTileItemBase
   name: flesh floor
+  noSpawn: true
   components:
   - type: Sprite
     state: meat
@@ -984,6 +1042,7 @@
   name: steel maint floor
   parent: FloorTileItemBase
   id: FloorTileItemSteelMaint
+  noSpawn: true
   components:
   - type: Sprite
     state: steelmaintfloor
@@ -1000,6 +1059,7 @@
   name: grating maint floor
   parent: FloorTileItemBase
   id: FloorTileItemGratingMaint
+  noSpawn: true
   components:
   - type: Sprite
     state: gratingmaintfloor
@@ -1016,6 +1076,7 @@
   name: web tile
   parent: FloorTileItemBase
   id: FloorTileItemWeb
+  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Tiles/web.rsi
@@ -1036,6 +1097,7 @@
   parent: FloorTileItemBase
   name: astro-grass
   description: Fake grass that covers up wires and even comes with realistic NanoTrimmings!
+  noSpawn: true
   components:
   - type: Sprite
     state: astrograss
@@ -1053,6 +1115,7 @@
   parent: FloorTileItemBase
   name: mowed astro-grass
   description: Fake grass that covers up wires and even comes with realistic NanoTrimmings!
+  noSpawn: true
   components:
   - type: Sprite
     state: grass
@@ -1070,6 +1133,7 @@
   parent: FloorTileItemBase
   name: jungle astro-grass
   description: Fake grass that covers up wires and even comes with realistic NanoTrimmings!
+  noSpawn: true
   components:
   - type: Sprite
     state: grassjungle
@@ -1087,6 +1151,7 @@
   parent: FloorTileItemBase
   name: astro-ice
   description: Fake ice that's as slippery as the real thing, while being easily removable!
+  noSpawn: true
   components:
   - type: Sprite
     state: astroice
@@ -1104,6 +1169,7 @@
   parent: FloorTileItemBase
   name: astro-snow
   description: Fake snow that's as fluffy as the real thing, while being easily removable!
+  noSpawn: true
   components:
   - type: Sprite
     state: snow

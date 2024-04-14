@@ -48,3 +48,6 @@
   - type: IconSmooth
     key: state
     base: state
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full

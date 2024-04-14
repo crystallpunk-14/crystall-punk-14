@@ -83,6 +83,9 @@
           MaterialWoodPlank:
             min: 2
             max: 3
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
 
 - type: entity
   id: CPCaveStoneWall

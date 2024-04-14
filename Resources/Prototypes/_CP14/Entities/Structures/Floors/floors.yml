@@ -81,6 +81,9 @@
           MaterialWoodPlank:
             min: 0
             max: 1
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
 
 - type: entity
   parent: CPFloorWood
@@ -89,7 +92,7 @@
   - type: Sprite
     sprite: _CP14/Structures/Floors/wood_big.rsi
     layers:
-    - state: wood_1
+    - state: wood_big_1
       map: ["random"]
   - type: RandomSprite
     available:

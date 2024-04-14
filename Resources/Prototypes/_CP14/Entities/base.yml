@@ -33,6 +33,6 @@
       types:
         Heat: 0.5
   - type: FireVisuals
-    sprite: Effects/fire.rsi
-    normalState: fire
+    sprite: _CP14/Effects/fire.rsi
+    normalState: small
   - type: CPFireSpread
