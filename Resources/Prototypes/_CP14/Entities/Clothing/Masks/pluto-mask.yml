@@ -1,0 +1,12 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: CPSinnerMask
+  name: Маска Грешника
+  description: Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/pluto-mask.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/pluto-mask.rsi
+  - type: IdentityBlocker  
+ 
