@@ -9,6 +9,10 @@ ent-CPClothingCloakHoodieYellow = желтый короткий плащ с ка
 # Helmet
 ent-CPClothingHeadHoodieYellow = желтый капюшон
     .desc = Вы получаете +2 к броскам скрытности от внимания противоположного пола.
+	
+# Mask
+ent-CPClothingMaskSinner = маска грешника
+	.desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью. 
 
 # Pants
 ent-CPClothingPantsHarlequinRed = красно-желтые штаны арлекина

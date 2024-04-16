@@ -1,8 +1,22 @@
 - type: entity
-  parent: ClothingMaskBase
-  id: CPSinnerMask
-  name: Маска Грешника
-  description: Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
+  abstract: true
+  parent: Clothing
+  id: CPClothingMaskBase
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Clothing
+    equipDelay: 0.7
+    unequipDelay: 0.7
+    slots: [mask]
+    
+- type: entity
+  parent: CPClothingMaskBase
+  id: CPClothingMaskSinner
+  name: Sinner's Mask
+  description: A mask intented to be worn by not the brightest individuals. Executioners put them on themselves and the victim before execution.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Masks/pluto-mask.rsi
