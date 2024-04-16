@@ -74,10 +74,10 @@
   - type: GhostTakeoverAvailable
   - type: PointLight
     radius: 4.0
-    energy: 1
+    energy: 4
     color: "#FFA500FF"
   - type: Stealth
-    maxVisibility: 1.2
+    maxVisibility: 1.5
   - type: StealthOnMove
     passiveVisibilityRate: -0.26
     movementVisibilityRate: 0.26
