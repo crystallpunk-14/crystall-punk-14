@@ -41,3 +41,11 @@
     removalTime: 1
   - type: ThrowingAngle
     angle: 225
+  - type: CPMelting
+    meltTemperature: 1000
+    meltSolution:
+      temperature: 1000
+      reagents:
+      - ReagentId: CPMetledIron
+        Quantity: 10
+  - type: Temperature

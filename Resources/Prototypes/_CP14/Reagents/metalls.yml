@@ -1,0 +1,35 @@
+- type: reagent
+  id: CPBaseMetledMetall
+  group: Metled
+  abstract: true
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+        - !type:FlammableReaction
+
+- type: reagent
+  id: CPMetledIron
+  parent: CPBaseMetledMetall
+  name: расплавленный металл #TODO
+  desc: Металл, доведенный до огромных температур. #TODO
+  physicalDesc: reagent-physical-desc-grainy #TODO
+  flavor: безумно #TODO
+  color: "#757245"
+  tileReactions:
+  - !type:FlammableTileReaction #TODO: Spawn fire puddle
+    temperatureMultiplier: 2
+  reactiveEffects:
+    Flammable:
+      methods: [ Touch ]
+      effects:
+      - !type:FlammableReaction
+        multiplier: 0.2
+      - !type:Ignite
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 5
