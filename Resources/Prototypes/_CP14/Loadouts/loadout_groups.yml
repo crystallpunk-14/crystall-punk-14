@@ -1,6 +1,6 @@
 - type: loadoutGroup
   id: CPTestLoadout
-  name: тестовый лоадаут
+  name: job-name-adventurer 
   loadouts:
   - CPTestCloak
   - CPTestCloak2
