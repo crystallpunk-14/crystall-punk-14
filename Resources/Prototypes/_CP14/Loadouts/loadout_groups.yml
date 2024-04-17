@@ -1,0 +1,7 @@
+- type: loadoutGroup
+  id: CPTestLoadout
+  name: тестовый лоадаут
+  loadouts:
+  - CPTestCloak
+  - CPTestCloak2
+  - CPTestCloak3

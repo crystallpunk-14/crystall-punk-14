@@ -1,0 +1,28 @@
+# Cloak
+- type: loadout
+  id: CPTestCloak
+  equipment: CPTestCloak
+
+- type: startingGear
+  id: CPTestCloak
+  equipment:
+    cloak: CPClothingCloakHoodieYellow
+
+- type: loadout
+  id: CPTestCloak2
+  equipment: CPTestCloak2
+
+- type: startingGear
+  id: CPTestCloak2
+  equipment:
+    cloak: CPClothingCloakArmoredRed
+
+- type: loadout
+  id: CPTestCloak3
+  equipment: CPTestCloak3
+
+- type: startingGear
+  id: CPTestCloak3
+  equipment:
+    cloak: CPClothingCloakBlacksmithArpon
+

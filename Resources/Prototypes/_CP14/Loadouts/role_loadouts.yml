@@ -1,0 +1,6 @@
+
+- type: roleLoadout
+  id: JobAdventurer
+  groups:
+  - CPTestLoadout
+  - Trinkets
