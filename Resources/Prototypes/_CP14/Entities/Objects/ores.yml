@@ -24,14 +24,6 @@
     layers:
       - state: ore1
         map: ["random"]
-  #- type: CPMelting
-  #  meltTemperature: 1811
-  #  meltSolution:
-  #    temperature: 1811
-  #    reagents:
-  #    - ReagentId: CPMetledIron
-  #      Quantity: 10
-  #- type: Temperature
 
 - type: entity
   id: CPOreGold
@@ -44,11 +36,3 @@
     layers:
       - state: ore1
         map: ["random"]
-  #- type: CPMelting
-  #  meltTemperature: 1337
-  #  meltSolution:
-  #    temperature: 1337
-  #    reagents:
-  #    - ReagentId: CPMetledGold
-  #      Quantity: 10
-  #- type: Temperature
