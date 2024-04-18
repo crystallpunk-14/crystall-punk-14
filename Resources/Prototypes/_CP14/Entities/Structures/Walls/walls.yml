@@ -89,21 +89,6 @@
     normalState: full
 
 - type: entity
-  id: CPCaveStoneWall
-  name: rock
-  suffix: Outdated sprite format!
-  parent: CPBaseWall
-  description: A solid stone natural wall. It has a cave-like coldness to it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/cave_stone.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/cave_stone.rsi
-  - type: IconSmooth
-    key: CPwallsbrick
-    base: stone 
-
-- type: entity
   id: CPStoneRuinFragment
   parent: BaseRock
   name: stone wall fragments
