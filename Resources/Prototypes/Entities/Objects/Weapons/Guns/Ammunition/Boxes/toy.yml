@@ -18,7 +18,6 @@
   parent: BoxDonkSoftBase
   id: BoxDonkSoftBox
   name: box of foam darts
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     whitelist:
@@ -36,7 +35,6 @@
   parent: BaseMagazineBoxMagnum
   id: BoxCartridgeCap
   name: cap gun cartridge box
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCap

@@ -3,7 +3,6 @@
   description: Once activated, you can't drop this time bomb - hit someone else with it to save yourself! Don't burn your hands!
   parent: BaseItem
   id: HotPotato
-  noSpawn: true
   components:
     - type: Sprite
       sprite: Objects/Weapons/Bombs/hot_potato.rsi
@@ -74,7 +73,6 @@
   suffix: Explosive
   parent: TrashBananaPeel
   id: TrashBananaPeelExplosive
-  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/banana.rsi
@@ -109,7 +107,6 @@
   id: TrashBananaPeelExplosiveUnarmed
   name: banana
   suffix: Unarmed
-  noSpawn: true
   description: There's something unusual about this banana.
   components:
   - type: Sprite

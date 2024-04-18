@@ -2,7 +2,6 @@
   name: stun prod
   parent: BaseItem
   id: Stunprod
-  noSpawn: true
   description: A stun prod for illegal incapacitation.
   components:
   - type: Sprite

@@ -2,7 +2,6 @@
   id: RandomFloraTree
   name: random tree spawner
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:

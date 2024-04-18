@@ -3,7 +3,6 @@
   id: PipeBomb
   name: pipe bomb
   description: An improvised explosive made from pipes and wire.
-  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Weapons/Bombs/pipebomb.rsi
@@ -36,7 +35,6 @@
   parent: BaseItem
   id: PipeBombGunpowder
   name: pipe bomb
-  noSpawn: true
   description: An improvised explosive made from a pipe. This one has no gunpowder.
   suffix: Gunpowder
   components:
@@ -51,7 +49,6 @@
 - type: entity
   parent: BaseItem
   id: PipeBombCable
-  noSpawn: true
   name: pipe bomb
   description: An improvised explosive made from a pipe. This one has no cable.
   suffix: Cable

@@ -37,7 +37,6 @@
   id: MagazineShotgun
   name: ammo drum (.50 pellet)
   parent: BaseMagazineShotgun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgun
@@ -52,7 +51,6 @@
   id: MagazineShotgunBeanbag
   name: ammo drum (.50 beanbags)
   parent: BaseMagazineShotgun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunBeanbag
@@ -67,7 +65,6 @@
   id: MagazineShotgunSlug
   name: ammo drum (.50 slug)
   parent: BaseMagazineShotgun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunSlug
@@ -82,7 +79,6 @@
   id: MagazineShotgunIncendiary
   name: ammo drum (.50 incendiary)
   parent: BaseMagazineShotgun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunIncendiary

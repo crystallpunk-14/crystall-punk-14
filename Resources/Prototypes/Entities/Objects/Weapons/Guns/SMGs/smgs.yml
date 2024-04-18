@@ -3,7 +3,6 @@
   parent: BaseItem
   id: BaseWeaponSubMachineGun
   description: A rooty tooty point and shooty.
-  noSpawn: true
   abstract: true
   components:
   - type: Sprite

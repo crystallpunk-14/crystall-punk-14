@@ -101,7 +101,6 @@
   id: MagazinePistolSubMachineGunTopMounted
   name: WT550 magazine (.35 auto top-mounted)
   parent: BaseItem
-  noSpawn: true
   components:
   - type: Tag
     tags:
@@ -133,7 +132,6 @@
   id: MagazinePistol
   name: pistol magazine (.35 auto)
   parent: BaseMagazinePistol
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -148,7 +146,6 @@
   id: MagazinePistolPractice
   name: pistol magazine (.35 auto practice)
   parent: BaseMagazinePistol
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -163,7 +160,6 @@
   id: MagazinePistolRubber
   name: pistol magazine (.35 auto rubber)
   parent: BaseMagazinePistol
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolRubber
@@ -178,7 +174,6 @@
   id: MagazinePistolHighCapacity
   name: machine pistol magazine (.35 auto)
   parent: BaseMagazinePistolHighCapacity
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -193,7 +188,6 @@
   id: MagazinePistolHighCapacityPractice
   name: machine pistol magazine (.35 auto practice)
   parent: BaseMagazinePistolHighCapacity
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -208,7 +202,6 @@
   id: MagazinePistolHighCapacityRubber
   name: machine pistol magazine (.35 auto rubber)
   parent: BaseMagazinePistolHighCapacity
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistol
@@ -223,7 +216,6 @@
   id: MagazinePistolSubMachineGun
   name: SMG magazine (.35 auto)
   parent: BaseMagazinePistolSubMachineGun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     capacity: 30
@@ -244,7 +236,6 @@
   id: MagazinePistolSubMachineGunPractice
   name: SMG magazine (.35 auto practice)
   parent: BaseMagazinePistolSubMachineGun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -259,7 +250,6 @@
   id: MagazinePistolSubMachineGunRubber
   name: SMG magazine (.35 auto rubber)
   parent: BaseMagazinePistolSubMachineGun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolRubber
@@ -274,7 +264,6 @@
   id: MagazinePistolSubMachineGunUranium
   name: SMG magazine (.35 auto rubber)
   parent: BaseMagazinePistolSubMachineGun
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium

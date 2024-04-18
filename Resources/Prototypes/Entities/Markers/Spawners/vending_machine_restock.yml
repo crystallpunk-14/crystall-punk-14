@@ -2,7 +2,6 @@
   id: SpawnVendingMachineRestockFoodDrink
   name: Vending Machine Restock
   suffix: "food or drink"
-  noSpawn: true
   parent: MarkerBase
   components:
   - type: Sprite
@@ -28,7 +27,6 @@
   name: Vending Machine Restock
   suffix: "food"
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -51,7 +49,6 @@
   name: Vending Machine Restock
   suffix: "drink"
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:

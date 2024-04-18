@@ -1,7 +1,6 @@
 - type: entity
   name: Toy Spawner
   id: ToySpawner
-  noSpawn: true
   parent: MarkerBase
   components:
     - type: Sprite
@@ -42,7 +41,6 @@
   name: Prize Figurine Spawner
   id: FigureSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -78,7 +76,6 @@
   name: Spacemen Minifigure Spawner
   suffix: Librarian only, map with care!
   id: SpacemenFigureSpawner
-  noSpawn: true
   parent: MarkerBase
   components:
     - type: Sprite

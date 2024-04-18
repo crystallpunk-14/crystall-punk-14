@@ -2,7 +2,6 @@
   name: BaseWeaponRifle
   parent: BaseItem
   id: BaseWeaponRifle
-  noSpawn: true
   description: A rooty tooty point and shooty.
   abstract: true
   components:
@@ -55,7 +54,6 @@
   name: AKMS
   parent: BaseWeaponRifle
   id: WeaponRifleAk
-  noSpawn: true
   description: An iconic weapon of war. Uses .30 rifle ammo.
   components:
   - type: Sprite
@@ -104,7 +102,6 @@
   name: M-90gl
   parent: BaseWeaponRifle
   id: WeaponRifleM90GrenadeLauncher
-  noSpawn: true
   description: An older bullpup carbine model, with an attached underbarrel grenade launcher. Uses .20 rifle ammo.
   components:
   - type: Sprite
@@ -148,7 +145,6 @@
   name: Lecter
   parent: BaseWeaponRifle
   id: WeaponRifleLecter
-  noSpawn: true
   description: A high end military grade assault rifle. Uses .20 rifle ammo.
   components:
   - type: Sprite
@@ -196,7 +192,6 @@
   parent: WeaponRifleLecter
   id: WeaponRifleLecterRubber
   suffix: Non-lethal
-  noSpawn: true
   components:
   - type: ItemSlots
     slots:

@@ -2,7 +2,6 @@
   name: Human Corpse Spawner
   id: SalvageHumanCorpseSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     sprite: Markers/jobs.rsi
@@ -16,7 +15,6 @@
   name: Random Service Corpse Spawner
   id: RandomServiceCorpseSpawner
   parent: SalvageHumanCorpseSpawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -30,7 +28,6 @@
   name: Random Engineer Corpse Spawner
   id: RandomEngineerCorpseSpawner
   parent: SalvageHumanCorpseSpawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -44,7 +41,6 @@
   name: Random Cargo Corpse Spawner
   id: RandomCargoCorpseSpawner
   parent: SalvageHumanCorpseSpawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -58,7 +54,6 @@
   name: Random Medic Corpse Spawner
   id: RandomMedicCorpseSpawner
   parent: SalvageHumanCorpseSpawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -72,7 +67,6 @@
   name: Random Science Corpse Spawner
   id: RandomScienceCorpseSpawner
   parent: SalvageHumanCorpseSpawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -86,7 +80,6 @@
   name: Random Security Corpse Spawner
   id: RandomSecurityCorpseSpawner
   parent: SalvageHumanCorpseSpawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -100,7 +93,6 @@
   name: Random Command Corpse Spawner
   id: RandomCommandCorpseSpawner
   parent: SalvageHumanCorpseSpawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:

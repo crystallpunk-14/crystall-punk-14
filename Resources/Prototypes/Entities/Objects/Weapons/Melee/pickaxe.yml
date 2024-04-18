@@ -2,7 +2,6 @@
   name: pickaxe
   parent: BaseItem
   id: Pickaxe
-  noSpawn: true
   description: Notched to perfection, for jamming it into rocks
   components:
   - type: Tag
@@ -41,7 +40,6 @@
   name: mining drill
   parent: BaseItem
   id: MiningDrill
-  noSpawn: true
   description: Powerful tool used to quickly drill through rocks
   components:
   - type: Item

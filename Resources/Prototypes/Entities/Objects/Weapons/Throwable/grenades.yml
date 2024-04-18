@@ -2,7 +2,6 @@
   abstract: true
   parent: BaseItem
   id: GrenadeBase
-  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/grenade.rsi
@@ -42,7 +41,6 @@
   description: Grenade that creates a small but devastating explosion.
   parent: GrenadeBase
   id: ExGrenade
-  noSpawn: true
   components:
   - type: ExplodeOnTrigger
   - type: Explosive
@@ -63,7 +61,6 @@
   name: flashbang
   description: Eeeeeeeeeeeeeeeeeeeeee
   parent: GrenadeBase
-  noSpawn: true
   id: GrenadeFlashBang
   components:
   - type: Sprite
@@ -104,7 +101,6 @@
   name: syndicate minibomb
   description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
   parent: GrenadeBase
-  noSpawn: true
   id: SyndieMiniBomb
   components:
   - type: Sprite
@@ -128,7 +124,6 @@
   name: supermatter grenade
   description: Grenade that simulates delamination of the supermatter engine, pulling things in a heap and exploding after some time.
   parent: GrenadeBase
-  noSpawn: true
   id: SupermatterGrenade
   components:
   - type: Sprite
@@ -192,7 +187,6 @@
   name: whitehole grenade
   description: Grenade that repulses everything around for some time.
   parent: SupermatterGrenade
-  noSpawn: true
   id: WhiteholeGrenade
   components:
   - type: Sprite
@@ -240,7 +234,6 @@
   name: the nuclear option
   description: Please don't throw it, think of the children.
   parent: GrenadeBase
-  noSpawn: true
   id: NuclearGrenade
   components:
   - type: Sprite
@@ -271,7 +264,6 @@
   name: modular grenade
   description: A grenade casing. Requires a trigger and a payload.
   parent: BaseItem
-  noSpawn: true
   id: ModularGrenade
   components:
   - type: Sprite
@@ -316,7 +308,6 @@
   name: EMP grenade
   description: A grenade designed to wreak havoc on electronic systems.
   parent: GrenadeBase
-  noSpawn: true
   id: EmpGrenade
   components:
   - type: Sprite
@@ -334,7 +325,6 @@
   name: holy hand grenade
   description: O Lord, bless this thy hand grenade, that with it thou mayst blow thine enemies to tiny bits, in thy mercy.
   parent: GrenadeBase
-  noSpawn: true
   id: HolyHandGrenade
   components:
   - type: Sprite
@@ -360,7 +350,6 @@
   parent: GrenadeBase
   id: SmokeGrenade
   name: smoke grenade
-  noSpawn: true
   description: A tactical grenade that releases a large, long-lasting cloud of smoke when used.
   components:
   - type: Sprite
@@ -379,7 +368,6 @@
   parent: SmokeGrenade
   id: CleanerGrenade
   name: cleanade
-  noSpawn: true
   description: Special grenade for janitors, releasing large cloud of space cleaner foam
   components:
   - type: Sprite
@@ -397,7 +385,6 @@
   parent: SmokeGrenade
   id: TearGasGrenade
   name: tear gas grenade
-  noSpawn: true
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.
   components:
   - type: Sprite
@@ -416,7 +403,6 @@
   name: trick grenade
   description: All the grenade without any of the boom.
   parent: GrenadeBase
-  noSpawn: true
   id: GrenadeDummy
   components:
   - type: Sprite
@@ -436,7 +422,6 @@
   name: syndicate trickybomb
   description: A syndicate-manufactured explosive used to make an excellent distraction.
   parent: GrenadeDummy
-  noSpawn: true
   id: SyndieTrickyBomb
   components:
   - type: Sprite

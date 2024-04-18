@@ -37,7 +37,6 @@
   id: MagazineRifle
   name: "magazine (.20 rifle)"
   parent: BaseMagazineRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifle
@@ -52,7 +51,6 @@
   id: MagazineRiflePractice
   name: "magazine (.20 rifle practice)"
   parent: BaseMagazineRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRiflePractice
@@ -67,7 +65,6 @@
   id: MagazineRifleRubber
   name: "magazine (.20 rifle rubber)"
   parent: BaseMagazineRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleRubber
@@ -82,7 +79,6 @@
   id: MagazineRifleUranium
   name: "magazine (.20 rifle uranium)"
   parent: BaseMagazineRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleUranium

@@ -2,7 +2,6 @@
   name: Ripley APLU Spawner
   id: SpawnMechRipley
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -17,7 +16,6 @@
   name: H.O.N.K. Spawner
   id: SpawnMechHonker
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:

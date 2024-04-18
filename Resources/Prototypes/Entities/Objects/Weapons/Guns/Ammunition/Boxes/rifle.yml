@@ -28,7 +28,6 @@
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBig
   name: ammunition box (.20 rifle)
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -48,7 +47,6 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBigRubber
-  noSpawn: true
   name: ammunition box (.20 rifle rubber)
   components:
   - type: BallisticAmmoProvider
@@ -70,7 +68,6 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifle
-  noSpawn: true
   name: ammunition box (.20 rifle)
   components:
   - type: BallisticAmmoProvider
@@ -85,7 +82,6 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRiflePractice
-  noSpawn: true
   name: ammunition box (.20 rifle practice)
   components:
   - type: BallisticAmmoProvider
@@ -101,7 +97,6 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleRubber
-  noSpawn: true
   name: ammunition box (.20 rifle rubber)
   components:
   - type: BallisticAmmoProvider
@@ -117,7 +112,6 @@
 - type: entity
   id: MagazineBoxRifleIncendiary
   parent: BaseMagazineBoxRifle
-  noSpawn: true
   name: ammunition box (.20 rifle incendiary)
   components:
   - type: BallisticAmmoProvider
@@ -133,7 +127,6 @@
 - type: entity
   id: MagazineBoxRifleUranium
   parent: BaseMagazineBoxRifle
-  noSpawn: true
   name: ammunition box (.20 rifle uranium)
   components:
   - type: BallisticAmmoProvider

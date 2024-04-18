@@ -85,7 +85,6 @@
   id: MagazineCaselessRifle10x24
   name: "box magazine (.25 caseless)"
   parent: BaseMagazineCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -97,7 +96,6 @@
   id: MagazinePistolCaselessRifle
   name: "pistol magazine (.25 caseless)"
   parent: BaseMagazinePistolCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -118,7 +116,6 @@
   id: MagazinePistolCaselessRiflePractice
   name: "pistol magazine (.25 caseless practice)"
   parent: BaseMagazinePistolCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
@@ -139,7 +136,6 @@
   id: MagazinePistolCaselessRifleRubber
   name: "pistol magazine (.25 caseless rubber)"
   parent: BaseMagazinePistolCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleRubber
@@ -174,7 +170,6 @@
   id: MagazineCaselessRiflePractice
   name: "magazine (.25 caseless practice)"
   parent: BaseMagazineCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
@@ -189,7 +184,6 @@
   id: MagazineCaselessRifleRubber
   name: "magazine (.25 caseless rubber)"
   parent: BaseMagazineCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleRubber
@@ -204,7 +198,6 @@
   id: MagazineCaselessRifleShort
   name: "short magazine (.25 caseless)"
   parent: BaseMagazineCaselessRifleShort
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -220,7 +213,6 @@
   id: MagazineCaselessRifleShortPractice
   name: "short magazine (.25 caseless practice)"
   parent: BaseMagazineCaselessRifleShort
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
@@ -236,7 +228,6 @@
   id: MagazineCaselessRifleShortRubber
   name: "short magazine (.25 caseless rubber)"
   parent: BaseMagazineCaselessRifleShort
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleRubber

@@ -65,7 +65,6 @@
   name: L6 SAW
   id: WeaponLightMachineGunL6
   parent: BaseWeaponLightMachineGun
-  noSpawn: true
   description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses .30 rifle ammo.
   components:
   - type: Sprite
@@ -85,7 +84,6 @@
   name: L6C ROW
   id: WeaponLightMachineGunL6C
   parent: BaseItem
-  noSpawn: true
   description: A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
     - type: Gun

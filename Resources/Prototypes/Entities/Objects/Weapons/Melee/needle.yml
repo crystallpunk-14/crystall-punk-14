@@ -2,7 +2,6 @@
   parent: BaseItem
   id: WeaponMeleeNeedle
   name: official security anti-inflatable armament
-  noSpawn: true
   description: A specialty weapon used in the destruction of unique syndicate morale-boosting equipment.
   components:
   - type: Sprite

@@ -2,7 +2,6 @@
   parent: BaseItem
   id: BaseKnife
   abstract: true
-  noSpawn: true
   components:
   - type: Tag
     tags:
@@ -31,7 +30,6 @@
   name: kitchen knife
   parent: BaseKnife
   id: KitchenKnife
-  noSpawn: true
   description: A general purpose Chef's Knife made by Asters Merchant Guild. Guaranteed to stay sharp for years to come..
   components:
   - type: Tag
@@ -51,7 +49,6 @@
   name: butcher's cleaver
   parent: BaseKnife
   id: ButchCleaver
-  noSpawn: true
   description: A huge blade used for chopping and chopping up meat. This includes clowns and clown-by-products.
   components:
   - type: Tag
@@ -78,7 +75,6 @@
   name: combat knife
   parent: BaseKnife
   id: CombatKnife
-  noSpawn: true
   description: A deadly knife intended for melee confrontations.
   components:
   - type: Tag
@@ -109,7 +105,6 @@
   name: survival knife
   parent: CombatKnife
   id: SurvivalKnife
-  noSpawn: true
   description: Weapon of first and last resort for combatting space carp.
   components:
   - type: Sprite
@@ -122,7 +117,6 @@
   name: kukri knife
   parent: CombatKnife
   id: KukriKnife
-  noSpawn: true
   description: Professionals have standards. Be polite. Be efficient. Have a plan to kill everyone you meet.
   components:
   - type: Sprite
@@ -140,7 +134,6 @@
   parent: ClothingHeadHatGreyFlatcap
   id: BladedFlatcapGrey
   name: grey flatcap
-  noSpawn: true
   description: Fashionable for both the working class and old man Jenkins. It has glass shards hidden in the brim.
   suffix: Bladed
   components:
@@ -166,7 +159,6 @@
   parent: BladedFlatcapGrey
   id: BladedFlatcapBrown
   name: brown flatcap
-  noSpawn: true
   description: Stupid clown! You made me look bad! It has glass shards hidden in the brim.
   components:
   - type: Construction
@@ -180,7 +172,6 @@
   name: shiv
   parent: BaseKnife
   id: Shiv
-  noSpawn: true
   description: A crude weapon fashioned from a piece of cloth and a glass shard.
   components:
   - type: Tag
@@ -208,7 +199,6 @@
   name: reinforced shiv
   parent: Shiv
   id: ReinforcedShiv
-  noSpawn: true
   description: A crude weapon fashioned from a piece of cloth and a reinforced glass shard.
   components:
   - type: Construction
@@ -228,7 +218,6 @@
   name: plasma shiv
   parent: Shiv
   id: PlasmaShiv
-  noSpawn: true
   description: A crude weapon fashioned from a piece of cloth and a plasma glass shard.
   components:
   - type: Construction
@@ -248,7 +237,6 @@
   name: uranium shiv
   parent: Shiv
   id: UraniumShiv
-  noSpawn: true
   description: A crude weapon fashioned from a piece of cloth and a uranium glass shard. Violates the geneva convention!
   components:
   - type: Construction
@@ -269,7 +257,6 @@
   name: throwing knife
   parent: BaseKnife
   id: ThrowingKnife
-  noSpawn: true
   description: This bloodred knife is very aerodynamic and easy to throw, but good luck trying to fight someone hand-to-hand.
   components:
   - type: Tag

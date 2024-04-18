@@ -2,7 +2,6 @@
   id: SpeedLoaderLightRifle
   name: "speed loader (.30 rifle)"
   parent: BaseItem
-  noSpawn: true
   components:
   - type: Tag
     tags:
