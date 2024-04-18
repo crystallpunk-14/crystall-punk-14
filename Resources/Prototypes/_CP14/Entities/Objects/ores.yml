@@ -1,0 +1,38 @@
+- type: entity
+  id: CPBaseOre
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+  - type: RandomSprite
+    available:
+      - random:
+          ore1: ""
+          ore2: ""
+          ore3: ""
+          ore4: ""
+
+- type: entity
+  id: CPOreIron
+  parent: CPBaseOre
+  name: iron piece
+  description: A piece of cold, heavy iron. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Ores/iron_ore.rsi
+    layers:
+      - state: ore1
+        map: ["random"]
+
+- type: entity
+  id: CPOreGold
+  parent: CPBaseOre
+  name: gold piece
+  description: A piece of soft, pure gold.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Ores/gold_ore.rsi
+    layers:
+      - state: ore1
+        map: ["random"]
