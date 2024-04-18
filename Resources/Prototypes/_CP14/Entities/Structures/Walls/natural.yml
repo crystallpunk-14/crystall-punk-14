@@ -1,0 +1,43 @@
+- type: entity
+  id: CPCaveStoneWall
+  name: rock
+  parent: CPBaseWall
+  description: A solid stone natural wall. It has a cave-like coldness to it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/cave_stone.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/cave_stone.rsi
+  - type: IconSmooth
+    key: CPwall
+    base: stone
+
+- type: entity
+  id: CPCaveStoneWallIronOre
+  name: rock
+  suffix: iron ore
+  parent: CPBaseWall
+  description: A solid stone natural wall. You can see the sharp flecks of iron in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/cave_stone_iron.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/cave_stone_iron.rsi
+  - type: IconSmooth
+    key: CPwall
+    base: stone
+
+- type: entity
+  id: CPCaveStoneWallGoldOre
+  name: rock
+  suffix: gold ore
+  parent: CPBaseWall
+  description: A solid stone natural wall. You see the tantalizing particles of gold in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/cave_stone_gold.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/cave_stone_gold.rsi
+  - type: IconSmooth
+    key: CPwall
+    base: stone
