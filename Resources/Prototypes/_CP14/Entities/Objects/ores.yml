@@ -14,13 +14,37 @@
           ore4: ""
 
 - type: entity
+  id: CPOreCopper
+  parent: CPBaseOre
+  name: copper piece
+  description: A piece of pale, heavy copper. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Ores/ore_copper.rsi
+    layers:
+      - state: ore1
+        map: ["random"]
+
+- type: entity
   id: CPOreIron
   parent: CPBaseOre
   name: iron piece
   description: A piece of cold, heavy iron. 
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Ores/iron_ore.rsi
+    sprite: _CP14/Objects/Ores/ore_iron.rsi
+    layers:
+      - state: ore1
+        map: ["random"]
+
+- type: entity
+  id: CPOreSilver
+  parent: CPBaseOre
+  name: silver piece
+  description: A piece of shiny, warm silver.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Ores/ore_silver.rsi
     layers:
       - state: ore1
         map: ["random"]
@@ -32,7 +56,7 @@
   description: A piece of soft, pure gold.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Ores/gold_ore.rsi
+    sprite: _CP14/Objects/Ores/ore_gold.rsi
     layers:
       - state: ore1
         map: ["random"]

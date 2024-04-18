@@ -29,6 +29,39 @@
             volume: -6
 
 - type: entity
+  id: CPCaveStoneWallCopperOre
+  name: rock
+  suffix: copper ore
+  parent: CPCaveStoneWall
+  description: A solid stone natural wall. You can see the sharp flecks of copper in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/cave_stone_copper.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/cave_stone_copper.rsi
+  - type: IconSmooth
+    key: CPwall
+    base: stone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CPOreCopper:
+            min: 1
+            max: 5
+
+- type: entity
   id: CPCaveStoneWallIronOre
   name: rock
   suffix: iron ore
@@ -58,6 +91,39 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CPOreIron:
+            min: 1
+            max: 5
+
+- type: entity
+  id: CPCaveStoneWallSilverOre
+  name: rock
+  suffix: silver ore
+  parent: CPCaveStoneWall
+  description: A solid stone natural wall. You see the tantalizing particles of silver in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/cave_stone_silver.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/cave_stone_silver.rsi
+  - type: IconSmooth
+    key: CPwall
+    base: stone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CPOreSilver:
             min: 1
             max: 5
 
