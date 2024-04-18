@@ -3,7 +3,6 @@
   parent: BaseWeaponLauncher
   id: WeaponFlareGun
   description: A compact, single-shot pistol that fires shotgun shells.
-  noSpawn: true
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/flaregun.rsi

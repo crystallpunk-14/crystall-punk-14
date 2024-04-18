@@ -2,7 +2,6 @@
   parent: MarkerBase
   id: RandomPosterAny
   name: random poster spawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -23,7 +22,6 @@
   parent: MarkerBase
   id: RandomPosterContraband
   name: random contraband poster spawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:

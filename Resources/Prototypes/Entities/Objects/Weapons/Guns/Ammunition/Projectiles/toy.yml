@@ -3,7 +3,6 @@
   description: I hope you're wearing eye protection.
   name: foam dart
   parent: BaseItem
-  noSpawn: true
   components:
     - type: Tag
       tags:

@@ -29,7 +29,6 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifle10x24
   name: ammunition box (.25 caseless)
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -50,7 +49,6 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifleBig
   name: ammunition box (.25 caseless)
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -71,7 +69,6 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifleBigRubber
   name: ammunition box (.25 caseless rubber)
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -93,7 +90,6 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifle
   name: ammunition box (.25 caseless)
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -108,7 +104,6 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRiflePractice
   name: ammunition box (.25 caseless practice)
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
@@ -124,7 +119,6 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifleRubber
   name: ammunition box (.25 caseless rubber)
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleRubber

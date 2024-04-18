@@ -2,7 +2,6 @@
   parent: MarkerBase
   id: RandomPainting
   name: random painting spawner
-  noSpawn: true
   components:
   - type: Sprite
     layers:

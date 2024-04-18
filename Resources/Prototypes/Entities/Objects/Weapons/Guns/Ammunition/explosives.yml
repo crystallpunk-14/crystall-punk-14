@@ -4,7 +4,6 @@
   id: CartridgeRocket
   name: PG-7VL grenade
   parent: BaseItem
-  noSpawn: true
   description: A 1.5 warhead designed for the RPG-7 launcher. Has tubular shape.
   components:
   - type: Tag
@@ -25,7 +24,6 @@
   id: CartridgeRocketSlow
   name: PG-7VL grenade "Snail-Rocket"
   parent: BaseItem
-  noSpawn: true
   description: A 1.5 warhead designed for the RPG-7 launcher. It's unusually slow.
   components:
     - type: Tag
@@ -61,7 +59,6 @@
   id: GrenadeBaton
   name: baton grenade
   parent: BaseGrenade
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeBaton
@@ -79,7 +76,6 @@
   id: GrenadeBlast
   name: blast grenade
   parent: BaseGrenade
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeBlast
@@ -97,7 +93,6 @@
   id: GrenadeFlash
   name: flash grenade
   parent: BaseGrenade
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeFlash
@@ -115,7 +110,6 @@
   id: GrenadeFrag
   name: frag grenade
   parent: BaseGrenade
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeFrag
@@ -133,7 +127,6 @@
   id: GrenadeEMP
   name: EMP grenade
   parent: BaseGrenade
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletGrenadeEMP
@@ -167,7 +160,6 @@
   name: cannonball
   suffix: Pirate
   parent: BaseCannonBall
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletCannonBall
@@ -181,7 +173,6 @@
   name: grapeshot
   suffix: Pirate
   parent: BaseCannonBall
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: PelletGrapeshot
@@ -197,7 +188,6 @@
   name: glassshot
   suffix: Pirate
   parent: BaseCannonBall
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: PelletGlass

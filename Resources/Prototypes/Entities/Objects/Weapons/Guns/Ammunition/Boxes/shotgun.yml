@@ -28,7 +28,6 @@
   name: shotgun beanbag cartridges dispenser
   parent: AmmoProviderShotgunShell
   id: BoxBeanbag
-  noSpawn: true
   description: A dispenser box full of beanbag shots, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
@@ -42,7 +41,6 @@
   name: shotgun lethal cartridges dispenser
   parent: AmmoProviderShotgunShell
   id: BoxLethalshot
-  noSpawn: true
   description: A dispenser box full of lethal pellet shots, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
@@ -56,7 +54,6 @@
   name: shotgun slug cartridges dispenser
   parent: AmmoProviderShotgunShell
   id: BoxShotgunSlug
-  noSpawn: true
   description: A dispenser box full of slugs, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
@@ -70,7 +67,6 @@
   name: shotgun flare cartridges dispenser
   parent: AmmoProviderShotgunShell
   id: BoxShotgunFlare
-  noSpawn: true
   description: A dispenser box full of flare cartridges, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
@@ -84,7 +80,6 @@
   name: shotgun incendiary cartridges dispenser
   parent: AmmoProviderShotgunShell
   id: BoxShotgunIncendiary
-  noSpawn: true
   description: A dispenser box full of incendiary cartridges, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
@@ -98,7 +93,6 @@
   name: shotgun practice cartridges dispenser
   parent: AmmoProviderShotgunShell
   id: BoxShotgunPractice
-  noSpawn: true
   description: A dispenser box full of practice cartridges, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
@@ -112,7 +106,6 @@
   name: tranquilizer cartridges dispenser
   parent: AmmoProviderShotgunShell
   id: BoxShellTranquilizer
-  noSpawn: true
   description: A dispenser box full of tranquilizer cartridges, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider

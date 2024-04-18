@@ -2,7 +2,6 @@
   parent: BaseItem
   id: ClusterBang
   name: clusterbang
-  noSpawn: true
   description: Can be used only with flashbangs. Explodes several times.
   components:
   - type: Sprite
@@ -22,7 +21,6 @@
   parent: GrenadeBase
   id: ClusterBangFull
   name: ClusterBang
-  noSpawn: true
   description: Launches three flashbangs after the timer runs out.
   suffix: Full
   components:
@@ -55,7 +53,6 @@
   parent: GrenadeBase
   id: ClusterGrenade
   name: clustergrenade
-  noSpawn: true
   description: Why use one grenade when you can use three at once!
   components:
   - type: Sprite
@@ -85,7 +82,6 @@
   parent: BaseItem
   id: ClusterBananaPeel
   name: cluster banana peel
-  noSpawn: true
   description: Splits into 6 explosive banana peels after throwing, guaranteed fun!
   components:
   - type: Sprite
@@ -122,7 +118,6 @@
   parent: GrenadeBase
   id: GrenadeStinger
   name: stinger grenade
-  noSpawn: true
   description: Nothing to see here, please disperse.
   components:
   - type: Sprite
@@ -152,7 +147,6 @@
   parent: GrenadeBase
   id: GrenadeIncendiary
   name: incendiary grenade
-  noSpawn: true
   description: Guaranteed to light up the mood.
   components:
   - type: Sprite
@@ -182,7 +176,6 @@
   parent: GrenadeBase
   id: GrenadeShrapnel
   name: shrapnel grenade
-  noSpawn: true
   description: Releases a deadly spray of shrapnel that causes severe bleeding.
   components:
   - type: Sprite
@@ -212,7 +205,6 @@
   parent: SoapSyndie
   id: SlipocalypseClusterSoap
   name: slipocalypse clustersoap
-  noSpawn: true
   description: Spreads small pieces of syndicate soap over an area upon landing on the floor.
   components:
   - type: Sprite

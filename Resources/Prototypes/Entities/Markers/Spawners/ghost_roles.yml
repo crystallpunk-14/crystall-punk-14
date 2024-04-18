@@ -3,7 +3,6 @@
   name: ghost role spawn point
   suffix: rat king
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: GhostRole
     name: ghost-role-information-rat-king-name
@@ -23,7 +22,6 @@
   name: ghost role spawn point
   suffix: Remilia
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: GhostRole
     name: ghost-role-information-remilia-name
@@ -43,7 +41,6 @@
   name: ghost role spawn point
   suffix: cerberus
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: GhostRole
     name: ghost-role-information-cerberus-name
@@ -120,7 +117,6 @@
   name: ghost role spawn point
   suffix: space ninja
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: GhostRole
     name: ghost-role-information-space-ninja-name
@@ -139,7 +135,6 @@
   parent: MarkerBase
   id: SpawnPointGhostTerminator
   name: terminator spawn point
-  noSpawn: true
   components:
   - type: GhostRole
     name: ghost-role-information-exterminator-name

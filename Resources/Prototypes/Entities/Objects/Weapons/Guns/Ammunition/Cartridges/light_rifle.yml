@@ -22,7 +22,6 @@
   id: CartridgeLightRifle
   name: cartridge (.30 rifle)
   parent: BaseCartridgeLightRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletLightRifle
@@ -31,7 +30,6 @@
   id: CartridgeLightRiflePractice
   name: cartridge (.30 rifle practice)
   parent: BaseCartridgeLightRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletLightRiflePractice
@@ -47,7 +45,6 @@
   id: CartridgeLightRifleRubber
   name: cartridge (.30 rifle rubber)
   parent: BaseCartridgeLightRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletLightRifleRubber
@@ -63,7 +60,6 @@
   id: CartridgeLightRifleIncendiary
   name: cartridge (.30 rifle incendiary)
   parent: BaseCartridgeLightRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletLightRifleIncendiary
@@ -79,7 +75,6 @@
   id: CartridgeLightRifleUranium
   name: cartridge (.30 rifle uranium)
   parent: BaseCartridgeLightRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletLightRifleUranium

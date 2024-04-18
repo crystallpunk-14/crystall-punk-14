@@ -4,7 +4,6 @@
   name: Mouse Spawner
   id: SpawnMobMouse
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -22,7 +21,6 @@
   name: Cockroach Spawner
   id: SpawnMobCockroach
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -38,7 +36,6 @@
   name: HoP Corgi Spawner
   id: SpawnMobCorgi
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -55,7 +52,6 @@
   name: Possum Morty Spawner
   id: SpawnMobPossumMorty
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -82,7 +78,6 @@
   name: Fox Renault Spawner
   id: SpawnMobFoxRenault
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -96,7 +91,6 @@
   name: Runtime Spawner
   id: SpawnMobCatRuntime
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -110,7 +104,6 @@
   name: Exception Spawner
   id: SpawnMobCatException
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -124,7 +117,6 @@
   name: Tropico Spawner
   id: SpawnMobCrabAtmos
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -138,7 +130,6 @@
   name: Floppa Spawner
   id: SpawnMobCatFloppa
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -152,7 +143,6 @@
   name: Bingus Spawner
   id: SpawnMobCatBingus
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -166,7 +156,6 @@
   name: Space Cat Spawner
   id: SpawnMobCatSpace
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -180,7 +169,6 @@
   name: Kitten Spawner
   id: SpawnMobCatKitten
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -194,7 +182,6 @@
   name: Cat Spawner
   id: SpawnMobCat
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -211,7 +198,6 @@
   name: Generic Cat Spawner
   id: SpawnMobCatGeneric
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -231,7 +217,6 @@
   name: Bandito Spawner
   id: SpawnMobBandito
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -245,7 +230,6 @@
   name:  McGriff Spawner
   id: SpawnMobMcGriff
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -259,7 +243,6 @@
   name: Sloth Paperwork Spawner
   id: SpawnMobSlothPaperwork
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -273,7 +256,6 @@
   name: Walter Spawner
   id: SpawnMobWalter
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -287,7 +269,6 @@
   name: Space Bear Spawner
   id: SpawnMobBear
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -302,7 +283,6 @@
   name: Space Carp Spawner
   id: SpawnMobCarp
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -317,7 +297,6 @@
   name: Magicarp Spawner
   id: SpawnMobCarpMagic
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -332,7 +311,6 @@
   name: Holocarp Spawner
   id: SpawnMobCarpHolo
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -347,7 +325,6 @@
   name: Space Sharkminnow Spawner
   id: SpawnMobShark
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -362,7 +339,6 @@
   name: Hamster Hamlet Spawner
   id: SpawnMobHamsterHamlet
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -377,7 +353,6 @@
 - type: entity
   name: Alexander Spawner
   id: SpawnMobAlexander
-  noSpawn: true
   parent: MarkerBase
   components:
   - type: Sprite
@@ -392,7 +367,6 @@
   name: Shiva Spawner
   id: SpawnMobShiva
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -407,7 +381,6 @@
   name: Willow Spawner
   id: SpawnMobKangarooWillow
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -422,7 +395,6 @@
   name: Space Kangaroo Spawner
   id: SpawnMobKangaroo
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -437,7 +409,6 @@
   name: Boxing Kangaroo Spawner
   id: SpawnMobBoxingKangaroo
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -452,7 +423,6 @@
   name: Space Spider Spawner
   id: SpawnMobSpaceSpider
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -467,7 +437,6 @@
   name: Space Cobra Spawner
   id: SpawnMobSpaceCobra
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -482,7 +451,6 @@
   name: Slimes Spawner Blue
   id: SpawnMobAdultSlimesBlue
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -496,7 +464,6 @@
   name: Slimes Spawner Blue Angry
   id: SpawnMobAdultSlimesBlueAngry
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -510,7 +477,6 @@
   name: Slimes Spawner Green
   id: SpawnMobAdultSlimesGreen
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -524,7 +490,6 @@
   name: Slimes Spawner Green Angry
   id: SpawnMobAdultSlimesGreenAngry
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -538,7 +503,6 @@
   name: Slimes Spawner Yellow
   id: SpawnMobAdultSlimesYellow
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -552,7 +516,6 @@
   name: Slimes Spawner Yellow Angry
   id: SpawnMobAdultSlimesYellowAngry
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -566,7 +529,6 @@
   name: Smile Spawner
   id: SpawnMobSmile
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -580,7 +542,6 @@
   name: Pun Pun Spawner
   id: SpawnMobMonkeyPunpun
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -595,7 +556,6 @@
   name: behonker Spawner
   id: SpawnMobBehonker
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -613,7 +573,6 @@
   name: Monkey Spawner
   id: SpawnMobMonkey
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -628,7 +587,6 @@
   name: Purple Snake Spawner
   id: SpawnMobPurpleSnake
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -643,7 +601,6 @@
   name: Small Purple Snake Spawner
   id: SpawnMobSmallPurpleSnake
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -658,7 +615,6 @@
   name: Slug Spawner
   id: SpawnMobSlug
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -673,7 +629,6 @@
   name: Lizard Spawner
   id: SpawnMobLizard
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -688,7 +643,6 @@
   name: Crab Spawner
   id: SpawnMobCrab
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -703,7 +657,6 @@
   name: Goat Spawner
   id: SpawnMobGoat
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -718,7 +671,6 @@
   name: Frog Spawner
   id: SpawnMobFrog
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -733,7 +685,6 @@
   name: Bee Spawner
   id: SpawnMobBee
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -748,7 +699,6 @@
   name: Parrot Spawner
   id: SpawnMobParrot
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -763,7 +713,6 @@
   name: Butterfly Spawner
   id: SpawnMobButterfly
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -778,7 +727,6 @@
   name: Cow Spawner
   id: SpawnMobCow
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -793,7 +741,6 @@
   name: Gorilla Spawner
   id: SpawnMobGorilla
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -808,7 +755,6 @@
   name: Penguin Spawner
   id: SpawnMobPenguin
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -824,7 +770,6 @@
   name: Hellspawn Spawner
   id: SpawnMobHellspawn
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -839,7 +784,6 @@
   name: ore crab spawner
   id: SpawnMobOreCrab
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -857,7 +801,6 @@
   name: luminous person spawner
   id: SpawnMobLuminousPerson
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -872,7 +815,6 @@
   name: luminous object spawner
   id: SpawnMobLuminousObject
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -887,7 +829,6 @@
   name: luminous entity spawner
   id: SpawnMobLuminousEntity
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:

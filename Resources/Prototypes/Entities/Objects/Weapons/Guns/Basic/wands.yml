@@ -18,7 +18,6 @@
 - type: entity
   name: wand of carp polymorph
   parent: WeaponWandPolymorphBase
-  noSpawn: true
   id: WeaponWandPolymorphCarp
   description: For when you need a carp filet quick and the clown is looking juicy.
   components:
@@ -30,7 +29,6 @@
 - type: entity
   name: wand of monkey polymorph
   parent: WeaponWandPolymorphBase
-  noSpawn: true
   id: WeaponWandPolymorphMonkey
   description: For when you need a monkey friend.
   components:
@@ -43,7 +41,6 @@
   name: wand of fireball
   parent: WeaponWandBase
   id: WeaponWandFireball
-  noSpawn: true
   description: Great big balls of fire!
   components:
   - type: Sprite
@@ -63,7 +60,6 @@
 - type: entity
   name: magical wand of instant death
   parent: WeaponWandBase
-  noSpawn: true
   id: WeaponWandDeath
   description: Only the best and brightest of the Space Wizards R&D team worked together to create this beauty.
   components:
@@ -84,7 +80,6 @@
   name: wand of entrance
   parent: WeaponWandBase
   id: WeaponWandPolymorphDoor
-  noSpawn: true
   description: For when you need a get-away route.
   components:
   - type: Sprite
@@ -103,7 +98,6 @@
 - type: entity
   name: wand of cluwning
   parent: WeaponWandPolymorphBase
-  noSpawn: true
   id: WeaponWandCluwne
   description: Make their situation worse by turning them into a cluwne.
   components:
@@ -115,7 +109,6 @@
 - type: entity
   parent: WeaponWandPolymorphBase
   id: WeaponWandPolymorphBread
-  noSpawn: true
   name: magic bread wand
   description: Turn all your friends into bread! Your boss! Your enemies! Your dog! Make everything bread!
   components:

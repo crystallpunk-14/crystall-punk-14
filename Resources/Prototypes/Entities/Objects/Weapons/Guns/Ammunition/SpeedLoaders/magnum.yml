@@ -23,7 +23,6 @@
   id: SpeedLoaderMagnum
   name: "speed loader (.45 magnum)"
   parent: BaseSpeedLoaderMagnum
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum
@@ -44,7 +43,6 @@
   id: SpeedLoaderMagnumPractice
   name: "speed loader (.45 magnum practice)"
   parent: BaseSpeedLoaderMagnum
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumPractice
@@ -65,7 +63,6 @@
   id: SpeedLoaderMagnumRubber
   name: "speed loader (.45 magnum rubber)"
   parent: BaseSpeedLoaderMagnum
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumRubber
@@ -86,7 +83,6 @@
   id: SpeedLoaderMagnumAP
   name: "speed loader (.45 magnum armor-piercing)"
   parent: BaseSpeedLoaderMagnum
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumAP
@@ -107,7 +103,6 @@
   id: SpeedLoaderMagnumUranium
   name: "speed loader (.45 magnum uranium)"
   parent: BaseSpeedLoaderMagnum
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumUranium

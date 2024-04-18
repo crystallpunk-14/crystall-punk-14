@@ -3,7 +3,6 @@
   id: WeaponTurretSyndicateBroken
   name: ballistic turret (broken)
   description: A ballistic machine gun auto-turret.
-  noSpawn: true
   components:
     - type: Clickable
     - type: InteractionOutline
@@ -123,7 +122,6 @@
 - type: entity
   parent: BaseWeaponTurret
   id: WeaponTurretSyndicate
-  noSpawn: true
   suffix: Syndicate
   components:
     - type: NpcFactionMember
@@ -132,7 +130,6 @@
 
 - type: entity
   parent: BaseWeaponTurret
-  noSpawn: true
   name: disposable ballistic turret
   id: WeaponTurretSyndicateDisposable
   suffix: Syndicate, Disposable
@@ -184,7 +181,6 @@
   parent: BaseWeaponTurret
   id: WeaponTurretNanoTrasen
   suffix: NanoTrasen
-  noSpawn: true
   components:
   - type: NpcFactionMember
     factions:
@@ -194,7 +190,6 @@
   parent: BaseWeaponTurret
   id: WeaponTurretHostile
   suffix: Hostile
-  noSpawn: true
   components:
   - type: NpcFactionMember
     factions:
@@ -205,7 +200,6 @@
   description: Shoots 9mm acid projectiles
   parent: BaseWeaponTurret
   id: WeaponTurretXeno
-  noSpawn: true
   suffix: Xeno
   components:
     - type: NpcFactionMember

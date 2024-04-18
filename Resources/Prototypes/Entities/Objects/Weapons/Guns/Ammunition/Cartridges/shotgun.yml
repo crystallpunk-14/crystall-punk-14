@@ -25,7 +25,6 @@
   id: ShellShotgunBeanbag
   name: shell (.50 beanbag)
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -41,7 +40,6 @@
   id: ShellShotgunSlug
   name: shell (.50 slug)
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -58,7 +56,6 @@
   id: ShellShotgunFlare
   name: shell (.50 flare)
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -74,7 +71,6 @@
   id: ShellShotgun
   name: shell (.50)
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -87,7 +83,6 @@
   id: ShellShotgunIncendiary
   name: shell (.50 incendiary)
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -102,7 +97,6 @@
   id: ShellShotgunPractice
   name: shell (.50 practice)
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -117,7 +111,6 @@
   id: ShellTranquilizer
   name: shell (.50 tranquilizer)
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -143,7 +136,6 @@
   name: improvised shotgun shell
   description: A homemade shotgun shell that shoots painful glass shrapnel. The spread is so wide that it couldn't hit the broad side of a barn.
   parent: BaseShellShotgun
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -163,7 +155,6 @@
   id: ShellShotgunUranium
   name: uranium shotgun shell
   parent: BaseShellShotgun
-  noSpawn: true
   components:
     - type: Sprite
       layers:
