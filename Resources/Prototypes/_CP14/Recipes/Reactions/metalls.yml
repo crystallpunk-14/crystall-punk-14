@@ -1,0 +1,23 @@
+#- type: reaction
+#  id: IronSolidifation
+#  impact: Low
+#  quantized: true
+#  maxTemp: 1611 #1811 - 200
+#  reactants:
+#    CPMetledIron:
+#      amount: 10
+#  effects:
+#    - !type:CreateEntityReactionEffect
+#      entity: CPOreIron
+#
+#- type: reaction
+#  id: GoldSolidifation
+#  impact: Low
+#  quantized: true
+#  maxTemp: 1137 #1337 - 200
+#  reactants:
+#    CPMetledIron:
+#      amount: 10
+#  effects:
+#    - !type:CreateEntityReactionEffect
+#      entity: CPOreGold

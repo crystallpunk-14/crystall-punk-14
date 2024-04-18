@@ -11,12 +11,28 @@
   - type: IconSmooth
     key: CPwall
     base: stone
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
 
 - type: entity
   id: CPCaveStoneWallIronOre
   name: rock
   suffix: iron ore
-  parent: CPBaseWall
+  parent: CPCaveStoneWall
   description: A solid stone natural wall. You can see the sharp flecks of iron in it.
   components:
   - type: Sprite
@@ -26,12 +42,30 @@
   - type: IconSmooth
     key: CPwall
     base: stone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CPOreIron:
+            min: 1
+            max: 5
 
 - type: entity
   id: CPCaveStoneWallGoldOre
   name: rock
   suffix: gold ore
-  parent: CPBaseWall
+  parent: CPCaveStoneWall
   description: A solid stone natural wall. You see the tantalizing particles of gold in it.
   components:
   - type: Sprite
@@ -41,3 +75,21 @@
   - type: IconSmooth
     key: CPwall
     base: stone
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CPOreGold:
+            min: 1
+            max: 5
