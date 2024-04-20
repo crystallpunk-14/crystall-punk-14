@@ -39,12 +39,16 @@ ent-CP14CaveStoneWall = каменная порода
     .desc = Прочная каменная природная стена. От нее веет пещерным холодом.
 ent-CP14CaveStoneWallCopperOre = { ent-CP14CaveStoneWall }
     .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления меди.
+    .suffix = Медь
 ent-CP14CaveStoneWallIronOre = { ent-CP14CaveStoneWall }
     .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления железа.
+    .suffix = Железо
 ent-CP14CaveStoneWallSilverOre = { ent-CP14CaveStoneWall }
     .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления серебра.
+    .suffix = Серебро
 ent-CP14CaveStoneWallGoldOre = { ent-CP14CaveStoneWall }
     .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления золота.
+    .suffix = Золото
 ent-CP14StoneRuinFragment = обломки каменных стен
     .desc = Это все, что осталось от былого величия. 
 
