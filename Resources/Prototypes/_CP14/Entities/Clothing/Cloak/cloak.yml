@@ -53,7 +53,7 @@
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
   - type: ToggleableClothing
-    clothingPrototype: CPClothingHeadHoodieYellow
+    clothingPrototype: CP14ClothingHeadHoodieYellow
     requiredSlot:
     - cloak
     slot: head

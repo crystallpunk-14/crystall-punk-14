@@ -19,7 +19,7 @@
   - type: MeleeWeapon
     attackRate: 1
     wideAnimationRotation: -115
-    wideAnimation: CPWeaponArcThrust
+    wideAnimation: CP14WeaponArcThrust
     damage:
       types:
         Piercing: 24

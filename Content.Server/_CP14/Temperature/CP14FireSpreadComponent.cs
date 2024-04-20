@@ -4,8 +4,8 @@ namespace Content.Server._CP14.Temperature;
 /// A component that allows fire to spread to nearby objects. The basic mechanics of a spreading fire
 /// </summary>
 
-[RegisterComponent, Access(typeof(CPFireSpreadSystem))]
-public sealed partial class CPFireSpreadComponent : Component
+[RegisterComponent, Access(typeof(CP14FireSpreadSystem))]
+public sealed partial class CP14FireSpreadComponent : Component
 {
     /// <summary>
     /// radius of ignition of neighboring objects

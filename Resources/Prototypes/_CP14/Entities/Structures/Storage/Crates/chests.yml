@@ -2,7 +2,7 @@
   parent: 
   - CP14ChestGeneric
   - CP14BaseWooden
-  id: CPWoodenChest
+  id: CP14WoodenChest
   name: wooden chest
   description: A simple wooden chest for easy storage of junk.
   components:

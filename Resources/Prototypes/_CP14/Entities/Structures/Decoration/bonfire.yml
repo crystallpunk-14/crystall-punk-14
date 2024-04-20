@@ -43,7 +43,7 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: CPFlammableAmbientSound
+  - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
     volume: -5
@@ -75,4 +75,4 @@
     whitelist:
       components:
       - Temperature
-  - type: CPFlammableEntityHeater
+  - type: CP14FlammableEntityHeater

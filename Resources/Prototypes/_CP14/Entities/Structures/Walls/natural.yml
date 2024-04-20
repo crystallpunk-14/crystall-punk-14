@@ -36,9 +36,6 @@
     sprite: _CP14/Structures/Walls/cave_stone_copper.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_copper.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -54,7 +51,7 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreCopper:
+          CP14OreCopper:
             min: 1
             max: 5
 
@@ -69,9 +66,6 @@
     sprite: _CP14/Structures/Walls/cave_stone_iron.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_iron.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -87,7 +81,7 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreIron:
+          CP14OreIron:
             min: 1
             max: 5
 
@@ -102,9 +96,6 @@
     sprite: _CP14/Structures/Walls/cave_stone_silver.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_silver.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -120,7 +111,7 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreSilver:
+          CP14OreSilver:
             min: 1
             max: 5
 
@@ -135,9 +126,6 @@
     sprite: _CP14/Structures/Walls/cave_stone_gold.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_gold.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -153,6 +141,6 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreGold:
+          CP14OreGold:
             min: 1
             max: 5
