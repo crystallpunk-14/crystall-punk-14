@@ -23,5 +23,5 @@ ent-CP14ClothingShirtHarlequineRed = красная рубаха арлекин�
     .desc = На ней не видно пятен крови, которые остаются после неудачных шуток.
 
 # Shoes
-ent-CP14ClothingShoesBlack = simple black boots
-    .desc = They won't hold moisture, but it's better than going barefoot.
+ent-CP14ClothingShoesBlack = простые черные ботинки
+    .desc = Влагу они не удержат, но это лучше чем ходить босиком.

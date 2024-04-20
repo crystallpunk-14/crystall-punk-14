@@ -19,9 +19,6 @@ ent-CP14BaseThrowableSpear = метательное копьё
 ent-CP14BaseTwoHandedSword = двуручный меч
     .desc = Мощное оружие, требующее огромной силы и умения для эффективного использования.
 
-
-
-
 # Coins
 ent-CP14CopperCoin = медная корона
     .desc = Минимальная экономическая единица на просторах Эберрона. Является одной десятой серебрянного соверена.
@@ -47,3 +44,13 @@ ent-CP14PlatinumCoin1 = { ent-CP14PlatinumCoin }
     .desc = { ent-CP14PlatinumCoin.desc }
 ent-CP14PlatinumCoin5 = { ent-CP14PlatinumCoin }
     .desc = { ent-CP14PlatinumCoin.desc }
+
+# Ores
+ent-CP14OreCopper = медь
+    .desc = Кусочек бледной, тяжелой меди.
+ent-CP14OreIron = железо
+    .desc = Кусочек холодного, тяжелого железа.
+ent-CP14OreSilver = серебро
+    .desc = Кусочек блестящего, теплого серебра.
+ent-CP14OreGold = золото
+    .desc = Кусочек мягкого, чистого золота.

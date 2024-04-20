@@ -37,6 +37,14 @@ ent-CP14WoodFullWall = деревянная стена
     .desc = Доска к доске, и вместе образуют они защиту и уют.
 ent-CP14CaveStoneWall = каменная порода
     .desc = Прочная каменная природная стена. От нее веет пещерным холодом.
+ent-CP14CaveStoneWallCopperOre = { ent-CP14CaveStoneWall }
+    .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления меди.
+ent-CP14CaveStoneWallIronOre = { ent-CP14CaveStoneWall }
+    .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления железа.
+ent-CP14CaveStoneWallSilverOre = { ent-CP14CaveStoneWall }
+    .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления серебра.
+ent-CP14CaveStoneWallGoldOre = { ent-CP14CaveStoneWall }
+    .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления золота.
 ent-CP14StoneRuinFragment = обломки каменных стен
     .desc = Это все, что осталось от былого величия. 
 
