@@ -24,6 +24,8 @@
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
+  - type: IconSmooth
+    base: brick
 
 - type: entity
   id: CP14StoneRuinWall
@@ -36,6 +38,8 @@
     sprite: _CP14/Structures/Walls/ruin_stone.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/ruin_stone.rsi
+  - type: IconSmooth
+    base: brick
 
 - type: entity
   id: CP14WoodFullWall
@@ -82,6 +86,8 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
+  - type: IconSmooth
+    base: wood
 
 - type: entity
   id: CP14StoneRuinFragment
