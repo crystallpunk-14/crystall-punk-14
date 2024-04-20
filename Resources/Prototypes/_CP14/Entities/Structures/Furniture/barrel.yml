@@ -6,6 +6,8 @@
   name: wooden barrel
   suffix: Empty
   description: The simplest design for storing liquids.
+  placement:
+    mode: PlaceFree
   components:
   - type: Transform
     noRot: true
@@ -16,7 +18,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.4"
+          bounds: "-0.3,-0.3,0.3,0.3"
         density: 155
         mask:
         - MachineMask
