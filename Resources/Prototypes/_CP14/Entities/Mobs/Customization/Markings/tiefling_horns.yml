@@ -3,7 +3,7 @@
   id: CP14TieflingHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   sprites:
     - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
       state: horn1
@@ -12,7 +12,7 @@
   id: CP14TieflingHorns2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   sprites:
     - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
       state: horn2
@@ -21,7 +21,7 @@
   id: CP14TieflingHorns3
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:
@@ -32,7 +32,7 @@
   id: CP14TieflingHorns3Broken
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:
@@ -43,7 +43,7 @@
   id: CP14TieflingHorns4
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:
@@ -54,7 +54,7 @@
   id: CP14TieflingHorns5
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:
@@ -65,7 +65,7 @@
   id: CP14TieflingHorns5Broken
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:
@@ -76,7 +76,7 @@
   id: CP14TieflingHorns6
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:

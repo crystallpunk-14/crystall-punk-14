@@ -19,7 +19,7 @@
       templateId: CP14Human
 
 - type: entity
-  parent: BaseSpeciesDummy
+  parent: CP14BaseSpeciesDummy
   id: CP14MobTieflingDummy
   noSpawn: true
   components:

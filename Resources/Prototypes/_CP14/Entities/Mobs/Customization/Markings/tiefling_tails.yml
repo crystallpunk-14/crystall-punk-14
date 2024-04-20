@@ -2,7 +2,7 @@
   id: CP14TieflingTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:
@@ -13,7 +13,7 @@
   id: CP14TieflingTailSpades
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:

@@ -24,7 +24,7 @@
     templateId: CP14Human
 
 - type: entity
-  parent: BaseSpeciesDummy
+  parent: CP14BaseSpeciesDummy
   id: CP14MobHumanDummy
   noSpawn: true
   components:
