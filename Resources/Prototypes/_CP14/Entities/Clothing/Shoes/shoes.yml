@@ -23,3 +23,14 @@
     sprite: _CP14/Clothing/Shoes/black.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/black.rsi
+    
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingAristocraticShoesBlack
+  name: aristocratic black boots
+  description: They're expensive enough that you don't want to go caving in them.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/aristocratic_black.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/aristocratic_black.rsi

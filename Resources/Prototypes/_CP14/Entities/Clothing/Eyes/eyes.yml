@@ -1,0 +1,43 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingEyesBase
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Small
+  - type: Clothing
+    equipDelay: 0.4
+    unequipDelay: 0
+    slots: [eyes]
+
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesMonocle
+  name: monocle
+  description: Aristocratic, fancy, gold-plated.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/monocle.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/monocle.rsi
+
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesGoldGlasses
+  name: gold glasses
+  description: Aristocratic, fancy, gold-plated.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/gold_glasses.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/gold_glasses.rsi
+
