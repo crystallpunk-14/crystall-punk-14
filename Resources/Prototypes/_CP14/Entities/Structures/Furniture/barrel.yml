@@ -15,7 +15,7 @@
     fillBaseName: liq
   - type: Appearance
   - type: Sprite
-    sprite: _CP14/Structure/Furniture/barrel.rsi
+    sprite: _CP14/Structures/Furniture/barrel.rsi
     layers:
       - state: barrel_open
       - state: liq1
