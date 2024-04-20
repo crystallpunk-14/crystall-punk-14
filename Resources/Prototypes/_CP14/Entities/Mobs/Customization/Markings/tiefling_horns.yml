@@ -1,6 +1,6 @@
 
 - type: marking
-  id: CPTieflingHorns
+  id: CP14TieflingHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]
@@ -9,7 +9,7 @@
       state: horn1
 
 - type: marking
-  id: CPTieflingHorns2
+  id: CP14TieflingHorns2
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]
@@ -18,7 +18,7 @@
       state: horn2
 
 - type: marking
-  id: CPTieflingHorns3
+  id: CP14TieflingHorns3
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]
@@ -29,7 +29,7 @@
       state: horn3
 
 - type: marking
-  id: CPTieflingHorns3Broken
+  id: CP14TieflingHorns3Broken
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]
@@ -40,7 +40,7 @@
       state: horn3_broken
 
 - type: marking
-  id: CPTieflingHorns4
+  id: CP14TieflingHorns4
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]
@@ -51,7 +51,7 @@
       state: horn4
 
 - type: marking
-  id: CPTieflingHorns5
+  id: CP14TieflingHorns5
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]
@@ -62,7 +62,7 @@
       state: horn5
 
 - type: marking
-  id: CPTieflingHorns5Broken
+  id: CP14TieflingHorns5Broken
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]
@@ -73,7 +73,7 @@
       state: horn5_broken
 
 - type: marking
-  id: CPTieflingHorns6
+  id: CP14TieflingHorns6
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CPTiefling ]

@@ -1,15 +1,12 @@
-using Content.Shared.CrystallPunk.LockKey;
 using Robust.Shared.Audio;
-using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 
-namespace Content.Shared.CrystallPunk.LockKey;
+namespace Content.Shared._CP14.LockKey.Components;
 
 /// <summary>
 /// A component of a lock that stores its keyhole shape, complexity, and current state.
 /// </summary>
 [RegisterComponent]
-public sealed partial class CPLockpickComponent : Component
+public sealed partial class CP14LockpickComponent : Component
 {
     [DataField]
     public int Health = 3;

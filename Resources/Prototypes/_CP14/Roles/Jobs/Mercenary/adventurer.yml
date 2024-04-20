@@ -3,13 +3,13 @@
   name: job-name-adventurer
   description: job-description-adventurer
   playTimeTracker: JobAdventurer
-  startingGear: CPTestGear
+  startingGear: CP14TestGear
   icon: "JobIconCargoTechnician" #TODO replace
   supervisors: job-supervisors-everyone
 
 - type: startingGear
-  id: CPTestGear
+  id: CP14TestGear
   equipment:
-    shirt: CPClothingShirtHarlequineRed
-    pants: CPClothingPantsHarlequinRed
-    shoes: CPClothingShoesBlack
+    shirt: CP14ClothingShirtHarlequineRed
+    pants: CP14ClothingPantsHarlequinRed
+    shoes: CP14ClothingShoesBlack

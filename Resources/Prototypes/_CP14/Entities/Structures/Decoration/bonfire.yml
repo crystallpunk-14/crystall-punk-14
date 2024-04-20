@@ -1,5 +1,5 @@
 - type: entity
-  id: CPBonfire
+  id: CP14Bonfire
   parent: BaseStructure
   name: bonfire
   description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
@@ -10,8 +10,8 @@
     layers:
       - state: bonfire
   - type: Construction
-    graph: CPBonfire
-    node: CPBonfire
+    graph: CP14Bonfire
+    node: CP14Bonfire
   - type: Fixtures
     fixtures:
       fix1:

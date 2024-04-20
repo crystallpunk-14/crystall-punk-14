@@ -1,16 +1,16 @@
 - type: constructionGraph
-  id: CPWoodenChest
+  id: CP14WoodenChest
   start: start
   graph:
     - node: start
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: CPWoodenChest
+        - to: CP14WoodenChest
           steps:
             - material: WoodPlank
               amount: 5
               doAfter: 2
               
-    - node: CPWoodenChest
-      entity: CPWoodenChest
+    - node: CP14WoodenChest
+      entity: CP14WoodenChest

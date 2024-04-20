@@ -1,12 +1,12 @@
 - type: entity
-  id: CPBaseHandheldAxe
+  id: CP14BaseHandheldAxe
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponSharp
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
   name: hand axe
   description: A small axe, great for chopping wood or sinew.
   components:

@@ -1,13 +1,13 @@
 - type: entity
-  parent: CPBaseMobSpeciesOrganic
-  id: CPBaseMobTiefling
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobTiefling
   name: Mr. Tiefling
   abstract: true
   components:
     - type: HumanoidAppearance
-      species: CPTiefling
+      species: CP14Tiefling
     - type: Body
-      prototype: CPTiefling
+      prototype: CP14Tiefling
       requiredLegs: 2
     - type: Hunger
     - type: Icon
@@ -16,12 +16,12 @@
     - type: Thirst
     - type: Wagging  
     - type: Inventory
-      templateId: CPHuman
+      templateId: CP14Human
 
 - type: entity
   parent: BaseSpeciesDummy
-  id: CPMobTieflingDummy
+  id: CP14MobTieflingDummy
   noSpawn: true
   components:
     - type: HumanoidAppearance
-      species: CPTiefling
+      species: CP14Tiefling

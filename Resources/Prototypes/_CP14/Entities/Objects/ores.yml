@@ -1,5 +1,5 @@
 - type: entity
-  id: CPBaseOre
+  id: CP14BaseOre
   parent: BaseItem
   abstract: true
   components:
@@ -14,8 +14,8 @@
           ore4: ""
 
 - type: entity
-  id: CPOreCopper
-  parent: CPBaseOre
+  id: CP14OreCopper
+  parent: CP14BaseOre
   name: copper piece
   description: A piece of pale, heavy copper. 
   components:
@@ -26,8 +26,8 @@
         map: ["random"]
 
 - type: entity
-  id: CPOreIron
-  parent: CPBaseOre
+  id: CP14OreIron
+  parent: CP14BaseOre
   name: iron piece
   description: A piece of cold, heavy iron. 
   components:
@@ -38,8 +38,8 @@
         map: ["random"]
 
 - type: entity
-  id: CPOreSilver
-  parent: CPBaseOre
+  id: CP14OreSilver
+  parent: CP14BaseOre
   name: silver piece
   description: A piece of shiny, warm silver.
   components:
@@ -50,8 +50,8 @@
         map: ["random"]
 
 - type: entity
-  id: CPOreGold
-  parent: CPBaseOre
+  id: CP14OreGold
+  parent: CP14BaseOre
   name: gold piece
   description: A piece of soft, pure gold.
   components:

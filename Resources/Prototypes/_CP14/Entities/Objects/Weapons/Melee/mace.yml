@@ -1,8 +1,8 @@
 - type: entity
-  id: CPBaseMace
+  id: CP14BaseMace
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
+  - CP14BaseWeaponDestructible
   name: mace
   description: A heavy piece of metal on a long stick. What could be simpler than that?
   components:

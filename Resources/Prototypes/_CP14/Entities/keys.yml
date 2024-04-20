@@ -1,18 +1,18 @@
 - type: entity
   parent: BaseItem
-  id: BaseKey
+  id: CP14BaseKey
   abstract: true
   name: ключ
   description: Небольшая заковыристая железяка, открывающая определенные замки. Не отдавайте кому попало!
   components: 
   - type: Tag
     tags:
-    - CPKey
+    - CP14Key
   - type: Item
     size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
-  - type: CPKey
+  - type: CP14Key
     autoGenerateShape: Debug
   - type: EmitSoundOnLand
     sound:
@@ -22,21 +22,21 @@
 
 - type: entity
   parent: BaseItem
-  id: BaseLockpick
+  id: CP14BaseLockpick
   name: отмычка
   description: Воровской инструмент, при должном умении и сноровке позволяющий взламывать любые замки.
   components:
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
     state: lockpick
-  - type: CPLockpick
+  - type: CP14Lockpick
 
 - type: entity
-  parent: BaseKey
-  id: KeyTavern
+  parent: CP14BaseKey
+  id: CP14KeyTavern
   name: ключ от таверны
   components:
   - type: Sprite
     state: key1
-  - type: CPKey
+  - type: CP14Key
     autoGenerateShape: Tavern

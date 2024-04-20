@@ -1,5 +1,5 @@
 - type: entity
-  id: CPBaseWooden
+  id: CP14BaseWooden
   abstract: true
   components:
   - type: Damageable

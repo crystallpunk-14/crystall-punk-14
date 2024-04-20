@@ -3,7 +3,7 @@
     - BaseMob
     - MobDamageable
     - MobCombat
-  id: CPBaseMobSpecies
+  id: CP14BaseMobSpecies
   save: false
   abstract: true
   components:
@@ -147,7 +147,7 @@
       enabled: false
       reflectProb: 0
     - type: Body
-      prototype: Human
+      prototype: CP14Human
       requiredLegs: 2
     - type: Identity
     - type: IdExaminable
@@ -231,8 +231,8 @@
     - MobRespirator
     - MobAtmosStandard
     - MobFlammable
-    - CPBaseMobSpecies
-  id: CPBaseMobSpeciesOrganic
+    - CP14BaseMobSpecies
+  id: CP14BaseMobSpeciesOrganic
   save: false
   abstract: true
   components:

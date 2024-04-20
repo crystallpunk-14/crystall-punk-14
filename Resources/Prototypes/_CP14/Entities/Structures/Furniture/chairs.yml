@@ -1,10 +1,10 @@
 - type: entity
   name: wooden chair
   description: Made of the most common planks. Simple and effective!    
-  id: CPChairWooden
+  id: CP14ChairWooden
   parent: 
   - UnanchoredChairBase
-  - CPBaseWooden
+  - CP14BaseWooden
   components:
   - type: Damageable
     damageContainer: Inorganic
@@ -13,8 +13,8 @@
     sprite: _CP14/Structures/Furniture/chairs.rsi
     state: wooden
   - type: Construction
-    graph: CPSeat
-    node: CPChairWooden
+    graph: CP14Seat
+    node: CP14ChairWooden
   - type: Destructible
     thresholds:
     - trigger:

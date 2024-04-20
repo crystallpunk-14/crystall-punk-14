@@ -1,24 +1,24 @@
 - type: constructionGraph
-  id: CPFloor
+  id: CP14Floor
   start: start
   graph:
     - node: start
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: CPFloorWood
+        - to: CP14FloorWood
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: CPFloorWoodBig
+        - to: CP14FloorWoodBig
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
               
-    - node: CPFloorWood
-      entity: CPFloorWood
+    - node: CP14FloorWood
+      entity: CP14FloorWood
       
-    - node: CPFloorWoodBig
-      entity: CPFloorWoodBig
+    - node: CP14FloorWoodBig
+      entity: CP14FloorWoodBig

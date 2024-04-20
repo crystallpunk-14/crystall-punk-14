@@ -1,13 +1,13 @@
 - type: entity
-  id: CPBaseDagger
+  id: CP14BaseDagger
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponSharp
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
-  - CPBaseWeaponShort
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
+  - CP14BaseWeaponShort
   name: dagger
   description: A small, multi-purpose, sharp blade. You can cut meat or throw it at a goblin.
   components:

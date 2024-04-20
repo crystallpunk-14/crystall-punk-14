@@ -1,11 +1,11 @@
 - type: entity
-  id: CPBaseThrowableSpear
+  id: CP14BaseThrowableSpear
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponSharp
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
   name:  throwing javelin
   description: A weapon that has done its duty since the age of the giants.
   components:

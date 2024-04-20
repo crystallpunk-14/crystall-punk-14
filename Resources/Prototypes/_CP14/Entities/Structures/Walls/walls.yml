@@ -1,50 +1,48 @@
 - type: entity
   abstract: true
   parent: BaseWall
-  id: CPBaseWall
+  id: CP14BaseWall
   name: стена
   description: Достаточно прочная, чтобы прикрыть вас от угроз или холодного ветра.
   placement:
     mode: SnapgridCenter
     snap:
     - Wall
+  components:
+  - type: IconSmooth
+    key: CPwall
+    base: stone
     
 - type: entity
-  id: CPDebugWall
+  id: CP14DebugWall
   name: тестовая стена
   suffix: DEBUG
-  parent: CPBaseWall
+  parent: CP14BaseWall
   description: Ужасы
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
-  - type: IconSmooth
-    key: CPwallsbrick
-    base: brick
 
 - type: entity
-  id: CPStoneRuinWall
+  id: CP14StoneRuinWall
   name: stone wall ruin
   suffix: Outdated sprite format!
-  parent: CPBaseWall
+  parent: CP14BaseWall
   description: These walls have seen a lot, and they don't have long to live.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/ruin_stone.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/ruin_stone.rsi
-  - type: IconSmooth
-    key: CPwallsbrick
-    base: brick 
 
 - type: entity
-  id: CPWoodFullWall
+  id: CP14WoodFullWall
   name: wooden wall
   parent: 
-  - CPBaseWall
-  - CPBaseWooden
+  - CP14BaseWall
+  - CP14BaseWooden
   description: Board to board, and together they form protection and comfort.
   components:
   - type: Sprite
@@ -52,9 +50,6 @@
   - type: Icon
     sprite: _CP14/Structures/Walls/wood_full.rsi
     state: full
-  - type: IconSmooth
-    key: CPwallswood
-    base: wood 
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -89,7 +84,7 @@
     normalState: full
 
 - type: entity
-  id: CPStoneRuinFragment
+  id: CP14StoneRuinFragment
   parent: BaseRock
   name: stone wall fragments
   description: It's all that's left of former greatness. 

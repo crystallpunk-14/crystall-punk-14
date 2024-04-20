@@ -1,0 +1,35 @@
+- type: entity
+  id: CP14BaseBarrel
+  parent: 
+  - StorageTank
+  - CP14BaseWooden
+  name: wooden barrel
+  suffix: Empty
+  description: The simplest design for storing liquids.
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: SolutionContainerVisuals
+    maxFillLevels: 7
+    fillBaseName: liq
+  - type: Appearance
+  - type: Sprite
+    sprite: _CP14/Structure/Furniture/barrel.rsi
+    layers:
+      - state: barrel_open
+      - state: liq1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+
+- type: entity
+  id: CP14BarrelWater
+  parent: CP14BaseBarrel
+  suffix: Water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 1500

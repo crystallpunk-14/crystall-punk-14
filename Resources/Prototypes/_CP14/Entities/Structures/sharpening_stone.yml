@@ -1,5 +1,5 @@
 - type: entity
-  id: CPBaseSharpeningStoneStructure
+  id: CP14BaseSharpeningStoneStructure
   name: stationary sharpening stone
   description: A strong, durable sharpening stone capable of sharpening weapons without much damage to them.
   parent: BaseStructure
@@ -41,7 +41,7 @@
           collection: GlassCrack
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: CPSharpeningStone
+  - type: CP14SharpeningStone
     sharpnessHeal: 0.1
     targetDamage:
       types:

@@ -27,7 +27,7 @@
         - type: StationRandomTransform
           enableStationRotation: false
           maxStationOffset: null
-        - type: StationBiome
+        - type: CP14StationBiome
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs

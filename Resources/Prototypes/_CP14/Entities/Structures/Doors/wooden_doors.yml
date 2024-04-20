@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseMaterialDoorNavMap
-  id: CPBaseWoodDoor
+  id: CP14BaseWoodDoor
   name: wooden door
   description: Not the most solid construction, but it's better than nothing.
   suffix: without lock
@@ -50,15 +50,15 @@
       lock_slot: !type:ContainerSlot
 
 - type: entity
-  parent: CPBaseWoodDoor
-  id: CPWoodDoorTavern
+  parent: CP14BaseWoodDoor
+  id: CP14WoodDoorTavern
   suffix: Tavern
   components:
   - type: ItemSlots
     slots: 
       lock_slot:
         name: cp-lock-slot-component-slot-name-default
-        startingItem: LockTavern
+        startingItem: CP14LockTavern
         disableEject: true
         insertOnInteract: false
         ejectOnBreak: true

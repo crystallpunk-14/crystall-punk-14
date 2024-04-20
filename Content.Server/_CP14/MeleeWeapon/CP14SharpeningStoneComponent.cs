@@ -6,8 +6,8 @@ namespace Content.Server._CP14.MeleeWeapon;
 /// <summary>
 /// component allows you to sharpen objects by restoring their damage.
 /// </summary>
-[RegisterComponent, Access(typeof(CPSharpeningSystem))]
-public sealed partial class CPSharpeningStoneComponent : Component
+[RegisterComponent, Access(typeof(CP14SharpeningSystem))]
+public sealed partial class CP14SharpeningStoneComponent : Component
 {
     /// <summary>
     /// the amount of acuity recoverable per use

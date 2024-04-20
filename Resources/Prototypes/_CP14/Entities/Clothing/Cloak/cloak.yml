@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: Clothing
-  id: CPClothingCloakBase
+  id: CP14ClothingCloakBase
   components:
   - type: Clothing
     equipDelay: 1
@@ -12,8 +12,8 @@
     state: icon
 
 - type: entity
-  parent: CPClothingCloakBase
-  id: CPClothingCloakArmoredRed
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakArmoredRed
   name: armored red cape
   description: Huge metal shoulder pads give extra protection from getting your head chopped off.
   components:
@@ -31,9 +31,9 @@
 
 - type: entity
   parent: 
-  - CPClothingCloakBase
+  - CP14ClothingCloakBase
   - ClothingSlotBase
-  id: CPClothingCloakBlacksmithArpon
+  id: CP14ClothingCloakBlacksmithArpon
   name: blacksmith's apron
   description: Loose leather strips, still actually being clothing. 
   components:
@@ -43,8 +43,8 @@
     sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
 
 - type: entity
-  parent: CPClothingCloakBase
-  id: CPClothingCloakHoodieYellow
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakHoodieYellow
   name: yellow short hooded cape
   description: Protects your shoulders and head from the cold and the interest of the opposite sex.
   components:

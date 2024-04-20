@@ -1,7 +1,7 @@
 - type: loadoutGroup
-  id: CPTestLoadout
+  id: CP14TestLoadout
   name: job-name-adventurer 
   loadouts:
-  - CPTestCloak
-  - CPTestCloak2
-  - CPTestCloak3
+  - CP14TestCloak
+  - CP14TestCloak2
+  - CP14TestCloak3

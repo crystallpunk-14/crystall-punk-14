@@ -1,23 +1,22 @@
-
+using System.Diagnostics.CodeAnalysis;
+using Content.Shared._CP14.LockKey.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Interaction;
 using Content.Shared.Lock;
 using Content.Shared.Popups;
-using Robust.Shared.Containers;
-using Robust.Shared.Serialization;
-using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Verbs;
-using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Storage;
-using Robust.Shared.Random;
+using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
+using Robust.Shared.Random;
+using Robust.Shared.Serialization;
 
-namespace Content.Shared.CrystallPunk.LockKey;
+namespace Content.Shared._CP14.LockKey;
 
 /// <summary>
-/// 
+///
 /// </summary>
-public sealed class SharedCPLockKeySystem : EntitySystem
+public sealed class SharedCP14LockKeySystem : EntitySystem
 {
 
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
@@ -27,7 +26,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
-    private const int DepthCompexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
+    private const int DepthComplexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
 
 
     public override void Initialize()
@@ -39,12 +38,12 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         SubscribeLocalEvent<LockComponent, EntInsertedIntoContainerMessage>(OnLockInserted);
         SubscribeLocalEvent<LockComponent, EntRemovedFromContainerMessage>(OnLockRemoved);
 
-        SubscribeLocalEvent<CPKeyComponent, AfterInteractEvent>(OnKeyInteract);
-        SubscribeLocalEvent<CPKeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
-        SubscribeLocalEvent<CPKeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
-        SubscribeLocalEvent<CPLockpickComponent, GetVerbsEvent<UtilityVerb>>(OnLockpickToLockVerb);
+        SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
+        SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
+        SubscribeLocalEvent<CP14KeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
+        SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(OnLockpickToLockVerb);
     }
-    private void OnKeyRingInteract(Entity<CPKeyRingComponent> keyring, ref AfterInteractEvent args)
+    private void OnKeyRingInteract(Entity<CP14KeyRingComponent> keyring, ref AfterInteractEvent args)
     {
         if (args.Handled)
             return;
@@ -62,13 +61,13 @@ public sealed class SharedCPLockKeySystem : EntitySystem
 
             foreach (var item in storageComp.StoredItems)
             {
-                if (!TryComp<CPKeyComponent>(item.Key, out var keyComp))
+                if (!TryComp<CP14KeyComponent>(item.Key, out var keyComp))
                     continue;
 
                 if (keyComp.LockShape != lockEnt.Value.Comp.LockShape)
                     continue;
 
-                TryUseKeyOnLock(args.User, args.Target.Value, new Entity<CPKeyComponent>(item.Key, keyComp), lockEnt.Value);
+                TryUseKeyOnLock(args.User, args.Target.Value, new Entity<CP14KeyComponent>(item.Key, keyComp), lockEnt.Value);
                 args.Handled = true;
                 return;
             }
@@ -76,7 +75,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         }
     }
 
-    private void OnKeyInteract(Entity<CPKeyComponent> key, ref AfterInteractEvent args)
+    private void OnKeyInteract(Entity<CP14KeyComponent> key, ref AfterInteractEvent args)
     {
         if (args.Handled)
             return;
@@ -87,12 +86,12 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         if (TryComp<LockComponent>(args.Target, out var lockComp) &&
             TryGetLockFromSlot(args.Target.Value, out var lockEnt))
         {
-            TryUseKeyOnLock(args.User, args.Target.Value, key, new Entity<CPLockComponent>(lockEnt.Value.Owner, lockEnt.Value.Comp));
+            TryUseKeyOnLock(args.User, args.Target.Value, key, new Entity<CP14LockComponent>(lockEnt.Value.Owner, lockEnt.Value.Comp));
             args.Handled = true;
         }
     }
 
-    private void OnLockpickToLockVerb(Entity<CPLockpickComponent> lockpick, ref GetVerbsEvent<UtilityVerb> args)
+    private void OnLockpickToLockVerb(Entity<CP14LockpickComponent> lockpick, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -103,13 +102,13 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         if (!TryGetLockFromSlot(args.Target, out var lockItem))
             return;
 
-        if (!TryComp<CPLockComponent>(lockItem, out var lockItemComp))
+        if (!TryComp<CP14LockComponent>(lockItem, out var lockItemComp))
             return;
 
         var target = args.Target;
         var user = args.User;
 
-        for (int i = DepthCompexity; i >= -DepthCompexity; i--)
+        for (int i = DepthComplexity; i >= -DepthComplexity; i--)
         {
             var height = i;
             var verb = new UtilityVerb()
@@ -128,7 +127,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         }
     }
 
-    private bool TryHackDoorElement(EntityUid user, EntityUid target, Entity<CPLockpickComponent> lockpick,  CPLockComponent lockEnt, LockComponent lockComp, int height)
+    private bool TryHackDoorElement(EntityUid user, EntityUid target, Entity<CP14LockpickComponent> lockpick,  CP14LockComponent lockEnt, LockComponent lockComp, int height)
     {
         if (lockEnt.LockShape == null)
             return true;
@@ -182,7 +181,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         }
     }
 
-    private void OnKeyToLockVerb(Entity<CPKeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
+    private void OnKeyToLockVerb(Entity<CP14KeyComponent> key, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -193,7 +192,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         if (!TryGetLockFromSlot(args.Target, out var lockItem))
             return;
 
-        if (!TryComp<CPLockComponent>(lockItem, out var lockItemComp))
+        if (!TryComp<CP14LockComponent>(lockItem, out var lockItemComp))
             return;
 
         var target = args.Target;
@@ -203,7 +202,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         {
             Act = () =>
             {
-                TryUseKeyOnLock(user, target, key, new Entity<CPLockComponent>(target, lockItemComp));
+                TryUseKeyOnLock(user, target, key, new Entity<CP14LockComponent>(target, lockItemComp));
             },
             IconEntity = GetNetEntity(key),
             Text = Loc.GetString(lockComp.Locked ? "cp-lock-verb-use-key-text-open" : "cp-lock-verb-use-key-text-close", ("item", MetaData(args.Target).EntityName)),
@@ -221,7 +220,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         if (args.Container.ID != lockSlot.Comp.LockSlotId)
             return;
 
-        if (!TryComp<CPLockComponent>(args.EntityUid, out var lockComp))
+        if (!TryComp<CP14LockComponent>(args.EntityUid, out var lockComp))
         {
             args.Cancel();
             return;
@@ -248,7 +247,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         if (args.Container.ID != lockSlot.Comp.LockSlotId)
             return;
 
-        if (!TryComp<CPLockComponent>(args.Entity, out var lockComp))
+        if (!TryComp<CP14LockComponent>(args.Entity, out var lockComp))
             return;
 
         _appearance.SetData(lockSlot, LockSlotVisuals.LockExist, true);
@@ -262,7 +261,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
     }
 
     public bool TryGetLockFromSlot(EntityUid uid,
-    [NotNullWhen(true)] out Entity<CPLockComponent>? lockEnt,
+    [NotNullWhen(true)] out Entity<CP14LockComponent>? lockEnt,
     LockComponent? component = null)
     {
         if (!Resolve(uid, ref component, false))
@@ -279,9 +278,9 @@ public sealed class SharedCPLockKeySystem : EntitySystem
 
         if (_itemSlots.TryGetSlot(uid, component.LockSlotId, out ItemSlot? slot))
         {
-            if (TryComp<CPLockComponent>(slot.Item, out var lockComp))
+            if (TryComp<CP14LockComponent>(slot.Item, out var lockComp))
             {
-                lockEnt = new Entity<CPLockComponent>(slot.Item.Value, lockComp);
+                lockEnt = new Entity<CP14LockComponent>(slot.Item.Value, lockComp);
                 return true;
             }
             else
@@ -294,7 +293,7 @@ public sealed class SharedCPLockKeySystem : EntitySystem
         lockEnt = null;
         return false;
     }
-    private bool TryUseKeyOnLock(EntityUid user, EntityUid target, Entity<CPKeyComponent> keyEnt, Entity<CPLockComponent> lockEnt)
+    private bool TryUseKeyOnLock(EntityUid user, EntityUid target, Entity<CP14KeyComponent> keyEnt, Entity<CP14LockComponent> lockEnt)
     {
         if (!TryComp<LockComponent>(target, out var lockComp))
             return false;

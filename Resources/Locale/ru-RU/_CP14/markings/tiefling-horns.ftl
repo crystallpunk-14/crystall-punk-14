@@ -1,8 +1,8 @@
-marking-CPTieflingHorns = Извилистые
-marking-CPTieflingHorns2 = Прилежность
-marking-CPTieflingHorns3 = Вертикаль власти
-marking-CPTieflingHorns3Broken = Сломанная вертикаль
-marking-CPTieflingHorns4 = Мелочь
-marking-CPTieflingHorns5 = Дьявол
-marking-CPTieflingHorns5Broken = Сломленный дьявол
-marking-CPTieflingHorns6 = Барашек
+marking-CP14TieflingHorns = Извилистые
+marking-CP14TieflingHorns2 = Прилежность
+marking-CP14TieflingHorns3 = Вертикаль власти
+marking-CP14TieflingHorns3Broken = Сломанная вертикаль
+marking-CP14TieflingHorns4 = Мелочь
+marking-CP14TieflingHorns5 = Дьявол
+marking-CP14TieflingHorns5Broken = Сломленный дьявол
+marking-CP14TieflingHorns6 = Барашек

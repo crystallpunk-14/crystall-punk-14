@@ -1,10 +1,10 @@
 - type: entity
-  id: CPFloorBase
+  id: CP14FloorBase
   abstract: true
   parent: BaseStructure
   components:
   - type: PlacementReplacement
-    key: CPfloor
+    key: CP14floor
   - type: Sprite
     drawdepth: FloorTiles
   - type: Physics
@@ -40,10 +40,10 @@
         hard: false
 
 - type: entity
-  id: CPFloorWood
+  id: CP14FloorWood
   parent:
-  - CPFloorBase
-  - CPBaseWooden
+  - CP14FloorBase
+  - CP14BaseWooden
   name: wooden floor
   description: simple, flammable boards.
   components:
@@ -97,12 +97,12 @@
     sprite: _CP14/Effects/fire.rsi
     normalState: full
   - type: Construction
-    graph: CPFloor
-    node: CPFloorWood
+    graph: CP14Floor
+    node: CP14FloorWood
 
 - type: entity
-  parent: CPFloorWood
-  id: CPFloorWoodBig
+  parent: CP14FloorWood
+  id: CP14FloorWoodBig
   components:
   - type: Sprite
     sprite: _CP14/Structures/Floors/wood_big.rsi
@@ -117,5 +117,5 @@
           wood_big_3: ""
           wood_big_4: ""
   - type: Construction
-    graph: CPFloor
-    node: CPFloorWoodBig
+    graph: CP14Floor
+    node: CP14FloorWoodBig

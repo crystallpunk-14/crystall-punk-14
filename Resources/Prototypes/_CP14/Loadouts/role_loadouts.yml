@@ -2,5 +2,5 @@
 - type: roleLoadout
   id: JobAdventurer
   groups:
-  - CPTestLoadout
+  - CP14TestLoadout
   - Trinkets
