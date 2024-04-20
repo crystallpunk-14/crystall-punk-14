@@ -1,8 +1,8 @@
 - type: marking
-  id: CPTieflingTail
+  id: CP14TieflingTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:
@@ -10,10 +10,10 @@
       state: tail1
 
 - type: marking
-  id: CPTieflingTailSpades
+  id: CP14TieflingTailSpades
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ CPTiefling ]
+  speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
   forcedColoring: true
   sprites:

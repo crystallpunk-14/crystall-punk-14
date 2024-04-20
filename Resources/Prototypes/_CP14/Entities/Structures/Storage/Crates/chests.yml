@@ -1,8 +1,8 @@
 - type: entity
   parent: 
-  - CPChestGeneric
-  - CPBaseWooden
-  id: CPWoodenChest
+  - CP14ChestGeneric
+  - CP14BaseWooden
+  id: CP14WoodenChest
   name: wooden chest
   description: A simple wooden chest for easy storage of junk.
   components:
@@ -51,7 +51,7 @@
     openSound:
       path: /Audio/Effects/woodenclosetopen.ogg
   - type: Construction
-    graph: CPWoodenChest
-    node: CPWoodenChest
+    graph: CP14WoodenChest
+    node: CP14WoodenChest
     containers:
     - entity_storage

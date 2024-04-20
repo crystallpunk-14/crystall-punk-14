@@ -1,21 +1,18 @@
-
+using System.Linq;
 using Content.Server.GameTicking.Events;
+using Content.Shared._CP14.LockKey;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.Examine;
-using Content.Shared.Interaction;
-using Content.Shared.Popups;
 using Content.Shared.Lock;
-using Content.Shared.Verbs;
+using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
+using CP14KeyComponent = Content.Shared._CP14.LockKey.Components.CP14KeyComponent;
+using CP14LockComponent = Content.Shared._CP14.LockKey.Components.CP14LockComponent;
 
-namespace Content.Server.CrystallPunk.LockKey;
+namespace Content.Server._CP14.LockKey;
 
-
-public sealed partial class KeyholeGenerationSystem : EntitySystem
+public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -23,7 +20,7 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly LockSystem _lock = default!;
 
-    private Dictionary<ProtoId<CPLockCategoryPrototype>, List<int>> _roundKeyData = new();
+    private Dictionary<ProtoId<CP14LockCategoryPrototype>, List<int>> _roundKeyData = new();
 
     private const int DepthCompexity = 2;
 
@@ -33,10 +30,10 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
 
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
 
-        SubscribeLocalEvent<CPLockComponent, MapInitEvent>(OnLockInit);
-        SubscribeLocalEvent<CPKeyComponent, MapInitEvent>(OnKeyInit);
+        SubscribeLocalEvent<CP14LockComponent, MapInitEvent>(OnLockInit);
+        SubscribeLocalEvent<CP14KeyComponent, MapInitEvent>(OnKeyInit);
 
-        SubscribeLocalEvent<CPKeyComponent, ExaminedEvent>(OnKeyExamine);
+        SubscribeLocalEvent<CP14KeyComponent, ExaminedEvent>(OnKeyExamine);
     }
 
     #region Init
@@ -45,7 +42,7 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
         _roundKeyData = new();
     }
 
-    private void OnKeyInit(Entity<CPKeyComponent> keyEnt, ref MapInitEvent args)
+    private void OnKeyInit(Entity<CP14KeyComponent> keyEnt, ref MapInitEvent args)
     {
         if (keyEnt.Comp.AutoGenerateShape != null)
         {
@@ -53,7 +50,7 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
         }
     }
 
-    private void OnLockInit(Entity<CPLockComponent> lockEnt, ref MapInitEvent args)
+    private void OnLockInit(Entity<CP14LockComponent> lockEnt, ref MapInitEvent args)
     {
         if (lockEnt.Comp.AutoGenerateShape != null)
         {
@@ -62,7 +59,7 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
     }
     #endregion
 
-    private void OnKeyExamine(Entity<CPKeyComponent> key, ref ExaminedEvent args)
+    private void OnKeyExamine(Entity<CP14KeyComponent> key, ref ExaminedEvent args)
     {
         var parent = Transform(key).ParentUid;
         if (parent != args.Examiner)
@@ -81,7 +78,7 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
         args.PushMarkup(markup);
     }
 
-    private List<int> GetKeyLockData(ProtoId<CPLockCategoryPrototype> category)
+    private List<int> GetKeyLockData(ProtoId<CP14LockCategoryPrototype> category)
     {
         if (_roundKeyData.ContainsKey(category))
             return _roundKeyData[category];
@@ -93,7 +90,7 @@ public sealed partial class KeyholeGenerationSystem : EntitySystem
         }
     }
 
-    private List<int> GenerateNewUniqueLockData(ProtoId<CPLockCategoryPrototype> category)
+    private List<int> GenerateNewUniqueLockData(ProtoId<CP14LockCategoryPrototype> category)
     {
         List<int> newKeyData = new List<int>();
         var categoryData = _proto.Index(category);

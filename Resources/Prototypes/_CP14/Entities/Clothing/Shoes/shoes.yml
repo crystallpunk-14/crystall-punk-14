@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: Clothing
-  id: CPClothingShoesBase
+  id: CP14ClothingShoesBase
   components:
   - type: Clothing
     equipDelay: 1
@@ -14,10 +14,10 @@
     size: Normal
     
 - type: entity
-  parent: CPClothingShoesBase
-  id: CPClothingShoesBlack
-  name: простые черные ботинки
-  description: Влагу они не удержат, но это лучше чем ходить босиком.
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesBlack
+  name: simple black boots
+  description: They won't hold moisture, but it's better than going barefoot.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shoes/black.rsi

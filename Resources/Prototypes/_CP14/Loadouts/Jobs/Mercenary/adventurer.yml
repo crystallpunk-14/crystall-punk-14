@@ -1,28 +1,28 @@
 # Cloak
 - type: loadout
-  id: CPTestCloak
-  equipment: CPTestCloak
+  id: CP14TestCloak
+  equipment: CP14TestCloak
 
 - type: startingGear
-  id: CPTestCloak
+  id: CP14TestCloak
   equipment:
-    cloak: CPClothingCloakHoodieYellow
+    cloak: CP14ClothingCloakHoodieYellow
 
 - type: loadout
-  id: CPTestCloak2
-  equipment: CPTestCloak2
+  id: CP14TestCloak2
+  equipment: CP14TestCloak2
 
 - type: startingGear
-  id: CPTestCloak2
+  id: CP14TestCloak2
   equipment:
-    cloak: CPClothingCloakArmoredRed
+    cloak: CP14ClothingCloakArmoredRed
 
 - type: loadout
-  id: CPTestCloak3
-  equipment: CPTestCloak3
+  id: CP14TestCloak3
+  equipment: CP14TestCloak3
 
 - type: startingGear
-  id: CPTestCloak3
+  id: CP14TestCloak3
   equipment:
-    cloak: CPClothingCloakBlacksmithArpon
+    cloak: CP14ClothingCloakBlacksmithArpon
 

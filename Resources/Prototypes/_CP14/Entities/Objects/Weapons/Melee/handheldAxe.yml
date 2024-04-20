@@ -1,12 +1,12 @@
 - type: entity
-  id: CPBaseHandheldAxe
+  id: CP14BaseHandheldAxe
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponSharp
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
   name: hand axe
   description: A small axe, great for chopping wood or sinew.
   components:
@@ -20,7 +20,7 @@
     attackRate: 1.4
     range: 1.2
     wideAnimationRotation: 225
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     damage:
       types:
         Slash: 10

@@ -1,5 +1,5 @@
 - type: entity
-  id: CPBaseWooden
+  id: CP14BaseWooden
   abstract: true
   components:
   - type: Damageable
@@ -8,7 +8,7 @@
   - type: Tag
     tags:
     - Wooden
-  - type: CPFlammableAmbientSound
+  - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
     volume: -5
@@ -35,4 +35,4 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: small
-  - type: CPFireSpread
+  - type: CP14FireSpread

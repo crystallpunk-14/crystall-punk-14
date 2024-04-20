@@ -2,10 +2,10 @@
   crystallPunkAllowed: true
   name: Wooden chair
   description: Made of the most common planks. Simple and effective!
-  id: CPChairWooden
-  graph: CPSeat
+  id: CP14ChairWooden
+  graph: CP14Seat
   startNode: start
-  targetNode: CPChairWooden
+  targetNode: CP14ChairWooden
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Furniture/chairs.rsi
@@ -20,10 +20,10 @@
   crystallPunkAllowed: true
   name: Wooden table
   description: A simple table made of boards.
-  id: CPTableWooden
-  graph: CPTable
+  id: CP14TableWooden
+  graph: CP14Table
   startNode: start
-  targetNode: CPTableWooden
+  targetNode: CP14TableWooden
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
@@ -38,10 +38,10 @@
   crystallPunkAllowed: true
   name: Bonfire
   description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
-  id: CPBonfire
-  graph: CPBonfire
+  id: CP14Bonfire
+  graph: CP14Bonfire
   startNode: start
-  targetNode: CPBonfire
+  targetNode: CP14Bonfire
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Decoration/bonfire.rsi
@@ -56,10 +56,10 @@
   crystallPunkAllowed: true
   name: Wooden chest
   description: a simple wooden chest for easy storage of junk.
-  id: CPWoodenChest
-  graph: CPWoodenChest
+  id: CP14WoodenChest
+  graph: CP14WoodenChest
   startNode: start
-  targetNode: CPWoodenChest
+  targetNode: CP14WoodenChest
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi

@@ -1,7 +1,7 @@
-- type: CPLockCategory
+- type: CP14LockCategory
   id: Debug
   complexity: 10
 
-- type: CPLockCategory
+- type: CP14LockCategory
   id: Tavern
   complexity: 3

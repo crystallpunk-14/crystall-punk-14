@@ -2,10 +2,10 @@
   crystallPunkAllowed: true
   name: Wooden floor
   description: Made of the most common planks. Simple and effective!
-  id: CPFloorWood
-  graph: CPFloor
+  id: CP14FloorWood
+  graph: CP14Floor
   startNode: start
-  targetNode: CPFloorWood
+  targetNode: CP14FloorWood
   category: construction-category-floor
   icon:
     sprite: _CP14/Structures/Floors/wood.rsi
@@ -18,10 +18,10 @@
   crystallPunkAllowed: true
   name: Wooden big floor
   description: Made of the most common planks. Simple and effective!
-  id: CPFloorWoodBig
-  graph: CPFloor
+  id: CP14FloorWoodBig
+  graph: CP14Floor
   startNode: start
-  targetNode: CPFloorWoodBig
+  targetNode: CP14FloorWoodBig
   category: construction-category-floor
   icon:
     sprite: _CP14/Structures/Floors/wood_big.rsi

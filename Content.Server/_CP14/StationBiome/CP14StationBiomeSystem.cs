@@ -5,8 +5,8 @@ using Content.Server.Station.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.CrystallPunk.SpawnMapBiome;
-public sealed partial class StationBiomeSystem : EntitySystem
+namespace Content.Server._CP14.StationBiome;
+public sealed partial class CP14StationBiomeSystem : EntitySystem
 {
     [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -16,10 +16,10 @@ public sealed partial class StationBiomeSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<StationBiomeComponent, StationPostInitEvent>(OnStationPostInit);
+        SubscribeLocalEvent<CP14StationBiomeComponent, StationPostInitEvent>(OnStationPostInit);
     }
 
-    private void OnStationPostInit(Entity<StationBiomeComponent> map, ref StationPostInitEvent args)
+    private void OnStationPostInit(Entity<CP14StationBiomeComponent> map, ref StationPostInitEvent args)
     {
         if (!TryComp(map, out StationDataComponent? dataComp))
             return;

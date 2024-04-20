@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: Clothing
-  id: CPClothingPantsBase
+  id: CP14ClothingPantsBase
   components:
   - type: Clothing
     equipDelay: 1
@@ -12,8 +12,8 @@
     state: icon
     
 - type: entity
-  parent: CPClothingPantsBase
-  id: CPClothingPantsHarlequinRed
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsHarlequinRed
   name: red-and-yellow harlequin pants
   description: Blood red on one side, sunny yellow on the other. The duality of life and death is always a good joke.
   components:

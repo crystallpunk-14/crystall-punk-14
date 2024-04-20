@@ -1,3 +1,4 @@
+using Content.Server._CP14.Temperature;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.IgnitionSource;
@@ -27,7 +28,6 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
-using Content.Server.CrystallPunk.Temperature;
 
 namespace Content.Server.Atmos.EntitySystems
 {

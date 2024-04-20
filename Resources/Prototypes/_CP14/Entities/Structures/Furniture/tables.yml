@@ -1,8 +1,8 @@
 - type: entity
   parent: 
   - TableBase
-  - CPBaseWooden
-  id: CPTableWooden
+  - CP14BaseWooden
+  id: CP14TableWooden
   name: wooden table
   description: A simple table made of boards.
   components:
@@ -13,8 +13,8 @@
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
     state: full
   - type: Construction
-    graph: CPTable
-    node: CPTableWooden
+    graph: CP14Table
+    node: CP14TableWooden
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood

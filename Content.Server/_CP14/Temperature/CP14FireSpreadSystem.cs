@@ -1,12 +1,11 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.CrystallPunk.Temperature;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature;
 
-public sealed partial class CPFireSpreadSystem : EntitySystem
+public sealed partial class CP14FireSpreadSystem : EntitySystem
 {
 
     [Dependency] private readonly FlammableSystem _flammable = default!;
@@ -18,10 +17,10 @@ public sealed partial class CPFireSpreadSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent <CPFireSpreadComponent, OnFireChangedEvent>(OnCompInit);
+        SubscribeLocalEvent <CP14FireSpreadComponent, OnFireChangedEvent>(OnCompInit);
     }
 
-    private void OnCompInit(Entity<CPFireSpreadComponent> ent, ref OnFireChangedEvent args)
+    private void OnCompInit(Entity<CP14FireSpreadComponent> ent, ref OnFireChangedEvent args)
     {
         if (!args.OnFire)
             return;
@@ -34,7 +33,7 @@ public sealed partial class CPFireSpreadSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CPFireSpreadComponent, FlammableComponent>();
+        var query = EntityQueryEnumerator<CP14FireSpreadComponent, FlammableComponent>();
         while (query.MoveNext(out var uid, out var spread, out var flammable))
         {
             if (!flammable.OnFire)

@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: Clothing
-  id: CPClothingShirtBase
+  id: CP14ClothingShirtBase
   components:
   - type: Clothing
     equipDelay: 1
@@ -12,8 +12,8 @@
     state: icon
      
 - type: entity
-  parent: CPClothingShirtBase
-  id: CPClothingShirtHarlequineRed  
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtHarlequineRed  
   name: red harlequin shirt
   description: It doesn't show the bloodstains that are left behind after bad jokes.
   components:

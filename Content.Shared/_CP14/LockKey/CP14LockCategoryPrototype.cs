@@ -1,12 +1,12 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.CrystallPunk.LockKey;
+namespace Content.Shared._CP14.LockKey;
 
 /// <summary>
 /// A prototype of the lock category. Need a roundstart mapping to ensure that keys and locks will fit together despite randomization.
 /// </summary>
-[Prototype("CPLockCategory")]
-public sealed partial class CPLockCategoryPrototype : IPrototype
+[Prototype("CP14LockCategory")]
+public sealed partial class CP14LockCategoryPrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]

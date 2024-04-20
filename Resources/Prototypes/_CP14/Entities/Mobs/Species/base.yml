@@ -3,7 +3,7 @@
     - BaseMob
     - MobDamageable
     - MobCombat
-  id: CPBaseMobSpecies
+  id: CP14BaseMobSpecies
   save: false
   abstract: true
   components:
@@ -89,7 +89,7 @@
       defaultRotation: 90
       horizontalRotation: 90
     - type: HumanoidAppearance
-      species: Human
+      species: CP14Human
     - type: SlowOnDamage
       speedModifierThresholds:
         60: 0.7
@@ -147,7 +147,7 @@
       enabled: false
       reflectProb: 0
     - type: Body
-      prototype: Human
+      prototype: CP14Human
       requiredLegs: 2
     - type: Identity
     - type: IdExaminable
@@ -231,8 +231,8 @@
     - MobRespirator
     - MobAtmosStandard
     - MobFlammable
-    - CPBaseMobSpecies
-  id: CPBaseMobSpeciesOrganic
+    - CP14BaseMobSpecies
+  id: CP14BaseMobSpeciesOrganic
   save: false
   abstract: true
   components:
@@ -305,3 +305,80 @@
           Asphyxiation: -1.0
     - type: FireVisuals
       alternateState: Standing
+
+- type: entity
+  save: false
+  id: CP14BaseSpeciesDummy
+  abstract: true
+  components:
+  - type: Hands
+  - type: Inventory
+    templateId: CP14Human
+  - type: InventorySlots
+  - type: ContainerContainer
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Human/parts.rsi
+    state: full
+  - type: Sprite
+    layers:
+      - map: [ "enum.HumanoidVisualLayers.Chest" ]
+      - map: [ "enum.HumanoidVisualLayers.Head" ]
+      - map: [ "enum.HumanoidVisualLayers.Snout" ]
+      - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      - map: [ "enum.HumanoidVisualLayers.RArm" ]
+      - map: [ "enum.HumanoidVisualLayers.LArm" ]
+      - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+      - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+      - shader: StencilClear
+        sprite: Mobs/Species/Human/parts.rsi
+        state: l_leg
+      - shader: StencilMask
+        map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+        sprite: Mobs/Customization/masking_helpers.rsi
+        state: unisex_full
+        visible: false
+      - map: [ "jumpsuit" ]
+      - map: [ "pants" ]
+      - map: [ "shirt" ]
+      - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+      - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+      - map: [ "enum.HumanoidVisualLayers.LHand" ]
+      - map: [ "enum.HumanoidVisualLayers.RHand" ]
+      - map: [ "gloves" ]
+      - map: [ "shoes" ]
+      - map: [ "ears" ]
+      - map: [ "outerClothing" ]
+      - map: [ "eyes" ]
+      - map: [ "belt" ]
+      - map: [ "id" ]
+      - map: [ "neck" ]
+      - map: [ "cloak" ]
+      - map: [ "back" ]
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+      - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
+      - map: [ "mask" ]
+      - map: [ "head" ]
+      - map: [ "pocket1" ]
+      - map: [ "pocket2" ]
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: [ "clownedon" ] # Dynamically generated
+        sprite: "Effects/creampie.rsi"
+        state: "creampie_human"
+        visible: false
+  - type: Appearance
+  - type: HumanoidAppearance
+    species: CP14Human
+  - type: Body
+    prototype: CP14Human
+    requiredLegs: 2
+  - type: UserInterface
+    interfaces:
+      - key: enum.HumanoidMarkingModifierKey.Key # sure, this can go here too
+        type: HumanoidMarkingModifierBoundUserInterface

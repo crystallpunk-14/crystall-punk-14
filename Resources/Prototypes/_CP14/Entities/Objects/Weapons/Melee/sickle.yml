@@ -1,12 +1,12 @@
 - type: entity
-  id: CPBaseSickle
+  id: CP14BaseSickle
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponSharp
-  - CPBaseWeaponChemical
-  - CPBaseWeaponLight
-  - CPBaseWeaponShort
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponLight
+  - CP14BaseWeaponShort
   name: sickle
   description: Originally developed as a weapon against grass, the sickle suddenly proved itself good at the bloodier harvest as well.
   components:
@@ -27,7 +27,7 @@
   - type: MeleeWeapon
     attackRate: 1.5
     wideAnimationRotation: 225
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     cPAnimationLength: 0.18
     damage:
       types:

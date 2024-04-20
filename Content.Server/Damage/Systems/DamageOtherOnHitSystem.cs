@@ -36,7 +36,7 @@ namespace Content.Server.Damage.Systems
             //CrystallPunk Melee upgrade
             var damage = component.Damage;
 
-            if (TryComp<CPSharpenedComponent>(uid, out var sharp))
+            if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
                 damage *= sharp.Sharpness;
 
             var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
@@ -69,7 +69,7 @@ namespace Content.Server.Damage.Systems
         {
             var damage = component.Damage;
 
-            if (TryComp<CPSharpenedComponent>(uid, out var sharp))
+            if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
                 damage *= sharp.Sharpness;
 
             _damageExamine.AddDamageExamine(args.Message, damage, Loc.GetString("damage-throw"));

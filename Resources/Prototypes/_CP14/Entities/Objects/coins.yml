@@ -1,11 +1,11 @@
 - type: entity
-  id: CPBaseCoin
+  id: CP14BaseCoin
   parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-    - CPCoin
+    - CP14Coin
   - type: Item
     size: Tiny
   - type: Stack
@@ -27,8 +27,8 @@
 # Copper
 
 - type: entity
-  id: CPCopperCoin
-  parent: CPBaseCoin
+  id: CP14CopperCoin
+  parent: CP14BaseCoin
   name: copper crown
   description: The minimum unit of currency in the world of Eberron. One tenth of a silver sovereign.
   suffix: 10 coins
@@ -39,11 +39,11 @@
     - state: coin10
       map: ["base"]
   - type: Stack
-    stackType: CPCopperCoin
+    stackType: CP14CopperCoin
 
 - type: entity
-  id: CPCopperCoin5
-  parent: CPCopperCoin
+  id: CP14CopperCoin5
+  parent: CP14CopperCoin
   suffix: 5 coins
   components:
   - type: Sprite
@@ -52,8 +52,8 @@
     count: 5
 
 - type: entity
-  id: CPCopperCoin1
-  parent: CPCopperCoin
+  id: CP14CopperCoin1
+  parent: CP14CopperCoin
   suffix: 1 coin
   components:
   - type: Sprite
@@ -64,8 +64,8 @@
 # Silver
 
 - type: entity
-  id: CPSilverCoin
-  parent: CPBaseCoin
+  id: CP14SilverCoin
+  parent: CP14BaseCoin
   name: silver sovereign
   description: Equivalent to 10 copper crowns, and is 1 tenth of a gold galifar.
   suffix: 10 coins
@@ -76,11 +76,11 @@
     - state: coin10
       map: ["base"]
   - type: Stack
-    stackType: CPSilverCoin
+    stackType: CP14SilverCoin
 
 - type: entity
-  id: CPSilverCoin5
-  parent: CPSilverCoin
+  id: CP14SilverCoin5
+  parent: CP14SilverCoin
   suffix: 5 coins
   components:
   - type: Sprite
@@ -89,8 +89,8 @@
     count: 5
 
 - type: entity
-  id: CPSilverCoin1
-  parent: CPSilverCoin
+  id: CP14SilverCoin1
+  parent: CP14SilverCoin
   suffix: 1 coin
   components:
   - type: Sprite
@@ -101,8 +101,8 @@
 # Gold
 
 - type: entity
-  id: CPGoldCoin
-  parent: CPBaseCoin
+  id: CP14GoldCoin
+  parent: CP14BaseCoin
   name: gold galifar
   description: Equivalent to 10 silver sovereign, and is 1 tenth of a platinum coin.
   suffix: 10 coins
@@ -113,11 +113,11 @@
     - state: coin10
       map: ["base"]
   - type: Stack
-    stackType: CPGoldCoin
+    stackType: CP14GoldCoin
 
 - type: entity
-  id: CPGoldCoin5
-  parent: CPGoldCoin
+  id: CP14GoldCoin5
+  parent: CP14GoldCoin
   suffix: 5 coins
   components:
   - type: Sprite
@@ -126,8 +126,8 @@
     count: 5
 
 - type: entity
-  id: CPGoldCoin1
-  parent: CPGoldCoin
+  id: CP14GoldCoin1
+  parent: CP14GoldCoin
   suffix: 1 coin
   components:
   - type: Sprite
@@ -138,8 +138,8 @@
 # Platinum
 
 - type: entity
-  id: CPPlatinumCoin
-  parent: CPBaseCoin
+  id: CP14PlatinumCoin
+  parent: CP14BaseCoin
   name: platinum dragon
   description: Equivalent to 10 gold galifar, and is the most expensive coin in Eberron's world.
   suffix: 10 coins
@@ -150,11 +150,11 @@
     - state: coin10
       map: ["base"]
   - type: Stack
-    stackType: CPPlatinumCoin
+    stackType: CP14PlatinumCoin
 
 - type: entity
-  id: CPPlatinumCoin5
-  parent: CPPlatinumCoin
+  id: CP14PlatinumCoin5
+  parent: CP14PlatinumCoin
   suffix: 5 coins
   components:
   - type: Sprite
@@ -163,8 +163,8 @@
     count: 5
 
 - type: entity
-  id: CPPlatinumCoin1
-  parent: CPPlatinumCoin
+  id: CP14PlatinumCoin1
+  parent: CP14PlatinumCoin
   suffix: 1 coin
   components:
   - type: Sprite

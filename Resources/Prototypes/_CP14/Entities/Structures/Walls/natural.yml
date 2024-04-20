@@ -1,16 +1,13 @@
 - type: entity
-  id: CPCaveStoneWall
+  id: CP14CaveStoneWall
   name: rock
-  parent: CPBaseWall
+  parent: CP14BaseWall
   description: A solid stone natural wall. It has a cave-like coldness to it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/cave_stone.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Rock
@@ -29,19 +26,15 @@
             volume: -6
 
 - type: entity
-  id: CPCaveStoneWallCopperOre
-  name: rock
+  id: CP14CaveStoneWallCopperOre
   suffix: copper ore
-  parent: CPCaveStoneWall
+  parent: CP14CaveStoneWall
   description: A solid stone natural wall. You can see the sharp flecks of copper in it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/cave_stone_copper.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_copper.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -57,24 +50,20 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreCopper:
+          CP14OreCopper:
             min: 1
             max: 5
 
 - type: entity
-  id: CPCaveStoneWallIronOre
-  name: rock
+  id: CP14CaveStoneWallIronOre
   suffix: iron ore
-  parent: CPCaveStoneWall
+  parent: CP14CaveStoneWall
   description: A solid stone natural wall. You can see the sharp flecks of iron in it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/cave_stone_iron.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_iron.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -90,24 +79,20 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreIron:
+          CP14OreIron:
             min: 1
             max: 5
 
 - type: entity
-  id: CPCaveStoneWallSilverOre
-  name: rock
+  id: CP14CaveStoneWallSilverOre
   suffix: silver ore
-  parent: CPCaveStoneWall
+  parent: CP14CaveStoneWall
   description: A solid stone natural wall. You see the tantalizing particles of silver in it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/cave_stone_silver.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_silver.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -123,24 +108,20 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreSilver:
+          CP14OreSilver:
             min: 1
             max: 5
 
 - type: entity
-  id: CPCaveStoneWallGoldOre
-  name: rock
+  id: CP14CaveStoneWallGoldOre
   suffix: gold ore
-  parent: CPCaveStoneWall
+  parent: CP14CaveStoneWall
   description: A solid stone natural wall. You see the tantalizing particles of gold in it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/cave_stone_gold.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone_gold.rsi
-  - type: IconSmooth
-    key: CPwall
-    base: stone
   - type: Destructible
     thresholds:
     - trigger:
@@ -156,6 +137,6 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CPOreGold:
+          CP14OreGold:
             min: 1
             max: 5

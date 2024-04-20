@@ -10,7 +10,7 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._CP14.MeleeWeapon;
 
-public sealed class CPSharpeningSystem : EntitySystem
+public sealed class CP14SharpeningSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
@@ -20,15 +20,15 @@ public sealed class CPSharpeningSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CPSharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: new[] { typeof(WieldableSystem) });
-        SubscribeLocalEvent<CPSharpenedComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<CPSharpenedComponent, MeleeHitEvent>(OnMeleeHit);
+        SubscribeLocalEvent<CP14SharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: new[] { typeof(WieldableSystem) });
+        SubscribeLocalEvent<CP14SharpenedComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<CP14SharpenedComponent, MeleeHitEvent>(OnMeleeHit);
 
-        SubscribeLocalEvent<CPSharpeningStoneComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<CPSharpeningStoneComponent, ActivateInWorldEvent>(OnInteract);
+        SubscribeLocalEvent<CP14SharpeningStoneComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<CP14SharpeningStoneComponent, ActivateInWorldEvent>(OnInteract);
     }
 
-    private void OnMeleeHit(Entity<CPSharpenedComponent> sharpened, ref MeleeHitEvent args)
+    private void OnMeleeHit(Entity<CP14SharpenedComponent> sharpened, ref MeleeHitEvent args)
     {
         if (!args.HitEntities.Any())
             return;
@@ -36,7 +36,7 @@ public sealed class CPSharpeningSystem : EntitySystem
         sharpened.Comp.Sharpness = MathHelper.Clamp(sharpened.Comp.Sharpness - sharpened.Comp.SharpnessDamageByHit, 0.1f, 1f);
     }
 
-    private void OnInteract(Entity<CPSharpeningStoneComponent> stone, ref ActivateInWorldEvent args)
+    private void OnInteract(Entity<CP14SharpeningStoneComponent> stone, ref ActivateInWorldEvent args)
     {
         if (args.Handled)
             return;
@@ -49,7 +49,7 @@ public sealed class CPSharpeningSystem : EntitySystem
 
         foreach (var item in itemPlacer.PlacedEntities)
         {
-            if (!TryComp<CPSharpenedComponent>(item, out var sharpened))
+            if (!TryComp<CP14SharpenedComponent>(item, out var sharpened))
                 continue;
 
             SharpThing(stone, item, sharpened);
@@ -57,9 +57,9 @@ public sealed class CPSharpeningSystem : EntitySystem
         }
     }
 
-    private void OnAfterInteract(Entity<CPSharpeningStoneComponent> stone, ref AfterInteractEvent args)
+    private void OnAfterInteract(Entity<CP14SharpeningStoneComponent> stone, ref AfterInteractEvent args)
     {
-        if (!args.CanReach || args.Target == null || !TryComp<CPSharpenedComponent>(args.Target, out var sharpened))
+        if (!args.CanReach || args.Target == null || !TryComp<CP14SharpenedComponent>(args.Target, out var sharpened))
             return;
 
         if (TryComp<UseDelayComponent>(stone, out var useDelay) && _useDelay.IsDelayed( new Entity<UseDelayComponent>(stone, useDelay)))
@@ -68,7 +68,7 @@ public sealed class CPSharpeningSystem : EntitySystem
         SharpThing(stone, args.Target.Value, sharpened);
     }
 
-    private void SharpThing(Entity<CPSharpeningStoneComponent> stone, EntityUid target, CPSharpenedComponent component)
+    private void SharpThing(Entity<CP14SharpeningStoneComponent> stone, EntityUid target, CP14SharpenedComponent component)
     {
         _audio.PlayPvs(stone.Comp.SharpeningSound, target);
         Spawn("EffectSparks", Transform(target).Coordinates);
@@ -81,7 +81,7 @@ public sealed class CPSharpeningSystem : EntitySystem
         _useDelay.TryResetDelay(stone);
     }
 
-    private void OnExamined(Entity<CPSharpenedComponent> sharpened, ref ExaminedEvent args)
+    private void OnExamined(Entity<CP14SharpenedComponent> sharpened, ref ExaminedEvent args)
     {
 
         if (sharpened.Comp.Sharpness > 0.95f)
@@ -104,7 +104,7 @@ public sealed class CPSharpeningSystem : EntitySystem
         args.PushMarkup(Loc.GetString("sharpening-examined-25"));
     }
 
-    private void OnGetMeleeDamage(Entity<CPSharpenedComponent> sharpened, ref GetMeleeDamageEvent args)
+    private void OnGetMeleeDamage(Entity<CP14SharpenedComponent> sharpened, ref GetMeleeDamageEvent args)
     {
         args.Damage *= sharpened.Comp.Sharpness;
     }

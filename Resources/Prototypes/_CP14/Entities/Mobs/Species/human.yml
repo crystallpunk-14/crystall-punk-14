@@ -1,12 +1,12 @@
 # Anything human specific (e.g. UI, input) goes under MobHuman
 - type: entity
-  parent: CPBaseMobSpeciesOrganic
-  id: CPBaseMobHuman
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobHuman
   name: Mr. Human
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: CPHuman
+    species: CP14Human
   - type: Hunger
   - type: Icon
     sprite: _CP14/Mobs/Species/Human/parts.rsi
@@ -18,15 +18,15 @@
       - id: FoodMeatHuman
         amount: 5
   - type: Body
-    prototype: CPHuman
+    prototype: CP14Human
     requiredLegs: 2
   - type: Inventory
-    templateId: CPHuman
+    templateId: CP14Human
 
 - type: entity
-  parent: BaseSpeciesDummy
-  id: CPMobHumanDummy
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobHumanDummy
   noSpawn: true
   components:
     - type: HumanoidAppearance
-      species: CPHuman
+      species: CP14Human

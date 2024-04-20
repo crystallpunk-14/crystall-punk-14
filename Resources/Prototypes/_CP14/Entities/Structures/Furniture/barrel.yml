@@ -1,0 +1,104 @@
+- type: entity
+  id: CP14BaseBarrel
+  parent: 
+  - BaseStructureDynamic
+  - CP14BaseWooden
+  name: wooden barrel
+  suffix: Empty
+  description: The simplest design for storing liquids.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    noRot: true
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:SpillBehavior
+        solution: barrel
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Appearance
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/barrel.rsi
+    noRot: true
+    layers:
+      - state: barrel_open
+      - state: liq1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        maxVol: 300
+  - type: SolutionContainerVisuals
+    maxFillLevels: 7
+    fillBaseName: liq
+  - type: DrainableSolution
+    solution: barrel
+  - type: ExaminableSolution
+    solution: barrel
+  - type: InjectableSolution
+    solution: barrel
+  - type: Drink
+    solution: barrel
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+    - key: enum.TransferAmountUiKey.Key
+      type: TransferAmountBoundUserInterface
+
+- type: entity
+  id: CP14BarrelWater
+  parent: CP14BaseBarrel
+  suffix: Water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Water
+          Quantity: 300

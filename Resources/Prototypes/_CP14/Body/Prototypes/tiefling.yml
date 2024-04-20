@@ -1,10 +1,10 @@
 - type: body
-  id: CPTiefling
+  id: CP14Tiefling
   name: tiefling
   root: torso
   slots:
     head:
-      part: CPHeadHuman
+      part: CP14HeadHuman
       connections:
         - torso
       organs:
@@ -24,26 +24,26 @@
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
     right_arm:
-      part: CPRightArmHuman
+      part: CP14RightArmHuman
       connections:
         - right_hand
     left_arm:
-      part: CPLeftArmHuman
+      part: CP14LeftArmHuman
       connections:
         - left_hand
     right_hand:
-      part: CPRightHandHuman
+      part: CP14RightHandHuman
     left_hand:
-      part: CPLeftHandHuman
+      part: CP14LeftHandHuman
     right_leg:
-      part: CPRightLegHuman
+      part: CP14RightLegHuman
       connections:
         - right_foot
     left_leg:
-      part: CPLeftLegHuman
+      part: CP14LeftLegHuman
       connections:
         - left_foot
     right_foot:
-      part: CPRightFootHuman
+      part: CP14RightFootHuman
     left_foot:
-      part: CPLeftFootHuman
+      part: CP14LeftFootHuman

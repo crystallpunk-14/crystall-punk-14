@@ -1,5 +1,5 @@
 - type: tile
-  id: CPFloorPlanetGrass
+  id: CP14FloorPlanetGrass
   name: cp-tiles-planet-grass
   sprite: /Textures/Tiles/Planet/Grass/grass.png
   variants: 4
@@ -27,7 +27,7 @@
   indestructible: true
 
 - type: tile
-  id: CPFloorPlanetStone
+  id: CP14FloorPlanetStone
   name: cp-tiles-planet-stone
   sprite: /Textures/_CP14/Tiles/cave.png
   variants: 14
@@ -55,7 +55,7 @@
   indestructible: true
 
 - type: tile
-  id: CPFloorPlanetDirt
+  id: CP14FloorPlanetDirt
   name: cp-tiles-planet-dirt
   sprite: /Textures/_CP14/Tiles/cavedrought.png
   variants: 16

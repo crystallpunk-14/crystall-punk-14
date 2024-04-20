@@ -1,12 +1,12 @@
 - type: entity
-  id: CPBaseLightHammer
+  id: CP14BaseLightHammer
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
-  - CPBaseWeaponShort
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
+  - CP14BaseWeaponShort
   name: light hammer
   description: A small hammer. Good for carpentry work as well as for cracking skulls.
   components:
@@ -19,7 +19,7 @@
   - type: MeleeWeapon
     attackRate: 1.5
     wideAnimationRotation: 225
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     cPAnimationLength: 0.18
     damage:
       types:

@@ -1,10 +1,10 @@
 - type: entity
-  id: CPBaseTwoHandedSword
+  id: CP14BaseTwoHandedSword
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponSharp
-  - CPBaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
   name: two-handed sword
   description: A powerful weapon that requires tremendous strength and skill to use effectively.
   components:
@@ -24,7 +24,7 @@
   - type: MeleeWeapon
     attackRate: 0.5
     wideAnimationRotation: 205
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     damage:
       types:
         Slash: 5
@@ -46,5 +46,5 @@
     walkModifier: 0.9
     sprintModifier: 0.8
   - type: HeldSpeedModifier
-  - type: CPSharpened
+  - type: CP14Sharpened
     sharpnessDamageByHit: 0.04

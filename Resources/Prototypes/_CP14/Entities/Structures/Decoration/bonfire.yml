@@ -1,5 +1,5 @@
 - type: entity
-  id: CPBonfire
+  id: CP14Bonfire
   parent: BaseStructure
   name: bonfire
   description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
@@ -10,8 +10,8 @@
     layers:
       - state: bonfire
   - type: Construction
-    graph: CPBonfire
-    node: CPBonfire
+    graph: CP14Bonfire
+    node: CP14Bonfire
   - type: Fixtures
     fixtures:
       fix1:
@@ -43,7 +43,7 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: CPFlammableAmbientSound
+  - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
     volume: -5
@@ -75,4 +75,4 @@
     whitelist:
       components:
       - Temperature
-  - type: CPFlammableEntityHeater
+  - type: CP14FlammableEntityHeater

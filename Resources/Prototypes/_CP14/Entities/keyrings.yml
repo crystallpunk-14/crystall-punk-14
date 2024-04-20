@@ -1,11 +1,11 @@
 - type: entity
   parent: BaseItem
-  id: BaseKeyRing
+  id: CP14BaseKeyRing
   suffix: Пустое
   name: кольцо для ключей
   description: Позволяет комфортно хранить большое количество ключей в одном месте.
   components:
-  - type: CPKeyRing
+  - type: CP14KeyRing
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
     layers:
@@ -22,7 +22,7 @@
     maxItemSize: Small
     whitelist:
       tags:
-        - CPKey
+        - CP14Key
   - type: UserInterface
     interfaces:
     - key: enum.StorageUiKey.Key
@@ -32,10 +32,10 @@
       storagebase: !type:Container
 
 - type: entity
-  parent: BaseKeyRing
-  id: KeyRingInnkeeper
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingInnkeeper
   suffix: Трактирщик
   components:
   - type: StorageFill
     contents:
-    - id: KeyTavern
+    - id: CP14KeyTavern
