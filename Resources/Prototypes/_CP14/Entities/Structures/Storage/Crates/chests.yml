@@ -51,7 +51,7 @@
     openSound:
       path: /Audio/Effects/woodenclosetopen.ogg
   - type: Construction
-    graph: CPWoodenChest
-    node: CPWoodenChest
+    graph: CP14WoodenChest
+    node: CP14WoodenChest
     containers:
     - entity_storage

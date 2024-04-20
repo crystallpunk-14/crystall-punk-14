@@ -24,7 +24,7 @@
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
     right_arm:
-      part: CPRightArmHuman
+      part: CP14RightArmHuman
       connections:
         - right_hand
     left_arm:

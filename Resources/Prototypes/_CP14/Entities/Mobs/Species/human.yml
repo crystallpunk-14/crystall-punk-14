@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: CPHuman
+    species: CP14Human
   - type: Hunger
   - type: Icon
     sprite: _CP14/Mobs/Species/Human/parts.rsi
