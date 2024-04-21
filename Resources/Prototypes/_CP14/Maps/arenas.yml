@@ -1,0 +1,16 @@
+- type: gameMap
+  id: CaveArena
+  mapName: Cave Arena
+  mapPath: /Maps/_CP14/cave-arena.yml
+  minPlayers: 0
+  stations:
+    CaveArena:
+      stationProto: StandardStationArena
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Cave Arena"
+        - type: StationJobs
+          overflowJobs:
+            - Adventurer
+          availableJobs:
+            Adventurer: [ -1, -1 ]

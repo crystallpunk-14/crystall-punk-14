@@ -1,0 +1,12 @@
+- type: gamePreset
+  id: Deathmatch
+  alias:
+    - deathmatch
+    - dm
+  name: death-match-title
+  description: death-match-description
+  maxPlayers: 15
+  showInVote: true
+  supportedMaps: DeathMatchMapPool
+  rules:
+    - CP14DeathMatch
