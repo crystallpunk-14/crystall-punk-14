@@ -1,5 +1,5 @@
 - type: gamePreset
-  id: Deathmatch
+  id: CP14Deathmatch
   alias:
     - deathmatch
     - dm
