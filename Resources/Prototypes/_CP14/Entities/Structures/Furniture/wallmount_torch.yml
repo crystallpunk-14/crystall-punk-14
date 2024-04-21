@@ -60,3 +60,6 @@
   - type: FireVisuals
     sprite: _CP14/Structures/Decoration/wallmount_torch.rsi
     normalState: fire
+  - type: Construction
+    graph: CP14WallmountTorch
+    node: CP14WallmountTorch
