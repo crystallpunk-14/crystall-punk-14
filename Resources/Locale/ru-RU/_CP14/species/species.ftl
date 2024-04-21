@@ -1,2 +1,1 @@
-
 species-name-tiefling = Тифлинг 
