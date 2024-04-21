@@ -54,6 +54,25 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: Wallmount torch
+  description: A torch attached to the wall
+  id: CP14WallmountTorch
+  graph: CP14WallmountTorch
+  startNode: start
+  targetNode: CP14WallmountTorch
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Decoration/wallmount_torch.rsi
+    state: fire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   name: Wooden chest
   description: a simple wooden chest for easy storage of junk.
   id: CP14WoodenChest
