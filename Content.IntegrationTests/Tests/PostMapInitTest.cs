@@ -64,6 +64,9 @@ namespace Content.IntegrationTests.Tests
             //"Atlas",
             //"Reach",
             //"Train"
+
+            //CrystallPunk maps
+            "CaveArena",
         };
 
         /// <summary>

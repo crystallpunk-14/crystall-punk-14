@@ -1,0 +1,38 @@
+- type: entity
+  id: CP14DeathMatch
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: DeathMatchRule
+    gear: CP14DeathMatchGear
+    rewardSpawns:
+    - id: HealingToolbox
+    - id: CP14BaseThrowableSpear
+      orGroup: loot
+    - id: CP14BaseSickle
+      orGroup: loot
+    - id: CP14BaseMace
+      orGroup: loot
+    - id: CP14BaseLightHammer
+      orGroup: loot
+    - id: CP14BaseHandheldAxe
+      orGroup: loot
+    - id: CP14BaseDagger
+      orGroup: loot
+    - id: CP14BaseTwoHandedSword
+      orGroup: loot
+    - id: CP14BaseSharpeningStone
+      orGroup: loot
+    - id: CP14BaseSharpeningStone
+      orGroup: loot
+    - id: CP14BaseSharpeningStone
+      orGroup: loot
+    - id: CP14BaseSharpeningStone
+      orGroup: loot
+    - id: Stimpack
+      orGroup: loot
+  - type: KillCalloutRule
+  - type: PointManager
+  - type: RespawnDeadRule
+  - type: RespawnTracker
+    respawnDelay: 5
