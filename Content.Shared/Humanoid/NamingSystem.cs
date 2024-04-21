@@ -47,20 +47,20 @@ namespace Content.Shared.Humanoid
             switch (gender)
             {
                 case Gender.Male:
-                    return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.MaleFirstNames).Values));
+                    return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallPunk name localization
                 case Gender.Female:
-                    return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.FemaleFirstNames).Values));
+                    return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallPunk name localization
                 default:
                     if (_random.Prob(0.5f))
-                        return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.MaleFirstNames).Values));
+                        return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallPunk name localization
                     else
-                        return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.FemaleFirstNames).Values));
+                        return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallPunk name localization
             }
         }
 
         public string GetLastName(SpeciesPrototype speciesProto)
         {
-            return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.LastNames).Values));
+            return Loc.GetString(_random.Pick(_prototypeManager.Index<DatasetPrototype>(speciesProto.LastNames).Values)); //CrystallPunk name localization
         }
     }
 }
