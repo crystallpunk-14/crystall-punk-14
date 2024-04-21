@@ -19,8 +19,7 @@
   description: A mask intented to be worn by not the brightest individuals. Executioners put them on themselves and the victim before execution.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Masks/pluto-mask.rsi
+    sprite: _CP14/Clothing/Masks/sinner.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Masks/pluto-mask.rsi
-  - type: IdentityBlocker  
- 
+    sprite: _CP14/Clothing/Masks/sinner.rsi
+  - type: IdentityBlocker
