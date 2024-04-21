@@ -25,39 +25,11 @@
       orGroup: loot
     - id: CP14BaseSharpeningStone
       orGroup: loot
+    - id: CP14BaseSharpeningStone
+      orGroup: loot
+    - id: CP14BaseSharpeningStone
+      orGroup: loot
     - id: Stimpack
-      orGroup: loot
-    - id: CP14ClothingCloakArmoredRed
-      orGroup: loot
-    - id: CP14ClothingCloakBlacksmithArpon
-      orGroup: loot
-    - id: CP14ClothingCloakHoodieYellow
-      orGroup: loot
-    - id: CP14ClothingEyesMonocle
-      orGroup: loot
-    - id: CP14ClothingEyesGoldGlasses
-      orGroup: loot
-    - id: CP14ClothingMaskSinner
-      orGroup: loot
-    - id: CP14ClothingPantsHarlequinRed
-      orGroup: loot
-    - id: CP14ClothingPantsAristocratic
-      orGroup: loot
-    - id: CP14ClothingShirtSteampunk
-      orGroup: loot
-    - id: CP14ClothingShirtHarlequineRed
-      orGroup: loot
-    - id: CP14ClothingShoesBlack
-      orGroup: loot
-    - id: CP14ClothingAristocraticShoesBlack
-      orGroup: loot
-    - id: FoodMeat
-      orGroup: loot
-    - id: FoodMeat
-      orGroup: loot
-    - id: FoodMeat
-      orGroup: loot
-    - id: FoodMeat
       orGroup: loot
   - type: KillCalloutRule
   - type: PointManager
