@@ -18,6 +18,7 @@
     unequipDelay: 0.45
     sprite: _CP14/Objects/Weapons/Melee/Sickle/sickle.rsi
     quickEquip: false
+    breakOnMove: false
     slots:
     - belt
   - type: Sprite
@@ -31,7 +32,7 @@
     cPAnimationLength: 0.18
     damage:
       types:
-        Slash: 8
-        Piercing: 4
+        Slash: 5
+        Piercing: 3
     soundHit:
       collection: MetalThud

@@ -19,6 +19,7 @@
     unequipDelay: 0.25
     sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     quickEquip: false
+    breakOnMove: false
     slots:
     - belt
   - type: Sprite
@@ -32,7 +33,7 @@
     damage:
       types:
         Slash: 5
-        Piercing: 5
+        Piercing: 3
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.15

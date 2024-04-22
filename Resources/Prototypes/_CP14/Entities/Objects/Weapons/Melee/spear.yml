@@ -17,12 +17,12 @@
     layers:
     - state: icon
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 0.8
     wideAnimationRotation: -115
     wideAnimation: CP14WeaponArcThrust
     damage:
       types:
-        Piercing: 24
+        Piercing: 19
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
