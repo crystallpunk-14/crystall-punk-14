@@ -12,7 +12,7 @@
           mapNameTemplate: '{0} Atlas {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'R4'  # R4407/Goon. GS isn't as cool sounding.
+            prefixCreator: 'R4'  R4407/Goon. GS isn't as cool sounding.
         - type: StationJobs
           overflowJobs:
           - Passenger
