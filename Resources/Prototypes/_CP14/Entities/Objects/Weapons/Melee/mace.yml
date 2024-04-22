@@ -3,6 +3,7 @@
   parent: 
   - BaseItem
   - CP14BaseWeaponDestructible
+  - CP14BaseWeaponThrowable
   name: mace
   description: A heavy piece of metal on a long stick. What could be simpler than that?
   components:
@@ -19,8 +20,16 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 25
-        Piercing: 5
+        Blunt: 18
+        Piercing: 4
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 10
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 10

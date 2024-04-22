@@ -23,8 +23,8 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Slash: 10
-        Piercing: 5
+        Slash: 7
+        Piercing: 2
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25

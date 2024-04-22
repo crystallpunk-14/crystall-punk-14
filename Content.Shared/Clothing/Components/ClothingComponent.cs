@@ -76,6 +76,9 @@ public sealed partial class ClothingComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan UnequipDelay = TimeSpan.Zero;
+
+    [DataField]
+    public bool BreakOnMove = true; //CrystallPunk weapon unequipping on move
 }
 
 [Serializable, NetSerializable]
