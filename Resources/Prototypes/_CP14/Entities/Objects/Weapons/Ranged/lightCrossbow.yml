@@ -39,7 +39,7 @@
         insertSound: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
         whitelist:
           tags:
-          - Arrow
+          - CP14CrossbowBolt
   - type: ContainerContainer
     containers:
       projectiles: !type:ContainerSlot
@@ -51,4 +51,4 @@
       unwielded-arrow:
         whitelist:
           tags:
-            - Arrow
+            - CP14CrossbowBolt

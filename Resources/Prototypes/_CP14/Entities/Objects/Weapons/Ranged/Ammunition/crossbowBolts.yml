@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseArrow
+  id: CP14BaseCrossbolt
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - CP14CrossbowBolt
+
+- type: entity
+  id: CP14Crossbolt
+  parent: CP14BaseCrossbolt
+  name: crossbow bolt
+  description: Rod with a sharpened spike. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 20
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+    layers:
+    - state: rod
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
