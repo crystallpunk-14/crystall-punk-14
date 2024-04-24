@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "By jaraten(discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "full"
+    },
+    {
+      "name": "cardboard0",
+      "directions": 4
+    },
+    {
+      "name": "cardboard1",
+      "directions": 4
+    },
+    {
+      "name": "cardboard2",
+      "directions": 4
+    },
+    {
+      "name": "cardboard3",
+      "directions": 4
+    },
+    {
+      "name": "cardboard4",
+      "directions": 4
+    },
+    {
+      "name": "cardboard5",
+      "directions": 4
+    },
+    {
+      "name": "cardboard6",
+      "directions": 4
+    },
+    {
+      "name": "cardboard7",
+      "directions": 4
+    }
+  ]
+}

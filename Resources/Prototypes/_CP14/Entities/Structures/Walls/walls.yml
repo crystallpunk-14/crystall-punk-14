@@ -28,18 +28,43 @@
     base: brick
 
 - type: entity
-  id: CP14StoneRuinWall
-  name: stone wall ruin
-  suffix: Outdated sprite format!
+  id: CP14CardboardWall
+  name: cardboard Wall
+  description: A wall of paper and thin boards. Enjoys a certain popularity in [eastern place].
   parent: CP14BaseWall
-  description: These walls have seen a lot, and they don't have long to live.
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
   - type: IconSmooth
-    base: brick
+    base: cardboard
+
+- type: entity
+  id: CP14StonebrickWall
+  name: stone brick Wall
+  description: Stone brick wall. Classic
+  parent: CP14BaseWall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/stone_bricks_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/stone_bricks_wall.rsi
+  - type: IconSmooth
+    base: stonebricks
+
+- type: entity
+  id: CP14YellowbrickWall
+  name: yellow brick Wall
+  description: Yellow bricks laid according to ancient customs
+  parent: CP14BaseWall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/yellow_bricks_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/yellow_bricks_wall.rsi
+  - type: IconSmooth
+    base: yellowbricks
 
 - type: entity
   id: CP14WoodFullWall

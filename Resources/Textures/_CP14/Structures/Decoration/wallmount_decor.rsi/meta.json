@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "By jaraten(discord)",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "boards",
+      "directions": 4
+    },
+    {
+      "name": "web",
+      "directions": 4
+    },
+    {
+      "name": "web2",
+      "directions": 4
+    },
+    {
+      "name": "vines",
+      "directions": 4
+    }
+  ]
+}
