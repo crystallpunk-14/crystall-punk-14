@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "By jaraten(discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "full"
+    },
+    {
+      "name": "stonebricks0",
+      "directions": 4
+    },
+    {
+      "name": "stonebricks1",
+      "directions": 4
+    },
+    {
+      "name": "stonebricks2",
+      "directions": 4
+    },
+    {
+      "name": "stonebricks3",
+      "directions": 4
+    },
+    {
+      "name": "stonebricks4",
+      "directions": 4
+    },
+    {
+      "name": "stonebricks5",
+      "directions": 4
+    },
+    {
+      "name": "stonebricks6",
+      "directions": 4
+    },
+    {
+      "name": "stonebricks7",
+      "directions": 4
+    }
+  ]
+}
