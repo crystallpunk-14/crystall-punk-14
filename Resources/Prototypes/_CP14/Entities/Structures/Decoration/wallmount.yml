@@ -1,0 +1,98 @@
+- type: entity
+  id: CP14WallmountWoodenBoards
+  parent: 
+  - BaseStructure
+  - CP14BaseWooden #TODO: make BaseFlammable
+  name: wooden boards
+  description: Nailed to the wall with wooden boards. Why? It's not clear.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
+    layers:
+      - state: boards
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.49,0.49,-0.49,0.36"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+
+- type: entity
+  id: CP14WallmountWeb
+  parent: 
+  - BaseStructure
+  - CP14BaseWooden #TODO: make BaseFlammable
+  name: web
+  description: Cobwebs clinging to dark corners with tiny spiders in them.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
+    layers:
+      - state: web
+        map: ["random"]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.49,0.49,-0.49,0.36"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        hard: false
+  - type: RandomSprite
+    available:
+    - random:
+        web: ""
+        web2: ""
+
+- type: entity
+  id: CP14WallmountVines
+  parent: 
+  - BaseStructure
+  - CP14BaseWooden #TODO: make BaseFlammable
+  name: vines
+  description: The timid shoots of weeds trying to climb the wall upward toward the light
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
+    layers:
+      - state: vines
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.49,0.49,-0.49,0.36"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        hard: false
+      
