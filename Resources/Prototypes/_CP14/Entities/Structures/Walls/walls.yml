@@ -26,6 +26,7 @@
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
+    state: full
   - type: IconSmooth
     base: wood
 
@@ -43,6 +44,7 @@
     drawdepth: Mobs
   - type: Icon
     sprite: _CP14/Structures/Walls/TEMPLATE_WINDOW.rsi
+    state: full
   - type: IconSmooth
     base: wood
     key: CPwindow
@@ -59,6 +61,7 @@
     sprite: _CP14/Structures/Walls/cardboard_walls.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cardboard_walls.rsi
+    state: full
   - type: IconSmooth
     base: wood
   - type: Damageable
