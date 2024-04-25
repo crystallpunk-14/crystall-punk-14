@@ -2,20 +2,22 @@
   abstract: true
   parent: BaseWall
   id: CP14BaseWall
-  name: стена
-  description: Достаточно прочная, чтобы прикрыть вас от угроз или холодного ветра.
+  name: wall
+  description: Sturdy enough to cover you from threats or cold winds.
   placement:
     mode: SnapgridCenter
     snap:
     - Wall
   components:
+  - type: Sprite
+    drawdepth: Mobs
   - type: IconSmooth
     key: CPwall
     base: stone
     
 - type: entity
   id: CP14DebugWall
-  name: тестовая стена
+  name: debug wall
   suffix: DEBUG
   parent: CP14BaseWall
   description: Ужасы
@@ -25,71 +27,11 @@
   - type: Icon
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
   - type: IconSmooth
-    base: brick
-
-- type: entity
-  id: CP14DebugWallLong
-  name: длинная тестовая стена
-  suffix: DEBUG
-  parent: CP14BaseWall
-  description: Ужасы
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/TEMPLATE_LONG.rsi
-    drawdepth: Mobs
-  - type: Icon
-    sprite: _CP14/Structures/Walls/TEMPLATE_LONG.rsi
-  - type: IconSmooth
     base: wood
 
 - type: entity
-  id: CP14DebugWallLong2
-  name: длинная тестовая стена 2
-  suffix: DEBUG
-  parent: CP14BaseWall
-  description: Ужасы
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/TEMPLATE_LONG2.rsi
-    drawdepth: Mobs
-  - type: Icon
-    sprite: _CP14/Structures/Walls/TEMPLATE_LONG2.rsi
-  - type: IconSmooth
-    base: wood
-
-- type: entity
-  id: CP14DebugWallLongWood
-  name: длинная тестовая стена дерево
-  suffix: DEBUG
-  parent: CP14BaseWall
-  description: Ужасы
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/DEBUG_WOOD.rsi
-    drawdepth: Mobs
-  - type: Icon
-    sprite: _CP14/Structures/Walls/DEBUG_WOOD.rsi
-  - type: IconSmooth
-    base: wood
-
-- type: entity
-  id: CP14DebugWallLongWood2
-  name: длинная тестовая стена дерево 2
-  suffix: DEBUG
-  parent: CP14BaseWall
-  description: Ужасы
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/DEBUG_WOOD2.rsi
-    drawdepth: Mobs
-  - type: Icon
-    sprite: _CP14/Structures/Walls/DEBUG_WOOD2.rsi
-  - type: IconSmooth
-    base: wood
-
-- type: entity
-  id: CP14DebugWallLong4
-  name: длинная тестовая стена окно
+  id: CP14DebugWindow #TODO remove
+  name: debug window
   suffix: DEBUG
   parent: CP14BaseWall
   description: Ужасы
@@ -97,10 +39,10 @@
   - type: Occluder
     enabled: false
   - type: Sprite
-    sprite: _CP14/Structures/Walls/DEBUG_WINDOW.rsi
+    sprite: _CP14/Structures/Walls/TEMPLATE_WINDOW.rsi
     drawdepth: Mobs
   - type: Icon
-    sprite: _CP14/Structures/Walls/DEBUG_WINDOW.rsi
+    sprite: _CP14/Structures/Walls/TEMPLATE_WINDOW.rsi
   - type: IconSmooth
     base: wood
     key: CPwindow
@@ -108,55 +50,17 @@
 - type: entity
   id: CP14CardboardWall
   name: cardboard Wall
-  description: A wall of paper and thin boards. Enjoys a certain popularity in [eastern place].
-  parent: CP14BaseWall
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
-  - type: IconSmooth
-    base: cardboard
-
-- type: entity
-  id: CP14StonebrickWall
-  name: stone brick Wall
-  description: Stone brick wall. Classic
-  parent: CP14BaseWall
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/stone_bricks_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/stone_bricks_wall.rsi
-  - type: IconSmooth
-    base: stonebricks
-
-- type: entity
-  id: CP14YellowbrickWall
-  name: yellow brick Wall
-  description: Yellow bricks laid according to ancient customs
-  parent: CP14BaseWall
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/yellow_bricks_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/yellow_bricks_wall.rsi
-  - type: IconSmooth
-    base: yellowbricks
-
-- type: entity
-  id: CP14WoodFullWall
-  name: wooden wall
+  description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
   parent: 
   - CP14BaseWall
   - CP14BaseWooden
-  description: Board to board, and together they form protection and comfort.
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/wood_full.rsi
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/wood_full.rsi
-    state: full
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
+  - type: IconSmooth
+    base: wood
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -189,31 +93,3 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
-  - type: IconSmooth
-    base: wood
-
-- type: entity
-  id: CP14StoneRuinFragment
-  parent: BaseRock
-  name: stone wall fragments
-  description: It's all that's left of former greatness. 
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: PlacementReplacement
-    key: walls
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
-    snapCardinals: true
-    layers:
-    - state: fragment1
-      map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        fragment1: ""
-        fragment2: ""
-        fragment3: ""
-        fragment4: ""

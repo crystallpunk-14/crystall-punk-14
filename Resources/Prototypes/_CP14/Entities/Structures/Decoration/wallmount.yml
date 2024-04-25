@@ -4,7 +4,7 @@
   - BaseStructure
   - CP14BaseWooden #TODO: make BaseFlammable
   name: wooden boards
-  description: Nailed to the wall with wooden boards. Why? It's not clear.
+  description: Nailed to the wall. Why? I'm not quite sure.
   placement:
     mode: SnapgridCenter
   components:

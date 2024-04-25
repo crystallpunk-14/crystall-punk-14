@@ -1,8 +1,10 @@
 # Decorations
-ent-CP14Bonfire = костёр
-    .desc = Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
-ent-CP14WallmountTorch = настенный факел
-    .desc = Хороший, надеждный источник света. Жаль, недолговечный.
+ent-CP14WallmountVines = лозы
+    .desc = Робкие ростки сорняков пытаются взобраться по стене вверх, к свету.
+ent-CP14WallmountWeb = паутина
+    .desc = Паутина, прилипшая к темным углам, в которой сидят крошечные паучки.
+ent-CP14WallmountWoodenBoards = доски
+    .desc = Прибиты к стене. Зачем? не совсем ясно.
 
 # Doors
 ent-CP14BaseWoodDoor = деревянная дверь
@@ -30,13 +32,12 @@ ent-CP14BaseBarrel = деревянная бочка
     .desc = Большая, удобная емкость для хранения жидкостей.
 ent-CP14BarrelWater = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }
+ent-CP14Bonfire = костёр
+    .desc = Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
+ent-CP14WallmountTorch = настенный факел
+    .desc = Хороший, надеждный источник света. Жаль, недолговечный.
 
 # Walls
-ent-CP14StoneRuinWall = каменная стена руин 
-    .desc = Эти стены повидали многое, и осталось им недолго.
-    .suffix = Устаревший формат спрайта!
-ent-CP14WoodFullWall = деревянная стена
-    .desc = Доска к доске, и вместе образуют они защиту и уют.
 ent-CP14CaveStoneWall = каменная порода
     .desc = Прочная каменная природная стена. От нее веет пещерным холодом.
 ent-CP14CaveStoneWallCopperOre = { ent-CP14CaveStoneWall }
@@ -51,8 +52,8 @@ ent-CP14CaveStoneWallSilverOre = { ent-CP14CaveStoneWall }
 ent-CP14CaveStoneWallGoldOre = { ent-CP14CaveStoneWall }
     .desc = Прочная каменная природная стена. Здесь мерцают небольшие вкрапления золота.
     .suffix = Золото
-ent-CP14StoneRuinFragment = обломки каменных стен
-    .desc = Это все, что осталось от былого величия. 
+ent-CP14CardboardWall = стена из картона
+    .desc = Тонкая, непрочная стена из бумаги и картона. Пользуется популярностью в теплых странах.
 
 # Sharpening stone
 ent-CP14BaseSharpeningStoneStructure = стационарный точильный камень
