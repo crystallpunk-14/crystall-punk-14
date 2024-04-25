@@ -13,6 +13,7 @@
     sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
     layers:
       - state: boards
+        map: ["random"]
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -28,6 +29,13 @@
         layer:
         - MidImpassable
         - LowImpassable
+  - type: RandomSprite
+    available:
+    - random:
+        boards: ""
+        boards2: ""
+        boards3: ""
+        boards4: ""
 
 - type: entity
   id: CP14WallmountWeb
@@ -66,6 +74,7 @@
     - random:
         web: ""
         web2: ""
+        web3: ""
 
 - type: entity
   id: CP14WallmountVines
