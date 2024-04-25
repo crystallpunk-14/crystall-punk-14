@@ -28,6 +28,84 @@
     base: brick
 
 - type: entity
+  id: CP14DebugWallLong
+  name: длинная тестовая стена
+  suffix: DEBUG
+  parent: CP14BaseWall
+  description: Ужасы
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/TEMPLATE_LONG.rsi
+    drawdepth: Mobs
+  - type: Icon
+    sprite: _CP14/Structures/Walls/TEMPLATE_LONG.rsi
+  - type: IconSmooth
+    base: wood
+
+- type: entity
+  id: CP14DebugWallLong2
+  name: длинная тестовая стена 2
+  suffix: DEBUG
+  parent: CP14BaseWall
+  description: Ужасы
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/TEMPLATE_LONG2.rsi
+    drawdepth: Mobs
+  - type: Icon
+    sprite: _CP14/Structures/Walls/TEMPLATE_LONG2.rsi
+  - type: IconSmooth
+    base: wood
+
+- type: entity
+  id: CP14DebugWallLongWood
+  name: длинная тестовая стена дерево
+  suffix: DEBUG
+  parent: CP14BaseWall
+  description: Ужасы
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/DEBUG_WOOD.rsi
+    drawdepth: Mobs
+  - type: Icon
+    sprite: _CP14/Structures/Walls/DEBUG_WOOD.rsi
+  - type: IconSmooth
+    base: wood
+
+- type: entity
+  id: CP14DebugWallLongWood2
+  name: длинная тестовая стена дерево 2
+  suffix: DEBUG
+  parent: CP14BaseWall
+  description: Ужасы
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/DEBUG_WOOD2.rsi
+    drawdepth: Mobs
+  - type: Icon
+    sprite: _CP14/Structures/Walls/DEBUG_WOOD2.rsi
+  - type: IconSmooth
+    base: wood
+
+- type: entity
+  id: CP14DebugWallLong4
+  name: длинная тестовая стена окно
+  suffix: DEBUG
+  parent: CP14BaseWall
+  description: Ужасы
+  components:
+  - type: Occluder
+    enabled: false
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/DEBUG_WINDOW.rsi
+    drawdepth: Mobs
+  - type: Icon
+    sprite: _CP14/Structures/Walls/DEBUG_WINDOW.rsi
+  - type: IconSmooth
+    base: wood
+    key: CPwindow
+
+- type: entity
   id: CP14CardboardWall
   name: cardboard Wall
   description: A wall of paper and thin boards. Enjoys a certain popularity in [eastern place].

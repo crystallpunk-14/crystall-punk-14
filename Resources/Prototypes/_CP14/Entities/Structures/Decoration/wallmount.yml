@@ -9,6 +9,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
     layers:
       - state: boards
@@ -39,6 +40,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
     layers:
       - state: web
@@ -76,6 +78,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
     layers:
       - state: vines
