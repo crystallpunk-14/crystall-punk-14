@@ -10,9 +10,8 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    noRot: true
-    sprite: _CP14/Structures/Decoration/wallmount_torch.rsi
-    offset: 0, 0.25
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
     layers:
       - state: base
   - type: Damageable
