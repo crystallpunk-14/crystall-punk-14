@@ -11,6 +11,7 @@
   components:
   - type: Sprite
     drawdepth: Mobs
+  - type: SpriteFade
   - type: IconSmooth
     key: CPwall
     base: stone

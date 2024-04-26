@@ -8,6 +8,8 @@
     sprite: _CP14/Structures/Walls/cave_stone.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cave_stone.rsi
+  - type: IconSmooth
+    base: wall
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Rock
