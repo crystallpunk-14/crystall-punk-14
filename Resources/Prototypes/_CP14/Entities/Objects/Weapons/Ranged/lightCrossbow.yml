@@ -2,7 +2,7 @@
   id: CP14BaseLightCrossbow
   name: light crossbow
   parent: BaseItem
-  description: a small, compact crossbow that is comfortable to hold with one hand. Not too strong on the back side.
+  description: A small, compact crossbow that is comfortable to hold with one hand. Not too accurate on the reverse side.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/light_crossbow.rsi
