@@ -57,7 +57,7 @@
       types:
         Heat: 0.01
   - type: FireVisuals
-    sprite: _CP14/Structures/Decoration/wallmount_torch.rsi
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
     normalState: fire
   - type: Construction
     graph: CP14WallmountTorch
