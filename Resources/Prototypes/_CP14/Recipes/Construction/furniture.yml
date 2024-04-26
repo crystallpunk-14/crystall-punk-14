@@ -44,7 +44,7 @@
   targetNode: CP14Bonfire
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Decoration/bonfire.rsi
+    sprite: _CP14/Structures/Furniture/bonfire.rsi
     state: bonfire
   objectType: Structure
   placementMode: SnapgridCenter
@@ -62,7 +62,7 @@
   targetNode: CP14WallmountTorch
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Decoration/wallmount_torch.rsi
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
     state: fire
   objectType: Structure
   placementMode: SnapgridCenter

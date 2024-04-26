@@ -13,7 +13,7 @@ ent-CP14ClothingHeadHoodieYellow = желтый капюшон
 # Mask
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
-ent-CP14ClothingMaskMonocle = монокль
+ent-CP14ClothingEyesMonocle = монокль
     .desc = Аристократично, модно, да еще и с позолотой.
 ent-CP14ClothingEyesGoldGlasses = золотые очки
     .desc = Аристократично, модно, да еще и с позолотой.

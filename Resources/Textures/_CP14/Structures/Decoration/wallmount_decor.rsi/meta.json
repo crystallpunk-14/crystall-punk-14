@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "By jaraten(discord)",
+  "copyright": "By jaraten(discord), modified by TheShuEd",
   "size": {
     "x": 32,
     "y": 96
@@ -12,11 +12,27 @@
       "directions": 4
     },
     {
+      "name": "boards2",
+      "directions": 4
+    },
+    {
+      "name": "boards3",
+      "directions": 4
+    },
+    {
+      "name": "boards4",
+      "directions": 4
+    },
+    {
       "name": "web",
       "directions": 4
     },
     {
       "name": "web2",
+      "directions": 4
+    },
+    {
+      "name": "web3",
       "directions": 4
     },
     {
