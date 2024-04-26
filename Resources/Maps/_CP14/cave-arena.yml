@@ -4170,7 +4170,7 @@ entities:
           friction: 0.4
     - type: PlaceableSurface
       isPlaceable: True
-- proto: CP14WoodFullWall
+- proto: CP14CardboardWall
   entities:
   - uid: 458
     components:

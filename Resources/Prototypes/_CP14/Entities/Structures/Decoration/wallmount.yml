@@ -4,14 +4,16 @@
   - BaseStructure
   - CP14BaseWooden #TODO: make BaseFlammable
   name: wooden boards
-  description: Nailed to the wall with wooden boards. Why? It's not clear.
+  description: Nailed to the wall. Why? I'm not quite sure.
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
     layers:
       - state: boards
+        map: ["random"]
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -27,6 +29,13 @@
         layer:
         - MidImpassable
         - LowImpassable
+  - type: RandomSprite
+    available:
+    - random:
+        boards: ""
+        boards2: ""
+        boards3: ""
+        boards4: ""
 
 - type: entity
   id: CP14WallmountWeb
@@ -39,6 +48,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
     layers:
       - state: web
@@ -64,6 +74,7 @@
     - random:
         web: ""
         web2: ""
+        web3: ""
 
 - type: entity
   id: CP14WallmountVines
@@ -76,6 +87,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
     layers:
       - state: vines
