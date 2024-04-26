@@ -68,7 +68,7 @@
       types:
         Heat: 0.01
   - type: FireVisuals
-    sprite: _CP14/Structures/Decoration/bonfire.rsi
+    sprite: _CP14/Structures/Furniture/bonfire.rsi
     normalState: burning
   - type: ItemPlacer
     maxEntities: 4
