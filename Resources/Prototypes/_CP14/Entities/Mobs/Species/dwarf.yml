@@ -1,14 +1,14 @@
 - type: entity
   parent: CP14BaseMobSpeciesOrganic
-  id: CP14BaseMobHuman
-  name: Mr. Human
+  id: CP14BaseMobDwarf
+  name: Mr. Dwarf
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: CP14Human
+    species: CP14Dwarf
   - type: Hunger
   - type: Icon
-    sprite: _CP14/Mobs/Species/Human/parts.rsi
+    sprite: _CP14/Mobs/Species/Dwarf/parts.rsi
     state: full
   - type: Thirst
   - type: Butcherable
@@ -17,7 +17,7 @@
       - id: FoodMeatHuman
         amount: 5
   - type: Body
-    prototype: CP14Human
+    prototype: CP14Dwarf
     requiredLegs: 2
     state: full
   - type: Inventory
@@ -25,8 +25,8 @@
 
 - type: entity
   parent: CP14BaseSpeciesDummy
-  id: CP14MobHumanDummy
+  id: CP14MobDwarfDummy
   noSpawn: true
   components:
     - type: HumanoidAppearance
-      species: CP14Human
+      species: CP14Dwarf

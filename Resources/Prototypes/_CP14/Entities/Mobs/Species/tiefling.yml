@@ -4,19 +4,25 @@
   name: Mr. Tiefling
   abstract: true
   components:
-    - type: HumanoidAppearance
-      species: CP14Tiefling
-    - type: Body
-      prototype: CP14Tiefling
-      requiredLegs: 2
-    - type: Hunger
-    - type: Icon
-      sprite: _CP14/Mobs/Species/Tiefling/parts.rsi
-      state: full
-    - type: Thirst
-    - type: Wagging  
-    - type: Inventory
-      templateId: CP14Human
+  - type: HumanoidAppearance
+    species: CP14Tiefling
+  - type: Hunger
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Tiefling/parts.rsi
+    state: full
+  - type: Thirst
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodMeatHuman
+        amount: 5
+  - type: Body
+    prototype: CP14Tiefling
+    requiredLegs: 2
+    state: full
+  - type: Inventory
+    templateId: CP14Human
+  - type: Wagging  
 
 - type: entity
   parent: CP14BaseSpeciesDummy

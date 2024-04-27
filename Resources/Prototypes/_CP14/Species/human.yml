@@ -5,7 +5,7 @@
   prototype: CP14MobHuman
   sprites: CP14MobHumanSprites
   markingLimits: MobHumanMarkingLimits
-  dollPrototype: MobHumanDummy
+  dollPrototype: CP14MobHumanDummy
   skinColoration: HumanToned
   maleFirstNames: CP14_Names_Human_Male_First
   femaleFirstNames: CP14_Names_Human_Female_First
