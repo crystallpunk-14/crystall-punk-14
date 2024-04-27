@@ -19,7 +19,6 @@
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
-    state: full
   - type: Inventory
     templateId: CP14Human
 

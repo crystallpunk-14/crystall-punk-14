@@ -19,7 +19,6 @@
   - type: Body
     prototype: CP14Dwarf
     requiredLegs: 2
-    state: full
   - type: Inventory
     templateId: CP14Human
     displacements:

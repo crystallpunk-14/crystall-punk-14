@@ -19,7 +19,6 @@
   - type: Body
     prototype: CP14Tiefling
     requiredLegs: 2
-    state: full
   - type: Inventory
     templateId: CP14Human
   - type: Wagging  
