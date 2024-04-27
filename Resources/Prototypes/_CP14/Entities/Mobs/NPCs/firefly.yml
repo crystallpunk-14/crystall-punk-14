@@ -1,8 +1,8 @@
 - type: entity
   id: CPMobWanderingLight
   parent: [ BaseMob, MobCombat ]
-  name: блуждающий огонёк
-  description: Похожий на дымку шар света, внушающий надежду и безопасность.
+  name: wandering light
+  description: A haze-like ball of light that inspires hope and safety.
   components:
   - type: HTN
     rootTask:
@@ -96,7 +96,7 @@
               collection: GlassBreak
 
 - type: damageModifierSet
-  id: CPLightning # Модификатор урона по существу, иммунитет ко многим типам урона
+  id: CPLightning
   coefficients:
     Blunt: 0.7
     Slash: 0.7
