@@ -1,0 +1,33 @@
+- type: entity
+  parent: CrateGeneric
+  id: CP14CrateCoffin
+  name: гроб
+  description: Удобный и красивый гроб, чтобы с удобствами дождаться своего воскрешения.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/coffin.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"] 
+  - type: Icon
+    sprite: _CP14/Structures/Storage/Crates/coffin.rsi
+    state: base
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
