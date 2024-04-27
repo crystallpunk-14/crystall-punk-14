@@ -25,7 +25,6 @@
   id: CartridgeCaselessRifle
   name: cartridge (.25 caseless)
   parent: BaseCartridgeCaselessRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletCaselessRifle
@@ -34,7 +33,6 @@
   id: CartridgeCaselessRiflePractice
   name: cartridge (.25 caseless practice)
   parent: BaseCartridgeCaselessRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletCaselessRiflePractice
@@ -45,19 +43,3 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#dbdbdb"
-
-- type: entity
-  id: CartridgeCaselessRifleRubber
-  name: cartridge (.25 caseless rubber)
-  parent: BaseCartridgeCaselessRifle
-  noSpawn: true
-  components:
-  - type: CartridgeAmmo
-    proto: BulletCaselessRifleRubber
-  - type: Sprite
-    layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#43c4f7"

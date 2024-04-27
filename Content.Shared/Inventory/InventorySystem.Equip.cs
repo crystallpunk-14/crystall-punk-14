@@ -168,7 +168,7 @@ public abstract partial class InventorySystem
             {
                 BlockDuplicate = true,
                 BreakOnHandChange = true,
-                BreakOnMove = true,
+                BreakOnMove = clothing.BreakOnMove, //CrystallPunk weapon unequipping on move
                 CancelDuplicate = true,
                 RequireCanInteract = true,
                 NeedHand = true
@@ -413,7 +413,7 @@ public abstract partial class InventorySystem
             {
                 BlockDuplicate = true,
                 BreakOnHandChange = true,
-                BreakOnMove = true,
+                BreakOnMove = clothing.BreakOnMove, //CrystallPunk weapon unequipping on move
                 CancelDuplicate = true,
                 RequireCanInteract = true,
                 NeedHand = true

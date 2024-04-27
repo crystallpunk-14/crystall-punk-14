@@ -2,7 +2,6 @@
   name: energy sword
   parent: BaseItem
   id: EnergySword
-  noSpawn: true
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
   - type: EnergySword
@@ -87,7 +86,6 @@
   parent: EnergySword
   id: EnergyDagger
   suffix: E-Dagger
-  noSpawn: true
   description: 'A dark ink pen.'
   components:
   - type: EnergySword
@@ -166,7 +164,6 @@
   id: EnergyDaggerBox
   name: e-dagger box
   suffix: E-Dagger
-  noSpawn: true
   description: A small box containing an e-dagger. Packaging disintegrates when opened, leaving no evidence behind.
   components:
   - type: Item
@@ -184,7 +181,6 @@
   name: energy cutlass
   parent: EnergySword
   id: EnergyCutlass
-  noSpawn: true
   description: An exotic energy weapon.
   components:
   - type: EnergySword
@@ -222,7 +218,6 @@
   name: double-bladed energy sword
   parent: EnergySword
   id: EnergySwordDouble
-  noSpawn: true
   description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
   components:
   - type: EnergySword

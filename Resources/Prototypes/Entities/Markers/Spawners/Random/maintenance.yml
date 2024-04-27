@@ -3,7 +3,6 @@
   suffix: Fluff+Clothes
   id: MaintenanceFluffSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -66,6 +65,8 @@
         - ClothingUniformJumpsuitPirate
         - ClothingShoesBootsCowboyFancy
         - ClothingHeadHatCowboyBountyHunter
+        - ClothingNeckAutismPin
+        - ClothingNeckGoldAutismPin
       rareChance: 0.01
       prototypes:
         - Lighter
@@ -136,7 +137,6 @@
   suffix: Tools+Cells+Mats
   id: MaintenanceToolSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -213,7 +213,6 @@
   suffix: Scrap+Weapons
   id: MaintenanceWeaponSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -266,7 +265,6 @@
   suffix: Plants
   id: MaintenancePlantSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:

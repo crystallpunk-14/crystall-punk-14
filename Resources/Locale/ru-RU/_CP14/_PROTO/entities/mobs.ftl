@@ -1,3 +1,3 @@
 # Players
-ent-CPBaseMobHuman = мистер человек
-ent-CPBaseMobTiefling = мистер тифлинг
+ent-CP14BaseMobHuman = мистер человек
+ent-CP14BaseMobTiefling = мистер тифлинг

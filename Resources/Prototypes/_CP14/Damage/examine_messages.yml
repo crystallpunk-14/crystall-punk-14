@@ -1,5 +1,5 @@
 ﻿- type: examinableDamage
-  id: CPWeaponMessages
+  id: CP14WeaponMessages
   messages:
     - damageable-weapon-1
     - damageable-weapon-2

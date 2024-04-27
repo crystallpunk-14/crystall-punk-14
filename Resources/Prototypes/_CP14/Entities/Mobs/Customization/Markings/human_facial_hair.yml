@@ -1,5 +1,5 @@
 - type: marking
-  id: CPHumanFacialHair3Clock
+  id: CP14HumanFacialHair3Clock
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
@@ -7,7 +7,7 @@
       state: 3oclock
 
 - type: marking
-  id: CPHumanFacialHairAbe
+  id: CP14HumanFacialHairAbe
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
@@ -15,7 +15,7 @@
       state: abe
 
 - type: marking
-  id: CPHumanFacialHairDwarf
+  id: CP14HumanFacialHairDwarf
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
@@ -23,7 +23,7 @@
       state: dwarf
 
 - type: marking
-  id: CPHumanFacialHairGoateeMush
+  id: CP14HumanFacialHairGoateeMush
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:

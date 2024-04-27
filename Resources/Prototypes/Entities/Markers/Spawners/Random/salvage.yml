@@ -5,7 +5,6 @@
   name: Salvage Material Crate Spawner
   id: SalvageMaterialCrateSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -44,7 +43,6 @@
   name: Salvage Canister Spawner
   id: SalvageCanisterSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -68,7 +66,6 @@
   name: salvage loot spawner
   id: SalvageLootSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -87,7 +84,6 @@
   name: Salvage Mob Spawner
   id: SalvageMobSpawner
   parent: MarkerBase
-  noSpawn: true
   suffix: 25
   components:
     - type: Sprite
@@ -117,7 +113,6 @@
   name: Salvage Space Tick Spawner
   id: SpaceTickSpawner
   parent: MarkerBase
-  noSpawn: true
   suffix: 100
   components:
     - type: Sprite
@@ -133,7 +128,6 @@
   name: Salvage Space Bear Spawner
   id: SpawnMobBearSalvage
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -147,7 +141,6 @@
 - type: entity
   id: SalvageMobSpawner75
   parent: SalvageMobSpawner
-  noSpawn: true
   suffix: 75
   components:
   - type: RandomSpawner
@@ -171,7 +164,6 @@
 - type: entity
   name: Salvage Space Kangaroo Spawner
   id: SpawnMobKangarooSalvage
-  noSpawn: true
   parent: MarkerBase
   components:
   - type: Sprite
@@ -186,7 +178,6 @@
 - type: entity
   name: Salvage Space Spider Spawner
   id: SpawnMobSpiderSalvage
-  noSpawn: true
   parent: MarkerBase
   components:
   - type: Sprite
@@ -201,7 +192,6 @@
 - type: entity
   name: Salvage Space Cobra Spawner
   id: SpawnMobCobraSalvage
-  noSpawn: true
   parent: MarkerBase
   components:
   - type: Sprite
@@ -217,7 +207,6 @@
   name: Salvage Flesh Spawner
   id: SalvageFleshSpawner
   parent: SalvageMobSpawner
-  noSpawn: true
   suffix: 100
   components:
     - type: Sprite

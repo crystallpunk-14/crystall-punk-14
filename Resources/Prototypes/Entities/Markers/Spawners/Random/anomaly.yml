@@ -2,7 +2,6 @@
   id: RandomAnomalySpawner
   name: random anomaly spawner
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:
@@ -27,7 +26,6 @@
 - type: entity
   id: RandomRockAnomalySpawner
   parent: MarkerBase
-  noSpawn: true
   components:
   - type: Sprite
     layers:

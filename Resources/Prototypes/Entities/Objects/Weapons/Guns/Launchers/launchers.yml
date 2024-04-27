@@ -24,7 +24,6 @@
   name: china lake
   parent: BaseWeaponLauncher
   id: WeaponLauncherChinaLake
-  noSpawn: true
   description: PLOOP
   components:
   - type: Sprite
@@ -58,7 +57,6 @@
   name: RPG-7
   parent: BaseWeaponLauncher
   id: WeaponLauncherRocket
-  noSpawn: true
   description: A modified ancient rocket-propelled grenade launcher.
   components:
   - type: Sprite
@@ -92,7 +90,6 @@
   name: multiple rocket launcher
   parent: BaseWeaponLauncher
   id: WeaponLauncherMultipleRocket
-  noSpawn: true
   description: A modified ancient rocket-propelled grenade launcher.
   components:
   - type: Sprite
@@ -128,7 +125,6 @@
   name: pirate cannon
   parent: BaseWeaponLauncher
   id: WeaponLauncherPirateCannon
-  noSpawn: true
   description: Kaboom!
   components:
     - type: Sprite
@@ -163,7 +159,6 @@
   - BaseItem
   - PowerCellSlotMediumItem
   id: WeaponTetherGun
-  noSpawn: true
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
     - type: Item
@@ -203,7 +198,6 @@
     - BaseItem
     - PowerCellSlotMediumItem
   id: WeaponForceGun
-  noSpawn: true
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
     - type: Item
@@ -247,7 +241,6 @@
   name: grappling gun
   parent: BaseItem
   id: WeaponGrapplingGun
-  noSpawn: true
   components:
     - type: AmmoCounter
     - type: GrapplingGun
@@ -281,7 +274,6 @@
   parent: BaseItem
   id: WeaponTetherGunAdmin
   suffix: Admeme
-  noSpawn: true
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
     - type: TetherGun
@@ -321,7 +313,6 @@
   parent: BaseItem
   id: WeaponForceGunAdmin
   suffix: Admeme
-  noSpawn: true
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
     - type: ForceGun
@@ -364,7 +355,6 @@
   parent: WeaponLauncherMultipleRocket
   id: WeaponLauncherAdmemeMeteorLarge
   suffix: Admeme
-  noSpawn: true
   description: It fires large meteors
   components:
   - type: BallisticAmmoProvider
@@ -378,7 +368,6 @@
   parent: WeaponLauncherAdmemeMeteorLarge
   id: WeaponLauncherAdmemeImmovableRodSlow
   suffix: Admeme
-  noSpawn: true
   description: It fires slow immovable rods.
   components:
   - type: BallisticAmmoProvider

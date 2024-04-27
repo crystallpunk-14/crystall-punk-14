@@ -1,95 +1,99 @@
 - type: entity
   abstract: true
   parent: BaseWall
-  id: CPBaseWall
-  name: стена
-  description: Достаточно прочная, чтобы прикрыть вас от угроз или холодного ветра.
+  id: CP14BaseWall
+  name: wall
+  description: Sturdy enough to cover you from threats or cold winds.
   placement:
     mode: SnapgridCenter
     snap:
     - Wall
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+  - type: SpriteFade
+  - type: IconSmooth
+    key: CPwall
+    base: stone
     
 - type: entity
-  id: CPDebugWall
-  name: тестовая стена
+  id: CP14DebugWall
+  name: debug wall
   suffix: DEBUG
-  parent: CPBaseWall
+  parent: CP14BaseWall
   description: Ужасы
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
+    state: full
   - type: IconSmooth
-    key: CPwallsbrick
-    base: brick
+    base: wood
 
 - type: entity
-  id: CPStoneRuinWall
-  name: stone wall ruin
-  suffix: Outdated sprite format!
-  parent: CPBaseWall
-  description: These walls have seen a lot, and they don't have long to live.
+  id: CP14DebugWindow #TODO remove
+  name: debug window
+  suffix: DEBUG
+  parent: CP14BaseWall
+  description: Ужасы
   components:
+  - type: Occluder
+    enabled: false
   - type: Sprite
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
+    sprite: _CP14/Structures/Walls/TEMPLATE_WINDOW.rsi
+    drawdepth: Mobs
   - type: Icon
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
+    sprite: _CP14/Structures/Walls/TEMPLATE_WINDOW.rsi
+    state: full
   - type: IconSmooth
-    key: CPwallsbrick
-    base: brick 
+    base: wood
+    key: CPwindow
 
 - type: entity
-  id: CPWoodFullWall
-  name: wooden wall
-  parent: CPBaseWall
-  description: Board to board, and together they form protection and comfort.
+  id: CP14CardboardWall
+  name: cardboard Wall
+  description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
+  parent: 
+  - CP14BaseWall
+  - CP14BaseWooden
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/wood_full.rsi
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/wood_full.rsi
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
+    state: full
   - type: IconSmooth
-    key: CPwallswood
-    base: wood 
-
-- type: entity
-  id: CPCaveStoneWall
-  name: rock
-  suffix: Outdated sprite format!
-  parent: CPBaseWall
-  description: A solid stone natural wall. It has a cave-like coldness to it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/cave_stone.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/cave_stone.rsi
-  - type: IconSmooth
-    key: CPwallsbrick
-    base: stone 
-
-- type: entity
-  id: CPStoneRuinFragment
-  parent: BaseRock
-  name: stone wall fragments
-  description: It's all that's left of former greatness. 
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: PlacementReplacement
-    key: walls
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
-    snapCardinals: true
-    layers:
-    - state: fragment1
-      map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        fragment1: ""
-        fragment2: ""
-        fragment3: ""
-        fragment4: ""
+    base: wood
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 3
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full

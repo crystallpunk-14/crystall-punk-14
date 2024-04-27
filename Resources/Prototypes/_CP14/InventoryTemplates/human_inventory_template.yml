@@ -1,5 +1,5 @@
 ﻿- type: inventoryTemplate
-  id: CPHuman
+  id: CP14Human
   slots:
     # Left hotbar
     # 0, y

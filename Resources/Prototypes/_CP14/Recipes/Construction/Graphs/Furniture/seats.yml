@@ -1,16 +1,16 @@
 - type: constructionGraph
-  id: CPSeat
+  id: CP14Seat
   start: start
   graph:
     - node: start
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: CPChairWooden
+        - to: CP14ChairWooden
           steps:
             - material: WoodPlank
               amount: 4
               doAfter: 2
               
-    - node: CPChairWooden
-      entity: CPChairWooden
+    - node: CP14ChairWooden
+      entity: CP14ChairWooden

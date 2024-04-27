@@ -1,11 +1,11 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Деревянный стул
-  description: Сколочен из самых обычных досок. Просто и эффективно!    
-  id: CPChairWooden
-  graph: CPSeat
+  name: Wooden chair
+  description: Made of the most common planks. Simple and effective!
+  id: CP14ChairWooden
+  graph: CP14Seat
   startNode: start
-  targetNode: CPChairWooden
+  targetNode: CP14ChairWooden
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Furniture/chairs.rsi
@@ -18,12 +18,12 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Деревянный стол
-  description: Простой стол, сколоченный из досок.
-  id: CPTableWooden
-  graph: CPTable
+  name: Wooden table
+  description: A simple table made of boards.
+  id: CP14TableWooden
+  graph: CP14Table
   startNode: start
-  targetNode: CPTableWooden
+  targetNode: CP14TableWooden
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
@@ -36,16 +36,53 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Костёр
-  description: Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
-  id: CPBonfire
-  graph: CPBonfire
+  name: Bonfire
+  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
+  id: CP14Bonfire
+  graph: CP14Bonfire
   startNode: start
-  targetNode: CPBonfire
+  targetNode: CP14Bonfire
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Decoration/bonfire.rsi
+    sprite: _CP14/Structures/Furniture/bonfire.rsi
     state: bonfire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wallmount torch
+  description: A torch attached to the wall
+  id: CP14WallmountTorch
+  graph: CP14WallmountTorch
+  startNode: start
+  targetNode: CP14WallmountTorch
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
+    state: fire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden chest
+  description: a simple wooden chest for easy storage of junk.
+  id: CP14WoodenChest
+  graph: CP14WoodenChest
+  startNode: start
+  targetNode: CP14WoodenChest
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

@@ -2,7 +2,6 @@
   name: random altar spawner
   id: AltarSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -24,7 +23,6 @@
   name: random convert-altar spawner
   id: ConvertAltarSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
@@ -48,7 +46,6 @@
   name: random cult-altar spawner
   id: CultAltarSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:

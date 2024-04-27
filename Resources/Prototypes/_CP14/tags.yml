@@ -1,5 +1,8 @@
 - type: Tag
-  id: CPKey
+  id: CP14Key
 
 - type: Tag
-  id: CPCoin
+  id: CP14Coin
+
+- type: Tag
+  id: CP14CrossbowBolt

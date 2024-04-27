@@ -1,0 +1,1 @@
+Default FallbackCulture to work with en-US localization. This keeps prototype names and descriptions working as they should.
