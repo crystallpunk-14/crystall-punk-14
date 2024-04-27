@@ -62,6 +62,7 @@
         acts: ["Destruction"]
   - type: Appearance
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Furniture/barrel.rsi
     noRot: true
     layers:
@@ -88,8 +89,8 @@
     canChangeTransferAmount: true
   - type: UserInterface
     interfaces:
-    - key: enum.TransferAmountUiKey.Key
-      type: TransferAmountBoundUserInterface
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
 
 - type: entity
   id: CP14BarrelWater
