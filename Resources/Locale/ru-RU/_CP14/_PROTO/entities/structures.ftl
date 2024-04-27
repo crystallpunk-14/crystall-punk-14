@@ -32,3 +32,7 @@ ent-CPStoneRuinFragment = обломки каменных стен
 # Sharpening stone
 ent-CPBaseSharpeningStoneStructure = стационарный точильный камень
     .desc = прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
+
+# Storage
+ent-CP14CrateCoffin = гроб
+    .desc = Удобный и красивый гроб, чтобы с удобствами дождаться своего воскрешения.

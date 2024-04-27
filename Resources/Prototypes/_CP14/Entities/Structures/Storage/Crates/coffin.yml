@@ -1,8 +1,8 @@
 - type: entity
   parent: CrateGeneric
   id: CP14CrateCoffin
-  name: гроб
-  description: Удобный и красивый гроб, чтобы с удобствами дождаться своего воскрешения.
+  name: coffin
+  description: A comfortable and nice looking coffin to comfortably await your resurrection.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Storage/Crates/coffin.rsi
