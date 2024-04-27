@@ -1,4 +1,3 @@
-# Anything human specific (e.g. UI, input) goes under MobHuman
 - type: entity
   parent: CP14BaseMobSpeciesOrganic
   id: CP14BaseMobHuman
