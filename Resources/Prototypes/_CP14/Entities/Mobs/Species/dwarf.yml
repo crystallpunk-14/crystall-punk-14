@@ -22,7 +22,15 @@
     state: full
   - type: Inventory
     templateId: CP14Human
-
+    displacements:
+      shoes:
+        layer:
+          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+          state: shoes          
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobDwarfDummy
