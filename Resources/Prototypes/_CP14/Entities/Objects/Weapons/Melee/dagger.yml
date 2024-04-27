@@ -1,13 +1,13 @@
 - type: entity
-  id: CPBaseDagger
+  id: CP14BaseDagger
   parent: 
   - BaseItem
-  - CPBaseWeaponDestructible
-  - CPBaseWeaponSharp
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
-  - CPBaseWeaponShort
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
+  - CP14BaseWeaponShort
   name: dagger
   description: A small, multi-purpose, sharp blade. You can cut meat or throw it at a goblin.
   components:
@@ -19,6 +19,7 @@
     unequipDelay: 0.25
     sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     quickEquip: false
+    breakOnMove: false
     slots:
     - belt
   - type: Sprite
@@ -28,11 +29,11 @@
   - type: MeleeWeapon
     attackRate: 1.8
     wideAnimationRotation: 225
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     damage:
       types:
         Slash: 5
-        Piercing: 5
+        Piercing: 3
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.15

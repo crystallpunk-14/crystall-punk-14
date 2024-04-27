@@ -85,7 +85,6 @@
   id: MagazineCaselessRifle10x24
   name: "box magazine (.25 caseless)"
   parent: BaseMagazineCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -97,7 +96,6 @@
   id: MagazinePistolCaselessRifle
   name: "pistol magazine (.25 caseless)"
   parent: BaseMagazinePistolCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -118,7 +116,6 @@
   id: MagazinePistolCaselessRiflePractice
   name: "pistol magazine (.25 caseless practice)"
   parent: BaseMagazinePistolCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
@@ -126,27 +123,6 @@
   - type: Sprite
     layers:
     - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
-  id: MagazinePistolCaselessRifleRubber
-  name: "pistol magazine (.25 caseless rubber)"
-  parent: BaseMagazinePistolCaselessRifle
-  noSpawn: true
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
-    capacity: 10
-  - type: Sprite
-    layers:
-    - state: rubber
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
@@ -174,7 +150,6 @@
   id: MagazineCaselessRiflePractice
   name: "magazine (.25 caseless practice)"
   parent: BaseMagazineCaselessRifle
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
@@ -186,25 +161,9 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineCaselessRifleRubber
-  name: "magazine (.25 caseless rubber)"
-  parent: BaseMagazineCaselessRifle
-  noSpawn: true
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
-  - type: Sprite
-    layers:
-    - state: rubber
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
   id: MagazineCaselessRifleShort
   name: "short magazine (.25 caseless)"
   parent: BaseMagazineCaselessRifleShort
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
@@ -220,7 +179,6 @@
   id: MagazineCaselessRifleShortPractice
   name: "short magazine (.25 caseless practice)"
   parent: BaseMagazineCaselessRifleShort
-  noSpawn: true
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRiflePractice
@@ -228,22 +186,6 @@
   - type: Sprite
     layers:
     - state: practice
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-
-- type: entity
-  id: MagazineCaselessRifleShortRubber
-  name: "short magazine (.25 caseless rubber)"
-  parent: BaseMagazineCaselessRifleShort
-  noSpawn: true
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
-    capacity: 20
-  - type: Sprite
-    layers:
-    - state: rubber
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]

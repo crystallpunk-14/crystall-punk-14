@@ -2,7 +2,6 @@
   id: FTLPoint
   parent: MarkerBase
   name: FTL point
-  noSpawn: true
   components:
     - type: FTLBeacon
     - type: Sprite
@@ -12,7 +11,6 @@
   id: FTLExclusion
   parent: MarkerBase
   name: FTL exclusion point
-  noSpawn: true
   components:
     - type: FTLExclusion
       range: 32

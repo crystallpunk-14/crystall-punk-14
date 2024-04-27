@@ -1,5 +1,5 @@
 - type: marking
-  id: CPHumanHair80s
+  id: CP14HumanHair80s
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -7,7 +7,7 @@
       state: 80s
       
 - type: marking
-  id: CPHumanHairA
+  id: CP14HumanHairA
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -15,7 +15,7 @@
       state: a
       
 - type: marking
-  id: CPHumanHairAntenna
+  id: CP14HumanHairAntenna
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -23,7 +23,7 @@
       state: antenna
       
 - type: marking
-  id: CPHumanHairB
+  id: CP14HumanHairB
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -31,7 +31,7 @@
       state: b
       
 - type: marking
-  id: CPHumanHairBedhead
+  id: CP14HumanHairBedhead
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -39,7 +39,7 @@
       state: bedhead
       
 - type: marking
-  id: CPHumanHairBedheadV2
+  id: CP14HumanHairBedheadV2
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -47,7 +47,7 @@
       state: bedheadv2
       
 - type: marking
-  id: CPHumanHairBeeHive
+  id: CP14HumanHairBeeHive
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -55,7 +55,7 @@
       state: beehive
       
 - type: marking
-  id: CPHumanHairBigPompadour
+  id: CP14HumanHairBigPompadour
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -63,7 +63,7 @@
       state: bigpompadour
       
 - type: marking
-  id: CPHumanHairBob
+  id: CP14HumanHairBob
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -71,7 +71,7 @@
       state: bob
       
 - type: marking
-  id: CPHumanHairBigBraid
+  id: CP14HumanHairBigBraid
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -79,7 +79,7 @@
       state: braid
       
 - type: marking
-  id: CPHumanHairCrazyBald
+  id: CP14HumanHairCrazyBald
   bodyPart: Hair
   markingCategory: Hair
   sprites:
@@ -87,7 +87,7 @@
       state: crazybald
       
 - type: marking
-  id: CPHumanHairBigDoubleBun
+  id: CP14HumanHairBigDoubleBun
   bodyPart: Hair
   markingCategory: Hair
   sprites:

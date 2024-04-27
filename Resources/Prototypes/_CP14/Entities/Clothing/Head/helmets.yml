@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: Clothing
-  id: CPClothingHeadBase
+  id: CP14ClothingHeadBase
   components:
   - type: Clothing
     equipDelay: 0.3
@@ -15,8 +15,8 @@
     storedRotation: -90
 
 - type: entity
-  parent: CPClothingHeadBase
-  id: CPClothingHeadHoodieYellow
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadHoodieYellow
   noSpawn: true
   name: yellow hood
   description: You gain +2 to stealth rolls against the attention of the opposite sex.

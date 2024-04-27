@@ -24,7 +24,10 @@
     Dev:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationBiome
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
+        - type: CP14StationBiome
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs

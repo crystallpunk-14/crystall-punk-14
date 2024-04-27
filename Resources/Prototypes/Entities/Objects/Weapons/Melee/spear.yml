@@ -2,7 +2,6 @@
   name: spear
   parent: BaseItem
   id: Spear
-  noSpawn: true
   description: Definition of a Classic. Keeping murder affordable since 200,000 BCE.
   components:
   - type: EmbeddableProjectile
@@ -117,7 +116,6 @@
   name: reinforced spear
   parent: Spear
   id: SpearReinforced
-  noSpawn: true
   description: A spear with a reinforced glass shard as a tip.
   components:
   - type: Sprite
@@ -138,7 +136,6 @@
   name: plasma spear
   parent: Spear
   id: SpearPlasma
-  noSpawn: true
   description: A spear with a plasma shard as a tip.
   components:
   - type: Sprite
@@ -159,7 +156,6 @@
   name: uranium spear
   parent: Spear
   id: SpearUranium
-  noSpawn: true
   description: A spear with a uranium shard as a tip.
   components:
   - type: Sprite
@@ -182,7 +178,6 @@
   name: bone spear
   parent: Spear
   id: SpearBone
-  noSpawn: true
   description: A spear made of bones.
   components:
   - type: Sprite

@@ -22,7 +22,6 @@
   id: CartridgeRifle
   name: cartridge (.20 rifle)
   parent: BaseCartridgeRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletRifle
@@ -31,7 +30,6 @@
   id: CartridgeRiflePractice
   name: cartridge (.20 rifle practice)
   parent: BaseCartridgeRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletRiflePractice
@@ -43,28 +41,10 @@
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#dbdbdb"
 
-
-- type: entity
-  id: CartridgeRifleRubber
-  name: cartridge (.20 rifle rubber)
-  parent: BaseCartridgeRifle
-  noSpawn: true
-  components:
-  - type: CartridgeAmmo
-    proto: BulletRifleRubber
-  - type: Sprite
-    layers:
-      - state: base
-        map: [ "enum.AmmoVisualLayers.Base" ]
-      - state: tip
-        map: [ "enum.AmmoVisualLayers.Tip" ]
-        color: "#43c4f7"
-
 - type: entity
   id: CartridgeRifleIncendiary
   name: cartridge (.20 rifle incendiary)
   parent: BaseCartridgeRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletRifleIncendiary
@@ -80,7 +60,6 @@
   id: CartridgeRifleUranium
   name: cartridge (.20 rifle uranium)
   parent: BaseCartridgeRifle
-  noSpawn: true
   components:
   - type: CartridgeAmmo
     proto: BulletRifleUranium

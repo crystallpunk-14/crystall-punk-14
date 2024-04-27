@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Prazat, modified by TheShuEd",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "barrel"
+    },
+    {
+      "name": "barrel_open"
+    },
+    {
+      "name": "liq1"
+    },
+    {
+      "name": "liq2"
+    },
+    {
+      "name": "liq3"
+    },
+    {
+      "name": "liq4"
+    },
+    {
+      "name": "liq5"
+    },
+    {
+      "name": "liq6"
+    },
+    {
+      "name": "liq7"
+    }
+  ]
+}

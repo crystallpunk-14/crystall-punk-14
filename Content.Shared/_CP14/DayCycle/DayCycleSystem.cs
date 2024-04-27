@@ -1,7 +1,7 @@
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.CrystallPunk.DayCycle;
+namespace Content.Shared._CP14.DayCycle;
 public sealed partial class DayCycleSystem : EntitySystem
 {
 
@@ -26,7 +26,8 @@ public sealed partial class DayCycleSystem : EntitySystem
 
     private void OnMapInitDayCycle(Entity<DayCycleComponent> dayCycle, ref MapInitEvent args)
     {
-        if (dayCycle.Comp.TimeEntries == null || dayCycle.Comp.TimeEntries.Count == 0) return;
+        if (dayCycle.Comp.TimeEntries.Count == 0)
+            return;
 
         var currentEntry = dayCycle.Comp.TimeEntries[0];
 
@@ -41,7 +42,8 @@ public sealed partial class DayCycleSystem : EntitySystem
         var dayCycleQuery = EntityQueryEnumerator<DayCycleComponent, MapLightComponent>();
         while (dayCycleQuery.MoveNext(out var uid, out var dayCycle, out var mapLight))
         {
-            if (dayCycle.TimeEntries.Count <= 1) continue;
+            if (dayCycle.TimeEntries.Count <= 1)
+                continue;
 
             var curEntry = dayCycle.CurrentTimeEntry;
             var nextEntry = (curEntry + 1 >= dayCycle.TimeEntries.Count) ? 0 : (curEntry + 1);
@@ -62,7 +64,7 @@ public sealed partial class DayCycleSystem : EntitySystem
             {
                 dayCycle.CurrentTimeEntry = nextEntry;
                 dayCycle.EntryStartTime = dayCycle.EntryEndTime;
-                dayCycle.EntryEndTime = dayCycle.EntryEndTime + dayCycle.TimeEntries[nextEntry].Duration;
+                dayCycle.EntryEndTime += dayCycle.TimeEntries[nextEntry].Duration;
 
                 if (dayCycle.IsNight && !dayCycle.TimeEntries[curEntry].IsNight) // Day started
                 {
@@ -82,14 +84,12 @@ public sealed partial class DayCycleSystem : EntitySystem
 
     public static float GetLerpValue(float start, float end, float current)
     {
-        if (start == end)
+        if (Math.Abs(start - end) < 0.05f)
             return 0f;
-        else
-        {
-            float distanceFromStart = current - start;
-            float totalDistance = end - start;
 
-            return MathHelper.Clamp01(distanceFromStart / totalDistance);
-        }
+        var distanceFromStart = current - start;
+        var totalDistance = end - start;
+
+        return MathHelper.Clamp01(distanceFromStart / totalDistance);
     }
 }

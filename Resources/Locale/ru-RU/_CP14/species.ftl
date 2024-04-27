@@ -1,2 +1,0 @@
-
-species-name-tiefling = Тифлинг 

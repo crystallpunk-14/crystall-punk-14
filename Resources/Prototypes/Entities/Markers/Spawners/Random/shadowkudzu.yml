@@ -1,7 +1,6 @@
 - type: entity
   id: ShadowKudzuLootSpawner
   parent: MarkerBase
-  noSpawn: true
   components:
     - type: Sprite
       layers:
