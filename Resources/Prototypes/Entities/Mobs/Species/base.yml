@@ -28,8 +28,6 @@
       state: unisex_full
       visible: false
     - map: ["jumpsuit"]
-    - map: [ "pants" ]
-    - map: [ "shirt" ]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
@@ -42,7 +40,6 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "neck" ]
-    - map: [ "cloak" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
@@ -195,11 +192,11 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      - key: enum.VoiceMaskUIKey.Key
+      enum.VoiceMaskUIKey.Key:
         type: VoiceMaskBoundUserInterface
-      - key: enum.HumanoidMarkingModifierKey.Key
+      enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
-      - key: enum.StrippingUiKey.Key
+      enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
   - type: Puller
   - type: Speech
@@ -350,16 +347,12 @@
       state: body-overlay-2
       visible: false
     - map: [ "gloves" ]
-    - map: [ "ring1" ]
-    - map: [ "ring2" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
-    - map: [ "belt2" ]
+    - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "keys" ]
     - map: [ "neck" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -379,5 +372,5 @@
     requiredLegs: 2
   - type: UserInterface
     interfaces:
-      - key: enum.HumanoidMarkingModifierKey.Key # sure, this can go here too
+      enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
         type: HumanoidMarkingModifierBoundUserInterface
