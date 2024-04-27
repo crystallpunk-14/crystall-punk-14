@@ -1,8 +1,8 @@
 - type: entity
-  name: Лазурный фонарь
   parent: BaseItem
-  id: CPFlashlightLantern
-  description: Пережиток прошлого техномагии. Большой, тяжелый, непрактичный. Таким приятно разве что бить по голове.
+  id: CP14OldLantern
+  name: Old lantern 
+  description: Relic of the Techomagic's past. Large, weighty, unpractical. At least feels good to crack some skulls with it.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Tools/magic-lamp.rsi
@@ -31,8 +31,8 @@
     mask: /Textures/Effects/LightMasks/double_cone.png
     color: "#47F8FFFF"
     autoRot: true
-    energy: 5
-    radius: 8
+    energy: 4
+    radius: 4
     netsync: false
   - type: Appearance
   
