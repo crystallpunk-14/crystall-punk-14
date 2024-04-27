@@ -7,9 +7,9 @@
   markingLimits: MobHumanMarkingLimits
   dollPrototype: CP14MobDwarfDummy
   skinColoration: HumanToned
-  maleFirstNames: CP14_Names_Human_Male_First #TODO
-  femaleFirstNames: CP14_Names_Human_Female_First #TODO
-  lastNames: CP14_Names_Human_Last #TODO
+  maleFirstNames: CP14_Names_Dwarf_Male_First #TODO
+  femaleFirstNames: CP14_Names_Dwarf_Female_First #TODO
+  lastNames: CP14_Names_Dwarf_Last #TODO
 
 - type: speciesBaseSprites
   id: CP14MobDwarfSprites

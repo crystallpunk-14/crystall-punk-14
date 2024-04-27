@@ -31,6 +31,14 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
+      pants:
+        layer:
+          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+          state: pants
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobDwarfDummy
