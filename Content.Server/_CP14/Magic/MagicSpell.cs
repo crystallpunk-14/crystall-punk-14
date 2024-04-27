@@ -1,7 +1,7 @@
 ﻿namespace Content.Server._CP14.Magic;
 
 [Serializable, DataDefinition]
-public abstract class MagicSpell
+public abstract partial class MagicSpell
 {
     protected readonly IEntityManager EntityManager;
 

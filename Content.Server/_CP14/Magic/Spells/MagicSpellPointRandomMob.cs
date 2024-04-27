@@ -6,7 +6,7 @@ using Robust.Shared.Random;
 namespace Content.Server._CP14.Magic.Spells;
 
 [Serializable, DataDefinition]
-public abstract class MagicSpellPointRandomMob : MagicSpell
+public abstract partial class MagicSpellPointRandomMob : MagicSpell
 {
     private readonly EntityLookupSystem _entityLookupSystem;
     private readonly IRobustRandom _random;
