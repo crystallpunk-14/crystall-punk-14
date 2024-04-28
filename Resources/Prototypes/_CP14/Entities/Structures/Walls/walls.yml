@@ -30,6 +30,20 @@
     state: full
   - type: IconSmooth
     base: wood
+    
+- type: entity
+  id: CP14WallStonebrick
+  name: stone brick wall
+  parent: CP14BaseWall
+  description: Ужасы
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+    state: full
+  - type: IconSmooth
+    base: stonebricks
 
 - type: entity
   id: CP14WindowDebug #TODO remove
