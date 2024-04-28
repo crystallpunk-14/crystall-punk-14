@@ -17,7 +17,7 @@
     base: stone
     
 - type: entity
-  id: CP14DebugWall
+  id: CP14WallDebug
   name: debug wall
   suffix: DEBUG
   parent: CP14BaseWall
@@ -32,7 +32,7 @@
     base: wood
 
 - type: entity
-  id: CP14DebugWindow #TODO remove
+  id: CP14WindowDebug #TODO remove
   name: debug window
   suffix: DEBUG
   parent: CP14BaseWall
@@ -41,14 +41,28 @@
   - type: Occluder
     enabled: false
   - type: Sprite
-    sprite: _CP14/Structures/Walls/TEMPLATE_WINDOW.rsi
+    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
     drawdepth: Mobs
   - type: Icon
-    sprite: _CP14/Structures/Walls/TEMPLATE_WINDOW.rsi
+    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
     state: full
   - type: IconSmooth
     base: wood
     key: CPwindow
+
+- type: entity
+  id: CP14WindowStoneBrick
+  parent: CP14WindowDebug
+  name: stone brick window
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    drawdepth: Mobs
+  - type: Icon
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    state: full
+  - type: IconSmooth
+    base: stone_bricks_window
 
 - type: entity
   id: CP14CardboardWall
