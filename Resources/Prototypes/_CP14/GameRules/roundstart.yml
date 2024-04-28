@@ -5,6 +5,7 @@
   components:
   - type: DeathMatchRule
     gear: CP14DeathMatchGear
+    killCap: 10
     rewardSpawns:
     - id: HealingToolbox
     - id: CP14BaseThrowableSpear

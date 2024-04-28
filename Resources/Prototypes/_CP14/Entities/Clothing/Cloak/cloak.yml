@@ -44,6 +44,28 @@
 
 - type: entity
   parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakFurcapeBlack
+  name: furcape
+  description: Brutal woolen wool cape
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/furcape2.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/furcape2.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakFurcapeBlue
+  name: furcape
+  description: Brutal woolen wool cape
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/furcape.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/furcape.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
   id: CP14ClothingCloakHoodieYellow
   name: yellow short hooded cape
   description: Protects your shoulders and head from the cold and the interest of the opposite sex.

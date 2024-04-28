@@ -55,6 +55,10 @@ ent-CP14CaveStoneWallGoldOre = { ent-CP14CaveStoneWall }
 ent-CP14CardboardWall = стена из картона
     .desc = Тонкая, непрочная стена из бумаги и картона. Пользуется популярностью в теплых странах.
 
+# Windows
+ent-CP14WindowStoneBrick = окно в стене из каменного кирпича
+    .desc = Каменная кирпичная стена, и проделанным в ней стеклянным окном.
+
 # Sharpening stone
 ent-CPBaseSharpeningStoneStructure = стационарный точильный камень
     .desc = прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
