@@ -32,3 +32,14 @@
     sprite: _CP14/Clothing/Pants/aristocratic.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/aristocratic.rsi
+    
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsLoincloth
+  name: loincloth
+  description: Free, spacious, nothing gets in the way, and it also looks extremely rugged
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/loincloth.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/loincloth.rsi

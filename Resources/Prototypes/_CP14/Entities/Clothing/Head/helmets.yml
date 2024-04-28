@@ -28,3 +28,14 @@
   - type: Tag
     tags:
     - HidesHair
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadMetalHeadband
+  name: metall headband
+  description: The odds of it protecting you from a head shot are slim to none.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/metalheadband.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/metalheadband.rsi

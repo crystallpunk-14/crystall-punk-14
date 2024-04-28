@@ -3875,7 +3875,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -4.440906,11.68752
       parent: 2
-- proto: CP14ClothingAristocraticShoesBlack
+- proto: CP14ClothingShoesAristocraticBlack
   entities:
   - uid: 950
     components:
