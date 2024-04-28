@@ -54,6 +54,7 @@
   id: CP14WindowStoneBrick
   parent: CP14WindowDebug
   name: stone brick window
+  description: A stone brick wall with a glass window in it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
