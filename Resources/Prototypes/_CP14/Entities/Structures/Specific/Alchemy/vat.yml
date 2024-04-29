@@ -70,3 +70,13 @@
     interfaces:
       enum.TransferAmountUiKey.Key:
         type: TransferAmountBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: ThrowInsertContainer
+    containerId: storagebase
+  - type: Storage
+    grid:
+    - 0,0,4,3
