@@ -103,3 +103,15 @@
         reagents:
         - ReagentId: Water
           Quantity: 300
+
+- type: entity
+  id: CP14BarrelBeer
+  parent: CP14BaseBarrel
+  suffix: Beer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Beer
+          Quantity: 300
