@@ -50,7 +50,7 @@
   - type: SolutionContainerManager
     solutions:
       vat:
-        maxVol: 100
+        maxVol: 500
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     fillBaseName: liq
@@ -78,7 +78,7 @@
   - type: ThrowInsertContainer
     containerId: storagebase
   - type: Storage
-    cP14CanStoreSolutionCantainer: false
+    cP14CanStoreSolutionContainer: false
     grid:
     - 0,0,4,3
     blacklist:
