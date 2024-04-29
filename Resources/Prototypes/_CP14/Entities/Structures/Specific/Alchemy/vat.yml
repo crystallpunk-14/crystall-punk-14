@@ -58,25 +58,28 @@
     solution: vat
   - type: ExaminableSolution
     solution: vat
-  - type: InjectableSolution
+  - type: MixableSolution
     solution: vat
   - type: RefillableSolution
     solution: vat
+  - type: DrawableSolution
+    solution: vat
+  - type: DumpableSolution
+    solution: vat
   - type: Drink
     solution: vat
-  - type: SolutionTransfer
-    canChangeTransferAmount: true
   - type: UserInterface
     interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-  - type: ThrowInsertContainer
-    containerId: storagebase
-  - type: Storage
-    grid:
-    - 0,0,4,3
+  #- type: ContainerContainer
+  #  containers:
+  #    storagebase: !type:Container
+  #- type: ThrowInsertContainer
+  #  containerId: storagebase
+  #- type: Storage
+  #  grid:
+  #  - 0,0,4,3
+  #  blacklist:
+  #    components:
+  #    - SolutionContainerManager

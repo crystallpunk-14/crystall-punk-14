@@ -81,16 +81,16 @@
     solution: barrel
   - type: ExaminableSolution
     solution: barrel
-  - type: InjectableSolution
+  - type: MixableSolution
+    solution: barrel
+  - type: RefillableSolution
+    solution: barrel
+  - type: DrawableSolution
+    solution: barrel
+  - type: DumpableSolution
     solution: barrel
   - type: Drink
     solution: barrel
-  - type: SolutionTransfer
-    canChangeTransferAmount: true
-  - type: UserInterface
-    interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
 
 - type: entity
   id: CP14BarrelWater
