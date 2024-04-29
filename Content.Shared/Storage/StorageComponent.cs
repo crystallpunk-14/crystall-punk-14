@@ -117,6 +117,12 @@ namespace Content.Shared.Storage
         public SoundSpecifier? StorageCloseSound;
 
         /// <summary>
+        /// CrystallPunk - Bandage healing moment for alchemy. does not allow you to put SolutionContainer items into the Cauldrons
+        /// </summary>
+        [DataField]
+        public bool CP14CanStoreSolutionContainer = true;
+
+        /// <summary>
         /// If not null, ensures that all inserted items are of the same orientation
         /// Horizontal - items are stored laying down
         /// Vertical - items are stored standing up

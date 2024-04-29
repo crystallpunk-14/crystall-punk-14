@@ -4,6 +4,7 @@ using System.Linq;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
+using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
@@ -357,6 +358,11 @@ public abstract class SharedStorageSystem : EntitySystem
 
         if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
+
+        //CrystallPunk start
+        if (storageComp.CP14CanStoreSolutionContainer && HasComp<SolutionContainerManagerComponent>(uid))
+            return;
+        //CrystallPunk end
 
         PlayerInsertHeldEntity(uid, args.User, storageComp);
         // Always handle it, even if insertion fails.

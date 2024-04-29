@@ -22,8 +22,6 @@
     solutions:
       bucket:
         maxVol: 50
-  - type: MixableSolution
-    solution: bucket
   - type: Injector
     solutionName: bucket
     injectOnly: false
@@ -48,9 +46,16 @@
     solution: bucket
   - type: SolutionItemStatus
     solution: bucket
+  - type: MixableSolution
+    solution: bucket
+  - type: DrainableSolution
+    solution: bucket
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
   - type: ExaminableSolution
     solution: bucket
+  - type: Tag
+    tags:
+      - Bucket

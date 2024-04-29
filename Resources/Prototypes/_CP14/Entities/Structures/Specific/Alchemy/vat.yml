@@ -72,14 +72,15 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  #- type: ContainerContainer
-  #  containers:
-  #    storagebase: !type:Container
-  #- type: ThrowInsertContainer
-  #  containerId: storagebase
-  #- type: Storage
-  #  grid:
-  #  - 0,0,4,3
-  #  blacklist:
-  #    components:
-  #    - SolutionContainerManager
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: ThrowInsertContainer
+    containerId: storagebase
+  - type: Storage
+    cP14CanStoreSolutionCantainer: false
+    grid:
+    - 0,0,4,3
+    blacklist:
+      components:
+      - SolutionContainerManager
