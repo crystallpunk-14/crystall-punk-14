@@ -1,0 +1,72 @@
+- type: entity
+  id: CP14BaseVat
+  parent: 
+  - BaseStructureDynamic
+  name: vat
+  description: VATVATVAT
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    noRot: true
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpillBehavior
+        solution: vat
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Appearance
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Specific/Alchemy/alchemy_vat.rsi
+    noRot: true
+    layers:
+      - state: full
+      - state: liq1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      vat:
+        maxVol: 100
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: liq
+  - type: DrainableSolution
+    solution: vat
+  - type: ExaminableSolution
+    solution: vat
+  - type: InjectableSolution
+    solution: vat
+  - type: RefillableSolution
+    solution: vat
+  - type: Drink
+    solution: vat
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
