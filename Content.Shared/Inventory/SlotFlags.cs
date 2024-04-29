@@ -32,4 +32,6 @@ public enum SlotFlags
     CLOAK = 1 << 19,
     KEYS = 1 << 20,
     All = ~NONE,
+
+    WITHOUT_POCKET = All & ~POCKET
 }

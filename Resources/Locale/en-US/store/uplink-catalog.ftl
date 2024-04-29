@@ -157,6 +157,9 @@ uplink-radio-jammer-desc = This device will disrupt any nearby outgoing radio co
 uplink-syndicate-weapon-module-name = Weapon Cyborg Module
 uplink-syndicate-weapon-module-desc = This module will give a cyborg advanced laser and machete
 
+uplink-syndicate-martyr-module-name = Martyr Cyborg Module
+uplink-syndicate-martyr-module-desc = Turn your emagged borg friend into a walking bomb with just this module. Make sure they're loyal to your cause, results may vary.
+
 uplink-singularity-beacon-name = Singularity Beacon
 uplink-singularity-beacon-desc = A device that attracts singularities. Has to be anchored and powered. Causes singularities to grow when consumed.
 
@@ -286,6 +289,9 @@ uplink-disposable-turret-desc = Looks and functions like a normal electrical too
 
 uplink-cluster-banana-peel-name = Cluster Banana
 uplink-cluster-banana-peel-desc = Splits into 6 explosive banana peels after being thrown, the peels detonate automatically after 20 seconds if nobody slips on them.
+
+uplink-cane-blade-name = Cane Blade
+uplink-cane-blade-desc = A cane that has a hidden blade that can be unsheathed.
 
 # Armor
 uplink-chameleon-name = Chameleon Kit
