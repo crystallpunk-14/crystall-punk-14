@@ -22,7 +22,6 @@
   desc: cp14-reagent-desc-vital-extract
   flavor: CP14Invigorating
   color: "#db2a2a"
-  recognizable: true
   physicalDesc: cp14-reagent-physical-desc-scarlet
   footstepSound:
     collection: FootstepBlood

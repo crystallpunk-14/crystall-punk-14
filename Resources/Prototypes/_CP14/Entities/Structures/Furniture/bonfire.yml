@@ -74,4 +74,5 @@
       components:
       - Temperature
   - type: CP14FlammableEntityHeater
+  - type: CP14FlammableSolutionHeater
   - type: Climbable

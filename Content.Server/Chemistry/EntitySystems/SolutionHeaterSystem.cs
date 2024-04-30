@@ -1,3 +1,5 @@
+using Content.Server._CP14.Temperature;
+using Content.Server.Atmos.Components;
 using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Power.Components;
@@ -92,5 +94,26 @@ public sealed class SolutionHeaterSystem : EntitySystem
                 }
             }
         }
+
+        //CrystallPunk bonfire
+        var flammablequery = EntityQueryEnumerator<CP14FlammableSolutionHeaterComponent, ItemPlacerComponent, FlammableComponent>();
+        while (flammablequery.MoveNext(out _, out var heater, out var placer, out var flammable))
+        {
+            foreach (var heatingEntity in placer.PlacedEntities)
+            {
+                if (!flammable.OnFire)
+                    return;
+
+                if (!TryComp<SolutionContainerManagerComponent>(heatingEntity, out var container))
+                    continue;
+
+                var energy = flammable.FireStacks * frameTime * 300;
+                foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heatingEntity, container)))
+                {
+                    _solutionContainer.AddThermalEnergy(soln, energy);
+                }
+            }
+        }
+        //CrystallPunk bonfire end
     }
 }

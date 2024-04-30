@@ -81,6 +81,7 @@
   - type: ThrowInsertContainer
     containerId: storagebase
   - type: Storage
+    cP14CanStorageSolutionManagers: false
     grid:
     - 0,0,4,3
     blacklist:
