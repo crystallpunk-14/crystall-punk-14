@@ -359,11 +359,6 @@ public abstract class SharedStorageSystem : EntitySystem
         if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
 
-        //CrystallPunk start
-        if (storageComp.CP14CanStoreSolutionContainer && HasComp<SolutionContainerManagerComponent>(uid))
-            return;
-        //CrystallPunk end
-
         PlayerInsertHeldEntity(uid, args.User, storageComp);
         // Always handle it, even if insertion fails.
         // We don't want to trigger any AfterInteract logic here.
