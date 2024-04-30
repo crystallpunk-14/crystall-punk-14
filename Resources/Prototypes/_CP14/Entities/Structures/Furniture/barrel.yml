@@ -77,6 +77,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 7
     fillBaseName: liq
+  - type: Spillable
+    solution: barrel
   - type: DrainableSolution
     solution: barrel
   - type: ExaminableSolution

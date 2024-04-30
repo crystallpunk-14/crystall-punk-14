@@ -7,6 +7,7 @@
   placement:
     mode: PlaceFree
   components:
+  - type: Climbing
   - type: Transform
     noRot: true
   - type: InteractionOutline
@@ -65,6 +66,8 @@
   - type: DrawableSolution
     solution: vat
   - type: DumpableSolution
+    solution: vat
+  - type: Spillable
     solution: vat
   - type: Drink
     solution: vat

@@ -17,14 +17,12 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.08,-0.35,0.15,0.25"
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
         mask:
-        - TabletopMachineMask
+        - TableMask
         layer:
-        - Impassable
-        - MidImpassable
-        - LowImpassable
-        hard: true
+        - TableLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -76,3 +74,4 @@
       components:
       - Temperature
   - type: CP14FlammableEntityHeater
+  - type: Climbable
