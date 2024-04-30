@@ -67,8 +67,6 @@
     solution: vat
   - type: DumpableSolution
     solution: vat
-  - type: Spillable
-    solution: vat
   - type: Drink
     solution: vat
   - type: UserInterface

@@ -1,0 +1,10 @@
+- type: reaction
+  id: CP14VitalExtract
+  minTemp: 350
+  reactants:
+    CP14Blood:
+      amount: 1
+    CP14BloodGrassSap:
+      amount: 2
+  products:
+    CP14VitalExtract: 3
