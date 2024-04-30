@@ -3,16 +3,6 @@
   id: CP14BaseVial
   abstract: true
   components:
-  - type: Sprite
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    layers:
-      - state: vial
-      - state: liq-1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
-  - type: Item
-    size: Tiny
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -22,7 +12,7 @@
   - type: SolutionContainerManager
     solutions:
       vial:
-        maxVol: 10
+        maxVol: 1
   - type: MixableSolution
     solution: vial
   - type: FitsInDispenser
@@ -46,9 +36,6 @@
   - type: Drink
     solution: vial
   - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 5
-    fillBaseName: liq-
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
@@ -102,7 +89,49 @@
         Blunt: 5
 
 - type: entity
+  id: CP14VialTiny
+  parent: CP14BaseVial
+  name: tiny vial
+  description: A sturdy glass vial to hold a tiny amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 5
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+
+- type: entity
   id: CP14VialSmall
   parent: CP14BaseVialFragile
   name: small vial
   description: A fragile glass vial to hold a small amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
