@@ -1,10 +1,18 @@
-
-- type: flavor
-  id: CP14Water
-  flavorType: Complex
-  description: cp14-flavor-complex-water
+# Basic
 
 - type: flavor
   id: CP14Metallic
   flavorType: Base
   description: cp14-flavor-base-metallic
+
+- type: flavor
+  id: CP14Invigorating
+  flavorType: Base
+  description: cp14-flavor-base-invigorating
+
+# Complex
+
+- type: flavor
+  id: CP14Water
+  flavorType: Complex
+  description: cp14-flavor-complex-water
