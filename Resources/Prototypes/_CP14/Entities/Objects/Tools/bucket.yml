@@ -3,7 +3,7 @@
   id: CP14Bucket
   name: bucket
   description: It's a boring old bucket.
-  suffix: CP14
+  suffix: CP14, need resprite
   components: 
   - type: Drink
     solution: bucket
