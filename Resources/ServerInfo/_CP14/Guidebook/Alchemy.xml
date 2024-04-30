@@ -1,0 +1,13 @@
+﻿<Document>
+# Alchemy
+
+There are a large number of reagents in the game. Some of them can be extracted from living creatures, some of them can be found in the wild, or you can use alchemy to get new reagents by mixing them together under certain conditions.
+
+Knowing different types of chemicals and their effects is important for being able to manage injury and danger.
+
+## Basic alchemical reagents
+<GuideReagentGroupEmbed Group="CP14BasicAlchemy"/>
+
+## Biological
+<GuideReagentGroupEmbed Group="CP14Biological"/>
+</Document>

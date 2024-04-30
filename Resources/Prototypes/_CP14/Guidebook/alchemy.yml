@@ -1,0 +1,20 @@
+- type: guideEntry
+  id: Alchemy
+  name: cp14-guide-entry-alchemy
+  text: "/ServerInfo/_CP14/Guidebook/Alchemy.xml"
+  children:
+  - CP14BasicAlchemy
+  - CP14Biological
+  filterEnabled: True
+
+- type: guideEntry
+  id: CP14BasicAlchemy
+  name: cp14-guide-entry-basic-alchemy
+  text: "/ServerInfo/_CP14/Guidebook/AlchemyTabs/BasicAlchemy.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: CP14Biological
+  name: cp14-guide-entry-biological
+  text: "/ServerInfo/_CP14/Guidebook/AlchemyTabs/Biological.xml"
+  filterEnabled: True
