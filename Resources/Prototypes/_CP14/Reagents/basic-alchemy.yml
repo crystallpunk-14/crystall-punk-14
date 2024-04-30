@@ -15,7 +15,6 @@
 # 13)
 
 - type: reagent
-  crystallPunkAllowed: true
   id: CP14VitalExtract
   group: CP14BasicAlchemy
   name: cp14-reagent-name-vital-extract

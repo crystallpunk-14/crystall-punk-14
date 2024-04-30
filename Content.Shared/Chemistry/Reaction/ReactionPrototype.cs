@@ -38,10 +38,6 @@ namespace Content.Shared.Chemistry.Reaction
         [DataField("conserveEnergy")]
         public bool ConserveEnergy = true;
 
-        //CrystallPunk reagent guidebook filter
-        [DataField]
-        public bool CrystallPunkAllowed = false;
-
         /// <summary>
         ///     The maximum temperature the reaction can occur at.
         /// </summary>

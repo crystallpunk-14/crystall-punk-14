@@ -43,10 +43,6 @@ namespace Content.Shared.Chemistry.Reagent
         [AbstractDataField]
         public bool Abstract { get; private set; }
 
-        //CrystallPunk reagent guidebook filter
-        [DataField]
-        public bool CrystallPunkAllowed = false;
-
         [DataField("desc", required: true)]
         private LocId Description { get; set; }
 

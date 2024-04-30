@@ -1,5 +1,4 @@
 - type: reagent
-  crystallPunkAllowed: true
   id: CP14Blood
   group: CP14Biological
   name: cp14-reagent-name-blood
@@ -39,7 +38,6 @@
 #           Burn: -1.25
 
 - type: reagent
-  crystallPunkAllowed: true
   id: CP14BloodGrassSap
   group: CP14Biological
   name: cp14-reagent-name-bloodgrasssap
