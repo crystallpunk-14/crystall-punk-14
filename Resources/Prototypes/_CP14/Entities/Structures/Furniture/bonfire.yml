@@ -21,6 +21,7 @@
         density: 55
         mask:
         - TabletopMachineMask
+        - LowImpassable
         layer:
         - Impassable
         - MidImpassable
@@ -57,7 +58,7 @@
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
   - type: Flammable
-    fireSpread: false
+    fireSpread: true
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
