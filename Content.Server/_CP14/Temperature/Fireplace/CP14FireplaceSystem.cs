@@ -24,7 +24,6 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         SubscribeLocalEvent<CP14FireplaceComponent, OnFireChangedEvent>(OnFireChanged);
 
         SubscribeLocalEvent<CP14FireplaceComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<CP14FireplaceComponent, ThrowHitByEvent>(OnThrowCollide);
         SubscribeLocalEvent<CP14FireplaceComponent, StartCollideEvent>(OnCollide);
     }
 
@@ -46,17 +45,6 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             return;
 
         TryInsertFuel(fireplace, args.Used, fuel);
-    }
-
-    private void OnThrowCollide(Entity<CP14FireplaceComponent> fireplace, ref ThrowHitByEvent args)
-    {
-        if (!fireplace.Comp.CanInsertByThrow)
-            return;
-
-        if (!TryComp<CP14FireplaceFuelComponent>(args.Thrown, out var fuel))
-            return;
-
-        TryInsertFuel(fireplace, args.Thrown, fuel);
     }
 
     private void OnCollide(Entity<CP14FireplaceComponent> fireplace, ref StartCollideEvent args)
