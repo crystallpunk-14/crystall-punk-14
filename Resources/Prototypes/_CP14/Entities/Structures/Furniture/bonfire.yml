@@ -8,7 +8,10 @@
     noRot: true
     sprite: _CP14/Structures/Furniture/bonfire.rsi
     layers:
-      - state: bonfire
+      - state: base
+      - state: full1
+        visible: false
+        map: ["fuel"]
   - type: Construction
     graph: CP14Bonfire
     node: CP14Bonfire
@@ -20,9 +23,12 @@
           bounds: "-0.45,-0.45,0.45,0.45"
         density: 55
         mask:
-        - TableMask
+        - TabletopMachineMask
         layer:
-        - TableLayer
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -49,6 +55,13 @@
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
   - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.FireplaceFuelVisuals.Status:
+        fuel:
+          Empty: { visible: false }
+          Medium: { visible: true, state: full1 }
+          Full: { visible: true, state: full2 }
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -59,9 +72,6 @@
     alwaysCombustible: true
     canExtinguish: true
     firestacksOnIgnite: 0.5
-    firestackFade: 0.3
-    firestackFadeOnIgnite: 0.3
-    firestackFadeFade: -0.2
     damage:
       types:
         Heat: 0.01
@@ -75,3 +85,11 @@
       - Temperature
   - type: CP14FlammableEntityHeater
   - type: Climbable
+  - type: CP14Fireplace
+
+- type: entity
+  id: CP14Stick
+  parent: CP14Bucket
+  name: Stick!!!
+  components:
+  - type: CP14FireplaceFuel
