@@ -18,6 +18,6 @@
   effects:    
     - !type:AreaReactionEffect
       duration: 20
-      prototypeId: CP14Mist
+      prototypeId: CP14MistVitalExtract
       sound:
         path: /Audio/Effects/smoke.ogg

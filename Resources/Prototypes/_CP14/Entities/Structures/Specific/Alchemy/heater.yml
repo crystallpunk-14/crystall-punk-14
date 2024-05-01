@@ -45,6 +45,17 @@
   - type: CP14Fireplace
 
 - type: entity
+  id: CP14AlchemyFurnaceDebug
+  parent: CP14AlchemyFurnace
+  suffix: DEBUG
+  components:
+  - type: CP14Fireplace
+    currentFuel: 100
+    fuelDrainingPerUpdate: 0
+  - type: Flammable
+    onFire: true
+
+- type: entity
   id: CP14AlchemyFurnace
   name: alchemy furnace
   parent: CP14BaseFireplace
