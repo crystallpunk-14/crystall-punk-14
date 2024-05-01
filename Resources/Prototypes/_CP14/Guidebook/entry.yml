@@ -1,0 +1,13 @@
+- type: guideEntry
+  id: CP14_EN
+  name: cp14-guide-entry-english
+  text: "/ServerInfo/_CP14/Guidebook_EN/Welcome.xml"
+  children:
+  - CP14_EN_Alchemy
+
+- type: guideEntry
+  id: CP14_RU
+  name: cp14-guide-entry-russian
+  text: "/ServerInfo/_CP14/Guidebook_RU/Welcome.xml"
+  children:
+  - CP14_RU_Alchemy
