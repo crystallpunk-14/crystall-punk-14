@@ -334,18 +334,13 @@ namespace Content.Server.Atmos.EntitySystems
                     _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSource):actor}");
                 flammable.OnFire = true;
 
-                //CrystallPunk bonfire moment
+                //CrystallPunk fireplace moment
                 var ev = new OnFireChangedEvent(flammable.OnFire);
                 RaiseLocalEvent(uid, ref ev);
-                //CrystallPunk bonfire moment end
+                //CrystallPunk fireplace moment end
             }
 
             UpdateAppearance(uid, flammable);
-
-            //CrystallPunk bonfire moment
-            if (flammable.FirestackFadeOnIgnite != null)
-                flammable.FirestackFade = flammable.FirestackFadeOnIgnite.Value;
-            //CrystallPunk bonfire moment end
         }
 
         private void OnDamageChanged(EntityUid uid, IgniteOnHeatDamageComponent component, DamageChangedEvent args)
@@ -458,11 +453,6 @@ namespace Content.Server.Atmos.EntitySystems
                     _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks, interruptsDoAfters: false);
 
                     AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 10f : 1f), flammable);
-
-                    //CrystallPunk bonfire moment
-                    if (flammable.FirestackFadeFade != 0)
-                        flammable.FirestackFade += flammable.FirestackFadeFade * frameTime;
-                    //CrystallPunk bonfire moment end
                 }
                 else
                 {

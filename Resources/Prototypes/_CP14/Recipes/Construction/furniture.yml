@@ -45,7 +45,7 @@
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Furniture/bonfire.rsi
-    state: bonfire
+    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
