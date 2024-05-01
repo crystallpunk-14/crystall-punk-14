@@ -75,7 +75,7 @@
       barrel:
         maxVol: 300
   - type: SolutionContainerVisuals
-    maxFillLevels: 7
+    maxFillLevels: 5
     fillBaseName: liq
   - type: DrainableSolution
     solution: barrel
