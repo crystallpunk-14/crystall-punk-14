@@ -14,6 +14,7 @@
     sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
     layers:
       - state: base
+        map: ["fuel"]
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -39,7 +40,6 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
-  - type: Appearance
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -50,15 +50,24 @@
     alwaysCombustible: true
     canExtinguish: true
     firestacksOnIgnite: 0.5
-    firestackFade: 0.3
-    firestackFadeOnIgnite: 0.3
-    firestackFadeFade: -0.2
     damage:
       types:
-        Heat: 0.01
+        Heat: 0
+  - type: CP14Fireplace
+    maxFuelLimit: 150
+    currentFuel: 150
+    canInsertByHand: false
   - type: FireVisuals
     sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
     normalState: fire
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.FireplaceFuelVisuals.Status:
+        fuel:
+          Empty: { state: burned }
+          Medium: { state: base }
+          Full: { state: base }
   - type: Construction
     graph: CP14WallmountTorch
     node: CP14WallmountTorch

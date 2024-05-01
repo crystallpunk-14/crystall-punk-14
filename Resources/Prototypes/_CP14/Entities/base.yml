@@ -27,8 +27,6 @@
     canExtinguish: true
     firestacksOnIgnite: 0.5
     firestackFade: 0.3
-    firestackFadeOnIgnite: 0.3
-    firestackFadeFade: -0.2
     damage:
       types:
         Heat: 0.5

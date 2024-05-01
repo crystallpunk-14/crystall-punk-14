@@ -17,3 +17,8 @@
   license: "CC-BY-4.0"
   copyright: 'by tim.kahn of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/tim.kahn/sounds/35827/"
+  
+- files: ["campfire_whoosh.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by GrimGrum of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/GrimGrum/sounds/412558/"
