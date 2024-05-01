@@ -7,8 +7,6 @@ namespace Content.Server._CP14.Temperature.Fireplace;
 [RegisterComponent, Access(typeof(CP14FireplaceSystem))]
 public sealed partial class CP14FireplaceComponent : Component
 {
-    public bool CanIgnite => FuelDrainingPerUpdate >= CurrentFuel;
-
     [DataField]
     public float MaxFuelLimit = 100f;
 
