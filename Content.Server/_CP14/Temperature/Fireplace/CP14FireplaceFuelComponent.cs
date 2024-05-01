@@ -1,3 +1,5 @@
+using Robust.Shared.Audio;
+
 namespace Content.Server._CP14.Temperature.Fireplace;
 
 /// <summary>
@@ -12,4 +14,7 @@ public sealed partial class CP14FireplaceFuelComponent : Component
     /// </summary>
     [DataField]
     public float Fuel = 10f;
+
+    [DataField]
+    public SoundSpecifier InsertFuelSound = new SoundPathSpecifier("/Audio/_CP14/Items/campfire_whoosh.ogg");
 }

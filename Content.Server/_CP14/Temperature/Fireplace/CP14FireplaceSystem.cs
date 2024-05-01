@@ -4,6 +4,7 @@ using Content.Server.Popups;
 using Content.Shared._CP14.Temperature;
 using Content.Shared.Interaction;
 using Content.Shared.Throwing;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
@@ -13,6 +14,7 @@ namespace Content.Server._CP14.Temperature.Fireplace;
 public sealed partial class CP14FireplaceSystem : EntitySystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
@@ -70,6 +72,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             return false;
 
         fireplace.Comp.CurrentFuel += fuel.Fuel;
+        _audio.PlayPvs(fuel.InsertFuelSound, fireplace);
         UpdateAppearance(fireplace, fireplace.Comp);
         QueueDel(fuelUid);
         return true;
