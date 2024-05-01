@@ -1,5 +1,4 @@
 - type: reagent
-  crystallPunkAllowed: true
   parent: Water
   id: CP14Water
   name: cp14-reagent-name-water
