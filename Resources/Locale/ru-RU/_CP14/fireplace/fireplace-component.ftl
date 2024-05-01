@@ -1,0 +1,1 @@
+cp14-fireplace-full = В {$target} больше ничего не влезет!

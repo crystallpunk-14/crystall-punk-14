@@ -64,7 +64,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
     {
         if (fireplace.Comp.CurrentFuel > fireplace.Comp.MaxFuelLimit)
         {
-            _popupSystem.PopupEntity("Full", fireplace);
+            _popupSystem.PopupEntity(Loc.GetString("cp14-fireplace-full", ("target", fireplace)), fireplace);
             return false;
         }
 
@@ -72,7 +72,10 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             return false;
 
         fireplace.Comp.CurrentFuel += fuel.Fuel;
-        _audio.PlayPvs(fuel.InsertFuelSound, fireplace);
+
+        if (flammable.OnFire)
+            _audio.PlayPvs(fuel.InsertFuelSound, fireplace);
+
         UpdateAppearance(fireplace, fireplace.Comp);
         QueueDel(fuelUid);
         return true;
