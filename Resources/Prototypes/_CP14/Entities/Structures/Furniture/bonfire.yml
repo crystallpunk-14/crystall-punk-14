@@ -67,24 +67,20 @@
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
   - type: Flammable
-    fireSpread: false
+    fireSpread: true
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
     firestacksOnIgnite: 0.5
     damage:
       types:
-        Heat: 0.01
+        Heat: 0
   - type: FireVisuals
     sprite: _CP14/Structures/Furniture/bonfire.rsi
     normalState: burning
   - type: ItemPlacer
     maxEntities: 4
-    whitelist:
-      components:
-      - Temperature
   - type: CP14FlammableEntityHeater
-  - type: Climbable
   - type: CP14Fireplace
 
 - type: entity

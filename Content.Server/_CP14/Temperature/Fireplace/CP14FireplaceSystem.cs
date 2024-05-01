@@ -33,8 +33,6 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         if (!TryComp<FlammableComponent>(fireplace, out var flammable))
             return;
 
-        flammable.AlwaysCombustible = fireplace.Comp.CurrentFuel >= fireplace.Comp.FuelDrainingPerUpdate;
-
         if (args.OnFire)
             flammable.FirestackFade = 0;
     }
@@ -84,7 +82,6 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             return false;
 
         fireplace.Comp.CurrentFuel += fuel.Fuel;
-        flammable.AlwaysCombustible = fireplace.Comp.CurrentFuel >= fireplace.Comp.FuelDrainingPerUpdate;
         UpdateAppearance(fireplace, fireplace.Comp);
         QueueDel(fuelUid);
         return true;

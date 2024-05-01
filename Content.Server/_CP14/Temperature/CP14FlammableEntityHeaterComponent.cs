@@ -8,4 +8,6 @@ namespace Content.Server._CP14.Temperature;
 [RegisterComponent, Access(typeof(EntityHeaterSystem))]
 public sealed partial class CP14FlammableEntityHeaterComponent : Component
 {
+    [DataField]
+    public float EnergyPerFireStack = 1000f;
 }
