@@ -75,10 +75,8 @@
       barrel:
         maxVol: 300
   - type: SolutionContainerVisuals
-    maxFillLevels: 7
+    maxFillLevels: 5
     fillBaseName: liq
-  - type: Spillable
-    solution: barrel
   - type: DrainableSolution
     solution: barrel
   - type: ExaminableSolution
@@ -103,17 +101,17 @@
     solutions:
       barrel:
         reagents:
-        - ReagentId: Water
+        - ReagentId: CP14Water
           Quantity: 300
 
 - type: entity
   id: CP14BarrelBeer
   parent: CP14BaseBarrel
-  suffix: Beer
+  suffix: Blood
   components:
   - type: SolutionContainerManager
     solutions:
       barrel:
         reagents:
-        - ReagentId: Beer
+        - ReagentId: CP14Blood
           Quantity: 300

@@ -5,8 +5,8 @@
   id: DummyMix
   verbText: mixing-verb-default-mix
   icon:
-    sprite: Objects/Specific/Chemistry/beaker_large.rsi
-    state: beakerlarge
+    sprite: _CP14/Structures/Specific/Alchemy/alchemy_vat.rsi
+    state: full
 
 - type: mixingCategory
   id: DummyGrind

@@ -4,6 +4,8 @@ using System.Linq;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
@@ -356,6 +358,9 @@ public abstract class SharedStorageSystem : EntitySystem
             return;
 
         if (HasComp<PlaceableSurfaceComponent>(uid))
+            return;
+
+        if (HasComp<SolutionContainerManagerComponent>(uid) && !storageComp.CP14CanStorageSolutionManagers) //CP14 bandage
             return;
 
         PlayerInsertHeldEntity(uid, args.User, storageComp);

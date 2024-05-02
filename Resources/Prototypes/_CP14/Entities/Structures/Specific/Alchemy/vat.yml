@@ -2,8 +2,8 @@
   id: CP14BaseVat
   parent: 
   - BaseStructureDynamic
-  name: vat
-  description: VATVATVAT
+  name: big vat
+  description: A very large vat for storing huge amounts of liquid. Heavy, uncomfortable to carry.
   placement:
     mode: PlaceFree
   components:
@@ -18,7 +18,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.3,-0.3,0.3,0.3"
-        density: 155
+        density: 666 # >:)
         mask:
         - MachineMask
         layer:
@@ -67,8 +67,6 @@
     solution: vat
   - type: DumpableSolution
     solution: vat
-  - type: Spillable
-    solution: vat
   - type: Drink
     solution: vat
   - type: UserInterface
@@ -81,6 +79,7 @@
   - type: ThrowInsertContainer
     containerId: storagebase
   - type: Storage
+    cP14CanStorageSolutionManagers: false
     grid:
     - 0,0,4,3
     blacklist:

@@ -135,3 +135,18 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
+
+
+# Filled
+
+- type: entity
+  id: CP14VialSmallVitalExtract
+  parent: CP14VialSmall
+  suffix: Vital extract
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14VitalExtract
+          Quantity: 10
