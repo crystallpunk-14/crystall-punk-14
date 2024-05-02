@@ -10,7 +10,7 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
+    sprite: _CP14/Structures/Wallmount/wallmount_decor.rsi
     layers:
       - state: boards
         map: ["random"]
@@ -49,7 +49,7 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
+    sprite: _CP14/Structures/Wallmount/wallmount_decor.rsi
     layers:
       - state: web
         map: ["random"]
@@ -88,7 +88,7 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: _CP14/Structures/Decoration/wallmount_decor.rsi
+    sprite: _CP14/Structures/Wallmount/wallmount_decor.rsi
     layers:
       - state: vines
   - type: Damageable

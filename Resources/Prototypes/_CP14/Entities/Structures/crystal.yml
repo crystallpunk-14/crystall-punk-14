@@ -1,0 +1,119 @@
+- type: entity
+  id: CP14CrystalBase
+  abstract: true
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/crystal.rsi
+    offset: 0, 0.25
+    layers:
+      - state: big
+        map: ["random"]
+        shader: unshaded
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 60
+        mask:
+          - MachineMask
+        layer:
+          - MidImpassable
+          - LowImpassable
+          - BulletImpassable
+          - Opaque
+  - type: RandomSprite
+    available:
+    - random:
+        big: Inherit
+        medium: Inherit
+        small: Inherit
+  - type: PointLight
+    radius: 2
+    energy: 2
+
+- type: entity
+  id: CP14CrystalRubies
+  parent: CP14CrystalBase
+  name: sparkling rubies
+  description: wawa
+  components:
+  - type: RandomSprite
+    cP14InheritBaseColor: "#ff3d0b"
+  - type: PointLight
+    color: "#ff3d0b"
+
+- type: entity
+  id: CP14CrystalTopazes
+  parent: CP14CrystalBase
+  name: sparkling topazes
+  description: wawa
+  components:
+  - type: RandomSprite
+    cP14InheritBaseColor: "#ffe269"
+  - type: PointLight
+    color: "#ffe269"
+
+- type: entity
+  id: CP14CrystalEmeralds
+  parent: CP14CrystalBase
+  name: sparkling emeralds
+  description: wawa
+  components:
+  - type: RandomSprite
+    cP14InheritBaseColor: "#30be81"
+  - type: PointLight
+    color: "#30be81"
+
+- type: entity
+  id: CP14CrystalSapphires
+  parent: CP14CrystalBase
+  name: sparkling sapphires
+  description: wawa
+  components:
+  - type: RandomSprite
+    cP14InheritBaseColor: "#5eabeb"
+  - type: PointLight
+    color: "#5eabeb"
+
+- type: entity
+  id: CP14CrystalAmethysts
+  parent: CP14CrystalBase
+  name: sparkling amethysts
+  description: wawa
+  components:
+  - type: RandomSprite
+    cP14InheritBaseColor: "#a878d1"
+  - type: PointLight
+    color: "#a878d1"
+
+- type: entity
+  id: CP14CrystalDiamonds
+  parent: CP14CrystalBase
+  name: sparkling diamonds
+  description: wawa
+  components:
+  - type: RandomSprite
+    cP14InheritBaseColor: "#f8f8f8"
+  - type: PointLight
+    color: "#f8f8f8"
