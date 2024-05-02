@@ -1,4 +1,5 @@
 - type: guideEntry
+  crystallPunkAllowed: true
   id: CP14_EN_Alchemy
   name: cp14-guide-entry-alchemy
   text: "/ServerInfo/_CP14/Guidebook_EN/Alchemy.xml"
@@ -8,12 +9,14 @@
   filterEnabled: True
 
 - type: guideEntry
+  crystallPunkAllowed: true
   id: CP14_EN_BasicAlchemy
   name: cp14-guide-entry-basic-alchemy
   text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/BasicAlchemy.xml"
   filterEnabled: True
 
 - type: guideEntry
+  crystallPunkAllowed: true
   id: CP14_EN_Biological
   name: cp14-guide-entry-biological
   text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Biological.xml"
