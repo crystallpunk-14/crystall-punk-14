@@ -52,8 +52,6 @@
   - type: CP14Fireplace
     currentFuel: 100
     fuelDrainingPerUpdate: 0
-  - type: Flammable
-    onFire: true
 
 - type: entity
   id: CP14AlchemyFurnace
@@ -104,12 +102,12 @@
         - MidImpassable
         - LowImpassable
         hard: false
-      #fix2:
-      #  shape:
-      #    !type:PhysShapeAabb
-      #    bounds: "-0.45,-0.45,0.45,0.45"
-      #  density: 55
-      #  mask:
-      #  - TableMask
-      #  layer:
-      #  - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
