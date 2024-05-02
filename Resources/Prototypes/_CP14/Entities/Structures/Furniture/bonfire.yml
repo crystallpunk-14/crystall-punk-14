@@ -36,10 +36,6 @@
   - type: FireVisuals
     sprite: _CP14/Structures/Furniture/bonfire.rsi
     normalState: burning
-
-- type: entity
-  id: CP14Stick
-  parent: CP14Bucket
-  name: Stick!!!
-  components:
-  - type: CP14FireplaceFuel
+  - type: Storage
+    grid:
+    - 0,0,2,1

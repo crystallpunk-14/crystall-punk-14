@@ -1,1 +1,0 @@
-cp14-fireplace-full = There's no more room in {$target}!
