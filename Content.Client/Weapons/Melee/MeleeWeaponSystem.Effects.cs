@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client.Animations;
 using Content.Client.Weapons.Melee.Components;
 using Content.Shared.Weapons.Melee;
 using Robust.Client.Animations;
@@ -61,45 +62,48 @@ public sealed partial class MeleeWeaponSystem
             length = meleeWeaponComponent.CPAnimationLength; //CrystallPunk Melee upgrade
             offset = meleeWeaponComponent.CPAnimationOffset; //CrystallPunk Melee upgrade
         }
-        sprite.NoRotation = true;
         sprite.Rotation = localPos.ToWorldAngle();
         var distance = Math.Clamp(localPos.Length() / 2f, 0.2f, 1f);
 
         var xform = _xformQuery.GetComponent(animationUid);
+        TrackUserComponent track;
 
         switch (arcComponent.Animation)
         {
             case WeaponArcAnimation.Slash:
+                track = EnsureComp<TrackUserComponent>(animationUid);
+                track.User = user;
                 _animation.Play(animationUid, GetSlashAnimation(sprite, angle, spriteRotation), SlashAnimationKey);
-                TransformSystem.SetParent(animationUid, xform, user, userXform);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, 0.065f, 0.065f + 0.05f), FadeAnimationKey);
                 break;
             case WeaponArcAnimation.Thrust:
+                track = EnsureComp<TrackUserComponent>(animationUid);
+                track.User = user;
                 _animation.Play(animationUid, GetThrustAnimation(sprite, distance, spriteRotation), ThrustAnimationKey);
-                TransformSystem.SetParent(animationUid, xform, user, userXform);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, 0.05f, 0.15f), FadeAnimationKey);
                 break;
             case WeaponArcAnimation.None:
                 var (mapPos, mapRot) = TransformSystem.GetWorldPositionRotation(userXform);
-                TransformSystem.AttachToGridOrMap(animationUid, xform);
                 var worldPos = mapPos + (mapRot - userXform.LocalRotation).RotateVec(localPos);
                 var newLocalPos = TransformSystem.GetInvWorldMatrix(xform.ParentUid).Transform(worldPos);
-                TransformSystem.SetLocalPositionNoLerp(xform, newLocalPos);
+                TransformSystem.SetLocalPositionNoLerp(animationUid, newLocalPos, xform);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, 0f, 0.15f), FadeAnimationKey);
                 break;
             //CrystallPunk MeleeUpgrade
             case WeaponArcAnimation.CPSlash:
+                track = EnsureComp<TrackUserComponent>(animationUid);
+                track.User = user;
                 _animation.Play(animationUid, CPGetSlashAnimation(sprite, angle, spriteRotation, length, offset), SlashAnimationKey);
-                TransformSystem.SetParent(animationUid, xform, user, userXform);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, length * 0.5f, length + 0.15f), FadeAnimationKey);
                 break;
             case WeaponArcAnimation.CPThrust:
+                track = EnsureComp<TrackUserComponent>(animationUid);
+                track.User = user;
                 _animation.Play(animationUid, CPGetThrustAnimation(sprite, -offset, spriteRotation, length), ThrustAnimationKey);
-                TransformSystem.SetParent(animationUid, xform, user, userXform);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, 0f, 0.15f), FadeAnimationKey);
                 break;
@@ -118,7 +122,6 @@ public sealed partial class MeleeWeaponSystem
         var endRotationOffset = endRotation.RotateVec(new Vector2(0f, -1f));
         startRotation += spriteRotation;
         endRotation += spriteRotation;
-        sprite.NoRotation = true;
 
         return new Animation()
         {
@@ -218,13 +221,36 @@ public sealed partial class MeleeWeaponSystem
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f), //CrystallPunk MeleeUpgrade 
+                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f), //CrystallPunk MeleeUpgrade
                         new AnimationTrackProperty.KeyFrame(direction.Normalized() * 0.15f, length*0.4f), //CrystallPunk MeleeUpgrade
                         new AnimationTrackProperty.KeyFrame(Vector2.Zero, length*0.8f) //CrystallPunk MeleeUpgrade
                     }
                 }
             }
         };
+    }
+
+    /// <summary>
+    /// Updates the effect positions to follow the user
+    /// </summary>
+    private void UpdateEffects()
+    {
+        var query = EntityQueryEnumerator<TrackUserComponent, TransformComponent>();
+        while (query.MoveNext(out var arcComponent, out var xform))
+        {
+            if (arcComponent.User == null)
+                continue;
+
+            Vector2 targetPos = TransformSystem.GetWorldPosition(arcComponent.User.Value);
+
+            if (arcComponent.Offset != Vector2.Zero)
+            {
+                var entRotation = TransformSystem.GetWorldRotation(xform);
+                targetPos += entRotation.RotateVec(arcComponent.Offset);
+            }
+
+            TransformSystem.SetWorldPosition(xform, targetPos);
+        }
     }
 
     //CrystallPunk MeleeUpgrade start
