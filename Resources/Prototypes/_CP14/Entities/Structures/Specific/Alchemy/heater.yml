@@ -104,12 +104,12 @@
         - MidImpassable
         - LowImpassable
         hard: false
-      fix2:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-        density: 55
-        mask:
-        - TableMask
-        layer:
-        - TableLayer
+      #fix2:
+      #  shape:
+      #    !type:PhysShapeAabb
+      #    bounds: "-0.45,-0.45,0.45,0.45"
+      #  density: 55
+      #  mask:
+      #  - TableMask
+      #  layer:
+      #  - TableLayer
