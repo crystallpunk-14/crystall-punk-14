@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseStructure
-  id: BaseFenceWood
+  id: CP14BaseFenceWood
   name: wooden fence
   description: Wooden piece of fencing. I hope there is babushka's garden behind it.
   abstract: true
@@ -10,12 +10,9 @@
       Brute:
         path:
           "/Audio/Weapons/boxingpunch1.ogg"
-  - type: Tag
-    tags:
-    - Wooden
   - type: Sprite
-    sprite: Structures/Walls/wooden_fence.rsi
-    drawdepth: WallTops
+    sprite: _CP14/Structures/Walls/wooden_fence.rsi
+    drawdepth: Mobs
   - type: Physics
     bodyType: Static
   - type: Transform
@@ -23,10 +20,6 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
-  - type: RCDDeconstructable
-    cost: 2
-    delay: 2
-    fx: EffectRCDDeconstruct2
   - type: Destructible
     thresholds:
     - trigger:
@@ -48,8 +41,8 @@
   - type: Appearance
 
 - type: entity
-  parent: BaseFenceWood
-  id: BaseFenceWoodSmall
+  parent: CP14BaseFenceWood
+  id: CP14BaseFenceWoodSmall
   name: small wooden fence
   description: Wooden piece of small fence. The best protection for the fencing of a private territory!
   abstract: true
@@ -73,16 +66,14 @@
   - type: Climbable
     delay: 2.5
 
-
-#High
+# High
 - type: entity
-  parent: BaseFenceWood
-  noSpawn: true
-  id: FenceWoodHighStraight
+  parent: CP14BaseFenceWood
+  id: CP14FenceWoodHighStraight
   suffix: Straight
   components:
   - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
+    sprite: _CP14/Structures/Walls/wooden_fence.rsi
     state: straight
   - type: Sprite
     layers:
@@ -99,46 +90,14 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: straight
 
 - type: entity
-  parent: BaseFenceWood
-  noSpawn: true
-  id: FenceWoodHighEnd
-  suffix: End
-  components:
-  - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
-    state: end
-  - type: Sprite
-    layers:
-    - state: end
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.5,0.1,0.0"
-        density: 1000
-        mask:
-        - FullTileMask
-        layer:
-        - MidImpassable
-        - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: end
-
-- type: entity
-  parent: BaseFenceWood
-  noSpawn: true
-  id: FenceWoodHighCorner
+  parent: CP14BaseFenceWood
+  id: CP14FenceWoodHighCorner
   suffix: Corner
   components:
   - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
+    sprite: _CP14/Structures/Walls/wooden_fence.rsi
     state: corner
   - type: Sprite
     layers:
@@ -164,18 +123,14 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: corner
 
 - type: entity
-  parent: BaseFenceWood
-  noSpawn: true
-  id: FenceWoodHighTJunction
+  parent: CP14BaseFenceWood
+  id: CP14FenceWoodHighTJunction
   suffix: T-Junction
   components:
   - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
+    sprite: _CP14/Structures/Walls/wooden_fence.rsi
     state: tjunction
   - type: Sprite
     layers:
@@ -201,14 +156,10 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: tjunction
 
 - type: entity
-  parent: BaseFenceWood
-  noSpawn: true
-  id: FenceWoodHighGate
+  parent: CP14BaseFenceWood
+  id: CP14FenceWoodHighGate
   name: wooden fence gate
   description: Do you have any idea what awaits you behind these gates? It can be either a toilet or a luxurious mansion. But you continue to love your emo boys.
   components:
@@ -248,19 +199,15 @@
       path: /Audio/Effects/door_open.ogg
     closeSound:
       path: /Audio/Effects/door_close.ogg
-  - type: Construction
-    graph: FenceWood
-    node: gate
 
 #Small
 - type: entity
-  parent: BaseFenceWoodSmall
-  noSpawn: true
-  id: FenceWoodSmallStraight
+  parent: CP14BaseFenceWoodSmall
+  id: CP14FenceWoodSmallStraight
   suffix: Straight
   components:
   - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
+    sprite: _CP14/Structures/Walls/wooden_fence.rsi
     state: straight_small
   - type: Sprite
     layers:
@@ -277,46 +224,14 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: straight_small
 
 - type: entity
-  parent: BaseFenceWoodSmall
-  noSpawn: true
-  id: FenceWoodSmallEnd
-  suffix: End
-  components:
-  - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
-    state: end_small
-  - type: Sprite
-    layers:
-    - state: end_small
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.1,-0.5,0.1,0.0"
-        density: 1000
-        mask:
-        - FullTileMask
-        layer:
-        - MidImpassable
-        - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: end_small
-
-- type: entity
-  parent: BaseFenceWoodSmall
-  noSpawn: true
-  id: FenceWoodSmallCorner
+  parent: CP14BaseFenceWoodSmall
+  id: CP14FenceWoodSmallCorner
   suffix: Corner
   components:
   - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
+    sprite: _CP14/Structures/Walls/wooden_fence.rsi
     state: corner_small
   - type: Sprite
     layers:
@@ -342,18 +257,14 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: corner_small
 
 - type: entity
-  parent: BaseFenceWoodSmall
-  noSpawn: true
-  id: FenceWoodSmallTJunction
+  parent: CP14BaseFenceWoodSmall
+  id: CP14FenceWoodSmallTJunction
   suffix: T-Junction
   components:
   - type: Icon
-    sprite: Structures/Walls/wooden_fence.rsi
+    sprite: _CP14/Structures/Walls/wooden_fence.rsi
     state: tjunction_small
   - type: Sprite
     layers:
@@ -379,14 +290,10 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Construction
-    graph: FenceWood
-    node: tjunction_small
 
 - type: entity
-  parent: BaseFenceWoodSmall
-  noSpawn: true
-  id: FenceWoodSmallGate
+  parent: CP14BaseFenceWoodSmall
+  id: CP14FenceWoodSmallGate
   name: wooden fence gate
   description: Looking at this gate, a familiar image pops up in your head. Where's my piggy?
   components:
@@ -426,6 +333,3 @@
       path: /Audio/Effects/door_open.ogg
     closeSound:
       path: /Audio/Effects/door_close.ogg
-  - type: Construction
-    graph: FenceWood
-    node: gate_small
