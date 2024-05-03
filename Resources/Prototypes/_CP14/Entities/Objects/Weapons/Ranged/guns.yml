@@ -18,4 +18,4 @@
     whitelist:
       tags:
         - SpeedLoaderRifle
-    proto: CartridgeRifle
+    proto: CartridgeRifle # TODO custom projectiles
