@@ -1,7 +1,0 @@
-- type: magicSpell
-  id: sourcePointRandomMob
-  action:
-    !type:MagicSpellSourcePointRandomMob
-      range: 5
-      baseCost: 25
-

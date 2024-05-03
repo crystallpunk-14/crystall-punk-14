@@ -1,0 +1,13 @@
+- type: CPMagicEffect
+  id: CPPointLight
+  components:
+    - type: PointLight
+      radius: 10
+      energy: 10
+      color: "#ffffff"
+
+- type: CPMagicEffect
+  id: CPPaintPointLightRed
+  components:
+    - type: PointLight
+      color: "#ff0000"

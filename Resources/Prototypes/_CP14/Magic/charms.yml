@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseItem
+  id: CPBaseMagicCharm
+  name: charm
+  description: The simplest storage for your spell
+  components:
+    - type: CPMagicSpellContainer
+      effects:
+        - CPPointLight
+        - CPPaintPointLightRed
