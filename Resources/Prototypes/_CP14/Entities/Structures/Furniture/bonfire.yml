@@ -9,9 +9,9 @@
     sprite: _CP14/Structures/Furniture/bonfire.rsi
     layers:
       - state: base
-      - state: full1
+      - state: full-1
         visible: false
-        map: ["fuel"]
+      - map: ["enum.StorageFillLayers.Fill"]
   - type: Construction
     graph: CP14Bonfire
     node: CP14Bonfire
@@ -26,13 +26,9 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: GenericVisualizer
-    visuals:
-      enum.FireplaceFuelVisuals.Status:
-        fuel:
-          Empty: { visible: false }
-          Medium: { visible: true, state: full1 }
-          Full: { visible: true, state: full2 }
+  - type: StorageFillVisualizer
+    maxFillLevels: 2
+    fillBaseName: full
   - type: FireVisuals
     sprite: _CP14/Structures/Furniture/bonfire.rsi
     normalState: burning
