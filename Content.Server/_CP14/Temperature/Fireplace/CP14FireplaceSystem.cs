@@ -5,6 +5,7 @@ using Content.Shared._CP14.Temperature;
 using Content.Shared.Interaction;
 using Content.Shared.Throwing;
 using Robust.Server.Audio;
+using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
@@ -15,6 +16,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
@@ -24,9 +26,6 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14FireplaceComponent, OnFireChangedEvent>(OnFireChanged);
-
-        SubscribeLocalEvent<CP14FireplaceComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<CP14FireplaceComponent, StartCollideEvent>(OnCollide);
     }
 
     private void OnFireChanged(Entity<CP14FireplaceComponent> fireplace, ref OnFireChangedEvent args)
@@ -38,47 +37,37 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             flammable.FirestackFade = 0;
     }
 
-    private void OnInteractUsing(Entity<CP14FireplaceComponent> fireplace, ref InteractUsingEvent args)
+    private bool TryFoundFuelInStorage(Entity<CP14FireplaceComponent> fireplace, out Entity<FlammableComponent>? fuel)
     {
-        if (!fireplace.Comp.CanInsertByHand)
-            return;
+        fuel = null;
+        var container = _containerSystem.GetContainer(fireplace, fireplace.Comp.ContainerId);
 
-        if (!TryComp<CP14FireplaceFuelComponent>(args.Used, out var fuel))
-            return;
-
-        TryInsertFuel(fireplace, args.Used, fuel);
-    }
-
-    private void OnCollide(Entity<CP14FireplaceComponent> fireplace, ref StartCollideEvent args)
-    {
-        if (!fireplace.Comp.CanInsertByCollide)
-            return;
-
-        if (!TryComp<CP14FireplaceFuelComponent>(args.OtherEntity, out var fuel))
-            return;
-
-        TryInsertFuel(fireplace, args.OtherEntity, fuel);
-    }
-
-    private bool TryInsertFuel(Entity<CP14FireplaceComponent> fireplace, EntityUid fuelUid, CP14FireplaceFuelComponent fuel)
-    {
-        if (fireplace.Comp.CurrentFuel > fireplace.Comp.MaxFuelLimit)
-        {
-            _popupSystem.PopupEntity(Loc.GetString("cp14-fireplace-full", ("target", fireplace)), fireplace);
+        if (container.ContainedEntities.Count == 0)
             return false;
+
+        foreach (var ent in container.ContainedEntities)
+        {
+            if (!TryComp<FlammableComponent>(ent, out var flammable))
+                continue;
+
+            fuel = new Entity<FlammableComponent>(ent, flammable);
+            return true;
         }
 
-        if (!TryComp<FlammableComponent>(fireplace, out var flammable))
-            return false;
+        return false;
+    }
 
-        fireplace.Comp.CurrentFuel += fuel.Fuel;
+    private void ConsumeFuel(EntityUid uid, CP14FireplaceComponent component, Entity<FlammableComponent> fuel)
+    {
+        if (!TryComp<FlammableComponent>(uid, out var flammable))
+            return;
+
+        component.CurrentFuel += fuel.Comp.CP14FireplaceFuel;
 
         if (flammable.OnFire)
-            _audio.PlayPvs(fuel.InsertFuelSound, fireplace);
+            _audio.PlayPvs(component.InsertFuelSound, uid);
 
-        UpdateAppearance(fireplace, fireplace.Comp);
-        QueueDel(fuelUid);
-        return true;
+        QueueDel(fuel);
     }
 
     public override void Update(float frameTime)
@@ -104,6 +93,9 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             }
             else
             {
+                if (TryFoundFuelInStorage(new Entity<CP14FireplaceComponent>(uid, fireplace), out var fuel) && fuel != null)
+                    ConsumeFuel(uid, fireplace, fuel.Value);
+
                 flammable.FirestackFade = -fireplace.FireFadeDelta;
             }
         }

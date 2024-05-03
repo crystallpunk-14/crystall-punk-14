@@ -77,5 +77,11 @@ namespace Content.Server.Atmos.Components
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float FirestackFade = -0.1f;
+
+        /// <summary>
+        /// CrystallPunk fireplace fuel
+        /// </summary>
+        [DataField]
+        public float CP14FireplaceFuel = 10f;
     }
 }

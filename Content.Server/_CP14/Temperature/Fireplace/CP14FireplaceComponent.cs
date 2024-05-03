@@ -1,3 +1,5 @@
+using Robust.Shared.Audio;
+
 namespace Content.Server._CP14.Temperature.Fireplace;
 
 /// <summary>
@@ -7,6 +9,9 @@ namespace Content.Server._CP14.Temperature.Fireplace;
 [RegisterComponent, Access(typeof(CP14FireplaceSystem))]
 public sealed partial class CP14FireplaceComponent : Component
 {
+    [DataField]
+    public string ContainerId = "storagebase";
+
     /// <summary>
     /// The abstract amount of fuel that is used to keep a fire burning
     /// </summary>
@@ -23,7 +28,7 @@ public sealed partial class CP14FireplaceComponent : Component
     /// current fuel quantity
     /// </summary>
     [DataField]
-    public float CurrentFuel;
+    public float CurrentFuel = 10f;
 
     /// <summary>
     /// how much fuel is wasted every "UpdateFrequency"
@@ -34,18 +39,9 @@ public sealed partial class CP14FireplaceComponent : Component
     [DataField]
     public TimeSpan UpdateFrequency = TimeSpan.FromSeconds(2f);
 
-    /// <summary>
-    /// whether fuel can be added by hand
-    /// </summary>
-    [DataField]
-    public bool CanInsertByHand = true;
-
-    /// <summary>
-    /// whether the fuel can be supplied by contact
-    /// </summary>
-    [DataField]
-    public bool CanInsertByCollide = false;
-
     [DataField]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
+
+    [DataField]
+    public SoundSpecifier InsertFuelSound = new SoundPathSpecifier("/Audio/_CP14/Items/campfire_whoosh.ogg");
 }

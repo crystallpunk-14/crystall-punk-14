@@ -56,7 +56,6 @@
   - type: CP14Fireplace
     maxFuelLimit: 150
     currentFuel: 150
-    canInsertByHand: false
   - type: FireVisuals
     sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
     normalState: fire
