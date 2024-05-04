@@ -1,0 +1,106 @@
+- type: tile
+  id: CP14Floorfoundation
+  name: cp14-tiles-foundation
+  sprite: /Textures/_CP14/Tiles/foundation.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: CP14FloorWoodPlanks
+  name: cp14-tiles-woodplanks
+  sprite: /Textures/_CP14/Tiles/woodplanks.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14Floorfundament
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: CP14FloorWoodPlanks
+  name: cp14-tiles-woodplanks-big
+  sprite: /Textures/_CP14/Tiles/woodplanks_big.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14Floorfundament
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: CP14FloorStonebricks
+  name: cp14-tiles-stonebricks
+  sprite: /Textures/_CP14/Tiles/stonebricks.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  baseTurf: CP14Floorfundament
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: CP14FloorStonebricksSmallCarved1
+  name: cp14-tiles-stonebricks-small-carved1
+  sprite: /Textures/_CP14/Tiles/stonebricks_small_carved_1.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  baseTurf: CP14Floorfundament
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: CP14FloorStonebricksSmallCarved2
+  name: cp14-tiles-stonebricks-small-carved2
+  sprite: /Textures/_CP14/Tiles/stonebricks_small_carved_2.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  baseTurf: CP14Floorfundament
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  id: CP14FloorStonebricksSquareCarved
+  name: cp14-tiles-stonebricks-square-carved
+  sprite: /Textures/_CP14/Tiles/stonebricks_square_carved.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  baseTurf: CP14Floorfundament
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: false
