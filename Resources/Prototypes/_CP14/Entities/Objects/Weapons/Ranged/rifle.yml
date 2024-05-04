@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseWeaponSniper
-  id: CPBaseWeaponRifle
+  id: CP14BaseWeaponRifle
   abstract: true
   components:
   - type: Item
@@ -21,16 +21,16 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - CPCartridgeBulletRifle
+      - CP14CartridgeBulletRifle
     capacity: 1
-    proto: CPCartridgeBulletRifle
+    proto: CP14CartridgeBulletRifle
   - type: UseDelay
     delay: 2
 
 - type: entity
   name: crush
-  parent: CPBaseWeaponRifle
-  id: CPWeaponRifleCrush
+  parent: CP14BaseWeaponRifle
+  id: CP14WeaponRifleCrush
   description: Lightweight, expensive, and not an easy rifle to use. 
   components:
   - type: Sprite
@@ -44,8 +44,8 @@
 
 - type: entity
   name: durandal
-  parent: CPBaseWeaponRifle
-  id: CPWeaponRifleDurandal
+  parent: CP14BaseWeaponRifle
+  id: CP14WeaponRifleDurandal
   description: A medium sized, expensive and not user friendly rifle.  
   components:
   - type: Sprite
@@ -59,8 +59,8 @@
 
 - type: entity
   name: lebel
-  parent: CPBaseWeaponRifle
-  id: CPWeaponRifleLebel
+  parent: CP14BaseWeaponRifle
+  id: CP14WeaponRifleLebel
   description: Heavy, expensive and not a comfortable rifle to use. 
   components:
   - type: Sprite
