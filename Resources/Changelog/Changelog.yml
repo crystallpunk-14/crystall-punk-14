@@ -1,84 +1,4 @@
 ﻿Entries:
-- author: metalgearsloth
-  changes:
-  - message: Remove executions pending code rewrite.
-    type: Remove
-  id: 6017
-  time: '2024-02-25T11:36:17.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25555
-- author: Krunk
-  changes:
-  - message: Candy bowls function properly again!
-    type: Fix
-  id: 6018
-  time: '2024-02-25T13:08:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25514
-- author: Whisper
-  changes:
-  - message: Added juice that makes you Weh! Juice a lizard plushie today!
-    type: Add
-  id: 6019
-  time: '2024-02-25T13:54:07.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25132
-- author: wafehling
-  changes:
-  - message: Secret mode has become more secret, with the 4th option Survival added
-      to the rotation.
-    type: Tweak
-  id: 6020
-  time: '2024-02-25T21:15:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25568
-- author: Tayrtahn
-  changes:
-  - message: Added a live preview display to reagent dispensers.
-    type: Add
-  id: 6021
-  time: '2024-02-25T23:03:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25391
-- author: Krunk
-  changes:
-  - message: Fixed grid inventory occasionally messing with your item rotation.
-    type: Fix
-  id: 6022
-  time: '2024-02-25T23:24:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25510
-- author: Ubaser
-  changes:
-  - message: Satchels no longer have darkened space representing a gap, and is instead
-      transparent.
-    type: Tweak
-  id: 6023
-  time: '2024-02-25T23:24:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25147
-- author: TheShuEd
-  changes:
-  - message: Huge flora anomaly nerf
-    type: Tweak
-  id: 6024
-  time: '2024-02-25T23:41:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25499
-- author: OctoRocket
-  changes:
-  - message: Removed the hands requirement to read paper.
-    type: Tweak
-  id: 6025
-  time: '2024-02-26T02:40:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25580
-- author: SlamBamActionman
-  changes:
-  - message: Self-uncuff damage has been removed, but attempting to self-uncuff now
-      has a cooldown instead.
-    type: Tweak
-  id: 6026
-  time: '2024-02-26T02:41:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25161
-- author: deltanedas
-  changes:
-  - message: Traitors can now be asked to steal the CMO's Handheld Crew Monitor.
-    type: Tweak
-  id: 6027
-  time: '2024-02-26T03:40:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/25563
 - author: MACMAN2003
   changes:
   - message: You can now make LED light tubes and LED light bulbs at an autolathe.
@@ -3860,3 +3780,97 @@
   id: 6516
   time: '2024-05-02T17:09:38.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/27628
+- author: ElectroJr
+  changes:
+  - message: Fixed various interactions not prioritizing opening a UI. No more trying
+      to eat mission critical faxes.
+    type: Fix
+  id: 6517
+  time: '2024-05-02T23:37:21.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27631
+- author: Plykiya
+  changes:
+  - message: Blast grenades have had their manufacturing cost tripled.
+    type: Tweak
+  - message: Blast grenades are now part of the Basic Shuttle Armament research and
+      can be printed at the secfab.
+    type: Tweak
+  id: 6518
+  time: '2024-05-03T00:03:52.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27580
+- author: Vasilis, Dutch-VanDerLinde
+  changes:
+  - message: A new event has been added, syndicate sleeper agents, which raises the
+      alert level and selects 1-2 players to be traitors rarely throughout the round.
+    type: Add
+  id: 6519
+  time: '2024-05-03T00:13:35.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27501
+- author: Errant
+  changes:
+  - message: Space Ninjas now automatically turn their internals on when they spawn.
+    type: Tweak
+  id: 6520
+  time: '2024-05-03T01:24:22.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/25083
+- author: Hanzdegloker
+  changes:
+  - message: Added 6 new energy drink based mixed drinks.
+    type: Add
+  - message: Added Red Bool energy drink back to the soda dispenser and gave it a
+      new canned sprite.
+    type: Add
+  id: 6521
+  time: '2024-05-03T06:57:37.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27597
+- author: DuskyJay
+  changes:
+  - message: Allowed EMP implants to be used while stunned or cuffed.
+    type: Tweak
+  id: 6522
+  time: '2024-05-03T07:51:33.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27644
+- author: Just-a-Unity-Dev
+  changes:
+  - message: Fixed Geras not having their speed buff.
+    type: Fix
+  - message: Geras are no longer immune to other AI mobs.
+    type: Fix
+  - message: Slimes can no longer morph into a Geras when zombified.
+    type: Fix
+  - message: Lowered the Geras death threshold.
+    type: Tweak
+  id: 6523
+  time: '2024-05-03T17:26:09.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27308
+- author: nikthechampiongr
+  changes:
+  - message: Ninjas will no longer be pointed to random wreckage in space.
+    type: Fix
+  id: 6524
+  time: '2024-05-03T20:23:43.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27552
+- author: Dutch-VanDerLinde
+  changes:
+  - message: Fixed nuclear operatives, zombies, and head revolutionary round end summaries
+      not showing.
+    type: Fix
+  id: 6525
+  time: '2024-05-04T00:03:52.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27654
+- author: TheShuEd
+  changes:
+  - message: Added Train station!
+    type: Add
+  id: 6526
+  time: '2024-05-04T11:10:08.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27534
+- author: TheShuEd
+  changes:
+  - message: "Added Pathological Liar trait accent. The accent has a 15% chance of\
+      \ inverting your message to the opposite. Replacing \u201CYes\u201D with \u201C\
+      No\u201D, \u201CCan\u201D with \u201Ccan't\u201D and so on."
+    type: Add
+  id: 6527
+  time: '2024-05-04T11:11:46.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/27618
