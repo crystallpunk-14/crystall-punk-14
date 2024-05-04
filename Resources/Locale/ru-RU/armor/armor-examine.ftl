@@ -7,12 +7,13 @@ armor-reduction-value = - [color=yellow]{ $type }[/color] урон снижае�
 armor-damage-type-blunt = Ударный
 armor-damage-type-slash = Режущий
 armor-damage-type-piercing = Колющий
-armor-damage-type-heat = Огненный
+armor-damage-type-heat = Высокотемпературный
+armor-damage-type-radiation = Радиационный
 armor-damage-type-caustic = Кислотный
 armor-damage-type-bloodloss = От кровопотери
 armor-damage-type-asphyxiation = От удушения
 armor-damage-type-cellular = Клеточный
-armor-damage-type-cold = Ледяной
+armor-damage-type-cold = Низкотемпературный
 armor-damage-type-poison = Ядовитый
 armor-damage-type-shock = Электрический
-armor-damage-type-structural = Некротический
+armor-damage-type-structural = Структурный
