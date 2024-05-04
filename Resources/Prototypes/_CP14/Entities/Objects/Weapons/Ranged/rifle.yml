@@ -1,0 +1,73 @@
+- type: entity
+  parent: BaseWeaponSniper
+  id: CPBaseWeaponRifle
+  abstract: true
+  components:
+  - type: Item
+    size: Huge
+  - type: Wieldable
+  - type: AmmoCounter
+  - type: GunWieldBonus
+    minAngle: -30
+    maxAngle: -30
+  - type: Gun
+    selectedMode: SemiAuto
+    angleDecay: 32
+    minAngle: 31
+    maxAngle: 32
+    availableModes:
+    - SemiAuto
+  - type: UseDelayOnShoot
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CPCartridgeBulletRifle
+    capacity: 1
+    proto: CPCartridgeBulletRifle
+  - type: UseDelay
+    delay: 2
+
+- type: entity
+  name: crush
+  parent: CPBaseWeaponRifle
+  id: CPWeaponRifleCrush
+  description: Lightweight, expensive, and not an easy rifle to use. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Rifle/crush.rsi
+    state: base
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Ranged/Rifle/crush.rsi
+    quickEquip: false
+    slots:
+    - Back
+
+- type: entity
+  name: durandal
+  parent: CPBaseWeaponRifle
+  id: CPWeaponRifleDurandal
+  description: A medium sized, expensive and not user friendly rifle.  
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Rifle/durandal.rsi
+    state: base
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Ranged/Rifle/rifle.rsi
+    quickEquip: false
+    slots:
+    - Back
+
+- type: entity
+  name: lebel
+  parent: CPBaseWeaponRifle
+  id: CPWeaponRifleLebel
+  description: Heavy, expensive and not a comfortable rifle to use. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Rifle/lebel.rsi
+    state: base
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Ranged/Rifle/rifle.rsi
+    quickEquip: false
+    slots:
+    - Back

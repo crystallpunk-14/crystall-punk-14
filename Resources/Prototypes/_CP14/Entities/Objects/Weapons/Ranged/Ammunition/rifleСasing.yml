@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseCartridge
+  id: CPCartridgeBulletRifle
+  name: rifle cartridge 
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CPCartridgeBulletRifle
+  - type: CartridgeAmmo
+    proto: CPBulletRifle
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Ammunition/Casings/buckshot.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals

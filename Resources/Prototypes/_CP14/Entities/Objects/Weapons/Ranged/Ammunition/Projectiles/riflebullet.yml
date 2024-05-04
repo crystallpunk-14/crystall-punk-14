@@ -1,0 +1,13 @@
+- type: entity
+  noSpawn: true
+  parent: BaseBullet
+  id: CPBulletRifle
+  name: bullet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+        Structural: 10
+  - type: StaminaDamageOnCollide
+    damage: 20
