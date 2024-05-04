@@ -165,7 +165,7 @@
   components:
   - type: Sprite
     layers:
-    - state: end
+    - state: door_closed
       map: ["enum.DoorVisualLayers.Base"]
   - type: Fixtures
     fixtures:
@@ -299,7 +299,7 @@
   components:
   - type: Sprite
     layers:
-    - state: end_small
+    - state: door_closed_small
       map: ["enum.DoorVisualLayers.Base"]
   - type: Fixtures
     fixtures:
