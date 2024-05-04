@@ -13,8 +13,8 @@
         shader: unshaded
     noRot: true   
   - type: InteractionPopup
-    interactSuccessString: shiny
-    messagePerceivedByOthers: ding
+    interactSuccessString: popup-cp14crystal-ding
+    messagePerceivedByOthers: popup-cp14crystal-ding
     interactSuccessSound:
       collection: crystaldings
       params:
