@@ -1,5 +1,5 @@
 - type: entity
-  id: CPMobWanderingLight
+  id: CP14MobWanderingLight
   parent: [ BaseMob, MobCombat ]
   name: wandering light
   description: A haze-like ball of light that inspires hope and safety.
@@ -50,7 +50,7 @@
           - FlyingMobLayer
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: CPLightning
+    damageModifierSet: CP14Lightning
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -96,7 +96,7 @@
               collection: GlassBreak
 
 - type: damageModifierSet
-  id: CPLightning
+  id: CP14Lightning
   coefficients:
     Blunt: 0.7
     Slash: 0.7
