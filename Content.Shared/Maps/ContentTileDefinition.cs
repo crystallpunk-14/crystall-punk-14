@@ -117,10 +117,5 @@ namespace Content.Shared.Maps
         {
             TileId = id;
         }
-
-        /// <summary>
-        /// CrystallPunk tile filter. Used only for UI mapping menu
-        /// </summary>
-        [DataField] public bool CP14Allowed { get; private set; } = false;
     }
 }
