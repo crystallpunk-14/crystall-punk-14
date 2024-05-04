@@ -11,6 +11,7 @@
 #   - other produced tiles
 
 - type: tile
+  cP14Allowed: true
   id: CP14FloorBase
   name: cp14-tiles-base
   sprite: /Textures/_CP14/Tiles/cave.png
