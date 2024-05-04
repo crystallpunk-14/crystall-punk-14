@@ -8,7 +8,15 @@
   },
   "states": [
     {
-      "name": "tail1",
+      "name": "tail",
+      "directions": 4
+    },
+    {
+      "name": "tail_spades",
+      "directions": 4
+    },
+    {
+      "name": "tail_waggin",
       "directions": 4,
       "delays": [
         [
@@ -54,7 +62,7 @@
       ]
     },
     {
-      "name": "tail_spades",
+      "name": "tail_spades_waggin",
       "directions": 4,
       "delays": [
         [
