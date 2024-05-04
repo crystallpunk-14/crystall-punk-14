@@ -1,7 +1,7 @@
 - type: entity
   noSpawn: true
   parent: BaseBullet
-  id: CPBulletRifle
+  id: CP14BulletRifle
   name: bullet
   components:
   - type: Projectile

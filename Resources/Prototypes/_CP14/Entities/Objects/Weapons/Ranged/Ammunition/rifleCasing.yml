@@ -1,14 +1,14 @@
 - type: entity
   parent: BaseCartridge
-  id: CPCartridgeBulletRifle
+  id: CP14CartridgeBulletRifle
   name: rifle cartridge 
   components:
   - type: Tag
     tags:
     - Cartridge
-    - CPCartridgeBulletRifle
+    - CP14CartridgeBulletRifle
   - type: CartridgeAmmo
-    proto: CPBulletRifle
+    proto: CP14BulletRifle
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/Ammunition/Casings/buckshot.rsi
     layers:
