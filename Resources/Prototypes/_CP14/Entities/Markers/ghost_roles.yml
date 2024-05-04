@@ -1,0 +1,18 @@
+- type: entity
+  id: CP14SpawnPointGhostWanderingLight
+  name: ghost role spawn point
+  suffix: wandering light
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: CP14ghost-role-information-wandering-light-name
+    description: CP14ghost-role-information-wandering-light-description
+    rules: CP14ghost-role-information-wandering-light-rules
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobWanderingLight
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _CP14/Mobs/Monsters/firefly.rsi
+        state: wanderinglight
