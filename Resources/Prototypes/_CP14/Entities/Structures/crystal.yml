@@ -9,7 +9,6 @@
     offset: 0, 0.25
     layers:
       - state: big
-        map: ["random"]
         shader: unshaded
     noRot: true   
   - type: InteractionPopup
