@@ -32,8 +32,6 @@ ent-CP14Crossbolt = арбалетный болт
 ent-CP14WeaponRevolverNavy = револьвер "Марин"
     .desc = Увесистый капсюльный револьвер серии "Марин". В настоящее время револьверы серии "Марин" стоят баснословные деньги, и их могут позволить себе исключительно преуспевающие моряки и торговцы.
 
-ent-CP14CartridgeBulletRifle = винтовочный патрон
-
 ent-CP14WeaponRifleCrush = крушитель
     .desc = Легкая, дорогая и непростая в обращении винтовка.
 
@@ -42,6 +40,10 @@ ent-CP14WeaponRifleDurandal = дюрандаль
 
 ent-CP14WeaponRifleLebel = лебел
     .desc = Тяжелая, дорогая и не очень удобная в использовании винтовка.
+
+# Ammunition
+
+ent-CP14CartridgeBulletRifle = винтовочный патрон
 
 # Coins
 ent-CP14CopperCoin = медная корона
