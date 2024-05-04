@@ -1,5 +1,4 @@
 - type: tile
-  cP14Allowed: true
   id: CP14FloorFoundation
   name: cp14-tiles-foundation
   sprite: /Textures/_CP14/Tiles/foundation.png
@@ -17,7 +16,6 @@
   weather: false
 
 - type: tile
-  cP14Allowed: true
   id: CP14FloorWoodPlanks
   name: cp14-tiles-woodplanks
   sprite: /Textures/_CP14/Tiles/woodplanks.png
@@ -35,7 +33,6 @@
   weather: false
 
 - type: tile
-  cP14Allowed: true
   id: CP14FloorWoodPlanksBig
   name: cp14-tiles-woodplanks-big
   sprite: /Textures/_CP14/Tiles/woodplanks_big.png
@@ -53,7 +50,6 @@
   weather: false
 
 - type: tile
-  cP14Allowed: true
   id: CP14FloorStonebricks
   name: cp14-tiles-stonebricks
   sprite: /Textures/_CP14/Tiles/stonebricks.png
@@ -68,7 +64,6 @@
   weather: false
 
 - type: tile
-  cP14Allowed: true
   id: CP14FloorStonebricksSmallCarved1
   name: cp14-tiles-stonebricks-small-carved1
   sprite: /Textures/_CP14/Tiles/stonebricks_small_carved_1.png
@@ -83,7 +78,6 @@
   weather: false
 
 - type: tile
-  cP14Allowed: true
   id: CP14FloorStonebricksSmallCarved2
   name: cp14-tiles-stonebricks-small-carved2
   sprite: /Textures/_CP14/Tiles/stonebricks_small_carved_2.png
@@ -98,7 +92,6 @@
   weather: false
 
 - type: tile
-  cP14Allowed: true
   id: CP14FloorStonebricksSquareCarved
   name: cp14-tiles-stonebricks-square-carved
   sprite: /Textures/_CP14/Tiles/stonebricks_square_carved.png

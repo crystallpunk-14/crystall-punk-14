@@ -1,5 +1,4 @@
 - type: tile
-  cP14Allowed: true
   id: CP14FloorPlanetDirt
   name: cp14-tiles-dirt
   sprite: /Textures/_CP14/Tiles/cavedrought.png
@@ -29,7 +28,6 @@
   weather: true
 
 - type: tile
-  cP14Allowed: true
   id: CP14FloorPlanetGrass
   name: cp14-tiles-grass
   sprite: /Textures/Tiles/Planet/Grass/grass.png
