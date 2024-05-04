@@ -1,62 +1,6 @@
 - type: tile
-  id: CP14FloorPlanetGrass
-  name: cp-tiles-planet-grass
-  sprite: /Textures/Tiles/Planet/Grass/grass.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 1
-  edgeSprites:
-    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    South: /Textures/Tiles/Planet/Grass/double_edge.png
-    East: /Textures/Tiles/Planet/Grass/double_edge.png
-    North: /Textures/Tiles/Planet/Grass/double_edge.png
-    West: /Textures/Tiles/Planet/Grass/double_edge.png
-  baseTurf: CPFloorPlanetDirt
-  isSubfloor: true
-  footstepSounds:
-    collection: FootstepGrass
-  heatCapacity: 10000
-  weather: true
-  indestructible: true
-
-- type: tile
-  id: CP14FloorPlanetStone
-  name: cp-tiles-planet-stone
-  sprite: /Textures/_CP14/Tiles/cave.png
-  variants: 14
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: FloorPlanetGrass
-  isSubfloor: true
-  footstepSounds:
-    collection: FootstepAsteroid
-  heatCapacity: 10000
-  weather: true
-  indestructible: true
-
-- type: tile
-  id: CP14FloorPlanetDirt
-  name: cp-tiles-planet-dirt
+  id: CP14FloorDirt
+  name: cp14-tiles-dirt
   sprite: /Textures/_CP14/Tiles/cavedrought.png
   variants: 16
   placementVariants:
@@ -76,10 +20,36 @@
   - 1.0
   - 1.0
   - 1.0
-  baseTurf: FloorPlanetGrass
+  baseTurf: CP14FloorBase
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
-  indestructible: true
+
+- type: tile
+  id: CP14FloorGrass
+  name: cp14-tiles-grass
+  sprite: /Textures/Tiles/Planet/Grass/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
+    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
+    South: /Textures/Tiles/Planet/Grass/double_edge.png
+    East: /Textures/Tiles/Planet/Grass/double_edge.png
+    North: /Textures/Tiles/Planet/Grass/double_edge.png
+    West: /Textures/Tiles/Planet/Grass/double_edge.png
+  baseTurf: CP14FloorPlanetDirt
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true

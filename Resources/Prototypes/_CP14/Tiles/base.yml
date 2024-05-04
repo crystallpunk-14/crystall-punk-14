@@ -1,0 +1,39 @@
+# Tile structure:
+# Base indedstructable stone tile
+# - Dirt
+#   - Grass variants
+# - Gravel
+# - Sand
+# - other natural tiles
+# - Fundament
+#   - Wood planks
+#   - Stonebricks
+#   - other produced tiles
+
+- type: tile
+  id: CP14FloorBase
+  name: cp14-tiles-base
+  sprite: /Textures/_CP14/Tiles/cave.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase #Recursivle indestructible
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
