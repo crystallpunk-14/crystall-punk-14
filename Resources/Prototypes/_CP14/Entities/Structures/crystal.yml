@@ -56,12 +56,12 @@
   - type: PointLight
     radius: 2
     energy: 2
-  
 
 - type: entity
   id: CP14CrystalRubiesSmall
   parent: CP14CrystalBase
   name: sparkling rubies
+  suffix: Small
   description: wawa
   components:
   - type: PointLight
@@ -73,13 +73,12 @@
     layers:
      - state: small
     color: "#ff3d0b"
-    
-  
-    
+
 - type: entity
   id: CP14CrystalRubiesMedium
   parent: CP14CrystalBase
   name: sparkling rubies
+  suffix: Medium
   description: wawa
   components:
   - type: PointLight
@@ -91,12 +90,12 @@
     layers:
      - state: medium
     color: "#ff3d0b"  
-    
-   
+
 - type: entity
   id: CP14CrystalRubiesBig
   parent: CP14CrystalBase
   name: sparkling rubies
+  suffix: Big
   description: wawa
   components:
   - type: PointLight
@@ -108,12 +107,12 @@
     layers:
      - state: big
     color: "#ff3d0b"
-    
 
 - type: entity
   id: CP14CrystalTopazesSmall
   parent: CP14CrystalBase
   name: sparkling topazes
+  suffix: Small
   description: wawa
   components:
   - type: PointLight
@@ -125,12 +124,12 @@
     layers:
      - state: small
     color: "#ffe269"
-    
-    
+
 - type: entity
   id: CP14CrystalTopazesMedium
   parent: CP14CrystalBase
   name: sparkling topazes
+  suffix: Medium
   description: wawa
   components:
   - type: PointLight
@@ -142,13 +141,13 @@
     layers:
      - state: medium
     color: "#ffe269"  
-    
 
 - type: entity
   id: CP14CrystalTopazesBig
   parent: CP14CrystalBase
   name: sparkling topazes
   description: wawa
+  suffix: Big
   components:
   - type: PointLight
     color: "#ffe269"
@@ -159,12 +158,12 @@
     layers:
      - state: big
     color: "#ffe269"
-    
 
 - type: entity
   id: CP14CrystalEmeraldsSmall
   parent: CP14CrystalBase
   name: sparkling emeralds
+  suffix: Small
   description: wawa
   components:
   - type: PointLight
@@ -176,12 +175,12 @@
     layers:
      - state: small
     color: "#30be81"
-    
-    
+
 - type: entity
   id: CP14CrystalEmeraldsMedium
   parent: CP14CrystalBase
   name: sparkling emeralds
+  suffix: Medium
   description: wawa
   components:
   - type: PointLight
@@ -193,13 +192,13 @@
     layers:
      - state: medium
     color: "#30be81"  
-    
-    
+
 - type: entity
   id: CP14CrystalEmeraldsBig
   parent: CP14CrystalBase
   name: sparkling emeralds
   description: wawa
+  suffix: Big
   components:
   - type: PointLight
     color: "#30be81"
@@ -210,12 +209,12 @@
     layers:
      - state: big
     color: "#30be81"
-    
 
 - type: entity
   id: CP14CrystalSapphiresSmall
   parent: CP14CrystalBase
   name: sparkling sapphires
+  suffix: Small
   description: wawa
   components:
   - type: PointLight
@@ -227,12 +226,12 @@
     layers:
      - state: small
     color: "#5eabeb"
-    
 
 - type: entity
   id: CP14CrystalSapphiresMedium
   parent: CP14CrystalBase
   name: sparkling sapphires
+  suffix: Medium
   description: wawa
   components:
   - type: PointLight
@@ -244,12 +243,12 @@
     layers:
      - state: medium
     color: "#5eabeb"  
-    
-    
+
 - type: entity
   id: CP14CrystalSapphiresBig
   parent: CP14CrystalBase
   name: sparkling sapphires
+  suffix: Big
   description: wawa
   components:
   - type: PointLight
@@ -261,12 +260,12 @@
     layers:
      - state: big
     color: "#5eabeb"
-    
-    
+
 - type: entity
   id: CP14CrystalAmethystsSmall
   parent: CP14CrystalBase
   name: sparkling amethysts
+  suffix: Small
   description: wawa
   components:
   - type: PointLight
@@ -278,12 +277,12 @@
     layers:
      - state: small
     color: "#a878d1"
-    
 
 - type: entity
   id: CP14CrystalAmethystsMedium
   parent: CP14CrystalBase
   name: sparkling amethysts
+  suffix: Medium
   description: wawa
   components:
   - type: PointLight
@@ -294,13 +293,13 @@
     sprite: _CP14/Structures/crystal.rsi
     layers:
      - state: medium
-    color: "#a878d1"  
-    
+    color: "#a878d1"
 
 - type: entity
   id: CP14CrystalAmethystsBig
   parent: CP14CrystalBase
   name: sparkling amethysts
+  suffix: Big
   description: wawa
   components:
   - type: PointLight
@@ -312,13 +311,13 @@
     layers:
      - state: big
     color: "#a878d1"
-    
-    
+
 - type: entity
   id: CP14CrystalDiamondsSmall
   parent: CP14CrystalBase
   name: sparkling diamonds
   description: wawa
+  suffix: Small
   components:
   - type: PointLight
     color: "#f8f8f8"
@@ -329,12 +328,12 @@
     layers:
      - state: small
     color: "#f8f8f8"
-    
 
 - type: entity
   id: CP14CrystalDiamondsMedium
   parent: CP14CrystalBase
   name: sparkling diamonds
+  suffix: Medium
   description: wawa
   components:
   - type: PointLight
@@ -345,21 +344,19 @@
     sprite: _CP14/Structures/crystal.rsi
     layers:
      - state: medium
-    color: "#f8f8f8"  
-    
+    color: "#f8f8f8"
 
 - type: entity
   id: CP14CrystalDiamondsBig
   parent: CP14CrystalBase
   name: sparkling diamonds
+  suffix: Big
   description: wawa
   components:
   - type: PointLight
     color: "#f8f8f8"
-      
   - type: Sprite
     sprite: _CP14/Structures/crystal.rsi
     layers:
      - state: big
     color: "#f8f8f8"
-      
