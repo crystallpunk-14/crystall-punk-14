@@ -16,7 +16,7 @@
     interactSuccessString: popup-cp14crystal-ding
     messagePerceivedByOthers: popup-cp14crystal-ding
     interactSuccessSound:
-      collection: crystaldings
+      collection: CP14CrystalDings
       params:
         variation: 0.03
   - type: Physics
