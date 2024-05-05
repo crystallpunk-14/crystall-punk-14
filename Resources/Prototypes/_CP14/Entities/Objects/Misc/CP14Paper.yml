@@ -1,0 +1,7 @@
+- type: entity
+  id: CP14Paper
+  parent: Paper
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInBonfire
