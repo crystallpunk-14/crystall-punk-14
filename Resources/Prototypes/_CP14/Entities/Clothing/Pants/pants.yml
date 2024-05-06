@@ -1,0 +1,45 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingPantsBase
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - pants
+  - type: Sprite
+    state: icon
+    
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsHarlequinRed
+  name: red-and-yellow harlequin pants
+  description: Blood red on one side, sunny yellow on the other. The duality of life and death is always a good joke.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/harlequin.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/harlequin.rsi
+    
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsAristocratic
+  name: aristocrat's pants
+  description: Pants with enough quality fabric that you don't want to cave in them.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/aristocratic.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/aristocratic.rsi
+    
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsLoincloth
+  name: loincloth
+  description: Free, spacious, nothing gets in the way, and it also looks extremely rugged
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/loincloth.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/loincloth.rsi

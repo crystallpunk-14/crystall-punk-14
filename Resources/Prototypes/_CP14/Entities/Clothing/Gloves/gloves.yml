@@ -1,0 +1,26 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingGlovesBase
+  components:
+  - type: Clothing
+    equipDelay: 0.2
+    unequipDelay: 0.2
+    slots: 
+    - gloves
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Small
+    storedRotation: -90
+
+- type: entity
+  parent: CP14ClothingGlovesBase
+  id: CP14ClothingGlovesGirdles
+  name: iron girdles
+  description: Armored combat girdles.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Gloves/girdles.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Gloves/girdles.rsi

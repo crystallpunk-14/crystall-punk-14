@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by Jaraten",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "full"
+      },
+      {
+        "name": "liq0"
+      },
+      {
+        "name": "liq1"
+      },
+      {
+        "name": "liq2"
+      },
+      {
+        "name": "liq3"
+      },
+      {
+        "name": "liq4"
+      },
+      {
+        "name": "liq5"
+      },
+      {
+        "name": "liq6"
+      }
+    ]
+  }

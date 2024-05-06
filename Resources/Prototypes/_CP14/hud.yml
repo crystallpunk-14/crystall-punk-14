@@ -1,0 +1,5 @@
+- type: hudTheme
+  id: CP14DefaultTheme
+  name: ui-options-hud-theme-default
+  path: Default
+  order: -1

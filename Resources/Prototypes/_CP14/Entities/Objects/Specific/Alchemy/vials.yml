@@ -1,0 +1,152 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BaseVial
+  abstract: true
+  components:
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 1
+  - type: MixableSolution
+    solution: vial
+  - type: FitsInDispenser
+    solution: vial
+  - type: RefillableSolution
+    solution: vial
+  - type: DrainableSolution
+    solution: vial
+  - type: ExaminableSolution
+    solution: vial
+  - type: DrawableSolution
+    solution: vial
+  - type: InjectableSolution
+    solution: vial
+  - type: SolutionItemStatus
+    solution: vial
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Drink
+    solution: vial
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Injector
+    solutionName: vial
+    injectOnly: false
+    ignoreMobs: true
+    minTransferAmount: 1
+    maxTransferAmount: 10
+    transferAmount: 1
+    toggleState: 1 # draw
+
+- type: entity
+  parent: CP14BaseVial
+  id: CP14BaseVialFragile
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpillBehavior
+        solution: vial
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 10 # glass resistance set reduces damage. Need to land twice (w/o hitting wall)
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 2
+    damage:
+      types:
+        Blunt: 5
+
+- type: entity
+  id: CP14VialTiny
+  parent: CP14BaseVial
+  name: tiny vial
+  description: A sturdy glass vial to hold a tiny amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 5
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+
+- type: entity
+  id: CP14VialSmall
+  parent: CP14BaseVialFragile
+  name: small vial
+  description: A fragile glass vial to hold a small amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+
+
+# Filled
+
+- type: entity
+  id: CP14VialSmallVitalExtract
+  parent: CP14VialSmall
+  suffix: Vital extract
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14VitalExtract
+          Quantity: 10

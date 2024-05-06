@@ -1,0 +1,12 @@
+marking-CP14HumanHair80s = Shoulder Length
+marking-CP14HumanHairA = Short Haircut
+marking-CP14HumanHairAntenna = Unruly Strands
+marking-CP14HumanHairB = Boring Parting
+marking-CP14HumanHairBedhead = Bedhead
+marking-CP14HumanHairBedheadV2 = Bedhead 2
+marking-CP14HumanHairBeeHive = Aristocratic
+marking-CP14HumanHairBigBraid = Full Braid
+marking-CP14HumanHairBigDoubleBun = Double Bun
+marking-CP14HumanHumanHairBigPompadour = Bard
+marking-CP14HumanHumanHairCrazyBald = CrazyBald
+marking-CP14HumanHairBob = Bob

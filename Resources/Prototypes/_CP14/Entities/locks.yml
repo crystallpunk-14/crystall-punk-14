@@ -1,11 +1,11 @@
 - type: entity
   parent: BaseItem
   abstract: true
-  id: BaseLock
+  id: CP14BaseLock
   name: стальной замок
   description: Он запирает вещи. И вам потребуется ключ, чтобы открыть их обратно.
   components:
-  - type: CPLock
+  - type: CP14Lock
     lockPickDamageChance: 0.2
     autoGenerateShape: Debug
   - type: Sprite
@@ -14,9 +14,9 @@
     - state: lock
     
 - type: entity
-  parent: BaseLock
-  id: LockTavern
+  parent: CP14BaseLock
+  id: CP14LockTavern
   name: замок от таверны
   components:
-  - type: CPLock
+  - type: CP14Lock
     autoGenerateShape: Tavern

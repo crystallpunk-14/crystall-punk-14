@@ -14,7 +14,7 @@ namespace Content.Server.Audio;
 public sealed class ContentAudioSystem : SharedContentAudioSystem
 {
     [ValidatePrototypeId<SoundCollectionPrototype>]
-    private const string LobbyMusicCollection = "CPLobbyMusic";
+    private const string LobbyMusicCollection = "CP14LobbyMusic";
 
     [Dependency] private readonly AudioSystem _serverAudio = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;

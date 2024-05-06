@@ -1,0 +1,47 @@
+- type: entity
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobDwarf
+  name: Mr. Dwarf
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: CP14Dwarf
+  - type: Hunger
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Dwarf/parts.rsi
+    state: full
+  - type: Thirst
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodMeatHuman
+        amount: 5
+  - type: Body
+    prototype: CP14Dwarf
+    requiredLegs: 2
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      shoes:
+        layer:
+          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+          state: shoes
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      pants:
+        layer:
+          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+          state: pants
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobDwarfDummy
+  noSpawn: true
+  components:
+    - type: HumanoidAppearance
+      species: CP14Dwarf

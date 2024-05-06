@@ -1,11 +1,13 @@
 - type: entity
-  id: CPBaseThrowableSpear
+  id: CP14BaseThrowableSpear
   parent: 
   - BaseItem
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  name: метательное копье
-  description: Оружие, исправно выполняющее свой долг еще со времен эпохи драконов.
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  name:  throwing javelin
+  description: A weapon that has done its duty since the age of the giants.
   components:
   - type: Item
     storedRotation: 0
@@ -14,14 +16,13 @@
     sprite: _CP14/Objects/Weapons/Melee/ThrowableSpear/throwableSpear.rsi
     layers:
     - state: icon
-  - type: Sharp
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 0.8
     wideAnimationRotation: -115
-    wideAnimation: CPWeaponArcThrust
+    wideAnimation: CP14WeaponArcThrust
     damage:
       types:
-        Piercing: 24
+        Piercing: 19
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25

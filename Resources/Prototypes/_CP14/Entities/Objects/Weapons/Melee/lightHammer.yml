@@ -1,13 +1,14 @@
 - type: entity
-  id: CPBaseLightHammer
+  id: CP14BaseLightHammer
   parent: 
   - BaseItem
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
-  - CPBaseWeaponShort
-  name: легкий молот
-  description: Небольшое молоток. Хорош как для плотнических работ, так и для проламывания черепов.
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
+  - CP14BaseWeaponShort
+  name: light hammer
+  description: A small hammer. Good for carpentry work as well as for cracking skulls.
   components:
   - type: Item
     storedRotation: -45 
@@ -16,9 +17,9 @@
     layers:
     - state: icon
   - type: MeleeWeapon
-    attackRate: 1.5
+    attackRate: 1.2
     wideAnimationRotation: 225
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     cPAnimationLength: 0.18
     damage:
       types:

@@ -1,0 +1,39 @@
+- type: stack
+  id: CP14CopperCoin
+  name: copper crown
+  spawn: CP14CopperCoin1
+  icon: 
+    sprite: /Textures/_CP14/Objects/Economy/cp_coin.rsi
+    state: coin1
+  maxCount: 10
+  itemSize: 1
+
+- type: stack
+  id: CP14SilverCoin
+  name: silver sovereign 
+  spawn: CP14SilverCoin1
+  icon: 
+    sprite: /Textures/_CP14/Objects/Economy/sp_coin.rsi
+    state: coin1
+  maxCount: 10
+  itemSize: 1
+
+- type: stack
+  id: CP14GoldCoin
+  name: gold galifar
+  spawn: CP14GoldCoin1
+  icon: 
+    sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
+    state: coin1
+  maxCount: 10
+  itemSize: 1
+
+- type: stack
+  id: CP14PlatinumCoin
+  name: platinum dragon
+  spawn: CP14PlatinumCoin1
+  icon: 
+    sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
+    state: coin1
+  maxCount: 10
+  itemSize: 1

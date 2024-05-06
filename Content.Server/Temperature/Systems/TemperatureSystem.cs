@@ -122,8 +122,12 @@ public sealed class TemperatureSystem : EntitySystem
     public void ChangeHeat(EntityUid uid, float heatAmount, bool ignoreHeatResistance = false,
         TemperatureComponent? temperature = null)
     {
-        if (!Resolve(uid, ref temperature))
+        //CrystallPunk may try place on heater and entity, and solutions
+        //if (!Resolve(uid, ref temperature))
+        //    return;
+        if (temperature == null)
             return;
+        //CrystallPunk may try place on heater and entity, and solutions END
 
         if (!ignoreHeatResistance)
         {

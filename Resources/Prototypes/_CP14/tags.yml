@@ -3,3 +3,18 @@
 
 - type: Tag
   id: PreventLabel
+  
+- type: Tag
+  id: CP14Key
+
+- type: Tag
+  id: CP14Coin
+
+- type: Tag
+  id: CP14CrossbowBolt
+
+- type: Tag
+  id: CP14CartridgeBulletRifle
+
+- type: Tag
+  id: CP14FireplaceFuel

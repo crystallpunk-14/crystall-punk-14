@@ -39,10 +39,13 @@ public class GuideEntry
     ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.
     /// </summary>
     [DataField("priority")] public int Priority = 0;
+
+    [DataField]
+    public bool CrystallPunkAllowed = false;
 }
 
 [Prototype("guideEntry")]
-public sealed class GuideEntryPrototype : GuideEntry, IPrototype
+public sealed partial class GuideEntryPrototype : GuideEntry, IPrototype
 {
     public string ID => Id;
 }

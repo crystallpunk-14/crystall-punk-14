@@ -1,12 +1,14 @@
 - type: entity
-  id: CPBaseHandheldAxe
+  id: CP14BaseHandheldAxe
   parent: 
   - BaseItem
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
-  name: ручной топор
-  description: Небольшой, надежный топорик.
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
+  name: hand axe
+  description: A small axe, great for chopping wood or sinew.
   components:
   - type: Item
     size: Normal
@@ -14,16 +16,15 @@
     sprite: _CP14/Objects/Weapons/Melee/HandheldAxe/handheldAxe.rsi
     layers:
     - state: icon
-  - type: Sharp
   - type: MeleeWeapon
     attackRate: 1.4
     range: 1.2
     wideAnimationRotation: 225
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Slash: 10
-        Piercing: 5
+        Slash: 7
+        Piercing: 2
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
