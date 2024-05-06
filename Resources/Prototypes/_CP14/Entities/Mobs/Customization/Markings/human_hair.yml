@@ -93,3 +93,35 @@
   sprites:
     - sprite: _CP14/Mobs/Customization/human_hair.rsi
       state: doublebun
+      
+- type: marking
+  id: CP14HumanHairPonyTail7
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: ponytail7
+      
+- type: marking
+  id: CP14HumanHairVLongFringe
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: vlongfringe
+      
+- type: marking
+  id: CP14HumanHairVolaju
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: volaju
+      
+- type: marking
+  id: CP14HumanHairWisp
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: wisp
