@@ -1830,10 +1830,6 @@ entities:
     - type: Transform
       pos: 12.492137,-6.2514977
       parent: 2
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
     - type: ActiveUserInterface
 - proto: CP14BloodGrass
   entities:
