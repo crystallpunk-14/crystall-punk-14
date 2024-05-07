@@ -129,3 +129,6 @@
   - type: Storage
     grid:
     - 0,0,2,2
+    whitelist:
+      tags:
+      - CP14FireplaceFuel
