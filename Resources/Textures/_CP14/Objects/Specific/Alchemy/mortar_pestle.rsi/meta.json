@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by TheShuEd (Github) for CrystallPunk14",
+  "states": [
+    {
+      "name": "full"
+    },
+    {
+      "name": "liq-1"
+    },
+    {
+      "name": "liq-2"
+    },
+    {
+      "name": "liq-3"
+    },
+    {
+      "name": "liq-4"
+    },
+    {
+      "name": "mortar_base"
+    },
+    {
+      "name": "pestle"
+    }
+  ]
+}
