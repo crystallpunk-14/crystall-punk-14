@@ -80,8 +80,21 @@
     containerId: storagebase
   - type: Storage
     cP14CanStorageSolutionManagers: false
+    maxItemSize: Normal
     grid:
     - 0,0,4,3
-    blacklist:
+    whitelist:
       components:
-      - SolutionContainerManager
+      - Extractable
+  - type: CP14Mortar
+    solution: vat
+    containerId: storagebase
+  - type: Anchorable
+
+- type: entity
+  id: PestleTest
+  name: пестик
+  parent: CP14BaseMace
+  components:
+  - type: CP14Pestle
+  

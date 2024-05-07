@@ -1,0 +1,8 @@
+- type: soundCollection
+  id: CP14Pestle
+  files:
+    - /Audio/_CP14/Items/Pestle/pestle1.ogg
+    - /Audio/_CP14/Items/Pestle/pestle2.ogg
+    - /Audio/_CP14/Items/Pestle/pestle3.ogg
+    - /Audio/_CP14/Items/Pestle/pestle4.ogg
+    - /Audio/_CP14/Items/Pestle/pestle5.ogg
