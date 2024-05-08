@@ -10,7 +10,7 @@
     - shirt
   - type: Sprite
     state: icon
-     
+
 - type: entity
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtHarlequineRed
@@ -21,7 +21,7 @@
     sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
-     
+
 - type: entity
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtSteampunk
@@ -32,4 +32,3 @@
     sprite: _CP14/Clothing/Shirt/steampunk.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/steampunk.rsi
-     
