@@ -19,15 +19,15 @@
   id: DummyJuice
   verbText: mixing-verb-default-juice
   icon:
-    sprite: Structures/Machines/juicer.rsi
-    state: juicer0
+    sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
+    state: full
 
 - type: mixingCategory
   id: DummyCondense
   verbText: mixing-verb-default-condense
   icon:
-    sprite: Structures/Piping/Atmospherics/condenser.rsi
-    state: display
+    sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
+    state: full
 
 # Alternative Mixing Methods
 
