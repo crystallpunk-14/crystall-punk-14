@@ -6,3 +6,5 @@
   - type: RespawnDeadRule
   - type: RespawnTracker
     respawnDelay: 5
+  - type: KillCalloutRule
+  - type: PointManager

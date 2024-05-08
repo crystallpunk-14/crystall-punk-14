@@ -146,7 +146,7 @@
 - type: startingGear
   id: CP14ShoesBlack
   equipment:
-    shirt: CP14ClothingShoesBlack
+    shoes: CP14ClothingShoesBlack
 
 - type: loadout
   id: CP14ShoesAristocraticBlack
@@ -155,7 +155,7 @@
 - type: startingGear
   id: CP14ShoesAristocraticBlack
   equipment:
-    shirt: CP14ClothingShoesAristocraticBlack
+    shoes: CP14ClothingShoesAristocraticBlack
 
 - type: loadout
   id: CP14ShoesSandals
@@ -164,4 +164,4 @@
 - type: startingGear
   id: CP14ShoesSandals
   equipment:
-    shirt: CP14ClothingShoesSandals
+    shoes: CP14ClothingShoesSandals
