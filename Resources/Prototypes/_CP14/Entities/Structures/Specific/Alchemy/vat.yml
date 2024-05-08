@@ -80,8 +80,7 @@
     containerId: storagebase
   - type: Storage
     cP14CanStorageSolutionManagers: false
+    maxItemSize: Normal
     grid:
     - 0,0,4,3
-    blacklist:
-      components:
-      - SolutionContainerManager
+  - type: Anchorable
