@@ -6,3 +6,9 @@
     - /Audio/_CP14/Items/Pestle/pestle3.ogg
     - /Audio/_CP14/Items/Pestle/pestle4.ogg
     - /Audio/_CP14/Items/Pestle/pestle5.ogg
+
+- type: soundCollection
+  id: CP14Bubbles
+  files:
+    - /Audio/Effects/Chemistry/bubbles.ogg
+    - /Audio/_CP14/Effects/bubbles.ogg

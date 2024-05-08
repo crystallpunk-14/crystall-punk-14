@@ -74,6 +74,8 @@
   description: A device for conveniently grinding various materials in liquids
   parent: BaseItem
   components:
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: pestle
@@ -85,6 +87,8 @@
   description: Alchemical sturdy plate for grinding reagents
   parent: BaseStorageItem
   components:
+  - type: Item
+    size: Normal
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     layers:
@@ -136,7 +140,7 @@
     maxItemSize: Normal
     cP14CanStorageSolutionManagers: false
     grid:
-    - 0,0,2,1
+    - 0,0,1,1
   - type: CP14Mortar
     solution: mortar
     containerId: storagebase
