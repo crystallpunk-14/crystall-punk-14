@@ -234,6 +234,11 @@
   abstract: true
   components:
   - type: Flashable
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.50 #per second, scales with pressure and other constants.
+        Heat: 0.1
   # Organs
   - type: StatusEffects
     allowed:
@@ -266,7 +271,8 @@
         Cold: 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.5 #per second, scales with temperature & other constants- type: ThermalRegulator
+        Heat: 1.5 #per second, scales with temperature & other constants
+  - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
     implicitHeatRegulation: 500
