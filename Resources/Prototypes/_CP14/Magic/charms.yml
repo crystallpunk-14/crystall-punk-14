@@ -4,7 +4,9 @@
   name: charm
   description: The simplest storage for your spell
   components:
+    - type: DoAfter
     - type: CPMagicSpellContainer
+      maximumCompleteness: 999
       effects:
         - CPPointLight
-        - CPPaintPointLightRed
+        - CPDamageGibber

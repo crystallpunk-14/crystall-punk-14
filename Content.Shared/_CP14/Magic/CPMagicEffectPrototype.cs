@@ -13,4 +13,7 @@ public sealed partial class CPMagicEffectPrototype : IPrototype
 
     [DataField]
     public float Complexity = 1f;
+
+    [DataField]
+    public TimeSpan CastTime = TimeSpan.Zero;
 }

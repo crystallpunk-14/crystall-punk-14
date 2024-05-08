@@ -1,13 +1,9 @@
 - type: CPMagicEffect
   id: CPPointLight
+  complexity: 0.5
+  castTime: 5
   components:
     - type: PointLight
       radius: 10
       energy: 10
       color: "#ffffff"
-
-- type: CPMagicEffect
-  id: CPPaintPointLightRed
-  components:
-    - type: PointLight
-      color: "#ff0000"

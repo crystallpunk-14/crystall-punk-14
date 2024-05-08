@@ -1,5 +1,14 @@
 - type: entity
+  parent: BaseItem
+  id: CPBSpellItemEntity
+  name: spell
+  noSpawn: true
+  components:
+    - type: Unremoveable
+    - type: TimedDespawn
+      lifetime: 5
+
+- type: entity
   id: CPBaseSpellEntity
   name: magic entity
   noSpawn: true
-

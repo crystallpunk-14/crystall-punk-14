@@ -1,0 +1,9 @@
+- type: CPMagicEffect
+  id: CPDamageGibber
+  complexity: 100
+  components:
+    - type: CPCastEffectDamage
+      damage:
+        types:
+          Blunt: 20000
+      ignoreResistances: true
