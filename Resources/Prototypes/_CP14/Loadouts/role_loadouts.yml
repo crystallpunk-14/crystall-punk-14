@@ -1,6 +1,11 @@
-
 - type: roleLoadout
   id: JobAdventurer
   groups:
-  - CP14TestLoadout
-  - Trinkets
+  - CP14TestHead
+  - CP14TestEyes
+  - CP14TestMask
+  - CP14TestCloak
+  - CP14TestGloves
+  - CP14TestShirt
+  - CP14TestPants
+  - CP14TestShoes

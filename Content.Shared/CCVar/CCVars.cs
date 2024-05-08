@@ -154,7 +154,7 @@ namespace Content.Shared.CCVar
         ///     Controls the default game preset.
         /// </summary>
         public static readonly CVarDef<string>
-            GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "secret", CVar.ARCHIVE);
+            GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "CP14Playtset", CVar.ARCHIVE); //Crystall Punk Playtest
 
         /// <summary>
         ///     Controls if the game can force a different preset if the current preset's criteria are not met.
@@ -203,7 +203,7 @@ namespace Content.Shared.CCVar
         ///     Prototype to use for map pool.
         /// </summary>
         public static readonly CVarDef<string>
-            GameMapPool = CVarDef.Create("game.map_pool", "DefaultMapPool", CVar.SERVERONLY);
+            GameMapPool = CVarDef.Create("game.map_pool", "CP14DefaultMapPool", CVar.SERVERONLY); //CrystallPunk mapPool
 
         /// <summary>
         /// The depth of the queue used to calculate which map is next in rotation.

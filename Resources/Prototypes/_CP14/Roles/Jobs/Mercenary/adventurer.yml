@@ -9,7 +9,3 @@
 
 - type: startingGear
   id: CP14TestGear
-  equipment:
-    shirt: CP14ClothingShirtHarlequineRed
-    pants: CP14ClothingPantsHarlequinRed
-    shoes: CP14ClothingShoesBlack

@@ -1,0 +1,4 @@
+- type: gameMapPool
+  id: CP14DefaultMapPool
+  maps:
+   - CaveArena
