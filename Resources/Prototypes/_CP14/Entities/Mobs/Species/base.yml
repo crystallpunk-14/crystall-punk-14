@@ -234,11 +234,6 @@
   abstract: true
   components:
   - type: Flashable
-  - type: Barotrauma
-    damage:
-      types:
-        Blunt: 0.50 #per second, scales with pressure and other constants.
-        Heat: 0.1
   # Organs
   - type: StatusEffects
     allowed:
