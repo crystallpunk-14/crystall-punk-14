@@ -6,16 +6,16 @@
 
 ## Fallback if nothing else found
 - type: ambientMusic
-  id: CP14General
+  id: CP14Cave
   sound:
     params:
       volume: -12
-    collection: CP14AmbienceGeneral
+    collection: CP14AmbienceCave
   rules: AlwaysTrue
 
 # Sound collections
 - type: soundCollection
-  id: CP14AmbienceGeneral
+  id: CP14AmbienceCave
   files:
     - /Audio/Ambience/ambilava1.ogg
     - /Audio/Ambience/ambilava2.ogg
@@ -23,6 +23,7 @@
     - /Audio/Ambience/ambiruin.ogg
     - /Audio/Ambience/ambiruin4.ogg
     - /Audio/Ambience/maintambience.ogg
+    - /Audio/_CP14/Ambience/ambicave1.ogg
 
 # Rules
 - type: rules
