@@ -2,6 +2,7 @@ using System.Threading;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
+using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Dungeon;
@@ -44,7 +45,7 @@ public sealed partial class CP14DungeonSystem : EntitySystem
 
 
     private readonly JobQueue _dungeonGenQueue = new();
-    private readonly List<(CPSpawnDungeonLevelJob Job, CancellationTokenSource CancelToken)> _dungeonGenJobs = new();
+    private readonly List<(CP14SpawnDungeonLevelJob Job, CancellationTokenSource CancelToken)> _dungeonGenJobs = new();
     private const double DungeonGenTime = 0.002;
 
 
@@ -53,11 +54,13 @@ public sealed partial class CP14DungeonSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14DungeonEntranceComponent, ActivateInWorldEvent>(OnActivateInWorld);
-        SubscribeLocalEvent<CPStationDungeonDataComponent, StationPostInitEvent>(OnStationPostInit);
+        SubscribeLocalEvent<CP14StationDungeonDataComponent, StationPostInitEvent>(OnStationPostInit);
     }
 
-    private void OnStationPostInit(Entity<CPStationDungeonDataComponent> station, ref StationPostInitEvent args)
+    private void OnStationPostInit(Entity<CP14StationDungeonDataComponent> dungeonData, ref StationPostInitEvent args)
     {
+        if (!TryComp<StationDataComponent>(dungeonData, out var stationData)) return;
+
         SpawnDungeon("TestProceduralLevel");
     }
 
@@ -90,11 +93,11 @@ public sealed partial class CP14DungeonSystem : EntitySystem
         if (_station.GetStations().FirstOrNull() is not { } station)
             return;
 
-        if (!TryComp<CPStationDungeonDataComponent>(station, out var dunData))
+        if (!TryComp<CP14StationDungeonDataComponent>(station, out var dunData))
             return;
 
         var cancelToken = new CancellationTokenSource();
-        var job = new CPSpawnDungeonLevelJob(
+        var job = new CP14SpawnDungeonLevelJob(
             DungeonGenTime,
             _anchorable,
             _atmos,

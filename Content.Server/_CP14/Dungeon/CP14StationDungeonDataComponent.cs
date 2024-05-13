@@ -1,14 +1,14 @@
-
 using Content.Shared._CP14.Dungeon;
-using Content.Shared.Procedural;
-using Content.Shared.Procedural.Loot;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+
+namespace Content.Server._CP14.Dungeon;
 
 /// <summary>
 ///
 /// </summary>
 [RegisterComponent, AutoGenerateComponentPause]
-public sealed partial class CPStationDungeonDataComponent : Component
+public sealed partial class CP14StationDungeonDataComponent : Component
 {
     [DataField]
     public float StartLootBudget = 15f;
@@ -18,4 +18,9 @@ public sealed partial class CPStationDungeonDataComponent : Component
 
     [DataField]
     public List<ProtoId<CPDungeonLayerPrototype>> AllowedLayers = new ();
+
+    [DataField]
+    public int Layers = 3;
+
+    public List<MapId> MapsByDepth = new();
 }

@@ -24,9 +24,9 @@
     Dev:
       stationProto: StandardNanotrasenStation
       components:
-        - type: CPStationDungeonData
-          startLootBudget: 100
-          startMobBudget: 100
+        - type: CP14StationDungeonData
+          startLootBudget: 10
+          startMobBudget: 10
           allowedLayers:
           - LayerSolidRock
         - type: StationRandomTransform

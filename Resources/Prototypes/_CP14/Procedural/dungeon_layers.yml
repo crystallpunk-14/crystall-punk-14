@@ -1,6 +1,8 @@
 - type: dungeonLayer
   id: LayerSolidRock
   biomeTemplate: CP14SolidRock
-  depths: 0,10
-  allowedModifiers:
+  depths: 0,3
+  modifiers:
   - BlueLightCycle
+  levels:
+  - TestProceduralLevel

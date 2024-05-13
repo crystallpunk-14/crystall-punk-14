@@ -27,7 +27,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Dungeon;
 
-public sealed class CPSpawnDungeonLevelJob : Job<bool>
+public sealed class CP14SpawnDungeonLevelJob : Job<bool>
 {
     private readonly IEntityManager _entManager;
     private readonly IMapManager _mapManager;
@@ -38,12 +38,12 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
     private readonly AtmosphereSystem _atmos;
     private readonly BiomeSystem _biome;
     private readonly AnchorableSystem _anchorable;
-    private readonly CPStationDungeonDataComponent _dungeonData;
+    private readonly CP14StationDungeonDataComponent _dungeonData;
     private readonly IRobustRandom _random;
 
     private readonly ISawmill _sawmill;
 
-    public CPSpawnDungeonLevelJob(
+    public CP14SpawnDungeonLevelJob(
         double maxTime,
         AnchorableSystem anchorable,
         AtmosphereSystem atmos,
@@ -56,7 +56,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         MetaDataSystem metaData,
         IRobustRandom random,
         ProtoId<CP14DungeonLevelPrototype> levelPrototype,
-        CPStationDungeonDataComponent dungeonData,
+        CP14StationDungeonDataComponent dungeonData,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {
         _anchorable = anchorable;
@@ -115,9 +115,9 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
             var levelParams = _proto.Index(_levelProto);
 
             //Set modifier
-            if (layerData.AllowedModifiers.Count > 0)
+            if (layerData.Modifiers.Count > 0)
             {
-                var modifier = _proto.Index(_random.Pick(layerData.AllowedModifiers));
+                var modifier = _proto.Index(_random.Pick(layerData.Modifiers));
                 _entManager.AddComponents(mapUid, modifier.Components, true);
             }
 
@@ -129,7 +129,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
 
                     break;
                 case RandomDungeonLevel randomLevel:
-                    await SpawnRandomDungeonLevel(randomLevel, mapUid, grid, 15);
+                    await SpawnRandomDungeonLevel(_dungeonData ,randomLevel, mapUid, grid, 15);
                     break;
             }
 
@@ -139,7 +139,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         return true;
     }
 
-    private async Task SpawnRandomDungeonLevel(RandomDungeonLevel settings, EntityUid mapUid, MapGridComponent grid, float Depth)
+    private async Task SpawnRandomDungeonLevel(CP14StationDungeonDataComponent data, RandomDungeonLevel settings, EntityUid mapUid, MapGridComponent grid, float Depth)
     {
         _sawmill.Debug($"Spawning new random dungeon level with seed {settings.Seed}. Depth: {Depth}");
         var random = new Random(settings.Seed);
@@ -165,7 +165,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         //var exitProto = _prototypeManager.Index<SalvageLootPrototype>("CPDungeonExit");
 
         //Mobs
-        var mobBudget = settings.MobBudgetPerDepth * Depth;
+        var mobBudget = data.StartMobBudget + settings.MobBudgetPerDepth * Depth;
         var faction = _proto.Index(settings.MobFaction);
 
         _sawmill.Debug($"Mob Budget: {mobBudget}. Factions: ${faction}");
@@ -187,7 +187,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         }
 
         //Loot
-        var lootBudget = settings.LootBudgetPerDepth * Depth;
+        var lootBudget = data.StartLootBudget + settings.LootBudgetPerDepth * Depth;
         var loot = _proto.Index(settings.LootPrototype);
 
         foreach (var rule in loot.LootRules)
