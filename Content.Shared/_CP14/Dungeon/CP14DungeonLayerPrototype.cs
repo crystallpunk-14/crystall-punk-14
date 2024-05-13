@@ -22,5 +22,5 @@ public sealed partial class CP14DungeonLayerPrototype : IPrototype
     public List<ProtoId<CPDungeonLayerModifierPrototype>> Modifiers = new();
 
     [DataField]
-    public List<IDungeonLevel> Levels = new();
+    public List<ProtoId<CP14DungeonLevelPrototype>> Levels = new();
 }
