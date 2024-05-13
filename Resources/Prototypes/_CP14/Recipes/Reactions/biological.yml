@@ -1,0 +1,23 @@
+- type: reaction
+  id: CP14VitalExtract
+  minTemp: 350
+  reactants:
+    CP14Blood:
+      amount: 1
+    CP14BloodGrassSap:
+      amount: 2
+  products:
+    CP14VitalExtract: 3
+
+- type: reaction
+  id: CP14VitalExtractOverheating
+  minTemp: 450
+  reactants:
+    CP14VitalExtract: 
+      amount: 1
+  effects:    
+    - !type:AreaReactionEffect
+      duration: 20
+      prototypeId: CP14MistVitalExtract
+      sound:
+        path: /Audio/Effects/smoke.ogg

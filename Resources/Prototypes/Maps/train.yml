@@ -8,6 +8,8 @@
 #    Train:
 #      stationProto: StandardNanotrasenStation
 #      components:
+#        - type: StationRandomTransform
+#          enableStationRotation: false
 #        - type: StationNameSetup
 #          mapNameTemplate: 'Train "Sentipode" {0}-{1}'
 #          nameGenerator:
@@ -47,7 +49,7 @@
 #            #security
 #            HeadOfSecurity: [ 1, 1 ]
 #            Warden: [ 1, 1 ]
-#            SecurityOfficer: [ 4, 4 ]
+#            SecurityOfficer: [ 6, 6 ]
 #            SecurityCadet: [ 2, 3 ]
 #            Lawyer: [ 1, 2 ]
 #            #supply

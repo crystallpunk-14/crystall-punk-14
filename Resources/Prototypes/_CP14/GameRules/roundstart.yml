@@ -1,0 +1,10 @@
+- type: entity
+  id: CP14Playtest
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: RespawnDeadRule
+  - type: RespawnTracker
+    respawnDelay: 5
+  - type: KillCalloutRule
+  - type: PointManager

@@ -1,5 +1,5 @@
 - type: entity
-  id: CPBaseWeaponChemical
+  id: CP14BaseWeaponChemical
   abstract: true
   components:
   - type: SolutionContainerManager
@@ -19,7 +19,7 @@
     maxTransferAmount: 2
 
 - type: entity
-  id: CPBaseWeaponThrowable
+  id: CP14BaseWeaponThrowable
   abstract: true
   components: 
   - type: DamageOtherOnHit
@@ -46,17 +46,45 @@
         friction: 0.2
 
 - type: entity
-  id: CPBaseWeaponLight
+  id: CP14BaseWeaponLight
   abstract: true
   components:
   - type: MeleeWeapon
     resetOnHandSelected: false
 
 - type: entity
-  id: CPBaseWeaponShort
+  id: CP14BaseWeaponShort
   abstract: true
   components: 
   - type: MeleeWeapon
     range: 1.0 # 1.5 standart
     cPAnimationOffset: -0.75
 
+- type: entity
+  id: CP14BaseWeaponSharp
+  abstract: true
+  components:
+  - type: Sharp
+  - type: CP14Sharpened
+  - type: CP14SharpeningStone
+  - type: UseDelay
+
+- type: entity
+  id: CP14BaseWeaponDestructible
+  abstract: true
+  components:
+  - type: ExaminableDamage
+    messages: CP14WeaponMessages
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

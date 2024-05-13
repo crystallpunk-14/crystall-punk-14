@@ -1,99 +1,131 @@
 - type: entity
   abstract: true
   parent: BaseWall
-  id: CPBaseWall
-  name: стена
-  description: Достаточно прочная, чтобы прикрыть вас от угроз или холодного ветра.
+  id: CP14BaseWall
+  name: wall
+  description: Sturdy enough to cover you from threats or cold winds.
   placement:
     mode: SnapgridCenter
     snap:
     - Wall
   components:
+  - type: Sprite
+    drawdepth: Mobs
+  - type: SpriteFade
+  - type: IconSmooth
+    key: CPwall
+    base: stone
   - type: Tag
     tags:
     - Wall
-    
+
 - type: entity
-  id: CPDebugWall
-  name: тестовая стена
+  id: CP14WallDebug
+  name: debug wall
   suffix: DEBUG
-  parent: CPBaseWall
+  parent: CP14BaseWall
   description: Ужасы
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/TEMPLATE.rsi
+    state: full
   - type: IconSmooth
-    key: CPwallsbrick
-    base: brick
+    base: wood
 
 - type: entity
-  id: CPStoneRuinWall
-  name: каменная стена руин
-  suffix: Устаревший формат спрайта!
-  parent: CPBaseWall
-  description: Эти стены повидали многое, и осталось им недолго.
+  id: CP14WallStonebrick
+  name: stone brick wall
+  parent: CP14BaseWall
+  description: Ужасы
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
+    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
+    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+    state: full
   - type: IconSmooth
-    key: CPwallsbrick
-    base: brick 
+    base: stonebricks
 
 - type: entity
-  id: CPWoodFullWall
-  name: деревянная стена
-  parent: CPBaseWall
-  description: Доска к доске, и вместе образуют они защиту и уют.
+  id: CP14WindowDebug #TODO remove
+  name: debug window
+  suffix: DEBUG
+  parent: CP14BaseWall
+  description: Ужасы
   components:
+  - type: Occluder
+    enabled: false
   - type: Sprite
-    sprite: _CP14/Structures/Walls/wood_full.rsi
+    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
+    drawdepth: Mobs
   - type: Icon
-    sprite: _CP14/Structures/Walls/wood_full.rsi
+    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
+    state: full
   - type: IconSmooth
-    key: CPwallswood
-    base: wood 
+    base: wood
+    key: CPwindow
 
 - type: entity
-  id: CPCaveStoneWall
-  name: каменная порода
-  suffix: Устаревший формат спрайта!
-  parent: CPBaseWall
-  description: Прочная каменная природная стена. От нее веет пещерным холодом.
+  id: CP14WindowStoneBrick
+  parent: CP14WindowDebug
+  name: stone brick window
+  description: A stone brick wall with a glass window in it.
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/cave_stone.rsi
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    drawdepth: Mobs
   - type: Icon
-    sprite: _CP14/Structures/Walls/cave_stone.rsi
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    state: full
   - type: IconSmooth
-    key: CPwallsbrick
-    base: stone 
+    base: stone_bricks_window
 
 - type: entity
-  id: CPStoneRuinFragment
-  parent: BaseRock
-  name: обломки каменных стен
-  description: Это все, что осталось от былого величия. 
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
+  id: CP14CardboardWall
+  name: cardboard Wall
+  description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
+  parent:
+  - CP14BaseWall
+  - CP14BaseWooden
   components:
-  - type: PlacementReplacement
-    key: walls
   - type: Sprite
-    sprite: _CP14/Structures/Walls/ruin_stone.rsi
-    snapCardinals: true
-    layers:
-    - state: fragment1
-      map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        fragment1: ""
-        fragment2: ""
-        fragment3: ""
-        fragment4: ""
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
+    state: full
+  - type: IconSmooth
+    base: wood
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 3
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full

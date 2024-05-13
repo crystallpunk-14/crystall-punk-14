@@ -12,6 +12,7 @@ namespace Content.Shared.Localizations
         // If you want to change your codebase's language, do it here.
         private const string Culture = "ru-RU"; // CrystallPunk-Localization
         private const string FallbackCulture = "en-US"; // CrystallPunk-Localization
+        //Creating an English CrystallPunk server? Set Culture to "en-US" and FallbackCulture to "en-defaults"
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -78,7 +79,7 @@ namespace Content.Shared.Localizations
             var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
             var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
-            return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd('.') + "%");
+            return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)) + "%");
         }
 
         private ILocValue FormatNaturalFixed(LocArgs args)
@@ -87,7 +88,7 @@ namespace Content.Shared.Localizations
             var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
             var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
-            return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd('.'));
+            return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)));
         }
 
         private static readonly Regex PluralEsRule = new("^.*(s|sh|ch|x|z)$");

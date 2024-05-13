@@ -77,6 +77,7 @@
 #High
 - type: entity
   parent: BaseFenceWood
+  noSpawn: true
   id: FenceWoodHighStraight
   suffix: Straight
   components:
@@ -104,6 +105,7 @@
 
 - type: entity
   parent: BaseFenceWood
+  noSpawn: true
   id: FenceWoodHighEnd
   suffix: End
   components:
@@ -131,6 +133,7 @@
 
 - type: entity
   parent: BaseFenceWood
+  noSpawn: true
   id: FenceWoodHighCorner
   suffix: Corner
   components:
@@ -167,6 +170,7 @@
 
 - type: entity
   parent: BaseFenceWood
+  noSpawn: true
   id: FenceWoodHighTJunction
   suffix: T-Junction
   components:
@@ -203,6 +207,7 @@
 
 - type: entity
   parent: BaseFenceWood
+  noSpawn: true
   id: FenceWoodHighGate
   name: wooden fence gate
   description: Do you have any idea what awaits you behind these gates? It can be either a toilet or a luxurious mansion. But you continue to love your emo boys.
@@ -237,6 +242,8 @@
     closeTimeTwo: 0
     openTimeOne: 0
     openTimeTwo: 0
+    closedDrawDepth: Mobs
+    openDrawDepth: Mobs
     openingAnimationTime: 0
     closingAnimationTime: 0
     openSound:
@@ -250,6 +257,7 @@
 #Small
 - type: entity
   parent: BaseFenceWoodSmall
+  noSpawn: true
   id: FenceWoodSmallStraight
   suffix: Straight
   components:
@@ -277,6 +285,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
+  noSpawn: true
   id: FenceWoodSmallEnd
   suffix: End
   components:
@@ -304,6 +313,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
+  noSpawn: true
   id: FenceWoodSmallCorner
   suffix: Corner
   components:
@@ -340,6 +350,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
+  noSpawn: true
   id: FenceWoodSmallTJunction
   suffix: T-Junction
   components:
@@ -376,6 +387,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
+  noSpawn: true
   id: FenceWoodSmallGate
   name: wooden fence gate
   description: Looking at this gate, a familiar image pops up in your head. Where's my piggy?
@@ -410,6 +422,8 @@
     closeTimeTwo: 0
     openTimeOne: 0
     openTimeTwo: 0
+    closedDrawDepth: Mobs
+    openDrawDepth: Mobs
     openingAnimationTime: 0
     closingAnimationTime: 0
     openSound:

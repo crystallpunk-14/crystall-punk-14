@@ -1,69 +1,69 @@
 
 - type: entity
-  id: CPTorsoHuman
+  id: CP14TorsoHuman
   parent: TorsoHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPHeadHuman
+  id: CP14HeadHuman
   parent: HeadHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPLeftArmHuman
+  id: CP14LeftArmHuman
   parent: LeftArmHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPRightArmHuman
+  id: CP14RightArmHuman
   parent: RightArmHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPLeftHandHuman
+  id: CP14LeftHandHuman
   parent: LeftHandHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPRightHandHuman
+  id: CP14RightHandHuman
   parent: RightHandHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPLeftLegHuman
+  id: CP14LeftLegHuman
   parent: LeftLegHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPRightLegHuman
+  id: CP14RightLegHuman
   parent: RightLegHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPLeftFootHuman
+  id: CP14LeftFootHuman
   parent: LeftFootHuman
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
 
 - type: entity
-  id: CPRightFootHuman
+  id: CP14RightFootHuman
   parent: RightFootHuman
   components:
   - type: Sprite

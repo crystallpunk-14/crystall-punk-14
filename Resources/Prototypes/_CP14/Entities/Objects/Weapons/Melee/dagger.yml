@@ -1,29 +1,39 @@
 - type: entity
-  id: CPBaseDagger
+  id: CP14BaseDagger
   parent: 
   - BaseItem
-  - CPBaseWeaponChemical
-  - CPBaseWeaponThrowable
-  - CPBaseWeaponLight
-  - CPBaseWeaponShort
-  name: кинжал
-  description: Небольшое острое лезвие, сгодится и для ближнего боя, и как метательное оружие.
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponLight
+  - CP14BaseWeaponShort
+  name: dagger
+  description: A small, multi-purpose, sharp blade. You can cut meat or throw it at a goblin.
   components:
   - type: Item
+    size: Normal
     storedRotation: -45 
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     layers:
     - state: icon
-  - type: Sharp
   - type: MeleeWeapon
     attackRate: 1.8
     wideAnimationRotation: 225
-    wideAnimation: CPWeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
     damage:
       types:
         Slash: 5
-        Piercing: 5
+        Piercing: 3
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.15

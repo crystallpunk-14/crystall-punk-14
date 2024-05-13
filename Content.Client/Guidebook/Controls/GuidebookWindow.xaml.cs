@@ -136,6 +136,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
         TreeItem? parent = forcedRoot == null ? null : AddEntry(forcedRoot, null, addedEntries);
         foreach (var entry in GetSortedEntries(roots))
         {
+            if (!entry.CrystallPunkAllowed) continue; //CrystallPunk guidebook filter
             AddEntry(entry.Id, parent, addedEntries);
         }
         Tree.SetAllExpanded(true);

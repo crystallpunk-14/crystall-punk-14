@@ -1,0 +1,120 @@
+using Content.Server.Atmos.Components;
+using Content.Server.Atmos.EntitySystems;
+using Content.Server.Popups;
+using Content.Shared._CP14.Temperature;
+using Content.Shared.Interaction;
+using Content.Shared.Throwing;
+using Robust.Server.Audio;
+using Robust.Server.Containers;
+using Robust.Server.GameObjects;
+using Robust.Shared.Physics.Events;
+using Robust.Shared.Timing;
+
+namespace Content.Server._CP14.Temperature.Fireplace;
+
+public sealed partial class CP14FireplaceSystem : EntitySystem
+{
+    [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly ContainerSystem _containerSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly FlammableSystem _flammable = default!;
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<CP14FireplaceComponent, OnFireChangedEvent>(OnFireChanged);
+    }
+
+    private void OnFireChanged(Entity<CP14FireplaceComponent> fireplace, ref OnFireChangedEvent args)
+    {
+        if (!TryComp<FlammableComponent>(fireplace, out var flammable))
+            return;
+
+        if (args.OnFire)
+            flammable.FirestackFade = 0;
+    }
+
+    private bool TryFoundFuelInStorage(Entity<CP14FireplaceComponent> fireplace, out Entity<FlammableComponent>? fuel)
+    {
+        fuel = null;
+        var container = _containerSystem.GetContainer(fireplace, fireplace.Comp.ContainerId);
+
+        if (container.ContainedEntities.Count == 0)
+            return false;
+
+        foreach (var ent in container.ContainedEntities)
+        {
+            if (!TryComp<FlammableComponent>(ent, out var flammable))
+                continue;
+
+            fuel = new Entity<FlammableComponent>(ent, flammable);
+            return true;
+        }
+
+        return false;
+    }
+
+    private void ConsumeFuel(EntityUid uid, CP14FireplaceComponent component, Entity<FlammableComponent> fuel)
+    {
+        if (!TryComp<FlammableComponent>(uid, out var flammable))
+            return;
+
+        component.CurrentFuel += fuel.Comp.CP14FireplaceFuel;
+
+        if (flammable.OnFire)
+            _audio.PlayPvs(component.InsertFuelSound, uid);
+
+        QueueDel(fuel);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = AllEntityQuery<CP14FireplaceComponent, FlammableComponent>();
+        while (query.MoveNext(out var uid, out var fireplace, out var flammable))
+        {
+            if (!flammable.OnFire)
+                continue;
+
+            if (_timing.CurTime <= fireplace.NextUpdateTime)
+                continue;
+
+            fireplace.NextUpdateTime = _timing.CurTime + fireplace.UpdateFrequency;
+
+            if (fireplace.CurrentFuel >= fireplace.FuelDrainingPerUpdate)
+            {
+                fireplace.CurrentFuel -= fireplace.FuelDrainingPerUpdate;
+                UpdateAppearance(uid, fireplace);
+                flammable.FirestackFade = fireplace.FireFadeDelta;
+            }
+            else
+            {
+                if (TryFoundFuelInStorage(new Entity<CP14FireplaceComponent>(uid, fireplace), out var fuel) && fuel != null)
+                    ConsumeFuel(uid, fireplace, fuel.Value);
+
+                flammable.FirestackFade = -fireplace.FireFadeDelta;
+            }
+        }
+    }
+
+    public void UpdateAppearance(EntityUid uid, CP14FireplaceComponent? fireplace = null, AppearanceComponent? appearance = null)
+    {
+        if (!Resolve(uid, ref fireplace, ref appearance))
+            return;
+
+        if (fireplace.CurrentFuel < fireplace.FuelDrainingPerUpdate)
+        {
+            _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Empty, appearance);
+            return;
+        }
+
+        if (fireplace.CurrentFuel < fireplace.MaxFuelLimit / 2)
+            _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Medium, appearance);
+        else
+            _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Full, appearance);
+    }
+}

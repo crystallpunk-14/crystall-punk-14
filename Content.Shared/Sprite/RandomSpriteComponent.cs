@@ -24,4 +24,10 @@ public sealed partial class RandomSpriteComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("selected")]
     public Dictionary<string, (string State, Color? Color)> Selected = new();
+
+    /// <summary>
+    /// CP14 Base Random Sprite color
+    /// </summary>
+    [DataField]
+    public Color CP14InheritBaseColor = Color.White;
 }

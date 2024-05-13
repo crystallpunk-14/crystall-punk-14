@@ -13,6 +13,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -31,6 +32,8 @@ public sealed class GuidebookSystem : EntitySystem
     [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
     [Dependency] private readonly TagSystem _tags = default!;
 
+    [Dependency] private readonly IPrototypeManager _proto = default!; //CrystallPunk guidebook filter
+
     public event Action<List<string>, List<string>?, string?, bool, string?>? OnGuidebookOpen;
     public const string GuideEmbedTag = "GuideEmbeded";
 
@@ -39,6 +42,7 @@ public sealed class GuidebookSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        SubscribeLocalEvent<GuideHelpComponent, MapInitEvent>(OnCrystallPunkMapInit); //CrystallPunk guidebook filter
         SubscribeLocalEvent<GuideHelpComponent, GetVerbsEvent<ExamineVerb>>(OnGetVerbs);
         SubscribeLocalEvent<GuideHelpComponent, ActivateInWorldEvent>(OnInteract);
 
@@ -47,6 +51,21 @@ public sealed class GuidebookSystem : EntitySystem
         SubscribeLocalEvent<GuidebookControlsTestComponent, GetVerbsEvent<AlternativeVerb>>(
             OnGuidebookControlsTestGetAlternateVerbs);
     }
+
+    //CrystallPunk guidebook filter
+    private void OnCrystallPunkMapInit(Entity<GuideHelpComponent> ent, ref MapInitEvent args)
+    {
+        foreach (var guide in ent.Comp.Guides)
+        {
+            var guideProto = _proto.Index<GuideEntryPrototype>(guide);
+            if (!guideProto.CrystallPunkAllowed) //REMOVE unnecessary guidebook
+            {
+                RemComp<GuideHelpComponent>(ent);
+                return;
+            }
+        }
+    }
+    //CrystallPunk guidebook filter end
 
     /// <summary>
     /// Gets a user entity to use for verbs and examinations. If the player has no attached entity, this will use a
@@ -78,6 +97,11 @@ public sealed class GuidebookSystem : EntitySystem
             ClientExclusive = true,
             CloseMenu = true
         });
+    }
+
+    public void OpenHelp(List<string> guides)
+    {
+        OnGuidebookOpen?.Invoke(guides, null, null, true, guides[0]);
     }
 
     private void OnInteract(EntityUid uid, GuideHelpComponent component, ActivateInWorldEvent args)

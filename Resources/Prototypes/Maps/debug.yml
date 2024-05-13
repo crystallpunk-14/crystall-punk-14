@@ -29,6 +29,9 @@
           startMobBudget: 100
           allowedLayers:
           - LayerSolidRock
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
         - type: StationBiome
         - type: StationNameSetup
           mapNameTemplate: "Dev"

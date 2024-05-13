@@ -1,0 +1,27 @@
+- type: entity
+  id: CP14BaseSharpeningStone
+  name: sharpening stone
+  description: Allows you to sharpen blunted weapons. If you overdo it, you may well sharpen the weapon completely.
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/sharpening_stone.rsi
+    state: base
+  - type: UseDelay
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassCrack
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: CP14SharpeningStone
+    sharpnessHeal: 0.1

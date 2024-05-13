@@ -1,6 +1,6 @@
+using Content.Shared._CP14.LockKey;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
-using Content.Shared.CrystallPunk.LockKey;
 using Content.Shared.Construction.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Doors;
@@ -30,7 +30,7 @@ public sealed class LockSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _sharedPopupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedCPLockKeySystem _lockCP = default!; //CrystallPunk Lock System Adapt
+    [Dependency] private readonly SharedCP14LockKeySystem _lockCp14 = default!; //CrystallPunk Lock System Adapt
 
     /// <inheritdoc />
     public override void Initialize()
@@ -64,12 +64,12 @@ public sealed class LockSystem : EntitySystem
         //CrystallPunk LockSystem Adapt
 
         // Only attempt an unlock by default on Activate
-        //if (lockComp.Locked)
+        //if (lockComp.Locked && lockComp.UnlockOnClick)
         //{
         //    TryUnlock(uid, args.User, lockComp);
         //    args.Handled = true;
         //}
-        //else if (lockComp.LockOnClick)
+        //else if (!lockComp.Locked && lockComp.LockOnClick)
         //{
         //    TryLock(uid, args.User, lockComp);
         //    args.Handled = true;
@@ -99,7 +99,7 @@ public sealed class LockSystem : EntitySystem
     private void OnExamined(EntityUid uid, LockComponent lockComp, ExaminedEvent args)
     {
         //CrystallPunk Lock System Adapt Start
-        if (lockComp.LockSlotId != null && _lockCP.TryGetLockFromSlot(uid, out var lockEnt))
+        if (lockComp.LockSlotId != null && _lockCp14.TryGetLockFromSlot(uid, out var lockEnt))
         {
             args.PushText(Loc.GetString("cp-lock-examine-lock-slot", ("lock", MetaData(lockEnt.Value).EntityName)));
 
@@ -226,6 +226,18 @@ public sealed class LockSystem : EntitySystem
 
         Unlock(uid, user, lockComp);
         return true;
+    }
+
+    /// <summary>
+    /// Returns true if the entity is locked.
+    /// Entities with no lock component are considered unlocked.
+    /// </summary>
+    public bool IsLocked(Entity<LockComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return false;
+
+        return ent.Comp.Locked;
     }
 
     /// <summary>

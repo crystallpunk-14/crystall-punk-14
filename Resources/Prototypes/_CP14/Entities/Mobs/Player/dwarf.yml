@@ -1,0 +1,4 @@
+- type: entity
+  save: false
+  parent: CP14BaseMobDwarf
+  id: CP14MobDwarf

@@ -1,0 +1,40 @@
+- type: entity
+  id: CP14Bonfire
+  parent: CP14BaseFireplace
+  name: bonfire
+  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/bonfire.rsi
+    layers:
+      - state: base
+      - state: full-1
+        visible: false
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Construction
+    graph: CP14Bonfire
+    node: CP14Bonfire
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: StorageFillVisualizer
+    maxFillLevels: 2
+    fillBaseName: full
+  - type: FireVisuals
+    sprite: _CP14/Structures/Furniture/bonfire.rsi
+    normalState: burning
+  - type: Storage
+    grid:
+    - 0,0,2,1
+    whitelist:
+      tags:
+      - CP14FireplaceFuel

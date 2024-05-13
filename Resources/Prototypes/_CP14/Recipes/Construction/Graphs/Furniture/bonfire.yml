@@ -1,16 +1,34 @@
 - type: constructionGraph
-  id: CPBonfire
+  id: CP14Bonfire
   start: start
   graph:
     - node: start
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: CPBonfire
+        - to: CP14Bonfire
           steps:
             - material: WoodPlank
               amount: 5
               doAfter: 3
               
-    - node: CPBonfire
-      entity: CPBonfire
+    - node: CP14Bonfire
+      entity: CP14Bonfire
+
+- type: constructionGraph
+  id: CP14WallmountTorch
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WallmountTorch
+          steps:
+            - material: WoodPlank
+              amount: 5
+              doAfter: 3
+              
+    - node: CP14WallmountTorch
+      entity: CP14WallmountTorch
+

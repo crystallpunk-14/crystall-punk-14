@@ -1,22 +1,31 @@
-# Anything human specific (e.g. UI, input) goes under MobHuman
 - type: entity
-  parent: BaseMobSpeciesOrganic
-  id: CPBaseMobHuman
-  name: человеческая оболочка
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobHuman
+  name: Mr. Human
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: CPHuman
+    species: CP14Human
   - type: Hunger
-  - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
+  - type: Icon
     sprite: _CP14/Mobs/Species/Human/parts.rsi
     state: full
   - type: Thirst
   - type: Butcherable
     butcheringType: Spike
     spawned:
-    - id: FoodMeatHuman
-      amount: 5
+      - id: FoodMeatHuman
+        amount: 5
   - type: Body
-    prototype: CPHuman
+    prototype: CP14Human
     requiredLegs: 2
+  - type: Inventory
+    templateId: CP14Human
+
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobHumanDummy
+  noSpawn: true
+  components:
+    - type: HumanoidAppearance
+      species: CP14Human

@@ -11,49 +11,65 @@ namespace Content.Server.Atmos.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField]
-        public bool OnFire { get; set; }
+        public bool OnFire;
 
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField]
-        public float FireStacks { get; set; }
+        public float FireStacks;
 
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("fireSpread")]
+        [DataField]
+        public float MaximumFireStacks = 10f;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
+        public float MinimumFireStacks = -10f;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
+        public string FlammableFixtureID = "flammable";
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
+        public float MinIgnitionTemperature = 373.15f;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public bool FireSpread { get; private set; } = false;
 
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("canResistFire")]
+        [DataField]
         public bool CanResistFire { get; private set; } = false;
 
-        [DataField("damage", required: true)]
+        [DataField(required: true)]
         [ViewVariables(VVAccess.ReadWrite)]
         public DamageSpecifier Damage = new(); // Empty by default, we don't want any funny NREs.
 
         /// <summary>
         ///     Used for the fixture created to handle passing firestacks when two flammable objects collide.
         /// </summary>
-        [DataField("flammableCollisionShape")]
+        [DataField]
         public IPhysShape FlammableCollisionShape = new PhysShapeCircle(0.35f);
 
         /// <summary>
         ///     Should the component be set on fire by interactions with isHot entities
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("alwaysCombustible")]
+        [DataField]
         public bool AlwaysCombustible = false;
 
         /// <summary>
         ///     Can the component anyhow lose its FireStacks?
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("canExtinguish")]
+        [DataField]
         public bool CanExtinguish = true;
 
         /// <summary>
         ///     How many firestacks should be applied to component when being set on fire?
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("firestacksOnIgnite")]
+        [DataField]
         public float FirestacksOnIgnite = 2.0f;
 
         /// <summary>
@@ -63,16 +79,9 @@ namespace Content.Server.Atmos.Components
         public float FirestackFade = -0.1f;
 
         /// <summary>
-        /// Set FirestackFade on Ingite to this value
+        /// CrystallPunk fireplace fuel
         /// </summary>
         [DataField]
-        public float? FirestackFadeOnIgnite = null;
-
-        /// <summary>
-        /// CrystallPunk moment
-        /// determines how extinction "FirestackFade" will fade out. it can be used to make "parabolas" of object ignition and decay.
-        /// </summary>
-        [DataField]
-        public float FirestackFadeFade = 0;
+        public float CP14FireplaceFuel = 10f;
     }
 }

@@ -1,0 +1,34 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingShirtBase
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - shirt
+  - type: Sprite
+    state: icon
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtHarlequineRed
+  name: red harlequin shirt
+  description: It doesn't show the bloodstains that are left behind after bad jokes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtSteampunk
+  name: brass reinforced shirt
+  description: A white shirt with brass inserts
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/steampunk.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/steampunk.rsi
