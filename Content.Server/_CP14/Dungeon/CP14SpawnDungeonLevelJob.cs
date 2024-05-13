@@ -2,9 +2,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Ghost.Roles.Components;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Dungeon;
@@ -16,7 +14,6 @@ using Content.Shared.Physics;
 using Content.Shared.Procedural;
 using Content.Shared.Procedural.Loot;
 using Content.Shared.Random;
-using Content.Shared.Salvage.Expeditions;
 using Robust.Shared.Collections;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
@@ -31,6 +28,7 @@ public sealed class CP14SpawnDungeonLevelJob : Job<bool>
 {
     private readonly IEntityManager _entManager;
     private readonly IMapManager _mapManager;
+    private readonly SharedMapSystem _map;
     private readonly IPrototypeManager _proto;
     private readonly DungeonSystem _dungeon;
     private readonly MetaDataSystem _metaData;
@@ -51,6 +49,7 @@ public sealed class CP14SpawnDungeonLevelJob : Job<bool>
         IEntityManager entManager,
         ILogManager logManager,
         IMapManager mapManager,
+        SharedMapSystem mapSystem,
         IPrototypeManager protoManager,
         DungeonSystem dungeon,
         MetaDataSystem metaData,
@@ -64,6 +63,7 @@ public sealed class CP14SpawnDungeonLevelJob : Job<bool>
         _biome = biome;
         _entManager = entManager;
         _mapManager = mapManager;
+        _map = mapSystem;
         _proto = protoManager;
         _metaData = metaData;
         _dungeon = dungeon;
@@ -79,9 +79,7 @@ public sealed class CP14SpawnDungeonLevelJob : Job<bool>
         {
             var layerData = _proto.Index(layer);
             //Init empty map
-            var mapId = _mapManager.CreateMap();
-            var mapUid = _mapManager.GetMapEntityId(mapId);
-            _mapManager.AddUninitializedMap(mapId);
+            var mapUid = _map.CreateMap(out var mapId, runMapInit: false);
             MetaDataComponent? metadata = null;
             var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
             _metaData.SetEntityName(mapUid,$"MapId: {mapId}, Depth: Unknown?");
@@ -129,7 +127,7 @@ public sealed class CP14SpawnDungeonLevelJob : Job<bool>
 
                     break;
                 case RandomDungeonLevel randomLevel:
-                    await SpawnRandomDungeonLevel(_dungeonData ,randomLevel, mapUid, grid, 15);
+                    await SpawnRandomDungeonLevel(_dungeonData, randomLevel, mapUid, grid, 15);
                     break;
             }
 

@@ -34,6 +34,7 @@ public sealed partial class CP14DungeonSystem : EntitySystem
 
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -105,6 +106,7 @@ public sealed partial class CP14DungeonSystem : EntitySystem
             EntityManager,
             _logManager,
             _mapManager,
+            _map,
             _prototypeManager,
             _dungeon,
             _metaData,
