@@ -1,5 +1,5 @@
 - type: biomeTemplate
-  id: CPSolidRock
+  id: CP14SolidRock
   layers:
     - !type:BiomeTileLayer
       threshold: -1.0
@@ -17,4 +17,4 @@
       allowedTiles:
         - FloorBasalt
       entities:
-        - CPCaveStoneWall
+        - CP14CaveStoneWall

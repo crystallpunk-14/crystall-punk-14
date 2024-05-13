@@ -78,16 +78,16 @@
           - CPLock
 
 - type: entity
-  parent: CPBaseWoodDoor
-  id: CPDebugDungeonGenerator
+  parent: CP14BaseWoodDoor
+  id: CP14DebugDungeonGenerator
   name: спуск в подземелье (генератор)
   suffix: Dungeon
   components:
-  - type: CPDungeonEntrance
+  - type: CP14DungeonEntrance
 
 - type: entity
   parent: PortalBlue
-  id: CPDebugExitDungeon
+  id: CP14DebugExitDungeon
   name: выход из данжа
   components:
   - type: Tag
@@ -96,11 +96,11 @@
   - type: Portal
     canTeleportToOtherMaps: true
     randomTeleport: false
-  - type: CPAutoLink
+  - type: CP14AutoLink
 
 - type: entity
   parent: PortalRed
-  id: CPDebugEntranceDungeon
+  id: CP14DebugEntranceDungeon
   name: вход в данж
   components:
   - type: Tag
@@ -109,4 +109,4 @@
   - type: Portal
     canTeleportToOtherMaps: true
     randomTeleport: false
-  - type: CPAutoLink
+  - type: CP14AutoLink

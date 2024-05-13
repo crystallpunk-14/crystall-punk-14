@@ -34,7 +34,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
     private readonly IPrototypeManager _proto;
     private readonly DungeonSystem _dungeon;
     private readonly MetaDataSystem _metaData;
-    private readonly ProtoId<CPDungeonLevelPrototype> _levelProto;
+    private readonly ProtoId<CP14DungeonLevelPrototype> _levelProto;
     private readonly AtmosphereSystem _atmos;
     private readonly BiomeSystem _biome;
     private readonly AnchorableSystem _anchorable;
@@ -55,7 +55,7 @@ public sealed class CPSpawnDungeonLevelJob : Job<bool>
         DungeonSystem dungeon,
         MetaDataSystem metaData,
         IRobustRandom random,
-        ProtoId<CPDungeonLevelPrototype> levelPrototype,
+        ProtoId<CP14DungeonLevelPrototype> levelPrototype,
         CPStationDungeonDataComponent dungeonData,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {

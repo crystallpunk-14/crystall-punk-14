@@ -23,7 +23,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Dungeon;
 
-public sealed partial class CPDungeonSystem : EntitySystem
+public sealed partial class CP14DungeonSystem : EntitySystem
 {
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -52,7 +52,7 @@ public sealed partial class CPDungeonSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CPDungeonEntranceComponent, ActivateInWorldEvent>(OnActivateInWorld);
+        SubscribeLocalEvent<CP14DungeonEntranceComponent, ActivateInWorldEvent>(OnActivateInWorld);
         SubscribeLocalEvent<CPStationDungeonDataComponent, StationPostInitEvent>(OnStationPostInit);
     }
 
@@ -79,13 +79,13 @@ public sealed partial class CPDungeonSystem : EntitySystem
         }
     }
 
-    private void OnActivateInWorld(Entity<CPDungeonEntranceComponent> entrance, ref ActivateInWorldEvent args)
+    private void OnActivateInWorld(Entity<CP14DungeonEntranceComponent> entrance, ref ActivateInWorldEvent args)
     {
         //Вообще тут должна быть генерация всего данжа целиком в будущем
         SpawnDungeon("TestProceduralLevel");
     }
 
-    private void SpawnDungeon(ProtoId<CPDungeonLevelPrototype> levelParams)
+    private void SpawnDungeon(ProtoId<CP14DungeonLevelPrototype> levelParams)
     {
         if (_station.GetStations().FirstOrNull() is not { } station)
             return;

@@ -1,5 +1,5 @@
 - type: dungeonConfig
-  id: CPDungeonTest
+  id: CP14DungeonTest
   generator: !type:PrefabDunGen
     tile: FloorCaveDrought
     roomWhitelist:
@@ -20,7 +20,7 @@
       tile: FloorCaveDrought
       entities:
         - RandomWoodenWall
-        - CPDebugExitDungeon
+        - CP14DebugExitDungeon
 
   - !type:RoomEntrancePostGen
       tile: FloorCaveDrought
@@ -39,8 +39,8 @@
 
   - !type:BoundaryWallPostGen
       tile: FloorCaveDrought
-      wall: CPCaveStoneWall
-      cornerWall: CPCaveStoneWall
+      wall: CP14CaveStoneWall
+      cornerWall: CP14CaveStoneWall
 
   - !type:AutoCablingPostGen
       entity: Catwalk

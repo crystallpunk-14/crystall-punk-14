@@ -7,8 +7,8 @@ namespace Content.Server._CP14.Dungeon;
 /// <summary>
 ///
 /// </summary>
-[RegisterComponent, Access(typeof(CPDungeonSystem))]
-public sealed partial class CPDungeonEntranceComponent : Component
+[RegisterComponent, Access(typeof(CP14DungeonSystem))]
+public sealed partial class CP14DungeonEntranceComponent : Component
 {
     /// <summary>
     ///

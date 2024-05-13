@@ -11,7 +11,7 @@ namespace Content.Shared._CP14.Dungeon;
 /// Spawned inside of a salvage mission.
 /// </summary>
 [Prototype("dungeonLevel")]
-public sealed partial class CPDungeonLevelPrototype : IPrototype
+public sealed partial class CP14DungeonLevelPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 

@@ -1,18 +1,18 @@
 - type: salvageLoot
-  id: CPDungeonExit
+  id: CP14DungeonExit
   guaranteed: true
   loots:
     - !type:RandomSpawnsLoot
       entries:
-        - proto: CPDebugExitDungeon
+        - proto: CP14DebugExitDungeon
           prob: 1
 
 - type: salvageLoot
-  id: CPDungeonLoot
+  id: CP14DungeonLoot
   loots:
     - !type:RandomSpawnsLoot
       entries:
-        - proto: CPBaseSpear
+        - proto: CP14BaseSpear
           prob: 0.5
-        - proto: CPBaseDagger
+        - proto: CP14BaseDagger
           prob: 0.5

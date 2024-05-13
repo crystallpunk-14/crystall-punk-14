@@ -3,7 +3,7 @@ using Content.Shared.Teleportation.Systems;
 
 namespace Content.Server._CP14.PortalAutoLink;
 
-public sealed partial class CPAutoLinkSystem : EntitySystem
+public sealed partial class CP14AutoLinkSystem : EntitySystem
 {
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -12,19 +12,19 @@ public sealed partial class CPAutoLinkSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CPAutoLinkComponent, ActivateInWorldEvent>(OnActivateInWorld);
+        SubscribeLocalEvent<CP14AutoLinkComponent, ActivateInWorldEvent>(OnActivateInWorld);
     }
 
-    private void OnActivateInWorld(Entity<CPAutoLinkComponent> autolink, ref ActivateInWorldEvent args)
+    private void OnActivateInWorld(Entity<CP14AutoLinkComponent> autolink, ref ActivateInWorldEvent args)
     {
         TryAutoLink(autolink, out var otherLink);
     }
 
-    public bool TryAutoLink(Entity<CPAutoLinkComponent> autolink, out EntityUid? linkedEnt)
+    public bool TryAutoLink(Entity<CP14AutoLinkComponent> autolink, out EntityUid? linkedEnt)
     {
         linkedEnt = null;
 
-        var query = EntityQueryEnumerator<CPAutoLinkComponent>();
+        var query = EntityQueryEnumerator<CP14AutoLinkComponent>();
         while (query.MoveNext(out var uid, out var otherAutolink))
         {
             if (autolink.Comp == otherAutolink)
@@ -34,8 +34,8 @@ public sealed partial class CPAutoLinkSystem : EntitySystem
             {
                 if (_link.TryLink(autolink, uid, false))
                 {
-                    RemComp<CPAutoLinkComponent>(uid);
-                    RemComp<CPAutoLinkComponent>(autolink);
+                    RemComp<CP14AutoLinkComponent>(uid);
+                    RemComp<CP14AutoLinkComponent>(autolink);
                     return true;
                 }
             }
