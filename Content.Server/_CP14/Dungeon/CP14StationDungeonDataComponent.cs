@@ -17,7 +17,7 @@ public sealed partial class CP14StationDungeonDataComponent : Component
     public float StartMobBudget = 10f;
 
     [DataField]
-    public List<ProtoId<CPDungeonLayerPrototype>> AllowedLayers = new ();
+    public List<ProtoId<CP14DungeonLayerPrototype>> AllowedLayers = new ();
 
     [DataField]
     public int Layers = 3;

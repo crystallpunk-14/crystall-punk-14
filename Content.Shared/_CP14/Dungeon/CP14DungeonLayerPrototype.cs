@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Dungeon;
 
 [Prototype("dungeonLayer")]
-public sealed partial class CPDungeonLayerPrototype : IPrototype
+public sealed partial class CP14DungeonLayerPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 
@@ -16,8 +16,11 @@ public sealed partial class CPDungeonLayerPrototype : IPrototype
     /// minimum and maximum depth for this layer
     /// </summary>
     [DataField]
-    public Vector2i Depths = new Vector2i(0, 0);
+    public Vector2i Depths = new(0, 0);
 
     [DataField]
     public List<ProtoId<CPDungeonLayerModifierPrototype>> Modifiers = new();
+
+    [DataField]
+    public List<IDungeonLevel> Levels = new();
 }
