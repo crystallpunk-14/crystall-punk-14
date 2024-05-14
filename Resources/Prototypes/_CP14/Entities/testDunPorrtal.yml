@@ -1,0 +1,19 @@
+- type: entity
+  parent: PortalBlue
+  id: CP14DebugExitDungeon
+  name: портал данж
+  components:
+  - type: Portal
+    canTeleportToOtherMaps: true
+    randomTeleport: false
+
+- type: entity
+  parent: PortalBlue
+  id: CP14DebugExitDungeonAutolink
+  name: портал данж автолинк
+  components:
+  - type: Portal
+    canTeleportToOtherMaps: true
+    randomTeleport: false
+  - type: CP14AutoDungeonPortal
+    otherSidePortal: CP14DebugExitDungeon
