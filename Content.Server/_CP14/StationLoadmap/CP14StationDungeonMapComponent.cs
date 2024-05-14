@@ -21,4 +21,7 @@ public sealed partial class CP14StationDungeonMapComponent : Component
 
     [DataField]
     public string MapName = "Dungeon map";
+
+    [DataField(serverOnly: true)]
+    public ComponentRegistry Components = new();
 }

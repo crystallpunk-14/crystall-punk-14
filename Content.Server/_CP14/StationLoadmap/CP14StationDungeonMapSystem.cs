@@ -28,5 +28,7 @@ public sealed partial class CP14StationDungeonMapSystem : EntitySystem
         _metaData.SetEntityName(mapUid, map.Comp.MapName);
 
         _biome.EnsurePlanet(mapUid, _proto.Index(map.Comp.Biome), map.Comp.Seed, mapLight: map.Comp.MapLightColor);
+
+        EntityManager.AddComponents(mapUid, map.Comp.Components);
     }
 }
