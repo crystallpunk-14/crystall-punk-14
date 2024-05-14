@@ -35,6 +35,8 @@
           - Adventurer #CrystallPunk Dev replacement
           availableJobs:
             Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+        - type: CP14StationDungeonMap
+          biome: Caves
 
 #- type: gameMap
 #  id: TestTeg
