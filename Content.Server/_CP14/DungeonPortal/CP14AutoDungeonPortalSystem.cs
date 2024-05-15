@@ -61,12 +61,12 @@ public sealed partial class CP14AutoDungeonPortalSystem : EntitySystem
         var tiles = new List<(Vector2i Index, Tile Tile)>();
         var originF = _transform.GetWorldPosition(otherSidePortal);
         var origin = new Vector2i((int) originF.X, (int) originF.Y);
-        var tileDef = _tileDefManager["CP14FloorStonebricks"];
+        var tileDef = _tileDefManager["CP14FloorStonebricks"]; //TODO: Remove hardcode
         var seed = _random.Next();
         var random = new Random(seed);
         var grid = Comp<MapGridComponent>(targetMapUid);
 
-        for (var x = -2; x <= 2; x++)
+        for (var x = -2; x <= 2; x++) //TODO: Remove hardcode
         {
             for (var y = -2; y <= 2; y++)
             {

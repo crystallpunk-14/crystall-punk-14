@@ -27,7 +27,7 @@ public sealed partial class CP14StationDungeonMapSystem : EntitySystem
         if (!TryComp(map, out StationDataComponent? dataComp))
             return;
 
-        var mapUid = _map.CreateMap(out var mapId, false);
+        var mapUid = _map.CreateMap(out var mapId);
         _metaData.SetEntityName(mapUid, map.Comp.MapName);
 
         _biome.EnsurePlanet(mapUid, _proto.Index(map.Comp.Biome), map.Comp.Seed, mapLight: map.Comp.MapLightColor);
