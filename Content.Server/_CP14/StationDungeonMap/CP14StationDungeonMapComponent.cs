@@ -1,7 +1,7 @@
 using Content.Shared.Parallax.Biomes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.StationLoadmap;
+namespace Content.Server._CP14.StationDungeonMap;
 
 /// <summary>
 /// Initializes a procedurally generated world with points of interest

@@ -1,3 +1,4 @@
+using Content.Server._CP14.StationLoadmap;
 using Content.Server.Parallax;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
@@ -6,7 +7,8 @@ using Content.Shared.Teleportation.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.StationLoadmap;
+namespace Content.Server._CP14.StationDungeonMap;
+
 public sealed partial class CP14StationDungeonMapSystem : EntitySystem
 {
     [Dependency] private readonly BiomeSystem _biome = default!;
