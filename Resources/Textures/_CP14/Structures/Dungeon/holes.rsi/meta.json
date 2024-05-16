@@ -8,11 +8,15 @@
   },
   "states": [
     {
-      "name": "hole_big"
+      "name": "hole_big",
+      "directions": 4
     },
     {
-      "name": "ladder_big",
+      "name": "ladder_big_top_part",
       "directions": 4
+    },
+    {
+      "name": "ladder_bottom_part"
     }
   ]
 }
