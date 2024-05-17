@@ -573,13 +573,13 @@ namespace Content.Shared.CCVar
         /// When a mob is walking should its X / Y movement be relative to its parent (true) or the map (false).
         /// </summary>
         public static readonly CVarDef<bool> RelativeMovement =
-            CVarDef.Create("physics.relative_movement", true, CVar.ARCHIVE | CVar.REPLICATED);
+            CVarDef.Create("physics.relative_movement", true, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
         public static readonly CVarDef<float> TileFrictionModifier =
-            CVarDef.Create("physics.tile_friction", 40.0f, CVar.ARCHIVE | CVar.REPLICATED);
+            CVarDef.Create("physics.tile_friction", 40.0f, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
         public static readonly CVarDef<float> StopSpeed =
-            CVarDef.Create("physics.stop_speed", 0.1f, CVar.ARCHIVE | CVar.REPLICATED);
+            CVarDef.Create("physics.stop_speed", 0.1f, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
         /// Whether mobs can push objects like lockers.
@@ -588,7 +588,7 @@ namespace Content.Shared.CCVar
         /// Technically client doesn't need to know about it but this may prevent a bug in the distant future so it stays.
         /// </remarks>
         public static readonly CVarDef<bool> MobPushing =
-            CVarDef.Create("physics.mob_pushing", false, CVar.REPLICATED);
+            CVarDef.Create("physics.mob_pushing", false, CVar.REPLICATED | CVar.SERVER);
 
         /*
          * Music
@@ -1547,10 +1547,10 @@ namespace Content.Shared.CCVar
             CVarDef.Create("viewport.scale_render", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 
         public static readonly CVarDef<int> ViewportMinimumWidth =
-            CVarDef.Create("viewport.minimum_width", 15, CVar.REPLICATED);
+            CVarDef.Create("viewport.minimum_width", 15, CVar.REPLICATED | CVar.SERVER);
 
         public static readonly CVarDef<int> ViewportMaximumWidth =
-            CVarDef.Create("viewport.maximum_width", 21, CVar.REPLICATED);
+            CVarDef.Create("viewport.maximum_width", 21, CVar.REPLICATED | CVar.SERVER);
 
         public static readonly CVarDef<int> ViewportWidth =
             CVarDef.Create("viewport.width", 21, CVar.CLIENTONLY | CVar.ARCHIVE);
@@ -1655,7 +1655,7 @@ namespace Content.Shared.CCVar
             CVarDef.Create("chat.chat_sanitizer_enabled", true, CVar.SERVERONLY);
 
         public static readonly CVarDef<bool> ChatShowTypingIndicator =
-            CVarDef.Create("chat.show_typing_indicator", true, CVar.CLIENTONLY);
+            CVarDef.Create("chat.show_typing_indicator", true, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
         public static readonly CVarDef<bool> ChatEnableFancyBubbles =
             CVarDef.Create("chat.enable_fancy_bubbles", true, CVar.CLIENTONLY | CVar.ARCHIVE, "Toggles displaying fancy speech bubbles, which display the speaking character's name.");
