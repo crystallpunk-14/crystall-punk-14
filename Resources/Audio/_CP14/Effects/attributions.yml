@@ -1,0 +1,14 @@
+- files: ["crystal_ding.ogg"]
+  license: "CC0-1.0"
+  copyright: '2022-01-14-crystal-bell-08.flac by arseniiv'
+  source: "https://freesound.org/s/614832/"
+
+- files: ["crystal_ding2.ogg"]
+  license: "CC0-1.0"
+  copyright: '2022-01-14-crystal-bell-01.flac by arseniiv'
+  source: "https://freesound.org/s/614833/"
+
+- files: ["bubbles.ogg"]
+  license: "CC0-1.0"
+  copyright: 'magnuswaker of Freesound.org. Mixed from stereo to mono.'
+  source: "https://freesound.org/people/magnuswaker/sounds/540074/"

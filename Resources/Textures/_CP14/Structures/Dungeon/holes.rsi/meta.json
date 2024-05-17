@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by TheShuEd (discord)",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "hole_big",
+      "directions": 4
+    },
+    {
+      "name": "ladder_big_top_part",
+      "directions": 4
+    },
+    {
+      "name": "ladder_bottom_part"
+    }
+  ]
+}

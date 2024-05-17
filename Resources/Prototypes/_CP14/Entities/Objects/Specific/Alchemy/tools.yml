@@ -1,0 +1,146 @@
+- type: entity
+  parent: BaseItem
+  id: CP14Cauldron
+  name: cauldron
+  description: A heavy cauldron. It is not as bulky as a vat, but can be carried in your hands.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: ClothingSpeedModifier
+    walkModifier: 0.6
+    sprintModifier: 0.6
+  - type: HeldSpeedModifier
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/cauldron.rsi
+    layers:
+      - state: icon
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      vat:
+        maxVol: 100
+  - type: Spillable
+    solution: vat
+  - type: DrainableSolution
+    solution: vat
+  - type: ExaminableSolution
+    solution: vat
+  - type: MixableSolution
+    solution: vat
+  - type: RefillableSolution
+    solution: vat
+  - type: DrawableSolution
+    solution: vat
+  - type: DumpableSolution
+    solution: vat
+  - type: SolutionItemStatus
+    solution: vat
+  - type: Drink
+    solution: vat
+  - type: Injector
+    solutionName: vat
+    injectOnly: false
+    ignoreMobs: true
+    minTransferAmount: 10
+    maxTransferAmount: 100
+    transferAmount: 50
+    toggleState: 1 # draw
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+    inHandsMaxFillLevels: 5
+    inHandsFillBaseName: -fill
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 2
+    damage:
+      types:
+        Blunt: 5
+
+- type: entity
+  id: CP14Pestle
+  name: pestle
+  description: A device for conveniently grinding various materials in liquids
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
+    state: pestle
+  - type: CP14Pestle
+
+- type: entity
+  id: CP14Mortar
+  name: mortar
+  description: Alchemical sturdy plate for grinding reagents
+  parent: BaseStorageItem
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
+    layers:
+      - state: mortar_base
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      mortar:
+        maxVol: 30
+  - type: Spillable
+    solution: mortar
+  - type: DrainableSolution
+    solution: mortar
+  - type: ExaminableSolution
+    solution: mortar
+  - type: MixableSolution
+    solution: mortar
+  - type: RefillableSolution
+    solution: mortar
+  - type: DrawableSolution
+    solution: mortar
+  - type: DumpableSolution
+    solution: mortar
+  - type: SolutionItemStatus
+    solution: mortar
+  - type: Drink
+    solution: mortar
+  - type: Injector
+    solutionName: mortar
+    injectOnly: false
+    ignoreMobs: true
+    minTransferAmount: 1
+    maxTransferAmount: 10
+    transferAmount: 5
+    toggleState: 1 # draw
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: liq-
+  - type: Storage
+    maxItemSize: Normal
+    cP14CanStorageSolutionManagers: false
+    grid:
+    - 0,0,1,1
+  - type: CP14Mortar
+    solution: mortar
+    containerId: storagebase

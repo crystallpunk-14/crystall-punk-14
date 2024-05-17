@@ -6,7 +6,7 @@
   - type: Sprite
     state: icon
   - type: Item
-    size: Normal
+    size: Small
   - type: Clothing
     equipDelay: 0.7
     unequipDelay: 0.4
