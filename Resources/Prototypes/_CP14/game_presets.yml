@@ -1,12 +1,9 @@
 - type: gamePreset
-  id: CP14Deathmatch
+  id: CP14Playtest
   alias:
-    - deathmatch
-    - dm
-  name: death-match-title
-  description: death-match-description
-  maxPlayers: 15
+    - test
+  name: cp14-playtest-name
+  description: cp14-playtest-desc
   showInVote: true
-  supportedMaps: DeathMatchMapPool
   rules:
-    - CP14DeathMatch
+    - CP14Playtest

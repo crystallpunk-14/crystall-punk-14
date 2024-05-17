@@ -1,28 +1,167 @@
 # Cloak
 - type: loadout
-  id: CP14TestCloak
-  equipment: CP14TestCloak
+  id: CP14HoodieYellow
+  equipment: CP14HoodieYellow
 
 - type: startingGear
-  id: CP14TestCloak
+  id: CP14HoodieYellow
   equipment:
     cloak: CP14ClothingCloakHoodieYellow
 
 - type: loadout
-  id: CP14TestCloak2
-  equipment: CP14TestCloak2
+  id: CP14BlacksmithArpon
+  equipment: CP14BlacksmithArpon
 
 - type: startingGear
-  id: CP14TestCloak2
-  equipment:
-    cloak: CP14ClothingCloakArmoredRed
-
-- type: loadout
-  id: CP14TestCloak3
-  equipment: CP14TestCloak3
-
-- type: startingGear
-  id: CP14TestCloak3
+  id: CP14BlacksmithArpon
   equipment:
     cloak: CP14ClothingCloakBlacksmithArpon
 
+- type: loadout
+  id: CP14FurcapeBlack
+  equipment: CP14FurcapeBlack
+
+- type: startingGear
+  id: CP14FurcapeBlack
+  equipment:
+    cloak: CP14ClothingCloakFurcapeBlack
+
+- type: loadout
+  id: CP14FurcapeBlue
+  equipment: CP14FurcapeBlue
+
+- type: startingGear
+  id: CP14FurcapeBlue
+  equipment:
+    cloak: CP14ClothingCloakFurcapeBlue
+
+# Eyes
+
+- type: loadout
+  id: CP14Monocle
+  equipment: CP14Monocle
+
+- type: startingGear
+  id: CP14Monocle
+  equipment:
+    eyes: CP14ClothingEyesMonocle
+
+- type: loadout
+  id: CP14GoldGlasses
+  equipment: CP14GoldGlasses
+
+- type: startingGear
+  id: CP14GoldGlasses
+  equipment:
+    eyes: CP14ClothingEyesGoldGlasses
+
+# Gloves
+
+- type: loadout
+  id: CP14Girdles
+  equipment: CP14Girdles
+
+- type: startingGear
+  id: CP14Girdles
+  equipment:
+    gloves: CP14ClothingGlovesGirdles
+
+# Head
+
+- type: loadout
+  id: CP14MetalHeadband
+  equipment: CP14MetalHeadband
+
+- type: startingGear
+  id: CP14MetalHeadband
+  equipment:
+    head: CP14ClothingHeadMetalHeadband
+
+# Mask
+
+- type: loadout
+  id: CP14Sinner
+  equipment: CP14Sinner
+
+- type: startingGear
+  id: CP14Sinner
+  equipment:
+    mask: CP14ClothingMaskSinner
+
+# Pants
+
+- type: loadout
+  id: CP14HarlequinRed
+  equipment: CP14HarlequinRed
+
+- type: startingGear
+  id: CP14HarlequinRed
+  equipment:
+    pants: CP14ClothingPantsHarlequinRed
+
+- type: loadout
+  id: CP14Aristocratic
+  equipment: CP14Aristocratic
+
+- type: startingGear
+  id: CP14Aristocratic
+  equipment:
+    pants: CP14ClothingPantsAristocratic
+
+- type: loadout
+  id: CP14Loincloth
+  equipment: CP14Loincloth
+
+- type: startingGear
+  id: CP14Loincloth
+  equipment:
+    pants: CP14ClothingPantsLoincloth
+    
+# Shirt
+
+- type: loadout
+  id: CP14ShirtHarlequineRed
+  equipment: CP14ShirtHarlequineRed
+
+- type: startingGear
+  id: CP14ShirtHarlequineRed
+  equipment:
+    shirt: CP14ClothingShirtHarlequineRed
+
+- type: loadout
+  id: CP14ShirtSteampunk
+  equipment: CP14ShirtSteampunk
+
+- type: startingGear
+  id: CP14ShirtSteampunk
+  equipment:
+    shirt: CP14ClothingShirtSteampunk
+
+# Shoes
+
+- type: loadout
+  id: CP14ShoesBlack
+  equipment: CP14ShoesBlack
+
+- type: startingGear
+  id: CP14ShoesBlack
+  equipment:
+    shoes: CP14ClothingShoesBlack
+
+- type: loadout
+  id: CP14ShoesAristocraticBlack
+  equipment: CP14ShoesAristocraticBlack
+
+- type: startingGear
+  id: CP14ShoesAristocraticBlack
+  equipment:
+    shoes: CP14ClothingShoesAristocraticBlack
+
+- type: loadout
+  id: CP14ShoesSandals
+  equipment: CP14ShoesSandals
+
+- type: startingGear
+  id: CP14ShoesSandals
+  equipment:
+    shoes: CP14ClothingShoesSandals

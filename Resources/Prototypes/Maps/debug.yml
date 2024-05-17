@@ -27,7 +27,8 @@
         - type: StationRandomTransform
           enableStationRotation: false
           maxStationOffset: null
-        - type: CP14StationBiome
+        - type: StationBiome
+          biome: Snow
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs
@@ -35,6 +36,8 @@
           - Adventurer #CrystallPunk Dev replacement
           availableJobs:
             Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+        - type: CP14StationDungeonMap
+          biome: CP14CavesGeneric
 
 #- type: gameMap
 #  id: TestTeg
