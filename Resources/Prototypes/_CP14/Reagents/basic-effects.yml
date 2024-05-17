@@ -1,0 +1,73 @@
+- type: reagent
+  id: CP14BasicEffectHealBlunt
+  name: cp14-reagent-name-basic-heal-blunt
+  desc: cp14-reagent-desc-basic-heal-blunt
+  group: CP14BasicEffect
+  flavor: medicine
+  color: "#c71aaa"
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: -1
+
+- type: reagent
+  id: CP14BasicEffectHealPiercing
+  name: cp14-reagent-name-basic-heal-piercing
+  desc: cp14-reagent-desc-basic-heal-piercing
+  group: CP14BasicEffect
+  flavor: medicine
+  color: "#e03895"
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Piercing: -1
+
+- type: reagent
+  id: CP14BasicEffectHealSlash
+  name: cp14-reagent-name-basic-heal-slash
+  desc: cp14-reagent-desc-basic-heal-slash
+  group: CP14BasicEffect
+  flavor: medicine
+  color: "#cf153a"
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -1
+
+- type: reagent
+  id: CP14BasicEffectSatiateHunger
+  name: cp14-reagent-name-basic-satiate-hunger
+  desc: cp14-reagent-desc-basic-satiate-hunger
+  group: CP14BasicEffect
+  flavor: nutriment
+  color: "#a35629"
+  physicalDesc: cp14-reagent-physical-desc-scarlet #TODO
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+
+- type: reagent
+  id: CP14BasicEffectSatiateThirst
+  name: cp14-reagent-name-basic-satiate-thirst
+  desc: cp14-reagent-desc-basic-satiate-thirst
+  group: CP14BasicEffect
+  flavor: nutriment
+  color: "#2b7fed"
+  physicalDesc: cp14-reagent-physical-desc-scarlet #TODO
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
