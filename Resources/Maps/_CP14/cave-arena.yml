@@ -6,16 +6,12 @@ tilemap:
   3: CP14FloorBase
   1: CP14FloorDirt
   4: CP14FloorGrass
-<<<<<<< HEAD
   5: CP14FloorStonebricks
   7: CP14FloorStonebricksSmallCarved1
   6: CP14FloorStonebricksSmallCarved2
   10: CP14FloorStonebricksSquareCarved
   8: CP14FloorWoodPlanks
   9: CP14FloorWoodPlanksBig
-=======
-  3: CP14FloorBase
->>>>>>> 949fa513fe3987a51896fd0730c71d90b0362d0b
   2: FloorDirt
 entities:
 - proto: ""
@@ -1840,7 +1836,6 @@ entities:
     - type: Transform
       pos: 12.492137,-6.2514977
       parent: 2
-<<<<<<< HEAD
 - proto: CP14BaseWoodDoor
   entities:
   - uid: 1585
@@ -1877,9 +1872,6 @@ entities:
     - type: Transform
       pos: -16.5,-1.5
       parent: 2
-=======
-    - type: ActiveUserInterface
->>>>>>> 949fa513fe3987a51896fd0730c71d90b0362d0b
 - proto: CP14BloodGrass
   entities:
   - uid: 216
