@@ -1,4 +1,5 @@
 - type: tile
+  editorHidden: false
   id: CP14FloorDirt
   name: cp14-tiles-dirt
   sprite: /Textures/_CP14/Tiles/cavedrought.png
@@ -29,6 +30,7 @@
 
 - type: tile
   id: CP14FloorGrass
+  editorHidden: false
   name: cp14-tiles-grass
   sprite: /Textures/Tiles/Planet/Grass/grass.png
   variants: 4
