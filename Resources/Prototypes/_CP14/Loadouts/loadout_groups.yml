@@ -1,7 +1,61 @@
 - type: loadoutGroup
-  id: CP14TestLoadout
-  name: job-name-adventurer 
+  id: CP14TestCloak
+  name: cp14-loadout-test-cloak
+  minLimit: 0
   loadouts:
-  - CP14TestCloak
-  - CP14TestCloak2
-  - CP14TestCloak3
+  - CP14HoodieYellow
+  - CP14BlacksmithArpon
+  - CP14FurcapeBlack
+  - CP14FurcapeBlue
+
+- type: loadoutGroup
+  id: CP14TestEyes
+  name: cp14-loadout-test-eyes
+  minLimit: 0
+  loadouts:
+  - CP14Monocle
+  - CP14GoldGlasses
+
+- type: loadoutGroup
+  id: CP14TestGloves
+  name: cp14-loadout-test-gloves
+  minLimit: 0
+  loadouts:
+  - CP14Girdles
+
+- type: loadoutGroup
+  id: CP14TestHead
+  name: cp14-loadout-test-head
+  minLimit: 0
+  loadouts:
+  - CP14MetalHeadband
+
+- type: loadoutGroup
+  id: CP14TestMask
+  name: cp14-loadout-test-mask
+  minLimit: 0
+  loadouts:
+  - CP14Sinner
+
+- type: loadoutGroup
+  id: CP14TestPants
+  name: cp14-loadout-test-pants
+  loadouts:
+  - CP14HarlequinRed
+  - CP14Aristocratic
+  - CP14Loincloth
+
+- type: loadoutGroup
+  id: CP14TestShirt
+  name: cp14-loadout-test-shirt
+  loadouts:
+  - CP14ShirtSteampunk
+  - CP14ShirtHarlequineRed
+
+- type: loadoutGroup
+  id: CP14TestShoes
+  name: cp14-loadout-test-shoes
+  loadouts:
+  - CP14ShoesBlack
+  - CP14ShoesAristocraticBlack
+  - CP14ShoesSandals
