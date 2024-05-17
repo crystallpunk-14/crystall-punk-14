@@ -24,6 +24,9 @@
     - /Audio/Ambience/ambiruin4.ogg
     - /Audio/Ambience/maintambience.ogg
     - /Audio/_CP14/Ambience/ambicave1.ogg
+    - /Audio/_CP14/Ambience/ambicreepy1.ogg
+    - /Audio/_CP14/Ambience/ambicreepy2.ogg
+    - /Audio/_CP14/Ambience/ambicreepy3.ogg
 
 # Rules
 - type: rules

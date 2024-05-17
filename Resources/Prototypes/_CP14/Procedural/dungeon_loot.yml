@@ -1,0 +1,9 @@
+- type: salvageLoot
+  id: CP14DungeonLoot
+  loots:
+    - !type:RandomSpawnsLoot
+      entries:
+        - proto: CP14BaseThrowableSpear
+          prob: 0.5
+        - proto: CP14BaseDagger
+          prob: 0.5
