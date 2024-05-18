@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Shared._CP14.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
@@ -156,13 +157,21 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                 var tone = Math.Round(Humanoid.SkinColor.HumanSkinToneFromColor(newSkinColor));
                 newSkinColor = Humanoid.SkinColor.HumanSkinTone((int)tone);
                 break;
+
             case HumanoidSkinColor.Hues:
                 break;
+
             case HumanoidSkinColor.TintedHues:
                 newSkinColor = Humanoid.SkinColor.ValidTintedHuesSkinTone(newSkinColor);
                 break;
+
             case HumanoidSkinColor.VoxFeathers:
                 newSkinColor = Humanoid.SkinColor.ProportionalVoxColor(newSkinColor);
+                break;
+
+            // CP14 - Custom HumanoidSkinColor
+            case HumanoidSkinColor.TieflingHues:
+                newSkinColor = CP14SkinColor.TieflingHues(newSkinColor);
                 break;
         }
 

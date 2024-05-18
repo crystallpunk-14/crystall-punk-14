@@ -8,6 +8,7 @@ using Content.Client.Lobby.UI.Roles;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._CP14.Humanoid;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -975,6 +976,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
                     break;
                 }
+
                 case HumanoidSkinColor.Hues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -987,6 +989,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
                     break;
                 }
+
                 case HumanoidSkinColor.TintedHues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1001,6 +1004,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                     break;
                 }
+
                 case HumanoidSkinColor.VoxFeathers:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1010,6 +1014,22 @@ namespace Content.Client.Lobby.UI
                     }
 
                     var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
+
+                    Markings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
+
+                // CP14 - Custom HumanoidSkinColor
+                case HumanoidSkinColor.TieflingHues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    var color = CP14SkinColor.MakeTieflingHueValid(_rgbSkinColorSelector.Color);
 
                     Markings.CurrentSkinColor = color;
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
@@ -1192,9 +1212,9 @@ namespace Content.Client.Lobby.UI
                     }
 
                     Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-
                     break;
                 }
+
                 case HumanoidSkinColor.Hues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1207,6 +1227,7 @@ namespace Content.Client.Lobby.UI
                     _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
                     break;
                 }
+
                 case HumanoidSkinColor.TintedHues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1219,6 +1240,7 @@ namespace Content.Client.Lobby.UI
                     _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
                     break;
                 }
+
                 case HumanoidSkinColor.VoxFeathers:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1228,11 +1250,22 @@ namespace Content.Client.Lobby.UI
                     }
 
                     _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
+                    break;
+                }
 
+                // CP14 - Custom HumanoidSkinColor
+                case HumanoidSkinColor.TieflingHues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    _rgbSkinColorSelector.Color = CP14SkinColor.MakeTieflingHueValid(Profile.Appearance.SkinColor);
                     break;
                 }
             }
-
         }
 
         public void UpdateSpeciesGuidebookIcon()
