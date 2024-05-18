@@ -11,7 +11,6 @@
       allowedTiles:
       - CP14FloorGrass
       threshold: 0
-      tile: CP14FloorDirt
       divisions: 1
       noise:
         seed: 0
