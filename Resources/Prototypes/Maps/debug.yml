@@ -28,7 +28,7 @@
           enableStationRotation: false
           maxStationOffset: null
         - type: StationBiome
-          biome: Snow
+          biome: CP14GrasslandTestResult
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs
