@@ -976,7 +976,6 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
                     break;
                 }
-
                 case HumanoidSkinColor.Hues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -989,7 +988,6 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
                     break;
                 }
-
                 case HumanoidSkinColor.TintedHues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1004,7 +1002,6 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                     break;
                 }
-
                 case HumanoidSkinColor.VoxFeathers:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1019,8 +1016,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                     break;
                 }
-
-                // CP14 - Custom HumanoidSkinColor
+                // CP14 - Custom HumanoidSkinColor - Start
                 case HumanoidSkinColor.TieflingHues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1035,6 +1031,7 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                     break;
                 }
+                // CP14 - Custom HumanoidSkinColor - End
             }
 
             SetDirty();
@@ -1212,9 +1209,9 @@ namespace Content.Client.Lobby.UI
                     }
 
                     Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+
                     break;
                 }
-
                 case HumanoidSkinColor.Hues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1227,7 +1224,6 @@ namespace Content.Client.Lobby.UI
                     _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
                     break;
                 }
-
                 case HumanoidSkinColor.TintedHues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1240,7 +1236,6 @@ namespace Content.Client.Lobby.UI
                     _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
                     break;
                 }
-
                 case HumanoidSkinColor.VoxFeathers:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1252,8 +1247,7 @@ namespace Content.Client.Lobby.UI
                     _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
                     break;
                 }
-
-                // CP14 - Custom HumanoidSkinColor
+                // CP14 - Custom HumanoidSkinColor - Start
                 case HumanoidSkinColor.TieflingHues:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1265,6 +1259,7 @@ namespace Content.Client.Lobby.UI
                     _rgbSkinColorSelector.Color = CP14SkinColor.MakeTieflingHueValid(Profile.Appearance.SkinColor);
                     break;
                 }
+                // CP14 - Custom HumanoidSkinColor - End
             }
         }
 

@@ -157,22 +157,19 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                 var tone = Math.Round(Humanoid.SkinColor.HumanSkinToneFromColor(newSkinColor));
                 newSkinColor = Humanoid.SkinColor.HumanSkinTone((int)tone);
                 break;
-
             case HumanoidSkinColor.Hues:
                 break;
-
             case HumanoidSkinColor.TintedHues:
                 newSkinColor = Humanoid.SkinColor.ValidTintedHuesSkinTone(newSkinColor);
                 break;
-
             case HumanoidSkinColor.VoxFeathers:
                 newSkinColor = Humanoid.SkinColor.ProportionalVoxColor(newSkinColor);
                 break;
-
-            // CP14 - Custom HumanoidSkinColor
+            // CP14 - Custom HumanoidSkinColor - Start
             case HumanoidSkinColor.TieflingHues:
                 newSkinColor = CP14SkinColor.TieflingHues(newSkinColor);
                 break;
+            // CP14 - Custom HumanoidSkinColor - End
         }
 
         return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new ());
