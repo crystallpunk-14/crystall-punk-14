@@ -33,7 +33,7 @@
     West: /Textures/_CP14/Tiles/Dirt/double_edge.png
   baseTurf: CP14FloorBase
   deconstructTools: [ CP14Digging ]
-  itemDrop: CP14DirtEffect
+  itemDrop: CP14RandomDirtLootSpawner
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
