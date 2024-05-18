@@ -1,0 +1,221 @@
+# Bushes
+
+- type: decal
+  id: CP14FloraBushA1
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: busha1
+
+- type: decal
+  id: CP14FloraBushA2
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: busha2
+
+- type: decal
+  id: CP14FloraBushA3
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: busha3
+
+- type: decal
+  id: CP14FloraBushB1
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: bushb1
+
+- type: decal
+  id: CP14FloraBushB2
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: bushb2
+
+- type: decal
+  id: CP14FloraBushB3
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: bushb3
+
+- type: decal
+  id: CP14FloraBushC1
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: bushc1
+
+- type: decal
+  id: CP14FloraBushC2
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: bushc2
+
+- type: decal
+  id: CP14FloraBushC3
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_bushes.rsi
+    state: bushc3
+
+# Grass
+
+- type: decal
+  id: CP14FloraGrassA1
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassa1
+
+- type: decal
+  id: CP14FloraGrassA2
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassa2
+
+- type: decal
+  id: CP14FloraGrassA3
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassa3
+
+- type: decal
+  id: CP14FloraGrassA4
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassa4
+
+- type: decal
+  id: CP14FloraGrassA5
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassa5
+
+- type: decal
+  id: CP14FloraGrassB1
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassb1
+
+- type: decal
+  id: CP14FloraGrassB2
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassb2
+
+- type: decal
+  id: CP14FloraGrassB3
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassb3
+
+- type: decal
+  id: CP14FloraGrassB4
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassb4
+
+- type: decal
+  id: CP14FloraGrassB5
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_grass.rsi
+    state: grassb5
+
+# Rocks
+
+- type: decal
+  id: CP14FloraRock01
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock01
+
+- type: decal
+  id: CP14FloraRock02
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock02
+
+- type: decal
+  id: CP14FloraRock03
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock03
+
+- type: decal
+  id: CP14FloraRock04
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock04
+
+- type: decal
+  id: CP14FloraRock05
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock05

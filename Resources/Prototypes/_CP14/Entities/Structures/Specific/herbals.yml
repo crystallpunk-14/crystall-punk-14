@@ -46,6 +46,7 @@
   suffix: Gatherable
   components:
   - type: Sprite
+    snapCardinals: true
     drawdepth: FloorTiles
     sprite: _CP14/Objects/Specific/Alchemy/Herbal/bloodgrass.rsi
     state: grass1
