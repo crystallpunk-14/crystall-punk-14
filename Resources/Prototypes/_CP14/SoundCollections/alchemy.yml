@@ -12,3 +12,9 @@
   files:
     - /Audio/Effects/Chemistry/bubbles.ogg
     - /Audio/_CP14/Effects/bubbles.ogg
+
+- type: soundCollection
+  id: CP14GrassGathering
+  files:
+    - /Audio/_CP14/Items/grass_gather.ogg
+    - /Audio/_CP14/Items/grass_gather2.ogg
