@@ -2,7 +2,7 @@
   editorHidden: false
   id: CP14FloorDirt
   name: cp14-tiles-dirt
-  sprite: /Textures/_CP14/Tiles/cavedrought.png
+  sprite: /Textures/_CP14/Tiles/Dirt/cavedrought.png
   variants: 16
   placementVariants:
   - 1.0
@@ -21,6 +21,16 @@
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Dirt/single_edge.png
+    NorthEast: /Textures/_CP14/Tiles/Dirt/single_edge.png
+    NorthWest: /Textures/_CP14/Tiles/Dirt/single_edge.png
+    SouthWest: /Textures/_CP14/Tiles/Dirt/single_edge.png
+    South: /Textures/_CP14/Tiles/Dirt/double_edge.png
+    East: /Textures/_CP14/Tiles/Dirt/double_edge.png
+    North: /Textures/_CP14/Tiles/Dirt/double_edge.png
+    West: /Textures/_CP14/Tiles/Dirt/double_edge.png
   baseTurf: CP14FloorBase
   deconstructTools: [ CP14Digging ]
   itemDrop: CP14DirtEffect
@@ -41,7 +51,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 1
+  edgeSpritePriority: 2
   edgeSprites:
     SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
     NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
