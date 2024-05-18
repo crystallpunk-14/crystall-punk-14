@@ -8,16 +8,13 @@
   "copyright": "Created by TheShuEd (Github) for CrystallPunk14",
   "states": [
     {
-      "name": "ore1"
+      "name": "dirt"
     },
     {
-      "name": "ore2"
+      "name": "dirt_2"
     },
     {
-      "name": "ore3"
-    },
-    {
-      "name": "ore4"
+      "name": "dirt_3"
     }
   ]
 }

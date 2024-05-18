@@ -1,0 +1,6 @@
+- type: stack
+  id: CP14Dirt
+  name: dirt block
+  spawn: CP14DirtBlock
+  maxCount: 10
+  itemSize: 5

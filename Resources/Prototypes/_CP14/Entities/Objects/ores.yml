@@ -60,17 +60,3 @@
     layers:
       - state: ore1
         map: ["random"]
-
-- type: entity
-  id: CP14DirtBlock
-  parent: CP14BaseOre
-  name: dirt block
-  description: A block of excellent black soil.
-  components:
-  - type: Item
-    size: Normal
-  - type: Sprite
-    sprite: _CP14/Objects/Ores/dirt_block.rsi
-    layers:
-      - state: ore1
-        map: ["random"]

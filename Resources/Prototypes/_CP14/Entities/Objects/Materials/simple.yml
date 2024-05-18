@@ -1,0 +1,27 @@
+- type: entity
+  id: CP14DirtBlock
+  parent: BaseItem
+  name: dirt block
+  description: A block of excellent black soil.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/dirt_block.rsi
+    layers:
+      - state: dirt
+        map: ["base"]
+  - type: FloorTile
+    outputs:
+      - CP14FloorDirt
+  - type: Stack
+    stackType: CP14Dirt
+    count: 1
+    baseLayer: base
+    layerStates:
+    - dirt
+    - dirt_2
+    - dirt_3
+  - type: Appearance
+  # TODO material
