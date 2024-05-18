@@ -13,6 +13,11 @@
       - state: dirt
         map: ["base"]
   - type: FloorTile
+    placeTileSound:
+      collection: CP14Digging
+      params:
+        variation: 0.03
+        volume: 2
     outputs:
       - CP14FloorDirt
   - type: Stack
