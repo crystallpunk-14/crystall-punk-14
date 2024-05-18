@@ -263,7 +263,7 @@ public enum HumanoidSkinColor : byte
     HumanToned,
     Hues,
     VoxFeathers, // Vox feathers are limited to a specific color range
-    TintedHues, // This gives a color tint to a humanoid's skin (10% saturation with full hue range).
+    TintedHues, //This gives a color tint to a humanoid's skin (10% saturation with full hue range).
     // CP14 - Custom HumanoidSkinColor - Start
     TieflingHues,
     // CP14 - Custom HumanoidSkinColor - End

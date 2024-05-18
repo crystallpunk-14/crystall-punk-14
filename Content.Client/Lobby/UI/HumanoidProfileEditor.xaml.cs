@@ -1245,6 +1245,7 @@ namespace Content.Client.Lobby.UI
                     }
 
                     _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
+
                     break;
                 }
                 // CP14 - Custom HumanoidSkinColor - Start
@@ -1261,6 +1262,7 @@ namespace Content.Client.Lobby.UI
                 }
                 // CP14 - Custom HumanoidSkinColor - End
             }
+
         }
 
         public void UpdateSpeciesGuidebookIcon()
