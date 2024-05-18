@@ -1,5 +1,5 @@
 - type: reaction
-  id: CP14VitalExtract
+  id: CP14BloodGrassProcessing1
   minTemp: 350
   reactants:
     CP14Blood:
@@ -7,17 +7,19 @@
     CP14BloodGrassSap:
       amount: 2
   products:
-    CP14VitalExtract: 3
+    CP14BasicEffectSatiateHunger: 2
+    CP14BasicEffectHealSlash: 0.5
+    CP14BasicEffectHealPiercing: 0.5
 
-- type: reaction
-  id: CP14VitalExtractOverheating
-  minTemp: 450
-  reactants:
-    CP14VitalExtract: 
-      amount: 1
-  effects:    
-    - !type:AreaReactionEffect
-      duration: 20
-      prototypeId: CP14MistVitalExtract
-      sound:
-        path: /Audio/Effects/smoke.ogg
+#- type: reaction
+#  id: CP14BloodGrassProcessingFail1
+#  minTemp: 450
+#  reactants:
+#    CP14VitalExtract: 
+#      amount: 1
+#  effects:
+#    - !type:AreaReactionEffect
+#      duration: 20
+#      prototypeId: CP14MistVitalExtract
+#      sound:
+#        path: /Audio/Effects/smoke.ogg

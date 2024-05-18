@@ -22,3 +22,8 @@
   license: "CC0-1.0"
   copyright: 'by GrimGrum of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/GrimGrum/sounds/412558/"
+  
+- files: ["grass_gather.ogg", "grass_gather2.ogg", "grass_gather3.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by hadescolossus of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/hadescolossus/sounds/705228/"
