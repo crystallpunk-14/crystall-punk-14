@@ -1,0 +1,23 @@
+- type: entity
+  id: CP14DirtEffect
+  noSpawn: true
+  components:
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+    layers:
+      - sprite: _CP14/Effects/dirt.rsi
+        state: dirt1
+        map: [ "random" ]
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
+  - type: RandomSprite
+    available:
+      - random:
+          dirt1: ""
+          dirt2: ""

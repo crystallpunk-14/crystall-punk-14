@@ -23,7 +23,7 @@
   - 1.0
   baseTurf: CP14FloorBase
   deconstructTools: [ CP14Digging ]
-  itemDrop: PuddleSparkle
+  itemDrop: CP14DirtEffect
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -53,7 +53,7 @@
     West: /Textures/Tiles/Planet/Grass/double_edge.png
   baseTurf: CP14FloorDirt
   deconstructTools: [ CP14Digging ]
-  itemDrop: PuddleSparkle
+  itemDrop: CP14DirtEffect
   isSubfloor: false
   footstepSounds:
     collection: FootstepGrass
