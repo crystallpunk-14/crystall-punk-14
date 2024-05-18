@@ -22,6 +22,8 @@
   - 1.0
   - 1.0
   baseTurf: CP14FloorBase
+  deconstructTools: [ CP14Digging ]
+  itemDrop: PuddleSparkle
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
@@ -49,8 +51,10 @@
     East: /Textures/Tiles/Planet/Grass/double_edge.png
     North: /Textures/Tiles/Planet/Grass/double_edge.png
     West: /Textures/Tiles/Planet/Grass/double_edge.png
-  baseTurf: CP14FloorPlanetDirt
-  isSubfloor: true
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: PuddleSparkle
+  isSubfloor: false
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
