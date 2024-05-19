@@ -15,7 +15,44 @@
   - type: IconSmooth
     key: CPwall
     base: stone
-    
+
+- type: entity
+  id: CP14WoodenWallFrame
+  name: wooden wall frame
+  parent: BaseStructureDynamic
+  description: Wooden frame for any wooden wall.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wall_frame.rsi
+    state: wooden
+  - type: PlacementReplacement
+    key: walls
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - GlassAirlockLayer
+  - type: InteractionOutline
+  - type: Construction
+    graph: CP14Wall
+    node: WoodenFrame
+
+
 - type: entity
   id: CP14WallDebug
   name: debug wall
@@ -126,3 +163,6 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
+  - type: Construction
+    graph: CP14Wall
+    node: CP14CardboardWall

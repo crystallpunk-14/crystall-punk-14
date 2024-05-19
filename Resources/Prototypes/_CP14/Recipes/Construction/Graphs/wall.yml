@@ -1,0 +1,44 @@
+- type: constructionGraph
+  id: CP14Wall
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: WoodenFrame
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 4
+              doAfter: 2
+
+    - node: WoodenFrame
+      entity: CP14WoodenWallFrame
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 4
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Screwing #TODO - new tool
+              doAfter: 1
+        - to: CardboardWall
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 1
+            - tool: CP14Digging #Lol TODO Axe smth
+              doAfter: 1
+    - node: CardboardWall
+      entity: CP14CardboardWall
+      edges:
+        - to: WoodenFrame
+          steps:
+            - tool: CP14Digging #Lol TODO - new tool
+              doAfter: 1
