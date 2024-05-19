@@ -30,6 +30,7 @@
   - 1.0
   - 1.0
   - 1.0
+  - 1.0
   baseTurf: CP14FloorBase #Recursivle indestructible
   isSubfloor: true
   footstepSounds:
