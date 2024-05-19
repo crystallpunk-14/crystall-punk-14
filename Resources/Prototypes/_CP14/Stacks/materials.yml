@@ -7,9 +7,9 @@
   itemSize: 5
 
 - type: stack
-  id: CP14WoodLog
-  name: wooden log
-  spawn: CP14WoodLog1
-  icon: { sprite: _CP14/Objects/Materials/logs.rsi, state: log_2 }
+  id: CP14WoodenPlanks
+  name: wooden planks
+  spawn: CP14WoodPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
   maxCount: 10
   itemSize: 5
