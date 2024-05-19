@@ -1,0 +1,1 @@
+cp14-material-wood-log = деревянное бревно

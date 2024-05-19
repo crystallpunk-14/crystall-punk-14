@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14DirtBlock
+  id: CP14DirtBlock1
   parent: BaseItem
   name: dirt block
   description: A block of excellent black soil.
@@ -32,7 +32,15 @@
   # TODO material
 
 - type: entity
-  id: CP14Log
+  id: CP14DirtBlock10
+  parent: CP14DirtBlock1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14WoodLog1
   parent: BaseItem
   name: wooden log
   description: A piece of unprocessed wood. Good material for building, or starting a fire.
@@ -46,10 +54,22 @@
         map: ["base"]
   - type: Appearance
   - type: Stack
-    stackType: CP14Log
+    stackType: CP14WoodLog
     count: 1
     baseLayer: base
     layerStates:
     - log
     - log_2
     - log_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14WoodLog: 100
+
+- type: entity
+  id: CP14WoodLog10
+  parent: CP14WoodLog1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10

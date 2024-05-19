@@ -2,12 +2,14 @@
   id: CP14Dirt
   name: dirt block
   spawn: CP14DirtBlock
+  icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
   maxCount: 10
   itemSize: 5
 
 - type: stack
-  id: CP14Log
+  id: CP14WoodLog
   name: wooden log
-  spawn: CP14Log
+  spawn: CP14WoodLog1
+  icon: { sprite: _CP14/Objects/Materials/logs.rsi, state: log_2 }
   maxCount: 10
   itemSize: 5
