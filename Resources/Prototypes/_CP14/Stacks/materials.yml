@@ -4,3 +4,10 @@
   spawn: CP14DirtBlock
   maxCount: 10
   itemSize: 5
+
+- type: stack
+  id: CP14Log
+  name: wooden log
+  spawn: CP14Log
+  maxCount: 10
+  itemSize: 5

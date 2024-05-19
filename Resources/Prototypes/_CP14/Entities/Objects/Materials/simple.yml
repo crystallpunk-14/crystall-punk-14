@@ -20,6 +20,7 @@
         volume: 2
     outputs:
       - CP14FloorDirt
+  - type: Appearance
   - type: Stack
     stackType: CP14Dirt
     count: 1
@@ -28,5 +29,27 @@
     - dirt
     - dirt_2
     - dirt_3
-  - type: Appearance
   # TODO material
+
+- type: entity
+  id: CP14Log
+  parent: BaseItem
+  name: wooden log
+  description: A piece of unprocessed wood. Good material for building, or starting a fire.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/logs.rsi
+    layers:
+      - state: log
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Log
+    count: 1
+    baseLayer: base
+    layerStates:
+    - log
+    - log_2
+    - log_3
