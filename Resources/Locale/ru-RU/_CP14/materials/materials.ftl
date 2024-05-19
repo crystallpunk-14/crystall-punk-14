@@ -1,1 +1,1 @@
-cp14-material-wood-log = деревянное бревно
+cp14-material-wooden-planks = деревянные доски

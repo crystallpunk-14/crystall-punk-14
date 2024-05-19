@@ -76,11 +76,11 @@
       types:
         Heat: 1
   - type: Log
-    spawnedPrototype: CP14WoodPlanks1
+    spawnedPrototype: CP14WoodenPlanks1
     spawnCount: 3
 
 - type: entity
-  id: CP14WoodPlanks1
+  id: CP14WoodenPlanks1
   parent:
   - BaseItem
   - CP14BaseWooden
@@ -118,8 +118,8 @@
     - planks_3
 
 - type: entity
-  id: CP14WoodPlanks10
-  parent: CP14WoodPlanks1
+  id: CP14WoodenPlanks10
+  parent: CP14WoodenPlanks1
   components:
   - type: Stack
     count: 10

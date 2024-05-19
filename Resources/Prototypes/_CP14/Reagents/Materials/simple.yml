@@ -1,8 +1,8 @@
 - type: material
-  id: CP14WoodLog
-  stackEntity: CP14WoodLog1
-  name: cp14-material-wood-log
-  unit: materials-unit-piece
-  icon: { sprite: _CP14/Objects/Materials/logs.rsi, state: log_2 }
+  id: CP14WoodenPlanks
+  stackEntity: CP14WoodenPlanks1
+  name: cp14-material-wooden-planks
+  unit: materials-unit-plank
+  icon: { sprite: _CP14/Objects/Materials/logs.rsi, state: planks_2 }
   color: "#874d3a"
   price: 0 #?
