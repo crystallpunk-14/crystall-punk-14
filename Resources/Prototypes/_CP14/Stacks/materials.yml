@@ -1,7 +1,7 @@
 - type: stack
   id: CP14Dirt
   name: dirt block
-  spawn: CP14DirtBlock
+  spawn: CP14DirtBlock1
   icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
   maxCount: 10
   itemSize: 5
