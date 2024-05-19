@@ -278,6 +278,7 @@
 
 - type: entity
   parent: BaseTree
+  noSpawn: true
   id: FloraTree01
   name: tree
   components:
@@ -286,6 +287,7 @@
 
 - type: entity
   parent: BaseTree
+  noSpawn: true
   id: FloraTree02
   name: tree
   components:
@@ -294,6 +296,7 @@
 
 - type: entity
   parent: BaseTree
+  noSpawn: true
   id: FloraTree03
   name: tree
   components:
@@ -302,6 +305,7 @@
 
 - type: entity
   parent: BaseTree
+  noSpawn: true
   id: FloraTree04
   name: tree
   components:
@@ -310,6 +314,7 @@
 
 - type: entity
   parent: BaseTree
+  noSpawn: true
   id: FloraTree05
   name: tree
   components:
@@ -318,6 +323,7 @@
 
 - type: entity
   parent: BaseTree
+  noSpawn: true
   id: FloraTree06
   name: tree
   components:
@@ -383,6 +389,7 @@
 - type: entity
   parent: BaseTreeLarge
   id: FloraTreeLarge01
+  noSpawn: true
   name: large tree
   components:
   - type: Sprite
@@ -391,6 +398,7 @@
 - type: entity
   parent: BaseTreeLarge
   id: FloraTreeLarge02
+  noSpawn: true
   name: large tree
   components:
   - type: Sprite
@@ -399,6 +407,7 @@
 - type: entity
   parent: BaseTreeLarge
   id: FloraTreeLarge03
+  noSpawn: true
   name: large tree
   components:
   - type: Sprite
@@ -407,6 +416,7 @@
 - type: entity
   parent: BaseTreeLarge
   id: FloraTreeLarge04
+  noSpawn: true
   name: large tree
   components:
   - type: Sprite
@@ -415,6 +425,7 @@
 - type: entity
   parent: BaseTreeLarge
   id: FloraTreeLarge05
+  noSpawn: true
   name: large tree
   components:
   - type: Sprite
@@ -423,6 +434,7 @@
 - type: entity
   parent: BaseTreeLarge
   id: FloraTreeLarge06
+  noSpawn: true
   name: large tree
   components:
   - type: Sprite

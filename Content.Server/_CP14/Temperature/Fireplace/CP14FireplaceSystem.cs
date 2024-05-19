@@ -1,8 +1,10 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Popups;
+using Content.Server.Stack;
 using Content.Shared._CP14.Temperature;
 using Content.Shared.Interaction;
+using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using Robust.Server.Audio;
 using Robust.Server.Containers;
@@ -18,8 +20,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly FlammableSystem _flammable = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly StackSystem _stackSystem = default!;
 
     public override void Initialize()
     {
@@ -67,7 +68,14 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         if (flammable.OnFire)
             _audio.PlayPvs(component.InsertFuelSound, uid);
 
-        QueueDel(fuel);
+        if (TryComp<StackComponent>(fuel, out var stack))
+        {
+            _stackSystem.SetCount(fuel, stack.Count - 1);
+        }
+        else
+        {
+            QueueDel(fuel);
+        }
     }
 
     public override void Update(float frameTime)

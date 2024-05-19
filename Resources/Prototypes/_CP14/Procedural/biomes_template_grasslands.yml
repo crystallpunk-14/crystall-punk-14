@@ -88,21 +88,19 @@
         frequency: 2
       allowedTiles:
         - CP14FloorGrass
-      entities: #TODO - own CP14 trees
-        - FloraTree01
-        - FloraTree02
-        - FloraTree03
-        - FloraTree04
-        - FloraTree05
-        - FloraTree06
-        - FloraTreeLarge01
-        - FloraTreeLarge02
-        - FloraTreeLarge03
-        - FloraTreeLarge04
-        - FloraTreeLarge05
-        - FloraTreeLarge06
-        - FloraTreeStump
-        - FloraTreeStump
+      entities: 
+        - CP14FloraTree01
+        - CP14FloraTree02
+        - CP14FloraTree03
+        - CP14FloraTree04
+        - CP14FloraTree05
+        - CP14FloraTree06
+        - CP14FloraTreeLarge01
+        - CP14FloraTreeLarge02
+        - CP14FloraTreeLarge03
+        - CP14FloraTreeLarge04
+        - CP14FloraTreeLarge05
+        - CP14FloraTreeLarge06
     - !type:BiomeEntityLayer # Rare Bloodgrass
       threshold: 0.8
       noise:
@@ -140,21 +138,19 @@
         frequency: 2
       allowedTiles:
         - CP14FloorGrass
-      entities: #TODO - own CP14 trees
-        - FloraTree01
-        - FloraTree02
-        - FloraTree03
-        - FloraTree04
-        - FloraTree05
-        - FloraTree06
-        - FloraTreeLarge01
-        - FloraTreeLarge02
-        - FloraTreeLarge03
-        - FloraTreeLarge04
-        - FloraTreeLarge05
-        - FloraTreeLarge06
-        - FloraTreeStump
-        - FloraTreeStump
+      entities:
+        - CP14FloraTree01
+        - CP14FloraTree02
+        - CP14FloraTree03
+        - CP14FloraTree04
+        - CP14FloraTree05
+        - CP14FloraTree06
+        - CP14FloraTreeLarge01
+        - CP14FloraTreeLarge02
+        - CP14FloraTreeLarge03
+        - CP14FloraTreeLarge04
+        - CP14FloraTreeLarge05
+        - CP14FloraTreeLarge06
 
 - type: biomeTemplate
   id: CP14GrasslandHills # Холмы
