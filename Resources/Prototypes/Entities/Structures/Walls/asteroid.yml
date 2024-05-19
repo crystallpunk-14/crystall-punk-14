@@ -374,7 +374,7 @@
     - type: Transform
       noRot: true
     - type: SoundOnGather
-    - type: Gatherable      
+    - type: Gatherable
       toolWhitelist:
         tags:
           - Pickaxe
