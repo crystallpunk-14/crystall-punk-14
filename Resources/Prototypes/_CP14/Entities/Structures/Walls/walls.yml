@@ -27,6 +27,7 @@
     - Wall
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Walls/wall_frame.rsi
     state: wooden
   - type: PlacementReplacement
