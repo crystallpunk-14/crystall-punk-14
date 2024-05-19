@@ -41,7 +41,9 @@
 
 - type: entity
   id: CP14WoodLog1
-  parent: BaseItem
+  parent: 
+  - BaseItem
+  - CP14BaseWooden
   name: wooden log
   description: A piece of unprocessed wood. Good material for building, or starting a fire.
   components:
@@ -65,6 +67,18 @@
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
       CP14WoodLog: 100
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    damage:
+      types:
+        Heat: 1
 
 - type: entity
   id: CP14WoodLog10
