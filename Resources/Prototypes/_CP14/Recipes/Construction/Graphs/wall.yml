@@ -4,7 +4,7 @@
   graph:
     - node: start
       edges:
-        - to: WoodenFrame
+        - to: FrameWooden
           completed:
             - !type:SnapToGrid
               southRotation: true
@@ -25,7 +25,7 @@
           steps:
             - tool: Screwing #TODO - new tool
               doAfter: 1
-        - to: CardboardWall
+        - to: WallCardboard
           completed:
             - !type:SnapToGrid
               southRotation: true
@@ -38,7 +38,7 @@
     - node: WallCardboard
       entity: CP14WallCardboard
       edges:
-        - to: WoodenFrame
+        - to: FrameWooden
           steps:
             - tool: CP14Digging #Lol TODO - new tool
               doAfter: 1
