@@ -1,46 +1,46 @@
 {
   "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "By jaraten(discord)",
   "size": {
     "x": 32,
     "y": 64
   },
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Created by TheShuEd (Discord) for CrystallPunk14",
   "states": [
     {
-      "name": "wood0",
-      "directions": 4
-    },
-    {
-      "name": "wood1",
-      "directions": 4
-    },
-    {
-      "name": "wood2",	
-      "directions": 4
-    },
-    {
-      "name": "wood3",
-      "directions": 4
-    },
-    {
-      "name": "wood4",
-      "directions": 4
-    },
-    {
-      "name": "wood5",
-      "directions": 4
-    },
-    {
-      "name": "wood6",
-      "directions": 4
-    },
-    {
-      "name": "wood7",
-      "directions": 4
-    },
-    {
       "name": "full"
+    },
+    {
+      "name": "wood_window0",
+      "directions": 4
+    },
+    {
+      "name": "wood_window1",
+      "directions": 4
+    },
+    {
+      "name": "wood_window2",
+      "directions": 4
+    },
+    {
+      "name": "wood_window3",
+      "directions": 4
+    },
+    {
+      "name": "wood_window4",
+      "directions": 4
+    },
+    {
+      "name": "wood_window5",
+      "directions": 4
+    },
+    {
+      "name": "wood_window6",
+      "directions": 4
+    },
+    {
+      "name": "wood_window7",
+      "directions": 4
     }
   ]
 }
