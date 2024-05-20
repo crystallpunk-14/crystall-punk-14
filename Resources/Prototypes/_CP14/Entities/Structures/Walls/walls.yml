@@ -24,7 +24,7 @@
   id: CP14WallStonebrick
   name: stone brick wall
   parent: CP14BaseWall
-  description: Ужасы
+  description: Bruh
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
@@ -34,51 +34,56 @@
     base: stonebricks
 
 - type: entity
+  id: CP14WallWhitebrick
+  name: white brick wall
+  parent: CP14BaseWall
+  description: Bruh
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
+  - type: IconSmooth
+    base: stonebricks
+
+- type: entity
+  id: CP14WallBrownbrick
+  name: brick wall
+  parent: CP14BaseWall
+  description: Bruh
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/bricks_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/bricks_wall.rsi
+  - type: IconSmooth
+    base: bricksA
+
+- type: entity
+  id: CP14WallWooden
+  name: wooden wall
+  parent: CP14BaseWall
+  description: Bruh
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wooden_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wooden_wall.rsi
+  - type: IconSmooth
+    base: wood
+
+- type: entity
   id: CP14WallCardboard
   name: cardboard Wall
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
   parent: 
-  - CP14BaseWall
+  - CP14WallWooden
   - CP14BaseWooden
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
+    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
-  - type: IconSmooth
-    base: wood
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 150
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14WoodenPlanks1:
-            min: 2
-            max: 3
-  - type: FireVisuals
-    sprite: _CP14/Effects/fire.rsi
-    normalState: full
+    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
   - type: Construction
     graph: CP14Wall
     node: WallCardboard

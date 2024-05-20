@@ -1,6 +1,5 @@
 - type: entity
   id: CP14WindowBase
-  suffix: DEBUG
   abstract: true
   parent: Window
   components:

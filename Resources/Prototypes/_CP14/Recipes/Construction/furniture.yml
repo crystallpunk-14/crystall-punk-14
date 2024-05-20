@@ -62,7 +62,7 @@
   targetNode: CP14WallmountTorch
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/wallmount_32icon.rsi
+    sprite: _CP14/Structures/Wallmount/wallmount_32icon.rsi
     state: torch
   objectType: Structure
   placementMode: SnapgridCenter
