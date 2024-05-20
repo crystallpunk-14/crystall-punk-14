@@ -5,7 +5,7 @@
   id: CP14CardboardWall
   graph: CP14Wall
   startNode: start
-  targetNode: CardboardWall
+  targetNode: WallCardboard
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/cardboard_wall.rsi
