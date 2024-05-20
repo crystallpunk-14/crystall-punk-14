@@ -1,0 +1,17 @@
+- type: construction
+  crystallPunkAllowed: true
+  name: Cardboard wall
+  description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
+  id: CP14CardboardWall
+  graph: CP14Wall
+  startNode: start
+  targetNode: WallCardboard
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

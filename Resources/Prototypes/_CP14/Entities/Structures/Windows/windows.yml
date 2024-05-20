@@ -1,0 +1,40 @@
+- type: entity
+  id: CP14WindowBase
+  abstract: true
+  parent: Window
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+  - type: Icon
+    state: full
+  - type: IconSmooth
+    key: CP14window
+  - type: PlacementReplacement
+    key: walls
+
+- type: entity
+  id: CP14WindowStoneBrick
+  parent: CP14WindowBase
+  name: stone brick window
+  description: A stone brick wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    state: full
+  - type: IconSmooth
+    base: stone_bricks_window
+
+- type: entity
+  id: CP14WindowWooden
+  parent: CP14WindowBase
+  name: wooden window
+  description: A wooden wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/wooden_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/wooden_window.rsi
+  - type: IconSmooth
+    base: wood_window
