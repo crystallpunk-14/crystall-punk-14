@@ -13,8 +13,8 @@
               amount: 4
               doAfter: 2
 
-    - node: WoodenFrame
-      entity: CP14WoodenWallFrame
+    - node: FrameWooden
+      entity: CP14WallWoodenFrame
       edges:
         - to: start
           completed:
@@ -35,8 +35,8 @@
               doAfter: 1
             - tool: CP14Digging #Lol TODO Axe smth
               doAfter: 1
-    - node: CardboardWall
-      entity: CP14CardboardWall
+    - node: WallCardboard
+      entity: CP14WallCardboard
       edges:
         - to: WoodenFrame
           steps:

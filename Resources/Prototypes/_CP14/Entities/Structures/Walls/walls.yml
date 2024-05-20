@@ -13,62 +13,13 @@
     drawdepth: Mobs
   - type: SpriteFade
   - type: IconSmooth
-    key: CPwall
+    key: CP14wall
     base: stone
-
-- type: entity
-  id: CP14WoodenWallFrame
-  name: wooden wall frame
-  parent: BaseStructureDynamic
-  description: Wooden frame for any wooden wall.
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: _CP14/Structures/Walls/wall_frame.rsi
-    state: wooden
+  - type: Icon
+    state: full
   - type: PlacementReplacement
     key: walls
-  - type: Transform
-    anchored: true
-    noRot: false
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-        density: 60
-        mask:
-        - MachineMask
-        layer:
-        - GlassAirlockLayer
-  - type: InteractionOutline
-  - type: Construction
-    graph: CP14Wall
-    node: WoodenFrame
 
-
-- type: entity
-  id: CP14WallDebug
-  name: debug wall
-  suffix: DEBUG
-  parent: CP14BaseWall
-  description: Ужасы
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/TEMPLATE.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/TEMPLATE.rsi
-    state: full
-  - type: IconSmooth
-    base: wood
-    
 - type: entity
   id: CP14WallStonebrick
   name: stone brick wall
@@ -79,46 +30,11 @@
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-    state: full
   - type: IconSmooth
     base: stonebricks
 
 - type: entity
-  id: CP14WindowDebug #TODO remove
-  name: debug window
-  suffix: DEBUG
-  parent: CP14BaseWall
-  description: Ужасы
-  components:
-  - type: Occluder
-    enabled: false
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
-    drawdepth: Mobs
-  - type: Icon
-    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
-    state: full
-  - type: IconSmooth
-    base: wood
-    key: CPwindow
-
-- type: entity
-  id: CP14WindowStoneBrick
-  parent: CP14WindowDebug
-  name: stone brick window
-  description: A stone brick wall with a glass window in it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
-    drawdepth: Mobs
-  - type: Icon
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
-    state: full
-  - type: IconSmooth
-    base: stone_bricks_window
-
-- type: entity
-  id: CP14CardboardWall
+  id: CP14WallCardboard
   name: cardboard Wall
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
   parent: 
@@ -129,7 +45,6 @@
     sprite: _CP14/Structures/Walls/cardboard_walls.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/cardboard_walls.rsi
-    state: full
   - type: IconSmooth
     base: wood
   - type: Damageable
@@ -158,7 +73,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank:
+          CP14WoodenPlanks1:
             min: 2
             max: 3
   - type: FireVisuals
@@ -166,4 +81,4 @@
     normalState: full
   - type: Construction
     graph: CP14Wall
-    node: CP14CardboardWall
+    node: WallCardboard
