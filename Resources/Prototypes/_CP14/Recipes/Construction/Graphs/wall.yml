@@ -14,7 +14,7 @@
               doAfter: 2
 
     - node: FrameWooden
-      entity: CP14WallWoodenFrame
+      entity: CP14FrameWooden
       edges:
         - to: start
           completed:
