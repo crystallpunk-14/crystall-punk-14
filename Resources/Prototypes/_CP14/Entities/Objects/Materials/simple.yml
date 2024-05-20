@@ -123,7 +123,11 @@
     layerStates:
     - planks
     - planks_2
-    - planks_3
+    - planks_3  
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14WoodenPlanks: 100
 
 - type: entity
   id: CP14WoodenPlanks10
