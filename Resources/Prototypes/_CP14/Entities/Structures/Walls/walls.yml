@@ -30,6 +30,9 @@
     state: full
   - type: IconSmooth
     base: wood
+    cP14RandomStates:
+    - wood
+    - woodB
     
 - type: entity
   id: CP14WallStonebrick

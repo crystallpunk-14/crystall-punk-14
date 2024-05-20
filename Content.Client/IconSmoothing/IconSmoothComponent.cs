@@ -30,7 +30,7 @@ namespace Content.Client.IconSmoothing
         ///     Prepended to the RSI state.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("base")]
-        public string StateBase { get; private set; } = string.Empty;
+        public string StateBase { get; set; } = string.Empty; //CP14 without private set - iconSmoothingRandomize
 
         [DataField("shader", customTypeSerializer:typeof(PrototypeIdSerializer<ShaderPrototype>))]
         public string? Shader;
@@ -45,6 +45,12 @@ namespace Content.Client.IconSmoothing
         ///     Used by <see cref="IconSmoothSystem"/> to reduce redundant updates.
         /// </summary>
         internal int UpdateGeneration { get; set; }
+
+        /// <summary>
+        /// CP14 iconSmoothingRandomize
+        /// </summary>
+        [DataField]
+        public List<string> CP14RandomStates = new();
     }
 
     /// <summary>

@@ -40,6 +40,38 @@
       "directions": 4
     },
     {
+      "name": "woodB0",
+      "directions": 4
+    },
+    {
+      "name": "woodB1",
+      "directions": 4
+    },
+    {
+      "name": "woodB2",
+      "directions": 4
+    },
+    {
+      "name": "woodB3",
+      "directions": 4
+    },
+    {
+      "name": "woodB4",
+      "directions": 4
+    },
+    {
+      "name": "woodB5",
+      "directions": 4
+    },
+    {
+      "name": "woodB6",
+      "directions": 4
+    },
+    {
+      "name": "woodB7",
+      "directions": 4
+    },
+    {
       "name": "full"
     }
   ]
