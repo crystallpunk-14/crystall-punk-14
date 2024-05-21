@@ -70,3 +70,42 @@
   - type: Construction
     graph: CP14WallmountTorch
     node: CP14WallmountTorch
+
+- type: entity
+  id: CP14WallmountLamp
+  name: eternal flame lamp
+  description: A fragile eternal blue fire as proof of the superiority of magic over nature. 
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
+    layers:
+      - state: base
+      - state: on
+        shader: unshaded
+        map: [ "light" ]
+  - type: PointLight
+    radius: 6
+    netsync: false
+    color: "#b0eaf6"
+  - type: Appearance
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        light:
+          True: {visible: true}
+          False: {visible: false}
