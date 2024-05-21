@@ -55,3 +55,16 @@
     node: CP14WoodenChest
     containers:
     - entity_storage
+
+- type: entity
+  parent: 
+  - CP14WoodenChest
+  id: CP14BrassChest
+  name: brass chest
+  description: A simple brass chest for easy storage of junk.
+  components:
+  - type: Icon
+    sprite: _CP14/Structures/Storage/Crates/brasschest.rsi
+    state: icon
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/brasschest.rsi
