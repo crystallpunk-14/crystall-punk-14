@@ -13,119 +13,77 @@
     drawdepth: Mobs
   - type: SpriteFade
   - type: IconSmooth
-    key: CPwall
+    key: CP14wall
     base: stone
-    
-- type: entity
-  id: CP14WallDebug
-  name: debug wall
-  suffix: DEBUG
-  parent: CP14BaseWall
-  description: Ужасы
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/TEMPLATE.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/TEMPLATE.rsi
     state: full
-  - type: IconSmooth
-    base: wood
-    cP14RandomStates:
-    - wood
-    - woodB
-    
+  - type: PlacementReplacement
+    key: walls
+
 - type: entity
   id: CP14WallStonebrick
   name: stone brick wall
   parent: CP14BaseWall
-  description: Ужасы
+  description: Bruh
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
   - type: Icon
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-    state: full
   - type: IconSmooth
     base: stonebricks
 
 - type: entity
-  id: CP14WindowDebug #TODO remove
-  name: debug window
-  suffix: DEBUG
+  id: CP14WallWhitebrick
+  name: white brick wall
   parent: CP14BaseWall
-  description: Ужасы
+  description: Bruh
   components:
-  - type: Occluder
-    enabled: false
   - type: Sprite
-    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
-    drawdepth: Mobs
+    sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
   - type: Icon
-    sprite: _CP14/Structures/Windows/TEMPLATE_WINDOW.rsi
-    state: full
+    sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
+  - type: IconSmooth
+    base: stonebricks
+
+- type: entity
+  id: CP14WallBrownbrick
+  name: brick wall
+  parent: CP14BaseWall
+  description: Bruh
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/bricks_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/bricks_wall.rsi
+  - type: IconSmooth
+    base: bricksA
+
+- type: entity
+  id: CP14WallWooden
+  name: wooden wall
+  parent: CP14BaseWall
+  description: Bruh
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wooden_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wooden_wall.rsi
   - type: IconSmooth
     base: wood
-    key: CPwindow
 
 - type: entity
-  id: CP14WindowStoneBrick
-  parent: CP14WindowDebug
-  name: stone brick window
-  description: A stone brick wall with a glass window in it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
-    drawdepth: Mobs
-  - type: Icon
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
-    state: full
-  - type: IconSmooth
-    base: stone_bricks_window
-
-- type: entity
-  id: CP14CardboardWall
+  id: CP14WallCardboard
   name: cardboard Wall
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
   parent: 
-  - CP14BaseWall
+  - CP14WallWooden
   - CP14BaseWooden
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
+    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/cardboard_walls.rsi
-    state: full
-  - type: IconSmooth
-    base: wood
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 150
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MaterialWoodPlank:
-            min: 2
-            max: 3
-  - type: FireVisuals
-    sprite: _CP14/Effects/fire.rsi
-    normalState: full
+    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
+  - type: Construction
+    graph: CP14Wall
+    node: WallCardboard

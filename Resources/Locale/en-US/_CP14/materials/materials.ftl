@@ -1,1 +1,1 @@
-cp14-material-wood-log = wooden log
+cp14-material-wooden-planks = wooden planks

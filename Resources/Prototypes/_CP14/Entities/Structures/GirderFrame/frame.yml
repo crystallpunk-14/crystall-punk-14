@@ -1,0 +1,36 @@
+- type: entity
+  id: CP14FrameWooden
+  name: wooden wall frame
+  parent: BaseStructureDynamic
+  description: Wooden frame for any wooden wall.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Walls/wall_frame.rsi
+    state: wooden
+  - type: PlacementReplacement
+    key: walls
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - GlassAirlockLayer
+  - type: InteractionOutline
+  - type: Construction
+    graph: CP14Wall
+    node: FrameWooden
