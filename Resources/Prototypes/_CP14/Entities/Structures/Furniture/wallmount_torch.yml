@@ -95,17 +95,14 @@
     netsync: false
     color: "#b0eaf6"
   - type: Appearance
-  - type: ToggleableLightVisuals
-    spriteLayer: light
-  - type: ItemToggle
-    predictable: false
-    soundActivate:
-      path: /Audio/Items/flashlight_on.ogg
-    soundDeactivate:
-      path: /Audio/Items/flashlight_off.ogg
-  - type: GenericVisualizer
-    visuals:
-      enum.ToggleVisuals.Toggled:
-        light:
-          True: {visible: true}
-          False: {visible: false}
+  #TODO toggleable
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
