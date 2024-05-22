@@ -4,6 +4,7 @@ cp14-tiles-base = каменная толща
 # Natural
 cp14-tiles-grass = луговая трава
 cp14-tiles-dirt = почва
+cp14-tiles-sand = песок
 
 # Produced
 cp14-tiles-foundation = фундамент

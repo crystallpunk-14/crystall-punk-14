@@ -1,6 +1,6 @@
-- files: ["cavedrought.png"]
+- files: ["sand.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "Space Station 14, recolored by TheShuEd"
+  copyright: "Space Station 14"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
 - files: ["double_edge.png", "single_edge.png"]
