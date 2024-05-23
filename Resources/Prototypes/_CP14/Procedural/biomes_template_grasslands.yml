@@ -199,3 +199,67 @@
         seed: 14
         frequency: 0.02
         fractalType: None
+    # River start
+    - !type:BiomeTileLayer
+      tile: CP14FloorDirt
+      threshold: 0.93
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        frequency: 0.003
+        lacunarity: 1.50
+        gain: 0.12
+        fractalType: Ridged
+        octaves: 1
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorDirt
+        - CP14FloorSand
+      threshold: 0.93
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        frequency: 0.003
+        lacunarity: 1.50
+        gain: 0.12
+        fractalType: Ridged
+        octaves: 1
+      entities:
+        - CP14FloorWater
+    # River end
+    # Lakes start
+    - !type:BiomeTileLayer
+      tile: CP14FloorSand
+      threshold: 0.55
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.01
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 150
+    - !type:BiomeTileLayer
+      tile: CP14FloorDirt
+      threshold: 0.68
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.01
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 150
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorDirt
+        - CP14FloorSand
+      threshold: 0.6
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.01
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 150
+      entities:
+        - CP14FloorWater
+    # Lakes end
