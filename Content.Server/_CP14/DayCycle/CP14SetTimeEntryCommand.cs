@@ -6,7 +6,7 @@ using Robust.Shared.Console;
 namespace Content.Server._CP14.DayCycle;
 
 [AdminCommand(AdminFlags.VarEdit)]
-public sealed class SetTimeEntryCommand : LocalizedCommands
+public sealed class CP14SetTimeEntryCommand : LocalizedCommands
 {
     private const string Name = "set_time_entry";
     private const int ArgumentCount = 2;
@@ -30,12 +30,12 @@ public sealed class SetTimeEntryCommand : LocalizedCommands
         }
 
         var entityManager = IoCManager.Resolve<EntityManager>();
-        var dayCycleSystem = entityManager.System<DayCycleSystem>();
+        var dayCycleSystem = entityManager.System<CP14DayCycleSystem>();
         var entity = entityManager.GetEntity(netEntity);
 
-        if (!entityManager.TryGetComponent<DayCycleComponent>(entity, out var dayCycle))
+        if (!entityManager.TryGetComponent<CP14DayCycleComponent>(entity, out var dayCycle))
         {
-            shell.WriteError(Loc.GetString("shell-entity-with-uid-lacks-component", ("uid", entity), ("componentName", nameof(DayCycleComponent))));
+            shell.WriteError(Loc.GetString("shell-entity-with-uid-lacks-component", ("uid", entity), ("componentName", nameof(CP14DayCycleComponent))));
             return;
         }
 
@@ -55,13 +55,13 @@ public sealed class SetTimeEntryCommand : LocalizedCommands
         switch (args.Length)
         {
             case 1:
-                return CompletionResult.FromOptions(CompletionHelper.Components<DayCycleComponent>(args[0], entityManager));
+                return CompletionResult.FromOptions(CompletionHelper.Components<CP14DayCycleComponent>(args[0], entityManager));
 
             case 2:
                 if (!NetEntity.TryParse(args[0], out var mapUid))
                     return CompletionResult.Empty;
 
-                if (!entityManager.TryGetComponent<DayCycleComponent>(entityManager.GetEntity(mapUid), out var component))
+                if (!entityManager.TryGetComponent<CP14DayCycleComponent>(entityManager.GetEntity(mapUid), out var component))
                     return CompletionResult.Empty;
 
                 if (component.TimeEntries.Count - 1 < 0)

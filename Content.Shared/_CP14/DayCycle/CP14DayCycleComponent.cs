@@ -7,31 +7,37 @@ namespace Content.Shared._CP14.DayCycle;
 /// Stores all the necessary data for the day and night cycle system to work
 /// </summary>
 
-[RegisterComponent, NetworkedComponent, Access(typeof(DayCycleSystem))]
-public sealed partial class DayCycleComponent : Component
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14DayCycleSystem))]
+public sealed partial class CP14DayCycleComponent : Component
 {
     [ViewVariables]
-    public int NextTimeEntry => CurrentTimeEntry + 1 >= TimeEntries.Count ? 0 : CurrentTimeEntry + 1;
+    public int NextTimeEntryIndex => CurrentTimeEntryIndex + 1 >= TimeEntries.Count ? 0 : CurrentTimeEntryIndex + 1;
 
     [ViewVariables]
-    public Color StartColor => TimeEntries[CurrentTimeEntry].StartColor;
+    public DayCycleEntry CurrentTimeEntry => TimeEntries[CurrentTimeEntryIndex];
 
     [ViewVariables]
-    public Color EndColor => TimeEntries[NextTimeEntry].StartColor;
+    public DayCycleEntry NextCurrentTimeEntry => TimeEntries[NextTimeEntryIndex];
 
-    [DataField(required: true), ViewVariables]
+    [ViewVariables]
+    public Color StartColor => CurrentTimeEntry.Color;
+
+    [ViewVariables]
+    public Color EndColor => NextCurrentTimeEntry.Color;
+
+    [DataField(required: true), ViewVariables, AutoNetworkedField]
     public List<DayCycleEntry> TimeEntries = new();
 
-    [DataField, ViewVariables]
+    [DataField, ViewVariables, AutoNetworkedField]
     public bool IsNight; // TODO: Rewrite this shit
 
-    [DataField, ViewVariables]
-    public int CurrentTimeEntry;
+    [DataField, ViewVariables, AutoNetworkedField]
+    public int CurrentTimeEntryIndex;
 
-    [DataField, ViewVariables]
+    [DataField, ViewVariables, AutoNetworkedField]
     public TimeSpan EntryStartTime;
 
-    [DataField, ViewVariables]
+    [DataField, ViewVariables, AutoNetworkedField]
     public TimeSpan EntryEndTime;
 }
 
@@ -42,7 +48,7 @@ public readonly partial record struct DayCycleEntry()
     /// The color of the world's lights at the beginning of this time of day
     /// </summary>
     [DataField]
-    public Color StartColor { get; init; } = Color.White; // TODO: Rename it to "Color"?
+    public Color Color { get; init; } = Color.White;
 
     /// <summary>
     /// Duration of color shift to the next time of day
