@@ -35,3 +35,41 @@
         reagents:
         - ReagentId: CP14BloodGrassSap
           Quantity: 5
+
+- type: entity
+  id: CP14AgaricMushroom
+  parent: FoodProduceBase
+  name: fly agaric
+  description: This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/agaric.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+        base4: ""
+        base5: ""
+  - type: FlavorProfile
+    flavors:
+      - CP14Metallic #TODO
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14BloodGrassSap #TODO
+        Quantity: 5
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14BloodGrassSap #TODO
+          Quantity: 5
