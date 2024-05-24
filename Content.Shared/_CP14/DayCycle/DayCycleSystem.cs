@@ -2,8 +2,11 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.DayCycle;
+
 public sealed partial class DayCycleSystem : EntitySystem
 {
+    public const int MinTimeEntryCount = 2;
+    public const float MaxTimeDiff = 0.05f;
 
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -26,11 +29,13 @@ public sealed partial class DayCycleSystem : EntitySystem
 
     private void OnMapInitDayCycle(Entity<DayCycleComponent> dayCycle, ref MapInitEvent args)
     {
-        if (dayCycle.Comp.TimeEntries.Count == 0)
+        if (dayCycle.Comp.TimeEntries.Count < MinTimeEntryCount)
+        {
+            Log.Warning("Attempting to create a daily cycle with the number of time entries less than 2");
             return;
+        }
 
         var currentEntry = dayCycle.Comp.TimeEntries[0];
-
         dayCycle.Comp.EntryStartTime = _timing.CurTime;
         dayCycle.Comp.EntryEndTime = _timing.CurTime + currentEntry.Duration;
     }
@@ -42,54 +47,70 @@ public sealed partial class DayCycleSystem : EntitySystem
         var dayCycleQuery = EntityQueryEnumerator<DayCycleComponent, MapLightComponent>();
         while (dayCycleQuery.MoveNext(out var uid, out var dayCycle, out var mapLight))
         {
-            if (dayCycle.TimeEntries.Count <= 1)
+            var entity = new Entity<DayCycleComponent, MapLightComponent>(uid, dayCycle, mapLight);
+
+            if (dayCycle.TimeEntries.Count < MinTimeEntryCount)
                 continue;
 
-            var curEntry = dayCycle.CurrentTimeEntry;
-            var nextEntry = (curEntry + 1 >= dayCycle.TimeEntries.Count) ? 0 : (curEntry + 1);
-
-            var start = dayCycle.EntryStartTime;
-            var end = dayCycle.EntryEndTime;
-
-            var lerpValue = GetLerpValue((float) start.TotalSeconds, (float) end.TotalSeconds, (float) _timing.CurTime.TotalSeconds);
-
-            var startColor = dayCycle.TimeEntries[curEntry].StartColor;
-            var endColor = dayCycle.TimeEntries[nextEntry].StartColor;
-
-            mapLight.AmbientLightColor = Color.InterpolateBetween(startColor, endColor, lerpValue);
-            Dirty(uid, mapLight);
-
-
-            if (_timing.CurTime > dayCycle.EntryEndTime)
+            var color = GetCurrentColor(entity, _timing.CurTime.TotalSeconds);
+            if (color != mapLight.AmbientLightColor)
             {
-                dayCycle.CurrentTimeEntry = nextEntry;
-                dayCycle.EntryStartTime = dayCycle.EntryEndTime;
-                dayCycle.EntryEndTime += dayCycle.TimeEntries[nextEntry].Duration;
-
-                if (dayCycle.IsNight && !dayCycle.TimeEntries[curEntry].IsNight) // Day started
-                {
-                    dayCycle.IsNight = false;
-                    var ev = new DayCycleDayStartedEvent(uid);
-                    RaiseLocalEvent(uid, ref ev, true);
-                }
-                if (!dayCycle.IsNight && dayCycle.TimeEntries[curEntry].IsNight) // Night started
-                {
-                    dayCycle.IsNight = true;
-                    var ev = new DayCycleNightStartedEvent(uid);
-                    RaiseLocalEvent(uid, ref ev, true);
-                }
+                mapLight.AmbientLightColor = color;
+                Dirty(uid, mapLight);
             }
+
+            if (_timing.CurTime <= dayCycle.EntryEndTime)
+                continue;
+
+            SetTimeEntry((uid, dayCycle),  dayCycle.NextTimeEntry);
         }
     }
 
-    public static float GetLerpValue(float start, float end, float current)
+    public void SetTimeEntry(Entity<DayCycleComponent> dayCycle, int nextEntry)
     {
-        if (Math.Abs(start - end) < 0.05f)
+        nextEntry = Math.Clamp(nextEntry, 0, dayCycle.Comp.TimeEntries.Count - 1);
+
+        dayCycle.Comp.CurrentTimeEntry = nextEntry;
+        dayCycle.Comp.EntryStartTime = dayCycle.Comp.EntryEndTime;
+        dayCycle.Comp.EntryEndTime += dayCycle.Comp.TimeEntries[nextEntry].Duration;
+
+        // TODO: Made with states,we might need an evening or something, and besides, it's too much hardcore
+        if (dayCycle.Comp.IsNight && !dayCycle.Comp.TimeEntries[nextEntry].IsNight) // Day started
+        {
+            dayCycle.Comp.IsNight = false;
+
+            var ev = new DayCycleDayStartedEvent(dayCycle);
+            RaiseLocalEvent(dayCycle, ref ev, true);
+        }
+
+        if (!dayCycle.Comp.IsNight && dayCycle.Comp.TimeEntries[nextEntry].IsNight) // Night started
+        {
+            dayCycle.Comp.IsNight = true;
+
+            var ev = new DayCycleNightStartedEvent(dayCycle);
+            RaiseLocalEvent(dayCycle, ref ev, true);
+        }
+    }
+
+    private Color GetCurrentColor(Entity<DayCycleComponent> dayCycle, double totalSeconds)
+    {
+        var timeScale = GetTimeScale(dayCycle, totalSeconds);
+        return Color.InterpolateBetween(dayCycle.Comp.StartColor, dayCycle.Comp.EndColor, timeScale);
+    }
+
+    private float GetTimeScale(Entity<DayCycleComponent> dayCycle, double totalSeconds)
+    {
+        return GetLerpValue(dayCycle.Comp.EntryStartTime.TotalSeconds, dayCycle.Comp.EntryEndTime.TotalSeconds, totalSeconds);
+    }
+
+    public static float GetLerpValue(double start, double end, double current)
+    {
+        if (Math.Abs(start - end) < MaxTimeDiff)
             return 0f;
 
         var distanceFromStart = current - start;
         var totalDistance = end - start;
 
-        return MathHelper.Clamp01(distanceFromStart / totalDistance);
+        return MathHelper.Clamp01((float)(distanceFromStart / totalDistance));
     }
 }

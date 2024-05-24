@@ -10,14 +10,18 @@ namespace Content.Shared._CP14.DayCycle;
 [RegisterComponent, Access(typeof(DayCycleSystem))]
 public sealed partial class DayCycleComponent : Component
 {
+    public int NextTimeEntry => CurrentTimeEntry + 1 >= TimeEntries.Count ? 0 : CurrentTimeEntry + 1;
+    public Color StartColor => TimeEntries[CurrentTimeEntry].StartColor;
+    public Color EndColor => TimeEntries[NextTimeEntry].StartColor;
+
     [DataField(required: true)]
     public List<DayCycleEntry> TimeEntries = new();
 
     [DataField]
-    public bool IsNight = false;
+    public bool IsNight; // TODO: Rewrite this shit
 
     [DataField]
-    public int CurrentTimeEntry = 0;
+    public int CurrentTimeEntry;
 
     [DataField]
     public TimeSpan EntryStartTime;
@@ -30,13 +34,13 @@ public sealed partial class DayCycleComponent : Component
 public readonly partial record struct DayCycleEntry()
 {
     /// <summary>
-    /// the color of the world's lights at the beginning of this time of day
+    /// The color of the world's lights at the beginning of this time of day
     /// </summary>
     [DataField]
-    public Color StartColor { get; init; } = Color.White;
+    public Color StartColor { get; init; } = Color.White; // TODO: Rename it to "Color"?
 
     /// <summary>
-    /// duration of color shift to the next time of day
+    /// Duration of color shift to the next time of day
     /// </summary>
     [DataField]
     public TimeSpan Duration { get; init; } = TimeSpan.FromSeconds(60);
