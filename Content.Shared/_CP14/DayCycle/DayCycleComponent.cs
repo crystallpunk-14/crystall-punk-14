@@ -1,4 +1,4 @@
-
+using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.DayCycle;
@@ -7,26 +7,31 @@ namespace Content.Shared._CP14.DayCycle;
 /// Stores all the necessary data for the day and night cycle system to work
 /// </summary>
 
-[RegisterComponent, Access(typeof(DayCycleSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(DayCycleSystem))]
 public sealed partial class DayCycleComponent : Component
 {
+    [ViewVariables]
     public int NextTimeEntry => CurrentTimeEntry + 1 >= TimeEntries.Count ? 0 : CurrentTimeEntry + 1;
+
+    [ViewVariables]
     public Color StartColor => TimeEntries[CurrentTimeEntry].StartColor;
+
+    [ViewVariables]
     public Color EndColor => TimeEntries[NextTimeEntry].StartColor;
 
-    [DataField(required: true)]
+    [DataField(required: true), ViewVariables]
     public List<DayCycleEntry> TimeEntries = new();
 
-    [DataField]
+    [DataField, ViewVariables]
     public bool IsNight; // TODO: Rewrite this shit
 
-    [DataField]
+    [DataField, ViewVariables]
     public int CurrentTimeEntry;
 
-    [DataField]
+    [DataField, ViewVariables]
     public TimeSpan EntryStartTime;
 
-    [DataField]
+    [DataField, ViewVariables]
     public TimeSpan EntryEndTime;
 }
 
