@@ -146,3 +146,45 @@
   components:
   - type: Sprite
     state: world6
+
+# Chromium slime
+
+- type: entityLootTable
+  id: CP14GatherChromiumSlime
+  entries:
+  - id: CP14ChromiumSlime #TODO
+    amount: 1
+    maxAmount: 1 
+
+- type: entity
+  id: CP14GatherableChromiumSlime
+  parent: CP14GatherableHerbalBase
+  name: chromium slime
+  description: This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: FloorTiles
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/chromium_slime.rsi
+    state: world1
+  - type: Gatherable
+    toolWhitelist:
+      components:
+        - Hands
+    loot:
+      All: CP14GatherChromiumSlime
+
+- type: entity
+  id: CP14GatherableChromiumSlime2
+  parent: CP14GatherableChromiumSlime
+  components:
+  - type: Sprite
+    state: world2
+
+- type: entity
+  id: CP14GatherableChromiumSlime3
+  parent: CP14GatherableChromiumSlime
+  components:
+  - type: Sprite
+    state: world3

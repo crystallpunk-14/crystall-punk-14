@@ -6,7 +6,6 @@
   flavor: CP14Bitterly
   color: "#858585"
   physicalDesc: cp14-reagent-physical-desc-colorless
-  
 
 - type: reagent
   id: CP14BasicEffectHealBlunt
@@ -73,6 +72,22 @@
             Brute: -3
 
 - type: reagent
+  id: CP14BasicEffectDamageBruteGroup
+  name: cp14-reagent-name-basic-damage-brute
+  desc: cp14-reagent-desc-basic-damage-brute
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#633223"
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: 3
+
+- type: reagent
   id: CP14BasicEffectDamagePoison
   name: cp14-reagent-name-basic-damage-poison
   desc: cp14-reagent-desc-basic-damage-poison
@@ -87,6 +102,22 @@
         damage:
           types:
             Poison: 10
+
+- type: reagent
+  id: CP14BasicEffectHealPoison
+  name: cp14-reagent-name-basic-heal-poison
+  desc: cp14-reagent-desc-basic-heal-poison
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#82ba3d"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -10
 
 - type: reagent
   id: CP14BasicEffectRainbow
