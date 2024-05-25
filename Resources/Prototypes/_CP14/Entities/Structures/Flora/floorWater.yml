@@ -45,14 +45,14 @@
       collection: FootstepWater
       params:
         volume: 8
-  #- type: SolutionContainerManager
-  #  solutions:
-  #    pool:
-  #      maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable. 
-  #      reagents:
-  #      - ReagentId: CP14Water
-  #        Quantity: 9999999
-  #- type: DrainableSolution
-  #  solution: pool
-  #- type: Drink
-  #  solution: pool
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable. 
+        reagents:
+        - ReagentId: CP14Water
+          Quantity: 9999999
+  - type: DrainableSolution
+    solution: pool
+  - type: Drink
+    solution: pool
