@@ -1,0 +1,79 @@
+- type: reaction
+  id: CP14ChromiumInverseEffectHealBlunt
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14BasicEffectHealBlunt: 
+      amount: 1
+    CP14ChromiumSlime:
+      amount: 0.5
+  products:
+    CP14BasicEffectDamageBruteGroup: 0.3
+    CP14BasicEffectEmpty: 0.2
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+- type: reaction
+  id: CP14ChromiumInverseEffectHealPiercing
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14BasicEffectHealPiercing: 
+      amount: 1
+    CP14ChromiumSlime:
+      amount: 0.5
+  products:
+    CP14BasicEffectDamageBruteGroup: 0.3
+    CP14BasicEffectEmpty: 0.2
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+- type: reaction
+  id: CP14ChromiumInverseEffectHealSlash
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14BasicEffectHealSlash: 
+      amount: 1
+    CP14ChromiumSlime:
+      amount: 0.5
+  products:
+    CP14BasicEffectDamageBruteGroup: 0.3
+    CP14BasicEffectEmpty: 0.2
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+- type: reaction
+  id: CP14ChromiumInverseEffectHealBruteGroup
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14BasicEffectHealBruteGroup: 
+      amount: 1
+    CP14ChromiumSlime:
+      amount: 0.5
+  products:
+    CP14BasicEffectDamageBruteGroup: 0.3
+    CP14BasicEffectEmpty: 0.2
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+- type: reaction
+  id: CP14ChromiumInverseEffectDamageBruteGroup
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14BasicEffectDamageBruteGroup: 
+      amount: 0.5
+    CP14ChromiumSlime:
+      amount: 0.5
+  products:
+    CP14BasicEffectHealBruteGroup: 0.3
+    CP14BasicEffectEmpty: 0.2
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350

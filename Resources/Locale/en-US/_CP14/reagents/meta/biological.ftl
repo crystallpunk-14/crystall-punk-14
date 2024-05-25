@@ -6,3 +6,6 @@ cp14-reagent-desc-bloodgrasssap = A squeeze from the ubiquitous blood grass. It 
 
 cp14-reagent-name-agaric-shroom = fly agaric juice
 cp14-reagent-desc-agaric-shroom = It is this juice that the fly mushrooms owe their poisonousness to. Consumption causes severe ailments and hallucinations, but experienced alchemists can find other uses for these mushrooms. 
+
+cp14-reagent-name-chromium-slime = chromium slime
+cp14-reagent-desc-chromium-slime = A rare substance found in water streams, it has unique properties that allow it to invert the effects of reagents, but can completely ruin a potion if dosed incorrectly.

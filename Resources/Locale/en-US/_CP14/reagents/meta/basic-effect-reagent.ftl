@@ -13,6 +13,9 @@ cp14-reagent-desc-basic-heal-slash = Effectively heals torn tissue.
 cp14-reagent-name-basic-heal-brute = Healing general solution
 cp14-reagent-desc-basic-heal-brute = Less efficacious than specialized solutions, but can heal all types of physical damage.
 
+cp14-reagent-name-basic-damage-brute = Ulcer solution
+cp14-reagent-desc-basic-damage-brute = If ingested, causes flesh eating and other mechanical injuries.
+
 cp14-reagent-name-basic-damage-poison = Poisonous solution
 cp14-reagent-desc-basic-damage-poison = Capable of causing extreme indigestion, ulcers, intoxication, and in sufficient dosage to cause death.
 

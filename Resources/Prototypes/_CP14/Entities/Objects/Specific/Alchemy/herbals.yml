@@ -58,9 +58,6 @@
         base3: ""
         base4: ""
         base5: ""
-  - type: FlavorProfile
-    flavors:
-      - CP14Metallic #TODO
   - type: Extractable
     juiceSolution:
       reagents:
@@ -72,4 +69,37 @@
         maxVol: 20
         reagents:
         - ReagentId: CP14AgaricMushroom
+          Quantity: 5
+
+- type: entity
+  id: CP14ChromiumSlime
+  parent: FoodProduceBase
+  name: chromium slime
+  description: This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/chromium_slime.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14ChromiumSlime
+        Quantity: 5
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14ChromiumSlime
           Quantity: 5
