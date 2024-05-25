@@ -64,12 +64,12 @@
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: CP14BloodGrassSap #TODO
+      - ReagentId: CP14AgaricMushroom
         Quantity: 5
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
-        - ReagentId: CP14BloodGrassSap #TODO
+        - ReagentId: CP14AgaricMushroom
           Quantity: 5

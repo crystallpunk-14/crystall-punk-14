@@ -12,30 +12,6 @@
     collection: FootstepBlood
     params:
       volume: 6
-# metabolisms:
-#   Drink:
-#     effects:
-#     - !type:SatiateThirst
-#       factor: 1.5
-#       conditions:
-#         - !type:OrganType
-#           type: Human
-#           shouldHave: false
-#   Food:
-#     effects:
-#       - !type:AdjustReagent
-#         reagent: UncookedAnimalProteins
-#         amount: 0.5
-#   Medicine:
-#     effects:
-#     - !type:HealthChange
-#       conditions:
-#       - !type:OrganType
-#         type: Bloodsucker
-#       damage:
-#         groups:
-#           Brute: -3
-#           Burn: -1.25
 
 - type: reagent
   id: CP14BloodGrassSap
@@ -54,11 +30,37 @@
     Food:
       effects:
       - !type:SatiateHunger
-        factor: 0.5
-    Medicine:
+        factor: 1.5
+    Poison:
       effects:
       - !type:HealthChange
         damage:
           types:
             Poison: 0.25
-  
+
+- type: reagent
+  id: CP14AgaricMushroom
+  group: CP14Biological
+  name: cp14-reagent-name-agaric-shroom
+  desc: cp14-reagent-desc-agaric-shroom
+  flavor: CP14Bitterly
+  color: "#89a195"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  slippery: false
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1.5
+      - !type:ChemVomit
+        probability: 0.02
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false

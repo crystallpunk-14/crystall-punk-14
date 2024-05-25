@@ -7,19 +7,18 @@
     CP14BloodGrassSap:
       amount: 2
   products:
-    CP14BasicEffectSatiateHunger: 2
-    CP14BasicEffectHealSlash: 0.5
-    CP14BasicEffectHealPiercing: 0.5
+    CP14BasicEffectEmpty: 2.7
+    CP14BasicEffectSatiateHunger: 0.2
+    CP14BasicEffectHealSlash: 0.05
+    CP14BasicEffectHealPiercing: 0.05
 
-#- type: reaction
-#  id: CP14BloodGrassProcessingFail1
-#  minTemp: 450
-#  reactants:
-#    CP14VitalExtract: 
-#      amount: 1
-#  effects:
-#    - !type:AreaReactionEffect
-#      duration: 20
-#      prototypeId: CP14MistVitalExtract
-#      sound:
-#        path: /Audio/Effects/smoke.ogg
+- type: reaction
+  id: CP14AgaricShroomProcessing1
+  minTemp: 350
+  reactants:
+    CP14AgaricMushroom:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.7
+    CP14BasicEffectRainbow: 0.1
+    CP14BasicEffectDamagePoison: 0.15
