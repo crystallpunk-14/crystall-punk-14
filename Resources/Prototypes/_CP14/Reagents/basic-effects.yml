@@ -104,6 +104,22 @@
             Poison: 10
 
 - type: reagent
+  id: CP14BasicEffectHealPoison
+  name: cp14-reagent-name-basic-heal-poison
+  desc: cp14-reagent-desc-basic-heal-poison
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#82ba3d"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -10
+
+- type: reagent
   id: CP14BasicEffectRainbow
   name: cp14-reagent-name-see-rainbow
   desc: cp14-reagent-desc-see-rainbow

@@ -19,6 +19,9 @@ cp14-reagent-desc-basic-damage-brute = If ingested, causes flesh eating and othe
 cp14-reagent-name-basic-damage-poison = Poisonous solution
 cp14-reagent-desc-basic-damage-poison = Capable of causing extreme indigestion, ulcers, intoxication, and in sufficient dosage to cause death.
 
+cp14-reagent-name-basic-heal-poison = Antidote solution
+cp14-reagent-desc-basic-heal-poison = Effective as a good antidote.
+
 cp14-reagent-name-see-rainbow = Rainbow solution
 cp14-reagent-desc-see-rainbow = Causes cheerful hallucinations, colors the whole world in rainbow bright colors.
 
