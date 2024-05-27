@@ -99,7 +99,7 @@
   name: cp14-reagent-name-basic-satiate-hunger
   desc: cp14-reagent-desc-basic-satiate-hunger
   group: CP14BasicEffect
-  flavor: CP14Sweely
+  flavor: CP14Sweetly
   color: "#a35629"
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
