@@ -9,8 +9,7 @@
   products:
     CP14BasicEffectEmpty: 2.7
     CP14BasicEffectSatiateHunger: 0.2
-    CP14BasicEffectHealSlash: 0.05
-    CP14BasicEffectHealPiercing: 0.05
+    CP14BasicEffectHealBrute: 0.1
 
 - type: reaction
   id: CP14AgaricShroomProcessing1
