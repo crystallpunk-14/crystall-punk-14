@@ -30,7 +30,7 @@
     Food:
       effects:
       - !type:SatiateHunger
-        factor: 1.5
+        factor: 2
     Poison:
       effects:
       - !type:HealthChange
@@ -80,3 +80,23 @@
       - !type:SatiateThirst
       - !type:ChemVomit
         probability: 0.05
+
+- type: reagent
+  id: CP14WildSageSap
+  group: CP14Biological
+  name: cp14-reagent-name-wild-sage-sap
+  desc: cp14-reagent-desc-wild-sage-sap
+  flavor: CP14Sweetly
+  color: "#6b462c"
+  physicalDesc: cp14-reagent-physical-desc-cloudy
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: -1
+      - !type:Emote
+        emote: Cough
+        showInChat: true
+        probability: 0.15

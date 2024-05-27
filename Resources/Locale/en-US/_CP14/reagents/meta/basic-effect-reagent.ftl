@@ -19,5 +19,8 @@ cp14-reagent-desc-see-rainbow = Causes cheerful hallucinations, colors the whole
 cp14-reagent-name-basic-satiate-hunger = Saturating solution
 cp14-reagent-desc-basic-satiate-hunger = A mixture that effectively restores hunger.
 
-cp14-reagent-name-basic-satiate-thirst = Life-giving moisture.
+cp14-reagent-name-basic-satiate-thirst = Life-giving moisture
 cp14-reagent-desc-basic-satiate-thirst = A liquid that tastes very much like water. It tastes strange, but it's a good thirst quencher.
+
+cp14-reagent-name-basic-emote-cough =  Coughing solution
+cp14-reagent-desc-basic-emote-cough = Coughs profusely, but harmlessly.
