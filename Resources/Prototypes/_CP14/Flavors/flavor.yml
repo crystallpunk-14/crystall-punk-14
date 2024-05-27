@@ -16,7 +16,7 @@
   description: cp14-flavor-base-bitterly
 
 - type: flavor
-  id: CP14Sweely
+  id: CP14Sweetly
   flavorType: Base
   description: cp14-flavor-base-sweetly
 

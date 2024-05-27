@@ -20,4 +20,7 @@ cp14-reagent-name-basic-satiate-hunger = Насыщающий раствор
 cp14-reagent-desc-basic-satiate-hunger = Смесь, эффективно восстанавливающая голод.
 
 cp14-reagent-name-basic-satiate-thirst = Живительная влага
-cp14-reagent-desc-basic-satiate-thirst = Жилкость, очень похожая на воду. Странная на вкус, но неплохо восполняет жажду.
+cp14-reagent-desc-basic-satiate-thirst = Жидкость, очень похожая на воду. Странная на вкус, но неплохо восполняет жажду.
+
+cp14-reagent-name-basic-emote-cough = Откашливающий раствор
+cp14-reagent-desc-basic-emote-cough = Вызывает обильный кашель, впрочем, безвредный для здоровья.

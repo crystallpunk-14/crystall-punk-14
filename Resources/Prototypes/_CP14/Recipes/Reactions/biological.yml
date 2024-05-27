@@ -1,6 +1,6 @@
 - type: reaction
   id: CP14BloodGrassProcessing1
-  minTemp: 350
+  minTemp: 300
   reactants:
     CP14Blood:
       amount: 1
@@ -20,4 +20,15 @@
   products:
     CP14BasicEffectEmpty: 0.7
     CP14BasicEffectRainbow: 0.1
-    CP14BasicEffectDamagePoison: 0.15
+    CP14BasicEffectDamagePoison: 0.2
+
+- type: reaction
+  id: CP14WildSageSapProcessing1
+  minTemp: 400
+  reactants:
+    CP14WildSageSap:
+      amount: 1
+  products:
+    CP14BasicEffectHealBrute: 0.2
+    CP14BasicEffectEmpty: 0.7
+    CP14BasicEffectEmoteCough: 0.1

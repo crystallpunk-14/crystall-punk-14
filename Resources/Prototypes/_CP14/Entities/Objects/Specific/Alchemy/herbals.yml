@@ -64,14 +64,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14AgaricMushroom
-        Quantity: 5
+        Quantity: 3
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
         - ReagentId: CP14AgaricMushroom
-          Quantity: 5
+          Quantity: 3
 
 - type: entity
   id: CP14ChromiumSlime
@@ -98,11 +98,46 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14ChromiumSlime
-        Quantity: 5
+        Quantity: 7
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 20
         reagents:
         - ReagentId: CP14ChromiumSlime
-          Quantity: 5
+          Quantity: 7
+
+- type: entity
+  id: CP14WildSage
+  parent: FoodProduceBase
+  name: wild sage root
+  description: Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.
+  components:
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,1
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/wild_sage.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14WildSageSap
+        Quantity: 8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14WildSageSap
+          Quantity: 8

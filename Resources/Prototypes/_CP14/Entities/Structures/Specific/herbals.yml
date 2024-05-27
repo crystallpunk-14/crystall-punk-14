@@ -154,7 +154,7 @@
   entries:
   - id: CP14ChromiumSlime #TODO
     amount: 1
-    maxAmount: 1 
+    maxAmount: 1
 
 - type: entity
   id: CP14GatherableChromiumSlime

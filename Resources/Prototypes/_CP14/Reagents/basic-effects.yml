@@ -17,6 +17,7 @@
   physicalDesc: cp14-reagent-physical-desc-scarlet
   metabolisms:
     Medicine:
+      metabolismRate: 0.1
       effects:
       - !type:HealthChange
         damage:
@@ -33,6 +34,7 @@
   physicalDesc: cp14-reagent-physical-desc-ferrous
   metabolisms:
     Medicine:
+      metabolismRate: 0.1
       effects:
       - !type:HealthChange
         damage:
@@ -49,6 +51,7 @@
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Poison:
+      metabolismRate: 0.1
       effects:
       - !type:HealthChange
         damage:
@@ -65,6 +68,7 @@
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Poison:
+      metabolismRate: 0.1
       effects:
       - !type:HealthChange
         damage:
@@ -81,6 +85,7 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Narcotic:
+      metabolismRate: 0.1
       effects:
       - !type:GenericStatusEffect
         key: SeeingRainbows
@@ -99,6 +104,7 @@
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Food:
+      metabolismRate: 0.1
       effects:
       - !type:SatiateHunger
         factor: 6
@@ -113,6 +119,24 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Drink:
+      metabolismRate: 0.1
       effects:
       - !type:SatiateThirst
         factor: 6
+
+- type: reagent
+  id: CP14BasicEffectEmoteCough
+  name: cp14-reagent-name-basic-emote-cough
+  desc: cp14-reagent-desc-basic-emote-cough
+  group: CP14BasicEffect
+  flavor: CP14Water
+  color: "#2b7fed"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.1
+      effects:
+      - !type:Emote
+        showInChat: true
+        emote: Cough
+        probability: 0.3
