@@ -28,6 +28,9 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+      - HideContextMenu
 
 # Bloodgrass
 
@@ -152,7 +155,7 @@
 - type: entityLootTable
   id: CP14GatherChromiumSlime
   entries:
-  - id: CP14ChromiumSlime #TODO
+  - id: CP14ChromiumSlime
     amount: 1
     maxAmount: 1
 
@@ -174,9 +177,6 @@
         - Hands
     loot:
       All: CP14GatherChromiumSlime
-  - type: Tag
-    tags:
-      - HideContextMenu
 
 - type: entity
   id: CP14GatherableChromiumSlime2
@@ -188,6 +188,45 @@
 - type: entity
   id: CP14GatherableChromiumSlime3
   parent: CP14GatherableChromiumSlime
+  components:
+  - type: Sprite
+    state: world3
+
+# Wild sage
+
+- type: entityLootTable
+  id: CP14GatherWildSage
+  entries:
+  - id: CP14WildSage
+    amount: 1
+    maxAmount: 1
+
+- type: entity
+  id: CP14GatherableWildSage
+  parent: CP14GatherableHerbalBase
+  name: wild sage
+  description: Root of this ubiquitous medicinal plant not bad at healing physical injuries, and inducing coughing.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: FloorTiles
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/wild_sage.rsi
+    state: world1
+  - type: Gatherable
+    loot:
+      All: CP14GatherWildSage
+
+- type: entity
+  id: CP14GatherableWildSage2
+  parent: CP14GatherableWildSage
+  components:
+  - type: Sprite
+    state: world2
+
+- type: entity
+  id: CP14GatherableWildSage3
+  parent: CP14GatherableWildSage
   components:
   - type: Sprite
     state: world3
