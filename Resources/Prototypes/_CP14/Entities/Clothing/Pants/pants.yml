@@ -10,7 +10,7 @@
     - pants
   - type: Sprite
     state: icon
-    
+
 - type: entity
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsHarlequinRed
@@ -21,7 +21,7 @@
     sprite: _CP14/Clothing/Pants/harlequin.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/harlequin.rsi
-    
+
 - type: entity
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsAristocratic
@@ -32,7 +32,7 @@
     sprite: _CP14/Clothing/Pants/aristocratic.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/aristocratic.rsi
-    
+
 - type: entity
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsLoincloth

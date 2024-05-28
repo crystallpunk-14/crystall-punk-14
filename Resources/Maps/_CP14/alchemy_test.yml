@@ -46,7 +46,7 @@ entities:
         duration: 30
         startColor: '#060D12FF'
       - isNight: True
-        duration: 30
+        duration: 90
         startColor: '#000000FF'
       - duration: 30
         startColor: '#120906FF'
