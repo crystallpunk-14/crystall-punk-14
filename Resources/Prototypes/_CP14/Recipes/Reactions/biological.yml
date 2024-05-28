@@ -1,4 +1,3 @@
-
 # Simple sap mixing
 
 - type: reaction
@@ -52,9 +51,9 @@
     CP14BloodGrassSap:
       amount: 0.8
   products:
-    CP14BasicEffectEmpty: 0.8
-    CP14BasicEffectSatiateHunger: 0.15
-    CP14BasicEffectHealBrute: 0.05
+    CP14BasicEffectEmpty: 0.7
+    CP14BasicEffectSatiateHunger: 0.2
+    CP14BasicEffectHealBrute: 0.1
 
 - type: reaction
   id: CP14AgaricShroomBrewing
@@ -65,8 +64,8 @@
       amount: 1
   products:
     CP14BasicEffectEmpty: 0.7
-    CP14BasicEffectRainbow: 0.1
     CP14BasicEffectDamagePoison: 0.2
+    CP14BasicEffectRainbow: 0.1
 
 - type: reaction
   id: CP14WildSageSapBrewing
@@ -76,8 +75,8 @@
     CP14WildSageSap:
       amount: 1
   products:
-    CP14BasicEffectHealBrute: 0.2
     CP14BasicEffectEmpty: 0.7
+    CP14BasicEffectHealBrute: 0.2
     CP14BasicEffectEmoteCough: 0.1
 
 # Complex brewing (2 reagents, ~50% empty)
@@ -92,7 +91,7 @@
     CP14WildSageSap:
       amount: 0.5
   products:
-    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectHealBrute: 0.3
     CP14BasicEffectSatiateHunger: 0.1
     CP14BasicEffectEmoteCough: 0.1
-    CP14BasicEffectEmpty: 0.55
