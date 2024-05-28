@@ -42,27 +42,27 @@
     CP14BasicEffectEmoteCough: 0.25
     CP14BasicEffectHealBrute: 0.25
 
-# Complex brewing (2 reagents, ~50% empty)
+# Complex brewing (2 reagents, 25% empty)
 
-#- type: reaction
-#  id: CP14BloodGrassAndWildSageSapBrewing
-#  minTemp: 350
-#  priority: 3
-#  reactants:
-#    CP14BloodGrassSap:
-#      amount: 0.5
-#    CP14WildSageSap:
-#      amount: 0.5
-#  products:
-#    CP14BasicEffectEmpty: 0.5
-#    CP14BasicEffectHealBrute: 0.3
-#    #CP14BasicEffectSatiateHunger: 0.1
-#    #CP14BasicEffectEmoteCough: 0.1
-#  effects:
-#  - !type:CP14AffectSolutionTemperature
-#    addTemperature: -350
+- type: reaction
+  id: CP14BloodGrassAndWildSageSapBrewing
+  minTemp: 350
+  priority: 3
+  reactants:
+    CP14BloodGrassSap:
+      amount: 0.5
+    CP14WildSageSap:
+      amount: 0.5
+  products:
+    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectSatiateHunger: 0.25
+    CP14BasicEffectEmoteCough: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
 
-# Simple brewing (~75% Empty)
+# Simple brewing (~50% Empty)
 
 - type: reaction
   id: CP14BloodGrassBrewing
