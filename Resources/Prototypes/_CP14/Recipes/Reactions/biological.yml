@@ -1,8 +1,51 @@
+
+# Simple sap mixing
+
+- type: reaction
+  id: CP14BloodGrassMixing
+  reactants:
+    CP14BloodGrassSap:
+      amount: 0.4
+    CP14BasicEffectDamagePoison:
+      amount: 0.3
+    CP14BasicEffectEmpty: 
+      amount: 0.3
+  products:
+    CP14BasicEffectRainbow: 0.3
+    CP14BasicEffectDamageBrute: 0.2
+
+- type: reaction
+  id: CP14AgaricShroomMixing
+  reactants:
+    CP14AgaricMushroom:
+      amount: 0.4
+    CP14BasicEffectHealBrute:
+      amount: 0.3
+    CP14BasicEffectEmpty: 
+      amount: 0.3
+  products:
+    CP14BasicEffectSatiateHunger: 0.3
+    CP14BasicEffectSatiateThirst: 0.2
+
+- type: reaction
+  id: CP14WildSageSapMixing
+  reactants:
+    CP14WildSageSap:
+      amount: 0.4
+    CP14BasicEffectRainbow:
+      amount: 0.3
+    CP14BasicEffectEmpty: 
+      amount: 0.3
+  products:
+    CP14BasicEffectEmoteCough: 0.3
+    CP14BasicEffectHealBrute: 0.2
+
 # Simple brewing (~70% Empty)
 
 - type: reaction
   id: CP14BloodGrassBrewing
   minTemp: 300
+  priority: 2
   reactants:
     CP14Blood:
       amount: 0.2
@@ -16,6 +59,7 @@
 - type: reaction
   id: CP14AgaricShroomBrewing
   minTemp: 350
+  priority: 2
   reactants:
     CP14AgaricMushroom:
       amount: 1
@@ -27,6 +71,7 @@
 - type: reaction
   id: CP14WildSageSapBrewing
   minTemp: 400
+  priority: 2
   reactants:
     CP14WildSageSap:
       amount: 1
@@ -40,7 +85,7 @@
 - type: reaction
   id: CP14BloodGrassAndWildSageSapBrewing
   minTemp: 350
-  priority: 2
+  priority: 3
   reactants:
     CP14BloodGrassSap:
       amount: 0.5
