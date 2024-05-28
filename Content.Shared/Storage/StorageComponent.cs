@@ -123,6 +123,14 @@ namespace Content.Shared.Storage
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public StorageDefaultOrientation? DefaultStorageOrientation;
 
+        /// <summary>
+        /// CrystallPunk bandage. We need to put in both objects and liquids.
+        /// This avoids situations where a player puts a bucket into the cauldron
+        /// instead of pouring liquid from the bucket into the cauldron.
+        /// </summary>
+        [DataField]
+        public bool CP14CanStorageSolutionManagers = true;
+
         [Serializable, NetSerializable]
         public enum StorageUiKey : byte
         {

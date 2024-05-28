@@ -63,11 +63,28 @@ ent-CP14Pestle = пестик
 ent-CP14Mortar = ступка
     .desc = Алхимическая прочная тарелка для измельчения реагентов
 
+ent-CP14VialTiny = крохотный флакон
+    .desc = Прочный стеклянный флакон для хранения небольшого количества жидкости.
+ent-CP14BaseVialFragile = маленький флакон
+    .desc = Хрупкий стеклянный флакон для хранения небольшого количества жидкости.
+ent-CP14VialSmallBloodgrassSap = { ent-CP14VialTiny }
+    .desc = { ent-CP14VialTiny.desc }
+ent-CP14VialSmallAgaricMushroom = { ent-CP14VialTiny }
+    .desc = { ent-CP14VialTiny.desc }
+ent-CP14VialSmallWildSage = { ent-CP14VialTiny }
+    .desc = { ent-CP14VialTiny.desc }
+ent-CP14VialSmallChromiumSlime = { ent-CP14VialTiny }
+    .desc = { ent-CP14VialTiny.desc }
+
+
 # Tools
-ent-CP14BaseSharpeningStone = точильный камень
-    .desc = Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
 ent-CP14OldLantern = Старая Лампа
     .desc = Пережиток прошлого техномагии. Большой, тяжелый, непрактичный. Таким приятно разве что бить по голове.
+ent-CP14BaseSharpeningStone = точильный камень
+    .desc = Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
+ent-CP14Shovel = лопата
+    .desc = Орудие для вскапывания земли, рытья грядок или могил.
+
 # Weapons/Melee
 
 ent-CP14BaseDagger = кинжал

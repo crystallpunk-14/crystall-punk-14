@@ -15,6 +15,41 @@ ent-CP14WoodDoorTavern = { ent-CP14BaseWoodDoor }
     .desc = { ent-CP14BaseWoodDoor.desc }
     .suffix = Таверна
 
+# Flora
+
+ent-CP14FloorWater = вода
+    .desc = Брух
+
+ent-CP14BaseTree = дерево
+    .desc = Десятилетия жизни и роста, насыщающие окружающую природу свежим воздухом.
+ent-CP14BaseTreeLarge = большое дерево
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree01 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree02 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree03 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree04 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree05 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree06 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge01 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge02 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge03 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge04 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge05 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge06 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+
+
 # Floors
 ent-CP14FloorWood = деревянный пол
     .desc = простые, легковозгораемые доски.

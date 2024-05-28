@@ -138,6 +138,7 @@
     fillBaseName: liq-
   - type: Storage
     maxItemSize: Normal
+    cP14CanStorageSolutionManagers: false
     whitelist:
       tags:
         - CP14FitInMortar
