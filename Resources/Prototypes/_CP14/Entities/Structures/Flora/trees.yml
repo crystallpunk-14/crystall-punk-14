@@ -9,7 +9,7 @@
   - type: Sprite
     noRot: true
     sprite: Objects/Decoration/Flora/flora_trees.rsi
-    drawdepth: Overdoors
+    drawdepth: Mobs
     offset: 0,0.9
   - type: Physics
     bodyType: Static

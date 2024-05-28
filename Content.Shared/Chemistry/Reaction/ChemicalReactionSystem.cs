@@ -17,7 +17,7 @@ namespace Content.Shared.Chemistry.Reaction
         /// <summary>
         ///     The maximum number of reactions that may occur when a solution is changed.
         /// </summary>
-        private const int MaxReactionIterations = 20;
+        private const int MaxReactionIterations = 50; //20 standard, CP14 increase limit
 
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;

@@ -14,3 +14,27 @@
             - Adventurer
           availableJobs:
             Adventurer: [ -1, -1 ]
+
+- type: gameMap
+  id: AlchemyTest
+  mapName: Alchemy test
+  mapPath: /Maps/_CP14/alchemy_test.yml
+  minPlayers: 0
+  stations:
+    AlchemyTest:
+      stationProto: StandardStationArena
+      components:
+        - type: StationRandomTransform
+          enableStationRotation: false
+          maxStationOffset: null
+        - type: StationBiome
+          biome: CP14GrasslandTestResult
+        - type: CP14StationDungeonMap
+          biome: CP14CavesGeneric
+        - type: StationNameSetup
+          mapNameTemplate: "Alchemy test"
+        - type: StationJobs
+          overflowJobs:
+            - Adventurer
+          availableJobs:
+            Adventurer: [ -1, -1 ]
