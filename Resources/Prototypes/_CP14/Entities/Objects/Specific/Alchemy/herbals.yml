@@ -4,6 +4,9 @@
   name: bloodgrass
   description: The dullest and most common plant to be found in the wild is the dark brown grass.
   components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
   - type: BadFood
   - type: Item
     size: Tiny
@@ -43,6 +46,9 @@
   name: fly agaric
   description: This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.
   components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
   - type: BadFood
   - type: Item
     size: Tiny
@@ -79,6 +85,9 @@
   name: chromium slime
   description: This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.
   components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
   - type: BadFood
   - type: Item
     size: Tiny
@@ -113,6 +122,9 @@
   name: wild sage root
   description: Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.
   components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
   - type: Item
     size: Tiny
     shape:
