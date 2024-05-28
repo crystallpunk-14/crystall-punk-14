@@ -15,11 +15,39 @@ ent-CP14WoodDoorTavern = { ent-CP14BaseWoodDoor }
     .desc = { ent-CP14BaseWoodDoor.desc }
     .suffix = Таверна
 
-# Floors
-ent-CP14FloorWood = деревянный пол
-    .desc = простые, легковозгораемые доски.
-ent-CP14FloorWoodBig = { ent-CP14FloorWood }
-    .desc = { ent-CP14FloorWood.desc }
+# Flora
+
+ent-CP14FloorWater = вода
+    .desc = Брух
+
+ent-CP14BaseTree = дерево
+    .desc = Десятилетия жизни и роста, насыщающие окружающую природу свежим воздухом.
+ent-CP14BaseTreeLarge = большое дерево
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree01 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree02 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree03 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree04 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree05 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTree06 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge01 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge02 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge03 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge04 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge05 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+ent-CP14FloraTreeLarge06 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
 
 # Furniture
 ent-CP14ChairWooden = деревянный стул
@@ -32,10 +60,24 @@ ent-CP14BaseBarrel = деревянная бочка
     .desc = Большая, удобная емкость для хранения жидкостей.
 ent-CP14BarrelWater = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }
+ent-CP14BarrelBlood = { ent-CP14BaseBarrel }
+    .desc = { ent-CP14BaseBarrel.desc }
 ent-CP14Bonfire = костёр
     .desc = Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
 ent-CP14WallmountTorch = настенный факел
     .desc = Хороший, надеждный источник света. Жаль, недолговечный.
+
+# GirderFrame
+ent-CP14FrameWooden = каркас деревянной стены
+    .desc = Деревянный каркас для деревянных стен любых видов.
+
+# Specific
+
+## Alchemy
+ent-CP14AlchemyFurnace = алхимическая печь
+    .desc = Печь, работающая на дровах, угле или любом другом горящем материале. Удобна для подогрева алхимических зелий.
+ent-CP14BaseVat = чан
+    .desc = Очень большой чан для хранения огромного количества жидкости. Тяжелый, неудобный для переноски.
 
 # Walls
 ent-CP14CaveStoneWall = каменная порода

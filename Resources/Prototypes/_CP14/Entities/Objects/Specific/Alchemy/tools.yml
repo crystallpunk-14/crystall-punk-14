@@ -71,7 +71,7 @@
 - type: entity
   id: CP14Pestle
   name: pestle
-  description: A device for conveniently grinding various materials in liquids
+  description: A device for conveniently grinding various materials into liquid
   parent: BaseItem
   components:
   - type: Item
@@ -138,6 +138,7 @@
     fillBaseName: liq-
   - type: Storage
     maxItemSize: Normal
+    cP14CanStorageSolutionManagers: false
     whitelist:
       tags:
         - CP14FitInMortar

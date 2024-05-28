@@ -2,7 +2,7 @@
   id: CP14BloodGrass
   parent: FoodProduceBase
   name: bloodgrass
-  description: The dullest and most common plant to be found in the wild is the dark brown grass.
+  description: The dullest and most common plant to be found in the wild is the dark brown grass. Known for its nutritional properties.
   components:
   - type: Tag
     tags:
