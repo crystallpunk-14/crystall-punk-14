@@ -2,8 +2,8 @@
 
 # Basic alchemical reagents
 
-In the world of Eberron, there are 12 basic alchemical reagents called Extracts. They can be obtained in a variety of ways, and act as starting points for more complex alchemical recipes.
+Many potions consist of the individual basic reagent effects described below:
 
-<GuideReagentGroupEmbed Group="CP14BasicAlchemy"/>
+<GuideReagentGroupEmbed Group="CP14BasicEffect"/>
 
 </Document>

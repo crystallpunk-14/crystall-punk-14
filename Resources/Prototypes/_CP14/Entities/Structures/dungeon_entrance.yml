@@ -34,7 +34,7 @@
     randomTeleport: false
 
 - type: entity
-  parent: PortalBlue
+  parent: CP14DungeonEntrance
   id: CP14DungeonEntranceAutolink
   suffix: Autolink Dungeon
   components:
@@ -49,6 +49,7 @@
   description: A way out of the dark underworld into the overworld.
   components:
   - type: Sprite
+    noRot: true
     sprite: /Textures/_CP14/Structures/Dungeon/holes.rsi
     drawdepth: Mobs
     layers:

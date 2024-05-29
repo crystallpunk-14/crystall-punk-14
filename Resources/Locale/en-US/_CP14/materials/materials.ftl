@@ -1,0 +1,1 @@
+cp14-material-wooden-planks = wooden planks

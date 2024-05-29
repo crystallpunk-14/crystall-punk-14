@@ -41,3 +41,22 @@
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/gold_glasses.rsi
 
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesAlchemyGlasses
+  name: alchemy glasses
+  description: Special magic infused glasses that allow you to clearly see the composition of any mixtures.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
+  - type: SolutionScanner
+

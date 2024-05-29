@@ -1,0 +1,48 @@
+- type: entity
+  name: wallet
+  description: A small wallet, handy for storing coins.
+  id: CP14Wallet
+  parent: BaseStorageItem
+  components:
+  - type: Sprite
+    sprite: /Textures/_CP14/Objects/Economy/wallet.rsi
+    layers:
+    - state: wallet-0
+      map: ["enum.StorageFillLayers.Fill"]
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,3,2
+    quickInsert: true
+    areaInsert: false
+    storageOpenSound:
+      collection: trashBagRustle #TODO
+    storageInsertSound:
+      collection: trashBagRustle #TODO
+    whitelist:
+      tags:
+        - CP14Coin
+  - type: UseDelay
+    delay: 0.3
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 4
+    fillBaseName: wallet
+  - type: Dumpable #TODO sounds
+    multiplier: 0.8
+  - type: Clothing
+    slots: [belt]
+  - type: Item
+    size: Normal
+
+- type: entity
+  id: CP14WalletFilledTest
+  parent: CP14Wallet
+  suffix: Filled test
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14CopperCoin
+    - id: CP14CopperCoin
+    - id: CP14SilverCoin5
+    - id: CP14GoldCoin1

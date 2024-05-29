@@ -12,3 +12,9 @@
 
 - type: Tag
   id: CP14FireplaceFuel
+
+- type: Tag
+  id: CP14HerbalGathering
+
+- type: Tag
+  id: CP14FitInMortar

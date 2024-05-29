@@ -8,6 +8,9 @@ CP14FloorBricksCarvedSmall1: null
 CP14FloorBricksCarvedSmall2: null
 CP14FloorBricksCarvedSquare: null
 
+# 2024-05-24
+CP14CardboardWall: CP14WallCardboard
+
 # <---> CrystallPunk migration zone end
 
 
@@ -352,3 +355,6 @@ DrinkBottleGoldschlager: DrinkBottleGildlager
 # 2024-05-14
 soda_dispenser: SodaDispenser
 chem_master: ChemMaster
+
+# 2024-05-21
+CrateJanitorExplosive: ClosetJanitorBombFilled

@@ -30,7 +30,7 @@
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
   - type: Flammable
-    fireSpread: true
+    fireSpread: false
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true

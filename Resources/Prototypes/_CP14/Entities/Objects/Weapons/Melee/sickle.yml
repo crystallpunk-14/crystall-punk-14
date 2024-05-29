@@ -36,3 +36,6 @@
         Piercing: 3
     soundHit:
       collection: MetalThud
+  - type: Tag
+    tags:
+    - CP14HerbalGathering

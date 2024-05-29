@@ -1,0 +1,137 @@
+- type: entity
+  id: CP14DirtBlock1
+  parent: BaseItem
+  name: dirt block
+  description: A block of excellent black soil.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/dirt_block.rsi
+    layers:
+      - state: dirt
+        map: ["base"]
+  - type: FloorTile
+    placeTileSound:
+      collection: CP14Digging
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorDirt
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Dirt
+    count: 1
+    baseLayer: base
+    layerStates:
+    - dirt
+    - dirt_2
+    - dirt_3
+  # TODO material
+
+- type: entity
+  id: CP14DirtBlock10
+  parent: CP14DirtBlock1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14WoodLog
+  parent:
+  - BaseItem
+  - CP14BaseWooden
+  name: wooden log
+  description: A piece of unprocessed wood. Good material for building, or starting a fire.
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/wood.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 30
+    damage:
+      types:
+        Heat: 1
+  - type: Log
+    spawnedPrototype: CP14WoodenPlanks1
+    spawnCount: 3
+
+- type: entity
+  id: CP14WoodenPlanks1
+  parent:
+  - BaseItem
+  - CP14BaseWooden
+  name: wooden planks
+  description: Treated and ready-to-use wood.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/wood.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 12
+    damage:
+      types:
+        Heat: 1
+  - type: Appearance
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorWoodPlanks
+  - type: Stack
+    stackType: CP14WoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3  
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14WoodenPlanks: 100
+
+- type: entity
+  id: CP14WoodenPlanks10
+  parent: CP14WoodenPlanks1
+  components:
+  - type: Stack
+    count: 10

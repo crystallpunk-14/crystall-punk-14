@@ -117,5 +117,11 @@ namespace Content.Shared.Maps
         {
             TileId = id;
         }
+
+        /// <summary>
+        /// CrystallPunk Tile filtering
+        /// </summary>
+        [DataField]
+        public bool EditorHidden { get; private set; } = true;
     }
 }

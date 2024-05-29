@@ -22,3 +22,13 @@
   license: "CC0-1.0"
   copyright: 'by GrimGrum of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/GrimGrum/sounds/412558/"
+  
+- files: ["grass_gather.ogg", "grass_gather2.ogg", "grass_gather3.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by hadescolossus of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/hadescolossus/sounds/705228/"
+  
+- files: ["shovel_dig1.ogg", "shovel_dig2.ogg", "shovel_dig3.ogg", "shovel_dig4.ogg", "shovel_dig5.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by Ali_6868 of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/Ali_6868/sounds/384361/"

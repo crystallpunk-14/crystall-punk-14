@@ -8,6 +8,7 @@ using Content.Client.Lobby.UI.Roles;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._CP14.Humanoid;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -1015,6 +1016,22 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                     break;
                 }
+                // CP14 - Custom HumanoidSkinColor - Start
+                case HumanoidSkinColor.TieflingHues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    var color = CP14SkinColor.MakeTieflingHueValid(_rgbSkinColorSelector.Color);
+
+                    Markings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
+                // CP14 - Custom HumanoidSkinColor - End
             }
 
             SetDirty();
@@ -1231,6 +1248,19 @@ namespace Content.Client.Lobby.UI
 
                     break;
                 }
+                // CP14 - Custom HumanoidSkinColor - Start
+                case HumanoidSkinColor.TieflingHues:
+                {
+                    if (!RgbSkinColorContainer.Visible)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                    }
+
+                    _rgbSkinColorSelector.Color = CP14SkinColor.MakeTieflingHueValid(Profile.Appearance.SkinColor);
+                    break;
+                }
+                // CP14 - Custom HumanoidSkinColor - End
             }
 
         }

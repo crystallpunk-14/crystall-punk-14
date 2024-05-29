@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "By jaraten(discord)",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+    "states": [
+        {
+            "name": "full"
+        },
+        {
+            "name": "bricksA0",
+            "directions": 4
+        },
+        {
+            "name": "bricksA1",
+            "directions": 4
+        },
+        {
+            "name": "bricksA2",
+            "directions": 4
+        },
+        {
+            "name": "bricksA3",
+            "directions": 4
+        },
+        {
+            "name": "bricksA4",
+            "directions": 4
+        },
+        {
+            "name": "bricksA5",
+            "directions": 4
+        },
+        {
+            "name": "bricksA6",
+            "directions": 4
+        },
+        {
+            "name": "bricksA7",
+            "directions": 4
+        },
+        {
+            "name": "bricksB0",
+            "directions": 4
+        },
+        {
+            "name": "bricksB1",
+            "directions": 4
+        },
+        {
+            "name": "bricksB2",
+            "directions": 4
+        },
+        {
+            "name": "bricksB3",
+            "directions": 4
+        },
+        {
+            "name": "bricksB4",
+            "directions": 4
+        },
+        {
+            "name": "bricksB5",
+            "directions": 4
+        },
+        {
+            "name": "bricksB6",
+            "directions": 4
+        },
+        {
+            "name": "bricksB7",
+            "directions": 4
+        }
+    ]
+}

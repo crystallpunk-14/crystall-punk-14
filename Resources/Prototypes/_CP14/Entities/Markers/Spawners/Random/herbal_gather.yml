@@ -1,0 +1,38 @@
+- type: entity
+  id: CP14RandomSpawnerGatherGloodgrass
+  name: bloodgrass spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _CP14/Objects/Specific/Alchemy/Herbal/bloodgrass.rsi
+        state: grass1
+  - type: RandomSpawner
+    prototypes:
+    - CP14GatherableBloodgrass
+    - CP14GatherableBloodgrass2
+    - CP14GatherableBloodgrass3
+    - CP14GatherableBloodgrass4
+    - CP14GatherableBloodgrass5
+    chance: 1
+
+- type: entity
+  id: CP14RandomSpawnerGatherAgaricShroom
+  name: agaric shroom spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _CP14/Objects/Specific/Alchemy/Herbal/agaric.rsi
+        state: world1
+  - type: RandomSpawner
+    prototypes:
+    - CP14GatherableFlyAgaric
+    - CP14GatherableFlyAgaric2
+    - CP14GatherableFlyAgaric3
+    - CP14GatherableFlyAgaric4
+    - CP14GatherableFlyAgaric5
+    - CP14GatherableFlyAgaric6
+    chance: 0.05
