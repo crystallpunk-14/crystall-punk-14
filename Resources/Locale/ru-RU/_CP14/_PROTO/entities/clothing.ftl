@@ -2,13 +2,21 @@
 ent-CP14ClothingCloakArmoredRed = бронированная красная накидка
     .desc = Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
 ent-CP14ClothingCloakBlacksmithArpon = фартук кузнеца
-    .desc = Свободные кожанные полоски, все еще фактически являющиеся одеждой. 
-ent-CP14ClothingCloakHoodieYellow = желтый короткий плащ с капюшоном
-    .desc = Защищает ваши плечи и голову от холода и интереса противоположного пола.
+    .desc = Свободные кожанные полоски, все еще фактически являющиеся одеждой.
 ent-CP14ClothingCloakFurcapeBlack = меховая накидка
     .desc = Брутальная, выделанная из шерсти, накидка на плечи.
 ent-CP14ClothingCloakFurcapeBlue = { ent-CP14ClothingCloakFurcapeBlack }
     .desc = { ent-CP14ClothingCloakFurcapeBlack.desc }
+ent-CP14ClothingCloakHoodieYellow = желтый короткий плащ с капюшоном
+    .desc = Защищает ваши плечи и голову от холода и интереса противоположного пола.
+
+# Eyes
+ent-CP14ClothingEyesMonocle = монокль
+    .desc = Аристократично, модно, да еще и с позолотой.
+ent-CP14ClothingEyesGoldGlasses = золотые очки
+    .desc = Аристократично, модно, да еще и с позолотой.
+ent-CP14ClothingEyesAlchemyGlasses = алхимические очки
+    .desc = Специальные очки с магическим наполнением, позволяющие четко видеть состав любых смесей.
 
 # Gloves
 ent-CP14ClothingGlovesGirdles = железные наручи
@@ -23,10 +31,6 @@ ent-CP14ClothingHeadMetalHeadband = металлический обруч
 # Mask
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
-ent-CP14ClothingEyesMonocle = монокль
-    .desc = Аристократично, модно, да еще и с позолотой.
-ent-CP14ClothingEyesGoldGlasses = золотые очки
-    .desc = Аристократично, модно, да еще и с позолотой.
 
 # Pants
 ent-CP14ClothingPantsHarlequinRed = красно-желтые штаны арлекина

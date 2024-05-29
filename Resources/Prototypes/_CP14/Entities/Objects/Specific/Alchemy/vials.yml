@@ -111,6 +111,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
+  - type: Injector
+    maxTransferAmount: 5
 
 - type: entity
   id: CP14VialSmall
@@ -140,13 +142,49 @@
 # Filled
 
 - type: entity
-  id: CP14VialSmallVitalExtract
+  id: CP14VialSmallBloodgrassSap
   parent: CP14VialSmall
-  suffix: Vital extract
+  suffix: bloodgrass sap
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14VitalExtract
+        - ReagentId: CP14BloodGrassSap
           Quantity: 10
+
+- type: entity
+  id: CP14VialSmallAgaricMushroom
+  parent: CP14VialSmall
+  suffix: fly agaric juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14AgaricMushroom
+          Quantity: 10
+
+- type: entity
+  id: CP14VialSmallWildSage
+  parent: CP14VialSmall
+  suffix: wild sage sap
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14WildSageSap
+          Quantity: 10
+
+- type: entity
+  id: CP14VialSmallChromiumSlime
+  parent: CP14VialTiny
+  suffix: chromium slime
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 5

@@ -121,6 +121,24 @@
         - CP14GatherableBloodgrass3
         - CP14GatherableBloodgrass4
         - CP14GatherableBloodgrass5
+    - !type:BiomeEntityLayer # Rare Wild sage
+      threshold: 0.85
+      noise:
+        seed: 8
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.015
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrass
+      entities:
+        - CP14GatherableWildSage
+        - CP14GatherableWildSage2
+        - CP14GatherableWildSage3
 
 # Подбиомы лугов
 
@@ -211,6 +229,21 @@
         gain: 0.12
         fractalType: Ridged
         octaves: 1
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorDirt
+        - CP14FloorGrass
+      threshold: 0.91
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        frequency: 0.003
+        lacunarity: 1.50
+        gain: 0.12
+        fractalType: Ridged
+        octaves: 1
+      entities:
+        - CP14RandomSpawnerGatherAgaricShroom
     - !type:BiomeEntityLayer
       allowedTiles:
         - CP14FloorDirt

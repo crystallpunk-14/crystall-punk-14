@@ -69,18 +69,4 @@
     solution: vat
   - type: Drink
     solution: vat
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-  - type: ThrowInsertContainer
-    containerId: storagebase
-  - type: Storage
-    cP14CanStorageSolutionManagers: false
-    maxItemSize: Normal
-    grid:
-    - 0,0,4,3
   - type: Anchorable

@@ -28,6 +28,9 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+      - HideContextMenu
 
 # Bloodgrass
 
@@ -81,3 +84,149 @@
   components:
   - type: Sprite
     state: grass5
+
+# Fly agaric
+
+- type: entityLootTable
+  id: CP14GatherFlyAgaric
+  entries:
+  - id: CP14AgaricMushroom
+    amount: 1
+    maxAmount: 2
+
+- type: entity
+  id: CP14GatherableFlyAgaric
+  parent: CP14GatherableHerbalBase
+  name: fly agaric
+  description: This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: FloorTiles
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/agaric.rsi
+    state: world1
+  - type: Gatherable
+    toolWhitelist:
+      tags:
+        - CP14HerbalGathering
+      components:
+        - Hands
+    loot:
+      All: CP14GatherFlyAgaric
+
+- type: entity
+  id: CP14GatherableFlyAgaric2
+  parent: CP14GatherableFlyAgaric
+  components:
+  - type: Sprite
+    state: world2
+
+- type: entity
+  id: CP14GatherableFlyAgaric3
+  parent: CP14GatherableFlyAgaric
+  components:
+  - type: Sprite
+    state: world3
+
+- type: entity
+  id: CP14GatherableFlyAgaric4
+  parent: CP14GatherableFlyAgaric
+  components:
+  - type: Sprite
+    state: world4
+
+- type: entity
+  id: CP14GatherableFlyAgaric5
+  parent: CP14GatherableFlyAgaric
+  components:
+  - type: Sprite
+    state: world5
+
+- type: entity
+  id: CP14GatherableFlyAgaric6
+  parent: CP14GatherableFlyAgaric
+  components:
+  - type: Sprite
+    state: world6
+
+# Chromium slime
+
+- type: entityLootTable
+  id: CP14GatherChromiumSlime
+  entries:
+  - id: CP14ChromiumSlime
+    amount: 1
+    maxAmount: 1
+
+- type: entity
+  id: CP14GatherableChromiumSlime
+  parent: CP14GatherableHerbalBase
+  name: chromium slime
+  description: This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: FloorTiles
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/chromium_slime.rsi
+    state: world1
+  - type: Gatherable
+    toolWhitelist:
+      components:
+        - Hands
+    loot:
+      All: CP14GatherChromiumSlime
+
+- type: entity
+  id: CP14GatherableChromiumSlime2
+  parent: CP14GatherableChromiumSlime
+  components:
+  - type: Sprite
+    state: world2
+
+- type: entity
+  id: CP14GatherableChromiumSlime3
+  parent: CP14GatherableChromiumSlime
+  components:
+  - type: Sprite
+    state: world3
+
+# Wild sage
+
+- type: entityLootTable
+  id: CP14GatherWildSage
+  entries:
+  - id: CP14WildSage
+    amount: 1
+    maxAmount: 1
+
+- type: entity
+  id: CP14GatherableWildSage
+  parent: CP14GatherableHerbalBase
+  name: wild sage
+  description: Root of this ubiquitous medicinal plant not bad at healing physical injuries, and inducing coughing.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: FloorTiles
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/wild_sage.rsi
+    state: world1
+  - type: Gatherable
+    loot:
+      All: CP14GatherWildSage
+
+- type: entity
+  id: CP14GatherableWildSage2
+  parent: CP14GatherableWildSage
+  components:
+  - type: Sprite
+    state: world2
+
+- type: entity
+  id: CP14GatherableWildSage3
+  parent: CP14GatherableWildSage
+  components:
+  - type: Sprite
+    state: world3

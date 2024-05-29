@@ -10,9 +10,29 @@
   flavorType: Base
   description: cp14-flavor-base-invigorating
 
+- type: flavor
+  id: CP14Bitterly
+  flavorType: Base
+  description: cp14-flavor-base-bitterly
+
+- type: flavor
+  id: CP14Sweetly
+  flavorType: Base
+  description: cp14-flavor-base-sweetly
+
+- type: flavor
+  id: CP14Stinging
+  flavorType: Base
+  description: cp14-flavor-base-stinging
+
 # Complex
 
 - type: flavor
   id: CP14Water
   flavorType: Complex
   description: cp14-flavor-complex-water
+
+- type: flavor
+  id: CP14Chromium
+  flavorType: Complex
+  description: cp14-flavor-complex-chromium
