@@ -28,7 +28,7 @@ public sealed partial class CP14FireplaceComponent : Component
     /// current fuel quantity
     /// </summary>
     [DataField]
-    public float CurrentFuel = 10f;
+    public float Fuel = 10f;
 
     /// <summary>
     /// how much fuel is wasted every "UpdateFrequency"
