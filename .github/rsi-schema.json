@@ -75,7 +75,7 @@
       "license":{
          "$id":"#/properties/license",
          "default":"",
-         "description":"The license for the associated icon states. Restricted to SS14-compatible asset licenses.",
+         "description":"The license for the associated icon states. Restricted to CP14-compatible asset licenses.",
          "enum":[
             "CC-BY-SA-3.0",
             "CC-BY-SA-4.0",
