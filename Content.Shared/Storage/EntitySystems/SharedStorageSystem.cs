@@ -351,8 +351,10 @@ public abstract class SharedStorageSystem : EntitySystem
         if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
 
-        if (HasComp<SolutionContainerManagerComponent>(uid) && !storageComp.CP14CanStorageSolutionManagers) //CP14 bandage
+        if (storageComp.CP14Ignorelist != null && storageComp.CP14Ignorelist.IsValid(args.Used))
+        {
             return;
+        }
 
         PlayerInsertHeldEntity(uid, args.User, storageComp);
         // Always handle it, even if insertion fails.
