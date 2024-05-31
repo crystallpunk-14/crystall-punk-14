@@ -11,10 +11,13 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14SeedbedComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<CP14SeedbedComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
+        SubscribeLocalEvent<CP14SoilComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
+
+        SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
     }
-    private void OnInteractUsing(Entity<CP14SeedbedComponent> seedbed, ref InteractUsingEvent args)
+
+    private void OnInteractUsing(Entity<CP14SoilComponent> soil, ref InteractUsingEvent args)
     {
         if (!TryComp<CP14SeedComponent>(args.Used, out var seed))
             return;
@@ -23,7 +26,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         //Popup
 
         var doAfterArgs =
-            new DoAfterArgs(EntityManager, args.User, seed.PlantingTime, new PlantSeedDoAfterEvent(), seedbed, args.Used, seedbed)
+            new DoAfterArgs(EntityManager, args.User, seed.PlantingTime, new PlantSeedDoAfterEvent(), soil, args.Used, soil)
             {
                 BreakOnDamage = true,
                 BlockDuplicate = true,
@@ -33,7 +36,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
-    private void OnSeedPlantedDoAfter(Entity<CP14SeedbedComponent> ent, ref PlantSeedDoAfterEvent args)
+    private void OnSeedPlantedDoAfter(Entity<CP14SoilComponent> ent, ref PlantSeedDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Args.Used == null)
             return;
@@ -41,8 +44,27 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         if (!TryComp<CP14SeedComponent>(args.Target, out var seed))
             return;
 
-        SpawnAttachedTo(seed.PlantProto, Transform(ent).Coordinates);
-        
+        var plant = SpawnAttachedTo(seed.PlantProto, Transform(ent).Coordinates);
+
+        if (TryComp<CP14PlantComponent>(plant, out var plantComp))
+        {
+            TryRootPlant(plantComp, ent);
+        }
+        //Audio
         QueueDel(args.Target); //delete seed
     }
+
+    private bool TryRootPlant(CP14PlantComponent component, Entity<CP14SoilComponent> soilUid)
+    {
+        //Parenting to soil here?
+
+        component.SoilUid = soilUid;
+        return true;
+    }
+
+    private void OnMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
+    {
+
+    }
+
 }
