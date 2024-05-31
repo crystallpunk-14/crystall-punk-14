@@ -1,7 +1,6 @@
 - type: entity
-  id: CP14WallmountTorch
-  name: wallmount torch
-  description: A good, reliable light source. Too bad it doesn't last.
+  id: BaseWallmount
+  abstract: true
   placement:
     mode: SnapgridCenter
   components:
@@ -11,6 +10,14 @@
   - type: InteractionOutline
   - type: Sprite
     drawdepth: Mobs
+
+- type: entity
+  id: CP14WallmountTorch
+  name: wallmount torch
+  parent: BaseWallmount
+  description: A good, reliable light source. Too bad it doesn't last.
+  components:
+  - type: Sprite
     sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
     layers:
       - state: base
@@ -74,16 +81,10 @@
 - type: entity
   id: CP14WallmountLamp
   name: eternal flame lamp
+  parent: BaseWallmount
   description: A fragile eternal blue fire as proof of the superiority of magic over nature. 
-  placement:
-    mode: SnapgridCenter
   components:
-  - type: Transform
-    anchored: true
-  - type: Clickable
-  - type: InteractionOutline
   - type: Sprite
-    drawdepth: Mobs
     sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
     layers:
       - state: base
@@ -106,3 +107,49 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14WallmountBarShelfA
+  name: bar shelf
+  suffix: 1
+  parent: BaseWallmount
+  description: buba. ##TODO 
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/wallmount_bar_shelf.rsi
+    layers:
+    - state: shelf
+    - state: bottleA-0
+    - map: ["enum.StorageFillLayers.Fill"]
+  - type: StorageFillVisualizer
+    maxFillLevels: 7
+    fillBaseName: bottleA
+  - type: Storage
+    grid:
+    - 0,0,5,3
+    maxItemSize: Normal
+##   whitelist:                TODO
+##     tags:
+##       - CP14Bottles 
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+
+- type: entity
+  id: CP14WallmountBarShelfB
+  suffix: 2
+  parent: CP14WallmountBarShelfA
+  components:
+  - type: Sprite
+    layers:
+    - state: shelf
+    - state: bottleB-0
+    - map: ["enum.StorageFillLayers.Fill"]
+  - type: StorageFillVisualizer
+    fillBaseName: bottleB
+

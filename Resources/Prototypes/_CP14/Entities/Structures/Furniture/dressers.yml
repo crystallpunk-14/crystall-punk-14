@@ -1,0 +1,90 @@
+- type: entity
+  id: CP14DresserBase
+  parent:
+  - BaseStructure
+  - CP14BaseWooden
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+      - map: [ base ]
+        state: icon
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Normal
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.15,0.45,0.55"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Anchorable
+  - type: Rotatable
+  - type: Appearance
+
+- type: entity
+  name: wooden dresser
+  parent: CP14DresserBase
+  id: CP14WoodenDresser
+  description: f. ##TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/wood_dresser.rsi
+    state: icons
+
+- type: entity
+  name: wooden cupboard
+  parent: CP14DresserBase
+  id: CP14WoodenCupboard
+  description: f. ##TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/wood_cupboard.rsi
+    state: icons
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.25,0.45,0.45"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
