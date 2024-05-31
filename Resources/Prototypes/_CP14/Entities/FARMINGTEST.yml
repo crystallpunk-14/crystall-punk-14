@@ -1,0 +1,47 @@
+- type: entity
+  name: FUCK farming soil
+  id: CP14SeedbedTest
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: false
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileMask
+  - type: Sprite
+    sprite: Structures/Hydroponics/misc.rsi
+    state: soil
+    noRot: true
+  - type: SolutionContainerManager
+    solutions:
+      soil:
+        maxVol: 200
+  - type: RefillableSolution
+    solution: soil
+    maxRefill: 50
+  - type: Transform
+    anchored: true
+  - type: CP14Seedbed
+    solution: soil
+
+- type: entity
+  id: CP14SeedTest
+  name: FUCK test SEED
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/seeds.rsi
+    state: seed
+  - type: CP14Seed
