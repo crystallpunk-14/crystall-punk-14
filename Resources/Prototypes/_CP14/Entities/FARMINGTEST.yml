@@ -45,3 +45,16 @@
     sprite: Objects/Specific/Hydroponics/seeds.rsi
     state: seed
   - type: CP14Seed
+    plantProto: CP14PlantTest
+
+- type: entity
+  id: CP14PlantTest
+  name: FUCK plant!!!
+  components:
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/nettle.rsi
+    state: stage-1

@@ -5,4 +5,5 @@ public sealed partial class CP14SeedbedComponent : Component
 {
     [DataField(required: true)]
     public string Solution = string.Empty;
+
 }

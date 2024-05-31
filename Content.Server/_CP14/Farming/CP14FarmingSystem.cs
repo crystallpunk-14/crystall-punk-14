@@ -38,6 +38,11 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         if (args.Cancelled || args.Handled || args.Args.Used == null)
             return;
 
+        if (!TryComp<CP14SeedComponent>(args.Target, out var seed))
+            return;
+
+        SpawnAttachedTo(seed.PlantProto, Transform(ent).Coordinates);
+        
         QueueDel(args.Target); //delete seed
     }
 }
