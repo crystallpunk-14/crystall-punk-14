@@ -12,3 +12,13 @@
   license: "CC0-1.0"
   copyright: 'magnuswaker of Freesound.org. Mixed from stereo to mono.'
   source: "https://freesound.org/people/magnuswaker/sounds/540074/"
+  
+- files: ["metal_door_closed.ogg"]
+  license: "CC0-1.0"
+  copyright: 'mickyman5000 of Freesound.org. Mixed from stereo to mono.'
+  source: "https://freesound.org/people/mickyman5000/sounds/340585/"
+  
+- files: ["metal_door_open.ogg"]
+  license: "CC0-1.0"
+  copyright: 'mickyman5000 of Freesound.org. Mixed from stereo to mono.'
+  source: "https://freesound.org/people/mickyman5000/sounds/340585/"
