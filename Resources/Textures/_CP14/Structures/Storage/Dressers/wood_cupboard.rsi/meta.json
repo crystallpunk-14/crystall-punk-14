@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
+  "license": "All rights reserved for the CrystallPunk14 project only",
   "copyright": "Created by jaraten(discord) for CrystallPunk14",
   "size": {
     "x": 32,
@@ -8,11 +8,15 @@
   },
   "states": [
     {
-      "name": "icon",
+      "name": "base",
       "directions": 4
     },
     {
-      "name": "icon-open",
+      "name": "base_open",
+      "directions": 4
+    },
+    {
+      "name": "base_door",
       "directions": 4
     }
   ]
