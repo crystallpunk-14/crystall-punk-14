@@ -512,7 +512,7 @@
     cp14-chatsan-word-84: cp14-chatsan-replacement-84
     cp14-chatsan-word-85: cp14-chatsan-replacement-85
     cp14-chatsan-word-86: cp14-chatsan-replacement-86
-    #CP14-ChatSanitize-End
+    #CP14-RU-ChatSanitize-End
 
 - type: accent
   id: liar
