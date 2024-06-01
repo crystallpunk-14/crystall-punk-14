@@ -1,6 +1,5 @@
-using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Farming;
+namespace Content.Server._CP14.Farming.Components;
 
 /// <summary>
 ///
@@ -8,9 +7,17 @@ namespace Content.Server._CP14.Farming;
 [RegisterComponent, Access(typeof(CP14FarmingSystem))]
 public sealed partial class CP14PlantComponent : Component
 {
+    /// <summary>
+    /// Soil link. May be null, as not all plants in the world grow on entiti soil (e.g. wild shrubs)
+    /// </summary>
     [DataField]
-    public Entity<CP14SoilComponent> SoilUid;
+    public Entity<Components.CP14SoilComponent>? SoilUid;
 
+    /// <summary>
+    /// the plant's primary resource for which it can grow or produce fruit
+    /// </summary>
+    [DataField]
+    public float Energy = 0f;
 }
 
 /// Задачи:
@@ -21,15 +28,17 @@ public sealed partial class CP14PlantComponent : Component
 /// С другой стороны, нужан ли такая проработка? Какие цели вообще ставятся перед фермерством?
 /// Первое - Производство большого количества еды. Я хочу видеть поля засеянные пшеницой.
 /// Второе - производство алхимических реагентов.
+/// Третье - Куски этой системы должны использоваться в дикой природе (Сбор ягод с кустов, их восстановление)
 ///
 /// 1) Как можно облажаться?
-/// Можно загубить урожай, он умрет без полива.
-/// Можно не уследить за паразитами или грызунами.
+/// Если не собрать урожай вовремя, он сгниет
+/// Урожай может
 /// 2) Как все может пойти ужасно и нелепо?
 /// Некоторые растения могут представлять опасность если не уследить (выбежавшие из земли корнеплоды-убийцы)
 ///
 /// По сути звучит так, что геймплей про babysitting над растениями, где результат всегда очевиден. Если оно идет как придаток к алхимии - ок.
 /// Как самостоятельная активность пока звучит скучновато.
 ///
+/// С другой стороны, убрать аспект бабиситтинга: засеиваешь, и забываешь на минут 10. Возвращаешься, собираешь урожай (или его крадут)
 /// Что если семена в мире неопознаны, и ты долго можешь не знать что растишь? Странно
 ///

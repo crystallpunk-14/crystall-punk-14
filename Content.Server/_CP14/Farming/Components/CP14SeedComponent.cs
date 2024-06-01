@@ -1,7 +1,7 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Farming;
+namespace Content.Server._CP14.Farming.Components;
 
 [RegisterComponent, Access(typeof(CP14FarmingSystem))]
 public sealed partial class CP14SeedComponent : Component

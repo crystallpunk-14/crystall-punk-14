@@ -11,15 +11,15 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14SoilComponent, InteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
+        SubscribeLocalEvent<Components.CP14SoilComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<Components.CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
 
-        SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<Components.CP14PlantComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnInteractUsing(Entity<CP14SoilComponent> soil, ref InteractUsingEvent args)
+    private void OnInteractUsing(Entity<Components.CP14SoilComponent> soil, ref InteractUsingEvent args)
     {
-        if (!TryComp<CP14SeedComponent>(args.Used, out var seed))
+        if (!TryComp<Components.CP14SeedComponent>(args.Used, out var seed))
             return;
 
         //Audio
@@ -36,17 +36,17 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
-    private void OnSeedPlantedDoAfter(Entity<CP14SoilComponent> ent, ref PlantSeedDoAfterEvent args)
+    private void OnSeedPlantedDoAfter(Entity<Components.CP14SoilComponent> ent, ref PlantSeedDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Args.Used == null)
             return;
 
-        if (!TryComp<CP14SeedComponent>(args.Target, out var seed))
+        if (!TryComp<Components.CP14SeedComponent>(args.Target, out var seed))
             return;
 
         var plant = SpawnAttachedTo(seed.PlantProto, Transform(ent).Coordinates);
 
-        if (TryComp<CP14PlantComponent>(plant, out var plantComp))
+        if (TryComp<Components.CP14PlantComponent>(plant, out var plantComp))
         {
             TryRootPlant(plantComp, ent);
         }
@@ -54,7 +54,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         QueueDel(args.Target); //delete seed
     }
 
-    private bool TryRootPlant(CP14PlantComponent component, Entity<CP14SoilComponent> soilUid)
+    private bool TryRootPlant(Components.CP14PlantComponent component, Entity<Components.CP14SoilComponent> soilUid)
     {
         //Parenting to soil here?
 
@@ -62,7 +62,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         return true;
     }
 
-    private void OnMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
+    private void OnMapInit(Entity<Components.CP14PlantComponent> plant, ref MapInitEvent args)
     {
 
     }
