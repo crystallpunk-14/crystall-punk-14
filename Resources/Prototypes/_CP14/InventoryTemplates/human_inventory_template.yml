@@ -86,6 +86,7 @@
       slotGroup: SecondHotbar
       uiWindowPos: 0,0
       strippingWindowPos: 2,5
+      dependsOn: pants
       displayName: Keys
       stripHidden: true
     - name: back
