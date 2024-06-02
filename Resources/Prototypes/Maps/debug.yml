@@ -11,9 +11,9 @@
           mapNameTemplate: "Empty"
         - type: StationJobs
           overflowJobs:
-            - Adventurer #CrystallPunk Dev replacement
+            - CP14Adventurer #CrystallPunk Dev replacement
           availableJobs:
-            Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
 
 - type: gameMap
   id: Dev
@@ -33,9 +33,9 @@
           mapNameTemplate: "Dev"
         - type: StationJobs
           overflowJobs:
-          - Adventurer #CrystallPunk Dev replacement
+          - CP14Adventurer #CrystallPunk Dev replacement
           availableJobs:
-            Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
         - type: CP14StationDungeonMap
           biome: CP14CavesGeneric
 
