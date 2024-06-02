@@ -3,8 +3,8 @@
   description: department-CP14Free-desc
   color: "#429976"
   roles:
-  - CP14Adventurer
-  - CP14Alchemist
+  - CP14JobAdventurer
+  - CP14JobAlchemist
 
 - type: department
   id: CP14Command
