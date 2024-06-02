@@ -1,5 +1,5 @@
 - type: roleLoadout
-  id: CP14JobAdventurer
+  id: JobCP14Adventurer
   groups:
   - CP14TestHead
   - CP14TestEyes
@@ -11,7 +11,7 @@
   - CP14TestShoes
 
 - type: roleLoadout
-  id: CP14JobAlchemist
+  id: JobCP14Alchemist
   groups:
   - CP14TestHead
   - CP14TestEyes
