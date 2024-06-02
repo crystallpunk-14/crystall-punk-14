@@ -78,6 +78,7 @@
       slotGroup: SecondHotbar
       uiWindowPos: 0,0
       strippingWindowPos: 0,4
+      dependsOn: pants
       displayName: Belt
     - name: keys
       slotTexture: keys
@@ -120,4 +121,5 @@
       slotGroup: MainHotbar
       uiWindowPos: 2,0
       strippingWindowPos: 2,4
+      dependsOn: pants
       displayName: Belt
