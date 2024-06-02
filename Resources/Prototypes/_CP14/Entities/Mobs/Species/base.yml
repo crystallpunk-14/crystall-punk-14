@@ -233,7 +233,6 @@
   save: false
   abstract: true
   components:
-  - type: Flashable
   # Organs
   - type: StatusEffects
     allowed:
@@ -252,6 +251,7 @@
     - Muted
     - Pacified
     - StaminaModifier
+    - Flashed
   - type: Blindable
   - type: Bloodstream
     bloodReagent: CP14Blood
