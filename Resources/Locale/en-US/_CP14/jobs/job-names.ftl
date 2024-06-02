@@ -1,1 +1,0 @@
-job-name-adventurer = Adventurer
