@@ -142,6 +142,7 @@
   - type: Reflect
     enabled: false
     reflectProb: 0
+  - type: ComplexInteraction
   - type: Body
     prototype: CP14Human
     requiredLegs: 2

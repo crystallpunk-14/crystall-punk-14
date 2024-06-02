@@ -9,6 +9,8 @@
 
 - type: startingGear
   id: CP14AdventurerGear
+  equipment:
+    belt1: CP14WalletFilledTest
 
 - type: job
   id: CP14JobAlchemist

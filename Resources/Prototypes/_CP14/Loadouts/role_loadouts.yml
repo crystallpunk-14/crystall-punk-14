@@ -9,3 +9,15 @@
   - CP14TestShirt
   - CP14TestPants
   - CP14TestShoes
+
+- type: roleLoadout
+  id: CP14JobAlchemist
+  groups:
+  - CP14TestHead
+  - CP14TestEyes
+  - CP14TestMask
+  - CP14TestCloak
+  - CP14TestGloves
+  - CP14TestShirt
+  - CP14TestPants
+  - CP14TestShoes
