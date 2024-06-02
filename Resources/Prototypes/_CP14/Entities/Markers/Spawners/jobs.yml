@@ -6,7 +6,7 @@
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: JobAdventurerCP14
+    job_id: JobCP14Adventurer
   - type: Sprite
     layers:
       - state: green
