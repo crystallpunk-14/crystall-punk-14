@@ -1,0 +1,155 @@
+- type: species
+  id: CP14Elf
+  name: cp14-species-name-elf
+  roundStart: true
+  prototype: CP14MobElf
+  sprites: CP14MobElfSprites
+  markingLimits: CP14MobElfMarkingLimits
+  dollPrototype: CP14MobElfDummy
+  skinColoration: HumanToned
+  maleFirstNames: CP14_Names_Elf_Male_First
+  femaleFirstNames: CP14_Names_Elf_Female_First
+  lastNames: CP14_Names_Elf_Last
+
+- type: speciesBaseSprites
+  id: CP14MobElfSprites
+  sprites:
+    Head: CP14MobElfHead
+    HeadTop: CP14MobElfMarkingMatchSkin
+    Hair: CP14MobElfAnyMarking
+    FacialHair: CP14MobElfAnyMarking
+    Snout: CP14MobElfMarkingMatchSkin
+    Tail: CP14MobElfMarkingMatchSkin
+    Chest: CP14MobElfTorso
+    Eyes: CP14MobElfEyes
+    LArm: CP14MobElfLArm
+    RArm: CP14MobElfRArm
+    LHand: CP14MobElfLHand
+    RHand: CP14MobElfRHand
+    LLeg: CP14MobElfLLeg
+    RLeg: CP14MobElfRLeg
+    LFoot: CP14MobElfLFoot
+    RFoot: CP14MobElfRFoot
+
+- type: markingPoints
+  id: CP14MobElfMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14ElfEars ]
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: CP14MobElfEyes
+  baseSprite:
+    sprite: _CP14/Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: CP14MobElfAnyMarking
+
+- type: humanoidBaseSprite
+  id: CP14MobElfMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: CP14MobElfHead
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: CP14MobElfHeadMale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: CP14MobElfHeadFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: CP14MobElfTorso
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: CP14MobElfTorsoMale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: CP14MobElfTorsoFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: CP14MobElfLLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobElfLArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobElfLHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobElfLFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: CP14MobElfRLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobElfRArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobElfRHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobElfRFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: r_foot

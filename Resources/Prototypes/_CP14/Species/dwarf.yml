@@ -1,6 +1,6 @@
 - type: species
   id: CP14Dwarf
-  name: species-name-dwarf
+  name: cp14-species-name-dwarf
   roundStart: true
   prototype: CP14MobDwarf
   sprites: CP14MobDwarfSprites
