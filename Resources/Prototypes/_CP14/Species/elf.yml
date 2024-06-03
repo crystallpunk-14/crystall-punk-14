@@ -1,0 +1,5 @@
+#- type: species
+#  id: CP14Elf
+#  name: cp14-species-name-elf
+#  roundStart: true
+#  prototype: CP14MobElf

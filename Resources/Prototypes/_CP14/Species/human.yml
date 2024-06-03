@@ -1,6 +1,6 @@
 - type: species
   id: CP14Human
-  name: species-name-human
+  name: cp14-species-name-human
   roundStart: true
   prototype: CP14MobHuman
   sprites: CP14MobHumanSprites
