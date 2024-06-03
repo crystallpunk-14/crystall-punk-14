@@ -223,7 +223,7 @@ public sealed partial class MeleeWeaponSystem
                     {
                         new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f), //CrystallPunk MeleeUpgrade
                         new AnimationTrackProperty.KeyFrame(direction.Normalized() * 0.15f, length*0.4f), //CrystallPunk MeleeUpgrade
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, length*0.8f) //CrystallPunk MeleeUpgrade
+                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, length*0.6f) //CrystallPunk MeleeUpgrade
                     }
                 }
             }
