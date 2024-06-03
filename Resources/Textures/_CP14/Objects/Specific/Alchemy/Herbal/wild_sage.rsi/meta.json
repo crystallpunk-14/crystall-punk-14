@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by Prazar for CrystallPunk14",
+  "states": [
+    {
+      "name": "base1"
+    },
+    {
+      "name": "base2"
+    },
+    {
+      "name": "base3"
+    },
+    {
+      "name": "world1"
+    },
+    {
+      "name": "world2"
+    },
+    {
+      "name": "world3"
+    }
+  ]
+}

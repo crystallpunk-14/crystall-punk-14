@@ -1,8 +1,10 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Popups;
+using Content.Server.Stack;
 using Content.Shared._CP14.Temperature;
 using Content.Shared.Interaction;
+using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using Robust.Server.Audio;
 using Robust.Server.Containers;
@@ -18,8 +20,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly FlammableSystem _flammable = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly StackSystem _stackSystem = default!;
 
     public override void Initialize()
     {
@@ -40,7 +41,9 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
     private bool TryFoundFuelInStorage(Entity<CP14FireplaceComponent> fireplace, out Entity<FlammableComponent>? fuel)
     {
         fuel = null;
-        var container = _containerSystem.GetContainer(fireplace, fireplace.Comp.ContainerId);
+
+        if (!_containerSystem.TryGetContainer(fireplace, fireplace.Comp.ContainerId, out var container))
+            return false;
 
         if (container.ContainedEntities.Count == 0)
             return false;
@@ -62,12 +65,19 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         if (!TryComp<FlammableComponent>(uid, out var flammable))
             return;
 
-        component.CurrentFuel += fuel.Comp.CP14FireplaceFuel;
+        component.Fuel += fuel.Comp.CP14FireplaceFuel;
 
         if (flammable.OnFire)
             _audio.PlayPvs(component.InsertFuelSound, uid);
 
-        QueueDel(fuel);
+        if (TryComp<StackComponent>(fuel, out var stack))
+        {
+            _stackSystem.SetCount(fuel, stack.Count - 1);
+        }
+        else
+        {
+            QueueDel(fuel);
+        }
     }
 
     public override void Update(float frameTime)
@@ -85,9 +95,9 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
 
             fireplace.NextUpdateTime = _timing.CurTime + fireplace.UpdateFrequency;
 
-            if (fireplace.CurrentFuel >= fireplace.FuelDrainingPerUpdate)
+            if (fireplace.Fuel >= fireplace.FuelDrainingPerUpdate)
             {
-                fireplace.CurrentFuel -= fireplace.FuelDrainingPerUpdate;
+                fireplace.Fuel -= fireplace.FuelDrainingPerUpdate;
                 UpdateAppearance(uid, fireplace);
                 flammable.FirestackFade = fireplace.FireFadeDelta;
             }
@@ -106,13 +116,13 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         if (!Resolve(uid, ref fireplace, ref appearance))
             return;
 
-        if (fireplace.CurrentFuel < fireplace.FuelDrainingPerUpdate)
+        if (fireplace.Fuel < fireplace.FuelDrainingPerUpdate)
         {
             _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Empty, appearance);
             return;
         }
 
-        if (fireplace.CurrentFuel < fireplace.MaxFuelLimit / 2)
+        if (fireplace.Fuel < fireplace.MaxFuelLimit / 2)
             _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Medium, appearance);
         else
             _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Full, appearance);

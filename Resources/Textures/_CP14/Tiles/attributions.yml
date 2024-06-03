@@ -6,18 +6,13 @@
   copyright: "Space Station 14, recolored by TheShuEd"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
-- files: ["cavedrought.png"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Space Station 14, recolored by TheShuEd"
-  source: "https://github.com/crystallpunk-14/crystall-punk-14/"
-
 - files: ["foundation.png"]
   license: "CC-BY-SA-3.0"
   copyright: "by TheShuEd"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
 - files: ["stonebricks.png", "stonebricks_small_carved_1.png", "stonebricks_small_carved_2.png", "stonebricks_square_carved.png"]
-  license: "CC-BY-SA-3.0"
+  license: "All rights reserved for the CrystallPunk14 project only"
   copyright: "Created by Jaraten for CrystallPunk14"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 

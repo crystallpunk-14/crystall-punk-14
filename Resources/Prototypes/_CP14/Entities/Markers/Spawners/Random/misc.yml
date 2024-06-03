@@ -1,0 +1,12 @@
+- type: entity
+  id: CP14RandomDirtLootSpawner
+  name: dirt spawner
+  parent: CP14DirtEffect
+  categories:
+  - Spawner
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - CP14DirtBlock1
+    chance: 1
+    deleteSpawnerAfterSpawn: false

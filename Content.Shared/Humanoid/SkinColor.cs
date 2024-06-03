@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Content.Shared._CP14.Humanoid;
 using Microsoft.VisualBasic.CompilerServices;
 
 namespace Content.Shared.Humanoid;
@@ -234,6 +235,9 @@ public static class SkinColor
             HumanoidSkinColor.TintedHues => VerifyTintedHues(color),
             HumanoidSkinColor.Hues => VerifyHues(color),
             HumanoidSkinColor.VoxFeathers => VerifyVoxFeathers(color),
+            // CP14 - Custom HumanoidSkinColor - Start
+            HumanoidSkinColor.TieflingHues => CP14SkinColor.VerifyTieflingHues(color),
+            // CP14 - Custom HumanoidSkinColor - End
             _ => false,
         };
     }
@@ -246,6 +250,9 @@ public static class SkinColor
             HumanoidSkinColor.TintedHues => ValidTintedHuesSkinTone(color),
             HumanoidSkinColor.Hues => MakeHueValid(color),
             HumanoidSkinColor.VoxFeathers => ClosestVoxColor(color),
+            // CP14 - Custom HumanoidSkinColor - Start
+            HumanoidSkinColor.TieflingHues => CP14SkinColor.MakeTieflingHueValid(color),
+            // CP14 - Custom HumanoidSkinColor - End
             _ => color
         };
     }
@@ -257,4 +264,7 @@ public enum HumanoidSkinColor : byte
     Hues,
     VoxFeathers, // Vox feathers are limited to a specific color range
     TintedHues, //This gives a color tint to a humanoid's skin (10% saturation with full hue range).
+    // CP14 - Custom HumanoidSkinColor - Start
+    TieflingHues,
+    // CP14 - Custom HumanoidSkinColor - End
 }

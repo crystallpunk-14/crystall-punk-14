@@ -15,10 +15,8 @@
 [More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
 
 ## License
-[![license-badge](https://shields.io/badge/license-CC--BY--NC--SA-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+The base code for the original Space Station 14 game is registered under MIT: https://github.com/space-wizards/space-station-14
 
-All CrystallPunk14 codebase contributions are licensed under [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/3.0/). See LICENSE for more details.
+All CrystallPunk14 codebase contributions rights reserved. (all components and systems beginning with CP14, for example: https://github.com/crystallpunk-14/crystall-punk-14/blob/master/Content.Server/_CP14/Alchemy/CP14AlchemyExtractionSystem.cs)
 
-Most visual assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
-
-**Important:** This means that code from CrystallPunk14 cannot be ported to others codebases. If you wish to port a specific feature, you must get the developer(s) to sublicense it to you under a license like AGPLv3. This also applies in the opposite direction for features ported from other codebases.
+Visual and sound assets have their own license, described in the attribution file next to them.

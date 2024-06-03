@@ -1,0 +1,22 @@
+- type: job
+  id: CP14Adventurer
+  name: cp14-job-name-adventurer
+  description: cp14-job-desc-adventurer
+  playTimeTracker: CP14JobAdventurer
+  startingGear: CP14AdventurerGear
+  icon: "CP14JobIconAdventurer"
+  supervisors: cp14-job-supervisors-command
+
+- type: job
+  id: CP14Alchemist
+  name: cp14-job-name-alchemist
+  description: cp14-job-desc-alchemist
+  playTimeTracker: CP14JobAlchemist
+  startingGear: CP14AdventurerGear #TODO
+  icon: "CP14JobIconAlchemist"
+  supervisors: cp14-job-supervisors-command
+
+- type: startingGear
+  id: CP14AdventurerGear
+  equipment:
+    belt1: CP14WalletFilledTest

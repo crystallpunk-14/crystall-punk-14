@@ -4,6 +4,7 @@ cp14-tiles-base = rock strata
 # Natural
 cp14-tiles-grass = meadow grass
 cp14-tiles-dirt = soil
+cp14-tiles-sand = sand
 
 # Produced
 cp14-tiles-foundation = foundation

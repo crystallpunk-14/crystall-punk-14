@@ -105,7 +105,7 @@
           Quantity: 300
 
 - type: entity
-  id: CP14BarrelBeer
+  id: CP14BarrelBlood
   parent: CP14BaseBarrel
   suffix: Blood
   components:

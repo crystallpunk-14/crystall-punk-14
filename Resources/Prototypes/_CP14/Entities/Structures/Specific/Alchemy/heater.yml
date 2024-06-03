@@ -30,7 +30,7 @@
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
   - type: Flammable
-    fireSpread: true
+    fireSpread: false
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
@@ -65,7 +65,7 @@
   suffix: DEBUG
   components:
   - type: CP14Fireplace
-    currentFuel: 100
+    fuel: 100
     fuelDrainingPerUpdate: 0
 
 - type: entity
@@ -73,6 +73,8 @@
   name: alchemy furnace
   parent: CP14BaseFireplace
   description: A furnace fueled by wood, coal, or any other burning material. Handy for heating your alchemical potions.
+  categories:
+  - Debug
   components:
   - type: Sprite
     sprite: _CP14/Structures/Specific/Alchemy/alchemy_furnace.rsi

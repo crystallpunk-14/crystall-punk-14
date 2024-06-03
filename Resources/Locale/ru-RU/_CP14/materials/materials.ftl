@@ -1,0 +1,1 @@
+cp14-material-wooden-planks = деревянные доски

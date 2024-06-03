@@ -6,7 +6,7 @@
   sprites: CP14MobTieflingSprites
   markingLimits: CP14MobTieflingMarkingLimits
   dollPrototype: CP14MobTieflingDummy
-  skinColoration: Hues
+  skinColoration: TieflingHues
   maleFirstNames: CP14_Names_Tiefling_Male_First
   femaleFirstNames: CP14_Names_Tiefling_Female_First
   lastNames: CP14_Names_Tiefling_Last

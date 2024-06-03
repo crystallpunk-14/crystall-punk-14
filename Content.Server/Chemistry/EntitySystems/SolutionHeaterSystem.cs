@@ -102,7 +102,7 @@ public sealed class SolutionHeaterSystem : EntitySystem
             foreach (var heatingEntity in placer.PlacedEntities)
             {
                 if (!flammable.OnFire)
-                    return;
+                    continue;
 
                 if (!TryComp<SolutionContainerManagerComponent>(heatingEntity, out var container))
                     continue;
