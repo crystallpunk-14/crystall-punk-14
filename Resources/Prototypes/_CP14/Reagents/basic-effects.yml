@@ -1,73 +1,134 @@
 - type: reagent
-  id: CP14BasicEffectHealBlunt
-  name: cp14-reagent-name-basic-heal-blunt
-  desc: cp14-reagent-desc-basic-heal-blunt
+  id: CP14BasicEffectEmpty
+  name: cp14-reagent-name-basic-empty
+  desc: cp14-reagent-desc-basic-empty
   group: CP14BasicEffect
-  flavor: medicine
-  color: "#c71aaa"
-  physicalDesc: cp14-reagent-physical-desc-scarlet
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Blunt: -1
+  flavor: CP14Bitterly
+  color: "#858585"
+  physicalDesc: cp14-reagent-physical-desc-colorless
 
 - type: reagent
-  id: CP14BasicEffectHealPiercing
-  name: cp14-reagent-name-basic-heal-piercing
-  desc: cp14-reagent-desc-basic-heal-piercing
+  id: CP14BasicEffectHealBrute
+  name: cp14-reagent-name-basic-heal-brute
+  desc: cp14-reagent-desc-basic-heal-brute
   group: CP14BasicEffect
-  flavor: medicine
-  color: "#e03895"
+  flavor: CP14Metallic
+  color: "#e31010"
   physicalDesc: cp14-reagent-physical-desc-scarlet
   metabolisms:
     Medicine:
       effects:
       - !type:HealthChange
         damage:
-          types:
-            Piercing: -1
+          groups:
+            Brute: -3
 
 - type: reagent
-  id: CP14BasicEffectHealSlash
-  name: cp14-reagent-name-basic-heal-slash
-  desc: cp14-reagent-desc-basic-heal-slash
+  id: CP14BasicEffectDamageBrute
+  name: cp14-reagent-name-basic-damage-brute
+  desc: cp14-reagent-desc-basic-damage-brute
   group: CP14BasicEffect
-  flavor: medicine
-  color: "#cf153a"
-  physicalDesc: cp14-reagent-physical-desc-scarlet
+  flavor: CP14Stinging
+  color: "#633223"
+  physicalDesc: cp14-reagent-physical-desc-ferrous
   metabolisms:
     Medicine:
       effects:
       - !type:HealthChange
         damage:
+          groups:
+            Brute: 3
+
+- type: reagent
+  id: CP14BasicEffectDamagePoison
+  name: cp14-reagent-name-basic-damage-poison
+  desc: cp14-reagent-desc-basic-damage-poison
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#768551"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
           types:
-            Slash: -1
+            Poison: 10
+
+- type: reagent
+  id: CP14BasicEffectHealPoison
+  name: cp14-reagent-name-basic-heal-poison
+  desc: cp14-reagent-desc-basic-heal-poison
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#82ba3d"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -10
+
+- type: reagent
+  id: CP14BasicEffectRainbow
+  name: cp14-reagent-name-see-rainbow
+  desc: cp14-reagent-desc-see-rainbow
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#d442db"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 25
+        refresh: false
 
 - type: reagent
   id: CP14BasicEffectSatiateHunger
   name: cp14-reagent-name-basic-satiate-hunger
   desc: cp14-reagent-desc-basic-satiate-hunger
   group: CP14BasicEffect
-  flavor: nutriment
+  flavor: CP14Sweetly
   color: "#a35629"
-  physicalDesc: cp14-reagent-physical-desc-scarlet #TODO
+  physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Food:
       effects:
       - !type:SatiateHunger
+        factor: 6
 
 - type: reagent
   id: CP14BasicEffectSatiateThirst
   name: cp14-reagent-name-basic-satiate-thirst
   desc: cp14-reagent-desc-basic-satiate-thirst
   group: CP14BasicEffect
-  flavor: nutriment
+  flavor: CP14Water
   color: "#2b7fed"
-  physicalDesc: cp14-reagent-physical-desc-scarlet #TODO
+  physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Drink:
       effects:
       - !type:SatiateThirst
+        factor: 6
+
+- type: reagent
+  id: CP14BasicEffectEmoteCough
+  name: cp14-reagent-name-basic-emote-cough
+  desc: cp14-reagent-desc-basic-emote-cough
+  group: CP14BasicEffect
+  flavor: CP14Water
+  color: "#2b7fed"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:Emote
+        showInChat: true
+        emote: Cough
+        probability: 0.3

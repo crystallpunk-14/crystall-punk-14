@@ -2,8 +2,12 @@
   id: CP14BloodGrass
   parent: FoodProduceBase
   name: bloodgrass
-  description: The dullest and most common plant to be found in the wild is the dark brown grass.
+  description: The dullest and most common plant to be found in the wild is the dark brown grass. Known for its nutritional properties.
   components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: BadFood
   - type: Item
     size: Tiny
   - type: Produce
@@ -35,3 +39,117 @@
         reagents:
         - ReagentId: CP14BloodGrassSap
           Quantity: 5
+
+- type: entity
+  id: CP14AgaricMushroom
+  parent: FoodProduceBase
+  name: fly agaric
+  description: This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: BadFood
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/agaric.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+        base4: ""
+        base5: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14AgaricMushroom
+        Quantity: 3
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14AgaricMushroom
+          Quantity: 3
+
+- type: entity
+  id: CP14ChromiumSlime
+  parent: FoodProduceBase
+  name: chromium slime
+  description: This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: BadFood
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/chromium_slime.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14ChromiumSlime
+        Quantity: 7
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 7
+
+- type: entity
+  id: CP14WildSage
+  parent: FoodProduceBase
+  name: wild sage root
+  description: Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,1
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/wild_sage.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14WildSageSap
+        Quantity: 8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14WildSageSap
+          Quantity: 8

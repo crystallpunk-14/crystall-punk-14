@@ -41,6 +41,37 @@
   weather: true
 
 - type: tile
+  editorHidden: false
+  id: CP14FloorSand
+  name: cp14-tiles-sand
+  sprite: /Textures/_CP14/Tiles/Sand/sand.png
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 2
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Sand/single_edge.png
+    NorthEast: /Textures/_CP14/Tiles/Sand/single_edge.png
+    NorthWest: /Textures/_CP14/Tiles/Sand/single_edge.png
+    SouthWest: /Textures/_CP14/Tiles/Sand/single_edge.png
+    South: /Textures/_CP14/Tiles/Sand/double_edge.png
+    East: /Textures/_CP14/Tiles/Sand/double_edge.png
+    North: /Textures/_CP14/Tiles/Sand/double_edge.png
+    West: /Textures/_CP14/Tiles/Sand/double_edge.png
+  baseTurf: CP14FloorBase
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14DirtEffect #TODO sand variant
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepSnow #TODO
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
   id: CP14FloorGrass
   editorHidden: false
   name: cp14-tiles-grass
@@ -51,7 +82,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 2
+  edgeSpritePriority: 3
   edgeSprites:
     SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
     NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png

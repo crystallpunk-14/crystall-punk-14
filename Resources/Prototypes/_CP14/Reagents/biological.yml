@@ -12,30 +12,6 @@
     collection: FootstepBlood
     params:
       volume: 6
-# metabolisms:
-#   Drink:
-#     effects:
-#     - !type:SatiateThirst
-#       factor: 1.5
-#       conditions:
-#         - !type:OrganType
-#           type: Human
-#           shouldHave: false
-#   Food:
-#     effects:
-#       - !type:AdjustReagent
-#         reagent: UncookedAnimalProteins
-#         amount: 0.5
-#   Medicine:
-#     effects:
-#     - !type:HealthChange
-#       conditions:
-#       - !type:OrganType
-#         type: Bloodsucker
-#       damage:
-#         groups:
-#           Brute: -3
-#           Burn: -1.25
 
 - type: reagent
   id: CP14BloodGrassSap
@@ -54,11 +30,73 @@
     Food:
       effects:
       - !type:SatiateHunger
-        factor: 0.5
-    Medicine:
+        factor: 2
+    Poison:
       effects:
       - !type:HealthChange
         damage:
           types:
             Poison: 0.25
-  
+
+- type: reagent
+  id: CP14AgaricMushroom
+  group: CP14Biological
+  name: cp14-reagent-name-agaric-shroom
+  desc: cp14-reagent-desc-agaric-shroom
+  flavor: CP14Bitterly
+  color: "#89a195"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  slippery: false
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1.5
+      - !type:ChemVomit
+        probability: 0.02
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false
+
+- type: reagent
+  id: CP14ChromiumSlime
+  group: CP14Biological
+  name: cp14-reagent-name-chromium-slime
+  desc: cp14-reagent-desc-chromium-slime
+  flavor: CP14Chromium
+  color: "#3b4872"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  slippery: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateThirst
+      - !type:ChemVomit
+        probability: 0.05
+
+- type: reagent
+  id: CP14WildSageSap
+  group: CP14Biological
+  name: cp14-reagent-name-wild-sage-sap
+  desc: cp14-reagent-desc-wild-sage-sap
+  flavor: CP14Sweetly
+  color: "#6b462c"
+  physicalDesc: cp14-reagent-physical-desc-cloudy
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: -1
+      - !type:Emote
+        emote: Cough
+        showInChat: true
+        probability: 0.15

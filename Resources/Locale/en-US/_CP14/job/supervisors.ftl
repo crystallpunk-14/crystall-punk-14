@@ -1,0 +1,1 @@
+cp14-job-supervisors-command = all authority figures

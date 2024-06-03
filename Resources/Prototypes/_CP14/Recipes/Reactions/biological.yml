@@ -1,25 +1,112 @@
+# Simple sap mixing
+
 - type: reaction
-  id: CP14BloodGrassProcessing1
+  id: CP14BloodGrassMixing
+  priority: 3
+  reactants:
+    CP14BloodGrassSap:
+      amount: 0.5
+    CP14BasicEffectDamagePoison:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectRainbow: 0.25
+    CP14BasicEffectDamageBrute: 0.25
+
+- type: reaction
+  id: CP14AgaricShroomMixing
+  priority: 3
+  reactants:
+    CP14AgaricMushroom:
+      amount: 0.5
+    CP14BasicEffectHealBrute:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectSatiateHunger: 0.25
+    CP14BasicEffectSatiateThirst: 0.25
+
+- type: reaction
+  id: CP14WildSageSapMixing
+  priority: 3
+  reactants:
+    CP14WildSageSap:
+      amount: 0.5
+    CP14BasicEffectRainbow:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectEmoteCough: 0.25
+    CP14BasicEffectHealBrute: 0.25
+
+# Complex brewing (2 reagents, 25% empty)
+
+- type: reaction
+  id: CP14BloodGrassAndWildSageSapBrewing
   minTemp: 350
+  priority: 3
+  reactants:
+    CP14BloodGrassSap:
+      amount: 0.5
+    CP14WildSageSap:
+      amount: 0.5
+  products:
+    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectSatiateHunger: 0.25
+    CP14BasicEffectEmoteCough: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+# Simple brewing (~50% Empty)
+
+- type: reaction
+  id: CP14BloodGrassBrewing
+  minTemp: 300
+  priority: 2
   reactants:
     CP14Blood:
-      amount: 1
+      amount: 0.5
     CP14BloodGrassSap:
-      amount: 2
+      amount: 0.5
   products:
-    CP14BasicEffectSatiateHunger: 2
-    CP14BasicEffectHealSlash: 0.5
-    CP14BasicEffectHealPiercing: 0.5
+    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectSatiateHunger: 0.5
+    CP14BasicEffectHealBrute: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -300
 
-#- type: reaction
-#  id: CP14BloodGrassProcessingFail1
-#  minTemp: 450
-#  reactants:
-#    CP14VitalExtract: 
-#      amount: 1
-#  effects:
-#    - !type:AreaReactionEffect
-#      duration: 20
-#      prototypeId: CP14MistVitalExtract
-#      sound:
-#        path: /Audio/Effects/smoke.ogg
+- type: reaction
+  id: CP14AgaricShroomBrewing
+  minTemp: 350
+  priority: 2
+  reactants:
+    CP14AgaricMushroom:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectDamagePoison: 0.25
+    CP14BasicEffectRainbow: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+- type: reaction
+  id: CP14WildSageSapBrewing
+  minTemp: 400
+  priority: 2
+  reactants:
+    CP14WildSageSap:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectEmoteCough: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -400

@@ -5,7 +5,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -124,13 +123,12 @@ namespace Content.Shared.Storage
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public StorageDefaultOrientation? DefaultStorageOrientation;
 
+
         /// <summary>
-        /// CrystallPunk bandage. We need to put in both objects and liquids.
-        /// This avoids situations where a player puts a bucket into the cauldron
-        /// instead of pouring liquid from the bucket into the cauldron.
+        /// these items will be interrupted as early as the attempted interaction stage. Allows you to use some tools
         /// </summary>
         [DataField]
-        public bool CP14CanStorageSolutionManagers = true;
+        public EntityWhitelist? CP14Ignorelist;
 
         [Serializable, NetSerializable]
         public enum StorageUiKey : byte
@@ -235,6 +233,9 @@ namespace Content.Shared.Storage
             EntityAngles = entityAngles;
         }
     }
+
+    [ByRefEvent]
+    public record struct StorageInteractAttemptEvent(bool Silent, bool Cancelled = false);
 
     [NetSerializable]
     [Serializable]

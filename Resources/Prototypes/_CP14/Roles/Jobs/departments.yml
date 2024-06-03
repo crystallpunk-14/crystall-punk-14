@@ -1,6 +1,12 @@
 - type: department
-  id: Mercenary
-  description: department-Mercenary-description
-  color: "#e6a447"
+  id: CP14Free
+  description: department-CP14Free-desc
+  color: "#429976"
   roles:
-  - Adventurer
+  - CP14Adventurer
+  - CP14Alchemist
+
+- type: department
+  id: CP14Command
+  description: department-CP14Command-desc
+  color: "#fadb3e"

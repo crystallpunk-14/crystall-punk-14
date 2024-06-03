@@ -41,7 +41,9 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
     private bool TryFoundFuelInStorage(Entity<CP14FireplaceComponent> fireplace, out Entity<FlammableComponent>? fuel)
     {
         fuel = null;
-        var container = _containerSystem.GetContainer(fireplace, fireplace.Comp.ContainerId);
+
+        if (!_containerSystem.TryGetContainer(fireplace, fireplace.Comp.ContainerId, out var container))
+            return false;
 
         if (container.ContainedEntities.Count == 0)
             return false;
@@ -63,7 +65,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         if (!TryComp<FlammableComponent>(uid, out var flammable))
             return;
 
-        component.CurrentFuel += fuel.Comp.CP14FireplaceFuel;
+        component.Fuel += fuel.Comp.CP14FireplaceFuel;
 
         if (flammable.OnFire)
             _audio.PlayPvs(component.InsertFuelSound, uid);
@@ -93,9 +95,9 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
 
             fireplace.NextUpdateTime = _timing.CurTime + fireplace.UpdateFrequency;
 
-            if (fireplace.CurrentFuel >= fireplace.FuelDrainingPerUpdate)
+            if (fireplace.Fuel >= fireplace.FuelDrainingPerUpdate)
             {
-                fireplace.CurrentFuel -= fireplace.FuelDrainingPerUpdate;
+                fireplace.Fuel -= fireplace.FuelDrainingPerUpdate;
                 UpdateAppearance(uid, fireplace);
                 flammable.FirestackFade = fireplace.FireFadeDelta;
             }
@@ -114,13 +116,13 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
         if (!Resolve(uid, ref fireplace, ref appearance))
             return;
 
-        if (fireplace.CurrentFuel < fireplace.FuelDrainingPerUpdate)
+        if (fireplace.Fuel < fireplace.FuelDrainingPerUpdate)
         {
             _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Empty, appearance);
             return;
         }
 
-        if (fireplace.CurrentFuel < fireplace.MaxFuelLimit / 2)
+        if (fireplace.Fuel < fireplace.MaxFuelLimit / 2)
             _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Medium, appearance);
         else
             _appearance.SetData(uid, FireplaceFuelVisuals.Status, FireplaceFuelStatus.Full, appearance);

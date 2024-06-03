@@ -15,3 +15,9 @@
 
 - type: Tag
   id: CP14HerbalGathering
+
+- type: Tag
+  id: CP14FitInMortar
+
+- type: Tag
+  id: CP14Pestle
