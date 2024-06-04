@@ -8,7 +8,7 @@ namespace Content.Server._CP14.DayCycle;
 [AdminCommand(AdminFlags.VarEdit)]
 public sealed class CP14InitDayCycleCommand : LocalizedCommands
 {
-    private const string Name = "cp14_initdaycycle";
+    private const string Name = "cp14-initdaycycle";
     private const int ArgumentCount = 1;
 
     public override string Command => Name;
