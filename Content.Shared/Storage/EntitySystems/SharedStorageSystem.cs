@@ -357,7 +357,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
 
-        if (storageComp.CP14Ignorelist != null && storageComp.CP14Ignorelist.IsValid(args.Used))
+        if (storageComp.CP14Ignorelist != null && _whitelistSystem.IsWhitelistFail(storageComp.CP14Ignorelist, args.Used))
         {
             return;
         }
