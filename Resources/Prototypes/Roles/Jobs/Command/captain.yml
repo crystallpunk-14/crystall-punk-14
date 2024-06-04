@@ -41,3 +41,8 @@
     gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
+  storage:
+    back:
+    - BoxSurvival
+    - Flash
+    # - StationCharter
