@@ -9,7 +9,7 @@
       amount: 0.5
   products:
     CP14BasicEffectDamageBrute: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -25,7 +25,7 @@
       amount: 0.5
   products:
     CP14BasicEffectHealBrute: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -43,7 +43,7 @@
       amount: 0.5
   products:
     CP14BasicEffectDamagePoison: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -59,7 +59,7 @@
       amount: 0.5
   products:
     CP14BasicEffectHealPoison: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -77,7 +77,7 @@
       amount: 0.5
   products:
     CP14BasicEffectHealCold: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -93,7 +93,7 @@
       amount: 0.5
   products:
     CP14BasicEffectDamageCold: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
