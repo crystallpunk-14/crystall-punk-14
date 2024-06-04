@@ -132,3 +132,35 @@
         showInChat: true
         emote: Cough
         probability: 0.3
+
+- type: reagent
+  id: CP14BasicEffectHealCold
+  name: cp14-reagent-name-basic-heal-cold
+  desc: cp14-reagent-desc-basic-heal-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#a3511a"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageCold
+  name: cp14-reagent-name-basic-damage-cold
+  desc: cp14-reagent-desc-basic-damage-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#1a95a3"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 10
