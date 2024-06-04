@@ -11,5 +11,5 @@ public sealed partial class CP14SharpenedComponent : Component
     public float Sharpness = 1f;
 
     [DataField]
-    public float SharpnessDamageByHit = 0.01f;
+    public float SharpnessDamageBy1Damage = 0.002f; //500 damage
 }
