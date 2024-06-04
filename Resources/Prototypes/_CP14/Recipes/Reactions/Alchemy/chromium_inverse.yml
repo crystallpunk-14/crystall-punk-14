@@ -1,3 +1,11 @@
+# Idea:
+# Chromium slime is a special reagent that inverts the USEFUL properties.
+
+# Rules:
+# 1) all values must be multiples of 0.25
+# 2) all reactions should follow the same pattern
+# 3) There should be no reactions here that invert useless properties (hallucinations or coughing)
+
 - type: reaction
   id: CP14ChromiumInverseEffectHealBruteGroup
   minTemp: 350
@@ -9,7 +17,7 @@
       amount: 0.5
   products:
     CP14BasicEffectDamageBrute: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -25,10 +33,12 @@
       amount: 0.5
   products:
     CP14BasicEffectHealBrute: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
+
+#
 
 - type: reaction
   id: CP14ChromiumInverseEffectHealPoison
@@ -41,7 +51,7 @@
       amount: 0.5
   products:
     CP14BasicEffectDamagePoison: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -57,7 +67,41 @@
       amount: 0.5
   products:
     CP14BasicEffectHealPoison: 0.5
-    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectEmpty: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+#
+
+- type: reaction
+  id: CP14ChromiumInverseEffectDamageCold
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14BasicEffectDamageCold: 
+      amount: 0.5
+    CP14ChromiumSlime:
+      amount: 0.5
+  products:
+    CP14BasicEffectHealCold: 0.5
+    CP14BasicEffectEmpty: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
+
+- type: reaction
+  id: CP14ChromiumInverseEffectHealCold
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14BasicEffectHealCold: 
+      amount: 0.5
+    CP14ChromiumSlime:
+      amount: 0.5
+  products:
+    CP14BasicEffectDamageCold: 0.5
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350

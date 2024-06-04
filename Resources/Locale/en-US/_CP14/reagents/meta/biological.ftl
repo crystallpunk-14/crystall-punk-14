@@ -1,6 +1,12 @@
 cp14-reagent-name-blood = blood
 cp14-reagent-desc-blood = The life energy of a living warm-blooded creatures.
 
+cp14-reagent-name-blood-tiefling = tiefling blood
+cp14-reagent-desc-blood-tiefling = The life energy of a fire-blooded creature.
+
+cp14-reagent-name-blood-elf = elf blood
+cp14-reagent-desc-blood-elf = The life energy of a magical creature.
+
 cp14-reagent-name-bloodgrasssap = bloodgrass sap
 cp14-reagent-desc-bloodgrasssap = A squeeze from the ubiquitous blood grass. It has no particular remarkable qualities, but with proper skill can be prepared into a nutritious food.
 

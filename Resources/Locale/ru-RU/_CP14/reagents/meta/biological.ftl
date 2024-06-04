@@ -1,6 +1,12 @@
 cp14-reagent-name-blood = кровь
 cp14-reagent-desc-blood = Жизненная энергия живого теплокровного существа.
 
+cp14-reagent-name-blood-tiefling = кровь тифлинга
+cp14-reagent-desc-blood-tiefling = Жизненная энергия огнекровного существа.
+
+cp14-reagent-name-blood-elf = кровь эльфа
+cp14-reagent-desc-blood-elf = Жизненная энергия волшебного существа.
+
 cp14-reagent-name-bloodgrasssap = сок кровьтравы
 cp14-reagent-desc-bloodgrasssap = Выжимка из повсеместно растущей кровьтравы. Не имеет особых примечательных качеств, но при должной сноровке может быть приготовлена в питательную пищу.
 
