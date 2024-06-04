@@ -1,3 +1,4 @@
+
 - type: reagent
   id: CP14BasicEffectEmpty
   name: cp14-reagent-name-basic-empty
@@ -6,6 +7,9 @@
   flavor: CP14Bitterly
   color: "#858585"
   physicalDesc: cp14-reagent-physical-desc-colorless
+
+# USEFUL
+# Effects that have a direct impact on gameplay
 
 - type: reagent
   id: CP14BasicEffectHealBrute
@@ -72,24 +76,6 @@
             Poison: -10
 
 - type: reagent
-  id: CP14BasicEffectRainbow
-  name: cp14-reagent-name-see-rainbow
-  desc: cp14-reagent-desc-see-rainbow
-  group: CP14BasicEffect
-  flavor: CP14Bitterly
-  color: "#d442db"
-  physicalDesc: cp14-reagent-physical-desc-colorless
-  metabolisms:
-    Narcotic:
-      effects:
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
-        type: Add
-        time: 25
-        refresh: false
-
-- type: reagent
   id: CP14BasicEffectSatiateHunger
   name: cp14-reagent-name-basic-satiate-hunger
   desc: cp14-reagent-desc-basic-satiate-hunger
@@ -116,22 +102,6 @@
       effects:
       - !type:SatiateThirst
         factor: 6
-
-- type: reagent
-  id: CP14BasicEffectEmoteCough
-  name: cp14-reagent-name-basic-emote-cough
-  desc: cp14-reagent-desc-basic-emote-cough
-  group: CP14BasicEffect
-  flavor: CP14Water
-  color: "#2b7fed"
-  physicalDesc: cp14-reagent-physical-desc-colorless
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:Emote
-        showInChat: true
-        emote: Cough
-        probability: 0.3
 
 - type: reagent
   id: CP14BasicEffectHealCold
@@ -164,3 +134,40 @@
         damage:
           types:
             Cold: 10
+
+# USELESS
+# Things that don't directly affect gameplay.
+
+- type: reagent
+  id: CP14BasicEffectRainbow
+  name: cp14-reagent-name-see-rainbow
+  desc: cp14-reagent-desc-see-rainbow
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#d442db"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 25
+        refresh: false
+
+- type: reagent
+  id: CP14BasicEffectEmoteCough
+  name: cp14-reagent-name-basic-emote-cough
+  desc: cp14-reagent-desc-basic-emote-cough
+  group: CP14BasicEffect
+  flavor: CP14Water
+  color: "#2b7fed"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:Emote
+        showInChat: true
+        emote: Cough
+        probability: 0.3

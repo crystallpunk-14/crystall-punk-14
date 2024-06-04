@@ -1,10 +1,10 @@
 # Idea:
-# The simplest way to edit base effects by reducing the blank solution is to have different raw reagents change individual properties.
+# The simplest way to edit base USEFUL effects by reducing the blank solution is to have different raw reagents change individual properties.
 
 # Rules:
 # 1) all values must be multiples of 0.25
 # 2) the empty solution should decrease as a result of the reaction
-# 3) as a result of the reaction, one effect must decay into the other two.
+# 3) as a result of the reaction, one USEFUL effect must decay into the other two.
 # 4) The priority should be higher than any brewing reactions, so that the base reagents do not have time to boil before the effect is applied
 
 - type: reaction
@@ -36,10 +36,10 @@
     CP14BasicEffectSatiateThirst: 0.25
 
 - type: reaction
-  id: CP14WildSageSapMixing
+  id: CP14WildSageSapMixing1
   priority: 3
   reactants:
-    CP14BasicEffectRainbow:
+    CP14BasicEffectSatiateHunger:
       amount: 0.5
     CP14WildSageSap:
       amount: 0.25
@@ -47,4 +47,18 @@
       amount: 0.25
   products:
     CP14BasicEffectEmoteCough: 0.25
-    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectHealCold: 0.25
+
+- type: reaction
+  id: CP14WildSageSapMixing2
+  priority: 3
+  reactants:
+    CP14BasicEffectSatiateThirst:
+      amount: 0.5
+    CP14WildSageSap:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectEmoteCough: 0.25
+    CP14BasicEffectHealCold: 0.25
