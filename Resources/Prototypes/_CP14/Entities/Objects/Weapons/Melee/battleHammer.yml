@@ -1,33 +1,31 @@
 - type: entity
-  id: CP14BaseTwoHandedSword
+  id: CP14BaseBattleHammer
   parent:
   - BaseItem
   - CP14BaseWeaponDestructible
-  - CP14BaseWeaponSharp
-  - CP14BaseWeaponChemical
-  name: two-handed sword
-  description: A powerful weapon that requires tremendous strength and skill to use effectively.
+  name: battle hammer
+  description: A big heavy hammer! Bruh! #TODO
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/twoHandedSword.rsi
-    state: icon
+    sprite: _CP14/Objects/Weapons/Melee/BattleHammer/battleHammer.rsi
+    layers:
+    - state: icon
   - type: Clothing
     equipDelay: 1
     unequipDelay: 1
-    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/twoHandedSword.rsi
+    sprite: _CP14/Objects/Weapons/Melee/BattleHammer/battleHammer.rsi
     quickEquip: false
     breakOnMove: false
     slots:
     - back
   - type: MeleeWeapon
-    attackRate: 0.7
-    wideAnimationRotation: 205
+    attackRate: 0.8
+    wideAnimationRotation: 320
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Slash: 4
-        Blunt: 3
-        Structural: 1
+        Blunt: 7
+        Structural: 4
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.6
@@ -35,14 +33,14 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 15
-        Blunt: 10
-        Structural: 3
+        Blunt: 20
+        Structural: 10
   - type: Item
     size: Ginormous
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.8
   - type: HeldSpeedModifier
-  - type: CP14Sharpened
-    sharpnessDamageByHit: 0.02
+  - type: MeleeThrowOnHit
+    lifetime: 0.05
+    speed: 5
