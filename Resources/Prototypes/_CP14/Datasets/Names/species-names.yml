@@ -1,0 +1,80 @@
+
+# Dwarf
+
+- type: localizedDataset
+  id: CP14_Names_Dwarf_Male_First
+  values:
+    prefix: cp14-species-name-dwarf-male-first-
+    count: 52
+
+- type: localizedDataset
+  id: CP14_Names_Dwarf_Female_First
+  values:
+    prefix: cp14-species-name-dwarf-female-first-
+    count: 44
+
+- type: localizedDataset
+  id: CP14_Names_Dwarf_Last
+  values:
+    prefix: cp14-species-name-dwarf-last-
+    count: 30
+
+# Human
+
+- type: localizedDataset
+  id: CP14_Names_Human_Male_First
+  values:
+    prefix: cp14-species-name-human-male-first-
+    count: 52
+
+- type: localizedDataset
+  id: CP14_Names_Human_Female_First
+  values: 
+    prefix: cp14-species-name-human-female-first-
+    count: 44
+
+- type: localizedDataset
+  id: CP14_Names_Human_Last
+  values:
+    prefix: cp14-species-name-human-last-
+    count: 30
+
+# Tiefling
+
+- type: localizedDataset
+  id: CP14_Names_Tiefling_Male_First
+  values:
+    prefix: cp14-species-name-tiefling-male-first-
+    count: 57
+
+- type: localizedDataset
+  id: CP14_Names_Tiefling_Female_First
+  values:
+    prefix: cp14-species-name-tiefling-female-first-
+    count: 53
+
+- type: localizedDataset
+  id: CP14_Names_Tiefling_Last
+  values:
+    prefix: cp14-species-name-tiefling-last-
+    count: 24
+
+# Elf
+
+- type: localizedDataset
+  id: CP14_Names_Elf_Male_First
+  values:
+    prefix: cp14-species-name-elf-male-first-
+    count: 28
+
+- type: localizedDataset
+  id: CP14_Names_Elf_Female_First
+  values:
+    prefix: cp14-species-name-elf-female-first-
+    count: 30
+
+- type: localizedDataset
+  id: CP14_Names_Elf_Last
+  values:
+    prefix: cp14-species-name-elf-last-
+    count: 18

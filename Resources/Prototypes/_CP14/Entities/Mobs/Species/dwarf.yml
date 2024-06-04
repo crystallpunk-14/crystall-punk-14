@@ -38,10 +38,30 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
+
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobDwarfDummy
   noSpawn: true
   components:
-    - type: HumanoidAppearance
-      species: CP14Dwarf
+  - type: HumanoidAppearance
+    species: CP14Dwarf
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      shoes:
+        layer:
+          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+          state: shoes
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      pants:
+        layer:
+          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+          state: pants
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV

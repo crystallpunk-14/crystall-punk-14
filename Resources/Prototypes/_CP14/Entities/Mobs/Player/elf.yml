@@ -1,0 +1,4 @@
+- type: entity
+  save: false
+  parent: CP14BaseMobElf
+  id: CP14MobElf

@@ -33,7 +33,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
         if (!args.HitEntities.Any())
             return;
 
-        sharpened.Comp.Sharpness = MathHelper.Clamp(sharpened.Comp.Sharpness - sharpened.Comp.SharpnessDamageByHit, 0.1f, 1f);
+        sharpened.Comp.Sharpness = MathHelper.Clamp(sharpened.Comp.Sharpness - args.BaseDamage.GetTotal().Float() * sharpened.Comp.SharpnessDamageBy1Damage, 0.1f, 1f);
     }
 
     private void OnInteract(Entity<CP14SharpeningStoneComponent> stone, ref ActivateInWorldEvent args)

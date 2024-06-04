@@ -1,6 +1,6 @@
 - type: entity
   id: CP14BaseTwoHandedSword
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseWeaponDestructible
   - CP14BaseWeaponSharp
@@ -19,9 +19,6 @@
     breakOnMove: false
     slots:
     - back
-  - type: Icon
-    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/twoHandedSword32.rsi
-    state: icon
   - type: MeleeWeapon
     attackRate: 0.7
     wideAnimationRotation: 205
@@ -47,5 +44,3 @@
     walkModifier: 0.9
     sprintModifier: 0.8
   - type: HeldSpeedModifier
-  - type: CP14Sharpened
-    sharpnessDamageByHit: 0.04
