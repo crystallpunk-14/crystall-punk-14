@@ -20,7 +20,7 @@ entities:
     - type: MovedGrids
     - type: Broadphase
     - type: MapLight
-    - type: DayCycle
+    - type: CP14DayCycle
       timeEntries:
       - duration: 30
         startColor: '#0A2136FF'
