@@ -40,6 +40,7 @@
       map: ["base"]
   - type: Stack
     stackType: CP14CopperCoin
+    count: 10
 
 - type: entity
   id: CP14CopperCoin5
@@ -77,6 +78,7 @@
       map: ["base"]
   - type: Stack
     stackType: CP14SilverCoin
+    count: 10
 
 - type: entity
   id: CP14SilverCoin5
@@ -114,6 +116,7 @@
       map: ["base"]
   - type: Stack
     stackType: CP14GoldCoin
+    count: 10
 
 - type: entity
   id: CP14GoldCoin5
@@ -151,6 +154,7 @@
       map: ["base"]
   - type: Stack
     stackType: CP14PlatinumCoin
+    count: 10
 
 - type: entity
   id: CP14PlatinumCoin5

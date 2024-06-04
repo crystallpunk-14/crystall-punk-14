@@ -2,9 +2,11 @@
   id: CP14SpawnPointAdventurer
   parent: SpawnPointJobBase
   name: adventurer
+  categories:
+  - Spawner
   components:
   - type: SpawnPoint
-    job_id: Adventurer
+    job_id: CP14Adventurer
   - type: Sprite
     layers:
       - state: green

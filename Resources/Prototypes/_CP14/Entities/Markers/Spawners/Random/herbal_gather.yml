@@ -2,6 +2,8 @@
   id: CP14RandomSpawnerGatherGloodgrass
   name: bloodgrass spawner
   parent: MarkerBase
+  categories:
+  - Spawner
   components:
   - type: Sprite
     layers:
@@ -21,6 +23,8 @@
   id: CP14RandomSpawnerGatherAgaricShroom
   name: agaric shroom spawner
   parent: MarkerBase
+  categories:
+  - Spawner
   components:
   - type: Sprite
     layers:

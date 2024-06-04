@@ -21,7 +21,9 @@
     requiredLegs: 2
   - type: Inventory
     templateId: CP14Human
-  - type: Wagging  
+  - type: Wagging
+  - type: Bloodstream
+    bloodReagent: CP14BloodTiefling
 
 - type: entity
   parent: CP14BaseSpeciesDummy

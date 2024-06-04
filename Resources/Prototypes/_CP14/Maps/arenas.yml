@@ -11,9 +11,9 @@
           mapNameTemplate: "Cave Arena"
         - type: StationJobs
           overflowJobs:
-            - Adventurer
+            - CP14Adventurer
           availableJobs:
-            Adventurer: [ -1, -1 ]
+            CP14Adventurer: [ -1, -1 ]
 
 - type: gameMap
   id: AlchemyTest
@@ -35,6 +35,6 @@
           mapNameTemplate: "Alchemy test"
         - type: StationJobs
           overflowJobs:
-            - Adventurer
+            - CP14Adventurer
           availableJobs:
-            Adventurer: [ -1, -1 ]
+            CP14Adventurer: [ -1, -1 ]

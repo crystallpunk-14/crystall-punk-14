@@ -1,0 +1,13 @@
+
+- type: reaction
+  id: CP14MeltingFail
+  minTemp: 1000
+  reactants:
+    CP14BasicEffectEmpty:
+      amount: 1
+  effects:
+  - !type:AreaReactionEffect
+    duration: 20
+    prototypeId: CP14Mist
+    sound:
+      path: /Audio/Effects/smoke.ogg

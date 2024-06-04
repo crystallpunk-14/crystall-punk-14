@@ -1,0 +1,46 @@
+- type: entity
+  id: CP14BaseBattleHammer
+  parent:
+  - BaseItem
+  - CP14BaseWeaponDestructible
+  name: battle hammer
+  description: A big heavy hammer! Bruh! #TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/BattleHammer/battleHammer.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    sprite: _CP14/Objects/Weapons/Melee/BattleHammer/battleHammer.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - back
+  - type: MeleeWeapon
+    attackRate: 0.8
+    wideAnimationRotation: 320
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 7
+        Structural: 4
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.6
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 20
+        Structural: 10
+  - type: Item
+    size: Ginormous
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.8
+  - type: HeldSpeedModifier
+  - type: MeleeThrowOnHit
+    lifetime: 0.05
+    speed: 5
