@@ -3,9 +3,8 @@
   parent:
   - BaseItem
   - CP14BaseWeaponDestructible
-  - CP14BaseWeaponKnockback
   name: battle hammer
-  description: A big heavy hammer! Bruh!
+  description: A big heavy hammer! Bruh! #TODO
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/BattleHammer/battleHammer.rsi
@@ -21,7 +20,7 @@
     - back
   - type: MeleeWeapon
     attackRate: 0.8
-    wideAnimationRotation: 250
+    wideAnimationRotation: 320
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
@@ -42,3 +41,6 @@
     walkModifier: 0.9
     sprintModifier: 0.8
   - type: HeldSpeedModifier
+  - type: MeleeThrowOnHit
+    lifetime: 0.05
+    speed: 5
