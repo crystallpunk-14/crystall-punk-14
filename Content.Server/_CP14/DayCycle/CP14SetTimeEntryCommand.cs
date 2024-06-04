@@ -8,7 +8,7 @@ namespace Content.Server._CP14.DayCycle;
 [AdminCommand(AdminFlags.VarEdit)]
 public sealed class CP14SetTimeEntryCommand : LocalizedCommands
 {
-    private const string Name = "settimeentry";
+    private const string Name = "cp14-settimeentry";
     private const int ArgumentCount = 2;
 
     public override string Command => Name;
