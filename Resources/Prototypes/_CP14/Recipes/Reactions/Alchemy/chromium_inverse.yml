@@ -1,3 +1,11 @@
+# Idea:
+# Chromium slime is a special reagent that inverts the USEFUL properties.
+
+# Rules:
+# 1) all values must be multiples of 0.25
+# 2) all reactions should follow the same pattern
+# 3) There should be no reactions here that invert useless properties (hallucinations or coughing)
+
 - type: reaction
   id: CP14ChromiumInverseEffectHealBruteGroup
   minTemp: 350
