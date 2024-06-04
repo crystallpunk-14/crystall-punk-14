@@ -357,10 +357,8 @@ public abstract class SharedStorageSystem : EntitySystem
         if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
 
-        if (storageComp.CP14Ignorelist != null && storageComp.CP14Ignorelist.IsValid(args.Used))
-        {
+        if (_whitelistSystem.IsWhitelistPass(storageComp.CP14Ignorelist, args.Used))
             return;
-        }
 
         PlayerInsertHeldEntity(uid, args.User, storageComp);
         // Always handle it, even if insertion fails.

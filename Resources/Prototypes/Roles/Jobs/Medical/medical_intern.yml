@@ -25,3 +25,6 @@
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
     pocket2: BookMedicalReferenceBook
+  storage:
+    back:
+    - BoxSurvivalMedical
