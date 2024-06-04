@@ -1,4 +1,4 @@
-﻿using Content.Server.Administration;
+using Content.Server.Administration;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -8,7 +8,7 @@ namespace Content.Server._CP14.DayCycle;
 [AdminCommand(AdminFlags.VarEdit)]
 public sealed class CP14SetTimeEntryCommand : LocalizedCommands
 {
-    private const string Name = "set_time_entry";
+    private const string Name = "settimeentry";
     private const int ArgumentCount = 2;
 
     public override string Command => Name;
