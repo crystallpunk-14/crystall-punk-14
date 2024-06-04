@@ -8,7 +8,7 @@
 # 4) The priority should be higher than any brewing reactions, so that the base reagents do not have time to boil before the effect is applied
 
 - type: reaction
-  id: CP14BloodGrassMixing
+  id: CP14DamagePoisonSplitting
   priority: 3
   reactants:
     CP14BasicEffectDamagePoison:
@@ -22,7 +22,7 @@
     CP14BasicEffectDamageBrute: 0.25
 
 - type: reaction
-  id: CP14AgaricShroomMixing
+  id: CP14HealBruteSplitting
   priority: 3
   reactants:
     CP14BasicEffectHealBrute:
@@ -36,7 +36,7 @@
     CP14BasicEffectSatiateThirst: 0.25
 
 - type: reaction
-  id: CP14WildSageSapMixing1
+  id: CP14SatiateHungerSplitting
   priority: 3
   reactants:
     CP14BasicEffectSatiateHunger:
@@ -50,7 +50,7 @@
     CP14BasicEffectHealBrute: 0.25
 
 - type: reaction
-  id: CP14WildSageSapMixing2
+  id: CP14SatiateThirstSplitting
   priority: 3
   reactants:
     CP14BasicEffectSatiateThirst:
@@ -62,3 +62,31 @@
   products:
     CP14BasicEffectEmoteCough: 0.25
     CP14BasicEffectHealBrute: 0.25
+
+- type: reaction
+  id: CP14EmoteCoughSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectEmoteCough:
+      amount: 0.5
+    CP14BloodElf:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectSatiateThirst: 0.25
+    CP14BasicEffectHealBrute: 0.25
+
+- type: reaction
+  id: CP14RainbowSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectRainbow:
+      amount: 0.5
+    CP14BloodTiefling:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectSatiateThirst: 0.25
+    CP14BasicEffectHealCold: 0.25
