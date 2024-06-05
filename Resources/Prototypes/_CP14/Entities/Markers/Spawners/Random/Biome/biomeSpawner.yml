@@ -10,6 +10,7 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
+    snapCardinals: true
     drawdepth: BelowFloor
     sprite: _CP14/Markers/biome.rsi
   - type: CP14BiomeSpawner
