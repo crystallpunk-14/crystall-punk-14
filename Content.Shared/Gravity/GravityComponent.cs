@@ -33,6 +33,6 @@ namespace Content.Shared.Gravity
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("inherent")]
-        public bool Inherent = true; //CP14 True default
+        public bool Inherent;
     }
 }
