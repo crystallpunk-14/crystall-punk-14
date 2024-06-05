@@ -27,8 +27,6 @@
         - type: StationRandomTransform
           enableStationRotation: false
           maxStationOffset: null
-        - type: StationBiome
-          biome: CP14GrasslandTestResult
         - type: CP14StationDungeonMap
           biome: CP14CavesGeneric
         - type: StationNameSetup

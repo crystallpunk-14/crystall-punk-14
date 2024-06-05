@@ -20,7 +20,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    private int _seed = 0;
+    private int _seed = 27;
     public override void Initialize()
     {
         base.Initialize();
@@ -75,6 +75,8 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
                 _decals.TryAddDecal(decal.ID, new EntityCoordinates(gridUid, decal.Position), out _);
             }
         }
+
+        //TODO maybe need remove anchored entities here
 
         //Add entities
         if (_biome.TryGetEntity(v2i, biome.Layers, tile.Value, _seed, map, out var entityProto))
