@@ -1,9 +1,11 @@
 using Content.Server.Decals;
+using Content.Server.GameTicking;
 using Content.Server.Parallax;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.BiomeSpawner;
 
@@ -15,13 +17,20 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly DecalSystem _decals = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private int _seed = 0;
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<RoundStartAttemptEvent>(OnRoundStartAttempt);
         SubscribeLocalEvent<CP14BiomeSpawnerComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnRoundStartAttempt(RoundStartAttemptEvent ev)
+    {
+        _seed = _random.Next(100000);
     }
 
     private void OnMapInit(Entity<CP14BiomeSpawnerComponent> spawner, ref MapInitEvent args)
