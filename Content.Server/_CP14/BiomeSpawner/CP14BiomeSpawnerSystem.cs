@@ -46,8 +46,18 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
         var v2i = _transform.GetGridOrMapTilePosition(spawner);
         if (!_biome.TryGetTile(v2i, biome.Layers, _seed, map, out var tile))
             return;
+
+        // Set new tile
         _maps.SetTile(gridUid, map, v2i, tile.Value);
 
+        // Remove old decals
+        var oldDecals = _decals.GetDecalsInRange(gridUid, v2i, 0.85f);
+        foreach (var (id, _) in oldDecals)
+        {
+            _decals.RemoveDecal(gridUid, id);
+        }
+
+        //Add decals
         if (_biome.TryGetDecals(v2i, biome.Layers, _seed, map, out var decals))
         {
             foreach (var decal in decals)
@@ -56,6 +66,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
             }
         }
 
+        //Add entities
         if (_biome.TryGetEntity(v2i, biome.Layers, tile.Value, _seed, map, out var entityProto))
         {
             var ent = _entManager.SpawnEntity(entityProto,
