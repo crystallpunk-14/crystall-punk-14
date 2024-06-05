@@ -1,15 +1,41 @@
 - type: entity
-  id: CP14BiomeSpawnerLakeTest
+  id: CP14BaseBiomeSpawner
   name: biome spawner
-  suffix: Test
-  parent: MarkerBase
-  categories:
-  - Spawner
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: BelowFloor
+    sprite: _CP14/Markers/biome.rsi
+  - type: CP14BiomeSpawner
+  - type: PlacementReplacement
+    key: CP14BiomeSpawner
+
+- type: entity
+  id: CP14BiomeSpawnerGrassland
+  parent: CP14BaseBiomeSpawner
+  suffix: Grassland
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: _CP14/Tiles/Water/water.rsi
-        state: full
+      - state: grass
+      - state: frame
   - type: CP14BiomeSpawner
     biome: CP14Grassland
+
+- type: entity
+  id: CP14BiomeSpawnerCave
+  parent: CP14BaseBiomeSpawner
+  suffix: Cave
+  components:
+  - type: Sprite
+    layers:
+      - state: cave
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14CavesGeneric

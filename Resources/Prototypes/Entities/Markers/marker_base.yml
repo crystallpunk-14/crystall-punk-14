@@ -10,7 +10,7 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    drawdepth: Overdoors
+    drawdepth: BelowFloor
     sprite: Markers/cross.rsi
 # If serialization was cool this would work.
 #    layers:
