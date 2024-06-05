@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Server.Decals;
 using Content.Server.GameTicking;
 using Content.Server.Parallax;
@@ -60,7 +61,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
         _maps.SetTile(gridUid, map, v2i, tile.Value);
 
         // Remove old decals
-        var oldDecals = _decals.GetDecalsInRange(gridUid, v2i, 0.85f);
+        var oldDecals = _decals.GetDecalsInRange(gridUid, v2i + new Vector2(0.5f, 0.5f));
         foreach (var (id, _) in oldDecals)
         {
             _decals.RemoveDecal(gridUid, id);
