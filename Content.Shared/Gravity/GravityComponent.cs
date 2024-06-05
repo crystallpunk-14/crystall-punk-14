@@ -26,7 +26,7 @@ namespace Content.Shared.Gravity
         }
 
         [DataField("enabled")]
-        public bool Enabled = true; //CP14 True default
+        public bool Enabled;
 
         /// <summary>
         /// Inherent gravity ensures GravitySystem won't change Enabled according to the gravity generators attached to this entity.
