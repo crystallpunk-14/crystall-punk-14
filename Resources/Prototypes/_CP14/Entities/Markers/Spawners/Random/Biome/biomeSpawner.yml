@@ -1,0 +1,15 @@
+- type: entity
+  id: CP14BiomeSpawnerLakeTest
+  name: biome spawner
+  suffix: Test
+  parent: MarkerBase
+  categories:
+  - Spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _CP14/Tiles/Water/water.rsi
+        state: full
+  - type: CP14BiomeSpawner
+    biome: CP14GrasslandHills
