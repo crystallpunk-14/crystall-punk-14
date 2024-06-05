@@ -12,4 +12,4 @@
       - sprite: _CP14/Tiles/Water/water.rsi
         state: full
   - type: CP14BiomeSpawner
-    biome: CP14GrasslandHills
+    biome: CP14Grassland
