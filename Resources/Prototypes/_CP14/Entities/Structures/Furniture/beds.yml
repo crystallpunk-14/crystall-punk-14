@@ -42,9 +42,9 @@
         acts: ["Destruction"]
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank:
-            min: 1
-            max: 2
+          CP14WoodenPlanks1:
+            min: 2
+            max: 4
   - type: Transform
     anchored: true
     noRot: true

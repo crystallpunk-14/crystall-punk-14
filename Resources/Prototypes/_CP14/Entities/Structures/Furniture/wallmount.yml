@@ -1,5 +1,5 @@
 - type: entity
-  id: BaseWallmount
+  id: CP14BaseWallmount
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -14,7 +14,7 @@
 - type: entity
   id: CP14WallmountTorch
   name: wallmount torch
-  parent: BaseWallmount
+  parent: CP14BaseWallmount
   description: A good, reliable light source. Too bad it doesn't last.
   components:
   - type: Sprite
@@ -81,7 +81,7 @@
 - type: entity
   id: CP14WallmountLamp
   name: eternal flame lamp
-  parent: BaseWallmount
+  parent: CP14BaseWallmount
   description: A fragile eternal blue fire as proof of the superiority of magic over nature. 
   components:
   - type: Sprite
@@ -112,7 +112,7 @@
   id: CP14WallmountBarShelfA
   name: bar shelf
   suffix: 1
-  parent: BaseWallmount
+  parent: CP14BaseWallmount
   description: buba. ##TODO 
   components:
   - type: Appearance
