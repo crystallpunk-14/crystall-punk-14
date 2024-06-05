@@ -171,3 +171,17 @@
         showInChat: true
         emote: Cough
         probability: 0.3
+
+- type: reagent
+  id: CP14BasicEffectVomit
+  name: cp14-reagent-name-basic-vomit
+  desc: cp14-reagent-desc-basic-vomit
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#87a667"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      effects:
+      - !type:ChemVomit
+        probability: 0.25

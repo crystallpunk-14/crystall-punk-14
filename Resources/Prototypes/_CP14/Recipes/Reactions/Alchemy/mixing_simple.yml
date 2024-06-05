@@ -69,7 +69,7 @@
   reactants:
     CP14BasicEffectEmoteCough:
       amount: 0.5
-    CP14BloodElf:
+    CP14GroundQuartz:
       amount: 0.25
     CP14BasicEffectEmpty: 
       amount: 0.25
@@ -90,3 +90,17 @@
   products:
     CP14BasicEffectSatiateThirst: 0.25
     CP14BasicEffectHealCold: 0.25
+
+- type: reaction
+  id: CP14VomitSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectVomit:
+      amount: 0.5
+    CP14BloodTiefling:
+      amount: 0.25
+    CP14BasicEffectEmpty:
+      amount: 0.25
+  products:
+    CP14BasicEffectEmoteCough: 0.25
+    CP14BasicEffectDamagePoison: 0.25
