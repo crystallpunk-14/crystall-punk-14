@@ -25,3 +25,20 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
+
+- type: reaction
+  id: CP14QuartzAndAgaricBrewing
+  minTemp: 500
+  priority: 3
+  reactants:
+    CP14AgaricMushroom:
+      amount: 0.5
+    CP14GroundQuartz:
+      amount: 0.5
+  products:
+    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectDamagePoison: 0.5
+    CP14BasicEffectVomit: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250
