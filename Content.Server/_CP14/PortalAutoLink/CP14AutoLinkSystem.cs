@@ -12,14 +12,13 @@ public sealed partial class CP14AutoLinkSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14AutoLinkComponent, ActivateInWorldEvent>(OnActivateInWorld);
+        SubscribeLocalEvent<CP14AutoLinkComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnActivateInWorld(Entity<CP14AutoLinkComponent> autolink, ref ActivateInWorldEvent args)
+    private void OnMapInit(Entity<CP14AutoLinkComponent> autolink, ref MapInitEvent args)
     {
         TryAutoLink(autolink, out var otherLink);
     }
-
     public bool TryAutoLink(Entity<CP14AutoLinkComponent> autolink, out EntityUid? linkedEnt)
     {
         linkedEnt = null;
