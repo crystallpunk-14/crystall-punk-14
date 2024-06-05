@@ -27,10 +27,9 @@
         - type: StationRandomTransform
           enableStationRotation: false
           maxStationOffset: null
-        - type: StationBiome
-          biome: CP14GrasslandTestResult
-        - type: CP14StationDungeonMap
-          biome: CP14CavesGeneric
+        - type: CP14StationAdditionalMap
+          mapPaths:
+          - /Maps/_CP14/alchemy_test_layer2.yml
         - type: StationNameSetup
           mapNameTemplate: "Alchemy test"
         - type: StationJobs
