@@ -10,6 +10,7 @@
   - type: PlacementReplacement
     key: floorTile
   - type: Sprite
+    drawdepth: BelowFloor
     sprite: _CP14/Tiles/chasm.rsi
   - type: Icon
     sprite: _CP14/Tiles/chasm.rsi
