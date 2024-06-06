@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14CaveStoneWall
+  id: CP14WallStone
   name: rock
   parent: CP14BaseWall
   description: A solid stone natural wall. It has a cave-like coldness to it.
@@ -27,10 +27,47 @@
           params:
             volume: -6
 
+- type: entity
+  id: CP14WallDirt
+  name: earth cliffs
+  parent: CP14BaseWall
+  description: bruh #TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/dirt_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/dirt_wall.rsi
+  - type: IconSmooth
+    base: wall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg #TODO
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14DirtBlock1:
+            min: 2
+            max: 3
+  - type: Construction
+    graph: CP14WallDirt
+    node: WallDirt
+
 #- type: entity
-#  id: CP14CaveStoneWallCopperOre
+#  id: CP14WallStoneCopperOre
 #  suffix: copper ore
-#  parent: CP14CaveStoneWall
+#  parent: CP14WallStone
 #  description: A solid stone natural wall. You can see the sharp flecks of copper in it.
 #  components:
 #  - type: Sprite
@@ -57,9 +94,9 @@
 #            max: 5
 #
 #- type: entity
-#  id: CP14CaveStoneWallIronOre
+#  id: CP14WallStoneIronOre
 #  suffix: iron ore
-#  parent: CP14CaveStoneWall
+#  parent: CP14WallStone
 #  description: A solid stone natural wall. You can see the sharp flecks of iron in it.
 #  components:
 #  - type: Sprite
@@ -86,9 +123,9 @@
 #            max: 5
 #
 - type: entity
-  id: CP14CaveStoneWallSilverOre
+  id: CP14WallStoneSilverOre
   suffix: silver ore
-  parent: CP14CaveStoneWall
+  parent: CP14WallStone
   description: A solid stone natural wall. You see the tantalizing particles of silver in it.
   components:
   - type: Sprite
@@ -117,9 +154,9 @@
     base: wall
 
 - type: entity
-  id: CP14CaveStoneWallGoldOre
+  id: CP14WallStoneGoldOre
   suffix: gold ore
-  parent: CP14CaveStoneWall
+  parent: CP14WallStone
   description: A solid stone natural wall. You see the tantalizing particles of gold in it.
   components:
   - type: Sprite

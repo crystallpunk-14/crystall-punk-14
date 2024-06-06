@@ -9,7 +9,7 @@
       allowedTiles:
         - CP14FloorBase
       entities:
-        - CP14CaveStoneWall
+        - CP14WallStone
 
 - type: biomeTemplate
   id: CP14CavesGeneric
@@ -17,7 +17,7 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: CP14FloorBase
-    #Entity
+    #Entityx
     - !type:BiomeEntityLayer
       threshold: 0.4
       noise:
@@ -84,7 +84,7 @@
       allowedTiles:
         - CP14FloorBase
       entities:
-        - CP14CaveStoneWall
+        - CP14WallStone
     #Ores
     - !type:BiomeEntityLayer
       threshold: 0.6
@@ -96,7 +96,7 @@
       allowedTiles:
         - CP14FloorBase
       entities:
-        - CP14CaveStoneWallSilverOre
+        - CP14WallStoneSilverOre
     - !type:BiomeEntityLayer
       threshold: 0.6
       noise:
@@ -107,4 +107,4 @@
       allowedTiles:
         - CP14FloorBase
       entities:
-        - CP14CaveStoneWallGoldOre
+        - CP14WallStoneGoldOre

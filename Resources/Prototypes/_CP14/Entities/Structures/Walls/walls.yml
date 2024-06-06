@@ -85,5 +85,5 @@
   - type: Icon
     sprite: _CP14/Structures/Walls/cardboard_wall.rsi
   - type: Construction
-    graph: CP14Wall
+    graph: CP14WallWood
     node: WallCardboard

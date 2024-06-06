@@ -29,7 +29,10 @@
     - dirt
     - dirt_2
     - dirt_3
-  # TODO material
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Dirt: 100
 
 - type: entity
   id: CP14DirtBlock10
@@ -123,7 +126,7 @@
     layerStates:
     - planks
     - planks_2
-    - planks_3  
+    - planks_3
   - type: Material
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
