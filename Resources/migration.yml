@@ -11,6 +11,11 @@ CP14FloorBricksCarvedSquare: null
 # 2024-05-24
 CP14CardboardWall: CP14WallCardboard
 
+# 2024-06-06
+CP14CaveStoneWall: CP14WallStone
+CP14CaveStoneWallSilverOre: CP14WallStoneSilverOre
+CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
+
 # <---> CrystallPunk migration zone end
 
 

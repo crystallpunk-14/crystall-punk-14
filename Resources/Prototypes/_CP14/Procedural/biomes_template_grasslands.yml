@@ -196,7 +196,7 @@
         - CP14FloorBase
       threshold: -1.0
       entities:
-        - CP14CaveStoneWall
+        - CP14WallDirt
 
 - type: biomeTemplate
   id: CP14GrasslandTestResult
