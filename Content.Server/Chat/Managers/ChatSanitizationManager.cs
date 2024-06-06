@@ -12,6 +12,7 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
     private static readonly Dictionary<string, string> SmileyToEmote = new()
     {
         // CP14-RU-Localization-Start
+        { "лол", "chatsan-laughs" },
         { "хд", "chatsan-laughs" },
         { "о-о", "chatsan-wide-eyed" }, // cyrillic о
         { "о.о", "chatsan-wide-eyed" }, // cyrillic о
