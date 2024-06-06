@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: CP14Wall
+  id: CP14WallWood
   start: start
   graph:
     - node: start

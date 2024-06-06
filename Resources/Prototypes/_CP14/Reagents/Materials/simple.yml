@@ -6,3 +6,12 @@
   icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
   color: "#874d3a"
   price: 0 #?
+
+- type: material
+  id: CP14Dirt
+  stackEntity: CP14DirtBlock1
+  name: cp14-material-dirt-block
+  unit: materials-unit-chunk
+  icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
+  color: "#5e3f31"
+  price: 0 #?

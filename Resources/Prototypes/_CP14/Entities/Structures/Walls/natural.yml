@@ -55,6 +55,14 @@
           path: /Audio/Effects/break_stone.ogg #TODO
           params:
             volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14DirtBlock1:
+            min: 2
+            max: 3
+  - type: Construction
+    graph: CP14WallDirt
+    node: WallDirt
 
 #- type: entity
 #  id: CP14WallStoneCopperOre

@@ -3,12 +3,30 @@
   name: Cardboard wall
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
   id: CP14CardboardWall
-  graph: CP14Wall
+  graph: CP14WallWood
   startNode: start
   targetNode: WallCardboard
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/cardboard_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Earth cliffs
+  description: bruh #TODO
+  id: CP14WallDirt
+  graph: CP14WallDirt
+  startNode: start
+  targetNode: WallDirt
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/Natural/dirt_wall.rsi
     state: full
   objectType: Structure
   placementMode: SnapgridCenter

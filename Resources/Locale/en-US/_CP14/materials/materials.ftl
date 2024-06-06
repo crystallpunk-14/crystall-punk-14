@@ -1,1 +1,2 @@
 cp14-material-wooden-planks = wooden planks
+cp14-material-dirt-block = dirt
