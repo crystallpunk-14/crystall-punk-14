@@ -144,3 +144,30 @@
       effects:
       - !type:ChemVomit
         probability: 0.05
+
+- type: reagent
+  id: CP14LumiMushroom
+  group: CP14Biological
+  name: cp14-reagent-name-lumi-shroom
+  desc: cp14-reagent-desc-lumi-shroom
+  flavor: CP14Vomit
+  color: "#36c98f"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  slippery: false
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.5
+      - !type:ChemVomit
+        probability: 0.04
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false

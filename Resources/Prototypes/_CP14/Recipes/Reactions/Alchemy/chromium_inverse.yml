@@ -8,6 +8,7 @@
 
 - type: reaction
   id: CP14ChromiumInverseEffectHealBruteGroup
+  quantized: true
   minTemp: 350
   conserveEnergy: false
   reactants:
@@ -16,14 +17,15 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectDamageBrute: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectDamageBrute: 0.25
+    CP14BasicEffectEmpty: 0.75
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
 
 - type: reaction
   id: CP14ChromiumInverseEffectDamageBruteGroup
+  quantized: true
   minTemp: 350
   conserveEnergy: false
   reactants:
@@ -32,8 +34,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectHealBrute: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectEmpty: 0.75
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -42,6 +44,7 @@
 
 - type: reaction
   id: CP14ChromiumInverseEffectHealPoison
+  quantized: true
   minTemp: 350
   conserveEnergy: false
   reactants:
@@ -50,14 +53,15 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectDamagePoison: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectDamagePoison: 0.25
+    CP14BasicEffectEmpty: 0.75
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
 
 - type: reaction
   id: CP14ChromiumInverseEffectDamagePoison
+  quantized: true
   minTemp: 350
   conserveEnergy: false
   reactants:
@@ -66,8 +70,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectHealPoison: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealPoison: 0.25
+    CP14BasicEffectEmpty: 0.75
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -76,6 +80,7 @@
 
 - type: reaction
   id: CP14ChromiumInverseEffectDamageCold
+  quantized: true
   minTemp: 350
   conserveEnergy: false
   reactants:
@@ -84,14 +89,15 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectHealCold: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealCold: 0.25
+    CP14BasicEffectEmpty: 0.75
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
 
 - type: reaction
   id: CP14ChromiumInverseEffectHealCold
+  quantized: true
   minTemp: 350
   conserveEnergy: false
   reactants:
@@ -100,8 +106,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectDamageCold: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectDamageCold: 0.25
+    CP14BasicEffectEmpty: 0.75
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350

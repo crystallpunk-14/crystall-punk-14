@@ -45458,7 +45458,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,-11.5
       parent: 2
-- proto: CP14GatherableBloodgrass2
+- proto: CP14GatherableBloodgrass
   entities:
   - uid: 582
     components:
@@ -45466,7 +45466,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,-12.5
       parent: 2
-- proto: CP14GatherableBloodgrass3
+- proto: CP14GatherableBloodgrass
   entities:
   - uid: 583
     components:
@@ -45474,7 +45474,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -15.5,-12.5
       parent: 2
-- proto: CP14GatherableBloodgrass4
+- proto: CP14GatherableBloodgrass
   entities:
   - uid: 586
     components:
@@ -45488,7 +45488,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,-10.5
       parent: 2
-- proto: CP14GatherableBloodgrass5
+- proto: CP14GatherableBloodgrass
   entities:
   - uid: 585
     components:
@@ -45504,7 +45504,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -13.5,-11.5
       parent: 2
-- proto: CP14GatherableChromiumSlime2
+- proto: CP14GatherableChromiumSlime
   entities:
   - uid: 601
     components:
@@ -45518,7 +45518,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -11.5,-12.5
       parent: 2
-- proto: CP14GatherableChromiumSlime3
+- proto: CP14GatherableChromiumSlime
   entities:
   - uid: 599
     components:
@@ -45540,7 +45540,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -11.5,-7.5
       parent: 2
-- proto: CP14GatherableFlyAgaric3
+- proto: CP14GatherableFlyAgaric
   entities:
   - uid: 576
     components:
@@ -45548,7 +45548,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -12.5,-7.5
       parent: 2
-- proto: CP14GatherableFlyAgaric4
+- proto: CP14GatherableFlyAgaric
   entities:
   - uid: 575
     components:
@@ -45562,7 +45562,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -11.5,-8.5
       parent: 2
-- proto: CP14GatherableFlyAgaric5
+- proto: CP14GatherableFlyAgaric
   entities:
   - uid: 170
     components:
@@ -45575,7 +45575,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -13.5,-6.5
       parent: 2
-- proto: CP14GatherableFlyAgaric6
+- proto: CP14GatherableFlyAgaric
   entities:
   - uid: 171
     components:
@@ -45614,7 +45614,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -14.5,-7.5
       parent: 2
-- proto: CP14GatherableWildSage2
+- proto: CP14GatherableWildSage
   entities:
   - uid: 567
     components:
@@ -45622,7 +45622,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,-6.5
       parent: 2
-- proto: CP14GatherableWildSage3
+- proto: CP14GatherableWildSage
   entities:
   - uid: 568
     components:

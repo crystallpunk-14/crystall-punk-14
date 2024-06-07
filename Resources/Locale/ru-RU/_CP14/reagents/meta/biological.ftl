@@ -21,3 +21,6 @@ cp14-reagent-desc-wild-sage-sap = Сок вездерастущего лечеб
 
 cp14-reagent-name-grounded-quartz = Размолотый кварц
 cp14-reagent-desc-grounded-quartz = Порошок, получаемый из размалывания осколков кварца. Имеет слабые очищающие свойства.
+
+cp14-reagent-name-lumi-shroom = Сок люмигриба
+cp14-reagent-desc-lumi-shroom = Слабо мерцающая жижа, добытая из люмигриба. Часто используется алхимиками, как средство концентрации растворов.

@@ -21,3 +21,6 @@ cp14-reagent-desc-wild-sage-sap = Juice of a ubiquitous medicinal plant, not bad
 
 cp14-reagent-name-grounded-quartz = Ground quartz
 cp14-reagent-desc-grounded-quartz = A powder obtained from grinding quartz fragments. It has weak cleaning properties.
+
+cp14-reagent-name-lumi-shroom = Lumishroom sap
+cp14-reagent-desc-lumi-shroom = A faintly shimmering slurry extracted from lumigrib. Often used by alchemists as a means of concentrating solutions.

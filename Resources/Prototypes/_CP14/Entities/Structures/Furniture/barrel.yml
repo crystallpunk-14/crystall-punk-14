@@ -199,3 +199,15 @@
         reagents:
         - ReagentId: CP14GroundQuartz
           Quantity: 300
+
+- type: entity
+  id: CP14BarrelLumiMushroom
+  parent: CP14BaseBarrel
+  suffix: LumiShroom
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14LumiMushroom
+          Quantity: 300
