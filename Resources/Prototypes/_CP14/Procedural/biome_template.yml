@@ -70,6 +70,37 @@
         - CP14CrystalDiamondsSmall
         - CP14CrystalDiamondsMedium
         - CP14CrystalDiamondsBig
+    - !type:BiomeEntityLayer # lumishroom sage
+      threshold: 0.6
+      noise:
+        seed: 8
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.015
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14GatherableLumiMushroom
+    # Lakes start
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorBase
+      threshold: 0.8
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.01
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 150
+      entities:
+        - CP14FloorWater
+    # Lakes end
      #Walls
     - !type:BiomeEntityLayer
       threshold: -0.75
