@@ -16,6 +16,23 @@ CP14CaveStoneWall: CP14WallStone
 CP14CaveStoneWallSilverOre: CP14WallStoneSilverOre
 CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
 
+# 2024-07-06-2024
+CP14GatherableBloodgrass2: CP14GatherableBloodgrass
+CP14GatherableBloodgrass3: CP14GatherableBloodgrass
+CP14GatherableBloodgrass4: CP14GatherableBloodgrass
+CP14GatherableBloodgrass5: CP14GatherableBloodgrass
+CP14GatherableWildSage2: CP14GatherableWildSage
+CP14GatherableWildSage2: CP14GatherableWildSage
+CP14GatherableFlyAgaric2: CP14GatherableFlyAgaric
+CP14GatherableFlyAgaric3: CP14GatherableFlyAgaric
+CP14GatherableFlyAgaric4: CP14GatherableFlyAgaric
+CP14GatherableFlyAgaric5: CP14GatherableFlyAgaric
+CP14GatherableFlyAgaric6: CP14GatherableFlyAgaric
+CP14GatherableChromiumSlime2: CP14GatherableChromiumSlime
+CP14GatherableChromiumSlime3: CP14GatherableChromiumSlime
+CP14GatherableWildSage2: CP14GatherableWildSage
+CP14GatherableWildSage3: CP14GatherableWildSage
+
 # <---> CrystallPunk migration zone end
 
 
