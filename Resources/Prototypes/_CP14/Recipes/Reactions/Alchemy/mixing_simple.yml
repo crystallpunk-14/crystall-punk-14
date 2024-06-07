@@ -104,3 +104,15 @@
   products:
     CP14BasicEffectEmoteCough: 0.25
     CP14BasicEffectDamagePoison: 0.25
+
+- type: reaction
+  id: CP14EmptySplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectEmpty:
+      amount: 0.5
+    CP14LumiMushroom:
+      amount: 0.5
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250

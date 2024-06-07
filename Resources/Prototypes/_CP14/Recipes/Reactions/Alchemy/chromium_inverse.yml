@@ -16,8 +16,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectDamageBrute: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectDamageBrute: 0.25
+    CP14BasicEffectEmpty: 0.5
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -32,8 +32,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectHealBrute: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectEmpty: 0.5
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -50,8 +50,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectDamagePoison: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectDamagePoison: 0.25
+    CP14BasicEffectEmpty: 0.5
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -66,8 +66,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectHealPoison: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealPoison: 0.25
+    CP14BasicEffectEmpty: 0.5
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -84,8 +84,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectHealCold: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectHealCold: 0.25
+    CP14BasicEffectEmpty: 0.5
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
@@ -100,8 +100,8 @@
     CP14ChromiumSlime:
       amount: 0.5
   products:
-    CP14BasicEffectDamageCold: 0.5
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectDamageCold: 0.25
+    CP14BasicEffectEmpty: 0.5
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -350
