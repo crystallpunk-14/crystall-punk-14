@@ -1,0 +1,54 @@
+- type: entity
+  id: CP14AlchemyNormalizer
+  parent: BaseStructureDynamic
+  name: solution stabilizer
+  description: An alchemical device that removes fine precipitates from solutions, and stabilizes it for further work
+  placement:
+    mode: PlaceFree
+  components:
+  # TODO: energy consuming (magic or fireplace)
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Items
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
+    layers:
+      - state: rotate_back
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: base
+      - state: rotate_front
+    state: base
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 125
+        mask:
+        - TabletopMachineMask
+  - type: SolutionContainerManager
+    solutions:
+      normalizer:
+        maxVol: 50
+  - type: DrainableSolution
+    solution: normalizer
+  - type: ExaminableSolution
+    solution: normalizer
+  - type: MixableSolution
+    solution: normalizer
+  - type: RefillableSolution
+    solution: normalizer
+  - type: DrawableSolution
+    solution: normalizer
+  - type: DumpableSolution
+    solution: normalizer
+  - type: CP14SolutionNormalizer
+    solution: normalizer
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
