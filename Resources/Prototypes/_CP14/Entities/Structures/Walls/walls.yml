@@ -62,7 +62,9 @@
 - type: entity
   id: CP14WallWooden
   name: wooden wall
-  parent: CP14BaseWall
+  parent: 
+  - CP14BaseWall
+  - CP14BaseWooden
   description: Bruh
   components:
   - type: Sprite

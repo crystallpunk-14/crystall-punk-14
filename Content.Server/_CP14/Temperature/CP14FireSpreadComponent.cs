@@ -25,7 +25,6 @@ public sealed partial class CP14FireSpreadComponent : Component
     [DataField]
     public float ProbTile = 0.15f;
 
-
     /// <summary>
     /// how often objects will try to set the neighbors on fire. In Seconds
     /// </summary>

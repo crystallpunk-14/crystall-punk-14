@@ -35,7 +35,7 @@
     requiredTriggeredSpeed: 0
     intersectRatio: 0.1
   - type: AmbientSound
-    enabled: false
+    enabled: true
     volume: -5
     range: 5
     sound:
