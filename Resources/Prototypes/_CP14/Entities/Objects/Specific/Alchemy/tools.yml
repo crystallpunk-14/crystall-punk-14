@@ -46,7 +46,7 @@
     ignoreMobs: true
     minTransferAmount: 10
     maxTransferAmount: 100
-    transferAmount: 50
+    transferAmount: 15
     toggleState: 1 # draw
   - type: UserInterface
     interfaces:
@@ -154,3 +154,53 @@
   - type: CP14Mortar
     solution: mortar
     containerId: storagebase
+
+- type: entity
+  parent: BaseItem
+  id: CP14Dropper
+  name: dropper
+  description: Small dropper for managing very small values of liquids
+  components:
+  - type: MixableSolution
+    solution: vial
+  - type: FitsInDispenser
+    solution: vial
+  - type: RefillableSolution
+    solution: vial
+  - type: DrainableSolution
+    solution: vial
+  - type: ExaminableSolution
+    solution: vial
+  - type: DrawableSolution
+    solution: vial
+  - type: InjectableSolution
+    solution: vial
+  - type: SolutionItemStatus
+    solution: vial
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 2
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Appearance
+  - type: Injector
+    solutionName: vial
+    injectOnly: false
+    ignoreMobs: true
+    minTransferAmount: 0.25
+    maxTransferAmount: 1
+    transferAmount: 0.25
+    toggleState: 1 # draw
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/dropper.rsi
+    layers:
+      - state: dropper
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: liq-
