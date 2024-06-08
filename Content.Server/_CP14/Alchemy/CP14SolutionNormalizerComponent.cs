@@ -4,6 +4,9 @@ using Robust.Shared.Audio;
 
 namespace Content.Server._CP14.Alchemy;
 
+/// <summary>
+/// gradually rounds down all reagents in the specified solution
+/// </summary>
 [RegisterComponent, Access(typeof(CP14SolutionNormalizerSystem))]
 public sealed partial class CP14SolutionNormalizerComponent : Component
 {
