@@ -10,6 +10,8 @@ cp14-tiles-sand = sand
 cp14-tiles-foundation = foundation
 
 cp14-tiles-woodplanks = wood plank floor
+cp14-tiles-woodplanks-broken = broken wood plank floor
+cp14-tiles-woodplanks-burned = burned wood plank floor
 cp14-tiles-woodplanks-big = large wood plank floor
 cp14-tiles-stonebricks = stone brick floor
 cp14-tiles-stonebricks-small-carved1 = carved brick floor

@@ -33,6 +33,43 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
+  burnedTile: CP14FloorWoodPlanksBurned
+
+- type: tile
+  editorHidden: false
+  id: CP14FloorWoodPlanksBroken
+  name: cp14-tiles-woodplanks-broken
+  sprite: /Textures/_CP14/Tiles/woodplanks_broken.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: false
+  burnedTile: CP14FloorWoodPlanksBurned
+
+- type: tile
+  editorHidden: false
+  id: CP14FloorWoodPlanksBurned
+  name: cp14-tiles-woodplanks-burned
+  sprite: /Textures/_CP14/Tiles/woodplanks_burned.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
 
 - type: tile
   editorHidden: false
