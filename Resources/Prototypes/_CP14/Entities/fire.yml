@@ -46,7 +46,7 @@
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
   - type: Flammable
-    fireSpread: false #Lava comp
+    fireSpread: false #Lava comp kostыль
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
