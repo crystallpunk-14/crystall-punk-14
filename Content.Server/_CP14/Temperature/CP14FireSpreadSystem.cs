@@ -38,8 +38,10 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
 
     private void OnMapInit(Entity<CP14AutoIgniteComponent> ent, ref MapInitEvent args)
     {
-        _flammable.AdjustFireStacks(ent, ent.Comp.StartStack);
-        _flammable.Ignite(ent, ent);
+        if (!TryComp<FlammableComponent>(ent, out var flammable))
+            return;
+        _flammable.AdjustFireStacks(ent, ent.Comp.StartStack, flammable);
+        _flammable.Ignite(ent, ent, flammable);
     }
 
     private void OnCompInit(Entity<CP14FireSpreadComponent> ent, ref OnFireChangedEvent args)
