@@ -45,7 +45,7 @@
   id: CP14_Names_Tiefling_Male_First
   values:
     prefix: cp14-species-name-tiefling-male-first-
-    count: 57
+    count: 58
 
 - type: localizedDataset
   id: CP14_Names_Tiefling_Female_First
