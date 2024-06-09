@@ -26,6 +26,8 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -74,6 +76,8 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -121,6 +125,8 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
