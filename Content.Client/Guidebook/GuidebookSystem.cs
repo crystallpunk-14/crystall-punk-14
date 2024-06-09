@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Client.Guidebook.Components;
 using Content.Client.Light;
 using Content.Client.Verbs;
+using Content.Shared.Guidebook;
 using Content.Shared.Interaction;
 using Content.Shared.Light.Components;
 using Content.Shared.Speech;
@@ -34,7 +35,12 @@ public sealed class GuidebookSystem : EntitySystem
 
     [Dependency] private readonly IPrototypeManager _proto = default!; //CrystallPunk guidebook filter
 
-    public event Action<List<string>, List<string>?, string?, bool, string?>? OnGuidebookOpen;
+    public event Action<List<ProtoId<GuideEntryPrototype>>,
+        List<ProtoId<GuideEntryPrototype>>?,
+        ProtoId<GuideEntryPrototype>?,
+        bool,
+        ProtoId<GuideEntryPrototype>?>? OnGuidebookOpen;
+
     public const string GuideEmbedTag = "GuideEmbeded";
 
     private EntityUid _defaultUser;
@@ -99,7 +105,7 @@ public sealed class GuidebookSystem : EntitySystem
         });
     }
 
-    public void OpenHelp(List<string> guides)
+    public void OpenHelp(List<ProtoId<GuideEntryPrototype>> guides)
     {
         OnGuidebookOpen?.Invoke(guides, null, null, true, guides[0]);
     }

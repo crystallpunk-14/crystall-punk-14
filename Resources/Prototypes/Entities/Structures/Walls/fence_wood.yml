@@ -72,7 +72,7 @@
         acts: [ "Destruction" ]
   - type: Climbable
     delay: 2.5
-
+  - type: RequireProjectileTarget
 
 #High
 - type: entity
@@ -97,8 +97,10 @@
         mask:
         - FullTileMask
         layer:
+        - Opaque
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: straight
@@ -125,8 +127,10 @@
         mask:
         - FullTileMask
         layer:
+        - Opaque
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: end
@@ -162,8 +166,10 @@
         mask:
         - TableMask
         layer:
+        - Opaque
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: corner
@@ -199,8 +205,10 @@
         mask:
         - TableMask
         layer:
+        - Opaque
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: tjunction
@@ -226,8 +234,10 @@
         mask:
         - FullTileMask
         layer:
+        - Opaque
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: InteractionOutline
   - type: Door
     openSpriteState: door_opened
@@ -279,6 +289,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: straight_small
@@ -307,6 +318,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: end_small
@@ -344,6 +356,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: corner_small
@@ -381,6 +394,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: Construction
     graph: FenceWood
     node: tjunction_small
@@ -408,6 +422,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - BulletImpassable
   - type: InteractionOutline
   - type: Door
     openSpriteState: door_opened_small
