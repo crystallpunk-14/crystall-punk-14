@@ -16,12 +16,7 @@
   copyright: "Created by Jaraten for CrystallPunk14"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
-- files: ["woodplanks.png"]
-  license: "CC-BY-SA-3.0"
-  copyright: "Space Station 14, recolored by TheShuEd"
-  source: "https://github.com/crystallpunk-14/crystall-punk-14/"
-
-- files: ["woodplanks_big.png"]
+- files: ["woodplanks.png", "woodplanks_big.png", "woodplanks_broken.png", "woodplanks_burned.png", "woodplanks_big_burned.png", "woodplanks_big_broken.png"]
   license: "CC-BY-SA-3.0"
   copyright: "Space Station 14, recolored by TheShuEd"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"

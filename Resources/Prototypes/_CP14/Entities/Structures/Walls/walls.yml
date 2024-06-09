@@ -24,7 +24,6 @@
   id: CP14WallStonebrick
   name: stone brick wall
   parent: CP14BaseWall
-  description: Bruh
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
@@ -37,7 +36,6 @@
   id: CP14WallWhitebrick
   name: white brick wall
   parent: CP14BaseWall
-  description: Bruh
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
@@ -50,7 +48,6 @@
   id: CP14WallBrownbrick
   name: brick wall
   parent: CP14BaseWall
-  description: Bruh
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/bricks_wall.rsi
@@ -62,8 +59,9 @@
 - type: entity
   id: CP14WallWooden
   name: wooden wall
-  parent: CP14BaseWall
-  description: Bruh
+  parent: 
+  - CP14BaseWall
+  - CP14BaseWooden
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/wooden_wall.rsi
@@ -71,6 +69,20 @@
     sprite: _CP14/Structures/Walls/wooden_wall.rsi
   - type: IconSmooth
     base: wood
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: CP14WallCardboard

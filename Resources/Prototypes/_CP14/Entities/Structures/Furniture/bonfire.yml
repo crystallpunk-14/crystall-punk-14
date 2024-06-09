@@ -38,3 +38,5 @@
     whitelist:
       tags:
       - CP14FireplaceFuel
+  - type: CP14FireSpread
+    radius: 0.25

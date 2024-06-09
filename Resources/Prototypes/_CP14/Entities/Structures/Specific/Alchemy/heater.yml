@@ -63,19 +63,19 @@
 - type: entity
   id: CP14AlchemyFurnaceDebug
   parent: CP14AlchemyFurnace
-  suffix: DEBUG
+  categories:
+  - Debug
   components:
   - type: CP14Fireplace
     fuel: 100
     fuelDrainingPerUpdate: 0
+  - type: CP14AutoIgnite
 
 - type: entity
   id: CP14AlchemyFurnace
   name: alchemy furnace
   parent: CP14BaseFireplace
   description: A furnace fueled by wood, coal, or any other burning material. Handy for heating your alchemical potions.
-  categories:
-  - Debug
   components:
   - type: Sprite
     sprite: _CP14/Structures/Specific/Alchemy/alchemy_furnace.rsi

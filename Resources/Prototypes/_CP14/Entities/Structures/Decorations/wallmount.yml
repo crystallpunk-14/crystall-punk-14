@@ -17,6 +17,17 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -56,6 +67,17 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -94,6 +116,17 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:

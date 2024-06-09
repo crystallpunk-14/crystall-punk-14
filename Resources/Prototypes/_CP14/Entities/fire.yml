@@ -1,0 +1,63 @@
+- type: entity
+  id: CP14Fire
+  name: fire
+  suffix: cp14
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    drawDepth: Mobs
+    sprite: _CP14/Effects/fire.rsi
+    layers:
+      - state: full
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
+    alternateState: full2
+    fireStackAlternateState: 5
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: Lava
+    fireStacks: 0.2
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+  - type: AmbientSound
+    enabled: true
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg #TODO more aggressive sound
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: Flammable
+    fireSpread: false #Lava comp kostыль
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 0.5
+    damage:
+      types:
+        Heat: 0
+  - type: CP14FlammableEntityHeater
+  - type: CP14FlammableSolutionHeater
+  - type: CP14Fireplace
+    fuel: 15
+  - type: CP14AutoIgnite
+  - type: CP14FireSpread
+  - type: CP14DespawnOnExtinguish
