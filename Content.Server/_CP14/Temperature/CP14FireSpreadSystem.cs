@@ -3,7 +3,6 @@ using System.Numerics;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Maps;
-using JetBrains.FormatRipper.Pe;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
