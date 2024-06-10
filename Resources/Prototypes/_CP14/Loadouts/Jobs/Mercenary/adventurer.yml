@@ -1,39 +1,52 @@
 # Cloak
 - type: loadout
-  id: CP14HoodieYellow
-  equipment: CP14HoodieYellow
+  id: CP14ClothingCloakBlacksmithArpon
+  equipment: CP14ClothingCloakBlacksmithArpon
 
 - type: startingGear
-  id: CP14HoodieYellow
-  equipment:
-    cloak: CP14ClothingCloakHoodieYellow
-
-- type: loadout
-  id: CP14BlacksmithArpon
-  equipment: CP14BlacksmithArpon
-
-- type: startingGear
-  id: CP14BlacksmithArpon
+  id: CP14ClothingCloakBlacksmithArpon
   equipment:
     cloak: CP14ClothingCloakBlacksmithArpon
 
+
 - type: loadout
-  id: CP14FurcapeBlack
-  equipment: CP14FurcapeBlack
+  id: CP14ClothingCloakFurcapeBlack
+  equipment: CP14ClothingCloakFurcapeBlack
 
 - type: startingGear
-  id: CP14FurcapeBlack
+  id: CP14ClothingCloakFurcapeBlack
   equipment:
     cloak: CP14ClothingCloakFurcapeBlack
 
+
 - type: loadout
-  id: CP14FurcapeBlue
-  equipment: CP14FurcapeBlue
+  id: CP14ClothingCloakFurcapeBlue
+  equipment: CP14ClothingCloakFurcapeBlue
 
 - type: startingGear
-  id: CP14FurcapeBlue
+  id: CP14ClothingCloakFurcapeBlue
   equipment:
     cloak: CP14ClothingCloakFurcapeBlue
+
+
+- type: loadout
+  id: CP14ClothingCloakSimpleWhite
+  equipment: CP14ClothingCloakSimpleWhite
+
+- type: startingGear
+  id: CP14ClothingCloakSimpleWhite
+  equipment:
+    cloak: CP14ClothingCloakSimpleWhite
+
+
+- type: loadout
+  id: CP14ClothingCloakSimpleDarkBlue
+  equipment: CP14ClothingCloakSimpleDarkBlue
+
+- type: startingGear
+  id: CP14ClothingCloakSimpleDarkBlue
+  equipment:
+    cloak: CP14ClothingCloakSimpleDarkBlue
 
 # Eyes
 

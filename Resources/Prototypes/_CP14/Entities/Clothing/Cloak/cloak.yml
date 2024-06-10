@@ -46,7 +46,7 @@
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakFurcapeBlack
   name: furcape
-  description: Brutal woolen wool cape
+  description: Brutal woolen wool cape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/furcape2.rsi
@@ -57,7 +57,7 @@
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakFurcapeBlue
   name: furcape
-  description: Brutal woolen wool cape
+  description: Brutal woolen wool cape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/furcape.rsi
@@ -66,19 +66,22 @@
 
 - type: entity
   parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakHoodieYellow
-  name: yellow short hooded cape
-  description: Protects your shoulders and head from the cold and the interest of the opposite sex.
+  id: CP14ClothingCloakSimpleWhite
+  name: white cloak
+  description: Long coat with a high collar.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
+    sprite: _CP14/Clothing/Cloak/Simple/white.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Cloak/yellowhoodie.rsi
-  - type: ToggleableClothing
-    clothingPrototype: CP14ClothingHeadHoodieYellow
-    requiredSlot:
-    - cloak
-    slot: head
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
+    sprite: _CP14/Clothing/Cloak/Simple/white.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakSimpleDarkBlue
+  name: dark cloak
+  description: Long coat with a high collar.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Simple/dark_blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Simple/dark_blue.rsi

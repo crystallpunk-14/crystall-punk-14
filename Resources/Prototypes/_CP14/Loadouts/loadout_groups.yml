@@ -3,10 +3,11 @@
   name: cp14-loadout-test-cloak
   minLimit: 0
   loadouts:
-  - CP14HoodieYellow
-  - CP14BlacksmithArpon
-  - CP14FurcapeBlack
-  - CP14FurcapeBlue
+  - CP14ClothingCloakSimpleWhite
+  - CP14ClothingCloakSimpleDarkBlue
+  - CP14ClothingCloakBlacksmithArpon
+  - CP14ClothingCloakFurcapeBlack
+  - CP14ClothingCloakFurcapeBlue
 
 - type: loadoutGroup
   id: CP14TestEyes

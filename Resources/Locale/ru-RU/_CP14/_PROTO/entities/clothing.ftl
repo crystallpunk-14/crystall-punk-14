@@ -7,8 +7,6 @@ ent-CP14ClothingCloakFurcapeBlack = меховая накидка
     .desc = Брутальная, выделанная из шерсти, накидка на плечи.
 ent-CP14ClothingCloakFurcapeBlue = { ent-CP14ClothingCloakFurcapeBlack }
     .desc = { ent-CP14ClothingCloakFurcapeBlack.desc }
-ent-CP14ClothingCloakHoodieYellow = желтый короткий плащ с капюшоном
-    .desc = Защищает ваши плечи и голову от холода и интереса противоположного пола.
 
 # Eyes
 ent-CP14ClothingEyesMonocle = монокль
