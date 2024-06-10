@@ -77,18 +77,6 @@
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Cotton/yellow.rsi
 
-
-- type: entity
-  parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtHarlequineRed
-  name: red harlequin shirt
-  description: It doesn't show the bloodstains that are left behind after bad jokes.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
-
 - type: entity
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtSteampunk
