@@ -4,7 +4,7 @@
     cloak: CP14ClothingCloakFurcapeBlue
     shirt: CP14ClothingShirtCottonBlueDark
     pants: CP14ClothingPantsLoincloth
-    shoes: CP14ShoesSandals
+    shoes: CP14ClothingShoesSandals
   inhand:
     - CP14BaseDagger
     - CP14BaseDagger
