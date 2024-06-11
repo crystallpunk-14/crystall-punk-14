@@ -1,17 +1,19 @@
 ﻿#nullable enable
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using Content.IntegrationTests;
 using Content.IntegrationTests.Pair;
-using Content.Server.Mind;
 using Content.Server.Warps;
 using Robust.Server.GameObjects;
 using Robust.Shared;
 using Robust.Shared.Analyzers;
+using Robust.Shared.Enums;
 using Robust.Shared.GameObjects;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
@@ -56,20 +58,15 @@ public class PvsBenchmark
         _pair.Server.CfgMan.SetCVar(CVars.NetPvsAsync, false);
         _sys = _entMan.System<SharedTransformSystem>();
 
-        SetupAsync().Wait();
-    }
-
-    private async Task SetupAsync()
-    {
         // Spawn the map
         _pair.Server.ResolveDependency<IRobustRandom>().SetSeed(42);
-        await _pair.Server.WaitPost(() =>
+        _pair.Server.WaitPost(() =>
         {
             var success = _entMan.System<MapLoaderSystem>().TryLoad(_mapId, Map, out _);
             if (!success)
                 throw new Exception("Map load failed");
             _pair.Server.MapMan.DoMapInitialize(_mapId);
-        });
+        }).Wait();
 
         // Get list of ghost warp positions
         _spawns = _entMan.AllComponentsList<WarpPointComponent>()
@@ -79,19 +76,17 @@ public class PvsBenchmark
 
         Array.Resize(ref _players, PlayerCount);
 
-        // Spawn "Players"
-        _players = await _pair.Server.AddDummySessions(PlayerCount);
-        await _pair.Server.WaitPost(() =>
+        // Spawn "Players".
+        _pair.Server.WaitPost(() =>
         {
-            var mind = _pair.Server.System<MindSystem>();
             for (var i = 0; i < PlayerCount; i++)
             {
                 var pos = _spawns[i % _spawns.Length];
                 var uid =_entMan.SpawnEntity("MobHuman", pos);
                 _pair.Server.ConsoleHost.ExecuteCommand($"setoutfit {_entMan.GetNetEntity(uid)} CaptainGear");
-                mind.ControlMob(_players[i].UserId, uid);
+                _players[i] = new DummySession{AttachedEntity = uid};
             }
-        });
+        }).Wait();
 
         // Repeatedly move players around so that they "explore" the map and see lots of entities.
         // This will populate their PVS data with out-of-view entities.
@@ -172,5 +167,21 @@ public class PvsBenchmark
             }
         }).Wait();
         _pair.Server.PvsTick(_players);
+    }
+
+    private sealed class DummySession : ICommonSession
+    {
+        public SessionStatus Status => SessionStatus.InGame;
+        public EntityUid? AttachedEntity {get; set; }
+        public NetUserId UserId => default;
+        public string Name => string.Empty;
+        public short Ping => default;
+        public INetChannel Channel { get; set; } = default!;
+        public LoginType AuthType => default;
+        public HashSet<EntityUid> ViewSubscriptions { get; } = new();
+        public DateTime ConnectedTime { get; set; }
+        public SessionState State => default!;
+        public SessionData Data => default!;
+        public bool ClientSide { get; set; }
     }
 }

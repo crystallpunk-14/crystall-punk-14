@@ -27,7 +27,6 @@ namespace Content.Client.Construction
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
-        [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
 
@@ -196,8 +195,9 @@ namespace Content.Client.Construction
             if (GhostPresent(loc))
                 return false;
 
+            // This InRangeUnobstructed should probably be replaced with "is there something blocking us in that tile?"
             var predicate = GetPredicate(prototype.CanBuildInImpassable, loc.ToMap(EntityManager, _transformSystem));
-            if (!_examineSystem.InRangeUnOccluded(user, loc, 20f, predicate: predicate))
+            if (!_interactionSystem.InRangeUnobstructed(user, loc, 20f, predicate: predicate))
                 return false;
 
             if (!CheckConstructionConditions(prototype, loc, dir, user, showPopup: true))

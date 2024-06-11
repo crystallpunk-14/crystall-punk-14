@@ -18,8 +18,6 @@
     equippedPrefix: unlit
   - type: Item
     size: Tiny
-    sprite: Objects/Consumable/Smokeables/Cigarettes/cigarette.rsi
-    heldPrefix: unlit
   - type: Construction
     graph: smokeableCigarette
     node: cigarette
