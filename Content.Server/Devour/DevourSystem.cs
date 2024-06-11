@@ -1,4 +1,3 @@
-using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Devour;
@@ -16,7 +15,6 @@ public sealed class DevourSystem : SharedDevourSystem
         base.Initialize();
 
         SubscribeLocalEvent<DevourerComponent, DevourDoAfterEvent>(OnDoAfter);
-        SubscribeLocalEvent<DevourerComponent, BeingGibbedEvent>(OnGibContents);
     }
 
     private void OnDoAfter(EntityUid uid, DevourerComponent component, DevourDoAfterEvent args)
@@ -46,16 +44,6 @@ public sealed class DevourSystem : SharedDevourSystem
         }
 
         _audioSystem.PlayPvs(component.SoundDevour, uid);
-    }
-    
-    private void OnGibContents(EntityUid uid, DevourerComponent component, ref BeingGibbedEvent args)
-    {
-        if (!component.ShouldStoreDevoured)
-            return;
-
-        // For some reason we have two different systems that should handle gibbing,
-        // and for some another reason GibbingSystem, which should empty all containers, doesn't get involved in this process
-        ContainerSystem.EmptyContainer(component.Stomach);
     }
 }
 

@@ -302,7 +302,7 @@ public abstract class SharedStorageSystem : EntitySystem
             return;
 
         // prevent spamming bag open / honkerton honk sound
-        silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && UseDelay.IsDelayed((uid, useDelay), id: OpenUiUseDelayID);
+        silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && UseDelay.IsDelayed((uid, useDelay));
         if (!CanInteract(entity, (uid, storageComp), silent: silent))
             return;
 
@@ -312,7 +312,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 Audio.PlayPredicted(storageComp.StorageOpenSound, uid, entity);
 
             if (useDelay != null)
-                UseDelay.TryResetDelay((uid, useDelay), id: OpenUiUseDelayID);
+                UseDelay.TryResetDelay((uid, useDelay));
         }
 
         _ui.OpenUi(uid, StorageComponent.StorageUiKey.Key, entity);

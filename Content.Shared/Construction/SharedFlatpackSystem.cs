@@ -1,6 +1,6 @@
+using System.Numerics;
 using Content.Shared.Construction.Components;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -9,8 +9,10 @@ using Content.Shared.Popups;
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Construction;
@@ -37,21 +39,7 @@ public abstract class SharedFlatpackSystem : EntitySystem
         SubscribeLocalEvent<FlatpackComponent, InteractUsingEvent>(OnFlatpackInteractUsing);
         SubscribeLocalEvent<FlatpackComponent, ExaminedEvent>(OnFlatpackExamined);
 
-        SubscribeLocalEvent<FlatpackCreatorComponent, ItemSlotInsertAttemptEvent>(OnInsertAttempt);
-    }
-
-    private void OnInsertAttempt(Entity<FlatpackCreatorComponent> ent, ref ItemSlotInsertAttemptEvent args)
-    {
-        if (args.Slot.ID != ent.Comp.SlotId || args.Cancelled)
-            return;
-
-        if (HasComp<MachineBoardComponent>(args.Item))
-            return;
-
-        if (TryComp<ComputerBoardComponent>(args.Item, out var computer) && computer.Prototype != null)
-            return;
-
-        args.Cancelled = true;
+        SubscribeLocalEvent<FlatpackCreatorComponent, ContainerIsRemovingAttemptEvent>(OnCreatorRemovingAttempt);
     }
 
     private void OnFlatpackInteractUsing(Entity<FlatpackComponent> ent, ref InteractUsingEvent args)
@@ -79,12 +67,19 @@ public abstract class SharedFlatpackSystem : EntitySystem
         var buildPos = _map.TileIndicesFor(grid, gridComp, xform.Coordinates);
         var coords = _map.ToCenterCoordinates(grid, buildPos);
 
-        // TODO FLATPAK
-        // Make this logic smarter. This should eventually allow for shit like building microwaves on tables and such.
-        // Also: make it ignore ghosts
-        if (_entityLookup.AnyEntitiesIntersecting(coords, LookupFlags.Dynamic | LookupFlags.Static))
+        var intersecting = _entityLookup.GetEntitiesIntersecting(coords, LookupFlags.Dynamic | LookupFlags.Static);
+
+        // todo make this logic smarter.
+        // This should eventually allow for shit like building microwaves on tables and such.
+        foreach (var intersect in intersecting)
         {
-            // this popup is on the server because the predicts on the intersection is crazy
+            if (!TryComp<PhysicsComponent>(intersect, out var intersectBody))
+                continue;
+
+            if (!intersectBody.Hard || !intersectBody.CanCollide)
+                continue;
+
+            // this popup is on the server because the mispredicts on the intersection is crazy
             if (_net.IsServer)
                 _popup.PopupEntity(Loc.GetString("flatpack-unpack-no-room"), uid, args.User);
             return;
@@ -93,8 +88,7 @@ public abstract class SharedFlatpackSystem : EntitySystem
         if (_net.IsServer)
         {
             var spawn = Spawn(comp.Entity, _map.GridTileToLocal(grid, gridComp, buildPos));
-            _adminLogger.Add(LogType.Construction,
-                LogImpact.Low,
+            _adminLogger.Add(LogType.Construction, LogImpact.Low,
                 $"{ToPrettyString(args.User):player} unpacked {ToPrettyString(spawn):entity} at {xform.Coordinates} from {ToPrettyString(uid):entity}");
             QueueDel(uid);
         }
@@ -109,24 +103,40 @@ public abstract class SharedFlatpackSystem : EntitySystem
         args.PushMarkup(Loc.GetString("flatpack-examine"));
     }
 
-    protected void SetupFlatpack(Entity<FlatpackComponent?> ent, EntProtoId proto, EntityUid board)
+    private void OnCreatorRemovingAttempt(Entity<FlatpackCreatorComponent> ent, ref ContainerIsRemovingAttemptEvent args)
+    {
+        if (args.Container.ID == ent.Comp.SlotId && ent.Comp.Packing)
+            args.Cancel();
+    }
+
+    public void SetupFlatpack(Entity<FlatpackComponent?> ent, EntityUid? board)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
 
-        ent.Comp.Entity = proto;
-        var machinePrototype = PrototypeManager.Index<EntityPrototype>(proto);
+        var machinePrototypeId = new EntProtoId();
+        if (TryComp<MachineBoardComponent>(board, out var machineBoard) && machineBoard.Prototype is not null)
+            machinePrototypeId = machineBoard.Prototype;
+        else if (TryComp<ComputerBoardComponent>(board, out var computerBoard) && computerBoard.Prototype is not null)
+            machinePrototypeId = computerBoard.Prototype;
+
+        var comp = ent.Comp!;
+        var machinePrototype = PrototypeManager.Index(machinePrototypeId);
 
         var meta = MetaData(ent);
         _metaData.SetEntityName(ent, Loc.GetString("flatpack-entity-name", ("name", machinePrototype.Name)), meta);
         _metaData.SetEntityDescription(ent, Loc.GetString("flatpack-entity-description", ("name", machinePrototype.Name)), meta);
 
-        Dirty(ent, meta);
-        Appearance.SetData(ent, FlatpackVisuals.Machine, MetaData(board).EntityPrototype?.ID ?? string.Empty);
+        comp.Entity = machinePrototypeId;
+        Dirty(ent, comp);
+
+        if (board is null)
+            return;
+
+        Appearance.SetData(ent, FlatpackVisuals.Machine, MetaData(board.Value).EntityPrototype?.ID ?? string.Empty);
     }
 
-    /// <param name="machineBoard">The machine board to pack. If null, this implies we are packing a computer board</param>
-    public Dictionary<string, int> GetFlatpackCreationCost(Entity<FlatpackCreatorComponent> entity, Entity<MachineBoardComponent>? machineBoard)
+    public Dictionary<string, int> GetFlatpackCreationCost(Entity<FlatpackCreatorComponent> entity, Entity<MachineBoardComponent>? machineBoard = null)
     {
         Dictionary<string, int> cost = new();
         Dictionary<ProtoId<MaterialPrototype>, int> baseCost;

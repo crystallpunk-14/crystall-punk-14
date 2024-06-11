@@ -35,7 +35,6 @@ using Robust.Shared.Player;
 using System.Linq;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.Stacks;
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -59,8 +58,6 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
         [Dependency] private readonly HandsSystem _handsSystem = default!;
         [Dependency] private readonly SharedItemSystem _item = default!;
-        [Dependency] private readonly SharedStackSystem _stack = default!;
-        [Dependency] private readonly IPrototypeManager _prototype = default!;
 
         [ValidatePrototypeId<EntityPrototype>]
         private const string MalfunctionSpark = "Spark";
@@ -202,41 +199,16 @@ namespace Content.Server.Kitchen.EntitySystems
                 {
                     foreach (var item in component.Storage.ContainedEntities)
                     {
-                        string? itemID = null;
-
-                        // If an entity has a stack component, use the stacktype instead of prototype id
-                        if (TryComp<StackComponent>(item, out var stackComp))
-                        {
-                            itemID = _prototype.Index<StackPrototype>(stackComp.StackTypeId).Spawn;
-                        }
-                        else
-                        {
-                            var metaData = MetaData(item);
-                            if (metaData.EntityPrototype == null)
-                            {
-                                continue;
-                            }
-                            itemID = metaData.EntityPrototype.ID;
-                        }
-
-                        if (itemID != recipeSolid.Key)
+                        var metaData = MetaData(item);
+                        if (metaData.EntityPrototype == null)
                         {
                             continue;
                         }
 
-                        if (stackComp is not null)
-                        {
-                            if (stackComp.Count == 1)
-                            {
-                                _container.Remove(item, component.Storage);
-                            }
-                            _stack.Use(item, 1, stackComp);
-                            break;
-                        }
-                        else
+                        if (metaData.EntityPrototype.ID == recipeSolid.Key)
                         {
                             _container.Remove(item, component.Storage);
-                            Del(item);
+                            EntityManager.DeleteEntity(item);
                             break;
                         }
                     }
@@ -476,35 +448,17 @@ namespace Content.Server.Kitchen.EntitySystems
 
                 AddComp<ActivelyMicrowavedComponent>(item);
 
-                string? solidID = null;
-                int amountToAdd = 1;
-
-                // If a microwave recipe uses a stacked item, use the default stack prototype id instead of prototype id
-                if (TryComp<StackComponent>(item, out var stackComp))
-                {
-                    solidID = _prototype.Index<StackPrototype>(stackComp.StackTypeId).Spawn;
-                    amountToAdd = stackComp.Count;
-                }
-                else
-                {
-                    var metaData = MetaData(item); //this simply begs for cooking refactor
-                    if (metaData.EntityPrototype is not null)
-                        solidID = metaData.EntityPrototype.ID;
-                }
-
-                if (solidID is null)
-                {
+                var metaData = MetaData(item); //this simply begs for cooking refactor
+                if (metaData.EntityPrototype == null)
                     continue;
-                }
 
-
-                if (solidsDict.ContainsKey(solidID))
+                if (solidsDict.ContainsKey(metaData.EntityPrototype.ID))
                 {
-                    solidsDict[solidID] += amountToAdd;
+                    solidsDict[metaData.EntityPrototype.ID]++;
                 }
                 else
                 {
-                    solidsDict.Add(solidID, amountToAdd);
+                    solidsDict.Add(metaData.EntityPrototype.ID, 1);
                 }
 
                 if (!TryComp<SolutionContainerManagerComponent>(item, out var solMan))

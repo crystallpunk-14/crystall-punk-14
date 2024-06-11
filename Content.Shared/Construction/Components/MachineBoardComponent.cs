@@ -1,47 +1,54 @@
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Stacks;
-using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
-namespace Content.Shared.Construction.Components;
-
-[RegisterComponent, NetworkedComponent]
-public sealed partial class MachineBoardComponent : Component
+namespace Content.Shared.Construction.Components
 {
-    /// <summary>
-    /// The stacks needed to construct this machine
-    /// </summary>
-    [DataField]
-    public Dictionary<ProtoId<StackPrototype>, int> StackRequirements = new();
+    [RegisterComponent, NetworkedComponent]
+    public sealed partial class MachineBoardComponent : Component
+    {
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    /// <summary>
-    /// Entities needed to construct this machine, discriminated by tag.
-    /// </summary>
-    [DataField]
-    public Dictionary<ProtoId<TagPrototype>, GenericPartInfo> TagRequirements = new();
+        [DataField("requirements", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<int, MachinePartPrototype>))]
+        public Dictionary<string, int> Requirements = new();
 
-    /// <summary>
-    /// Entities needed to construct this machine, discriminated by component.
-    /// </summary>
-    [DataField]
-    public Dictionary<string, GenericPartInfo> ComponentRequirements = new();
+        [DataField("materialRequirements")]
+        public Dictionary<string, int> MaterialIdRequirements = new();
 
-    /// <summary>
-    /// The machine that's constructed when this machine board is completed.
-    /// </summary>
-    [DataField(required: true)]
-    public EntProtoId Prototype;
-}
+        [DataField("tagRequirements")]
+        public Dictionary<string, GenericPartInfo> TagRequirements = new();
 
-[DataDefinition, Serializable]
-public partial struct GenericPartInfo
-{
-    [DataField(required: true)]
-    public int Amount;
+        [DataField("componentRequirements")]
+        public Dictionary<string, GenericPartInfo> ComponentRequirements = new();
 
-    [DataField(required: true)]
-    public EntProtoId DefaultPrototype;
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("prototype")]
+        public string? Prototype { get; private set; }
 
-    [DataField]
-    public LocId? ExamineName;
+        public IEnumerable<KeyValuePair<StackPrototype, int>> MaterialRequirements
+        {
+            get
+            {
+                foreach (var (materialId, amount) in MaterialIdRequirements)
+                {
+                    var material = _prototypeManager.Index<StackPrototype>(materialId);
+                    yield return new KeyValuePair<StackPrototype, int>(material, amount);
+                }
+            }
+        }
+    }
+
+    [Serializable]
+    [DataDefinition]
+    public partial struct GenericPartInfo
+    {
+        [DataField("Amount")]
+        public int Amount;
+        [DataField("ExamineName")]
+        public string ExamineName;
+        [DataField("DefaultPrototype")]
+        public string DefaultPrototype;
+    }
 }

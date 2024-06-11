@@ -1,5 +1,4 @@
 using Content.Shared.Access;
-using Content.Shared.Guidebook;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
@@ -41,7 +40,7 @@ namespace Content.Shared.Roles
         [ViewVariables(VVAccess.ReadOnly)]
         public string? LocalizedDescription => Description is null ? null : Loc.GetString(Description);
 
-        [DataField, Access(typeof(SharedRoleSystem), Other = AccessPermissions.None)]
+        [DataField("requirements")]
         public HashSet<JobRequirement>? Requirements;
 
         [DataField("joinNotifyCrew")]
@@ -64,8 +63,8 @@ namespace Content.Shared.Roles
         public bool CanBeAntag { get; private set; } = true;
 
         /// <summary>
-        ///     The "weight" or importance of this job. If this number is large, the job system will assign this job
-        ///     before assigning other jobs.
+        ///     Whether this job is a head.
+        ///     The job system will try to pick heads before other jobs on the same priority level.
         /// </summary>
         [DataField("weight")]
         public int Weight { get; private set; }
@@ -118,13 +117,6 @@ namespace Content.Shared.Roles
 
         [DataField]
         public bool Whitelisted;
-
-        /// <summary>
-        /// Optional list of guides associated with this role. If the guides are opened, the first entry in this list
-        /// will be used to select the currently selected guidebook.
-        /// </summary>
-        [DataField]
-        public List<ProtoId<GuideEntryPrototype>>? Guides;
     }
 
     /// <summary>

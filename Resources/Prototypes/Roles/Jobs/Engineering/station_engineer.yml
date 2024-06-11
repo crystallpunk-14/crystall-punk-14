@@ -2,7 +2,7 @@
   id: StationEngineer
   name: job-name-engineer
   description: job-description-engineer
-  #setPreference: false
+  setPreference: false
   playTimeTracker: JobStationEngineer
   requirements:
     - !type:DepartmentTimeRequirement

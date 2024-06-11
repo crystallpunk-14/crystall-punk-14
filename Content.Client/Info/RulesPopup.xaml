@@ -5,20 +5,20 @@
          MouseFilter="Stop">
     <parallax:ParallaxControl />
     <Control VerticalExpand="True"
-             MaxWidth="800"
-             MaxHeight="900">
+             MaxWidth="650">
         <PanelContainer StyleClasses="windowPanel" />
-            <BoxContainer Orientation="Vertical" SeparationOverride="10" Margin="10 10 5 10">
-                <info:RulesControl/>
+        <ScrollContainer HScrollEnabled="False">
+            <BoxContainer Orientation="Vertical" SeparationOverride="10">
+                <info:RulesControl />
                 <Label Name="WaitLabel" />
                 <BoxContainer Orientation="Horizontal">
                     <Button Name="AcceptButton"
                             Text="{Loc 'ui-rules-accept'}"
                             Disabled="True" />
                     <Button Name="QuitButton"
-                            StyleClasses="Caution"
                             Text="{Loc 'ui-escape-quit'}" />
                 </BoxContainer>
             </BoxContainer>
+        </ScrollContainer>
     </Control>
 </Control>
