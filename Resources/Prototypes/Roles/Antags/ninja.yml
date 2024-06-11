@@ -4,7 +4,6 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-space-ninja-objective
-  guides: [ SpaceNinja ]
 
 #Ninja Gear
 - type: startingGear

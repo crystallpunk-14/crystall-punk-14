@@ -11,7 +11,7 @@
   maxCount: 10
 
 - type: stack
-  id: Manipulator
+  id: MicroManipulator
   name: micro manipulator
   spawn: MicroManipulatorStockPart
   maxCount: 10

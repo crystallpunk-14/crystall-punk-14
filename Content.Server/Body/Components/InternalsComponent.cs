@@ -13,7 +13,7 @@ namespace Content.Server.Body.Components
         public EntityUid? GasTankEntity;
 
         [ViewVariables]
-        public HashSet<EntityUid> BreathTools { get; set; } = new();
+        public EntityUid? BreathToolEntity;
 
         /// <summary>
         /// Toggle Internals delay when the target is not you.

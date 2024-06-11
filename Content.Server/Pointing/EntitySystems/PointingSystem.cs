@@ -174,7 +174,7 @@ namespace Content.Server.Pointing.EntitySystems
             {
                 var arrowVisibility = EntityManager.EnsureComponent<VisibilityComponent>(arrow);
                 layer = playerVisibility.Layer;
-                _visibilitySystem.SetLayer((arrow, arrowVisibility), (ushort) layer);
+                _visibilitySystem.SetLayer(arrow, arrowVisibility, layer);
             }
 
             // Get players that are in range and whose visibility layer matches the arrow's.

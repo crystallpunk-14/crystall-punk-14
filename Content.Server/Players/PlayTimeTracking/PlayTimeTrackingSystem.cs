@@ -35,7 +35,6 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     [Dependency] private readonly MindSystem _minds = default!;
     [Dependency] private readonly PlayTimeTrackingManager _tracking = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly SharedRoleSystem _role = default!;
 
     public override void Initialize()
     {
@@ -198,6 +197,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     public bool IsAllowed(ICommonSession player, string role)
     {
         if (!_prototypes.TryIndex<JobPrototype>(role, out var job) ||
+            job.Requirements == null ||
             !_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
 
@@ -224,8 +224,19 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
-            if (JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes))
-                roles.Add(job.ID);
+            if (job.Requirements != null)
+            {
+                foreach (var requirement in job.Requirements)
+                {
+                    if (JobRequirements.TryRequirementMet(requirement, playTimes, out _, EntityManager, _prototypes))
+                        continue;
+
+                    goto NoRole;
+                }
+            }
+
+            roles.Add(job.ID);
+            NoRole:;
         }
 
         return roles;
@@ -246,14 +257,22 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         for (var i = 0; i < jobs.Count; i++)
         {
-            if (_prototypes.TryIndex(jobs[i], out var job)
-                && JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes))
-            {
-                continue;
-            }
+            var job = jobs[i];
 
-            jobs.RemoveSwap(i);
-            i--;
+            if (!_prototypes.TryIndex(job, out var jobber) ||
+                jobber.Requirements == null ||
+                jobber.Requirements.Count == 0)
+                continue;
+
+            foreach (var requirement in jobber.Requirements)
+            {
+                if (JobRequirements.TryRequirementMet(requirement, playTimes, out _, EntityManager, _prototypes))
+                    continue;
+
+                jobs.RemoveSwap(i);
+                i--;
+                break;
+            }
         }
     }
 

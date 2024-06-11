@@ -4,6 +4,7 @@ using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
 using Content.Client.Eui;
 using Content.Client.GhostKick;
+using Content.Client.Info;
 using Content.Client.Launcher;
 using Content.Client.Parallax.Managers;
 using Content.Client.Players.PlayTimeTracking;
@@ -40,6 +41,7 @@ namespace Content.Client.IoC
             collection.Register<EuiManager, EuiManager>();
             collection.Register<IVoteManager, VoteManager>();
             collection.Register<ChangelogManager, ChangelogManager>();
+            collection.Register<RulesManager, RulesManager>();
             collection.Register<ViewportManager, ViewportManager>();
             collection.Register<ISharedAdminLogManager, SharedAdminLogManager>();
             collection.Register<GhostKickManager>();
