@@ -3,10 +3,11 @@
   name: cp14-loadout-test-cloak
   minLimit: 0
   loadouts:
-  - CP14HoodieYellow
-  - CP14BlacksmithArpon
-  - CP14FurcapeBlack
-  - CP14FurcapeBlue
+  - CP14ClothingCloakSimpleWhite
+  - CP14ClothingCloakSimpleDarkBlue
+  - CP14ClothingCloakBlacksmithArpon
+  - CP14ClothingCloakFurcapeBlack
+  - CP14ClothingCloakFurcapeBlue
 
 - type: loadoutGroup
   id: CP14TestEyes
@@ -41,16 +42,21 @@
   id: CP14TestPants
   name: cp14-loadout-test-pants
   loadouts:
-  - CP14HarlequinRed
-  - CP14Aristocratic
-  - CP14Loincloth
+  - CP14ClothingPantsTrouserWhite
+  - CP14ClothingPantsTrouserDarkBlue
+  - CP14ClothingPantsAristocratic
+  - CP14ClothingPantsLoincloth
 
 - type: loadoutGroup
   id: CP14TestShirt
   name: cp14-loadout-test-shirt
   loadouts:
-  - CP14ShirtSteampunk
-  - CP14ShirtHarlequineRed
+  - CP14ClothingShirtCottonWhite
+  - CP14ClothingShirtCottonBlue
+  - CP14ClothingShirtCottonBlueDark
+  - CP14ClothingShirtCottonPurple
+  - CP14ClothingShirtCottonRed
+  - CP14ClothingShirtCottonYellow
 
 - type: loadoutGroup
   id: CP14TestShoes

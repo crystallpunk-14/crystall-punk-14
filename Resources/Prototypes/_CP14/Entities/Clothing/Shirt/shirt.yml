@@ -13,14 +13,69 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtHarlequineRed
-  name: red harlequin shirt
-  description: It doesn't show the bloodstains that are left behind after bad jokes.
+  id: CP14ClothingShirtCottonBlue
+  name: cotton blue shirt
+  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
+    sprite: _CP14/Clothing/Shirt/Cotton/blue.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Shirt/harlequine_red.rsi
+    sprite: _CP14/Clothing/Shirt/Cotton/blue.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonBlueDark
+  name: cotton dark shirt
+  description: Pleasant to the touch material, in a comfortable loose shirt shape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Cotton/dark_blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Cotton/dark_blue.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonPurple
+  name: cotton purple shirt
+  description: Pleasant to the touch material, in a comfortable loose shirt shape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Cotton/purple.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Cotton/purple.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonRed
+  name: cotton red shirt
+  description: Pleasant to the touch material, in a comfortable loose shirt shape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Cotton/red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Cotton/red.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonWhite
+  name: cotton white shirt
+  description: Pleasant to the touch material, in a comfortable loose shirt shape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Cotton/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Cotton/white.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonYellow
+  name: cotton yellow shirt
+  description: Pleasant to the touch material, in a comfortable loose shirt shape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Cotton/yellow.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Cotton/yellow.rsi
 
 - type: entity
   parent: CP14ClothingShirtBase

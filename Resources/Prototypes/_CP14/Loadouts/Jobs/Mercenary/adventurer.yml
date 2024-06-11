@@ -1,39 +1,52 @@
 # Cloak
 - type: loadout
-  id: CP14HoodieYellow
-  equipment: CP14HoodieYellow
+  id: CP14ClothingCloakBlacksmithArpon
+  equipment: CP14ClothingCloakBlacksmithArpon
 
 - type: startingGear
-  id: CP14HoodieYellow
-  equipment:
-    cloak: CP14ClothingCloakHoodieYellow
-
-- type: loadout
-  id: CP14BlacksmithArpon
-  equipment: CP14BlacksmithArpon
-
-- type: startingGear
-  id: CP14BlacksmithArpon
+  id: CP14ClothingCloakBlacksmithArpon
   equipment:
     cloak: CP14ClothingCloakBlacksmithArpon
 
+
 - type: loadout
-  id: CP14FurcapeBlack
-  equipment: CP14FurcapeBlack
+  id: CP14ClothingCloakFurcapeBlack
+  equipment: CP14ClothingCloakFurcapeBlack
 
 - type: startingGear
-  id: CP14FurcapeBlack
+  id: CP14ClothingCloakFurcapeBlack
   equipment:
     cloak: CP14ClothingCloakFurcapeBlack
 
+
 - type: loadout
-  id: CP14FurcapeBlue
-  equipment: CP14FurcapeBlue
+  id: CP14ClothingCloakFurcapeBlue
+  equipment: CP14ClothingCloakFurcapeBlue
 
 - type: startingGear
-  id: CP14FurcapeBlue
+  id: CP14ClothingCloakFurcapeBlue
   equipment:
     cloak: CP14ClothingCloakFurcapeBlue
+
+
+- type: loadout
+  id: CP14ClothingCloakSimpleWhite
+  equipment: CP14ClothingCloakSimpleWhite
+
+- type: startingGear
+  id: CP14ClothingCloakSimpleWhite
+  equipment:
+    cloak: CP14ClothingCloakSimpleWhite
+
+
+- type: loadout
+  id: CP14ClothingCloakSimpleDarkBlue
+  equipment: CP14ClothingCloakSimpleDarkBlue
+
+- type: startingGear
+  id: CP14ClothingCloakSimpleDarkBlue
+  equipment:
+    cloak: CP14ClothingCloakSimpleDarkBlue
 
 # Eyes
 
@@ -91,51 +104,104 @@
 # Pants
 
 - type: loadout
-  id: CP14HarlequinRed
-  equipment: CP14HarlequinRed
+  id: CP14ClothingPantsTrouserWhite
+  equipment: CP14ClothingPantsTrouserWhite
 
 - type: startingGear
-  id: CP14HarlequinRed
+  id: CP14ClothingPantsTrouserWhite
   equipment:
-    pants: CP14ClothingPantsHarlequinRed
+    pants: CP14ClothingPantsTrouserWhite
+
 
 - type: loadout
-  id: CP14Aristocratic
-  equipment: CP14Aristocratic
+  id: CP14ClothingPantsTrouserDarkBlue
+  equipment: CP14ClothingPantsTrouserDarkBlue
 
 - type: startingGear
-  id: CP14Aristocratic
+  id: CP14ClothingPantsTrouserDarkBlue
+  equipment:
+    pants: CP14ClothingPantsTrouserDarkBlue
+
+
+- type: loadout
+  id: CP14ClothingPantsAristocratic
+  equipment: CP14ClothingPantsAristocratic
+
+- type: startingGear
+  id: CP14ClothingPantsAristocratic
   equipment:
     pants: CP14ClothingPantsAristocratic
 
+
 - type: loadout
-  id: CP14Loincloth
-  equipment: CP14Loincloth
+  id: CP14ClothingPantsLoincloth
+  equipment: CP14ClothingPantsLoincloth
 
 - type: startingGear
-  id: CP14Loincloth
+  id: CP14ClothingPantsLoincloth
   equipment:
     pants: CP14ClothingPantsLoincloth
     
 # Shirt
 
 - type: loadout
-  id: CP14ShirtHarlequineRed
-  equipment: CP14ShirtHarlequineRed
+  id: CP14ClothingShirtCottonBlue
+  equipment: CP14ClothingShirtCottonBlue
 
 - type: startingGear
-  id: CP14ShirtHarlequineRed
+  id: CP14ClothingShirtCottonBlue
   equipment:
-    shirt: CP14ClothingShirtHarlequineRed
+    shirt: CP14ClothingShirtCottonBlue
+
 
 - type: loadout
-  id: CP14ShirtSteampunk
-  equipment: CP14ShirtSteampunk
+  id: CP14ClothingShirtCottonBlueDark
+  equipment: CP14ClothingShirtCottonBlueDark
 
 - type: startingGear
-  id: CP14ShirtSteampunk
+  id: CP14ClothingShirtCottonBlueDark
   equipment:
-    shirt: CP14ClothingShirtSteampunk
+    shirt: CP14ClothingShirtCottonBlueDark
+
+
+- type: loadout
+  id: CP14ClothingShirtCottonPurple
+  equipment: CP14ClothingShirtCottonPurple
+
+- type: startingGear
+  id: CP14ClothingShirtCottonPurple
+  equipment:
+    shirt: CP14ClothingShirtCottonPurple
+
+
+- type: loadout
+  id: CP14ClothingShirtCottonRed
+  equipment: CP14ClothingShirtCottonRed
+
+- type: startingGear
+  id: CP14ClothingShirtCottonRed
+  equipment:
+    shirt: CP14ClothingShirtCottonRed
+
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhite
+  equipment: CP14ClothingShirtCottonWhite
+
+- type: startingGear
+  id: CP14ClothingShirtCottonWhite
+  equipment:
+    shirt: CP14ClothingShirtCottonWhite
+
+
+- type: loadout
+  id: CP14ClothingShirtCottonYellow
+  equipment: CP14ClothingShirtCottonYellow
+
+- type: startingGear
+  id: CP14ClothingShirtCottonYellow
+  equipment:
+    shirt: CP14ClothingShirtCottonYellow
 
 # Shoes
 
