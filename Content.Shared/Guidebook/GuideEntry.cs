@@ -50,9 +50,3 @@ public class GuideEntry
     [DataField]
     public bool CrystallPunkAllowed = false;
 }
-
-[Prototype("guideEntry")]
-public sealed partial class GuideEntryPrototype : GuideEntry, IPrototype
-{
-    public string ID => Id;
-}
