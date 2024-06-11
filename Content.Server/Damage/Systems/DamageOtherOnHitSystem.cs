@@ -33,29 +33,32 @@ namespace Content.Server.Damage.Systems
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
         {
-            //CrystallPunk Melee upgrade
-            var damage = component.Damage;
-
-            if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
-                damage *= sharp.Sharpness;
-
-            var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
-            //CrystallPunk Melee pgrade end
-
-            // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
-            if (dmg != null && HasComp<MobStateComponent>(args.Target))
-                _adminLogger.Add(LogType.ThrowHit, $"{ToPrettyString(args.Target):target} received {dmg.GetTotal():damage} damage from collision");
-
-            if (dmg is { Empty: false })
+            if (!TerminatingOrDeleted(args.Target))
             {
-                _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.Target }, Filter.Pvs(args.Target, entityManager: EntityManager));
-            }
+                //CrystallPunk Melee upgrade
+                var damage = component.Damage;
 
-            _guns.PlayImpactSound(args.Target, dmg, null, false);
-            if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
-            {
-                var direction = body.LinearVelocity.Normalized();
-                _sharedCameraRecoil.KickCamera(args.Target, direction);
+                if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
+                    damage *= sharp.Sharpness;
+
+                var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
+                //CrystallPunk Melee pgrade end
+
+                // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
+                if (dmg != null && HasComp<MobStateComponent>(args.Target))
+                    _adminLogger.Add(LogType.ThrowHit, $"{ToPrettyString(args.Target):target} received {dmg.GetTotal():damage} damage from collision");
+
+                if (dmg is { Empty: false })
+                {
+                    _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.Target }, Filter.Pvs(args.Target, entityManager: EntityManager));
+                }
+
+                _guns.PlayImpactSound(args.Target, dmg, null, false);
+                if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
+                {
+                    var direction = body.LinearVelocity.Normalized();
+                    _sharedCameraRecoil.KickCamera(args.Target, direction);
+                }
             }
 
             // TODO: If more stuff touches this then handle it after.
