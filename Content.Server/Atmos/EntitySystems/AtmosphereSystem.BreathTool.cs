@@ -10,21 +10,21 @@ public sealed partial class AtmosphereSystem
         SubscribeLocalEvent<BreathToolComponent, ComponentShutdown>(OnBreathToolShutdown);
     }
 
-    private void OnBreathToolShutdown(Entity<BreathToolComponent> entity, ref ComponentShutdown args)
+    private void OnBreathToolShutdown(EntityUid uid, BreathToolComponent component, ComponentShutdown args)
     {
-        DisconnectInternals(entity);
+        DisconnectInternals(component);
     }
 
-    public void DisconnectInternals(Entity<BreathToolComponent> entity)
+    public void DisconnectInternals(BreathToolComponent component)
     {
-        var old = entity.Comp.ConnectedInternalsEntity;
-        entity.Comp.ConnectedInternalsEntity = null;
+        var old = component.ConnectedInternalsEntity;
+        component.ConnectedInternalsEntity = null;
 
         if (TryComp<InternalsComponent>(old, out var internalsComponent))
         {
-            _internals.DisconnectBreathTool((old.Value, internalsComponent), entity.Owner);
+            _internals.DisconnectBreathTool((old.Value, internalsComponent));
         }
 
-        entity.Comp.IsFunctional = false;
+        component.IsFunctional = false;
     }
 }

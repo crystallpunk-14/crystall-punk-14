@@ -15,24 +15,24 @@ public sealed partial class GhostRolePrototype : IPrototype
     /// <summary>
     ///     The name of the ghostrole.
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public string Name { get; set; } = default!;
 
     /// <summary>
     ///     The description of the ghostrole.
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public string Description { get; set; } = default!;
 
     /// <summary>
     ///     The entity prototype of the ghostrole
     /// </summary>
-    [DataField(required: true)]
-    public EntProtoId EntityPrototype;
+    [DataField]
+    public string EntityPrototype = default!;
 
     /// <summary>
     ///     Rules of the ghostrole
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public string Rules = default!;
 }

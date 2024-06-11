@@ -374,9 +374,6 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     /// </summary>
     public bool IsSessionValid(Entity<AntagSelectionComponent> ent, ICommonSession? session, AntagSelectionDefinition def, EntityUid? mind = null)
     {
-        // TODO ROLE TIMERS
-        // Check if antag role requirements are met
-
         if (session == null)
             return true;
 

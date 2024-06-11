@@ -2,7 +2,7 @@
   id: Passenger
   name: job-name-passenger
   description: job-description-passenger
-  #setPreference: false
+  setPreference: false
   playTimeTracker: JobPassenger
   startingGear: PassengerGear
   icon: "JobIconPassenger"
