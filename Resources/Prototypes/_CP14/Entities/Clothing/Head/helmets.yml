@@ -16,21 +16,6 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadHoodieYellow
-  noSpawn: true
-  name: yellow hood
-  description: You gain +2 to stealth rolls against the attention of the opposite sex.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/yellowhoodie.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/yellowhoodie.rsi
-  - type: Tag
-    tags:
-    - HidesHair
-
-- type: entity
-  parent: CP14ClothingHeadBase
   id: CP14ClothingHeadMetalHeadband
   name: metall headband
   description: The odds of it protecting you from a head shot are slim to none.

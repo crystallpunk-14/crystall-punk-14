@@ -7,6 +7,10 @@ ent-CP14ClothingCloakFurcapeBlack = меховая накидка
     .desc = Брутальная, выделанная из шерсти, накидка на плечи.
 ent-CP14ClothingCloakFurcapeBlue = { ent-CP14ClothingCloakFurcapeBlack }
     .desc = { ent-CP14ClothingCloakFurcapeBlack.desc }
+ent-CP14ClothingCloakSimpleWhite = белый плащ
+    .desc = Длинный плащ с высоким воротником.
+ent-CP14ClothingCloakSimpleDarkBlue = { ent-CP14ClothingCloakSimpleWhite }
+    .desc =  { ent-CP14ClothingCloakSimpleWhite.desc }
 
 # Eyes
 ent-CP14ClothingEyesMonocle = монокль
@@ -21,8 +25,6 @@ ent-CP14ClothingGlovesGirdles = железные наручи
     .desc = Бронированные боевые наручи из металла.
 
 # Helmet
-ent-CP14ClothingHeadHoodieYellow = желтый капюшон
-    .desc = Вы получаете +2 к броскам скрытности от внимания противоположного пола.
 ent-CP14ClothingHeadMetalHeadband = металлический обруч
     .desc = Вероятность, что он защитит от попадания в голову, крайне мала.
 
