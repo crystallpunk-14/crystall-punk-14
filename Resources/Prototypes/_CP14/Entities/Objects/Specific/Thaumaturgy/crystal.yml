@@ -11,9 +11,6 @@
   - type: CP14MagicEnergyContainer
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyPointLightController
-  - type: CP14MagicEnergySimpleRegeneration
-    delay: 1
-    energy: -5
   - type: PointLight
     radius: 1.5
     energy: 1
@@ -51,6 +48,8 @@
   components:
   - type: CP14MagicEnergyContainer
     energy: 0
+  - type: PointLight
+    energy: 0
 
 
 - type: entity
@@ -83,4 +82,6 @@
   suffix: Empty
   components:
   - type: CP14MagicEnergyContainer
+    energy: 0
+  - type: PointLight
     energy: 0
