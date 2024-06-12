@@ -1,3 +1,5 @@
+using Content.Shared.FixedPoint;
+
 namespace Content.Server._CP14.MagicEnergy.Components;
 
 /// <summary>
@@ -7,7 +9,7 @@ namespace Content.Server._CP14.MagicEnergy.Components;
 public sealed partial class CP14MagicEnergySimpleRegenerationComponent : Component
 {
     [DataField]
-    public float Energy = 1f;
+    public FixedPoint2 Energy = 1f;
 
     /// <summary>
     /// how often objects will try to change magic energy. In Seconds

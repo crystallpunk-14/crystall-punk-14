@@ -10,11 +10,12 @@
     sprite: _CP14/Objects/Specific/Thaumaturgy/crystal.rsi
   - type: CP14MagicEnergyContainer
   - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyPointLightController
   - type: CP14MagicEnergySimpleRegeneration
-    delay: 60
-    energy: -1
+    delay: 1
+    energy: -5
   - type: PointLight
-    radius: 1.2
+    radius: 1.5
     energy: 1
     color: "#b0eaf6"
   - type: RandomSprite
@@ -30,7 +31,6 @@
   - type: Sprite
     layers:
       - state: small1
-        shader: unshaded
         color: "#b0eaf6"
         map: ["random"]
       - state: small_connector
@@ -59,10 +59,11 @@
   name: processed quartz
   suffix: Full
   components:
+  - type: PointLight
+    radius: 1.2
   - type: Sprite
     layers:
       - state: medium1
-        shader: unshaded
         color: "#b0eaf6"
         map: ["random"]
       - state: medium_connector

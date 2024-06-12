@@ -1,5 +1,6 @@
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Examine;
+using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 
 namespace Content.Shared._CP14.MagicEnergy;
@@ -13,7 +14,16 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
 /// </summary>
 public sealed class CP14MagicEnergyOutEvent : EntityEventArgs
 {
-    public EntityUid MagicContainer;
+}
+
+/// <summary>
+/// It's triggered when the energy change in MagicEnergyContainer
+/// </summary>
+public sealed class CP14MagicEnergyChangeEvent : EntityEventArgs
+{
+    public FixedPoint2 OldValue;
+    public FixedPoint2 NewValue;
+    public FixedPoint2 MaxValue;
 }
 
 /// <summary>
@@ -21,8 +31,7 @@ public sealed class CP14MagicEnergyOutEvent : EntityEventArgs
 /// </summary>
 public sealed class CP14MagicEnergyOverloadEvent : EntityEventArgs
 {
-    public EntityUid MagicContainer;
-    public float OverloadEnergy;
+    public FixedPoint2 OverloadEnergy;
 }
 
 /// <summary>
@@ -30,8 +39,7 @@ public sealed class CP14MagicEnergyOverloadEvent : EntityEventArgs
 /// </summary>
 public sealed class CP14MagicEnergyBurnOutEvent : EntityEventArgs
 {
-    public EntityUid MagicContainer;
-    public float BurnOutEnergy;
+    public FixedPoint2 BurnOutEnergy;
 }
 
 public sealed class CP14MagicEnergyScanEvent : EntityEventArgs, IInventoryRelayEvent

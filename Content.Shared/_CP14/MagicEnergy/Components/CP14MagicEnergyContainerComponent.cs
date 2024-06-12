@@ -1,3 +1,5 @@
+using Content.Shared.FixedPoint;
+
 namespace Content.Shared._CP14.MagicEnergy.Components;
 
 /// <summary>
@@ -7,8 +9,8 @@ namespace Content.Shared._CP14.MagicEnergy.Components;
 public sealed partial class CP14MagicEnergyContainerComponent : Component
 {
     [DataField]
-    public float Energy = 0f;
+    public FixedPoint2 Energy = 0f;
 
     [DataField]
-    public float MaxEnergy = 100f;
+    public FixedPoint2 MaxEnergy = 100f;
 }

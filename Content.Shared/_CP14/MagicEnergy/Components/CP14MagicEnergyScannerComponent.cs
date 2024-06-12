@@ -8,9 +8,4 @@ namespace Content.Shared._CP14.MagicEnergy.Components;
 [RegisterComponent, Access(typeof(SharedCP14MagicEnergySystem))]
 public sealed partial class CP14MagicEnergyScannerComponent : Component
 {
-    [DataField]
-    public float Energy = 0f;
-
-    [DataField]
-    public float MaxEnergy = 100f;
 }
