@@ -52,6 +52,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
+  - type: CP14MagicEnergyCrystalSlot
+    slotId: crystal_slot
   - type: ContainerContainer
     containers:
       crystal_slot: !type:ContainerSlot

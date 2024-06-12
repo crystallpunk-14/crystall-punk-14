@@ -7,6 +7,21 @@ namespace Content.Shared._CP14.MagicEnergy;
 
 public partial class SharedCP14MagicEnergySystem : EntitySystem
 {
+    public string GetEnergyExaminedText(EntityUid uid, CP14MagicEnergyContainerComponent ent)
+    {
+        var power = (int)((ent.Energy / ent.MaxEnergy) * 100);
+
+        var color = "#3fc488";
+        if (power < 66)
+            color = "#f2a93a";
+        if (power < 33)
+            color = "#c23030";
+
+        return Loc.GetString("cp14-magic-energy-scan-result",
+            ("item", MetaData(uid).EntityName),
+            ("power", power),
+            ("color", color));
+    }
 }
 
 /// <summary>
@@ -19,7 +34,7 @@ public sealed class CP14MagicEnergyOutEvent : EntityEventArgs
 /// <summary>
 /// It's triggered when the energy change in MagicEnergyContainer
 /// </summary>
-public sealed class CP14MagicEnergyChangeEvent : EntityEventArgs
+public sealed class CP14MagicEnergyLevelChangeEvent : EntityEventArgs
 {
     public FixedPoint2 OldValue;
     public FixedPoint2 NewValue;

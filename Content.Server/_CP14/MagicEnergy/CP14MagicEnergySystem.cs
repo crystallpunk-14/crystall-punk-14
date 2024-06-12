@@ -16,17 +16,15 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
 
     public override void Initialize()
     {
-        base.Initialize();
-
         SubscribeLocalEvent<CP14MagicEnergySimpleRegenerationComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<CP14MagicEnergyPointLightControllerComponent, CP14MagicEnergyChangeEvent>(OnEnergyChange);
+        SubscribeLocalEvent<CP14MagicEnergyPointLightControllerComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChange);
 
         SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, CP14MagicEnergyScanEvent>(OnMagicScanAttempt);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, InventoryRelayedEvent<CP14MagicEnergyScanEvent>>((e, c, ev) => OnMagicScanAttempt(e, c, ev.Args));
     }
 
-    private void OnEnergyChange(Entity<CP14MagicEnergyPointLightControllerComponent> ent, ref CP14MagicEnergyChangeEvent args)
+    private void OnEnergyChange(Entity<CP14MagicEnergyPointLightControllerComponent> ent, ref CP14MagicEnergyLevelChangeEvent args)
     {
         if (!TryComp<PointLightComponent>(ent, out var light))
             return;
@@ -56,16 +54,10 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
         if (!scanEvent.CanScan)
             return;
 
-        var power = (int)((magicContainer.Energy / magicContainer.MaxEnergy) * 100);
-
-        var color = "#3fc488";
-        if (power < 66)
-            color = "#f2a93a";
-        if (power < 33)
-            color = "#c23030";
-
-        args.PushMarkup(Loc.GetString("cp14-magic-energy-scan-result", ("item", MetaData(ent).EntityName), ("power", power), ("color", color)));
+        args.PushMarkup(GetEnergyExaminedText(ent, magicContainer));
     }
+
+
 
     public override void Update(float frameTime)
     {
@@ -131,7 +123,7 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
 
         if (oldEnergy != newEnergy)
         {
-            RaiseLocalEvent(uid, new CP14MagicEnergyChangeEvent()
+            RaiseLocalEvent(uid, new CP14MagicEnergyLevelChangeEvent()
             {
                 OldValue = component.Energy,
                 NewValue = newEnergy,
