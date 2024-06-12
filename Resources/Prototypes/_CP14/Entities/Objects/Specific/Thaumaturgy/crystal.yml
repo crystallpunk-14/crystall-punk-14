@@ -1,0 +1,85 @@
+- type: entity
+  id: CP14EnergyQuartzBase
+  parent: BaseItem
+  abstract: true
+  description: Processed quartz crystals are excellent repositories of magical energy. And special connectors allow you to conveniently insert them into magical devices, turning them into energy batteries.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Thaumaturgy/crystal.rsi
+  - type: CP14MagicEnergyContainer
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergySimpleRegeneration
+    delay: 60
+    energy: -1
+  - type: PointLight
+    radius: 1.2
+    energy: 1
+    color: "#b0eaf6"
+  - type: RandomSprite
+    cP14InheritBaseColor: "#b0eaf6"
+
+
+- type: entity
+  id: CP14EnergyQuartzSmall
+  parent: CP14EnergyQuartzBase
+  name: small processed quartz
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+      - state: small1
+        shader: unshaded
+        color: "#b0eaf6"
+        map: ["random"]
+      - state: small_connector
+  - type: RandomSprite
+    available:
+    - random:
+        small1: Inherit
+        small2: Inherit
+        small3: Inherit
+  - type: CP14MagicEnergyContainer
+    energy: 30
+    maxEnergy: 30
+
+- type: entity
+  id: CP14EnergyQuartzSmallEmpty
+  parent: CP14EnergyQuartzSmall
+  suffix: Empty
+  components:
+  - type: CP14MagicEnergyContainer
+    energy: 0
+
+
+- type: entity
+  id: CP14EnergyQuartzMedium
+  parent: CP14EnergyQuartzBase
+  name: processed quartz
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+      - state: medium1
+        shader: unshaded
+        color: "#b0eaf6"
+        map: ["random"]
+      - state: medium_connector
+  - type: RandomSprite
+    available:
+    - random:
+        medium1: Inherit
+        medium2: Inherit
+        medium3: Inherit
+  - type: CP14MagicEnergyContainer
+    energy: 100
+    maxEnergy: 100
+
+- type: entity
+  id: CP14EnergyQuartzMediumEmpty
+  parent: CP14EnergyQuartzMedium
+  suffix: Empty
+  components:
+  - type: CP14MagicEnergyContainer
+    energy: 0

@@ -15,9 +15,16 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CP14MagicEnergySimpleRegenerationComponent, MapInitEvent>(OnMapInit);
+
         SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, CP14MagicEnergyScanEvent>(OnMagicScanAttempt);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, InventoryRelayedEvent<CP14MagicEnergyScanEvent>>((e, c, ev) => OnMagicScanAttempt(e, c, ev.Args));
+    }
+
+    private void OnMapInit(Entity<CP14MagicEnergySimpleRegenerationComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(ent.Comp.Delay);
     }
 
     private void OnMagicScanAttempt(EntityUid uid, CP14MagicEnergyScannerComponent component, CP14MagicEnergyScanEvent args)
