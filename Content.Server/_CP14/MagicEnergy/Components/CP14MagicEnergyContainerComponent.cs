@@ -1,7 +1,7 @@
 namespace Content.Server._CP14.MagicEnergy.Components;
 
 /// <summary>
-/// allows the object to become blunt with use
+/// Allows an item to store magical energy within itself.
 /// </summary>
 [RegisterComponent, Access(typeof(CP14MagicEnergySystem))]
 public sealed partial class CP14MagicEnergyContainerComponent : Component

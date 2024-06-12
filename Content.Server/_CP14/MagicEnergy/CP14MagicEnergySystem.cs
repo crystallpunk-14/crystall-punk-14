@@ -1,15 +1,34 @@
 using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEnergy;
+using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
 {
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
 
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<CP14MagicEnergyRegeneratorComponent, CP14MagicEnergyContainerComponent>();
+        while (query.MoveNext(out var uid, out var regenerator, out var magicContainer))
+        {
+            if (regenerator.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            regenerator.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(regenerator.Delay);
+
+            ChangeEnergy(uid, magicContainer, regenerator.Energy);
+        }
     }
 
     public bool TryConsumeEnergy(EntityUid uid, float energy, CP14MagicEnergyContainerComponent? component = null)
