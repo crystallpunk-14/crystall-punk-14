@@ -19,6 +19,10 @@
   chatTriggers:
     - cough
     - coughs
+    # CP14-RU-Localization-start
+    - кашель
+    - кашляет
+    # CP14-RU-Localization-end
 
 - type: emote
   id: CatMeow
@@ -39,12 +43,6 @@
   chatMessages: ["chat-emote-msg-monkeyscreeches"]
 
 - type: emote
-  id: RobotBeep
-  name: chat-emote-name-robotbeep
-  category: Vocal
-  chatMessages: ["chat-emote-msg-beep"]
-
-- type: emote
   id: Yawn
   name: chat-emote-name-yawn
   icon: Interface/Emotes/yawn.png
@@ -59,6 +57,10 @@
   chatTriggers:
     - yawn
     - yawns
+    # CP14-RU-Localization-Start
+    - зевок
+    - зевает
+    # CP14-RU-Localization-End
 
 - type: emote
   id: Snore
