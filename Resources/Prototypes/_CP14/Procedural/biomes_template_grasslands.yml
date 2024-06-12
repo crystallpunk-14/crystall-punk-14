@@ -102,7 +102,7 @@
         - CP14FloraTreeLarge05
         - CP14FloraTreeLarge06
     - !type:BiomeEntityLayer # Rare Bloodgrass
-      threshold: 0.8
+      threshold: 0.7
       noise:
         seed: 3
         noiseType: OpenSimplex2
@@ -118,7 +118,7 @@
       entities:
         - CP14GatherableBloodgrass
     - !type:BiomeEntityLayer # Rare Wild sage
-      threshold: 0.8
+      threshold: 0.6
       noise:
         seed: 8
         noiseType: OpenSimplex2
