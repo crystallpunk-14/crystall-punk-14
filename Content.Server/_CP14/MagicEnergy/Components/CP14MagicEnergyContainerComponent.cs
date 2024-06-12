@@ -1,4 +1,4 @@
-namespace Content.Server._CP14.MagicEnergy;
+namespace Content.Server._CP14.MagicEnergy.Components;
 
 /// <summary>
 /// allows the object to become blunt with use
