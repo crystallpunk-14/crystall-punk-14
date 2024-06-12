@@ -1,8 +1,11 @@
+using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared.Examine;
+using Content.Shared.Inventory;
+
 namespace Content.Shared._CP14.MagicEnergy;
 
 public partial class SharedCP14MagicEnergySystem : EntitySystem
 {
-
 }
 
 /// <summary>
@@ -29,4 +32,10 @@ public sealed class CP14MagicEnergyBurnOutEvent : EntityEventArgs
 {
     public EntityUid MagicContainer;
     public float BurnOutEnergy;
+}
+
+public sealed class CP14MagicEnergyScanEvent : EntityEventArgs, IInventoryRelayEvent
+{
+    public bool CanScan;
+    public SlotFlags TargetSlots { get; } = SlotFlags.EYES;
 }

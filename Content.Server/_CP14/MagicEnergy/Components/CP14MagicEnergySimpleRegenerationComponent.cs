@@ -4,7 +4,7 @@ namespace Content.Server._CP14.MagicEnergy.Components;
 /// Allows you to restore or deplete the magical energy in the item
 /// </summary>
 [RegisterComponent, Access(typeof(CP14MagicEnergySystem))]
-public sealed partial class CP14MagicEnergyRegeneratorComponent : Component
+public sealed partial class CP14MagicEnergySimpleRegenerationComponent : Component
 {
     [DataField]
     public float Energy = 1f;
@@ -13,7 +13,7 @@ public sealed partial class CP14MagicEnergyRegeneratorComponent : Component
     /// how often objects will try to change magic energy. In Seconds
     /// </summary>
     [DataField]
-    public float Delay = 1f;
+    public float Delay = 5f;
 
     /// <summary>
     /// the time of the next magic energy change

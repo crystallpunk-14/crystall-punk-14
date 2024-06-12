@@ -1,0 +1,1 @@
+cp14-magic-energy-scan-result = {$item} заполнен магической энергией на [color={$color}]{$power}%[/color]
