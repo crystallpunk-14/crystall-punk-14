@@ -20,7 +20,15 @@
         visible: false
       - state: base
       - state: rotate_front
-    state: base
+      - state: crystal
+        map: ["slot"]
+        visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14MagicSlotVisuals.Enabled:
+        slot:
+          True: { visible: true }
+          False: { visible: false }
   - type: Fixtures
     fixtures:
       fix1:
