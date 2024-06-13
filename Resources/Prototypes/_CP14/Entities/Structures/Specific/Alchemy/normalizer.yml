@@ -71,8 +71,8 @@
     maxFillLevels: 5
     fillBaseName: liq-
   - type: CP14MagicEnergyDraw
-    energy: -1
-    delay: 4
+    energy: -0.2
+    delay: 1
   - type: CP14MagicEnergyCrystalSlot
     slotId: crystal_slot
   - type: ContainerContainer
