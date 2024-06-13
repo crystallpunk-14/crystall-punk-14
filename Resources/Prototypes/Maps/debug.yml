@@ -10,8 +10,6 @@
         - type: StationNameSetup
           mapNameTemplate: "Empty"
         - type: StationJobs
-          overflowJobs:
-            - CP14Adventurer #CrystallPunk Dev replacement
           availableJobs:
             CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
 
@@ -24,32 +22,8 @@
     Dev:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
-        - type: StationBiome
-          biome: CP14GrasslandTestResult
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs
-          overflowJobs:
-          - CP14Adventurer #CrystallPunk Dev replacement
           availableJobs:
             CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
-
-#- type: gameMap
-#  id: TestTeg
-#  mapName: Test TEG
-#  mapPath: /Maps/Test/test_teg.yml
-#  minPlayers: 0
-#  stations:
-#    TEG:
-#      stationProto: TestStation
-#      components:
-#        - type: StationNameSetup
-#          mapNameTemplate: "TEG"
-#        - type: StationJobs
-#          overflowJobs:
-#            - ChiefEngineer
-#          availableJobs:
-#            ChiefEngineer: [ -1, -1 ]
