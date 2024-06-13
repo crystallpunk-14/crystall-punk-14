@@ -15,13 +15,8 @@ public sealed partial class CP14MagicEnergyCrystalSlotComponent : Component
 [Serializable, NetSerializable]
 public enum CP14MagicSlotVisuals : byte
 {
-    Enabled
-}
-
-[Serializable, NetSerializable]
-public enum CP14MagicEnergyVisuals : byte
-{
-    ChargeLevel
+    Inserted,
+    Powered
 }
 
 public sealed class CP14MagicEnergyCrystalChangedEvent : EntityEventArgs

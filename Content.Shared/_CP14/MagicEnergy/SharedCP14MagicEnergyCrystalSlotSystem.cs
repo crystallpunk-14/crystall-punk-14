@@ -23,7 +23,8 @@ public partial class SharedCP14MagicEnergyCrystalSlotSystem : EntitySystem
         if (args.Container.ID != slot.Comp.SlotId)
             return;
 
-        _appearance.SetData(slot, CP14MagicSlotVisuals.Enabled, false);
+        _appearance.SetData(slot, CP14MagicSlotVisuals.Inserted, false);
+        _appearance.SetData(slot, CP14MagicSlotVisuals.Powered, false);
         RaiseLocalEvent(slot, new CP14MagicEnergyCrystalChangedEvent(true));
     }
 
@@ -35,7 +36,7 @@ public partial class SharedCP14MagicEnergyCrystalSlotSystem : EntitySystem
         if (args.Container.ID != slot.Comp.SlotId)
             return;
 
-        _appearance.SetData(slot, CP14MagicSlotVisuals.Enabled, true);
+        _appearance.SetData(slot, CP14MagicSlotVisuals.Inserted, true);
         RaiseLocalEvent(slot, new CP14MagicEnergyCrystalChangedEvent(false));
     }
 }

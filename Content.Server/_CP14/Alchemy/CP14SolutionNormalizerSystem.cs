@@ -1,3 +1,4 @@
+using Content.Server._CP14.MagicEnergy;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
@@ -12,16 +13,19 @@ public sealed partial class CP14SolutionNormalizerSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly CP14MagicEnergyCrystalSlotSystem _magicSlot = default!;
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         var query = EntityQueryEnumerator<CP14SolutionNormalizerComponent, SolutionContainerManagerComponent>();
-
         while (query.MoveNext(out var uid, out var normalizer, out var containerManager))
         {
             if (_timing.CurTime <= normalizer.NextUpdateTime)
+                continue;
+
+            if (!_magicSlot.HasEnergy(uid, 1))
                 continue;
 
             normalizer.NextUpdateTime = _timing.CurTime + normalizer.UpdateFrequency;

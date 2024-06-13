@@ -23,14 +23,16 @@
       - state: rotate_front_stop
         map: ["poweredFront"]
       - state: crystal
-        map: ["poweredCrystal"]
+        shader: unshaded
+        map: ["crystal"]
         visible: false
   - type: GenericVisualizer
     visuals:
-      enum.CP14MagicSlotVisuals.Enabled:
-        poweredCrystal:
+      enum.CP14MagicSlotVisuals.Inserted:
+        crystal:
           True: { visible: true }
           False: { visible: false }
+      enum.CP14MagicSlotVisuals.Powered:
         poweredFront:
           True: { state: rotate_front }
           False: { state: rotate_front_stop }
@@ -68,6 +70,9 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
+  - type: CP14MagicEnergyDraw
+    energy: -1
+    delay: 4
   - type: CP14MagicEnergyCrystalSlot
     slotId: crystal_slot
   - type: ContainerContainer

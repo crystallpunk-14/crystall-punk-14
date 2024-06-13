@@ -5,20 +5,38 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Popups;
+using Content.Shared.Rounding;
+using Robust.Shared.Containers;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCrystalSlotSystem
 {
 
-    [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAppearanceSystem _sharedAppearanceSystem = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<CP14MagicEnergyCrystalComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChanged);
         SubscribeLocalEvent<CP14MagicEnergyCrystalSlotComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnEnergyChanged(Entity<CP14MagicEnergyCrystalComponent> crystal, ref CP14MagicEnergyLevelChangeEvent args)
+    {
+        if (_container.TryGetContainingContainer(crystal, out var container)
+            && TryComp(container.Owner, out CP14MagicEnergyCrystalSlotComponent? slot)
+            && _itemSlots.TryGetSlot(container.Owner, slot.SlotId, out var itemSlot))
+        {
+            if (itemSlot.Item == crystal)
+            {
+                RaiseLocalEvent(container.Owner, new CP14MagicEnergyCrystalChangedEvent(false));
+                _appearance.SetData(container.Owner, CP14MagicSlotVisuals.Powered, args.NewValue > 0);
+            }
+        }
     }
 
     private void OnExamined(Entity<CP14MagicEnergyCrystalSlotComponent> ent, ref ExaminedEvent args)
@@ -54,7 +72,7 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
             return false;
         }
 
-        if (_itemSlotsSystem.TryGetSlot(uid, component.SlotId, out ItemSlot? slot))
+        if (_itemSlots.TryGetSlot(uid, component.SlotId, out ItemSlot? slot))
         {
             energyEnt = slot.Item;
             return TryComp(slot.Item, out energyComp);
@@ -65,7 +83,30 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
         return false;
     }
 
-    public bool TryUseCharge(EntityUid uid,
+    public bool HasEnergy(EntityUid uid,
+        FixedPoint2 energy,
+        CP14MagicEnergyCrystalSlotComponent? component = null,
+        EntityUid? user = null)
+    {
+        if (!TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp, component))
+        {
+            if (user != null)
+                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), uid,user.Value);
+
+            return false;
+        }
+
+        if (energyComp.Energy < energy)
+        {
+            if (user != null)
+                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-insufficient"), uid, user.Value);
+
+            return false;
+        }
+
+        return true;
+    }
+    public bool TryUseEnergy(EntityUid uid,
         FixedPoint2 energy,
         CP14MagicEnergyCrystalSlotComponent? component = null,
         EntityUid? user = null,
@@ -90,7 +131,6 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
             return false;
         }
 
-        _sharedAppearanceSystem.SetData(uid, CP14MagicEnergyVisuals.ChargeLevel, energyComp.Energy > 0);
         return true;
     }
 }
