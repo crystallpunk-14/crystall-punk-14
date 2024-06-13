@@ -3,6 +3,8 @@ using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
+using Content.Shared.FixedPoint;
+using Content.Shared.Popups;
 
 namespace Content.Server._CP14.MagicEnergy;
 
@@ -10,7 +12,9 @@ public partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCry
 {
 
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
-    [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedAppearanceSystem _sharedAppearanceSystem = default!;
 
     public override void Initialize()
     {
@@ -59,5 +63,35 @@ public partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCry
         energyEnt = null;
         energyComp = null;
         return false;
+    }
+
+    public bool TryUseCharge(EntityUid uid,
+        FixedPoint2 energy,
+        CP14MagicEnergyCrystalSlotComponent? component = null,
+        EntityUid? user = null,
+        bool safe = false)
+    {
+        if (!TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp, component))
+        {
+            if (user != null)
+                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), uid,user.Value);
+
+            return false;
+        }
+
+        if (_magicEnergy.TryConsumeEnergy(energyEnt.Value, energy, energyComp, safe))
+        {
+            if (user != null)
+                _popup.PopupEntity(
+                    Loc.GetString(safe ? "cp14-magic-energy-insufficient" : "cp14-magic-energy-insufficient-unsafe"),
+                    uid,
+                    user.Value);
+
+            return false;
+        }
+
+        //Appearance charge level TODO
+        //_sharedAppearanceSystem.SetData(uid, CP14MagicEnergyVisuals.ChargeLevel, energyComp.Energy > 0);
+        return true;
     }
 }
