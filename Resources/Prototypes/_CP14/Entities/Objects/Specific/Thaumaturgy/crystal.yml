@@ -17,7 +17,7 @@
 - type: entity
   id: CP14EnergyCrystalSmall
   parent: CP14EnergyCrystalBase
-  name: small processed quartz
+  name: small energy crystal
   suffix: Full
   components:
   - type: Sprite
@@ -48,7 +48,7 @@
 - type: entity
   id: CP14EnergyCrystalMedium
   parent: CP14EnergyCrystalBase
-  name: processed quartz
+  name: energy crystal
   suffix: Full
   components:
   - type: PointLight
