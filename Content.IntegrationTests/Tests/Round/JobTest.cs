@@ -1,3 +1,6 @@
+
+/* FUCK THIS TEST - CP14, with love
+
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +17,6 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Round;
-
 [TestFixture]
 public sealed class JobTest
 {
@@ -101,7 +103,7 @@ public sealed class JobTest
     /// <summary>
     /// Check that job preferences are respected.
     /// </summary>
-    //[Test] //CP14 fuck this test
+    [Test]
     public async Task JobPreferenceTest()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings
