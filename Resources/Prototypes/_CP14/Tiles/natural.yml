@@ -75,7 +75,7 @@
   id: CP14FloorGrass
   editorHidden: false
   name: cp14-tiles-grass
-  sprite: /Textures/Tiles/Planet/Grass/grass.png
+  sprite: /Textures/_CP14/Tiles/Grass/grass.png
   variants: 4
   placementVariants:
   - 1.0
