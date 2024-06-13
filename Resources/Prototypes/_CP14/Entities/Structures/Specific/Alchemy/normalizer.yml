@@ -14,21 +14,29 @@
     offset: 0, 0.2
     sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
     layers:
-      - state: rotate_back
+      - state: rotate_back_stop
+        map: ["poweredBack"]
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
       - state: base
-      - state: rotate_front
+      - state: rotate_front_stop
+        map: ["poweredFront"]
       - state: crystal
-        map: ["slot"]
+        map: ["poweredCrystal"]
         visible: false
   - type: GenericVisualizer
     visuals:
       enum.CP14MagicSlotVisuals.Enabled:
-        slot:
+        poweredCrystal:
           True: { visible: true }
           False: { visible: false }
+        poweredFront:
+          True: { state: rotate_front }
+          False: { state: rotate_front_stop }
+        poweredBack:
+          True: { state: rotate_back }
+          False: { state: rotate_back_stop }
   - type: Fixtures
     fixtures:
       fix1:
@@ -71,5 +79,5 @@
         ejectOnInteract: true
         name: cp14-magic-energy-crystal-slot-name #TODO cool insert\eject sound
         whitelist:
-          tags:
-          - CP14EnergyCrystal
+          components:
+          - CP14MagicEnergyCrystal

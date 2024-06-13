@@ -90,8 +90,7 @@ public partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCry
             return false;
         }
 
-        //Appearance charge level TODO
-        //_sharedAppearanceSystem.SetData(uid, CP14MagicEnergyVisuals.ChargeLevel, energyComp.Energy > 0);
+        _sharedAppearanceSystem.SetData(uid, CP14MagicEnergyVisuals.ChargeLevel, energyComp.Energy > 0);
         return true;
     }
 }

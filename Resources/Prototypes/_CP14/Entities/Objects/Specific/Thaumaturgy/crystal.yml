@@ -4,9 +4,7 @@
   abstract: true
   description: Processed quartz crystals are excellent repositories of magical energy. And special connectors allow you to conveniently insert them into magical devices, turning them into energy batteries.
   components:
-  - type: Tag
-    tags:
-    - CP14EnergyCrystal
+  - type: CP14MagicEnergyCrystal
   - type: Item
     size: Tiny
   - type: Sprite
