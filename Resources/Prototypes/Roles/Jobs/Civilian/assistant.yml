@@ -1,6 +1,6 @@
 - type: job
   id: Passenger
-  #name: job-name-passenger
+  name: job-name-passenger
   description: job-description-passenger
   setPreference: false
   playTimeTracker: JobPassenger
