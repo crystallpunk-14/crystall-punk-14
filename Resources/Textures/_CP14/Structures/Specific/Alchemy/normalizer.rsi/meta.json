@@ -26,6 +26,15 @@
       "name": "liq-5"
     },
     {
+      "name": "crystal"
+    },
+    {
+      "name": "rotate_back_stop"
+    },
+    {
+      "name": "rotate_front_stop"
+    },
+    {
       "name": "rotate_back",
       "delays": [
         [
