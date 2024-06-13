@@ -13,10 +13,11 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly PointLightSystem _light = default!;
+    [Dependency] private readonly CP14MagicEnergyCrystalSlotSystem _magicSlot = default!;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<CP14MagicEnergySimpleRegenerationComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CP14MagicEnergyPointLightControllerComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChange);
 
         SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
@@ -33,7 +34,7 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
         _light.SetEnergy(ent, lightEnergy, light);
     }
 
-    private void OnMapInit(Entity<CP14MagicEnergySimpleRegenerationComponent> ent, ref MapInitEvent args)
+    private void OnMapInit(Entity<CP14MagicEnergyDrawComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(ent.Comp.Delay);
     }
@@ -63,15 +64,32 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CP14MagicEnergySimpleRegenerationComponent, CP14MagicEnergyContainerComponent>();
-        while (query.MoveNext(out var uid, out var regenerator, out var magicContainer))
+        var query = EntityQueryEnumerator<CP14MagicEnergyDrawComponent, CP14MagicEnergyContainerComponent>();
+        while (query.MoveNext(out var uid, out var draw, out var magicContainer))
         {
-            if (regenerator.NextUpdateTime >= _gameTiming.CurTime)
+            if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
-            regenerator.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(regenerator.Delay);
+            draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            ChangeEnergy(uid, magicContainer, regenerator.Energy, safe: true);
+            ChangeEnergy(uid, magicContainer, draw.Energy, safe: draw.Safe);
+        }
+
+        var query2 = EntityQueryEnumerator<CP14MagicEnergyDrawComponent, CP14MagicEnergyCrystalSlotComponent>();
+        while (query2.MoveNext(out var uid, out var draw, out var slot))
+        {
+            if (!draw.Enable)
+                continue;
+
+            if (draw.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
+
+            if (!_magicSlot.TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp))
+                continue;
+
+            ChangeEnergy(energyEnt.Value, energyComp, draw.Energy, draw.Safe);
         }
     }
 
@@ -129,13 +147,6 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
                 NewValue = newEnergy,
                 MaxValue = component.MaxEnergy,
             });
-
-            if (component.Energy == 0)
-            {
-                RaiseLocalEvent(uid, new CP14MagicEnergyOutEvent()
-                {
-                });
-            }
         }
     }
 }

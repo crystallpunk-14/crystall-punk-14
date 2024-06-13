@@ -25,13 +25,6 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
 }
 
 /// <summary>
-/// It's triggered when the power runs out in MagicEnergyContainer
-/// </summary>
-public sealed class CP14MagicEnergyOutEvent : EntityEventArgs
-{
-}
-
-/// <summary>
 /// It's triggered when the energy change in MagicEnergyContainer
 /// </summary>
 public sealed class CP14MagicEnergyLevelChangeEvent : EntityEventArgs

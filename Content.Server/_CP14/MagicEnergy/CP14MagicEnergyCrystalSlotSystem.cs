@@ -8,7 +8,7 @@ using Content.Shared.Popups;
 
 namespace Content.Server._CP14.MagicEnergy;
 
-public partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCrystalSlotSystem
+public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCrystalSlotSystem
 {
 
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
