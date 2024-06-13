@@ -10,6 +10,8 @@ public sealed partial class CP14MagicEnergyCrystalSlotComponent : Component
 {
     [DataField(required: true)]
     public string SlotId = string.Empty;
+
+    public bool Powered = false;
 }
 
 [Serializable, NetSerializable]
@@ -19,12 +21,27 @@ public enum CP14MagicSlotVisuals : byte
     Powered
 }
 
-public sealed class CP14MagicEnergyCrystalChangedEvent : EntityEventArgs
+/// <summary>
+/// Is called when the state of the crystal is changed: it is pulled out, inserted, or the amount of energy in it has changed.
+/// </summary>
+public sealed class CP14SlotCrystalChangedEvent : EntityEventArgs
 {
     public readonly bool Ejected;
 
-    public CP14MagicEnergyCrystalChangedEvent(bool ejected)
+    public CP14SlotCrystalChangedEvent(bool ejected)
     {
         Ejected = ejected;
+    }
+}
+
+/// <summary>
+/// Is called when the power status of the device changes.
+/// </summary>
+public sealed class CP14SlotCrystalPowerChangedEvent : EntityEventArgs
+{
+    public readonly bool Powered;
+    public CP14SlotCrystalPowerChangedEvent(bool powered)
+    {
+        Powered = powered;
     }
 }

@@ -1,4 +1,7 @@
 using Content.Server._CP14.MagicEnergy;
+using Content.Server.Audio;
+using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared.Audio;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
@@ -14,6 +17,20 @@ public sealed partial class CP14SolutionNormalizerSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly CP14MagicEnergyCrystalSlotSystem _magicSlot = default!;
+    [Dependency] private readonly AmbientSoundSystem _ambient = default!;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<CP14SolutionNormalizerComponent,CP14SlotCrystalPowerChangedEvent>(OnSlotPowerChanged);
+    }
+
+    private void OnSlotPowerChanged(Entity<CP14SolutionNormalizerComponent> ent, ref CP14SlotCrystalPowerChangedEvent args)
+    {
+        if (TryComp<AmbientSoundComponent>(ent, out var ambient))
+        {
+            _ambient.SetAmbience(ent, args.Powered);
+        }
+    }
 
     public override void Update(float frameTime)
     {

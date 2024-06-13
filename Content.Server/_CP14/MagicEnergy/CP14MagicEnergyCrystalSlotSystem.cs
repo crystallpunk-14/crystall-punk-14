@@ -5,7 +5,6 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Popups;
-using Content.Shared.Rounding;
 using Robust.Shared.Containers;
 
 namespace Content.Server._CP14.MagicEnergy;
@@ -23,6 +22,22 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
     {
         SubscribeLocalEvent<CP14MagicEnergyCrystalComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChanged);
         SubscribeLocalEvent<CP14MagicEnergyCrystalSlotComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<CP14MagicEnergyCrystalSlotComponent, CP14SlotCrystalChangedEvent>(OnCrystalChanged);
+    }
+
+    private void OnCrystalChanged(Entity<CP14MagicEnergyCrystalSlotComponent> ent, ref CP14SlotCrystalChangedEvent args)
+    {
+        var realPowered = TryGetEnergyCrystalFromSlot(ent, out var energyEnt, out var energyComp);
+
+        if (energyComp != null)
+            realPowered = energyComp.Energy > 0;
+
+        if (ent.Comp.Powered != realPowered)
+        {
+            ent.Comp.Powered = realPowered;
+            _appearance.SetData(ent, CP14MagicSlotVisuals.Powered, realPowered);
+            RaiseLocalEvent(ent, new CP14SlotCrystalPowerChangedEvent(realPowered));
+        }
     }
 
     private void OnEnergyChanged(Entity<CP14MagicEnergyCrystalComponent> crystal, ref CP14MagicEnergyLevelChangeEvent args)
@@ -33,8 +48,7 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
         {
             if (itemSlot.Item == crystal)
             {
-                RaiseLocalEvent(container.Owner, new CP14MagicEnergyCrystalChangedEvent(false));
-                _appearance.SetData(container.Owner, CP14MagicSlotVisuals.Powered, args.NewValue > 0);
+                RaiseLocalEvent(container.Owner, new CP14SlotCrystalChangedEvent(false));
             }
         }
     }

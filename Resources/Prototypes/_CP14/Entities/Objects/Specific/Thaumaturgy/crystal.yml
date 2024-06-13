@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14EnergyQuartzBase
+  id: CP14EnergyCrystalBase
   parent: BaseItem
   abstract: true
   description: Processed quartz crystals are excellent repositories of magical energy. And special connectors allow you to conveniently insert them into magical devices, turning them into energy batteries.
@@ -12,50 +12,42 @@
   - type: CP14MagicEnergyContainer
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyPointLightController
-  - type: PointLight
-    radius: 1.5
-    energy: 1
-    color: "#b0eaf6"
-  - type: RandomSprite
-    cP14InheritBaseColor: "#b0eaf6"
 
 
 - type: entity
-  id: CP14EnergyQuartzSmall
-  parent: CP14EnergyQuartzBase
+  id: CP14EnergyCrystalSmall
+  parent: CP14EnergyCrystalBase
   name: small processed quartz
   suffix: Full
   components:
   - type: Sprite
     layers:
       - state: small1
-        color: "#b0eaf6"
+        shader: unshaded
         map: ["random"]
       - state: small_connector
   - type: RandomSprite
     available:
     - random:
-        small1: Inherit
-        small2: Inherit
-        small3: Inherit
+        small1: ""
+        small2: ""
+        small3: ""
   - type: CP14MagicEnergyContainer
     energy: 30
     maxEnergy: 30
 
 - type: entity
-  id: CP14EnergyQuartzSmallEmpty
-  parent: CP14EnergyQuartzSmall
+  id: CP14EnergyCrystalSmallEmpty
+  parent: CP14EnergyCrystalSmall
   suffix: Empty
   components:
   - type: CP14MagicEnergyContainer
     energy: 0
-  - type: PointLight
-    energy: 0
 
 
 - type: entity
-  id: CP14EnergyQuartzMedium
-  parent: CP14EnergyQuartzBase
+  id: CP14EnergyCrystalMedium
+  parent: CP14EnergyCrystalBase
   name: processed quartz
   suffix: Full
   components:
@@ -64,25 +56,23 @@
   - type: Sprite
     layers:
       - state: medium1
-        color: "#b0eaf6"
+        shader: unshaded
         map: ["random"]
       - state: medium_connector
   - type: RandomSprite
     available:
     - random:
-        medium1: Inherit
-        medium2: Inherit
-        medium3: Inherit
+        medium1: ""
+        medium2: ""
+        medium3: ""
   - type: CP14MagicEnergyContainer
     energy: 100
     maxEnergy: 100
 
 - type: entity
-  id: CP14EnergyQuartzMediumEmpty
-  parent: CP14EnergyQuartzMedium
+  id: CP14EnergyCrystalMediumEmpty
+  parent: CP14EnergyCrystalMedium
   suffix: Empty
   components:
   - type: CP14MagicEnergyContainer
-    energy: 0
-  - type: PointLight
     energy: 0

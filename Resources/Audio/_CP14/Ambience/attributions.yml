@@ -22,3 +22,8 @@
   license: "CC-BY-4.0"
   copyright: 'by Benboncan of Freesound.org. Mixed from stereo to mono.'
   source: "https://freesound.org/people/Benboncan/sounds/134699/"
+
+- files: ["ambiAlchemy.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by be-steele of Freesound.org.'
+  source: "https://freesound.org/people/be-steele/sounds/130753/"

@@ -25,7 +25,7 @@ public partial class SharedCP14MagicEnergyCrystalSlotSystem : EntitySystem
 
         _appearance.SetData(slot, CP14MagicSlotVisuals.Inserted, false);
         _appearance.SetData(slot, CP14MagicSlotVisuals.Powered, false);
-        RaiseLocalEvent(slot, new CP14MagicEnergyCrystalChangedEvent(true));
+        RaiseLocalEvent(slot, new CP14SlotCrystalChangedEvent(true));
     }
 
     private void OnCrystalInserted(Entity<CP14MagicEnergyCrystalSlotComponent> slot, ref EntInsertedIntoContainerMessage args)
@@ -37,6 +37,6 @@ public partial class SharedCP14MagicEnergyCrystalSlotSystem : EntitySystem
             return;
 
         _appearance.SetData(slot, CP14MagicSlotVisuals.Inserted, true);
-        RaiseLocalEvent(slot, new CP14MagicEnergyCrystalChangedEvent(false));
+        RaiseLocalEvent(slot, new CP14SlotCrystalChangedEvent(false));
     }
 }
