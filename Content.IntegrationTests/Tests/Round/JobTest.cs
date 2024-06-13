@@ -1,7 +1,5 @@
-
-/* FUCK THIS TEST - CP14, with love
-
 #nullable enable
+
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Pair;
@@ -19,7 +17,7 @@ using Robust.Shared.Prototypes;
 namespace Content.IntegrationTests.Tests.Round;
 [TestFixture]
 public sealed class JobTest
-{
+{/*
     private static ProtoId<JobPrototype> _passenger = "Passenger";
     private static ProtoId<JobPrototype> _engineer = "StationEngineer";
     private static ProtoId<JobPrototype> _captain = "Captain";
@@ -220,5 +218,5 @@ public sealed class JobTest
 
         await pair.Server.WaitPost(() => ticker.RestartRound());
         await pair.CleanReturnAsync();
-    }
+    }*/
 }
