@@ -30,8 +30,8 @@ public sealed partial class CP14SolutionTemperatureSystem : EntitySystem
 
         _timeToNextUpdate = _timing.CurTime + _updateTick;
 
-        NormalizeTemperature();
         FlammableHeating();
+        NormalizeTemperature();
     }
 
     private void NormalizeTemperature()
