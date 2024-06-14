@@ -15,7 +15,7 @@ public sealed partial class CP14InverseEffect : Shared.Chemistry.Reagent.Reagent
     public Dictionary<ProtoId<ReagentPrototype>, ProtoId<ReagentPrototype>> Inversion = new();
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return Loc.GetString("cp14-reagent-effect-guidebook-inverse-effect");
+        return Loc.GetString("cp14-reagent-effect-guidebook-inverse-effect", ("chance", Probability));
     }
 
     public override void Effect(ReagentEffectArgs args)
