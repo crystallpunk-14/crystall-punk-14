@@ -52,6 +52,7 @@
     solutions:
       normalizer:
         maxVol: 50
+  - type: CP14SolutionTemperature
   - type: DrainableSolution
     solution: normalizer
   - type: ExaminableSolution
