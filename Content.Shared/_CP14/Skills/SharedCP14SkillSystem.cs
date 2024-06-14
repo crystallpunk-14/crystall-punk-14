@@ -68,3 +68,13 @@ public partial class SharedCP14SkillSystem : EntitySystem
         return true;
     }
 }
+
+public sealed partial class CP14TrySkillIssueEvent : EntityEventArgs
+{
+    public readonly EntityUid User;
+
+    public CP14TrySkillIssueEvent(EntityUid uid)
+    {
+        User = uid;
+    }
+}

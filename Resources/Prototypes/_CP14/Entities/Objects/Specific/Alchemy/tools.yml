@@ -156,6 +156,10 @@
   - type: CP14Mortar
     solution: mortar
     containerId: storagebase
+  - type: CP14SkillRequirement
+    fuckupChance: 0.05
+    requiredSkills:
+    - Alchemy
 
 - type: entity
   parent: BaseItem

@@ -1,10 +1,14 @@
+using System.Numerics;
 using Content.Server.Popups;
 using Content.Shared._CP14.Skills;
 using Content.Shared._CP14.Skills.Components;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
+using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -16,10 +20,11 @@ namespace Content.Server._CP14.Skills;
 public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {
@@ -27,6 +32,7 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
 
         SubscribeLocalEvent<CP14SkillRequirementComponent, AttemptShootEvent>(OnAttemptShoot);
         SubscribeLocalEvent<CP14SkillRequirementComponent, MeleeHitEvent>(OnMeleeHit);
+        SubscribeLocalEvent<CP14SkillRequirementComponent, CP14TrySkillIssueEvent>(OnSimpleSkillIssue);
     }
 
     private void OnExamined(Entity<CP14SkillRequirementComponent> requirement, ref ExaminedEvent args)
@@ -51,6 +57,19 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
         args.PushMarkup(text);
     }
 
+    private void OnSimpleSkillIssue(Entity<CP14SkillRequirementComponent> requirement, ref CP14TrySkillIssueEvent args)
+    {
+        if (!_random.Prob(requirement.Comp.FuckupChance))
+            return;
+
+        if (HasEnoughSkillToUse(args.User, requirement, out _))
+            return;
+
+        _popup.PopupEntity(Loc.GetString("cp14-skill-issue-drops", ("item", MetaData(requirement).EntityName)), args.User, args.User, PopupType.Large);
+        _hands.TryDrop(args.User, requirement);
+        _throwing.TryThrow(requirement, _random.NextAngle().ToWorldVec(), 1, args.User);
+    }
+
     private void OnMeleeHit(Entity<CP14SkillRequirementComponent> requirement, ref MeleeHitEvent args)
     {
         if (!_random.Prob(requirement.Comp.FuckupChance))
@@ -63,7 +82,8 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
         {
             case 0:
                 _popup.PopupEntity(Loc.GetString("cp14-skill-issue-drops", ("item", MetaData(requirement).EntityName)), args.User, args.User, PopupType.Large);
-                _stun.TryParalyze(args.User, TimeSpan.FromSeconds(1.5f), true);
+                _hands.TryDrop(args.User, requirement);
+                _throwing.TryThrow(requirement, _random.NextAngle().ToWorldVec(), 1, args.User);
                 break;
             case 1:
                 _popup.PopupEntity(Loc.GetString("cp14-skill-issue-self-harm"), args.User, args.User, PopupType.Large);
@@ -91,8 +111,8 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
         {
             case 0:
                 _popup.PopupEntity(Loc.GetString("cp14-skill-issue-drops", ("item", MetaData(requirement).EntityName)), args.User, args.User, PopupType.Large);
-                _stun.TryParalyze(args.User, TimeSpan.FromSeconds(1.5f), true);
-                args.Cancelled = true;
+                _hands.TryDrop(args.User, requirement);
+                _throwing.TryThrow(requirement, _random.NextAngle().ToWorldVec(), 1, args.User);
                 break;
             case 1:
                 _popup.PopupEntity(Loc.GetString("cp14-skill-issue-self-harm"), args.User, args.User, PopupType.Large);
