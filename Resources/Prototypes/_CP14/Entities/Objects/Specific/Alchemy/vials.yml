@@ -13,6 +13,7 @@
     solutions:
       vial:
         maxVol: 1
+  - type: CP14SolutionTemperature
   - type: MixableSolution
     solution: vial
   - type: FitsInDispenser

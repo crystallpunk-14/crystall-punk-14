@@ -18,6 +18,7 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+  - type: CP14SolutionTemperature
   - type: SolutionContainerManager
     solutions:
       vat:
@@ -103,6 +104,7 @@
     solutions:
       mortar:
         maxVol: 30
+  - type: CP14SolutionTemperature
   - type: Spillable
     solution: mortar
   - type: DrainableSolution
@@ -177,6 +179,7 @@
     solution: vial
   - type: SolutionItemStatus
     solution: vial
+  - type: CP14SolutionTemperature
   - type: SolutionContainerManager
     solutions:
       vial:
