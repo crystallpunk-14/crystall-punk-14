@@ -33,7 +33,7 @@ public partial class SharedCP14SkillSystem : EntitySystem
             }
             else if (!requirement.NeedAll && hasSkill)
             {
-                return true;
+                success = true;
             }
             else if (!requirement.NeedAll && !hasSkill)
             {

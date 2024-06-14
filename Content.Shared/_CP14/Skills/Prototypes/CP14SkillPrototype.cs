@@ -12,6 +12,6 @@ public sealed partial class CP14SkillPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField]
+    [DataField(required: true)]
     public LocId? Name{ get; private set; }
 }

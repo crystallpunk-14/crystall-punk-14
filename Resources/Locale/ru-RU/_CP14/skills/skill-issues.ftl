@@ -1,2 +1,2 @@
-cp14-skill-issue-melee-1 = {$item} неловко вываливается из ваших рук!
-cp14-skill-issue-melee-2 = Вы случайно попадаете по себе!
+cp14-skill-issue-drops = {$item} неловко вываливается из ваших рук!
+cp14-skill-issue-self-harm = Вы случайно попадаете по себе!

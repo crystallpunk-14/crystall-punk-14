@@ -385,7 +385,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         // Do this AFTER attack so it doesn't spam every tick
         var ev = new AttemptMeleeEvent();
-        ev.User = user;  //CrystallPunk
         RaiseLocalEvent(weaponUid, ref ev);
 
         //CrystallPunk melee improvment

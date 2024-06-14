@@ -4,4 +4,4 @@ namespace Content.Shared.Weapons.Melee.Events;
 /// Raised directed on a weapon when attempt a melee attack.
 /// </summary>
 [ByRefEvent]
-public record struct AttemptMeleeEvent(bool Cancelled, string? Message, EntityUid User); //CP14 User throw
+public record struct AttemptMeleeEvent(bool Cancelled, string? Message);
