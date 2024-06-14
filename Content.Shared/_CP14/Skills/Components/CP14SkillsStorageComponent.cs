@@ -1,11 +1,12 @@
+using Content.Shared._CP14.Skills.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Skills;
+namespace Content.Shared._CP14.Skills.Components;
 
 /// <summary>
 /// a list of skills learned by this entity
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SkillSystem))]
+[RegisterComponent, Access(typeof(SharedCP14SkillSystem))]
 public sealed partial class CP14SkillsStorageComponent : Component
 {
     [DataField]

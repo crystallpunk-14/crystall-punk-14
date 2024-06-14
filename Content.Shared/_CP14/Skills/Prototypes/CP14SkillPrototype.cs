@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Skills;
+namespace Content.Shared._CP14.Skills.Prototypes;
 
 /// <summary>
 /// A prototype of the lock category. Need a roundstart mapping to ensure that keys and locks will fit together despite randomization.

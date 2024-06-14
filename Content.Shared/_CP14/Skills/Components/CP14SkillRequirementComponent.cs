@@ -1,11 +1,12 @@
+using Content.Shared._CP14.Skills.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Skills;
+namespace Content.Shared._CP14.Skills.Components;
 
 /// <summary>
 /// Limits the use of this entity behind certain skills
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SkillSystem))]
+[RegisterComponent, Access(typeof(SharedCP14SkillSystem))]
 public sealed partial class CP14SkillRequirementComponent : Component
 {
     /// <summary>
@@ -14,6 +15,12 @@ public sealed partial class CP14SkillRequirementComponent : Component
     /// </summary>
     [DataField]
     public bool NeedAll = false;
+
+    /// <summary>
+    /// the chances of something going wrong when using wihout skill
+    /// </summary>
+    [DataField]
+    public float FuckupChance = 0.5f;
 
     [DataField(required: true)]
     public List<ProtoId<CP14SkillPrototype>> RequiredSkills = new();

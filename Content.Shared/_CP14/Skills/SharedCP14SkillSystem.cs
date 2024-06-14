@@ -1,10 +1,14 @@
-using Content.Shared.Mobs;
+using Content.Shared._CP14.Skills.Components;
+using Content.Shared._CP14.Skills.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.Skills;
 
-public sealed partial class CP14SkillSystem : EntitySystem
+public partial class SharedCP14SkillSystem : EntitySystem
 {
+    [Dependency] private readonly IRobustRandom _random = default!;
+
     public bool HasEnoughSkillToUse(EntityUid user, EntityUid target, out List<ProtoId<CP14SkillPrototype>> missingSkills)
     {
         missingSkills = new();

@@ -385,12 +385,13 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         // Do this AFTER attack so it doesn't spam every tick
         var ev = new AttemptMeleeEvent();
+        ev.User = user;  //CrystallPunk
         RaiseLocalEvent(weaponUid, ref ev);
 
-        //CrystallPun melee improvment
+        //CrystallPunk melee improvment
         if (weapon.CPSwingBeverage)
             weapon.SwingLeft = !weapon.SwingLeft;
-        //CrystallPun melee improvment end
+        //CrystallPunk melee improvment end
 
         if (ev.Cancelled)
         {
