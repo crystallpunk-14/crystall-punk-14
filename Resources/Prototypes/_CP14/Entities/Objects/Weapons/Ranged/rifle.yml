@@ -26,6 +26,10 @@
     proto: CP14CartridgeBulletRifle
   - type: UseDelay
     delay: 2
+  - type: CP14SkillRequirement
+    fuckupChance: 0.85
+    requiredSkills:
+    - Firearms
 
 - type: entity
   name: crush
