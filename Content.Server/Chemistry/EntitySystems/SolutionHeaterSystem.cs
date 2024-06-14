@@ -1,5 +1,3 @@
-using Content.Server._CP14.Temperature;
-using Content.Server.Atmos.Components;
 using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Power.Components;

@@ -14,12 +14,6 @@ public sealed partial class CP14SolutionTemperatureSystem : EntitySystem
 
     private TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
-    public override void Initialize()
-    {
-        base.Initialize();
-
-
-    }
 
     public override void Update(float frameTime)
     {
