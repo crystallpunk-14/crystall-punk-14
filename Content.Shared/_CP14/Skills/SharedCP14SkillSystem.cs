@@ -7,7 +7,6 @@ namespace Content.Shared._CP14.Skills;
 
 public partial class SharedCP14SkillSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
