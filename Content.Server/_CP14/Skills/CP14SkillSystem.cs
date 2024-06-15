@@ -54,8 +54,6 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
             text += Loc.GetString("cp14-skill-examined-skill", ("color", color), ("skill", Loc.GetString(name))) + "\n";
 
         }
-        text += Loc.GetString(!canUse ? "cp14-skill-examined-failed" : "cp14-skill-examined-success", ("color", !canUse ? "#c23030" : "#3fc488")) + "\n";
-
         args.PushMarkup(text);
     }
 
