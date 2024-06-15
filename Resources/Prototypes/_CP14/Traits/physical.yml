@@ -51,4 +51,12 @@
 
 # 0
 
+- type: trait
+  id: CP14Snoring
+  name: cp14-trait-snoring-name
+  description: cp14-trait-snoring-desc
+  category: CP14PhysicalTraits
+  components:
+    - type: Snoring
+
 # 1
