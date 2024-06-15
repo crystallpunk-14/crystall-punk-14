@@ -6,6 +6,10 @@
   startingGear: CP14AdventurerGear
   icon: "CP14JobIconAdventurer"
   supervisors: cp14-job-supervisors-command
+  special:
+  - !type:CP14AddSkillSpecial
+    skills:
+    - Warcraft
 
 - type: job
   id: CP14Alchemist
@@ -15,6 +19,10 @@
   startingGear: CP14AdventurerGear #TODO
   icon: "CP14JobIconAlchemist"
   supervisors: cp14-job-supervisors-command
+  special:
+  - !type:CP14AddSkillSpecial
+    skills:
+    - Alchemy
 
 - type: startingGear
   id: CP14AdventurerGear

@@ -292,8 +292,6 @@
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
   - type: CP14SkillsStorage
-    skills:
-    - Alchemy
 
 - type: entity
   save: false
