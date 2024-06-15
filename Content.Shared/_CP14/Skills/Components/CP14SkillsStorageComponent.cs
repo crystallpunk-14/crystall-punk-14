@@ -9,6 +9,6 @@ namespace Content.Shared._CP14.Skills.Components;
 [RegisterComponent, Access(typeof(SharedCP14SkillSystem))]
 public sealed partial class CP14SkillsStorageComponent : Component
 {
-    [DataField]
-    public List<ProtoId<CP14SkillPrototype>> Skills = new();
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public List<ProtoId<CP14SkillPrototype>> Skills { get; private set; }= new();
 }

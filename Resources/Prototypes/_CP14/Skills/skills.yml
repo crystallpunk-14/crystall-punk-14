@@ -1,14 +1,19 @@
 - type: CP14Skill
   id: Alchemy
   name: cp14-skill-name-alchemy
+  desc: cp14-skill-desc-alchemy
+  components:
+  - type: SolutionScanner
 
 - type: CP14Skill
   id: Warcraft
   name: cp14-skill-name-warcraft
+  desc: cp14-skill-desc-warcraft
 
 - type: CP14Skill
   id: Firearms
   name: cp14-skill-name-firearms
+  desc: cp14-skill-desc-firearms
 
 
 # Навыки должны отражать сферы деятельности, в которых персонаж квалифицирован, и может пользоваться продвинутой техникой. Ключевая часть - продвинутой. Базовыми навыками владеют все, но пользоваться чем то сложным могут только специалисты. Так же, для геймплея эта продвинутая часть необязательна - но она повышает эффективность

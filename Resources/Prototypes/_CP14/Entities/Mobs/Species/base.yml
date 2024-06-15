@@ -293,7 +293,7 @@
     alternateState: Standing #TODO - custom visuals
   - type: CP14SkillsStorage
     skills:
-    - Warcraft
+    - Alchemy
 
 - type: entity
   save: false

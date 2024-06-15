@@ -14,4 +14,10 @@ public sealed partial class CP14SkillPrototype : IPrototype
 
     [DataField(required: true)]
     public LocId? Name{ get; private set; }
+
+    [DataField]
+    public LocId? Desc{ get; private set; }
+
+    [DataField]
+    public ComponentRegistry Components = new();
 }

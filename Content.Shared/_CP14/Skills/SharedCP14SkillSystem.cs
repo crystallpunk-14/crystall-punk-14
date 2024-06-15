@@ -8,6 +8,20 @@ namespace Content.Shared._CP14.Skills;
 public partial class SharedCP14SkillSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<CP14SkillsStorageComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnMapInit(Entity<CP14SkillsStorageComponent> ent, ref MapInitEvent args)
+    {
+        foreach (var skill in ent.Comp.Skills)
+        {
+            TryLearnSkill(ent, skill, force: true);
+        }
+    }
 
     public bool HasEnoughSkillToUse(EntityUid user, EntityUid target, out List<ProtoId<CP14SkillPrototype>> missingSkills)
     {
@@ -44,15 +58,21 @@ public partial class SharedCP14SkillSystem : EntitySystem
         return success;
     }
 
-    public bool TryLearnSkill(EntityUid uid, ProtoId<CP14SkillPrototype> skill)
+    public bool TryLearnSkill(EntityUid uid, ProtoId<CP14SkillPrototype> skill, bool force = false)
     {
         if (!TryComp<CP14SkillsStorageComponent>(uid, out var skillStorage))
             return false;
 
-        if (skillStorage.Skills.Contains(skill))
-            return false;
+        if (!skillStorage.Skills.Contains(skill))
+        {
+            skillStorage.Skills.Add(skill);
+            if (!force)
+                return false;
+        }
 
-        skillStorage.Skills.Add(skill);
+        var proto = _proto.Index(skill);
+        EntityManager.AddComponents(uid, proto.Components);
+
         return true;
     }
 
@@ -65,6 +85,10 @@ public partial class SharedCP14SkillSystem : EntitySystem
             return false;
 
         skillStorage.Skills.Remove(skill);
+
+        var proto = _proto.Index(skill);
+        EntityManager.RemoveComponents(uid, proto.Components);
+
         return true;
     }
 }
