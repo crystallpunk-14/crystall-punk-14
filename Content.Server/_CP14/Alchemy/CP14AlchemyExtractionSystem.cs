@@ -33,6 +33,13 @@ public sealed partial class  CP14AlchemyExtractionSystem : EntitySystem
 
         _audio.PlayPvs(pestle.HitSound, mortar);
 
+        var ev = new PestleGrindingEvent()
+        {
+            User = args.User,
+            Target = args.Target,
+        };
+        RaiseLocalEvent(args.Used, ev);
+
         if (!_random.Prob(pestle.Probability))
             return;
 
@@ -85,4 +92,13 @@ public sealed partial class  CP14AlchemyExtractionSystem : EntitySystem
 
         _solutionContainer.TryAddSolution(solutionEnt.Value, juiceSolution);
     }
+}
+
+/// <summary>
+/// is triggered on the pestle when the player uses it to grind something.
+/// </summary>
+public sealed class PestleGrindingEvent : EntityEventArgs
+{
+    public EntityUid User;
+    public EntityUid Target;
 }

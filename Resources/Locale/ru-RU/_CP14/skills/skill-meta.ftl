@@ -1,4 +1,4 @@
-cp14-skill-name-alchemy = Продвинутая алхимия
+cp14-skill-name-alchemy = Алхимия
 cp14-skill-desc-alchemy = Вы достаточно опытны, чтобы уверенно пользоваться сложным алхимическим оборудованием.
 
 cp14-skill-name-blacksmith = Кузнечное дело

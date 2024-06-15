@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server._CP14.Alchemy;
 using Content.Server._CP14.MeleeWeapon;
 using Content.Server.Popups;
 using Content.Shared._CP14.Skills;
@@ -35,6 +36,7 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
         SubscribeLocalEvent<CP14SkillRequirementComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<CP14SkillRequirementComponent, CP14TrySkillIssueEvent>(OnSimpleSkillIssue);
         SubscribeLocalEvent<CP14SkillRequirementComponent, SharpingEvent>(OnSharpning);
+        SubscribeLocalEvent<CP14SkillRequirementComponent, PestleGrindingEvent>(OnPestleGrinding);
     }
 
     private void OnExamined(Entity<CP14SkillRequirementComponent> requirement, ref ExaminedEvent args)
@@ -55,6 +57,22 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
 
         }
         args.PushMarkup(text);
+    }
+
+    private void OnPestleGrinding(Entity<CP14SkillRequirementComponent> requirement, ref PestleGrindingEvent args)
+    {
+        if (!_random.Prob(requirement.Comp.FuckupChance))
+            return;
+
+        if (HasEnoughSkillToUse(args.User, requirement, out _))
+            return;
+
+        _popup.PopupEntity(Loc.GetString("cp14-skill-issue-push", ("item", MetaData(args.Target).EntityName)),
+            args.User,
+            args.User,
+            PopupType.Large);
+        _hands.TryDrop(args.User, args.Target);
+        _throwing.TryThrow(args.Target, _random.NextAngle().ToWorldVec(), 1, args.User);
     }
 
     private void OnSharpning(Entity<CP14SkillRequirementComponent> requirement, ref SharpingEvent args)

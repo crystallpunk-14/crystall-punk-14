@@ -1,4 +1,4 @@
-cp14-skill-name-alchemy = Advanced alchemy
+cp14-skill-name-alchemy = Alchemy
 cp14-skill-desc-alchemy = You are experienced enough to use complex alchemical equipment with confidence.
 
 cp14-skill-name-blacksmith = Blacksmithing

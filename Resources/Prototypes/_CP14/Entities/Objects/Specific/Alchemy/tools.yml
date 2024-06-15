@@ -84,6 +84,10 @@
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: pestle
   - type: CP14Pestle
+  - type: CP14SkillRequirement
+    fuckupChance: 0.05
+    requiredSkills:
+    - Alchemy
 
 - type: entity
   id: CP14Mortar
@@ -156,10 +160,6 @@
   - type: CP14Mortar
     solution: mortar
     containerId: storagebase
-  - type: CP14SkillRequirement
-    fuckupChance: 0.05
-    requiredSkills:
-    - Alchemy
 
 - type: entity
   parent: BaseItem
