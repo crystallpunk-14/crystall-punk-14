@@ -52,7 +52,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
             if (!TryComp<CP14SharpenedComponent>(item, out var sharpened))
                 continue;
 
-            SharpThing(stone, item, sharpened);
+            SharpThing(stone, item, sharpened, args.User);
             return;
         }
     }
@@ -65,18 +65,28 @@ public sealed class CP14SharpeningSystem : EntitySystem
         if (TryComp<UseDelayComponent>(stone, out var useDelay) && _useDelay.IsDelayed( new Entity<UseDelayComponent>(stone, useDelay)))
             return;
 
-        SharpThing(stone, args.Target.Value, sharpened);
+        SharpThing(stone, args.Target.Value, sharpened, args.User);
     }
 
-    private void SharpThing(Entity<CP14SharpeningStoneComponent> stone, EntityUid target, CP14SharpenedComponent component)
+    private void SharpThing(Entity<CP14SharpeningStoneComponent> stone, EntityUid target, CP14SharpenedComponent component, EntityUid user)
     {
-        _audio.PlayPvs(stone.Comp.SharpeningSound, target);
-        Spawn("EffectSparks", Transform(target).Coordinates);
+        var ev = new SharpingEvent()
+        {
+            User = user,
+            Target = target,
+        };
+        RaiseLocalEvent(stone, ev);
 
-        _damageableSystem.TryChangeDamage(stone, stone.Comp.SelfDamage);
-        _damageableSystem.TryChangeDamage(target, stone.Comp.TargetDamage);
+        if (!ev.Canceled)
+        {
+            _audio.PlayPvs(stone.Comp.SharpeningSound, target);
+            Spawn("EffectSparks", Transform(target).Coordinates);
 
-        component.Sharpness = MathHelper.Clamp01(component.Sharpness + stone.Comp.SharpnessHeal);
+            _damageableSystem.TryChangeDamage(stone, stone.Comp.SelfDamage);
+            _damageableSystem.TryChangeDamage(target, stone.Comp.TargetDamage);
+
+            component.Sharpness = MathHelper.Clamp01(component.Sharpness + stone.Comp.SharpnessHeal);
+        }
 
         _useDelay.TryResetDelay(stone);
     }
@@ -109,4 +119,14 @@ public sealed class CP14SharpeningSystem : EntitySystem
         args.Damage *= sharpened.Comp.Sharpness;
     }
 
+}
+
+/// <summary>
+/// Caused on a sharpening stone when someone tries to sharpen an object with it
+/// </summary>
+public sealed class SharpingEvent : EntityEventArgs
+{
+    public bool Canceled = false;
+    public EntityUid User;
+    public EntityUid Target;
 }

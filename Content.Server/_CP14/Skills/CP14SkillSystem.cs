@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server._CP14.MeleeWeapon;
 using Content.Server.Popups;
 using Content.Shared._CP14.Skills;
 using Content.Shared._CP14.Skills.Components;
@@ -33,6 +34,7 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
         SubscribeLocalEvent<CP14SkillRequirementComponent, GunShotEvent>(OnGunShot);
         SubscribeLocalEvent<CP14SkillRequirementComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<CP14SkillRequirementComponent, CP14TrySkillIssueEvent>(OnSimpleSkillIssue);
+        SubscribeLocalEvent<CP14SkillRequirementComponent, SharpingEvent>(OnSharpning);
     }
 
     private void OnExamined(Entity<CP14SkillRequirementComponent> requirement, ref ExaminedEvent args)
@@ -55,6 +57,36 @@ public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
         text += Loc.GetString(!canUse ? "cp14-skill-examined-failed" : "cp14-skill-examined-success", ("color", !canUse ? "#c23030" : "#3fc488")) + "\n";
 
         args.PushMarkup(text);
+    }
+
+    private void OnSharpning(Entity<CP14SkillRequirementComponent> requirement, ref SharpingEvent args)
+    {
+        if (!_random.Prob(requirement.Comp.FuckupChance))
+            return;
+
+        if (HasEnoughSkillToUse(args.User, requirement, out _))
+            return;
+
+        switch (_random.Next(2))
+        {
+            case 0:
+                _popup.PopupEntity(Loc.GetString("cp14-skill-issue-sharp-weapon-harm", ("item", MetaData(args.Target).EntityName)), args.User, args.User, PopupType.Large);
+                var weaponDamage = new DamageSpecifier();
+                weaponDamage.DamageDict.Add("Blunt", _random.NextFloat(5));
+                _damageable.TryChangeDamage(args.Target, weaponDamage);
+                break;
+            case 1:
+                _popup.PopupEntity(Loc.GetString("cp14-skill-issue-sharp-self-harm"), args.User, args.User, PopupType.Large);
+
+                var damage = new DamageSpecifier();
+                if (TryComp<MeleeWeaponComponent>(requirement, out var melee))
+                    damage = melee.Damage;
+                else
+                    damage.DamageDict.Add("Slash", _random.NextFloat(10));
+
+                _damageable.TryChangeDamage(args.User, damage);
+                break;
+        }
     }
 
     private void OnSimpleSkillIssue(Entity<CP14SkillRequirementComponent> requirement, ref CP14TrySkillIssueEvent args)

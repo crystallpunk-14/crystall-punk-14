@@ -4,6 +4,11 @@
   desc: cp14-skill-desc-alchemy
 
 - type: CP14Skill
+  id: Blacksmith
+  name: cp14-skill-name-blacksmith
+  desc: cp14-skill-desc-blacksmith
+
+- type: CP14Skill
   id: Warcraft
   name: cp14-skill-name-warcraft
   desc: cp14-skill-desc-warcraft
