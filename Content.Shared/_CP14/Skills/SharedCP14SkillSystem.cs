@@ -13,6 +13,17 @@ public partial class SharedCP14SkillSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14SkillsStorageComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14AutoAddSkillComponent, MapInitEvent>(AutoAddSkill);
+    }
+
+    private void AutoAddSkill(Entity<CP14AutoAddSkillComponent> ent, ref MapInitEvent args)
+    {
+        foreach (var skill in ent.Comp.Skills)
+        {
+            TryLearnSkill(ent, skill);
+        }
+
+        RemComp(ent, ent.Comp);
     }
 
     private void OnMapInit(Entity<CP14SkillsStorageComponent> ent, ref MapInitEvent args)
