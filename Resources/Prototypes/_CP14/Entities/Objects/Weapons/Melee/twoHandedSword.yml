@@ -44,3 +44,7 @@
     walkModifier: 0.9
     sprintModifier: 0.8
   - type: HeldSpeedModifier
+  - type: CP14SkillRequirement
+    fuckupChance: 0.5
+    requiredSkills:
+    - Warcraft

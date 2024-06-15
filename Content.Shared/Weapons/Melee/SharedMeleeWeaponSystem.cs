@@ -387,10 +387,10 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var ev = new AttemptMeleeEvent();
         RaiseLocalEvent(weaponUid, ref ev);
 
-        //CrystallPun melee improvment
+        //CrystallPunk melee improvment
         if (weapon.CPSwingBeverage)
             weapon.SwingLeft = !weapon.SwingLeft;
-        //CrystallPun melee improvment end
+        //CrystallPunk melee improvment end
 
         if (ev.Cancelled)
         {

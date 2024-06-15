@@ -46339,40 +46339,10 @@ entities:
     - type: Transform
       pos: -6.5,-0.5
       parent: 2
-  - uid: 649
-    components:
-    - type: Transform
-      pos: 1.5,0.5
-      parent: 2
   - uid: 650
     components:
     - type: Transform
       pos: -4.5,4.5
-      parent: 2
-  - uid: 651
-    components:
-    - type: Transform
-      pos: -0.5,4.5
-      parent: 2
-  - uid: 652
-    components:
-    - type: Transform
-      pos: 1.5,4.5
-      parent: 2
-  - uid: 653
-    components:
-    - type: Transform
-      pos: -0.5,0.5
-      parent: 2
-  - uid: 654
-    components:
-    - type: Transform
-      pos: -0.5,-3.5
-      parent: 2
-  - uid: 655
-    components:
-    - type: Transform
-      pos: 1.5,-3.5
       parent: 2
   - uid: 656
     components:
@@ -46408,6 +46378,38 @@ entities:
     components:
     - type: Transform
       pos: -12.5,4.5
+      parent: 2
+- proto: CP14SpawnPointAlchemist
+  entities:
+  - uid: 284
+    components:
+    - type: Transform
+      pos: -0.5,-3.5
+      parent: 2
+  - uid: 649
+    components:
+    - type: Transform
+      pos: 1.5,4.5
+      parent: 2
+  - uid: 651
+    components:
+    - type: Transform
+      pos: -0.5,0.5
+      parent: 2
+  - uid: 652
+    components:
+    - type: Transform
+      pos: 1.5,-3.5
+      parent: 2
+  - uid: 653
+    components:
+    - type: Transform
+      pos: -0.5,4.5
+      parent: 2
+  - uid: 655
+    components:
+    - type: Transform
+      pos: 1.5,0.5
       parent: 2
 - proto: CP14TableWooden
   entities:
@@ -46756,12 +46758,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,3.5
       parent: 2
-  - uid: 284
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,4.5
-      parent: 2
   - uid: 285
     components:
     - type: Transform
@@ -46873,6 +46869,11 @@ entities:
     components:
     - type: Transform
       pos: -13.5,3.5
+      parent: 2
+  - uid: 654
+    components:
+    - type: Transform
+      pos: -1.5,4.5
       parent: 2
   - uid: 664
     components:

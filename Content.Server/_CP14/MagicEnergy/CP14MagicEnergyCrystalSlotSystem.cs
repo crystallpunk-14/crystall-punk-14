@@ -11,7 +11,6 @@ namespace Content.Server._CP14.MagicEnergy;
 
 public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCrystalSlotSystem
 {
-
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
