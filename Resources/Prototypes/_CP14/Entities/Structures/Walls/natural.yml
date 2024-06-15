@@ -26,6 +26,11 @@
           path: /Audio/Effects/break_stone.ogg
           params:
             volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14StoneBlock1:
+            min: 2
+            max: 3
 
 - type: entity
   id: CP14WallDirt
@@ -150,6 +155,9 @@
           CP14OreSilver:
             min: 1
             max: 5
+          CP14StoneBlock1:
+            min: 2
+            max: 3
   - type: IconSmooth
     base: wall
 
@@ -181,5 +189,8 @@
           CP14OreGold:
             min: 1
             max: 5
+          CP14StoneBlock1:
+            min: 2
+            max: 3
   - type: IconSmooth
     base: wall
