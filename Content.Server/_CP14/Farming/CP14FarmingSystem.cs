@@ -23,10 +23,10 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         SubscribeLocalEvent<CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
 
         SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<CP14PlantEnergyRegenerationComponent, MapInitEvent>(OnRegenerationMapInit);
+        SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, MapInitEvent>(OnRegenerationMapInit);
     }
 
-    private void OnRegenerationMapInit(Entity<CP14PlantEnergyRegenerationComponent> regeneration, ref MapInitEvent args)
+    private void OnRegenerationMapInit(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref MapInitEvent args)
     {
         regeneration.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(regeneration.Comp.MinUpdateFrequency, regeneration.Comp.MaxUpdateFrequency));
     }
@@ -36,7 +36,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CP14PlantComponent, CP14PlantEnergyRegenerationComponent>();
+        var query = EntityQueryEnumerator<CP14PlantComponent, CP14PlantEnergyFromLightComponent>();
         while (query.MoveNext(out var uid, out var plant, out var regeneration))
         {
             if (_timing.CurTime <= regeneration.NextUpdateTime)
