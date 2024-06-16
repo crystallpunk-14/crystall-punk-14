@@ -3,6 +3,8 @@ using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Farming;
 
@@ -10,6 +12,8 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -19,6 +23,12 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         SubscribeLocalEvent<CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
 
         SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14PlantEnergyRegenerationComponent, MapInitEvent>(OnRegenerationMapInit);
+    }
+
+    private void OnRegenerationMapInit(Entity<CP14PlantEnergyRegenerationComponent> regeneration, ref MapInitEvent args)
+    {
+        regeneration.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(regeneration.Comp.MinUpdateFrequency, regeneration.Comp.MaxUpdateFrequency));
     }
 
 
@@ -26,9 +36,25 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CP14PlantComponent>();
-        while (query.MoveNext(out var uid, out var plantTest))
+        var query = EntityQueryEnumerator<CP14PlantComponent, CP14PlantEnergyRegenerationComponent>();
+        while (query.MoveNext(out var uid, out var plant, out var regeneration))
         {
+            if (_timing.CurTime <= regeneration.NextUpdateTime)
+                continue;
+
+            regeneration.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(regeneration.MinUpdateFrequency, regeneration.MaxUpdateFrequency));
+
+            var gainEnergy = false;
+            var daylight = _dayCycle.TryDaylightThere(uid, true);
+
+            if (regeneration.OnDaylight && daylight)
+                gainEnergy = true;
+
+            if (regeneration.InDark && !daylight)
+                gainEnergy = true;
+
+            if (gainEnergy)
+                plant.Energy += regeneration.Energy;
         }
     }
 
