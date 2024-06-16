@@ -74,8 +74,8 @@
     foldedEquippedPrefix: flipped
     foldedHeldPrefix: flipped
   - type: Sprite
-    sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi #TODO sprite
+    sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
+    sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
   - type: CP14MagicEnergyScanner
 
