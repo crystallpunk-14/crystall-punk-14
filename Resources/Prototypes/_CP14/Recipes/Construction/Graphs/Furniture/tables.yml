@@ -1,5 +1,5 @@
 - type: constructionGraph
-  id: CP14Table
+  id: CP14TableWooden
   start: start
   graph:
     - node: start
