@@ -1,5 +1,6 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared._CP14.Skills;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -31,6 +32,8 @@ public sealed class InjectorSystem : SharedInjectorSystem
 
     private bool TryUseInjector(Entity<InjectorComponent> injector, EntityUid target, EntityUid user)
     {
+        RaiseLocalEvent(injector, new CP14TrySkillIssueEvent(user)); //CP14 Skill issue event
+
         // Handle injecting/drawing for solutions
         if (injector.Comp.ToggleState == InjectorToggleMode.Inject)
         {

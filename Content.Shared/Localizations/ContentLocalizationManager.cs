@@ -12,7 +12,7 @@ namespace Content.Shared.Localizations
         // If you want to change your codebase's language, do it here.
         private const string Culture = "ru-RU"; // CrystallPunk-Localization
         private const string FallbackCulture = "en-US"; // CrystallPunk-Localization
-        //Creating an English CrystallPunk server? Set Culture to "en-US" and FallbackCulture to "en-defaults"
+        //Creating an English CrystallPunk server? Set Culture to "en-US"
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.

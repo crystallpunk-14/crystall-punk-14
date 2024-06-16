@@ -1,5 +1,17 @@
 - type: roleLoadout
-  id: JobAdventurer
+  id: JobCP14Adventurer
+  groups:
+  - CP14TestHead
+  - CP14TestEyes
+  - CP14TestMask
+  - CP14TestCloak
+  - CP14TestGloves
+  - CP14TestShirt
+  - CP14TestPants
+  - CP14TestShoes
+
+- type: roleLoadout
+  id: JobCP14Alchemist
   groups:
   - CP14TestHead
   - CP14TestEyes

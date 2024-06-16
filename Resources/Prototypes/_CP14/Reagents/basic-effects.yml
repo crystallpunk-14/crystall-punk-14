@@ -1,3 +1,4 @@
+
 - type: reagent
   id: CP14BasicEffectEmpty
   name: cp14-reagent-name-basic-empty
@@ -6,6 +7,9 @@
   flavor: CP14Bitterly
   color: "#858585"
   physicalDesc: cp14-reagent-physical-desc-colorless
+
+# USEFUL
+# Effects that have a direct impact on gameplay
 
 - type: reagent
   id: CP14BasicEffectHealBrute
@@ -72,24 +76,6 @@
             Poison: -10
 
 - type: reagent
-  id: CP14BasicEffectRainbow
-  name: cp14-reagent-name-see-rainbow
-  desc: cp14-reagent-desc-see-rainbow
-  group: CP14BasicEffect
-  flavor: CP14Bitterly
-  color: "#d442db"
-  physicalDesc: cp14-reagent-physical-desc-colorless
-  metabolisms:
-    Narcotic:
-      effects:
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
-        type: Add
-        time: 25
-        refresh: false
-
-- type: reagent
   id: CP14BasicEffectSatiateHunger
   name: cp14-reagent-name-basic-satiate-hunger
   desc: cp14-reagent-desc-basic-satiate-hunger
@@ -118,6 +104,59 @@
         factor: 6
 
 - type: reagent
+  id: CP14BasicEffectHealCold
+  name: cp14-reagent-name-basic-heal-cold
+  desc: cp14-reagent-desc-basic-heal-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#a3511a"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageCold
+  name: cp14-reagent-name-basic-damage-cold
+  desc: cp14-reagent-desc-basic-damage-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#1a95a3"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 10
+
+# USELESS
+# Things that don't directly affect gameplay.
+
+- type: reagent
+  id: CP14BasicEffectRainbow
+  name: cp14-reagent-name-see-rainbow
+  desc: cp14-reagent-desc-see-rainbow
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#d442db"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 25
+        refresh: false
+
+- type: reagent
   id: CP14BasicEffectEmoteCough
   name: cp14-reagent-name-basic-emote-cough
   desc: cp14-reagent-desc-basic-emote-cough
@@ -132,3 +171,17 @@
         showInChat: true
         emote: Cough
         probability: 0.3
+
+- type: reagent
+  id: CP14BasicEffectVomit
+  name: cp14-reagent-name-basic-vomit
+  desc: cp14-reagent-desc-basic-vomit
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#87a667"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      effects:
+      - !type:ChemVomit
+        probability: 0.25

@@ -11,6 +11,22 @@ CP14FloorBricksCarvedSquare: null
 # 2024-05-24
 CP14CardboardWall: CP14WallCardboard
 
+# 2024-06-06
+CP14CaveStoneWall: CP14WallStone
+CP14CaveStoneWallSilverOre: CP14WallStoneSilverOre
+CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
+
+# 2024-06-07
+CP14GatherableBloodgrass2: CP14GatherableBloodgrass
+CP14GatherableBloodgrass3: CP14GatherableBloodgrass
+CP14GatherableBloodgrass4: CP14GatherableBloodgrass
+CP14GatherableBloodgrass5: CP14GatherableBloodgrass
+
+# 2024-06-10
+CP14ClothingCloakHoodieYellow: CP14ClothingCloakSimpleWhite
+CP14ClothingPantsHarlequinRed: CP14ClothingPantsTrouserDarkBlue
+CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlueDark
+
 # <---> CrystallPunk migration zone end
 
 
@@ -267,11 +283,11 @@ AirlockGlassShuttleEasyPryLocked: AirlockExternalGlassShuttleLocked
 AirlockShuttleEasyPryLocked: AirlockExternalShuttleLocked
 
 # 2024-03-10
-ClothingBackpackFilledDetective: ClothingBackpackSecurityFilledDetective
-ClothingBackpackDuffelFilledDetective: ClothingBackpackDuffelSecurityFilledDetective
-ClothingBackpackSatchelFilledDetective: ClothingBackpackSatchelSecurityFilledDetective
 FoodChili: FoodChiliPepper
 FoodChilly: FoodChillyPepper
+# ClothingBackpackFilledDetective: ClothingBackpackSecurityFilledDetective
+# ClothingBackpackDuffelFilledDetective: ClothingBackpackDuffelSecurityFilledDetective
+# ClothingBackpackSatchelFilledDetective: ClothingBackpackSatchelSecurityFilledDetective
 
 # 2024-03-11
 ImprovisedExplosive: FireBomb
@@ -361,3 +377,6 @@ CrateJanitorExplosive: ClosetJanitorBombFilled
 
 # 2024-05-27
 DoorRemoteFirefight: null
+
+# 2024-06-03
+AirlockServiceCaptainLocked: AirlockCaptainLocked

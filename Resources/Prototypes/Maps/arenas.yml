@@ -10,7 +10,5 @@
         - type: StationNameSetup
           mapNameTemplate: "Meteor Arena"
         - type: StationJobs
-          overflowJobs:
-            - Adventurer #CrystallPunk Dev replacement
           availableJobs:
-            Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement

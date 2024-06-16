@@ -1,14 +1,26 @@
-cp14-reagent-name-blood = кровь
+cp14-reagent-name-blood = Кровь
 cp14-reagent-desc-blood = Жизненная энергия живого теплокровного существа.
 
-cp14-reagent-name-bloodgrasssap = сок кровьтравы
+cp14-reagent-name-blood-tiefling = Кровь тифлинга
+cp14-reagent-desc-blood-tiefling = Жизненная энергия огнекровного существа.
+
+cp14-reagent-name-blood-elf = Кровь эльфа
+cp14-reagent-desc-blood-elf = Жизненная энергия волшебного существа.
+
+cp14-reagent-name-bloodgrasssap = Сок кровьтравы
 cp14-reagent-desc-bloodgrasssap = Выжимка из повсеместно растущей кровьтравы. Не имеет особых примечательных качеств, но при должной сноровке может быть приготовлена в питательную пищу.
 
-cp14-reagent-name-agaric-shroom = сок мухомора
+cp14-reagent-name-agaric-shroom = Сок мухомора
 cp14-reagent-desc-agaric-shroom = Именно этому соку мухоморы обязаны своей ядовитостью. Употребление вызывает сильные недомогания и галлюцинации, но опытные алхимики смогут найти этим грибам и другие применения.
 
-cp14-reagent-name-chromium-slime = хромиевая слизь
+cp14-reagent-name-chromium-slime = Хромиевая слизь
 cp14-reagent-desc-chromium-slime = Редкая субстанция, которую можно встретить в водных потоках, имеет уникальные свойства, позволяющие инвертировать эффекты реагентов, но при неправильной дозировке может полностью испортить зелье.
 
-cp14-reagent-name-wild-sage-sap = сок дикого шалфея
+cp14-reagent-name-wild-sage-sap = Сок дикого шалфея
 cp14-reagent-desc-wild-sage-sap = Сок вездерастущего лечебного растения, неплохо заживляющий физические травмы, и вызывающий откашливание.
+
+cp14-reagent-name-grounded-quartz = Размолотый кварц
+cp14-reagent-desc-grounded-quartz = Порошок, получаемый из размалывания осколков кварца. Имеет слабые очищающие свойства.
+
+cp14-reagent-name-lumi-shroom = Сок люмигриба
+cp14-reagent-desc-lumi-shroom = Слабо мерцающая жижа, добытая из люмигриба. Часто используется алхимиками, как средство концентрации растворов.

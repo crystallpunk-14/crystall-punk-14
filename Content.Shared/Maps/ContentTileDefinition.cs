@@ -119,9 +119,15 @@ namespace Content.Shared.Maps
         }
 
         /// <summary>
-        /// CrystallPunk Tile filtering
+        /// CP14 - Tile filtering
         /// </summary>
         [DataField]
         public bool EditorHidden { get; private set; } = true;
+
+        /// <summary>
+        /// CP14 - If not empty, the tile can burn from fires, and will turn into the specified tile after burning.
+        /// </summary>
+        [DataField]
+        public string BurnedTile { get; private set; } = string.Empty;
     }
 }

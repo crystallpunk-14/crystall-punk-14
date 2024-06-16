@@ -21,7 +21,7 @@
   name: Wooden table
   description: A simple table made of boards.
   id: CP14TableWooden
-  graph: CP14Table
+  graph: CP14TableWooden
   startNode: start
   targetNode: CP14TableWooden
   category: construction-category-furniture

@@ -33,6 +33,11 @@
   description: cp14-flavor-complex-water
 
 - type: flavor
-  id: CP14Chromium
+  id: CP14Vomit
   flavorType: Complex
-  description: cp14-flavor-complex-chromium
+  description: cp14-flavor-complex-vomit
+
+- type: flavor
+  id: CP14Quartz
+  flavorType: Complex
+  description: cp14-flavor-complex-quartz

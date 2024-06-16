@@ -1,5 +1,7 @@
 - type: entity
-  parent: BaseStructure
+  parent: 
+  - BaseStructure
+  - CP14BaseWooden
   id: CP14BaseFenceWood
   name: wooden fence
   description: Wooden piece of fencing. I hope there is babushka's garden behind it.

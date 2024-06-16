@@ -1,0 +1,118 @@
+# Idea:
+# The simplest way to edit base effects by reducing the blank solution is to have different raw reagents change individual properties.
+
+# Rules:
+# 1) all values must be multiples of 0.25
+# 2) the empty solution should decrease as a result of the reaction
+# 3) as a result of the reaction, one effect must decay into the other two.
+# 4) The priority should be higher than any brewing reactions, so that the base reagents do not have time to boil before the effect is applied
+
+- type: reaction
+  id: CP14DamagePoisonSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectDamagePoison:
+      amount: 0.5
+    CP14BloodGrassSap:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectRainbow: 0.25
+    CP14BasicEffectDamageBrute: 0.25
+
+- type: reaction
+  id: CP14HealBruteSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectHealBrute:
+      amount: 0.5
+    CP14AgaricMushroom:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectSatiateHunger: 0.25
+    CP14BasicEffectSatiateThirst: 0.25
+
+- type: reaction
+  id: CP14SatiateHungerSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectSatiateHunger:
+      amount: 0.5
+    CP14WildSageSap:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectEmoteCough: 0.25
+    CP14BasicEffectHealBrute: 0.25
+
+- type: reaction
+  id: CP14SatiateThirstSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectSatiateThirst:
+      amount: 0.5
+    CP14WildSageSap:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectEmoteCough: 0.25
+    CP14BasicEffectHealBrute: 0.25
+
+- type: reaction
+  id: CP14EmoteCoughSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectEmoteCough:
+      amount: 0.5
+    CP14GroundQuartz:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectSatiateThirst: 0.25
+    CP14BasicEffectHealBrute: 0.25
+
+- type: reaction
+  id: CP14RainbowSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectRainbow:
+      amount: 0.5
+    CP14BloodTiefling:
+      amount: 0.25
+    CP14BasicEffectEmpty: 
+      amount: 0.25
+  products:
+    CP14BasicEffectSatiateThirst: 0.25
+    CP14BasicEffectHealCold: 0.25
+
+- type: reaction
+  id: CP14VomitSplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectVomit:
+      amount: 0.5
+    CP14BloodTiefling:
+      amount: 0.25
+    CP14BasicEffectEmpty:
+      amount: 0.25
+  products:
+    CP14BasicEffectEmoteCough: 0.25
+    CP14BasicEffectDamagePoison: 0.25
+
+- type: reaction
+  id: CP14EmptySplitting
+  priority: 3
+  reactants:
+    CP14BasicEffectEmpty:
+      amount: 0.5
+    CP14LumiMushroom:
+      amount: 0.5
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250

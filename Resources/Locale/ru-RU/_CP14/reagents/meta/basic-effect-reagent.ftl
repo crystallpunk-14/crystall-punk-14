@@ -24,3 +24,12 @@ cp14-reagent-desc-basic-satiate-thirst = Жидкость, очень похож
 
 cp14-reagent-name-basic-emote-cough = Откашливающий раствор
 cp14-reagent-desc-basic-emote-cough = Вызывает обильный кашель, впрочем, безвредный для здоровья.
+
+cp14-reagent-name-basic-heal-cold = Согревающий раствор
+cp14-reagent-desc-basic-heal-cold = Способен исцелять даже серьезные обморожения.
+
+cp14-reagent-name-basic-damage-cold = Ледяной раствор
+cp14-reagent-desc-basic-damage-cold = Опасное вещество, вызывающее сильные обморожения.
+
+cp14-reagent-name-basic-vomit = Рвотный раствор
+cp14-reagent-desc-basic-vomit = Вещество, вызывающее сильные рвотные спазмы. Может помочь при пищевом отравлении.

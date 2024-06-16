@@ -3,6 +3,7 @@
   parent: BaseStructure
   abstract: true
   components:
+  - type: InteractionOutline
   - type: Fixtures
     fixtures:
       fix1:
@@ -62,11 +63,13 @@
 - type: entity
   id: CP14AlchemyFurnaceDebug
   parent: CP14AlchemyFurnace
-  suffix: DEBUG
+  categories:
+  - Debug
   components:
   - type: CP14Fireplace
     fuel: 100
     fuelDrainingPerUpdate: 0
+  - type: CP14AutoIgnite
 
 - type: entity
   id: CP14AlchemyFurnace

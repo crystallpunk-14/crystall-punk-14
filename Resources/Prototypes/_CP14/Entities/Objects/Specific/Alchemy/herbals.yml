@@ -153,3 +153,74 @@
         reagents:
         - ReagentId: CP14WildSageSap
           Quantity: 8
+
+- type: entity
+  id: CP14QuartzShard
+  parent: BaseItem
+  name: rough quartz
+  description: a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Structures/crystal.rsi
+    layers:
+      - state: shard
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        shard: ""
+        shard2: ""
+        shard3: ""
+        shard4: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14GroundQuartz
+        Quantity: 3
+
+- type: entity
+  id: CP14LumiMushroom
+  parent: FoodProduceBase
+  name: lumishroom
+  description: A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: BadFood
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/Herbal/lumishroom.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+        base4: ""
+        base5: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14LumiMushroom
+        Quantity: 4
+  - type: PointLight
+    color: "#36c98f"
+    radius: 1.2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14LumiMushroom
+          Quantity: 4

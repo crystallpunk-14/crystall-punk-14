@@ -1,6 +1,6 @@
 - type: species
   id: CP14Tiefling
-  name: species-name-tiefling
+  name: cp14-species-name-tiefling
   roundStart: true
   prototype: CP14MobTiefling
   sprites: CP14MobTieflingSprites

@@ -43,3 +43,8 @@
     targetDamage:
       types:
         blunt: 0.5
+  - type: CP14SkillRequirement
+    fuckupChance: 0.5
+    requiredSkills:
+    - Warcraft
+    - Blacksmith

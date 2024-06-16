@@ -1,0 +1,62 @@
+# -2
+
+- type: trait
+  id: CP14Blindness
+  name: cp14-trait-blindness-name
+  description: cp14-trait-blindness-desc
+  #traitGear: WhiteCane
+  category: CP14PhysicalTraits
+  cost: -2
+  whitelist:
+    components:
+      - Blindable
+  components:
+    - type: PermanentBlindness
+
+# -1
+
+- type: trait
+  id: CP14PoorVision
+  name: cp14-trait-poor-vision-name
+  description: cp14-trait-poor-vision-desc
+  #traitGear: ClothingEyesGlasses
+  category: CP14PhysicalTraits
+  cost: -1
+  whitelist:
+    components:
+      - Blindable
+  components:
+    - type: PermanentBlindness
+      blindness: 4
+
+- type: trait
+  id: CP14Narcolepsy
+  name: cp14-trait-narcolepsy-name
+  description: cp14-trait-narcolepsy-desc
+  category: CP14PhysicalTraits
+  cost: -1
+  components:
+    - type: Narcolepsy
+      timeBetweenIncidents: 300, 600
+      durationOfIncident: 10, 30
+
+- type: trait
+  id: CP14Muted
+  name: cp14-trait-muted-name
+  description: cp14-trait-muted-desc
+  cost: -1
+  category: CP14PhysicalTraits
+  components:
+    - type: Muted
+
+# 0
+
+- type: trait
+  id: CP14Snoring
+  name: cp14-trait-snoring-name
+  description: cp14-trait-snoring-desc
+  category: CP14PhysicalTraits
+  components:
+    - type: Snoring
+
+# 1

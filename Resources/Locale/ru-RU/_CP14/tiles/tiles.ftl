@@ -9,9 +9,13 @@ cp14-tiles-sand = песок
 # Produced
 cp14-tiles-foundation = фундамент
 
-cp14-tiles-woodplanks = пол из деревянных досок
-cp14-tiles-woodplanks-big = пол из больших деревянных досок
-cp14-tiles-stonebricks = каменный кирпичынй пол
+cp14-tiles-woodplanks = деревянные доски
+cp14-tiles-woodplanks-broken = сломанные деревянные доски
+cp14-tiles-woodplanks-burned = сгоревшие деревянные доски
+cp14-tiles-woodplanks-big = большие деревянные доски
+cp14-tiles-woodplanks-big-broken = сломанные большие деревянные доски
+cp14-tiles-woodplanks-big-burned = сгоревшие большие деревянные доски
+cp14-tiles-stonebricks = каменный кирпичный пол
 cp14-tiles-stonebricks-small-carved1 = пол из резного кирпича
 cp14-tiles-stonebricks-small-carved2 = пол из резного кирпича
 cp14-tiles-stonebricks-square-carved = пол из резного кирпича

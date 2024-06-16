@@ -61,8 +61,6 @@
   - type: RandomSpawner
     prototypes:
     - CP14GatherableChromiumSlime
-    - CP14GatherableChromiumSlime2
-    - CP14GatherableChromiumSlime3
     chance: 0.01
     deleteSpawnerAfterSpawn: false
   - type: Tag
