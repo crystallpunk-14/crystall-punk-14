@@ -1,4 +1,70 @@
 - type: entity
+  parent:
+  - BaseStructure
+  - CP14BaseWooden
+  id: CP14TableWoodenFrame
+  name: wooden table frame
+  description: Base for any wooden table
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask: # tables should collide with other tables
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: frame
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: frame
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14TableWoodenFrame
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 1
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
+  - type: Climbable
+  - type: Clickable
+
+- type: entity
   parent: 
   - TableBase
   - CP14BaseWooden
@@ -12,7 +78,7 @@
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
     state: full
   - type: Construction
-    graph: CP14Table
+    graph: CP14TableWooden
     node: CP14TableWooden
   - type: Damageable
     damageContainer: Inorganic
@@ -40,9 +106,9 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank:
+          CP14WoodenPlanks1:
             min: 1
-            max: 1
+            max: 2
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
