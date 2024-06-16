@@ -33,7 +33,7 @@
     maxRefill: 50
   - type: Transform
     anchored: true
-  - type: CP14Seedbed
+  - type: CP14Soil
     solution: soil
 
 - type: entity
@@ -58,3 +58,9 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/nettle.rsi
     state: stage-1
+  - type: CP14Plant
+  - type: CP14PlantEnergyRegeneration
+    energy: 10
+    daylight: true
+    minUpdateFrequency: 5
+    maxUpdateFrequency: 10

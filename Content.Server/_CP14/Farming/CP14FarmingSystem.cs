@@ -47,10 +47,10 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             var gainEnergy = false;
             var daylight = _dayCycle.TryDaylightThere(uid, true);
 
-            if (regeneration.OnDaylight && daylight)
+            if (regeneration.Daylight && daylight)
                 gainEnergy = true;
 
-            if (regeneration.InDark && !daylight)
+            if (regeneration.Dark && !daylight)
                 gainEnergy = true;
 
             if (gainEnergy)

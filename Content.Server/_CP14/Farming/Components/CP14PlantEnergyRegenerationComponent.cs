@@ -10,10 +10,10 @@ public sealed partial class CP14PlantEnergyRegenerationComponent : Component
     public float Energy = 1f;
 
     [DataField]
-    public bool OnDaylight = true;
+    public bool Daylight = true;
 
     [DataField]
-    public bool InDark = false;
+    public bool Dark = false;
 
     [DataField]
     public float MinUpdateFrequency = 30f;
