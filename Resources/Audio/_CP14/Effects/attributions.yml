@@ -12,3 +12,8 @@
   license: "CC0-1.0"
   copyright: 'magnuswaker of Freesound.org. Mixed from stereo to mono.'
   source: "https://freesound.org/people/magnuswaker/sounds/540074/"
+
+- files: ["thud.ogg"]
+  license: "CC0-1.0"
+  copyright: 'BMacZero of Freesound.org'
+  source: "https://freesound.org/people/BMacZero/sounds/96138/"

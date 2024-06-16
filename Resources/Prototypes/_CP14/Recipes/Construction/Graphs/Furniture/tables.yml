@@ -1,16 +1,41 @@
 - type: constructionGraph
-  id: CP14Table
+  id: CP14TableWooden
   start: start
   graph:
     - node: start
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: CP14TableWooden
+        - to: CP14TableWoodenFrame
           steps:
             - material: CP14WoodenPlanks
-              amount: 3
+              amount: 2
               doAfter: 2
+              
+    - node: CP14TableWoodenFrame
+      entity: CP14TableWoodenFrame
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Screwing #TODO - new tool
+              doAfter: 1
+        - to: CP14TableWooden
+          steps:
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - tool: CP14Hammering
+              doAfter: 1
               
     - node: CP14TableWooden
       entity: CP14TableWooden
+      edges:
+        - to: CP14TableWoodenFrame
+          steps:
+            - tool: Screwing #TODO - new tool
+              doAfter: 1

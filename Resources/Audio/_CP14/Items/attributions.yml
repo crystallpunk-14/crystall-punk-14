@@ -42,3 +42,8 @@
   license: "CC0-1.0"
   copyright: 'by craigsmith of Freesound.org. Cropped by TheShuEd.'
   source: "https://freesound.org/people/craigsmith/sounds/438604/"
+
+- files: ["nailing1.ogg", "nailing2.ogg", "nailing3.ogg", "nailing4.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by InspectorJ of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/InspectorJ/sounds/406048/"

@@ -18,6 +18,24 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: Wooden wall
+  description: Sturdy enough to cover you from threats or cold winds.
+  id: CP14WoodenWall
+  graph: CP14WallWood
+  startNode: start
+  targetNode: WallWooden
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/wooden_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   name: Earth cliffs
   description: bruh #TODO
   id: CP14WallDirt

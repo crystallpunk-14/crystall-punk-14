@@ -57,7 +57,6 @@
       map: ["enum.StorageVisualLayers.Base"]
     - state: base_door
       map: ["enum.StorageVisualLayers.Door"]
-  - type: MovedByPressure
   - type: ItemSlots
   - type: DamageOnHighSpeedImpact
     damage:

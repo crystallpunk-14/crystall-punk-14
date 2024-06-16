@@ -1,4 +1,52 @@
 - type: entity
+  parent:
+  - BaseStructureDynamic
+  - CP14BaseWooden
+  id: CP14WoodenChestFrame
+  name: wooden chest frame
+  description: Base for any wooden chest
+  components:
+  - type: Icon
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: base
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    noRot: true
+    state: base
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 2
+  - type: Construction
+    graph: CP14WoodenChest
+    node: CP14WoodenChestFrame
+
+- type: entity
   parent: 
   - CP14ChestGeneric
   - CP14BaseWooden

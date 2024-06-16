@@ -15,3 +15,21 @@
   icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
   color: "#5e3f31"
   price: 0 #?
+
+- type: material
+  id: CP14Stone
+  stackEntity: CP14StoneBlock1
+  name: cp14-material-stone-block
+  unit: materials-unit-chunk
+  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
+  color: "#555963"
+  price: 0 #?
+
+- type: material
+  id: CP14Nail
+  stackEntity: CP14Nail1
+  name: cp14-material-nail
+  unit: materials-unit-piece
+  icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
+  color: "#555963"
+  price: 0 #?

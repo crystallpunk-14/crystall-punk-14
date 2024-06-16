@@ -43,6 +43,50 @@
     count: 10
 
 - type: entity
+  id: CP14StoneBlock1
+  parent: BaseItem
+  name: stone block
+  description: A block of cold stone.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/stone_block.rsi
+    layers:
+      - state: stone
+        map: ["base"]
+  - type: FloorTile
+    placeTileSound:
+      collection: CP14Digging #TODO
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorFoundation
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Stone
+    count: 1
+    baseLayer: base
+    layerStates:
+    - stone
+    - stone_2
+    - stone_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Stone: 100
+
+- type: entity
+  id: CP14StoneBlock10
+  parent: CP14StoneBlock1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
   id: CP14WoodLog
   parent:
   - BaseItem
@@ -89,6 +133,7 @@
   - CP14BaseWooden
   name: wooden planks
   description: Treated and ready-to-use wood.
+  suffix: 1
   components:
   - type: Item
     size: Normal
@@ -135,6 +180,74 @@
 - type: entity
   id: CP14WoodenPlanks10
   parent: CP14WoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14Nail1
+  parent: BaseItem
+  name: nails
+  suffix: 1
+  description: A basic carpenter's tool that allows you to do unimaginable things with wood.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/nails.rsi
+    layers:
+      - state: nail
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Nail
+    count: 1
+    baseLayer: base
+    layerStates:
+    - nail
+    - nail_2
+    - nail_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Nail: 100
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+        - LowImpassable
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        mask:
+        - ItemMask
+  - type: CollisionWake
+    enabled: false
+  - type: StepTrigger
+    intersectRatio: 0.2
+  - type: ClothingRequiredStepTrigger
+  - type: TriggerOnStepTrigger
+  - type: DamageUserOnTrigger
+    damage:
+      types:
+        Piercing: 5
+  - type: Slippery
+    slipSound:
+      path: /Audio/Effects/weak_hit2.ogg
+    launchForwardsMultiplier: 0
+
+- type: entity
+  id: CP14Nail110
+  parent: CP14Nail1
+  suffix: 10
   components:
   - type: Stack
     count: 10
