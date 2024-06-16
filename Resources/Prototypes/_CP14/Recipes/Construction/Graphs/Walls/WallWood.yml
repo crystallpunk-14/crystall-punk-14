@@ -26,24 +26,32 @@
             - tool: Screwing #TODO - new tool
               doAfter: 1
         - to: WallCardboard
-          completed:
-            - !type:SnapToGrid
-              southRotation: true
           steps:
+            - tool: CP14Hammering
+              doAfter: 2
+        - to: WallWooden
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 1
             - material: CP14Nail
               amount: 2
               doAfter: 1
             - tool: CP14Hammering
-              doAfter: 1
-            - material: CP14WoodenPlanks
-              amount: 2
-              doAfter: 1
-            - tool: CP14Hammering
-              doAfter: 1
+              doAfter: 2
+              
     - node: WallCardboard
       entity: CP14WallCardboard
       edges:
         - to: FrameWooden
           steps:
             - tool: CP14Hammering
-              doAfter: 1
+              doAfter: 2
+              
+    - node: WallWooden
+      entity: CP14WallWooden
+      edges:
+        - to: FrameWooden
+          steps:
+            - tool: CP14Hammering
+              doAfter: 2
