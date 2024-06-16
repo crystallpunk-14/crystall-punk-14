@@ -21,7 +21,7 @@
   stackEntity: CP14StoneBlock1
   name: cp14-material-stone-block
   unit: materials-unit-chunk
-  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: dirt_2 }
+  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
   color: "#555963"
   price: 0 #?
 
