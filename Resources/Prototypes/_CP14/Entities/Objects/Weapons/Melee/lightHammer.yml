@@ -33,3 +33,11 @@
     damage:
       types:
         Blunt: 10
+  - type: Tool
+    qualities:
+      - CP14Hammering
+    useSound:
+      collection: CP14Hammering
+      params:
+        variation: 0.03
+        volume: 2

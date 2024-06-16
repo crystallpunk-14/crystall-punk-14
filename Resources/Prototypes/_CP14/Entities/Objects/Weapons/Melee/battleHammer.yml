@@ -48,3 +48,11 @@
     fuckupChance: 0.5
     requiredSkills:
     - Warcraft
+  - type: Tool
+    qualities:
+      - CP14Hammering
+    useSound:
+      path: /Audio/_CP14/Effects/thud.ogg
+      params:
+        variation: 0.03
+        volume: 2
