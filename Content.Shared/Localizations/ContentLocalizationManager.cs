@@ -130,6 +130,20 @@ namespace Content.Shared.Localizations
         }
 
         /// <summary>
+        /// Formats a list as per english grammar rules, but uses or instead of and.
+        /// </summary>
+        public static string FormatListToOr(List<string> list)
+        {
+            return list.Count switch
+            {
+                <= 0 => string.Empty,
+                1 => list[0],
+                2 => $"{list[0]} or {list[1]}",
+                _ => $"{string.Join(" or ", list)}"
+            };
+        }
+
+        /// <summary>
         /// Formats a direction struct as a human-readable string.
         /// </summary>
         public static string FormatDirection(Direction dir)
