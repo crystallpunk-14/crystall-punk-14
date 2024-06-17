@@ -38,6 +38,10 @@
     {
       "name": "horn6",
       "directions": 4
+    },
+    {
+      "name": "horn7",
+      "directions": 4
     }
   ]
 }
