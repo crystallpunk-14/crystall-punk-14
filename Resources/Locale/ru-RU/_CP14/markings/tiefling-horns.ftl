@@ -6,3 +6,4 @@ marking-CP14TieflingHorns4 = Мелочь
 marking-CP14TieflingHorns5 = Дьявол
 marking-CP14TieflingHorns5Broken = Сломленный дьявол
 marking-CP14TieflingHorns6 = Барашек
+marking-CP14TieflingHorns7 = Облегающие

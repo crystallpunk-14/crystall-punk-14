@@ -82,3 +82,14 @@
     - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
       state: horn6
 
+- type: marking
+  id: CP14TieflingHorns7
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Tiefling ]
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+      state: horn7
+
