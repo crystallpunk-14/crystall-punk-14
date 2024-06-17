@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "All rights reserved for the CrystallPunk14 project only",
-    "copyright": "CrystallPunk14, by KBAS5, edited by TheShuEd",
+    "copyright": "Created by KBAS5 and modified by TheShuEd & Jaraten",
     "size": {
         "x": 32,
         "y": 32
@@ -11,7 +11,7 @@
             "name": "icon"
         },
         {
-            "name": "equipped-HELMET",
+            "name": "equipped-EYES",
             "directions": 4
         }
     ]
