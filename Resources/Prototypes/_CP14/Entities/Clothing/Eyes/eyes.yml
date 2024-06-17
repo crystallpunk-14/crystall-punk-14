@@ -16,7 +16,7 @@
   parent: CP14ClothingEyesBase
   id: CP14ClothingEyesMonocle
   name: monocle
-  description: Aristocratic, fancy, gold-plated.
+  description: Aristocratic, fancy.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Eyes/monocle.rsi
@@ -27,7 +27,7 @@
   parent: CP14ClothingEyesBase
   id: CP14ClothingEyesGoldGlasses
   name: gold glasses
-  description: Aristocratic, fancy, gold-plated.
+  description: Aristocratic, fancy.
   components:
   - type: Foldable
     canFoldInsideContainer: true
@@ -37,9 +37,9 @@
     foldedEquippedPrefix: flipped
     foldedHeldPrefix: flipped
   - type: Sprite
-    sprite: _CP14/Clothing/Eyes/gold_glasses.rsi
+    sprite: _CP14/Clothing/Eyes/glasses.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Eyes/gold_glasses.rsi
+    sprite: _CP14/Clothing/Eyes/glasses.rsi
 
 - type: entity
   parent: CP14ClothingEyesBase
