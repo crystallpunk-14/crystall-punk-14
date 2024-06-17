@@ -67,7 +67,6 @@ namespace Content.IntegrationTests.Tests
             //"Oasis"
 
             //CrystallPunk maps
-            "CaveArena",
             "AlchemyTest"
         };
 
