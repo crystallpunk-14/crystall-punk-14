@@ -1,4 +1,3 @@
-
 - type: reagent
   id: CP14Blood
   group: CP14Biological
@@ -101,7 +100,7 @@
   group: CP14Biological
   name: cp14-reagent-name-chromium-slime
   desc: cp14-reagent-desc-chromium-slime
-  flavor: CP14Chromium
+  flavor: CP14Vomit
   color: "#3b4872"
   physicalDesc: cp14-reagent-physical-desc-colorless
   slippery: true
@@ -131,3 +130,44 @@
         emote: Cough
         showInChat: true
         probability: 0.15
+
+- type: reagent
+  id: CP14GroundQuartz
+  group: CP14Biological #TODO
+  name: cp14-reagent-name-grounded-quartz
+  desc: cp14-reagent-desc-grounded-quartz
+  flavor: CP14Quartz
+  color: "#9aa6ad"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      effects:
+      - !type:ChemVomit
+        probability: 0.05
+
+- type: reagent
+  id: CP14LumiMushroom
+  group: CP14Biological
+  name: cp14-reagent-name-lumi-shroom
+  desc: cp14-reagent-desc-lumi-shroom
+  flavor: CP14Vomit
+  color: "#36c98f"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  slippery: false
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.5
+      - !type:ChemVomit
+        probability: 0.04
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false

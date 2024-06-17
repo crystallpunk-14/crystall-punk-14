@@ -60,3 +60,22 @@
     sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
   - type: SolutionScanner
 
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesThaumaturgyGlasses
+  name: thaumaturgy glasses
+  description: Goggles that allow you to scan magical items and creatures to clearly see the amount of energy left in them.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
+  - type: CP14MagicEnergyScanner
+

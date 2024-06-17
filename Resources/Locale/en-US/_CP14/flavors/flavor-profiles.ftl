@@ -9,4 +9,5 @@ cp14-flavor-base-stinging = stinging
 # Complex
 
 cp14-flavor-complex-water = like water
-cp14-flavor-complex-chromium = like something gut-wrenching
+cp14-flavor-complex-vomit = like something gut-wrenching
+cp14-flavor-complex-quartz = squeaks in your teeth

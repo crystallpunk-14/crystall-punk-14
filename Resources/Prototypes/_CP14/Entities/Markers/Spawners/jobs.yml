@@ -11,3 +11,17 @@
     layers:
       - state: green
       - state: zookeeper #TODO Replace
+
+- type: entity
+  id: CP14SpawnPointAlchemist
+  parent: SpawnPointJobBase
+  name: alchemist
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Alchemist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: zookeeper #TODO Replace

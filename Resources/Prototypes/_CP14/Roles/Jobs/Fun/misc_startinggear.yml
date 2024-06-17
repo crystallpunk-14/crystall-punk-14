@@ -1,9 +1,10 @@
 - type: startingGear
   id: CP14DeathMatchGear
   equipment:
-    shirt: CP14ClothingShirtHarlequineRed
-    pants: CP14ClothingPantsHarlequinRed
-    shoes: CP14ClothingShoesBlack
+    cloak: CP14ClothingCloakFurcapeBlue
+    shirt: CP14ClothingShirtCottonBlueDark
+    pants: CP14ClothingPantsLoincloth
+    shoes: CP14ClothingShoesSandals
   inhand:
     - CP14BaseDagger
     - CP14BaseDagger

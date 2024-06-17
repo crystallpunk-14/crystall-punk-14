@@ -32,3 +32,18 @@
   license: "CC0-1.0"
   copyright: 'by Ali_6868 of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/Ali_6868/sounds/384361/"
+  
+- files: ["crystal_eject.ogg", "crystal_insert.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by Joachim_Berger of Freesound.org. Cropped by TheShuEd.'
+  source: "https://freesound.org/people/Joachim_Berger/sounds/660526/"
+  
+- files: ["normalizer_working.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by craigsmith of Freesound.org. Cropped by TheShuEd.'
+  source: "https://freesound.org/people/craigsmith/sounds/438604/"
+
+- files: ["nailing1.ogg", "nailing2.ogg", "nailing3.ogg", "nailing4.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by InspectorJ of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/InspectorJ/sounds/406048/"

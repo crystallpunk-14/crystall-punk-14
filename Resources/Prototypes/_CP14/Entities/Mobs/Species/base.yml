@@ -25,8 +25,8 @@
       sprite: Mobs/Customization/masking_helpers.rsi
       state: unisex_full
       visible: false
-    - map: [ "pants" ]
     - map: [ "shirt" ]
+    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
@@ -291,6 +291,7 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
+  - type: CP14SkillsStorage
 
 - type: entity
   save: false
@@ -315,16 +316,8 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    #- shader: StencilClear
-    #  sprite: _CP14/Mobs/Species/Human/parts.rsi
-    #  state: l_leg
-    #- shader: StencilMask
-    #  map: [ "enum.HumanoidVisualLayers.StencilMask" ]
-    #  sprite: Mobs/Customization/masking_helpers.rsi
-    #  state: unisex_full
-    #  visible: false
-    - map: [ "pants" ]
     - map: [ "shirt" ]
+    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]

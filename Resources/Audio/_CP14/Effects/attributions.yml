@@ -22,3 +22,8 @@
   license: "CC0-1.0"
   copyright: 'mickyman5000 of Freesound.org. Mixed from stereo to mono.'
   source: "https://freesound.org/people/mickyman5000/sounds/340585/"
+
+- files: ["thud.ogg"]
+  license: "CC0-1.0"
+  copyright: 'BMacZero of Freesound.org'
+  source: "https://freesound.org/people/BMacZero/sounds/96138/"

@@ -32,7 +32,7 @@ public sealed partial class FireVisualsComponent : Component
     public float MaxLightRadius = 4f;
 
     [DataField("lightColor")]
-    public Color LightColor = Color.Orange;
+    public Color LightColor = Color.FromSrgb( new Color(239, 181, 20)); //CP14 fire color in art style pallette
 
     /// <summary>
     ///     Client side point-light entity. We use this instead of directly adding a light to

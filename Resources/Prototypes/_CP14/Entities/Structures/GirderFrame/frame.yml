@@ -33,5 +33,5 @@
         - GlassAirlockLayer
   - type: InteractionOutline
   - type: Construction
-    graph: CP14Wall
+    graph: CP14WallWood
     node: FrameWooden

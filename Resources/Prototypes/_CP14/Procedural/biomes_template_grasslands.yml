@@ -102,7 +102,7 @@
         - CP14FloraTreeLarge05
         - CP14FloraTreeLarge06
     - !type:BiomeEntityLayer # Rare Bloodgrass
-      threshold: 0.8
+      threshold: 0.7
       noise:
         seed: 3
         noiseType: OpenSimplex2
@@ -117,12 +117,8 @@
         - CP14FloorGrass
       entities:
         - CP14GatherableBloodgrass
-        - CP14GatherableBloodgrass2
-        - CP14GatherableBloodgrass3
-        - CP14GatherableBloodgrass4
-        - CP14GatherableBloodgrass5
     - !type:BiomeEntityLayer # Rare Wild sage
-      threshold: 0.85
+      threshold: 0.6
       noise:
         seed: 8
         noiseType: OpenSimplex2
@@ -137,8 +133,6 @@
         - CP14FloorGrass
       entities:
         - CP14GatherableWildSage
-        - CP14GatherableWildSage2
-        - CP14GatherableWildSage3
 
 # Подбиомы лугов
 
@@ -196,7 +190,7 @@
         - CP14FloorBase
       threshold: -1.0
       entities:
-        - CP14CaveStoneWall
+        - CP14WallDirt
 
 - type: biomeTemplate
   id: CP14GrasslandTestResult

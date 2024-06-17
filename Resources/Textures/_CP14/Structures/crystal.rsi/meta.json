@@ -27,6 +27,15 @@
     },
     {
       "name": "shard"
+    },
+    {
+      "name": "shard2"
+    },
+    {
+      "name": "shard3"
+    },
+    {
+      "name": "shard4"
     }
   ]
 }

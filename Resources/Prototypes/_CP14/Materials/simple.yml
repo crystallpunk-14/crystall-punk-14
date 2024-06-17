@@ -1,0 +1,35 @@
+- type: material
+  id: CP14WoodenPlanks
+  stackEntity: CP14WoodenPlanks1
+  name: cp14-material-wooden-planks
+  unit: materials-unit-plank
+  icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
+  color: "#874d3a"
+  price: 0 #?
+
+- type: material
+  id: CP14Dirt
+  stackEntity: CP14DirtBlock1
+  name: cp14-material-dirt-block
+  unit: materials-unit-chunk
+  icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
+  color: "#5e3f31"
+  price: 0 #?
+
+- type: material
+  id: CP14Stone
+  stackEntity: CP14StoneBlock1
+  name: cp14-material-stone-block
+  unit: materials-unit-chunk
+  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
+  color: "#555963"
+  price: 0 #?
+
+- type: material
+  id: CP14Nail
+  stackEntity: CP14Nail1
+  name: cp14-material-nail
+  unit: materials-unit-piece
+  icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
+  color: "#555963"
+  price: 0 #?

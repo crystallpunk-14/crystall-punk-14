@@ -52,6 +52,7 @@
     solutions:
       vat:
         maxVol: 500
+  - type: CP14SolutionTemperature
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     fillBaseName: liq

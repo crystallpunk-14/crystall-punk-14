@@ -6,8 +6,22 @@
   maxCount: 10
 
 - type: stack
+  id: CP14Stone
+  name: stone block
+  spawn: CP14StoneBlock1
+  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
+  maxCount: 10
+
+- type: stack
   id: CP14WoodenPlanks
   name: wooden planks
   spawn: CP14WoodenPlanks1
   icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
+  maxCount: 10
+
+- type: stack
+  id: CP14Nail
+  name: nails
+  spawn: CP14Nail1
+  icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
   maxCount: 10
