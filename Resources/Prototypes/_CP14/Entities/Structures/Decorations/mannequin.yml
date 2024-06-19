@@ -59,53 +59,17 @@
   - type: ContainerContainer
     containers:
       shirt: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       pants: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       gloves: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       shoes: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       cloak: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       eyes: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       belt1: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       belt2: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       neck: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       back: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       mask: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
       head: !type:ContainerSlot
-        showEnts: false
-        occludes: false
-        ent: null
   - type: Inventory
     templateId: CP14mannequin
   - type: InventorySlots
