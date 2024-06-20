@@ -40,7 +40,6 @@
         acts: [ "Destruction" ]
   - type: Climbable
     delay: 5.0
-  - type: Appearance
 
 - type: entity
   parent: CP14BaseFenceWood
@@ -163,9 +162,10 @@
   parent: CP14BaseFenceWood
   id: CP14FenceWoodHighGate
   name: wooden fence gate
-  description: Do you have any idea what awaits you behind these gates? It can be either a toilet or a luxurious mansion. But you continue to love your emo boys.
+  description: Do you have any idea what awaits you behind these gates? It can be either a toilet or a luxurious mansion.
   components:
   - type: Sprite
+    drawdepth: Mobs
     layers:
     - state: door_closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -174,7 +174,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.5,-0.1,0.5,0.1"
+          bounds: "-0.1,-0.5,0.1,0.5"
         density: 1000
         mask:
         - FullTileMask
@@ -201,6 +201,7 @@
       path: /Audio/Effects/door_open.ogg
     closeSound:
       path: /Audio/Effects/door_close.ogg
+  - type: Appearance
 
 #Small
 - type: entity
@@ -300,6 +301,7 @@
   description: Looking at this gate, a familiar image pops up in your head. Where's my piggy?
   components:
   - type: Sprite
+    drawdepth: Mobs
     layers:
     - state: door_closed_small
       map: ["enum.DoorVisualLayers.Base"]
@@ -335,3 +337,4 @@
       path: /Audio/Effects/door_open.ogg
     closeSound:
       path: /Audio/Effects/door_close.ogg
+  - type: Appearance
