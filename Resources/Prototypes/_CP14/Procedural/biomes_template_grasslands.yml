@@ -9,8 +9,7 @@
       tile: CP14FloorGrass
     - !type:BiomeTileLayer 
       tile: CP14FloorGrassLight
-      threshold: 0.0
-      divisions: 1
+      threshold: 0
       noise:
         seed: 0
         noiseType: OpenSimplex2
@@ -24,7 +23,6 @@
     - !type:BiomeTileLayer
       tile: CP14FloorGrassTall
       threshold: 0.45
-      divisions: 1
       noise:
         seed: 0
         noiseType: OpenSimplex2
