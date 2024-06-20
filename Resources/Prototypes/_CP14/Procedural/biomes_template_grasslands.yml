@@ -7,11 +7,9 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: CP14FloorGrass
-    - !type:BiomeDecalLayer #Grass decal
-      allowedTiles:
-      - CP14FloorGrass
+    - !type:BiomeTileLayer 
+      tile: CP14FloorGrassLight
       threshold: 0
-      divisions: 1
       noise:
         seed: 0
         noiseType: OpenSimplex2
@@ -22,22 +20,9 @@
         gain: 0.7
         domainWarpType: OpenSimplex2
         domainWarpAmp: 120
-      decals:
-        - CP14FloraGrassA1
-        - CP14FloraGrassA2
-        - CP14FloraGrassA3
-        - CP14FloraGrassA4
-        - CP14FloraGrassA5
-        - CP14FloraGrassB1
-        - CP14FloraGrassB2
-        - CP14FloraGrassB3
-        - CP14FloraGrassB4
-        - CP14FloraGrassB5
-    - !type:BiomeDecalLayer #Bush decal
-      allowedTiles:
-      - CP14FloorGrass
-      threshold: 0.35
-      divisions: 1
+    - !type:BiomeTileLayer
+      tile: CP14FloorGrassTall
+      threshold: 0.45
       noise:
         seed: 0
         noiseType: OpenSimplex2
@@ -48,37 +33,6 @@
         gain: 0.7
         domainWarpType: OpenSimplex2
         domainWarpAmp: 120
-      decals:
-        - CP14FloraBushA1
-        - CP14FloraBushA2
-        - CP14FloraBushA3
-        - CP14FloraBushB1
-        - CP14FloraBushB2
-        - CP14FloraBushB3
-        - CP14FloraBushC1
-        - CP14FloraBushC2
-        - CP14FloraBushC3
-    - !type:BiomeDecalLayer #Stone decal
-      allowedTiles:
-      - CP14FloorGrass
-      threshold: 0.55
-      divisions: 1
-      noise:
-        seed: 1
-        noiseType: OpenSimplex2
-        fractalType: Ridged
-        frequency: 0.1
-        octaves: 3
-        lacunarity: 1.8
-        gain: 0.7
-        domainWarpType: OpenSimplex2
-        domainWarpAmp: 120
-      decals:
-        - CP14FloraRock01
-        - CP14FloraRock02
-        - CP14FloraRock03
-        - CP14FloraRock04
-        - CP14FloraRock05
     - !type:BiomeEntityLayer # Rare Trees
       threshold: 0.8
       noise:
