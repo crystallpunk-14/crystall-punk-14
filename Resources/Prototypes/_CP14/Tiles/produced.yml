@@ -28,13 +28,23 @@
   editorHidden: false
   id: CP14FloorWoodPlanks
   name: cp14-tiles-woodplanks
-  sprite: /Textures/_CP14/Tiles/woodplanks.png
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/woodplanks.png
   variants: 4
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -47,13 +57,23 @@
   editorHidden: false
   id: CP14FloorWoodPlanksBroken
   name: cp14-tiles-woodplanks-broken
-  sprite: /Textures/_CP14/Tiles/woodplanks_broken.png
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/woodplanks_broken.png
   variants: 4
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -66,13 +86,23 @@
   editorHidden: false
   id: CP14FloorWoodPlanksBurned
   name: cp14-tiles-woodplanks-burned
-  sprite: /Textures/_CP14/Tiles/woodplanks_burned.png
+  sprite: /Textures/_CP14/Tiles/WoodPlanksBurned/woodplanks_burned.png
   variants: 4
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -83,13 +113,23 @@
   editorHidden: false
   id: CP14FloorWoodPlanksBig
   name: cp14-tiles-woodplanks-big
-  sprite: /Textures/_CP14/Tiles/woodplanks_big.png
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/woodplanks_big.png
   variants: 4
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -102,13 +142,23 @@
   editorHidden: false
   id: CP14FloorWoodPlanksBigBroken
   name: cp14-tiles-woodplanks-big-broken
-  sprite: /Textures/_CP14/Tiles/woodplanks_big_broken.png
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/woodplanks_big_broken.png
   variants: 4
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -121,13 +171,23 @@
   editorHidden: false
   id: CP14FloorWoodPlanksBigBurned
   name: cp14-tiles-woodplanks-big-burned
-  sprite: /Textures/_CP14/Tiles/woodplanks_big_burned.png
+  sprite: /Textures/_CP14/Tiles/WoodPlanksBurned/woodplanks_big_burned.png
   variants: 4
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanksBurned/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanksBurned/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
