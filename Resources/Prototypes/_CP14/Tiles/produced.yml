@@ -3,11 +3,15 @@
   id: CP14FloorFoundation
   name: cp14-tiles-foundation
   sprite: /Textures/_CP14/Tiles/Foundation/foundation.png
-  variants: 2
+  variants: 6
   placementVariants:
   - 1.0
   - 1.0
-  edgeSpritePriority: 1
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 99
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/Foundation/single_edge.png
     NorthEast: /Textures/_CP14/Tiles/Foundation/single_edge.png
