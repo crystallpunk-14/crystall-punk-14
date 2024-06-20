@@ -8,8 +8,6 @@
       threshold: -1.0
       tile: CP14FloorGrass
     - !type:BiomeTileLayer 
-      allowedTiles:
-      - CP14FloorGrass
       tile: CP14FloorGrassLight
       threshold: 0.0
       divisions: 1
@@ -23,10 +21,7 @@
         gain: 0.7
         domainWarpType: OpenSimplex2
         domainWarpAmp: 120
-    - !type:BiomeTileLayer 
-      allowedTiles:
-      - CP14FloorGrass
-      - CP14FloorGrassLight
+    - !type:BiomeTileLayer
       tile: CP14FloorGrassTall
       threshold: 0.45
       divisions: 1
