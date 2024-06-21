@@ -59,17 +59,57 @@
   - type: ContainerContainer
     containers:
       shirt: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       pants: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       gloves: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       shoes: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       cloak: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       eyes: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       belt1: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       belt2: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       neck: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       back: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       mask: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       head: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      keys: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
   - type: Inventory
     templateId: CP14mannequin
   - type: InventorySlots
