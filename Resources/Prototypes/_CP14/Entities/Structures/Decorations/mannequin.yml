@@ -1,0 +1,120 @@
+- type: entity
+  id: CP14Mannequin
+  parent: Mannequin
+  name: mannequin
+  description: A handy stand for clothing or armour.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _CP14/Structures/Decoration/mannequin.rsi
+    state: mannequin
+    noRot: true
+    layers:
+    - map: [ "mannequin" ]
+      sprite: _CP14/Structures/Decoration/mannequin.rsi
+      state: mannequin
+    - map: [ "shirt" ]
+    - map: [ "pants" ]
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt1" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+  - type: Rotatable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 200
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - BulletImpassable
+  - type: InteractionOutline
+  - type: Construction
+    graph: CP14Mannequin
+    node: CP14mannequin
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: ContainerContainer
+    containers:
+      shirt: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      pants: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      gloves: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      shoes: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      cloak: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      eyes: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      belt1: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      belt2: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      neck: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      back: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      mask: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      head: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      keys: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+  - type: Inventory
+    templateId: CP14mannequin
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
