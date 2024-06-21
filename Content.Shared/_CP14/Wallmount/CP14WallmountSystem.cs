@@ -1,4 +1,3 @@
-using System.Numerics;
 using Content.Shared.Tag;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -12,7 +11,7 @@ public sealed class CP14WallmountSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TagSystem _tag = default!;
 
-    private static readonly ProtoId<TagPrototype>[] WallTags = {"Wall", "Window"};
+    public static readonly ProtoId<TagPrototype>[] WallTags = {"Wall", "Window"};
 
     public override void Initialize()
     {
