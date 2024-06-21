@@ -21,7 +21,7 @@
   id: CP14MobTieflingSprites
   sprites:
     Head: CP14MobTieflingHead
-    HeadTop: CP14MobTieflingMarkingMatchSkin
+    HeadTop: CP14MobTieflingAnyMarking
     Hair: CP14MobTieflingAnyMarking
     FacialHair: CP14MobTieflingAnyMarking
     Snout: CP14MobTieflingMarkingMatchSkin

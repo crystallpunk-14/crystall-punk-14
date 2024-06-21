@@ -1,4 +1,5 @@
 - type: tile
+  editorHidden: false
   id: Space
   name: tiles-space
   friction: 0

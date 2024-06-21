@@ -6,3 +6,4 @@ marking-CP14TieflingHorns4 = Change
 marking-CP14TieflingHorns5 = The Devil
 marking-CP14TieflingHorns5Broken = Broken Devil
 marking-CP14TieflingHorns6 = Lamb
+marking-CP14TieflingHorns7 = Horny horns
