@@ -51,22 +51,22 @@
 # Eyes
 
 - type: loadout
-  id: CP14Monocle
-  equipment: CP14Monocle
+  id: CP14ClothingEyesMonocle
+  equipment: CP14ClothingEyesMonocle
 
 - type: startingGear
-  id: CP14Monocle
+  id: CP14ClothingEyesMonocle
   equipment:
     eyes: CP14ClothingEyesMonocle
 
 - type: loadout
-  id: CP14GoldGlasses
-  equipment: CP14GoldGlasses
+  id: CP14ClothingEyesGlasses
+  equipment: CP14ClothingEyesGlasses
 
 - type: startingGear
-  id: CP14GoldGlasses
+  id: CP14ClothingEyesGlasses
   equipment:
-    eyes: CP14ClothingEyesGoldGlasses
+    eyes: CP14ClothingEyesGlasses
 
 # Gloves
 
@@ -82,13 +82,31 @@
 # Head
 
 - type: loadout
-  id: CP14MetalHeadband
-  equipment: CP14MetalHeadband
+  id: CP14ClothingHeadMetalHeadband
+  equipment: CP14ClothingHeadMetalHeadband
 
 - type: startingGear
-  id: CP14MetalHeadband
+  id: CP14ClothingHeadMetalHeadband
   equipment:
     head: CP14ClothingHeadMetalHeadband
+
+- type: loadout
+  id: CP14ClothingHeadTriangularHat
+  equipment: CP14ClothingHeadTriangularHat
+
+- type: startingGear
+  id: CP14ClothingHeadTriangularHat
+  equipment:
+    head: CP14ClothingHeadTriangularHat
+
+- type: loadout
+  id: CP14ClothingHeadTriangularHatGolden
+  equipment: CP14ClothingHeadTriangularHatGolden
+
+- type: startingGear
+  id: CP14ClothingHeadTriangularHatGolden
+  equipment:
+    head: CP14ClothingHeadTriangularHatGolden
 
 # Mask
 

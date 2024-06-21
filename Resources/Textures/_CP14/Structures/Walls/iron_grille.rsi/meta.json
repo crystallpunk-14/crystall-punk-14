@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "by TheShuEd (github)",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "straight",
+      "directions": 4
+    },
+    {
+      "name": "corner",
+      "directions": 4
+    },
+    {
+      "name": "door_closed",
+      "directions": 4
+    },
+    {
+      "name": "door_opened",
+      "directions": 4
+    },
+    {
+      "name": "tjunction",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "license": "All rights reserved for the CrystallPunk14 project only",
+    "copyright": "CrystallPunk14, by TheShuEd",
+    "size": {
+        "x": 48,
+        "y": 48
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-HELMET",
+            "directions": 4
+        }
+    ]
+}

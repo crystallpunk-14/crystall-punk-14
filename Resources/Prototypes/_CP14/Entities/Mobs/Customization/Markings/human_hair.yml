@@ -103,6 +103,30 @@
       state: ponytail7
       
 - type: marking
+  id: CP14HumanHairSideTail4
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: sidetail4
+      
+- type: marking
+  id: CP14HumanHairSwept2
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: swept2
+      
+- type: marking
+  id: CP14HumanHairUpdo
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: updo
+      
+- type: marking
   id: CP14HumanHairVLongFringe
   bodyPart: Hair
   markingCategory: Hair

@@ -24,3 +24,25 @@
     sprite: _CP14/Clothing/Head/metalheadband.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/metalheadband.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadTriangularHat
+  name: triangular hat
+  description: a big, pointy hat for those who like to look smart.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/triangularhat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/triangularhat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadTriangularHatGolden
+  name: golden triangular hat
+  description: a big, pointy hat for those who like to look smart. Decorated with a gold hoop.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/triangularhat_golden.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/triangularhat_golden.rsi

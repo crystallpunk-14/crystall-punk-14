@@ -14,8 +14,8 @@
   name: cp14-loadout-test-eyes
   minLimit: 0
   loadouts:
-  - CP14Monocle
-  - CP14GoldGlasses
+  - CP14ClothingEyesMonocle
+  - CP14ClothingEyesGlasses
 
 - type: loadoutGroup
   id: CP14TestGloves
@@ -29,7 +29,9 @@
   name: cp14-loadout-test-head
   minLimit: 0
   loadouts:
-  - CP14MetalHeadband
+  - CP14ClothingHeadMetalHeadband
+  - CP14ClothingHeadTriangularHat
+  - CP14ClothingHeadTriangularHatGolden
 
 - type: loadoutGroup
   id: CP14TestMask

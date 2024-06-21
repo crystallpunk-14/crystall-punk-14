@@ -62,14 +62,15 @@
   targetNode: CP14WallmountTorch
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Wallmount/wallmount_32icon.rsi
-    state: torch
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
+    state: fire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   canRotate: true
   conditions:
     - !type:TileNotBlocked
+    - !type:CP14WallRequired
 
 - type: construction
   crystallPunkAllowed: true
