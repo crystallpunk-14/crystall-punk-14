@@ -10,6 +10,7 @@
   - type: InteractionOutline
   - type: Sprite
     drawdepth: Mobs
+  - type: CP14Wallmount
 
 - type: entity
   id: CP14WallmountTorch
