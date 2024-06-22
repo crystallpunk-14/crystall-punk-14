@@ -19,6 +19,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {
@@ -171,6 +172,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
     private void OnMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
     {
+        //Autoroot trying
 
     }
 }

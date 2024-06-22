@@ -1,9 +1,9 @@
-namespace Content.Server._CP14.Farming.Components;
+namespace Content.Shared._CP14.Farming;
 
 /// <summary>
 ///
 /// </summary>
-[RegisterComponent, Access(typeof(CP14FarmingSystem))]
+[RegisterComponent, Access(typeof(CP14SharedFarmingSystem))]
 public sealed partial class CP14PlantComponent : Component
 {
     /// <summary>
@@ -22,6 +22,9 @@ public sealed partial class CP14PlantComponent : Component
     /// </summary>
     [DataField]
     public float Resource = 0f;
+
+    [DataField]
+    public float GrowthLevel = 0f;
 }
 
 /// Задачи:

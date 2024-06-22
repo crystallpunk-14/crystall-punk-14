@@ -19,8 +19,16 @@
     bodyType: Static
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/nettle.rsi
+    layers:
+    - state: stage-1
+      map: ["enum.PlantVisualLayers.Base"]
     state: stage-1
+  - type: Appearance
+  - type: CP14PlantVisualizer
+    growthSteps: 5
+    growState: "stage-"
   - type: CP14Plant
+    growthLevel: 0
   - type: CP14PlantEnergyFromLight
     energy: 10
     daylight: true
