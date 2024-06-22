@@ -1,0 +1,49 @@
+- type: entity
+  name: ploughed ground
+  id: CP14FarmingSoil
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: false
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileMask
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Specific/Farming/soil.rsi
+    layers:
+    - state: soil1
+      map: ["random"]
+    snapCardinals: true
+  - type: RandomSprite
+    available:
+    - random:
+        soil1: ""
+        soil2: ""
+        soil3: ""
+        soil4: ""
+        soil5: ""
+        soil6: ""
+  #- type: SolutionContainerManager
+  #  solutions:
+  #    soil:
+  #      maxVol: 200
+  #- type: RefillableSolution
+  #  solution: soil
+  #  maxRefill: 50
+  - type: Transform
+    anchored: true
+  - type: CP14Soil
+    solution: soil
