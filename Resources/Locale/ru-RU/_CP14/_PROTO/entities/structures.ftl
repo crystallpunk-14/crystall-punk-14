@@ -5,6 +5,8 @@ ent-CP14WallmountWeb = паутина
     .desc = Паутина, прилипшая к темным углам, в которой сидят крошечные паучки.
 ent-CP14WallmountWoodenBoards = доски
     .desc = Прибиты к стене. Зачем? не совсем ясно.
+ent-CP14Mannequin = манекен
+    .desc = Удобная подставка для одежды или доспехов.
 
 # Doors
 ent-CP14BaseWoodDoor = деревянная дверь
