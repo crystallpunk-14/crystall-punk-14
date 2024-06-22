@@ -2,3 +2,7 @@
 - type: lobbyBackground
   id: Beginning
   background: /Textures/_CP14/LobbyScreens/beginning.webp
+  
+- type: lobbyBackground
+  id: TypicalAlchemistDay
+  background: /Textures/_CP14/LobbyScreens/typicalAlchemistDay.webp
