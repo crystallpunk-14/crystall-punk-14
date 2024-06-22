@@ -3,6 +3,7 @@ using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
+using Content.Shared.Popups;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -15,6 +16,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -64,6 +66,12 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         if (!TryComp<CP14SeedComponent>(args.Used, out var seed))
             return;
 
+        if (EntityManager.EntityExists(soil.Comp.PlantUid))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-farming-soil-interact-plant-exist"), soil, args.User);
+            return;
+        }
+
         //Audio
         //Popup
 
@@ -73,12 +81,12 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
                 BreakOnDamage = true,
                 BlockDuplicate = true,
                 BreakOnMove = true,
-                BreakOnHandChange = true
+                BreakOnHandChange = true,
             };
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
-    private void OnSeedPlantedDoAfter(Entity<CP14SoilComponent> ent, ref PlantSeedDoAfterEvent args)
+    private void OnSeedPlantedDoAfter(Entity<CP14SoilComponent> soil, ref PlantSeedDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Args.Used == null)
             return;
@@ -86,23 +94,29 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         if (!TryComp<CP14SeedComponent>(args.Target, out var seed))
             return;
 
-        var plant = SpawnAttachedTo(seed.PlantProto, Transform(ent).Coordinates);
+        if (EntityManager.EntityExists(soil.Comp.PlantUid))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-farming-soil-interact-plant-exist"), soil, args.User);
+            return;
+        }
+        var plant = SpawnAttachedTo(seed.PlantProto, Transform(soil).Coordinates);
 
         if (TryComp<CP14PlantComponent>(plant, out var plantComp))
         {
-            TryRootPlant(plant, plantComp, ent);
+            TryRootPlant(plant, plantComp, soil);
         }
-        
+
         //Audio
         QueueDel(args.Target); //delete seed
 
         args.Handled = true;
     }
 
-    private bool TryRootPlant(EntityUid uid, CP14PlantComponent component, Entity<CP14SoilComponent> soilUid)
+    private bool TryRootPlant(EntityUid uid, CP14PlantComponent component, Entity<CP14SoilComponent> soil)
     {
-        _transform.SetParent(uid, soilUid);
-        component.SoilUid = soilUid;
+        _transform.SetParent(uid, soil);
+        soil.Comp.PlantUid = uid;
+        component.SoilUid = soil;
         return true;
     }
 

@@ -8,4 +8,6 @@ public sealed partial class CP14SoilComponent : Component
 {
     [DataField(required: true)]
     public string Solution = string.Empty;
+
+    public EntityUid? PlantUid;
 }
