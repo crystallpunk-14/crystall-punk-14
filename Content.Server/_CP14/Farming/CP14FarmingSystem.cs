@@ -14,6 +14,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -89,16 +90,15 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
         if (TryComp<CP14PlantComponent>(plant, out var plantComp))
         {
-            TryRootPlant(plantComp, ent);
+            TryRootPlant(plant, plantComp, ent);
         }
         //Audio
         QueueDel(args.Target); //delete seed
     }
 
-    private bool TryRootPlant(CP14PlantComponent component, Entity<CP14SoilComponent> soilUid)
+    private bool TryRootPlant(EntityUid uid, CP14PlantComponent component, Entity<CP14SoilComponent> soilUid)
     {
-        //Parenting to soil here?
-
+        _transform.SetParent(uid, soilUid);
         component.SoilUid = soilUid;
         return true;
     }
@@ -107,5 +107,4 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
 
     }
-
 }
