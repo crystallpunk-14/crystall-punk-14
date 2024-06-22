@@ -5,7 +5,6 @@
     mode: SnapgridCenter
   components:
   - type: Clickable
-  - type: InteractionOutline
   - type: Physics
     bodyType: Static
   - type: Fixtures

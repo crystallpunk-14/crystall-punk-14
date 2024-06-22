@@ -88,23 +88,11 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
     private void OnSeedPlantedDoAfter(Entity<CP14SoilComponent> soil, ref PlantSeedDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || args.Args.Used == null)
+        if (args.Cancelled || args.Handled || args.Args.Used == null || args.Target == null)
             return;
 
-        if (!TryComp<CP14SeedComponent>(args.Target, out var seed))
+        if (!TryPlantSeed(args.Target.Value, soil, args.User))
             return;
-
-        if (EntityManager.EntityExists(soil.Comp.PlantUid))
-        {
-            _popup.PopupEntity(Loc.GetString("cp14-farming-soil-interact-plant-exist"), soil, args.User);
-            return;
-        }
-        var plant = SpawnAttachedTo(seed.PlantProto, Transform(soil).Coordinates);
-
-        if (TryComp<CP14PlantComponent>(plant, out var plantComp))
-        {
-            TryRootPlant(plant, plantComp, soil);
-        }
 
         //Audio
         QueueDel(args.Target); //delete seed
@@ -112,11 +100,31 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         args.Handled = true;
     }
 
-    private bool TryRootPlant(EntityUid uid, CP14PlantComponent component, Entity<CP14SoilComponent> soil)
+    public bool TryPlantSeed(EntityUid seed, EntityUid soil, EntityUid? user)
     {
-        _transform.SetParent(uid, soil);
-        soil.Comp.PlantUid = uid;
-        component.SoilUid = soil;
+        if (!TryComp<CP14SoilComponent>(soil, out var soilComp))
+            return false;
+
+        if (!TryComp<CP14SeedComponent>(seed, out var seedComp))
+            return false;
+
+        if (EntityManager.EntityExists(soilComp.PlantUid))
+        {
+            if (user != null)
+                _popup.PopupEntity(Loc.GetString("cp14-farming-soil-interact-plant-exist"), soil, user.Value);
+
+            return false;
+        }
+
+        var plant = SpawnAttachedTo(seedComp.PlantProto, Transform(soil).Coordinates);
+
+        if (!TryComp<CP14PlantComponent>(plant, out var plantComp))
+            return false;
+
+        _transform.SetParent(plant, soil);
+        soilComp.PlantUid = plant;
+        plantComp.SoilUid = soil;
+
         return true;
     }
 

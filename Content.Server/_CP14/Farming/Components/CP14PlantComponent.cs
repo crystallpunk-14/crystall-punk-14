@@ -10,7 +10,7 @@ public sealed partial class CP14PlantComponent : Component
     /// Soil link. May be null, as not all plants in the world grow on entity soil (e.g. wild shrubs)
     /// </summary>
     [DataField]
-    public Entity<CP14SoilComponent>? SoilUid;
+    public EntityUid? SoilUid;
 
     /// <summary>
     /// The ability to consume a resource for growing
