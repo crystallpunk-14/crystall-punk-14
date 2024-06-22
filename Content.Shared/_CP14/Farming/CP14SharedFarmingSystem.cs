@@ -9,4 +9,8 @@ public partial class CP14SharedFarmingSystem : EntitySystem
     public sealed partial class PlantSeedDoAfterEvent : SimpleDoAfterEvent
     {
     }
+    [Serializable, NetSerializable]
+    public sealed partial class PlantRemoveDoAfterEvent : SimpleDoAfterEvent
+    {
+    }
 }
