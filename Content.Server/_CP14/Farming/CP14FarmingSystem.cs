@@ -92,8 +92,11 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         {
             TryRootPlant(plant, plantComp, ent);
         }
+        
         //Audio
         QueueDel(args.Target); //delete seed
+
+        args.Handled = true;
     }
 
     private bool TryRootPlant(EntityUid uid, CP14PlantComponent component, Entity<CP14SoilComponent> soilUid)

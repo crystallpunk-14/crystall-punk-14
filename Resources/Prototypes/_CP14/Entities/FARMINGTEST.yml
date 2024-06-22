@@ -21,7 +21,7 @@
     sprite: Objects/Specific/Hydroponics/nettle.rsi
     state: stage-1
   - type: CP14Plant
-  - type: CP14PlantEnergyRegeneration
+  - type: CP14PlantEnergyFromLight
     energy: 10
     daylight: true
     minUpdateFrequency: 5
