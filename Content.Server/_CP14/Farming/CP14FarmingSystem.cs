@@ -2,7 +2,6 @@ using Content.Server._CP14.Farming.Components;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
 using Content.Shared.DoAfter;
-using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
@@ -19,7 +18,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {
@@ -31,6 +29,37 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnRegenerationMapInit);
 
         SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(TakeEnergyFromLight);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<CP14PlantComponent>();
+        while (query.MoveNext(out var uid, out var plant))
+        {
+            if (_timing.CurTime <= plant.NextUpdateTime)
+                continue;
+
+            var newTime = TimeSpan.FromSeconds(plant.UpdateFrequency);
+            plant.NextUpdateTime = _timing.CurTime + newTime;
+
+            var ev = new CP14PlantUpdateEvent();
+            RaiseLocalEvent(uid, ev);
+
+            Dirty(new Entity<CP14PlantComponent>(uid, plant));
+        }
+    }
+
+    private void OnUnpaused(Entity<CP14PlantComponent> ent, ref EntityUnpausedEvent args)
+    {
+        ent.Comp.NextUpdateTime += args.PausedTime;
+    }
+
+    private void OnRegenerationMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
+    {
+        var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.Comp.UpdateFrequency));
+        plant.Comp.NextUpdateTime = _timing.CurTime + newTime;
     }
 
     private void TakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)
@@ -49,35 +78,5 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
         if (gainEnergy)
             plant.Energy += regeneration.Comp.Energy;
-    }
-
-    private void OnUnpaused(Entity<CP14PlantComponent> ent, ref EntityUnpausedEvent args)
-    {
-        ent.Comp.NextUpdateTime += args.PausedTime;
-    }
-
-    private void OnRegenerationMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
-    {
-        var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.Comp.UpdateFrequency));
-        plant.Comp.NextUpdateTime = _timing.CurTime + newTime;
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<CP14PlantComponent>();
-        while (query.MoveNext(out var uid, out var plant))
-        {
-            if (_timing.CurTime <= plant.NextUpdateTime)
-                continue;
-
-            var newTime = TimeSpan.FromSeconds(plant.UpdateFrequency);
-            plant.NextUpdateTime = _timing.CurTime + newTime;
-
-            var ev = new CP14PlantUpdateEvent();
-            RaiseLocalEvent(uid, ev);
-            Dirty(uid, plant);
-        }
     }
 }

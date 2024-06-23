@@ -4,25 +4,22 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._CP14.Farming;
 
-public sealed partial class ClientCP14FarmingSystem : CP14SharedFarmingSystem
+public sealed class ClientCP14FarmingSystem : CP14SharedFarmingSystem
 {
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14PlantVisualsComponent, ComponentInit>(OnPlantVisualInit);
-        SubscribeLocalEvent<CP14PlantVisualsComponent, AfterAutoHandleStateEvent>(OnAutoHandleState);
-        SubscribeLocalEvent<CP14PlantVisualsComponent, CP14PlantUpdateEvent>(OnPlantUpdate);
+        SubscribeLocalEvent<CP14PlantComponent, AfterAutoHandleStateEvent>(OnAutoHandleState);
     }
 
-    private void OnPlantUpdate(Entity<CP14PlantVisualsComponent> visuals, ref CP14PlantUpdateEvent args)
+    private void OnAutoHandleState(Entity<CP14PlantComponent> plant, ref AfterAutoHandleStateEvent args)
     {
-        UpdateVisuals(visuals);
-    }
+        if (!TryComp<CP14PlantVisualsComponent>(plant, out var visuals))
+            return;
 
-    private void OnAutoHandleState(Entity<CP14PlantVisualsComponent> visuals, ref AfterAutoHandleStateEvent args)
-    {
-        UpdateVisuals(visuals);
+        UpdateVisuals(new Entity<CP14PlantVisualsComponent>(plant, visuals));
     }
 
     private void OnPlantVisualInit(Entity<CP14PlantVisualsComponent> visuals, ref ComponentInit args)
