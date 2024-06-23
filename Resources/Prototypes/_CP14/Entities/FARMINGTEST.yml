@@ -29,8 +29,8 @@
     growState: "stage-"
   - type: CP14Plant
     growthLevel: 0
+    minUpdateFrequency: 5
+    maxUpdateFrequency: 10
   - type: CP14PlantEnergyFromLight
     energy: 10
     daylight: true
-    minUpdateFrequency: 5
-    maxUpdateFrequency: 10

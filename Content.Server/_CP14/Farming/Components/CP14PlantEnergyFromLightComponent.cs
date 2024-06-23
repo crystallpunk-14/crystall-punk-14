@@ -14,13 +14,4 @@ public sealed partial class CP14PlantEnergyFromLightComponent : Component
 
     [DataField]
     public bool Dark = false;
-
-    [DataField]
-    public float MinUpdateFrequency = 30f;
-
-    [DataField]
-    public float MaxUpdateFrequency = 90f;
-
-    [DataField]
-    public TimeSpan NextUpdateTime = TimeSpan.Zero;
 }

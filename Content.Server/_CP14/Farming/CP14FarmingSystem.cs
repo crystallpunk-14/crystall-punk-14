@@ -27,51 +27,56 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
         InitializeTools();
 
-        SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, EntityUnpausedEvent>(OnUnpaused);
+        SubscribeLocalEvent<CP14PlantComponent, EntityUnpausedEvent>(OnUnpaused);
+        SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnRegenerationMapInit);
 
-        SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, MapInitEvent>(OnRegenerationMapInit);
+        SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(TakeEnergyFromLight);
     }
 
-    private void OnUnpaused(Entity<CP14PlantEnergyFromLightComponent> ent, ref EntityUnpausedEvent args)
+    private void TakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)
+    {
+        if (!TryComp<CP14PlantComponent>(regeneration, out var plant))
+            return;
+
+        var gainEnergy = false;
+        var daylight = _dayCycle.TryDaylightThere(regeneration, true);
+
+        if (regeneration.Comp.Daylight && daylight)
+            gainEnergy = true;
+
+        if (regeneration.Comp.Dark && !daylight)
+            gainEnergy = true;
+
+        if (gainEnergy)
+            plant.Energy += regeneration.Comp.Energy;
+    }
+
+    private void OnUnpaused(Entity<CP14PlantComponent> ent, ref EntityUnpausedEvent args)
     {
         ent.Comp.NextUpdateTime += args.PausedTime;
     }
 
-    private void OnRegenerationMapInit(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref MapInitEvent args)
+    private void OnRegenerationMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
     {
-        regeneration.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(regeneration.Comp.MinUpdateFrequency, regeneration.Comp.MaxUpdateFrequency));
+        var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.Comp.MinUpdateFrequency, plant.Comp.MaxUpdateFrequency));
+        plant.Comp.NextUpdateTime = _timing.CurTime + newTime;
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        TakeEnergyFromLight();
-    }
-
-    private void TakeEnergyFromLight()
-    {
-        var query = EntityQueryEnumerator<CP14PlantComponent, CP14PlantEnergyFromLightComponent>();
-        while (query.MoveNext(out var uid, out var plant, out var regeneration))
+        var query = EntityQueryEnumerator<CP14PlantComponent>();
+        while (query.MoveNext(out var uid, out var plant))
         {
-            if (_timing.CurTime <= regeneration.NextUpdateTime)
+            if (_timing.CurTime <= plant.NextUpdateTime)
                 continue;
 
-            regeneration.NextUpdateTime = _timing.CurTime +
-                                          TimeSpan.FromSeconds(_random.NextFloat(regeneration.MinUpdateFrequency,
-                                              regeneration.MaxUpdateFrequency));
+            var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.MinUpdateFrequency, plant.MaxUpdateFrequency));
+            plant.NextUpdateTime = _timing.CurTime + newTime;
 
-            var gainEnergy = false;
-            var daylight = _dayCycle.TryDaylightThere(uid, true);
-
-            if (regeneration.Daylight && daylight)
-                gainEnergy = true;
-
-            if (regeneration.Dark && !daylight)
-                gainEnergy = true;
-
-            if (gainEnergy)
-                plant.Energy += regeneration.Energy;
+            var ev = new CP14PlantUpdateEvent();
+            RaiseLocalEvent(uid, ev);
         }
     }
 }

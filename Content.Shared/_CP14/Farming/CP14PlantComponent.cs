@@ -28,6 +28,34 @@ public sealed partial class CP14PlantComponent : Component
     /// </summary>
     [DataField]
     public float GrowthLevel = 0f;
+
+    /// <summary>
+    ///
+    /// </summary>
+    [DataField]
+    public float Health = 1f;
+
+    /// <summary>
+    ///
+    /// </summary>
+    [DataField]
+    public float MaxHealth = 10f;
+
+    [DataField]
+    public float MinUpdateFrequency = 30f;
+
+    [DataField]
+    public float MaxUpdateFrequency = 90f;
+
+    [DataField]
+    public TimeSpan NextUpdateTime = TimeSpan.Zero;
+}
+
+/// <summary>
+/// Is called periodically at random intervals on the plant.
+/// </summary>
+public sealed class CP14PlantUpdateEvent : EntityEventArgs
+{
 }
 
 /// Задачи:
