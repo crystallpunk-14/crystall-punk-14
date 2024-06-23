@@ -8,6 +8,18 @@
     },
     "states": [
       {
+        "name": "liq-1"
+      },
+      {
+        "name": "liq-2"
+      },
+      {
+        "name": "liq-3"
+      },
+      {
+        "name": "liq-4"
+      },
+      {
         "name": "soil1"
       },
       {
