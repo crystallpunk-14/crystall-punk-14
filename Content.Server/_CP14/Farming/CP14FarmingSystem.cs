@@ -29,6 +29,21 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnRegenerationMapInit);
 
         SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(TakeEnergyFromLight);
+        SubscribeLocalEvent<CP14PlantGrowingComponent, CP14PlantUpdateEvent>(PlantGrowing);
+    }
+
+    private void PlantGrowing(Entity<CP14PlantGrowingComponent> growing, ref CP14PlantUpdateEvent args)
+    {
+        if (args.Plant.Energy < growing.Comp.EnergyCost)
+            return;
+
+        if (args.Plant.Resource < growing.Comp.ResourceCost)
+            return;
+
+        args.Plant.Energy -= growing.Comp.EnergyCost;
+        args.Plant.Resource -= growing.Comp.ResourceCost;
+
+        args.Plant.GrowthLevel = MathHelper.Clamp01(args.Plant.GrowthLevel + growing.Comp.GrowthPerUpdate);
     }
 
     public override void Update(float frameTime)
@@ -44,7 +59,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             var newTime = TimeSpan.FromSeconds(plant.UpdateFrequency);
             plant.NextUpdateTime = _timing.CurTime + newTime;
 
-            var ev = new CP14PlantUpdateEvent();
+            var ev = new CP14PlantUpdateEvent(plant);
             RaiseLocalEvent(uid, ev);
 
             Dirty(new Entity<CP14PlantComponent>(uid, plant));
@@ -64,9 +79,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
     private void TakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)
     {
-        if (!TryComp<CP14PlantComponent>(regeneration, out var plant))
-            return;
-
         var gainEnergy = false;
         var daylight = _dayCycle.TryDaylightThere(regeneration, true);
 
@@ -77,6 +89,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             gainEnergy = true;
 
         if (gainEnergy)
-            plant.Energy += regeneration.Comp.Energy;
+            args.Plant.Energy += regeneration.Comp.Energy;
     }
 }

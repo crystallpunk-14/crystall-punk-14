@@ -29,7 +29,10 @@
     growState: "stage-"
   - type: CP14Plant
     growthLevel: 0
-    updateFrequency: 5
+    updateFrequency: 2
   - type: CP14PlantEnergyFromLight
-    energy: 10
+    energy: 1
     daylight: true
+  - type: CP14PlantGrowing
+    energyCost: 2
+    resourceCost: 0

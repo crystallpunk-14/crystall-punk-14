@@ -54,9 +54,14 @@ public sealed partial class CP14PlantComponent : Component
 /// <summary>
 /// Is called periodically at random intervals on the plant.
 /// </summary>
-[NetSerializable, Serializable]
 public sealed class CP14PlantUpdateEvent : EntityEventArgs
 {
+    public readonly CP14PlantComponent Plant;
+
+    public CP14PlantUpdateEvent(CP14PlantComponent comp)
+    {
+        Plant = comp;
+    }
 }
 
 /// Задачи:
