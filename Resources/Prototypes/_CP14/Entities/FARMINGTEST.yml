@@ -16,6 +16,7 @@
   - type: InteractionOutline
   - type: Clickable
   - type: Physics
+    canCollide: False
     bodyType: Static
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/nettle.rsi
