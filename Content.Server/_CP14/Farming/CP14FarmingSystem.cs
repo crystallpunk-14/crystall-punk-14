@@ -58,7 +58,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
     private void OnRegenerationMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
     {
-        var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.Comp.MinUpdateFrequency, plant.Comp.MaxUpdateFrequency));
+        var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.Comp.UpdateFrequency));
         plant.Comp.NextUpdateTime = _timing.CurTime + newTime;
     }
 
@@ -72,11 +72,12 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             if (_timing.CurTime <= plant.NextUpdateTime)
                 continue;
 
-            var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.MinUpdateFrequency, plant.MaxUpdateFrequency));
+            var newTime = TimeSpan.FromSeconds(plant.UpdateFrequency);
             plant.NextUpdateTime = _timing.CurTime + newTime;
 
             var ev = new CP14PlantUpdateEvent();
             RaiseLocalEvent(uid, ev);
+            Dirty(uid, plant);
         }
     }
 }

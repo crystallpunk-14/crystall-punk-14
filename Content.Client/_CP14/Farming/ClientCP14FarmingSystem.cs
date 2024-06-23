@@ -10,21 +10,27 @@ public sealed partial class ClientCP14FarmingSystem : CP14SharedFarmingSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14PlantVisualizerComponent, ComponentInit>(OnPlantVisualInit);
-        SubscribeLocalEvent<CP14PlantVisualizerComponent, AppearanceChangeEvent>(OnPlantAppearanceChange);
+        SubscribeLocalEvent<CP14PlantVisualsComponent, ComponentInit>(OnPlantVisualInit);
+        SubscribeLocalEvent<CP14PlantVisualsComponent, AfterAutoHandleStateEvent>(OnAutoHandleState);
+        SubscribeLocalEvent<CP14PlantVisualsComponent, CP14PlantUpdateEvent>(OnPlantUpdate);
     }
 
-    private void OnPlantAppearanceChange(Entity<CP14PlantVisualizerComponent> visuals, ref AppearanceChangeEvent args)
+    private void OnPlantUpdate(Entity<CP14PlantVisualsComponent> visuals, ref CP14PlantUpdateEvent args)
     {
         UpdateVisuals(visuals);
     }
 
-    private void OnPlantVisualInit(Entity<CP14PlantVisualizerComponent> visuals, ref ComponentInit args)
+    private void OnAutoHandleState(Entity<CP14PlantVisualsComponent> visuals, ref AfterAutoHandleStateEvent args)
     {
         UpdateVisuals(visuals);
     }
 
-    private void UpdateVisuals(Entity<CP14PlantVisualizerComponent> visuals)
+    private void OnPlantVisualInit(Entity<CP14PlantVisualsComponent> visuals, ref ComponentInit args)
+    {
+        UpdateVisuals(visuals);
+    }
+
+    private void UpdateVisuals(Entity<CP14PlantVisualsComponent> visuals)
     {
         if (!TryComp<SpriteComponent>(visuals, out var sprite))
             return;

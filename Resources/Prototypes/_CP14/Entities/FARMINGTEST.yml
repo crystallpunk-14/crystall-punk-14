@@ -24,13 +24,12 @@
       map: ["enum.PlantVisualLayers.Base"]
     state: stage-1
   - type: Appearance
-  - type: CP14PlantVisualizer
+  - type: CP14PlantVisuals
     growthSteps: 5
     growState: "stage-"
   - type: CP14Plant
     growthLevel: 0
-    minUpdateFrequency: 5
-    maxUpdateFrequency: 10
+    updateFrequency: 5
   - type: CP14PlantEnergyFromLight
     energy: 10
     daylight: true

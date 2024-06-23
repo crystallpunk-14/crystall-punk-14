@@ -1,9 +1,12 @@
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
+
 namespace Content.Shared._CP14.Farming;
 
 /// <summary>
 /// The backbone of any plant. Provides common variables for the plant to other components, and a link to the soil
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedFarmingSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class CP14PlantComponent : Component
 {
     /// <summary>
@@ -26,7 +29,7 @@ public sealed partial class CP14PlantComponent : Component
     /// <summary>
     /// Plant growth status, 0 to 1
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float GrowthLevel = 0f;
 
     /// <summary>
@@ -41,19 +44,17 @@ public sealed partial class CP14PlantComponent : Component
     [DataField]
     public float MaxHealth = 10f;
 
-    [DataField]
-    public float MinUpdateFrequency = 30f;
+    [DataField(serverOnly: true)]
+    public float UpdateFrequency = 90f;
 
-    [DataField]
-    public float MaxUpdateFrequency = 90f;
-
-    [DataField]
+    [DataField(serverOnly: true)]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
 }
 
 /// <summary>
 /// Is called periodically at random intervals on the plant.
 /// </summary>
+[NetSerializable, Serializable]
 public sealed class CP14PlantUpdateEvent : EntityEventArgs
 {
 }
