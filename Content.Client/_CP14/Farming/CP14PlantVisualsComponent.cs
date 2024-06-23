@@ -11,9 +11,6 @@ public sealed partial class CP14PlantVisualsComponent : Component
 
     [DataField]
     public string? GrowUnshadedState;
-
-    [DataField]
-    public bool ShowZeroStep = false;
 }
 
 public enum PlantVisualLayers : byte

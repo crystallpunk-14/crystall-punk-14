@@ -10,8 +10,8 @@ public sealed partial class CP14PlantEnergyFromLightComponent : Component
     public float Energy = 1f;
 
     [DataField]
-    public bool Daylight = true;
+    public bool Daytime = true;
 
     [DataField]
-    public bool Dark = false;
+    public bool Nighttime = false;
 }

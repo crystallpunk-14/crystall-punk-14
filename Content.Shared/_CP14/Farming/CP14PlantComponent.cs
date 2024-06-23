@@ -54,14 +54,26 @@ public sealed partial class CP14PlantComponent : Component
 /// <summary>
 /// Is called periodically at random intervals on the plant.
 /// </summary>
-public sealed class CP14PlantUpdateEvent : EntityEventArgs
+public sealed class CP14AfterPlantUpdateEvent : EntityEventArgs
 {
     public readonly CP14PlantComponent Plant;
 
-    public CP14PlantUpdateEvent(CP14PlantComponent comp)
+    public CP14AfterPlantUpdateEvent(CP14PlantComponent comp)
     {
         Plant = comp;
     }
+}
+
+public sealed class CP14PlantEnergyUpdateEvent : EntityEventArgs
+{
+    public float Energy = 0f;
+    public bool Canceled = false;
+}
+
+public sealed class CP14PlantResourceUpdateEvent : EntityEventArgs
+{
+    public float Resource = 0f;
+    public bool Canceled = false;
 }
 
 /// Задачи:

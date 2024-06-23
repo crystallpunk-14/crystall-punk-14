@@ -24,26 +24,10 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         base.Initialize();
 
         InitializeTools();
+        InitializeResources();
 
         SubscribeLocalEvent<CP14PlantComponent, EntityUnpausedEvent>(OnUnpaused);
-        SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnRegenerationMapInit);
-
-        SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(TakeEnergyFromLight);
-        SubscribeLocalEvent<CP14PlantGrowingComponent, CP14PlantUpdateEvent>(PlantGrowing);
-    }
-
-    private void PlantGrowing(Entity<CP14PlantGrowingComponent> growing, ref CP14PlantUpdateEvent args)
-    {
-        if (args.Plant.Energy < growing.Comp.EnergyCost)
-            return;
-
-        if (args.Plant.Resource < growing.Comp.ResourceCost)
-            return;
-
-        args.Plant.Energy -= growing.Comp.EnergyCost;
-        args.Plant.Resource -= growing.Comp.ResourceCost;
-
-        args.Plant.GrowthLevel = MathHelper.Clamp01(args.Plant.GrowthLevel + growing.Comp.GrowthPerUpdate);
+        SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
     }
 
     public override void Update(float frameTime)
@@ -59,7 +43,17 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             var newTime = TimeSpan.FromSeconds(plant.UpdateFrequency);
             plant.NextUpdateTime = _timing.CurTime + newTime;
 
-            var ev = new CP14PlantUpdateEvent(plant);
+            var energyEv = new CP14PlantEnergyUpdateEvent();
+            RaiseLocalEvent(uid, energyEv);
+            if (!energyEv.Canceled)
+                plant.Energy += energyEv.Energy;
+
+            var resourceEv = new CP14PlantResourceUpdateEvent();
+            RaiseLocalEvent(uid, resourceEv);
+            if (!resourceEv.Canceled)
+                plant.Resource += resourceEv.Resource;
+
+            var ev = new CP14AfterPlantUpdateEvent(plant);
             RaiseLocalEvent(uid, ev);
 
             Dirty(new Entity<CP14PlantComponent>(uid, plant));
@@ -71,24 +65,9 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         ent.Comp.NextUpdateTime += args.PausedTime;
     }
 
-    private void OnRegenerationMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
+    private void OnMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
     {
         var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.Comp.UpdateFrequency));
         plant.Comp.NextUpdateTime = _timing.CurTime + newTime;
-    }
-
-    private void TakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)
-    {
-        var gainEnergy = false;
-        var daylight = _dayCycle.TryDaylightThere(regeneration, true);
-
-        if (regeneration.Comp.Daylight && daylight)
-            gainEnergy = true;
-
-        if (regeneration.Comp.Dark && !daylight)
-            gainEnergy = true;
-
-        if (gainEnergy)
-            args.Plant.Energy += regeneration.Comp.Energy;
     }
 }
