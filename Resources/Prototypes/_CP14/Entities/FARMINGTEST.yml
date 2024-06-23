@@ -37,3 +37,5 @@
   - type: CP14PlantGrowing
     energyCost: 2
     resourceCost: 0
+  - type: CP14PlantMetabolizer
+    metabolizer: Normal

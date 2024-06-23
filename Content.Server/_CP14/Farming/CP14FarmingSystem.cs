@@ -1,9 +1,11 @@
 using Content.Server._CP14.Farming.Components;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
 using Content.Shared.DoAfter;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -18,6 +20,8 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
 
     public override void Initialize()
     {

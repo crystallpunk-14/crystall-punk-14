@@ -1,0 +1,7 @@
+- type: CP14PlantMetabolizer
+  id: Normal
+  metabolization:
+    CP14Water:
+      - !type:AffectPlantValues
+        health: -1
+        growth: 0.05
