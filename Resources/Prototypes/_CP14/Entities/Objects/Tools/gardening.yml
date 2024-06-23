@@ -29,7 +29,6 @@
         volume: 2
   - type: CP14PlantRemover
 
-
 - type: entity
   id: CP14Hoe
   parent: BaseItem

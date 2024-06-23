@@ -33,8 +33,6 @@
         soil2: ""
         soil3: ""
         soil4: ""
-        soil5: ""
-        soil6: ""
   #- type: SolutionContainerManager
   #  solutions:
   #    soil:
