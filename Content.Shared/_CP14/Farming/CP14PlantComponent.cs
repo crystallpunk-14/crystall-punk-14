@@ -1,7 +1,7 @@
 namespace Content.Shared._CP14.Farming;
 
 /// <summary>
-///
+/// The backbone of any plant. Provides common variables for the plant to other components, and a link to the soil
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedFarmingSystem))]
 public sealed partial class CP14PlantComponent : Component
@@ -23,6 +23,9 @@ public sealed partial class CP14PlantComponent : Component
     [DataField]
     public float Resource = 0f;
 
+    /// <summary>
+    /// Plant growth status, 0 to 1
+    /// </summary>
     [DataField]
     public float GrowthLevel = 0f;
 }
