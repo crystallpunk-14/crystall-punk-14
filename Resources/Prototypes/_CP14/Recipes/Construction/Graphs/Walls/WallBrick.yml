@@ -1,0 +1,16 @@
+#- type: constructionGraph
+#  id: CP14WallBrownbrick
+#  start: start
+#  graph:
+#    - node: start
+#      edges:
+#        - to: WallBrownbrick
+#          completed:
+#            - !type:SnapToGrid
+#              southRotation: true
+#          steps:
+#            - material: CP14Brick
+#              amount: 3
+#              doAfter: 2
+#    - node: WallBrownbrick
+#      entity: CP14WallBrownbrick

@@ -31,6 +31,9 @@
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
   - type: IconSmooth
     base: stonebricks
+  - type: Construction
+    graph: CP14WallStonebrick
+    node: WallStonebrick
 
 - type: entity
   id: CP14WallWhitebrick
@@ -55,6 +58,9 @@
     sprite: _CP14/Structures/Walls/bricks_wall.rsi
   - type: IconSmooth
     base: bricksA
+#  - type: Construction
+#    graph: CP14WallBrownbrick
+#    node: WallBrownbrick
 
 - type: entity
   id: CP14WallWooden

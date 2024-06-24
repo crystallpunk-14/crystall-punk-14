@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "TEMPORARY SPRITE",
+  "copyright": "Created by Imperator_Shlepa for CrystallPunk14",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bricks"
+    }
+  ]
+}

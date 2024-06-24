@@ -51,3 +51,40 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Stone wall
+  description: This is wall, bro. #TODO
+  id: CP14WallStonebrick
+  graph: CP14WallStonebrick
+  startNode: start
+  targetNode: WallStonebrick
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+#- type: construction
+#  crystallPunkAllowed: true
+#  name: Brownbrick wall
+#  description: This is wall, bro. #TODO
+#  id: CP14WallBrownbrick
+#  graph: CP14WallBrownbrick
+#  startNode: start
+#  targetNode: WallBrownbrick
+#  category: construction-category-structures
+#  icon:
+#    sprite: _CP14/Structures/Walls/bricks_wall.rsi
+#    state: full
+#  objectType: Structure
+#  placementMode: SnapgridCenter
+#  canBuildInImpassable: false
+#  conditions:
+#    - !type:TileNotBlocked
+#fix this
