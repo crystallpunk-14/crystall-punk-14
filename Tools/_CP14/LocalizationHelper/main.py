@@ -23,10 +23,10 @@ def main():
     entities_ftl = ""
 
     def check_attrs(attr):
-                    if not values.get(attr):
-                        parent = prototypes_dict.get(values["parent"])
-                        if parent and parent.get(attr):
-                            values[attr] = f"{{ ent-{values['parent']}.{attr} }}"
+        if not values.get(attr):
+            parent = prototypes_dict.get(values["parent"])
+            if parent and parent.get(attr):
+                values[attr] = f"{{ ent-{values['parent']}.{attr} }}"
     
     for prototype in prototypes_dict:
         if localization_dict.get(prototype):
