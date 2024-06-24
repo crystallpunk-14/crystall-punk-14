@@ -1,9 +1,15 @@
 def read_ftl(path: str) -> dict:
+    """
+        The function looks at each line of the ftl
+        file and determines by the indentation in the line whether
+        it is a new prototype or an attribute of an old one.
+    """
     prototypes = {
 
     }
 
     last_prototype = ""
+
     try:
         with open(path, encoding="utf-8") as file:
             for line in file.readlines():
@@ -26,6 +32,6 @@ def read_ftl(path: str) -> dict:
 
                     prototypes[last_prototype][attr] = line.split(" = ")[-1].strip()
     except Exception as e:
-        print(f"Произошла ошибка во время чтения {path}, ошибка - {e}")
+        print(f"An error occurred while reading a file {path}, error - {e}")
 
     return prototypes
