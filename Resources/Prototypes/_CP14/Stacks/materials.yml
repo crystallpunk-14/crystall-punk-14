@@ -26,10 +26,3 @@
   icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
   maxCount: 10
 
-#- type: stack
-#  id: CP14Brownbrick
-#  name: brownbrick
-#  spawn: CP14Brownbrick1
-#  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
-#  maxCount: 10
-#fix this
