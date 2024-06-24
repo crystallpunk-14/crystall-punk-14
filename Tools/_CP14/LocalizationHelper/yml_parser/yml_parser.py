@@ -18,7 +18,7 @@ def get_proto_attrs(prototypes: dict, prototype: dict) -> None:
 def yml_parser(path: str) -> dict:
     """
         The function gets the path, then with the help of the os library
-        goes through each file,checks that the file extension is "ftl",
+        goes through each file,checks that the file extension is "yml",
         then processes the file using the "PyYaml" library
     """
     prototypes = {}
