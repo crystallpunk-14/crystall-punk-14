@@ -22,6 +22,12 @@ def main():
 
     entities_ftl = ""
 
+    def check_attrs(attr):
+                    if not values.get(attr):
+                        parent = prototypes_dict.get(values["parent"])
+                        if parent and parent.get(attr):
+                            values[attr] = f"{{ ent-{values['parent']}.{attr} }}"
+    
     for prototype in prototypes_dict:
         if localization_dict.get(prototype):
             proto_ftl = ftl_writer.create_ftl(prototype, localization_dict[prototype])
@@ -30,12 +36,6 @@ def main():
             values = prototypes_dict[prototype]
             if not values.get("name"):
                 values["name"] = f"{{ ent-{values['parent']} }}"
-
-                def check_attrs(attr):
-                    if not values.get(attr):
-                        parent = prototypes_dict.get(values["parent"])
-                        if parent and parent.get(attr):
-                            values[attr] = f"{{ ent-{values['parent']}.{attr} }}"
 
                 check_attrs("desc")
                 check_attrs("suffix")
