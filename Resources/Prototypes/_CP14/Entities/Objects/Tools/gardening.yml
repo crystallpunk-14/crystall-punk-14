@@ -27,7 +27,7 @@
       params:
         variation: 0.03
         volume: 2
-  - type: CP14PlantRemover
+  - type: CP14PlantRemover # TODO delete this comp
 
 - type: entity
   id: CP14Hoe

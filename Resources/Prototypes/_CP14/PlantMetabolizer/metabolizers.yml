@@ -3,5 +3,4 @@
   metabolization:
     CP14Water:
       - !type:AffectPlantValues
-        health: -1
-        growth: 0.05
+        resource: 1
