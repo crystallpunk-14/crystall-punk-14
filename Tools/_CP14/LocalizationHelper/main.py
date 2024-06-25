@@ -29,7 +29,6 @@ def main():
     prototypes_path, localization_path = get_paths(config)
     prototypes_dict, localization_dict = yml_parser.yml_parser(prototypes_path), ftl_parser.ftl_parser(localization_path)
 
-
     all_prototypes = {**prototypes_dict, **localization_dict}
 
     entities_ftl = ""
@@ -46,11 +45,13 @@ def main():
             if prototype in prototypes_dict:
                 prototype_attrs["parent"] = prototypes_dict[prototype]["parent"]
 
-                for attr in ["desc", "suffix"]:
-                    if not prototype_attrs[attr]:
-                        parent = prototype_attrs["parent"]
-                        if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
-                            prototype_attrs[attr] = f"{{ ent-{parent}.{attr} }}"
+                parent = prototype_attrs["parent"]
+                if not prototype_attrs.get("name"):
+                    prototype_attrs["name"] = f"{{ ent-{prototype_attrs["parent"]} }}"
+
+                if not prototype_attrs["desc"]:
+                    if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
+                        prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
 
             proto_ftl = ftl_writer.create_ftl(prototype, all_prototypes[prototype])
             entities_ftl += proto_ftl
