@@ -11,7 +11,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -40,7 +40,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -69,7 +69,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -98,7 +98,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -129,7 +129,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -158,7 +158,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -187,7 +187,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -216,7 +216,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_single_edge_NE.png
@@ -251,7 +251,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -280,7 +280,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -309,7 +309,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -338,7 +338,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -369,7 +369,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -398,7 +398,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -427,7 +427,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -456,7 +456,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_single_edge_NE.png
@@ -491,7 +491,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -520,7 +520,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -549,7 +549,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -578,7 +578,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -609,7 +609,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -638,7 +638,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -667,7 +667,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -696,7 +696,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_single_edge_NE.png
@@ -731,7 +731,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -760,7 +760,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -789,7 +789,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -818,7 +818,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -849,7 +849,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -878,7 +878,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -907,7 +907,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -936,7 +936,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_single_edge_NE.png
@@ -971,7 +971,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1000,7 +1000,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1029,7 +1029,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1058,7 +1058,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1089,7 +1089,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1118,7 +1118,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1147,7 +1147,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1176,7 +1176,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 100
+  edgeSpritePriority: 101
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
@@ -1204,7 +1204,7 @@
   id: CP14FloorWoodPlanksBurned
   name: cp14-tiles-woodplanks-burned
   sprite: /Textures/_CP14/Tiles/WoodPlanks/Burned/woodplanks_burned.png
-  edgeSpritePriority: 99
+  edgeSpritePriority: 100
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_NE.png
@@ -1226,7 +1226,7 @@
   id: CP14FloorWoodPlanksBigBurned
   name: cp14-tiles-woodplanks-big-burned
   sprite: /Textures/_CP14/Tiles/WoodPlanks/Burned/woodplanks_big_burned.png
-  edgeSpritePriority: 99
+  edgeSpritePriority: 100
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_NE.png
@@ -1248,7 +1248,7 @@
   id: CP14FloorWoodPlanksCruciformBurned
   name: cp14-tiles-woodplanks-cruciform-burned
   sprite: /Textures/_CP14/Tiles/WoodPlanks/Burned/woodplanks_cruciform_burned.png
-  edgeSpritePriority: 99
+  edgeSpritePriority: 100
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_NE.png
@@ -1270,7 +1270,7 @@
   id: CP14FloorWoodPlankStairwaysBurned
   name: cp14-tiles-woodplanks-stairways-burned
   sprite: /Textures/_CP14/Tiles/WoodPlanks/Burned/woodplanks_stairways_burned.png
-  edgeSpritePriority: 99
+  edgeSpritePriority: 100
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_SE.png
     NorthEast: /Textures/_CP14/Tiles/WoodPlanks/Burned/single_edge_burned_NE.png

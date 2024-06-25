@@ -44,6 +44,16 @@
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14Floorfundament
   isSubfloor: false
   footstepSounds:
@@ -59,6 +69,16 @@
   variants: 1
   placementVariants:
   - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -74,6 +94,16 @@
   variants: 1
   placementVariants:
   - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -89,6 +119,16 @@
   variants: 1
   placementVariants:
   - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
