@@ -1,0 +1,6 @@
+{
+    "paths": {
+        "prototypes": "../../../Resources/Prototypes/_CP14/Entities",
+        "localization": "../../../Resources/Locale/ru-RU/_CP14/_PROTO/entities"
+    }
+}
