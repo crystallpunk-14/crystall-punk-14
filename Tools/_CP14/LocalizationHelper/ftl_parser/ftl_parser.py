@@ -12,7 +12,7 @@ def ftl_parser(path: str) -> dict:
 
     for dirpath, _, filenames in os.walk(path):
         for filename in filenames:
-            path = f"{dirpath}/{filename}"
+            path = f"{dirpath}\\{filename}"
 
             if not filename.endswith(".ftl"):
                 continue

@@ -18,14 +18,14 @@ def get_proto_attrs(prototypes: dict, prototype: dict) -> None:
 def yml_parser(path: str) -> dict:
     """
         The function gets the path, then with the help of the os library
-        goes through each file,checks that the file extension is "yml",
+        goes through each file,checks that the file extension is "ftl",
         then processes the file using the "PyYaml" library
     """
     prototypes = {}
 
     for dirpath, _, filenames in os.walk(path):
         for filename in filenames:
-            path = f"{dirpath}/{filename}"
+            path = f"{dirpath}\\{filename}"
 
             if not filename.endswith(".yml"):
                 continue
@@ -41,8 +41,8 @@ def yml_parser(path: str) -> dict:
 
                     data = yaml.safe_load(proto)
             except Exception as e:
-                print(f"An error occurred during prototype processing - {e}")
-                print(path)
+                with open("logs/errors_log.txt", "a") as file:
+                    file.write(f"YML-ERROR:\nAn error occurred during prototype processing {path}, error - {e}\n")
             else:
                 if data is not None:
                     for prototype in data:

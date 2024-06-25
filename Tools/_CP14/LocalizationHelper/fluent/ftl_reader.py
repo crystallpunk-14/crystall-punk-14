@@ -16,7 +16,7 @@ def read_ftl(path: str) -> dict:
                 if line.startswith("#") or line.startswith("\n"):
                     continue
 
-                if not line.startswith("    "):
+                if not line.startswith(" "):
                     proto_id, proto_name = line.split(" = ")
                     proto_id = proto_id.replace("ent-", "")
                     last_prototype = proto_id
@@ -32,6 +32,7 @@ def read_ftl(path: str) -> dict:
 
                     prototypes[last_prototype][attr] = line.split(" = ")[-1].strip()
     except Exception as e:
-        print(f"An error occurred while reading a file {path}, error - {e}")
+        with open("logs/errors_log.txt", "a") as file:
+            file.write(f"FTL-ERROR:\nAn error occurred while reading a file {path}, error - {e}\n")
 
     return prototypes

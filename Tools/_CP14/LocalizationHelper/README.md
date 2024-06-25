@@ -3,16 +3,33 @@
 
 A script to help support game translation
 
+## The right version of python: 3.10+
+
 
 ## Deployment
 
-
+in console
 
 ```bash
 pip install -r requirements.txt
+```
+or just run
 
+```bash
+install_packages.bat
 ```
 
+## Run
+in console
+
+```bash
+python main.py
+```
+or just run
+
+```bash
+run.bat
+```
 
 ## Demo
 
