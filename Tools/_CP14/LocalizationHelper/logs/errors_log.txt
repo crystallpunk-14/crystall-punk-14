@@ -1,0 +1,9 @@
+YML-ERROR:
+An error occurred during prototype processing ../../../Resources/Prototypes/_CP14/Entities\Objects\Weapons\Melee\base.yml, error - while parsing a block mapping
+  in "<unicode string>", line 35, column 7:
+          fix1:
+          ^
+expected <block end>, but found '<block mapping start>'
+  in "<unicode string>", line 41, column 9:
+            density: 10
+            ^
