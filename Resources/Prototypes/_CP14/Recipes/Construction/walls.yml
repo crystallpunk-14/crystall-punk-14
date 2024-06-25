@@ -51,3 +51,21 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Stone wall
+  description: i need more bullets #TODO
+  id: CP14WallStonebrick
+  graph: CP14WallStonebrick
+  startNode: start
+  targetNode: WallStonebrick
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
