@@ -114,6 +114,9 @@ ent-CP14ClothingShoesAristocraticBlack = aristocratic black boots
 ent-CP14ClothingShoesSandals = сандали
     .desc = Сандали, сделанные из грубой кожи и металлических креплений.
 
+ent-CP14ClothingShoesSuperSandals = super sandals!
+    .desc = { ent-CP14ClothingShoesSandals.desc }
+
 ent-CP14Mist = mist
 
 ent-CP14SpawnPointAdventurer = авантюрист

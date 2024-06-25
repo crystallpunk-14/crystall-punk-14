@@ -45,3 +45,13 @@
     sprite: _CP14/Clothing/Shoes/sandals.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/sandals.rsi
+    
+- type: entity
+  parent: CP14ClothingShoesSandals
+  id: CP14ClothingShoesSuperSandals
+  name: super sandals!
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/sandals.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/sandals.rsi
