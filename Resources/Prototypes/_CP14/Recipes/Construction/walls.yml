@@ -55,7 +55,7 @@
 - type: construction
   crystallPunkAllowed: true
   name: Stone wall
-  description: i need more bullets #TODO
+  description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WallStonebrick
   graph: CP14WallStonebrick
   startNode: start
