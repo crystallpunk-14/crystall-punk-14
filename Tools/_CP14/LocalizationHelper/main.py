@@ -44,14 +44,19 @@ def main():
         try:
             if prototype in prototypes_dict:
                 prototype_attrs["parent"] = prototypes_dict[prototype]["parent"]
-
                 parent = prototype_attrs["parent"]
-                if not prototype_attrs.get("name"):
-                    prototype_attrs["name"] = f"{{ ent-{prototype_attrs["parent"]} }}"
 
-                if not prototype_attrs["desc"]:
+
+                if not prototype_attrs.get("name"):
+                    prototype_attrs["name"] = f"{{ ent-{parent} }}"
+
+                if not prototype_attrs.get("desc"):
                     if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
                         prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
+
+                if not prototype_attrs["suffix"]:
+                    if prototypes_dict[prototype].get("suffix"):
+                        prototype_attrs["suffix"] = prototypes_dict[prototype]["suffix"]
 
             proto_ftl = ftl_writer.create_ftl(prototype, all_prototypes[prototype])
             entities_ftl += proto_ftl
