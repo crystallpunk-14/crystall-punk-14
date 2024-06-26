@@ -177,33 +177,33 @@
         "suffix": null
     },
     "CP14ClothingShirtCottonBlueDark": {
-        "parent": "CP14ClothingShirtBase",
+        "parent": "CP14ClothingShirtCottonBlue",
         "name": "cotton dark shirt",
-        "desc": "Pleasant to the touch material, in a comfortable loose shirt shape.",
+        "desc": null,
         "suffix": null
     },
     "CP14ClothingShirtCottonPurple": {
-        "parent": "CP14ClothingShirtBase",
+        "parent": "CP14ClothingShirtCottonBlue",
         "name": "cotton purple shirt",
-        "desc": "Pleasant to the touch material, in a comfortable loose shirt shape.",
+        "desc": null,
         "suffix": null
     },
     "CP14ClothingShirtCottonRed": {
-        "parent": "CP14ClothingShirtBase",
+        "parent": "CP14ClothingShirtCottonBlue",
         "name": "cotton red shirt",
-        "desc": "Pleasant to the touch material, in a comfortable loose shirt shape.",
+        "desc": null,
         "suffix": null
     },
     "CP14ClothingShirtCottonWhite": {
-        "parent": "CP14ClothingShirtBase",
+        "parent": "CP14ClothingShirtCottonBlue",
         "name": "cotton white shirt",
-        "desc": "Pleasant to the touch material, in a comfortable loose shirt shape.",
+        "desc": null,
         "suffix": null
     },
     "CP14ClothingShirtCottonYellow": {
-        "parent": "CP14ClothingShirtBase",
+        "parent": "CP14ClothingShirtCottonBlue",
         "name": "cotton yellow shirt",
-        "desc": "Pleasant to the touch material, in a comfortable loose shirt shape.",
+        "desc": null,
         "suffix": null
     },
     "CP14ClothingShirtSteampunk": {
@@ -551,19 +551,19 @@
     "CP14VialSmallAgaricMushroom": {
         "parent": "CP14VialSmall",
         "name": null,
-        "desc": null,
+        "desc": "New description!",
         "suffix": "Fly agaric juice"
     },
     "CP14VialSmallGroundQuartz": {
         "parent": "CP14VialSmall",
         "name": null,
-        "desc": null,
+        "desc": "New description 3!",
         "suffix": "Ground Quartz"
     },
     "CP14VialSmallWildSage": {
         "parent": "CP14VialSmall",
         "name": null,
-        "desc": null,
+        "desc": "New description 4!",
         "suffix": "Wild sage Sap"
     },
     "CP14VialSmallChromiumSlime": {

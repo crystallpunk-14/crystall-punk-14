@@ -182,6 +182,7 @@
   id: CP14VialSmallWildSage
   parent: CP14VialSmall
   suffix: Wild sage Sap
+  description: New description 4!
   components:
   - type: SolutionContainerManager
     solutions:
