@@ -54,7 +54,7 @@ def main():
                     if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
                         prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
 
-                if not prototype_attrs["suffix"]:
+                if not prototype_attrs.get("suffix"):
                     if prototypes_dict[prototype].get("suffix"):
                         prototype_attrs["suffix"] = prototypes_dict[prototype]["suffix"]
 
