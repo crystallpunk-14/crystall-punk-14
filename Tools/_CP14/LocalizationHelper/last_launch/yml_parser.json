@@ -551,13 +551,13 @@
     "CP14VialSmallAgaricMushroom": {
         "parent": "CP14VialSmall",
         "name": null,
-        "desc": "New description!",
+        "desc": null,
         "suffix": "Fly agaric juice"
     },
     "CP14VialSmallGroundQuartz": {
         "parent": "CP14VialSmall",
         "name": null,
-        "desc": "New description 3!",
+        "desc": null,
         "suffix": "Ground Quartz"
     },
     "CP14VialSmallWildSage": {
