@@ -6,7 +6,7 @@ class YMLParser(BaseParser):
 
     @staticmethod
     def check_proto_attrs(prototype: dict) -> bool:
-        return any(prototype.get(attr) is not None for attr in ["name", "description", "suffix"])
+        return any(prototype.get(attr) is not None for attr in ["parent", "name", "description", "suffix"])
 
     @staticmethod
     def get_proto_attrs(prototypes: dict, prototype: dict) -> None:
@@ -53,5 +53,4 @@ class YMLParser(BaseParser):
                         if self.check_proto_attrs(prototype):
                             self.get_proto_attrs(prototypes, prototype)
 
-        # self.save_to_json(prototypes, self.yml_parser_last_launch_path)
         return prototypes
