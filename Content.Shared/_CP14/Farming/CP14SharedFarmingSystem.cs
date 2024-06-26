@@ -3,7 +3,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Farming;
 
-public partial class CP14SharedFarmingSystem : EntitySystem
+public abstract partial class CP14SharedFarmingSystem : EntitySystem
 {
     [Serializable, NetSerializable]
     public sealed partial class PlantSeedDoAfterEvent : SimpleDoAfterEvent

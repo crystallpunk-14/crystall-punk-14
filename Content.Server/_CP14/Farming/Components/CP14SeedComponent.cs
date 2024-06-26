@@ -9,7 +9,7 @@ namespace Content.Server._CP14.Farming.Components;
 public sealed partial class CP14SeedComponent : Component
 {
     [DataField]
-    public float PlantingTime = 2f;
+    public TimeSpan PlantingTime = TimeSpan.FromSeconds(2f);
 
     [DataField(required: true)]
     public EntProtoId PlantProto;

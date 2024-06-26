@@ -12,8 +12,8 @@ public sealed partial class CP14PlantRemoverComponent : Component
     ///
     /// </summary>
     [DataField]
-    public float DoAfter = 1f;
+    public TimeSpan DoAfter = TimeSpan.FromSeconds(1f);
 
     [DataField]
-    public SoundSpecifier Sound = new SoundCollectionSpecifier("CP14Digging");
+    public SoundSpecifier? Sound = new SoundCollectionSpecifier("CP14Digging");
 }

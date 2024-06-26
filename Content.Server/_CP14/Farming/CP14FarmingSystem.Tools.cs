@@ -25,9 +25,9 @@ public sealed partial class CP14FarmingSystem
         if (!TryComp<CP14SeedComponent>(seed, out var seedComp))
             return false;
 
-        if (EntityManager.EntityExists(soilComp.PlantUid))
+        if (Exists(soilComp.PlantUid))
         {
-            if (user != null)
+            if (user is not null)
                 _popup.PopupEntity(Loc.GetString("cp14-farming-soil-interact-plant-exist"), soil, user.Value);
 
             return false;
@@ -98,7 +98,7 @@ public sealed partial class CP14FarmingSystem
                 BreakOnMove = true,
                 BreakOnHandChange = true,
             };
-        _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        _doAfter.TryStartDoAfter(doAfterArgs);
     }
 
     private void OnPlantRemoverInteract(Entity<CP14PlantRemoverComponent> ent, ref AfterInteractEvent args)
@@ -117,6 +117,6 @@ public sealed partial class CP14FarmingSystem
                 BreakOnMove = true,
                 BreakOnHandChange = true,
             };
-        _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        _doAfter.TryStartDoAfter(doAfterArgs);
     }
 }

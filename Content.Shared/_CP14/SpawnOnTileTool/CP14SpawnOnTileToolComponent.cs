@@ -19,19 +19,25 @@ public sealed partial class CP14SpawnOnTileToolComponent : Component
     public bool NeedEmptySpace = true;
 
     [DataField]
-    public float DoAfter = 1f;
+    public TimeSpan DoAfter = TimeSpan.FromSeconds(1f);
 }
 
 [Serializable, NetSerializable]
 public sealed partial class SpawnOnTileToolAfterEvent : DoAfterEvent
 {
     public override DoAfterEvent Clone() => this;
-    public NetCoordinates Coordinates;
-    public EntProtoId Spawn;
+    public readonly NetCoordinates Coordinates;
+    public readonly EntProtoId Spawn;
 
     public SpawnOnTileToolAfterEvent(IEntityManager entManager, EntityCoordinates coord, EntProtoId spawn)
     {
         Spawn = spawn;
         Coordinates = entManager.GetNetCoordinates(coord);
+    }
+
+    public SpawnOnTileToolAfterEvent(NetCoordinates coord, EntProtoId spawn)
+    {
+        Spawn = spawn;
+        Coordinates = coord;
     }
 }

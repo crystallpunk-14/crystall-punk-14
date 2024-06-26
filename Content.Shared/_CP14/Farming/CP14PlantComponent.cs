@@ -71,7 +71,7 @@ public sealed partial class CP14PlantComponent : Component
     }
 
     [DataField(serverOnly: true)]
-    public float UpdateFrequency = 90f;
+    public TimeSpan UpdateFrequency = TimeSpan.FromSeconds(90f);
 
     [DataField(serverOnly: true)]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
@@ -82,44 +82,20 @@ public sealed partial class CP14PlantComponent : Component
 /// </summary>
 public sealed class CP14AfterPlantUpdateEvent : EntityEventArgs
 {
-    public readonly CP14PlantComponent Plant;
+    public readonly Entity<CP14PlantComponent> Plant;
 
-    public CP14AfterPlantUpdateEvent(CP14PlantComponent comp)
+    public CP14AfterPlantUpdateEvent(Entity<CP14PlantComponent> comp)
     {
         Plant = comp;
     }
 }
 
-public sealed class CP14PlantEnergyUpdateEvent : EntityEventArgs
+public sealed class CP14PlantEnergyUpdateEvent : CancellableEntityEventArgs
 {
     public float Energy = 0f;
-    public bool Canceled = false;
 }
 
-public sealed class CP14PlantResourceUpdateEvent : EntityEventArgs
+public sealed class CP14PlantResourceUpdateEvent : CancellableEntityEventArgs
 {
     public float Resource = 0f;
-    public bool Canceled = false;
 }
-
-/// Задачи:
-/// Для роста требуется ресурсы. Вода. Для некоторых растений может требоваться уникальные ресурсы.
-/// Значит, у растения есть реагент, которое оно потребляет для роста. Раз в минуту например оно пытается получить из почвы реагенты.
-/// Реагенты преобразуются в ресурс роста. Ресурс роста раз в минуту тратится, выращивая растение.
-///
-/// Какие цели вообще ставятся перед фермерством?
-/// Первое - Производство большого количества еды. Я хочу видеть поля засеянные пшеницой.
-/// Второе - производство алхимических реагентов.
-/// Третье - Куски этой системы должны использоваться в дикой природе (Сбор ягод с кустов, их восстановление)
-///
-/// Поливание - попросту канонично.
-/// Уход (убирание сорняков или вредителей)
-///
-/// 1) Как можно облажаться?
-/// Если не собрать урожай вовремя, он сгниет
-/// Урожай может
-/// 2) Как все может пойти ужасно и нелепо?
-/// Некоторые растения могут представлять опасность если не уследить (выбежавшие из земли корнеплоды-убийцы)
-///
-///Фермерство - побочная активность, которая не требует сильного внимания. Она просто раз в несколько дней дает много ресурсов.
-/// Учитывая большие промежутки времени между получением этих ресурсов, у игроков должен быть их запас раундстартом, и возможность их находить в мире.

@@ -14,5 +14,5 @@ public sealed partial class CP14PlantMetabolizerComponent : Component
     public FixedPoint2 SolutionPerUpdate = 1f;
 
     [DataField(required: true)]
-    public ProtoId<CP14PlantMetabolizerPrototype> Metabolizer;
+    public ProtoId<CP14PlantMetabolizerPrototype> MetabolizerId;
 }

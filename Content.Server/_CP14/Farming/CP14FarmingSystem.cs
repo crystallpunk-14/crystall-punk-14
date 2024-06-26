@@ -1,10 +1,10 @@
-using Content.Server._CP14.Farming.Components;
-using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.DoAfter;
+using Content.Server.Popups;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
-using Content.Shared.DoAfter;
-using Content.Shared.Popups;
-using Robust.Shared.Audio.Systems;
+using Content.Shared.Chemistry.EntitySystems;
+using Robust.Server.Audio;
+using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -13,15 +13,15 @@ namespace Content.Server._CP14.Farming;
 
 public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
     public override void Initialize()
     {
@@ -44,23 +44,23 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             if (_timing.CurTime <= plant.NextUpdateTime)
                 continue;
 
-            var newTime = TimeSpan.FromSeconds(plant.UpdateFrequency);
+            var newTime = plant.UpdateFrequency;
             plant.NextUpdateTime = _timing.CurTime + newTime;
 
             var energyEv = new CP14PlantEnergyUpdateEvent();
             RaiseLocalEvent(uid, energyEv);
-            if (!energyEv.Canceled)
+            if (!energyEv.Cancelled)
                 plant.Energy += energyEv.Energy;
 
             var resourceEv = new CP14PlantResourceUpdateEvent();
             RaiseLocalEvent(uid, resourceEv);
-            if (!resourceEv.Canceled)
+            if (!resourceEv.Cancelled)
                 plant.Resource += resourceEv.Resource;
 
-            var ev = new CP14AfterPlantUpdateEvent(plant);
+            var ev = new CP14AfterPlantUpdateEvent((uid, plant));
             RaiseLocalEvent(uid, ev);
 
-            Dirty(new Entity<CP14PlantComponent>(uid, plant));
+            Dirty(uid, plant);
         }
     }
 
@@ -71,7 +71,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
     private void OnMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
     {
-        var newTime = TimeSpan.FromSeconds(_random.NextFloat(plant.Comp.UpdateFrequency));
+        var newTime = plant.Comp.UpdateFrequency;
         plant.Comp.NextUpdateTime = _timing.CurTime + newTime;
     }
 }

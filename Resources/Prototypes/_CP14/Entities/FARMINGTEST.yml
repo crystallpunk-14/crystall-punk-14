@@ -38,4 +38,4 @@
     energyCost: 2
     resourceCost: 0
   - type: CP14PlantMetabolizer
-    metabolizer: Normal
+    metabolizerId: Normal

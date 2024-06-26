@@ -13,9 +13,10 @@ public partial class SharedCP14SpawnOnTileToolSystem : EntitySystem
 {
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14SpawnOnTileToolComponent, AfterInteractEvent>(OnAfterInteract);
@@ -29,9 +30,9 @@ public partial class SharedCP14SpawnOnTileToolSystem : EntitySystem
             return;
 
         var tile = _map.GetTileRef(grid.Value, gridComp, args.ClickLocation);
-        var tileDef = (ContentTileDefinition) _tileDefManager[tile.Tile.TypeId];
+        var tileDef = (ContentTileDefinition) _tileDef[tile.Tile.TypeId];
 
-        if (tool.Comp.NeedEmptySpace && _map.GetAnchoredEntities(grid.Value, gridComp, args.ClickLocation).Any())
+        if (tool.Comp.NeedEmptySpace && _map.GetAnchoredEntities(grid.Value, gridComp, args.ClickLocation).Count() > 0)
         {
             _popup.PopupClient(Loc.GetString("cp14-insufficient-space"), args.ClickLocation, args.User);
             return;
@@ -50,7 +51,7 @@ public partial class SharedCP14SpawnOnTileToolSystem : EntitySystem
                     BreakOnMove = true,
                     BreakOnHandChange = true
                 };
-            _doAfterSystem.TryStartDoAfter(doAfterArgs);
+            _doAfter.TryStartDoAfter(doAfterArgs);
             break;
         }
     }

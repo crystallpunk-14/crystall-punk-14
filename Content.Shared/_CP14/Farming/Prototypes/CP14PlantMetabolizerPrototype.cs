@@ -13,7 +13,7 @@ public sealed partial class CP14PlantMetabolizerPrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; private set; } = string.Empty;
 
     [DataField]
     public Dictionary<ProtoId<ReagentPrototype>, List<CP14MetabolizerEffect>> Metabolization = new();
