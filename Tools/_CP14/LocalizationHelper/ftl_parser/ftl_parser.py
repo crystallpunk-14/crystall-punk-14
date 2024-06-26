@@ -1,23 +1,25 @@
 from fluent import ftl_reader
-import os
+from base_parser import BaseParser
 
 
-def ftl_parser(path: str) -> dict:
-    """
-        The function gets the path, then with the help of the os library
-        goes through each file,checks that the file extension is "ftl",
-        then reads it through the "ftl_reader" module of the "fluent" package.
-    """
-    prototypes = {}
+class FTLParser(BaseParser):
 
-    for dirpath, _, filenames in os.walk(path):
-        for filename in filenames:
-            path = f"{dirpath}\\{filename}"
+    def ftl_parser(self) -> dict:
+        """
+            The function gets the path, then with the help of the os library
+            goes through each file,checks that the file extension is "ftl",
+            then reads it through the "ftl_reader" module of the "fluent" package.
+        """
+        prototypes = {}
 
-            if not filename.endswith(".ftl"):
+        for path in self.get_files_paths():
+
+            if not self.check_file_extension(path, ".ftl"):
                 continue
 
-            file = ftl_reader.read_ftl(path)
+            last_edit_time = self.get_last_edit_time(path)
+
+            file = ftl_reader.read_ftl((path, self.errors_path))
             prototypes.update(file)
 
-    return prototypes
+        return prototypes
