@@ -1267,7 +1267,7 @@
   
 - type: tile #Stairways
   editorHidden: false
-  id: CP14FloorWoodPlankStairwaysBurned
+  id: CP14FloorWoodPlanksStairwaysBurned
   name: cp14-tiles-woodplanks-stairways-burned
   sprite: /Textures/_CP14/Tiles/WoodPlanks/Burned/woodplanks_stairways_burned.png
   edgeSpritePriority: 100
