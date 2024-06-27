@@ -128,6 +128,6 @@ namespace Content.Shared.Maps
         /// CP14 - If not empty, the tile can burn from fires, and will turn into the specified tile after burning.
         /// </summary>
         [DataField]
-        public string BurnedTile { get; private set; } = string.Empty;
+        public ProtoId<ContentTileDefinition>? BurnedTile { get; private set; } = null;
     }
 }
