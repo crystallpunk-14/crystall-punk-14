@@ -203,7 +203,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksCruciformgBurned
+  burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
   editorHidden: false
@@ -232,7 +232,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksStairwaysgBurned
+  burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
 #/broken
@@ -443,7 +443,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksCruciformgBurned
+  burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
   editorHidden: false
@@ -472,7 +472,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksStairwaysgBurned
+  burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
 #/broken
@@ -683,7 +683,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksCruciformgBurned
+  burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
   editorHidden: false
@@ -712,7 +712,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksStairwaysgBurned
+  burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
 #/broken
@@ -923,7 +923,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksCruciformgBurned
+  burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
   editorHidden: false
@@ -952,7 +952,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksStairwaysgBurned
+  burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
 #/broken
@@ -1163,7 +1163,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksCruciformgBurned
+  burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
   editorHidden: false
@@ -1192,7 +1192,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: false
-  burnedTile: CP14FloorWoodPlanksStairwaysgBurned
+  burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
 #/broken
