@@ -6,11 +6,7 @@ class YMLParser(BaseParser):
 
     @staticmethod
     def check_proto_attrs(prototype: dict) -> bool:
-        attrs_lst = ["name", "description", "suffix"]
-        if not isinstance(prototype.get("parent"), list):
-            attrs_lst.append("parent")
-
-        return any(prototype.get(attr) is not None for attr in attrs_lst)
+        return any(prototype.get(attr) is not None for attr in ["name", "description", "suffix"])
 
     @staticmethod
     def get_proto_attrs(prototypes: dict, prototype: dict) -> None:
