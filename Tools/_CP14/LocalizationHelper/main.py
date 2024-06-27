@@ -47,7 +47,7 @@ def check_changed_attrs(yml_parser_last_launch: str, prototypes_dict: dict, loca
             last_launch_prototypes = json.load(file)
 
         for prototype, proto_attrs_in_prototypes in prototypes_dict.items():
-            if prototype in localization_dict:
+            if prototype in last_launch_prototypes and prototype in localization_dict:
                 attrs = localization_dict[prototype]
                 last_launch_prototype_attrs = last_launch_prototypes[prototype]
 
