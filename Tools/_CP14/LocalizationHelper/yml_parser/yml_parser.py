@@ -3,10 +3,18 @@ from base_parser import BaseParser
 
 
 class YMLParser(BaseParser):
+    """
+    The class inherits from the "BaseParser" class, parses yml prototypes.
+    """
 
     @staticmethod
     def check_proto_attrs(prototype: dict) -> bool:
+        """
+        The function checks that the prototype at least has some attribute from the "attrs_lst".
+        """
         attrs_lst = ["name", "description", "suffix"]
+        # In some cases a parent can be a list (because of multiple parents),
+        # the game will not be able to handle such cases in ftl files.
         if not isinstance(prototype.get("parent"), list):
             attrs_lst.append("parent")
 
@@ -26,6 +34,7 @@ class YMLParser(BaseParser):
         proto = ""
         for line in file.readlines():
             # The PyYaml library cannot handle the following SpaceStation 14 prototype syntax - !type: ...
+            # We need to fix this :(
             if "!type" in line:
                 continue
             proto += line
@@ -35,7 +44,7 @@ class YMLParser(BaseParser):
     def yml_parser(self) -> dict:
         """
             The function gets the path, then with the help of the os library
-            goes through each file,checks that the file extension is "ftl",
+            goes through each file,checks that the file extension is "yml",
             then processes the file using the "PyYaml" library
         """
         prototypes = {}

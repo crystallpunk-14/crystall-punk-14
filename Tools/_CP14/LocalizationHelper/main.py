@@ -73,6 +73,9 @@ def main():
     config = read_config()
     prototypes_path, localization_path, errors_log_path, yml_parser_last_launch = get_paths(config)
 
+    if not os.path.isdir("last_launch"):
+        os.mkdir("last_launch")
+        
     with open(errors_log_path, "w") as file:
         file.write("")
 
@@ -87,6 +90,8 @@ def main():
     with open(yml_parser_last_launch, 'w') as json_file:
         json.dump(prototypes_dict, json_file, indent=4)
 
+    # This is where the two dictionaries are merged, and prototypes from
+    # the localization_dict dictionary are preferably selected.
     all_prototypes = {**prototypes_dict, **localization_dict}
     entities_ftl = ""
 

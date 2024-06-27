@@ -1,14 +1,21 @@
 import os
-from datetime import datetime
 import json
 
 
 class BaseParser:
-
+    """
+    BaseParser, contains the basic functions for the yml_parser module in the yml_parser package
+    and for the ftl_parser module in the ftl_parser package
+    """
     def __init__(self, paths: tuple):
         self.path, self.errors_path = paths
 
     def get_files_paths(self) -> list:
+        """
+        The method gets the path to the yml folder of localization prototypes/files, e.g. "ftl",
+        then with the help of os library goes through each file in
+        the folder and creates a path for it, e.g. "ftl/objects.ftl".
+        """
         files_paths_lst = []
 
         for dirpath, _, filenames in os.walk(self.path):
@@ -29,10 +36,3 @@ class BaseParser:
             return True
         return False
 
-    @staticmethod
-    def get_last_edit_time(path) -> int:
-        modification_time = os.path.getmtime(path)
-        modification_datetime = datetime.fromtimestamp(modification_time)
-        formatted_time = modification_datetime.strftime('%Y%m%d%H%M%S')
-
-        return int(formatted_time)

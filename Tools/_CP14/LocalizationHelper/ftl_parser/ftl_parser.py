@@ -3,6 +3,9 @@ from base_parser import BaseParser
 
 
 class FTLParser(BaseParser):
+    """
+    The class inherits from the "BaseParser" class, parses ftl files of localization.
+    """
 
     def ftl_parser(self) -> dict:
         """
@@ -16,8 +19,6 @@ class FTLParser(BaseParser):
 
             if not self.check_file_extension(path, ".ftl"):
                 continue
-
-            last_edit_time = self.get_last_edit_time(path)
 
             file = ftl_reader.read_ftl((path, self.errors_path))
             prototypes.update(file)
