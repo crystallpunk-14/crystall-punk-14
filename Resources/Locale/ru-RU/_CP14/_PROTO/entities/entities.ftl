@@ -1,4 +1,5 @@
 ent-CP14Fire = огонь
+    .desc = Это огонь!
     .suffix = cp14
 
 ent-CP14BaseKeyRing = кольцо для ключей
