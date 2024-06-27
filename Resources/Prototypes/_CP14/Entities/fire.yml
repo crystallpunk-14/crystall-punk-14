@@ -1,6 +1,7 @@
 - type: entity
   id: CP14Fire
   name: fire
+  description: it's fire!
   suffix: cp14
   placement:
     mode: SnapgridCenter
