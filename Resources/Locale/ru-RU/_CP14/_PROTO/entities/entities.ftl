@@ -24,6 +24,8 @@ ent-CP14BaseLock = стальной замок
 ent-CP14LockTavern = замок от таверны
     .desc = { ent-CP14BaseLock.desc }
 
+ent-CP14ClothingCloakBase = { ent-Clothing }
+
 ent-CP14ClothingCloakArmoredRed = бронированная красная накидка
     .desc = Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
 
@@ -42,6 +44,8 @@ ent-CP14ClothingCloakSimpleWhite = белый плащ
 ent-CP14ClothingCloakSimpleDarkBlue = { ent-CP14ClothingCloakSimpleWhite }
     .desc = { ent-CP14ClothingCloakSimpleWhite.desc }
 
+ent-CP14ClothingEyesBase = { ent-Clothing }
+
 ent-CP14ClothingEyesMonocle = монокль
     .desc = Аристократично и красиво.
 
@@ -57,8 +61,12 @@ ent-CP14ClothingEyesAlchemyMonocle = алхимический монокль
 ent-CP14ClothingEyesThaumaturgyGlasses = тауматургические очки
     .desc = Очки, позволяющие сканировать магические предметы и существ, чтобы четко видеть количество оставшейся в них энергии.
 
+ent-CP14ClothingGlovesBase = { ent-Clothing }
+
 ent-CP14ClothingGlovesGirdles = железные наручи
     .desc = Бронированные боевые наручи из металла.
+
+ent-CP14ClothingHeadBase = { ent-Clothing }
 
 ent-CP14ClothingHeadMetalHeadband = металлический обруч
     .desc = Вероятность, что он защитит от попадания в голову, крайне мала.
@@ -69,8 +77,12 @@ ent-CP14ClothingHeadTriangularHat = остроконечная шляпа
 ent-CP14ClothingHeadTriangularHatGolden = позолоченная остроконечная шляпа
     .desc = Большая остроконечная шляпа для тех, кто любит выглядеть умным. Украшена золотым обручем.
 
+ent-CP14ClothingMaskBase = { ent-Clothing }
+
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
+
+ent-CP14ClothingPantsBase = { ent-Clothing }
 
 ent-CP14ClothingPantsTrouserWhite = белые штаны
     .desc = Широкие, свободные штаны из простой холщовой ткани.
@@ -83,6 +95,8 @@ ent-CP14ClothingPantsAristocratic = штаны аристократа
 
 ent-CP14ClothingPantsLoincloth = набедренная повязка
     .desc = Свободные, ничего не мешает, да еще и выглядят экстремально брутально
+
+ent-CP14ClothingShirtBase = { ent-Clothing }
 
 ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубаха
     .desc = Приятный на ощупь материал, удобная свободная форма рубашки.
@@ -105,6 +119,8 @@ ent-CP14ClothingShirtCottonYellow = хлопковая желтая
 ent-CP14ClothingShirtSteampunk = укрепленная латунью рубашка
     .desc = Белая рубашка, укрепленная латунными вставками.
 
+ent-CP14ClothingShoesBase = { ent-Clothing }
+
 ent-CP14ClothingShoesBlack = простые черные ботинки
     .desc = Влагу они не удержат, но это лучше чем ходить босиком.
 
@@ -115,6 +131,13 @@ ent-CP14ClothingShoesSandals = сандали
     .desc = Сандали, сделанные из грубой кожи и металлических креплений.
 
 ent-CP14Mist = облако
+
+ent-CP14MistVitalExtract = { ent-CP14Mist }
+    .desc = { ent-CP14Mist.desc }
+
+ent-CP14WeaponArcSlash = { ent-WeaponArcStatic }
+
+ent-CP14WeaponArcThrust = { ent-WeaponArcStatic }
 
 ent-CP14SpawnPointAdventurer = авантюрист
 
@@ -134,13 +157,35 @@ ent-CP14BiomeSpawnerCave = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Пещеры
 
+ent-CP14MobDwarf = мистер Дварф
+    .desc = { ent-CP14BaseMobDwarf.desc }
+
+ent-CP14MobElf = { ent-CP14BaseMobElf }
+    .desc = { ent-CP14BaseMobElf.desc }
+
+ent-CP14MobHuman = мистер Человек
+    .desc = { ent-CP14BaseMobHuman.desc }
+
+ent-CP14MobTiefling = мистер Тифлинг
+    .desc = { ent-CP14BaseMobTiefling.desc }
+
 ent-CP14BaseMobDwarf = Мистер Дварф
+
+ent-CP14MobDwarfDummy = { ent-CP14BaseSpeciesDummy }
 
 ent-CP14BaseMobElf = Мистер Эльф
 
+ent-CP14MobElfDummy = { ent-CP14BaseSpeciesDummy }
+
 ent-CP14BaseMobHuman = Мистер Человек
 
+ent-CP14MobHumanDummy = { ent-CP14BaseSpeciesDummy }
+
 ent-CP14BaseMobTiefling = Мистер Тифлинг
+
+ent-CP14MobTieflingDummy = { ent-CP14BaseSpeciesDummy }
+
+ent-CP14BaseOre = { ent-BaseItem }
 
 ent-CP14OreCopper = медь
     .desc = Кусочек бледной, тяжелой меди.
@@ -153,6 +198,8 @@ ent-CP14OreSilver = серебро
 
 ent-CP14OreGold = золото
     .desc = Кусочек мягкого, чистого золота.
+
+ent-CP14BaseCoin = { ent-BaseItem }
 
 ent-CP14CopperCoin = медная корона
     .desc = Минимальная экономическая единица на просторах Эберрона. Является одной десятой серебрянного соверена.
@@ -272,6 +319,11 @@ ent-CP14Mortar = ступка
 ent-CP14Dropper = пипетка
     .desc = Маленькая пипетка для работы с очень малыми объемами жидкостей.
 
+ent-CP14BaseVial = { ent-BaseItem }
+
+ent-CP14BaseVialFragile = { ent-CP14BaseVial }
+    .desc = { ent-CP14BaseVial.desc }
+
 ent-CP14VialTiny = крохотный пузырек
     .desc = Прочный стеклянный флакон для хранения крохотного количества жидкости.
 
@@ -364,6 +416,8 @@ ent-CP14WeaponRevolverNavy = револьвер "Марин"
 ent-CP14BaseLightCrossbow = легкий арбалет
     .desc = Небольшой, компактный арбалет, который удобно держать одной рукой. Не слишком меткий с обратной стороны.
 
+ent-CP14BaseWeaponRifle = { ent-BaseWeaponSniper }
+
 ent-CP14WeaponRifleCrush = крушитель
     .desc = Легкая, дорогая и непростая в обращении винтовка.
 
@@ -372,6 +426,8 @@ ent-CP14WeaponRifleDurandal = дюрандаль
 
 ent-CP14WeaponRifleLebel = лебел
     .desc = Тяжелая, дорогая и не очень удобная в использовании винтовка.
+
+ent-CP14BaseCrossbolt = { ent-BaseArrow }
 
 ent-CP14Crossbolt = арбалетный болт
     .desc = Стержень с заостренным концом. Без оперения, это вам не лук.
@@ -527,6 +583,42 @@ ent-CP14BaseTree = дерево
 ent-CP14BaseTreeLarge = большое дерево
     .desc = { ent-CP14BaseTree.desc }
 
+ent-CP14FloraTree01 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTree02 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTree03 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTree04 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTree05 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTree06 = { ent-CP14BaseTree }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTreeLarge01 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTreeLarge02 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTreeLarge03 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTreeLarge04 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTreeLarge05 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+
+ent-CP14FloraTreeLarge06 = { ent-CP14BaseTreeLarge }
+    .desc = { ent-CP14BaseTree.desc }
+
 ent-CP14BaseBarrel = деревянная бочка
     .desc = Большая, удобная емкость для хранения жидкостей.
     .suffix = Пустая
@@ -580,6 +672,8 @@ ent-CP14Bonfire = костёр
 ent-CP14ChairWooden = деревянный стул
     .desc = Сколочен из самых обычных досок. Просто и эффективно!
 
+ent-CP14DresserBase = { ent-BaseStructure }
+
 ent-CP14ClosetBase = шкаф
     .desc = Обычный, ветхий шкаф.
 
@@ -612,6 +706,8 @@ ent-CP14WallmountBarShelfB = { ent-CP14WallmountBarShelfA }
 ent-CP14FrameWooden = каркас деревянной стены
     .desc = Деревянный каркас для деревянных стен любых видов.
 
+ent-CP14GatherableHerbalBase = { ent-BaseStructure }
+
 ent-CP14GatherableBloodgrass = кровьтрава
     .desc = Самое скучное и распространенное растение, которое можно встретить в природе, - это темно-коричневая трава.
     .suffix = Gatherable
@@ -631,6 +727,11 @@ ent-CP14GatherableWildSage = дикий шалфей
 ent-CP14GatherableLumiMushroom = люмигрибы
     .desc = Слабо светящийся гриб. Часто используется алхимиками как средство для концентрации растворов.
     .suffix = Gatherable
+
+ent-CP14BaseFireplace = { ent-BaseStructure }
+
+ent-CP14AlchemyFurnaceDebug = { ent-CP14AlchemyFurnace }
+    .desc = { ent-CP14AlchemyFurnace.desc }
 
 ent-CP14AlchemyFurnace = алхимическая печь
     .desc = Печь, работающая на дровах, угле или любом другом горящем материале. Удобна для подогрева алхимических зелий.
@@ -655,6 +756,12 @@ ent-CP14BrassChest = латунный сундук
 
 ent-CP14CrateCoffin = гроб
     .desc = Удобный и красивый гроб, чтобы с удобствами дождаться своего воскрешения.
+
+ent-CP14Cliff = обрыв
+    .desc = Серьезные неровности природного ландшафта.
+
+ent-CP14CliffCorner = { ent-CP14Cliff }
+    .desc = { ent-CP14Cliff.desc }
 
 ent-CP14IronGrilleBase = железная решетка
     .desc = Прочный барьер из сваренных вместе железных прутьев.
@@ -741,6 +848,8 @@ ent-CP14FenceWoodSmallTJunction = { ent-CP14BaseFenceWoodSmall }
 ent-CP14FenceWoodSmallGate = ворота в деревянном заборе
     .desc = Представляете ли вы, что ждет вас за этими воротами? Это может быть как туалет, так и роскошный особняк.
 
+ent-CP14WindowBase = { ent-Window }
+
 ent-CP14WindowStoneBrick = окно в стене из каменного кирпича
     .desc = Каменная кирпичная стена, и проделанным в ней стеклянным окном.
 
@@ -754,48 +863,6 @@ ent-CP14ClothingAristocraticShoesBlack = черные туфли аристок�
     .desc = Они достаточно дорогие, чтобы вы не хотели в них шляться по пещерам.
 
 ent-CP14RandomSpawnerGatherGloodgrass = спавнер кровьтравы
-
-ent-CP14MobHuman = мистер Человек
-
-ent-CP14MobTiefling = мистер Тифлинг
-
-ent-CP14MobDwarf = мистер Дварф
-
-ent-CP14FloraTree01 = { ent-CP14BaseTree }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTree02 = { ent-CP14BaseTree }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTree03 = { ent-CP14BaseTree }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTree04 = { ent-CP14BaseTree }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTree05 = { ent-CP14BaseTree }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTree06 = { ent-CP14BaseTree }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTreeLarge01 = { ent-CP14BaseTreeLarge }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTreeLarge02 = { ent-CP14BaseTreeLarge }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTreeLarge03 = { ent-CP14BaseTreeLarge }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTreeLarge04 = { ent-CP14BaseTreeLarge }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTreeLarge05 = { ent-CP14BaseTreeLarge }
-    .desc = { ent-CP14BaseTree.desc }
-
-ent-CP14FloraTreeLarge06 = { ent-CP14BaseTreeLarge }
-    .desc = { ent-CP14BaseTree.desc }
 
 ent-CP14CaveStoneWall = каменная порода
     .desc = Прочная каменная природная стена. От нее веет пещерным холодом.
