@@ -73,8 +73,8 @@ def main():
     config = read_config()
     prototypes_path, localization_path, errors_log_path, yml_parser_last_launch = get_paths(config)
 
-    if not os.path.isdir("logs"):
-        os.mkdir("logs")
+    if not os.path.isdir("last_launch"):
+        os.mkdir("last_launch")
         
     with open(errors_log_path, "w") as file:
         file.write("")
@@ -120,8 +120,9 @@ def main():
                     if prototypes_dict[prototype].get("suffix"):
                         prototype_attrs["suffix"] = prototypes_dict[prototype]["suffix"]
 
-            proto_ftl = ftl_writer.create_ftl(prototype, all_prototypes[prototype])
-            entities_ftl += proto_ftl
+            if any(prototype_attrs[attr] is not None for attr in ["name", "description", "suffix"]):
+                proto_ftl = ftl_writer.create_ftl(prototype, all_prototypes[prototype])
+                entities_ftl += proto_ftl
 
         except Exception as e:
             with open(errors_log_path, "a") as file:
