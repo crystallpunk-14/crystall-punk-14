@@ -1,4 +1,9 @@
 - type: shader
+  id: Wave
+  kind: source
+  path: "/Textures/Shaders/wave.swsl"
+
+- type: shader
   id: CircleMask
   kind: source
   path: "/Textures/Shaders/circle_mask.swsl"
