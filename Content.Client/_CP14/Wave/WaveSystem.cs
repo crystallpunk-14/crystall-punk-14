@@ -3,7 +3,7 @@ using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Client.Wave;
+namespace Content.Client._CP14.Wave;
 
 public sealed class WaveSystem : EntitySystem
 {
