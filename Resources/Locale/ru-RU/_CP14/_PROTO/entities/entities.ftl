@@ -358,6 +358,9 @@ ent-CP14Shovel = лопата
 ent-CP14BaseBattleHammer = боевой молот
     .desc = A big heavy hammer! Bruh!
 
+ent-CP14BaseBattleStaff = боевой посох
+    .desc = Нет оружия проще и эффективнее, чем длинная и тяжелая палка!
+
 ent-CP14BaseDagger = кинжал
     .desc = Небольшое многофункциональное острое лезвие. И мясо порезать, и в гоблина метнуть.
 
