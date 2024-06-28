@@ -25,8 +25,6 @@ ent-CP14BaseLock = стальной замок
 ent-CP14LockTavern = замок от таверны
     .desc = { ent-CP14BaseLock.desc }
 
-ent-CP14ClothingCloakBase = { ent-Clothing }
-
 ent-CP14ClothingCloakArmoredRed = бронированная красная накидка
     .desc = Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
 
@@ -45,8 +43,6 @@ ent-CP14ClothingCloakSimpleWhite = белый плащ
 ent-CP14ClothingCloakSimpleDarkBlue = { ent-CP14ClothingCloakSimpleWhite }
     .desc = { ent-CP14ClothingCloakSimpleWhite.desc }
 
-ent-CP14ClothingEyesBase = { ent-Clothing }
-
 ent-CP14ClothingEyesMonocle = монокль
     .desc = Аристократично и красиво.
 
@@ -62,12 +58,8 @@ ent-CP14ClothingEyesAlchemyMonocle = алхимический монокль
 ent-CP14ClothingEyesThaumaturgyGlasses = тауматургические очки
     .desc = Очки, позволяющие сканировать магические предметы и существ, чтобы четко видеть количество оставшейся в них энергии.
 
-ent-CP14ClothingGlovesBase = { ent-Clothing }
-
 ent-CP14ClothingGlovesGirdles = железные наручи
     .desc = Бронированные боевые наручи из металла.
-
-ent-CP14ClothingHeadBase = { ent-Clothing }
 
 ent-CP14ClothingHeadMetalHeadband = металлический обруч
     .desc = Вероятность, что он защитит от попадания в голову, крайне мала.
@@ -78,12 +70,8 @@ ent-CP14ClothingHeadTriangularHat = остроконечная шляпа
 ent-CP14ClothingHeadTriangularHatGolden = позолоченная остроконечная шляпа
     .desc = Большая остроконечная шляпа для тех, кто любит выглядеть умным. Украшена золотым обручем.
 
-ent-CP14ClothingMaskBase = { ent-Clothing }
-
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
-
-ent-CP14ClothingPantsBase = { ent-Clothing }
 
 ent-CP14ClothingPantsTrouserWhite = белые штаны
     .desc = Широкие, свободные штаны из простой холщовой ткани.
@@ -96,8 +84,6 @@ ent-CP14ClothingPantsAristocratic = штаны аристократа
 
 ent-CP14ClothingPantsLoincloth = набедренная повязка
     .desc = Свободные, ничего не мешает, да еще и выглядят экстремально брутально
-
-ent-CP14ClothingShirtBase = { ent-Clothing }
 
 ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубаха
     .desc = Приятный на ощупь материал, удобная свободная форма рубашки.
@@ -120,8 +106,6 @@ ent-CP14ClothingShirtCottonYellow = хлопковая желтая
 ent-CP14ClothingShirtSteampunk = укрепленная латунью рубашка
     .desc = Белая рубашка, укрепленная латунными вставками.
 
-ent-CP14ClothingShoesBase = { ent-Clothing }
-
 ent-CP14ClothingShoesBlack = простые черные ботинки
     .desc = Влагу они не удержат, но это лучше чем ходить босиком.
 
@@ -135,10 +119,6 @@ ent-CP14Mist = облако
 
 ent-CP14MistVitalExtract = { ent-CP14Mist }
     .desc = { ent-CP14Mist.desc }
-
-ent-CP14WeaponArcSlash = { ent-WeaponArcStatic }
-
-ent-CP14WeaponArcThrust = { ent-WeaponArcStatic }
 
 ent-CP14SpawnPointAdventurer = авантюрист
 
@@ -172,21 +152,11 @@ ent-CP14MobTiefling = мистер Тифлинг
 
 ent-CP14BaseMobDwarf = Мистер Дварф
 
-ent-CP14MobDwarfDummy = { ent-CP14BaseSpeciesDummy }
-
 ent-CP14BaseMobElf = Мистер Эльф
-
-ent-CP14MobElfDummy = { ent-CP14BaseSpeciesDummy }
 
 ent-CP14BaseMobHuman = Мистер Человек
 
-ent-CP14MobHumanDummy = { ent-CP14BaseSpeciesDummy }
-
 ent-CP14BaseMobTiefling = Мистер Тифлинг
-
-ent-CP14MobTieflingDummy = { ent-CP14BaseSpeciesDummy }
-
-ent-CP14BaseOre = { ent-BaseItem }
 
 ent-CP14OreCopper = медь
     .desc = Кусочек бледной, тяжелой меди.
@@ -199,8 +169,6 @@ ent-CP14OreSilver = серебро
 
 ent-CP14OreGold = золото
     .desc = Кусочек мягкого, чистого золота.
-
-ent-CP14BaseCoin = { ent-BaseItem }
 
 ent-CP14CopperCoin = медная корона
     .desc = Минимальная экономическая единица на просторах Эберрона. Является одной десятой серебрянного соверена.
@@ -417,8 +385,6 @@ ent-CP14WeaponRevolverNavy = револьвер "Марин"
 ent-CP14BaseLightCrossbow = легкий арбалет
     .desc = Небольшой, компактный арбалет, который удобно держать одной рукой. Не слишком меткий с обратной стороны.
 
-ent-CP14BaseWeaponRifle = { ent-BaseWeaponSniper }
-
 ent-CP14WeaponRifleCrush = крушитель
     .desc = Легкая, дорогая и непростая в обращении винтовка.
 
@@ -427,8 +393,6 @@ ent-CP14WeaponRifleDurandal = дюрандаль
 
 ent-CP14WeaponRifleLebel = лебел
     .desc = Тяжелая, дорогая и не очень удобная в использовании винтовка.
-
-ent-CP14BaseCrossbolt = { ent-BaseArrow }
 
 ent-CP14Crossbolt = арбалетный болт
     .desc = Стержень с заостренным концом. Без оперения, это вам не лук.
@@ -672,8 +636,6 @@ ent-CP14Bonfire = костёр
 
 ent-CP14ChairWooden = деревянный стул
     .desc = Сколочен из самых обычных досок. Просто и эффективно!
-
-ent-CP14DresserBase = { ent-BaseStructure }
 
 ent-CP14ClosetBase = шкаф
     .desc = Обычный, ветхий шкаф.
