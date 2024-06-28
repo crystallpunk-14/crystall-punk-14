@@ -288,8 +288,6 @@ ent-CP14Mortar = ступка
 ent-CP14Dropper = пипетка
     .desc = Маленькая пипетка для работы с очень малыми объемами жидкостей.
 
-ent-CP14BaseVial = { ent-BaseItem }
-
 ent-CP14BaseVialFragile = { ent-CP14BaseVial }
     .desc = { ent-CP14BaseVial.desc }
 
@@ -323,7 +321,7 @@ ent-CP14VialSmallLumiMushroom = { ent-CP14VialTiny }
     .desc = { ent-CP14VialTiny.desc }
     .suffix = Люмигриб
 
-ent-CP14EnergyCrystalBase = { ent-BaseItem }
+ent-CP14EnergyCrystalBase = None
     .desc = Обработанные кристаллы кварца являются прекрасными хранителями магической энергии. А специальные разъемы позволяют удобно вставлять их в магические устройства, превращая в энергетические батарейки.
 
 ent-CP14EnergyCrystalSmall = маленький энергокристалл
@@ -672,8 +670,6 @@ ent-CP14WallmountBarShelfB = { ent-CP14WallmountBarShelfA }
 ent-CP14FrameWooden = каркас деревянной стены
     .desc = Деревянный каркас для деревянных стен любых видов.
 
-ent-CP14GatherableHerbalBase = { ent-BaseStructure }
-
 ent-CP14GatherableBloodgrass = кровьтрава
     .desc = Самое скучное и распространенное растение, которое можно встретить в природе, - это темно-коричневая трава.
     .suffix = Gatherable
@@ -693,8 +689,6 @@ ent-CP14GatherableWildSage = дикий шалфей
 ent-CP14GatherableLumiMushroom = люмигрибы
     .desc = Слабо светящийся гриб. Часто используется алхимиками как средство для концентрации растворов.
     .suffix = Gatherable
-
-ent-CP14BaseFireplace = { ent-BaseStructure }
 
 ent-CP14AlchemyFurnaceDebug = { ent-CP14AlchemyFurnace }
     .desc = { ent-CP14AlchemyFurnace.desc }
@@ -813,8 +807,6 @@ ent-CP14FenceWoodSmallTJunction = { ent-CP14BaseFenceWoodSmall }
 
 ent-CP14FenceWoodSmallGate = ворота в деревянном заборе
     .desc = Представляете ли вы, что ждет вас за этими воротами? Это может быть как туалет, так и роскошный особняк.
-
-ent-CP14WindowBase = { ent-Window }
 
 ent-CP14WindowStoneBrick = окно в стене из каменного кирпича
     .desc = Каменная кирпичная стена, и проделанным в ней стеклянным окном.
