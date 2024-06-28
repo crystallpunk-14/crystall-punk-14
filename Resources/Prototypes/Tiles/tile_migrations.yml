@@ -1,3 +1,13 @@
+### CP14 UPD
+- type: tileAlias
+  id: CP14FloorWoodPlanks
+  target: CP14FloorOakWoodPlanks
+
+- type: tileAlias
+  id: CP14FloorWoodPlanksBig
+  target: CP14FloorOakWoodPlanksBig
+### /CP14 UPD
+
 - type: tileAlias
   id: FloorBasaslt
   target: FloorBasalt
