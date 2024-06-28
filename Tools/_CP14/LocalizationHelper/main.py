@@ -73,8 +73,8 @@ def main():
     config = read_config()
     prototypes_path, localization_path, errors_log_path, yml_parser_last_launch = get_paths(config)
 
-    if not os.path.isdir("last_launch"):
-        os.mkdir("last_launch")
+    if not os.path.isdir("logs"):
+        os.mkdir("logs")
         
     with open(errors_log_path, "w") as file:
         file.write("")
@@ -108,12 +108,13 @@ def main():
                 prototype_attrs["parent"] = prototypes_dict[prototype]["parent"]
                 parent = prototype_attrs["parent"]
 
-                if not prototype_attrs.get("name"):
-                    prototype_attrs["name"] = f"{{ ent-{parent} }}"
+                if not isinstance(parent, list) and parent in prototypes_dict:
+                    if not prototype_attrs.get("name"):
+                        prototype_attrs["name"] = f"{{ ent-{parent} }}"
 
-                if not prototype_attrs.get("desc"):
-                    if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
-                        prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
+                    if not prototype_attrs.get("desc"):
+                        if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
+                            prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
 
                 if not prototype_attrs.get("suffix"):
                     if prototypes_dict[prototype].get("suffix"):
