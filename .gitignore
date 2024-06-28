@@ -306,3 +306,4 @@ Resources/MapImages
 
 # Direnv stuff
 .direnv/
+/Tools/_CP14/LocalizationHelper/last_launch

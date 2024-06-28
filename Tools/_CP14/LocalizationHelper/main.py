@@ -108,19 +108,21 @@ def main():
                 prototype_attrs["parent"] = prototypes_dict[prototype]["parent"]
                 parent = prototype_attrs["parent"]
 
-                if not prototype_attrs.get("name"):
-                    prototype_attrs["name"] = f"{{ ent-{parent} }}"
+                if not isinstance(parent, list) and parent in prototypes_dict:
+                    if not prototype_attrs.get("name"):
+                        prototype_attrs["name"] = f"{{ ent-{parent} }}"
 
-                if not prototype_attrs.get("desc"):
-                    if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
-                        prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
+                    if not prototype_attrs.get("desc"):
+                        if parent and not isinstance(parent, list) and prototypes_dict.get(parent):
+                            prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
 
                 if not prototype_attrs.get("suffix"):
                     if prototypes_dict[prototype].get("suffix"):
                         prototype_attrs["suffix"] = prototypes_dict[prototype]["suffix"]
 
-            proto_ftl = ftl_writer.create_ftl(prototype, all_prototypes[prototype])
-            entities_ftl += proto_ftl
+            if any(prototype_attrs[attr] is not None for attr in ["name", "desc", "suffix"]):
+                proto_ftl = ftl_writer.create_ftl(prototype, all_prototypes[prototype])
+                entities_ftl += proto_ftl
 
         except Exception as e:
             with open(errors_log_path, "a") as file:
