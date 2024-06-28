@@ -1,11 +1,11 @@
-using Content.Server.Chemistry.EntitySystems;
-
 namespace Content.Server._CP14.Temperature;
 
 /// <summary>
-/// Adds thermal energy from FlammableComponent to solutions placed on it.
+/// allows you to heat the temperature of solutions depending on the number of stacks of fire
 /// </summary>
-[RegisterComponent, Access(typeof(SolutionHeaterSystem))]
+[RegisterComponent, Access(typeof(CP14SolutionTemperatureSystem))]
 public sealed partial class CP14FlammableSolutionHeaterComponent : Component
 {
+    [DataField]
+    public float DegreesPerStack = 100f;
 }

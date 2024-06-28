@@ -6,7 +6,7 @@
   - type: Sprite
     state: icon
   - type: Item
-    size: Small
+    size: Normal
   - type: Clothing
     equipDelay: 0.4
     unequipDelay: 0
@@ -16,7 +16,7 @@
   parent: CP14ClothingEyesBase
   id: CP14ClothingEyesMonocle
   name: monocle
-  description: Aristocratic, fancy, gold-plated.
+  description: Aristocratic, fancy.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Eyes/monocle.rsi
@@ -25,9 +25,9 @@
 
 - type: entity
   parent: CP14ClothingEyesBase
-  id: CP14ClothingEyesGoldGlasses
-  name: gold glasses
-  description: Aristocratic, fancy, gold-plated.
+  id: CP14ClothingEyesGlasses
+  name: glasses
+  description: Aristocratic, fancy.
   components:
   - type: Foldable
     canFoldInsideContainer: true
@@ -37,9 +37,9 @@
     foldedEquippedPrefix: flipped
     foldedHeldPrefix: flipped
   - type: Sprite
-    sprite: _CP14/Clothing/Eyes/gold_glasses.rsi
+    sprite: _CP14/Clothing/Eyes/glasses.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Eyes/gold_glasses.rsi
+    sprite: _CP14/Clothing/Eyes/glasses.rsi
 
 - type: entity
   parent: CP14ClothingEyesBase
@@ -59,4 +59,35 @@
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
   - type: SolutionScanner
+
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesAlchemyMonocle
+  name: alchemy monocle
+  description: Special magic infused monocle that allow you to clearly see the composition of any mixtures.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/alchemy_monocle.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/alchemy_monocle.rsi
+  - type: SolutionScanner
+
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesThaumaturgyGlasses
+  name: thaumaturgy glasses
+  description: Goggles that allow you to scan magical items and creatures to clearly see the amount of energy left in them.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
+  - type: CP14MagicEnergyScanner
 

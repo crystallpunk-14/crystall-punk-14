@@ -4,3 +4,10 @@
   toolName: cp14-tool-quality-digging-tool-name
   spawn: CP14Shovel
   icon: { sprite: _CP14/Objects/Tools/shovel.rsi, state: icon}
+
+- type:  tool
+  id: CP14Hammering
+  name: cp14-tool-quality-hammering-name
+  toolName: cp14-tool-quality-hammering-tool-name
+  spawn: CP14BaseLightHammer
+  icon: { sprite: _CP14/Objects/Weapons/Melee/LightHammer/lightHammer.rsi, state: icon}

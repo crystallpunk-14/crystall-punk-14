@@ -13,6 +13,7 @@
     solutions:
       vial:
         maxVol: 1
+  - type: CP14SolutionTemperature
   - type: MixableSolution
     solution: vial
   - type: FitsInDispenser
@@ -144,7 +145,7 @@
 - type: entity
   id: CP14VialSmallBloodgrassSap
   parent: CP14VialSmall
-  suffix: bloodgrass sap
+  suffix: Bloodgrass sap
   components:
   - type: SolutionContainerManager
     solutions:
@@ -156,7 +157,7 @@
 - type: entity
   id: CP14VialSmallAgaricMushroom
   parent: CP14VialSmall
-  suffix: fly agaric juice
+  suffix: Fly agaric juice
   components:
   - type: SolutionContainerManager
     solutions:
@@ -166,9 +167,21 @@
           Quantity: 10
 
 - type: entity
+  id: CP14VialSmallGroundQuartz
+  parent: CP14VialSmall
+  suffix: Ground Quartz
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14GroundQuartz
+          Quantity: 10
+
+- type: entity
   id: CP14VialSmallWildSage
   parent: CP14VialSmall
-  suffix: wild sage sap
+  suffix: Wild sage Sap
   components:
   - type: SolutionContainerManager
     solutions:
@@ -180,11 +193,23 @@
 - type: entity
   id: CP14VialSmallChromiumSlime
   parent: CP14VialTiny
-  suffix: chromium slime
+  suffix: Chromium Slime
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14ChromiumSlime
+          Quantity: 5
+
+- type: entity
+  id: CP14VialSmallLumiMushroom
+  parent: CP14VialTiny
+  suffix: LumiShroom
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14LumiMushroom
           Quantity: 5

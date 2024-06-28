@@ -87,7 +87,7 @@ public sealed partial class MeleeWeaponSystem
             case WeaponArcAnimation.None:
                 var (mapPos, mapRot) = TransformSystem.GetWorldPositionRotation(userXform);
                 var worldPos = mapPos + (mapRot - userXform.LocalRotation).RotateVec(localPos);
-                var newLocalPos = TransformSystem.GetInvWorldMatrix(xform.ParentUid).Transform(worldPos);
+                var newLocalPos = Vector2.Transform(worldPos, TransformSystem.GetInvWorldMatrix(xform.ParentUid));
                 TransformSystem.SetLocalPositionNoLerp(animationUid, newLocalPos, xform);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, 0f, 0.15f), FadeAnimationKey);
@@ -223,7 +223,7 @@ public sealed partial class MeleeWeaponSystem
                     {
                         new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f), //CrystallPunk MeleeUpgrade
                         new AnimationTrackProperty.KeyFrame(direction.Normalized() * 0.15f, length*0.4f), //CrystallPunk MeleeUpgrade
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, length*0.8f) //CrystallPunk MeleeUpgrade
+                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, length*0.6f) //CrystallPunk MeleeUpgrade
                     }
                 }
             }

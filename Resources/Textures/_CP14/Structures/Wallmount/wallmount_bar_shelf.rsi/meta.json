@@ -1,0 +1,71 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by jaraten(discord) for CrystallPunk14",
+    "size": {
+        "x": 32,
+        "y": 96
+    },
+    "states": [
+        {
+            "name": "bottleA-0",
+            "directions": 4
+        },
+        {
+            "name": "shelf",
+            "directions": 4
+        },
+        {
+            "name": "bottleA-1",
+            "directions": 4
+        },
+        {
+            "name": "bottleA-2",
+            "directions": 4
+        },
+        {
+            "name": "bottleA-3",
+            "directions": 4
+        },
+        {
+            "name": "bottleA-4",
+            "directions": 4
+        },
+        {
+            "name": "bottleA-5",
+            "directions": 4
+        },
+        {
+            "name": "bottleA-6",
+            "directions": 4
+        },
+        {
+            "name": "bottleB-0",
+            "directions": 4
+        },
+        {
+            "name": "bottleB-1",
+            "directions": 4
+        },
+        {
+            "name": "bottleB-2",
+            "directions": 4
+        },
+        {
+            "name": "bottleB-3",
+            "directions": 4
+        },
+        {
+            "name": "bottleB-4",
+            "directions": 4
+        },
+        {
+            "name": "bottleB-5",
+            "directions": 4
+        },
+        {
+            "name": "bottleB-6",
+            "directions": 4
+        }
+    ]
+}

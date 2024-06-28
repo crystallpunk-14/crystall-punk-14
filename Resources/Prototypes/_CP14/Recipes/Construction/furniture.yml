@@ -21,7 +21,7 @@
   name: Wooden table
   description: A simple table made of boards.
   id: CP14TableWooden
-  graph: CP14Table
+  graph: CP14TableWooden
   startNode: start
   targetNode: CP14TableWooden
   category: construction-category-furniture
@@ -62,14 +62,15 @@
   targetNode: CP14WallmountTorch
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Wallmount/wallmount_32icon.rsi
-    state: torch
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
+    state: fire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   canRotate: true
   conditions:
     - !type:TileNotBlocked
+    - !type:CP14WallRequired
 
 - type: construction
   crystallPunkAllowed: true
@@ -85,6 +86,25 @@
     state: icon
   objectType: Structure
   placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14Mannequin
+  name: mannequin
+  description: Wooden mannequin designed for clothing displaying.
+  graph: CP14Mannequin
+  startNode: start
+  targetNode: CP14mannequin
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Decoration/mannequin.rsi
+    state: mannequin
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked

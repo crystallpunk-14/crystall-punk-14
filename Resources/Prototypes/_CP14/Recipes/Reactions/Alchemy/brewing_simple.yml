@@ -1,0 +1,66 @@
+# Idea:
+# The easiest way to get basic effects from various herbs. Has the highest level of empty solution.
+
+# Rules:
+# 1) all values must be multiples of 0.25
+# 2) 50%+ products must be occupied by the empty solution
+# 3) one result must be useful, the other useless.
+# 4) all reactions should take place at a temperature of 500, and reduce the temperature by 250.
+
+- type: reaction
+  id: CP14AgaricShroomBrewing
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14AgaricMushroom:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectDamagePoison: 0.25
+    CP14BasicEffectRainbow: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250
+
+- type: reaction
+  id: CP14WildSageSapBrewing
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14WildSageSap:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectEmoteCough: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250
+
+- type: reaction
+  id: CP14GroundQuartzBrewing
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14GroundQuartz:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250
+
+- type: reaction
+  id: CP14LumiMushroomBrewing
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14LumiMushroom:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.5
+    CP14BasicEffectRainbow: 0.25
+    CP14BasicEffectVomit: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250

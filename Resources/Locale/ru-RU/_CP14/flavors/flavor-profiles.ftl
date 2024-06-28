@@ -9,4 +9,5 @@ cp14-flavor-base-stinging = жгущее
 # Complex
 
 cp14-flavor-complex-water = как вода
-cp14-flavor-complex-chromium = как что-то выворачивающее наизнанку
+cp14-flavor-complex-vomit = как что-то выворачивающее наизнанку
+cp14-flavor-complex-quartz = скрипит на зубах

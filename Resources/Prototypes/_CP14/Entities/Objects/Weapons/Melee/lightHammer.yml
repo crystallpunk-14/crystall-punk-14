@@ -3,7 +3,6 @@
   parent: 
   - BaseItem
   - CP14BaseWeaponDestructible
-  - CP14BaseWeaponChemical
   - CP14BaseWeaponThrowable
   - CP14BaseWeaponLight
   - CP14BaseWeaponShort
@@ -11,7 +10,7 @@
   description: A small hammer. Good for carpentry work as well as for cracking skulls.
   components:
   - type: Item
-    storedRotation: -45 
+    storedRotation: -45
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/LightHammer/lightHammer.rsi
     layers:
@@ -34,3 +33,11 @@
     damage:
       types:
         Blunt: 10
+  - type: Tool
+    qualities:
+      - CP14Hammering
+    useSound:
+      collection: CP14Hammering
+      params:
+        variation: 0.03
+        volume: 2

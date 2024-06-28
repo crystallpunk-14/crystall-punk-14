@@ -1,0 +1,33 @@
+- type: entity
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobElf
+  name: Mr. Elf
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: CP14Elf
+  - type: Hunger
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi
+    state: full
+  - type: Thirst
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodMeatHuman
+        amount: 5
+  - type: Body
+    prototype: CP14Elf
+    requiredLegs: 2
+  - type: Inventory
+    templateId: CP14Human
+  - type: Bloodstream
+    bloodReagent: CP14BloodElf
+
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobElfDummy
+  noSpawn: true
+  components:
+    - type: HumanoidAppearance
+      species: CP14Elf

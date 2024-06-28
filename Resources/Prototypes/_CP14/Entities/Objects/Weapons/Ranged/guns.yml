@@ -19,3 +19,7 @@
       tags:
         - SpeedLoaderRifle
     proto: CartridgeRifle # TODO custom projectiles
+  - type: CP14SkillRequirement
+    fuckupChance: 0.55
+    requiredSkills:
+    - Firearms

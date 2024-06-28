@@ -25,6 +25,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
@@ -58,6 +59,7 @@ public abstract class SharedStorageSystem : EntitySystem
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] private   readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] protected readonly UseDelaySystem UseDelay = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     private EntityQuery<ItemComponent> _itemQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -155,7 +157,9 @@ public abstract class SharedStorageSystem : EntitySystem
             Grid = new List<Box2i>(component.Grid),
             MaxItemSize = component.MaxItemSize,
             StoredItems = storedItems,
-            SavedLocations = component.SavedLocations
+            SavedLocations = component.SavedLocations,
+            Whitelist = component.Whitelist,
+            Blacklist = component.Blacklist
         };
     }
 
@@ -167,6 +171,8 @@ public abstract class SharedStorageSystem : EntitySystem
         component.Grid.Clear();
         component.Grid.AddRange(state.Grid);
         component.MaxItemSize = state.MaxItemSize;
+        component.Whitelist = state.Whitelist;
+        component.Blacklist = state.Blacklist;
 
         component.StoredItems.Clear();
 
@@ -296,7 +302,7 @@ public abstract class SharedStorageSystem : EntitySystem
             return;
 
         // prevent spamming bag open / honkerton honk sound
-        silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && UseDelay.IsDelayed((uid, useDelay));
+        silent |= TryComp<UseDelayComponent>(uid, out var useDelay) && UseDelay.IsDelayed((uid, useDelay), id: OpenUiUseDelayID);
         if (!CanInteract(entity, (uid, storageComp), silent: silent))
             return;
 
@@ -306,7 +312,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 Audio.PlayPredicted(storageComp.StorageOpenSound, uid, entity);
 
             if (useDelay != null)
-                UseDelay.TryResetDelay((uid, useDelay));
+                UseDelay.TryResetDelay((uid, useDelay), id: OpenUiUseDelayID);
         }
 
         _ui.OpenUi(uid, StorageComponent.StorageUiKey.Key, entity);
@@ -351,7 +357,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (HasComp<PlaceableSurfaceComponent>(uid))
             return;
 
-        if (HasComp<SolutionContainerManagerComponent>(uid) && !storageComp.CP14CanStorageSolutionManagers) //CP14 bandage
+        if (_whitelistSystem.IsWhitelistPass(storageComp.CP14Ignorelist, args.Used))
             return;
 
         PlayerInsertHeldEntity(uid, args.User, storageComp);
@@ -366,7 +372,7 @@ public abstract class SharedStorageSystem : EntitySystem
     /// </summary>
     private void OnActivate(EntityUid uid, StorageComponent storageComp, ActivateInWorldEvent args)
     {
-        if (args.Handled || !CanInteract(args.User, (uid, storageComp), storageComp.ClickInsert))
+        if (args.Handled || !args.Complex || !CanInteract(args.User, (uid, storageComp), storageComp.ClickInsert))
             return;
 
         // Toggle
@@ -862,13 +868,8 @@ public abstract class SharedStorageSystem : EntitySystem
             return false;
         }
 
-        if (storageComp.Whitelist?.IsValid(insertEnt, EntityManager) == false)
-        {
-            reason = "comp-storage-invalid-container";
-            return false;
-        }
-
-        if (storageComp.Blacklist?.IsValid(insertEnt, EntityManager) == true)
+        if (_whitelistSystem.IsWhitelistFail(storageComp.Whitelist, insertEnt) ||
+            _whitelistSystem.IsBlacklistPass(storageComp.Blacklist, insertEnt))
         {
             reason = "comp-storage-invalid-container";
             return false;
@@ -1390,7 +1391,12 @@ public abstract class SharedStorageSystem : EntitySystem
 
         // If we specify a max item size, use that
         if (uid.Comp.MaxItemSize != null)
-            return _prototype.Index(uid.Comp.MaxItemSize.Value);
+        {
+            if (_prototype.TryIndex(uid.Comp.MaxItemSize.Value, out var proto))
+                return proto;
+
+            Log.Error($"{ToPrettyString(uid.Owner)} tried to get invalid item size prototype: {uid.Comp.MaxItemSize.Value}. Stack trace:\\n{Environment.StackTrace}");
+        }
 
         if (!_itemQuery.TryGetComponent(uid, out var item))
             return _defaultStorageMaxItemSize;
@@ -1497,5 +1503,9 @@ public abstract class SharedStorageSystem : EntitySystem
         public List<Box2i> Grid = new();
 
         public ProtoId<ItemSizePrototype>? MaxItemSize;
+
+        public EntityWhitelist? Whitelist;
+
+        public EntityWhitelist? Blacklist;
     }
 }

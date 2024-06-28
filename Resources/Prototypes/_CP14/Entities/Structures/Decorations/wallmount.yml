@@ -3,13 +3,13 @@
   parent: 
   - BaseStructure
   - CP14BaseWooden #TODO: make BaseFlammable
+  - CP14BaseWallmount
   name: wooden boards
   description: Nailed to the wall. Why? I'm not quite sure.
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
-    drawdepth: Mobs
     sprite: _CP14/Structures/Wallmount/wallmount_decor.rsi
     layers:
       - state: boards
@@ -17,6 +17,17 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -42,13 +53,13 @@
   parent: 
   - BaseStructure
   - CP14BaseWooden #TODO: make BaseFlammable
+  - CP14BaseWallmount
   name: web
   description: Cobwebs clinging to dark corners with tiny spiders in them.
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
-    drawdepth: Mobs
     sprite: _CP14/Structures/Wallmount/wallmount_decor.rsi
     layers:
       - state: web
@@ -56,6 +67,17 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -81,19 +103,30 @@
   parent: 
   - BaseStructure
   - CP14BaseWooden #TODO: make BaseFlammable
+  - CP14BaseWallmount
   name: vines
   description: The timid shoots of weeds trying to climb the wall upward toward the light
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
-    drawdepth: Mobs
     sprite: _CP14/Structures/Wallmount/wallmount_decor.rsi
     layers:
       - state: vines
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -107,4 +140,3 @@
         - MidImpassable
         - LowImpassable
         hard: false
-      

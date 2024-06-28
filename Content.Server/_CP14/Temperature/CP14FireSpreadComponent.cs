@@ -20,6 +20,12 @@ public sealed partial class CP14FireSpreadComponent : Component
     public float Prob = 0.5f;
 
     /// <summary>
+    /// chance of tile spreading to neighboring properties
+    /// </summary>
+    [DataField]
+    public float ProbTile = 0.15f;
+
+    /// <summary>
     /// how often objects will try to set the neighbors on fire. In Seconds
     /// </summary>
     [DataField]

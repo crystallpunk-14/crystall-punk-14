@@ -2,13 +2,25 @@
   editorHidden: false
   id: CP14FloorFoundation
   name: cp14-tiles-foundation
-  sprite: /Textures/_CP14/Tiles/foundation.png
-  variants: 4
+  sprite: /Textures/_CP14/Tiles/Foundation/foundation.png
+  variants: 6
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 99
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Foundation/single_edge.png
+    NorthEast: /Textures/_CP14/Tiles/Foundation/single_edge.png
+    NorthWest: /Textures/_CP14/Tiles/Foundation/single_edge.png
+    SouthWest: /Textures/_CP14/Tiles/Foundation/single_edge.png
+    South: /Textures/_CP14/Tiles/Foundation/double_edge_down.png
+    East: /Textures/_CP14/Tiles/Foundation/double_edge_right.png
+    North: /Textures/_CP14/Tiles/Foundation/double_edge_top.png
+    West: /Textures/_CP14/Tiles/Foundation/double_edge_left.png
   baseTurf: CP14FloorBase
   isSubfloor: true
   footstepSounds:
@@ -18,48 +30,30 @@
 
 - type: tile
   editorHidden: false
-  id: CP14FloorWoodPlanks
-  name: cp14-tiles-woodplanks
-  sprite: /Textures/_CP14/Tiles/woodplanks.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-
-- type: tile
-  editorHidden: false
-  id: CP14FloorWoodPlanksBig
-  name: cp14-tiles-woodplanks-big
-  sprite: /Textures/_CP14/Tiles/woodplanks_big.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-
-- type: tile
-  editorHidden: false
   id: CP14FloorStonebricks
   name: cp14-tiles-stonebricks
-  sprite: /Textures/_CP14/Tiles/stonebricks.png
-  variants: 1
+  sprite: /Textures/_CP14/Tiles/Stonebricks/stonebricks.png
+  variants: 9
   placementVariants:
   - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14Floorfundament
   isSubfloor: false
   footstepSounds:
@@ -71,10 +65,20 @@
   editorHidden: false
   id: CP14FloorStonebricksSmallCarved1
   name: cp14-tiles-stonebricks-small-carved1
-  sprite: /Textures/_CP14/Tiles/stonebricks_small_carved_1.png
+  sprite: /Textures/_CP14/Tiles/Stonebricks/stonebricks_small_carved_1.png
   variants: 1
   placementVariants:
   - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -86,10 +90,20 @@
   editorHidden: false
   id: CP14FloorStonebricksSmallCarved2
   name: cp14-tiles-stonebricks-small-carved2
-  sprite: /Textures/_CP14/Tiles/stonebricks_small_carved_2.png
+  sprite: /Textures/_CP14/Tiles/Stonebricks/stonebricks_small_carved_2.png
   variants: 1
   placementVariants:
   - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
@@ -101,10 +115,20 @@
   editorHidden: false
   id: CP14FloorStonebricksSquareCarved
   name: cp14-tiles-stonebricks-square-carved
-  sprite: /Textures/_CP14/Tiles/stonebricks_square_carved.png
+  sprite: /Textures/_CP14/Tiles/Stonebricks/stonebricks_square_carved.png
   variants: 1
   placementVariants:
   - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:

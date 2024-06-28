@@ -12,3 +12,11 @@
   - /Audio/_CP14/Items/shovel_dig3.ogg
   - /Audio/_CP14/Items/shovel_dig4.ogg
   - /Audio/_CP14/Items/shovel_dig5.ogg
+
+- type: soundCollection
+  id: CP14Hammering
+  files:
+  - /Audio/_CP14/Items/nailing1.ogg
+  - /Audio/_CP14/Items/nailing2.ogg
+  - /Audio/_CP14/Items/nailing3.ogg
+  - /Audio/_CP14/Items/nailing4.ogg

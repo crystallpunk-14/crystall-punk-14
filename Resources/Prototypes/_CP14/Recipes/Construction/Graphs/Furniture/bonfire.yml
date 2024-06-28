@@ -8,9 +8,12 @@
       edges:
         - to: CP14Bonfire
           steps:
+            - material: CP14Stone
+              amount: 3
+              doAfter: 2
             - material: CP14WoodenPlanks
-              amount: 5
-              doAfter: 3
+              amount: 2
+              doAfter: 2
               
     - node: CP14Bonfire
       entity: CP14Bonfire
@@ -26,7 +29,7 @@
         - to: CP14WallmountTorch
           steps:
             - material: CP14WoodenPlanks
-              amount: 5
+              amount: 3
               doAfter: 3
               
     - node: CP14WallmountTorch

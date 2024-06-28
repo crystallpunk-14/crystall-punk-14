@@ -1,40 +1,20 @@
 - type: gameMap
-  id: CaveArena
-  mapName: Cave Arena
-  mapPath: /Maps/_CP14/cave-arena.yml
-  minPlayers: 0
-  stations:
-    CaveArena:
-      stationProto: StandardStationArena
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Cave Arena"
-        - type: StationJobs
-          overflowJobs:
-            - Adventurer
-          availableJobs:
-            Adventurer: [ -1, -1 ]
-
-- type: gameMap
   id: AlchemyTest
   mapName: Alchemy test
   mapPath: /Maps/_CP14/alchemy_test.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   stations:
     AlchemyTest:
       stationProto: StandardStationArena
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
-        - type: StationBiome
-          biome: CP14GrasslandTestResult
-        - type: CP14StationDungeonMap
-          biome: CP14CavesGeneric
+        - type: CP14StationAdditionalMap
+          mapPaths:
+          - /Maps/_CP14/alchemy_test_layer2.yml
         - type: StationNameSetup
           mapNameTemplate: "Alchemy test"
         - type: StationJobs
-          overflowJobs:
-            - Adventurer
           availableJobs:
-            Adventurer: [ -1, -1 ]
+            CP14Adventurer: [ -1, -1 ]
+            CP14Alchemist: [ -1, -1 ]

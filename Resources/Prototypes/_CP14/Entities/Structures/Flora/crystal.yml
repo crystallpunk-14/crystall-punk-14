@@ -5,6 +5,8 @@
   parent: 
   - BaseStructure
   abstract: true
+  name: sparkling quartz
+  description: bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.
   placement:
     mode: SnapgridCenter
   components:
@@ -29,6 +31,11 @@
               collection: GlassBreak
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14QuartzShard:
+                min: 0
+                max: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -54,8 +61,7 @@
 - type: entity
   id: CP14WallmountCrystalRubies
   parent: CP14WallmountCrystalBase
-  name: sparkling rubies
-  description: wawa
+  suffix: Red
   components:
   - type: RandomSprite
     cP14InheritBaseColor: "#ff3d0b"
@@ -65,8 +71,7 @@
 - type: entity
   id: CP14WallmountCrystalTopazes
   parent: CP14WallmountCrystalBase
-  name: sparkling topazes
-  description: wawa
+  suffix: Yellow
   components:
   - type: RandomSprite
     cP14InheritBaseColor: "#ffe269"
@@ -76,8 +81,7 @@
 - type: entity
   id: CP14WallmountCrystalEmeralds
   parent: CP14WallmountCrystalBase
-  name: sparkling emeralds
-  description: wawa
+  suffix: Green
   components:
   - type: RandomSprite
     cP14InheritBaseColor: "#30be81"
@@ -87,8 +91,7 @@
 - type: entity
   id: CP14WallmountCrystalSapphires
   parent: CP14WallmountCrystalBase
-  name: sparkling sapphires
-  description: wawa
+  suffix: Cyan
   components:
   - type: RandomSprite
     cP14InheritBaseColor: "#5eabeb"
@@ -98,8 +101,7 @@
 - type: entity
   id: CP14WallmountCrystalAmethysts
   parent: CP14WallmountCrystalBase
-  name: sparkling amethysts
-  description: wawa
+  suffix: Purple
   components:
   - type: RandomSprite
     cP14InheritBaseColor: "#a878d1"
@@ -109,8 +111,7 @@
 - type: entity
   id: CP14WallmountCrystalDiamonds
   parent: CP14WallmountCrystalBase
-  name: sparkling diamonds
-  description: wawa
+  suffix: White
   components:
   - type: RandomSprite
     cP14InheritBaseColor: "#f8f8f8"
@@ -123,6 +124,8 @@
   id: CP14CrystalBase
   abstract: true
   parent: BaseRock
+  name: sparkling quartz
+  description: bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -157,6 +160,11 @@
               collection: GlassBreak
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14QuartzShard:
+                min: 1
+                max: 3
   - type: Fixtures
     fixtures:
       fix1:
@@ -179,9 +187,7 @@
 - type: entity
   id: CP14CrystalRubiesSmall
   parent: CP14CrystalBase
-  name: sparkling rubies
-  suffix: Small
-  description: wawa
+  suffix: Red, Small
   components:
   - type: PointLight
     color: "#ff3d0b"
@@ -196,9 +202,7 @@
 - type: entity
   id: CP14CrystalRubiesMedium
   parent: CP14CrystalBase
-  name: sparkling rubies
-  suffix: Medium
-  description: wawa
+  suffix: Red, Medium
   components:
   - type: PointLight
     color: "#ff3d0b"
@@ -213,9 +217,7 @@
 - type: entity
   id: CP14CrystalRubiesBig
   parent: CP14CrystalBase
-  name: sparkling rubies
-  suffix: Big
-  description: wawa
+  suffix: Red, Big
   components:
   - type: PointLight
     color: "#ff3d0b"
@@ -230,9 +232,7 @@
 - type: entity
   id: CP14CrystalTopazesSmall
   parent: CP14CrystalBase
-  name: sparkling topazes
-  suffix: Small
-  description: wawa
+  suffix: Yellow, Small
   components:
   - type: PointLight
     color: "#ffe269"
@@ -247,9 +247,7 @@
 - type: entity
   id: CP14CrystalTopazesMedium
   parent: CP14CrystalBase
-  name: sparkling topazes
-  suffix: Medium
-  description: wawa
+  suffix: Yellow, Medium
   components:
   - type: PointLight
     color: "#ffe269"
@@ -264,9 +262,7 @@
 - type: entity
   id: CP14CrystalTopazesBig
   parent: CP14CrystalBase
-  name: sparkling topazes
-  description: wawa
-  suffix: Big
+  suffix: Yellow, Big
   components:
   - type: PointLight
     color: "#ffe269"
@@ -281,9 +277,7 @@
 - type: entity
   id: CP14CrystalEmeraldsSmall
   parent: CP14CrystalBase
-  name: sparkling emeralds
-  suffix: Small
-  description: wawa
+  suffix: Green, Small
   components:
   - type: PointLight
     color: "#30be81"
@@ -298,9 +292,7 @@
 - type: entity
   id: CP14CrystalEmeraldsMedium
   parent: CP14CrystalBase
-  name: sparkling emeralds
-  suffix: Medium
-  description: wawa
+  suffix: Green, Medium
   components:
   - type: PointLight
     color: "#30be81"
@@ -315,9 +307,7 @@
 - type: entity
   id: CP14CrystalEmeraldsBig
   parent: CP14CrystalBase
-  name: sparkling emeralds
-  description: wawa
-  suffix: Big
+  suffix: Green, Big
   components:
   - type: PointLight
     color: "#30be81"
@@ -332,9 +322,7 @@
 - type: entity
   id: CP14CrystalSapphiresSmall
   parent: CP14CrystalBase
-  name: sparkling sapphires
-  suffix: Small
-  description: wawa
+  suffix: Cyan, Small
   components:
   - type: PointLight
     color: "#5eabeb"
@@ -349,9 +337,7 @@
 - type: entity
   id: CP14CrystalSapphiresMedium
   parent: CP14CrystalBase
-  name: sparkling sapphires
-  suffix: Medium
-  description: wawa
+  suffix: Cyan, Medium
   components:
   - type: PointLight
     color: "#5eabeb"
@@ -366,9 +352,7 @@
 - type: entity
   id: CP14CrystalSapphiresBig
   parent: CP14CrystalBase
-  name: sparkling sapphires
-  suffix: Big
-  description: wawa
+  suffix: Cyan, Big
   components:
   - type: PointLight
     color: "#5eabeb"
@@ -383,9 +367,7 @@
 - type: entity
   id: CP14CrystalAmethystsSmall
   parent: CP14CrystalBase
-  name: sparkling amethysts
-  suffix: Small
-  description: wawa
+  suffix: Purple, Small
   components:
   - type: PointLight
     color: "#a878d1"
@@ -400,9 +382,7 @@
 - type: entity
   id: CP14CrystalAmethystsMedium
   parent: CP14CrystalBase
-  name: sparkling amethysts
-  suffix: Medium
-  description: wawa
+  suffix: Purple, Medium
   components:
   - type: PointLight
     color: "#a878d1"
@@ -417,9 +397,7 @@
 - type: entity
   id: CP14CrystalAmethystsBig
   parent: CP14CrystalBase
-  name: sparkling amethysts
-  suffix: Big
-  description: wawa
+  suffix: Purple, Big
   components:
   - type: PointLight
     color: "#a878d1"
@@ -434,9 +412,7 @@
 - type: entity
   id: CP14CrystalDiamondsSmall
   parent: CP14CrystalBase
-  name: sparkling diamonds
-  description: wawa
-  suffix: Small
+  suffix: White, Small
   components:
   - type: PointLight
     color: "#f8f8f8"
@@ -451,9 +427,7 @@
 - type: entity
   id: CP14CrystalDiamondsMedium
   parent: CP14CrystalBase
-  name: sparkling diamonds
-  suffix: Medium
-  description: wawa
+  suffix: White, Medium
   components:
   - type: PointLight
     color: "#f8f8f8"
@@ -468,9 +442,7 @@
 - type: entity
   id: CP14CrystalDiamondsBig
   parent: CP14CrystalBase
-  name: sparkling diamonds
-  suffix: Big
-  description: wawa
+  suffix: White, Big
   components:
   - type: PointLight
     color: "#f8f8f8"

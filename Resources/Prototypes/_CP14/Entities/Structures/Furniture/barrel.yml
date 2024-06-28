@@ -115,3 +115,99 @@
         reagents:
         - ReagentId: CP14Blood
           Quantity: 300
+
+- type: entity
+  id: CP14BarrelBloodTiefling
+  parent: CP14BaseBarrel
+  suffix: Tiefling Blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BloodTiefling
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelBloodElf
+  parent: CP14BaseBarrel
+  suffix: Elf Blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BloodElf
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelBloodGrassSap
+  parent: CP14BaseBarrel
+  suffix: Bloodgrass sap
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BloodGrassSap
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelAgaricMushroom
+  parent: CP14BaseBarrel
+  suffix: Agaric mushroom
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AgaricMushroom
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelChromiumSlime
+  parent: CP14BaseBarrel
+  suffix: Chromium Slime
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelWildSageSap
+  parent: CP14BaseBarrel
+  suffix: Wild Sage sap
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14WildSageSap
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelGroundQuartz
+  parent: CP14BaseBarrel
+  suffix: Ground Quartz
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14GroundQuartz
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelLumiMushroom
+  parent: CP14BaseBarrel
+  suffix: LumiShroom
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14LumiMushroom
+          Quantity: 300

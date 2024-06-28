@@ -13,14 +13,25 @@
 
 - type: entity
   parent: CP14ClothingPantsBase
-  id: CP14ClothingPantsHarlequinRed
-  name: red-and-yellow harlequin pants
-  description: Blood red on one side, sunny yellow on the other. The duality of life and death is always a good joke.
+  id: CP14ClothingPantsTrouserWhite
+  name: white trouser
+  description: Wide, loose pants made of plain canvas cloth.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Pants/harlequin.rsi
+    sprite: _CP14/Clothing/Pants/Trousers/white.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Pants/harlequin.rsi
+    sprite: _CP14/Clothing/Pants/Trousers/white.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsTrouserDarkBlue
+  name: dark trouser
+  description: Wide, loose pants made of plain canvas cloth.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
 
 - type: entity
   parent: CP14ClothingPantsBase

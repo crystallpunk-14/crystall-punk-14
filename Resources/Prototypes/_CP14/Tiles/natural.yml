@@ -23,14 +23,14 @@
   - 1.0
   edgeSpritePriority: 1
   edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/Dirt/single_edge.png
-    NorthEast: /Textures/_CP14/Tiles/Dirt/single_edge.png
-    NorthWest: /Textures/_CP14/Tiles/Dirt/single_edge.png
-    SouthWest: /Textures/_CP14/Tiles/Dirt/single_edge.png
-    South: /Textures/_CP14/Tiles/Dirt/double_edge.png
-    East: /Textures/_CP14/Tiles/Dirt/double_edge.png
-    North: /Textures/_CP14/Tiles/Dirt/double_edge.png
-    West: /Textures/_CP14/Tiles/Dirt/double_edge.png
+    SouthEast: /Textures/_CP14/Tiles/Dirt/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Dirt/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Dirt/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Dirt/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Dirt/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Dirt/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Dirt/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Dirt/double_edge_W.png
   baseTurf: CP14FloorBase
   deconstructTools: [ CP14Digging ]
   itemDrop: CP14RandomDirtLootSpawner
@@ -75,23 +75,89 @@
   id: CP14FloorGrass
   editorHidden: false
   name: cp14-tiles-grass
-  sprite: /Textures/Tiles/Planet/Grass/grass.png
-  variants: 4
+  sprite: /Textures/_CP14/Tiles/Grass/grass.png
+  variants: 6
   placementVariants:
+  - 1.0
+  - 1.0
   - 1.0
   - 1.0
   - 1.0
   - 1.0
   edgeSpritePriority: 3
   edgeSprites:
-    SouthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthEast: /Textures/Tiles/Planet/Grass/single_edge.png
-    NorthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    SouthWest: /Textures/Tiles/Planet/Grass/single_edge.png
-    South: /Textures/Tiles/Planet/Grass/double_edge.png
-    East: /Textures/Tiles/Planet/Grass/double_edge.png
-    North: /Textures/Tiles/Planet/Grass/double_edge.png
-    West: /Textures/Tiles/Planet/Grass/double_edge.png
+    SouthEast: /Textures/_CP14/Tiles/Grass/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Grass/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Grass/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Grass/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Grass/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Grass/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Grass/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Grass/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14DirtEffect
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorGrassLight
+  editorHidden: false
+  name: cp14-tiles-grass-light
+  sprite: /Textures/_CP14/Tiles/GrassLight/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 4
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/GrassLight/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/GrassLight/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/GrassLight/double_edge_S.png
+    East: /Textures/_CP14/Tiles/GrassLight/double_edge_E.png
+    North: /Textures/_CP14/Tiles/GrassLight/double_edge_N.png
+    West: /Textures/_CP14/Tiles/GrassLight/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14DirtEffect
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorGrassTall
+  editorHidden: false
+  name: cp14-tiles-grass-tall
+  sprite: /Textures/_CP14/Tiles/GrassTall/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 5
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/GrassTall/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/GrassTall/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/GrassTall/double_edge_S.png
+    East: /Textures/_CP14/Tiles/GrassTall/double_edge_E.png
+    North: /Textures/_CP14/Tiles/GrassTall/double_edge_N.png
+    West: /Textures/_CP14/Tiles/GrassTall/double_edge_W.png
   baseTurf: CP14FloorDirt
   deconstructTools: [ CP14Digging ]
   itemDrop: CP14DirtEffect
