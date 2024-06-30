@@ -12,7 +12,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/Herbals/bloodgrass.rsi
+    sprite: _CP14/Objects/Specific/Farming/Produce/bloodgrass.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -54,7 +54,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/Herbals/agaric.rsi
+    sprite: _CP14/Objects/Specific/Farming/Produce/agaric.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -93,7 +93,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/Herbals/chromium_slime.rsi
+    sprite: _CP14/Objects/Specific/Farming/Produce/chromium_slime.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -131,7 +131,7 @@
     - 0,0,0,1
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/Herbals/wild_sage.rsi
+    sprite: _CP14/Objects/Specific/Farming/Produce/wild_sage.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -197,7 +197,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/Herbals/lumishroom.rsi
+    sprite: _CP14/Objects/Specific/Farming/Produce/lumishroom.rsi
     layers:
       - state: base1
         map: ["random"]

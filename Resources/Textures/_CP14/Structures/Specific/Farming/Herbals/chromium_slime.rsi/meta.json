@@ -8,15 +8,6 @@
   "copyright": "Created by TheShuEd (Github) for CrystallPunk14",
   "states": [
     {
-      "name": "base1"
-    },
-    {
-      "name": "base2"
-    },
-    {
-      "name": "base3"
-    },
-    {
       "name": "world1",
       "delays": [
         [
