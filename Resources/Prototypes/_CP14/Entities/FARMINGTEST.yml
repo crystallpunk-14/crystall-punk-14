@@ -40,4 +40,8 @@
   - type: CP14PlantMetabolizer
     metabolizerId: Normal
   - type: CP14DestroyedByTool
+  - type: CP14PlantHarvestable
+    harvest: 
+    - CP14SeedTest
+    - CP14SeedTest
     

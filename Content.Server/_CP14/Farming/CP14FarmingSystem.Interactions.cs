@@ -7,15 +7,54 @@ namespace Content.Server._CP14.Farming;
 
 public sealed partial class CP14FarmingSystem
 {
-    private void InitializeTools()
+    private void InitializeInteractions()
     {
         SubscribeLocalEvent<CP14SeedComponent, AfterInteractEvent>(OnSeedInteract);
+        SubscribeLocalEvent<CP14PlantHarvestableComponent, InteractHandEvent>(OnHarvestAttempt);
 
         SubscribeLocalEvent<CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
     }
 
+    private void OnHarvestAttempt(Entity<CP14PlantHarvestableComponent> ent, ref InteractHandEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        TryHarvestPlant(ent, out _);
+
+        args.Handled = true;
+    }
+
+    public bool TryHarvestPlant(Entity<CP14PlantHarvestableComponent> ent, out HashSet<EntityUid> result)
+    {
+        result = new();
+
+        if (!TryComp<CP14PlantComponent>(ent, out var plant))
+            return false;
+
+        if (ent.Comp.GrowthLevelToHarvest > plant.GrowthLevel)
+            return false;
+
+        foreach (var proto in ent.Comp.Harvest)
+        {
+            result.Add(Spawn(proto, Transform(ent).Coordinates));
+        }
+
+        if (ent.Comp.DeleteAfterHarvest)
+        {
+            QueueDel(ent);
+            return true;
+        }
+
+        plant.GrowthLevel -= ent.Comp.GrowthCostHarvest;
+        return true;
+    }
+
     private void OnSeedInteract(Entity<CP14SeedComponent> seed, ref AfterInteractEvent args)
     {
+        if (args.Handled)
+            return;
+
         if (!TryComp<CP14SoilComponent>(args.Target, out var soil))
             return;
 
@@ -33,6 +72,8 @@ public sealed partial class CP14FarmingSystem
                 BreakOnHandChange = true,
             };
         _doAfter.TryStartDoAfter(doAfterArgs);
+
+        args.Handled = true;
     }
 
     public bool TryPlantSeed(EntityUid seed, EntityUid soil, EntityUid? user)

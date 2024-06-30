@@ -27,7 +27,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
         base.Initialize();
 
-        InitializeTools();
+        InitializeInteractions();
         InitializeResources();
 
         SubscribeLocalEvent<CP14PlantComponent, EntityUnpausedEvent>(OnUnpaused);
