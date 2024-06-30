@@ -11,7 +11,7 @@ namespace Content.Server._CP14.Farming.Components;
 public sealed partial class CP14PlantMetabolizerComponent : Component
 {
     [DataField]
-    public FixedPoint2 SolutionPerUpdate = 1f;
+    public FixedPoint2 SolutionPerUpdate = 5f;
 
     [DataField(required: true)]
     public ProtoId<CP14PlantMetabolizerPrototype> MetabolizerId;

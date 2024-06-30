@@ -31,8 +31,10 @@
     growthSteps: 5
     growState: "stage-"
   - type: CP14Plant
+    resource: 10
+    energy: 10
     growthLevel: 0
-    updateFrequency: 2
+    updateFrequency: 10
   - type: CP14PlantEnergyFromLight
     energy: 1
     daytime: true
@@ -42,12 +44,32 @@
   - type: CP14PlantMetabolizer
     metabolizerId: Normal
   - type: CP14DestroyedByTool
+  - type: CP14PlantFading
+    multiplier: 0
+    resourceFade: 1
   - type: CP14PlantGatherable
     toolWhitelist:
       components:
         - Hands
     loot:
       All: CP14GatherFUCK
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: CP14GrassGathering
+        params:
+          variation: 0.03
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 10
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
 
 - type: entityLootTable
   id: CP14GatherFUCK
@@ -58,3 +80,4 @@
   - id: CP14SeedTest
     amount: 0
     maxAmount: 2
+    

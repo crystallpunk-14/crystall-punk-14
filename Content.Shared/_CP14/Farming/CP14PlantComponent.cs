@@ -32,15 +32,6 @@ public sealed partial class CP14PlantComponent : Component
     public float ResourceMax = 100f;
 
     /// <summary>
-    ///
-    /// </summary>
-    [DataField]
-    public float Health = 10f;
-
-    [DataField]
-    public float HealthMax = 10f;
-
-    /// <summary>
     /// Plant growth status, 0 to 1
     /// </summary>
     [DataField, AutoNetworkedField]

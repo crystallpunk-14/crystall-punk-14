@@ -1,22 +1,14 @@
 using Content.Server._CP14.Farming.Components;
 using Content.Server.Gatherable.Components;
-using Content.Shared._CP14.DestroyedByTool;
 using Content.Shared._CP14.Farming;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Tag;
 using Content.Shared.Weapons.Melee.Events;
-using Content.Shared.Whitelist;
-using Robust.Server.Audio;
 
 namespace Content.Server._CP14.Farming;
 
 public sealed partial class CP14FarmingSystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-
     private void InitializeInteractions()
     {
         SubscribeLocalEvent<CP14SeedComponent, AfterInteractEvent>(OnSeedInteract);
@@ -77,7 +69,7 @@ public sealed partial class CP14FarmingSystem
             var getLoot = _proto.Index(table);
             var spawnLoot = getLoot.GetSpawns(_random);
             var spawnPos = pos.Offset(_random.NextVector2(gatheredPlant.Comp.GatherOffset));
-            Spawn(spawnLoot[0], spawnPos);
+            result.Add(Spawn(spawnLoot[0], spawnPos));
         }
 
         if (gatheredPlant.Comp.DeleteAfterHarvest)

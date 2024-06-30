@@ -3,6 +3,9 @@ using Content.Server.Popups;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Damage;
+using Content.Shared.Tag;
+using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -21,6 +24,10 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     public override void Initialize()
     {
