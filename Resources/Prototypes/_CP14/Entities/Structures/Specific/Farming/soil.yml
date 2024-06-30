@@ -52,3 +52,4 @@
   - type: CP14Soil
     solution: soil
   - type: CP14DestroyedByTool
+    tool: CP14Digging

@@ -1,0 +1,74 @@
+- type: entity
+  id: CP14GatherableBase
+  parent: BaseStructure
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+  - type: Transform
+    anchored: true
+    bodyType: Static
+  - type: Physics
+    canCollide: false
+  - type: CP14DestroyedByTool
+    tool: CP14Digging
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: CP14GrassGathering
+        params:
+          variation: 0.03
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 25
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14GatherableWildBase
+  parent: CP14GatherableBase
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: Gatherable
+    toolWhitelist:
+      components:
+        - Hands
+
+- type: entity
+  id: CP14GatherablePlantBase
+  parent: CP14GatherableBase
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Appearance
+  - type: CP14PlantVisuals
+    growthSteps: 5
+    growState: "grow-"
+  - type: CP14Plant
+    resource: 10
+    energy: 10
+    growthLevel: 0
+  - type: CP14PlantEnergyFromLight
+    energy: 2
+    daytime: true
+  - type: CP14PlantMetabolizer
+    metabolizerId: Base
+  - type: CP14PlantGrowing
+    energyCost: 1
+    resourceCost: 1
+  - type: CP14PlantFading
+    resourcePerMinute: 1 #5 minute from water
+  - type: CP14PlantGatherable
+    toolWhitelist:
+      components:
+        - Hands

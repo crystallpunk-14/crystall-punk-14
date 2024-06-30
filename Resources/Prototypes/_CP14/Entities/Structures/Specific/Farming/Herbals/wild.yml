@@ -1,36 +1,3 @@
-- type: entity
-  id: CP14GatherableHerbalBase
-  parent: BaseStructure
-  abstract: true
-  components:
-  - type: Transform
-    anchored: true
-  - type: Physics
-    canCollide: false
-  - type: Gatherable
-    toolWhitelist:
-      tags:
-        - CP14HerbalGathering
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        collection: CP14GrassGathering
-        params:
-          variation: 0.03
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 25
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Tag
-    tags:
-      - HideContextMenu
 
 # Bloodgrass
 
@@ -43,13 +10,12 @@
 
 - type: entity
   id: CP14GatherableBloodgrass
-  parent: CP14GatherableHerbalBase
+  parent: CP14GatherableWildBase
   name: bloodgrass
   description: The dullest and most common plant to be found in the wild is the dark brown grass.
   suffix: Gatherable
   components:
   - type: Sprite
-    snapCardinals: true
     drawdepth: FloorTiles
     sprite: _CP14/Objects/Specific/Alchemy/Herbal/bloodgrass.rsi
     layers:
@@ -78,13 +44,12 @@
 
 - type: entity
   id: CP14GatherableFlyAgaric
-  parent: CP14GatherableHerbalBase
+  parent: CP14GatherableWildBase
   name: fly agaric
   description: This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.
   suffix: Gatherable
   components:
   - type: Sprite
-    snapCardinals: true
     drawdepth: FloorTiles
     sprite: _CP14/Objects/Specific/Alchemy/Herbal/agaric.rsi
     layers:
@@ -119,13 +84,12 @@
 
 - type: entity
   id: CP14GatherableChromiumSlime
-  parent: CP14GatherableHerbalBase
+  parent: CP14GatherableWildBase
   name: chromium slime
   description: This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.
   suffix: Gatherable
   components:
   - type: Sprite
-    snapCardinals: true
     drawdepth: FloorTiles
     sprite: _CP14/Objects/Specific/Alchemy/Herbal/chromium_slime.rsi
     layers:
@@ -155,13 +119,12 @@
 
 - type: entity
   id: CP14GatherableWildSage
-  parent: CP14GatherableHerbalBase
+  parent: CP14GatherableWildBase
   name: wild sage
   description: Root of this ubiquitous medicinal plant not bad at healing physical injuries, and inducing coughing.
   suffix: Gatherable
   components:
   - type: Sprite
-    snapCardinals: true
     drawdepth: FloorTiles
     sprite: _CP14/Objects/Specific/Alchemy/Herbal/wild_sage.rsi
     layers:
@@ -188,13 +151,12 @@
 
 - type: entity
   id: CP14GatherableLumiMushroom
-  parent: CP14GatherableHerbalBase
+  parent: CP14GatherableWildBase
   name: lumishroom
   description: A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.
   suffix: Gatherable
   components:
   - type: Sprite
-    snapCardinals: true
     drawdepth: FloorTiles
     sprite: _CP14/Objects/Specific/Alchemy/Herbal/lumishroom.rsi
     layers:

@@ -1,5 +1,5 @@
 - type: CP14PlantMetabolizer
-  id: Normal
+  id: Base
   metabolization:
     CP14Water:
       - !type:AffectPlantValues

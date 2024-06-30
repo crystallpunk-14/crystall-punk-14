@@ -20,7 +20,7 @@ public sealed partial class CP14DestroyedByToolSystem : EntitySystem
 
     private void OnInteractUsing(Entity<CP14DestroyedByToolComponent> ent, ref InteractUsingEvent args)
     {
-        if (args.Handled || !_tool.HasQuality(args.Used, ent.Comp.RemoveQuality))
+        if (args.Handled || !_tool.HasQuality(args.Used, ent.Comp.Tool))
             return;
 
         if (TryComp<ToolComponent>(args.Used, out var tool))

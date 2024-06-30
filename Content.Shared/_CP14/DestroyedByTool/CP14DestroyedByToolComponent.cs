@@ -10,7 +10,7 @@ namespace Content.Shared._CP14.DestroyedByTool;
 public sealed partial class CP14DestroyedByToolComponent : Component
 {
     [DataField]
-    public ProtoId<ToolQualityPrototype> RemoveQuality = "CP14Digging";
+    public ProtoId<ToolQualityPrototype>? Tool;
 
     [DataField]
     public TimeSpan RemoveTime = TimeSpan.FromSeconds(1f);

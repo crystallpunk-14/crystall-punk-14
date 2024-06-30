@@ -1,0 +1,25 @@
+- type: entity
+  id: CP14PlantWheat
+  parent: CP14GatherablePlantBase
+  name: wheat
+  description: Most popular crop. Unpretentious, it opens the way to an abundance of flour products.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Farming/Herbals/wheat.rsi
+    layers:
+    - state: grow-1
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: CP14GatherFUCK
+
+- type: entityLootTable
+  id: CP14GatherFUCK
+  entries:
+  - id: CP14BloodGrass
+    amount: 1
+    maxAmount: 2
+  - id: CP14SeedTest
+    amount: 1
+    maxAmount: 2
