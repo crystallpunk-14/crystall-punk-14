@@ -19,7 +19,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
@@ -44,14 +43,14 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             if (_timing.CurTime <= plant.NextUpdateTime)
                 continue;
 
-            var newTime = plant.UpdateFrequency;
-            plant.NextUpdateTime = _timing.CurTime + newTime;
+            var newTime = _random.NextFloat(plant.UpdateFrequency);
+            plant.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
 
             var ev = new CP14PlantUpdateEvent((uid, plant));
             RaiseLocalEvent(uid, ev);
 
-            plant.Resource += ev.ResourceDelta;
-            plant.Energy += ev.EnergyDelta;
+            AffectResource((uid, plant), ev.ResourceDelta);
+            AffectEnergy((uid, plant), ev.EnergyDelta);
 
             var ev2 = new CP14AfterPlantUpdateEvent((uid, plant));
             RaiseLocalEvent(uid, ev2);
@@ -67,7 +66,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
     private void OnMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
     {
-        var newTime = plant.Comp.UpdateFrequency;
-        plant.Comp.NextUpdateTime = _timing.CurTime + newTime;
+        var newTime = _random.NextFloat(plant.Comp.UpdateFrequency);
+        plant.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
     }
 }

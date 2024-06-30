@@ -14,11 +14,13 @@ public sealed partial class AffectPlantValues : CP14MetabolizerEffect
     [DataField]
     public float Growth = 0f;
 
-    public override void Effect(Entity<CP14PlantComponent> plant, FixedPoint2 amount)
+    public override void Effect(Entity<CP14PlantComponent> plant, FixedPoint2 amount, EntityManager entityManager)
     {
-        plant.Comp.Energy += Energy * (float)amount;
-        plant.Comp.Resource += Resource * (float)amount;
-        plant.Comp.Health += Health * (float)amount;
-        plant.Comp.GrowthLevel += Growth * (float)amount;
+        var farmingSystem = entityManager.System<CP14SharedFarmingSystem>();
+
+        farmingSystem.AffectEnergy(plant, Energy * (float)amount);
+        farmingSystem.AffectResource(plant,Resource * (float)amount);
+        farmingSystem.AffectHealth(plant, Health * (float)amount);
+        farmingSystem.AffectGrowth(plant, Growth * (float)amount);
     }
 }

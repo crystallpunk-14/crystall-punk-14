@@ -37,10 +37,13 @@ public sealed partial class CP14FarmingSystem
         if (args.Plant.Comp.Resource < growing.Comp.ResourceCost)
             return;
 
-        args.Plant.Comp.Energy -= growing.Comp.EnergyCost;
-        args.Plant.Comp.Resource -= growing.Comp.ResourceCost;
+        if (args.Plant.Comp.GrowthLevel >= 1)
+            return;
 
-        args.Plant.Comp.GrowthLevel = MathHelper.Clamp01(args.Plant.Comp.GrowthLevel + growing.Comp.GrowthPerUpdate);
+        AffectEnergy(args.Plant, -growing.Comp.EnergyCost);
+        AffectResource(args.Plant, -growing.Comp.ResourceCost);
+
+        AffectGrowth(args.Plant, growing.Comp.GrowthPerUpdate);
     }
 
     private void OnPlantMetabolizing(Entity<CP14PlantMetabolizerComponent> ent, ref CP14PlantUpdateEvent args)
@@ -66,7 +69,7 @@ public sealed partial class CP14FarmingSystem
 
             foreach (var effect in metabolizer.Metabolization[reagent.Reagent.ToString()])
             {
-                effect.Effect((ent, plant), reagent.Quantity);
+                effect.Effect((ent, plant), reagent.Quantity, EntityManager);
             }
         }
     }

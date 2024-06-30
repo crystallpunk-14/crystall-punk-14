@@ -36,7 +36,7 @@
     daytime: true
   - type: CP14PlantGrowing
     energyCost: 2
-    resourceCost: 0
+    resourceCost: 1
   - type: CP14PlantMetabolizer
     metabolizerId: Normal
   - type: CP14DestroyedByTool

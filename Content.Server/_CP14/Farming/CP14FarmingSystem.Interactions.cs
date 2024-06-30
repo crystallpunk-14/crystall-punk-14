@@ -46,7 +46,7 @@ public sealed partial class CP14FarmingSystem
             return true;
         }
 
-        plant.GrowthLevel -= ent.Comp.GrowthCostHarvest;
+        AffectGrowth((ent, plant), -ent.Comp.GrowthCostHarvest);
         return true;
     }
 

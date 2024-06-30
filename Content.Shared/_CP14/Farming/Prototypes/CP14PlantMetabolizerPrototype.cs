@@ -23,5 +23,5 @@ public sealed partial class CP14PlantMetabolizerPrototype : IPrototype
 [MeansImplicitUse]
 public abstract partial class CP14MetabolizerEffect
 {
-    public abstract void Effect(Entity<CP14PlantComponent> plant, FixedPoint2 amount);
+    public abstract void Effect(Entity<CP14PlantComponent> plant, FixedPoint2 amount, EntityManager entityManager);
 }
