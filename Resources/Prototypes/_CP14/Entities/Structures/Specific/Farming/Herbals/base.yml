@@ -47,8 +47,8 @@
       - HideContextMenu
   - type: Gatherable
     toolWhitelist:
-      components:
-        - Hands
+      tags:
+        - CP14HerbalGathering
 
 - type: entity
   id: CP14GatherablePlantBase
@@ -62,19 +62,9 @@
     growState: "grow-"
   - type: CP14Plant
     resource: 10
-    energy: 10
+    energy: 0
     growthLevel: 0
-  - type: CP14PlantEnergyFromLight
-    energy: 2
-    daytime: true
-  - type: CP14PlantMetabolizer
-    metabolizerId: Base
-  - type: CP14PlantGrowing
-    energyCost: 1
-    resourceCost: 1
-  - type: CP14PlantFading
-    resourcePerMinute: 1 #5 minute from water
   - type: CP14PlantGatherable
     toolWhitelist:
-      components:
-        - Hands
+      tags:
+        - CP14HerbalGathering

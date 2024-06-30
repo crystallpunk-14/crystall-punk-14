@@ -17,7 +17,7 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Objects/Specific/Alchemy/Herbal/bloodgrass.rsi
+    sprite: _CP14/Structures/Specific/Farming/Herbals/bloodgrass.rsi
     layers:
       - state: grass1
         map: ["random"]
@@ -51,7 +51,7 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Objects/Specific/Alchemy/Herbal/agaric.rsi
+    sprite: _CP14/Structures/Specific/Farming/Herbals/agaric.rsi
     layers:
       - state: world1
         map: ["random"]
@@ -91,7 +91,7 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Objects/Specific/Alchemy/Herbal/chromium_slime.rsi
+    sprite: _CP14/Structures/Specific/Farming/Herbals/chromium_slime.rsi
     layers:
       - state: world1
         map: ["random"]
@@ -126,7 +126,7 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Objects/Specific/Alchemy/Herbal/wild_sage.rsi
+    sprite: _CP14/Structures/Specific/Farming/Herbals/wild_sage.rsi
     layers:
       - state: world1
         map: ["random"]
@@ -158,7 +158,7 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Objects/Specific/Alchemy/Herbal/lumishroom.rsi
+    sprite: _CP14/Structures/Specific/Farming/Herbals/lumishroom.rsi
     layers:
       - state: world1
         map: ["random"]

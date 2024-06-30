@@ -7,14 +7,14 @@ namespace Content.Server._CP14.Farming.Components;
 public sealed partial class CP14PlantGrowingComponent : Component
 {
     [DataField]
-    public float EnergyCost = 1f;
+    public float EnergyCost = 0f;
 
     [DataField]
-    public float ResourceCost = 1f;
+    public float ResourceCost = 0f;
 
     /// <summary>
     /// for each plant renewal. It is not every frame, it depends on the refresh rate in PlantComponent
     /// </summary>
     [DataField]
-    public float GrowthPerUpdate = 0.1f;
+    public float GrowthPerUpdate = 0f;
 }
