@@ -23,15 +23,13 @@ public sealed partial class CP14InverseEffect : EntityEffect
     {
         if (args is EntityEffectReagentArgs reagentArgs)
         {
-            if (reagentArgs.Source == null)
+            if (reagentArgs.Source is null)
                 return;
 
-            if (!args.EntityManager.TryGetComponent<SolutionComponent>(reagentArgs.SolutionEntity, out var solutionComp))
+            if (reagentArgs.SolutionEntity is null)
                 return;
 
             var solutionContainer = args.EntityManager.System<SharedSolutionContainerSystem>();
-
-            var ent = new Entity<SolutionComponent>(reagentArgs.SolutionEntity, solutionComp);
 
             Dictionary<ReagentId, FixedPoint2> taskList = new();
 
@@ -43,8 +41,8 @@ public sealed partial class CP14InverseEffect : EntityEffect
 
             foreach (var task in taskList)
             {
-                solutionContainer.RemoveReagent(ent, task.Key, task.Value);
-                solutionContainer.TryAddReagent(ent, Inversion[task.Key.Prototype].Id, task.Value);
+                solutionContainer.RemoveReagent(reagentArgs.SolutionEntity.Value, task.Key, task.Value);
+                solutionContainer.TryAddReagent(reagentArgs.SolutionEntity.Value, Inversion[task.Key.Prototype].Id, task.Value);
             }
             return;
         }
