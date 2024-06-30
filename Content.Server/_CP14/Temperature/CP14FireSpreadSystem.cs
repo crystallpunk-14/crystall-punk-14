@@ -114,7 +114,7 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
 
             var tile = tileref.Tile.GetContentTileDefinition();
 
-            if (tile.BurnedTile == string.Empty)
+            if (tile.BurnedTile is null)
                 continue;
 
             Spawn(_fireProto, _mapSystem.ToCenterCoordinates(tileref, grid));
