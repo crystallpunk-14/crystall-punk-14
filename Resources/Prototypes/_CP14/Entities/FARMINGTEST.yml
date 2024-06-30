@@ -39,3 +39,5 @@
     resourceCost: 0
   - type: CP14PlantMetabolizer
     metabolizerId: Normal
+  - type: CP14DestroyedByTool
+    
