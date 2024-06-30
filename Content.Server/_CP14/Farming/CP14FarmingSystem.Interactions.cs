@@ -1,5 +1,6 @@
 using Content.Server._CP14.Farming.Components;
 using Content.Server.Gatherable.Components;
+using Content.Shared._CP14.DestroyedByTool;
 using Content.Shared._CP14.Farming;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -21,8 +22,17 @@ public sealed partial class CP14FarmingSystem
         SubscribeLocalEvent<CP14SeedComponent, AfterInteractEvent>(OnSeedInteract);
         SubscribeLocalEvent<CP14PlantGatherableComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<CP14PlantGatherableComponent, AttackedEvent>(OnAttacked);
+        SubscribeLocalEvent<CP14PlantGatherableComponent, CP14DestroyedByToolDoAfterEvent>(OnDestroyedByTool);
 
         SubscribeLocalEvent<CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
+    }
+
+    private void OnDestroyedByTool(Entity<CP14PlantGatherableComponent> gatherable, ref CP14DestroyedByToolDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        TryHarvestPlant(gatherable, out _);
     }
 
     private void OnAttacked(Entity<CP14PlantGatherableComponent> gatherable, ref AttackedEvent args)

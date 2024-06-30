@@ -20,7 +20,7 @@ public sealed partial class CP14PlantComponent : Component
     public float Energy = 0f;
 
     [DataField]
-    public float MaxEnergy = 100f;
+    public float EnergyMax = 100f;
 
     /// <summary>
     /// resource consumed for growth
@@ -29,7 +29,7 @@ public sealed partial class CP14PlantComponent : Component
     public float Resource = 0f;
 
     [DataField]
-    public float MaxResource = 100f;
+    public float ResourceMax = 100f;
 
     /// <summary>
     ///
@@ -38,7 +38,7 @@ public sealed partial class CP14PlantComponent : Component
     public float Health = 10f;
 
     [DataField]
-    public float MaxHealth = 10f;
+    public float HealthMax = 10f;
 
     /// <summary>
     /// Plant growth status, 0 to 1

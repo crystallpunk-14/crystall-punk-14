@@ -7,16 +7,16 @@ public abstract partial class CP14SharedFarmingSystem : EntitySystem
 {
     public void AffectEnergy(Entity<CP14PlantComponent> ent, float energyDelta)
     {
-        ent.Comp.Energy = MathHelper.Clamp(ent.Comp.Energy + energyDelta, 0, ent.Comp.MaxEnergy);
+        ent.Comp.Energy = MathHelper.Clamp(ent.Comp.Energy + energyDelta, 0, ent.Comp.EnergyMax);
     }
     public void AffectResource(Entity<CP14PlantComponent> ent, float resourceDelta)
     {
-        ent.Comp.Resource = MathHelper.Clamp(ent.Comp.Resource + resourceDelta, 0, ent.Comp.MaxResource);
+        ent.Comp.Resource = MathHelper.Clamp(ent.Comp.Resource + resourceDelta, 0, ent.Comp.ResourceMax);
     }
 
     public void AffectHealth(Entity<CP14PlantComponent> ent, float healthDelta)
     {
-        ent.Comp.Health = MathHelper.Clamp(ent.Comp.Health + healthDelta, 0, ent.Comp.MaxHealth);
+        ent.Comp.Health = MathHelper.Clamp(ent.Comp.Health + healthDelta, 0, ent.Comp.HealthMax);
     }
 
     public void AffectGrowth(Entity<CP14PlantComponent> ent, float growthDelta)
