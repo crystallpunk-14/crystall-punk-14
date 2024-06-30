@@ -17,13 +17,12 @@ public sealed partial class CP14FarmingSystem
 
     private void OnPlantFade(Entity<CP14PlantFadingComponent> ent, ref CP14PlantUpdateEvent args)
     {
-        var realFade = ent.Comp.ResourceFade * ent.Comp.Multiplier;
-        AffectResource(args.Plant, -realFade);
+        var realFade = ent.Comp.ResourcePerMinute * (float)args.Plant.Comp.Age.TotalMinutes;
         if (args.Plant.Comp.Resource < realFade)
         {
             _damageable.TryChangeDamage(ent, ent.Comp.FadeDamage, true);
         }
-        ent.Comp.Multiplier += ent.Comp.MultiplierPerUpdate;
+        AffectResource(args.Plant, -realFade);
     }
 
     private void OnTakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)

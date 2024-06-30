@@ -10,13 +10,7 @@ namespace Content.Server._CP14.Farming.Components;
 public sealed partial class CP14PlantFadingComponent : Component
 {
     [DataField]
-    public float ResourceFade = 1f;
-
-    [DataField]
-    public float Multiplier = 0f;
-
-    [DataField]
-    public float MultiplierPerUpdate = 0.05f;
+    public float ResourcePerMinute = 0f;
 
     [DataField]
     public DamageSpecifier FadeDamage = new()

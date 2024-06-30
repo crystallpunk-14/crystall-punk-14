@@ -38,10 +38,13 @@ public sealed partial class CP14PlantComponent : Component
     public float GrowthLevel = 0f;
 
     [DataField(serverOnly: true)]
-    public float UpdateFrequency = 90f;
+    public float UpdateFrequency = 60f;
 
     [DataField(serverOnly: true)]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
+
+    [DataField(serverOnly: true)]
+    public TimeSpan Age = TimeSpan.Zero;
 }
 
 /// <summary>

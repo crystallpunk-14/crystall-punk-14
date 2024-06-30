@@ -52,6 +52,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
             var newTime = _random.NextFloat(plant.UpdateFrequency);
             plant.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
+            plant.Age += TimeSpan.FromSeconds(plant.UpdateFrequency);
 
             var ev = new CP14PlantUpdateEvent((uid, plant));
             RaiseLocalEvent(uid, ev);

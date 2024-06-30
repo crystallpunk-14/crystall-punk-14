@@ -7,7 +7,7 @@ namespace Content.Server._CP14.Farming.Components;
 public sealed partial class CP14PlantEnergyFromLightComponent : Component
 {
     [DataField]
-    public float Energy = 1f;
+    public float Energy = 0f;
 
     [DataField]
     public bool Daytime = true;
