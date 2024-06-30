@@ -62,9 +62,6 @@
 - type: entityLootTable
   id: CP14GatherWheat
   entries:
-  - id: CP14BloodGrass #TODO
-    amount: 1
-    maxAmount: 2
-  - id: CP14SeedTest #TODO
-    amount: 1
-    maxAmount: 2
+  - id: CP14Wheat
+    amount: 2
+    maxAmount: 4
