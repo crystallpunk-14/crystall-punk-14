@@ -16,7 +16,7 @@ public sealed partial class CP14PlantMetabolizerPrototype : IPrototype
     public string ID { get; private set; } = string.Empty;
 
     [DataField]
-    public Dictionary<ProtoId<ReagentPrototype>, List<CP14MetabolizerEffect>> Metabolization = new();
+    public Dictionary<ProtoId<ReagentPrototype>, HashSet<CP14MetabolizerEffect>> Metabolization = new();
 }
 
 [ImplicitDataDefinitionForInheritors]

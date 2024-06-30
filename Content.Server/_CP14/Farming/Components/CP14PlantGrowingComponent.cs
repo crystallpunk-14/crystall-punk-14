@@ -1,7 +1,7 @@
 namespace Content.Server._CP14.Farming.Components;
 
 /// <summary>
-///
+/// Is trying to use up the plant's energy and resources to grow.
 /// </summary>
 [RegisterComponent, Access(typeof(CP14FarmingSystem))]
 public sealed partial class CP14PlantGrowingComponent : Component
@@ -12,6 +12,9 @@ public sealed partial class CP14PlantGrowingComponent : Component
     [DataField]
     public float ResourceCost = 1f;
 
+    /// <summary>
+    /// for each plant renewal. It is not every frame, it depends on the refresh rate in PlantComponent
+    /// </summary>
     [DataField]
     public float GrowthPerUpdate = 0.1f;
 }

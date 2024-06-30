@@ -8,13 +8,13 @@ public sealed partial class CP14FarmingSystem
 {
     private void InitializeResources()
     {
-        SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantEnergyUpdateEvent>(OnTakeEnergyFromLight);
+        SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(OnTakeEnergyFromLight);
 
         SubscribeLocalEvent<CP14PlantGrowingComponent, CP14AfterPlantUpdateEvent>(OnPlantGrowing);
-        SubscribeLocalEvent<CP14PlantMetabolizerComponent, CP14AfterPlantUpdateEvent>(OnPlantMetabolizing);
+        SubscribeLocalEvent<CP14PlantMetabolizerComponent, CP14PlantUpdateEvent>(OnPlantMetabolizing);
     }
 
-    private void OnTakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantEnergyUpdateEvent args)
+    private void OnTakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)
     {
         var gainEnergy = false;
         var daylight = _dayCycle.TryDaylightThere(regeneration, true);
@@ -26,7 +26,7 @@ public sealed partial class CP14FarmingSystem
             gainEnergy = true;
 
         if (gainEnergy)
-            args.Energy += regeneration.Comp.Energy;
+            args.EnergyDelta += regeneration.Comp.Energy;
     }
 
     private void OnPlantGrowing(Entity<CP14PlantGrowingComponent> growing, ref CP14AfterPlantUpdateEvent args)
@@ -43,7 +43,7 @@ public sealed partial class CP14FarmingSystem
         args.Plant.Comp.GrowthLevel = MathHelper.Clamp01(args.Plant.Comp.GrowthLevel + growing.Comp.GrowthPerUpdate);
     }
 
-    private void OnPlantMetabolizing(Entity<CP14PlantMetabolizerComponent> ent, ref CP14AfterPlantUpdateEvent args)
+    private void OnPlantMetabolizing(Entity<CP14PlantMetabolizerComponent> ent, ref CP14PlantUpdateEvent args)
     {
         if (args.Plant.Comp.SoilUid == null ||
             !TryComp<CP14SoilComponent>(args.Plant.Comp.SoilUid, out var soil) ||

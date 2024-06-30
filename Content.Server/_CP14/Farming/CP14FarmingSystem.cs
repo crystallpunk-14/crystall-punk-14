@@ -47,18 +47,14 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             var newTime = plant.UpdateFrequency;
             plant.NextUpdateTime = _timing.CurTime + newTime;
 
-            var energyEv = new CP14PlantEnergyUpdateEvent();
-            RaiseLocalEvent(uid, energyEv);
-            if (!energyEv.Cancelled)
-                plant.Energy += energyEv.Energy;
-
-            var resourceEv = new CP14PlantResourceUpdateEvent();
-            RaiseLocalEvent(uid, resourceEv);
-            if (!resourceEv.Cancelled)
-                plant.Resource += resourceEv.Resource;
-
-            var ev = new CP14AfterPlantUpdateEvent((uid, plant));
+            var ev = new CP14PlantUpdateEvent((uid, plant));
             RaiseLocalEvent(uid, ev);
+
+            plant.Resource += ev.ResourceDelta;
+            plant.Energy += ev.EnergyDelta;
+
+            var ev2 = new CP14AfterPlantUpdateEvent((uid, plant));
+            RaiseLocalEvent(uid, ev2);
 
             Dirty(uid, plant);
         }
