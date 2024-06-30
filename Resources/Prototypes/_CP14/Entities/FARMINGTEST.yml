@@ -19,6 +19,8 @@
     canCollide: False
     bodyType: Static
   - type: Sprite
+    drawdepth: Mobs
+    noRot: true
     sprite: Objects/Specific/Hydroponics/nettle.rsi
     layers:
     - state: stage-1
@@ -40,8 +42,19 @@
   - type: CP14PlantMetabolizer
     metabolizerId: Normal
   - type: CP14DestroyedByTool
-  - type: CP14PlantHarvestable
-    harvest: 
-    - CP14SeedTest
-    - CP14SeedTest
-    
+  - type: CP14PlantGatherable
+    toolWhitelist:
+      components:
+        - Hands
+    loot:
+      All: CP14GatherFUCK
+
+- type: entityLootTable
+  id: CP14GatherFUCK
+  entries:
+  - id: CP14BloodGrass
+    amount: 1
+    maxAmount: 2
+  - id: CP14SeedTest
+    amount: 0
+    maxAmount: 1
