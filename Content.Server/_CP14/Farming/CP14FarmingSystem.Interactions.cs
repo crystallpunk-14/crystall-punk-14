@@ -45,7 +45,7 @@ public sealed partial class CP14FarmingSystem
         if (!TryComp<CP14PlantComponent>(gatheredPlant, out var plant))
             return false;
 
-        if (gatheredPlant.Comp.GrowthLevelToHarvest > plant.GrowthLevel)
+        if (plant.GrowthLevel < gatheredPlant.Comp.GrowthLevelToHarvest)
             return false;
 
 
@@ -69,7 +69,7 @@ public sealed partial class CP14FarmingSystem
             var getLoot = _proto.Index(table);
             var spawnLoot = getLoot.GetSpawns(_random);
             var spawnPos = pos.Offset(_random.NextVector2(gatheredPlant.Comp.GatherOffset));
-            result.Add(Spawn(spawnLoot[0], spawnPos));
+            result.Add(Spawn(spawnLoot[0], spawnPos)); //TODO почему то не спавнится больше 1 пшенички. Кажись проблема оффов
         }
 
         if (gatheredPlant.Comp.DeleteAfterHarvest)
