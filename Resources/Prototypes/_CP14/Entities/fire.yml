@@ -1,6 +1,7 @@
 - type: entity
   id: CP14Fire
   name: fire
+  description: it's fire!
   suffix: cp14
   placement:
     mode: SnapgridCenter
@@ -29,11 +30,20 @@
           - ItemMask
         density: 1000
         hard: false
-  - type: Lava
-    fireStacks: 0.2
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.1
+    blacklist:
+      tags:
+        - Catwalk
+  - type: TileEntityEffect
+    effects:
+    - !type:FlammableReaction
+      multiplier: 1.75
+      multiplierOnExisting: 0.75
+    - !type:Ignite
+  - type: Transform
+    anchored: true
   - type: AmbientSound
     enabled: true
     volume: -5
