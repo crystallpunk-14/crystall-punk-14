@@ -73,7 +73,7 @@ public sealed partial class CP14FarmingSystem
         }
 
         if (gatheredPlant.Comp.DeleteAfterHarvest)
-            QueueDel(gatheredPlant);
+            _destructible.DestroyEntity(gatheredPlant);
         else
             AffectGrowth((gatheredPlant, plant), -gatheredPlant.Comp.GrowthCostHarvest);
 

@@ -1,3 +1,4 @@
+using Content.Server.Destructible;
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Shared._CP14.DayCycle;
@@ -28,6 +29,8 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly DestructibleSystem _destructible = default!;
+
 
     public override void Initialize()
     {
