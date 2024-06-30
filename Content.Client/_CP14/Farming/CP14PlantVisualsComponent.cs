@@ -1,5 +1,8 @@
 namespace Content.Client._CP14.Farming;
 
+/// <summary>
+/// Controls the visual display of plant growth
+/// </summary>
 [RegisterComponent]
 public sealed partial class CP14PlantVisualsComponent : Component
 {

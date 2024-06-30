@@ -7,7 +7,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._CP14.SpawnOnTileTool;
 
 /// <summary>
-///
+/// Allows using an item on a certain type of tile to spawn entities on it.
 /// </summary>
 [RegisterComponent, Access(typeof(SharedCP14SpawnOnTileToolSystem))]
 public sealed partial class CP14SpawnOnTileToolComponent : Component

@@ -35,7 +35,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly DestructibleSystem _destructible = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
 
-
     public override void Initialize()
     {
         base.Initialize();
