@@ -11,7 +11,7 @@
 
 - type: entity
   id: CP14PlantTest
-  name: FUCK plant!!!
+  name: FUCK wheat!!!
   components:
   - type: InteractionOutline
   - type: Clickable
@@ -21,15 +21,14 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: Objects/Specific/Hydroponics/nettle.rsi
+    sprite: _CP14/Structures/Specific/Farming/Herbals/wheat.rsi
     layers:
-    - state: stage-1
+    - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
-    state: stage-1
   - type: Appearance
   - type: CP14PlantVisuals
     growthSteps: 5
-    growState: "stage-"
+    growState: "grow-"
   - type: CP14Plant
     resource: 10
     energy: 10
@@ -46,7 +45,6 @@
     energyCost: 1
     resourceCost: 1
   - type: CP14PlantFading
-    multiplier: 0
     resourcePerMinute: 1 #5 minute from water
   - type: CP14DestroyedByTool
   - type: CP14PlantGatherable
