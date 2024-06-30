@@ -4,18 +4,17 @@
   abstract: true
   components:
   - type: Sprite
-    drawdepth: Mobs
     snapCardinals: true
   - type: Transform
     anchored: true
-    bodyType: Static
   - type: Physics
     canCollide: false
+    bodyType: Static
   - type: CP14DestroyedByTool
     tool: CP14Digging
+  - type: CP14PlantAutoRoot
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageContainer: Biological
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -27,6 +26,13 @@
       - trigger:
           !type:DamageTrigger
           damage: 25
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTypeTrigger
+          damageType: Cellular
+          damage: 1
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]

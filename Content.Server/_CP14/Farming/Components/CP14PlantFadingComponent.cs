@@ -17,7 +17,7 @@ public sealed partial class CP14PlantFadingComponent : Component
     {
         DamageDict = new Dictionary<string, FixedPoint2>
         {
-            { "Blunt", 1 },
+            { "Cellular", 0.05 },
         },
     };
 }
