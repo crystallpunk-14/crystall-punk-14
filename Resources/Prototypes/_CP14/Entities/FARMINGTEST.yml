@@ -1,0 +1,10 @@
+- type: entity
+  id: CP14SeedTest
+  name: FUCK test SEED
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/seeds.rsi
+    state: seed
+  - type: CP14Seed
+    plantProto: CP14PlantWheat

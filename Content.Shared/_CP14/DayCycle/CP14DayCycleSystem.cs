@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using Content.Shared.Maps;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 
@@ -9,6 +12,9 @@ public sealed partial class CP14DayCycleSystem : EntitySystem
     private const float MaxTimeDiff = 0.05f;
 
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedMapSystem _maps = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
 
     public override void Initialize()
     {
@@ -100,6 +106,35 @@ public sealed partial class CP14DayCycleSystem : EntitySystem
         }
 
         Dirty(dayCycle);
+    }
+
+    /// <summary>
+    /// Checks to see if the specified entity is on the map where it's daytime.
+    /// </summary>
+    /// <param name="target">An entity being tested to see if it is in daylight</param>
+    /// <param name="checkRoof">Checks if the tile covers the weather (the only "roof" factor at the moment)</param>
+    /// <param name="isDaylight">daylight test result returned</param>
+    public bool TryDaylightThere(EntityUid target, bool checkRoof)
+    {
+        if (!TryComp<TransformComponent>(target, out var xform))
+            return false;
+
+        if (!TryComp<CP14DayCycleComponent>(xform.MapUid, out var dayCycle))
+            return false;
+
+        if (checkRoof)
+        {
+            if (!TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
+                return !dayCycle.IsNight;
+
+            var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
+            var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
+
+            if (!tileDef.Weather)
+                return false;
+        }
+
+        return !dayCycle.IsNight;
     }
 
     private void SetAmbientColor(Entity<MapLightComponent> light, Color color)

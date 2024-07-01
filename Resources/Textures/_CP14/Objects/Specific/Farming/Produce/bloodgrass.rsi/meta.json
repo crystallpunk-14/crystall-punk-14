@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Base Created by TheShuEd (Github) for CrystallPunk14, Grass taken from tgstation at commits https://github.com/tgstation/tgstation/commit/729d858807905263adab8b5a331c1d8a04982dd3, and recolored",
+  "states": [
+    {
+      "name": "base1"
+    },
+    {
+      "name": "base2"
+    },
+    {
+      "name": "base3"
+    },
+    {
+      "name": "base4"
+    },
+    {
+      "name": "base5"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+- type: CP14PlantMetabolizer
+  id: Base
+  metabolization:
+    CP14Water:
+      - !type:AffectPlantValues
+        resource: 1
