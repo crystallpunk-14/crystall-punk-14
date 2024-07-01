@@ -42,11 +42,38 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
+      shirt:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: shirt
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
 
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobGoblinDummy
   noSpawn: true
   components:
-    - type: HumanoidAppearance
-      species: CP14Goblin
+  - type: HumanoidAppearance
+    species: CP14Goblin
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      shoes:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: shoes
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      shirt:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: shirt
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
