@@ -324,7 +324,7 @@ namespace Content.Client.Hands.Systems
                 return;
             }
 
-            var displacementData = handComp.Displacements.GetValueOrDefault(hand.Location.ToString()); //CP14 hands displacements
+            var displacementData = handComp.Displacements.GetValueOrDefault("Hands"); //CP14 hands displacements
 
             // add the new layers
             foreach (var (key, layerData) in ev.Layers)

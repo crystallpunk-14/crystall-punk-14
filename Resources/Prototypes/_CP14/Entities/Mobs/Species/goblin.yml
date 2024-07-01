@@ -23,6 +23,16 @@
     templateId: CP14Human
   - type: Bloodstream
     bloodReagent: CP14Blood
+  - type: Hands
+    displacements:
+      Hands:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: hands
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
 
 - type: entity
   parent: CP14BaseSpeciesDummy
