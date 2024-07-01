@@ -15,6 +15,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
 
 namespace Content.Client.Hands.Systems
@@ -28,6 +29,7 @@ namespace Content.Client.Hands.Systems
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
         [Dependency] private readonly StrippableSystem _stripSys = default!;
         [Dependency] private readonly ExamineSystem _examine = default!;
+        [Dependency] private readonly ISerializationManager _serialization = default!; //CP14
 
         public event Action<string, HandLocation>? OnPlayerAddHand;
         public event Action<string>? OnPlayerRemoveHand;
@@ -322,6 +324,8 @@ namespace Content.Client.Hands.Systems
                 return;
             }
 
+            var displacementData = handComp.CP14Displacements.GetValueOrDefault(hand.Location.ToString()); //CP14 hands displacements
+
             // add the new layers
             foreach (var (key, layerData) in ev.Layers)
             {
@@ -345,6 +349,30 @@ namespace Content.Client.Hands.Systems
                 }
 
                 sprite.LayerSetData(index, layerData);
+
+                //CP14 Hands displacement maps
+                if (displacementData != null)
+                {
+                    if (displacementData.ShaderOverride != null)
+                        sprite.LayerSetShader(index, displacementData.ShaderOverride);
+
+                    var displacementKey = $"{key}-displacement";
+                    if (!revealedLayers.Add(displacementKey))
+                    {
+                        Log.Warning($"Duplicate key for clothing visuals DISPLACEMENT: {displacementKey}.");
+                        continue;
+                    }
+
+                    var displacementLayer = _serialization.CreateCopy(displacementData.Layer, notNullableOverride: true);
+                    displacementLayer.CopyToShaderParameters!.LayerKey = key;
+
+                    // Add before main layer for this item.
+                    sprite.AddLayer(displacementLayer, index);
+                    sprite.LayerMapSet(displacementKey, index);
+
+                    revealedLayers.Add(displacementKey);
+                }
+                //CP14 Hands displacement maps - end
             }
 
             RaiseLocalEvent(held, new HeldVisualsUpdatedEvent(uid, revealedLayers), true);
