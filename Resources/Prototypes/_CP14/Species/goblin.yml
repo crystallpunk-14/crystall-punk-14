@@ -6,7 +6,8 @@
   sprites: CP14MobGoblinSprites
   markingLimits: CP14MobGoblinMarkingLimits
   dollPrototype: CP14MobGoblinDummy
-  skinColoration: TieflingHues
+  skinColoration: VoxFeathers
+  defaultSkinTone: "#74964d"
   maleFirstNames: CP14_Names_Goblin_Male_First
   femaleFirstNames: CP14_Names_Goblin_Female_First
   lastNames: CP14_Names_Goblin_Last
@@ -32,6 +33,7 @@
 
 - type: markingPoints
   id: CP14MobGoblinMarkingLimits
+  onlyWhitelisted: true
   points:
     Hair:
       points: 1
@@ -60,7 +62,7 @@
   id: CP14MobGoblinEyes
   baseSprite:
     sprite: _CP14/Mobs/Customization/eyes.rsi
-    state: eyes
+    state: goblin_eyes
 
 - type: humanoidBaseSprite
   id: CP14MobGoblinAnyMarking
