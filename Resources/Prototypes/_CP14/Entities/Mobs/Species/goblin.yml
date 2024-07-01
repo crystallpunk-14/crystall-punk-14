@@ -1,0 +1,33 @@
+- type: entity
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobGoblin
+  name: Mr. Goblin
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: CP14Goblin
+  - type: Hunger
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Goblin/parts.rsi
+    state: full
+  - type: Thirst
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodMeatHuman
+        amount: 5
+  - type: Body
+    prototype: CP14Human
+    requiredLegs: 2
+  - type: Inventory
+    templateId: CP14Human
+  - type: Bloodstream
+    bloodReagent: CP14Blood
+
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobGoblinDummy
+  noSpawn: true
+  components:
+    - type: HumanoidAppearance
+      species: CP14Goblin
