@@ -324,7 +324,7 @@ namespace Content.Client.Hands.Systems
                 return;
             }
 
-            var displacementData = handComp.CP14Displacements.GetValueOrDefault(hand.Location.ToString()); //CP14 hands displacements
+            var displacementData = handComp.Displacements.GetValueOrDefault(hand.Location.ToString()); //CP14 hands displacements
 
             // add the new layers
             foreach (var (key, layerData) in ev.Layers)
@@ -359,7 +359,7 @@ namespace Content.Client.Hands.Systems
                     var displacementKey = $"{key}-displacement";
                     if (!revealedLayers.Add(displacementKey))
                     {
-                        Log.Warning($"Duplicate key for clothing visuals DISPLACEMENT: {displacementKey}.");
+                        Log.Warning($"Duplicate key for inhand layers DISPLACEMENT: {displacementKey}.");
                         continue;
                     }
 

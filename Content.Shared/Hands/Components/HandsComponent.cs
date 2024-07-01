@@ -82,7 +82,7 @@ public sealed partial class HandsComponent : Component
     /// CP14 Hands displacements
     /// </summary>
     [DataField]
-    public Dictionary<string, InventoryComponent.SlotDisplacementData> CP14Displacements = [];
+    public Dictionary<string, InventoryComponent.SlotDisplacementData> Displacements = [];
 }
 
 [Serializable, NetSerializable]
