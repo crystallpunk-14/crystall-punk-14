@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseMaterialDoorNavMap
-  id: CP14BaseWoodDoor
-  name: wooden door
-  description: Not the most solid construction, but it's better than nothing.
+  id: CP14BaseDoor
+  name: door
+  abstract: true
   suffix: without lock
   components:
   - type: Sprite
@@ -53,16 +53,67 @@
       lock_slot: !type:ContainerSlot
 
 - type: entity
-  parent: CP14BaseWoodDoor
+  parent: CP14BaseDoor
   id: CP14WoodDoorOpened
+  description: Not the most solid construction, but it's better than nothing.
   suffix: Opened
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Doors/wooden_door.rsi
   - type: Lock
     locked: false
 
 - type: entity
-  parent: CP14BaseWoodDoor
+  parent: CP14WoodDoorOpened
   id: CP14WoodDoorTavern
+  description: Not the most solid construction, but it's better than nothing.
+  suffix: Tavern
+  components:
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        startingItem: CP14LockTavern
+        disableEject: true
+        insertOnInteract: false
+        ejectOnBreak: true
+        whitelist:
+          components:
+          - CPLock
+          
+- type: entity
+  parent: CP14BaseDoor
+  id: CP14BrassDoorOpened
+  description: Pretty solid brass door. I'm sure it'll take an axe to it.
+  suffix: Opened
+  components:
+  - type: Lock
+    locked: false
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Doors/brass_door.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    closedDrawDepth: Mobs
+    openDrawDepth: FloorObjects
+    openSound:
+      path: /Audio/_CP14/Effects/metal_door_open.ogg
+    closeSound:
+      path: /Audio/_CP14/Effects/metal_door_closed.ogg
+
+- type: entity
+  parent: CP14BrassDoorOpened
+  id: CP14BrassDoorTavern
+  description: Pretty solid brass door. I'm sure it'll take an axe to it.
   suffix: Tavern
   components:
   - type: ItemSlots
