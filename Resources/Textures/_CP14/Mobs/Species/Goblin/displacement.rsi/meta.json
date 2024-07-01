@@ -13,6 +13,10 @@
     {
       "name": "hands",
       "directions": 4
+    },
+    {
+      "name": "shoes",
+      "directions": 4
     }
   ]
 }
