@@ -98,6 +98,10 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
         if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
             return;
 
+        // Ignore items inside containers
+        if (!HasComp<MapGridComponent>(xform.ParentUid))
+            return;
+
         var localPos = xform.Coordinates.Position;
         var tileRefs = _mapSystem.GetLocalTilesIntersecting(grid.Owner,
                 grid,
