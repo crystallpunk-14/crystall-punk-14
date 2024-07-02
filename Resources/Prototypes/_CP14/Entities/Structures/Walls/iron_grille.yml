@@ -157,7 +157,7 @@
     openingAnimationTime: 0
     closingAnimationTime: 0
     openSound:
-      path: /Audio/Effects/door_open.ogg
+      collection: MetalScrape
     closeSound:
-      path: /Audio/Effects/door_close.ogg
+      collection: MetalScrape
   - type: Appearance
