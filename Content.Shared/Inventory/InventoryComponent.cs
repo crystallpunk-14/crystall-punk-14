@@ -25,6 +25,9 @@ public sealed partial class InventoryComponent : Component
         public PrototypeLayerData Layer = default!;
 
         [DataField]
+        public PrototypeLayerData? Layer48; //CP14 48*48 displacement support
+
+        [DataField]
         public string? ShaderOverride = "DisplacedStencilDraw";
     }
 }

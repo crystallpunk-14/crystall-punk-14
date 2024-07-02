@@ -363,7 +363,16 @@ namespace Content.Client.Hands.Systems
                         continue;
                     }
 
-                    var displacementLayer = _serialization.CreateCopy(displacementData.Layer, notNullableOverride: true);
+                    var displacementDataLayer = displacementData.Layer;
+                    var actualRSI = sprite.LayerGetActualRSI(index);
+                    if (actualRSI != null)
+                    {
+                        var layerSize = actualRSI.Size;
+                        if (layerSize.X == 48 && displacementData.Layer48 != null)
+                            displacementDataLayer = displacementData.Layer48;
+                    }
+
+                    var displacementLayer = _serialization.CreateCopy(displacementDataLayer, notNullableOverride: true);
                     displacementLayer.CopyToShaderParameters!.LayerKey = key;
 
                     // Add before main layer for this item.

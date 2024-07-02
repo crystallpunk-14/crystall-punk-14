@@ -331,7 +331,19 @@ public sealed class ClientClothingSystem : ClothingSystem
                     continue;
                 }
 
-                var displacementLayer = _serialization.CreateCopy(displacementData.Layer, notNullableOverride: true);
+                //CP14 48*48 displacement maps support
+                var displacementDataLayer = displacementData.Layer;
+                var actualRSI = sprite.LayerGetActualRSI(index);
+                if (actualRSI != null)
+                {
+                    var layerSize = actualRSI.Size;
+                    if (layerSize.X == 48 && displacementData.Layer48 != null)
+                        displacementDataLayer = displacementData.Layer48;
+                }
+
+                var displacementLayer = _serialization.CreateCopy(displacementDataLayer, notNullableOverride: true);
+                //CP14 48*48 displacement maps support end
+
                 displacementLayer.CopyToShaderParameters!.LayerKey = key;
 
                 // Add before main layer for this item.
