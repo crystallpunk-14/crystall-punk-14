@@ -11,6 +11,10 @@
   },
   "states": [
     {
+      "name": "belt",
+      "directions": 4
+    },
+    {
       "name": "cloak",
       "directions": 4
     },
