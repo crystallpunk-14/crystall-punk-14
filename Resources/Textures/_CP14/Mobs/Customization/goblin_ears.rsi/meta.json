@@ -10,6 +10,14 @@
     {
       "name": "ears1",
       "directions": 4
+    },
+    {
+      "name": "ears2",
+      "directions": 4
+    },
+    {
+      "name": "ears3",
+      "directions": 4
     }
   ]
 }
