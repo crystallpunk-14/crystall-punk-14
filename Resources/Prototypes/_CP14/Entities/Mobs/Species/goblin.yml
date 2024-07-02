@@ -34,6 +34,14 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
+      cloak:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: cloak
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
       eyes:
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
@@ -61,6 +69,14 @@
         layer48:
           sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
           state: head
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      mask:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: mask
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap
@@ -100,6 +116,14 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
+      cloak:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: cloak
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
       eyes:
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
@@ -127,6 +151,14 @@
         layer48:
           sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
           state: head
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      mask:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: mask
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap
