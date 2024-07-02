@@ -42,6 +42,14 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
+      gloves:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: gloves
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
       head:
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
@@ -96,6 +104,14 @@
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
           state: eyes
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      gloves:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: gloves
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap
