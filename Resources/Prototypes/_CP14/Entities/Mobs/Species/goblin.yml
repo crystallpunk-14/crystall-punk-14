@@ -57,6 +57,14 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
+      pants:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: pants
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
       shirt:
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
@@ -103,6 +111,14 @@
         layer48:
           sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
           state: head
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      pants:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: pants
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap
