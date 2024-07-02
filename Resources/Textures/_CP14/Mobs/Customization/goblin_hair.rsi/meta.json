@@ -3,20 +3,21 @@
   "license": "All rights reserved for the CrystallPunk14 project only",
   "copyright": "Created by TheShuEd (Github) for CrystallPunk",
   "size": {
-    "x": 32,
-    "y": 32
+    "x": 48,
+    "y": 48
   },
   "states": [
     {
-      "name": "eyes",
+      "name": "antenna",
       "directions": 4
     },
     {
-      "name": "goblin_eyes",
+      "name": "bedheadv2",
       "directions": 4
     },
     {
-      "name": "no_eyes"
+      "name": "doublebun",
+      "directions": 4
     }
   ]
 }

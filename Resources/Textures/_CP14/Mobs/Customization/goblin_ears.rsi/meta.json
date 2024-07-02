@@ -8,15 +8,16 @@
   },
   "states": [
     {
-      "name": "eyes",
+      "name": "ears1",
       "directions": 4
     },
     {
-      "name": "goblin_eyes",
+      "name": "ears2",
       "directions": 4
     },
     {
-      "name": "no_eyes"
+      "name": "ears3",
+      "directions": 4
     }
   ]
 }
