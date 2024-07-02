@@ -34,10 +34,10 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
-      shoes:
+      eyes:
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: shoes
+          state: eyes
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap
@@ -61,6 +61,14 @@
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
           state: shirt
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      shoes:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: shoes
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap
@@ -76,10 +84,10 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
-      shoes:
+      eyes:
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: shoes
+          state: eyes
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap
@@ -103,6 +111,14 @@
         layer:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
           state: shirt
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV
+      shoes:
+        layer:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: shoes
           copyToShaderParameters:
             layerKey: dummy
             parameterTexture: displacementMap

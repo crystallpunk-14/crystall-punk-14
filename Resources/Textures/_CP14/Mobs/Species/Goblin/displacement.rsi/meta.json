@@ -11,6 +11,10 @@
   },
   "states": [
     {
+      "name": "eyes",
+      "directions": 4
+    },
+    {
       "name": "hands",
       "directions": 4
     },
