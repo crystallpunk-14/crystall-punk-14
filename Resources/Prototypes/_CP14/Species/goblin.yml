@@ -43,7 +43,8 @@
       required: false
     Snout:
       points: 1
-      required: false
+      required: true
+      defaultMarkings: [ CP14GoblinNose ]
     HeadTop:
       points: 1
       required: true
