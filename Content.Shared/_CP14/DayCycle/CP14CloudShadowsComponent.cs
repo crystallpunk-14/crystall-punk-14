@@ -12,6 +12,15 @@ public sealed partial class CP14CloudShadowsComponent : Component
     [DataField, AutoNetworkedField]
     public Vector2 CloudSpeed = new Vector2(0.5f, 0f);
 
+    [DataField]
+    public float MaxSpeed = 1.5f;
+
     [DataField, AutoNetworkedField]
     public float Alpha = 1f;
+
+    [DataField]
+    public float Scale = 2.5f;
+
+    [DataField]
+    public string ParallaxPath = "/Textures/_CP14/Parallaxes/Shadows.png";
 }

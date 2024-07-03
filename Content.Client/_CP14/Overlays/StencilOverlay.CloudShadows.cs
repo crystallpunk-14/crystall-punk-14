@@ -53,11 +53,11 @@ public sealed partial class StencilOverlay
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilMask").Instance());
         worldHandle.DrawTextureRect(_blep!.Texture, worldBounds);
         var curTime = _timing.RealTime;
-        var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(new ResPath("/Textures/Parallaxes/AspidParallaxNeb.png")), curTime);
+        var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(new ResPath(cloudComp.ParallaxPath)), curTime);
 
         // Draw the rain
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDraw").Instance());
-        _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, cloudComp.CloudSpeed, modulate: Color.White.WithAlpha(cloudComp.Alpha));
+        _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, cloudComp.CloudSpeed, modulate: Color.White.WithAlpha(cloudComp.Alpha), scale: cloudComp.Scale);
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(null);
