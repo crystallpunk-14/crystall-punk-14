@@ -50,4 +50,4 @@
     sprite: _CP14/Objects/Tools/hoe.rsi
   - type: CP14SpawnOnTileTool
     spawns:
-      CP14FloorDirt: CP14FarmingSoil
+      CP14FloorDirt: CP14PloughedGround
