@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Client.Parallax;
 using Content.Client.Weather;
+using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.WorldEdge;
 using Content.Shared.Salvage;
 using Content.Shared.Weather;
@@ -73,12 +74,17 @@ public sealed partial class StencilOverlay : Overlay
             DrawRestrictedRange(args, restrictedRangeComponent, invMatrix);
         }
 
-        //CP14 World Edge overlay
+        //CP14 Overlays
+        if (_entManager.TryGetComponent<CP14CloudShadowsComponent>(mapUid, out var shadows))
+        {
+            DrawCloudShadows(args, shadows, invMatrix);
+        }
+
         if (_entManager.TryGetComponent<CP14WorldEdgeComponent>(mapUid, out var worldEdge))
         {
             DrawWorldEdge(args, worldEdge, invMatrix);
         }
-        //CP14 World Edge overlay end
+        //CP14 Overlays end
 
         args.WorldHandle.UseShader(null);
         args.WorldHandle.SetTransform(Matrix3x2.Identity);

@@ -36,6 +36,7 @@ entities:
     - type: OccluderTree
     - type: LoadedMap
     - type: MapLight
+    - type: CP14CloudShadows
     - type: CP14WorldEdge
       range: 30
     - type: CP14DayCycle
