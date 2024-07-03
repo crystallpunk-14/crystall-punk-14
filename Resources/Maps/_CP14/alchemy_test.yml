@@ -65,6 +65,8 @@ entities:
     - type: Transform
       pos: -0.5168724,-0.47751108
       parent: 1
+    - type: CP14WorldEdge
+      range: 20
     - type: BecomesStation
       id: AlchemyTest
     - type: MapGrid
