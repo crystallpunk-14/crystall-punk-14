@@ -4,8 +4,8 @@
     "x": 32,
     "y": 32
   },
-  "license": "All rights reserved for the CrystallPunk14 project only",
-  "copyright": "Created by TheShuEd for CrystallPunk",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by TheShuEd for CrystallPunk, from https://github.com/crystallpunk-14/crystall-punk-14/pull/290",
   "states": [
     {
       "name": "full"

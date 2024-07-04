@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by TheShuEd (Github) for CrystallPunk",
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "antenna",
+      "directions": 4
+    },
+    {
+      "name": "bedheadv2",
+      "directions": 4
+    },
+    {
+      "name": "doublebun",
+      "directions": 4
+    }
+  ]
+}
