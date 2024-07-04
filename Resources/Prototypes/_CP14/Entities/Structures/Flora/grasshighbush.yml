@@ -1,0 +1,98 @@
+- type: entity
+  id: CP14HighBush
+  name: high bush
+  description: Very tall and dense thickets. Perhaps someone is watching you from them
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Flora/GrassHighBush.rsi
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: grass_high_bush1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        grass_high_bush1: ""
+        grass_high_bush2: ""
+        grass_high_bush3: ""
+        grass_high_bush4: ""
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: CP14GrassGathering
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: CP14GrassGathering
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      #- !type:SpawnEntitiesBehavior #TODO - flora material drop
+      #  spawn:
+      #    CP14WoodLog:
+      #      min: 1
+      #      max: 3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14WoodenPlanks: 100
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.5
+    sprintSpeedModifier: 0.5
+  - type: EmitSoundOnTrigger
+    sound:
+      params:
+        volume: -8
+      collection: CP14GrassGathering
+  - type: TriggerOnCollide
+    fixtureID: fix1
+
+- type: entity
+  id: CP14RandomBushOffsetSpawner
+  name: random bush offset spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _CP14/Structures/Flora/GrassHighBush.rsi
+      state: grass_high_bush1
+  - type: RandomSpawner
+    prototypes:
+    - CP14HighBush
+    chance: 1
+    offset: 0.35
