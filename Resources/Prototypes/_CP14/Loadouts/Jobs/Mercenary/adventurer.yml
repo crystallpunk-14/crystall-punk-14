@@ -108,6 +108,33 @@
   equipment:
     head: CP14ClothingHeadTriangularHatGolden
 
+- type: loadout
+  id: CP14ClothingHeadRedBeret
+  equipment: CP14ClothingHeadRedBeret
+
+- type: startingGear
+  id: CP14ClothingHeadRedBeret
+  equipment:
+    head: CP14ClothingHeadRedBeret
+
+- type: loadout
+  id: CP14ClothingHeadPurpleBeret
+  equipment: CP14ClothingHeadPurpleBeret
+
+- type: startingGear
+  id: CP14ClothingHeadPurpleBeret
+  equipment:
+    head: CP14ClothingHeadPurpleBeret
+
+- type: loadout
+  id: CP14ClothingHeadWhiteBeret
+  equipment: CP14ClothingHeadWhiteBeret
+
+- type: startingGear
+  id: CP14ClothingHeadWhiteBeret
+  equipment:
+    head: CP14ClothingHeadWhiteBeret
+
 # Mask
 
 - type: loadout
