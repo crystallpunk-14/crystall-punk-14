@@ -3,6 +3,7 @@
   name: high bush
   description: Very tall and dense thickets. Perhaps someone is watching you from them
   components:
+  - type: CP14WaveShader
   - type: SpriteFade
   - type: Clickable
   - type: Sprite

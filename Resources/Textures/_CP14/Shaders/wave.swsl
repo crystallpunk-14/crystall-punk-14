@@ -4,7 +4,7 @@ varying highp vec2 Pos;
 varying highp vec4 VtxModulate;
 
 uniform highp float Speed = 3.0;
-uniform highp float Dis = 2.0;
+uniform highp float Dis = 10.0;
 uniform highp float Offset = 0.0;
 
 void fragment() {
