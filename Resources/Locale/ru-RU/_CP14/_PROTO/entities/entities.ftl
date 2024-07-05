@@ -70,6 +70,15 @@ ent-CP14ClothingHeadTriangularHat = остроконечная шляпа
 ent-CP14ClothingHeadTriangularHatGolden = позолоченная остроконечная шляпа
     .desc = Большая остроконечная шляпа для тех, кто любит выглядеть умным. Украшена золотым обручем.
 
+ent-CP14ClothingHeadRedBeret = красный берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadPurpleBeret = фиолетовый берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadWhiteBeret = белый берет
+    .desc = Это берет.
+
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
 
@@ -144,6 +153,9 @@ ent-CP14MobDwarf = мистер Дварф
 ent-CP14MobElf = { ent-CP14BaseMobElf }
     .desc = { ent-CP14BaseMobElf.desc }
 
+ent-CP14MobGoblin = { ent-CP14BaseMobGoblin }
+    .desc = { ent-CP14BaseMobGoblin.desc }
+
 ent-CP14MobHuman = мистер Человек
     .desc = { ent-CP14BaseMobHuman.desc }
 
@@ -153,6 +165,8 @@ ent-CP14MobTiefling = мистер Тифлинг
 ent-CP14BaseMobDwarf = Мистер Дварф
 
 ent-CP14BaseMobElf = Мистер Эльф
+
+ent-CP14BaseMobGoblin = Мистер Гоблин
 
 ent-CP14BaseMobHuman = Мистер Человек
 
@@ -542,6 +556,11 @@ ent-CP14CrystalDiamondsBig = { ent-CP14CrystalBase }
 
 ent-CP14FloorWater = вода
     .desc = Брух
+
+ent-CP14HighBush = высокий куст
+    .desc = Высокие и густые заросли. Возможно кто-то наблюдает за тобой из них.
+
+ent-CP14RandomBushOffsetSpawner = спавнер куста (рандомный сдвиг)
 
 ent-CP14BaseTree = дерево
     .desc = Десятилетия жизни и роста, насыщающие окружающую природу свежим воздухом.
