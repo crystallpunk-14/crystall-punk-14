@@ -27,7 +27,7 @@
   randomRotation: false
   minPlayers: 0
   stations:
-    AlchemyTest:
+    BattleRoyale:
       stationProto: StandardStationArena
       components:
         - type: StationNameSetup
