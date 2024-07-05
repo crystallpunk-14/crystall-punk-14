@@ -57,6 +57,14 @@ namespace Content.Shared.Chemistry.Reaction
         [DataField("products", customTypeSerializer:typeof(PrototypeIdDictionarySerializer<FixedPoint2, ReagentPrototype>))]
         public Dictionary<string, FixedPoint2> Products = new();
 
+        // CP14 random reactions begin
+        /// <summary>
+        /// Random reagents groups, one of which will be selected at the roundstart and will be used as a reaction product.
+        /// </summary>
+        [DataField("cp14RandomProducts")]
+        public List<Dictionary<string, FixedPoint2>> Cp14RandomProducts = new();
+        // CP14 random reactions end
+
         /// <summary>
         /// Effects to be triggered when the reaction occurs.
         /// </summary>
