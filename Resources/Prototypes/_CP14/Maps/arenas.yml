@@ -18,3 +18,21 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
+
+- type: gameMap
+  id: BattleRoyale
+  mapName: Battle royale
+  mapPath: /Maps/_CP14/battle_royale.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    AlchemyTest:
+      stationProto: StandardStationArena
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Battle royale"
+        - type: StationJobs
+          availableJobs:
+            CP14Adventurer: [ -1, -1 ]
+            #CP14Alchemist: [ -1, -1 ]
