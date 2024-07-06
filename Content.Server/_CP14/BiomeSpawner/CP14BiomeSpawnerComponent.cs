@@ -1,12 +1,3 @@
-/*
- * All right reserved to CrystallPunk.
- *
- * This file is sublicensed under Custom License Agreement to Peptide (Discord) for Nuclear14 project (https://github.com/Vault-Overseers/nuclear-14) only
- *
- * See LICENSE.TXT file in the project root for full license information.
- * Copyright (c) 2024 TheShuEd (Github)
- */
-
 using Content.Shared.Parallax.Biomes;
 using Robust.Shared.Prototypes;
 
