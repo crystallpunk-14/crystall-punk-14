@@ -70,6 +70,8 @@ entities:
       name: grid
     - type: Transform
       parent: 1
+    - type: BecomesStation
+      id: BattleRoyale
     - type: MapGrid
       chunks:
         0,0:
