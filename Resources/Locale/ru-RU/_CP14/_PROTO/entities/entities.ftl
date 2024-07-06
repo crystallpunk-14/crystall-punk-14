@@ -133,6 +133,12 @@ ent-CP14SpawnPointAdventurer = авантюрист
 
 ent-CP14SpawnPointAlchemist = алхимик
 
+ent-CP14RandomSpawnerBattleRoyaleLootWeapon = Лут
+    .suffix = Weapon
+
+ent-CP14RandomSpawnerBattleRoyaleLootTools = Лут
+    .suffix = Tools
+
 ent-CP14RandomSpawnerGatherAgaricShroom = спавнер мухоморов
 
 ent-CP14RandomDirtLootSpawner = спавнер земли
@@ -393,6 +399,9 @@ ent-CP14BaseThrowableSpear = метательное копьё
 
 ent-CP14BaseTwoHandedSword = двуручный меч
     .desc = Мощное оружие, требующее огромной силы и умения для эффективного использования.
+
+ent-CP14TwoHandedSwordScythe = коса
+    .desc = Большая двуручная коса. Что вы будете косить ею? Пшено, или головы своих врагов?
 
 ent-CP14WeaponRevolverNavy = револьвер "Марин"
     .desc = Увесистый капсюльный револьвер серии "Марин". В настоящее время револьверы серии "Марин" стоят баснословные деньги, и их могут позволить себе исключительно преуспевающие моряки и торговцы.
