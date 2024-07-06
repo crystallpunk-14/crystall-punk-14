@@ -46,6 +46,9 @@
     - CP14CopperCoin1
     - CP14CopperCoin1
     - CP14CopperCoin1
+    - HealingToolbox
+    - HealingToolbox
+    - HealingToolbox
 
 - type: entity
   id: CP14RandomSpawnerBattleRoyaleLootTools
@@ -129,3 +132,5 @@
     - CP14CopperCoin1
     - CP14CopperCoin1
     - CP14CopperCoin1
+    - HealingToolbox
+    - HealingToolbox

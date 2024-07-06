@@ -45893,6 +45893,11 @@ entities:
     - type: Transform
       pos: 5.5349417,-46.121983
       parent: 2
+  - uid: 7446
+    components:
+    - type: Transform
+      pos: 49.63669,-2.6734562
+      parent: 2
   - uid: 8024
     components:
     - type: Transform
@@ -52734,6 +52739,48 @@ entities:
     components:
     - type: Transform
       pos: -13.5,53.5
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 7425
+    components:
+    - type: Transform
+      pos: 15.5,-13.5
+      parent: 2
+  - uid: 7426
+    components:
+    - type: Transform
+      pos: -3.5,21.5
+      parent: 2
+  - uid: 7427
+    components:
+    - type: Transform
+      pos: -12.5,0.5
+      parent: 2
+  - uid: 7428
+    components:
+    - type: Transform
+      pos: -22.5,-11.5
+      parent: 2
+  - uid: 7429
+    components:
+    - type: Transform
+      pos: -14.5,-32.5
+      parent: 2
+  - uid: 7430
+    components:
+    - type: Transform
+      pos: 6.5,-26.5
+      parent: 2
+  - uid: 7437
+    components:
+    - type: Transform
+      pos: 25.5,-28.5
+      parent: 2
+  - uid: 7445
+    components:
+    - type: Transform
+      pos: 48.5,-2.5
       parent: 2
 - proto: StatueVenusBlue
   entities:

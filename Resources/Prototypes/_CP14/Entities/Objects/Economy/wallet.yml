@@ -42,4 +42,5 @@
   components:
   - type: StorageFill
     contents:
-    - id: CP14CopperCoin5
+    - id: CP14CopperCoin1
+    - id: CP14CopperCoin1
