@@ -67,7 +67,8 @@ namespace Content.IntegrationTests.Tests
             //"Oasis"
 
             //CrystallPunk maps
-            "AlchemyTest"
+            "AlchemyTest",
+            "BattleRoyale"
         };
 
         /// <summary>
