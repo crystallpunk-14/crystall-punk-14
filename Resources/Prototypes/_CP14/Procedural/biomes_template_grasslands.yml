@@ -33,6 +33,81 @@
         gain: 0.7
         domainWarpType: OpenSimplex2
         domainWarpAmp: 120
+    - !type:BiomeDecalLayer #Grass decal
+      allowedTiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      threshold: 0
+      divisions: 1
+      noise:
+        seed: 12
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      decals:
+        - CP14FloraGrass1
+        - CP14FloraGrass2
+        - CP14FloraGrass3
+        - CP14FloraGrass4
+        - CP14FloraGrass5
+        - CP14FloraGrass6
+        - CP14FloraGrass7
+        - CP14FloraGrass8
+        - CP14FloraGrass9
+        - CP14FloraGrass10
+        - CP14FloraGrass11
+        - CP14FloraGrass12
+        - CP14FloraGrass13
+        - CP14FloraGrass14
+    - !type:BiomeDecalLayer #Bush decal
+      allowedTiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      threshold: 0.35
+      divisions: 1
+      noise:
+        seed: 12
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      decals:
+        - CP14GrassBushes1
+        - CP14GrassBushes2
+        - CP14GrassBushes3
+        - CP14GrassBushes4
+        - CP14GrassBushes5
+        - CP14GrassBushes6
+        - CP14GrassBushes7
+        - CP14GrassBushes8
+        - CP14GrassBushes9
+    - !type:BiomeEntityLayer # Tall grass!
+      threshold: 0.3
+      noise:
+        seed: 23
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrassTall
+      entities:
+        - CP14RandomBushOffsetSpawner
     - !type:BiomeEntityLayer # Rare Trees
       threshold: 0.8
       noise:

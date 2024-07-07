@@ -46,3 +46,36 @@
     sprite: _CP14/Clothing/Head/triangularhat_golden.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/triangularhat_golden.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadRedBeret
+  name: red beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/red.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadPurpleBeret
+  name: purple beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/purple.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/purple.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadWhiteBeret
+  name: white beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/white.rsi

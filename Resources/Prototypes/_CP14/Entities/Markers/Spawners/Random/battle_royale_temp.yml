@@ -1,0 +1,136 @@
+- type: entity
+  id: CP14RandomSpawnerBattleRoyaleLootWeapon
+  name: Лут
+  suffix: Weapon
+  parent: MarkerBase
+  categories:
+  - Spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _CP14/Objects/Weapons/Melee/BattleHammer/battleHammer.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+    - CP14BaseBattleHammer
+    - CP14BaseBattleStaff
+    - CP14BaseDagger
+    - CP14BaseDagger
+    - CP14BaseHandheldAxe
+    - CP14BaseLightHammer
+    - CP14BaseMace
+    - CP14BaseSickle
+    - CP14BaseThrowableSpear
+    - CP14BaseTwoHandedSword
+    - CP14BaseLightCrossbow
+    - CP14Crossbolt
+    - CP14Crossbolt
+    - CP14Crossbolt
+    - CP14Crossbolt
+    - CP14BaseSharpeningStone
+    - CP14BaseSharpeningStone
+    - CP14Shovel
+    - CP14OldLantern
+    - ClothingBackpackCargo
+    - ClothingBackpackCargo
+    - ClothingBackpackCargo
+    - ClothingBackpackCargo
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - HealingToolbox
+    - HealingToolbox
+    - HealingToolbox
+
+- type: entity
+  id: CP14RandomSpawnerBattleRoyaleLootTools
+  name: Лут
+  suffix: Tools
+  parent: MarkerBase
+  categories:
+  - Spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+    - CP14ClothingCloakArmoredRed
+    - CP14ClothingCloakBlacksmithArpon
+    - CP14ClothingCloakFurcapeBlack
+    - CP14ClothingCloakFurcapeBlue
+    - CP14ClothingCloakSimpleWhite
+    - CP14ClothingCloakSimpleDarkBlue
+    - CP14ClothingEyesMonocle
+    - CP14ClothingEyesGlasses
+    - CP14ClothingEyesAlchemyGlasses
+    - CP14ClothingEyesAlchemyMonocle
+    - CP14ClothingEyesThaumaturgyGlasses
+    - CP14ClothingGlovesGirdles
+    - CP14ClothingHeadMetalHeadband
+    - CP14ClothingHeadTriangularHat
+    - CP14ClothingHeadTriangularHatGolden
+    - CP14ClothingHeadRedBeret
+    - CP14ClothingHeadPurpleBeret
+    - CP14ClothingHeadWhiteBeret
+    - CP14ClothingPantsTrouserWhite
+    - CP14ClothingPantsTrouserDarkBlue
+    - CP14ClothingPantsAristocratic
+    - CP14ClothingPantsLoincloth
+    - CP14ClothingShirtCottonBlue
+    - CP14ClothingShirtCottonBlueDark
+    - CP14ClothingShirtCottonPurple
+    - CP14ClothingShirtCottonRed
+    - CP14ClothingShirtCottonWhite
+    - CP14ClothingShirtCottonYellow
+    - CP14ClothingShirtSteampunk
+    - CP14ClothingShoesBlack
+    - CP14ClothingShoesAristocraticBlack
+    - CP14ClothingShoesSandals
+    - CP14DirtBlock10
+    - CP14StoneBlock10
+    - CP14WoodLog
+    - CP14WoodenPlanks10
+    - CP14Nail1
+    - CP14Nail110
+    - CP14BloodGrass
+    - CP14AgaricMushroom
+    - CP14ChromiumSlime
+    - CP14WildSage
+    - CP14QuartzShard
+    - CP14LumiMushroom
+    - CP14Cauldron
+    - CP14Pestle
+    - CP14Mortar
+    - CP14Dropper
+    - CP14VialSmallBloodgrassSap
+    - CP14VialSmallAgaricMushroom
+    - CP14VialSmallGroundQuartz
+    - CP14VialSmallWildSage
+    - CP14VialSmallChromiumSlime
+    - CP14VialSmallLumiMushroom
+    - CP14EnergyCrystalMedium
+    - CP14EnergyCrystalSmall
+    - CP14AlchemyNormalizer
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - CP14CopperCoin1
+    - HealingToolbox
+    - HealingToolbox
