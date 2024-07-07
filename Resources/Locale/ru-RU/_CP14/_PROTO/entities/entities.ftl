@@ -133,12 +133,6 @@ ent-CP14SpawnPointAdventurer = авантюрист
 
 ent-CP14SpawnPointAlchemist = алхимик
 
-ent-CP14RandomSpawnerBattleRoyaleLootWeapon = Лут
-    .suffix = Weapon
-
-ent-CP14RandomSpawnerBattleRoyaleLootTools = Лут
-    .suffix = Tools
-
 ent-CP14RandomSpawnerGatherAgaricShroom = спавнер мухоморов
 
 ent-CP14RandomDirtLootSpawner = спавнер земли
