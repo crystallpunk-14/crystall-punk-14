@@ -75,8 +75,7 @@ public sealed class CP14ExpeditionSystem : EntitySystem
             if (mapUid == null)
                 return;
 
-            _transform.SetCoordinates(shuttle, xform, new EntityCoordinates(mapUid.Value, targetPos));
-            //_shuttles.TryFTLProximity(shuttle, target);
+            _shuttles.FTLToCoordinates(shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Angle.Zero, hyperspaceTime: 20f);
         }
     }
 }
