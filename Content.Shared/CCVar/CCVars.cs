@@ -10,6 +10,13 @@ namespace Content.Shared.CCVar
     [CVarDefs]
     public sealed class CCVars : CVars
     {
+        #region CP14
+
+        public static readonly CVarDef<float> CP14ExpeditionArrivalTime =
+            CVarDef.Create("cp14.arrival_time", 300f, CVar.SERVERONLY);
+
+
+        #endregion
         /*
          * Server
          */

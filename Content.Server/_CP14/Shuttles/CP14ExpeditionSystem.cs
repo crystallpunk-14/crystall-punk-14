@@ -6,7 +6,9 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
+using Content.Shared.CCVar;
 using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -17,6 +19,8 @@ namespace Content.Server._CP14.Shuttles;
 
 public sealed class CP14ExpeditionSystem : EntitySystem
 {
+
+    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly IConsoleHost _console = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -31,12 +35,19 @@ public sealed class CP14ExpeditionSystem : EntitySystem
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly StationSystem _station = default!;
 
+
+    /// <summary>
+    /// Flags if all players must arrive via the Arrivals system, or if they can spawn in other ways.
+    /// </summary>
+    public float ArrivalTime { get; private set; }
+
     public override void Initialize()
     {
         base.Initialize();
 
-
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, StationPostInitEvent>(OnStationPostInit);
+
+        ArrivalTime = _cfgManager.GetCVar(CCVars.CP14ExpeditionArrivalTime);
     }
 
     private void OnStationPostInit(Entity<CP14StationExpeditionTargetComponent> station, ref StationPostInitEvent args)
@@ -75,7 +86,7 @@ public sealed class CP14ExpeditionSystem : EntitySystem
             if (mapUid == null)
                 return;
 
-            _shuttles.FTLToCoordinates(shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Angle.Zero, hyperspaceTime: 20f);
+            _shuttles.FTLToCoordinates(shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Angle.Zero, hyperspaceTime: ArrivalTime);
         }
     }
 }
