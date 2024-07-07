@@ -534,5 +534,3 @@ cp14-species-name-goblin-female-first-21 = Хашак
 cp14-species-name-goblin-female-first-22 = Шедруор
 cp14-species-name-goblin-female-first-23 = Эхаас
 cp14-species-name-goblin-female-first-24 = Элуун
-
-cp14-species-name-goblin-last-1 = ""

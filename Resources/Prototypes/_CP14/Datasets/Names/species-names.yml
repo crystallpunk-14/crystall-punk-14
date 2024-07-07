@@ -92,9 +92,3 @@
   values:
     prefix: cp14-species-name-goblin-female-first-
     count: 24
-
-- type: localizedDataset
-  id: CP14_Names_Goblin_Last
-  values:
-    prefix: cp14-species-name-goblin-last-
-    count: 1
