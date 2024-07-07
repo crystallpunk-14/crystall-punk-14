@@ -36,3 +36,7 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
+        - type: StationBiome
+          biome: CP14GrassFill
+        - type: CP14StationExpeditionTarget
+          shuttlePath: /Maps/Shuttles/shittle.yml
