@@ -19,7 +19,7 @@
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
         - type: CP14StationGamePresets
-          weightPresets: CP14WeightedPresetsTest2
+          weightPresets: CP14WeightedPresetsTest
 
 - type: gameMap
   id: BattleRoyale
@@ -44,19 +44,4 @@
 - type: weightedRandom
   id: CP14WeightedPresetsTest
   weights:
-    Nukeops: 0.50
-    Traitor: 0.50
-    #Zombie: 0.05
-    #Survival: 0.10
-    #Revolutionary: 0.05
-
-
-- type: weightedRandom
-  id: CP14WeightedPresetsTest2
-  weights:
-    #Nukeops: 0.50
-    #Traitor: 0.50
-    Zombie: 0.5
-    Survival: 0.5
-    Sandbox: 0.5
-    #Revolutionary: 0.05
+    CP14Silence: 1

@@ -1,0 +1,18 @@
+- type: gamePreset
+  id: Secret
+  alias:
+    - secret
+    - sekrit
+  name: cp14-gamepreset-map-specific
+  showInVote: true
+  description: cp14-gamepreset-map-specific-desc
+  rules:
+    - CP14GamePresetMapSpecific
+
+- type: gamePreset
+  id: CP14Silence
+  alias:
+  - silence
+  name: cp14-gamepreset-silence
+  showInVote: true
+  description: cp14-gamepreset-silence-desc
