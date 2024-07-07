@@ -35,6 +35,9 @@ public sealed partial class GameRuleComponent : Component
     /// </summary>
     [DataField]
     public MinMax? Delay;
+
+    [DataField]
+    public bool CP14Allowed = false;
 }
 
 /// <summary>
