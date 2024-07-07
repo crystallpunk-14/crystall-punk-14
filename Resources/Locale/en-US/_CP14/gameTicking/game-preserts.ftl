@@ -1,2 +1,2 @@
-cp14-playtest-name = Playtest arena
-cp14-playtest-desc = Test game mechanics and features... until you die.
+cp14-gamepreset-map-specific = Random Map Scenario
+cp14-gamepreset-map-specific-desc = Random objectives and tasks from the possible ones at the chosen location are waiting for you.

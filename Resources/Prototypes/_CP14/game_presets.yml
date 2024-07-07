@@ -1,9 +1,0 @@
-- type: gamePreset
-  id: CP14MapSpecific
-  alias:
-    - map
-  name: "Test map specific"
-  description: secret-description
-  showInVote: true
-  rules:
-    - CP14GamePresetMapSpecific
