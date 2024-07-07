@@ -1,10 +1,6 @@
 - type: entity
-  id: CP14Playtest
+  id: CP14GamePresetMapSpecific
   parent: BaseGameRule
   noSpawn: true
   components:
-  - type: RespawnDeadRule
-  - type: RespawnTracker
-    respawnDelay: 5
-  - type: KillCalloutRule
-  - type: PointManager
+  - type: CP14MapSpecificRule

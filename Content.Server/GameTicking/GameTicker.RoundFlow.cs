@@ -88,7 +88,7 @@ namespace Content.Server.GameTicking
             if (_mapManager.MapExists(DefaultMap))
                 return;
 
-            AddGamePresetRules();
+            //AddGamePresetRules(); //CP14 gamerules after maps
 
             DefaultMap = _mapManager.CreateMap();
             _mapManager.AddUninitializedMap(DefaultMap);
@@ -142,6 +142,7 @@ namespace Content.Server.GameTicking
 
                 LoadGameMap(map, toLoad, null);
             }
+            AddGamePresetRules(); //CP14 gamerules after maps
         }
 
 
