@@ -145,6 +145,7 @@ public sealed partial class ShuttleSystem
         var parallax = EnsureComp<ParallaxComponent>(mapUid);
         parallax.Parallax = ftlMap.Parallax;
 
+        //CP14 FTL map tweaks
         var mapLight = EnsureComp<MapLightComponent>(mapUid);
         mapLight.AmbientLightColor = ftlMap.AmbientColor;
 
@@ -155,6 +156,7 @@ public sealed partial class ShuttleSystem
         var mixture = new GasMixture(moles, Atmospherics.T20C);
 
         _atmos.SetMapAtmosphere(mapUid, false, mixture);
+        //CP14 FTL map tweaks ends
 
         return mapUid;
     }
