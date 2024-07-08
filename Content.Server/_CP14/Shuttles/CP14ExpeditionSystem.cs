@@ -118,7 +118,7 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         if (ev.SpawnResult != null)
             return;
 
-        if (!HasComp<CP14ExpeditionShipComponent>(ev.Station))
+        if (!HasComp<CP14StationExpeditionTargetComponent>(ev.Station))
             return;
 
         TryGetExpeditionShip(out var ship);

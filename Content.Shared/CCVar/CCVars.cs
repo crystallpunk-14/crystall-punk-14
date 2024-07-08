@@ -13,7 +13,7 @@ namespace Content.Shared.CCVar
         #region CP14
 
         public static readonly CVarDef<float> CP14ExpeditionArrivalTime =
-            CVarDef.Create("cp14.arrival_time", 300f, CVar.SERVERONLY);
+            CVarDef.Create("cp14.arrival_time", 60f, CVar.SERVERONLY);
 
 
         #endregion
