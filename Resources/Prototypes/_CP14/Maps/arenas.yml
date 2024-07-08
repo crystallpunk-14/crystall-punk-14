@@ -39,4 +39,4 @@
         - type: StationBiome
           biome: CP14GrassFill
         - type: CP14StationExpeditionTarget
-          shuttlePath: /Maps/Shuttles/shittle.yml
+          shuttlePath: /Maps/_CP14/Shuttles/test-ship.yml
