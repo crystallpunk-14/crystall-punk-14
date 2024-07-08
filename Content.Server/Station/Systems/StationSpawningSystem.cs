@@ -67,7 +67,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         _spawnerCallbacks = new Dictionary<SpawnPriorityPreference, Action<PlayerSpawningEvent>>()
         {
-            { SpawnPriorityPreference.Arrivals, _CP14expedition.HandlePlayerSpawning }, //CP14 epedition system replaced
+            { SpawnPriorityPreference.Arrivals, _CP14expedition.HandlePlayerSpawning }, //CP14 expedition system replaced
             {
                 SpawnPriorityPreference.Cryosleep, ev =>
                 {
