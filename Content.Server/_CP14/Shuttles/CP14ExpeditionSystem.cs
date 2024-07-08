@@ -38,6 +38,7 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, FTLCompletedEvent>(OnArrivalsDocked);
 
         ArrivalTime = _cfgManager.GetCVar(CCVars.CP14ExpeditionArrivalTime);
+        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionArrivalTime, time => ArrivalTime = time, true);
     }
 
 
