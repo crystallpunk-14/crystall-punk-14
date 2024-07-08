@@ -10,6 +10,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared.Gravity;
 using Content.Shared.Maps;
 using Content.Shared.Parallax;
 using Content.Shared.Shuttles.Components;
@@ -156,6 +157,10 @@ public sealed partial class ShuttleSystem
         var mixture = new GasMixture(moles, Atmospherics.T20C);
 
         _atmos.SetMapAtmosphere(mapUid, false, mixture);
+
+        var gravity = EnsureComp<GravityComponent>(mapUid);
+        gravity.Enabled = true;
+        gravity.Inherent = true;
         //CP14 FTL map tweaks ends
 
         return mapUid;
