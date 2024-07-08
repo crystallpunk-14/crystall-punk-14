@@ -6,3 +6,12 @@
   cP14Allowed: true
   rules:
     - CP14Playtest
+
+- type: gamePreset
+  id: CP14ResourceHarvesting
+  name: cp14-gamepreset-resource-harvest
+  description: cp14-gamepreset-resource-harvest-desc
+  showInVote: true
+  cP14Allowed: true
+  rules:
+    - CP14ResourceHarvesting

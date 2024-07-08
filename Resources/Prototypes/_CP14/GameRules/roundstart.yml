@@ -16,3 +16,11 @@
     respawnDelay: 5
   - type: KillCalloutRule
   - type: PointManager
+
+- type: entity
+  id: CP14ResourceHarvesting
+  parent: CP14BaseGameRule
+  noSpawn: true
+  components:
+  - type: KillCalloutRule
+  #- type: CP14ExpeditionObjective

@@ -60,3 +60,5 @@
     layers:
       - state: ore1
         map: ["random"]
+  - type: StealTarget
+    stealGroup: CP14Gold

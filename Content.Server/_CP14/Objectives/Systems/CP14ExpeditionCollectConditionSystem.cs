@@ -76,12 +76,13 @@ public sealed class CP14ExpeditionCollectConditionSystem : EntitySystem
     {
         var count = 0;
 
-        _cp14Expedition.TryGetExpeditionShip(out var ship);
+        if (!_cp14Expedition.TryGetExpeditionShip(out var ship))
+            return;
 
         var query = EntityQueryEnumerator<StealTargetComponent>();
         while (query.MoveNext(out var uid, out _))
         {
-            if (Transform(uid).GridUid != Transform(ship).GridUid)
+            if (Transform(uid).GridUid != Transform(ship!.Value).GridUid)
                 continue;
 
             if (CheckStealTarget(uid, condition))

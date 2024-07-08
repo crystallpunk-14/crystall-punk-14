@@ -81,12 +81,14 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         //Some announsement logic?
     }
 
-    public bool TryGetExpeditionShip(out EntityUid uid)
+    public bool TryGetExpeditionShip(out EntityUid? uid)
     {
+        uid = null;
         var arrivalsQuery = EntityQueryEnumerator<CP14ExpeditionShipComponent>();
 
-        while (arrivalsQuery.MoveNext(out uid, out _))
+        while (arrivalsQuery.MoveNext(out var tempUid, out _))
         {
+            uid = tempUid;
             return true;
         }
 
