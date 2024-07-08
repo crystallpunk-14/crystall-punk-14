@@ -3,10 +3,13 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Parallax;
 using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
+using Content.Server.Spawners.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
+using Content.Shared.Movement.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
@@ -47,8 +50,11 @@ public sealed class CP14ExpeditionSystem : EntitySystem
 
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, StationPostInitEvent>(OnStationPostInit);
 
+        SubscribeLocalEvent<CP14StationExpeditionTargetComponent, FTLCompletedEvent>(OnArrivalsDocked);
+
         ArrivalTime = _cfgManager.GetCVar(CCVars.CP14ExpeditionArrivalTime);
     }
+
 
     private void OnStationPostInit(Entity<CP14StationExpeditionTargetComponent> station, ref StationPostInitEvent args)
     {
@@ -88,5 +94,62 @@ public sealed class CP14ExpeditionSystem : EntitySystem
 
             _shuttles.FTLToCoordinates(shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Angle.Zero, hyperspaceTime: ArrivalTime);
         }
+    }
+
+    private void OnArrivalsDocked(Entity<CP14StationExpeditionTargetComponent> ent, ref FTLCompletedEvent args)
+    {
+        //Some announsement logic?
+    }
+
+    private bool TryGetExpeditionShip(out EntityUid uid)
+    {
+        var arrivalsQuery = EntityQueryEnumerator<CP14ExpeditionShipComponent>();
+
+        while (arrivalsQuery.MoveNext(out uid, out _))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void HandlePlayerSpawning(PlayerSpawningEvent ev)
+    {
+        if (ev.SpawnResult != null)
+            return;
+
+        if (!HasComp<CP14ExpeditionShipComponent>(ev.Station))
+            return;
+
+        TryGetExpeditionShip(out var ship);
+
+        if (!TryComp(ship, out TransformComponent? shipXform))
+            return;
+
+        var gridUid = shipXform.GridUid;
+
+        var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+        var possiblePositions = new List<EntityCoordinates>();
+        while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
+        {
+
+            if (spawnPoint.SpawnType != SpawnPointType.LateJoin || xform.GridUid != gridUid)
+                continue;
+
+            possiblePositions.Add(xform.Coordinates);
+        }
+
+        if (possiblePositions.Count <= 0)
+            return;
+
+        var spawnLoc = _random.Pick(possiblePositions);
+        ev.SpawnResult = _stationSpawning.SpawnPlayerMob(
+            spawnLoc,
+            ev.Job,
+            ev.HumanoidCharacterProfile,
+            ev.Station);
+
+        EnsureComp<PendingClockInComponent>(ev.SpawnResult.Value);
+        EnsureComp<AutoOrientComponent>(ev.SpawnResult.Value);
     }
 }
