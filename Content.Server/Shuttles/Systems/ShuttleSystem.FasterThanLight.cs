@@ -4,11 +4,13 @@ using System.Numerics;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Events;
+using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared.Gravity;
 using Content.Shared.Maps;
 using Content.Shared.Parallax;
 using Content.Shared.Shuttles.Components;
@@ -143,6 +145,23 @@ public sealed partial class ShuttleSystem
         DebugTools.Assert(!_mapManager.IsMapPaused(mapId));
         var parallax = EnsureComp<ParallaxComponent>(mapUid);
         parallax.Parallax = ftlMap.Parallax;
+
+        //CP14 FTL map tweaks
+        var mapLight = EnsureComp<MapLightComponent>(mapUid);
+        mapLight.AmbientLightColor = ftlMap.AmbientColor;
+
+        var moles = new float[Atmospherics.AdjustedNumberOfGases];
+        moles[(int) Gas.Oxygen] = 21.824779f;
+        moles[(int) Gas.Nitrogen] = 82.10312f;
+
+        var mixture = new GasMixture(moles, Atmospherics.T20C);
+
+        _atmos.SetMapAtmosphere(mapUid, false, mixture);
+
+        var gravity = EnsureComp<GravityComponent>(mapUid);
+        gravity.Enabled = true;
+        gravity.Inherent = true;
+        //CP14 FTL map tweaks ends
 
         return mapUid;
     }
