@@ -299,8 +299,10 @@ public sealed partial class GameTicker
 
             if (proto.TryGetComponent<GameRuleComponent>(out var rule))
             {
+                //CP14 gamerule console filter
                 if (rule.CP14Allowed)
                     yield return proto;
+                //CP14 gamerule console filter end
             }
         }
     }

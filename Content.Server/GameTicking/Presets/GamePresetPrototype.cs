@@ -43,6 +43,9 @@ namespace Content.Server.GameTicking.Presets
         [DataField("supportedMaps", customTypeSerializer: typeof(PrototypeIdSerializer<GameMapPoolPrototype>))]
         public string? MapPool;
 
+        /// <summary>
+        /// filters the displayed events in the console
+        /// </summary>
         [DataField]
         public bool CP14Allowed = false;
     }
