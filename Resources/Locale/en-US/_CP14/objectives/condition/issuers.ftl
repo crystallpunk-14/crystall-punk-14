@@ -1,1 +1,1 @@
-objective-issuer-CP14HouseKundarak = [color=#d6853a]House Kundarak[/color]
+objective-issuer-ExpeditionObjective = [color=#d6853a]Expedition Objective[/color]

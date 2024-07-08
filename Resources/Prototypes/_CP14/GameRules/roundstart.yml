@@ -22,5 +22,6 @@
   parent: CP14BaseGameRule
   noSpawn: true
   components:
-  - type: KillCalloutRule
-  #- type: CP14ExpeditionObjective
+  - type: CP14ExpeditionObjectivesRule
+    objectives:
+    - CP14ExpeditionCollectGoldObjective
