@@ -1,13 +1,4 @@
 - type: gamePreset
-  id: CP14Playtest
-  name: cp14-playtest-name
-  description: cp14-playtest-desc
-  showInVote: true
-  cP14Allowed: true
-  rules:
-    - CP14Playtest
-
-- type: gamePreset
   id: CP14ResourceHarvesting
   name: cp14-gamepreset-resource-harvest
   description: cp14-gamepreset-resource-harvest-desc
