@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14ConstrainedSpawnerBase
+  abstract: true
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+  - type: Physics
+    bodyType: Static
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      spawn:
+        shape:
+          !type:PhysShapeCircle
+          radius: 15
+        hard: false
+        layer:
+          - AllMask
+  - type: TriggerOnCollide
+    fixtureID: spawn
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    stepOn: true
+
+- type: entity
+  parent: CP14ConstrainedSpawnerBase
+  id: CP14ConstrainedSpawnerXeno
+  components:
+  - type: TriggerOnCollide
+    fixtureID: spawn
+  - type: CP14ConstrainedSpawnerOnTrigger
+    prototypes:
+    - CP14MobXeno
+    - CP14MobXenoPraetorian
+    - CP14MobXenoDrone 
