@@ -38,6 +38,7 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, FTLCompletedEvent>(OnArrivalsDocked);
 
         ArrivalTime = _cfgManager.GetCVar(CCVars.CP14ExpeditionArrivalTime);
+        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionArrivalTime, time => ArrivalTime = time, true);
     }
 
 
@@ -80,12 +81,14 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         //Some announsement logic?
     }
 
-    private bool TryGetExpeditionShip(out EntityUid uid)
+    public bool TryGetExpeditionShip(out EntityUid? uid)
     {
+        uid = null;
         var arrivalsQuery = EntityQueryEnumerator<CP14ExpeditionShipComponent>();
 
-        while (arrivalsQuery.MoveNext(out uid, out _))
+        while (arrivalsQuery.MoveNext(out var tempUid, out _))
         {
+            uid = tempUid;
             return true;
         }
 
