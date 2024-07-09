@@ -129,6 +129,9 @@ ent-CP14Mist = облако
 ent-CP14MistVitalExtract = { ent-CP14Mist }
     .desc = { ent-CP14Mist.desc }
 
+ent-CP14ExpeditionShipTargetPoint = Expedition ship target point
+    .desc = One of the possible arrival points of a ship carrying players
+
 ent-CP14SpawnPointAdventurer = авантюрист
 
 ent-CP14SpawnPointAlchemist = алхимик
@@ -741,9 +744,23 @@ ent-CP14CrateCoffin = гроб
 
 ent-CP14Cliff = обрыв
     .desc = Серьезные неровности природного ландшафта.
+    .suffix = Прямой
 
 ent-CP14CliffCorner = { ent-CP14Cliff }
     .desc = { ent-CP14Cliff.desc }
+    .suffix = Угол
+
+ent-CP14CliffCornerSmall = { ent-CP14Cliff }
+    .desc = { ent-CP14Cliff.desc }
+    .suffix = Малый угол
+
+ent-CP14CliffEndLeft = { ent-CP14Cliff }
+    .desc = { ent-CP14Cliff.desc }
+    .suffix = Левый край
+
+ent-CP14CliffEndRight = { ent-CP14Cliff }
+    .desc = { ent-CP14Cliff.desc }
+    .suffix = Правый край
 
 ent-CP14IronGrilleBase = железная решетка
     .desc = Прочный барьер из сваренных вместе железных прутьев.
