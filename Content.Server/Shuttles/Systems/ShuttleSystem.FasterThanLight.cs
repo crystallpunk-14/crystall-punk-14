@@ -389,7 +389,7 @@ public sealed partial class ShuttleSystem
         var uid = entity.Owner;
         var comp = entity.Comp1;
         var xform = _xformQuery.GetComponent(entity);
-        DoTheDinosaur(xform);
+        //DoTheDinosaur(xform); //CP14 without stunning
 
         comp.State = FTLState.Travelling;
         var fromMapUid = xform.MapUid;
@@ -475,7 +475,7 @@ public sealed partial class ShuttleSystem
         var xform = _xformQuery.GetComponent(uid);
         var body = _physicsQuery.GetComponent(uid);
         var comp = entity.Comp1;
-        DoTheDinosaur(xform);
+        //DoTheDinosaur(xform); //CP14 without stunning
         _dockSystem.SetDockBolts(entity, false);
 
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: body);

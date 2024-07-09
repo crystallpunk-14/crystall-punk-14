@@ -2,6 +2,7 @@
   parent: BaseStructure
   id: CP14Cliff
   name: cliff
+  suffix: Straight
   description: Severe unevenness of the natural landscape.
   components:
   - type: Sprite
@@ -29,6 +30,40 @@
 - type: entity
   parent: CP14Cliff
   id: CP14CliffCorner
+  suffix: Corner
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    state: smallcorner
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    state: smallcorner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,-0.25"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "0.49,0.49,0.25,-0.49"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+
+- type: entity
+  parent: CP14Cliff
+  id: CP14CliffCornerSmall
+  suffix: CornerSmall
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -48,3 +83,29 @@
         - TableMask
         layer:
         - TableLayer
+
+- type: entity
+  parent: CP14Cliff
+  id: CP14CliffEndLeft
+  suffix: Left End
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    state: end_left
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    state: end_left
+    
+- type: entity
+  parent: CP14Cliff
+  id: CP14CliffEndRight
+  suffix: Right End
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    state: end_right
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    state: end_right

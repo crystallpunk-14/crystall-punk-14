@@ -1,0 +1,30 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: CP14BaseExpeditionObjective
+  components:
+  - type: Objective
+    issuer: ExpeditionObjective
+
+- type: entity
+  abstract: true
+  parent: CP14BaseExpeditionObjective
+  id: CP14BaseExpeditionCollectObjective
+  components:
+  - type: Objective
+  - type: CP14ExpeditionCollectCondition
+    minCollectionSize: 5
+    maxCollectionSize: 10
+    objectiveText: cp14-objective-expedition-collect-title
+    descriptionText: cp14-objective-expedition-collect-desc
+    descriptionMultiplyText: cp14-objective-expedition-collect-multiply-desc
+
+- type: entity
+  parent: CP14BaseExpeditionCollectObjective
+  id: CP14ExpeditionCollectGoldObjective
+  components:
+  - type: CP14ExpeditionCollectCondition
+    verifyMapExistence: false
+    collectGroup: CP14Gold
+  - type: Objective
+    difficulty: 1
