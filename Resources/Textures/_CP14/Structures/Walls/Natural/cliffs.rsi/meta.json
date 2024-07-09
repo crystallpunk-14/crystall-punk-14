@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "All rights reserved for the CrystallPunk14 project only",
-    "copyright": "By TheShuEd(github) for CrystallPunk14",
+    "copyright": "By Jaraten(github/discord) for CrystallPunk14",
     "size": {
         "x": 32,
         "y": 96
@@ -12,7 +12,19 @@
             "directions": 4
         },
         {
+            "name": "smallcorner",
+            "directions": 4
+        },
+        {
             "name": "corner",
+            "directions": 4
+        },
+        {
+            "name": "end_left",
+            "directions": 4
+        },
+        {
+            "name": "end_right",
             "directions": 4
         }
     ]
