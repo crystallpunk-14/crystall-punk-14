@@ -2,7 +2,7 @@
   parent: BaseStructure
   id: CP14Cliff
   name: cliff
-  suffix: base
+  suffix: Straight
   description: Severe unevenness of the natural landscape.
   components:
   - type: Sprite
@@ -29,8 +29,8 @@
 
 - type: entity
   parent: CP14Cliff
-  id: CP14CliffCornerSmall
-  suffix: CornerSmall
+  id: CP14CliffCorner
+  suffix: Corner
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -62,8 +62,8 @@
 
 - type: entity
   parent: CP14Cliff
-  id: CP14CliffCorner
-  suffix: Corner
+  id: CP14CliffCornerSmall
+  suffix: CornerSmall
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -87,8 +87,7 @@
 - type: entity
   parent: CP14Cliff
   id: CP14CliffEndLeft
-  suffix: End_Left
-  description: Severe unevenness of the natural landscape.
+  suffix: Left End
   components:
   - type: Sprite
     drawdepth: WallTops
@@ -101,8 +100,7 @@
 - type: entity
   parent: CP14Cliff
   id: CP14CliffEndRight
-  suffix: End_Right
-  description: Severe unevenness of the natural landscape.
+  suffix: Right End
   components:
   - type: Sprite
     drawdepth: WallTops
