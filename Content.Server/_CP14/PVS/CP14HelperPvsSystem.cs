@@ -13,7 +13,7 @@ public sealed partial class CP14HelperPvsSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
-    private static readonly TimeSpan UpdateFrequency = TimeSpan.FromSeconds(10f);
+    private static readonly TimeSpan UpdateFrequency = TimeSpan.FromSeconds(5f);
 
     public override void Update(float frameTime)
     {
@@ -46,7 +46,7 @@ public sealed partial class CP14HelperPvsSystem : EntitySystem
 
     public bool InPvs(EntityUid uid)
     {
-        var nearMinds = _lookup.GetEntitiesInRange<MindContainerComponent>(Transform(uid).Coordinates, CVars.NetMaxUpdateRange.DefaultValue);
+        var nearMinds = _lookup.GetEntitiesInRange<MindContainerComponent>(Transform(uid).Coordinates, CVars.NetMaxUpdateRange.DefaultValue / 2);
         foreach (var mind in nearMinds)
         {
             if (HasComp<GhostComponent>(mind))
