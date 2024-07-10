@@ -1,0 +1,66 @@
+- type: entity
+  id: CP14BaseCrystalSlot #TODO переструктуризовать объекты
+  abstract: true
+  components:
+  - type: CP14MagicEnergyCrystalSlot
+    slotId: crystal_slot
+  - type: ContainerContainer
+    containers:
+      crystal_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      crystal_slot:
+        insertSound: 
+          path: /Audio/_CP14/Items/crystal_insert.ogg
+          params:
+            variation: 0.05
+        ejectSound: 
+          path: /Audio/_CP14/Items/crystal_eject.ogg
+          params:
+            variation: 0.05
+        ejectOnInteract: true
+        name: cp14-magic-energy-crystal-slot-name
+        whitelist:
+          components:
+          - CP14MagicEnergyCrystal
+  
+- type: entity
+  id: CP14EnergyPilon
+  name: energy pilon
+  description: An elemental energy relay. When properly set up, it provides energy connection with other pylons
+  parent: 
+  - BaseStructure
+  - CP14BaseCrystalSlot
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Specific/Thaumaturgy/Spreader.rsi #TODO rename
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: spreader
+      - state: crystal
+        shader: unshaded
+        map: ["crystal"]
+        visible: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood #TODO CP14 damage balance
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Appearance

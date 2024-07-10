@@ -1,6 +1,8 @@
 - type: entity
   id: CP14AlchemyNormalizer
-  parent: BaseStructureDynamic
+  parent: 
+  - BaseStructureDynamic
+  - CP14BaseCrystalSlot
   name: solution normalizer
   description: An alchemical device that removes fine precipitates from solutions, and stabilizes it for further work
   placement:
@@ -80,24 +82,3 @@
   - type: CP14MagicEnergyDraw
     energy: -0.2
     delay: 1
-  - type: CP14MagicEnergyCrystalSlot
-    slotId: crystal_slot
-  - type: ContainerContainer
-    containers:
-      crystal_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      crystal_slot:
-        insertSound: 
-          path: /Audio/_CP14/Items/crystal_insert.ogg
-          params:
-            variation: 0.05
-        ejectSound: 
-          path: /Audio/_CP14/Items/crystal_eject.ogg
-          params:
-            variation: 0.05
-        ejectOnInteract: true
-        name: cp14-magic-energy-crystal-slot-name
-        whitelist:
-          components:
-          - CP14MagicEnergyCrystal
