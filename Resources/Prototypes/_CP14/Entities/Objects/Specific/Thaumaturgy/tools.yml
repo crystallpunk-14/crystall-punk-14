@@ -1,0 +1,14 @@
+- type: entity 
+  id: CP14PowerlineGauntlet
+  parent: BaseItem
+  name: powerline gauntlet
+  description: A gauntlet of brass and mithril, allowing for the establishment of energy channels between energy nodes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi
+  - type: CP14PowerlineGauntlet
+  - type: CP14MagicEnergyRelayTarget

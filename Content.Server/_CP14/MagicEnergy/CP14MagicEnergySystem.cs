@@ -8,6 +8,7 @@ namespace Content.Server._CP14.MagicEnergy;
 
 public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
 {
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly PointLightSystem _light = default!;
     [Dependency] private readonly CP14MagicEnergyCrystalSlotSystem _magicSlot = default!;
@@ -16,6 +17,7 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
     {
         InitializeDraw();
         InitializeScanner();
+        InitializeRelay();
 
         SubscribeLocalEvent<CP14MagicEnergyPointLightControllerComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChange);
     }
@@ -34,6 +36,7 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
         base.Update(frameTime);
 
         UpdateDraw(frameTime);
+        UpdateRelay(frameTime);
     }
 
     public bool TryConsumeEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)

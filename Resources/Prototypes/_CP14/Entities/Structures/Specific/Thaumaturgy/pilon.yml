@@ -32,6 +32,7 @@
   - BaseStructure
   - CP14BaseCrystalSlot
   components:
+  - type: InteractionOutline
   - type: Sprite
     noRot: true
     sprite: _CP14/Structures/Specific/Thaumaturgy/Spreader.rsi #TODO rename
@@ -64,3 +65,5 @@
           True: { visible: true }
           False: { visible: false }
   - type: Appearance
+  - type: CP14MagicEnergyRelay
+  - type: CP14MagicEnergyRelayTarget
