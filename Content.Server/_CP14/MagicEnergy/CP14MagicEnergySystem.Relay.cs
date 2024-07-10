@@ -9,7 +9,7 @@ namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
-    [Dependency] private readonly BeamSystem _beam = default!;
+    [Dependency] private readonly BeamSystem _beam = default!; //TODO - spawn beams only on client
 
     private static readonly float UpdateFrequency = 3f;
     private float UpdateTime = 0f;
