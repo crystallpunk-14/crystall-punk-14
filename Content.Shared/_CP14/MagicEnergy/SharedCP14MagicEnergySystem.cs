@@ -1,5 +1,4 @@
 using Content.Shared._CP14.MagicEnergy.Components;
-using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 
@@ -9,7 +8,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
 {
     public string GetEnergyExaminedText(EntityUid uid, CP14MagicEnergyContainerComponent ent)
     {
-        var power = (int)((ent.Energy / ent.MaxEnergy) * 100);
+        var power = (int)(ent.Energy / ent.MaxEnergy * 100);
 
         var color = "#3fc488";
         if (power < 66)
