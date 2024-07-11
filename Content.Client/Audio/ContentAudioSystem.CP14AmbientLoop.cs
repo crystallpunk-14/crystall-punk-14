@@ -30,11 +30,6 @@ public sealed partial class ContentAudioSystem
         }
     }
 
-   // private void ShutdownAmbientLoops()
-   // {
-   //
-   // }
-
    private void OnRoundEndMessageLoop()
    {
        foreach (var loop in _loopStreams)
@@ -46,9 +41,6 @@ public sealed partial class ContentAudioSystem
 
    private void CP14UpdateAmbientLoops()
    {
-       // We get a list of all the ambient loops that should play, and compare it to what is playing now.
-       // We make a list of those that need to be disabled and those that need to be added. And we execute these lists.
-
        List<CP14AmbientLoopPrototype> requiredLoops = new();
        if (_state.CurrentState is GameplayState)
            requiredLoops = GetAmbientLoops();
