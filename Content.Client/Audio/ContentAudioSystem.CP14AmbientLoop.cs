@@ -3,20 +3,15 @@ using Content.Client.Gameplay;
 using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Robust.Shared.Audio;
-using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Player;
 
 namespace Content.Client.Audio;
 
 public sealed partial class ContentAudioSystem
 {
-    private readonly TimeSpan _ambientLoopUpdateTime = TimeSpan.FromSeconds(2f);
-
-    private TimeSpan _nextLoop = TimeSpan.Zero;
-    private const float AmbientLoopFadeInTime = 5f;
-    private const float AmbientLoopFadeOutTime = 8f;
+    private const float AmbientLoopFadeInTime = 1f;
+    private const float AmbientLoopFadeOutTime = 4f;
 
     private Dictionary<CP14AmbientLoopPrototype, EntityUid> _loopStreams = new();
 
@@ -51,10 +46,6 @@ public sealed partial class ContentAudioSystem
 
    private void CP14UpdateAmbientLoops()
    {
-       if (_timing.CurTime < _nextLoop)
-           return;
-       _nextLoop = _timing.CurTime + _ambientLoopUpdateTime;
-
        // We get a list of all the ambient loops that should play, and compare it to what is playing now.
        // We make a list of those that need to be disabled and those that need to be added. And we execute these lists.
 
@@ -62,19 +53,16 @@ public sealed partial class ContentAudioSystem
        if (_state.CurrentState is GameplayState)
            requiredLoops = GetAmbientLoops();
 
-       foreach (var loop in requiredLoops)
-       {
-           if (_loopStreams.ContainsKey(loop)) // This ambient is already playing, don't touch it.
-               continue;
-
-           //If it's not playing, run it
-           StartAmbientLoop(loop);
-       }
-
        foreach (var loop in _loopStreams)
        {
            if (!requiredLoops.Contains(loop.Key))  //If ambient is playing and it shouldn't, stop it.
                StopAmbientLoop(loop.Key);
+       }
+
+       foreach (var loop in requiredLoops)
+       {
+           if (!_loopStreams.ContainsKey(loop)) //If it's not playing, but should, run it
+               StartAmbientLoop(loop);
        }
    }
 
