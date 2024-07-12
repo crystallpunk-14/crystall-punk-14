@@ -12,3 +12,24 @@
     sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi
   - type: CP14PowerlineGauntlet
   - type: CP14MagicEnergyRelayTarget
+
+- type: entity
+  id: CP14AuraScanner
+  parent: BaseItem
+  name: aura scanner
+  description: Scans the polarity of the elemental energy flows in this place.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/bikehorn.rsi #TODO
+    state: icon
+  - type: Item
+    sprite: Objects/Fun/bikehorn.rsi
+    size: Tiny
+  - type: CP14AuraScanner
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Effects/aura_scanner.ogg
+      params:
+        variation: 0.03
+  - type: UseDelay
+    delay: 4
