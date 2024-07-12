@@ -22,6 +22,7 @@
   id: CP14BaseWeaponThrowable
   abstract: true
   components: 
+  - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
       types:
