@@ -20,11 +20,10 @@
   description: Scans the polarity of the elemental energy flows in this place.
   components:
   - type: Sprite
-    sprite: Objects/Fun/bikehorn.rsi #TODO
+    sprite: _CP14/Objects/Specific/Thaumaturgy/aura_scanner.rsi
     state: icon
   - type: Item
-    sprite: Objects/Fun/bikehorn.rsi
-    size: Tiny
+    sprite: _CP14/Objects/Specific/Thaumaturgy/aura_scanner.rsi
   - type: CP14AuraScanner
   - type: EmitSoundOnUse
     sound:
