@@ -4,12 +4,13 @@ using Content.Server._CP14.MagicEnergy.Components;
 using Content.Server.Beam;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Interaction;
+using CP14PowerlineGauntletComponent = Content.Server._CP14.MagicEnergy.Components.CP14PowerlineGauntletComponent;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
-    [Dependency] private readonly BeamSystem _beam = default!; //TODO - spawn beams only on client
+    [Dependency] private readonly BeamSystem _beam = default!;
 
     private static readonly float UpdateFrequency = 3f;
     private float UpdateTime = 0f;
@@ -26,70 +27,75 @@ public partial class CP14MagicEnergySystem
         else
             UpdateTime = 0;
 
-        var query = EntityQueryEnumerator<CP14MagicEnergyRelayTargetComponent>(); //TODO burn this shit
-        while (query.MoveNext(out var uid, out var relayTarget))
+        var query = EntityQueryEnumerator<CP14MagicEnergyRelayComponent>(); //TODO burn this shit
+        while (query.MoveNext(out var uid, out var relay))
         {
-            foreach (var source in relayTarget.Source)
+            foreach (var target in relay.Targets)
             {
-                if (!TryComp<CP14MagicEnergyRelayComponent>(source, out var relay))
-                    continue;
-                _beam.TryCreateBeam(uid, source, relay.BeamProto);
+                _beam.TryCreateBeam(target, uid, relay.BeamProto);
             }
         }
     }
 
-    private void OnAfterGauntletInteract(Entity<CP14PowerlineGauntletComponent> ent, ref AfterInteractEvent args) //TODO reverse logic - save targets on source, not source on targets
+    private void OnAfterGauntletInteract(Entity<CP14PowerlineGauntletComponent> gauntlet, ref AfterInteractEvent args)
     {
         if (args.Target is not { } target)
             return;
         if (!args.CanReach)
             return;
-        if (!TryComp<CP14MagicEnergyRelayTargetComponent>(target, out var relayTarget))
-            return;
-        if (!TryComp<CP14MagicEnergyRelayTargetComponent>(ent, out var gauntletRelayTarget))
+        if (!TryComp<CP14MagicEnergyRelayComponent>(target, out var otherRelay))
             return;
 
-        if (gauntletRelayTarget.Source.Count == 0) //if not bound - add a link relay -> gauntlet
+        if (gauntlet.Comp.LinkedRelay == null) //if not bound - add a link relay -> gauntlet
         {
-            TryAddRelaySource((ent, gauntletRelayTarget), target, args.User);
+            gauntlet.Comp.LinkedRelay = (target, otherRelay);
         }
         else //if bound - transfer the link from the glove to the second object.
         {
-            var source = gauntletRelayTarget.Source.FirstOrDefault();
-            RemoveRelaySource((ent, gauntletRelayTarget), source, args.User);
-            TryAddRelaySource((target, relayTarget), source, args.User);
+            TryAddRelayTarget(gauntlet.Comp.LinkedRelay, target, args.User);
+            gauntlet.Comp.LinkedRelay = null;
         }
     }
 
-    private bool TryAddRelaySource(Entity<CP14MagicEnergyRelayTargetComponent> target, EntityUid source, EntityUid? user) //TODO - block ability connect item to self
+    private bool TryAddRelayTarget(Entity<CP14MagicEnergyRelayComponent>? relay, EntityUid target, EntityUid? user)
     {
-        if (!TryComp<CP14MagicEnergyRelayComponent>(source, out var sourceRelay))
+        if (relay == null)
             return false;
 
-        if (Vector2.Distance(_transform.GetWorldPosition(target), _transform.GetWorldPosition(source)) > sourceRelay.Radius)
+        if (!EntityManager.EntityExists(relay))
             return false;
 
-        if (target.Comp.Source.Contains(source))
+        if (!HasComp<CP14MagicEnergyRelayTargetComponent>(target))
+            return false;
+
+        if (Vector2.Distance(_transform.GetWorldPosition(relay.Value), _transform.GetWorldPosition(target)) > relay.Value.Comp.Radius)
+            return false;
+
+        if (target == relay.Value.Owner)
+            return false;
+
+        if (relay.Value.Comp.Targets.Contains(target))
             return false; //Popups to user
 
-        if (TryComp<CP14MagicEnergyRelayTargetComponent>(source, out var sourceRelayTarget))
+        if (TryComp<CP14MagicEnergyRelayComponent>(target, out var targetRelay))
         {
-            if (sourceRelayTarget.Source.Contains(target)) //Loop, remove both
+            if (targetRelay.Targets.Contains(relay.Value)) //Loop, remove both
             {
-                RemoveRelaySource(target, source, user);
-                RemoveRelaySource((source, sourceRelayTarget), target, user);
+                RemoveRelayTarget(relay.Value, target, user);
+                RemoveRelayTarget((target, targetRelay), relay.Value, user);
                 return false;
             }
         }
 
-        target.Comp.Source.Add(source);
-        _beam.TryCreateBeam(target, source, sourceRelay.BeamProto);
+        relay.Value.Comp.Targets.Add(target);
         return true;
     }
 
-    private void RemoveRelaySource(Entity<CP14MagicEnergyRelayTargetComponent> target, EntityUid source, EntityUid? user)
+    private void RemoveRelayTarget(Entity<CP14MagicEnergyRelayComponent> relay,
+        EntityUid target,
+        EntityUid? user)
     {
-        if (target.Comp.Source.Contains(source))
-            target.Comp.Source.Remove(source);
+        if (relay.Comp.Targets.Contains(target))
+            relay.Comp.Targets.Remove(target);
     }
 }

@@ -14,4 +14,7 @@ public sealed partial class CP14MagicEnergyRelayComponent : Component
 
     [DataField]
     public EntProtoId BeamProto = "CP14MagicBeam1";
+
+    [DataField]
+    public HashSet<EntityUid> Targets = new();
 }

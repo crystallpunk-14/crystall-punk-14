@@ -35,7 +35,7 @@
   - type: InteractionOutline
   - type: Sprite
     noRot: true
-    sprite: _CP14/Structures/Specific/Thaumaturgy/Spreader.rsi #TODO rename
+    sprite: _CP14/Structures/Specific/Thaumaturgy/spreader.rsi #TODO rename
     drawdepth: Mobs
     offset: 0,0.3
     layers:
