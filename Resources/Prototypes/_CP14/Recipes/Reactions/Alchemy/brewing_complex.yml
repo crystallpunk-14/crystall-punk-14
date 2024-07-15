@@ -27,8 +27,6 @@
     CP14BasicEffectHealBrute: 0.25
   - CP14BasicEffectEmpty: 0.25
     CP14BasicEffectHealCold: 0.25
-  - CP14BasicEffectEmpty: 0.25
-    CP14BasicEffectHealHeat: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
