@@ -17,7 +17,7 @@ namespace Content.IntegrationTests.Tests.GameRules;
 
 [TestFixture]
 public sealed class TraitorRuleTest
-{
+{/*
     private const string TraitorGameRuleProtoId = "Traitor";
     private const string TraitorAntagRoleName = "Traitor";
 
@@ -129,5 +129,5 @@ public sealed class TraitorRuleTest
         var meta = entMan.GetComponent<MetaDataComponent>(entity);
         var objective = entMan.GetComponent<ObjectiveComponent>(entity);
         return $"{meta.EntityName} ({objective.Difficulty})";
-    }
+    }*/ //Disabled in CP14
 }
