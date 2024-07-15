@@ -117,6 +117,7 @@ public sealed partial class ContentAudioSystem
 
     private void OnRoundEndMessage(RoundEndMessageEvent ev)
     {
+        OnRoundEndMessageAmbientLoop(); //CP14
         // If scoreboard shows then just stop the music
         _ambientMusicStream = _audio.Stop(_ambientMusicStream);
         _nextAudio = TimeSpan.FromMinutes(3);
