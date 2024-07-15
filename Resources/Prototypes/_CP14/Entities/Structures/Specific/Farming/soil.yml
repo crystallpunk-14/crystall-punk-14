@@ -20,9 +20,6 @@
         layer:
         - FullTileMask
   - type: Appearance
-  - type: SolutionContainerVisuals
-    maxFillLevels: 4
-    fillBaseName: liq-
   - type: SolutionContainerManager
     solutions:
       soil:
@@ -52,6 +49,9 @@
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
     snapCardinals: true
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: liq-
   - type: RandomSprite
     available:
     - random:
