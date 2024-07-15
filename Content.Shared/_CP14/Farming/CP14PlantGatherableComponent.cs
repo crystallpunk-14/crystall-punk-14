@@ -16,7 +16,7 @@ public sealed partial class CP14PlantGatherableComponent : Component
     ///     Supports multiple tags.
     /// </summary>
     [DataField(required: true)]
-    public EntityWhitelist? ToolWhitelist;
+    public EntityWhitelist ToolWhitelist = new();
 
     /// <summary>
     ///     YAML example below
