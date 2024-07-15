@@ -15,6 +15,9 @@ public sealed partial class ContentAudioSystem
 
     private Dictionary<CP14AmbientLoopPrototype, EntityUid> _loopStreams = new();
 
+    private TimeSpan _nextUpdateTime = TimeSpan.Zero;
+    private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(1f);
+
     private void CP14InitializeAmbientLoops()
     {
         Subs.CVar(_configManager, CCVars.AmbientMusicVolume, AmbienceCVarChangedAmbientMusic, true);
@@ -41,6 +44,11 @@ public sealed partial class ContentAudioSystem
 
    private void CP14UpdateAmbientLoops()
    {
+       if (_timing.CurTime <= _nextUpdateTime)
+           return;
+
+       _nextUpdateTime = _timing.CurTime + _updateFrequency;
+
        List<CP14AmbientLoopPrototype> requiredLoops = new();
        if (_state.CurrentState is GameplayState)
            requiredLoops = GetAmbientLoops();
