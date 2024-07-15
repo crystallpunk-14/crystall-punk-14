@@ -1,0 +1,19 @@
+- type: entity
+  id: CP14Wheat
+  parent: ProduceBase
+  name: wheat bushel
+  description: You have the choice of either planting the grains again or grinding them into flour.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Farming/Produce/wheat.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""

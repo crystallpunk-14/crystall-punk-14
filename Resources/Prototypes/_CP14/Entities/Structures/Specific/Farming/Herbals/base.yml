@@ -1,0 +1,70 @@
+- type: entity
+  id: CP14GatherableBase
+  parent: BaseStructure
+  abstract: true
+  components:
+  - type: Sprite
+    snapCardinals: true
+  - type: Transform
+    anchored: true
+  - type: Physics
+    canCollide: false
+    bodyType: Static
+  - type: CP14DestroyedByTool
+    tool: CP14Digging
+  - type: CP14PlantAutoRoot
+  - type: Damageable
+    damageContainer: Biological
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: CP14GrassGathering
+        params:
+          variation: 0.03
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 25
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTypeTrigger
+          damageType: Cellular
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14GatherableWildBase
+  parent: CP14GatherableBase
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: Gatherable
+    toolWhitelist:
+      tags:
+        - CP14HerbalGathering
+
+- type: entity
+  id: CP14GatherablePlantBase
+  parent: CP14GatherableBase
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Appearance
+  - type: CP14PlantVisuals
+    growthSteps: 5
+    growState: "grow-"
+  - type: CP14Plant
+    resource: 10
+    energy: 0
+    growthLevel: 0
+  - type: CP14PlantGatherable
+    toolWhitelist:
+      tags:
+        - CP14HerbalGathering
