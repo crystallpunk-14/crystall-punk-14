@@ -33,13 +33,12 @@ public sealed partial class ContentAudioSystem
         }
     }
 
-   private void OnRoundEndMessageLoop()
+   private void OnRoundEndMessageAmbientLoop()
    {
        foreach (var loop in _loopStreams)
        {
-           _audio.Stop(loop.Value);
+           StopAmbientLoop(loop.Key);
        }
-       _loopStreams.Clear();
    }
 
    private void CP14UpdateAmbientLoops()
@@ -49,9 +48,11 @@ public sealed partial class ContentAudioSystem
 
        _nextUpdateTime = _timing.CurTime + _updateFrequency;
 
-       List<CP14AmbientLoopPrototype> requiredLoops = new();
-       if (_state.CurrentState is GameplayState)
-           requiredLoops = GetAmbientLoops();
+
+       if (_state.CurrentState is not GameplayState)
+           return;
+
+       var requiredLoops = GetAmbientLoops();
 
        foreach (var loop in _loopStreams)
        {
