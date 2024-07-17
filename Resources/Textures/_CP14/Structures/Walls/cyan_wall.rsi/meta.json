@@ -5,38 +5,38 @@
     "y": 64
   },
   "license": "CC-BY-SA-3.0",
-  "copyright": "Created by jaraten (Discord) for CrystallPunk14",
+  "copyright": "Created by jaraten (Discord/Github) for CrystallPunk14",
   "states": [
     {
-      "name": "wood0",
+      "name": "wall0",
       "directions": 4
     },
     {
-      "name": "wood1",
+      "name": "wall1",
       "directions": 4
     },
     {
-      "name": "wood2",	
+      "name": "wall2",	
       "directions": 4
     },
     {
-      "name": "wood3",
+      "name": "wall3",
       "directions": 4
     },
     {
-      "name": "wood4",
+      "name": "wall4",
       "directions": 4
     },
     {
-      "name": "wood5",
+      "name": "wall5",
       "directions": 4
     },
     {
-      "name": "wood6",
+      "name": "wall6",
       "directions": 4
     },
     {
-      "name": "wood7",
+      "name": "wall7",
       "directions": 4
     },
     {
