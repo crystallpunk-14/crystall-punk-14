@@ -38,3 +38,33 @@
   heatCapacity: 10000
   weather: true
   indestructible: true
+
+- type: tile
+  id: CP14FloorAtlasMask
+  editorHidden: false
+  name: cp14-tiles-atlas-mask
+  sprite: /Textures/Tiles/shuttleorange.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  isSubfloor: false
+  heatCapacity: 10000
+
+- type: tile
+  id: CP14FloorAtlasMask2
+  editorHidden: false
+  name: cp14-tiles-atlas-mask-2
+  sprite: /Textures/Tiles/shuttleblue.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  isSubfloor: false
+  heatCapacity: 10000

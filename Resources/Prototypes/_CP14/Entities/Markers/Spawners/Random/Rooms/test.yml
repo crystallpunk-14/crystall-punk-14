@@ -17,12 +17,12 @@
 
 
 - type: entity
-  id: CP14RoomSpawnerCaelid7x7
-  suffix: Caelid Test
+  id: CP14RoomSpawnerXandria7x7
+  suffix: Xandria Test
   parent: CP14BaseRoomSpawner
   components:
   - type: CP14RoomSpawner
-    roomsRandom: CP14RoomSpawnerCaelid
+    roomsRandom: CP14RoomSpawnerXandria
   - type: Sprite
     layers:
     - state: room
@@ -30,9 +30,6 @@
       state: frame
 
 - type: weightedRandom
-  id: CP14RoomSpawnerCaelid
+  id: CP14RoomSpawnerXandria
   weights:
-    LavaBrig7x7a: 1
-    LavaBrig7x7b: 1 
-    LavaBrig7x7c: 1
-    LavaBrig7x7d: 1
+    CP14Xandria7x7_1: 1

@@ -1,5 +1,7 @@
 # Base
 cp14-tiles-base = rock strata
+cp14-tiles-atlas-mask = atlas mask (do not map)
+cp14-tiles-atlas-mask-2 = atlas mask 2 (do not map)
 
 # Natural
 cp14-tiles-grass = meadow grass
