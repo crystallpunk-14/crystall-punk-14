@@ -1,7 +1,6 @@
 using Content.Server.Procedural;
 using Content.Shared.Procedural;
 using Content.Shared.Random.Helpers;
-using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -51,6 +50,7 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
             random,
             null,
             spawner.Comp.ClearExisting,
-            spawner.Comp.Rotation);
+            spawner.Comp.Rotation,
+            ignoreTiles: spawner.Comp.IgnoreTiles);
     }
 }

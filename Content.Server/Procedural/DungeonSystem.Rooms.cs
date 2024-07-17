@@ -66,7 +66,8 @@ public sealed partial class DungeonSystem
         Random random,
         HashSet<Vector2i>? reservedTiles,
         bool clearExisting = false,
-        bool rotation = false)
+        bool rotation = false,
+        List<string>? ignoreTiles = null) //CP14 ignoring atlas mask tiles
     {
         var originTransform = Matrix3Helpers.CreateTranslation(origin.X, origin.Y);
         var roomRotation = Angle.Zero;
@@ -79,7 +80,7 @@ public sealed partial class DungeonSystem
         var roomTransform = Matrix3Helpers.CreateTransform((Vector2) room.Size / 2f, roomRotation);
         var finalTransform = Matrix3x2.Multiply(roomTransform, originTransform);
 
-        SpawnRoom(gridUid, grid, finalTransform, room, reservedTiles, clearExisting);
+        SpawnRoom(gridUid, grid, finalTransform, room, reservedTiles, clearExisting, ignoreTiles); //CP14 ignoring atlas mask tiles
     }
 
     public Angle GetRoomRotation(DungeonRoomPrototype room, Random random)
@@ -105,7 +106,8 @@ public sealed partial class DungeonSystem
         Matrix3x2 roomTransform,
         DungeonRoomPrototype room,
         HashSet<Vector2i>? reservedTiles = null,
-        bool clearExisting = false)
+        bool clearExisting = false,
+        List<string>? ignoreTiles = null) //CP14 ignoring atlas mask tiles
     {
         // Ensure the underlying template exists.
         var roomMap = GetOrCreateTemplate(room);
@@ -155,7 +157,14 @@ public sealed partial class DungeonSystem
 
                 if (!clearExisting && reservedTiles?.Contains(rounded) == true)
                     continue;
-
+                //CP14 ignoring atlas mask tiles
+                if (ignoreTiles is not null)
+                {
+                    var tileDef = _tileDefManager[tileRef.Tile.TypeId];
+                    if (ignoreTiles.Contains(tileDef.ID))
+                        continue;
+                }
+                //CP14 ignoring atlas mask tiles end
                 _tiles.Add((rounded, tileRef.Tile));
             }
         }
