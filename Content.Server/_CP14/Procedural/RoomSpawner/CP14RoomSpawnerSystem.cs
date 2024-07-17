@@ -29,6 +29,9 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
 
     private void SpawnRoom(Entity<CP14RoomSpawnerComponent> spawner)
     {
+        if (!_random.Prob(spawner.Comp.Prob))
+            return;
+
         var rooms = new HashSet<DungeonRoomPrototype>();
 
         foreach (var roomProto in _proto.EnumeratePrototypes<DungeonRoomPrototype>())

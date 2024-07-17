@@ -14,6 +14,9 @@ public sealed partial class CP14RoomSpawnerComponent : Component
     public List<ProtoId<TagPrototype>> RoomsTag;
 
     [DataField]
+    public float Prob = 1f;
+
+    [DataField]
     public bool Rotation = true;
 
     [DataField]
