@@ -23,6 +23,12 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
 
     private void OnMapInit(Entity<CP14RoomSpawnerComponent> spawner, ref MapInitEvent args)
     {
+        SpawnRoom(spawner);
+        QueueDel(spawner);
+    }
+
+    private void SpawnRoom(Entity<CP14RoomSpawnerComponent> spawner)
+    {
         if (!_proto.TryIndex(spawner.Comp.RoomsRandom, out var rooms))
             return;
 
@@ -39,7 +45,7 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
         if (!TryComp<MapGridComponent>(gridUid, out var gridComp))
             return;
 
-        var xform = Transform(spawner).Coordinates.Offset(- room.Size / 2);
+        var xform = Transform(spawner).Coordinates.Offset(-room.Size / 2);
         var random = new Random();
 
         _dungeon.SpawnRoom(
