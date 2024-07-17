@@ -1,0 +1,27 @@
+- type: weightedRandom
+  id: CP14RoomSpawnerCaelid
+  weights:
+    LavaBrig17x5a: 1
+    LavaBrig17x5b: 1
+    LavaBrig7x7a: 1
+    LavaBrig7x7b: 1
+    LavaBrig7x7c: 1
+    LavaBrig7x7d: 1
+    LavaBrig11x5a: 1
+
+- type: entity
+  id: CP14BaseRoomSpawner
+  name: room spawner
+  parent: MarkerBase
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    layers:
+      - state: green
+  - type: CP14RoomSpawner
+    roomsRandom: CP14RoomSpawnerCaelid
