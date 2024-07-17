@@ -1,17 +1,8 @@
-- type: weightedRandom
-  id: CP14RoomSpawnerCaelid
-  weights:
-    LavaBrig17x5a: 1
-    LavaBrig17x5b: 1
-    LavaBrig7x7a: 1
-    LavaBrig7x7b: 1
-    LavaBrig7x7c: 1
-    LavaBrig7x7d: 1
-    LavaBrig11x5a: 1
-
 - type: entity
   id: CP14BaseRoomSpawner
   name: room spawner
+  abstract: true
+  description: A marker that creates a random building at the specified location. Warning! Wipes out everything in that location, including agosts!
   parent: MarkerBase
   placement:
     mode: SnapgridCenter
@@ -21,7 +12,27 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    layers:
-      - state: green
+    sprite: _CP14/Markers/biome.rsi
+    snapCardinals: true
+
+
+- type: entity
+  id: CP14RoomSpawnerCaelid7x7
+  suffix: Caelid Test
+  parent: CP14BaseRoomSpawner
+  components:
   - type: CP14RoomSpawner
     roomsRandom: CP14RoomSpawnerCaelid
+  - type: Sprite
+    layers:
+    - state: room
+    - sprite: _CP14/Markers/RoomBorders/7x7.rsi
+      state: frame
+
+- type: weightedRandom
+  id: CP14RoomSpawnerCaelid
+  weights:
+    LavaBrig7x7a: 1
+    LavaBrig7x7b: 1 
+    LavaBrig7x7c: 1
+    LavaBrig7x7d: 1

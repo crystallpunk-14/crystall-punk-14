@@ -3,21 +3,12 @@
   "license": "CC-BY-SA-3.0",
   "copyright": "Created by TheShuEd (Github) for CrystallPunk",
   "size": {
-    "x": 32,
-    "y": 32
+    "x": 224,
+    "y": 224
   },
   "states": [
     {
-      "name": "cave"
-    },
-    {
       "name": "frame"
-    },
-    {
-      "name": "room"
-    },
-    {
-      "name": "grass"
     }
   ]
 }
