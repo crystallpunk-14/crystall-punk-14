@@ -1,4 +1,5 @@
 using Content.Shared.Random;
+using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Procedural.RoomSpawner;
@@ -10,7 +11,7 @@ namespace Content.Server._CP14.Procedural.RoomSpawner;
 public sealed partial class CP14RoomSpawnerComponent : Component
 {
     [DataField(required: true)]
-    public ProtoId<WeightedRandomPrototype> RoomsRandom = new();
+    public List<ProtoId<TagPrototype>> RoomsTag;
 
     [DataField]
     public bool Rotation = true;

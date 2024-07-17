@@ -1,10 +1,13 @@
-# Rooms
+
+- type: Tag
+  id: CP14Xandria7x7
+
 # Large
-# - 17x5
+# - 7x7
 - type: dungeonRoom
   id: CP14Xandria7x7_1
   size: 7,7
   atlas: /Maps/_CP14/Procedural/xandria.yml
   offset: 0,0
   tags:
-    - CP14Pestle #DEBUG
+    - CP14Xandria7x7

@@ -22,14 +22,10 @@
   parent: CP14BaseRoomSpawner
   components:
   - type: CP14RoomSpawner
-    roomsRandom: CP14RoomSpawnerXandria
+    roomsTag: 
+    - CP14Xandria7x7
   - type: Sprite
     layers:
     - state: room
     - sprite: _CP14/Markers/RoomBorders/7x7.rsi
       state: frame
-
-- type: weightedRandom
-  id: CP14RoomSpawnerXandria
-  weights:
-    CP14Xandria7x7_1: 1

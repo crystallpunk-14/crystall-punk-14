@@ -29,12 +29,36 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
 
     private void SpawnRoom(Entity<CP14RoomSpawnerComponent> spawner)
     {
-        if (!_proto.TryIndex(spawner.Comp.RoomsRandom, out var rooms))
+        var rooms = new HashSet<DungeonRoomPrototype>();
+
+        foreach (var roomProto in _proto.EnumeratePrototypes<DungeonRoomPrototype>())
+        {
+            var whitelisted = false;
+
+            foreach (var tag in spawner.Comp.RoomsTag)
+            {
+                if (roomProto.Tags.Contains(tag))
+                {
+                    whitelisted = true;
+                    break;
+                }
+            }
+
+            if (!whitelisted)
+                continue;
+
+            rooms.Add(roomProto);
+        }
+
+        if (rooms.Count == 0)
+        {
+            Log.Error($"Unable to find matching rooms by tag for {ToPrettyString(spawner)}");
             return;
+        }
 
-        var roomProto = rooms.Pick(_random);
+        var selectedRoom = _random.Pick(rooms);
 
-        if (!_proto.TryIndex<DungeonRoomPrototype>(roomProto, out var room))
+        if (!_proto.TryIndex<DungeonRoomPrototype>(selectedRoom, out var room))
         {
             Log.Error($"Unable to find matching room prototype ({room}) for {ToPrettyString(spawner)}");
             return;
@@ -57,6 +81,6 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
             null,
             spawner.Comp.ClearExisting,
             spawner.Comp.Rotation,
-            ignoreTiles: spawner.Comp.IgnoreTiles);
+            spawner.Comp.IgnoreTiles);
     }
 }
