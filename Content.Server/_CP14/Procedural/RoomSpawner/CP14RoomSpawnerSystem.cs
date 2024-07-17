@@ -54,10 +54,7 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
         }
 
         if (rooms.Count == 0)
-        {
-            Log.Error($"Unable to find matching rooms by tag for {ToPrettyString(spawner)}");
             return;
-        }
 
         var selectedRoom = _random.Pick(rooms);
 

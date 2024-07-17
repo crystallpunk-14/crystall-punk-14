@@ -11,7 +11,7 @@ namespace Content.Server._CP14.Procedural.RoomSpawner;
 public sealed partial class CP14RoomSpawnerComponent : Component
 {
     [DataField(required: true)]
-    public List<ProtoId<TagPrototype>> RoomsTag = new();
+    public HashSet<ProtoId<TagPrototype>> RoomsTag = new();
 
     [DataField]
     public float Prob = 1f;
