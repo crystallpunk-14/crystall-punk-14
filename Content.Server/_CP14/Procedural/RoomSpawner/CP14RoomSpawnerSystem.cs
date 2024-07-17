@@ -83,7 +83,6 @@ public sealed class CP14RoomSpawnerSystem : EntitySystem
             random,
             null,
             spawner.Comp.ClearExisting,
-            spawner.Comp.Rotation,
-            spawner.Comp.IgnoreTiles);
+            spawner.Comp.Rotation);
     }
 }

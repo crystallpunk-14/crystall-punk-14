@@ -21,11 +21,4 @@ public sealed partial class CP14RoomSpawnerComponent : Component
 
     [DataField]
     public bool ClearExisting = true;
-
-    [DataField]
-    public List<string> IgnoreTiles = new()
-    {
-        "CP14FloorAtlasMask",
-        "CP14FloorAtlasMask2",
-    };
 }

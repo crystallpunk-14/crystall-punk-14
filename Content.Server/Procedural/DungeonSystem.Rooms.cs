@@ -66,8 +66,7 @@ public sealed partial class DungeonSystem
         Random random,
         HashSet<Vector2i>? reservedTiles,
         bool clearExisting = false,
-        bool rotation = false,
-        List<string>? ignoreTiles = null) //CP14 ignoring atlas mask tiles
+        bool rotation = false)
     {
         var originTransform = Matrix3Helpers.CreateTranslation(origin.X, origin.Y);
         var roomRotation = Angle.Zero;
@@ -80,7 +79,7 @@ public sealed partial class DungeonSystem
         var roomTransform = Matrix3Helpers.CreateTransform((Vector2) room.Size / 2f, roomRotation);
         var finalTransform = Matrix3x2.Multiply(roomTransform, originTransform);
 
-        SpawnRoom(gridUid, grid, finalTransform, room, reservedTiles, clearExisting, ignoreTiles); //CP14 ignoring atlas mask tiles
+        SpawnRoom(gridUid, grid, finalTransform, room, reservedTiles, clearExisting);
     }
 
     public Angle GetRoomRotation(DungeonRoomPrototype room, Random random)
@@ -106,8 +105,7 @@ public sealed partial class DungeonSystem
         Matrix3x2 roomTransform,
         DungeonRoomPrototype room,
         HashSet<Vector2i>? reservedTiles = null,
-        bool clearExisting = false,
-        List<string>? ignoreTiles = null) //CP14 ignoring atlas mask tiles
+        bool clearExisting = false)
     {
         // Ensure the underlying template exists.
         var roomMap = GetOrCreateTemplate(room);
@@ -158,10 +156,10 @@ public sealed partial class DungeonSystem
                 if (!clearExisting && reservedTiles?.Contains(rounded) == true)
                     continue;
                 //CP14 ignoring atlas mask tiles
-                if (ignoreTiles is not null)
+                if (room.IgnoreTiles is not null)
                 {
                     var tileDef = _tileDefManager[tileRef.Tile.TypeId];
-                    if (ignoreTiles.Contains(tileDef.ID))
+                    if (room.IgnoreTiles.Contains(tileDef.ID))
                         continue;
                 }
                 //CP14 ignoring atlas mask tiles end
