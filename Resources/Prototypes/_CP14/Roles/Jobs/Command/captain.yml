@@ -1,0 +1,16 @@
+- type: job
+  id: CP14Captain
+  name: cp14-job-name-captain
+  description: cp14-job-desc-captain
+  playTimeTracker: CP14JobCaptain
+  startingGear: CP14CaptainGear
+  icon: "CP14JobIconCaptain"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  canBeAntag: false
+  supervisors: cp14-job-supervisors-command
+
+- type: startingGear
+  id: CP14CaptainGear
+  equipment:
+    belt1: CP14WalletFilledTest

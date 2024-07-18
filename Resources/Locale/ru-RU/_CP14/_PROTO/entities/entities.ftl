@@ -45,6 +45,9 @@ ent-CP14ClothingCloakSimpleWhite = белый плащ
 ent-CP14ClothingCloakSimpleDarkBlue = { ent-CP14ClothingCloakSimpleWhite }
     .desc = { ent-CP14ClothingCloakSimpleWhite.desc }
 
+ent-CP14ClothingCloakCaptainJacket = капитанский жилет
+    .desc = Белое золото говорит о том, что вы смотрите на серьезного представителя власти.
+
 ent-CP14ClothingEyesMonocle = монокль
     .desc = Аристократично и красиво.
 
@@ -78,8 +81,17 @@ ent-CP14ClothingHeadRedBeret = красный берет
 ent-CP14ClothingHeadPurpleBeret = фиолетовый берет
     .desc = Это берет.
 
-ent-CP14ClothingHeadWhiteBeret = белый берет
+ent-CP14ClothingHeadYellowBeret = желтый берет
     .desc = Это берет.
+
+ent-CP14ClothingHeadBlueBeret = синий берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadBlackBeret = черный берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadCaptainCap = капитанская кепка
+    .desc = Нет, ну вы посмотрите какой красавчик!
 
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
@@ -97,9 +109,9 @@ ent-CP14ClothingPantsLoincloth = набедренная повязка
     .desc = Свободные, ничего не мешает, да еще и выглядят экстремально брутально
 
 ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубаха
-    .desc = Приятный на ощупь материал, удобная свободная форма рубашки.
+    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
 
-ent-CP14ClothingShirtCottonBlueDark = хлопковая темная рубаха
+ent-CP14ClothingShirtCottonBlack = хлопковая черная рубаха
     .desc = { ent-CP14ClothingShirtCottonBlue.desc }
 
 ent-CP14ClothingShirtCottonPurple = хлопковая фиолетовая рубаха
@@ -375,6 +387,9 @@ ent-CP14Shovel = лопата
 ent-CP14Hoe = мотыга
     .desc = Фермерский инструмент для подготовки почвы под посадки, либо очистки от сорняков.
 
+ent-CP14Rope = веревка
+    .desc = Многофункциональная веревка. Ей можно связать что-нить. Или кого-нибудь.
+
 ent-CP14BaseSharpeningStone = точильный камень
     .desc = Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
 
@@ -396,11 +411,17 @@ ent-CP14BaseLightHammer = легкий молот
 ent-CP14BaseMace = булава
     .desc = Тяжелый кусок металла на длинной палке. Что может быть проще?
 
+ent-CP14BaseShield = щит
+    .desc = Деревянный щит, способный выдержать несколько ударов.
+
 ent-CP14BaseSickle = серп
     .desc = Изначально разработанное как оружие против травы, серп внезапно показал себя хорош и в более кровавой жатве.
 
 ent-CP14BaseThrowableSpear = метательное копьё
     .desc = Оружие, исправно выполняющее свой долг еще со времен эпохи великанов.
+
+ent-CP14BaseSword = меч
+    .desc = Золотой стандарт холодного оружия. Средняя длина, удобная рукоять и никаких излишеств.
 
 ent-CP14BaseTwoHandedSword = двуручный меч
     .desc = Мощное оружие, требующее огромной силы и умения для эффективного использования.
@@ -835,6 +856,9 @@ ent-CP14WallWooden = деревянная стена
 ent-CP14WallCardboard = картонная стена
     .desc = Тонкая, непрочная стена из бумаги и картона. Популярна в теплых странах.
 
+ent-CP14WallCyan = голубая стена
+    .desc = { ent-CP14BaseWall.desc }
+
 ent-CP14BaseFenceWood = деревянный забор
     .desc = Деревянный кусок ограды. Надеюсь, за ним находится сад бабушки.
 
@@ -876,6 +900,12 @@ ent-CP14WindowStoneBrick = окно в стене из каменного кир
 
 ent-CP14WindowWooden = wooden window
     .desc = A wooden wall with a glass window in it.
+
+ent-CP14ClothingHeadWhiteBeret = белый берет
+    .desc = Это берет.
+
+ent-CP14ClothingShirtCottonBlueDark = хлопковая темная рубаха
+    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
 
 ent-CP14ClothingEyesGoldGlasses = золотые очки
     .desc = Аристократично, модно, да еще и с позолотой.

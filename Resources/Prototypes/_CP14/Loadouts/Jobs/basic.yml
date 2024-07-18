@@ -127,13 +127,31 @@
     head: CP14ClothingHeadPurpleBeret
 
 - type: loadout
-  id: CP14ClothingHeadWhiteBeret
-  equipment: CP14ClothingHeadWhiteBeret
+  id: CP14ClothingHeadYellowBeret
+  equipment: CP14ClothingHeadYellowBeret
 
 - type: startingGear
-  id: CP14ClothingHeadWhiteBeret
+  id: CP14ClothingHeadYellowBeret
   equipment:
-    head: CP14ClothingHeadWhiteBeret
+    head: CP14ClothingHeadYellowBeret
+
+- type: loadout
+  id: CP14ClothingHeadBlueBeret
+  equipment: CP14ClothingHeadBlueBeret
+
+- type: startingGear
+  id: CP14ClothingHeadBlueBeret
+  equipment:
+    head: CP14ClothingHeadBlueBeret
+
+- type: loadout
+  id: CP14ClothingHeadBlackBeret
+  equipment: CP14ClothingHeadBlackBeret
+
+- type: startingGear
+  id: CP14ClothingHeadBlackBeret
+  equipment:
+    head: CP14ClothingHeadBlackBeret
 
 # Mask
 
@@ -200,13 +218,13 @@
 
 
 - type: loadout
-  id: CP14ClothingShirtCottonBlueDark
-  equipment: CP14ClothingShirtCottonBlueDark
+  id: CP14ClothingShirtCottonBlack
+  equipment: CP14ClothingShirtCottonBlack
 
 - type: startingGear
-  id: CP14ClothingShirtCottonBlueDark
+  id: CP14ClothingShirtCottonBlack
   equipment:
-    shirt: CP14ClothingShirtCottonBlueDark
+    shirt: CP14ClothingShirtCottonBlack
 
 
 - type: loadout
