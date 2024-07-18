@@ -2,7 +2,6 @@
   id: ResearchDirector
   name: job-name-rd
   description: job-description-rd
-  setPreference: false
   playTimeTracker: JobResearchDirector
   requirements:
     - !type:DepartmentTimeRequirement

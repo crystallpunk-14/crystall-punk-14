@@ -2,7 +2,6 @@
   id: Lawyer
   name: job-name-lawyer
   description: job-description-lawyer
-  setPreference: false
   playTimeTracker: JobLawyer
   requirements:
     - !type:OverallPlaytimeRequirement

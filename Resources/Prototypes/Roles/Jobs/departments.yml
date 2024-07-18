@@ -2,7 +2,6 @@
   id: Cargo
   description: department-Cargo-description
   color: "#A46106"
-  editorHidden: true
   roles:
   - CargoTechnician
   - Quartermaster
@@ -12,7 +11,6 @@
   id: Civilian
   description: department-Civilian-description
   color: "#9FED58"
-  editorHidden: true
   weight: -10
   roles:
   - Bartender
@@ -38,7 +36,6 @@
   id: Command
   description: department-Command-description
   color: "#334E6D"
-  editorHidden: true
   roles:
   - Captain
   - CentralCommandOfficial
@@ -55,7 +52,6 @@
   id: Engineering
   description: department-Engineering-description
   color: "#EFB341"
-  editorHidden: true
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
@@ -66,7 +62,6 @@
   id: Medical
   description: department-Medical-description
   color: "#52B4E9"
-  editorHidden: true
   roles:
   - Chemist
   - ChiefMedicalOfficer
@@ -79,7 +74,6 @@
   id: Security
   description: department-Security-description
   color: "#DE3A3A"
-  editorHidden: true
   weight: 20
   roles:
   - HeadOfSecurity
@@ -92,7 +86,6 @@
   id: Science
   description: department-Science-description
   color: "#D381C9"
-  editorHidden: true
   roles:
   - ResearchDirector
   - Scientist
@@ -102,7 +95,6 @@
   id: Specific
   description: department-Specific-description
   color: "#9FED58"
-  editorHidden: true
   weight: 10
   roles:
   - Boxer

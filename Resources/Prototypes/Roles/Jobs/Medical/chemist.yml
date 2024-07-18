@@ -2,7 +2,6 @@
   id: Chemist
   name: job-name-chemist
   description: job-description-chemist
-  setPreference: false
   playTimeTracker: JobChemist
   requirements:
     - !type:DepartmentTimeRequirement

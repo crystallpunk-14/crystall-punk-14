@@ -2,7 +2,6 @@
   id: Warden
   name: job-name-warden
   description: job-description-warden
-  setPreference: false
   playTimeTracker: JobWarden
   requirements:
     - !type:RoleTimeRequirement

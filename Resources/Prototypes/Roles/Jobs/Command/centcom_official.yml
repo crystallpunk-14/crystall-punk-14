@@ -2,8 +2,8 @@
   id: CentralCommandOfficial
   name: job-name-centcomoff
   description: job-description-centcomoff
-  setPreference: false
   playTimeTracker: JobCentralCommandOfficial
+  setPreference: false
   startingGear: CentcomGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-hos

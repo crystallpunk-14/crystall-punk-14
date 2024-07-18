@@ -2,7 +2,6 @@
   id: Paramedic
   name: job-name-paramedic
   description: job-description-paramedic
-  setPreference: false
   playTimeTracker: JobParamedic
   requirements:
     - !type:RoleTimeRequirement

@@ -2,7 +2,6 @@
   id: Chaplain
   name: job-name-chaplain
   description: job-description-chaplain
-  setPreference: false
   playTimeTracker: JobChaplain
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
