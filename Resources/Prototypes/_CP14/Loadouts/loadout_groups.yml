@@ -34,7 +34,9 @@
   - CP14ClothingHeadTriangularHatGolden
   - CP14ClothingHeadRedBeret
   - CP14ClothingHeadPurpleBeret
-  - CP14ClothingHeadWhiteBeret
+  - CP14ClothingHeadYellowBeret
+  - CP14ClothingHeadBlueBeret
+  - CP14ClothingHeadBlackBeret
 
 - type: loadoutGroup
   id: CP14TestMask
