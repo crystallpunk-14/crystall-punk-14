@@ -25,9 +25,19 @@ namespace Content.Shared.Localizations
 
         public void Initialize()
         {
+            //Ru localization
             var culture = new CultureInfo(Culture);
-
             _loc.LoadCulture(culture);
+
+            var fallbackCulture = new CultureInfo("en-US");
+            _loc.LoadCulture(fallbackCulture);
+            _loc.SetFallbackCluture(fallbackCulture);
+            //
+
+            //Eng localization
+            //var culture = new CultureInfo(Culture);
+            //
+
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
