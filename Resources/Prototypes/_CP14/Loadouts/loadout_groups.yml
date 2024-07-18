@@ -1,7 +1,7 @@
 # Basic
 
 - type: loadoutGroup
-  id: CP14TestCloak
+  id: CP14BasicCloak
   name: cp14-loadout-basic-cloak
   minLimit: 0
   loadouts:
@@ -33,7 +33,7 @@
   - CP14Sinner
 
 - type: loadoutGroup
-  id: CP14TestHead
+  id: CP14BasicHead
   name: cp14-loadout-basic-head
   minLimit: 0
   loadouts:
@@ -75,6 +75,12 @@
   - CP14ShoesSandals
 
 # Command
+
+- type: loadoutGroup
+  id: CP14CaptainHead
+  name: cp14-loadout-captain-head
+  loadouts:
+  - CP14ClothingHeadCaptainCap
 
 - type: loadoutGroup
   id: CP14CaptainCloak

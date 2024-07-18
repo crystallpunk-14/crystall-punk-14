@@ -25,7 +25,7 @@
 - type: roleLoadout
   id: JobCP14Captain
   groups:
-  - CP14BasicHead #TODO
+  - CP14CaptainHead
   - CP14BasicEyes
   - CP14BasicMask
   - CP14CaptainCloak

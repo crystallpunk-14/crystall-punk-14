@@ -1,3 +1,13 @@
+# Head
+- type: loadout
+  id: CP14ClothingHeadCaptainCap
+  equipment: CP14ClothingHeadCaptainCap
+
+- type: startingGear
+  id: CP14ClothingHeadCaptainCap
+  equipment:
+    head: CP14ClothingHeadCaptainCap
+
 # Cloak
 - type: loadout
   id: CP14ClothingCloakCaptainJacket

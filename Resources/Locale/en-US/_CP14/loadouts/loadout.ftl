@@ -12,3 +12,4 @@ cp14-loadout-basic-shoes = Shoes
 # Org
 
 cp14-loadout-captain-cloak = Captain's cloak
+cp14-loadout-captain-head = Captain's head
