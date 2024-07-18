@@ -1,0 +1,34 @@
+- type: entity
+  id: CP14Rope
+  parent: BaseItem
+  name: rope
+  description: Multifunctional rope. You can tie something with it. Or someone.
+  components:
+  - type: Item
+    size: Small
+    storedRotation: 90
+  - type: Handcuff
+    cuffedRSI: _CP14/Objects/Tools/rope.rsi
+    bodyIconState: body-overlay
+    startCuffSound:
+      path: /Audio/Items/Handcuffs/rope_start.ogg
+    endCuffSound:
+      path: /Audio/Items/Handcuffs/rope_end.ogg
+    startUncuffSound:
+      path: /Audio/Items/Handcuffs/rope_start.ogg
+    endUncuffSound:
+      path: /Audio/Items/Handcuffs/rope_breakout.ogg
+    startBreakoutSound:
+      path: /Audio/Items/Handcuffs/rope_takeoff.ogg
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/rope.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    resetOnHandSelected: false
+    animation: WeaponArcDisarm
+    damage:
+      types:
+        Blunt: 0
+  - type: UseDelay
+    delay: 3
