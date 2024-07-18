@@ -138,9 +138,6 @@ ent-CP14SpawnPointAdventurer = авантюрист
 
 ent-CP14SpawnPointAlchemist = алхимик
 
-ent-CP14ConstrainedSpawnerXeno = { ent-CP14ConstrainedSpawnerBase }
-    .desc = { ent-CP14ConstrainedSpawnerBase.desc }
-
 ent-CP14RandomSpawnerGatherAgaricShroom = спавнер мухоморов
 
 ent-CP14RandomDirtLootSpawner = спавнер земли
