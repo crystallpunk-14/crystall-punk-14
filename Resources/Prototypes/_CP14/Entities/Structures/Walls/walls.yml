@@ -117,3 +117,15 @@
   - type: Construction
     graph: CP14WallWood
     node: WallCardboard
+    
+- type: entity
+  id: CP14WallCyan
+  name: cyan wall
+  parent: CP14BaseWall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/cyan_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/cyan_wall.rsi
+  - type: IconSmooth
+    base: wall
