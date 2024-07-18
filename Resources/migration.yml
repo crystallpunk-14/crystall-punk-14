@@ -27,6 +27,9 @@ CP14ClothingCloakHoodieYellow: CP14ClothingCloakSimpleWhite
 CP14ClothingPantsHarlequinRed: CP14ClothingPantsTrouserDarkBlue
 CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlueDark
 
+# 2024-07-18
+CP14ClothingShirtCottonBlueDark: CP14ClothingShirtCottonBlack
+
 # <---> CrystallPunk migration zone end
 
 

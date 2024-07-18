@@ -200,13 +200,13 @@
 
 
 - type: loadout
-  id: CP14ClothingShirtCottonBlueDark
-  equipment: CP14ClothingShirtCottonBlueDark
+  id: CP14ClothingShirtCottonBlack
+  equipment: CP14ClothingShirtCottonBlack
 
 - type: startingGear
-  id: CP14ClothingShirtCottonBlueDark
+  id: CP14ClothingShirtCottonBlack
   equipment:
-    shirt: CP14ClothingShirtCottonBlueDark
+    shirt: CP14ClothingShirtCottonBlack
 
 
 - type: loadout
