@@ -13,10 +13,22 @@
 - type: roleLoadout
   id: JobCP14Alchemist
   groups:
-  - CP14BasicHead
+  - CP14BasicHead #TODO
   - CP14BasicEyes
   - CP14BasicMask
-  - CP14BasicCloak
+  - CP14BasicCloak #TODO
+  - CP14BasicGloves
+  - CP14BasicShirt
+  - CP14BasicPants
+  - CP14BasicShoes
+
+- type: roleLoadout
+  id: JobCP14Captain
+  groups:
+  - CP14BasicHead #TODO
+  - CP14BasicEyes
+  - CP14BasicMask
+  - CP14CaptainCloak
   - CP14BasicGloves
   - CP14BasicShirt
   - CP14BasicPants

@@ -8,3 +8,7 @@ cp14-loadout-basic-mask = Маска
 cp14-loadout-basic-pants = Штаны
 cp14-loadout-basic-shirt = Рубашка
 cp14-loadout-basic-shoes = Обувь
+
+# Org
+
+cp14-loadout-captain-cloak = Капитанская накидка

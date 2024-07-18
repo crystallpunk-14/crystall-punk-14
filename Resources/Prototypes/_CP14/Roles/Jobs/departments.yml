@@ -1,5 +1,5 @@
 - type: department
-  id: CP14Free
+  id: CP14Mercenary
   description: department-CP14Free-desc
   color: "#429976"
   roles:
@@ -10,3 +10,5 @@
   id: CP14Command
   description: department-CP14Command-desc
   color: "#fadb3e"
+  roles:
+  - CP14Captain

@@ -8,3 +8,7 @@ cp14-loadout-basic-mask = Mask
 cp14-loadout-basic-pants = Pants
 cp14-loadout-basic-shirt = Shirt
 cp14-loadout-basic-shoes = Shoes
+
+# Org
+
+cp14-loadout-captain-cloak = Captain's cloak

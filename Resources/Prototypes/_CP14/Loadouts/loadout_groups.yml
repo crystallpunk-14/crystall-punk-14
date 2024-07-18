@@ -73,3 +73,11 @@
   - CP14ShoesBlack
   - CP14ShoesAristocraticBlack
   - CP14ShoesSandals
+
+# Command
+
+- type: loadoutGroup
+  id: CP14CaptainCloak
+  name: cp14-loadout-captain-cloak
+  loadouts:
+  - CP14ClothingCloakCaptainJacket
