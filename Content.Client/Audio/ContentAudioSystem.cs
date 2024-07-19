@@ -29,13 +29,14 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
     public const float AmbientMusicMultiplier = 3f;
     public const float LobbyMultiplier = 3f;
     public const float InterfaceMultiplier = 2f;
-    
+
     public override void Initialize()
     {
         base.Initialize();
 
         UpdatesOutsidePrediction = true;
         InitializeAmbientMusic();
+        CP14InitializeAmbientLoops(); //CP14 ambient loops
         InitializeLobbyMusic();
         SubscribeNetworkEvent<RoundRestartCleanupEvent>(OnRoundCleanup);
     }
@@ -82,6 +83,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
             return;
 
         UpdateAmbientMusic();
+        CP14UpdateAmbientLoops(); //CP14
         UpdateLobbyMusic();
         UpdateFades(frameTime);
     }

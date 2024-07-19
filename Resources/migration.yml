@@ -25,7 +25,10 @@ CP14GatherableBloodgrass5: CP14GatherableBloodgrass
 # 2024-06-10
 CP14ClothingCloakHoodieYellow: CP14ClothingCloakSimpleWhite
 CP14ClothingPantsHarlequinRed: CP14ClothingPantsTrouserDarkBlue
-CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlueDark
+CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlack
+
+# 2024-07-18
+CP14ClothingShirtCottonBlueDark: CP14ClothingShirtCottonBlack
 
 # <---> CrystallPunk migration zone end
 
@@ -393,3 +396,19 @@ BookChefGaming: BookHowToCookForFortySpaceman
 
 #2024-06-29
 IntercomAssesmbly: IntercomAssembly
+
+# 2024-07-7
+SignScience1: SignScience
+SignScience2: SignScience
+SignXenobio2: SignXenobio
+SignXenolab: SignXenobio
+SignToxins2: SignToxins
+SignMinerDock: SignShipDock
+SignChemistry1: SignChem
+SignChemistry2: SignChem
+SignCourt: SignLawyer
+SignAtmosMinsky: SignAtmos
+SignDrones: SignMaterials
+SignShield: null # what was this even for?
+SignHydro2: SignHydro1
+SignHydro3: SignHydro1

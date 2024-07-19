@@ -24,14 +24,14 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtCottonBlueDark
-  name: cotton dark shirt
+  id: CP14ClothingShirtCottonBlack
+  name: cotton black shirt
   description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Cotton/dark_blue.rsi
+    sprite: _CP14/Clothing/Shirt/Cotton/black.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Cotton/dark_blue.rsi
+    sprite: _CP14/Clothing/Shirt/Cotton/black.rsi
 
 - type: entity
   parent: CP14ClothingShirtBase

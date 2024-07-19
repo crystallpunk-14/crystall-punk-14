@@ -1,0 +1,17 @@
+- type: job
+  id: CP14Adventurer
+  name: cp14-job-name-adventurer
+  description: cp14-job-desc-adventurer
+  playTimeTracker: CP14JobAdventurer
+  startingGear: CP14AdventurerGear
+  icon: "CP14JobIconAdventurer"
+  supervisors: cp14-job-supervisors-command
+  special:
+  - !type:CP14AddSkillSpecial
+    skills:
+    - Warcraft
+
+- type: startingGear
+  id: CP14AdventurerGear
+  equipment:
+    belt1: CP14WalletFilledTest
