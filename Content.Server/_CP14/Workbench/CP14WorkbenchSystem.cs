@@ -40,14 +40,18 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         var crafts = GetPossibleCrafts(ent, itemPlacer.PlacedEntities);
         foreach (var craft in crafts)
         {
+            if (!_proto.TryIndex(craft.Result, out var proto))
+                continue;
+
             args.Verbs.Add(new()
             {
                 Act = () =>
                 {
                     StartCraft(ent, user, craft);
                 },
-                Text = craft.Result,
-                Category = VerbCategory.SelectType,
+                Text = proto.Name,
+                Message = GetCraftRecipeMessage(proto.Description, craft),
+                Category = VerbCategory.CP14Craft,
             });
         }
     }
@@ -57,7 +61,9 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         if (args.Cancelled || args.Handled)
             return;
 
-        var recipe = _proto.Index(args.Recipe);
+        if (!_proto.TryIndex(args.Recipe, out var recipe))
+            return;
+
         if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
         {
             _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
@@ -145,6 +151,19 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         }
 
         return true;
+    }
+
+    private string GetCraftRecipeMessage(string desc, CP14WorkbenchRecipePrototype recipe)
+    {
+        var result = desc + "\n \n" + Loc.GetString("cp14-workbench-recipe-list")+ "\n";
+
+        foreach (var pair in recipe.Entities)
+        {
+            var proto = _proto.Index(pair.Key);
+            result += $"{proto.Name} x{pair.Value}\n";
+        }
+
+        return result;
     }
 
     private Dictionary<string, int> IndexIngredients(HashSet<EntityUid> ingredients)
