@@ -1,13 +1,17 @@
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
+using Content.Shared.DoAfter;
 using Content.Shared.Placeable;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Workbench;
 
-public sealed class CP14WorkbenchSystem : EntitySystem
+public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 {
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
@@ -18,6 +22,7 @@ public sealed class CP14WorkbenchSystem : EntitySystem
         _metaQuery = GetEntityQuery<MetaDataComponent>();
 
         SubscribeLocalEvent<CP14WorkbenchComponent, GetVerbsEvent<InteractionVerb>>(OnInteractionVerb);
+        SubscribeLocalEvent<CP14WorkbenchComponent, CP14CraftDoAfterEvent>(OnCraftFinished);
     }
 
     private void OnInteractionVerb(Entity<CP14WorkbenchComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
@@ -28,21 +33,52 @@ public sealed class CP14WorkbenchSystem : EntitySystem
         if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
             return;
 
-        var crafts = GetPossibleCrafts(ent, itemPlacer.PlacedEntities);
         var user = args.User;
-
+        var crafts = GetPossibleCrafts(ent, itemPlacer.PlacedEntities);
         foreach (var craft in crafts)
         {
             args.Verbs.Add(new()
             {
                 Act = () =>
                 {
-                    Spawn(craft.Result, Transform(ent).Coordinates);
+                    StartCraft(ent, user, craft);
                 },
                 Text = craft.Result,
                 Category = VerbCategory.SelectType,
             });
         }
+    }
+
+    private void OnCraftFinished(Entity<CP14WorkbenchComponent> ent, ref CP14CraftDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        Spawn(_proto.Index(args.Recipe).Result, Transform(ent).Coordinates);
+        args.Handled = true;
+    }
+
+    private void StartCraft(Entity<CP14WorkbenchComponent> workbench, EntityUid user, CP14WorkbenchRecipePrototype recipe)
+    {
+        var craftDoAfter = new CP14CraftDoAfterEvent
+        {
+            Recipe = recipe.ID,
+        };
+
+        var doAfterArgs = new DoAfterArgs(EntityManager,
+            user,
+            recipe.CraftTime * workbench.Comp.CraftSpeed,
+            craftDoAfter,
+            workbench,
+            workbench)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            NeedHand = true,
+        };
+
+        _doAfter.TryStartDoAfter(doAfterArgs);
+        _audio.PlayPvs(recipe.CraftSound, workbench);
     }
 
     private List<CP14WorkbenchRecipePrototype> GetPossibleCrafts(Entity<CP14WorkbenchComponent> workbench, HashSet<EntityUid> ingrediEnts)
