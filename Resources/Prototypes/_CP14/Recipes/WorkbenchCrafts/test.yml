@@ -1,0 +1,9 @@
+- type: CP14Recipe
+  id: Test
+  craftTime: 3
+  entities:
+  - CP14BaseSword
+  - BaseShield
+  stacks:
+    CP14SilverCoin: 5
+  result: CP14BaseBattleHammer
