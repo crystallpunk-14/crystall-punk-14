@@ -1,23 +1,35 @@
 - type: roleLoadout
   id: JobCP14Adventurer
   groups:
-  - CP14TestHead
-  - CP14TestEyes
-  - CP14TestMask
-  - CP14TestCloak
-  - CP14TestGloves
-  - CP14TestShirt
-  - CP14TestPants
-  - CP14TestShoes
+  - CP14BasicHead
+  - CP14BasicEyes
+  - CP14BasicMask
+  - CP14BasicCloak
+  - CP14BasicGloves
+  - CP14BasicShirt
+  - CP14BasicPants
+  - CP14BasicShoes
 
 - type: roleLoadout
   id: JobCP14Alchemist
   groups:
-  - CP14TestHead
-  - CP14TestEyes
-  - CP14TestMask
-  - CP14TestCloak
-  - CP14TestGloves
-  - CP14TestShirt
-  - CP14TestPants
-  - CP14TestShoes
+  - CP14BasicHead #TODO
+  - CP14BasicEyes
+  - CP14BasicMask
+  - CP14BasicCloak #TODO
+  - CP14BasicGloves
+  - CP14BasicShirt
+  - CP14BasicPants
+  - CP14BasicShoes
+
+- type: roleLoadout
+  id: JobCP14Captain
+  groups:
+  - CP14CaptainHead
+  - CP14BasicEyes
+  - CP14BasicMask
+  - CP14CaptainCloak
+  - CP14BasicGloves
+  - CP14BasicShirt
+  - CP14BasicPants
+  - CP14BasicShoes

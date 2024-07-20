@@ -5,3 +5,6 @@
 
 - type: playTimeTracker
   id: CP14JobAlchemist
+
+- type: playTimeTracker
+  id: CP14JobCaptain
