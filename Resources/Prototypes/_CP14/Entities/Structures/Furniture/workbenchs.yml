@@ -1,10 +1,8 @@
 - type: entity
-  parent:
+  parent: 
   - BaseStructure
-  - CP14BaseWooden
-  id: CP14Workbench
-  name: workbench
-  description: minecraft!!!
+  id: CP14BaseWorkbench
+  abstract: true
   components:
   - type: Fixtures
     fixtures:
@@ -20,13 +18,38 @@
         - MidImpassable
         - LowImpassable
         hard: false
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Climbable
+  - type: Clickable
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 10
+  - type: CP14Workbench
+    craftSpeed: 1
+
+- type: entity
+  parent:
+  - CP14BaseWorkbench
+  - CP14BaseWooden
+  id: CP14Workbench
+  name: workbench
+  description: Table for the production of various basic tools.
+  components:
   - type: Sprite
     snapCardinals: true
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
-    state: frame
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: icon
   - type: Icon
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
-    state: frame
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: icon
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -62,14 +85,7 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
-  - type: Climbable
-  - type: Clickable
-  - type: PlaceableSurface
-  - type: ItemPlacer
-    maxEntities: 8
   - type: CP14Workbench
-    craftSpeed: 1
     recipes:
-    - Test
-    - Test2
-    - Test3
+    - CP14Bucket
+    - CP14BaseBarrel

@@ -44,10 +44,12 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             return;
 
         var user = args.User;
-        var crafts = GetPossibleCrafts(ent, itemPlacer.PlacedEntities);
-        foreach (var craft in crafts)
+        foreach (var craftProto in ent.Comp.Recipes)
         {
-            if (!_proto.TryIndex(craft.Result, out var proto))
+            if (!_proto.TryIndex(craftProto, out var craft))
+                continue;
+
+            if (!_proto.TryIndex(craft.Result, out var result))
                 continue;
 
             args.Verbs.Add(new()
@@ -56,9 +58,10 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 {
                     StartCraft(ent, user, craft);
                 },
-                Text = proto.Name,
-                Message = GetCraftRecipeMessage(proto.Description, craft),
+                Text = result.Name,
+                Message = GetCraftRecipeMessage(result.Description, craft),
                 Category = VerbCategory.CP14Craft,
+                Disabled = !CanCraftRecipe(craft, itemPlacer.PlacedEntities),
             });
         }
     }
