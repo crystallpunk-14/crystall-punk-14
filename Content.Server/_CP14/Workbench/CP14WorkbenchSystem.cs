@@ -1,3 +1,5 @@
+using System.Linq;
+using Content.Server.Popups;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.DoAfter;
@@ -13,6 +15,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     public override void Initialize()
@@ -54,7 +57,36 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         if (args.Cancelled || args.Handled)
             return;
 
+        var recipe = _proto.Index(args.Recipe);
+        if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
+            return;
+        }
+
+        var ingredientsOnWorkbench = IndexIngredients(itemPlacer.PlacedEntities);
+        if (!CanCraftRecipe(recipe, ingredientsOnWorkbench))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
+            return;
+        }
+
+        foreach (var requiredIngredient  in recipe.Entities)
+        {
+            int requiredCount = requiredIngredient.Value;
+            foreach (var placedEntity in itemPlacer.PlacedEntities)
+            {
+                var placedProto = MetaData(placedEntity).EntityPrototype?.ID;
+                if (placedProto != null && placedProto == requiredIngredient.Key && requiredCount > 0)
+                {
+                    requiredCount--;
+                    QueueDel(placedEntity);
+                }
+            }
+        }
+
         Spawn(_proto.Index(args.Recipe).Result, Transform(ent).Coordinates);
+
         args.Handled = true;
     }
 
