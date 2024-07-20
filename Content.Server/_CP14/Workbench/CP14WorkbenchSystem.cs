@@ -112,7 +112,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                     continue;
 
                 var count = (int)MathF.Min(requiredCount, stack.Count);
-                _stack.SetCount(placedEntity, stack.Count - count);
+                _stack.SetCount(placedEntity, stack.Count - count, stack);
 
                 requiredCount -= count;
             }
