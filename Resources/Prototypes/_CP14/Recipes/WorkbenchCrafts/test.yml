@@ -4,8 +4,6 @@
   entities:
     CP14BaseSword: 2
     CP14BaseShield: 1
-  stacks:
-    CP14SilverCoin: 5
   result: CP14BaseBattleHammer
 
 - type: CP14Recipe
@@ -16,3 +14,10 @@
   stacks:
     CP14SilverCoin: 5
   result: CP14BaseShield
+
+- type: CP14Recipe
+  id: Test3
+  craftTime: 3
+  stacks:
+    CP14SilverCoin: 5
+  result: CP14BaseDagger
