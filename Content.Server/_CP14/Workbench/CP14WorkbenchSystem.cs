@@ -39,7 +39,8 @@ public sealed class CP14WorkbenchSystem : EntitySystem
                 {
                     Spawn(craft.Result, Transform(ent).Coordinates);
                 },
-                Message = craft.Result.Id,
+                Text = craft.Result,
+                Category = VerbCategory.SelectType,
             });
         }
     }
