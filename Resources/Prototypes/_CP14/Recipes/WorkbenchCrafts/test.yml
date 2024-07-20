@@ -2,8 +2,8 @@
   id: Test
   craftTime: 3
   entities:
-  - CP14BaseSword
-  - BaseShield
+    CP14BaseSword: 1
+    CP14BaseShield: 1
   stacks:
     CP14SilverCoin: 5
   result: CP14BaseBattleHammer

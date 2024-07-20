@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - BaseStructure
   - CP14BaseWooden
   id: CP14Workbench
@@ -13,10 +13,13 @@
           !type:PhysShapeAabb
           bounds: "-0.45,-0.45,0.45,0.45"
         density: 55
-        mask: # tables should collide with other tables
-        - TableMask
+        mask:
+        - TabletopMachineMask
         layer:
-        - TableLayer
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
   - type: Sprite
     snapCardinals: true
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
@@ -61,6 +64,9 @@
     normalState: full
   - type: Climbable
   - type: Clickable
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 8
   - type: CP14Workbench
     craftSpeed: 1
     recipes:

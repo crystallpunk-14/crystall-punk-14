@@ -21,7 +21,7 @@ public sealed partial class CP14WorkbenchRecipePrototype : IPrototype
     public SoundSpecifier CraftSound = new SoundCollectionSpecifier("CP14Hammering");
 
     [DataField]
-    public HashSet<EntProtoId> Entities = new();
+    public Dictionary<EntProtoId, int> Entities = new();
 
     [DataField]
     public Dictionary<ProtoId<StackPrototype>, int> Stacks = new();
