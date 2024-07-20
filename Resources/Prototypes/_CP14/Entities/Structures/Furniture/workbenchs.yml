@@ -85,6 +85,9 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14Workbench
   - type: CP14Workbench
     recipes:
     - CP14Bucket
