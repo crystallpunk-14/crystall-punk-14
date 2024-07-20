@@ -16,7 +16,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
+    [Dependency] private readonly SharedStackSystem _stack = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
 
@@ -88,7 +88,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
         foreach (var requiredIngredient  in recipe.Entities)
         {
-            int requiredCount = requiredIngredient.Value;
+            var requiredCount = requiredIngredient.Value;
             foreach (var placedEntity in itemPlacer.PlacedEntities)
             {
                 var placedProto = MetaData(placedEntity).EntityPrototype?.ID;
@@ -102,7 +102,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
         foreach (var requiredStack in recipe.Stacks)
         {
-            int requiredCount = requiredStack.Value;
+            var requiredCount = requiredStack.Value;
             foreach (var placedEntity in itemPlacer.PlacedEntities)
             {
                 if (!_stackQuery.TryGetComponent(placedEntity, out var stack))
@@ -113,6 +113,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
                 var count = (int)MathF.Min(requiredCount, stack.Count);
                 _stack.SetCount(placedEntity, stack.Count - count);
+
                 requiredCount -= count;
             }
         }
