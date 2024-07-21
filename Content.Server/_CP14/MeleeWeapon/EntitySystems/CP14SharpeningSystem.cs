@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._CP14.MeleeWeapon.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -8,7 +9,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Wieldable;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Server._CP14.MeleeWeapon;
+namespace Content.Server._CP14.MeleeWeapon.EntitySystems;
 
 public sealed class CP14SharpeningSystem : EntitySystem
 {

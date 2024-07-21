@@ -1,7 +1,8 @@
-﻿using Content.Shared.Damage;
+﻿using Content.Server._CP14.MeleeWeapon.EntitySystems;
+using Content.Shared.Damage;
 using Robust.Shared.Audio;
 
-namespace Content.Server._CP14.MeleeWeapon;
+namespace Content.Server._CP14.MeleeWeapon.Components;
 
 /// <summary>
 /// component allows you to sharpen objects by restoring their damage.
