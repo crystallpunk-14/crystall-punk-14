@@ -338,10 +338,10 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Pets/walter.rsi
+    sprite: Mobs/Pets/doggi.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walter
+      state: dog
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -360,11 +360,11 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: walter
+        Base: dog
       Critical:
-        Base: walter_dead
+        Base: dog_dead
       Dead:
-        Base: walter_dead
+        Base: dog_dead
   - type: Butcherable
     spawned:
     - id: FoodMeat
