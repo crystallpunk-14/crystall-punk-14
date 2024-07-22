@@ -19,7 +19,7 @@
   description: A piece of pale, heavy copper. 
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Materials/ore_copper.rsi
+    sprite: _CP14/Objects/Materials/copper_ore.rsi
     layers:
       - state: ore1
         map: ["random"]
@@ -31,7 +31,7 @@
   description: A piece of cold, heavy iron. 
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Materials/ore_iron.rsi
+    sprite: _CP14/Objects/Materials/iron_ore.rsi
     layers:
       - state: ore1
         map: ["random"]
@@ -43,7 +43,7 @@
   description: A piece of soft, pure gold.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Materials/ore_gold.rsi
+    sprite: _CP14/Objects/Materials/gold_ore.rsi
     layers:
       - state: ore1
         map: ["random"]
