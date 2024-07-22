@@ -31,7 +31,9 @@
     - CP14Crossbolt
     - CP14BaseSharpeningStone
     - CP14BaseSharpeningStone
-    - CP14Shovel
+    - CP14BaseShovel
+    - CP14BaseHoe
+    - CP14BasePickaxe
     - CP14OldLantern
     - ClothingBackpackCargo
     - ClothingBackpackCargo
