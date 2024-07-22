@@ -13,7 +13,7 @@ CP14CardboardWall: CP14WallCardboard
 
 # 2024-06-06
 CP14CaveStoneWall: CP14WallStone
-CP14CaveStoneWallSilverOre: CP14WallStoneSilverOre
+CP14CaveStoneWallSilverOre: null
 CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
 
 # 2024-06-07

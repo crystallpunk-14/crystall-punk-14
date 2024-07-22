@@ -18,7 +18,7 @@
     sprite: _CP14/Objects/Weapons/Melee/Pickaxe/pickaxe.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: 65
+    wideAnimationRotation: 300
     damage:
       types:
         Piercing: 5
