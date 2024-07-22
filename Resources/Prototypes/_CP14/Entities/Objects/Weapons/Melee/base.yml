@@ -97,4 +97,4 @@
   - type: CP14MeleeSelfDamage
     damageToSelf:
       types:
-        Blunt: 1 # 50 hits
+        Blunt: 0.5 # 100 hits
