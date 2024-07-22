@@ -338,10 +338,10 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Pets/walter.rsi
+    sprite: Mobs/Pets/dino.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: walter
+      state: dino
   - type: Physics
   - type: Fixtures
     fixtures:
