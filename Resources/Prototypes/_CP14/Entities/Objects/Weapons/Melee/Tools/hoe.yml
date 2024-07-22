@@ -1,0 +1,27 @@
+- type: entity
+  id: CP14BaseHoe
+  parent: 
+  - BaseItem
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponLight
+  name: hoe
+  description: A gardening tool to prepare the soil for planting, or to clear weeds
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Hoe/hoe.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 65
+    damage:
+      types:
+        Piercing: 2
+        Slash: 2
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    size: Normal
+    sprite: _CP14/Objects/Weapons/Melee/Hoe/hoe.rsi
+  - type: CP14SpawnOnTileTool
+    spawns:
+      CP14FloorDirt: CP14PloughedGround

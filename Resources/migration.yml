@@ -13,7 +13,7 @@ CP14CardboardWall: CP14WallCardboard
 
 # 2024-06-06
 CP14CaveStoneWall: CP14WallStone
-CP14CaveStoneWallSilverOre: CP14WallStoneSilverOre
+CP14CaveStoneWallSilverOre: null
 CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
 
 # 2024-06-07
@@ -29,6 +29,9 @@ CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlack
 
 # 2024-07-18
 CP14ClothingShirtCottonBlueDark: CP14ClothingShirtCottonBlack
+CP14Shovel: CP14BaseShovel
+CP14Hoe: CP14BaseHoe
+CP14WallStoneSilverOre: CP14WallStoneGoldOre
 
 # <---> CrystallPunk migration zone end
 
