@@ -30,8 +30,6 @@
   - type: Climbable
   - type: Clickable
   - type: PlaceableSurface
-  - type: ItemPlacer
-    maxEntities: 10
   - type: CP14Workbench
     craftSpeed: 1
 

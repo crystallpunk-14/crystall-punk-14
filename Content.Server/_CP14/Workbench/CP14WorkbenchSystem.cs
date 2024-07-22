@@ -1,10 +1,7 @@
-using System.Linq;
 using Content.Server.Popups;
-using Content.Server.Stack;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.DoAfter;
-using Content.Shared.Placeable;
 using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
@@ -19,17 +16,19 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly SharedStackSystem _stack = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
-    private EntityQuery<ItemPlacerComponent> _itemPlacerQuery;
+
+    private const float WorkbenchRadius = 0.5f;
+
     public override void Initialize()
     {
         base.Initialize();
 
         _metaQuery = GetEntityQuery<MetaDataComponent>();
         _stackQuery = GetEntityQuery<StackComponent>();
-        _itemPlacerQuery = GetEntityQuery<ItemPlacerComponent>();
 
         SubscribeLocalEvent<CP14WorkbenchComponent, GetVerbsEvent<InteractionVerb>>(OnInteractionVerb);
         SubscribeLocalEvent<CP14WorkbenchComponent, CP14CraftDoAfterEvent>(OnCraftFinished);
@@ -40,8 +39,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         if (!args.CanAccess || !args.CanInteract || args.Hands is null)
             return;
 
-        if (!_itemPlacerQuery.TryGetComponent(ent, out var itemPlacer))
-            return;
+        var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates, WorkbenchRadius);
 
         var user = args.User;
         foreach (var craftProto in ent.Comp.Recipes)
@@ -61,7 +59,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 Text = result.Name,
                 Message = GetCraftRecipeMessage(result.Description, craft),
                 Category = VerbCategory.CP14Craft,
-                Disabled = !CanCraftRecipe(craft, itemPlacer.PlacedEntities),
+                Disabled = !CanCraftRecipe(craft, placedEntities),
             });
         }
     }
@@ -74,13 +72,9 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         if (!_proto.TryIndex(args.Recipe, out var recipe))
             return;
 
-        if (!_itemPlacerQuery.TryGetComponent(ent, out var itemPlacer))
-        {
-            _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
-            return;
-        }
+        var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates, WorkbenchRadius);
 
-        if (!CanCraftRecipe(recipe, itemPlacer.PlacedEntities))
+        if (!CanCraftRecipe(recipe, placedEntities))
         {
             _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
             return;
@@ -89,7 +83,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         foreach (var requiredIngredient  in recipe.Entities)
         {
             var requiredCount = requiredIngredient.Value;
-            foreach (var placedEntity in itemPlacer.PlacedEntities)
+            foreach (var placedEntity in placedEntities)
             {
                 var placedProto = MetaData(placedEntity).EntityPrototype?.ID;
                 if (placedProto != null && placedProto == requiredIngredient.Key && requiredCount > 0)
@@ -103,7 +97,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         foreach (var requiredStack in recipe.Stacks)
         {
             var requiredCount = requiredStack.Value;
-            foreach (var placedEntity in itemPlacer.PlacedEntities)
+            foreach (var placedEntity in placedEntities)
             {
                 if (!_stackQuery.TryGetComponent(placedEntity, out var stack))
                     continue;
