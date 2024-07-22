@@ -1,4 +1,5 @@
 using Content.Shared._CP14.Workbench.Prototypes;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Workbench;
@@ -12,4 +13,7 @@ public sealed partial class CP14WorkbenchComponent : Component
 
     [DataField]
     public List<ProtoId<CP14WorkbenchRecipePrototype>> Recipes = new();
+
+    [DataField]
+    public SoundSpecifier CraftSound = new SoundCollectionSpecifier("CP14Hammering");
 }

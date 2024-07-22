@@ -120,6 +120,8 @@
     sprite: _CP14/Effects/fire.rsi
     normalState: full
   - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing
     recipes:
     - CP14MeltingMoldBlank
     - CP14MeltingMoldDaggers
