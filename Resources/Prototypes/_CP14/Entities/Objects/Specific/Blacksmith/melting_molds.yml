@@ -1,0 +1,101 @@
+- type: entity
+  id: CP14MeltingMoldBase
+  abstract: true
+  parent: BaseItem
+  name: melting mold
+  description: Wooden board for casting the metal into the required molds.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Blacksmith/melting_molds.rsi
+
+- type: entity
+  id: CP14MeltingMoldBlank
+  parent: CP14MeltingMoldBase
+  name: black melting mold
+  description: An empty mold for casting metal. You can cut any shape you need in it on the pattern cutting table.
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+
+- type: entity
+  id: CP14MeltingMoldDaggers
+  parent: CP14MeltingMoldBase
+  name: dagger blade mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: dagger
+
+- type: entity
+  id: CP14MeltingMoldNails
+  parent: CP14MeltingMoldBase
+  name: mails mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: nails
+
+- type: entity
+  id: CP14MeltingMoldPickaxe
+  parent: CP14MeltingMoldBase
+  name: pickaxe head mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: pickaxe
+
+- type: entity
+  id: CP14MeltingMoldShovel
+  parent: CP14MeltingMoldBase
+  name: shovel head mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: shovel
+
+- type: entity
+  id: CP14MeltingMoldSickle
+  parent: CP14MeltingMoldBase
+  name: sickle blade mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: sickle
+
+- type: entity
+  id: CP14MeltingMoldSword
+  parent: CP14MeltingMoldBase
+  name: sword blade mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: sword
+
+- type: entity
+  id: CP14MeltingMoldThrowableSpear
+  parent: CP14MeltingMoldBase
+  name: throwable spearhead mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: throwable_spear
+
+- type: entity
+  id: CP14MeltingMoldTwoHandedSword
+  parent: CP14MeltingMoldBase
+  name: two-handed sword blade mold
+  components:
+  - type: Sprite
+    layers:
+    - state: blank
+    - state: two_handed_sword
