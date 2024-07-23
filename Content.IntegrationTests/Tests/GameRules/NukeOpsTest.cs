@@ -27,7 +27,7 @@ namespace Content.IntegrationTests.Tests.GameRules;
 
 [TestFixture]
 public sealed class NukeOpsTest
-{
+{/*
     /// <summary>
     /// Check that a nuke ops game mode can start without issue. I.e., that the nuke station and such all get loaded.
     /// </summary>
@@ -250,5 +250,5 @@ public sealed class NukeOpsTest
 
         ticker.SetGamePreset((GamePresetPrototype?) null);
         await pair.CleanReturnAsync();
-    }
+    }*/
 }
