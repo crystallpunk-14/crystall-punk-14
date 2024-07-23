@@ -1,4 +1,19 @@
 - type: gameMap
+  id: MeteorArena
+  mapName: Meteor Arena
+  mapPath: /Maps/_CP14/meteor-arena.yml
+  minPlayers: 0
+  stations:
+    Arena:
+      stationProto: StandardStationArena
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Meteor Arena"
+        - type: StationJobs
+          availableJobs:
+            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+
+- type: gameMap
   id: AlchemyTest
   mapName: Alchemy test
   mapPath: /Maps/_CP14/alchemy_test.yml
