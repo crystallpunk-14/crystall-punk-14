@@ -1,0 +1,9 @@
+- type: entity
+  id: CP14ExpeditionShipTargetPoint
+  parent: MarkerBase
+  name: Expedition ship target point
+  description: One of the possible arrival points of a ship carrying players
+  components:
+    - type: CP14ExpeditionShipFTLTarget
+    - type: Sprite
+      state: pink

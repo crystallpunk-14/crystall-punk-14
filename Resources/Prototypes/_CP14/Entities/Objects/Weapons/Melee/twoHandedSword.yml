@@ -48,3 +48,18 @@
     fuckupChance: 0.5
     requiredSkills:
     - Warcraft
+
+- type: entity
+  id: CP14TwoHandedSwordScythe
+  parent: CP14BaseTwoHandedSword
+  name: scythe
+  description: A large, two-handed scythe. What will you mow with it? Millet or heads?
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/scythe.rsi
+    state: icon
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/scythe.rsi
+  - type: Tag
+    tags:
+    - CP14HerbalGathering

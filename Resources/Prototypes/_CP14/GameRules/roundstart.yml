@@ -1,10 +1,20 @@
 - type: entity
-  id: CP14Playtest
+  id: CP14BaseGameRule
   parent: BaseGameRule
+  abstract: true
+  components:
+  - type: GameRule
+    cP14Allowed: true
+
+- type: entity
+  id: CP14ResourceHarvesting
+  parent: CP14BaseGameRule
   noSpawn: true
   components:
-  - type: RespawnDeadRule
-  - type: RespawnTracker
-    respawnDelay: 5
-  - type: KillCalloutRule
-  - type: PointManager
+  - type: CP14ExpeditionObjectivesRule
+    objectives:
+    - CP14ExpeditionCollectGoldObjective
+  # Expedition random objectives
+  # main objective + sub objective?
+  # motivations
+  # antags

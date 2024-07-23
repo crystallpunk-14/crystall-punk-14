@@ -2,7 +2,7 @@
 # Базовый биом лугов.
 
 - type: biomeTemplate
-  id: CP14Grassland
+  id: CP14GrassFill
   layers:
     - !type:BiomeTileLayer
       threshold: -1.0
@@ -33,6 +33,12 @@
         gain: 0.7
         domainWarpType: OpenSimplex2
         domainWarpAmp: 120
+
+- type: biomeTemplate
+  id: CP14Grassland
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14GrassFill
     - !type:BiomeDecalLayer #Grass decal
       allowedTiles:
       - CP14FloorGrass

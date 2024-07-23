@@ -532,5 +532,3 @@ cp14-species-name-goblin-female-first-21 = Hashak
 cp14-species-name-goblin-female-first-22 = Shadruor
 cp14-species-name-goblin-female-first-23 = Ehaas
 cp14-species-name-goblin-female-first-24 = Eluun
-
-cp14-species-name-goblin-last-1 = ""

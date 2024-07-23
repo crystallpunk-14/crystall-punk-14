@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by jaraten (Discord/Github) for CrystallPunk14",
+  "states": [
+    {
+      "name": "wall0",
+      "directions": 4
+    },
+    {
+      "name": "wall1",
+      "directions": 4
+    },
+    {
+      "name": "wall2",	
+      "directions": 4
+    },
+    {
+      "name": "wall3",
+      "directions": 4
+    },
+    {
+      "name": "wall4",
+      "directions": 4
+    },
+    {
+      "name": "wall5",
+      "directions": 4
+    },
+    {
+      "name": "wall6",
+      "directions": 4
+    },
+    {
+      "name": "wall7",
+      "directions": 4
+    },
+    {
+      "name": "full"
+    }
+  ]
+}

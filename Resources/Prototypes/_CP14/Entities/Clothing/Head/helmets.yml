@@ -46,3 +46,69 @@
     sprite: _CP14/Clothing/Head/triangularhat_golden.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/triangularhat_golden.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadRedBeret
+  name: red beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/red.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadPurpleBeret
+  name: purple beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/purple.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/purple.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadYellowBeret
+  name: yellow beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/yellow.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/yellow.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadBlueBeret
+  name: blue beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/blue.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadBlackBeret
+  name: black beret
+  description: this is beret.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/black.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/black.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadCaptainCap
+  name: captain's cap
+  description: No, look how handsome he is!
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/captain_cap.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/captain_cap.rsi

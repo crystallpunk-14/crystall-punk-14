@@ -1,4 +1,5 @@
 using Content.Server._CP14.MeleeWeapon;
+using Content.Server._CP14.MeleeWeapon.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
@@ -59,12 +60,6 @@ namespace Content.Server.Damage.Systems
                     var direction = body.LinearVelocity.Normalized();
                     _sharedCameraRecoil.KickCamera(args.Target, direction);
                 }
-            }
-
-            // TODO: If more stuff touches this then handle it after.
-            if (TryComp<PhysicsComponent>(uid, out var physics))
-            {
-                _thrownItem.LandComponent(args.Thrown, args.Component, physics, false);
             }
         }
 

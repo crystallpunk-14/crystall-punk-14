@@ -1,9 +1,8 @@
 - type: gamePreset
-  id: CP14Playtest
-  alias:
-    - test
-  name: cp14-playtest-name
-  description: cp14-playtest-desc
+  id: CP14ResourceHarvesting
+  name: cp14-gamepreset-resource-harvest
+  description: cp14-gamepreset-resource-harvest-desc
   showInVote: true
+  cP14Allowed: true
   rules:
-    - CP14Playtest
+    - CP14ResourceHarvesting

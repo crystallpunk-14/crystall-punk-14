@@ -22,6 +22,46 @@
     {
       "name": "goateemush",
       "directions": 4
+    },
+    {
+      "name": "whiskers",
+      "directions": 4
+    },
+    {
+      "name": "circle",
+      "directions": 4
+    },
+    {
+      "name": "espanol",
+      "directions": 4
+    },
+    {
+      "name": "imperial",
+      "directions": 4
+    },
+    {
+      "name": "machete",
+      "directions": 4
+    },
+    {
+      "name": "mutton",
+      "directions": 4
+    },
+    {
+      "name": "pigtail",
+      "directions": 4
+    },
+    {
+      "name": "sage",
+      "directions": 4
+    },
+    {
+      "name": "watson",
+      "directions": 4
+    },
+    {
+      "name": "briefs",
+      "directions": 4
     }
   ]
 }

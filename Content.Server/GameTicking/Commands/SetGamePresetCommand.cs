@@ -46,6 +46,11 @@ namespace Content.Server.GameTicking.Commands
                 var options = new List<string>();
                 foreach (var preset in gamePresets)
                 {
+                    //CP14 console preset filter
+                    if (!preset.CP14Allowed)
+                        continue;
+                    //CP14 console preset filter end
+
                     options.Add(preset.ID);
                     options.AddRange(preset.Alias);
                 }

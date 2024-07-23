@@ -25,5 +25,11 @@ cp14-reagent-desc-basic-satiate-thirst = A liquid that tastes very much like wat
 cp14-reagent-name-basic-emote-cough =  Coughing solution
 cp14-reagent-desc-basic-emote-cough = Coughs profusely, but harmlessly.
 
+cp14-reagent-name-basic-heal-cold = Warming Solution
+cp14-reagent-desc-basic-heal-cold = Capable of healing even serious frostbite.
+
+cp14-reagent-name-basic-damage-cold = Ice solution
+cp14-reagent-desc-basic-damage-cold = Dangerous substance that causes severe frostbite.
+
 cp14-reagent-name-basic-vomit = Vomit solution
 cp14-reagent-desc-basic-vomit = A substance that causes severe vomiting spasms. May help with food poisoning.

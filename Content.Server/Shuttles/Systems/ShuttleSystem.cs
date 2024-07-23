@@ -1,4 +1,5 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
 using Content.Server.Doors.Systems;
 using Content.Server.Parallax;
@@ -57,6 +58,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly AtmosphereSystem _atmos = default!; //CP14 FTL atmos
 
     public const float TileMassMultiplier = 0.5f;
 

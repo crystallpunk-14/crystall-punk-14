@@ -25,3 +25,24 @@
   spawn: CP14Nail1
   icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
   maxCount: 10
+
+- type: stack
+  id: CP14CopperBar
+  name: copper bars
+  spawn: CP14CopperBar1
+  icon: { sprite: _CP14/Objects/Materials/copper_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: CP14IronBar
+  name: iron bars
+  spawn: CP14IronBar1
+  icon: { sprite: _CP14/Objects/Materials/iron_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: CP14GoldBar
+  name: gold bars
+  spawn: CP14GoldBar1
+  icon: { sprite: _CP14/Objects/Materials/gold_bar.rsi, state: bar_2 }
+  maxCount: 10

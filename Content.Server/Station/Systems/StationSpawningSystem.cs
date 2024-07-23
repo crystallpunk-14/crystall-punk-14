@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._CP14.Shuttles;
 using Content.Server.Access.Systems;
 using Content.Server.DetailExaminable;
 using Content.Server.Humanoid;
@@ -45,6 +46,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ActorSystem _actors = default!;
     [Dependency] private readonly ArrivalsSystem _arrivalsSystem = default!;
+    [Dependency] private readonly CP14ExpeditionSystem _CP14expedition = default!;
     [Dependency] private readonly ContainerSpawnPointSystem _containerSpawnPointSystem = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly IdCardSystem _cardSystem = default!;
@@ -65,7 +67,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         _spawnerCallbacks = new Dictionary<SpawnPriorityPreference, Action<PlayerSpawningEvent>>()
         {
-            { SpawnPriorityPreference.Arrivals, _arrivalsSystem.HandlePlayerSpawning },
+            { SpawnPriorityPreference.Arrivals, _CP14expedition.HandlePlayerSpawning }, //CP14 expedition system replaced
             {
                 SpawnPriorityPreference.Cryosleep, ev =>
                 {

@@ -1,0 +1,36 @@
+- type: entity
+  id: CP14BaseSword
+  parent: 
+  - BaseItem
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponLight
+  name: sword
+  description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
+  components:
+  - type: Item
+    size: Normal
+    storedRotation: -45 
+  - type: Clothing
+    equipDelay: 0.45
+    unequipDelay: 0.45
+    sprite: _CP14/Objects/Weapons/Melee/Sword/sword.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - back
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Sword/sword.rsi
+    layers:
+    - state: icon
+  - type: MeleeWeapon
+    attackRate: 1.5
+    wideAnimationRotation: 210
+    wideAnimation: CP14WeaponArcSlash
+    cPAnimationLength: 0.18
+    damage:
+      types:
+        Slash: 12
+    soundHit:
+      collection: MetalThud

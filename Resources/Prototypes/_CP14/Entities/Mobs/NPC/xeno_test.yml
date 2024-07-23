@@ -1,0 +1,17 @@
+- type: entity
+  id: CP14MobXeno
+  parent: MobXeno
+  components:
+  - type: CP14OutPVSDespawn
+
+- type: entity
+  id: CP14MobXenoPraetorian
+  parent: MobXenoPraetorian
+  components:
+  - type: CP14OutPVSDespawn
+
+- type: entity
+  id: CP14MobXenoDrone
+  parent: MobXenoDrone
+  components:
+  - type: CP14OutPVSDespawn

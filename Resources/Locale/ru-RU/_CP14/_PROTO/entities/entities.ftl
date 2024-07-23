@@ -1,3 +1,5 @@
+ent-CP14SeedTest = FUCK test SEED
+
 ent-CP14Fire = огонь
     .desc = Это огонь!
     .suffix = cp14
@@ -43,6 +45,9 @@ ent-CP14ClothingCloakSimpleWhite = белый плащ
 ent-CP14ClothingCloakSimpleDarkBlue = { ent-CP14ClothingCloakSimpleWhite }
     .desc = { ent-CP14ClothingCloakSimpleWhite.desc }
 
+ent-CP14ClothingCloakCaptainJacket = капитанский жилет
+    .desc = Белое золото говорит о том, что вы смотрите на серьезного представителя власти.
+
 ent-CP14ClothingEyesMonocle = монокль
     .desc = Аристократично и красиво.
 
@@ -70,6 +75,24 @@ ent-CP14ClothingHeadTriangularHat = остроконечная шляпа
 ent-CP14ClothingHeadTriangularHatGolden = позолоченная остроконечная шляпа
     .desc = Большая остроконечная шляпа для тех, кто любит выглядеть умным. Украшена золотым обручем.
 
+ent-CP14ClothingHeadRedBeret = красный берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadPurpleBeret = фиолетовый берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadYellowBeret = желтый берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadBlueBeret = синий берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadBlackBeret = черный берет
+    .desc = Это берет.
+
+ent-CP14ClothingHeadCaptainCap = капитанская кепка
+    .desc = Нет, ну вы посмотрите какой красавчик!
+
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
 
@@ -86,9 +109,9 @@ ent-CP14ClothingPantsLoincloth = набедренная повязка
     .desc = Свободные, ничего не мешает, да еще и выглядят экстремально брутально
 
 ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубаха
-    .desc = Приятный на ощупь материал, удобная свободная форма рубашки.
+    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
 
-ent-CP14ClothingShirtCottonBlueDark = хлопковая темная рубаха
+ent-CP14ClothingShirtCottonBlack = хлопковая черная рубаха
     .desc = { ent-CP14ClothingShirtCottonBlue.desc }
 
 ent-CP14ClothingShirtCottonPurple = хлопковая фиолетовая рубаха
@@ -120,9 +143,26 @@ ent-CP14Mist = облако
 ent-CP14MistVitalExtract = { ent-CP14Mist }
     .desc = { ent-CP14Mist.desc }
 
+ent-CP14ExpeditionShipTargetPoint = Expedition ship target point
+    .desc = One of the possible arrival points of a ship carrying players
+
 ent-CP14SpawnPointAdventurer = авантюрист
 
 ent-CP14SpawnPointAlchemist = алхимик
+
+ent-CP14ConstrainedSpawnerBase = None
+    .desc = lol
+
+ent-CP14ConstrainedSpawnerXeno = xeno constrained spawner
+    .desc = { ent-CP14ConstrainedSpawnerBase.desc }
+
+ent-CP14RandomSpawnerBattleRoyaleLootWeapon = Loot
+    .desc = lol
+    .suffix = Weapon
+
+ent-CP14RandomSpawnerBattleRoyaleLootTools = Loot
+    .desc = lol
+    .suffix = Tools
 
 ent-CP14RandomSpawnerGatherAgaricShroom = спавнер мухоморов
 
@@ -144,6 +184,9 @@ ent-CP14MobDwarf = мистер Дварф
 ent-CP14MobElf = { ent-CP14BaseMobElf }
     .desc = { ent-CP14BaseMobElf.desc }
 
+ent-CP14MobGoblin = { ent-CP14BaseMobGoblin }
+    .desc = { ent-CP14BaseMobGoblin.desc }
+
 ent-CP14MobHuman = мистер Человек
     .desc = { ent-CP14BaseMobHuman.desc }
 
@@ -154,20 +197,19 @@ ent-CP14BaseMobDwarf = Мистер Дварф
 
 ent-CP14BaseMobElf = Мистер Эльф
 
+ent-CP14BaseMobGoblin = Мистер Гоблин
+
 ent-CP14BaseMobHuman = Мистер Человек
 
 ent-CP14BaseMobTiefling = Мистер Тифлинг
 
-ent-CP14OreCopper = медь
+ent-CP14OreCopper = медная руда
     .desc = Кусочек бледной, тяжелой меди.
 
-ent-CP14OreIron = железо
+ent-CP14OreIron = железная руда
     .desc = Кусочек холодного, тяжелого железа.
 
-ent-CP14OreSilver = серебро
-    .desc = Кусочек блестящего, теплого серебра.
-
-ent-CP14OreGold = золото
+ent-CP14OreGold = золотая руда
     .desc = Кусочек мягкого, чистого золота.
 
 ent-CP14CopperCoin = медная корона
@@ -258,24 +300,6 @@ ent-CP14Nail110 = { ent-CP14Nail1 }
     .desc = { ent-CP14Nail1.desc }
     .suffix = 10
 
-ent-CP14BloodGrass = кровьтрава
-    .desc = Самое скучное и распространенное растение, растущее в дикой природе. Известна своими питательными свойствами.
-
-ent-CP14AgaricMushroom = мухомор
-    .desc = Этот ядовитый гриб часто можно встретить вблизи водоемов или других влажных мест. Не рекомендуется для употребления в пищу.
-
-ent-CP14ChromiumSlime = хромиевая слизь
-    .desc = Это редкое густое вещество можно обнаружить в потоке воды, как будто оно обладает собственным разумом. При попытке изменить саму слизь - она меняет реагент, с которым взаимодействует.
-
-ent-CP14WildSage = корень дикого шалфея
-    .desc = Корень повсеместно распространенного лекарственного растения, неплохо заживляющего физические повреждения и вызывающего откашливание.
-
-ent-CP14QuartzShard = грубый кварц
-    .desc = природный кристалл, являющийся естественным накопителем магической энергии. Его цвет отражает качество кристалла - чем выше спектр излучения, тем выше уровень утечки энергии.
-
-ent-CP14LumiMushroom = люмигриб
-    .desc = Слабо светящийся гриб. Часто используется алхимиками как средство для концентрации растворов.
-
 ent-CP14Cauldron = котел
     .desc = Тяжелый котелок. Он не такой громоздкий, как чан, но его можно нести в руках.
 
@@ -321,6 +345,27 @@ ent-CP14VialSmallLumiMushroom = { ent-CP14VialTiny }
     .desc = { ent-CP14VialTiny.desc }
     .suffix = Люмигриб
 
+ent-CP14Wheat = сноп пшеницы
+    .desc = У вас есть выбор: посадить семена обратно в землю, либо пустить их в муку.
+
+ent-CP14BloodGrass = кровьтрава
+    .desc = Самое скучное и распространенное растение, растущее в дикой природе. Известна своими питательными свойствами.
+
+ent-CP14AgaricMushroom = мухомор
+    .desc = Этот ядовитый гриб часто можно встретить вблизи водоемов или других влажных мест. Не рекомендуется для употребления в пищу.
+
+ent-CP14ChromiumSlime = хромиевая слизь
+    .desc = Это редкое густое вещество можно обнаружить в потоке воды, как будто оно обладает собственным разумом. При попытке изменить саму слизь - она меняет реагент, с которым взаимодействует.
+
+ent-CP14WildSage = корень дикого шалфея
+    .desc = Корень повсеместно распространенного лекарственного растения, неплохо заживляющего физические повреждения и вызывающего откашливание.
+
+ent-CP14QuartzShard = грубый кварц
+    .desc = природный кристалл, являющийся естественным накопителем магической энергии. Его цвет отражает качество кристалла - чем выше спектр излучения, тем выше уровень утечки энергии.
+
+ent-CP14LumiMushroom = люмигриб
+    .desc = Слабо светящийся гриб. Часто используется алхимиками как средство для концентрации растворов.
+
 ent-CP14EnergyCrystalBase = None
     .desc = Обработанные кристаллы кварца являются прекрасными хранителями магической энергии. А специальные разъемы позволяют удобно вставлять их в магические устройства, превращая в энергетические батарейки.
 
@@ -347,11 +392,11 @@ ent-CP14Bucket = ведро
 ent-CP14OldLantern = Старая Лампа
     .desc = Пережиток прошлого техномагии. Большой, тяжелый, непрактичный. Таким приятно разве что бить по голове.
 
+ent-CP14Rope = веревка
+    .desc = Многофункциональная веревка. Ей можно связать что-нить. Или кого-нибудь.
+
 ent-CP14BaseSharpeningStone = точильный камень
     .desc = Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
-
-ent-CP14Shovel = лопата
-    .desc = Орудие для вскапывания земли, рытья грядок или могил.
 
 ent-CP14BaseBattleHammer = боевой молот
     .desc = A big heavy hammer! Bruh!
@@ -371,14 +416,32 @@ ent-CP14BaseLightHammer = легкий молот
 ent-CP14BaseMace = булава
     .desc = Тяжелый кусок металла на длинной палке. Что может быть проще?
 
+ent-CP14BaseShield = щит
+    .desc = Деревянный щит, способный выдержать несколько ударов.
+
 ent-CP14BaseSickle = серп
     .desc = Изначально разработанное как оружие против травы, серп внезапно показал себя хорош и в более кровавой жатве.
 
 ent-CP14BaseThrowableSpear = метательное копьё
     .desc = Оружие, исправно выполняющее свой долг еще со времен эпохи великанов.
 
+ent-CP14BaseSword = меч
+    .desc = Золотой стандарт холодного оружия. Средняя длина, удобная рукоять и никаких излишеств.
+
 ent-CP14BaseTwoHandedSword = двуручный меч
     .desc = Мощное оружие, требующее огромной силы и умения для эффективного использования.
+
+ent-CP14TwoHandedSwordScythe = коса
+    .desc = Большая двуручная коса. Что вы будете косить ею? Пшено, или головы своих врагов?
+
+ent-CP14BaseHoe = мотыга
+    .desc = Фермерский инструмент для подготовки почвы под посадки, либо очистки от сорняков.
+
+ent-CP14BasePickaxe = кирка
+    .desc = Идеально заточена, и готова вгрызаться в земную твердь.
+
+ent-CP14BaseShovel = лопата
+    .desc = Орудие для вскапывания земли, рытья грядок или могил.
 
 ent-CP14WeaponRevolverNavy = револьвер "Марин"
     .desc = Увесистый капсюльный револьвер серии "Марин". В настоящее время револьверы серии "Марин" стоят баснословные деньги, и их могут позволить себе исключительно преуспевающие моряки и торговцы.
@@ -543,6 +606,11 @@ ent-CP14CrystalDiamondsBig = { ent-CP14CrystalBase }
 ent-CP14FloorWater = вода
     .desc = Брух
 
+ent-CP14HighBush = высокий куст
+    .desc = Высокие и густые заросли. Возможно кто-то наблюдает за тобой из них.
+
+ent-CP14RandomBushOffsetSpawner = спавнер куста (рандомный сдвиг)
+
 ent-CP14BaseTree = дерево
     .desc = Десятилетия жизни и роста, насыщающие окружающую природу свежим воздухом.
 
@@ -667,8 +735,39 @@ ent-CP14WallmountBarShelfB = { ent-CP14WallmountBarShelfA }
     .desc = { ent-CP14WallmountBarShelfA.desc }
     .suffix = 2
 
+ent-CP14Workbench = верстак
+    .desc = Стол для создания различного базового инструментария.
+
 ent-CP14FrameWooden = каркас деревянной стены
     .desc = Деревянный каркас для деревянных стен любых видов.
+
+ent-CP14AlchemyFurnaceDebug = { ent-CP14AlchemyFurnace }
+    .desc = { ent-CP14AlchemyFurnace.desc }
+
+ent-CP14AlchemyFurnace = алхимическая печь
+    .desc = Печь, работающая на дровах, угле или любом другом горящем материале. Удобна для подогрева алхимических зелий.
+
+ent-CP14AlchemyNormalizer = нормализатор растворов
+    .desc = Алхимический прибор, удаляющий мелкий осадок из растворов и стабилизирующий его для дальнейшей работы
+
+ent-CP14BaseVat = чан
+    .desc = Очень большой чан для хранения огромного количества жидкости. Тяжелый, неудобный для переноски.
+
+ent-CP14PloughedGround = вскопанная почва
+
+ent-CP14SeedbedDefault = лоток для семян
+
+ent-CP14GatherableWildBase = { ent-CP14GatherableBase }
+    .desc = { ent-CP14GatherableBase.desc }
+
+ent-CP14GatherablePlantBase = { ent-CP14GatherableBase }
+    .desc = { ent-CP14GatherableBase.desc }
+
+ent-CP14PlantWheat = пщеница
+    .desc = Наиболее популярная культура. Непритязательна, и открывает дорогу к разнообразию мучных изделий.
+
+ent-CP14PlantWheatDeath = мертвая пшеница
+    .desc = Грустное зрелище потерянной еды.
 
 ent-CP14GatherableBloodgrass = кровьтрава
     .desc = Самое скучное и распространенное растение, которое можно встретить в природе, - это темно-коричневая трава.
@@ -690,18 +789,6 @@ ent-CP14GatherableLumiMushroom = люмигрибы
     .desc = Слабо светящийся гриб. Часто используется алхимиками как средство для концентрации растворов.
     .suffix = Gatherable
 
-ent-CP14AlchemyFurnaceDebug = { ent-CP14AlchemyFurnace }
-    .desc = { ent-CP14AlchemyFurnace.desc }
-
-ent-CP14AlchemyFurnace = алхимическая печь
-    .desc = Печь, работающая на дровах, угле или любом другом горящем материале. Удобна для подогрева алхимических зелий.
-
-ent-CP14AlchemyNormalizer = нормализатор растворов
-    .desc = Алхимический прибор, удаляющий мелкий осадок из растворов и стабилизирующий его для дальнейшей работы
-
-ent-CP14BaseVat = чан
-    .desc = Очень большой чан для хранения огромного количества жидкости. Тяжелый, неудобный для переноски.
-
 ent-CP14ChestGeneric = сундук
     .desc = Chest.
 
@@ -719,9 +806,23 @@ ent-CP14CrateCoffin = гроб
 
 ent-CP14Cliff = обрыв
     .desc = Серьезные неровности природного ландшафта.
+    .suffix = Прямой
 
 ent-CP14CliffCorner = { ent-CP14Cliff }
     .desc = { ent-CP14Cliff.desc }
+    .suffix = Угол
+
+ent-CP14CliffCornerSmall = { ent-CP14Cliff }
+    .desc = { ent-CP14Cliff.desc }
+    .suffix = Малый угол
+
+ent-CP14CliffEndLeft = { ent-CP14Cliff }
+    .desc = { ent-CP14Cliff.desc }
+    .suffix = Левый край
+
+ent-CP14CliffEndRight = { ent-CP14Cliff }
+    .desc = { ent-CP14Cliff.desc }
+    .suffix = Правый край
 
 ent-CP14IronGrilleBase = железная решетка
     .desc = Прочный барьер из сваренных вместе железных прутьев.
@@ -747,10 +848,6 @@ ent-CP14WallStone = камень
 ent-CP14WallDirt = земляной холм
     .desc = bruh
 
-ent-CP14WallStoneSilverOre = { ent-CP14WallStone }
-    .desc = A solid stone natural wall. You see the tantalizing particles of silver in it.
-    .suffix = silver ore
-
 ent-CP14WallStoneGoldOre = { ent-CP14WallStone }
     .desc = A solid stone natural wall. You see the tantalizing particles of gold in it.
     .suffix = gold ore
@@ -771,6 +868,9 @@ ent-CP14WallWooden = деревянная стена
 
 ent-CP14WallCardboard = картонная стена
     .desc = Тонкая, непрочная стена из бумаги и картона. Популярна в теплых странах.
+
+ent-CP14WallCyan = голубая стена
+    .desc = { ent-CP14BaseWall.desc }
 
 ent-CP14BaseFenceWood = деревянный забор
     .desc = Деревянный кусок ограды. Надеюсь, за ним находится сад бабушки.
@@ -813,6 +913,19 @@ ent-CP14WindowStoneBrick = окно в стене из каменного кир
 
 ent-CP14WindowWooden = wooden window
     .desc = A wooden wall with a glass window in it.
+
+ent-CP14OreSilver = серебро
+    .desc = Кусочек блестящего, теплого серебра.
+
+ent-CP14WallStoneSilverOre = { ent-CP14WallStone }
+    .desc = A solid stone natural wall. You see the tantalizing particles of silver in it.
+    .suffix = silver ore
+
+ent-CP14ClothingHeadWhiteBeret = белый берет
+    .desc = Это берет.
+
+ent-CP14ClothingShirtCottonBlueDark = хлопковая темная рубаха
+    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
 
 ent-CP14ClothingEyesGoldGlasses = золотые очки
     .desc = Аристократично, модно, да еще и с позолотой.

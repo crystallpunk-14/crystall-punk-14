@@ -26,6 +26,10 @@
               doAfter: 1
         - to: CP14TableWooden
           steps:
+            - tool: CP14Hammering
+              doAfter: 1
+        - to: CP14Workbench
+          steps:
             - material: CP14Nail
               amount: 1
               doAfter: 1
@@ -34,6 +38,14 @@
               
     - node: CP14TableWooden
       entity: CP14TableWooden
+      edges:
+        - to: CP14TableWoodenFrame
+          steps:
+            - tool: Screwing #TODO - new tool
+              doAfter: 1
+              
+    - node: CP14Workbench
+      entity: CP14Workbench
       edges:
         - to: CP14TableWoodenFrame
           steps:
