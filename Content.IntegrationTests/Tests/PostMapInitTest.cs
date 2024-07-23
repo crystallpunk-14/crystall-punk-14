@@ -43,31 +43,15 @@ namespace Content.IntegrationTests.Tests
         };
 
         private static readonly string[] GameMaps =
-        {
-            "Dev", //CrystallPunk Map replacement
-            //"TestTeg",
-            //"Fland",
-            //"Meta",
-            //"Packed",
-            //"Cluster",
-            //"Omega",
-            //"Bagel",
-            //"Origin",
+        {//CrystallPunk Map replacement
+            "Dev",
             "CentComm",
-            //"Box",
-            //"Europa",
-            //"Saltern",
-            //"Core",
-            //"Marathon",
             "MeteorArena",
-            //"Atlas",
-            //"Reach",
-            //"Train",
-            //"Oasis"
 
             //CrystallPunk maps
             "AlchemyTest",
-            "BattleRoyale"
+            "BattleRoyale",
+            //CrystallPunk Map replacement end
         };
 
         /// <summary>
