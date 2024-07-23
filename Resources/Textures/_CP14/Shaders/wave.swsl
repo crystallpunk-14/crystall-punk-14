@@ -9,8 +9,7 @@ uniform highp float Offset = 0.0;
 
 void fragment() {
     // Re-create base mvp
-    highp vec3 lightSample = texture2D(lightMap, Pos).rgb;
-    COLOR = zTexture(UV) * VtxModulate * vec4(lightSample, 1.0);
+    COLOR = zTexture(UV) * VtxModulate;
 }
 
 void vertex() {
