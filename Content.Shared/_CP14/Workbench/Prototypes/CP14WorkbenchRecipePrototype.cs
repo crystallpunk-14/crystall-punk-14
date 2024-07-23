@@ -18,7 +18,7 @@ public sealed partial class CP14WorkbenchRecipePrototype : IPrototype
     public TimeSpan CraftTime = TimeSpan.FromSeconds(1f);
 
     [DataField]
-    public SoundSpecifier CraftSound = new SoundCollectionSpecifier("CP14Hammering");
+    public SoundSpecifier? OverrideCraftSound;
 
     [DataField]
     public Dictionary<EntProtoId, int> Entities = new();

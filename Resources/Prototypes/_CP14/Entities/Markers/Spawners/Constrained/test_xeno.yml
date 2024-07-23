@@ -2,6 +2,7 @@
   id: CP14ConstrainedSpawnerBase
   abstract: true
   parent: MarkerBase
+  description: lol
   components:
   - type: Sprite
     layers:
@@ -27,6 +28,7 @@
 - type: entity
   parent: CP14ConstrainedSpawnerBase
   id: CP14ConstrainedSpawnerXeno
+  name: xeno constrained spawner
   components:
   - type: TriggerOnCollide
     fixtureID: spawn

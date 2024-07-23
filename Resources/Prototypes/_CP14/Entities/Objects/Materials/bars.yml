@@ -1,0 +1,134 @@
+- type: entity
+  id: CP14CopperBar1
+  parent: BaseItem
+  name: copper bar
+  suffix: 1
+  description: A heavy, slightly green, piece of refined copper
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/copper_bar.rsi
+    layers:
+      - state: bar
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14CopperBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Copper: 100
+
+- type: entity
+  id: CP14CopperBar5
+  parent: CP14CopperBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14CopperBar10
+  parent: CP14CopperBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+
+
+- type: entity
+  id: CP14IronBar1
+  parent: BaseItem
+  name: iron bar
+  suffix: 1
+  description: A heavy piece of refined iron
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/iron_bar.rsi
+    layers:
+      - state: bar
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14IronBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Iron: 100
+
+- type: entity
+  id: CP14IronBar5
+  parent: CP14IronBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14IronBar10
+  parent: CP14IronBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+
+
+- type: entity
+  id: CP14GoldBar1
+  parent: BaseItem
+  name: gold bar
+  description: A warm to the touch, soft piece of refined gold.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/gold_bar.rsi
+    layers:
+      - state: bar
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14GoldBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Gold: 100
+
+- type: entity
+  id: CP14GoldBar5
+  parent: CP14GoldBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14GoldBar10
+  parent: CP14GoldBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10

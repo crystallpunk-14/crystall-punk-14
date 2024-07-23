@@ -101,7 +101,7 @@
   category: construction-category-furniture
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: icon
+    state: workbench
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
