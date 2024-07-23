@@ -1,0 +1,65 @@
+- type: entity
+  id: CP14BaseShield
+  parent: BaseItem
+  name: shield
+  description: A wooden shield capable of withstanding multiple blows.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Shield/shield.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Objects/Weapons/Melee/Shield/shield.rsi
+    size: Ginormous
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+  - type: Clothing
+    equipDelay: 0.45
+    unequipDelay: 0.45
+    sprite: _CP14/Objects/Weapons/Melee/Shield/shield.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - back
+  - type: Damageable
+    damageContainer: Shield
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 140
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100 #This is probably enough damage before it breaks
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              SheetSteel:
+                min: 2
+                max: 2
+              SheetGlass:
+                min: 2
+                max: 2

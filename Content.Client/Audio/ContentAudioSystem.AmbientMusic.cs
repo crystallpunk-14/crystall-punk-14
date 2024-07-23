@@ -4,6 +4,7 @@ using Content.Shared.Audio;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Random;
+using Content.Shared.Random.Rules;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
@@ -116,6 +117,7 @@ public sealed partial class ContentAudioSystem
 
     private void OnRoundEndMessage(RoundEndMessageEvent ev)
     {
+        OnRoundEndMessageAmbientLoop(); //CP14
         // If scoreboard shows then just stop the music
         _ambientMusicStream = _audio.Stop(_ambientMusicStream);
         _nextAudio = TimeSpan.FromMinutes(3);

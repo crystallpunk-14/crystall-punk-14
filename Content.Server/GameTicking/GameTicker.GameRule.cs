@@ -297,8 +297,13 @@ public sealed partial class GameTicker
             if (proto.Abstract)
                 continue;
 
-            if (proto.HasComponent<GameRuleComponent>())
-                yield return proto;
+            if (proto.TryGetComponent<GameRuleComponent>(out var rule))
+            {
+                //CP14 gamerule console filter
+                if (rule.CP14Allowed)
+                    yield return proto;
+                //CP14 gamerule console filter end
+            }
         }
     }
 
@@ -324,6 +329,13 @@ public sealed partial class GameTicker
 
         foreach (var rule in args)
         {
+            if (!_prototypeManager.HasIndex(rule))
+            {
+                shell.WriteError($"Invalid game rule {rule} was skipped.");
+
+                continue;
+            }
+
             if (shell.Player != null)
             {
                 _adminLogger.Add(LogType.EventStarted, $"{shell.Player} tried to add game rule [{rule}] via command");

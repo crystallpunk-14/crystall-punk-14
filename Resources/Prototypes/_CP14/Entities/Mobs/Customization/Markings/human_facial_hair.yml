@@ -29,3 +29,83 @@
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
       state: goateemush
+
+- type: marking
+  id: CP14HumanFacialHairBriefs
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: briefs
+
+- type: marking
+  id: CP14HumanFacialHairCircle
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: circle
+
+- type: marking
+  id: CP14HumanFacialHairEspanol
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: espanol
+
+- type: marking
+  id: CP14HumanFacialHairImperial
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: imperial
+
+- type: marking
+  id: CP14HumanFacialHairMachete
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: machete
+
+- type: marking
+  id: CP14HumanFacialHairMutton
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: mutton
+
+- type: marking
+  id: CP14HumanFacialHairPigtail
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: pigtail
+
+- type: marking
+  id: CP14HumanFacialHairSage
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: sage
+
+- type: marking
+  id: CP14HumanFacialHairWatson
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: watson
+
+- type: marking
+  id: CP14HumanFacialHairWhiskers
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: whiskers

@@ -47,3 +47,8 @@
   license: "CC-BY-4.0"
   copyright: 'by InspectorJ of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/InspectorJ/sounds/406048/"
+
+- files: ["sawing1.ogg", "sawing2.ogg", "sawing3.ogg", "sawing4.ogg", "sawing5.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by deleted_user_7146007 of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/deleted_user_7146007/sounds/383725/"

@@ -1,0 +1,139 @@
+- type: entity
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobGoblin
+  name: Mr. Goblin
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: CP14Goblin
+  - type: Hunger
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Goblin/parts.rsi
+    state: full
+  - type: Thirst
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodMeatHuman
+        amount: 5
+  - type: Body
+    prototype: CP14Human
+    requiredLegs: 2
+  - type: Bloodstream
+    bloodReagent: CP14Blood
+  - type: Hands
+    handDisplacement:
+      sizeMaps:
+        32:
+          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+          state: hands
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: belt
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: eyes
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: gloves
+      head:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shirt
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shoes
+
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobGoblinDummy
+  noSpawn: true
+  components:
+  - type: HumanoidAppearance
+    species: CP14Goblin
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: belt
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: eyes
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: gloves
+      head:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shirt
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shoes

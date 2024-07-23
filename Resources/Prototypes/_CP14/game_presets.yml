@@ -1,9 +1,20 @@
 - type: gamePreset
-  id: CP14Playtest
+  id: Secret
   alias:
-    - test
-  name: cp14-playtest-name
-  description: cp14-playtest-desc
-  showInVote: true
+    - secret
+    - sekrit
+  name: secret-title
+  showInVote: false
+  cP14Allowed: true
+  description: secret-description
   rules:
-    - CP14Playtest
+    - Secret
+
+- type: gamePreset
+  id: CP14ResourceHarvesting
+  name: cp14-gamepreset-resource-harvest
+  description: cp14-gamepreset-resource-harvest-desc
+  showInVote: true
+  cP14Allowed: true
+  rules:
+    - CP14ResourceHarvesting

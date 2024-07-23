@@ -3,18 +3,20 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
+  followSkinColor: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn1
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn1
 
 - type: marking
   id: CP14TieflingHorns2
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
+  followSkinColor: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn2
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn2
 
 - type: marking
   id: CP14TieflingHorns3
@@ -22,10 +24,9 @@
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
-  forcedColoring: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn3
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn3
 
 - type: marking
   id: CP14TieflingHorns3Broken
@@ -33,10 +34,9 @@
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
-  forcedColoring: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn3_broken
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn3_broken
 
 - type: marking
   id: CP14TieflingHorns4
@@ -44,10 +44,9 @@
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
-  forcedColoring: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn4
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn4
 
 - type: marking
   id: CP14TieflingHorns5
@@ -55,10 +54,9 @@
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
-  forcedColoring: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn5
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn5
 
 - type: marking
   id: CP14TieflingHorns5Broken
@@ -66,10 +64,9 @@
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
-  forcedColoring: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn5_broken
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn5_broken
 
 - type: marking
   id: CP14TieflingHorns6
@@ -77,8 +74,16 @@
   markingCategory: HeadTop
   speciesRestriction: [ CP14Tiefling ]
   followSkinColor: true
-  forcedColoring: true
   sprites:
-    - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
-      state: horn6
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn6
 
+- type: marking
+  id: CP14TieflingHorns7
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _CP14/Mobs/Customization/tiefling_horns.rsi
+    state: horn7

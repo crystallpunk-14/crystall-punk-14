@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from tgstation and resprite by Jaraten(Github/Discord)",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+        {
+            "name": "grass_high_bush1"
+        },
+        {
+            "name": "grass_high_bush2"
+        },
+        {
+            "name": "grass_high_bush3"
+        },
+        {
+            "name": "grass_high_bush4"
+        }
+    ]
+}

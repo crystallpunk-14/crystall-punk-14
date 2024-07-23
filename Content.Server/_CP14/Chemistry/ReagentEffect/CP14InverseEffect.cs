@@ -1,6 +1,7 @@
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
@@ -9,7 +10,7 @@ namespace Content.Server._CP14.Chemistry.ReagentEffect;
 
 [UsedImplicitly]
 [DataDefinition]
-public sealed partial class CP14InverseEffect : Shared.Chemistry.Reagent.ReagentEffect
+public sealed partial class CP14InverseEffect : EntityEffect
 {
     [DataField]
     public Dictionary<ProtoId<ReagentPrototype>, ProtoId<ReagentPrototype>> Inversion = new();
@@ -18,30 +19,35 @@ public sealed partial class CP14InverseEffect : Shared.Chemistry.Reagent.Reagent
         return Loc.GetString("cp14-reagent-effect-guidebook-inverse-effect", ("chance", Probability));
     }
 
-    public override void Effect(ReagentEffectArgs args)
+    public override void Effect(EntityEffectBaseArgs args)
     {
-        if (args.Source == null)
-            return;
-
-        if (!args.EntityManager.TryGetComponent<SolutionComponent>(args.SolutionEntity, out var solutionComp))
-            return;
-
-        var solutionContainer = args.EntityManager.System<SharedSolutionContainerSystem>();
-
-        var ent = new Entity<SolutionComponent>(args.SolutionEntity, solutionComp);
-
-        Dictionary<ReagentId, FixedPoint2> taskList = new();
-
-        foreach (var reagent in args.Source.Contents)
+        if (args is EntityEffectReagentArgs reagentArgs)
         {
-            if (Inversion.ContainsKey(reagent.Reagent.Prototype))
-                taskList.Add(reagent.Reagent, reagent.Quantity);
+            if (reagentArgs.Source is null)
+                return;
+
+            if (reagentArgs.SolutionEntity is null)
+                return;
+
+            var solutionContainer = args.EntityManager.System<SharedSolutionContainerSystem>();
+
+            Dictionary<ReagentId, FixedPoint2> taskList = new();
+
+            foreach (var reagent in reagentArgs.Source.Contents)
+            {
+                if (Inversion.ContainsKey(reagent.Reagent.Prototype))
+                    taskList.Add(reagent.Reagent, reagent.Quantity);
+            }
+
+            foreach (var task in taskList)
+            {
+                solutionContainer.RemoveReagent(reagentArgs.SolutionEntity.Value, task.Key, task.Value);
+                solutionContainer.TryAddReagent(reagentArgs.SolutionEntity.Value, Inversion[task.Key.Prototype].Id, task.Value);
+            }
+            return;
         }
 
-        foreach (var task in taskList)
-        {
-            solutionContainer.RemoveReagent(ent, task.Key, task.Value);
-            solutionContainer.TryAddReagent(ent, Inversion[task.Key.Prototype].Id, task.Value);
-        }
+        // TODO: Someone needs to figure out how to do this for non-reagent effects.
+        throw new NotImplementedException();
     }
 }

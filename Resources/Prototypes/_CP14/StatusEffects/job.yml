@@ -18,3 +18,10 @@
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
     state: Alchemist
+
+- type: statusIcon
+  parent: CP14JobIcon
+  id: CP14JobIconCaptain
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Captain

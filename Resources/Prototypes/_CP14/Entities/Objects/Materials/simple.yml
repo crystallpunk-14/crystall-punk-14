@@ -163,7 +163,7 @@
         variation: 0.03
         volume: 2
     outputs:
-      - CP14FloorWoodPlanks
+      - CP14FloorOakWoodPlanks # TODO
   - type: Stack
     stackType: CP14WoodenPlanks
     count: 1

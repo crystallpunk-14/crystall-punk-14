@@ -2,7 +2,7 @@
   id: CP14DeathMatchGear
   equipment:
     cloak: CP14ClothingCloakFurcapeBlue
-    shirt: CP14ClothingShirtCottonBlueDark
+    shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsLoincloth
     shoes: CP14ClothingShoesSandals
   inhand:

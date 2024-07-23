@@ -1,5 +1,5 @@
 ﻿- files: ["crystal.ogg"]
-  license: "CC-BY-NC-SA-3.0"
+  license: "CC-BY-SA-3.0"
   copyright: "'Crystal' by Mental4815162342 (github). Converted from MP3 to OGG."
   source: "https://github.com/crystallpunk-14/crystall-punk-14"
 
@@ -7,3 +7,13 @@
   license: "CC0-1.0"
   copyright: "'Eldermourne' by jarrodwhitley from Freesound.com. Converted to mono OGG."
   source: "https://freesound.org/people/jarrodwhitley/sounds/614923/"
+
+- files: ["arcane_winds.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "'Arcane Winds' by LINK, created for CrystallPunk14"
+  source: "https://github.com/crystallpunk-14/crystall-punk-14"
+
+- files: ["the_way.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "'The Ways' by R1VKX, created for CrystallPunk14"
+  source: "https://github.com/crystallpunk-14/crystall-punk-14"

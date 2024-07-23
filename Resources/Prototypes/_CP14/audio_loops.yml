@@ -1,0 +1,50 @@
+
+- type: ambientLoop
+  id: Grasslands
+  sound:
+    params:
+      volume: -3
+    collection: CP14LoopGrassland
+  rules: NearGrass
+
+- type: ambientLoop
+  id: Water
+  sound:
+    params:
+      volume: 18
+    collection: CP14LoopWater
+  rules: NearWater
+
+# Sound collections
+- type: soundCollection
+  id: CP14LoopGrassland
+  files:
+    - /Audio/_CP14/Ambience/Loops/grasslands.ogg
+
+- type: soundCollection
+  id: CP14LoopWater
+  files:
+    - /Audio/_CP14/Ambience/Loops/water.ogg
+
+# Rules
+- type: rules
+  id: NearGrass
+  rules:
+    - !type:NearbyTilesPercentRule
+      ignoreAnchored: true
+      percent: 0.5
+      tiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      range: 5
+
+- type: rules
+  id: NearWater
+  rules:
+    - !type:NearbyEntitiesRule
+      count: 5
+      whitelist:
+        tags:
+          - CP14AmbientWater
+      range: 4

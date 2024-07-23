@@ -1,30 +1,29 @@
 - type: gameMap
-  id: CaveArena
-  mapName: Cave Arena
-  mapPath: /Maps/_CP14/cave-arena.yml
+  id: MeteorArena
+  mapName: Meteor Arena
+  mapPath: /Maps/_CP14/meteor-arena.yml
   minPlayers: 0
   stations:
-    CaveArena:
+    Arena:
       stationProto: StandardStationArena
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Cave Arena"
+          mapNameTemplate: "Meteor Arena"
         - type: StationJobs
           availableJobs:
-            CP14Adventurer: [ -1, -1 ]
+            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
 
 - type: gameMap
   id: AlchemyTest
   mapName: Alchemy test
   mapPath: /Maps/_CP14/alchemy_test.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   stations:
     AlchemyTest:
       stationProto: StandardStationArena
       components:
-        - type: StationRandomTransform
-          enableStationRotation: false
-          maxStationOffset: null
         - type: CP14StationAdditionalMap
           mapPaths:
           - /Maps/_CP14/alchemy_test_layer2.yml
@@ -34,3 +33,25 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
+
+- type: gameMap
+  id: BattleRoyale
+  mapName: Battle royale
+  mapPath: /Maps/_CP14/battle_royale.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    BattleRoyale:
+      stationProto: StandardStationArena
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Battle royale"
+        - type: StationJobs
+          availableJobs:
+            CP14Adventurer: [ -1, -1 ]
+            CP14Alchemist: [ -1, -1 ]
+        - type: StationBiome
+          biome: CP14GrassFill
+        - type: CP14StationExpeditionTarget
+          shuttlePath: /Maps/_CP14/Shuttles/test-ship.yml
