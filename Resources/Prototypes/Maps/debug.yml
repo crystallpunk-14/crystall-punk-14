@@ -1,29 +1,3 @@
-- type: gameMap
-  id: Empty
-  mapName: Empty
-  mapPath: /Maps/Test/empty.yml
-  minPlayers: 0
-  stations:
-    Empty:
-      stationProto: StandardNanotrasenStation
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Empty"
-        - type: StationJobs
-          availableJobs:
-            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
-
-- type: gameMap
-  id: Dev
-  mapName: Dev
-  mapPath: /Maps/_CP14/dev_map.yml #CrystallPunk Dev replacement
-  minPlayers: 0
-  stations:
-    Dev:
-      stationProto: StandardNanotrasenStation
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Dev"
-        - type: StationJobs
-          availableJobs:
-            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+# NOT USED
+# DO  NOT REVERT!
+#  COPY OF THIS MAPS EXIST IN _CP14 FOLDERS
