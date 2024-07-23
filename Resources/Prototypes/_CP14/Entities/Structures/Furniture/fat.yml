@@ -1,0 +1,53 @@
+﻿- type: entity
+  id: CP14Fat1
+  parent: BaseItem
+  name: fat
+  suffix: 1
+  description: Too much fat can lead to obesity.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/fat.rsi
+    layers:
+    - state: fat_small
+      map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Fat
+    count: 1
+    baseLayer: base
+    layerStates:
+    - fat_small
+    - fat_medium
+    - fat_large
+  - type: Material
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+        - LowImpassable
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        mask:
+        - ItemMask
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+    - CP14Fat
+
+- type: entity
+  id: CP14Fat10
+  parent: CP14Fat1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5

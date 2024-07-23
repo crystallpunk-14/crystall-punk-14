@@ -27,6 +27,13 @@
   maxCount: 10
 
 - type: stack
+  id: CP14Fat
+  name: Fat
+  spawn: CP14Fat1
+  icon: { sprite: _CP14/Structures/Furniture/fat.rsi, state: fat_small }
+  maxCount: 5
+
+- type: stack
   id: CP14CopperBar
   name: copper bars
   spawn: CP14CopperBar1

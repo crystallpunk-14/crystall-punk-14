@@ -1,0 +1,92 @@
+﻿- type: entity # TODO Крафт, анимация горения
+  id: CP14SteelCandle
+  parent: CP14BaseFireplace
+  name: steel candle
+  description: Not the best way to light up a room.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/candles.rsi
+    layers:
+      - state: steel_single_candle_empty
+      - state: single-2
+        visible: false
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: StorageFillVisualizer
+    maxFillLevels: 3
+    fillBaseName: single
+  - type: Storage
+    grid:
+    - 0,0,0,1
+    whitelist:
+      tags:
+      - CP14Fat
+  - type: CP14FireSpread
+    radius: 0 # Радиус возможно надо будет вернуть, пока убрал.
+
+- type: entity # TODO Крафт, анимация горения
+  id: CP14BrassCandle
+  parent: CP14SteelCandle
+  name: brass candle
+  description: Not the best way to light up a room.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/candles.rsi
+    layers:
+    - state: brass_single_candle_empty
+    - state: single-2
+      visible: false
+    - map: [ "enum.StorageFillLayers.Fill" ]
+
+- type: entity # TODO Крафт, анимация горения
+  id: CP14DoubleSteelCandle
+  parent: CP14SteelCandle
+  name: double steel candle
+  description: Not the best way to light up a room and waste a fat.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/candles.rsi
+    layers:
+    - state: steel_double_candle_empty
+    - state: double-2
+      visible: false
+    - map: [ "enum.StorageFillLayers.Fill" ]
+  - type: StorageFillVisualizer
+    maxFillLevels: 3
+    fillBaseName: double
+  - type: Storage
+    grid:
+    - 0,0,1,1 # Потрогать размеры
+    whitelist:
+      tags:
+      - CP14Fat
+  - type: CP14FireSpread
+    radius: 0 # Радиус возможно надо будет вернуть, пока убрал.
+
+- type: entity # TODO Крафт, анимация горения
+  id: CP14DoubleBrassCandle
+  parent: CP14DoubleSteelCandle
+  name: double brass candle
+  description: Not the best way to light up a room and waste a fat.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/candles.rsi
+    layers:
+    - state: brass_double_candle_empty
+    - state: double-2
+      visible: false
+    - map: [ "enum.StorageFillLayers.Fill" ]
