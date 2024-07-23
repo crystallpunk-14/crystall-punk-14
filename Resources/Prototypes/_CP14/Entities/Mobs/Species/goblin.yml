@@ -22,97 +22,62 @@
   - type: Bloodstream
     bloodReagent: CP14Blood
   - type: Hands
-    displacements:
-      Hands:
-        layer:
+    handDisplacement:
+      sizeMaps:
+        32:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
           state: hands
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
   - type: Inventory
     templateId: CP14Human
     displacements:
       belt:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: belt
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: belt
       cloak:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: cloak
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
       eyes:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: eyes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: eyes
       gloves:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: gloves
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: gloves
       head:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-        layer48:
-          sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: head
       mask:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: mask
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: mask
       pants:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: pants
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: pants
       shirt:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: shirt
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shirt
       shoes:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: shoes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shoes
 
 - type: entity
   parent: CP14BaseSpeciesDummy
@@ -125,81 +90,50 @@
     templateId: CP14Human
     displacements:
       belt:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: belt
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: belt
       cloak:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: cloak
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
       eyes:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: eyes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: eyes
       gloves:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: gloves
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: gloves
       head:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
-        layer48:
-          sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
-          state: head
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: head
       mask:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: mask
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: mask
       pants:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: pants
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: pants
       shirt:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: shirt
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shirt
       shoes:
-        layer:
-          sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
-          state: shoes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: shoes

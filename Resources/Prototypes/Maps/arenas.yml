@@ -1,14 +1,3 @@
-- type: gameMap
-  id: MeteorArena
-  mapName: Meteor Arena
-  mapPath: /Maps/_CP14/meteor-arena.yml
-  minPlayers: 0
-  stations:
-    Arena:
-      stationProto: StandardStationArena
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Meteor Arena"
-        - type: StationJobs
-          availableJobs:
-            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+# NOT USED
+# DO  NOT REVERT!
+#  COPY OF THIS MAPS EXIST IN _CP14 FOLDERS

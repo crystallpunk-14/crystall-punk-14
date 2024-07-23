@@ -1,13 +1,11 @@
 - type: entity
   save: false
-  noSpawn: true
   name: Urist McHands
   parent: BaseMobHuman
   id: MobHuman
 
 #Syndie
 - type: entity
-  noSpawn: true
   parent: MobHuman
   id: MobHumanSyndicateAgentBase
   name: syndicate agent
@@ -25,7 +23,6 @@
       - Syndicate
 
 - type: entity
-  noSpawn: true
   parent: MobHumanSyndicateAgentBase
   id: MobHumanSyndicateAgent
   name: syndicate agent
@@ -37,11 +34,36 @@
       giveObjectives: false
 
 - type: entity
-  noSpawn: true
+  parent: MobHumanSyndicateAgent
+  id: MobHumanSyndicateAgentMedic
+  name: syndicate medic
+  components:
+  - type: Loadout
+    prototypes: [SyndicateReinforcementMedic]
+
+- type: entity
+  parent: MobHumanSyndicateAgent
+  id: MobHumanSyndicateAgentSpy
+  name: syndicate spy
+  components:
+  - type: Loadout
+    prototypes: [SyndicateReinforcementSpy]
+
+- type: entity
+  parent: MobHumanSyndicateAgent
+  id: MobHumanSyndicateAgentThief
+  name: syndicate thief
+  components:
+  - type: Loadout
+    prototypes: [SyndicateReinforcementThief]
+
+- type: entity
   parent: MobHumanSyndicateAgentBase
   id: MobHumanSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   suffix: Human, NukeOps
   components:
+    - type: Loadout
+      prototypes: [SyndicateOperativeGearReinforcementNukeOps]
     - type: NukeOperative
 
 # Nuclear Operative

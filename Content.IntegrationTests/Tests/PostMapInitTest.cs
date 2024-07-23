@@ -16,6 +16,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Content.Shared.Station.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -30,8 +31,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] NoSpawnMaps =
         {
             "CentComm",
-            "Dart",
-            "NukieOutpost"
+            "Dart"
         };
 
         private static readonly string[] Grids =
@@ -43,32 +43,15 @@ namespace Content.IntegrationTests.Tests
         };
 
         private static readonly string[] GameMaps =
-        {
-            "Dev", //CrystallPunk Map replacement
-            //"TestTeg",
-            //"Fland",
-            //"Meta",
-            //"Packed",
-            //"Cluster",
-            //"Omega",
-            //"Bagel",
-            //"Origin",
+        {//CrystallPunk Map replacement
+            "Dev",
             "CentComm",
-            "NukieOutpost",
-            //"Box",
-            //"Europa",
-            //"Saltern",
-            //"Core",
-            //"Marathon",
             "MeteorArena",
-            //"Atlas",
-            //"Reach",
-            //"Train",
-            //"Oasis"
 
             //CrystallPunk maps
             "AlchemyTest",
-            "BattleRoyale"
+            "BattleRoyale",
+            //CrystallPunk Map replacement end
         };
 
         /// <summary>
