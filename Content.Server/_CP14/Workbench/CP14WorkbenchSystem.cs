@@ -137,7 +137,7 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);
-        _audio.PlayPvs(recipe.CraftSound, workbench);
+        _audio.PlayPvs(recipe.OverrideCraftSound ?? workbench.Comp.CraftSound, workbench);
     }
 
     private List<CP14WorkbenchRecipePrototype> GetPossibleCrafts(Entity<CP14WorkbenchComponent> workbench, HashSet<EntityUid> ingrediEnts)

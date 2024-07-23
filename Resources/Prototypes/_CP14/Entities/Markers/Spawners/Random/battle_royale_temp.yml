@@ -1,7 +1,8 @@
 - type: entity
   id: CP14RandomSpawnerBattleRoyaleLootWeapon
-  name: Лут
+  name: Loot
   suffix: Weapon
+  description: lol
   parent: MarkerBase
   categories:
   - Spawner
@@ -31,7 +32,9 @@
     - CP14Crossbolt
     - CP14BaseSharpeningStone
     - CP14BaseSharpeningStone
-    - CP14Shovel
+    - CP14BaseShovel
+    - CP14BaseHoe
+    - CP14BasePickaxe
     - CP14OldLantern
     - ClothingBackpackCargo
     - ClothingBackpackCargo
@@ -53,8 +56,9 @@
 
 - type: entity
   id: CP14RandomSpawnerBattleRoyaleLootTools
-  name: Лут
+  name: Loot
   suffix: Tools
+  description: lol
   parent: MarkerBase
   categories:
   - Spawner

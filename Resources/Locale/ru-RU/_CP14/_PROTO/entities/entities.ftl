@@ -150,6 +150,20 @@ ent-CP14SpawnPointAdventurer = авантюрист
 
 ent-CP14SpawnPointAlchemist = алхимик
 
+ent-CP14ConstrainedSpawnerBase = None
+    .desc = lol
+
+ent-CP14ConstrainedSpawnerXeno = xeno constrained spawner
+    .desc = { ent-CP14ConstrainedSpawnerBase.desc }
+
+ent-CP14RandomSpawnerBattleRoyaleLootWeapon = Loot
+    .desc = lol
+    .suffix = Weapon
+
+ent-CP14RandomSpawnerBattleRoyaleLootTools = Loot
+    .desc = lol
+    .suffix = Tools
+
 ent-CP14RandomSpawnerGatherAgaricShroom = спавнер мухоморов
 
 ent-CP14RandomDirtLootSpawner = спавнер земли
@@ -189,16 +203,13 @@ ent-CP14BaseMobHuman = Мистер Человек
 
 ent-CP14BaseMobTiefling = Мистер Тифлинг
 
-ent-CP14OreCopper = медь
+ent-CP14OreCopper = медная руда
     .desc = Кусочек бледной, тяжелой меди.
 
-ent-CP14OreIron = железо
+ent-CP14OreIron = железная руда
     .desc = Кусочек холодного, тяжелого железа.
 
-ent-CP14OreSilver = серебро
-    .desc = Кусочек блестящего, теплого серебра.
-
-ent-CP14OreGold = золото
+ent-CP14OreGold = золотая руда
     .desc = Кусочек мягкого, чистого золота.
 
 ent-CP14CopperCoin = медная корона
@@ -381,12 +392,6 @@ ent-CP14Bucket = ведро
 ent-CP14OldLantern = Старая Лампа
     .desc = Пережиток прошлого техномагии. Большой, тяжелый, непрактичный. Таким приятно разве что бить по голове.
 
-ent-CP14Shovel = лопата
-    .desc = Орудие для вскапывания земли, рытья грядок или могил.
-
-ent-CP14Hoe = мотыга
-    .desc = Фермерский инструмент для подготовки почвы под посадки, либо очистки от сорняков.
-
 ent-CP14Rope = веревка
     .desc = Многофункциональная веревка. Ей можно связать что-нить. Или кого-нибудь.
 
@@ -428,6 +433,15 @@ ent-CP14BaseTwoHandedSword = двуручный меч
 
 ent-CP14TwoHandedSwordScythe = коса
     .desc = Большая двуручная коса. Что вы будете косить ею? Пшено, или головы своих врагов?
+
+ent-CP14BaseHoe = мотыга
+    .desc = Фермерский инструмент для подготовки почвы под посадки, либо очистки от сорняков.
+
+ent-CP14BasePickaxe = кирка
+    .desc = Идеально заточена, и готова вгрызаться в земную твердь.
+
+ent-CP14BaseShovel = лопата
+    .desc = Орудие для вскапывания земли, рытья грядок или могил.
 
 ent-CP14WeaponRevolverNavy = револьвер "Марин"
     .desc = Увесистый капсюльный револьвер серии "Марин". В настоящее время револьверы серии "Марин" стоят баснословные деньги, и их могут позволить себе исключительно преуспевающие моряки и торговцы.
@@ -721,6 +735,9 @@ ent-CP14WallmountBarShelfB = { ent-CP14WallmountBarShelfA }
     .desc = { ent-CP14WallmountBarShelfA.desc }
     .suffix = 2
 
+ent-CP14Workbench = верстак
+    .desc = Стол для создания различного базового инструментария.
+
 ent-CP14FrameWooden = каркас деревянной стены
     .desc = Деревянный каркас для деревянных стен любых видов.
 
@@ -831,10 +848,6 @@ ent-CP14WallStone = камень
 ent-CP14WallDirt = земляной холм
     .desc = bruh
 
-ent-CP14WallStoneSilverOre = { ent-CP14WallStone }
-    .desc = A solid stone natural wall. You see the tantalizing particles of silver in it.
-    .suffix = silver ore
-
 ent-CP14WallStoneGoldOre = { ent-CP14WallStone }
     .desc = A solid stone natural wall. You see the tantalizing particles of gold in it.
     .suffix = gold ore
@@ -900,6 +913,13 @@ ent-CP14WindowStoneBrick = окно в стене из каменного кир
 
 ent-CP14WindowWooden = wooden window
     .desc = A wooden wall with a glass window in it.
+
+ent-CP14OreSilver = серебро
+    .desc = Кусочек блестящего, теплого серебра.
+
+ent-CP14WallStoneSilverOre = { ent-CP14WallStone }
+    .desc = A solid stone natural wall. You see the tantalizing particles of silver in it.
+    .suffix = silver ore
 
 ent-CP14ClothingHeadWhiteBeret = белый берет
     .desc = Это берет.

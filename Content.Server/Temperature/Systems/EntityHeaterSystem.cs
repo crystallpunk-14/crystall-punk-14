@@ -47,21 +47,6 @@ public sealed class EntityHeaterSystem : EntitySystem
                 _temperature.ChangeHeat(ent, energy);
             }
         }
-
-        //CrystallPunk bonfire
-        var flammbaleQuery = EntityQueryEnumerator<CP14FlammableEntityHeaterComponent, ItemPlacerComponent, FlammableComponent>();
-        while (flammbaleQuery.MoveNext(out var uid, out var heater, out var placer, out var flammable))
-        {
-            if (!flammable.OnFire)
-                return;
-
-            var energy = flammable.FireStacks * deltaTime * heater.EnergyPerFireStack;
-            foreach (var ent in placer.PlacedEntities)
-            {
-                _temperature.ChangeHeat(ent, energy);
-            }
-        }
-        //CrystallPunk bonfire end
     }
 
     private void OnExamined(EntityUid uid, EntityHeaterComponent comp, ExaminedEvent args)
