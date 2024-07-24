@@ -13,8 +13,8 @@
   components:
   - type: CP14ExpeditionObjectivesRule
     objectives:
-    - CP14ExpeditionCollectGoldObjective
-    - CP14PersonalCurrencyCollectObjectiveBig
+    #- CP14ExpeditionCollectGoldObjective
+    - CP14PersonalCurrencyCollectObjectiveMedium
   # Expedition random objectives
   # main objective + sub objective?
   # motivations

@@ -20,7 +20,7 @@
     objectiveText: cp14-objective-personal-currency-collect-title
     objectiveDescription: cp14-objective-personal-currency-collect-desc
     objectiveSprite:
-      sprite: _CP14/Object/Economy/gp_coin.rsi
+      sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
       state: coin10
 
 - type: entity
