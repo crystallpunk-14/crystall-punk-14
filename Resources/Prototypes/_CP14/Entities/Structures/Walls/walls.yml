@@ -10,7 +10,7 @@
     - Wall
   components:
   - type: Sprite
-    drawdepth: Mobs
+    drawdepth: Walls
   - type: SpriteFade
   - type: IconSmooth
     key: CP14wall
@@ -63,7 +63,7 @@
 - type: entity
   id: CP14WallWooden
   name: wooden wall
-  parent: 
+  parent:
   - CP14BaseWall
   - CP14BaseWooden
   components:
@@ -95,7 +95,7 @@
   id: CP14WallCardboard
   name: cardboard Wall
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
-  parent: 
+  parent:
   - CP14WallWooden
   - CP14BaseWooden
   components:
@@ -117,7 +117,7 @@
   - type: Construction
     graph: CP14WallWood
     node: WallCardboard
-    
+
 - type: entity
   id: CP14WallCyan
   name: cyan wall
