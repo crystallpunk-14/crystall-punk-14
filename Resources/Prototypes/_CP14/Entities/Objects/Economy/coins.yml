@@ -23,6 +23,9 @@
     - coin9
     - coin10
   - type: Appearance
+  - type: CP14Currency
+    currency: 1
+    category: Currency
 
 # Copper
 

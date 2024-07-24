@@ -16,8 +16,17 @@ public sealed partial class CP14CurrencySystem : EntitySystem
     {
         var total = GetTotalCurrency(currency, currency.Comp);
 
+        var push = Loc.GetString("cp14-currency-examine-title");
+        push += GetPrettyCurrency(total);
+        args.PushMarkup(push);
+    }
+
+    public string GetPrettyCurrency(int currency)
+    {
+        var total = currency;
+
         if (total <= 0)
-            return;
+            return string.Empty;
 
         var gp = total / 100;
         total %= 100;
@@ -27,13 +36,13 @@ public sealed partial class CP14CurrencySystem : EntitySystem
 
         var cp = total;
 
-        var push = Loc.GetString("cp14-currency-examine-title");
+        var push = string.Empty;
 
         if (gp > 0) push += " " + Loc.GetString("cp14-currency-examine-gp", ("coin", gp));
         if (sp > 0) push += " " + Loc.GetString("cp14-currency-examine-sp", ("coin", sp));
         if (cp > 0) push += " " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp));
 
-        args.PushMarkup(push);
+        return push;
     }
 
     public int GetTotalCurrency(EntityUid uid, CP14CurrencyComponent? currency = null)
