@@ -4,7 +4,7 @@
   abstract: true
   components:
   - type: Sprite
-    drawdepth: Mobs
+    drawdepth: Walls
     layers:
       - map: [ base ]
         state: icon
@@ -51,7 +51,7 @@
   components:
   - type: ResistLocker
   - type: Sprite
-    drawdepth: Mobs
+    drawdepth: Walls
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]
