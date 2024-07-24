@@ -59,6 +59,12 @@
     sprite: _CP14/Structures/Walls/bricks_wall.rsi
   - type: IconSmooth
     base: bricksA
+  - type: Appearance
+  - type: RandomIconSmooth
+    randomStates:
+    - bricksA
+    - bricksB
+    
 
 - type: entity
   id: CP14WallWooden
