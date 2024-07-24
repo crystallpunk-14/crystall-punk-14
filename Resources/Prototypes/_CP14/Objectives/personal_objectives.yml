@@ -23,6 +23,8 @@
       sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
       state: coin10
 
+# Collect currency group
+
 - type: entity
   parent: CP14BasePersonalCurrencyCollectObjective
   id: CP14PersonalCurrencyCollectObjectiveSmall
@@ -49,3 +51,10 @@
     difficulty: 3
   - type: CP14CurrencyCollectCondition
     currency: 3000
+
+- type: weightedRandom
+  id: CP14PersonalCurrencyCollectObjectiveGroup
+  weights:
+    CP14PersonalCurrencyCollectObjectiveSmall: 2
+    CP14PersonalCurrencyCollectObjectiveMedium: 1
+    CP14PersonalCurrencyCollectObjectiveBig: 0.3

@@ -6,6 +6,8 @@
   - type: Objective
     issuer: cp14-objective-issuer-expedition
 
+
+# Collect group
 - type: entity
   abstract: true
   parent: CP14BaseExpeditionObjective
@@ -28,3 +30,8 @@
     collectGroup: CP14Gold
   - type: Objective
     difficulty: 1
+
+- type: weightedRandom
+  id: CP14ExpeditionCollectObjectiveGroup
+  weights:
+    CP14ExpeditionCollectGoldObjective: 1
