@@ -18,6 +18,7 @@
       edges:
         - to: start
           completed:
+            - !type:EmptyAllContainers
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
               amount: 5
