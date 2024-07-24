@@ -1,4 +1,5 @@
 using Content.Shared.Examine;
+using Content.Shared.Stacks;
 
 namespace Content.Shared._CP14.Currency;
 
@@ -13,7 +14,7 @@ public sealed partial class CP14CurrencySystem : EntitySystem
 
     private void OnExamine(Entity<CP14CurrencyComponent> currency, ref ExaminedEvent args)
     {
-        var total = currency.Comp.Currency;
+        var total = GetTotalCurrency(currency, currency.Comp);
 
         if (total <= 0)
             return;
@@ -33,5 +34,20 @@ public sealed partial class CP14CurrencySystem : EntitySystem
         if (cp > 0) push += " " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp));
 
         args.PushMarkup(push);
+    }
+
+    public int GetTotalCurrency(EntityUid uid, CP14CurrencyComponent? currency = null)
+    {
+        if (!Resolve(uid, ref currency))
+            return 0;
+
+        var total = currency.Currency;
+
+        if (TryComp<StackComponent>(uid, out var stack))
+        {
+            total *= stack.Count;
+        }
+
+        return total;
     }
 }
