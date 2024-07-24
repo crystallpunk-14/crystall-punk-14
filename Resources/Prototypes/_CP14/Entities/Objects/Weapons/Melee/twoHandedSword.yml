@@ -48,6 +48,8 @@
     fuckupChance: 0.5
     requiredSkills:
     - Warcraft
+  - type: CP14Currency
+    currency: 5000
 
 - type: entity
   id: CP14TwoHandedSwordScythe

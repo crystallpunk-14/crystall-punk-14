@@ -1,1 +1,0 @@
-objective-issuer-ExpeditionObjective = [color=#d6853a]Цель экспедиции[/color]

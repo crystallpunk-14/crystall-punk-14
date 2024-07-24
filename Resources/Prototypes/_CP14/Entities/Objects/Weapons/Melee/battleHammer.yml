@@ -57,3 +57,5 @@
       params:
         variation: 0.03
         volume: 2
+  - type: CP14Currency
+    currency: 1500
