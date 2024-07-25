@@ -14,7 +14,19 @@
       "name": "Alchemist"
     },
     {
+      "name": "Bartender"
+    },
+    {
       "name": "Captain"
+    },
+    {
+      "name": "Chef"
+    },
+    {
+      "name": "GuardCommander"
+    },
+    {
+      "name": "HouseKeeper"
     }
   ]
 }
