@@ -961,11 +961,11 @@ ent-CPBaseSharpeningStoneStructure = стационарный точильный
     .desc = прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
 
 ent-CP14GreenBottle = Зеленая бутылка
-    .desc = Зеленая бутылка, идеально подходящая для питья пива.
+    .desc = Зеленая бутылка, идеально подходит для пива.
     .suffix = Пустая
 
 ent-CP14BlueVial = Синий флакон
-    .desc = Синий флакон идеально подходящий для питья виски.
+    .desc = Синий флакон, идеально подходит для виски.
     .suffix = Пустой
 
 ent-CP14GreenVial = Зеленый флакон
@@ -977,7 +977,7 @@ ent-CP14OrangeBottle = Оранжевая бутылка
     .suffix = Пустая
 
 ent-CP14RedBottle = Красная бутылка
-    .desc = Красная бутылка идеально подходит для питья вина.
+    .desc = Красная бутылка, идеально подходит для вина.
     .suffix = Пустая
 
 ent-CP14MetalBeerMug = Металлическая кружка
@@ -989,13 +989,13 @@ ent-CP14WoodenBeerMug = Деревянная кружка
 ent-CP14SteelBeerMug = Пивная кружка
     .desc = Деревянная кружка с железными вкраплениями.
 
-ent-CP14SteelWoodBeerMug =
+ent-CP14SteelWoodBeerMug = { ent-CP14SteelBeerMug }
     .desc = { ent-CP14SteelBeerMug.desc }
 
-ent-CP14RawFoodMeat = Сырое мясо
+ent-CP14RawFoodMeat = Сырая баранина
     .desc = Пахнет странно, но выглядит как обычное мясо...
 
-ent-CP14CookedFoodMeat = Стейк
+ent-CP14CookedFoodMeat = Стейк из баранины
     .desc = Зажаренный кусок мяса. Запах первобытный.
 
 ent-CP14CuttingBoard = Разделочная доска
