@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14ActionMagicEffectHealingWord
+  id: CP14ActionSpellHealingWord
   name: Healing word
   description: bruh
   components:
@@ -14,8 +14,8 @@
     icon:
       sprite: Objects/Magic/magicactions.rsi
       state: gib
-    event: !type:CP14DelayedEntityEffectActionEvent
-  - type: CP14DelayedEntityTargetActionEvent
+    event: !type:CP14DelayedEntityTargetActionEvent
+  - type: CP14DelayedEntityTargetAction
     effects:
     - !type:HealthChange
       damage:
@@ -23,10 +23,11 @@
           Slash: -5
           Blunt: -5
           Piercing: -5
+          Heat: -10
     - !type:Jitter
 
 - type: entity
-  id: CP14ActionMagicEffectFireball
+  id: CP14ActionSpellFireball
   name: Fireball
   description: Fires an explosive fireball towards the clicked location.
   components:
@@ -43,16 +44,28 @@
     icon:
       sprite: Objects/Magic/magicactions.rsi
       state: fireball
-    event: !type:ProjectileSpellEvent
-      prototype: ProjectileFireball
-      speech: action-speech-spell-fireball
-
+    event: !type:CP14DelayedWorldTargetActionEvent
+  - type: CP14DelayedProjectileSpell
+    prototype: ProjectileFireball
 
 - type: listing
   id: CP14SpellbookJutter
   name: jit
   description: jit
-  productAction: CP14ActionMagicEffectHealingWord
+  productAction: CP14ActionSpellHealingWord
+  cost:
+    WizCoin: 1
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: CP14SpellbookFireball
+  name: fifire
+  description: fifire
+  productAction: CP14ActionSpellFireball
   cost:
     WizCoin: 1
   categories:
