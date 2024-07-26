@@ -1,0 +1,33 @@
+- type: entity
+  id: CP14ActionMagicEffectHealingWord
+  name: Healing word
+  description: bruh
+  components:
+  - type: CP14MagicEffect
+    manaCost: 10
+  - type: EntityTargetAction
+    useDelay: 1
+    itemIconStyle: BigAction
+    interactOnMiss: true
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/disintegrate.ogg
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: gib
+    event: !type:CP14EntityEffectActionEvent
+      effects: 
+      - !type:Polymorph
+        prototype: AMIVMorph
+
+- type: listing
+  id: CP14SpellbookJutter
+  name: jit
+  description: jit
+  productAction: CP14ActionMagicEffectHealingWord
+  cost:
+    WizCoin: 1
+  categories:
+  - SpellbookOffensive
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
