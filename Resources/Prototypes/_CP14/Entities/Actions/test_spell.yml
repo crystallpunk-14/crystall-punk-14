@@ -15,7 +15,7 @@
       sprite: Objects/Magic/magicactions.rsi
       state: gib
     event: !type:CP14DelayedEntityEffectActionEvent
-  - type: CP14DelayedMagicEffect
+  - type: CP14DelayedEntityTargetActionEvent
     effects:
     - !type:HealthChange
       damage:
@@ -24,6 +24,29 @@
           Blunt: -5
           Piercing: -5
     - !type:Jitter
+
+- type: entity
+  id: CP14ActionMagicEffectFireball
+  name: Fireball
+  description: Fires an explosive fireball towards the clicked location.
+  components:
+  - type: CP14MagicEffect
+    manaCost: 10
+  - type: WorldTargetAction
+    useDelay: 1
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 60
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/fireball.ogg
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: fireball
+    event: !type:ProjectileSpellEvent
+      prototype: ProjectileFireball
+      speech: action-speech-spell-fireball
+
 
 - type: listing
   id: CP14SpellbookJutter

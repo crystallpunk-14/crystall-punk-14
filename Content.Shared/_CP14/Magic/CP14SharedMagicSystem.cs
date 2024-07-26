@@ -1,6 +1,5 @@
 using Content.Shared._CP14.Magic.Components;
 using Content.Shared._CP14.Magic.Events;
-using Content.Shared._CP14.Magic.Events.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.EntityEffects;
 
@@ -19,11 +18,11 @@ public sealed class CP14SharedMagicSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
 
-        SubscribeLocalEvent<CP14DelayedEntityEffectActionEvent>(OnEntityEffectAction);
-        SubscribeLocalEvent<CP14DelayedMagicEffectComponent, CP14CastMagicEffectDoAfterEvent>(OnMagicEffectDoAfter);
+        SubscribeLocalEvent<CP14DelayedEntityTargetActionEvent>(OnEntityEffectAction);
+        SubscribeLocalEvent<CP14DelayedEntityTargetActionComponent, CP14CastMagicEffectDoAfterEvent>(OnMagicEffectDoAfter);
     }
 
-    private void OnEntityEffectAction(CP14DelayedEntityEffectActionEvent args)
+    private void OnEntityEffectAction(CP14DelayedEntityTargetActionEvent args)
     {
         if (args.Handled)
             return;
@@ -42,7 +41,7 @@ public sealed class CP14SharedMagicSystem : EntitySystem
         _doAfter.TryStartDoAfter(doAfterEventArgs);
     }
 
-    private void OnMagicEffectDoAfter(Entity<CP14DelayedMagicEffectComponent> ent, ref CP14CastMagicEffectDoAfterEvent args)
+    private void OnMagicEffectDoAfter(Entity<CP14DelayedEntityTargetActionComponent> ent, ref CP14CastMagicEffectDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Target == null)
             return;
