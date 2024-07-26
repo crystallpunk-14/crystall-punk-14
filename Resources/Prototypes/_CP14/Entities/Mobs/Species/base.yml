@@ -206,6 +206,13 @@
   - type: Tag
     tags:
     - FootstepSound
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 100
+    energy: 50
+  - type: CP14MagicEnergyDraw
+    energy: -5
+    delay: 1
 
 
 - type: entity

@@ -1,9 +1,11 @@
 using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared.Alert;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
+using Content.Shared.Rounding;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 
@@ -11,18 +13,37 @@ namespace Content.Server._CP14.MagicEnergy;
 
 public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
 {
+    [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly PointLightSystem _light = default!;
     [Dependency] private readonly CP14MagicEnergyCrystalSlotSystem _magicSlot = default!;
 
     public override void Initialize()
     {
+
+        SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentShutdown>(OnComponentShutdown);
+
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnMapInit);
+
         SubscribeLocalEvent<CP14MagicEnergyPointLightControllerComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChange);
 
         SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, CP14MagicEnergyScanEvent>(OnMagicScanAttempt);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, InventoryRelayedEvent<CP14MagicEnergyScanEvent>>((e, c, ev) => OnMagicScanAttempt(e, c, ev.Args));
+    }
+
+    private void OnComponentStartup(Entity<CP14MagicEnergyContainerComponent> ent, ref ComponentStartup args)
+    {
+        UpdateMagicAlert(ent);
+    }
+
+    private void OnComponentShutdown(Entity<CP14MagicEnergyContainerComponent> ent, ref ComponentShutdown args)
+    {
+        if (ent.Comp.MagicAlert == null)
+            return;
+
+        _alerts.ClearAlert(ent, ent.Comp.MagicAlert.Value);
     }
 
     private void OnEnergyChange(Entity<CP14MagicEnergyPointLightControllerComponent> ent, ref CP14MagicEnergyLevelChangeEvent args)
@@ -148,5 +169,16 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
                 MaxValue = component.MaxEnergy,
             });
         }
+
+        UpdateMagicAlert((uid, component));
+    }
+
+    private void UpdateMagicAlert(Entity<CP14MagicEnergyContainerComponent> ent)
+    {
+        if (ent.Comp.MagicAlert == null)
+            return;
+
+        var level = ContentHelpers.RoundToLevels(MathF.Max(0f, (float) ent.Comp.Energy), (float) ent.Comp.MaxEnergy, 10);
+        _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short)level);
     }
 }
