@@ -10,14 +10,20 @@
     itemIconStyle: BigAction
     interactOnMiss: true
     sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/disintegrate.ogg
+      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: Objects/Magic/magicactions.rsi
       state: gib
-    event: !type:CP14EntityEffectActionEvent
-      effects: 
-      - !type:Polymorph
-        prototype: AMIVMorph
+    event: !type:CP14DelayedEntityEffectActionEvent
+  - type: CP14DelayedMagicEffect
+    effects:
+    - !type:HealthChange
+      damage:
+        types:
+          Slash: -5
+          Blunt: -5
+          Piercing: -5
+    - !type:Jitter
 
 - type: listing
   id: CP14SpellbookJutter
