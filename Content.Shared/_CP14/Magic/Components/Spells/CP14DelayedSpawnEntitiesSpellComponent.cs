@@ -1,16 +1,16 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Magic.Components;
+namespace Content.Shared._CP14.Magic.Components.Spells;
 
 /// <summary>
 /// Stores a list of effects for delayed actions.
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
-public sealed partial class CP14DelayedProjectileSpellComponent : Component
+public sealed partial class CP14DelayedSpawnEntitiesSpellComponent : Component
 {
     /// <summary>
-    /// What entity should be spawned.
+    /// What entities should be spawned.
     /// </summary>
     [DataField(required: true)]
-    public EntProtoId Prototype;
+    public HashSet<EntProtoId> Spawns = new();
 }
