@@ -209,10 +209,10 @@
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 100
-    energy: 50
+    energy: 100
   - type: CP14MagicEnergyDraw
-    energy: -5
-    delay: 1
+    energy: 5
+    delay: 5
 
 
 - type: entity

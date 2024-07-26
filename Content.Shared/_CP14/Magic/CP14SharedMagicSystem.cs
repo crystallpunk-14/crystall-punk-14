@@ -1,6 +1,9 @@
 using Content.Shared._CP14.Magic.Components;
 using Content.Shared._CP14.Magic.Events;
+using Content.Shared._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Popups;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
@@ -19,6 +22,8 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedGunSystem _gunSystem = default!;
+    [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -43,6 +48,9 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
         if (args is not ICP14DelayedMagicEffect delayedEffect)
             return;
 
+        if (!TryCastSpell(args.Action, args.Performer))
+            return;
+
         var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.Delay, new CP14DelayedInstantActionDoAfterEvent(), args.Action)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
@@ -60,6 +68,9 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
         args.Handled = true;
 
         if (args is not ICP14DelayedMagicEffect delayedEffect)
+            return;
+
+        if (!TryCastSpell(args.Action, args.Performer))
             return;
 
         var doAfter = new CP14DelayedWorldTargetActionDoAfterEvent()
@@ -86,6 +97,9 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
         if (args is not ICP14DelayedMagicEffect delayedEffect)
             return;
 
+        if (!TryCastSpell(args.Action, args.Performer))
+            return;
+
         var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.Delay, new CP14DelayedEntityTargetActionDoAfterEvent(), args.Action, args.Target)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
@@ -95,7 +109,29 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
         _doAfter.TryStartDoAfter(doAfterEventArgs);
     }
 
+    private bool TryCastSpell(EntityUid spell, EntityUid performer)
+    {
+        var ev = new CP14BeforeCastMagicEffectEvent()
+        {
+            Permormer = performer,
+        };
+        RaiseLocalEvent(spell, ref ev);
+        return !ev.Cancelled;
+    }
+
     private void OnBeforeCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
     {
+        if (!TryComp<CP14MagicEnergyContainerComponent>(args.Permormer, out var magicContainer))
+        {
+            args.Cancel();
+            return;
+        }
+
+        if (!_magicEnergy.TryConsumeEnergy(args.Permormer.Value, ent.Comp.ManaCost))
+        {
+            args.Cancel();
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-not-enough-mana"), args.Permormer);
+            return;
+        }
     }
 }

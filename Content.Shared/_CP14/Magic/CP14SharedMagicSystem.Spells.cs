@@ -1,4 +1,3 @@
-
 using Content.Shared._CP14.Magic.Components.Spells;
 using Content.Shared._CP14.Magic.Events;
 using Content.Shared.EntityEffects;

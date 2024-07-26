@@ -1,0 +1,1 @@
+cp14-magic-spell-not-enough-mana = Недостаточно магической энергии!

@@ -6,5 +6,5 @@ public sealed class CP14BeforeCastMagicEffectEvent : CancellableEntityEventArgs
     /// <summary>
     /// The Performer of the event, to check if they meet the requirements.
     /// </summary>
-    public EntityUid? Caster { get; init; }
+    public EntityUid? Permormer { get; init; }
 }
