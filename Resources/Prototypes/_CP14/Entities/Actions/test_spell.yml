@@ -86,7 +86,7 @@
       sprite: Objects/Magic/magicactions.rsi
       state: fireball
     event: !type:CP14DelayedWorldTargetActionEvent
-  - type: CP14DelayedSpawnOnPointSpell
+  - type: CP14DelayedSpawnOnWorldTargetSpell
     spawns:
     - AdminInstantEffectGravityWell
 
