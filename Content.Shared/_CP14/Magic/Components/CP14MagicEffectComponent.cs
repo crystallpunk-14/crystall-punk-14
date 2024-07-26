@@ -10,4 +10,7 @@ public sealed partial class CP14MagicEffectComponent : Component
 {
     [DataField]
     public FixedPoint2 ManaCost = 0f;
+
+    [DataField]
+    public bool Safe = false;
 }

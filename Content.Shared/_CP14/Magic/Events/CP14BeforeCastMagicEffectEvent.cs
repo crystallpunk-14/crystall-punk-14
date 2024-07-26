@@ -8,3 +8,9 @@ public sealed class CP14BeforeCastMagicEffectEvent : CancellableEntityEventArgs
     /// </summary>
     public EntityUid? Permormer { get; init; }
 }
+
+[ByRefEvent]
+public sealed class CP14AfterCastMagicEffectEvent : EntityEventArgs
+{
+    public EntityUid? Permormer { get; init; }
+}

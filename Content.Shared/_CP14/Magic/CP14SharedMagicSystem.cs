@@ -11,9 +11,6 @@ using Robust.Shared.Physics.Systems;
 
 namespace Content.Shared._CP14.Magic;
 
-/// <summary>
-///
-/// </summary>
 public sealed partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -30,6 +27,7 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14AfterCastMagicEffectEvent>(OnAfterCastMagicEffect);
 
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
         SubscribeLocalEvent<CP14DelayedEntityTargetActionEvent>(OnEntityTargetAction);
@@ -127,11 +125,22 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
             return;
         }
 
-        if (!_magicEnergy.TryConsumeEnergy(args.Permormer.Value, ent.Comp.ManaCost))
+        if (!_magicEnergy.HasEnergy(args.Permormer.Value, ent.Comp.ManaCost, safe: ent.Comp.Safe))
         {
             args.Cancel();
             _popup.PopupClient(Loc.GetString("cp14-magic-spell-not-enough-mana"), args.Permormer);
             return;
         }
+    }
+
+    private void OnAfterCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
+    {
+        if (_net.IsClient)
+            return;
+
+        if (!TryComp<CP14MagicEnergyContainerComponent>(args.Permormer, out var magicContainer))
+            return;
+
+        _magicEnergy.TryConsumeEnergy(args.Permormer.Value, ent.Comp.ManaCost, safe: ent.Comp.Safe);
     }
 }

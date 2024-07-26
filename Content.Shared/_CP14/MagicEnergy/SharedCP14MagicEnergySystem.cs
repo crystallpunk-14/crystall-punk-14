@@ -85,6 +85,17 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         UpdateMagicAlert((uid, component));
     }
 
+    public bool HasEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)
+    {
+        if (!Resolve(uid, ref component))
+            return false;
+
+        if (safe == false)
+            return true;
+
+        return component.Energy > energy;
+    }
+
     public bool TryConsumeEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)
     {
         if (!Resolve(uid, ref component))

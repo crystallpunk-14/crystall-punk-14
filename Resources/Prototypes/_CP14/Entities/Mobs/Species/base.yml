@@ -213,6 +213,7 @@
   - type: CP14MagicEnergyDraw
     energy: 5
     delay: 5
+  - type: CP14MagicWeakness
 
 
 - type: entity

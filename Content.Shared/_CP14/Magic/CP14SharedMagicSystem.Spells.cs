@@ -18,43 +18,52 @@ public sealed partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14DelayedSpawnOnWorldTargetSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastSpawnOnPoint);
     }
 
-    private void OnCastEntitiesSpawn(Entity<CP14DelayedSpawnEntitiesSpellComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
+    private void OnCastEntitiesSpawn(Entity<CP14DelayedSpawnEntitiesSpellComponent> spell, ref CP14DelayedInstantActionDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || !_net.IsServer)
             return;
 
         args.Handled = true;
 
-        foreach (var spawn in ent.Comp.Spawns)
+        foreach (var spawn in spell.Comp.Spawns)
         {
             SpawnAtPosition(spawn, Transform(args.User).Coordinates);
         }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        RaiseLocalEvent(spell, ref ev);
     }
 
-    private void OnCastSelfEntityEffects(Entity<CP14DelayedSelfEntityEffectSpellComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
+    private void OnCastSelfEntityEffects(Entity<CP14DelayedSelfEntityEffectSpellComponent> spell, ref CP14DelayedInstantActionDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
             return;
 
         args.Handled = true;
 
-        foreach (var effect in ent.Comp.Effects)
+        foreach (var effect in spell.Comp.Effects)
         {
             effect.Effect(new EntityEffectBaseArgs(args.User, EntityManager));
         }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        RaiseLocalEvent(spell, ref ev);
     }
 
-    private void OnCastApplyEntityEffects(Entity<CP14DelayedApplyEntityEffectsSpellComponent> ent, ref CP14DelayedEntityTargetActionDoAfterEvent args)
+    private void OnCastApplyEntityEffects(Entity<CP14DelayedApplyEntityEffectsSpellComponent> spell, ref CP14DelayedEntityTargetActionDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Target == null)
             return;
 
         args.Handled = true;
 
-        foreach (var effect in ent.Comp.Effects)
+        foreach (var effect in spell.Comp.Effects)
         {
             effect.Effect(new EntityEffectBaseArgs(args.Target.Value, EntityManager));
         }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        RaiseLocalEvent(spell, ref ev);
     }
 
     private void OnCastProjectileSpell(Entity<CP14DelayedProjectileSpellComponent> spell, ref CP14DelayedWorldTargetActionDoAfterEvent args)
@@ -79,6 +88,9 @@ public sealed partial class CP14SharedMagicSystem
         var direction = toCoords.ToMapPos(EntityManager, _transform) -
                         spawnCoords.ToMapPos(EntityManager, _transform);
         _gunSystem.ShootProjectile(ent, direction, userVelocity, args.User, args.User);
+
+        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        RaiseLocalEvent(spell, ref ev);
     }
 
     private void OnCastSpawnOnPoint(Entity<CP14DelayedSpawnOnWorldTargetSpellComponent> ent, ref CP14DelayedWorldTargetActionDoAfterEvent args)
@@ -95,5 +107,8 @@ public sealed partial class CP14SharedMagicSystem
         {
             SpawnAtPosition(spawn, toCoords);
         }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        RaiseLocalEvent(ent, ref ev);
     }
 }

@@ -5,3 +5,6 @@ cp14-magic-energy-crystal-slot-name = Энергокристалл
 cp14-magic-energy-no-crystal = Отсутствует энергокристалл!
 cp14-magic-energy-insufficient = Не достаточно энергии!
 cp14-magic-energy-insufficient-unsafe = Кристалл трескается от нехватки энергии!
+
+cp14-magic-energy-damage-burn-out = Боль пронзает ваше тело!
+cp14-magic-energy-damage-burn-out-fall = Вы теряете сознание от сильной боли!
