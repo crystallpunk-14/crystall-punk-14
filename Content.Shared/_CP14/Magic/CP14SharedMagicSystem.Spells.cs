@@ -16,8 +16,8 @@ public sealed partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14DelayedApplyEntityEffectsSpellComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnCastApplyEntityEffects);
         //World Target
         SubscribeLocalEvent<CP14DelayedProjectileSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastProjectileSpell);
+        SubscribeLocalEvent<CP14DelayedSpawnOnPointSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastSpawnOnPoint);
     }
-
 
     private void OnCastEntitiesSpawn(Entity<CP14DelayedSpawnEntitiesSpellComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
     {
@@ -80,5 +80,21 @@ public sealed partial class CP14SharedMagicSystem
         var direction = toCoords.ToMapPos(EntityManager, _transform) -
                         spawnCoords.ToMapPos(EntityManager, _transform);
         _gunSystem.ShootProjectile(ent, direction, userVelocity, args.User, args.User);
+    }
+
+    private void OnCastSpawnOnPoint(Entity<CP14DelayedSpawnOnPointSpellComponent> ent, ref CP14DelayedWorldTargetActionDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled || !_net.IsServer)
+            return;
+
+        args.Handled = true;
+
+        var xform = Transform(args.User);
+        var toCoords = GetCoordinates(args.Target);
+
+        foreach (var spawn in ent.Comp.Spawns)
+        {
+            SpawnAtPosition(spawn, toCoords);
+        }
     }
 }
