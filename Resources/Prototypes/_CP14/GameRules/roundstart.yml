@@ -5,6 +5,7 @@
   components:
   - type: GameRule
     cP14Allowed: true
+  - type: CP14RoundSeed
 
 - type: entity
   id: CP14ResourceHarvesting
