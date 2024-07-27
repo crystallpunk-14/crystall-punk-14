@@ -1,3 +1,10 @@
+/*
+ * All right reserved to CrystallPunk.
+ *
+ * BUT this file is sublicensed under MIT License
+ *
+ */
+
 namespace Content.Server._CP14.RoundSeed;
 
 /// <summary>

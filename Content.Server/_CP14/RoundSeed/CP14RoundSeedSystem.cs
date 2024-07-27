@@ -1,5 +1,11 @@
+/*
+ * All right reserved to CrystallPunk.
+ *
+ * BUT this file is sublicensed under MIT License
+ *
+ */
+
 using System.Diagnostics.CodeAnalysis;
-using Content.Server.NPC.Queries.Queries;
 using JetBrains.Annotations;
 using Robust.Shared.Random;
 
