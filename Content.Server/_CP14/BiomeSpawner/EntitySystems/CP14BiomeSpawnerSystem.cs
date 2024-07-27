@@ -88,10 +88,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
         }
 
         if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed.Value, map, out var entityProto))
-        {
-            Spawn(entityProto,
-                new EntityCoordinates(gridUid, tileCenterVec));
-        }
+            Spawn(entityProto, new EntityCoordinates(gridUid, tileCenterVec));
 
         QueueDel(ent);
     }
