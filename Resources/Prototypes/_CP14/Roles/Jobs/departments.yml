@@ -5,6 +5,7 @@
   roles:
   - CP14Adventurer
   - CP14Alchemist
+  - CP14Innkeeper
 
 - type: department
   id: CP14Command
@@ -12,3 +13,5 @@
   color: "#fadb3e"
   roles:
   - CP14Captain
+  - CP14GuardCommander
+  - CP14HouseKeeper

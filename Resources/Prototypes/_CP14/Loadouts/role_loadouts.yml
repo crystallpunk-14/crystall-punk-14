@@ -23,12 +23,48 @@
   - CP14BasicShoes
 
 - type: roleLoadout
+  id: CP14JobInnkeeper
+  groups:
+  - CP14BasicHead
+  - CP14BasicEyes
+  - CP14BasicMask
+  - CP14BasicCloak
+  - CP14BasicGloves
+  - CP14BasicShirt
+  - CP14BasicPants
+  - CP14BasicShoes
+
+- type: roleLoadout
   id: JobCP14Captain
   groups:
   - CP14CaptainHead
   - CP14BasicEyes
   - CP14BasicMask
   - CP14CaptainCloak
+  - CP14BasicGloves
+  - CP14BasicShirt
+  - CP14BasicPants
+  - CP14BasicShoes
+
+- type: roleLoadout
+  id: CP14JobGuardCommander
+  groups:
+  - CP14BasicHead
+  - CP14BasicEyes
+  - CP14BasicMask
+  - CP14BasicCloak
+  - CP14BasicGloves
+  - CP14BasicShirt
+  - CP14BasicPants
+  - CP14BasicShoes
+
+- type: roleLoadout
+  id: CP14JobHouseKeeper
+  groups:
+  - CP14BasicHead
+  - CP14BasicEyes
+  - CP14BasicMask
+  - CP14BasicCloak
   - CP14BasicGloves
   - CP14BasicShirt
   - CP14BasicPants

@@ -7,4 +7,13 @@
   id: CP14JobAlchemist
 
 - type: playTimeTracker
+  id: CP14JobInnkeeper
+
+- type: playTimeTracker
   id: CP14JobCaptain
+
+- type: playTimeTracker
+  id: CP14JobGuardCommander
+
+- type: playTimeTracker
+  id: CP14JobHouseKeeper
