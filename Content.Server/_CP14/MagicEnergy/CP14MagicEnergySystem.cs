@@ -2,7 +2,6 @@ using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
@@ -18,6 +17,7 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnMapInit);
+
         SubscribeLocalEvent<CP14MagicEnergyPointLightControllerComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChange);
 
         SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
@@ -58,8 +58,6 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
         args.PushMarkup(GetEnergyExaminedText(ent, magicContainer));
     }
 
-
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -90,63 +88,6 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
                 continue;
 
             ChangeEnergy(energyEnt.Value, energyComp, draw.Energy, draw.Safe);
-        }
-    }
-
-    public bool TryConsumeEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)
-    {
-        if (!Resolve(uid, ref component))
-            return false;
-
-        if (energy <= 0)
-            return true;
-
-        // Attempting to absorb more energy than is contained in the carrier will still waste all the energy
-        if (component.Energy < energy)
-        {
-            ChangeEnergy(uid, component, -component.Energy);
-            return false;
-        }
-
-        ChangeEnergy(uid, component, -energy, safe);
-        return true;
-    }
-
-    public void ChangeEnergy(EntityUid uid, CP14MagicEnergyContainerComponent component, FixedPoint2 energy, bool safe = false)
-    {
-        if (!safe)
-        {
-            //Overload
-            if (component.Energy + energy > component.MaxEnergy)
-            {
-                RaiseLocalEvent(uid, new CP14MagicEnergyOverloadEvent()
-                {
-                    OverloadEnergy = (component.Energy + energy) - component.MaxEnergy,
-                });
-            }
-
-            //Burn out
-            if (component.Energy + energy < 0)
-            {
-                RaiseLocalEvent(uid, new CP14MagicEnergyBurnOutEvent()
-                {
-                    BurnOutEnergy = -energy - component.Energy
-                });
-            }
-        }
-
-        var oldEnergy = component.Energy;
-        var newEnergy = Math.Clamp((float)component.Energy + (float)energy, 0, (float)component.MaxEnergy);
-        component.Energy = newEnergy;
-
-        if (oldEnergy != newEnergy)
-        {
-            RaiseLocalEvent(uid, new CP14MagicEnergyLevelChangeEvent()
-            {
-                OldValue = component.Energy,
-                NewValue = newEnergy,
-                MaxValue = component.MaxEnergy,
-            });
         }
     }
 }
