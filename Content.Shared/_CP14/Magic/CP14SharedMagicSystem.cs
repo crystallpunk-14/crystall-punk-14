@@ -8,6 +8,7 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.Magic;
 
@@ -21,6 +22,7 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedGunSystem _gunSystem = default!;
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -128,8 +130,11 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
         if (!_magicEnergy.HasEnergy(args.Permormer.Value, ent.Comp.ManaCost, safe: ent.Comp.Safe))
         {
             args.Cancel();
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-not-enough-mana"), args.Permormer);
-            return;
+            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana"), args.Permormer.Value, args.Permormer.Value);
+        }
+        else if(!_magicEnergy.HasEnergy(args.Permormer.Value, ent.Comp.ManaCost, safe: true) && _net.IsServer)
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Permormer.Value, args.Permormer.Value, PopupType.SmallCaution);
         }
     }
 
@@ -138,7 +143,7 @@ public sealed partial class CP14SharedMagicSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        if (!TryComp<CP14MagicEnergyContainerComponent>(args.Permormer, out var magicContainer))
+        if (!HasComp<CP14MagicEnergyContainerComponent>(args.Permormer))
             return;
 
         _magicEnergy.TryConsumeEnergy(args.Permormer.Value, ent.Comp.ManaCost, safe: ent.Comp.Safe);

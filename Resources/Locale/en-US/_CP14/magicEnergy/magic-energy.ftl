@@ -5,6 +5,3 @@ cp14-magic-energy-crystal-slot-name = Energy crystal
 cp14-magic-energy-no-crystal = No energy crystal!
 cp14-magic-energy-insufficient = Not enough energy!
 cp14-magic-energy-insufficient-unsafe = Crystal cracks from lack of energy!
-
-cp14-magic-energy-damage-burn-out = The pain is piercing your body!
-cp14-magic-energy-damage-burn-out-fall = You pass out from the intense pain!

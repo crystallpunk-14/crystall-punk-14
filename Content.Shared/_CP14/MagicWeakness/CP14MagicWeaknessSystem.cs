@@ -19,13 +19,12 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14MagicWeaknessComponent, CP14MagicEnergyBurnOutEvent>(OnMagicEnergyBurnOut);
+        SubscribeLocalEvent<CP14MagicUnsafeDamageComponent, CP14MagicEnergyBurnOutEvent>(OnMagicEnergyBurnOutDamage);
+        SubscribeLocalEvent<CP14MagicUnsafeSleepComponent, CP14MagicEnergyBurnOutEvent>(OnMagicEnergyBurnOutSleep);
     }
 
-    private void OnMagicEnergyBurnOut(Entity<CP14MagicWeaknessComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
+    private void OnMagicEnergyBurnOutSleep(Entity<CP14MagicUnsafeSleepComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
     {
-        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.BurnOutEnergy);
-
         if (args.BurnOutEnergy > ent.Comp.SleepThreshold)
         {
             _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out-fall"), ent, ent, PopupType.LargeCaution);
@@ -34,9 +33,11 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
                 TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.BurnOutEnergy),
                 false);
         }
-        else
-        {
-            _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out"), ent, ent, PopupType.LargeCaution);
-        }
+    }
+
+    private void OnMagicEnergyBurnOutDamage(Entity<CP14MagicUnsafeDamageComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
+    {
+        _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out"), ent, ent, PopupType.LargeCaution);
+        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.BurnOutEnergy);
     }
 }
