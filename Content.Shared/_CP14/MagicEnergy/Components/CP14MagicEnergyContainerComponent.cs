@@ -1,4 +1,6 @@
+using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicEnergy.Components;
 
@@ -13,4 +15,7 @@ public sealed partial class CP14MagicEnergyContainerComponent : Component
 
     [DataField]
     public FixedPoint2 MaxEnergy = 100f;
+
+    [DataField]
+    public ProtoId<AlertPrototype>? MagicAlert = null;
 }
