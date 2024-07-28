@@ -176,6 +176,14 @@ public partial class CP14SharedMagicSystem : EntitySystem
             _popup.PopupEntity(ev.Reason, performer, performer);
         }
 
+        if (!ev.Cancelled)
+        {
+            var evStart = new CP14StartCastMagicEffectEvent()
+            {
+                Performer = performer,
+            };
+            RaiseLocalEvent(spell, ref evStart);
+        }
         return !ev.Cancelled;
     }
 

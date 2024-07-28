@@ -21,3 +21,21 @@ public sealed class CP14AfterCastMagicEffectEvent : EntityEventArgs
 {
     public EntityUid? Performer { get; init; }
 }
+/// <summary>
+/// is invoked if all conditions are met and the spell has begun to be cast
+/// </summary>
+[ByRefEvent]
+public sealed class CP14StartCastMagicEffectEvent : EntityEventArgs
+{
+    public EntityUid Performer { get; init; }
+}
+
+/// <summary>
+/// is invoked on the spell itself when the spell process has been completed or interrupted
+/// </summary>
+[ByRefEvent]
+public sealed class CP14StopCastMagicEffectEvent : EntityEventArgs
+{
+}
+
+

@@ -37,6 +37,8 @@
     startSpeech: "O tenebrae, ubi lux non penetrat..."
     endSpeech: "Quaeso, quemdam inter vos quaero!"
   - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14FireballRune
   - type: WorldTargetAction
     useDelay: 3
     itemIconStyle: BigAction
