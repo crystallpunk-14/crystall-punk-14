@@ -18,6 +18,7 @@ public partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14DelayedSpawnOnWorldTargetSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastSpawnOnPoint);
     }
 
+    //TODO: Fuck,there's a lot of code repetition here that needs to be squeezed together somehow. Event calls, checks, and all this stuff
     private void OnCastEntitiesSpawn(Entity<CP14DelayedSpawnEntitiesSpellComponent> spell, ref CP14DelayedInstantActionDoAfterEvent args)
     {
         var stopEv = new CP14StopCastMagicEffectEvent();
