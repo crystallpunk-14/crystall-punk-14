@@ -36,6 +36,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "О тьма, куда не проникает свет..."
     endSpeech: "Сожги все и вся!"
+  - type: CP14MagicEffectSomaticAspect
   - type: WorldTargetAction
     useDelay: 1
     itemIconStyle: BigAction

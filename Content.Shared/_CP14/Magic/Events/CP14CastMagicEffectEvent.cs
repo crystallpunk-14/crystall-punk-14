@@ -6,7 +6,14 @@ public sealed class CP14BeforeCastMagicEffectEvent : CancellableEntityEventArgs
     /// <summary>
     /// The Performer of the event, to check if they meet the requirements.
     /// </summary>
-    public EntityUid? Performer { get; init; }
+    public EntityUid Performer { get; init; }
+
+    public string Reason = string.Empty;
+
+    public void PushReason(string reason)
+    {
+        Reason += $"{reason}\n";
+    }
 }
 
 [ByRefEvent]

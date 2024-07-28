@@ -3,6 +3,8 @@ using Content.Shared._CP14.Magic.Events;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -24,12 +26,16 @@ public partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
+
+        SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14BeforeCastMagicEffectEvent>(OnSomaticAspectBeforeCast);
+
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14BeforeCastMagicEffectEvent>(OnVerbalAspectBeforeCast);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14AfterCastMagicEffectEvent>(OnVerbalAspectAfterCast);
 
@@ -42,18 +48,37 @@ public partial class CP14SharedMagicSystem : EntitySystem
         InitializeSpells();
     }
 
+    private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
+    {
+        if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
+        {
+            foreach (var hand in hands.Hands)
+            {
+                if (hand.Value.IsEmpty)
+                    return;
+            }
+        }
+        args.PushReason(Loc.GetString("cp14-magic-spell-need-somatic-component"));
+        args.Cancel();
+    }
 
     private void OnVerbalAspectBeforeCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
     {
-        if (HasComp<MutedComponent>(args.Performer))
-            args.Cancel();
-        
-        var ev = new CP14VerbalAspectSpeechEvent
+        if (!args.Cancelled)
         {
-            Performer = args.Performer,
-            Speech = ent.Comp.StartSpeech,
-        };
-        RaiseLocalEvent(ent, ref ev);
+            var ev = new CP14VerbalAspectSpeechEvent
+            {
+                Performer = args.Performer,
+                Speech = ent.Comp.StartSpeech,
+            };
+            RaiseLocalEvent(ent, ref ev);
+        }
+
+        if (HasComp<MutedComponent>(args.Performer))
+        {
+            args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
+            args.Cancel();
+        }
     }
 
     private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
@@ -144,6 +169,11 @@ public partial class CP14SharedMagicSystem : EntitySystem
             Performer = performer,
         };
         RaiseLocalEvent(spell, ref ev);
+        if (ev.Reason != string.Empty && _net.IsServer)
+        {
+            _popup.PopupEntity(ev.Reason, performer, performer);
+        }
+
         return !ev.Cancelled;
     }
 
@@ -155,14 +185,14 @@ public partial class CP14SharedMagicSystem : EntitySystem
             return;
         }
 
-        if (!_magicEnergy.HasEnergy(args.Performer.Value, ent.Comp.ManaCost, magicContainer, ent.Comp.Safe))
+        if (!_magicEnergy.HasEnergy(args.Performer, ent.Comp.ManaCost, magicContainer, ent.Comp.Safe))
         {
+            args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana"));
             args.Cancel();
-            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana"), args.Performer.Value, args.Performer.Value);
         }
-        else if(!_magicEnergy.HasEnergy(args.Performer.Value, ent.Comp.ManaCost, magicContainer, true) && _net.IsServer)
+        else if(!_magicEnergy.HasEnergy(args.Performer, ent.Comp.ManaCost, magicContainer, true) && _net.IsServer)
         {
-            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Performer.Value, args.Performer.Value, PopupType.SmallCaution);
+            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Performer, args.Performer, PopupType.SmallCaution);
         }
     }
 
