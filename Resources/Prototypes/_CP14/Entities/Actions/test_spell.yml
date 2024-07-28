@@ -34,11 +34,11 @@
   - type: CP14MagicEffect
     manaCost: 70
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "О тьма, куда не проникает свет..."
-    endSpeech: "Сожги все и вся!"
+    startSpeech: "O tenebrae, ubi lux non penetrat..."
+    endSpeech: "Quaeso, quemdam inter vos quaero!"
   - type: CP14MagicEffectSomaticAspect
   - type: WorldTargetAction
-    useDelay: 1
+    useDelay: 3
     itemIconStyle: BigAction
     checkCanAccess: false
     raiseOnUser: true
@@ -49,6 +49,7 @@
       sprite: Objects/Magic/magicactions.rsi
       state: fireball
     event: !type:CP14DelayedWorldTargetActionEvent
+      delay: 3
   - type: CP14DelayedProjectileSpell
     prototype: ProjectileFireball
 
@@ -138,8 +139,8 @@
 
 - type: listing
   id: CP14SpellbookFireball33
-  name: daggerspawn
-  description: daggerspawn
+  name: Gravity Well
+  description: well...
   productAction: CP14ActionSpelldaggerSpawn
   cost:
     WizCoin: 1

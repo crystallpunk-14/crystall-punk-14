@@ -9,10 +9,10 @@ namespace Content.Shared._CP14.Magic.Components;
 public sealed partial class CP14MagicEffectVerbalAspectComponent : Component
 {
     [DataField]
-    public LocId StartSpeech;
+    public string StartSpeech = string.Empty;
 
     [DataField]
-    public LocId EndSpeech;
+    public string EndSpeech = string.Empty;
 }
 
 /// <summary>

@@ -64,20 +64,22 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnVerbalAspectBeforeCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
     {
-        if (!args.Cancelled)
-        {
-            var ev = new CP14VerbalAspectSpeechEvent
-            {
-                Performer = args.Performer,
-                Speech = ent.Comp.StartSpeech,
-            };
-            RaiseLocalEvent(ent, ref ev);
-        }
-
         if (HasComp<MutedComponent>(args.Performer))
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
             args.Cancel();
+        }
+        else
+        {
+            if (!args.Cancelled)
+            {
+                var ev = new CP14VerbalAspectSpeechEvent
+                {
+                    Performer = args.Performer,
+                    Speech = ent.Comp.StartSpeech,
+                };
+                RaiseLocalEvent(ent, ref ev);
+            }
         }
     }
 

@@ -16,6 +16,6 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
     private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14VerbalAspectSpeechEvent args)
     {
         if (args.Performer is not null && args.Speech is not null)
-            _chat.TrySendInGameICMessage(args.Performer.Value, Loc.GetString(args.Speech), InGameICChatType.Speak, false);
+            _chat.TrySendInGameICMessage(args.Performer.Value, args.Speech, InGameICChatType.Speak, false);
     }
 }
