@@ -85,7 +85,7 @@
   - type: Storage
     grid:
     - 0,0,4,4
-    maxItemSize: Medium
+    maxItemSize: Normal
   - type: Destructible
     thresholds:
     - trigger:
