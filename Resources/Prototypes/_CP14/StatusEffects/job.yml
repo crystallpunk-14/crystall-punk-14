@@ -35,13 +35,6 @@
 
 - type: statusIcon
   parent: CP14JobIcon
-  id: CP14JobIconChef
-  icon:
-    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Chef
-
-- type: statusIcon
-  parent: CP14JobIcon
   id: CP14JobIconGuardCommander
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
