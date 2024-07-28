@@ -33,6 +33,9 @@
   components:
   - type: CP14MagicEffect
     manaCost: 70
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "О тьма, куда не проникает свет..."
+    endSpeech: "Сожги все и вся!"
   - type: WorldTargetAction
     useDelay: 1
     itemIconStyle: BigAction

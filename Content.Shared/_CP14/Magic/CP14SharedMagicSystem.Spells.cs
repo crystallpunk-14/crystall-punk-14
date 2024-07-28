@@ -4,7 +4,7 @@ using Content.Shared.EntityEffects;
 
 namespace Content.Shared._CP14.Magic;
 
-public sealed partial class CP14SharedMagicSystem
+public partial class CP14SharedMagicSystem
 {
     private void InitializeSpells()
     {
@@ -30,7 +30,7 @@ public sealed partial class CP14SharedMagicSystem
             SpawnAtPosition(spawn, Transform(args.User).Coordinates);
         }
 
-        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
         RaiseLocalEvent(spell, ref ev);
     }
 
@@ -46,7 +46,7 @@ public sealed partial class CP14SharedMagicSystem
             effect.Effect(new EntityEffectBaseArgs(args.User, EntityManager));
         }
 
-        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
         RaiseLocalEvent(spell, ref ev);
     }
 
@@ -62,7 +62,7 @@ public sealed partial class CP14SharedMagicSystem
             effect.Effect(new EntityEffectBaseArgs(args.Target.Value, EntityManager));
         }
 
-        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
         RaiseLocalEvent(spell, ref ev);
     }
 
@@ -89,7 +89,7 @@ public sealed partial class CP14SharedMagicSystem
                         spawnCoords.ToMapPos(EntityManager, _transform);
         _gunSystem.ShootProjectile(ent, direction, userVelocity, args.User, args.User);
 
-        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
         RaiseLocalEvent(spell, ref ev);
     }
 
@@ -108,7 +108,7 @@ public sealed partial class CP14SharedMagicSystem
             SpawnAtPosition(spawn, toCoords);
         }
 
-        var ev = new CP14AfterCastMagicEffectEvent {Permormer = args.User};
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
         RaiseLocalEvent(ent, ref ev);
     }
 }
