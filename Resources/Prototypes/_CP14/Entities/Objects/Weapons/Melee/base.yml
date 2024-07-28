@@ -21,7 +21,7 @@
 - type: entity
   id: CP14BaseWeaponThrowable
   abstract: true
-  components: 
+  components:
   - type: LandAtCursor
   - type: DamageOtherOnHit
     damage:
@@ -56,7 +56,7 @@
 - type: entity
   id: CP14BaseWeaponShort
   abstract: true
-  components: 
+  components:
   - type: MeleeWeapon
     range: 1.0 # 1.5 standart
     cPAnimationOffset: -0.75
@@ -89,3 +89,12 @@
           collection: MetalBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
+
+- type: entity
+  id: CP14BaseWeaponSelfDamage
+  abstract: true
+  components:
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5 # 100 hits

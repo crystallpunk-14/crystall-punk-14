@@ -54,10 +54,6 @@
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
       visible: false
-    - map: [ "clownedon" ] # Dynamically generated
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
-      visible: false
   - type: DamageVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     targetLayers:
@@ -144,9 +140,7 @@
     prototype: CP14Human
     requiredLegs: 2
   - type: Identity
-  - type: IdExaminable
   - type: Hands
-  - type: Internals
   - type: Inventory
   - type: InventorySlots
   - type: FloatingVisuals
@@ -171,8 +165,6 @@
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
-  - type: Fingerprint
-  - type: Dna
   - type: MindContainer
     showExamineInfo: true
   - type: InteractionPopup
@@ -180,11 +172,9 @@
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
-  - type: CanHostGuardian
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-  - type: CreamPied
   - type: Stripping
   - type: Strippable
   - type: UserInterface
@@ -215,9 +205,16 @@
     deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
   - type: Tag
     tags:
-    - CanPilot
     - FootstepSound
-    - DoorBumpOpener
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 100
+    energy: 100
+  - type: CP14MagicEnergyDraw
+    energy: 5
+    delay: 5
+  - type: CP14MagicUnsafeDamage
+  - type: CP14MagicUnsafeSleep
 
 
 - type: entity
@@ -341,10 +338,6 @@
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
       state: body-overlay-2
-      visible: false
-    - map: [ "clownedon" ] # Dynamically generated
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
       visible: false
   - type: Appearance
   - type: HumanoidAppearance

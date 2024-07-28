@@ -6,6 +6,8 @@
   - type: Objective
     issuer: cp14-objective-issuer-expedition
 
+
+# Collect group
 - type: entity
   abstract: true
   parent: CP14BaseExpeditionObjective
@@ -26,5 +28,12 @@
   - type: CP14ExpeditionCollectCondition
     verifyMapExistence: false
     collectGroup: CP14Gold
+    minCollectionSize: 25
+    maxCollectionSize: 50
   - type: Objective
     difficulty: 1
+
+- type: weightedRandom
+  id: CP14ExpeditionCollectObjectiveGroup
+  weights:
+    CP14ExpeditionCollectGoldObjective: 1

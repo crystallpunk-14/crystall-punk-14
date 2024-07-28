@@ -39,3 +39,5 @@
   - type: Tag
     tags:
     - CP14HerbalGathering
+  - type: CP14Currency
+    currency: 100

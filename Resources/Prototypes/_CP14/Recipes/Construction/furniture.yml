@@ -92,6 +92,24 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: Workbench
+  description: Table for the production of various basic tools.
+  id: CP14Workbench
+  graph: CP14TableWooden
+  startNode: start
+  targetNode: CP14Workbench
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: workbench
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14Mannequin
   name: mannequin
   description: Wooden mannequin designed for clothing displaying.

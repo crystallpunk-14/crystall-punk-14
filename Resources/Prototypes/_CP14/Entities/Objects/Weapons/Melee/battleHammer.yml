@@ -3,6 +3,7 @@
   parent:
   - BaseItem
   - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
   name: battle hammer
   description: A big heavy hammer! Bruh! #TODO
   components:
@@ -56,3 +57,5 @@
       params:
         variation: 0.03
         volume: 2
+  - type: CP14Currency
+    currency: 1500

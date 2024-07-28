@@ -18,6 +18,7 @@
         layer:
         - TableLayer
   - type: Sprite
+    snapCardinals: true
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
     state: frame
   - type: Icon

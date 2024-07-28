@@ -127,39 +127,39 @@
 #            min: 1
 #            max: 5
 #
-- type: entity
-  id: CP14WallStoneSilverOre
-  suffix: silver ore
-  parent: CP14WallStone
-  description: A solid stone natural wall. You see the tantalizing particles of silver in it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_silver.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_silver.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/break_stone.ogg
-          params:
-            volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14OreSilver:
-            min: 1
-            max: 5
-          CP14StoneBlock1:
-            min: 2
-            max: 3
-  - type: IconSmooth
-    base: wall
+#- type: entity
+#  id: CP14WallStoneSilverOre
+#  suffix: silver ore
+#  parent: CP14WallStone
+#  description: A solid stone natural wall. You see the tantalizing particles of silver in it.
+#  components:
+#  - type: Sprite
+#    sprite: _CP14/Structures/Walls/Natural/cave_stone_silver.rsi
+#  - type: Icon
+#    sprite: _CP14/Structures/Walls/Natural/cave_stone_silver.rsi
+#  - type: Destructible
+#    thresholds:
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 100
+#      behaviors:
+#      - !type:DoActsBehavior
+#        acts: ["Destruction"]
+#      - !type:PlaySoundBehavior
+#        sound:
+#          path: /Audio/Effects/break_stone.ogg
+#          params:
+#            volume: -6
+#      - !type:SpawnEntitiesBehavior
+#        spawn:
+#          CP14OreSilver:
+#            min: 1
+#            max: 5
+#          CP14StoneBlock1:
+#            min: 2
+#            max: 3
+#  - type: IconSmooth
+#    base: wall
 
 - type: entity
   id: CP14WallStoneGoldOre

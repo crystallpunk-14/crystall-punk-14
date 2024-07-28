@@ -1,0 +1,31 @@
+- type: entity
+  id: CP14BaseMagicRune
+  name: magic rune
+  description: manifestation of magical energy in the physical plane
+  abstract: true
+  components:
+  - type: Sprite
+    drawDepth: FloorTiles
+    sprite: _CP14/Effects/Magic/cast_rune.rsi
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    netsync: false
+
+- type: entity
+  id: CP14FireballRune
+  parent: CP14BaseMagicRune
+  components:
+  - type: PointLight
+    color: "#d47d26"
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      color: "#d47d26"
+      shader: unshaded
+    - state: sun
+      color: "#d47d26"
+      shader: unshaded

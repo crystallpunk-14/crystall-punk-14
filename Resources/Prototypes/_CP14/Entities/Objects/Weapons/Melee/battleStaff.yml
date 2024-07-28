@@ -36,3 +36,5 @@
       collection: MetalThud
     cPAnimationLength: 0.3
     cPAnimationOffset: -1.3
+  - type: CP14Currency
+    currency: 20

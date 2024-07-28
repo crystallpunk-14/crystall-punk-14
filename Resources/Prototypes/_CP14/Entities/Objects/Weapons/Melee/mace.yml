@@ -1,9 +1,10 @@
 - type: entity
   id: CP14BaseMace
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseWeaponDestructible
   - CP14BaseWeaponThrowable
+  - CP14BaseWeaponSelfDamage
   name: mace
   description: A heavy piece of metal on a long stick. What could be simpler than that?
   components:
@@ -33,3 +34,5 @@
     damage:
       types:
         Blunt: 10
+  - type: CP14Currency
+    currency: 500

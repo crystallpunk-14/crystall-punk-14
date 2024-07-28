@@ -44087,98 +44087,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: CP14CartridgeBulletRifle
-  entities:
-  - uid: 762
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -39.799057,-13.2319355
-      parent: 2
-  - uid: 763
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -39.529102,-13.198202
-      parent: 2
-  - uid: 774
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -39.450367,-13.389357
-      parent: 2
-  - uid: 775
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -39.66408,-13.299402
-      parent: 2
-  - uid: 5645
-    components:
-    - type: Transform
-      pos: 34.14076,8.588783
-      parent: 2
-  - uid: 5646
-    components:
-    - type: Transform
-      pos: 32.749653,14.450079
-      parent: 2
-  - uid: 5647
-    components:
-    - type: Transform
-      pos: 33.797386,8.520859
-      parent: 2
-  - uid: 5651
-    components:
-    - type: Transform
-      pos: 32.48552,14.564526
-      parent: 2
-  - uid: 5653
-    components:
-    - type: Transform
-      pos: 32.221386,14.45888
-      parent: 2
-  - uid: 5679
-    components:
-    - type: Transform
-      pos: 32.749653,14.74936
-      parent: 2
-  - uid: 5680
-    components:
-    - type: Transform
-      pos: 32.85531,14.608534
-      parent: 2
-  - uid: 5681
-    components:
-    - type: Transform
-      pos: 33.56847,8.732098
-      parent: 2
-  - uid: 5687
-    components:
-    - type: Transform
-      pos: 33.09303,14.74936
-      parent: 2
-  - uid: 5689
-    components:
-    - type: Transform
-      pos: 33.86782,8.835229
-      parent: 2
-  - uid: 5717
-    components:
-    - type: Transform
-      pos: 34.211193,8.738411
-      parent: 2
-  - uid: 5718
-    components:
-    - type: Transform
-      pos: 33.806187,8.6327915
-      parent: 2
-  - uid: 6317
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -39.450367,-12.995804
-      parent: 2
 - proto: CP14Chasm
   entities:
   - uid: 5573
@@ -46287,7 +46195,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46318,7 +46225,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46349,7 +46255,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46380,7 +46285,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46411,7 +46315,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46442,7 +46345,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46541,7 +46443,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46572,7 +46473,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46604,7 +46504,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46635,7 +46534,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46732,7 +46630,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46764,7 +46661,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46879,6 +46775,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -37.5,-19.5
+      parent: 2
+- proto: CP14SpawnPointCaptain
+  entities:
+  - uid: 751
+    components:
+    - type: Transform
+      pos: 8.5,-0.5
       parent: 2
 - proto: CP14TableWooden
   entities:
@@ -51592,6 +51495,11 @@ entities:
     - type: Transform
       pos: -17.5,45.5
       parent: 2
+  - uid: 2210
+    components:
+    - type: Transform
+      pos: -20.5,32.5
+      parent: 2
   - uid: 2260
     components:
     - type: Transform
@@ -51606,13 +51514,6 @@ entities:
     components:
     - type: Transform
       pos: -20.5,39.5
-      parent: 2
-- proto: CP14WallStoneSilverOre
-  entities:
-  - uid: 2210
-    components:
-    - type: Transform
-      pos: -20.5,32.5
       parent: 2
 - proto: CP14WallWhitebrick
   entities:
@@ -51958,31 +51859,6 @@ entities:
     components:
     - type: Transform
       pos: -38.5,-12.5
-      parent: 2
-- proto: CP14WeaponRevolverNavy
-  entities:
-  - uid: 7072
-    components:
-    - type: Transform
-      pos: 11.455918,-12.536671
-      parent: 2
-- proto: CP14WeaponRifleDurandal
-  entities:
-  - uid: 751
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -39.292896,-12.770916
-      parent: 2
-  - uid: 5644
-    components:
-    - type: Transform
-      pos: 31.820044,14.771354
-      parent: 2
-  - uid: 5650
-    components:
-    - type: Transform
-      pos: 35.164196,8.832269
       parent: 2
 - proto: CP14WindowWooden
   entities:

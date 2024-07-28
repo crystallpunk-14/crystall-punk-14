@@ -12,9 +12,9 @@
   noSpawn: true
   components:
   - type: CP14ExpeditionObjectivesRule
-    objectives:
-    - CP14ExpeditionCollectGoldObjective
-  # Expedition random objectives
-  # main objective + sub objective?
-  # motivations
+    departmentObjectives:
+      CP14Command:
+      - CP14ExpeditionCollectObjectiveGroup
+      CP14Mercenary:
+      - CP14PersonalCurrencyCollectObjectiveGroup
   # antags

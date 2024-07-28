@@ -7,13 +7,13 @@ tilemap:
   2: CP14FloorDirt
   3: CP14FloorFoundation
   4: CP14FloorGrass
+  10: CP14FloorOakWoodPlanks
+  11: CP14FloorOakWoodPlanksBig
   5: CP14FloorSand
   6: CP14FloorStonebricks
   7: CP14FloorStonebricksSmallCarved1
   8: CP14FloorStonebricksSmallCarved2
   9: CP14FloorStonebricksSquareCarved
-  10: CP14FloorWoodPlanks
-  11: CP14FloorWoodPlanksBig
 entities:
 - proto: ""
   entities:
@@ -2186,6 +2186,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,16.5
+      parent: 2
+- proto: CP14BaseShovel
+  entities:
+  - uid: 234
+    components:
+    - type: Transform
+      pos: 7.4584475,-2.61353
       parent: 2
 - proto: CP14BaseSickle
   entities:
@@ -44215,134 +44222,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: CP14CartridgeBulletRifle
-  entities:
-  - uid: 781
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 782
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 784
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 785
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 786
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4376
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4377
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4378
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4379
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4380
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4408
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4409
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4410
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4411
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4412
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4413
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4414
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 4415
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: CP14Cauldron
   entities:
   - uid: 185
@@ -44927,6 +44806,22 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: CP14ClothingShirtCottonBlack
+  entities:
+  - uid: 9832
+    components:
+    - type: Transform
+      parent: 9819
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 9835
+    components:
+    - type: Transform
+      parent: 9819
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CP14ClothingShirtCottonBlue
   entities:
   - uid: 9836
@@ -44937,22 +44832,6 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
   - uid: 9838
-    components:
-    - type: Transform
-      parent: 9819
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: CP14ClothingShirtCottonBlueDark
-  entities:
-  - uid: 9832
-    components:
-    - type: Transform
-      parent: 9819
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9835
     components:
     - type: Transform
       parent: 9819
@@ -46322,13 +46201,6 @@ entities:
     - type: Transform
       pos: 9.299216,-3.5921
       parent: 2
-- proto: CP14Shovel
-  entities:
-  - uid: 234
-    components:
-    - type: Transform
-      pos: 7.4584475,-2.61353
-      parent: 2
 - proto: CP14SpawnPointAdventurer
   entities:
   - uid: 647
@@ -46412,6 +46284,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,0.5
+      parent: 2
+- proto: CP14SpawnPointCaptain
+  entities:
+  - uid: 779
+    components:
+    - type: Transform
+      pos: 6.5,2.5
       parent: 2
 - proto: CP14TableWooden
   entities:
@@ -49136,15 +49015,6 @@ entities:
     - type: Transform
       pos: 2.5,-24.5
       parent: 2
-- proto: CP14WeaponRifleCrush
-  entities:
-  - uid: 783
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: CP14WildSage
   entities:
   - uid: 155
@@ -49367,60 +49237,6 @@ entities:
     - type: Transform
       pos: 7.5,5.5
       parent: 2
-- proto: CP14WoodenChest
-  entities:
-  - uid: 779
-    components:
-    - type: Transform
-      pos: 8.5,8.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.8856695
-        - 7.0937095
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 4408
-          - 4380
-          - 4379
-          - 4409
-          - 4378
-          - 4377
-          - 4376
-          - 783
-          - 4410
-          - 4411
-          - 4412
-          - 4413
-          - 4414
-          - 4415
-          - 786
-          - 785
-          - 784
-          - 782
-          - 781
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CP14WoodenCupboard
   entities:
   - uid: 9819

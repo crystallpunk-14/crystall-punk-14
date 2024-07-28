@@ -23,6 +23,9 @@
     - coin9
     - coin10
   - type: Appearance
+  - type: CP14Currency
+    currency: 1
+    category: Currency
 
 # Copper
 
@@ -41,6 +44,8 @@
   - type: Stack
     stackType: CP14CopperCoin
     count: 10
+  - type: CP14Currency
+    currency: 1
 
 - type: entity
   id: CP14CopperCoin5
@@ -79,6 +84,8 @@
   - type: Stack
     stackType: CP14SilverCoin
     count: 10
+  - type: CP14Currency
+    currency: 10
 
 - type: entity
   id: CP14SilverCoin5
@@ -117,6 +124,8 @@
   - type: Stack
     stackType: CP14GoldCoin
     count: 10
+  - type: CP14Currency
+    currency: 100
 
 - type: entity
   id: CP14GoldCoin5
@@ -155,6 +164,8 @@
   - type: Stack
     stackType: CP14PlatinumCoin
     count: 10
+  - type: CP14Currency
+    currency: 1000
 
 - type: entity
   id: CP14PlatinumCoin5
