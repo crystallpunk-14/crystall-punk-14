@@ -49,7 +49,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
 
         if (!_roundSeed.TryGetSeed(out var seed))
         {
-            Log.Error("Missing RoundSeed. Seed set to 0");
+            Log.Warning("Missing RoundSeed. Seed set to 0");
             seed = 0;
         }
 
