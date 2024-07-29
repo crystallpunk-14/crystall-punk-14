@@ -250,16 +250,6 @@
     shirt: CP14ClothingShirtCottonBlack
 
 - type: loadout
-  id: CP14ClothingShirtCottonBlack
-  equipment: CP14ClothingShirtCottonBlack
-
-- type: startingGear
-  id: CP14ClothingShirtCottonBlack
-  equipment:
-    shirt: CP14ClothingShirtCottonBlack
-
-
-- type: loadout
   id: CP14ClothingShirtCottonPurple
   equipment: CP14ClothingShirtCottonPurple
 
