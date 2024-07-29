@@ -13,7 +13,9 @@ namespace Content.Server._CP14.RoundSeed;
 [RegisterComponent, Access(typeof(CP14RoundSeedSystem))]
 public sealed partial class CP14RoundSeedComponent : Component
 {
+    [ViewVariables]
     public static int MaxValue = 10000;
 
+    [ViewVariables]
     public int Seed;
 }
