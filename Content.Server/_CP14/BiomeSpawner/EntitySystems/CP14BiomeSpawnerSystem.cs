@@ -35,6 +35,8 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
     private void OnMapInit(Entity<CP14BiomeSpawnerComponent> ent, ref MapInitEvent args)
     {
         SpawnBiome(ent);
+        QueueDel(ent);
+
     }
 
     private void SpawnBiome(Entity<CP14BiomeSpawnerComponent> ent)
@@ -89,7 +91,5 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
 
         if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed.Value, map, out var entityProto))
             Spawn(entityProto, new EntityCoordinates(gridUid, tileCenterVec));
-
-        QueueDel(ent);
     }
 }
