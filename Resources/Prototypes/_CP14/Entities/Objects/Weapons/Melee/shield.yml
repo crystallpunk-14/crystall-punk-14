@@ -3,6 +3,7 @@
   parent: 
   - BaseItem
   - CP14BaseWeaponLight
+  - CP14BaseWeaponThrowable
   name: shield
   description: A wooden shield capable of withstanding multiple blows.
   components:
@@ -40,7 +41,7 @@
     - back
   - type: MeleeWeapon
     angle: 0
-    range: 0.4
+    range: 0.8
     attackRate: 0.5
     wideAnimationRotation: -30
     wideAnimation: CP14WeaponArcSlash
@@ -54,6 +55,14 @@
   - type: MeleeThrowOnHit
     lifetime: 0.05
     speed: 3
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 6
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 6
   - type: StaminaDamageOnHit
     damage: 10
   - type: Damageable
