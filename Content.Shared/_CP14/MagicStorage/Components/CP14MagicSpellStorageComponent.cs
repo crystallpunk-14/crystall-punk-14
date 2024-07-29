@@ -5,8 +5,8 @@ namespace Content.Shared._CP14.MagicStorage.Components;
 /// <summary>
 /// A component that allows you to store spells in items
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedMagicStorageSystem))]
-public sealed partial class CP14MagicStorageComponent : Component
+[RegisterComponent, Access(typeof(CP14SharedMagicAttuningSystem))]
+public sealed partial class CP14MagicSpellStorageComponent : Component
 {
     /// <summary>
     /// list of spell prototypes used for initialization.

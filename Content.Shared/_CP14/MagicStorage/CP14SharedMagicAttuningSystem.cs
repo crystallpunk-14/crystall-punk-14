@@ -1,7 +1,9 @@
 using Content.Shared._CP14.MagicStorage.Components;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
+using Content.Shared.Foldable;
 using Content.Shared.Mind;
+using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
@@ -11,17 +13,18 @@ namespace Content.Shared._CP14.MagicStorage;
 /// <summary>
 /// This system handles the storage of spells in entities, and how players obtain them.
 /// </summary>
-public sealed partial class CP14SharedMagicStorageSystem : EntitySystem
+public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
 {
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14MagicStorageComponent, MapInitEvent>(OnMagicStorageInit);
+        SubscribeLocalEvent<CP14MagicSpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
 
         SubscribeLocalEvent<CP14MagicAttuningItemComponent, GetVerbsEvent<InteractionVerb>>(OnInteractionVerb);
         SubscribeLocalEvent<CP14MagicAttuningMindComponent, CP14MagicAttuneDoAfterEvent>(OnAttuneDoAfter);
@@ -30,7 +33,7 @@ public sealed partial class CP14SharedMagicStorageSystem : EntitySystem
     /// <summary>
     /// When we initialize, we create action entities, and add them to this item.
     /// </summary>
-    private void OnMagicStorageInit(Entity<CP14MagicStorageComponent> mStorage, ref MapInitEvent args)
+    private void OnMagicStorageInit(Entity<CP14MagicSpellStorageComponent> mStorage, ref MapInitEvent args)
     {
         foreach (var spell in mStorage.Comp.Spells)
         {
@@ -70,7 +73,7 @@ public sealed partial class CP14SharedMagicStorageSystem : EntitySystem
         if (!TryComp<CP14MagicAttuningMindComponent>(mindId, out var focusingMind))
             return false;
 
-        if (focusingMind.MaxFocus <= 0)
+        if (focusingMind.MaxAttuning <= 0)
             return false;
 
         return true;
@@ -81,11 +84,17 @@ public sealed partial class CP14SharedMagicStorageSystem : EntitySystem
         if (!_mind.TryGetMind(user, out var mindId, out var mind))
             return false;
 
-        if (!TryComp<CP14MagicAttuningMindComponent>(mindId, out var focusingMind))
+        if (!TryComp<CP14MagicAttuningMindComponent>(mindId, out var attuningMind))
             return false;
 
-        if (focusingMind.MaxFocus <= 0)
+        if (attuningMind.MaxAttuning <= 0)
             return false;
+
+        if (attuningMind.AttunedTo.Count > 0)
+        {
+            var oldestAttune = attuningMind.AttunedTo[0];
+            _popup.PopupClient(Loc.GetString("cp14-magic-attune-oldest-forgot", ("item", MetaData(oldestAttune).EntityName)), user);
+        }
 
         var doAfterArgs = new DoAfterArgs(EntityManager,
             user,
@@ -108,11 +117,61 @@ public sealed partial class CP14SharedMagicStorageSystem : EntitySystem
         if (args.Cancelled || args.Handled)
             return;
 
+        if (ent.Comp.AttunedTo.Count >= ent.Comp.MaxAttuning)
+        {
+            var oldestAttune = ent.Comp.AttunedTo[0];
+            RemoveAttune(ent, oldestAttune);
+        }
+    }
 
+    private void RemoveAttune(Entity<CP14MagicAttuningMindComponent> attuningMind, EntityUid item)
+    {
+        if (!attuningMind.Comp.AttunedTo.Contains(item))
+            return;
+
+        attuningMind.Comp.AttunedTo.Remove(item);
+
+        var ev = new RemovedAttuneToMindEvent(attuningMind, item);
+        RaiseLocalEvent(attuningMind, ev);
+        RaiseLocalEvent(item, ev);
+
+        if (TryComp<MindComponent>(attuningMind, out var mind))
+        {
+            _popup.PopupClient(Loc.GetString("cp14-magic-attune-oldest-forgot-end", ("item", MetaData(item).EntityName)), mind.Owner);
+        }
     }
 }
 
 [Serializable, NetSerializable]
 public sealed partial class CP14MagicAttuneDoAfterEvent : SimpleDoAfterEvent
 {
+}
+
+/// <summary>
+/// is evoked on both the item and the mind when a new connection between them appears.
+/// </summary>
+public sealed class AddedAttuneToMindEvent : EntityEventArgs
+{
+    public readonly EntityUid Mind;
+    public readonly EntityUid Item;
+
+    public AddedAttuneToMindEvent(EntityUid mind, EntityUid item)
+    {
+        Mind = mind;
+        Item = item;
+    }
+}
+/// <summary>
+/// is evoked on both the item and the mind when the connection is broken
+/// </summary>
+public sealed class RemovedAttuneToMindEvent : EntityEventArgs
+{
+    public readonly EntityUid Mind;
+    public readonly EntityUid Item;
+
+    public RemovedAttuneToMindEvent(EntityUid mind, EntityUid item)
+    {
+        Mind = mind;
+        Item = item;
+    }
 }
