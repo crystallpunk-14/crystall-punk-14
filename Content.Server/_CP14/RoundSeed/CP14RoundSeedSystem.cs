@@ -20,10 +20,10 @@ public sealed class CP14RoundSeedSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<CP14RoundSeedComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<CP14RoundSeedComponent, ComponentStartup>(OnComponentStartup);
     }
 
-    private void OnComponentInit(Entity<CP14RoundSeedComponent> ent, ref ComponentInit args)
+    private void OnComponentStartup(Entity<CP14RoundSeedComponent> ent, ref ComponentStartup args)
     {
         ent.Comp.Seed = _random.Next(CP14RoundSeedComponent.MaxValue);
     }
