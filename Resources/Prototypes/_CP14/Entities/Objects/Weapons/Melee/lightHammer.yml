@@ -17,15 +17,18 @@
     layers:
     - state: icon
   - type: MeleeWeapon
-    attackRate: 1.2
+    attackRate: 1.7
+    range: 1
     wideAnimationRotation: 225
     wideAnimation: CP14WeaponArcSlash
     cPAnimationLength: 0.18
     damage:
       types:
-        Blunt: 10
+        Blunt: 5
     soundHit:
       collection: MetalThud
+  - type: StaminaDamageOnHit
+    damage: 4
   - type: DamageOtherOnHit
     damage:
       types:

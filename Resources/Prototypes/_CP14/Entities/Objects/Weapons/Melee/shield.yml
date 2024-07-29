@@ -36,6 +36,24 @@
     breakOnMove: false
     slots:
     - back
+  - type: MeleeWeapon
+    angle: 0
+    range: 0.4
+    attackRate: 0.5
+    wideAnimationRotation: -30
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 3
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.3
+    cPAnimationOffset: -0.5
+  - type: MeleeThrowOnHit
+    lifetime: 0.05
+    speed: 3
+  - type: StaminaDamageOnHit
+    damage: 10
   - type: Damageable
     damageContainer: Shield
   - type: Destructible

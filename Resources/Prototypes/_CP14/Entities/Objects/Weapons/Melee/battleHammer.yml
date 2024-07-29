@@ -20,7 +20,9 @@
     slots:
     - back
   - type: MeleeWeapon
-    attackRate: 0.8
+    angle: 120
+    attackRate: 0.7
+    range: 1.8
     wideAnimationRotation: 320
     wideAnimation: CP14WeaponArcSlash
     damage:
@@ -34,8 +36,10 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 20
+        Blunt: 9
         Structural: 10
+  - type: StaminaDamageOnHit
+    damage: 10
   - type: Item
     size: Ginormous
   - type: ClothingSpeedModifier
