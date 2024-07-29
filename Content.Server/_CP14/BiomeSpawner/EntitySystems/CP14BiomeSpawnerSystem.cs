@@ -1,0 +1,95 @@
+/*
+ * All right reserved to CrystallPunk.
+ *
+ * BUT this file is sublicensed under MIT License
+ *
+ */
+
+using System.Linq;
+using Content.Server._CP14.BiomeSpawner.Components;
+using Content.Server._CP14.RoundSeed;
+using Content.Server.Decals;
+using Content.Server.Parallax;
+using Robust.Server.GameObjects;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
+
+namespace Content.Server._CP14.BiomeSpawner.EntitySystems;
+
+public sealed class CP14BiomeSpawnerSystem : EntitySystem
+{
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly BiomeSystem _biome = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SharedMapSystem _maps = default!;
+    [Dependency] private readonly DecalSystem _decals = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly CP14RoundSeedSystem _roundSeed = default!;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<CP14BiomeSpawnerComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnMapInit(Entity<CP14BiomeSpawnerComponent> ent, ref MapInitEvent args)
+    {
+        SpawnBiome(ent);
+        QueueDel(ent);
+
+    }
+
+    private void SpawnBiome(Entity<CP14BiomeSpawnerComponent> ent)
+    {
+        var biome = _proto.Index(ent.Comp.Biome);
+        var spawnerTransform = Transform(ent);
+
+        var gridUid = spawnerTransform.ParentUid;
+
+        if (!TryComp<MapGridComponent>(gridUid, out var map))
+            return;
+
+        if (!_roundSeed.TryGetSeed(out var seed))
+        {
+            Log.Warning("Missing RoundSeed. Seed set to 0");
+            seed = 0;
+        }
+
+        var vec = _transform.GetGridOrMapTilePosition(ent);
+
+        if (!_biome.TryGetTile(vec, biome.Layers, seed.Value, map, out var tile))
+            return;
+
+        // Set new tile
+        _maps.SetTile(gridUid, map, vec, tile.Value);
+
+        var tileCenterVec = vec + map.TileSizeHalfVector;
+
+        // Remove old decals
+        var oldDecals = _decals.GetDecalsInRange(gridUid, tileCenterVec);
+        foreach (var (id, _) in oldDecals)
+        {
+            _decals.RemoveDecal(gridUid, id);
+        }
+
+        //Add decals
+        if (_biome.TryGetDecals(vec, biome.Layers, seed.Value, map, out var decals))
+        {
+            foreach (var decal in decals)
+            {
+                _decals.TryAddDecal(decal.ID, new EntityCoordinates(gridUid, decal.Position), out _);
+            }
+        }
+
+        // Remove entities
+        var oldEntities = _lookup.GetEntitiesInRange(spawnerTransform.Coordinates, 0.48f);
+        // TODO: Replace this shit with GetEntitiesInBox2
+        foreach (var entToRemove in oldEntities.Concat(new[] { ent.Owner })) // Do not remove self
+        {
+            QueueDel(entToRemove);
+        }
+
+        if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed.Value, map, out var entityProto))
+            Spawn(entityProto, new EntityCoordinates(gridUid, tileCenterVec));
+    }
+}
