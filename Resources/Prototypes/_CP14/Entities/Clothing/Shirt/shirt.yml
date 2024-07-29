@@ -79,17 +79,6 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtCottonBlack
-  name: cotton black shirt
-  description: Pleasant to the touch material, in a comfortable loose shirt shape.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Cotton/black.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Cotton/black.rsi
-
-- type: entity
-  parent: CP14ClothingShirtBase
   id: CP14ClothingShirtSteampunk
   name: brass reinforced shirt
   description: A white shirt with brass inserts
