@@ -15,6 +15,5 @@ public sealed partial class CP14RoundSeedComponent : Component
 {
     public static int MaxValue = 10000;
 
-    [DataField]
     public int Seed;
 }
