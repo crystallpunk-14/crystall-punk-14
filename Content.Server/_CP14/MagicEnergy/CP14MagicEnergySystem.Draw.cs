@@ -1,8 +1,6 @@
 using System.Numerics;
 using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
-using Content.Shared.FixedPoint;
-using Content.Shared.Interaction.Events;
 
 namespace Content.Server._CP14.MagicEnergy;
 
@@ -12,7 +10,21 @@ public partial class CP14MagicEnergySystem
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnDrawMapInit);
         SubscribeLocalEvent<CP14RandomAuraNodeComponent, MapInitEvent>(OnRandomRangeMapInit);
-        SubscribeLocalEvent<CP14AuraScannerComponent, UseInHandEvent>(OnAuraScannerUseInHand);
+
+    }
+
+    private void OnRandomRangeMapInit(Entity<CP14RandomAuraNodeComponent> random, ref MapInitEvent args)
+    {
+        if (!TryComp<CP14AuraNodeComponent>(random, out var draw))
+            return;
+
+        draw.Energy = _random.NextFloat(random.Comp.MinDraw, random.Comp.MaxDraw);
+        draw.Range = _random.NextFloat(random.Comp.MinRange, random.Comp.MaxRange);
+    }
+
+    private void OnDrawMapInit(Entity<CP14MagicEnergyDrawComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(ent.Comp.Delay);
     }
 
     private void UpdateDraw(float frameTime)
@@ -21,7 +33,6 @@ public partial class CP14MagicEnergySystem
         UpdateEnergyCrystalSlot();
         UpdateEnergyRadiusDraw();
     }
-
 
     private void UpdateEnergyContainer()
     {
@@ -79,37 +90,5 @@ public partial class CP14MagicEnergySystem
                 ChangeEnergy(container, container.Comp, energyDraw, true);
             }
         }
-    }
-
-    private void OnRandomRangeMapInit(Entity<CP14RandomAuraNodeComponent> random, ref MapInitEvent args)
-    {
-        if (!TryComp<CP14AuraNodeComponent>(random, out var draw))
-            return;
-
-        draw.Energy = _random.NextFloat(random.Comp.MinDraw, random.Comp.MaxDraw);
-        draw.Range = _random.NextFloat(random.Comp.MinRange, random.Comp.MaxRange);
-    }
-
-    private void OnDrawMapInit(Entity<CP14MagicEnergyDrawComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(ent.Comp.Delay);
-    }
-
-    private void OnAuraScannerUseInHand(Entity<CP14AuraScannerComponent> scanner, ref UseInHandEvent args)
-    {
-        FixedPoint2 sumDraw = 0f;
-        var query = EntityQueryEnumerator<CP14AuraNodeComponent, TransformComponent>();
-        while (query.MoveNext(out var auraUid, out var node, out var xform))
-        {
-            if (xform.MapUid != Transform(scanner).MapUid)
-                continue;
-
-            var distance = Vector2.Distance(_transform.GetWorldPosition(auraUid), _transform.GetWorldPosition(scanner));
-            if (distance > node.Range)
-                continue;
-
-            sumDraw += node.Energy * (1 - distance / node.Range);
-        }
-        _popup.PopupCoordinates(Loc.GetString("cp14-magic-scanner", ("power", sumDraw)), Transform(scanner).Coordinates, args.User);
     }
 }
