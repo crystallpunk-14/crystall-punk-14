@@ -4,7 +4,6 @@ using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -15,6 +14,9 @@ using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.Magic;
 
+/// <summary>
+/// This system handles the basic mechanics of spell use, such as doAfter, event invocation, and energy spending.
+/// </summary>
 public partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -26,7 +28,6 @@ public partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {

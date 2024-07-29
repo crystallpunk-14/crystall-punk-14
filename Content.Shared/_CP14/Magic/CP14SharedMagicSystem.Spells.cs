@@ -4,6 +4,9 @@ using Content.Shared.EntityEffects;
 
 namespace Content.Shared._CP14.Magic;
 
+/// <summary>
+/// This part of the system handles the specific effects of using magic spells.
+/// </summary>
 public partial class CP14SharedMagicSystem
 {
     private void InitializeSpells()

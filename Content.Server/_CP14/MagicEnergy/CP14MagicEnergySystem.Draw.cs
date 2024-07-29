@@ -10,7 +10,6 @@ public partial class CP14MagicEnergySystem
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnDrawMapInit);
         SubscribeLocalEvent<CP14RandomAuraNodeComponent, MapInitEvent>(OnRandomRangeMapInit);
-
     }
 
     private void OnRandomRangeMapInit(Entity<CP14RandomAuraNodeComponent> random, ref MapInitEvent args)
