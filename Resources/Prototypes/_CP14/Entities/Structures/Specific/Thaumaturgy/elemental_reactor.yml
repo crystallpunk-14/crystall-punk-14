@@ -20,7 +20,6 @@
         - WallLayer
   - type: Physics
     bodyType: Static
-  - type: CP14MagicEnergyRelay
   - type: CP14MagicEnergyContainer
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyDraw
