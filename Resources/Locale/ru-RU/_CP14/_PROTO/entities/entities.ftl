@@ -399,7 +399,7 @@ ent-CP14BaseSharpeningStone = точильный камень
     .desc = Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
 
 ent-CP14BaseBattleHammer = боевой молот
-    .desc = A big heavy hammer! Bruh!
+    .desc = Большой тяжелый молот. Лучше вам не стоять у него на пути!
 
 ent-CP14BaseBattleStaff = боевой посох
     .desc = Нет оружия проще и эффективнее, чем длинная и тяжелая палка!
@@ -604,7 +604,7 @@ ent-CP14CrystalDiamondsBig = { ent-CP14CrystalBase }
     .suffix = White, Big
 
 ent-CP14FloorWater = вода
-    .desc = Брух
+    .desc = Впадина с обычной водой. Достаточна чиста для употребления.
 
 ent-CP14HighBush = высокий куст
     .desc = Высокие и густые заросли. Возможно кто-то наблюдает за тобой из них.
@@ -846,7 +846,7 @@ ent-CP14WallStone = камень
     .desc = Природная стена из цельного камня. В ней ощущается холод пещеры.
 
 ent-CP14WallDirt = земляной холм
-    .desc = bruh
+    .desc = Высокая куча земли. Можно ли построить из нее дом?
 
 ent-CP14WallStoneGoldOre = { ent-CP14WallStone }
     .desc = A solid stone natural wall. You see the tantalizing particles of gold in it.
