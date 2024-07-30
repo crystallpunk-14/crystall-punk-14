@@ -2,6 +2,7 @@ using Content.Shared._CP14.Magic.Components;
 using Content.Shared._CP14.Magic.Events;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
 using Content.Shared.Popups;
@@ -28,6 +29,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
 
     public override void Initialize()
     {
@@ -47,6 +49,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14DelayedWorldTargetActionEvent>(OnWorldTargetAction);
 
         InitializeSpells();
+        InitializeSpellStorage();
     }
 
     private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)

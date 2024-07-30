@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.MagicStorage.Components;
+namespace Content.Shared._CP14.MagicAttuning;
 
 /// <summary>
 /// A mind that can focus on objects

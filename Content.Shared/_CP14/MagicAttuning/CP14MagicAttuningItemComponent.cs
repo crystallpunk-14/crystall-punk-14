@@ -1,7 +1,7 @@
-namespace Content.Shared._CP14.MagicStorage.Components;
+namespace Content.Shared._CP14.MagicAttuning;
 
 /// <summary>
-/// Reflects the fact that this subject can be focused on (Magical focus as a mechanic from DnD.)
+/// Reflects the fact that this subject can be focused on (Magical attune as a mechanic from DnD.)
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedMagicAttuningSystem))]
 public sealed partial class CP14MagicAttuningItemComponent : Component

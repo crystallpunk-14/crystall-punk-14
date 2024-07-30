@@ -1,22 +1,17 @@
-using Content.Shared._CP14.MagicStorage.Components;
-using Content.Shared.Actions;
 using Content.Shared.DoAfter;
-using Content.Shared.Foldable;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CP14.MagicStorage;
+namespace Content.Shared._CP14.MagicAttuning;
 
 /// <summary>
-/// This system handles the storage of spells in entities, and how players obtain them.
+/// This system controls the customization to magic items by the players.
 /// </summary>
 public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
 {
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -24,8 +19,6 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<CP14MagicSpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
 
         SubscribeLocalEvent<CP14MagicAttuningItemComponent, GetVerbsEvent<InteractionVerb>>(OnInteractionVerb);
         SubscribeLocalEvent<CP14MagicAttuningMindComponent, CP14MagicAttuneDoAfterEvent>(OnAttuneDoAfter);
@@ -47,20 +40,7 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
         attuneMind.MaxAttuning = ent.Comp.MaxAttuning;
     }
 
-    /// <summary>
-    /// When we initialize, we create action entities, and add them to this item.
-    /// </summary>
-    private void OnMagicStorageInit(Entity<CP14MagicSpellStorageComponent> mStorage, ref MapInitEvent args)
-    {
-        foreach (var spell in mStorage.Comp.Spells)
-        {
-            var spellEnt = _actionContainer.AddAction(mStorage, spell);
-            if (spellEnt is null)
-                continue;
 
-            mStorage.Comp.SpellEntities.Add(spellEnt.Value);
-        }
-    }
 
     private void OnInteractionVerb(Entity<CP14MagicAttuningItemComponent> attuningItem, ref GetVerbsEvent<InteractionVerb> args)
     {
@@ -137,6 +117,7 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             DistanceThreshold = 2f,
+            BlockDuplicate = true,
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);
