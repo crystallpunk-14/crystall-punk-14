@@ -67,33 +67,37 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        if (!CanAttune(args.User, attuningItem))
+        if (!_mind.TryGetMind(args.User, out var mindId, out var mind))
+            return;
+
+        if (!TryComp<CP14MagicAttuningMindComponent>(mindId, out var attumingMind))
             return;
 
         var user = args.User;
-        args.Verbs.Add(new()
+        if (attumingMind.AttunedTo.Contains(args.Target))
         {
-            Act = () =>
+            args.Verbs.Add(new()
             {
-                TryStartAttune(user, attuningItem);
-            },
-            Text = Loc.GetString("cp14-magic-attuning-verb-text", ("item", MetaData(attuningItem).EntityName)),
-            Message = Loc.GetString("cp14-magic-attuning-verb-message"),
-        });
-    }
-
-    public bool CanAttune(EntityUid user, EntityUid item)
-    {
-        if (!_mind.TryGetMind(user, out var mindId, out var mind))
-            return false;
-
-        if (!TryComp<CP14MagicAttuningMindComponent>(mindId, out var focusingMind))
-            return false;
-
-        if (focusingMind.MaxAttuning <= 0)
-            return false;
-
-        return true;
+                Act = () =>
+                {
+                    RemoveAttune((mindId, attumingMind), attuningItem);
+                },
+                Text = Loc.GetString("cp14-magic-deattuning-verb-text"),
+                Message = Loc.GetString("cp14-magic-attuning-verb-message"),
+            });
+        }
+        else
+        {
+            args.Verbs.Add(new()
+            {
+                Act = () =>
+                {
+                    TryStartAttune(user, attuningItem);
+                },
+                Text = Loc.GetString("cp14-magic-attuning-verb-text"),
+                Message = Loc.GetString("cp14-magic-attuning-verb-message"),
+            });
+        }
     }
 
     private bool TryStartAttune(EntityUid user, Entity<CP14MagicAttuningItemComponent> item)
