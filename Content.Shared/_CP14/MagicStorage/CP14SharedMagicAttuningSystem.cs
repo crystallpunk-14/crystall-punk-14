@@ -90,10 +90,20 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
         if (attuningMind.MaxAttuning <= 0)
             return false;
 
+        //if there's an overabundance of ties, we report that the oldest one is torn.
         if (attuningMind.AttunedTo.Count > 0)
         {
             var oldestAttune = attuningMind.AttunedTo[0];
             _popup.PopupClient(Loc.GetString("cp14-magic-attune-oldest-forgot", ("item", MetaData(oldestAttune).EntityName)), user);
+        }
+
+        //we notify the current owner of the item that someone is cutting ties.
+        if (item.Comp.Link is not null &&
+            item.Comp.Link.Value.Owner != mindId &&
+            TryComp<MindComponent>(item.Comp.Link.Value.Owner, out var ownerMind) &&
+            ownerMind.OwnedEntity is not null)
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-magic-attune-oldest-forgot", ("item", MetaData(item).EntityName)), ownerMind.OwnedEntity.Value);
         }
 
         var doAfterArgs = new DoAfterArgs(EntityManager,
@@ -131,14 +141,34 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
 
         attuningMind.Comp.AttunedTo.Remove(item);
 
-        var ev = new RemovedAttuneToMindEvent(attuningMind, item);
+        if (!TryComp<CP14MagicAttuningItemComponent>(item, out var attuningItem))
+            return;
+
+        attuningItem.Link = null;
+
+        var ev = new RemovedAttuneFromMindEvent(attuningMind, item);
         RaiseLocalEvent(attuningMind, ev);
         RaiseLocalEvent(item, ev);
 
         if (TryComp<MindComponent>(attuningMind, out var mind))
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-attune-oldest-forgot-end", ("item", MetaData(item).EntityName)), mind.Owner);
+            _popup.PopupClient(Loc.GetString("cp14-magic-attune-oldest-forgot-end", ("item", MetaData(item).EntityName)), mind.OwnedEntity);
         }
+    }
+
+    private void AddAttune(Entity<CP14MagicAttuningMindComponent> attuningMind, EntityUid item)
+    {
+        if (!attuningMind.Comp.AttunedTo.Contains(item))
+            return;
+
+        if (!TryComp<CP14MagicAttuningItemComponent>(item, out var attuningItem))
+            return;
+
+        if (attuningItem.Link is not null)
+            RemoveAttune(attuningItem.Link.Value, item);
+
+        attuningMind.Comp.AttunedTo.Add(item);
+        attuningItem.Link = attuningMind;
     }
 }
 
@@ -164,12 +194,12 @@ public sealed class AddedAttuneToMindEvent : EntityEventArgs
 /// <summary>
 /// is evoked on both the item and the mind when the connection is broken
 /// </summary>
-public sealed class RemovedAttuneToMindEvent : EntityEventArgs
+public sealed class RemovedAttuneFromMindEvent : EntityEventArgs
 {
     public readonly EntityUid Mind;
     public readonly EntityUid Item;
 
-    public RemovedAttuneToMindEvent(EntityUid mind, EntityUid item)
+    public RemovedAttuneFromMindEvent(EntityUid mind, EntityUid item)
     {
         Mind = mind;
         Item = item;
