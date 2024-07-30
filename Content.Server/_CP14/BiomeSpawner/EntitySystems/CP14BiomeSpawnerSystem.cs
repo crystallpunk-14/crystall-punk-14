@@ -44,7 +44,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
         var biome = _proto.Index(ent.Comp.Biome);
         var spawnerTransform = Transform(ent);
 
-        var gridUid = spawnerTransform.ParentUid;
+        var gridUid = spawnerTransform.GridUid;
 
         if (!TryComp<MapGridComponent>(gridUid, out var map))
             return;
