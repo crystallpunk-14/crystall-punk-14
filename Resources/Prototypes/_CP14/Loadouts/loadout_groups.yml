@@ -10,6 +10,7 @@
   - CP14ClothingCloakBlacksmithArpon
   - CP14ClothingCloakFurcapeBlack
   - CP14ClothingCloakFurcapeBlue
+  - CP14ClothingCloakMaidArpon
 
 - type: loadoutGroup
   id: CP14BasicEyes
@@ -25,6 +26,7 @@
   minLimit: 0
   loadouts:
   - CP14Girdles
+
 - type: loadoutGroup
   id: CP14BasicMask
   name: cp14-loadout-basic-mask
@@ -54,6 +56,7 @@
   - CP14ClothingPantsTrouserDarkBlue
   - CP14ClothingPantsAristocratic
   - CP14ClothingPantsLoincloth
+  - CP14ClothingDressBlack
 
 - type: loadoutGroup
   id: CP14BasicShirt
