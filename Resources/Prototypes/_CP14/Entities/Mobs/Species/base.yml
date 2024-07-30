@@ -215,6 +215,8 @@
     delay: 5
   - type: CP14MagicUnsafeDamage
   - type: CP14MagicUnsafeSleep
+  - type: CP14MagicAttuningMind
+    autoCopyToMind: true
 
 
 - type: entity

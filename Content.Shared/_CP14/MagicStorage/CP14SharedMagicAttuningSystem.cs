@@ -3,6 +3,7 @@ using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Foldable;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Map;
@@ -28,6 +29,22 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicAttuningItemComponent, GetVerbsEvent<InteractionVerb>>(OnInteractionVerb);
         SubscribeLocalEvent<CP14MagicAttuningMindComponent, CP14MagicAttuneDoAfterEvent>(OnAttuneDoAfter);
+        SubscribeLocalEvent<CP14MagicAttuningMindComponent, MindAddedMessage>(OnMindAdded);
+    }
+
+    private void OnMindAdded(Entity<CP14MagicAttuningMindComponent> ent, ref MindAddedMessage args)
+    {
+        if (!ent.Comp.AutoCopyToMind)
+            return;
+
+        if (HasComp<MindComponent>(ent))
+            return;
+
+        if (!_mind.TryGetMind(ent, out var mindId, out var mind))
+            return;
+
+        var attuneMind = AddComp<CP14MagicAttuningMindComponent>(mindId);
+        attuneMind.MaxAttuning = ent.Comp.MaxAttuning;
     }
 
     /// <summary>
@@ -91,10 +108,10 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
             return false;
 
         //if there's an overabundance of ties, we report that the oldest one is torn.
-        if (attuningMind.AttunedTo.Count > 0)
+        if (attuningMind.AttunedTo.Count >= attuningMind.MaxAttuning)
         {
             var oldestAttune = attuningMind.AttunedTo[0];
-            _popup.PopupClient(Loc.GetString("cp14-magic-attune-oldest-forgot", ("item", MetaData(oldestAttune).EntityName)), user);
+            _popup.PopupEntity(Loc.GetString("cp14-magic-attune-oldest-forgot", ("item", MetaData(oldestAttune).EntityName)), user);
         }
 
         //we notify the current owner of the item that someone is cutting ties.
@@ -124,7 +141,7 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
 
     private void OnAttuneDoAfter(Entity<CP14MagicAttuningMindComponent> ent, ref CP14MagicAttuneDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled)
+        if (args.Cancelled || args.Handled || args.Target is null)
             return;
 
         if (ent.Comp.AttunedTo.Count >= ent.Comp.MaxAttuning)
@@ -132,6 +149,8 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
             var oldestAttune = ent.Comp.AttunedTo[0];
             RemoveAttune(ent, oldestAttune);
         }
+
+        AddAttune(ent, args.Target.Value);
     }
 
     private void RemoveAttune(Entity<CP14MagicAttuningMindComponent> attuningMind, EntityUid item)
@@ -150,15 +169,15 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
         RaiseLocalEvent(attuningMind, ev);
         RaiseLocalEvent(item, ev);
 
-        if (TryComp<MindComponent>(attuningMind, out var mind))
+        if (TryComp<MindComponent>(attuningMind, out var mind) && mind.OwnedEntity is not null)
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-attune-oldest-forgot-end", ("item", MetaData(item).EntityName)), mind.OwnedEntity);
+            _popup.PopupEntity(Loc.GetString("cp14-magic-attune-oldest-forgot-end", ("item", MetaData(item).EntityName)), mind.OwnedEntity.Value);
         }
     }
 
     private void AddAttune(Entity<CP14MagicAttuningMindComponent> attuningMind, EntityUid item)
     {
-        if (!attuningMind.Comp.AttunedTo.Contains(item))
+        if (attuningMind.Comp.AttunedTo.Contains(item))
             return;
 
         if (!TryComp<CP14MagicAttuningItemComponent>(item, out var attuningItem))
@@ -169,6 +188,11 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
 
         attuningMind.Comp.AttunedTo.Add(item);
         attuningItem.Link = attuningMind;
+
+
+        var ev = new AddedAttuneToMindEvent(attuningMind, item);
+        RaiseLocalEvent(attuningMind, ev);
+        RaiseLocalEvent(item, ev);
     }
 }
 

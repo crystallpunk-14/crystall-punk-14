@@ -8,3 +8,6 @@
     state: seed
   - type: CP14Seed
     plantProto: CP14PlantWheat
+  - type: CP14MagicAttuningItem
+    focusTime: 1
+    
