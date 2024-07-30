@@ -5,6 +5,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
+    state: torso
 
 - type: entity
   id: CP14HeadHuman
@@ -12,6 +13,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Human/parts.rsi
+    state: head
 
 - type: entity
   id: CP14LeftArmHuman

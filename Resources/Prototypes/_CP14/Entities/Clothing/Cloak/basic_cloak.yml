@@ -43,6 +43,19 @@
     sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
 
 - type: entity
+  parent: 
+  - CP14ClothingCloakBase
+  - ClothingSlotBase
+  id: CP14ClothingCloakMaidArpon
+  name: maid's apron
+  description: Cleanliness, orderliness and obedience are the main traits of a good maid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/maid_apron.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/maid_apron.rsi
+
+- type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakFurcapeBlack
   name: furcape

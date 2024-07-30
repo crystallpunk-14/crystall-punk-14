@@ -46,42 +46,36 @@
   id: CP14MobHumanHead
   baseSprite:
     sprite: _CP14/Mobs/Species/Human/parts.rsi
-    state: head_m
-
-- type: humanoidBaseSprite
-  id: CP14MobHumanHeadMale
-  baseSprite:
-    sprite: _CP14/Mobs/Species/Human/parts.rsi
-    state: head_m
+    state: head
 
 - type: humanoidBaseSprite
   id: CP14MobHumanHeadFemale
   baseSprite:
-    sprite: _CP14/Mobs/Species/Human/parts.rsi
-    state: head_f
+    sprite: _CP14/Mobs/Species/Human/female_parts.rsi
+    state: head
 
 - type: humanoidBaseSprite
   id: CP14MobHumanTorso
   baseSprite:
     sprite: _CP14/Mobs/Species/Human/parts.rsi
-    state: torso_m
-
-- type: humanoidBaseSprite
-  id: CP14MobHumanTorsoMale
-  baseSprite:
-    sprite: _CP14/Mobs/Species/Human/parts.rsi
-    state: torso_m
+    state: torso
 
 - type: humanoidBaseSprite
   id: CP14MobHumanTorsoFemale
   baseSprite:
-    sprite: _CP14/Mobs/Species/Human/parts.rsi
-    state: torso_f
+    sprite: _CP14/Mobs/Species/Human/female_parts.rsi
+    state: torso
 
 - type: humanoidBaseSprite
   id: CP14MobHumanLLeg
   baseSprite:
     sprite: _CP14/Mobs/Species/Human/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobHumanLLegFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Human/female_parts.rsi
     state: l_leg
 
 - type: humanoidBaseSprite
@@ -91,9 +85,21 @@
     state: l_arm
 
 - type: humanoidBaseSprite
+  id: CP14MobHumanLArmFemale
+  baseSprite:
+    sprite:  _CP14/Mobs/Species/Human/female_parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
   id: CP14MobHumanLHand
   baseSprite:
     sprite:  _CP14/Mobs/Species/Human/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobHumanLHandFemale
+  baseSprite:
+    sprite:  _CP14/Mobs/Species/Human/female_parts.rsi
     state: l_hand
 
 - type: humanoidBaseSprite
@@ -103,9 +109,21 @@
     state: l_foot
 
 - type: humanoidBaseSprite
+  id: CP14MobHumanLFootFemale
+  baseSprite:
+    sprite:  _CP14/Mobs/Species/Human/female_parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
   id: CP14MobHumanRLeg
   baseSprite:
     sprite:  _CP14/Mobs/Species/Human/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobHumanRLegFemale
+  baseSprite:
+    sprite:  _CP14/Mobs/Species/Human/female_parts.rsi
     state: r_leg
 
 - type: humanoidBaseSprite
@@ -115,13 +133,31 @@
     state: r_arm
 
 - type: humanoidBaseSprite
+  id: CP14MobHumanRArmFemale
+  baseSprite:
+    sprite:  _CP14/Mobs/Species/Human/female_parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
   id: CP14MobHumanRHand
   baseSprite:
     sprite:  _CP14/Mobs/Species/Human/parts.rsi
     state: r_hand
 
 - type: humanoidBaseSprite
+  id: CP14MobHumanRHandFemale
+  baseSprite:
+    sprite:  _CP14/Mobs/Species/Human/female_parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
   id: CP14MobHumanRFoot
   baseSprite:
     sprite: _CP14/Mobs/Species/Human/parts.rsi
+    state: r_foot
+
+- type: humanoidBaseSprite
+  id: CP14MobHumanRFootFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Human/female_parts.rsi
     state: r_foot

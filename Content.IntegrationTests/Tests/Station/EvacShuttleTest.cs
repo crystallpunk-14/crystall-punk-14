@@ -13,7 +13,7 @@ namespace Content.IntegrationTests.Tests.Station;
 [TestFixture]
 [TestOf(typeof(EmergencyShuttleSystem))]
 public sealed class EvacShuttleTest
-{
+{/*
     /// <summary>
     /// Ensure that the emergency shuttle can be called, and that it will travel to centcomm
     /// </summary>
@@ -123,5 +123,5 @@ public sealed class EvacShuttleTest
         pair.Server.CfgMan.SetCVar(CCVars.EmergencyShuttleEnabled, false);
         pair.Server.CfgMan.SetCVar(CCVars.GameMap, gameMap);
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

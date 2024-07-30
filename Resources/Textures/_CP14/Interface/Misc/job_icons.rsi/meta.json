@@ -14,7 +14,16 @@
       "name": "Alchemist"
     },
     {
+      "name": "Innkeeper"
+    },
+    {
       "name": "Captain"
+    },
+    {
+      "name": "GuardCommander"
+    },
+    {
+      "name": "HouseKeeper"
     }
   ]
 }

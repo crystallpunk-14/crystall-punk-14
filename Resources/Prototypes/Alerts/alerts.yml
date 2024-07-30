@@ -5,6 +5,7 @@
   id: BaseAlertOrder
   order:
     - category: Health
+    - alertType: CP14MagicEnergy
     - category: Stamina
     - alertType: SuitPower
     - category: Internals
