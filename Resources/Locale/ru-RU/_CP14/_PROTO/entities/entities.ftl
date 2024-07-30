@@ -387,7 +387,7 @@ ent-CP14EnergyCrystalMediumEmpty = { ent-CP14EnergyCrystalMedium }
 
 ent-CP14Bucket = ведро
     .desc = Старое скучное ведро
-    .suffix = CP14, Нужен респрайт!
+    .suffix = CP14!
 
 ent-CP14OldLantern = Старая Лампа
     .desc = Пережиток прошлого техномагии. Большой, тяжелый, непрактичный. Таким приятно разве что бить по голове.
