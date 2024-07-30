@@ -36,7 +36,7 @@
   id: CP14WallDirt
   name: earth cliffs
   parent: CP14BaseWall
-  description: bruh #TODO
+  description: A tall pile of dirt. Can a house be built from it?
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/Natural/dirt_wall.rsi

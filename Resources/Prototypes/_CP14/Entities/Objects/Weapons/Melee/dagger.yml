@@ -27,12 +27,13 @@
     layers:
     - state: icon
   - type: MeleeWeapon
+    angle: 60
     attackRate: 1.8
     wideAnimationRotation: 225
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Slash: 5
+        Slash: 3
         Piercing: 3
     soundHit:
       collection: MetalThud

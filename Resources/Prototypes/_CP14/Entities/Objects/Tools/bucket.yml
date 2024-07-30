@@ -3,14 +3,14 @@
   id: CP14Bucket
   name: bucket
   description: It's a boring old bucket.
-  suffix: CP14, need resprite
+  suffix: CP14
   components: 
   - type: Drink
     solution: bucket
     ignoreEmpty: true
   - type: Clickable
   - type: Sprite
-    sprite: Objects/Tools/bucket.rsi
+    sprite: _CP14/Objects/Tools/wooden_bucket.rsi
     layers:
     - state: icon
     - map: ["enum.SolutionContainerLayers.Fill"]
