@@ -1,13 +1,12 @@
-using Content.Shared._CP14.Magic;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.MagicStorage.Components;
+namespace Content.Shared._CP14.MagicSpellStorage;
 
 /// <summary>
 /// A component that allows you to store spells in items
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
-public sealed partial class CP14MagicSpellStorageComponent : Component
+[RegisterComponent, Access(typeof(CP14SpellStorageSystem))]
+public sealed partial class CP14SpellStorageComponent : Component
 {
     /// <summary>
     /// list of spell prototypes used for initialization.

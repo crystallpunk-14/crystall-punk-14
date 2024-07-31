@@ -1,8 +1,8 @@
-using Content.Shared._CP14.Magic.Components.Spells;
-using Content.Shared._CP14.Magic.Events;
+using Content.Shared._CP14.MagicSpell.Components.Spells;
+using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.EntityEffects;
 
-namespace Content.Shared._CP14.Magic;
+namespace Content.Shared._CP14.MagicSpell;
 
 /// <summary>
 /// This part of the system handles the specific effects of using magic spells.

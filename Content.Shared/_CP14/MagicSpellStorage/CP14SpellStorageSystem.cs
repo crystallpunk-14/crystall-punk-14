@@ -1,21 +1,23 @@
-using Content.Shared._CP14.MagicStorage.Components;
+using Content.Shared.Actions;
 
-namespace Content.Shared._CP14.Magic;
+namespace Content.Shared._CP14.MagicSpellStorage;
 
 /// <summary>
 /// this part of the system is responsible for storing spells in items, and the methods players use to obtain them.
 /// </summary>
-public partial class CP14SharedMagicSystem
+public sealed partial class CP14SpellStorageSystem : EntitySystem
 {
-    private void InitializeSpellStorage()
+    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
+
+    public override void Initialize()
     {
-        SubscribeLocalEvent<CP14MagicSpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
+        SubscribeLocalEvent<CP14SpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
     }
 
     /// <summary>
     /// When we initialize, we create action entities, and add them to this item.
     /// </summary>
-    private void OnMagicStorageInit(Entity<CP14MagicSpellStorageComponent> mStorage, ref MapInitEvent args)
+    private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> mStorage, ref MapInitEvent args)
     {
         foreach (var spell in mStorage.Comp.Spells)
         {

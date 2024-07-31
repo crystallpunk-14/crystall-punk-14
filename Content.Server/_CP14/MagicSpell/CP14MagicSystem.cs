@@ -1,9 +1,9 @@
 using Content.Server.Chat.Systems;
-using Content.Shared._CP14.Magic;
-using Content.Shared._CP14.Magic.Components;
-using Content.Shared._CP14.Magic.Events;
+using Content.Shared._CP14.MagicSpell;
+using Content.Shared._CP14.MagicSpell.Components;
+using Content.Shared._CP14.MagicSpell.Events;
 
-namespace Content.Server._CP14.Magic;
+namespace Content.Server._CP14.MagicSpell;
 
 public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 {

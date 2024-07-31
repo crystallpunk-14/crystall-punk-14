@@ -1,9 +1,10 @@
+using Content.Shared._CP14.MagicSpell.Interfaces;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CP14.Magic.Events;
+namespace Content.Shared._CP14.MagicSpell.Events;
 
 //World target
 public sealed partial class CP14DelayedWorldTargetActionEvent : WorldTargetActionEvent, ICP14DelayedMagicEffect

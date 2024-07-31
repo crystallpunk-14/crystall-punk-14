@@ -1,6 +1,6 @@
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared._CP14.Magic.Components;
+namespace Content.Shared._CP14.MagicSpell.Components;
 
 /// <summary>
 /// Restricts the use of this action, by spending mana or user requirements.
