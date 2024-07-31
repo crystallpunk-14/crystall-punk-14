@@ -36,6 +36,10 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
 
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedInstantActionDoAfterEvent>(OnDelayedInstantActionDoAfter);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnDelayedEntityTargetDoAfter);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnDelayedWorldTargetDoAfter);
+
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14BeforeCastMagicEffectEvent>(OnSomaticAspectBeforeCast);
 
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14BeforeCastMagicEffectEvent>(OnVerbalAspectBeforeCast);
@@ -48,6 +52,57 @@ public partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14DelayedWorldTargetActionEvent>(OnWorldTargetAction);
 
         InitializeSpells();
+    }
+
+    private void OnDelayedWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedWorldTargetActionDoAfterEvent args)
+    {
+        var stopEv = new CP14StopCastMagicEffectEvent();
+        RaiseLocalEvent(ent, ref stopEv);
+
+        if (args.Cancelled || !_net.IsServer)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(null, GetCoordinates(args.Target)));
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        RaiseLocalEvent(ent, ref ev);
+    }
+
+    private void OnDelayedEntityTargetDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedEntityTargetActionDoAfterEvent args)
+    {
+        var stopEv = new CP14StopCastMagicEffectEvent();
+        RaiseLocalEvent(ent, ref stopEv);
+
+        if (args.Cancelled || !_net.IsServer)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.Target, null));
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        RaiseLocalEvent(ent, ref ev);
+    }
+
+    private void OnDelayedInstantActionDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
+    {
+        var stopEv = new CP14StopCastMagicEffectEvent();
+        RaiseLocalEvent(ent, ref stopEv);
+
+        if (args.Cancelled || !_net.IsServer)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, Transform(args.User).Coordinates));
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        RaiseLocalEvent(ent, ref ev);
     }
 
     private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)

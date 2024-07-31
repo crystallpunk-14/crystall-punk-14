@@ -1,3 +1,4 @@
+using Content.Shared._CP14.MagicSpell.Interfaces;
 using Content.Shared.FixedPoint;
 
 namespace Content.Shared._CP14.MagicSpell.Components;
@@ -13,4 +14,7 @@ public sealed partial class CP14MagicEffectComponent : Component
 
     [DataField]
     public bool Safe = false;
+
+    [DataField]
+    public List<CP14SpellEffect> Effects = new();
 }
