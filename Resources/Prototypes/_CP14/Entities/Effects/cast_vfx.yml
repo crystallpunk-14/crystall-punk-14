@@ -5,6 +5,7 @@
   abstract: true
   components:
   - type: Sprite
+    noRot: true
     drawDepth: FloorTiles
     sprite: _CP14/Effects/Magic/cast_rune.rsi
   - type: Tag
