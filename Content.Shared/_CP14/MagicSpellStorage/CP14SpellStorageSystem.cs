@@ -1,9 +1,10 @@
 using Content.Shared._CP14.MagicAttuning;
 using Content.Shared.Actions;
+using Content.Shared.Clothing;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory;
 using Content.Shared.Mind;
-using Robust.Shared.Network;
 
 namespace Content.Shared._CP14.MagicSpellStorage;
 
@@ -17,12 +18,17 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly CP14SharedMagicAttuningSystem _attuning = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14SpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
+
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, GotEquippedHandEvent>(OnEquippedHand);
-        SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, AddedAttuneToMindEvent>(OnAddedAttune);
+        SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, AddedAttuneToMindEvent>(OnHandAddedAttune);
+
+        SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotEquippedEvent>(OnClothingEquipped);
+        SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotUnequippedEvent>(OnClothingUnequipped);
 
         SubscribeLocalEvent<CP14SpellStorageRequireAttuneComponent, RemovedAttuneFromMindEvent>(OnRemovedAttune);
     }
@@ -50,7 +56,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         TryGrantAccess((ent, spellStorage), args.User);
     }
 
-    private void OnAddedAttune(Entity<CP14SpellStorageAccessHoldingComponent> ent, ref AddedAttuneToMindEvent args)
+    private void OnHandAddedAttune(Entity<CP14SpellStorageAccessHoldingComponent> ent, ref AddedAttuneToMindEvent args)
     {
         if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
             return;
@@ -62,6 +68,19 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
             return;
 
         TryGrantAccess((ent, spellStorage), args.User.Value);
+    }
+
+    private void OnClothingEquipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotEquippedEvent args)
+    {
+        if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
+            return;
+
+        TryGrantAccess((ent, spellStorage), args.Wearer);
+    }
+
+    private void OnClothingUnequipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotUnequippedEvent args)
+    {
+        _actions.RemoveProvidedActions(args.Wearer, ent);
     }
 
     private bool TryGrantAccess(Entity<CP14SpellStorageComponent> storage, EntityUid user)
