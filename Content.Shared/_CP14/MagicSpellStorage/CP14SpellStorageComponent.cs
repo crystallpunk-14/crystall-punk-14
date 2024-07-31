@@ -17,5 +17,6 @@ public sealed partial class CP14SpellStorageComponent : Component
     /// <summary>
     /// created after the initialization of spell entities.
     /// </summary>
+    [DataField]
     public List<EntityUid> SpellEntities = new();
 }
