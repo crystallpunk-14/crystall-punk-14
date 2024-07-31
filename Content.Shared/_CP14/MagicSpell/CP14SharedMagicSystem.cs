@@ -87,6 +87,9 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
     {
+        if (_net.IsClient)
+            return;
+
         var ev = new CP14VerbalAspectSpeechEvent
         {
             Performer = args.Performer,

@@ -13,6 +13,5 @@
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellFireball
-    - CP14ActionSpellHealingWord
+    - CP14ActionSpellCureWounds
   - type: CP14SpellStorageRequireAttune

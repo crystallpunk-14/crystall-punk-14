@@ -6,7 +6,7 @@ namespace Content.Shared._CP14.MagicSpell.Components.Spells;
 /// Stores a list of effects for delayed actions.
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
-public sealed partial class CP14DelayedProjectileSpellComponent : Component
+public sealed partial class CP14DelayedWorldTargetProjectileSpellComponent : Component
 {
     /// <summary>
     /// What entity should be spawned.

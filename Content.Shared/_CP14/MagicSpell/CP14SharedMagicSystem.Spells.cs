@@ -12,25 +12,24 @@ public partial class CP14SharedMagicSystem
     private void InitializeSpells()
     {
         // Instants
-        SubscribeLocalEvent<CP14DelayedSpawnEntitiesSpellComponent, CP14DelayedInstantActionDoAfterEvent>(OnCastEntitiesSpawn);
-        SubscribeLocalEvent<CP14DelayedSelfEntityEffectSpellComponent, CP14DelayedInstantActionDoAfterEvent>(OnCastSelfEntityEffects);
+        SubscribeLocalEvent<CP14DelayedInstantSpawnSpellComponent, CP14DelayedInstantActionDoAfterEvent>(OnCastInstantSpawn);
+        SubscribeLocalEvent<CP14DelayedInstantSelfEntityEffectSpellComponent, CP14DelayedInstantActionDoAfterEvent>(OnCastInstantSelfEntityEffects);
         //Entity Target
-        SubscribeLocalEvent<CP14DelayedApplyEntityEffectsSpellComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnCastApplyEntityEffects);
+        SubscribeLocalEvent<CP14DelayedEntityTargetEntityEffectsSpellComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnCastEntityTargetApplyEntityEffects);
+        SubscribeLocalEvent<CP14DelayedEntityTargetSpawnSpellComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnCastEntityTargetSpawn);
         //World Target
-        SubscribeLocalEvent<CP14DelayedProjectileSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastProjectileSpell);
-        SubscribeLocalEvent<CP14DelayedSpawnOnWorldTargetSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastSpawnOnPoint);
+        SubscribeLocalEvent<CP14DelayedWorldTargetProjectileSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastWorldTargetProjectile);
+        SubscribeLocalEvent<CP14DelayedWorldTargetSpawnSpellComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnCastWorldTargetSpawn);
     }
 
     //TODO: Fuck,there's a lot of code repetition here that needs to be squeezed together somehow. Event calls, checks, and all this stuff
-    private void OnCastEntitiesSpawn(Entity<CP14DelayedSpawnEntitiesSpellComponent> spell, ref CP14DelayedInstantActionDoAfterEvent args)
+    private void OnCastInstantSpawn(Entity<CP14DelayedInstantSpawnSpellComponent> spell, ref CP14DelayedInstantActionDoAfterEvent args)
     {
         var stopEv = new CP14StopCastMagicEffectEvent();
         RaiseLocalEvent(spell, ref stopEv);
 
-        if (args.Cancelled || args.Handled || !_net.IsServer)
+        if (args.Cancelled || !_net.IsServer)
             return;
-
-        args.Handled = true;
 
         foreach (var spawn in spell.Comp.Spawns)
         {
@@ -41,15 +40,13 @@ public partial class CP14SharedMagicSystem
         RaiseLocalEvent(spell, ref ev);
     }
 
-    private void OnCastSelfEntityEffects(Entity<CP14DelayedSelfEntityEffectSpellComponent> spell, ref CP14DelayedInstantActionDoAfterEvent args)
+    private void OnCastInstantSelfEntityEffects(Entity<CP14DelayedInstantSelfEntityEffectSpellComponent> spell, ref CP14DelayedInstantActionDoAfterEvent args)
     {
         var stopEv = new CP14StopCastMagicEffectEvent();
         RaiseLocalEvent(spell, ref stopEv);
 
-        if (args.Cancelled || args.Handled)
+        if (args.Cancelled)
             return;
-
-        args.Handled = true;
 
         foreach (var effect in spell.Comp.Effects)
         {
@@ -60,15 +57,13 @@ public partial class CP14SharedMagicSystem
         RaiseLocalEvent(spell, ref ev);
     }
 
-    private void OnCastApplyEntityEffects(Entity<CP14DelayedApplyEntityEffectsSpellComponent> spell, ref CP14DelayedEntityTargetActionDoAfterEvent args)
+    private void OnCastEntityTargetApplyEntityEffects(Entity<CP14DelayedEntityTargetEntityEffectsSpellComponent> spell, ref CP14DelayedEntityTargetActionDoAfterEvent args)
     {
         var stopEv = new CP14StopCastMagicEffectEvent();
         RaiseLocalEvent(spell, ref stopEv);
 
-        if (args.Cancelled || args.Handled || args.Target == null)
+        if (args.Cancelled || args.Target == null)
             return;
-
-        args.Handled = true;
 
         foreach (var effect in spell.Comp.Effects)
         {
@@ -79,15 +74,30 @@ public partial class CP14SharedMagicSystem
         RaiseLocalEvent(spell, ref ev);
     }
 
-    private void OnCastProjectileSpell(Entity<CP14DelayedProjectileSpellComponent> spell, ref CP14DelayedWorldTargetActionDoAfterEvent args)
+    private void OnCastEntityTargetSpawn(Entity<CP14DelayedEntityTargetSpawnSpellComponent> spell, ref CP14DelayedEntityTargetActionDoAfterEvent args)
     {
         var stopEv = new CP14StopCastMagicEffectEvent();
         RaiseLocalEvent(spell, ref stopEv);
 
-        if (args.Cancelled || args.Handled || !_net.IsServer)
+        if (args.Cancelled|| args.Target == null || !_net.IsServer)
             return;
 
-        args.Handled = true;
+        foreach (var spawn in spell.Comp.Spawns)
+        {
+            SpawnAttachedTo(spawn, Transform(args.Target.Value).Coordinates);
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        RaiseLocalEvent(spell, ref ev);
+    }
+
+    private void OnCastWorldTargetProjectile(Entity<CP14DelayedWorldTargetProjectileSpellComponent> spell, ref CP14DelayedWorldTargetActionDoAfterEvent args)
+    {
+        var stopEv = new CP14StopCastMagicEffectEvent();
+        RaiseLocalEvent(spell, ref stopEv);
+
+        if (args.Cancelled || !_net.IsServer)
+            return;
 
         var xform = Transform(args.User);
         var fromCoords = xform.Coordinates;
@@ -109,15 +119,13 @@ public partial class CP14SharedMagicSystem
         RaiseLocalEvent(spell, ref ev);
     }
 
-    private void OnCastSpawnOnPoint(Entity<CP14DelayedSpawnOnWorldTargetSpellComponent> spell, ref CP14DelayedWorldTargetActionDoAfterEvent args)
+    private void OnCastWorldTargetSpawn(Entity<CP14DelayedWorldTargetSpawnSpellComponent> spell, ref CP14DelayedWorldTargetActionDoAfterEvent args)
     {
         var stopEv = new CP14StopCastMagicEffectEvent();
         RaiseLocalEvent(spell, ref stopEv);
 
-        if (args.Cancelled || args.Handled || !_net.IsServer)
+        if (args.Cancelled || !_net.IsServer)
             return;
-
-        args.Handled = true;
 
         var xform = Transform(args.User);
         var toCoords = GetCoordinates(args.Target);

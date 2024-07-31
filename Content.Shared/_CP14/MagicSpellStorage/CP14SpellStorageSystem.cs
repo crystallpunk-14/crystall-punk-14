@@ -3,7 +3,6 @@ using Content.Shared.Actions;
 using Content.Shared.Clothing;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Inventory;
 using Content.Shared.Mind;
 
 namespace Content.Shared._CP14.MagicSpellStorage;
@@ -18,7 +17,6 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly CP14SharedMagicAttuningSystem _attuning = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
 
     public override void Initialize()
     {

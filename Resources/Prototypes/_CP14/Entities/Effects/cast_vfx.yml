@@ -17,16 +17,19 @@
     netsync: false
 
 - type: entity
-  id: CP14FireballRune
-  parent: CP14BaseMagicRune
+  id: CP14BaseMagicImpact
+  name: magic impact
+  description: manifestation of magical energy in the physical plane
+  abstract: true
   components:
-  - type: PointLight
-    color: "#d47d26"
+  - type: TimedDespawn
+    lifetime: 1.6
+  - type: AnimationPlayer
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
   - type: Sprite
-    layers:
-    - state: medium_circle
-      color: "#d47d26"
-      shader: unshaded
-    - state: sun
-      color: "#d47d26"
-      shader: unshaded
+    drawdepth: Effects
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    noRot: true
