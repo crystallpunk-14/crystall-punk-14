@@ -6,9 +6,6 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_4.rsi
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 25
 
 - type: entity
   parent: DrinkBaseMug
@@ -18,9 +15,6 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_1.rsi
-  - type: PhysicalComposition
-    materialComposition:
-      Wood: 25
 
 - type: entity
   parent: DrinkBaseMug
@@ -30,9 +24,6 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_2.rsi
-  - type: PhysicalComposition
-    materialComposition:
-      Wood: 25
 
 - type: entity
   parent: DrinkBaseMug
@@ -42,6 +33,3 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_3.rsi
-  - type: PhysicalComposition
-    materialComposition:
-      Wood: 25

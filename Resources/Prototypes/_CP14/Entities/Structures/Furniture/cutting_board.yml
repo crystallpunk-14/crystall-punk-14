@@ -8,3 +8,5 @@
     sprite: _CP14/Structures/Furniture/cutting_board.rsi
     layers:
     - state: board
+  - type: Item
+    size: Normal

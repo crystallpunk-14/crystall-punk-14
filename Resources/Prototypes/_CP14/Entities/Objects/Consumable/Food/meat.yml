@@ -1,4 +1,4 @@
-﻿- type: entity # TODO Готовка до стейка
+﻿- type: entity
   name: raw meat
   parent: FoodMeat
   id: CP14RawFoodMeat
@@ -7,6 +7,10 @@
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat
+  - type: Construction
+    graph: CP14MeatSteak
+    node: start
+    defaultTarget: sheep steak
 
 - type: entity
   name: steak
@@ -18,3 +22,6 @@
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     layers:
     - state: sheepmeat-cooked
+  - type: Construction
+    graph: CP14MeatSteak
+    node: sheep steak

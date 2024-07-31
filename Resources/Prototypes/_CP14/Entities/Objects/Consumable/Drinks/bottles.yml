@@ -1,11 +1,17 @@
 ﻿#Base for future bottles
 - type: entity
   name: Green Bottle
-  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  parent: CP14BaseVial
   id: CP14GreenBottle
   suffix: Empty
   description: A green bottle perfect for drinking beer.
   components:
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
   - type: GenericVisualizer
     visuals:
       enum.OpenableVisuals.Opened:
@@ -20,6 +26,10 @@
       visible: false
     - state: icon
       map: ["enum.OpenableVisuals.Layer"]
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 20
   - type: SolutionContainerVisuals
     maxFillLevels: 4
     fillBaseName: fill-
@@ -32,6 +42,10 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/blue_bottle.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
@@ -44,6 +58,10 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/green_bottle.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
 
 - type: entity
   name: Orange bottle
