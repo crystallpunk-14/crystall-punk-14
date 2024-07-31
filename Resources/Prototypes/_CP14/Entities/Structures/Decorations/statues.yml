@@ -2,6 +2,7 @@
   id: CP14StatueGob
   parent: BaseStructure
   name: statue of Gob
+  description: It's beautiful.
   suffix: Normal
   components:
   - type: Sprite

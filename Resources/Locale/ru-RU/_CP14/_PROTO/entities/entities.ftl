@@ -135,16 +135,16 @@ ent-CP14ClothingShoesBlack = простые черные ботинки
 ent-CP14ClothingShoesAristocraticBlack = аристократичные черные ботинки
     .desc = Они достаточно дороги, чтобы вы не захотели в них ходить по пещерам.
 
-ent-CP14ClothingShoesSandals = сандали
-    .desc = Сандали, сделанные из грубой кожи и металлических креплений.
+ent-CP14ClothingShoesSandals = сандалии
+    .desc = Сандалии, сделанные из грубой кожи и металлических креплений.
 
 ent-CP14Mist = облако
 
 ent-CP14MistVitalExtract = { ent-CP14Mist }
     .desc = { ent-CP14Mist.desc }
 
-ent-CP14ExpeditionShipTargetPoint = Expedition ship target point
-    .desc = One of the possible arrival points of a ship carrying players
+ent-CP14ExpeditionShipTargetPoint = пункт назначения экспедиционного судна
+    .desc = Один из возможных пунктов прибытия корабля с игроками.
 
 ent-CP14SpawnPointAdventurer = авантюрист
 
@@ -213,7 +213,7 @@ ent-CP14OreGold = золотая руда
     .desc = Кусочек мягкого, чистого золота.
 
 ent-CP14CopperCoin = медная корона
-    .desc = Минимальная экономическая единица на просторах Эберрона. Является одной десятой серебрянного соверена.
+    .desc = Минимальная экономическая единица на просторах Эберрона. Является одной десятой серебряного соверена.
     .suffix = 10 монет
 
 ent-CP14CopperCoin5 = { ent-CP14CopperCoin }
@@ -224,7 +224,7 @@ ent-CP14CopperCoin1 = { ent-CP14CopperCoin }
     .desc = { ent-CP14CopperCoin.desc }
     .suffix = 1 монета
 
-ent-CP14SilverCoin = серебрянный соверен
+ent-CP14SilverCoin = серебряный соверен
     .desc = Эквивалентен 10 медным коронам, и является одной десятой золотого галифара.
     .suffix = 10 монет
 
@@ -237,7 +237,7 @@ ent-CP14SilverCoin1 = { ent-CP14SilverCoin }
     .suffix = 1 монета
 
 ent-CP14GoldCoin = золотой галифар
-    .desc = Эквивалентен 10 серебрянным соверенам, и является одной десятой платинового дракона.
+    .desc = Эквивалентен 10 серебряным соверенам, и является одной десятой платинового дракона.
     .suffix = 10 монет
 
 ent-CP14GoldCoin5 = { ent-CP14GoldCoin }
@@ -492,7 +492,7 @@ ent-CP14BaseWoodDoor = деревянная дверь
 
 ent-CP14WoodDoorOpened = { ent-CP14BaseWoodDoor }
     .desc = { ent-CP14BaseWoodDoor.desc }
-    .suffix = Opened
+    .suffix = Открытая
 
 ent-CP14WoodDoorTavern = { ent-CP14BaseWoodDoor }
     .desc = { ent-CP14BaseWoodDoor.desc }
@@ -722,7 +722,7 @@ ent-CP14TableWooden = деревянный стол
     .desc = Простой стол, сколоченный из досок.
 
 ent-CP14WallmountTorch = настенный факел
-    .desc = Хороший, надеждный источник света. Жаль, недолговечный.
+    .desc = Хороший, надёжный источник света. Жаль, недолговечный.
 
 ent-CP14WallmountLamp = вечная лампа
     .desc = Хрупкий вечный голубой огонь как доказательство превосходства магии над природой.
@@ -763,7 +763,7 @@ ent-CP14GatherableWildBase = { ent-CP14GatherableBase }
 ent-CP14GatherablePlantBase = { ent-CP14GatherableBase }
     .desc = { ent-CP14GatherableBase.desc }
 
-ent-CP14PlantWheat = пщеница
+ent-CP14PlantWheat = пшеница
     .desc = Наиболее популярная культура. Непритязательна, и открывает дорогу к разнообразию мучных изделий.
 
 ent-CP14PlantWheatDeath = мертвая пшеница
@@ -840,7 +840,7 @@ ent-CP14IronGrilleTJunction = { ent-CP14IronGrilleBase }
     .suffix = Т-соединение
 
 ent-CP14IronGrilleGate = ворота в железной решетке
-    .desc = Do you have any idea what awaits you behind these gates? It can be either a toilet or a luxurious mansion.
+    .desc = Представляете ли вы, что ждет вас за этими воротами? Это может быть как туалет, так и роскошный особняк.
 
 ent-CP14WallStone = камень
     .desc = Природная стена из цельного камня. В ней ощущается холод пещеры.
@@ -849,8 +849,8 @@ ent-CP14WallDirt = земляной холм
     .desc = Высокая куча земли. Можно ли построить из нее дом?
 
 ent-CP14WallStoneGoldOre = { ent-CP14WallStone }
-    .desc = A solid stone natural wall. You see the tantalizing particles of gold in it.
-    .suffix = gold ore
+    .desc = Природная стена из цельного камня. Вы видите в ней манящие частицы золота.
+    .suffix = золотая руда
 
 ent-CP14BaseWall = стена
     .desc = Достаточно прочная, чтобы укрыть вас от угрозы или холодного ветра.
@@ -911,15 +911,15 @@ ent-CP14FenceWoodSmallGate = ворота в деревянном заборе
 ent-CP14WindowStoneBrick = окно в стене из каменного кирпича
     .desc = Каменная кирпичная стена, и проделанным в ней стеклянным окном.
 
-ent-CP14WindowWooden = wooden window
-    .desc = A wooden wall with a glass window in it.
+ent-CP14WindowWooden = деревянное окно
+    .desc = Деревянная стена со стеклянным окном.
 
 ent-CP14OreSilver = серебро
     .desc = Кусочек блестящего, теплого серебра.
 
 ent-CP14WallStoneSilverOre = { ent-CP14WallStone }
-    .desc = A solid stone natural wall. You see the tantalizing particles of silver in it.
-    .suffix = silver ore
+    .desc = Природная стена из цельного камня. Вы видите в ней манящие частицы серебра.
+    .suffix = серебряная руда
 
 ent-CP14ClothingHeadWhiteBeret = белый берет
     .desc = Это берет.
@@ -958,15 +958,19 @@ ent-CP14CardboardWall = стена из картона
     .desc = Тонкая, непрочная стена из бумаги и картона. Пользуется популярностью в теплых странах.
 
 ent-CP14StatueGob = статуя Гоба
+    .desc = Он прекрасен.
     .suffix = Нормальная
 
 ent-CP14StatueGobVines = статуя Гоба
+    .desc = { ent-CP14StatueGob.desc }
     .suffix = Нормальная. Заросшая
 
 ent-CP14StatueGobRuined = разрушенная статуя Гоба
+    .desc = { ent-CP14StatueGob.desc }
     .suffix = Разрушенная
 
 ent-CP14StatueGobRuinedVines = разрушенная статуя Гоба
+    .desc = { ent-CP14StatueGob.desc }
     .suffix = Разрушенная. Заросшая
 
 ent-CPBaseSharpeningStoneStructure = стационарный точильный камень
