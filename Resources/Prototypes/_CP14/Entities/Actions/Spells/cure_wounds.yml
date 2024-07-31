@@ -9,6 +9,16 @@
     - !type:CP14SpellSpawnEntity
       spawns:
       - CP14CureWoundsImpactEffect
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -8
+            Blunt: -8
+            Piercing: -8
+            Heat: -8
+      - !type:Jitter
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
@@ -26,19 +36,6 @@
       state: cure_wounds
     event: !type:CP14DelayedEntityTargetActionEvent
       delay: 2
-  #- type: CP14DelayedEntityTargetSpawnSpell
-  #  spawns: 
-  #  - CP14CureWoundsImpactEffect
-  #- type: CP14DelayedEntityTargetEntityEffectsSpell
-  #  effects:
-  #  - !type:HealthChange
-  #    damage:
-  #      types:
-  #        Slash: -8
-  #        Blunt: -8
-  #        Piercing: -8
-  #        Heat: -8
-  #  - !type:Jitter
 
 - type: entity
   id: CP14CureWoundsRune

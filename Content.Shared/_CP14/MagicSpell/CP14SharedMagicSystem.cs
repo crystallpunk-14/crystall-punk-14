@@ -50,8 +50,6 @@ public partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
         SubscribeLocalEvent<CP14DelayedEntityTargetActionEvent>(OnEntityTargetAction);
         SubscribeLocalEvent<CP14DelayedWorldTargetActionEvent>(OnWorldTargetAction);
-
-        InitializeSpells();
     }
 
     private void OnDelayedWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedWorldTargetActionDoAfterEvent args)
@@ -64,7 +62,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
         foreach (var effect in ent.Comp.Effects)
         {
-            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(null, GetCoordinates(args.Target)));
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, null, GetCoordinates(args.Target)));
         }
 
         var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
@@ -81,7 +79,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
         foreach (var effect in ent.Comp.Effects)
         {
-            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.Target, null));
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, args.Target, null));
         }
 
         var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
@@ -98,7 +96,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
         foreach (var effect in ent.Comp.Effects)
         {
-            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, Transform(args.User).Coordinates));
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates));
         }
 
         var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
