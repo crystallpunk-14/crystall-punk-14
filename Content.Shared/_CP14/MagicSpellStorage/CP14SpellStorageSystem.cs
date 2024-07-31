@@ -1,6 +1,7 @@
 using Content.Shared._CP14.MagicAttuning;
 using Content.Shared.Actions;
 using Content.Shared.Hands;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
 using Robust.Shared.Network;
 
@@ -15,12 +16,15 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly CP14SharedMagicAttuningSystem _attuning = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14SpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, GotEquippedHandEvent>(OnEquippedHand);
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, AddedAttuneToMindEvent>(OnAddedAttune);
+
+        SubscribeLocalEvent<CP14SpellStorageRequireAttuneComponent, RemovedAttuneFromMindEvent>(OnRemovedAttune);
     }
 
     /// <summary>
@@ -54,6 +58,9 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         if (args.User is null)
             return;
 
+        if (!_hands.IsHolding(args.User.Value, ent))
+            return;
+
         TryGrantAccess((ent, spellStorage), args.User.Value);
     }
 
@@ -73,5 +80,13 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
         _actions.GrantActions(user, storage.Comp.SpellEntities, storage);
         return true;
+    }
+
+    private void OnRemovedAttune(Entity<CP14SpellStorageRequireAttuneComponent> ent, ref RemovedAttuneFromMindEvent args)
+    {
+        if (args.User is null)
+            return;
+
+        _actions.RemoveProvidedActions(args.User.Value, ent);
     }
 }
