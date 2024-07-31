@@ -1,3 +1,58 @@
 ﻿<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="Workbench">
+    <BoxContainer Orientation="Vertical">
+        <!-- Header -->
+        <BoxContainer>
+            <!-- IDK -->
+        </BoxContainer>
+
+        <!-- Main -->
+        <BoxContainer Orientation="Horizontal">
+            <GridContainer Columns="2">
+                <!-- Crafts container -->
+                <ScrollContainer VerticalExpand="True">
+                    <BoxContainer Orientation="Vertical"/>
+                </ScrollContainer>
+
+                <!-- Craft info -->
+                <ScrollContainer VerticalExpand="True">
+                    <PanelContainer>
+                        <!-- Background -->
+                        <PanelContainer.PanelOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#41332f"/>
+                        </PanelContainer.PanelOverride>
+
+                        <!-- Content -->
+                        <BoxContainer Orientation="Vertical">
+
+                            <!-- Item info -->
+                            <GridContainer Columns="2">
+                                <!-- Left panel - icon -->
+                                <BoxContainer>
+                                    <SpriteView Name="ItemView" Scale="2 2" SetSize="64 64"/>
+                                </BoxContainer>
+
+                                <!-- Right panel - name & description -->
+                                <BoxContainer Orientation="Vertical">
+                                    <Label Name="ItemName" Text="Name"/>
+                                    <Label Name="ItemDescription" Text="Description"/>
+                                </BoxContainer>
+                            </GridContainer>
+
+                            <!-- Required title -->
+                            <Label Text="Required"/>
+
+                            <!-- Craft requirements content -->
+                            <!-- Added by code -->
+                            <BoxContainer Name="CraftRequirements" Orientation="Vertical" VerticalExpand="True"/>
+
+                            <!-- Craft button -->
+                            <Button Name="CraftButton" Text="Craft"/>
+                        </BoxContainer>
+                    </PanelContainer>
+                </ScrollContainer>
+            </GridContainer>
+        </BoxContainer>
+    </BoxContainer>
 </DefaultWindow>
