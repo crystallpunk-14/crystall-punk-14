@@ -957,6 +957,18 @@ ent-CP14CaveStoneWallGoldOre = { ent-CP14CaveStoneWall }
 ent-CP14CardboardWall = стена из картона
     .desc = Тонкая, непрочная стена из бумаги и картона. Пользуется популярностью в теплых странах.
 
+ent-CP14StatueGob = статуя Гоба
+    .suffix = Нормальная
+
+ent-CP14StatueGobVines = статуя Гоба
+    .suffix = Нормальная. Заросшая
+
+ent-CP14StatueGobRuined = разрушенная статуя Гоба
+    .suffix = Разрушенная
+
+ent-CP14StatueGobRuinedVines = разрушенная статуя Гоба
+    .suffix = Разрушенная. Заросшая
+
 ent-CPBaseSharpeningStoneStructure = стационарный точильный камень
     .desc = прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
 
