@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.MagicSpell.Interfaces;
+namespace Content.Shared._CP14.MagicSpell.Events;
 
 public interface ICP14DelayedMagicEffect // The speak n spell interface
 {

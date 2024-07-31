@@ -1,4 +1,3 @@
-using Content.Shared._CP14.MagicSpell.Interfaces;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Robust.Shared.Map;

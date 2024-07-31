@@ -2,7 +2,7 @@ using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
-using Content.Shared._CP14.MagicSpell.Interfaces;
+using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
 using Content.Shared.Popups;

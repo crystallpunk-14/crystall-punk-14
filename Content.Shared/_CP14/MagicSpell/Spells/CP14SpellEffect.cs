@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Robust.Shared.Map;
 
-namespace Content.Shared._CP14.MagicSpell.Interfaces;
+namespace Content.Shared._CP14.MagicSpell.Spells;
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]

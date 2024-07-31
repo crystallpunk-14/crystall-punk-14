@@ -1,6 +1,6 @@
 using Content.Shared.EntityEffects;
 
-namespace Content.Shared._CP14.MagicSpell.Interfaces;
+namespace Content.Shared._CP14.MagicSpell.Spells;
 
 public sealed partial class CP14SpellApplyEntityEffect : CP14SpellEffect
 {

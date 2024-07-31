@@ -1,10 +1,9 @@
-using Content.Shared.EntityEffects;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.MagicSpell.Interfaces;
+namespace Content.Shared._CP14.MagicSpell.Spells;
 
 public sealed partial class CP14SpellProjectile : CP14SpellEffect
 {
@@ -35,7 +34,7 @@ public sealed partial class CP14SpellProjectile : CP14SpellEffect
 
         if (fromCoords == targetPoint)
             return;
-        
+
         var userVelocity = physics.GetMapLinearVelocity(args.User.Value);
 
         // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.

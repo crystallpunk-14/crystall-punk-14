@@ -1,7 +1,7 @@
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.MagicSpell.Interfaces;
+namespace Content.Shared._CP14.MagicSpell.Spells;
 
 public sealed partial class CP14SpellSpawnEntity : CP14SpellEffect
 {
