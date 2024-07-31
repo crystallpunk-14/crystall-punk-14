@@ -1,0 +1,61 @@
+- type: entity
+  id: CP14LongBow
+  name: LongBow
+  parent: BaseItem
+  description: Long-bow
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/longbow.rsi
+    layers:
+    - state: unwielded
+      map: [ base ]
+  - type: Item
+    sprite: _CP14/Objects/Weapons/Ranged/longbow.rsi
+    size: Large
+  - type: Clothing
+    equipDelay: 0.45
+    unequipDelay: 0.45
+    sprite: _CP14/Objects/Weapons/Ranged/longbow.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+      - back
+  - type: Wieldable
+    wieldSound:
+      path: /Audio/Items/bow_pull.ogg
+  - type: UseDelay
+    delay: 2
+  - type: GunRequiresWield
+  - type: Gun
+    minAngle: 0
+    maxAngle: 5
+    fireRate: 0.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      collection: BulletMiss
+    soundEmpty: null
+  - type: ItemSlots
+    slots:
+      projectiles:
+        name: Projectiles
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
+        whitelist:
+          tags:
+          - Arrow
+  - type: ContainerContainer
+    containers:
+      projectiles: !type:ContainerSlot
+  - type: ContainerAmmoProvider
+    container: projectiles
+  - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      unwielded-arrow:
+        whitelist:
+          tags:
+            - Arrow
+  - type: CP14Currency
+    currency: 2500
