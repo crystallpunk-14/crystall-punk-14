@@ -5,11 +5,10 @@
  *
  */
 
-using Content.Server._CP14.BiomeSpawner.EntitySystems;
 using Content.Shared.Parallax.Biomes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.BiomeSpawner.Components;
+namespace Content.Server._CP14.BiomeSpawner;
 
 /// <summary>
 /// fills the tile in which it is located with the contents of the biome. Includes: tile, decals and entities
