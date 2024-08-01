@@ -818,7 +818,7 @@
     sprite: Mobs/Pets/rabbit.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: dino
+      state: rabbit
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -837,7 +837,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: dino
+        Base: rabbit
       Critical:
         Base: rabbit_dead
       Dead:
