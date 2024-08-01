@@ -8,7 +8,7 @@
     effects:
     - !type:CP14SpellSpawnEntity
       spawns:
-      - CP14CureWoundsImpactEffect
+      - CP14ImpactEffectCureWounds
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
@@ -24,9 +24,12 @@
     endSpeech: "vulnera tua"
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
-    proto: CP14CureWoundsRune
+    proto: CP14RuneCureWounds
   - type: EntityTargetAction
-    useDelay: 5
+    whitelist:
+      components:
+      - MobState
+    useDelay: 10
     itemIconStyle: BigAction
     interactOnMiss: false
     sound: !type:SoundPathSpecifier
@@ -38,7 +41,7 @@
       delay: 2
 
 - type: entity
-  id: CP14CureWoundsRune
+  id: CP14RuneCureWounds
   noSpawn: true
   parent: CP14BaseMagicRune
   components:
@@ -51,7 +54,7 @@
       shader: unshaded
 
 - type: entity
-  id: CP14CureWoundsImpactEffect
+  id: CP14ImpactEffectCureWounds
   parent: CP14BaseMagicImpact
   noSpawn: true
   components:

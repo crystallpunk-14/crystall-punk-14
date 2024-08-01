@@ -1,0 +1,54 @@
+- type: entity
+  id: CP14ActionSpellFlameCreation
+  name: Flame creation
+  description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
+  components:
+  - type: CP14MagicEffect
+    manaCost: 5
+    effects:
+    - !type:CP14SpellSpawnEntity
+      spawns:
+      - CP14ImpactEffectFlameCreation
+    - !type:CP14SpellSpawnInHandEntity
+      spawns:
+      - CP14BaseDagger
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Et conteret ignis..."
+    endSpeech: "in manu mea"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFlameCreation
+  - type: InstantAction
+    useDelay: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: flame_creation
+    event: !type:CP14DelayedInstantActionEvent
+      delay: 2
+    
+- type: entity
+  id: CP14RuneFlameCreation
+  noSpawn: true
+  parent: CP14BaseMagicRune
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectFlameCreation
+  parent: CP14BaseMagicImpact
+  noSpawn: true
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#eea911"
+      shader: unshaded

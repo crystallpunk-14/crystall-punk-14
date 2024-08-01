@@ -9,6 +9,9 @@
   "states": [
     {
       "name": "cure_wounds"
+    },
+    {
+      "name": "flame_creation"
     }
   ]
 }

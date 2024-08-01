@@ -8,3 +8,6 @@ cp14-magic-spell-not-enough-mana-cast-warning-4 = Your head becomes heavy...
 
 cp14-magic-energy-damage-burn-out = The pain is piercing your body!
 cp14-magic-energy-damage-burn-out-fall = You pass out from the intense pain!
+
+cp14-magic-spell-need-verbal-component = You can't cast the spell out loud.
+cp14-magic-spell-need-somatic-component = You don't have your hands free.

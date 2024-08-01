@@ -6,4 +6,6 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 [RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
 public sealed partial class CP14MagicEffectSomaticAspectComponent : Component
 {
+    [DataField]
+    public int FreeHandRequired = 1;
 }
