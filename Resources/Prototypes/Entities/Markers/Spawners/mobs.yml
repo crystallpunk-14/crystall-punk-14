@@ -861,7 +861,8 @@
   - type: Sprite
     layers:
       - state: green
-      - state: ai
+      - state: rabbit
+        sprite: Mobs/Pets/rabbit.rsi
   - type: ConditionalSpawner
     prototypes:
       - MobRabbit
