@@ -1,8 +1,8 @@
 - type: entity
   id: CP14LongBow
-  name: LongBow
+  name: Long-bow
   parent: BaseItem
-  description: Long-bow
+  description: Arrows are not included.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/longbow.rsi
