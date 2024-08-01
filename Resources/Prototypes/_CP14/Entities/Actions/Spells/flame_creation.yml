@@ -27,8 +27,8 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: flame_creation
     event: !type:CP14DelayedInstantActionEvent
-      delay: 2
-    
+      delay: 1
+
 - type: entity
   id: CP14RuneFlameCreation
   parent: CP14BaseMagicRune
@@ -61,6 +61,15 @@
   name: artificial flame
   description: A magically created artificial flame burning directly into the air. Not a bad light source, or a weapon if you throw it in someone's face.
   components:
+  - type: Item
+    size: Ginormous
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
   - type: TimedDespawn
     lifetime: 300 # 5 min
   - type: Sprite
@@ -80,10 +89,6 @@
         hard: true
         mask:
         - ItemMask
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Heat: 8
   - type: DamageOnHighSpeedImpact
     minimumSpeed: 0.1
     damage:
@@ -111,6 +116,10 @@
     damageToSelf:
       types:
         Blunt: 0.5 # 2 hits
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Heat: 8
   - type: MeleeWeapon
     attackRate: 1.8
     wideAnimationRotation: 225
@@ -119,7 +128,10 @@
       types:
         Heat: 5
     soundHit:
-      collection: MetalThud
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -12
     cPAnimationLength: 0.15
   - type: IgnitionSource
     temperature: 400

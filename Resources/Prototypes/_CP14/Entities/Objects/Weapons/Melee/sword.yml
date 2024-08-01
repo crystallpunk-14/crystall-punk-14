@@ -5,7 +5,6 @@
   - CP14BaseWeaponDestructible
   - CP14BaseWeaponSharp
   - CP14BaseWeaponChemical
-  - CP14BaseWeaponLight
   name: sword
   description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
   components:

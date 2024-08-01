@@ -4,6 +4,8 @@
   description: manifestation of magical energy in the physical plane
   abstract: true
   components:
+  - type: TimedDespawn
+    lifetime: 10
   - type: Sprite
     noRot: true
     drawDepth: FloorTiles

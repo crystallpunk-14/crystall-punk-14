@@ -8,7 +8,9 @@
     state: seed
   - type: CP14Seed
     plantProto: CP14PlantWheat
-  - type: CP14SpellStorageAccessHolding
+  - type: CP14SpellStorageAccessWearing
+  - type: Clothing
+    slots: [ring]
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellCureWounds
