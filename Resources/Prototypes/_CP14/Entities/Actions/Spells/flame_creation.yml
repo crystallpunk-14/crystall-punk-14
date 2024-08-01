@@ -62,7 +62,7 @@
   description: A magically created artificial flame burning directly into the air. Not a bad light source, or a weapon if you throw it in someone's face.
   components:
   - type: TimedDespawn
-    lifetime: 600
+    lifetime: 300 # 5 min
   - type: Sprite
     sprite: _CP14/Effects/Magic/artificial_flame.rsi
     layers:
@@ -121,3 +121,6 @@
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.15
+  - type: IgnitionSource
+    temperature: 400
+    ignited: true
