@@ -807,7 +807,7 @@
   - type: StealTarget
     stealGroup: AnimalTropico
 
--  type: entity
+- type: entity
   name: Rabbit
   parent: MobGiantSpider
   id: MobRabbit
