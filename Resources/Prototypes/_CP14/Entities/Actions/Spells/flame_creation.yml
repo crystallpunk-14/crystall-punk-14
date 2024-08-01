@@ -64,9 +64,9 @@
   - type: TimedDespawn
     lifetime: 600
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi #TODO resprite + inhand sprites
+    sprite: _CP14/Effects/Magic/artificial_flame.rsi
     layers:
-    - state: blastwave
+    - state: icon
       shader: unshaded
   - type: PointLight
     color: "#eea911"
@@ -107,3 +107,17 @@
   - type: ThrowingAngle
     angle: 0
   - type: LandAtCursor
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5 # 2 hits
+  - type: MeleeWeapon
+    attackRate: 1.8
+    wideAnimationRotation: 225
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Heat: 5
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.15
