@@ -807,61 +807,68 @@
   - type: StealTarget
     stealGroup: AnimalTropico
 
-- type: entity
-  name: Rabit
-  parent: [SimpleMobBase, StripableInventoryBase]
+-  type: entity
+  name: Rabbit
+  parent: MobGiantSpider
   id: MobRabbit
-  description: He likes chems and treats. Walter.
+  description: The first defender of the station.
   components:
+  - type: InteractionPopup
+    successChance: 0.5 # spider is mean
+    interactSuccessString: petting-success-tarantula
+    interactFailureString: petting-failure-hamster
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/snake_hiss.ogg
+  - type: NpcFactionMember
+    factions:
+      - PetsNT
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Pets/rabbit.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: rabbit
+      sprite: Mobs/Pets/rabbit.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: rabbit-moving
+    noMovementLayers:
+      movement:
+        state: rabbit
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
   - type: Physics
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.35
-        density: 50
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
-  - type: Inventory
-    speciesId: dog
-    templateId: pet
   - type: DamageStateVisuals
     states:
       Alive:
         Base: rabbit
-      Critical:
-        Base: rabbit_dead
       Dead:
         Base: rabbit_dead
-  - type: Butcherable
-    spawned:
-    - id: FoodMeat
-      amount: 3
-  - type: ReplacementAccent
-    accent: dog
-  - type: InteractionPopup
-    successChance: 0.7
-    interactSuccessString: petting-success-dog
-    interactFailureString: petting-failure-generic
-    interactSuccessSpawn: EffectHearts
-    interactSuccessSound:
-      path: /Audio/Animals/small_dog_bark_happy.ogg
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 8
+        Poison: 8
   - type: Grammar
     attributes:
       proper: true
-      gender: male
+      gender: female
   - type: Tag
     tags:
     - CannotSuicide
     - VimPilot
+    - DoorBumpOpener
+    - FootstepSound
   - type: StealTarget
-    stealGroup: AnimalWalter
+    stealGroup: AnimalShiva
+
