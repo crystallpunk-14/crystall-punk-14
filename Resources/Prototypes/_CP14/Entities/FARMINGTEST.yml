@@ -15,3 +15,4 @@
     spells:
     - CP14ActionSpellCureWounds
     - CP14ActionSpellFlameCreation
+    - CP14ActionSpellIceDagger

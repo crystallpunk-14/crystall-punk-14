@@ -73,7 +73,7 @@
   - type: TimedDespawn
     lifetime: 300 # 5 min
   - type: Sprite
-    sprite: _CP14/Effects/Magic/artificial_flame.rsi
+    sprite: _CP14/Objects/Misc/artificial_flame.rsi
     layers:
     - state: icon
       shader: unshaded
