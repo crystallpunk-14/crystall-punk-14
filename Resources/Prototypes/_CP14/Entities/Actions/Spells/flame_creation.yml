@@ -11,7 +11,7 @@
       - CP14ImpactEffectFlameCreation
     - !type:CP14SpellSpawnInHandEntity
       spawns:
-      - CP14BaseDagger
+      - CP14FlameCreationArtificialFlame
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et conteret ignis..."
     endSpeech: "in manu mea"
@@ -31,8 +31,8 @@
     
 - type: entity
   id: CP14RuneFlameCreation
-  noSpawn: true
   parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
     color: "#eea911"
@@ -45,10 +45,65 @@
 - type: entity
   id: CP14ImpactEffectFlameCreation
   parent: CP14BaseMagicImpact
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
     - state: particles_up
       color: "#eea911"
       shader: unshaded
+
+- type: entity
+  id: CP14FlameCreationArtificialFlame
+  parent: 
+  - BaseItem
+  - ItemHeftyBase
+  name: artificial flame
+  description: A magically created artificial flame burning directly into the air. Not a bad light source, or a weapon if you throw it in someone's face.
+  components:
+  - type: TimedDespawn
+    lifetime: 600
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi #TODO resprite + inhand sprites
+    layers:
+    - state: blastwave
+      shader: unshaded
+  - type: PointLight
+    color: "#eea911"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        hard: true
+        mask:
+        - ItemMask
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Heat: 8
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 3
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+          params:
+            variation: 0.250
+            volume: -12
+  - type: ThrowingAngle
+    angle: 0
+  - type: LandAtCursor
