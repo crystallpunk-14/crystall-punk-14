@@ -1,10 +1,10 @@
-using Content.Shared._CP14.Magic.Components;
-using Content.Shared._CP14.Magic.Events;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared._CP14.MagicSpell.Components;
+using Content.Shared._CP14.MagicSpell.Events;
+using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -13,8 +13,11 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 
-namespace Content.Shared._CP14.Magic;
+namespace Content.Shared._CP14.MagicSpell;
 
+/// <summary>
+/// This system handles the basic mechanics of spell use, such as doAfter, event invocation, and energy spending.
+/// </summary>
 public partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
@@ -26,13 +29,16 @@ public partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
+
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedInstantActionDoAfterEvent>(OnDelayedInstantActionDoAfter);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnDelayedEntityTargetDoAfter);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedWorldTargetActionDoAfterEvent>(OnDelayedWorldTargetDoAfter);
 
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14BeforeCastMagicEffectEvent>(OnSomaticAspectBeforeCast);
 
@@ -44,8 +50,57 @@ public partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
         SubscribeLocalEvent<CP14DelayedEntityTargetActionEvent>(OnEntityTargetAction);
         SubscribeLocalEvent<CP14DelayedWorldTargetActionEvent>(OnWorldTargetAction);
+    }
 
-        InitializeSpells();
+    private void OnDelayedWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedWorldTargetActionDoAfterEvent args)
+    {
+        var stopEv = new CP14StopCastMagicEffectEvent();
+        RaiseLocalEvent(ent, ref stopEv);
+
+        if (args.Cancelled || !_net.IsServer)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, null, GetCoordinates(args.Target)));
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        RaiseLocalEvent(ent, ref ev);
+    }
+
+    private void OnDelayedEntityTargetDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedEntityTargetActionDoAfterEvent args)
+    {
+        var stopEv = new CP14StopCastMagicEffectEvent();
+        RaiseLocalEvent(ent, ref stopEv);
+
+        if (args.Cancelled || !_net.IsServer)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, args.Target, null));
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        RaiseLocalEvent(ent, ref ev);
+    }
+
+    private void OnDelayedInstantActionDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
+    {
+        var stopEv = new CP14StopCastMagicEffectEvent();
+        RaiseLocalEvent(ent, ref stopEv);
+
+        if (args.Cancelled || !_net.IsServer)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates));
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        RaiseLocalEvent(ent, ref ev);
     }
 
     private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
@@ -85,6 +140,9 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
     {
+        if (_net.IsClient)
+            return;
+
         var ev = new CP14VerbalAspectSpeechEvent
         {
             Performer = args.Performer,

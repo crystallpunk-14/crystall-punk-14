@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Magic.Components;
+namespace Content.Shared._CP14.MagicSpell.Components;
 
 /// <summary>
 /// Creates a temporary entity that exists while the spell is cast, and disappears at the end. For visual special effects.

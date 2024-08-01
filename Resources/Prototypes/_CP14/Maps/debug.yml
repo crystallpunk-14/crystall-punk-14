@@ -5,25 +5,25 @@
   minPlayers: 0
   stations:
     Empty:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardStationArena
       components:
         - type: StationNameSetup
           mapNameTemplate: "Empty"
         - type: StationJobs
           availableJobs:
-            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+            CP14Adventurer: [ -1, -1 ]
 
 - type: gameMap
   id: Dev
   mapName: Dev
-  mapPath: /Maps/_CP14/dev_map.yml #CrystallPunk Dev replacement
+  mapPath: /Maps/_CP14/dev_map.yml
   minPlayers: 0
   stations:
     Dev:
-      stationProto: StandardNanotrasenStation
+      stationProto: StandardStationArena
       components:
         - type: StationNameSetup
           mapNameTemplate: "Dev"
         - type: StationJobs
           availableJobs:
-            CP14Adventurer: [ -1, -1 ] #CrystallPunk Dev replacement
+            CP14Adventurer: [ -1, -1 ]

@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.Magic.Events;
+namespace Content.Shared._CP14.MagicSpell.Events;
 
 [ByRefEvent]
 public sealed class CP14BeforeCastMagicEffectEvent : CancellableEntityEventArgs

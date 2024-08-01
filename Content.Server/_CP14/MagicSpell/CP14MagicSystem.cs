@@ -1,13 +1,15 @@
 using Content.Server.Chat.Systems;
-using Content.Shared._CP14.Magic;
-using Content.Shared._CP14.Magic.Components;
-using Content.Shared._CP14.Magic.Events;
+using Content.Shared._CP14.MagicSpell;
+using Content.Shared._CP14.MagicSpell.Components;
+using Content.Shared._CP14.MagicSpell.Events;
+using Robust.Server.GameObjects;
 
-namespace Content.Server._CP14.Magic;
+namespace Content.Server._CP14.MagicSpell;
 
 public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -26,6 +28,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
     private void OnSpawnMagicVisualEffect(Entity<CP14MagicEffectCastingVisualComponent> ent, ref CP14StartCastMagicEffectEvent args)
     {
         var vfx = SpawnAttachedTo(ent.Comp.Proto, Transform(args.Performer).Coordinates);
+        _transform.SetParent(vfx, args.Performer);
         ent.Comp.SpawnedEntity = vfx;
     }
 

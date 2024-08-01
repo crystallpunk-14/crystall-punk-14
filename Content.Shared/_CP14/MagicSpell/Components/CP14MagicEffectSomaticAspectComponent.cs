@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.Magic.Components;
+namespace Content.Shared._CP14.MagicSpell.Components;
 
 /// <summary>
 /// Requires the user to have at least one free hand to use this spell

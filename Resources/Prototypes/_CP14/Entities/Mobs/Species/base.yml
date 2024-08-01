@@ -211,10 +211,12 @@
     maxEnergy: 100
     energy: 100
   - type: CP14MagicEnergyDraw
-    energy: 5
-    delay: 5
+    energy: 1
+    delay: 6 # 10m to full restore
   - type: CP14MagicUnsafeDamage
   - type: CP14MagicUnsafeSleep
+  - type: CP14MagicAttuningMind
+    autoCopyToMind: true
 
 
 - type: entity

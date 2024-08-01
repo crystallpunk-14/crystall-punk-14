@@ -1,6 +1,7 @@
+using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared._CP14.Magic.Components;
+namespace Content.Shared._CP14.MagicSpell.Components;
 
 /// <summary>
 /// Restricts the use of this action, by spending mana or user requirements.
@@ -13,4 +14,7 @@ public sealed partial class CP14MagicEffectComponent : Component
 
     [DataField]
     public bool Safe = false;
+
+    [DataField]
+    public List<CP14SpellEffect> Effects = new();
 }
