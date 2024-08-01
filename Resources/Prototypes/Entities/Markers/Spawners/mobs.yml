@@ -852,3 +852,16 @@
   - type: ConditionalSpawner
     prototypes:
     - MobClownSpider
+    
+- type: entity
+  name: Rabbit Spawner
+  id: SpawnMobRabbit
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - MobRabbit
