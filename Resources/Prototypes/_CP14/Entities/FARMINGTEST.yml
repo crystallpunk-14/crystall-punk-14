@@ -8,10 +8,3 @@
     state: seed
   - type: CP14Seed
     plantProto: CP14PlantWheat
-  - type: CP14MagicAttuningItem
-    focusTime: 1
-  - type: CP14SpellStorageAccessHolding
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellCureWounds
-  - type: CP14SpellStorageRequireAttune

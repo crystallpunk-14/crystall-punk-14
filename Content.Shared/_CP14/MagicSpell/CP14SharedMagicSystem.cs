@@ -107,11 +107,14 @@ public partial class CP14SharedMagicSystem : EntitySystem
     {
         if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
         {
+            var freeHand = 0;
             foreach (var hand in hands.Hands)
             {
                 if (hand.Value.IsEmpty)
-                    return;
+                    freeHand++;
             }
+            if (freeHand >= ent.Comp.FreeHandRequired)
+                return;
         }
         args.PushReason(Loc.GetString("cp14-magic-spell-need-somatic-component"));
         args.Cancel();
@@ -168,6 +171,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
+            BlockDuplicate = true,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -195,6 +199,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
+            BlockDuplicate = true,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -217,6 +222,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
+            BlockDuplicate = true,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);

@@ -1,0 +1,89 @@
+- type: entity
+  id: CP14ActionSpellIceDagger
+  name: Ice dagger
+  description: Materialization of a temporary sharp ice throwing dagger
+  components:
+  - type: CP14MagicEffect
+    manaCost: 15
+    effects:
+    - !type:CP14SpellSpawnEntity
+      spawns:
+      - CP14ImpactEffectIceDagger
+    - !type:CP14SpellSpawnInHandEntity
+      spawns:
+      - CP14DaggerIce
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneIceDagger
+  - type: InstantAction
+    useDelay: 15
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: ice_dagger
+    event: !type:CP14DelayedInstantActionEvent
+      delay: 0.5
+
+- type: entity
+  id: CP14RuneIceDagger
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#5eabeb"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectIceDagger
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: CP14DaggerIce
+  parent: 
+  - CP14BaseDagger
+  name: ice dagger
+  description: A piece of sharp magical ice. In a little while, the spell will wear off, and he will disappear.
+  components:
+  - type: TimedDespawn
+    lifetime: 60 # 1 min
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/ice_dagger.rsi
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/ice_dagger.rsi
+  - type: CP14Currency
+    currency: 0
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 2
+        Piercing: 2
+        Cold: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 5
+        Cold: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

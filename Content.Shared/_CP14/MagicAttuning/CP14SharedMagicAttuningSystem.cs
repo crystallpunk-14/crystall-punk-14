@@ -36,8 +36,11 @@ public sealed partial class CP14SharedMagicAttuningSystem : EntitySystem
         if (!_mind.TryGetMind(ent, out var mindId, out var mind))
             return;
 
-        var attuneMind = AddComp<CP14MagicAttuningMindComponent>(mindId);
-        attuneMind.MaxAttuning = ent.Comp.MaxAttuning;
+        if (!HasComp<CP14MagicAttuningMindComponent>(mindId))
+        {
+            var attuneMind = AddComp<CP14MagicAttuningMindComponent>(mindId);
+            attuneMind.MaxAttuning = ent.Comp.MaxAttuning;
+        }
     }
 
     public bool IsAttunedTo(EntityUid mind, EntityUid item)

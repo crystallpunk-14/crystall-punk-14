@@ -10,4 +10,4 @@ cp14-magic-energy-damage-burn-out = Боль пронзает ваше тело!
 cp14-magic-energy-damage-burn-out-fall = Вы теряете сознание от сильной боли!
 
 cp14-magic-spell-need-verbal-component = Вы не можете произнести заклинание вслух.
-cp14-magic-spell-need-somatic-component = Вам нужна свободная рука.
+cp14-magic-spell-need-somatic-component = Вам не хватает свободных рук.

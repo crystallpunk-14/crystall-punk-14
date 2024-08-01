@@ -4,29 +4,32 @@
   description: You touch the creature, healing its body from physical damage
   components:
   - type: CP14MagicEffect
-    manaCost: 10
+    manaCost: 15
     effects:
     - !type:CP14SpellSpawnEntity
       spawns:
-      - CP14CureWoundsImpactEffect
+      - CP14ImpactEffectCureWounds
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
         damage:
           types:
-            Slash: -8
-            Blunt: -8
-            Piercing: -8
-            Heat: -8
+            Slash: -10
+            Blunt: -10
+            Piercing: -10
+            Heat: -10
       - !type:Jitter
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
-    proto: CP14CureWoundsRune
+    proto: CP14RuneCureWounds
   - type: EntityTargetAction
-    useDelay: 5
+    whitelist:
+      components:
+      - MobState
+    useDelay: 10
     itemIconStyle: BigAction
     interactOnMiss: false
     sound: !type:SoundPathSpecifier
@@ -38,9 +41,9 @@
       delay: 2
 
 - type: entity
-  id: CP14CureWoundsRune
-  noSpawn: true
+  id: CP14RuneCureWounds
   parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
     color: "#328643"
@@ -51,9 +54,9 @@
       shader: unshaded
 
 - type: entity
-  id: CP14CureWoundsImpactEffect
+  id: CP14ImpactEffectCureWounds
   parent: CP14BaseMagicImpact
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
