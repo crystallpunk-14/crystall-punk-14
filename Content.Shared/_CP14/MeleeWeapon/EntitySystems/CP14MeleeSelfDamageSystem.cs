@@ -1,8 +1,8 @@
-using Content.Server._CP14.MeleeWeapon.Components;
+using Content.Shared._CP14.MeleeWeapon.Components;
 using Content.Shared.Damage;
 using Content.Shared.Weapons.Melee.Events;
 
-namespace Content.Server._CP14.MeleeWeapon.EntitySystems;
+namespace Content.Shared._CP14.MeleeWeapon.EntitySystems;
 
 public sealed class CP14MeleeSelfDamageSystem : EntitySystem
 {

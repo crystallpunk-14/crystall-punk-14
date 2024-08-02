@@ -16,7 +16,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14VerbalAspectSpeechEvent>(OnSpellSpoken);
 
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
-        SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StopCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
+        SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
     }
 
     private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14VerbalAspectSpeechEvent args)
@@ -32,7 +32,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         ent.Comp.SpawnedEntity = vfx;
     }
 
-    private void OnDespawnMagicVisualEffect(Entity<CP14MagicEffectCastingVisualComponent> ent, ref CP14StopCastMagicEffectEvent args)
+    private void OnDespawnMagicVisualEffect(Entity<CP14MagicEffectCastingVisualComponent> ent, ref CP14EndCastMagicEffectEvent args)
     {
         QueueDel(ent.Comp.SpawnedEntity);
         ent.Comp.SpawnedEntity = null;

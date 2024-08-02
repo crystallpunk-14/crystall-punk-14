@@ -1,7 +1,6 @@
+using Content.Shared._CP14.MeleeWeapon.EntitySystems;
 
-using Content.Server._CP14.MeleeWeapon.EntitySystems;
-
-namespace Content.Server._CP14.MeleeWeapon.Components;
+namespace Content.Shared._CP14.MeleeWeapon.Components;
 
 /// <summary>
 /// allows the object to become blunt with use

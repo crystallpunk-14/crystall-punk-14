@@ -5,6 +5,10 @@
   components:
   - type: CP14MagicEffect
     manaCost: 15
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntity
+      spawns:
+      - CP14ImpactEffectCureWounds
     effects:
     - !type:CP14SpellSpawnEntity
       spawns:

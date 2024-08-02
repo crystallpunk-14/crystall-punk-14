@@ -15,6 +15,7 @@
   id: CP14ClothingRingIceDagger
   parent: CP14ClothingRingBase
   name: conductive ring
+  suffix: Ice Dagger
   description: A standard mana-conductive ring that allows the user to summon ice daggers.
   components:
   - type: Sprite
@@ -33,6 +34,7 @@
   parent: CP14ClothingRingBase
   name: conductive ring
   description: A standard mana-conductive ring that allows the user to summon artificial flames.
+  suffix: Flame creation
   components:
   - type: Sprite
     layers:
@@ -50,6 +52,7 @@
   parent: CP14ClothingRingBase
   name: conductive ring
   description: A standard mana-conductive ring that allows the user to heal physical injuries.
+  suffix: Cure Wounds
   components:
   - type: Sprite
     layers:
