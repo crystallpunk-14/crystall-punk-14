@@ -1,26 +1,24 @@
 - type: entity
   id: CP14ActionSpellShadowStep
   name: Shadow step
-  description: A step through the gash of reality that allows you to cover a lot of distance quickly
+  description: A step through the gash of reality that allows you to cover a small of distance quickly
   components:
   - type: CP14MagicEffect
-    manaCost: 40
+    manaCost: 20
     telegraphyEffects:
-    - !type:CP14SpellSpawnEntity
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectShadowStep
+    - !type:CP14SpellSpawnEntityOnUser
       spawns:
       - CP14ImpactEffectShadowStep
     effects:
-    - !type:CP14SpellSpawnEntity
-      spawns:
-      - CP14ImpactEffectShadowStep
     - !type:CP14SpellCasterTeleport
-  - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Tenebrae, accipe me..."
-    endSpeech: "in alium locum"
+  - type: CP14MagicEffectSomaticAspect
   - type: WorldTargetAction
-    useDelay: 15
-    range: 10
-    checkCanAccess: false
+    useDelay: 10
+    range: 7
+    checkCanAccess: true
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
@@ -29,6 +27,7 @@
       state: shadow_step
     event: !type:CP14DelayedWorldTargetActionEvent
       delay: 1
+      hidden: true
 
 - type: entity
   id: CP14ImpactEffectShadowStep
@@ -37,6 +36,5 @@
   components:
   - type: Sprite
     layers:
-    - state: particles_up
-      color: "#79b330"
-      shader: unshaded
+    - state: wave_up
+      color: "#5e427e"

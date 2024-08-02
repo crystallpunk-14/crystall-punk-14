@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
 
-public sealed partial class CP14SpellSpawnEntity : CP14SpellEffect
+public sealed partial class CP14SpellSpawnEntityOnTarget : CP14SpellEffect
 {
     [DataField]
     public List<EntProtoId> Spawns = new();
