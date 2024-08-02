@@ -7,6 +7,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
+using Robust.Shared.Map;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.RoundSeed;
@@ -28,17 +29,25 @@ public sealed class CP14RoundSeedSystem : EntitySystem
         ent.Comp.Seed = _random.Next(CP14RoundSeedComponent.MaxValue);
     }
 
-    [PublicAPI]
-    public bool TryGetSeed([NotNullWhen(true)] out int? seed)
+    private int SetupSeed()
     {
-        seed = null;
+        return AddComp<CP14RoundSeedComponent>(Spawn(null, MapCoordinates.Nullspace)).Seed;
+    }
+
+    /// <summary>
+    /// Returns the round seed if assigned, otherwise assigns the round seed itself.
+    /// </summary>
+    /// <returns>seed of the round</returns>
+    public int GetSeed()
+    {
         var query = EntityQuery<CP14RoundSeedComponent>();
         foreach (var comp in query)
         {
-            seed = comp.Seed;
-            return true;
+            return comp.Seed;
         }
 
-        return false;
+        var seed = SetupSeed();
+        Log.Warning($"Missing RoundSeed. Seed set to {seed}");
+        return seed;
     }
 }
