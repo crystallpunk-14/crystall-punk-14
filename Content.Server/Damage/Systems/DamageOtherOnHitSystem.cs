@@ -1,8 +1,7 @@
-using Content.Server._CP14.MeleeWeapon;
-using Content.Server._CP14.MeleeWeapon.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared._CP14.MeleeWeapon.Components;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
@@ -43,7 +42,7 @@ namespace Content.Server.Damage.Systems
                     damage *= sharp.Sharpness;
 
                 var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
-                //CrystallPunk Melee pgrade end
+                //CrystallPunk Melee upgrade end
 
                 // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
                 if (dmg != null && HasComp<MobStateComponent>(args.Target))

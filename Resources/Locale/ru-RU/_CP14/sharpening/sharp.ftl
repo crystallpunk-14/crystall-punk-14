@@ -7,3 +7,5 @@ damageable-weapon-1 = Выглядит полностью целым
 damageable-weapon-2 = Покрыт парой царапин
 damageable-weapon-3 = Выглядит изношенным
 damageable-weapon-4 = Он вот-вот сломается
+
+sharpening-ready = Идеально заточен

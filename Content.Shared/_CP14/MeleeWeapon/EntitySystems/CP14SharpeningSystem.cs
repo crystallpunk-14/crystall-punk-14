@@ -1,21 +1,23 @@
 using System.Linq;
-using Content.Server._CP14.MeleeWeapon.Components;
+using Content.Shared._CP14.MeleeWeapon.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Placeable;
+using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Wieldable;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Server._CP14.MeleeWeapon.EntitySystems;
+namespace Content.Shared._CP14.MeleeWeapon.EntitySystems;
 
 public sealed class CP14SharpeningSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -87,6 +89,9 @@ public sealed class CP14SharpeningSystem : EntitySystem
             _damageableSystem.TryChangeDamage(target, stone.Comp.TargetDamage);
 
             component.Sharpness = MathHelper.Clamp01(component.Sharpness + stone.Comp.SharpnessHeal);
+
+            if (component.Sharpness >= 0.99)
+                _popup.PopupEntity(Loc.GetString("sharpening-ready"), target, user);
         }
 
         _useDelay.TryResetDelay(stone);

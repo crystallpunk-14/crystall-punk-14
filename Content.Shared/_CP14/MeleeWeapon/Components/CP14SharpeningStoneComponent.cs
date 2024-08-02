@@ -1,8 +1,8 @@
-﻿using Content.Server._CP14.MeleeWeapon.EntitySystems;
+﻿using Content.Shared._CP14.MeleeWeapon.EntitySystems;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
 
-namespace Content.Server._CP14.MeleeWeapon.Components;
+namespace Content.Shared._CP14.MeleeWeapon.Components;
 
 /// <summary>
 /// component allows you to sharpen objects by restoring their damage.
@@ -34,7 +34,7 @@ public sealed partial class CP14SharpeningStoneComponent : Component
     {
         DamageDict = new()
         {
-            { "Blunt", 1 }
+            { "Blunt", 1 },
         }
     };
 
@@ -46,7 +46,7 @@ public sealed partial class CP14SharpeningStoneComponent : Component
     {
         DamageDict = new()
         {
-            { "Blunt", 1 }
+            { "Blunt", 1 },
         }
     };
 }
