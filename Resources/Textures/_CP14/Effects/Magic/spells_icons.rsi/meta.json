@@ -18,6 +18,9 @@
     },
     {
       "name": "shadow_step"
+    },
+    {
+      "name": "shadow_grab"
     }
   ]
 }

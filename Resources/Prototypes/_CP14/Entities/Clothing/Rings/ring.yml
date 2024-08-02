@@ -75,10 +75,28 @@
   - type: Sprite
     layers:
     - state: brass_ring
-    - state: emerald_stone_small
+    - state: amethyst_stone_small
   - type: CP14SpellStorageRequireAttune
   - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellShadowStep
+
+- type: entity
+  id: CP14ClothingRingShadowGrab
+  parent: CP14ClothingRingBase
+  name: conductive ring
+  description: A standard mana-conductive ring that allows the user to summon grabbing shadow hand.
+  suffix: Shadow grab
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: amethyst_stone_small
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellShadowGrab
