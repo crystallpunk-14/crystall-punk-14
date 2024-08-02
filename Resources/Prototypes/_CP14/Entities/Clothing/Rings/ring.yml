@@ -46,7 +46,6 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellFlameCreation
-    - CP14ActionSpellShadowStep
 
 - type: entity
   id: CP14ClothingRingCureWounds
