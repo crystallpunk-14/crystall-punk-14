@@ -13,10 +13,6 @@
       spawns:
       - CP14ImpactEffectShadowGrab
     effects:
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Paralyze
-        paralyzeTime: 0.5
     - !type:CP14SpellThrowToUser
       throwPower: 10
     - !type:CP14SpellSpawnEntityOnTarget
@@ -36,6 +32,7 @@
       state: shadow_grab
     event: !type:CP14DelayedEntityTargetActionEvent
       delay: 2
+      hidden: true
 
 - type: entity
   id: CP14ImpactEffectShadowGrab

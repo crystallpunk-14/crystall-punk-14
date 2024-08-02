@@ -48,6 +48,24 @@
     - CP14ActionSpellFlameCreation
 
 - type: entity
+  id: CP14ClothingRingFireball
+  parent: CP14ClothingRingBase
+  name: conductive ring
+  description: A standard mana-conductive ring that allows the user to summon fireballs.
+  suffix: Fireball
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: ruby_stone_small
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFireball
+
+- type: entity
   id: CP14ClothingRingCureWounds
   parent: CP14ClothingRingBase
   name: conductive ring
