@@ -36,28 +36,25 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
     {
         SpawnBiome(ent);
         QueueDel(ent);
-
     }
 
     private void SpawnBiome(Entity<CP14BiomeSpawnerComponent> ent)
     {
         var biome = _proto.Index(ent.Comp.Biome);
         var spawnerTransform = Transform(ent);
+        if (spawnerTransform.GridUid == null)
+            return;
 
-        var gridUid = spawnerTransform.ParentUid;
+        var gridUid = spawnerTransform.GridUid.Value;
 
         if (!TryComp<MapGridComponent>(gridUid, out var map))
             return;
 
-        if (!_roundSeed.TryGetSeed(out var seed))
-        {
-            Log.Warning("Missing RoundSeed. Seed set to 0");
-            seed = 0;
-        }
+        var seed = _roundSeed.GetSeed();
 
         var vec = _transform.GetGridOrMapTilePosition(ent);
 
-        if (!_biome.TryGetTile(vec, biome.Layers, seed.Value, map, out var tile))
+        if (!_biome.TryGetTile(vec, biome.Layers, seed, map, out var tile))
             return;
 
         // Set new tile
@@ -73,7 +70,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
         }
 
         //Add decals
-        if (_biome.TryGetDecals(vec, biome.Layers, seed.Value, map, out var decals))
+        if (_biome.TryGetDecals(vec, biome.Layers, seed, map, out var decals))
         {
             foreach (var decal in decals)
             {
@@ -89,7 +86,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
             QueueDel(entToRemove);
         }
 
-        if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed.Value, map, out var entityProto))
+        if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed, map, out var entityProto))
             Spawn(entityProto, new EntityCoordinates(gridUid, tileCenterVec));
     }
 }
