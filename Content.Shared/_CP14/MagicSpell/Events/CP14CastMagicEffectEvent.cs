@@ -34,7 +34,7 @@ public sealed class CP14StartCastMagicEffectEvent : EntityEventArgs
 /// is invoked on the spell itself when the spell process has been completed or interrupted
 /// </summary>
 [ByRefEvent]
-public sealed class CP14StopCastMagicEffectEvent : EntityEventArgs
+public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
 {
 }
 
