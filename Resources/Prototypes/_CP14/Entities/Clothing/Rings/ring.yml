@@ -30,6 +30,24 @@
     - CP14ActionSpellIceDagger
 
 - type: entity
+  id: CP14ClothingRingIceShards
+  parent: CP14ClothingRingBase
+  name: conductive ring
+  suffix: Ice Shards
+  description: A standard mana-conductive ring that allows the user to summon ice shards.
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: saphhire_stone_small
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceShards
+
+- type: entity
   id: CP14ClothingRingFlameCreation
   parent: CP14ClothingRingBase
   name: conductive ring
