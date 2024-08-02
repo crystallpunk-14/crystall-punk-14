@@ -26,7 +26,7 @@
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
-      state: cure_wounds
+      state: shadow_step
     event: !type:CP14DelayedWorldTargetActionEvent
       delay: 1
 
