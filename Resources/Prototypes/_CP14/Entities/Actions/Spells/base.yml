@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14BaseMagicRune
+  name: magic rune
+  description: manifestation of magical energy in the physical plane
+  abstract: true
+  components:
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Sprite
+    noRot: true
+    drawDepth: FloorTiles
+    sprite: _CP14/Effects/Magic/cast_rune.rsi
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    netsync: false
+
+- type: entity
+  id: CP14BaseMagicImpact
+  name: magic impact
+  description: manifestation of magical energy in the physical plane
+  abstract: true
+  components:
+  - type: TimedDespawn
+    lifetime: 1.6
+  - type: AnimationPlayer
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    noRot: true

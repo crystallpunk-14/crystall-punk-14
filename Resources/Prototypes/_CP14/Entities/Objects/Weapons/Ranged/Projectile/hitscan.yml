@@ -1,0 +1,14 @@
+- type: hitscan
+  id: CP14Magic
+  damage:
+    types:
+      Heat: 0
+  muzzleFlash:
+    sprite: _CP14/Effects/Beams/magic.rsi
+    state: muzzle_magic
+  travelFlash:
+    sprite: _CP14/Effects/Beams/magic.rsi
+    state: magic
+  impactFlash:
+    sprite: _CP14/Effects/Beams/magic.rsi
+    state: impact_magic

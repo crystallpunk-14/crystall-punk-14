@@ -17,14 +17,14 @@
     layers:
     - state: icon
   - type: MeleeWeapon
-    attackRate: 1.4
-    range: 1.2
+    angle: 60
+    attackRate: 1.7
+    range: 1
     wideAnimationRotation: 225
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Slash: 7
-        Piercing: 2
+        Slash: 6
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
@@ -34,12 +34,10 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 5
-        Piercing: 5
+        Slash: 12
   - type: DamageOnLand
     damage:
       types:
-        Slash: 5
-        Piercing: 5
+        Slash: 12
   - type: CP14Currency
     currency: 500

@@ -5,7 +5,6 @@
   - CP14BaseWeaponDestructible
   - CP14BaseWeaponSharp
   - CP14BaseWeaponChemical
-  - CP14BaseWeaponLight
   name: sword
   description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
   components:
@@ -25,13 +24,14 @@
     layers:
     - state: icon
   - type: MeleeWeapon
-    attackRate: 1.5
+    angle: 100
+    attackRate: 1.4
     wideAnimationRotation: 210
     wideAnimation: CP14WeaponArcSlash
     cPAnimationLength: 0.18
     damage:
       types:
-        Slash: 12
+        Slash: 9
     soundHit:
       collection: MetalThud
   - type: CP14SkillRequirement

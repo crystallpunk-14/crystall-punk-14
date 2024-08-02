@@ -7,6 +7,15 @@
   id: CP14ClothingCloakBlacksmithArpon
   equipment:
     cloak: CP14ClothingCloakBlacksmithArpon
+    
+- type: loadout
+  id: CP14ClothingCloakMaidArpon
+  equipment: CP14ClothingCloakMaidArpon
+
+- type: startingGear
+  id: CP14ClothingCloakMaidArpon
+  equipment:
+    cloak: CP14ClothingCloakMaidArpon
 
 
 - type: loadout
@@ -90,6 +99,7 @@
   equipment:
     head: CP14ClothingHeadMetalHeadband
 
+
 - type: loadout
   id: CP14ClothingHeadTriangularHat
   equipment: CP14ClothingHeadTriangularHat
@@ -98,6 +108,7 @@
   id: CP14ClothingHeadTriangularHat
   equipment:
     head: CP14ClothingHeadTriangularHat
+
 
 - type: loadout
   id: CP14ClothingHeadTriangularHatGolden
@@ -108,6 +119,7 @@
   equipment:
     head: CP14ClothingHeadTriangularHatGolden
 
+
 - type: loadout
   id: CP14ClothingHeadRedBeret
   equipment: CP14ClothingHeadRedBeret
@@ -117,6 +129,7 @@
   equipment:
     head: CP14ClothingHeadRedBeret
 
+
 - type: loadout
   id: CP14ClothingHeadPurpleBeret
   equipment: CP14ClothingHeadPurpleBeret
@@ -125,6 +138,7 @@
   id: CP14ClothingHeadPurpleBeret
   equipment:
     head: CP14ClothingHeadPurpleBeret
+
 
 - type: loadout
   id: CP14ClothingHeadYellowBeret
@@ -204,6 +218,16 @@
   id: CP14ClothingPantsLoincloth
   equipment:
     pants: CP14ClothingPantsLoincloth
+
+
+- type: loadout
+  id: CP14ClothingDressBlack
+  equipment: CP14ClothingDressBlack
+
+- type: startingGear
+  id: CP14ClothingDressBlack
+  equipment:
+    pants: CP14ClothingDressBlack
     
 # Shirt
 
@@ -216,7 +240,6 @@
   equipment:
     shirt: CP14ClothingShirtCottonBlue
 
-
 - type: loadout
   id: CP14ClothingShirtCottonBlack
   equipment: CP14ClothingShirtCottonBlack
@@ -225,7 +248,6 @@
   id: CP14ClothingShirtCottonBlack
   equipment:
     shirt: CP14ClothingShirtCottonBlack
-
 
 - type: loadout
   id: CP14ClothingShirtCottonPurple

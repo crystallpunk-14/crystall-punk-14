@@ -21,7 +21,28 @@
 
 - type: statusIcon
   parent: CP14JobIcon
+  id: CP14JobIconInnkeeper
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Innkeeper
+
+- type: statusIcon
+  parent: CP14JobIcon
   id: CP14JobIconCaptain
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
     state: Captain
+
+- type: statusIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGuardCommander
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: GuardCommander
+
+- type: statusIcon
+  parent: CP14JobIcon
+  id: CP14JobIconHouseKeeper
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: HouseKeeper

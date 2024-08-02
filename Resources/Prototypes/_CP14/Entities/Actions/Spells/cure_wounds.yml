@@ -1,0 +1,69 @@
+- type: entity
+  id: CP14ActionSpellCureWounds
+  name: Cure wounds
+  description: You touch the creature, healing its body from physical damage
+  components:
+  - type: CP14MagicEffect
+    manaCost: 15
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntity
+      spawns:
+      - CP14ImpactEffectCureWounds
+    effects:
+    - !type:CP14SpellSpawnEntity
+      spawns:
+      - CP14ImpactEffectCureWounds
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -10
+            Blunt: -10
+            Piercing: -10
+            Heat: -10
+      - !type:Jitter
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Et curabuntur..."
+    endSpeech: "vulnera tua"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneCureWounds
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    useDelay: 10
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: cure_wounds
+    event: !type:CP14DelayedEntityTargetActionEvent
+      delay: 2
+
+- type: entity
+  id: CP14RuneCureWounds
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectCureWounds
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#79b330"
+      shader: unshaded

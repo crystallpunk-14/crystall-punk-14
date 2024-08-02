@@ -1,0 +1,126 @@
+﻿- type: entity
+  id: CP14BaseCrate
+  abstract: true
+  parent: BaseStructureDynamic
+  components:
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 3
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Climbable
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+      - map: [ base ]
+        state: icon
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: open }
+          False: { state: icon }
+  - type: Storage
+    grid:
+    - 0,0,6,6
+    maxItemSize: Large
+    storageOpenSound: /Audio/Effects/closetopen.ogg
+    storageCloseSound: /Audio/Effects/closetclose.ogg
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+
+- type: entity
+  id: CP14BaseSmallCrate
+  abstract: true
+  parent: CP14BaseCrate
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        density: 95
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: Storage
+    grid:
+    - 0,0,4,4
+    maxItemSize: Normal
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 3
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14LargeWoodenCrate
+  name: large wooden crate
+  description: solid wooden crate
+  parent: CP14BaseCrate
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/large_wooden_crate.rsi
+
+- type: entity
+  id: CP14SmallWoodenCrate
+  name: small wooden crate
+  description: solid wooden crate
+  parent: CP14BaseSmallCrate
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/small_wooden_crate.rsi
