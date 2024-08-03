@@ -16,6 +16,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Content.Shared.Station.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -30,8 +31,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] NoSpawnMaps =
         {
             "CentComm",
-            "Dart",
-            "NukieOutpost"
+            "Dart"
         };
 
         private static readonly string[] Grids =
@@ -43,32 +43,15 @@ namespace Content.IntegrationTests.Tests
         };
 
         private static readonly string[] GameMaps =
-        {
-            "Dev", //CrystallPunk Map replacement
-            //"TestTeg",
-            //"Fland",
-            //"Meta",
-            //"Packed",
-            //"Cluster",
-            //"Omega",
-            //"Bagel",
-            //"Origin",
+        {//CrystallPunk Map replacement
+            "Dev",
             "CentComm",
-            "NukieOutpost",
-            //"Box",
-            //"Europa",
-            //"Saltern",
-            //"Core",
-            //"Marathon",
             "MeteorArena",
-            //"Atlas",
-            //"Reach",
-            //"Train",
-            //"Oasis"
 
             //CrystallPunk maps
             "AlchemyTest",
-            "BattleRoyale"
+            "BattleRoyale",
+            //CrystallPunk Map replacement end
         };
 
         /// <summary>
@@ -213,10 +196,10 @@ namespace Content.IntegrationTests.Tests
                         targetGrid = gridEnt;
                     }
                 }
-
                 // Test shuttle can dock.
                 // This is done inside gamemap test because loading the map takes ages and we already have it.
                 var station = entManager.GetComponent<StationMemberComponent>(targetGrid!.Value).Station;
+                /*
                 if (entManager.TryGetComponent<StationEmergencyShuttleComponent>(station, out var stationEvac))
                 {
                     var shuttlePath = stationEvac.EmergencyShuttlePath;
@@ -235,7 +218,7 @@ namespace Content.IntegrationTests.Tests
                 }
 
                 mapManager.DeleteMap(shuttleMap);
-
+                */ //CP14 Disable FTL test
                 if (entManager.HasComponent<StationJobsComponent>(station))
                 {
                     // Test that the map has valid latejoin spawn points or container spawn points

@@ -1,0 +1,27 @@
+- type: entity
+  id: CP14ElementalReactor
+  name: elemental reactor
+  description: A work of art created by the dwarves of Zilagro and House Lyrandar, controlling the fire elemental and allowing it to produce vast amounts of energy.
+  parent:
+  - BaseStructure
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Thaumaturgy/elemental_reactor.rsi #TODO resprite
+    state: base
+    drawdepth: Mobs
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.55,-0.85,0.55,0.85"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Physics
+    bodyType: Static
+  - type: CP14MagicEnergyContainer
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyDraw
+    energy: 5
+    delay: 1

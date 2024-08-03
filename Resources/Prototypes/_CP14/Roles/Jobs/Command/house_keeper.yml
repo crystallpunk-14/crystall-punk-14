@@ -1,0 +1,16 @@
+- type: job
+  id: CP14HouseKeeper
+  name: cp14-job-name-house-keeper
+  description: cp14-job-desc-house-keeper
+  playTimeTracker: CP14JobHouseKeeper
+  startingGear: CP14HouseKeeperGear
+  icon: "CP14JobIconHouseKeeper"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  canBeAntag: false
+  supervisors: cp14-job-supervisors-command
+
+- type: startingGear
+  id: CP14HouseKeeperGear
+  equipment:
+    belt1: CP14WalletFilledTest

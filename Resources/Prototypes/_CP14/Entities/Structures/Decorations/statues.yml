@@ -1,0 +1,78 @@
+- type: entity
+  id: CP14StatueGob
+  parent: BaseStructure
+  name: statue of Gob
+  description: It's beautiful.
+  suffix: Normal
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/statue_gob.rsi
+    state: gob
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14StoneBlock1:
+            min: 4
+            max: 5
+
+- type: entity
+  id: CP14StatueGobVines
+  parent: CP14StatueGob
+  name: statue of Gob
+  suffix: Normal. Overgrown.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/statue_gob.rsi
+    state: gob_vines
+
+- type: entity
+  id: CP14StatueGobRuined
+  parent: CP14StatueGob
+  name: broken statue of Gob
+  suffix: Ruined
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/statue_gob.rsi
+    state: gob_ruined
+
+- type: entity
+  id: CP14StatueGobRuinedVines
+  parent: CP14StatueGob
+  name: broken statue of Gob
+  suffix: Ruined. Overgrown.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/statue_gob.rsi
+    state: gob_ruined_vines

@@ -1,0 +1,19 @@
+- type: entity
+  id: CP14AuraScanner
+  parent: BaseItem
+  name: aura scanner
+  description: Scans the polarity of the elemental energy flows in this place.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Thaumaturgy/aura_scanner.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Objects/Specific/Thaumaturgy/aura_scanner.rsi
+  - type: CP14AuraScanner
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Effects/aura_scanner.ogg
+      params:
+        variation: 0.03
+  - type: UseDelay
+    delay: 4

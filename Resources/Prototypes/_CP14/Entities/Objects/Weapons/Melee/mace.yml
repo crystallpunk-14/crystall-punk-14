@@ -16,21 +16,19 @@
     - state: icon
   - type: Sharp
   - type: MeleeWeapon
-    attackRate: 0.7
+    angle: 100
+    attackRate: 0.9
+    range: 1.5
     wideAnimationRotation: 205
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 18
-        Piercing: 4
+        Blunt: 8
+        Piercing: 2
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 10
-  - type: DamageOnLand
-    damage:
-      types:
-        Blunt: 10
+  - type: StaminaDamageOnHit
+    damage: 6
+  - type: CP14Currency
+    currency: 500

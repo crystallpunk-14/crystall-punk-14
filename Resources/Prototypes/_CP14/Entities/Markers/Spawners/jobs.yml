@@ -25,3 +25,17 @@
     layers:
       - state: green
       - state: zookeeper #TODO Replace
+
+- type: entity
+  id: CP14SpawnPointCaptain
+  parent: SpawnPointJobBase
+  name: captain
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Captain
+  - type: Sprite
+    layers:
+      - state: green
+      - state: zookeeper #TODO Replace

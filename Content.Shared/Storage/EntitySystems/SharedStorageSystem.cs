@@ -26,6 +26,7 @@ using Content.Shared.Storage.Components;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
@@ -69,6 +70,9 @@ public abstract class SharedStorageSystem : EntitySystem
     public const string DefaultStorageMaxItemSize = "Normal";
 
     public const float AreaInsertDelayPerItem = 0.075f;
+    private static AudioParams _audioParams = AudioParams.Default
+        .WithMaxDistance(7f)
+        .WithVolume(-2f);
 
     private ItemSizePrototype _defaultStorageMaxItemSize = default!;
 
@@ -549,7 +553,7 @@ public abstract class SharedStorageSystem : EntitySystem
         // If we picked up at least one thing, play a sound and do a cool animation!
         if (successfullyInserted.Count > 0)
         {
-            Audio.PlayPredicted(component.StorageInsertSound, uid, args.User);
+            Audio.PlayPredicted(component.StorageInsertSound, uid, args.User, _audioParams);
             EntityManager.RaiseSharedEvent(new AnimateInsertingEntitiesEvent(
                 GetNetEntity(uid),
                 GetNetEntityList(successfullyInserted),
@@ -610,7 +614,7 @@ public abstract class SharedStorageSystem : EntitySystem
         {
             if (_sharedHandsSystem.TryPickupAnyHand(player, entity, handsComp: hands)
                 && storageComp.StorageRemoveSound != null)
-                Audio.PlayPredicted(storageComp.StorageRemoveSound, uid, player);
+                Audio.PlayPredicted(storageComp.StorageRemoveSound, uid, player, _audioParams);
             {
                 return;
             }
@@ -670,7 +674,7 @@ public abstract class SharedStorageSystem : EntitySystem
             return;
 
         TransformSystem.DropNextTo(itemEnt, player);
-        Audio.PlayPredicted(storageComp.StorageRemoveSound, storageEnt, player);
+        Audio.PlayPredicted(storageComp.StorageRemoveSound, storageEnt, player, _audioParams);
     }
 
     private void OnInsertItemIntoLocation(StorageInsertItemIntoLocationEvent msg, EntitySessionEventArgs args)
@@ -813,7 +817,11 @@ public abstract class SharedStorageSystem : EntitySystem
         _appearance.SetData(uid, StorageVisuals.Capacity, capacity, appearance);
         _appearance.SetData(uid, StorageVisuals.Open, isOpen, appearance);
         _appearance.SetData(uid, SharedBagOpenVisuals.BagState, isOpen ? SharedBagState.Open : SharedBagState.Closed, appearance);
-        _appearance.SetData(uid, StackVisuals.Hide, !isOpen, appearance);
+
+        // HideClosedStackVisuals true sets the StackVisuals.Hide to the open state of the storage.
+        // This is for containers that only show their contents when open. (e.g. donut boxes)
+        if (storage.HideStackVisualsWhenClosed)
+            _appearance.SetData(uid, StackVisuals.Hide, !isOpen, appearance);
     }
 
     /// <summary>
@@ -839,7 +847,7 @@ public abstract class SharedStorageSystem : EntitySystem
             Insert(target, entity, out _, user: user, targetComp, playSound: false);
         }
 
-        Audio.PlayPredicted(sourceComp.StorageInsertSound, target, user);
+        Audio.PlayPredicted(sourceComp.StorageInsertSound, target, user, _audioParams);
     }
 
     /// <summary>
@@ -1018,7 +1026,7 @@ public abstract class SharedStorageSystem : EntitySystem
                 return false;
 
             if (playSound)
-                Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user);
+                Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
 
             return true;
         }
@@ -1048,7 +1056,7 @@ public abstract class SharedStorageSystem : EntitySystem
         }
 
         if (playSound)
-            Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user);
+            Audio.PlayPredicted(storageComp.StorageInsertSound, uid, user, _audioParams);
 
         return true;
     }

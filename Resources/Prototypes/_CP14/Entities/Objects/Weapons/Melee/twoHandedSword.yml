@@ -20,7 +20,9 @@
     slots:
     - back
   - type: MeleeWeapon
+    angle: 120
     attackRate: 0.7
+    range: 1.8
     wideAnimationRotation: 205
     wideAnimation: CP14WeaponArcSlash
     damage:
@@ -35,8 +37,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 15
-        Blunt: 10
+        Slash: 7
+        Blunt: 2
         Structural: 3
   - type: Item
     size: Ginormous
@@ -48,6 +50,8 @@
     fuckupChance: 0.5
     requiredSkills:
     - Warcraft
+  - type: CP14Currency
+    currency: 5000
 
 - type: entity
   id: CP14TwoHandedSwordScythe

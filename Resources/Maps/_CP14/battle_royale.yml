@@ -46195,7 +46195,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46226,7 +46225,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46257,7 +46255,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46288,7 +46285,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46319,7 +46315,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46350,7 +46345,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46449,7 +46443,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46480,7 +46473,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46512,7 +46504,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46543,7 +46534,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46640,7 +46630,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46672,7 +46661,6 @@ entities:
       - CP14Crossbolt
       - CP14BaseSharpeningStone
       - CP14BaseSharpeningStone
-      - CP14Shovel
       - CP14OldLantern
       - CP14CopperCoin1
       - CP14CopperCoin1
@@ -46787,6 +46775,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -37.5,-19.5
+      parent: 2
+- proto: CP14SpawnPointCaptain
+  entities:
+  - uid: 751
+    components:
+    - type: Transform
+      pos: 8.5,-0.5
       parent: 2
 - proto: CP14TableWooden
   entities:
@@ -51500,6 +51495,11 @@ entities:
     - type: Transform
       pos: -17.5,45.5
       parent: 2
+  - uid: 2210
+    components:
+    - type: Transform
+      pos: -20.5,32.5
+      parent: 2
   - uid: 2260
     components:
     - type: Transform
@@ -51514,13 +51514,6 @@ entities:
     components:
     - type: Transform
       pos: -20.5,39.5
-      parent: 2
-- proto: CP14WallStoneSilverOre
-  entities:
-  - uid: 2210
-    components:
-    - type: Transform
-      pos: -20.5,32.5
       parent: 2
 - proto: CP14WallWhitebrick
   entities:

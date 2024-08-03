@@ -1,0 +1,66 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingRingBase
+  components:
+  - type: Item
+    size: Tiny
+  - type: Clothing
+    slots:
+    - ring
+  - type: Sprite
+    sprite: _CP14/Clothing/Rings/rings.rsi
+
+- type: entity
+  id: CP14ClothingRingIceDagger
+  parent: CP14ClothingRingBase
+  name: conductive ring
+  suffix: Ice Dagger
+  description: A standard mana-conductive ring that allows the user to summon ice daggers.
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: saphhire_stone_small
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceDagger
+
+- type: entity
+  id: CP14ClothingRingFlameCreation
+  parent: CP14ClothingRingBase
+  name: conductive ring
+  description: A standard mana-conductive ring that allows the user to summon artificial flames.
+  suffix: Flame creation
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: ruby_stone_small
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFlameCreation
+
+- type: entity
+  id: CP14ClothingRingCureWounds
+  parent: CP14ClothingRingBase
+  name: conductive ring
+  description: A standard mana-conductive ring that allows the user to heal physical injuries.
+  suffix: Cure Wounds
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: emerald_stone_small
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellCureWounds

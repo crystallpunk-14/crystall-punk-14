@@ -1,4 +1,19 @@
 - type: gameMap
+  id: MeteorArena
+  mapName: Meteor Arena
+  mapPath: /Maps/_CP14/meteor-arena.yml
+  minPlayers: 0
+  stations:
+    Arena:
+      stationProto: StandardStationArena
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Meteor Arena"
+        - type: StationJobs
+          availableJobs:
+            CP14Captain: [ -1, -1 ]
+
+- type: gameMap
   id: AlchemyTest
   mapName: Alchemy test
   mapPath: /Maps/_CP14/alchemy_test.yml
@@ -18,6 +33,7 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
+            CP14Captain: [1, 1]
 
 - type: gameMap
   id: BattleRoyale
@@ -36,6 +52,7 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
+            CP14Captain: [1, 1]
         - type: StationBiome
           biome: CP14GrassFill
         - type: CP14StationExpeditionTarget

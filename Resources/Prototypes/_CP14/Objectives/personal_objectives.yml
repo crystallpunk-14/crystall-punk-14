@@ -1,0 +1,60 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: CP14BasePersonalObjective
+  components:
+  - type: Objective
+    issuer: cp14-objective-issuer-personal
+    difficulty: 1
+
+- type: entity
+  parent: CP14BasePersonalObjective
+  abstract: true
+  id: CP14BasePersonalCurrencyCollectObjective
+  components:
+  - type: Objective
+    difficulty: 0
+  - type: CP14CurrencyCollectCondition
+    currency: 10
+    category: Currency
+    objectiveText: cp14-objective-personal-currency-collect-title
+    objectiveDescription: cp14-objective-personal-currency-collect-desc
+    objectiveSprite:
+      sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
+      state: coin10
+
+# Collect currency group
+
+- type: entity
+  parent: CP14BasePersonalCurrencyCollectObjective
+  id: CP14PersonalCurrencyCollectObjectiveSmall
+  components:
+  - type: Objective
+    difficulty: 0.5
+  - type: CP14CurrencyCollectCondition
+    currency: 500
+
+- type: entity
+  parent: CP14BasePersonalCurrencyCollectObjective
+  id: CP14PersonalCurrencyCollectObjectiveMedium
+  components:
+  - type: Objective
+    difficulty: 1
+  - type: CP14CurrencyCollectCondition
+    currency: 1000
+
+- type: entity
+  parent: CP14BasePersonalCurrencyCollectObjective
+  id: CP14PersonalCurrencyCollectObjectiveBig
+  components:
+  - type: Objective
+    difficulty: 3
+  - type: CP14CurrencyCollectCondition
+    currency: 3000
+
+- type: weightedRandom
+  id: CP14PersonalCurrencyCollectObjectiveGroup
+  weights:
+    CP14PersonalCurrencyCollectObjectiveSmall: 2
+    CP14PersonalCurrencyCollectObjectiveMedium: 1
+    CP14PersonalCurrencyCollectObjectiveBig: 0.3

@@ -1,0 +1,82 @@
+﻿#Base for future bottles
+- type: entity
+  name: Green Bottle
+  parent: CP14BaseVial
+  id: CP14GreenBottle
+  suffix: Empty
+  description: A green bottle perfect for drinking beer.
+  components:
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon_empty"}
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/green2_bottle.rsi
+    layers:
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 20
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: fill-
+
+- type: entity
+  name: Blue vial
+  parent: CP14GreenBottle
+  id: CP14BlueVial
+  description: A blue vial perfect for drinking whiskey.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/blue_bottle.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+
+- type: entity
+  name: Green vial
+  parent: CP14GreenBottle
+  id: CP14GreenVial
+  description: Just a little green vial.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/green_bottle.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+
+- type: entity
+  name: Orange bottle
+  parent: CP14GreenBottle
+  id: CP14OrangeBottle
+  description: Just a orange bottle.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/orange_bottle.rsi
+
+- type: entity
+  name: Red Bottle
+  parent: CP14GreenBottle
+  id: CP14RedBottle
+  description: A red bottle perfect for drinking wine.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/red_bottle.rsi

@@ -3,7 +3,7 @@ using Robust.Shared.Utility;
 namespace Content.Server._CP14.StationDungeonMap;
 
 /// <summary>
-/// Initializes a procedurally generated world with points of interest
+/// Loads additional maps from the list at the start of the round.
 /// </summary>
 [RegisterComponent, Access(typeof(CP14StationAdditionalMapSystem))]
 public sealed partial class CP14StationAdditionalMapComponent : Component
