@@ -126,9 +126,8 @@
     sprite: _CP14/Structures/Storage/Crates/small_wooden_crate.rsi
 
 - type: entity
-  id: CP14LargeWoodenCrateFilled
-  suffix: Filled, Battle royale
-  parent: CP14LargeWoodenCrate
+  abstract: true
+  id: BRFilledTemp
   components:
   - type: StorageFill
     contents:
@@ -382,3 +381,18 @@
       - id: CP14EnergyCrystalSmall
         prob: 0.2
         onGroup: Material
+
+
+- type: entity
+  id: CP14SmallWoodenCrateFilled
+  parent: 
+  - CP14SmallWoodenCrate
+  - BRFilledTemp
+  suffix: Filled, Battleroyale
+
+- type: entity
+  id: CP14LargeWoodenCrateFilled
+  suffix: Filled, Battleroyale
+  parent: 
+  - CP14LargeWoodenCrate
+  - BRFilledTemp
