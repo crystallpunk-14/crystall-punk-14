@@ -86,6 +86,23 @@
         - CP14FloorBase
       entities:
         - CP14GatherableLumiMushroom
+    - !type:BiomeEntityLayer # lumishroom sage
+      threshold: 0.8
+      noise:
+        seed: 8
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.85
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14ConstrainedSpawnerXeno
+        - CP14AuraNodeBase
     # Lakes start
     - !type:BiomeEntityLayer
       allowedTiles:
