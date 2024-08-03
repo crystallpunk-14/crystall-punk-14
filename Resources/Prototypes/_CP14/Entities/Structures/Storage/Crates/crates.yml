@@ -124,3 +124,261 @@
   components:
   - type: Sprite
     sprite: _CP14/Structures/Storage/Crates/small_wooden_crate.rsi
+
+- type: entity
+  id: CP14LargeWoodenCrateFilled
+  suffix: Filled, Battle royale
+  parent: CP14LargeWoodenCrate
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Crossbolt
+        prob: 0.2
+      - id: CP14Crossbolt
+        prob: 0.2
+      - id: CP14Crossbolt
+        prob: 0.2
+      - id: CP14BaseSharpeningStone
+        prob: 0.2
+      - id: CP14BaseSharpeningStone
+        prob: 0.2
+      - id: CP14BaseBattleStaff
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseDagger
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseHandheldAxe
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseLightHammer
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseMace
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseSickle
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseThrowableSpear
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseLightCrossbow
+        prob: 0.2
+        onGroup: Weapon
+      - id: CP14BaseShovel
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14BaseHoe
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14BasePickaxe
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14OldLantern
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14ClothingRingIceDagger
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14ClothingRingIceShards
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14ClothingRingFlameCreation
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14ClothingRingFireball
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14ClothingRingCureWounds
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14ClothingRingShadowStep
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14ClothingRingShadowGrab
+        prob: 0.2
+        onGroup: Weapon2
+      - id: CP14AuraScanner
+        prob: 0.2
+        onGroup: Weapon2
+      - id: ClothingBackpackCargo
+        prob: 0.2
+        onGroup: Tool
+      - id: CP14CopperCoin1
+        prob: 0.2
+        onGroup: Currency
+      - id: CP14CopperCoin5
+        prob: 0.2
+        onGroup: Currency
+      - id: CP14CopperCoin
+        prob: 0.2
+        onGroup: Currency
+      - id: CP14SilverCoin1
+        prob: 0.2
+        onGroup: Currency
+      - id: CP14SilverCoin5
+        prob: 0.2
+        onGroup: Currency
+      - id: CP14ClothingCloakArmoredRed
+        prob: 0.3
+        onGroup: Cloth
+      - id: CP14ClothingCloakBlacksmithArpon
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingCloakFurcapeBlack
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingCloakFurcapeBlue
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingCloakSimpleWhite
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingCloakSimpleDarkBlue
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingEyesMonocle
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingEyesGlasses
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingEyesAlchemyGlasses
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingEyesAlchemyMonocle
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingEyesThaumaturgyGlasses
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingGlovesGirdles
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadMetalHeadband
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadTriangularHat
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadTriangularHatGolden
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadRedBeret
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadPurpleBeret
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadYellowBeret
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadBlueBeret
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingHeadBlackBeret
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingPantsTrouserWhite
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingPantsTrouserDarkBlue
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingPantsAristocratic
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingPantsLoincloth
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingShirtCottonBlue
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingShirtCottonBlack
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingShirtCottonPurple
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingShirtCottonRed
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingShirtCottonWhite
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingShirtCottonYellow
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14ClothingShirtSteampunk
+        prob: 0.2
+        onGroup: Cloth
+      - id: CP14DirtBlock10
+        prob: 0.2
+        onGroup: Material
+      - id: CP14StoneBlock10
+        prob: 0.2
+        onGroup: Material
+      - id: CP14WoodLog
+        prob: 0.2
+        onGroup: Material
+      - id: CP14WoodenPlanks10
+        prob: 0.2
+        onGroup: Material
+      - id: CP14Nail1
+        prob: 0.2
+        onGroup: Material
+      - id: CP14Nail110
+        prob: 0.2
+        onGroup: Material
+      - id: CP14BloodGrass
+        prob: 0.2
+        onGroup: Material
+      - id: CP14AgaricMushroom
+        prob: 0.2
+        onGroup: Material
+      - id: CP14ChromiumSlime
+        prob: 0.2
+        onGroup: Material
+      - id: CP14WildSage
+        prob: 0.2
+        onGroup: Material
+      - id: CP14QuartzShard
+        prob: 0.2
+        onGroup: Material
+      - id: CP14LumiMushroom
+        prob: 0.2
+        onGroup: Material
+      - id: CP14Pestle
+        prob: 0.2
+        onGroup: Material
+      - id: CP14Mortar
+        prob: 0.2
+        onGroup: Material
+      - id: CP14Dropper
+        prob: 0.2
+        onGroup: Material
+      - id: CP14VialSmallBloodgrassSap
+        prob: 0.2
+        onGroup: Material
+      - id: CP14VialSmallAgaricMushroom
+        prob: 0.2
+        onGroup: Material
+      - id: CP14VialSmallGroundQuartz
+        prob: 0.2
+        onGroup: Material
+      - id: CP14VialSmallWildSage
+        prob: 0.2
+        onGroup: Material
+      - id: CP14VialSmallChromiumSlime
+        prob: 0.2
+        onGroup: Material
+      - id: CP14VialSmallLumiMushroom
+        prob: 0.2
+        onGroup: Material
+      - id: CP14EnergyCrystalMedium
+        prob: 0.2
+        onGroup: Material
+      - id: CP14EnergyCrystalSmall
+        prob: 0.2
+        onGroup: Material

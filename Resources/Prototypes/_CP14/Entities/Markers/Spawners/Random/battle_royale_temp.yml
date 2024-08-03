@@ -50,9 +50,6 @@
     - CP14CopperCoin1
     - CP14CopperCoin1
     - CP14CopperCoin1
-    - HealingToolbox
-    - HealingToolbox
-    - HealingToolbox
 
 - type: entity
   id: CP14RandomSpawnerBattleRoyaleLootTools
@@ -129,15 +126,13 @@
     - CP14EnergyCrystalMedium
     - CP14EnergyCrystalSmall
     - CP14AlchemyNormalizer
+    - CP14CopperCoin5
+    - CP14CopperCoin5
+    - CP14CopperCoin5
+    - CP14CopperCoin5
     - CP14CopperCoin1
     - CP14CopperCoin1
     - CP14CopperCoin1
-    - CP14CopperCoin1
-    - CP14CopperCoin1
-    - CP14CopperCoin1
-    - CP14CopperCoin1
-    - CP14CopperCoin1
-    - CP14CopperCoin1
-    - CP14CopperCoin1
-    - HealingToolbox
-    - HealingToolbox
+    - CP14SilverCoin1
+    - CP14SilverCoin1
+    - CP14SilverCoin1
