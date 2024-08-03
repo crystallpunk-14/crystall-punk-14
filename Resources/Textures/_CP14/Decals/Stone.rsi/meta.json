@@ -1,0 +1,62 @@
+{
+    "version": 1,
+    "license": "All rights reserved for the CrystallPunk14 project only",
+    "copyright": "By jaraten(Github/discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "stone_box"
+        },
+        {
+            "name": "stone_corner_ne"
+        },
+        {
+            "name": "stone_corner_se"
+        },
+        {
+            "name": "stone_corner_nw"
+        },
+        {
+            "name": "stone_corner_sw"
+        },
+        {
+            "name": "stone_end_n"
+        },
+        {
+            "name": "stone_end_e"
+        },
+        {
+            "name": "stone_end_s"
+        },
+        {
+            "name": "stone_end_w"
+        },
+        {
+            "name": "stone_line_n"
+        },
+        {
+            "name": "stone_line_e"
+        },
+        {
+            "name": "stone_line_s"
+        },
+        {
+            "name": "stone_line_w"
+        },
+        {
+            "name": "stone_inner_ne"
+        },
+        {
+            "name": "stone_inner_se"
+        },
+        {
+            "name": "stone_inner_nw"
+        },
+        {
+            "name": "stone_inner_sw"
+        }
+    ]
+}
