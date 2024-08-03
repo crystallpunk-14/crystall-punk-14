@@ -2,8 +2,8 @@
   parent: BaseItem
   id: CP14BaseKey
   abstract: true
-  name: ключ
-  description: Небольшая заковыристая железяка, открывающая определенные замки. Не отдавайте кому попало!
+  name: key
+  description: A small, intricate piece of iron that opens certain locks. Don't give it to just anyone!
   components: 
   - type: Tag
     tags:
@@ -23,8 +23,8 @@
 - type: entity
   parent: BaseItem
   id: CP14BaseLockpick
-  name: отмычка
-  description: Воровской инструмент, при должном умении и сноровке позволяющий взламывать любые замки.
+  name: lockpick
+  description: A thief's tool that, with proper skill and skill, allows you to pick any lock.
   components:
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
@@ -34,7 +34,7 @@
 - type: entity
   parent: CP14BaseKey
   id: CP14KeyTavern
-  name: ключ от таверны
+  name: captain key
   components:
   - type: Sprite
     state: key1

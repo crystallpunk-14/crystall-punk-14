@@ -27,6 +27,20 @@
       - state: zookeeper #TODO Replace
 
 - type: entity
+  id: CP14SpawnPointInnkeeper
+  parent: SpawnPointJobBase
+  name: innkeeper
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Innkeeper
+  - type: Sprite
+    layers:
+      - state: green
+      - state: zookeeper #TODO Replace
+
+- type: entity
   id: CP14SpawnPointCaptain
   parent: SpawnPointJobBase
   name: captain
@@ -35,6 +49,34 @@
   components:
   - type: SpawnPoint
     job_id: CP14Captain
+  - type: Sprite
+    layers:
+      - state: green
+      - state: zookeeper #TODO Replace
+
+- type: entity
+  id: CP14SpawnPointGuardCommander
+  parent: SpawnPointJobBase
+  name: guard commander
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14GuardCommander
+  - type: Sprite
+    layers:
+      - state: green
+      - state: zookeeper #TODO Replace
+
+- type: entity
+  id: CP14SpawnPointHouseKeeper
+  parent: SpawnPointJobBase
+  name: house keeper
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14HouseKeeper
   - type: Sprite
     layers:
       - state: green

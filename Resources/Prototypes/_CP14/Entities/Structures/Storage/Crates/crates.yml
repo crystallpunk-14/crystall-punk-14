@@ -29,6 +29,7 @@
         acts: [ "Destruction" ]
   - type: Climbable
   - type: Sprite
+    snapCardinals: true
     drawdepth: Mobs
     layers:
       - map: [ base ]

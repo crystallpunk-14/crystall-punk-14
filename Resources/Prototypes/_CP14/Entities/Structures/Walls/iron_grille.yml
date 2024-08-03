@@ -154,6 +154,8 @@
     closeTimeTwo: 0
     openTimeOne: 0
     openTimeTwo: 0
+    closedDrawDepth: Mobs
+    openDrawDepth: Mobs
     openingAnimationTime: 0
     closingAnimationTime: 0
     openSound:
