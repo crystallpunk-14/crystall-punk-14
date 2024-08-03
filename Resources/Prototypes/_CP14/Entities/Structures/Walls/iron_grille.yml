@@ -163,3 +163,26 @@
     closeSound:
       collection: MetalScrape
   - type: Appearance
+
+- type: entity
+  parent: CP14IronGrilleGate
+  id: CP14IronGrilleGateLockedTavern
+  suffix: Tavern locked
+  components:
+  - type: ContainerContainer
+    containers:
+      lock_slot: !type:ContainerSlot
+  - type: Lock
+    locked: true
+    lockSlotId: lock_slot
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        startingItem: CP14LockTavern
+        disableEject: true
+        insertOnInteract: false
+        ejectOnBreak: true
+        whitelist:
+          components:
+          - CPLock
