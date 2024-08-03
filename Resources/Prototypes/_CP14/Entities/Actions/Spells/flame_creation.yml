@@ -28,6 +28,7 @@
       state: flame_creation
     event: !type:CP14DelayedInstantActionEvent
       delay: 1
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneFlameCreation

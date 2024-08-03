@@ -25,6 +25,7 @@
       state: ice_dagger
     event: !type:CP14DelayedInstantActionEvent
       delay: 0.5
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneIceDagger

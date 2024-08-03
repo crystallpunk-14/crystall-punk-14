@@ -27,6 +27,7 @@
       state: ice_shards
     event: !type:CP14DelayedWorldTargetActionEvent
       delay: 0.5
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneIceShards

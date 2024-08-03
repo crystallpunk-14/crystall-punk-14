@@ -30,6 +30,7 @@
       state: fireball
     event: !type:CP14DelayedWorldTargetActionEvent
       delay: 3
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneFireball
