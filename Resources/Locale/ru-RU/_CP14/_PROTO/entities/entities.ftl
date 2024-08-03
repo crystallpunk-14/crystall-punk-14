@@ -1080,3 +1080,43 @@ ent-CP14CardboardWall = стена из картона
 ent-CPBaseSharpeningStoneStructure = стационарный точильный камень
     .desc = прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
 
+ent-CP14GreenBottle = Зеленая бутылка
+    .desc = Зеленая бутылка, идеально подходит для пива.
+    .suffix = Пустая
+
+ent-CP14BlueVial = Синий флакон
+    .desc = Синий флакон, идеально подходит для рома.
+    .suffix = Пустой
+
+ent-CP14GreenVial = Зеленый флакон
+    .desc = Маленький зеленый флакон.
+    .suffix = Пустой
+
+ent-CP14OrangeBottle = Оранжевая бутылка
+    .desc = Просто оранжевая бутылка.
+    .suffix = Пустая
+
+ent-CP14RedBottle = Красная бутылка
+    .desc = Красная бутылка, идеально подходит для вина.
+    .suffix = Пустая
+
+ent-CP14MetalBeerMug = Металлическая кружка
+    .desc = Самая обычная металлическая кружка.
+
+ent-CP14WoodenBeerMug = Деревянная кружка
+    .desc = Деревянная кружка для пива.
+
+ent-CP14SteelBeerMug = Пивная кружка
+    .desc = Деревянная кружка с железными вкраплениями.
+
+ent-CP14SteelWoodBeerMug = { ent-CP14SteelBeerMug }
+    .desc = { ent-CP14SteelBeerMug.desc }
+
+ent-CP14RawFoodMeat = Сырая баранина
+    .desc = Пахнет странно, но выглядит как обычное мясо...
+
+ent-CP14CookedFoodMeat = Стейк из баранины
+    .desc = Зажаренный кусок мяса. Запах первобытный.
+
+ent-CP14CuttingBoard = Разделочная доска
+    .desc = Поможет вам приготовить еду.
