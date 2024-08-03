@@ -15,6 +15,9 @@
     },
     {
       "name": "grass"
+    },
+    {
+      "name": "forest"
     }
   ]
 }
