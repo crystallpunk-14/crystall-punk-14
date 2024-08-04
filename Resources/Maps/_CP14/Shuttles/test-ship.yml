@@ -2308,11 +2308,6 @@ entities:
       parent: 1
 - proto: CP14Nail1
   entities:
-  - uid: 206
-    components:
-    - type: Transform
-      pos: 0.46748257,-21.102383
-      parent: 1
   - uid: 226
     components:
     - type: Transform
@@ -2331,67 +2326,10 @@ entities:
       rot: 3.141592653589793 rad
       pos: 1.5144706,4.740267
       parent: 1
-  - uid: 585
-    components:
-    - type: Transform
-      pos: 7.7846003,-14.38972
-      parent: 1
   - uid: 637
     components:
     - type: Transform
       pos: 5.7809744,-14.4887495
-      parent: 1
-  - uid: 642
-    components:
-    - type: Transform
-      pos: 3.8684936,-21.228645
-      parent: 1
-  - uid: 644
-    components:
-    - type: Transform
-      pos: 7.811981,-14.419118
-      parent: 1
-  - uid: 676
-    components:
-    - type: Transform
-      pos: 7.5971003,-14.23347
-      parent: 1
-  - uid: 677
-    components:
-    - type: Transform
-      pos: 7.5971003,-14.217845
-      parent: 1
-  - uid: 679
-    components:
-    - type: Transform
-      pos: 2.5017884,-24.241024
-      parent: 1
-  - uid: 682
-    components:
-    - type: Transform
-      pos: 1.2382306,8.626733
-      parent: 1
-  - uid: 683
-    components:
-    - type: Transform
-      pos: 3.4760966,-2.3945436
-      parent: 1
-  - uid: 713
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.3587615,-20.437532
-      parent: 1
-  - uid: 720
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.0793557,-4.1791105
-      parent: 1
-  - uid: 762
-    components:
-    - type: Transform
-      pos: 2.4827938,9.542495
       parent: 1
   - uid: 797
     components:
@@ -4697,7 +4635,7 @@ entities:
       pos: -3.5,-9.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -4452.5176
+      secondsUntilStateChange: -4584.9634
       state: Opening
 - proto: CP14WoodDoorTavern
   entities:
@@ -5104,30 +5042,6 @@ entities:
     components:
     - type: Transform
       pos: 2.5,9.5
-      parent: 1
-- proto: PottedPlant4
-  entities:
-  - uid: 681
-    components:
-    - type: Transform
-      pos: 3.3982663,-2.655385
-      parent: 1
-  - uid: 706
-    components:
-    - type: Transform
-      pos: 1.3900113,-20.465921
-      parent: 1
-- proto: PottedPlant5
-  entities:
-  - uid: 678
-    components:
-    - type: Transform
-      pos: 1.288471,8.208353
-      parent: 1
-  - uid: 707
-    components:
-    - type: Transform
-      pos: 2.0793557,-4.2103605
       parent: 1
 - proto: SpawnPointObserver
   entities:
