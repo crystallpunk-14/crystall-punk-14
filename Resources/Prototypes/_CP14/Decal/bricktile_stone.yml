@@ -1,5 +1,5 @@
 ﻿- type: decal
-  id: BrickTileStoneBox
+  id: CP14BrickTileStoneBox
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -8,7 +8,7 @@
     state: stone_box
 
 - type: decal
-  id: BrickTileStoneCornerNe
+  id: CP14BrickTileStoneCornerNe
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -17,7 +17,7 @@
     state: stone_corner_ne
 
 - type: decal
-  id: BrickTileStoneCornerSe
+  id: CP14BrickTileStoneCornerSe
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -26,7 +26,7 @@
     state: stone_corner_se
 
 - type: decal
-  id: BrickTileStoneCornerNw
+  id: CP14BrickTileStoneCornerNw
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -35,7 +35,7 @@
     state: stone_corner_nw
 
 - type: decal
-  id: BrickTileStoneCornerSw
+  id: CP14BrickTileStoneCornerSw
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -44,7 +44,7 @@
     state: stone_corner_sw
 
 - type: decal
-  id: BrickTileStoneInnerNe
+  id: CP14BrickTileStoneInnerNe
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -53,7 +53,7 @@
     state: stone_inner_ne
 
 - type: decal
-  id: BrickTileStoneInnerSe
+  id: CP14BrickTileStoneInnerSe
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -62,7 +62,7 @@
     state: stone_inner_se
 
 - type: decal
-  id: BrickTileStoneInnerNw
+  id: CP14BrickTileStoneInnerNw
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -71,7 +71,7 @@
     state: stone_inner_nw
 
 - type: decal
-  id: BrickTileStoneInnerSw
+  id: CP14BrickTileStoneInnerSw
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -80,7 +80,7 @@
     state: stone_inner_sw
 
 - type: decal
-  id: BrickTileStoneEndN
+  id: CP14BrickTileStoneEndN
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -89,7 +89,7 @@
     state: stone_end_n
 
 - type: decal
-  id: BrickTileStoneEndE
+  id: CP14BrickTileStoneEndE
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -98,7 +98,7 @@
     state: stone_end_e
 
 - type: decal
-  id: BrickTileStoneEndS
+  id: CP14BrickTileStoneEndS
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -107,7 +107,7 @@
     state: stone_end_s
 
 - type: decal
-  id: BrickTileStoneEndW
+  id: CP14BrickTileStoneEndW
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -116,7 +116,7 @@
     state: stone_end_w
 
 - type: decal
-  id: BrickTileStoneLineN
+  id: CP14BrickTileStoneLineN
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -125,7 +125,7 @@
     state: stone_line_n
 
 - type: decal
-  id: BrickTileStoneLineE
+  id: CP14BrickTileStoneLineE
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -134,7 +134,7 @@
     state: stone_line_e
 
 - type: decal
-  id: BrickTileStoneLineS
+  id: CP14BrickTileStoneLineS
   snapCardinals: true
   defaultSnap: true
   showMenu: true
@@ -143,7 +143,7 @@
     state: stone_line_s
 
 - type: decal
-  id: BrickTileStoneLineW
+  id: CP14BrickTileStoneLineW
   snapCardinals: true
   defaultSnap: true
   showMenu: true
