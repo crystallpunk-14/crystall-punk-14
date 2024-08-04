@@ -220,99 +220,6 @@
       - id: CP14SilverCoin5
         prob: 0.2
         onGroup: Currency
-      - id: CP14ClothingCloakArmoredRed
-        prob: 0.3
-        onGroup: Cloth
-      - id: CP14ClothingCloakBlacksmithArpon
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingCloakFurcapeBlack
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingCloakFurcapeBlue
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingCloakSimpleWhite
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingCloakSimpleDarkBlue
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingEyesMonocle
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingEyesGlasses
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingEyesAlchemyGlasses
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingEyesAlchemyMonocle
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingEyesThaumaturgyGlasses
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingGlovesGirdles
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadMetalHeadband
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadTriangularHat
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadTriangularHatGolden
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadRedBeret
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadPurpleBeret
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadYellowBeret
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadBlueBeret
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingHeadBlackBeret
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingPantsTrouserWhite
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingPantsTrouserDarkBlue
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingPantsAristocratic
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingPantsLoincloth
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingShirtCottonBlue
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingShirtCottonBlack
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingShirtCottonPurple
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingShirtCottonRed
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingShirtCottonWhite
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingShirtCottonYellow
-        prob: 0.2
-        onGroup: Cloth
-      - id: CP14ClothingShirtSteampunk
-        prob: 0.2
-        onGroup: Cloth
       - id: CP14DirtBlock10
         prob: 0.2
         onGroup: Material
@@ -388,7 +295,7 @@
   id: CP14SmallWoodenCrateFilled
   parent: 
   - CP14SmallWoodenCrate
-  #- BRFilledTemp
+  - BRFilledTemp
   suffix: Filled, Battleroyale
 
 - type: entity
@@ -396,4 +303,4 @@
   suffix: Filled, Battleroyale
   parent: 
   - CP14LargeWoodenCrate
-  #- BRFilledTemp
+  - BRFilledTemp

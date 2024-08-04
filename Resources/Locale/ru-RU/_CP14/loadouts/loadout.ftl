@@ -12,3 +12,6 @@ cp14-loadout-basic-shoes = Обувь
 # Org
 
 cp14-loadout-captain-cloak = Капитанская накидка
+cp14-loadout-captain-head = Капитанская шляпа
+
+cp14-loadout-guard-commander-cloak = Накидка командира стражи

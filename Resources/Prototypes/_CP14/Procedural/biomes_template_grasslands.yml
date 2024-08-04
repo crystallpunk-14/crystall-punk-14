@@ -169,7 +169,7 @@
       entities:
         - CP14GatherableWildSage
     - !type:BiomeEntityLayer # Mobs and aura
-      threshold: 0.7
+      threshold: 0.8
       noise:
         seed: 8
         noiseType: OpenSimplex2
@@ -183,7 +183,6 @@
       allowedTiles:
         - CP14FloorGrass
       entities:
-        - CP14ConstrainedSpawnerXeno
         - CP14AuraNodeBase
 
 # Подбиомы лугов
