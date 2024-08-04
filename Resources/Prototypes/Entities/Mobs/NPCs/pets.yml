@@ -360,7 +360,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: dino
+        Base: walter
       Critical:
         Base: walter_dead
       Dead:
