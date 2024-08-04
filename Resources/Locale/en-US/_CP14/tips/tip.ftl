@@ -1,6 +1,6 @@
 cp14-tips-1 = Keep an eye on the condition of your weapon! You can inspect it to see its condition and sharpness.
 cp14-tips-2 = If your weapon is dull, you can sharpen it with sharpening stones.
-cp14-tips-3 = Some light weapons, such as daggers or sickles, are effective for two-handed combat.
+cp14-tips-3 = Some light weapons, such as daggers or sickles, are effective for dual wield combat.
 cp14-tips-4 = Some magic items can only work after being attuned. To customize the binding, press the RMB and select the desired action.
 cp14-tips-5 = As an alchemist, if you mix some reagents together, you can no longer separate them! Look for the right alchemical reactions that will allow you to edit your solution.
 cp14-tips-6 = As an alchemist, remember to keep your cauldron off the stove or fire. Your potion may boil over, releasing a reagent cloud.

@@ -295,7 +295,7 @@
   id: CP14SmallWoodenCrateFilled
   parent: 
   - CP14SmallWoodenCrate
-  - BRFilledTemp
+  #- BRFilledTemp
   suffix: Filled, Battleroyale
 
 - type: entity
@@ -303,4 +303,4 @@
   suffix: Filled, Battleroyale
   parent: 
   - CP14LargeWoodenCrate
-  - BRFilledTemp
+  #- BRFilledTemp

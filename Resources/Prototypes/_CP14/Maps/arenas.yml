@@ -59,7 +59,7 @@
 - type: gameMap
   id: ExpeditionTest
   mapName: Expedition test
-  mapPath: /Maps/_CP14/exLand3.yml
+  mapPath: /Maps/_CP14/expedition_test.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
