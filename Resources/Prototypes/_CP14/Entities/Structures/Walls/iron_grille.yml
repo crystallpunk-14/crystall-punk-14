@@ -50,6 +50,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
 
 - type: entity
   parent: CP14IronGrilleBase
@@ -83,6 +84,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
 
 - type: entity
   parent: CP14IronGrilleBase
@@ -116,6 +118,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
 
 - type: entity
   parent: CP14IronGrilleBase
@@ -140,6 +143,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
   - type: InteractionOutline
   - type: Door
     openSpriteState: door_opened
