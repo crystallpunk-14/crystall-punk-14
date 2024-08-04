@@ -118,7 +118,7 @@ public sealed class StationSystem : EntitySystem
         {
             // Oh jeez, no stations got loaded.
             // We'll yell about it, but the thing this used to do with creating a dummy is kinda pointless now.
-            _sawmill.Error($"There were no station grids for {ev.GameMap.ID}!");
+            //_sawmill.Error($"There were no station grids for {ev.GameMap.ID}!"); //CP14 - no grid stations, lol
         }
 
         foreach (var (id, gridIds) in dict)
