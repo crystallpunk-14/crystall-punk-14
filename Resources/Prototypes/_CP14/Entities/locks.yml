@@ -2,8 +2,8 @@
   parent: BaseItem
   abstract: true
   id: CP14BaseLock
-  name: стальной замок
-  description: Он запирает вещи. И вам потребуется ключ, чтобы открыть их обратно.
+  name: steel lock
+  description: It locks things up. And you'll need a key to open them back up.
   components:
   - type: CP14Lock
     lockPickDamageChance: 0.2
@@ -16,7 +16,7 @@
 - type: entity
   parent: CP14BaseLock
   id: CP14LockTavern
-  name: замок от таверны
+  name: captain's lock
   components:
   - type: CP14Lock
     autoGenerateShape: Tavern

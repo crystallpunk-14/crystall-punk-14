@@ -1,14 +1,10 @@
 using System.Linq;
-using Content.Server.GameTicking.Events;
 using Content.Shared._CP14.LockKey;
-using Content.Shared.Containers.ItemSlots;
+using Content.Shared._CP14.LockKey.Components;
 using Content.Shared.Examine;
-using Content.Shared.Lock;
-using Content.Shared.Popups;
+using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using CP14KeyComponent = Content.Shared._CP14.LockKey.Components.CP14KeyComponent;
-using CP14LockComponent = Content.Shared._CP14.LockKey.Components.CP14LockComponent;
 
 namespace Content.Server._CP14.LockKey;
 
@@ -16,9 +12,6 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly LockSystem _lock = default!;
 
     private Dictionary<ProtoId<CP14LockCategoryPrototype>, List<int>> _roundKeyData = new();
 
@@ -28,7 +21,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundEnd);
 
         SubscribeLocalEvent<CP14LockComponent, MapInitEvent>(OnLockInit);
         SubscribeLocalEvent<CP14KeyComponent, MapInitEvent>(OnKeyInit);
@@ -37,7 +30,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     }
 
     #region Init
-    private void OnRoundStart(RoundStartingEvent ev)
+    private void OnRoundEnd(RoundRestartCleanupEvent ev)
     {
         _roundKeyData = new();
     }
@@ -68,7 +61,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         if (key.Comp.LockShape == null)
             return;
 
-        var markup = Loc.GetString("cp-lock-examine-key", ("item", MetaData(key).EntityName));
+        var markup = Loc.GetString("cp14-lock-examine-key", ("item", MetaData(key).EntityName));
         markup += " (";
         foreach (var item in key.Comp.LockShape)
         {

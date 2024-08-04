@@ -30,6 +30,10 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - belt
 
 - type: entity
   parent: CP14BaseKeyRing
