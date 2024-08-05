@@ -27,6 +27,12 @@
     },
     {
       "name": "shadow_grab"
+    },
+    {
+      "name": "ice_floor"
+    },
+    {
+      "name": "earth_wall"
     }
   ]
 }

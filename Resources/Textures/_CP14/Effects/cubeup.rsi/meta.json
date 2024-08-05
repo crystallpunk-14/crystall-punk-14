@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by TheShuEd (Discord) and modified by Jaraten (github/Discord) for CrystallPunk14",
+  "size": {
+    "x": 32,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "cube_up",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}
