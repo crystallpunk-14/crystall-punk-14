@@ -29,6 +29,11 @@ public sealed class CP14ExpeditionSystem : EntitySystem
     /// </summary>
     public float ArrivalTime { get; private set; }
 
+    /// <summary>
+    /// If enabled then spawns players on an expedition ship.
+    /// </summary>
+    public bool Enabled { get; private set; }
+
     public override void Initialize()
     {
         base.Initialize();
@@ -38,12 +43,17 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, FTLCompletedEvent>(OnExpeditionShipLanded);
 
         ArrivalTime = _cfgManager.GetCVar(CCVars.CP14ExpeditionArrivalTime);
-        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionArrivalTime, time => ArrivalTime = time, true);
-    }
+        Enabled = _cfgManager.GetCVar(CCVars.CP14ExpeditionShip);
 
+        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionArrivalTime, time => ArrivalTime = time, true);
+        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionShip, value => Enabled = value, true);
+    }
 
     private void OnPostInitSetupExpeditionShip(Entity<CP14StationExpeditionTargetComponent> station, ref StationPostInitEvent args)
     {
+        if (!Enabled)
+            return;
+
         if (!Deleted(station.Comp.Shuttle))
             return;
 
@@ -97,6 +107,9 @@ public sealed class CP14ExpeditionSystem : EntitySystem
 
     public void HandlePlayerSpawning(PlayerSpawningEvent ev)
     {
+        if (!Enabled)
+            return;
+
         if (ev.SpawnResult != null)
             return;
 
