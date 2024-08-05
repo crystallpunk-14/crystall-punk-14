@@ -67,3 +67,23 @@
   - type: Tag
     tags:
     - CP14HerbalGathering
+  - type: MeleeWeapon
+    angle: 110
+    attackRate: 0.6
+    range: 1.4
+    wideAnimationRotation: 205
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Slash: 4
+        Blunt: 3
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.6
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 6
+  - type: CP14Currency
+    currency: 2000
