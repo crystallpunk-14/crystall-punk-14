@@ -28,6 +28,8 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
+    - type: BecomesStation
+      id: ExpeditionTest
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids
