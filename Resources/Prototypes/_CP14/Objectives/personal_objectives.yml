@@ -30,31 +30,31 @@
   id: CP14PersonalCurrencyCollectObjectiveSmall
   components:
   - type: Objective
-    difficulty: 0.5
+    difficulty: 0.25
   - type: CP14CurrencyCollectCondition
-    currency: 500
+    currency: 250
 
 - type: entity
   parent: CP14BasePersonalCurrencyCollectObjective
   id: CP14PersonalCurrencyCollectObjectiveMedium
   components:
   - type: Objective
-    difficulty: 1
+    difficulty: 0.5
   - type: CP14CurrencyCollectCondition
-    currency: 1000
+    currency: 500
 
 - type: entity
   parent: CP14BasePersonalCurrencyCollectObjective
   id: CP14PersonalCurrencyCollectObjectiveBig
   components:
   - type: Objective
-    difficulty: 3
+    difficulty: 1
   - type: CP14CurrencyCollectCondition
-    currency: 3000
+    currency: 1000
 
 - type: weightedRandom
   id: CP14PersonalCurrencyCollectObjectiveGroup
   weights:
-    CP14PersonalCurrencyCollectObjectiveSmall: 2
-    CP14PersonalCurrencyCollectObjectiveMedium: 1
-    CP14PersonalCurrencyCollectObjectiveBig: 0.3
+    CP14PersonalCurrencyCollectObjectiveSmall: 1
+    CP14PersonalCurrencyCollectObjectiveMedium: 0.5
+    CP14PersonalCurrencyCollectObjectiveBig: 0.25

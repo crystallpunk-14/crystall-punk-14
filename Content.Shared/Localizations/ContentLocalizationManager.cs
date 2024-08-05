@@ -26,9 +26,8 @@ namespace Content.Shared.Localizations
         public void Initialize()
         {
             var culture = new CultureInfo(Culture);
-            // Uncomment for Ru localization
             _loc.LoadCulture(culture);
-
+            // Uncomment for Ru localization
             var fallbackCulture = new CultureInfo("en-US");
             _loc.LoadCulture(fallbackCulture);
             _loc.SetFallbackCluture(fallbackCulture);

@@ -9,7 +9,7 @@
   description: A heavy piece of metal on a long stick. What could be simpler than that?
   components:
   - type: Item
-    size: Large
+    size: Normal
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Mace/mace.rsi
     layers:

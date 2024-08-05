@@ -34,13 +34,6 @@
       shader: unshaded
   - type: Physics
     canCollide: false
-  - type: PointLight
-    enabled: true
-    color: "#4080FF"
-    radius: 3.5
-    softness: 1
-    autoRot: true
-    castShadows: false
   - type: Beam
   - type: TimedDespawn
     lifetime: 3

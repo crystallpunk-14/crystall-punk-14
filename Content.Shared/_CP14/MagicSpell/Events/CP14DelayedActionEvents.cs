@@ -16,6 +16,9 @@ public sealed partial class CP14DelayedWorldTargetActionEvent : WorldTargetActio
 
     [DataField]
     public bool BreakOnDamage { get; private set; } = true;
+
+    [DataField]
+    public bool Hidden { get; private set; } = false;
 }
 
 [Serializable, NetSerializable]
@@ -38,6 +41,9 @@ public sealed partial class CP14DelayedEntityTargetActionEvent : EntityTargetAct
 
     [DataField]
     public bool BreakOnDamage { get; private set; } = true;
+
+    [DataField]
+    public bool Hidden { get; private set; } = false;
 }
 
 [Serializable, NetSerializable]
@@ -56,6 +62,9 @@ public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, 
 
     [DataField]
     public bool BreakOnDamage { get; private set; } = true;
+
+    [DataField]
+    public bool Hidden { get; private set; } = false;
 }
 
 [Serializable, NetSerializable]

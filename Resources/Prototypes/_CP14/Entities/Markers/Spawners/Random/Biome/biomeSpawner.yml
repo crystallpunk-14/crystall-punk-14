@@ -40,3 +40,15 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14CavesGeneric
+
+- type: entity
+  id: CP14BiomeSpawnerForest
+  parent: CP14BaseBiomeSpawner
+  suffix: Forest
+  components:
+  - type: Sprite
+    layers:
+      - state: forest
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14GrasslandHills

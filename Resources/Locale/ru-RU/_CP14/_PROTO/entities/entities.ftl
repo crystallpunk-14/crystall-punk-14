@@ -18,14 +18,8 @@ ent-CP14BaseKey = ключ
 ent-CP14BaseLockpick = отмычка
     .desc = Воровской инструмент, при должном умении и сноровке позволяющий взламывать любые замки.
 
-ent-CP14KeyTavern = ключ от таверны
-    .desc = { ent-CP14BaseKey.desc }
-
 ent-CP14BaseLock = стальной замок
     .desc = Он запирает вещи. И вам потребуется ключ, чтобы открыть их обратно.
-
-ent-CP14LockTavern = замок от таверны
-    .desc = { ent-CP14BaseLock.desc }
 
 ent-CP14BaseMagicRune = magic rune
     .desc = manifestation of magical energy in the physical plane

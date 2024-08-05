@@ -10,4 +10,6 @@ public interface ICP14DelayedMagicEffect // The speak n spell interface
     public bool BreakOnMove { get; }
 
     public bool BreakOnDamage { get; }
+
+    public bool Hidden{ get; }
 }

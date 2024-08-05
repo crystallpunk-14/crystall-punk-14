@@ -1,0 +1,12 @@
+cp14-tips-1 = Keep an eye on the condition of your weapon! You can inspect it to see its condition and sharpness.
+cp14-tips-2 = If your weapon is dull, you can sharpen it with sharpening stones.
+cp14-tips-3 = Some light weapons, such as daggers or sickles, are effective for dual wield combat.
+cp14-tips-4 = Some magic items can only work after being attuned. To customize the binding, press the RMB and select the desired action.
+cp14-tips-5 = As an alchemist, if you mix some reagents together, you can no longer separate them! Look for the right alchemical reactions that will allow you to edit your solution.
+cp14-tips-6 = As an alchemist, remember to keep your cauldron off the stove or fire. Your potion may boil over, releasing a reagent cloud.
+cp14-tips-7 = DEBUG: To see all crafting recipes available on workbenches - look for them in the context menu on the RMB.
+cp14-tips-8 = If you run out of magic energy, you can still use spells and spend mana, but it will damage you and potentially render you unconscious!
+cp14-tips-9 = There are places in the world with positive or negative magical polarity. In these places, mana regenerates faster, or conversely, can be passively spent. To find such places, use the Aura Scanner.
+cp14-tips-10 = Tall bushes are good for hiding your character! But they slow you down a lot and make a lot of noise if you move in them.
+cp14-tips-11 = Don't forget to lock your doors if you don't want anyone to get in!
+cp14-tips-12 = DEBUG: Be careful with fire! Until we add ways to comfortably put out fires!

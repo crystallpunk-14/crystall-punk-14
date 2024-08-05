@@ -51,6 +51,7 @@ namespace Content.IntegrationTests.Tests
             //CrystallPunk maps
             "AlchemyTest",
             "BattleRoyale",
+            "ExpeditionTest",
             //CrystallPunk Map replacement end
         };
 

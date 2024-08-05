@@ -9,6 +9,7 @@ using Content.Shared.Timing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Wieldable;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
 
 namespace Content.Shared._CP14.MeleeWeapon.EntitySystems;
 
@@ -18,6 +19,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
@@ -82,16 +84,19 @@ public sealed class CP14SharpeningSystem : EntitySystem
 
         if (!ev.Canceled)
         {
-            _audio.PlayPvs(stone.Comp.SharpeningSound, target);
-            Spawn("EffectSparks", Transform(target).Coordinates);
+            _audio.PlayPredicted(stone.Comp.SharpeningSound, target, user);
 
             _damageableSystem.TryChangeDamage(stone, stone.Comp.SelfDamage);
             _damageableSystem.TryChangeDamage(target, stone.Comp.TargetDamage);
 
             component.Sharpness = MathHelper.Clamp01(component.Sharpness + stone.Comp.SharpnessHeal);
 
-            if (component.Sharpness >= 0.99)
-                _popup.PopupEntity(Loc.GetString("sharpening-ready"), target, user);
+            if (_net.IsServer)
+            {
+                Spawn("EffectSparks", Transform(target).Coordinates);
+                if (component.Sharpness >= 0.99)
+                    _popup.PopupEntity(Loc.GetString("sharpening-ready"), target, user);
+            }
         }
 
         _useDelay.TryResetDelay(stone);

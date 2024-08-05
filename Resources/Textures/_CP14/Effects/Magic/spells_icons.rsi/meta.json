@@ -14,10 +14,19 @@
       "name": "flame_creation"
     },
     {
+      "name": "fireball"
+    },
+    {
       "name": "ice_dagger"
     },
     {
+      "name": "ice_shards"
+    },
+    {
       "name": "shadow_step"
+    },
+    {
+      "name": "shadow_grab"
     }
   ]
 }

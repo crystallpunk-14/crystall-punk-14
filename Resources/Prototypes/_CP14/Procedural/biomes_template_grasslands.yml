@@ -168,6 +168,22 @@
         - CP14FloorGrass
       entities:
         - CP14GatherableWildSage
+    - !type:BiomeEntityLayer # Mobs and aura
+      threshold: 0.8
+      noise:
+        seed: 8
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.85
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrass
+      entities:
+        - CP14AuraNodeBase
 
 # Подбиомы лугов
 
@@ -177,7 +193,7 @@
     - !type:BiomeMetaLayer
       template: CP14Grassland
     - !type:BiomeEntityLayer # More Trees
-      threshold: 0.5
+      threshold: 0.2
       noise:
         seed: 4
         noiseType: OpenSimplex2

@@ -35,5 +35,10 @@
   - type: CP14ConstrainedSpawnerOnTrigger
     prototypes:
     - CP14MobXeno
-    - CP14MobXenoPraetorian
-    - CP14MobXenoDrone 
+    - CP14MobXenoDrone
+    - CP14MobSpaceCobra
+    - CP14MobSmallPurpleSnake
+    - CP14MobPurpleSnake
+    - MobLuminousEntity
+    - MobLuminousObject
+    - CP14MobWatcherMagmawing

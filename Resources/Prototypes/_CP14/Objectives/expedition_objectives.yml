@@ -28,8 +28,8 @@
   - type: CP14ExpeditionCollectCondition
     verifyMapExistence: false
     collectGroup: CP14Gold
-    minCollectionSize: 25
-    maxCollectionSize: 50
+    minCollectionSize: 100
+    maxCollectionSize: 150
   - type: Objective
     difficulty: 1
 

@@ -13,7 +13,7 @@ namespace Content.Shared.CCVar
         #region CP14
 
         public static readonly CVarDef<float> CP14ExpeditionArrivalTime =
-            CVarDef.Create("cp14.arrival_time", 60f, CVar.SERVERONLY);
+            CVarDef.Create("cp14.arrival_time", 180f, CVar.SERVERONLY);
 
 
         #endregion
@@ -511,7 +511,7 @@ namespace Content.Shared.CCVar
         ///     The dataset prototype to use when selecting a random tip.
         /// </summary>
         public static readonly CVarDef<string> TipsDataset =
-            CVarDef.Create("tips.dataset", "Tips");
+            CVarDef.Create("tips.dataset", "CP14Tips");
 
         /// <summary>
         ///     The number of seconds between each tip being displayed when the round is not actively going
