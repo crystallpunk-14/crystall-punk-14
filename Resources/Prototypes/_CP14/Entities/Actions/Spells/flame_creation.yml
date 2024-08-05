@@ -7,12 +7,10 @@
     manaCost: 5
     effects:
     - !type:CP14SpellSpawnEntity
-      key: user
+      key: target
       spawns:
       - CP14ImpactEffectFlameCreation
-    - !type:CP14SpellSpawnEntity
-      key: user
-      tryParent: true
+    - !type:CP14SpellSpawnInHandEntity
       spawns:
       - CP14FlameCreationArtificialFlame
   - type: CP14MagicEffectVerbalAspect
