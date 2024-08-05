@@ -6,7 +6,8 @@
   - type: CP14MagicEffect
     manaCost: 15
     effects:
-    - !type:CP14SpellSpawnEntityOnTarget
+    - !type:CP14SpellSpawnEntity
+      key: target
       spawns:
       - CP14ImpactEffectIceDagger
     - !type:CP14SpellSpawnInHandEntity
