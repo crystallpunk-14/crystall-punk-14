@@ -141,7 +141,7 @@
   id: CP14ClothingRingEarthWall
   parent: CP14ClothingRingBase
   name: conductive ring
-  description: A standard mana-conductive ring that allows the user to heal physical injuries.
+  description: A standard mana-conductive ring that allows you to lift a piece of earthen wall.
   suffix: Earth wall
   components:
   - type: Sprite
@@ -159,7 +159,7 @@
   id: CP14ClothingRingIceFloor
   parent: CP14ClothingRingBase
   name: conductive ring
-  description: A standard mana-conductive ring that allows the user to heal physical injuries.
+  description: A standard mana-conductive ring that allows you to create slippery ice.
   suffix: Ice floor
   components:
   - type: Sprite
