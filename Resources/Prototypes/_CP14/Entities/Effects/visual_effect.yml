@@ -21,3 +21,22 @@
       - random:
           dirt1: ""
           dirt2: ""
+
+- type: entity
+  id: CP14MagicBeam1
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: /Textures/_CP14/Effects/Beams/magic.rsi
+    drawdepth: Effects
+    layers:
+    - state: magic1
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: Beam
+  - type: TimedDespawn
+    lifetime: 3
+  - type: Tag
+    tags:
+      - HideContextMenu

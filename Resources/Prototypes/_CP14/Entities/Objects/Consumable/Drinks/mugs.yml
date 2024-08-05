@@ -1,0 +1,35 @@
+﻿- type: entity
+  parent: DrinkBaseMug
+  id: CP14MetalBeerMug
+  name: Metal mug
+  description: The most common metal mug.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/beer_mug_4.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: CP14WoodenBeerMug
+  name: Wooden mug
+  description: Wooden mug for beer.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/beer_mug_1.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: CP14SteelBeerMug
+  name: Beer mug
+  description: Wooden mug with iron inclusions.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/beer_mug_2.rsi
+
+- type: entity
+  parent: DrinkBaseMug
+  id: CP14SteelWoodBeerMug
+  name: Beer mug
+  description: Wooden mug with iron inclusions.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/beer_mug_3.rsi

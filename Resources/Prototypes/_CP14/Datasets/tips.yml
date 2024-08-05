@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: CP14Tips
+  values:
+    prefix: cp14-tips-
+    count: 12

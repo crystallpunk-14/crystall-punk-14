@@ -1,0 +1,16 @@
+- type: CP14Recipe
+  id: CP14Bucket
+  craftTime: 2
+  entities:
+    CP14Rope: 1
+  stacks:
+    CP14WoodenPlanks: 3
+  result: CP14Bucket
+
+- type: CP14Recipe
+  id: CP14BaseBarrel
+  craftTime: 3
+  stacks:
+    CP14WoodenPlanks: 5
+    CP14Nail: 2
+  result: CP14BaseBarrel

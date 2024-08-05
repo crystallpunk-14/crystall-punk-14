@@ -54,3 +54,14 @@
     sprite: _CP14/Clothing/Pants/loincloth.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/loincloth.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingDressBlack
+  name: black dress
+  description: A roomy, feminine skirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Dress/black.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Dress/black.rsi

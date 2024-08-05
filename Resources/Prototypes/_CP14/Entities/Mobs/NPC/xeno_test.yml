@@ -5,13 +5,32 @@
   - type: CP14OutPVSDespawn
 
 - type: entity
-  id: CP14MobXenoPraetorian
-  parent: MobXenoPraetorian
+  id: CP14MobXenoDrone
+  parent: MobXenoDrone
   components:
   - type: CP14OutPVSDespawn
 
 - type: entity
-  id: CP14MobXenoDrone
-  parent: MobXenoDrone
+  id: CP14MobSpaceCobra
+  name: cobra
+  parent: MobCobraSpace
+  components:
+  - type: CP14OutPVSDespawn
+
+- type: entity
+  id: CP14MobPurpleSnake
+  parent: MobPurpleSnake
+  components:
+  - type: CP14OutPVSDespawn
+
+- type: entity
+  id: CP14MobSmallPurpleSnake
+  parent: MobSmallPurpleSnake
+  components:
+  - type: CP14OutPVSDespawn
+
+- type: entity
+  id: CP14MobWatcherMagmawing
+  parent: MobWatcherMagmawing
   components:
   - type: CP14OutPVSDespawn

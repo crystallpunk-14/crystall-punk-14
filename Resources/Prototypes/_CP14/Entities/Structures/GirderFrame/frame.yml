@@ -35,3 +35,37 @@
   - type: Construction
     graph: CP14WallWood
     node: FrameWooden
+
+- type: entity
+  id: CP14BaseCrushed
+  parent: BaseStructure
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+    state: crushed_medium
+  - type: PlacementReplacement
+    key: walls
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - GlassAirlockLayer
+  - type: InteractionOutline

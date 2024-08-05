@@ -251,3 +251,36 @@
   components:
   - type: Stack
     count: 10
+
+- type: entity
+  id: CP14FloraMaterial
+  parent:
+  - BaseItem
+  name: flora material
+  description: An organic material used for medicinal or construction purposes.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/flora.rsi
+    layers:
+      - state: grass_material1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          grass_material1: ""
+          grass_material2: ""
+          grass_material3: ""
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 5
+    damage:
+      types:
+        Heat: 1

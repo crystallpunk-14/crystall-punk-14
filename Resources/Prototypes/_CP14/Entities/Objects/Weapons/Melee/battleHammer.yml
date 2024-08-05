@@ -3,8 +3,9 @@
   parent:
   - BaseItem
   - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
   name: battle hammer
-  description: A big heavy hammer! Bruh! #TODO
+  description: A big heavy hammer. You better not get in his way!
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/BattleHammer/battleHammer.rsi
@@ -19,7 +20,9 @@
     slots:
     - back
   - type: MeleeWeapon
-    attackRate: 0.8
+    angle: 120
+    attackRate: 0.7
+    range: 1.6
     wideAnimationRotation: 320
     wideAnimation: CP14WeaponArcSlash
     damage:
@@ -33,8 +36,10 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 20
+        Blunt: 8
         Structural: 10
+  - type: StaminaDamageOnHit
+    damage: 10
   - type: Item
     size: Ginormous
   - type: ClothingSpeedModifier
@@ -56,3 +61,5 @@
       params:
         variation: 0.03
         volume: 2
+  - type: CP14Currency
+    currency: 1500

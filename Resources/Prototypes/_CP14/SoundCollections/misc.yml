@@ -20,3 +20,12 @@
   - /Audio/_CP14/Items/nailing2.ogg
   - /Audio/_CP14/Items/nailing3.ogg
   - /Audio/_CP14/Items/nailing4.ogg
+  
+- type: soundCollection
+  id: CP14Sawing
+  files:
+  - /Audio/_CP14/Items/sawing1.ogg
+  - /Audio/_CP14/Items/sawing2.ogg
+  - /Audio/_CP14/Items/sawing3.ogg
+  - /Audio/_CP14/Items/sawing4.ogg
+  - /Audio/_CP14/Items/sawing5.ogg

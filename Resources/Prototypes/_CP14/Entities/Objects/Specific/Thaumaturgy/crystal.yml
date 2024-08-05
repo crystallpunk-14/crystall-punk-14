@@ -2,7 +2,7 @@
   id: CP14EnergyCrystalBase
   parent: BaseItem
   abstract: true
-  description: Processed quartz crystals are excellent repositories of magical energy. And special connectors allow you to conveniently insert them into magical devices, turning them into energy batteries.
+  description: Shards of one of the Khyber dragon, used to bind and control elemental energy.
   components:
   - type: CP14MagicEnergyCrystal
   - type: Item
@@ -11,13 +11,11 @@
     sprite: _CP14/Objects/Specific/Thaumaturgy/crystal.rsi
   - type: CP14MagicEnergyContainer
   - type: CP14MagicEnergyExaminable
-  - type: CP14MagicEnergyPointLightController
-
 
 - type: entity
   id: CP14EnergyCrystalSmall
   parent: CP14EnergyCrystalBase
-  name: small energy crystal
+  name: small Khyber shard
   suffix: Full
   components:
   - type: Sprite
@@ -48,7 +46,7 @@
 - type: entity
   id: CP14EnergyCrystalMedium
   parent: CP14EnergyCrystalBase
-  name: energy crystal
+  name: Khyber shard
   suffix: Full
   components:
   - type: PointLight

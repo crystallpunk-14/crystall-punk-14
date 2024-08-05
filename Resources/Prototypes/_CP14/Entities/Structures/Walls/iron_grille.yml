@@ -50,6 +50,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
 
 - type: entity
   parent: CP14IronGrilleBase
@@ -83,6 +84,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
 
 - type: entity
   parent: CP14IronGrilleBase
@@ -116,6 +118,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
 
 - type: entity
   parent: CP14IronGrilleBase
@@ -140,6 +143,7 @@
         layer:
         - MidImpassable
         - LowImpassable
+        - WallLayer
   - type: InteractionOutline
   - type: Door
     openSpriteState: door_opened
@@ -154,6 +158,8 @@
     closeTimeTwo: 0
     openTimeOne: 0
     openTimeTwo: 0
+    closedDrawDepth: Mobs
+    openDrawDepth: Mobs
     openingAnimationTime: 0
     closingAnimationTime: 0
     openSound:
@@ -161,3 +167,26 @@
     closeSound:
       collection: MetalScrape
   - type: Appearance
+
+- type: entity
+  parent: CP14IronGrilleGate
+  id: CP14IronGrilleGateLockedTavern
+  suffix: Tavern locked
+  components:
+  - type: ContainerContainer
+    containers:
+      lock_slot: !type:ContainerSlot
+  - type: Lock
+    locked: true
+    lockSlotId: lock_slot
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        startingItem: CP14LockTavern
+        disableEject: true
+        insertOnInteract: false
+        ejectOnBreak: true
+        whitelist:
+          components:
+          - CPLock

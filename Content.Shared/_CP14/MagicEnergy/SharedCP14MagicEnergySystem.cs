@@ -1,15 +1,37 @@
 using Content.Shared._CP14.MagicEnergy.Components;
-using Content.Shared.Examine;
+using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
+using Content.Shared.Rounding;
 
 namespace Content.Shared._CP14.MagicEnergy;
 
 public partial class SharedCP14MagicEnergySystem : EntitySystem
 {
+    [Dependency] private readonly AlertsSystem _alerts = default!;
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentShutdown>(OnComponentShutdown);
+    }
+
+    private void OnComponentStartup(Entity<CP14MagicEnergyContainerComponent> ent, ref ComponentStartup args)
+    {
+        UpdateMagicAlert(ent);
+    }
+
+    private void OnComponentShutdown(Entity<CP14MagicEnergyContainerComponent> ent, ref ComponentShutdown args)
+    {
+        if (ent.Comp.MagicAlert == null)
+            return;
+
+        _alerts.ClearAlert(ent, ent.Comp.MagicAlert.Value);
+    }
+
     public string GetEnergyExaminedText(EntityUid uid, CP14MagicEnergyContainerComponent ent)
     {
-        var power = (int)((ent.Energy / ent.MaxEnergy) * 100);
+        var power = (int)(ent.Energy / ent.MaxEnergy * 100);
 
         var color = "#3fc488";
         if (power < 66)
@@ -21,6 +43,92 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
             ("item", MetaData(uid).EntityName),
             ("power", power),
             ("color", color));
+    }
+
+    public void ChangeEnergy(EntityUid uid, CP14MagicEnergyContainerComponent component, FixedPoint2 energy, bool safe = false)
+    {
+        if (!safe)
+        {
+            //Overload
+            if (component.Energy + energy > component.MaxEnergy)
+            {
+                RaiseLocalEvent(uid, new CP14MagicEnergyOverloadEvent()
+                {
+                    OverloadEnergy = (component.Energy + energy) - component.MaxEnergy,
+                });
+            }
+
+            //Burn out
+            if (component.Energy + energy < 0)
+            {
+                RaiseLocalEvent(uid, new CP14MagicEnergyBurnOutEvent()
+                {
+                    BurnOutEnergy = -energy - component.Energy
+                });
+            }
+        }
+
+        var oldEnergy = component.Energy;
+        var newEnergy = Math.Clamp((float)component.Energy + (float)energy, 0, (float)component.MaxEnergy);
+        component.Energy = newEnergy;
+
+        if (oldEnergy != newEnergy)
+        {
+            RaiseLocalEvent(uid, new CP14MagicEnergyLevelChangeEvent()
+            {
+                OldValue = component.Energy,
+                NewValue = newEnergy,
+                MaxValue = component.MaxEnergy,
+            });
+        }
+
+        UpdateMagicAlert((uid, component));
+    }
+
+    public bool HasEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)
+    {
+        if (!Resolve(uid, ref component))
+            return false;
+
+        if (safe == false)
+            return true;
+
+        return component.Energy > energy;
+    }
+
+    public bool TryConsumeEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)
+    {
+        if (!Resolve(uid, ref component))
+            return false;
+
+        if (energy <= 0)
+            return true;
+
+        // Attempting to absorb more energy than is contained in the container available only in non-safe methods (with container destruction)
+        if (component.Energy < energy)
+        {
+            if (safe)
+            {
+                return false;
+            }
+            else
+            {
+                ChangeEnergy(uid, component, -energy, safe);
+                return true;
+            }
+        }
+
+        ChangeEnergy(uid, component, -energy, safe);
+        return true;
+    }
+
+    private void UpdateMagicAlert(Entity<CP14MagicEnergyContainerComponent> ent)
+    {
+        if (ent.Comp.MagicAlert == null)
+            return;
+
+        var level = ContentHelpers.RoundToLevels(MathF.Max(0f, (float) ent.Comp.Energy), (float) ent.Comp.MaxEnergy, 10);
+        _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short)level);
     }
 }
 

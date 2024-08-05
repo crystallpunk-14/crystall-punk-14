@@ -11,11 +11,17 @@ namespace Content.Shared.CCVar
     public sealed class CCVars : CVars
     {
         #region CP14
-
+        /// <summary>
+        /// how long does it take to fly an expedition ship to an expedition point?
+        /// </summary>
         public static readonly CVarDef<float> CP14ExpeditionArrivalTime =
-            CVarDef.Create("cp14.arrival_time", 60f, CVar.SERVERONLY);
+            CVarDef.Create("cp14.arrival_time", 180f, CVar.SERVERONLY);
 
-
+        /// <summary>
+        /// is the expedition ship's system enabled?
+        /// </summary>
+        public static readonly CVarDef<bool> CP14ExpeditionShip =
+            CVarDef.Create("cp14.arrivals_ship", true, CVar.SERVERONLY);
         #endregion
         /*
          * Server
@@ -511,7 +517,7 @@ namespace Content.Shared.CCVar
         ///     The dataset prototype to use when selecting a random tip.
         /// </summary>
         public static readonly CVarDef<string> TipsDataset =
-            CVarDef.Create("tips.dataset", "Tips");
+            CVarDef.Create("tips.dataset", "CP14Tips");
 
         /// <summary>
         ///     The number of seconds between each tip being displayed when the round is not actively going
@@ -1473,7 +1479,7 @@ namespace Content.Shared.CCVar
         /// Whether the arrivals shuttle is enabled.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsShuttles =
-            CVarDef.Create("shuttle.arrivals", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals", false, CVar.SERVERONLY); //CP14 arrivals disabled
 
         /// <summary>
         /// The map to use for the arrivals station.
@@ -1504,6 +1510,13 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> GodmodeArrivals =
             CVarDef.Create("shuttle.godmode_arrivals", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// If a grid is split then hide any smaller ones under this mass (kg) from the map.
+        /// This is useful to avoid split grids spamming out labels.
+        /// </summary>
+        public static readonly CVarDef<int> HideSplitGridsUnder =
+            CVarDef.Create("shuttle.hide_split_grids_under", 30, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether to automatically spawn escape shuttles.
@@ -1593,7 +1606,7 @@ namespace Content.Shared.CCVar
         /// Whether the emergency shuttle is enabled or should the round just end.
         /// </summary>
         public static readonly CVarDef<bool> EmergencyShuttleEnabled =
-            CVarDef.Create("shuttle.emergency", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.emergency", false, CVar.SERVERONLY); //CP14 Emergency disabled
 
         /// <summary>
         ///     The percentage of time passed from the initial call to when the shuttle can no longer be recalled.

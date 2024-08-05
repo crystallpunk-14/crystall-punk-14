@@ -4,6 +4,9 @@
   name: tree
   description: Decades of life and growth, saturating the surrounding nature with fresh air.
   components:
+  - type: CP14WaveShader
+    speed: 1
+    dis: 5
   - type: SpriteFade
   - type: Clickable
   - type: Sprite

@@ -2,7 +2,7 @@
   parent: BaseStructure
   id: CP14FloorWater
   name: water
-  description: Bruh
+  description: A trough of plain water. Clean enough for consumption
   placement:
     mode: SnapgridCenter
     snap:

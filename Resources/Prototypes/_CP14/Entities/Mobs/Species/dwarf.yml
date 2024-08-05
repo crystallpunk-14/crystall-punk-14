@@ -23,21 +23,15 @@
     templateId: CP14Human
     displacements:
       shoes:
-        layer:
-          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
-          state: shoes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+            state: shoes
       pants:
-        layer:
-          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
-          state: pants
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+            state: pants
 
 - type: entity
   parent: CP14BaseSpeciesDummy
@@ -50,18 +44,12 @@
     templateId: CP14Human
     displacements:
       shoes:
-        layer:
-          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
-          state: shoes
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+            state: shoes
       pants:
-        layer:
-          sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
-          state: pants
-          copyToShaderParameters:
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Dwarf/displacement.rsi
+            state: pants

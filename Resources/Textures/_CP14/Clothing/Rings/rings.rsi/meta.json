@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "All rights reserved for the CrystallPunk14 project only",
+    "copyright": "CrystallPunk14, by TheShuEd",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "brass_ring"
+        },
+        {
+            "name": "saphhire_stone_small"
+        },
+        {
+            "name": "ruby_stone_small"
+        },
+        {
+            "name": "emerald_stone_small"
+        },
+        {
+            "name": "amethyst_stone_small"
+        },
+        {
+            "name": "berill_stone_small"
+        }
+    ]
+}

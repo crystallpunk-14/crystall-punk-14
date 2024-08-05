@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by TheShuEd for CrystallPunk",
+  "states": [
+    {
+      "name": "particles_up",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "wave_up",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    }
+  ]
+}

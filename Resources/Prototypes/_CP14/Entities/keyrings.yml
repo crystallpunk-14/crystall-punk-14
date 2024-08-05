@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseItem
   id: CP14BaseKeyRing
-  suffix: Пустое
-  name: кольцо для ключей
-  description: Позволяет комфортно хранить большое количество ключей в одном месте.
+  suffix: Empty
+  name: key ring
+  description: Allows you to comfortably store a large number of keys in one place.
   components:
   - type: CP14KeyRing
   - type: Sprite
@@ -30,11 +30,15 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - belt
 
 - type: entity
   parent: CP14BaseKeyRing
   id: CP14KeyRingInnkeeper
-  suffix: Трактирщик
+  suffix: Innkeeper
   components:
   - type: StorageFill
     contents:

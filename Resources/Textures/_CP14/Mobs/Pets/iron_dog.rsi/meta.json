@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "size":
+  {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Pelemonk (Github) for CrystallPunk 14",
+  "states":
+  [
+    {
+      "name": "dog",
+      "directions": 4
+    },
+
+    {
+      "name": "dog_dead",
+      "directions": 1
+    }
+  ]
+}

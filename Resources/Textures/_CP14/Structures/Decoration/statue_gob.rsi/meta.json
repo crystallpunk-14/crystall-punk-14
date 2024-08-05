@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by vladimir.s for CrystallPunk14",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "gob"
+    },
+    {
+      "name": "gob_vines"
+    },
+    {
+      "name": "gob_ruined"
+    },
+    {
+      "name": "gob_ruined_vines"
+    },
+    {
+      "name": "eyes"
+    }
+  ]
+}

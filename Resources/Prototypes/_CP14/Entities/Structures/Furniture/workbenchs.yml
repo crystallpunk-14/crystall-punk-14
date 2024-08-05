@@ -1,0 +1,134 @@
+- type: entity
+  parent: 
+  - BaseStructure
+  id: CP14BaseWorkbench
+  abstract: true
+  components:
+  - type: Climbable
+  - type: Clickable
+  - type: PlaceableSurface
+  - type: InteractionOutline
+  - type: CP14Workbench
+    craftSpeed: 1
+
+- type: entity
+  parent:
+  - CP14BaseWorkbench
+  - CP14BaseWooden
+  id: CP14Workbench
+  name: workbench
+  description: Table for the production of various basic tools.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: workbench
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: workbench
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14Workbench
+  - type: CP14Workbench
+    recipes:
+    - CP14Bucket
+    - CP14BaseBarrel
+
+- type: entity
+  id: CP14WorkbenchMeltingMolds
+  parent:
+  - CP14BaseWorkbench
+  - CP14BaseWooden
+  name: sawing melting molds table
+  description: Specialized table that allows you to cut out molds for metal smelting.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: melting_crafter
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: melting_crafter
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing
+    recipes:
+    - CP14MeltingMoldBlank
+    - CP14MeltingMoldDaggers
+    - CP14MeltingMoldNails
+    - CP14MeltingMoldPickaxe
+    - CP14MeltingMoldShovel
+    - CP14MeltingMoldSickle
+    - CP14MeltingMoldSword
+    - CP14MeltingMoldThrowableSpear
+    - CP14MeltingMoldTwoHandedSword
