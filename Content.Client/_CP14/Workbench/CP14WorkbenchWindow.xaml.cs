@@ -18,7 +18,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
     private readonly SpriteSystem _sprite;
 
-    private CP14WorkbenchUiRecipesEntry _selectedEntry;
+    private CP14WorkbenchUiRecipesEntry? _selectedEntry ;
 
     public CP14WorkbenchWindow()
     {
@@ -27,7 +27,13 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         _sprite = _entity.System<SpriteSystem>();
 
-        CraftButton.OnPressed += _ => OnCraft?.Invoke(_selectedEntry);
+        CraftButton.OnPressed += _ =>
+        {
+            if (_selectedEntry is null)
+                return;
+
+            OnCraft?.Invoke(_selectedEntry.Value);
+        };
     }
 
     public void UpdateRecipes(CP14WorkbenchUiRecipesState recipesState)
@@ -40,6 +46,23 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             control.OnSelect += RecipeSelect;
 
             CraftsContainer.AddChild(control);
+        }
+
+        if (_selectedEntry is not null && recipesState.Recipes.Contains(_selectedEntry.Value))
+        {
+            RecipeSelect(_selectedEntry.Value, _prototype.Index(_selectedEntry.Value.ProtoId));
+            return;
+        }
+
+        RecipeSelect(recipesState);
+    }
+
+    private void RecipeSelect(CP14WorkbenchUiRecipesState recipesState)
+    {
+        foreach (var entry in recipesState.Recipes)
+        {
+            RecipeSelect(entry, _prototype.Index(entry.ProtoId));
+            break;
         }
     }
 

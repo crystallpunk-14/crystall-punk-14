@@ -78,6 +78,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         }
     }
 
+    // TODO: Replace Del to QueueDel when it's will be works with events
     private void OnCraftFinished(Entity<CP14WorkbenchComponent> ent, ref CP14CraftDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
@@ -103,7 +104,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 if (placedProto != null && placedProto == requiredIngredient.Key && requiredCount > 0)
                 {
                     requiredCount--;
-                    QueueDel(placedEntity);
+                    Del(placedEntity);
                 }
             }
         }
@@ -120,14 +121,18 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                     continue;
 
                 var count = (int)MathF.Min(requiredCount, stack.Count);
-                _stack.SetCount(placedEntity, stack.Count - count, stack);
+
+                if (stack.Count - count <= 0)
+                    Del(placedEntity);
+                else
+                    _stack.SetCount(placedEntity, stack.Count - count, stack);
 
                 requiredCount -= count;
             }
         }
 
         Spawn(_proto.Index(args.Recipe).Result, Transform(ent).Coordinates);
-
+        UpdateUIRecipes(ent);
         args.Handled = true;
     }
 

@@ -35,5 +35,29 @@ public sealed class CP14WorkbenchUiRecipesState : BoundUserInterfaceState
 }
 
 [Serializable, NetSerializable]
-public readonly record struct CP14WorkbenchUiRecipesEntry
-    (ProtoId<CP14WorkbenchRecipePrototype> ProtoId, bool Craftable);
+public readonly struct CP14WorkbenchUiRecipesEntry : IEquatable<CP14WorkbenchUiRecipesEntry>
+{
+    public readonly ProtoId<CP14WorkbenchRecipePrototype> ProtoId;
+    public readonly bool Craftable;
+
+    public CP14WorkbenchUiRecipesEntry(ProtoId<CP14WorkbenchRecipePrototype> protoId, bool craftable)
+    {
+        ProtoId = protoId;
+        Craftable = craftable;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is CP14WorkbenchUiRecipesEntry other && Equals(other);
+    }
+
+    public bool Equals(CP14WorkbenchUiRecipesEntry other)
+    {
+        return ProtoId.Id == other.ProtoId.Id;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(ProtoId, Craftable);
+    }
+}
