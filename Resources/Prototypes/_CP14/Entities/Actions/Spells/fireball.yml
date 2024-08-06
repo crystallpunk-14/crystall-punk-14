@@ -6,8 +6,7 @@
   - type: CP14MagicEffect
     manaCost: 20
     effects:
-    - !type:CP14SpellSpawnEntity
-      key: user
+    - !type:CP14SpellSpawnEntityOnUser
       spawns:
       - CP14ImpactEffectFireball
     - !type:CP14SpellProjectile
