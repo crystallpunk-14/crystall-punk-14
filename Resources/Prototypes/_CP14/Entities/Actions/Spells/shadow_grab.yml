@@ -6,21 +6,16 @@
   - type: CP14MagicEffect
     manaCost: 10
     telegraphyEffects:
-    - !type:CP14SpellSpawnEntity
-      key: target
-      tryParent: true
+    - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectShadowStep
-    - !type:CP14SpellSpawnEntity
-      key: user
-      tryParent: true
+    - !type:CP14SpellSpawnEntityOnUser
       spawns:
       - CP14ImpactEffectShadowGrab
     effects:
     - !type:CP14SpellThrowToUser
       throwPower: 10
-    - !type:CP14SpellSpawnEntity
-      key: target
+    - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect

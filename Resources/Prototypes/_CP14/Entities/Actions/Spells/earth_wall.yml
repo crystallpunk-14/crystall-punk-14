@@ -6,13 +6,11 @@
   - type: CP14MagicEffect
     manaCost: 15
     telegraphyEffects:
-    - !type:CP14SpellSpawnEntity
-      key: target
+    - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectEarthWall
     effects:
-    - !type:CP14SpellSpawnEntity
-      key: target
+    - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14WallSpawnEarthWall
   - type: CP14MagicEffectVerbalAspect
