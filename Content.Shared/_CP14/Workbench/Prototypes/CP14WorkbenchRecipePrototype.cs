@@ -4,13 +4,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Workbench.Prototypes;
 
-/// <summary>
-///
-/// </summary>
 [Prototype("CP14Recipe")]
-public sealed partial class CP14WorkbenchRecipePrototype : IPrototype
+public sealed class CP14WorkbenchRecipePrototype : IPrototype
 {
-    [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
 
@@ -27,5 +23,5 @@ public sealed partial class CP14WorkbenchRecipePrototype : IPrototype
     public Dictionary<ProtoId<StackPrototype>, int> Stacks = new();
 
     [DataField(required: true)]
-    public EntProtoId Result = default!;
+    public EntProtoId Result;
 }
