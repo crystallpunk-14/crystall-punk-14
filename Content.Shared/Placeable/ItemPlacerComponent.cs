@@ -1,4 +1,5 @@
-﻿using Content.Shared.Whitelist;
+﻿using Content.Shared._CP14.ItemPlacerParenting;
+using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Placeable;
@@ -7,7 +8,7 @@ namespace Content.Shared.Placeable;
 /// Detects items placed on it that match a whitelist.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(ItemPlacerSystem))]
+[Access(typeof(ItemPlacerSystem), typeof(CP14ItemPlacerAutoParentSystem))]
 public sealed partial class ItemPlacerComponent : Component
 {
     /// <summary>

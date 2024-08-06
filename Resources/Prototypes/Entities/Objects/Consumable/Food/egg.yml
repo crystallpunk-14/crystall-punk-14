@@ -10,6 +10,7 @@
     tags:
       - Egg
       - Meat
+      - CP14Platter
   - type: Food
     trash: Eggshells
   - type: Sprite

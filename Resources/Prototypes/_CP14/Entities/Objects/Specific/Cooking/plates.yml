@@ -1,0 +1,51 @@
+- type: entity
+  id: CP14BasePlate
+  abstract: true
+  parent: BaseItem
+  description: A container for storing and utilizing an essential element of life such as food.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        mask:
+        - ItemMask
+      fix2:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        layer:
+        - ItemMask
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: CP14ItemPlacerAutoParent
+  - type: ItemPlacer
+    maxEntities: 4
+    whitelist:
+      tags:
+      - CP14Platter
+  - type: PlaceableSurface
+  - type: CollisionWake
+    enabled: false
+
+- type: entity
+  id: CP14TestPlate
+  parent: CP14BasePlate
+  name: wooden plate
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/plates.rsi #TODO resprite
+    state: plate
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-6
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
