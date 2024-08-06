@@ -1,26 +1,32 @@
+using Content.Server.DoAfter;
 using Content.Server.Popups;
+using Content.Server.Stack;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Stacks;
+using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
-using Robust.Shared.Audio.Systems;
+using Robust.Server.Audio;
+using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Workbench;
 
-public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
+public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedStackSystem _stack = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
+    [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
 
+    // Why not in component? Why?
     private const float WorkbenchRadius = 0.5f;
 
     public override void Initialize()
@@ -30,8 +36,16 @@ public sealed class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         _metaQuery = GetEntityQuery<MetaDataComponent>();
         _stackQuery = GetEntityQuery<StackComponent>();
 
+        SubscribeLocalEvent<CP14WorkbenchComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
+        SubscribeLocalEvent<CP14WorkbenchComponent, CP14WorkbenchUiCraftMessage>(OnCraft);
+
         SubscribeLocalEvent<CP14WorkbenchComponent, GetVerbsEvent<InteractionVerb>>(OnInteractionVerb);
         SubscribeLocalEvent<CP14WorkbenchComponent, CP14CraftDoAfterEvent>(OnCraftFinished);
+    }
+
+    private void OnBeforeUIOpen(Entity<CP14WorkbenchComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    {
+        UpdateUIRecipes(ent);
     }
 
     private void OnInteractionVerb(Entity<CP14WorkbenchComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
