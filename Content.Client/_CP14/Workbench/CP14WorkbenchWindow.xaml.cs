@@ -94,9 +94,9 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             ItemRequirements.AddChild(new CP14WorkbenchRecipeControl(_prototype.Index(entProtoId), count));
         }
 
-        foreach (var (entProtoId, count) in recipe.Stacks)
+        foreach (var (stackProtoId, count) in recipe.Stacks)
         {
-            ItemRequirements.AddChild(new CP14WorkbenchRecipeControl(_prototype.Index(entProtoId), count));
+            ItemRequirements.AddChild(new CP14WorkbenchRecipeControl(_prototype.Index(stackProtoId), count));
         }
 
         CraftButton.Disabled = !entry.Craftable;
