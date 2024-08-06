@@ -40,11 +40,23 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
     {
         CraftsContainer.RemoveAllChildren();
 
+        List<CP14WorkbenchUiRecipesEntry> uncraftableList = new();
         foreach (var entry in recipesState.Recipes)
+        {
+            if (entry.Craftable)
+            {
+                var control = new CP14WorkbenchRequirementControl(entry);
+                control.OnSelect += RecipeSelect;
+                CraftsContainer.AddChild(control);
+            }
+            else
+                uncraftableList.Add(entry);
+        }
+
+        foreach (var entry in uncraftableList)
         {
             var control = new CP14WorkbenchRequirementControl(entry);
             control.OnSelect += RecipeSelect;
-
             CraftsContainer.AddChild(control);
         }
 
@@ -73,8 +85,8 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         var result = _prototype.Index(recipe.Result);
 
         ItemView.Texture = _sprite.GetPrototypeIcon(recipe.Result).Default;
-        ItemName.Text = Loc.GetString(result.Name);
-        ItemDescription.Text = Loc.GetString(result.Description);
+        ItemName.Text = result.Name;
+        ItemDescription.Text = result.Description;
 
         ItemRequirements.RemoveAllChildren();
         foreach (var (entProtoId, count) in recipe.Entities)
