@@ -1,19 +1,22 @@
-using System.Diagnostics;
+using Content.Shared._CP14.DayCycle;
+using Content.Shared._CP14.DayCycle.Components;
 using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._CP14.DayCycle;
+namespace Content.Server._CP14.DayCycle;
 
-public sealed partial class CP14DayCycleSystem : EntitySystem
+public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
 {
     public const int MinTimeEntryCount = 2;
     private const float MaxTimeDiff = 0.05f;
 
+    private static readonly ProtoId<CP14DayCyclePeriodPrototype> DayPeriod = "Day";
+
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
 
     public override void Initialize()
@@ -21,17 +24,8 @@ public sealed partial class CP14DayCycleSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14DayCycleComponent, MapInitEvent>(OnMapInitDayCycle);
-        SubscribeLocalEvent<CP14DayCycleComponent, DayCycleDayStartedEvent>(OnDayStarted);
-        SubscribeLocalEvent<CP14DayCycleComponent, DayCycleNightStartedEvent>(OnNightStarted);
     }
 
-    private void OnDayStarted(Entity<CP14DayCycleComponent> dayCycle, ref DayCycleDayStartedEvent args)
-    {
-    }
-
-    private void OnNightStarted(Entity<CP14DayCycleComponent> dayCycle, ref DayCycleNightStartedEvent args)
-    {
-    }
 
     private void OnMapInitDayCycle(Entity<CP14DayCycleComponent> dayCycle, ref MapInitEvent args)
     {
@@ -88,22 +82,8 @@ public sealed partial class CP14DayCycleSystem : EntitySystem
         dayCycle.Comp.EntryStartTime = dayCycle.Comp.EntryEndTime;
         dayCycle.Comp.EntryEndTime += dayCycle.Comp.CurrentTimeEntry.Duration;
 
-        // TODO: Made with states,we might need an evening or something, and besides, it's too much hardcore
-        if (dayCycle.Comp.IsNight && !dayCycle.Comp.CurrentTimeEntry.IsNight) // Day started
-        {
-            dayCycle.Comp.IsNight = false;
-
-            var ev = new DayCycleDayStartedEvent(dayCycle);
-            RaiseLocalEvent(dayCycle, ref ev, true);
-        }
-
-        if (!dayCycle.Comp.IsNight && dayCycle.Comp.CurrentTimeEntry.IsNight) // Night started
-        {
-            dayCycle.Comp.IsNight = true;
-
-            var ev = new DayCycleNightStartedEvent(dayCycle);
-            RaiseLocalEvent(dayCycle, ref ev, true);
-        }
+        var ev = new DayCycleChangedEvent(dayCycle.Comp.CurrentTimeEntry);
+        RaiseLocalEvent(dayCycle, ref ev, true);
 
         Dirty(dayCycle);
     }
@@ -113,28 +93,22 @@ public sealed partial class CP14DayCycleSystem : EntitySystem
     /// </summary>
     /// <param name="target">An entity being tested to see if it is in daylight</param>
     /// <param name="checkRoof">Checks if the tile covers the weather (the only "roof" factor at the moment)</param>
-    /// <param name="isDaylight">daylight test result returned</param>
     public bool TryDaylightThere(EntityUid target, bool checkRoof)
     {
-        if (!TryComp<TransformComponent>(target, out var xform))
-            return false;
-
+        var xform = Transform(target);
         if (!TryComp<CP14DayCycleComponent>(xform.MapUid, out var dayCycle))
             return false;
 
-        if (checkRoof)
-        {
-            if (!TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
-                return !dayCycle.IsNight;
+        if (!checkRoof || !TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
+            return dayCycle.CurrentPeriod == DayPeriod;
 
-            var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
-            var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
+        var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
+        var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
 
-            if (!tileDef.Weather)
-                return false;
-        }
+        if (!tileDef.Weather)
+            return false;
 
-        return !dayCycle.IsNight;
+        return dayCycle.CurrentPeriod == DayPeriod;
     }
 
     private void SetAmbientColor(Entity<MapLightComponent> light, Color color)

@@ -47,18 +47,18 @@ entities:
         color: '#E0BA87FF'
       - duration: 80
         color: '#BFEEFFFF'
-      - isNight: True
-        duration: 80
+      - duration: 80
         color: '#385163FF'
-      - isNight: True
-        duration: 80
+        period: Night
+      - duration: 80
         color: '#060D12FF'
-      - isNight: True
-        duration: 80
+        period: Night
+      - duration: 80
         color: '#000000FF'
-      - isNight: True
-        duration: 80
+        period: Night
+      - duration: 80
         color: '#000000FF'
+        period: Night
       - duration: 80
         color: '#120906FF'
   - uid: 2

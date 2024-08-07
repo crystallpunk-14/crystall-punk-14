@@ -1,13 +1,13 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CP14.DayCycle;
+namespace Content.Shared._CP14.DayCycle.Components;
 
 /// <summary>
-/// Stores all the necessary data for the day and night cycle system to work
+/// Stores all the necessary data for the day and night cycle system to work.
 /// </summary>
-
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14DayCycleSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedDayCycleSystem))]
 public sealed partial class CP14DayCycleComponent : Component
 {
     [ViewVariables]
@@ -25,11 +25,11 @@ public sealed partial class CP14DayCycleComponent : Component
     [ViewVariables]
     public Color EndColor => NextCurrentTimeEntry.Color;
 
+    [ViewVariables]
+    public ProtoId<CP14DayCyclePeriodPrototype> CurrentPeriod => CurrentTimeEntry.Period;
+
     [DataField(required: true), ViewVariables, AutoNetworkedField]
     public List<DayCycleEntry> TimeEntries = new();
-
-    [DataField, ViewVariables, AutoNetworkedField]
-    public bool IsNight; // TODO: Rewrite this shit
 
     [DataField, ViewVariables, AutoNetworkedField]
     public int CurrentTimeEntryIndex;
@@ -57,17 +57,11 @@ public readonly partial record struct DayCycleEntry()
     public TimeSpan Duration { get; init; } = TimeSpan.FromSeconds(60);
 
     [DataField]
-    public bool IsNight { get; init; } = false;
+    public ProtoId<CP14DayCyclePeriodPrototype> Period { get; init; } = "Day";
 }
 
 /// <summary>
-/// Event raised on map entity, wen night is started
+/// Event raised on map entity, wen day cycle changed.
 /// </summary>
 [ByRefEvent]
-public readonly record struct DayCycleNightStartedEvent(EntityUid Map);
-
-/// <summary>
-/// Event raised on map entity, wen night is started
-/// </summary>
-[ByRefEvent]
-public readonly record struct DayCycleDayStartedEvent(EntityUid Map);
+public readonly record struct DayCycleChangedEvent(DayCycleEntry Entry);
