@@ -74,6 +74,7 @@
     recipes:
     - CP14Bucket
     - CP14BaseBarrel
+    - CP14WoodenBeerMug
 
 - type: entity
   id: CP14WorkbenchMeltingMolds

@@ -13,7 +13,7 @@
 - type: entity
   id: CP14MeltingMoldBlank
   parent: CP14MeltingMoldBase
-  name: black melting mold
+  name: blank melting mold
   description: An empty mold for casting metal. You can cut any shape you need in it on the pattern cutting table.
   components:
   - type: Sprite
