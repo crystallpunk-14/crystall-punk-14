@@ -27,7 +27,7 @@
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   - type: StorageFillVisualizer
-    maxFillLevels: 2
+    maxFillLevels: 3
     fillBaseName: full
   - type: FireVisuals
     sprite: _CP14/Structures/Furniture/bonfire.rsi

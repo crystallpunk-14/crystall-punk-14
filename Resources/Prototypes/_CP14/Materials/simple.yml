@@ -35,6 +35,15 @@
   price: 0 #?
 
 - type: material
+  id: CP14Fat
+  stackEntity: CP14Fat1
+  name: cp14-material-fat
+  unit: materials-unit-piece
+  icon: { sprite: _CP14/Structures/Furniture/fat.rsi, state: fat_medium }
+  color: "#555963"
+  price: 0 #?
+
+- type: material
   id: CP14Copper
   stackEntity: CP14CopperBar1
   name: cp14-material-copper

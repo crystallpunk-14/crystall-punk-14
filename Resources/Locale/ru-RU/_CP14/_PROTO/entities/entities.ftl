@@ -1074,6 +1074,30 @@ ent-CP14CardboardWall = стена из картона
 ent-CPBaseSharpeningStoneStructure = стационарный точильный камень
     .desc = прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
 
+ent-CP14BigBarrel = большая деревянная бочка
+    .desc = самая простая конструкция для хранения жидкостей.
+    .suffix = Пустая
+
+ent-CP14Fat1 = жир
+    .desc = слишком  много  жира  может  привести к  ожирению.
+    .suffix = 1
+
+ent-CP14Fat10 = { ent-CP14Fat1 }
+    .desc = { ent-CP14Fat1.desc }
+    .suffix = 10
+
+ent-CP14SteelCandle = стальная свеча
+    .desc = Не лучший способ для освещения комнаты.
+
+ent-CP14BrassCandle = латунная свеча
+    .desc = { ent-CP14SteelCandle.desc }
+
+ent-CP14DoubleSteelCandle = двойная стальная свеча
+    .desc = { ent-CP14SteelCandle.desc }
+
+ent-CP14DoubleBrassCandle = двойная латунная свеча
+    .desc = { ent-CP14SteelCandle.desc }
+
 ent-CP14GreenBottle = Зеленая бутылка
     .desc = Зеленая бутылка, идеально подходит для пива.
     .suffix = Пустая

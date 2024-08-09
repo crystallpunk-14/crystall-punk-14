@@ -64,6 +64,9 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
             if (!flammable.OnFire)
                 continue;
 
+            if (spread.Radius <= 0)
+                continue;
+
             if (spread.NextSpreadTime >= _gameTiming.CurTime)
                 continue;
 

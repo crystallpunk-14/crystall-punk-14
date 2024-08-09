@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "All rights reserved for the CrystallPunk14 project only",
+    "copyright": "By jaraten(Github/discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "single-0"
+        },
+        {
+            "name": "double-0"
+        },
+        {
+            "name": "brass_double_candle_empty"
+        },
+        {
+            "name": "steel_double_candle_empty"
+        },
+        {
+            "name": "steel_single_candle_empty"
+        },
+        {
+            "name": "brass_single_candle_empty"
+        },
+        {
+            "name": "double-1"
+        },
+        {
+            "name": "single-1"
+        },
+        {
+            "name": "double-2"
+        },
+        {
+            "name": "single-2"
+        }
+    ]
+}

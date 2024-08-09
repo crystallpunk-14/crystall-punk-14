@@ -11,6 +11,9 @@
   id: CP14CartridgeBulletRifle
 
 - type: Tag
+  id: CP14Fat
+
+- type: Tag
   id: CP14FireplaceFuel
 
 - type: Tag
