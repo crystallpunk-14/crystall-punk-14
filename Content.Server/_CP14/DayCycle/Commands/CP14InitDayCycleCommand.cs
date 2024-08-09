@@ -2,8 +2,9 @@ using Content.Server.Administration;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
+using CP14DayCycleComponent = Content.Shared._CP14.DayCycle.Components.CP14DayCycleComponent;
 
-namespace Content.Server._CP14.DayCycle;
+namespace Content.Server._CP14.DayCycle.Commands;
 
 [AdminCommand(AdminFlags.VarEdit)]
 public sealed class CP14InitDayCycleCommand : LocalizedCommands
