@@ -806,3 +806,69 @@
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
+
+- type: entity
+  name: Rabbit
+  parent: MobGiantSpider
+  id: MobRabbit
+  description: The first defender of the station.
+  components:
+  - type: InteractionPopup
+    successChance: 0.5 # spider is mean
+    interactSuccessString: petting-success-tarantula
+    interactFailureString: petting-failure-hamster
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/snake_hiss.ogg
+  - type: NpcFactionMember
+    factions:
+      - PetsNT
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: rabbit
+      sprite: Mobs/Pets/rabbit.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: rabbit-moving
+    noMovementLayers:
+      movement:
+        state: rabbit
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Physics
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rabbit
+      Dead:
+        Base: rabbit_dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 8
+        Poison: 8
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: female
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+    - DoorBumpOpener
+    - FootstepSound
+  - type: StealTarget
+    stealGroup: AnimalShiva
+
