@@ -33,6 +33,12 @@
     },
     {
       "name": "earth_wall"
+    },
+    {
+      "name": "sphere_of_light"
+    },
+    {
+      "name": "flash_light"
     }
   ]
 }
