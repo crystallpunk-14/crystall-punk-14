@@ -1,0 +1,31 @@
+- type: entity
+  id: CP14BaseRoomSpawner
+  name: room spawner
+  abstract: true
+  description: A marker that creates a random building at the specified location. Warning! Wipes out everything in that location, including agosts!
+  parent: MarkerBase
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _CP14/Markers/biome.rsi
+    snapCardinals: true
+
+
+- type: entity
+  id: CP14RoomSpawnerXandria7x7
+  suffix: Xandria Test
+  parent: CP14BaseRoomSpawner
+  components:
+  - type: CP14RoomSpawner
+    roomsTag: 
+    - CP14Xandria7x7
+  - type: Sprite
+    layers:
+    - state: room
+    - sprite: _CP14/Markers/RoomBorders/7x7.rsi
+      state: frame

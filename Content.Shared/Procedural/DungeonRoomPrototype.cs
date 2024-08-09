@@ -24,4 +24,14 @@ public sealed partial class DungeonRoomPrototype : IPrototype
     /// Tile offset into the atlas to use for the room.
     /// </summary>
     [DataField("offset", required: true)] public Vector2i Offset;
+
+    /// <summary>
+    /// CP14 atlas tile filtering
+    /// </summary>
+    [DataField]
+    public List<string> IgnoreTiles = new()
+    {
+        "CP14FloorAtlasMask",
+        "CP14FloorAtlasMask2",
+    };
 }

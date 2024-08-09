@@ -1,5 +1,7 @@
 # Base
 cp14-tiles-base = каменная толща
+cp14-tiles-atlas-mask = атлас маска (не маппить)
+cp14-tiles-atlas-mask-2 = атлас маска 2 (не маппить)
 
 # Natural
 cp14-tiles-grass = луговая трава
