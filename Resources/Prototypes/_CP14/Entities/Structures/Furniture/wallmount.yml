@@ -9,7 +9,7 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    drawdepth: Mobs
+    drawdepth: WallMountedItems
   - type: CP14Wallmount
 
 - type: entity
@@ -83,7 +83,7 @@
   id: CP14WallmountLamp
   name: eternal flame lamp
   parent: CP14BaseWallmount
-  description: A fragile eternal blue fire as proof of the superiority of magic over nature. 
+  description: A fragile eternal blue fire as proof of the superiority of magic over nature.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
@@ -114,7 +114,7 @@
   name: bar shelf
   suffix: 1
   parent: CP14BaseWallmount
-  description: buba. ##TODO 
+  description: buba. ##TODO
   components:
   - type: Appearance
   - type: Sprite
@@ -132,7 +132,7 @@
     maxItemSize: Normal
 ##   whitelist:                TODO
 ##     tags:
-##       - CP14Bottles 
+##       - CP14Bottles
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

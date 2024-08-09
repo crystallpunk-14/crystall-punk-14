@@ -4,7 +4,7 @@
   parent: Window
   components:
   - type: Sprite
-    drawdepth: Mobs
+    drawdepth: Walls
   - type: Icon
     state: full
   - type: IconSmooth
