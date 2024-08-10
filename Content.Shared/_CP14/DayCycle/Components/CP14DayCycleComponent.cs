@@ -39,6 +39,9 @@ public sealed partial class CP14DayCycleComponent : Component
 
     [DataField, ViewVariables, AutoNetworkedField]
     public TimeSpan EntryEndTime;
+
+    [DataField]
+    public bool StartWithRandomEntry = true;
 }
 
 [DataDefinition, NetSerializable, Serializable]

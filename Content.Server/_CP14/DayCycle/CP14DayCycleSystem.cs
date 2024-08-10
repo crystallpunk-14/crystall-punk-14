@@ -4,6 +4,7 @@ using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.DayCycle;
@@ -18,6 +19,7 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -30,6 +32,9 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
     private void OnMapInitDayCycle(Entity<CP14DayCycleComponent> dayCycle, ref MapInitEvent args)
     {
         Init(dayCycle);
+
+        if (dayCycle.Comp.StartWithRandomEntry)
+            SetTimeEntry(dayCycle, _random.Next(dayCycle.Comp.TimeEntries.Count));
     }
 
     public override void Update(float frameTime)
