@@ -22,7 +22,7 @@
   minPlayers: 0
   stations:
     AlchemyTest:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: CP14StationAdditionalMap
           mapPaths:
@@ -44,7 +44,7 @@
   minPlayers: 0
   stations:
     BattleRoyale:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
           mapNameTemplate: "Battle royale"
@@ -65,7 +65,7 @@
   minPlayers: 0
   stations:
     ExpeditionTest:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
           mapNameTemplate: "Expedition test"

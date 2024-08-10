@@ -1,0 +1,19 @@
+- type: entity
+  id: CP14BaseStationWeatherEvent
+  parent: CP14BaseGameRule
+  abstract: true
+  components:
+  - type: GameRule
+    delay:
+      min:  0
+      max:  20
+  - type: StationEvent
+    duration: 30
+    maxDuration: 60
+
+- type: entity
+  id: CP14WeatherRain
+  parent: CP14BaseStationWeatherEvent
+  components:
+  - type: CP14WeatherRule
+    weather: Rain

@@ -1,0 +1,6 @@
+- type: entity
+  id: CP14BaseExpedition
+  parent:
+  - BaseStation
+  - BaseStationAllEventsEligible
+  - BaseStationJobsSpawning
