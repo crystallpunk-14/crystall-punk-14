@@ -1115,7 +1115,7 @@ ent-CP14CookedFoodMeat = Стейк из баранины
 ent-CP14CuttingBoard = Разделочная доска
     .desc = Поможет вам приготовить еду.
 
-ent-CP14ActionSpellCureWounds = Лечить раны
+ent-CP14ActionSpellCureWounds = Лечение ран
     .desc = Вы касаетесь существа, исцеляя его тело от физических повреждений.
 
 ent-CP14ActionSpellEarthWall = Земляная стена

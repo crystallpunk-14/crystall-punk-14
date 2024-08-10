@@ -36,11 +36,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
-    color: "#e9e035"
+    color: "#efedff"
   - type: Sprite
     layers:
     - state: sun
-      color: "#e9e035"
+      color: "#efedff"
       shader: unshaded
 
 - type: entity
@@ -51,7 +51,7 @@
   - type: Sprite
     layers:
     - state: particles_up
-      color: "#e9e035"
+      color: "#efedff"
       shader: unshaded
 
 - type: entity
