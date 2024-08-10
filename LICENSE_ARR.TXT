@@ -13,26 +13,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 By using the code, you agree to be bound by the terms of this license agreement.
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-
-
-
-
-
-Some files may be sublicensed to third parties under the following license:
-
-Custom License Agreement (CLA)
-
-1. License Grant: You are granted a non-exclusive, non-transferable, non-sublicensable license to use the code solely for personal or internal business purposes in the specified project.
-
-2. Restrictions:
-   a. You may not distribute, sublicense, or transfer copies of the code or its derivatives to any third party.
-   b. You may not modify or create derivative works based on the code without prior written consent from the copyright holder.
-
-3. Termination: This license will terminate automatically if you fail to comply with any of its terms. Upon termination, you must destroy all copies of the code in your possession.
-
-4. Disclaimer of Warranty: The code is provided "as is" without warranty of any kind, express or implied.
-
-5. Limitation of Liability: In no event shall the copyright holder be liable for any damages arising from the use or inability to use the code.
-
-By using the code, you agree to be bound by the terms of this license agreement.
