@@ -1,0 +1,11 @@
+- type: CP14DayCyclePeriod
+  id: Sunrise # HOLY SHIT!
+
+- type: CP14DayCyclePeriod
+  id: Day
+
+- type: CP14DayCyclePeriod
+  id: Night
+
+- type: CP14DayCyclePeriod
+  id: Evening

@@ -4,12 +4,18 @@
   id: CP14BaseWorkbench
   abstract: true
   components:
+  - type: ActivatableUI
+    key: enum.CP14WorkbenchUiKey.Key
   - type: Climbable
   - type: Clickable
-  - type: PlaceableSurface
-  - type: InteractionOutline
   - type: CP14Workbench
     craftSpeed: 1
+  - type: InteractionOutline
+  - type: PlaceableSurface
+  - type: UserInterface
+    interfaces:
+      enum.CP14WorkbenchUiKey.Key:
+        type: CP14WorkbenchBoundUserInterface
 
 - type: entity
   parent:
@@ -68,6 +74,7 @@
     recipes:
     - CP14Bucket
     - CP14BaseBarrel
+    - CP14WoodenBeerMug
 
 - type: entity
   id: CP14WorkbenchMeltingMolds

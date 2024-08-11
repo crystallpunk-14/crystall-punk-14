@@ -1,7 +1,7 @@
 using System.Numerics;
 using Content.Client.Parallax;
 using Content.Client.Weather;
-using Content.Shared._CP14.DayCycle;
+using Content.Shared._CP14.DayCycle.Components;
 using Content.Shared._CP14.WorldEdge;
 using Content.Shared.Salvage;
 using Content.Shared.Weather;

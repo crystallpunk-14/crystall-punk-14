@@ -14,3 +14,11 @@
     CP14WoodenPlanks: 5
     CP14Nail: 2
   result: CP14BaseBarrel
+
+- type: CP14Recipe
+  id: CP14WoodenBeerMug
+  craftTime: 3
+  stacks:
+    CP14WoodenPlanks: 2
+    CP14Nail: 1
+  result: CP14WoodenBeerMug

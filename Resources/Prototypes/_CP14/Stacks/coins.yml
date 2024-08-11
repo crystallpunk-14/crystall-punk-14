@@ -1,6 +1,6 @@
 - type: stack
   id: CP14CopperCoin
-  name: copper crown
+  name: cp14-stack-copper-coin
   spawn: CP14CopperCoin1
   icon: 
     sprite: /Textures/_CP14/Objects/Economy/cp_coin.rsi
@@ -9,7 +9,7 @@
 
 - type: stack
   id: CP14SilverCoin
-  name: silver sovereign 
+  name: cp14-stack-silver-coin
   spawn: CP14SilverCoin1
   icon: 
     sprite: /Textures/_CP14/Objects/Economy/sp_coin.rsi
@@ -18,7 +18,7 @@
 
 - type: stack
   id: CP14GoldCoin
-  name: gold galifar
+  name: cp14-stack-gold-coin
   spawn: CP14GoldCoin1
   icon: 
     sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
@@ -27,7 +27,7 @@
 
 - type: stack
   id: CP14PlatinumCoin
-  name: platinum dragon
+  name: cp14-stack-platinum-coin
   spawn: CP14PlatinumCoin1
   icon: 
     sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
