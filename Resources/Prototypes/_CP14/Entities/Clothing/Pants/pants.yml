@@ -65,3 +65,25 @@
     sprite: _CP14/Clothing/Pants/Dress/black.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/Dress/black.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsMercenaryTrousers
+  name: mercenary trousers
+  description: Colourful mercenary trousers. Don't tear them.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsSouthernMagician
+  name: southern magician's dress
+  description: A traditional southern mage skirt, rather loose.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Dress/yellow_magician_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Dress/yellow_magician_dress.rsi
