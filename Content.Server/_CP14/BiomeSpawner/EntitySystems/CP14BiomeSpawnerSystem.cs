@@ -6,7 +6,7 @@
  */
 
 using System.Linq;
-using Content.Server._CP14.BiomeSpawner.Components;
+using Content.Server._CP14.Procedural.BiomeSpawner;
 using Content.Server._CP14.RoundSeed;
 using Content.Server.Decals;
 using Content.Server.Parallax;
