@@ -1,0 +1,54 @@
+- type: jobIcon
+  id: CP14JobIcon
+  abstract: true
+  priority: 1
+  locationPreference: Right
+  isShaded: true
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconAdventurer
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Adventurer
+  jobName: cp14-job-name-adventurer
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconAlchemist
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Alchemist
+  jobName: cp14-job-name-alchemist
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconInnkeeper
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Innkeeper
+  jobName: cp14-job-name-innkeeper
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconCaptain
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Captain
+  jobName: cp14-job-name-captain
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGuardCommander
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: GuardCommander
+  jobName: cp14-job-name-guard-commander
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconHouseKeeper
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: HouseKeeper
+  jobName: cp14-job-name-house-keeper
