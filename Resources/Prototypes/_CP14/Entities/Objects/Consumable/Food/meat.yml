@@ -1,27 +1,74 @@
-﻿- type: entity
-  name: raw meat
-  parent: FoodMeat
-  id: CP14RawFoodMeat
-  description: It smells weird, but looks like normal meat...
+﻿# Base
+
+- type: entity
+  parent: FoodInjectableBase
+  id: CP14FoodMeatBase
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Fat
+          Quantity: 6
+  - type: Item
+    size: Tiny
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02 # arbitrary number that sounds right for a slab of meat
+
+- type: entity
+  parent: CP14FoodMeatBase
+  id: CP14FoodMeatSliceBase
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.33
+        - ReagentId: Fat
+          Quantity: 2
+  - type: InternalTemperature
+    thickness: 0.006
+    area: 0.006 # 1\3 of meat value
+
+# Meat
+
+- type: entity
+  name: raw lamb
+  parent: CP14FoodMeatBase
+  id: CP14FoodMeatLamb
+  description: Succulent lamb steak
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat
-  - type: Construction
-    graph: CP14MeatSteak
-    node: start
-    defaultTarget: sheep steak
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodMeatLambSlice
 
 - type: entity
-  name: steak
-  parent: FoodMeatCooked
-  id: CP14CookedFoodMeat
-  description: A cooked slab of meat. Smells primal.
+  name: meat pieces
+  parent: CP14FoodMeatLamb
+  id: CP14FoodMeatSliceBase
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
-    layers:
-    - state: sheepmeat-cooked
-  - type: Construction
-    graph: CP14MeatSteak
-    node: sheep steak
+    state: sheepmeat_slice

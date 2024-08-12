@@ -11,7 +11,13 @@
             "name": "sheepmeat"
         },
         {
-            "name": "sheepmeat-cooked"
+            "name": "sheepmeat_cooked"
+        },
+        {
+            "name": "sheepmeat_slice"
+        },
+        {
+            "name": "sheepmeat_slice_cooked"
         }
     ]
 }
