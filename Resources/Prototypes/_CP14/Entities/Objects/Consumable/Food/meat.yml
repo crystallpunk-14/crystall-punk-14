@@ -30,8 +30,8 @@
     area: 0.02 # arbitrary number that sounds right for a slab of meat
 
 - type: entity
-  parent: CP14FoodMeatBase
   id: CP14FoodMeatSliceBase
+  parent: CP14FoodMeatBase
   abstract: true
   components:
   - type: SolutionContainerManager
@@ -49,12 +49,12 @@
     thickness: 0.006
     area: 0.006 # 1\3 of meat value
 
-# Meat
+# Lamb Meat
 
 - type: entity
-  name: raw lamb
-  parent: CP14FoodMeatBase
   id: CP14FoodMeatLamb
+  parent: CP14FoodMeatBase
+  name: raw lamb
   description: Succulent lamb steak
   components:
   - type: Sprite
@@ -65,10 +65,21 @@
     slice: CP14FoodMeatLambSlice
 
 - type: entity
-  name: meat pieces
-  parent: CP14FoodMeatSliceBase
   id: CP14FoodMeatLambSlice
+  parent: CP14FoodMeatSliceBase
+  name: meat pieces
+  description: Succulent lamb steak
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat_slice
+
+- type: entity
+  id: CP14FoodMeatLambCutlet
+  parent: CP14FoodMeatSliceBase
+  name: lamb cutlet
+  description: the result of mixing sliced lamb and egg - a raw round cutlet.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: cutlet

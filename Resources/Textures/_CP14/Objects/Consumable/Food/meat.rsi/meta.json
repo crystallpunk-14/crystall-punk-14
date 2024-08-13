@@ -8,6 +8,15 @@
     },
     "states": [
         {
+            "name": "cutlet"
+        },
+        {
+            "name": "cutlet_cooked"
+        },
+        {
+            "name": "meat_slice"
+        },
+        {
             "name": "sheepmeat"
         },
         {
