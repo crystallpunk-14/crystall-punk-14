@@ -19,7 +19,7 @@
           Quantity: 21
   - type: SliceableFood
     count: 5
-    slice: CP14CheesePart
+    slice: CP14FoodCheesePart
 
 - type: entity
   id: CP14FoodCheesePart
@@ -40,7 +40,7 @@
           Quantity: 4.2
   - type: SliceableFood
     count: 3
-    slice: CP14CheeseSlice
+    slice: CP14FoodCheeseSlice
 
 - type: entity
   id: CP14FoodCheeseSlice

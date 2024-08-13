@@ -37,3 +37,20 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 4.2
+
+- type: entity
+  parent: CP14FoodDoughMedium
+  id: CP14FoodDoughMediumFlat
+  name: rolled dough
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    state: dough_medium_flat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6 # 1/5 large dough
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4.2

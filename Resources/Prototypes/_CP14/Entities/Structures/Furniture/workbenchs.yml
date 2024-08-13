@@ -119,3 +119,5 @@
     recipes:
     - CP14FoodMeatLamb
     - CP14FoodDoughLarge
+    - CP14FoodDoughMedium
+    - CP14FoodDoughMediumFlat 
