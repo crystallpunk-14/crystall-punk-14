@@ -66,8 +66,8 @@
 
 - type: entity
   name: meat pieces
-  parent: CP14FoodMeatLamb
-  id: CP14FoodMeatSliceBase
+  parent: CP14FoodMeatSliceBase
+  id: CP14FoodMeatLambSlice
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi

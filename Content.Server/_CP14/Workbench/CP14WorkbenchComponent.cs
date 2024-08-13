@@ -28,10 +28,4 @@ public sealed partial class CP14WorkbenchComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier CraftSound = new SoundCollectionSpecifier("CP14Hammering");
-
-    /// <summary>
-    /// Used for the kitchen table: combining several ingredients mixes and replaces the mortar in the final entity
-    /// </summary>
-    [DataField]
-    public bool MergeSolutions = false;
 }
