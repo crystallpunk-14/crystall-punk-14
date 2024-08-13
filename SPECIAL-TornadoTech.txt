@@ -1,0 +1,45 @@
+Разрешение на использование, редактирование и публикацию кода
+
+Я, TheShuEd, представляющий организацию Crystallpunk-14 (далее "Правообладатель"), являюсь единственным и полноправным владельцем всех прав на исходный код программы (далее "Программа").
+
+Настоящим я предоставляю Maltsev Daniil a.k.a TornadoTech(Tornado-Technology) (далее "Лицензиат") право на использование, редактирование и публикацию Программы при соблюдении следующих условий:
+
+1. Лицензиат имеет право использовать Программу для любых целей, включая коммерческие и некоммерческие.
+2. Лицензиат имеет право редактировать и модифицировать Программу.
+3. Лицензиат имеет право публиковать исходный и модифицированный код Программы только в следующих репозиториях: https://github.com/technologists-team/after-rain.
+4. Опубликованный исходный код может быть использован только для разработки, включая тестирование, внутри указанных репозиториев. 
+5. Лицензиат обязан сохранять все уведомления о праве собственности и авторских правах в исходном и модифицированном коде Программы.
+6. Лицензиат обязуется указать организацию Crystallpunk-14 как оригинального автора Программы во всех публикациях, связанных с Программой.
+7. Лицензиат не имеет права передавать или переуступать свои права на Программу третьим лицам без письменного разрешения Правообладателя.
+8. Лицензиат не имеет права релицензировать Программу.
+9. Правообладатель оставляет за собой право отозвать данное разрешение в любой момент по своему усмотрению.
+
+Это разрешение действительно с 13.08.2024 и действительно до 13.08.2026, если не будет отозвано ранее по усмотрению Правообладателя.
+
+Контактная информация для получения дополнительной информации или разрешений:
+Discord: eshhhed
+
+13.08.2024
+
+Permission for Use, Editing, and Publication of Code
+
+I, TheShuEd, representing the organization Crystallpunk-14 (hereinafter referred to as the "Rights Holder"), am the sole and exclusive owner of all rights to the source code of the program (hereinafter referred to as the "Program").
+
+I hereby grant Maltsev Daniil a.k.a TornadoTech (Tornado-Technology) (hereinafter referred to as the "Licensee") the right to use, edit, and publish the Program under the following conditions:
+
+1. The Licensee is granted the right to use the Program for any purpose, including commercial and non-commercial purposes.
+2. The Licensee is granted the right to edit and modify the Program.
+3. The Licensee is granted the right to publish the source and modified code of the Program only in the following repository: https://github.com/technologists-team/after-rain.
+4. The published source code may only be used for development purposes, including testing, within the specified repository.
+5. The Licensee must retain all proprietary notices and copyright notices in the source and modified code of the Program.
+6. The Licensee must credit the organization Crystallpunk-14 as the original author of the Program in all publications related to the Program.
+7. The Licensee does not have the right to transfer or assign their rights to the Program to third parties without the written permission of the Rights Holder.
+8. The Licensee does not have the right to relicense the Program.
+9. The Rights Holder reserves the right to revoke this permission at any time at their discretion.
+
+This permission is effective from 13.08.2024 and is valid until 13.08.2026, unless revoked earlier at the discretion of the Rights Holder.
+
+Contact information for additional information or permissions:
+Discord: eshhhed
+
+13.08.2024
