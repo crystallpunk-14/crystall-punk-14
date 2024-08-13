@@ -5,3 +5,11 @@
     CP14FoodMeatLambSlice: 1 #Egg reagent TODO
   result: CP14FoodMeatLambCutlet
   tryMergeSolutions: true
+
+- type: CP14Recipe
+  id: CP14FoodDoughLarge
+  craftTime: 3
+  entities:
+    CP14FoodDoughMedium: 5
+  result: CP14FoodDoughLarge
+  tryMergeSolutions: true

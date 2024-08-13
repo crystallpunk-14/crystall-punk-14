@@ -1,0 +1,39 @@
+- type: entity
+  parent: FoodInjectableBase
+  id: CP14FoodDoughLarge
+  name: large piece of dough
+  description: The perfect ingredient for any flour product. The only thing left to do is to shape it.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread #TODO smth disguisting. raw dough
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/dough.rsi
+    state: dough_large
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 21
+  - type: SliceableFood
+    count: 5
+    slice: CP14FoodDoughMedium
+
+- type: entity
+  parent: CP14FoodDoughLarge
+  id: CP14FoodDoughMedium
+  name: medium piece of dough
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: dough_medium
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6 # 1/5 large dough
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4.2
