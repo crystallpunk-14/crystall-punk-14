@@ -6,7 +6,6 @@ using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Stacks;
 using Content.Shared.UserInterface;
-using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -39,43 +38,12 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         SubscribeLocalEvent<CP14WorkbenchComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
         SubscribeLocalEvent<CP14WorkbenchComponent, CP14WorkbenchUiCraftMessage>(OnCraft);
 
-        SubscribeLocalEvent<CP14WorkbenchComponent, GetVerbsEvent<InteractionVerb>>(OnInteractionVerb);
         SubscribeLocalEvent<CP14WorkbenchComponent, CP14CraftDoAfterEvent>(OnCraftFinished);
     }
 
     private void OnBeforeUIOpen(Entity<CP14WorkbenchComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
         UpdateUIRecipes(ent);
-    }
-
-    private void OnInteractionVerb(Entity<CP14WorkbenchComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
-    {
-        if (!args.CanAccess || !args.CanInteract || args.Hands is null)
-            return;
-
-        var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates, WorkbenchRadius);
-
-        var user = args.User;
-        foreach (var craftProto in ent.Comp.Recipes)
-        {
-            if (!_proto.TryIndex(craftProto, out var craft))
-                continue;
-
-            if (!_proto.TryIndex(craft.Result, out var result))
-                continue;
-
-            args.Verbs.Add(new()
-            {
-                Act = () =>
-                {
-                    StartCraft(ent, user, craft);
-                },
-                Text = result.Name,
-                Message = GetCraftRecipeMessage(result.Description, craft),
-                Category = VerbCategory.CP14Craft,
-                Disabled = !CanCraftRecipe(craft, placedEntities),
-            });
-        }
     }
 
     // TODO: Replace Del to QueueDel when it's will be works with events
