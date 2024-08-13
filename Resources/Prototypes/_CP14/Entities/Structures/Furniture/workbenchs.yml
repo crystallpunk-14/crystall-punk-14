@@ -117,7 +117,7 @@
     craftSound:
       collection: CP14Sawing
     recipes:
-    - CP14FoodMeatLamb
     - CP14FoodDoughLarge
+    - CP14FoodDoughMediumFlat
     - CP14FoodDoughMedium
-    - CP14FoodDoughMediumFlat 
+    - CP14FoodMeatLamb

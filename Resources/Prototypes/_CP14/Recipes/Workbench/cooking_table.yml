@@ -2,7 +2,8 @@
   id: CP14FoodMeatLamb
   craftTime: 2
   entities:
-    CP14FoodMeatLambSlice: 1 #Egg reagent TODO
+    CP14FoodMeatLambSlice: 2
+    CP14FoodEgg: 1
   result: CP14FoodMeatLambCutlet
   tryMergeSolutions: true
 

@@ -21,8 +21,6 @@
           Quantity: 1
         - ReagentId: Fat
           Quantity: 6
-  - type: Item
-    size: Tiny
   - type: Temperature
     currentTemperature: 290
   - type: InternalTemperature
@@ -63,6 +61,10 @@
   - type: SliceableFood
     count: 3
     slice: CP14FoodMeatLambSlice
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,1,0
 
 - type: entity
   id: CP14FoodMeatLambSlice
@@ -70,6 +72,8 @@
   name: meat pieces
   description: Succulent lamb steak
   components:
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat_slice
@@ -83,3 +87,16 @@
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: cutlet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.66
+        - ReagentId: Fat
+          Quantity: 4
+        - ReagentId: Egg
+          Quantity: 6

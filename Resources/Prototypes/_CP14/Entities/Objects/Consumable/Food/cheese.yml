@@ -4,6 +4,8 @@
   name: cheese wheel
   description: A large wheel of soft, fragrant piece of cheese.
   components:
+  - type: Item
+    size: Normal
   - type: FlavorProfile
     flavors:
       - cheesy
