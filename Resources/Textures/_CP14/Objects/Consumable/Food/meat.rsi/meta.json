@@ -26,7 +26,19 @@
             "name": "sheepmeat_slice"
         },
         {
+            "name": "sheepmeat_slice2"
+        },
+        {
+            "name": "sheepmeat_slice3"
+        },
+        {
             "name": "sheepmeat_slice_cooked"
+        },
+        {
+            "name": "sheepmeat_slice2_cooked"
+        },
+        {
+            "name": "sheepmeat_slice3_cooked"
         }
     ]
 }

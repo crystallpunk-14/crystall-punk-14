@@ -76,7 +76,15 @@
     size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
-    state: sheepmeat_slice
+    layers:
+      - state: sheepmeat_slice
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          sheepmeat_slice: ""
+          sheepmeat_slice2: ""
+          sheepmeat_slice3: ""
 
 - type: entity
   id: CP14FoodMeatLambCutlet

@@ -11,7 +11,8 @@
       - cheesy
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/cheese.rsi
-    state: cheese_wheel
+    layers:
+      - state: cheese_wheel
   - type: SolutionContainerManager
     solutions:
       food:
@@ -32,7 +33,15 @@
   - type: Item
     size: Tiny
   - type: Sprite
-    state: cheese_part
+    layers:
+      - state: cheese_part
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          cheese_part: ""
+          cheese_part2: ""
+          cheese_part3: ""
   - type: SolutionContainerManager
     solutions:
       food:
@@ -51,7 +60,15 @@
   description: A thin slice of delicious smelling cheese
   components:
   - type: Sprite
-    state: cheese_slice
+    layers:
+      - state: cheese_slice
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          cheese_slice: ""
+          cheese_slice2: ""
+          cheese_slice3: ""
   - type: SolutionContainerManager
     solutions:
       food:
