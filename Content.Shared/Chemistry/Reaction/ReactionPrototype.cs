@@ -56,7 +56,7 @@ namespace Content.Shared.Chemistry.Reaction
         /// Reagents created when the reaction occurs.
         /// </summary>
         [DataField("products", customTypeSerializer:typeof(PrototypeIdDictionarySerializer<FixedPoint2, ReagentPrototype>))]
-        private Dictionary<string, FixedPoint2> _products = new();
+        public Dictionary<string, FixedPoint2> _products = new(); // CP14 random reactions
 
         public Dictionary<string, FixedPoint2> Products
         {
