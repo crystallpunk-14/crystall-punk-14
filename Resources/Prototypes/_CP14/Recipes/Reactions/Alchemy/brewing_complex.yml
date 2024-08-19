@@ -20,8 +20,8 @@
   products:
     CP14BasicEffectEmpty: 0.25
     CP14BasicEffectHealBrute: 0.25
-    CP14BasicEffectSatiateHunger: 0.25
     CP14BasicEffectEmoteCough: 0.25
+    CP14BasicEffectSatiateHunger: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
