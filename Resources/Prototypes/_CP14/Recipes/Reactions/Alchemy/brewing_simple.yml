@@ -18,7 +18,7 @@
     CP14BasicEffectEmpty: 0.5
     CP14BasicEffectDamagePoison: 0.25
   cp14RandomProducts:
-  - CP14BasicEffectDamagePoison: 0.25
+  - CP14BasicEffectVomit: 0.25
   - CP14BasicEffectRainbow: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -36,7 +36,7 @@
     CP14BasicEffectHealBrute: 0.25
   cp14RandomProducts:
   - CP14BasicEffectEmoteCough: 0.25
-  - CP14BasicEffectHealBrute: 0.25
+  - CP14BasicEffectHealCold: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
@@ -66,7 +66,7 @@
     CP14BasicEffectVomit: 0.25
   cp14RandomProducts:
   - CP14BasicEffectRainbow: 0.25
-  - CP14BasicEffectVomit: 0.25
+  - CP14BasicEffectEmoteCough: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
