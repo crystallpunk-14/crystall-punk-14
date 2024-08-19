@@ -1,0 +1,78 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14FloorWater
+  name: water
+  description: A trough of plain water. Clean enough for consumption
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: PlacementReplacement
+    key: floorTile
+  - type: Sprite
+    sprite: _CP14/Tiles/Water/water.rsi
+    drawdepth: BelowFloor
+  - type: Icon
+    sprite: _CP14/Tiles/Water/water.rsi
+    state: full
+  - type: IconSmooth
+    key: CP14Water
+    base: water
+  - type: FloorOccluder
+  - type: Transform
+    anchored: true
+  - type: SyncSprite
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.5
+    sprintSpeedModifier: 0.5
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWater
+      params:
+        volume: 8
+  - type: DrawableSolution
+    solution: pool
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable. 
+        reagents:
+        - ReagentId: CP14Water
+          Quantity: 9999999
+  - type: DrainableSolution
+    solution: pool
+  - type: Drink
+    solution: pool
+  - type: RandomSpawner
+    prototypes:
+    - CP14GatherableChromiumSlime
+    chance: 0.01
+    deleteSpawnerAfterSpawn: false
+  - type: Tag
+    tags:
+      - HideContextMenu
+      - CP14AmbientWater
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+    blacklist:
+      tags:
+      - Catwalk # Если ты проходишь по мостику над водой, то ты не должен потушится
+  - type: TileEntityEffect
+    effects:
+    - !type:ExtinguishReaction
