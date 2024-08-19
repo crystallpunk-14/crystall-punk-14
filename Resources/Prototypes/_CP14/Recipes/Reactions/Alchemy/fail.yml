@@ -1,7 +1,7 @@
 
 - type: reaction
   id: CP14MeltingFail
-  minTemp: 1000
+  minTemp: 800
   reactants:
     CP14BasicEffectEmpty:
       amount: 1
