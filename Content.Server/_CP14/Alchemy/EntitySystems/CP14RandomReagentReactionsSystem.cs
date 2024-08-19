@@ -1,15 +1,13 @@
 using Content.Server.GameTicking.Events;
 using Content.Shared.Chemistry.Reaction;
-using Content.Shared.FixedPoint;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._CP14.Chemystry;
+namespace Content.Server._CP14.Alchemy.EntitySystems;
 
-public sealed class ChemicalReactionSystem : EntitySystem
+public sealed class CP14RandomReagentReactionsSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
@@ -20,7 +18,7 @@ public sealed class ChemicalReactionSystem : EntitySystem
 
     private void OnRoundStart(RoundStartingEvent ev)
     {
-        foreach (var reaction in _prototypeManager.EnumeratePrototypes<ReactionPrototype>())
+        foreach (var reaction in _proto.EnumeratePrototypes<ReactionPrototype>())
         {
             reaction.Cp14RandomProductIndex = _random.Next(reaction.Cp14RandomProducts.Count);
         }
