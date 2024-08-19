@@ -68,7 +68,7 @@ There is also an “Empty Solution”. This is a special basic reagent that has 
 
 Chances are 50% or more of your potions will be filled with Empty Solution, and that's okay: The balance is built so that even highly diluted base reagents are quite effective.
 
-Given that you **do not have the ability to separate mixed substances**, your job as an alchemist is to find methods of brewing pure potions without impurities, or brewing effective combinations of effects in a single potion.
+Given that you [color=red]do not have the ability to separate mixed substances[/color], your job as an alchemist is to find methods of brewing pure potions without impurities, or brewing effective combinations of effects in a single potion.
 
 ## Random Reagent Generation
 
