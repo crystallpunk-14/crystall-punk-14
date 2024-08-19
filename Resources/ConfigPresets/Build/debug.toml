@@ -1,4 +1,7 @@
-﻿[events]
+﻿[cp14]
+arrivals_ship = false
+
+[events]
 # Annoying
 enabled = false
 

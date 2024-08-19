@@ -15,10 +15,9 @@
 [More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
 
 ## License
-The base code for the original Space Station 14 game is registered under [MIT License](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/LICENSE_MIT.txt)
 
-All CrystallPunk14 codebase contributions [rights reserved](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/LICENSE_ARR.TXT).
+The base code for the original Space Station 14 game is licensed under [MIT License](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT)
 
-Some code may be sublicensed under [CLA](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/LICENSE_CLA.txt) for specific other projects. Details of who the code is sublicensed to can be found in the corresponding code files.
+All CrystallPunk14 codebase contributions [rights reserved](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/LICENSE.TXT).
 
 Visual and sound assets have their own license, described in the attribution file next to them.
