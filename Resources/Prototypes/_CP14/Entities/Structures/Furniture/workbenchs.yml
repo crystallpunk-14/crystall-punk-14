@@ -91,41 +91,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/workbench.rsi
     state: melting_crafter
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 40
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-    - trigger:
-        !type:DamageTrigger
-        damage: 60
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14WoodenPlanks1:
-            min: 1
-            max: 2
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepWood
-  - type: FireVisuals
-    sprite: _CP14/Effects/fire.rsi
-    normalState: full
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing
@@ -139,3 +104,20 @@
     - CP14MeltingMoldSword
     - CP14MeltingMoldThrowableSpear
     - CP14MeltingMoldTwoHandedSword
+
+- type: entity
+  id: CP14WorkbenchCooking
+  parent:
+  - CP14WorkbenchMeltingMolds
+  - CP14BaseWooden
+  name: cooking table
+  description: Lets cook
+  components:
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing
+    recipes:
+    - CP14FoodDoughLarge
+    - CP14FoodDoughMediumFlat
+    - CP14FoodDoughMedium
+    - CP14FoodMeatLamb

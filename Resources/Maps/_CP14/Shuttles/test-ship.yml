@@ -1243,7 +1243,7 @@ entities:
     - type: Transform
       pos: -5.439834,-4.863015
       parent: 1
-- proto: CP14CookedFoodMeat
+- proto: CP14FoodMeatLamb
   entities:
   - uid: 734
     components:
@@ -2749,7 +2749,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.042266,-21.159649
       parent: 1
-- proto: CP14RawFoodMeat
+- proto: CP14FoodCheeseWheel
   entities:
   - uid: 735
     components:

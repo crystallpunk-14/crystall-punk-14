@@ -24,4 +24,10 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
 
     [DataField(required: true)]
     public EntProtoId Result;
+
+    [DataField]
+    public bool TryMergeSolutions = false;
+
+    [DataField]
+    public string Solution = "food";
 }

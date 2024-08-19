@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "license": "All rights reserved for the CrystallPunk14 project only",
+    "copyright": "Created by Artista.rar",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "cheese_part"
+        },
+        {
+            "name": "cheese_part2"
+        },
+        {
+            "name": "cheese_part3"
+        },
+        {
+            "name": "cheese_slice"
+        },
+        {
+            "name": "cheese_slice2"
+        },
+        {
+            "name": "cheese_slice3"
+        },
+        {
+            "name": "cheese_wheel"
+        }
+    ]
+}
