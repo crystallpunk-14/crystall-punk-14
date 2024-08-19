@@ -19,6 +19,13 @@
   chatTriggers:
     - cough
     - coughs
+    - coughed
+    - cough.
+    - coughs.
+    - coughed.
+    - cough!
+    - coughs!
+    - coughed!
     # CP14-RU-Localization-start
     - кашель
     - кашляет
