@@ -70,6 +70,13 @@ public sealed partial class ClothingComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan UnequipDelay = TimeSpan.Zero;
 
+    /// <summary>
+    /// Offset for the strip time for an entity with this component.
+    /// Only applied when it is being equipped or removed by another player.
+    /// </summary>
+    [DataField]
+    public TimeSpan StripDelay = TimeSpan.Zero;
+
     [DataField]
     public bool BreakOnMove = true; //CrystallPunk weapon unequipping on move
 }
