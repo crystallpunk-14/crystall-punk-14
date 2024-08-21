@@ -1,5 +1,10 @@
 - type: gameMapPool
-  id: CP14DefaultMapPool
+  id: DefaultMapPool
   maps:
    - AlchemyTest
    - BattleRoyale
+
+- type: gameMapPool
+  id: DeathMatchMapPool
+  maps:
+  - MeteorArena
