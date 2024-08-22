@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseSeed
   parent: BaseItem
+  abstract: true
   components:
   - type: Item
     size: Tiny
