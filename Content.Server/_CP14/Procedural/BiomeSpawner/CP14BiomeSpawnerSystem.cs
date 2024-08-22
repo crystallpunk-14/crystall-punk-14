@@ -1,21 +1,18 @@
 /*
  * All right reserved to CrystallPunk.
  *
- * This file is sublicensed under Custom License Agreement for Stalker14 project (https://github.com/stalker14-project/stalker14) only
+ * BUT this file is sublicensed under MIT License
  *
- * See LICENSE.TXT file in the project root for full license information.
- * Copyright (c) 2024 TheShuEd (Github)
  */
 
-using System.Numerics;
+using System.Linq;
+using Content.Server._CP14.RoundSeed;
 using Content.Server.Decals;
-using Content.Server.GameTicking;
 using Content.Server.Parallax;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Procedural.BiomeSpawner;
 
@@ -26,58 +23,53 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly DecalSystem _decals = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly CP14RoundSeedSystem _roundSeed = default!;
 
-    private int _seed = 27;
     public override void Initialize()
     {
-        base.Initialize();
-
-        SubscribeLocalEvent<RoundStartAttemptEvent>(OnRoundStartAttempt);
         SubscribeLocalEvent<CP14BiomeSpawnerComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnRoundStartAttempt(RoundStartAttemptEvent ev)
+    private void OnMapInit(Entity<CP14BiomeSpawnerComponent> ent, ref MapInitEvent args)
     {
-        _seed = _random.Next(100000);
+        SpawnBiome(ent);
+        QueueDel(ent);
     }
 
-    private void OnMapInit(Entity<CP14BiomeSpawnerComponent> spawner, ref MapInitEvent args)
+    private void SpawnBiome(Entity<CP14BiomeSpawnerComponent> ent)
     {
-        SpawnBiome(spawner);
-        QueueDel(spawner);
-    }
-
-    private void SpawnBiome(Entity<CP14BiomeSpawnerComponent> spawner)
-    {
-        var biome = _proto.Index(spawner.Comp.Biome);
-        var parent = _transform.GetParent(spawner);
-
-        if (parent == null)
+        var biome = _proto.Index(ent.Comp.Biome);
+        var spawnerTransform = Transform(ent);
+        if (spawnerTransform.GridUid == null)
             return;
 
-        var gridUid = parent.Owner;
+        var gridUid = spawnerTransform.GridUid.Value;
 
         if (!TryComp<MapGridComponent>(gridUid, out var map))
             return;
 
-        var v2i = _transform.GetGridOrMapTilePosition(spawner);
-        if (!_biome.TryGetTile(v2i, biome.Layers, _seed, map, out var tile))
+        var seed = _roundSeed.GetSeed();
+
+        var vec = _transform.GetGridOrMapTilePosition(ent);
+
+        if (!_biome.TryGetTile(vec, biome.Layers, seed, map, out var tile))
             return;
 
         // Set new tile
-        _maps.SetTile(gridUid, map, v2i, tile.Value);
+        _maps.SetTile(gridUid, map, vec, tile.Value);
+
+        var tileCenterVec = vec + map.TileSizeHalfVector;
 
         // Remove old decals
-        var oldDecals = _decals.GetDecalsInRange(gridUid, v2i + new Vector2(0.5f, 0.5f));
+        var oldDecals = _decals.GetDecalsInRange(gridUid, tileCenterVec);
         foreach (var (id, _) in oldDecals)
         {
             _decals.RemoveDecal(gridUid, id);
         }
 
         //Add decals
-        if (_biome.TryGetDecals(v2i, biome.Layers, _seed, map, out var decals))
+        if (_biome.TryGetDecals(vec, biome.Layers, seed, map, out var decals))
         {
             foreach (var decal in decals)
             {
@@ -85,13 +77,16 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
             }
         }
 
-        //TODO maybe need remove anchored entities here
-
-        //Add entities
-        if (_biome.TryGetEntity(v2i, biome.Layers, tile.Value, _seed, map, out var entityProto))
+        // Remove entities
+        var oldEntities = _lookup.GetEntitiesInRange(spawnerTransform.Coordinates, 0.48f);
+        // TODO: Replace this shit with GetEntitiesInBox2
+        foreach (var entToRemove in oldEntities.Concat(new[] { ent.Owner })) // Do not remove self
         {
-            var ent = _entManager.SpawnEntity(entityProto,
-                new EntityCoordinates(gridUid, v2i + map.TileSizeHalfVector));
+            QueueDel(entToRemove);
         }
+
+        // Add entities
+        if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed, map, out var entityProto))
+            Spawn(entityProto, new EntityCoordinates(gridUid, tileCenterVec));
     }
 }
