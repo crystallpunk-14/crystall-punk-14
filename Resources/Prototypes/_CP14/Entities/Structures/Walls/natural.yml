@@ -34,7 +34,7 @@
 
 - type: entity
   id: CP14WallDirt
-  name: earth cliffs
+  name: earth wall
   parent: CP14BaseWall
   description: A tall pile of dirt. Can a house be built from it?
   components:

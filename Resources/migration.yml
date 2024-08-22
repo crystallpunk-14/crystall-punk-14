@@ -33,6 +33,10 @@ CP14Shovel: CP14BaseShovel
 CP14Hoe: CP14BaseHoe
 CP14WallStoneSilverOre: CP14WallStoneGoldOre
 
+# 2024-08-22
+CP14PloughedGround: CP14SeedbedWooden
+CP14SeedbedDefault: CP14SeedbedWooden
+
 # <---> CrystallPunk migration zone end
 
 

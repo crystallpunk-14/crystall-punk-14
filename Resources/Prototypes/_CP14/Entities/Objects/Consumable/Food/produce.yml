@@ -1,0 +1,130 @@
+- type: entity
+  id: CP14FoodCabbage
+  parent: FoodInjectableBase
+  name: cabbage
+  description: Green edible ball.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - cabbage
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Farming/Produce/cabbage.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: SliceableFood
+    count: 4
+    sliceTime: 1.5
+    slice: CP14FoodCabbageSlice
+
+- type: entity
+  id: CP14FoodCabbageSlice
+  parent: CP14FoodCabbage
+  name: cabbage leaf
+  description: Time to make green salads
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    layers:
+      - state: slice1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          slice1: ""
+          slice2: ""
+          slice3: ""
+          slice4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3 # 1/4 cabbage
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Vitamin
+          Quantity: 0.25
+
+- type: entity
+  id: CP14FoodPumpkin
+  parent: FoodInjectableBase
+  name: pumpkin
+  description: Big, cool pumpkin. 
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Farming/Produce/pumpkin.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 20
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: SliceableFood
+    count: 5
+    sliceTime: 2
+    slice: CP14FoodPumpkinSlice
+
+- type: entity
+  id: CP14FoodPumpkinSlice
+  parent: CP14FoodPumpkin
+  name: pumpkin slice
+  description: Pumpkin! # TODO
+  components: 
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    layers:
+      - state: slice1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          slice1: ""
+          slice2: ""
+          slice3: ""
+          slice4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5 # 1/5 pumpkin
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 1
