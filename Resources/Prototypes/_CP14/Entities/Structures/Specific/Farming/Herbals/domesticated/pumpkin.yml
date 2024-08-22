@@ -43,7 +43,7 @@
             acts: [ "Destruction" ]
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14PlantWheatDeath:
+              CP14PlantPumpkinDeath:
                 min: 1
                 max: 1
 
