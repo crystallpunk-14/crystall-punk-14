@@ -18,6 +18,18 @@
       },
       {
         "name": "base4"
+      },
+      {
+        "name": "slice1"
+      },
+      {
+        "name": "slice2"
+      },
+      {
+        "name": "slice3"
+      },
+      {
+        "name": "slice4"
       }
     ]
 }
