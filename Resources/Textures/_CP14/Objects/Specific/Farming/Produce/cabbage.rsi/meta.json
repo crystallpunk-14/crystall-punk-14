@@ -15,6 +15,18 @@
       },
       {
         "name": "base3"
+      },
+      {
+        "name": "slice1"
+      },
+      {
+        "name": "slice2"
+      },
+      {
+        "name": "slice3"
+      },
+      {
+        "name": "slice4"
       }
     ]
 }
