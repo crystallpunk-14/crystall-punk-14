@@ -30,8 +30,8 @@
     layers:
     - state: bag
     - state: pumpkin
-  #- type: CP14Seed
-  #  plantProto: CP14PlantWheat
+  - type: CP14Seed
+    plantProto: CP14PlantPumpkin
 
 - type: entity
   id: CP14SeedCabbage
@@ -43,8 +43,8 @@
     layers:
     - state: bag
     - state: cabbage
-  #- type: CP14Seed
-  #  plantProto: CP14PlantWheat
+  - type: CP14Seed
+    plantProto: CP14PlantCabbage
 
 - type: entity
   id: CP14SeedTomato
