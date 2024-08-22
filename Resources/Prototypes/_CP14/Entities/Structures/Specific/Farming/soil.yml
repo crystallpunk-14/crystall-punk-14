@@ -31,39 +31,12 @@
     anchored: true
   - type: CP14Soil
     solution: soil
-  - type: CP14DestroyedByTool
-    tool: CP14Digging
 
 - type: entity
-  name: ploughed ground
+  id: CP14SeedbedWooden
   parent: CP14BaseFarmingSoil
-  id: CP14PloughedGround
-  components:
-  - type: Sprite
-    drawdepth: FloorTiles
-    sprite: _CP14/Structures/Specific/Farming/soil.rsi
-    layers:
-      - state: soil1
-        map: ["random"]
-      - state: liq-1 #Resprite this shit
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
-    snapCardinals: true
-  - type: SolutionContainerVisuals
-    maxFillLevels: 4
-    fillBaseName: liq-
-  - type: RandomSprite
-    available:
-    - random:
-        soil1: ""
-        soil2: ""
-        soil3: ""
-        soil4: ""
-    
-- type: entity
   name: seedbed
-  id: CP14SeedbedDefault
-  parent: CP14BaseFarmingSoil
+  description: A wooden tub with a pile of earth adapted for growing plants.
   components:
   - type: Icon
     sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
@@ -85,4 +58,6 @@
         state: seedbed_default_north
       - map: [ "enum.EdgeLayer.West" ]
         state: seedbed_default_west
-#    snapCardinals: true                          (when you flip it over, you get a swastika)
+  - type: Construction
+    graph: CP14Seedbed
+    node: CP14SeedbedWooden
