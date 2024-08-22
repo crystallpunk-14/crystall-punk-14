@@ -1,48 +1,48 @@
 - type: stack
   id: CP14Dirt
-  name: dirt block
+  name: cp14-stack-dirt-block
   spawn: CP14DirtBlock1
   icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
   maxCount: 10
 
 - type: stack
   id: CP14Stone
-  name: stone block
+  name: cp14-stack-stone-block
   spawn: CP14StoneBlock1
   icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
   maxCount: 10
 
 - type: stack
   id: CP14WoodenPlanks
-  name: wooden planks
+  name: cp14-stack-wood-planks
   spawn: CP14WoodenPlanks1
   icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
   maxCount: 10
 
 - type: stack
   id: CP14Nail
-  name: nails
+  name: cp14-stack-nails
   spawn: CP14Nail1
   icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
   maxCount: 10
 
 - type: stack
   id: CP14CopperBar
-  name: copper bars
+  name: cp14-stack-copper-bars
   spawn: CP14CopperBar1
   icon: { sprite: _CP14/Objects/Materials/copper_bar.rsi, state: bar_2 }
   maxCount: 10
 
 - type: stack
   id: CP14IronBar
-  name: iron bars
+  name: cp14-stack-iron-bars
   spawn: CP14IronBar1
   icon: { sprite: _CP14/Objects/Materials/iron_bar.rsi, state: bar_2 }
   maxCount: 10
 
 - type: stack
   id: CP14GoldBar
-  name: gold bars
+  name: cp14-stack-gold-bars
   spawn: CP14GoldBar1
   icon: { sprite: _CP14/Objects/Materials/gold_bar.rsi, state: bar_2 }
   maxCount: 10

@@ -1,0 +1,60 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               Title="{Loc 'cp14-workbench-ui-title'}"
+               MinSize="700 600">
+    <BoxContainer Orientation="Vertical">
+        <!-- Main -->
+        <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
+            <GridContainer HorizontalExpand="True" VerticalExpand="True" Columns="2">
+                <!-- Crafts container -->
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
+                    <BoxContainer Name="CraftsContainer" Orientation="Vertical" HorizontalExpand="True"/>
+                </ScrollContainer>
+
+                <!-- Craft view -->
+                <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
+                    <PanelContainer HorizontalExpand="True" VerticalExpand="True">
+                        <!-- Background -->
+                        <PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BackgroundColor="#41332f"/>
+                        </PanelContainer.PanelOverride>
+
+                        <!-- Content -->
+                        <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
+                            <!-- Item info -->
+                            <GridContainer HorizontalExpand="True" Columns="2">
+                                <!-- Left panel - icon -->
+                                <TextureRect Name="ItemView"
+                                             Margin="0,0,4,0"
+                                             MinSize="64 64"
+                                             HorizontalAlignment="Left"
+                                             Stretch="KeepAspectCentered"/>
+
+                                <!-- Right panel - name & description -->
+                                <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
+                                    <Label Name="ItemName" Text="Name"/>
+                                    <Label Name="ItemDescription" Text="Description" ClipText="True"/>
+                                </BoxContainer>
+                            </GridContainer>
+
+                            <controls:HLine Color="#404040" Thickness="2" Margin="0 5"/>
+
+                            <!-- Required title -->
+                            <Label Text="{Loc 'cp14-workbench-recipe-list'}"/>
+
+                            <!-- Craft requirements content -->
+                            <!-- Added by code -->
+                            <BoxContainer Name="ItemRequirements" Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True"/>
+
+                            <controls:HLine Color="#404040" Thickness="2" Margin="0 5"/>
+
+                            <!-- Craft button -->
+                            <Button Name="CraftButton" Text="{Loc 'cp14-workbench-craft'}"/>
+                        </BoxContainer>
+                    </PanelContainer>
+                </BoxContainer>
+            </GridContainer>
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>

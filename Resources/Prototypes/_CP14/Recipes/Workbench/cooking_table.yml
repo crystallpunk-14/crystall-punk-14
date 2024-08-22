@@ -1,0 +1,32 @@
+- type: CP14Recipe
+  id: CP14FoodMeatLamb
+  craftTime: 2
+  entities:
+    CP14FoodMeatLambSlice: 2
+    CP14FoodEgg: 1
+  result: CP14FoodMeatLambCutlet
+  tryMergeSolutions: true
+
+- type: CP14Recipe
+  id: CP14FoodDoughLarge
+  craftTime: 3
+  entities:
+    CP14FoodDoughMedium: 5
+  result: CP14FoodDoughLarge
+  tryMergeSolutions: true
+
+- type: CP14Recipe
+  id: CP14FoodDoughMedium
+  craftTime: 3
+  entities:
+    CP14FoodDoughMediumFlat: 1
+  result: CP14FoodDoughMedium
+  tryMergeSolutions: true
+
+- type: CP14Recipe
+  id: CP14FoodDoughMediumFlat
+  craftTime: 3
+  entities:
+    CP14FoodDoughMedium: 1 
+  result: CP14FoodDoughMediumFlat
+  tryMergeSolutions: true

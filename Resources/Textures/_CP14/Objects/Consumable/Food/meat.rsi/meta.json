@@ -1,17 +1,44 @@
 {
     "version": 1,
     "license": "All rights reserved for the CrystallPunk14 project only",
-    "copyright": "By omsoyk",
+    "copyright": "sheepmeat and sheepmeat_cooked By omsoyk, sheepmeat_slice and sheepmeat_slice_cooked by TheShuEd, cutlet and cutlet_cooked and meat_slice by Artista.rar",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
+            "name": "cutlet"
+        },
+        {
+            "name": "cutlet_cooked"
+        },
+        {
+            "name": "meat_slice"
+        },
+        {
             "name": "sheepmeat"
         },
         {
-            "name": "sheepmeat-cooked"
+            "name": "sheepmeat_cooked"
+        },
+        {
+            "name": "sheepmeat_slice"
+        },
+        {
+            "name": "sheepmeat_slice2"
+        },
+        {
+            "name": "sheepmeat_slice3"
+        },
+        {
+            "name": "sheepmeat_slice_cooked"
+        },
+        {
+            "name": "sheepmeat_slice2_cooked"
+        },
+        {
+            "name": "sheepmeat_slice3_cooked"
         }
     ]
 }

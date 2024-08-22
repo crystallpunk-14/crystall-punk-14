@@ -1,27 +1,110 @@
-﻿- type: entity
-  name: raw meat
-  parent: FoodMeat
-  id: CP14RawFoodMeat
-  description: It smells weird, but looks like normal meat...
+﻿# Base
+
+- type: entity
+  parent: FoodInjectableBase
+  id: CP14FoodMeatBase
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Fat
+          Quantity: 6
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02 # arbitrary number that sounds right for a slab of meat
+
+- type: entity
+  id: CP14FoodMeatSliceBase
+  parent: CP14FoodMeatBase
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.33
+        - ReagentId: Fat
+          Quantity: 2
+  - type: InternalTemperature
+    thickness: 0.006
+    area: 0.006 # 1\3 of meat value
+
+# Lamb Meat
+
+- type: entity
+  id: CP14FoodMeatLamb
+  parent: CP14FoodMeatBase
+  name: raw lamb
+  description: Succulent lamb steak
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat
-  - type: Construction
-    graph: CP14MeatSteak
-    node: start
-    defaultTarget: sheep steak
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodMeatLambSlice
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,1,0
 
 - type: entity
-  name: steak
-  parent: FoodMeatCooked
-  id: CP14CookedFoodMeat
-  description: A cooked slab of meat. Smells primal.
+  id: CP14FoodMeatLambSlice
+  parent: CP14FoodMeatSliceBase
+  name: meat pieces
+  description: Succulent lamb steak
   components:
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     layers:
-    - state: sheepmeat-cooked
-  - type: Construction
-    graph: CP14MeatSteak
-    node: sheep steak
+      - state: sheepmeat_slice
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          sheepmeat_slice: ""
+          sheepmeat_slice2: ""
+          sheepmeat_slice3: ""
+
+- type: entity
+  id: CP14FoodMeatLambCutlet
+  parent: CP14FoodMeatSliceBase
+  name: lamb cutlet
+  description: the result of mixing sliced lamb and egg - a raw round cutlet.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: cutlet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.66
+        - ReagentId: Fat
+          Quantity: 4
+        - ReagentId: Egg
+          Quantity: 6

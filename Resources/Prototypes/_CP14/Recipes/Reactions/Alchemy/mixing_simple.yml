@@ -18,8 +18,10 @@
     CP14BasicEffectEmpty: 
       amount: 0.25
   products:
-    CP14BasicEffectRainbow: 0.25
     CP14BasicEffectDamageBrute: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 0.25
+  - CP14BasicEffectDamageBrute: 0.25
 
 - type: reaction
   id: CP14HealBruteSplitting
@@ -46,8 +48,10 @@
     CP14BasicEffectEmpty: 
       amount: 0.25
   products:
-    CP14BasicEffectEmoteCough: 0.25
     CP14BasicEffectHealBrute: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectEmoteCough: 0.25
+  - CP14BasicEffectHealBrute: 0.25
 
 - type: reaction
   id: CP14SatiateThirstSplitting
@@ -60,8 +64,10 @@
     CP14BasicEffectEmpty: 
       amount: 0.25
   products:
-    CP14BasicEffectEmoteCough: 0.25
     CP14BasicEffectHealBrute: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectEmoteCough: 0.25
+  - CP14BasicEffectHealBrute: 0.25
 
 - type: reaction
   id: CP14EmoteCoughSplitting
@@ -75,7 +81,9 @@
       amount: 0.25
   products:
     CP14BasicEffectSatiateThirst: 0.25
-    CP14BasicEffectHealBrute: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectSatiateThirst: 0.25
+  - CP14BasicEffectHealBrute: 0.25
 
 - type: reaction
   id: CP14RainbowSplitting
@@ -88,8 +96,10 @@
     CP14BasicEffectEmpty: 
       amount: 0.25
   products:
-    CP14BasicEffectSatiateThirst: 0.25
     CP14BasicEffectHealCold: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectSatiateThirst: 0.25
+  - CP14BasicEffectHealCold: 0.25
 
 - type: reaction
   id: CP14VomitSplitting
@@ -102,8 +112,10 @@
     CP14BasicEffectEmpty:
       amount: 0.25
   products:
-    CP14BasicEffectEmoteCough: 0.25
     CP14BasicEffectDamagePoison: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectEmoteCough: 0.25
+  - CP14BasicEffectDamagePoison: 0.25
 
 - type: reaction
   id: CP14EmptySplitting

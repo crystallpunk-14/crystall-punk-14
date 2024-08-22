@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by Jaraten (discord/Github) for CrystallPunk 14",
+  "size": {
+    "x": 32,
+    "y": 80
+  },
+  "states": [
+    {
+      "name": "wooden_frame",
+      "directions": 4
+    },
+    {
+      "name": "default_glass",
+      "directions": 4
+    }
+  ]
+}

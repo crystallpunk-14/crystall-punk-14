@@ -169,12 +169,8 @@ public abstract partial class InventorySystem
                 target,
                 itemUid)
             {
-                BlockDuplicate = true,
-                BreakOnHandChange = true,
                 BreakOnMove = clothing.BreakOnMove, //CrystallPunk weapon unequipping on move
-                CancelDuplicate = true,
-                RequireCanInteract = true,
-                NeedHand = true
+                NeedHand = true,
             };
 
             _doAfter.TryStartDoAfter(args);
@@ -420,12 +416,8 @@ public abstract partial class InventorySystem
                 target,
                 removedItem.Value)
             {
-                BlockDuplicate = true,
-                BreakOnHandChange = true,
                 BreakOnMove = clothing.BreakOnMove, //CrystallPunk weapon unequipping on move
-                CancelDuplicate = true,
-                RequireCanInteract = true,
-                NeedHand = true
+                NeedHand = true,
             };
 
             _doAfter.TryStartDoAfter(args);

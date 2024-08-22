@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Client.Message;
+using Content.Client.UserInterface.Controls; // CP14 random reactions
 using Content.Client.UserInterface.ControlExtensions;
 using Content.Shared.Atmos.Prototypes;
 using Content.Shared.Chemistry.Components;
@@ -37,13 +38,36 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         var reactantsLabel = ReactantsLabel;
         SetReagents(prototype.Reactants, ref reactantsLabel, protoMan);
         var productLabel = ProductsLabel;
-        var products = new Dictionary<string, FixedPoint2>(prototype.Products);
+        var products = new Dictionary<string, FixedPoint2>(prototype._products); // CP14 random reactions
         foreach (var (reagent, reactantProto) in prototype.Reactants)
         {
             if (reactantProto.Catalyst)
                 products.Add(reagent, reactantProto.Amount);
         }
         SetReagents(products, ref productLabel, protoMan);
+        // CP14 random reagents begin
+        foreach (var randomVariation in prototype.Cp14RandomProducts)
+        {
+            // If there aren't any variations, this label will be not visible
+            RandomVariationsLabel.Visible = true;
+            var randomProductLabel = new RichTextLabel {
+                HorizontalAlignment=HAlignment.Left,
+                VerticalAlignment=VAlignment.Center,
+            };
+            var randomProducts = new Dictionary<string, FixedPoint2>(randomVariation);
+            RandomVariations.AddChild(randomProductLabel);
+            RandomVariations.AddChild(new SplitBar
+            {
+                MinHeight = 10,
+            });
+            foreach (var (reagent, reactantProto) in prototype.Reactants)
+            {
+                if (reactantProto.Catalyst)
+                    randomProducts.Add(reagent, reactantProto.Amount);
+            }
+            SetReagents(randomProducts, ref randomProductLabel, protoMan);
+        }
+        // CP14 random reagents end
 
         var mixingCategories = new List<MixingCategoryPrototype>();
         if (prototype.MixingCategories != null)
