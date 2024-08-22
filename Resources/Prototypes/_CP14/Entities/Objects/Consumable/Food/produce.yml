@@ -23,12 +23,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 14
+        maxVol: 12
         reagents:
         - ReagentId: Nutriment
           Quantity: 10
         - ReagentId: Vitamin
-          Quantity: 4
+          Quantity: 1
   - type: SliceableFood
     count: 4
     sliceTime: 1.5
@@ -56,12 +56,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 3.5 # 1/4 cabbage
+        maxVol: 3 # 1/4 cabbage
         reagents:
         - ReagentId: Nutriment
           Quantity: 2.5
         - ReagentId: Vitamin
-          Quantity: 1
+          Quantity: 0.25
 
 - type: entity
   id: CP14FoodPumpkin

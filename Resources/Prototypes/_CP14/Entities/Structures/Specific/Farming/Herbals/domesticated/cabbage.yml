@@ -65,5 +65,5 @@
   id: CP14GatherCabbage
   entries:
   - id: CP14FoodCabbage
-    amount: 1
-    maxAmount: 2
+    amount: 3
+    maxAmount: 4
