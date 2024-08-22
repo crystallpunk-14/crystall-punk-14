@@ -45,3 +45,6 @@
     angle: 225
   - type: CP14Currency
     currency: 200
+  - type: Utensil
+    types:
+      - Knife
