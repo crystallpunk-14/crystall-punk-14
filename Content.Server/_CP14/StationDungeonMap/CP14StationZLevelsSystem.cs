@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.StationDungeonMap;
 
-public sealed partial class CP14StationAdditionalMapSystem : EntitySystem
+public sealed partial class CP14StationZLevelsSystem : EntitySystem
 {
     [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -18,29 +18,41 @@ public sealed partial class CP14StationAdditionalMapSystem : EntitySystem
     [Dependency] private readonly LinkedEntitySystem _linkedEntity = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<CP14StationAdditionalMapComponent, StationPostInitEvent>(OnStationPostInit);
+
+        SubscribeLocalEvent<CP14StationZLevelsComponent, StationPostInitEvent>(OnPostInit);
     }
 
-    private void OnStationPostInit(Entity<CP14StationAdditionalMapComponent> addMap, ref StationPostInitEvent args)
+    private void OnPostInit(Entity<CP14StationZLevelsComponent> ent, ref StationPostInitEvent args)
     {
-        if (!TryComp(addMap, out StationDataComponent? dataComp))
+        if (!TryComp(ent, out StationDataComponent? dataComp))
             return;
 
-        foreach (var path in addMap.Comp.MapPaths)
+
+        foreach (var level in ent.Comp.Levels)
         {
-            var mapUid = _map.CreateMap(out var mapId);
-            Log.Info($"Created map {mapId} for StationAdditionalMap system");
-            var options = new MapLoadOptions { LoadMap = true };
-            if (!_mapLoader.TryLoad(mapId, path.ToString(), out var roots, options))
+            var path = level.Value.Path.ToString();
+            if (path is null)
             {
-                Log.Error($"Failed to load map from {path}!");
+                Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {level.Key}!");
+                continue;
+            }
+
+            var mapUid = _map.CreateMap(out var mapId);
+            Log.Info($"Created map {mapId} for CP14StationZLevelsSystem at level {level.Key}");
+            var options = new MapLoadOptions { LoadMap = true };
+
+
+            if (!_mapLoader.TryLoad(mapId, path, out var roots, options))
+            {
+                Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {level.Key}!");
                 Del(mapUid);
                 return;
             }
+
+            level.Value.GeneratedMap = mapId;
         }
     }
 }
