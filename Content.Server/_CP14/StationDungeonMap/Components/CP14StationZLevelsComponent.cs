@@ -1,7 +1,8 @@
+using Content.Server._CP14.StationDungeonMap.EntitySystems;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
 
-namespace Content.Server._CP14.StationDungeonMap;
+namespace Content.Server._CP14.StationDungeonMap.Components;
 
 /// <summary>
 ///

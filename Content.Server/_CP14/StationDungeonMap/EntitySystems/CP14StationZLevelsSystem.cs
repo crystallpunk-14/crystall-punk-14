@@ -1,3 +1,4 @@
+using Content.Server._CP14.StationDungeonMap.Components;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
@@ -5,7 +6,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.Map;
 
-namespace Content.Server._CP14.StationDungeonMap;
+namespace Content.Server._CP14.StationDungeonMap.EntitySystems;
 
 public sealed partial class CP14StationZLevelsSystem : EntitySystem
 {
