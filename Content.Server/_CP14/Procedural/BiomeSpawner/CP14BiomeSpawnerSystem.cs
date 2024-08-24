@@ -6,7 +6,6 @@
  */
 
 using System.Linq;
-using Content.Server._CP14.BiomeSpawner.Components;
 using Content.Server._CP14.RoundSeed;
 using Content.Server.Decals;
 using Content.Server.Parallax;
@@ -15,7 +14,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.BiomeSpawner.EntitySystems;
+namespace Content.Server._CP14.Procedural.BiomeSpawner;
 
 public sealed class CP14BiomeSpawnerSystem : EntitySystem
 {
@@ -86,6 +85,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
             QueueDel(entToRemove);
         }
 
+        // Add entities
         if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed, map, out var entityProto))
             Spawn(entityProto, new EntityCoordinates(gridUid, tileCenterVec));
     }

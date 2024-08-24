@@ -155,7 +155,14 @@ public sealed partial class DungeonSystem
 
                 if (!clearExisting && reservedTiles?.Contains(rounded) == true)
                     continue;
-
+                //CP14 ignoring atlas mask tiles
+                if (room.IgnoreTiles is not null)
+                {
+                    var tileDef = _tileDefManager[tileRef.Tile.TypeId];
+                    if (room.IgnoreTiles.Contains(tileDef.ID))
+                        continue;
+                }
+                //CP14 ignoring atlas mask tiles end
                 _tiles.Add((rounded, tileRef.Tile));
             }
         }
