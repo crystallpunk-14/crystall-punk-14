@@ -35,11 +35,21 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
 
     private void OnPortalMapInit(Entity<CP14ZLevelAutoPortalComponent> autoPortal, ref MapInitEvent args)
     {
-        if (!TryComp<PortalComponent>(autoPortal, out var portalComp))
-            return;
+        InitPortal(autoPortal);
+    }
 
+    private void InitPremappedPortals()
+    {
+        //var query = new EntityQueryEnumerator<CP14ZLevelAutoPortalComponent>();
+        //while (query.MoveNext(out var uid, out var autoPortal))
+        //{
+        //    InitPortal((uid, autoPortal));
+        //}
+    }
+
+    private void InitPortal(Entity<CP14ZLevelAutoPortalComponent> autoPortal)
+    {
         var mapId = Transform(autoPortal).MapID;
-        _map.TryGetMap(mapId, out var mapUid);
 
         var offsetMap = GetMapOffset(mapId, autoPortal.Comp.ZLevelOffset);
 
@@ -53,28 +63,6 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
 
         if (_linkedEntity.TryLink(autoPortal, otherSidePortal, true))
             RemComp<CP14ZLevelAutoPortalComponent>(autoPortal);
-
-    }
-
-    private void ClearOtherSide(EntityUid otherSidePortal, EntityUid targetMapUid)
-    {
-        var tiles = new List<(Vector2i Index, Tile Tile)>();
-        var originF = _transform.GetWorldPosition(otherSidePortal);
-        var origin = new Vector2i((int) originF.X, (int) originF.Y);
-        var tileDef = _tileDefManager["CP14FloorStonebricks"]; //TODO: Remove hardcode
-        var seed = _random.Next();
-        var random = new Random(seed);
-        var grid = Comp<MapGridComponent>(targetMapUid);
-
-        for (var x = -2; x <= 2; x++) //TODO: Remove hardcode
-        {
-            for (var y = -2; y <= 2; y++)
-            {
-                tiles.Add((new Vector2i(x, y) + origin, new Tile(tileDef.TileId, variant: _tile.PickVariant((ContentTileDefinition) tileDef, random))));
-            }
-        }
-
-        _maps.SetTiles(targetMapUid, grid, tiles);
     }
 
     private void OnPostInit(Entity<CP14StationZLevelsComponent> ent, ref StationPostInitEvent args)
@@ -122,6 +110,8 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
             }
             ent.Comp.LevelEntities.Add(mapId, map);
         }
+
+        InitPremappedPortals();
     }
 
     public MapId? GetMapOffset(MapId mapId, int offset)
