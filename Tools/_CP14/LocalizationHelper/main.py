@@ -64,6 +64,7 @@ def save_result(entities: str, file_name: str) -> None:
 
     print(f"{file_name} has been created\n")
 
+
 def main():
     """
     The function gets paths, creates dictionaries with the help of parsers,
@@ -120,7 +121,7 @@ def main():
                     if prototypes_dict[prototype].get("suffix"):
                         prototype_attrs["suffix"] = prototypes_dict[prototype]["suffix"]
 
-            if any(prototype_attrs[attr] is not None for attr in ["name", "desc", "suffix"]):
+            if any(prototype_attrs[attr] is not None for attr in ("name", "desc", "suffix")):
                 proto_ftl = ftl_writer.create_ftl(prototype, all_prototypes[prototype])
                 entities_ftl += proto_ftl
 

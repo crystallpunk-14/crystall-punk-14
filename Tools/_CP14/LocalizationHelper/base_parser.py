@@ -10,7 +10,7 @@ class BaseParser:
     def __init__(self, paths: tuple):
         self.path, self.errors_path = paths
 
-    def get_files_paths(self) -> list:
+    def _get_files_paths(self) -> list:
         """
         The method gets the path to the yml folder of localization prototypes/files, e.g. "ftl",
         then with the help of os library goes through each file in
@@ -31,7 +31,7 @@ class BaseParser:
             json.dump(prototypes, json_file, indent=4)
 
     @staticmethod
-    def check_file_extension(path: str, extension: str) -> bool:
+    def _check_file_extension(path: str, extension: str) -> bool:
         if path.endswith(extension):
             return True
         return False

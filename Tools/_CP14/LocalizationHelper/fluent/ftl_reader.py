@@ -4,9 +4,7 @@ def read_ftl(paths: tuple) -> dict:
         file and determines by the indentation in the line whether
         it is a new prototype or an attribute of an old one.
     """
-    prototypes = {
-
-    }
+    prototypes = {}
 
     last_prototype = ""
     path, error_log_path = paths
