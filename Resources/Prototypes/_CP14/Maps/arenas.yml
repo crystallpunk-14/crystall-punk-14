@@ -84,5 +84,7 @@
         - type: CP14StationZLevels
           defaultMapLevel: 0
           levels:
-            1:
+            -1:
+              path: /Maps/_CP14/alchemy_test_layer2.yml
+            -2:
               path: /Maps/_CP14/alchemy_test_layer2.yml
