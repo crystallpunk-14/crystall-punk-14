@@ -12,8 +12,10 @@ public sealed partial class CP14StationZLevelsComponent : Component
     [DataField(required: true)]
     public int DefaultMapLevel = 0;
 
-    [DataField]
+    [DataField(required: true)]
     public Dictionary<int, CP14ZLevelEntry> Levels = new();
+
+    public Dictionary<MapId, int> LevelEntities = new();
 }
 
 [DataRecord, Serializable]
@@ -23,9 +25,4 @@ public sealed class CP14ZLevelEntry
     ///
     /// </summary>
     public ResPath? Path { get; set; } = null;
-
-    /// <summary>
-    ///
-    /// </summary>
-    public MapId? GeneratedMap { get; set; } = null;
 }
