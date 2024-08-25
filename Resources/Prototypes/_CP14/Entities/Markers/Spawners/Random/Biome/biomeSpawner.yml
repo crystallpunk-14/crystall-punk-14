@@ -14,6 +14,11 @@
     drawdepth: BelowFloor
     sprite: _CP14/Markers/biome.rsi
   - type: CP14BiomeSpawner
+    deleteBlacklist:
+      components:
+      - Portal
+      - MindContainer
+      - CP14WorldBounding
   - type: PlacementReplacement
     key: CP14BiomeSpawner
 
