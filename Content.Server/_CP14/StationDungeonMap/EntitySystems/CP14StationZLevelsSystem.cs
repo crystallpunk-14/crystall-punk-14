@@ -1,14 +1,14 @@
 using Content.Server._CP14.StationDungeonMap.Components;
+using Content.Server.GameTicking.Events;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared.Maps;
-using Content.Shared.Teleportation.Components;
+using Content.Shared.Station.Components;
 using Content.Shared.Teleportation.Systems;
 using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.StationDungeonMap.EntitySystems;
@@ -29,44 +29,25 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14StationZLevelsComponent, StationPostInitEvent>(OnPostInit);
         SubscribeLocalEvent<CP14ZLevelAutoPortalComponent, MapInitEvent>(OnPortalMapInit);
+        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
+        SubscribeLocalEvent<CP14StationZLevelsComponent, StationPostInitEvent>(OnStationPostInit);
     }
 
-    private void OnPortalMapInit(Entity<CP14ZLevelAutoPortalComponent> autoPortal, ref MapInitEvent args)
+    private void OnRoundStart(RoundStartingEvent ev)
     {
-        InitPortal(autoPortal);
+        var query = EntityQueryEnumerator<CP14ZLevelAutoPortalComponent>();
+        while (query.MoveNext(out var uid, out var portal))
+        {
+            InitPortal((uid, portal));
+        }
     }
 
-    private void InitPremappedPortals()
+    private void OnStationPostInit(Entity<CP14StationZLevelsComponent> ent, ref StationPostInitEvent args)
     {
-        //var query = new EntityQueryEnumerator<CP14ZLevelAutoPortalComponent>();
-        //while (query.MoveNext(out var uid, out var autoPortal))
-        //{
-        //    InitPortal((uid, autoPortal));
-        //}
-    }
-
-    private void InitPortal(Entity<CP14ZLevelAutoPortalComponent> autoPortal)
-    {
-        var mapId = Transform(autoPortal).MapID;
-
-        var offsetMap = GetMapOffset(mapId, autoPortal.Comp.ZLevelOffset);
-
-        if (offsetMap is null)
+        if (ent.Comp.Initialized)
             return;
 
-        var currentWorldPos = _transform.GetWorldPosition(autoPortal);
-        var targetMapPos = new MapCoordinates(currentWorldPos, offsetMap.Value);
-
-        var otherSidePortal = Spawn(autoPortal.Comp.OtherSideProto, targetMapPos);
-
-        if (_linkedEntity.TryLink(autoPortal, otherSidePortal, true))
-            RemComp<CP14ZLevelAutoPortalComponent>(autoPortal);
-    }
-
-    private void OnPostInit(Entity<CP14StationZLevelsComponent> ent, ref StationPostInitEvent args)
-    {
         if (!TryComp(ent, out StationDataComponent? dataComp))
         {
             Log.Error($"Failed to init CP14StationZLevelsSystem: no StationData");
@@ -82,6 +63,8 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
         }
 
         ent.Comp.LevelEntities.Add(Transform(defaultMap.Value).MapID, ent.Comp.DefaultMapLevel);
+
+        ent.Comp.Initialized = true;
 
         foreach (var (map, level) in ent.Comp.Levels)
         {
@@ -99,10 +82,13 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
             }
 
             var mapUid = _map.CreateMap(out var mapId);
+            var member = EnsureComp<StationMemberComponent>(mapUid);
+            member.Station = ent;
+
             Log.Info($"Created map {mapId} for CP14StationZLevelsSystem at level {map}");
             var options = new MapLoadOptions { LoadMap = true };
 
-            if (!_mapLoader.TryLoad(mapId, path, out _, options))
+            if (!_mapLoader.TryLoad(mapId, path, out var grids, options))
             {
                 Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {map}!");
                 Del(mapUid);
@@ -110,22 +96,45 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
             }
             ent.Comp.LevelEntities.Add(mapId, map);
         }
-
-        InitPremappedPortals();
     }
 
-    public MapId? GetMapOffset(MapId mapId, int offset)
+    private void OnPortalMapInit(Entity<CP14ZLevelAutoPortalComponent> autoPortal, ref MapInitEvent args)
+    {
+        InitPortal(autoPortal);
+    }
+
+    private void InitPortal(Entity<CP14ZLevelAutoPortalComponent> autoPortal)
+    {
+        var mapId = Transform(autoPortal).MapUid;
+        if (mapId is null)
+            return;
+
+        var offsetMap = GetMapOffset(mapId.Value, autoPortal.Comp.ZLevelOffset);
+
+        if (offsetMap is null)
+            return;
+
+        var currentWorldPos = _transform.GetWorldPosition(autoPortal);
+        var targetMapPos = new MapCoordinates(currentWorldPos, offsetMap.Value);
+
+        var otherSidePortal = Spawn(autoPortal.Comp.OtherSideProto, targetMapPos);
+
+        if (_linkedEntity.TryLink(autoPortal, otherSidePortal, true))
+            RemComp<CP14ZLevelAutoPortalComponent>(autoPortal);
+    }
+
+    public MapId? GetMapOffset(EntityUid mapUid, int offset)
     {
         var query = EntityQueryEnumerator<CP14StationZLevelsComponent, StationDataComponent>();
-        while (query.MoveNext(out _, out var zLevel, out _))
+        while (query.MoveNext(out var uid, out var zLevel, out _))
         {
-            if (!zLevel.LevelEntities.TryGetValue(mapId, out var currentLevel))
-                return null;
+            if (!zLevel.LevelEntities.TryGetValue(Transform(mapUid).MapID, out var currentLevel))
+                continue;
 
             var targetLevel = currentLevel + offset;
 
             if (!zLevel.LevelEntities.ContainsValue(targetLevel))
-                return null;
+                continue;
 
             foreach (var (key, value) in zLevel.LevelEntities)
             {

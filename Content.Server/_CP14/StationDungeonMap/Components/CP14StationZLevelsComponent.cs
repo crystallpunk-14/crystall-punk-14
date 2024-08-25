@@ -16,6 +16,8 @@ public sealed partial class CP14StationZLevelsComponent : Component
     [DataField(required: true)]
     public Dictionary<int, CP14ZLevelEntry> Levels = new();
 
+    public bool Initialized = false;
+
     public Dictionary<MapId, int> LevelEntities = new();
 }
 
