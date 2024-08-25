@@ -138,7 +138,7 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
 
             foreach (var (key, value) in zLevel.LevelEntities)
             {
-                if (value == targetLevel)
+                if (value == targetLevel && _map.MapExists(key))
                     return key;
             }
         }
