@@ -57,7 +57,7 @@
 
 - type: entity
   parent: CP14ClothingPantsBase
-  id: CP14ClothingDressBlack
+  id: CP14ClothingDressBlack #TODO rename to CP14ClothingPantsDressBlack
   name: black dress
   description: A roomy, feminine skirt
   components:

@@ -35,6 +35,15 @@
   price: 0 #?
 
 - type: material
+  id: CP14Cloth
+  stackEntity: CP14Cloth1
+  name: cp14-material-cloth
+  unit: materials-unit-roll
+  icon: { sprite: _CP14/Objects/Materials/cloth.rsi, state: cloth_3 }
+  color: "#d8e3e2"
+  price: 0 #?
+
+- type: material
   id: CP14Copper
   stackEntity: CP14CopperBar1
   name: cp14-material-copper

@@ -245,7 +245,7 @@
     launchForwardsMultiplier: 0
 
 - type: entity
-  id: CP14Nail110
+  id: CP14Nail10
   parent: CP14Nail1
   suffix: 10
   components:
@@ -284,3 +284,51 @@
     damage:
       types:
         Heat: 1
+
+- type: entity
+  id: CP14String
+  parent: BaseItem
+  name: strings
+  description: Thin thread. Material for mending clothes, or sewing new ones.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/string.rsi
+    state: icon
+
+- type: entity
+  id: CP14Cloth1
+  parent: BaseItem
+  name: cloth
+  suffix: 1
+  description: White cloth roll
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/cloth.rsi
+    layers:
+      - state: cloth_1
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Cloth
+    count: 1
+    baseLayer: base
+    layerStates:
+    - cloth_1
+    - cloth_2
+    - cloth_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Cloth: 100
+
+- type: entity
+  id: CP14Cloth10
+  parent: CP14Cloth1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
