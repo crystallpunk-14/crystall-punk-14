@@ -7,6 +7,7 @@
 
 using Content.Server._CP14.BiomeSpawner.EntitySystems;
 using Content.Shared.Parallax.Biomes;
+using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.BiomeSpawner.Components;
@@ -19,4 +20,10 @@ public sealed partial class CP14BiomeSpawnerComponent : Component
 {
     [DataField]
     public ProtoId<BiomeTemplatePrototype> Biome = "Grasslands";
+
+    /// <summary>
+    /// entities that we don't remove.
+    /// </summary>
+    [DataField(required: true)]
+    public EntityWhitelist DeleteBlacklist = new();
 }
