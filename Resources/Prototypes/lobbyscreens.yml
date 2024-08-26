@@ -10,3 +10,7 @@
 - type: lobbyBackground
   id: Tiefling
   background: /Textures/_CP14/LobbyScreens/tiefling.webp
+
+- type: lobbyBackground
+  id: LittleAdventure
+  background: /Textures/_CP14/LobbyScreens/little_adventure.webp
