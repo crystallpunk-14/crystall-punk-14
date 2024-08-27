@@ -125,5 +125,5 @@ class LocalizationHelper:
 
 
 if __name__ == '__main__':
-    helper = LocalizationHelper("config.json")
+    helper = LocalizationHelper(CONFIG_PATH)
     helper.main()
