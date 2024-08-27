@@ -207,3 +207,4 @@
     sprite: _CP14/Structures/Walls/cyan_wall.rsi
   - type: IconSmooth
     base: wall
+  - type: CP14WallpaperHolder
