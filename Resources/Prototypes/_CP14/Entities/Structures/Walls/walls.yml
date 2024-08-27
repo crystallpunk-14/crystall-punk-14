@@ -9,6 +9,8 @@
     snap:
     - Wall
   components:
+  - type: Transform
+    noRot: true
   - type: Sprite
     drawdepth: Mobs
   - type: SpriteFade

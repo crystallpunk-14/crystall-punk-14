@@ -51,6 +51,8 @@ public partial class CP14SharedWallpaperSystem : EntitySystem
         else
             direction = deltaY > 0 ? "Bottom" : "Top";
 
+        //TODO: is incorrectly calculated if the wall is turned the wrong way. Temporarily fixed by adding Transform noRot: true
+
         switch (direction)
         {
             case "Bottom":
