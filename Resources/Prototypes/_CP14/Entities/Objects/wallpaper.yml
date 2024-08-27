@@ -11,3 +11,17 @@
     state: pink
   - type: CP14Wallpaper
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_pink.rsi
+
+- type: entity
+  id: CP14WallpaperTest2
+  parent: BaseItem
+  name: green wallpaper
+  description: wawa
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Structures/Wallpaper/icons.rsi
+    state: green
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_green.rsi

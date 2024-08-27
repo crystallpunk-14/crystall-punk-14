@@ -4,7 +4,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CP14.Wallpaper;
 
 /// <summary>
-///
+/// Stores all wallpapers added to the wall
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(CP14SharedWallpaperSystem))]
 public sealed partial class CP14WallpaperHolderComponent : Component

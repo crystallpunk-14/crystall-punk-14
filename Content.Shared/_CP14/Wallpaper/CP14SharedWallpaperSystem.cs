@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Robust.Shared.Serialization;
