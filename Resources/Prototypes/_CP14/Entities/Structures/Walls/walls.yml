@@ -167,6 +167,7 @@
   - type: Construction
     graph: CP14WallWood
     node: WallWooden
+  - type: CP14WallpaperHolder
 
 - type: entity
   id: CP14WallCardboard

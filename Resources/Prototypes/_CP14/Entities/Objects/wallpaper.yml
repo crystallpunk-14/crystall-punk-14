@@ -1,0 +1,13 @@
+- type: entity
+  id: CP14WallpaperTest
+  parent: BaseItem
+  name: pink wallpaper
+  description: wawa
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Structures/Wallpaper/icons.rsi
+    state: pink
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_pink.rsi
