@@ -1,5 +1,6 @@
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
+using Content.Shared.Stacks;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -9,6 +10,7 @@ public partial class CP14SharedWallpaperSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedStackSystem _stack = default!;
 
     public override void Initialize()
     {
@@ -65,6 +67,16 @@ public partial class CP14SharedWallpaperSystem : EntitySystem
                 break;
         }
         Dirty(holder);
+
+        //Remove item
+        if (TryComp<StackComponent>(args.Used, out var stack))
+        {
+            _stack.SetCount(args.Used.Value, stack.Count - 1, stack);
+        }
+        else
+        {
+            QueueDel(args.Used);
+        }
     }
 
     private void OnInteractUsing(Entity<CP14WallpaperHolderComponent> holder, ref InteractUsingEvent args)
