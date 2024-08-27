@@ -1,6 +1,5 @@
 using Content.Client.IconSmoothing;
 using Content.Shared._CP14.Wallpaper;
-using Content.Shared.IconSmoothing;
 using Robust.Client.GameObjects;
 
 namespace Content.Client._CP14.Wallpaper;
