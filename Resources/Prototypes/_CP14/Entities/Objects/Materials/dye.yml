@@ -1,0 +1,77 @@
+- type: entity
+  id: CP14BaseDye
+  parent: BaseItem
+  abstract: true
+  name: dye
+  description: A bright, colorful dye used to paint various things.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/dye.rsi
+
+- type: entity
+  id: CP14DyeRed
+  parent: CP14BaseDye
+  name: red dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: "#bd2b26"
+
+- type: entity
+  id: CP14DyeYellow
+  parent: CP14BaseDye
+  name: yellow dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: "#ffe269"
+
+- type: entity
+  id: CP14DyeBlue
+  parent: CP14BaseDye
+  name: blue dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: "#5eabeb"
+
+- type: entity
+  id: CP14DyeGreen
+  parent: CP14BaseDye
+  name: green dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: "#85903e"
+
+- type: entity
+  id: CP14DyePurple
+  parent: CP14BaseDye
+  name: purple dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: "#8241cc"
+
+- type: entity
+  id: CP14DyeBlack
+  parent: CP14BaseDye
+  name: black dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: "#242329"
