@@ -1086,6 +1086,9 @@ ent-CP14WallCardboard = картонная стена
 ent-CP14WallCyan = голубая стена
     .desc = { ent-CP14BaseWall.desc }
 
+ent-CP14WallSkulls = черепная стена
+    .desc = { ent-CP14BaseWall.desc }
+
 ent-CP14BaseFenceWood = деревянный забор
     .desc = Деревянный кусок ограды. Надеюсь, за ним находится сад бабушки.
 
