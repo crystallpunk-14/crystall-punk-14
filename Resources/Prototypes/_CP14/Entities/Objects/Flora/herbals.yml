@@ -12,7 +12,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/bloodgrass.rsi
+    sprite: _CP14/Objects/Flora/Wild/bloodgrass.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -35,7 +35,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 8
         reagents:
         - ReagentId: CP14BloodGrassSap
           Quantity: 5
@@ -54,7 +54,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/agaric.rsi
+    sprite: _CP14/Objects/Flora/Wild/agaric.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -74,7 +74,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 5
         reagents:
         - ReagentId: CP14AgaricMushroom
           Quantity: 3
@@ -93,7 +93,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/chromium_slime.rsi
+    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -111,7 +111,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 7
@@ -131,7 +131,7 @@
     - 0,0,0,1
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/wild_sage.rsi
+    sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -149,7 +149,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: CP14WildSageSap
           Quantity: 8
@@ -197,7 +197,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/lumishroom.rsi
+    sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -220,7 +220,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 5
         reagents:
         - ReagentId: CP14LumiMushroom
           Quantity: 4

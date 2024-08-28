@@ -3,6 +3,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlue: 1
   stacks:
     CP14Cloth: 2
   result: CP14ClothingShirtCottonBlue
@@ -12,6 +13,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlack: 1
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonBlack
@@ -21,6 +23,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyePurple: 1
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonPurple
@@ -30,6 +33,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeRed: 1
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonRed
@@ -48,6 +52,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeYellow: 1
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonYellow
@@ -57,6 +62,8 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlue: 1
+    CP14DyeRed: 1
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtMercenary
@@ -66,6 +73,9 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeYellow: 1
+    CP14DyeBlue: 1
+    CP14DyeRed: 1
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtYellowWizard
@@ -75,6 +85,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlue: 1
   stacks:
     CP14Cloth: 3
   result: CP14ClothingCloakSimpleDarkBlue
@@ -102,6 +113,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlue: 1
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsTrouserDarkBlue
@@ -111,6 +123,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlack: 1
   stacks:
     CP14Cloth: 2
   result: CP14ClothingDressBlack
@@ -120,6 +133,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeYellow: 1
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsSouthernMagician
@@ -129,6 +143,8 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlue: 1
+    CP14DyeRed: 1
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsMercenaryTrousers
@@ -138,6 +154,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeRed: 1
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadRedBeret
@@ -147,6 +164,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyePurple: 1
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadPurpleBeret
@@ -156,6 +174,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeYellow: 1
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadYellowBeret
@@ -165,6 +184,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlue: 1
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadBlueBeret
@@ -174,6 +194,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeBlack: 1
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadBlackBeret
@@ -183,6 +204,7 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeYellow: 1
   stacks:
     CP14Cloth: 2
   result: CP14ClothingHeadYellowHat
@@ -192,6 +214,8 @@
   craftTime: 2
   entities:
     CP14String: 1
+    CP14DyeRed: 1
+    CP14DyeBlue: 1
   stacks:
     CP14Cloth: 2
   result: CP14ClothingHeadMercenaryBeret
