@@ -1,0 +1,13 @@
+- type: stack
+  id: CP14WallpaperPink
+  name: cp14-stack-wallpaper-pink
+  spawn: CP14WallpaperPink1
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: pink }
+  maxCount: 30
+  
+- type: stack
+  id: CP14WallpaperGreen
+  name: cp14-stack-wallpaper-green
+  spawn: CP14WallpaperGreen1
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: green }
+  maxCount: 30
