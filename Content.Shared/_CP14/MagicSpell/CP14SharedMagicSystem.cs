@@ -89,7 +89,9 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
+            Hidden = delayedEffect.Hidden,
             BlockDuplicate = true,
+            DistanceThreshold = 100f,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -126,7 +128,9 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
+            Hidden = delayedEffect.Hidden,
             BlockDuplicate = true,
+            DistanceThreshold = 100f,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -158,7 +162,9 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
+            Hidden = delayedEffect.Hidden,
             BlockDuplicate = true,
+            DistanceThreshold = 100f,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);

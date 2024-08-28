@@ -1,9 +1,16 @@
-﻿[game]
+﻿[cp14]
+arrivals_ship = false
+
+[game]
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
 map = "Dev"
 role_timers = false
+
+[ghost]
+role_time = 0.5
+quick_lottery = true
 
 [gateway]
 generator_enabled = false

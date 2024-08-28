@@ -18,8 +18,11 @@
       amount: 0.5
   products:
     CP14BasicEffectEmpty: 0.25
-    CP14BasicEffectSatiateHunger: 0.5
+    CP14BasicEffectSatiateHunger: 0.25
     CP14BasicEffectHealBrute: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectSatiateHunger: 0.25
+  - CP14BasicEffectHealBrute: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
@@ -35,8 +38,11 @@
       amount: 0.5
   products:
     CP14BasicEffectEmpty: 0.25
-    CP14BasicEffectSatiateHunger: 0.5
+    CP14BasicEffectSatiateHunger: 0.25
     CP14BasicEffectHealCold: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectSatiateHunger: 0.25
+  - CP14BasicEffectHealCold: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
@@ -52,8 +58,11 @@
       amount: 0.5
   products:
     CP14BasicEffectEmpty: 0.25
-    CP14BasicEffectSatiateHunger: 0.5
+    CP14BasicEffectSatiateHunger: 0.25
     CP14BasicEffectHealPoison: 0.25
+  cp14RandomProducts:
+  - CP14BasicEffectSatiateHunger: 0.25
+  - CP14BasicEffectHealPoison: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250

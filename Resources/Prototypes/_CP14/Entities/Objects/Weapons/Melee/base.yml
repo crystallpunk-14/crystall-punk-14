@@ -69,6 +69,15 @@
   - type: CP14Sharpened
   - type: CP14SharpeningStone
   - type: UseDelay
+  - type: Tool
+    qualities:
+      - Slicing
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
+  - type: Utensil
+    types:
+      - Knife
+  - type: CP14WallpaperRemover
 
 - type: entity
   id: CP14BaseWeaponDestructible

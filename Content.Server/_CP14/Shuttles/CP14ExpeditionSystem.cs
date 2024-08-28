@@ -29,21 +29,31 @@ public sealed class CP14ExpeditionSystem : EntitySystem
     /// </summary>
     public float ArrivalTime { get; private set; }
 
+    /// <summary>
+    /// If enabled then spawns players on an expedition ship.
+    /// </summary>
+    public bool Enabled { get; private set; }
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, StationPostInitEvent>(OnPostInitSetupExpeditionShip);
 
-        SubscribeLocalEvent<CP14StationExpeditionTargetComponent, FTLCompletedEvent>(OnArrivalsDocked);
+        SubscribeLocalEvent<CP14StationExpeditionTargetComponent, FTLCompletedEvent>(OnExpeditionShipLanded);
 
         ArrivalTime = _cfgManager.GetCVar(CCVars.CP14ExpeditionArrivalTime);
-        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionArrivalTime, time => ArrivalTime = time, true);
-    }
+        Enabled = _cfgManager.GetCVar(CCVars.CP14ExpeditionShip);
 
+        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionArrivalTime, time => ArrivalTime = time, true);
+        _cfgManager.OnValueChanged(CCVars.CP14ExpeditionShip, value => Enabled = value, true);
+    }
 
     private void OnPostInitSetupExpeditionShip(Entity<CP14StationExpeditionTargetComponent> station, ref StationPostInitEvent args)
     {
+        if (!Enabled)
+            return;
+
         if (!Deleted(station.Comp.Shuttle))
             return;
 
@@ -76,7 +86,7 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         }
     }
 
-    private void OnArrivalsDocked(Entity<CP14StationExpeditionTargetComponent> ent, ref FTLCompletedEvent args)
+    private void OnExpeditionShipLanded(Entity<CP14StationExpeditionTargetComponent> ent, ref FTLCompletedEvent args)
     {
         //Some announsement logic?
     }
@@ -97,6 +107,9 @@ public sealed class CP14ExpeditionSystem : EntitySystem
 
     public void HandlePlayerSpawning(PlayerSpawningEvent ev)
     {
+        if (!Enabled)
+            return;
+
         if (ev.SpawnResult != null)
             return;
 
@@ -114,8 +127,10 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         var possiblePositions = new List<EntityCoordinates>();
         while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
+            if (ev.Job != null && spawnPoint.Job != ev.Job.Prototype)
+                continue;
 
-            if (spawnPoint.SpawnType != SpawnPointType.LateJoin || xform.GridUid != gridUid)
+            if (xform.GridUid != gridUid)
                 continue;
 
             possiblePositions.Add(xform.Coordinates);

@@ -11,11 +11,17 @@ namespace Content.Shared.CCVar
     public sealed class CCVars : CVars
     {
         #region CP14
-
+        /// <summary>
+        /// how long does it take to fly an expedition ship to an expedition point?
+        /// </summary>
         public static readonly CVarDef<float> CP14ExpeditionArrivalTime =
-            CVarDef.Create("cp14.arrival_time", 60f, CVar.SERVERONLY);
+            CVarDef.Create("cp14.arrival_time", 180f, CVar.SERVERONLY);
 
-
+        /// <summary>
+        /// is the expedition ship's system enabled?
+        /// </summary>
+        public static readonly CVarDef<bool> CP14ExpeditionShip =
+            CVarDef.Create("cp14.arrivals_ship", true, CVar.SERVERONLY);
         #endregion
         /*
          * Server
@@ -117,32 +123,6 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool>
             EventsEnabled = CVarDef.Create("events.enabled", true, CVar.ARCHIVE | CVar.SERVERONLY);
 
-        /// <summary>
-        ///     Average time (in minutes) for when the ramping event scheduler should stop increasing the chaos modifier.
-        ///     Close to how long you expect a round to last, so you'll probably have to tweak this on downstreams.
-        /// </summary>
-        public static readonly CVarDef<float>
-            EventsRampingAverageEndTime = CVarDef.Create("events.ramping_average_end_time", 40f, CVar.ARCHIVE | CVar.SERVERONLY);
-
-        /// <summary>
-        ///     Average ending chaos modifier for the ramping event scheduler.
-        ///     Max chaos chosen for a round will deviate from this
-        /// </summary>
-        public static readonly CVarDef<float>
-            EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 6f, CVar.ARCHIVE | CVar.SERVERONLY);
-
-        /// <summary>
-        ///     Minimum time between meteor swarms in minutes.
-        /// </summary>
-        public static readonly CVarDef<float>
-            MeteorSwarmMinTime = CVarDef.Create("events.meteor_swarm_min_time", 12.5f, CVar.ARCHIVE | CVar.SERVERONLY);
-
-        /// <summary>
-        ///     Maximum time between meteor swarms in minutes.
-        /// </summary>
-        public static readonly CVarDef<float>
-            MeteorSwarmMaxTime = CVarDef.Create("events.meteor_swarm_max_time", 17.5f, CVar.ARCHIVE | CVar.SERVERONLY);
-
         /*
          * Game
          */
@@ -224,7 +204,7 @@ namespace Content.Shared.CCVar
         ///     Prototype to use for map pool.
         /// </summary>
         public static readonly CVarDef<string>
-            GameMapPool = CVarDef.Create("game.map_pool", "CP14DefaultMapPool", CVar.SERVERONLY); //CrystallPunk mapPool
+            GameMapPool = CVarDef.Create("game.map_pool", "DefaultMapPool", CVar.SERVERONLY); //CrystallPunk mapPool
 
         /// <summary>
         /// The depth of the queue used to calculate which map is next in rotation.
@@ -457,6 +437,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> GameTabletopPlace =
             CVarDef.Create("game.tabletop_place", false, CVar.SERVERONLY);
 
+        /// <summary>
+        /// If true, contraband severity can be viewed in the examine menu
+        /// </summary>
+        public static readonly CVarDef<bool> ContrabandExamine =
+            CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
+
         /*
          * Discord
          */
@@ -511,7 +497,7 @@ namespace Content.Shared.CCVar
         ///     The dataset prototype to use when selecting a random tip.
         /// </summary>
         public static readonly CVarDef<string> TipsDataset =
-            CVarDef.Create("tips.dataset", "Tips");
+            CVarDef.Create("tips.dataset", "CP14Tips");
 
         /// <summary>
         ///     The number of seconds between each tip being displayed when the round is not actively going
@@ -912,6 +898,15 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> AdminBypassMaxPlayers =
             CVarDef.Create("admin.bypass_max_players", true, CVar.SERVERONLY);
 
+        /// <summary>
+        /// Determine if custom rank names are used.
+        /// If it is false, it'd use the actual rank name regardless of the individual's title.
+        /// </summary>
+        /// <seealso cref="AhelpAdminPrefix"/>
+        /// <seealso cref="AhelpAdminPrefixWebhook"/>
+        public static readonly CVarDef<bool> AdminUseCustomNamesAdminRank =
+            CVarDef.Create("admin.use_custom_names_admin_rank", true, CVar.SERVERONLY);
+
         /*
          * AHELP
          */
@@ -930,6 +925,24 @@ namespace Content.Shared.CCVar
         /// <seealso cref="AhelpRateLimitPeriod"/>
         public static readonly CVarDef<int> AhelpRateLimitCount =
             CVarDef.Create("ahelp.rate_limit_count", 10, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Should the administrator's position be displayed in ahelp.
+        /// If it is is false, only the admin's ckey will be displayed in the ahelp.
+        /// </summary>
+        /// <seealso cref="AdminUseCustomNamesAdminRank"/>
+        /// <seealso cref="AhelpAdminPrefixWebhook"/>
+        public static readonly CVarDef<bool> AhelpAdminPrefix =
+            CVarDef.Create("ahelp.admin_prefix", false, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Should the administrator's position be displayed in the webhook.
+        /// If it is is false, only the admin's ckey will be displayed in webhook.
+        /// </summary>
+        /// <seealso cref="AdminUseCustomNamesAdminRank"/>
+        /// <seealso cref="AhelpAdminPrefix"/>
+        public static readonly CVarDef<bool> AhelpAdminPrefixWebhook =
+            CVarDef.Create("ahelp.admin_prefix_webhook", false, CVar.SERVERONLY);
 
         /*
          * Explosions
@@ -1473,7 +1486,7 @@ namespace Content.Shared.CCVar
         /// Whether the arrivals shuttle is enabled.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsShuttles =
-            CVarDef.Create("shuttle.arrivals", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals", false, CVar.SERVERONLY); //CP14 arrivals disabled
 
         /// <summary>
         /// The map to use for the arrivals station.
@@ -1600,7 +1613,7 @@ namespace Content.Shared.CCVar
         /// Whether the emergency shuttle is enabled or should the round just end.
         /// </summary>
         public static readonly CVarDef<bool> EmergencyShuttleEnabled =
-            CVarDef.Create("shuttle.emergency", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.emergency", false, CVar.SERVERONLY); //CP14 Emergency disabled
 
         /// <summary>
         ///     The percentage of time passed from the initial call to when the shuttle can no longer be recalled.
@@ -2012,6 +2025,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("ghost.role_time", 3f, CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
+        /// If ghost role lotteries should be made near-instanteous.
+        /// </summary>
+        public static readonly CVarDef<bool> GhostQuickLottery =
+            CVarDef.Create("ghost.quick_lottery", false, CVar.SERVERONLY);
+
+        /// <summary>
         /// Whether or not to kill the player's mob on ghosting, when it is in a critical health state.
         /// </summary>
         public static readonly CVarDef<bool> GhostKillCrit =
@@ -2131,7 +2150,7 @@ namespace Content.Shared.CCVar
         ///     Whether or not world generation is enabled.
         /// </summary>
         public static readonly CVarDef<bool> WorldgenEnabled =
-            CVarDef.Create("worldgen.enabled", false, CVar.SERVERONLY);
+            CVarDef.Create("worldgen.enabled", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     The worldgen config to use.
@@ -2194,6 +2213,12 @@ namespace Content.Shared.CCVar
         // Clippy!
         public static readonly CVarDef<string> TippyEntity =
             CVarDef.Create("tippy.entity", "Tippy", CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        ///     The number of seconds that must pass for a single entity to be able to point at something again.
+        /// </summary>
+        public static readonly CVarDef<float> PointingCooldownSeconds =
+            CVarDef.Create("pointing.cooldown_seconds", 0.5f, CVar.SERVERONLY);
 
         /*
          * DEBUG

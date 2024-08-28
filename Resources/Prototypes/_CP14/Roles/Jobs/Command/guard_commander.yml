@@ -13,4 +13,4 @@
 - type: startingGear
   id: CP14GuardCommanderGear
   equipment:
-    belt1: CP14WalletFilledTest
+    belt1: CP14KeyRingInnkeeper

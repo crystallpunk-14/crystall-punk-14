@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "All rights reserved for the CrystallPunk14 project only",
-  "copyright": "Created by TheShuEd",
+  "copyright": "Created by .kreks.",
   "states": [
     {
       "name": "cure_wounds"
@@ -14,10 +14,31 @@
       "name": "flame_creation"
     },
     {
+      "name": "fireball"
+    },
+    {
       "name": "ice_dagger"
     },
     {
+      "name": "ice_shards"
+    },
+    {
       "name": "shadow_step"
+    },
+    {
+      "name": "shadow_grab"
+    },
+    {
+      "name": "ice_floor"
+    },
+    {
+      "name": "earth_wall"
+    },
+    {
+      "name": "sphere_of_light"
+    },
+    {
+      "name": "flash_light"
     }
   ]
 }

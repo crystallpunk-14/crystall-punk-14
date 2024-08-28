@@ -87,3 +87,25 @@
     sprite: _CP14/Clothing/Shirt/steampunk.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/steampunk.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtMercenary
+  name: mercenary shirt
+  description: A mercenary's colourful shirt.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/mercenary.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/mercenary.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtYellowWizard
+  name: yellow wizard shirt
+  description: A loose magician's shirt, comfortable and nice looking.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/yellow_wizard.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/yellow_wizard.rsi

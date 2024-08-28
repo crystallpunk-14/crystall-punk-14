@@ -14,6 +14,11 @@
     drawdepth: BelowFloor
     sprite: _CP14/Markers/biome.rsi
   - type: CP14BiomeSpawner
+    deleteBlacklist:
+      components:
+      - Portal
+      - MindContainer
+      - CP14WorldBounding
   - type: PlacementReplacement
     key: CP14BiomeSpawner
 
@@ -40,3 +45,15 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14CavesGeneric
+
+- type: entity
+  id: CP14BiomeSpawnerForest
+  parent: CP14BaseBiomeSpawner
+  suffix: Forest
+  components:
+  - type: Sprite
+    layers:
+      - state: forest
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14GrasslandHills

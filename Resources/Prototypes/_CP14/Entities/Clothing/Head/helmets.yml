@@ -112,3 +112,44 @@
     sprite: _CP14/Clothing/Head/captain_cap.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/captain_cap.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadYellowHat
+  name: yellow hat
+  description: For some reason, the mages' favourite yellow hat.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/yellow_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/yellow_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadMercenaryBeret
+  name: mercenary beret
+  description: A large red wool hat decorated with a feather.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Beret/mercenary_beret.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Beret/mercenary_beret.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadCapellina
+  name: capellina
+  description: Protects against large object strikes to the head.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Helmet/capellina.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Helmet/capellina.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.95
+  - type: ClothingSpeedModifier
+    walkModifier: 0.99
+    sprintModifier: 0.99

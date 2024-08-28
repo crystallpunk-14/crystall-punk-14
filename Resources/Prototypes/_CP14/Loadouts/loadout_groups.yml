@@ -90,3 +90,9 @@
   name: cp14-loadout-captain-cloak
   loadouts:
   - CP14ClothingCloakCaptainJacket
+
+- type: loadoutGroup
+  id: CP14GuardCommanderCloak
+  name: cp14-loadout-guard-commander-cloak
+  loadouts:
+  - CP14ClothingCloakArmoredRed

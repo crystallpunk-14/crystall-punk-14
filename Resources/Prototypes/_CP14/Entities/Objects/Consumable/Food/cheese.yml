@@ -1,0 +1,78 @@
+- type: entity
+  id: CP14FoodCheeseWheel
+  parent: FoodInjectableBase
+  name: cheese wheel
+  description: A large wheel of soft, fragrant piece of cheese.
+  components:
+  - type: Item
+    size: Normal
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    layers:
+      - state: cheese_wheel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 21
+  - type: SliceableFood
+    count: 5
+    slice: CP14FoodCheesePart
+
+- type: entity
+  id: CP14FoodCheesePart
+  parent: CP14FoodCheeseWheel
+  name: cheese
+  description: A triangle of soft, fragrant cheese.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    layers:
+      - state: cheese_part
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          cheese_part: ""
+          cheese_part2: ""
+          cheese_part3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6 # 1/5 cheese wheel
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4.2
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodCheeseSlice
+
+- type: entity
+  id: CP14FoodCheeseSlice
+  parent: CP14FoodCheesePart
+  name: cheese slice
+  description: A thin slice of delicious smelling cheese
+  components:
+  - type: Sprite
+    layers:
+      - state: cheese_slice
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          cheese_slice: ""
+          cheese_slice2: ""
+          cheese_slice3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2 # 1/3 cheese part
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.4

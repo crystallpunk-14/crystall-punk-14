@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._CP14.DayCycle;
+using Content.Shared._CP14.DayCycle.Components;
 using Robust.Client.Graphics;
 using Robust.Shared.Utility;
 
@@ -53,7 +53,7 @@ public sealed partial class StencilOverlay
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilMask").Instance());
         worldHandle.DrawTextureRect(_blep!.Texture, worldBounds);
         var curTime = _timing.RealTime;
-        var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(new ResPath(cloudComp.ParallaxPath)), curTime);
+        var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(cloudComp.ParallaxPath), curTime);
 
         // Draw the rain
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDraw").Instance());

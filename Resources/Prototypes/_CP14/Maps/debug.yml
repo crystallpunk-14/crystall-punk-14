@@ -27,3 +27,8 @@
         - type: StationJobs
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_CP14/alchemy_test_layer2.yml

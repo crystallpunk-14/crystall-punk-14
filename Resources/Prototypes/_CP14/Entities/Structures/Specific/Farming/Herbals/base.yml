@@ -10,8 +10,6 @@
   - type: Physics
     canCollide: false
     bodyType: Static
-  - type: CP14DestroyedByTool
-    tool: CP14Digging
   - type: CP14PlantAutoRoot
   - type: Damageable
     damageContainer: Biological

@@ -54,7 +54,7 @@
     East: /Textures/_CP14/Tiles/Stonebricks/double_edge_E.png
     North: /Textures/_CP14/Tiles/Stonebricks/double_edge_N.png
     West: /Textures/_CP14/Tiles/Stonebricks/double_edge_W.png
-  baseTurf: CP14Floorfundament
+  baseTurf: CP14FloorFoundation
   isSubfloor: false
   footstepSounds:
     collection: FootstepAsteroid

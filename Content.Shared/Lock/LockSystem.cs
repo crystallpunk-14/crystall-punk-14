@@ -109,17 +109,14 @@ public sealed class LockSystem : EntitySystem
         //CrystallPunk Lock System Adapt Start
         if (lockComp.LockSlotId != null && _lockCp14.TryGetLockFromSlot(uid, out var lockEnt))
         {
-            args.PushText(Loc.GetString("cp-lock-examine-lock-slot", ("lock", MetaData(lockEnt.Value).EntityName)));
+            args.PushText(Loc.GetString("cp14-lock-examine-lock-slot", ("lock", MetaData(lockEnt.Value).EntityName)));
 
             args.PushMarkup(Loc.GetString(lockComp.Locked
                     ? "lock-comp-on-examined-is-locked"
                     : "lock-comp-on-examined-is-unlocked",
                 ("entityName", Identity.Name(uid, EntityManager))));
             if (lockEnt.Value.Comp.LockpickeddFailMarkup)
-                args.PushMarkup(Loc.GetString("cp-lock-examine-lock-lockpicked", ("lock", MetaData(lockEnt.Value).EntityName)));
-        } else
-        {
-            args.PushText(Loc.GetString("cp-lock-examine-lock-null"));
+                args.PushMarkup(Loc.GetString("cp14-lock-examine-lock-lockpicked", ("lock", MetaData(lockEnt.Value).EntityName)));
         }
         //CrystallPunk Lock System Adapt End
     }
@@ -151,14 +148,16 @@ public sealed class LockSystem : EntitySystem
             return _doAfter.TryStartDoAfter(
                 new DoAfterArgs(EntityManager, user, lockComp.LockTime, new LockDoAfter(), uid, uid)
                 {
-                    BreakOnDamage = true, BreakOnMove = true, RequireCanInteract = true,
-                    NeedHand = true
+                    BreakOnDamage = true,
+                    BreakOnMove = true,
+                    NeedHand = true,
+                    BreakOnDropItem = false,
                 });
         }
 
         _sharedPopupSystem.PopupClient(Loc.GetString("lock-comp-do-lock-success",
                 ("entityName", Identity.Name(uid, EntityManager))), uid, user);
-        _audio.PlayPredicted(lockComp.LockSound, uid, user);
+        _audio.PlayPvs(lockComp.LockSound, uid);
 
         lockComp.Locked = true;
         _appearanceSystem.SetData(uid, LockVisuals.Locked, true);
@@ -189,7 +188,7 @@ public sealed class LockSystem : EntitySystem
                 ("entityName", Identity.Name(uid, EntityManager))), uid, user.Value);
         }
 
-        _audio.PlayPredicted(lockComp.UnlockSound, uid, user);
+        _audio.PlayPvs(lockComp.UnlockSound, uid);
 
         lockComp.Locked = false;
         _appearanceSystem.SetData(uid, LockVisuals.Locked, false);
@@ -227,8 +226,10 @@ public sealed class LockSystem : EntitySystem
             return _doAfter.TryStartDoAfter(
                 new DoAfterArgs(EntityManager, user, lockComp.LockTime, new UnlockDoAfter(), uid, uid)
                 {
-                    BreakOnDamage = true, BreakOnMove = true, RequireCanInteract = true,
-                    NeedHand = true
+                    BreakOnDamage = true,
+                    BreakOnMove = true,
+                    NeedHand = true,
+                    BreakOnDropItem = false,
                 });
         }
 
@@ -309,7 +310,7 @@ public sealed class LockSystem : EntitySystem
         if (!component.Locked || !component.BreakOnEmag)
             return;
 
-        _audio.PlayPredicted(component.UnlockSound, uid, args.UserUid);
+        _audio.PlayPvs(component.UnlockSound, uid);
 
         component.Locked = false;
         _appearanceSystem.SetData(uid, LockVisuals.Locked, false);

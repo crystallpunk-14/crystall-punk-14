@@ -6,3 +6,7 @@
 - type: lobbyBackground
   id: TypicalAlchemistDay
   background: /Textures/_CP14/LobbyScreens/typicalAlchemistDay.webp
+
+- type: lobbyBackground
+  id: Tiefling
+  background: /Textures/_CP14/LobbyScreens/tiefling.webp
