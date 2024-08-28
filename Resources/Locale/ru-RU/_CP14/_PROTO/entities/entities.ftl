@@ -133,7 +133,7 @@ ent-CP14ClothingDressBlack = черное платье
 ent-CP14ClothingPantsMercenaryTrousers = брюки наемника
     .desc = Разноцветные брюки наемника. Не порвите их.
 
-ent-CP14ClothingPantsSouthernMagician = Платье южного фокусника
+ent-CP14ClothingPantsSouthernMagician = платье южного фокусника
     .desc = Традиционная юбка южного мага, довольно свободная.
 
 ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубаха
