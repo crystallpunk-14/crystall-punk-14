@@ -5,7 +5,7 @@
   description: OOO # TODO
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/Herbals/cabbage.rsi
+    sprite: _CP14/Structures/Flora/Farm/cabbage.rsi
     layers:
     - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
@@ -54,7 +54,7 @@
   parent: CP14GatherableBase
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/Herbals/cabbage.rsi
+    sprite: _CP14/Structures/Flora/Farm/cabbage.rsi
     state: death
   - type: Gatherable
     toolWhitelist:

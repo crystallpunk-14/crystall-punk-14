@@ -8,10 +8,10 @@
   "copyright": "Created by TheShuEd (Github) for CrystallPunk14",
   "states": [
     {
-      "name": "red1"
+      "name": "base1"
     },
     {
-      "name": "red2"
+      "name": "base2"
     }
   ]
 }

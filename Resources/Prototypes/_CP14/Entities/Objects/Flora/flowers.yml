@@ -1,0 +1,35 @@
+- type: entity
+  id: CP14FlowersRed
+  parent: FoodProduceBase
+  name: red rose
+  description: Beautiful red roses. Can be used to create red dye.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: BadFood
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Flowers/red_rose.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14LumiMushroom #TODO
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14LumiMushroom #TODO
+          Quantity: 4

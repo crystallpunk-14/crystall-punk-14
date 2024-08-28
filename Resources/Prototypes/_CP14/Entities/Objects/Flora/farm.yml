@@ -8,7 +8,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/wheat.rsi
+    sprite: _CP14/Objects/Flora/Farm/wheat.rsi
     layers:
       - state: base1
         map: ["random"]

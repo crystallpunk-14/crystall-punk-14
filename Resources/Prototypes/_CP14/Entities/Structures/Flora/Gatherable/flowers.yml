@@ -17,16 +17,16 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Structures/Specific/Farming/Herbals/flowers.rsi
+    sprite: _CP14/Structures/Flora/Flowers/red_rose.rsi
     layers:
-      - state: red1
+      - state: world1
         map: ["random"]
   - type: RandomSprite
     available:
     - random:
-        red1: ""
-        red2: ""
-        red3: ""
+        world1: ""
+        world2: ""
+        world3: ""
   - type: Gatherable
     loot:
       All: CP14GatherFlowersRed

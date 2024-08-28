@@ -10,7 +10,7 @@
   - type: Clickable
   - type: Sprite
     noRot: true
-    sprite: _CP14/Structures/Flora/GrassHighBush.rsi
+    sprite: _CP14/Structures/Flora/high_bush.rsi
     drawdepth: Mobs
     offset: 0,0.3
     layers:
@@ -88,7 +88,7 @@
   - type: Sprite
     layers:
     - state: red
-    - sprite: _CP14/Structures/Flora/GrassHighBush.rsi
+    - sprite: _CP14/Structures/Flora/high_bush.rsi
       state: grass_high_bush1
   - type: RandomSpawner
     prototypes:
