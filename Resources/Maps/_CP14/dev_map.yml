@@ -23,7 +23,6 @@ entities:
     - type: MapLight
       ambientLightColor: '#111111FF'
     - type: Map
-      mapPaused: True
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids

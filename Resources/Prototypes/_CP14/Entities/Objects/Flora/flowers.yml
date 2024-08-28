@@ -31,14 +31,14 @@
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: CP14LumiMushroom #TODO
+      - ReagentId: CP14RedRosePulp
         Quantity: 4
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
-        - ReagentId: CP14LumiMushroom #TODO
+        - ReagentId: CP14RedRosePulp
           Quantity: 4
 
 - type: entity
@@ -52,12 +52,12 @@
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: CP14LumiMushroom #TODO
+      - ReagentId: CP14YellowDayflinPulp
         Quantity: 4
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
-        - ReagentId: CP14LumiMushroom #TODO
+        - ReagentId: CP14YellowDayflinPulp
           Quantity: 4

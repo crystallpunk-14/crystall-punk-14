@@ -33,3 +33,9 @@ cp14-reagent-desc-basic-damage-cold = Dangerous substance that causes severe fro
 
 cp14-reagent-name-basic-vomit = Vomit solution
 cp14-reagent-desc-basic-vomit = A substance that causes severe vomiting spasms. May help with food poisoning.
+
+cp14-reagent-name-basic-drunk = Booze solution
+cp14-reagent-desc-basic-drunk = A substance that causes dizziness and slurred speech.
+
+cp14-reagent-name-basic-jitter = Jitter solution
+cp14-reagent-desc-basic-jitter = A substance that causes uncontrollable but safe spasms throughout the body.
