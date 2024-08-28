@@ -35,7 +35,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 8
         reagents:
         - ReagentId: CP14BloodGrassSap
           Quantity: 5
@@ -74,7 +74,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 5
         reagents:
         - ReagentId: CP14AgaricMushroom
           Quantity: 3
@@ -111,7 +111,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 7
@@ -149,7 +149,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: CP14WildSageSap
           Quantity: 8
@@ -220,7 +220,43 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 5
         reagents:
         - ReagentId: CP14LumiMushroom
+          Quantity: 4
+
+- type: entity
+  id: CP14FlowersRed
+  parent: FoodProduceBase
+  name: red rose
+  description: Beautiful red roses. Can be used to create red dye.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: BadFood
+  - type: Item
+    size: Tiny
+  - type: Produce
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Farming/Produce/flowers.rsi
+    layers:
+      - state: red1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        red1: ""
+        red2: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14LumiMushroom #TODO
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: CP14LumiMushroom #TODO
           Quantity: 4

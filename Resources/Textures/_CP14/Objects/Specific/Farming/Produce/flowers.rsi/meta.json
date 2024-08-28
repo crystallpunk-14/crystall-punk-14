@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All rights reserved for the CrystallPunk14 project only",
+  "copyright": "Created by TheShuEd (Github) for CrystallPunk14",
+  "states": [
+    {
+      "name": "red1"
+    },
+    {
+      "name": "red2"
+    }
+  ]
+}

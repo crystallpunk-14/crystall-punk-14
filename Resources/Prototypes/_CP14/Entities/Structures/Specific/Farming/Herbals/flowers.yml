@@ -1,0 +1,32 @@
+
+# Bloodgrass
+
+- type: entityLootTable
+  id: CP14GatherFlowersRed
+  entries:
+  - id: CP14FlowersRed
+    amount: 1
+    maxAmount: 1
+
+- type: entity
+  id: CP14GatherableFlowersRed
+  parent: CP14GatherableWildBase
+  name: red rose
+  description: Beautiful red roses. Can be used to create red dye.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Specific/Farming/Herbals/flowers.rsi
+    layers:
+      - state: red1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        red1: ""
+        red2: ""
+        red3: ""
+  - type: Gatherable
+    loot:
+      All: CP14GatherFlowersRed
