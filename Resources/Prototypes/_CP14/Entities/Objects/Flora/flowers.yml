@@ -1,8 +1,7 @@
 - type: entity
-  id: CP14FlowersRed
+  id: CP14FlowersBase
   parent: FoodProduceBase
-  name: red rose
-  description: Beautiful red roses. Can be used to create red dye.
+  abstract: true
   components:
   - type: Tag
     tags:
@@ -12,7 +11,6 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Flora/Flowers/red_rose.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -21,6 +19,15 @@
     - random:
         base1: ""
         base2: ""
+
+- type: entity
+  id: CP14FlowersRed
+  parent: CP14FlowersBase
+  name: red rose
+  description: Beautiful red roses. Can be used to create red dye.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Flowers/red_rose.rsi
   - type: Extractable
     juiceSolution:
       reagents:
@@ -29,7 +36,28 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14LumiMushroom #TODO
+          Quantity: 4
+
+- type: entity
+  id: CP14FlowersYellow
+  parent: CP14FlowersBase
+  name: yellow dayflin
+  description: A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.
+  components: 
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Flowers/yellow_dayflin.rsi
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14LumiMushroom #TODO
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
         reagents:
         - ReagentId: CP14LumiMushroom #TODO
           Quantity: 4
