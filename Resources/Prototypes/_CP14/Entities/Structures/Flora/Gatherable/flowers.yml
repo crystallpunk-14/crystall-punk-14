@@ -20,6 +20,11 @@
   - type: Gatherable
     loot:
       All: CP14GatherFlowersRed
+    toolWhitelist:
+      tags:
+        - CP14HerbalGathering
+      components:
+        - Hands
 
 - type: entityLootTable
   id: CP14GatherFlowersRed
@@ -51,6 +56,11 @@
   - type: Gatherable
     loot:
       All: CP14GatherFlowersYellow
+    toolWhitelist:
+      tags:
+        - CP14HerbalGathering
+      components:
+        - Hands
 
 - type: entityLootTable
   id: CP14GatherFlowersYellow
