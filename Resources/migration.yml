@@ -37,6 +37,11 @@ CP14WallStoneSilverOre: CP14WallStoneGoldOre
 CP14PloughedGround: CP14SeedbedWooden
 CP14SeedbedDefault: CP14SeedbedWooden
 
+# 2024-08-24
+CP14DungeonEntrance: CP14DungeonEntranceAutoLink
+CP14DungeonExit: CP14DungeonExitAutoLink
+CP14Nail110: CP14Nail10
+
 # <---> CrystallPunk migration zone end
 
 
@@ -445,3 +450,9 @@ FoodMeatSnakeKebab: FoodKebabSkewer
 FoodMeatHawaiianKebab: FoodKebabSkewer
 FoodMeatKebab: FoodKebabSkewer
 FoodMeatFiestaKebab: FoodKebabSkewer
+
+#2024-08-14
+ClothingBeltSuspenders: ClothingBeltSuspendersRed
+
+# 2024-08-19
+ClothingNeckShockCollar: ClothingBackpackElectropack

@@ -10,7 +10,7 @@
     flavors:
       - cabbage
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/cabbage.rsi
+    sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
     layers:
       - state: base1
         map: [ "random" ]
@@ -75,7 +75,7 @@
     flavors:
       - pumpkin
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Farming/Produce/pumpkin.rsi
+    sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
     layers:
       - state: base1
         map: [ "random" ]

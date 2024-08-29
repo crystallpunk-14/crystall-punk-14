@@ -24,3 +24,9 @@ cp14-reagent-desc-grounded-quartz = Порошок, получаемый из р
 
 cp14-reagent-name-lumi-shroom = Сок люмигриба
 cp14-reagent-desc-lumi-shroom = Слабо мерцающая жижа, добытая из люмигриба. Часто используется алхимиками, как средство концентрации растворов.
+
+cp14-reagent-name-red-rose-pulp = Мякоть красных роз
+cp14-reagent-desc-red-rose-pulp = Измельченные лепестки красных роз
+
+cp14-reagent-name-yellow-dayflin-pulp = Мякоть желтых днефлаев
+cp14-reagent-desc-yellow-dayflin-pulp = Измельченные цветы солнечных днефлаев

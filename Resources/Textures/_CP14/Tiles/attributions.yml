@@ -12,7 +12,7 @@
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
 - files: ["stonebricks.png", "stonebricks_small_carved_1.png", "stonebricks_small_carved_2.png", "stonebricks_square_carved.png"]
-  license: "All rights reserved for the CrystallPunk14 project only"
+  license: "CLA"
   copyright: "Created by Jaraten for CrystallPunk14"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
@@ -27,6 +27,6 @@
   source: "https://github.com/tgstation/tgstation/"
 
 - files: ["woodplanks_big_burned.png", "woodplanks_burned.png", "woodplanks_cruciform_burned.png", "woodplanks_stairways_burned.png"]
-  license: "All rights reserved for the CrystallPunk14 project only"
+  license: "CLA"
   copyright: "Created by Jaraten for CrystallPunk14"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"

@@ -1,8 +1,6 @@
 /*
- * All right reserved to CrystallPunk.
- *
- * BUT this file is sublicensed under MIT License
- *
+ * This file is sublicensed under MIT License
+ * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
 using System.Linq;
@@ -10,6 +8,7 @@ using Content.Server._CP14.BiomeSpawner.Components;
 using Content.Server._CP14.RoundSeed;
 using Content.Server.Decals;
 using Content.Server.Parallax;
+using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -26,6 +25,7 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
     [Dependency] private readonly DecalSystem _decals = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly CP14RoundSeedSystem _roundSeed = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     public override void Initialize()
     {
@@ -79,11 +79,12 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
         }
 
         // Remove entities
-        var oldEntities = _lookup.GetEntitiesInRange(spawnerTransform.Coordinates, 0.48f);
+        var oldEntities = _lookup.GetEntitiesInRange(spawnerTransform.Coordinates, 0.48f, LookupFlags.Uncontained);
         // TODO: Replace this shit with GetEntitiesInBox2
         foreach (var entToRemove in oldEntities.Concat(new[] { ent.Owner })) // Do not remove self
         {
-            QueueDel(entToRemove);
+            if (!_whitelist.IsValid(ent.Comp.DeleteBlacklist, entToRemove))
+                QueueDel(entToRemove);
         }
 
         if (_biome.TryGetEntity(vec, biome.Layers, tile.Value, seed, map, out var entityProto))

@@ -98,6 +98,42 @@
         - CP14GrassBushes7
         - CP14GrassBushes8
         - CP14GrassBushes9
+    - !type:BiomeEntityLayer # flowers
+      threshold: 0.7
+      noise:
+        seed: 45
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.035
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      entities:
+        - CP14GatherableFlowersRed
+    - !type:BiomeEntityLayer # flowers
+      threshold: 0.7
+      noise:
+        seed: 34
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.035
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      entities:
+        - CP14GatherableFlowersYellow
     - !type:BiomeEntityLayer # Tall grass!
       threshold: 0.3
       noise:

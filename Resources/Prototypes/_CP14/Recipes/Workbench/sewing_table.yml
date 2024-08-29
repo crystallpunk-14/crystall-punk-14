@@ -1,0 +1,221 @@
+- type: CP14Recipe
+  id: CP14ClothingShirtCottonBlue
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlue: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingShirtCottonBlue
+
+- type: CP14Recipe
+  id: CP14ClothingShirtCottonBlack
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlack: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingShirtCottonBlack
+
+- type: CP14Recipe
+  id: CP14ClothingShirtCottonPurple
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyePurple: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingShirtCottonPurple
+
+- type: CP14Recipe
+  id: CP14ClothingShirtCottonRed
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeRed: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingShirtCottonRed
+
+- type: CP14Recipe
+  id: CP14ClothingShirtCottonWhite
+  craftTime: 2
+  entities:
+    CP14String: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingShirtCottonWhite
+
+- type: CP14Recipe
+  id: CP14ClothingShirtCottonYellow
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeYellow: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingShirtCottonYellow
+
+- type: CP14Recipe
+  id: CP14ClothingShirtMercenary
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlue: 1
+    CP14DyeRed: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingShirtMercenary
+
+- type: CP14Recipe
+  id: CP14ClothingShirtYellowWizard
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeYellow: 1
+    CP14DyeBlue: 1
+    CP14DyeRed: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingShirtYellowWizard
+
+- type: CP14Recipe
+  id: CP14ClothingCloakSimpleDarkBlue
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlue: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingCloakSimpleDarkBlue
+
+- type: CP14Recipe
+  id: CP14ClothingCloakSimpleWhite
+  craftTime: 2
+  entities:
+    CP14String: 1
+  stacks:
+    CP14Cloth: 3
+  result: CP14ClothingCloakSimpleWhite
+
+- type: CP14Recipe
+  id: CP14ClothingPantsTrouserWhite
+  craftTime: 2
+  entities:
+    CP14String: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingPantsTrouserWhite
+
+- type: CP14Recipe
+  id: CP14ClothingPantsTrouserDarkBlue
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlue: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingPantsTrouserDarkBlue
+
+- type: CP14Recipe
+  id: CP14ClothingDressBlack
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlack: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingDressBlack
+
+- type: CP14Recipe
+  id: CP14ClothingPantsSouthernMagician
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeYellow: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingPantsSouthernMagician
+
+- type: CP14Recipe
+  id: CP14ClothingPantsMercenaryTrousers
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlue: 1
+    CP14DyeRed: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingPantsMercenaryTrousers
+
+- type: CP14Recipe
+  id: CP14ClothingHeadRedBeret
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeRed: 1
+  stacks:
+    CP14Cloth: 1
+  result: CP14ClothingHeadRedBeret
+
+- type: CP14Recipe
+  id: CP14ClothingHeadPurpleBeret
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyePurple: 1
+  stacks:
+    CP14Cloth: 1
+  result: CP14ClothingHeadPurpleBeret
+
+- type: CP14Recipe
+  id: CP14ClothingHeadYellowBeret
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeYellow: 1
+  stacks:
+    CP14Cloth: 1
+  result: CP14ClothingHeadYellowBeret
+
+- type: CP14Recipe
+  id: CP14ClothingHeadBlueBeret
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlue: 1
+  stacks:
+    CP14Cloth: 1
+  result: CP14ClothingHeadBlueBeret
+
+- type: CP14Recipe
+  id: CP14ClothingHeadBlackBeret
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeBlack: 1
+  stacks:
+    CP14Cloth: 1
+  result: CP14ClothingHeadBlackBeret
+
+- type: CP14Recipe
+  id: CP14ClothingHeadYellowHat
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeYellow: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingHeadYellowHat
+
+- type: CP14Recipe
+  id: CP14ClothingHeadMercenaryBeret
+  craftTime: 2
+  entities:
+    CP14String: 1
+    CP14DyeRed: 1
+    CP14DyeBlue: 1
+  stacks:
+    CP14Cloth: 2
+  result: CP14ClothingHeadMercenaryBeret

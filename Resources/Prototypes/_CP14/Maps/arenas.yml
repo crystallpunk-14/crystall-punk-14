@@ -24,9 +24,11 @@
     AlchemyTest:
       stationProto: StandardStationArena
       components:
-        - type: CP14StationAdditionalMap
-          mapPaths:
-          - /Maps/_CP14/alchemy_test_layer2.yml
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            1:
+              path: /Maps/_CP14/alchemy_test_layer2.yml
         - type: StationNameSetup
           mapNameTemplate: "Alchemy test"
         - type: StationJobs
@@ -79,3 +81,10 @@
             CP14HouseKeeper: [1, 1]
         - type: CP14StationExpeditionTarget
           shuttlePath: /Maps/_CP14/Shuttles/test-ship.yml
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_CP14/alchemy_test_layer2.yml
+            -2:
+              path: /Maps/_CP14/battle_royale.yml

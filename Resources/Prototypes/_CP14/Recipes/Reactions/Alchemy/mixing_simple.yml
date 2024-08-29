@@ -9,113 +9,100 @@
 
 - type: reaction
   id: CP14DamagePoisonSplitting
+  minTemp: 450
   priority: 3
   reactants:
     CP14BasicEffectDamagePoison:
       amount: 0.5
     CP14BloodGrassSap:
-      amount: 0.25
-    CP14BasicEffectEmpty: 
-      amount: 0.25
+      amount: 0.5
   products:
-    CP14BasicEffectDamageBrute: 0.25
+    CP14BasicEffectDamageBrute: 0.5
   cp14RandomProducts:
-  - CP14BasicEffectRainbow: 0.25
-  - CP14BasicEffectDamageBrute: 0.25
+  - CP14BasicEffectRainbow: 0.5
+  - CP14BasicEffectDamageCold: 0.5
+  - CP14BasicEffectDrunk: 0.5
 
 - type: reaction
   id: CP14HealBruteSplitting
+  minTemp: 450
   priority: 3
   reactants:
     CP14BasicEffectHealBrute:
       amount: 0.5
     CP14AgaricMushroom:
-      amount: 0.25
-    CP14BasicEffectEmpty: 
-      amount: 0.25
+      amount: 0.5
   products:
-    CP14BasicEffectSatiateHunger: 0.25
-    CP14BasicEffectSatiateThirst: 0.25
+    CP14BasicEffectSatiateHunger: 0.5
+    CP14BasicEffectSatiateThirst: 0.5
 
 - type: reaction
   id: CP14SatiateHungerSplitting
+  minTemp: 450
   priority: 3
   reactants:
     CP14BasicEffectSatiateHunger:
       amount: 0.5
     CP14WildSageSap:
-      amount: 0.25
-    CP14BasicEffectEmpty: 
-      amount: 0.25
+      amount: 0.5
   products:
-    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectHealBrute: 0.5
   cp14RandomProducts:
-  - CP14BasicEffectEmoteCough: 0.25
-  - CP14BasicEffectHealBrute: 0.25
+  - CP14BasicEffectEmoteCough: 0.5
+  - CP14BasicEffectDrunk: 0.5
+  - CP14BasicEffectJitter: 0.5
 
 - type: reaction
   id: CP14SatiateThirstSplitting
+  minTemp: 450
   priority: 3
   reactants:
     CP14BasicEffectSatiateThirst:
       amount: 0.5
     CP14WildSageSap:
-      amount: 0.25
-    CP14BasicEffectEmpty: 
-      amount: 0.25
+      amount: 0.5
   products:
     CP14BasicEffectHealBrute: 0.25
-  cp14RandomProducts:
-  - CP14BasicEffectEmoteCough: 0.25
-  - CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectEmoteCough: 0.25
 
 - type: reaction
   id: CP14EmoteCoughSplitting
+  minTemp: 450
   priority: 3
   reactants:
     CP14BasicEffectEmoteCough:
       amount: 0.5
-    CP14GroundQuartz:
-      amount: 0.25
-    CP14BasicEffectEmpty: 
-      amount: 0.25
+    CP14BloodElf:
+      amount: 0.5
   products:
     CP14BasicEffectSatiateThirst: 0.25
-  cp14RandomProducts:
-  - CP14BasicEffectSatiateThirst: 0.25
-  - CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectHealBrute: 0.25
 
 - type: reaction
   id: CP14RainbowSplitting
+  minTemp: 450
   priority: 3
   reactants:
     CP14BasicEffectRainbow:
       amount: 0.5
     CP14BloodTiefling:
-      amount: 0.25
-    CP14BasicEffectEmpty: 
-      amount: 0.25
+      amount: 0.5
   products:
     CP14BasicEffectHealCold: 0.25
-  cp14RandomProducts:
-  - CP14BasicEffectSatiateThirst: 0.25
-  - CP14BasicEffectHealCold: 0.25
+    CP14BasicEffectSatiateThirst: 0.25
 
 - type: reaction
   id: CP14VomitSplitting
+  minTemp: 450
   priority: 3
   reactants:
     CP14BasicEffectVomit:
       amount: 0.5
     CP14BloodTiefling:
-      amount: 0.25
-    CP14BasicEffectEmpty:
-      amount: 0.25
+      amount: 0.5
   products:
     CP14BasicEffectDamagePoison: 0.25
-  cp14RandomProducts:
-  - CP14BasicEffectEmoteCough: 0.25
-  - CP14BasicEffectDamagePoison: 0.25
+    CP14BasicEffectEmoteCough: 0.25
 
 - type: reaction
   id: CP14EmptySplitting

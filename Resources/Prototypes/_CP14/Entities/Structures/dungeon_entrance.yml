@@ -1,6 +1,7 @@
 - type: entity
   id: CP14DungeonEntrance
   name: dungeon entrance
+  noSpawn: true
   description: The dark depths of the underworld are calling you.
   placement:
     mode: SnapgridCenter
@@ -31,12 +32,12 @@
   - type: Portal
     canTeleportToOtherMaps: true
     randomTeleport: false
-  - type: CP14AutoLink
 
 - type: entity
   parent: CP14DungeonEntrance
   id: CP14DungeonExit
   name: dungeon exit
+  noSpawn: true
   description: A way out of the dark underworld into the overworld.
   components:
   - type: Sprite
@@ -50,4 +51,19 @@
     radius: 3
     energy: 1
     netsync: false
-  - type: CP14AutoLink
+
+- type: entity
+  parent: CP14DungeonEntrance
+  id: CP14DungeonEntranceAutoLink
+  components:
+  - type: CP14ZLevelAutoPortal
+    zLevelOffset: -1 # Go into deep
+    otherSideProto: CP14DungeonExit
+
+- type: entity
+  parent: CP14DungeonExit
+  id: CP14DungeonExitAutoLink
+  components:
+  - type: CP14ZLevelAutoPortal
+    zLevelOffset: 1 # Go onto surface
+    otherSideProto: CP14DungeonEntrance
