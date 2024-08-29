@@ -62,7 +62,7 @@
     - CP14WoodLog
     - CP14WoodenPlanks10
     - CP14Nail1
-    - CP14Nail110
+    - CP14Nail10
     - CP14Cauldron
     - CP14Pestle
     - CP14AlchemyNormalizer
@@ -80,3 +80,7 @@
     - CP14AuraNodeBase
     - CP14AuraNodeBase
     - CP14AuraNodeBase
+    - CP14String
+    - CP14String
+    - CP14String
+    - CP14Cloth10

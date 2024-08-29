@@ -1,12 +1,6 @@
 # Idea:
 # bloodgrass is a special reagent that can yield different base reagents, depending on the type of blood it is mixed with.
 
-# Rules:
-# 1) all values must be multiples of 0.25
-# 2) 25% products must be occupied by the empty solution
-# 3) bloodgrass should mix with ALL blood variants
-# 4) all reactions should take place at a temperature of 500, and reduce the temperature by 250.
-
 - type: reaction
   id: CP14BloodGrassBrewingBlood
   minTemp: 500
@@ -16,13 +10,12 @@
       amount: 0.5
     CP14BloodGrassSap:
       amount: 0.5
+    CP14GroundQuartz:
+      amount: 0.5
   products:
-    CP14BasicEffectEmpty: 0.25
-    CP14BasicEffectSatiateHunger: 0.25
+    CP14BasicEffectEmpty: 0.75
+    CP14BasicEffectSatiateHunger: 0.5
     CP14BasicEffectHealBrute: 0.25
-  cp14RandomProducts:
-  - CP14BasicEffectSatiateHunger: 0.25
-  - CP14BasicEffectHealBrute: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
@@ -36,13 +29,12 @@
       amount: 0.5
     CP14BloodGrassSap:
       amount: 0.5
+    CP14GroundQuartz:
+      amount: 0.5
   products:
-    CP14BasicEffectEmpty: 0.25
-    CP14BasicEffectSatiateHunger: 0.25
+    CP14BasicEffectEmpty: 0.75
+    CP14BasicEffectSatiateHunger: 0.5
     CP14BasicEffectHealCold: 0.25
-  cp14RandomProducts:
-  - CP14BasicEffectSatiateHunger: 0.25
-  - CP14BasicEffectHealCold: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
@@ -56,13 +48,12 @@
       amount: 0.5
     CP14BloodGrassSap:
       amount: 0.5
+    CP14GroundQuartz:
+      amount: 0.5
   products:
-    CP14BasicEffectEmpty: 0.25
+    CP14BasicEffectEmpty: 0.75
     CP14BasicEffectSatiateHunger: 0.25
     CP14BasicEffectHealPoison: 0.25
-  cp14RandomProducts:
-  - CP14BasicEffectSatiateHunger: 0.25
-  - CP14BasicEffectHealPoison: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250

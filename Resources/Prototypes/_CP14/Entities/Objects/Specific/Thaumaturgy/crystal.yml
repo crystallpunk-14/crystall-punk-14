@@ -2,7 +2,7 @@
   id: CP14EnergyCrystalBase
   parent: BaseItem
   abstract: true
-  description: Shards of one of the Khyber dragon, used to bind and control elemental energy.
+  description: A crystal shard capable of storing magical energy.
   components:
   - type: CP14MagicEnergyCrystal
   - type: Item
@@ -15,7 +15,7 @@
 - type: entity
   id: CP14EnergyCrystalSmall
   parent: CP14EnergyCrystalBase
-  name: small Khyber shard
+  name: small energyshard
   suffix: Full
   components:
   - type: Sprite
@@ -46,7 +46,7 @@
 - type: entity
   id: CP14EnergyCrystalMedium
   parent: CP14EnergyCrystalBase
-  name: Khyber shard
+  name: energyshard
   suffix: Full
   components:
   - type: PointLight

@@ -9,6 +9,8 @@
     snap:
     - Wall
   components:
+  - type: Transform
+    noRot: true
   - type: Sprite
     drawdepth: Mobs
   - type: SpriteFade
@@ -167,6 +169,7 @@
   - type: Construction
     graph: CP14WallWood
     node: WallWooden
+  - type: CP14WallpaperHolder
 
 - type: entity
   id: CP14WallCardboard
@@ -206,3 +209,22 @@
     sprite: _CP14/Structures/Walls/cyan_wall.rsi
   - type: IconSmooth
     base: wall
+  - type: CP14WallpaperHolder
+
+- type: entity
+  id: CP14WallSkulls
+  name: skulls wall
+  parent: CP14BaseWall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wall_of_skulls.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wall_of_skulls.rsi
+  - type: IconSmooth
+    base: skulls
+  - type: RandomIconSmooth
+    randomStates:
+    - skulls
+    - skullsA
+    - skullsB
+  - type: Appearance

@@ -1,0 +1,54 @@
+- type: entity
+  id: CP14BaseWallpaper
+  abstract: true
+  parent: BaseItem
+  description: Thin paper wallpaper. You can glue them on the walls from different sides, or peel them off with any sharp object.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Structures/Wallpaper/icons.rsi
+
+- type: entity
+  id: CP14WallpaperPink1
+  parent: CP14BaseWallpaper
+  name: pink wallpaper
+  suffix: 1
+  components:
+  - type: Sprite
+    state: pink
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_pink.rsi
+  - type: Stack
+    stackType: CP14WallpaperPink
+    count: 1
+
+- type: entity
+  id: CP14WallpaperPink30
+  parent: CP14WallpaperPink1
+  suffix: 30
+  components:
+  - type: Stack
+    count: 30
+
+- type: entity
+  id: CP14WallpaperGreen1
+  parent: CP14BaseWallpaper
+  name: green wallpaper
+  suffix: 1
+  components:
+  - type: Sprite
+    state: green
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_green.rsi
+  - type: Stack
+    stackType: CP14WallpaperGreen
+    count: 1
+
+- type: entity
+  id: CP14WallpaperGreen30
+  parent: CP14WallpaperGreen1
+  suffix: 30
+  components:
+  - type: Stack
+    count: 30

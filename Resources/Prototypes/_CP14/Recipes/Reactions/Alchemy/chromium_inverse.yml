@@ -12,10 +12,8 @@
   reactants:
     CP14ChromiumSlime:
       amount: 1
-    CP14BasicEffectEmpty:
-      amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 1
   effects:
   - !type:CP14InverseEffect
     inversion:

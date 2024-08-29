@@ -24,3 +24,9 @@ cp14-reagent-desc-grounded-quartz = A powder obtained from grinding quartz fragm
 
 cp14-reagent-name-lumi-shroom = Lumishroom sap
 cp14-reagent-desc-lumi-shroom = A faintly shimmering slurry extracted from lumigrib. Often used by alchemists as a means of concentrating solutions.
+
+cp14-reagent-name-yellow-red-rose-pulp = Red rose pulp
+cp14-reagent-desc-yellow-red-rose-pulp = Crushed red rose petals
+
+cp14-reagent-name-yellow-dayflin-pulp = Yellow dayfline pulp
+cp14-reagent-desc-yellow-dayflin-pulp = Crushed flowers of sunny dayflines
