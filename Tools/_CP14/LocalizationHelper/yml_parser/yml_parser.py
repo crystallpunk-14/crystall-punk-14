@@ -1,3 +1,4 @@
+import yaml
 from base_parser import BaseParser
 import re
 
@@ -34,20 +35,17 @@ class YMLParser(BaseParser):
         prototypes_lst = re.split(r"\n(?=- type:)", content_str)
 
         prototypes = []
-        for prototype in prototypes_lst:
+        for proto in prototypes_lst:
             try:
-                prototype_data = {}
-                for line in prototype.splitlines():
-                    if "components" in line:
+                prototype_str = ""
+                for line in proto.splitlines():
+                    if "components:" in line:
                         break
-                    if "- type: " in line or "abstract: " in line:
-                        continue
-
-                    if ":" in line:
-                        key, value = line.split(":", 1)
-                        prototype_data[key.strip()] = value.strip()
-
-                prototypes.append(prototype_data)
+                    prototype_str += f"{line}\n"
+                prototype = yaml.safe_load(prototype_str)
+                if prototype is None:
+                    continue
+                prototypes.append(prototype[0])
             except Exception as e:
                 with open(self.errors_path, "a") as error_file:
                     error_file.write(
