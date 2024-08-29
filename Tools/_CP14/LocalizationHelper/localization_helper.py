@@ -102,14 +102,21 @@ class LocalizationHelper:
         entities_ftl = ""
         for prototype, prototype_attrs in self.prototypes.items():
             try:
+                # This fragment is needed to restore some attributes after connecting the dictionary of
+                # prototypes parsed from ftl with the dictionary of prototypes parsed from yml.
                 if prototype in self.prototypes_dict_yml:
                     parent = self.prototypes_dict_yml[prototype]["parent"]
 
                     if parent and not isinstance(parent, list) and parent in self.prototypes_dict_yml:
-                        prototype_attrs.setdefault("name", f"{{ ent-{parent} }}")
-                        prototype_attrs.setdefault("desc", f"{{ ent-{parent}.desc }}")
+                        if not prototype_attrs.get("name"):
+                            prototype_attrs["name"] = f"{{ ent-{parent} }}"
 
-                    prototype_attrs.setdefault("suffix", self.prototypes_dict_yml[prototype].get("suffix"))
+                        if not prototype_attrs.get("desc"):
+                            prototype_attrs["desc"] = f"{{ ent-{parent}.desc }}"
+
+                    if not prototype_attrs.get("suffix"):
+                        if self.prototypes_dict_yml[prototype].get("suffix"):
+                            prototype_attrs["suffix"] = self.prototypes_dict_yml[prototype]["suffix"]
 
                 if any(prototype_attrs[attr] is not None for attr in ("name", "desc", "suffix")):
                     proto_ftl = ftl_writer.create_ftl(prototype, self.prototypes[prototype])
