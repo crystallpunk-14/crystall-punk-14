@@ -33,8 +33,8 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
     {
         Init(dayCycle);
 
-        if (dayCycle.Comp.StartWithRandomEntry)
-            SetTimeEntry(dayCycle, _random.Next(dayCycle.Comp.TimeEntries.Count - 1));
+        if (dayCycle.Comp.StartWithRandomEntry && dayCycle.Comp.TimeEntries.Count > 1)
+            SetTimeEntry(dayCycle, _random.Next(dayCycle.Comp.TimeEntries.Count));
     }
 
     public override void Update(float frameTime)
