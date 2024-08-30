@@ -29,22 +29,25 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
         var query = EntityQueryEnumerator<CP14WeatherControllerComponent>();
         while (query.MoveNext(out var uid, out var weather))
         {
-            if (_timing.CurTime <= weather.NextEventTime)
+            if (_timing.CurTime <= weather.NextWeatherTime)
                 continue;
 
-            weather.NextEventTime = _timing.CurTime + TimeSpan.FromSeconds(weather.Delays.Next(_random));
+            var weatherData = _random.Pick(weather.Entries);
 
-            var weatherProto = _random.Pick(weather.Protos);
-            if (!_proto.TryIndex(weatherProto, out var weatherIndexed))
+            if (!_proto.TryIndex(weatherData.Visuals, out var weatherVisualsIndexed))
                 continue;
 
-            _weather.SetWeather(Transform(uid).MapID, weatherIndexed, _timing.CurTime + TimeSpan.FromSeconds(45));
+            var weatherDuration = TimeSpan.FromSeconds(weatherData.Duration.Next(_random));
+            _weather.SetWeather(Transform(uid).MapID, weatherVisualsIndexed, _timing.CurTime + weatherDuration);
+
+            var clearDuration = TimeSpan.FromSeconds(weather.ClearDuration.Next(_random));
+            weather.NextWeatherTime = _timing.CurTime + weatherDuration + clearDuration;
         }
     }
 
     private void OnRoundStart(Entity<CP14WeatherControllerComponent> ent, ref RoundStartingEvent args)
     {
-        ent.Comp.NextEventTime = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.Delays.Next(_random));
+        ent.Comp.NextWeatherTime = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.ClearDuration.Next(_random));
     }
 }
 

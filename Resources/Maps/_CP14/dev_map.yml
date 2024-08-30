@@ -30,12 +30,9 @@ entities:
     - type: BecomesStation
       id: Dev
     - type: CP14WeatherController
-      delays:
-        min: 30
-        max: 60
-      protos:
-      - Rain
-      - Storm
+      entries:
+      - visuals: Rain
+      - visuals: Storm
     - type: CP14DayCycle
       timeEntries:
       - duration: 80

@@ -1,6 +1,5 @@
+using Content.Shared._CP14.WeatherControl;
 using Content.Shared.Destructible.Thresholds;
-using Content.Shared.Weather;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.WeatherControl;
 
@@ -10,15 +9,15 @@ namespace Content.Server._CP14.WeatherControl;
 [RegisterComponent, AutoGenerateComponentPause, Access(typeof(CP14WeatherControllerSystem))]
 public sealed partial class CP14WeatherControllerComponent : Component
 {
+    /// <summary>
+    /// random time with no weather.
+    /// </summary>
     [DataField(required: true)]
-    public MinMax Delays = default!;
+    public MinMax ClearDuration = new(60,600);
+
+    [DataField]
+    public HashSet<CP14WeatherData> Entries = new();
 
     [DataField, AutoPausedField]
-    public TimeSpan NextEventTime = TimeSpan.Zero;
-
-    [DataField]
-    public HashSet<ProtoId<WeatherPrototype>> Protos = new();
-
-    [DataField]
-    public EntityUid? CurrentEvent;
+    public TimeSpan NextWeatherTime = TimeSpan.Zero;
 }
