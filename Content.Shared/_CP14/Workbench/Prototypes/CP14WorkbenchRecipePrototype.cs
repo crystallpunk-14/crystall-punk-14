@@ -1,3 +1,8 @@
+/*
+ * This file is sublicensed under MIT License
+ * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
+ */
+
 using Content.Shared.Stacks;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -24,4 +29,10 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
 
     [DataField(required: true)]
     public EntProtoId Result;
+
+    [DataField]
+    public bool TryMergeSolutions = false;
+
+    [DataField]
+    public string Solution = "food";
 }

@@ -3,6 +3,7 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
+using Content.Server.Spawners.EntitySystems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared.CCVar;
@@ -41,6 +42,8 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, StationPostInitEvent>(OnPostInitSetupExpeditionShip);
 
         SubscribeLocalEvent<CP14StationExpeditionTargetComponent, FTLCompletedEvent>(OnExpeditionShipLanded);
+
+        SubscribeLocalEvent<PlayerSpawningEvent>(HandlePlayerSpawning, before: new []{ typeof(SpawnPointSystem) });
 
         ArrivalTime = _cfgManager.GetCVar(CCVars.CP14ExpeditionArrivalTime);
         Enabled = _cfgManager.GetCVar(CCVars.CP14ExpeditionShip);

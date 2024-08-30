@@ -1,0 +1,70 @@
+- type: entity
+  id: CP14GatherableFlowersRed
+  parent: CP14GatherableWildBase
+  name: red rose
+  description: Beautiful red roses. Can be used to create red dye.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Flora/Flowers/red_rose.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+  - type: Gatherable
+    loot:
+      All: CP14GatherFlowersRed
+    toolWhitelist:
+      tags:
+        - CP14HerbalGathering
+      components:
+        - Hands
+
+- type: entityLootTable
+  id: CP14GatherFlowersRed
+  entries:
+  - id: CP14FlowersRed
+    amount: 1
+    maxAmount: 2
+
+
+- type: entity
+  id: CP14GatherableFlowersYellow
+  parent: CP14GatherableWildBase
+  name: yellow dayflin
+  description: A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Flora/Flowers/yellow_dayflin.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+  - type: Gatherable
+    loot:
+      All: CP14GatherFlowersYellow
+    toolWhitelist:
+      tags:
+        - CP14HerbalGathering
+      components:
+        - Hands
+
+- type: entityLootTable
+  id: CP14GatherFlowersYellow
+  entries:
+  - id: CP14FlowersYellow
+    amount: 1
+    maxAmount: 2

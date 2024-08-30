@@ -185,3 +185,30 @@
       effects:
       - !type:ChemVomit
         probability: 0.25
+
+- type: reagent
+  id: CP14BasicEffectDrunk
+  name: cp14-reagent-name-basic-drunk
+  desc: cp14-reagent-desc-basic-drunk
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#ae64c4"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      effects:
+      - !type:Drunk
+        boozePower: 15
+
+- type: reagent
+  id: CP14BasicEffectJitter
+  name: cp14-reagent-name-basic-jitter
+  desc: cp14-reagent-desc-basic-jitter
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#347d70"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      effects:
+      - !type:Jitter

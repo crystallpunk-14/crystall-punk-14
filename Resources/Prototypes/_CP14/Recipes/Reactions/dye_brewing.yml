@@ -1,0 +1,25 @@
+- type: reaction
+  id: CP14RedRoseBrewing
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  minTemp: 500
+  reactants:
+    CP14RedRosePulp:
+      amount: 10
+  effects:
+  - !type:CreateEntityReactionEffect
+      entity: CP14DyeRed
+
+- type: reaction
+  id: CP14YellowDayflinBrewing
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  minTemp: 500
+  reactants:
+    CP14YellowDayflinPulp:
+      amount: 10
+  effects:
+  - !type:CreateEntityReactionEffect
+      entity: CP14DyeYellow

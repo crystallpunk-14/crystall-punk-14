@@ -27,6 +27,13 @@
   maxCount: 10
 
 - type: stack
+  id: CP14Cloth
+  name: cp14-stack-cloth
+  spawn: CP14Cloth1
+  icon: { sprite: _CP14/Objects/Materials/cloth.rsi, state: cloth_3 }
+  maxCount: 10
+
+- type: stack
   id: CP14CopperBar
   name: cp14-stack-copper-bars
   spawn: CP14CopperBar1

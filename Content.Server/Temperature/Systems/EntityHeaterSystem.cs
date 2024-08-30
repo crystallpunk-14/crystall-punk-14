@@ -5,8 +5,10 @@ using Content.Server.Temperature.Components;
 using Content.Shared.Examine;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
+using Content.Shared.Power;
 using Content.Shared.Temperature;
 using Content.Shared.Verbs;
+using Robust.Server.Audio;
 
 namespace Content.Server.Temperature.Systems;
 
@@ -18,6 +20,7 @@ public sealed class EntityHeaterSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     private readonly int SettingCount = Enum.GetValues(typeof(EntityHeaterSetting)).Length;
 
@@ -94,6 +97,7 @@ public sealed class EntityHeaterSystem : EntitySystem
         comp.Setting = setting;
         power.Load = SettingPower(setting, comp.Power);
         _appearance.SetData(uid, EntityHeaterVisuals.Setting, setting);
+        _audio.PlayPvs(comp.SettingSound, uid);
     }
 
     private float SettingPower(EntityHeaterSetting setting, float max)

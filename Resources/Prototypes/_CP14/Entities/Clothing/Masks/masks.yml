@@ -23,3 +23,22 @@
   - type: Clothing
     sprite: _CP14/Clothing/Masks/sinner.rsi
   - type: IdentityBlocker
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskSteelMask
+  name: steel mask
+  description: A steel mask that protects the face from the external effects of iron.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/steel_mask.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/steel_mask.rsi
+  - type: IdentityBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95

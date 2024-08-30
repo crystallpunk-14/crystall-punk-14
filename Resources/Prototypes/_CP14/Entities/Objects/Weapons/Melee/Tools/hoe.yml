@@ -22,6 +22,3 @@
   - type: Item
     size: Normal
     sprite: _CP14/Objects/Weapons/Melee/Hoe/hoe.rsi
-  - type: CP14SpawnOnTileTool
-    spawns:
-      CP14FloorDirt: CP14PloughedGround

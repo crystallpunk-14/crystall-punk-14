@@ -33,6 +33,15 @@ CP14Shovel: CP14BaseShovel
 CP14Hoe: CP14BaseHoe
 CP14WallStoneSilverOre: CP14WallStoneGoldOre
 
+# 2024-08-22
+CP14PloughedGround: CP14SeedbedWooden
+CP14SeedbedDefault: CP14SeedbedWooden
+
+# 2024-08-24
+CP14DungeonEntrance: CP14DungeonEntranceAutoLink
+CP14DungeonExit: CP14DungeonExitAutoLink
+CP14Nail110: CP14Nail10
+
 # <---> CrystallPunk migration zone end
 
 
@@ -250,6 +259,10 @@ VehicleJanicartDestroyed: null
 YellowOxygenTank: OxygenTank
 YellowOxygenTankFilled: OxygenTankFilled
 
+# 2024-02-12
+FoodDonutBlumpkin: FoodDonutBluePumpkin
+FoodDonutJellyBlumpkin: FoodDonutJellyBluePumpkin
+
 # 2024-02-19
 Drone: null
 SpawnMobDrone: null
@@ -416,3 +429,30 @@ SignHydro3: SignHydro1
 
 # 2024-07-27
 LogicGate: LogicGateOr
+
+# 2024-08-08
+MaterialReclaimer: null
+MaterialReclaimerMachineCircuitboard: null
+
+# 2024-08-11
+FoodTacoBeef: FoodTacoShell
+FoodTacoChicken: FoodTacoShell
+FoodTacoFish: FoodTacoShell
+FoodTacoBeefSupreme: FoodTacoShell
+FoodTacoChickenSupreme: FoodTacoShell
+FoodTacoRat: FoodTacoShell
+
+FoodMeatHumanKebab: FoodKebabSkewer
+FoodMeatLizardtailKebab: FoodKebabSkewer
+FoodMeatRatKebab: FoodKebabSkewer
+FoodMeatRatdoubleKebab: FoodKebabSkewer
+FoodMeatSnakeKebab: FoodKebabSkewer
+FoodMeatHawaiianKebab: FoodKebabSkewer
+FoodMeatKebab: FoodKebabSkewer
+FoodMeatFiestaKebab: FoodKebabSkewer
+
+#2024-08-14
+ClothingBeltSuspenders: ClothingBeltSuspendersRed
+
+# 2024-08-19
+ClothingNeckShockCollar: ClothingBackpackElectropack

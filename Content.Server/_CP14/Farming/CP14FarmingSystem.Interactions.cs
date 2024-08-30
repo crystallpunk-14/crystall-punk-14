@@ -71,8 +71,11 @@ public sealed partial class CP14FarmingSystem
                 continue;
 
             var spawnLoot = getLoot.GetSpawns(_random);
-            var spawnPos = pos.Offset(_random.NextVector2(gatheredPlant.Comp.GatherOffset));
-            result.Add(Spawn(spawnLoot[0], spawnPos)); //TODO почему то не спавнится больше 1 пшенички. Кажись проблема оффов
+            foreach (var loot in spawnLoot)
+            {
+                var spawnPos = pos.Offset(_random.NextVector2(gatheredPlant.Comp.GatherOffset));
+                result.Add(Spawn(loot, spawnPos));
+            }
         }
 
         if (gatheredPlant.Comp.DeleteAfterHarvest)
