@@ -4,3 +4,4 @@
   - BaseStation
   - BaseStationAllEventsEligible
   - BaseStationJobsSpawning
+  - BaseStationAlertLevels #Checks fail without it

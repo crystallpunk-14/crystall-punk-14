@@ -35,6 +35,13 @@ entities:
       id: ExpeditionTest
     - type: Broadphase
     - type: OccluderTree
+    - type: CP14WeatherController
+      clearDuration:
+        min: 60
+        max: 600
+      entries:
+      - visuals: Rains
+      - visuals: Storm
     - type: CP14DayCycle
       timeEntries:
       - duration: 80
