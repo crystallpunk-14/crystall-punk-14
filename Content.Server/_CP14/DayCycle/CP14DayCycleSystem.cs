@@ -111,3 +111,4 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
         return MathHelper.Clamp01((float)(distanceFromStart / totalDistance));
     }
 }
+
