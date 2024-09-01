@@ -128,3 +128,73 @@
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
+
+- type: entity
+  id: CP14FoodPotato
+  parent: FoodInjectableBase
+  name: potato
+  description: Cute potato
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - potatoes
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/potato.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: CP14Seed
+    plantProto: CP14PlantPotato #TODO sliceable potato
+
+- type: entity
+  id: CP14FoodCucumber
+  parent: FoodInjectableBase
+  name: cucumber
+  description: An oblong green vegetable. Refreshing!
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - CP14Water #TODO
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: CP14Water
+          Quantity: 3

@@ -48,6 +48,19 @@
     plantProto: CP14PlantCabbage
 
 - type: entity
+  id: CP14SeedCucumber
+  name: cucumber seeds
+  description: Are cucumber seeds. You know what to do with them.
+  parent: CP14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: cucumber
+  - type: CP14Seed
+    plantProto: CP14PlantCucumber
+
+- type: entity
   id: CP14SeedTomato
   name: tomato seeds
   description: It looks like powder! They're so small, these seeds.
