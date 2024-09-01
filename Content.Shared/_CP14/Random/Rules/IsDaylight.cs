@@ -1,3 +1,4 @@
+using Content.Shared._CP14.DayCycle;
 using Content.Shared.Random.Rules;
 
 namespace Content.Shared._CP14.Random.Rules;
@@ -9,12 +10,11 @@ public sealed partial class IsDaylight : RulesRule
 {
     public override bool Check(EntityManager entManager, EntityUid uid)
     {
-        var transform = entManager.System<SharedTransformSystem>();
+        var dayCycle = entManager.System<CP14SharedDayCycleSystem>();
 
-        // Not shared yet, use raw component data from map
-        // var dayCycle = entManager.System<CP14DayCycleSystem>();
-
-        //черт, нужны комиты из ветки фермерства
-        return !Inverted;
+        if (Inverted)
+            return !dayCycle.TryDaylightThere(uid, true);
+        else
+            return dayCycle.TryDaylightThere(uid, true);
     }
 }

@@ -123,6 +123,7 @@
     - CP14FoodMeatLamb
     - CP14SeedPumpkin
     - CP14SeedWheat
+    - CP14SeedCucumber
 
 - type: entity
   id: CP14WorkbenchSewing
