@@ -1,0 +1,21 @@
+- type: weather
+  id: CP14Rain
+  sprite:
+    sprite: /Textures/_CP14/Effects/weather.rsi
+    state: rain
+  sound:
+    collection: Rain
+    params:
+      loop: true
+      volume: -6
+
+- type: weather
+  id: CP14Storm
+  sprite:
+    sprite: /Textures/_CP14/Effects/weather.rsi
+    state: storm
+  sound:
+    path: /Audio/Effects/Weather/rain_heavy.ogg
+    params:
+      loop: true
+      volume: -6
