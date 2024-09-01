@@ -1,11 +1,11 @@
 
 - type: ambientLoop
-  id: Grasslands
+  id: OpenWinds
   sound:
     params:
       volume: -3
-    collection: CP14LoopGrassland
-  rules: NearGrass
+    collection: CP14LoopWinds
+  rules: OpenWinds
 
 - type: ambientLoop
   id: Water
@@ -17,9 +17,9 @@
 
 # Sound collections
 - type: soundCollection
-  id: CP14LoopGrassland
+  id: CP14LoopWinds
   files:
-    - /Audio/_CP14/Ambience/Loops/grasslands.ogg
+    - /Audio/_CP14/Ambience/Loops/winds.ogg
 
 - type: soundCollection
   id: CP14LoopWater
@@ -28,7 +28,7 @@
 
 # Rules
 - type: rules
-  id: NearGrass
+  id: OpenWinds
   rules:
     - !type:NearbyTilesPercentRule
       ignoreAnchored: true
@@ -37,6 +37,8 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorDirt
+      - CP14FloorSand
       range: 5
 
 - type: rules
