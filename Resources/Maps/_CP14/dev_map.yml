@@ -31,8 +31,8 @@ entities:
       id: Dev
     - type: CP14WeatherController
       entries:
-      - visuals: Rain
-      - visuals: Storm
+      - visuals: CP14Rain
+      - visuals: CP14Storm
     - type: CP14DayCycle
       timeEntries:
       - duration: 80
