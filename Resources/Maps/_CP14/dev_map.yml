@@ -29,6 +29,10 @@ entities:
     - type: CP14CloudShadows
     - type: BecomesStation
       id: Dev
+    - type: CP14WeatherController
+      entries:
+      - visuals: CP14Rain
+      - visuals: CP14Storm
     - type: CP14DayCycle
       timeEntries:
       - duration: 80
