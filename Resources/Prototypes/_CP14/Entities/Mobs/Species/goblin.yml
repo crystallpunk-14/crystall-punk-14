@@ -10,6 +10,11 @@
   - type: Icon
     sprite: _CP14/Mobs/Species/Goblin/parts.rsi
     state: full
+  - type: Vocal
+    sounds:
+      Male: CP14UnisexGoblin
+      Female: CP14UnisexGoblin
+      Unsexed: CP14UnisexGoblin
   - type: Thirst
   - type: Butcherable
     butcheringType: Spike
