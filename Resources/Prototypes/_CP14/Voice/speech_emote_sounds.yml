@@ -8,7 +8,7 @@
       path: /Audio/_CP14/Voice/Goblin/goblin_scream.ogg
     Laugh:
       path: /Audio/_CP14/Voice/Goblin/goblin_laugh.ogg
-    Snore::
+    Snore:
       path: /Audio/_CP14/Voice/Goblin/goblin_sleep.ogg
     DefaultDeathgasp:
       path: /Audio/_CP14/Voice/Goblin/goblin_death.ogg
