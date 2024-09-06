@@ -13,7 +13,6 @@ namespace Content.Server._CP14.Workbench;
 /// This entity can be used to craft other objects through the interface
 /// </summary>
 [RegisterComponent]
-[Access(typeof(CP14WorkbenchSystem))]
 public sealed partial class CP14WorkbenchComponent : Component
 {
     /// <summary>

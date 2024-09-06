@@ -10,11 +10,15 @@ using Content.Server.Stack;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.DoAfter;
+using Content.Shared.Interaction;
+using Content.Shared.Mobs;
 using Content.Shared.Stacks;
 using Content.Shared.UserInterface;
+using Content.Server._CP14.Workbench.WorkbenchRecipe;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Map;
 
 namespace Content.Server._CP14.Workbench;
 
@@ -221,5 +225,21 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 indexedIngredients[protoId] = 1;
         }
         return indexedIngredients;
+    }
+
+    public bool AddRecipe(EntityUid? ent, ProtoId<CP14WorkbenchRecipePrototype> newRecipe, EntityCoordinates location)
+    {
+        if (!TryComp<CP14WorkbenchComponent>(ent, out var workbenchComp))
+            return false;
+
+        if (workbenchComp.Recipes.Contains(newRecipe))
+        {
+            _popup.PopupCoordinates(Loc.GetString("cp14-workbench-already-has-recipe"), location);
+            return false;
+        }
+
+        workbenchComp.Recipes.Add(newRecipe);
+        _popup.PopupCoordinates(Loc.GetString("cp14-added-new-recipe"), location);
+        return true;
     }
 }

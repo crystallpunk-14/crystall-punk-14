@@ -1,0 +1,36 @@
+- type: entity
+  name: Melting Mold Blank Recipe
+  parent: BaseItem
+  id: BaseWorkbenchRecipe
+  description: 'Craft recipe for Workbench'
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+  - type: CP14WorkbenchRecipe
+    recipe: CP14MeltingMoldBlank
+
+- type: entity
+  name: Bucket Recipe
+  parent: BaseWorkbenchRecipe
+  id: WorkbenchRecipeCP14Bucket
+  components:
+  - type: CP14WorkbenchRecipe
+    recipe: CP14Bucket
+
+- type: entity
+  name: Barrel Recipe
+  parent: BaseWorkbenchRecipe
+  id: WorkbenchRecipeCP14BaseBarrel
+  components:
+  - type: CP14WorkbenchRecipe
+    recipe: CP14BaseBarrel
+
+- type: entity
+  name: Wooden Beer Mug Recipe
+  parent: BaseWorkbenchRecipe
+  id: WorkbenchRecipeCP14WoodenBeerMug
+  components:
+  - type: CP14WorkbenchRecipe
+    recipe: CP14WoodenBeerMug
