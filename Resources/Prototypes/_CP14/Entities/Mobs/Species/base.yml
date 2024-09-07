@@ -1,6 +1,6 @@
 - type: entity
   save: false
-  parent: 
+  parent:
   - BaseMob
   - MobDamageable
   - MobCombat
@@ -220,7 +220,7 @@
 
 
 - type: entity
-  parent: 
+  parent:
   - MobBloodstream
   - MobRespirator
   - MobAtmosStandard
@@ -288,6 +288,7 @@
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
   - type: CP14SkillsStorage
+  - type: CP14WorkbenchRecipesStorage
 
 - type: entity
   save: false

@@ -10,6 +10,9 @@
   - !type:CP14AddSkillSpecial
     skills:
     - Warcraft
+  # - !type:CP14WorkbenchAddRecipeSpecial
+  #   recipes:
+  #   - CP14BaseBarrel
 
 - type: startingGear
   id: CP14AdventurerGear

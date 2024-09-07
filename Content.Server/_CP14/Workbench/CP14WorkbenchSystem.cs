@@ -52,7 +52,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
     private void OnBeforeUIOpen(Entity<CP14WorkbenchComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        UpdateUIRecipes(ent);
+        UpdateUIRecipes(ent, args.User);
     }
 
     // TODO: Replace Del to QueueDel when it's will be works with events
@@ -128,8 +128,8 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 requiredCount -= count;
             }
         }
-        _transform.SetCoordinates(resultEntity,  Transform(ent).Coordinates);
-        UpdateUIRecipes(ent);
+        _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates);
+        UpdateUIRecipes(ent, args.User);
         args.Handled = true;
     }
 

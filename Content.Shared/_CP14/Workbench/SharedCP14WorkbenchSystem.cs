@@ -5,6 +5,8 @@
 
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.DoAfter;
+using Content.Shared._CP14.Workbench.Components;
+using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -12,6 +14,39 @@ namespace Content.Shared._CP14.Workbench;
 
 public class SharedCP14WorkbenchSystem : EntitySystem
 {
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+
+    public bool TryLearnRecipe(EntityUid uid, ProtoId<CP14WorkbenchRecipePrototype> recept)
+    {
+        if (!TryComp<CP14WorkbenchRecipesStorageComponent>(uid, out var recipesStorage))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-can-not-learn-recipe"), uid);
+            return false;
+        }
+
+        if (!recipesStorage.Recipes.Contains(recept))
+        {
+            recipesStorage.Recipes.Add(recept);
+            _popup.PopupEntity(Loc.GetString("cp14-recipe-has-been-learned"), uid);
+            return true;
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-already-know-recipe"), uid);
+            return false;
+        }
+    }
+
+    public List<ProtoId<CP14WorkbenchRecipePrototype>> GetLearnedRecipes(EntityUid uid)
+    {
+        if (!TryComp<CP14WorkbenchRecipesStorageComponent>(uid, out var recipesStorage))
+        {
+            return new List<ProtoId<CP14WorkbenchRecipePrototype>>();
+        }
+
+        return recipesStorage.Recipes;
+    }
 }
 
 [Serializable, NetSerializable]
