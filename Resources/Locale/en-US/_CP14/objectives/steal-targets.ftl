@@ -1,0 +1,1 @@
+cp14-steal-target-gold-ore = gold ore
