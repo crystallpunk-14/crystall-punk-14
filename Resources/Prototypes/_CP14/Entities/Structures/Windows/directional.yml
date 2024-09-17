@@ -76,11 +76,11 @@
     airBlockedDirection:
     - South
   - type: Appearance
-  - type: DamageVisuals
-    thresholds: [4, 8, 12]
-    damageDivisor: 3.333
-    trackAllDamage: true
-    damageOverlay:
-      sprite: Structures/Windows/cracks_directional.rsi
+  #- type: DamageVisuals
+  #  thresholds: [4, 8, 12]
+  #  damageDivisor: 3.333
+  #  trackAllDamage: true
+  #  damageOverlay:
+  #    sprite: Structures/Windows/cracks_directional.rsi #TODO
   - type: StaticPrice
     price: 10
