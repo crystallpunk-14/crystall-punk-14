@@ -42,6 +42,9 @@ CP14DungeonEntrance: CP14DungeonEntranceAutoLink
 CP14DungeonExit: CP14DungeonExitAutoLink
 CP14Nail110: CP14Nail10
 
+# 2024-09-09
+CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
+
 # <---> CrystallPunk migration zone end
 
 
@@ -456,3 +459,21 @@ ClothingBeltSuspenders: ClothingBeltSuspendersRed
 
 # 2024-08-19
 ClothingNeckShockCollar: ClothingBackpackElectropack
+
+# 2024-08-22
+ComputerShuttleSalvage: null
+SalvageShuttleConsoleCircuitboard: null
+SalvageShuttleCircuitboardStealObjective: null
+
+# 2024-08-28
+ClothingBackpackDuffelSyndicateCostumeCentcom: null
+ClothingHeadsetAltCentComFake: null
+CentcomPDAFake: null
+CentcomIDCardSyndie: null
+
+# 2024-09-06
+AntimovCircuitBoard: null
+OverlordCircuitBoard: null
+
+# 2024-09-08
+HatBase: null
