@@ -12,6 +12,7 @@ namespace Content.Server._CP14.Workbench;
 public sealed partial class CP14WorkbenchSystem
 {
     [Dependency] private readonly SharedCP14WorkbenchSystem _sharedWorkbenchSystem = default!;
+
     private void OnCraft(Entity<CP14WorkbenchComponent> entity, ref CP14WorkbenchUiCraftMessage args)
     {
         var recipes = new List<ProtoId<CP14WorkbenchRecipePrototype>>();
