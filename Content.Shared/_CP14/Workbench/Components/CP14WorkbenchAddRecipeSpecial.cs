@@ -5,9 +5,6 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Workbench.Components;
 
-/// <summary>
-/// a component that can be hung on an entity to immediately teach it some recipes
-/// </summary>
 [UsedImplicitly]
 public sealed partial class CP14WorkbenchAddRecipeSpecial : JobSpecial
 {
