@@ -17,7 +17,7 @@ public class SharedCP14WorkbenchSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
-    public bool TryLearnRecipe(EntityUid uid, ProtoId<CP14WorkbenchRecipePrototype> recept)
+    public bool TryLearnRecipe(EntityUid uid, ProtoId<CP14WorkbenchRecipePrototype> recipe)
     {
         if (!TryComp<CP14WorkbenchRecipesStorageComponent>(uid, out var recipesStorage))
         {
