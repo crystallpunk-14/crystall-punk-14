@@ -38,11 +38,11 @@ public class SharedCP14WorkbenchSystem : EntitySystem
         }
     }
 
-    public List<ProtoId<CP14WorkbenchRecipePrototype>> GetLearnedRecipes(EntityUid uid)
+    public List<ProtoId<CP14WorkbenchRecipePrototype>>? GetLearnedRecipes(EntityUid uid)
     {
         if (!TryComp<CP14WorkbenchRecipesStorageComponent>(uid, out var recipesStorage))
         {
-            return new List<ProtoId<CP14WorkbenchRecipePrototype>>();
+            return null;
         }
 
         return recipesStorage.Recipes;

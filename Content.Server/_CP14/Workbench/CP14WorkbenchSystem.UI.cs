@@ -20,6 +20,8 @@ public sealed partial class CP14WorkbenchSystem
             recipes.Add(recipe);
 
         var userLearnedRecipes = _sharedWorkbenchSystem.GetLearnedRecipes(args.Actor);
+        if (userLearnedRecipes is null)
+            return;
         foreach(var recipe in userLearnedRecipes)
         {
             if (!recipes.Contains(recipe) && entity.Comp.SecretRecipes.Contains(recipe))
@@ -41,6 +43,8 @@ public sealed partial class CP14WorkbenchSystem
         var recipes = new List<CP14WorkbenchUiRecipesEntry>();
 
         var userLearnedRecipes = _sharedWorkbenchSystem.GetLearnedRecipes(user);
+        if (userLearnedRecipes is null)
+            return;
         foreach(var learnedRecipe in userLearnedRecipes)
         {
             if (!entity.Comp.Recipes.Contains(learnedRecipe) && entity.Comp.SecretRecipes.Contains(learnedRecipe))
