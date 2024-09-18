@@ -25,9 +25,9 @@ public class SharedCP14WorkbenchSystem : EntitySystem
             return false;
         }
 
-        if (!recipesStorage.Recipes.Contains(recept))
+        if (!recipesStorage.Recipes.Contains(recipe))
         {
-            recipesStorage.Recipes.Add(recept);
+            recipesStorage.Recipes.Add(recipe);
             _popup.PopupEntity(Loc.GetString("cp14-recipe-has-been-learned"), uid);
             return true;
         }
