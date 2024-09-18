@@ -233,8 +233,8 @@
     enabled: false
   - type: StepTrigger
     intersectRatio: 0.2
-  - type: ClothingRequiredStepTrigger
   - type: TriggerOnStepTrigger
+  - type: PreventableStepTrigger
   - type: DamageUserOnTrigger
     damage:
       types:

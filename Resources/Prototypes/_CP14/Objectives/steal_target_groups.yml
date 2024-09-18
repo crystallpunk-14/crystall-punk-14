@@ -1,6 +1,6 @@
 - type: stealTargetGroup
   id: CP14Gold
-  name: gold ore
+  name: cp14-steal-target-gold-ore
   sprite:
     sprite: _CP14/Objects/Materials/gold_ore.rsi
     state: ore1

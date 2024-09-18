@@ -66,8 +66,8 @@
         Heat: 0
   - type: CP14FlammableEntityHeater
   - type: CP14FlammableSolutionHeater
-  - type: CP14Fireplace
-    fuel: 15
-  - type: CP14AutoIgnite
+  #- type: CP14Fireplace
+  #  fuel: 15
+  #- type: CP14AutoIgnite
   - type: CP14FireSpread
   - type: CP14DespawnOnExtinguish
