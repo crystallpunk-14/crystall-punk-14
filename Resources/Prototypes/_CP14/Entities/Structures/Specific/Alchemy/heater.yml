@@ -61,17 +61,6 @@
         type: StorageBoundUserInterface
 
 - type: entity
-  id: CP14AlchemyFurnaceDebug
-  parent: CP14AlchemyFurnace
-  categories:
-  - Debug
-  components:
-  - type: CP14Fireplace
-    fuel: 100
-    fuelDrainingPerUpdate: 0
-  - type: CP14AutoIgnite
-
-- type: entity
   id: CP14AlchemyFurnace
   name: alchemy furnace
   parent: CP14BaseFireplace

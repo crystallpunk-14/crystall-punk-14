@@ -1,0 +1,19 @@
+- files: ["goblin_laugh.ogg"]
+  license: "CC0-1.0"
+  copyright: "Taken from https://freesound.org/"
+  source: "https://freesound.org/people/spookymodem/sounds/202096/"
+
+- files: ["goblin_scream.ogg"]
+  license: "CC0-1.0"
+  copyright: "Taken from https://freesound.org/"
+  source: "https://freesound.org/people/spookymodem/sounds/202100/"
+
+- files: ["goblin_sleep.ogg"]
+  license: "CC0-1.0"
+  copyright: "Taken from https://freesound.org/"
+  source: "https://freesound.org/people/spookymodem/sounds/202095/"
+
+- files: ["goblin_death.ogg"]
+  license: "CC0-1.0"
+  copyright: "Taken from https://freesound.org/"
+  source: "https://freesound.org/people/spookymodem/sounds/249813/"
