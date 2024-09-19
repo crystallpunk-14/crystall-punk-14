@@ -44,3 +44,5 @@
         acts: [ "Destruction" ]
   - type: CableVisualizer
     statePrefix: cable_
+  - type: PlacementReplacement
+    key: cable
