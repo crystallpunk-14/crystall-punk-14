@@ -21,7 +21,7 @@
     voltage: Apc
   - type: ExtensionCableProvider
   - type: Cable
-    cableDroppedOnCutPrototype: CableApcStack1
+    cableDroppedOnCutPrototype: CP14CableLVStack1
     cableType: Apc
   - type: Destructible
     thresholds:
