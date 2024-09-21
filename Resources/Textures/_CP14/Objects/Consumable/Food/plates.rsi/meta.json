@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CLA",
+    "copyright": "Created bby KREKS",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ceramic"
+        },
+        {
+            "name": "iron"
+        },
+        {
+            "name": "wood1"
+        },
+        {
+            "name": "wood2"
+        }
+    ]
+}

@@ -198,3 +198,6 @@
           Quantity: 2
         - ReagentId: CP14Water
           Quantity: 3
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateCucumber
