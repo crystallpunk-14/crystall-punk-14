@@ -11,16 +11,24 @@
     - 0,0,1,0
   - type: FoodSequenceStartPoint
     key: CP14Plate
-    maxLayers: 5
-    nameGeneration: food-sequence-skewer-gen
+    maxLayers: 10
+    nameGeneration: cp14-food-sequence-plate-gen
     contentSeparator: ", "
+    minLayerOffset: -0.02, -0.02
+    maxLayerOffset: 0.02, 0.02
   - type: Food
   - type: SolutionContainerManager
     solutions:
       food:
         canReact: false # Dont want cause reactions inside plates after merging ingredients
-        maxVol: 0
+        maxVol: 5
   - type: FlavorProfile
+  - type: RefillableSolution
+    solution: food
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: Appearance
 
 - type: entity
   id: CP14PlateWooden
@@ -30,6 +38,9 @@
   - type: Sprite
     layers:
     - state: wood1
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - map: ["foodSequenceLayers"]
   - type: Food
     trash: 
@@ -42,6 +53,9 @@
   - type: Sprite
     layers:
     - state: wood2
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - map: ["foodSequenceLayers"]
   - type: Food
     trash: 
@@ -55,6 +69,9 @@
   - type: Sprite
     layers:
     - state: ceramic
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - map: ["foodSequenceLayers"]
   - type: Food
     trash: 
@@ -68,6 +85,9 @@
   - type: Sprite
     layers:
     - state: iron
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - map: ["foodSequenceLayers"]
   - type: Food
     trash: 

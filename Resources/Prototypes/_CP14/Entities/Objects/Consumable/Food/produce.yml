@@ -62,6 +62,9 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 0.25
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateCabbageSlice
 
 - type: entity
   id: CP14FoodPumpkin
@@ -89,7 +92,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 25
+        maxVol: 30
         reagents:
         - ReagentId: PumpkinFlesh
           Quantity: 20
@@ -122,12 +125,15 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5 # 1/5 pumpkin
+        maxVol: 6 # 1/5 pumpkin
         reagents:
         - ReagentId: Nutriment
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlatePumpkinSlice
 
 - type: entity
   id: CP14FoodPotato
