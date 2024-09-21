@@ -2,9 +2,8 @@
   parent:
   - BaseStructure
   - CP14BaseWooden
-  id: CP14TableWoodenFrame
-  name: wooden table frame
-  description: Base for any wooden table
+  id: CP14WoodenTableBase
+  abstract: true
   components:
   - type: Fixtures
     fixtures:
@@ -17,16 +16,6 @@
         - TableMask
         layer:
         - TableLayer
-  - type: Sprite
-    snapCardinals: true
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
-    state: frame
-  - type: Icon
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
-    state: frame
-  - type: Construction
-    graph: CP14TableWooden
-    node: CP14TableWoodenFrame
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -63,12 +52,27 @@
     sprite: _CP14/Effects/fire.rsi
     normalState: full
   - type: Climbable
-  - type: Clickable
+  - type: PlaceableSurface
 
 - type: entity
-  parent: 
-  - TableBase
-  - CP14BaseWooden
+  parent: CP14WoodenTableBase
+  id: CP14TableWoodenFrame
+  name: wooden table frame
+  description: Base for any wooden table
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: frame
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: frame
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14TableWoodenFrame
+
+- type: entity
+  parent: CP14WoodenTableBase
   id: CP14TableWooden
   name: wooden table
   description: A simple table made of boards.
@@ -81,41 +85,20 @@
   - type: Construction
     graph: CP14TableWooden
     node: CP14TableWooden
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 40
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-    - trigger:
-        !type:DamageTrigger
-        damage: 60
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14WoodenPlanks1:
-            min: 1
-            max: 2
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepWood
   - type: IconSmooth
     key: state
     base: state
-  - type: FireVisuals
-    sprite: _CP14/Effects/fire.rsi
-    normalState: full
+
+- type: entity
+  parent: CP14WoodenTableBase
+  id: CP14TableWoodenRound
+  name: round wooden table
+  description: A simple table made of boards.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: round
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
+    state: round
