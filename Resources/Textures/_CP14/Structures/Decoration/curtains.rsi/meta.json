@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "By TheShuEd",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "white_open",
+      "directions": 4
+    },
+    {
+      "name": "white_closed",
+      "directions": 4
+    }
+  ]
+}
