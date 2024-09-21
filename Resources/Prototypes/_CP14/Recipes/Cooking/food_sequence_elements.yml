@@ -20,7 +20,6 @@
   - sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
     state: plate3
 
-
 - type: foodSequenceElement
   id: CP14PlateCabbageSlice
   name: cp14-food-sequence-plate-cabbage
@@ -30,4 +29,15 @@
   - sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
     state: plate2
   - sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
+    state: plate3
+
+- type: foodSequenceElement
+  id: CP14PlateCheeseSlice
+  name: cp14-food-sequence-plate-cheese
+  sprites:
+  - sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: plate1
+  - sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: plate2
+  - sprite: _CP14/Objects/Consumable/Food/cheese.rsi
     state: plate3

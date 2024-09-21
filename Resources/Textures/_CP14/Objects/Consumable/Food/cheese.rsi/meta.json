@@ -27,6 +27,15 @@
         },
         {
             "name": "cheese_wheel"
+        },
+        {
+            "name": "plate1"
+        },
+        {
+            "name": "plate2"
+        },
+        {
+            "name": "plate3"
         }
     ]
 }
