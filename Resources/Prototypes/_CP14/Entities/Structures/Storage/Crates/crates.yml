@@ -144,7 +144,6 @@
         prob: 0.2
       - id: CP14BaseBattleStaff
         prob: 0.2
-        onGroup: Weapon
       - id: CP14BaseDagger
         prob: 0.2
         onGroup: Weapon
@@ -203,8 +202,6 @@
         prob: 0.2
         onGroup: Weapon2
       - id: ClothingBackpackCargo
-        prob: 0.2
-        onGroup: Tool
       - id: CP14CopperCoin1
         prob: 0.2
         onGroup: Currency
@@ -235,7 +232,7 @@
       - id: CP14Nail1
         prob: 0.2
         onGroup: Material
-      - id: CP14Nail110
+      - id: CP14Nail10
         prob: 0.2
         onGroup: Material
       - id: CP14BloodGrass
@@ -289,13 +286,40 @@
       - id: CP14EnergyCrystalSmall
         prob: 0.2
         onGroup: Material
+      - id: CP14DyeRed
+        prob: 0.2
+        onGroup: Material
+      - id: CP14DyeYellow
+        prob: 0.2
+        onGroup: Material
+      - id: CP14DyeBlue
+        prob: 0.2
+        onGroup: Material
+      - id: CP14DyeGreen
+        prob: 0.2
+        onGroup: Material
+      - id: CP14DyePurple
+        prob: 0.2
+        onGroup: Material
+      - id: CP14DyeBlack
+        prob: 0.2
+        onGroup: Material
+      - id: CP14String
+        prob: 0.2
+        onGroup: Material
+      - id: CP14Cloth10
+        prob: 0.2
+        onGroup: Material
+      - id: CP14Scissors 
+        prob: 0.2
+        onGroup: Material
 
 
 - type: entity
   id: CP14SmallWoodenCrateFilled
   parent: 
   - CP14SmallWoodenCrate
-  #- BRFilledTemp
+  - BRFilledTemp
   suffix: Filled, Battleroyale
 
 - type: entity
@@ -303,4 +327,4 @@
   suffix: Filled, Battleroyale
   parent: 
   - CP14LargeWoodenCrate
-  #- BRFilledTemp
+  - BRFilledTemp
