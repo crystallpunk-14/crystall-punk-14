@@ -8,6 +8,7 @@
       slotFlags: RING
       uiWindowPos: 0,1
       strippingWindowPos: 0,3
+      dependsOn: pants
       displayName: Ring
     - name: neck
       slotTexture: neck
