@@ -84,3 +84,5 @@
     layers:
     - state: white_open
       map: ["enum.DoorVisualLayers.Base"]
+  - type: Physics
+    canCollide: false

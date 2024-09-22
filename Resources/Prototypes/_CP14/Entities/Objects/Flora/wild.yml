@@ -121,6 +121,9 @@
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 7
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateChromiumSlime
 
 - type: entity
   id: CP14WildSage
@@ -159,6 +162,9 @@
         reagents:
         - ReagentId: CP14WildSageSap
           Quantity: 8
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateWildSage
 
 - type: entity
   id: CP14QuartzShard
@@ -230,3 +236,6 @@
         reagents:
         - ReagentId: CP14LumiMushroom
           Quantity: 4
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateLumiMushroom
