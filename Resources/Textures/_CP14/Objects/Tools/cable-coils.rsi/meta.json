@@ -8,7 +8,13 @@
   },
   "states": [
     {
-      "name": "lv_coil"
+      "name": "lv_coil10"
+    },
+    {
+      "name": "lv_coil20"
+    },
+    {
+      "name": "lv_coil30"
     }
   ]
 }

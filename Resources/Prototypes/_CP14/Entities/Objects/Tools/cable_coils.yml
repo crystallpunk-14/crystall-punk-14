@@ -9,7 +9,9 @@
     stackType: CableHV
     baseLayer: base
     layerStates:
-    - lv_coil
+    - lv_coil10
+    - lv_coil20
+    - lv_coil30
   - type: Sprite
     sprite: _CP14/Objects/Tools/cable-coils.rsi
     state: lv_coil
