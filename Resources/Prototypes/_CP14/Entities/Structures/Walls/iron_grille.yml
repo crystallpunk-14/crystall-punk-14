@@ -183,7 +183,7 @@
     slots: 
       lock_slot:
         name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavern
+        startingItem: CP14LockAlchemy
         disableEject: true
         insertOnInteract: false
         ejectOnBreak: true
