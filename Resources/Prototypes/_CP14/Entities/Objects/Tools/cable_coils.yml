@@ -14,9 +14,9 @@
     - lv_coil30
   - type: Sprite
     sprite: _CP14/Objects/Tools/cable-coils.rsi
-    state: lv_coil
+    state: lv_coil10
     layers:
-    - state: lv_coil
+    - state: lv_coil10
       map: ["base"]
   - type: Item
     sprite: _CP14/Objects/Tools/cable-coils.rsi

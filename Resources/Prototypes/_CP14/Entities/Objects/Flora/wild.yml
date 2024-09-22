@@ -39,6 +39,9 @@
         reagents:
         - ReagentId: CP14BloodGrassSap
           Quantity: 5
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateBloodgrass
 
 - type: entity
   id: CP14AgaricMushroom
@@ -78,6 +81,9 @@
         reagents:
         - ReagentId: CP14AgaricMushroom
           Quantity: 3
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateAgaric
 
 - type: entity
   id: CP14ChromiumSlime

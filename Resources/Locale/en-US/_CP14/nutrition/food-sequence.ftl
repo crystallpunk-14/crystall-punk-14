@@ -6,3 +6,5 @@ cp14-food-sequence-plate-cucumber = cucumber
 cp14-food-sequence-plate-pumpkin = cucumber
 cp14-food-sequence-plate-cabbage = cabbage
 cp14-food-sequence-plate-cheese = cheese
+cp14-food-sequence-plate-shroom = shrooms
+cp14-food-sequence-plate-bloodgrass = bloodgrass
