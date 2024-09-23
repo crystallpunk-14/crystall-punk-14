@@ -55,7 +55,7 @@
             min: 1
             max: 2
   - type: Sprite
-    sprite: _CP14/Structures/Decoration/curtains.rsi
+    sprite: _CP14/Structures/Furniture/curtains.rsi
   - type: InteractionOutline
 
 - type: entity
@@ -83,6 +83,64 @@
   - type: Sprite
     layers:
     - state: white_open
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: CP14CurtainsBlue
+  parent: CP14BaseCurtains
+  suffix: Blue
+  components:
+  - type: Door
+    openSpriteState: blue_open
+    closedSpriteState: blue_closed
+  - type: Sprite
+    layers:
+    - state: blue_closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  id: CP14CurtainsBlueOpened
+  parent: CP14CurtainsBlue
+  suffix: Blue, Open
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Sprite
+    layers:
+    - state: blue_open
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: CP14CurtainsRed
+  parent: CP14BaseCurtains
+  suffix: Red
+  components:
+  - type: Door
+    openSpriteState: red_open
+    closedSpriteState: red_closed
+  - type: Sprite
+    layers:
+    - state: red_closed
+      map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  id: CP14CurtainsRedOpened
+  parent: CP14CurtainsRed
+  suffix: Red, Open
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Sprite
+    layers:
+    - state: red_open
       map: ["enum.DoorVisualLayers.Base"]
   - type: Physics
     canCollide: false
