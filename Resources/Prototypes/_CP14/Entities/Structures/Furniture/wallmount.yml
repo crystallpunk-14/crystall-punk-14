@@ -138,7 +138,7 @@
   name: bar shelf
   suffix: 1
   parent: CP14BaseWallmount
-  description: buba. ##TODO 
+  description: Wall shelves to store your wine collection
   components:
   - type: Appearance
   - type: Sprite

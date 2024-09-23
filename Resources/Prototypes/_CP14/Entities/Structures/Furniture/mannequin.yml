@@ -1,6 +1,8 @@
 - type: entity
   id: CP14Mannequin
-  parent: Mannequin
+  parent: 
+  - Mannequin
+  - CP14BaseFlammable
   name: mannequin
   description: A handy stand for clothing or armour.
   components:

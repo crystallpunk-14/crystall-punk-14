@@ -112,19 +112,61 @@
   id: CP14LargeWoodenCrate
   name: large wooden crate
   description: solid wooden crate
-  parent: CP14BaseCrate
+  parent: 
+  - CP14BaseCrate
+  - CP14BaseFlammable
   components:
   - type: Sprite
     sprite: _CP14/Structures/Storage/Crates/large_wooden_crate.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: CP14SmallWoodenCrate
   name: small wooden crate
   description: solid wooden crate
-  parent: CP14BaseSmallCrate
+  parent: 
+  - CP14BaseSmallCrate
+  - CP14BaseFlammable
   components:
   - type: Sprite
     sprite: _CP14/Structures/Storage/Crates/small_wooden_crate.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   abstract: true

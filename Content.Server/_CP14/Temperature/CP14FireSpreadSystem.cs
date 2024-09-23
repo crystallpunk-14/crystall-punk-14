@@ -49,13 +49,16 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
         base.Update(frameTime);
 
         List<Entity<CP14FireSpreadComponent>> spreadUids = new();
-        var query = EntityQueryEnumerator<CP14FireSpreadComponent, FlammableComponent>();
-        while (query.MoveNext(out var uid, out var spread, out var flammable))
+        var query = EntityQueryEnumerator<CP14FireSpreadComponent, FlammableComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var spread, out var flammable, out var xform))
         {
             if (!flammable.OnFire)
                 continue;
 
             if (spread.NextSpreadTime >= _gameTiming.CurTime)
+                continue;
+
+            if (xform.ParentUid != xform.GridUid) //we can't set a fire if we're inside a chest, for example.
                 continue;
 
             var cooldown = _random.NextFloat(spread.SpreadCooldownMin, spread.SpreadCooldownMax);
@@ -73,7 +76,7 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
 
     private void IgniteEntities(EntityUid uid, CP14FireSpreadComponent spread)
     {
-        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(uid), spread.Radius);
+        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(uid), spread.Radius, LookupFlags.Uncontained);
         foreach (var target in targets)
         {
             if (!_random.Prob(spread.Prob))

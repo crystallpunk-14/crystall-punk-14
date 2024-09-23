@@ -1,13 +1,7 @@
 - type: entity
-  id: CP14BaseWooden
+  id: CP14BaseFlammable
   abstract: true
   components:
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Tag
-    tags:
-    - Wooden
   - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
@@ -33,4 +27,19 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: small
+
+- type: entity
+  id: CP14BaseFlammableSpreading
+  parent: CP14BaseFlammable
+  abstract: true
+  components:
   - type: CP14FireSpread
+
+- type: entity
+  id: CP14BaseFlammableSpreadingStrong
+  parent: CP14BaseFlammableSpreading
+  abstract: true
+  components:
+  - type: CP14FireSpread
+    spreadCooldownMin: 1
+    spreadCooldownMax: 3

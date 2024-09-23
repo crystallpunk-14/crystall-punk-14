@@ -34,6 +34,19 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - HalfWallLayer
+        layer:
+        - MidImpassable
+        - LowImpassable
 
 - type: entity
   id: CP14GatherableWildBase
@@ -47,6 +60,8 @@
     toolWhitelist:
       tags:
         - CP14HerbalGathering
+      components:
+        - Sharp
 
 - type: entity
   id: CP14GatherablePlantBase
@@ -66,3 +81,5 @@
     toolWhitelist:
       tags:
         - CP14HerbalGathering
+      components:
+        - Sharp

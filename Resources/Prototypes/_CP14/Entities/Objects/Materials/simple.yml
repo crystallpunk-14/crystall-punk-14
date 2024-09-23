@@ -90,7 +90,6 @@
   id: CP14WoodLog
   parent:
   - BaseItem
-  - CP14BaseWooden
   name: wooden log
   description: A piece of unprocessed wood. Good material for building, or starting a fire.
   components:
@@ -130,7 +129,6 @@
   id: CP14WoodenPlanks1
   parent:
   - BaseItem
-  - CP14BaseWooden
   name: wooden planks
   description: Treated and ready-to-use wood.
   suffix: 1

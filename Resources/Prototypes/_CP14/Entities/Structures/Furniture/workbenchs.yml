@@ -20,7 +20,7 @@
 - type: entity
   parent:
   - CP14BaseWorkbench
-  - CP14BaseWooden
+  - CP14BaseFlammable
   id: CP14Workbench
   name: workbench
   description: Table for the production of various basic tools.
@@ -81,7 +81,7 @@
   id: CP14WorkbenchMeltingMolds
   parent:
   - CP14BaseWorkbench
-  - CP14BaseWooden
+  - CP14BaseFlammable
   name: sawing melting molds table
   description: Specialized table that allows you to cut out molds for metal smelting.
   components:
@@ -110,7 +110,7 @@
   id: CP14WorkbenchCooking
   parent:
   - CP14WorkbenchMeltingMolds
-  - CP14BaseWooden
+  - CP14BaseFlammable
   name: cooking table
   description: Lets cook
   components:
@@ -130,7 +130,7 @@
   id: CP14WorkbenchSewing
   parent:
   - CP14WorkbenchMeltingMolds
-  - CP14BaseWooden
+  - CP14BaseFlammable
   name: sewing table
   description: Lets cook
   components:

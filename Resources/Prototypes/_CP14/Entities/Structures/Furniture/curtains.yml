@@ -3,6 +3,7 @@
   abstract: true
   parent:
   - BaseStructure
+  - CP14BaseFlammableSpreadingStrong
   name: curtains
   description: Hides what others shouldn't see.
   placement:

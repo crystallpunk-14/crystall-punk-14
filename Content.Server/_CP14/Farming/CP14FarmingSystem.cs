@@ -101,7 +101,8 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
             if (!TryComp<CP14SoilComponent>(entt, out var soil))
                 continue;
 
-            _transform.SetParent(autoRoot, entt);
+            //Generally, this SHOULD change the parent, but it made the entity unanchored, which caused a bugs: hammer hits could push plants around
+            //_transform.SetParent(autoRoot, entt);
             soil.PlantUid = autoRoot;
 
             if (TryComp<CP14PlantComponent>(autoRoot, out var plantComp))

@@ -1,5 +1,7 @@
 - type: entity
-  parent: CrateGeneric
+  parent:
+  - CP14ChestGeneric
+  - CP14BaseFlammable
   id: CP14CrateCoffin
   name: coffin
   description: A comfortable and nice looking coffin to comfortably await your resurrection.
@@ -15,6 +17,9 @@
   - type: Icon
     sprite: _CP14/Structures/Storage/Crates/coffin.rsi
     state: base
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:

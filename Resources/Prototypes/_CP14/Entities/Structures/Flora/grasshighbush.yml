@@ -1,6 +1,7 @@
 - type: entity
   id: CP14HighBush
   name: high bush
+  parent: CP14BaseFlammableSpreading
   description: Very tall and dense thickets. Perhaps someone is watching you from them
   components:
   - type: CP14WaveShader
