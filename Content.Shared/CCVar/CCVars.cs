@@ -614,7 +614,7 @@ namespace Content.Shared.CCVar
          */
 
         public static readonly CVarDef<string> UIDefaultInterfaceTheme =
-            CVarDef.Create("interface.default_theme", "CP14DefaultTheme", CVar.CLIENTONLY);
+            CVarDef.Create("interface.default_theme", "SS14DefaultTheme", CVar.CLIENTONLY);
 
         public static readonly CVarDef<string> UIClickSound =
             CVarDef.Create("interface.click_sound", "/Audio/UserInterface/click.ogg", CVar.REPLICATED);
