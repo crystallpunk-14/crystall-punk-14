@@ -1,0 +1,47 @@
+- type: entity
+  id: CP14DirectionalPlateBase
+  abstract: true
+  parent: BaseStructure
+  name: plate
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: MetalThud
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Walls/directional_plate.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/directional_plate.rsi
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.50,-0.50,0.50,-0.30"
+        density: 1500
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+
+- type: entity
+  id: CP14DirectionalPlateSteel
+  parent: CP14DirectionalPlateBase
+  name: armored iron plate
+  description: An iron plate suitable for both blocking passageways and additional wall protection.
+  components:
+  - type: Sprite
+    state: steel
+  - type: Icon
+    state: steel
+  #TODO damageable and destructible balance

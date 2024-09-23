@@ -18,7 +18,7 @@
     fillBaseName: ring
   - type: Storage
     grid:
-    - 0,0,5,0
+    - 0,0,5,1
     maxItemSize: Small
     whitelist:
       tags:
@@ -33,6 +33,7 @@
   - type: Clothing
     quickEquip: false
     slots:
+    - keys
     - belt
 
 - type: entity
@@ -42,4 +43,19 @@
   components:
   - type: StorageFill
     contents:
-    - id: CP14KeyTavern
+    - id: CP14KeyTavernHall
+    - id: CP14KeyTavernStaff
+    - id: CP14KeyTavernDorms1
+    - id: CP14KeyTavernDorms2
+    - id: CP14KeyTavernDorms3
+    - id: CP14KeyTavernDorms4
+    - id: CP14KeyTavernDorms5
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingAlchemist
+  suffix: Alchemist
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyAlchemy

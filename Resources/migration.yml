@@ -45,6 +45,11 @@ CP14Nail110: CP14Nail10
 # 2024-09-09
 CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
 
+#2024-09-22
+CP14WoodDoorTavern: CP14WoodDoorTavernHall
+CP14LockTavern: CP14LockTavernHall
+CP14KeyTavern: CP14KeyTavernHall
+
 # <---> CrystallPunk migration zone end
 
 

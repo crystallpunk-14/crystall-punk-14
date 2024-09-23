@@ -26,13 +26,17 @@
     slice: CP14FoodDoughMedium
 
 - type: entity
-  parent: CP14FoodDoughLarge
+  parent: FoodInjectableBase
   id: CP14FoodDoughMedium
   name: medium piece of dough
   components:
   - type: Item
     size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - bread #TODO smth disguisting. raw dough
   - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/dough.rsi
     state: dough_medium
   - type: SolutionContainerManager
     solutions:

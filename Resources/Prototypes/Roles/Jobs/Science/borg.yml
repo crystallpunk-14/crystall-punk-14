@@ -3,6 +3,7 @@
   id: StationAi
   name: job-name-station-ai
   description: job-description-station-ai
+  setPreference: false
   playTimeTracker: JobStationAi
   requirements:
   - !type:RoleTimeRequirement

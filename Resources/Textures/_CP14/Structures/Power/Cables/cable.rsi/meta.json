@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+	"license": "CLA",
+	"copyright": "Created by TheShuEd for CrystallPunk",
+    "states": [
+        {
+            "name": "cable_0",
+            "directions": 4
+        },
+        {
+            "name": "cable_1",
+            "directions": 4
+        },
+        {
+            "name": "cable_2",
+            "directions": 4
+        },
+        {
+            "name": "cable_3",
+            "directions": 4
+        },
+        {
+            "name": "cable_4",
+            "directions": 4
+        },
+        {
+            "name": "cable_5",
+            "directions": 4
+        },
+        {
+            "name": "cable_6",
+            "directions": 4
+        },
+        {
+            "name": "cable_7",
+            "directions": 4
+        },
+        {
+            "name": "cable_8",
+            "directions": 4
+        },
+        {
+            "name": "cable_9",
+            "directions": 4
+        },
+        {
+            "name": "cable_10",
+            "directions": 4
+        },
+        {
+            "name": "cable_11",
+            "directions": 4
+        },
+        {
+            "name": "cable_12",
+            "directions": 4
+        },
+        {
+            "name": "cable_13",
+            "directions": 4
+        },
+        {
+            "name": "cable_14",
+            "directions": 4
+        },
+        {
+            "name": "cable_15",
+            "directions": 4
+        }
+    ]
+}

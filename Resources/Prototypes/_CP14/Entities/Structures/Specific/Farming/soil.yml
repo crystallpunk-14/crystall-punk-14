@@ -24,11 +24,14 @@
     solutions:
       soil:
         maxVol: 200
-  - type: RefillableSolution
+  - type: RefillableSolution 
     solution: soil
     maxRefill: 50
+  - type: ExaminableSolution
+    solution: soil
   - type: Transform
     anchored: true
+    noRot: true
   - type: CP14Soil
     solution: soil
 
@@ -50,6 +53,9 @@
     sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
     layers:
       - state: seedbed_default
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
       - map: [ "enum.EdgeLayer.South" ]
         state: seedbed_default_south
       - map: [ "enum.EdgeLayer.East" ]
@@ -61,3 +67,7 @@
   - type: Construction
     graph: CP14Seedbed
     node: CP14SeedbedWooden
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: liq-
+    solutionName: soil

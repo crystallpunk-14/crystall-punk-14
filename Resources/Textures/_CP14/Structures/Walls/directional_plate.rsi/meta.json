@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by TheShuEd (github)",
+  "size": {
+    "x": 32,
+    "y": 80
+  },
+  "states": [
+    {
+      "name": "steel",
+      "directions": 4
+    }
+  ]
+}
