@@ -49,4 +49,10 @@ public class GuideEntry
 
     [DataField]
     public bool CrystallPunkAllowed = false;
+
+    /// <summary>
+    /// ability to disable guidebooks in the wrong language. Use "ru-RU" or "en-US" for example, check ContentLocalizationManager.Culture
+    /// </summary>
+    [DataField]
+    public string? LocFilter;
 }
