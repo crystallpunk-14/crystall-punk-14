@@ -180,9 +180,6 @@
       - id: CP14BasePickaxe
         prob: 0.2
         onGroup: Weapon2
-      - id: CP14OldLantern
-        prob: 0.2
-        onGroup: Weapon2
       - id: CP14ClothingRingIceDagger
         prob: 0.2
         onGroup: Weapon2
