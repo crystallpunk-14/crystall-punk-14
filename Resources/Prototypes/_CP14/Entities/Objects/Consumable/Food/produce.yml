@@ -36,13 +36,17 @@
 
 - type: entity
   id: CP14FoodCabbageSlice
-  parent: CP14FoodCabbage
+  parent: FoodInjectableBase
   name: cabbage leaf
   description: Time to make green salads
   components:
   - type: Item
     size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - cabbage
   - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
     layers:
       - state: slice1
         map: [ "random" ]
@@ -105,13 +109,17 @@
 
 - type: entity
   id: CP14FoodPumpkinSlice
-  parent: CP14FoodPumpkin
+  parent: FoodInjectableBase
   name: pumpkin slice
   description: Pumpkin! # TODO
   components: 
   - type: Item
     size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
   - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
     layers:
       - state: slice1
         map: [ "random" ]
