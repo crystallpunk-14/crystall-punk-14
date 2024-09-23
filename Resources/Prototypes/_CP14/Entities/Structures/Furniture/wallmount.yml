@@ -80,6 +80,29 @@
     node: CP14WallmountTorch
 
 - type: entity
+  id: CP14WallmountTorchAlwaysPowered
+  name: always powered wallmount torch
+  parent: CP14BaseWallmount
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
+    layers:
+      - state: base
+      - state: fire
+        shader: unshaded
+  - type: PointLight
+    color: "#e67c34"
+    energy: 5
+    radius: 8
+  - type: AmbientSound
+    enabled: true
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+    
+
+- type: entity
   id: CP14WallmountLamp
   name: eternal flame lamp
   parent: CP14BaseWallmount
@@ -93,7 +116,8 @@
         shader: unshaded
         map: [ "light" ]
   - type: PointLight
-    radius: 6
+    energy: 5
+    radius: 8
     netsync: false
     color: "#b0eaf6"
   - type: Appearance

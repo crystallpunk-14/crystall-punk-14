@@ -18,7 +18,7 @@
   - type: Fixtures
   - type: Sprite
     drawdepth: ThinWire
-    visible: false
+    #visible: false
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -30,7 +30,7 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: SubFloorHide
+  #- type: SubFloorHide #CP14
   - type: CollideOnAnchor
   - type: Appearance
   - type: Electrified

@@ -36,13 +36,17 @@
 
 - type: entity
   id: CP14FoodCabbageSlice
-  parent: CP14FoodCabbage
+  parent: FoodInjectableBase
   name: cabbage leaf
   description: Time to make green salads
   components:
   - type: Item
     size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - cabbage
   - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
     layers:
       - state: slice1
         map: [ "random" ]
@@ -62,6 +66,9 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 0.25
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateCabbageSlice
 
 - type: entity
   id: CP14FoodPumpkin
@@ -89,7 +96,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 25
+        maxVol: 30
         reagents:
         - ReagentId: PumpkinFlesh
           Quantity: 20
@@ -102,13 +109,17 @@
 
 - type: entity
   id: CP14FoodPumpkinSlice
-  parent: CP14FoodPumpkin
+  parent: FoodInjectableBase
   name: pumpkin slice
   description: Pumpkin! # TODO
   components: 
   - type: Item
     size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
   - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
     layers:
       - state: slice1
         map: [ "random" ]
@@ -122,12 +133,15 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5 # 1/5 pumpkin
+        maxVol: 6 # 1/5 pumpkin
         reagents:
         - ReagentId: Nutriment
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlatePumpkinSlice
 
 - type: entity
   id: CP14FoodPotato
@@ -198,3 +212,6 @@
           Quantity: 2
         - ReagentId: CP14Water
           Quantity: 3
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateCucumber

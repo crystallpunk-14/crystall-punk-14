@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "By Jaraten",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "white_open",
+      "directions": 4
+    },
+    {
+      "name": "white_closed",
+      "directions": 4
+    },
+    {
+      "name": "blue_open",
+      "directions": 4
+    },
+    {
+      "name": "blue_closed",
+      "directions": 4
+    },
+    {
+      "name": "red_open",
+      "directions": 4
+    },
+    {
+      "name": "red_closed",
+      "directions": 4
+    }
+  ]
+}

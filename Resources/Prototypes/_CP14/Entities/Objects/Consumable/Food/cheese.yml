@@ -26,13 +26,17 @@
 
 - type: entity
   id: CP14FoodCheesePart
-  parent: CP14FoodCheeseWheel
+  parent: FoodInjectableBase
   name: cheese
   description: A triangle of soft, fragrant cheese.
   components:
   - type: Item
     size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - cheesy
   - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
     layers:
       - state: cheese_part
         map: [ "random" ]
@@ -55,11 +59,15 @@
 
 - type: entity
   id: CP14FoodCheeseSlice
-  parent: CP14FoodCheesePart
+  parent: FoodInjectableBase
   name: cheese slice
   description: A thin slice of delicious smelling cheese
   components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
   - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
     layers:
       - state: cheese_slice
         map: [ "random" ]
@@ -76,3 +84,6 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.4
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateCheeseSlice

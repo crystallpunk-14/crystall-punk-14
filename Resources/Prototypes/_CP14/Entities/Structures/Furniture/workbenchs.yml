@@ -75,6 +75,7 @@
     - CP14Bucket
     - CP14BaseBarrel
     - CP14WoodenBeerMug
+    - CP14PlateWooden
 
 - type: entity
   id: CP14WorkbenchMeltingMolds
