@@ -81,7 +81,6 @@
     isCollidableWhenOpen: true
     enteringOffset: 0, -0.4
     enteringRange: 0.06
-    airtight: false
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
