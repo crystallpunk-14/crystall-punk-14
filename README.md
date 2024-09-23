@@ -3,6 +3,8 @@
 ## Links
 
 ## Documentation/Wiki
+here:
+https://github.com/crystallpunk-14/crystall-punk-14/wiki
 
 ## Contributing
 
