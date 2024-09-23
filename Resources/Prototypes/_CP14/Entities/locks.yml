@@ -12,11 +12,71 @@
     sprite: _CP14/Objects/keys.rsi
     layers:
     - state: lock
-    
+
+# Tavern 
+
 - type: entity
   parent: CP14BaseLock
-  id: CP14LockTavern
-  name: captain's lock
+  id: CP14LockTavernHall
+  name: tavern lock
   components:
   - type: CP14Lock
-    autoGenerateShape: Tavern
+    autoGenerateShape: TavernHall
+
+- type: entity
+  parent: CP14BaseLock
+  id: CP14LockTavernStaff
+  name: the lock to the tavern offices
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernStaff
+
+- type: entity
+  parent: CP14BaseLock
+  id: CP14LockTavernDorms1
+  name: lock from tavern room 1
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms1
+
+- type: entity
+  parent: CP14BaseLock
+  id: CP14LockTavernDorms2
+  name: lock from tavern room 2
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms2
+
+- type: entity
+  parent: CP14BaseLock
+  id: CP14LockTavernDorms3
+  name: lock from tavern room 3
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms3
+
+- type: entity
+  parent: CP14BaseLock
+  id: CP14LockTavernDorms4
+  name: lock from tavern room 4
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms4
+
+- type: entity
+  parent: CP14BaseLock
+  id: CP14LockTavernDorms5
+  name: lock from tavern room 5
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms5
+
+# Alchemy
+
+- type: entity
+  parent: CP14BaseLock
+  id: CP14LockAlchemy
+  name: alchemist's lock
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Alchemy

@@ -3,6 +3,7 @@
   id: StationAi
   name: job-name-station-ai
   description: job-description-station-ai
+  setPreference: false
   playTimeTracker: JobStationAi
   requirements:
   - !type:RoleTimeRequirement
@@ -12,6 +13,7 @@
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
+  applyTraits: false
 
 - type: job
   id: Borg
@@ -26,3 +28,4 @@
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgGeneric
+  applyTraits: false

@@ -2,6 +2,38 @@
   id: Debug
   complexity: 10
 
+# Tavern 
+
 - type: CP14LockCategory
-  id: Tavern
+  id: TavernHall
   complexity: 3
+
+- type: CP14LockCategory
+  id: TavernStaff
+  complexity: 5
+
+- type: CP14LockCategory
+  id: TavernDorms1
+  complexity: 3
+
+- type: CP14LockCategory
+  id: TavernDorms2
+  complexity: 3
+
+- type: CP14LockCategory
+  id: TavernDorms3
+  complexity: 3
+
+- type: CP14LockCategory
+  id: TavernDorms4
+  complexity: 3
+
+- type: CP14LockCategory
+  id: TavernDorms5
+  complexity: 3
+
+# Alchemy 
+
+- type: CP14LockCategory
+  id: Alchemy
+  complexity: 5

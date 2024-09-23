@@ -1,0 +1,7 @@
+- type: entity
+  id: CP14BaseExpedition
+  parent:
+  - BaseStation
+  - BaseStationAllEventsEligible
+  - BaseStationJobsSpawning
+  - BaseStationAlertLevels #Checks fail without it

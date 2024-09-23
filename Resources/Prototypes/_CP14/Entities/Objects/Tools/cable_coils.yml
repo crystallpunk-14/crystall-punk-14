@@ -1,0 +1,43 @@
+- type: entity
+  id: CP14CableLVStack
+  parent: CableStack
+  name: LV cable coil
+  suffix: Full
+  description: Low-Voltage stack of wires for connecting APCs to machines and other purposes.
+  components:
+  - type: Stack
+    stackType: CableHV
+    baseLayer: base
+    layerStates:
+    - lv_coil10
+    - lv_coil20
+    - lv_coil30
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/cable-coils.rsi
+    state: lv_coil10
+    layers:
+    - state: lv_coil10
+      map: ["base"]
+  - type: Item
+    sprite: _CP14/Objects/Tools/cable-coils.rsi
+  - type: CablePlacer
+    cablePrototypeID: CP14LVCable
+    blockingWireType: Apc
+    cP14OnlySubfloor: false
+  - type: Appearance
+
+- type: entity
+  parent: CP14CableLVStack
+  id: CP14CableLVStack1
+  suffix: 1
+  components:
+    - type: Stack
+      count: 1
+ 
+- type: entity
+  parent: CP14CableLVStack
+  id: CP14CableLVStack10
+  suffix: 10
+  components:
+    - type: Stack
+      count: 10

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "license": "CLA",
+  "copyright": "Created by TheShuEd (Discord) for CrystallPunk14, resprited by vladimir.s",
+  "states": [
+    {
+      "name": "wall0",
+      "directions": 4
+    },
+    {
+      "name": "wall1",
+      "directions": 4
+    },
+    {
+      "name": "wall2",
+      "directions": 4
+    },
+    {
+      "name": "wall3",
+      "directions": 4
+    },
+    {
+      "name": "wall4",
+      "directions": 4
+    },
+    {
+      "name": "wall5",
+      "directions": 4
+    },
+    {
+      "name": "wall6",
+      "directions": 4
+    },
+    {
+      "name": "wall7",
+      "directions": 4
+    },
+    {
+      "name": "full"
+    }
+  ]
+}

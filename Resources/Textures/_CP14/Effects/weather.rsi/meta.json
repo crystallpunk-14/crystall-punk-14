@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "copyright": "Taken from https://github.com/Citadel-Station-13/Citadel-Station-13-RP/tree/5781addfa1193c2811408f64d15176139395d670 and edited by vladimir.s (Discord)",
+  "license": "CC-BY-SA-3.0",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "rain",
+      "delays": [
+        [
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02
+        ]
+      ]
+    },
+    {
+      "name": "storm",
+      "delays": [
+        [
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03,
+          0.03
+        ]
+      ]
+    }
+  ]
+}

@@ -75,6 +75,7 @@
     - CP14Bucket
     - CP14BaseBarrel
     - CP14WoodenBeerMug
+    - CP14PlateWooden
 
 - type: entity
   id: CP14WorkbenchMeltingMolds
@@ -123,6 +124,7 @@
     - CP14FoodMeatLamb
     - CP14SeedPumpkin
     - CP14SeedWheat
+    - CP14SeedCucumber
 
 - type: entity
   id: CP14WorkbenchSewing

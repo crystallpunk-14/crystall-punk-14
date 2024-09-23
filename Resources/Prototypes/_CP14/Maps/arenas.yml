@@ -22,7 +22,7 @@
   minPlayers: 0
   stations:
     AlchemyTest:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: CP14StationZLevels
           defaultMapLevel: 0
@@ -46,7 +46,7 @@
   minPlayers: 0
   stations:
     BattleRoyale:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
           mapNameTemplate: "Battle royale"
@@ -61,30 +61,29 @@
 - type: gameMap
   id: ExpeditionTest
   mapName: Expedition test
-  mapPath: /Maps/_CP14/expedition_test.yml
+  #mapPath: /Maps/_CP14/expedition_test.yml
+  mapPath: /Maps/_CP14/exp_tavern.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
   stations:
     ExpeditionTest:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
           mapNameTemplate: "Expedition test"
         - type: StationJobs
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
-            CP14Alchemist: [ -1, -1 ]
-            CP14Innkeeper: [ -1, -1 ]
-            CP14Captain: [1, 1]
-            CP14GuardCommander: [1, 1]
-            CP14HouseKeeper: [1, 1]
-        - type: CP14StationExpeditionTarget
-          shuttlePath: /Maps/_CP14/Shuttles/test-ship.yml
+            CP14Alchemist: [ 2, 3 ]
+            CP14Innkeeper: [ 2, 3 ]
+            #CP14Captain: [1, 1]
+            #CP14GuardCommander: [1, 1]
+            #CP14HouseKeeper: [1, 1]
+        #- type: CP14StationExpeditionTarget
+        #  shuttlePath: /Maps/_CP14/Shuttles/test-ship.yml
         - type: CP14StationZLevels
           defaultMapLevel: 0
           levels:
             -1:
               path: /Maps/_CP14/alchemy_test_layer2.yml
-            -2:
-              path: /Maps/_CP14/battle_royale.yml

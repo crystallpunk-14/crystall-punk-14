@@ -1,9 +1,7 @@
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.DayCycle.Components;
-using Content.Shared.Maps;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.DayCycle;
@@ -13,11 +11,8 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
     public const int MinTimeEntryCount = 2;
     private const float MaxTimeDiff = 0.05f;
 
-    private static readonly ProtoId<CP14DayCyclePeriodPrototype> DayPeriod = "Day";
-
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedMapSystem _maps = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -26,10 +21,12 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
         SubscribeLocalEvent<CP14DayCycleComponent, MapInitEvent>(OnMapInitDayCycle);
     }
 
-
     private void OnMapInitDayCycle(Entity<CP14DayCycleComponent> dayCycle, ref MapInitEvent args)
     {
         Init(dayCycle);
+
+        if (dayCycle.Comp.StartWithRandomEntry && dayCycle.Comp.TimeEntries.Count > 1)
+            SetTimeEntry(dayCycle, _random.Next(dayCycle.Comp.TimeEntries.Count));
     }
 
     public override void Update(float frameTime)
@@ -86,29 +83,6 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
         RaiseLocalEvent(dayCycle, ref ev, true);
 
         Dirty(dayCycle);
-    }
-
-    /// <summary>
-    /// Checks to see if the specified entity is on the map where it's daytime.
-    /// </summary>
-    /// <param name="target">An entity being tested to see if it is in daylight</param>
-    /// <param name="checkRoof">Checks if the tile covers the weather (the only "roof" factor at the moment)</param>
-    public bool TryDaylightThere(EntityUid target, bool checkRoof)
-    {
-        var xform = Transform(target);
-        if (!TryComp<CP14DayCycleComponent>(xform.MapUid, out var dayCycle))
-            return false;
-
-        if (!checkRoof || !TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
-            return dayCycle.CurrentPeriod == DayPeriod;
-
-        var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
-        var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
-
-        if (!tileDef.Weather)
-            return false;
-
-        return dayCycle.CurrentPeriod == DayPeriod;
     }
 
     private void SetAmbientColor(Entity<MapLightComponent> light, Color color)

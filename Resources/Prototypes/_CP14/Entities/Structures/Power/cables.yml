@@ -1,0 +1,48 @@
+- type: entity
+  parent: CableBase
+  id: CP14LVCable
+  name: LV power cable
+  description: A cable used to connect machines to an APC.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Power/Cables/cable.rsi
+    state: cable_0
+  - type: Icon
+    sprite: _CP14/Structures/Power/Cables/cable.rsi
+    state: cable_4
+  - type: NodeContainer
+    nodes:
+      power:
+        !type:CableNode
+        nodeGroupID: Apc
+  - type: PowerProvider
+    voltage: Apc
+  - type: ExtensionCableProvider
+  - type: Cable
+    cableDroppedOnCutPrototype: CP14CableLVStack1
+    cableType: Apc
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors: #excess damage (nuke?). avoid computational cost of spawning entities.
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CableApcStack1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: CableVisualizer
+    statePrefix: cable_
+  - type: PlacementReplacement
+    key: cable

@@ -228,3 +228,16 @@
     - skullsA
     - skullsB
   - type: Appearance
+    
+- type: entity
+  id: CP14WallSteel
+  name: steel wall
+  parent: CP14BaseWall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/steel_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/steel_wall.rsi
+  - type: IconSmooth
+    base: wall
+  - type: CP14WallpaperHolder
