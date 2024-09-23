@@ -154,12 +154,12 @@
     base: wood
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14WoodStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 300
       behaviors:
       - !type:PlaySoundBehavior
         sound:

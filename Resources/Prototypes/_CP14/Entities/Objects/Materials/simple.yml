@@ -124,6 +124,21 @@
   - type: Log
     spawnedPrototype: CP14WoodenPlanks1
     spawnCount: 3
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: CP14WoodenPlanks1
@@ -174,6 +189,20 @@
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
       CP14WoodenPlanks: 100
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: CP14WoodenPlanks10

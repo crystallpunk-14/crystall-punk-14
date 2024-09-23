@@ -1219,7 +1219,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
 
 - type: tile #Big
   editorHidden: false
@@ -1241,7 +1241,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   
 - type: tile #Cruci
   editorHidden: false
@@ -1263,7 +1263,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   
 - type: tile #Stairways
   editorHidden: false
@@ -1285,6 +1285,6 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
 ### /BURNED
 

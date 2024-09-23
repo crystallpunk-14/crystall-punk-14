@@ -25,8 +25,15 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
     private EntProtoId _fireProto = "CP14Fire";
     public override void Initialize()
     {
+        SubscribeLocalEvent<CP14FireSpreadComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CP14FireSpreadComponent, OnFireChangedEvent>(OnCompInit);
         SubscribeLocalEvent<CP14DespawnOnExtinguishComponent, OnFireChangedEvent>(OnFireChanged);
+    }
+
+    private void OnMapInit(Entity<CP14FireSpreadComponent> ent, ref MapInitEvent args) //TODO remove it
+    {
+        var cooldown = _random.NextFloat(ent.Comp.SpreadCooldownMin, ent.Comp.SpreadCooldownMax);
+        ent.Comp.NextSpreadTime = _gameTiming.CurTime + TimeSpan.FromSeconds(cooldown);
     }
 
     private void OnFireChanged(Entity<CP14DespawnOnExtinguishComponent> ent, ref OnFireChangedEvent args)
