@@ -8,6 +8,7 @@
   components:
   - type: Sprite
     drawDepth: Mobs
+    snapCardinals: true
     sprite: _CP14/Effects/fire.rsi
     layers:
       - state: full

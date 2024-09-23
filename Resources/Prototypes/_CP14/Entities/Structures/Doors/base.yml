@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseMaterialDoorNavMap
+  id: CP14BaseDoor
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+  - type: Door
+    bumpOpen: false
+    clickOpen: true
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    closedDrawDepth: Mobs
+    openDrawDepth: Mobs
+  - type: Lock
+    locked: true
+    lockSlotId: lock_slot
+  - type: ItemSlots
+    slots: 
+      lock_slot:
+        name: cp-lock-slot-component-slot-name-default
+        disableEject: true
+        insertOnInteract: false
+        ejectOnBreak: true
+        whitelist:
+          components:
+          - CPLock
+  - type: ContainerContainer
+    containers:
+      lock_slot: !type:ContainerSlot
