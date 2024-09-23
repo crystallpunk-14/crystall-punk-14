@@ -25,7 +25,7 @@
     prototype: CP14Human
     requiredLegs: 2
   - type: Bloodstream
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodGoblin
   - type: Hands
     handDisplacement:
       sizeMaps:
