@@ -15,9 +15,9 @@ class FTLParser(BaseParser):
         """
         prototypes = {}
 
-        for path in self.get_files_paths():
+        for path in self._get_files_paths():
 
-            if not self.check_file_extension(path, ".ftl"):
+            if not self._check_file_extension(path, ".ftl"):
                 continue
 
             file = ftl_reader.read_ftl((path, self.errors_path))

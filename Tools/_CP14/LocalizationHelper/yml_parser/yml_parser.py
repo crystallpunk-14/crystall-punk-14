@@ -1,5 +1,6 @@
 import yaml
 from base_parser import BaseParser
+import re
 
 
 class YMLParser(BaseParser):
@@ -8,7 +9,7 @@ class YMLParser(BaseParser):
     """
 
     @staticmethod
-    def check_proto_attrs(prototype: dict) -> bool:
+    def _check_proto_attrs(prototype: dict) -> bool:
         """
         The function checks that the prototype at least has some attribute from the "attrs_lst".
         """
@@ -21,7 +22,7 @@ class YMLParser(BaseParser):
         return any(prototype.get(attr) is not None for attr in attrs_lst)
 
     @staticmethod
-    def get_proto_attrs(prototypes: dict, prototype: dict) -> None:
+    def _get_proto_attrs(prototypes: dict, prototype: dict) -> None:
         prototypes[prototype.get("id")] = {
             "parent": prototype.get("parent"),
             "name": prototype.get("name"),
@@ -29,18 +30,29 @@ class YMLParser(BaseParser):
             "suffix": prototype.get("suffix")
         }
 
-    @staticmethod
-    def create_proto(file) -> str:
-        proto = ""
-        for line in file.readlines():
-            # The PyYaml library cannot handle the following SpaceStation 14 prototype syntax - !type: ...
-            # We need to fix this :(
-            if "!type" in line:
-                continue
-            proto += line
+    def _load_proto(self, file, path) -> list[dict]:
+        content_str = file.read()
+        prototypes_lst = re.split(r"\n(?=- type:)", content_str)
 
-        return proto
+        prototypes = []
+        for proto in prototypes_lst:
+            try:
+                prototype_str = ""
+                for line in proto.splitlines():
+                    if "components:" in line:
+                        break
+                    prototype_str += f"{line}\n"
+                prototype = yaml.safe_load(prototype_str)
+                if prototype is None:
+                    continue
+                prototypes.append(prototype[0])
+            except Exception as e:
+                with open(self.errors_path, "a") as error_file:
+                    error_file.write(
+                        f"YML-ERROR:\nAn error occurred during prototype processing {path}, error - {e}\n")
 
+        return prototypes
+        
     def yml_parser(self) -> dict:
         """
             The function gets the path, then with the help of the os library
@@ -49,21 +61,16 @@ class YMLParser(BaseParser):
         """
         prototypes = {}
 
-        for path in self.get_files_paths():
-            if not self.check_file_extension(path, ".yml"):
+        for path in self._get_files_paths():
+            if not self._check_file_extension(path, ".yml"):
                 continue
 
-            try:
-                with open(path, encoding="utf-8") as file:
-                    proto = self.create_proto(file)
-                    data = yaml.safe_load(proto)
-            except Exception as e:
-                with open(self.errors_path, "a") as file:
-                    file.write(f"YML-ERROR:\nAn error occurred during prototype processing {path}, error - {e}\n")
-            else:
-                if data is not None:
-                    for prototype in data:
-                        if self.check_proto_attrs(prototype):
-                            self.get_proto_attrs(prototypes, prototype)
+            with open(path, encoding="utf-8") as file:
+                content = self._load_proto(file, path)
+
+            if content is not None:
+                for prototype in content:
+                    if self._check_proto_attrs(prototype):
+                        self._get_proto_attrs(prototypes, prototype)
 
         return prototypes
