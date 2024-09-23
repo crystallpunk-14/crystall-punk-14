@@ -134,16 +134,22 @@
     contents:
       - id: CP14Crossbolt
         prob: 0.2
+        onGroup: Weapon
       - id: CP14Crossbolt
         prob: 0.2
+        onGroup: Weapon
       - id: CP14Crossbolt
         prob: 0.2
+        onGroup: Weapon
       - id: CP14BaseSharpeningStone
         prob: 0.2
+        onGroup: Weapon
       - id: CP14BaseSharpeningStone
         prob: 0.2
+        onGroup: Weapon
       - id: CP14BaseBattleStaff
         prob: 0.2
+        onGroup: Weapon
       - id: CP14BaseDagger
         prob: 0.2
         onGroup: Weapon
@@ -201,7 +207,6 @@
       - id: CP14AuraScanner
         prob: 0.2
         onGroup: Weapon2
-      - id: ClothingBackpackCargo
       - id: CP14CopperCoin1
         prob: 0.2
         onGroup: Currency
