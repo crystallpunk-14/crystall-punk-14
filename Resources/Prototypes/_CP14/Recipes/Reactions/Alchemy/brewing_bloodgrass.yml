@@ -57,3 +57,22 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
+
+- type: reaction
+  id: CP14BloodGrassBrewingBloodGoblin
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14BloodGoblin:
+      amount: 0.5
+    CP14BloodGrassSap:
+      amount: 0.5
+    CP14GroundQuartz:
+      amount: 0.5
+  products:
+    CP14BasicEffectEmpty: 0.75
+    CP14BasicEffectRainbow: 0.25
+    CP14BasicEffectVomit: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250

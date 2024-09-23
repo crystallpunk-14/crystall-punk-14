@@ -1,5 +1,6 @@
 - type: guideEntry
   crystallPunkAllowed: true
+  locFilter: "en-US"
   id: CP14_EN
   name: cp14-guide-entry-english
   text: "/ServerInfo/_CP14/Guidebook_EN/Welcome.xml"
@@ -8,6 +9,7 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
+  locFilter: "ru-RU"
   id: CP14_RU
   name: cp14-guide-entry-russian
   text: "/ServerInfo/_CP14/Guidebook_RU/Welcome.xml"

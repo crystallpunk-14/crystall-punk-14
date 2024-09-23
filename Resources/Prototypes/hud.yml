@@ -1,11 +1,13 @@
-# Они не будут работать с новыми слотами
-# А так же они не подходят под нашу атмосферу
+# Эта тема отредактирована
 
-# - type: hudTheme
-#   id: SS14DefaultTheme
-#   name: ui-options-hud-theme-default
-#   path: Default
-#   order: -1
+ - type: hudTheme
+   id: SS14DefaultTheme
+   name: ui-options-hud-theme-default
+   path: Default
+   order: -1
+
+# А остальные не будут работать с новыми слотами
+# А так же они не подходят под нашу атмосферу
 
 # - type: hudTheme
 #   id: SS14PlasmafireTheme
