@@ -77,6 +77,6 @@
         Heat: 0
   - type: CP14Fireplace
     fuel: 15
-  - type: CP14AutoIgnite
+  #- type: CP14AutoIgnite
   - type: CP14FireSpread
   - type: CP14DespawnOnExtinguish
