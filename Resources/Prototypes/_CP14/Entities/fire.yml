@@ -66,16 +66,17 @@
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
   - type: Flammable
-    onFire: true
     fireSpread: false #Lava comp kostыль
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
     firestacksOnIgnite: 0.5
+    cP14AutoIgnite: true
     damage:
       types:
         Heat: 0
-  - type: TimedDespawn
-    lifetime: 60
+  - type: CP14Fireplace
+    fuel: 15
+  - type: CP14AutoIgnite
   - type: CP14FireSpread
   - type: CP14DespawnOnExtinguish

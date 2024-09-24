@@ -25,15 +25,8 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
     private EntProtoId _fireProto = "CP14Fire";
     public override void Initialize()
     {
-        SubscribeLocalEvent<CP14FireSpreadComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CP14FireSpreadComponent, OnFireChangedEvent>(OnCompInit);
         SubscribeLocalEvent<CP14DespawnOnExtinguishComponent, OnFireChangedEvent>(OnFireChanged);
-    }
-
-    private void OnMapInit(Entity<CP14FireSpreadComponent> ent, ref MapInitEvent args) //TODO remove it
-    {
-        var cooldown = _random.NextFloat(ent.Comp.SpreadCooldownMin, ent.Comp.SpreadCooldownMax);
-        ent.Comp.NextSpreadTime = _gameTiming.CurTime + TimeSpan.FromSeconds(cooldown);
     }
 
     private void OnFireChanged(Entity<CP14DespawnOnExtinguishComponent> ent, ref OnFireChangedEvent args)
@@ -55,6 +48,33 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        UpdateFireSpread();
+        UpdateAutoIgnite();
+    }
+
+    private void UpdateAutoIgnite()
+    {
+        var query = EntityQueryEnumerator<CP14AutoIgniteComponent, FlammableComponent>();
+        while (query.MoveNext(out var uid, out var autoIgnite, out var flammable))
+        {
+            if (!autoIgnite.Initialized || !flammable.Initialized)
+                continue;
+
+            if (autoIgnite.IgniteTime == TimeSpan.Zero)
+                autoIgnite.IgniteTime = _gameTiming.CurTime + autoIgnite.IgniteDelay;
+
+            if (_gameTiming.CurTime < autoIgnite.IgniteTime)
+                continue;
+            //Это такой пиздец, что-то сломалось у оффов, что поджигание сущности в момент инициализации (например MapInitEvent) нахрен все крашит.
+            //Поэтому я добавил 1-секундную задержку перед поджиганием.
+
+            _flammable.AdjustFireStacks(uid, autoIgnite.StartStack, flammable, true);
+            RemCompDeferred<CP14AutoIgniteComponent>(uid);
+        }
+    }
+
+    private void UpdateFireSpread()
+    {
         List<Entity<CP14FireSpreadComponent>> spreadUids = new();
         var query = EntityQueryEnumerator<CP14FireSpreadComponent, FlammableComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var spread, out var flammable, out var xform))
