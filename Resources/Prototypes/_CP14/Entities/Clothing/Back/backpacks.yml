@@ -1,0 +1,32 @@
+- type: entity
+  parent: [Clothing, ContentsExplosionResistanceBase]
+  id: CP14ClothingLeatherBackpack
+  name: leather backpack
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/leather_backpack.rsi
+    state: icon
+  - type: Item
+    size: Huge
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  # to prevent bag open/honk spam
+  - type: UseDelay
+    delay: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
