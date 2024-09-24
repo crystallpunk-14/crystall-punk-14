@@ -71,7 +71,6 @@
     alwaysCombustible: true
     canExtinguish: true
     firestacksOnIgnite: 0.5
-    cP14AutoIgnite: true
     damage:
       types:
         Heat: 0
