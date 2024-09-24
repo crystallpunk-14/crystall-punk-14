@@ -19,6 +19,10 @@ namespace Content.Client.Options.UI
             Tabs.SetTabTitle(3, Loc.GetString("ui-options-tab-audio"));
             Tabs.SetTabTitle(4, Loc.GetString("ui-options-tab-accessibility"));
 
+            // CP14-options-menu-start
+            Tabs.SetTabTitle(5, Loc.GetString("cp14-ui-options-tab-main"));
+            // CP14-options-menu-end
+
             UpdateTabs();
         }
 

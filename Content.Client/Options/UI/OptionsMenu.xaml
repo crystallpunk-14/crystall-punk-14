@@ -1,5 +1,6 @@
 <DefaultWindow xmlns="https://spacestation14.io"
             xmlns:tabs="clr-namespace:Content.Client.Options.UI.Tabs"
+            xmlns:options="clr-namespace:Content.Client._CP14.Options"
             Title="{Loc 'ui-options-title'}"
             MinSize="800 450">
     <TabContainer Name="Tabs" Access="Public">
@@ -8,5 +9,8 @@
         <tabs:KeyRebindTab Name="KeyRebindTab" />
         <tabs:AudioTab Name="AudioTab" />
         <tabs:AccessibilityTab Name="AccessibilityTab" />
+        <!-- CP14-options-menu-start -->
+        <options:CP14OptionsMenuMainTab Name="CP14OptionsMenuTab"/>
+        <!-- CP14-options-menu-end -->
     </TabContainer>
 </DefaultWindow>
