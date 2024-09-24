@@ -112,11 +112,16 @@
   - CP14WorkbenchMeltingMolds
   - CP14BaseFlammable
   name: cooking table
-  description: Lets cook
+  description: A table to work with food. Time to cook!
   components:
+  - type: Sprite
+    snapCardinals: true
+    state: cooking_table
+  - type: Icon
+    state: cooking_table
   - type: CP14Workbench
     craftSound:
-      collection: CP14Sawing
+      collection: CP14Sawing #TODO
     recipes:
     - CP14FoodDoughLarge
     - CP14FoodDoughMediumFlat
@@ -132,11 +137,11 @@
   - CP14WorkbenchMeltingMolds
   - CP14BaseFlammable
   name: sewing table
-  description: Lets cook
+  description: A table with embroidery tools to create different clothing and materials.
   components:
   - type: CP14Workbench
     craftSound:
-      collection: CP14Sawing
+      collection: CP14Sawing #TODO
     recipes:
     - CP14ClothingShirtCottonBlue
     - CP14ClothingShirtCottonBlack

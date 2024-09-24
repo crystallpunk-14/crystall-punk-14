@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CLA",
-  "copyright": "Created by jaraten(discord) for CrystallPunk14, modified by vladimir.s",
+  "copyright": "Created by jaraten(discord) for CrystallPunk14, modified by vladimir.s. Cooking table by Max Gab",
   "size": {
     "x": 48,
     "y": 48
@@ -12,6 +12,9 @@
     },
     {
       "name": "melting_crafter"
+    },
+    {
+      "name": "cooking_table"
     }
   ]
 }
