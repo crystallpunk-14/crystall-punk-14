@@ -63,8 +63,7 @@
     damage:
       types:
         Blunt: 6
-  - type: StaminaDamageOnHit
-    damage: 10
+  - type: CP14MeleeParry
   - type: Damageable
     damageContainer: Shield
   - type: Destructible
