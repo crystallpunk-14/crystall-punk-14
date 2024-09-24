@@ -1,0 +1,53 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14BaseDoorFrame
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+
+- type: entity
+  parent: CP14BaseDoorFrame
+  id: CP14WoodenDoorFrame
+  name: wooden door frame
+  description: An unfinished wooden door
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Doors/wooden_frame.rsi
+    drawdepth: Mobs
+    state: closed
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: CP14WoodenDoor
+    node: CP14WoodenDoorFrame
+
+- type: entity
+  parent: CP14WoodenDoorFrame
+  id: CP14WoodenDoorFrameMirrored
+  components:
+  - type: Sprite
+    state: closed_mirrored
+  - type: Construction
+    graph: CP14WoodenDoor
+    node: CP14WoodenDoorFrameMirrored

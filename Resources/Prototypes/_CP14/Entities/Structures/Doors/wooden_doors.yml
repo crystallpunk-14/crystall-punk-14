@@ -1,11 +1,11 @@
 - type: entity
+  id: CP14WoodenDoor
   parent: 
   - CP14BaseDoor
   - CP14BaseFlammableSpreading
-  id: CP14WoodenDoor
   name: wooden door
   description: Not the most solid construction, but it's better than nothing.
-  suffix: Without lock
+  suffix: Opened
   components:
   - type: Sprite
     sprite: _CP14/Structures/Doors/wooden_door.rsi
@@ -30,34 +30,23 @@
         acts: ["Destruction"]
   - type: Lock
     locked: false
+  - type: Construction
+    graph: CP14WoodenDoor
+    node: CP14WoodenDoor
+
+- type: entity
+  id: CP14WoodenDoorMirrored
+  parent: CP14WoodenDoor
+  suffix: Opened, Mirrored
+  components:
+  - type: Door
+    openSpriteState: open_mirrored
+    closedSpriteState: closed_mirrored
+  - type: Construction
+    graph: CP14WoodenDoor
+    node: CP14WoodenDoorMirrored
 
 # Tavern
-
-- type: entity
-  parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernHall
-  suffix: Tavern Hall
-  components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernHall
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernHall
-  id: CP14WoodenDoorTavernHallLocked
-  suffix: Tavern Hall, Locked
-  components:
-  - type: Lock
-    locked: true
-
 
 - type: entity
   parent: CP14WoodenDoor
@@ -75,20 +64,21 @@
         whitelist:
           components:
           - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernStaff
-  id: CP14WoodenDoorTavernStaffLocked
-  suffix: Tavern Staff, Locked
-  components:
   - type: Lock
     locked: true
+
+- type: entity
+  parent: 
+  - CP14WoodenDoorTavernStaff
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorTavernStaffMirrored
+  suffix: Tavern Staff, Mirrored
 
 
 - type: entity
   parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernDorms1
-  suffix: Tavern Dorms 1
+  id: CP14WoodenDoorTavernDorms
+  suffix: Tavern Dorms
   components:
   - type: ItemSlots
     slots: 
@@ -101,118 +91,15 @@
         whitelist:
           components:
           - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernDorms1
-  id: CP14WoodenDoorTavernDorms1Locked
-  suffix: Tavern Dorms 1, Locked
-  components:
   - type: Lock
     locked: true
 
-
 - type: entity
-  parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernDorms2
-  suffix: Tavern Dorms 2
-  components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernDorms2
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernDorms2
-  id: CP14WoodenDoorTavernDorms2Locked
-  suffix: Tavern Dorms 2, Locked
-  components:
-  - type: Lock
-    locked: true
-
-
-- type: entity
-  parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernDorms3
-  suffix: Tavern Dorms 3
-  components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernDorms3
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernDorms3
-  id: CP14WoodenDoorTavernDorms3Locked
-  suffix: Tavern Dorms 3, Locked
-  components:
-  - type: Lock
-    locked: true
-
-
-- type: entity
-  parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernDorms4
-  suffix: Tavern Dorms 4
-  components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernDorms4
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernDorms4
-  id: CP14WoodenDoorTavernDorms4Locked
-  suffix: Tavern Dorms 4, Locked
-  components:
-  - type: Lock
-    locked: true
-
-
-- type: entity
-  parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernDorms5
-  suffix: Tavern Dorms 5
-  components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernDorms5
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernDorms5
-  id: CP14WoodenDoorTavernDorms5Locked
-  suffix: Tavern Dorms 5, Locked
-  components:
-  - type: Lock
-    locked: true
+  parent: 
+  - CP14WoodenDoorTavernDorms
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorTavernDormsMirrored
+  suffix: Tavern Dorms, Mirrored
 
 # Alchemy 
 
@@ -232,11 +119,12 @@
         whitelist:
           components:
           - CPLock
-
-- type: entity
-  parent: CP14WoodenDoorTavernAlchemy
-  id: CP14WoodenDoorTavernAlchemyLocked
-  suffix: Alchemy, Locked
-  components:
   - type: Lock
     locked: true
+
+- type: entity
+  parent: 
+  - CP14WoodenDoorTavernAlchemy
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorTavernAlchemyMirrored
+  suffix: Alchemy, Mirrored
