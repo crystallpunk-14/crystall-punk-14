@@ -1,7 +1,9 @@
 - type: entity
   id: CP14FrameWooden
   name: wooden wall frame
-  parent: BaseStructureDynamic
+  parent: 
+  - BaseStructureDynamic
+  - CP14BaseFlammableSpreading
   description: Wooden frame for any wooden wall.
   placement:
     mode: SnapgridCenter
@@ -35,6 +37,35 @@
   - type: Construction
     graph: CP14WallWood
     node: FrameWooden
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 1
 
 - type: entity
   id: CP14BaseCrushed

@@ -2,7 +2,7 @@
   id: CP14BaseBarrel
   parent: 
   - BaseStructureDynamic
-  - CP14BaseWooden
+  - CP14BaseFlammable
   name: wooden barrel
   suffix: Empty
   description: The simplest design for storing liquids.
@@ -51,13 +51,13 @@
         solution: barrel
     - trigger:
         !type:DamageTrigger
-        damage: 10
+        damage: 20
       behaviors:
       - !type:SpillBehavior
         solution: barrel
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalBreak
+          collection: WoodDestroy
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Appearance
@@ -138,6 +138,18 @@
       barrel:
         reagents:
         - ReagentId: CP14BloodElf
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelBloodGoblin
+  parent: CP14BaseBarrel
+  suffix: Goblin Blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BloodGoblin
           Quantity: 300
 
 - type: entity

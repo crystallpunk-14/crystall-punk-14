@@ -1,17 +1,19 @@
 - type: entity
   id: CP14Mannequin
-  parent: Mannequin
+  parent: 
+  - Mannequin
+  - CP14BaseFlammable
   name: mannequin
   description: A handy stand for clothing or armour.
   components:
   - type: Appearance
   - type: Sprite
-    sprite: _CP14/Structures/Decoration/mannequin.rsi
+    sprite: _CP14/Structures/Furniture/mannequin.rsi
     state: mannequin
     noRot: true
     layers:
     - map: [ "mannequin" ]
-      sprite: _CP14/Structures/Decoration/mannequin.rsi
+      sprite: _CP14/Structures/Furniture/mannequin.rsi
       state: mannequin
     - map: [ "shirt" ]
     - map: [ "pants" ]
@@ -44,11 +46,12 @@
     node: CP14mannequin
   - type: Damageable
     damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 50
       behaviors:
       - !type:PlaySoundBehavior
         sound:

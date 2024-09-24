@@ -11,9 +11,6 @@
     state: gob
     drawdepth: Mobs
     offset: "0.0,0.5"
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Rock
   - type: Fixtures
     fixtures:
       fix1:
@@ -25,11 +22,14 @@
         - MachineMask
         layer:
         - MachineLayer
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 125
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]

@@ -1,6 +1,7 @@
 - type: entity
   id: CP14HighBush
   name: high bush
+  parent: CP14BaseFlammableSpreading
   description: Very tall and dense thickets. Perhaps someone is watching you from them
   components:
   - type: CP14WaveShader
@@ -33,8 +34,20 @@
           !type:PhysShapeAabb
           bounds: "-0.35,-0.35,0.35,0.35"
         density: 1000
+        mask:
+        - TableMask
         layer:
-        - WallLayer
+        - TableLayer
+      fix2: #For melee or laser
+        hard: true
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        mask:
+        - FullTileMask 
+        layer:
+        - Opaque
+        
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood

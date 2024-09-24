@@ -28,10 +28,15 @@
 
 - type: entity
   id: CP14WindowWooden
-  parent: CP14WindowBase
+  parent: 
+  - CP14WindowBase
+  - CP14BaseFlammable
   name: wooden window
   description: A wooden wall with a glass window in it.
   components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14WoodStructural
   - type: Sprite
     sprite: _CP14/Structures/Windows/wooden_window.rsi
   - type: Icon

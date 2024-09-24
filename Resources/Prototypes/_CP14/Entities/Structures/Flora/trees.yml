@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseTree
   abstract: true
+  parent: CP14BaseFlammableSpreading
   name: tree
   description: Decades of life and growth, saturating the surrounding nature with fresh air.
   components:
@@ -37,14 +38,21 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTrigger
-        damage: 400
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -85,14 +93,21 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTrigger
-        damage: 600
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
       behaviors:
       - !type:PlaySoundBehavior
         sound:

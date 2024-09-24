@@ -1,7 +1,7 @@
 - type: entity
   parent:
   - BaseStructureDynamic
-  - CP14BaseWooden
+  - CP14BaseFlammable
   id: CP14WoodenChestFrame
   name: wooden chest frame
   description: Base for any wooden chest
@@ -39,7 +39,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank:
+          CP14WoodenPlanks1:
             min: 1
             max: 2
   - type: Construction
@@ -49,7 +49,7 @@
 - type: entity
   parent: 
   - CP14ChestGeneric
-  - CP14BaseWooden
+  - CP14BaseFlammable
   id: CP14WoodenChest
   name: wooden chest
   description: A simple wooden chest for easy storage of junk.
@@ -90,7 +90,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank:
+          CP14WoodenPlanks1:
             min: 2
             max: 3
   - type: EntityStorage

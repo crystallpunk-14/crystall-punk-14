@@ -1,13 +1,5 @@
 # <---> CrystallPunk migration zone
 
-# 2024-05-04
-CP14FloorWood: null
-CP14FloorWoodBig: null
-CP14FloorBricks: null
-CP14FloorBricksCarvedSmall1: null
-CP14FloorBricksCarvedSmall2: null
-CP14FloorBricksCarvedSquare: null
-
 # 2024-05-24
 CP14CardboardWall: CP14WallCardboard
 
@@ -46,9 +38,34 @@ CP14Nail110: CP14Nail10
 CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
 
 #2024-09-22
-CP14WoodDoorTavern: CP14WoodDoorTavernHall
+CP14WoodDoorTavern: CP14WoodenDoorTavernHallLocked
 CP14LockTavern: CP14LockTavernHall
 CP14KeyTavern: CP14KeyTavernHall
+
+#2024-09-23
+CP14WallmountVines: null
+CP14WallmountWeb: null
+CP14WallmountWoodenBoards: null
+CP14BaseWoodDoor: CP14WoodenDoor
+CP14WoodDoorOpened: CP14WoodenDoor
+CP14WoodDoorTavernHall: CP14WoodenDoorTavernHallLocked
+CP14WoodDoorTavernHallOpened: CP14WoodenDoorTavernHall
+CP14WoodDoorTavernStaff: CP14WoodenDoorTavernStaffLocked
+CP14WoodDoorTavernStaffOpened: CP14WoodenDoorTavernStaff
+CP14WoodDoorTavernDorms1: CP14WoodenDoorTavernDorms1Locked
+CP14WoodDoorTavernDorms2: CP14WoodenDoorTavernDorms2Locked
+CP14WoodDoorTavernDorms3: CP14WoodenDoorTavernDorms3Locked
+CP14WoodDoorTavernDorms4: CP14WoodenDoorTavernDorms4Locked
+CP14WoodDoorTavernDorms5: CP14WoodenDoorTavernDorms5Locked
+CP14WoodDoorTavernDorms1Opened: CP14WoodenDoorTavernDorms1
+CP14WoodDoorTavernDorms2Opened: CP14WoodenDoorTavernDorms2
+CP14WoodDoorTavernDorms3Opened: CP14WoodenDoorTavernDorms3
+CP14WoodDoorTavernDorms4Opened: CP14WoodenDoorTavernDorms4
+CP14WoodDoorTavernDorms5Opened: CP14WoodenDoorTavernDorms5
+CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemyLocked
+CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy
+CP14WoodenDoorOpened: CP14WoodenDoor
+CP14CuttingBoard: null
 
 # <---> CrystallPunk migration zone end
 

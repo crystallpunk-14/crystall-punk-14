@@ -81,7 +81,6 @@
     isCollidableWhenOpen: true
     enteringOffset: 0, -0.4
     enteringRange: 0.06
-    airtight: false
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
@@ -89,9 +88,6 @@
   - type: PlaceableSurface
     placeCentered: true
     isPlaceable: false
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
   - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: base
@@ -106,13 +102,16 @@
   name: wooden dresser
   parent:
   - CP14DresserBase
-  - CP14BaseWooden
+  - CP14BaseFlammableSpreading
   id: CP14WoodenDresser
   description: A regular wooden dresser.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Storage/Dressers/wood_dresser.rsi
     state: icons
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -131,13 +130,16 @@
   name: wooden cupboard
   parent:
   - CP14ClosetBase
-  - CP14BaseWooden
+  - CP14BaseFlammable
   id: CP14WoodenCupboard
   description: It's a regular wooden cabinet.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Storage/Dressers/wood_cupboard.rsi
     state: icons
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:

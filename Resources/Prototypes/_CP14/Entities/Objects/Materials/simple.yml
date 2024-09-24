@@ -90,7 +90,6 @@
   id: CP14WoodLog
   parent:
   - BaseItem
-  - CP14BaseWooden
   name: wooden log
   description: A piece of unprocessed wood. Good material for building, or starting a fire.
   components:
@@ -125,12 +124,26 @@
   - type: Log
     spawnedPrototype: CP14WoodenPlanks1
     spawnCount: 3
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: CP14WoodenPlanks1
   parent:
   - BaseItem
-  - CP14BaseWooden
   name: wooden planks
   description: Treated and ready-to-use wood.
   suffix: 1
@@ -176,6 +189,20 @@
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
       CP14WoodenPlanks: 100
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: CP14WoodenPlanks10

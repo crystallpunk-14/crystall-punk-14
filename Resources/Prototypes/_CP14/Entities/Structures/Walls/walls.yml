@@ -144,7 +144,7 @@
   name: wooden wall
   parent: 
   - CP14BaseWall
-  - CP14BaseWooden
+  - CP14BaseFlammableSpreading
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/wooden_wall.rsi
@@ -154,12 +154,12 @@
     base: wood
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14WoodStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 300
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -177,7 +177,7 @@
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
   parent: 
   - CP14WallWooden
-  - CP14BaseWooden
+  - CP14BaseFlammableSpreadingStrong
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/cardboard_wall.rsi

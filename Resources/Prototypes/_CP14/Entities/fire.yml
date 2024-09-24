@@ -8,6 +8,7 @@
   components:
   - type: Sprite
     drawDepth: Mobs
+    snapCardinals: true
     sprite: _CP14/Effects/fire.rsi
     layers:
       - state: full
@@ -21,15 +22,24 @@
   - type: Fixtures
     fixtures:
       fix1:
+        hard: false
         shape:
           !type:PhysShapeAabb
           bounds: "-0.5,-0.5,0.5,0.5"
-        layer:
-          - SlipLayer
+        density: 1000
         mask:
           - ItemMask
-        density: 1000
-        hard: false
+        layer:
+          - SlipLayer
+      fix2: #For melee like water bucket
+        hard: true
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask 
+        layer:
+        - Opaque
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.1
@@ -64,10 +74,10 @@
     damage:
       types:
         Heat: 0
-  - type: CP14FlammableEntityHeater
-  - type: CP14FlammableSolutionHeater
-  #- type: CP14Fireplace
-  #  fuel: 15
+  - type: CP14Fireplace
+    fuel: 15
   #- type: CP14AutoIgnite
+  - type: TimedDespawn
+    lifetime: 60
   - type: CP14FireSpread
   - type: CP14DespawnOnExtinguish

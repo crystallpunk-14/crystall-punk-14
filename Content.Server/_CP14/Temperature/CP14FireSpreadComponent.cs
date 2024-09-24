@@ -17,25 +17,25 @@ public sealed partial class CP14FireSpreadComponent : Component
     /// chance of spreading to neighboring properties
     /// </summary>
     [DataField]
-    public float Prob = 0.5f;
+    public float Prob = 0.3f;
 
     /// <summary>
     /// chance of tile spreading to neighboring properties
     /// </summary>
     [DataField]
-    public float ProbTile = 0.15f;
+    public float ProbTile = 0.2f;
 
     /// <summary>
     /// how often objects will try to set the neighbors on fire. In Seconds
     /// </summary>
     [DataField]
-    public float SpreadCooldownMin = 3f;
+    public float SpreadCooldownMin = 4f;
 
     /// <summary>
     /// how often objects will try to set the neighbors on fire. In Seconds
     /// </summary>
     [DataField]
-    public float SpreadCooldownMax = 7f;
+    public float SpreadCooldownMax = 14f;
 
     /// <summary>
     /// the time of the next fire spread

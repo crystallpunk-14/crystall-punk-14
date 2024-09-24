@@ -68435,13 +68435,6 @@ entities:
     - type: Transform
       pos: -4.626365,-4.538626
       parent: 1
-- proto: CP14KeyTavern
-  entities:
-  - uid: 9777
-    components:
-    - type: Transform
-      pos: -8.818211,-4.301879
-      parent: 1
 - proto: CP14LargeWoodenCrateFilled
   entities:
   - uid: 9831
@@ -70097,7 +70090,7 @@ entities:
     - type: Transform
       pos: -0.5,-3.5
       parent: 1
-- proto: CP14WoodDoorOpened
+- proto: CP14WoodenDoorOpened
   entities:
   - uid: 4
     components:
@@ -70110,7 +70103,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,2.5
       parent: 1
-- proto: CP14WoodDoorTavern
+- proto: CP14WoodenDoorOpened
   entities:
   - uid: 853
     components:

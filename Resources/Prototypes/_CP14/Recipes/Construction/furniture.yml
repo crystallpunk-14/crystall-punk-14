@@ -118,7 +118,7 @@
   targetNode: CP14mannequin
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Decoration/mannequin.rsi
+    sprite: _CP14/Structures/Furniture/mannequin.rsi
     state: mannequin
   objectType: Structure
   placementMode: SnapgridCenter

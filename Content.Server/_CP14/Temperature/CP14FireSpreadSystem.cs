@@ -48,14 +48,44 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        UpdateFireSpread();
+        UpdateAutoIgnite();
+    }
+
+    private void UpdateAutoIgnite()
+    {
+        var query = EntityQueryEnumerator<CP14AutoIgniteComponent, FlammableComponent>();
+        while (query.MoveNext(out var uid, out var autoIgnite, out var flammable))
+        {
+            if (!autoIgnite.Initialized || !flammable.Initialized)
+                continue;
+
+            if (autoIgnite.IgniteTime == TimeSpan.Zero)
+                autoIgnite.IgniteTime = _gameTiming.CurTime + autoIgnite.IgniteDelay;
+
+            if (_gameTiming.CurTime < autoIgnite.IgniteTime)
+                continue;
+            //Это такой пиздец, что-то сломалось у оффов, что поджигание сущности в момент инициализации (например MapInitEvent) нахрен все крашит.
+            //Поэтому я добавил 1-секундную задержку перед поджиганием.
+
+            _flammable.AdjustFireStacks(uid, autoIgnite.StartStack, flammable, true);
+            RemCompDeferred<CP14AutoIgniteComponent>(uid);
+        }
+    }
+
+    private void UpdateFireSpread()
+    {
         List<Entity<CP14FireSpreadComponent>> spreadUids = new();
-        var query = EntityQueryEnumerator<CP14FireSpreadComponent, FlammableComponent>();
-        while (query.MoveNext(out var uid, out var spread, out var flammable))
+        var query = EntityQueryEnumerator<CP14FireSpreadComponent, FlammableComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var spread, out var flammable, out var xform))
         {
             if (!flammable.OnFire)
                 continue;
 
             if (spread.NextSpreadTime >= _gameTiming.CurTime)
+                continue;
+
+            if (xform.ParentUid != xform.GridUid) //we can't set a fire if we're inside a chest, for example.
                 continue;
 
             var cooldown = _random.NextFloat(spread.SpreadCooldownMin, spread.SpreadCooldownMax);
@@ -73,7 +103,7 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
 
     private void IgniteEntities(EntityUid uid, CP14FireSpreadComponent spread)
     {
-        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(uid), spread.Radius);
+        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(uid), spread.Radius, LookupFlags.Uncontained);
         foreach (var target in targets)
         {
             if (!_random.Prob(spread.Prob))
