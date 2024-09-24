@@ -33,6 +33,9 @@
         acts: ["Destruction"]
   - type: Lock
     locked: false
+  - type: Construction
+    graph: CP14WoodenDoor
+    node: CP14WoodenDoorWindowed
 
 - type: entity
   id: CP14WoodenDoorWindowedMirrored
@@ -42,6 +45,9 @@
   - type: Door
     openSpriteState: open_mirrored
     closedSpriteState: closed_mirrored
+  - type: Construction
+    graph: CP14WoodenDoor
+    node: CP14WoodenDoorWindowedMirrored
 
 # Tavern
 
