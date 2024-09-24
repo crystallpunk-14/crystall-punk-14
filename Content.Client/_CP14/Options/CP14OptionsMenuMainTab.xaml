@@ -1,0 +1,35 @@
+<options:CP14OptionsMenuMainTab
+    xmlns="https://spacestation14.io"
+    xmlns:ui="clr-namespace:Content.Client.Options.UI"
+    xmlns:options="clr-namespace:Content.Client._CP14.Options">
+
+    <!--
+    Place for all custom settings of CP14
+    -->
+    <BoxContainer Orientation="Vertical">
+
+        <!-- Main options container -->
+        <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer Orientation="Vertical" Margin="8 8 8 8" VerticalExpand="True">
+
+                <!-- Graphics group -->
+                <Label Text="{Loc 'cp14-ui-options-main-graphics-label'}"
+                       StyleClasses="LabelKeyText"/>
+
+                <!-- CP14 Wave shader settings -->
+                <BoxContainer Orientation="Horizontal">
+                    <Label Text="{Loc 'cp14-ui-options-main-graphics-wave-shader'}" Margin="0 0 4 0"/>
+                    <CheckBox Name="WaveShaderEnabled"/>
+                </BoxContainer>
+
+            </BoxContainer>
+        </ScrollContainer>
+
+        <!--
+        Utilitarian element to simplify configuration work,
+        ust don't touch that, okay?
+        -->
+        <ui:OptionsTabControlRow Name="Control" />
+
+    </BoxContainer>
+</options:CP14OptionsMenuMainTab>
