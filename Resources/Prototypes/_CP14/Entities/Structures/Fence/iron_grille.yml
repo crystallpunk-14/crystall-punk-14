@@ -7,7 +7,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/iron_grille.rsi
+    sprite: _CP14/Structures/Fences/iron_grille.rsi
     drawdepth: Mobs
   - type: Physics
     bodyType: Static
@@ -33,7 +33,7 @@
   suffix: Straight
   components:
   - type: Icon
-    sprite: _CP14/Structures/Walls/iron_grille.rsi
+    sprite: _CP14/Structures/Fences/iron_grille.rsi
     state: straight
   - type: Sprite
     layers:
@@ -58,7 +58,7 @@
   suffix: Corner
   components:
   - type: Icon
-    sprite: _CP14/Structures/Walls/iron_grille.rsi
+    sprite: _CP14/Structures/Fences/iron_grille.rsi
     state: corner
   - type: Sprite
     layers:
@@ -92,7 +92,7 @@
   suffix: T-Junction
   components:
   - type: Icon
-    sprite: _CP14/Structures/Walls/iron_grille.rsi
+    sprite: _CP14/Structures/Fences/iron_grille.rsi
     state: tjunction
   - type: Sprite
     layers:

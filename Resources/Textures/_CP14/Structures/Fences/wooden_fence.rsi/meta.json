@@ -26,26 +26,6 @@
     {
       "name": "tjunction",
       "directions": 4
-    },
-    {
-      "name": "straight_small",
-      "directions": 4
-    },
-    {
-      "name": "corner_small",
-      "directions": 4
-    },
-    {
-      "name": "door_closed_small",
-      "directions": 4
-    },
-    {
-      "name": "door_opened_small",
-      "directions": 4
-    },
-    {
-      "name": "tjunction_small",
-      "directions": 4
     }
   ]
 }

@@ -7,10 +7,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: cliff
   - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: cliff
   - type: Physics
     bodyType: Static
@@ -34,10 +34,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: smallcorner
   - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: smallcorner
   - type: Fixtures
     fixtures:
@@ -67,10 +67,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: corner
   - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: corner
   - type: Fixtures
     fixtures:
@@ -91,10 +91,10 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: end_left
   - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: end_left
     
 - type: entity
@@ -104,8 +104,8 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: end_right
   - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cliffs.rsi
+    sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: end_right
