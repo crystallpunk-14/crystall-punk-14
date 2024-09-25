@@ -1,7 +1,7 @@
 - type: entity
   parent:
   - CP14BaseFence
-  id: CP14IronGrilleBase
+  id: CP14FenceIronGrilleBase
   name: iron grille
   description: A strong barrier made of iron bars welded together.
   abstract: true
@@ -27,9 +27,9 @@
 
 - type: entity
   parent: 
-  - CP14IronGrilleBase
+  - CP14FenceIronGrilleBase
   - CP14BaseFenceStraight
-  id: CP14IronGrilleStraight
+  id: CP14FenceIronGrilleStraight
   suffix: Straight
   components:
   - type: Icon
@@ -53,8 +53,8 @@
 - type: entity
   parent: 
   - CP14BaseFenceCorner
-  - CP14IronGrilleBase
-  id: CP14IronGrilleCorner
+  - CP14FenceIronGrilleBase
+  id: CP14FenceIronGrilleCorner
   suffix: Corner
   components:
   - type: Icon
@@ -89,8 +89,8 @@
 - type: entity
   parent:
   - CP14BaseFenceDoor
-  - CP14IronGrilleStraight
-  id: CP14IronGrilleGate
+  - CP14FenceIronGrilleStraight
+  id: CP14FenceIronGrilleGate
   name: iron grille gate
   description: Heavy iron gates in bars. Looks serious.
   components:
