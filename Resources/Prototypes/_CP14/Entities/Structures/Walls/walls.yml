@@ -49,7 +49,8 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-        
+  - type: CP14WallpaperHolder
+
 - type: entity ### Crushed Medium
   id: CP14WallStonebrickCrushedMedium
   name: stone brick wall
@@ -137,12 +138,13 @@
     randomStates:
     - bricksA
     - bricksB
-    
+  - type: CP14WallpaperHolder
+
 
 - type: entity
   id: CP14WallWooden
   name: wooden wall
-  parent: 
+  parent:
   - CP14BaseWall
   - CP14BaseFlammableSpreading
   components:
@@ -175,7 +177,7 @@
   id: CP14WallCardboard
   name: cardboard Wall
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
-  parent: 
+  parent:
   - CP14WallWooden
   - CP14BaseFlammableSpreadingStrong
   components:
@@ -197,7 +199,8 @@
   - type: Construction
     graph: CP14WallWood
     node: WallCardboard
-    
+  - type: CP14WallpaperHolder
+
 - type: entity
   id: CP14WallCyan
   name: cyan wall
@@ -228,7 +231,8 @@
     - skullsA
     - skullsB
   - type: Appearance
-    
+  - type: CP14WallpaperHolder
+
 - type: entity
   id: CP14WallSteel
   name: steel wall

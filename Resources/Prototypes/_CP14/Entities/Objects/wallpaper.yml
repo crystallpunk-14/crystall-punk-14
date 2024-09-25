@@ -10,22 +10,22 @@
     sprite: _CP14/Structures/Wallpaper/icons.rsi
 
 - type: entity
-  id: CP14WallpaperPink1
+  id: CP14WallpaperPurple1
   parent: CP14BaseWallpaper
-  name: pink wallpaper
+  name: purple wallpaper
   suffix: 1
   components:
   - type: Sprite
-    state: pink
+    state: purple
   - type: CP14Wallpaper
-    rsiPath: _CP14/Structures/Wallpaper/wallpaper_pink.rsi
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_purple.rsi
   - type: Stack
-    stackType: CP14WallpaperPink
+    stackType: CP14WallpaperPurple
     count: 1
 
 - type: entity
-  id: CP14WallpaperPink30
-  parent: CP14WallpaperPink1
+  id: CP14WallpaperPurple30
+  parent: CP14WallpaperPurple1
   suffix: 30
   components:
   - type: Stack
