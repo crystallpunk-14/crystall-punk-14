@@ -89,6 +89,7 @@ CP14IronGrilleCorner: CP14FenceIronGrilleCorner
 CP14IronGrilleGate: CP14FenceIronGrilleGate
 CP14IronGrilleTJunction: null
 CP14FenceWoodSmallTJunction: null
+CP14FenceWoodHighCorner: null
 
 # <---> CrystallPunk migration zone end
 
