@@ -44,6 +44,9 @@
     state: straight
   - type: Sprite
     state: straight
+  - type: Construction
+    graph: CP14FenceWood
+    node: CP14FenceWoodStraight
 
 - type: entity
   parent: 
@@ -56,6 +59,9 @@
     state: corner
   - type: Sprite
     state: corner
+  - type: Construction
+    graph: CP14FenceWood
+    node: CP14FenceWoodCorner
 
 - type: entity
   parent:
@@ -71,3 +77,6 @@
     layers:
     - state: door_closed
       map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: CP14FenceWood
+    node: CP14FenceWoodGate
