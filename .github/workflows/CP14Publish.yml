@@ -1,0 +1,20 @@
+name: Publish
+
+concurrency:
+  group: publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send POST-request
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.BUILD_HOST }}
+        username: ${{ secrets.BUILD_USER }}
+        password: ${{ secrets.BUILD_PASS }}
+        port: 22
+        script: sh update.sh &> /dev/null
