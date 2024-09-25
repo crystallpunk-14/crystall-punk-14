@@ -8,19 +8,19 @@
   },
   "states": [
     {
-      "name": "corner_small",
+      "name": "corner",
       "directions": 4
     },
     {
-      "name": "gate_small_closed",
+      "name": "door_closed",
       "directions": 4
     },
     {
-      "name": "gate_small_opened",
+      "name": "door_opened",
       "directions": 4
     },
     {
-      "name": "straight_small",
+      "name": "straight",
       "directions": 4
     }
   ]

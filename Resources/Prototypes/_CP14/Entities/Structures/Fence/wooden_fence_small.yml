@@ -1,16 +1,16 @@
 - type: entity
-  parent: 
+  parent:
   - CP14BaseFence
   - CP14BaseFlammableSpreading
-  id: CP14BaseFenceWood
-  name: wooden fence
-  description: A wooden fence. Don't plant splinters!
+  id: CP14BaseFenceWoodSmall
+  name: small wooden fence
+  description: A small wooden fence. It protects the area from unnecessary visitors who don't have a towel.
   abstract: true
   components:
   - type: Icon
-    sprite: _CP14/Structures/Fences/wooden_fence.rsi
+    sprite: _CP14/Structures/Fences/wooden_fence_small.rsi
   - type: Sprite
-    sprite: _CP14/Structures/Fences/wooden_fence.rsi
+    sprite: _CP14/Structures/Fences/wooden_fence_small.rsi
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -18,7 +18,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 75
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -26,18 +26,18 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 1
-            max: 2
+            min: 0
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Climbable
-    delay: 5
+    delay: 2.5
 
 - type: entity
   parent: 
   - CP14BaseFenceStraight
-  - CP14BaseFenceWood
-  id: CP14FenceWoodStraight
+  - CP14BaseFenceWoodSmall
+  id: CP14FenceWoodSmallStraight
   suffix: Straight
   components:
   - type: Icon
@@ -48,8 +48,8 @@
 - type: entity
   parent: 
   - CP14BaseFenceCorner
-  - CP14BaseFenceWood
-  id: CP14FenceWoodCorner
+  - CP14BaseFenceWoodSmall
+  id: CP14FenceWoodSmallCorner
   suffix: Corner
   components:
   - type: Icon
@@ -60,10 +60,10 @@
 - type: entity
   parent:
   - CP14BaseFenceDoor
-  - CP14BaseFenceWood
-  id: CP14FenceWoodGate
-  name: wooden fence gate
-  description: Big door in a big fence. For big people.
+  - CP14BaseFenceWoodSmall
+  id: CP14FenceWoodSmallGate
+  name: small wooden fence gate
+  description: Looking at this gate, a familiar image pops up in your head. Where's my piggy?
   components:
   - type: Icon
     state: door_closed
