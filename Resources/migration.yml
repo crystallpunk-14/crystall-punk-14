@@ -87,6 +87,8 @@ CP14WallpaperPink30: CP14WallpaperPurple30
 CP14IronGrilleStraight: CP14FenceIronGrilleStraight
 CP14IronGrilleCorner: CP14FenceIronGrilleCorner
 CP14IronGrilleGate: CP14FenceIronGrilleGate
+CP14IronGrilleTJunction: null
+CP14FenceWoodSmallTJunction: null
 
 # <---> CrystallPunk migration zone end
 
