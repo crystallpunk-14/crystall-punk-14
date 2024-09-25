@@ -8,6 +8,7 @@
     unequipDelay: 0.3
     slots:
     - HEAD
+    breakOnMove: false
   - type: Sprite
     state: icon
   - type: Item
