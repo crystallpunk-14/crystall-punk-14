@@ -112,7 +112,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadMercenaryBeret
+  id: CP14ClothingHeadBeretMercenary
   name: mercenary beret
   description: A large red wool hat decorated with a feather.
   components:

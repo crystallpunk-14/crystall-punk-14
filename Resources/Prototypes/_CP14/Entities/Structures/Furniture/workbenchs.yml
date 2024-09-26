@@ -158,11 +158,12 @@
     - CP14ClothingDressBlack
     - CP14ClothingPantsSouthernMagician
     - CP14ClothingPantsMercenaryTrousers
-    - CP14ClothingHeadRedBeret
-    - CP14ClothingHeadPurpleBeret
-    - CP14ClothingHeadYellowBeret
-    - CP14ClothingHeadBlueBeret
-    - CP14ClothingHeadBlackBeret
-    - CP14ClothingHeadYellowHat
-    - CP14ClothingHeadMercenaryBeret
+    - CP14ClothingHeadBeretRed
+    - CP14ClothingHeadBeretPurple
+    - CP14ClothingHeadBeretYellow
+    - CP14ClothingHeadBeretBlue
+    - CP14ClothingHeadBeretBlack
+    - CP14ClothingHeadBeretMercenary
+    - CP14ClothingHeadBandanaWhite
+    - CP14ClothingHeadBandanaYellow
     - CP14ClothingHeadWreath

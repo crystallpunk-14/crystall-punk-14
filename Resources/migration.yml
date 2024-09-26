@@ -94,6 +94,8 @@ CP14FenceWoodHighGate: null
 CP14FenceWoodHighStraight: null
 CP14IronGrilleGateLockedTavern: null
 
+CP14ClothingHeadMercenaryBeret: CP14ClothingHeadBeretMercenary
+
 # <---> CrystallPunk migration zone end
 
 
