@@ -25,7 +25,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadRedBeret
+  id: CP14ClothingHeadBeretRed
   name: red beret
   components:
   - type: Sprite
@@ -35,7 +35,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadPurpleBeret
+  id: CP14ClothingHeadBeretPurple
   name: purple beret
   components:
   - type: Sprite
@@ -45,7 +45,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadYellowBeret
+  id: CP14ClothingHeadBeretYellow
   name: yellow beret
   components:
   - type: Sprite
@@ -55,7 +55,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadBlueBeret
+  id: CP14ClothingHeadBeretBlue
   name: blue beret
   components:
   - type: Sprite
@@ -65,7 +65,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadBlackBeret
+  id: CP14ClothingHeadBeretBlack
   name: black beret
   components:
   - type: Sprite

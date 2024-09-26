@@ -124,29 +124,39 @@
     head: CP14ClothingHeadTriangularHatGolden
 
 - type: loadout
-  id: CP14ClothingHeadRedBeret
+  id: CP14ClothingHeadBeretRed
   equipment:
-    head: CP14ClothingHeadRedBeret
+    head: CP14ClothingHeadBeretRed
 
 - type: loadout
-  id: CP14ClothingHeadPurpleBeret
+  id: CP14ClothingHeadBeretPurple
   equipment:
-    head: CP14ClothingHeadPurpleBeret
+    head: CP14ClothingHeadBeretPurple
 
 - type: loadout
-  id: CP14ClothingHeadYellowBeret
+  id: CP14ClothingHeadBeretYellow
   equipment:
-    head: CP14ClothingHeadYellowBeret
+    head: CP14ClothingHeadBeretYellow
 
 - type: loadout
-  id: CP14ClothingHeadBlueBeret
+  id: CP14ClothingHeadBeretBlue
   equipment:
-    head: CP14ClothingHeadBlueBeret
+    head: CP14ClothingHeadBeretBlue
 
 - type: loadout
-  id: CP14ClothingHeadBlackBeret
+  id: CP14ClothingHeadBeretBlack
   equipment:
-    head: CP14ClothingHeadBlackBeret
+    head: CP14ClothingHeadBeretBlack
+
+- type: loadout
+  id: CP14ClothingHeadBandanaWhite
+  equipment:
+    head: CP14ClothingHeadBandanaWhite
+
+- type: loadout
+  id: CP14ClothingHeadBandanaYellow
+  equipment:
+    head: CP14ClothingHeadBandanaYellow
 
 # Pants
 
