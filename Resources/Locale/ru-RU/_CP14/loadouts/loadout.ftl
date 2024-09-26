@@ -9,6 +9,7 @@ cp14-loadout-general-pants = Штаны
 cp14-loadout-general-shirt = Рубашка
 cp14-loadout-general-shoes = Обувь
 cp14-loadout-general-back = Спина
+cp14-loadout-general-trinkets = Безделушки
 
 # Alchemist
 

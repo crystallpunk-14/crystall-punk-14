@@ -9,6 +9,7 @@ cp14-loadout-general-pants = Pants
 cp14-loadout-general-shirt = Shirt
 cp14-loadout-general-shoes = Shoes
 cp14-loadout-general-back = Back
+cp14-loadout-general-trinkets = Trinkets
 
 # Alchemist
 

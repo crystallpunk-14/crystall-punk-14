@@ -10,6 +10,7 @@
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14Alchemist
@@ -23,6 +24,7 @@
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14Innkeeper
@@ -36,6 +38,7 @@
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14Captain
@@ -49,6 +52,7 @@
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14GuardCommander
@@ -62,6 +66,7 @@
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14HouseKeeper
@@ -75,3 +80,4 @@
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
+  - CP14GeneralTrinkets

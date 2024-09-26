@@ -263,3 +263,40 @@
   id: CP14ClothingBackpackLeather
   equipment:
     back: CP14ClothingBackpackLeather
+
+# Trinkets
+
+- type: loadoutGroup
+  id: CP14GeneralTrinkets
+  name: cp14-loadout-general-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CP14ClothingRingCureWounds
+  - CP14ClothingRingFlameCreation
+  - CP14ClothingRingIceDagger
+  - CP14FoodCucumber
+
+- type: loadout
+  id: CP14ClothingRingCureWounds
+  storage:
+    back:
+    - CP14ClothingRingCureWounds
+
+- type: loadout
+  id: CP14ClothingRingFlameCreation
+  storage:
+    back:
+    - CP14ClothingRingFlameCreation
+
+- type: loadout
+  id: CP14ClothingRingIceDagger
+  storage:
+    back:
+    - CP14ClothingRingIceDagger
+
+- type: loadout
+  id: CP14FoodCucumber
+  storage:
+    back:
+    - CP14FoodCucumber
