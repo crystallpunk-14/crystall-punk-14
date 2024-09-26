@@ -138,6 +138,17 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadWreath
+  name: floral wreath
+  description: A simple flower decoration. That's so sweet.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/wreath.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/wreath.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
   id: CP14ClothingHeadCapellina
   name: capellina
   description: Protects against large object strikes to the head.

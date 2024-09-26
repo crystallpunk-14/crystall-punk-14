@@ -219,3 +219,11 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingHeadMercenaryBeret
+
+- type: CP14Recipe
+  id: CP14ClothingHeadWreath
+  craftTime: 2
+  entities:
+    CP14FlowersRed: 2
+    CP14FlowersYellow: 2
+  result: CP14ClothingHeadWreath
