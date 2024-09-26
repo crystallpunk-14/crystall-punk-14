@@ -80,6 +80,13 @@
   id: CP14ClothingHeadBandanaBase
   abstract: true
   description: Favorite mage headdress
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
 
 - type: entity
   parent: CP14ClothingHeadBandanaBase
