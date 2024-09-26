@@ -1,13 +1,14 @@
 # General
 
-cp14-loadout-basic-cloak = Накидка
-cp14-loadout-basic-eyes = Очки
-cp14-loadout-basic-gloves = Перчатки
-cp14-loadout-basic-head = Шляпа
-cp14-loadout-basic-mask = Маска
-cp14-loadout-basic-pants = Штаны
-cp14-loadout-basic-shirt = Рубашка
-cp14-loadout-basic-shoes = Обувь
+cp14-loadout-general-cloak = Накидка
+cp14-loadout-general-eyes = Очки
+cp14-loadout-general-gloves = Перчатки
+cp14-loadout-general-head = Шляпа
+cp14-loadout-general-mask = Маска
+cp14-loadout-general-pants = Штаны
+cp14-loadout-general-shirt = Рубашка
+cp14-loadout-general-shoes = Обувь
+cp14-loadout-general-back = Спина
 
 # Alchemist
 

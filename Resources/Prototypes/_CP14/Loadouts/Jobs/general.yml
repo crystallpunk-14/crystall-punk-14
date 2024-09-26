@@ -1,8 +1,8 @@
 # Cloak
 
 - type: loadoutGroup
-  id: CP14BasicCloak
-  name: cp14-loadout-basic-cloak
+  id: CP14GeneralCloak
+  name: cp14-loadout-general-cloak
   minLimit: 0
   loadouts:
   - CP14ClothingCloakSimpleWhite
@@ -45,8 +45,8 @@
 # Eyes
 
 - type: loadoutGroup
-  id: CP14BasicEyes
-  name: cp14-loadout-basic-eyes
+  id: CP14GeneralEyes
+  name: cp14-loadout-general-eyes
   minLimit: 0
   loadouts:
   - CP14ClothingEyesMonocle
@@ -65,8 +65,8 @@
 # Gloves
 
 - type: loadoutGroup
-  id: CP14BasicGloves
-  name: cp14-loadout-basic-gloves
+  id: CP14GeneralGloves
+  name: cp14-loadout-general-gloves
   minLimit: 0
   loadouts:
   - CP14Girdles
@@ -79,8 +79,8 @@
 # Mask
 
 - type: loadoutGroup
-  id: CP14BasicMask
-  name: cp14-loadout-basic-mask
+  id: CP14GeneralMask
+  name: cp14-loadout-general-mask
   minLimit: 0
   loadouts:
   - CP14Sinner
@@ -93,8 +93,8 @@
 # Head
 
 - type: loadoutGroup
-  id: CP14BasicHead
-  name: cp14-loadout-basic-head
+  id: CP14GeneralHead
+  name: cp14-loadout-general-head
   minLimit: 0
   loadouts:
   - CP14ClothingHeadMetalHeadband
@@ -149,8 +149,8 @@
 # Pants
 
 - type: loadoutGroup
-  id: CP14BasicPants
-  name: cp14-loadout-basic-pants
+  id: CP14GeneralPants
+  name: cp14-loadout-general-pants
   loadouts:
   - CP14ClothingPantsTrouserWhite
   - CP14ClothingPantsTrouserDarkBlue
@@ -186,8 +186,8 @@
 # Shirt
 
 - type: loadoutGroup
-  id: CP14BasicShirt
-  name: cp14-loadout-basic-shirt
+  id: CP14GeneralShirt
+  name: cp14-loadout-general-shirt
   loadouts:
   - CP14ClothingShirtCottonWhite
   - CP14ClothingShirtCottonBlue
@@ -229,8 +229,8 @@
 # Shoes
 
 - type: loadoutGroup
-  id: CP14BasicShoes
-  name: cp14-loadout-basic-shoes
+  id: CP14GeneralShoes
+  name: cp14-loadout-general-shoes
   loadouts:
   - CP14ShoesBlack
   - CP14ShoesAristocraticBlack
@@ -250,3 +250,16 @@
   id: CP14ShoesSandals
   equipment:
     shoes: CP14ClothingShoesSandals
+
+# Back
+
+- type: loadoutGroup
+  id: CP14GeneralBack
+  name: cp14-loadout-general-back
+  loadouts:
+  - CP14ClothingBackpackLeather
+
+- type: loadout
+  id: CP14ClothingBackpackLeather
+  equipment:
+    back: CP14ClothingBackpackLeather
