@@ -10,11 +10,21 @@
   rules:
     - Secret
 
+#- type: gamePreset
+#  id: CP14ResourceHarvesting
+#  name: cp14-gamepreset-resource-harvest
+#  description: cp14-gamepreset-resource-harvest-desc
+#  showInVote: true
+#  cP14Allowed: true
+#  rules:
+#    - CP14ResourceHarvesting
+
 - type: gamePreset
-  id: CP14ResourceHarvesting
-  name: cp14-gamepreset-resource-harvest
-  description: cp14-gamepreset-resource-harvest-desc
-  showInVote: true
-  cP14Allowed: true
+  id: CP14Sandbox
+  alias:
+    - sandbox
+  name: sandbox-title
+  description: sandbox-description
+  showInVote: true # For playtest period only
   rules:
-    - CP14ResourceHarvesting
+    - Sandbox

@@ -1,8 +1,7 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-   - AlchemyTest
-   - BattleRoyale
+   - ExpeditionTest
 
 - type: gameMapPool
   id: DeathMatchMapPool
