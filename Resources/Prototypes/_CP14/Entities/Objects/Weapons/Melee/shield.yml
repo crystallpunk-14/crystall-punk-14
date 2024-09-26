@@ -41,7 +41,7 @@
     - back
   - type: MeleeWeapon
     angle: 0
-    range: 0.8
+    range: 1.2
     attackRate: 0.5
     wideAnimationRotation: -30
     wideAnimation: CP14WeaponArcSlash
@@ -63,8 +63,6 @@
     damage:
       types:
         Blunt: 6
-  - type: StaminaDamageOnHit
-    damage: 10
   - type: Damageable
     damageContainer: Shield
   - type: Destructible
@@ -89,3 +87,4 @@
               CP14WoodenPlanks1:
                 min: 1
                 max: 2
+  - type: CP14MeleeParry
