@@ -1,0 +1,5 @@
+- type: guideEntry
+  id: CP14SandboxRU
+  name: guide-entry-rules
+  ruleEntry: true
+  text: "/ServerInfo/_CP14/Rules/CP14SandboxRU.xml"
