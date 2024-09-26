@@ -1,16 +1,12 @@
 {
   "version": 1,
-  "license": "CLA",
-  "copyright": "by TheShuEd (github)",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Ko4erga (discord), edited and recolored by TheShuEd",
   "size": {
     "x": 32,
     "y": 64
   },
   "states": [
-    {
-      "name": "straight",
-      "directions": 4
-    },
     {
       "name": "corner",
       "directions": 4
@@ -24,7 +20,7 @@
       "directions": 4
     },
     {
-      "name": "tjunction",
+      "name": "straight",
       "directions": 4
     }
   ]
