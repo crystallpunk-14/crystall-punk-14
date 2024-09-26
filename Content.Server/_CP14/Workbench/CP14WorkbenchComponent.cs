@@ -29,6 +29,12 @@ public sealed partial class CP14WorkbenchComponent : Component
     public List<ProtoId<CP14WorkbenchRecipePrototype>> Recipes = new();
 
     /// <summary>
+    /// List of secret recipes available for crafting on this type of workbench
+    /// </summary>
+    [DataField]
+    public List<ProtoId<CP14WorkbenchRecipePrototype>> SecretRecipes = new();
+
+    /// <summary>
     /// Played during crafting. Can be overwritten by the crafting sound of a specific recipe.
     /// </summary>
     [DataField]

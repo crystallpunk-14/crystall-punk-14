@@ -1,0 +1,21 @@
+- type: entity
+  name: Bucket Recipe
+  parent: BaseItem
+  id: BaseWorkbenchRecipe
+  description: 'Craft recipe for Workbench'
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+  - type: CP14WorkbenchRecipeToLearn
+    recipe: CP14Bucket
+
+- type: entity
+  name: Barrel Recipe
+  parent: BaseWorkbenchRecipe
+  id: WorkbenchRecipeCP14BaseBarrel
+  components:
+  - type: CP14WorkbenchRecipeToLearn
+    recipe: CP14BaseBarrel
+

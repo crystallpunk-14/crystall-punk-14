@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - BaseStructure
   id: CP14BaseWorkbench
   abstract: true
@@ -76,6 +76,9 @@
     - CP14BaseBarrel
     - CP14WoodenBeerMug
     - CP14PlateWooden
+    # secretRecipes:
+    # - CP14Bucket
+    # - CP14BaseBarrel
 
 - type: entity
   id: CP14WorkbenchMeltingMolds
@@ -105,6 +108,7 @@
     - CP14MeltingMoldSword
     - CP14MeltingMoldThrowableSpear
     - CP14MeltingMoldTwoHandedSword
+
 
 - type: entity
   id: CP14WorkbenchCooking
