@@ -1,3 +1,23 @@
+# Head
+
+- type: loadoutGroup
+  id: CP14AlchemistHead
+  name: cp14-loadout-alchemist-head
+  minLimit: 0
+  loadouts:
+  - CP14ClothingHeadAlchemistBandana
+  - CP14ClothingHeadAlchemistBeret
+
+- type: loadout
+  id: CP14ClothingHeadAlchemistBandana
+  equipment:
+    head: CP14ClothingHeadAlchemistBandana
+
+- type: loadout
+  id: CP14ClothingHeadAlchemistBeret
+  equipment:
+    head: CP14ClothingHeadAlchemistBeret
+
 # Cloak
 
 - type: loadoutGroup
