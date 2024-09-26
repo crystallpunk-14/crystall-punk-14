@@ -60,8 +60,7 @@
 
 - type: gameMap
   id: ExpeditionTest
-  mapName: Expedition test
-  #mapPath: /Maps/_CP14/expedition_test.yml
+  mapName: Sandbox village
   mapPath: /Maps/_CP14/exp_tavern.yml
   maxRandomOffset: 0
   randomRotation: false
@@ -71,7 +70,7 @@
       stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Expedition test"
+          mapNameTemplate: "Sandbox village"
         - type: StationJobs
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
