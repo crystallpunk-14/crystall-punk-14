@@ -1,0 +1,51 @@
+# Head
+
+- type: loadoutGroup
+  id: CP14AlchemistHead
+  name: cp14-loadout-alchemist-head
+  minLimit: 0
+  loadouts:
+  - CP14ClothingHeadAlchemistBandana
+  - CP14ClothingHeadAlchemistBeret
+
+- type: loadout
+  id: CP14ClothingHeadAlchemistBandana
+  equipment:
+    head: CP14ClothingHeadAlchemistBandana
+
+- type: loadout
+  id: CP14ClothingHeadAlchemistBeret
+  equipment:
+    head: CP14ClothingHeadAlchemistBeret
+
+# Cloak
+
+- type: loadoutGroup
+  id: CP14AlchemistCloak
+  name: cp14-loadout-alchemist-cloak
+  loadouts:
+  - CP14ClothingCloakAlchemist
+
+- type: loadout
+  id: CP14ClothingCloakAlchemist
+  equipment:
+    cloak: CP14ClothingCloakAlchemist
+
+# Eyes
+
+- type: loadoutGroup
+  id: CP14AlchemistEyes
+  name: cp14-loadout-alchemist-eyes
+  loadouts:
+  - CP14ClothingEyesAlchemyGlasses
+  - CP14ClothingEyesAlchemyMonocle
+  
+- type: loadout
+  id: CP14ClothingEyesAlchemyGlasses
+  equipment:
+    eyes: CP14ClothingEyesAlchemyGlasses
+
+- type: loadout
+  id: CP14ClothingEyesAlchemyMonocle
+  equipment:
+    eyes: CP14ClothingEyesAlchemyMonocle

@@ -1,71 +1,83 @@
 - type: roleLoadout
   id: JobCP14Adventurer
   groups:
-  - CP14BasicHead
-  - CP14BasicEyes
-  - CP14BasicMask
-  - CP14BasicCloak
-  - CP14BasicGloves
-  - CP14BasicShirt
-  - CP14BasicPants
-  - CP14BasicShoes
+  - CP14GeneralHead
+  - CP14GeneralEyes
+  - CP14GeneralMask
+  - CP14GeneralCloak
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14Alchemist
   groups:
-  - CP14BasicHead #TODO
-  - CP14BasicEyes
-  - CP14BasicMask
-  - CP14BasicCloak #TODO
-  - CP14BasicGloves
-  - CP14BasicShirt
-  - CP14BasicPants
-  - CP14BasicShoes
+  - CP14AlchemistHead #
+  - CP14AlchemistEyes #
+  - CP14GeneralMask
+  - CP14AlchemistCloak #
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14Innkeeper
   groups:
-  - CP14BasicHead
-  - CP14BasicEyes
-  - CP14BasicMask
-  - CP14BasicCloak
-  - CP14BasicGloves
-  - CP14BasicShirt
-  - CP14BasicPants
-  - CP14BasicShoes
+  - CP14GeneralHead
+  - CP14GeneralEyes
+  - CP14GeneralMask
+  - CP14GeneralCloak
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14Captain
   groups:
-  - CP14CaptainHead
-  - CP14BasicEyes
-  - CP14BasicMask
-  - CP14CaptainCloak
-  - CP14BasicGloves
-  - CP14BasicShirt
-  - CP14BasicPants
-  - CP14BasicShoes
+  - CP14CaptainHead #
+  - CP14GeneralEyes
+  - CP14GeneralMask
+  - CP14CaptainCloak #
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14GuardCommander
   groups:
-  - CP14BasicHead
-  - CP14BasicEyes
-  - CP14BasicMask
-  - CP14GuardCommanderCloak
-  - CP14BasicGloves
-  - CP14BasicShirt
-  - CP14BasicPants
-  - CP14BasicShoes
+  - CP14GeneralHead
+  - CP14GeneralEyes
+  - CP14GeneralMask
+  - CP14GuardCommanderCloak #
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
 
 - type: roleLoadout
   id: JobCP14HouseKeeper
   groups:
-  - CP14BasicHead
-  - CP14BasicEyes
-  - CP14BasicMask
-  - CP14CaptainCloak
-  - CP14BasicGloves
-  - CP14BasicShirt
-  - CP14BasicPants
-  - CP14BasicShoes
+  - CP14GeneralHead
+  - CP14GeneralEyes
+  - CP14GeneralMask
+  - CP14CaptainCloak #
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets

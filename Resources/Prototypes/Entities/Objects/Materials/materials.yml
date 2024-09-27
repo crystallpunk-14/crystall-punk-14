@@ -216,7 +216,7 @@
 - type: entity
   parent: MaterialBase
   id: MaterialWoodPlank
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: wood
   suffix: Full
   components:
@@ -255,7 +255,6 @@
 - type: entity
   parent: MaterialWoodPlank
   id: MaterialWoodPlank10
-  noSpawn: true
   suffix: 10
   components:
   - type: Stack
@@ -264,7 +263,6 @@
 - type: entity
   parent: MaterialWoodPlank
   id: MaterialWoodPlank1
-  noSpawn: true
   suffix: Single
   components:
   - type: Stack

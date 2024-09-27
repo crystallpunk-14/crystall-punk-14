@@ -1,0 +1,10 @@
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadWreath
+  name: floral wreath
+  description: A simple flower decoration. That's so sweet.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Produced/wreath.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Produced/wreath.rsi

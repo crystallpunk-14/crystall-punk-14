@@ -1,0 +1,314 @@
+# Cloak
+
+- type: loadoutGroup
+  id: CP14GeneralCloak
+  name: cp14-loadout-general-cloak
+  minLimit: 0
+  loadouts:
+  - CP14ClothingCloakSimpleWhite
+  - CP14ClothingCloakSimpleDarkBlue
+  - CP14ClothingCloakBlacksmithArpon
+  - CP14ClothingCloakFurcapeBlack
+  - CP14ClothingCloakFurcapeBlue
+  - CP14ClothingCloakMaidArpon
+
+- type: loadout
+  id: CP14ClothingCloakSimpleWhite
+  equipment:
+    cloak: CP14ClothingCloakSimpleWhite
+
+- type: loadout
+  id: CP14ClothingCloakSimpleDarkBlue
+  equipment:
+    cloak: CP14ClothingCloakSimpleDarkBlue
+
+- type: loadout
+  id: CP14ClothingCloakBlacksmithArpon
+  equipment:
+    cloak: CP14ClothingCloakBlacksmithArpon
+
+- type: loadout
+  id: CP14ClothingCloakFurcapeBlack
+  equipment:
+    cloak: CP14ClothingCloakFurcapeBlack
+
+- type: loadout
+  id: CP14ClothingCloakFurcapeBlue
+  equipment:
+    cloak: CP14ClothingCloakFurcapeBlue
+
+- type: loadout
+  id: CP14ClothingCloakMaidArpon
+  equipment:
+    cloak: CP14ClothingCloakMaidArpon
+
+# Eyes
+
+- type: loadoutGroup
+  id: CP14GeneralEyes
+  name: cp14-loadout-general-eyes
+  minLimit: 0
+  loadouts:
+  - CP14ClothingEyesMonocle
+  - CP14ClothingEyesGlasses
+
+- type: loadout
+  id: CP14ClothingEyesMonocle
+  equipment:
+    eyes: CP14ClothingEyesMonocle
+
+- type: loadout
+  id: CP14ClothingEyesGlasses
+  equipment:
+    eyes: CP14ClothingEyesGlasses
+
+# Gloves
+
+- type: loadoutGroup
+  id: CP14GeneralGloves
+  name: cp14-loadout-general-gloves
+  minLimit: 0
+  loadouts:
+  - CP14Girdles
+
+- type: loadout
+  id: CP14Girdles
+  equipment:
+    gloves: CP14ClothingGlovesGirdles
+
+# Mask
+
+- type: loadoutGroup
+  id: CP14GeneralMask
+  name: cp14-loadout-general-mask
+  minLimit: 0
+  loadouts:
+  - CP14Sinner
+
+- type: loadout
+  id: CP14Sinner
+  equipment:
+    mask: CP14ClothingMaskSinner
+
+# Head
+
+- type: loadoutGroup
+  id: CP14GeneralHead
+  name: cp14-loadout-general-head
+  minLimit: 0
+  loadouts:
+  - CP14ClothingHeadMetalHeadband
+  - CP14ClothingHeadTriangularHat
+  - CP14ClothingHeadTriangularHatGolden
+  - CP14ClothingHeadBeretRed
+  - CP14ClothingHeadBeretPurple
+  - CP14ClothingHeadBeretYellow
+  - CP14ClothingHeadBeretBlue
+  - CP14ClothingHeadBeretBlack
+  - CP14ClothingHeadBandanaWhite
+  - CP14ClothingHeadBandanaYellow
+
+- type: loadout
+  id: CP14ClothingHeadMetalHeadband
+  equipment:
+    head: CP14ClothingHeadMetalHeadband
+
+- type: loadout
+  id: CP14ClothingHeadTriangularHat
+  equipment:
+    head: CP14ClothingHeadTriangularHat
+
+- type: loadout
+  id: CP14ClothingHeadTriangularHatGolden
+  equipment:
+    head: CP14ClothingHeadTriangularHatGolden
+
+- type: loadout
+  id: CP14ClothingHeadBeretRed
+  equipment:
+    head: CP14ClothingHeadBeretRed
+
+- type: loadout
+  id: CP14ClothingHeadBeretPurple
+  equipment:
+    head: CP14ClothingHeadBeretPurple
+
+- type: loadout
+  id: CP14ClothingHeadBeretYellow
+  equipment:
+    head: CP14ClothingHeadBeretYellow
+
+- type: loadout
+  id: CP14ClothingHeadBeretBlue
+  equipment:
+    head: CP14ClothingHeadBeretBlue
+
+- type: loadout
+  id: CP14ClothingHeadBeretBlack
+  equipment:
+    head: CP14ClothingHeadBeretBlack
+
+- type: loadout
+  id: CP14ClothingHeadBandanaWhite
+  equipment:
+    head: CP14ClothingHeadBandanaWhite
+
+- type: loadout
+  id: CP14ClothingHeadBandanaYellow
+  equipment:
+    head: CP14ClothingHeadBandanaYellow
+
+# Pants
+
+- type: loadoutGroup
+  id: CP14GeneralPants
+  name: cp14-loadout-general-pants
+  loadouts:
+  - CP14ClothingPantsTrouserWhite
+  - CP14ClothingPantsTrouserDarkBlue
+  - CP14ClothingPantsAristocratic
+  - CP14ClothingPantsLoincloth
+  - CP14ClothingDressBlack
+
+- type: loadout
+  id: CP14ClothingPantsTrouserWhite
+  equipment:
+    pants: CP14ClothingPantsTrouserWhite
+
+- type: loadout
+  id: CP14ClothingPantsTrouserDarkBlue
+  equipment:
+    pants: CP14ClothingPantsTrouserDarkBlue
+
+- type: loadout
+  id: CP14ClothingPantsAristocratic
+  equipment:
+    pants: CP14ClothingPantsAristocratic
+
+- type: loadout
+  id: CP14ClothingPantsLoincloth
+  equipment:
+    pants: CP14ClothingPantsLoincloth
+
+- type: loadout
+  id: CP14ClothingDressBlack
+  equipment:
+    pants: CP14ClothingDressBlack
+
+# Shirt
+
+- type: loadoutGroup
+  id: CP14GeneralShirt
+  name: cp14-loadout-general-shirt
+  loadouts:
+  - CP14ClothingShirtCottonWhite
+  - CP14ClothingShirtCottonBlue
+  - CP14ClothingShirtCottonBlack
+  - CP14ClothingShirtCottonPurple
+  - CP14ClothingShirtCottonRed
+  - CP14ClothingShirtCottonYellow
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhite
+  equipment:
+    shirt: CP14ClothingShirtCottonWhite
+
+- type: loadout
+  id: CP14ClothingShirtCottonBlue
+  equipment:
+    shirt: CP14ClothingShirtCottonBlue
+
+- type: loadout
+  id: CP14ClothingShirtCottonBlack
+  equipment:
+    shirt: CP14ClothingShirtCottonBlack
+
+- type: loadout
+  id: CP14ClothingShirtCottonPurple
+  equipment:
+    shirt: CP14ClothingShirtCottonPurple
+
+- type: loadout
+  id: CP14ClothingShirtCottonRed
+  equipment:
+    shirt: CP14ClothingShirtCottonRed
+
+- type: loadout
+  id: CP14ClothingShirtCottonYellow
+  equipment:
+    shirt: CP14ClothingShirtCottonYellow
+
+# Shoes
+
+- type: loadoutGroup
+  id: CP14GeneralShoes
+  name: cp14-loadout-general-shoes
+  loadouts:
+  - CP14ShoesBlack
+  - CP14ShoesAristocraticBlack
+  - CP14ShoesSandals
+
+- type: loadout
+  id: CP14ShoesBlack
+  equipment:
+    shoes: CP14ClothingShoesBlack
+
+- type: loadout
+  id: CP14ShoesAristocraticBlack
+  equipment:
+    shoes: CP14ClothingShoesAristocraticBlack
+
+- type: loadout
+  id: CP14ShoesSandals
+  equipment:
+    shoes: CP14ClothingShoesSandals
+
+# Back
+
+- type: loadoutGroup
+  id: CP14GeneralBack
+  name: cp14-loadout-general-back
+  loadouts:
+  - CP14ClothingBackpackLeather
+
+- type: loadout
+  id: CP14ClothingBackpackLeather
+  equipment:
+    back: CP14ClothingBackpackLeather
+
+# Trinkets
+
+- type: loadoutGroup
+  id: CP14GeneralTrinkets
+  name: cp14-loadout-general-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CP14ClothingRingCureWounds
+  - CP14ClothingRingFlameCreation
+  - CP14ClothingRingIceDagger
+  - CP14FoodCucumber
+
+- type: loadout
+  id: CP14ClothingRingCureWounds
+  storage:
+    back:
+    - CP14ClothingRingCureWounds
+
+- type: loadout
+  id: CP14ClothingRingFlameCreation
+  storage:
+    back:
+    - CP14ClothingRingFlameCreation
+
+- type: loadout
+  id: CP14ClothingRingIceDagger
+  storage:
+    back:
+    - CP14ClothingRingIceDagger
+
+- type: loadout
+  id: CP14FoodCucumber
+  storage:
+    back:
+    - CP14FoodCucumber

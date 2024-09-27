@@ -201,7 +201,7 @@ ent-CP14ClothingCloakFurcapeBlue = { ent-CP14ClothingCloakFurcapeBlack }
 ent-CP14ClothingCloakSimpleWhite = белый плащ
     .desc = Длинный плащ с высоким воротником.
 
-ent-CP14ClothingCloakSimpleDarkBlue = { ent-CP14ClothingCloakSimpleWhite }
+ent-CP14ClothingCloakSimpleDarkBlue = темный плащ
     .desc = { ent-CP14ClothingCloakSimpleWhite.desc }
 
 ent-CP14ClothingCloakCaptainJacket = капитанский жилет

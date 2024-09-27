@@ -1,0 +1,21 @@
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakAlchemistBase
+  abstract: true
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Caustic: 0.75
+
+- type: entity
+  parent: CP14ClothingCloakAlchemistBase
+  id: CP14ClothingCloakAlchemist
+  name: alchemist's cloak
+  description: An expensive fabric that can withstand acid splashes - the standard for alchemist experts.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/alchemist_cloak.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/alchemist_cloak.rsi

@@ -41,7 +41,7 @@
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobHumanDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
     species: CP14Human
