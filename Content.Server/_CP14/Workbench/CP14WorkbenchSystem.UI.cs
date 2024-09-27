@@ -22,7 +22,7 @@ public sealed partial class CP14WorkbenchSystem
 
     private void UpdateUIRecipes(Entity<CP14WorkbenchComponent> entity)
     {
-        var placedEntities = _lookup.GetEntitiesInRange(Transform(entity).Coordinates, WorkbenchRadius);
+        var placedEntities = _lookup.GetEntitiesInRange(Transform(entity).Coordinates, entity.Comp.WorkbenchRadius);
 
         var recipes = new List<CP14WorkbenchUiRecipesEntry>();
         foreach (var recipeId in entity.Comp.Recipes)
