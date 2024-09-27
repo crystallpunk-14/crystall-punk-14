@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14MarkerBase
+  abstract: true
+  suffix: Spawner
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Marker
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Overdoors

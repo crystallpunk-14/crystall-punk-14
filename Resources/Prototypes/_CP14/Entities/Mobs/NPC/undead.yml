@@ -1,0 +1,154 @@
+- type: entity
+  id: CP14MobUndeadZombie
+  parent: 
+  - BaseSimpleMob
+  - MobFlammable
+  - MobCombat
+  name: walking dead
+  abstract: true
+  description: A reanimated rotting body of a dead man wanting to devour the living.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: Sprite
+    drawdepth: Mobs
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      80: 0.8
+      120: 0.4
+  - type: StatusEffects
+    allowed:
+    - KnockedDown
+    - SlowedDown
+    - Electrocution
+    - Stutter
+    - TemporaryBlindness
+    - Pacified
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Inventory
+    templateId: CP14mannequin
+  - type: InventorySlots
+  - type: ContainerContainer
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        mask:
+          - MobMask
+        layer:
+          - MobLayer
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: CP14Zombie
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 140
+    damage:
+      groups:
+        Brute: -0.3
+        Burn: -0.3
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 4
+  - type: Pullable
+  - type: GhostTakeoverAvailable
+  - type: SpamEmitSound
+    minInterval: 10
+    maxInterval: 30
+    sound:
+      collection: ZombieScreams
+      params:
+        variation: 0.125
+  - type: SoundWhileAlive
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+
+- type: entity
+  id: CP14MobUndeadZombieMen
+  parent: CP14MobUndeadZombie
+  suffix: Men
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Undead/zombies.rsi
+    state: zombie_m
+    layers:
+    - map: [ "mannequin" ]
+      sprite: _CP14/Mobs/Undead/zombies.rsi
+      state: zombie_m
+    - map: [ "shirt" ]
+    - map: [ "pants" ]
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt1" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+
+- type: entity
+  id: CP14MobUndeadZombieWoman
+  parent: CP14MobUndeadZombie
+  suffix: Woman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Undead/zombies.rsi
+    state: zombie_w
+    layers:
+    - map: [ "mannequin" ]
+      sprite: _CP14/Mobs/Undead/zombies.rsi
+      state: zombie_w
+    - map: [ "shirt" ]
+    - map: [ "pants" ]
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt1" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+
+- type: damageModifierSet
+  id: CP14Zombie
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.9
+    Piercing: 0.6
+    Heat: 1.5
+    Cold: 0.4
+    Poison: 0
