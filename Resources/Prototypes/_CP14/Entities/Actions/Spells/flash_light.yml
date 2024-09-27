@@ -72,7 +72,7 @@
 
 - type: entity
   id: CP14SpellFlashEffect
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: PointLight
       enabled: true

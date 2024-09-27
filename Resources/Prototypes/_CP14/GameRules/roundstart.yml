@@ -10,7 +10,7 @@
 - type: entity
   id: CP14ResourceHarvesting
   parent: CP14BaseGameRule
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: CP14ExpeditionObjectivesRule
     departmentObjectives:

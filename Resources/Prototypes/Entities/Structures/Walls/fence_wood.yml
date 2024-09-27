@@ -77,7 +77,7 @@
 #High
 - type: entity
   parent: BaseFenceWood
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodHighStraight
   suffix: Straight
   components:
@@ -107,7 +107,7 @@
 
 - type: entity
   parent: BaseFenceWood
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodHighEnd
   suffix: End
   components:
@@ -137,7 +137,7 @@
 
 - type: entity
   parent: BaseFenceWood
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodHighCorner
   suffix: Corner
   components:
@@ -176,7 +176,7 @@
 
 - type: entity
   parent: BaseFenceWood
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodHighTJunction
   suffix: T-Junction
   components:
@@ -215,7 +215,7 @@
 
 - type: entity
   parent: BaseFenceWood
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodHighGate
   name: wooden fence gate
   description: Do you have any idea what awaits you behind these gates? It can be either a toilet or a luxurious mansion. But you continue to love your emo boys.
@@ -267,7 +267,7 @@
 #Small
 - type: entity
   parent: BaseFenceWoodSmall
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodSmallStraight
   suffix: Straight
   components:
@@ -296,7 +296,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodSmallEnd
   suffix: End
   components:
@@ -325,7 +325,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodSmallCorner
   suffix: Corner
   components:
@@ -363,7 +363,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodSmallTJunction
   suffix: T-Junction
   components:
@@ -401,7 +401,7 @@
 
 - type: entity
   parent: BaseFenceWoodSmall
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: FenceWoodSmallGate
   name: wooden fence gate
   description: Looking at this gate, a familiar image pops up in your head. Where's my piggy?
