@@ -166,6 +166,11 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14FrameWooden:
+            min: 1
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
@@ -194,6 +199,11 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14FrameWooden:
+            min: 1
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction

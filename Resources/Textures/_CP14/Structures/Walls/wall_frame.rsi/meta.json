@@ -5,10 +5,16 @@
     "y": 64
   },
   "license": "CLA",
-  "copyright": "Created by TheShuEd for CrystallPunk14, modified by vladimir.s",
+  "copyright": "Created by TheShuEd & Jaraten for CrystallPunk14, modified by vladimir.s",
   "states": [
     {
       "name": "wooden"
+    },
+    {
+      "name": "crushed_medium"
+    },
+    {
+      "name": "crushed_low"
     }
   ]
 }
