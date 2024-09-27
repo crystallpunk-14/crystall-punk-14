@@ -231,6 +231,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBandanaYellow
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -253,6 +254,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadWreath
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14FlowersRed: 2
