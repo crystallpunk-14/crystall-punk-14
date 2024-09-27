@@ -94,6 +94,7 @@
     species: CP14Goblin
   - type: Inventory
     templateId: CP14Human
+    speciesId: goblin
     displacements:
       belt:
         sizeMaps:
