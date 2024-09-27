@@ -1,10 +1,24 @@
 # Head
+
+- type: loadoutGroup
+  id: CP14CaptainHead
+  name: cp14-loadout-captain-head
+  loadouts:
+  - CP14ClothingHeadCaptainCap
+
 - type: loadout
   id: CP14ClothingHeadCaptainCap
   equipment:
     head: CP14ClothingHeadCaptainCap
 
 # Cloak
+
+- type: loadoutGroup
+  id: CP14CaptainCloak
+  name: cp14-loadout-captain-cloak
+  loadouts:
+  - CP14ClothingCloakCaptainJacket
+
 - type: loadout
   id: CP14ClothingCloakCaptainJacket
   equipment:
