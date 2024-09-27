@@ -80,6 +80,10 @@ public sealed partial class ContentAudioSystem
                .WithLoop(true)
                .WithVolume(proto.Sound.Params.Volume + _volumeSlider)
                .WithPlayOffset(_random.NextFloat(0f, 100f)));
+
+       if (newLoop is null)
+           return;
+
        _loopStreams.Add(proto, newLoop.Value.Entity);
 
        FadeIn(newLoop.Value.Entity, newLoop.Value.Component, AmbientLoopFadeInTime);
