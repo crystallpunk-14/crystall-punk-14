@@ -5,6 +5,8 @@
   components:
   - type: Sprite
     layers:
+    - sprite: Markers/cross.rsi
+      state: green
     - sprite: _CP14/Mobs/Undead/zombies.rsi
       state: zombie_m
   - type: ConditionalSpawner
