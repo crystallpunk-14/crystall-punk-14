@@ -4,6 +4,13 @@
   id: CP14BaseWorkbench
   abstract: true
   components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
   - type: ActivatableUI
     key: enum.CP14WorkbenchUiKey.Key
   - type: Climbable
@@ -26,11 +33,8 @@
   description: Table for the production of various basic tools.
   components:
   - type: Sprite
-    snapCardinals: true
-    sprite: _CP14/Structures/Furniture/workbench.rsi
     state: workbench
   - type: Icon
-    sprite: _CP14/Structures/Furniture/workbench.rsi
     state: workbench
   - type: Damageable
     damageContainer: Inorganic
@@ -71,70 +75,31 @@
     graph: CP14TableWooden
     node: CP14Workbench
   - type: CP14Workbench
-    recipes:
-    - CP14Bucket
-    - CP14BaseBarrel
-    - CP14WoodenBeerMug
-    - CP14PlateWooden
-
-- type: entity
-  id: CP14WorkbenchMeltingMolds
-  parent:
-  - CP14BaseWorkbench
-  - CP14BaseFlammable
-  name: sawing melting molds table
-  description: Specialized table that allows you to cut out molds for metal smelting.
-  components:
-  - type: Sprite
-    snapCardinals: true
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: melting_crafter
-  - type: Icon
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: melting_crafter
-  - type: CP14Workbench
-    craftSound:
-      collection: CP14Sawing
-    recipes:
-    - CP14MeltingMoldBlank
-    - CP14MeltingMoldDaggers
-    - CP14MeltingMoldNails
-    - CP14MeltingMoldPickaxe
-    - CP14MeltingMoldShovel
-    - CP14MeltingMoldSickle
-    - CP14MeltingMoldSword
-    - CP14MeltingMoldThrowableSpear
-    - CP14MeltingMoldTwoHandedSword
+    recipeTags:
+    - CP14RecipeWorkbench
 
 - type: entity
   id: CP14WorkbenchCooking
   parent:
-  - CP14WorkbenchMeltingMolds
+  - CP14BaseWorkbench
   - CP14BaseFlammable
   name: cooking table
   description: A table to work with food. Time to cook!
   components:
   - type: Sprite
-    snapCardinals: true
     state: cooking_table
   - type: Icon
     state: cooking_table
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing #TODO
-    recipes:
-    - CP14FoodDoughLarge
-    - CP14FoodDoughMediumFlat
-    - CP14FoodDoughMedium
-    - CP14FoodMeatLamb
-    - CP14SeedPumpkin
-    - CP14SeedWheat
-    - CP14SeedCucumber
+    recipeTags:
+    - CP14RecipeCooking
 
 - type: entity
   id: CP14WorkbenchSewing
   parent:
-  - CP14WorkbenchMeltingMolds
+  - CP14BaseWorkbench
   - CP14BaseFlammable
   name: sewing table
   description: A table with embroidery tools to create different clothing and materials.
@@ -142,28 +107,5 @@
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing #TODO
-    recipes:
-    - CP14ClothingShirtCottonBlue
-    - CP14ClothingShirtCottonBlack
-    - CP14ClothingShirtCottonPurple
-    - CP14ClothingShirtCottonRed
-    - CP14ClothingShirtCottonWhite
-    - CP14ClothingShirtCottonYellow
-    - CP14ClothingShirtMercenary
-    - CP14ClothingShirtYellowWizard
-    - CP14ClothingCloakSimpleDarkBlue
-    - CP14ClothingCloakSimpleWhite
-    - CP14ClothingPantsTrouserWhite
-    - CP14ClothingPantsTrouserDarkBlue
-    - CP14ClothingDressBlack
-    - CP14ClothingPantsSouthernMagician
-    - CP14ClothingPantsMercenaryTrousers
-    - CP14ClothingHeadBeretRed
-    - CP14ClothingHeadBeretPurple
-    - CP14ClothingHeadBeretYellow
-    - CP14ClothingHeadBeretBlue
-    - CP14ClothingHeadBeretBlack
-    - CP14ClothingHeadBeretMercenary
-    - CP14ClothingHeadBandanaWhite
-    - CP14ClothingHeadBandanaYellow
-    - CP14ClothingHeadWreath
+    recipeTags:
+    - CP14RecipeSewing

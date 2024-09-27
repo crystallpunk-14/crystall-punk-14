@@ -1,5 +1,6 @@
 - type: CP14Recipe
   id: CP14ClothingShirtCottonBlue
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -10,6 +11,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonBlack
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -20,6 +22,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonPurple
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -30,6 +33,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonRed
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -40,6 +44,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonWhite
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -49,6 +54,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonYellow
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -59,6 +65,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingShirtMercenary
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -70,6 +77,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingShirtYellowWizard
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -82,6 +90,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingCloakSimpleDarkBlue
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -92,6 +101,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingCloakSimpleWhite
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -101,6 +111,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingPantsTrouserWhite
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -110,6 +121,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingPantsTrouserDarkBlue
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -120,6 +132,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingDressBlack
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -130,6 +143,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingPantsSouthernMagician
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -140,6 +154,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingPantsMercenaryTrousers
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -151,6 +166,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretRed
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -161,6 +177,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretPurple
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -171,6 +188,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretYellow
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -181,6 +199,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretBlue
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -191,6 +210,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretBlack
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -201,6 +221,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBandanaWhite
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -210,6 +231,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBandanaYellow
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -220,6 +242,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretMercenary
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14String: 1
@@ -231,6 +254,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingHeadWreath
+  tag: CP14RecipeSewing
   craftTime: 2
   entities:
     CP14FlowersRed: 2

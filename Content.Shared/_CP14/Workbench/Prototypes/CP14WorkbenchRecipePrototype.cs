@@ -4,6 +4,7 @@
  */
 
 using Content.Shared.Stacks;
+using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -14,6 +15,9 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
+
+    [DataField(required: true)]
+    public ProtoId<TagPrototype> Tag = default!;
 
     [DataField]
     public TimeSpan CraftTime = TimeSpan.FromSeconds(1f);

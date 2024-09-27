@@ -1,5 +1,6 @@
 - type: CP14Recipe
   id: CP14Bucket
+  tag: CP14RecipeWorkbench
   craftTime: 2
   entities:
     CP14Rope: 1
@@ -9,6 +10,7 @@
 
 - type: CP14Recipe
   id: CP14BaseBarrel
+  tag: CP14RecipeWorkbench
   craftTime: 3
   stacks:
     CP14WoodenPlanks: 5
@@ -17,6 +19,7 @@
 
 - type: CP14Recipe
   id: CP14WoodenBeerMug
+  tag: CP14RecipeWorkbench
   craftTime: 3
   stacks:
     CP14WoodenPlanks: 2
@@ -25,6 +28,7 @@
 
 - type: CP14Recipe
   id: CP14PlateWooden
+  tag: CP14RecipeWorkbench
   craftTime: 3
   stacks:
     CP14WoodenPlanks: 2
