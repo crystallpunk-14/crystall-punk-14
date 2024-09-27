@@ -59,7 +59,7 @@
 
 - type: entity
   id: CP14WallSpawnEarthWall
-  noSpawn: True
+  categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
   components:

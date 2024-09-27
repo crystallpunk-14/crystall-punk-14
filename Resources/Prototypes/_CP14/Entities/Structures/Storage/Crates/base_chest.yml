@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseStructureDynamic
   id: CP14ChestGeneric
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Chest
   description: Chest.
   components:

@@ -1,7 +1,7 @@
 - type: entity
   id: CP14DungeonEntrance
   name: dungeon entrance
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: The dark depths of the underworld are calling you.
   placement:
     mode: SnapgridCenter
@@ -37,7 +37,7 @@
   parent: CP14DungeonEntrance
   id: CP14DungeonExit
   name: dungeon exit
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A way out of the dark underworld into the overworld.
   components:
   - type: Sprite

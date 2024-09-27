@@ -1,7 +1,7 @@
 - type: entity
   id: CP14WeaponArcSlash
   parent: WeaponArcStatic
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WeaponArcVisuals
       animation: CPSlash
@@ -9,7 +9,7 @@
 - type: entity
   id: CP14WeaponArcThrust
   parent: WeaponArcStatic
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WeaponArcVisuals
       animation: CPThrust
