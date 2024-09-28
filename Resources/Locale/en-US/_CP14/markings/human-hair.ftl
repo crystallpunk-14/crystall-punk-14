@@ -17,3 +17,4 @@ marking-CP14HumanHairUpdo = Updo
 marking-CP14HumanHairVLongFringe = Straight bangs
 marking-CP14HumanHairVolaju = Volaju
 marking-CP14HumanHairWisp = Wisp
+marking-CP14HumanHairMaxyShagy = Maximum Shagginess

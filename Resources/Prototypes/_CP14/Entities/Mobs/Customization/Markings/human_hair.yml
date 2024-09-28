@@ -149,3 +149,11 @@
   sprites:
     - sprite: _CP14/Mobs/Customization/human_hair.rsi
       state: wisp
+      
+- type: marking
+  id: CP14HumanHairMaxyShagy
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: maxy_shagy
