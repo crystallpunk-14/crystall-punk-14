@@ -7,8 +7,8 @@ namespace Content.Server._CP14.FootStep;
 /// <summary>
 ///  allows an entity to leave footprints on the tiles
 /// </summary>
-[RegisterComponent, Access(typeof(CP14FootStepSystem))]
-public sealed partial class CP14FootStepComponent : Component
+[RegisterComponent, Access(typeof(CP14FootprintsSystem))]
+public sealed partial class CP14FootprintHolderComponent : Component
 {
     [DataField]
     public ProtoId<DecalPrototype> DecalProto = "CP14FootprintsBoots";
@@ -23,7 +23,7 @@ public sealed partial class CP14FootStepComponent : Component
     public Color DecalColor = Color.White;
 
     [DataField]
-    public float Intensity = 1f;
+    public float Intensity = 0f;
 
     [DataField]
     public FixedPoint2 PickSolution = 1f;
