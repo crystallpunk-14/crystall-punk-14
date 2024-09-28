@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CP14.FootStep;
 
 /// <summary>
-///  allows an entity to leave footprints on the tiles
+///  stores the type of footprints and their settings.
 /// </summary>
 [RegisterComponent, Access(typeof(CP14FootprintsSystem))]
 public sealed partial class CP14FootprintHolderComponent : Component

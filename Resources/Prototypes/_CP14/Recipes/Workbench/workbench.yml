@@ -33,3 +33,12 @@
   stacks:
     CP14WoodenPlanks: 2
   result: CP14PlateWooden
+
+- type: CP14Recipe
+  id: CP14BaseMop
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  stacks:
+    CP14WoodenPlanks: 2
+    CP14Cloth: 1
+  result: CP14BaseMop
