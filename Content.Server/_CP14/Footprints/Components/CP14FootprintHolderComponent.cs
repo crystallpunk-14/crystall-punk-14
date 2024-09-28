@@ -2,7 +2,7 @@ using Content.Shared.Decals;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.FootStep;
+namespace Content.Server._CP14.Footprints.Components;
 
 /// <summary>
 ///  stores the type of footprints and their settings.

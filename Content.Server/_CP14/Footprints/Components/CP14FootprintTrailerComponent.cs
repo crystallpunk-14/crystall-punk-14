@@ -1,5 +1,4 @@
-
-namespace Content.Server._CP14.FootStep;
+namespace Content.Server._CP14.Footprints.Components;
 
 /// <summary>
 ///  allows an entity to leave footprints on the tiles
