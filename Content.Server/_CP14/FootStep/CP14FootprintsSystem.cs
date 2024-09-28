@@ -2,9 +2,11 @@ using System.Numerics;
 using Content.Server.Decals;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
-using Content.Shared.Inventory;
+using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Maps;
+using Robust.Server.GameObjects;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Events;
@@ -14,11 +16,12 @@ namespace Content.Server._CP14.FootStep;
 
 public sealed class CP14FootprintsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly DecalSystem _decal = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -29,6 +32,39 @@ public sealed class CP14FootprintsSystem : EntitySystem
 
         SubscribeLocalEvent<CP14FootprintHolderComponent, GotEquippedEvent>(OnHolderEquipped);
         SubscribeLocalEvent<CP14FootprintHolderComponent, GotUnequippedEvent>(OnHolderUnequipped);
+
+        SubscribeLocalEvent<CP14DecalCleanerComponent, BeforeRangedInteractEvent>(OnBeforeInteract);
+    }
+
+    private void OnBeforeInteract(Entity<CP14DecalCleanerComponent> ent, ref BeforeRangedInteractEvent args)
+    {
+        if (!args.CanReach)
+            return;
+
+        // Remove old decals
+        var gridUid = Transform(ent).GridUid;
+        if (gridUid is null)
+            return;
+
+        if (!TryComp<MapGridComponent>(gridUid, out var map))
+            return;
+
+        var vec = _transform.GetGridOrMapTilePosition(ent);
+        var tileCenterVec = vec + map.TileSizeHalfVector;
+
+        var oldDecals = _decal.GetDecalsInRange(gridUid.Value, tileCenterVec, ent.Comp.Range);
+
+        if (oldDecals.Count > 0)
+        {
+            _audio.PlayPvs(ent.Comp.Sound, args.ClickLocation);
+            SpawnAtPosition(ent.Comp.SpawnEffect, args.ClickLocation);
+        }
+
+        foreach (var (id, decal) in oldDecals)
+        {
+            if (decal.Cleanable)
+                _decal.RemoveDecal(gridUid.Value, id);
+        }
     }
 
     private void OnHolderUnequipped(Entity<CP14FootprintHolderComponent> ent, ref GotUnequippedEvent args)

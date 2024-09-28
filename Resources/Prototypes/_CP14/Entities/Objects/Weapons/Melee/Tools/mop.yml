@@ -16,17 +16,14 @@
     wideAnimationRotation: 10
     damage:
       types:
-        Blunt: 5
-        Slash: 2
+        Blunt: 2
     soundHit:
       collection: MetalThud
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 7
-        Blunt: 2
-        Structural: 3
+        Blunt: 3
   - type: Spillable
     solution: absorbed
   - type: Absorbent
@@ -34,3 +31,4 @@
     solutions:
       absorbed:
         maxVol: 100
+  - type: CP14DecalCleaner
