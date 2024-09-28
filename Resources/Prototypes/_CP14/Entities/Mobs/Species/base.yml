@@ -217,6 +217,9 @@
   - type: CP14MagicUnsafeSleep
   - type: CP14MagicAttuningMind
     autoCopyToMind: true
+  - type: CP14FootprintHolder
+    decalProto: CP14Footprints
+  - type: CP14FootprintTrailer
 
 
 - type: entity

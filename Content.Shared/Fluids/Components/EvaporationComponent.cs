@@ -22,4 +22,10 @@ public sealed partial class EvaporationComponent : Component
     /// </summary>
     [DataField("evaporationAmount")]
     public FixedPoint2 EvaporationAmount = FixedPoint2.New(0.3);
+
+    /// <summary>
+    /// forcibly vaporizes ALL the chemicals
+    /// </summary>
+    [DataField]
+    public bool CP14ForceEvaporation = false;
 }
