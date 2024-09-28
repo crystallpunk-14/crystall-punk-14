@@ -1,0 +1,17 @@
+- type: entity
+  parent: Pen
+  id: CP14PenFeather
+  name: fountain pen
+  description: A sharp clipped feather of a bird, adapted as a writing implement.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/pens.rsi
+    state: feather
+  - type: Item
+    sprite: _CP14/Objects/Bureaucracy/pens.rsi
+    heldPrefix: feather
+  - type: Tag
+    tags:
+    - Write
+    - Pen
+    - CP14InkwellFittable
