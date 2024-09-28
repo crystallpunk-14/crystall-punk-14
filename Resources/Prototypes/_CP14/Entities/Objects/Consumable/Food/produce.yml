@@ -210,7 +210,7 @@
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 2
-        - ReagentId: CP14Water
+        - ReagentId: Water
           Quantity: 3
   - type: FoodSequenceElement
     entries:

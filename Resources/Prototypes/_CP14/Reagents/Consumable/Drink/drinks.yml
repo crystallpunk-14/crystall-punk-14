@@ -1,7 +1,0 @@
-- type: reagent
-  parent: Water
-  id: CP14Water
-  name: cp14-reagent-name-water
-  desc: cp14-reagent-desc-water
-  flavor: CP14Water
-  color: "#75b1f0"
