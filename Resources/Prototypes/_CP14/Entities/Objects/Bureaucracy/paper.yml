@@ -1,0 +1,74 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BasePaper
+  abstract: true
+  components:
+  - type: Paper
+  - type: PaperLabelType
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: Item
+    size: Tiny
+  - type: Appearance
+  - type: PaperVisuals
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            Ash:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Food
+    solution: food
+    delay: 7
+    forceFeedDelay: 7
+  - type: FlavorProfile
+    flavors:
+    - paper
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 1
+
+- type: entity
+  parent: CP14BasePaper
+  id: CP14Paper
+  name: paper
+  description: A piece of white paper
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    layers:
+    - state: paper
+    - state: paper_filled
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    #- state: paper_stamp-generic
+    #  map: ["enum.PaperVisualLayers.Stamp"]
+    #  visible: false
