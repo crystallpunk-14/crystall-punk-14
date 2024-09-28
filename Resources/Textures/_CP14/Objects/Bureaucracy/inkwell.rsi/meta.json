@@ -11,7 +11,10 @@
       "name": "icon"
     },
     {
-      "name": "feather"
+      "name": "fill-0"
+    },
+    {
+      "name": "fill-1"
     }
   ]
 }
