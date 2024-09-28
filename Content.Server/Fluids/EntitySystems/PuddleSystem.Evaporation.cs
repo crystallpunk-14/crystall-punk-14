@@ -1,16 +1,33 @@
 using Content.Shared.Chemistry.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
+using Content.Shared.Maps;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server.Fluids.EntitySystems;
 
 public sealed partial class PuddleSystem
 {
+    [Dependency] private readonly SharedMapSystem _maps = default!; //CP14
+    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!; //CP14
     private static readonly TimeSpan EvaporationCooldown = TimeSpan.FromSeconds(1);
 
     private void OnEvaporationMapInit(Entity<EvaporationComponent> entity, ref MapInitEvent args)
     {
         entity.Comp.NextTick = _timing.CurTime + EvaporationCooldown;
+
+
+        //CP14 Force evaporation under sky
+        var xform = Transform(entity);
+        if (TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
+        {
+            var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
+            var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
+
+            entity.Comp.CP14ForceEvaporation = tileDef.Weather;
+        }
+        //CP14 End force evaporation under sky
     }
 
     private void UpdateEvaporation(EntityUid uid, Solution solution)
@@ -46,7 +63,13 @@ public sealed partial class PuddleSystem
                 continue;
 
             var reagentTick = evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds;
-            puddleSolution.SplitSolutionWithOnly(reagentTick, EvaporationReagents);
+
+            //CP14 Force evaporation
+            if (!evaporation.CP14ForceEvaporation)
+                puddleSolution.SplitSolutionWithOnly(reagentTick, EvaporationReagents);
+            else
+                puddleSolution.SplitSolution(reagentTick);
+            //CP14 end force evaporation
 
             // Despawn if we're done
             if (puddleSolution.Volume == FixedPoint2.Zero)

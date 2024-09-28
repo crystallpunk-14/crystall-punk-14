@@ -162,6 +162,7 @@
     solution: puddle
   - type: BadDrink
   - type: IgnoresFingerprints
+  - type: Evaporation #CP14 always evaporation
   - type: Tag
     tags:
     - DNASolutionScannable
