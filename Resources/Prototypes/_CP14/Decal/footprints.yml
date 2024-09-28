@@ -1,0 +1,7 @@
+
+- type: decal
+  id: CP14FootprintsBoots
+  showMenu: true
+  sprite:
+    sprite: _CP14/Decals/footprints.rsi
+    state: boots

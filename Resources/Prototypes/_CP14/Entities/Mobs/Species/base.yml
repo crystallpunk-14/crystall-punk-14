@@ -217,6 +217,7 @@
   - type: CP14MagicUnsafeSleep
   - type: CP14MagicAttuningMind
     autoCopyToMind: true
+  - type: CP14FootStep
 
 
 - type: entity
