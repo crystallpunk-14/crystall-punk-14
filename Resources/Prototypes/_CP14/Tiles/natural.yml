@@ -137,7 +137,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  color: "#6b7e3f"
+  color: "#4a613a"
 
 - type: tile
   id: CP14FloorGrassTall
@@ -170,4 +170,4 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  color: "#6b7e3f"
+  color: "#4a613a"

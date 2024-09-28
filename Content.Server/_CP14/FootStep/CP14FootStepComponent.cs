@@ -1,7 +1,9 @@
 using Content.Shared.Decals;
+using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.FootStep;
+
 /// <summary>
 ///  allows an entity to leave footprints on the tiles
 /// </summary>
@@ -23,9 +25,9 @@ public sealed partial class CP14FootStepComponent : Component
     [DataField]
     public float Intensity = 1f;
 
-    /// <summary>
-    ///
-    /// </summary>
+    [DataField]
+    public FixedPoint2 PickSolution = 1f;
+
     [DataField]
     public float DistanceIntensityCost = 0.2f;
 }

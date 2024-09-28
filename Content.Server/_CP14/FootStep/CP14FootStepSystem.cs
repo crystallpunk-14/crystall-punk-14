@@ -1,8 +1,12 @@
 using System.Numerics;
 using Content.Server.Decals;
+using Content.Shared.Fluids;
+using Content.Shared.Fluids.Components;
 using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Events;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.FootStep;
 
@@ -12,12 +16,36 @@ public sealed class CP14FootStepSystem : EntitySystem
     [Dependency] private readonly DecalSystem _decal = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14FootStepComponent, MoveEvent>(OnFootStepMove);
+        SubscribeLocalEvent<CP14FootStepComponent, StartCollideEvent>(OnFootStepCollide);
+    }
+
+    private void OnFootStepCollide(Entity<CP14FootStepComponent> ent, ref StartCollideEvent args)
+    {
+        if (!TryComp<PuddleComponent>(args.OtherEntity, out var puddle))
+            return;
+
+        if (puddle.Solution is null)
+            return;
+
+        var sol = puddle.Solution;
+
+        var splittedSol = sol.Value.Comp.Solution.SplitSolutionWithout(ent.Comp.PickSolution, SharedPuddleSystem.EvaporationReagents);
+
+        if (splittedSol.Volume > 0)
+            UpdateFootprint(ent, splittedSol.GetColor(_proto));
+    }
+
+    private void UpdateFootprint(Entity<CP14FootStepComponent> ent, Color color)
+    {
+        ent.Comp.DecalColor = color;
+        ent.Comp.Intensity = 1f;
     }
 
     private void OnFootStepMove(Entity<CP14FootStepComponent> ent, ref MoveEvent args)
@@ -40,8 +68,7 @@ public sealed class CP14FootStepSystem : EntitySystem
 
         if (tileDef.Weather && tileDef.Color is not null)
         {
-            ent.Comp.DecalColor = tileDef.Color.Value;
-            ent.Comp.Intensity = 1f;
+            UpdateFootprint(ent, tileDef.Color.Value);
             return;
         }
 
