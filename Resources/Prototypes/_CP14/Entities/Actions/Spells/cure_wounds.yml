@@ -29,7 +29,7 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureWounds
-  - type: EntityTargetAction
+  - type: EntityWorldTargetAction
     whitelist:
       components:
       - MobState
@@ -41,7 +41,7 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: cure_wounds
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
       delay: 2
 
 - type: entity

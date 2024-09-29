@@ -12,4 +12,6 @@ public interface ICP14DelayedMagicEffect // The speak n spell interface
     public bool BreakOnDamage { get; }
 
     public bool Hidden{ get; }
+
+    public float EntityDistance { get; }
 }

@@ -13,14 +13,15 @@ public sealed partial class CP14SpellProjectile : CP14SpellEffect
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
         EntityCoordinates? targetPoint = null;
-        if (args.Position is not null)
-            targetPoint = args.Position.Value;
-        else if (args.Target is not null && entManager.TryGetComponent<TransformComponent>(args.Target.Value, out var transformComponent))
+
+        if (args.Target is not null &&
+            entManager.TryGetComponent<TransformComponent>(args.Target.Value, out var transformComponent))
             targetPoint = transformComponent.Coordinates;
+        else if (args.Position is not null)
+            targetPoint = args.Position;
 
         if (targetPoint is null)
             return;
-
 
         var transform = entManager.System<SharedTransformSystem>();
         var physics = entManager.System<SharedPhysicsSystem>();

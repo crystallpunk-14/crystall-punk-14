@@ -17,7 +17,7 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
-  - type: WorldTargetAction
+  - type: EntityWorldTargetAction
     useDelay: 20
     checkCanAccess: false
     raiseOnUser: true
@@ -28,9 +28,10 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: fireball
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
       delay: 3
       breakOnMove: false
+      entityDistance: 1000
 
 - type: entity
   id: CP14RuneFireball
