@@ -2,7 +2,7 @@
   id: CP14Zombie
   name: cp14-species-name-human
   roundStart: false
-  prototype: CP14MobZombie
+  prototype: CP14BaseMobZombie
   sprites: CP14MobZombieSprites
   markingLimits: MobHumanMarkingLimits
   dollPrototype: CP14MobZombieDummy
