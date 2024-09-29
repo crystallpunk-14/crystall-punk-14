@@ -18,7 +18,7 @@
     endSpeech: "operietur glacie"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceFloor
-  - type: WorldTargetAction
+  - type: EntityWorldTargetAction
     useDelay: 5
     range: 5
     itemIconStyle: BigAction
@@ -27,7 +27,7 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: ice_floor
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
       delay: 1
       breakOnMove: false
 

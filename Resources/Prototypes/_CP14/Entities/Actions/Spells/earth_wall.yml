@@ -18,7 +18,7 @@
     endSpeech: "de profundis terrae"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneEarthWall
-  - type: WorldTargetAction
+  - type: EntityWorldTargetAction
     useDelay: 10
     range: 10
     itemIconStyle: BigAction
@@ -27,7 +27,7 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: earth_wall
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
       delay: 1
 
 - type: entity

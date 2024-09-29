@@ -19,7 +19,7 @@
       spawns:
       - CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
-  - type: EntityTargetAction
+  - type: EntityWorldTargetAction
     canTargetSelf: false
     checkCanAccess: false
     range: 10
@@ -30,9 +30,10 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: shadow_grab
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
       delay: 2
       hidden: true
+      entityDistance: 1000
 
 - type: entity
   id: CP14ImpactEffectShadowGrab

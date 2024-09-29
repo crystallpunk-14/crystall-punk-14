@@ -5,8 +5,8 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
 
-//World target
-public sealed partial class CP14DelayedWorldTargetActionEvent : WorldTargetActionEvent, ICP14DelayedMagicEffect
+public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorldTargetActionEvent,
+    ICP14DelayedMagicEffect
 {
     [DataField]
     public float Delay { get; private set; } = 1f;
@@ -19,36 +19,26 @@ public sealed partial class CP14DelayedWorldTargetActionEvent : WorldTargetActio
 
     [DataField]
     public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public float EntityDistance { get; private set; } = 100f;
 }
 
 [Serializable, NetSerializable]
-public sealed partial class CP14DelayedWorldTargetActionDoAfterEvent : DoAfterEvent
+public sealed partial class CP14DelayedEntityWorldTargetActionDoAfterEvent : DoAfterEvent
 {
     [DataField]
-    public NetCoordinates Target;
+    public NetCoordinates? TargetPosition;
+    [DataField]
+    public NetEntity? TargetEntity;
+
+    public CP14DelayedEntityWorldTargetActionDoAfterEvent(NetCoordinates? targetPos, NetEntity? targetEntity)
+    {
+        TargetPosition = targetPos;
+        TargetEntity = targetEntity;
+    }
+
     public override DoAfterEvent Clone() => this;
-}
-
-
-//Entity Target
-public sealed partial class CP14DelayedEntityTargetActionEvent : EntityTargetActionEvent, ICP14DelayedMagicEffect
-{
-    [DataField]
-    public float Delay { get; private set; } = 1f;
-
-    [DataField]
-    public bool BreakOnMove { get; private set; } = true;
-
-    [DataField]
-    public bool BreakOnDamage { get; private set; } = true;
-
-    [DataField]
-    public bool Hidden { get; private set; } = false;
-}
-
-[Serializable, NetSerializable]
-public sealed partial class CP14DelayedEntityTargetActionDoAfterEvent : SimpleDoAfterEvent
-{
 }
 
 //Instant
@@ -65,6 +55,9 @@ public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, 
 
     [DataField]
     public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public float EntityDistance { get; private set; } = 100f;
 }
 
 [Serializable, NetSerializable]
