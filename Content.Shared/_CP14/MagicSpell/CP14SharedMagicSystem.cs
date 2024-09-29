@@ -144,7 +144,8 @@ public partial class CP14SharedMagicSystem : EntitySystem
             return;
 
         var targetPos = EntityManager.GetCoordinates(args.TargetPosition);
-        var targetEnt = EntityManager.GetEntity(args.TargetEntity);
+        EntityUid? targetEnt;
+        EntityManager.TryGetEntity(args.TargetEntity, out targetEnt);
 
         var effectArgs = new CP14SpellEffectBaseArgs(args.User, targetEnt, targetPos);
 
