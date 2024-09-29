@@ -1,0 +1,96 @@
+- type: entity
+  id: CP14BaseLamppost
+  abstract: true
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodLog:
+            min: 2
+            max: 2
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/lamppost.rsi
+    drawdepth: Mobs
+    offset: 0,1.1
+  - type: PointLight
+    energy: 5
+    radius: 8
+
+- type: entity
+  parent: CP14BaseLamppost
+  id: CP14Lamppost
+  name: lamppost
+  description: A lantern hanging from a pole. 
+  suffix: Always powered
+  components:
+  - type: Sprite
+    layers:
+    - state: double
+    - state: light_double
+      shader: unshaded
+  - type: PointLight
+    color: "#e67c34"
+
+- type: entity
+  parent: CP14BaseLamppost
+  id: CP14LamppostBlue
+  name: lamppost
+  description: A lantern hanging from a pole. 
+  suffix: Always powered, Blue
+  components:
+  - type: Sprite
+    layers:
+    - state: double
+    - state: light_double_blue
+      shader: unshaded
+  - type: PointLight
+    color: "#8bc5d9"

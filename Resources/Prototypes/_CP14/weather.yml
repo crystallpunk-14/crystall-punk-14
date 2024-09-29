@@ -19,3 +19,12 @@
     params:
       loop: true
       volume: -6
+
+- type: weather
+  id: CP14Mist
+  offsetSpeed: 0.04, 0.06
+  color: "#a9c4bf"
+  alpha: 0.8
+  sprite:
+    sprite: /Textures/_CP14/Effects/parallax.rsi
+    state: noise

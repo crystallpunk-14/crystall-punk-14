@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "created by vladimir.s for Crystallpunk",
+  "size": {
+    "x": 64,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "double"
+    },
+    {
+      "name": "single_left"
+    },
+    {
+      "name": "single_right"
+    },
+    {
+      "name": "light_double"
+    },
+    {
+      "name": "light_single_left"
+    },
+    {
+      "name": "light_single_right"
+    },
+    {
+      "name": "light_double_blue"
+    },
+    {
+      "name": "light_single_left_blue"
+    },
+    {
+      "name": "light_single_right_blue"
+    }
+  ]
+}

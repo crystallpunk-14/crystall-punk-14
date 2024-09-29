@@ -1,5 +1,3 @@
-using Content.Server.GameTicking;
-using Content.Server.GameTicking.Events;
 using Content.Server.Weather;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -11,7 +9,6 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly WeatherSystem _weather = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
@@ -19,7 +16,7 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14WeatherControllerComponent, RoundStartingEvent>(OnRoundStart);
+        SubscribeLocalEvent<CP14WeatherControllerComponent, MapInitEvent>(OnMapInit);
     }
 
     public override void Update(float frameTime)
@@ -45,7 +42,7 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
         }
     }
 
-    private void OnRoundStart(Entity<CP14WeatherControllerComponent> ent, ref RoundStartingEvent args)
+    private void OnMapInit(Entity<CP14WeatherControllerComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.NextWeatherTime = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.ClearDuration.Next(_random));
     }

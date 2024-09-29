@@ -34,6 +34,7 @@ entities:
       entries:
       - visuals: CP14Rain
       - visuals: CP14Storm
+      - visuals: CP14Mist
     - type: CP14DayCycle
       timeEntries:
       - duration: 80

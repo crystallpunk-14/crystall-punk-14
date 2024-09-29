@@ -60,7 +60,7 @@ public sealed partial class StencilOverlay
 
         // Draw the rain
         worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDraw").Instance());
-        _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, Vector2.Zero, modulate: (weatherProto.Color ?? Color.White).WithAlpha(alpha));
+        _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, weatherProto.OffsetSpeed, modulate: (weatherProto.Color ?? Color.White).WithAlpha(alpha*weatherProto.Alpha)); //CP14 alpha and offset scrolling
 
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(null);

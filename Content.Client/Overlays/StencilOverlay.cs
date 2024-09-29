@@ -57,13 +57,6 @@ public sealed partial class StencilOverlay : Overlay
             _blep = _clyde.CreateRenderTarget(args.Viewport.Size, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "weather-stencil");
         }
 
-        //CP14 Overlays
-        if (_entManager.TryGetComponent<CP14WorldEdgeComponent>(mapUid, out var worldEdge))
-        {
-            DrawWorldEdge(args, worldEdge, invMatrix);
-        }
-        //CP14 Overlays end
-
         if (_entManager.TryGetComponent<WeatherComponent>(mapUid, out var comp))
         {
             foreach (var (proto, weather) in comp.Weather)
@@ -80,6 +73,14 @@ public sealed partial class StencilOverlay : Overlay
         {
             DrawRestrictedRange(args, restrictedRangeComponent, invMatrix);
         }
+
+
+        //CP14 Overlays
+        if (_entManager.TryGetComponent<CP14WorldEdgeComponent>(mapUid, out var worldEdge))
+        {
+            DrawWorldEdge(args, worldEdge, invMatrix);
+        }
+        //CP14 Overlays end
 
         //CP14 Overlays
         if (_entManager.TryGetComponent<CP14CloudShadowsComponent>(mapUid, out var shadows))
