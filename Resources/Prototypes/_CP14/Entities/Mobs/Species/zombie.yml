@@ -100,7 +100,7 @@
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobZombieDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
     species: CP14Zombie
