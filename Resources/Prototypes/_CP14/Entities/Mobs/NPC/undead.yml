@@ -2,7 +2,6 @@
   id: CP14MobUndeadZombie
   parent: CP14BaseMobZombie
   name: walking dead
-  abstract: true
   description: A reanimated rotting body of a dead man wanting to devour the living.
   components:
   - type: HTN
@@ -11,56 +10,6 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
-
-- type: entity
-  id: CP14MobUndeadZombieMen
-  parent: CP14MobUndeadZombie
-  suffix: Men
-  components:
-  - type: Sprite
-    sprite: _CP14/Mobs/Undead/zombies.rsi
-    state: zombie_m
-    layers:
-    - map: [ "mannequin" ]
-      sprite: _CP14/Mobs/Undead/zombies.rsi
-      state: zombie_m
-    - map: [ "shirt" ]
-    - map: [ "pants" ]
-    - map: [ "gloves" ]
-    - map: [ "shoes" ]
-    - map: [ "cloak" ]
-    - map: [ "eyes" ]
-    - map: [ "belt1" ]
-    - map: [ "belt2" ]
-    - map: [ "neck" ]
-    - map: [ "back" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
-
-- type: entity
-  id: CP14MobUndeadZombieWoman
-  parent: CP14MobUndeadZombie
-  suffix: Woman
-  components:
-  - type: Sprite
-    sprite: _CP14/Mobs/Undead/zombies.rsi
-    state: zombie_w
-    layers:
-    - map: [ "mannequin" ]
-      sprite: _CP14/Mobs/Undead/zombies.rsi
-      state: zombie_w
-    - map: [ "shirt" ]
-    - map: [ "pants" ]
-    - map: [ "gloves" ]
-    - map: [ "shoes" ]
-    - map: [ "cloak" ]
-    - map: [ "eyes" ]
-    - map: [ "belt1" ]
-    - map: [ "belt2" ]
-    - map: [ "neck" ]
-    - map: [ "back" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
 
 - type: damageModifierSet
   id: CP14Zombie
