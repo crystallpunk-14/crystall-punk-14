@@ -1,5 +1,8 @@
 using System.Numerics;
+using Content.Server._CP14.Footprints.Components;
 using Content.Server.Decals;
+using Content.Shared._CP14.Decals;
+using Content.Shared.DoAfter;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Interaction;
@@ -12,7 +15,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.FootStep;
+namespace Content.Server._CP14.Footprints;
 
 public sealed class CP14FootprintsSystem : EntitySystem
 {
@@ -20,28 +23,28 @@ public sealed class CP14FootprintsSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14FootprintTrailerComponent, MoveEvent>(OnTrailerMove);
-        SubscribeLocalEvent<CP14FootprintTrailerComponent, StartCollideEvent>(OnTrailerCollide);
+        SubscribeLocalEvent<Components.CP14FootprintTrailerComponent, MoveEvent>(OnTrailerMove);
+        SubscribeLocalEvent<Components.CP14FootprintTrailerComponent, StartCollideEvent>(OnTrailerCollide);
 
         SubscribeLocalEvent<CP14FootprintHolderComponent, GotEquippedEvent>(OnHolderEquipped);
         SubscribeLocalEvent<CP14FootprintHolderComponent, GotUnequippedEvent>(OnHolderUnequipped);
 
-        SubscribeLocalEvent<CP14DecalCleanerComponent, BeforeRangedInteractEvent>(OnBeforeInteract);
+        SubscribeLocalEvent<CP14DecalCleanerComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<CP14DecalCleanerComponent, CP14DecalCleanerDoAfterEvent>(OnCleanDoAfter);
     }
 
-    private void OnBeforeInteract(Entity<CP14DecalCleanerComponent> ent, ref BeforeRangedInteractEvent args)
+    private void OnCleanDoAfter(Entity<CP14DecalCleanerComponent> ent, ref CP14DecalCleanerDoAfterEvent args)
     {
-        if (!args.CanReach)
+        if (args.Cancelled || args.Handled)
             return;
 
-        // Remove old decals
         var gridUid = Transform(ent).GridUid;
         if (gridUid is null)
             return;
@@ -49,27 +52,43 @@ public sealed class CP14FootprintsSystem : EntitySystem
         if (!TryComp<MapGridComponent>(gridUid, out var map))
             return;
 
-        var vec = _transform.GetGridOrMapTilePosition(ent);
-        var tileCenterVec = vec + map.TileSizeHalfVector;
+        var coord = EntityManager.GetCoordinates(args.ClickLocation);
+        _audio.PlayPvs(ent.Comp.Sound, coord);
+        SpawnAtPosition(ent.Comp.SpawnEffect, coord);
 
-        var oldDecals = _decal.GetDecalsInRange(gridUid.Value, tileCenterVec, ent.Comp.Range);
-
-        if (oldDecals.Count > 0)
-        {
-            _audio.PlayPvs(ent.Comp.Sound, args.ClickLocation);
-            SpawnAtPosition(ent.Comp.SpawnEffect, args.ClickLocation);
-        }
-
+        var oldDecals = _decal.GetDecalsInRange(gridUid.Value, args.ClickLocation.Position, ent.Comp.Range);
         foreach (var (id, decal) in oldDecals)
         {
             if (decal.Cleanable)
                 _decal.RemoveDecal(gridUid.Value, id);
         }
+
+        args.Handled = true;
+    }
+
+    private void OnAfterInteract(Entity<CP14DecalCleanerComponent> ent, ref AfterInteractEvent args)
+    {
+        if (!args.CanReach && !args.Handled)
+            return;
+
+        var doAfter = new DoAfterArgs(EntityManager,
+            args.User,
+            ent.Comp.Delay,
+            new CP14DecalCleanerDoAfterEvent(EntityManager.GetNetCoordinates(args.ClickLocation)),
+            ent)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            NeedHand = true,
+        };
+        _doAfter.TryStartDoAfter(doAfter);
+
+        args.Handled = true;
     }
 
     private void OnHolderUnequipped(Entity<CP14FootprintHolderComponent> ent, ref GotUnequippedEvent args)
     {
-        if (!TryComp<CP14FootprintTrailerComponent>(args.Equipee, out var trailer))
+        if (!TryComp<Components.CP14FootprintTrailerComponent>(args.Equipee, out var trailer))
             return;
 
         trailer.holder = null;
@@ -82,13 +101,13 @@ public sealed class CP14FootprintsSystem : EntitySystem
 
     private void OnHolderEquipped(Entity<CP14FootprintHolderComponent> ent, ref GotEquippedEvent args)
     {
-        if (!TryComp<CP14FootprintTrailerComponent>(args.Equipee, out var trailer))
+        if (!TryComp<Components.CP14FootprintTrailerComponent>(args.Equipee, out var trailer))
             return;
 
         trailer.holder = ent.Comp;
     }
 
-    private void OnTrailerCollide(Entity<CP14FootprintTrailerComponent> ent, ref StartCollideEvent args)
+    private void OnTrailerCollide(Entity<Components.CP14FootprintTrailerComponent> ent, ref StartCollideEvent args)
     {
         if (ent.Comp.holder is null)
             return;
@@ -114,7 +133,7 @@ public sealed class CP14FootprintsSystem : EntitySystem
         comp.Intensity = 1f;
     }
 
-    private void OnTrailerMove(Entity<CP14FootprintTrailerComponent> ent, ref MoveEvent args)
+    private void OnTrailerMove(Entity<Components.CP14FootprintTrailerComponent> ent, ref MoveEvent args)
     {
         if (ent.Comp.holder is null)
             return;

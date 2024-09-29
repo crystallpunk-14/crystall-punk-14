@@ -101,7 +101,7 @@
     solutions:
       barrel:
         reagents:
-        - ReagentId: CP14Water
+        - ReagentId: Water
           Quantity: 300
 
 - type: entity

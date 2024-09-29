@@ -32,6 +32,9 @@
   id: CP14Plate
 
 - type: Tag
+  id: CP14InkwellFittable
+
+- type: Tag
   id: CP14RecipeSewing
 
 - type: Tag

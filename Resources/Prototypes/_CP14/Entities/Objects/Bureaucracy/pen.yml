@@ -1,0 +1,54 @@
+- type: entity
+  parent: Pen
+  id: CP14PenFeather
+  name: fountain pen
+  description: A sharp clipped feather of a bird, adapted as a writing implement.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/pens.rsi
+    state: feather
+  - type: Item
+    sprite: _CP14/Objects/Bureaucracy/pens.rsi
+    heldPrefix: feather
+    size: Tiny
+  - type: Tag
+    tags:
+    - Write
+    - Pen
+    - CP14InkwellFittable
+
+# TODO: Чернильницу нужно доделать. Перо должно быть видно, пока оно внутри чернильницы. Предмет должен быть через ItemSlots, чтобы перо вставлять забирать можно было кликом. Нужно добавить прикольные звуки вставляния, выставляния. И добавить механ, который будет требовать периодически макать перо в чернильницу.
+- type: entity
+  parent: BaseItem
+  id: CP14Inkwell
+  name: inkwell
+  description: An endless (for now) source of ink for your letters
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/inkwell.rsi
+    drawdepth: SmallObjects
+    layers:
+      - state: icon
+      - state: feather
+        map: ["enum.StorageFillLayers.Fill"]
+        visible: false
+  #- type: Appearance
+  #- type: StorageFillVisualizer
+  #  maxFillLevels: 1
+  #  fillBaseName: fill
+  - type: Pullable
+  - type: Storage
+    grid:
+    - 0,0,0,0
+    maxItemSize: Tiny
+    whitelist:
+      tags:
+        - CP14InkwellFittable
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
