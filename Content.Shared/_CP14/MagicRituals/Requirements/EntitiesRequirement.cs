@@ -1,13 +1,9 @@
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components.Requirements;
+namespace Content.Shared._CP14.MagicRituals.Requirements;
 
-/// <summary>
-///
-/// </summary>
-[RegisterComponent, Access(typeof(CP14RitualSystem))]
-public sealed partial class CP14RitualRequirementEntitiesComponent : Component
+public sealed partial class EntitiesRequirement : CP14RitualRequirement
 {
     [DataField]
     public float CheckRange = 1f;
@@ -26,4 +22,9 @@ public sealed partial class CP14RitualRequirementEntitiesComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId? VisualEffect = "CP14DustEffect";
+
+    public override void Check(EntityManager entManager)
+    {
+        throw new NotImplementedException();
+    }
 }

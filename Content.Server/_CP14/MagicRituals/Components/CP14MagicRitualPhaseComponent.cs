@@ -1,3 +1,6 @@
+using Content.Shared._CP14.MagicRituals.Requirements;
+using Robust.Shared.Prototypes;
+
 namespace Content.Server._CP14.MagicRituals.Components;
 
 /// <summary>
@@ -11,4 +14,7 @@ public sealed partial class CP14MagicRitualPhaseComponent : Component
     /// </summary>
     [DataField]
     public Entity<CP14MagicRitualComponent>? Ritual;
+
+    [DataField(required: true)]
+    public Dictionary<EntProtoId, List<CP14RitualRequirement>> Requirements = new();
 }

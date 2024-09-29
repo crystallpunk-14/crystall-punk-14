@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicRitual;
