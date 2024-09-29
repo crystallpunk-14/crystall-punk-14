@@ -7,6 +7,8 @@
   name: Mr. Zombie
   abstract: true
   components:
+  - type: HumanoidAppearance
+    species: CP14Zombie
   - type: Icon
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
     state: full
@@ -20,7 +22,7 @@
     requiredLegs: 2
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 3
+    baseSprintSpeed: 2.5
   - type: Sprite
     drawdepth: Mobs
   - type: MobState
@@ -96,3 +98,13 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobZombieDummy
+  noSpawn: true
+  components:
+  - type: HumanoidAppearance
+    species: CP14Zombie
+  - type: Inventory
+    templateId: CP14mannequin
