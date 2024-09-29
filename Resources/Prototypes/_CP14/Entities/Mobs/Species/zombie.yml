@@ -23,8 +23,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 2.5
-  - type: Sprite
-    drawdepth: Mobs
   - type: MobState
     allowedStates:
     - Alive
