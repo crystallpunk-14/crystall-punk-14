@@ -32,10 +32,10 @@
       - state: feather
         map: ["enum.StorageFillLayers.Fill"]
         visible: false
-  - type: Appearance
-  - type: StorageFillVisualizer
-    maxFillLevels: 1
-    fillBaseName: fill
+  #- type: Appearance
+  #- type: StorageFillVisualizer
+  #  maxFillLevels: 1
+  #  fillBaseName: fill
   - type: Pullable
   - type: Storage
     grid:
