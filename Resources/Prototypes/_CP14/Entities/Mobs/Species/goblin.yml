@@ -88,12 +88,13 @@
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobGoblinDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
     species: CP14Goblin
   - type: Inventory
     templateId: CP14Human
+    speciesId: goblin
     displacements:
       belt:
         sizeMaps:

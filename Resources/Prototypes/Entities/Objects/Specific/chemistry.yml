@@ -267,7 +267,7 @@
   name: dropper
   parent: BaseItem
   description: Used to transfer small amounts of chemical solution between containers.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: Dropper
   components:
   - type: Sprite
@@ -316,7 +316,7 @@
   name: borgdropper
   parent: Dropper
   description: Used to transfer small amounts of chemical solution between containers. Extended for use by medical borgs.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: BorgDropper
   components:
   - type: Sprite

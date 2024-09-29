@@ -1,6 +1,5 @@
 ﻿- type: decal
   id: CP14BrickTileStoneBox
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -9,7 +8,6 @@
 
 - type: decal
   id: CP14BrickTileStoneCornerNe
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -18,7 +16,6 @@
 
 - type: decal
   id: CP14BrickTileStoneCornerSe
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -27,7 +24,6 @@
 
 - type: decal
   id: CP14BrickTileStoneCornerNw
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -36,7 +32,6 @@
 
 - type: decal
   id: CP14BrickTileStoneCornerSw
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -45,7 +40,6 @@
 
 - type: decal
   id: CP14BrickTileStoneInnerNe
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -54,7 +48,6 @@
 
 - type: decal
   id: CP14BrickTileStoneInnerSe
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -63,7 +56,6 @@
 
 - type: decal
   id: CP14BrickTileStoneInnerNw
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -72,7 +64,6 @@
 
 - type: decal
   id: CP14BrickTileStoneInnerSw
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -81,7 +72,6 @@
 
 - type: decal
   id: CP14BrickTileStoneEndN
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -90,7 +80,6 @@
 
 - type: decal
   id: CP14BrickTileStoneEndE
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -99,7 +88,6 @@
 
 - type: decal
   id: CP14BrickTileStoneEndS
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -108,7 +96,6 @@
 
 - type: decal
   id: CP14BrickTileStoneEndW
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -117,7 +104,6 @@
 
 - type: decal
   id: CP14BrickTileStoneLineN
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -126,7 +112,6 @@
 
 - type: decal
   id: CP14BrickTileStoneLineE
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -135,7 +120,6 @@
 
 - type: decal
   id: CP14BrickTileStoneLineS
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:
@@ -144,7 +128,6 @@
 
 - type: decal
   id: CP14BrickTileStoneLineW
-  snapCardinals: true
   defaultSnap: true
   showMenu: true
   sprite:

@@ -39,6 +39,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  color: "#452f27"
 
 - type: tile
   editorHidden: false
@@ -70,6 +71,7 @@
     collection: FootstepSnow #TODO
   heatCapacity: 10000
   weather: true
+  color: "#dccd9e"
 
 - type: tile
   id: CP14FloorGrass
@@ -102,6 +104,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  color: "#4a613a"
 
 - type: tile
   id: CP14FloorGrassLight
@@ -134,6 +137,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  color: "#4a613a"
 
 - type: tile
   id: CP14FloorGrassTall
@@ -166,3 +170,4 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  color: "#4a613a"

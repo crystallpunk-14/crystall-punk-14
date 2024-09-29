@@ -1,5 +1,6 @@
 - type: CP14Recipe
   id: CP14FoodMeatLamb
+  tag: CP14RecipeCooking
   craftTime: 2
   entities:
     CP14FoodMeatLambSlice: 2
@@ -9,6 +10,7 @@
 
 - type: CP14Recipe
   id: CP14FoodDoughLarge
+  tag: CP14RecipeCooking
   craftTime: 3
   entities:
     CP14FoodDoughMedium: 5
@@ -17,6 +19,7 @@
 
 - type: CP14Recipe
   id: CP14FoodDoughMedium
+  tag: CP14RecipeCooking
   craftTime: 3
   entities:
     CP14FoodDoughMediumFlat: 1
@@ -25,6 +28,7 @@
 
 - type: CP14Recipe
   id: CP14FoodDoughMediumFlat
+  tag: CP14RecipeCooking
   craftTime: 3
   entities:
     CP14FoodDoughMedium: 1 
@@ -33,6 +37,7 @@
 
 - type: CP14Recipe
   id: CP14SeedPumpkin
+  tag: CP14RecipeCooking
   craftTime: 1
   entities:
     CP14FoodPumpkinSlice: 1 
@@ -40,6 +45,7 @@
 
 - type: CP14Recipe
   id: CP14SeedCucumber
+  tag: CP14RecipeCooking
   craftTime: 1
   entities:
     CP14FoodCucumber: 1 
@@ -47,6 +53,7 @@
 
 - type: CP14Recipe
   id: CP14SeedWheat
+  tag: CP14RecipeCooking
   craftTime: 1
   entities:
     CP14Wheat: 1 

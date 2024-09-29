@@ -28,6 +28,17 @@
 - type: Tag
   id: CP14AmbientWater
 
-
 - type: Tag
   id: CP14Plate
+
+- type: Tag
+  id: CP14InkwellFittable
+
+- type: Tag
+  id: CP14RecipeSewing
+
+- type: Tag
+  id: CP14RecipeCooking
+
+- type: Tag
+  id: CP14RecipeWorkbench

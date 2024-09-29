@@ -129,5 +129,11 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField]
         public ProtoId<ContentTileDefinition>? BurnedTile { get; private set; } = null;
+
+        /// <summary>
+        /// CP14 - color for footprints
+        /// </summary>
+        [DataField]
+        public Color? Color;
     }
 }

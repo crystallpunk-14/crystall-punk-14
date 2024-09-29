@@ -1,0 +1,57 @@
+- type: entity
+  id: CP14BaseMop
+  parent: 
+  - BaseItem
+  - CP14BaseWeaponDestructible
+  name: wooden mop
+  description: Mop for cleaning floors from various unpleasant liquids
+  components:
+  - type: Item
+    size: Large
+    sprite: _CP14/Objects/Tools/mop.rsi
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/mop.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 10
+    damage:
+      types:
+        Blunt: 2
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 3
+  - type: Spillable
+    solution: absorbed
+  - type: Absorbent
+  - type: SolutionContainerManager
+    solutions:
+      absorbed:
+        maxVol: 100
+
+- type: entity
+  id: CP14BaseBroom
+  parent: 
+  - BaseItem
+  - CP14BaseWeaponDestructible
+  name: wooden broom
+  description: Sweeps up dried footprints and other stains from the floor
+  components:
+  - type: Item
+    size: Large
+    sprite: _CP14/Objects/Tools/broom.rsi
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/broom.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 10
+    damage:
+      types:
+        Blunt: 2
+    soundHit:
+      collection: MetalThud
+  - type: CP14DecalCleaner
+    delay: 0.75

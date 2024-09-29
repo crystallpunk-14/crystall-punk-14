@@ -341,7 +341,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         _deletionQueue.Remove(entity);
         UpdateSlip(entity, entity.Comp, args.Solution);
         UpdateSlow(entity, args.Solution);
-        UpdateEvaporation(entity, args.Solution);
+        //UpdateEvaporation(entity, args.Solution); //CP14 Force evaporation under sky via YML
         UpdateAppearance(entity, entity.Comp);
     }
 

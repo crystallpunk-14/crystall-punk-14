@@ -17,3 +17,4 @@ marking-CP14HumanHairUpdo = Пучок
 marking-CP14HumanHairVLongFringe = Прямая челка
 marking-CP14HumanHairVolaju = Вояж
 marking-CP14HumanHairWisp = Огонек
+marking-CP14HumanHairMaxyShagy = Максимальная лохматость

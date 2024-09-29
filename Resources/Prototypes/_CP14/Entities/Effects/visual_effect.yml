@@ -1,6 +1,6 @@
 - type: entity
   id: CP14DirtEffect
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
@@ -23,8 +23,24 @@
           dirt2: ""
 
 - type: entity
+  id: CP14DustEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _CP14/Effects/dust.rsi
+    state: dust
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
+
+- type: entity
   id: CP14MagicBeam1
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Effects/Beams/magic.rsi
