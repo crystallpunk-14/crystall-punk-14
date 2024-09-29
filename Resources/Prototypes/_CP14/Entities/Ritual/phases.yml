@@ -25,6 +25,11 @@
     nextPhases:
       "Hello": CP14RitualPhaseTest2
       "Blya": CP14RitualPhaseTest3
+  - type: CP14RitualRequirementEntities
+    visualEffect: CP14ImpactEffectShadowGrab
+    consumeResource: true
+    requiredEntities:
+      CP14FoodCucumber: 3
 
 - type: entity
   parent: CP14BaseRitualPhase

@@ -1,4 +1,5 @@
 using Content.Server._CP14.MagicRituals.Components;
+using Content.Server.Stack;
 using Content.Shared._CP14.MagicRitual;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -10,6 +11,7 @@ namespace Content.Server._CP14.MagicRituals;
 public partial class CP14RitualSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
 
@@ -21,7 +23,7 @@ public partial class CP14RitualSystem : EntitySystem
         InitializeRequirements();
 
         SubscribeLocalEvent<CP14MagicRitualComponent, MapInitEvent>(OnRitualInit);
-        SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerAttempt>(OnPhaseTriggerAttempt);
+        SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTriggerAttempt);
     }
 
     public override void Update(float frameTime)
@@ -36,9 +38,9 @@ public partial class CP14RitualSystem : EntitySystem
         ChangePhase(ritual, ritual.Comp.StartPhase);
     }
 
-    private void OnPhaseTriggerAttempt(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerAttempt args)
+    private void OnPhaseTriggerAttempt(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)
     {
-        if (args.Cancelled || args.NextPhase is null || phase.Comp.Ritual is null)
+        if (args.NextPhase is null || phase.Comp.Ritual is null)
             return;
 
         ChangePhase(phase.Comp.Ritual.Value, args.NextPhase.Value);

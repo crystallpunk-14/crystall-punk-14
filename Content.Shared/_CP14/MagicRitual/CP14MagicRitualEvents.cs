@@ -4,9 +4,13 @@ namespace Content.Shared._CP14.MagicRitual;
 
 public sealed class CP14RitualTriggerAttempt : CancellableEntityEventArgs
 {
+}
+
+public sealed class CP14RitualTriggerEvent : EntityEventArgs
+{
     public EntProtoId? NextPhase;
 
-    public CP14RitualTriggerAttempt(EntProtoId phase)
+    public CP14RitualTriggerEvent(EntProtoId phase)
     {
         NextPhase = phase;
     }
