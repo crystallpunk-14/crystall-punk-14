@@ -1,0 +1,64 @@
+- type: entity
+  id: CP14BaseRitualPhase
+  abstract: true
+  components:
+  - type: CP14MagicRitualPhase
+  - type: Tag
+    tags:
+      - HideContextMenu
+
+- type: entity
+  parent: CP14FoodCucumber
+  id: RitualCucumber
+  name: ritual cucumber
+  components:
+  - type: CP14MagicRitual
+    startPhase: CP14RitualPhaseTest1
+
+- type: entity
+  parent: CP14BaseRitualPhase
+  id: CP14RitualPhaseTest1
+  components:
+  - type: PointLight
+    color: "#FFFF00"
+  - type: CP14RitualTriggerVoice
+    nextPhases:
+      "Hello": CP14RitualPhaseTest2
+      "Blya": CP14RitualPhaseTest3
+
+- type: entity
+  parent: CP14BaseRitualPhase
+  id: CP14RitualPhaseTest2
+  components:
+  - type: PointLight
+    color: "#FF00FF"
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14RitualPhaseTest1
+    time:
+      min: 5
+      max: 10
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/Effects/tesla_consume.ogg
+      params:
+        variation: 0.3
+
+- type: entity
+  parent: CP14BaseRitualPhase
+  id: CP14RitualPhaseTest3
+  components:
+  - type: PointLight
+    color: "#00FFFF"
+  - type: CP14RitualTriggerVoice
+    nextPhases:
+      "Burbon": CP14RitualPhaseTest2
+      "Nazad": CP14RitualPhaseTest1
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14RitualPhaseTest1
+    time:
+      min: 5
+      max: 10
+  - type: RandomSpawner
+    deleteSpawnerAfterSpawn: false
+    prototypes:
+      - CP14DirtEffect
