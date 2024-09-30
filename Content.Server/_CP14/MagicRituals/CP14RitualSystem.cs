@@ -70,6 +70,11 @@ public partial class CP14RitualSystem : EntitySystem
 
         //TODO: Use actions
 
+        foreach (var action in selectedEdge.Value.Actions)
+        {
+            action.Effect(EntityManager, phase);
+        }
+
         ChangePhase(phase.Comp.Ritual.Value, args.NextPhase.Value);
     }
 

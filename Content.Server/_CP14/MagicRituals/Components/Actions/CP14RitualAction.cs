@@ -6,5 +6,5 @@ namespace Content.Server._CP14.MagicRituals.Components.Actions;
 [MeansImplicitUse]
 public abstract partial class CP14RitualAction
 {
-    public abstract void Check(EntityManager entManager);
+    public abstract void Effect(EntityManager entManager, EntityUid phaseEnt);
 }

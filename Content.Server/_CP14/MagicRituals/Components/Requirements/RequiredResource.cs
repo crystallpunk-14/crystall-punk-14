@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicRituals.Components.Requirements;
 
-public sealed partial class EntitiesRequirement : CP14RitualRequirement
+public sealed partial class RequiredResource : CP14RitualRequirement
 {
     [DataField]
     public float CheckRange = 1f;
@@ -13,9 +13,6 @@ public sealed partial class EntitiesRequirement : CP14RitualRequirement
 
     [DataField]
     public Dictionary<ProtoId<StackPrototype>, int> RequiredStack = new();
-
-    [DataField]
-    public bool ConsumeResource = false;
 
     /// <summary>
     /// Effect appearing in place of used entities

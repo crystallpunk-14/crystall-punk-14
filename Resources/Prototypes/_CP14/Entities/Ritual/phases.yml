@@ -28,11 +28,20 @@
     edges:
     - target: CP14RitualPhaseSecond # To 2
       requirements:
-      - !type:EntitiesRequirement
+      - !type:RequiredResource
         effect: CP14ImpactEffectShadowGrab
         checkRange: 3
         requiredEntities:
           CP14FoodCucumber: 3
+        requiredStack:
+          CP14WoodenPlanks: 2
+      actions: 
+      - !type:ConsumeResource
+        checkRange: 3
+        requiredEntities:
+          CP14FoodCucumber: 2
+        requiredStack:
+          CP14WoodenPlanks: 1
 
 - type: entity
   parent: CP14BaseRitualPhase
