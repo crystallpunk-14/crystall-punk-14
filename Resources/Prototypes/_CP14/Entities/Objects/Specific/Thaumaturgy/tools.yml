@@ -17,3 +17,15 @@
         variation: 0.03
   - type: UseDelay
     delay: 4
+
+- type: entity
+  id: CP14RitualChalk
+  parent: BaseItem
+  name: ritual chalk
+  description: Quartz chalk, handy for drawing temporary ritual circles.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi 

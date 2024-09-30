@@ -11,6 +11,7 @@
   - type: Sprite
     drawdepth: Mobs
   - type: CP14Wallmount
+  - type: Physics
 
 - type: entity
   id: CP14WallmountTorch
