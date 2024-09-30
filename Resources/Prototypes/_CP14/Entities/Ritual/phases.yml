@@ -23,7 +23,7 @@
     color: "#FFFF00"
   - type: CP14RitualTriggerVoice
     nextPhases:
-      "Hello": CP14RitualPhaseSecond
+      "Дай нам крови, бог огурцов!": CP14RitualPhaseSecond
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14RitualPhaseSecond # To 2
@@ -42,6 +42,8 @@
           CP14FoodCucumber: 2
         requiredStack:
           CP14WoodenPlanks: 1
+      - !type:SpawnEntity
+        proto: CP14BarrelBlood
 
 - type: entity
   parent: CP14BaseRitualPhase
