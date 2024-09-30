@@ -20,6 +20,7 @@ public sealed partial class CP14MagicRitualPhaseComponent : Component
     public List<RitualPhaseEdge> Edges = new();
 }
 
+[DataRecord]
 public partial record struct RitualPhaseEdge()
 {
     public EntProtoId? Target { get; set; } = null;

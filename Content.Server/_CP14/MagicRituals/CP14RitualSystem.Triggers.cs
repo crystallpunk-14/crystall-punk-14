@@ -25,12 +25,6 @@ public sealed partial class CP14RitualSystem
 
     private void TriggerRitualPhase(Entity<CP14MagicRitualPhaseComponent> ent, EntProtoId nextPhase)
     {
-        var ev = new CP14RitualTriggerAttempt();
-        RaiseLocalEvent(ent, ev);
-
-        if (ev.Cancelled)
-            return;
-
         var evConfirmed = new CP14RitualTriggerEvent(nextPhase);
         RaiseLocalEvent(ent, evConfirmed);
     }
