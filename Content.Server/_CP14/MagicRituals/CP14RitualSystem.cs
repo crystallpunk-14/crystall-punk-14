@@ -20,10 +20,9 @@ public partial class CP14RitualSystem : EntitySystem
         base.Initialize();
 
         InitializeTriggers();
-        InitializeRequirements();
 
         SubscribeLocalEvent<CP14MagicRitualComponent, MapInitEvent>(OnRitualInit);
-        SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTriggerAttempt);
+        SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTrigger);
     }
 
     public override void Update(float frameTime)
@@ -38,10 +37,38 @@ public partial class CP14RitualSystem : EntitySystem
         ChangePhase(ritual, ritual.Comp.StartPhase);
     }
 
-    private void OnPhaseTriggerAttempt(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)
+    private void OnPhaseTrigger(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)
     {
         if (args.NextPhase is null || phase.Comp.Ritual is null)
             return;
+
+        RitualPhaseEdge? selectedEdge = null;
+        foreach (var edge in phase.Comp.Edges)
+        {
+            if (edge.Target == args.NextPhase)
+            {
+                selectedEdge = edge;
+                break;
+            }
+        }
+
+        if (selectedEdge is null)
+            return;
+
+        var passed = true;
+        foreach (var req in selectedEdge.Value.Requirements)
+        {
+            if (!req.Check(EntityManager, phase))
+            {
+                passed = false;
+                break;
+            }
+        }
+
+        if (!passed)
+            return;
+
+        //TODO: Use actions
 
         ChangePhase(phase.Comp.Ritual.Value, args.NextPhase.Value);
     }
