@@ -12,5 +12,6 @@ public sealed partial class SpawnEntity : CP14RitualAction
         var _transform = entManager.System<SharedTransformSystem>();
 
         entManager.Spawn(Proto, _transform.GetMapCoordinates(phaseEnt));
+        entManager.Spawn(VisualEffect, _transform.GetMapCoordinates(phaseEnt));
     }
 }
