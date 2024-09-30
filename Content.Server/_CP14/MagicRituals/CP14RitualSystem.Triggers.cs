@@ -1,9 +1,9 @@
+using System.Text.RegularExpressions;
 using Content.Server._CP14.MagicRituals.Components;
 using Content.Server._CP14.MagicRituals.Components.Triggers;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
 using Content.Shared._CP14.MagicRitual;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicRituals;
@@ -64,15 +64,18 @@ public sealed partial class CP14RitualSystem
         if (!TryComp<CP14MagicRitualPhaseComponent>(ent, out var phase))
             return;
 
-        var message = args.Message.Trim();
+        // Lowercase the phrase and remove all punctuation marks
+        var message = Regex.Replace(args.Message.Trim().ToLower(), @"[^\w\s]", "");
 
         var triggered = false;
-        foreach (var trigger in ent.Comp.NextPhases)
+        foreach (var trigger in ent.Comp.Triggers)
         {
-            if (trigger.Key != message)
+            var triggerMessage = Regex.Replace(trigger.Message.ToLower(), @"[^\w\s]", "");
+
+            if (triggerMessage != message)
                 continue;
 
-            TriggerRitualPhase((ent.Owner,phase), trigger.Value);
+            TriggerRitualPhase((ent.Owner,phase), trigger.TargetPhase);
             triggered = true;
             break;
         }

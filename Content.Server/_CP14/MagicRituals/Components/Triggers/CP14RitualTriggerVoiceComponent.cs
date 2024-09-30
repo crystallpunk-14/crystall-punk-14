@@ -12,7 +12,7 @@ public sealed partial class CP14RitualTriggerVoiceComponent : Component
     public float ListenRange = 5f;
 
     [DataField(required: true)]
-    public Dictionary<string, EntProtoId> NextPhases = new();
+    public List<TriggerVoiceData> Triggers = new();
 
     /// <summary>
     /// the number of errors (incorrect phrases) that can be said next to the ritual, before switching to FailedPhase.
@@ -24,3 +24,17 @@ public sealed partial class CP14RitualTriggerVoiceComponent : Component
     [DataField]
     public EntProtoId? FailedPhase;
 }
+
+[DataRecord]
+public partial record struct TriggerVoiceData()
+{
+    public EntProtoId TargetPhase { get; set; } = default!;
+
+    public string Message { get; set; } = "null";
+
+    /// <summary>
+    /// can require several different entities to speak a phrase at the same time.
+    /// </summary>
+    public int UniqueSpeakers { get; set; } = 1;
+}
+

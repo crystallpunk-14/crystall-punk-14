@@ -22,11 +22,13 @@
   - type: PointLight
     color: "#FFFF00"
   - type: CP14RitualTriggerVoice
-    nextPhases:
-      "Дай нам крови, бог огурцов!": CP14RitualPhaseSecond
+    triggers:
+    - targetPhase: CP14RitualPhaseSecond
+      message: "Singulo"
+      uniqueSpeakers: 2
   - type: CP14MagicRitualPhase
     edges:
-    - target: CP14RitualPhaseSecond # To 2
+    - target: CP14RitualPhaseSecond
       requirements:
       - !type:RequiredResource
         effect: CP14ImpactEffectShadowGrab
@@ -35,6 +37,7 @@
           CP14FoodCucumber: 3
         requiredStack:
           CP14WoodenPlanks: 2
+
       actions: 
       - !type:ConsumeResource
         checkRange: 3
