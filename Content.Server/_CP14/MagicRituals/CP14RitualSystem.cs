@@ -39,7 +39,7 @@ public partial class CP14RitualSystem : EntitySystem
 
     private void OnPhaseTrigger(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)
     {
-        if (args.NextPhase is null || phase.Comp.Ritual is null)
+        if (phase.Comp.Ritual is null)
             return;
 
         RitualPhaseEdge? selectedEdge = null;
@@ -68,14 +68,12 @@ public partial class CP14RitualSystem : EntitySystem
         if (!passed)
             return;
 
-        //TODO: Use actions
-
         foreach (var action in selectedEdge.Value.Actions)
         {
             action.Effect(EntityManager, phase);
         }
 
-        ChangePhase(phase.Comp.Ritual.Value, args.NextPhase.Value);
+        ChangePhase(phase.Comp.Ritual.Value, args.NextPhase);
     }
 
     private void ChangePhase(Entity<CP14MagicRitualComponent> ritual, EntProtoId newPhase)

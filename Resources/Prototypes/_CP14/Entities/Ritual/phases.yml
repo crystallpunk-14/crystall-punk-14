@@ -22,12 +22,15 @@
   - type: PointLight
     color: "#FFFF00"
   - type: CP14RitualTriggerVoice
+    failAttempts: 3
+    failedPhase: CP14RitualPhaseFailed
     triggers:
     - targetPhase: CP14RitualPhaseSecond
       message: "Singulo"
       uniqueSpeakers: 2
   - type: CP14MagicRitualPhase
     edges:
+    - target: CP14RitualPhaseFailed
     - target: CP14RitualPhaseSecond
       requirements:
       - !type:RequiredResource
@@ -66,4 +69,24 @@
       max: 10
   - type: CP14MagicRitualPhase
     edges:
-    - target: CP14RitualPhaseStartpoint # To 2
+    - target: CP14RitualPhaseStartpoint # To start
+
+- type: entity
+  parent: CP14BaseRitualPhase
+  id: CP14RitualPhaseFailed
+  components:
+  - type: PointLight
+    color: "#FF0000"
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/Effects/tesla_consume.ogg
+      params:
+        variation: 0.6
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14RitualPhaseStartpoint
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14RitualPhaseStartpoint # To start

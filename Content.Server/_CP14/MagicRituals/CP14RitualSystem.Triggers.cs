@@ -21,6 +21,7 @@ public sealed partial class CP14RitualSystem
     private void UpdateTriggers(float frameTime)
     {
         TimerUpdate();
+        VoiceUpdate();
     }
 
     private void TriggerRitualPhase(Entity<CP14MagicRitualPhaseComponent> ent, EntProtoId nextPhase)
@@ -54,6 +55,22 @@ public sealed partial class CP14RitualSystem
 
     #region Trigger voice
 
+    private void VoiceUpdate()
+    {
+        var query = EntityQueryEnumerator<CP14RitualTriggerVoiceComponent, CP14MagicRitualPhaseComponent>();
+        while (query.MoveNext(out var uid, out var voice, out var phase))
+        {
+            if (voice.EndWindowTime == TimeSpan.Zero)
+                continue;
+
+            if (_timing.CurTime < voice.EndWindowTime)
+                continue;
+
+            voice.EndWindowTime = TimeSpan.Zero;
+            voice.UniqueSpeakersCount.Clear();
+            VoiceTriggerFailAttempt((uid, voice), phase);
+        }
+    }
     private void OnVoiceInit(Entity<CP14RitualTriggerVoiceComponent> ent, ref ComponentInit args)
     {
         EnsureComp<ActiveListenerComponent>(ent).Range = ent.Comp.ListenRange;
@@ -75,20 +92,44 @@ public sealed partial class CP14RitualSystem
             if (triggerMessage != message)
                 continue;
 
-            TriggerRitualPhase((ent.Owner,phase), trigger.TargetPhase);
             triggered = true;
+
+            if (trigger.UniqueSpeakers > 1)
+            {
+                // Add new speaker (ignore repeating)
+                if (ent.Comp.UniqueSpeakersCount.Contains(args.Source))
+                {
+                    VoiceTriggerFailAttempt(ent, phase);
+                    break;
+                }
+
+                ent.Comp.UniqueSpeakersCount.Add(args.Source);
+
+                //If first - start timer
+                if (ent.Comp.UniqueSpeakersCount.Count == 1)
+                    ent.Comp.EndWindowTime = _timing.CurTime + ent.Comp.WindowSize;
+
+                if (ent.Comp.UniqueSpeakersCount.Count < trigger.UniqueSpeakers)
+                    continue;
+            }
+
+            TriggerRitualPhase((ent.Owner,phase), trigger.TargetPhase);
             break;
         }
 
-        if (triggered || ent.Comp.FailAttempts is null || ent.Comp.FailedPhase is null)
+        if (!triggered)
+            VoiceTriggerFailAttempt(ent, phase);
+    }
+
+    private void VoiceTriggerFailAttempt(Entity<CP14RitualTriggerVoiceComponent> ent, CP14MagicRitualPhaseComponent phase)
+    {
+        if (ent.Comp.FailAttempts is null || ent.Comp.FailedPhase is null)
             return;
 
         ent.Comp.FailAttempts -= 1;
 
-        if (!(ent.Comp.FailAttempts <= 0))
-            return;
-
-        TriggerRitualPhase((ent.Owner,phase), ent.Comp.FailedPhase.Value);
+        if (ent.Comp.FailAttempts <= 0)
+            TriggerRitualPhase((ent.Owner,phase), ent.Comp.FailedPhase.Value);
     }
     #endregion
 }

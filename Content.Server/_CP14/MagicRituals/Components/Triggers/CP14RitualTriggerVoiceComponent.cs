@@ -5,7 +5,7 @@ namespace Content.Server._CP14.MagicRituals.Components.Triggers;
 /// <summary>
 ///
 /// </summary>
-[RegisterComponent, Access(typeof(CP14RitualSystem))]
+[RegisterComponent, AutoGenerateComponentPause, Access(typeof(CP14RitualSystem))]
 public sealed partial class CP14RitualTriggerVoiceComponent : Component
 {
     [DataField]
@@ -23,6 +23,24 @@ public sealed partial class CP14RitualTriggerVoiceComponent : Component
 
     [DataField]
     public EntProtoId? FailedPhase;
+
+    /// <summary>
+    /// a time window in which different entities need to say a ritual phrase at the same time
+    /// </summary>
+    [DataField]
+    public TimeSpan WindowSize = TimeSpan.FromSeconds(3f);
+
+    [DataField, AutoPausedField]
+    public TimeSpan EndWindowTime = TimeSpan.Zero;
+
+    [DataField]
+    public EntProtoId? SelectedWindowPhase = null;
+
+    /// <summary>
+    ///
+    /// </summary>
+    [DataField]
+    public List<EntityUid> UniqueSpeakersCount = new ();
 }
 
 [DataRecord]
