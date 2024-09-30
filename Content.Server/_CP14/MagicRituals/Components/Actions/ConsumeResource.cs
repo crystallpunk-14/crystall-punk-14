@@ -15,12 +15,6 @@ public sealed partial class ConsumeResource : CP14RitualAction
     [DataField]
     public Dictionary<ProtoId<StackPrototype>, int> RequiredStack = new();
 
-    /// <summary>
-    /// Effect appearing in place of used entities
-    /// </summary>
-    [DataField("effect")]
-    public EntProtoId? VisualEffect = "CP14DustEffect";
-
     public override void Effect(EntityManager entManager, EntityUid phaseEnt)
     {
         var _lookup = entManager.System<EntityLookupSystem>();

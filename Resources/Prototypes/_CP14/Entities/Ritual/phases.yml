@@ -27,14 +27,13 @@
     triggers:
     - targetPhase: CP14RitualPhaseSecond
       message: "Singulo"
-      uniqueSpeakers: 2
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14RitualPhaseFailed
     - target: CP14RitualPhaseSecond
       requirements:
       - !type:RequiredResource
-        effect: CP14ImpactEffectShadowGrab
+        vfx: CP14ImpactEffectShadowGrab
         checkRange: 3
         requiredEntities:
           CP14FoodCucumber: 3
@@ -48,8 +47,22 @@
           CP14FoodCucumber: 2
         requiredStack:
           CP14WoodenPlanks: 1
-      - !type:SpawnEntity
-        proto: CP14BarrelBlood
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - Damageable
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Slash: -10
+                Blunt: -10
+                Piercing: -10
+                Heat: -10
+          - !type:Jitter
+        
 
 - type: entity
   parent: CP14BaseRitualPhase
