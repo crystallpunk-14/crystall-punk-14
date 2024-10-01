@@ -1,5 +1,14 @@
 # 4 Priority - Special
 
+- type: ambientMusic
+  id: CP14Ritual
+  sound:
+    params:
+      volume: -12
+    collection: CP14AmbienceMagic
+  rules: NearRitual
+  priority: 4
+
 # 3 Priority - Departments
 
 # 2 Priority - General areas
@@ -28,8 +37,28 @@
     - /Audio/_CP14/Ambience/ambicreepy2.ogg
     - /Audio/_CP14/Ambience/ambicreepy3.ogg
 
+- type: soundCollection
+  id: CP14AmbienceMagic
+  files:
+    - /Audio/_CP14/Ambience/ambimagic1.ogg
+    - /Audio/_CP14/Ambience/ambimagic2.ogg
+    - /Audio/_CP14/Ambience/ambimagic3.ogg
+    - /Audio/_CP14/Ambience/ambimagic4.ogg
+    - /Audio/_CP14/Ambience/ambiAlchemy.ogg
+
 # Rules
 - type: rules
   id: AlwaysTrue
   rules:
     - !type:AlwaysTrueRule
+
+- type: rules
+  id: NearRitual
+  rules:
+    - !type:NearbyEntitiesRule
+      count: 1
+      whitelist:
+        components:
+          - CP14MagicRitualPhase
+          - CP14MagicRitual
+      range: 6
