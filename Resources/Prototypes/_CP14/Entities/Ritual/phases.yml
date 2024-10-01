@@ -16,6 +16,14 @@
     startPhase: CP14RitualPhaseStartpoint
 
 - type: entity
+  parent: CP14Paper
+  id: CP14PaperRitual
+  name: ritual describer
+  components:
+  - type: CP14PaperPhaseDescriber
+    describePhase: CP14RitualPhaseStartpoint
+
+- type: entity
   parent: CP14BaseRitualPhase
   id: CP14RitualPhaseStartpoint
   name: нейтральный исходный узел

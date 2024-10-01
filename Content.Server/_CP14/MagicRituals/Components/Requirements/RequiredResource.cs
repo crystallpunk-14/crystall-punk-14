@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
 
@@ -26,7 +27,28 @@ public sealed partial class RequiredResource : CP14RitualRequirement
 
     public override string? GetGuidebookRequirementDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        return null;
+        var sb = new StringBuilder();
+        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)) + " ");
+
+        foreach (var entity in RequiredEntities)
+        {
+            if (!prototype.TryIndex(entity.Key, out var indexed))
+                continue;
+
+            sb.Append(Loc.GetString("cp14-ritual-required-resource", ("name", indexed.Name), ("count", entity.Value)));
+            sb.Append("\n");
+        }
+
+        foreach (var stack in RequiredStack)
+        {
+            if (!prototype.TryIndex(stack.Key, out var indexed))
+                continue;
+
+            sb.Append(Loc.GetString("cp14-ritual-required-resource", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
+            sb.Append("\n");
+        }
+
+        return sb.ToString();
     }
 
     public override bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability)

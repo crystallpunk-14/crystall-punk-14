@@ -5,3 +5,9 @@ cp14-ritual-req-header = Для перехода необходимо соблю
 cp14-ritual-required-stability-min = Стабильность ритуала должна быть выше {$min}%
 cp14-ritual-required-stability-max = Стабильность ритуала должна быть ниже {$max}%
 cp14-ritual-required-stability-minmax = Стабильность ритуала должна быть в рамках от {$min} до {$max}%
+
+cp14-ritual-required-resource =
+    ищет { $count ->
+        [1] {$name}
+        *[other] {$name} в количестве {$count} единиц.
+    }

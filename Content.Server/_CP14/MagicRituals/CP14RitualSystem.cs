@@ -1,8 +1,10 @@
 using System.Text;
 using Content.Server._CP14.MagicRituals.Components;
+using Content.Server._CP14.MagicRituals.Components.Triggers;
 using Content.Shared._CP14.MagicRitual;
 using Content.Shared.Examine;
 using Robust.Server.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -22,48 +24,12 @@ public partial class CP14RitualSystem : EntitySystem
         base.Initialize();
 
         InitializeTriggers();
+        InitializeDescriber();
 
         SubscribeLocalEvent<CP14MagicRitualComponent, MapInitEvent>(OnRitualInit);
-        SubscribeLocalEvent<CP14MagicRitualComponent, ExaminedEvent>(OnRitualExamine);
         SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTrigger);
     }
 
-    private void OnRitualExamine(Entity<CP14MagicRitualComponent> ent, ref ExaminedEvent args)
-    {
-        //TEMP TODO
-        if (ent.Comp.CurrentPhase is null)
-            return;
-
-        var sb = new StringBuilder();
-        sb.Append("\n");
-        sb.Append($"[color=#e6a132][head=2]{MetaData(ent.Comp.CurrentPhase.Value).EntityName}[/head][/color] \n");
-        sb.Append($"[italic]{MetaData(ent.Comp.CurrentPhase.Value).EntityDescription}[/italic] \n");
-
-        sb.Append(Loc.GetString("cp14-ritual-intro") + "\n \n");
-        foreach (var edge in ent.Comp.CurrentPhase.Value.Comp.Edges)
-        {
-            if (!_proto.TryIndex(edge.Target, out var targetIndexed))
-                continue;
-
-            sb.Append($"[color=#b5783c][head=2]{targetIndexed.Name}[/head][/color]" + "\n");
-            if (edge.Requirements.Count > 0)
-            {
-                sb.Append($"[bold]{Loc.GetString("cp14-ritual-req-header")}[/bold] \n");
-                foreach (var req in edge.Requirements)
-                    sb.Append(req.GetGuidebookRequirementDescription(_proto, _entitySystem));
-                sb.Append("\n");
-            }
-
-            if (edge.Actions.Count > 0)
-            {
-                sb.Append($"[bold]{Loc.GetString("cp14-ritual-effect-header")}[/bold] \n");
-                foreach (var act in edge.Actions)
-                    sb.Append(act.GetGuidebookEffectDescription(_proto, _entitySystem));
-                sb.Append("\n");
-            }
-        }
-        args.PushMarkup(sb.ToString());
-    }
 
     public override void Update(float frameTime)
     {
