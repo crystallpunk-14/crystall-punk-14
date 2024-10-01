@@ -20,7 +20,7 @@ public sealed partial class ConsumeResource : CP14RitualAction
     public override string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var sb = new StringBuilder();
-        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)));
+        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)) + " ");
 
         foreach (var entity in RequiredEntities)
         {

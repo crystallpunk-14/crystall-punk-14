@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicRituals.Components.Requirements;
 
@@ -13,4 +14,6 @@ public abstract partial class CP14RitualRequirement
     public float FailStabilityCost;
 
     public abstract bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability);
+
+    public abstract string? GetGuidebookRequirementDescription(IPrototypeManager prototype, IEntitySystemManager entSys);
 }

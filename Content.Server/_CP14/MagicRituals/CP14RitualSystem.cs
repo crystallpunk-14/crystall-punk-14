@@ -35,18 +35,31 @@ public partial class CP14RitualSystem : EntitySystem
             return;
 
         var sb = new StringBuilder();
+        sb.Append("\n");
+        sb.Append($"[color=#e6a132][head=2]{MetaData(ent.Comp.CurrentPhase.Value).EntityName}[/head][/color] \n");
+        sb.Append($"[italic]{MetaData(ent.Comp.CurrentPhase.Value).EntityDescription}[/italic] \n");
 
+        sb.Append(Loc.GetString("cp14-ritual-intro") + "\n \n");
         foreach (var edge in ent.Comp.CurrentPhase.Value.Comp.Edges)
         {
             if (!_proto.TryIndex(edge.Target, out var targetIndexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-effect-header", ("node", targetIndexed.Name)));
-            sb.Append("\n");
-
-            foreach (var act in edge.Actions)
+            sb.Append($"[color=#b5783c][head=2]{targetIndexed.Name}[/head][/color]" + "\n");
+            if (edge.Requirements.Count > 0)
             {
-                sb.Append(act.GetGuidebookEffectDescription(_proto, _entitySystem));
+                sb.Append($"[bold]{Loc.GetString("cp14-ritual-req-header")}[/bold] \n");
+                foreach (var req in edge.Requirements)
+                    sb.Append(req.GetGuidebookRequirementDescription(_proto, _entitySystem));
+                sb.Append("\n");
+            }
+
+            if (edge.Actions.Count > 0)
+            {
+                sb.Append($"[bold]{Loc.GetString("cp14-ritual-effect-header")}[/bold] \n");
+                foreach (var act in edge.Actions)
+                    sb.Append(act.GetGuidebookEffectDescription(_proto, _entitySystem));
+                sb.Append("\n");
             }
         }
         args.PushMarkup(sb.ToString());

@@ -1,3 +1,5 @@
+using Robust.Shared.Prototypes;
+
 namespace Content.Server._CP14.MagicRituals.Components.Requirements;
 
 /// <summary>
@@ -9,6 +11,18 @@ public sealed partial class RequiredStability : CP14RitualRequirement
     public float Min = 0;
     [DataField]
     public float Max = 1;
+
+    public override string? GetGuidebookRequirementDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
+    {
+        return Min switch
+        {
+            > 0 when Max < 1 =>
+                   Loc.GetString("cp14-ritual-required-stability-minmax", ("min", Min*100), ("max", Max*100)) + "\n",
+            > 0 => Loc.GetString("cp14-ritual-required-stability-min", ("min", Min*100)) + "\n",
+            < 0 => Loc.GetString("cp14-ritual-required-stability-max", ("min", Max*100)) + "\n",
+            _ => null,
+        };
+    }
 
     public override bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability)
     {

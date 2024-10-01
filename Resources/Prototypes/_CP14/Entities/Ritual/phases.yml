@@ -19,6 +19,7 @@
   parent: CP14BaseRitualPhase
   id: CP14RitualPhaseStartpoint
   name: нейтральный исходный узел
+  description: Идеальная энергетическая позиция для начала любого ритуала.
   components:
   - type: PointLight
     color: "#FFFF00"
