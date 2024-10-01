@@ -57,7 +57,7 @@
     triggers:
     - targetPhase: CP14RitualPhaseSecond
       message: "Singulo"
-      speakers: 2
+      speakers: 1
   - type: CP14MagicRitualPhase
     phaseColor: "#FF0000"
     edges:
