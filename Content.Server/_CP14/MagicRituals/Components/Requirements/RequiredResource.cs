@@ -23,6 +23,12 @@ public sealed partial class RequiredResource : CP14RitualRequirement
     [DataField]
     public EntProtoId? Effect = "CP14DustEffect";
 
+
+    public override string? GetGuidebookRequirementDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
+    {
+        return null;
+    }
+
     public override bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability)
     {
         var _lookup = entManager.System<EntityLookupSystem>();
