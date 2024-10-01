@@ -1,5 +1,7 @@
+using System.Text;
 using Content.Server._CP14.MagicRituals.Components;
 using Content.Shared._CP14.MagicRitual;
+using Content.Shared.Examine;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -9,6 +11,8 @@ namespace Content.Server._CP14.MagicRituals;
 
 public partial class CP14RitualSystem : EntitySystem
 {
+    [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
@@ -20,7 +24,32 @@ public partial class CP14RitualSystem : EntitySystem
         InitializeTriggers();
 
         SubscribeLocalEvent<CP14MagicRitualComponent, MapInitEvent>(OnRitualInit);
+        SubscribeLocalEvent<CP14MagicRitualComponent, ExaminedEvent>(OnRitualExamine);
         SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTrigger);
+    }
+
+    private void OnRitualExamine(Entity<CP14MagicRitualComponent> ent, ref ExaminedEvent args)
+    {
+        //TEMP TODO
+        if (ent.Comp.CurrentPhase is null)
+            return;
+
+        var sb = new StringBuilder();
+
+        foreach (var edge in ent.Comp.CurrentPhase.Value.Comp.Edges)
+        {
+            if (!_proto.TryIndex(edge.Target, out var targetIndexed))
+                continue;
+
+            sb.Append(Loc.GetString("cp14-ritual-effect-header", ("node", targetIndexed.Name)));
+            sb.Append("\n");
+
+            foreach (var act in edge.Actions)
+            {
+                sb.Append(act.GetGuidebookEffectDescription(_proto, _entitySystem));
+            }
+        }
+        args.PushMarkup(sb.ToString());
     }
 
     public override void Update(float frameTime)
@@ -32,10 +61,12 @@ public partial class CP14RitualSystem : EntitySystem
 
     public void ChangeRitualStability(Entity<CP14MagicRitualComponent> ritual, float dStab)
     {
-        var ev = new CP14RitualStabilityChangedEvent(ritual.Comp.Stability, ritual.Comp.Stability + dStab);
+        var newS = MathHelper.Clamp01(ritual.Comp.Stability + dStab);
+
+        var ev = new CP14RitualStabilityChangedEvent(ritual.Comp.Stability, newS);
         RaiseLocalEvent(ritual, ev);
 
-        ritual.Comp.Stability = MathHelper.Clamp01(ritual.Comp.Stability + dStab);
+        ritual.Comp.Stability = newS;
     }
 
     private void OnRitualInit(Entity<CP14MagicRitualComponent> ritual, ref MapInitEvent args)

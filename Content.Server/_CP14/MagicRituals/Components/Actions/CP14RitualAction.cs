@@ -15,4 +15,6 @@ public abstract partial class CP14RitualAction
     public EntProtoId? VisualEffect = "CP14DustEffect";
 
     public abstract void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase);
+
+    public abstract string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys);
 }

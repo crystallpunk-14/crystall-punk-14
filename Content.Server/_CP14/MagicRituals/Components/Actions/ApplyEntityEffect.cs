@@ -1,6 +1,8 @@
+using System.Text;
 using Content.Shared.EntityEffects;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicRituals.Components.Actions;
 
@@ -15,11 +17,38 @@ public sealed partial class ApplyEntityEffect : CP14RitualAction
     [DataField]
     public EntityWhitelist? Whitelist;
 
+    [DataField]
+    public LocId? WhitelistDesc;
+
     [DataField(required: true)]
     public List<EntityEffect> Effects = new();
 
     [DataField]
     public int MaxEntities = 1;
+
+    public override string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
+    {
+        var sb = new StringBuilder();
+
+        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)));
+        sb.Append(Loc.GetString("cp14-ritual-effect-apply-effect", ("count", MaxEntities), ("range", CheckRange)));
+        sb.Append("\n");
+
+        if (WhitelistDesc is not null)
+        {
+            sb.Append(Loc.GetString(WhitelistDesc));
+            sb.Append("\n");
+        }
+
+        foreach (var effect in Effects)
+        {
+            sb.Append(effect.GuidebookEffectDescription(prototype, entSys));
+            sb.Append("\n");
+        }
+        sb.Append("\n");
+
+        return sb.ToString();
+    }
 
     public override void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {

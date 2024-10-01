@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Server.Stack;
 using Content.Shared.Stacks;
 using Robust.Server.GameObjects;
@@ -15,6 +16,32 @@ public sealed partial class ConsumeResource : CP14RitualAction
 
     [DataField]
     public Dictionary<ProtoId<StackPrototype>, int> RequiredStack = new();
+
+    public override string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
+    {
+        var sb = new StringBuilder();
+        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)));
+
+        foreach (var entity in RequiredEntities)
+        {
+            if (!prototype.TryIndex(entity.Key, out var indexed))
+                continue;
+
+            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource", ("name", indexed.Name), ("count", entity.Value)));
+            sb.Append("\n");
+        }
+
+        foreach (var stack in RequiredStack)
+        {
+            if (!prototype.TryIndex(stack.Key, out var indexed))
+                continue;
+
+            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
+            sb.Append("\n");
+        }
+
+        return sb.ToString();
+    }
 
     public override void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {

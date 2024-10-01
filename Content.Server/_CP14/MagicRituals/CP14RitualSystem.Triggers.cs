@@ -34,11 +34,7 @@ public sealed partial class CP14RitualSystem
 
     private void OnTimerMapInit(Entity<CP14RitualTriggerTimerComponent> ent, ref MapInitEvent args)
     {
-        if (!TryComp<CP14MagicRitualComponent>(ent, out var ritual))
-            return;
-
-        var time = MathHelper.Lerp(ent.Comp.Time.Min, ent.Comp.Time.Max, ritual.Stability);
-
+        var time = ent.Comp.Time.Next(_random);
         ent.Comp.TriggerTime = _timing.CurTime + TimeSpan.FromSeconds(time);
     }
 
