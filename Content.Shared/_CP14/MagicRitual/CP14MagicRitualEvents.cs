@@ -44,3 +44,29 @@ public sealed class CP14RitualPhaseBoundEvent : EntityEventArgs
         Phase = p;
     }
 }
+
+/// <summary>
+/// Invoked at the ritual holder entity when the ritual is complete and the phase entities have been removed
+/// </summary>
+public sealed class CP14RitualEndEvent : EntityEventArgs
+{
+    public EntityUid Ritual;
+
+    public CP14RitualEndEvent(EntityUid r)
+    {
+        Ritual = r;
+    }
+}
+
+/// <summary>
+/// Invoked at the ritual holder entity when the ritual begins, and invokes the starting phase
+/// </summary>
+public sealed class CP14RitualStartEvent : EntityEventArgs
+{
+    public EntityUid Ritual;
+
+    public CP14RitualStartEvent(EntityUid r)
+    {
+        Ritual = r;
+    }
+}

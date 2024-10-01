@@ -35,6 +35,44 @@ public partial class CP14RitualSystem : EntitySystem
         UpdateTriggers(frameTime);
     }
 
+    public void StartRitual(Entity<CP14MagicRitualComponent> ritual)
+    {
+        EndRitual(ritual);
+
+        var ev = new CP14RitualStartEvent(ritual);
+        RaiseLocalEvent(ritual, ev);
+
+        ChangePhase(ritual, ritual.Comp.StartPhase);
+    }
+
+    private void ChangePhase(Entity<CP14MagicRitualComponent> ritual, EntProtoId newPhase)
+    {
+        QueueDel(ritual.Comp.CurrentPhase);
+
+        var newPhaseEnt = Spawn(newPhase, Transform(ritual).Coordinates);
+        _transform.SetParent(newPhaseEnt, ritual);
+        var newPhaseComp = EnsureComp<CP14MagicRitualPhaseComponent>(newPhaseEnt);
+
+        ritual.Comp.CurrentPhase = (newPhaseEnt, newPhaseComp);
+        newPhaseComp.Ritual = ritual;
+
+        var ev = new CP14RitualPhaseBoundEvent(ritual, newPhaseEnt);
+        RaiseLocalEvent(ritual, ev);
+        RaiseLocalEvent(newPhaseEnt, ev);
+    }
+
+    public void EndRitual(Entity<CP14MagicRitualComponent> ritual)
+    {
+        if (ritual.Comp.CurrentPhase is null)
+            return;
+
+        QueueDel(ritual.Comp.CurrentPhase);
+        ritual.Comp.CurrentPhase = null;
+
+        var ev = new CP14RitualEndEvent(ritual);
+        RaiseLocalEvent(ritual, ev);
+    }
+
     private void OnPhaseBound(Entity<CP14MagicRitualPhaseComponent> ent, ref CP14RitualPhaseBoundEvent args)
     {
         if (!TryComp<CP14MagicRitualComponent>(args.Ritual, out var ritual))
@@ -55,7 +93,7 @@ public partial class CP14RitualSystem : EntitySystem
 
     private void OnRitualInit(Entity<CP14MagicRitualComponent> ritual, ref MapInitEvent args)
     {
-        ChangePhase(ritual, ritual.Comp.StartPhase);
+        StartRitual(ritual);
     }
 
     private void OnPhaseTrigger(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)
@@ -96,21 +134,5 @@ public partial class CP14RitualSystem : EntitySystem
         }
 
         ChangePhase(phase.Comp.Ritual.Value, args.NextPhase);
-    }
-
-    private void ChangePhase(Entity<CP14MagicRitualComponent> ritual, EntProtoId newPhase)
-    {
-        QueueDel(ritual.Comp.CurrentPhase);
-
-        var newPhaseEnt = Spawn(newPhase, Transform(ritual).Coordinates);
-        _transform.SetParent(newPhaseEnt, ritual);
-        var newPhaseComp = EnsureComp<CP14MagicRitualPhaseComponent>(newPhaseEnt);
-
-        ritual.Comp.CurrentPhase = (newPhaseEnt, newPhaseComp);
-        newPhaseComp.Ritual = ritual;
-
-        var ev = new CP14RitualPhaseBoundEvent(ritual, newPhaseEnt);
-        RaiseLocalEvent(ritual, ev);
-        RaiseLocalEvent(newPhaseEnt, ev);
     }
 }
