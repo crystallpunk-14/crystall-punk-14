@@ -21,5 +21,5 @@ public sealed partial class CP14MeleeParriableComponent : Component
     public float NeedParryPower = 1f;
 
     [DataField]
-    public SoundSpecifier ParrySound = new SoundPathSpecifier("/Audio/_CP14/Effects/parry1.ogg", AudioParams.Default.WithVariation(0.2f));
+    public SoundSpecifier ParrySound = new SoundCollectionSpecifier("CP14Parry", AudioParams.Default.WithVariation(0.05f));
 }
