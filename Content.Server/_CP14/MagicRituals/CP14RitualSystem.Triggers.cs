@@ -34,7 +34,12 @@ public sealed partial class CP14RitualSystem
 
     private void OnTimerMapInit(Entity<CP14RitualTriggerTimerComponent> ent, ref MapInitEvent args)
     {
-        ent.Comp.TriggerTime = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.Time.Next(_random));
+        if (!TryComp<CP14MagicRitualComponent>(ent, out var ritual))
+            return;
+
+        var time = MathHelper.Lerp(ent.Comp.Time.Min, ent.Comp.Time.Max, ritual.Stability);
+
+        ent.Comp.TriggerTime = _timing.CurTime + TimeSpan.FromSeconds(time);
     }
 
     private void TimerUpdate()
@@ -123,12 +128,15 @@ public sealed partial class CP14RitualSystem
 
     private void VoiceTriggerFailAttempt(Entity<CP14RitualTriggerVoiceComponent> ent, CP14MagicRitualPhaseComponent phase)
     {
-        if (ent.Comp.FailAttempts is null || ent.Comp.FailedPhase is null)
+        if (ent.Comp.FailAttempts is null)
             return;
 
         ent.Comp.FailAttempts -= 1;
 
-        if (ent.Comp.FailAttempts <= 0)
+        if (phase.Ritual is not null)
+            ChangeRitualStability(phase.Ritual.Value, -ent.Comp.FailTriggerStabilityCost);
+
+        if (ent.Comp.FailAttempts <= 0 && ent.Comp.FailedPhase is not null)
             TriggerRitualPhase((ent.Owner,phase), ent.Comp.FailedPhase.Value);
     }
     #endregion

@@ -19,10 +19,13 @@ public sealed partial class CP14RitualTriggerVoiceComponent : Component
     /// set null, if you want an infinite number of tries
     /// </summary>
     [DataField]
-    public int? FailAttempts = null;
+    public int? FailAttempts;
 
     [DataField]
     public EntProtoId? FailedPhase;
+
+    [DataField]
+    public float FailTriggerStabilityCost = 0f;
 
     /// <summary>
     /// a time window in which different entities need to say a ritual phrase at the same time
@@ -34,7 +37,7 @@ public sealed partial class CP14RitualTriggerVoiceComponent : Component
     public TimeSpan EndWindowTime = TimeSpan.Zero;
 
     [DataField]
-    public EntProtoId? SelectedWindowPhase = null;
+    public EntProtoId? SelectedWindowPhase;
 
     /// <summary>
     ///

@@ -1,5 +1,6 @@
 using Content.Server.Stack;
 using Content.Shared.Stacks;
+using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicRituals.Components.Actions;
@@ -15,13 +16,12 @@ public sealed partial class ConsumeResource : CP14RitualAction
     [DataField]
     public Dictionary<ProtoId<StackPrototype>, int> RequiredStack = new();
 
-    public override void Effect(EntityManager entManager, EntityUid phaseEnt)
+    public override void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
         var _lookup = entManager.System<EntityLookupSystem>();
-        var _transform = entManager.System<SharedTransformSystem>();
         var _stack = entManager.System<StackSystem>();
 
-        var entitiesAround = _lookup.GetEntitiesInRange(phaseEnt, CheckRange, LookupFlags.Uncontained);
+        var entitiesAround = _lookup.GetEntitiesInRange(phase, CheckRange, LookupFlags.Uncontained);
 
         foreach (var reqEnt in RequiredEntities)
         {

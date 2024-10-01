@@ -11,7 +11,6 @@ namespace Content.Server._CP14.MagicRituals;
 public partial class CP14RitualSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
 
@@ -30,6 +29,11 @@ public partial class CP14RitualSystem : EntitySystem
         base.Update(frameTime);
 
         UpdateTriggers(frameTime);
+    }
+
+    public void ChangeRitualStability(Entity<CP14MagicRitualComponent> ritual, float dStab)
+    {
+        ritual.Comp.Stability = MathHelper.Clamp01(ritual.Comp.Stability + dStab);
     }
 
     private void OnRitualInit(Entity<CP14MagicRitualComponent> ritual, ref MapInitEvent args)
@@ -58,8 +62,9 @@ public partial class CP14RitualSystem : EntitySystem
         var passed = true;
         foreach (var req in selectedEdge.Value.Requirements)
         {
-            if (!req.Check(EntityManager, phase))
+            if (!req.Check(EntityManager, phase, phase.Comp.Ritual.Value.Comp.Stability)) //lol
             {
+                ChangeRitualStability(phase.Comp.Ritual.Value, -req.FailStabilityCost);
                 passed = false;
                 break;
             }
@@ -70,7 +75,7 @@ public partial class CP14RitualSystem : EntitySystem
 
         foreach (var action in selectedEdge.Value.Actions)
         {
-            action.Effect(EntityManager, phase);
+            action.Effect(EntityManager, _transform, phase);
         }
 
         ChangePhase(phase.Comp.Ritual.Value, args.NextPhase);

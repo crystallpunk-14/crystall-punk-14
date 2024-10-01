@@ -6,5 +6,11 @@ namespace Content.Server._CP14.MagicRituals.Components.Requirements;
 [MeansImplicitUse]
 public abstract partial class CP14RitualRequirement
 {
-    public abstract bool Check(EntityManager entManager, EntityUid phaseEnt);
+    /// <summary>
+    /// If this checks fails, the ritual will lose some of its stability.
+    /// </summary>
+    [DataField]
+    public float FailStabilityCost;
+
+    public abstract bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability);
 }

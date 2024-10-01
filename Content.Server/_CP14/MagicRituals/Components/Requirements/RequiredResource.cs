@@ -3,6 +3,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicRituals.Components.Requirements;
 
+/// <summary>
+/// Requires certain specific entities to be near the ritual. TODO: Replace with Whitelist
+/// </summary>
 public sealed partial class RequiredResource : CP14RitualRequirement
 {
     [DataField]
@@ -20,7 +23,7 @@ public sealed partial class RequiredResource : CP14RitualRequirement
     [DataField]
     public EntProtoId? Effect = "CP14DustEffect";
 
-    public override bool Check(EntityManager entManager, EntityUid phaseEnt)
+    public override bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability)
     {
         var _lookup = entManager.System<EntityLookupSystem>();
         var _transform = entManager.System<SharedTransformSystem>();

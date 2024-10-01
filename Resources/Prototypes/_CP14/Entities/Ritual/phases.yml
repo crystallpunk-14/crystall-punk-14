@@ -39,8 +39,12 @@
           CP14FoodCucumber: 3
         requiredStack:
           CP14WoodenPlanks: 2
+      - !type:RequiredStability
+        min: 0.5
 
       actions: 
+      - !type:EditStability
+        mod: -0.1
       - !type:ConsumeResource
         checkRange: 3
         requiredEntities:
