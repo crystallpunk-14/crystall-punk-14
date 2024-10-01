@@ -1,3 +1,4 @@
+using System.Text;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
@@ -9,31 +10,36 @@ namespace Content.Server._CP14.MagicRituals.Components.Actions;
 public sealed partial class SpawnEntity : CP14RitualAction
 {
     [DataField(required: true)]
-    public EntProtoId Proto;
-
-    [DataField]
-    public int Count = 1;
+    public Dictionary<EntProtoId, int> Spawns;
 
     [DataField]
     public LocId? Name;
 
     public override string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
-        if (!prototype.TryIndex(Proto, out var indexed))
-            return null;
+        var sb = new StringBuilder();
+        sb.Append(Loc.GetString("cp14-ritual-effect-spawn-entity")+ "\n");
+        foreach (var spawn in Spawns)
+        {
+            if (!prototype.TryIndex(spawn.Key, out var indexed))
+                return null;
 
-        return Loc.GetString("cp14-ritual-effect-spawn-entity",
-            ("name", Name is null ? indexed.Name : Loc.GetString(Name)),
-            ("count", Count)) + "\n";
+            sb.Append(Loc.GetString("cp14-ritual-effect-spawn-entity-item",
+                ("name", Name is null ? indexed.Name : Loc.GetString(Name)),
+                ("count", spawn.Value)) + "\n");
+        }
+
+        return sb.ToString();
     }
 
     public override void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
-        for (var i = 0; i < Count; i++)
+        foreach (var spawn in Spawns)
         {
-            entManager.Spawn(Proto, _transform.GetMapCoordinates(phase));
+            for (var i = 0; i < spawn.Value; i++)
+            {
+                entManager.Spawn(spawn.Key, _transform.GetMapCoordinates(phase));
+            }
         }
-
-        entManager.Spawn(VisualEffect, _transform.GetMapCoordinates(phase));
     }
 }

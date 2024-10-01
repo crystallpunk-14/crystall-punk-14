@@ -28,14 +28,14 @@ public sealed partial class RequiredResource : CP14RitualRequirement
     public override string? GetGuidebookRequirementDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var sb = new StringBuilder();
-        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)) + " ");
+        sb.Append(Loc.GetString("cp14-ritual-required-resource", ("range", CheckRange)) + "\n");
 
         foreach (var entity in RequiredEntities)
         {
             if (!prototype.TryIndex(entity.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-required-resource", ("name", indexed.Name), ("count", entity.Value)));
+            sb.Append(Loc.GetString("cp14-ritual-required-resource-item", ("name", indexed.Name), ("count", entity.Value)));
             sb.Append("\n");
         }
 
@@ -44,7 +44,7 @@ public sealed partial class RequiredResource : CP14RitualRequirement
             if (!prototype.TryIndex(stack.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-required-resource", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
+            sb.Append(Loc.GetString("cp14-ritual-required-resource-item", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
             sb.Append("\n");
         }
 

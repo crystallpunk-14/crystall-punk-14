@@ -68,7 +68,8 @@ public sealed partial class CP14RitualSystem
                 continue;
 
             voice.EndWindowTime = TimeSpan.Zero;
-            voice.UniqueSpeakersCount.Clear();
+            voice.Speakers.Clear();
+            voice.SelectedWindowPhase = null;
             VoiceTriggerFailAttempt((uid, voice), phase);
         }
     }
@@ -95,22 +96,31 @@ public sealed partial class CP14RitualSystem
 
             triggered = true;
 
-            if (trigger.UniqueSpeakers > 1)
+            if (trigger.Speakers > 1)
             {
                 // Add new speaker (ignore repeating)
-                if (ent.Comp.UniqueSpeakersCount.Contains(args.Source))
+                if (ent.Comp.Speakers.Contains(args.Source))
                 {
                     VoiceTriggerFailAttempt(ent, phase);
                     break;
                 }
 
-                ent.Comp.UniqueSpeakersCount.Add(args.Source);
+                if (ent.Comp.SelectedWindowPhase is not null && ent.Comp.SelectedWindowPhase != trigger.TargetPhase)
+                {
+                    VoiceTriggerFailAttempt(ent, phase);
+                    break;
+                }
+
+                ent.Comp.Speakers.Add(args.Source);
 
                 //If first - start timer
-                if (ent.Comp.UniqueSpeakersCount.Count == 1)
+                if (ent.Comp.Speakers.Count == 1)
+                {
+                    ent.Comp.SelectedWindowPhase = trigger.TargetPhase;
                     ent.Comp.EndWindowTime = _timing.CurTime + ent.Comp.WindowSize;
+                }
 
-                if (ent.Comp.UniqueSpeakersCount.Count < trigger.UniqueSpeakers)
+                if (ent.Comp.Speakers.Count < trigger.Speakers)
                     continue;
             }
 

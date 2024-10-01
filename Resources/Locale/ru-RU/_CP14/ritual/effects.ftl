@@ -8,17 +8,18 @@ cp14-ritual-effect-apply-effect =
         *[other] ближайших сущностей
     }
 
-
-cp14-ritual-effect-spawn-entity = Воплощает {$name} в реальность
-    { $count ->
-        [1].
-        *[other] в количестве {$count} единиц.
+cp14-ritual-effect-spawn-entity = Воплощает в реальность следующие объекты:
+cp14-ritual-effect-spawn-entity-item =
+    - { $count ->
+        [1] {$name}
+        *[other] {$name} ({$count} шт.)
     }
 
-cp14-ritual-effect-consume-resource =
-    поглощает { $count ->
+cp14-ritual-effect-consume-resource = В радиусе {$range} поглощает следующие сущности:
+cp14-ritual-effect-consume-resource-item =
+    - { $count ->
         [1] {$name}
-        *[other] {$name} в количестве {$count} единиц.
+        *[other] {$name} ({$count} шт.)
     }
 
 cp14-ritual-effect-stability-add = Стабилизирует ритуал на [color=#34eb89]{$count}%[/color]

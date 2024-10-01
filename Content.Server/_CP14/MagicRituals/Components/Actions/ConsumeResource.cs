@@ -20,14 +20,14 @@ public sealed partial class ConsumeResource : CP14RitualAction
     public override string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var sb = new StringBuilder();
-        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)) + " ");
+        sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource", ("range", CheckRange)) + "\n");
 
         foreach (var entity in RequiredEntities)
         {
             if (!prototype.TryIndex(entity.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource", ("name", indexed.Name), ("count", entity.Value)));
+            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource-item", ("name", indexed.Name), ("count", entity.Value)));
             sb.Append("\n");
         }
 
@@ -36,7 +36,7 @@ public sealed partial class ConsumeResource : CP14RitualAction
             if (!prototype.TryIndex(stack.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
+            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource-item", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
             sb.Append("\n");
         }
 

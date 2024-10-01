@@ -40,10 +40,10 @@ public sealed partial class CP14RitualTriggerVoiceComponent : Component
     public EntProtoId? SelectedWindowPhase;
 
     /// <summary>
-    ///
+    /// The number of unique entities that must cast a spell in a narrow time frame.
     /// </summary>
     [DataField]
-    public List<EntityUid> UniqueSpeakersCount = new ();
+    public List<EntityUid> Speakers = new ();
 }
 
 [DataRecord]
@@ -56,6 +56,6 @@ public partial record struct TriggerVoiceData()
     /// <summary>
     /// can require several different entities to speak a phrase at the same time.
     /// </summary>
-    public int UniqueSpeakers { get; set; } = 1;
+    public int Speakers { get; set; } = 1;
 }
 

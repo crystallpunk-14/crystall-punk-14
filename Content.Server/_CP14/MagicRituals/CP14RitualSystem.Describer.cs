@@ -26,9 +26,97 @@ public sealed partial class CP14RitualSystem
         _paper.SetContent((ent, paper), GetPhaseDescription(ent.Comp.DescribePhase.Value) ?? "");
     }
 
+    public string? GetPhaseDescription(Entity<CP14MagicRitualPhaseComponent> ent)
+    {
+        GetTriggers(ent, out var triggerList);
+
+        var sb = new StringBuilder();
+        sb.Append("[color=#e6a132][head=1]========================== \n");
+        sb.Append($"{MetaData(ent).EntityName} \n");
+        sb.Append("==========================[/head][/color] \n");
+        sb.Append($"[italic]{MetaData(ent).EntityDescription}[/italic] \n \n");
+
+        sb.Append(Loc.GetString("cp14-ritual-intro") + "\n \n");
+        foreach (var edge in ent.Comp.Edges)
+        {
+            if (!_proto.TryIndex(edge.Target, out var targetIndexed))
+                continue;
+
+            sb.Append($"[color=#b5783c][head=3]{targetIndexed.Name}[/head][/color]" + "\n");
+            //TRIGGERS
+            foreach (var trigger in triggerList)
+            {
+                if (trigger.Item1 != edge.Target)
+                    continue;
+                sb.Append($"[bold]{Loc.GetString("cp14-ritual-trigger-header")}[/bold] \n");
+                sb.Append(trigger.Item2);
+            }
+
+            //REQUIREMENTS
+            if (edge.Requirements.Count > 0)
+            {
+                sb.Append($"[bold]{Loc.GetString("cp14-ritual-req-header")}[/bold] \n");
+                foreach (var req in edge.Requirements)
+                    sb.Append(req.GetGuidebookRequirementDescription(_proto, _entitySystem));
+                sb.Append("\n");
+            }
+
+            //ACTIONS
+            if (edge.Actions.Count > 0)
+            {
+                sb.Append($"[bold]{Loc.GetString("cp14-ritual-effect-header")}[/bold] \n");
+                foreach (var act in edge.Actions)
+                    sb.Append(act.GetGuidebookEffectDescription(_proto, _entitySystem));
+                sb.Append("\n");
+            }
+        }
+        return sb.ToString();
+    }
+
+    private void GetTriggers(Entity<CP14MagicRitualPhaseComponent> ent, out List<(EntProtoId, string)> triggerList)
+    {
+        triggerList = new();
+
+        if (TryComp<CP14RitualTriggerTimerComponent>(ent, out var timer))
+        {
+            if (timer.Time.Min == timer.Time.Max)
+            {
+                triggerList.Add((
+                    timer.NextPhase,
+                    Loc.GetString("cp14-ritual-trigger-timer-stable",
+                        ("time", timer.Time.Max)) + "\n"));
+            }
+            else
+            {
+                triggerList.Add((
+                    timer.NextPhase,
+                    Loc.GetString("cp14-ritual-trigger-timer-unstable",
+                        ("min", timer.Time.Min),
+                        ("max", timer.Time.Max)) + "\n"));
+            }
+        }
+
+        if (TryComp<CP14RitualTriggerVoiceComponent>(ent, out var voice))
+        {
+            foreach (var trigger in voice.Triggers)
+            {
+                triggerList.Add((trigger.TargetPhase, Loc.GetString("cp14-ritual-trigger-voice",
+                    ("phrase", trigger.Message),
+                    ("range", voice.ListenRange),
+                    ("count", trigger.Speakers)) + "\n"));
+            }
+
+            if (voice.FailAttempts is not null && voice.FailedPhase is not null)
+            {
+                triggerList.Add((voice.FailedPhase.Value,
+                    Loc.GetString("cp14-ritual-trigger-voice-limits") + "\n"));
+            }
+        }
+    }
+
     public string? GetPhaseDescription(EntProtoId proto)
     {
-        if (!_proto.TryIndex(proto, out var _))
+        if (!_proto.TryIndex(proto, out _))
             return null;
 
         var tmp = Spawn(proto, MapCoordinates.Nullspace);
@@ -38,77 +126,6 @@ public sealed partial class CP14RitualSystem
 
         Entity<CP14MagicRitualPhaseComponent> ent = (tmp, phase);
 
-
-        var sb = new StringBuilder();
-        sb.Append("\n");
-        sb.Append($"[color=#e6a132][head=2]{MetaData(ent).EntityName}[/head][/color] \n");
-        sb.Append($"[italic]{MetaData(ent).EntityDescription}[/italic] \n");
-
-        sb.Append(Loc.GetString("cp14-ritual-intro") + "\n \n");
-        foreach (var edge in ent.Comp.Edges)
-        {
-            if (!_proto.TryIndex(edge.Target, out var targetIndexed))
-                continue;
-
-            sb.Append($"[color=#b5783c][head=2]{targetIndexed.Name}[/head][/color]" + "\n");
-            if (edge.Requirements.Count > 0)
-            {
-                sb.Append($"[bold]{Loc.GetString("cp14-ritual-req-header")}[/bold] \n");
-                foreach (var req in edge.Requirements)
-                    sb.Append(req.GetGuidebookRequirementDescription(_proto, _entitySystem));
-                sb.Append("\n");
-            }
-
-            if (edge.Actions.Count > 0)
-            {
-                sb.Append($"[bold]{Loc.GetString("cp14-ritual-effect-header")}[/bold] \n");
-                foreach (var act in edge.Actions)
-                    sb.Append(act.GetGuidebookEffectDescription(_proto, _entitySystem));
-                sb.Append("\n");
-            }
-            sb.Append("\n");
-        }
-        sb.Append($"[head=2]{Loc.GetString("cp14-ritual-trigger-header")}[/head] \n");
-
-        var triggersExist = false;
-        if (TryComp<CP14RitualTriggerTimerComponent>(ent, out var timer) &&
-            _proto.TryIndex(timer.NextPhase, out var indexedTimerPhase))
-        {
-            if (timer.Time.Min == timer.Time.Max)
-                sb.Append(Loc.GetString("cp14-ritual-trigger-timer-stable", ("node", indexedTimerPhase.Name), ("time", timer.Time.Max)) + "\n");
-            else
-                sb.Append(Loc.GetString("cp14-ritual-trigger-timer-unstable", ("node", indexedTimerPhase.Name), ("min", timer.Time.Min), ("max", timer.Time.Max))+ "\n");
-
-            triggersExist = true;
-        }
-
-        if (TryComp<CP14RitualTriggerVoiceComponent>(ent, out var voice))
-        {
-            foreach (var trigger in voice.Triggers)
-            {
-                if (!_proto.TryIndex(trigger.TargetPhase, out var indexedVoicePhase))
-                    continue;
-
-                sb.Append(Loc.GetString("cp14-ritual-trigger-voice",
-                    ("phrase", trigger.Message),
-                    ("range", voice.ListenRange),
-                    ("count", trigger.UniqueSpeakers),
-                    ("node", indexedVoicePhase.Name)) + "\n");
-            }
-
-            if (voice.FailAttempts is not null &&
-                voice.FailedPhase is not null &&
-                _proto.TryIndex(voice.FailedPhase, out var indexedVoiceFailPhase))
-            {
-                sb.Append(Loc.GetString("cp14-ritual-trigger-voice-limits", ("node", indexedVoiceFailPhase.Name)) + "\n");
-            }
-
-            triggersExist = true;
-        }
-
-        if (!triggersExist)
-            sb.Append($"{Loc.GetString("cp14-ritual-trigger-none")} \n");
-
-        return sb.ToString();
+        return GetPhaseDescription(ent);
     }
 }

@@ -1,10 +1,6 @@
-using System.Text;
 using Content.Server._CP14.MagicRituals.Components;
-using Content.Server._CP14.MagicRituals.Components.Triggers;
 using Content.Shared._CP14.MagicRitual;
-using Content.Shared.Examine;
 using Robust.Server.GameObjects;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -18,6 +14,7 @@ public partial class CP14RitualSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly PointLightSystem _pointLight = default!;
 
     public override void Initialize()
     {
@@ -27,15 +24,23 @@ public partial class CP14RitualSystem : EntitySystem
         InitializeDescriber();
 
         SubscribeLocalEvent<CP14MagicRitualComponent, MapInitEvent>(OnRitualInit);
+        SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualPhaseBoundEvent>(OnPhaseBound);
         SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTrigger);
     }
-
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         UpdateTriggers(frameTime);
+    }
+
+    private void OnPhaseBound(Entity<CP14MagicRitualPhaseComponent> ent, ref CP14RitualPhaseBoundEvent args)
+    {
+        if (!TryComp<CP14MagicRitualComponent>(args.Ritual, out var ritual))
+            return;
+
+        _pointLight.SetColor(ent, ent.Comp.PhaseColor);
     }
 
     public void ChangeRitualStability(Entity<CP14MagicRitualComponent> ritual, float dStab)
@@ -103,5 +108,9 @@ public partial class CP14RitualSystem : EntitySystem
 
         ritual.Comp.CurrentPhase = (newPhaseEnt, newPhaseComp);
         newPhaseComp.Ritual = ritual;
+
+        var ev = new CP14RitualPhaseBoundEvent(ritual, newPhaseEnt);
+        RaiseLocalEvent(ritual, ev);
+        RaiseLocalEvent(newPhaseEnt, ev);
     }
 }

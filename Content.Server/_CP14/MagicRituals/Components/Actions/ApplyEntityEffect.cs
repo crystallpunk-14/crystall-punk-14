@@ -42,8 +42,7 @@ public sealed partial class ApplyEntityEffect : CP14RitualAction
 
         foreach (var effect in Effects)
         {
-            sb.Append(effect.GuidebookEffectDescription(prototype, entSys));
-            sb.Append("\n");
+            sb.Append("- " + effect.GuidebookEffectDescription(prototype, entSys) + "\n");
         }
         sb.Append("\n");
 

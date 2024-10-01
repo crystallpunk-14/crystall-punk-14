@@ -11,10 +11,13 @@ namespace Content.Server._CP14.MagicRituals.Components;
 public sealed partial class CP14MagicRitualPhaseComponent : Component
 {
     /// <summary>
-    ///
+    /// A link to the ritual itself in which this phase is found
     /// </summary>
     [DataField]
     public Entity<CP14MagicRitualComponent>? Ritual;
+
+    [DataField]
+    public Color PhaseColor = Color.White;
 
     [DataField(required: true)]
     public List<RitualPhaseEdge> Edges = new();

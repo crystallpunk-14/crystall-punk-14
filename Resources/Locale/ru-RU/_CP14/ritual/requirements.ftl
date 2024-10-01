@@ -6,8 +6,9 @@ cp14-ritual-required-stability-min = Стабильность ритуала д�
 cp14-ritual-required-stability-max = Стабильность ритуала должна быть ниже {$max}%
 cp14-ritual-required-stability-minmax = Стабильность ритуала должна быть в рамках от {$min} до {$max}%
 
-cp14-ritual-required-resource =
-    ищет { $count ->
+cp14-ritual-required-resource = В радиусе {$range} должны находиться следующие предметы:
+cp14-ritual-required-resource-item =
+    - { $count ->
         [1] {$name}
-        *[other] {$name} в количестве {$count} единиц.
+        *[other] {$name} ({$count} шт.)
     }

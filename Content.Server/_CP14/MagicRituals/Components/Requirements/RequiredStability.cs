@@ -17,9 +17,9 @@ public sealed partial class RequiredStability : CP14RitualRequirement
         return Min switch
         {
             > 0 when Max < 1 =>
-                   Loc.GetString("cp14-ritual-required-stability-minmax", ("min", Min*100), ("max", Max*100)) + "\n",
-            > 0 => Loc.GetString("cp14-ritual-required-stability-min", ("min", Min*100)) + "\n",
-            < 0 => Loc.GetString("cp14-ritual-required-stability-max", ("min", Max*100)) + "\n",
+                   Loc.GetString("cp14-ritual-required-stability-minmax", ("min", Min*100), ("max", Max*100)),
+            > 0 => Loc.GetString("cp14-ritual-required-stability-min", ("min", Min*100)),
+            < 0 => Loc.GetString("cp14-ritual-required-stability-max", ("min", Max*100)),
             _ => null,
         };
     }
