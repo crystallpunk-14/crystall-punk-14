@@ -1,6 +1,7 @@
 using System.Text;
 using Content.Server._CP14.MagicRituals.Components;
 using Content.Server._CP14.MagicRituals.Components.Triggers;
+using Content.Shared._CP14.MagicRitual;
 using Content.Shared.Paper;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;

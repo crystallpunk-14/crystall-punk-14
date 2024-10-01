@@ -1,13 +1,13 @@
-using Content.Server._CP14.MagicRituals.Components.Actions;
-using Content.Server._CP14.MagicRituals.Components.Requirements;
+using Content.Shared._CP14.MagicRitual.Actions;
+using Content.Shared._CP14.MagicRitual.Requirements;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components;
+namespace Content.Shared._CP14.MagicRitual;
 
 /// <summary>
 /// Magical entity that reacts to world events
 /// </summary>
-[RegisterComponent, Access(typeof(CP14RitualSystem))]
+[RegisterComponent, Access(typeof(CP14SharedRitualSystem))]
 public sealed partial class CP14MagicRitualPhaseComponent : Component
 {
     /// <summary>

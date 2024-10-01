@@ -1,10 +1,9 @@
 using System.Text;
 using Content.Shared.EntityEffects;
 using Content.Shared.Whitelist;
-using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components.Actions;
+namespace Content.Shared._CP14.MagicRitual.Actions;
 
 /// <summary>
 /// Filters the nearest X entities by whitelist and applies the specified EntityEffects on them
@@ -20,7 +19,7 @@ public sealed partial class ApplyEntityEffect : CP14RitualAction
     [DataField]
     public LocId? WhitelistDesc;
 
-    [DataField(required: true)]
+    [DataField(required: true, serverOnly: true)]
     public List<EntityEffect> Effects = new();
 
     [DataField]
@@ -49,7 +48,7 @@ public sealed partial class ApplyEntityEffect : CP14RitualAction
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
         var _lookup = entManager.System<EntityLookupSystem>();
         var _whitelist = entManager.System<EntityWhitelistSystem>();

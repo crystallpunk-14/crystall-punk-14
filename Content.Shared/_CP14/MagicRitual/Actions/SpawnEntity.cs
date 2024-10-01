@@ -1,8 +1,7 @@
 using System.Text;
-using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components.Actions;
+namespace Content.Shared._CP14.MagicRitual.Actions;
 
 /// <summary>
 /// Creates an entity in the coordinates of the ritual.
@@ -10,7 +9,7 @@ namespace Content.Server._CP14.MagicRituals.Components.Actions;
 public sealed partial class SpawnEntity : CP14RitualAction
 {
     [DataField(required: true)]
-    public Dictionary<EntProtoId, int> Spawns;
+    public Dictionary<EntProtoId, int> Spawns = new();
 
     [DataField]
     public LocId? Name;
@@ -32,7 +31,7 @@ public sealed partial class SpawnEntity : CP14RitualAction
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
         foreach (var spawn in Spawns)
         {

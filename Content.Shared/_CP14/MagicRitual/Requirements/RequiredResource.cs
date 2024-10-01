@@ -1,12 +1,13 @@
 using System.Text;
-using Content.Server.Stack;
 using Content.Shared.Stacks;
-using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components.Actions;
+namespace Content.Shared._CP14.MagicRitual.Requirements;
 
-public sealed partial class ConsumeResource : CP14RitualAction
+/// <summary>
+/// Requires certain specific entities to be near the ritual. TODO: Replace with Whitelist
+/// </summary>
+public sealed partial class RequiredResource : CP14RitualRequirement
 {
     [DataField]
     public float CheckRange = 1f;
@@ -17,17 +18,24 @@ public sealed partial class ConsumeResource : CP14RitualAction
     [DataField]
     public Dictionary<ProtoId<StackPrototype>, int> RequiredStack = new();
 
-    public override string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
+    /// <summary>
+    /// Effect appearing in place of used entities
+    /// </summary>
+    [DataField]
+    public EntProtoId? Effect = "CP14DustEffect";
+
+
+    public override string? GetGuidebookRequirementDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var sb = new StringBuilder();
-        sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource", ("range", CheckRange)) + "\n");
+        sb.Append(Loc.GetString("cp14-ritual-required-resource", ("range", CheckRange)) + "\n");
 
         foreach (var entity in RequiredEntities)
         {
             if (!prototype.TryIndex(entity.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource-item", ("name", indexed.Name), ("count", entity.Value)));
+            sb.Append(Loc.GetString("cp14-ritual-required-resource-item", ("name", indexed.Name), ("count", entity.Value)));
             sb.Append("\n");
         }
 
@@ -36,19 +44,21 @@ public sealed partial class ConsumeResource : CP14RitualAction
             if (!prototype.TryIndex(stack.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-effect-consume-resource-item", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
+            sb.Append(Loc.GetString("cp14-ritual-required-resource-item", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
             sb.Append("\n");
         }
 
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, TransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability)
     {
         var _lookup = entManager.System<EntityLookupSystem>();
-        var _stack = entManager.System<StackSystem>();
+        var _transform = entManager.System<SharedTransformSystem>();
 
-        var entitiesAround = _lookup.GetEntitiesInRange(phase, CheckRange, LookupFlags.Uncontained);
+        var entitiesAround = _lookup.GetEntitiesInRange(phaseEnt, CheckRange, LookupFlags.Uncontained);
+
+        var passed = true;
 
         foreach (var reqEnt in RequiredEntities)
         {
@@ -67,14 +77,15 @@ public sealed partial class ConsumeResource : CP14RitualAction
 
                 if (entProto.ID == reqEnt.Key && requiredCount > 0)
                 {
-                    if (VisualEffect is not null)
-                        entManager.Spawn(VisualEffect.Value, _transform.GetMapCoordinates(entity));
-
-                    entManager.DeleteEntity(entity);
+                    if (Effect is not null)
+                        entManager.Spawn(Effect.Value, _transform.GetMapCoordinates(entity));
 
                     requiredCount--;
                 }
             }
+
+            if (requiredCount > 0)
+                passed = false;
         }
 
         foreach (var reqStack in RequiredStack)
@@ -90,19 +101,16 @@ public sealed partial class ConsumeResource : CP14RitualAction
                     continue;
 
                 var count = (int)MathF.Min(requiredCount, stack.Count);
-
-
-                    if (stack.Count - count <= 0)
-                        entManager.DeleteEntity(entity);
-                    else
-                        _stack.SetCount(entity, stack.Count - count, stack);
-
-
                 requiredCount -= count;
 
-                if (VisualEffect is not null)
-                    entManager.Spawn(VisualEffect.Value, _transform.GetMapCoordinates(entity));
+                if (Effect is not null)
+                    entManager.Spawn(Effect.Value, _transform.GetMapCoordinates(entity));
             }
+
+            if (requiredCount > 0)
+                passed = false;
         }
+
+        return passed;
     }
 }

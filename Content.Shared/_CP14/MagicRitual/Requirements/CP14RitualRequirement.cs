@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components.Requirements;
+namespace Content.Shared._CP14.MagicRitual.Requirements;
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]

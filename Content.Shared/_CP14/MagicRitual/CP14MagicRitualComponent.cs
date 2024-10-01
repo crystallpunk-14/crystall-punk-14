@@ -1,11 +1,11 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components;
+namespace Content.Shared._CP14.MagicRitual;
 
 /// <summary>
 /// Ritual Behavior Controller. Creates and removes entities of magical phases
 /// </summary>
-[RegisterComponent, Access(typeof(CP14RitualSystem))]
+[RegisterComponent, Access(typeof(CP14SharedRitualSystem))]
 public sealed partial class CP14MagicRitualComponent : Component
 {
     [DataField(required: true)]

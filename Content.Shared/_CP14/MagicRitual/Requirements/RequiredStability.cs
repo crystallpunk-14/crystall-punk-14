@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.MagicRituals.Components.Requirements;
+namespace Content.Shared._CP14.MagicRitual.Requirements;
 
 /// <summary>
 /// Requires that the stability of the ritual be within specified limits. If the stability is above or below the specified values, the check will fail

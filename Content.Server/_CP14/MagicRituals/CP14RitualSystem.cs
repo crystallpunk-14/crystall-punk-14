@@ -1,4 +1,3 @@
-using Content.Server._CP14.MagicRituals.Components;
 using Content.Shared._CP14.MagicRitual;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -7,7 +6,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.MagicRituals;
 
-public partial class CP14RitualSystem : EntitySystem
+public partial class CP14RitualSystem : CP14SharedRitualSystem
 {
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -79,16 +78,6 @@ public partial class CP14RitualSystem : EntitySystem
             return;
 
         _pointLight.SetColor(ent, ent.Comp.PhaseColor);
-    }
-
-    public void ChangeRitualStability(Entity<CP14MagicRitualComponent> ritual, float dStab)
-    {
-        var newS = MathHelper.Clamp01(ritual.Comp.Stability + dStab);
-
-        var ev = new CP14RitualStabilityChangedEvent(ritual.Comp.Stability, newS);
-        RaiseLocalEvent(ritual, ev);
-
-        ritual.Comp.Stability = newS;
     }
 
     private void OnRitualInit(Entity<CP14MagicRitualComponent> ritual, ref MapInitEvent args)
