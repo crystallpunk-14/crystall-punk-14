@@ -1,5 +1,4 @@
 using Content.Server._CP14.MagicRituals.Components;
-using Content.Server.Stack;
 using Content.Shared._CP14.MagicRitual;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -33,6 +32,9 @@ public partial class CP14RitualSystem : EntitySystem
 
     public void ChangeRitualStability(Entity<CP14MagicRitualComponent> ritual, float dStab)
     {
+        var ev = new CP14RitualStabilityChangedEvent(ritual.Comp.Stability, ritual.Comp.Stability + dStab);
+        RaiseLocalEvent(ritual, ev);
+
         ritual.Comp.Stability = MathHelper.Clamp01(ritual.Comp.Stability + dStab);
     }
 
