@@ -16,4 +16,7 @@ public sealed partial class CP14MagicRitualComponent : Component
 
     [DataField]
     public float Stability = 1f;
+
+    [DataField]
+    public float ActivationTime = 5f;
 }

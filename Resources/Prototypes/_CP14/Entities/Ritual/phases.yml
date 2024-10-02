@@ -14,9 +14,9 @@
         variation: 0.3
 
 - type: entity
-  parent: CP14FoodCucumber
-  id: RitualCucumber
-  name: ritual cucumber
+  parent: CP14StatueGobVines
+  id: RitualGob
+  name: ritual gob
   components:
   - type: CP14MagicRitual
     startPhase: CP14RitualPhaseStartpoint

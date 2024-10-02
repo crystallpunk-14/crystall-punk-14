@@ -1,4 +1,6 @@
+using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.MagicRitual;
 
@@ -69,4 +71,9 @@ public sealed class CP14RitualStartEvent : EntityEventArgs
     {
         Ritual = r;
     }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class CP14ActivateRitualDoAfter : SimpleDoAfterEvent
+{
 }
