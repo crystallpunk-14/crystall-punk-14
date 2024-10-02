@@ -63,6 +63,9 @@
       
     - target: CP14RitualPhaseSecond
       requirements:
+      - !type:RequiredOrbs
+        magicType: Creation
+        min: 1
       - !type:RequiredResource
         vfx: CP14ImpactEffectShadowGrab
         checkRange: 3
@@ -95,6 +98,9 @@
                 Piercing: -10
                 Heat: -10
           - !type:Jitter
+      - !type:AddOrb
+        orbs:
+          CP14RitualOrbDestruction: 1
 
 
 - type: entity
@@ -123,19 +129,3 @@
   components:
   - type: CP14MagicRitualPhase
     deadEnd: true
-
-- type: entity
-  id: CP14RitualOrbCreation
-  name: creation orb
-  components:
-  - type: CP14MagicRitualOrb
-    powers:
-      Creation: 1
-      Destruction: 2
-  - type: Sprite
-    sprite: _CP14/Effects/Magic/sphere_of_light.rsi
-    drawDepth: Mobs
-    noRot: true
-    layers:
-    - state: icon
-      shader: unshaded

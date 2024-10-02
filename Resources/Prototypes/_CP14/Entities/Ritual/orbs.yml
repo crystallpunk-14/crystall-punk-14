@@ -1,0 +1,31 @@
+- type: entity
+  id: CP14RitualOrbCreation
+  name: creation orb
+  categories: [ HideSpawnMenu]
+  components:
+  - type: CP14MagicRitualOrb
+    powers:
+      Creation: 1
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/ritual_orbs.rsi
+    drawDepth: Mobs
+    noRot: true
+    layers:
+    - state: creation
+      shader: unshaded
+
+- type: entity
+  id: CP14RitualOrbDestruction
+  name: destruction orb
+  categories: [ HideSpawnMenu]
+  components:
+  - type: CP14MagicRitualOrb
+    powers:
+      Destruction: 1
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/ritual_orbs.rsi
+    drawDepth: Mobs
+    noRot: true
+    layers:
+    - state: destruction
+      shader: unshaded
