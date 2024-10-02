@@ -373,24 +373,24 @@
       message: "Suffocatio"
     - targetPhase: CP14_HealCluster_15
       message: "Sanguinem damnum"
-    #- targetPhase: CP14_HealCluster_16 #TODO return
-    #  message: "Cardiac prensionem"
+    - targetPhase: CP14_HealCluster_16
+      message: "Cardiac prensionem"
   - type: CP14MagicRitualPhase
     edges:
-    #- target: CP14_HealCluster_14
-    #  actions: 
-    #  - !type:ApplyEntityEffect
-    #    maxEntities: 3
-    #    vfx: CP14ImpactEffectCureWounds
-    #    whitelist:
-    #      components:
-    #      - HumanoidAppearance
-    #    effects:
-    #      - !type:HealthChange
-    #        damage:
-    #          types:
-    #            Asphyxiation: -50
-    #      - !type:Jitter
+    - target: CP14_HealCluster_14
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Asphyxiation: -50
+          - !type:Jitter
     - target: CP14_HealCluster_15
       actions: 
       - !type:ApplyEntityEffect
@@ -450,11 +450,11 @@
   id: CP14_HealCluster_16
   name: Healing node 16 (вообще тут должен быть эффект дефиба, но я его еще не закодил)
   components:
-  #- type: CP14RitualTriggerTimer #TODO return
-  #  nextPhase: CP14_HealCluster_11
-  #  time:
-  #    min: 2
-  #    max: 5
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_11
+    time:
+      min: 2
+      max: 5
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_HealCluster_11

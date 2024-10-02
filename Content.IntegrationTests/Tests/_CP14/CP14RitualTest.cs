@@ -34,7 +34,6 @@ public sealed class CP14RitualTest
                     if (!proto.TryGetComponent(out CP14MagicRitualPhaseComponent? phase, compFactory))
                         continue;
 
-
                     List<EntProtoId> allEdges = new();
                     List<EntProtoId> edgesToCheck = new();
 
