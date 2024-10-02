@@ -12,7 +12,7 @@ public sealed partial class CP14RitualSystem
     {
         SubscribeLocalEvent<CP14MagicRitualComponent, ListenEvent>(OnRitualListen);
 
-        SubscribeLocalEvent<CP14RitualTriggerTimerComponent, MapInitEvent>(OnTimerMapInit);
+        SubscribeLocalEvent<CP14RitualTriggerTimerComponent, CP14RitualPhaseBoundEvent>(OnTimeTriggerBound);
     }
 
     private void OnRitualListen(Entity<CP14MagicRitualComponent> ent, ref ListenEvent args)
@@ -40,23 +40,32 @@ public sealed partial class CP14RitualSystem
 
     #region Trigger timer
 
-    private void OnTimerMapInit(Entity<CP14RitualTriggerTimerComponent> ent, ref MapInitEvent args)
+    private void OnTimeTriggerBound(Entity<CP14RitualTriggerTimerComponent> ent, ref CP14RitualPhaseBoundEvent args)
     {
+        if (!TryComp<CP14MagicRitualComponent>(args.Ritual, out var ritualComp))
+            return;
+
         var time = ent.Comp.Time.Next(_random);
-        ent.Comp.TriggerTime = _timing.CurTime + TimeSpan.FromSeconds(time);
+        ritualComp.TriggerTime = _timing.CurTime + TimeSpan.FromSeconds(time);
     }
 
     private void TimerUpdate()
     {
-        var query = EntityQueryEnumerator<CP14RitualTriggerTimerComponent, CP14MagicRitualPhaseComponent>();
-        while (query.MoveNext(out var uid, out var timer, out var phase))
+        var query = EntityQueryEnumerator<CP14MagicRitualComponent>();
+        while (query.MoveNext(out var uid, out var ritual))
         {
-            if (_timing.CurTime < timer.TriggerTime)
+            if (_timing.CurTime < ritual.TriggerTime || ritual.TriggerTime == TimeSpan.Zero)
                 continue;
 
-            timer.TriggerTime += TimeSpan.FromSeconds(timer.Time.Next(_random));
+            if (ritual.CurrentPhase is null)
+                continue;
 
-            TriggerRitualPhase((uid, phase), timer.NextPhase);
+            ritual.TriggerTime = TimeSpan.Zero;
+
+            if (!TryComp<CP14RitualTriggerTimerComponent>(ritual.CurrentPhase.Value, out var timerTrigger))
+                continue;
+
+            TriggerRitualPhase(ritual.CurrentPhase.Value, timerTrigger.NextPhase);
         }
     }
 

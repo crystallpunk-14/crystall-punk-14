@@ -31,5 +31,8 @@ public sealed partial class CP14MagicRitualComponent : Component
     public float RitualRadius = 5;
 
     [DataField]
+    public TimeSpan TriggerTime = TimeSpan.Zero;
+
+    [DataField]
     public List<Entity<CP14MagicRitualOrbComponent>> Orbs = new();
 }
