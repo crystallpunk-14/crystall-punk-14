@@ -28,5 +28,8 @@ public sealed partial class CP14MagicRitualComponent : Component
     public int MaxOrbCapacity = 3;
 
     [DataField]
+    public float RitualRadius = 5;
+
+    [DataField]
     public List<Entity<CP14MagicRitualOrbComponent>> Orbs = new();
 }

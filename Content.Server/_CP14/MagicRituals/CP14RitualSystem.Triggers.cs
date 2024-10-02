@@ -12,10 +12,20 @@ public sealed partial class CP14RitualSystem
 {
     private void InitializeTriggers()
     {
-        SubscribeLocalEvent<CP14RitualTriggerVoiceComponent, ComponentInit>(OnVoiceInit);
-        SubscribeLocalEvent<CP14RitualTriggerVoiceComponent, ListenEvent>(OnListen);
+        SubscribeLocalEvent<CP14MagicRitualComponent, ListenEvent>(OnRitualListen);
 
         SubscribeLocalEvent<CP14RitualTriggerTimerComponent, MapInitEvent>(OnTimerMapInit);
+    }
+
+    private void OnRitualListen(Entity<CP14MagicRitualComponent> ent, ref ListenEvent args)
+    {
+        if (ent.Comp.CurrentPhase is null)
+            return;
+
+        if (!TryComp<CP14RitualTriggerVoiceComponent>(ent.Comp.CurrentPhase, out var voiceTrigger))
+            return;
+
+        PhaseProxyListen((ent.Comp.CurrentPhase.Value, voiceTrigger), ref args);
     }
 
     private void UpdateTriggers(float frameTime)
@@ -73,12 +83,8 @@ public sealed partial class CP14RitualSystem
             VoiceTriggerFailAttempt((uid, voice), phase);
         }
     }
-    private void OnVoiceInit(Entity<CP14RitualTriggerVoiceComponent> ent, ref ComponentInit args)
-    {
-        EnsureComp<ActiveListenerComponent>(ent).Range = ent.Comp.ListenRange;
-    }
 
-    private void OnListen(Entity<CP14RitualTriggerVoiceComponent> ent, ref ListenEvent args)
+    private void PhaseProxyListen(Entity<CP14RitualTriggerVoiceComponent> ent, ref ListenEvent args)
     {
         if (!TryComp<CP14MagicRitualPhaseComponent>(ent, out var phase))
             return;
