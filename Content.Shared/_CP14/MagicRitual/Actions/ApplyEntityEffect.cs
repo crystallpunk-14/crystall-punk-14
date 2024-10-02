@@ -29,9 +29,8 @@ public sealed partial class ApplyEntityEffect : CP14RitualAction
     {
         var sb = new StringBuilder();
 
-        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)) + " ");
-        sb.Append(Loc.GetString("cp14-ritual-effect-apply-effect", ("count", MaxEntities), ("range", CheckRange)));
-        sb.Append("\n");
+        sb.Append(Loc.GetString("cp14-ritual-range", ("range", CheckRange)) + "\n");
+        sb.Append(Loc.GetString("cp14-ritual-effect-apply-effect", ("count", MaxEntities), ("range", CheckRange)) + "\n");
 
         if (WhitelistDesc is not null)
         {

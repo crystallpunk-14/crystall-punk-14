@@ -12,3 +12,5 @@ cp14-ritual-required-resource-item =
         [1] {$name}
         *[other] {$name} ({$count} шт.)
     }
+
+cp14-ritual-required-time = На улице должен быть {$period}
