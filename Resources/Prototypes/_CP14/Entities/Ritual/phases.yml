@@ -14,14 +14,6 @@
         variation: 0.3
 
 - type: entity
-  parent: CP14StatueGobVines
-  id: RitualGob
-  name: ritual gob
-  components:
-  - type: CP14MagicRitual
-    startPhase: CP14RitualPhaseStartpoint
-
-- type: entity
   parent: CP14Paper
   id: CP14PaperRitual
   name: ritual describer
@@ -78,8 +70,6 @@
           CP14FoodCucumber: 3
         requiredStack:
           CP14WoodenPlanks: 2
-      - !type:RequiredTime
-        timePeriod: Night
 
       actions: 
       - !type:EditStability
@@ -118,7 +108,7 @@
       min: 5
       max: 10
   - type: CP14MagicRitualPhase
-    phaseColor: "#FF00FF"
+    phaseColor: "#0000FF"
     edges:
     - target: CP14RitualPhaseStartpoint # To start
 
@@ -133,6 +123,6 @@
       min: 5
       max: 10
   - type: CP14MagicRitualPhase
-    phaseColor: "#FF0000"
+    phaseColor: "#00FF00"
     edges:
     - target: CP14RitualPhaseStartpoint # To start

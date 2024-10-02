@@ -19,4 +19,7 @@ public sealed partial class CP14MagicRitualComponent : Component
 
     [DataField]
     public float ActivationTime = 5f;
+
+    [DataField]
+    public string RitualLayerMap = "ritual";
 }

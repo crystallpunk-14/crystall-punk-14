@@ -77,3 +77,10 @@ public sealed class CP14RitualStartEvent : EntityEventArgs
 public sealed partial class CP14ActivateRitualDoAfter : SimpleDoAfterEvent
 {
 }
+
+[Serializable, NetSerializable]
+public enum RitualVisuals
+{
+    Color,
+    Enabled,
+}

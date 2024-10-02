@@ -24,10 +24,10 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
 
         InitializeTriggers();
         InitializeDescriber();
+        InitializeVisuals();
 
         SubscribeLocalEvent<CP14MagicRitualComponent, CP14ActivateRitualDoAfter>(OnActivateRitual);
         SubscribeLocalEvent<CP14MagicRitualComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternativeVerb);
-        SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualPhaseBoundEvent>(OnPhaseBound);
         SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTrigger);
     }
 
@@ -81,6 +81,7 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         RaiseLocalEvent(ritual, ev);
 
         ChangePhase(ritual, ritual.Comp.StartPhase);
+        _appearance.SetData(ritual, RitualVisuals.Enabled, true);
     }
 
     private void ChangePhase(Entity<CP14MagicRitualComponent> ritual, EntProtoId newPhase)
@@ -109,14 +110,7 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
 
         var ev = new CP14RitualEndEvent(ritual);
         RaiseLocalEvent(ritual, ev);
-    }
-
-    private void OnPhaseBound(Entity<CP14MagicRitualPhaseComponent> ent, ref CP14RitualPhaseBoundEvent args)
-    {
-        if (!TryComp<CP14MagicRitualComponent>(args.Ritual, out var ritual))
-            return;
-
-        _pointLight.SetColor(ent, ent.Comp.PhaseColor);
+        _appearance.SetData(ritual, RitualVisuals.Enabled, false);
     }
 
     private void OnPhaseTrigger(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)
