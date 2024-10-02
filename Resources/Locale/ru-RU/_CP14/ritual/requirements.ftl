@@ -9,3 +9,9 @@ cp14-ritual-required-stability-minmax = Стабильность ритуала 
 cp14-ritual-required-resource = В радиусе {$range} должны находиться следующие предметы:
 
 cp14-ritual-required-time = На улице должен быть {$period}
+
+
+cp14-ritual-required-orbs = Энергии {$name} должно быть 
+cp14-ritual-required-orbs-item-min = как минимум {$count}
+cp14-ritual-required-orbs-item-max = не больше {$count}
+cp14-ritual-required-orbs-item-minmax = от {$min} до {$max}
