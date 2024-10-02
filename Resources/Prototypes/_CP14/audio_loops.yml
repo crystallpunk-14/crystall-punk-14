@@ -3,7 +3,7 @@
   id: OpenWinds
   sound:
     params:
-      volume: -3
+      volume: -6
     collection: CP14LoopWinds
   rules: OpenWinds
 
@@ -19,7 +19,7 @@
   id: Cave
   sound:
     params:
-      volume: 10
+      volume: 2
     collection: CP14LoopCave
   rules: CaveFloor
 

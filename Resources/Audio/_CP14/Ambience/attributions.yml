@@ -27,3 +27,8 @@
   license: "CC-BY-4.0"
   copyright: 'by EminYILDIRIM of Freesound.org.'
   source: "https://freesound.org/people/EminYILDIRIM/sounds/581627/"
+
+- files: ["ambimagic5.ogg", "ambimagic6.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by xkeril of Freesound.org.'
+  source: "https://freesound.org/people/xkeril/sounds/706092/"
