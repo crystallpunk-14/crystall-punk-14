@@ -21,9 +21,8 @@ public sealed partial class RequiredResource : CP14RitualRequirement
     /// <summary>
     /// Effect appearing in place of used entities
     /// </summary>
-    [DataField]
+    [DataField("vfx")]
     public EntProtoId? Effect = "CP14DustEffect";
-
 
     public override string? GetGuidebookRequirementDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {

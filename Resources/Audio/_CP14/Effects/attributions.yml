@@ -26,4 +26,9 @@
 - files: ["parry1.ogg", "parry2.ogg"]
   license: "CC-BY-4.0"
   copyright: 'by EminYILDIRIM of Freesound.org.'
-  source: "https://freesound.org/people/EminYILDIRIM/sounds/536104/ https://freesound.org/people/EminYILDIRIM/sounds/536105/"
+  source: "https://freesound.org/people/EminYILDIRIM/sounds/536104/"
+
+- files: ["parry2.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by EminYILDIRIM of Freesound.org.'
+  source: "https://freesound.org/people/EminYILDIRIM/sounds/536105/"
