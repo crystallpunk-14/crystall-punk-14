@@ -10,7 +10,7 @@ namespace Content.Shared._CP14.MagicRitual.Requirements;
 public sealed partial class RequiredResource : CP14RitualRequirement
 {
     [DataField]
-    public float CheckRange = 1f;
+    public float CheckRange = 3f;
 
     [DataField]
     public Dictionary<EntProtoId, int> RequiredEntities = new ();

@@ -38,15 +38,21 @@
     triggers:
     - targetPhase: CP14_NeutralCluster_01
       message: "Vespere nebula"
-    - targetPhase: CP14_NeutralCluster_07
-      message: "Arida solo"
     - targetPhase: CP14_NeutralCluster_08
       message: "Ignis"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_01
-    - target: CP14_NeutralCluster_07
     - target: CP14_NeutralCluster_08
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectShadowGrab
+        requiredEntities:
+          CP14FlameCreationArtificialFlame: 3
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14FlameCreationArtificialFlame: 3
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -58,9 +64,14 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_02
+      message: "De mente exstincta"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_Root
+    - target: CP14_NeutralCluster_02
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -69,17 +80,17 @@
   components:
   - type: CP14RitualTriggerVoice
     triggers:
-    - targetPhase: CP14_NeutralCluster_01
-      message: "Flamma Obscura"
     - targetPhase: CP14_NeutralCluster_03
       message: "Nigrum nebula"
     - targetPhase: CP14_NeutralCluster_10
       message: "Nox"
   - type: CP14MagicRitualPhase
     edges:
-    - target: CP14_NeutralCluster_01
     - target: CP14_NeutralCluster_03
     - target: CP14_NeutralCluster_10
+      requirements:
+      - !type:RequiredTime
+        timePeriod: Night
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -91,9 +102,14 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_04
+      message: "Facile respicit"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_Root
+    - target: CP14_NeutralCluster_04
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -102,15 +118,12 @@
   components:
   - type: CP14RitualTriggerVoice
     triggers:
-    - targetPhase: CP14_NeutralCluster_03
-      message: "Evaporatio"
     - targetPhase: CP14_NeutralCluster_05
       message: "Palus crassus"
     - targetPhase: CP14_NeutralCluster_12
       message: "Aqua"
   - type: CP14MagicRitualPhase
     edges:
-    - target: CP14_NeutralCluster_03
     - target: CP14_NeutralCluster_05
     - target: CP14_NeutralCluster_12
   
@@ -124,9 +137,14 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_06
+      message: "Fireflies"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_Root
+    - target: CP14_NeutralCluster_06
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -135,17 +153,23 @@
   components:
   - type: CP14RitualTriggerVoice
     triggers:
-    - targetPhase: CP14_NeutralCluster_05
-      message: "Cicindela"
     - targetPhase: CP14_NeutralCluster_07
       message: "Phosphorus"
     - targetPhase: CP14_NeutralCluster_14
       message: "Lux"
   - type: CP14MagicRitualPhase
     edges:
-    - target: CP14_NeutralCluster_05
     - target: CP14_NeutralCluster_07
     - target: CP14_NeutralCluster_14
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectShadowGrab
+        requiredEntities:
+          CP14SphereOfLight: 3
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14SphereOfLight: 3
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -157,9 +181,14 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_00
+      message: "Pulvis"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_Root
+    - target: CP14_NeutralCluster_00
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -168,13 +197,10 @@
   components:
   - type: CP14RitualTriggerVoice
     triggers:
-    - targetPhase: CP14_NeutralCluster_09
-      message: "Flammae immites"
     - targetPhase: CP14_NeutralCluster_15
       message: "Magma candenti"
   - type: CP14MagicRitualPhase
     edges:
-    - target: CP14_NeutralCluster_09
     - target: CP14_NeutralCluster_15
   
 - type: entity
@@ -187,9 +213,14 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_08
+      message: "Incendio di cadavere"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_01
+    - target: CP14_NeutralCluster_08
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -200,12 +231,9 @@
     triggers:
     - targetPhase: CP14_NeutralCluster_09
       message: "Absentis homines"
-    - targetPhase: CP14_NeutralCluster_11
-      message: "Velum impenetrabile"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_09
-    - target: CP14_NeutralCluster_11
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -217,9 +245,18 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_10
+      message: "Et ducimus"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_03
+      actions:
+      - !type:AddOrb
+        orbs:
+          CP14RitualOrbCreation: 1
+    - target: CP14_NeutralCluster_10
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -230,13 +267,10 @@
     triggers:
     - targetPhase: CP14_NeutralCluster_11
       message: "Cataractarum"
-    - targetPhase: CP14_NeutralCluster_13
-      message: "Maria et lacus"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_11
-    - target: CP14_NeutralCluster_13
-  
+ 
 - type: entity
   parent: CP14_NeutralCluster_Base
   id: CP14_NeutralCluster_13
@@ -247,9 +281,14 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_12
+      message: "Lacus conversus viridi"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_05
+    - target: CP14_NeutralCluster_12
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -260,12 +299,18 @@
     triggers:
     - targetPhase: CP14_NeutralCluster_13
       message: "Il miracolo della nascita"
-    - targetPhase: CP14_NeutralCluster_15
-      message: "Crystallis rutilans"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_13
-    - target: CP14_NeutralCluster_15
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectShadowGrab
+        requiredEntities:
+          CP14WildSage: 2
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14WildSage: 1
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -277,6 +322,15 @@
     time:
       min: 5
       max: 10
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_14
+      message: "Scintillans crystallis"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_07
+      actions:
+      - !type:AddOrb
+        orbs:
+          CP14RitualOrbDestruction: 1
+    - target: CP14_NeutralCluster_14
