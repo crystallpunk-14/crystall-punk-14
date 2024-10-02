@@ -1,0 +1,9 @@
+- type: magicType
+  id: Creation
+  name: cp14-magic-type-creation
+  color: "#4bcc7d"
+
+- type: magicType
+  id: Destruction
+  name: cp14-magic-type-destruction
+  color: "#c94c1a"

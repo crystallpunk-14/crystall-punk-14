@@ -1,5 +1,7 @@
+using System.Text;
 using Content.Shared._CP14.MagicRitual;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -28,7 +30,17 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
 
         SubscribeLocalEvent<CP14MagicRitualComponent, CP14ActivateRitualDoAfter>(OnActivateRitual);
         SubscribeLocalEvent<CP14MagicRitualComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternativeVerb);
+
         SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTrigger);
+
+        SubscribeLocalEvent<CP14MagicRitualOrbComponent, ExaminedEvent>(OnOrbExamine);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        UpdateTriggers(frameTime);
     }
 
     private void OnActivateRitual(Entity<CP14MagicRitualComponent> ent, ref CP14ActivateRitualDoAfter args)
@@ -66,11 +78,24 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         args.Verbs.Add(verb);
     }
 
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
 
-        UpdateTriggers(frameTime);
+    private void OnOrbExamine(Entity<CP14MagicRitualOrbComponent> ent, ref ExaminedEvent args)
+    {
+        var sb = new StringBuilder();
+        sb.Append(Loc.GetString("cp14-ritual-orb-examine", ("name", MetaData(ent).EntityName)) + "\n");
+        foreach (var orbType in ent.Comp.Powers)
+        {
+            if (!_proto.TryIndex(orbType.Key, out var indexedType))
+                continue;
+
+            sb.Append($"[color={indexedType.Color.ToHex()}]");
+            sb.Append(Loc.GetString("cp14-ritual-entry-item",
+                ("name", Loc.GetString(indexedType.Name)),
+                ("count", orbType.Value)));
+            sb.Append($"[/color] \n");
+        }
+
+        args.PushMarkup(sb.ToString());
     }
 
     public void StartRitual(Entity<CP14MagicRitualComponent> ritual)
@@ -115,6 +140,11 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         RaiseLocalEvent(ritual, ev);
 
         _appearance.SetData(ritual, RitualVisuals.Enabled, false);
+
+        foreach (var orb in ritual.Comp.Orbs)
+        {
+            QueueDel(orb);
+        }
     }
 
     private void OnPhaseTrigger(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)

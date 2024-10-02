@@ -111,12 +111,31 @@
     phaseColor: "#0000FF"
     edges:
     - target: CP14RitualPhaseStartpoint # To start
+      actions:
+      - !type:AddOrb
+        orbs:
+          CP14RitualOrbCreation: 1
 
 - type: entity
   parent: CP14BaseRitualPhase
   id: CP14RitualPhaseFailed
-  name: конечный грустный узел
+  name: окончание ритуала
   components:
   - type: CP14MagicRitualPhase
     deadEnd: true
-    phaseColor: "#00FF00"
+
+- type: entity
+  id: CP14RitualOrbCreation
+  name: creation orb
+  components:
+  - type: CP14MagicRitualOrb
+    powers:
+      Creation: 1
+      Destruction: 2
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/sphere_of_light.rsi
+    drawDepth: Mobs
+    noRot: true
+    layers:
+    - state: icon
+      shader: unshaded

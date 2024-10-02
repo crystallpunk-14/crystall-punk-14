@@ -1,3 +1,4 @@
+using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicRitual;
@@ -24,5 +25,8 @@ public sealed partial class CP14MagicRitualComponent : Component
     public string RitualLayerMap = "ritual";
 
     [DataField]
-    public bool Enabled = false;
+    public int MaxOrbCapacity = 3;
+
+    [DataField]
+    public HashSet<EntityUid> Orbs = new();
 }

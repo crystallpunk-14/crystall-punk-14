@@ -34,8 +34,7 @@ public sealed partial class RequiredResource : CP14RitualRequirement
             if (!prototype.TryIndex(entity.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-required-resource-item", ("name", indexed.Name), ("count", entity.Value)));
-            sb.Append("\n");
+            sb.Append(Loc.GetString("cp14-ritual-entry-item", ("name", indexed.Name), ("count", entity.Value)) + "\n");
         }
 
         foreach (var stack in RequiredStack)
@@ -43,8 +42,7 @@ public sealed partial class RequiredResource : CP14RitualRequirement
             if (!prototype.TryIndex(stack.Key, out var indexed))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-ritual-required-resource-item", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)));
-            sb.Append("\n");
+            sb.Append(Loc.GetString("cp14-ritual-entry-item", ("name", Loc.GetString(indexed.Name)), ("count", stack.Value)) + "\n");
         }
 
         return sb.ToString();

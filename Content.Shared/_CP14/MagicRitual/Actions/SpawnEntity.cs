@@ -23,7 +23,7 @@ public sealed partial class SpawnEntity : CP14RitualAction
             if (!prototype.TryIndex(spawn.Key, out var indexed))
                 return null;
 
-            sb.Append(Loc.GetString("cp14-ritual-effect-spawn-entity-item",
+            sb.Append(Loc.GetString("cp14-ritual-entry-item",
                 ("name", Name is null ? indexed.Name : Loc.GetString(Name)),
                 ("count", spawn.Value)) + "\n");
         }

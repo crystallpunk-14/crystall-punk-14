@@ -8,3 +8,10 @@ cp14-ritual-filter-humanoid = с свойствами гуманоидных с�
 cp14-ritual-filter-energy-storage = с способностью хранить магическую энергию
 
 cp14-ritual-range =  В радиусе {$range}, 
+
+cp14-ritual-orb-examine = {$name} содержит в себе следующие энергии:
+cp14-ritual-entry-item =
+    - { $count ->
+        [1] {$name}
+        *[other] {$name} ({$count} шт.)
+    }
