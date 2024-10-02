@@ -19,8 +19,14 @@ public sealed partial class CP14MagicRitualPhaseComponent : Component
     [DataField]
     public Color PhaseColor = Color.White;
 
-    [DataField(required: true)]
+    [DataField]
     public List<RitualPhaseEdge> Edges = new();
+
+    /// <summary>
+    /// by moving to this node, the ritual will end instantly.
+    /// </summary>
+    [DataField]
+    public bool DeadEnd = false;
 }
 
 [DataRecord]

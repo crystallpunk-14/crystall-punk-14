@@ -1,4 +1,3 @@
-
 using Content.Shared._CP14.MagicRitual;
 using Robust.Server.GameObjects;
 

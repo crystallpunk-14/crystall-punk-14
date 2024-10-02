@@ -115,14 +115,8 @@
 - type: entity
   parent: CP14BaseRitualPhase
   id: CP14RitualPhaseFailed
-  name: нестабильный темпоральный узел
+  name: конечный грустный узел
   components:
-  - type: CP14RitualTriggerTimer
-    nextPhase: CP14RitualPhaseStartpoint
-    time:
-      min: 5
-      max: 10
   - type: CP14MagicRitualPhase
+    deadEnd: true
     phaseColor: "#00FF00"
-    edges:
-    - target: CP14RitualPhaseStartpoint # To start

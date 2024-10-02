@@ -22,4 +22,7 @@ public sealed partial class CP14MagicRitualComponent : Component
 
     [DataField]
     public string RitualLayerMap = "ritual";
+
+    [DataField]
+    public bool Enabled = false;
 }

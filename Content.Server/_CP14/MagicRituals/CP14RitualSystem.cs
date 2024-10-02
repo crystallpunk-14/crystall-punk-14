@@ -98,6 +98,9 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         var ev = new CP14RitualPhaseBoundEvent(ritual, newPhaseEnt);
         RaiseLocalEvent(ritual, ev);
         RaiseLocalEvent(newPhaseEnt, ev);
+
+        if (newPhaseComp.DeadEnd)
+            EndRitual(ritual);
     }
 
     public void EndRitual(Entity<CP14MagicRitualComponent> ritual)
@@ -110,6 +113,7 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
 
         var ev = new CP14RitualEndEvent(ritual);
         RaiseLocalEvent(ritual, ev);
+
         _appearance.SetData(ritual, RitualVisuals.Enabled, false);
     }
 
