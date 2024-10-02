@@ -16,7 +16,7 @@ public sealed partial class RequiredResource : CP14RitualRequirement
     public Dictionary<EntProtoId, int> RequiredEntities = new ();
 
     [DataField]
-    public Dictionary<ProtoId<StackPrototype>, int> RequiredStack = new();
+    public Dictionary<ProtoId<StackPrototype>, int> RequiredStacks = new();
 
     /// <summary>
     /// Effect appearing in place of used entities
@@ -37,7 +37,7 @@ public sealed partial class RequiredResource : CP14RitualRequirement
             sb.Append(Loc.GetString("cp14-ritual-entry-item", ("name", indexed.Name), ("count", entity.Value)) + "\n");
         }
 
-        foreach (var stack in RequiredStack)
+        foreach (var stack in RequiredStacks)
         {
             if (!prototype.TryIndex(stack.Key, out var indexed))
                 continue;
@@ -85,7 +85,7 @@ public sealed partial class RequiredResource : CP14RitualRequirement
                 passed = false;
         }
 
-        foreach (var reqStack in RequiredStack)
+        foreach (var reqStack in RequiredStacks)
         {
             var requiredCount = reqStack.Value;
 

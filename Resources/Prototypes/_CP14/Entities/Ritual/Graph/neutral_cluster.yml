@@ -9,8 +9,8 @@
 - type: entity
   parent: CP14_NeutralCluster_Base
   id: CP14_NeutralCluster_Root
-  name: Neutral source node
-  description: The perfect energetic position to begin any ritual. Root node of the Neutral cluster.
+  name: Neutral root node
+  description: The perfect energetic position to begin any ritual.
   components:
   - type: CP14RitualTriggerVoice
     triggers:
@@ -22,12 +22,18 @@
       message: "Lunam pluvia"
     - targetPhase: CP14_NeutralCluster_06
       message: "Aurora mitis"
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14RitualEnd
+    time:
+      min: 20
+      max: 60
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_00
     - target: CP14_NeutralCluster_02
     - target: CP14_NeutralCluster_04
     - target: CP14_NeutralCluster_06
+    - target: CP14RitualEnd
     
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -46,7 +52,7 @@
     - target: CP14_NeutralCluster_08
       requirements:
       - !type:RequiredResource
-        vfx: CP14ImpactEffectShadowGrab
+        vfx: CP14ImpactEffectCureWounds
         requiredEntities:
           CP14FlameCreationArtificialFlame: 3
       actions: 
@@ -163,7 +169,7 @@
     - target: CP14_NeutralCluster_14
       requirements:
       - !type:RequiredResource
-        vfx: CP14ImpactEffectShadowGrab
+        vfx: CP14ImpactEffectCureWounds
         requiredEntities:
           CP14SphereOfLight: 3
       actions: 
@@ -202,6 +208,15 @@
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_15
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredStacks:
+          CP14Dirt: 5
+      actions: 
+      - !type:ConsumeResource
+        requiredStacks:
+          CP14Dirt: 3
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -211,8 +226,8 @@
   - type: CP14RitualTriggerTimer
     nextPhase: CP14_NeutralCluster_01
     time:
-      min: 5
-      max: 10
+      min: 10
+      max: 15
   - type: CP14RitualTriggerVoice
     triggers:
     - targetPhase: CP14_NeutralCluster_08
@@ -221,6 +236,15 @@
     edges:
     - target: CP14_NeutralCluster_01
     - target: CP14_NeutralCluster_08
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14FlameCreationArtificialFlame: 3
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14FlameCreationArtificialFlame: 3
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -234,6 +258,15 @@
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_09
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14AgaricMushroom: 2
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14AgaricMushroom: 1
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -243,8 +276,8 @@
   - type: CP14RitualTriggerTimer
     nextPhase: CP14_NeutralCluster_03
     time:
-      min: 5
-      max: 10
+      min: 10
+      max: 15
   - type: CP14RitualTriggerVoice
     triggers:
     - targetPhase: CP14_NeutralCluster_10
@@ -257,6 +290,9 @@
         orbs:
           CP14RitualOrbCreation: 1
     - target: CP14_NeutralCluster_10
+      requirements:
+      - !type:RequiredTime
+        timePeriod: Night
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -279,16 +315,19 @@
   - type: CP14RitualTriggerTimer
     nextPhase: CP14_NeutralCluster_05
     time:
-      min: 5
-      max: 10
+      min: 10
+      max: 15
   - type: CP14RitualTriggerVoice
     triggers:
     - targetPhase: CP14_NeutralCluster_12
       message: "Lacus conversus viridi"
+    - targetPhase: CP14_HealCluster_Root
+      message: "Lets satus curatio"
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_05
     - target: CP14_NeutralCluster_12
+    - target: CP14_HealCluster_Root # To healing root!
   
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -304,7 +343,7 @@
     - target: CP14_NeutralCluster_13
       requirements:
       - !type:RequiredResource
-        vfx: CP14ImpactEffectShadowGrab
+        vfx: CP14ImpactEffectCureWounds
         requiredEntities:
           CP14WildSage: 2
       actions: 
@@ -320,8 +359,8 @@
   - type: CP14RitualTriggerTimer
     nextPhase: CP14_NeutralCluster_07
     time:
-      min: 5
-      max: 10
+      min: 10
+      max: 15
   - type: CP14RitualTriggerVoice
     triggers:
     - targetPhase: CP14_NeutralCluster_14
@@ -334,3 +373,12 @@
         orbs:
           CP14RitualOrbDestruction: 1
     - target: CP14_NeutralCluster_14
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14SphereOfLight: 3
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14SphereOfLight: 3

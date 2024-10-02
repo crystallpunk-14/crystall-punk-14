@@ -1,0 +1,460 @@
+- type: entity
+  parent: CP14BaseRitualPhase
+  abstract: true
+  id: CP14_HealCluster_Base
+  components:
+  - type: CP14MagicRitualPhase
+    phaseColor: "#42f584"
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_Root
+  name: Healing root node
+  description: An energetic position that tends toward vitality. Effective for healing wounds.
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_00
+      message: "Vulnera sanare possunt"
+    - targetPhase: CP14_HealCluster_11
+      message: "Sit cor tuum iterum verberare"
+    - targetPhase: CP14_NeutralCluster_Root
+      message: "Ritorno alla pagina iniziale"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+    - target: CP14_HealCluster_11
+    - target: CP14_NeutralCluster_Root
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_00
+  name: Healing node 0
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_Root
+      message: "Ego mutavit animum meum"
+    - targetPhase: CP14_HealCluster_01
+      message: "Je vous le demande"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_Root
+    - target: CP14_HealCluster_01
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14QuartzShard: 1
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14QuartzShard: 1
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_01
+  name: Healing node 1
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_02
+      message: "Haec vulnera interna sunt"
+    - targetPhase: CP14_HealCluster_06
+      message: "Haec vulnera externa sunt"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_02
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14BloodGrass: 1
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14BloodGrass: 1
+    - target: CP14_HealCluster_06
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14FloraMaterial: 3
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14FloraMaterial: 3
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_02
+  name: Healing node 2
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_03
+      message: "Livor"
+    - targetPhase: CP14_HealCluster_04
+      message: "Secat"
+    - targetPhase: CP14_HealCluster_05
+      message: "punctura"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_03
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Blunt: -10
+          - !type:Jitter
+    - target: CP14_HealCluster_04
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Slash: -10
+          - !type:Jitter
+    - target: CP14_HealCluster_05
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Piercing: -10
+          - !type:Jitter
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_03
+  name: Healing node 3
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_00
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_04
+  name: Healing node 4
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_00
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_05
+  name: Healing node 5
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_00
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_06
+  name: Healing node 6
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_07
+      message: "Calor"
+    - targetPhase: CP14_HealCluster_08
+      message: "Frigus"
+    - targetPhase: CP14_HealCluster_09
+      message: "Fulgur"
+    - targetPhase: CP14_HealCluster_10
+      message: "Acidum"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_07
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Heat: -10
+          - !type:Jitter
+    - target: CP14_HealCluster_08
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Cold: -10
+          - !type:Jitter
+    - target: CP14_HealCluster_09
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Shock: -10
+          - !type:Jitter
+    - target: CP14_HealCluster_10
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Caustic: -10
+          - !type:Jitter
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_07
+  name: Healing node 7
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_00
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_08
+  name: Healing node 8
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_00
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_09
+  name: Healing node 9
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_00
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_10
+  name: Healing node 10
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_00
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_00
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_11
+  name: Healing node 11
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_12
+      message: "Je vous le demande"
+    - targetPhase: CP14_HealCluster_Root
+      message: "Ego mutavit animum meum"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_12
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14AgaricMushroom: 1
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14AgaricMushroom: 1
+    - target: CP14_HealCluster_Root
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_12
+  name: Healing node 12
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_13
+      message: "Dolor intus est"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_13
+      requirements:
+      - !type:RequiredResource
+        vfx: CP14ImpactEffectCureWounds
+        requiredEntities:
+          CP14BloodGrass: 1
+      actions: 
+      - !type:ConsumeResource
+        requiredEntities:
+          CP14BloodGrass: 1
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_13
+  name: Healing node 13
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_HealCluster_14
+      message: "Suffocatio"
+    - targetPhase: CP14_HealCluster_15
+      message: "Sanguinem damnum"
+    - targetPhase: CP14_HealCluster_16
+      message: "Cardiac prensionem"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_14
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Asphyxiation: -50
+          - !type:Jitter
+    - target: CP14_HealCluster_15
+      actions: 
+      - !type:ApplyEntityEffect
+        maxEntities: 3
+        vfx: CP14ImpactEffectCureWounds
+        whitelist:
+          components:
+          - HumanoidAppearance
+        effects:
+          - !type:HealthChange
+            damage:
+              types:
+                Bloodloss: -10
+          - !type:Jitter
+          - !type:ModifyBleedAmount
+          - !type:ModifyBloodLevel
+    - target: CP14_HealCluster_16
+      requirements:
+      - !type:RequiredOrbs
+        magicType: Creation
+        min: 1
+      actions: 
+      - !type:ConsumeOrb
+        magicType: Creation
+        count: 1
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_14
+  name: Healing node 14
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_11
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_11
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_15
+  name: Healing node 15
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_11
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_11
+
+- type: entity
+  parent: CP14_HealCluster_Base
+  id: CP14_HealCluster_16
+  name: Healing node 16 (вообще тут должен быть эффект дефиба, но я его еще не закодил)
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_HealCluster_11
+    time:
+      min: 2
+      max: 5
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_HealCluster_11
