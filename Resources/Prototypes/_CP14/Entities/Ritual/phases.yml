@@ -1,131 +1,80 @@
-- type: entity
-  id: CP14BaseRitualPhase
-  abstract: true
-  components:
-  - type: CP14MagicRitualPhase
-  - type: Tag
-    tags:
-      - HideContextMenu
-  - type: PointLight
-  - type: EmitSoundOnSpawn
-    sound: 
-      path: /Audio/Effects/tesla_consume.ogg
-      params:
-        variation: 0.3
-
-- type: entity
-  parent: CP14Paper
-  id: CP14PaperRitual
-  name: ritual describer
-  components:
-  - type: CP14PaperPhaseDescriber
-    describePhase: CP14RitualPhaseStartpoint
-
-- type: entity
-  parent: CP14Paper
-  id: CP14PaperRitual2
-  name: ritual describer 2
-  components:
-  - type: CP14PaperPhaseDescriber
-    describePhase: CP14RitualPhaseSecond
-
-- type: entity
-  parent: CP14Paper
-  id: CP14PaperRitual3
-  name: ritual describer 3
-  components:
-  - type: CP14PaperPhaseDescriber
-    describePhase: CP14RitualPhaseFailed
-
-- type: entity
-  parent: CP14BaseRitualPhase
-  id: CP14RitualPhaseStartpoint
-  name: нейтральный исходный узел
-  description: Идеальная энергетическая позиция для начала любого ритуала.
-  components:
-  - type: CP14RitualTriggerVoice
-    failAttempts: 3
-    failedPhase: CP14RitualPhaseFailed
-    triggers:
-    - targetPhase: CP14RitualPhaseSecond
-      message: "Singulo"
-      speakers: 1
-  - type: CP14MagicRitualPhase
-    phaseColor: "#FF0000"
-    edges:
-    - target: CP14RitualPhaseFailed
-      
-      actions: 
-      - !type:SpawnEntity
-        spawns:
-          CP14FoodCucumber: 3
-          CP14FoodPotato: 1
-      
-    - target: CP14RitualPhaseSecond
-      requirements:
-      - !type:RequiredOrbs
-        magicType: Creation
-        min: 1
-      - !type:RequiredResource
-        vfx: CP14ImpactEffectShadowGrab
-        checkRange: 3
-        requiredEntities:
-          CP14FoodCucumber: 3
-        requiredStack:
-          CP14WoodenPlanks: 2
-
-      actions: 
-      - !type:EditStability
-        mod: -0.1
-      - !type:ConsumeResource
-        checkRange: 3
-        requiredEntities:
-          CP14FoodCucumber: 2
-        requiredStack:
-          CP14WoodenPlanks: 1
-      - !type:ApplyEntityEffect
-        maxEntities: 3
-        vfx: CP14ImpactEffectCureWounds
-        whitelist:
-          components:
-          - Damageable
-        effects:
-          - !type:HealthChange
-            damage:
-              types:
-                Slash: -10
-                Blunt: -10
-                Piercing: -10
-                Heat: -10
-          - !type:Jitter
-      - !type:AddOrb
-        orbs:
-          CP14RitualOrbDestruction: 1
-
-
-- type: entity
-  parent: CP14BaseRitualPhase
-  id: CP14RitualPhaseSecond
-  name: темпоральный огуречный узел
-  components:
-  - type: CP14RitualTriggerTimer
-    nextPhase: CP14RitualPhaseStartpoint
-    time:
-      min: 5
-      max: 10
-  - type: CP14MagicRitualPhase
-    phaseColor: "#0000FF"
-    edges:
-    - target: CP14RitualPhaseStartpoint # To start
-      actions:
-      - !type:AddOrb
-        orbs:
-          CP14RitualOrbCreation: 1
-
-- type: entity
-  parent: CP14BaseRitualPhase
-  id: CP14RitualPhaseFailed
-  name: окончание ритуала
-  components:
-  - type: CP14MagicRitualPhase
-    deadEnd: true
+#
+#  components:
+#  - type: CP14RitualTriggerVoice
+#    failAttempts: 3
+#    failedPhase: CP14RitualPhaseFailed
+#    triggers:
+#    - targetPhase: CP14RitualPhaseSecond
+#      message: "Singulo"
+#      speakers: 1
+#  - type: CP14MagicRitualPhase
+#    phaseColor: "#FF0000"
+#    edges:
+#    - target: CP14RitualPhaseFailed
+#      
+#      actions: 
+#      - !type:SpawnEntity
+#        spawns:
+#          CP14FoodCucumber: 3
+#          CP14FoodPotato: 1
+#      
+#    - target: CP14RitualPhaseSecond
+#      requirements:
+#      - !type:RequiredOrbs
+#        magicType: Creation
+#        min: 1
+#      - !type:RequiredResource
+#        vfx: CP14ImpactEffectShadowGrab
+#        checkRange: 3
+#        requiredEntities:
+#          CP14FoodCucumber: 3
+#        requiredStack:
+#          CP14WoodenPlanks: 2
+#
+#      actions: 
+#      - !type:EditStability
+#        mod: -0.1
+#      - !type:ConsumeResource
+#        checkRange: 3
+#        requiredEntities:
+#          CP14FoodCucumber: 2
+#        requiredStack:
+#          CP14WoodenPlanks: 1
+#      - !type:ApplyEntityEffect
+#        maxEntities: 3
+#        vfx: CP14ImpactEffectCureWounds
+#        whitelist:
+#          components:
+#          - Damageable
+#        effects:
+#          - !type:HealthChange
+#            damage:
+#              types:
+#                Slash: -10
+#                Blunt: -10
+#                Piercing: -10
+#                Heat: -10
+#          - !type:Jitter
+#      - !type:AddOrb
+#        orbs:
+#          CP14RitualOrbDestruction: 1
+#
+#
+#- type: entity
+#  parent: CP14BaseRitualPhase
+#  id: CP14RitualPhaseSecond
+#  name: темпоральный огуречный узел
+#  components:
+#  - type: CP14RitualTriggerTimer
+#    nextPhase: CP14RitualPhaseStartpoint
+#    time:
+#      min: 5
+#      max: 10
+#  - type: CP14MagicRitualPhase
+#    phaseColor: "#0000FF"
+#    edges:
+#    - target: CP14RitualPhaseStartpoint # To start
+#      actions:
+#      - !type:AddOrb
+#        orbs:
+#          CP14RitualOrbCreation: 1

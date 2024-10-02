@@ -49,7 +49,7 @@
             min: 4
             max: 5
   - type: CP14MagicRitual
-    startPhase: CP14RitualPhaseStartpoint
+    startPhase: CP14_NeutralCluster_Root
   - type: Appearance
 
 - type: entity

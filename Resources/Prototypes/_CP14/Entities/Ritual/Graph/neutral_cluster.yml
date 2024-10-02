@@ -1,0 +1,282 @@
+- type: entity
+  parent: CP14BaseRitualPhase
+  abstract: true
+  id: CP14_NeutralCluster_Base
+  components:
+  - type: CP14MagicRitualPhase
+    phaseColor: "#FFFFFF"
+
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_Root
+  name: Neutral source node
+  description: The perfect energetic position to begin any ritual. Root node of the Neutral cluster.
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_00
+      message: "Calidum post meridiem"
+    - targetPhase: CP14_NeutralCluster_02
+      message: "Tenebris noctis"
+    - targetPhase: CP14_NeutralCluster_04
+      message: "Lunam pluvia"
+    - targetPhase: CP14_NeutralCluster_06
+      message: "Aurora mitis"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_00
+    - target: CP14_NeutralCluster_02
+    - target: CP14_NeutralCluster_04
+    - target: CP14_NeutralCluster_06
+    
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_00
+  name: Neutral node 0
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_01
+      message: "Vespere nebula"
+    - targetPhase: CP14_NeutralCluster_07
+      message: "Arida solo"
+    - targetPhase: CP14_NeutralCluster_08
+      message: "Ignis"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_01
+    - target: CP14_NeutralCluster_07
+    - target: CP14_NeutralCluster_08
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_01
+  name: Neutral node 1
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_Root
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_Root
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_02
+  name: Neutral node 2
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_01
+      message: "Flamma Obscura"
+    - targetPhase: CP14_NeutralCluster_03
+      message: "Nigrum nebula"
+    - targetPhase: CP14_NeutralCluster_10
+      message: "Nox"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_01
+    - target: CP14_NeutralCluster_03
+    - target: CP14_NeutralCluster_10
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_03
+  name: Neutral node 3
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_Root
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_Root
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_04
+  name: Neutral node 4
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_03
+      message: "Evaporatio"
+    - targetPhase: CP14_NeutralCluster_05
+      message: "Palus crassus"
+    - targetPhase: CP14_NeutralCluster_12
+      message: "Aqua"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_03
+    - target: CP14_NeutralCluster_05
+    - target: CP14_NeutralCluster_12
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_05
+  name: Neutral node 5
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_Root
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_Root
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_06
+  name: Neutral node 6
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_05
+      message: "Cicindela"
+    - targetPhase: CP14_NeutralCluster_07
+      message: "Phosphorus"
+    - targetPhase: CP14_NeutralCluster_14
+      message: "Lux"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_05
+    - target: CP14_NeutralCluster_07
+    - target: CP14_NeutralCluster_14
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_07
+  name: Neutral node 7
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_Root
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_Root
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_08
+  name: Neutral node 8
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_09
+      message: "Flammae immites"
+    - targetPhase: CP14_NeutralCluster_15
+      message: "Magma candenti"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_09
+    - target: CP14_NeutralCluster_15
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_09
+  name: Neutral node 9
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_01
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_01
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_10
+  name: Neutral node 10
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_09
+      message: "Absentis homines"
+    - targetPhase: CP14_NeutralCluster_11
+      message: "Velum impenetrabile"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_09
+    - target: CP14_NeutralCluster_11
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_11
+  name: Neutral node 11
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_03
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_03
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_12
+  name: Neutral node 12
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_11
+      message: "Cataractarum"
+    - targetPhase: CP14_NeutralCluster_13
+      message: "Maria et lacus"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_11
+    - target: CP14_NeutralCluster_13
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_13
+  name: Neutral node 13
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_05
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_05
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_14
+  name: Neutral node 14
+  components:
+  - type: CP14RitualTriggerVoice
+    triggers:
+    - targetPhase: CP14_NeutralCluster_13
+      message: "Il miracolo della nascita"
+    - targetPhase: CP14_NeutralCluster_15
+      message: "Crystallis rutilans"
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_13
+    - target: CP14_NeutralCluster_15
+  
+- type: entity
+  parent: CP14_NeutralCluster_Base
+  id: CP14_NeutralCluster_15
+  name: Neutral node 15
+  components:
+  - type: CP14RitualTriggerTimer
+    nextPhase: CP14_NeutralCluster_07
+    time:
+      min: 5
+      max: 10
+  - type: CP14MagicRitualPhase
+    edges:
+    - target: CP14_NeutralCluster_07

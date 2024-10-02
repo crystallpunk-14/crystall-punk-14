@@ -25,13 +25,13 @@ public sealed partial class RequiredOrbs : CP14RitualRequirement
         if (!prototype.TryIndex(MagicType, out var indexedType))
             return null;
 
-        sb.Append(Loc.GetString("cp14-ritual-required-orbs", ("name", Loc.GetString(indexedType.Name))));
+        sb.Append(Loc.GetString("cp14-ritual-required-orbs", ("name", Loc.GetString(indexedType.Name))) + " ");
         if (Min is not null && Max is not null)
-            sb.Append(Loc.GetString("cp14-ritual-required-orbs-item-minmax", ("min", Min), ("max", Max)));
+            sb.Append(Loc.GetString("cp14-ritual-required-orbs-item-minmax", ("min", Min), ("max", Max))+ "\n");
         else if (Min is not null)
-            sb.Append(Loc.GetString("cp14-ritual-required-orbs-item-min", ("min", Min)));
+            sb.Append(Loc.GetString("cp14-ritual-required-orbs-item-min", ("min", Min))+ "\n");
         else if (Max is not null)
-            sb.Append(Loc.GetString("cp14-ritual-required-orbs-item-min", ("max", Max)));
+            sb.Append(Loc.GetString("cp14-ritual-required-orbs-item-min", ("max", Max))+ "\n");
 
         return sb.ToString();
     }

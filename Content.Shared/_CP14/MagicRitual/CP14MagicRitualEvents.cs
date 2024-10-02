@@ -79,6 +79,11 @@ public sealed partial class CP14ActivateRitualDoAfter : SimpleDoAfterEvent
 }
 
 [Serializable, NetSerializable]
+public sealed partial class CP14DescribeRitualDoAfter : SimpleDoAfterEvent
+{
+}
+
+[Serializable, NetSerializable]
 public enum RitualVisuals
 {
     Color,

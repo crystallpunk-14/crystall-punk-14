@@ -2,6 +2,8 @@ using System.Text;
 using Content.Server._CP14.MagicRituals.Components;
 using Content.Server._CP14.MagicRituals.Components.Triggers;
 using Content.Shared._CP14.MagicRitual;
+using Content.Shared.DoAfter;
+using Content.Shared.Interaction;
 using Content.Shared.Paper;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -13,18 +15,41 @@ public sealed partial class CP14RitualSystem
     [Dependency] private readonly PaperSystem _paper = default!;
     private void InitializeDescriber()
     {
-        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, MapInitEvent>(OnMapInitDescriber);
+        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, AfterInteractEvent>(OnDescriberAfterInteract);
+        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, CP14DescribeRitualDoAfter>(OnFinishDescribe);
     }
 
-    private void OnMapInitDescriber(Entity<CP14PaperPhaseDescriberComponent> ent, ref MapInitEvent args)
+    private void OnDescriberAfterInteract(Entity<CP14PaperPhaseDescriberComponent> ent, ref AfterInteractEvent args)
     {
-        if (ent.Comp.DescribePhase is null)
+        if (!TryComp<CP14MagicRitualComponent>(args.Target, out var ritual))
+            return;
+
+        var doAfterArgs =
+            new DoAfterArgs(EntityManager, args.User, ent.Comp.DescribeTime, new CP14DescribeRitualDoAfter(), ent, args.Target)
+            {
+                BreakOnDamage = true,
+                BreakOnMove = true,
+            };
+
+        _doAfter.TryStartDoAfter(doAfterArgs);
+    }
+
+    private void OnFinishDescribe(Entity<CP14PaperPhaseDescriberComponent> ent, ref CP14DescribeRitualDoAfter args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+        args.Handled = true;
+
+        if (!TryComp<CP14MagicRitualComponent>(args.Target, out var ritual))
             return;
 
         if (!TryComp<PaperComponent>(ent, out var paper))
             return;
 
-        _paper.SetContent((ent, paper), GetPhaseDescription(ent.Comp.DescribePhase.Value) ?? "");
+        if (ritual.CurrentPhase is null)
+            return;
+
+        _paper.SetContent((ent, paper), GetPhaseDescription(ritual.CurrentPhase.Value) ?? "");
     }
 
     public string? GetPhaseDescription(Entity<CP14MagicRitualPhaseComponent> ent)
@@ -32,12 +57,10 @@ public sealed partial class CP14RitualSystem
         GetTriggers(ent, out var triggerList);
 
         var sb = new StringBuilder();
-        sb.Append("[color=#e6a132][head=1]========================== \n");
-        sb.Append($"{MetaData(ent).EntityName} \n");
-        sb.Append("==========================[/head][/color] \n");
+        sb.Append($"[color=#e6a132][head=1]{MetaData(ent).EntityName}[/head][/color] \n \n");
         sb.Append($"[italic]{MetaData(ent).EntityDescription}[/italic] \n \n");
 
-        sb.Append(Loc.GetString("cp14-ritual-intro") + "\n \n");
+        sb.Append(Loc.GetString("cp14-ritual-intro") + "\n \n \n");
         foreach (var edge in ent.Comp.Edges)
         {
             if (!_proto.TryIndex(edge.Target, out var targetIndexed))
