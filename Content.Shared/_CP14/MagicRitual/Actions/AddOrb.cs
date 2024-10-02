@@ -4,8 +4,8 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.MagicRitual.Actions;
 
 /// <summary>
-/// Creates an entity in the coordinates of the ritual.
-/// </summary> TODO: EntityTable support?
+///
+/// </summary>
 public sealed partial class AddOrb : CP14RitualAction
 {
     [DataField(required: true)]

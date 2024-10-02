@@ -1,3 +1,4 @@
+using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared.Follower;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -41,6 +42,20 @@ public partial class CP14SharedRitualSystem : EntitySystem
         }
 
         _followerSystem.StartFollowingEntity(spawnedOrb, ritual);
-        ritual.Comp.Orbs.Add(spawnedOrb);
+        ritual.Comp.Orbs.Add((spawnedOrb, orbComp));
+    }
+
+    public void ConsumeOrbType(Entity<CP14MagicRitualComponent> ritual, ProtoId<CP14MagicTypePrototype> magicType)
+    {
+        foreach (var orb in ritual.Comp.Orbs)
+        {
+            var powers = orb.Comp.Powers;
+            if (!powers.ContainsKey(magicType))
+                continue;
+
+            ritual.Comp.Orbs.Remove(orb);
+            QueueDel(orb);
+            return;
+        }
     }
 }

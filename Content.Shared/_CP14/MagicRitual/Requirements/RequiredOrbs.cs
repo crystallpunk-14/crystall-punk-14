@@ -44,10 +44,7 @@ public sealed partial class RequiredOrbs : CP14RitualRequirement
         var count = 0;
         foreach (var orb in phaseEnt.Comp.Ritual.Value.Comp.Orbs)
         {
-            if (!entManager.TryGetComponent<CP14MagicRitualOrbComponent>(orb, out var orbComp))
-                continue;
-
-            foreach (var power in orbComp.Powers)
+            foreach (var power in orb.Comp.Powers)
             {
                 if (power.Key == MagicType)
                     count += power.Value;

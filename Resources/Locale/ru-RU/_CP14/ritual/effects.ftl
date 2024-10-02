@@ -16,3 +16,5 @@ cp14-ritual-effect-stability-add = Стабилизирует ритуал на 
 cp14-ritual-effect-stability-minus = Дестабилизирует ритуал на [color=#eb4034]{$count}%[/color]
 
 cp14-ritual-effect-add-orb = Ритуал получает:
+
+cp14-ritual-effect-consume-orb = Ритуал поглощает сфер {$name}: {$count}
