@@ -78,8 +78,8 @@
           CP14FoodCucumber: 3
         requiredStack:
           CP14WoodenPlanks: 2
-      - !type:RequiredStability
-        min: 0.5
+      - !type:RequiredTime
+        timePeriod: Night
 
       actions: 
       - !type:EditStability
