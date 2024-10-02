@@ -12,6 +12,7 @@
     drawdepth: Mobs
   - type: CP14Wallmount
   - type: Physics
+    canCollide: false
 
 - type: entity
   id: CP14WallmountTorch

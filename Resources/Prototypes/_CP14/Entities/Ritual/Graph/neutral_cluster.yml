@@ -25,8 +25,8 @@
   - type: CP14RitualTriggerTimer
     nextPhase: CP14RitualEnd
     time:
-      min: 20
-      max: 60
+      min: 200
+      max: 300
   - type: CP14MagicRitualPhase
     edges:
     - target: CP14_NeutralCluster_00

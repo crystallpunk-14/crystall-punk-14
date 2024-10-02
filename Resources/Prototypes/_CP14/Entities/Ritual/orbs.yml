@@ -4,6 +4,7 @@
   components:
   - type: Transform
   - type: Physics
+    canCollide: false
   - type: Sprite
     sprite: _CP14/Effects/Magic/ritual_orbs.rsi
     drawDepth: Mobs
