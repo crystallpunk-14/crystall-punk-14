@@ -105,4 +105,4 @@
   - type: HumanoidAppearance
     species: CP14Zombie
   - type: Inventory
-    templateId: CP14mannequin
+    templateId: CP14Partial
