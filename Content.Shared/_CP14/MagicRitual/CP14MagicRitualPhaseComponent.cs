@@ -1,5 +1,6 @@
 using Content.Shared._CP14.MagicRitual.Actions;
 using Content.Shared._CP14.MagicRitual.Requirements;
+using Content.Shared._CP14.MagicRitual.Triggers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicRitual;
@@ -34,7 +35,7 @@ public partial record struct RitualPhaseEdge()
 {
     public EntProtoId Target { get; set; }
 
+    public List<CP14RitualTrigger> Triggers { get; set; } = new();
     public List<CP14RitualRequirement> Requirements { get; set; } = new();
-
     public List<CP14RitualAction> Actions { get; set; } = new();
 }

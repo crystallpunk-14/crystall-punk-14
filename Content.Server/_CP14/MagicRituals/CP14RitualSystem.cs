@@ -127,6 +127,14 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         ritual.Comp.CurrentPhase = (newPhaseEnt, newPhaseComp);
         newPhaseComp.Ritual = ritual;
 
+        foreach (var edge in newPhaseComp.Edges)
+        {
+            foreach (var trigger in edge.Triggers)
+            {
+                trigger.Initialize(EntityManager, (newPhaseEnt, newPhaseComp));
+            }
+        }
+
         var ev = new CP14RitualPhaseBoundEvent(ritual, newPhaseEnt);
         RaiseLocalEvent(ritual, ev);
         RaiseLocalEvent(newPhaseEnt, ev);

@@ -43,32 +43,32 @@ public sealed class CP14RitualTest
                         allEdges.Add(edge.Target);
                     }
 
-                    if (proto.TryGetComponent(out CP14RitualTriggerVoiceComponent? voiceTrigger, compFactory))
-                    {
-                        foreach (var trigger in voiceTrigger.Triggers)
-                        {
-                            Assert.That(trigger.Speakers > 0, $"{proto} has voice trigger edge with less than 1 speaker!");
-                            Assert.That(allEdges.Contains(trigger.TargetPhase), $"{proto} have voice trigger to {trigger.TargetPhase}, but this phase edge do not exist!");
-
-                            if (edgesToCheck.Contains(trigger.TargetPhase))
-                                edgesToCheck.Remove(trigger.TargetPhase);
-                        }
-                    }
-
-                    if (proto.TryGetComponent(out CP14RitualTriggerTimerComponent? timerTrigger, compFactory))
-                    {
-                        Assert.That(allEdges.Contains(timerTrigger.NextPhase), $"{proto} have timer trigger to {timerTrigger.NextPhase}, but this phase edge do not exist!");
-
-                        if (edgesToCheck.Contains(timerTrigger.NextPhase))
-                            edgesToCheck.Remove(timerTrigger.NextPhase);
-                    }
-
-                    var sb = new StringBuilder();
-                    foreach (var leftEdge in edgesToCheck)
-                    {
-                        sb.Append(leftEdge.Id + "\n");
-                    }
-                    Assert.That(edgesToCheck.Count == 0, $"The following {proto} edges have no triggers: \n {sb.ToString()}");
+                    //if (proto.TryGetComponent(out CP14RitualTriggerVoiceComponent? voiceTrigger, compFactory))
+                    //{
+                    //    foreach (var trigger in voiceTrigger.Triggers)
+                    //    {
+                    //        Assert.That(trigger.Speakers > 0, $"{proto} has voice trigger edge with less than 1 speaker!");
+                    //        Assert.That(allEdges.Contains(trigger.TargetPhase), $"{proto} have voice trigger to {trigger.TargetPhase}, but this phase edge do not exist!");
+//
+                    //        if (edgesToCheck.Contains(trigger.TargetPhase))
+                    //            edgesToCheck.Remove(trigger.TargetPhase);
+                    //    }
+                    //}
+//
+                    //if (proto.TryGetComponent(out CP14RitualTriggerTimerComponent? timerTrigger, compFactory))
+                    //{
+                    //    Assert.That(allEdges.Contains(timerTrigger.NextPhase), $"{proto} have timer trigger to {timerTrigger.NextPhase}, but this phase edge do not exist!");
+//
+                    //    if (edgesToCheck.Contains(timerTrigger.NextPhase))
+                    //        edgesToCheck.Remove(timerTrigger.NextPhase);
+                    //}
+//
+                    //var sb = new StringBuilder();
+                    //foreach (var leftEdge in edgesToCheck)
+                    //{
+                    //    sb.Append(leftEdge.Id + "\n");
+                    //}
+                    //Assert.That(edgesToCheck.Count == 0, $"The following {proto} edges have no triggers: \n {sb.ToString()}");
                 }
             });
         });

@@ -1,7 +1,5 @@
-using System.Text.RegularExpressions;
-using Content.Server._CP14.MagicRituals.Components.Triggers;
-using Content.Server.Speech;
 using Content.Shared._CP14.MagicRitual;
+using Content.Shared._CP14.MagicRitual.Triggers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicRituals;
@@ -10,26 +8,27 @@ public sealed partial class CP14RitualSystem
 {
     private void InitializeTriggers()
     {
-        SubscribeLocalEvent<CP14MagicRitualComponent, ListenEvent>(OnRitualListen);
-
-        SubscribeLocalEvent<CP14RitualTriggerTimerComponent, CP14RitualPhaseBoundEvent>(OnTimeTriggerBound);
-    }
-
-    private void OnRitualListen(Entity<CP14MagicRitualComponent> ent, ref ListenEvent args)
-    {
-        if (ent.Comp.CurrentPhase is null)
-            return;
-
-        if (!TryComp<CP14RitualTriggerVoiceComponent>(ent.Comp.CurrentPhase, out var voiceTrigger))
-            return;
-
-        PhaseProxyListen((ent.Comp.CurrentPhase.Value, voiceTrigger), ref args);
     }
 
     private void UpdateTriggers(float frameTime)
     {
-        TimerUpdate();
-        VoiceUpdate();
+        var query = EntityQueryEnumerator<CP14MagicRitualPhaseComponent>();
+        while (query.MoveNext(out var uid, out var phase))
+        {
+            foreach (var edge in phase.Edges)
+            {
+                foreach (var trigger in edge.Triggers)
+                {
+                    if (trigger is not TimerTrigger timerTrigger)
+                        continue;
+
+                    if (_timing.CurTime < timerTrigger.TriggerTime)
+                        continue;
+
+                    TriggerRitualPhase((uid, phase), timerTrigger.Phase);
+                }
+            }
+        }
     }
 
     private void TriggerRitualPhase(Entity<CP14MagicRitualPhaseComponent> ent, EntProtoId nextPhase)
@@ -37,126 +36,4 @@ public sealed partial class CP14RitualSystem
         var evConfirmed = new CP14RitualTriggerEvent(nextPhase);
         RaiseLocalEvent(ent, evConfirmed);
     }
-
-    #region Trigger timer
-
-    private void OnTimeTriggerBound(Entity<CP14RitualTriggerTimerComponent> ent, ref CP14RitualPhaseBoundEvent args)
-    {
-        if (!TryComp<CP14MagicRitualComponent>(args.Ritual, out var ritualComp))
-            return;
-
-        var time = ent.Comp.Time.Next(_random);
-        ritualComp.TriggerTime = _timing.CurTime + TimeSpan.FromSeconds(time);
-    }
-
-    private void TimerUpdate()
-    {
-        var query = EntityQueryEnumerator<CP14MagicRitualComponent>();
-        while (query.MoveNext(out var uid, out var ritual))
-        {
-            if (_timing.CurTime < ritual.TriggerTime || ritual.TriggerTime == TimeSpan.Zero)
-                continue;
-
-            if (ritual.CurrentPhase is null)
-                continue;
-
-            ritual.TriggerTime = TimeSpan.Zero;
-
-            if (!TryComp<CP14RitualTriggerTimerComponent>(ritual.CurrentPhase.Value, out var timerTrigger))
-                continue;
-
-            TriggerRitualPhase(ritual.CurrentPhase.Value, timerTrigger.NextPhase);
-        }
-    }
-
-    #endregion
-
-    #region Trigger voice
-
-    private void VoiceUpdate()
-    {
-        var query = EntityQueryEnumerator<CP14RitualTriggerVoiceComponent, CP14MagicRitualPhaseComponent>();
-        while (query.MoveNext(out var uid, out var voice, out var phase))
-        {
-            if (voice.EndWindowTime == TimeSpan.Zero)
-                continue;
-
-            if (_timing.CurTime < voice.EndWindowTime)
-                continue;
-
-            voice.EndWindowTime = TimeSpan.Zero;
-            voice.Speakers.Clear();
-            voice.SelectedWindowPhase = null;
-            VoiceTriggerFailAttempt((uid, voice), phase);
-        }
-    }
-
-    private void PhaseProxyListen(Entity<CP14RitualTriggerVoiceComponent> ent, ref ListenEvent args)
-    {
-        if (!TryComp<CP14MagicRitualPhaseComponent>(ent, out var phase))
-            return;
-
-        // Lowercase the phrase and remove all punctuation marks
-        var message = Regex.Replace(args.Message.Trim().ToLower(), @"[^\w\s]", "");
-
-        var triggered = false;
-        foreach (var trigger in ent.Comp.Triggers)
-        {
-            var triggerMessage = Regex.Replace(trigger.Message.ToLower(), @"[^\w\s]", "");
-
-            if (triggerMessage != message)
-                continue;
-
-            triggered = true;
-
-            if (trigger.Speakers > 1)
-            {
-                // Add new speaker (ignore repeating)
-                if (ent.Comp.Speakers.Contains(args.Source))
-                {
-                    VoiceTriggerFailAttempt(ent, phase);
-                    break;
-                }
-
-                if (ent.Comp.SelectedWindowPhase is not null && ent.Comp.SelectedWindowPhase != trigger.TargetPhase)
-                {
-                    VoiceTriggerFailAttempt(ent, phase);
-                    break;
-                }
-
-                ent.Comp.Speakers.Add(args.Source);
-
-                //If first - start timer
-                if (ent.Comp.Speakers.Count == 1)
-                {
-                    ent.Comp.SelectedWindowPhase = trigger.TargetPhase;
-                    ent.Comp.EndWindowTime = _timing.CurTime + ent.Comp.WindowSize;
-                }
-
-                if (ent.Comp.Speakers.Count < trigger.Speakers)
-                    continue;
-            }
-
-            TriggerRitualPhase((ent.Owner,phase), trigger.TargetPhase);
-            break;
-        }
-
-        if (!triggered)
-            VoiceTriggerFailAttempt(ent, phase);
-    }
-
-    private void VoiceTriggerFailAttempt(Entity<CP14RitualTriggerVoiceComponent> ent, CP14MagicRitualPhaseComponent phase)
-    {
-        if (ent.Comp.FailAttempts is null)
-            return;
-
-        ent.Comp.FailAttempts -= 1;
-
-        if (phase.Ritual is not null)
-            ChangeRitualStability(phase.Ritual.Value, -ent.Comp.FailTriggerStabilityCost);
-
-        if (ent.Comp.FailAttempts <= 0 && ent.Comp.FailedPhase is not null)
-            TriggerRitualPhase((ent.Owner,phase), ent.Comp.FailedPhase.Value);
-    }
-    #endregion
 }
