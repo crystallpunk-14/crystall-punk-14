@@ -10,13 +10,3 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
-
-- type: damageModifierSet
-  id: CP14Zombie
-  coefficients:
-    Blunt: 0.7
-    Slash: 0.9
-    Piercing: 0.6
-    Heat: 1.5
-    Cold: 0.4
-    Poison: 0

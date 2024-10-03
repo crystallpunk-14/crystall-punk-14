@@ -47,7 +47,7 @@
     defaultRotation: 90
     horizontalRotation: 90
   - type: Inventory
-    templateId: CP14mannequin
+    templateId: CP14Partial
   - type: InventorySlots
   - type: ContainerContainer
   - type: Fixtures

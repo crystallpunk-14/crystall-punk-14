@@ -1,5 +1,5 @@
 - type: entity
-  name: Walking Dead
+  name: walking dead spawner
   id: CP14SpawnMobUndeadZombie
   parent: CP14MarkerBase
   components:
