@@ -51,65 +51,6 @@
         acts: [ "Destruction" ]
   - type: CP14WallpaperHolder
 
-- type: entity ### Crushed Medium
-  id: CP14WallStonebrickCrushedMedium
-  name: stone brick wall
-  parent: CP14BaseCrushed
-  suffix: CrushedMedium
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-    state: crushed_medium
-  - type: Icon
-    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-    state: crushed_medium
-  - type: Transform
-    anchored: true
-    noRot: false
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14WallStonebrickCrushedLow:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-
-- type: entity ### Crushed Low
-  id: CP14WallStonebrickCrushedLow
-  name: stone brick wall
-  parent: CP14BaseCrushed
-  suffix: CrushedLow
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-    state: crushed_low
-  - type: Icon
-    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-    state: crushed_low
-  - type: Transform
-    anchored: true
-    noRot: false
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-
 - type: entity
   id: CP14WallWhitebrick
   name: white brick wall
@@ -166,6 +107,11 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14FrameWooden:
+            min: 1
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
@@ -194,6 +140,11 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14FrameWooden:
+            min: 1
+            max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction

@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - BaseStructure
   id: CP14BaseWorkbench
   abstract: true
@@ -104,6 +104,11 @@
   name: sewing table
   description: A table with embroidery tools to create different clothing and materials.
   components:
+  - type: Sprite
+    snapCardinals: true
+    state: sewing_table
+  - type: Icon
+    state: sewing_table
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing #TODO
