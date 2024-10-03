@@ -16,9 +16,9 @@
     quickInsert: true
     areaInsert: false
     storageOpenSound:
-      collection: trashBagRustle #TODO
+      collection: storageRustle
     storageInsertSound:
-      collection: trashBagRustle #TODO
+      collection: storageRustle
     whitelist:
       tags:
         - CP14Coin
