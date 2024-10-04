@@ -153,6 +153,11 @@
   name: rough quartz
   description: a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.
   components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _CP14/Structures/crystal.rsi
     layers:
