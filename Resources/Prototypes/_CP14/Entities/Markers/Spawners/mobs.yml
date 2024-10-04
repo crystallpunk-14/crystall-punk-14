@@ -1,0 +1,14 @@
+- type: entity
+  name: walking dead spawner
+  id: CP14SpawnMobUndeadZombie
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: full
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobUndeadZombie

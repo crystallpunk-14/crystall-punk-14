@@ -1,0 +1,12 @@
+- type: entity
+  id: CP14MobUndeadZombie
+  parent: CP14BaseMobZombie
+  name: walking dead
+  description: A reanimated rotting body of a dead man wanting to devour the living.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile

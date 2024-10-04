@@ -1,0 +1,154 @@
+- type: species
+  id: CP14Zombie
+  name: cp14-species-name-human
+  roundStart: false
+  prototype: CP14BaseMobZombie
+  sprites: CP14MobZombieSprites
+  markingLimits: MobHumanMarkingLimits
+  dollPrototype: CP14MobZombieDummy
+  skinColoration: TintedHues
+  defaultSkinTone: "#ffffff"
+  maleFirstNames: CP14_Names_Human_Male_First
+  femaleFirstNames: CP14_Names_Human_Female_First
+  lastNames: CP14_Names_Human_Last
+
+- type: speciesBaseSprites
+  id: CP14MobZombieSprites
+  sprites:
+    Head: CP14MobZombieHead
+    Chest: CP14MobZombieTorso
+    Eyes: CP14MobZombieEyes
+    LArm: CP14MobZombieLArm
+    RArm: CP14MobZombieRArm
+    LHand: CP14MobZombieLHand
+    RHand: CP14MobZombieRHand
+    LLeg: CP14MobZombieLLeg
+    RLeg: CP14MobZombieRLeg
+    LFoot: CP14MobZombieLFoot
+    RFoot: CP14MobZombieRFoot
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieEyes
+  baseSprite:
+    sprite: _CP14/Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieHead
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieHeadFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieTorso
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieTorsoFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLLegFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLArmFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLHandFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieLFootFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRLegFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRArmFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRHandFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: r_foot
+
+- type: humanoidBaseSprite
+  id: CP14MobZombieRFootFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Zombie/female_parts.rsi
+    state: r_foot
