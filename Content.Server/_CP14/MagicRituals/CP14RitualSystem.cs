@@ -131,7 +131,7 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         {
             foreach (var trigger in edge.Triggers)
             {
-                trigger.Initialize(EntityManager, (newPhaseEnt, newPhaseComp));
+                trigger.Initialize(EntityManager, ritual);
             }
         }
 
