@@ -133,7 +133,7 @@
     loot:
       All: CP14GatherWildSage
       
-# Wild sage
+# LumiMushroom
 
 - type: entityLootTable
   id: CP14GatherLumiMushroom
@@ -170,3 +170,37 @@
   - type: Gatherable
     loot:
       All: CP14GatherLumiMushroom
+
+# Blue amanita
+
+- type: entityLootTable
+  id: CP14GatherBlueAmanita
+  entries:
+  - id: CP14BlueAmanita
+    amount: 1
+    maxAmount: 1
+
+- type: entity
+  id: CP14GatherableBlueAmanita
+  parent: CP14GatherableWildBase
+  name: blue Amanita
+  description: A sky blue flower known for its medicinal and magical properties.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Flora/Wild/blue_amanita.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+        world4: ""
+        world5: ""
+  - type: Gatherable
+    loot:
+      All: CP14GatherBlueAmanita

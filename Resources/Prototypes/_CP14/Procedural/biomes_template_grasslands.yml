@@ -116,6 +116,24 @@
         - CP14FloorGrassTall
       entities:
         - CP14GatherableFlowersYellow
+    - !type:BiomeEntityLayer # BLue amanita
+      threshold: 0.7
+      noise:
+        seed: 67
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.038
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      entities:
+        - CP14GatherableBlueAmanita
     - !type:BiomeEntityLayer # Tall grass!
       threshold: 0.3
       noise:
