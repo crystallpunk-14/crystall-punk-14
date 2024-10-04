@@ -54,17 +54,6 @@
     state: plate3
 
 - type: foodSequenceElement
-  id: CP14PlateBloodgrass
-  name: cp14-food-sequence-plate-grass
-  sprites:
-  - sprite: _CP14/Objects/Flora/Wild/bloodgrass.rsi
-    state: plate1
-  - sprite: _CP14/Objects/Flora/Wild/bloodgrass.rsi
-    state: plate2
-  - sprite: _CP14/Objects/Flora/Wild/bloodgrass.rsi
-    state: plate3
-
-- type: foodSequenceElement
   id: CP14PlateChromiumSlime
   name: cp14-food-sequence-plate-slime
   sprites:

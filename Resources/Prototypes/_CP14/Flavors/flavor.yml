@@ -25,6 +25,11 @@
   flavorType: Base
   description: cp14-flavor-base-stinging
 
+- type: flavor
+  id: CP14Magic
+  flavorType: Base
+  description: cp14-flavor-base-magic
+
 # Complex
 
 - type: flavor

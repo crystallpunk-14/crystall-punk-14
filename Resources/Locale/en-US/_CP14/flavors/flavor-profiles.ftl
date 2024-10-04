@@ -5,6 +5,7 @@ cp14-flavor-base-invigorating = invigorating
 cp14-flavor-base-bitterly = bitter
 cp14-flavor-base-sweetly = sweet
 cp14-flavor-base-stinging = stinging
+cp14-flavor-base-magic = magical
 
 # Complex
 

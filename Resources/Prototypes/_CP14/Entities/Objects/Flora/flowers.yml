@@ -21,27 +21,6 @@
         base2: ""
 
 - type: entity
-  id: CP14FlowersRed
-  parent: CP14FlowersBase
-  name: red rose
-  description: Beautiful red roses. Can be used to create red dye.
-  components:
-  - type: Sprite
-    sprite: _CP14/Objects/Flora/Flowers/red_rose.rsi
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14RedRosePulp
-        Quantity: 4
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: CP14RedRosePulp
-          Quantity: 4
-
-- type: entity
   id: CP14FlowersYellow
   parent: CP14FlowersBase
   name: yellow dayflin

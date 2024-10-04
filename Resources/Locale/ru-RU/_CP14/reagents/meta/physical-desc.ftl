@@ -5,3 +5,4 @@ cp14-reagent-physical-desc-viscous = вязкое
 cp14-reagent-physical-desc-cloudy = мутное
 cp14-reagent-physical-desc-sparkling = искрящееся
 cp14-reagent-physical-desc-pureed = пюреобразное
+cp14-reagent-physical-desc-iridescent = переливчатое

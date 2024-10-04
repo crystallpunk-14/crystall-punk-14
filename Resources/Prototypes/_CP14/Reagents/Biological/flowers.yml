@@ -1,14 +1,4 @@
 - type: reagent
-  id: CP14RedRosePulp
-  group: CP14Biological
-  name: cp14-reagent-name-red-rose-pulp
-  desc: cp14-reagent-desc-red-rose-pulp
-  flavor: CP14Sweetly
-  color: "#d74722"
-  physicalDesc: cp14-reagent-physical-desc-pureed
-  slippery: false
-
-- type: reagent
   id: CP14YellowDayflinPulp
   group: CP14Biological
   name: cp14-reagent-name-yellow-dayflin-pulp

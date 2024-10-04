@@ -1,8 +1,8 @@
 - type: reagent
-  id: CP14BloodGrassSap
+  id: CP14BloodFlowerSap
   group: CP14Biological
-  name: cp14-reagent-name-bloodgrasssap
-  desc: cp14-reagent-desc-bloodgrasssap
+  name: cp14-reagent-name-bloodflowersap
+  desc: cp14-reagent-desc-bloodflowersap
   flavor: CP14Metallic
   color: "#5c1f0a"
   physicalDesc: cp14-reagent-physical-desc-ferrous
@@ -126,3 +126,24 @@
         type: Add
         time: 6
         refresh: false
+
+- type: reagent
+  id: CP14BlueAmanita
+  group: CP14Biological
+  name: cp14-reagent-name-blue-amanita
+  desc: cp14-reagent-desc-blue-amanita
+  flavor: CP14Magic
+  color: "#6bb4bf"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 0.5
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.1
+

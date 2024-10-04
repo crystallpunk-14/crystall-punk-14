@@ -39,3 +39,9 @@ cp14-reagent-desc-basic-drunk = A substance that causes dizziness and slurred sp
 
 cp14-reagent-name-basic-jitter = Jitter solution
 cp14-reagent-desc-basic-jitter = A substance that causes uncontrollable but safe spasms throughout the body.
+
+cp14-reagent-name-basic-heal-mana = Liquid mana solution
+cp14-reagent-desc-basic-heal-mana = A substance that causes a rapid regeneration of magical energy in the body.
+
+cp14-reagent-name-basic-damage-mana = Antimagic solution
+cp14-reagent-desc-basic-damage-mana = A substance that rapidly drains all magical energy from the body.

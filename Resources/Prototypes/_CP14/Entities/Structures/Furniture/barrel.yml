@@ -153,15 +153,15 @@
           Quantity: 300
 
 - type: entity
-  id: CP14BarrelBloodGrassSap
+  id: CP14BarrelBloodFlowerSap
   parent: CP14BaseBarrel
-  suffix: Bloodgrass sap
+  suffix: Bloodflower sap
   components:
   - type: SolutionContainerManager
     solutions:
       barrel:
         reagents:
-        - ReagentId: CP14BloodGrassSap
+        - ReagentId: CP14BloodFlowerSap
           Quantity: 300
 
 - type: entity

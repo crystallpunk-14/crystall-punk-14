@@ -5,6 +5,7 @@ cp14-flavor-base-invigorating = живительно
 cp14-flavor-base-bitterly = горько
 cp14-flavor-base-sweetly = сладко
 cp14-flavor-base-stinging = жгущее
+cp14-flavor-base-magic = волшебно
 
 # Complex
 
