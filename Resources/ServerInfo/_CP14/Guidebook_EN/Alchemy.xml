@@ -12,7 +12,7 @@ The produced substances, your character as a mercenary, can use for anything. Se
 A large number of “raw” substances can be found in the world. The juices of plants, the blood of living creatures, or even crushed crystals. A skilled alchemist can transform these, to most people, useless items into something valuable.
 
 <Box>
-<GuideEntityEmbed Entity="CP14BloodGrass"/>
+<GuideEntityEmbed Entity="CP14BlueAmanita"/>
 <GuideEntityEmbed Entity="CP14AgaricMushroom"/>
 <GuideEntityEmbed Entity="CP14ChromiumSlime"/>
 </Box>

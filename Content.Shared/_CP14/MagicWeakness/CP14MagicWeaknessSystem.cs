@@ -20,7 +20,10 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicUnsafeDamageComponent, CP14MagicEnergyBurnOutEvent>(OnMagicEnergyBurnOutDamage);
+        SubscribeLocalEvent<CP14MagicUnsafeDamageComponent, CP14MagicEnergyOverloadEvent>(OnMagicEnergyOverloadDamage);
+
         SubscribeLocalEvent<CP14MagicUnsafeSleepComponent, CP14MagicEnergyBurnOutEvent>(OnMagicEnergyBurnOutSleep);
+        SubscribeLocalEvent<CP14MagicUnsafeSleepComponent, CP14MagicEnergyOverloadEvent>(OnMagicEnergyOverloadSleep);
     }
 
     private void OnMagicEnergyBurnOutSleep(Entity<CP14MagicUnsafeSleepComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
@@ -35,9 +38,27 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
         }
     }
 
+    private void OnMagicEnergyOverloadSleep(Entity<CP14MagicUnsafeSleepComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    {
+        if (args.OverloadEnergy > ent.Comp.SleepThreshold)
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out-fall"), ent, ent, PopupType.LargeCaution);
+            _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(ent,
+                StatusEffectKey,
+                TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.OverloadEnergy),
+                false);
+        }
+    }
+
     private void OnMagicEnergyBurnOutDamage(Entity<CP14MagicUnsafeDamageComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
     {
         _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out"), ent, ent, PopupType.LargeCaution);
         _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.BurnOutEnergy);
+    }
+
+    private void OnMagicEnergyOverloadDamage(Entity<CP14MagicUnsafeDamageComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    {
+        _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-overload"), ent, ent, PopupType.LargeCaution);
+        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.OverloadEnergy);
     }
 }

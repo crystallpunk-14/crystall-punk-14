@@ -279,7 +279,7 @@
       - id: CP14Nail10
         prob: 0.2
         onGroup: Material
-      - id: CP14BloodGrass
+      - id: CP14BloodFlower
         prob: 0.2
         onGroup: Material
       - id: CP14AgaricMushroom
@@ -306,7 +306,7 @@
       - id: CP14Dropper
         prob: 0.2
         onGroup: Material
-      - id: CP14VialSmallBloodgrassSap
+      - id: CP14VialSmallBloodFlowerSap
         prob: 0.2
         onGroup: Material
       - id: CP14VialSmallAgaricMushroom

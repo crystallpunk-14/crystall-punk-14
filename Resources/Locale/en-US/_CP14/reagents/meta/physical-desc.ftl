@@ -5,3 +5,4 @@ cp14-reagent-physical-desc-viscous = viscous
 cp14-reagent-physical-desc-cloudy = cloudy
 cp14-reagent-physical-desc-sparkling = sparkling
 cp14-reagent-physical-desc-pureed = pureed
+cp14-reagent-physical-desc-iridescent = iridescent

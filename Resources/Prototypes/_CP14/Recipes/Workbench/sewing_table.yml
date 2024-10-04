@@ -257,6 +257,6 @@
   tag: CP14RecipeSewing
   craftTime: 2
   entities:
-    CP14FlowersRed: 2
+    CP14BloodFlower: 2
     CP14FlowersYellow: 2
   result: CP14ClothingHeadWreath

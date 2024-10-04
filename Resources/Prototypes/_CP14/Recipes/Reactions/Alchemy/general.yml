@@ -1,6 +1,5 @@
-
 - type: reaction
-  id: CP14MeltingFail
+  id: CP14OverbrewingFail
   minTemp: 800
   reactants:
     CP14BasicEffectEmpty:

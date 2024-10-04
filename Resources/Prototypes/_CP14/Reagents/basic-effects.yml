@@ -135,6 +135,34 @@
           types:
             Cold: 10
 
+- type: reagent
+  id: CP14BasicEffectHealMana
+  name: cp14-reagent-name-basic-heal-mana
+  desc: cp14-reagent-desc-basic-heal-mana
+  group: CP14BasicEffect
+  flavor: CP14Magic
+  color: "#1497e3"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 10
+
+- type: reagent
+  id: CP14BasicEffectDamageMana
+  name: cp14-reagent-name-basic-damage-mana
+  desc: cp14-reagent-desc-basic-damage-mana
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#6014e3"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Poison:
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: -10
+
 # USELESS
 # Things that don't directly affect gameplay.
 

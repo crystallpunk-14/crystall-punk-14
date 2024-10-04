@@ -10,8 +10,8 @@ cp14-reagent-desc-blood-elf = The life energy of a magical creature.
 cp14-reagent-name-blood-goblin = Goblin blood
 cp14-reagent-desc-blood-goblin = The life energy of green-skinned creatures.
 
-cp14-reagent-name-bloodgrasssap = Bloodgrass sap
-cp14-reagent-desc-bloodgrasssap = A squeeze from the ubiquitous blood grass. It has no particular remarkable qualities, but with proper skill can be prepared into a nutritious food.
+cp14-reagent-name-bloodflowersap = Bloodrose nectar
+cp14-reagent-desc-bloodflowersap = The nectar of the bloody flowers that grow in former battlefields. When properly mixed with blood, it can produce interesting results.
 
 cp14-reagent-name-agaric-shroom = Fly agaric juice
 cp14-reagent-desc-agaric-shroom = It is this juice that the fly mushrooms owe their poisonousness to. Consumption causes severe ailments and hallucinations, but experienced alchemists can find other uses for these mushrooms.
@@ -25,11 +25,11 @@ cp14-reagent-desc-wild-sage-sap = Juice of a ubiquitous medicinal plant, not bad
 cp14-reagent-name-grounded-quartz = Ground quartz
 cp14-reagent-desc-grounded-quartz = A powder obtained from grinding quartz fragments. It has weak cleaning properties.
 
+cp14-reagent-name-blue-amanita = Blue amanita
+cp14-reagent-desc-blue-amanita = A sky blue flower known for its medicinal and magical properties.
+
 cp14-reagent-name-lumi-shroom = Lumishroom sap
 cp14-reagent-desc-lumi-shroom = A faintly shimmering slurry extracted from lumigrib. Often used by alchemists as a means of concentrating solutions.
-
-cp14-reagent-name-yellow-red-rose-pulp = Red rose pulp
-cp14-reagent-desc-yellow-red-rose-pulp = Crushed red rose petals
 
 cp14-reagent-name-yellow-dayflin-pulp = Yellow dayfline pulp
 cp14-reagent-desc-yellow-dayflin-pulp = Crushed flowers of sunny dayflines

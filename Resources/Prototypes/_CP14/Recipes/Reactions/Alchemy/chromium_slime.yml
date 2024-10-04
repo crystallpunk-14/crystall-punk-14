@@ -30,5 +30,8 @@
       CP14BasicEffectSatiateThirst: CP14BasicEffectSatiateHunger
       CP14BasicEffectVomit: CP14BasicEffectSatiateThirst
       #
+      CP14BasicEffectDamageMana: CP14BasicEffectHealMana
+      CP14BasicEffectHealMana: CP14BasicEffectDamageMana
+      #
       #CP14BasicEffectRainbow: 
       #CP14BasicEffectEmoteCough:

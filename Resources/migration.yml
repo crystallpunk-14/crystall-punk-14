@@ -8,12 +8,6 @@ CP14CaveStoneWall: CP14WallStone
 CP14CaveStoneWallSilverOre: null
 CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
 
-# 2024-06-07
-CP14GatherableBloodgrass2: CP14GatherableBloodgrass
-CP14GatherableBloodgrass3: CP14GatherableBloodgrass
-CP14GatherableBloodgrass4: CP14GatherableBloodgrass
-CP14GatherableBloodgrass5: CP14GatherableBloodgrass
-
 # 2024-06-10
 CP14ClothingCloakHoodieYellow: CP14ClothingCloakSimpleWhite
 CP14ClothingPantsHarlequinRed: CP14ClothingPantsTrouserDarkBlue
@@ -100,6 +94,13 @@ CP14ClothingHeadMercenaryBeret: CP14ClothingHeadBeretMercenary
 CP14MeltingMoldBlank: null
 CP14WorkbenchMeltingMolds: null
 
+#2024-10-04
+CP14BloodGrass: CP14BloodFlower
+CP14FlowersRed: CP14BloodFlower
+CP14GatherableBloodgrass: CP14GatherableBloodFlower
+CP14GatherableFlowersRed: CP14GatherableBloodFlower
+CP14VialSmallBloodgrassSap: CP14VialSmallBloodFlowerSap
+CP14BarrelBloodGrassSap: CP14BarrelBloodFlowerSap
 # <---> CrystallPunk migration zone end
 
 
