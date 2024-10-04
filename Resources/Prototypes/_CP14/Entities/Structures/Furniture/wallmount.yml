@@ -177,4 +177,3 @@
     - map: ["enum.StorageFillLayers.Fill"]
   - type: StorageFillVisualizer
     fillBaseName: bottleB
-
