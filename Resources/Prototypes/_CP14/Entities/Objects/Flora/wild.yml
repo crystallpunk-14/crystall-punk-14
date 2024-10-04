@@ -36,9 +36,6 @@
         reagents:
         - ReagentId: CP14BloodFlowerSap
           Quantity: 5
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateBloodFlower
 
 - type: entity
   id: CP14AgaricMushroom
