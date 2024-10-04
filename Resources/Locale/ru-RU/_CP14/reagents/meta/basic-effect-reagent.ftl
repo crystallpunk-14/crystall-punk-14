@@ -44,4 +44,4 @@ cp14-reagent-name-basic-heal-mana = Раствор жидкой маны
 cp14-reagent-desc-basic-heal-mana = Вещество, вызывающее бурную регенерацию магической энергии в организме.
 
 cp14-reagent-name-basic-damage-mana = Раствор антимагии
-cp14-reagent-desc-basic-damage-mana = Вещество, стремительно выжишающее всю магическую энергию из организма.
+cp14-reagent-desc-basic-damage-mana = Вещество, стремительно выжигающее всю магическую энергию из организма.
