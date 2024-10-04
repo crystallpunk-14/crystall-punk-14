@@ -10,4 +10,4 @@ cp14-ritual-trigger-voice = После произнесения заклинан
         *[other], как минимум {$count} разными сущностями одновременно
     }
 
-cp14-ritual-trigger-voice-limits = В результате ошибок произнесения заклинаний.
+cp14-ritual-trigger-failure = В результате различных ошибок.
