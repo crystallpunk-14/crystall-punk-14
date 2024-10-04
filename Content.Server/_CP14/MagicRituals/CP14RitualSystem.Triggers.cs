@@ -32,7 +32,7 @@ public sealed partial class CP14RitualSystem
 
                 var triggerMessage = Regex.Replace(voiceTrigger.Message.ToLower(), @"[^\w\s]", "");
 
-                if (voiceTrigger.Message != args.Message)
+                if (triggerMessage != message)
                     continue;
 
                 TriggerRitualPhase(phase, edge.Target);
