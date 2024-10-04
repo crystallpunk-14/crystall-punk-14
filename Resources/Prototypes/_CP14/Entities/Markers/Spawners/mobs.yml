@@ -1,7 +1,7 @@
 - type: entity
   name: walking dead spawner
   id: CP14SpawnMobUndeadZombie
-  parent: CP14MarkerBase
+  parent: MarkerBase
   components:
   - type: Sprite
     layers:

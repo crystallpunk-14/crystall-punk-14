@@ -46,10 +46,6 @@
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
-  - type: Inventory
-    templateId: CP14Partial
-  - type: InventorySlots
-  - type: ContainerContainer
   - type: Fixtures
     fixtures:
       fix1:
@@ -96,6 +92,26 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+  - type: InventorySlots
+  - type: ContainerContainer
+  - type: Inventory
+    templateId: CP14Partial
+    femaleDisplacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
 
 - type: entity
   parent: CP14BaseSpeciesDummy
@@ -106,3 +122,24 @@
     species: CP14Zombie
   - type: Inventory
     templateId: CP14Partial
+    femaleDisplacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak #Its ok for gloves
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
