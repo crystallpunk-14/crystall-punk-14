@@ -14,7 +14,7 @@
   reactants:
     CP14BasicEffectDamagePoison:
       amount: 0.5
-    CP14BloodGrassSap:
+    CP14BloodFlowerSap:
       amount: 0.5
   products:
     CP14BasicEffectDamageBrute: 0.5

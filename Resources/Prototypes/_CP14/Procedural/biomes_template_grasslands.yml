@@ -101,24 +101,6 @@
     - !type:BiomeEntityLayer # flowers
       threshold: 0.7
       noise:
-        seed: 45
-        noiseType: OpenSimplex2
-        fractalType: Ridged
-        frequency: 0.035
-        octaves: 3
-        lacunarity: 1.8
-        gain: 0.7
-        domainWarpType: OpenSimplex2
-        domainWarpAmp: 120
-      allowedTiles:
-        - CP14FloorGrass
-        - CP14FloorGrassLight
-        - CP14FloorGrassTall
-      entities:
-        - CP14GatherableFlowersRed
-    - !type:BiomeEntityLayer # flowers
-      threshold: 0.7
-      noise:
         seed: 34
         noiseType: OpenSimplex2
         fractalType: Ridged
@@ -159,6 +141,8 @@
         frequency: 2
       allowedTiles:
         - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
       entities: 
         - CP14FloraTree01
         - CP14FloraTree02
@@ -186,8 +170,10 @@
         domainWarpAmp: 120
       allowedTiles:
         - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
       entities:
-        - CP14GatherableBloodgrass
+        - CP14GatherableBloodFlower
     - !type:BiomeEntityLayer # Rare Wild sage
       threshold: 0.6
       noise:
@@ -204,22 +190,6 @@
         - CP14FloorGrass
       entities:
         - CP14GatherableWildSage
-    - !type:BiomeEntityLayer # Mobs and aura
-      threshold: 0.8
-      noise:
-        seed: 8
-        noiseType: OpenSimplex2
-        fractalType: Ridged
-        frequency: 0.85
-        octaves: 3
-        lacunarity: 1.8
-        gain: 0.7
-        domainWarpType: OpenSimplex2
-        domainWarpAmp: 120
-      allowedTiles:
-        - CP14FloorGrass
-      entities:
-        - CP14AuraNodeBase
 
 # Подбиомы лугов
 

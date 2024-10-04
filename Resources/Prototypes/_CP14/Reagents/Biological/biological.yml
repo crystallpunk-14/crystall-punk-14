@@ -1,8 +1,8 @@
 - type: reagent
-  id: CP14BloodGrassSap
+  id: CP14BloodFlowerSap
   group: CP14Biological
-  name: cp14-reagent-name-bloodgrasssap
-  desc: cp14-reagent-desc-bloodgrasssap
+  name: cp14-reagent-name-bloodflowersap
+  desc: cp14-reagent-desc-bloodflowersap
   flavor: CP14Metallic
   color: "#5c1f0a"
   physicalDesc: cp14-reagent-physical-desc-ferrous

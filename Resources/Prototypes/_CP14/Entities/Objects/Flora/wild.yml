@@ -1,8 +1,8 @@
 - type: entity
-  id: CP14BloodGrass
+  id: CP14BloodFlower
   parent: FoodProduceBase
-  name: bloodgrass
-  description: The dullest and most common plant to be found in the wild is the dark brown grass. Known for its nutritional properties.
+  name: blood rose
+  description: Scarlet flowers growing where blood has been spilled.
   components:
   - type: Tag
     tags:
@@ -12,7 +12,7 @@
     size: Tiny
   - type: Produce
   - type: Sprite
-    sprite: _CP14/Objects/Flora/Wild/bloodgrass.rsi
+    sprite: _CP14/Objects/Flora/Flowers/red_rose.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -21,27 +21,24 @@
     - random:
         base1: ""
         base2: ""
-        base3: ""
-        base4: ""
-        base5: ""
   - type: FlavorProfile
     flavors:
       - CP14Metallic
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: CP14BloodGrassSap
+      - ReagentId: CP14BloodFlowerSap
         Quantity: 5
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 8
         reagents:
-        - ReagentId: CP14BloodGrassSap
+        - ReagentId: CP14BloodFlowerSap
           Quantity: 5
   - type: FoodSequenceElement
     entries:
-      CP14Plate: CP14PlateBloodgrass
+      CP14Plate: CP14PlateBloodFlower
 
 - type: entity
   id: CP14AgaricMushroom

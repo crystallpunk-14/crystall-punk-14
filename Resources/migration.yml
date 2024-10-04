@@ -100,6 +100,12 @@ CP14ClothingHeadMercenaryBeret: CP14ClothingHeadBeretMercenary
 CP14MeltingMoldBlank: null
 CP14WorkbenchMeltingMolds: null
 
+#2024-10-04
+CP14BloodGrass: CP14BloodFlower
+CP14FlowersRed: CP14BloodFlower
+CP14GatherableBloodgrass: CP14GatherableBloodFlower
+CP14GatherableFlowersRed: CP14GatherableBloodFlower
+
 # <---> CrystallPunk migration zone end
 
 

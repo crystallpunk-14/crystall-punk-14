@@ -1,37 +1,35 @@
 
-# Bloodgrass
+# BloodFlower
 
 - type: entityLootTable
-  id: CP14GatherBloodgrass
+  id: CP14GatherBloodFlower
   entries:
-  - id: CP14BloodGrass
+  - id: CP14BloodFlower
     amount: 1
     maxAmount: 1
 
 - type: entity
-  id: CP14GatherableBloodgrass
+  id: CP14GatherableBloodFlower
   parent: CP14GatherableWildBase
-  name: bloodgrass
-  description: The dullest and most common plant to be found in the wild is the dark brown grass.
+  name: blood rose
+  description: Scarlet flowers growing where blood has been spilled.
   suffix: Gatherable
-  components:
+  components: 
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Structures/Flora/Wild/bloodgrass.rsi
+    sprite: _CP14/Structures/Flora/Flowers/red_rose.rsi
     layers:
-      - state: grass1
+      - state: world1
         map: ["random"]
   - type: RandomSprite
     available:
     - random:
-        grass1: ""
-        grass2: ""
-        grass3: ""
-        grass4: ""
-        grass5: ""
+        world1: ""
+        world2: ""
+        world3: ""
   - type: Gatherable
     loot:
-      All: CP14GatherBloodgrass
+      All: CP14GatherBloodFlower
 
 # Fly agaric
 

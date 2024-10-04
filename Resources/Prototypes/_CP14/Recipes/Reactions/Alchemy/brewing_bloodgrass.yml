@@ -1,14 +1,29 @@
 # Idea:
-# bloodgrass is a special reagent that can yield different base reagents, depending on the type of blood it is mixed with.
+# BloodFlower is a special reagent that can yield different base reagents, depending on the type of blood it is mixed with.
 
 - type: reaction
-  id: CP14BloodGrassBrewingBlood
+  id: CP14BloodFlowerBrewing
+  minTemp: 500
+  priority: 1
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    CP14BloodFlowerSap:
+      amount: 10
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -250
+  - !type:CreateEntityReactionEffect
+      entity: CP14DyeRed
+
+- type: reaction
+  id: CP14BloodFlowerBrewingQuartz
   minTemp: 500
   priority: 2
   reactants:
     CP14Blood:
       amount: 0.5
-    CP14BloodGrassSap:
+    CP14BloodFlowerSap:
       amount: 0.5
     CP14GroundQuartz:
       amount: 0.5
@@ -21,13 +36,13 @@
     addTemperature: -250
 
 - type: reaction
-  id: CP14BloodGrassBrewingBloodTiefling
+  id: CP14BloodFlowerBrewingBloodTiefling
   minTemp: 500
   priority: 2
   reactants:
     CP14BloodTiefling:
       amount: 0.5
-    CP14BloodGrassSap:
+    CP14BloodFlowerSap:
       amount: 0.5
     CP14GroundQuartz:
       amount: 0.5
@@ -40,13 +55,13 @@
     addTemperature: -250
 
 - type: reaction
-  id: CP14BloodGrassBrewingBloodElf
+  id: CP14BloodFlowerBrewingBloodElf
   minTemp: 500
   priority: 2
   reactants:
     CP14BloodElf:
       amount: 0.5
-    CP14BloodGrassSap:
+    CP14BloodFlowerSap:
       amount: 0.5
     CP14GroundQuartz:
       amount: 0.5
@@ -59,13 +74,13 @@
     addTemperature: -250
 
 - type: reaction
-  id: CP14BloodGrassBrewingBloodGoblin
+  id: CP14BloodFlowerBrewingBloodGoblin
   minTemp: 500
   priority: 2
   reactants:
     CP14BloodGoblin:
       amount: 0.5
-    CP14BloodGrassSap:
+    CP14BloodFlowerSap:
       amount: 0.5
     CP14GroundQuartz:
       amount: 0.5
