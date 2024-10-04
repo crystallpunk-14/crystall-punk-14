@@ -12,7 +12,7 @@
 В мире можно найти большое количество "сырых" веществ. Соки растений, кровь живых существ, или даже раздробленные кристаллы. Грамотный алхимик может преобразовать эти, для большинства людей, бесполезные предметы, в нечто ценное.
 
 <Box>
-<GuideEntityEmbed Entity="CP14BloodGrass"/>
+<GuideEntityEmbed Entity="CP14BlueAmanita"/>
 <GuideEntityEmbed Entity="CP14AgaricMushroom"/>
 <GuideEntityEmbed Entity="CP14ChromiumSlime"/>
 </Box>
