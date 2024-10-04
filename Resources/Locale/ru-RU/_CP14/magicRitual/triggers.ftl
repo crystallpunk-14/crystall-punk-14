@@ -6,7 +6,7 @@ cp14-ritual-trigger-timer-stable = Автоматически через {$time}
 
 cp14-ritual-trigger-voice = После произнесения заклинания "{$phrase}" 
     { $count ->
-        [1]
+        [1].
         *[other], как минимум {$count} разными сущностями одновременно
     }
 

@@ -20,6 +20,7 @@
         message: "Calidum post meridiem"
         
     - target: CP14RitualEnd
+      triggers:
       - !type:TimerTrigger
         delay: 300
     

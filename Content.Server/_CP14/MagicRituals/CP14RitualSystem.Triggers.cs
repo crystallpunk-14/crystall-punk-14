@@ -1,6 +1,5 @@
 using System.Text.RegularExpressions;
 using Content.Server.Speech;
-using Content.Server.Speech.Components;
 using Content.Shared._CP14.MagicRitual;
 using Content.Shared._CP14.MagicRitual.Triggers;
 using Robust.Shared.Prototypes;
@@ -11,8 +10,6 @@ public sealed partial class CP14RitualSystem
 {
     private void InitializeTriggers()
     {
-        SubscribeLocalEvent<CP14MagicRitualComponent, MapInitEvent>(OnRitualInit);
-
         SubscribeLocalEvent<CP14MagicRitualComponent, ListenEvent>(OnListenEvent);
     }
 
@@ -41,12 +38,6 @@ public sealed partial class CP14RitualSystem
                 TriggerRitualPhase(phase, edge.Target);
             }
         }
-    }
-
-    private void OnRitualInit(Entity<CP14MagicRitualComponent> ent, ref MapInitEvent args)
-    {
-        //Voice init
-        EnsureComp<ActiveListenerComponent>(ent).Range = ent.Comp.RitualRadius;
     }
 
     private void UpdateTriggers(float frameTime)
