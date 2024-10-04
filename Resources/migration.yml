@@ -100,7 +100,7 @@ CP14FlowersRed: CP14BloodFlower
 CP14GatherableBloodgrass: CP14GatherableBloodFlower
 CP14GatherableFlowersRed: CP14GatherableBloodFlower
 CP14VialSmallBloodgrassSap: CP14VialSmallBloodFlowerSap
-
+CP14BarrelBloodGrassSap: CP14BarrelBloodFlowerSap
 # <---> CrystallPunk migration zone end
 
 
