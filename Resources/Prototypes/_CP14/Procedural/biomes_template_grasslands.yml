@@ -156,7 +156,7 @@
         - CP14FloraTreeLarge04
         - CP14FloraTreeLarge05
         - CP14FloraTreeLarge06
-    - !type:BiomeEntityLayer # Rare Bloodgrass
+    - !type:BiomeEntityLayer # Rare Bloodflower
       threshold: 0.7
       noise:
         seed: 3

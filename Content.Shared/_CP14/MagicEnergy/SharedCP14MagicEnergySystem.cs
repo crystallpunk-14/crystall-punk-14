@@ -45,6 +45,14 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
             ("color", color));
     }
 
+    public void ChangeEnergy(EntityUid uid, FixedPoint2 energy, bool safe = false)
+    {
+        if (!TryComp<CP14MagicEnergyContainerComponent>(uid, out var energyContainer))
+            return;
+
+        ChangeEnergy(uid, energyContainer, energy, safe);
+    }
+
     public void ChangeEnergy(EntityUid uid, CP14MagicEnergyContainerComponent component, FixedPoint2 energy, bool safe = false)
     {
         if (!safe)

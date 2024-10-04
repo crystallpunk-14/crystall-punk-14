@@ -143,15 +143,15 @@
 # Filled
 
 - type: entity
-  id: CP14VialSmallBloodgrassSap
+  id: CP14VialSmallBloodFlowerSap
   parent: CP14VialSmall
-  suffix: Bloodgrass sap
+  suffix: Bloodflower sap
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BloodGrassSap
+        - ReagentId: CP14BloodFlowerSap
           Quantity: 10
 
 - type: entity

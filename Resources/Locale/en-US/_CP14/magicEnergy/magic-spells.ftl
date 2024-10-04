@@ -6,7 +6,8 @@ cp14-magic-spell-not-enough-mana-cast-warning-2 = Your hands are shaking...
 cp14-magic-spell-not-enough-mana-cast-warning-3 = Your throat starts to lump...
 cp14-magic-spell-not-enough-mana-cast-warning-4 = Your head becomes heavy...
 
-cp14-magic-energy-damage-burn-out = The pain is piercing your body!
+cp14-magic-energy-damage-burn-out = From the lack of mana, pain pierces your body!
+cp14-magic-energy-damage-overload = You can't hold that much mana!
 cp14-magic-energy-damage-burn-out-fall = You pass out from the intense pain!
 
 cp14-magic-spell-need-verbal-component = You can't cast the spell out loud.
