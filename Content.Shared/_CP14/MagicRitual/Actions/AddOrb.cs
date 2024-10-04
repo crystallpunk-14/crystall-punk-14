@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.MagicRitual.Actions;
 
 /// <summary>
-///
+/// Adds a key-orb to the ritual.
 /// </summary>
 public sealed partial class AddOrb : CP14RitualAction
 {
@@ -26,18 +26,18 @@ public sealed partial class AddOrb : CP14RitualAction
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
         if (phase.Comp.Ritual is null)
             return;
 
-        var _ritual = entManager.System<CP14SharedRitualSystem>();
+        var ritual = entManager.System<CP14SharedRitualSystem>();
 
         foreach (var orb in Orbs)
         {
             for (var i = 0; i < orb.Value; i++)
             {
-                _ritual.AddOrbToRitual(phase.Comp.Ritual.Value, orb.Key);
+                ritual.AddOrbToRitual(phase.Comp.Ritual.Value, orb.Key);
             }
         }
     }

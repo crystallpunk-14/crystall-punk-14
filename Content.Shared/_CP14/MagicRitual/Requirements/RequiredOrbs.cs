@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.MagicRitual.Requirements;
 
 /// <summary>
-/// Requires specific daytime
+/// Requires specific daytime period
 /// </summary>
 public sealed partial class RequiredOrbs : CP14RitualRequirement
 {

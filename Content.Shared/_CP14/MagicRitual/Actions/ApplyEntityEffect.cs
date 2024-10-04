@@ -47,17 +47,17 @@ public sealed partial class ApplyEntityEffect : CP14RitualAction
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
-        var _lookup = entManager.System<EntityLookupSystem>();
-        var _whitelist = entManager.System<EntityWhitelistSystem>();
+        var lookup = entManager.System<EntityLookupSystem>();
+        var whitelist = entManager.System<EntityWhitelistSystem>();
 
-        var entitiesAround = _lookup.GetEntitiesInRange(phase, CheckRange, LookupFlags.Uncontained);
+        var entitiesAround = lookup.GetEntitiesInRange(phase, CheckRange, LookupFlags.Uncontained);
 
         var count = 0;
         foreach (var entity in entitiesAround)
         {
-            if (Whitelist is not null && !_whitelist.IsValid(Whitelist, entity))
+            if (Whitelist is not null && !whitelist.IsValid(Whitelist, entity))
                 continue;
 
             foreach (var effect in Effects)
@@ -65,7 +65,7 @@ public sealed partial class ApplyEntityEffect : CP14RitualAction
                 effect.Effect(new EntityEffectBaseArgs(entity, entManager));
             }
 
-            entManager.Spawn(VisualEffect, _transform.GetMapCoordinates(entity));
+            entManager.Spawn(VisualEffect, transform.GetMapCoordinates(entity));
             count++;
 
             if (count >= MaxEntities)

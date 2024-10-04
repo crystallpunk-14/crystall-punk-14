@@ -4,7 +4,7 @@ using Robust.Shared.Timing;
 namespace Content.Shared._CP14.MagicRitual.Triggers;
 
 /// <summary>
-///
+/// Triggers the phase transition after a certain period of time
 /// </summary>
 public sealed partial class TimerTrigger : CP14RitualTrigger
 {

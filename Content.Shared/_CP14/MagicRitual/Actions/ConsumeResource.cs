@@ -39,12 +39,12 @@ public sealed partial class ConsumeResource : CP14RitualAction
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
-        var _lookup = entManager.System<EntityLookupSystem>();
-        var _stack = entManager.System<SharedStackSystem>();
+        var lookup = entManager.System<EntityLookupSystem>();
+        var stack = entManager.System<SharedStackSystem>();
 
-        var entitiesAround = _lookup.GetEntitiesInRange(phase, CheckRange, LookupFlags.Uncontained);
+        var entitiesAround = lookup.GetEntitiesInRange(phase, CheckRange, LookupFlags.Uncontained);
 
         foreach (var reqEnt in RequiredEntities)
         {
@@ -54,7 +54,7 @@ public sealed partial class ConsumeResource : CP14RitualAction
             {
                 if (!entManager.TryGetComponent<MetaDataComponent>(entity, out var metaData))
                     continue;
-                if (!entManager.TryGetComponent<TransformComponent>(entity, out var xform))
+                if (!entManager.HasComponent<TransformComponent>(entity))
                     continue;
 
                 var entProto = metaData.EntityPrototype;
@@ -64,7 +64,7 @@ public sealed partial class ConsumeResource : CP14RitualAction
                 if (entProto.ID == reqEnt.Key && requiredCount > 0)
                 {
                     if (VisualEffect is not null)
-                        entManager.Spawn(VisualEffect.Value, _transform.GetMapCoordinates(entity));
+                        entManager.Spawn(VisualEffect.Value, transform.GetMapCoordinates(entity));
 
                     entManager.DeleteEntity(entity);
 
@@ -79,25 +79,25 @@ public sealed partial class ConsumeResource : CP14RitualAction
 
             foreach (var entity in entitiesAround)
             {
-                if (!entManager.TryGetComponent<StackComponent>(entity, out var stack))
+                if (!entManager.TryGetComponent<StackComponent>(entity, out var stackComp))
                     continue;
 
-                if (stack.StackTypeId != reqStack.Key)
+                if (stackComp.StackTypeId != reqStack.Key)
                     continue;
 
-                var count = (int)MathF.Min(requiredCount, stack.Count);
+                var count = (int)MathF.Min(requiredCount, stackComp.Count);
 
 
-                    if (stack.Count - count <= 0)
+                    if (stackComp.Count - count <= 0)
                         entManager.DeleteEntity(entity);
                     else
-                        _stack.SetCount(entity, stack.Count - count, stack);
+                        stack.SetCount(entity, stackComp.Count - count, stackComp);
 
 
                 requiredCount -= count;
 
                 if (VisualEffect is not null)
-                    entManager.Spawn(VisualEffect.Value, _transform.GetMapCoordinates(entity));
+                    entManager.Spawn(VisualEffect.Value, transform.GetMapCoordinates(entity));
             }
         }
     }

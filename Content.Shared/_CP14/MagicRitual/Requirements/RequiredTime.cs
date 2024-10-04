@@ -22,8 +22,8 @@ public sealed partial class RequiredTime : CP14RitualRequirement
 
     public override bool Check(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> phaseEnt, float stability)
     {
-        var _transform = entManager.System<SharedTransformSystem>();
-        var map = _transform.GetMap(phaseEnt.Owner);
+        var transform = entManager.System<SharedTransformSystem>();
+        var map = transform.GetMap(phaseEnt.Owner);
 
         if (!entManager.TryGetComponent<CP14DayCycleComponent>(map, out var dayCycle))
             return false;

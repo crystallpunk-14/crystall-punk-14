@@ -13,7 +13,7 @@ public abstract partial class CP14RitualAction
     [DataField("vfx")]
     public EntProtoId? VisualEffect = "CP14DustEffect";
 
-    public abstract void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase);
+    public abstract void Effect(EntityManager entManager, SharedTransformSystem transform, Entity<CP14MagicRitualPhaseComponent> phase);
 
     public abstract string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys);
 }

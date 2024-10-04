@@ -7,12 +7,12 @@ public sealed partial class EditStability : CP14RitualAction
     [DataField(required: true)]
     public float Mod;
 
-    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
-        var _ritual = entManager.System<CP14SharedRitualSystem>();
+        var ritual = entManager.System<CP14SharedRitualSystem>();
 
         if (phase.Comp.Ritual is not null)
-            _ritual.ChangeRitualStability(phase.Comp.Ritual.Value, Mod);
+            ritual.ChangeRitualStability(phase.Comp.Ritual.Value, Mod);
     }
 
     public override string? GetGuidebookEffectDescription(IPrototypeManager prototype, IEntitySystemManager entSys)

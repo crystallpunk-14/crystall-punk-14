@@ -31,13 +31,13 @@ public sealed partial class SpawnEntity : CP14RitualAction
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
         foreach (var spawn in Spawns)
         {
             for (var i = 0; i < spawn.Value; i++)
             {
-                entManager.Spawn(spawn.Key, _transform.GetMapCoordinates(phase));
+                entManager.Spawn(spawn.Key, transform.GetMapCoordinates(phase));
             }
         }
     }

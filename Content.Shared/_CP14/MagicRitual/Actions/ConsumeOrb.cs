@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.MagicRitual.Actions;
 
 /// <summary>
-///
+/// Removes the orb key from the ritual.
 /// </summary>
 public sealed partial class ConsumeOrb : CP14RitualAction
 {
@@ -26,16 +26,16 @@ public sealed partial class ConsumeOrb : CP14RitualAction
         return sb.ToString();
     }
 
-    public override void Effect(EntityManager entManager, SharedTransformSystem _transform, Entity<CP14MagicRitualPhaseComponent> phase)
+    public override void Effect(EntityManager entManager, SharedTransformSystem transform, Entity<CP14MagicRitualPhaseComponent> phase)
     {
         if (phase.Comp.Ritual is null)
             return;
 
-        var _ritual = entManager.System<CP14SharedRitualSystem>();
+        var ritual = entManager.System<CP14SharedRitualSystem>();
 
         for (var i = 0; i < Count; i++)
         {
-            _ritual.ConsumeOrbType(phase.Comp.Ritual.Value, MagicType);
+            ritual.ConsumeOrbType(phase.Comp.Ritual.Value, MagicType);
         }
     }
 }
