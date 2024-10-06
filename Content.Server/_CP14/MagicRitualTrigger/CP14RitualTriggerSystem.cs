@@ -10,7 +10,7 @@ public partial class CP14RitualTriggerSystem : CP14SharedRitualTriggerSystem
     {
         InitializeTimer();
         InitializeVoice();
-        InitializeSacrifise();
+        InitializeSacrifice();
     }
 
     public override void Update(float frameTime)
