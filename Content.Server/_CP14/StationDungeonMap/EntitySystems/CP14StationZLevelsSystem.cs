@@ -20,7 +20,6 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly LinkedEntitySystem _linkedEntity = default!;
 
     public override void Initialize()

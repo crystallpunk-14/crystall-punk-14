@@ -4,7 +4,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CP14.StationZLevels;
 
 /// <summary>
-/// Prototype “floor type”. Refers to a certain group of cards united by a common style and some common rules
+/// Prototype “floor type”. Refers to a certain group of maps united by a common style and some common data
 /// </summary>
 [Prototype("zLevel")]
 public sealed partial class CP14ZLevelPrototype : IPrototype
