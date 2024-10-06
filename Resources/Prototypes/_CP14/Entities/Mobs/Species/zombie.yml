@@ -20,9 +20,6 @@
   - type: Body
     prototype: CP14Zombie
     requiredLegs: 2
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 2.5
   - type: MobState
     allowedStates:
     - Alive
@@ -30,11 +27,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      150: Dead
+      140: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       80: 0.8
-      120: 0.4
+      110: 0.4
   - type: StatusEffects
     allowed:
     - KnockedDown
@@ -63,7 +60,7 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 140
+    damageCap: 130
     damage:
       groups:
         Brute: -0.3

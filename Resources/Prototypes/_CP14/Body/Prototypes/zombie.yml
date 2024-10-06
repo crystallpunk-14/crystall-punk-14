@@ -4,7 +4,7 @@
   root: torso
   slots:
     head:
-      part: CP14HeadHuman
+      part: CP14HeadZombie
       connections:
       - torso
       organs:
@@ -24,26 +24,26 @@
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
     right_arm:
-      part: CP14RightArmHuman
+      part: CP14RightArmZombie
       connections:
       - right_hand
     left_arm:
-      part: CP14LeftArmHuman
+      part: CP14LeftArmZombie
       connections:
       - left_hand
     right_hand:
-      part: CP14RightHandHuman
+      part: CP14RightHandZombie
     left_hand:
-      part: CP14LeftHandHuman
+      part: CP14LeftHandZombie
     right_leg:
-      part: CP14RightLegHuman
+      part: CP14RightLegZombie
       connections:
       - right_foot
     left_leg:
-      part: CP14LeftLegHuman
+      part: CP14LeftLegZombie
       connections:
       - left_foot
     right_foot:
-      part: CP14RightFootHuman
+      part: CP14RightFootZombie
     left_foot:
-      part: CP14LeftFootHuman
+      part: CP14LeftFootZombie
