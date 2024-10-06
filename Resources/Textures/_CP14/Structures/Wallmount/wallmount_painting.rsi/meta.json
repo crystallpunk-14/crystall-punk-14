@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Created by Max Gab for CrystallPunk14",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "skull_painting",
+      "directions": 4
+    },
+    {
+      "name": "candle_painting",
+      "directions": 4
+    },
+    {
+      "name": "painting_woman",
+      "directions": 4
+    },
+    {
+      "name": "painting_saint",
+      "directions": 4
+    }
+  ]
+}

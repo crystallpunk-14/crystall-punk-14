@@ -1,0 +1,63 @@
+- type: entity
+  id: CP14BaseWallmountPainting
+  parent: CP14BaseWallmount
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14WallmountPaintingSkull
+  name: skull painting
+  parent: CP14BaseWallmountPainting
+  description: A bizarre skull painting. Depressing.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/wallmount_painting.rsi
+    state: skull_painting
+
+- type: entity
+  id: CP14WallmountPaintingCandle
+  name: candle painting
+  parent: CP14BaseWallmountPainting
+  description: A nicely drawn candle in a frame.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/wallmount_painting.rsi
+    state: candle_painting
+
+- type: entity
+  id: CP14WallmountPaintingWoman
+  name: painting of a woman
+  parent: CP14BaseWallmountPainting
+  description: The painting depicts a woman with a mysterious smile.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/wallmount_painting.rsi
+    state: painting_woman
+
+- type: entity
+  id: CP14WallmountPaintingSaint
+  name: painting of a saint
+  parent: CP14BaseWallmountPainting
+  description: A drawing of a nun with a halo over her head. This is how you can feel the holiness of the picture.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/wallmount_painting.rsi
+    state: painting_saint
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]

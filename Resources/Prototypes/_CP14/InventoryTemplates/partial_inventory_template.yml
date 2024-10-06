@@ -1,5 +1,5 @@
 ﻿- type: inventoryTemplate
-  id: CP14mannequin
+  id: CP14Partial
   slots:
     # Left hotbar
     # 0, y

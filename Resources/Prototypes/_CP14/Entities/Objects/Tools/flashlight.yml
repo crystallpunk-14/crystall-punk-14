@@ -1,14 +1,22 @@
 - type: entity
   parent: BaseItem
   id: CP14OldLantern
-  name: Old lantern 
+  name: old lantern
   description: Relic of the Techomagic's past. Large, weighty, unpractical. At least feels good to crack some skulls with it.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Tools/magic-lamp.rsi
     noRot: false
     layers:
-    - state: lamp    
+    - state: lamp
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    sprite: _CP14/Objects/Tools/magic-lamp.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
   - type: MeleeWeapon
     attackRate: 0.7
     wideAnimationRotation: 10
@@ -35,6 +43,3 @@
     radius: 4
     netsync: false
   - type: Appearance
-  
- 
-  
