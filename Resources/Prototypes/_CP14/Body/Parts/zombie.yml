@@ -1,0 +1,95 @@
+﻿- type: entity
+  id: CP14TorsoZombie
+  parent: CP14TorsoHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: torso
+
+- type: entity
+  id: CP14HeadZombie
+  parent: CP14HeadHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: head
+
+- type: entity
+  id: CP14LeftArmZombie
+  parent: CP14LeftArmHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14RightArmZombie
+  parent: CP14RightArmHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14LeftHandZombie
+  parent: CP14LeftHandHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14RightHandZombie
+  parent: CP14RightHandHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14LeftLegZombie
+  name: "left zombie leg"
+  parent: CP14LeftLegHuman
+  components:
+    - type: Sprite
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "l_leg"
+    - type: Icon
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "l_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Left
+    - type: MovementBodyPart
+      walkSpeed: 3
+      sprintSpeed: 3
+      acceleration: 10
+
+- type: entity
+  id: CP14RightLegZombie
+  name: "right zombie leg"
+  parent: CP14RightLegHuman
+  components:
+    - type: Sprite
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "r_leg"
+    - type: Icon
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "r_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Right
+    - type: MovementBodyPart
+      walkSpeed: 3
+      sprintSpeed: 3
+      acceleration: 10
+
+- type: entity
+  id: CP14LeftFootZombie
+  parent: CP14LeftFootHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14RightFootZombie
+  parent: CP14RightFootHuman
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
