@@ -10,6 +10,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.StationDungeonMap.EntitySystems;
 
@@ -19,17 +20,14 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TileSystem _tile = default!;
-    [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly LinkedEntitySystem _linkedEntity = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+        AutoPortalInitialize();
 
-        SubscribeLocalEvent<CP14ZLevelAutoPortalComponent, MapInitEvent>(OnPortalMapInit);
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<CP14StationZLevelsComponent, StationPostInitEvent>(OnStationPostInit);
     }
@@ -66,61 +64,56 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
 
         ent.Comp.Initialized = true;
 
-        foreach (var (map, level) in ent.Comp.Levels)
+        foreach (var (zLevel, level) in ent.Comp.Levels)
         {
-            if (ent.Comp.LevelEntities.ContainsValue(map))
-            {
-                Log.Error($"Key duplication for CP14StationZLevelsSystem at level {map}!");
-                continue;
-            }
-
             var path = level.Path.ToString();
-            if (path is null)
+            if (level.Path is null)
             {
-                Log.Error($"path {path} for CP14StationZLevelsSystem at level {map} don't exist!");
+                Log.Error($"path {path} for CP14StationZLevelsSystem at level {zLevel} don't exist!");
                 continue;
             }
 
-            var mapUid = _map.CreateMap(out var mapId);
-            var member = EnsureComp<StationMemberComponent>(mapUid);
-            member.Station = ent;
-
-            Log.Info($"Created map {mapId} for CP14StationZLevelsSystem at level {map}");
-            var options = new MapLoadOptions { LoadMap = true };
-
-            if (!_mapLoader.TryLoad(mapId, path, out var grids, options))
-            {
-                Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {map}!");
-                Del(mapUid);
-                continue;
-            }
-            ent.Comp.LevelEntities.Add(mapId, map);
+            SetZLevel(ent, zLevel, level.Path.Value);
         }
     }
 
-    private void OnPortalMapInit(Entity<CP14ZLevelAutoPortalComponent> autoPortal, ref MapInitEvent args)
+    public MapId? SetZLevel(Entity<CP14StationZLevelsComponent> ent, int zLevel, ResPath resPath, bool force = false)
     {
-        InitPortal(autoPortal);
-    }
+        if (ent.Comp.LevelEntities.ContainsValue(zLevel))
+        {
+            if (!force)
+            {
+                Log.Error($"Key duplication for CP14StationZLevelsSystem at level {zLevel}!");
+                return null;
+            }
 
-    private void InitPortal(Entity<CP14ZLevelAutoPortalComponent> autoPortal)
-    {
-        var mapId = Transform(autoPortal).MapUid;
-        if (mapId is null)
-            return;
+            foreach (var (key, value) in ent.Comp.LevelEntities)
+            {
+                if (value == zLevel && _map.MapExists(key))
+                {
+                    ent.Comp.LevelEntities.Remove(key);
+                    Del(_map.GetMap(key));
+                }
+            }
+        }
 
-        var offsetMap = GetMapOffset(mapId.Value, autoPortal.Comp.ZLevelOffset);
+        var mapUid = _map.CreateMap(out var mapId);
+        var member = EnsureComp<StationMemberComponent>(mapUid);
+        member.Station = ent;
 
-        if (offsetMap is null)
-            return;
+        Log.Info($"Created map {mapId} for CP14StationZLevelsSystem at level {zLevel}");
 
-        var currentWorldPos = _transform.GetWorldPosition(autoPortal);
-        var targetMapPos = new MapCoordinates(currentWorldPos, offsetMap.Value);
+        var options = new MapLoadOptions { LoadMap = true };
 
-        var otherSidePortal = Spawn(autoPortal.Comp.OtherSideProto, targetMapPos);
+        if (!_mapLoader.TryLoad(mapId, resPath.ToString(), out var grids, options))
+        {
+            Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {zLevel}!");
+            Del(mapUid);
+            return null;
+        }
+        ent.Comp.LevelEntities.TryAdd(mapId, zLevel);
 
-        if (_linkedEntity.TryLink(autoPortal, otherSidePortal, true))
-            RemComp<CP14ZLevelAutoPortalComponent>(autoPortal);
+        return mapId;
     }
 
     public MapId? GetMapOffset(EntityUid mapUid, int offset)
