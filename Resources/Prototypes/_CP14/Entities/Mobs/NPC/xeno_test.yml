@@ -5,7 +5,7 @@
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
-    - HostileEveryone
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobXenoDrone
@@ -14,7 +14,7 @@
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
-    - HostileEveryone
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobSpaceCobra
@@ -24,7 +24,7 @@
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
-    - HostileEveryone
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobPurpleSnake
@@ -33,7 +33,7 @@
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
-    - HostileEveryone
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobSmallPurpleSnake
@@ -42,7 +42,7 @@
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
-    - HostileEveryone
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobWatcherMagmawing
@@ -51,4 +51,4 @@
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
-    - HostileEveryone
+    - CP14HostileEveryone

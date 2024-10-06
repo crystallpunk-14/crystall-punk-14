@@ -1,32 +1,32 @@
 - type: npcFaction
-  id: Expedition
+  id: CP14Adventurers
   hostile:
-  - AggressiveAnimals
-  - Undead
-  - HostileEveryone
+  - CP14AggressiveAnimals
+  - CP14Undead
+  - CP14HostileEveryone
 
 - type: npcFaction
-  id: HostileEveryone
+  id: CP14HostileEveryone
   hostile:
-  - Expedition
-  - Undead
-  - PeacefulAnimals
-  - AggressiveAnimals
+  - CP14Adventurers
+  - CP14Undead
+  - CP14PeacefulAnimals
+  - CP14AggressiveAnimals
 
 - type: npcFaction
-  id: Undead
+  id: CP14Undead
   hostile:
-  - Expedition
-  - HostileEveryone
-  - PeacefulAnimals
-  - AggressiveAnimals
+  - CP14Adventurers
+  - CP14HostileEveryone
+  - CP14PeacefulAnimals
+  - CP14AggressiveAnimals
 
 - type: npcFaction
-  id: PeacefulAnimals
+  id: CP14PeacefulAnimals
 
 - type: npcFaction
-  id: AggressiveAnimals
+  id: CP14AggressiveAnimals
   hostile:
-  - Expedition
-  - Undead
-  - PeacefulAnimals
+  - CP14Adventurers
+  - CP14Undead
+  - CP14PeacefulAnimals
