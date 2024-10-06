@@ -1,5 +1,6 @@
 cp14-verb-categories-ritual-book = Выбрать страницу
 cp14-ritual-describer-verb-item = Перелистнуть: {$name} 
+cp14-ritual-describer-verb-hyperlink = Быстрый переход: {$name} 
 cp14-ritual-describer-verb-back = Назад
 
 cp14-ritual-verb-text = Активировать ритуал

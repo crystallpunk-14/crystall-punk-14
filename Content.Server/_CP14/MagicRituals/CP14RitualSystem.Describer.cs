@@ -18,6 +18,12 @@ public sealed partial class CP14RitualSystem
 
         SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, GetVerbsEvent<Verb>>(OnDescriberVerbs);
         SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, ComponentShutdown>(OnShutdown);
+    }
+
+    private void OnShutdown(Entity<CP14PaperPhaseDescriberComponent> ent, ref ComponentShutdown args)
+    {
+        QueueDel(ent.Comp.CurrentPhase);
     }
 
     private void OnMapInit(Entity<CP14PaperPhaseDescriberComponent> ent, ref MapInitEvent args)
@@ -25,19 +31,21 @@ public sealed partial class CP14RitualSystem
         SetPhase(ent, ent.Comp.StartPhase);
     }
 
-    private void SetPhase(Entity<CP14PaperPhaseDescriberComponent> ent, EntProtoId protoPhase, bool saveHistory = true)
+    private void SetPhase(Entity<CP14PaperPhaseDescriberComponent> ent, EntProtoId newProto, bool saveHistory = true)
     {
         var oldPhase = ent.Comp.CurrentPhase;
         if (oldPhase is not null && saveHistory)
         {
             var oldProto = MetaData(oldPhase.Value).EntityPrototype;
-            if (oldProto is not null)
+            if (oldProto is not null && oldProto != newProto)
             {
-                ent.Comp.SearchHistory.Push(oldProto);
+                ent.Comp.SearchHistory.Add(oldProto);
+                if (ent.Comp.SearchHistory.Count > 50)
+                    ent.Comp.SearchHistory.RemoveAt(0);
             }
         }
         QueueDel(oldPhase);
-        var newPhase = Spawn(protoPhase, MapCoordinates.Nullspace);
+        var newPhase = Spawn(newProto, MapCoordinates.Nullspace);
 
         ent.Comp.CurrentPhase = newPhase;
 
@@ -50,7 +58,8 @@ public sealed partial class CP14RitualSystem
 
     private void BackPhase(Entity<CP14PaperPhaseDescriberComponent> ent)
     {
-        SetPhase(ent, ent.Comp.SearchHistory.Pop(), false);
+        if (ent.Comp.SearchHistory.Count > 0)
+            SetPhase(ent, ent.Comp.SearchHistory[^1], false);
     }
 
     private void OnDescriberVerbs(Entity<CP14PaperPhaseDescriberComponent> ent, ref GetVerbsEvent<Verb> args)
@@ -75,6 +84,21 @@ public sealed partial class CP14RitualSystem
                 Category = VerbCategory.CP14RitualBook,
                 Priority = 1,
                 Act = () => SetPhase(ent, edge.Target),
+            };
+            args.Verbs.Add(verb);
+        }
+
+        foreach (var hyperlink in ent.Comp.Hyperlinks)
+        {
+            if (!_proto.TryIndex(hyperlink, out var indexedTarget))
+                continue;
+
+            Verb verb = new()
+            {
+                Text = Loc.GetString("cp14-ritual-describer-verb-hyperlink", ("name", indexedTarget.Name)),
+                Category = VerbCategory.CP14RitualBook,
+                Priority = 0,
+                Act = () => SetPhase(ent, hyperlink),
             };
             args.Verbs.Add(verb);
         }

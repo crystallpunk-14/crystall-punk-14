@@ -20,3 +20,5 @@
         color: red
     - type: CP14PaperPhaseDescriber
       startPhase: CP14_NeutralCluster_Root
+      hyperlinks:
+      - CP14_NeutralCluster_Root

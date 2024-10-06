@@ -16,7 +16,10 @@ public sealed partial class CP14PaperPhaseDescriberComponent : Component
     [DataField]
     public EntityUid? CurrentPhase = null;
 
-    public Stack<EntProtoId> SearchHistory = new();
+    public List<EntProtoId> SearchHistory = new();
+
+    [DataField]
+    public List<EntProtoId> Hyperlinks = new();
 
     public SoundSpecifier UseSound = new SoundCollectionSpecifier("CP14Book")
     {
