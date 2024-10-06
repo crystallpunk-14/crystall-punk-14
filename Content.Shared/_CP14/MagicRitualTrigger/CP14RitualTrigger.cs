@@ -1,7 +1,8 @@
+using Content.Shared._CP14.MagicRitual;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.MagicRitual.Triggers;
+namespace Content.Shared._CP14.MagicRitualTrigger;
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]

@@ -1,8 +1,5 @@
-namespace Content.Shared._CP14.MagicRitual.Triggers;
+namespace Content.Shared._CP14.MagicRitualTrigger.Triggers;
 
-/// <summary>
-///
-/// </summary>
 [RegisterComponent]
 public sealed partial class CP14RitualVoiceTriggerComponent : Component
 {

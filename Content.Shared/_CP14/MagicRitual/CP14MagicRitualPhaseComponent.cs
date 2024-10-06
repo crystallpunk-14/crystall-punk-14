@@ -1,6 +1,6 @@
 using Content.Shared._CP14.MagicRitual.Actions;
 using Content.Shared._CP14.MagicRitual.Requirements;
-using Content.Shared._CP14.MagicRitual.Triggers;
+using Content.Shared._CP14.MagicRitualTrigger;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicRitual;

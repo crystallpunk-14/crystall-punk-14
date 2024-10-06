@@ -1,8 +1,7 @@
-
-using System.Text.RegularExpressions;
+using Content.Shared._CP14.MagicRitual;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.MagicRitual.Triggers;
+namespace Content.Shared._CP14.MagicRitualTrigger.Triggers;
 
 /// <summary>
 /// Triggers a phase transition when the Ritual hears a certain message

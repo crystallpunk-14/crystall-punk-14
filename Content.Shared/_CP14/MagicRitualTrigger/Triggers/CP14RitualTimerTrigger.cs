@@ -1,8 +1,7 @@
-using System.Text.RegularExpressions;
+using Content.Shared._CP14.MagicRitual;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
-namespace Content.Shared._CP14.MagicRitual.Triggers;
+namespace Content.Shared._CP14.MagicRitualTrigger.Triggers;
 
 /// <summary>
 /// Triggers the phase transition after a certain period of time

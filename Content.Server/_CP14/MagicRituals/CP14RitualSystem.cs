@@ -25,7 +25,6 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
     {
         base.Initialize();
 
-        InitializeTriggers();
         InitializeDescriber();
         InitializeVisuals();
 
