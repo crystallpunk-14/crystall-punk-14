@@ -1,5 +1,6 @@
 cp14-ritual-verb-text = Активировать ритуал
 
+cp14-ritual-category-all-living = любое живое существо
 
 cp14-ritual-intro = Известны следующие соседние узлы, доступные для перехода:
 

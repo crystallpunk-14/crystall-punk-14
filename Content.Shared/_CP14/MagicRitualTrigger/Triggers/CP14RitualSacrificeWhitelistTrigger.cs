@@ -28,7 +28,7 @@ public sealed partial class CP14SacrificeWhitelistTrigger : CP14RitualTrigger
     public override string? GetGuidebookTriggerDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         return Loc.GetString("cp14-ritual-trigger-sacrifice",
-            ("name", WhitelistDesc),
+            ("name", Loc.GetString(WhitelistDesc)),
             ("range", Range));
     }
 }

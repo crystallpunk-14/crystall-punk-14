@@ -62,6 +62,7 @@ public partial class CP14RitualTriggerSystem
         {
             if (!deathXform.Coordinates.TryDistance(EntityManager, xform.Coordinates, out var distance))
                 continue;
+
             foreach (var trigger in sacrifice.Triggers)
             {
                 if (distance > trigger.Range)
