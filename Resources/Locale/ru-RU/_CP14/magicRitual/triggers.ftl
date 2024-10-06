@@ -11,3 +11,5 @@ cp14-ritual-trigger-voice = После произнесения заклинан
     }
 
 cp14-ritual-trigger-failure = В результате различных ошибок.
+
+cp14-ritual-trigger-sacrifice-species = Когда {$species} мучительно погибает в радиусе {$range} от места проведения ритуала.

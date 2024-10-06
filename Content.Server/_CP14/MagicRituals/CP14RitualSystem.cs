@@ -36,13 +36,6 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         SubscribeLocalEvent<CP14MagicRitualOrbComponent, ExaminedEvent>(OnOrbExamine);
     }
 
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        UpdateTriggers(frameTime);
-    }
-
     private void OnActivateRitual(Entity<CP14MagicRitualComponent> ent, ref CP14ActivateRitualDoAfter args)
     {
         if (args.Cancelled || args.Handled)

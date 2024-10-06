@@ -19,13 +19,13 @@
     edges:
     - target: CP14_NeutralCluster_00
       triggers:
-      - !type:VoiceTrigger
+      - !type:CP14VoiceTrigger
         message: "Calidum post meridiem"
         
     - target: CP14RitualEnd
       triggers:
-      - !type:TimerTrigger
-        delay: 300
+      - !type:CP14SacrificeSpeciesTrigger
+        species: CP14Goblin
     
 - type: entity
   parent: CP14_NeutralCluster_Base
@@ -37,12 +37,12 @@
     edges:
     - target: CP14_NeutralCluster_01
       triggers:
-      - !type:VoiceTrigger
+      - !type:CP14VoiceTrigger
         message: "Vespere nebula"
     
     - target: CP14RitualEnd
       triggers:
-      - !type:VoiceTrigger
+      - !type:CP14VoiceTrigger
         message: "Ignis"
       requirements:
       - !type:RequiredResource
@@ -64,10 +64,10 @@
     edges:
     - target: CP14_NeutralCluster_Root
       triggers:
-      - !type:TimerTrigger
+      - !type:CP14TimerTrigger
         delay: 15
     
     - target: CP14RitualEnd
       triggers:
-      - !type:VoiceTrigger
+      - !type:CP14VoiceTrigger
         message: "De mente exstincta"
