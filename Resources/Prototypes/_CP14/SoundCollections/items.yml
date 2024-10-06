@@ -36,3 +36,15 @@
   - /Audio/_CP14/Items/broom1.ogg
   - /Audio/_CP14/Items/broom2.ogg
   - /Audio/_CP14/Items/broom3.ogg
+
+- type: soundCollection
+  id: CP14Parry
+  files:
+  - /Audio/_CP14/Effects/parry1.ogg
+  - /Audio/_CP14/Effects/parry2.ogg
+
+- type: soundCollection
+  id: CP14Book
+  files:
+  - /Audio/_CP14/Items/book1.ogg
+  - /Audio/_CP14/Items/book2.ogg

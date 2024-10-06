@@ -8,7 +8,12 @@
   - type: Sprite
     noRot: true
     sprite: _CP14/Structures/Decoration/statue_gob.rsi
-    state: gob
+    layers:
+    - state: gob
+    - state: eyes
+      map: ["ritual"]
+      visible: false
+      shader: unshaded
     drawdepth: Mobs
     offset: "0.0,0.5"
   - type: Fixtures
@@ -43,6 +48,9 @@
           CP14StoneBlock1:
             min: 4
             max: 5
+  - type: CP14MagicRitual
+    startPhase: CP14_NeutralCluster_Root
+  - type: Appearance
 
 - type: entity
   id: CP14StatueGobVines
@@ -51,9 +59,12 @@
   suffix: Normal. Overgrown.
   components:
   - type: Sprite
-    noRot: true
-    sprite: _CP14/Structures/Decoration/statue_gob.rsi
-    state: gob_vines
+    layers:
+    - state: gob_vines
+    - state: eyes
+      map: ["ritual"]
+      visible: false
+      shader: unshaded
 
 - type: entity
   id: CP14StatueGobRuined
@@ -62,9 +73,12 @@
   suffix: Ruined
   components:
   - type: Sprite
-    noRot: true
-    sprite: _CP14/Structures/Decoration/statue_gob.rsi
-    state: gob_ruined
+    layers:
+    - state: gob_ruined
+    - state: eyes
+      map: ["ritual"]
+      visible: false
+      shader: unshaded
 
 - type: entity
   id: CP14StatueGobRuinedVines
@@ -73,6 +87,9 @@
   suffix: Ruined. Overgrown.
   components:
   - type: Sprite
-    noRot: true
-    sprite: _CP14/Structures/Decoration/statue_gob.rsi
-    state: gob_ruined_vines
+    layers:
+    - state: gob_ruined_vines
+    - state: eyes
+      map: ["ritual"]
+      visible: false
+      shader: unshaded

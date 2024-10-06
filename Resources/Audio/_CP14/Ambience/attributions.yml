@@ -18,12 +18,17 @@
   copyright: 'by 7by7 of Freesound.org. Mixed from stereo to mono.'
   source: "https://freesound.org/people/7by7/sounds/72849/"
 
-- files: ["weatherWindy.ogg"]
-  license: "CC-BY-4.0"
-  copyright: 'by Benboncan of Freesound.org. Mixed from stereo to mono.'
-  source: "https://freesound.org/people/Benboncan/sounds/134699/"
-
 - files: ["ambiAlchemy.ogg"]
   license: "CC-BY-4.0"
   copyright: 'by be-steele of Freesound.org.'
   source: "https://freesound.org/people/be-steele/sounds/130753/"
+
+- files: ["ambimagic1.ogg", "ambimagic2.ogg", "ambimagic3.ogg", "ambimagic4.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by EminYILDIRIM of Freesound.org.'
+  source: "https://freesound.org/people/EminYILDIRIM/sounds/581627/"
+
+- files: ["ambimagic5.ogg", "ambimagic6.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by xkeril of Freesound.org.'
+  source: "https://freesound.org/people/xkeril/sounds/706092/"

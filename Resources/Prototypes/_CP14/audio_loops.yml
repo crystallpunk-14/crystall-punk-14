@@ -3,7 +3,7 @@
   id: OpenWinds
   sound:
     params:
-      volume: -3
+      volume: -6
     collection: CP14LoopWinds
   rules: OpenWinds
 
@@ -15,6 +15,14 @@
     collection: CP14LoopWater
   rules: NearWater
 
+- type: ambientLoop
+  id: Cave
+  sound:
+    params:
+      volume: 2
+    collection: CP14LoopCave
+  rules: CaveFloor
+
 # Sound collections
 - type: soundCollection
   id: CP14LoopWinds
@@ -25,6 +33,11 @@
   id: CP14LoopWater
   files:
     - /Audio/_CP14/Ambience/Loops/water.ogg
+
+- type: soundCollection
+  id: CP14LoopCave
+  files:
+    - /Audio/_CP14/Ambience/Loops/cave.ogg
 
 # Rules
 - type: rules
@@ -39,6 +52,16 @@
       - CP14FloorGrassTall
       - CP14FloorDirt
       - CP14FloorSand
+      range: 5
+
+- type: rules
+  id: CaveFloor
+  rules:
+    - !type:NearbyTilesPercentRule
+      ignoreAnchored: true
+      percent: 0.5
+      tiles:
+      - CP14FloorBase
       range: 5
 
 - type: rules

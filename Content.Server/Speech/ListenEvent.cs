@@ -1,3 +1,5 @@
+using Content.Shared.Speech;
+
 namespace Content.Server.Speech;
 
 public sealed class ListenEvent : EntityEventArgs

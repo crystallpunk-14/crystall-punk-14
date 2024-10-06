@@ -1,8 +1,25 @@
 # 4 Priority - Special
 
+- type: ambientMusic
+  id: CP14Ritual
+  sound:
+    params:
+      volume: -12
+    collection: CP14AmbienceMagic
+  rules: NearRitual
+  priority: 4
+
 # 3 Priority - Departments
 
 # 2 Priority - General areas
+- type: ambientMusic
+  id: CP14NightForest
+  sound:
+    params:
+      volume: -6
+    collection: CP14NightForest
+  rules: NightForest
+  priority: 2
 
 ## Fallback if nothing else found
 - type: ambientMusic
@@ -28,8 +45,61 @@
     - /Audio/_CP14/Ambience/ambicreepy2.ogg
     - /Audio/_CP14/Ambience/ambicreepy3.ogg
 
+- type: soundCollection
+  id: CP14AmbienceMagic
+  files:
+    - /Audio/_CP14/Ambience/ambimagic1.ogg
+    - /Audio/_CP14/Ambience/ambimagic2.ogg
+    - /Audio/_CP14/Ambience/ambimagic3.ogg
+    - /Audio/_CP14/Ambience/ambimagic4.ogg
+    - /Audio/_CP14/Ambience/ambimagic5.ogg
+    - /Audio/_CP14/Ambience/ambimagic6.ogg
+    - /Audio/_CP14/Ambience/ambiAlchemy.ogg
+
+- type: soundCollection
+  id: CP14NightForest
+  files:
+    - /Audio/_CP14/Animals/owl1.ogg
+    - /Audio/_CP14/Animals/owl2.ogg
+    - /Audio/_CP14/Animals/owl3.ogg
+    - /Audio/_CP14/Animals/owl4.ogg
+    - /Audio/_CP14/Animals/owl5.ogg
+    - /Audio/_CP14/Animals/owl6.ogg
+    - /Audio/_CP14/Animals/owl7.ogg
+    - /Audio/_CP14/Animals/owl8.ogg
+    - /Audio/_CP14/Animals/owl9.ogg
+
 # Rules
 - type: rules
   id: AlwaysTrue
   rules:
     - !type:AlwaysTrueRule
+
+- type: rules
+  id: NearRitual
+  rules:
+    - !type:NearbyEntitiesRule
+      count: 1
+      whitelist:
+        components:
+          - CP14MagicRitualPhase
+          - CP14MagicRitual
+      range: 6
+
+- type: rules
+  id: NightForest
+  rules:
+    - !type:CP14TimePeriod
+      periods:
+      - Night 
+      - Evening
+    - !type:NearbyTilesPercentRule
+      ignoreAnchored: true
+      percent: 0.5
+      tiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      - CP14FloorDirt
+      - CP14FloorSand
+      range: 5

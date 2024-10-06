@@ -52,24 +52,7 @@
         - FloraRockSolid01
         - FloraRockSolid02
         - FloraRockSolid03
-        - CP14CrystalRubiesSmall
-        - CP14CrystalRubiesMedium
-        - CP14CrystalRubiesBig
-        - CP14CrystalTopazesSmall
-        - CP14CrystalTopazesMedium
-        - CP14CrystalTopazesBig
-        - CP14CrystalEmeraldsSmall
-        - CP14CrystalEmeraldsMedium
-        - CP14CrystalEmeraldsBig
-        - CP14CrystalSapphiresSmall
-        - CP14CrystalSapphiresMedium
-        - CP14CrystalSapphiresBig
-        - CP14CrystalAmethystsSmall
-        - CP14CrystalAmethystsMedium
-        - CP14CrystalAmethystsBig
-        - CP14CrystalDiamondsSmall
-        - CP14CrystalDiamondsMedium
-        - CP14CrystalDiamondsBig
+        - CP14QuartzCrystal
     - !type:BiomeEntityLayer # lumishroom sage
       threshold: 0.6
       noise:

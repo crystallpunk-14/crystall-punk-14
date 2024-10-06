@@ -89,6 +89,6 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
 
-        public static readonly VerbCategory CP14Craft = new("cp14-verb-categories-craft", null); //CP14
+        public static readonly VerbCategory CP14RitualBook = new("cp14-verb-categories-ritual-book", null); //CP14
     }
 }

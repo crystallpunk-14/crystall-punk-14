@@ -3,12 +3,10 @@
 - type: entity
   id: CP14WallmountCrystalBase
   parent: 
-  - BaseStructure
+  - CP14BaseWallmount
   abstract: true
   name: sparkling quartz
   description: bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.
-  placement:
-    mode: SnapgridCenter
   components:
   - type: Sprite
     drawdepth: Mobs

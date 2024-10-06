@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "size": {
+    "x": 16,
+    "y": 16
+  },
+  "license": "CLA",
+  "copyright": "Created by TheShuEd for CrystallPunk",
+  "states": [
+    {
+      "name": "creation",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "destruction",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    }
+  ]
+}
