@@ -1,12 +1,28 @@
+using Content.Shared._CP14.MagicRitual;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+
 namespace Content.Server._CP14.MagicRituals.Components;
 
 /// <summary>
-/// Allows all information about the current phase to be written to the PaperComponent when used in a ritual
+///
 /// </summary>
 [RegisterComponent, Access(typeof(CP14RitualSystem))]
 public sealed partial class CP14PaperPhaseDescriberComponent : Component
 {
+    [DataField(required: true)]
+    public EntProtoId StartPhase = default!;
+
     [DataField]
-    public float DescribeTime = 1.5f;
+    public EntityUid? CurrentPhase = null;
+
+    public Stack<EntProtoId> SearchHistory = new();
+
+    public SoundSpecifier UseSound = new SoundCollectionSpecifier("CP14Book")
+    {
+        Params = AudioParams.Default
+            .WithVariation(0.05f)
+            .WithVolume(0.5f),
+    };
 }
 

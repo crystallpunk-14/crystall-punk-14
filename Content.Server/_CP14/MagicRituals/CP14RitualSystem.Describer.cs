@@ -1,9 +1,9 @@
 using System.Text;
 using Content.Server._CP14.MagicRituals.Components;
 using Content.Shared._CP14.MagicRitual;
-using Content.Shared.DoAfter;
-using Content.Shared.Interaction;
 using Content.Shared.Paper;
+using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
@@ -12,43 +12,92 @@ namespace Content.Server._CP14.MagicRituals;
 public sealed partial class CP14RitualSystem
 {
     [Dependency] private readonly PaperSystem _paper = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     private void InitializeDescriber()
     {
-        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, AfterInteractEvent>(OnDescriberAfterInteract);
-        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, CP14DescribeRitualDoAfter>(OnFinishDescribe);
+
+        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, GetVerbsEvent<Verb>>(OnDescriberVerbs);
+        SubscribeLocalEvent<CP14PaperPhaseDescriberComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnDescriberAfterInteract(Entity<CP14PaperPhaseDescriberComponent> ent, ref AfterInteractEvent args)
+    private void OnMapInit(Entity<CP14PaperPhaseDescriberComponent> ent, ref MapInitEvent args)
     {
-        if (!HasComp<CP14MagicRitualComponent>(args.Target))
-            return;
+        SetPhase(ent, ent.Comp.StartPhase);
+    }
 
-        var doAfterArgs =
-            new DoAfterArgs(EntityManager, args.User, ent.Comp.DescribeTime, new CP14DescribeRitualDoAfter(), ent, args.Target)
+    private void SetPhase(Entity<CP14PaperPhaseDescriberComponent> ent, EntProtoId protoPhase, bool saveHistory = true)
+    {
+        var oldPhase = ent.Comp.CurrentPhase;
+        if (oldPhase is not null && saveHistory)
+        {
+            var oldProto = MetaData(oldPhase.Value).EntityPrototype;
+            if (oldProto is not null)
             {
-                BreakOnDamage = true,
-                BreakOnMove = true,
-            };
+                ent.Comp.SearchHistory.Push(oldProto);
+            }
+        }
+        QueueDel(oldPhase);
+        var newPhase = Spawn(protoPhase, MapCoordinates.Nullspace);
 
-        _doAfter.TryStartDoAfter(doAfterArgs);
-    }
-
-    private void OnFinishDescribe(Entity<CP14PaperPhaseDescriberComponent> ent, ref CP14DescribeRitualDoAfter args)
-    {
-        if (args.Cancelled || args.Handled)
-            return;
-        args.Handled = true;
-
-        if (!TryComp<CP14MagicRitualComponent>(args.Target, out var ritual))
-            return;
+        ent.Comp.CurrentPhase = newPhase;
 
         if (!TryComp<PaperComponent>(ent, out var paper))
             return;
 
-        if (ritual.CurrentPhase is null)
+        _paper.SetContent((ent, paper), GetPhaseDescription(newPhase));
+        _audio.PlayPvs(ent.Comp.UseSound, ent);
+    }
+
+    private void BackPhase(Entity<CP14PaperPhaseDescriberComponent> ent)
+    {
+        SetPhase(ent, ent.Comp.SearchHistory.Pop(), false);
+    }
+
+    private void OnDescriberVerbs(Entity<CP14PaperPhaseDescriberComponent> ent, ref GetVerbsEvent<Verb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
             return;
 
-        _paper.SetContent((ent, paper), GetPhaseDescription(ritual.CurrentPhase.Value));
+        if (!TryComp<CP14MagicRitualPhaseComponent>(ent.Comp.CurrentPhase, out var phase))
+            return;
+
+        if (!TryComp<CP14MagicRitualPhaseComponent>(ent.Comp.CurrentPhase.Value, out var phaseComp))
+            return;
+
+        foreach (var edge in phaseComp.Edges)
+        {
+            if (!_proto.TryIndex(edge.Target, out var indexedTarget))
+                continue;
+
+            Verb verb = new()
+            {
+                Text = Loc.GetString("cp14-ritual-describer-verb-item", ("name", indexedTarget.Name)),
+                Category = VerbCategory.CP14RitualBook,
+                Priority = 1,
+                Act = () => SetPhase(ent, edge.Target),
+            };
+            args.Verbs.Add(verb);
+        }
+
+        if (ent.Comp.SearchHistory.Count > 0)
+        {
+            Verb verb = new()
+            {
+                Text = Loc.GetString("cp14-ritual-describer-verb-back"),
+                Category = VerbCategory.CP14RitualBook,
+                Priority = -1,
+                Act = () => BackPhase(ent),
+            };
+            args.Verbs.Add(verb);
+        }
+    }
+
+    private string GetPhaseDescription(EntityUid uid)
+    {
+        if (!TryComp<CP14MagicRitualPhaseComponent>(uid, out var phase))
+            return string.Empty;
+
+        return GetPhaseDescription((uid, phase));
     }
 
     private string GetPhaseDescription(Entity<CP14MagicRitualPhaseComponent> ent)
@@ -90,20 +139,5 @@ public sealed partial class CP14RitualSystem
             }
         }
         return sb.ToString();
-    }
-
-    public string? GetPhaseDescription(EntProtoId proto)
-    {
-        if (!_proto.TryIndex(proto, out _))
-            return null;
-
-        var tmp = Spawn(proto, MapCoordinates.Nullspace);
-
-        if (!TryComp<CP14MagicRitualPhaseComponent>(tmp, out var phase))
-            return null;
-
-        Entity<CP14MagicRitualPhaseComponent> ent = (tmp, phase);
-
-        return GetPhaseDescription(ent);
     }
 }

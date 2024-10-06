@@ -57,3 +57,13 @@
   license: "CC-BY-4.0"
   copyright: 'by F.M.Audio of Freesound.org. Cropped by TheShuEd.'
   source: "https://freesound.org/people/F.M.Audio/sounds/552056/"
+
+- files: ["book1.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by flag2 of Freesound.org. edit to Mono by TheShuEd.'
+  source: "https://freesound.org/people/flag2/sounds/63318/"
+
+- files: ["book2.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by InspectorJ of Freesound.org. edit to Mono by TheShuEd.'
+  source: "https://freesound.org/people/InspectorJ/sounds/416179/"
