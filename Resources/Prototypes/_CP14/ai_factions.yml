@@ -1,0 +1,32 @@
+- type: npcFaction
+  id: Expedition
+  hostile:
+  - AggressiveAnimals
+  - Undead
+  - HostileEveryone
+
+- type: npcFaction
+  id: HostileEveryone
+  hostile:
+  - Expedition
+  - Undead
+  - PeacefulAnimals
+  - AggressiveAnimals
+
+- type: npcFaction
+  id: Undead
+  hostile:
+  - Expedition
+  - HostileEveryone
+  - PeacefulAnimals
+  - AggressiveAnimals
+
+- type: npcFaction
+  id: PeacefulAnimals
+
+- type: npcFaction
+  id: AggressiveAnimals
+  hostile:
+  - Expedition
+  - Undead
+  - PeacefulAnimals
