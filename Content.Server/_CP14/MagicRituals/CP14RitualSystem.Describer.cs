@@ -64,6 +64,7 @@ public sealed partial class CP14RitualSystem
                 continue;
 
             sb.Append($"[color=#b5783c][head=3]{targetIndexed.Name}[/head][/color]" + "\n");
+
             //TRIGGERS
             if (edge.Triggers.Count > 0)
             {

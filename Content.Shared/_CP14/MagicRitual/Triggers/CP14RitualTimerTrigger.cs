@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -6,7 +7,7 @@ namespace Content.Shared._CP14.MagicRitual.Triggers;
 /// <summary>
 /// Triggers the phase transition after a certain period of time
 /// </summary>
-public sealed partial class TimerTrigger : CP14RitualTrigger
+public sealed partial class CP14TimerTrigger : CP14RitualTrigger
 {
     [DataField]
     public float Delay = 10f;
@@ -14,11 +15,11 @@ public sealed partial class TimerTrigger : CP14RitualTrigger
     [DataField]
     public TimeSpan TriggerTime = TimeSpan.Zero;
 
-    public override void Initialize(EntityManager entManager, Entity<CP14MagicRitualComponent> ritual)
+    public override void Initialize(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> ritual, RitualPhaseEdge edge)
     {
-        var gameTiming = IoCManager.Resolve<IGameTiming>();
-
-        TriggerTime = gameTiming.CurTime + TimeSpan.FromSeconds(Delay);
+        entManager.EnsureComponent<CP14RitualTimerTriggerComponent>(ritual, out var trigger);
+        trigger.Triggers.Add(this);
+        Edge = edge;
     }
 
     public override string? GetGuidebookTriggerDescription(IPrototypeManager prototype, IEntitySystemManager entSys)

@@ -10,54 +10,55 @@ public sealed partial class CP14RitualSystem
 {
     private void InitializeTriggers()
     {
-        SubscribeLocalEvent<CP14MagicRitualComponent, ListenEvent>(OnListenEvent);
+        SubscribeLocalEvent<CP14RitualTimerTriggerComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14RitualVoiceTriggerComponent, ListenEvent>(OnListenEvent);
     }
 
-    private void OnListenEvent(Entity<CP14MagicRitualComponent> ent, ref ListenEvent args)
+    private void OnMapInit(Entity<CP14RitualTimerTriggerComponent> ent, ref MapInitEvent args)
     {
-        if (ent.Comp.CurrentPhase is null)
+        foreach (var trigger in ent.Comp.Triggers)
+        {
+            trigger.TriggerTime = _timing.CurTime + TimeSpan.FromSeconds(trigger.Delay);
+        }
+    }
+
+    private void OnListenEvent(Entity<CP14RitualVoiceTriggerComponent> ent, ref ListenEvent args)
+    {
+        if (!TryComp<CP14MagicRitualPhaseComponent>(ent, out var phase))
             return;
 
         // Lowercase the phrase and remove all punctuation marks
         var message = Regex.Replace(args.Message.Trim().ToLower(), @"[^\w\s]", "");
 
-        var phase = ent.Comp.CurrentPhase.Value;
-
-        foreach (var edge in phase.Comp.Edges)
+        foreach (var trigger in ent.Comp.Triggers)
         {
-            foreach (var trigger in edge.Triggers)
-            {
-                if (trigger is not VoiceTrigger voiceTrigger)
-                    continue;
+            var triggerMessage = Regex.Replace(trigger.Message.ToLower(), @"[^\w\s]", "");
 
-                var triggerMessage = Regex.Replace(voiceTrigger.Message.ToLower(), @"[^\w\s]", "");
+            if (triggerMessage != message)
+                continue;
 
-                if (triggerMessage != message)
-                    continue;
+            if (trigger.Edge is null)
+                continue;
 
-                TriggerRitualPhase(phase, edge.Target);
-            }
+            TriggerRitualPhase((ent.Owner, phase), trigger.Edge.Value.Target);
         }
     }
 
     private void UpdateTriggers(float frameTime)
     {
-        var query = EntityQueryEnumerator<CP14MagicRitualPhaseComponent>();
-        while (query.MoveNext(out var uid, out var phase))
+        var query = EntityQueryEnumerator<CP14RitualTimerTriggerComponent, CP14MagicRitualPhaseComponent>();
+        while (query.MoveNext(out var uid, out var timer, out var phase))
         {
-            foreach (var edge in phase.Edges)
+            foreach (var trigger in timer.Triggers)
             {
-                foreach (var trigger in edge.Triggers)
-                {
-                    if (trigger is not TimerTrigger timerTrigger)
-                        continue;
+                if (_timing.CurTime < trigger.TriggerTime || trigger.TriggerTime == TimeSpan.Zero)
+                    continue;
 
-                    if (_timing.CurTime < timerTrigger.TriggerTime)
-                        continue;
+                if (trigger.Edge is null)
+                    continue;
 
-                    TriggerRitualPhase((uid, phase), edge.Target);
-                    timerTrigger.TriggerTime = TimeSpan.Zero;
-                }
+                TriggerRitualPhase((uid, phase), trigger.Edge.Value.Target);
+                trigger.TriggerTime = TimeSpan.Zero;
             }
         }
     }

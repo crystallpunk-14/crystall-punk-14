@@ -1,4 +1,5 @@
 
+using System.Text.RegularExpressions;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicRitual.Triggers;
@@ -6,7 +7,7 @@ namespace Content.Shared._CP14.MagicRitual.Triggers;
 /// <summary>
 /// Triggers a phase transition when the Ritual hears a certain message
 /// </summary>
-public sealed partial class VoiceTrigger : CP14RitualTrigger
+public sealed partial class CP14VoiceTrigger : CP14RitualTrigger
 {
     [DataField]
     public string Message = string.Empty;
@@ -14,7 +15,12 @@ public sealed partial class VoiceTrigger : CP14RitualTrigger
     [DataField]
     public int Speakers = 1;
 
-    public override void Initialize(EntityManager entManager, Entity<CP14MagicRitualComponent> ritual) { }
+    public override void Initialize(EntityManager entManager, Entity<CP14MagicRitualPhaseComponent> ritual, RitualPhaseEdge edge)
+    {
+        entManager.EnsureComponent<CP14RitualVoiceTriggerComponent>(ritual, out var trigger);
+        trigger.Triggers.Add(this);
+        Edge = edge;
+    }
 
     public override string? GetGuidebookTriggerDescription(IPrototypeManager prototype, IEntitySystemManager entSys)
     {

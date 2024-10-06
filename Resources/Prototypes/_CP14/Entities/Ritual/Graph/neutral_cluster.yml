@@ -5,6 +5,8 @@
   components:
   - type: CP14MagicRitualPhase
     phaseColor: "#FFFFFF"
+  - type: ActiveListener
+    range: 3
 
 - type: entity
   parent: CP14_NeutralCluster_Base

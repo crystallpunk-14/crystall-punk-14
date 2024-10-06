@@ -29,18 +29,12 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         InitializeDescriber();
         InitializeVisuals();
 
-        SubscribeLocalEvent<CP14MagicRitualComponent, MapInitEvent>(OnRitualHolderInit);
         SubscribeLocalEvent<CP14MagicRitualComponent, CP14ActivateRitualDoAfter>(OnActivateRitual);
         SubscribeLocalEvent<CP14MagicRitualComponent, GetVerbsEvent<AlternativeVerb>>(OnAlternativeVerb);
 
         SubscribeLocalEvent<CP14MagicRitualPhaseComponent, CP14RitualTriggerEvent>(OnPhaseTrigger);
 
         SubscribeLocalEvent<CP14MagicRitualOrbComponent, ExaminedEvent>(OnOrbExamine);
-    }
-
-    private void OnRitualHolderInit(Entity<CP14MagicRitualComponent> ent, ref MapInitEvent args)
-    {
-        EnsureComp<ActiveListenerComponent>(ent).Range = ent.Comp.RitualRadius;
     }
 
     public override void Update(float frameTime)
@@ -131,7 +125,7 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         {
             foreach (var trigger in edge.Triggers)
             {
-                trigger.Initialize(EntityManager, ritual);
+                trigger.Initialize(EntityManager, ritual.Comp.CurrentPhase.Value, edge);
             }
         }
 
