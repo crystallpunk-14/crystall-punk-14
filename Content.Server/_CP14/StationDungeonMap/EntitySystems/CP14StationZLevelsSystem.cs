@@ -1,15 +1,10 @@
 using Content.Server._CP14.StationDungeonMap.Components;
-using Content.Server.GameTicking.Events;
 using Content.Server.Station.Components;
-using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
-using Content.Shared.Maps;
-using Content.Shared.Station.Components;
 using Content.Shared.Teleportation.Systems;
 using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Shared.Map;
-using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.StationDungeonMap.EntitySystems;
@@ -26,114 +21,79 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
     {
         base.Initialize();
         AutoPortalInitialize();
-
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
-        SubscribeLocalEvent<CP14StationZLevelsComponent, StationPostInitEvent>(OnStationPostInit);
     }
 
-    private void OnRoundStart(RoundStartingEvent ev)
+    private bool TryAddMapInZLevelGroup(Entity<CP14ZLevelGroupComponent> zLevelGroup, int zLevel,  MapId mapId)
     {
-        var query = EntityQueryEnumerator<CP14ZLevelAutoPortalComponent>();
-        while (query.MoveNext(out var uid, out var portal))
-        {
-            InitPortal((uid, portal));
-        }
+        if (!_map.MapExists(mapId))
+            return false;
+
+        var mapUid = _map.GetMap(mapId);
+        if (!zLevelGroup.Comp.Levels.TryAdd(zLevel, mapId))
+            return false;
+
+        var lvlElement = EnsureComp<CP14ZLevelElementComponent>(mapUid);
+
+        lvlElement.Group = zLevelGroup;
+        return true;
     }
 
-    private void OnStationPostInit(Entity<CP14StationZLevelsComponent> ent, ref StationPostInitEvent args)
+    private void RemoveMapFromZLevelGroup(Entity<CP14ZLevelGroupComponent> zLevelGroup, int zLevel)
     {
-        if (ent.Comp.Initialized)
+        if (!zLevelGroup.Comp.Levels.ContainsKey(zLevel))
             return;
 
-        if (!TryComp(ent, out StationDataComponent? dataComp))
-        {
-            Log.Error($"Failed to init CP14StationZLevelsSystem: no StationData");
-            return;
-        }
+        var map = zLevelGroup.Comp.Levels[zLevel];
 
-        var defaultMap = _station.GetLargestGrid(dataComp);
+        var mapUid = _map.GetMap(map);
 
-        if (defaultMap is null)
-        {
-            Log.Error($"Failed to init CP14StationZLevelsSystem: defaultMap is null");
-            return;
-        }
-
-        ent.Comp.LevelEntities.Add(Transform(defaultMap.Value).MapID, ent.Comp.DefaultMapLevel);
-
-        ent.Comp.Initialized = true;
-
-        foreach (var (zLevel, level) in ent.Comp.Levels)
-        {
-            var path = level.Path.ToString();
-            if (level.Path is null)
-            {
-                Log.Error($"path {path} for CP14StationZLevelsSystem at level {zLevel} don't exist!");
-                continue;
-            }
-
-            SetZLevel(ent, zLevel, level.Path.Value);
-        }
+        RemCompDeferred<CP14ZLevelElementComponent>(mapUid);
+        zLevelGroup.Comp.Levels.Remove(zLevel);
     }
 
-    public MapId? SetZLevel(Entity<CP14StationZLevelsComponent> ent, int zLevel, ResPath resPath, bool force = false)
+    private MapId? GetZLevelMap(Entity<CP14ZLevelGroupComponent> zLevelGroup, int zLevel)
     {
-        if (ent.Comp.LevelEntities.ContainsValue(zLevel))
-        {
-            if (!force)
-            {
-                Log.Error($"Key duplication for CP14StationZLevelsSystem at level {zLevel}!");
-                return null;
-            }
-
-            foreach (var (key, value) in ent.Comp.LevelEntities)
-            {
-                if (value == zLevel && _map.MapExists(key))
-                {
-                    ent.Comp.LevelEntities.Remove(key);
-                    Del(_map.GetMap(key));
-                }
-            }
-        }
-
-        var mapUid = _map.CreateMap(out var mapId);
-        var member = EnsureComp<StationMemberComponent>(mapUid);
-        member.Station = ent;
-
-        Log.Info($"Created map {mapId} for CP14StationZLevelsSystem at level {zLevel}");
-
-        var options = new MapLoadOptions { LoadMap = true };
-
-        if (!_mapLoader.TryLoad(mapId, resPath.ToString(), out var grids, options))
-        {
-            Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {zLevel}!");
-            Del(mapUid);
+        if (!zLevelGroup.Comp.Levels.TryGetValue(zLevel, out var mapId))
             return null;
-        }
-        ent.Comp.LevelEntities.TryAdd(mapId, zLevel);
 
         return mapId;
     }
 
-    public MapId? GetMapOffset(EntityUid mapUid, int offset)
+    private Entity<CP14ZLevelGroupComponent> CreateZLevelGroup(Dictionary<int, MapId>? maps = null)
     {
-        var query = EntityQueryEnumerator<CP14StationZLevelsComponent, StationDataComponent>();
-        while (query.MoveNext(out var uid, out var zLevel, out _))
+        var groupEntity = Spawn(null, MapCoordinates.Nullspace);
+        var groupComp = AddComp<CP14ZLevelGroupComponent>(groupEntity);
+
+        if (maps is not null)
         {
-            if (!zLevel.LevelEntities.TryGetValue(Transform(mapUid).MapID, out var currentLevel))
-                continue;
-
-            var targetLevel = currentLevel + offset;
-
-            if (!zLevel.LevelEntities.ContainsValue(targetLevel))
-                continue;
-
-            foreach (var (key, value) in zLevel.LevelEntities)
+            foreach (var (level, map) in maps)
             {
-                if (value == targetLevel && _map.MapExists(key))
-                    return key;
+                TryAddMapInZLevelGroup((groupEntity, groupComp), level, map);
             }
         }
-        return null;
+
+        return (groupEntity, groupComp);
     }
+
+    //public MapId? GetMapOffset(EntityUid mapUid, int offset)
+    //{
+    //    var query = EntityQueryEnumerator<CP14StationZLevelsComponent, StationDataComponent>();
+    //    while (query.MoveNext(out var uid, out var zLevel, out _))
+    //    {
+    //        if (!zLevel.LevelEntities.TryGetValue(Transform(mapUid).MapID, out var currentLevel))
+    //            continue;
+//
+    //        var targetLevel = currentLevel + offset;
+//
+    //        if (!zLevel.LevelEntities.ContainsValue(targetLevel))
+    //            continue;
+//
+    //        foreach (var (key, value) in zLevel.LevelEntities)
+    //        {
+    //            if (value == targetLevel && _map.MapExists(key))
+    //                return key;
+    //        }
+    //    }
+    //    return null;
+    //}
 }
