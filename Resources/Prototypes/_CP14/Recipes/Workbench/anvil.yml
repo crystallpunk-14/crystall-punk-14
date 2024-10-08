@@ -114,3 +114,35 @@
     CP14WoodenPlanks: 1
     CP14IronBar: 2
   result: CP14BaseShovel
+
+- type: CP14Recipe
+  id: CP14ClothingCloakCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 5
+  result: CP14ClothingCloakCuirass
+
+- type: CP14Recipe
+  id: CP14ClothingCloakInfantryCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 6
+  result: CP14ClothingCloakInfantryCuirass
+
+- type: CP14Recipe
+  id: CP14ClothingCloakCuirassLoincloth
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 6
+  result: CP14ClothingCloakCuirassLoincloth
+
+- type: CP14Recipe
+  id: CP14ClothingCloakCuirassLeg
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 7
+  result: CP14ClothingCloakCuirassLeg
