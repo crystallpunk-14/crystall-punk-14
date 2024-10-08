@@ -105,7 +105,6 @@
   description: A table with embroidery tools to create different clothing and materials.
   components:
   - type: Sprite
-    snapCardinals: true
     state: sewing_table
   - type: Icon
     state: sewing_table
@@ -123,7 +122,6 @@
   description: An ultimatum anvil that doesn't even need a hammer or red-hot ingot temperatures to forge tools.
   components:
   - type: Sprite
-    snapCardinals: true
     state: anvil
   - type: Icon
     state: anvil
