@@ -208,32 +208,6 @@
         - CP14FloorGrass
       entities:
         - CP14GatherableWildSage
-    - !type:BiomeEntityLayer # More Rocks
-      threshold: 0.7
-      noise:
-        seed: 18
-        noiseType: OpenSimplex2
-        fractalType: FBm
-        frequency: 3
-      allowedTiles:
-        - CP14FloorGrass
-        - CP14FloorGrassLight
-        - CP14FloorGrassTall
-      entities:
-        - CP14RockSmall
-    - !type:BiomeEntityLayer # More Rocks
-      threshold: 0.8
-      noise:
-        seed: 27
-        noiseType: OpenSimplex2
-        fractalType: FBm
-        frequency: 2
-      allowedTiles:
-        - CP14FloorGrass
-        - CP14FloorGrassLight
-        - CP14FloorGrassTall
-      entities:
-        - CP14RockBig
 
 # Подбиомы лугов
 
@@ -251,8 +225,6 @@
         frequency: 2
       allowedTiles:
         - CP14FloorGrass
-        - CP14FloorGrassLight
-        - CP14FloorGrassTall
       entities:
         - CP14FloraTree01
         - CP14FloraTree02
