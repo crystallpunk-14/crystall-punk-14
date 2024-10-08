@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "created by vladimir.s",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "rock0"
+    },
+    {
+      "name": "rock1"
+    },
+    {
+      "name": "rock2"
+    },
+    {
+      "name": "rock3"
+    },
+    {
+      "name": "rock4"
+    },
+    {
+      "name": "rock5"
+    },
+    {
+      "name": "rock6"
+    },
+    {
+      "name": "rock7"
+    },
+    {
+      "name": "rock8"
+    }
+  ]
+}
