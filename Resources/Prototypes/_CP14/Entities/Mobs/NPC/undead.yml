@@ -9,4 +9,4 @@
       task: SimpleHostileCompound
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - CP14Undead

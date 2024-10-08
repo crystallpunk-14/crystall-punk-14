@@ -3,12 +3,18 @@
   parent: MobXeno
   components:
   - type: CP14OutPVSDespawn
+  - type: NpcFactionMember
+    factions:
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobXenoDrone
   parent: MobXenoDrone
   components:
   - type: CP14OutPVSDespawn
+  - type: NpcFactionMember
+    factions:
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobSpaceCobra
@@ -16,21 +22,33 @@
   parent: MobCobraSpace
   components:
   - type: CP14OutPVSDespawn
+  - type: NpcFactionMember
+    factions:
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobPurpleSnake
   parent: MobPurpleSnake
   components:
   - type: CP14OutPVSDespawn
+  - type: NpcFactionMember
+    factions:
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobSmallPurpleSnake
   parent: MobSmallPurpleSnake
   components:
   - type: CP14OutPVSDespawn
+  - type: NpcFactionMember
+    factions:
+    - CP14HostileEveryone
 
 - type: entity
   id: CP14MobWatcherMagmawing
   parent: MobWatcherMagmawing
   components:
   - type: CP14OutPVSDespawn
+  - type: NpcFactionMember
+    factions:
+    - CP14HostileEveryone

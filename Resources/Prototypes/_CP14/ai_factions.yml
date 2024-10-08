@@ -1,0 +1,32 @@
+- type: npcFaction
+  id: CP14Adventurers #TODO - Change name to some lore-related
+  hostile:
+  - CP14AggressiveAnimals
+  - CP14Undead
+  - CP14HostileEveryone
+
+- type: npcFaction
+  id: CP14HostileEveryone
+  hostile:
+  - CP14Adventurers
+  - CP14Undead
+  - CP14PeacefulAnimals
+  - CP14AggressiveAnimals
+
+- type: npcFaction
+  id: CP14Undead
+  hostile:
+  - CP14Adventurers
+  - CP14HostileEveryone
+  - CP14PeacefulAnimals
+  - CP14AggressiveAnimals
+
+- type: npcFaction
+  id: CP14PeacefulAnimals
+
+- type: npcFaction
+  id: CP14AggressiveAnimals
+  hostile:
+  - CP14Adventurers
+  - CP14Undead
+  - CP14PeacefulAnimals

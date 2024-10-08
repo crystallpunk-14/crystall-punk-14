@@ -174,7 +174,7 @@
     messagePerceivedByOthers: hugging-success-generic-others
   - type: NpcFactionMember
     factions:
-    - NanoTrasen
+    - CP14Adventurers
   - type: Stripping
   - type: Strippable
   - type: UserInterface
