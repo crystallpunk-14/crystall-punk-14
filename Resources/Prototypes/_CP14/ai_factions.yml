@@ -1,5 +1,5 @@
 - type: npcFaction
-  id: CP14Adventurers
+  id: CP14Adventurers #TODO - Change name to some lore-related
   hostile:
   - CP14AggressiveAnimals
   - CP14Undead
