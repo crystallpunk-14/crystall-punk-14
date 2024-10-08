@@ -1,0 +1,23 @@
+- type: CP14Recipe
+  id: CP14CopperBar1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  entities:
+    CP14OreCopper: 2
+  result: CP14CopperBar1
+
+- type: CP14Recipe
+  id: CP14IronBar1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  entities:
+    CP14OreIron: 2
+  result: CP14IronBar1
+
+- type: CP14Recipe
+  id: CP14GoldBar1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  entities:
+    CP14OreGold: 2
+  result: CP14GoldBar1
