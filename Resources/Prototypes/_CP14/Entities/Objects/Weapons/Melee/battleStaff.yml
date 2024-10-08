@@ -24,7 +24,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types: 
-        Blunt: 4
+        Blunt: 3
   - type: MeleeWeapon
     angle: 100
     attackRate: 1.3
@@ -33,12 +33,12 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 4
+        Blunt: 3
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.3
     cPAnimationOffset: -1.3
   - type: StaminaDamageOnHit
-    damage: 9
+    damage: 4
   - type: CP14Currency
     currency: 20
