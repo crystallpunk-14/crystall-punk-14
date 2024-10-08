@@ -28,30 +28,8 @@
       allowedTiles:
         - CP14FloorBase
       entities:
-        - FloraGreyStalagmite1
-        - FloraGreyStalagmite2
-        - FloraGreyStalagmite3
-        - FloraGreyStalagmite4
-        - FloraGreyStalagmite5
-        - FloraRockSolid01
-        - FloraRockSolid02
-        - FloraRockSolid03
-        - FloraGreyStalagmite1
-        - FloraGreyStalagmite2
-        - FloraGreyStalagmite3
-        - FloraGreyStalagmite4
-        - FloraGreyStalagmite5
-        - FloraRockSolid01
-        - FloraRockSolid02
-        - FloraRockSolid03
-        - FloraGreyStalagmite1
-        - FloraGreyStalagmite2
-        - FloraGreyStalagmite3
-        - FloraGreyStalagmite4
-        - FloraGreyStalagmite5
-        - FloraRockSolid01
-        - FloraRockSolid02
-        - FloraRockSolid03
+        - CP14RockSmall
+        - CP14RockSmall
         - CP14QuartzCrystal
     - !type:BiomeEntityLayer # lumishroom sage
       threshold: 0.6
