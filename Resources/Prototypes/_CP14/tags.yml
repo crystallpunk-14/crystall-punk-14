@@ -43,8 +43,8 @@
 - type: Tag
   id: CP14RecipeWorkbench
 
-#- type: Tag
-#  id: CP14RecipeAnvil
-#
-#- type: Tag
-#  id: CP14RecipeMeltingFurnace
+- type: Tag
+  id: CP14RecipeAnvil
+
+- type: Tag
+  id: CP14RecipeMeltingFurnace
