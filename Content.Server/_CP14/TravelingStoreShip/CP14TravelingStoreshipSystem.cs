@@ -38,10 +38,14 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
 
         var shuttle =  shuttleUids[0];
         station.Comp.Shuttle = shuttle;
-        var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
         travelingStoreShipComp.Station = station;
 
+        TryStartTravelToStation(station, 20); //Start fast travel
+    }
+
+    private bool TryStartTravelToStation(Entity<CP14StationTravelingStoreshipTargetComponent> station, float flyTime)
+    {
         var targetPoints = new List<EntityUid>();
         var targetEnumerator = EntityQueryEnumerator<CP14TravelingStoreShipFTLTargetComponent, TransformComponent>(); //TODO - different method position location
         while (targetEnumerator.MoveNext(out var uid, out _, out _))
@@ -49,18 +53,21 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
             targetPoints.Add(uid);
         }
         if (targetPoints.Count == 0)
-            return;
+            return false;
 
         var target = _random.Pick(targetPoints);
 
-        if (!HasComp<TransformComponent>(shuttle))
-            return;
+        if (!HasComp<TransformComponent>(station.Comp.Shuttle))
+            return false;
+
+        var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
         var targetPos = _transform.GetWorldPosition(target);
         var mapUid = _transform.GetMap(target);
         if (mapUid == null)
-            return;
+            return false;
 
-        _shuttles.FTLToCoordinates(shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Angle.Zero, hyperspaceTime: 20, startupTime: 0.5f); //roundstart short time
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Angle.Zero, hyperspaceTime: flyTime, startupTime: 0.5f);
+        return true;
     }
 }
