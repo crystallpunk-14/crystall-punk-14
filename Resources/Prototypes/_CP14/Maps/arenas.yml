@@ -81,6 +81,7 @@
             #CP14HouseKeeper: [1, 1]
         #- type: CP14StationExpeditionTarget
         #  shuttlePath: /Maps/_CP14/Shuttles/test-ship.yml
+        - type: CP14StationTravelingStoreshipTarget
         - type: CP14StationZLevels
           defaultMapLevel: 0
           levels:
