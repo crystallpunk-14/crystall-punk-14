@@ -1,23 +1,16 @@
 - type: biomeTemplate
-  id: CP14SolidStone
+  id: CP14CavesEmpty
   layers:
     - !type:BiomeTileLayer
       threshold: -1.0
-      tile: CP14FloorBase
-    - !type:BiomeEntityLayer
-      threshold: -1.0
-      allowedTiles:
-        - CP14FloorBase
-      entities:
-        - CP14WallStone
+      tile: CP14FloorBase 
 
 - type: biomeTemplate
-  id: CP14CavesGeneric
+  id: CP14CavesFloor
   layers:
-    - !type:BiomeTileLayer
-      threshold: -1.0
-      tile: CP14FloorBase
-    #Entityx
+    - !type:BiomeMetaLayer
+      template: CP14CavesEmpty
+    #Entity
     - !type:BiomeEntityLayer
       threshold: 0.4
       noise:
@@ -32,12 +25,12 @@
         - CP14RockSmall
         - CP14QuartzCrystal
     - !type:BiomeEntityLayer # lumishroom sage
-      threshold: 0.6
+      threshold: 0.8
       noise:
         seed: 8
         noiseType: OpenSimplex2
         fractalType: Ridged
-        frequency: 0.015
+        frequency: 0.045
         octaves: 3
         lacunarity: 1.8
         gain: 0.7
@@ -47,23 +40,12 @@
         - CP14FloorBase
       entities:
         - CP14GatherableLumiMushroom
-    - !type:BiomeEntityLayer # lumishroom sage
-      threshold: 0.8
-      noise:
-        seed: 8
-        noiseType: OpenSimplex2
-        fractalType: Ridged
-        frequency: 0.85
-        octaves: 3
-        lacunarity: 1.8
-        gain: 0.7
-        domainWarpType: OpenSimplex2
-        domainWarpAmp: 120
-      allowedTiles:
-        - CP14FloorBase
-      entities:
-        - CP14ConstrainedSpawnerXeno
-        - CP14AuraNodeBase
+ 
+- type: biomeTemplate
+  id: CP14CavesGeneric
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14CavesFloor
     # Lakes start
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -78,8 +60,7 @@
         domainWarpAmp: 150
       entities:
         - CP14FloorWater
-    # Lakes end
-     #Walls
+    #Walls
     - !type:BiomeEntityLayer
       threshold: -0.75
       invert: true
@@ -94,7 +75,7 @@
         - CP14FloorBase
       entities:
         - CP14WallStone
-    #Ores
+   #Ores
     - !type:BiomeEntityLayer
       threshold: 0.7
       noise:

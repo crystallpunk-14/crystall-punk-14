@@ -61,7 +61,7 @@
 - type: gameMap
   id: ExpeditionTest
   mapName: Sandbox village
-  mapPath: /Maps/_CP14/exp_tavern.yml
+  mapPath: /Maps/_CP14/tavern.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
@@ -75,7 +75,7 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ 2, 3 ]
-            CP14Innkeeper: [ 2, 3 ]
+            CP14Innkeeper: [ 3, 4 ]
             #CP14Captain: [1, 1]
             #CP14GuardCommander: [1, 1]
             #CP14HouseKeeper: [1, 1]
@@ -85,4 +85,4 @@
           defaultMapLevel: 0
           levels:
             -1:
-              path: /Maps/_CP14/alchemy_test_layer2.yml
+              path: /Maps/_CP14/tavern_cave.yml
