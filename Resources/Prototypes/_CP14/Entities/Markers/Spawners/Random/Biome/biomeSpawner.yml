@@ -42,9 +42,23 @@
   - type: Sprite
     layers:
       - state: cave
+      - sprite: _CP14/Structures/Flora/Rocks/rocks_small.rsi
+        state: rock0
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14CavesGeneric
+
+- type: entity
+  id: CP14BiomeSpawnerCaveEmpty
+  parent: CP14BaseBiomeSpawner
+  suffix: Cave Open
+  components:
+  - type: Sprite
+    layers:
+      - state: cave
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14CavesFloor
 
 - type: entity
   id: CP14BiomeSpawnerForest
