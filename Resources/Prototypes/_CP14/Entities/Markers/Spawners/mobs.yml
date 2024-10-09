@@ -12,3 +12,18 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobUndeadZombie
+
+- type: entity
+  name: rabbit spawner
+  id: CP14SpawnMobRabbit
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/rabbit.rsi
+      state: rabbit
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobRabbit
