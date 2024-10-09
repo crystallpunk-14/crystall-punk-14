@@ -121,10 +121,10 @@
   name: anvil
   description: An ultimatum anvil that doesn't even need a hammer or red-hot ingot temperatures to forge tools.
   components:
-  - type: Sprite
-    state: anvil
-  - type: Icon
-    state: anvil
+#  - type: Sprite
+#    state: anvil
+#  - type: Icon
+#    state: anvil
 #  - type: Damageable
 #    damageContainer: StructuralInorganic
 #    damageModifierSet: StructuralMetallic
