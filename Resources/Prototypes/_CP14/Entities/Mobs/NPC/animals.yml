@@ -67,3 +67,10 @@
       amount: 1
   - type: Bloodstream
     bloodMaxVolume: 50
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: cp14-petting-success-rabbit
+    interactFailureString: cp14-petting-failure-rabbit
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
