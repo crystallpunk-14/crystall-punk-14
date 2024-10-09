@@ -63,7 +63,7 @@
         Base: rabbit_dead
   - type: Butcherable
     spawned:
-    - id: CP14RawFoodMeat # to replace the rabbit meat
+    - id: CP14FoodMeatLamb # to replace the rabbit meat
       amount: 1
   - type: Bloodstream
     bloodMaxVolume: 50
