@@ -122,7 +122,7 @@
   description: I feel really bad, please someone fix this.
   components:
   - type: Sprite
-    state: furnace
+    state: anvil
 #  - type: Icon
 #    state: anvil
 #  - type: Damageable

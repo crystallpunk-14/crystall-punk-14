@@ -23,8 +23,7 @@
       "name": "furnace"
     },
     {
-      "name": "anvil",
-      "directions": 4
+      "name": "anvil"
     }
   ]
 }
