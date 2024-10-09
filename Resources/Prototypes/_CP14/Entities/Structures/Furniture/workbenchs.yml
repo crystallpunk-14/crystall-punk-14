@@ -120,25 +120,25 @@
   - CP14BaseWorkbench
   name: anvil
   description: HUH
-  components:
-  - type: Sprite
-    state: anvil
-  - type: Icon
-    state: anvil
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 250
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+#  components:
+#  - type: Sprite
+#    state: anvil
+#  - type: Icon
+#    state: anvil
+#  - type: Damageable
+#    damageContainer: StructuralInorganic
+#    damageModifierSet: StructuralMetallic
+#  - type: Destructible
+#    thresholds:
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 250
+#      behaviors:
+#      - !type:PlaySoundBehavior
+#        sound:
+#          collection: MetalBreak
+#      - !type:DoActsBehavior
+#        acts: [ "Destruction" ]
 #  - type: CP14Workbench
 #    craftSound:
 #      collection: CP14Sawing #TODO
