@@ -1,0 +1,76 @@
+- type: entity
+  id: CP14MobRabbit
+  parent: SimpleMobBase
+  name: rabbit
+  description: A little fluffy rabbit. I could eat it.
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: NpcFactionMember
+    factions:
+    - CP14PeacefulAnimals
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Animals/rabbit.rsi
+      state: rabbit
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 8
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CP14Rabbit
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - CP14Rabbit
+    offspring:
+    - id: CP14MobRabbit
+      maxAmount: 2
+  - type: ReproductivePartner
+  - type: Speech
+    speechVerb: SmallMob
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 1
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rabbit
+      Dead:
+        Base: rabbit_dead
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatLamb # to replace the rabbit meat
+      amount: 1
+  - type: Bloodstream
+    bloodMaxVolume: 50
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: cp14-petting-success-rabbit
+    interactFailureString: cp14-petting-failure-rabbit
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
