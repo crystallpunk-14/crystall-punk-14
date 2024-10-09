@@ -119,12 +119,12 @@
   parent:
   - CP14BaseWorkbench
   name: anvil
-  description: HUH
-#  components:
-#  - type: Sprite
-#    state: anvil
-#  - type: Icon
-#    state: anvil
+  description: An ultimatum anvil that doesn't even need a hammer or red-hot ingot temperatures to forge tools.
+  components:
+  - type: Sprite
+    state: anvil
+  - type: Icon
+    state: anvil
 #  - type: Damageable
 #    damageContainer: StructuralInorganic
 #    damageModifierSet: StructuralMetallic
@@ -139,11 +139,11 @@
 #          collection: MetalBreak
 #      - !type:DoActsBehavior
 #        acts: [ "Destruction" ]
-#  - type: CP14Workbench
-#    craftSound:
-#      collection: CP14Sawing #TODO
-#    recipeTags:
-#    - CP14RecipeAnvil
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing #TODO
+    recipeTags:
+    - CP14RecipeAnvil
 
 - type: entity
   id: CP14WorkbenchFurnace
