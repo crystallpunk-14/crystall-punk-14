@@ -1,0 +1,148 @@
+- type: CP14Recipe
+  id: CP14BaseBattleHammer
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 3
+  result: CP14BaseBattleHammer
+
+- type: CP14Recipe
+  id: CP14BaseDagger
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 1
+  result: CP14BaseDagger
+
+- type: CP14Recipe
+  id: CP14BaseHandheldAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 1
+  result: CP14BaseHandheldAxe
+
+- type: CP14Recipe
+  id: CP14BaseLightHammer
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 1
+  result: CP14BaseLightHammer
+
+- type: CP14Recipe
+  id: CP14BaseMace
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 2
+  result: CP14BaseMace
+
+- type: CP14Recipe
+  id: CP14BaseShield
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 2
+    CP14IronBar: 2
+  result: CP14BaseShield
+
+- type: CP14Recipe
+  id: CP14BaseSickle
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 2
+  result: CP14BaseSickle
+
+- type: CP14Recipe
+  id: CP14BaseThrowableSpear
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 2
+    CP14IronBar: 1
+  result: CP14BaseThrowableSpear
+
+- type: CP14Recipe
+  id: CP14BaseSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 3
+  result: CP14BaseSword
+
+- type: CP14Recipe
+  id: CP14BaseTwoHandedSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 4
+  result: CP14BaseTwoHandedSword
+
+- type: CP14Recipe
+  id: CP14BaseHoe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 2
+  result: CP14BaseHoe
+
+- type: CP14Recipe
+  id: CP14BasePickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 2
+  result: CP14BasePickaxe
+
+- type: CP14Recipe
+  id: CP14BaseShovel
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 2
+  result: CP14BaseShovel
+
+- type: CP14Recipe
+  id: CP14ClothingCloakCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 5
+  result: CP14ClothingCloakCuirass
+
+- type: CP14Recipe
+  id: CP14ClothingCloakInfantryCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 6
+  result: CP14ClothingCloakInfantryCuirass
+
+- type: CP14Recipe
+  id: CP14ClothingCloakCuirassLoincloth
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 6
+  result: CP14ClothingCloakCuirassLoincloth
+
+- type: CP14Recipe
+  id: CP14ClothingCloakCuirassLeg
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 7
+  result: CP14ClothingCloakCuirassLeg

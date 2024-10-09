@@ -9,7 +9,7 @@
   "states": [
     {
       "name": "mannequin",
-	  "directions": 4
+      "directions": 4
     }
   ]
 }
