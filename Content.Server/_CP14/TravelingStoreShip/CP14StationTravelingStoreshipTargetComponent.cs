@@ -11,5 +11,15 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     [DataField]
     public EntityUid Shuttle;
 
-    [DataField] public ResPath ShuttlePath = new("/Maps/Shuttles/arrivals.yml");
+    [DataField]
+    public EntityUid TradepostMap;
+
+    [DataField]
+    public ResPath ShuttlePath = new("/Maps/Shuttles/arrivals.yml");
+
+    [DataField]
+    public TimeSpan NextTravelTime = TimeSpan.Zero;
+
+    [DataField]
+    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(5f);
 }
