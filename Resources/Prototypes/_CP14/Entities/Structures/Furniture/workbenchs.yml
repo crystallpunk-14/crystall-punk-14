@@ -119,10 +119,10 @@
   parent:
   - CP14BaseWorkbench
   name: anvil
-  description: An ultimatum anvil that doesn't even need a hammer or red-hot ingot temperatures to forge tools.
+  description: I feel really bad, please someone fix this.
   components:
   - type: Sprite
-    state: anvil
+    state: furnace
 #  - type: Icon
 #    state: anvil
 #  - type: Damageable
