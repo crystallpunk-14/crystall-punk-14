@@ -1,0 +1,30 @@
+using Content.Shared.Destructible.Thresholds;
+using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared._CP14.TravelingStoreShip;
+
+/// <summary>
+/// Stores the price and product/service pair that players can buy.
+/// </summary>
+[Prototype("storePosition")]
+public sealed partial class CP14StoreBuyPosition : IPrototype
+{
+    [IdDataField, ViewVariables]
+    public string ID { get; private set; } = default!;
+
+    [DataField(required: true)]
+    public MinMax Price = new MinMax();
+
+    [DataField(required: true, serverOnly: true)]
+    public List<CP14StoreBuyService> Services = new();
+}
+
+[ImplicitDataDefinitionForInheritors]
+[MeansImplicitUse]
+public abstract partial class CP14StoreBuyService
+{
+    public abstract void Effect(EntityManager entManager, EntityUid station);
+
+    public abstract string? GetDescription(IPrototypeManager prototype, IEntitySystemManager entSys);
+}

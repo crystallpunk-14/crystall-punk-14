@@ -21,5 +21,5 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(5f);
+    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(5);
 }

@@ -35,7 +35,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
     private void OnAfterAssign(Entity<CP14CurrencyCollectConditionComponent> condition, ref ObjectiveAfterAssignEvent args)
     {
         _metaData.SetEntityName(condition.Owner, Loc.GetString(condition.Comp.ObjectiveText), args.Meta);
-        _metaData.SetEntityDescription(condition.Owner, Loc.GetString(condition.Comp.ObjectiveDescription, ("coins", _currency.GetPrettyCurrency(condition.Comp.Currency))), args.Meta);
+        _metaData.SetEntityDescription(condition.Owner, Loc.GetString(condition.Comp.ObjectiveDescription, ("coins", _currency.GetCurrencyPrettyString(condition.Comp.Currency))), args.Meta);
         _objectives.SetIcon(condition.Owner, condition.Comp.ObjectiveSprite);
     }
 

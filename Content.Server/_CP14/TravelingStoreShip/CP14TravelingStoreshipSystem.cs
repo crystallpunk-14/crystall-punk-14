@@ -4,9 +4,11 @@ using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
+using Content.Shared._CP14.TravelingStoreShip;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -22,6 +24,7 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
@@ -43,15 +46,15 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
 
             ship.NextTravelTime = _timing.CurTime + ship.TravelPeriod;
 
-
             if (Transform(ship.Shuttle).MapUid == Transform(ship.TradepostMap).MapUid) //Landed on tradepost
             {
-                TravelToStation((uid, ship), 5);
+                TravelToStation((uid, ship), 15);
             }
             else //Landed on station
             {
-                TravelToTradepost((uid, ship), 5);
+                TravelToTradepost((uid, ship), 15);
             }
+
         }
     }
 
@@ -80,6 +83,17 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
             return;
 
         station.NextTravelTime = _timing.CurTime + station.TravelPeriod;
+
+        if (Transform(ent).MapUid == Transform(station.TradepostMap).MapUid)
+        {
+            foreach (var position in _proto.EnumeratePrototypes<CP14StoreBuyPosition>())
+            {
+                foreach (var pos in position.Services)
+                {
+                    pos.Effect(EntityManager, ent.Comp.Station);
+                }
+            }
+        }
     }
 
     private void TravelToStation(Entity<CP14StationTravelingStoreshipTargetComponent> station, float flyTime)
@@ -105,13 +119,13 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
         if (mapUid == null)
             return;
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: flyTime, startupTime: 0.5f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: flyTime, startupTime: 5f);
     }
 
     private void TravelToTradepost(Entity<CP14StationTravelingStoreshipTargetComponent> station, float flyTime)
     {
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: flyTime, startupTime: 1.5f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: flyTime, startupTime: 5f);
     }
 }

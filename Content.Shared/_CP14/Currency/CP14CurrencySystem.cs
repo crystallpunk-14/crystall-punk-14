@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Shared.Examine;
 using Content.Shared.Stacks;
 
@@ -17,11 +18,11 @@ public sealed partial class CP14CurrencySystem : EntitySystem
         var total = GetTotalCurrency(currency, currency.Comp);
 
         var push = Loc.GetString("cp14-currency-examine-title");
-        push += GetPrettyCurrency(total);
+        push += GetCurrencyPrettyString(total);
         args.PushMarkup(push);
     }
 
-    public string GetPrettyCurrency(int currency)
+    public string GetCurrencyPrettyString(int currency)
     {
         var total = currency;
 
@@ -36,13 +37,13 @@ public sealed partial class CP14CurrencySystem : EntitySystem
 
         var cp = total;
 
-        var push = string.Empty;
+        var sb = new StringBuilder();
 
-        if (gp > 0) push += " " + Loc.GetString("cp14-currency-examine-gp", ("coin", gp));
-        if (sp > 0) push += " " + Loc.GetString("cp14-currency-examine-sp", ("coin", sp));
-        if (cp > 0) push += " " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp));
+        if (gp > 0) sb.Append( " " + Loc.GetString("cp14-currency-examine-gp", ("coin", gp)));
+        if (sp > 0) sb.Append( " " + Loc.GetString("cp14-currency-examine-sp", ("coin", sp)));
+        if (cp > 0) sb.Append( " " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp)));
 
-        return push;
+        return sb.ToString();
     }
 
     public int GetTotalCurrency(EntityUid uid, CP14CurrencyComponent? currency = null)

@@ -1,0 +1,12 @@
+- type: storePosition
+  id: TestStore1
+  price: 
+    min: 10
+    max: 20
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BaseSword: 2
+  - !type:CP14BuyItemsService
+    product:
+      ArmBlade: 1
