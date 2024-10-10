@@ -1,0 +1,22 @@
+<Control xmlns="https://spacestation14.io">
+        <GridContainer Columns="6">
+
+            <TextureRect Name="GoldView"
+                         MinSize="10 10"
+                         Stretch="KeepAspectCentered"/>
+            <Label Name="GoldText"
+                   Margin="0,0,5,0"/>
+
+            <TextureRect Name="SilverView"
+                         MinSize="10 10"
+                         Stretch="KeepAspectCentered"/>
+            <Label Name="SilverText"
+                   Margin="0,0,5,0"/>
+
+            <TextureRect Name="CopperView"
+                         MinSize="10 10"
+                         Stretch="KeepAspectCentered"/>
+            <Label Name="CopperText"
+                   Margin="0,0,5,0"/>
+        </GridContainer>
+</Control>

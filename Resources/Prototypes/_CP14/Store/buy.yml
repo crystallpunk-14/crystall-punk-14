@@ -1,8 +1,12 @@
 - type: storePosition
   id: TestStore1
+  title: Заказ вооружения
+  icon: 
+    sprite: _CP14/Objects/Materials/copper_ore.rsi
+    state: ore1
   price: 
     min: 10
-    max: 20
+    max: 200
   services:
   - !type:CP14BuyItemsService
     product:
@@ -10,3 +14,18 @@
   - !type:CP14BuyItemsService
     product:
       ArmBlade: 1
+
+- type: storePosition
+  id: TestStore2
+  title: Найм персонала
+  icon: 
+    sprite: _CP14/Objects/Materials/gold_ore.rsi
+    state: ore1
+  price: 
+    min: 100
+    max: 2000
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      ArmBlade: 2
+      CP14OreCopper: 12

@@ -26,9 +26,12 @@ public readonly struct CP14StoreUiProductEntry : IEquatable<CP14StoreUiProductEn
 {
     public readonly ProtoId<CP14StoreBuyPositionPrototype> ProtoId;
 
-    public CP14StoreUiProductEntry(ProtoId<CP14StoreBuyPositionPrototype> protoId)
+    public readonly int Price;
+
+    public CP14StoreUiProductEntry(ProtoId<CP14StoreBuyPositionPrototype> protoId, int price)
     {
         ProtoId = protoId;
+        Price = price;
     }
 
     public bool Equals(CP14StoreUiProductEntry other)
@@ -43,6 +46,6 @@ public readonly struct CP14StoreUiProductEntry : IEquatable<CP14StoreUiProductEn
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(ProtoId);
+        return HashCode.Combine(ProtoId, Price);
     }
 }

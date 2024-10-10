@@ -1,6 +1,7 @@
 using Content.Shared.Destructible.Thresholds;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.TravelingStoreShip;
 
@@ -16,7 +17,13 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     [DataField(required: true)]
     public MinMax Price = new MinMax();
 
-    [DataField(required: true, serverOnly: true)]
+    [DataField(required: true)]
+    public LocId Title = string.Empty;
+
+    [DataField(required: true)]
+    public SpriteSpecifier Icon = default!;
+
+    [DataField(required: true)]
     public List<CP14StoreBuyService> Services = new();
 }
 
@@ -26,5 +33,5 @@ public abstract partial class CP14StoreBuyService
 {
     public abstract void Effect(EntityManager entManager, EntityUid station);
 
-    public abstract string? GetDescription(IPrototypeManager prototype, IEntitySystemManager entSys);
+    public abstract string? GetDescription(IPrototypeManager prototype, IEntityManager entSys);
 }
