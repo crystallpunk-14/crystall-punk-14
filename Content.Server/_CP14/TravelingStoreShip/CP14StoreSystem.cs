@@ -33,6 +33,6 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
         {
             products.Add(new CP14StoreUiProductEntry(proto.ID, proto.Price.Next(_random)));
         }
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(products));
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(products, new(), 150));
     }
 }

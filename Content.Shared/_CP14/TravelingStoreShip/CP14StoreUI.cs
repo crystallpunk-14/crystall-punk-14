@@ -14,10 +14,15 @@ public enum CP14StoreUiKey
 public sealed class CP14StoreUiState : BoundUserInterfaceState
 {
     public readonly HashSet<CP14StoreUiProductEntry> Products;
+    public readonly List<CP14StoreUiProductEntry> SelectedProducts;
 
-    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> products)
+    public readonly int Cash;
+
+    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> products, List<CP14StoreUiProductEntry> selected, int cash)
     {
         Products = products;
+        SelectedProducts = selected;
+        Cash = cash;
     }
 }
 

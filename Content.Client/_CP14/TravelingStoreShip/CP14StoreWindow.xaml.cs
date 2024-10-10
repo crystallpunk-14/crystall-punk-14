@@ -18,14 +18,25 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         IoCManager.InjectDependencies(this);
     }
 
-    public void UpdateProducts(CP14StoreUiState state)
+    public void UpdateUI(CP14StoreUiState state)
+    {
+        UpdateProducts(state);
+        UpdateCash(state);
+    }
+
+    private void UpdateProducts(CP14StoreUiState state)
     {
         ProductsContainer.RemoveAllChildren();
-
         foreach (var product in state.Products)
         {
             var control = new CP14StoreProductControl(product);
             ProductsContainer.AddChild(control);
         }
+    }
+
+    private void UpdateCash(CP14StoreUiState state)
+    {
+        CashPriceHolder.RemoveAllChildren();
+        CashPriceHolder.AddChild(new CP14PriceControl(state.Cash));
     }
 }
