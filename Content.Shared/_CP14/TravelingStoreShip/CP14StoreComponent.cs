@@ -6,4 +6,6 @@ namespace Content.Shared._CP14.TravelingStoreShip;
 [RegisterComponent, Access(typeof(CP14SharedStoreSystem))]
 public sealed partial class CP14StoreComponent : Component
 {
+    [DataField]
+    public Entity<CP14StationTravelingStoreshipTargetComponent>? Station = null;
 }

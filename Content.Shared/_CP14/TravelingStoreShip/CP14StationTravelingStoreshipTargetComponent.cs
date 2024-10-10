@@ -1,11 +1,12 @@
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Server._CP14.TravelingStoreShip;
+namespace Content.Shared._CP14.TravelingStoreShip;
 
 /// <summary>
 /// Add to the station so that traveling storeship starts running on it
 /// </summary>
-[RegisterComponent, Access(typeof(CP14TravelingStoreShipSystem))]
+[RegisterComponent]
 public sealed partial class CP14StationTravelingStoreshipTargetComponent : Component
 {
     [DataField]
@@ -22,4 +23,7 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
 
     [DataField]
     public TimeSpan TravelPeriod = TimeSpan.FromSeconds(5);
+
+    [DataField]
+    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentStorePositions = new();
 }

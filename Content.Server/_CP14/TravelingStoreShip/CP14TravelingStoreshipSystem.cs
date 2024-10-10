@@ -54,7 +54,6 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
             {
                 TravelToTradepost((uid, ship), 15);
             }
-
         }
     }
 
@@ -75,6 +74,7 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
         travelingStoreShipComp.Station = station;
 
         TravelToStation(station, 20); //Start fast travel
+        UpdateStorePositions(station);
     }
 
     private void OnFTLCompleted(Entity<CP14TravelingStoreShipComponent> ent, ref FTLCompletedEvent args)
@@ -93,6 +93,8 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
                     pos.Effect(EntityManager, ent.Comp.Station);
                 }
             }
+
+            UpdateStorePositions((ent.Comp.Station, station));
         }
     }
 
@@ -127,5 +129,16 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
         _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: flyTime, startupTime: 5f);
+    }
+
+    private void UpdateStorePositions(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    {
+        station.Comp.CurrentStorePositions.Clear();
+        var allPositions = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
+
+        foreach (var position in allPositions)
+        {
+            station.Comp.CurrentStorePositions.Add(position.ID, position.Price.Next(_random));
+        }
     }
 }
