@@ -86,7 +86,7 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
 
         if (Transform(ent).MapUid == Transform(station.TradepostMap).MapUid)
         {
-            foreach (var position in _proto.EnumeratePrototypes<CP14StoreBuyPosition>())
+            foreach (var position in _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>())
             {
                 foreach (var pos in position.Services)
                 {

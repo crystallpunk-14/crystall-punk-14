@@ -1,0 +1,17 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               Title="{Loc 'cp14-store-ui-title'}"
+               MinSize="700 600">
+    <BoxContainer Orientation="Vertical">
+        <!-- Main -->
+        <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
+            <GridContainer HorizontalExpand="True" VerticalExpand="True" Columns="2">
+                <!-- Product list -->
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
+                    <BoxContainer Name="ProductsContainer" Orientation="Vertical" HorizontalExpand="True"/>
+                </ScrollContainer>
+            </GridContainer>
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>

@@ -8,7 +8,7 @@ namespace Content.Shared._CP14.TravelingStoreShip;
 /// Stores the price and product/service pair that players can buy.
 /// </summary>
 [Prototype("storePosition")]
-public sealed partial class CP14StoreBuyPosition : IPrototype
+public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
     public string ID { get; private set; } = default!;
