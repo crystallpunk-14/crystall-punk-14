@@ -1,30 +1,17 @@
 using System.Text;
-using Content.Server.Station.Systems;
-using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared.UserInterface;
-using Robust.Server.GameObjects;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Server._CP14.TravelingStoreShip;
 
-public sealed class CP14StoreSystem : CP14SharedStoreSystem
+public sealed partial class CP14CargoSystem
 {
-    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly CP14CurrencySystem _cp14Currency = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-
-    public override void Initialize()
+    public void InitializeStore()
     {
-        base.Initialize();
-
-        SubscribeLocalEvent<CP14StoreComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
+        SubscribeLocalEvent<CP14CargoStoreComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
     }
 
-    private void TryInitStore(Entity<CP14StoreComponent> ent)
+    private void TryInitStore(Entity<CP14CargoStoreComponent> ent)
     {
         //TODO: There's no support for multiple stations. (settlements).
         var stations = _station.GetStations();
@@ -38,7 +25,7 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
         ent.Comp.Station = new Entity<CP14StationTravelingStoreshipTargetComponent>(stations[0], station);
     }
 
-    private void OnBeforeUIOpen(Entity<CP14StoreComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    private void OnBeforeUIOpen(Entity<CP14CargoStoreComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
         if (ent.Comp.Station is null)
             TryInitStore(ent);
@@ -46,7 +33,7 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
         UpdateUIProducts(ent);
     }
 
-    private void UpdateUIProducts(Entity<CP14StoreComponent> ent)
+    private void UpdateUIProducts(Entity<CP14CargoStoreComponent> ent)
     {
         if (ent.Comp.Station is null)
             return;
@@ -54,7 +41,7 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
         var prodBuy = new HashSet<CP14StoreUiProductEntry>();
         var prodSell = new HashSet<CP14StoreUiProductEntry>();
 
-        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentStorePositionsBuy)
+        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentBuyPositions)
         {
             if (!_proto.TryIndex(proto.Key, out var indexedProto))
                 continue;
@@ -69,7 +56,7 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
             prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
         }
 
-        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentStorePositionsSell)
+        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentSellPositions)
         {
             if (!_proto.TryIndex(proto.Key, out var indexedProto))
                 continue;

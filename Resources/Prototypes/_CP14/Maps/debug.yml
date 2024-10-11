@@ -20,7 +20,7 @@
   minPlayers: 0
   stations:
     Dev:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
           mapNameTemplate: "Dev"
@@ -32,4 +32,3 @@
           levels:
             -1:
               path: /Maps/_CP14/alchemy_test_layer2.yml
-        - type: CP14StationTravelingStoreshipTarget

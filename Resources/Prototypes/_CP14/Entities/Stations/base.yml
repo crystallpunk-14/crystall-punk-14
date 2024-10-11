@@ -1,0 +1,20 @@
+- type: entity
+  id: CP14BaseExpedition
+  categories: [ HideSpawnMenu ]
+  parent:
+  - BaseStation
+  - BaseStationAllEventsEligible
+  - BaseStationJobsSpawning
+  - BaseStationAlertLevels #Checks fail without it
+  - CP14BaseTrading
+
+- type: entity
+  id: CP14BaseTrading
+  abstract: true
+  components:
+    - type: CP14StationTravelingStoreshipTarget
+      staticBuyPositions:
+      - TestStore1
+      - TestStore2
+      staticSellPositions:
+      - TestStoreSell

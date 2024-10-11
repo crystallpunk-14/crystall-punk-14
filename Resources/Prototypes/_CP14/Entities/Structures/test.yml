@@ -15,7 +15,7 @@
     key: enum.CP14StoreUiKey.Key
   - type: Clickable
   - type: InteractionOutline
-  - type: CP14Store
+  - type: CP14CargoStore
   - type: UserInterface
     interfaces:
       enum.CP14StoreUiKey.Key:

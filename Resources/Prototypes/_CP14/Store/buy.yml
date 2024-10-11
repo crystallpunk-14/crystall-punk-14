@@ -10,10 +10,8 @@
   services:
   - !type:CP14BuyItemsService
     product:
-      CP14BaseSword: 2
-  - !type:CP14BuyItemsService
-    product:
-      ArmBlade: 1
+      CP14BaseSword: 5
+      CP14BaseDagger: 4
 
 - type: storePositionBuy
   id: TestStore2
@@ -28,7 +26,7 @@
   - !type:CP14BuyItemsService
     product:
       CP14OreCopper: 10
-      CP14IronCopper: 10
+      CP14OreIron: 10
 
 ##
 

@@ -1,4 +1,5 @@
 using Content.Shared._CP14.TravelingStoreShip.Prototype;
+using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -28,9 +29,29 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     [DataField]
     public TimeSpan TravelPeriod = TimeSpan.FromSeconds(60);
 
-    [DataField]
-    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentStorePositionsBuy = new();
+    //Buy
+    [DataField(required: true)]
+    public List<ProtoId<CP14StoreBuyPositionPrototype>> StaticBuyPositions = new();
 
     [DataField]
-    public Dictionary<ProtoId<CP14StoreSellPositionPrototype>, int> CurrentStorePositionsSell = new();
+    public List<ProtoId<CP14StoreBuyPositionPrototype>> DynamicBuyPositions = new();
+
+    [DataField]
+    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentBuyPositions = new();
+
+    [DataField]
+    public MinMax SpecialBuyPositionCount = new MinMax(0, 1);
+
+    //Sell
+    [DataField(required: true)]
+    public List<ProtoId<CP14StoreSellPositionPrototype>> StaticSellPositions = new();
+
+    [DataField]
+    public List<ProtoId<CP14StoreSellPositionPrototype>> DynamicSellPositions = new();
+
+    [DataField]
+    public Dictionary<ProtoId<CP14StoreSellPositionPrototype>, int> CurrentSellPositions = new();
+
+    [DataField]
+    public MinMax SpecialSellPositionCount = new MinMax(0, 1);
 }

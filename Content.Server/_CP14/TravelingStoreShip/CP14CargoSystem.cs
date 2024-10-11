@@ -7,7 +7,6 @@ using Content.Server.Station.Systems;
 using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared._CP14.TravelingStoreShip.Prototype;
 using Robust.Server.GameObjects;
-using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -15,21 +14,22 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.TravelingStoreShip;
 
-public sealed class CP14TravelingStoreShipSystem : EntitySystem
+public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 {
-    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
-    [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
+    [Dependency] private readonly StationSystem _station = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+        InitializeStore();
 
         SubscribeLocalEvent<CP14StationTravelingStoreshipTargetComponent, StationPostInitEvent>(OnPostInit);
         SubscribeLocalEvent<CP14TravelingStoreShipComponent, FTLCompletedEvent>(OnFTLCompleted);
@@ -97,6 +97,7 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
                 }
             }
 
+            SellingThings((ent.Comp.Station, station));
             UpdateStorePositions((ent.Comp.Station, station));
         }
     }
@@ -136,20 +137,34 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
 
     private void UpdateStorePositions(Entity<CP14StationTravelingStoreshipTargetComponent> station)
     {
-        station.Comp.CurrentStorePositionsBuy.Clear();
-        station.Comp.CurrentStorePositionsSell.Clear();
-        var allPositionsBuy = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
+        station.Comp.CurrentBuyPositions.Clear();
+        station.Comp.CurrentSellPositions.Clear();
 
-        foreach (var position in allPositionsBuy)
+        //Static add
+        foreach (var position in station.Comp.StaticBuyPositions)
         {
-            station.Comp.CurrentStorePositionsBuy.Add(position.ID, position.Price.Next(_random));
+            if (!_proto.TryIndex(position, out var indexedP))
+                continue;
+            station.Comp.CurrentBuyPositions.Add(position, indexedP.Price.Next(_random));
         }
-
-
-        var allPositionsSell = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
-        foreach (var position in allPositionsSell)
+        foreach (var position in station.Comp.StaticSellPositions)
         {
-            station.Comp.CurrentStorePositionsSell.Add(position.ID, position.Price.Next(_random));
+            if (!_proto.TryIndex(position, out var indexedP))
+                continue;
+            station.Comp.CurrentSellPositions.Add(position, indexedP.Price.Next(_random));
+        }
+        //Dynamic add
+
+    }
+
+    private void SellingThings(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    {
+        var shuttle = station.Comp.Shuttle;
+
+        var query = EntityQueryEnumerator<CP14SellingPalettComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var selling, out var xform))
+        {
+
         }
     }
 }
