@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14DresserBase
+  id: CP14CabinetBase
   parent: BaseStructure
   abstract: true
   components:
@@ -99,15 +99,15 @@
   - type: Rotatable
 
 - type: entity
-  name: wooden dresser
+  name: wooden cabinet
   parent:
-  - CP14DresserBase
+  - CP14CabinetBase
   - CP14BaseFlammableSpreading
-  id: CP14WoodenDresser
-  description: A regular wooden dresser.
+  id: CP14WoodenCabinet
+  description: A regular wooden cabinet.
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Storage/Dressers/wood_dresser.rsi
+    sprite: _CP14/Structures/Storage/Dressers/wood_cabinet.rsi
     state: icons
   - type: Damageable
     damageContainer: Inorganic
@@ -125,6 +125,37 @@
             max: 6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: CP14CabinetBase
+  id: C14IronCabinet
+  name: iron cabinet
+  description: an iron cabinet. Sturdy, lockable. You can store your valuables here without fear of some burglar taking it all for himself.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Dressers/iron_cabinet.rsi
+    state: icons
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: C14IronCabinet
+  id: C14IronCabinetCargo
+  name: money box
+  description: An armored vault for storing money for trade with the city. City workers will unload their earnings here, or take them from here when you want to buy something.
+  
 
 - type: entity
   name: wooden cupboard

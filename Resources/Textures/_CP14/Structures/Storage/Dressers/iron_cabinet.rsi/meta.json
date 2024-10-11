@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Created by TheShuEd for CrystallPunk14",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "icon",
+      "directions": 4
+    },
+    {
+      "name": "icon-open",
+      "directions": 4
+    }
+  ]
+}
