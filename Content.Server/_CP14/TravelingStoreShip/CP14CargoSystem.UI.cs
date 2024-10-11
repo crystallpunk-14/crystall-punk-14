@@ -62,16 +62,12 @@ public sealed partial class CP14CargoSystem
                 continue;
 
             var name = Loc.GetString(indexedProto.Title);
-            var desc = new StringBuilder();
-            foreach (var service in indexedProto.Services)
-            {
-                desc.Append(service.GetDescription(_proto, EntityManager));
-            }
+            var desc = indexedProto.Service.GetDescription(_proto, EntityManager);
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
+            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc ?? "", proto.Value));
         }
 
         var stationComp = ent.Comp.Station.Value.Comp;
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime, 150));
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime, stationComp.Balance));
     }
 }

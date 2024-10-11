@@ -24,14 +24,14 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     public SpriteSpecifier Icon = default!;
 
     [DataField(required: true)]
-    public List<CP14StoreSellService> Services = new();
+    public CP14StoreSellService Service = default!;
 }
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]
 public abstract partial class CP14StoreSellService
 {
-    public abstract bool TrySell(EntityManager entManager, EntityUid station);
+    public abstract bool TrySell(EntityManager entManager, HashSet<EntityUid> entities);
 
     public abstract string? GetDescription(IPrototypeManager prototype, IEntityManager entSys);
 }

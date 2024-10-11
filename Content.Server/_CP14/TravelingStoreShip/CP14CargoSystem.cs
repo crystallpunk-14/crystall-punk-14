@@ -1,11 +1,8 @@
-using System.Numerics;
-using Content.Server.Shuttles.Components;
-using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
+using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
-using Content.Shared._CP14.TravelingStoreShip.Prototype;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -25,39 +22,28 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly CP14CurrencySystem _currency = default!;
+
+    private EntityQuery<TransformComponent> _xformQuery;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _xformQuery = GetEntityQuery<TransformComponent>();
+
         InitializeStore();
+        InitializeShuttle();
 
         SubscribeLocalEvent<CP14StationTravelingStoreshipTargetComponent, StationPostInitEvent>(OnPostInit);
-        SubscribeLocalEvent<CP14TravelingStoreShipComponent, FTLCompletedEvent>(OnFTLCompleted);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CP14StationTravelingStoreshipTargetComponent>();
-        while (query.MoveNext(out var uid, out var ship))
-        {
-            if (_timing.CurTime < ship.NextTravelTime || ship.NextTravelTime == TimeSpan.Zero)
-                continue;
-
-            ship.NextTravelTime = _timing.CurTime + ship.TravelPeriod;
-
-            if (Transform(ship.Shuttle).MapUid == Transform(ship.TradepostMap).MapUid) //Landed on tradepost
-            {
-                ship.OnStation = false;
-                TravelToStation((uid, ship), 15);
-            }
-            else //Landed on station
-            {
-                ship.OnStation = true;
-                TravelToTradepost((uid, ship), 15);
-            }
-        }
+        UpdateShuttle();
     }
 
     private void OnPostInit(Entity<CP14StationTravelingStoreshipTargetComponent> station, ref StationPostInitEvent args)
@@ -76,63 +62,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
         travelingStoreShipComp.Station = station;
 
-        TravelToStation(station, 5); //Start fast travel
+        SendShuttleToStation(station, 5); //Start fast travel
         UpdateStorePositions(station);
-    }
-
-    private void OnFTLCompleted(Entity<CP14TravelingStoreShipComponent> ent, ref FTLCompletedEvent args)
-    {
-        if (!TryComp<CP14StationTravelingStoreshipTargetComponent>(ent.Comp.Station, out var station))
-            return;
-
-        station.NextTravelTime = _timing.CurTime + station.TravelPeriod;
-
-        if (Transform(ent).MapUid == Transform(station.TradepostMap).MapUid)
-        {
-            foreach (var position in _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>())
-            {
-                foreach (var pos in position.Services)
-                {
-                    pos.Buy(EntityManager, ent.Comp.Station);
-                }
-            }
-
-            SellingThings((ent.Comp.Station, station));
-            UpdateStorePositions((ent.Comp.Station, station));
-        }
-    }
-
-    private void TravelToStation(Entity<CP14StationTravelingStoreshipTargetComponent> station, float flyTime)
-    {
-        var targetPoints = new List<EntityUid>();
-        var targetEnumerator = EntityQueryEnumerator<CP14TravelingStoreShipFTLTargetComponent, TransformComponent>(); //TODO - different method position location
-        while (targetEnumerator.MoveNext(out var uid, out _, out _))
-        {
-            targetPoints.Add(uid);
-        }
-        if (targetPoints.Count == 0)
-            return;
-
-        var target = _random.Pick(targetPoints);
-
-        if (!HasComp<TransformComponent>(station.Comp.Shuttle))
-            return;
-
-        var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
-
-        var targetPos = _transform.GetWorldPosition(target);
-        var mapUid = _transform.GetMap(target);
-        if (mapUid == null)
-            return;
-
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: flyTime, startupTime: 5f);
-    }
-
-    private void TravelToTradepost(Entity<CP14StationTravelingStoreshipTargetComponent> station, float flyTime)
-    {
-        var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
-
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: flyTime, startupTime: 5f);
     }
 
     private void UpdateStorePositions(Entity<CP14StationTravelingStoreshipTargetComponent> station)
@@ -161,10 +92,38 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     {
         var shuttle = station.Comp.Shuttle;
 
-        var query = EntityQueryEnumerator<CP14SellingPalettComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var selling, out var xform))
-        {
+        //Get all sended to tradepost entities
+        var toSell = new HashSet<EntityUid>();
 
+        var query = EntityQueryEnumerator<CP14SellingPalettComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var selling, out var palletXform))
+        {
+            if (palletXform.ParentUid != palletXform.GridUid || !palletXform.Anchored)
+                continue;
+
+            if (palletXform.ParentUid != shuttle)
+                continue;
+
+            var seldEnt = new HashSet<EntityUid>();
+
+            _lookup.GetEntitiesIntersecting(uid, seldEnt, LookupFlags.Dynamic | LookupFlags.Sundries);
+
+            foreach (var ent in seldEnt)
+            {
+                if (toSell.Contains(ent) || !_xformQuery.TryGetComponent(ent, out var xform) /*|| CanSell()*/)
+                    continue;
+
+                toSell.Add(ent);
+            }
+        }
+
+        foreach (var sellPos in station.Comp.CurrentSellPositions)
+        {
+            if (!_proto.TryIndex(sellPos.Key, out var indexedPos))
+                continue;
+
+            if (indexedPos.Service.TrySell(EntityManager, toSell))
+                station.Comp.Balance += sellPos.Value;
         }
     }
 }

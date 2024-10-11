@@ -53,6 +53,7 @@
   parent: CP14WoodenPallet
   name: selling wooden pallet
   components:
+  - type: CP14SellingPalett
   - type: Sprite
     layers:
     - state: wooden
@@ -63,6 +64,7 @@
   parent: CP14WoodenPallet
   name: buying wooden pallet
   components:
+  - type: CP14BuyingPalett
   - type: Sprite
     layers:
     - state: wooden

@@ -12,6 +12,9 @@ namespace Content.Shared._CP14.TravelingStoreShip;
 public sealed partial class CP14StationTravelingStoreshipTargetComponent : Component
 {
     [DataField]
+    public int Balance = 1000;
+
+    [DataField]
     public EntityUid Shuttle;
 
     [DataField]
@@ -27,7 +30,7 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(60);
+    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(6);
 
     //Buy
     [DataField(required: true)]
