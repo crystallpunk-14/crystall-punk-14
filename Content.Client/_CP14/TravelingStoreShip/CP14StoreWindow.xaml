@@ -27,6 +27,8 @@
                             <BoxContainer Name="PricePriceHolder"/>
                         </BoxContainer>
                     </GridContainer>
+                    <!-- Time -->
+                    <Label Name="TravelTimeLabel" Text="00:00" HorizontalAlignment="Center" HorizontalExpand="True" Margin="0 15 0 0"/>
                 </BoxContainer>
             </GridContainer>
         </BoxContainer>

@@ -39,6 +39,7 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
         if (ent.Comp.Station is null)
             TryInitStore(ent);
 
+        //TODO: Considering that the information does not change from opening the interface to opening, and only changes when the store's product is updated, this can be optimized here.
         UpdateUIProducts(ent);
     }
 
@@ -54,6 +55,6 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
             products.Add(new CP14StoreUiProductEntry(proto.Key, proto.Value));
         }
 
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(products, new(), 150));
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(products, new(), ent.Comp.Station.Value.Comp.NextTravelTime, 150));
     }
 }

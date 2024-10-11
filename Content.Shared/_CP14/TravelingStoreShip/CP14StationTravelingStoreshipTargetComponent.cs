@@ -22,7 +22,7 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(5);
+    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(60);
 
     [DataField]
     public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentStorePositions = new();

@@ -73,7 +73,7 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
         travelingStoreShipComp.Station = station;
 
-        TravelToStation(station, 20); //Start fast travel
+        TravelToStation(station, 5); //Start fast travel
         UpdateStorePositions(station);
     }
 

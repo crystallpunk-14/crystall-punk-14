@@ -16,12 +16,14 @@ public sealed class CP14StoreUiState : BoundUserInterfaceState
     public readonly HashSet<CP14StoreUiProductEntry> Products;
     public readonly List<CP14StoreUiProductEntry> SelectedProducts;
 
+    public readonly TimeSpan NextTravelTime;
     public readonly int Cash;
 
-    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> products, List<CP14StoreUiProductEntry> selected, int cash)
+    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> products, List<CP14StoreUiProductEntry> selected, TimeSpan time, int cash)
     {
         Products = products;
         SelectedProducts = selected;
+        NextTravelTime = time;
         Cash = cash;
     }
 }

@@ -1,6 +1,8 @@
 - type: entity
   parent: BaseStructure
   id: CP14TravelingShop
+  name: city trading information board
+  description: Allows you to track what the city is selling and buying right now. 
   components:
   - type: Sprite
     snapCardinals: true
