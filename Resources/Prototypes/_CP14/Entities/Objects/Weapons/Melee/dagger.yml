@@ -43,5 +43,3 @@
     removalTime: 1
   - type: ThrowingAngle
     angle: 225
-  - type: CP14Currency
-    currency: 200
