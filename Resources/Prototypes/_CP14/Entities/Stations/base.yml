@@ -18,3 +18,5 @@
       - TestStore2
       staticSellPositions:
       - GoldBars
+      - IronBars
+      - CopperBars

@@ -11,3 +11,31 @@
   service: !type:CP14SellStackService
     stackId: CP14GoldBar
     count: 10
+
+- type: storePositionSell
+  id: IronBars
+  title: cp14-store-sell-ironbar-name
+  flavorDesc: cp14-store-sell-ironbar-desc
+  icon: 
+    sprite: _CP14/Objects/Materials/iron_bar.rsi
+    state: bar_3
+  price: 
+    min: 500
+    max: 500
+  service: !type:CP14SellStackService
+    stackId: CP14IronBar
+    count: 10
+
+- type: storePositionSell
+  id: CopperBars
+  title: cp14-store-sell-copperbar-name
+  flavorDesc: cp14-store-sell-copperbar-desc
+  icon: 
+    sprite: _CP14/Objects/Materials/copper_bar.rsi
+    state: bar_3
+  price: 
+    min: 400
+    max: 500
+  service: !type:CP14SellStackService
+    stackId: CP14CopperBar
+    count: 10
