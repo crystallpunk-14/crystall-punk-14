@@ -33,6 +33,16 @@ public sealed partial class CP14CargoSystem
         UpdateUIProducts(ent);
     }
 
+    //TODO: redo
+    private void UpdateAllStores()
+    {
+        var query = EntityQueryEnumerator<CP14CargoStoreComponent>();
+        while (query.MoveNext(out var uid, out var store))
+        {
+            UpdateUIProducts((uid, store));
+        }
+    }
+
     private void UpdateUIProducts(Entity<CP14CargoStoreComponent> ent)
     {
         if (ent.Comp.Station is null)

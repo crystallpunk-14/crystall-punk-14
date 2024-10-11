@@ -23,22 +23,18 @@ public sealed partial class CP14CargoSystem
             if (_timing.CurTime < ship.NextTravelTime || ship.NextTravelTime == TimeSpan.Zero)
                 continue;
 
-            ship.NextTravelTime = _timing.CurTime + ship.TravelPeriod;
-
             if (Transform(ship.Shuttle).MapUid == Transform(ship.TradepostMap).MapUid) //Landed on tradepost
             {
-                ship.OnStation = false;
-                SendShuttleToStation((uid, ship), 15);
+                SendShuttleToStation((uid, ship));
             }
             else //Landed on station
             {
-                ship.OnStation = true;
-                SendShuttleToTradepost((uid, ship), 15);
+                SendShuttleToTradepost((uid, ship));
             }
         }
     }
 
-    private void SendShuttleToStation(Entity<CP14StationTravelingStoreshipTargetComponent> station, float flyTime)
+    private void SendShuttleToStation(Entity<CP14StationTravelingStoreshipTargetComponent> station)
     {
         var targetPoints = new List<EntityUid>();
         var targetEnumerator = EntityQueryEnumerator<CP14TravelingStoreShipFTLTargetComponent, TransformComponent>(); //TODO - different method position location
@@ -61,14 +57,14 @@ public sealed partial class CP14CargoSystem
         if (mapUid == null)
             return;
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: flyTime, startupTime: 5f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: 5f, startupTime: 5f);
     }
 
-    private void SendShuttleToTradepost(Entity<CP14StationTravelingStoreshipTargetComponent> station, float flyTime)
+    private void SendShuttleToTradepost(Entity<CP14StationTravelingStoreshipTargetComponent> station)
     {
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: flyTime, startupTime: 5f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: 5f, startupTime: 7f);
     }
 
     private void OnFTLCompleted(Entity<CP14TravelingStoreShipComponent> ent, ref FTLCompletedEvent args)
@@ -76,10 +72,11 @@ public sealed partial class CP14CargoSystem
         if (!TryComp<CP14StationTravelingStoreshipTargetComponent>(ent.Comp.Station, out var station))
             return;
 
-        station.NextTravelTime = _timing.CurTime + station.TravelPeriod;
-
-        if (Transform(ent).MapUid == Transform(station.TradepostMap).MapUid)
+        if (Transform(ent).MapUid == Transform(station.TradepostMap).MapUid)  //Landed on tradepost
         {
+            station.NextTravelTime = _timing.CurTime + station.TradepostWaitTime;
+            station.OnStation = false;
+
             foreach (var position in _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>())
             {
                 foreach (var pos in position.Services)
@@ -91,5 +88,11 @@ public sealed partial class CP14CargoSystem
             SellingThings((ent.Comp.Station, station));
             UpdateStorePositions((ent.Comp.Station, station));
         }
+        else   //Landed on station
+        {
+            station.NextTravelTime = _timing.CurTime + station.StationWaitTime;
+            station.OnStation = true;
+        }
+        UpdateAllStores();
     }
 }

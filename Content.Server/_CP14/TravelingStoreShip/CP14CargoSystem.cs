@@ -62,7 +62,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
         travelingStoreShipComp.Station = station;
 
-        SendShuttleToStation(station, 5); //Start fast travel
+        SendShuttleToStation(station); //Start fast travel
         UpdateStorePositions(station);
     }
 
@@ -85,7 +85,6 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             station.Comp.CurrentSellPositions.Add(position, indexedP.Price.Next(_random));
         }
         //Dynamic add
-
     }
 
     private void SellingThings(Entity<CP14StationTravelingStoreshipTargetComponent> station)
@@ -103,7 +102,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             var seldEnt = new HashSet<EntityUid>();
 
-            _lookup.GetEntitiesIntersecting(uid, seldEnt, LookupFlags.Dynamic | LookupFlags.Sundries);
+            _lookup.GetEntitiesInRange(uid, 1, seldEnt, LookupFlags.Dynamic | LookupFlags.Sundries);
 
             foreach (var ent in seldEnt)
             {

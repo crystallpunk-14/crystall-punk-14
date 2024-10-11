@@ -30,7 +30,10 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan TravelPeriod = TimeSpan.FromSeconds(6);
+    public TimeSpan StationWaitTime = TimeSpan.FromSeconds(30);
+
+    [DataField]
+    public TimeSpan TradepostWaitTime = TimeSpan.FromSeconds(30);
 
     //Buy
     [DataField(required: true)]

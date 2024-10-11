@@ -43,8 +43,9 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         if (NextTravelTime is not null)
         {
             var time = NextTravelTime.Value - _timing.CurTime;
+
             TravelTimeLabel.Text =
-                $"{Loc.GetString(OnStation ? "cp14-store-ui-next-travel-out" : "cp14-store-ui-next-travel-in")} {time.Minutes:00}:{time.Seconds:00}";
+                $"{Loc.GetString(OnStation ? "cp14-store-ui-next-travel-out" : "cp14-store-ui-next-travel-in")} {Math.Max(time.Minutes, 0):00}:{Math.Max(time.Seconds, 0):00}";
         }
     }
 
