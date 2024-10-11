@@ -1,6 +1,7 @@
 using Content.Shared._CP14.Workbench;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.TravelingStoreShip;
 
@@ -13,16 +14,18 @@ public enum CP14StoreUiKey
 [Serializable, NetSerializable]
 public sealed class CP14StoreUiState : BoundUserInterfaceState
 {
-    public readonly HashSet<CP14StoreUiProductEntry> Products;
-    public readonly List<CP14StoreUiProductEntry> SelectedProducts;
+    public readonly HashSet<CP14StoreUiProductEntry> ProductsBuy;
+    public readonly HashSet<CP14StoreUiProductEntry> ProductsSell;
 
+    public bool OnStation;
     public readonly TimeSpan NextTravelTime;
     public readonly int Cash;
 
-    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> products, List<CP14StoreUiProductEntry> selected, TimeSpan time, int cash)
+    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> productsBuy, HashSet<CP14StoreUiProductEntry> productsSell, bool onStation, TimeSpan time, int cash)
     {
-        Products = products;
-        SelectedProducts = selected;
+        ProductsBuy = productsBuy;
+        ProductsSell = productsSell;
+        OnStation = onStation;
         NextTravelTime = time;
         Cash = cash;
     }
@@ -31,19 +34,24 @@ public sealed class CP14StoreUiState : BoundUserInterfaceState
 [Serializable, NetSerializable]
 public readonly struct CP14StoreUiProductEntry : IEquatable<CP14StoreUiProductEntry>
 {
-    public readonly ProtoId<CP14StoreBuyPositionPrototype> ProtoId;
-
+    public readonly string ProtoId;
+    public readonly SpriteSpecifier Icon;
+    public readonly string Name;
+    public readonly string Desc;
     public readonly int Price;
 
-    public CP14StoreUiProductEntry(ProtoId<CP14StoreBuyPositionPrototype> protoId, int price)
+    public CP14StoreUiProductEntry(string protoId, SpriteSpecifier icon, string name, string desc, int price)
     {
         ProtoId = protoId;
+        Icon = icon;
+        Name = name;
+        Desc = desc;
         Price = price;
     }
 
     public bool Equals(CP14StoreUiProductEntry other)
     {
-        return ProtoId.Id == other.ProtoId.Id;
+        return ProtoId == other.ProtoId;
     }
 
     public override bool Equals(object? obj)

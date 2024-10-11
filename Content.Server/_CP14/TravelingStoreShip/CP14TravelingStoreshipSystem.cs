@@ -5,6 +5,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.TravelingStoreShip;
+using Content.Shared._CP14.TravelingStoreShip.Prototype;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
@@ -48,10 +49,12 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
 
             if (Transform(ship.Shuttle).MapUid == Transform(ship.TradepostMap).MapUid) //Landed on tradepost
             {
+                ship.OnStation = false;
                 TravelToStation((uid, ship), 15);
             }
             else //Landed on station
             {
+                ship.OnStation = true;
                 TravelToTradepost((uid, ship), 15);
             }
         }
@@ -90,7 +93,7 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
             {
                 foreach (var pos in position.Services)
                 {
-                    pos.Effect(EntityManager, ent.Comp.Station);
+                    pos.Buy(EntityManager, ent.Comp.Station);
                 }
             }
 
@@ -133,12 +136,20 @@ public sealed class CP14TravelingStoreShipSystem : EntitySystem
 
     private void UpdateStorePositions(Entity<CP14StationTravelingStoreshipTargetComponent> station)
     {
-        station.Comp.CurrentStorePositions.Clear();
-        var allPositions = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
+        station.Comp.CurrentStorePositionsBuy.Clear();
+        station.Comp.CurrentStorePositionsSell.Clear();
+        var allPositionsBuy = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
 
-        foreach (var position in allPositions)
+        foreach (var position in allPositionsBuy)
         {
-            station.Comp.CurrentStorePositions.Add(position.ID, position.Price.Next(_random));
+            station.Comp.CurrentStorePositionsBuy.Add(position.ID, position.Price.Next(_random));
+        }
+
+
+        var allPositionsSell = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
+        foreach (var position in allPositionsSell)
+        {
+            station.Comp.CurrentStorePositionsSell.Add(position.ID, position.Price.Next(_random));
         }
     }
 }

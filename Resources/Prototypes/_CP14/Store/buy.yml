@@ -1,6 +1,6 @@
-- type: storePosition
+- type: storePositionBuy
   id: TestStore1
-  title: Заказ вооружения
+  title: Ящик вооружения
   icon: 
     sprite: _CP14/Objects/Materials/copper_ore.rsi
     state: ore1
@@ -15,17 +15,33 @@
     product:
       ArmBlade: 1
 
-- type: storePosition
+- type: storePositionBuy
   id: TestStore2
-  title: Найм персонала
+  title: Ящик руды
   icon: 
-    sprite: _CP14/Objects/Materials/gold_ore.rsi
+    sprite: _CP14/Objects/Materials/iron_ore.rsi
     state: ore1
   price: 
-    min: 100
-    max: 2000
+    min: 500
+    max: 900
   services:
   - !type:CP14BuyItemsService
     product:
-      ArmBlade: 2
-      CP14OreCopper: 12
+      CP14OreCopper: 10
+      CP14IronCopper: 10
+
+##
+
+- type: storePositionSell
+  id: TestStoreSell
+  title: Поставка лазурной аманиты
+  icon: 
+    sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
+    state: base1
+  price: 
+    min: 200
+    max: 300
+  services:
+  - !type:CP14SellEntitiesService
+    product:
+      CP14BlueAmanita: 15

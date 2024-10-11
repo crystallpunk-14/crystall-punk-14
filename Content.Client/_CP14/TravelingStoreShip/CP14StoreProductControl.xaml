@@ -11,7 +11,7 @@
                 <BoxContainer Name="PriceHolder"/>
             </GridContainer>
             <GridContainer Rows="2">
-                <RichTextLabel Name="ProductName" Access="Public" StyleClasses="LabelHeading"/>
+                <RichTextLabel Name="ProductName" Margin="0 15 0 0" Access="Public" StyleClasses="LabelHeading"/>
                 <RichTextLabel Name="ProductDesc" Access="Public"/>
             </GridContainer>
         </GridContainer>

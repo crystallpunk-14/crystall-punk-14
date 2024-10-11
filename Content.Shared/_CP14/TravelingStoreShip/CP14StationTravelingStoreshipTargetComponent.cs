@@ -1,3 +1,4 @@
+using Content.Shared._CP14.TravelingStoreShip.Prototype;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -16,6 +17,9 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public EntityUid TradepostMap;
 
     [DataField]
+    public bool OnStation = false;
+
+    [DataField]
     public ResPath ShuttlePath = new("/Maps/_CP14/Ships/baloon.yml");
 
     [DataField]
@@ -25,5 +29,8 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public TimeSpan TravelPeriod = TimeSpan.FromSeconds(60);
 
     [DataField]
-    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentStorePositions = new();
+    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentStorePositionsBuy = new();
+
+    [DataField]
+    public Dictionary<ProtoId<CP14StoreSellPositionPrototype>, int> CurrentStorePositionsSell = new();
 }

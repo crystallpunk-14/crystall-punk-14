@@ -15,11 +15,15 @@ public sealed partial class CP14StoreWindow : DefaultWindow
     [Dependency] private readonly IGameTiming _timing = default!;
 
     public TimeSpan? NextTravelTime;
+    public bool OnStation;
 
     public CP14StoreWindow()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+
+        Tabs.SetTabTitle(0, Loc.GetString("cp14-store-ui-tab-buy"));
+        Tabs.SetTabTitle(1, Loc.GetString("cp14-store-ui-tab-sell"));
     }
 
     public void UpdateUI(CP14StoreUiState state)
@@ -28,6 +32,7 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         UpdateCash(state);
 
         NextTravelTime = state.NextTravelTime;
+        OnStation = state.OnStation;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -39,17 +44,25 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         {
             var time = NextTravelTime.Value - _timing.CurTime;
             TravelTimeLabel.Text =
-                $"До отлета в город: {time.Minutes:00}:{time.Seconds:00}";
+                $"{Loc.GetString(OnStation ? "cp14-store-ui-next-travel-out" : "cp14-store-ui-next-travel-in")} {time.Minutes:00}:{time.Seconds:00}";
         }
     }
 
     private void UpdateProducts(CP14StoreUiState state)
     {
-        ProductsContainer.RemoveAllChildren();
-        foreach (var product in state.Products)
+        BuyProductsContainer.RemoveAllChildren();
+        SellProductsContainer.RemoveAllChildren();
+
+        foreach (var product in state.ProductsBuy)
         {
             var control = new CP14StoreProductControl(product);
-            ProductsContainer.AddChild(control);
+            BuyProductsContainer.AddChild(control);
+        }
+
+        foreach (var product in state.ProductsSell)
+        {
+            var control = new CP14StoreProductControl(product);
+            SellProductsContainer.AddChild(control);
         }
     }
 

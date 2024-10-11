@@ -5,6 +5,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.TravelingStoreShip;
 
@@ -12,13 +13,8 @@ namespace Content.Client._CP14.TravelingStoreShip;
 public sealed partial class CP14StoreProductControl : Control
 {
     [Dependency] private readonly IEntityManager _entity = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-
-    public event Action<CP14StoreUiProductEntry, CP14StoreBuyPositionPrototype>? OnSelect;
 
     private readonly SpriteSystem _sprite;
-
-    private readonly CP14StoreBuyPositionPrototype _productPrototype;
 
     public CP14StoreProductControl(CP14StoreUiProductEntry entry)
     {
@@ -27,40 +23,25 @@ public sealed partial class CP14StoreProductControl : Control
 
         _sprite = _entity.System<SpriteSystem>();
 
-        _productPrototype = _prototype.Index(entry.ProtoId);
-
-        _prototype.TryIndex(entry.ProtoId, out var indexedProduct);
-
-        ProductButton.OnPressed += _ => OnSelect?.Invoke(entry, _productPrototype);
-
-        UpdateName(_entity, _prototype, indexedProduct);
-        UpdateView();
+        UpdateName(entry.Name, entry.Desc);
+        UpdateView(entry.Icon);
         UpdatePrice(entry.Price);
     }
 
     private void UpdatePrice(int price)
     {
+        PriceHolder.RemoveAllChildren();
         PriceHolder.AddChild(new CP14PriceControl(price));
     }
 
-    private void UpdateName(IEntityManager entManager, IPrototypeManager protoMan, CP14StoreBuyPositionPrototype? entry)
+    private void UpdateName(string name, string desc)
     {
-        ProductName.Text = Loc.GetString(_productPrototype.Title);
-
-        if (entry is null)
-            return;
-
-        var sb = new StringBuilder();
-        foreach (var service in entry.Services)
-        {
-            sb.Append(service.GetDescription(protoMan, entManager));
-        }
-
-        ProductDesc.Text = sb.ToString();
+        ProductName.Text = $"[bold]{name}[/bold]";
+        ProductDesc.Text = desc;
     }
 
-    private void UpdateView()
+    private void UpdateView(SpriteSpecifier spriteSpecifier)
     {
-        View.Texture = _sprite.Frame0(_productPrototype.Icon);
+        View.Texture = _sprite.Frame0(spriteSpecifier);
     }
 }

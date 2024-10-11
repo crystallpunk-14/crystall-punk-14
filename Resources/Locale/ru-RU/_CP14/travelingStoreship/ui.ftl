@@ -1,5 +1,10 @@
-cp14-store-ui-title = Магазинчик, бой
-cp14-store-ui-order = Ваш заказ
+cp14-store-ui-title = Информационное торговое табло
+cp14-store-ui-data = Дополнительная информация
 
-cp14-store-ui-cash = Баланс
-cp14-store-ui-price = Цена
+cp14-store-ui-cash = Баланс:
+cp14-store-ui-next-travel-out = До отправления:
+cp14-store-ui-next-travel-in = До прибытия:
+
+cp14-store-ui-tab-buy = Покупка
+cp14-store-ui-tab-sell = Продажа
+cp14-store-ui-tab-special = Временное предложение!

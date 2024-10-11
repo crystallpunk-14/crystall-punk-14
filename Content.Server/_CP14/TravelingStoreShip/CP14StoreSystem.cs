@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
@@ -25,13 +26,16 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
 
     private void TryInitStore(Entity<CP14StoreComponent> ent)
     {
-        if (!TryComp<CP14TravelingStoreShipComponent>(Transform(ent).GridUid, out var travelShip))
+        //TODO: There's no support for multiple stations. (settlements).
+        var stations = _station.GetStations();
+
+        if (stations.Count == 0)
             return;
 
-        if (!TryComp<CP14StationTravelingStoreshipTargetComponent>(travelShip.Station, out var station))
+        if (!TryComp<CP14StationTravelingStoreshipTargetComponent>(stations[0], out var station))
             return;
 
-        ent.Comp.Station = new Entity<CP14StationTravelingStoreshipTargetComponent>(travelShip.Station, station);
+        ent.Comp.Station = new Entity<CP14StationTravelingStoreshipTargetComponent>(stations[0], station);
     }
 
     private void OnBeforeUIOpen(Entity<CP14StoreComponent> ent, ref BeforeActivatableUIOpenEvent args)
@@ -39,7 +43,6 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
         if (ent.Comp.Station is null)
             TryInitStore(ent);
 
-        //TODO: Considering that the information does not change from opening the interface to opening, and only changes when the store's product is updated, this can be optimized here.
         UpdateUIProducts(ent);
     }
 
@@ -48,13 +51,40 @@ public sealed class CP14StoreSystem : CP14SharedStoreSystem
         if (ent.Comp.Station is null)
             return;
 
-        var products = new HashSet<CP14StoreUiProductEntry>();
+        var prodBuy = new HashSet<CP14StoreUiProductEntry>();
+        var prodSell = new HashSet<CP14StoreUiProductEntry>();
 
-        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentStorePositions)
+        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentStorePositionsBuy)
         {
-            products.Add(new CP14StoreUiProductEntry(proto.Key, proto.Value));
+            if (!_proto.TryIndex(proto.Key, out var indexedProto))
+                continue;
+
+            var name = Loc.GetString(indexedProto.Title);
+            var desc = new StringBuilder();
+            foreach (var service in indexedProto.Services)
+            {
+                desc.Append(service.GetDescription(_proto, EntityManager));
+            }
+
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
         }
 
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(products, new(), ent.Comp.Station.Value.Comp.NextTravelTime, 150));
+        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentStorePositionsSell)
+        {
+            if (!_proto.TryIndex(proto.Key, out var indexedProto))
+                continue;
+
+            var name = Loc.GetString(indexedProto.Title);
+            var desc = new StringBuilder();
+            foreach (var service in indexedProto.Services)
+            {
+                desc.Append(service.GetDescription(_proto, EntityManager));
+            }
+
+            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
+        }
+
+        var stationComp = ent.Comp.Station.Value.Comp;
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime, 150));
     }
 }
