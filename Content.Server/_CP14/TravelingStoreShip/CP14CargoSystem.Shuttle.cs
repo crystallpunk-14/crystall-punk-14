@@ -57,14 +57,14 @@ public sealed partial class CP14CargoSystem
         if (mapUid == null)
             return;
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: 5f, startupTime: 5f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: 5f, startupTime: 0f);
     }
 
     private void SendShuttleToTradepost(Entity<CP14StationTravelingStoreshipTargetComponent> station)
     {
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: 5f, startupTime: 7f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: 5f);
     }
 
     private void OnFTLCompleted(Entity<CP14TravelingStoreShipComponent> ent, ref FTLCompletedEvent args)

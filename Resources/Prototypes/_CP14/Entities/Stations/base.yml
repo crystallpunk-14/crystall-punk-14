@@ -17,4 +17,4 @@
       - TestStore1
       - TestStore2
       staticSellPositions:
-      - TestStoreSell
+      - GoldBars

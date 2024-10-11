@@ -1,0 +1,13 @@
+- type: storePositionSell
+  id: GoldBars
+  title: cp14-store-sell-goldbar-name
+  flavorDesc: cp14-store-sell-goldbar-desc
+  icon: 
+    sprite: _CP14/Objects/Materials/gold_bar.rsi
+    state: bar_3
+  price: 
+    min: 1000
+    max: 1000
+  service: !type:CP14SellStackService
+    stackId: CP14GoldBar
+    count: 10

@@ -1,19 +1,13 @@
 <Control xmlns="https://spacestation14.io">
-    <Button Name="ProductButton">
-        <GridContainer Columns="2">
-            <GridContainer Rows="2">
-                <TextureRect Name="View"
-                             Margin="0,0,4,0"
-                             MinSize="48 48"
-                             HorizontalAlignment="Center"
-                             VerticalAlignment="Top"
-                             Stretch="KeepAspectCentered"/>
-                <BoxContainer Name="PriceHolder"/>
-            </GridContainer>
-            <GridContainer Rows="2">
-                <RichTextLabel Name="ProductName" Margin="0 15 0 0" Access="Public" StyleClasses="LabelHeading"/>
-                <RichTextLabel Name="ProductDesc" Access="Public"/>
-            </GridContainer>
-        </GridContainer>
+    <Button Name="ProductButton" Access="Public">
+        <BoxContainer Orientation="Horizontal">
+            <TextureRect Name="View"
+                         MinSize="48 48"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top"
+                         Stretch="KeepAspectCentered"/>
+            <RichTextLabel Name="ProductName" VerticalAlignment="Center" Access="Public"/>
+            <BoxContainer Name="PriceHolder" VerticalAlignment="Center" HorizontalExpand="True" HorizontalAlignment="Right"/>
+        </BoxContainer>
     </Button>
 </Control>

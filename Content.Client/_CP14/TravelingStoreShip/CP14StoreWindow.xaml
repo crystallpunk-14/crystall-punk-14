@@ -7,7 +7,7 @@
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
             <GridContainer HorizontalExpand="True" VerticalExpand="True" Columns="2">
                 <!-- Product list (left side UI) -->
-                <TabContainer Name="Tabs" HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
+                <TabContainer SizeFlagsStretchRatio="1" Name="Tabs" HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
                     <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
                         <BoxContainer Name="BuyProductsContainer" Orientation="Vertical" HorizontalExpand="True"/>
                     </ScrollContainer>
@@ -16,7 +16,7 @@
                     </ScrollContainer>
                 </TabContainer>
                 <!-- Station trading data (right side UI) -->
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="0 0 10 0">
+                <BoxContainer SizeFlagsStretchRatio="0.5" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="0 0 10 0">
                     <controls:StripeBack>
                         <PanelContainer>
                             <Label Text="{Loc 'cp14-store-ui-order'}" Align="Center" Margin="0 5 0 3"/>
@@ -29,6 +29,9 @@
                     </BoxContainer>
                     <!-- Time -->
                     <Label Name="TravelTimeLabel" Text="00:00" HorizontalAlignment="Center" HorizontalExpand="True" Margin="0 15 0 0"/>
+                    <controls:HLine Color="#404040" Thickness="2" Margin="0 5"/>
+                    <RichTextLabel Name="SelectedName" HorizontalExpand="True" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5"/>
+                    <RichTextLabel Name="SelectedDesc" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" Margin="5"/>
                 </BoxContainer>
             </GridContainer>
         </BoxContainer>

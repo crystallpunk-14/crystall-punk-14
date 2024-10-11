@@ -20,6 +20,9 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     [DataField(required: true)]
     public LocId Title = string.Empty;
 
+    [DataField]
+    public LocId FlavorDesc = string.Empty;
+
     [DataField(required: true)]
     public SpriteSpecifier Icon = default!;
 

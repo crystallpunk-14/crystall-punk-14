@@ -14,8 +14,11 @@ public sealed partial class CP14StoreWindow : DefaultWindow
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    public TimeSpan? NextTravelTime;
-    public bool OnStation;
+    public event Action<CP14StoreUiProductEntry>? OnSelect;
+
+    private CP14StoreUiProductEntry? _selectedEntry;
+    private TimeSpan? _nextTravelTime;
+    private bool _onStation;
 
     public CP14StoreWindow()
     {
@@ -31,8 +34,8 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         UpdateProducts(state);
         UpdateCash(state);
 
-        NextTravelTime = state.NextTravelTime;
-        OnStation = state.OnStation;
+        _nextTravelTime = state.NextTravelTime;
+        _onStation = state.OnStation;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -40,12 +43,12 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         base.FrameUpdate(args);
 
         //Updating time
-        if (NextTravelTime is not null)
+        if (_nextTravelTime is not null)
         {
-            var time = NextTravelTime.Value - _timing.CurTime;
+            var time = _nextTravelTime.Value - _timing.CurTime;
 
             TravelTimeLabel.Text =
-                $"{Loc.GetString(OnStation ? "cp14-store-ui-next-travel-out" : "cp14-store-ui-next-travel-in")} {Math.Max(time.Minutes, 0):00}:{Math.Max(time.Seconds, 0):00}";
+                $"{Loc.GetString(_onStation ? "cp14-store-ui-next-travel-out" : "cp14-store-ui-next-travel-in")} {Math.Max(time.Minutes, 0):00}:{Math.Max(time.Seconds, 0):00}";
         }
     }
 
@@ -57,12 +60,20 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         foreach (var product in state.ProductsBuy)
         {
             var control = new CP14StoreProductControl(product);
+            control.ProductButton.OnPressed += _ =>
+            {
+                SelectProduct(product);
+            };
             BuyProductsContainer.AddChild(control);
         }
 
         foreach (var product in state.ProductsSell)
         {
             var control = new CP14StoreProductControl(product);
+            control.ProductButton.OnPressed += _ =>
+            {
+                SelectProduct(product);
+            };
             SellProductsContainer.AddChild(control);
         }
     }
@@ -71,5 +82,11 @@ public sealed partial class CP14StoreWindow : DefaultWindow
     {
         CashPriceHolder.RemoveAllChildren();
         CashPriceHolder.AddChild(new CP14PriceControl(state.Cash));
+    }
+
+    private void SelectProduct(CP14StoreUiProductEntry? entry)
+    {
+        SelectedName.Text = entry is null ? string.Empty : $"[bold]{entry.Value.Name}[/bold]";
+        SelectedDesc.Text = entry is null ? string.Empty : entry.Value.Desc;
     }
 }

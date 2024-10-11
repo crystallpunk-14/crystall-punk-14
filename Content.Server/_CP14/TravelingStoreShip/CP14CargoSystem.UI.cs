@@ -58,6 +58,7 @@ public sealed partial class CP14CargoSystem
 
             var name = Loc.GetString(indexedProto.Title);
             var desc = new StringBuilder();
+            desc.Append(indexedProto.FlavorDesc + "\n");
             foreach (var service in indexedProto.Services)
             {
                 desc.Append(service.GetDescription(_proto, EntityManager));
@@ -72,9 +73,12 @@ public sealed partial class CP14CargoSystem
                 continue;
 
             var name = Loc.GetString(indexedProto.Title);
-            var desc = indexedProto.Service.GetDescription(_proto, EntityManager);
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc ?? "", proto.Value));
+            var desc = new StringBuilder();
+            desc.Append(Loc.GetString(indexedProto.FlavorDesc) + "\n");
+            desc.Append(indexedProto.Service.GetDescription(_proto, EntityManager));
+
+            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
         }
 
         var stationComp = ent.Comp.Station.Value.Comp;
