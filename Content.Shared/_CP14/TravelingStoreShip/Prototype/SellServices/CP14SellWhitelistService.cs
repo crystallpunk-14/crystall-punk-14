@@ -38,6 +38,7 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
 
         foreach (var selledEnt in suitable)
         {
+            entities.Remove(selledEnt);
             entManager.QueueDeleteEntity(selledEnt);
         }
 

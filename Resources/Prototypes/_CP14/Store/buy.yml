@@ -37,10 +37,10 @@
     sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
     state: base1
   price: 
-    min: 100
-    max: 200
+    min: 10
+    max: 10
   service: !type:CP14SellWhitelistService
     whitelist:
       components:
         - Extractable
-    count: 1
+    count: 5

@@ -98,10 +98,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var query = EntityQueryEnumerator<CP14SellingPalettComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var selling, out var palletXform))
         {
-            if (palletXform.ParentUid != palletXform.GridUid || !palletXform.Anchored)
-                continue;
-
-            if (palletXform.ParentUid != shuttle)
+            if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
                 continue;
 
             var seldEnt = new HashSet<EntityUid>();
@@ -110,7 +107,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             foreach (var ent in seldEnt)
             {
-                if (toSell.Contains(ent) || !_xformQuery.TryGetComponent(ent, out var xform) /*|| CanSell()*/)
+                if (toSell.Contains(ent) || !_xformQuery.TryGetComponent(ent, out var xform))
                     continue;
 
                 toSell.Add(ent);
@@ -122,8 +119,10 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             if (!_proto.TryIndex(sellPos.Key, out var indexedPos))
                 continue;
 
-            if (indexedPos.Service.TrySell(EntityManager, toSell))
+            while (indexedPos.Service.TrySell(EntityManager, toSell))
+            {
                 station.Comp.Balance += sellPos.Value;
+            }
         }
     }
 }
