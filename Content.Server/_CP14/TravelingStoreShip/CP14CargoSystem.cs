@@ -3,6 +3,8 @@ using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
+using Content.Shared.Storage;
+using Content.Shared.Storage.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -24,6 +26,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly CP14CurrencySystem _currency = default!;
+    [Dependency] private readonly SharedStorageSystem _storage = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -113,6 +116,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             }
         }
 
+        var cash = 0;
         foreach (var sellPos in station.Comp.CurrentSellPositions)
         {
             if (!_proto.TryIndex(sellPos.Key, out var indexedPos))
@@ -120,8 +124,54 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             while (indexedPos.Service.TrySell(EntityManager, toSell))
             {
-                station.Comp.Balance += sellPos.Value;
+                cash += sellPos.Value;
             }
         }
+
+        var moneyBox = GetMoneyBox(station);
+        if (moneyBox is not null)
+        {
+            if (cash > 0)
+            {
+                foreach (var coin in _currency.GenerateMoney("CP14GoldCoin1", cash, out var remainder))
+                {
+                    _storage.Insert(moneyBox.Value, coin, out _);
+                    cash = remainder;
+                }
+            }
+
+            if (cash > 0)
+            {
+                foreach (var coin in _currency.GenerateMoney("CP14SilverCoin1", cash, out var remainder))
+                {
+                    _storage.Insert(moneyBox.Value, coin, out _);
+                    cash = remainder;
+                }
+            }
+
+            if (cash > 0)
+            {
+                foreach (var coin in _currency.GenerateMoney("CP14CopperCoin1", cash, out var remainder))
+                {
+                    _storage.Insert(moneyBox.Value, coin, out _);
+                    cash = remainder;
+                }
+            }
+        }
+    }
+
+    private EntityUid? GetMoneyBox(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    {
+        var query = EntityQueryEnumerator<CP14CargoMoneyBoxComponent, TransformComponent>();
+
+        while (query.MoveNext(out var uid, out var moneyBox, out var xform))
+        {
+            if (xform.GridUid != station.Comp.Shuttle)
+                continue;
+
+            return uid;
+        }
+
+        return null;
     }
 }

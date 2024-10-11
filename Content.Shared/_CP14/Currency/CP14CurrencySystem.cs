@@ -1,11 +1,18 @@
 using System.Text;
 using Content.Shared.Examine;
 using Content.Shared.Stacks;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.Currency;
 
 public sealed partial class CP14CurrencySystem : EntitySystem
 {
+    [Dependency] private readonly SharedStackSystem _stack = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -59,5 +66,65 @@ public sealed partial class CP14CurrencySystem : EntitySystem
         }
 
         return total;
+    }
+
+    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, out int remainder)
+    {
+        remainder = target;
+        HashSet<EntityUid> spawns = new();
+
+        if (!_proto.TryIndex(currencyType, out var indexedCurrency))
+            return spawns;
+
+        var ent = Spawn(currencyType, MapCoordinates.Nullspace);
+        if (ProcessEntity(ent, ref remainder, spawns))
+            return spawns;
+
+        while (remainder > 0)
+        {
+            var newEnt = Spawn(currencyType, MapCoordinates.Nullspace);
+            if (ProcessEntity(newEnt, ref remainder, spawns))
+                break;
+        }
+
+        return spawns;
+    }
+
+    private bool ProcessEntity(EntityUid ent, ref int remainder, HashSet<EntityUid> spawns)
+    {
+        var singleCurrency = GetTotalCurrency(ent);
+
+        if (singleCurrency > remainder)
+        {
+            QueueDel(ent);
+            return true;
+        }
+
+        spawns.Add(ent);
+        remainder -= singleCurrency;
+
+        if (TryComp<StackComponent>(ent, out var stack))
+        {
+            AdjustStack(ent, stack, singleCurrency, ref remainder);
+        }
+
+        return false;
+    }
+
+    private void AdjustStack(EntityUid ent, StackComponent stack, float singleCurrency, ref int remainder)
+    {
+        var singleStackCurrency = singleCurrency / stack.Count;
+        var stackLeftSpace = stack.MaxCountOverride - stack.Count;
+
+        if (stackLeftSpace is not null)
+        {
+            var addedStack = MathF.Min((float)stackLeftSpace, MathF.Floor(remainder / singleStackCurrency));
+
+            if (addedStack > 0)
+            {
+                _stack.SetCount(ent, stack.Count + (int)addedStack);
+                remainder -= (int)(addedStack * singleStackCurrency);
+            }
+        }
     }
 }

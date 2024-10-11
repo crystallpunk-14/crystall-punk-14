@@ -19,15 +19,13 @@ public sealed class CP14StoreUiState : BoundUserInterfaceState
 
     public bool OnStation;
     public readonly TimeSpan NextTravelTime;
-    public readonly int Cash;
 
-    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> productsBuy, HashSet<CP14StoreUiProductEntry> productsSell, bool onStation, TimeSpan time, int cash)
+    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> productsBuy, HashSet<CP14StoreUiProductEntry> productsSell, bool onStation, TimeSpan time)
     {
         ProductsBuy = productsBuy;
         ProductsSell = productsSell;
         OnStation = onStation;
         NextTravelTime = time;
-        Cash = cash;
     }
 }
 

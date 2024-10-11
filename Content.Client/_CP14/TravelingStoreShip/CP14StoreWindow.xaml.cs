@@ -32,7 +32,6 @@ public sealed partial class CP14StoreWindow : DefaultWindow
     public void UpdateUI(CP14StoreUiState state)
     {
         UpdateProducts(state);
-        UpdateCash(state);
 
         _nextTravelTime = state.NextTravelTime;
         _onStation = state.OnStation;
@@ -76,12 +75,6 @@ public sealed partial class CP14StoreWindow : DefaultWindow
             };
             SellProductsContainer.AddChild(control);
         }
-    }
-
-    private void UpdateCash(CP14StoreUiState state)
-    {
-        CashPriceHolder.RemoveAllChildren();
-        CashPriceHolder.AddChild(new CP14PriceControl(state.Cash));
     }
 
     private void SelectProduct(CP14StoreUiProductEntry? entry)

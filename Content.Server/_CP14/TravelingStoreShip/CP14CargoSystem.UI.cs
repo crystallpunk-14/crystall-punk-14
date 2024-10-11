@@ -82,6 +82,6 @@ public sealed partial class CP14CargoSystem
         }
 
         var stationComp = ent.Comp.Station.Value.Comp;
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime, stationComp.Balance));
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime));
     }
 }

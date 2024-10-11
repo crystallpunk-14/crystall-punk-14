@@ -12,9 +12,6 @@ namespace Content.Shared._CP14.TravelingStoreShip;
 public sealed partial class CP14StationTravelingStoreshipTargetComponent : Component
 {
     [DataField]
-    public int Balance = 1000;
-
-    [DataField]
     public EntityUid Shuttle;
 
     [DataField]
