@@ -25,6 +25,8 @@ public sealed partial class CP14StoreWindow : DefaultWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+
+
         Tabs.SetTabTitle(0, Loc.GetString("cp14-store-ui-tab-buy"));
         Tabs.SetTabTitle(1, Loc.GetString("cp14-store-ui-tab-sell"));
     }

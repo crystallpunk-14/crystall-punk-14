@@ -27,13 +27,13 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan StationWaitTime = TimeSpan.FromSeconds(30);
+    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(6);
 
     [DataField]
-    public TimeSpan TradepostWaitTime = TimeSpan.FromSeconds(30);
+    public TimeSpan TradepostWaitTime = TimeSpan.FromMinutes(4);
 
     //Buy
-    [DataField(required: true)]
+    [DataField]
     public List<ProtoId<CP14StoreBuyPositionPrototype>> StaticBuyPositions = new();
 
     [DataField]
@@ -46,7 +46,7 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public MinMax SpecialBuyPositionCount = new MinMax(1, 2);
 
     //Sell
-    [DataField(required: true)]
+    [DataField]
     public List<ProtoId<CP14StoreSellPositionPrototype>> StaticSellPositions = new();
 
     [DataField]

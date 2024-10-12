@@ -10,8 +10,10 @@ namespace Content.Server._CP14.TravelingStoreShip;
 
 public sealed partial class CP14CargoSystem
 {
+    private EntityQuery<ArrivalsBlacklistComponent> _blacklistQuery;
     private void InitializeShuttle()
     {
+        _blacklistQuery = GetEntityQuery<ArrivalsBlacklistComponent>();
         SubscribeLocalEvent<CP14TravelingStoreShipComponent, FTLCompletedEvent>(OnFTLCompleted);
     }
 
