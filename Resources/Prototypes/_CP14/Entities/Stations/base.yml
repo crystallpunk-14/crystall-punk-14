@@ -13,9 +13,9 @@
   abstract: true
   components:
     - type: CP14StationTravelingStoreshipTarget
-      staticBuyPositions:
-      - TestStore1
-      - TestStore2 
+      #staticBuyPositions:
+      #- TestStore1
+      #- TestStore2 
       staticSellPositions:
       - GoldBars
       - IronBars
