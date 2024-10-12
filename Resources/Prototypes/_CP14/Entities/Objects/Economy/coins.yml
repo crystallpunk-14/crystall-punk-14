@@ -32,8 +32,8 @@
 - type: entity
   id: CP14CopperCoin
   parent: CP14BaseCoin
-  name: copper crown
-  description: The minimum unit of currency in the world of Eberron. One tenth of a silver sovereign.
+  name: copper coin
+  description: TODO
   suffix: 10 coins
   components:
   - type: Sprite
@@ -72,8 +72,8 @@
 - type: entity
   id: CP14SilverCoin
   parent: CP14BaseCoin
-  name: silver sovereign
-  description: Equivalent to 10 copper crowns, and is 1 tenth of a gold galifar.
+  name: silver coin
+  description: TODO
   suffix: 10 coins
   components:
   - type: Sprite
@@ -112,8 +112,8 @@
 - type: entity
   id: CP14GoldCoin
   parent: CP14BaseCoin
-  name: gold galifar
-  description: Equivalent to 10 silver sovereign, and is 1 tenth of a platinum coin.
+  name: gold coin
+  description: TODO
   suffix: 10 coins
   components:
   - type: Sprite
@@ -152,8 +152,8 @@
 - type: entity
   id: CP14PlatinumCoin
   parent: CP14BaseCoin
-  name: platinum dragon
-  description: Equivalent to 10 gold galifar, and is the most expensive coin in Eberron's world.
+  name: platinum coin
+  description: TODO
   suffix: 10 coins
   components:
   - type: Sprite

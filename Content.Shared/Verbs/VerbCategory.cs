@@ -90,5 +90,7 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
 
         public static readonly VerbCategory CP14RitualBook = new("cp14-verb-categories-ritual-book", null); //CP14
+
+        public static readonly VerbCategory CP14CurrencyConvert = new("cp14-verb-categories-currency-converter", null); //CP14
     }
 }

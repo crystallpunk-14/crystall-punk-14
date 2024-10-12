@@ -4,7 +4,7 @@ namespace Content.Shared._CP14.Currency;
 /// Reflects the market value of an item, to guide players through the economy.
 /// </summary>
 
-[RegisterComponent, Access(typeof(CP14CurrencySystem))]
+[RegisterComponent, Access(typeof(CP14SharedCurrencySystem))]
 public sealed partial class CP14CurrencyComponent : Component
 {
     [DataField]

@@ -13,7 +13,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
 {
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
-    [Dependency] private readonly CP14CurrencySystem _currency = default!;
+    [Dependency] private readonly CP14SharedCurrencySystem _currency = default!;
 
     private EntityQuery<ContainerManagerComponent> _containerQuery;
 

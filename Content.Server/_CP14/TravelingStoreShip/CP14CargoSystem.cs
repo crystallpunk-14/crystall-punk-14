@@ -27,7 +27,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly CP14CurrencySystem _currency = default!;
+    [Dependency] private readonly CP14SharedCurrencySystem _currency = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
@@ -155,9 +155,10 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var moneyBox = GetMoneyBox(station);
         if (moneyBox is not null)
         {
+            var coord = Transform(moneyBox.Value).Coordinates;
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney("CP14GoldCoin1", cash, out var remainder))
+                foreach (var coin in _currency.GenerateMoney("CP14GoldCoin1", cash, 100, coord, out var remainder))
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                     cash = remainder;
@@ -166,7 +167,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney("CP14SilverCoin1", cash, out var remainder))
+                foreach (var coin in _currency.GenerateMoney("CP14SilverCoin1", cash, 10, coord, out var remainder))
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                     cash = remainder;
@@ -175,7 +176,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney("CP14CopperCoin1", cash, out var remainder))
+                foreach (var coin in _currency.GenerateMoney("CP14CopperCoin1", cash, 1, coord, out var remainder))
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                     cash = remainder;
