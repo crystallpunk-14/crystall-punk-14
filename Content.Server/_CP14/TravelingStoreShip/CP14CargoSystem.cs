@@ -1,11 +1,10 @@
-using System.Linq;
+using Content.Server._CP14.Currency;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared._CP14.TravelingStoreShip.Prototype;
-using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
@@ -27,7 +26,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly CP14SharedCurrencySystem _currency = default!;
+    [Dependency] private readonly CP14CurrencySystem _currency = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
