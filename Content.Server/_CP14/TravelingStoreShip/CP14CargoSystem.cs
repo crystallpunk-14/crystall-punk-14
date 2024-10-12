@@ -158,7 +158,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             var coord = Transform(moneyBox.Value).Coordinates;
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney("CP14GoldCoin1", cash, 100, coord, out var remainder))
+                foreach (var coin in _currency.GenerateMoney(CP14SharedCurrencySystem.GP, cash, 100, coord, out var remainder))
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                     cash = remainder;
@@ -167,7 +167,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney("CP14SilverCoin1", cash, 10, coord, out var remainder))
+                foreach (var coin in _currency.GenerateMoney(CP14SharedCurrencySystem.SP, cash, 10, coord, out var remainder))
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                     cash = remainder;
@@ -176,7 +176,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney("CP14CopperCoin1", cash, 1, coord, out var remainder))
+                foreach (var coin in _currency.GenerateMoney(CP14SharedCurrencySystem.CP, cash, 1, coord, out var remainder))
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                     cash = remainder;

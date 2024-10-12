@@ -1,13 +1,14 @@
 using System.Text;
 using Content.Shared.Stacks;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Currency;
 
 public partial class CP14SharedCurrencySystem : EntitySystem
 {
-    [Dependency] private readonly SharedStackSystem _stack = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    public static readonly EntProtoId CP = "CP14CopperCoin1";
+    public static readonly EntProtoId SP = "CP14SilverCoin1";
+    public static readonly EntProtoId GP = "CP14GoldCoin1";
+    public static readonly EntProtoId PP = "CP14PlatinumCoin1";
 
     public string GetCurrencyPrettyString(int currency)
     {
@@ -46,23 +47,5 @@ public partial class CP14SharedCurrencySystem : EntitySystem
         }
 
         return total;
-    }
-
-    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, int perSpawn, EntityCoordinates coordinates, out int remainder)
-    {
-        remainder = target;
-        HashSet<EntityUid> spawns = new();
-
-        while (remainder > 0)
-        {
-            if (remainder < perSpawn)
-                return spawns;
-
-            var newEnt = Spawn(currencyType, coordinates);
-            _stack.TryMergeToContacts(newEnt);
-            remainder -= perSpawn;
-        }
-
-        return spawns;
     }
 }
