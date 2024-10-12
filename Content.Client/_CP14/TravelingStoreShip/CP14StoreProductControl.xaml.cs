@@ -21,6 +21,8 @@ public sealed partial class CP14StoreProductControl : Control
 
         _sprite = _entity.System<SpriteSystem>();
 
+
+        SpecialLabel.Visible = entry.Special;
         UpdateName(entry.Name);
         UpdateView(entry.Icon);
         UpdatePrice(entry.Price);

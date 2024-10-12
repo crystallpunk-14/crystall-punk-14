@@ -23,12 +23,12 @@ public sealed partial class CP14CargoSystem
             if (_timing.CurTime < ship.NextTravelTime || ship.NextTravelTime == TimeSpan.Zero)
                 continue;
 
-            if (Transform(ship.Shuttle).MapUid == Transform(ship.TradepostMap).MapUid) //Landed on tradepost
-            {
+            if (Transform(ship.Shuttle).MapUid == Transform(ship.TradepostMap).MapUid)
+            { //Landed on tradepost
                 SendShuttleToStation((uid, ship));
             }
-            else //Landed on station
-            {
+            else
+            { //Landed on station
                 SendShuttleToTradepost((uid, ship));
             }
         }
@@ -52,7 +52,7 @@ public sealed partial class CP14CargoSystem
 
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
-        var targetPos = _transform.GetWorldPosition(target);
+        var targetPos = _transform.GetWorldPosition(target) + new Vector2(0.5f, 0.5f);
         var mapUid = _transform.GetMap(target);
         if (mapUid == null)
             return;

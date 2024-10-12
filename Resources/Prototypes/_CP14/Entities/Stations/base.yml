@@ -15,8 +15,9 @@
     - type: CP14StationTravelingStoreshipTarget
       staticBuyPositions:
       - TestStore1
-      - TestStore2
+      - TestStore2 
       staticSellPositions:
       - GoldBars
-      - IronBars
+      dynamicSellPositions:
       - CopperBars
+      - IronBars

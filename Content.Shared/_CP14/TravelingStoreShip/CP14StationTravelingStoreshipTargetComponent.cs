@@ -40,10 +40,10 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public List<ProtoId<CP14StoreBuyPositionPrototype>> DynamicBuyPositions = new();
 
     [DataField]
-    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentBuyPositions = new();
+    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, (int, bool)> CurrentBuyPositions = new(); //Proto, (price, special)
 
     [DataField]
-    public MinMax SpecialBuyPositionCount = new MinMax(0, 1);
+    public MinMax SpecialBuyPositionCount = new MinMax(1, 2);
 
     //Sell
     [DataField(required: true)]
@@ -53,8 +53,8 @@ public sealed partial class CP14StationTravelingStoreshipTargetComponent : Compo
     public List<ProtoId<CP14StoreSellPositionPrototype>> DynamicSellPositions = new();
 
     [DataField]
-    public Dictionary<ProtoId<CP14StoreSellPositionPrototype>, int> CurrentSellPositions = new();
+    public Dictionary<ProtoId<CP14StoreSellPositionPrototype>, (int, bool)> CurrentSellPositions = new(); //Proto, (price, special)
 
     [DataField]
-    public MinMax SpecialSellPositionCount = new MinMax(0, 1);
+    public MinMax SpecialSellPositionCount = new MinMax(1, 2);
 }

@@ -1,8 +1,10 @@
+using System.Linq;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
+using Content.Shared._CP14.TravelingStoreShip.Prototype;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Server.GameObjects;
@@ -79,15 +81,37 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         {
             if (!_proto.TryIndex(position, out var indexedP))
                 continue;
-            station.Comp.CurrentBuyPositions.Add(position, indexedP.Price.Next(_random));
+            station.Comp.CurrentBuyPositions.Add(position, (indexedP.Price.Next(_random), false));
         }
         foreach (var position in station.Comp.StaticSellPositions)
         {
             if (!_proto.TryIndex(position, out var indexedP))
                 continue;
-            station.Comp.CurrentSellPositions.Add(position, indexedP.Price.Next(_random));
+            station.Comp.CurrentSellPositions.Add(position, (indexedP.Price.Next(_random), false));
         }
         //Dynamic add
+
+        var specialsBuy = MathF.Min(station.Comp.SpecialBuyPositionCount.Next(_random), station.Comp.DynamicBuyPositions.Count);
+        var tmpListBuy = new List<ProtoId<CP14StoreBuyPositionPrototype>>(station.Comp.DynamicBuyPositions);
+        for (var i = 0; i < specialsBuy; i++)
+        {
+            var rand = _random.Pick(tmpListBuy);
+            tmpListBuy.Remove(rand);
+            if (!_proto.TryIndex(rand, out var indexedP))
+                continue;
+            station.Comp.CurrentBuyPositions.Add(rand, (indexedP.Price.Next(_random), true));
+        }
+
+        var specialsSell = MathF.Min(station.Comp.SpecialSellPositionCount.Next(_random), station.Comp.DynamicSellPositions.Count);
+        var tmpListSell = new List<ProtoId<CP14StoreSellPositionPrototype>>(station.Comp.DynamicSellPositions);
+        for (var i = 0; i < specialsSell; i++)
+        {
+            var rand = _random.Pick(tmpListSell);
+            tmpListSell.Remove(rand);
+            if (!_proto.TryIndex(rand, out var indexedP))
+                continue;
+            station.Comp.CurrentSellPositions.Add(rand, (indexedP.Price.Next(_random), true));
+        }
     }
 
     private void SellingThings(Entity<CP14StationTravelingStoreshipTargetComponent> station)
@@ -124,7 +148,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             while (indexedPos.Service.TrySell(EntityManager, toSell))
             {
-                cash += sellPos.Value;
+                cash += sellPos.Value.Item1;
             }
         }
 

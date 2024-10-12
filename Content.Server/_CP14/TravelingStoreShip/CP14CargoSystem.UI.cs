@@ -64,7 +64,7 @@ public sealed partial class CP14CargoSystem
                 desc.Append(service.GetDescription(_proto, EntityManager));
             }
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value.Item1, proto.Value.Item2));
         }
 
         foreach (var proto in ent.Comp.Station.Value.Comp.CurrentSellPositions)
@@ -78,7 +78,7 @@ public sealed partial class CP14CargoSystem
             desc.Append(Loc.GetString(indexedProto.FlavorDesc) + "\n");
             desc.Append(indexedProto.Service.GetDescription(_proto, EntityManager));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
+            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value.Item1, proto.Value.Item2));
         }
 
         var stationComp = ent.Comp.Station.Value.Comp;

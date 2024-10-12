@@ -31,7 +31,7 @@
           - ItemMask
         layer:
           - SlipLayer
-      fix2: #For melee like water bucket
+      fix2: #For melee like water bucket (dont work)
         hard: true
         shape:
           !type:PhysShapeAabb
