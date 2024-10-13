@@ -29,7 +29,7 @@
     maxFillLevels: 4
     fillBaseName: wallet
   - type: Dumpable
-    dumpSound:
+    soundDump:
       collection: CP14Coins
     multiplier: 0.8
   - type: Clothing
