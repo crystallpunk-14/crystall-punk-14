@@ -48,18 +48,11 @@ public sealed partial class CP14CargoSystem
             return;
 
         var target = _random.Pick(targetPoints);
-
-        if (!HasComp<TransformComponent>(station.Comp.Shuttle))
-            return;
+        var targetXform = Transform(target);
 
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
-        var targetPos = _transform.GetWorldPosition(target) + new Vector2(0.5f, 0.5f);
-        var mapUid = _transform.GetMap(target);
-        if (mapUid == null)
-            return;
-
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: 5f, startupTime: 0f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, targetXform.Coordinates, targetXform.LocalRotation, hyperspaceTime: 5f, startupTime: 0f);
     }
 
     private void SendShuttleToTradepost(Entity<CP14StationTravelingStoreShipTargetComponent> station)

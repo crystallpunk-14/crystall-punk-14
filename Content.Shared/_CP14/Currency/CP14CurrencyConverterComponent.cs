@@ -1,4 +1,6 @@
+using System.Numerics;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 
 namespace Content.Shared._CP14.Currency;
 
@@ -14,4 +16,10 @@ public sealed partial class CP14CurrencyConverterComponent : Component
 
     [DataField]
     public EntityWhitelist? Whitelist;
+
+    [DataField]
+    public Vector2 SpawnOffset = new Vector2(0, -0.4f);
+
+    [DataField]
+    public SoundSpecifier InsertSound = new SoundCollectionSpecifier("CP14Coins");
 }

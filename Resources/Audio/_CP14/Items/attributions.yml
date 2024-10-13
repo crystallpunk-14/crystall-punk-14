@@ -67,3 +67,8 @@
   license: "CC-BY-4.0"
   copyright: 'by InspectorJ of Freesound.org. edit to Mono by TheShuEd.'
   source: "https://freesound.org/people/InspectorJ/sounds/416179/"
+  
+- files: ["coins1.ogg", "coins2.ogg", "coins3.ogg", "coins_fall.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by severaltimes of Freesound.org. Cropped by TheShuEd.'
+  source: "https://freesound.org/people/severaltimes/sounds/173989/"

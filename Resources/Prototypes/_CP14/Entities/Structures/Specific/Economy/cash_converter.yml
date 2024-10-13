@@ -9,13 +9,15 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    drawdepth: SmallObjects
+    drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
     sprite: _CP14/Structures/Specific/Economy/cash_device.rsi
     state: base
   - type: Anchorable
     delay: 1
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

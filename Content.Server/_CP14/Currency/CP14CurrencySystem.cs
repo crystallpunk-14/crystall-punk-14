@@ -6,6 +6,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -57,6 +58,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         QueueDel(args.Used);
 
         _popup.PopupEntity(Loc.GetString("cp14-currency-converter-insert", ("cash", delta)), ent, args.User);
+        _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3));
     }
 
     private void OnGetVerb(Entity<CP14CurrencyConverterComponent> ent, ref GetVerbsEvent<Verb> args)
@@ -64,7 +66,8 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        var coord = Transform(ent).Coordinates;
+        var transform = Transform(ent);
+        var coord = transform.Coordinates.Offset(transform.LocalRotation.RotateVec(ent.Comp.SpawnOffset));
         Verb copperVerb = new()
         {
             Text = Loc.GetString("cp14-currency-converter-get-cp"),
@@ -79,6 +82,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
 
                 ent.Comp.Balance -= CP.Value;
                 GenerateMoney(CP.Key, CP.Value, CP.Value, coord);
+                _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(0.9f));
             },
         };
         args.Verbs.Add(copperVerb);
@@ -96,6 +100,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
 
                 ent.Comp.Balance -= SP.Value;
                 GenerateMoney(SP.Key, SP.Value, SP.Value, coord);
+                _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(1.1f));
             },
         };
         args.Verbs.Add(silverVerb);
@@ -113,6 +118,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
 
                 ent.Comp.Balance -= GP.Value;
                 GenerateMoney(GP.Key, GP.Value, GP.Value, coord);
+                _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(1.3f));
             },
         };
         args.Verbs.Add(goldVerb);
@@ -130,6 +136,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
 
                 ent.Comp.Balance -= PP.Value;
                 GenerateMoney(PP.Key, PP.Value, PP.Value, coord);
+                _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(1.5f));
             },
         };
         args.Verbs.Add(platinumVerb);
