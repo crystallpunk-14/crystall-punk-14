@@ -45,5 +45,8 @@
       params:
         variation: 0.03
         volume: 2
+  - type: Tag
+    tags:
+    - CP14Hammer
   - type: CP14Currency
     currency: 200

@@ -43,5 +43,8 @@
     removalTime: 1
   - type: ThrowingAngle
     angle: 225
+  - type: Tag
+    tags:
+    - CP14Dagger
   - type: CP14Currency
     currency: 200

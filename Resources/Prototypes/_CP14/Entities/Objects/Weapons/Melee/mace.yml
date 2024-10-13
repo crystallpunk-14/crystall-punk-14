@@ -30,5 +30,8 @@
     cPAnimationLength: 0.25
   - type: StaminaDamageOnHit
     damage: 6
+  - type: Tag
+    tags:
+    - CP14Mace
   - type: CP14Currency
     currency: 500
