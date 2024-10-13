@@ -26,6 +26,9 @@
   - type: CP14Currency
     currency: 1
     category: Currency
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/coins_fall.ogg
 
 # Copper
 
@@ -33,7 +36,7 @@
   id: CP14CopperCoin
   parent: CP14BaseCoin
   name: copper coin
-  description: TODO
+  description: The smallest denomination coin. Copper.
   suffix: 10 coins
   components:
   - type: Sprite
@@ -73,7 +76,7 @@
   id: CP14SilverCoin
   parent: CP14BaseCoin
   name: silver coin
-  description: TODO
+  description: A valuable coin made from a precisely calibrated silver alloy..... and something else. Equal in value to ten coppers.
   suffix: 10 coins
   components:
   - type: Sprite
@@ -113,7 +116,7 @@
   id: CP14GoldCoin
   parent: CP14BaseCoin
   name: gold coin
-  description: TODO
+  description: A gold, big, beautiful coin. Valuable enough to be stolen by bandits. Equal in value to ten silver coins.
   suffix: 10 coins
   components:
   - type: Sprite
@@ -153,7 +156,7 @@
   id: CP14PlatinumCoin
   parent: CP14BaseCoin
   name: platinum coin
-  description: TODO
+  description: A platinum coin? It's so rare. Ten gold pieces is the price of one.
   suffix: 10 coins
   components:
   - type: Sprite
