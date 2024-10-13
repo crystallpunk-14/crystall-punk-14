@@ -121,7 +121,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var toSell = new HashSet<EntityUid>();
 
         var query = EntityQueryEnumerator<CP14SellingPalettComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var selling, out var palletXform))
+        while (query.MoveNext(out var uid, out _, out var palletXform))
         {
             if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
                 continue;
@@ -132,7 +132,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             foreach (var ent in sentEntities)
             {
-                if (toSell.Contains(ent) || !_xformQuery.TryGetComponent(ent, out var xform))
+                if (toSell.Contains(ent) || !_xformQuery.TryGetComponent(ent, out _))
                     continue;
 
                 toSell.Add(ent);
@@ -188,8 +188,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, cash, CP14SharedCurrencySystem.CP.Value, coord, out var remainder);
-                cash = remainder;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, cash, CP14SharedCurrencySystem.CP.Value, coord, out _);
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
@@ -202,7 +201,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     {
         var query = EntityQueryEnumerator<CP14CargoMoneyBoxComponent, TransformComponent>();
 
-        while (query.MoveNext(out var uid, out var moneyBox, out var xform))
+        while (query.MoveNext(out var uid, out _, out var xform))
         {
             if (xform.GridUid != station.Comp.Shuttle)
                 continue;

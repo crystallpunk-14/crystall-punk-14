@@ -27,9 +27,12 @@ public partial class CP14SharedCurrencySystem : EntitySystem
 
         var sb = new StringBuilder();
 
-        if (gp > 0) sb.Append( " " + Loc.GetString("cp14-currency-examine-gp", ("coin", gp)));
-        if (sp > 0) sb.Append( " " + Loc.GetString("cp14-currency-examine-sp", ("coin", sp)));
-        if (cp > 0) sb.Append( " " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp)));
+        if (gp > 0)
+            sb.Append( " " + Loc.GetString("cp14-currency-examine-gp", ("coin", gp)));
+        if (sp > 0)
+            sb.Append( " " + Loc.GetString("cp14-currency-examine-sp", ("coin", sp)));
+        if (cp > 0)
+            sb.Append( " " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp)));
 
         return sb.ToString();
     }
