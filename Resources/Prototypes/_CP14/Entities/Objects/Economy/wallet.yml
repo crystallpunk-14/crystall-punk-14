@@ -28,7 +28,9 @@
   - type: StorageFillVisualizer
     maxFillLevels: 4
     fillBaseName: wallet
-  - type: Dumpable #TODO sounds
+  - type: Dumpable
+    dumpSound:
+      collection: CP14Coins
     multiplier: 0.8
   - type: Clothing
     slots: [belt]
