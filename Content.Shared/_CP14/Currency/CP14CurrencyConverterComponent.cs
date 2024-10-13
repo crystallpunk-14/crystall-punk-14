@@ -10,8 +10,8 @@ namespace Content.Shared._CP14.Currency;
 public sealed partial class CP14CurrencyConverterComponent : Component
 {
     [DataField]
-    public int Balance = 0;
+    public int Balance;
 
     [DataField]
-    public EntityWhitelist? Whitelist = null;
+    public EntityWhitelist? Whitelist;
 }

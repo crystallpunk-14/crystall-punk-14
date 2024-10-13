@@ -5,6 +5,7 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
+using Robust.Server.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -16,6 +17,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly StackSystem _stack = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -54,10 +56,10 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         ent.Comp.Balance += delta;
         QueueDel(args.Used);
 
-        _popup.PopupPredicted(Loc.GetString("cp14-currency-converter-insert", ("cash", delta)), ent, args.User);
+        _popup.PopupEntity(Loc.GetString("cp14-currency-converter-insert", ("cash", delta)), ent, args.User);
     }
 
-    private void OnGetVerb(Entity<CP14CurrencyConverterComponent> ent, ref GetVerbsEvent<Verb> args) //So hardcoded...
+    private void OnGetVerb(Entity<CP14CurrencyConverterComponent> ent, ref GetVerbsEvent<Verb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
@@ -72,12 +74,11 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
             CloseMenu = false,
             Act = () =>
             {
-                var cost = 1;
-                if (ent.Comp.Balance < cost)
+                if (ent.Comp.Balance < CP.Value)
                     return;
 
-                ent.Comp.Balance -= cost;
-                GenerateMoney(CP, cost, cost, coord);
+                ent.Comp.Balance -= CP.Value;
+                GenerateMoney(CP.Key, CP.Value, CP.Value, coord);
             },
         };
         args.Verbs.Add(copperVerb);
@@ -90,12 +91,11 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
             CloseMenu = false,
             Act = () =>
             {
-                var cost = 10;
-                if (ent.Comp.Balance < cost)
+                if (ent.Comp.Balance < SP.Value)
                     return;
 
-                ent.Comp.Balance -= cost;
-                GenerateMoney(SP, cost, cost, coord);
+                ent.Comp.Balance -= SP.Value;
+                GenerateMoney(SP.Key, SP.Value, SP.Value, coord);
             },
         };
         args.Verbs.Add(silverVerb);
@@ -108,12 +108,11 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
             CloseMenu = false,
             Act = () =>
             {
-                var cost = 100;
-                if (ent.Comp.Balance < cost)
+                if (ent.Comp.Balance < GP.Value)
                     return;
 
-                ent.Comp.Balance -= cost;
-                GenerateMoney(GP, cost, cost, coord);
+                ent.Comp.Balance -= GP.Value;
+                GenerateMoney(GP.Key, GP.Value, GP.Value, coord);
             },
         };
         args.Verbs.Add(goldVerb);
@@ -126,17 +125,15 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
             CloseMenu = false,
             Act = () =>
             {
-                var cost = 1000;
-                if (ent.Comp.Balance < cost)
+                if (ent.Comp.Balance < PP.Value)
                     return;
 
-                ent.Comp.Balance -= cost;
-                GenerateMoney(PP, cost, cost, coord);
+                ent.Comp.Balance -= PP.Value;
+                GenerateMoney(PP.Key, PP.Value, PP.Value, coord);
             },
         };
         args.Verbs.Add(platinumVerb);
     }
-
 
     public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, int perSpawn, EntityCoordinates coordinates)
     {

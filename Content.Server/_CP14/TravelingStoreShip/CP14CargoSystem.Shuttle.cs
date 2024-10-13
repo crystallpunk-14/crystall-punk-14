@@ -19,13 +19,13 @@ public sealed partial class CP14CargoSystem
 
     private void UpdateShuttle()
     {
-        var query = EntityQueryEnumerator<CP14StationTravelingStoreshipTargetComponent>();
+        var query = EntityQueryEnumerator<CP14StationTravelingStoreShipTargetComponent>();
         while (query.MoveNext(out var uid, out var ship))
         {
             if (_timing.CurTime < ship.NextTravelTime || ship.NextTravelTime == TimeSpan.Zero)
                 continue;
 
-            if (Transform(ship.Shuttle).MapUid == Transform(ship.TradepostMap).MapUid)
+            if (Transform(ship.Shuttle).MapUid == Transform(ship.TradePostMap).MapUid)
             { //Landed on tradepost
                 SendShuttleToStation((uid, ship));
             }
@@ -36,7 +36,7 @@ public sealed partial class CP14CargoSystem
         }
     }
 
-    private void SendShuttleToStation(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    private void SendShuttleToStation(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var targetPoints = new List<EntityUid>();
         var targetEnumerator = EntityQueryEnumerator<CP14TravelingStoreShipFTLTargetComponent, TransformComponent>(); //TODO - different method position location
@@ -62,21 +62,21 @@ public sealed partial class CP14CargoSystem
         _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(mapUid.Value, targetPos), Transform(target).LocalRotation, hyperspaceTime: 5f, startupTime: 0f);
     }
 
-    private void SendShuttleToTradepost(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    private void SendShuttleToTradepost(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradepostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: 5f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, new EntityCoordinates(station.Comp.TradePostMap, Vector2.Zero), Angle.Zero, hyperspaceTime: 5f);
     }
 
     private void OnFTLCompleted(Entity<CP14TravelingStoreShipComponent> ent, ref FTLCompletedEvent args)
     {
-        if (!TryComp<CP14StationTravelingStoreshipTargetComponent>(ent.Comp.Station, out var station))
+        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(ent.Comp.Station, out var station))
             return;
 
-        if (Transform(ent).MapUid == Transform(station.TradepostMap).MapUid)  //Landed on tradepost
+        if (Transform(ent).MapUid == Transform(station.TradePostMap).MapUid)  //Landed on tradepost
         {
-            station.NextTravelTime = _timing.CurTime + station.TradepostWaitTime;
+            station.NextTravelTime = _timing.CurTime + station.TradePostWaitTime;
             station.OnStation = false;
 
             foreach (var position in _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>())

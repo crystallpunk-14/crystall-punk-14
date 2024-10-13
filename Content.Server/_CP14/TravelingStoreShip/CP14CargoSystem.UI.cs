@@ -19,10 +19,10 @@ public sealed partial class CP14CargoSystem
         if (stations.Count == 0)
             return;
 
-        if (!TryComp<CP14StationTravelingStoreshipTargetComponent>(stations[0], out var station))
+        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(stations[0], out var station))
             return;
 
-        ent.Comp.Station = new Entity<CP14StationTravelingStoreshipTargetComponent>(stations[0], station);
+        ent.Comp.Station = new Entity<CP14StationTravelingStoreShipTargetComponent>(stations[0], station);
     }
 
     private void OnBeforeUIOpen(Entity<CP14CargoStoreComponent> ent, ref BeforeActivatableUIOpenEvent args)

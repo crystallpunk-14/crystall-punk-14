@@ -12,7 +12,7 @@
   id: CP14BaseTrading
   abstract: true
   components:
-    - type: CP14StationTravelingStoreshipTarget
+    - type: CP14StationTravelingStoreShipTarget
       #staticBuyPositions:
       #- TestStore1
       #- TestStore2 

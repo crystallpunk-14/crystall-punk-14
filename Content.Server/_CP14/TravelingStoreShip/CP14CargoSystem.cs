@@ -40,7 +40,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         InitializeStore();
         InitializeShuttle();
 
-        SubscribeLocalEvent<CP14StationTravelingStoreshipTargetComponent, StationPostInitEvent>(OnPostInit);
+        SubscribeLocalEvent<CP14StationTravelingStoreShipTargetComponent, StationPostInitEvent>(OnPostInit);
     }
 
     public override void Update(float frameTime)
@@ -50,7 +50,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         UpdateShuttle();
     }
 
-    private void OnPostInit(Entity<CP14StationTravelingStoreshipTargetComponent> station, ref StationPostInitEvent args)
+    private void OnPostInit(Entity<CP14StationTravelingStoreShipTargetComponent> station, ref StationPostInitEvent args)
     {
         if (!Deleted(station.Comp.Shuttle))
             return;
@@ -62,7 +62,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
         var shuttle =  shuttleUids[0];
         station.Comp.Shuttle = shuttle;
-        station.Comp.TradepostMap = _mapManager.GetMapEntityId(tradepostMap);
+        station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
         travelingStoreShipComp.Station = station;
 
@@ -70,7 +70,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         UpdateStorePositions(station);
     }
 
-    private void UpdateStorePositions(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    private void UpdateStorePositions(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         station.Comp.CurrentBuyPositions.Clear();
         station.Comp.CurrentSellPositions.Clear();
@@ -88,8 +88,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 continue;
             station.Comp.CurrentSellPositions.Add(position, (indexedP.Price.Next(_random), false));
         }
-        //Dynamic add
 
+        //Dynamic add
         var specialsBuy = MathF.Min(station.Comp.SpecialBuyPositionCount.Next(_random), station.Comp.DynamicBuyPositions.Count);
         var tmpListBuy = new List<ProtoId<CP14StoreBuyPositionPrototype>>(station.Comp.DynamicBuyPositions);
         for (var i = 0; i < specialsBuy; i++)
@@ -113,11 +113,11 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private void SellingThings(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    private void SellingThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var shuttle = station.Comp.Shuttle;
 
-        //Get all sended to tradepost entities
+        //Get all entities sent to trading posts
         var toSell = new HashSet<EntityUid>();
 
         var query = EntityQueryEnumerator<CP14SellingPalettComponent, TransformComponent>();
@@ -126,11 +126,11 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
                 continue;
 
-            var seldEnt = new HashSet<EntityUid>();
+            var sentEntities = new HashSet<EntityUid>();
 
-            _lookup.GetEntitiesInRange(uid, 1, seldEnt, LookupFlags.Dynamic | LookupFlags.Sundries);
+            _lookup.GetEntitiesInRange(uid, 1, sentEntities, LookupFlags.Dynamic | LookupFlags.Sundries);
 
-            foreach (var ent in seldEnt)
+            foreach (var ent in sentEntities)
             {
                 if (toSell.Contains(ent) || !_xformQuery.TryGetComponent(ent, out var xform))
                     continue;
@@ -155,36 +155,50 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         if (moneyBox is not null)
         {
             var coord = Transform(moneyBox.Value).Coordinates;
+
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney(CP14SharedCurrencySystem.GP, cash, 100, coord, out var remainder))
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, cash, CP14SharedCurrencySystem.PP.Value, coord, out var remainder);
+                cash = remainder;
+                foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
-                    cash = remainder;
                 }
             }
 
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney(CP14SharedCurrencySystem.SP, cash, 10, coord, out var remainder))
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, cash, CP14SharedCurrencySystem.GP.Value, coord, out var remainder);
+                cash = remainder;
+                foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
-                    cash = remainder;
                 }
             }
 
             if (cash > 0)
             {
-                foreach (var coin in _currency.GenerateMoney(CP14SharedCurrencySystem.CP, cash, 1, coord, out var remainder))
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, cash, CP14SharedCurrencySystem.SP.Value, coord, out var remainder);
+                cash = remainder;
+                foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
-                    cash = remainder;
+                }
+            }
+
+            if (cash > 0)
+            {
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, cash, CP14SharedCurrencySystem.CP.Value, coord, out var remainder);
+                cash = remainder;
+                foreach (var coin in coins)
+                {
+                    _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
         }
     }
 
-    private EntityUid? GetMoneyBox(Entity<CP14StationTravelingStoreshipTargetComponent> station)
+    private EntityUid? GetMoneyBox(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var query = EntityQueryEnumerator<CP14CargoMoneyBoxComponent, TransformComponent>();
 

@@ -6,31 +6,31 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CP14.TravelingStoreShip;
 
 /// <summary>
-/// Add to the station so that traveling storeship starts running on it
+/// Add to the station so that traveling store ship starts running on it
 /// </summary>
 [RegisterComponent]
-public sealed partial class CP14StationTravelingStoreshipTargetComponent : Component
+public sealed partial class CP14StationTravelingStoreShipTargetComponent : Component
 {
     [DataField]
     public EntityUid Shuttle;
 
     [DataField]
-    public EntityUid TradepostMap;
+    public EntityUid TradePostMap;
 
     [DataField]
-    public bool OnStation = false;
+    public bool OnStation;
 
     [DataField]
-    public ResPath ShuttlePath = new("/Maps/_CP14/Ships/baloon.yml");
+    public ResPath ShuttlePath = new("/Maps/_CP14/Ships/balloon.yml");
 
     [DataField]
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(6);
+    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(1);
 
     [DataField]
-    public TimeSpan TradepostWaitTime = TimeSpan.FromMinutes(4);
+    public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(1);
 
     //Buy
     [DataField]
