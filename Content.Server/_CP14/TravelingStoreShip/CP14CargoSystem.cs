@@ -158,7 +158,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, cash, CP14SharedCurrencySystem.PP.Value, coord, out var remainder);
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, cash, coord, out var remainder);
                 cash = remainder;
                 foreach (var coin in coins)
                 {
@@ -168,7 +168,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, cash, CP14SharedCurrencySystem.GP.Value, coord, out var remainder);
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, cash, coord, out var remainder);
                 cash = remainder;
                 foreach (var coin in coins)
                 {
@@ -178,7 +178,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, cash, CP14SharedCurrencySystem.SP.Value, coord, out var remainder);
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, cash, coord, out var remainder);
                 cash = remainder;
                 foreach (var coin in coins)
                 {
@@ -188,7 +188,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (cash > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, cash, CP14SharedCurrencySystem.CP.Value, coord, out _);
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, cash, coord);
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);

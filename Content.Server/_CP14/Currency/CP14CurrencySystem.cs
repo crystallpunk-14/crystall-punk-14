@@ -3,6 +3,7 @@ using Content.Server.Stack;
 using Content.Shared._CP14.Currency;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Stacks;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
@@ -19,6 +20,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -81,7 +83,9 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
                     return;
 
                 ent.Comp.Balance -= CP.Value;
-                GenerateMoney(CP.Key, CP.Value, CP.Value, coord);
+
+                var newEnt = Spawn(CP.Key, coord);
+                _stack.TryMergeToContacts(newEnt);
                 _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(0.9f));
             },
         };
@@ -99,7 +103,8 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
                     return;
 
                 ent.Comp.Balance -= SP.Value;
-                GenerateMoney(SP.Key, SP.Value, SP.Value, coord);
+                var newEnt = Spawn(SP.Key, coord);
+                _stack.TryMergeToContacts(newEnt);
                 _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(1.1f));
             },
         };
@@ -117,7 +122,8 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
                     return;
 
                 ent.Comp.Balance -= GP.Value;
-                GenerateMoney(GP.Key, GP.Value, GP.Value, coord);
+                var newEnt = Spawn(GP.Key, coord);
+                _stack.TryMergeToContacts(newEnt);
                 _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(1.3f));
             },
         };
@@ -135,33 +141,76 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
                     return;
 
                 ent.Comp.Balance -= PP.Value;
-                GenerateMoney(PP.Key, PP.Value, PP.Value, coord);
+                var newEnt = Spawn(PP.Key, coord);
+                _stack.TryMergeToContacts(newEnt);
                 _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3).WithPitchScale(1.5f));
             },
         };
         args.Verbs.Add(platinumVerb);
     }
 
-    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, int perSpawn, EntityCoordinates coordinates)
+    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, EntityCoordinates coordinates)
     {
-        return GenerateMoney(currencyType, target, perSpawn, coordinates, out _);
+        return GenerateMoney(currencyType, target, coordinates, out _);
     }
 
-    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, int perSpawn, EntityCoordinates coordinates, out int remainder)
+    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, EntityCoordinates coordinates, out int remainder)
     {
         remainder = target;
         HashSet<EntityUid> spawns = new();
 
+        if (!_proto.TryIndex(currencyType, out var indexedCurrency))
+            return spawns;
+
+        var ent = Spawn(currencyType, coordinates);
+        if (ProcessEntity(ent, ref remainder, spawns))
+            return spawns;
+
         while (remainder > 0)
         {
-            if (remainder < perSpawn)
-                return spawns;
-
             var newEnt = Spawn(currencyType, coordinates);
-            _stack.TryMergeToContacts(newEnt);
-            remainder -= perSpawn;
+            if (ProcessEntity(newEnt, ref remainder, spawns))
+                break;
         }
 
         return spawns;
+    }
+
+    private bool ProcessEntity(EntityUid ent, ref int remainder, HashSet<EntityUid> spawns)
+    {
+        var singleCurrency = GetTotalCurrency(ent);
+
+        if (singleCurrency > remainder)
+        {
+            QueueDel(ent);
+            return true;
+        }
+
+        spawns.Add(ent);
+        remainder -= singleCurrency;
+
+        if (TryComp<StackComponent>(ent, out var stack))
+        {
+            AdjustStack(ent, stack, singleCurrency, ref remainder);
+        }
+
+        return false;
+    }
+
+    private void AdjustStack(EntityUid ent, StackComponent stack, float singleCurrency, ref int remainder)
+    {
+        var singleStackCurrency = singleCurrency / stack.Count;
+        var stackLeftSpace = stack.MaxCountOverride - stack.Count;
+
+        if (stackLeftSpace is not null)
+        {
+            var addedStack = MathF.Min((float)stackLeftSpace, MathF.Floor(remainder / singleStackCurrency));
+
+            if (addedStack > 0)
+            {
+                _stack.SetCount(ent, stack.Count + (int)addedStack);
+                remainder -= (int)(addedStack * singleStackCurrency);
+            }
+        }
     }
 }
