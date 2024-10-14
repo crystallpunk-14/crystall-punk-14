@@ -37,16 +37,14 @@ public readonly struct CP14StoreUiProductEntry : IEquatable<CP14StoreUiProductEn
     public readonly string Name;
     public readonly string Desc;
     public readonly int Price;
-    public readonly bool Special;
 
-    public CP14StoreUiProductEntry(string protoId, SpriteSpecifier icon, string name, string desc, int price, bool special)
+    public CP14StoreUiProductEntry(string protoId, SpriteSpecifier icon, string name, string desc, int price)
     {
         ProtoId = protoId;
         Icon = icon;
         Name = name;
         Desc = desc;
         Price = price;
-        Special = special;
     }
 
     public bool Equals(CP14StoreUiProductEntry other)
@@ -61,6 +59,6 @@ public readonly struct CP14StoreUiProductEntry : IEquatable<CP14StoreUiProductEn
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(ProtoId, Icon, Name, Desc, Price, Special);
+        return HashCode.Combine(ProtoId, Icon, Name, Desc, Price);
     }
 }

@@ -1,33 +1,14 @@
-#- type: storePositionBuy
-#  id: TestStore1
-#  title: Ящик вооружения
-#  flavorDesc: |
-#      У вас что, закончилось оружие? НЕ БЕДА! 
-#      Всего лишь за 50 золотых мы отправим вам 
-#      кучу ржавого железа! Наслаждайтесь!
-#  icon: 
-#    sprite: _CP14/Objects/Materials/copper_ore.rsi
-#    state: ore1
-#  price: 
-#    min: 10
-#    max: 200
-#  services:
-#  - !type:CP14BuyItemsService
-#    product:
-#      CP14BaseSword: 5
-#      CP14BaseDagger: 4
-#
-#- type: storePositionBuy
-#  id: TestStore2
-#  title: Ящик руды
-#  icon: 
-#    sprite: _CP14/Objects/Materials/iron_ore.rsi
-#    state: ore1
-#  price: 
-#    min: 500
-#    max: 900
-#  services:
-#  - !type:CP14BuyItemsService
-#    product:
-#      CP14OreCopper: 10
-#      CP14OreIron: 10
+- type: storePositionBuy
+  id: CP14AlchemyNormalizer
+  name: cp14-store-buy-alchemy-normalizer-name
+  desc: cp14-store-buy-alchemy-normalizer-desc
+  icon: 
+    sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
+    state: base
+  price: 
+    min: 400
+    max: 500
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14AlchemyNormalizer: 1

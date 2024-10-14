@@ -14,14 +14,20 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     [IdDataField, ViewVariables]
     public string ID { get; private set; } = default!;
 
+    /// <summary>
+    /// if true, this item becomes available for purchase only after unlocking by other purchases
+    /// </summary>
+    [DataField]
+    public bool Unlockable = false;
+
     [DataField(required: true)]
     public MinMax Price = new();
 
     [DataField(required: true)]
-    public LocId Title = string.Empty;
+    public LocId Name = string.Empty;
 
     [DataField]
-    public LocId FlavorDesc = string.Empty;
+    public LocId Desc = string.Empty;
 
     [DataField(required: true)]
     public SpriteSpecifier Icon = default!;

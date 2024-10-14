@@ -31,16 +31,29 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
     private EntityQuery<TransformComponent> _xformQuery;
 
+    private IEnumerable<CP14StoreBuyPositionPrototype>? _buyProto;
+    private IEnumerable<CP14StoreSellPositionPrototype>? _sellProto;
+
+
     public override void Initialize()
     {
         base.Initialize();
-
-        _xformQuery = GetEntityQuery<TransformComponent>();
-
         InitializeStore();
         InitializeShuttle();
 
+        _xformQuery = GetEntityQuery<TransformComponent>();
+
+        _buyProto = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
+        _sellProto = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
+
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
         SubscribeLocalEvent<CP14StationTravelingStoreShipTargetComponent, StationPostInitEvent>(OnPostInit);
+    }
+
+    private void OnProtoReload(PrototypesReloadedEventArgs ev)
+    {
+        _buyProto = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
+        _sellProto = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
     }
 
     public override void Update(float frameTime)
@@ -75,41 +88,19 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         station.Comp.CurrentBuyPositions.Clear();
         station.Comp.CurrentSellPositions.Clear();
 
-        //Static add
-        foreach (var position in station.Comp.StaticBuyPositions)
+        if (_buyProto is not null)
         {
-            if (!_proto.TryIndex(position, out var indexedP))
-                continue;
-            station.Comp.CurrentBuyPositions.Add(position, (indexedP.Price.Next(_random), false));
+            foreach (var buyPos in _buyProto)
+            {
+                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random));
+            }
         }
-        foreach (var position in station.Comp.StaticSellPositions)
+        if (_sellProto is not null)
         {
-            if (!_proto.TryIndex(position, out var indexedP))
-                continue;
-            station.Comp.CurrentSellPositions.Add(position, (indexedP.Price.Next(_random), false));
-        }
-
-        //Dynamic add
-        var specialsBuy = MathF.Min(station.Comp.SpecialBuyPositionCount.Next(_random), station.Comp.DynamicBuyPositions.Count);
-        var tmpListBuy = new List<ProtoId<CP14StoreBuyPositionPrototype>>(station.Comp.DynamicBuyPositions);
-        for (var i = 0; i < specialsBuy; i++)
-        {
-            var rand = _random.Pick(tmpListBuy);
-            tmpListBuy.Remove(rand);
-            if (!_proto.TryIndex(rand, out var indexedP))
-                continue;
-            station.Comp.CurrentBuyPositions.Add(rand, (indexedP.Price.Next(_random), true));
-        }
-
-        var specialsSell = MathF.Min(station.Comp.SpecialSellPositionCount.Next(_random), station.Comp.DynamicSellPositions.Count);
-        var tmpListSell = new List<ProtoId<CP14StoreSellPositionPrototype>>(station.Comp.DynamicSellPositions);
-        for (var i = 0; i < specialsSell; i++)
-        {
-            var rand = _random.Pick(tmpListSell);
-            tmpListSell.Remove(rand);
-            if (!_proto.TryIndex(rand, out var indexedP))
-                continue;
-            station.Comp.CurrentSellPositions.Add(rand, (indexedP.Price.Next(_random), true));
+            foreach (var sellPos in _sellProto)
+            {
+                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random));
+            }
         }
     }
 
@@ -147,7 +138,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             while (indexedPos.Service.TrySell(EntityManager, toSell))
             {
-                cash += sellPos.Value.Item1;
+                cash += sellPos.Value;
             }
         }
 

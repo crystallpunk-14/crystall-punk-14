@@ -1,7 +1,7 @@
 - type: storePositionSell
   id: GoldBars
-  title: cp14-store-sell-goldbar-name
-  flavorDesc: cp14-store-sell-goldbar-desc
+  name: cp14-store-sell-goldbar-name
+  desc: cp14-store-sell-goldbar-desc
   icon: 
     sprite: _CP14/Objects/Materials/gold_bar.rsi
     state: bar_3
@@ -14,8 +14,8 @@
 
 - type: storePositionSell
   id: IronBars
-  title: cp14-store-sell-ironbar-name
-  flavorDesc: cp14-store-sell-ironbar-desc
+  name: cp14-store-sell-ironbar-name
+  desc: cp14-store-sell-ironbar-desc
   icon: 
     sprite: _CP14/Objects/Materials/iron_bar.rsi
     state: bar_3
@@ -28,8 +28,8 @@
 
 - type: storePositionSell
   id: CopperBars
-  title: cp14-store-sell-copperbar-name
-  flavorDesc: cp14-store-sell-copperbar-desc
+  name: cp14-store-sell-copperbar-name
+  desc: cp14-store-sell-copperbar-desc
   icon: 
     sprite: _CP14/Objects/Materials/copper_bar.rsi
     state: bar_3

@@ -32,28 +32,14 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     [DataField]
     public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(1);
 
-    //Buy
     [DataField]
-    public List<ProtoId<CP14StoreBuyPositionPrototype>> StaticBuyPositions = new();
-
-    [DataField]
-    public List<ProtoId<CP14StoreBuyPositionPrototype>> DynamicBuyPositions = new();
-
-    [DataField]
-    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, (int, bool)> CurrentBuyPositions = new(); //Proto, (price, special)
+    public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentBuyPositions = new(); //Proto, price
 
     [DataField]
     public MinMax SpecialBuyPositionCount = new(1, 2);
 
-    //Sell
     [DataField]
-    public List<ProtoId<CP14StoreSellPositionPrototype>> StaticSellPositions = new();
-
-    [DataField]
-    public List<ProtoId<CP14StoreSellPositionPrototype>> DynamicSellPositions = new();
-
-    [DataField]
-    public Dictionary<ProtoId<CP14StoreSellPositionPrototype>, (int, bool)> CurrentSellPositions = new(); //Proto, (price, special)
+    public Dictionary<ProtoId<CP14StoreSellPositionPrototype>, int> CurrentSellPositions = new(); //Proto, price
 
     [DataField]
     public MinMax SpecialSellPositionCount = new(1, 2);
