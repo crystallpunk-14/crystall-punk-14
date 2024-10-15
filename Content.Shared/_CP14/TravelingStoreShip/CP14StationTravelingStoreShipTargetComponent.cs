@@ -27,10 +27,10 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(1);
+    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(6);
 
     [DataField]
-    public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(1);
+    public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(4);
 
     [DataField]
     public Dictionary<ProtoId<CP14StoreBuyPositionPrototype>, int> CurrentBuyPositions = new(); //Proto, price
