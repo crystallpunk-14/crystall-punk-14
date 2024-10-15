@@ -130,7 +130,7 @@ public sealed class CP14ExpeditionSystem : EntitySystem
         var possiblePositions = new List<EntityCoordinates>();
         while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
-            if (ev.Job != null && spawnPoint.Job != ev.Job.Prototype)
+            if (ev.Job != null && spawnPoint.Job != ev.Job.Value)
                 continue;
 
             if (xform.GridUid != gridUid)
