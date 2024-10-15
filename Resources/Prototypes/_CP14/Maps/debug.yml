@@ -20,7 +20,7 @@
   minPlayers: 0
   stations:
     Dev:
-      stationProto: StandardStationArena
+      stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
           mapNameTemplate: "Dev"

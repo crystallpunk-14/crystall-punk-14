@@ -48,3 +48,10 @@
   files:
   - /Audio/_CP14/Items/book1.ogg
   - /Audio/_CP14/Items/book2.ogg
+
+- type: soundCollection
+  id: CP14Coins
+  files:
+  - /Audio/_CP14/Items/coins1.ogg
+  - /Audio/_CP14/Items/coins2.ogg
+  - /Audio/_CP14/Items/coins3.ogg

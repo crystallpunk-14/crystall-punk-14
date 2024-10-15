@@ -26,14 +26,23 @@
   - type: CP14Currency
     currency: 1
     category: Currency
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/coins_fall.ogg  
+  - type: EmitSoundOnDrop
+    sound:
+      collection: CP14Coins
+  - type: EmitSoundOnPickup
+    sound:
+      collection: CP14Coins
 
 # Copper
 
 - type: entity
   id: CP14CopperCoin
   parent: CP14BaseCoin
-  name: copper crown
-  description: The minimum unit of currency in the world of Eberron. One tenth of a silver sovereign.
+  name: copper coin
+  description: The smallest denomination coin. Copper.
   suffix: 10 coins
   components:
   - type: Sprite
@@ -72,8 +81,8 @@
 - type: entity
   id: CP14SilverCoin
   parent: CP14BaseCoin
-  name: silver sovereign
-  description: Equivalent to 10 copper crowns, and is 1 tenth of a gold galifar.
+  name: silver coin
+  description: A valuable coin made from a precisely calibrated silver alloy..... and something else. Equal in value to ten coppers.
   suffix: 10 coins
   components:
   - type: Sprite
@@ -112,8 +121,8 @@
 - type: entity
   id: CP14GoldCoin
   parent: CP14BaseCoin
-  name: gold galifar
-  description: Equivalent to 10 silver sovereign, and is 1 tenth of a platinum coin.
+  name: gold coin
+  description: A gold, big, beautiful coin. Valuable enough to be stolen by bandits. Equal in value to ten silver coins.
   suffix: 10 coins
   components:
   - type: Sprite
@@ -152,8 +161,8 @@
 - type: entity
   id: CP14PlatinumCoin
   parent: CP14BaseCoin
-  name: platinum dragon
-  description: Equivalent to 10 gold galifar, and is the most expensive coin in Eberron's world.
+  name: platinum coin
+  description: A platinum coin? It's so rare. Ten gold pieces is the price of one.
   suffix: 10 coins
   components:
   - type: Sprite

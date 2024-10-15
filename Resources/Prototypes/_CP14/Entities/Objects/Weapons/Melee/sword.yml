@@ -38,5 +38,3 @@
     fuckupChance: 0.5
     requiredSkills:
     - Warcraft
-  - type: CP14Currency
-    currency: 1200

@@ -13,7 +13,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
 {
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
-    [Dependency] private readonly CP14CurrencySystem _currency = default!;
+    [Dependency] private readonly CP14SharedCurrencySystem _currency = default!;
 
     private EntityQuery<ContainerManagerComponent> _containerQuery;
 
@@ -35,7 +35,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
     private void OnAfterAssign(Entity<CP14CurrencyCollectConditionComponent> condition, ref ObjectiveAfterAssignEvent args)
     {
         _metaData.SetEntityName(condition.Owner, Loc.GetString(condition.Comp.ObjectiveText), args.Meta);
-        _metaData.SetEntityDescription(condition.Owner, Loc.GetString(condition.Comp.ObjectiveDescription, ("coins", _currency.GetPrettyCurrency(condition.Comp.Currency))), args.Meta);
+        _metaData.SetEntityDescription(condition.Owner, Loc.GetString(condition.Comp.ObjectiveDescription, ("coins", _currency.GetCurrencyPrettyString(condition.Comp.Currency))), args.Meta);
         _objectives.SetIcon(condition.Owner, condition.Comp.ObjectiveSprite);
     }
 
@@ -71,7 +71,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
                 foreach (var entity in container.ContainedEntities)
                 {
                     // check if this is the item
-                    count += CheckCurrency(entity, condition);
+                    count += _currency.GetTotalCurrency(entity);
 
                     // if it is a container check its contents
                     if (_containerQuery.TryGetComponent(entity, out var containerManager))
@@ -88,7 +88,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
     private void CheckEntity(EntityUid entity, CP14CurrencyCollectConditionComponent condition, ref Stack<ContainerManagerComponent> containerStack, ref int counter)
     {
         // check if this is the item
-        counter += CheckCurrency(entity, condition);
+        counter += _currency.GetTotalCurrency(entity);
 
         //we don't check the inventories of sentient entity
         if (!TryComp<MindContainerComponent>(entity, out _))
@@ -97,17 +97,5 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
             if (_containerQuery.TryGetComponent(entity, out var containerManager))
                 containerStack.Push(containerManager);
         }
-    }
-
-    private int CheckCurrency(EntityUid entity, CP14CurrencyCollectConditionComponent condition)
-    {
-        // check if this is the target
-        if (!TryComp<CP14CurrencyComponent>(entity, out var target))
-            return 0;
-
-        if (target.Category != condition.Category)
-            return 0;
-
-        return _currency.GetTotalCurrency(entity);
     }
 }
