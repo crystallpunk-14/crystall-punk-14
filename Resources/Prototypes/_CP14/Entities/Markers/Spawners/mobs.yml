@@ -32,6 +32,7 @@
   name: saraptor spawner
   id: CP14SpawnMobDinoSaraptor
   parent: MarkerBase
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:

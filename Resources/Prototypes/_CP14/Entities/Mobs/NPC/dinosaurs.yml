@@ -3,6 +3,7 @@
   parent: SimpleMobBase
   name: saraptor
   description: A large scaly lizard, an obvious predator that liked to snack on meat.
+  categories: [ ForkFiltered ]
   components:
   - type: HTN
     rootTask:
