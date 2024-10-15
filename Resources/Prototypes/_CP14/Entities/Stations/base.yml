@@ -13,11 +13,3 @@
   abstract: true
   components:
     - type: CP14StationTravelingStoreShipTarget
-      #staticBuyPositions:
-      #- TestStore1
-      #- TestStore2 
-      staticSellPositions:
-      - GoldBars
-      - IronBars
-      dynamicSellPositions:
-      - CopperBars

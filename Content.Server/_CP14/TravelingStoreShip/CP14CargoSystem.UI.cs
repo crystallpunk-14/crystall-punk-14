@@ -58,7 +58,7 @@ public sealed partial class CP14CargoSystem
 
             var name = Loc.GetString(indexedProto.Name);
             var desc = new StringBuilder();
-            desc.Append(indexedProto.Desc + "\n");
+            desc.Append(Loc.GetString(indexedProto.Desc) + "\n");
             foreach (var service in indexedProto.Services)
             {
                 desc.Append(service.GetDescription(_proto, EntityManager));
