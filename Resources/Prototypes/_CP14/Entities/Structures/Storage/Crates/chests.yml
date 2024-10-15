@@ -2,6 +2,7 @@
   parent:
   - BaseStructureDynamic
   - CP14BaseFlammable
+  categories: [ ForkFiltered ]
   id: CP14WoodenChestFrame
   name: wooden chest frame
   description: Base for any wooden chest

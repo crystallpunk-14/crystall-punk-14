@@ -2,8 +2,7 @@
   id: CP14RandomSpawnerGatherAgaricShroom
   name: agaric shroom spawner
   parent: MarkerBase
-  categories:
-  - Spawner
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:

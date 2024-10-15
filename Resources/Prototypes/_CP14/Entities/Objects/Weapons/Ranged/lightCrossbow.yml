@@ -2,6 +2,7 @@
   id: CP14BaseLightCrossbow
   name: light crossbow
   parent: BaseItem
+  categories: [ ForkFiltered ]
   description: A small, compact crossbow that is comfortable to hold with one hand. Not too accurate on the reverse side.
   components:
   - type: Sprite

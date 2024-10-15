@@ -3,6 +3,7 @@
   parent: BaseItem
   name: dirt block
   description: A block of excellent black soil.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -47,6 +48,7 @@
   parent: BaseItem
   name: stone block
   description: A block of cold stone.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -88,10 +90,10 @@
 
 - type: entity
   id: CP14WoodLog
-  parent:
-  - BaseItem
+  parent: BaseItem
   name: wooden log
   description: A piece of unprocessed wood. Good material for building, or starting a fire.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -142,10 +144,10 @@
 
 - type: entity
   id: CP14WoodenPlanks1
-  parent:
-  - BaseItem
+  parent: BaseItem
   name: wooden planks
   description: Treated and ready-to-use wood.
+  categories: [ ForkFiltered ]
   suffix: 1
   components:
   - type: Item
@@ -218,6 +220,7 @@
   name: nails
   suffix: 1
   description: A basic carpenter's tool that allows you to do unimaginable things with wood.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
@@ -281,10 +284,10 @@
 
 - type: entity
   id: CP14FloraMaterial
-  parent:
-  - BaseItem
+  parent: BaseItem
   name: flora material
   description: An organic material used for medicinal or construction purposes.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
@@ -317,6 +320,7 @@
   parent: BaseItem
   name: strings
   description: Thin thread. Material for mending clothes, or sewing new ones.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
@@ -327,6 +331,7 @@
 - type: entity
   id: CP14Cloth1
   parent: BaseItem
+  categories: [ ForkFiltered ]
   name: cloth
   suffix: 1
   description: White cloth roll

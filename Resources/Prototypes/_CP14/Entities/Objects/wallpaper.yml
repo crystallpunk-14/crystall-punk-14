@@ -3,6 +3,7 @@
   abstract: true
   parent: BaseItem
   description: Thin paper wallpaper. You can glue them on the walls from different sides, or peel them off with any sharp object.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal

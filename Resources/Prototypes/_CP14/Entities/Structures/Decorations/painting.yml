@@ -2,6 +2,7 @@
   id: CP14BaseWallmountPainting
   parent: CP14BaseWallmount
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Damageable
     damageContainer: Inorganic

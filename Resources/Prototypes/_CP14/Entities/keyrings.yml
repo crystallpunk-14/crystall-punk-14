@@ -4,6 +4,7 @@
   suffix: Empty
   name: key ring
   description: Allows you to comfortably store a large number of keys in one place.
+  categories: [ ForkFiltered ]
   components:
   - type: CP14KeyRing
   - type: Sprite

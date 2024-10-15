@@ -4,8 +4,7 @@
   suffix: Weapon
   description: lol
   parent: MarkerBase
-  categories:
-  - Spawner
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:
@@ -47,8 +46,7 @@
   suffix: Tools
   description: lol
   parent: MarkerBase
-  categories:
-  - Spawner
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:

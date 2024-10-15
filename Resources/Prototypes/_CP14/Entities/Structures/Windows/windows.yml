@@ -2,6 +2,7 @@
   id: CP14WindowBase
   abstract: true
   parent: Window
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     drawdepth: Mobs

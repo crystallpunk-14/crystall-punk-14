@@ -3,6 +3,7 @@
   parent: BaseItem
   name: aura scanner
   description: Scans the polarity of the elemental energy flows in this place.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Specific/Thaumaturgy/aura_scanner.rsi
@@ -23,6 +24,7 @@
   parent: BaseItem
   name: ritual chalk
   description: Quartz chalk, handy for drawing temporary ritual circles.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi

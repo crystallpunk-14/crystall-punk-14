@@ -3,6 +3,7 @@
   id: CP14RitualGrimoire
   name: ritualist's grimoire
   description: a book that holds the knowledge of hundreds of ritualists before you. Use it on an active ritual to get all the information about its current state.
+  categories: [ ForkFiltered ]
   components:
     - type: Sprite
       sprite: Objects/Misc/books.rsi

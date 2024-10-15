@@ -2,6 +2,7 @@
   parent: Pen
   id: CP14PenFeather
   name: fountain pen
+  categories: [ ForkFiltered ]
   description: A sharp clipped feather of a bird, adapted as a writing implement.
   components:
   - type: Sprite
@@ -23,6 +24,7 @@
   id: CP14Inkwell
   name: inkwell
   description: An endless (for now) source of ink for your letters
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Bureaucracy/inkwell.rsi

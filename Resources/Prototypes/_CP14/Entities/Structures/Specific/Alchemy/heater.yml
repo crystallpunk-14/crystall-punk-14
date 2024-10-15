@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseFireplace
   parent: BaseStructure
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: InteractionOutline

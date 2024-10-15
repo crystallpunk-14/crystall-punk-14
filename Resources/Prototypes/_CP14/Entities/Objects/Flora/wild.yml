@@ -2,6 +2,7 @@
   parent: FoodProduceBase
   id: CP14WildProduceBase
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Tag
     tags:
@@ -152,6 +153,7 @@
   parent: BaseItem
   name: rough quartz
   description: a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.
+  categories: [ ForkFiltered ]
   components:
   - type: Tag
     tags:

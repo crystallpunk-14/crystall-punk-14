@@ -5,6 +5,7 @@
   id: CP14FoodEggBase
   description: An egg!
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Food
     trash: 
@@ -69,6 +70,7 @@
   parent: BaseItem
   id: CP14Eggshells
   description: You're walkin' on 'em bud.
+  categories: [ ForkFiltered ]
   components:
   - type: Food
   - type: Sprite

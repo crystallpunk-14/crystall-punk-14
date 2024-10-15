@@ -2,6 +2,7 @@
   name: walking dead spawner
   id: CP14SpawnMobUndeadZombie
   parent: MarkerBase
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:
@@ -17,6 +18,7 @@
   name: rabbit spawner
   id: CP14SpawnMobRabbit
   parent: MarkerBase
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:

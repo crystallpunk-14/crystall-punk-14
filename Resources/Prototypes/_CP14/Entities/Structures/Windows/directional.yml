@@ -1,6 +1,7 @@
 - type: entity
   id: CP14WindowDirectional
   parent: BaseStructure
+  categories: [ ForkFiltered ]
   name: directional window
   description: Don't smudge up the glass down there.
   placement:

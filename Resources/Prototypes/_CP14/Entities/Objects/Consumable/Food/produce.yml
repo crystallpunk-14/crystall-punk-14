@@ -1,6 +1,7 @@
 - type: entity
   id: CP14FoodCabbage
   parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
   name: cabbage
   description: Green edible ball.
   components:
@@ -37,6 +38,7 @@
 - type: entity
   id: CP14FoodCabbageSlice
   parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
   name: cabbage leaf
   description: Time to make green salads
   components:
@@ -73,6 +75,7 @@
 - type: entity
   id: CP14FoodPumpkin
   parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
   name: pumpkin
   description: Big, cool pumpkin. 
   components:
@@ -110,6 +113,7 @@
 - type: entity
   id: CP14FoodPumpkinSlice
   parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
   name: pumpkin slice
   description: Pumpkin! # TODO
   components: 
@@ -146,6 +150,7 @@
 - type: entity
   id: CP14FoodPotato
   parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
   name: potato
   description: Cute potato
   components:
@@ -181,6 +186,7 @@
 - type: entity
   id: CP14FoodCucumber
   parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
   name: cucumber
   description: An oblong green vegetable. Refreshing!
   components:

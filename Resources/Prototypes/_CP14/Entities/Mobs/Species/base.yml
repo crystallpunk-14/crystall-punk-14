@@ -5,6 +5,7 @@
   - MobDamageable
   - MobCombat
   id: CP14BaseMobSpecies
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Sprite

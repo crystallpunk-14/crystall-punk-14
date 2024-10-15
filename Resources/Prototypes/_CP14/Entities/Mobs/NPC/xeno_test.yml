@@ -1,6 +1,7 @@
 - type: entity
   id: CP14MobXeno
   parent: MobXeno
+  categories: [ ForkFiltered ]
   components:
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
@@ -10,6 +11,7 @@
 - type: entity
   id: CP14MobXenoDrone
   parent: MobXenoDrone
+  categories: [ ForkFiltered ]
   components:
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
@@ -20,6 +22,7 @@
   id: CP14MobSpaceCobra
   name: cobra
   parent: MobCobraSpace
+  categories: [ ForkFiltered ]
   components:
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
@@ -29,6 +32,7 @@
 - type: entity
   id: CP14MobPurpleSnake
   parent: MobPurpleSnake
+  categories: [ ForkFiltered ]
   components:
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
@@ -38,6 +42,7 @@
 - type: entity
   id: CP14MobSmallPurpleSnake
   parent: MobSmallPurpleSnake
+  categories: [ ForkFiltered ]
   components:
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember
@@ -47,6 +52,7 @@
 - type: entity
   id: CP14MobWatcherMagmawing
   parent: MobWatcherMagmawing
+  categories: [ ForkFiltered ]
   components:
   - type: CP14OutPVSDespawn
   - type: NpcFactionMember

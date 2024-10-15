@@ -3,6 +3,7 @@
   parent: CP14BaseMobZombie
   name: walking dead
   description: A reanimated rotting body of a dead man wanting to devour the living.
+  categories: [ ForkFiltered ]
   components:
   - type: HTN
     rootTask:

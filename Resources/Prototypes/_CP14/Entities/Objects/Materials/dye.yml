@@ -4,6 +4,7 @@
   abstract: true
   name: dye
   description: A bright, colorful dye used to paint various things.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny

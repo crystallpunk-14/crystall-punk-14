@@ -3,6 +3,7 @@
   parent: FoodInjectableBase
   name: cheese wheel
   description: A large wheel of soft, fragrant piece of cheese.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -29,6 +30,7 @@
   parent: FoodInjectableBase
   name: cheese
   description: A triangle of soft, fragrant cheese.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
@@ -61,7 +63,8 @@
   id: CP14FoodCheeseSlice
   parent: FoodInjectableBase
   name: cheese slice
-  description: A thin slice of delicious smelling cheese
+  description: A thin slice of delicious smelling cheese.
+  categories: [ ForkFiltered ]
   components:
   - type: FlavorProfile
     flavors:

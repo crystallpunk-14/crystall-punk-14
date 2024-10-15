@@ -1,5 +1,6 @@
 - type: entity
   id: CP14Mannequin
+  categories: [ ForkFiltered ]
   parent: 
   - Mannequin
   - CP14BaseFlammable

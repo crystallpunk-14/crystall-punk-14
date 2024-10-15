@@ -2,6 +2,7 @@
   parent:
   - BaseStructure
   id: CP14BaseWorkbench
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Sprite

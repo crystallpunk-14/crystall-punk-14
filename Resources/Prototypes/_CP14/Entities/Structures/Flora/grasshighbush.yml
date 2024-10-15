@@ -2,6 +2,7 @@
   id: CP14HighBush
   name: high bush
   parent: CP14BaseFlammableSpreading
+  categories: [ ForkFiltered ]
   description: Very tall and dense thickets. Perhaps someone is watching you from them
   components:
   - type: CP14WaveShader
