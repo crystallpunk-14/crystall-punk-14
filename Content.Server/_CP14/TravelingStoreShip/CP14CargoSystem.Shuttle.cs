@@ -36,7 +36,7 @@ public sealed partial class CP14CargoSystem
         }
     }
 
-    private void SendShuttleToStation(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private void SendShuttleToStation(Entity<CP14StationTravelingStoreShipTargetComponent> station, float startupTime = 0f)
     {
         var targetPoints = new List<EntityUid>();
         var targetEnumerator = EntityQueryEnumerator<CP14TravelingStoreShipFTLTargetComponent, TransformComponent>(); //TODO - different method position location
@@ -52,7 +52,7 @@ public sealed partial class CP14CargoSystem
 
         var shuttleComp = Comp<ShuttleComponent>(station.Comp.Shuttle);
 
-        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, targetXform.Coordinates, targetXform.LocalRotation, hyperspaceTime: 5f, startupTime: 0f);
+        _shuttles.FTLToCoordinates(station.Comp.Shuttle, shuttleComp, targetXform.Coordinates, targetXform.LocalRotation, hyperspaceTime: 5f, startupTime: startupTime);
     }
 
     private void SendShuttleToTradepost(Entity<CP14StationTravelingStoreShipTargetComponent> station)

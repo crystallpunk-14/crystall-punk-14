@@ -79,7 +79,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
         travelingStoreShipComp.Station = station;
 
-        SendShuttleToStation(station); //Start fast travel
+        SendShuttleToStation(station, 10);
         UpdateStorePositions(station);
     }
 
