@@ -2,6 +2,7 @@
   abstract: true
   parent: Clothing
   id: CP14ClothingEyesBase
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     state: icon

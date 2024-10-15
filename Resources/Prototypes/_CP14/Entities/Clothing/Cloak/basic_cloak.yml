@@ -2,6 +2,7 @@
   abstract: true
   parent: Clothing
   id: CP14ClothingCloakBase
+  categories: [ ForkFiltered ]
   components:
   - type: Clothing
     equipDelay: 1
@@ -14,6 +15,7 @@
 - type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakArmoredRed
+  categories: [ ForkFiltered ]
   name: armored red cape
   description: Huge metal shoulder pads give extra protection from getting your head chopped off.
   components:
