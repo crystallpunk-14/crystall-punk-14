@@ -26,11 +26,15 @@ public sealed partial class CP14CargoSystem
                 continue;
 
             if (Transform(ship.Shuttle).MapUid == Transform(ship.TradePostMap).MapUid)
-            { //Landed on tradepost
+            {
+                // if landed on trade post
+                ship.NextTravelTime = _timing.CurTime + ship.StationWaitTime;
                 SendShuttleToStation((uid, ship));
             }
             else
-            { //Landed on station
+            {
+                // if landed on station
+                ship.NextTravelTime = _timing.CurTime + ship.TradePostWaitTime;
                 SendShuttleToTradepost((uid, ship));
             }
         }
@@ -69,23 +73,13 @@ public sealed partial class CP14CargoSystem
 
         if (Transform(ent).MapUid == Transform(station.TradePostMap).MapUid)  //Landed on tradepost
         {
-            station.NextTravelTime = _timing.CurTime + station.TradePostWaitTime;
             station.OnStation = false;
-
-            foreach (var position in _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>())
-            {
-                foreach (var pos in position.Services)
-                {
-                    pos.Buy(EntityManager, ent.Comp.Station);
-                }
-            }
 
             SellingThings((ent.Comp.Station, station));
             UpdateStorePositions((ent.Comp.Station, station));
         }
         else   //Landed on station
         {
-            station.NextTravelTime = _timing.CurTime + station.StationWaitTime;
             station.OnStation = true;
         }
         UpdateAllStores();
