@@ -85,5 +85,3 @@
     damage:
       types:
         Slash: 6
-  - type: CP14Currency
-    currency: 2000

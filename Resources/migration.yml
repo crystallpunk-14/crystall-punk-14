@@ -101,6 +101,9 @@ CP14GatherableBloodgrass: CP14GatherableBloodFlower
 CP14GatherableFlowersRed: CP14GatherableBloodFlower
 CP14VialSmallBloodgrassSap: CP14VialSmallBloodFlowerSap
 CP14BarrelBloodGrassSap: CP14BarrelBloodFlowerSap
+
+#2024-10-11
+CP14WoodenDresser: CP14WoodenCabinet
 # <---> CrystallPunk migration zone end
 
 
@@ -543,3 +546,6 @@ HatBase: null
 
 # 2024-09-19
 BlueprintFlare: null
+
+# 2024-10-04
+BaseAdvancedPen: Pen

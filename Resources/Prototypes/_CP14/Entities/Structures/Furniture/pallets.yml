@@ -1,0 +1,72 @@
+- type: entity
+  id: CP14BasePallets
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/pallets.rsi
+    snapCardinals: true
+    drawdepth: FloorTiles
+  - type: Transform
+    anchored: true
+
+- type: entity
+  id: CP14WoodenPallet
+  parent: 
+  - CP14BasePallets
+  - CP14BaseFlammable
+  name: wooden pallet
+  description: wooden goods stand
+  components:
+  - type: Sprite
+    state: wooden
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14WoodenPalletSell
+  parent: CP14WoodenPallet
+  name: selling wooden pallet
+  components:
+  - type: CP14SellingPalett
+  - type: Sprite
+    layers:
+    - state: wooden
+    - state: sell
+
+- type: entity
+  id: CP14WoodenPalletBuy
+  parent: CP14WoodenPallet
+  name: buying wooden pallet
+  components:
+  - type: CP14BuyingPalett
+  - type: Sprite
+    layers:
+    - state: wooden
+    - state: buy
+    
