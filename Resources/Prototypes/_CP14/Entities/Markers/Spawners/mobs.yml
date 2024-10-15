@@ -29,8 +29,8 @@
     - CP14MobRabbit
 
 - type: entity
-  name: saraptor spawner
-  id: CP14SpawnMobDinoSaraptor
+  name: yumkaraptor spawner
+  id: CP14SpawnMobDinoYumkaraptor
   parent: MarkerBase
   categories: [ ForkFiltered ]
   components:
@@ -42,4 +42,4 @@
       state: dino
   - type: ConditionalSpawner
     prototypes:
-    - CP14MobDinoSaraptor
+    - CP14MobDinoYumkaraptor

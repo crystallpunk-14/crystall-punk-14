@@ -1,7 +1,7 @@
 - type: entity
-  id: CP14MobDinoSaraptor
+  id: CP14MobDinoYumkaraptor
   parent: SimpleMobBase
-  name: saraptor
+  name: yumkaraptor
   description: A large scaly lizard, an obvious predator that liked to snack on meat.
   categories: [ ForkFiltered ]
   components:
