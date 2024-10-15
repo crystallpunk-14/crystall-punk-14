@@ -69,7 +69,7 @@
         Base: dino_dead
   - type: Butcherable
     spawned:
-    - id: CP14RawFoodMeat # to replace the dino meat
+    - id: CP14FoodMeatLamb # to replace the dino meat
       amount: 5
   - type: Bloodstream
     bloodMaxVolume: 200
