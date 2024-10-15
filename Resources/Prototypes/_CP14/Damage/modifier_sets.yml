@@ -25,3 +25,13 @@
     Heat: 1.5
     Cold: 0.4
     Poison: 0
+
+- type: damageModifierSet
+  id: CP14Dinosaur
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.7
+    Piercing: 1.2
+    Heat: 0.8
+    Cold: 1.4
+    Poison: 0.8

@@ -27,3 +27,18 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobRabbit
+
+- type: entity
+  name: saraptor spawner
+  id: CP14SpawnMobDinoSaraptor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/dino.rsi
+      state: dino
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobDinoSaraptor
