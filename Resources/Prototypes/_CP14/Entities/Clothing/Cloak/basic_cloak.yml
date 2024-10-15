@@ -15,7 +15,6 @@
 - type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakArmoredRed
-  categories: [ ForkFiltered ]
   name: armored red cape
   description: Huge metal shoulder pads give extra protection from getting your head chopped off.
   components:
