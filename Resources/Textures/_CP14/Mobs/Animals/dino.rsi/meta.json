@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "size":
+  {
+    "x": 48,
+    "y": 48
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by Pelemonk (Github) for CrystallPunk 14",
+  "states":
+  [
+    {
+      "name": "dino",
+      "directions": 4
+    },
+
+    {
+      "name": "dino_dead",
+      "directions": 1
+    }
+  ]
+}
