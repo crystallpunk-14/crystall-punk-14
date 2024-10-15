@@ -1,6 +1,7 @@
 - type: entity
   id: CP14DirectionalPlateBase
   abstract: true
+  categories: [ ForkFiltered ]
   parent: BaseStructure
   name: plate
   placement:

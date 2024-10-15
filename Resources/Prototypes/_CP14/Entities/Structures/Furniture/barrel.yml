@@ -6,6 +6,7 @@
   name: wooden barrel
   suffix: Empty
   description: The simplest design for storing liquids.
+  categories: [ ForkFiltered ]
   placement:
     mode: PlaceFree
   components:

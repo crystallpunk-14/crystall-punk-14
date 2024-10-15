@@ -1,6 +1,7 @@
 - type: entity
   abstract: true
   parent: BaseWall
+  categories: [ ForkFiltered ]
   id: CP14BaseWall
   name: wall
   description: Sturdy enough to cover you from threats or cold winds.

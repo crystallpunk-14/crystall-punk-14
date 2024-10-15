@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BasePallets
   abstract: true
+  categories: [ ForkFiltered ]
   placement:
     mode: SnapgridCenter
   components:

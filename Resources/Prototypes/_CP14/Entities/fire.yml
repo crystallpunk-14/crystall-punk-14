@@ -2,6 +2,7 @@
   id: CP14Fire
   name: fire
   description: it's fire!
+  categories: [ ForkFiltered ]
   suffix: cp14
   placement:
     mode: SnapgridCenter

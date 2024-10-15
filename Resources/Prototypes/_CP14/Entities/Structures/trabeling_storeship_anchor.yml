@@ -1,6 +1,7 @@
 - type: entity
   id: CP14TravelingStoreshipAnchor
   name: traveling storeship anchor
+  categories: [ ForkFiltered ]
   placement:
     mode: SnapgridCenter
   description: the point of adhesion of a traveling storeship to the surface. Keep your eyes to the sky so you don't get crushed!

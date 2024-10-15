@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseItem
   id: CP14BasePaper
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Paper

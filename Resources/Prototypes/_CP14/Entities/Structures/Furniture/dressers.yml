@@ -1,6 +1,7 @@
 - type: entity
   id: CP14CabinetBase
   parent: BaseStructure
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Sprite
@@ -45,6 +46,7 @@
 - type: entity
   id: CP14ClosetBase
   parent: BaseStructureDynamic
+  categories: [ ForkFiltered ]
   name: closet
   description: Just an ordinary, decrepit closet.
   abstract: true

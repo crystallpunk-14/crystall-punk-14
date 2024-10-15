@@ -4,6 +4,7 @@
   - Clothing
   - ContentsExplosionResistanceBase
   id: CP14ClothingBackpackBase
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Huge

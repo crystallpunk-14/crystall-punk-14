@@ -55,6 +55,7 @@
 - type: entity
   parent: CP14DungeonEntrance
   id: CP14DungeonEntranceAutoLink
+  categories: [ ForkFiltered ]
   components:
   - type: CP14ZLevelAutoPortal
     zLevelOffset: -1 # Go into deep
@@ -63,6 +64,7 @@
 - type: entity
   parent: CP14DungeonExit
   id: CP14DungeonExitAutoLink
+  categories: [ ForkFiltered ]
   components:
   - type: CP14ZLevelAutoPortal
     zLevelOffset: 1 # Go onto surface

@@ -2,6 +2,7 @@
   abstract: true
   parent: Clothing
   id: CP14ClothingShirtBase
+  categories: [ ForkFiltered ]
   components:
   - type: Clothing
     equipDelay: 1

@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseFarmingSoil
   abstract: true
+  categories: [ ForkFiltered ]
   placement:
     mode: SnapgridCenter
   components:

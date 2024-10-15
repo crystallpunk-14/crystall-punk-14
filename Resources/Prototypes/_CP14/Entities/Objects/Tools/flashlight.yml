@@ -3,6 +3,7 @@
   id: CP14OldLantern
   name: old lantern
   description: Relic of the Techomagic's past. Large, weighty, unpractical. At least feels good to crack some skulls with it.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Tools/magic-lamp.rsi
@@ -32,11 +33,9 @@
       path: /Audio/Items/toolbox_drop.ogg
   - type: Item
     sprite: _CP14/Objects/Tools/magic-lamp.rsi
-    size: Large
     storedRotation: -90
   - type: Rotatable
   - type: PointLight
-    mask: /Textures/Effects/LightMasks/double_cone.png
     color: "#47F8FFFF"
     autoRot: true
     energy: 4

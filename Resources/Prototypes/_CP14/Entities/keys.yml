@@ -2,6 +2,7 @@
   parent: BaseItem
   id: CP14BaseKey
   abstract: true
+  categories: [ ForkFiltered ]
   name: key
   description: A small, intricate piece of iron that opens certain locks. Don't give it to just anyone!
   components: 

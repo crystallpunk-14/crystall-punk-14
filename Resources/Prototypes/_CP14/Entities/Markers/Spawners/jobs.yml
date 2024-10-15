@@ -1,6 +1,11 @@
 - type: entity
-  id: CP14SpawnPointAdventurer
+  id: CP14SpawnPointJobBase
   parent: SpawnPointJobBase
+  categories: [ ForkFiltered ]
+
+- type: entity
+  id: CP14SpawnPointAdventurer
+  parent: CP14SpawnPointJobBase
   name: adventurer
   categories:
   - Spawner
@@ -14,7 +19,7 @@
 
 - type: entity
   id: CP14SpawnPointAlchemist
-  parent: SpawnPointJobBase
+  parent: CP14SpawnPointJobBase
   name: alchemist
   categories:
   - Spawner
@@ -28,7 +33,7 @@
 
 - type: entity
   id: CP14SpawnPointInnkeeper
-  parent: SpawnPointJobBase
+  parent: CP14SpawnPointJobBase
   name: innkeeper
   categories:
   - Spawner
@@ -42,7 +47,7 @@
 
 - type: entity
   id: CP14SpawnPointCaptain
-  parent: SpawnPointJobBase
+  parent: CP14SpawnPointJobBase
   name: captain
   categories:
   - Spawner
@@ -56,7 +61,7 @@
 
 - type: entity
   id: CP14SpawnPointGuardCommander
-  parent: SpawnPointJobBase
+  parent: CP14SpawnPointJobBase
   name: guard commander
   categories:
   - Spawner
@@ -70,7 +75,7 @@
 
 - type: entity
   id: CP14SpawnPointHouseKeeper
-  parent: SpawnPointJobBase
+  parent: CP14SpawnPointJobBase
   name: house keeper
   categories:
   - Spawner

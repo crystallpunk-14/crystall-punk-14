@@ -3,6 +3,7 @@
   abstract: true
   parent: MarkerBase
   description: lol
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:

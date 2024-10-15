@@ -2,6 +2,7 @@
   id: CP14BaseSharpeningStoneStructure
   name: stationary sharpening stone
   description: A strong, durable sharpening stone capable of sharpening weapons without much damage to them.
+  categories: [ ForkFiltered ]
   parent: BaseStructure
   components:
   - type: Clickable

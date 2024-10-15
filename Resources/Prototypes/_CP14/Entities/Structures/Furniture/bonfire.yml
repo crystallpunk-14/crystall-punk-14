@@ -3,6 +3,7 @@
   parent: CP14BaseFireplace
   name: bonfire
   description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     noRot: true

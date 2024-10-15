@@ -2,6 +2,7 @@
   id: CP14GatherableBase
   parent: BaseStructure
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     snapCardinals: true

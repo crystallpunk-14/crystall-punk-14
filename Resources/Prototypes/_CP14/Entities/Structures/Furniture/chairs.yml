@@ -2,6 +2,7 @@
   name: wooden chair
   description: Made of the most common planks. Simple and effective!    
   id: CP14ChairWooden
+  categories: [ ForkFiltered ]
   parent: 
   - UnanchoredChairBase
   - CP14BaseFlammable

@@ -1,5 +1,6 @@
 ﻿- type: entity
   id: CP14Chasm
+  categories: [ ForkFiltered ]
   name: chasm
   description: You can't even see the bottom.
   placement:

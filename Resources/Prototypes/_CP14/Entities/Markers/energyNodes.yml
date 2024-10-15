@@ -3,6 +3,7 @@
   parent: MarkerBase
   name: aura node
   description: An energy node that affects the elemental energy in the surrounding space.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:

@@ -4,6 +4,7 @@
   - BaseStructureDynamic
   name: big vat
   description: A very large vat for storing huge amounts of liquid. Heavy, uncomfortable to carry.
+  categories: [ ForkFiltered ]
   placement:
     mode: PlaceFree
   components:

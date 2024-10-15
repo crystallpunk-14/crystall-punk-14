@@ -3,6 +3,7 @@
   - BaseStructure
   - CP14BaseFlammable
   id: CP14WoodenTableBase
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Fixtures

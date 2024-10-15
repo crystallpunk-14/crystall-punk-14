@@ -3,6 +3,7 @@
   parent: BaseItem
   abstract: true
   description: This is your plate for a delicious meal!
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/plates.rsi

@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseCurtains
   abstract: true
+  categories: [ ForkFiltered ]
   parent:
   - BaseStructure
   - CP14BaseFlammableSpreadingStrong

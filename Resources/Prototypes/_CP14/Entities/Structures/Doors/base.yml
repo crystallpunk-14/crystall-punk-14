@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseMaterialDoorNavMap
   id: CP14BaseDoor
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Sprite

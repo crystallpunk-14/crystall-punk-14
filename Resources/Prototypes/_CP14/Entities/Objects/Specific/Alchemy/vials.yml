@@ -2,6 +2,7 @@
   parent: BaseItem
   id: CP14BaseVial
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: MeleeWeapon
     soundNoDamage:
