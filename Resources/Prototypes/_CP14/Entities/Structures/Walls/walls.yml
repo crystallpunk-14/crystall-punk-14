@@ -63,6 +63,7 @@
     sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
   - type: IconSmooth
     base: stonebricks
+  - type: CP14WallpaperHolder
 
 - type: entity
   id: CP14WallBrownbrick
