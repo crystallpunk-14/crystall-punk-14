@@ -73,7 +73,7 @@
     sprite: _CP14/Effects/fire.rsi
     normalState: full
   - type: Construction
-    graph: CP14TableWooden
+    graph: CP14Workbench
     node: CP14Workbench
   - type: CP14Workbench
     recipeTags:
@@ -91,6 +91,9 @@
     state: cooking_table
   - type: Icon
     state: cooking_table
+  - type: Construction
+    graph: CP14WorkbenchCooking
+    node: CP14WorkbenchCooking
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing #TODO
@@ -109,6 +112,9 @@
     state: sewing_table
   - type: Icon
     state: sewing_table
+  - type: Construction
+    graph: CP14WorkbenchSewing
+    node: CP14WorkbenchSewing
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing #TODO

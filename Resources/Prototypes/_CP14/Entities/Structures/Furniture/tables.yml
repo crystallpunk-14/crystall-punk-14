@@ -68,9 +68,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
     state: frame
-  - type: Construction
-    graph: CP14TableWooden
-    node: CP14TableWoodenFrame
 
 - type: entity
   parent: CP14WoodenTableBase
@@ -103,3 +100,20 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
     state: round
+  - type: Construction
+    graph: CP14TableWoodenRound
+    node: CP14TableWoodenRound
+
+- type: entity
+  parent: CP14TableWooden
+  id: CP14TableWoodenCounter
+  name: wooden counter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Tables/wood_counter.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/wood_counter.rsi
+    state: full
+  - type: Construction
+    graph: CP14TableWoodenCounter
+    node: CP14TableWoodenCounter

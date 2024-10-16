@@ -83,12 +83,18 @@
   name: cp14-loadout-general-mask
   minLimit: 0
   loadouts:
-  - CP14Sinner
+  - CP14ClothingMaskSinner
+  - CP14ClothingMaskSteelMask
 
 - type: loadout
-  id: CP14Sinner
+  id: CP14ClothingMaskSinner
   equipment:
     mask: CP14ClothingMaskSinner
+
+- type: loadout
+  id: CP14ClothingMaskSteelMask
+  equipment:
+    mask: CP14ClothingMaskSteelMask
 
 # Head
 
@@ -285,9 +291,9 @@
   maxLimit: 2
   loadouts:
   - CP14ClothingRingCureWounds
-  - CP14ClothingRingFlameCreation
-  - CP14ClothingRingIceDagger
-  - CP14FoodCucumber
+  - CP14PenFeather
+  - CP14Paper
+  - CP14CopperCoin10
 
 - type: loadout
   id: CP14ClothingRingCureWounds
@@ -296,19 +302,19 @@
     - CP14ClothingRingCureWounds
 
 - type: loadout
-  id: CP14ClothingRingFlameCreation
+  id: CP14PenFeather
   storage:
     back:
-    - CP14ClothingRingFlameCreation
+    - CP14PenFeather
 
 - type: loadout
-  id: CP14ClothingRingIceDagger
+  id: CP14Paper
   storage:
     back:
-    - CP14ClothingRingIceDagger
+    - CP14Paper
 
 - type: loadout
-  id: CP14FoodCucumber
+  id: CP14CopperCoin10
   storage:
     back:
-    - CP14FoodCucumber
+    - CP14CopperCoin
