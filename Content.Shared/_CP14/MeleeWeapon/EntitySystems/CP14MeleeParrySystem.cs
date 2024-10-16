@@ -24,10 +24,10 @@ public sealed class CP14MeleeParrySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MeleeParryComponent, MeleeHitEvent>(OnMeleeHit);
-        SubscribeLocalEvent<CP14MeleeParriableComponent, AttemptMeleeEvent>(OnMeleeParriableHitAttmpt);
+        SubscribeLocalEvent<CP14MeleeParriableComponent, AttemptMeleeEvent>(OnMeleeParriableHitAttempt);
     }
 
-    private void OnMeleeParriableHitAttmpt(Entity<CP14MeleeParriableComponent> ent, ref AttemptMeleeEvent args)
+    private void OnMeleeParriableHitAttempt(Entity<CP14MeleeParriableComponent> ent, ref AttemptMeleeEvent args)
     {
         ent.Comp.LastMeleeHit = _timing.CurTime;
     }
@@ -57,7 +57,8 @@ public sealed class CP14MeleeParrySystem : EntitySystem
 
         _hands.TryDrop(target, parriedWeapon);
         _throwing.TryThrow(parriedWeapon, _random.NextAngle().ToWorldVec(), ent.Comp.ParryPower, target);
-        _popup.PopupPredicted( Loc.GetString("cp14-successful-parry"), args.User, args.User);
-        _audio.PlayPredicted(meleeParriable.ParrySound, parriedWeapon, args.User);
+        _popup.PopupEntity( Loc.GetString("cp14-successful-parry"), args.User, args.User);
+        _popup.PopupEntity( Loc.GetString("cp14-successful-parry"), args.HitEntities[0], args.HitEntities[0]);
+        _audio.PlayPvs(meleeParriable.ParrySound, parriedWeapon);
     }
 }
