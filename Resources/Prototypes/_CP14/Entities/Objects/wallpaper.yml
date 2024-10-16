@@ -9,34 +9,25 @@
     size: Normal
   - type: Sprite
     sprite: _CP14/Structures/Wallpaper/icons.rsi
-
-- type: entity
-  id: CP14WallpaperPurple1
-  parent: CP14BaseWallpaper
-  name: purple wallpaper
-  suffix: 1
-  components:
-  - type: Sprite
-    state: purple
-  - type: CP14Wallpaper
-    rsiPath: _CP14/Structures/Wallpaper/wallpaper_purple.rsi
-  - type: Stack
-    stackType: CP14WallpaperPurple
-    count: 1
-
-- type: entity
-  id: CP14WallpaperPurple30
-  parent: CP14WallpaperPurple1
-  suffix: 30
-  components:
   - type: Stack
     count: 30
 
 - type: entity
-  id: CP14WallpaperGreen1
+  id: CP14WallpaperBlack
   parent: CP14BaseWallpaper
-  name: green wallpaper
-  suffix: 1
+  name: wallpaper "inkwell black"
+  components:
+  - type: Sprite
+    state: black
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_black.rsi
+  - type: Stack
+    stackType: CP14WallpaperBlack
+
+- type: entity
+  id: CP14WallpaperGreen
+  parent: CP14BaseWallpaper
+  name: wallpaper "green orthogonality"
   components:
   - type: Sprite
     state: green
@@ -44,12 +35,63 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_green.rsi
   - type: Stack
     stackType: CP14WallpaperGreen
-    count: 1
 
 - type: entity
-  id: CP14WallpaperGreen30
-  parent: CP14WallpaperGreen1
-  suffix: 30
+  id: CP14WallpaperPurple
+  parent: CP14BaseWallpaper
+  name: wallpaper "purple glory"
   components:
+  - type: Sprite
+    state: purple
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_purple.rsi
   - type: Stack
-    count: 30
+    stackType: CP14WallpaperPurple
+
+- type: entity
+  id: CP14WallpaperRed
+  parent: CP14BaseWallpaper
+  name: wallpaper "burgundy"
+  components:
+  - type: Sprite
+    state: red
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_red.rsi
+  - type: Stack
+    stackType: CP14WallpaperRed
+
+- type: entity
+  id: CP14WallpaperWhite
+  parent: CP14BaseWallpaper
+  name: wallpaper "flowers on white"
+  components:
+  - type: Sprite
+    state: white
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_white.rsi
+  - type: Stack
+    stackType: CP14WallpaperWhite
+
+- type: entity
+  id: CP14WallpaperWhite2
+  parent: CP14BaseWallpaper
+  name: wallpaper "pure white"
+  components:
+  - type: Sprite
+    state: white2
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_white2.rsi
+  - type: Stack
+    stackType: CP14WallpaperWhite2
+
+- type: entity
+  id: CP14WallpaperYellow
+  parent: CP14BaseWallpaper
+  name: wallpaper "solar rhythm"
+  components:
+  - type: Sprite
+    state: yellow
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_yellow.rsi
+  - type: Stack
+    stackType: CP14WallpaperYellow

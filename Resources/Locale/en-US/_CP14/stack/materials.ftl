@@ -7,3 +7,5 @@ cp14-stack-cloth = rolls of fabric
 cp14-stack-copper-bars = copper bars
 cp14-stack-iron-bars = iron bars
 cp14-stack-gold-bars = gold bars
+
+cp14-stack-wallpaper = rolls of wallpaper

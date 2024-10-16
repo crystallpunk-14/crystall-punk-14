@@ -260,3 +260,71 @@
     CP14BloodFlower: 2
     CP14FlowersYellow: 2
   result: CP14ClothingHeadWreath
+
+# Wallpaper (TODO: Move to separate workbench?)
+
+- type: CP14Recipe
+  id: CP14WallpaperBlack
+  tag: CP14RecipeSewing
+  craftTime: 2
+  stacks:
+    CP14Cloth: 10
+  entities:
+    CP14DyeBlack: 1
+  result: CP14WallpaperBlack
+
+- type: CP14Recipe
+  id: CP14WallpaperGreen
+  tag: CP14RecipeSewing
+  craftTime: 2
+  stacks:
+    CP14Cloth: 10
+  entities:
+    CP14DyeGreen: 1
+  result: CP14WallpaperGreen
+
+- type: CP14Recipe
+  id: CP14WallpaperPurple
+  tag: CP14RecipeSewing
+  craftTime: 2
+  stacks:
+    CP14Cloth: 10
+  entities:
+    CP14DyePurple: 1
+  result: CP14WallpaperPurple
+
+- type: CP14Recipe
+  id: CP14WallpaperRed
+  tag: CP14RecipeSewing
+  craftTime: 2
+  stacks:
+    CP14Cloth: 10
+  entities:
+    CP14DyeRed: 1
+  result: CP14WallpaperRed
+
+- type: CP14Recipe
+  id: CP14WallpaperWhite
+  tag: CP14RecipeSewing
+  craftTime: 2
+  stacks:
+    CP14Cloth: 10
+  result: CP14WallpaperWhite
+
+- type: CP14Recipe
+  id: CP14WallpaperWhite2
+  tag: CP14RecipeSewing
+  craftTime: 2
+  stacks:
+    CP14Cloth: 10
+  result: CP14WallpaperWhite2
+
+- type: CP14Recipe
+  id: CP14WallpaperYellow
+  tag: CP14RecipeSewing
+  craftTime: 2
+  stacks:
+    CP14Cloth: 10
+  entities:
+    CP14DyeYellow: 1
+  result: CP14WallpaperYellow

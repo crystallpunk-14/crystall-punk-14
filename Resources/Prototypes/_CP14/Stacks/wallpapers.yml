@@ -1,13 +1,48 @@
 - type: stack
-  id: CP14WallpaperPurple
-  name: cp14-stack-wallpaper-purple
-  spawn: CP14WallpaperPurple1
-  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: purple }
+  id: CP14WallpaperBlack
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperBlack
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: black }
   maxCount: 30
 
 - type: stack
   id: CP14WallpaperGreen
-  name: cp14-stack-wallpaper-green
-  spawn: CP14WallpaperGreen1
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperGreen
   icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: green }
+  maxCount: 30
+
+- type: stack
+  id: CP14WallpaperPurple
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperPurple
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: purple }
+  maxCount: 30
+
+- type: stack
+  id: CP14WallpaperRed
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperRed
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: red }
+  maxCount: 30
+
+- type: stack
+  id: CP14WallpaperWhite
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperWhite
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: white }
+  maxCount: 30
+
+- type: stack
+  id: CP14WallpaperWhite2
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperWhite2
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: white2 }
+  maxCount: 30
+
+- type: stack
+  id: CP14WallpaperYellow
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperYellow
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: yellow }
   maxCount: 30
