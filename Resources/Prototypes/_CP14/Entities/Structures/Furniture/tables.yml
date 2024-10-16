@@ -103,3 +103,14 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
     state: round
+
+- type: entity
+  parent: CP14TableWooden
+  id: CP14TableWoodenCounter
+  name: wooden counter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Tables/wood_counter.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/wood_counter.rsi
+    state: full
