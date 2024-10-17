@@ -42,7 +42,7 @@ public sealed class CP14RitualTest
 
                     foreach (var edge in phase.Edges)
                     {
-                        Assert.That(edge.Triggers.Count > 0, $"{{proto}} is ritual node, but edge to {edge.Target} has no triggers and cannot be activated.");
+                        Assert.That(edge.Triggers.Count > 0, $"{proto} is ritual node, but edge to {edge.Target} has no triggers and cannot be activated.");
                     }
                 }
             });
