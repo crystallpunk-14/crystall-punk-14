@@ -5,6 +5,8 @@ using Content.Server.Station.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared._CP14.TravelingStoreShip.Prototype;
+using Content.Shared.Paper;
+using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
@@ -104,6 +106,38 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
+    private void BuyToQueue(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var tradebox = GetTradeBox(station);
+
+        if (tradebox is null)
+            return;
+
+        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
+            return;
+
+        List<KeyValuePair<CP14StoreBuyPositionPrototype, int>> requests = new();
+        foreach (var stored in tradeStorage.Container.ContainedEntities)
+        {
+            if (!TryComp<PaperComponent>(stored, out var paper))
+                continue;
+
+            var splittedText = paper.Content.Split("#");
+            foreach (var fragment in splittedText)
+            {
+                Log.Debug($"founded fragment: {fragment}");
+                foreach (var buyPosition in station.Comp.CurrentBuyPositions)
+                {
+                    if (fragment.StartsWith(buyPosition.Key.Code))
+                    {
+                        requests.Add(buyPosition);
+                        Log.Debug($"fragment readed, check this buypos: {buyPosition.Key.Name}");
+                    }
+                }
+            }
+        }
+    }
+
     private void SellingThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var shuttle = station.Comp.Shuttle;
@@ -133,16 +167,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var cash = 0;
         foreach (var sellPos in station.Comp.CurrentSellPositions)
         {
-            if (!_proto.TryIndex(sellPos.Key, out var indexedPos))
-                continue;
-
-            while (indexedPos.Service.TrySell(EntityManager, toSell))
+            while (sellPos.Key.Service.TrySell(EntityManager, toSell))
             {
                 cash += sellPos.Value;
             }
         }
 
-        var moneyBox = GetMoneyBox(station);
+        var moneyBox = GetTradeBox(station);
         if (moneyBox is not null)
         {
             var coord = Transform(moneyBox.Value).Coordinates;
@@ -188,7 +219,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private EntityUid? GetMoneyBox(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private EntityUid? GetTradeBox(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var query = EntityQueryEnumerator<CP14CargoMoneyBoxComponent, TransformComponent>();
 

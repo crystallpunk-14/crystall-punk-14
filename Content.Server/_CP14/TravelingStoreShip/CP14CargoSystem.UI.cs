@@ -35,9 +35,9 @@ public sealed partial class CP14CargoSystem
         UpdateUIProducts(ent);
     }
 
-    //TODO: redo
     private void UpdateAllStores()
     {
+        //TODO: redo
         var query = EntityQueryEnumerator<CP14CargoStoreComponent>();
         while (query.MoveNext(out var uid, out var store))
         {
@@ -55,35 +55,30 @@ public sealed partial class CP14CargoSystem
 
         foreach (var proto in ent.Comp.Station.Value.Comp.CurrentBuyPositions)
         {
-            if (!_proto.TryIndex(proto.Key, out var indexedProto))
-                continue;
 
-            var name = Loc.GetString(indexedProto.Name);
+            var name = Loc.GetString(proto.Key.Name);
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(indexedProto.Desc) + "\n");
-            foreach (var service in indexedProto.Services)
+            desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
+            foreach (var service in proto.Key.Services)
             {
                 desc.Append(service.GetDescription(_proto, EntityManager));
             }
 
-            desc.Append("\n \n " + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(indexedProto.Name)), ("code", "#" + indexedProto.Code)));
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Key.Name)), ("code", "#" + proto.Key.Code)));
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value));
         }
 
         foreach (var proto in ent.Comp.Station.Value.Comp.CurrentSellPositions)
         {
-            if (!_proto.TryIndex(proto.Key, out var indexedProto))
-                continue;
-
-            var name = Loc.GetString(indexedProto.Name);
+            var name = Loc.GetString(proto.Key.Name);
 
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(indexedProto.Desc) + "\n");
-            desc.Append(indexedProto.Service.GetDescription(_proto, EntityManager) + "\n");
-            desc.Append("\n \n " + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(indexedProto.Name))));
+            desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
+            desc.Append(proto.Key.Service.GetDescription(_proto, EntityManager) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Key.Name))));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
+            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value));
         }
 
         var stationComp = ent.Comp.Station.Value.Comp;
