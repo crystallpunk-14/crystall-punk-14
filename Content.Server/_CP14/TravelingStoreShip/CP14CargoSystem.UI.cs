@@ -13,9 +13,6 @@ public sealed partial class CP14CargoSystem
 
     private void TryInitStore(Entity<CP14CargoStoreComponent> ent)
     {
-        if (!ent.Comp.Initialized)
-            return;
-
         //TODO: There's no support for multiple stations. (settlements).
         var stations = _station.GetStations();
 
@@ -30,6 +27,8 @@ public sealed partial class CP14CargoSystem
 
     private void OnBeforeUIOpen(Entity<CP14CargoStoreComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
+        //TODO: If you open a store on a mapping, and initStore() it, the entity will throw an error when you try to save the grid\map.
+
         if (ent.Comp.Station is null)
             TryInitStore(ent);
 
