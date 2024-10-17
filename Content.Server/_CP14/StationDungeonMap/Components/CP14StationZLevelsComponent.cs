@@ -5,24 +5,22 @@ using Robust.Shared.Utility;
 namespace Content.Server._CP14.StationDungeonMap.Components;
 
 /// <summary>
-/// Initializes the z-level system by creating a series of linked maps
+/// allows you to control an array of maps linked to each other by z-levels
 /// </summary>
-[RegisterComponent, Access(typeof(CP14StationZLevelsSystem))]
-public sealed partial class CP14StationZLevelsComponent : Component
+[RegisterComponent]
+public sealed partial class CP14ZLevelGroupComponent : Component
 {
-    [DataField(required: true)]
-    public int DefaultMapLevel = 0;
-
-    [DataField(required: true)]
-    public Dictionary<int, CP14ZLevelEntry> Levels = new();
-
-    public bool Initialized = false;
-
-    public Dictionary<MapId, int> LevelEntities = new();
+    [DataField]
+    public Dictionary<int, MapId> Levels = new();
 }
 
-[DataRecord, Serializable]
-public sealed class CP14ZLevelEntry
+/// <summary>
+///
+/// </summary>
+[RegisterComponent]
+public sealed partial class CP14ZLevelElementComponent : Component
 {
-    public ResPath? Path { get; set; } = null;
+    [DataField]
+    public Entity<CP14ZLevelGroupComponent>? Group = null;
 }
+
