@@ -32,7 +32,7 @@ public sealed class CP14EntityTest
                     if (proto.Abstract || proto.HideSpawnMenu)
                         continue;
 
-                    Assert.That(proto.Categories.Contains(indexedFilter), $"CP14 fork proto: {proto} does not abstract, noSpawn or have a ForkFiltered category");
+                    Assert.That(proto.Categories.Contains(indexedFilter), $"CP14 fork proto: {proto} does not marked abstract, or have a HideSpawnMenu or ForkFiltered category");
                 }
             });
         });
