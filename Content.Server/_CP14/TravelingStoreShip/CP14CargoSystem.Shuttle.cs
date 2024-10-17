@@ -75,8 +75,11 @@ public sealed partial class CP14CargoSystem
         {
             station.OnStation = false;
 
-            SellingThings((ent.Comp.Station, station));
-            BuyToQueue((ent.Comp.Station, station));
+            SellingThings((ent.Comp.Station, station)); // +balance
+            TopUpBalance((ent.Comp.Station, station)); //+balance
+            BuyToQueue((ent.Comp.Station, station)); //-balance +buyQueue
+
+            CashOut((ent.Comp.Station, station));
             UpdateStorePositions((ent.Comp.Station, station));
         }
         else   //Landed on station

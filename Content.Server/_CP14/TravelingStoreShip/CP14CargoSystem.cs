@@ -106,38 +106,9 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private void BuyToQueue(Entity<CP14StationTravelingStoreShipTargetComponent> station)
-    {
-        var tradebox = GetTradeBox(station);
-
-        if (tradebox is null)
-            return;
-
-        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
-            return;
-
-        List<KeyValuePair<CP14StoreBuyPositionPrototype, int>> requests = new();
-        foreach (var stored in tradeStorage.Container.ContainedEntities)
-        {
-            if (!TryComp<PaperComponent>(stored, out var paper))
-                continue;
-
-            var splittedText = paper.Content.Split("#");
-            foreach (var fragment in splittedText)
-            {
-                Log.Debug($"founded fragment: {fragment}");
-                foreach (var buyPosition in station.Comp.CurrentBuyPositions)
-                {
-                    if (fragment.StartsWith(buyPosition.Key.Code))
-                    {
-                        requests.Add(buyPosition);
-                        Log.Debug($"fragment readed, check this buypos: {buyPosition.Key.Name}");
-                    }
-                }
-            }
-        }
-    }
-
+    /// <summary>
+    /// Sell all the items we can, and replenish the internal balance
+    /// </summary>
     private void SellingThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var shuttle = station.Comp.Shuttle;
@@ -164,53 +135,119 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             }
         }
 
-        var cash = 0;
         foreach (var sellPos in station.Comp.CurrentSellPositions)
         {
             while (sellPos.Key.Service.TrySell(EntityManager, toSell))
             {
-                cash += sellPos.Value;
+                station.Comp.Balance += sellPos.Value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Take all the money from the tradebox, and credit it to the internal balance
+    /// </summary>
+    private void TopUpBalance(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var tradebox = GetTradeBox(station);
+
+        if (tradebox is null)
+            return;
+
+        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
+            return;
+
+        //Get all currency in tradebox
+        int cash = 0;
+        foreach (var stored in tradeStorage.Container.ContainedEntities)
+        {
+            var price = _currency.GetTotalCurrency(stored);
+            if (price > 0)
+            {
+                cash += price;
+                QueueDel(stored);
             }
         }
 
+        station.Comp.Balance += cash;
+    }
+
+    private void BuyToQueue(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var tradebox = GetTradeBox(station);
+
+        if (tradebox is null)
+            return;
+
+        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
+            return;
+
+        //Reading all papers in tradebox
+        List<KeyValuePair<CP14StoreBuyPositionPrototype, int>> requests = new();
+        foreach (var stored in tradeStorage.Container.ContainedEntities)
+        {
+            if (!TryComp<PaperComponent>(stored, out var paper))
+                continue;
+
+            var splittedText = paper.Content.Split("#");
+            foreach (var fragment in splittedText)
+            {
+                foreach (var buyPosition in station.Comp.CurrentBuyPositions)
+                {
+                    if (fragment.StartsWith(buyPosition.Key.Code))
+                        requests.Add(buyPosition);
+                }
+            }
+        }
+
+        //Trying spend tradebox money to buy requested things
+
+    }
+
+    /// <summary>
+    /// Transform all the accumulated balance into physical money, which we will give to the players.
+    /// </summary>
+    private void CashOut(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
         var moneyBox = GetTradeBox(station);
         if (moneyBox is not null)
         {
             var coord = Transform(moneyBox.Value).Coordinates;
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, cash, coord, out var remainder);
-                cash = remainder;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, cash, coord, out var remainder);
-                cash = remainder;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, cash, coord, out var remainder);
-                cash = remainder;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, cash, coord);
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, station.Comp.Balance, coord);
+                station.Comp.Balance = 0;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);

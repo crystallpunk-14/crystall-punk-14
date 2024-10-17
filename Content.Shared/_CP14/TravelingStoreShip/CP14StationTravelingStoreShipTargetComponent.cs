@@ -44,6 +44,9 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     [DataField]
     public MinMax SpecialSellPositionCount = new(1, 2);
 
+    [DataField]
+    public int Balance = 0;
+
     /// <summary>
     /// a queue of purchased items. The oldest purchases are taken out one by one to be unloaded onto the ship
     /// </summary>
