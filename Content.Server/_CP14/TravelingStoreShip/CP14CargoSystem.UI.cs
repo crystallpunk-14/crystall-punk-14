@@ -66,6 +66,8 @@ public sealed partial class CP14CargoSystem
                 desc.Append(service.GetDescription(_proto, EntityManager));
             }
 
+            desc.Append("\n \n " + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(indexedProto.Name)), ("code", "#" + indexedProto.Code)));
+
             prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
         }
 
@@ -78,7 +80,8 @@ public sealed partial class CP14CargoSystem
 
             var desc = new StringBuilder();
             desc.Append(Loc.GetString(indexedProto.Desc) + "\n");
-            desc.Append(indexedProto.Service.GetDescription(_proto, EntityManager));
+            desc.Append(indexedProto.Service.GetDescription(_proto, EntityManager) + "\n");
+            desc.Append("\n \n " + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(indexedProto.Name))));
 
             prodSell.Add(new CP14StoreUiProductEntry(proto.Key.Id, indexedProto.Icon, name, desc.ToString(), proto.Value));
         }

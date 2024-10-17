@@ -26,6 +26,9 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     [DataField(required: true)]
     public LocId Name = string.Empty;
 
+    [DataField(required: true)]
+    public string Code = string.Empty;
+
     [DataField]
     public LocId Desc = string.Empty;
 

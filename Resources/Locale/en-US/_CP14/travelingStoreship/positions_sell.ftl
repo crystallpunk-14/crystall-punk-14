@@ -1,3 +1,5 @@
+cp14-store-sell-hint = To sell {$name}, load the desired goods onto the selling pallets. Our people in town will sort it out, pick up the goods and leave the money in the trade box on the ship.
+
 cp14-store-sell-goldbar-name = 10 gold bars
 cp14-store-sell-goldbar-desc = The mining and processing of gold ore is heavily sponsored by the empire, which uses gold as currency and material for jewelry.
 
