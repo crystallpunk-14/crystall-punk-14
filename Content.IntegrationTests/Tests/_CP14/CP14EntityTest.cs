@@ -27,10 +27,10 @@ public sealed class CP14EntityTest
                 foreach (var proto in protoManager.EnumeratePrototypes<EntityPrototype>())
                 {
                     if (!proto.ID.StartsWith("CP14"))
-                        return;
+                        continue;
 
                     if (proto.Abstract || proto.HideSpawnMenu)
-                        return;
+                        continue;
 
                     Assert.That(proto.Categories.Contains(indexedFilter), $"{proto} does not have a ForkFiltered category");
                 }
