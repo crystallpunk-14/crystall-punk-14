@@ -36,5 +36,6 @@ public sealed class CP14EntityTest
                 }
             });
         });
+        await pair.CleanReturnAsync();
     }
 }

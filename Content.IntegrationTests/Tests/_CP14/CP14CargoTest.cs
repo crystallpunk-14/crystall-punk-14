@@ -32,5 +32,6 @@ public sealed class CP14CargoTest
                 }
             });
         });
+        await pair.CleanReturnAsync();
     }
 }
