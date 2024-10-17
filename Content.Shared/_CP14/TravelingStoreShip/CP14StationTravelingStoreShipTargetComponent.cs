@@ -21,7 +21,7 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     public bool OnStation;
 
     [DataField]
-    public ResPath ShuttlePath = new("/Maps/_CP14/Ships/balloon.yml");
+    public ResPath ShuttlePath = new("/Maps/_CP14/Ships/cargo_shuttle.yml");
 
     [DataField]
     public TimeSpan NextTravelTime = TimeSpan.Zero;

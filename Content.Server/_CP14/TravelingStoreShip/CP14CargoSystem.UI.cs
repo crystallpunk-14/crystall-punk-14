@@ -13,6 +13,9 @@ public sealed partial class CP14CargoSystem
 
     private void TryInitStore(Entity<CP14CargoStoreComponent> ent)
     {
+        if (!ent.Comp.Initialized)
+            return;
+
         //TODO: There's no support for multiple stations. (settlements).
         var stations = _station.GetStations();
 
