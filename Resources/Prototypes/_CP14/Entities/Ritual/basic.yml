@@ -17,6 +17,7 @@
   parent: CP14BaseRitualPhase
   id: CP14RitualEnd
   name: end of ritual
+  categories: [ HideSpawnMenu ]
   components:
   - type: CP14MagicRitualPhase
     deadEnd: true

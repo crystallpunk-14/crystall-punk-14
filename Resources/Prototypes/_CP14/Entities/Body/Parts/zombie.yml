@@ -1,6 +1,7 @@
 ﻿- type: entity
   id: CP14TorsoZombie
   parent: CP14TorsoHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -9,6 +10,7 @@
 - type: entity
   id: CP14HeadZombie
   parent: CP14HeadHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -17,6 +19,7 @@
 - type: entity
   id: CP14LeftArmZombie
   parent: CP14LeftArmHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -24,6 +27,7 @@
 - type: entity
   id: CP14RightArmZombie
   parent: CP14RightArmHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -31,6 +35,7 @@
 - type: entity
   id: CP14LeftHandZombie
   parent: CP14LeftHandHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -38,14 +43,15 @@
 - type: entity
   id: CP14RightHandZombie
   parent: CP14RightHandHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
 
 - type: entity
   id: CP14LeftLegZombie
-  name: "left zombie leg"
   parent: CP14LeftLegHuman
+  categories: [ ForkFiltered ]
   components:
     - type: Sprite
       sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -63,8 +69,8 @@
 
 - type: entity
   id: CP14RightLegZombie
-  name: "right zombie leg"
   parent: CP14RightLegHuman
+  categories: [ ForkFiltered ]
   components:
     - type: Sprite
       sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -83,6 +89,7 @@
 - type: entity
   id: CP14LeftFootZombie
   parent: CP14LeftFootHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
@@ -90,6 +97,7 @@
 - type: entity
   id: CP14RightFootZombie
   parent: CP14RightFootHuman
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi

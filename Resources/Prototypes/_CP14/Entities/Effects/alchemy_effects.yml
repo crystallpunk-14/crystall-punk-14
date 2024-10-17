@@ -2,6 +2,7 @@
   parent: BaseFoam
   id: CP14Mist
   name: mist
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _CP14/Effects/mist.rsi
@@ -15,19 +16,3 @@
     solutions:
       solutionArea:
         maxVol: 100
-
-- type: entity
-  parent: CP14Mist
-  id: CP14MistVitalExtract
-  components:
-  - type: Sprite
-    sprite: _CP14/Effects/mist.rsi
-    layers:
-    - state: chemmist
-      color: "#db2a2a"
-  - type: SolutionContainerManager
-    solutions:
-      solutionArea:
-        reagents:
-        - ReagentId: CP14VitalExtract
-          Quantity: 10

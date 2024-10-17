@@ -60,6 +60,7 @@
   parent: IceCrust
   name: ice crust
   description: It's cold and slippery.
+  categories: [ ForkFiltered ]
   components:
   - type: Slippery
     paralyzeTime: 1

@@ -2,6 +2,7 @@
   id: CP14AlchemyNormalizer
   name: cp14-store-buy-alchemy-normalizer-name
   desc: cp14-store-buy-alchemy-normalizer-desc
+  code: ALH-NRML
   icon: 
     sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
     state: base

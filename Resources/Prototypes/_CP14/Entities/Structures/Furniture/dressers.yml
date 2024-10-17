@@ -155,7 +155,7 @@
 - type: entity
   parent: C14IronCabinet
   id: C14IronCabinetCargo
-  name: money box
+  name: trade box
   description: An armored vault for storing money for trade with the city. City workers will unload their earnings here, or take them from here when you want to buy something.
   components:
   - type: CP14CargoMoneyBox

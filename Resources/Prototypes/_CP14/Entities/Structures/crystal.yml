@@ -7,6 +7,7 @@
   abstract: true
   name: sparkling quartz
   description: bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -124,6 +125,7 @@
   parent: BaseRock
   name: sparkling quartz
   description: bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     drawdepth: Mobs

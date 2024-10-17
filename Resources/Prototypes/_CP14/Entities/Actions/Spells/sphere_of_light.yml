@@ -59,6 +59,7 @@
   name: Sphere of light
   parent: BaseItem
   description: A lump of bright light in the shape of a sphere.
+  categories: [ ForkFiltered ]
   components:
   - type: TimedDespawn
     lifetime: 300 # 5 min

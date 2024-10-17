@@ -61,6 +61,7 @@
   - ItemHeftyBase
   name: artificial flame
   description: A magically created artificial flame burning directly into the air. Not a bad light source, or a weapon if you throw it in someone's face.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Ginormous
