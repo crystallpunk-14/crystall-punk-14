@@ -56,6 +56,7 @@
 
 - type: entity
   id: CP14SpawnEffectFlashLight
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: /Textures/Objects/Fun/goldbikehorn.rsi

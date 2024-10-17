@@ -26,6 +26,7 @@
   id: CP14BaseLockpick
   name: lockpick
   description: A thief's tool that, with proper skill and skill, allows you to pick any lock.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
