@@ -30,7 +30,6 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
-
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
 
@@ -86,6 +85,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         }
 
         var resultEntity = Spawn(_proto.Index(args.Recipe).Result);
+        _stack.TryMergeToContacts(resultEntity);
 
         _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSoln, out var resultSolution);
         if (recipe.TryMergeSolutions && resultSoln is not null)

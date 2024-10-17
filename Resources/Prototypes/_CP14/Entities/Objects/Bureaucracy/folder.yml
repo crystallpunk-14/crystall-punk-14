@@ -1,0 +1,53 @@
+- type: entity
+  id: CP14PaperFolderBase
+  abstract: true
+  parent: BaseStorageItem
+  categories: [ ForkFiltered ]
+  name: folder
+  description: A folder filled with some paperwork.
+  components:
+  - type: Item
+    size: Small
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,3
+    whitelist:
+      tags:
+        - Document
+  - type: Tag
+    tags:
+    - Folder
+  - type: StorageFill
+    contents:
+      - id: CP14Paper
+        prob: 1
+      - id: CP14Paper
+        prob: 1
+      - id: CP14Paper
+        prob: 0.8
+      - id: CP14Paper
+        prob: 0.6
+      - id: CP14Paper
+        prob: 0.4
+      - id: CP14Paper
+        prob: 0.2
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+
+- type: entity
+  id: CP14PaperFolderBlue
+  parent: CP14PaperFolderBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    state: folder_blue
+
+- type: entity
+  id: CP14PaperFolderRed
+  parent: CP14PaperFolderBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    state: folder_red

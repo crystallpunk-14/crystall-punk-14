@@ -75,7 +75,7 @@ CP14WoodenDoorTavernDorms5: CP14WoodenDoorTavernDorms
 CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy
 
 #2024-09-24
-CP14WallpaperPink30: CP14WallpaperPurple30
+CP14WallpaperPink30: CP14WallpaperPurple
 
 #2024-09-25
 CP14IronGrilleStraight: CP14FenceIronGrilleStraight
@@ -104,6 +104,14 @@ CP14BarrelBloodGrassSap: CP14BarrelBloodFlowerSap
 
 #2024-10-11
 CP14WoodenDresser: CP14WoodenCabinet
+
+#2024-10-17
+CP14WallpaperPurple1: CP14WallpaperPurple
+CP14WallpaperPurple30: CP14WallpaperPurple
+CP14WallpaperGreen1: CP14WallpaperGreen
+CP14WallpaperGreen30: CP14WallpaperGreen
+
+
 # <---> CrystallPunk migration zone end
 
 
