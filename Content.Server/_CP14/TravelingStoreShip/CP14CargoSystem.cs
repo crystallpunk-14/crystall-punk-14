@@ -5,6 +5,10 @@ using Content.Server.Station.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared._CP14.TravelingStoreShip.Prototype;
+using Content.Shared.Maps;
+using Content.Shared.Paper;
+using Content.Shared.Physics;
+using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
@@ -28,6 +32,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly CP14CurrencySystem _currency = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -38,7 +43,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     public override void Initialize()
     {
         base.Initialize();
-        InitializeStore();
+
+        InitializeUI();
         InitializeShuttle();
 
         _xformQuery = GetEntityQuery<TransformComponent>();
@@ -76,7 +82,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var shuttle =  shuttleUids[0];
         station.Comp.Shuttle = shuttle;
         station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
-        var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
+        var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle.Value);
         travelingStoreShipComp.Station = station;
 
         station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);
@@ -104,6 +110,9 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
+    /// <summary>
+    /// Sell all the items we can, and replenish the internal balance
+    /// </summary>
     private void SellingThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var shuttle = station.Comp.Shuttle;
@@ -119,7 +128,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             var sentEntities = new HashSet<EntityUid>();
 
-            _lookup.GetEntitiesInRange(uid, 1, sentEntities, LookupFlags.Dynamic | LookupFlags.Sundries);
+            _lookup.GetEntitiesInRange(uid, 0.5f, sentEntities, LookupFlags.Dynamic | LookupFlags.Sundries);
 
             foreach (var ent in sentEntities)
             {
@@ -130,56 +139,154 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             }
         }
 
-        var cash = 0;
         foreach (var sellPos in station.Comp.CurrentSellPositions)
         {
-            if (!_proto.TryIndex(sellPos.Key, out var indexedPos))
-                continue;
-
-            while (indexedPos.Service.TrySell(EntityManager, toSell))
+            while (sellPos.Key.Service.TrySell(EntityManager, toSell))
             {
-                cash += sellPos.Value;
+                station.Comp.Balance += sellPos.Value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Take all the money from the tradebox, and credit it to the internal balance
+    /// </summary>
+    private void TopUpBalance(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var tradebox = GetTradeBox(station);
+
+        if (tradebox is null)
+            return;
+
+        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
+            return;
+
+        //Get all currency in tradebox
+        int cash = 0;
+        foreach (var stored in tradeStorage.Container.ContainedEntities)
+        {
+            var price = _currency.GetTotalCurrency(stored);
+            if (price > 0)
+            {
+                cash += price;
+                QueueDel(stored);
             }
         }
 
-        var moneyBox = GetMoneyBox(station);
+        station.Comp.Balance += cash;
+    }
+
+    private void BuyToQueue(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var tradebox = GetTradeBox(station);
+
+        if (tradebox is null)
+            return;
+
+        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
+            return;
+
+        //Reading all papers in tradebox
+        List<KeyValuePair<CP14StoreBuyPositionPrototype, int>> requests = new();
+        foreach (var stored in tradeStorage.Container.ContainedEntities)
+        {
+            if (!TryComp<PaperComponent>(stored, out var paper))
+                continue;
+
+            var splittedText = paper.Content.Split("#");
+            foreach (var fragment in splittedText)
+            {
+                foreach (var buyPosition in station.Comp.CurrentBuyPositions)
+                {
+                    if (fragment.StartsWith(buyPosition.Key.Code))
+                        requests.Add(buyPosition);
+                }
+            }
+
+            QueueDel(stored);
+        }
+
+        //Trying spend tradebox money to buy requested things
+        foreach (var request in requests)
+        {
+            if (station.Comp.Balance < request.Value)
+                continue;
+
+            station.Comp.Balance -= request.Value;
+            station.Comp.BuyedQueue.Enqueue(request);
+        }
+    }
+
+    //Dequeue buyed items, and spawn they on shuttle
+    private void TrySpawnBuyedThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var shuttle = station.Comp.Shuttle;
+
+        var query = EntityQueryEnumerator<CP14BuyingPalettComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out var palletXform))
+        {
+            if (station.Comp.BuyedQueue.Count <= 0)
+                break;
+
+            if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
+                continue;
+
+            var tileRef = palletXform.Coordinates.GetTileRef();
+            if (tileRef is null)
+                continue;
+
+            if (_turf.IsTileBlocked(tileRef.Value, CollisionGroup.ItemMask))
+                continue;
+
+            var buyedThing = station.Comp.BuyedQueue.Dequeue();
+            Spawn(buyedThing.Key.ID, palletXform.Coordinates);
+        }
+    }
+
+    /// <summary>
+    /// Transform all the accumulated balance into physical money, which we will give to the players.
+    /// </summary>
+    private void CashOut(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var moneyBox = GetTradeBox(station);
         if (moneyBox is not null)
         {
             var coord = Transform(moneyBox.Value).Coordinates;
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, cash, coord, out var remainder);
-                cash = remainder;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, cash, coord, out var remainder);
-                cash = remainder;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, cash, coord, out var remainder);
-                cash = remainder;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
-            if (cash > 0)
+            if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, cash, coord);
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
                     _storage.Insert(moneyBox.Value, coin, out _);
@@ -188,7 +295,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private EntityUid? GetMoneyBox(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private EntityUid? GetTradeBox(Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
         var query = EntityQueryEnumerator<CP14CargoMoneyBoxComponent, TransformComponent>();
 

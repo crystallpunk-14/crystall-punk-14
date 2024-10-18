@@ -3,6 +3,7 @@
   id: CP14DebugWorldSprite
   name: strange copper bar
   suffix: CP, DEBUG
+  categories: [ ForkFiltered ]
   components:
   # Just copy me, I am block with name Bob
   - type: Appearance

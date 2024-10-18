@@ -2,6 +2,7 @@
   id: CP14AlchemyNormalizer
   name: cp14-store-buy-alchemy-normalizer-name
   desc: cp14-store-buy-alchemy-normalizer-desc
+  code: ALH-NRML
   icon: 
     sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
     state: base
@@ -12,3 +13,19 @@
   - !type:CP14BuyItemsService
     product:
       CP14AlchemyNormalizer: 1
+
+- type: storePositionBuy
+  id: CP14AlchemyVials
+  name: cp14-store-buy-alchemy-vials-name
+  desc: cp14-store-buy-alchemy-vials-desc
+  code: ALH-VIAL
+  icon: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  price: 
+    min: 200
+    max: 300
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledAlchemy: 1
