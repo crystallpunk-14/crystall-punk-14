@@ -1,0 +1,14 @@
+- type: entity
+  parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetAlchemist
+  suffix: Alchemist, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ClothingEyesAlchemyGlasses
+      - id: CP14ClothingCloakAlchemist
+        prob: 0.75
+      - id: CP14ClothingHeadAlchemistBeret
+        prob: 0.75
+      - id: CP14ClothingHeadAlchemistBandana
+        prob: 0.75

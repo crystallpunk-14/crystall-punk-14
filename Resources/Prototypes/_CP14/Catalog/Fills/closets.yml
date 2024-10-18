@@ -1,0 +1,34 @@
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetAlchemyFilled
+  suffix: Alchemist, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14Cauldron
+      - id: CP14Pestle
+        amount: 2
+      - id: CP14Mortar
+        amount: 2
+      - id: CP14Dropper
+        amount: 2
+      - id: CP14VialTiny
+        amount: 7
+      - id: CP14VialSmall
+        amount: 5
+        #Random start resource
+      - id: CP14VialSmallGroundQuartz
+        prob: 0.9
+      - id: CP14VialSmallBloodFlowerSap
+        prob: 0.7
+      - id: CP14VialSmallAgaricMushroom
+        prob: 0.7
+      - id: CP14VialSmallWildSage
+        prob: 0.7
+      - id: CP14VialSmallBlueAmanita
+        prob: 0.7
+      - id: CP14VialTinyChromiumSlime
+        prob: 0.3
+      - id: CP14VialTinyLumiMushroom
+        prob: 0.3
