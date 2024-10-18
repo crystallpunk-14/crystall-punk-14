@@ -136,7 +136,6 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-
     /// <summary>
     /// Sell all the items we can, and replenish the internal balance
     /// </summary>
