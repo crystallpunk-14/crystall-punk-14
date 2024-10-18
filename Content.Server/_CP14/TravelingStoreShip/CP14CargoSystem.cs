@@ -5,7 +5,9 @@ using Content.Server.Station.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared._CP14.TravelingStoreShip.Prototype;
+using Content.Shared.Maps;
 using Content.Shared.Paper;
+using Content.Shared.Physics;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Server.GameObjects;
@@ -30,6 +32,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly CP14CurrencySystem _currency = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -40,7 +43,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     public override void Initialize()
     {
         base.Initialize();
-        InitializeStore();
+
+        InitializeUI();
         InitializeShuttle();
 
         _xformQuery = GetEntityQuery<TransformComponent>();
@@ -106,6 +110,33 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
+    //Dequeue buyed items, and spawn they on shuttle
+    private void TrySpawnBuyedThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var shuttle = station.Comp.Shuttle;
+
+        var query = EntityQueryEnumerator<CP14BuyingPalettComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out var palletXform))
+        {
+            if (station.Comp.BuyedQueue.Count <= 0)
+                break;
+
+            if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
+                continue;
+
+            var tileRef = palletXform.Coordinates.GetTileRef();
+            if (tileRef is null)
+                continue;
+
+            if (_turf.IsTileBlocked(tileRef.Value, CollisionGroup.ItemMask))
+                continue;
+
+            var buyedThing = station.Comp.BuyedQueue.Dequeue();
+            Spawn(buyedThing.Key.ID, palletXform.Coordinates);
+        }
+    }
+
+
     /// <summary>
     /// Sell all the items we can, and replenish the internal balance
     /// </summary>
@@ -124,7 +155,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             var sentEntities = new HashSet<EntityUid>();
 
-            _lookup.GetEntitiesInRange(uid, 1, sentEntities, LookupFlags.Dynamic | LookupFlags.Sundries);
+            _lookup.GetEntitiesInRange(uid, 0.5f, sentEntities, LookupFlags.Dynamic | LookupFlags.Sundries);
 
             foreach (var ent in sentEntities)
             {
@@ -201,7 +232,14 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
 
         //Trying spend tradebox money to buy requested things
+        foreach (var request in requests)
+        {
+            if (station.Comp.Balance < request.Value)
+                continue;
 
+            station.Comp.Balance -= request.Value;
+            station.Comp.BuyedQueue.Enqueue(request);
+        }
     }
 
     /// <summary>

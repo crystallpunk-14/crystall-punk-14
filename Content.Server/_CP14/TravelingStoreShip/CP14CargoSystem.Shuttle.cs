@@ -78,7 +78,7 @@ public sealed partial class CP14CargoSystem
             SellingThings((ent.Comp.Station, station)); // +balance
             TopUpBalance((ent.Comp.Station, station)); //+balance
             BuyToQueue((ent.Comp.Station, station)); //-balance +buyQueue
-
+            TrySpawnBuyedThings((ent.Comp.Station, station));
             CashOut((ent.Comp.Station, station));
             UpdateStorePositions((ent.Comp.Station, station));
         }

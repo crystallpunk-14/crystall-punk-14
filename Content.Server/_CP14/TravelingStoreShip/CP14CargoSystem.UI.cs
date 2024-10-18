@@ -6,7 +6,7 @@ namespace Content.Server._CP14.TravelingStoreShip;
 
 public sealed partial class CP14CargoSystem
 {
-    public void InitializeStore()
+    public void InitializeUI()
     {
         SubscribeLocalEvent<CP14CargoStoreComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
     }
