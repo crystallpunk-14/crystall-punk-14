@@ -110,32 +110,6 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    //Dequeue buyed items, and spawn they on shuttle
-    private void TrySpawnBuyedThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
-    {
-        var shuttle = station.Comp.Shuttle;
-
-        var query = EntityQueryEnumerator<CP14BuyingPalettComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out _, out var palletXform))
-        {
-            if (station.Comp.BuyedQueue.Count <= 0)
-                break;
-
-            if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
-                continue;
-
-            var tileRef = palletXform.Coordinates.GetTileRef();
-            if (tileRef is null)
-                continue;
-
-            if (_turf.IsTileBlocked(tileRef.Value, CollisionGroup.ItemMask))
-                continue;
-
-            var buyedThing = station.Comp.BuyedQueue.Dequeue();
-            Spawn(buyedThing.Key.ID, palletXform.Coordinates);
-        }
-    }
-
     /// <summary>
     /// Sell all the items we can, and replenish the internal balance
     /// </summary>
@@ -243,6 +217,32 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
+    //Dequeue buyed items, and spawn they on shuttle
+    private void TrySpawnBuyedThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        var shuttle = station.Comp.Shuttle;
+
+        var query = EntityQueryEnumerator<CP14BuyingPalettComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out var palletXform))
+        {
+            if (station.Comp.BuyedQueue.Count <= 0)
+                break;
+
+            if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
+                continue;
+
+            var tileRef = palletXform.Coordinates.GetTileRef();
+            if (tileRef is null)
+                continue;
+
+            if (_turf.IsTileBlocked(tileRef.Value, CollisionGroup.ItemMask))
+                continue;
+
+            var buyedThing = station.Comp.BuyedQueue.Dequeue();
+            Spawn(buyedThing.Key.ID, palletXform.Coordinates);
+        }
+    }
+
     /// <summary>
     /// Transform all the accumulated balance into physical money, which we will give to the players.
     /// </summary>
@@ -259,7 +259,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    //_storage.Insert(moneyBox.Value, coin, out _);
+                    _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
@@ -269,7 +269,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    //_storage.Insert(moneyBox.Value, coin, out _);
+                    _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
@@ -279,7 +279,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    //_storage.Insert(moneyBox.Value, coin, out _);
+                    _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
@@ -289,7 +289,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    //_storage.Insert(moneyBox.Value, coin, out _);
+                    _storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
         }
