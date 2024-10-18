@@ -12,10 +12,10 @@ namespace Content.Shared._CP14.TravelingStoreShip;
 public sealed partial class CP14StationTravelingStoreShipTargetComponent : Component
 {
     [DataField]
-    public EntityUid Shuttle;
+    public EntityUid? Shuttle;
 
     [DataField]
-    public EntityUid TradePostMap;
+    public EntityUid? TradePostMap;
 
     [DataField]
     public bool OnStation;

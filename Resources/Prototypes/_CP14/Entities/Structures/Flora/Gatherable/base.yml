@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     snapCardinals: true
-    drawdepth: LowFloors
+    drawdepth: FloorTiles
   - type: Transform
     anchored: true
   - type: Physics

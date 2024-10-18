@@ -37,11 +37,16 @@ public partial class CP14SharedCurrencySystem : EntitySystem
         return sb.ToString();
     }
 
-    public int GetTotalCurrency(EntityUid uid, CP14CurrencyComponent? currency = null)
+    public int GetTotalCurrency(EntityUid uid)
     {
-        if (!Resolve(uid, ref currency))
+        if (!TryComp<CP14CurrencyComponent>(uid, out var currency))
             return 0;
 
+        return GetTotalCurrency(uid, currency);
+    }
+
+    public int GetTotalCurrency(EntityUid uid, CP14CurrencyComponent currency)
+    {
         var total = currency.Currency;
 
         if (TryComp<StackComponent>(uid, out var stack))

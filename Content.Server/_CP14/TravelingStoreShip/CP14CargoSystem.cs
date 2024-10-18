@@ -82,7 +82,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var shuttle =  shuttleUids[0];
         station.Comp.Shuttle = shuttle;
         station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
-        var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle);
+        var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle.Value);
         travelingStoreShipComp.Station = station;
 
         station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);
@@ -228,6 +228,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                         requests.Add(buyPosition);
                 }
             }
+
+            QueueDel(stored);
         }
 
         //Trying spend tradebox money to buy requested things
@@ -257,7 +259,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    _storage.Insert(moneyBox.Value, coin, out _);
+                    //_storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
@@ -267,7 +269,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    _storage.Insert(moneyBox.Value, coin, out _);
+                    //_storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
@@ -277,17 +279,17 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    _storage.Insert(moneyBox.Value, coin, out _);
+                    //_storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
 
             if (station.Comp.Balance > 0)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, station.Comp.Balance, coord);
-                station.Comp.Balance = 0;
+                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, station.Comp.Balance, coord, out var remainder);
+                station.Comp.Balance = remainder;
                 foreach (var coin in coins)
                 {
-                    _storage.Insert(moneyBox.Value, coin, out _);
+                    //_storage.Insert(moneyBox.Value, coin, out _);
                 }
             }
         }
