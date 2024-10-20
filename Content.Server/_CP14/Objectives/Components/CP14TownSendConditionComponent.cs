@@ -11,12 +11,6 @@ public sealed partial class CP14TownSendConditionComponent : Component
     public ProtoId<StealTargetGroupPrototype> CollectGroup;
 
     /// <summary>
-    /// When enabled, disables generation of this target if there is no entity on the map (disable for objects that can be created mid-round).
-    /// </summary>
-    [DataField]
-    public bool VerifyMapExistence = true;
-
-    /// <summary>
     /// The minimum number of items you need to steal to fulfill a objective
     /// </summary>
     [DataField]

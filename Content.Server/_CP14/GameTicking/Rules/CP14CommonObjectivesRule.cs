@@ -84,6 +84,9 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
             return false;
         }
 
+        var afterEv = new ObjectiveAfterAssignEvent(null, null, comp, MetaData(objective.Value));
+        RaiseLocalEvent(objective.Value, ref afterEv);
+
         return true;
     }
 

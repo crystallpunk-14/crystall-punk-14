@@ -73,38 +73,15 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
 
     private void OnAssigned(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveAssignedEvent args)
     {
-        List<StealTargetComponent?> targetList = new();
-
-        var query = AllEntityQuery<StealTargetComponent>();
-        while (query.MoveNext(out var target))
-        {
-            if (condition.Comp.CollectGroup != target.StealGroup)
-                continue;
-
-            targetList.Add(target);
-        }
-
-        // cancel if the required items do not exist
-        if (targetList.Count == 0 && condition.Comp.VerifyMapExistence)
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        //setup condition settings
-        var maxSize = condition.Comp.VerifyMapExistence
-            ? Math.Min(targetList.Count, condition.Comp.MaxCollectionSize)
-            : condition.Comp.MaxCollectionSize;
-        var minSize = condition.Comp.VerifyMapExistence
-            ? Math.Min(targetList.Count, condition.Comp.MinCollectionSize)
-            : condition.Comp.MinCollectionSize;
-
-        condition.Comp.CollectionSize = _random.Next(minSize, maxSize);
+        //TODO: Add ability to create mindfree objectives to Wizden
+        //condition.Comp.CollectionSize = _random.Next(condition.Comp.MinCollectionSize, condition.Comp.MaxCollectionSize);
     }
 
     //Set the visual, name, icon for the objective.
     private void OnAfterAssign(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveAfterAssignEvent args)
     {
+        condition.Comp.CollectionSize = _random.Next(condition.Comp.MinCollectionSize, condition.Comp.MaxCollectionSize);
+
         var group = _proto.Index(condition.Comp.CollectGroup);
 
         var title = Loc.GetString(condition.Comp.ObjectiveText, ("itemName",  Loc.GetString(group.Name)));
