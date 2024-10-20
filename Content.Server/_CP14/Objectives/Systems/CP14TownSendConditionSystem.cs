@@ -1,31 +1,77 @@
 using Content.Server._CP14.Objectives.Components;
-using Content.Server._CP14.Shuttles;
 using Content.Server.Objectives.Components.Targets;
+using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
+using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Objectives.Systems;
 
-public sealed class CP14ExpeditionCollectConditionSystem : EntitySystem
+public sealed class CP14TownSendConditionSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
-    [Dependency] private readonly CP14ExpeditionSystem _cp14Expedition = default!;
+
+    private EntityQuery<StealTargetComponent> _stealQuery;
+    private EntityQuery<StackComponent> _stackQuery;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14ExpeditionCollectConditionComponent, ObjectiveAssignedEvent>(OnAssigned);
-        SubscribeLocalEvent<CP14ExpeditionCollectConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
-        SubscribeLocalEvent<CP14ExpeditionCollectConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
+        _stealQuery = GetEntityQuery<StealTargetComponent>();
+        _stackQuery = GetEntityQuery<StackComponent>();
+
+        SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveAssignedEvent>(OnAssigned);
+        SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
+        SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
+
+        SubscribeLocalEvent<BeforeSellEntities>(OnBeforeSell);
     }
 
-    private void OnAssigned(Entity<CP14ExpeditionCollectConditionComponent> condition, ref ObjectiveAssignedEvent args)
+    private void OnBeforeSell(BeforeSellEntities ev)
+    {
+        var query = EntityQueryEnumerator<CP14TownSendConditionComponent>();
+
+        while (query.MoveNext(out var uid, out var condition))
+        {
+            HashSet<EntityUid> removed = new();
+            foreach (var sentEnt in ev.Sent)
+            {
+                if (condition.CollectionSent >= condition.CollectionSize)
+                    continue;
+
+                if (!_stealQuery.TryComp(sentEnt, out var stealTarget))
+                    continue;
+
+                if (stealTarget.StealGroup != condition.CollectGroup)
+                    continue;
+
+                if (_stackQuery.TryComp(sentEnt, out var stack))
+                {
+                    condition.CollectionSent += stack.Count;
+                }
+                else
+                {
+                    condition.CollectionSent++;
+                }
+
+                removed.Add(sentEnt);
+            }
+
+            foreach (var remove in removed)
+            {
+                ev.Sent.Remove(remove);
+                QueueDel(remove);
+            }
+        }
+    }
+
+    private void OnAssigned(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveAssignedEvent args)
     {
         List<StealTargetComponent?> targetList = new();
 
@@ -57,7 +103,7 @@ public sealed class CP14ExpeditionCollectConditionSystem : EntitySystem
     }
 
     //Set the visual, name, icon for the objective.
-    private void OnAfterAssign(Entity<CP14ExpeditionCollectConditionComponent> condition, ref ObjectiveAfterAssignEvent args)
+    private void OnAfterAssign(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveAfterAssignEvent args)
     {
         var group = _proto.Index(condition.Comp.CollectGroup);
 
@@ -72,37 +118,10 @@ public sealed class CP14ExpeditionCollectConditionSystem : EntitySystem
         _objectives.SetIcon(condition.Owner, group.Sprite, args.Objective);
     }
 
-    private void OnGetProgress(Entity<CP14ExpeditionCollectConditionComponent> condition, ref ObjectiveGetProgressEvent args)
+    private void OnGetProgress(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveGetProgressEvent args)
     {
-        var count = 0;
-
-        if (!_cp14Expedition.TryGetExpeditionShip(out var ship))
-            return;
-
-        var query = EntityQueryEnumerator<StealTargetComponent>();
-        while (query.MoveNext(out var uid, out _))
-        {
-            if (Transform(uid).GridUid != Transform(ship!.Value).GridUid)
-                continue;
-
-            if (CheckStealTarget(uid, condition))
-                count++;
-        }
-
-        var result = count / (float) condition.Comp.CollectionSize;
+        var result = condition.Comp.CollectionSent / condition.Comp.CollectionSize;
         result = Math.Clamp(result, 0, 1);
         args.Progress = result;
-    }
-
-    private bool CheckStealTarget(EntityUid entity, CP14ExpeditionCollectConditionComponent condition)
-    {
-        // check if this is the target
-        if (!TryComp<StealTargetComponent>(entity, out var target))
-            return false;
-
-        if (target.StealGroup != condition.CollectGroup)
-            return false;
-
-        return true;
     }
 }

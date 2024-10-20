@@ -139,6 +139,9 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             }
         }
 
+        var ev = new BeforeSellEntities(ref toSell);
+        RaiseLocalEvent(ev);
+
         foreach (var sellPos in station.Comp.CurrentSellPositions)
         {
             while (sellPos.Key.Service.TrySell(EntityManager, toSell))

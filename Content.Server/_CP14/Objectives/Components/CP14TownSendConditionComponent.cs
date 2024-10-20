@@ -4,8 +4,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Objectives.Components;
 
-[RegisterComponent, Access(typeof(CP14ExpeditionCollectConditionSystem))]
-public sealed partial class CP14ExpeditionCollectConditionComponent : Component
+[RegisterComponent, Access(typeof(CP14TownSendConditionSystem))]
+public sealed partial class CP14TownSendConditionComponent : Component
 {
     [DataField]
     public ProtoId<StealTargetGroupPrototype> CollectGroup;
@@ -33,6 +33,12 @@ public sealed partial class CP14ExpeditionCollectConditionComponent : Component
     /// </summary>
     [DataField]
     public int CollectionSize;
+
+    /// <summary>
+    /// how many items have already been sent to the city
+    /// </summary>
+    [DataField]
+    public int CollectionSent = 0;
 
     [DataField(required: true)]
     public LocId ObjectiveText;

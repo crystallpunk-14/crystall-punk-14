@@ -1,5 +1,5 @@
-cp14-objective-issuer-expedition = [color=#fcae38]Expedition objective[/color]
+cp14-objective-issuer-town = [color=#fcae38]Orders of the Empire[/color]
 
-cp14-objective-expedition-collect-title = Collect { $itemName }
-cp14-objective-expedition-collect-desc = Your objective is to collect and deliver { $itemName } to the Elemental Ship.
-cp14-objective-expedition-collect-multiply-desc = Your objective is to collect and deliver { $count } { $itemName } to the Elemental ship.
+cp14-objective-town-send-title = Extract { $itemName }
+cp14-objective-town-send-desc = Your task is to mine and ship { $itemName } to the city on a merchant ship.
+cp14-objective-town-send-multiply-desc = Your task is to mine and ship { $count } { $itemName } to the city on a merchant ship.
