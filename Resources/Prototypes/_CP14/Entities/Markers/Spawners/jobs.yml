@@ -1,13 +1,13 @@
 - type: entity
   id: CP14SpawnPointJobBase
   parent: SpawnPointJobBase
+  abstract: true
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Markers/jobs.rsi
     snapCardinals: true
     
-
 # Command
 
 - type: entity
