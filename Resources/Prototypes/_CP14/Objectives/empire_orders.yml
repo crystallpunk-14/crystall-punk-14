@@ -1,0 +1,38 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: CP14BaseTownObjective
+  components:
+  - type: Objective
+    issuer: cp14-objective-issuer-town
+
+
+# Send group
+- type: entity
+  abstract: true
+  parent: CP14BaseTownObjective
+  id: CP14BaseTownSendObjective
+  components:
+  - type: Objective
+  - type: CP14TownSendCondition
+    minCollectionSize: 5
+    maxCollectionSize: 10
+    objectiveText: cp14-objective-town-send-title
+    descriptionText: cp14-objective-town-send-desc
+    descriptionMultiplyText: cp14-objective-town-send-multiply-desc
+
+- type: entity
+  parent: CP14BaseTownSendObjective
+  id: CP14TownSendGoldObjective
+  components:
+  - type: CP14TownSendCondition
+    collectGroup: CP14Gold
+    minCollectionSize: 200
+    maxCollectionSize: 250
+  - type: Objective
+    difficulty: 1
+
+- type: weightedRandom
+  id: CP14TownSendObjectiveGroup
+  weights:
+    CP14TownSendGoldObjective: 1

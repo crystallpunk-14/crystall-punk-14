@@ -4,17 +4,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Objectives.Components;
 
-[RegisterComponent, Access(typeof(CP14ExpeditionCollectConditionSystem))]
-public sealed partial class CP14ExpeditionCollectConditionComponent : Component
+[RegisterComponent, Access(typeof(CP14TownSendConditionSystem))]
+public sealed partial class CP14TownSendConditionComponent : Component
 {
     [DataField]
     public ProtoId<StealTargetGroupPrototype> CollectGroup;
-
-    /// <summary>
-    /// When enabled, disables generation of this target if there is no entity on the map (disable for objects that can be created mid-round).
-    /// </summary>
-    [DataField]
-    public bool VerifyMapExistence = true;
 
     /// <summary>
     /// The minimum number of items you need to steal to fulfill a objective
@@ -33,6 +27,12 @@ public sealed partial class CP14ExpeditionCollectConditionComponent : Component
     /// </summary>
     [DataField]
     public int CollectionSize;
+
+    /// <summary>
+    /// how many items have already been sent to the city
+    /// </summary>
+    [DataField]
+    public int CollectionSent = 0;
 
     [DataField(required: true)]
     public LocId ObjectiveText;

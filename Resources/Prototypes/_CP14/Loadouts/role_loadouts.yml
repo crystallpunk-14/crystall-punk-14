@@ -69,12 +69,26 @@
   - CP14GeneralTrinkets
 
 - type: roleLoadout
-  id: JobCP14HouseKeeper
+  id: JobCP14Quartermaster
   groups:
   - CP14GeneralHead
   - CP14GeneralEyes
   - CP14GeneralMask
   - CP14CaptainCloak #
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobCP14Merchant
+  groups:
+  - CP14GeneralHead
+  - CP14GeneralEyes
+  - CP14GeneralMask
+  - CP14GeneralCloak 
   - CP14GeneralGloves
   - CP14GeneralShirt
   - CP14GeneralPants

@@ -1,4 +1,3 @@
-using Content.Server.GameTicking.Rules;
 using Content.Shared.Random;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -6,10 +5,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CP14.GameTicking.Rules.Components;
 
 /// <summary>
-/// A rule issuing a common goal for all expedition participants
+/// a rule that assigns individual goals to different roles
 /// </summary>
-[RegisterComponent, Access(typeof(CP14ExpeditionObjectivesRule))]
-public sealed partial class CP14ExpeditionObjectivesRuleComponent : Component
+[RegisterComponent, Access(typeof(CP14PersonalObjectivesRule))]
+public sealed partial class CP14PersonalObjectivesRuleComponent : Component
 {
     [DataField]
     public Dictionary<ProtoId<JobPrototype>, List<ProtoId<WeightedRandomPrototype>>> RoleObjectives = new();

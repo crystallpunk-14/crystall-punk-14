@@ -76,11 +76,10 @@
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ 2, 3 ]
             CP14Innkeeper: [ 3, 4 ]
-            #CP14Captain: [1, 1]
+            CP14Captain: [1, 1]
+            CP14Quartermaster: [1, 1]
+            CP14Merchant: [3, 4]
             #CP14GuardCommander: [1, 1]
-            #CP14HouseKeeper: [1, 1]
-        #- type: CP14StationExpeditionTarget
-        #  shuttlePath: /Maps/_CP14/Shuttles/test-ship.yml
         - type: CP14StationZLevels
           defaultMapLevel: 0
           levels:

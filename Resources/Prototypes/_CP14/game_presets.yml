@@ -28,3 +28,4 @@
   showInVote: true # For playtest period only
   rules:
     - Sandbox
+    - CP14RoundObjectivesRule

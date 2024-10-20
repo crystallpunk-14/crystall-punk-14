@@ -1,49 +1,14 @@
 - type: entity
   id: CP14SpawnPointJobBase
   parent: SpawnPointJobBase
+  abstract: true
   categories: [ ForkFiltered ]
-
-- type: entity
-  id: CP14SpawnPointAdventurer
-  parent: CP14SpawnPointJobBase
-  name: adventurer
-  categories:
-  - Spawner
   components:
-  - type: SpawnPoint
-    job_id: CP14Adventurer
   - type: Sprite
-    layers:
-      - state: green
-      - state: zookeeper #TODO Replace
-
-- type: entity
-  id: CP14SpawnPointAlchemist
-  parent: CP14SpawnPointJobBase
-  name: alchemist
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Alchemist
-  - type: Sprite
-    layers:
-      - state: green
-      - state: zookeeper #TODO Replace
-
-- type: entity
-  id: CP14SpawnPointInnkeeper
-  parent: CP14SpawnPointJobBase
-  name: innkeeper
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Innkeeper
-  - type: Sprite
-    layers:
-      - state: green
-      - state: zookeeper #TODO Replace
+    sprite: _CP14/Markers/jobs.rsi
+    snapCardinals: true
+    
+# Command
 
 - type: entity
   id: CP14SpawnPointCaptain
@@ -57,7 +22,9 @@
   - type: Sprite
     layers:
       - state: green
-      - state: zookeeper #TODO Replace
+      - state: workman #TODO Replace
+      
+# Security
 
 - type: entity
   id: CP14SpawnPointGuardCommander
@@ -71,18 +38,78 @@
   - type: Sprite
     layers:
       - state: green
-      - state: zookeeper #TODO Replace
+      - state: workman #TODO Replace
+
+# Bank
 
 - type: entity
-  id: CP14SpawnPointHouseKeeper
+  id: CP14SpawnPointQuartermaster
   parent: CP14SpawnPointJobBase
-  name: house keeper
+  name: quartermaster
   categories:
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: CP14HouseKeeper
+    job_id: CP14Quartermaster
   - type: Sprite
     layers:
       - state: green
-      - state: zookeeper #TODO Replace
+      - state: workman #TODO Replace
+
+- type: entity
+  id: CP14SpawnPointMerchant
+  parent: CP14SpawnPointJobBase
+  name: merchant
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Merchant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: workman #TODO Replace
+
+# Mercenary
+
+- type: entity
+  id: CP14SpawnPointAdventurer
+  parent: CP14SpawnPointJobBase
+  name: adventurer
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Adventurer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: adventurer
+
+- type: entity
+  id: CP14SpawnPointAlchemist
+  parent: CP14SpawnPointJobBase
+  name: alchemist
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Alchemist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: alchemist
+
+- type: entity
+  id: CP14SpawnPointInnkeeper
+  parent: CP14SpawnPointJobBase
+  name: innkeeper
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Innkeeper
+  - type: Sprite
+    layers:
+      - state: green
+      - state: workman #TODO Replace
