@@ -1,19 +1,32 @@
 - type: department
+  id: CP14Command
+  name: department-CP14Command
+  description: department-CP14Command-desc
+  primary: false
+  weight: 10
+  color: "#3ec8fa"
+  roles:
+  - CP14Captain
+  - CP14Quartermaster
+  - CP14GuardCommander
+
+- type: department
+  id: CP14Bank
+  name: department-CP14Bank
+  description: department-CP14Bank-desc
+  weight: 9
+  color: "#fadb3e"
+  roles:
+  - CP14Quartermaster
+  - CP14Merchant
+
+- type: department
   id: CP14Mercenary
   name: department-CP14Mercenary
   description: department-CP14Mercenary-desc
+  weight: 0
   color: "#429976"
   roles:
   - CP14Adventurer
   - CP14Alchemist
   - CP14Innkeeper
-
-- type: department
-  id: CP14Command
-  name: department-CP14Command
-  description: department-CP14Command-desc
-  color: "#fadb3e"
-  roles:
-  - CP14Captain
-  - CP14GuardCommander
-  - CP14HouseKeeper

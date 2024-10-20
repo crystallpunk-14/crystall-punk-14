@@ -74,14 +74,14 @@
       - state: zookeeper #TODO Replace
 
 - type: entity
-  id: CP14SpawnPointHouseKeeper
+  id: CP14SpawnPointQuartermaster
   parent: CP14SpawnPointJobBase
-  name: house keeper
+  name: quartermaster
   categories:
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: CP14HouseKeeper
+    job_id: CP14Quartermaster
   - type: Sprite
     layers:
       - state: green

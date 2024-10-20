@@ -16,4 +16,7 @@
   id: CP14JobGuardCommander
 
 - type: playTimeTracker
-  id: CP14JobHouseKeeper
+  id: CP14JobQuartermaster
+
+- type: playTimeTracker
+  id: CP14JobMerchant
