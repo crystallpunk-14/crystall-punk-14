@@ -186,36 +186,6 @@ ent-CP14ImpactEffectSphereOfLight = { ent-CP14BaseMagicImpact }
 ent-CP14SphereOfLight = Сфера света
     .desc = Сгусток яркого света в форме сферы.
 
-ent-CP14TorsoZombie = { ent-CP14TorsoHuman }
-    .desc = { ent-CP14TorsoHuman.desc }
-
-ent-CP14HeadZombie = { ent-CP14HeadHuman }
-    .desc = { ent-CP14HeadHuman.desc }
-
-ent-CP14LeftArmZombie = { ent-CP14LeftArmHuman }
-    .desc = { ent-CP14LeftArmHuman.desc }
-
-ent-CP14RightArmZombie = { ent-CP14RightArmHuman }
-    .desc = { ent-CP14RightArmHuman.desc }
-
-ent-CP14LeftHandZombie = { ent-CP14LeftHandHuman }
-    .desc = { ent-CP14LeftHandHuman.desc }
-
-ent-CP14RightHandZombie = { ent-CP14RightHandHuman }
-    .desc = { ent-CP14RightHandHuman.desc }
-
-ent-CP14LeftLegZombie = { ent-CP14LeftLegHuman }
-    .desc = { ent-CP14LeftLegHuman.desc }
-
-ent-CP14RightLegZombie = { ent-CP14RightLegHuman }
-    .desc = { ent-CP14RightLegHuman.desc }
-
-ent-CP14LeftFootZombie = { ent-CP14LeftFootHuman }
-    .desc = { ent-CP14LeftFootHuman.desc }
-
-ent-CP14RightFootZombie = { ent-CP14RightFootHuman }
-    .desc = { ent-CP14RightFootHuman.desc }
-
 ent-CP14ClothingBackpackLeather = кожаный рюкзак
     .desc = Вы носите его на спине и кладете в него предметы.
 
@@ -1189,10 +1159,10 @@ ent-CP14CliffEndRight = { ent-CP14Cliff }
 ent-CP14FenceIronGrilleBase = железная решетка
     .desc = Прочный барьер из сваренных вместе железных прутьев.
 
-ent-CP14FenceIronGrilleStraight = None
+ent-CP14FenceIronGrilleStraight = { ent-CP14FenceIronGrilleBase }
     .suffix = Прямой
 
-ent-CP14FenceIronGrilleCorner = None
+ent-CP14FenceIronGrilleCorner = { ent-CP14FenceIronGrilleBase }
     .suffix = Угол
 
 ent-CP14FenceIronGrilleGate = железные решетчатые ворота
@@ -1201,10 +1171,10 @@ ent-CP14FenceIronGrilleGate = железные решетчатые ворота
 ent-CP14BaseFenceWood = деревянный забор
     .desc = Деревянный забор. Аккуратнее с занозами!
 
-ent-CP14FenceWoodStraight = None
+ent-CP14FenceWoodStraight = { ent-CP14BaseFenceWood }
     .suffix = Прямой
 
-ent-CP14FenceWoodCorner = None
+ent-CP14FenceWoodCorner = { ent-CP14BaseFenceWood }
     .suffix = Угол
 
 ent-CP14FenceWoodGate = деревянные ворота для забора
