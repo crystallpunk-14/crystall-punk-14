@@ -1,12 +1,14 @@
 using Content.Server._CP14.GameTicking.Rules.Components;
+using Content.Server.GameTicking;
+using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.GameTicking.Rules;
+namespace Content.Server._CP14.GameTicking.Rules;
 
-public sealed class CP14ExpeditionObjectivesRule : GameRuleSystem<CP14ExpeditionObjectivesRuleComponent>
+public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObjectivesRuleComponent>
 {
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -21,7 +23,7 @@ public sealed class CP14ExpeditionObjectivesRule : GameRuleSystem<CP14Expedition
 
     private void OnPlayerSpawning(PlayerSpawnCompleteEvent args)
     {
-        var query = EntityQueryEnumerator<CP14ExpeditionObjectivesRuleComponent>();
+        var query = EntityQueryEnumerator<CP14PersonalObjectivesRuleComponent>();
         while (query.MoveNext(out var uid, out var expedition))
         {
             if (!_mind.TryGetMind(args.Player.UserId, out var mindId, out var mind))
@@ -59,7 +61,7 @@ public sealed class CP14ExpeditionObjectivesRule : GameRuleSystem<CP14Expedition
                 {
                     if (!_proto.TryIndex(weightGroupProto, out var weightGroup))
                         continue;
-                    
+
                     _mind.TryAddObjective(mindId.Value, mind, weightGroup.Pick(_random));
                 }
             }

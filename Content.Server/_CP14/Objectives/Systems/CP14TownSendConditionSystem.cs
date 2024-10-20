@@ -120,7 +120,7 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
 
     private void OnGetProgress(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveGetProgressEvent args)
     {
-        var result = condition.Comp.CollectionSent / condition.Comp.CollectionSize;
+        var result = (float)condition.Comp.CollectionSent / (float)condition.Comp.CollectionSize;
         result = Math.Clamp(result, 0, 1);
         args.Progress = result;
     }

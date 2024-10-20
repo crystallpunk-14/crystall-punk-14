@@ -8,14 +8,14 @@
   - type: CP14RoundSeed
 
 - type: entity
-  id: CP14ResourceHarvesting
+  id: CP14PersonalObjectivesRule
   parent: CP14BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
-  - type: CP14ExpeditionObjectivesRule
+  - type: CP14PersonalObjectivesRule
     departmentObjectives:
       CP14Command:
-      - CP14ExpeditionCollectObjectiveGroup
+      - CP14TownSendObjectiveGroup
       CP14Mercenary:
       - CP14PersonalCurrencyCollectObjectiveGroup
-  # antags
+      - CP14TownSendObjectiveGroup #DEBUG
