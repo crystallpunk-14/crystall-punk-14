@@ -14,8 +14,12 @@
   components:
   - type: CP14PersonalObjectivesRule
     departmentObjectives:
+      CP14Mercenary:
+      - CP14PersonalCurrencyCollectObjectiveGroup
+  - type: CP14CommonObjectivesRule
+    departmentObjectives:
       CP14Command:
       - CP14TownSendObjectiveGroup
       CP14Mercenary:
-      - CP14PersonalCurrencyCollectObjectiveGroup
       - CP14TownSendObjectiveGroup #DEBUG
+    

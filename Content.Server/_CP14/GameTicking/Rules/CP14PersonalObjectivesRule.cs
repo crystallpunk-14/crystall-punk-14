@@ -24,7 +24,7 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
     private void OnPlayerSpawning(PlayerSpawnCompleteEvent args)
     {
         var query = EntityQueryEnumerator<CP14PersonalObjectivesRuleComponent>();
-        while (query.MoveNext(out var uid, out var expedition))
+        while (query.MoveNext(out var uid, out var personalObj))
         {
             if (!_mind.TryGetMind(args.Player.UserId, out var mindId, out var mind))
             {
@@ -32,7 +32,7 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
                 return;
             }
 
-            foreach (var (job, groups) in expedition.RoleObjectives)
+            foreach (var (job, groups) in personalObj.RoleObjectives)
             {
                 if (args.JobId is null || args.JobId != job)
                     continue;
@@ -46,7 +46,7 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
                 }
             }
 
-            foreach (var (departmentProto, objectives) in expedition.DepartmentObjectives)
+            foreach (var (departmentProto, objectives) in personalObj.DepartmentObjectives)
             {
                 if (args.JobId is null)
                     continue;
