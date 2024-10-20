@@ -28,8 +28,8 @@
   - type: CP14TownSendCondition
     verifyMapExistence: false
     collectGroup: CP14Gold
-    minCollectionSize: 100
-    maxCollectionSize: 150
+    minCollectionSize: 200
+    maxCollectionSize: 250
   - type: Objective
     difficulty: 1
 

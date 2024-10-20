@@ -37,9 +37,9 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
     {
         var query = EntityQueryEnumerator<CP14TownSendConditionComponent>();
 
+        HashSet<EntityUid> removed = new();
         while (query.MoveNext(out var uid, out var condition))
         {
-            HashSet<EntityUid> removed = new();
             foreach (var sentEnt in ev.Sent)
             {
                 if (condition.CollectionSent >= condition.CollectionSize)
@@ -60,14 +60,15 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
                     condition.CollectionSent++;
                 }
 
-                removed.Add(sentEnt);
+                if (!removed.Contains(sentEnt))
+                    removed.Add(sentEnt);
             }
+        }
 
-            foreach (var remove in removed)
-            {
-                ev.Sent.Remove(remove);
-                QueueDel(remove);
-            }
+        foreach (var remove in removed)
+        {
+            ev.Sent.Remove(remove);
+            QueueDel(remove);
         }
     }
 

@@ -12,14 +12,12 @@
   parent: CP14BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
+  - type: CP14CommonObjectivesRule
+    deartmentObjectives:
+      CP14Command:
+      - CP14TownSendObjectiveGroup
   - type: CP14PersonalObjectivesRule
     departmentObjectives:
       CP14Mercenary:
       - CP14PersonalCurrencyCollectObjectiveGroup
-  - type: CP14CommonObjectivesRule
-    departmentObjectives:
-      #CP14Command:
-      #- CP14TownSendObjectiveGroup
-      CP14Mercenary:
-      - CP14TownSendObjectiveGroup #DEBUG
     
