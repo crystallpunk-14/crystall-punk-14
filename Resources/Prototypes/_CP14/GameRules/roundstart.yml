@@ -13,7 +13,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: CP14CommonObjectivesRule
-    deartmentObjectives:
+    departmentObjectives:
       CP14Command:
       - CP14TownSendObjectiveGroup
   - type: CP14PersonalObjectivesRule

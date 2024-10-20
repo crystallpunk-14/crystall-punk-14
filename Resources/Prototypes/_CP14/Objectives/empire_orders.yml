@@ -26,7 +26,6 @@
   id: CP14TownSendGoldObjective
   components:
   - type: CP14TownSendCondition
-    verifyMapExistence: false
     collectGroup: CP14Gold
     minCollectionSize: 200
     maxCollectionSize: 250
