@@ -1155,27 +1155,8 @@ ent-CP14CliffEndLeft = { ent-CP14Cliff }
 ent-CP14CliffEndRight = { ent-CP14Cliff }
     .desc = { ent-CP14Cliff.desc }
     .suffix = Правый край
-
-ent-CP14FenceIronGrilleBase = железная решетка
-    .desc = Прочный барьер из сваренных вместе железных прутьев.
-
-ent-CP14FenceIronGrilleStraight = { ent-CP14FenceIronGrilleBase }
-    .suffix = Прямой
-
-ent-CP14FenceIronGrilleCorner = { ent-CP14FenceIronGrilleBase }
-    .suffix = Угол
-
 ent-CP14FenceIronGrilleGate = железные решетчатые ворота
     .desc = Тяжелые железные ворота в решетках. Выглядит серьезно.
-
-ent-CP14BaseFenceWood = деревянный забор
-    .desc = Деревянный забор. Аккуратнее с занозами!
-
-ent-CP14FenceWoodStraight = { ent-CP14BaseFenceWood }
-    .suffix = Прямой
-
-ent-CP14FenceWoodCorner = { ent-CP14BaseFenceWood }
-    .suffix = Угол
 
 ent-CP14FenceWoodGate = деревянные ворота для забора
     .desc = Большая дверь в большом заборе. Для больших людей.
