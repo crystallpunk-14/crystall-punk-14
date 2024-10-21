@@ -81,7 +81,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
 
     private List<int> GenerateNewUniqueLockData(ProtoId<CP14LockCategoryPrototype> category)
     {
-        List<int> newKeyData;
+        List<int> newKeyData = new();
         var categoryData = _proto.Index(category);
         var iteration = 0;
 

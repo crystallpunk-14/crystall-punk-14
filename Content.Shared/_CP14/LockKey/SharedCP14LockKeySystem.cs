@@ -1,4 +1,5 @@
 using Content.Shared._CP14.LockKey.Components;
+using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Lock;
 using Content.Shared.Popups;
@@ -6,11 +7,13 @@ using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.LockKey;
 
 public sealed class SharedCP14LockKeySystem : EntitySystem
 {
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -25,8 +28,11 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
         SubscribeLocalEvent<CP14KeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
+
         SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(OnLockPickToLockVerb);
+        SubscribeLocalEvent<CP14LockComponent, LockPickHackDoAfterEvent>(OnLockHacked);
     }
+
     private void OnKeyRingInteract(Entity<CP14KeyRingComponent> keyring, ref AfterInteractEvent args)
     {
         if (args.Handled)
@@ -99,7 +105,13 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             {
                 Act = () =>
                 {
-                    TryHackDoorElement(user, (target, cp14LockComponent), lockPick, lockComp, height);
+                    _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, lockPick.Comp.HackTime, new LockPickHackDoAfterEvent(height), target, target)
+                    {
+                        BreakOnDamage = true,
+                        BreakOnMove = true,
+                        BreakOnDropItem = true,
+                        BreakOnHandChange = true,
+                    });
                 },
                 Text = Loc.GetString("cp14-lock-verb-lock-pick-use-text") + $" {height}",
                 Message = Loc.GetString("cp14-lock-verb-lock-pick-use-message"),
@@ -112,58 +124,63 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         }
     }
 
-    private void TryHackDoorElement(EntityUid user,
-        Entity<CP14LockComponent> target,
-        Entity<CP14LockpickComponent> lockPick,
-        LockComponent lockComp,
-        int height)
+    private void OnLockHacked(Entity<CP14LockComponent> ent, ref LockPickHackDoAfterEvent args)
     {
-        if (target.Comp.LockShape == null)
+        if (args.Cancelled || args.Handled)
             return;
 
-        if (height == target.Comp.LockShape[target.Comp.LockPickStatus]) //Success
+        if (ent.Comp.LockShape == null)
+            return;
+
+        if (!TryComp<LockComponent>(ent, out var lockComp))
+            return;
+
+        if (!TryComp<CP14LockpickComponent>(args.Used, out var lockPick))
+            return;
+
+        if (args.Height == ent.Comp.LockShape[ent.Comp.LockPickStatus]) //Success
         {
-            _audio.PlayPvs(lockPick.Comp.SuccessSound, target);
-            target.Comp.LockPickStatus++;
-            if (target.Comp.LockPickStatus >= target.Comp.LockShape.Count) // Final success
+            _audio.PlayPvs(lockPick.SuccessSound, ent);
+            ent.Comp.LockPickStatus++;
+            if (ent.Comp.LockPickStatus >= ent.Comp.LockShape.Count) // Final success
             {
                 if (lockComp.Locked)
                 {
-                    _lock.TryUnlock(target, user, lockComp);
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-unlock", ("lock", MetaData(target).EntityName)), target, user);
-                    target.Comp.LockPickStatus = 0;
+                    _lock.TryUnlock(ent, args.User, lockComp);
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-unlock", ("lock", MetaData(ent).EntityName)), ent, args.User);
+                    ent.Comp.LockPickStatus = 0;
                     return;
                 }
 
-                _lock.TryLock(target, user, lockComp);
-                _popup.PopupEntity(Loc.GetString("cp14-lock-lock", ("lock", MetaData(target).EntityName)), target, user);
-                target.Comp.LockPickStatus = 0;
+                _lock.TryLock(ent, args.User, lockComp);
+                _popup.PopupEntity(Loc.GetString("cp14-lock-lock", ("lock", MetaData(ent).EntityName)), ent, args.User);
+                ent.Comp.LockPickStatus = 0;
                 return;
             }
-            _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-success"), target, user);
+            _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-success"), ent, args.User);
         }
         else //Fail
         {
-            _audio.PlayPvs(lockPick.Comp.FailSound, target);
-            if (_random.Prob(target.Comp.LockPickDamageChance)) // Damage lock pick
+            _audio.PlayPvs(lockPick.FailSound, ent);
+            if (_random.Prob(ent.Comp.LockPickDamageChance)) // Damage lock pick
             {
-                lockPick.Comp.Health--;
-                if (lockPick.Comp.Health > 0)
+                lockPick.Health--;
+                if (lockPick.Health > 0)
                 {
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed-damage", ("lock", MetaData(target).EntityName)), target, user);
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed-damage", ("lock", MetaData(ent).EntityName)), ent, args.User);
                 }
                 else
                 {
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed-break", ("lock", MetaData(target).EntityName)), target, user);
-                    QueueDel(lockPick);
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed-break", ("lock", MetaData(ent).EntityName)), ent, args.User);
+                    QueueDel(args.Used);
                 }
             }
             else
             {
-                _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed", ("lock", MetaData(target).EntityName)), target, user);
+                _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed", ("lock", MetaData(ent).EntityName)), ent, args.User);
             }
-            target.Comp.LockPickedFailMarkup = true;
-            target.Comp.LockPickStatus = 0;
+            ent.Comp.LockPickedFailMarkup = true;
+            ent.Comp.LockPickStatus = 0;
         }
     }
 
@@ -224,4 +241,18 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("cp14-lock-key-no-fit"), target, user);
         }
     }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class LockPickHackDoAfterEvent : DoAfterEvent
+{
+    [DataField]
+    public int Height = 0;
+
+    public LockPickHackDoAfterEvent(int h)
+    {
+        Height = h;
+    }
+
+    public override DoAfterEvent Clone() => this;
 }
