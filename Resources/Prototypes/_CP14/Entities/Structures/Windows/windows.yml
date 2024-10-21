@@ -10,6 +10,7 @@
     state: full
   - type: IconSmooth
     key: CP14window
+    base: window
   - type: PlacementReplacement
     key: walls
 
@@ -24,8 +25,18 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
     state: full
-  - type: IconSmooth
-    base: stone_bricks_window
+
+- type: entity
+  id: CP14WindowMarble
+  parent: CP14WindowBase
+  name: marble brick window
+  description: A stone brick wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
+    state: full
 
 - type: entity
   id: CP14WindowWooden
@@ -42,5 +53,3 @@
     sprite: _CP14/Structures/Windows/wooden_window.rsi
   - type: Icon
     sprite: _CP14/Structures/Windows/wooden_window.rsi
-  - type: IconSmooth
-    base: wood_window
