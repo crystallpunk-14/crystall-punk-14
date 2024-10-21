@@ -77,7 +77,7 @@ namespace Content.Shared.Verbs
             new("verb-categories-instrument-style", null);
 
         public static readonly VerbCategory Lockpick =
-            new("verb-categories-lockpick", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
+            new("verb-categories-lock-pick", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
 
         public static readonly VerbCategory ChannelSelect = new("verb-categories-channel-select", null);
 

@@ -1,15 +1,17 @@
-cp14-lock-verb-lockpick-use-text = Надавить: {$height}
-cp14-lock-verb-lockpick-use-message = Если вы в правильной последовательности заденете зубчики замка, вы сможете разблокировать его.
+verb-categories-lock-pick = Взломать замок
 
-cp14-lock-keyring-use-nofit = Ключ не подходит!
+cp14-lock-verb-lock-pick-use-text = Надавить:
+cp14-lock-verb-lock-pick-use-message = Если вы в правильной последовательности заденете зубчики замка, вы сможете разблокировать его.
 
-cp14-lock-unlock-lock = Вы открыли {$lock}
-cp14-lock-lock-lock = Вы закрыли {$lock}
+cp14-lock-key-no-fit = Ключ не подходит!
 
-cp14-lock-lockpick-success = Вы успешно взломали замок!
-cp14-lock-lockpick-failed = {$lock} сбрасывается в исходное положение.
-cp14-lock-lockpick-failed-damage = {$lock} сбрасывается в исходное положение, повреждая вашу отмычку.
-cp14-lock-lockpick-failed-break = {$lock} сбрасывается в исходное положение, ломая вашу отмычку.
+cp14-lock-unlock = Вы открыли {$lock}
+cp14-lock-lock = Вы закрыли {$lock}
+
+cp14-lock-lock-pick-success = Один из элементов замка тихо щелкает.
+cp14-lock-lock-pick-failed = {$lock} сбрасывается в исходное положение.
+cp14-lock-lock-pick-failed-damage = {$lock} сбрасывается в исходное положение, повреждая вашу отмычку.
+cp14-lock-lock-pick-failed-break = {$lock} сбрасывается в исходное положение, ломая вашу отмычку.
 
 cp14-lock-verb-use-key-text-open = Открыть замок при помощи {$item}
 cp14-lock-verb-use-key-text-close = Закрыть замок при помощи {$item}
