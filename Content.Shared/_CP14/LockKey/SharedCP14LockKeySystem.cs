@@ -16,7 +16,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
-    public const int DepthComplexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
+    public const int DepthComplexity = 2;
 
     public override void Initialize()
     {
@@ -121,23 +121,23 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (target.Comp.LockShape == null)
             return;
 
-        if (height == target.Comp.LockShape[target.Comp.LockpickStatus]) //Success
+        if (height == target.Comp.LockShape[target.Comp.LockPickStatus]) //Success
         {
             _audio.PlayPvs(lockPick.Comp.SuccessSound, target);
-            target.Comp.LockpickStatus++;
-            if (target.Comp.LockpickStatus >= target.Comp.LockShape.Count) // Final success
+            target.Comp.LockPickStatus++;
+            if (target.Comp.LockPickStatus >= target.Comp.LockShape.Count) // Final success
             {
                 if (lockComp.Locked)
                 {
                     _lock.TryUnlock(target, user, lockComp);
                     _popup.PopupEntity(Loc.GetString("cp14-lock-unlock-lock", ("lock", MetaData(target).EntityName)), target, user);
-                    target.Comp.LockpickStatus = 0;
+                    target.Comp.LockPickStatus = 0;
                     return;
                 }
 
                 _lock.TryLock(target, user, lockComp);
                 _popup.PopupEntity(Loc.GetString("cp14-lock-lock-lock", ("lock", MetaData(target).EntityName)), target, user);
-                target.Comp.LockpickStatus = 0;
+                target.Comp.LockPickStatus = 0;
                 return;
             }
             _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-success"), target, user);
@@ -162,8 +162,8 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             {
                 _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-failed", ("lock", MetaData(target).EntityName)), target, user);
             }
-            target.Comp.LockpickeddFailMarkup = true;
-            target.Comp.LockpickStatus = 0;
+            target.Comp.LockPickedFailMarkup = true;
+            target.Comp.LockPickStatus = 0;
         }
     }
 

@@ -33,7 +33,6 @@ public sealed class LockSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _sharedPopupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedCP14LockKeySystem _lockCp14 = default!; //CrystallPunk Lock System Adapt
 
     /// <inheritdoc />
     public override void Initialize()
@@ -69,7 +68,7 @@ public sealed class LockSystem : EntitySystem
         if (args.Handled || !args.Complex)
             return;
 
-        //CrystallPunk LockSystem Adapt
+        //CrystallPunk LockSystem Adapt - we cant unlock\lock objects via direct hand interaction
 
         // Only attempt an unlock by default on Activate
         //if (lockComp.Locked && lockComp.UnlockOnClick)
@@ -106,19 +105,10 @@ public sealed class LockSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, LockComponent lockComp, ExaminedEvent args)
     {
-        //CrystallPunk Lock System Adapt Start
-        if (lockComp.LockSlotId != null && _lockCp14.TryGetLockFromSlot(uid, out var lockEnt))
-        {
-            args.PushText(Loc.GetString("cp14-lock-examine-lock-slot", ("lock", MetaData(lockEnt.Value).EntityName)));
-
-            args.PushMarkup(Loc.GetString(lockComp.Locked
-                    ? "lock-comp-on-examined-is-locked"
-                    : "lock-comp-on-examined-is-unlocked",
-                ("entityName", Identity.Name(uid, EntityManager))));
-            if (lockEnt.Value.Comp.LockpickeddFailMarkup)
-                args.PushMarkup(Loc.GetString("cp14-lock-examine-lock-lockpicked", ("lock", MetaData(lockEnt.Value).EntityName)));
-        }
-        //CrystallPunk Lock System Adapt End
+        args.PushText(Loc.GetString(lockComp.Locked
+                ? "lock-comp-on-examined-is-locked"
+                : "lock-comp-on-examined-is-unlocked",
+            ("entityName", Identity.Name(uid, EntityManager))));
     }
 
     /// <summary>
