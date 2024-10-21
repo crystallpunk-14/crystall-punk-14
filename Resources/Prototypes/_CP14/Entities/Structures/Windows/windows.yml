@@ -27,7 +27,7 @@
     state: full
 
 - type: entity
-  id: CP14WindowMarble
+  id: CP14WindowMarbleBrick
   parent: CP14WindowBase
   name: marble brick window
   description: A stone brick wall with a glass window in it.
