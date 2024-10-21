@@ -19,11 +19,19 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
+    private EntityQuery<LockComponent> _lockQuery;
+    private EntityQuery<CP14LockComponent> _cp14LockQuery;
+    private EntityQuery<CP14KeyComponent> _keyQuery;
+
     public const int DepthComplexity = 2;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _lockQuery = GetEntityQuery<LockComponent>();
+        _cp14LockQuery = GetEntityQuery<CP14LockComponent>();
+        _keyQuery = GetEntityQuery<CP14KeyComponent>();
 
         SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
@@ -44,15 +52,15 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!TryComp<StorageComponent>(keyring, out var storageComp))
             return;
 
-        if (!HasComp<LockComponent>(args.Target))
+        if (!_lockQuery.TryComp(args.Target, out _))
             return;
 
-        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComp))
+        if (!_cp14LockQuery.TryComp(args.Target, out var cp14LockComp))
             return;
 
         foreach (var (key, _) in storageComp.StoredItems)
         {
-            if (!TryComp<CP14KeyComponent>(key, out var keyComp))
+            if (!_keyQuery.TryComp(key, out var keyComp))
                 continue;
 
             if (keyComp.LockShape != cp14LockComp.LockShape)
@@ -74,13 +82,13 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!args.CanReach || args.Target is not { Valid: true })
             return;
 
-        if (!HasComp<LockComponent>(args.Target))
+        if (!_lockQuery.TryComp(args.Target, out _))
             return;
 
-        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComponent))
+        if (!_cp14LockQuery.TryComp(args.Target, out var cp14LockComp))
             return;
 
-        TryUseKeyOnLock(args.User, new Entity<CP14LockComponent>(args.Target.Value, cp14LockComponent), key);
+        TryUseKeyOnLock(args.User, new Entity<CP14LockComponent>(args.Target.Value, cp14LockComp), key);
         args.Handled = true;
     }
 
@@ -89,10 +97,10 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        if (!TryComp<LockComponent>(args.Target, out var lockComp) || !lockComp.Locked)
+        if (!_lockQuery.TryComp(args.Target, out var lockComp) || !lockComp.Locked)
             return;
 
-        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComponent))
+        if (!_cp14LockQuery.TryComp(args.Target, out _))
             return;
 
         var target = args.Target;
@@ -132,7 +140,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (ent.Comp.LockShape == null)
             return;
 
-        if (!TryComp<LockComponent>(ent, out var lockComp))
+        if (!_lockQuery.TryComp(ent, out var lockComp))
             return;
 
         if (!TryComp<CP14LockpickComponent>(args.Used, out var lockPick))
@@ -189,10 +197,10 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        if (!TryComp<LockComponent>(args.Target, out var lockComp))
+        if (!_lockQuery.TryComp(args.Target, out var lockComp))
             return;
 
-        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComponent))
+        if (!_cp14LockQuery.TryComp(args.Target, out var cp14LockComponent))
             return;
 
         var target = args.Target;
