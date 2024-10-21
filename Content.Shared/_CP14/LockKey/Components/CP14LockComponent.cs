@@ -18,13 +18,13 @@ public sealed partial class CP14LockComponent : Component
     /// On which element of the shape sequence the lock is now located. It's necessary for the mechanics of breaking and entering.
     /// </summary>
     [DataField]
-    public int LockpickStatus = 0;
+    public int LockPickStatus = 0;
 
     /// <summary>
     /// after a lock is broken into, it leaves a description on it that it's been tampered with.
     /// </summary>
     [DataField]
-    public bool LockpickeddFailMarkup = false;
+    public bool LockPickedFailMarkup = false;
 
     /// <summary>
     /// If not null, automatically generates a lock for the specified category on initialization. This ensures that the lock will be opened with a key of the same category.

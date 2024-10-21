@@ -77,12 +77,6 @@ public sealed partial class LockComponent : Component
     [DataField]
     [AutoNetworkedField]
     public TimeSpan UnlockTime;
-
-    /// <summary>
-    /// CrystallPunk LockSystem Adapt: we need LockEntity in object, in slotId.
-    /// </summary>
-    [DataField]
-    public string? LockSlotId = string.Empty;
 }
 
 /// <summary>

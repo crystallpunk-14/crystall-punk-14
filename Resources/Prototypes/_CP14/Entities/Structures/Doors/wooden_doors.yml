@@ -28,8 +28,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Lock
-    locked: false
   - type: Construction
     graph: CP14WoodenDoor
     node: CP14WoodenDoor
@@ -53,17 +51,8 @@
   id: CP14WoodenDoorTavernStaff
   suffix: Tavern Staff
   components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernStaff
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
+  - type: CP14Lock
+    autoGenerateShape: TavernStaff
   - type: Lock
     locked: true
 
@@ -74,32 +63,55 @@
   id: CP14WoodenDoorTavernStaffMirrored
   suffix: Tavern Staff, Mirrored
 
-
 - type: entity
   parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernDorms
-  suffix: Tavern Dorms
+  id: CP14WoodenDoorTavernDorms1
+  suffix: Tavern Dorms 1
   components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernDorms1
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms1
   - type: Lock
     locked: true
 
 - type: entity
-  parent: 
-  - CP14WoodenDoorTavernDorms
-  - CP14WoodenDoorMirrored
-  id: CP14WoodenDoorTavernDormsMirrored
-  suffix: Tavern Dorms, Mirrored
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorTavernDorms2
+  suffix: Tavern Dorms 2
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms2
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorTavernDorms3
+  suffix: Tavern Dorms 3
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms3
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorTavernDorms4
+  suffix: Tavern Dorms 4
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms4
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorTavernDorms5
+  suffix: Tavern Dorms 5
+  components:
+  - type: CP14Lock
+    autoGenerateShape: TavernDorms5
+  - type: Lock
+    locked: true
 
 # Alchemy 
 
@@ -108,17 +120,8 @@
   id: CP14WoodenDoorTavernAlchemy
   suffix: Alchemy
   components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockAlchemy
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
+  - type: CP14Lock
+    autoGenerateShape: Alchemy
   - type: Lock
     locked: true
 
