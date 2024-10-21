@@ -65,3 +65,4 @@ cp14-tiles-stonebricks-small-carved1 = carved brick floor
 cp14-tiles-stonebricks-small-carved2 = carved brick floor
 cp14-tiles-stonebricks-square-carved = carved brick floor
 cp14-tiles-stonebricks = stonebrick floor
+cp14-tiles-stonebricks-marble = marble floor
