@@ -105,7 +105,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             {
                 Act = () =>
                 {
-                    _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, lockPick.Comp.HackTime, new LockPickHackDoAfterEvent(height), target, target)
+                    _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, lockPick.Comp.HackTime, new LockPickHackDoAfterEvent(height), target, target, lockPick)
                     {
                         BreakOnDamage = true,
                         BreakOnMove = true,
