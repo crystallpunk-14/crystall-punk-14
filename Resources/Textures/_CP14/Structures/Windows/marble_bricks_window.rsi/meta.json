@@ -1,46 +1,46 @@
 {
   "version": 1,
+  "license": "CLA",
+  "copyright": "By jaraten(discord), recolored by TheShuEd",
   "size": {
     "x": 32,
     "y": 64
   },
-  "license": "CLA",
-  "copyright": "Created by TheShuEd (Discord) for CrystallPunk14, resprited by vladimir.s",
   "states": [
     {
-      "name": "wall0",
-      "directions": 4
-    },
-    {
-      "name": "wall1",
-      "directions": 4
-    },
-    {
-      "name": "wall2",
-      "directions": 4
-    },
-    {
-      "name": "wall3",
-      "directions": 4
-    },
-    {
-      "name": "wall4",
-      "directions": 4
-    },
-    {
-      "name": "wall5",
-      "directions": 4
-    },
-    {
-      "name": "wall6",
-      "directions": 4
-    },
-    {
-      "name": "wall7",
-      "directions": 4
-    },
-    {
       "name": "full"
+    },
+    {
+      "name": "window0",
+      "directions": 4
+    },
+    {
+      "name": "window1",
+      "directions": 4
+    },
+    {
+      "name": "window2",
+      "directions": 4
+    },
+    {
+      "name": "window3",
+      "directions": 4
+    },
+    {
+      "name": "window4",
+      "directions": 4
+    },
+    {
+      "name": "window5",
+      "directions": 4
+    },
+    {
+      "name": "window6",
+      "directions": 4
+    },
+    {
+      "name": "window7",
+      "directions": 4
     }
   ]
 }

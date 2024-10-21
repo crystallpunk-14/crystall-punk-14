@@ -46,3 +46,17 @@
   spawn: CP14WallpaperYellow
   icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: yellow }
   maxCount: 30
+
+- type: stack
+  id: CP14WallpaperBank
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperBank
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: bank }
+  maxCount: 30
+
+- type: stack
+  id: CP14WallpaperBank2
+  name: cp14-stack-wallpaper
+  spawn: CP14WallpaperBank2
+  icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: bank2 }
+  maxCount: 30

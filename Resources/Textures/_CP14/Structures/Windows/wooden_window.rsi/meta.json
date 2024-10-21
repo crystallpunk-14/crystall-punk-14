@@ -11,35 +11,35 @@
       "name": "full"
     },
     {
-      "name": "wood_window0",
+      "name": "window0",
       "directions": 4
     },
     {
-      "name": "wood_window1",
+      "name": "window1",
       "directions": 4
     },
     {
-      "name": "wood_window2",
+      "name": "window2",
       "directions": 4
     },
     {
-      "name": "wood_window3",
+      "name": "window3",
       "directions": 4
     },
     {
-      "name": "wood_window4",
+      "name": "window4",
       "directions": 4
     },
     {
-      "name": "wood_window5",
+      "name": "window5",
       "directions": 4
     },
     {
-      "name": "wood_window6",
+      "name": "window6",
       "directions": 4
     },
     {
-      "name": "wood_window7",
+      "name": "window7",
       "directions": 4
     }
   ]
