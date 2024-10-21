@@ -1,0 +1,83 @@
+- type: entity
+  abstract: true
+  parent: ClothingBeltBase
+  id: CP14ClothingBeltBase
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    breakOnMove: false
+    slots:
+    - belt
+  - type: Sprite
+    state: icon
+
+- type: entity
+  parent: CP14ClothingBeltBase
+  id: CP14ClothingBeltWeapon
+  name: weapon belt
+  description: Weapon belt with pouches for various small things.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Belt/weapon_belt.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Belt/weapon_belt.rsi
+  - type: Storage
+    maxItemSize: Tiny
+    defaultStorageOrientation: Vertical
+    grid:
+    - 1,4,1,1
+    - 3,2,3,3
+    - 5,2,5,3
+  - type: ItemSlots
+    slots:
+      sword_slot:
+        name: cp14-belt-slot-component-slot-name-primary-weapon
+        whitelist:
+          tags:
+            - CP14Sword
+        priority: 9
+      dagger_slot:
+        name: cp14-belt-slot-component-slot-name-secondary-weapon
+        whitelist:
+          tags:
+            - CP14Dagger
+            - CP14Axe
+            - CP14Hammer
+            - CP14Mace
+        priority: 8
+  - type: ItemMapper
+    mapLayers:
+      sword:
+        whitelist:
+          tags:
+          - CP14Sword
+      dagger:
+        whitelist:
+          tags:
+          - CP14Dagger
+          - CP14Axe
+          - CP14Hammer
+          - CP14Mace
+#      axe:
+#        whitelist:
+#          tags:
+#          - CP14Axe
+#      hammer:
+#        whitelist:
+#          tags:
+#          - CP14Hammer
+#      mace:
+#        whitelist:
+#          tags:
+#          - CP14Mace
+    sprite: _CP14/Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
