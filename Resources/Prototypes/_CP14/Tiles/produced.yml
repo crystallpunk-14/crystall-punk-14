@@ -141,14 +141,14 @@
   id: CP14FloorMarble
   name: cp14-tiles-stonebricks-marble
   sprite: /Textures/_CP14/Tiles/Marble/marble.png
-  variants: 1
+  variants: 6
   placementVariants:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
-  - 1.5
-  - 1.5
+  - 1.0
+  - 1.0
   edgeSpritePriority: 102
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/Marble/single_edge_SE.png
