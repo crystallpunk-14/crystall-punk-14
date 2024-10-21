@@ -25,7 +25,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
         SubscribeLocalEvent<CP14KeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
-        SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(OnLockpickToLockVerb);
+        SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(OnLockPickToLockVerb);
     }
     private void OnKeyRingInteract(Entity<CP14KeyRingComponent> keyring, ref AfterInteractEvent args)
     {
@@ -65,7 +65,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!args.CanReach || args.Target is not { Valid: true } target)
+        if (!args.CanReach || args.Target is not { Valid: true })
             return;
 
         if (!HasComp<LockComponent>(args.Target))
@@ -78,7 +78,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnLockpickToLockVerb(Entity<CP14LockpickComponent> lockPick, ref GetVerbsEvent<UtilityVerb> args)
+    private void OnLockPickToLockVerb(Entity<CP14LockpickComponent> lockPick, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;

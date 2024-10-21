@@ -73,32 +73,29 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     {
         if (_roundKeyData.ContainsKey(category))
             return _roundKeyData[category];
-        else
-        {
-            var newData = GenerateNewUniqueLockData(category);
-            _roundKeyData[category] = newData;
-            return newData;
-        }
+
+        var newData = GenerateNewUniqueLockData(category);
+        _roundKeyData[category] = newData;
+        return newData;
     }
 
     private List<int> GenerateNewUniqueLockData(ProtoId<CP14LockCategoryPrototype> category)
     {
-        List<int> newKeyData = new List<int>();
+        List<int> newKeyData;
         var categoryData = _proto.Index(category);
-        var ready = false;
         var iteration = 0;
 
-        while (!ready)
+        while (true)
         {
             //Generate try
             newKeyData = new List<int>();
-            for (int i = 0; i < categoryData.Complexity; i++)
+            for (var i = 0; i < categoryData.Complexity; i++)
             {
                 newKeyData.Add(_random.Next(-SharedCP14LockKeySystem.DepthComplexity, SharedCP14LockKeySystem.DepthComplexity));
             }
 
-            //Identity Check shitcode
-            // На текущий момент он пытается сгенерировать уникальный код. Если он 100 раз не смог сгенерировать уникальный код, он выдаст последний сгенерированный неуникальный.
+            // Identity Check shit code
+            // It is currently trying to generate a unique code. If it fails to generate a unique code 100 times, it will output the last generated non-unique code.
             var unique = true;
             foreach (var pair in _roundKeyData)
             {
