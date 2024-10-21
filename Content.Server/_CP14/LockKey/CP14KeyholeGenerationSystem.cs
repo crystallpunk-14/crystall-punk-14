@@ -15,8 +15,6 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
 
     private Dictionary<ProtoId<CP14LockCategoryPrototype>, List<int>> _roundKeyData = new();
 
-    private const int DepthCompexity = 2;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -96,7 +94,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
             newKeyData = new List<int>();
             for (int i = 0; i < categoryData.Complexity; i++)
             {
-                newKeyData.Add(_random.Next(-DepthCompexity, DepthCompexity));
+                newKeyData.Add(_random.Next(-SharedCP14LockKeySystem.DepthComplexity, SharedCP14LockKeySystem.DepthComplexity));
             }
 
             //Identity Check shitcode

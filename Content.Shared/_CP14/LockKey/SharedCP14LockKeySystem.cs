@@ -1,41 +1,26 @@
-using System.Diagnostics.CodeAnalysis;
 using Content.Shared._CP14.LockKey.Components;
-using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Interaction;
 using Content.Shared.Lock;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.LockKey;
 
-/// <summary>
-///
-/// </summary>
 public sealed class SharedCP14LockKeySystem : EntitySystem
 {
-
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
-    private const int DepthComplexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
+    public const int DepthComplexity = 2; //TODO - fix this constant duplication from KeyholeGenerationSystem.cs
 
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<LockComponent, ContainerIsInsertingAttemptEvent>(OnLockInsertAttempt);
-
-        SubscribeLocalEvent<LockComponent, EntInsertedIntoContainerMessage>(OnLockInserted);
-        SubscribeLocalEvent<LockComponent, EntRemovedFromContainerMessage>(OnLockRemoved);
 
         SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
@@ -47,30 +32,32 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!args.CanReach || args.Target is not { Valid: true } target)
+        if (!args.CanReach || args.Target is not { Valid: true })
             return;
 
         if (!TryComp<StorageComponent>(keyring, out var storageComp))
             return;
 
-        if (TryComp<LockComponent>(args.Target, out var lockComp) &&
-            TryGetLockFromSlot(args.Target.Value, out var lockEnt))
+        if (!HasComp<LockComponent>(args.Target))
+            return;
+
+        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComp))
+            return;
+
+        foreach (var (key, _) in storageComp.StoredItems)
         {
+            if (!TryComp<CP14KeyComponent>(key, out var keyComp))
+                continue;
 
-            foreach (var item in storageComp.StoredItems)
-            {
-                if (!TryComp<CP14KeyComponent>(item.Key, out var keyComp))
-                    continue;
+            if (keyComp.LockShape != cp14LockComp.LockShape)
+                continue;
 
-                if (keyComp.LockShape != lockEnt.Value.Comp.LockShape)
-                    continue;
-
-                TryUseKeyOnLock(args.User, args.Target.Value, new Entity<CP14KeyComponent>(item.Key, keyComp), lockEnt.Value);
-                args.Handled = true;
-                return;
-            }
-            _popup.PopupEntity(Loc.GetString("cp14-lock-keyring-use-nofit"), args.Target.Value, args.User);
+            TryUseKeyOnLock(args.User, new Entity<CP14LockComponent>(args.Target.Value, cp14LockComp), new Entity<CP14KeyComponent>(key, keyComp));
+            args.Handled = true;
+            return;
         }
+
+        _popup.PopupEntity(Loc.GetString("cp14-lock-keyring-use-nofit"), args.Target.Value, args.User);
     }
 
     private void OnKeyInteract(Entity<CP14KeyComponent> key, ref AfterInteractEvent args)
@@ -81,15 +68,17 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!args.CanReach || args.Target is not { Valid: true } target)
             return;
 
-        if (TryComp<LockComponent>(args.Target, out var lockComp) &&
-            TryGetLockFromSlot(args.Target.Value, out var lockEnt))
-        {
-            TryUseKeyOnLock(args.User, args.Target.Value, key, new Entity<CP14LockComponent>(lockEnt.Value.Owner, lockEnt.Value.Comp));
-            args.Handled = true;
-        }
+        if (!HasComp<LockComponent>(args.Target))
+            return;
+
+        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComponent))
+            return;
+
+        TryUseKeyOnLock(args.User, new Entity<CP14LockComponent>(args.Target.Value, cp14LockComponent), key);
+        args.Handled = true;
     }
 
-    private void OnLockpickToLockVerb(Entity<CP14LockpickComponent> lockpick, ref GetVerbsEvent<UtilityVerb> args)
+    private void OnLockpickToLockVerb(Entity<CP14LockpickComponent> lockPick, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -97,23 +86,20 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!TryComp<LockComponent>(args.Target, out var lockComp) || !lockComp.Locked)
             return;
 
-        if (!TryGetLockFromSlot(args.Target, out var lockItem))
-            return;
-
-        if (!TryComp<CP14LockComponent>(lockItem, out var lockItemComp))
+        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComponent))
             return;
 
         var target = args.Target;
         var user = args.User;
 
-        for (int i = DepthComplexity; i >= -DepthComplexity; i--)
+        for (var i = DepthComplexity; i >= -DepthComplexity; i--)
         {
             var height = i;
             var verb = new UtilityVerb()
             {
                 Act = () =>
                 {
-                    TryHackDoorElement(user, target, lockpick, lockItemComp, lockComp, height);
+                    TryHackDoorElement(user, (target, cp14LockComponent), lockPick, lockComp, height);
                 },
                 Text = Loc.GetString("cp14-lock-verb-lockpick-use-text") + $" {height}",
                 Message = Loc.GetString("cp14-lock-verb-lockpick-use-message"),
@@ -126,57 +112,58 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         }
     }
 
-    private bool TryHackDoorElement(EntityUid user, EntityUid target, Entity<CP14LockpickComponent> lockpick,  CP14LockComponent lockEnt, LockComponent lockComp, int height)
+    private void TryHackDoorElement(EntityUid user,
+        Entity<CP14LockComponent> target,
+        Entity<CP14LockpickComponent> lockPick,
+        LockComponent lockComp,
+        int height)
     {
-        if (lockEnt.LockShape == null)
-            return true;
+        if (target.Comp.LockShape == null)
+            return;
 
-        if (height == lockEnt.LockShape[lockEnt.LockpickStatus]) //Success
+        if (height == target.Comp.LockShape[target.Comp.LockpickStatus]) //Success
         {
-            _audio.PlayPvs(lockpick.Comp.SuccessSound, target);
-            lockEnt.LockpickStatus++;
-            if (lockEnt.LockpickStatus >= lockEnt.LockShape.Count) // Final success
+            _audio.PlayPvs(lockPick.Comp.SuccessSound, target);
+            target.Comp.LockpickStatus++;
+            if (target.Comp.LockpickStatus >= target.Comp.LockShape.Count) // Final success
             {
                 if (lockComp.Locked)
                 {
                     _lock.TryUnlock(target, user, lockComp);
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-unlock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
-                    lockEnt.LockpickStatus = 0;
-                    return true;
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-unlock-lock", ("lock", MetaData(target).EntityName)), target, user);
+                    target.Comp.LockpickStatus = 0;
+                    return;
                 }
-                else
-                {
-                    _lock.TryLock(target, user, lockComp);
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-lock", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
-                    lockEnt.LockpickStatus = 0;
-                    return true;
-                }
+
+                _lock.TryLock(target, user, lockComp);
+                _popup.PopupEntity(Loc.GetString("cp14-lock-lock-lock", ("lock", MetaData(target).EntityName)), target, user);
+                target.Comp.LockpickStatus = 0;
+                return;
             }
             _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-success"), target, user);
-            return true;
         }
         else //Fail
         {
-            _audio.PlayPvs(lockpick.Comp.FailSound, target);
-            if (_random.Prob(lockEnt.LockPickDamageChance)) // Damage lockpick
+            _audio.PlayPvs(lockPick.Comp.FailSound, target);
+            if (_random.Prob(target.Comp.LockPickDamageChance)) // Damage lock pick
             {
-                lockpick.Comp.Health--;
-                if (lockpick.Comp.Health > 0)
+                lockPick.Comp.Health--;
+                if (lockPick.Comp.Health > 0)
                 {
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-failed-damage", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
-                } else
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-failed-damage", ("lock", MetaData(target).EntityName)), target, user);
+                }
+                else
                 {
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-failed-break", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
-                    QueueDel(lockpick);
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-failed-break", ("lock", MetaData(target).EntityName)), target, user);
+                    QueueDel(lockPick);
                 }
             }
             else
             {
-                _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-failed", ("lock", MetaData(lockEnt.Owner).EntityName)), target, user);
+                _popup.PopupEntity(Loc.GetString("cp14-lock-lockpick-failed", ("lock", MetaData(target).EntityName)), target, user);
             }
-            lockEnt.LockpickeddFailMarkup = true;
-            lockEnt.LockpickStatus = 0;
-            return false;
+            target.Comp.LockpickeddFailMarkup = true;
+            target.Comp.LockpickStatus = 0;
         }
     }
 
@@ -188,20 +175,17 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!TryComp<LockComponent>(args.Target, out var lockComp))
             return;
 
-        if (!TryGetLockFromSlot(args.Target, out var lockItem))
-            return;
-
-        if (!TryComp<CP14LockComponent>(lockItem, out var lockItemComp))
+        if (!TryComp<CP14LockComponent>(args.Target, out var cp14LockComponent))
             return;
 
         var target = args.Target;
         var user = args.User;
 
-        var verb = new UtilityVerb()
+        var verb = new UtilityVerb
         {
             Act = () =>
             {
-                TryUseKeyOnLock(user, target, key, new Entity<CP14LockComponent>(target, lockItemComp));
+                TryUseKeyOnLock(user, new Entity<CP14LockComponent>(target, cp14LockComponent), key);
             },
             IconEntity = GetNetEntity(key),
             Text = Loc.GetString(lockComp.Locked ? "cp14-lock-verb-use-key-text-open" : "cp14-lock-verb-use-key-text-close", ("item", MetaData(args.Target).EntityName)),
@@ -211,118 +195,33 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
-    private void OnLockInsertAttempt(Entity<LockComponent> lockSlot, ref ContainerIsInsertingAttemptEvent args)
-    {
-        if (!lockSlot.Comp.Initialized)
-            return;
-
-        if (args.Container.ID != lockSlot.Comp.LockSlotId)
-            return;
-
-        if (TryComp<CP14LockComponent>(args.EntityUid, out var lockComp))
-            return;
-
-        args.Cancel();
-
-        //if (lockComp.Locked)
-        //{
-        //    _popup.PopupEntity(Loc.GetString(
-        //        "cp-lock-lock-insert-fail-locked",
-        //        ("lock", MetaData(args.EntityUid).EntityName),
-        //        ("target", MetaData(lockSlot).EntityName)), lockSlot);
-        //    args.Cancel();
-        //}
-    }
-
-    private void OnLockInserted(Entity<LockComponent> lockSlot, ref EntInsertedIntoContainerMessage args)
-    {
-        if (!lockSlot.Comp.Initialized)
-            return;
-
-        if (args.Container.ID != lockSlot.Comp.LockSlotId)
-            return;
-
-        if (!TryComp<CP14LockComponent>(args.Entity, out var lockComp))
-            return;
-
-        _appearance.SetData(lockSlot, LockSlotVisuals.LockExist, true);
-    }
-
-    private void OnLockRemoved(Entity<LockComponent> lockSlot, ref EntRemovedFromContainerMessage args)
-    {
-        if (args.Container.ID != lockSlot.Comp.LockSlotId)
-            return;
-        _appearance.SetData(lockSlot, LockSlotVisuals.LockExist, false);
-    }
-
-    public bool TryGetLockFromSlot(EntityUid uid,
-    [NotNullWhen(true)] out Entity<CP14LockComponent>? lockEnt,
-    LockComponent? component = null)
-    {
-        if (!Resolve(uid, ref component, false))
-        {
-            lockEnt = null;
-            return false;
-        }
-
-        if (component.LockSlotId == null)
-        {
-            lockEnt = null;
-            return false;
-        }
-
-        if (_itemSlots.TryGetSlot(uid, component.LockSlotId, out ItemSlot? slot))
-        {
-            if (TryComp<CP14LockComponent>(slot.Item, out var lockComp))
-            {
-                lockEnt = new Entity<CP14LockComponent>(slot.Item.Value, lockComp);
-                return true;
-            }
-            else
-            {
-                lockEnt = null;
-                return false;
-            }
-        }
-
-        lockEnt = null;
-        return false;
-    }
-    private bool TryUseKeyOnLock(EntityUid user, EntityUid target, Entity<CP14KeyComponent> keyEnt, Entity<CP14LockComponent> lockEnt)
+    private void TryUseKeyOnLock(EntityUid user, Entity<CP14LockComponent> target, Entity<CP14KeyComponent> key)
     {
         if (!TryComp<LockComponent>(target, out var lockComp))
-            return false;
+            return;
 
-        var keyShape = keyEnt.Comp.LockShape;
-        var lockShape = lockEnt.Comp.LockShape;
+        var keyShape = key.Comp.LockShape;
+        var lockShape = target.Comp.LockShape;
 
         if (keyShape == null || lockShape == null)
-            return false;
+            return;
 
         if (keyShape == lockShape)
         {
             if (lockComp.Locked)
             {
                 if(_lock.TryUnlock(target, user))
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-unlock-lock", ("lock", MetaData(lockEnt).EntityName)), lockEnt, user);
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-unlock-lock", ("lock", MetaData(target).EntityName)), target, user);
             }
             else
             {
                 if (_lock.TryLock(target, user))
-                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-lock", ("lock", MetaData(lockEnt).EntityName)), lockEnt, user);
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-lock", ("lock", MetaData(target).EntityName)), target, user);
             }
-            return true;
         }
         else
         {
-            _popup.PopupEntity(Loc.GetString("cp14-lock-key-use-nofit"), lockEnt, user);
+            _popup.PopupEntity(Loc.GetString("cp14-lock-key-use-nofit"), target, user);
         }
-        return false;
     }
-}
-
-[Serializable, NetSerializable]
-public enum LockSlotVisuals : byte
-{
-    LockExist
 }
