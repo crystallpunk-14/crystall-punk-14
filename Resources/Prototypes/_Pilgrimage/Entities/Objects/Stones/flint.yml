@@ -1,0 +1,12 @@
+- type: entity
+  id: pa_flint
+  parent: BaseItem
+  name: flint
+  suffix: 1
+  description: A smooth dark gray stone with sharp edges
+  components:
+    - type: Item
+      size: Small
+    - type: Sprite
+      sprite: _PA/Objects/Stones/flint.rsi
+      state: icon
