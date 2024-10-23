@@ -80,7 +80,7 @@
   parent: CP14BaseJewelry
   id: CP14JewelryTopaz
   name: topaz
-  description: A beautiful sapphire stone that's worth a lot of money.
+  description: A beautiful topaz stone that's worth a lot of money.
   suffix: 10gp
   components:
   - type: CP14Currency
