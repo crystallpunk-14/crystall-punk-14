@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CLA",
+  "copyright": "Created by Prazat for CrystallPunk14",
+  "states": [
+    {
+      "name": "emerald1"
+    },
+    {
+      "name": "emerald2"
+    },
+    {
+      "name": "emerald3"
+    },
+    {
+      "name": "emerald4"
+    },
+    {
+      "name": "ruby1"
+    },
+    {
+      "name": "ruby2"
+    },
+    {
+      "name": "ruby3"
+    },
+    {
+      "name": "sapphire1"
+    },
+    {
+      "name": "sapphire2"
+    },
+    {
+      "name": "sapphire3"
+    },
+    {
+      "name": "topaz1"
+    }
+  ]
+}
