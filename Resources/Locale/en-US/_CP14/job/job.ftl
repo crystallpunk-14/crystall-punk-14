@@ -10,11 +10,11 @@ cp14-job-desc-guard-commander = The most dangerous person in the neighborhood. M
 
 # Bank
 
-cp14-job-name-quartermaster = Quartermaster
-cp14-job-desc-quartermaster = Responsible for material resources. In charge of the settlement's supplies and finances, directing resources to the mercenaries who do all the dirty work.
+cp14-job-name-quartermaster = Commandant
+cp14-job-desc-quartermaster = Control the economy of the settlement by trading with the Empire. Manage stocks and finances by directing resources to the laboring hands.
 
-cp14-job-name-merchant = Merchant
-cp14-job-desc-merchant = Make deals, give out deposits at interest, and do any other economic work that will enrich the settlement.
+cp14-job-name-merchant = Banker
+cp14-job-desc-merchant = Make deals, store entrusted valuables, issue interest-bearing deposits, and do any other economic work that will enrich your bank.
 
 # Mercenary
 
