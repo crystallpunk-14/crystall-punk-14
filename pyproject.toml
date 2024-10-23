@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pilgrimage"
+version = "0.1.0"
+description = ""
+authors = ["Rankstrail <rankstrail459@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.42"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

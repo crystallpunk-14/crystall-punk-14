@@ -1,0 +1,10 @@
+site_name: Pilgrimage
+theme:
+  name: material
+  palette:
+    primary: teal
+nav:
+  - Home: index.md
+  - Proposals:
+      - Survival: proposals/survival.md
+      - Loop: proposals/loop.md
