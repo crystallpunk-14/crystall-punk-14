@@ -26,6 +26,8 @@
   name: sandbox-title
   description: sandbox-description
   showInVote: true # For playtest period only
+  cP14Allowed: true
   rules:
     - Sandbox
     - CP14RoundObjectivesRule
+    - CP14BanditsRule

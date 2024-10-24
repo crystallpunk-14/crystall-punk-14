@@ -10,7 +10,6 @@
 - type: entity
   id: CP14RoundObjectivesRule
   parent: CP14BaseGameRule
-  categories: [ HideSpawnMenu ]
   components:
   - type: CP14CommonObjectivesRule
     departmentObjectives:
@@ -20,4 +19,25 @@
     departmentObjectives:
       CP14Mercenary:
       - CP14PersonalCurrencyCollectObjectiveGroup
-    
+
+- type: entity
+  id: CP14BanditsRule
+  parent: CP14BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 0 #Increase when bigger online
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ CP14Bandit ]
+      max: 8
+      playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - CP14MindRoleBandit
+      briefing:
+        text: cp14-roles-antag-bandit-briefing
+        color: "#cc3010"
+        sound: "/Audio/Ambience/Antag/traitor_start.ogg" #TODO
