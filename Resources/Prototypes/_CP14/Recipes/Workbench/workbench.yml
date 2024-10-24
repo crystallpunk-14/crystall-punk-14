@@ -9,6 +9,15 @@
   result: CP14Bucket
 
 - type: CP14Recipe
+  id: CP14BaseBarrel
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  stacks:
+    CP14WoodenPlanks: 5
+    CP14Nail: 2
+  result: CP14BaseBarrel
+
+- type: CP14Recipe
   id: CP14WoodenBeerMug
   tag: CP14RecipeWorkbench
   craftTime: 3
