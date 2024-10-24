@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "CrystallPunk14, by Nimfar11 (перерисовать)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "sword"
+    },
+    {
+      "name": "dagger"
+    },
+    {
+      "name": "dagger-equipped-BELT1",
+      "directions": 4
+    }
+  ]
+}
