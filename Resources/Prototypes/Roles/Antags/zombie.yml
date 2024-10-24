@@ -2,7 +2,7 @@
   id: InitialInfected
   name: roles-antag-initial-infected-name
   antagonist: true
-  setPreference: true
+  setPreference: false #CP14
   objective: roles-antag-initial-infected-objective
   guides: [ Zombies ]
 

@@ -1,0 +1,3 @@
+cp14-roles-antag-bandit-name = Bandit
+cp14-roles-antag-bandit-objective = Defy morality and the law. You need money. A lot of money, and you can earn it in any way you want, including robbery and murder.
+cp14-roles-antag-bandit-briefing = The cruel past has opened your eyes: the creatures around you are weaklings trying to cling to so-called “morality”. That word is foreign to you. You know that murder or robbery is just one of the tools to achieve your goals.

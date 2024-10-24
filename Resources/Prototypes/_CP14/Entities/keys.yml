@@ -28,6 +28,8 @@
   description: A thief's tool that, with proper skill and skill, allows you to pick any lock.
   categories: [ ForkFiltered ]
   components:
+  - type: Item
+    storedRotation: -90
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
     state: lockpick

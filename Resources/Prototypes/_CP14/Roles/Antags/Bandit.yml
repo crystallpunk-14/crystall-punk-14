@@ -1,0 +1,32 @@
+- type: antag
+  id: CP14Bandit
+  name: cp14-roles-antag-bandit-name
+  antagonist: true
+  setPreference: true
+  objective: cp14-roles-antag-bandit-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 # 1h
+  #guides: TODO
+
+- type: startingGear
+  id: CP14BanditGear
+  storage:
+    back:
+    - CP14BaseLockpick
+    - CP14BaseLockpick
+    - CP14BaseLockpick
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: CP14MindRoleBandit
+  categories: [ ForkFiltered ]
+  name: Bandit Role
+#  description: cp14-roles-antag-bandit-objective
+  components:
+  - type: MindRole
+    antagPrototype: CP14Bandit
+    exclusiveAntag: true
+  - type: CP14BanditRole
+  - type: RoleBriefing
+    briefing: cp14-roles-antag-bandit-briefing
