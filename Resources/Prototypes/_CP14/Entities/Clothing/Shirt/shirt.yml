@@ -2,6 +2,7 @@
   abstract: true
   parent: Clothing
   id: CP14ClothingShirtBase
+  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   categories: [ ForkFiltered ]
   components:
   - type: Clothing
@@ -16,7 +17,6 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonBlue
   name: cotton blue shirt
-  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Cotton/blue.rsi
@@ -27,7 +27,6 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonBlack
   name: cotton black shirt
-  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Cotton/black.rsi
@@ -38,7 +37,6 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonPurple
   name: cotton purple shirt
-  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Cotton/purple.rsi
@@ -49,7 +47,6 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonRed
   name: cotton red shirt
-  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Cotton/red.rsi
@@ -60,7 +57,6 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonWhite
   name: cotton white shirt
-  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Cotton/white.rsi
@@ -71,7 +67,6 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonYellow
   name: cotton yellow shirt
-  description: Pleasant to the touch material, in a comfortable loose shirt shape.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Cotton/yellow.rsi
