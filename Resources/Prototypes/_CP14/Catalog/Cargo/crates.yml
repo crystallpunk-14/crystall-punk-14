@@ -22,3 +22,23 @@
         prob: 0.2
       - id: ShardGlass #Lol. Something broken
         prob: 0.2
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledBureaucracy
+  suffix: Bureaucracy
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14PaperFolderBlue
+        amount: 5
+      - id: CP14PaperFolderRed
+        amount: 5
+      - id: CP14Paper
+        amount: 5
+      - id: CP14PenFeather
+        amount: 3
+        #Gift
+      - id: CP14Inkwell 
+        amount: 1
+        prob: 0.2
