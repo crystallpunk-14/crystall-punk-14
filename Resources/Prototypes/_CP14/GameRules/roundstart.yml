@@ -29,6 +29,7 @@
   - type: AntagSelection
     definitions:
     - prefRoles: [ CP14Bandit ]
+      startingGear: CP14BanditGear
       max: 8
       playerRatio: 10
       blacklist:
@@ -40,4 +41,4 @@
       briefing:
         text: cp14-roles-antag-bandit-briefing
         color: "#cc3010"
-        sound: "/Audio/Ambience/Antag/traitor_start.ogg" #TODO
+        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
