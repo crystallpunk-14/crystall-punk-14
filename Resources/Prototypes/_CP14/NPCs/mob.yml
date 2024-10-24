@@ -1,0 +1,83 @@
+- type: htnCompound
+  id: DefensibleAnimalCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: DefensibleCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: FoodCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: htnCompound
+  id: DefensibleCombatCompound
+  branches:
+    - preconditions:
+       - !type:ActiveHandComponentPrecondition
+          components:
+          # Just serializer things
+          - type: MeleeWeapon
+            damage:
+              types:
+                Blunt: 0
+          invert: true
+      tasks:
+        - !type:HTNCompoundTask
+          task: PickupMeleeCompound
+
+    - preconditions:
+      - !type:BuckledPrecondition
+        isBuckled: true
+      tasks:
+      - !type:HTNPrimitiveTask
+        operator: !type:UnbuckleOperator
+          shutdownState: TaskFinished
+
+    - preconditions:
+      - !type:InContainerPrecondition
+        isInContainer: true
+      tasks:
+      - !type:HTNCompoundTask
+        task: EscapeCompound
+
+    - preconditions:
+      - !type:PulledPrecondition
+        isPulled: true
+      tasks:
+      - !type:HTNPrimitiveTask
+        operator: !type:UnPullOperator
+          shutdownState: TaskFinished
+
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: DefensibleTargetCompound
+
+- type: htnCompound
+  id: DefensibleTargetCompound
+  branches:
+    - preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: Away
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyMeleeTargets
+              key: Target
