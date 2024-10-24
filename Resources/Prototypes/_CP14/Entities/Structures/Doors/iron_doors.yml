@@ -1,0 +1,44 @@
+- type: entity
+  id: CP14IronDoor
+  parent:
+  - CP14BaseDoor
+  name: iron door
+  description: Well, if there's a solid iron door, there must be something valuable behind it.
+  suffix: Opened
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Doors/iron_door.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Door
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  #- type: Construction
+  #  graph: CP14WoodenDoor
+  #  node: CP14WoodenDoor
+
+- type: entity
+  id: CP14IronDoorMirrored
+  parent: CP14IronDoor
+  suffix: Opened, Mirrored
+  components:
+  - type: Door
+    openSpriteState: open_mirrored
+    closedSpriteState: closed_mirrored
+  #- type: Construction
+  #  graph: CP14WoodenDoor
+  #  node: CP14WoodenDoorMirrored
