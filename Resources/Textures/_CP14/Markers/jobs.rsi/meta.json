@@ -8,13 +8,19 @@
   },
   "states": [
     {
-      "name": "green"
+      "name": "adventurer"
     },
     {
       "name": "alchemist"
     },
     {
-      "name": "adventurer"
+      "name": "banker"
+    },
+    {
+      "name": "commandant"
+    },
+    {
+      "name": "green"
     },
     {
       "name": "workman"

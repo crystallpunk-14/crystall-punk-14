@@ -46,7 +46,7 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
 [MeansImplicitUse]
 public abstract partial class CP14StoreBuyService
 {
-    public abstract void Buy(EntityManager entManager, EntityUid station);
+    public abstract void Buy(EntityManager entManager, Entity<CP14StationTravelingStoreShipTargetComponent> station);
 
     public abstract string? GetDescription(IPrototypeManager prototype, IEntityManager entSys);
 }

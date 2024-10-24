@@ -2,13 +2,13 @@
   id: CP14AlchemyNormalizer
   name: cp14-store-buy-alchemy-normalizer-name
   desc: cp14-store-buy-alchemy-normalizer-desc
-  code: ALH-NRML
+  code: NORMALIZER
   icon: 
     sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
     state: base
   price: 
     min: 400
-    max: 500
+    max: 800
   services:
   - !type:CP14BuyItemsService
     product:
@@ -18,7 +18,7 @@
   id: CP14AlchemyVials
   name: cp14-store-buy-alchemy-vials-name
   desc: cp14-store-buy-alchemy-vials-desc
-  code: ALH-VIAL
+  code: VIALS
   icon: 
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -29,3 +29,19 @@
   - !type:CP14BuyItemsService
     product:
       CP14BrassChestFilledAlchemy: 1
+
+- type: storePositionBuy
+  id: CP14Bureaucracy
+  name: cp14-store-buy-alchemy-bureaucracy-name
+  desc: cp14-store-buy-alchemy-bureaucracy-desc
+  code: PAPER
+  icon: 
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    state: folder_red
+  price: 
+    min: 200
+    max: 300
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledBureaucracy: 1

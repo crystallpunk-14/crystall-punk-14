@@ -10,11 +10,11 @@ cp14-job-desc-guard-commander = The most dangerous person in the neighborhood. M
 
 # Bank
 
-cp14-job-name-quartermaster = Commandant
-cp14-job-desc-quartermaster = Control the economy of the settlement by trading with the Empire. Manage stocks and finances by directing resources to the laboring hands.
+cp14-job-name-commandant = Commandant
+cp14-job-desc-commandant = Control the economy of the settlement by trading with the Empire. Manage stocks and finances by directing resources to the laboring hands.
 
-cp14-job-name-merchant = Banker
-cp14-job-desc-merchant = Make deals, store entrusted valuables, issue interest-bearing deposits, and do any other economic work that will enrich your bank.
+cp14-job-name-banker = Banker
+cp14-job-desc-banker = Make deals, store entrusted valuables, issue interest-bearing deposits, and do any other economic work that will enrich your bank.
 
 # Mercenary
 
