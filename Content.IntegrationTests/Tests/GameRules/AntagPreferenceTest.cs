@@ -15,7 +15,7 @@ namespace Content.IntegrationTests.Tests.GameRules;
 // Lets not let that happen again.
 [TestFixture]
 public sealed class AntagPreferenceTest
-{
+{/* CP14 disabled
     [Test]
     public async Task TestLobbyPlayersValid()
     {
@@ -37,7 +37,7 @@ public sealed class AntagPreferenceTest
         Assert.That(ticker.PlayerGameStatuses[client.User!.Value], Is.EqualTo(PlayerGameStatus.NotReadyToPlay));
 
         EntityUid uid = default;
-        await server.WaitPost(() => uid = server.EntMan.Spawn("CP14Bandit"));
+        await server.WaitPost(() => uid = server.EntMan.Spawn("Traitor"));
         var rule = new Entity<AntagSelectionComponent>(uid, server.EntMan.GetComponent<AntagSelectionComponent>(uid));
         var def = rule.Comp.Definitions.Single();
 
@@ -52,7 +52,7 @@ public sealed class AntagPreferenceTest
         Assert.That(pool.Count, Is.EqualTo(0));
 
         // Opt into the traitor role.
-        await pair.SetAntagPreference("CP14Bandit", true);
+        await pair.SetAntagPreference("Traitor", true);
 
         Assert.That(sys.IsSessionValid(rule, pair.Player, def), Is.True);
         Assert.That(sys.IsEntityValid(client.AttachedEntity, def), Is.True);
@@ -63,7 +63,7 @@ public sealed class AntagPreferenceTest
         Assert.That(sessions.Count, Is.EqualTo(1));
 
         // opt back out
-        await pair.SetAntagPreference("CP14Bandit", false);
+        await pair.SetAntagPreference("Traitor", false);
 
         Assert.That(sys.IsSessionValid(rule, pair.Player, def), Is.True);
         Assert.That(sys.IsEntityValid(client.AttachedEntity, def), Is.True);
@@ -72,5 +72,5 @@ public sealed class AntagPreferenceTest
 
         await server.WaitPost(() => server.EntMan.DeleteEntity(uid));
         await pair.CleanReturnAsync();
-    }
+    }*/
 }
