@@ -30,4 +30,5 @@
   cP14Allowed: true
   rules:
     - Sandbox
+    - CP14BanditsRule
     - CP14RoundObjectivesRule
