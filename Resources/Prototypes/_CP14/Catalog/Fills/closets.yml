@@ -6,6 +6,8 @@
   - type: StorageFill
     contents:
       - id: HandLabeler #TODO custom cp14 labeler
+      - id: Syringe #TODO custom cp14 syringe
+        amount: 3
       - id: CP14Cauldron
       - id: CP14Pestle
         amount: 2
