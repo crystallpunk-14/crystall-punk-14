@@ -71,27 +71,22 @@
 - type: roleLoadout
   id: JobCP14Commandant
   groups:
-  - CP14GeneralHead
+  - CP14CommandantHead
   - CP14GeneralEyes
-  - CP14GeneralMask
-  - CP14CaptainCloak #
-  - CP14GeneralGloves
-  - CP14GeneralShirt
-  - CP14GeneralPants
-  - CP14GeneralShoes
+  - CP14CommandantCloak
+  - CP14BankShirt
+  - CP14BankPants
+  - CP14BankShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
-  id: JobCP14Merchant
+  id: JobCP14Banker
   groups:
-  - CP14GeneralHead
+  - CP14BankHead
   - CP14GeneralEyes
-  - CP14GeneralMask
-  - CP14GeneralCloak 
-  - CP14GeneralGloves
-  - CP14GeneralShirt
-  - CP14GeneralPants
-  - CP14GeneralShoes
+  - CP14BankShirt
+  - CP14BankPants
+  - CP14BankShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets

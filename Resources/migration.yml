@@ -112,6 +112,9 @@ CP14SpawnPointHouseKeeper: CP14SpawnPointQuartermaster
 CP14WoodenDoorTavernDorms: null
 CP14WallWhitebrick: CP14WallMarbleBrick
 
+#2024-10-24
+CP14SpawnPointQuartermaster: CP14SpawnPointCommandant
+CP14SpawnPointMerchant: CP14SpawnPointBanker
 # <---> CrystallPunk migration zone end
 
 

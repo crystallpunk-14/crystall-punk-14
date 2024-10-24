@@ -5,9 +5,6 @@
   playTimeTracker: CP14JobBanker
   startingGear: CP14BankerGear
   icon: "CP14JobIconBanker"
-  requireAdminNotify: true
-  joinNotifyCrew: true
-  canBeAntag: true
   supervisors: cp14-job-supervisors-commandant
 
 - type: startingGear

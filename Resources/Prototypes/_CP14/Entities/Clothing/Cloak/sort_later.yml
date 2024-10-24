@@ -1,27 +1,13 @@
 - type: entity
-  abstract: true
-  parent: Clothing
-  id: CP14ClothingCloakBase
-  categories: [ ForkFiltered ]
-  components:
-  - type: Clothing
-    equipDelay: 1
-    unequipDelay: 1
-    slots:
-    - cloak
-  - type: Sprite
-    state: icon
-
-- type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakArmoredRed
   name: armored red cape
   description: Huge metal shoulder pads give extra protection from getting your head chopped off.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
+    sprite: _CP14/Clothing/Cloak/Armor/redguardarmor.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
+    sprite: _CP14/Clothing/Cloak/Armor/redguardarmor.rsi
   - type: Armor #same as regular sec armor
     modifiers:
       coefficients:
@@ -39,9 +25,9 @@
   description: Loose leather strips, still actually being clothing. 
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
+    sprite: _CP14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Cloak/blacksmith_apron.rsi
+    sprite: _CP14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
 
 - type: entity
   parent: 
@@ -52,77 +38,9 @@
   description: Cleanliness, orderliness and obedience are the main traits of a good maid.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Cloak/maid_apron.rsi
+    sprite: _CP14/Clothing/Cloak/Roles/General/maid_apron.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Cloak/maid_apron.rsi
-
-- type: entity
-  parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakFurcapeBlack
-  name: furcape
-  description: Brutal woolen wool cape.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/furcape2.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/furcape2.rsi
-
-- type: entity
-  parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakFurcapeBlue
-  name: furcape
-  description: Brutal woolen wool cape.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/furcape.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/furcape.rsi
-
-- type: entity
-  parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakSimpleWhite
-  name: white cloak
-  description: Long coat with a high collar.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Simple/white.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Simple/white.rsi
-
-- type: entity
-  parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakSimpleDarkBlue
-  name: dark cloak
-  description: Long coat with a high collar.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Simple/dark_blue.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Simple/dark_blue.rsi
-
-- type: entity
-  parent: 
-  - CP14ClothingCloakBase
-  - ClothingSlotBase
-  id: CP14ClothingCloakCaptainJacket
-  name: captain's jacket
-  description: the colors white and gold tell you that you're looking at a higher power.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/captain_jacket.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/captain_jacket.rsi
-
-- type: entity
-  parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakRitualAttireLeather
-  name: ritual attire with leather
-  description: The traditional attire of Southern mages who have undergone the ritual.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/cheetah_skin.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/cheetah_skin.rsi
+    sprite: _CP14/Clothing/Cloak/Roles/General/maid_apron.rsi
 
 - type: entity
   parent: CP14ClothingCloakBase

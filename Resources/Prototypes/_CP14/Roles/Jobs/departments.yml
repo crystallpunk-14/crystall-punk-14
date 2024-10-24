@@ -7,7 +7,7 @@
   color: "#3ec8fa"
   roles:
   - CP14Captain
-  - CP14Quartermaster
+  - CP14Commandant
   - CP14GuardCommander
 
 - type: department
