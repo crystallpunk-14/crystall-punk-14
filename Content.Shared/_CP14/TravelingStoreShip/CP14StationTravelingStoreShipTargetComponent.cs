@@ -51,5 +51,5 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     /// a queue of purchased items. The oldest purchases are taken out one by one to be unloaded onto the ship
     /// </summary>
     [DataField]
-    public Queue<KeyValuePair<CP14StoreBuyPositionPrototype, int>> BuyedQueue = new();
+    public Queue<EntProtoId> BuyedQueue = new();
 }

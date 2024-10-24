@@ -216,7 +216,14 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 continue;
 
             station.Comp.Balance -= request.Value;
-            station.Comp.BuyedQueue.Enqueue(request);
+
+            if (!_proto.TryIndex<CP14StoreBuyPositionPrototype>(request.Key, out var indexedBuyed))
+                continue;
+
+            foreach (var service in indexedBuyed.Services)
+            {
+                service.Buy(EntityManager, station);
+            }
         }
     }
 
@@ -242,7 +249,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 continue;
 
             var buyedThing = station.Comp.BuyedQueue.Dequeue();
-            Spawn(buyedThing.Key.ID, palletXform.Coordinates);
+            Spawn(buyedThing, palletXform.Coordinates);
         }
     }
 

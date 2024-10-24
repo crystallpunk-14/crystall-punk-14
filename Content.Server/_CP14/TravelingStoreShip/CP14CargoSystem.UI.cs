@@ -64,7 +64,7 @@ public sealed partial class CP14CargoSystem
                 desc.Append(service.GetDescription(_proto, EntityManager));
             }
 
-            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Key.Name)), ("code", "#" + proto.Key.Code)));
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Key.Name)), ("code", "[color=yellow][bold]#" + proto.Key.Code + "[/bold][/color]")));
 
             prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value));
         }
