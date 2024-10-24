@@ -17,3 +17,5 @@
     openDrawDepth: Mobs
   - type: Lock
     locked: false
+  - type: PlacementReplacement
+    key: walls
