@@ -182,6 +182,8 @@
     - id: CP14MobBoar
       maxAmount: 1
   - type: ReproductivePartner
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4.5
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: FactionException
