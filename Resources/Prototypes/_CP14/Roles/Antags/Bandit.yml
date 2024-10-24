@@ -20,6 +20,7 @@
 - type: entity
   parent: BaseMindRoleAntag
   id: CP14MindRoleBandit
+  categories: [ ForkFiltered ]
   name: Bandit Role
 #  description: cp14-roles-antag-bandit-objective
   components:
