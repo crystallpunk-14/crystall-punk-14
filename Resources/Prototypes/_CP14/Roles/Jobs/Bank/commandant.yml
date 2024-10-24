@@ -1,0 +1,17 @@
+- type: job
+  id: CP14Commandant
+  name: cp14-job-name-commandant
+  description: cp14-job-desc-commandant
+  playTimeTracker: CP14JobCommandant
+  startingGear: CP14CommandantGear
+  icon: "CP14JobIconCommandant"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  canBeAntag: false
+  supervisors: cp14-job-supervisors-command
+  weight: 2
+
+- type: startingGear
+  id: CP14CommandantGear
+  equipment:
+    belt1: CP14KeyRingInnkeeper

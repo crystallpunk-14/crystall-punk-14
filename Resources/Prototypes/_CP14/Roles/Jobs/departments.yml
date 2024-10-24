@@ -17,8 +17,8 @@
   weight: 9
   color: "#fadb3e"
   roles:
-  - CP14Quartermaster
-  - CP14Merchant
+  - CP14Commandant
+  - CP14Banker
 
 - type: department
   id: CP14Mercenary

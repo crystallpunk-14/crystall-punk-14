@@ -69,7 +69,7 @@
   - CP14GeneralTrinkets
 
 - type: roleLoadout
-  id: JobCP14Quartermaster
+  id: JobCP14Commandant
   groups:
   - CP14GeneralHead
   - CP14GeneralEyes
