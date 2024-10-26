@@ -16,6 +16,10 @@
   id: BankVault
   complexity: 7
 
+- type: CP14LockCategory
+  id: BankCommandantRoom
+  complexity: 7
+
 
 - type: CP14LockCategory
   id: BankSafe1

@@ -93,6 +93,16 @@
 
 - type: entity
   parent: CP14IronDoor
+  id: CP14IronDoorBankCommandantRoom
+  suffix: Bank Commandant room
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankCommandantRoom
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
   id: CP14IronDoorBankSafe2
   suffix: Bank Safe 2
   components:

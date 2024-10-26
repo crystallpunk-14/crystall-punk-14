@@ -23,7 +23,7 @@
       - sprite: /Textures/_CP14/Objects/Economy/jewelry.rsi
         state: ruby1
     - type: StealArea
-      range: 3
+      range: 2
     - type: CP14StealAreaAutoJobConnect
       departments:
       - CP14Bank
