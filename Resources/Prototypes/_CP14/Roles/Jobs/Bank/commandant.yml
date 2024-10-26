@@ -15,4 +15,4 @@
   id: CP14CommandantGear
   equipment:
     belt1: CP14WalletFilledTest
-    belt1: CP14KeyRingCommandant
+    keys: CP14KeyRingCommandant
