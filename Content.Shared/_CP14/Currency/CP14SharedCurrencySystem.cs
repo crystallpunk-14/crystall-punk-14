@@ -39,21 +39,21 @@ public partial class CP14SharedCurrencySystem : EntitySystem
 
     public int GetTotalCurrency(EntityUid uid)
     {
-        var total = 0;
-
-        var ev = new CP14GetCurrencyEvent(total);
+        var ev = new CP14GetCurrencyEvent();
         RaiseLocalEvent(uid, ev);
 
-        return ev.Currency;
+        return (int)(ev.Currency * ev.Multiplier);
     }
 }
 
 public sealed class CP14GetCurrencyEvent : EntityEventArgs
 {
     public int Currency;
+    public float Multiplier;
 
-    public CP14GetCurrencyEvent(int cur)
+    public CP14GetCurrencyEvent(int cur = 0, int mult = 1)
     {
         Currency = cur;
+        Multiplier = mult;
     }
 }

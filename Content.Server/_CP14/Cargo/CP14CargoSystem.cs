@@ -16,7 +16,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server._CP14.TravelingStoreShip;
+namespace Content.Server._CP14.Cargo;
 
 public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 {
