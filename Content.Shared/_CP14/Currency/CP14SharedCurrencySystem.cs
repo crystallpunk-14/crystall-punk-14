@@ -39,21 +39,21 @@ public partial class CP14SharedCurrencySystem : EntitySystem
 
     public int GetTotalCurrency(EntityUid uid)
     {
-        if (!TryComp<CP14CurrencyComponent>(uid, out var currency))
-            return 0;
+        var total = 0;
 
-        return GetTotalCurrency(uid, currency);
+        var ev = new CP14GetCurrencyEvent(total);
+        RaiseLocalEvent(uid, ev);
+
+        return ev.Currency;
     }
+}
 
-    public int GetTotalCurrency(EntityUid uid, CP14CurrencyComponent currency)
+public sealed class CP14GetCurrencyEvent : EntityEventArgs
+{
+    public int Currency;
+
+    public CP14GetCurrencyEvent(int cur)
     {
-        var total = currency.Currency;
-
-        if (TryComp<StackComponent>(uid, out var stack))
-        {
-            total *= stack.Count;
-        }
-
-        return total;
+        Currency = cur;
     }
 }
