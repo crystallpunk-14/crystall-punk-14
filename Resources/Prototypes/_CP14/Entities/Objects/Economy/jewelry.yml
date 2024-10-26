@@ -40,10 +40,10 @@
   id: CP14JewelryEmerald
   name: emerald
   description: A beautiful emerald stone that's worth a lot of money.
-  suffix: 20gp
+  suffix: 40gp
   components:
   - type: CP14Currency
-    currency: 2000
+    currency: 4000
   - type: Sprite
     layers:
       - state: emerald1

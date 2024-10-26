@@ -1,5 +1,5 @@
 
-namespace Content.Server._CP14.TravelingStoreShip;
+namespace Content.Server._CP14.Cargo;
 
 /// <summary>
 /// One of the possible points where an traveling store ship might land

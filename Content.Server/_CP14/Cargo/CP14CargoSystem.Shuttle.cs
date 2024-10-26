@@ -6,7 +6,7 @@ using Content.Shared._CP14.TravelingStoreShip.Prototype;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
-namespace Content.Server._CP14.TravelingStoreShip;
+namespace Content.Server._CP14.Cargo;
 
 public sealed partial class CP14CargoSystem
 {

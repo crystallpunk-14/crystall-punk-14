@@ -30,11 +30,25 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
 
         SubscribeLocalEvent<CP14CurrencyConverterComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<CP14CurrencyConverterComponent, GetVerbsEvent<Verb>>(OnGetVerb);
+
+        SubscribeLocalEvent<CP14CurrencyComponent, CP14GetCurrencyEvent>(OnGetCurrency);
+    }
+
+    private void OnGetCurrency(Entity<CP14CurrencyComponent> ent, ref CP14GetCurrencyEvent args)
+    {
+        var total = ent.Comp.Currency;
+
+        if (TryComp<StackComponent>(ent, out var stack))
+        {
+            total *= stack.Count;
+        }
+
+        args.Currency += total;
     }
 
     private void OnExamine(Entity<CP14CurrencyComponent> currency, ref ExaminedEvent args)
     {
-        var total = GetTotalCurrency(currency, currency.Comp);
+        var total = GetTotalCurrency(currency);
 
         var push = Loc.GetString("cp14-currency-examine-title");
         push += GetCurrencyPrettyString(total);

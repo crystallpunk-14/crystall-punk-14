@@ -73,7 +73,10 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
         objective = null;
 
         if (!_proto.HasIndex<EntityPrototype>(objectiveProto))
+        {
+            Log.Error($"Invalid objective prototype {objectiveProto}, don't found entity prototype");
             return false;
+        }
 
         objective = Spawn(objectiveProto);
 

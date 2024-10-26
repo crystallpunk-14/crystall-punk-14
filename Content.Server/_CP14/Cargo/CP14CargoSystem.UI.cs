@@ -2,7 +2,7 @@ using System.Text;
 using Content.Shared._CP14.TravelingStoreShip;
 using Content.Shared.UserInterface;
 
-namespace Content.Server._CP14.TravelingStoreShip;
+namespace Content.Server._CP14.Cargo;
 
 public sealed partial class CP14CargoSystem
 {

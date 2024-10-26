@@ -10,4 +10,5 @@
 - type: startingGear
   id: CP14BankerGear
   equipment:
-    belt1: CP14KeyRingInnkeeper
+    belt1: CP14WalletFilledTest
+    keys: CP14KeyRingBanker
