@@ -98,14 +98,14 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         {
             foreach (var buyPos in _buyProto)
             {
-                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random));
+                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
             }
         }
         if (_sellProto is not null)
         {
             foreach (var sellPos in _sellProto)
             {
-                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random));
+                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
             }
         }
     }
