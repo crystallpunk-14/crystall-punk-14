@@ -2,6 +2,45 @@
   id: Debug
   complexity: 10
 
+# Bank
+
+- type: CP14LockCategory
+  id: BankEntrance
+  complexity: 3
+
+- type: CP14LockCategory
+  id: BankStaff
+  complexity: 5
+
+- type: CP14LockCategory
+  id: BankVault
+  complexity: 7
+
+
+- type: CP14LockCategory
+  id: BankSafe1
+  complexity: 5
+
+- type: CP14LockCategory
+  id: BankSafe2
+  complexity: 5
+
+- type: CP14LockCategory
+  id: BankSafe3
+  complexity: 5
+
+- type: CP14LockCategory
+  id: BankSafe4
+  complexity: 5
+
+- type: CP14LockCategory
+  id: BankSafe5
+  complexity: 5
+
+- type: CP14LockCategory
+  id: BankSafe6
+  complexity: 5
+
 # Tavern 
 
 - type: CP14LockCategory
@@ -11,6 +50,7 @@
 - type: CP14LockCategory
   id: TavernStaff
   complexity: 5
+
 
 - type: CP14LockCategory
   id: TavernDorms1

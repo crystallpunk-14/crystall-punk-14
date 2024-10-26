@@ -45,3 +45,22 @@
   #- type: Construction
   #  graph: CP14WoodenDoor
   #  node: CP14WoodenDoorMirrored
+
+# Bank
+
+- type: entity
+  parent: CP14IronDoorWindowed
+  id: CP14IronDoorWindowedBankEntrance
+  suffix: Bank Entrance
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankEntrance
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorWindowedBankEntrance
+  - CP14IronDoorWindowedMirrored
+  id: CP14IronDoorWindowedMirroredBankEntrance
+  suffix: Bank Entrance, Mirrored
