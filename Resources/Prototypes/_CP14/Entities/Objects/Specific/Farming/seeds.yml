@@ -71,5 +71,5 @@
     layers:
     - state: bag
     - state: tomato
-  #- type: CP14Seed
-  #  plantProto: CP14PlantWheat
+  - type: CP14Seed
+    plantProto: CP14PlantTomatoes
