@@ -1,11 +1,11 @@
 - type: entity
-  id: CP14PlantCucumber
+  id: CP14PlantTomatoes
   parent: CP14GatherablePlantBase
-  name: cucumber
+  name: tomatoes
   description: OOO # TODO
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/cucumber.rsi
+    sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
     layers:
     - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
@@ -25,7 +25,7 @@
   - type: CP14PlantGatherable
     deleteAfterHarvest: false
     loot:
-      All: CP14GatherCucumber
+      All: CP14GatherTomatoes
   - type: Destructible
     thresholds:
       - trigger:
@@ -43,18 +43,18 @@
             acts: [ "Destruction" ]
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14PlantCucumberDeath:
+              CP14PlantTomatoesDeath:
                 min: 1
                 max: 1
 
 - type: entity
-  id: CP14PlantCucumberDeath
-  name: dead cucumber
+  id: CP14PlantTomatoesDeath
+  name: dead tomatoes
   description: The sad spectacle of wasted food.
   parent: CP14GatherableBase
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/cucumber.rsi
+    sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
     state: death
   - type: Gatherable
     toolWhitelist:
@@ -62,8 +62,8 @@
         - CP14HerbalGathering
 
 - type: entityLootTable
-  id: CP14GatherCucumber
+  id: CP14GatherTomatoes
   entries:
-  - id: CP14FoodCucumber
-    amount: 2
+  - id: CP14FoodTomatoes
+    amount: 1
     maxAmount: 3

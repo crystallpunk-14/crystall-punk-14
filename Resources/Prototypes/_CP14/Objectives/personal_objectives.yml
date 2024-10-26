@@ -41,7 +41,7 @@
   - type: Objective
     difficulty: 0.5
   - type: CP14CurrencyCollectCondition
-    currency: 650
+    currency: 750
 
 - type: entity
   parent: CP14BasePersonalCurrencyCollectObjective
@@ -50,11 +50,11 @@
   - type: Objective
     difficulty: 1
   - type: CP14CurrencyCollectCondition
-    currency: 800
+    currency: 1000
 
 - type: weightedRandom
   id: CP14PersonalCurrencyCollectObjectiveGroup
   weights:
-    CP14PersonalCurrencyCollectObjectiveSmall: 1
+    CP14PersonalCurrencyCollectObjectiveSmall: 0.25
     CP14PersonalCurrencyCollectObjectiveMedium: 0.5
-    CP14PersonalCurrencyCollectObjectiveBig: 0.25
+    CP14PersonalCurrencyCollectObjectiveBig: 1

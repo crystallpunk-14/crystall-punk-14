@@ -42,3 +42,21 @@
       - id: CP14Inkwell 
         amount: 1
         prob: 0.2
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledFarmSeeds
+  suffix: Farm Seeds
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14SeedWheat
+        amount: 3
+      - id: CP14SeedPumpkin
+        amount: 3
+      - id: CP14SeedCabbage
+        amount: 3
+      - id: CP14SeedCucumber
+        amount: 3
+      - id: CP14SeedTomato
+        amount: 3

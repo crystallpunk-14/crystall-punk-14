@@ -221,3 +221,74 @@
   - type: FoodSequenceElement
     entries:
       CP14Plate: CP14PlateCucumber
+
+- type: entity
+  id: CP14FoodTomatoes
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: tomatoes
+  description: A red, juicy tomato. You just want to throw it in someone's face!
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - tomato
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/tomatoes.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 3
+  - type: SliceableFood
+    count: 3
+    sliceTime: 1
+    slice: CP14FoodTomatoesSlice
+
+- type: entity
+  id: CP14FoodTomatoesSlice
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: tomato slice
+  description: Thin red tomato slice. It's no longer as nice to throw at people as whole tomatoes.
+  components: 
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - tomato
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/tomatoes.rsi
+    layers:
+      - state: slice1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          slice1: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3 # 1/3 pumpkin
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      CP14Plate: CP14PlateTomatoesSlice

@@ -1,5 +1,5 @@
 - type: storePositionBuy
-  id: CP14AlchemyNormalizer
+  id: AlchemyNormalizer
   name: cp14-store-buy-alchemy-normalizer-name
   desc: cp14-store-buy-alchemy-normalizer-desc
   code: NORMALIZER
@@ -15,7 +15,7 @@
       CP14AlchemyNormalizer: 1
 
 - type: storePositionBuy
-  id: CP14AlchemyVials
+  id: AlchemyVials
   name: cp14-store-buy-alchemy-vials-name
   desc: cp14-store-buy-alchemy-vials-desc
   code: VIALS
@@ -23,15 +23,15 @@
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
   price: 
-    min: 200
-    max: 300
+    min: 80
+    max: 180
   services:
   - !type:CP14BuyItemsService
     product:
       CP14BrassChestFilledAlchemy: 1
 
 - type: storePositionBuy
-  id: CP14Bureaucracy
+  id: Bureaucracy
   name: cp14-store-buy-alchemy-bureaucracy-name
   desc: cp14-store-buy-alchemy-bureaucracy-desc
   code: PAPER
@@ -39,9 +39,25 @@
     sprite: _CP14/Objects/Bureaucracy/paper.rsi
     state: folder_red
   price: 
-    min: 200
-    max: 300
+    min: 50
+    max: 150
   services:
   - !type:CP14BuyItemsService
     product:
       CP14BrassChestFilledBureaucracy: 1
+
+- type: storePositionBuy
+  id: FarmSeeds
+  name: cp14-store-buy-alchemy-farm-seeds-name
+  desc: cp14-store-buy-alchemy-farm-seeds-desc
+  code: SEEDS
+  icon: 
+    sprite: _CP14/Objects/Specific/Farming/seeds.rsi
+    state: seeds
+  price: 
+    min: 30
+    max: 100
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledFarmSeeds: 1
