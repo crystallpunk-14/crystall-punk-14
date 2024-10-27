@@ -147,7 +147,9 @@
     bloodMaxVolume: 150
   - type: Grammar
     attributes:
-      gender: female
+      gender: epicene
+  - type: ReplacementAccent
+    accent: pig
 
 - type: entity
   id: CP14MobBoar
