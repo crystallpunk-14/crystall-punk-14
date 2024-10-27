@@ -28,6 +28,8 @@
   description: A thief's tool that, with proper skill and skill, allows you to pick any lock.
   categories: [ ForkFiltered ]
   components:
+  - type: Item
+    storedRotation: -90
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
     state: lockpick
@@ -114,3 +116,103 @@
     state: key8
   - type: CP14Key
     autoGenerateShape: Alchemy
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankEntrance
+  name: bank entrance key
+  components:
+  - type: Sprite
+    state: key9
+  - type: CP14Key
+    autoGenerateShape: BankEntrance
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankStaff
+  name: bank staff key
+  components:
+  - type: Sprite
+    state: key10
+  - type: CP14Key
+    autoGenerateShape: BankStaff
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankVault
+  name: bank vault key
+  components:
+  - type: Sprite
+    state: key11
+  - type: CP14Key
+    autoGenerateShape: BankVault
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankCommandantRoom
+  name: bank commandant room key
+  components:
+  - type: Sprite
+    state: key11
+  - type: CP14Key
+    autoGenerateShape: BankCommandantRoom
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankSafe1
+  name: bank safe 1 key
+  components:
+  - type: Sprite
+    state: key12
+  - type: CP14Key
+    autoGenerateShape: BankSafe1
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankSafe2
+  name: bank safe 2 key
+  components:
+  - type: Sprite
+    state: key12
+  - type: CP14Key
+    autoGenerateShape: BankSafe2
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankSafe3
+  name: bank safe 3 key
+  components:
+  - type: Sprite
+    state: key12
+  - type: CP14Key
+    autoGenerateShape: BankSafe3
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankSafe4
+  name: bank safe 4 key
+  components:
+  - type: Sprite
+    state: key12
+  - type: CP14Key
+    autoGenerateShape: BankSafe4
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankSafe5
+  name: bank safe 5 key
+  components:
+  - type: Sprite
+    state: key12
+  - type: CP14Key
+    autoGenerateShape: BankSafe5
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBankSafe6
+  name: bank safe 6 key
+  components:
+  - type: Sprite
+    state: key12
+  - type: CP14Key
+    autoGenerateShape: BankSafe6

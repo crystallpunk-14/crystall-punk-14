@@ -8,3 +8,6 @@ cp14-store-sell-ironbar-desc = Iron is an indispensable material for the product
 
 cp14-store-sell-copperbar-name = 10 copper bars
 cp14-store-sell-copperbar-desc = We're waiting for a description from the lorekeepers.
+
+cp14-store-sell-wheat-name = 10 sheaves of wheat
+cp14-store-sell-wheat-desc = Stockpile food for winter for livestock.

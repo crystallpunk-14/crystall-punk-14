@@ -34,3 +34,30 @@
         prob: 0.3
       - id: CP14VialTinyLumiMushroom
         prob: 0.3
+
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetBankerFilled
+  suffix: Banker, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14PaperFolderRed
+        amount: 2
+      - id: CP14PaperFolderBlue
+        amount: 2
+      - id: CP14PaperFolderRed
+        prob: 0.5
+      - id: CP14PaperFolderBlue
+        prob: 0.5
+      - id: CP14Paper
+        amount: 2
+      - id: CP14PenFeather
+        amount: 2
+      - id: CP14Inkwell
+        prob: 0.2
+      - id: CP14CopperCoin5
+        prob: 0.2
+      - id: CP14SilverCoin1
+        prob: 0.2

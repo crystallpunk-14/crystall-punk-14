@@ -42,3 +42,111 @@
   #- type: Construction
   #  graph: CP14WoodenDoor
   #  node: CP14WoodenDoorMirrored
+
+# Bank
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankStaff
+  suffix: Bank Staff
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankStaff
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorBankStaff
+  - CP14IronDoorMirrored
+  id: CP14IronDoorMirroredBankStaff
+  suffix: Bank Staff, Mirrored
+
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankVault
+  suffix: Bank Vault
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankVault
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorBankVault
+  - CP14IronDoorMirrored
+  id: CP14IronDoorMirroredBankVault
+  suffix: Bank Vault, Mirrored
+
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankSafe1
+  suffix: Bank Safe 1
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankSafe1
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankCommandantRoom
+  suffix: Bank Commandant room
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankCommandantRoom
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankSafe2
+  suffix: Bank Safe 2
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankSafe2
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankSafe3
+  suffix: Bank Safe 3
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankSafe3
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankSafe4
+  suffix: Bank Safe 4
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankSafe4
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankSafe5
+  suffix: Bank Safe 5
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankSafe5
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBankSafe6
+  suffix: Bank Safe 6
+  components:
+  - type: CP14Lock
+    autoGenerateShape: BankSafe6
+  - type: Lock
+    locked: true

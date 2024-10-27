@@ -60,3 +60,37 @@
   - type: StorageFill
     contents:
     - id: CP14KeyAlchemy
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingBanker
+  suffix: Banker
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyBankEntrance
+    - id: CP14KeyBankStaff
+    - id: CP14KeyBankSafe1
+    - id: CP14KeyBankSafe2
+    - id: CP14KeyBankSafe3
+    - id: CP14KeyBankSafe4
+    - id: CP14KeyBankSafe5
+    - id: CP14KeyBankSafe6
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingCommandant
+  suffix: Commandant
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyBankCommandantRoom
+    - id: CP14KeyBankVault
+    - id: CP14KeyBankEntrance
+    - id: CP14KeyBankStaff
+    - id: CP14KeyBankSafe1
+    - id: CP14KeyBankSafe2
+    - id: CP14KeyBankSafe3
+    - id: CP14KeyBankSafe4
+    - id: CP14KeyBankSafe5
+    - id: CP14KeyBankSafe6

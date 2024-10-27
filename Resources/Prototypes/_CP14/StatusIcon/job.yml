@@ -47,16 +47,16 @@
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconQuartermaster
+  id: CP14JobIconCommandant
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Quartermaster
-  jobName: cp14-job-name-quartermaster
+    state: Commandant
+  jobName: cp14-job-name-commandant
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconMerchant
+  id: CP14JobIconBanker
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Merchant
-  jobName: cp14-job-name-merchant
+    state: Banker
+  jobName: cp14-job-name-banker

@@ -27,10 +27,10 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     public TimeSpan NextTravelTime = TimeSpan.Zero;
 
     [DataField]
-    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(1);
+    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(6);
 
     [DataField]
-    public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(1);
+    public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(4);
 
     [DataField]
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentBuyPositions = new(); //Proto, price
@@ -51,5 +51,5 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     /// a queue of purchased items. The oldest purchases are taken out one by one to be unloaded onto the ship
     /// </summary>
     [DataField]
-    public Queue<KeyValuePair<CP14StoreBuyPositionPrototype, int>> BuyedQueue = new();
+    public Queue<EntProtoId> BuyedQueue = new();
 }

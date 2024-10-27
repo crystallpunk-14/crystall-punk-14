@@ -1,0 +1,29 @@
+- type: entity
+  id: CP14ExpeditionShipTargetPoint
+  parent: MarkerBase
+  name: Expedition ship target point
+  description: One of the possible arrival points of a ship carrying players
+  categories: [ ForkFiltered ]
+  components:
+    - type: CP14ExpeditionShipFTLTarget
+    - type: Sprite
+      state: pink
+
+- type: entity
+  id: CP14BankStorageMarker
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  name: Bank vault marker
+  suffix: ONCE ON MAP
+  description: Marks the specified area as a “bank vault” to credit all bankers with treasure storage goals
+  components:
+    - type: Sprite
+      layers:
+      - state: pink
+      - sprite: /Textures/_CP14/Objects/Economy/jewelry.rsi
+        state: ruby1
+    - type: StealArea
+      range: 2
+    - type: CP14StealAreaAutoJobConnect
+      departments:
+      - CP14Bank

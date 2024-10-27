@@ -5,6 +5,7 @@
   components:
   - type: Objective
     issuer: cp14-objective-issuer-town
+    difficulty: 1
 
 
 # Send group
@@ -13,13 +14,13 @@
   parent: CP14BaseTownObjective
   id: CP14BaseTownSendObjective
   components:
-  - type: Objective
   - type: CP14TownSendCondition
     minCollectionSize: 5
     maxCollectionSize: 10
     objectiveText: cp14-objective-town-send-title
     descriptionText: cp14-objective-town-send-desc
     descriptionMultiplyText: cp14-objective-town-send-multiply-desc
+  - type: Objective
 
 - type: entity
   parent: CP14BaseTownSendObjective
@@ -29,10 +30,51 @@
     collectGroup: CP14Gold
     minCollectionSize: 200
     maxCollectionSize: 250
-  - type: Objective
-    difficulty: 1
 
 - type: weightedRandom
   id: CP14TownSendObjectiveGroup
   weights:
     CP14TownSendGoldObjective: 1
+
+
+#Bank money
+- type: entity
+  abstract: true
+  parent: CP14BaseTownObjective
+  id: CP14BaseTownBankEarningObjective
+  components:
+  - type: CP14CurrencyStoredCondition
+    objectiveText: cp14-objective-bank-earning-title
+    objectiveDescription: cp14-objective-bank-earning-desc
+    objectiveSprite:
+      sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
+      state: coin10
+  - type: Objective
+
+- type: entity
+  parent: CP14BaseTownBankEarningObjective
+  id: CP14TownBankEarningObjectiveSmall
+  components:
+  - type: CP14CurrencyStoredCondition
+    currency: 10000
+
+- type: entity
+  parent: CP14BaseTownBankEarningObjective
+  id: CP14TownBankEarningObjectiveMedium
+  components:
+  - type: CP14CurrencyStoredCondition
+    currency: 20000
+
+- type: entity
+  parent: CP14BaseTownBankEarningObjective
+  id: CP14TownBankEarningObjectiveBig
+  components:
+  - type: CP14CurrencyStoredCondition
+    currency: 30000
+
+- type: weightedRandom
+  id: CP14BankEarningObjectiveGroup
+  weights:
+    CP14TownBankEarningObjectiveSmall: 1
+    CP14TownBankEarningObjectiveMedium: 0.6
+    CP14TownBankEarningObjectiveBig: 0.3

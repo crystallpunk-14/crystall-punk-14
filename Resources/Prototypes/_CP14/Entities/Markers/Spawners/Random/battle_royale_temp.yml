@@ -51,7 +51,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
+      - sprite: _CP14/Clothing/Cloak/Armor/redguardarmor.rsi
         state: icon
   - type: RandomSpawner
     prototypes:

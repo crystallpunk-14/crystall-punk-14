@@ -8,11 +8,14 @@ public sealed partial class CP14BuyItemsService : CP14StoreBuyService
     [DataField(required: true)]
     public Dictionary<EntProtoId, int> Product = new();
 
-    public override void Buy(EntityManager entManager, EntityUid station)
+    public override void Buy(EntityManager entManager, Entity<CP14StationTravelingStoreShipTargetComponent> station)
     {
-        foreach (var pai in Product)
+        foreach (var (protoId, count) in Product)
         {
-            Logger.Debug($"куплено: {pai.Key} x{pai.Value}");
+            for (var i = 0; i < count; i++)
+            {
+                station.Comp.BuyedQueue.Enqueue(protoId);
+            }
         }
     }
 
@@ -20,12 +23,12 @@ public sealed partial class CP14BuyItemsService : CP14StoreBuyService
     {
         var sb = new StringBuilder();
         sb.Append(Loc.GetString("cp14-store-service-buy-items") + " \n");
-        foreach (var pai in Product)
+        foreach (var (protoId, count) in Product)
         {
-            if (!prototype.TryIndex(pai.Key, out var indexedProto))
+            if (!prototype.TryIndex(protoId, out var indexedProto))
                 continue;
 
-            sb.Append($"{indexedProto.Name} x{pai.Value} \n");
+            sb.Append($"{indexedProto.Name} x{count} \n");
         }
         return sb.ToString();
     }
