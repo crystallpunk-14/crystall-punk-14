@@ -85,6 +85,7 @@
         variation: 0.125
   - type: SoundWhileAlive
   - type: Strippable
+  - type: Climbing
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:
