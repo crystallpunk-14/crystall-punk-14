@@ -22,6 +22,8 @@
     North: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_N.png
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   isSubfloor: false
   footstepSounds:
     collection: FootstepWood
@@ -52,6 +54,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -81,6 +85,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -110,6 +116,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -141,6 +149,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -170,6 +179,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -199,6 +209,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -228,6 +239,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -263,6 +275,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -292,6 +306,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -321,6 +337,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -350,6 +368,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -381,6 +401,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -410,6 +431,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -439,6 +461,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -468,6 +491,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -503,6 +527,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -532,6 +558,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -561,6 +589,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -590,6 +620,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -621,6 +653,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -650,6 +683,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -679,6 +713,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -708,6 +743,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -743,6 +779,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -772,6 +810,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -801,6 +841,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -830,6 +872,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -861,6 +905,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -890,6 +935,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -919,6 +965,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -948,6 +995,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -983,6 +1031,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1012,6 +1062,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1044,6 +1096,8 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   weather: false
   burnedTile: CP14FloorWoodPlanksCruciformBurned
     
@@ -1070,6 +1124,8 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14WoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1101,6 +1157,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1130,6 +1187,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1159,6 +1217,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1188,6 +1247,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1216,6 +1276,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/Burned/double_edge_burned_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1239,6 +1300,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/Burned/double_edge_burned_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1262,6 +1324,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/Burned/double_edge_burned_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1285,6 +1348,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/Burned/double_edge_burned_W.png
   baseTurf: CP14FloorFoundation
   isSubfloor: false
+  deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
