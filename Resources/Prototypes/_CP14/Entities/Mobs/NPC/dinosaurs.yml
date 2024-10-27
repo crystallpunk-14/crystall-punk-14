@@ -58,10 +58,12 @@
       types:
         Slash: 8
         Piercing: 2
+        Structural: 3
   - type: MovementSpeedModifier
     baseWalkSpeed: 5
     baseSprintSpeed: 6
     acceleration: 16.0
+  - type: Climbing
   - type: DamageStateVisuals
     states:
       Alive:
@@ -76,7 +78,7 @@
     bloodMaxVolume: 200
   - type: Grammar
     attributes:
-      gender: female
+      gender: epicene
   - type: SpamEmitSound
     minInterval: 20
     maxInterval: 40
