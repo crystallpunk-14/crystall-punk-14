@@ -236,7 +236,6 @@ namespace Content.IntegrationTests.Tests
 
                     // Test all availableJobs have spawnPoints
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
-                    /*
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
                     var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
 
@@ -253,7 +252,6 @@ namespace Content.IntegrationTests.Tests
                     jobs.ExceptWith(spawnPoints);
 
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
-                    */ //CP14 disable job spawners test
                 }
 
                 try

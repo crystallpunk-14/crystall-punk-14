@@ -11,7 +11,7 @@
           mapNameTemplate: "Meteor Arena"
         - type: StationJobs
           availableJobs:
-            CP14Captain: [ -1, -1 ]
+            CP14Adventurer: [ -1, -1 ]
 
 - type: gameMap
   id: AlchemyTest
@@ -35,7 +35,7 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
-            CP14Captain: [1, 1]
+            #CP14Captain: [1, 1]
 
 - type: gameMap
   id: BattleRoyale
@@ -54,7 +54,7 @@
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ -1, -1 ]
-            CP14Captain: [1, 1]
+            #CP14Captain: [1, 1]
         - type: StationBiome
           biome: CP14GrassFill
 
@@ -76,7 +76,7 @@
             CP14Adventurer: [ -1, -1 ]
             CP14Alchemist: [ 2, 3 ]
             CP14Innkeeper: [ 3, 4 ]
-            CP14Captain: [1, 1]
+            #CP14Captain: [1, 1]
             CP14Commandant: [1, 1]
             CP14Banker: [3, 4]
             #CP14GuardCommander: [1, 1]
