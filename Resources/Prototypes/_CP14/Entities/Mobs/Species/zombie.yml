@@ -74,6 +74,7 @@
     damage:
       types:
         Slash: 4
+        Structural: 2
   - type: Pullable
   - type: GhostTakeoverAvailable
   - type: SpamEmitSound
@@ -86,6 +87,8 @@
   - type: SoundWhileAlive
   - type: Strippable
   - type: Climbing
+  - type: ReplacementAccent
+    accent: zombie
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:
