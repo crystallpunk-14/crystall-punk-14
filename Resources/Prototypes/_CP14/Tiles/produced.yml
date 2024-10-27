@@ -2,8 +2,8 @@
   editorHidden: false
   id: CP14FloorFoundation
   name: cp14-tiles-foundation
-  sprite: /Textures/_CP14/Tiles/Foundation/foundation.png
-  variants: 6
+  sprite: /Textures/_CP14/Tiles/foundation.png
+  variants: 14
   placementVariants:
   - 1.0
   - 1.0
@@ -11,22 +11,21 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 99
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/Foundation/single_edge.png
-    NorthEast: /Textures/_CP14/Tiles/Foundation/single_edge.png
-    NorthWest: /Textures/_CP14/Tiles/Foundation/single_edge.png
-    SouthWest: /Textures/_CP14/Tiles/Foundation/single_edge.png
-    South: /Textures/_CP14/Tiles/Foundation/double_edge_down.png
-    East: /Textures/_CP14/Tiles/Foundation/double_edge_right.png
-    North: /Textures/_CP14/Tiles/Foundation/double_edge_top.png
-    West: /Textures/_CP14/Tiles/Foundation/double_edge_left.png
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 99 #Dont have edges, but block natural ones
   baseTurf: CP14FloorBase
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
-  weather: false
+  weather: true
 
 - type: tile
   editorHidden: false
