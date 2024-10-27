@@ -9,10 +9,10 @@
         - to: CP14SeedbedWooden
           steps:
             - material: CP14Dirt
-              amount: 2
+              amount: 1
               doAfter: 2
             - material: CP14WoodenPlanks
-              amount: 2
+              amount: 1
               doAfter: 2
               
     - node: CP14SeedbedWooden
@@ -25,8 +25,8 @@
           completed:
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
-              amount: 2
+              amount: 1
             - !type:SpawnPrototype
               prototype: CP14DirtBlock1
-              amount: 2
+              amount: 1
             - !type:DeleteEntity {}
