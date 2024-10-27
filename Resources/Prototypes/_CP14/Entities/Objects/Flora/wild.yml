@@ -18,7 +18,7 @@
   description: Scarlet flowers growing where blood has been spilled.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Flora/Flowers/red_rose.rsi
+    sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
     layers:
       - state: base1
         map: ["random"]
@@ -245,3 +245,31 @@
         - ReagentId: CP14BlueAmanita
           Quantity: 5
   
+- type: entity
+  id: CP14Dayflin
+  parent: CP14WildProduceBase
+  name: yellow dayflin
+  description: A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14YellowDayflinPulp
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14YellowDayflinPulp
+          Quantity: 4

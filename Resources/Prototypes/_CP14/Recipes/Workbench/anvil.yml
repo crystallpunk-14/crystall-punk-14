@@ -80,6 +80,14 @@
   result: CP14BaseSword
 
 - type: CP14Recipe
+  id: CP14BaseCrowbar
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 2
+  result: CP14BaseCrowbar
+
+- type: CP14Recipe
   id: CP14BaseTwoHandedSword
   tag: CP14RecipeAnvil
   craftTime: 4
