@@ -3,6 +3,7 @@
   parent: ProduceBase
   name: wheat bushel
   description: You have the choice of either planting the grains again or grinding them into flour.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
@@ -17,3 +18,6 @@
     - random:
         base1: ""
         base2: ""
+  - type: Tag
+    tags:
+    - CP14Wheat

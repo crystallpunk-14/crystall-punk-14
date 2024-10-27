@@ -30,11 +30,25 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
 
         SubscribeLocalEvent<CP14CurrencyConverterComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<CP14CurrencyConverterComponent, GetVerbsEvent<Verb>>(OnGetVerb);
+
+        SubscribeLocalEvent<CP14CurrencyComponent, CP14GetCurrencyEvent>(OnGetCurrency);
+    }
+
+    private void OnGetCurrency(Entity<CP14CurrencyComponent> ent, ref CP14GetCurrencyEvent args)
+    {
+        var total = ent.Comp.Currency;
+
+        if (TryComp<StackComponent>(ent, out var stack))
+        {
+            total *= stack.Count;
+        }
+
+        args.Currency += total;
     }
 
     private void OnExamine(Entity<CP14CurrencyComponent> currency, ref ExaminedEvent args)
     {
-        var total = GetTotalCurrency(currency, currency.Comp);
+        var total = GetTotalCurrency(currency);
 
         var push = Loc.GetString("cp14-currency-examine-title");
         push += GetCurrencyPrettyString(total);
@@ -149,11 +163,6 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         args.Verbs.Add(platinumVerb);
     }
 
-    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, EntityCoordinates coordinates)
-    {
-        return GenerateMoney(currencyType, target, coordinates, out _);
-    }
-
     public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, EntityCoordinates coordinates, out int remainder)
     {
         remainder = target;
@@ -189,18 +198,18 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         spawns.Add(ent);
         remainder -= singleCurrency;
 
-        if (TryComp<StackComponent>(ent, out var stack))
+        if (TryComp<StackComponent>(ent, out var stack) && _proto.TryIndex<StackPrototype>(stack.StackTypeId, out var indexedStack))
         {
-            AdjustStack(ent, stack, singleCurrency, ref remainder);
+            AdjustStack(ent, stack, indexedStack, singleCurrency, ref remainder);
         }
 
         return false;
     }
 
-    private void AdjustStack(EntityUid ent, StackComponent stack, float singleCurrency, ref int remainder)
+    private void AdjustStack(EntityUid ent, StackComponent stack, StackPrototype stackProto, float singleCurrency, ref int remainder)
     {
         var singleStackCurrency = singleCurrency / stack.Count;
-        var stackLeftSpace = stack.MaxCountOverride - stack.Count;
+        var stackLeftSpace = stackProto.MaxCount - stack.Count;
 
         if (stackLeftSpace is not null)
         {

@@ -2,6 +2,7 @@
   parent: FoodProduceBase
   id: CP14WildProduceBase
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Tag
     tags:
@@ -33,14 +34,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14BloodFlowerSap
-        Quantity: 5
+        Quantity: 12
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 8
+        maxVol: 14
         reagents:
         - ReagentId: CP14BloodFlowerSap
-          Quantity: 5
+          Quantity: 12
 
 - type: entity
   id: CP14AgaricMushroom
@@ -69,7 +70,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 4
         reagents:
         - ReagentId: CP14AgaricMushroom
           Quantity: 3
@@ -98,14 +99,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14ChromiumSlime
-        Quantity: 7
+        Quantity: 4
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 5
         reagents:
         - ReagentId: CP14ChromiumSlime
-          Quantity: 7
+          Quantity: 4
   - type: FoodSequenceElement
     entries:
       CP14Plate: CP14PlateChromiumSlime
@@ -135,14 +136,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14WildSageSap
-        Quantity: 8
+        Quantity: 15
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 17
         reagents:
         - ReagentId: CP14WildSageSap
-          Quantity: 8
+          Quantity: 15
   - type: FoodSequenceElement
     entries:
       CP14Plate: CP14PlateWildSage
@@ -152,6 +153,7 @@
   parent: BaseItem
   name: rough quartz
   description: a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.
+  categories: [ ForkFiltered ]
   components:
   - type: Tag
     tags:
@@ -174,7 +176,7 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14GroundQuartz
-        Quantity: 3
+        Quantity: 7
 
 - type: entity
   id: CP14LumiMushroom
@@ -234,12 +236,12 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14BlueAmanita
-        Quantity: 4
+        Quantity: 5
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 6
         reagents:
         - ReagentId: CP14BlueAmanita
-          Quantity: 4
+          Quantity: 5
   

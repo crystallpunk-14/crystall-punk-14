@@ -1,0 +1,35 @@
+- type: entity
+  parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetAlchemist
+  suffix: Alchemist, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ClothingEyesAlchemyGlasses
+        prob: 0.5
+      - id: CP14ClothingEyesAlchemyMonocle
+        prob: 0.2
+      - id: CP14ClothingCloakAlchemist
+        prob: 0.6
+      - id: CP14ClothingHeadAlchemistBeret
+        prob: 0.6
+      - id: CP14ClothingHeadAlchemistBandana
+        prob: 0.6
+
+- type: entity
+  parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetBanker
+  suffix: Banker, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ClothingHeadBowler
+        prob: 0.5
+      - id: CP14ClothingPantsAristocratic
+        prob: 0.5
+      - id: CP14ClothingShirtBanker
+        prob: 0.5
+      - id: CP14ClothingEyesMonocle
+        prob: 0.2
+      - id: CP14ClothingEyesGlasses
+        prob: 0.3

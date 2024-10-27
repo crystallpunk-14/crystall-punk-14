@@ -2,8 +2,7 @@
   id: CP14RandomDirtLootSpawner
   name: dirt spawner
   parent: CP14DirtEffect
-  categories:
-  - Spawner
+  categories: [ ForkFiltered ]
   components:
   - type: RandomSpawner
     prototypes:

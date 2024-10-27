@@ -11,35 +11,35 @@
       "name": "full"
     },
     {
-      "name": "stone_bricks_window0",
+      "name": "window0",
       "directions": 4
     },
     {
-      "name": "stone_bricks_window1",
+      "name": "window1",
       "directions": 4
     },
     {
-      "name": "stone_bricks_window2",
+      "name": "window2",
       "directions": 4
     },
     {
-      "name": "stone_bricks_window3",
+      "name": "window3",
       "directions": 4
     },
     {
-      "name": "stone_bricks_window4",
+      "name": "window4",
       "directions": 4
     },
     {
-      "name": "stone_bricks_window5",
+      "name": "window5",
       "directions": 4
     },
     {
-      "name": "stone_bricks_window6",
+      "name": "window6",
       "directions": 4
     },
     {
-      "name": "stone_bricks_window7",
+      "name": "window7",
       "directions": 4
     }
   ]

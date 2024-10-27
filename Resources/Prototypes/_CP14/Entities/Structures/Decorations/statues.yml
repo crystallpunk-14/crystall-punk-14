@@ -3,6 +3,7 @@
   parent: BaseStructure
   name: statue of Gob
   description: It's beautiful.
+  categories: [ ForkFiltered ]
   suffix: Normal
   components:
   - type: Sprite

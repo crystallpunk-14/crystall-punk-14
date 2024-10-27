@@ -2,6 +2,7 @@
   id: CP14BaseRock
   name: rock
   description: A piece of rock. Hard, heavy, useless.
+  categories: [ ForkFiltered ]
   abstract: true
   placement:
     mode: SnapgridCenter 

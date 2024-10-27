@@ -1,48 +1,18 @@
 - type: entity
-  id: CP14SpawnPointAdventurer
+  id: CP14SpawnPointJobBase
   parent: SpawnPointJobBase
-  name: adventurer
-  categories:
-  - Spawner
+  abstract: true
+  categories: [ ForkFiltered ]
   components:
-  - type: SpawnPoint
-    job_id: CP14Adventurer
   - type: Sprite
-    layers:
-      - state: green
-      - state: zookeeper #TODO Replace
-
-- type: entity
-  id: CP14SpawnPointAlchemist
-  parent: SpawnPointJobBase
-  name: alchemist
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Alchemist
-  - type: Sprite
-    layers:
-      - state: green
-      - state: zookeeper #TODO Replace
-
-- type: entity
-  id: CP14SpawnPointInnkeeper
-  parent: SpawnPointJobBase
-  name: innkeeper
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Innkeeper
-  - type: Sprite
-    layers:
-      - state: green
-      - state: zookeeper #TODO Replace
+    sprite: _CP14/Markers/jobs.rsi
+    snapCardinals: true
+    
+# Command
 
 - type: entity
   id: CP14SpawnPointCaptain
-  parent: SpawnPointJobBase
+  parent: CP14SpawnPointJobBase
   name: captain
   categories:
   - Spawner
@@ -52,11 +22,13 @@
   - type: Sprite
     layers:
       - state: green
-      - state: zookeeper #TODO Replace
+      - state: workman #TODO Replace
+      
+# Security
 
 - type: entity
   id: CP14SpawnPointGuardCommander
-  parent: SpawnPointJobBase
+  parent: CP14SpawnPointJobBase
   name: guard commander
   categories:
   - Spawner
@@ -66,18 +38,78 @@
   - type: Sprite
     layers:
       - state: green
-      - state: zookeeper #TODO Replace
+      - state: workman #TODO Replace
+
+# Bank
 
 - type: entity
-  id: CP14SpawnPointHouseKeeper
-  parent: SpawnPointJobBase
-  name: house keeper
+  id: CP14SpawnPointCommandant
+  parent: CP14SpawnPointJobBase
+  name: commandant
   categories:
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: CP14HouseKeeper
+    job_id: CP14Commandant
   - type: Sprite
     layers:
       - state: green
-      - state: zookeeper #TODO Replace
+      - state: commandant
+
+- type: entity
+  id: CP14SpawnPointBanker
+  parent: CP14SpawnPointJobBase
+  name: merchant
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Banker
+  - type: Sprite
+    layers:
+      - state: green
+      - state: banker
+
+# Mercenary
+
+- type: entity
+  id: CP14SpawnPointAdventurer
+  parent: CP14SpawnPointJobBase
+  name: adventurer
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Adventurer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: adventurer
+
+- type: entity
+  id: CP14SpawnPointAlchemist
+  parent: CP14SpawnPointJobBase
+  name: alchemist
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Alchemist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: alchemist
+
+- type: entity
+  id: CP14SpawnPointInnkeeper
+  parent: CP14SpawnPointJobBase
+  name: innkeeper
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Innkeeper
+  - type: Sprite
+    layers:
+      - state: green
+      - state: workman #TODO Replace

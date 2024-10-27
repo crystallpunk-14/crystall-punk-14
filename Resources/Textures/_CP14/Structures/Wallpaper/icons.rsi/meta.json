@@ -8,10 +8,31 @@
   },
   "states": [
     {
-      "name": "purple"
+      "name": "black"
     },
     {
       "name": "green"
+    },
+    {
+      "name": "purple"
+    },
+    {
+      "name": "red"
+    },
+    {
+      "name": "white"
+    },
+    {
+      "name": "white2"
+    },
+    {
+      "name": "yellow"
+    },
+    {
+      "name": "bank"
+    },
+    {
+      "name": "bank2"
     }
   ]
 }

@@ -1,20 +1,3 @@
-- type: entity
-  abstract: true
-  parent: Clothing
-  id: CP14ClothingHeadBase
-  components:
-  - type: Clothing
-    equipDelay: 0.3
-    unequipDelay: 0.3
-    slots:
-    - HEAD
-    breakOnMove: false
-  - type: Sprite
-    state: icon
-  - type: Item
-    size: Normal
-    storedRotation: -90
-
 # Berets
 
 - type: entity

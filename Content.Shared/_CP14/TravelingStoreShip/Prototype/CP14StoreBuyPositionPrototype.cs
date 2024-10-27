@@ -26,6 +26,12 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     [DataField(required: true)]
     public LocId Name = string.Empty;
 
+    /// <summary>
+    /// a unique code that can be used to purchase items.
+    /// </summary>
+    [DataField(required: true)]
+    public string Code = string.Empty;
+
     [DataField]
     public LocId Desc = string.Empty;
 
@@ -40,7 +46,7 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
 [MeansImplicitUse]
 public abstract partial class CP14StoreBuyService
 {
-    public abstract void Buy(EntityManager entManager, EntityUid station);
+    public abstract void Buy(EntityManager entManager, Entity<CP14StationTravelingStoreShipTargetComponent> station);
 
     public abstract string? GetDescription(IPrototypeManager prototype, IEntityManager entSys);
 }

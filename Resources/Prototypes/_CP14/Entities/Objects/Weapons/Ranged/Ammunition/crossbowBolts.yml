@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseArrow
   id: CP14BaseCrossbolt
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Tag

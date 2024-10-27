@@ -4,6 +4,7 @@
   name: copper bar
   suffix: 1
   description: A heavy, slightly green, piece of refined copper
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -50,6 +51,7 @@
   name: iron bar
   suffix: 1
   description: A heavy piece of refined iron
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -95,6 +97,7 @@
   parent: BaseItem
   name: gold bar
   description: A warm to the touch, soft piece of refined gold.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal

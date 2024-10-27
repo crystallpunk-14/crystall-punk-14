@@ -2,6 +2,7 @@
   id: CP14BaseSharpeningStone
   name: sharpening stone
   description: Allows you to sharpen blunted weapons. If you overdo it, you may well sharpen the weapon completely.
+  categories: [ ForkFiltered ]
   parent: BaseItem
   components:
   - type: Item

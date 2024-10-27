@@ -3,6 +3,7 @@
   parent: SimpleMobBase
   name: rabbit
   description: A little fluffy rabbit. I could eat it.
+  categories: [ ForkFiltered ]
   components:
   - type: HTN
     rootTask:

@@ -3,6 +3,7 @@
   parent: BaseItem
   abstract: true
   description: A crystal shard capable of storing magical energy.
+  categories: [ ForkFiltered ]
   components:
   - type: CP14MagicEnergyCrystal
   - type: Item

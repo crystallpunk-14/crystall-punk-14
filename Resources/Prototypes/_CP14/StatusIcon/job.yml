@@ -47,8 +47,16 @@
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconHouseKeeper
+  id: CP14JobIconCommandant
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: HouseKeeper
-  jobName: cp14-job-name-house-keeper
+    state: Commandant
+  jobName: cp14-job-name-commandant
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconBanker
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Banker
+  jobName: cp14-job-name-banker

@@ -76,16 +76,16 @@ public sealed partial class StencilOverlay : Overlay
 
 
         //CP14 Overlays
-        if (_entManager.TryGetComponent<CP14WorldEdgeComponent>(mapUid, out var worldEdge))
+        if (_entManager.TryGetComponent<CP14CloudShadowsComponent>(mapUid, out var shadows))
         {
-            DrawWorldEdge(args, worldEdge, invMatrix);
+            DrawCloudShadows(args, shadows, invMatrix);
         }
         //CP14 Overlays end
 
         //CP14 Overlays
-        if (_entManager.TryGetComponent<CP14CloudShadowsComponent>(mapUid, out var shadows))
+        if (_entManager.TryGetComponent<CP14WorldEdgeComponent>(mapUid, out var worldEdge))
         {
-            DrawCloudShadows(args, shadows, invMatrix);
+            DrawWorldEdge(args, worldEdge, invMatrix);
         }
         //CP14 Overlays end
 

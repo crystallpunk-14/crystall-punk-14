@@ -2,6 +2,7 @@
   id: CP14Scissors
   name: scissors
   description: A tool for shredding wool, hair, clothing, and, if not handled carefully, even fingers.
+  categories: [ ForkFiltered ]
   parent: BaseItem
   components:
   - type: Sprite

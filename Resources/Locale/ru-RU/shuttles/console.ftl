@@ -3,11 +3,12 @@ shuttle-pilot-end = Пилотирование прекращено
 shuttle-console-in-ftl = Уже в БСС
 shuttle-console-mass = Слишком большой для БСС
 shuttle-console-prevent = Вы не можете пилотировать этот корабль
+shuttle-console-static = Грид статичный
 
 # NAV
 
 shuttle-console-display-label = Дисплей
-shuttle-console-position = Местоположение:
+shuttle-console-position = Координаты:
 shuttle-console-orientation = Азимут:
 shuttle-console-linear-velocity = Линейная скорость:
 shuttle-console-angular-velocity = Угловая скорость:

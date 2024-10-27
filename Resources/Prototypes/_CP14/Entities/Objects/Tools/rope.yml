@@ -3,6 +3,7 @@
   parent: BaseItem
   name: rope
   description: Multifunctional rope. You can tie something with it. Or someone.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Small

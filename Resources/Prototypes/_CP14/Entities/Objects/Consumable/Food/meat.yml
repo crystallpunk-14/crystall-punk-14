@@ -4,6 +4,7 @@
   parent: FoodInjectableBase
   id: CP14FoodMeatBase
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: FlavorProfile
     flavors:
@@ -31,6 +32,7 @@
   id: CP14FoodMeatSliceBase
   parent: CP14FoodMeatBase
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: SolutionContainerManager
     solutions:

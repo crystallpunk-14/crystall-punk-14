@@ -25,3 +25,12 @@ cp14-loadout-captain-head = Капитанская шляпа
 # Guard commander
 
 cp14-loadout-guard-commander-cloak = Накидка командира стражи
+
+# Bank
+
+cp14-loadout-bank-head = Шляпа работника банка
+cp14-loadout-commandant-head = Шляпа коменданта
+cp14-loadout-commandant-cloak = Накидка коменданта
+cp14-loadout-bank-shirt = Рубашка работника банка
+cp14-loadout-bank-pants = Штаны работника банка
+cp14-loadout-bank-shoes = Ботинки работника банка

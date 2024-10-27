@@ -2,7 +2,7 @@
   id: HeadRev
   name: roles-antag-rev-head-name
   antagonist: true
-  setPreference: true
+  setPreference: false #CP14
   objective: roles-antag-rev-head-objective
   guides: [ Revolutionaries ]
 

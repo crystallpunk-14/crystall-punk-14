@@ -1,6 +1,7 @@
 - type: entity
   id: CP14CashConverter
   parent: BaseStructure
+  categories: [ ForkFiltered ]
   name: cash converter
   description: A simple magical device connected by small portals to the empire's central bank. It allows you to convert coins between denominations, and doesn't even charge interest! That's generous.
   components:

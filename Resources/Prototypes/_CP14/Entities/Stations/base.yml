@@ -7,9 +7,16 @@
   - BaseStationJobsSpawning
   - BaseStationAlertLevels #Checks fail without it
   - CP14BaseTrading
+  - CP14BaseCommonObjectives
 
 - type: entity
   id: CP14BaseTrading
   abstract: true
   components:
     - type: CP14StationTravelingStoreShipTarget
+
+- type: entity
+  id: CP14BaseCommonObjectives
+  abstract: true
+  components:
+    - type: CP14StationCommonObjectives

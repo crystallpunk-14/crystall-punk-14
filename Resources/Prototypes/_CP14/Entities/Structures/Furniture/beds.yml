@@ -5,6 +5,7 @@
   - BaseStructure
   - CP14BaseFlammableSpreading
   description: Wooden bed. Better than nothing.
+  categories: [ ForkFiltered ]
   components:
   - type: HealOnBuckle
     damage:

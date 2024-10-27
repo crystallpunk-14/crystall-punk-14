@@ -4,6 +4,7 @@
   parent: CP14BaseVial
   id: CP14GreenBottle
   suffix: Empty
+  categories: [ ForkFiltered ]
   description: A green bottle perfect for drinking beer.
   components:
   - type: Openable

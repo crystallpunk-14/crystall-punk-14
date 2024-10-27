@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CLA",
+    "copyright": "Created by omsoyk (Discord), slice created by Artista, plate created by TheShuEd",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "base1"
+      },
+      {
+        "name": "base2"
+      },
+      {
+        "name": "base3"
+      },
+      {
+        "name": "slice1"
+      },
+      {
+        "name": "plate1"
+      },
+      {
+        "name": "plate2"
+      }
+    ]
+}

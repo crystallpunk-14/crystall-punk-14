@@ -2,6 +2,7 @@
   id: CP14HighBush
   name: high bush
   parent: CP14BaseFlammableSpreading
+  categories: [ ForkFiltered ]
   description: Very tall and dense thickets. Perhaps someone is watching you from them
   components:
   - type: CP14WaveShader
@@ -47,7 +48,6 @@
         - FullTileMask 
         layer:
         - Opaque
-        
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -97,6 +97,7 @@
   id: CP14RandomBushOffsetSpawner
   name: random bush offset spawner
   parent: MarkerBase
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:

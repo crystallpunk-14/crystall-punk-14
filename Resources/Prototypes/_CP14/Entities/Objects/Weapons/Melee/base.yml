@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseWeaponChemical
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: SolutionContainerManager
     solutions:
@@ -21,6 +22,7 @@
 - type: entity
   id: CP14BaseWeaponThrowable
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: LandAtCursor
   - type: DamageOtherOnHit
@@ -49,6 +51,7 @@
 - type: entity
   id: CP14BaseWeaponLight
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: MeleeWeapon
     resetOnHandSelected: false
@@ -56,6 +59,7 @@
 - type: entity
   id: CP14BaseWeaponShort
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: MeleeWeapon
     range: 1.0 # 1.5 standart
@@ -64,6 +68,7 @@
 - type: entity
   id: CP14BaseWeaponSharp
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Sharp
   - type: CP14Sharpened
@@ -82,6 +87,7 @@
 - type: entity
   id: CP14BaseWeaponDestructible
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: ExaminableDamage
     messages: CP14WeaponMessages
@@ -103,6 +109,7 @@
 - type: entity
   id: CP14BaseWeaponSelfDamage
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: CP14MeleeSelfDamage
     damageToSelf:

@@ -135,3 +135,26 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: false
+
+- type: tile
+  editorHidden: false
+  id: CP14FloorMarble
+  name: cp14-tiles-stonebricks-marble
+  sprite: /Textures/_CP14/Tiles/Marble/marble.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 102
+  edgeSprites:
+    South: /Textures/_CP14/Tiles/Marble/double_edge_S.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: false

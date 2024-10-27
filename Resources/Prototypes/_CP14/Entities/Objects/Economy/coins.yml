@@ -2,6 +2,7 @@
   id: CP14BaseCoin
   parent: BaseItem
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Tag
     tags:

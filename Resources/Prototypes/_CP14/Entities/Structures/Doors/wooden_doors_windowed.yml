@@ -31,8 +31,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Lock
-    locked: false
   - type: Construction
     graph: CP14WoodenDoor
     node: CP14WoodenDoorWindowed
@@ -56,17 +54,8 @@
   id: CP14WoodenDoorWindowedTavernHall
   suffix: Tavern Hall
   components:
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        startingItem: CP14LockTavernHall
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
+  - type: CP14Lock
+    autoGenerateShape: TavernHall
   - type: Lock
     locked: true
 

@@ -1,0 +1,23 @@
+- type: entity
+  id: CP14WallpaperBank
+  parent: CP14BaseWallpaper
+  name: wallpaper "banker's integrity"
+  components:
+  - type: Sprite
+    state: bank
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_bank.rsi
+  - type: Stack
+    stackType: CP14WallpaperBank
+
+- type: entity
+  id: CP14WallpaperBank2
+  parent: CP14BaseWallpaper
+  name: wallpaper "banker's wealth"
+  components:
+  - type: Sprite
+    state: bank2
+  - type: CP14Wallpaper
+    rsiPath: _CP14/Structures/Wallpaper/wallpaper_bank2.rsi
+  - type: Stack
+    stackType: CP14WallpaperBank2

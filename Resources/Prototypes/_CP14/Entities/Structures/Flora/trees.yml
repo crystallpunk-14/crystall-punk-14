@@ -2,6 +2,7 @@
   id: CP14BaseTree
   abstract: true
   parent: CP14BaseFlammableSpreading
+  categories: [ ForkFiltered ]
   name: tree
   description: Decades of life and growth, saturating the surrounding nature with fresh air.
   components:

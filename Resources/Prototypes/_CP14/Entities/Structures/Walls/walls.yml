@@ -1,6 +1,7 @@
 - type: entity
   abstract: true
   parent: BaseWall
+  categories: [ ForkFiltered ]
   id: CP14BaseWall
   name: wall
   description: Sturdy enough to cover you from threats or cold winds.
@@ -52,16 +53,17 @@
   - type: CP14WallpaperHolder
 
 - type: entity
-  id: CP14WallWhitebrick
-  name: white brick wall
+  id: CP14WallMarbleBrick
+  name: marble brick wall
   parent: CP14BaseWall
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
+    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/whitebricks_stone_wall.rsi
+    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
   - type: IconSmooth
     base: stonebricks
+  - type: CP14WallpaperHolder
 
 - type: entity
   id: CP14WallBrownbrick
@@ -182,17 +184,4 @@
     - skullsA
     - skullsB
   - type: Appearance
-  - type: CP14WallpaperHolder
-
-- type: entity
-  id: CP14WallSteel
-  name: steel wall
-  parent: CP14BaseWall
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/steel_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/steel_wall.rsi
-  - type: IconSmooth
-    base: wall
   - type: CP14WallpaperHolder

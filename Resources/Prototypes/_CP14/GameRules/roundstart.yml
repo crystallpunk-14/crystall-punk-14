@@ -8,14 +8,39 @@
   - type: CP14RoundSeed
 
 - type: entity
-  id: CP14ResourceHarvesting
+  id: CP14RoundObjectivesRule
   parent: CP14BaseGameRule
-  categories: [ HideSpawnMenu ]
   components:
-  - type: CP14ExpeditionObjectivesRule
+  - type: CP14CommonObjectivesRule
     departmentObjectives:
       CP14Command:
-      - CP14ExpeditionCollectObjectiveGroup
+      - CP14TownSendObjectiveGroup
+      CP14Bank:
+      - CP14BankEarningObjectiveGroup
+  - type: CP14PersonalObjectivesRule
+    departmentObjectives:
       CP14Mercenary:
       - CP14PersonalCurrencyCollectObjectiveGroup
-  # antags
+
+- type: entity
+  id: CP14BanditsRule
+  parent: CP14BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 0 #Increase when bigger online
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ CP14Bandit ]
+      startingGear: CP14BanditGear
+      max: 8
+      playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - CP14MindRoleBandit
+      briefing:
+        text: cp14-roles-antag-bandit-briefing
+        color: "#cc3010"
+        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"

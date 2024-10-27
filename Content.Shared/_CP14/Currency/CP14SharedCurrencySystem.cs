@@ -37,18 +37,23 @@ public partial class CP14SharedCurrencySystem : EntitySystem
         return sb.ToString();
     }
 
-    public int GetTotalCurrency(EntityUid uid, CP14CurrencyComponent? currency = null)
+    public int GetTotalCurrency(EntityUid uid)
     {
-        if (!Resolve(uid, ref currency))
-            return 0;
+        var ev = new CP14GetCurrencyEvent();
+        RaiseLocalEvent(uid, ev);
 
-        var total = currency.Currency;
+        return (int)(ev.Currency * ev.Multiplier);
+    }
+}
 
-        if (TryComp<StackComponent>(uid, out var stack))
-        {
-            total *= stack.Count;
-        }
+public sealed class CP14GetCurrencyEvent : EntityEventArgs
+{
+    public int Currency;
+    public float Multiplier;
 
-        return total;
+    public CP14GetCurrencyEvent(int cur = 0, int mult = 1)
+    {
+        Currency = cur;
+        Multiplier = mult;
     }
 }

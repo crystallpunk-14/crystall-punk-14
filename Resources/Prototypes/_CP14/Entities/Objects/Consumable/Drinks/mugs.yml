@@ -2,6 +2,7 @@
   parent: DrinkBaseMug
   id: CP14MetalBeerMug
   name: Metal mug
+  categories: [ ForkFiltered ]
   description: The most common metal mug.
   components:
   - type: Sprite
@@ -11,6 +12,7 @@
   parent: DrinkBaseMug
   id: CP14WoodenBeerMug
   name: Wooden mug
+  categories: [ ForkFiltered ]
   description: Wooden mug for beer.
   components:
   - type: Sprite
@@ -20,6 +22,7 @@
   parent: DrinkBaseMug
   id: CP14SteelBeerMug
   name: Beer mug
+  categories: [ ForkFiltered ]
   description: Wooden mug with iron inclusions.
   components:
   - type: Sprite
@@ -29,6 +32,7 @@
   parent: DrinkBaseMug
   id: CP14SteelWoodBeerMug
   name: Beer mug
+  categories: [ ForkFiltered ]
   description: Wooden mug with iron inclusions.
   components:
   - type: Sprite

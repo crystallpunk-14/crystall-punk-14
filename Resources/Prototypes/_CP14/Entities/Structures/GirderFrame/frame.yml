@@ -5,6 +5,7 @@
   - BaseStructureDynamic
   - CP14BaseFlammableSpreading
   description: Wooden frame for any wooden wall.
+  categories: [ ForkFiltered ]
   placement:
     mode: SnapgridCenter
     snap:
@@ -69,6 +70,7 @@
 
 - type: entity
   id: CP14BaseCrushed
+  categories: [ ForkFiltered ]
   parent: BaseStructure
   abstract: true
   placement:

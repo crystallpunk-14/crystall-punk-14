@@ -3,6 +3,7 @@
   id: CP14FoodDoughLarge
   name: large piece of dough
   description: The perfect ingredient for any flour product. The only thing left to do is to shape it.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -28,7 +29,8 @@
 - type: entity
   parent: FoodInjectableBase
   id: CP14FoodDoughMedium
-  name: medium piece of dough
+  name: Medium piece of dough.
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny

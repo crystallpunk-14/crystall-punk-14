@@ -2,6 +2,7 @@
   id: CP14BaseCrate
   abstract: true
   parent: BaseStructureDynamic
+  categories: [ ForkFiltered ]
   components:
   - type: InteractionOutline
   - type: Damageable

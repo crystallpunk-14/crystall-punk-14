@@ -1,0 +1,104 @@
+- type: entity
+  id: CP14CabinetBase
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+      - map: [ base ]
+        state: icon
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Normal
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.05,0.45,0.45"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Anchorable
+  - type: Rotatable
+  - type: Appearance
+
+- type: entity
+  name: wooden cabinet
+  parent:
+  - CP14CabinetBase
+  - CP14BaseFlammableSpreading
+  id: CP14WoodenCabinet
+  description: A regular wooden cabinet.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Dressers/wood_cabinet.rsi
+    state: icons
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 3
+            max: 6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: CP14CabinetBase
+  id: C14IronCabinet
+  name: iron cabinet
+  description: an iron cabinet. Sturdy, lockable. You can store your valuables here without fear of some burglar taking it all for himself.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Dressers/iron_cabinet.rsi
+    state: icons
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: C14IronCabinet
+  id: C14IronCabinetCargo
+  name: trade box
+  description: An armored vault for storing money for trade with the city. City workers will unload their earnings here, or take them from here when you want to buy something.
+  components:
+  - type: CP14CargoMoneyBox

@@ -4,8 +4,7 @@
   suffix: Weapon
   description: lol
   parent: MarkerBase
-  categories:
-  - Spawner
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:
@@ -47,13 +46,12 @@
   suffix: Tools
   description: lol
   parent: MarkerBase
-  categories:
-  - Spawner
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:
       - state: red
-      - sprite: _CP14/Clothing/Cloak/redguardarmor.rsi
+      - sprite: _CP14/Clothing/Cloak/Armor/redguardarmor.rsi
         state: icon
   - type: RandomSpawner
     prototypes:

@@ -1,12 +1,18 @@
 {
   "version": 1,
   "license": "CLA",
-  "copyright": "Created by Max Gab for CrystallPunk",
+  "copyright": "Created by Max Gab for CrystallPunk, folders by TheShuEd",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
+    {
+      "name": "folder_blue"
+    },
+    {
+      "name": "folder_red"
+    },
     {
       "name": "paper"
     },

@@ -2,6 +2,7 @@
   id: CP14BaseOre
   parent: BaseItem
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny

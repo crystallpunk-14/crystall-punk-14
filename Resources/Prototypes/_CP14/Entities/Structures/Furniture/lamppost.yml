@@ -1,5 +1,6 @@
 - type: entity
   id: CP14BaseLamppost
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: SpriteFade

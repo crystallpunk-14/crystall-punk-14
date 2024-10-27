@@ -2,6 +2,7 @@
   name: walking dead spawner
   id: CP14SpawnMobUndeadZombie
   parent: MarkerBase
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:
@@ -17,6 +18,7 @@
   name: rabbit spawner
   id: CP14SpawnMobRabbit
   parent: MarkerBase
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     layers:
@@ -27,3 +29,19 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobRabbit
+
+- type: entity
+  name: yumkaraptor spawner
+  id: CP14SpawnMobDinoYumkaraptor
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/dino.rsi
+      state: dino
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobDinoYumkaraptor

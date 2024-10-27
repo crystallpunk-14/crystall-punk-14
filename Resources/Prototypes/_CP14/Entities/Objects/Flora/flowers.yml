@@ -2,6 +2,7 @@
   id: CP14FlowersBase
   parent: FoodProduceBase
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Tag
     tags:

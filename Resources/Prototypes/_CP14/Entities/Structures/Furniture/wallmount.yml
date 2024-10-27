@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseWallmount
   abstract: true
+  categories: [ ForkFiltered ]
   placement:
     mode: SnapgridCenter
   components:
@@ -118,7 +119,7 @@
         shader: unshaded
         map: [ "light" ]
   - type: PointLight
-    energy: 5
+    energy: 2
     radius: 8
     netsync: false
     color: "#b0eaf6"

@@ -64,7 +64,7 @@ public record struct ObjectiveAssignedEvent(EntityUid MindId, MindComponent Mind
 /// Use this to set the objective's title description or icon.
 /// </summary>
 [ByRefEvent]
-public record struct ObjectiveAfterAssignEvent(EntityUid MindId, MindComponent Mind, ObjectiveComponent Objective, MetaDataComponent Meta);
+public record struct ObjectiveAfterAssignEvent(EntityUid? MindId, MindComponent? Mind, ObjectiveComponent Objective, MetaDataComponent Meta); //CP14 add ? to mindId and Mind. For Common goals
 
 /// <summary>
 /// Event raised on an objective to update the Progress field.

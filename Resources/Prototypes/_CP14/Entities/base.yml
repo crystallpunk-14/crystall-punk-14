@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseFlammable
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: CP14FlammableAmbientSound
   - type: AmbientSound

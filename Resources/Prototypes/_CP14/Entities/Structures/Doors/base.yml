@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseMaterialDoorNavMap
   id: CP14BaseDoor
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Sprite
@@ -15,18 +16,6 @@
     closedDrawDepth: Mobs
     openDrawDepth: Mobs
   - type: Lock
-    locked: true
-    lockSlotId: lock_slot
-  - type: ItemSlots
-    slots: 
-      lock_slot:
-        name: cp-lock-slot-component-slot-name-default
-        disableEject: true
-        insertOnInteract: false
-        ejectOnBreak: true
-        whitelist:
-          components:
-          - CPLock
-  - type: ContainerContainer
-    containers:
-      lock_slot: !type:ContainerSlot
+    locked: false
+  - type: PlacementReplacement
+    key: walls

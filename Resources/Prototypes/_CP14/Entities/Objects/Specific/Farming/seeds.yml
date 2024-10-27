@@ -2,6 +2,7 @@
   id: CP14BaseSeed
   parent: BaseItem
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
@@ -70,5 +71,5 @@
     layers:
     - state: bag
     - state: tomato
-  #- type: CP14Seed
-  #  plantProto: CP14PlantWheat
+  - type: CP14Seed
+    plantProto: CP14PlantTomatoes

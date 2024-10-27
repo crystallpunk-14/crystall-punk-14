@@ -4,6 +4,7 @@
   abstract: true
   placement:
     mode: SnapgridCenter
+  categories: [ ForkFiltered ]
   components:
   - type: Transform
     anchored: true

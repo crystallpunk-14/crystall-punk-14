@@ -19,11 +19,11 @@
   - type: CP14PlantGrowing
     energyCost: 1
     resourceCost: 1
-    growthPerUpdate: 0.1 # 10 minute to full grow
+    growthPerUpdate: 0.05 # 20 minute to full grow
   - type: CP14PlantFading
-    resourcePerMinute: 0.25 #20 minute from water
+    resourcePerMinute: 0.15
   - type: CP14PlantGatherable
-    deleteAfterHarvest: true
+    deleteAfterHarvest: false
     loot:
       All: CP14GatherCucumber
   - type: Destructible

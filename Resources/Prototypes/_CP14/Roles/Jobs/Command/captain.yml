@@ -9,6 +9,7 @@
   joinNotifyCrew: true
   canBeAntag: false
   supervisors: cp14-job-supervisors-command
+  weight: 10
 
 - type: startingGear
   id: CP14CaptainGear

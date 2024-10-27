@@ -10,14 +10,15 @@
   rules:
     - Secret
 
-#- type: gamePreset
-#  id: CP14ResourceHarvesting
-#  name: cp14-gamepreset-resource-harvest
-#  description: cp14-gamepreset-resource-harvest-desc
-#  showInVote: true
-#  cP14Allowed: true
-#  rules:
-#    - CP14ResourceHarvesting
+- type: gamePreset
+  id: CP14Greenshift
+  name: greenshift-title
+  description: greenshift-description
+  showInVote: true
+  cP14Allowed: true
+  rules:
+    - CP14BanditsRule
+    - CP14RoundObjectivesRule
 
 - type: gamePreset
   id: CP14Sandbox
@@ -26,5 +27,7 @@
   name: sandbox-title
   description: sandbox-description
   showInVote: true # For playtest period only
+  cP14Allowed: true
   rules:
     - Sandbox
+    - CP14RoundObjectivesRule

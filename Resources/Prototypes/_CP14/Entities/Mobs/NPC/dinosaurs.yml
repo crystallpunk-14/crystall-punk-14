@@ -1,0 +1,88 @@
+- type: entity
+  id: CP14MobDinoYumkaraptor
+  parent: SimpleMobBase
+  name: yumkaraptor
+  description: A large scaly lizard, an obvious predator that liked to snack on meat.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - CP14AggressiveAnimals
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Animals/dino.rsi
+      state: dino
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: CP14Dinosaur
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      55: 0.6
+  - type: Stamina
+    critThreshold: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 8
+        Piercing: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 6
+    acceleration: 16.0
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dino
+      Dead:
+        Base: dino_dead
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatLamb # to replace the dino meat
+      amount: 5
+  - type: Bloodstream
+    bloodMaxVolume: 200
+  - type: Grammar
+    attributes:
+      gender: female
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 40
+    sound:
+      collection: CP14Dinosaurs
+      params:
+        volume: -8
+        variation: 0.125
+  - type: SoundWhileAlive

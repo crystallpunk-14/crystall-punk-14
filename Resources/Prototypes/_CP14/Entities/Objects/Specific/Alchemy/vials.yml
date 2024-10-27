@@ -2,6 +2,7 @@
   parent: BaseItem
   id: CP14BaseVial
   abstract: true
+  categories: [ ForkFiltered ]
   components:
   - type: MeleeWeapon
     soundNoDamage:
@@ -140,7 +141,7 @@
     fillBaseName: liq-
 
 
-# Filled
+# Filled small
 
 - type: entity
   id: CP14VialSmallBloodFlowerSap
@@ -191,7 +192,21 @@
           Quantity: 10
 
 - type: entity
-  id: CP14VialSmallChromiumSlime
+  id: CP14VialSmallBlueAmanita
+  parent: CP14VialSmall
+  suffix: Blue Amanita
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BlueAmanita
+          Quantity: 10
+
+# Filled tiny
+
+- type: entity
+  id: CP14VialTinyChromiumSlime
   parent: CP14VialTiny
   suffix: Chromium Slime
   components:
@@ -203,7 +218,7 @@
           Quantity: 5
 
 - type: entity
-  id: CP14VialSmallLumiMushroom
+  id: CP14VialTinyLumiMushroom
   parent: CP14VialTiny
   suffix: LumiShroom
   components:

@@ -33,7 +33,7 @@ CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
 
 #2024-09-22
 CP14WoodDoorTavern: CP14WoodenDoorWindowedTavernHall
-CP14LockTavern: CP14LockTavernHall
+CP14LockTavern: null
 CP14KeyTavern: CP14KeyTavernHall
 
 #2024-09-23
@@ -46,16 +46,11 @@ CP14WoodDoorTavernHall: CP14WoodenDoorWindowedTavernHall
 CP14WoodDoorTavernHallOpened: CP14WoodenDoorWindowedTavernHall
 CP14WoodDoorTavernStaff: CP14WoodenDoorTavernStaff
 CP14WoodDoorTavernStaffOpened: CP14WoodenDoorTavernStaff
-CP14WoodDoorTavernDorms1: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms2: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms3: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms4: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms5: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms1Opened: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms2Opened: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms3Opened: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms4Opened: CP14WoodenDoorTavernDorms
-CP14WoodDoorTavernDorms5Opened: CP14WoodenDoorTavernDorms
+CP14WoodDoorTavernDorms1Opened: CP14WoodenDoorTavernDorms1
+CP14WoodDoorTavernDorms2Opened: CP14WoodenDoorTavernDorms2
+CP14WoodDoorTavernDorms3Opened: CP14WoodenDoorTavernDorms3
+CP14WoodDoorTavernDorms4Opened: CP14WoodenDoorTavernDorms5
+CP14WoodDoorTavernDorms5Opened: CP14WoodenDoorTavernDorms4
 CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy
 CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy
 CP14WoodenDoorOpened: CP14WoodenDoor
@@ -63,19 +58,15 @@ CP14CuttingBoard: null
 
 CP14WoodenDoorTavernHallLocked: CP14WoodenDoorWindowedTavernHall
 CP14WoodenDoorTavernStaffLocked: CP14WoodenDoorTavernStaff
-CP14WoodenDoorTavernDorms1Locked: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms2Locked: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms3Locked: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms4Locked: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms5Locked: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms2: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms3: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms4: CP14WoodenDoorTavernDorms
-CP14WoodenDoorTavernDorms5: CP14WoodenDoorTavernDorms
+CP14WoodenDoorTavernDorms1Locked: CP14WoodenDoorTavernDorms1
+CP14WoodenDoorTavernDorms2Locked: CP14WoodenDoorTavernDorms2
+CP14WoodenDoorTavernDorms3Locked: CP14WoodenDoorTavernDorms3
+CP14WoodenDoorTavernDorms4Locked: CP14WoodenDoorTavernDorms4
+CP14WoodenDoorTavernDorms5Locked: CP14WoodenDoorTavernDorms5
 CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy
 
 #2024-09-24
-CP14WallpaperPink30: CP14WallpaperPurple30
+CP14WallpaperPink30: CP14WallpaperPurple
 
 #2024-09-25
 CP14IronGrilleStraight: CP14FenceIronGrilleStraight
@@ -104,6 +95,26 @@ CP14BarrelBloodGrassSap: CP14BarrelBloodFlowerSap
 
 #2024-10-11
 CP14WoodenDresser: CP14WoodenCabinet
+
+#2024-10-17
+CP14WallpaperPurple1: CP14WallpaperPurple
+CP14WallpaperPurple30: CP14WallpaperPurple
+CP14WallpaperGreen1: CP14WallpaperGreen
+CP14WallpaperGreen30: CP14WallpaperGreen
+
+#2024-10-18
+CP14WoodenCupboard: CP14WoodenCloset
+CP14VialSmallChromiumSlime: CP14VialTinyChromiumSlime
+CP14VialSmallLumiMushroom: CP14VialTinyLumiMushroom
+
+#2024-10-20
+CP14SpawnPointHouseKeeper: CP14SpawnPointCommandant
+CP14WoodenDoorTavernDorms: null
+CP14WallWhitebrick: CP14WallMarbleBrick
+
+#2024-10-24
+CP14SpawnPointQuartermaster: CP14SpawnPointCommandant
+CP14SpawnPointMerchant: CP14SpawnPointBanker
 # <---> CrystallPunk migration zone end
 
 

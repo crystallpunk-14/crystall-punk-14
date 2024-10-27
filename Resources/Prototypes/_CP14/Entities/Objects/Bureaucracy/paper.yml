@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseItem
   id: CP14BasePaper
+  categories: [ ForkFiltered ]
   abstract: true
   components:
   - type: Paper
@@ -55,6 +56,9 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 1
+  - type: Tag
+    tags:
+    - Document
 
 - type: entity
   parent: CP14BasePaper

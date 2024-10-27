@@ -3,6 +3,7 @@
   id: CP14FloorWater
   name: water
   description: A trough of plain water. Clean enough for consumption
+  categories: [ ForkFiltered ]
   placement:
     mode: SnapgridCenter
     snap:

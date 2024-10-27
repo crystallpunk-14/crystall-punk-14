@@ -5,6 +5,7 @@
   - CP14BaseCrystalSlot
   name: solution normalizer
   description: An alchemical device that removes fine precipitates from solutions, and stabilizes it for further work
+  categories: [ ForkFiltered ]
   placement:
     mode: PlaceFree
   components:

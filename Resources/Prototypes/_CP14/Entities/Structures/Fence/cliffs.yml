@@ -4,6 +4,7 @@
   name: cliff
   suffix: Straight
   description: Severe unevenness of the natural landscape.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     drawdepth: WallTops
