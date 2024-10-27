@@ -30,8 +30,6 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Climbable
-    delay: 5
 
 - type: entity
   parent: 

@@ -115,7 +115,7 @@
         - CP14FloorGrassLight
         - CP14FloorGrassTall
       entities:
-        - CP14GatherableFlowersYellow
+        - CP14GatherableDayflin
     - !type:BiomeEntityLayer # BLue amanita
       threshold: 0.7
       noise:

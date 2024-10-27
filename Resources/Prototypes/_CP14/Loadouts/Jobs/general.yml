@@ -300,6 +300,7 @@
   - CP14PenFeather
   - CP14Paper
   - CP14CopperCoin10
+  - CP14BaseCrowbar
 
 - type: loadout
   id: CP14ClothingRingCureWounds
@@ -324,3 +325,9 @@
   storage:
     back:
     - CP14CopperCoin
+
+- type: loadout
+  id: CP14BaseCrowbar
+  storage:
+    back:
+    - CP14BaseCrowbar
