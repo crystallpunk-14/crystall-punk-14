@@ -258,7 +258,7 @@
   craftTime: 2
   entities:
     CP14BloodFlower: 2
-    CP14FlowersYellow: 2
+    CP14Dayflin: 2
   result: CP14ClothingHeadWreath
 
 # Wallpaper (TODO: Move to separate workbench?)
