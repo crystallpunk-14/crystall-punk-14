@@ -45,3 +45,6 @@ cp14-reagent-desc-basic-heal-mana = A substance that causes a rapid regeneration
 
 cp14-reagent-name-basic-damage-mana = Antimagic solution
 cp14-reagent-desc-basic-damage-mana = A substance that rapidly drains all magical energy from the body.
+
+cp14-reagent-name-basic-unstable = Unstable solution
+cp14-reagent-desc-basic-unstable = When cooled, immediately converts all reagents into a chemical cloud, the size of which depends on the amount of unstable solution in it.
