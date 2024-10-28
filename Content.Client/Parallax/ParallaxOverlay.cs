@@ -32,7 +32,7 @@ public sealed class ParallaxOverlay : Overlay
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        if (args.MapId == MapId.Nullspace || _entManager.HasComponent<BiomeComponent>(_mapManager.GetMapEntityId(args.MapId)))
+        if (args.MapId == MapId.Nullspace /*|| _entManager.HasComponent<BiomeComponent>(_mapManager.GetMapEntityId(args.MapId))*/) //CP14 parallax with biomes
             return false;
 
         return true;

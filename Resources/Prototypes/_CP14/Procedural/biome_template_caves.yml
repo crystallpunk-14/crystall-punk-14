@@ -1,4 +1,11 @@
 - type: biomeTemplate
+  id: CP14Space
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: Space 
+
+- type: biomeTemplate
   id: CP14CavesEmpty
   layers:
     - !type:BiomeTileLayer

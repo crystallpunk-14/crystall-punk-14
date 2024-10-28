@@ -14,7 +14,7 @@
   editorHidden: false
   id: CP14FloorBase
   name: cp14-tiles-base
-  sprite: /Textures/_CP14/Tiles/cave.png
+  sprite: /Textures/_CP14/Tiles/Stone/cave.png
   variants: 14
   placementVariants:
   - 1.0
@@ -31,6 +31,16 @@
   - 1.0
   - 1.0
   - 1.0
+  edgeSpritePriority: -1
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Stone/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Stone/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Stone/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Stone/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Stone/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Stone/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Stone/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Stone/double_edge_W.png
   baseTurf: CP14FloorBase #Recursivle indestructible
   isSubfloor: true
   footstepSounds:
