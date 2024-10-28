@@ -27,6 +27,25 @@ entities:
     - type: CP14CloudShadows
     - type: CP14MapFloorOccluder
     - type: MapLight
+    - type: MapAtmosphere
+      space: False
+      mixture:
+        volume: 2500
+        immutable: True
+        temperature: 293.15
+        moles:
+        - 21.82478
+        - 82.10312
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: CP14DayCycle
       timeEntries:
       - duration: 80
