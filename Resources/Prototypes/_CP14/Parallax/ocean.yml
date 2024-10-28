@@ -12,14 +12,14 @@
         !type:ImageParallaxTextureSource
         path: "/Textures/_CP14/Parallaxes/ocean_overlay2.png"
       slowness: 0.3
-      scale: "0.5, 0.5"
-      scrolling: "0.08, 0.08"
+      scale: "1, 1"
+      scrolling: "-0.08, -0.08"
       shader: ""
     - texture:
         !type:ImageParallaxTextureSource
         path: "/Textures/_CP14/Parallaxes/ocean_overlay.png"
       slowness: 0.05
-      scale: "0.4, 0.4"
+      scale: "1, 1"
       scrolling: "-0.1, -0.1"
       shader: ""
   layersLQ:
