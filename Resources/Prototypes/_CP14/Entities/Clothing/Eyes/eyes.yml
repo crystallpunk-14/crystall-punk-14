@@ -60,6 +60,10 @@
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
   - type: SolutionScanner
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Alchemy
+    - CP14_EN_Alchemy
 
 - type: entity
   parent: CP14ClothingEyesBase
@@ -72,6 +76,10 @@
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/alchemy_monocle.rsi
   - type: SolutionScanner
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Alchemy
+    - CP14_EN_Alchemy
 
 - type: entity
   parent: CP14ClothingEyesBase

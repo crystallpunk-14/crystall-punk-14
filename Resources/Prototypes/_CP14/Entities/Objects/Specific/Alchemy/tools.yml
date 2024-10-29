@@ -90,6 +90,10 @@
     fuckupChance: 0.05
     requiredSkills:
     - Alchemy
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Alchemy
+    - CP14_EN_Alchemy
 
 - type: entity
   id: CP14Mortar
@@ -163,6 +167,10 @@
   - type: CP14Mortar
     solution: mortar
     containerId: storagebase
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Alchemy
+    - CP14_EN_Alchemy
 
 - type: entity
   parent: BaseItem

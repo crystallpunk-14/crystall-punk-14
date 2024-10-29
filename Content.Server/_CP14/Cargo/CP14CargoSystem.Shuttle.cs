@@ -1,8 +1,8 @@
 using System.Numerics;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
-using Content.Shared._CP14.TravelingStoreShip;
-using Content.Shared._CP14.TravelingStoreShip.Prototype;
+using Content.Shared._CP14.Cargo;
+using Content.Shared._CP14.Cargo.Prototype;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 

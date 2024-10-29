@@ -1,4 +1,4 @@
-using Content.Shared._CP14.TravelingStoreShip;
+using Content.Shared._CP14.Cargo;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 

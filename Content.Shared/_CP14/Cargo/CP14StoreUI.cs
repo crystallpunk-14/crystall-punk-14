@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.TravelingStoreShip;
+namespace Content.Shared._CP14.Cargo;
 
 [Serializable, NetSerializable]
 public enum CP14StoreUiKey

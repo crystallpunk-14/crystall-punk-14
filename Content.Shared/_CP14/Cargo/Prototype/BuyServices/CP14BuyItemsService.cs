@@ -1,7 +1,7 @@
 using System.Text;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.TravelingStoreShip.Prototype.BuyServices;
+namespace Content.Shared._CP14.Cargo.Prototype.BuyServices;
 
 public sealed partial class CP14BuyItemsService : CP14StoreBuyService
 {

@@ -10,19 +10,6 @@ namespace Content.Shared.CCVar
     [CVarDefs]
     public sealed class CCVars : CVars
     {
-        #region CP14
-        /// <summary>
-        /// how long does it take to fly an expedition ship to an expedition point?
-        /// </summary>
-        public static readonly CVarDef<float> CP14ExpeditionArrivalTime =
-            CVarDef.Create("cp14.arrival_time", 180f, CVar.SERVERONLY);
-
-        /// <summary>
-        /// is the expedition ship's system enabled?
-        /// </summary>
-        public static readonly CVarDef<bool> CP14ExpeditionShip =
-            CVarDef.Create("cp14.arrivals_ship", true, CVar.SERVERONLY);
-        #endregion
         /*
          * Server
          */
