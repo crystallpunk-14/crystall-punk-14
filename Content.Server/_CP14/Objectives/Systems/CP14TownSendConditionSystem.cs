@@ -1,6 +1,6 @@
 using Content.Server._CP14.Objectives.Components;
 using Content.Server.Objectives.Components.Targets;
-using Content.Shared._CP14.TravelingStoreShip;
+using Content.Shared._CP14.Cargo;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Stacks;

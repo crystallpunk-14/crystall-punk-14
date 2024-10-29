@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.TravelingStoreShip;
+namespace Content.Shared._CP14.Cargo;
 
 /// <summary>
 /// marks an entity into which trade with the city will put money when selling, or take it when buying.
