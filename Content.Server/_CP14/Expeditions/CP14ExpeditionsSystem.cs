@@ -41,6 +41,14 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
 
     private void OnExpeditionShutdown(Entity<CP14ExpeditionComponent> ent, ref ComponentShutdown args)
     {
+        foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
+        {
+            if (job.MissionParams == ent.Comp.MissionParams)
+            {
+                cancelToken.Cancel();
+                _expeditionJobs.Remove((job, cancelToken));
+            }
+        }
     }
 
     private void OnExpeditionInit(Entity<CP14ExpeditionComponent> ent, ref MapInitEvent args)

@@ -1,5 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._CP14.Expeditions.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Parallax;
 using Content.Shared._CP14.Expeditions;
@@ -26,7 +27,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
     //private readonly SharedTransformSystem _xforms;
     private readonly SharedMapSystem _map;
 
-    private readonly CP14ExpeditionMissionParams _missionParams;
+    public readonly CP14ExpeditionMissionParams MissionParams;
 
     private readonly ISawmill _sawmill;
 
@@ -48,7 +49,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         _biome = biome;
         _metaData = metaData;
         _map = map;
-        _missionParams = missionParams;
+        MissionParams = missionParams;
         _sawmill = logManager.GetSawmill("cp14_expedition_job");
     }
 
@@ -65,11 +66,11 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         //var difficultyProto = _prototypeManager.Index<SalvageDifficultyPrototype>(difficultyId);
 
         //Setup biome
-        var missionBiome = _prototypeManager.Index(_missionParams.Biome);
+        var missionBiome = _prototypeManager.Index(MissionParams.Biome);
         var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
         var biomeSystem = _entManager.System<BiomeSystem>();
         biomeSystem.SetTemplate(mapUid, biome, missionBiome);
-        biomeSystem.SetSeed(mapUid, biome, _missionParams.Seed);
+        biomeSystem.SetSeed(mapUid, biome, MissionParams.Seed);
         _entManager.Dirty(mapUid, biome);
 
         //Setup gravity
@@ -84,8 +85,12 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         _entManager.System<AtmosphereSystem>().SetMapAtmosphere(mapUid, false, mixture);
 
-
         _mapManager.DoMapInitialize(mapId);
+        _mapManager.SetMapPaused(mapId, false);
+
+        //Setup expedition
+        var expedition = _entManager.AddComponent<CP14ExpeditionComponent>(mapUid);
+        expedition.MissionParams = MissionParams;
 
         //Dungeon
 
