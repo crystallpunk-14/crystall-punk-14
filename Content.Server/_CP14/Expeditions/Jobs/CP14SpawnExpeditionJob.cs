@@ -5,9 +5,12 @@ using Content.Server._CP14.Expeditions.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
+using Content.Shared._CP14.DayCycle.Components;
 using Content.Shared._CP14.Expeditions;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
+using Content.Shared.Movement.Components;
+using Content.Shared.Parallax;
 using Content.Shared.Parallax.Biomes;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
@@ -76,6 +79,14 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
                 grid,
                 Vector2i.Zero,
                 MissionParams.Seed));
+
+        //Setup parallax TODO: unhardcode
+        var parallax = _entManager.EnsureComponent<ParallaxComponent>(mapUid);
+        parallax.Parallax = "CP14Ocean";
+
+        //Setup daylight TODO: Refactor daylight and implement here
+        var mapLight = _entManager.EnsureComponent<MapLightComponent>(mapUid);
+        mapLight.AmbientLightColor = Color.FromHex("#BFEEFFFF");
 
         //Setup gravity
         var gravity = _entManager.EnsureComponent<GravityComponent>(mapUid);
