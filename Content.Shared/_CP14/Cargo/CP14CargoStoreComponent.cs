@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.TravelingStoreShip;
+namespace Content.Shared._CP14.Cargo;
 
 /// <summary>
 /// Allows users to view information on city trading opportunities

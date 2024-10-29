@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.TravelingStoreShip;
+namespace Content.Shared._CP14.Cargo;
 
 /// <summary>
 /// Stores the price and product/service pair that players can buy.

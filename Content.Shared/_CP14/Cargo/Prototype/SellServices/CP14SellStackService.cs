@@ -1,7 +1,7 @@
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.TravelingStoreShip.Prototype.SellServices;
+namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 
 public sealed partial class CP14SellStackService : CP14StoreSellService
 {

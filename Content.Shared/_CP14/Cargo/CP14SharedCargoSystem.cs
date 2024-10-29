@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.TravelingStoreShip;
+namespace Content.Shared._CP14.Cargo;
 
 public class CP14SharedCargoSystem : EntitySystem
 {

@@ -1,9 +1,9 @@
-using Content.Shared._CP14.TravelingStoreShip.Prototype;
+using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.TravelingStoreShip;
+namespace Content.Shared._CP14.Cargo;
 
 /// <summary>
 /// Add to the station so that traveling store ship starts running on it
