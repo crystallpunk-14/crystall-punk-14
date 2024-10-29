@@ -2,3 +2,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Created by TheShuEd for CrystallPunk14"
   source: "https://github.com/crystallpunk-14/crystall-punk-14"
+
+- files: ["ocean.png", "ocean_overlay.png", "ocean_overlay2.png"]
+  license: "CC0-1.0"
+  copyright: "Created by TheShuEd"
+  source: "https://github.com/space-syndicate/space-station-14/pull/1938"

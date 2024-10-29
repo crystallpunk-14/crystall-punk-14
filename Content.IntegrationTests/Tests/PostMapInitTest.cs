@@ -50,9 +50,8 @@ namespace Content.IntegrationTests.Tests
             "MeteorArena",
 
             //CrystallPunk maps
-            "AlchemyTest",
-            "BattleRoyale",
-            "ExpeditionTest",
+            "Village",
+            "Island",
             //CrystallPunk Map replacement end
         };
 
