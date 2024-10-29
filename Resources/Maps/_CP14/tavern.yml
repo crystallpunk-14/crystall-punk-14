@@ -46,7 +46,7 @@ entities:
     - type: GridTree
     - type: MovedGrids
     - type: BecomesStation
-      id: ExpeditionTest
+      id: Village
     - type: CP14WeatherController
       entries:
       - visuals: CP14Rain
