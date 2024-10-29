@@ -1,0 +1,67 @@
+- type: dungeonConfig
+  id: CP14ExpeditionIsland
+  layers:
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionIslandFloor
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionIslandDungeons
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionIslandFill
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionIslandFloor2
+
+- type: dungeonConfig
+  id: CP14ExpeditionIslandFloor
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 150, 150
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.70
+    layers:
+    - tile: CP14FloorBase
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14ExpeditionIslandFloor2
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 180, 180
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.50
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14ExpeditionIslandFill
+  reserveTiles: true
+  data:
+    entities:
+      Fill: CP14BiomeSpawnerCave
+  layers:
+  - !type:FillGridDunGen
+    allowedTiles:
+    - CP14FloorBase
+
+- type: dungeonConfig
+  id: CP14ExpeditionIslandDungeons
+  reserveTiles: true
+  minCount: 1
+  maxCount: 1
+  layers:
+  - !type:ExteriorDunGen
+    proto: Experiment
