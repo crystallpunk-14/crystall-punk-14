@@ -15,9 +15,6 @@ public sealed partial class CP14ExpeditionsBiomePrototype : IPrototype
     public ProtoId<DungeonConfigPrototype> Config;
 
     [DataField]
-    public string Parallax = string.Empty;
-
-    [DataField]
     public ComponentRegistry Components = new();
 
     //Player faced description

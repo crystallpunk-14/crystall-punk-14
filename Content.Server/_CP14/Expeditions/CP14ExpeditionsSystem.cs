@@ -78,7 +78,7 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
 
     private void GeneratorUsedInHand(Entity<CP14ExpeditionGeneratorComponent> generator, ref UseInHandEvent args)
     {
-        var newParams = GenerateMissionParams(generator);
+        GenerateMissionParams(out var newParams, out var additionalComponents);
 
         if (newParams is not null)
         {
@@ -86,36 +86,37 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
             Log.Debug($"New mission params seed: {newParams.Seed}");
             Log.Debug($"New mission params biome: {newParams.Config}");
 
-            SpawnMission(generator);
+            SpawnMission(generator, additionalComponents);
         }
     }
 
-    private CP14ExpeditionMissionParams? GenerateMissionParams(Entity<CP14ExpeditionGeneratorComponent> generator)
+    private void GenerateMissionParams(out CP14ExpeditionMissionParams? missionParams, out ComponentRegistry additionalComponents)
     {
-        CP14ExpeditionMissionParams missionParams = new();
+        additionalComponents = new ComponentRegistry();
+        missionParams = new CP14ExpeditionMissionParams();
 
         //Seed
         missionParams.Seed = _random.Next(-10000, 10000);
 
         //Island config
-        HashSet<ProtoId<DungeonConfigPrototype>> suitableConfig = new();
+        HashSet<CP14ExpeditionsBiomePrototype> suitableConfig = new();
         foreach (var biomePrototype in _proto.EnumeratePrototypes<CP14ExpeditionsBiomePrototype>())
         {
-            suitableConfig.Add(biomePrototype.Config);
+            suitableConfig.Add(biomePrototype);
         }
 
         if (suitableConfig.Count == 0)
         {
             Log.Error("Expedition mission generation failed: No suitable biomes.");
-            return null;
+            return;
         }
-        missionParams.Config = _random.Pick(suitableConfig);
 
-        //
-        return missionParams;
+        var selectedConfig = _random.Pick(suitableConfig);
+        missionParams.Config = selectedConfig.Config;
+        additionalComponents = selectedConfig.Components;
     }
 
-    private void SpawnMission(Entity<CP14ExpeditionGeneratorComponent> generator)
+    private void SpawnMission(Entity<CP14ExpeditionGeneratorComponent> generator, ComponentRegistry components)
     {
         if (generator.Comp.MissionParams is null)
         {
@@ -135,6 +136,7 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
             _metaData,
             _mapSystem,
             generator.Comp.MissionParams,
+            components,
             cancelToken.Token);
 
         _expeditionJobs.Add((job, cancelToken));

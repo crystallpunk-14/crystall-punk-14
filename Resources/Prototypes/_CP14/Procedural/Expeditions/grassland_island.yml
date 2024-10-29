@@ -1,6 +1,39 @@
 - type: cp14ExpeditionBiome
   id: GrasslandIsland
   config: CP14ExpeditionGrasslandIsland
+  components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: CP14MapFloorOccluder
+  - type: Parallax
+    parallax: CP14Ocean
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14Rain
+    - visuals: CP14Storm
+    - visuals: CP14Mist
+  - type: CP14DayCycle
+    timeEntries:
+    - duration: 80
+      color: '#754A4AFF'
+    - duration: 80
+      color: '#E0BA87FF'
+    - duration: 80
+      color: '#BFEEFFFF'
+    - period: Night
+      duration: 80
+      color: '#385163FF'
+    - period: Night
+      duration: 80
+      color: '#060D12FF'
+    - period: Night
+      duration: 80
+      color: '#000000FF'
+    - period: Night
+      duration: 80
+      color: '#000000FF'
+    - duration: 80
+      color: '#120906FF'
 
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIsland
@@ -11,7 +44,7 @@
       proto: CP14ExpeditionGrasslandIslandFloorMaskGrass
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskStone
-    - !type:EntityTableDunGen
+    - !type:EntityTableDunGen #Dont work in Async call??
       minCount: 5
       maxCount: 6
       table:
@@ -35,8 +68,8 @@
       groups:
       - id: CP14SpawnMobDinoYumkaraptor
         amount: 1
-    # Ore and resources
-    - !type:OreDunGen
+    # Ore and resources 
+    - !type:OreDunGen #Dont work in Async call?? (at least with BiomeSpawner)
       replacement: CP14WallStone
       entity: CP14WallStoneGoldOre
       count: 10
@@ -52,11 +85,6 @@
       replacement: CP14WallStone
       entity: CP14WallStoneCopperOre
       count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
-    - !type:OreDunGen
-      entity: CP14StatueGob
-      count: 5
       minGroupSize: 10
       maxGroupSize: 15
 

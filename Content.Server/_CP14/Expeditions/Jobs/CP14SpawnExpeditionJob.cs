@@ -33,6 +33,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
     private readonly SharedMapSystem _map;
 
     public readonly CP14ExpeditionMissionParams MissionParams;
+    private readonly ComponentRegistry _components;
 
     private readonly ISawmill _sawmill;
 
@@ -47,6 +48,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         MetaDataSystem metaData,
         SharedMapSystem map,
         CP14ExpeditionMissionParams missionParams,
+        ComponentRegistry components,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {
         _entManager = entManager;
@@ -57,6 +59,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         _metaData = metaData;
         _map = map;
         MissionParams = missionParams;
+        _components = components;
         _sawmill = logManager.GetSawmill("cp14_expedition_job");
     }
 
@@ -82,16 +85,8 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
                 Vector2i.Zero,
                 MissionParams.Seed));
 
-        //Setup parallax TODO: unhardcode
-        var parallax = _entManager.EnsureComponent<ParallaxComponent>(mapUid);
-        parallax.Parallax = "CP14Ocean";
-
-        //TODO: Hardcode
-        _entManager.EnsureComponent<CP14MapFloorOccluderComponent>(mapUid);
-
-        //Setup daylight TODO: Refactor daylight and implement here
-        var mapLight = _entManager.EnsureComponent<MapLightComponent>(mapUid);
-        mapLight.AmbientLightColor = Color.FromHex("#BFEEFFFF");
+        //Add map components
+        _entManager.AddComponents(mapUid, _components);
 
         //Setup gravity
         var gravity = _entManager.EnsureComponent<GravityComponent>(mapUid);
