@@ -1,5 +1,6 @@
 using Content.Shared._CP14.Expeditions.Prototypes;
 using Content.Shared.Parallax.Biomes;
+using Content.Shared.Procedural;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -11,7 +12,7 @@ public sealed record CP14ExpeditionMissionParams
     [ViewVariables(VVAccess.ReadWrite)]
     public int Seed;
 
-    public ProtoId<BiomeTemplatePrototype> Biome;
+    public ProtoId<DungeonConfigPrototype> Config;
 
     //public string Difficulty = string.Empty;
 }

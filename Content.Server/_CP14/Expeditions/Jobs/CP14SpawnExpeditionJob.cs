@@ -1,8 +1,10 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server._CP14.Expeditions.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Parallax;
+using Content.Server.Procedural;
 using Content.Shared._CP14.Expeditions;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
@@ -22,7 +24,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
     private readonly IPrototypeManager _prototypeManager;
     //private readonly AnchorableSystem _anchorable;
     private readonly BiomeSystem _biome;
-    //private readonly DungeonSystem _dungeon;
+    private readonly DungeonSystem _dungeon;
     private readonly MetaDataSystem _metaData;
     //private readonly SharedTransformSystem _xforms;
     private readonly SharedMapSystem _map;
@@ -38,6 +40,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         IMapManager mapManager,
         IPrototypeManager protoManager,
         BiomeSystem biome,
+        DungeonSystem dungeon,
         MetaDataSystem metaData,
         SharedMapSystem map,
         CP14ExpeditionMissionParams missionParams,
@@ -47,6 +50,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         _mapManager = mapManager;
         _prototypeManager = protoManager;
         _biome = biome;
+        _dungeon = dungeon;
         _metaData = metaData;
         _map = map;
         MissionParams = missionParams;
@@ -65,13 +69,13 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         //var difficultyId = "Moderate";
         //var difficultyProto = _prototypeManager.Index<SalvageDifficultyPrototype>(difficultyId);
 
-        //Setup biome
-        var missionBiome = _prototypeManager.Index(MissionParams.Biome);
-        var biome = _entManager.AddComponent<BiomeComponent>(mapUid);
-        var biomeSystem = _entManager.System<BiomeSystem>();
-        biomeSystem.SetTemplate(mapUid, biome, missionBiome);
-        biomeSystem.SetSeed(mapUid, biome, MissionParams.Seed);
-        _entManager.Dirty(mapUid, biome);
+        //Spawn island config
+        var dungeonConfig = _prototypeManager.Index(MissionParams.Config);
+        await WaitAsyncTask(_dungeon.GenerateDungeonAsync(dungeonConfig,
+                mapUid,
+                grid,
+                Vector2i.Zero,
+                MissionParams.Seed));
 
         //Setup gravity
         var gravity = _entManager.EnsureComponent<GravityComponent>(mapUid);

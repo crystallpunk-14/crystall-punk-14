@@ -1,4 +1,4 @@
-using Content.Shared.Parallax.Biomes;
+using Content.Shared.Procedural;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Expeditions.Prototypes;
@@ -12,7 +12,7 @@ public sealed partial class CP14ExpeditionsBiomePrototype : IPrototype
     [IdDataField] public string ID { get; } = default!;
 
     [DataField]
-    public ProtoId<BiomeTemplatePrototype> Biome;
+    public ProtoId<DungeonConfigPrototype> Config;
 
     [DataField]
     public float DifficultyCost = 0;

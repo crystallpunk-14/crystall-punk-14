@@ -1,9 +1,0 @@
-- type: cp14ExpeditionBiome
-  id: Grasslands
-  biome: CP14GrasslandTestResult
-  difficulty: 0
-
-- type: cp14ExpeditionBiome
-  id: Caves
-  biome: CP14CavesGeneric
-  difficulty: 5

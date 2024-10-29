@@ -2,10 +2,12 @@ using System.Threading;
 using Content.Server._CP14.Expeditions.Components;
 using Content.Server._CP14.Expeditions.Jobs;
 using Content.Server.Parallax;
+using Content.Server.Procedural;
 using Content.Shared._CP14.Expeditions;
 using Content.Shared._CP14.Expeditions.Prototypes;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Parallax.Biomes;
+using Content.Shared.Procedural;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
@@ -22,6 +24,7 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly BiomeSystem _biome = default!;
+    [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -81,7 +84,7 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
         {
             generator.Comp.MissionParams = newParams;
             Log.Debug($"New mission params seed: {newParams.Seed}");
-            Log.Debug($"New mission params biome: {newParams.Biome}");
+            Log.Debug($"New mission params biome: {newParams.Config}");
 
             SpawnMission(generator);
         }
@@ -94,19 +97,19 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
         //Seed
         missionParams.Seed = _random.Next(-10000, 10000);
 
-        //Biome
-        HashSet<ProtoId<BiomeTemplatePrototype>> suitableBiomes = new();
+        //Island config
+        HashSet<ProtoId<DungeonConfigPrototype>> suitableConfig = new();
         foreach (var biomePrototype in _proto.EnumeratePrototypes<CP14ExpeditionsBiomePrototype>())
         {
-            suitableBiomes.Add(biomePrototype.Biome);
+            suitableConfig.Add(biomePrototype.Config);
         }
 
-        if (suitableBiomes.Count == 0)
+        if (suitableConfig.Count == 0)
         {
             Log.Error("Expedition mission generation failed: No suitable biomes.");
             return null;
         }
-        missionParams.Biome = _random.Pick(suitableBiomes);
+        missionParams.Config = _random.Pick(suitableConfig);
 
         //
         return missionParams;
@@ -128,6 +131,7 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
             _mapManager,
             _proto,
             _biome,
+            _dungeon,
             _metaData,
             _mapSystem,
             generator.Comp.MissionParams,

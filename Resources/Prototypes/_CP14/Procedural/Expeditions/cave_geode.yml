@@ -1,0 +1,137 @@
+- type: cp14ExpeditionBiome
+  id: Grasslands
+  config: CP14ExpeditionCaveGeode
+  difficulty: 0
+
+- type: dungeonConfig
+  id: CP14ExpeditionCaveGeode
+  layers:
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionGrasslandIslandFloorMaskSand
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionGrasslandIslandFloorMaskGrass
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionGrasslandIslandFloorMaskStone
+    - !type:EntityTableDunGen
+      minCount: 2
+      maxCount: 5
+      table:
+        id: VGRoidInteriorRoomMarker
+    # Biome Spawner fills
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionCaveGeodeFillGrassland
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionCaveGeodeFillCave
+    #- !type:PrototypeDunGen
+    #  proto: CP14ExpeditionCaveGeodeFillBorder
+    # Ore and resources
+    - !type:OreDunGen
+      replacement: CP14WallStone
+      entity: CP14WallStoneGoldOre
+      count: 10
+      minGroupSize: 10
+      maxGroupSize: 15
+    - !type:OreDunGen
+      replacement: CP14WallStone
+      entity: CP14WallStoneIronOre
+      count: 10
+      minGroupSize: 10
+      maxGroupSize: 15
+    - !type:OreDunGen
+      replacement: CP14WallStone
+      entity: CP14WallStoneCopperOre
+      count: 10
+      minGroupSize: 10
+      maxGroupSize: 15
+    - !type:OreDunGen
+      entity: CP14StatueGob
+      count: 5
+      minGroupSize: 10
+      maxGroupSize: 15
+
+- type: dungeonConfig
+  id: CP14ExpeditionGrasslandIslandFloorMaskStone
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 50, 50
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.50
+    layers:
+    - tile: CP14FloorBase
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14ExpeditionGrasslandIslandFloorMaskGrass
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 80, 80
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.60
+    layers:
+    - tile: CP14FloorGrass
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14ExpeditionGrasslandIslandFloorMaskSand
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 80, 200
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14ExpeditionCaveGeodeFillGrassland
+  reserveTiles: true
+  data:
+    entities:
+      Fill: CP14BiomeSpawnerGrassland
+  layers:
+  - !type:FillGridDunGen
+    allowedTiles:
+    - CP14FloorGrass
+
+- type: dungeonConfig
+  id: CP14ExpeditionCaveGeodeFillCave
+  reserveTiles: true
+  data:
+    entities:
+      Fill: CP14BiomeSpawnerCave
+  layers:
+  - !type:FillGridDunGen
+    allowedTiles:
+    - CP14FloorBase
+
+- type: dungeonConfig
+  id: CP14ExpeditionCaveGeodeFillBorder
+  reserveTiles: true
+  data:
+    entities:
+      Fill: CP14WallStone
+  layers:
+  - !type:FillGridDunGen
+    allowedTiles:
+    - CP14FloorSand
