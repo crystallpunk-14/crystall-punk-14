@@ -12,10 +12,15 @@
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskStone
     - !type:EntityTableDunGen
-      minCount: 2
-      maxCount: 5
+      minCount: 5
+      maxCount: 6
       table:
         id: VGRoidInteriorRoomMarker
+    #- !type:EntityTableDunGen #Dont work without dungeon
+    #  minCount: 15
+    #  maxCount: 40
+    #  table: !type:NestedSelector
+    #    tableId: CP14TableExpeditionLootCommon
     # Biome Spawner fills
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFillGrassland
@@ -25,8 +30,8 @@
     #  proto: CP14ExpeditionGrasslandIslandFillBorder
     # Mobs
     - !type:MobsDunGen
-      minCount: 5
-      maxCount: 10
+      minCount: 2
+      maxCount: 5
       groups:
       - id: CP14SpawnMobDinoYumkaraptor
         amount: 1

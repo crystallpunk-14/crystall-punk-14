@@ -1,0 +1,96 @@
+- type: entityTable
+  id: CP14TableExpeditionLootCommon
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - id: CP14Wallet
+      - !type:GroupSelector
+        children:
+        - id: CP14SilverCoin1
+          weight: 0.1
+        - id: CP14CopperCoin
+          weight: 0.1
+        - id: CP14CopperCoin5
+          weight: 0.5
+        - id: CP14CopperCoin1
+          weight: 1
+      - id: CP14Wheat
+      - !type:GroupSelector
+        children:
+        - id: CP14DyeRed
+        - id: CP14DyeYellow
+        - id: CP14DyeBlue
+        - id: CP14DyeGreen
+        - id: CP14DyePurple
+        - id: CP14DyeBlack
+      - !type:GroupSelector
+        children:
+        - id: CP14SeedWheat
+        - id: CP14SeedPumpkin
+        - id: CP14SeedCabbage
+        - id: CP14SeedCucumber
+        - id: CP14SeedTomato
+      - !type:GroupSelector
+        children:
+        - id: CP14BloodFlower
+        - id: CP14AgaricMushroom
+        - id: CP14WildSage
+        - id: CP14QuartzShard
+        - id: CP14BlueAmanita
+        - id: CP14Dayflin
+      - id: CP14CopperBar1
+      - id: CP14IronBar1
+      - id: CP14EnergyCrystalSmall
+      - id: CP14Bucket
+      - id: CP14OldLantern
+      - id: CP14Scissors
+      - id: CP14BaseSharpeningStone
+      - id: CP14Rope
+        weight: 2
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - !type:GroupSelector
+        children:
+        - id: CP14VialSmallBloodFlowerSap
+        - id: CP14VialSmallAgaricMushroom
+        - id: CP14VialSmallGroundQuartz
+        - id: CP14VialSmallWildSage
+        - id: CP14VialSmallBlueAmanita
+        - id: CP14VialTinyChromiumSlime
+        - id: CP14VialTinyLumiMushroom
+      - !type:GroupSelector
+        children:
+        - id: CP14ChromiumSlime
+        - id: CP14LumiMushroom
+      - id: CP14SilverCoin5
+      - id: CP14GoldBar1
+      - id: CP14EnergyCrystalMedium
+
+
+
+- type: entityTable
+  id: CP14TableBureaucracy
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - id: CP14Paper
+    # Rare
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: CP14PaperFolderBlue
+      - id: CP14PaperFolderRed
+      - id: CP14PenFeather
+    # Very rare
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: CP14Inkwell

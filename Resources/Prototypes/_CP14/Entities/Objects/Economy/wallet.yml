@@ -3,6 +3,7 @@
   description: A small wallet, handy for storing coins.
   id: CP14Wallet
   parent: BaseStorageItem
+  suffix: Empty
   categories: [ ForkFiltered ]
   components:
   - type: Sprite

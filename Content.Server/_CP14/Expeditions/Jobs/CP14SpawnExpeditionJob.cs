@@ -64,10 +64,12 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
     {
         _sawmill.Debug("cp14_expedition", $"Spawning expedition mission with seed {0}");
         var mapUid = _map.CreateMap(out var mapId, runMapInit: false);
+        var grid = _mapManager.CreateGridEntity(mapUid);
         MetaDataComponent? metadata = null;
-        var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
+        //var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
         var random = new Random(0);
-        _metaData.SetEntityName(mapUid, "TODO: Expedition name generation");
+        _metaData.SetEntityName(mapUid, "TODO: MAP Expedition name generation");
+        _metaData.SetEntityName(grid, "TODO: GRID Expedition name generation");
 
         //var difficultyId = "Moderate";
         //var difficultyProto = _prototypeManager.Index<SalvageDifficultyPrototype>(difficultyId);
@@ -75,7 +77,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         //Spawn island config
         var dungeonConfig = _prototypeManager.Index(MissionParams.Config);
         await WaitAsyncTask(_dungeon.GenerateDungeonAsync(dungeonConfig,
-                mapUid,
+                grid,
                 grid,
                 Vector2i.Zero,
                 MissionParams.Seed));
@@ -83,6 +85,9 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         //Setup parallax TODO: unhardcode
         var parallax = _entManager.EnsureComponent<ParallaxComponent>(mapUid);
         parallax.Parallax = "CP14Ocean";
+
+        //TODO: Hardcode
+        _entManager.EnsureComponent<CP14MapFloorOccluderComponent>(mapUid);
 
         //Setup daylight TODO: Refactor daylight and implement here
         var mapLight = _entManager.EnsureComponent<MapLightComponent>(mapUid);
