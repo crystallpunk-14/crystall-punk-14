@@ -26,7 +26,6 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-
     private readonly JobQueue _expeditionQueue = new();
     private readonly List<(CP14SpawnExpeditionJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
     private const double JobMaxTime = 0.002;

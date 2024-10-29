@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BaseSubdimensionalKey
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: key
+  description: A small, intricate piece of iron that opens certain locks. Don't give it to just anyone!
+  components: 
+  - type: Tag
+    tags:
+    - CP14Key
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/keys.rsi
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/key_drop.ogg
+      params:
+        variation: 0.05
+        
+- type: entity
+  id: CP14SubdimensionalKey
+  parent: CP14BaseSubdimensionalKey
+  name: subdimensional key
+  components:
+  - type: CP14ExpeditionGenerator
+  - type: Sprite
+    state: key1
