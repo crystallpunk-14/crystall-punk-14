@@ -109,10 +109,6 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
 
         //Dungeon
 
-        //Guaranteed loot
-
-        //Mobs spawn
-
         return true;
     }
 }
