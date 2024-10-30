@@ -7,6 +7,7 @@ using Content.Shared._CP14.Demiplan.Components;
 using Content.Shared._CP14.Demiplan.Prototypes;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Throwing;
+using Robust.Server.Audio;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
@@ -28,6 +29,7 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     private readonly JobQueue _expeditionQueue = new();
     private readonly List<(CP14SpawnRandomDemiplanJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
@@ -35,6 +37,8 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
 
     public override void Initialize()
     {
+        base.Initialize();
+
         InitTeleportation();
         InitConnections();
 
@@ -44,16 +48,15 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
         SubscribeLocalEvent<CP14DemiplanComponent, ComponentShutdown>(OnDemiplanShutdown);
     }
 
-
     private void GeneratorMapInit(Entity<CP14DemiplanGeneratorDataComponent> generator, ref MapInitEvent args)
     {
         // Here, a unique Demiplan config should be generated based on the CP14DemiplanGeneratorDataComponent
 
         //Location generation
         HashSet<CP14DemiplanLocationPrototype> suitableConfigs = new();
-        foreach (var expeditionConfig in _proto.EnumeratePrototypes<CP14DemiplanLocationPrototype>())
+        foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplanLocationPrototype>())
         {
-            suitableConfigs.Add(expeditionConfig);
+            suitableConfigs.Add(locationConfig);
         }
 
         if (suitableConfigs.Count == 0)
@@ -110,28 +113,17 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
 
     private void GeneratorUsedInHand(Entity<CP14DemiplanGeneratorDataComponent> generator, ref UseInHandEvent args)
     {
+        SpawnRandomDemiplan(generator);
+
         if (generator.Comp.GeneratedMap is null)
-        {
-            SpawnRandomDemiplan(generator);
-        }
-        else
-        {
-            //TEST
-            var tempRift = EntityManager.Spawn(null);
-            _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
+            return;
 
-            var connection = EnsureComp<CP14DemiplanConnectionComponent>(tempRift);
-            AddDemiplanConnection(generator.Comp.GeneratedMap.Value, (tempRift, connection));
+        //TEST
+        var tempRift = EntityManager.Spawn("CP14DemiplanPassway");
+        _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
 
-            if (!TryTeleportIntoDemiplan(generator.Comp.GeneratedMap.Value, args.User))
-            {
-                QueueDel(tempRift);
-            }
-            else
-            {
-                QueueDel(generator);
-            }
-        }
+        var connection = EnsureComp<CP14DemiplanConnectionComponent>(tempRift);
+        AddDemiplanConnection(generator.Comp.GeneratedMap.Value, (tempRift, connection));
     }
 
     private void SpawnRandomDemiplan(Entity<CP14DemiplanGeneratorDataComponent> generator)

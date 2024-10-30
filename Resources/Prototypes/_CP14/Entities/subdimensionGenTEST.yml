@@ -30,12 +30,13 @@
     state: key1
 
 - type: entity
-  id: CP14DemiplanExitRift
+  id: CP14DemiplanPassway
   categories: [ ForkFiltered ]
   name: demiplan rift
-  description: A rift in the demiplane, allowing us to get out. As you can imagine, there's no going back.
+  description: a gap in space that allows you to travel between world and demiplans.
   components:
-  - type: CP14DemiplanExit
+  - type: CP14DemiplanPassway
+  - type: CP14DemiplanConnection
   - type: Transform
     anchored: True
   - type: InteractionOutline
@@ -56,10 +57,11 @@
     falloffPower: 1.5
     intensity: 50 
   - type: FloatingVisuals
+    canFloat: true
 
 - type: entity
   parent: MarkerBase
-  id: CP14DemiplanEntryPoint
+  id: CP14DemiplanEntryPointMarker
   name: demiplan entry point
   categories: [ ForkFiltered ]
   components:

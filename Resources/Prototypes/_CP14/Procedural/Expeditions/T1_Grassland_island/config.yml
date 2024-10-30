@@ -87,13 +87,13 @@
       minCount: 1
       maxCount: 2
       groups:
-      - id: CP14DemiplanEntryPoint
+      - id: CP14DemiplanEntryPointMarker
         amount: 1
     - !type:MobsDunGen
       minCount: 2
       maxCount: 2
       groups:
-      - id: CP14DemiplanExitRift
+      - id: CP14DemiplanPassway
         amount: 1
     # Loot
     - !type:EntityTableDunGen

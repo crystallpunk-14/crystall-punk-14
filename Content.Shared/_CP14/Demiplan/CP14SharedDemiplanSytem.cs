@@ -13,15 +13,15 @@ public partial class CP14SharedDemiplanSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14DemiplanExitComponent, InteractHandEvent>(OnDemiplanExitInteract);
+        SubscribeLocalEvent<CP14DemiplanPasswayComponent, InteractHandEvent>(OnDemiplanExitInteract);
     }
 
-    private void OnDemiplanExitInteract(Entity<CP14DemiplanExitComponent> exit, ref InteractHandEvent args)
+    private void OnDemiplanExitInteract(Entity<CP14DemiplanPasswayComponent> passway, ref InteractHandEvent args)
     {
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,
-            exit.Comp.DoAfter,
-            new CP14DemiplanExitDoAfter(),
+            passway.Comp.DoAfter,
+            new CP14DemiplanPasswayUseDoAfter(),
             args.Target,
             args.Target)
         {
@@ -35,6 +35,6 @@ public partial class CP14SharedDemiplanSystem : EntitySystem
 }
 
 [Serializable, NetSerializable]
-public sealed partial class CP14DemiplanExitDoAfter : SimpleDoAfterEvent
+public sealed partial class CP14DemiplanPasswayUseDoAfter : SimpleDoAfterEvent
 {
 }

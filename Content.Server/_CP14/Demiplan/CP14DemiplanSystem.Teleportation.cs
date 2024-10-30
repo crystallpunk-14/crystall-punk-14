@@ -9,49 +9,40 @@ public sealed partial class CP14DemiplanSystem
 {
     private void InitTeleportation()
     {
-        SubscribeLocalEvent<CP14DemiplanExitComponent, MapInitEvent>(OnDemiplanExitMapInit);
-        SubscribeLocalEvent<CP14DemiplanExitComponent, CP14DemiplanExitDoAfter>(OnDemiplanExitDoAfter);
+        SubscribeLocalEvent<CP14DemiplanPasswayComponent, CP14DemiplanPasswayUseDoAfter>(OnDemiplanPasswayDoAfter);
     }
 
-    private void OnDemiplanExitMapInit(Entity<CP14DemiplanExitComponent> exit, ref MapInitEvent args)
-    {
-        var map = Transform(exit).MapUid;
-        if (!TryComp<CP14DemiplanComponent>(map, out var demiplan))
-        {
-            QueueDel(exit);
-        }
-        else
-        {
-            exit.Comp.Demiplan = (map.Value, demiplan);
-        }
-    }
-
-    private void OnDemiplanExitDoAfter(Entity<CP14DemiplanExitComponent> exit, ref CP14DemiplanExitDoAfter args)
+    private void OnDemiplanPasswayDoAfter(Entity<CP14DemiplanPasswayComponent> passWay, ref CP14DemiplanPasswayUseDoAfter args)
     {
         if (args.Cancelled || args.Handled)
             return;
 
+        var used = false;
+        var map = Transform(passWay).MapUid;
+        if (TryComp<CP14DemiplanComponent>(map, out var demiplan))
+        {
+            used = TryTeleportOutDemiplan((map.Value, demiplan), args.User, passWay.Comp.DidItNude);
+        }
+        else
+        {
+            if (TryComp<CP14DemiplanConnectionComponent>(passWay, out var connection) && connection.Link is not null)
+            {
+                used = TryTeleportIntoDemiplan(connection.Link.Value, args.User, passWay.Comp.DidItNude);
+            }
+        }
 
-        if (exit.Comp.Demiplan is null)
-            return;
-
-        TeleportOutDemiplan(exit.Comp.Demiplan.Value, args.User, exit.Comp.DidItNude);
+        if (passWay.Comp.MaxUse > 0 && used)
+        {
+            passWay.Comp.MaxUse--;
+            if (passWay.Comp.MaxUse == 0)
+                QueueDel(passWay);
+        }
 
         args.Handled = true;
     }
 
-    private bool TryTeleportIntoDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target)
+    private bool TryTeleportIntoDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude = false)
     {
-        HashSet<EntityUid> teleportEnts = new();
-
-        teleportEnts.Add(target);
-
-        if (TryComp<PullerComponent>(target, out var puller))
-        {
-            if (puller.Pulling is not null)
-                teleportEnts.Add(puller.Pulling.Value);
-        }
-
         if (demiplan.Comp.EntryPoints.Count == 0)
         {
             Log.Error($"{target} cant get in demiplan {demiplan}: no active entry points!");
@@ -59,21 +50,27 @@ public sealed partial class CP14DemiplanSystem
         }
 
         var targetPos = _random.Pick(demiplan.Comp.EntryPoints);
-        var targetCoord = Transform(targetPos).Coordinates;
-        foreach (var ent in teleportEnts)
-        {
-            //todo: Effect spawn
-            _transform.SetCoordinates(ent, targetCoord);
-            _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec(), 2);
-        }
-
+        DemiplanTeleport(target, targetPos, nude);
         return true;
     }
 
-    private void TeleportOutDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude)
+    private bool TryTeleportOutDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude = false)
+    {
+        if (demiplan.Comp.Connections.Count == 0)
+        {
+            Log.Error($"{target} cant get out of demiplan {demiplan}: no active connections!");
+            return false;
+        }
+
+        var targetPos = _random.Pick(demiplan.Comp.Connections);
+
+        DemiplanTeleport(target, targetPos, nude);
+        return true;
+    }
+
+    private void DemiplanTeleport(EntityUid target, EntityUid destination, bool nude = false)
     {
         HashSet<EntityUid> teleportEnts = new();
-
         teleportEnts.Add(target);
 
         if (TryComp<PullerComponent>(target, out var puller))
@@ -82,19 +79,12 @@ public sealed partial class CP14DemiplanSystem
                 teleportEnts.Add(puller.Pulling.Value);
         }
 
-        if (demiplan.Comp.Connections.Count == 0)
-        {
-            Log.Error($"{target} cant get out of demiplan {demiplan}: no active connections!");
-            return;
-        }
-
-        var targetPos = _random.Pick(demiplan.Comp.Connections);
-        var targetCoord = Transform(targetPos).Coordinates;
+        var targetCoord = Transform(destination).Coordinates;
         foreach (var ent in teleportEnts)
         {
             //todo: Effect spawn
             _transform.SetCoordinates(ent, targetCoord);
-            _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec(), 2);
+            _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec());
         }
     }
 }
