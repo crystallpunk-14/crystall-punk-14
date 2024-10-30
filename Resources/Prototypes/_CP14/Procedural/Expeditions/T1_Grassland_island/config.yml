@@ -1,5 +1,5 @@
 - type: cp14ExpeditionBiome
-  id: GrasslandIsland
+  id: T1GrasslandIsland
   config: CP14ExpeditionGrasslandIsland
   components:
   - type: MapLight
