@@ -1,13 +1,10 @@
 using System.Threading;
-using Content.Server._CP14.Expeditions.Components;
-using Content.Server._CP14.Expeditions.Jobs;
+using Content.Server._CP14.Demiplan.Components;
+using Content.Server._CP14.Demiplan.Jobs;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
-using Content.Shared._CP14.Expeditions;
 using Content.Shared._CP14.Expeditions.Prototypes;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Parallax.Biomes;
-using Content.Shared.Procedural;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
@@ -15,9 +12,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server._CP14.Expeditions;
+namespace Content.Server._CP14.Demiplan;
 
-public sealed partial class CP14ExpeditionSystem : EntitySystem
+public sealed partial class CP14DemiplanSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -30,21 +27,21 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private readonly JobQueue _expeditionQueue = new();
-    private readonly List<(CP14SpawnExpeditionJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
+    private readonly List<(CP14SpawnRandomDemiplanJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
     private const double JobMaxTime = 0.002;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14ExpeditionGeneratorComponent, MapInitEvent>(GeneratorMapInit);
-        SubscribeLocalEvent<CP14ExpeditionGeneratorComponent, UseInHandEvent>(GeneratorUsedInHand);
+        SubscribeLocalEvent<CP14CreateDemiplanOnInteractComponent, MapInitEvent>(GeneratorMapInit);
+        SubscribeLocalEvent<CP14CreateDemiplanOnInteractComponent, UseInHandEvent>(GeneratorUsedInHand);
 
-        SubscribeLocalEvent<CP14ExpeditionComponent, MapInitEvent>(OnExpeditionInit);
-        SubscribeLocalEvent<CP14ExpeditionComponent, ComponentShutdown>(OnExpeditionShutdown);
+        SubscribeLocalEvent<CP14DemiplanComponent, MapInitEvent>(OnDemiplanInit);
+        SubscribeLocalEvent<CP14DemiplanComponent, ComponentShutdown>(OnDemiplanShutdown);
     }
 
-    private void OnExpeditionShutdown(Entity<CP14ExpeditionComponent> ent, ref ComponentShutdown args)
+    private void OnDemiplanShutdown(Entity<CP14DemiplanComponent> ent, ref ComponentShutdown args)
     {
         foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
         {
@@ -56,7 +53,7 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
         }
     }
 
-    private void OnExpeditionInit(Entity<CP14ExpeditionComponent> ent, ref MapInitEvent args)
+    private void OnDemiplanInit(Entity<CP14DemiplanComponent> ent, ref MapInitEvent args)
     {
     }
 
@@ -78,17 +75,17 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
         }
     }
 
-    private void GeneratorUsedInHand(Entity<CP14ExpeditionGeneratorComponent> generator, ref UseInHandEvent args)
+    private void GeneratorUsedInHand(Entity<CP14CreateDemiplanOnInteractComponent> generator, ref UseInHandEvent args)
     {
-        SpawnMission(generator);
+        SpawnRandomDemiplan(generator);
     }
 
-    private void GeneratorMapInit(Entity<CP14ExpeditionGeneratorComponent> generator, ref MapInitEvent args)
+    private void GeneratorMapInit(Entity<CP14CreateDemiplanOnInteractComponent> generator, ref MapInitEvent args)
     {
         //We select random acceptable expedition config on generator init
 
-        HashSet<CP14ExpeditionLocationPrototype> suitableConfigs = new();
-        foreach (var expeditionConfig in _proto.EnumeratePrototypes<CP14ExpeditionLocationPrototype>())
+        HashSet<CP14DemiplanLocationPrototype> suitableConfigs = new();
+        foreach (var expeditionConfig in _proto.EnumeratePrototypes<CP14DemiplanLocationPrototype>())
         {
             suitableConfigs.Add(expeditionConfig);
         }
@@ -101,23 +98,22 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
         }
 
         var selectedConfig = _random.Pick(suitableConfigs);
-        generator.Comp.DungeonConfig = selectedConfig;
+        generator.Comp.LocationConfig = selectedConfig;
     }
 
-    private void SpawnMission(Entity<CP14ExpeditionGeneratorComponent> generator)
+    private void SpawnRandomDemiplan(Entity<CP14CreateDemiplanOnInteractComponent> generator)
     {
         var cancelToken = new CancellationTokenSource();
-        var job = new CP14SpawnExpeditionJob(
+        var job = new CP14SpawnRandomDemiplanJob(
             JobMaxTime,
             EntityManager,
             _logManager,
             _mapManager,
             _proto,
-            _biome,
             _dungeon,
             _metaData,
             _mapSystem,
-            generator.Comp.DungeonConfig,
+            generator.Comp.LocationConfig,
             _random.Next(-10000, 10000),
             cancelToken.Token);
 

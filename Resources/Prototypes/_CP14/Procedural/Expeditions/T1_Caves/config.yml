@@ -1,4 +1,4 @@
-- type: cp14ExpeditionConfig
+- type: cp14DemiplanLocation
   id: T1Caves
   locationConfig: CP14ExpeditionCaves
   components:
@@ -18,7 +18,7 @@
       proto: CP14ExpeditionCavesFloorMaskAir
     # Exterior rooms
     #here
-    # Biome Spawner fills (from border to center!)
+    # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillBorder
     - !type:PrototypeDunGen

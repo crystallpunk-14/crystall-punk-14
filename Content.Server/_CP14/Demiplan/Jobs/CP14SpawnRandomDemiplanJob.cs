@@ -1,62 +1,52 @@
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server._CP14.Expeditions.Components;
+using Content.Server._CP14.Demiplan.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
-using Content.Shared._CP14.DayCycle.Components;
-using Content.Shared._CP14.Expeditions;
 using Content.Shared._CP14.Expeditions.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
-using Content.Shared.Movement.Components;
-using Content.Shared.Parallax;
-using Content.Shared.Parallax.Biomes;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Expeditions.Jobs;
+namespace Content.Server._CP14.Demiplan.Jobs;
 
-public sealed class CP14SpawnExpeditionJob : Job<bool>
+public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
 {
     private readonly IEntityManager _entManager;
     //private readonly IGameTiming _timing;
     private readonly IMapManager _mapManager;
     private readonly IPrototypeManager _prototypeManager;
     //private readonly AnchorableSystem _anchorable;
-    private readonly BiomeSystem _biome;
     private readonly DungeonSystem _dungeon;
     private readonly MetaDataSystem _metaData;
     //private readonly SharedTransformSystem _xforms;
     private readonly SharedMapSystem _map;
 
-    private readonly ProtoId<CP14ExpeditionLocationPrototype> _config;
+    private readonly ProtoId<CP14DemiplanLocationPrototype> _config;
     private readonly int _seed;
     public EntityUid ExpeditionMap;
 
     private readonly ISawmill _sawmill;
 
-    public CP14SpawnExpeditionJob(
+    public CP14SpawnRandomDemiplanJob(
         double maxTime,
         IEntityManager entManager,
         ILogManager logManager,
         IMapManager mapManager,
         IPrototypeManager protoManager,
-        BiomeSystem biome,
         DungeonSystem dungeon,
         MetaDataSystem metaData,
         SharedMapSystem map,
-        ProtoId<CP14ExpeditionLocationPrototype> config,
+        ProtoId<CP14DemiplanLocationPrototype> config,
         int seed,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {
         _entManager = entManager;
         _mapManager = mapManager;
         _prototypeManager = protoManager;
-        _biome = biome;
         _dungeon = dungeon;
         _metaData = metaData;
         _map = map;
@@ -105,7 +95,7 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         _mapManager.SetMapPaused(mapId, false);
 
         //Setup expedition
-        var expedition = _entManager.AddComponent<CP14ExpeditionComponent>(mapUid);
+        var expedition = _entManager.AddComponent<CP14DemiplanComponent>(mapUid);
 
         //Dungeon
 
