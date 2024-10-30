@@ -38,7 +38,7 @@
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIsland
   layers:
-    # Masks
+    # Masks (from center to border!)
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskSand
     - !type:PrototypeDunGen
@@ -51,7 +51,7 @@
       maxCount: 2
       table:
         id: CP14GrasslandIslandExteriorRoomSpawner
-    # Biome Spawner fills
+    # Biome Spawner fills (from border to center!)
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFillGrassland
     - !type:PrototypeDunGen

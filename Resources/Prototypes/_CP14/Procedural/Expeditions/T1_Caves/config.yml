@@ -9,7 +9,7 @@
 - type: dungeonConfig
   id: CP14ExpeditionCaves
   layers:
-    # Masks
+    # Masks (from center to border!)
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskBorder
     - !type:PrototypeDunGen
@@ -18,13 +18,13 @@
       proto: CP14ExpeditionCavesFloorMaskAir
     # Exterior rooms
     #here
-    # Biome spawner fills
+    # Biome Spawner fills (from border to center!)
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionCavesFillBorder
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillAir
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillCave
-    - !type:PrototypeDunGen
-      proto: CP14ExpeditionCavesFillBorder
     # Ore and resources 
     - !type:OreDunGen
       replacement: CP14WallStone
@@ -46,8 +46,8 @@
       maxGroupSize: 15
     # Mobs
     - !type:MobsDunGen
-      minCount: 15
-      maxCount: 35
+      minCount: 5
+      maxCount: 10
       groups:
       - id: CP14SpawnMobUndeadZombie
         amount: 1
