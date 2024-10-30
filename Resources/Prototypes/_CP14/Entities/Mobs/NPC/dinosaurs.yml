@@ -88,3 +88,4 @@
         volume: -8
         variation: 0.125
   - type: SoundWhileAlive
+  - type: FloorOcclusion
