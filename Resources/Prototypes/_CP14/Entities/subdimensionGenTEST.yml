@@ -56,3 +56,16 @@
     falloffPower: 1.5
     intensity: 50 
   - type: FloatingVisuals
+
+- type: entity
+  parent: MarkerBase
+  id: CP14DemiplanEntryPoint
+  name: demiplan entry point
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: /Textures/_CP14/Structures/Dungeon/rift.rsi
+      state: rift
+  - type: CP14DemiplanEntryPoint

@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Demiplan.Components;
 using Content.Shared._CP14.Demiplan.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -11,6 +12,9 @@ public sealed partial class CP14DemiplanGeneratorDataComponent : Component
 {
     [DataField]
     public ProtoId<CP14DemiplanLocationPrototype> LocationConfig = new();
+
+    [DataField]
+    public Entity<CP14DemiplanComponent>? GeneratedMap;
 
     //Generation settings
 }

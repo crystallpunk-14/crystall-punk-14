@@ -1,13 +1,11 @@
 using System.Threading;
 using Content.Server._CP14.Demiplan.Components;
 using Content.Server._CP14.Demiplan.Jobs;
-using Content.Server.Parallax;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplan;
 using Content.Shared._CP14.Demiplan.Components;
 using Content.Shared._CP14.Demiplan.Prototypes;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Throwing;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
@@ -24,7 +22,6 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly BiomeSystem _biome = default!;
     [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
@@ -38,52 +35,15 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
 
     public override void Initialize()
     {
+        InitTeleportation();
+        InitConnections();
+
         SubscribeLocalEvent<CP14DemiplanGeneratorDataComponent, MapInitEvent>(GeneratorMapInit);
         SubscribeLocalEvent<CP14DemiplanGeneratorDataComponent, UseInHandEvent>(GeneratorUsedInHand);
 
-        SubscribeLocalEvent<CP14DemiplanConnectionComponent, ComponentShutdown>(ConnectionShutdown);
-
-        SubscribeLocalEvent<CP14DemiplanComponent, MapInitEvent>(OnDemiplanInit);
         SubscribeLocalEvent<CP14DemiplanComponent, ComponentShutdown>(OnDemiplanShutdown);
-
-        SubscribeLocalEvent<CP14DemiplanExitComponent, CP14DemiplanExitDoAfter>(OnDemiplanExitDoAfter);
-        SubscribeLocalEvent<CP14DemiplanExitComponent, MapInitEvent>(OnDemiplanExitMapInit);
     }
 
-    private void OnDemiplanExitDoAfter(Entity<CP14DemiplanExitComponent> exit, ref CP14DemiplanExitDoAfter args)
-    {
-        if (args.Cancelled || args.Handled)
-            return;
-
-
-        if (exit.Comp.Demiplan is null)
-            return;
-
-        TeleportOutDemiplan(exit.Comp.Demiplan.Value, args.User);
-
-        args.Handled = true;
-    }
-
-    private void OnDemiplanExitMapInit(Entity<CP14DemiplanExitComponent> exit, ref MapInitEvent args)
-    {
-        var map = Transform(exit).MapUid;
-        if (!TryComp<CP14DemiplanComponent>(map, out var demiplan))
-        {
-            QueueDel(exit);
-        }
-        else
-        {
-            exit.Comp.Demiplan = (map.Value, demiplan);
-        }
-    }
-
-    private void ConnectionShutdown(Entity<CP14DemiplanConnectionComponent> connection, ref ComponentShutdown args)
-    {
-        if (connection.Comp.Link is null)
-            return;
-
-        RemoveDemiplanConnection(connection.Comp.Link.Value, connection);
-    }
 
     private void GeneratorMapInit(Entity<CP14DemiplanGeneratorDataComponent> generator, ref MapInitEvent args)
     {
@@ -130,10 +90,6 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
         }
     }
 
-    private void OnDemiplanInit(Entity<CP14DemiplanComponent> ent, ref MapInitEvent args)
-    {
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -154,50 +110,35 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
 
     private void GeneratorUsedInHand(Entity<CP14DemiplanGeneratorDataComponent> generator, ref UseInHandEvent args)
     {
-        SpawnRandomDemiplan(generator, out var demiplan);
-
-        //TEST
-        if (TryComp<CP14DemiplanConnectionComponent>(generator, out var connection))
+        if (generator.Comp.GeneratedMap is null)
         {
-            AddDemiplanConnection(demiplan, (generator, connection));
+            SpawnRandomDemiplan(generator);
+        }
+        else
+        {
+            //TEST
+            var tempRift = EntityManager.Spawn(null);
+            _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
+
+            var connection = EnsureComp<CP14DemiplanConnectionComponent>(tempRift);
+            AddDemiplanConnection(generator.Comp.GeneratedMap.Value, (tempRift, connection));
+
+            if (!TryTeleportIntoDemiplan(generator.Comp.GeneratedMap.Value, args.User))
+            {
+                QueueDel(tempRift);
+            }
+            else
+            {
+                QueueDel(generator);
+            }
         }
     }
 
-
-
-    public void TeleportOutDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target)
-    {
-        HashSet<EntityUid> teleportEnts = new();
-
-        teleportEnts.Add(target);
-
-        if (TryComp<PullerComponent>(target, out var puller))
-        {
-            if (puller.Pulling is not null)
-                teleportEnts.Add(puller.Pulling.Value);
-        }
-
-        if (demiplan.Comp.Connections.Count == 0)
-        {
-            Log.Error($"{target} cant get out of demiplan {demiplan}: no active connections!");
-            return;
-        }
-
-        var targetPos = _random.Pick(demiplan.Comp.Connections);
-        var targetCoord = Transform(targetPos).Coordinates;
-        foreach (var ent in teleportEnts)
-        {
-            //todo: Effect spawn
-            _transform.SetCoordinates(ent, targetCoord);
-            _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec(), 2);
-        }
-    }
-
-    private void SpawnRandomDemiplan(Entity<CP14DemiplanGeneratorDataComponent> generator, out Entity<CP14DemiplanComponent> demiplan)
+    private void SpawnRandomDemiplan(Entity<CP14DemiplanGeneratorDataComponent> generator)
     {
         var mapUid = _mapSystem.CreateMap(out var mapId, runMapInit: false);
         var demiComp = EntityManager.EnsureComponent<CP14DemiplanComponent>(mapUid);
-        demiplan = (mapUid, demiComp);
+        generator.Comp.GeneratedMap = (mapUid, demiComp);
 
         var cancelToken = new CancellationTokenSource();
         var job = new CP14SpawnRandomDemiplanJob(

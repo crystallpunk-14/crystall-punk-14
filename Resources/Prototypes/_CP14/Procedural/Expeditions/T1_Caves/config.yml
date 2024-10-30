@@ -51,7 +51,13 @@
       groups:
       - id: CP14SpawnMobUndeadZombie
         amount: 1
-    # Exit
+    # Enter and Exit
+    - !type:MobsDunGen
+      minCount: 1
+      maxCount: 2
+      groups:
+      - id: CP14DemiplanEntryPoint
+        amount: 1
     - !type:MobsDunGen
       minCount: 2
       maxCount: 2

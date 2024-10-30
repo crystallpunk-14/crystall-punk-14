@@ -32,26 +32,6 @@ public partial class CP14SharedDemiplanSystem : EntitySystem
             MovementThreshold = 0.2f,
         });
     }
-
-    public void AddDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
-        Entity<CP14DemiplanConnectionComponent> connection)
-    {
-        if (demiplan.Comp.Connections.Contains(connection))
-            return;
-
-        demiplan.Comp.Connections.Add(connection);
-        connection.Comp.Link = demiplan;
-    }
-
-    public void RemoveDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
-        Entity<CP14DemiplanConnectionComponent> connection)
-    {
-        if (!demiplan.Comp.Connections.Contains(connection))
-            return;
-
-        demiplan.Comp.Connections.Remove(connection);
-        connection.Comp.Link = null;
-    }
 }
 
 [Serializable, NetSerializable]
