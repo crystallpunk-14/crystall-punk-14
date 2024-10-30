@@ -28,3 +28,31 @@
   - type: CP14DemiplanConnection
   - type: Sprite
     state: key1
+
+- type: entity
+  id: CP14DemiplanExitRift
+  categories: [ ForkFiltered ]
+  name: demiplan rift
+  description: A rift in the demiplane, allowing us to get out. As you can imagine, there's no going back.
+  components:
+  - type: CP14DemiplanExit
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/rift.rsi
+    layers:
+    - state: rift
+      shader: unshaded
+  - type: PointLight
+    radius: 8
+    energy: 2
+    netsync: false
+  - type: SingularityDistortion
+    falloffPower: 1.5
+    intensity: 50 
+  - type: FloatingVisuals

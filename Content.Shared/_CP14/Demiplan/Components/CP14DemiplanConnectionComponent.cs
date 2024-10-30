@@ -1,4 +1,4 @@
-namespace Content.Server._CP14.Demiplan.Components;
+namespace Content.Shared._CP14.Demiplan.Components;
 
 /// <summary>
 /// Holds a connection to the demiplane. This can be used by other components to move entities between this object and the demiplane

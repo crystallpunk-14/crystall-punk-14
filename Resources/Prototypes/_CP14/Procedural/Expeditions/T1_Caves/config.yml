@@ -51,6 +51,13 @@
       groups:
       - id: CP14SpawnMobUndeadZombie
         amount: 1
+    # Exit
+    - !type:MobsDunGen
+      minCount: 2
+      maxCount: 2
+      groups:
+      - id: CP14DemiplanExitRift
+        amount: 1
     # Loot
     - !type:EntityTableDunGen
       minCount: 10

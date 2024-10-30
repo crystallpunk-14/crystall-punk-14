@@ -1,4 +1,4 @@
-namespace Content.Server._CP14.Demiplan.Components;
+namespace Content.Shared._CP14.Demiplan.Components;
 
 /// <summary>
 /// Designates this entity as holding a demiplan.
