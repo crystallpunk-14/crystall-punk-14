@@ -1,6 +1,6 @@
-- type: cp14ExpeditionBiome
+- type: cp14ExpeditionConfig
   id: T1Caves
-  config: CP14ExpeditionCaves
+  locationConfig: CP14ExpeditionCaves
   components:
   - type: CP14WeatherController
     entries:

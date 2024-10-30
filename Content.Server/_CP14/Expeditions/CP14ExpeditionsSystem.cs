@@ -37,7 +37,9 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CP14ExpeditionGeneratorComponent, MapInitEvent>(GeneratorMapInit);
         SubscribeLocalEvent<CP14ExpeditionGeneratorComponent, UseInHandEvent>(GeneratorUsedInHand);
+
         SubscribeLocalEvent<CP14ExpeditionComponent, MapInitEvent>(OnExpeditionInit);
         SubscribeLocalEvent<CP14ExpeditionComponent, ComponentShutdown>(OnExpeditionShutdown);
     }
@@ -46,7 +48,7 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
     {
         foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
         {
-            if (job.MissionParams == ent.Comp.MissionParams)
+            if (job.ExpeditionMap == ent.Owner)
             {
                 cancelToken.Cancel();
                 _expeditionJobs.Remove((job, cancelToken));
@@ -78,52 +80,32 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
 
     private void GeneratorUsedInHand(Entity<CP14ExpeditionGeneratorComponent> generator, ref UseInHandEvent args)
     {
-        GenerateMissionParams(out var newParams, out var additionalComponents);
-
-        if (newParams is not null)
-        {
-            generator.Comp.MissionParams = newParams;
-            Log.Debug($"New mission params seed: {newParams.Seed}");
-            Log.Debug($"New mission params biome: {newParams.Config}");
-
-            SpawnMission(generator, additionalComponents);
-        }
+        SpawnMission(generator);
     }
 
-    private void GenerateMissionParams(out CP14ExpeditionMissionParams? missionParams, out ComponentRegistry additionalComponents)
+    private void GeneratorMapInit(Entity<CP14ExpeditionGeneratorComponent> generator, ref MapInitEvent args)
     {
-        additionalComponents = new ComponentRegistry();
-        missionParams = new CP14ExpeditionMissionParams();
+        //We select random acceptable expedition config on generator init
 
-        //Seed
-        missionParams.Seed = _random.Next(-10000, 10000);
-
-        //Island config
-        HashSet<CP14ExpeditionsBiomePrototype> suitableConfig = new();
-        foreach (var biomePrototype in _proto.EnumeratePrototypes<CP14ExpeditionsBiomePrototype>())
+        HashSet<CP14ExpeditionLocationPrototype> suitableConfigs = new();
+        foreach (var expeditionConfig in _proto.EnumeratePrototypes<CP14ExpeditionLocationPrototype>())
         {
-            suitableConfig.Add(biomePrototype);
+            suitableConfigs.Add(expeditionConfig);
         }
 
-        if (suitableConfig.Count == 0)
+        if (suitableConfigs.Count == 0)
         {
             Log.Error("Expedition mission generation failed: No suitable biomes.");
+            QueueDel(generator);
             return;
         }
 
-        var selectedConfig = _random.Pick(suitableConfig);
-        missionParams.Config = selectedConfig.Config;
-        additionalComponents = selectedConfig.Components;
+        var selectedConfig = _random.Pick(suitableConfigs);
+        generator.Comp.DungeonConfig = selectedConfig;
     }
 
-    private void SpawnMission(Entity<CP14ExpeditionGeneratorComponent> generator, ComponentRegistry components)
+    private void SpawnMission(Entity<CP14ExpeditionGeneratorComponent> generator)
     {
-        if (generator.Comp.MissionParams is null)
-        {
-            Log.Error("Expedition mission generation failed: Mission params is null.");
-            return;
-        }
-
         var cancelToken = new CancellationTokenSource();
         var job = new CP14SpawnExpeditionJob(
             JobMaxTime,
@@ -135,8 +117,8 @@ public sealed partial class CP14ExpeditionSystem : EntitySystem
             _dungeon,
             _metaData,
             _mapSystem,
-            generator.Comp.MissionParams,
-            components,
+            generator.Comp.DungeonConfig,
+            _random.Next(-10000, 10000),
             cancelToken.Token);
 
         _expeditionJobs.Add((job, cancelToken));

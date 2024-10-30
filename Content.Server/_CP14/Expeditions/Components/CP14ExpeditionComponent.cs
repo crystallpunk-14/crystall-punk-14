@@ -1,5 +1,3 @@
-using Content.Shared._CP14.Expeditions;
-
 namespace Content.Server._CP14.Expeditions.Components;
 
 /// <summary>
@@ -8,5 +6,6 @@ namespace Content.Server._CP14.Expeditions.Components;
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class CP14ExpeditionComponent : Component
 {
-    public CP14ExpeditionMissionParams MissionParams = default!;
+    [DataField]
+    public EntityUid ExpeditionId;
 }

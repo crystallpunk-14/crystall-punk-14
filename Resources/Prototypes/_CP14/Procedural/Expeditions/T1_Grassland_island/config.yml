@@ -1,6 +1,6 @@
-- type: cp14ExpeditionBiome
+- type: cp14ExpeditionLocation
   id: T1GrasslandIsland
-  config: CP14ExpeditionGrasslandIsland
+  locationConfig: CP14ExpeditionGrasslandIsland
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"

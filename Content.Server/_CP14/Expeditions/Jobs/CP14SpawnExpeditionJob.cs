@@ -7,6 +7,7 @@ using Content.Server.Parallax;
 using Content.Server.Procedural;
 using Content.Shared._CP14.DayCycle.Components;
 using Content.Shared._CP14.Expeditions;
+using Content.Shared._CP14.Expeditions.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;
@@ -32,8 +33,9 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
     //private readonly SharedTransformSystem _xforms;
     private readonly SharedMapSystem _map;
 
-    public readonly CP14ExpeditionMissionParams MissionParams;
-    private readonly ComponentRegistry _components;
+    private readonly ProtoId<CP14ExpeditionLocationPrototype> _config;
+    private readonly int _seed;
+    public EntityUid ExpeditionMap;
 
     private readonly ISawmill _sawmill;
 
@@ -47,8 +49,8 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         DungeonSystem dungeon,
         MetaDataSystem metaData,
         SharedMapSystem map,
-        CP14ExpeditionMissionParams missionParams,
-        ComponentRegistry components,
+        ProtoId<CP14ExpeditionLocationPrototype> config,
+        int seed,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {
         _entManager = entManager;
@@ -58,8 +60,8 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         _dungeon = dungeon;
         _metaData = metaData;
         _map = map;
-        MissionParams = missionParams;
-        _components = components;
+        _config = config;
+        _seed = seed;
         _sawmill = logManager.GetSawmill("cp14_expedition_job");
     }
 
@@ -68,25 +70,24 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
         _sawmill.Debug("cp14_expedition", $"Spawning expedition mission with seed {0}");
         var mapUid = _map.CreateMap(out var mapId, runMapInit: false);
         var grid = _mapManager.CreateGridEntity(mapUid);
+        ExpeditionMap = mapUid;
+
         MetaDataComponent? metadata = null;
-        //var grid = _entManager.EnsureComponent<MapGridComponent>(mapUid);
-        var random = new Random(0);
+
         _metaData.SetEntityName(mapUid, "TODO: MAP Expedition name generation");
         _metaData.SetEntityName(grid, "TODO: GRID Expedition name generation");
 
-        //var difficultyId = "Moderate";
-        //var difficultyProto = _prototypeManager.Index<SalvageDifficultyPrototype>(difficultyId);
-
         //Spawn island config
-        var dungeonConfig = _prototypeManager.Index(MissionParams.Config);
-        _dungeon.GenerateDungeon(dungeonConfig,
+        var expeditionConfig = _prototypeManager.Index(_config);
+        var locationConfig = _prototypeManager.Index(expeditionConfig.LocationConfig);
+        _dungeon.GenerateDungeon(locationConfig,
                 grid,
                 grid,
                 Vector2i.Zero,
-                MissionParams.Seed); //Not async, because dont work with biomespawner boilerplate
+                _seed); //Not async, because dont work with biomespawner boilerplate
 
         //Add map components
-        _entManager.AddComponents(mapUid, _components);
+        _entManager.AddComponents(mapUid, expeditionConfig.Components);
 
         //Setup gravity
         var gravity = _entManager.EnsureComponent<GravityComponent>(mapUid);
@@ -105,7 +106,6 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
 
         //Setup expedition
         var expedition = _entManager.AddComponent<CP14ExpeditionComponent>(mapUid);
-        expedition.MissionParams = MissionParams;
 
         //Dungeon
 

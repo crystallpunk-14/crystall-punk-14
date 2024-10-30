@@ -4,15 +4,15 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Expeditions.Prototypes;
 
 /// <summary>
-/// Allows the expedition generator to use the specified biome along with the restrictions
+/// procedural location template. The answer to the question “Where” as far as the combinatorics of the expedition is concerned.
 /// </summary>
-[Prototype("cp14ExpeditionBiome")]
-public sealed partial class CP14ExpeditionsBiomePrototype : IPrototype
+[Prototype("cp14ExpeditionLocation")]
+public sealed partial class CP14ExpeditionLocationPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 
-    [DataField]
-    public ProtoId<DungeonConfigPrototype> Config;
+    [DataField(required: true)]
+    public ProtoId<DungeonConfigPrototype> LocationConfig;
 
     [DataField]
     public ComponentRegistry Components = new();
