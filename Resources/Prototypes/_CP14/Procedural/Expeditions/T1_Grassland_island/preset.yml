@@ -45,22 +45,15 @@
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskStone
     - !type:EntityTableDunGen #Dont work in Async call??
-      minCount: 5
-      maxCount: 6
+      minCount: 1
+      maxCount: 2
       table:
-        id: VGRoidInteriorRoomMarker
-    #- !type:EntityTableDunGen #Dont work without dungeon
-    #  minCount: 15
-    #  maxCount: 40
-    #  table: !type:NestedSelector
-    #    tableId: CP14TableExpeditionLootCommon
+        id: CP14GrasslandIslandExteriorRoomSpawner
     # Biome Spawner fills
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFillGrassland
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFillCave
-    #- !type:PrototypeDunGen
-    #  proto: CP14ExpeditionGrasslandIslandFillBorder
     # Mobs
     - !type:MobsDunGen
       minCount: 2
@@ -87,6 +80,11 @@
       count: 10
       minGroupSize: 10
       maxGroupSize: 15
+    - !type:EntityTableDunGen #Dont work without dungeon
+      minCount: 5
+      maxCount: 20
+      table: !type:NestedSelector
+        tableId: CP14TableExpeditionLootCommon
 
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIslandFloorMaskStone
@@ -163,14 +161,3 @@
   - !type:FillGridDunGen
     allowedTiles:
     - CP14FloorBase
-
-- type: dungeonConfig
-  id: CP14ExpeditionGrasslandIslandFillBorder
-  reserveTiles: true
-  data:
-    entities:
-      Fill: CP14WallStone
-  layers:
-  - !type:FillGridDunGen
-    allowedTiles:
-    - CP14FloorSand

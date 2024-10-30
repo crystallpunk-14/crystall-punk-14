@@ -79,11 +79,11 @@ public sealed class CP14SpawnExpeditionJob : Job<bool>
 
         //Spawn island config
         var dungeonConfig = _prototypeManager.Index(MissionParams.Config);
-        await WaitAsyncTask(_dungeon.GenerateDungeonAsync(dungeonConfig,
+        _dungeon.GenerateDungeon(dungeonConfig,
                 grid,
                 grid,
                 Vector2i.Zero,
-                MissionParams.Seed));
+                MissionParams.Seed); //Not async, because dont work with biomespawner boilerplate
 
         //Add map components
         _entManager.AddComponents(mapUid, _components);

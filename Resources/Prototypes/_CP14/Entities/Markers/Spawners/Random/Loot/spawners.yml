@@ -1,3 +1,19 @@
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerExpeditionLootCommon
+  name: Expedition common loot spawner
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Objects/Materials/copper_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 1.0
+      tableId: CP14TableExpeditionLootCommon
+
 - type: entityTable
   id: CP14TableExpeditionLootCommon
   table: !type:GroupSelector
@@ -70,8 +86,6 @@
       - id: CP14SilverCoin5
       - id: CP14GoldBar1
       - id: CP14EnergyCrystalMedium
-
-
 
 - type: entityTable
   id: CP14TableBureaucracy
