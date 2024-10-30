@@ -27,7 +27,9 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
 
     private readonly ProtoId<CP14DemiplanLocationPrototype> _config;
     private readonly int _seed;
-    public EntityUid ExpeditionMap;
+
+    public readonly EntityUid DemiplanMapUid;
+    private readonly MapId _demiplanMapId;
 
     private readonly ISawmill _sawmill;
 
@@ -40,6 +42,8 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
         DungeonSystem dungeon,
         MetaDataSystem metaData,
         SharedMapSystem map,
+        EntityUid demiplanMapUid,
+        MapId demiplanMapId,
         ProtoId<CP14DemiplanLocationPrototype> config,
         int seed,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
@@ -50,21 +54,22 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
         _dungeon = dungeon;
         _metaData = metaData;
         _map = map;
+        DemiplanMapUid = demiplanMapUid;
+        _demiplanMapId = demiplanMapId;
         _config = config;
         _seed = seed;
+
         _sawmill = logManager.GetSawmill("cp14_expedition_job");
     }
 
     protected override async Task<bool> Process()
     {
         _sawmill.Debug("cp14_expedition", $"Spawning expedition mission with seed {0}");
-        var mapUid = _map.CreateMap(out var mapId, runMapInit: false);
-        var grid = _mapManager.CreateGridEntity(mapUid);
-        ExpeditionMap = mapUid;
+        var grid = _mapManager.CreateGridEntity(DemiplanMapUid);
 
         MetaDataComponent? metadata = null;
 
-        _metaData.SetEntityName(mapUid, "TODO: MAP Expedition name generation");
+        _metaData.SetEntityName(DemiplanMapUid, "TODO: MAP Expedition name generation");
         _metaData.SetEntityName(grid, "TODO: GRID Expedition name generation");
 
         //Spawn island config
@@ -77,25 +82,25 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
                 _seed); //Not async, because dont work with biomespawner boilerplate
 
         //Add map components
-        _entManager.AddComponents(mapUid, expeditionConfig.Components);
+        _entManager.AddComponents(DemiplanMapUid, expeditionConfig.Components);
 
         //Setup gravity
-        var gravity = _entManager.EnsureComponent<GravityComponent>(mapUid);
+        var gravity = _entManager.EnsureComponent<GravityComponent>(DemiplanMapUid);
         gravity.Enabled = true;
-        _entManager.Dirty(mapUid, gravity, metadata);
+        _entManager.Dirty(DemiplanMapUid, gravity, metadata);
 
         // Setup default atmos
         var moles = new float[Atmospherics.AdjustedNumberOfGases];
         moles[(int) Gas.Oxygen] = 21.824779f;
         moles[(int) Gas.Nitrogen] = 82.10312f;
         var mixture = new GasMixture(moles, Atmospherics.T20C);
-        _entManager.System<AtmosphereSystem>().SetMapAtmosphere(mapUid, false, mixture);
+        _entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplanMapUid, false, mixture);
 
-        _mapManager.DoMapInitialize(mapId);
-        _mapManager.SetMapPaused(mapId, false);
+        _mapManager.DoMapInitialize(_demiplanMapId);
+        _mapManager.SetMapPaused(_demiplanMapId, false);
 
         //Setup expedition
-        var expedition = _entManager.AddComponent<CP14DemiplanComponent>(mapUid);
+        var expedition = _entManager.AddComponent<CP14DemiplanComponent>(DemiplanMapUid);
 
         //Dungeon
 

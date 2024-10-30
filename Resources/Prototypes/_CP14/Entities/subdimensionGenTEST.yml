@@ -24,6 +24,6 @@
   parent: CP14BaseSubdimensionalKey
   name: subdimensional key
   components:
-  - type: CP14ExpeditionGenerator
+  - type: CP14CreateDemiplanOnInteract
   - type: Sprite
     state: key1

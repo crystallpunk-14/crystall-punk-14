@@ -45,7 +45,7 @@ public sealed partial class CP14DemiplanSystem : EntitySystem
     {
         foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
         {
-            if (job.ExpeditionMap == ent.Owner)
+            if (job.DemiplanMapUid == ent.Owner)
             {
                 cancelToken.Cancel();
                 _expeditionJobs.Remove((job, cancelToken));
@@ -77,7 +77,7 @@ public sealed partial class CP14DemiplanSystem : EntitySystem
 
     private void GeneratorUsedInHand(Entity<CP14CreateDemiplanOnInteractComponent> generator, ref UseInHandEvent args)
     {
-        SpawnRandomDemiplan(generator);
+        SpawnRandomDemiplan(generator, out var mapUid);
     }
 
     private void GeneratorMapInit(Entity<CP14CreateDemiplanOnInteractComponent> generator, ref MapInitEvent args)
@@ -92,7 +92,7 @@ public sealed partial class CP14DemiplanSystem : EntitySystem
 
         if (suitableConfigs.Count == 0)
         {
-            Log.Error("Expedition mission generation failed: No suitable biomes.");
+            Log.Error("Expedition mission generation failed: No suitable location configs.");
             QueueDel(generator);
             return;
         }
@@ -101,8 +101,10 @@ public sealed partial class CP14DemiplanSystem : EntitySystem
         generator.Comp.LocationConfig = selectedConfig;
     }
 
-    private void SpawnRandomDemiplan(Entity<CP14CreateDemiplanOnInteractComponent> generator)
+    private void SpawnRandomDemiplan(Entity<CP14CreateDemiplanOnInteractComponent> generator, out EntityUid mapUid)
     {
+        mapUid = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+
         var cancelToken = new CancellationTokenSource();
         var job = new CP14SpawnRandomDemiplanJob(
             JobMaxTime,
@@ -113,6 +115,8 @@ public sealed partial class CP14DemiplanSystem : EntitySystem
             _dungeon,
             _metaData,
             _mapSystem,
+            mapUid,
+            mapId,
             generator.Comp.LocationConfig,
             _random.Next(-10000, 10000),
             cancelToken.Token);
