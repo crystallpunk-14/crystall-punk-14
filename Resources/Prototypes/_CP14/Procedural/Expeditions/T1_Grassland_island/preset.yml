@@ -38,13 +38,15 @@
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIsland
   layers:
+    # Masks
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskSand
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskGrass
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskStone
-    - !type:EntityTableDunGen #Dont work in Async call??
+    # Exterior rooms
+    - !type:EntityTableDunGen
       minCount: 1
       maxCount: 2
       table:
@@ -54,15 +56,8 @@
       proto: CP14ExpeditionGrasslandIslandFillGrassland
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFillCave
-    # Mobs
-    - !type:MobsDunGen
-      minCount: 2
-      maxCount: 5
-      groups:
-      - id: CP14SpawnMobDinoYumkaraptor
-        amount: 1
     # Ore and resources 
-    - !type:OreDunGen #Dont work in Async call?? (at least with BiomeSpawner)
+    - !type:OreDunGen
       replacement: CP14WallStone
       entity: CP14WallStoneGoldOre
       count: 10
@@ -80,7 +75,15 @@
       count: 10
       minGroupSize: 10
       maxGroupSize: 15
-    - !type:EntityTableDunGen #Dont work without dungeon
+    # Mobs
+    - !type:MobsDunGen
+      minCount: 2
+      maxCount: 5
+      groups:
+      - id: CP14SpawnMobDinoYumkaraptor
+        amount: 1
+    # Loot
+    - !type:EntityTableDunGen
       minCount: 5
       maxCount: 20
       table: !type:NestedSelector
