@@ -1,10 +1,8 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server._CP14.Demiplan.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Parallax;
 using Content.Server.Procedural;
-using Content.Shared._CP14.Expeditions.Prototypes;
+using Content.Shared._CP14.Demiplan.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
 using Robust.Shared.CPUJob.JobQueues;
@@ -98,9 +96,6 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
 
         _mapManager.DoMapInitialize(_demiplanMapId);
         _mapManager.SetMapPaused(_demiplanMapId, false);
-
-        //Setup expedition
-        var expedition = _entManager.AddComponent<CP14DemiplanComponent>(DemiplanMapUid);
 
         //Dungeon
 

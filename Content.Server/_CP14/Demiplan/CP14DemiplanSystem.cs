@@ -3,7 +3,7 @@ using Content.Server._CP14.Demiplan.Components;
 using Content.Server._CP14.Demiplan.Jobs;
 using Content.Server.Parallax;
 using Content.Server.Procedural;
-using Content.Shared._CP14.Expeditions.Prototypes;
+using Content.Shared._CP14.Demiplan.Prototypes;
 using Content.Shared.Interaction.Events;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
@@ -34,22 +34,65 @@ public sealed partial class CP14DemiplanSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14CreateDemiplanOnInteractComponent, MapInitEvent>(GeneratorMapInit);
-        SubscribeLocalEvent<CP14CreateDemiplanOnInteractComponent, UseInHandEvent>(GeneratorUsedInHand);
+        SubscribeLocalEvent<CP14DemiplanGeneratorDataComponent, MapInitEvent>(GeneratorMapInit);
+        SubscribeLocalEvent<CP14DemiplanGeneratorDataComponent, UseInHandEvent>(GeneratorUsedInHand);
+
+        SubscribeLocalEvent<CP14DemiplanConnectionComponent, ComponentShutdown>(ConnectionShutdown);
 
         SubscribeLocalEvent<CP14DemiplanComponent, MapInitEvent>(OnDemiplanInit);
         SubscribeLocalEvent<CP14DemiplanComponent, ComponentShutdown>(OnDemiplanShutdown);
     }
 
-    private void OnDemiplanShutdown(Entity<CP14DemiplanComponent> ent, ref ComponentShutdown args)
+    private void ConnectionShutdown(Entity<CP14DemiplanConnectionComponent> connection, ref ComponentShutdown args)
+    {
+        if (connection.Comp.Link is null)
+            return;
+
+        RemoveDemiplanConnection(connection.Comp.Link.Value, connection);
+    }
+
+    private void GeneratorMapInit(Entity<CP14DemiplanGeneratorDataComponent> generator, ref MapInitEvent args)
+    {
+        // Here, a unique Demiplan config should be generated based on the CP14DemiplanGeneratorDataComponent
+
+        //Location generation
+        HashSet<CP14DemiplanLocationPrototype> suitableConfigs = new();
+        foreach (var expeditionConfig in _proto.EnumeratePrototypes<CP14DemiplanLocationPrototype>())
+        {
+            suitableConfigs.Add(expeditionConfig);
+        }
+
+        if (suitableConfigs.Count == 0)
+        {
+            Log.Error("Expedition mission generation failed: No suitable location configs.");
+            QueueDel(generator);
+            return;
+        }
+
+        var selectedConfig = _random.Pick(suitableConfigs);
+        generator.Comp.LocationConfig = selectedConfig;
+
+        //Modifier generation
+
+        //Scenario generation
+
+        //ETC generation
+    }
+
+    private void OnDemiplanShutdown(Entity<CP14DemiplanComponent> demiplan, ref ComponentShutdown args)
     {
         foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
         {
-            if (job.DemiplanMapUid == ent.Owner)
+            if (job.DemiplanMapUid == demiplan.Owner)
             {
                 cancelToken.Cancel();
                 _expeditionJobs.Remove((job, cancelToken));
             }
+        }
+
+        foreach (var connection in demiplan.Comp.Connections)
+        {
+            RemoveDemiplanConnection(demiplan, connection);
         }
     }
 
@@ -75,35 +118,42 @@ public sealed partial class CP14DemiplanSystem : EntitySystem
         }
     }
 
-    private void GeneratorUsedInHand(Entity<CP14CreateDemiplanOnInteractComponent> generator, ref UseInHandEvent args)
+    private void GeneratorUsedInHand(Entity<CP14DemiplanGeneratorDataComponent> generator, ref UseInHandEvent args)
     {
-        SpawnRandomDemiplan(generator, out var mapUid);
+        SpawnRandomDemiplan(generator, out var demiplan);
+
+        //TEST
+        if (TryComp<CP14DemiplanConnectionComponent>(generator, out var connection))
+        {
+            AddDemiplanConnection(demiplan, (generator, connection));
+        }
     }
 
-    private void GeneratorMapInit(Entity<CP14CreateDemiplanOnInteractComponent> generator, ref MapInitEvent args)
+    private void AddDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
+        Entity<CP14DemiplanConnectionComponent> connection)
     {
-        //We select random acceptable expedition config on generator init
-
-        HashSet<CP14DemiplanLocationPrototype> suitableConfigs = new();
-        foreach (var expeditionConfig in _proto.EnumeratePrototypes<CP14DemiplanLocationPrototype>())
-        {
-            suitableConfigs.Add(expeditionConfig);
-        }
-
-        if (suitableConfigs.Count == 0)
-        {
-            Log.Error("Expedition mission generation failed: No suitable location configs.");
-            QueueDel(generator);
+        if (demiplan.Comp.Connections.Contains(connection))
             return;
-        }
 
-        var selectedConfig = _random.Pick(suitableConfigs);
-        generator.Comp.LocationConfig = selectedConfig;
+        demiplan.Comp.Connections.Add(connection);
+        connection.Comp.Link = demiplan;
     }
 
-    private void SpawnRandomDemiplan(Entity<CP14CreateDemiplanOnInteractComponent> generator, out EntityUid mapUid)
+    private void RemoveDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
+        Entity<CP14DemiplanConnectionComponent> connection)
     {
-        mapUid = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+        if (!demiplan.Comp.Connections.Contains(connection))
+            return;
+
+        demiplan.Comp.Connections.Remove(connection);
+        connection.Comp.Link = null;
+    }
+
+    private void SpawnRandomDemiplan(Entity<CP14DemiplanGeneratorDataComponent> generator, out Entity<CP14DemiplanComponent> demiplan)
+    {
+        var mapUid = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+        var demiComp = EntityManager.EnsureComponent<CP14DemiplanComponent>(mapUid);
+        demiplan = (mapUid, demiComp);
 
         var cancelToken = new CancellationTokenSource();
         var job = new CP14SpawnRandomDemiplanJob(

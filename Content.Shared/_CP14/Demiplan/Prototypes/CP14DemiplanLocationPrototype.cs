@@ -1,7 +1,7 @@
 using Content.Shared.Procedural;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Expeditions.Prototypes;
+namespace Content.Shared._CP14.Demiplan.Prototypes;
 
 /// <summary>
 /// procedural location template. The answer to the question “Where” as far as the combinatorics of the expedition is concerned.
