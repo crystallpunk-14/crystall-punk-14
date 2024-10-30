@@ -131,7 +131,7 @@ public sealed class TemperatureSystem : EntitySystem
         TemperatureComponent? temperature = null)
     {
         //CrystallPunk may try place on heater and entity, and solutions
-        //if (!Resolve(uid, ref temperature))
+        //if (!Resolve(uid, ref temperature, false))
         //    return;
         if (temperature == null)
             return;
@@ -315,7 +315,7 @@ public sealed class TemperatureSystem : EntitySystem
 
     private void ChangeTemperatureOnCollide(Entity<ChangeTemperatureOnCollideComponent> ent, ref ProjectileHitEvent args)
     {
-        _temperature.ChangeHeat(args.Target, ent.Comp.Heat, ent.Comp.IgnoreHeatResistance);// adjust the temperature 
+        _temperature.ChangeHeat(args.Target, ent.Comp.Heat, ent.Comp.IgnoreHeatResistance);// adjust the temperature
     }
 
     private void OnParentChange(EntityUid uid, TemperatureComponent component,
