@@ -5,18 +5,17 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Demiplan;
 
-public partial class CP14SharedDemiplanSystem : EntitySystem
+public abstract partial  class CP14SharedDemiplanSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14DemiplanPasswayComponent, InteractHandEvent>(OnDemiplanExitInteract);
+        SubscribeLocalEvent<CP14DemiplanPasswayComponent, InteractHandEvent>(OnDemiplanPasswayInteract);
     }
 
-    private void OnDemiplanExitInteract(Entity<CP14DemiplanPasswayComponent> passway, ref InteractHandEvent args)
+    private void OnDemiplanPasswayInteract(Entity<CP14DemiplanPasswayComponent> passway, ref InteractHandEvent args)
     {
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,

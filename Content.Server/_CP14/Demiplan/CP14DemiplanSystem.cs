@@ -1,6 +1,7 @@
 using System.Threading;
 using Content.Server._CP14.Demiplan.Components;
 using Content.Server._CP14.Demiplan.Jobs;
+using Content.Server.Mind;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplan;
 using Content.Shared._CP14.Demiplan.Components;
@@ -30,6 +31,8 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
 
     private readonly JobQueue _expeditionQueue = new();
     private readonly List<(CP14SpawnRandomDemiplanJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
@@ -97,7 +100,8 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
     {
         base.Update(frameTime);
 
-        var currentTime = _timing.CurTime;
+        UpdateTeleportation(frameTime);
+
         _expeditionQueue.Process();
 
         foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
@@ -119,7 +123,7 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
             return;
 
         //TEST
-        var tempRift = EntityManager.Spawn("CP14DemiplanPassway");
+        var tempRift = EntityManager.Spawn("CP14DemiplanTimedRadiusPassway");
         _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
 
         var connection = EnsureComp<CP14DemiplanConnectionComponent>(tempRift);
@@ -150,5 +154,28 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
 
         _expeditionJobs.Add((job, cancelToken));
         _expeditionQueue.EnqueueJob(job);
+    }
+
+    public bool TryGetDemiplanEntryPoint(Entity<CP14DemiplanComponent> demiplan, out Entity<CP14DemiplanEntryPointComponent>? entryPoint)
+    {
+        entryPoint = null;
+
+        if (demiplan.Comp.EntryPoints.Count == 0)
+            return false;
+
+        entryPoint = _random.Pick(demiplan.Comp.EntryPoints);
+        return true;
+    }
+
+    public bool TryGetDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
+        out Entity<CP14DemiplanConnectionComponent>? connection)
+    {
+        connection = null;
+
+        if (demiplan.Comp.Connections.Count == 0)
+            return false;
+
+        connection = _random.Pick(demiplan.Comp.Connections);
+        return true;
     }
 }
