@@ -58,7 +58,7 @@
   - type: CP14DemiplaneRift
     activeTeleport: false
   - type: CP14DemiplaneRadiusTimedPassway
-    maxEntities: 3
+    maxEntities: 4
     delay: 4
   - type: Sprite
     drawdepth: Effects

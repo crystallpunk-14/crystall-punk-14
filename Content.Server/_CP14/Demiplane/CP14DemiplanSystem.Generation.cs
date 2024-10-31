@@ -82,6 +82,7 @@ public sealed partial class CP14DemiplaneSystem
 
         SpawnRandomDemiplane(generator.Comp.LocationConfig.Value, out var demiplane, out var mapId);
 
+        //Admin log needed
         //TEST
         EnsureComp<CP14DemiplaneDestroyWithoutStabilizationComponent>(demiplane);
 
