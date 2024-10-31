@@ -18,8 +18,8 @@ public sealed partial class CP14DemiplanSystem
     {
         //Radius passway
         var query =
-            EntityQueryEnumerator<CP14DemiplanRadiusTimedPasswayComponent, CP14DemiplanConnectionComponent>();
-        while (query.MoveNext(out var uid, out var passway, out var connection))
+            EntityQueryEnumerator<CP14DemiplanRadiusTimedPasswayComponent, CP14DemiplanExitPointComponent>();
+        while (query.MoveNext(out var uid, out var passway, out var exitPoint))
         {
             if (!passway.Enabled)
                 continue;
@@ -57,14 +57,14 @@ public sealed partial class CP14DemiplanSystem
             }
             else
             {
-                if (connection.Link is not null)
+                if (exitPoint.Link is not null)
                 {
-                    if (!TryGetDemiplanEntryPoint(connection.Link.Value, out _))
+                    if (!TryGetDemiplanEntryPoint(exitPoint.Link.Value, out _))
                         break;
 
                     foreach (var ent in teleportedEnts) //We out demiplan, tp IN
                     {
-                        TryTeleportIntoDemiplan(connection.Link.Value, ent);
+                        TryTeleportIntoDemiplan(exitPoint.Link.Value, ent);
                     }
                 }
             }
@@ -86,9 +86,9 @@ public sealed partial class CP14DemiplanSystem
         }
         else
         {
-            if (TryComp<CP14DemiplanConnectionComponent>(passWay, out var connection) && connection.Link is not null)
+            if (TryComp<CP14DemiplanExitPointComponent>(passWay, out var exitPoint) && exitPoint.Link is not null)
             {
-                used = TryTeleportIntoDemiplan(connection.Link.Value, args.User, passWay.Comp.DidItNude);
+                used = TryTeleportIntoDemiplan(exitPoint.Link.Value, args.User, passWay.Comp.DidItNude);
             }
         }
 
@@ -110,7 +110,7 @@ public sealed partial class CP14DemiplanSystem
 
     #region Teleportation
 
-    private bool TryTeleportIntoDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude = false)
+    public bool TryTeleportIntoDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude = false)
     {
         if (!TryGetDemiplanEntryPoint(demiplan, out var entryPoint) || entryPoint is null)
         {
@@ -118,11 +118,15 @@ public sealed partial class CP14DemiplanSystem
             return false;
         }
 
-        DemiplanTeleport(target, entryPoint.Value, nude);
+        var targetCoord = Transform(entryPoint.Value).Coordinates;
+        _flash.Flash(target, null, null, 2f, 0.5f);
+        _transform.SetCoordinates(target, targetCoord);
+        _audio.PlayGlobal(demiplan.Comp.ArrivalSound, target);
+
         return true;
     }
 
-    private bool TryTeleportOutDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude = false)
+    public bool TryTeleportOutDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude = false)
     {
         if (!TryGetDemiplanConnection(demiplan, out var connection) || connection is null)
         {
@@ -130,29 +134,12 @@ public sealed partial class CP14DemiplanSystem
             return false;
         }
 
-        DemiplanTeleport(target, connection.Value, nude);
+        var targetCoord = Transform(connection.Value).Coordinates;
+        _flash.Flash(target, null, null, 2f, 0.5f);
+        _transform.SetCoordinates(target, targetCoord);
+        _audio.PlayGlobal(demiplan.Comp.DepartureSound, target);
+
         return true;
-    }
-
-    private void DemiplanTeleport(EntityUid target, EntityUid destination, bool nude = false)
-    {
-        HashSet<EntityUid> teleportEnts = new();
-        teleportEnts.Add(target);
-
-        if (TryComp<PullerComponent>(target, out var puller))
-        {
-            if (puller.Pulling is not null)
-                teleportEnts.Add(puller.Pulling.Value);
-        }
-
-        var targetCoord = Transform(destination).Coordinates;
-        foreach (var ent in teleportEnts)
-        {
-            //nuding here
-            //Some visual effects
-            _transform.SetCoordinates(ent, targetCoord);
-            _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec(), 20);
-        }
     }
 
     #endregion

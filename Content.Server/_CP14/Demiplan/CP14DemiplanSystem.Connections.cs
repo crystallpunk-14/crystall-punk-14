@@ -6,18 +6,18 @@ public sealed partial class CP14DemiplanSystem
 {
     private void InitConnections()
     {
-        SubscribeLocalEvent<CP14DemiplanConnectionComponent, ComponentShutdown>(ConnectionShutdown);
+        SubscribeLocalEvent<CP14DemiplanExitPointComponent, ComponentShutdown>(ExitPointShutdown);
 
         SubscribeLocalEvent<CP14DemiplanEntryPointComponent, ComponentShutdown>(EntryPointShutdown);
         SubscribeLocalEvent<CP14DemiplanEntryPointComponent, MapInitEvent>(EntryPointMapInit);
     }
 
-    private void ConnectionShutdown(Entity<CP14DemiplanConnectionComponent> connection, ref ComponentShutdown args)
+    private void ExitPointShutdown(Entity<CP14DemiplanExitPointComponent> exitPoint, ref ComponentShutdown args)
     {
-        if (connection.Comp.Link is null)
+        if (exitPoint.Comp.Link is null)
             return;
 
-        RemoveDemiplanConnection(connection.Comp.Link.Value, connection);
+        RemoveDemiplanConnection(exitPoint.Comp.Link.Value, exitPoint);
     }
 
     private void EntryPointShutdown(Entity<CP14DemiplanEntryPointComponent> entryPoint, ref ComponentShutdown args)
@@ -42,23 +42,23 @@ public sealed partial class CP14DemiplanSystem
     }
 
     private void AddDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
-        Entity<CP14DemiplanConnectionComponent> connection)
+        Entity<CP14DemiplanExitPointComponent> exitPoint)
     {
-        if (demiplan.Comp.Connections.Contains(connection))
+        if (demiplan.Comp.ExitPoints.Contains(exitPoint))
             return;
 
-        demiplan.Comp.Connections.Add(connection);
-        connection.Comp.Link = demiplan;
+        demiplan.Comp.ExitPoints.Add(exitPoint);
+        exitPoint.Comp.Link = demiplan;
     }
 
     private void RemoveDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
-        Entity<CP14DemiplanConnectionComponent> connection)
+        Entity<CP14DemiplanExitPointComponent> exitPoint)
     {
-        if (!demiplan.Comp.Connections.Contains(connection))
+        if (!demiplan.Comp.ExitPoints.Contains(exitPoint))
             return;
 
-        demiplan.Comp.Connections.Remove(connection);
-        connection.Comp.Link = null;
+        demiplan.Comp.ExitPoints.Remove(exitPoint);
+        exitPoint.Comp.Link = null;
     }
 
     private void AddDemiplanEntryPoint(Entity<CP14DemiplanComponent> demiplan,

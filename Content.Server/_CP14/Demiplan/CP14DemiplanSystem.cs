@@ -1,6 +1,7 @@
 using System.Threading;
 using Content.Server._CP14.Demiplan.Components;
 using Content.Server._CP14.Demiplan.Jobs;
+using Content.Server.Flash;
 using Content.Server.Mind;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplan;
@@ -33,6 +34,7 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly FlashSystem _flash = default!;
 
     private readonly JobQueue _expeditionQueue = new();
     private readonly List<(CP14SpawnRandomDemiplanJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
@@ -90,7 +92,7 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
             }
         }
 
-        foreach (var connection in demiplan.Comp.Connections)
+        foreach (var connection in demiplan.Comp.ExitPoints)
         {
             RemoveDemiplanConnection(demiplan, connection);
         }
@@ -126,7 +128,7 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
         var tempRift = EntityManager.Spawn("CP14DemiplanTimedRadiusPassway");
         _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
 
-        var connection = EnsureComp<CP14DemiplanConnectionComponent>(tempRift);
+        var connection = EnsureComp<CP14DemiplanExitPointComponent>(tempRift);
         AddDemiplanConnection(generator.Comp.GeneratedMap.Value, (tempRift, connection));
     }
 
@@ -168,14 +170,14 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
     }
 
     public bool TryGetDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
-        out Entity<CP14DemiplanConnectionComponent>? connection)
+        out Entity<CP14DemiplanExitPointComponent>? exitPoint)
     {
-        connection = null;
+        exitPoint = null;
 
-        if (demiplan.Comp.Connections.Count == 0)
+        if (demiplan.Comp.ExitPoints.Count == 0)
             return false;
 
-        connection = _random.Pick(demiplan.Comp.Connections);
+        exitPoint = _random.Pick(demiplan.Comp.ExitPoints);
         return true;
     }
 }
