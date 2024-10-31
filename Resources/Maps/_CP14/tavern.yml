@@ -84229,7 +84229,7 @@ entities:
     - type: Transform
       pos: 31.23764,34.036747
       parent: 1
-- proto: WallPlastitaniumIndestructible
+- proto: CP14WallStoneIndestructable
   entities:
   - uid: 4
     components:

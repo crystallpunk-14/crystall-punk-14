@@ -95,6 +95,7 @@
         type: StrippableBoundUserInterface
   - type: InventorySlots
   - type: ContainerContainer
+  - type: FloorOcclusion
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:

@@ -1,0 +1,23 @@
+- type: Tag
+  id: CP14GrasslandIsland
+
+- type: entity
+  id: CP14GrasslandIslandExteriorRoomSpawner
+  categories: [ ForkFiltered ]
+  parent: BaseRoomMarker
+  name: Grassland island exterior room spawner
+  components:
+  - type: RoomFill
+    size: 11,5
+    roomWhitelist:
+      tags:
+      - CP14GrasslandIsland
+
+# 11x5
+- type: dungeonRoom
+  id: CP14GrasslandIslandExterior_11x5_a
+  size: 11,5
+  atlas: /Maps/_CP14/Dungeon/grassland_island_exterior.yml
+  offset: 0,0
+  tags:
+    - CP14GrasslandIsland

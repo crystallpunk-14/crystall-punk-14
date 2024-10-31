@@ -33,6 +33,20 @@
             max: 3
 
 - type: entity
+  id: CP14WallStoneIndestructable
+  name: dense rock
+  parent: CP14BaseWall
+  suffix: Undestructable
+  description: An extremely durable stone. Your tools don't seem to be enough to break through it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_strong.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_strong.rsi
+  - type: IconSmooth
+    base: wall
+
+- type: entity
   id: CP14WallDirt
   name: earth wall
   parent: CP14BaseWall
