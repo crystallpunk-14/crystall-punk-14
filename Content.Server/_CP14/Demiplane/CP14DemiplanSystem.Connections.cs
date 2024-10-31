@@ -34,8 +34,8 @@ public sealed partial class CP14DemiplaneSystem
         if (rift.Comp.Demiplan is null)
             return;
 
-        RemoveDemiplanRandomEntryPoint(rift.Comp.Demiplan.Value, rift);
-        RemoveDemiplanRandomExitPoint(rift.Comp.Demiplan.Value, rift);
+        RemoveDemiplanRandomEntryPoint(rift.Comp.Demiplan, rift);
+        RemoveDemiplanRandomExitPoint(rift.Comp.Demiplan, rift);
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ public sealed partial class CP14DemiplaneSystem
     /// <summary>
     /// Removing the demiplan exit point, one of which the player can exit to
     /// </summary>
-    private void RemoveDemiplanRandomExitPoint(Entity<CP14DemiplaneComponent> demiplan,
+    private void RemoveDemiplanRandomExitPoint(Entity<CP14DemiplaneComponent>? demiplan,
         Entity<CP14DemiplaneRiftComponent> exitPoint)
     {
-        if (!demiplan.Comp.ExitPoints.Contains(exitPoint))
-            return;
-
-        demiplan.Comp.ExitPoints.Remove(exitPoint);
-        exitPoint.Comp.Demiplan = null;
+        if (demiplan is not null && demiplan.Value.Comp.ExitPoints.Contains(exitPoint))
+        {
+            demiplan.Value.Comp.ExitPoints.Remove(exitPoint);
+            exitPoint.Comp.Demiplan = null;
+        }
 
         if (exitPoint.Comp.DeleteAfterDisconnect)
             QueueDel(exitPoint);
@@ -80,14 +80,14 @@ public sealed partial class CP14DemiplaneSystem
         entryPoint.Comp.Demiplan = demiplan;
     }
 
-    private void RemoveDemiplanRandomEntryPoint(Entity<CP14DemiplaneComponent> demiplan,
+    private void RemoveDemiplanRandomEntryPoint(Entity<CP14DemiplaneComponent>? demiplan,
         Entity<CP14DemiplaneRiftComponent> entryPoint)
     {
-        if (!demiplan.Comp.EntryPoints.Contains(entryPoint))
-            return;
-
-        demiplan.Comp.EntryPoints.Remove(entryPoint);
-        entryPoint.Comp.Demiplan = null;
+        if (demiplan is not null && demiplan.Value.Comp.ExitPoints.Contains(entryPoint))
+        {
+            demiplan.Value.Comp.EntryPoints.Remove(entryPoint);
+            entryPoint.Comp.Demiplan = null;
+        }
 
         if (entryPoint.Comp.DeleteAfterDisconnect)
             QueueDel(entryPoint);

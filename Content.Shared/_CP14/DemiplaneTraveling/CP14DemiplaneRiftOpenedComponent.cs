@@ -14,10 +14,4 @@ public sealed partial class CP14DemiplaneRiftOpenedComponent : Component
 
     [DataField]
     public float DoAfter = 4f;
-
-    /// <summary>
-    /// Completely undresses and removes all items from the character before teleportation
-    /// </summary>
-    [DataField]
-    public bool DidItNude = false;
 }

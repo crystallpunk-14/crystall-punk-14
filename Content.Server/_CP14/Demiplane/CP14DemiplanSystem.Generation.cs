@@ -77,7 +77,7 @@ public sealed partial class CP14DemiplaneSystem
             return;
 
         //TEST
-        var tempRift = EntityManager.Spawn("CP14DemiplanTimedRadiusPassway");
+        var tempRift = EntityManager.Spawn("CP14DemiplaneTimedRadiusPassway");
         _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
 
         var connection = EnsureComp<CP14DemiplaneRiftComponent>(tempRift);

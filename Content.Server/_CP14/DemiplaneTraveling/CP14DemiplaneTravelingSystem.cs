@@ -63,7 +63,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
 
                 foreach (var ent in teleportedEnts) //We in demiplan, tp OUT
                 {
-                    _demiplan.TryTeleportOutDemiplan((map.Value, demiplan), ent);
+                    _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), ent);
                 }
             }
             else
@@ -75,7 +75,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
 
                     foreach (var ent in teleportedEnts) //We out demiplan, tp IN
                     {
-                        _demiplan.TryTeleportIntoDemiplan(rift.Demiplan.Value, ent);
+                        _demiplan.TryTeleportIntoDemiplane(rift.Demiplan.Value, ent);
                     }
                 }
             }
@@ -98,13 +98,13 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
         var map = Transform(passWay).MapUid;
         if (TryComp<CP14DemiplaneComponent>(map, out var demiplan))
         {
-            used = _demiplan.TryTeleportOutDemiplan((map.Value, demiplan), args.User, passWay.Comp.DidItNude);
+            used = _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), args.User);
         }
         else
         {
             if (TryComp<CP14DemiplaneRiftComponent>(passWay, out var exitPoint) && exitPoint.Demiplan is not null)
             {
-                used = _demiplan.TryTeleportIntoDemiplan(exitPoint.Demiplan.Value, args.User, passWay.Comp.DidItNude);
+                used = _demiplan.TryTeleportIntoDemiplane(exitPoint.Demiplan.Value, args.User);
             }
         }
 

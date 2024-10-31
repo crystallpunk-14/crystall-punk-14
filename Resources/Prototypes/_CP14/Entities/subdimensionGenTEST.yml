@@ -102,4 +102,4 @@
     - state: green
     - sprite: /Textures/_CP14/Structures/Dungeon/rift.rsi
       state: rift
-  - type: CP14DemiplanRift
+  - type: CP14DemiplaneRift
