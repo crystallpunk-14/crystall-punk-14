@@ -56,9 +56,7 @@
     netsync: false
   - type: SingularityDistortion
     falloffPower: 1.5
-    intensity: 50 
-  - type: FloatingVisuals
-    canFloat: true
+    intensity: 50
 
 - type: entity
   id: CP14DemiplanePassway
@@ -87,9 +85,7 @@
     netsync: false
   - type: SingularityDistortion
     falloffPower: 1.5
-    intensity: 50 
-  - type: FloatingVisuals
-    canFloat: true
+    intensity: 50
 
 - type: entity
   parent: MarkerBase
