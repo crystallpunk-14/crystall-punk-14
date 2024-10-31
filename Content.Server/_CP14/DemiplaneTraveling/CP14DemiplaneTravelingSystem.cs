@@ -84,9 +84,9 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
         }
     }
 
-    private void RadiusMapInit(Entity<CP14DemiplaneRadiusTimedPasswayComponent> passway, ref MapInitEvent args)
+    private void RadiusMapInit(Entity<CP14DemiplaneRadiusTimedPasswayComponent> radiusPassWay, ref MapInitEvent args)
     {
-        passway.Comp.NextTimeTeleport = _timing.CurTime + passway.Comp.Delay;
+        radiusPassWay.Comp.NextTimeTeleport = _timing.CurTime + radiusPassWay.Comp.Delay;
     }
 
     private void OnOpenRiftInteractDoAfter(Entity<CP14DemiplaneRiftOpenedComponent> passWay, ref CP14DemiplanPasswayUseDoAfter args)
