@@ -27,12 +27,12 @@ public sealed partial class CP14DemiplaneComponent : Component
     ///  Consider more as an intro sound “You have entered the demiplane. Good luck.”
     /// </summary>
     [DataField("arrivalSound")]
-    public SoundSpecifier ArrivalSound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
+    public SoundSpecifier ArrivalSound = new SoundCollectionSpecifier("CP14DemiplaneIntro");
 
     /// <summary>
     ///  The sound of exiting the demiplane, played locally to the player who exited the demiplane.
     /// Consider it more as an ending sound
     /// </summary>
     [DataField("departureSound")]
-    public SoundSpecifier DepartureSound = new SoundPathSpecifier("/Audio/Effects/teleport_departure.ogg");
+    public SoundSpecifier DepartureSound = new SoundCollectionSpecifier("CP14DemiplaneIntro");
 }

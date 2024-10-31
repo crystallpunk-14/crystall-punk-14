@@ -43,6 +43,7 @@
     anchored: True
   - type: Clickable
   - type: Physics
+    canCollide: false
     bodyType: Static
   - type: Sprite
     drawdepth: Effects
@@ -72,6 +73,7 @@
   - type: InteractionOutline
   - type: Clickable
   - type: Physics
+    canCollide: false
     bodyType: Static
   - type: Sprite
     drawdepth: Effects
