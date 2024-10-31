@@ -17,7 +17,4 @@ public sealed partial class CP14DemiplaneRadiusTimedPasswayComponent : Component
 
     [DataField]
     public TimeSpan NextTimeTeleport = TimeSpan.Zero;
-
-    [DataField]
-    public bool Enabled = true;
 }

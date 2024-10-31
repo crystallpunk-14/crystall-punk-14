@@ -54,7 +54,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         }
 
         var targetCoord = Transform(entryPoint.Value).Coordinates;
-        _flash.Flash(entity, null, null, 2f, 0.5f);
+        _flash.Flash(entity, null, null, 3000f, 0.5f);
         _transform.SetCoordinates(entity, targetCoord);
         _audio.PlayGlobal(demiplane.Comp.ArrivalSound, entity);
 
@@ -79,7 +79,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         }
 
         var targetCoord = Transform(connection.Value).Coordinates;
-        _flash.Flash(entity, null, null, 2f, 0.5f);
+        _flash.Flash(entity, null, null, 3000f, 0.5f);
         _transform.SetCoordinates(entity, targetCoord);
         _audio.PlayGlobal(demiplan.Comp.DepartureSound, entity);
 

@@ -32,9 +32,6 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
         var query = EntityQueryEnumerator<CP14DemiplaneRadiusTimedPasswayComponent, CP14DemiplaneRiftComponent>();
         while (query.MoveNext(out var uid, out var passway, out var rift))
         {
-            if (!passway.Enabled)
-                continue;
-
             if (_timing.CurTime < passway.NextTimeTeleport)
                 continue;
 
@@ -79,8 +76,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                     }
                 }
             }
-
-            passway.Enabled = false;
+            QueueDel(uid);
         }
     }
 

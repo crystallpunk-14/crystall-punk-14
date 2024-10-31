@@ -71,17 +71,19 @@ public sealed partial class CP14DemiplaneSystem
     private void GeneratorUsedInHand(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref UseInHandEvent args)
     {
         SpawnRandomDemiplane(generator.Comp.LocationConfig, out var demiplan, out var mapId);
-        generator.Comp.GeneratedMap = demiplan;
-
-        if (generator.Comp.GeneratedMap is null)
-            return;
 
         //TEST
         var tempRift = EntityManager.Spawn("CP14DemiplaneTimedRadiusPassway");
+        var tempRift2 = EntityManager.Spawn("CP14DemiplanRiftCore");
         _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
+        _transform.SetCoordinates(tempRift2, Transform(args.User).Coordinates);
 
         var connection = EnsureComp<CP14DemiplaneRiftComponent>(tempRift);
-        AddDemiplanRandomExitPoint(generator.Comp.GeneratedMap.Value, (tempRift, connection));
+        var connection2 = EnsureComp<CP14DemiplaneRiftComponent>(tempRift2);
+        AddDemiplanRandomExitPoint(demiplan, (tempRift, connection));
+        AddDemiplanRandomExitPoint(demiplan, (tempRift2, connection2));
+
+        QueueDel(generator);
     }
 
     private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)

@@ -13,8 +13,5 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
     [DataField]
     public ProtoId<CP14DemiplaneLocationPrototype> LocationConfig = new();
 
-    [DataField]
-    public Entity<CP14DemiplaneComponent>? GeneratedMap;
-
     //Generation settings
 }
