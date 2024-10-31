@@ -83,7 +83,7 @@ public sealed partial class CP14DemiplaneSystem
     private void RemoveDemiplanRandomEntryPoint(Entity<CP14DemiplaneComponent>? demiplan,
         Entity<CP14DemiplaneRiftComponent> entryPoint)
     {
-        if (demiplan is not null && demiplan.Value.Comp.ExitPoints.Contains(entryPoint))
+        if (demiplan is not null && demiplan.Value.Comp.EntryPoints.Contains(entryPoint))
         {
             demiplan.Value.Comp.EntryPoints.Remove(entryPoint);
             entryPoint.Comp.Demiplan = null;

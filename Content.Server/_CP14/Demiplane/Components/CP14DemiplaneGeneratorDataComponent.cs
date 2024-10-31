@@ -11,7 +11,7 @@ namespace Content.Server._CP14.Demiplane.Components;
 public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
 {
     [DataField]
-    public ProtoId<CP14DemiplaneLocationPrototype> LocationConfig = new();
+    public ProtoId<CP14DemiplaneLocationPrototype>? LocationConfig;
 
     //Generation settings
 }
