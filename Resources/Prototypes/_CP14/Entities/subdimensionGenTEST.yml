@@ -24,21 +24,21 @@
   parent: CP14BaseSubdimensionalKey
   name: subdimensional key
   components:
-  - type: CP14DemiplanGeneratorData
-  - type: CP14DemiplanRift
+  - type: CP14DemiplaneGeneratorData
+  - type: CP14DemiplaneRift
   - type: Sprite
     state: key1
 
 - type: entity
-  id: CP14DemiplanTimedRadiusPassway
+  id: CP14DemiplaneTimedRadiusPassway
   categories: [ ForkFiltered ]
-  name: demiplan radius rift
-  description: a gap in space that allows you to travel between world and demiplans.
+  name: demiplane radius rift
+  description: a gap in space that allows you to travel between world and demiplanes.
   components:
-  - type: CP14DemiplanRadiusTimedPassway
+  - type: CP14DemiplaneRadiusTimedPassway
     maxEntities: 3
     delay: 2
-  - type: CP14DemiplanRift
+  - type: CP14DemiplaneRift
   - type: Transform
     anchored: True
   - type: Clickable
@@ -61,13 +61,13 @@
     canFloat: true
 
 - type: entity
-  id: CP14DemiplanPassway
+  id: CP14DemiplanePassway
   categories: [ ForkFiltered ]
-  name: demiplan rift
-  description: a gap in space that allows you to travel between world and demiplans.
+  name: demiplane rift
+  description: a gap in space that allows you to travel between world and demiplanes.
   components:
-  - type: CP14DemiplanRiftOpened
-  - type: CP14DemiplanRift
+  - type: CP14DemiplaneRiftOpened
+  - type: CP14DemiplaneRift
     activeTeleport: false
   - type: Transform
     anchored: True
@@ -93,8 +93,8 @@
 
 - type: entity
   parent: MarkerBase
-  id: CP14DemiplanEntryPointMarker
-  name: demiplan entry point
+  id: CP14DemiplaneEntryPointMarker
+  name: demiplane entry point
   categories: [ ForkFiltered ]
   components:
   - type: Sprite

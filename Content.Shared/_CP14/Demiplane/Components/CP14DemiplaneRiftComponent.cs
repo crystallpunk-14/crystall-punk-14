@@ -1,14 +1,14 @@
-namespace Content.Shared._CP14.Demiplan.Components;
+namespace Content.Shared._CP14.Demiplane.Components;
 
 /// <summary>
 /// An entity that is the link between the demiplane and the real world. Depending on whether it is in the real world or in the demiplane
 /// </summary>
-[RegisterComponent]
-public sealed partial class CP14DemiplanRiftComponent : Component
+[RegisterComponent, Access(typeof(CP14SharedDemiplaneSystem))]
+public sealed partial class CP14DemiplaneRiftComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField]
-    public Entity<CP14DemiplanComponent>? Demiplan;
+    public Entity<CP14DemiplaneComponent>? Demiplan;
 
     /// <summary>
     /// Checks if the map on which this rift is initialized is a demiplane to automatically bind to it. QoL thing.

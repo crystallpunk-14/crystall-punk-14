@@ -1,12 +1,10 @@
-using Content.Shared.Whitelist;
-
-namespace Content.Shared._CP14.Demiplan.Components;
+namespace Content.Shared._CP14.DemiplaneTraveling;
 
 /// <summary>
 /// teleports a certain number of entities between demiplanes with a delay
 /// </summary>
 [RegisterComponent]
-public sealed partial class CP14DemiplanRadiusTimedPasswayComponent : Component
+public sealed partial class CP14DemiplaneRadiusTimedPasswayComponent : Component
 {
     [DataField]
     public int MaxEntities = 3;

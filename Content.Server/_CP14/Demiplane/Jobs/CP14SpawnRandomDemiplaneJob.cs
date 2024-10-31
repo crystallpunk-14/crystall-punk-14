@@ -2,16 +2,16 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Procedural;
-using Content.Shared._CP14.Demiplan.Prototypes;
+using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Demiplan.Jobs;
+namespace Content.Server._CP14.Demiplane.Jobs;
 
-public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
+public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
 {
     private readonly IEntityManager _entManager;
     //private readonly IGameTiming _timing;
@@ -23,15 +23,15 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
     //private readonly SharedTransformSystem _xforms;
     private readonly SharedMapSystem _map;
 
-    private readonly ProtoId<CP14DemiplanLocationPrototype> _config;
+    private readonly ProtoId<CP14DemiplaneLocationPrototype> _config;
     private readonly int _seed;
 
-    public readonly EntityUid DemiplanMapUid;
-    private readonly MapId _demiplanMapId;
+    public readonly EntityUid DemiplaneMapUid;
+    private readonly MapId _demiplaneMapId;
 
     private readonly ISawmill _sawmill;
 
-    public CP14SpawnRandomDemiplanJob(
+    public CP14SpawnRandomDemiplaneJob(
         double maxTime,
         IEntityManager entManager,
         ILogManager logManager,
@@ -40,9 +40,9 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
         DungeonSystem dungeon,
         MetaDataSystem metaData,
         SharedMapSystem map,
-        EntityUid demiplanMapUid,
-        MapId demiplanMapId,
-        ProtoId<CP14DemiplanLocationPrototype> config,
+        EntityUid demiplaneMapUid,
+        MapId demiplaneMapId,
+        ProtoId<CP14DemiplaneLocationPrototype> config,
         int seed,
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {
@@ -52,8 +52,8 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
         _dungeon = dungeon;
         _metaData = metaData;
         _map = map;
-        DemiplanMapUid = demiplanMapUid;
-        _demiplanMapId = demiplanMapId;
+        DemiplaneMapUid = demiplaneMapUid;
+        _demiplaneMapId = demiplaneMapId;
         _config = config;
         _seed = seed;
 
@@ -63,11 +63,11 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
     protected override async Task<bool> Process()
     {
         _sawmill.Debug("cp14_expedition", $"Spawning expedition mission with seed {0}");
-        var grid = _mapManager.CreateGridEntity(DemiplanMapUid);
+        var grid = _mapManager.CreateGridEntity(DemiplaneMapUid);
 
         MetaDataComponent? metadata = null;
 
-        _metaData.SetEntityName(DemiplanMapUid, "TODO: MAP Expedition name generation");
+        _metaData.SetEntityName(DemiplaneMapUid, "TODO: MAP Expedition name generation");
         _metaData.SetEntityName(grid, "TODO: GRID Expedition name generation");
 
         //Spawn island config
@@ -80,22 +80,22 @@ public sealed class CP14SpawnRandomDemiplanJob : Job<bool>
                 _seed); //Not async, because dont work with biomespawner boilerplate
 
         //Add map components
-        _entManager.AddComponents(DemiplanMapUid, expeditionConfig.Components);
+        _entManager.AddComponents(DemiplaneMapUid, expeditionConfig.Components);
 
         //Setup gravity
-        var gravity = _entManager.EnsureComponent<GravityComponent>(DemiplanMapUid);
+        var gravity = _entManager.EnsureComponent<GravityComponent>(DemiplaneMapUid);
         gravity.Enabled = true;
-        _entManager.Dirty(DemiplanMapUid, gravity, metadata);
+        _entManager.Dirty(DemiplaneMapUid, gravity, metadata);
 
         // Setup default atmos
         var moles = new float[Atmospherics.AdjustedNumberOfGases];
         moles[(int) Gas.Oxygen] = 21.824779f;
         moles[(int) Gas.Nitrogen] = 82.10312f;
         var mixture = new GasMixture(moles, Atmospherics.T20C);
-        _entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplanMapUid, false, mixture);
+        _entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplaneMapUid, false, mixture);
 
-        _mapManager.DoMapInitialize(_demiplanMapId);
-        _mapManager.SetMapPaused(_demiplanMapId, false);
+        _mapManager.DoMapInitialize(_demiplaneMapId);
+        _mapManager.SetMapPaused(_demiplaneMapId, false);
 
         //Dungeon
 

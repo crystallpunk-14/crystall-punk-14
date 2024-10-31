@@ -1,10 +1,10 @@
-namespace Content.Shared._CP14.Demiplan.Components;
+namespace Content.Shared._CP14.DemiplaneTraveling;
 
 /// <summary>
 /// if located on an entity with a CP14DemiplanRiftComponent, allows users to move through that rift via an interaction with doAfter
 /// </summary>
 [RegisterComponent]
-public sealed partial class CP14DemiplanRiftOpenedComponent : Component
+public sealed partial class CP14DemiplaneRiftOpenedComponent : Component
 {
     /// <summary>
     /// The number of teleportations this teleporter can make before disappearing. Use the negative number to make infinite.

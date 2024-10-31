@@ -1,0 +1,114 @@
+using System.Threading;
+using Content.Server._CP14.Demiplane.Components;
+using Content.Server._CP14.Demiplane.Jobs;
+using Content.Shared._CP14.Demiplane.Components;
+using Content.Shared._CP14.Demiplane.Prototypes;
+using Content.Shared.Interaction.Events;
+using Robust.Shared.CPUJob.JobQueues;
+using Robust.Shared.CPUJob.JobQueues.Queues;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+
+namespace Content.Server._CP14.Demiplane;
+
+public sealed partial class CP14DemiplaneSystem
+{
+    private readonly JobQueue _expeditionQueue = new();
+    private readonly List<(CP14SpawnRandomDemiplaneJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
+    private const double JobMaxTime = 0.002;
+
+    private void InitGeneration()
+    {
+        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, MapInitEvent>(GeneratorMapInit);
+        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, UseInHandEvent>(GeneratorUsedInHand);
+    }
+
+    private void UpdateGeneration(float frameTime)
+    {
+        _expeditionQueue.Process();
+
+        foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
+        {
+            switch (job.Status)
+            {
+                case JobStatus.Finished:
+                    _expeditionJobs.Remove((job, cancelToken));
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Generates a new random demiplane based on the specified parameters
+    /// </summary>
+    public void SpawnRandomDemiplane(ProtoId<CP14DemiplaneLocationPrototype> location, out Entity<CP14DemiplaneComponent> demiplan, out MapId mapId)
+    {
+        var mapUid = _mapSystem.CreateMap(out mapId, runMapInit: false);
+        var demiComp = EntityManager.EnsureComponent<CP14DemiplaneComponent>(mapUid);
+        demiplan = (mapUid, demiComp);
+
+        var cancelToken = new CancellationTokenSource();
+        var job = new CP14SpawnRandomDemiplaneJob(
+            JobMaxTime,
+            EntityManager,
+            _logManager,
+            _mapManager,
+            _proto,
+            _dungeon,
+            _metaData,
+            _mapSystem,
+            mapUid,
+            mapId,
+            location,
+            _random.Next(-10000, 10000),
+            cancelToken.Token);
+
+        _expeditionJobs.Add((job, cancelToken));
+        _expeditionQueue.EnqueueJob(job);
+    }
+
+    private void GeneratorUsedInHand(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref UseInHandEvent args)
+    {
+        SpawnRandomDemiplane(generator.Comp.LocationConfig, out var demiplan, out var mapId);
+        generator.Comp.GeneratedMap = demiplan;
+
+        if (generator.Comp.GeneratedMap is null)
+            return;
+
+        //TEST
+        var tempRift = EntityManager.Spawn("CP14DemiplanTimedRadiusPassway");
+        _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
+
+        var connection = EnsureComp<CP14DemiplaneRiftComponent>(tempRift);
+        AddDemiplanRandomExitPoint(generator.Comp.GeneratedMap.Value, (tempRift, connection));
+    }
+
+    private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
+    {
+        // Here, a unique Demiplan config should be generated based on the CP14DemiplanGeneratorDataComponent
+
+        //Location generation
+        HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
+        foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())
+        {
+            suitableConfigs.Add(locationConfig);
+        }
+
+        if (suitableConfigs.Count == 0)
+        {
+            Log.Error("Expedition mission generation failed: No suitable location configs.");
+            QueueDel(generator);
+            return;
+        }
+
+        var selectedConfig = _random.Pick(suitableConfigs);
+        generator.Comp.LocationConfig = selectedConfig;
+
+        //Modifier generation
+
+        //Scenario generation
+
+        //ETC generation
+    }
+}

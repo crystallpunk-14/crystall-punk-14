@@ -1,26 +1,26 @@
 using Robust.Shared.Audio;
 
-namespace Content.Shared._CP14.Demiplan.Components;
+namespace Content.Shared._CP14.Demiplane.Components;
 
 /// <summary>
-/// Designates this entity as holding a demiplan.
+/// Designates this entity as holding a demiplane.
 /// </summary>
-[RegisterComponent]
-public sealed partial class CP14DemiplanComponent : Component
+[RegisterComponent, Access(typeof(CP14SharedDemiplaneSystem))]
+public sealed partial class CP14DemiplaneComponent : Component
 {
     /// <summary>
     /// All entities in the real world that are connected to this demiplane
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField]
-    public HashSet<Entity<CP14DemiplanRiftComponent>> ExitPoints = new();
+    public HashSet<Entity<CP14DemiplaneRiftComponent>> ExitPoints = new();
 
     /// <summary>
     /// All entities in the demiplane in which the objects entered in the demiplane appear
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField]
-    public HashSet<Entity<CP14DemiplanRiftComponent>> EntryPoints = new();
+    public HashSet<Entity<CP14DemiplaneRiftComponent>> EntryPoints = new();
 
     /// <summary>
     ///  The sound of entering a demiplane, played locally to the player who entered it.

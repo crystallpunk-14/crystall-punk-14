@@ -1,21 +1,22 @@
-using Content.Shared._CP14.Demiplan.Components;
+using Content.Shared._CP14.Demiplane.Components;
+using Content.Shared._CP14.DemiplaneTraveling;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CP14.Demiplan;
+namespace Content.Shared._CP14.Demiplane;
 
-public abstract partial  class CP14SharedDemiplanSystem : EntitySystem
+public abstract partial  class CP14SharedDemiplaneSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14DemiplanRiftOpenedComponent, InteractHandEvent>(OnDemiplanPasswayInteract);
+        SubscribeLocalEvent<CP14DemiplaneRiftOpenedComponent, InteractHandEvent>(OnDemiplanPasswayInteract);
     }
 
-    private void OnDemiplanPasswayInteract(Entity<CP14DemiplanRiftOpenedComponent> passway, ref InteractHandEvent args)
+    private void OnDemiplanPasswayInteract(Entity<CP14DemiplaneRiftOpenedComponent> passway, ref InteractHandEvent args)
     {
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,
