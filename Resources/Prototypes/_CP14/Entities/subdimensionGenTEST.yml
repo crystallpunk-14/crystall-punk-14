@@ -55,6 +55,8 @@
   name: pulsating demiplane rift
   description: This rift is gaining strength, and will trap all nearby creatures in a demiplane in a second!
   components:
+  - type: CP14DemiplaneRift
+    activeTeleport: false
   - type: CP14DemiplaneRadiusTimedPassway
     maxEntities: 3
     delay: 4

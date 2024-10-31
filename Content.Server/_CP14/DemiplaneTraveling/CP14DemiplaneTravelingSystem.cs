@@ -3,6 +3,8 @@ using Content.Server.Mind;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.DemiplaneTraveling;
+using Content.Shared.Ghost;
+using Content.Shared.Movement.Pulling.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -41,6 +43,9 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
             var nearestEnts = _lookup.GetEntitiesInRange(uid, passway.Radius);
             foreach (var ent in nearestEnts)
             {
+                if (HasComp<GhostComponent>(ent))
+                    continue;
+
                 if (!_mind.TryGetMind(ent, out var mindId, out var mind))
                     continue;
 
@@ -61,6 +66,9 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                 foreach (var ent in teleportedEnts) //We in demiplan, tp OUT
                 {
                     _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), ent);
+
+                    if (TryComp<PullerComponent>(ent, out var puller))
+                        _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), puller.Pulling);
                 }
             }
             else
@@ -73,6 +81,9 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                     foreach (var ent in teleportedEnts) //We out demiplan, tp IN
                     {
                         _demiplan.TryTeleportIntoDemiplane(rift.Demiplan.Value, ent);
+
+                        if (TryComp<PullerComponent>(ent, out var puller))
+                            _demiplan.TryTeleportIntoDemiplane(rift.Demiplan.Value, puller.Pulling);
                     }
                 }
             }
@@ -95,12 +106,18 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
         if (TryComp<CP14DemiplaneComponent>(map, out var demiplan))
         {
             used = _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), args.User);
+
+            if (TryComp<PullerComponent>(args.User, out var puller))
+                _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), puller.Pulling);
         }
         else
         {
             if (TryComp<CP14DemiplaneRiftComponent>(passWay, out var exitPoint) && exitPoint.Demiplan is not null)
             {
                 used = _demiplan.TryTeleportIntoDemiplane(exitPoint.Demiplan.Value, args.User);
+
+                if (TryComp<PullerComponent>(args.User, out var puller))
+                    _demiplan.TryTeleportIntoDemiplane(exitPoint.Demiplan.Value, puller.Pulling);
             }
         }
 

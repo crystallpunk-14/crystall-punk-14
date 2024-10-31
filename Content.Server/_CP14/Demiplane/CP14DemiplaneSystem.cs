@@ -45,8 +45,11 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     /// <param name="demiplane">The demiplane the entity will be teleported to</param>
     /// <param name="entity">The entity to be teleported</param>
     /// <returns></returns>
-    public bool TryTeleportIntoDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid entity)
+    public bool TryTeleportIntoDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
     {
+        if (entity is null)
+            return false;
+
         if (!TryGetDemiplanEntryPoint(demiplane, out var entryPoint) || entryPoint is null)
         {
             Log.Error($"{entity} cant get in demiplane {demiplane}: no active entry points!");
@@ -54,9 +57,9 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         }
 
         var targetCoord = Transform(entryPoint.Value).Coordinates;
-        _flash.Flash(entity, null, null, 3000f, 0.5f);
-        _transform.SetCoordinates(entity, targetCoord);
-        _audio.PlayGlobal(demiplane.Comp.ArrivalSound, entity);
+        _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
+        _transform.SetCoordinates(entity.Value, targetCoord);
+        _audio.PlayGlobal(demiplane.Comp.ArrivalSound, entity.Value);
 
         return true;
     }
@@ -67,9 +70,12 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     /// <param name="demiplan">The demiplane from which the entity will be teleported</param>
     /// <param name="entity">An entity that will be teleported into the real world. This entity must be in the demiplane, otherwise the function will not work.</param>
     /// <returns></returns>
-    public bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplan, EntityUid entity)
+    public bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplan, EntityUid? entity)
     {
-        if (Transform(entity).MapUid != demiplan.Owner)
+        if (entity is null)
+            return false;
+
+        if (Transform(entity.Value).MapUid != demiplan.Owner)
             return false;
 
         if (!TryGetDemiplanExitPoint(demiplan, out var connection) || connection is null)
@@ -79,9 +85,9 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         }
 
         var targetCoord = Transform(connection.Value).Coordinates;
-        _flash.Flash(entity, null, null, 3000f, 0.5f);
-        _transform.SetCoordinates(entity, targetCoord);
-        _audio.PlayGlobal(demiplan.Comp.DepartureSound, entity);
+        _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
+        _transform.SetCoordinates(entity.Value, targetCoord);
+        _audio.PlayGlobal(demiplan.Comp.DepartureSound, entity.Value);
 
         return true;
     }
