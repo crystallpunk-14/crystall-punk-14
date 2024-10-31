@@ -25,7 +25,7 @@
   name: subdimensional key
   components:
   - type: CP14DemiplanGeneratorData
-  - type: CP14DemiplanConnection
+  - type: CP14DemiplanRift
   - type: Sprite
     state: key1
 
@@ -38,7 +38,7 @@
   - type: CP14DemiplanRadiusTimedPassway
     maxEntities: 3
     delay: 2
-  - type: CP14DemiplanConnection
+  - type: CP14DemiplanRift
   - type: Transform
     anchored: True
   - type: Clickable
@@ -66,8 +66,9 @@
   name: demiplan rift
   description: a gap in space that allows you to travel between world and demiplans.
   components:
-  - type: CP14DemiplanPassway
-  - type: CP14DemiplanConnection
+  - type: CP14DemiplanRiftOpened
+  - type: CP14DemiplanRift
+    activeTeleport: false
   - type: Transform
     anchored: True
   - type: InteractionOutline
@@ -101,4 +102,4 @@
     - state: green
     - sprite: /Textures/_CP14/Structures/Dungeon/rift.rsi
       state: rift
-  - type: CP14DemiplanEntryPoint
+  - type: CP14DemiplanRift

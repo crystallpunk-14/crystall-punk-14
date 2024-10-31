@@ -19,12 +19,12 @@ public sealed partial class CP14DemiplanSystem
             if (rift.Comp.TryAutoLinkToMap)
                 rift.Comp.Demiplan = (map.Value, demiplan);
 
-            if (rift.Comp.ActiveTeleportPoint)
+            if (rift.Comp.ActiveTeleport)
                 AddDemiplanRandomEntryPoint((map.Value, demiplan), rift);
         }
         else if (rift.Comp.Demiplan is not null) //We out of demiplan
         {
-            if (rift.Comp.ActiveTeleportPoint)
+            if (rift.Comp.ActiveTeleport)
                 AddDemiplanRandomExitPoint(rift.Comp.Demiplan.Value, rift);
         }
     }
@@ -51,6 +51,9 @@ public sealed partial class CP14DemiplanSystem
         exitPoint.Comp.Demiplan = demiplan;
     }
 
+    /// <summary>
+    /// Removing the demiplan exit point, one of which the player can exit to
+    /// </summary>
     private void RemoveDemiplanRandomExitPoint(Entity<CP14DemiplanComponent> demiplan,
         Entity<CP14DemiplanRiftComponent> exitPoint)
     {
@@ -59,6 +62,9 @@ public sealed partial class CP14DemiplanSystem
 
         demiplan.Comp.ExitPoints.Remove(exitPoint);
         exitPoint.Comp.Demiplan = null;
+
+        if (exitPoint.Comp.DeleteAfterDisconnect)
+            QueueDel(exitPoint);
     }
 
     /// <summary>
@@ -82,6 +88,9 @@ public sealed partial class CP14DemiplanSystem
 
         demiplan.Comp.EntryPoints.Remove(entryPoint);
         entryPoint.Comp.Demiplan = null;
+
+        if (entryPoint.Comp.DeleteAfterDisconnect)
+            QueueDel(entryPoint);
     }
 
     public bool TryGetDemiplanEntryPoint(Entity<CP14DemiplanComponent> demiplan, out Entity<CP14DemiplanRiftComponent>? entryPoint)

@@ -92,9 +92,14 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
             }
         }
 
-        foreach (var connection in demiplan.Comp.ExitPoints)
+        foreach (var exit in demiplan.Comp.ExitPoints)
         {
-            RemoveDemiplanRandomExitPoint(demiplan, connection);
+            RemoveDemiplanRandomExitPoint(demiplan, exit);
+        }
+
+        foreach (var entry in demiplan.Comp.EntryPoints)
+        {
+            RemoveDemiplanRandomEntryPoint(demiplan, entry);
         }
     }
 

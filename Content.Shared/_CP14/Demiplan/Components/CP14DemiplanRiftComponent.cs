@@ -22,5 +22,8 @@ public sealed partial class CP14DemiplanRiftComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField]
-    public bool ActiveTeleportPoint = true;
+    public bool ActiveTeleport = true;
+
+    [DataField]
+    public bool DeleteAfterDisconnect = true;
 }
