@@ -2,6 +2,7 @@ using Content.Server.Flash;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
+using Content.Shared.Popups;
 using Robust.Server.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -23,6 +24,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly FlashSystem _flash = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

@@ -75,7 +75,10 @@ public sealed partial class CP14DemiplaneSystem
 
         //We cant open demiplan in another demiplan
         if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
             return;
+        }
 
         SpawnRandomDemiplane(generator.Comp.LocationConfig.Value, out var demiplane, out var mapId);
 
