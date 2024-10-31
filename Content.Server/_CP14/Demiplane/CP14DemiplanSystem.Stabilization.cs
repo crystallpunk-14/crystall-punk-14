@@ -13,6 +13,13 @@ public sealed partial class CP14DemiplaneSystem
     private void InitStabilization()
     {
         _nextCheckTime = _timing.CurTime + _checkFrequency;
+
+        SubscribeLocalEvent<CP14DemiplaneDestroyWithoutStabilizationComponent, MapInitEvent>(OnStabilizationMapInit);
+    }
+
+    private void OnStabilizationMapInit(Entity<CP14DemiplaneDestroyWithoutStabilizationComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.EndProtectionTime = _timing.CurTime + ent.Comp.ProtectedSpawnTime;
     }
 
     private void UpdateStabilization(float frameTime)
@@ -44,6 +51,9 @@ public sealed partial class CP14DemiplaneSystem
         var query2 = EntityQueryEnumerator<CP14DemiplaneComponent, CP14DemiplaneDestroyWithoutStabilizationComponent>();
         while (query2.MoveNext(out var uid, out var demiplan, out var stabilization))
         {
+            if (_timing.CurTime < stabilization.EndProtectionTime)
+                continue;
+
             if (!stabilizedMaps.Contains(uid))
                 QueueDel(uid);
         }
