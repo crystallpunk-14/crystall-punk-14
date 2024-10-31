@@ -61,33 +61,40 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         _transform.SetCoordinates(entity.Value, targetCoord);
         _audio.PlayGlobal(demiplane.Comp.ArrivalSound, entity.Value);
 
+
+        var ev = new CP14DemiplanEntityEnterEvent(entity.Value);
+        RaiseLocalEvent(demiplane, ev);
+
         return true;
     }
 
     /// <summary>
     /// Teleports an entity from the demiplane to the real world, to one of the random exit points in the real world.
     /// </summary>
-    /// <param name="demiplan">The demiplane from which the entity will be teleported</param>
+    /// <param name="demiplane">The demiplane from which the entity will be teleported</param>
     /// <param name="entity">An entity that will be teleported into the real world. This entity must be in the demiplane, otherwise the function will not work.</param>
     /// <returns></returns>
-    public bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplan, EntityUid? entity)
+    public bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
     {
         if (entity is null)
             return false;
 
-        if (Transform(entity.Value).MapUid != demiplan.Owner)
+        if (Transform(entity.Value).MapUid != demiplane.Owner)
             return false;
 
-        if (!TryGetDemiplanExitPoint(demiplan, out var connection) || connection is null)
+        if (!TryGetDemiplanExitPoint(demiplane, out var connection) || connection is null)
         {
-            Log.Error($"{entity} cant get out of demiplane {demiplan}: no active connections!");
+            Log.Error($"{entity} cant get out of demiplane {demiplane}: no active connections!");
             return false;
         }
 
         var targetCoord = Transform(connection.Value).Coordinates;
         _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
         _transform.SetCoordinates(entity.Value, targetCoord);
-        _audio.PlayGlobal(demiplan.Comp.DepartureSound, entity.Value);
+        _audio.PlayGlobal(demiplane.Comp.DepartureSound, entity.Value);
+
+        var ev = new CP14DemiplanEntityLeaveEvent(entity.Value);
+        RaiseLocalEvent(demiplane, ev);
 
         return true;
     }

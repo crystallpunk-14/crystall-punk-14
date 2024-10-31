@@ -73,9 +73,11 @@ public sealed partial class CP14DemiplaneSystem
         if (generator.Comp.LocationConfig is null)
             return;
 
-        SpawnRandomDemiplane(generator.Comp.LocationConfig.Value, out var demiplan, out var mapId);
+        SpawnRandomDemiplane(generator.Comp.LocationConfig.Value, out var demiplane, out var mapId);
 
         //TEST
+        EnsureComp<CP14DemiplaneDestroyWithoutPlayersComponent>(demiplane);
+
         var tempRift = EntityManager.Spawn("CP14DemiplaneTimedRadiusPassway");
         var tempRift2 = EntityManager.Spawn("CP14DemiplanRiftCore");
         _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
@@ -83,8 +85,8 @@ public sealed partial class CP14DemiplaneSystem
 
         var connection = EnsureComp<CP14DemiplaneRiftComponent>(tempRift);
         var connection2 = EnsureComp<CP14DemiplaneRiftComponent>(tempRift2);
-        AddDemiplanRandomExitPoint(demiplan, (tempRift, connection));
-        AddDemiplanRandomExitPoint(demiplan, (tempRift2, connection2));
+        AddDemiplanRandomExitPoint(demiplane, (tempRift, connection));
+        AddDemiplanRandomExitPoint(demiplane, (tempRift2, connection2));
 
         QueueDel(generator); //wtf its crash debug build?
     }
