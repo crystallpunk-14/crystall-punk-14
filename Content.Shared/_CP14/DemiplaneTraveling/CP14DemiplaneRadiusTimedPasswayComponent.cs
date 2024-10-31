@@ -1,9 +1,11 @@
+using Robust.Shared.Audio;
+
 namespace Content.Shared._CP14.DemiplaneTraveling;
 
 /// <summary>
 /// teleports a certain number of entities between demiplanes with a delay
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class CP14DemiplaneRadiusTimedPasswayComponent : Component
 {
     [DataField]
@@ -16,5 +18,12 @@ public sealed partial class CP14DemiplaneRadiusTimedPasswayComponent : Component
     public float Radius = 3f;
 
     [DataField]
+    [AutoPausedField]
     public TimeSpan NextTimeTeleport = TimeSpan.Zero;
+
+    [DataField("arrivalSound")]
+    public SoundSpecifier ArrivalSound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
+
+    [DataField("departureSound")]
+    public SoundSpecifier DepartureSound = new SoundPathSpecifier("/Audio/Effects/teleport_departure.ogg");
 }

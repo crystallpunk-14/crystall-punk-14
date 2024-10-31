@@ -221,6 +221,8 @@
   - type: CP14FootprintHolder
     decalProto: CP14Footprints
   - type: CP14FootprintTrailer
+  - type: CP14DemiplaneStabilizer
+    requireAlive: true
 
 
 - type: entity

@@ -1,10 +1,12 @@
 using Content.Server._CP14.Demiplane;
 using Content.Server.Mind;
+using Content.Server.Popups;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.DemiplaneTraveling;
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -17,6 +19,8 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -32,15 +36,15 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
 
         //Radius passway
         var query = EntityQueryEnumerator<CP14DemiplaneRadiusTimedPasswayComponent, CP14DemiplaneRiftComponent>();
-        while (query.MoveNext(out var uid, out var passway, out var rift))
+        while (query.MoveNext(out var uid, out var passWay, out var rift))
         {
-            if (_timing.CurTime < passway.NextTimeTeleport)
+            if (_timing.CurTime < passWay.NextTimeTeleport)
                 continue;
 
-            passway.NextTimeTeleport = _timing.CurTime + passway.Delay;
+            passWay.NextTimeTeleport = _timing.CurTime + passWay.Delay;
 
             HashSet<EntityUid> teleportedEnts = new();
-            var nearestEnts = _lookup.GetEntitiesInRange(uid, passway.Radius);
+            var nearestEnts = _lookup.GetEntitiesInRange(uid, passWay.Radius);
             foreach (var ent in nearestEnts)
             {
                 if (HasComp<GhostComponent>(ent))
@@ -52,7 +56,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                 teleportedEnts.Add(ent);
             }
 
-            while (teleportedEnts.Count > passway.MaxEntities)
+            while (teleportedEnts.Count > passWay.MaxEntities)
             {
                 teleportedEnts.Remove(_random.Pick(teleportedEnts));
             }
@@ -69,6 +73,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                         _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), puller.Pulling);
 
                     _demiplan.TryTeleportOutDemiplane((map.Value, demiplan), ent);
+                    _audio.PlayPvs(passWay.ArrivalSound, ent);
                 }
             }
             else
@@ -84,9 +89,11 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                             _demiplan.TryTeleportIntoDemiplane(rift.Demiplan.Value, puller.Pulling);
 
                         _demiplan.TryTeleportIntoDemiplane(rift.Demiplan.Value, ent);
+                        _audio.PlayPvs(passWay.ArrivalSound, ent);
                     }
                 }
             }
+            _audio.PlayPvs(passWay.DepartureSound, Transform(uid).Coordinates);
             QueueDel(uid);
         }
     }
@@ -94,6 +101,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
     private void RadiusMapInit(Entity<CP14DemiplaneRadiusTimedPasswayComponent> radiusPassWay, ref MapInitEvent args)
     {
         radiusPassWay.Comp.NextTimeTeleport = _timing.CurTime + radiusPassWay.Comp.Delay;
+        //Popup caution here
     }
 
     private void OnOpenRiftInteractDoAfter(Entity<CP14DemiplaneRiftOpenedComponent> passWay, ref CP14DemiplanPasswayUseDoAfter args)
@@ -121,12 +129,18 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
             }
         }
 
-        if (passWay.Comp.MaxUse > 0 && used)
+        if (used)
         {
-            passWay.Comp.MaxUse--;
-            if (passWay.Comp.MaxUse == 0)
-                QueueDel(passWay);
+            _audio.PlayPvs(passWay.Comp.DepartureSound, Transform(passWay).Coordinates);
+            _audio.PlayPvs(passWay.Comp.ArrivalSound, args.User);
+            if (passWay.Comp.MaxUse > 0)
+            {
+                passWay.Comp.MaxUse--;
+                if (passWay.Comp.MaxUse == 0)
+                    QueueDel(passWay);
+            }
         }
+
 
         args.Handled = true;
     }

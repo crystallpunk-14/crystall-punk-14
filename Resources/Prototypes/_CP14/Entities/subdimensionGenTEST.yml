@@ -71,6 +71,11 @@
   - type: SingularityDistortion
     falloffPower: 1.5
     intensity: 50
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
 
 - type: entity
   id: CP14DemiplanePassway
@@ -90,6 +95,11 @@
   - type: SingularityDistortion
     falloffPower: 1.5
     intensity: 50
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
 
 - type: entity
   parent: MarkerBase
