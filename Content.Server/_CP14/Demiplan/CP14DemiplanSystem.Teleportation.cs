@@ -1,6 +1,5 @@
 using Content.Shared._CP14.Demiplan;
 using Content.Shared._CP14.Demiplan.Components;
-using Content.Shared.Movement.Pulling.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Demiplan;
@@ -9,7 +8,7 @@ public sealed partial class CP14DemiplanSystem
 {
     private void InitTeleportation()
     {
-        SubscribeLocalEvent<CP14DemiplanPasswayComponent, CP14DemiplanPasswayUseDoAfter>(OnDemiplanPasswayDoAfter);
+        SubscribeLocalEvent<CP14DemiplanRiftOpenedComponent, CP14DemiplanPasswayUseDoAfter>(OnDemiplanPasswayDoAfter);
 
         SubscribeLocalEvent<CP14DemiplanRadiusTimedPasswayComponent, MapInitEvent>(RadiusMapInit);
     }
@@ -18,8 +17,8 @@ public sealed partial class CP14DemiplanSystem
     {
         //Radius passway
         var query =
-            EntityQueryEnumerator<CP14DemiplanRadiusTimedPasswayComponent, CP14DemiplanExitPointComponent>();
-        while (query.MoveNext(out var uid, out var passway, out var exitPoint))
+            EntityQueryEnumerator<CP14DemiplanRadiusTimedPasswayComponent, CP14DemiplanRiftComponent>();
+        while (query.MoveNext(out var uid, out var passway, out var rift))
         {
             if (!passway.Enabled)
                 continue;
@@ -47,7 +46,7 @@ public sealed partial class CP14DemiplanSystem
             var map = Transform(uid).MapUid;
             if (TryComp<CP14DemiplanComponent>(map, out var demiplan))
             {
-                if (!TryGetDemiplanConnection((map.Value, demiplan), out _))
+                if (!TryGetDemiplanExitPoint((map.Value, demiplan), out _))
                     break;
 
                 foreach (var ent in teleportedEnts) //We in demiplan, tp OUT
@@ -57,14 +56,14 @@ public sealed partial class CP14DemiplanSystem
             }
             else
             {
-                if (exitPoint.Link is not null)
+                if (rift.Demiplan is not null)
                 {
-                    if (!TryGetDemiplanEntryPoint(exitPoint.Link.Value, out _))
+                    if (!TryGetDemiplanEntryPoint(rift.Demiplan.Value, out _))
                         break;
 
                     foreach (var ent in teleportedEnts) //We out demiplan, tp IN
                     {
-                        TryTeleportIntoDemiplan(exitPoint.Link.Value, ent);
+                        TryTeleportIntoDemiplan(rift.Demiplan.Value, ent);
                     }
                 }
             }
@@ -73,7 +72,7 @@ public sealed partial class CP14DemiplanSystem
         }
     }
 
-    private void OnDemiplanPasswayDoAfter(Entity<CP14DemiplanPasswayComponent> passWay, ref CP14DemiplanPasswayUseDoAfter args)
+    private void OnDemiplanPasswayDoAfter(Entity<CP14DemiplanRiftOpenedComponent> passWay, ref CP14DemiplanPasswayUseDoAfter args)
     {
         if (args.Cancelled || args.Handled)
             return;
@@ -86,9 +85,9 @@ public sealed partial class CP14DemiplanSystem
         }
         else
         {
-            if (TryComp<CP14DemiplanExitPointComponent>(passWay, out var exitPoint) && exitPoint.Link is not null)
+            if (TryComp<CP14DemiplanRiftComponent>(passWay, out var exitPoint) && exitPoint.Demiplan is not null)
             {
-                used = TryTeleportIntoDemiplan(exitPoint.Link.Value, args.User, passWay.Comp.DidItNude);
+                used = TryTeleportIntoDemiplan(exitPoint.Demiplan.Value, args.User, passWay.Comp.DidItNude);
             }
         }
 
@@ -128,7 +127,7 @@ public sealed partial class CP14DemiplanSystem
 
     public bool TryTeleportOutDemiplan(Entity<CP14DemiplanComponent> demiplan, EntityUid target, bool nude = false)
     {
-        if (!TryGetDemiplanConnection(demiplan, out var connection) || connection is null)
+        if (!TryGetDemiplanExitPoint(demiplan, out var connection) || connection is null)
         {
             Log.Error($"{target} cant get out of demiplan {demiplan}: no active connections!");
             return false;

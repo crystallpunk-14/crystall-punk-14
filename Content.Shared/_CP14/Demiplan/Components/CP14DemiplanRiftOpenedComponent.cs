@@ -1,12 +1,10 @@
-using Robust.Shared.Audio;
-
 namespace Content.Shared._CP14.Demiplan.Components;
 
 /// <summary>
-/// allows you to travel between demiplanes via doAfter
+/// if located on an entity with a CP14DemiplanRiftComponent, allows users to move through that rift via an interaction with doAfter
 /// </summary>
 [RegisterComponent]
-public sealed partial class CP14DemiplanPasswayComponent : Component
+public sealed partial class CP14DemiplanRiftOpenedComponent : Component
 {
     /// <summary>
     /// The number of teleportations this teleporter can make before disappearing. Use the negative number to make infinite.

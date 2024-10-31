@@ -12,10 +12,10 @@ public abstract partial  class CP14SharedDemiplanSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14DemiplanPasswayComponent, InteractHandEvent>(OnDemiplanPasswayInteract);
+        SubscribeLocalEvent<CP14DemiplanRiftOpenedComponent, InteractHandEvent>(OnDemiplanPasswayInteract);
     }
 
-    private void OnDemiplanPasswayInteract(Entity<CP14DemiplanPasswayComponent> passway, ref InteractHandEvent args)
+    private void OnDemiplanPasswayInteract(Entity<CP14DemiplanRiftOpenedComponent> passway, ref InteractHandEvent args)
     {
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,

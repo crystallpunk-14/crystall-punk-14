@@ -94,7 +94,7 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
 
         foreach (var connection in demiplan.Comp.ExitPoints)
         {
-            RemoveDemiplanConnection(demiplan, connection);
+            RemoveDemiplanRandomExitPoint(demiplan, connection);
         }
     }
 
@@ -128,8 +128,8 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
         var tempRift = EntityManager.Spawn("CP14DemiplanTimedRadiusPassway");
         _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
 
-        var connection = EnsureComp<CP14DemiplanExitPointComponent>(tempRift);
-        AddDemiplanConnection(generator.Comp.GeneratedMap.Value, (tempRift, connection));
+        var connection = EnsureComp<CP14DemiplanRiftComponent>(tempRift);
+        AddDemiplanRandomExitPoint(generator.Comp.GeneratedMap.Value, (tempRift, connection));
     }
 
     private void SpawnRandomDemiplan(Entity<CP14DemiplanGeneratorDataComponent> generator)
@@ -156,28 +156,5 @@ public sealed partial class CP14DemiplanSystem : CP14SharedDemiplanSystem
 
         _expeditionJobs.Add((job, cancelToken));
         _expeditionQueue.EnqueueJob(job);
-    }
-
-    public bool TryGetDemiplanEntryPoint(Entity<CP14DemiplanComponent> demiplan, out Entity<CP14DemiplanEntryPointComponent>? entryPoint)
-    {
-        entryPoint = null;
-
-        if (demiplan.Comp.EntryPoints.Count == 0)
-            return false;
-
-        entryPoint = _random.Pick(demiplan.Comp.EntryPoints);
-        return true;
-    }
-
-    public bool TryGetDemiplanConnection(Entity<CP14DemiplanComponent> demiplan,
-        out Entity<CP14DemiplanExitPointComponent>? exitPoint)
-    {
-        exitPoint = null;
-
-        if (demiplan.Comp.ExitPoints.Count == 0)
-            return false;
-
-        exitPoint = _random.Pick(demiplan.Comp.ExitPoints);
-        return true;
     }
 }
