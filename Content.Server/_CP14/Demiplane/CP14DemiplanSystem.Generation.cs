@@ -42,7 +42,7 @@ public sealed partial class CP14DemiplaneSystem
     /// <summary>
     /// Generates a new random demiplane based on the specified parameters
     /// </summary>
-    public void SpawnRandomDemiplane(ProtoId<CP14DemiplaneLocationPrototype> location, out Entity<CP14DemiplaneComponent> demiplan, out MapId mapId)
+    public void SpawnRandomDemiplane(ProtoId<CP14DemiplaneLocationPrototype> location, List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers, out Entity<CP14DemiplaneComponent> demiplan, out MapId mapId)
     {
         var mapUid = _mapSystem.CreateMap(out mapId, runMapInit: false);
         var demiComp = EntityManager.EnsureComponent<CP14DemiplaneComponent>(mapUid);
@@ -61,6 +61,7 @@ public sealed partial class CP14DemiplaneSystem
             mapUid,
             mapId,
             location,
+            modifiers,
             _random.Next(-10000, 10000),
             cancelToken.Token);
 
@@ -70,7 +71,7 @@ public sealed partial class CP14DemiplaneSystem
 
     private void GeneratorUsedInHand(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref UseInHandEvent args)
     {
-        if (generator.Comp.LocationConfig is null)
+        if (generator.Comp.Location is null)
             return;
 
         //We cant open demiplan in another demiplan
@@ -80,7 +81,7 @@ public sealed partial class CP14DemiplaneSystem
             return;
         }
 
-        SpawnRandomDemiplane(generator.Comp.LocationConfig.Value, out var demiplane, out var mapId);
+        SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.Modifiers, out var demiplane, out var mapId);
 
         //Admin log needed
         //TEST
@@ -116,9 +117,19 @@ public sealed partial class CP14DemiplaneSystem
         }
 
         var selectedConfig = _random.Pick(suitableConfigs);
-        generator.Comp.LocationConfig = selectedConfig;
+        generator.Comp.Location = selectedConfig;
 
         //Modifier generation
+        HashSet<CP14DemiplaneModifierPrototype> suitableModifiers = new();
+        foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
+        {
+            //Tag filtering here
+            suitableModifiers.Add(modifier);
+        }
+
+        var selectedModifier = _random.Pick(suitableModifiers);
+
+        generator.Comp.Modifiers.Add(selectedModifier);
 
         //Scenario generation
 

@@ -1,0 +1,19 @@
+- type: cp14DemiplaneModifier
+  id: Test1
+  layers:
+    - !type:MobsDunGen
+      minCount: 15
+      maxCount: 30
+      groups:
+      - id: LandMineExplosive
+        amount: 1
+
+- type: cp14DemiplaneModifier
+  id: Test2
+  layers:
+    - !type:MobsDunGen
+      minCount: 10
+      maxCount: 20
+      groups:
+      - id: StatueBananiumClown
+        amount: 1
