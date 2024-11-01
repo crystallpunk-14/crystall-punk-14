@@ -2,10 +2,12 @@ using Content.Server.Flash;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
+using Content.Shared.Popups;
 using Robust.Server.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Demiplane;
 
@@ -21,6 +23,8 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly FlashSystem _flash = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -28,6 +32,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 
         InitGeneration();
         InitConnections();
+        InitStabilization();
 
         SubscribeLocalEvent<CP14DemiplaneComponent, ComponentShutdown>(OnDemiplanShutdown);
     }
@@ -37,8 +42,8 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         base.Update(frameTime);
 
         UpdateGeneration(frameTime);
+        UpdateStabilization(frameTime);
     }
-
     /// <summary>
     /// Teleports the entity inside the demiplane, to one of the random entry points.
     /// </summary>
@@ -60,10 +65,6 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
         _transform.SetCoordinates(entity.Value, targetCoord);
         _audio.PlayGlobal(demiplane.Comp.ArrivalSound, entity.Value);
-
-
-        var ev = new CP14DemiplanEntityEnterEvent(entity.Value);
-        RaiseLocalEvent(demiplane, ev);
 
         return true;
     }
@@ -92,9 +93,6 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
         _transform.SetCoordinates(entity.Value, targetCoord);
         _audio.PlayGlobal(demiplane.Comp.DepartureSound, entity.Value);
-
-        var ev = new CP14DemiplanEntityLeaveEvent(entity.Value);
-        RaiseLocalEvent(demiplane, ev);
 
         return true;
     }

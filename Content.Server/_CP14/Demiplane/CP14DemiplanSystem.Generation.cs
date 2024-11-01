@@ -73,10 +73,18 @@ public sealed partial class CP14DemiplaneSystem
         if (generator.Comp.LocationConfig is null)
             return;
 
+        //We cant open demiplan in another demiplan
+        if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
+            return;
+        }
+
         SpawnRandomDemiplane(generator.Comp.LocationConfig.Value, out var demiplane, out var mapId);
 
+        //Admin log needed
         //TEST
-        EnsureComp<CP14DemiplaneDestroyWithoutPlayersComponent>(demiplane);
+        EnsureComp<CP14DemiplaneDestroyWithoutStabilizationComponent>(demiplane);
 
         var tempRift = EntityManager.Spawn("CP14DemiplaneTimedRadiusPassway");
         var tempRift2 = EntityManager.Spawn("CP14DemiplanRiftCore");
@@ -93,8 +101,6 @@ public sealed partial class CP14DemiplaneSystem
 
     private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
     {
-        // Here, a unique Demiplan config should be generated based on the CP14DemiplanGeneratorDataComponent
-
         //Location generation
         HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
         foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())

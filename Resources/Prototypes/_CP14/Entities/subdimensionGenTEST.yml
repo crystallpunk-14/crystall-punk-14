@@ -14,7 +14,7 @@
       shader: unshaded
 
 - type: entity
-  id: CP14SubdimensionalKey
+  id: CP14DemiplanKey
   parent: CP14BaseSubdimensionalKey
   components:
   - type: CP14DemiplaneGeneratorData
@@ -58,7 +58,7 @@
   - type: CP14DemiplaneRift
     activeTeleport: false
   - type: CP14DemiplaneRadiusTimedPassway
-    maxEntities: 3
+    maxEntities: 4
     delay: 4
   - type: Sprite
     drawdepth: Effects
@@ -71,6 +71,11 @@
   - type: SingularityDistortion
     falloffPower: 1.5
     intensity: 50
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
 
 - type: entity
   id: CP14DemiplanePassway
@@ -90,6 +95,11 @@
   - type: SingularityDistortion
     falloffPower: 1.5
     intensity: 50
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
 
 - type: entity
   parent: MarkerBase

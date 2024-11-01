@@ -1,3 +1,5 @@
+using Robust.Shared.Audio;
+
 namespace Content.Shared._CP14.DemiplaneTraveling;
 
 /// <summary>
@@ -14,4 +16,10 @@ public sealed partial class CP14DemiplaneRiftOpenedComponent : Component
 
     [DataField]
     public float DoAfter = 4f;
+
+    [DataField("arrivalSound")]
+    public SoundSpecifier ArrivalSound = new SoundPathSpecifier("/Audio/Effects/teleport_arrival.ogg");
+
+    [DataField("departureSound")]
+    public SoundSpecifier DepartureSound = new SoundPathSpecifier("/Audio/Effects/teleport_departure.ogg");
 }
