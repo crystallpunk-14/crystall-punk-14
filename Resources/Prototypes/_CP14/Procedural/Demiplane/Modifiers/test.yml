@@ -1,7 +1,7 @@
 - type: cp14DemiplaneModifier
   id: GoldOre
   unique: false
-  reward: 2
+  reward: 0.5
   requiredTags:
   - CP14DemiplanOre
   layers:
@@ -15,7 +15,7 @@
 - type: cp14DemiplaneModifier
   id: IronOre
   unique: false
-  reward: 1.5
+  reward: 0.4
   requiredTags:
   - CP14DemiplanOre
   layers:
@@ -29,7 +29,7 @@
 - type: cp14DemiplaneModifier
   id: CopperOre
   unique: false
-  reward: 1
+  reward: 0.3
   requiredTags:
   - CP14DemiplanOre
   layers:
@@ -42,7 +42,7 @@
 
 - type: cp14DemiplaneModifier
   id: Explosive
-  difficulty: 1
+  difficulty: 0.4
   generationWeight: 0.25
   layers:
     - !type:MobsDunGen
@@ -54,7 +54,7 @@
 
 - type: cp14DemiplaneModifier
   id: CommonLoot
-  reward: 1
+  reward: 0.25
   generationWeight: 2
   layers:
     - !type:EntityTableDunGen
@@ -65,7 +65,7 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyXeno
-  difficulty: 1
+  difficulty: 0.5
   requiredTags:
   - CP14DemiplanUnderground
   layers:
@@ -79,7 +79,7 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyZombie
-  difficulty: 0.75
+  difficulty: 0.4
   layers:
     - !type:EntityTableDunGen
       minCount: 5
@@ -90,7 +90,7 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyDyno
-  difficulty: 1.25
+  difficulty: 0.5
   requiredTags:
   - CP14DemiplanOpenSky
   layers:
@@ -103,7 +103,7 @@
 
 - type: cp14DemiplaneModifier
   id: EnemySnakes
-  difficulty: 1.5
+  difficulty: 0.7
   layers:
     - !type:EntityTableDunGen
       minCount: 5
@@ -116,7 +116,7 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind
-  difficulty: 1.5
+  difficulty: 0.6
   generationWeight: 0.5
   layers:
     - !type:MobsDunGen

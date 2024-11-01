@@ -17,6 +17,8 @@
   parent: CP14BaseSubdimensionalKey
   components:
   - type: CP14DemiplaneGeneratorData
+    rewardLimit: 1.25
+    difficultyLimit: 0.75
   - type: CP14DemiplaneRift
 
 - type: entity
