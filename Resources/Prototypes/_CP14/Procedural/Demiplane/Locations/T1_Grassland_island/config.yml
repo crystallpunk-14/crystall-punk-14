@@ -3,6 +3,7 @@
   locationConfig: CP14ExpeditionGrasslandIsland
   tags:
   - CP14DemiplanOre
+  - CP14DemiplanOpenSky
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"

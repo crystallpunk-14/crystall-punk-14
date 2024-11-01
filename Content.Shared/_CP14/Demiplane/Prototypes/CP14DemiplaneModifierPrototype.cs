@@ -27,10 +27,12 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// <summary>
     /// Modifier cannot be applied to locations with the following tags. Leave empty for disable
     /// </summary>
-    public HashSet<ProtoId<TagPrototype>> BlacklistTags = new();
+    [DataField]
+    public List<ProtoId<TagPrototype>> BlacklistTags = new();
 
     /// <summary>
     /// Modifier can only be applied to locations that have all of the following tags. Leave empty for disable
     /// </summary>
-    public HashSet<ProtoId<TagPrototype>> RequiredTags = new();
+    [DataField]
+    public List<ProtoId<TagPrototype>> RequiredTags = new();
 }

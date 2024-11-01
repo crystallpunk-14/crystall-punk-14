@@ -24,5 +24,6 @@ public sealed partial class CP14DemiplaneLocationPrototype : IPrototype
     /// <summary>
     /// Tags allow modifiers to filter which ones can apply to the current location and which ones cannot.
     /// </summary>
-    public HashSet<ProtoId<TagPrototype>> Tags = new();
+    [DataField]
+    public List<ProtoId<TagPrototype>> Tags = new();
 }
