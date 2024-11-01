@@ -116,12 +116,12 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind
-  difficulty: 0.6
-  generationWeight: 0.5
+  difficulty: 0.3
+  generationWeight: 0.4
   layers:
     - !type:MobsDunGen
-      minCount: 2
-      maxCount: 4
+      minCount: 3
+      maxCount: 5
       groups:
       - id: CP14MobWatcherMagmawing
         amount: 1
