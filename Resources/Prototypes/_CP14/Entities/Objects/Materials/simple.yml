@@ -364,3 +364,19 @@
   components:
   - type: Stack
     count: 10
+
+- type: entity
+  id: CP14GlassShard
+  parent: ShardGlass
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+      - sprite: _CP14/Objects/Materials/glass.rsi
+        state: shard1
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          shard1: ""
+          shard2: ""
