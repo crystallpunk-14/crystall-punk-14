@@ -6,7 +6,8 @@
   - CP14DemiplanOre
   layers:
     - !type:OreDunGen
-      replacement: CP14WallStone
+      entityMask: 
+      - CP14WallStone
       entity: CP14WallStoneGoldOre
       count: 10
       minGroupSize: 10
@@ -20,7 +21,8 @@
   - CP14DemiplanOre
   layers:
     - !type:OreDunGen
-      replacement: CP14WallStone
+      entityMask: 
+      - CP14WallStone
       entity: CP14WallStoneIronOre
       count: 10
       minGroupSize: 10
@@ -34,7 +36,8 @@
   - CP14DemiplanOre
   layers:
     - !type:OreDunGen
-      replacement: CP14WallStone
+      entityMask: 
+      - CP14WallStone
       entity: CP14WallStoneCopperOre
       count: 10
       minGroupSize: 10
