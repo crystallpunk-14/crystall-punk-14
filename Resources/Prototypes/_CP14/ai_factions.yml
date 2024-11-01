@@ -30,3 +30,11 @@
   - CP14Adventurers
   - CP14Undead
   - CP14PeacefulAnimals
+
+- type: npcFaction
+  id: CP14Monster
+  hostile:
+  - CP14Adventurers
+  - CP14HostileEveryone
+  - CP14AggressiveAnimals
+  - CP14PeacefulAnimals

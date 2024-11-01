@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CLA",
+  "copyright": "Created by Nimfar11 (github)",
+  "states": [
+    {
+      "name": "subterranean_leap"
+    }
+  ]
+}
