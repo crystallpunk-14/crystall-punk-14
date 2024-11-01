@@ -29,6 +29,103 @@
       maxGroupSize: 15
 
 - type: cp14DemiplaneModifier
+  id: QuartzCrystal
+  reward: 0.2
+  requiredTags:
+  - CP14DemiplanOre
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14QuartzCrystal
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: Dayflin
+  reward: 0.2
+  requiredTags:
+  - CP14DemiplanGrass
+  - CP14DemiplanOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableDayflin
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: BlueAmanita
+  reward: 0.2
+  requiredTags:
+  - CP14DemiplanGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableBlueAmanita
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: BloodFlower
+  reward: 0.2
+  requiredTags:
+  - CP14DemiplanGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableBloodFlower
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: WildSage
+  reward: 0.2
+  requiredTags:
+  - CP14DemiplanGrass
+  - CP14DemiplanOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableWildSage
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: LumiShroom
+  reward: 0.2
+  requiredTags:
+  - CP14DemiplanUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      - CP14FloorBase
+      entity: CP14GatherableLumiMushroom
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
   id: CopperOre
   unique: false
   reward: 0.3

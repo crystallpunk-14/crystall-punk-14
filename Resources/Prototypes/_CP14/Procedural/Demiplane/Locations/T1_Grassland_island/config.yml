@@ -4,6 +4,7 @@
   tags:
   - CP14DemiplanOre
   - CP14DemiplanOpenSky
+  - CP14DemiplanGrass
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
