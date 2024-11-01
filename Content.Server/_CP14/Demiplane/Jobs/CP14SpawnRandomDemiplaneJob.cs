@@ -90,6 +90,9 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
             _entManager.AddComponents(DemiplaneMapUid, indexedModifier.Components);
         }
 
+        _mapManager.DoMapInitialize(_demiplaneMapId);
+        _mapManager.SetMapPaused(_demiplaneMapId, false);
+
         //Spawn modified config
         _dungeon.GenerateDungeon(indexedLocation,
                 grid,
@@ -108,9 +111,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         moles[(int) Gas.Nitrogen] = 82.10312f;
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         _entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplaneMapUid, false, mixture);
-
-        _mapManager.DoMapInitialize(_demiplaneMapId);
-        _mapManager.SetMapPaused(_demiplaneMapId, false);
 
         return true;
     }

@@ -3,6 +3,7 @@
   locationConfig: CP14ExpeditionCaves
   tags:
   - CP14DemiplanOre
+  - CP14DemiplanUnderground
   components:
   - type: CP14WeatherController
     entries:
@@ -27,13 +28,6 @@
       proto: CP14ExpeditionCavesFillAir
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillCave
-    # Mobs
-    - !type:MobsDunGen
-      minCount: 5
-      maxCount: 10
-      groups:
-      - id: CP14SpawnMobUndeadZombie
-        amount: 1
     # Enter and Exit
     - !type:MobsDunGen
       minCount: 1

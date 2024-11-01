@@ -52,3 +52,60 @@
       maxCount: 30
       table: !type:NestedSelector
         tableId: CP14TableExpeditionLootCommon
+
+- type: cp14DemiplaneModifier
+  id: EnemyXeno
+  requiredTags:
+  - CP14DemiplanUnderground
+  layers:
+    - !type:EntityTableDunGen
+      minCount: 5
+      maxCount: 10
+      table: !type:GroupSelector
+        children:
+        - id: CP14MobXenoDrone
+        - id: CP14MobXeno
+
+- type: cp14DemiplaneModifier
+  id: EnemyZombie
+  layers:
+    - !type:EntityTableDunGen
+      minCount: 5
+      maxCount: 10
+      table: !type:GroupSelector
+        children:
+        - id: CP14SpawnMobUndeadZombie
+
+- type: cp14DemiplaneModifier
+  id: EnemyDyno
+  requiredTags:
+  - CP14DemiplanOpenSky
+  layers:
+    - !type:MobsDunGen
+      minCount: 3
+      maxCount: 6
+      groups:
+      - id: CP14SpawnMobDinoYumkaraptor
+        amount: 1
+
+- type: cp14DemiplaneModifier
+  id: EnemySnakes
+  layers:
+    - !type:EntityTableDunGen
+      minCount: 5
+      maxCount: 10
+      table: !type:GroupSelector
+        children:
+        - id: CP14MobPurpleSnake
+        - id: CP14MobSmallPurpleSnake
+        - id: CP14MobSpaceCobra
+
+- type: cp14DemiplaneModifier
+  id: EnemyMagmawind
+  layers:
+    - !type:MobsDunGen
+      minCount: 2
+      maxCount: 4
+      groups:
+      - id: CP14MobWatcherMagmawing
+        amount: 1

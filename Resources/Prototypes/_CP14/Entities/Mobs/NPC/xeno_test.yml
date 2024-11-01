@@ -3,7 +3,6 @@
   parent: MobXeno
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
@@ -13,7 +12,6 @@
   parent: MobXenoDrone
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
@@ -24,7 +22,6 @@
   parent: MobCobraSpace
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
@@ -34,7 +31,6 @@
   parent: MobPurpleSnake
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
@@ -44,7 +40,6 @@
   parent: MobSmallPurpleSnake
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
@@ -54,7 +49,6 @@
   parent: MobWatcherMagmawing
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone

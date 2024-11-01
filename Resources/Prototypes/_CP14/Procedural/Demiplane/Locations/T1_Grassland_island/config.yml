@@ -59,13 +59,6 @@
       proto: CP14ExpeditionGrasslandIslandFillGrassland
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFillCave
-    # Mobs
-    - !type:MobsDunGen
-      minCount: 3
-      maxCount: 6
-      groups:
-      - id: CP14SpawnMobDinoYumkaraptor
-        amount: 1
     # Enter and Exit
     - !type:MobsDunGen
       minCount: 1
