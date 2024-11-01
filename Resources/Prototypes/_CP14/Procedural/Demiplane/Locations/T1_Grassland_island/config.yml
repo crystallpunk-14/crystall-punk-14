@@ -79,12 +79,6 @@
       groups:
       - id: CP14DemiplanePassway
         amount: 1
-    # Loot
-    - !type:EntityTableDunGen
-      minCount: 5
-      maxCount: 20
-      table: !type:NestedSelector
-        tableId: CP14TableExpeditionLootCommon
 
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIslandFloorMaskStone

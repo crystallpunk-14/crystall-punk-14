@@ -47,12 +47,6 @@
       groups:
       - id: CP14DemiplanePassway
         amount: 1
-    # Loot
-    - !type:EntityTableDunGen
-      minCount: 10
-      maxCount: 25
-      table: !type:NestedSelector
-        tableId: CP14TableExpeditionLootCommon
 
 - type: dungeonConfig
   id: CP14ExpeditionCavesFloorMaskAir

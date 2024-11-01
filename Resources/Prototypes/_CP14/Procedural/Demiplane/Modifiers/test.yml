@@ -45,17 +45,7 @@
         amount: 1
 
 - type: cp14DemiplaneModifier
-  id: Clowed
-  layers:
-    - !type:MobsDunGen
-      minCount: 25
-      maxCount: 50
-      groups:
-      - id: StatueBananiumClown
-        amount: 1
-
-- type: cp14DemiplaneModifier
-  id: LOOT
+  id: CommonLoot
   layers:
     - !type:EntityTableDunGen
       minCount: 15
