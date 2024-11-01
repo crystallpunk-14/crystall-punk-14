@@ -13,6 +13,24 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     [IdDataField] public string ID { get; } = default!;
 
     /// <summary>
+    ///
+    /// </summary>
+    [DataField]
+    public float Difficulty = 0;
+
+    /// <summary>
+    ///
+    /// </summary>
+    [DataField]
+    public float Reward = 0;
+
+    /// <summary>
+    /// How often can this modifier be generated? Determined by weight from all modifiers available for the location
+    /// </summary>
+    [DataField]
+    public float GenerationWeight = 1;
+
+    /// <summary>
     /// Generation layers that will be added to the location generation after the main layers.
     /// </summary>
     [DataField]

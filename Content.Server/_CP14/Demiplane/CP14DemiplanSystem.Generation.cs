@@ -4,6 +4,8 @@ using Content.Server._CP14.Demiplane.Jobs;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Random;
+using Content.Shared.Random.Helpers;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
@@ -120,7 +122,7 @@ public sealed partial class CP14DemiplaneSystem
         generator.Comp.Location = selectedConfig;
 
         //Modifier generation
-        HashSet<CP14DemiplaneModifierPrototype> suitableModifiers = new();
+        WeightedRandomPrototype suitableModifiersWeights = new();
         foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
         {
             var passed = true;
@@ -145,18 +147,15 @@ public sealed partial class CP14DemiplaneSystem
             }
 
             if (passed)
-                suitableModifiers.Add(modifier);
+            {
+                suitableModifiersWeights.Weights.Add(modifier.ID, modifier.GenerationWeight);
+            }
         }
 
         //DEBUG 3 modifier
-        var selectedModifier = _random.Pick(suitableModifiers);
-        generator.Comp.Modifiers.Add(selectedModifier);
-
-        selectedModifier = _random.Pick(suitableModifiers);
-        generator.Comp.Modifiers.Add(selectedModifier);
-
-        selectedModifier = _random.Pick(suitableModifiers);
-        generator.Comp.Modifiers.Add(selectedModifier);
+        generator.Comp.Modifiers.Add(suitableModifiersWeights.Pick(_random));
+        generator.Comp.Modifiers.Add(suitableModifiersWeights.Pick(_random));
+        generator.Comp.Modifiers.Add(suitableModifiersWeights.Pick(_random));
 
         //Scenario generation
 

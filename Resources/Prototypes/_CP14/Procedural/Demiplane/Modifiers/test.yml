@@ -46,6 +46,7 @@
 
 - type: cp14DemiplaneModifier
   id: CommonLoot
+  generationWeight: 2
   layers:
     - !type:EntityTableDunGen
       minCount: 15
@@ -102,6 +103,7 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind
+  generationWeight: 0.5
   layers:
     - !type:MobsDunGen
       minCount: 2
