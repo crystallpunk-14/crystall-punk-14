@@ -150,15 +150,12 @@ public sealed partial class CP14DemiplaneSystem
 
         //DEBUG 3 modifier
         var selectedModifier = _random.Pick(suitableModifiers);
-        suitableModifiers.Remove(selectedModifier);
         generator.Comp.Modifiers.Add(selectedModifier);
 
         selectedModifier = _random.Pick(suitableModifiers);
-        suitableModifiers.Remove(selectedModifier);
         generator.Comp.Modifiers.Add(selectedModifier);
 
         selectedModifier = _random.Pick(suitableModifiers);
-        suitableModifiers.Remove(selectedModifier);
         generator.Comp.Modifiers.Add(selectedModifier);
 
         //Scenario generation
