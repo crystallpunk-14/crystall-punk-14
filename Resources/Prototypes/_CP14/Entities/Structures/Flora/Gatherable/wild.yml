@@ -172,7 +172,7 @@
       All: CP14GatherLumiMushroom
 
 - type: entity
-  parent: BaseRock
+  parent: CP14BaseRock
   id: CP14QuartzCrystal
   name: quartz
   description: Quartz is an essential mineral capable of interacting with magical energy. It is highly sought after by alchemists for extracting beneficial properties from liquids
@@ -216,26 +216,22 @@
               CP14QuartzShard:
                 min: 1
                 max: 3
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.30
-        density: 60
-        mask:
-          - MachineMask
-        layer:
-          - MidImpassable
-          - LowImpassable
-          - BulletImpassable
-          - Opaque
   - type: RandomSprite
     available:
     - random:
         big: ""
         medium: ""
         small: ""
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 500
+        layer:
+        - HalfWallLayer
+        - Opaque
 
 # Blue amanita
 

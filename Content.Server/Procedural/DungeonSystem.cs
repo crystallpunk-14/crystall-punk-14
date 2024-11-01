@@ -45,8 +45,8 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
 
     private const double DungeonJobTime = 0.005;
 
-    public const int CollisionMask = (int) CollisionGroup.Impassable;
-    public const int CollisionLayer = (int) CollisionGroup.Impassable;
+    public const int CollisionMask = (int) CollisionGroup.AllMask; //CP14 replace to AllMask
+    public const int CollisionLayer = (int) CollisionGroup.AllMask; //CP14 replace to AllMask
 
     private readonly JobQueue _dungeonJobQueue = new(DungeonJobTime);
     private readonly Dictionary<DungeonJob.DungeonJob, CancellationTokenSource> _dungeonJobs = new();
