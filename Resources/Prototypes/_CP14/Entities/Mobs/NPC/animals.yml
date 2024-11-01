@@ -75,3 +75,117 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/fox_squeak.ogg
+
+- type: entity
+  id: CP14MobPig
+  parent: SimpleMobBase
+  name: pig
+  description: An omnivorous and unpretentious animal that is sure to make juicy cuts of meat.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: NpcFactionMember
+    factions:
+    - CP14PeacefulAnimals
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Animals/pig.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CP14Pig
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - CP14Pig
+    offspring:
+    - id: CP14MobPig
+      maxAmount: 2
+  - type: ReproductivePartner
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 2
+        Slash: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatLamb # to replace the pig meat and add chunks of fat
+      amount: 5
+  - type: Bloodstream
+    bloodMaxVolume: 150
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: ReplacementAccent
+    accent: pig
+
+- type: entity
+  id: CP14MobBoar
+  parent: CP14MobPig
+  name: boar
+  description: A distant relative of pigs, same pros, but unlike its peaceful relatives, will definitely try to pick you up on its fangs if you show aggression towards it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Animals/boar.rsi
+      state: live
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 5
+        Slash: 2
+  - type: Tag
+    tags:
+    - CP14Boar
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - CP14Boar
+    offspring:
+    - id: CP14MobBoar
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4.5
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: FactionException

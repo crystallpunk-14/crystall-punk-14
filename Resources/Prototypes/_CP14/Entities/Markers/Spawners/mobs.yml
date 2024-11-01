@@ -45,3 +45,35 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobDinoYumkaraptor
+
+- type: entity
+  name: pig spawner
+  id: CP14SpawnMobPig
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/pig.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobPig
+
+- type: entity
+  name: boar spawner
+  id: CP14SpawnMobBoar
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/boar.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobBoar
