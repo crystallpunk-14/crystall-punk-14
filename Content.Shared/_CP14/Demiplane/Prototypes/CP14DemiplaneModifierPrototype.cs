@@ -13,13 +13,13 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     [IdDataField] public string ID { get; } = default!;
 
     /// <summary>
-    ///
+    /// Abstract danger of this modifier. The demiplane has a threat limit, which it gains from modifiers until it reaches the limit.
     /// </summary>
     [DataField]
     public float Difficulty = 0;
 
     /// <summary>
-    ///
+    /// The abstract value of this modifier. The demiplane has a limit of rewards it gains from modifiers until it reaches the limit.
     /// </summary>
     [DataField]
     public float Reward = 0;
@@ -29,6 +29,12 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// </summary>
     [DataField]
     public float GenerationWeight = 1;
+
+    /// <summary>
+    /// Can this modifier be generated multiple times within a single demiplane?
+    /// </summary>
+    [DataField]
+    public bool Unique = true;
 
     /// <summary>
     /// Generation layers that will be added to the location generation after the main layers.

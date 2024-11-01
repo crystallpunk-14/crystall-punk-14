@@ -152,10 +152,30 @@ public sealed partial class CP14DemiplaneSystem
             }
         }
 
-        //DEBUG 3 modifier
-        generator.Comp.Modifiers.Add(suitableModifiersWeights.Pick(_random));
-        generator.Comp.Modifiers.Add(suitableModifiersWeights.Pick(_random));
-        generator.Comp.Modifiers.Add(suitableModifiersWeights.Pick(_random));
+        var difficulty = 0f;
+        var reward = 0f;
+        while (generator.Comp.Modifiers.Count < generator.Comp.MaxModifiers && suitableModifiersWeights.Weights.Count > 0)
+        {
+            var selectedModifier = _proto.Index<CP14DemiplaneModifierPrototype>(suitableModifiersWeights.Pick(_random));
+            if (difficulty + selectedModifier.Difficulty > generator.Comp.DifficultyLimit)
+            {
+                suitableModifiersWeights.Weights.Remove(selectedModifier.ID);
+                continue;
+            }
+
+            if (reward + selectedModifier.Reward > generator.Comp.RewardLimit)
+            {
+                suitableModifiersWeights.Weights.Remove(selectedModifier.ID);
+                continue;
+            }
+
+            generator.Comp.Modifiers.Add(selectedModifier);
+            reward += selectedModifier.Reward;
+            difficulty += selectedModifier.Difficulty;
+
+            if (selectedModifier.Unique)
+                suitableModifiersWeights.Weights.Remove(selectedModifier.ID);
+        }
 
         //Scenario generation
 
