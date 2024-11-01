@@ -98,7 +98,9 @@ public sealed partial class CP14DemiplaneSystem
         AddDemiplanRandomExitPoint(demiplane, (tempRift, connection));
         AddDemiplanRandomExitPoint(demiplane, (tempRift2, connection2));
 
+#if !DEBUG
         QueueDel(generator); //wtf its crash debug build?
+#endif
     }
 
     private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)

@@ -1,0 +1,50 @@
+- type: Tag
+  id: CP14DemiplanEnterRoom
+
+- type: entity
+  id: CP14DemiplanEnterRoomMarker
+  categories: [ ForkFiltered ]
+  parent: BaseRoomMarker
+  name: Demiplan enter room marker
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - CP14DemiplanEnterRoom
+
+# 7x7
+- type: dungeonRoom
+  id: CP14DemiplanEnterRoom_7x7_a
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - CP14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanEnterRoom_7x7_b
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - CP14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanEnterRoom_7x7_c
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - CP14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanEnterRoom_7x7_d
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - CP14DemiplanEnterRoom

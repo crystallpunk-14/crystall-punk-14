@@ -20,6 +20,13 @@
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskAir
     # Exterior rooms
+    # Enter and Exit
+    - !type:MobsDunGen
+      minCount: 1
+      maxCount: 1
+      groups:
+      - id: CP14DemiplanEnterRoomMarker
+        amount: 1
     #here
     # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
     - !type:PrototypeDunGen
@@ -28,13 +35,6 @@
       proto: CP14ExpeditionCavesFillAir
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillCave
-    # Enter and Exit
-    - !type:MobsDunGen
-      minCount: 1
-      maxCount: 2
-      groups:
-      - id: CP14DemiplaneEntryPointMarker
-        amount: 1
     - !type:MobsDunGen
       minCount: 2
       maxCount: 2
