@@ -1,0 +1,142 @@
+- type: cp14DemiplaneLocation
+  id: T1GrassGeode
+  locationConfig: CP14DemiplaneGrassGeode
+  tags:
+  - CP14DemiplanOre
+  - CP14DemiplanGrass
+  - CP14DemiplanUnderground
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14Mist
+  - type: MapLight
+    ambientLightColor: "#020a1c"
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeode
+  layers:
+    # Masks (from center to border!)
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFloorMaskBorder
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFloorMaskStone
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFloorMaskAir
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFloorMaskWater
+    # Enter and Exit
+    - !type:MobsDunGen
+      minCount: 1
+      maxCount: 1
+      groups:
+      - id: CP14DemiplanEnterRoomMarker
+        amount: 1
+    # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionCavesFillBorder
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFillGrass
+    - !type:PrototypeDunGen
+      proto: CP14ExpeditionCavesFillCave
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFillWater
+    - !type:MobsDunGen
+      minCount: 2
+      maxCount: 2
+      groups:
+      - id: CP14DemiplanePassway
+        amount: 1
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFloorMaskWater
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 80, 80
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorDirt
+      threshold: 0.70
+      noise:
+        frequency: 0.030
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFloorMaskAir
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 80, 80
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorGrass
+      threshold: 0.50
+      noise:
+        frequency: 0.030
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFloorMaskStone
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 120, 120
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.9
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFloorMaskBorder
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 130, 130
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 1
+    layers:
+    - tile: CP14FloorBase
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFillGrass
+  reserveTiles: true
+  data:
+    entities:
+      Fill: CP14BiomeSpawnerGrassland
+  layers:
+  - !type:FillGridDunGen
+    allowedTiles:
+    - CP14FloorGrass
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFillWater
+  reserveTiles: true
+  data:
+    entities:
+      Fill: CP14FloorWater
+  layers:
+  - !type:FillGridDunGen
+    allowedTiles:
+    - CP14FloorDirt

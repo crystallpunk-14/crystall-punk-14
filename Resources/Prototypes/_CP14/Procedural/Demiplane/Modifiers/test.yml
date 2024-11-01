@@ -43,6 +43,102 @@
       maxGroupSize: 5
 
 - type: cp14DemiplaneModifier
+  id: QuartzCrystalRubies
+  reward: 0.2
+  generationWeight: 0.2
+  requiredTags:
+  - CP14DemiplanOre
+  - CP14DemiplanUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalRubiesMedium
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalTopazes
+  reward: 0.2
+  generationWeight: 0.2
+  requiredTags:
+  - CP14DemiplanOre
+  - CP14DemiplanUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalTopazesMedium
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalEmeralds
+  reward: 0.2
+  generationWeight: 0.2
+  requiredTags:
+  - CP14DemiplanOre
+  - CP14DemiplanUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalEmeraldsMedium
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalSapphires
+  reward: 0.2
+  generationWeight: 0.2
+  requiredTags:
+  - CP14DemiplanOre
+  - CP14DemiplanUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalSapphiresMedium
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalAmethysts
+  reward: 0.2
+  generationWeight: 0.2
+  requiredTags:
+  - CP14DemiplanOre
+  - CP14DemiplanUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalAmethystsMedium
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalDiamonds
+  reward: 0.2
+  generationWeight: 0.2
+  requiredTags:
+  - CP14DemiplanOre
+  - CP14DemiplanUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalDiamondsMedium
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
   id: Dayflin
   reward: 0.2
   requiredTags:
@@ -206,8 +302,8 @@
   difficulty: 0.7
   layers:
     - !type:EntityTableDunGen
-      minCount: 5
-      maxCount: 10
+      minCount: 3
+      maxCount: 6
       table: !type:GroupSelector
         children:
         - id: CP14MobPurpleSnake
@@ -225,3 +321,16 @@
       groups:
       - id: CP14MobWatcherMagmawing
         amount: 1
+
+- type: cp14DemiplaneModifier
+  id: Chasm
+  difficulty: 0.2
+  generationWeight: 0.6
+  layers:
+    - !type:OreDunGen
+      entity: CP14Chasm
+      tileMask:
+      - CP14FloorBase
+      count: 5
+      minGroupSize: 2
+      maxGroupSize: 5
