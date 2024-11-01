@@ -77,6 +77,9 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         var expeditionConfig = _prototypeManager.Index(_config);
         var indexedLocation = _prototypeManager.Index(expeditionConfig.LocationConfig);
 
+        //Add map components
+        _entManager.AddComponents(DemiplaneMapUid, expeditionConfig.Components);
+
         //Apply modifiers
         foreach (var modifier in _modifiers)
         {
@@ -86,9 +89,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
             indexedLocation.Layers.AddRange(indexedModifier.Layers);
             _entManager.AddComponents(DemiplaneMapUid, indexedModifier.Components);
         }
-
-        //Add map components
-        _entManager.AddComponents(DemiplaneMapUid, expeditionConfig.Components);
 
         //Spawn modified config
         _dungeon.GenerateDungeon(indexedLocation,

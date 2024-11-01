@@ -1,4 +1,5 @@
 using Content.Shared.Procedural;
+using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Demiplane.Prototypes;
@@ -22,4 +23,14 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// </summary>
     [DataField]
     public ComponentRegistry Components = new();
+
+    /// <summary>
+    /// Modifier cannot be applied to locations with the following tags. Leave empty for disable
+    /// </summary>
+    public HashSet<ProtoId<TagPrototype>> BlacklistTags = new();
+
+    /// <summary>
+    /// Modifier can only be applied to locations that have all of the following tags. Leave empty for disable
+    /// </summary>
+    public HashSet<ProtoId<TagPrototype>> RequiredTags = new();
 }

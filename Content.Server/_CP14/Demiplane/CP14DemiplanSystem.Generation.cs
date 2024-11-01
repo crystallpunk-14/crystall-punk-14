@@ -123,12 +123,42 @@ public sealed partial class CP14DemiplaneSystem
         HashSet<CP14DemiplaneModifierPrototype> suitableModifiers = new();
         foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
         {
-            //Tag filtering here
-            suitableModifiers.Add(modifier);
+            var passed = true;
+            //Tag blacklist filter
+            foreach (var configTag in selectedConfig.Tags)
+            {
+                if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
+                {
+                    passed = false;
+                    break;
+                }
+            }
+
+            //Tag required filter
+            foreach (var reqTag in modifier.RequiredTags)
+            {
+                if (!selectedConfig.Tags.Contains(reqTag))
+                {
+                    passed = false;
+                    break;
+                }
+            }
+
+            if (passed)
+                suitableModifiers.Add(modifier);
         }
 
+        //DEBUG 3 modifier
         var selectedModifier = _random.Pick(suitableModifiers);
+        suitableModifiers.Remove(selectedModifier);
+        generator.Comp.Modifiers.Add(selectedModifier);
 
+        selectedModifier = _random.Pick(suitableModifiers);
+        suitableModifiers.Remove(selectedModifier);
+        generator.Comp.Modifiers.Add(selectedModifier);
+
+        selectedModifier = _random.Pick(suitableModifiers);
+        suitableModifiers.Remove(selectedModifier);
         generator.Comp.Modifiers.Add(selectedModifier);
 
         //Scenario generation

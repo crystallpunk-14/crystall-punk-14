@@ -1,19 +1,64 @@
 - type: cp14DemiplaneModifier
-  id: Test1
+  id: GoldOre
+  requiredTags:
+  - CP14DemiplanOre
+  layers:
+    - !type:OreDunGen
+      replacement: CP14WallStone
+      entity: CP14WallStoneGoldOre
+      count: 10
+      minGroupSize: 10
+      maxGroupSize: 15
+
+- type: cp14DemiplaneModifier
+  id: IronOre
+  requiredTags:
+  - CP14DemiplanOre
+  layers:
+    - !type:OreDunGen
+      replacement: CP14WallStone
+      entity: CP14WallStoneIronOre
+      count: 10
+      minGroupSize: 10
+      maxGroupSize: 15
+
+- type: cp14DemiplaneModifier
+  id: CopperOre
+  requiredTags:
+  - CP14DemiplanOre
+  layers:
+    - !type:OreDunGen
+      replacement: CP14WallStone
+      entity: CP14WallStoneCopperOre
+      count: 10
+      minGroupSize: 10
+      maxGroupSize: 15
+
+- type: cp14DemiplaneModifier
+  id: Explosive
   layers:
     - !type:MobsDunGen
-      minCount: 15
-      maxCount: 30
+      minCount: 25
+      maxCount: 50
       groups:
       - id: LandMineExplosive
         amount: 1
 
 - type: cp14DemiplaneModifier
-  id: Test2
+  id: Clowed
   layers:
     - !type:MobsDunGen
-      minCount: 10
-      maxCount: 20
+      minCount: 25
+      maxCount: 50
       groups:
       - id: StatueBananiumClown
         amount: 1
+
+- type: cp14DemiplaneModifier
+  id: LOOT
+  layers:
+    - !type:EntityTableDunGen
+      minCount: 15
+      maxCount: 30
+      table: !type:NestedSelector
+        tableId: CP14TableExpeditionLootCommon

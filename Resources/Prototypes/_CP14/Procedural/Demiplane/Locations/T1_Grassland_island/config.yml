@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1GrasslandIsland
   locationConfig: CP14ExpeditionGrasslandIsland
+  tags:
+  - CP14DemiplanOre
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
@@ -57,25 +59,6 @@
       proto: CP14ExpeditionGrasslandIslandFillGrassland
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFillCave
-    # Ore and resources 
-    - !type:OreDunGen
-      replacement: CP14WallStone
-      entity: CP14WallStoneGoldOre
-      count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
-    - !type:OreDunGen
-      replacement: CP14WallStone
-      entity: CP14WallStoneIronOre
-      count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
-    - !type:OreDunGen
-      replacement: CP14WallStone
-      entity: CP14WallStoneCopperOre
-      count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
     # Mobs
     - !type:MobsDunGen
       minCount: 3
