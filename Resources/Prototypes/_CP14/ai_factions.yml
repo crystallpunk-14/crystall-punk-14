@@ -4,6 +4,7 @@
   - CP14AggressiveAnimals
   - CP14Undead
   - CP14HostileEveryone
+  - CP14Monster
 
 - type: npcFaction
   id: CP14HostileEveryone
@@ -12,6 +13,7 @@
   - CP14Undead
   - CP14PeacefulAnimals
   - CP14AggressiveAnimals
+  - CP14Monster
 
 - type: npcFaction
   id: CP14Undead
@@ -30,6 +32,7 @@
   - CP14Adventurers
   - CP14Undead
   - CP14PeacefulAnimals
+  - CP14Monster
 
 - type: npcFaction
   id: CP14Monster
