@@ -1,0 +1,11 @@
+- type: Tag
+  id: CP14DemiplanOre
+
+- type: Tag
+  id: CP14DemiplanGrass
+
+- type: Tag
+  id: CP14DemiplanOpenSky
+
+- type: Tag
+  id: CP14DemiplanUnderground

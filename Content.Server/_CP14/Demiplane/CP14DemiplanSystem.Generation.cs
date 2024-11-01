@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using Content.Server._CP14.Demiplane.Components;
 using Content.Server._CP14.Demiplane.Jobs;
@@ -42,7 +43,7 @@ public sealed partial class CP14DemiplaneSystem
     /// <summary>
     /// Generates a new random demiplane based on the specified parameters
     /// </summary>
-    public void SpawnRandomDemiplane(ProtoId<CP14DemiplaneLocationPrototype> location, out Entity<CP14DemiplaneComponent> demiplan, out MapId mapId)
+    public void SpawnRandomDemiplane(ProtoId<CP14DemiplaneLocationPrototype> location, List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers, out Entity<CP14DemiplaneComponent> demiplan, out MapId mapId)
     {
         var mapUid = _mapSystem.CreateMap(out mapId, runMapInit: false);
         var demiComp = EntityManager.EnsureComponent<CP14DemiplaneComponent>(mapUid);
@@ -61,6 +62,7 @@ public sealed partial class CP14DemiplaneSystem
             mapUid,
             mapId,
             location,
+            modifiers,
             _random.Next(-10000, 10000),
             cancelToken.Token);
 
@@ -70,7 +72,7 @@ public sealed partial class CP14DemiplaneSystem
 
     private void GeneratorUsedInHand(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref UseInHandEvent args)
     {
-        if (generator.Comp.LocationConfig is null)
+        if (generator.Comp.Location is null)
             return;
 
         //We cant open demiplan in another demiplan
@@ -80,7 +82,7 @@ public sealed partial class CP14DemiplaneSystem
             return;
         }
 
-        SpawnRandomDemiplane(generator.Comp.LocationConfig.Value, out var demiplane, out var mapId);
+        SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.Modifiers, out var demiplane, out var mapId);
 
         //Admin log needed
         //TEST
@@ -116,12 +118,93 @@ public sealed partial class CP14DemiplaneSystem
         }
 
         var selectedConfig = _random.Pick(suitableConfigs);
-        generator.Comp.LocationConfig = selectedConfig;
+        generator.Comp.Location = selectedConfig;
 
         //Modifier generation
+        Dictionary<CP14DemiplaneModifierPrototype, float> suitableModifiersWeights = new();
+        foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
+        {
+            var passed = true;
+            //Tag blacklist filter
+            foreach (var configTag in selectedConfig.Tags)
+            {
+                if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
+                {
+                    passed = false;
+                    break;
+                }
+            }
+
+            //Tag required filter
+            foreach (var reqTag in modifier.RequiredTags)
+            {
+                if (!selectedConfig.Tags.Contains(reqTag))
+                {
+                    passed = false;
+                    break;
+                }
+            }
+
+            if (passed)
+            {
+                suitableModifiersWeights.Add(modifier, modifier.GenerationWeight);
+            }
+        }
+
+        var difficulty = 0f;
+        var reward = 0f;
+        while (generator.Comp.Modifiers.Count < generator.Comp.MaxModifiers && suitableModifiersWeights.Count > 0)
+        {
+            var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
+            if (difficulty + selectedModifier.Difficulty > generator.Comp.DifficultyLimit)
+            {
+                suitableModifiersWeights.Remove(selectedModifier);
+                continue;
+            }
+
+            if (reward + selectedModifier.Reward > generator.Comp.RewardLimit)
+            {
+                suitableModifiersWeights.Remove(selectedModifier);
+                continue;
+            }
+
+            generator.Comp.Modifiers.Add(selectedModifier);
+            reward += selectedModifier.Reward;
+            difficulty += selectedModifier.Difficulty;
+
+            if (selectedModifier.Unique)
+                suitableModifiersWeights.Remove(selectedModifier);
+        }
 
         //Scenario generation
 
         //ETC generation
     }
+
+
+    /// <summary>
+    /// Optimization moment: avoid re-indexing for weight selection
+    /// </summary>
+    private static CP14DemiplaneModifierPrototype ModifierPick(Dictionary<CP14DemiplaneModifierPrototype, float> weights, IRobustRandom random)
+    {
+        var picks = weights;
+        var sum = picks.Values.Sum();
+        var accumulated = 0f;
+
+        var rand = random.NextFloat() * sum;
+
+        foreach (var (key, weight) in picks)
+        {
+            accumulated += weight;
+
+            if (accumulated >= rand)
+            {
+                return key;
+            }
+        }
+
+        // Shouldn't happen
+        throw new InvalidOperationException($"Invalid weighted pick in CP14DemiplanSystem.Generation!");
+    }
+
 }

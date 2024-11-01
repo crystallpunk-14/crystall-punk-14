@@ -11,7 +11,17 @@ namespace Content.Server._CP14.Demiplane.Components;
 public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
 {
     [DataField]
-    public ProtoId<CP14DemiplaneLocationPrototype>? LocationConfig;
+    public ProtoId<CP14DemiplaneLocationPrototype>? Location;
 
-    //Generation settings
+    [DataField]
+    public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = new();
+
+    [DataField]
+    public float DifficultyLimit = 1;
+
+    [DataField]
+    public float RewardLimit = 1;
+
+    [DataField]
+    public int MaxModifiers = 6;
 }

@@ -22,24 +22,6 @@
         - CP14FloorBase
       entities:
         - CP14RockSmall
-        - CP14RockSmall
-        - CP14QuartzCrystal
-    - !type:BiomeEntityLayer # lumishroom sage
-      threshold: 0.8
-      noise:
-        seed: 8
-        noiseType: OpenSimplex2
-        fractalType: Ridged
-        frequency: 0.045
-        octaves: 3
-        lacunarity: 1.8
-        gain: 0.7
-        domainWarpType: OpenSimplex2
-        domainWarpAmp: 120
-      allowedTiles:
-        - CP14FloorBase
-      entities:
-        - CP14GatherableLumiMushroom
  
 - type: biomeTemplate
   id: CP14CavesGeneric

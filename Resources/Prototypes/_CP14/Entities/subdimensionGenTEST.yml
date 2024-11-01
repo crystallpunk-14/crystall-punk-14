@@ -7,7 +7,6 @@
   description: The core that connects the real world to the demiplane. Use it to open a temporary passage to the other world.
   components:
   - type: Sprite
-    drawdepth: Effects
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
     layers:
     - state: core
@@ -18,9 +17,9 @@
   parent: CP14BaseSubdimensionalKey
   components:
   - type: CP14DemiplaneGeneratorData
+    rewardLimit: 1.25
+    difficultyLimit: 0.75
   - type: CP14DemiplaneRift
-  - type: Sprite
-    state: key1
 
 - type: entity
   id: CP14DemiplanRiftCore
