@@ -71,6 +71,7 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         var grid = _mapManager.CreateGridEntity(DemiplaneMapUid);
 
         MetaDataComponent? metadata = null;
+        DungeonConfigPrototype dungeonConfig = new();
 
         _metaData.SetEntityName(DemiplaneMapUid, "TODO: MAP Expedition name generation");
         _metaData.SetEntityName(grid, "TODO: GRID Expedition name generation");
@@ -79,8 +80,13 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         var expeditionConfig = _prototypeManager.Index(_config);
         var indexedLocation = _prototypeManager.Index(expeditionConfig.LocationConfig);
 
+        dungeonConfig.Data = indexedLocation.Data;
+        dungeonConfig.Layers.AddRange(indexedLocation.Layers);
+        dungeonConfig.ReserveTiles = indexedLocation.ReserveTiles;
+
         //Add map components
         _entManager.AddComponents(DemiplaneMapUid, expeditionConfig.Components);
+
 
         //Apply modifiers
         foreach (var modifier in _modifiers)
@@ -88,18 +94,18 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
             if (!_prototypeManager.TryIndex(modifier, out var indexedModifier))
                 continue;
 
-            indexedLocation.Layers.AddRange(indexedModifier.Layers);
+            dungeonConfig.Layers.AddRange(indexedModifier.Layers);
             _entManager.AddComponents(DemiplaneMapUid, indexedModifier.Components);
         }
 
         //Enter and exits
         if (_prototypeManager.TryIndex<DungeonConfigPrototype>("DemiplaneConnections", out var indexedConnections))
         {
-            indexedLocation.Layers.AddRange(indexedConnections.Layers);
+            dungeonConfig.Layers.AddRange(indexedConnections.Layers);
         }
 
         //Spawn modified config
-        _dungeon.GenerateDungeon(indexedLocation,
+        _dungeon.GenerateDungeon(dungeonConfig,
                 grid,
                 grid,
                 Vector2i.Zero,

@@ -11,19 +11,40 @@
     layers:
     - state: core
       shader: unshaded
-
-- type: entity
-  id: CP14DemiplanKey
-  parent: CP14BaseSubdimensionalKey
-  components:
-  - type: CP14DemiplaneGeneratorData
-    rewardLimit: 1.25
-    difficultyLimit: 0.75
-  - type: CP14DemiplaneRift
   - type: GuideHelp
     guides:
     - CP14_RU_Demiplanes
     - CP14_EN_Demiplanes
+
+- type: entity
+  id: CP14DemiplanKey
+  parent: CP14BaseSubdimensionalKey
+  name: demiplan key
+  components:
+  - type: CP14DemiplaneGeneratorData
+    rewardLimit: 1.25
+    difficultyLimit: 0.75
+    maxModifiers: 6
+
+- type: entity
+  id: CP14DemiplanKeyHard
+  parent: CP14BaseSubdimensionalKey
+  name: hard demiplan key - hard
+  components:
+  - type: CP14DemiplaneGeneratorData
+    rewardLimit: 2.25
+    difficultyLimit: 1.75
+    maxModifiers: 10
+
+- type: entity
+  id: CP14DemiplanKeyHardcore
+  parent: CP14BaseSubdimensionalKey
+  name: demiplan key - HARDCORE
+  components: 
+  - type: CP14DemiplaneGeneratorData
+    rewardLimit: 4.25
+    difficultyLimit: 2.75
+    maxModifiers: 15
 
 - type: entity
   id: CP14DemiplanRiftCore
