@@ -43,22 +43,14 @@
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIsland
   layers:
-    # Masks (from center to border!)
+    # Masks
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskSand
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskGrass
     - !type:PrototypeDunGen
       proto: CP14ExpeditionGrasslandIslandFloorMaskStone
-    # Exterior rooms
-    # Enter and Exit
-    - !type:MobsDunGen
-      minCount: 1
-      maxCount: 1
-      groups:
-      - id: CP14DemiplanEnterRoomMarker
-        amount: 1
-    # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
+    # Biomes
     - !type:BiomeDunGen
       biomeTemplate: CP14GrasslandTestResult
       tileMask:
@@ -67,12 +59,6 @@
       biomeTemplate: CP14CavesGeneric
       tileMask:
       - CP14FloorBase
-    - !type:MobsDunGen
-      minCount: 2
-      maxCount: 2
-      groups:
-      - id: CP14DemiplanePassway
-        amount: 1
 
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIslandFloorMaskStone

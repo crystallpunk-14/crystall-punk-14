@@ -15,7 +15,7 @@
 - type: dungeonConfig
   id: CP14DemiplaneGrassGeode
   layers:
-    # Masks (from center to border!)
+    # Masks
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFloorMaskBorder
     - !type:PrototypeDunGen
@@ -24,14 +24,7 @@
       proto: CP14DemiplaneGrassGeodeFloorMaskAir
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFloorMaskWater
-    # Enter and Exit
-    - !type:MobsDunGen
-      minCount: 1
-      maxCount: 1
-      groups:
-      - id: CP14DemiplanEnterRoomMarker
-        amount: 1
-    # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
+    # Biomes
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillBorder
     - !type:BiomeDunGen
@@ -44,12 +37,6 @@
       - CP14FloorSand
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFillWater
-    - !type:MobsDunGen
-      minCount: 2
-      maxCount: 2
-      groups:
-      - id: CP14DemiplanePassway
-        amount: 1
 
 - type: dungeonConfig
   id: CP14DemiplaneGrassGeodeFloorMaskWater

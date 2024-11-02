@@ -5,6 +5,8 @@ using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
+using Content.Shared.Procedural;
+using Content.Shared.Procedural.DungeonGenerators;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -90,11 +92,14 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
             _entManager.AddComponents(DemiplaneMapUid, indexedModifier.Components);
         }
 
-        _mapManager.DoMapInitialize(_demiplaneMapId);
-        _mapManager.SetMapPaused(_demiplaneMapId, false);
+        //Enter and exits
+        if (_prototypeManager.TryIndex<DungeonConfigPrototype>("DemiplaneConnections", out var indexedConnections))
+        {
+            indexedLocation.Layers.AddRange(indexedConnections.Layers);
+        }
 
         //Spawn modified config
-        await _dungeon.GenerateDungeonAsync(indexedLocation,
+        _dungeon.GenerateDungeon(indexedLocation,
                 grid,
                 grid,
                 Vector2i.Zero,
@@ -111,6 +116,9 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         moles[(int) Gas.Nitrogen] = 82.10312f;
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         _entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplaneMapUid, false, mixture);
+
+        _mapManager.DoMapInitialize(_demiplaneMapId);
+        _mapManager.SetMapPaused(_demiplaneMapId, false);
 
         return true;
     }

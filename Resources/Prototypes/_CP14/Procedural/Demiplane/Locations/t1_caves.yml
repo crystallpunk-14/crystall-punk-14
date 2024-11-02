@@ -12,23 +12,14 @@
 - type: dungeonConfig
   id: CP14ExpeditionCaves
   layers:
-    # Masks (from center to border!)
+    # Masks
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskBorder
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskAir
-    # Exterior rooms
-    # Enter and Exit
-    - !type:MobsDunGen
-      minCount: 1
-      maxCount: 1
-      groups:
-      - id: CP14DemiplanEnterRoomMarker
-        amount: 1
-    #here
-    # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
+    # Biomes
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillBorder
     - !type:BiomeDunGen
@@ -39,12 +30,6 @@
       biomeTemplate: CP14CavesFloor
       tileMask:
       - CP14FloorGrass
-    - !type:MobsDunGen
-      minCount: 2
-      maxCount: 2
-      groups:
-      - id: CP14DemiplanePassway
-        amount: 1
 
 - type: dungeonConfig
   id: CP14ExpeditionCavesFloorMaskAir
