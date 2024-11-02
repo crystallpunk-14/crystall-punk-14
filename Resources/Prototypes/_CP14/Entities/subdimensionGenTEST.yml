@@ -20,6 +20,10 @@
     rewardLimit: 1.25
     difficultyLimit: 0.75
   - type: CP14DemiplaneRift
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   id: CP14DemiplanRiftCore
@@ -47,6 +51,10 @@
     energy: 2
     color: "#371c5c"
     netsync: false
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   id: CP14DemiplaneTimedRadiusPassway
@@ -75,6 +83,10 @@
     range: 7
     sound:
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   id: CP14DemiplanePassway
@@ -99,6 +111,10 @@
     range: 7
     sound:
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   parent: MarkerBase

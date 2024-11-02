@@ -1,7 +1,7 @@
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_Alchemy
-  name: cp14-guide-entry-alchemy
+  name: Алхимия
   text: "/ServerInfo/_CP14/Guidebook_RU/Alchemy.xml"
   children:
   - CP14_RU_BasicAlchemy
@@ -11,13 +11,20 @@
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_BasicAlchemy
-  name: cp14-guide-entry-basic-alchemy
+  name: Базовые алхимические растворы
   text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/BasicAlchemy.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_Biological
-  name: cp14-guide-entry-biological
+  name: Биологические растворы
   text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Biological.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Demiplanes
+  name: Исследование демипланов
+  text: "/ServerInfo/_CP14/Guidebook_RU/Demiplanes.xml"
   filterEnabled: True
