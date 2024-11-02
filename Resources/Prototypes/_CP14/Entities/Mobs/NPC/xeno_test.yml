@@ -25,6 +25,18 @@
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
+  - type: MeleeChemicalInjector
+    transferAmount: 2
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 2
+        Poison: 2
 
 - type: entity
   id: CP14MobPurpleSnake
@@ -34,6 +46,14 @@
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 1
+  - type: MeleeChemicalInjector
+    transferAmount: 3
 
 - type: entity
   id: CP14MobSmallPurpleSnake
@@ -43,6 +63,16 @@
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
+  - type: SolutionTransfer
+    maxTransferAmount: 0.2
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 0.5
+  - type: MeleeChemicalInjector
+    transferAmount: 2
 
 - type: entity
   id: CP14MobWatcherMagmawing

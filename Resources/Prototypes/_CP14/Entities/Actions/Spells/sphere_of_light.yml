@@ -89,8 +89,8 @@
   - type: LandAtCursor
   - type: MovementIgnoreGravity
   - type: PointLight
-    radius: 5.0
-    energy: 6
+    radius: 6.0
+    energy: 2
     color: "#efedff"
   - type: Damageable
   - type: EmitSoundOnLand

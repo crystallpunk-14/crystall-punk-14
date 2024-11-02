@@ -115,28 +115,30 @@ public sealed partial class DungeonSystem
 
         var finalRoomRotation = roomTransform.Rotation();
 
+        //CP14 bandage it - int dont work
         // go BRRNNTTT on existing stuff
-        if (clearExisting)
-        {
-            var gridBounds = new Box2(Vector2.Transform(-room.Size/2, roomTransform), Vector2.Transform(room.Size/2, roomTransform));
-            _entitySet.Clear();
-            // Polygon skin moment
-            gridBounds = gridBounds.Enlarged(-0.05f);
-            _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, _entitySet, LookupFlags.Uncontained);
-
-            foreach (var templateEnt in _entitySet)
-            {
-                Del(templateEnt);
-            }
-
-            if (TryComp(gridUid, out DecalGridComponent? decalGrid))
-            {
-                foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
-                {
-                    _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
-                }
-            }
-        }
+        //if (clearExisting)
+        //{
+        //    var gridBounds = new Box2(Vector2.Transform(-room.Size/2, roomTransform), Vector2.Transform(room.Size/2, roomTransform));
+        //    _entitySet.Clear();
+        //    // Polygon skin moment
+        //    gridBounds = gridBounds.Enlarged(-0.05f);
+        //    _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, _entitySet, LookupFlags.Uncontained);
+//
+        //    foreach (var templateEnt in _entitySet)
+        //    {
+        //        Del(templateEnt);
+        //    }
+//
+        //    if (TryComp(gridUid, out DecalGridComponent? decalGrid))
+        //    {
+        //        foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
+        //        {
+        //            _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
+        //        }
+        //    }
+        //}
+        //CP14 end
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;
@@ -163,6 +165,17 @@ public sealed partial class DungeonSystem
                 }
 
                 _tiles.Add((rounded, tileRef.Tile));
+
+                //CP14 clearExisting variant
+                if (clearExisting)
+                {
+                    var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
+                    foreach (var ent in anchored)
+                    {
+                        QueueDel(ent);
+                    }
+                }
+                //CP14 clearExisting variant end
             }
         }
 

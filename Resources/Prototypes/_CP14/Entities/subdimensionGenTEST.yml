@@ -11,15 +11,40 @@
     layers:
     - state: core
       shader: unshaded
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   id: CP14DemiplanKey
   parent: CP14BaseSubdimensionalKey
+  name: demiplan key
   components:
   - type: CP14DemiplaneGeneratorData
     rewardLimit: 1.25
     difficultyLimit: 0.75
-  - type: CP14DemiplaneRift
+    maxModifiers: 6
+
+- type: entity
+  id: CP14DemiplanKeyHard
+  parent: CP14BaseSubdimensionalKey
+  name: hard demiplan key - hard
+  components:
+  - type: CP14DemiplaneGeneratorData
+    rewardLimit: 2.25
+    difficultyLimit: 1.75
+    maxModifiers: 10
+
+- type: entity
+  id: CP14DemiplanKeyHardcore
+  parent: CP14BaseSubdimensionalKey
+  name: demiplan key - HARDCORE
+  components: 
+  - type: CP14DemiplaneGeneratorData
+    rewardLimit: 4.25
+    difficultyLimit: 2.75
+    maxModifiers: 15
 
 - type: entity
   id: CP14DemiplanRiftCore
@@ -47,6 +72,10 @@
     energy: 2
     color: "#371c5c"
     netsync: false
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   id: CP14DemiplaneTimedRadiusPassway
@@ -75,6 +104,10 @@
     range: 7
     sound:
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   id: CP14DemiplanePassway
@@ -99,6 +132,10 @@
     range: 7
     sound:
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
 
 - type: entity
   parent: MarkerBase

@@ -86,6 +86,7 @@
       - id: CP14SilverCoin5
       - id: CP14GoldBar1
       - id: CP14EnergyCrystalMedium
+      - id: CP14DemiplanKey
 
 - type: entityTable
   id: CP14TableBureaucracy

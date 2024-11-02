@@ -30,7 +30,7 @@
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystal
-  reward: 0.2
+  reward: 0.1
   requiredTags:
   - CP14DemiplanOre
   layers:
@@ -39,13 +39,13 @@
       - CP14FloorBase
       entity: CP14QuartzCrystal
       count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalRubies
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
   - CP14DemiplanUnderground
@@ -54,62 +54,66 @@
       tileMask: 
       - CP14FloorBase
       entity: CP14CrystalRubiesMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalTopazes
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
-  - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorSand
       entity: CP14CrystalTopazesMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalEmeralds
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
-  - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
       entity: CP14CrystalEmeraldsMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalSapphires
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
-  - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
       entity: CP14CrystalSapphiresMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalAmethysts
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
   - CP14DemiplanUnderground
@@ -118,14 +122,14 @@
       tileMask: 
       - CP14FloorBase
       entity: CP14CrystalAmethystsMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalDiamonds
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
   - CP14DemiplanUnderground
@@ -133,10 +137,11 @@
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorSand
       entity: CP14CrystalDiamondsMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: Dayflin
@@ -265,24 +270,25 @@
   requiredTags:
   - CP14DemiplanUnderground
   layers:
-    - !type:EntityTableDunGen
+    - !type:MobsDunGen
       minCount: 5
-      maxCount: 10
-      table: !type:GroupSelector
-        children:
-        - id: CP14MobXenoDrone
-        - id: CP14MobXeno
+      maxCount: 8
+      groups:
+      - id: CP14MobXenoDrone
+        amount: 1
+      - id: CP14MobXeno
+        amount: 1
 
 - type: cp14DemiplaneModifier
   id: EnemyZombie
   difficulty: 0.4
   layers:
-    - !type:EntityTableDunGen
-      minCount: 5
-      maxCount: 10
-      table: !type:GroupSelector
-        children:
-        - id: CP14SpawnMobUndeadZombie
+    - !type:MobsDunGen
+      minCount: 3
+      maxCount: 6
+      groups:
+      - id: CP14SpawnMobUndeadZombie
+        amount: 1
 
 - type: cp14DemiplaneModifier
   id: EnemyDyno
@@ -301,14 +307,16 @@
   id: EnemySnakes
   difficulty: 0.7
   layers:
-    - !type:EntityTableDunGen
+    - !type:MobsDunGen
       minCount: 3
       maxCount: 6
-      table: !type:GroupSelector
-        children:
-        - id: CP14MobPurpleSnake
-        - id: CP14MobSmallPurpleSnake
-        - id: CP14MobSpaceCobra
+      groups:
+      - id: CP14MobPurpleSnake
+        amount: 1
+      - id: CP14MobSmallPurpleSnake
+        amount: 1
+      - id: CP14MobSpaceCobra
+        amount: 1
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind

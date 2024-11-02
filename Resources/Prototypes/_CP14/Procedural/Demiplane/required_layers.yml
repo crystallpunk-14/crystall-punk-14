@@ -1,0 +1,15 @@
+- type: dungeonConfig
+  id: DemiplaneConnections
+  layers:
+    - !type:EntityTableDunGen
+      minCount: 1
+      maxCount: 1
+      table: !type:GroupSelector
+        children:
+        - id: CP14DemiplanEnterRoomMarker
+    - !type:EntityTableDunGen
+      minCount: 2
+      maxCount: 2
+      table: !type:GroupSelector
+        children:
+        - id: CP14DemiplanePassway

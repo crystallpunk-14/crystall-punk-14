@@ -99,7 +99,7 @@ public sealed partial class CP14DemiplaneSystem
         AddDemiplanRandomExitPoint(demiplane, (tempRift2, connection2));
 
 #if !DEBUG
-        QueueDel(generator); //wtf its crash debug build?
+        QueueDel(generator); //wtf its crash debug build!
 #endif
     }
 

@@ -12,35 +12,24 @@
 - type: dungeonConfig
   id: CP14ExpeditionCaves
   layers:
-    # Masks (from center to border!)
+    # Masks
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskBorder
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFloorMaskAir
-    # Exterior rooms
-    # Enter and Exit
-    - !type:MobsDunGen
-      minCount: 1
-      maxCount: 1
-      groups:
-      - id: CP14DemiplanEnterRoomMarker
-        amount: 1
-    #here
-    # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
+    # Biomes
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillBorder
-    - !type:PrototypeDunGen
-      proto: CP14ExpeditionCavesFillAir
-    - !type:PrototypeDunGen
-      proto: CP14ExpeditionCavesFillCave
-    - !type:MobsDunGen
-      minCount: 2
-      maxCount: 2
-      groups:
-      - id: CP14DemiplanePassway
-        amount: 1
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesGeneric
+      tileMask:
+      - CP14FloorSand
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesFloor
+      tileMask:
+      - CP14FloorGrass
 
 - type: dungeonConfig
   id: CP14ExpeditionCavesFloorMaskAir
@@ -95,28 +84,6 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14ExpeditionCavesFillAir
-  reserveTiles: true
-  data:
-    entities:
-      Fill: CP14BiomeSpawnerCaveEmpty
-  layers:
-  - !type:FillGridDunGen
-    allowedTiles:
-    - CP14FloorGrass
-
-- type: dungeonConfig
-  id: CP14ExpeditionCavesFillCave
-  reserveTiles: true
-  data:
-    entities:
-      Fill: CP14BiomeSpawnerCave
-  layers:
-  - !type:FillGridDunGen
-    allowedTiles:
-    - CP14FloorSand
 
 - type: dungeonConfig
   id: CP14ExpeditionCavesFillBorder

@@ -5,6 +5,8 @@ using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
+using Content.Shared.Procedural;
+using Content.Shared.Procedural.DungeonGenerators;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -69,6 +71,7 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         var grid = _mapManager.CreateGridEntity(DemiplaneMapUid);
 
         MetaDataComponent? metadata = null;
+        DungeonConfigPrototype dungeonConfig = new();
 
         _metaData.SetEntityName(DemiplaneMapUid, "TODO: MAP Expedition name generation");
         _metaData.SetEntityName(grid, "TODO: GRID Expedition name generation");
@@ -77,8 +80,13 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         var expeditionConfig = _prototypeManager.Index(_config);
         var indexedLocation = _prototypeManager.Index(expeditionConfig.LocationConfig);
 
+        dungeonConfig.Data = indexedLocation.Data;
+        dungeonConfig.Layers.AddRange(indexedLocation.Layers);
+        dungeonConfig.ReserveTiles = indexedLocation.ReserveTiles;
+
         //Add map components
         _entManager.AddComponents(DemiplaneMapUid, expeditionConfig.Components);
+
 
         //Apply modifiers
         foreach (var modifier in _modifiers)
@@ -86,19 +94,22 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
             if (!_prototypeManager.TryIndex(modifier, out var indexedModifier))
                 continue;
 
-            indexedLocation.Layers.AddRange(indexedModifier.Layers);
+            dungeonConfig.Layers.AddRange(indexedModifier.Layers);
             _entManager.AddComponents(DemiplaneMapUid, indexedModifier.Components);
         }
 
-        _mapManager.DoMapInitialize(_demiplaneMapId);
-        _mapManager.SetMapPaused(_demiplaneMapId, false);
+        //Enter and exits
+        if (_prototypeManager.TryIndex<DungeonConfigPrototype>("DemiplaneConnections", out var indexedConnections))
+        {
+            dungeonConfig.Layers.AddRange(indexedConnections.Layers);
+        }
 
         //Spawn modified config
-        _dungeon.GenerateDungeon(indexedLocation,
+        _dungeon.GenerateDungeon(dungeonConfig,
                 grid,
                 grid,
                 Vector2i.Zero,
-                _seed); //Not async, because dont work with biomespawner boilerplate
+                _seed);
 
         //Setup gravity
         var gravity = _entManager.EnsureComponent<GravityComponent>(DemiplaneMapUid);
@@ -111,6 +122,9 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         moles[(int) Gas.Nitrogen] = 82.10312f;
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         _entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplaneMapUid, false, mixture);
+
+        _mapManager.DoMapInitialize(_demiplaneMapId);
+        _mapManager.SetMapPaused(_demiplaneMapId, false);
 
         return true;
     }
