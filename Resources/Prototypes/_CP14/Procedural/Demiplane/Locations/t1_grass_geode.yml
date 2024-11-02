@@ -41,7 +41,7 @@
     - !type:BiomeDunGen
       biomeTemplate: CP14CavesGeneric
       tileMask:
-      - CP14FloorBase
+      - CP14FloorSand
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFillWater
     - !type:MobsDunGen

@@ -30,7 +30,7 @@
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystal
-  reward: 0.2
+  reward: 0.1
   requiredTags:
   - CP14DemiplanOre
   layers:
@@ -39,13 +39,13 @@
       - CP14FloorBase
       entity: CP14QuartzCrystal
       count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalRubies
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
   - CP14DemiplanUnderground
@@ -54,62 +54,66 @@
       tileMask: 
       - CP14FloorBase
       entity: CP14CrystalRubiesMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalTopazes
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
-  - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorSand
       entity: CP14CrystalTopazesMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalEmeralds
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
-  - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
       entity: CP14CrystalEmeraldsMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalSapphires
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
-  - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
       entity: CP14CrystalSapphiresMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalAmethysts
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
   - CP14DemiplanUnderground
@@ -118,14 +122,14 @@
       tileMask: 
       - CP14FloorBase
       entity: CP14CrystalAmethystsMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalDiamonds
   reward: 0.2
-  generationWeight: 0.2
+  generationWeight: 0.1
   requiredTags:
   - CP14DemiplanOre
   - CP14DemiplanUnderground
@@ -133,10 +137,11 @@
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorSand
       entity: CP14CrystalDiamondsMedium
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: Dayflin
