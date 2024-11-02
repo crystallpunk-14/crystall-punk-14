@@ -2,7 +2,13 @@
   id: CP14BaseLamppost
   categories: [ ForkFiltered ]
   abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
+  - type: Transform
+    anchored: true
   - type: SpriteFade
   - type: Clickable
   - type: Physics
