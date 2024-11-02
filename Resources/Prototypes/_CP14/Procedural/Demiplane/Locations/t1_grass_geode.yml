@@ -34,10 +34,14 @@
     # Biome Spawner fills (from border to center!) order is very important! For inexplicable reasons, only a certain sequence works!
     - !type:PrototypeDunGen
       proto: CP14ExpeditionCavesFillBorder
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneGrassGeodeFillGrass
-    - !type:PrototypeDunGen
-      proto: CP14ExpeditionCavesFillCave
+    - !type:BiomeDunGen
+      biomeTemplate: CP14GrasslandTestResult
+      tileMask:
+      - CP14FloorGrass
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesGeneric
+      tileMask:
+      - CP14FloorBase
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFillWater
     - !type:MobsDunGen
@@ -118,17 +122,6 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14DemiplaneGrassGeodeFillGrass
-  reserveTiles: true
-  data:
-    entities:
-      Fill: CP14BiomeSpawnerGrassland
-  layers:
-  - !type:FillGridDunGen
-    allowedTiles:
-    - CP14FloorGrass
 
 - type: dungeonConfig
   id: CP14DemiplaneGrassGeodeFillWater

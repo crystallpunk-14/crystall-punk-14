@@ -94,11 +94,11 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         _mapManager.SetMapPaused(_demiplaneMapId, false);
 
         //Spawn modified config
-        _dungeon.GenerateDungeon(indexedLocation,
+        await _dungeon.GenerateDungeonAsync(indexedLocation,
                 grid,
                 grid,
                 Vector2i.Zero,
-                _seed); //Not async, because dont work with biomespawner boilerplate
+                _seed);
 
         //Setup gravity
         var gravity = _entManager.EnsureComponent<GravityComponent>(DemiplaneMapUid);
