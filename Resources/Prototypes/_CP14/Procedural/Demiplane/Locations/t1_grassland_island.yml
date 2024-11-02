@@ -52,13 +52,13 @@
       proto: CP14ExpeditionGrasslandIslandFloorMaskStone
     # Biomes
     - !type:BiomeDunGen
-      biomeTemplate: CP14GrasslandTestResult
-      tileMask:
-      - CP14FloorGrass
-    - !type:BiomeDunGen
       biomeTemplate: CP14CavesGeneric
       tileMask:
       - CP14FloorBase
+    - !type:BiomeDunGen
+      biomeTemplate: CP14GrasslandTestResult
+      tileMask:
+      - CP14FloorGrass
 
 - type: dungeonConfig
   id: CP14ExpeditionGrasslandIslandFloorMaskStone
