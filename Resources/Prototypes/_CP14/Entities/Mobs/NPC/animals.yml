@@ -68,6 +68,7 @@
       amount: 1
   - type: Bloodstream
     bloodMaxVolume: 50
+    bloodReagent: CP14Blood
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: cp14-petting-success-rabbit
@@ -145,6 +146,7 @@
       amount: 5
   - type: Bloodstream
     bloodMaxVolume: 150
+    bloodReagent: CP14Blood
   - type: Grammar
     attributes:
       gender: epicene

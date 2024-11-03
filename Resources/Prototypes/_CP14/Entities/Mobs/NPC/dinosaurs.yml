@@ -1,6 +1,43 @@
 - type: entity
-  id: CP14MobDinoYumkaraptor
+  id: CP14MobDino
   parent: SimpleMobBase
+  name: dino
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CP14AggressiveAnimals
+  - type: Sprite
+    drawdepth: Mobs
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: CP14Dinosaur
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: CombatMode
+  - type: Stamina
+    critThreshold: 200
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Bloodstream
+    bloodReagent: CP14Blood
+  - type: Tag
+    tags:
+      - FootstepSound
+
+- type: entity
+  id: CP14MobDinoYumkaraptor
+  parent: CP14MobDino
   name: yumkaraptor
   description: A large scaly lizard, an obvious predator that liked to snack on meat.
   categories: [ ForkFiltered ]
@@ -13,15 +50,15 @@
         true
       NavSmash: !type:Bool
         true
-  - type: NpcFactionMember
-    factions:
-    - CP14AggressiveAnimals
+      VisionRadius: !type:Single
+        10
+      AggroVisionRadius: !type:Single
+        10
   - type: Sprite
-    drawdepth: Mobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       sprite: _CP14/Mobs/Animals/dino.rsi
-      state: dino
+      state: live
   - type: Fixtures
     fixtures:
       fix1:
@@ -33,14 +70,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: ReplacementAccent
-    accent: xeno
-  - type: Damageable
-    damageContainer: Biological
-    damageModifierSet: CP14Dinosaur
-  - type: Appearance
-  - type: Body
-    prototype: Animal
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -48,9 +77,6 @@
   - type: SlowOnDamage
     speedModifierThresholds:
       55: 0.6
-  - type: Stamina
-    critThreshold: 200
-  - type: CombatMode
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -64,21 +90,12 @@
     baseSprintSpeed: 6
     acceleration: 16.0
   - type: Climbing
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: dino
-      Dead:
-        Base: dino_dead
   - type: Butcherable
     spawned:
     - id: CP14FoodMeatLamb # to replace the dino meat
       amount: 5
   - type: Bloodstream
     bloodMaxVolume: 200
-  - type: Grammar
-    attributes:
-      gender: epicene
   - type: SpamEmitSound
     minInterval: 20
     maxInterval: 40
@@ -89,3 +106,64 @@
         variation: 0.125
   - type: SoundWhileAlive
   - type: FloorOcclusion
+
+- type: entity
+  id: CP14MobDinoSmallHydra
+  parent: CP14MobDino
+  name: small hydra
+  description: The small two-headed lizard, despite its size, can be quite dangerous.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        10
+      AggroVisionRadius: !type:Single
+        10
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Animals/hydra.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      35: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      25: 0.6
+  - type: MeleeWeapon
+    angle: 0
+    attackRate: 0.8
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 2
+        Piercing: 2
+        Structural: 1
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 5
+    acceleration: 16.0
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatLamb # to replace the dino meat
+      amount: 2
+  - type: Bloodstream
+    bloodMaxVolume: 100
+  - type: SoundWhileAlive
