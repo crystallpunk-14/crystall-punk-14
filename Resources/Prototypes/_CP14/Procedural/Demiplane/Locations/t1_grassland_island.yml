@@ -2,9 +2,9 @@
   id: T1GrasslandIsland
   locationConfig: CP14ExpeditionGrasslandIsland
   tags:
-  - CP14DemiplanOre
-  - CP14DemiplanOpenSky
-  - CP14DemiplanGrass
+  - CP14DemiplaneCave
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneGrass
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
