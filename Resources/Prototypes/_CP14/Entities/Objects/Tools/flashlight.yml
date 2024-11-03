@@ -1,5 +1,7 @@
 - type: entity
-  parent: BaseItem
+  parent: 
+  - BaseItem
+  - CP14BaseCrystalSlot
   id: CP14CrystalLamp
   abstract: true
   name: crystal lamp
@@ -37,38 +39,80 @@
     sprite: _CP14/Objects/Tools/crystal_lamp.rsi
   - type: Rotatable
   - type: PointLight
+    enabled: false
     color: "#FFFFFF"
     mask: /Textures/_CP14/Effects/LightMasks/crystal_cone.png
     autoRot: true
     energy: 2
     radius: 6
-    netsync: false
   - type: Appearance
-
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CP14MagicSlotVisuals.Powered:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: CP14MagicLantern
+  - type: CP14MagicEnergyDraw
+    energy: -0.1
+    delay: 3
+  - type: ItemSlots
+    slots:
+      crystal_slot:
+        insertSound: 
+          path: /Audio/_CP14/Items/crystal_insert.ogg
+          params:
+            variation: 0.05
+        ejectSound: 
+          path: /Audio/_CP14/Items/crystal_eject.ogg
+          params:
+            variation: 0.05
+        ejectOnInteract: false
+        name: cp14-magic-energy-crystal-slot-name
+        whitelist:
+          components:
+          - CP14MagicEnergyCrystal
+ 
 - type: entity
   parent: CP14CrystalLamp
-  id: CP14CrystalLampBlue
-  suffix: Blue
+  id: CP14CrystalLampBlueEmpty
+  suffix: Blue, Empty
   components:
   - type: Sprite
     layers:
     - state: icon
     - state: light_icon
       color: "#47F8FF"
+      visible: false
+      map: ["crystal"]
+    - state: light_icon
+      color: "#47F8FF"
+      visible: false
+      map: ["light"]
       shader: unshaded
   - type: PointLight
     color: "#47F8FF"
 
 - type: entity
   parent: CP14CrystalLamp
-  id: CP14CrystalLampOrange
-  suffix: Orange
+  id: CP14CrystalLampOrangeEmpty
+  suffix: Orange, Empty
   components:
   - type: Sprite
     layers:
     - state: icon
     - state: light_icon
       color: "#d68f4d"
+      map: ["crystal"]
+      visible: false
+    - state: light_icon
+      color: "#d68f4d"
+      map: ["light"]
+      visible: false
       shader: unshaded
   - type: PointLight
     color: "#d68f4d"

@@ -4,7 +4,7 @@
   description: You can transfer a small amount of your magical energy to a target entity or magical object.
   components:
   - type: CP14MagicEffect
-    manaCost: 10
+    manaCost: 12
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -16,7 +16,7 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: 8
+        manaDelta: 10
         safe: false
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Energia..."
@@ -38,7 +38,7 @@
       state: mana_gift
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       delay: 2
-        
+
 - type: entity
   id: CP14RuneManaGift
   parent: CP14BaseMagicRune
