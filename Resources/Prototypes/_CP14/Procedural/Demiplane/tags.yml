@@ -1,11 +1,11 @@
 - type: Tag
-  id: CP14DemiplanOre
+  id: CP14DemiplaneCave
 
 - type: Tag
-  id: CP14DemiplanGrass
+  id: CP14DemiplaneGrass
 
 - type: Tag
-  id: CP14DemiplanOpenSky
+  id: CP14DemiplaneOpenSky
 
 - type: Tag
-  id: CP14DemiplanUnderground
+  id: CP14DemiplaneUnderground

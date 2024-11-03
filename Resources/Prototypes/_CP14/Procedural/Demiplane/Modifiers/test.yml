@@ -3,7 +3,7 @@
   unique: false
   reward: 0.5
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -18,7 +18,7 @@
   unique: false
   reward: 0.4
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -32,7 +32,7 @@
   id: QuartzCrystal
   reward: 0.1
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -47,7 +47,7 @@
   reward: 0.2
   generationWeight: 0.1
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
@@ -63,7 +63,7 @@
   reward: 0.2
   generationWeight: 0.1
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -79,7 +79,7 @@
   reward: 0.2
   generationWeight: 0.1
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -97,7 +97,7 @@
   reward: 0.2
   generationWeight: 0.1
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -115,7 +115,7 @@
   reward: 0.2
   generationWeight: 0.1
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
@@ -131,7 +131,7 @@
   reward: 0.2
   generationWeight: 0.1
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   - CP14DemiplanUnderground
   layers:
     - !type:OreDunGen
@@ -231,7 +231,7 @@
   unique: false
   reward: 0.3
   requiredTags:
-  - CP14DemiplanOre
+  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -246,23 +246,22 @@
   difficulty: 0.4
   generationWeight: 0.25
   layers:
-    - !type:MobsDunGen
-      minCount: 25
-      maxCount: 50
-      groups:
-      - id: LandMineExplosive
-        amount: 1
+    - !type:OreDunGen
+      entity: LandMineExplosive
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: CommonLoot
   reward: 0.25
   generationWeight: 2
   layers:
-    - !type:EntityTableDunGen
-      minCount: 15
-      maxCount: 30
-      table: !type:NestedSelector
-        tableId: CP14TableExpeditionLootCommon
+    - !type:OreDunGen
+      entity: CP14SpawnerExpeditionLootCommon
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyXeno
