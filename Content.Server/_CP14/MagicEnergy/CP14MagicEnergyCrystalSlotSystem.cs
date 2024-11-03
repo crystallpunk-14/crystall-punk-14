@@ -57,11 +57,14 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
         if (!TryGetEnergyCrystalFromSlot(ent, out var crystalUid, out var crystalComp, ent.Comp))
             return;
 
-        var scanEvent = new CP14MagicEnergyScanEvent();
-        RaiseLocalEvent(args.Examiner, scanEvent);
-
-        if (!scanEvent.CanScan)
+        if (!args.IsInDetailsRange)
             return;
+
+        //var scanEvent = new CP14MagicEnergyScanEvent();
+        //RaiseLocalEvent(args.Examiner, scanEvent);
+//
+        //if (!scanEvent.CanScan)
+        //    return;
 
         args.PushMarkup(_magicEnergy.GetEnergyExaminedText(crystalUid.Value, crystalComp));
     }

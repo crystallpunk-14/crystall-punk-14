@@ -31,11 +31,14 @@ public partial class CP14MagicEnergySystem
         if (!TryComp<CP14MagicEnergyContainerComponent>(ent, out var magicContainer))
             return;
 
-        var scanEvent = new CP14MagicEnergyScanEvent();
-        RaiseLocalEvent(args.Examiner, scanEvent);
-
-        if (!scanEvent.CanScan)
+        if (!args.IsInDetailsRange)
             return;
+
+        //var scanEvent = new CP14MagicEnergyScanEvent();
+        //RaiseLocalEvent(args.Examiner, scanEvent);
+//
+        //if (!scanEvent.CanScan)
+        //    return;
 
         args.PushMarkup(GetEnergyExaminedText(ent, magicContainer));
     }
