@@ -28,6 +28,7 @@
     whitelist:
       components:
       - CP14MagicEnergyContainer
+      - CP14MagicEnergyCrystalSlot
     useDelay: 5
     itemIconStyle: BigAction
     interactOnMiss: false

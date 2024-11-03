@@ -1,0 +1,88 @@
+- type: entity
+  id: CP14WallmountLampEmpty
+  name: crystal wall lamp
+  suffix: Empty
+  parent: 
+  - CP14BaseWallmount
+  - CP14BaseCrystalSlot
+  description: A fragile eternal blue fire as proof of the superiority of magic over nature. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
+    layers:
+      - state: base
+      - state: crystal
+        map: [ "crystal" ]
+        visible: false
+      - state: on
+        color: "#b2ceeb"
+        shader: unshaded
+        map: [ "light" ]
+        visible: false
+  - type: PointLight
+    energy: 2
+    radius: 8
+    color: "#b2ceeb"
+    enabled: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CP14MagicSlotVisuals.Powered:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: CP14MagicLantern
+  - type: CP14MagicEnergyDraw
+    energy: -0.1
+    delay: 5
+
+- type: entity
+  id: CP14WallmountLamp
+  suffix: Small crystal
+  parent: CP14WallmountLampEmpty
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
+    layers:
+      - state: base
+      - state: crystal
+        map: [ "crystal" ]
+        visible: true
+      - state: on
+        color: "#b2ceeb"
+        shader: unshaded
+        map: [ "light" ]
+        visible: true
+  - type: PointLight
+    enabled: true
+  - type: ItemSlots
+    slots:
+      crystal_slot:
+        startingItem: CP14EnergyCrystalSmall
+        insertSound: 
+          path: /Audio/_CP14/Items/crystal_insert.ogg
+          params:
+            variation: 0.05
+        ejectSound: 
+          path: /Audio/_CP14/Items/crystal_eject.ogg
+          params:
+            variation: 0.05
+        ejectOnInteract: false
+        name: cp14-magic-energy-crystal-slot-name
+        whitelist:
+          components:
+          - CP14MagicEnergyCrystal
