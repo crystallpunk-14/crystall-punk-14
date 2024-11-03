@@ -22,7 +22,6 @@
     - !type:GroupSelector
       weight: 75
       children:
-      - id: CP14Wallet
       - !type:GroupSelector
         children:
         - id: CP14SilverCoin1
@@ -33,7 +32,6 @@
           weight: 0.5
         - id: CP14CopperCoin1
           weight: 1
-      - id: CP14Wheat
       - !type:GroupSelector
         children:
         - id: CP14DyeRed
@@ -42,23 +40,6 @@
         - id: CP14DyeGreen
         - id: CP14DyePurple
         - id: CP14DyeBlack
-      - !type:GroupSelector
-        children:
-        - id: CP14SeedWheat
-        - id: CP14SeedPumpkin
-        - id: CP14SeedCabbage
-        - id: CP14SeedCucumber
-        - id: CP14SeedTomato
-      - !type:GroupSelector
-        children:
-        - id: CP14BloodFlower
-        - id: CP14AgaricMushroom
-        - id: CP14WildSage
-        - id: CP14QuartzShard
-        - id: CP14BlueAmanita
-        - id: CP14Dayflin
-      - id: CP14CopperBar1
-      - id: CP14IronBar1
       - id: CP14EnergyCrystalSmall
       - id: CP14Bucket
       - id: CP14OldLantern
@@ -84,9 +65,44 @@
         - id: CP14ChromiumSlime
         - id: CP14LumiMushroom
       - id: CP14SilverCoin5
-      - id: CP14GoldBar1
       - id: CP14EnergyCrystalMedium
       - id: CP14DemiplanKey
+      # remove this when players can create their own magic items
+      - !type:GroupSelector
+        children:
+        - id: CP14ClothingRingIceDagger
+        - id: CP14ClothingRingIceShards
+        - id: CP14ClothingRingFlameCreation
+        - id: CP14ClothingRingFireball
+        - id: CP14ClothingRingCureWounds
+        - id: CP14ClothingRingShadowStep
+        - id: CP14ClothingRingShadowGrab
+        - id: CP14ClothingRingEarthWall
+        - id: CP14ClothingRingIceFloor
+        - id: CP14ClothingRingSphereOfLight
+        - id: CP14ClothingRingFlashLight
+      - !type:GroupSelector
+        children:
+        - id: CP14ClothingCloakArmoredRed
+        - id: CP14ClothingCloakBlacksmithArpon
+        - id: CP14ClothingCloakMaidArpon
+        - id: CP14ClothingCloakBrassArmor
+        - id: CP14ClothingCloakCuirass
+        - id: CP14ClothingCloakInfantryCuirass
+        - id: CP14ClothingCloakCuirassLoincloth
+        - id: CP14ClothingCloakCuirassLeg
+      - !type:GroupSelector
+        children:
+        - id: CP14ClothingCloakFurcapeBlack
+        - id: CP14ClothingCloakFurcapeBlue
+        - id: CP14ClothingCloakSimpleWhite
+        - id: CP14ClothingCloakSimpleDarkBlue
+        - id: CP14ClothingCloakRitualAttireLeather
+        - id: CP14ClothingHeadBeretMercenary
+        - id: CP14ClothingPantsMercenaryTrousers
+        - id: CP14ClothingPantsSouthernMagician
+        - id: CP14ClothingShirtMercenary
+        - id: CP14ClothingShirtYellowWizard
 
 - type: entityTable
   id: CP14TableBureaucracy
