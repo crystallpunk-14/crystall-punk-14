@@ -14,14 +14,16 @@
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesFloorMaskBorder
+      proto: CP14DemiplanePlatingMaskBorder
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskAir
     # Biomes
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesFillBorder
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesIndestructibleFill
+      tileMask:
+      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14CavesGeneric
       tileMask:
@@ -30,24 +32,6 @@
       biomeTemplate: CP14CavesFloor
       tileMask:
       - CP14FloorGrass
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesFloorMaskBorder
-  layers:
-  - !type:NoiseDistanceDunGen
-    size: 130, 130
-    distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 1
-    layers:
-    - tile: CP14FloorBase
-      threshold: 0.50
-      noise:
-        frequency: 0.010
-        noiseType: OpenSimplex2
-        fractalType: FBm
-        octaves: 5
-        lacunarity: 2
-        gain: 0.5
 
 - type: dungeonConfig
   id: CP14DemiplaneCavesFloorMaskStone
@@ -84,14 +68,3 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesFillBorder
-  reserveTiles: true
-  data:
-    entities:
-      Fill: CP14WallStoneIndestructable
-  layers:
-  - !type:FillGridDunGen
-    allowedTiles:
-    - CP14FloorBase

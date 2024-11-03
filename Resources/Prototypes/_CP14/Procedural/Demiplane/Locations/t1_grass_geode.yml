@@ -1,23 +1,23 @@
-#- type: cp14DemiplaneLocation
-#  id: T1GrassGeode
-#  locationConfig: CP14DemiplaneGrassGeode
-#  tags:
-#  - CP14DemiplaneCave
-#  - CP14DemiplaneGrass
-#  - CP14DemiplaneUnderground
-#  components:
-#  - type: CP14WeatherController
-#    entries:
-#    - visuals: CP14Mist
-#  - type: MapLight
-#    ambientLightColor: "#020a1c"
+- type: cp14DemiplaneLocation
+  id: T1GrassGeode
+  locationConfig: CP14DemiplaneGrassGeode
+  tags:
+  - CP14DemiplaneCave
+  - CP14DemiplaneGrass
+  - CP14DemiplaneUnderground
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14Mist
+  - type: MapLight
+    ambientLightColor: "#020a1c"
 
 - type: dungeonConfig
   id: CP14DemiplaneGrassGeode
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14DemiplaneGrassGeodeFloorMaskBorder
+      proto: CP14DemiplanePlatingMaskBorder
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFloorMaskStone
     - !type:PrototypeDunGen
@@ -25,8 +25,10 @@
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFloorMaskWater
     # Biomes
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesFillBorder
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesIndestructibleFill
+      tileMask:
+      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14GrasslandTestResult
       tileMask:
