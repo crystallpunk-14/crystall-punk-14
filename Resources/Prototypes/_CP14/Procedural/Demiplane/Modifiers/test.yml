@@ -304,21 +304,6 @@
         amount: 1
 
 - type: cp14DemiplaneModifier
-  id: EnemySnakes
-  difficulty: 0.7
-  layers:
-    - !type:MobsDunGen
-      minCount: 1
-      maxCount: 2
-      groups:
-      - id: CP14MobPurpleSnake
-        amount: 1
-      - id: CP14MobSmallPurpleSnake
-        amount: 1
-      - id: CP14MobSpaceCobra
-        amount: 1
-
-- type: cp14DemiplaneModifier
   id: EnemyMagmawind
   difficulty: 0.3
   generationWeight: 0.4
