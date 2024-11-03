@@ -295,6 +295,7 @@
   difficulty: 0.5
   requiredTags:
   - CP14DemiplaneOpenSky
+  - CP14DemiplaneGrass
   layers:
     - !type:MobsDunGen
       minCount: 3
@@ -302,6 +303,33 @@
       groups:
       - id: CP14SpawnMobDinoYumkaraptor
         amount: 1
+
+- type: cp14DemiplaneModifier
+  id: SmallHydra
+  difficulty: 0.5
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:MobsDunGen
+      minCount: 3
+      maxCount: 6
+      groups:
+      - id: CP14MobDinoSmallHydra
+        amount: 3
+
+
+- type: cp14DemiplaneModifier
+  id: MonsterMole
+  difficulty: 0.5
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:MobsDunGen
+      minCount: 3
+      maxCount: 6
+      groups:
+      - id: CP14MobMonsterMole
+        amount: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind
