@@ -5,7 +5,7 @@
   parent: 
   - CP14BaseWallmount
   - CP14BaseCrystalSlot
-  description: A fragile eternal blue fire as proof of the superiority of magic over nature. 
+  description: A simple wallmount magical device that converts crystal energy into bright light. 
   components:
   - type: Sprite
     sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
@@ -48,7 +48,10 @@
   - type: CP14MagicLantern
   - type: CP14MagicEnergyDraw
     energy: -0.1
-    delay: 5
+    delay: 6
+  - type: Construction
+    graph: CP14WallmountLampEmpty
+    node: CP14WallmountLampEmpty
 
 - type: entity
   id: CP14WallmountLamp

@@ -78,7 +78,7 @@
         - id: CP14ClothingRingShadowStep
         - id: CP14ClothingRingShadowGrab
         - id: CP14ClothingRingEarthWall
-        - id: CP14ClothingRingIceFloor
+        - id: CP14ClothingRingManaGift
         - id: CP14ClothingRingSphereOfLight
         - id: CP14ClothingRingFlashLight
       - !type:GroupSelector
