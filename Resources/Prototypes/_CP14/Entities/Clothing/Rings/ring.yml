@@ -15,7 +15,7 @@
 - type: entity
   id: CP14ClothingRingIceDagger
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: ice dagger conductive ring
   suffix: Ice Dagger
   description: A standard mana-conductive ring that allows the user to summon ice daggers.
   components:
@@ -33,7 +33,7 @@
 - type: entity
   id: CP14ClothingRingManaGift
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: mana transfering conductive ring
   suffix: Mana gift
   description: A standard mana-conductive ring that allows you to transfer some of your magical energy to other objects.
   components:
@@ -51,7 +51,7 @@
 - type: entity
   id: CP14ClothingRingIceShards
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: ice shards conductive ring
   suffix: Ice Shards
   description: A standard mana-conductive ring that allows the user to summon ice shards.
   components:
@@ -69,7 +69,7 @@
 - type: entity
   id: CP14ClothingRingFlameCreation
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: flame creation conductive ring
   description: A standard mana-conductive ring that allows the user to summon artificial flames.
   suffix: Flame creation
   components:
@@ -87,7 +87,7 @@
 - type: entity
   id: CP14ClothingRingFireball
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: fireball conductive ring
   description: A standard mana-conductive ring that allows the user to summon fireballs.
   suffix: Fireball
   components:
@@ -105,7 +105,7 @@
 - type: entity
   id: CP14ClothingRingCureWounds
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: cure wounds conductive ring
   description: A standard mana-conductive ring that allows the user to heal physical injuries.
   suffix: Cure Wounds
   components:
@@ -123,7 +123,7 @@
 - type: entity
   id: CP14ClothingRingShadowStep
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: shadow step conductive ring
   description: A standard mana-conductive ring that allows the user to step throught shadows.
   suffix: Shadow step
   components:
@@ -141,7 +141,7 @@
 - type: entity
   id: CP14ClothingRingShadowGrab
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: shadow grab conductive ring
   description: A standard mana-conductive ring that allows the user to summon grabbing shadow hand.
   suffix: Shadow grab
   components:
@@ -159,8 +159,8 @@
 - type: entity
   id: CP14ClothingRingEarthWall
   parent: CP14ClothingRingBase
-  name: conductive ring
-  description: A standard mana-conductive ring that allows the user to heal physical injuries.
+  name: earth wall conductive ring
+  description: A standard mana-conductive ring that allows you to lift a piece of earth rock.
   suffix: Earth wall
   components:
   - type: Sprite
@@ -177,7 +177,7 @@
 - type: entity
   id: CP14ClothingRingSphereOfLight
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: light sphere conductive ring
   description: A standard mana-conductive ring that allows the user to create a sphere of light.
   suffix: Sphere of Light
   components:
@@ -195,7 +195,7 @@
 - type: entity
   id: CP14ClothingRingFlashLight
   parent: CP14ClothingRingBase
-  name: conductive ring
+  name: flash conductive ring
   description: A standard mana-conductive ring that allows the user to create a bright flash of light that blinds enemies.
   suffix: Flash Light
   components:
