@@ -48,7 +48,7 @@
   generationWeight: 0.1
   requiredTags:
   - CP14DemiplaneCave
-  - CP14DemiplanUnderground
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -116,7 +116,7 @@
   generationWeight: 0.1
   requiredTags:
   - CP14DemiplaneCave
-  - CP14DemiplanUnderground
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -132,7 +132,7 @@
   generationWeight: 0.1
   requiredTags:
   - CP14DemiplaneCave
-  - CP14DemiplanUnderground
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -147,8 +147,8 @@
   id: Dayflin
   reward: 0.2
   requiredTags:
-  - CP14DemiplanGrass
-  - CP14DemiplanOpenSky
+  - CP14DemiplaneGrass
+  - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -164,7 +164,7 @@
   id: BlueAmanita
   reward: 0.2
   requiredTags:
-  - CP14DemiplanGrass
+  - CP14DemiplaneGrass
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -180,7 +180,7 @@
   id: BloodFlower
   reward: 0.2
   requiredTags:
-  - CP14DemiplanGrass
+  - CP14DemiplaneGrass
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -196,8 +196,8 @@
   id: WildSage
   reward: 0.2
   requiredTags:
-  - CP14DemiplanGrass
-  - CP14DemiplanOpenSky
+  - CP14DemiplaneGrass
+  - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -213,7 +213,7 @@
   id: LumiShroom
   reward: 0.2
   requiredTags:
-  - CP14DemiplanUnderground
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -268,7 +268,7 @@
   id: EnemyXeno
   difficulty: 0.5
   requiredTags:
-  - CP14DemiplanUnderground
+  - CP14DemiplaneUnderground
   layers:
     - !type:MobsDunGen
       minCount: 2
@@ -294,7 +294,7 @@
   id: EnemyDyno
   difficulty: 0.5
   requiredTags:
-  - CP14DemiplanOpenSky
+  - CP14DemiplaneOpenSky
   layers:
     - !type:MobsDunGen
       minCount: 3
