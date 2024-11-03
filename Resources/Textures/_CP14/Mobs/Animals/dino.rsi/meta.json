@@ -10,12 +10,12 @@
   "states":
   [
     {
-      "name": "dino",
+      "name": "live",
       "directions": 4
     },
 
     {
-      "name": "dino_dead",
+      "name": "dead",
       "directions": 1
     }
   ]
