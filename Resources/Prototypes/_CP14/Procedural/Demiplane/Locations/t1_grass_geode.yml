@@ -1,16 +1,16 @@
-- type: cp14DemiplaneLocation
-  id: T1GrassGeode
-  locationConfig: CP14DemiplaneGrassGeode
-  tags:
-  - CP14DemiplanOre
-  - CP14DemiplanGrass
-  - CP14DemiplanUnderground
-  components:
-  - type: CP14WeatherController
-    entries:
-    - visuals: CP14Mist
-  - type: MapLight
-    ambientLightColor: "#020a1c"
+#- type: cp14DemiplaneLocation
+#  id: T1GrassGeode
+#  locationConfig: CP14DemiplaneGrassGeode
+#  tags:
+#  - CP14DemiplaneCave
+#  - CP14DemiplaneGrass
+#  - CP14DemiplaneUnderground
+#  components:
+#  - type: CP14WeatherController
+#    entries:
+#    - visuals: CP14Mist
+#  - type: MapLight
+#    ambientLightColor: "#020a1c"
 
 - type: dungeonConfig
   id: CP14DemiplaneGrassGeode
@@ -26,7 +26,7 @@
       proto: CP14DemiplaneGrassGeodeFloorMaskWater
     # Biomes
     - !type:PrototypeDunGen
-      proto: CP14ExpeditionCavesFillBorder
+      proto: CP14DemiplaneCavesFillBorder
     - !type:BiomeDunGen
       biomeTemplate: CP14GrasslandTestResult
       tileMask:
