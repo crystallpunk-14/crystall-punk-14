@@ -67,7 +67,7 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
 
     protected override async Task<bool> Process()
     {
-        _sawmill.Debug("cp14_expedition", $"Spawning expedition mission with seed {0}");
+        _sawmill.Debug("cp14_expedition", $"Spawning expedition mission with seed {_seed}");
         var grid = _mapManager.CreateGridEntity(DemiplaneMapUid);
 
         MetaDataComponent? metadata = null;
@@ -87,7 +87,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         //Add map components
         _entManager.AddComponents(DemiplaneMapUid, expeditionConfig.Components);
 
-
         //Apply modifiers
         foreach (var modifier in _modifiers)
         {
@@ -102,6 +101,11 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         if (_prototypeManager.TryIndex<DungeonConfigPrototype>("DemiplaneConnections", out var indexedConnections))
         {
             dungeonConfig.Layers.AddRange(indexedConnections.Layers);
+        }
+
+        foreach (var layer in dungeonConfig.Layers)
+        {
+            _sawmill.Debug("cp14_expedition", $"Added layer: {_seed} - {layer}");
         }
 
         //Spawn modified config
