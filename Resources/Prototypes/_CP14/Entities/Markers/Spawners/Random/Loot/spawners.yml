@@ -91,6 +91,7 @@
         - id: CP14ClothingCloakInfantryCuirass
         - id: CP14ClothingCloakCuirassLoincloth
         - id: CP14ClothingCloakCuirassLeg
+        - id: CP14ClothingHeadCapellina
       - !type:GroupSelector
         children:
         - id: CP14ClothingCloakFurcapeBlack
