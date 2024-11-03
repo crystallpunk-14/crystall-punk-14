@@ -1,0 +1,68 @@
+- type: entity
+  id: CP14ActionSpellManaGift
+  name: Mana transfer
+  description: You can transfer a small amount of your magical energy to a target entity or magical object.
+  components:
+  - type: CP14MagicEffect
+    manaCost: 12
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 10
+        safe: false
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Energia..."
+    endSpeech: "te reficit"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneManaGift
+  - type: EntityWorldTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
+      - CP14MagicEnergyCrystalSlot
+    useDelay: 5
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: mana_gift
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      delay: 2
+
+- type: entity
+  id: CP14RuneManaGift
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#5096d4"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#5096d4"
+      shader: unshaded
+    - state: double_outer
+      color: "#5096d4"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectManaGift
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5096d4"
+      shader: unshaded

@@ -42,7 +42,7 @@
         - id: CP14DyeBlack
       - id: CP14EnergyCrystalSmall
       - id: CP14Bucket
-      - id: CP14OldLantern
+      - id: CP14CrystalLampBlueEmpty
       - id: CP14Scissors
       - id: CP14BaseSharpeningStone
       - id: CP14Rope
@@ -78,7 +78,7 @@
         - id: CP14ClothingRingShadowStep
         - id: CP14ClothingRingShadowGrab
         - id: CP14ClothingRingEarthWall
-        - id: CP14ClothingRingIceFloor
+        - id: CP14ClothingRingManaGift
         - id: CP14ClothingRingSphereOfLight
         - id: CP14ClothingRingFlashLight
       - !type:GroupSelector

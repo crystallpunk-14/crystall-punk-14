@@ -295,6 +295,7 @@
   difficulty: 0.5
   requiredTags:
   - CP14DemiplaneOpenSky
+  - CP14DemiplaneGrass
   layers:
     - !type:MobsDunGen
       minCount: 3
@@ -304,19 +305,31 @@
         amount: 1
 
 - type: cp14DemiplaneModifier
-  id: EnemySnakes
-  difficulty: 0.7
+  id: SmallHydra
+  difficulty: 0.5
+  requiredTags:
+  - CP14DemiplaneGrass
   layers:
     - !type:MobsDunGen
-      minCount: 1
-      maxCount: 2
+      minCount: 3
+      maxCount: 6
       groups:
-      - id: CP14MobPurpleSnake
-        amount: 1
-      - id: CP14MobSmallPurpleSnake
-        amount: 1
-      - id: CP14MobSpaceCobra
-        amount: 1
+      - id: CP14MobDinoSmallHydra
+        amount: 3
+
+
+- type: cp14DemiplaneModifier
+  id: MonsterMole
+  difficulty: 0.5
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:MobsDunGen
+      minCount: 3
+      maxCount: 6
+      groups:
+      - id: CP14MobMonsterMole
+        amount: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind
@@ -329,6 +342,35 @@
       groups:
       - id: CP14MobWatcherMagmawing
         amount: 1
+
+- type: cp14DemiplaneModifier
+  id: Rabbits
+  reward: 0.2
+  generationWeight: 0.4
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:MobsDunGen
+      minCount: 1
+      maxCount: 2
+      groups:
+      - id: CP14MobRabbit
+        amount: 3
+
+- type: cp14DemiplaneModifier
+  id: Boar
+  reward: 0.2
+  difficulty: 0.2
+  generationWeight: 0.4
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:MobsDunGen
+      minCount: 1
+      maxCount: 3
+      groups:
+      - id: CP14MobBoar
+        amount: 2
 
 - type: cp14DemiplaneModifier
   id: Chasm
