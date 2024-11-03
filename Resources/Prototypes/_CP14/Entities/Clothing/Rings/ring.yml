@@ -157,24 +157,6 @@
     - CP14ActionSpellEarthWall
 
 - type: entity
-  id: CP14ClothingRingIceFloor
-  parent: CP14ClothingRingBase
-  name: conductive ring
-  description: A standard mana-conductive ring that allows the user to heal physical injuries.
-  suffix: Ice floor
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: saphhire_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellIceFloor
-
-- type: entity
   id: CP14ClothingRingSphereOfLight
   parent: CP14ClothingRingBase
   name: conductive ring
