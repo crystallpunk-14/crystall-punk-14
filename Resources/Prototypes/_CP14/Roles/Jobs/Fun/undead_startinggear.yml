@@ -1,0 +1,53 @@
+- type: startingGear
+  id: CP14MobUndeadEasy1
+  equipment:
+    shirt: CP14ClothingShirtCottonBlack
+    pants: CP14ClothingPantsTrouserDarkBlue
+
+- type: startingGear
+  id: CP14MobUndeadEasy2
+  equipment:
+    pants: CP14ClothingPantsLoincloth
+
+- type: startingGear
+  id: CP14MobUndeadEasy3
+  equipment:
+    pants: CP14ClothingPantsTrouserDarkBlue
+    shoes: CP14ClothingShoesSandals
+    mask: CP14ClothingMaskSinner
+
+- type: startingGear
+  id: CP14MobUndeadMedium1
+  equipment:
+    cloak: CP14ClothingCloakCuirass
+    shirt: CP14ClothingShirtCottonRed
+    pants: CP14ClothingPantsTrouserWhite
+
+- type: startingGear
+  id: CP14MobUndeadMedium2
+  equipment:
+    cloak: CP14ClothingCloakCuirass
+    shirt: CP14ClothingShirtCottonRed
+    pants: CP14ClothingPantsTrouserWhite
+    head: CP14ClothingHeadBeretRed
+
+- type: startingGear
+  id: CP14MobUndeadHard1
+  equipment:
+    cloak: CP14ClothingCloakInfantryCuirass
+    shirt: CP14ClothingShirtMercenary
+    pants: CP14ClothingPantsMercenaryTrousers
+    shoes: CP14ClothingShoesBlack
+    back: CP14BaseTwoHandedSword
+    head: CP14ClothingHeadBeretMercenary
+
+- type: startingGear
+  id: CP14MobUndeadHard2
+  equipment:
+    cloak: CP14ClothingCloakCuirassLoincloth
+    shirt: CP14ClothingShirtMercenary
+    pants: CP14ClothingPantsMercenaryTrousers
+    shoes: CP14ClothingShoesBlack
+    back: CP14BaseShield
+    head: CP14ClothingHeadCapellina
+    mask: CP14ClothingMaskSteelMask

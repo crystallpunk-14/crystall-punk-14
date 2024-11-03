@@ -9,6 +9,38 @@
   components:
   - type: HumanoidAppearance
     species: CP14Zombie
+  - type: Sprite
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: [ "shirt" ]
+    - map: [ "pants" ]
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.LHand" ]
+    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt1" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
   - type: Icon
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
     state: full
@@ -27,11 +59,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      140: Dead
+      100: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      80: 0.8
-      110: 0.4
+      60: 0.8
+      75: 0.6
+      90: 0.4
   - type: StatusEffects
     allowed:
     - KnockedDown
@@ -60,7 +93,7 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 130
+    damageCap: 99
     damage:
       groups:
         Brute: -0.3
@@ -74,7 +107,7 @@
     damage:
       types:
         Slash: 4
-        Structural: 2
+        Structural: 4
   - type: Pullable
   - type: GhostTakeoverAvailable
   - type: SpamEmitSound

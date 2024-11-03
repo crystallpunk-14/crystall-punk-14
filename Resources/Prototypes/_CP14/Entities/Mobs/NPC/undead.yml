@@ -16,3 +16,66 @@
   - type: NpcFactionMember
     factions:
     - CP14Undead
+
+- type: entity
+  id: CP14MobUndeadZombieGearEasy1
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ ForkFiltered ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadEasy1 ]
+
+- type: entity
+  id: CP14MobUndeadZombieGearEasy2
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ ForkFiltered ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadEasy2 ]
+
+- type: entity
+  id: CP14MobUndeadZombieGearEasy3
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ ForkFiltered ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadEasy3 ]
+
+- type: entity
+  id: CP14MobUndeadZombieGearMedium1
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Medium
+  categories: [ ForkFiltered ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadMedium1 ]
+
+- type: entity
+  id: CP14MobUndeadZombieGearMedium2
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Medium
+  categories: [ ForkFiltered ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadMedium2 ]
+
+- type: entity
+  id: CP14MobUndeadZombieGearHard1
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Hard
+  categories: [ ForkFiltered ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadHard1 ]
+
+- type: entity
+  id: CP14MobUndeadZombieGearHard2
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Hard
+  categories: [ ForkFiltered ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadHard2 ]
