@@ -33,7 +33,7 @@
 <GuideEntityEmbed Entity="CP14BaseShield"/>
 <GuideEntityEmbed Entity="CP14BaseSword"/>
 <GuideEntityEmbed Entity="CP14BasePickaxe"/>
-<GuideEntityEmbed Entity="CP14CrystalLamp"/>
+<GuideEntityEmbed Entity="CP14CrystalLampBlueEmpty"/>
 <GuideEntityEmbed Entity="CP14BaseSharpeningStone"/>
 </Box>
 
