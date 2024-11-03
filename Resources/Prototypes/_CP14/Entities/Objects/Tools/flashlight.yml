@@ -1,19 +1,18 @@
 - type: entity
   parent: BaseItem
-  id: CP14OldLantern
-  name: old lantern
-  description: Relic of the Techomagic's past. Large, weighty, unpractical. At least feels good to crack some skulls with it.
+  id: CP14CrystalLamp
+  abstract: true
+  name: crystal lamp
+  description: A lamp with a bright fluorescent crystal and a cap to cover its glow. Convenient for traveling
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Tools/magic-lamp.rsi
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
     noRot: false
-    layers:
-    - state: lamp
   - type: Clothing
     equipDelay: 0.25
     unequipDelay: 0.25
-    sprite: _CP14/Objects/Tools/magic-lamp.rsi
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
     quickEquip: false
     breakOnMove: false
     slots:
@@ -24,7 +23,7 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 8
+        Blunt: 3
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
@@ -32,13 +31,45 @@
     sound:
       path: /Audio/Items/toolbox_drop.ogg
   - type: Item
-    sprite: _CP14/Objects/Tools/magic-lamp.rsi
-    storedRotation: -90
+    size: Normal
+    shape:
+    - 0, 0, 1, 1
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
   - type: Rotatable
   - type: PointLight
-    color: "#47F8FFFF"
+    color: "#FFFFFF"
+    mask: /Textures/_CP14/Effects/LightMasks/crystal_cone.png
     autoRot: true
-    energy: 4
-    radius: 4
+    energy: 2
+    radius: 6
     netsync: false
   - type: Appearance
+
+- type: entity
+  parent: CP14CrystalLamp
+  id: CP14CrystalLampBlue
+  suffix: Blue
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: light_icon
+      color: "#47F8FF"
+      shader: unshaded
+  - type: PointLight
+    color: "#47F8FF"
+
+- type: entity
+  parent: CP14CrystalLamp
+  id: CP14CrystalLampOrange
+  suffix: Orange
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: light_icon
+      color: "#d68f4d"
+      shader: unshaded
+  - type: PointLight
+    color: "#d68f4d"
+    energy: 4

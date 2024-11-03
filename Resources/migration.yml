@@ -119,6 +119,10 @@ CP14SpawnPointMerchant: CP14SpawnPointBanker
 #2024-10-27
 CP14GatherableFlowersYellow: CP14GatherableDayflin
 CP14FlowersYellow: CP14Dayflin
+
+#2024-11-03
+CP14OldLantern: CP14CrystalLamp
+
 # <---> CrystallPunk migration zone end
 
 
