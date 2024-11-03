@@ -80,6 +80,7 @@
 - type: entity
   parent: CP14CrystalLamp
   id: CP14CrystalLampBlueEmpty
+  name: blue crystal lamp
   suffix: Blue, Empty
   components:
   - type: Sprite
@@ -100,6 +101,7 @@
 - type: entity
   parent: CP14CrystalLamp
   id: CP14CrystalLampOrangeEmpty
+  name: orange crystal lamp
   suffix: Orange, Empty
   components:
   - type: Sprite
