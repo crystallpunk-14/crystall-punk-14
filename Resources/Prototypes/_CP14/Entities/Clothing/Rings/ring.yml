@@ -31,6 +31,24 @@
     - CP14ActionSpellIceDagger
 
 - type: entity
+  id: CP14ClothingRingManaGift
+  parent: CP14ClothingRingBase
+  name: conductive ring
+  suffix: Mana gift
+  description: A standard mana-conductive ring that allows you to transfer some of your magical energy to other objects.
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: saphhire_stone_small
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaGift
+
+- type: entity
   id: CP14ClothingRingIceShards
   parent: CP14ClothingRingBase
   name: conductive ring
