@@ -316,6 +316,35 @@
         amount: 1
 
 - type: cp14DemiplaneModifier
+  id: Rabbits
+  reward: 0.2
+  generationWeight: 0.4
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:MobsDunGen
+      minCount: 1
+      maxCount: 2
+      groups:
+      - id: CP14MobRabbit
+        amount: 3
+
+- type: cp14DemiplaneModifier
+  id: Boar
+  reward: 0.2
+  difficulty: 0.2
+  generationWeight: 0.4
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:MobsDunGen
+      minCount: 1
+      maxCount: 3
+      groups:
+      - id: CP14MobBoar
+        amount: 2
+
+- type: cp14DemiplaneModifier
   id: Chasm
   difficulty: 0.2
   generationWeight: 0.6
