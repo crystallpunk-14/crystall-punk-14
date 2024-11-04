@@ -31,7 +31,7 @@
     - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
       state: full
     - type: EntityTableSpawner
-      offset: 0.0
+      offset: 0.2
       table: !type:NestedSelector
         tableId: GenericZombie
         prob: 0.5
