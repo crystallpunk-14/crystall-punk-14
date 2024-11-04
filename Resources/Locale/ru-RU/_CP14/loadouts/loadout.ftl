@@ -17,6 +17,10 @@ cp14-loadout-alchemist-head = Шляпа алхимика
 cp14-loadout-alchemist-cloak = Накидка алхимика
 cp14-loadout-alchemist-eyes = Алхимические очки
 
+# Blacksmith
+
+cp14-loadout-blacksmith-cloak = Накидка кузнеца
+
 # Captain
 
 cp14-loadout-captain-cloak = Капитанская накидка

@@ -154,3 +154,56 @@
   stacks:
     CP14IronBar: 7
   result: CP14ClothingCloakCuirassLeg
+
+- type: CP14Recipe
+  id: CP14Nail10
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 2
+  result: CP14Nail10
+
+- type: CP14Recipe
+  id: CP14CrystalLampBlueEmpty
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 2
+    CP14IronBar: 1
+  result: CP14CrystalLampBlueEmpty
+
+- type: CP14Recipe
+  id: CP14CrystalLampOrangeEmpty
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 2
+    CP14IronBar: 1
+  result: CP14CrystalLampOrangeEmpty
+
+- type: CP14Recipe
+  id: CP14Scissors
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14Scissors
+
+- type: CP14Recipe
+  id: CP14ClothingCloakArmoredRed
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  entities:
+    CP14DyeRed: 1
+  stacks:
+    CP14Cloth: 3
+    CP14IronBar: 5
+  result: CP14ClothingCloakArmoredRed
+
+- type: CP14Recipe
+  id: CP14ClothingCloakBrassArmor
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14CopperBar: 6
+  result: CP14ClothingCloakBrassArmor
