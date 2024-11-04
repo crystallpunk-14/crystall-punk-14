@@ -78,3 +78,6 @@
     sprite: _CP14/Structures/Windows/wooden_window.rsi
   - type: Icon
     sprite: _CP14/Structures/Windows/wooden_window.rsi
+  - type: Construction
+    graph: CP14WallWood
+    node: WindowWooden

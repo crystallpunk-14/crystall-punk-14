@@ -25,10 +25,6 @@
           steps:
             - tool: Screwing #TODO - new tool
               doAfter: 1
-        - to: WallCardboard
-          steps:
-            - tool: CP14Hammering
-              doAfter: 2
         - to: WallWooden
           steps:
             - material: CP14WoodenPlanks
@@ -39,14 +35,11 @@
               doAfter: 1
             - tool: CP14Hammering
               doAfter: 2
-              
-    - node: WallCardboard
-      entity: CP14WallCardboard
-      edges:
-        - to: FrameWooden
+        - to: WindowWooden
           steps:
-            - tool: CP14Hammering
-              doAfter: 2
+            - material: CP14GlassSheet
+              amount: 2
+              doAfter: 1
               
     - node: WallWooden
       entity: CP14WallWooden
@@ -55,3 +48,6 @@
           steps:
             - tool: CP14Hammering
               doAfter: 2
+              
+    - node: WindowWooden
+      entity: CP14WindowWooden
