@@ -16,6 +16,9 @@ cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-alchemist-head = Alchemist's head
 cp14-loadout-alchemist-cloak = Alchemist's cloak
 cp14-loadout-alchemist-eyes = Alchemical goggles
+# Blacksmith
+
+cp14-loadout-blacksmith-cloak = Blacksmith's cloak
 
 # Captain
 

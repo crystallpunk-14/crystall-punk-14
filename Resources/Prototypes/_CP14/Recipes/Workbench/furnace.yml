@@ -3,7 +3,7 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   entities:
-    CP14OreCopper: 2
+    CP14OreCopper: 4
   result: CP14CopperBar1
 
 - type: CP14Recipe
@@ -11,7 +11,7 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   entities:
-    CP14OreIron: 2
+    CP14OreIron: 4
   result: CP14IronBar1
 
 - type: CP14Recipe
@@ -19,5 +19,13 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   entities:
-    CP14OreGold: 2
+    CP14OreGold: 4
   result: CP14GoldBar1
+
+- type: CP14Recipe
+  id: CP14GlassSheet1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  entities:
+    CP14QuartzShard: 1
+  result: CP14GlassSheet1

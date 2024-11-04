@@ -7,7 +7,6 @@
   loadouts:
   - CP14ClothingCloakSimpleWhite
   - CP14ClothingCloakSimpleDarkBlue
-  - CP14ClothingCloakBlacksmithArpon
   - CP14ClothingCloakFurcapeBlack
   - CP14ClothingCloakFurcapeBlue
   - CP14ClothingCloakMaidArpon
@@ -22,11 +21,6 @@
   id: CP14ClothingCloakSimpleDarkBlue
   equipment:
     cloak: CP14ClothingCloakSimpleDarkBlue
-
-- type: loadout
-  id: CP14ClothingCloakBlacksmithArpon
-  equipment:
-    cloak: CP14ClothingCloakBlacksmithArpon
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack

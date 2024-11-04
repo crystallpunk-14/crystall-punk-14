@@ -8,6 +8,15 @@
   },
   "states": [
     {
+      "name": "glass"
+    },
+    {
+      "name": "glass_2"
+    },
+    {
+      "name": "glass_3"
+    },
+    {
       "name": "shard2"
     },
     {

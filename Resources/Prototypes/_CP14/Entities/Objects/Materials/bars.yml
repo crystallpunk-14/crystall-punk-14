@@ -23,9 +23,6 @@
     - bar_2
     - bar_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14Copper: 100
 
 - type: entity
   id: CP14CopperBar5
@@ -70,9 +67,6 @@
     - bar_2
     - bar_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14Iron: 100
 
 - type: entity
   id: CP14IronBar5
@@ -116,9 +110,6 @@
     - bar_2
     - bar_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14Gold: 100
 
 - type: entity
   id: CP14GoldBar5
@@ -131,6 +122,48 @@
 - type: entity
   id: CP14GoldBar10
   parent: CP14GoldBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+
+- type: entity
+  id: CP14GlassSheet1
+  parent: BaseItem
+  name: glass sheet
+  description: Treated quartz glass, transmits light well, and is nice to look at!
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/glass.rsi
+    layers:
+      - state: glass
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14GlassSheet
+    count: 1
+    baseLayer: base
+    layerStates:
+    - glass
+    - glass_2
+    - glass_3
+  - type: Material
+
+- type: entity
+  id: CP14GlassSheet5
+  parent: CP14GlassSheet1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14GlassSheet10
+  parent: CP14GlassSheet1
   suffix: 10
   components:
   - type: Stack
