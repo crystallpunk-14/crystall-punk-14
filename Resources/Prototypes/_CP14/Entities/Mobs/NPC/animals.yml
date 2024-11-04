@@ -152,6 +152,13 @@
       gender: epicene
   - type: ReplacementAccent
     accent: pig
+  - type: InteractionPopup
+    successChance: 0.7
+    interactSuccessString: petting-success-pig
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/pig_oink.ogg
   - type: StealTarget
     stealGroup: CP14Boar
 
@@ -193,5 +200,12 @@
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: FactionException
+  - type: InteractionPopup
+    successChance: 0.2
+    interactSuccessString: petting-success-pig
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/pig_oink.ogg
   - type: StealTarget
     stealGroup: CP14Boar
