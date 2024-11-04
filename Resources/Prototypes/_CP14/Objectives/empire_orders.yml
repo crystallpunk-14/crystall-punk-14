@@ -23,18 +23,37 @@
 
 - type: entity
   parent: CP14BaseTownSendObjective
-  id: CP14TownSendGoldObjective
+  id: CP14TownSendDinoObjective
   components:
   - type: CP14TownSendCondition
-    collectGroup: CP14Gold
-    minCollectionSize: 200
-    maxCollectionSize: 250
+    collectGroup: CP14Dino
+    minCollectionSize: 10
+    maxCollectionSize: 50
+
+- type: entity
+  parent: CP14BaseTownSendObjective
+  id: CP14TownSendMoleObjective
+  components:
+  - type: CP14TownSendCondition
+    collectGroup: CP14Mole
+    minCollectionSize: 10
+    maxCollectionSize: 50
+
+- type: entity
+  parent: CP14BaseTownSendObjective
+  id: CP14TownSendBoarObjective
+  components:
+  - type: CP14TownSendCondition
+    collectGroup: CP14Boar
+    minCollectionSize: 10
+    maxCollectionSize: 50
 
 - type: weightedRandom
   id: CP14TownSendObjectiveGroup
   weights:
-    CP14TownSendGoldObjective: 1
-
+    CP14TownSendDinoObjective: 1
+    CP14TownSendMoleObjective: 1
+    CP14TownSendBoarObjective: 1
 
 #Bank money
 - type: entity

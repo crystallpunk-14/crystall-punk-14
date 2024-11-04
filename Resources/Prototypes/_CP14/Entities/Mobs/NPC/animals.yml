@@ -152,6 +152,8 @@
       gender: epicene
   - type: ReplacementAccent
     accent: pig
+  - type: StealTarget
+    stealGroup: CP14Boar
 
 - type: entity
   id: CP14MobBoar
@@ -191,3 +193,5 @@
   - type: NPCRetaliation
     attackMemoryLength: 10
   - type: FactionException
+  - type: StealTarget
+    stealGroup: CP14Boar

@@ -92,6 +92,8 @@
   - type: Tag
     tags:
       - FootstepSound
+  - type: StealTarget
+    stealGroup: CP14Mole
 
 - type: entity
   id: CP14ActionMoleSpellSubterraneanLeap
