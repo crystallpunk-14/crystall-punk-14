@@ -19,7 +19,7 @@
 
 - type: entity
   name: walking dead spawner
-  id: CP14SpawnMobUndeadZombie
+  id: CP14SpawnMobUndeadZombieRandom
   parent: MarkerBase
   suffix: Random
   categories: [ ForkFiltered ]
