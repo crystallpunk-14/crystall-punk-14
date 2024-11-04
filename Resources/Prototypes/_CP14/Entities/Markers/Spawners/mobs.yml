@@ -35,6 +35,8 @@
       table: !type:NestedSelector
         tableId: GenericZombie
         prob: 0.5
+  placement:
+    mode: AlignTileAny
 
 - type: entity
   name: walking dead spawner
