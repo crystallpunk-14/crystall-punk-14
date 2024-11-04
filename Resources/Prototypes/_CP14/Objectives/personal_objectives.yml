@@ -24,28 +24,9 @@
       state: coin10
 
 # Collect currency group
-
 - type: entity
   parent: CP14BasePersonalCurrencyCollectObjective
-  id: CP14PersonalCurrencyCollectObjectiveSmall
-  components:
-  - type: Objective
-    difficulty: 0.25
-  - type: CP14CurrencyCollectCondition
-    currency: 500
-
-- type: entity
-  parent: CP14BasePersonalCurrencyCollectObjective
-  id: CP14PersonalCurrencyCollectObjectiveMedium
-  components:
-  - type: Objective
-    difficulty: 0.5
-  - type: CP14CurrencyCollectCondition
-    currency: 750
-
-- type: entity
-  parent: CP14BasePersonalCurrencyCollectObjective
-  id: CP14PersonalCurrencyCollectObjectiveBig
+  id: CP14PersonalCurrencyCollectObjective
   components:
   - type: Objective
     difficulty: 1
@@ -55,6 +36,4 @@
 - type: weightedRandom
   id: CP14PersonalCurrencyCollectObjectiveGroup
   weights:
-    CP14PersonalCurrencyCollectObjectiveSmall: 0.25
-    CP14PersonalCurrencyCollectObjectiveMedium: 0.5
-    CP14PersonalCurrencyCollectObjectiveBig: 1
+    CP14PersonalCurrencyCollectObjective: 1
