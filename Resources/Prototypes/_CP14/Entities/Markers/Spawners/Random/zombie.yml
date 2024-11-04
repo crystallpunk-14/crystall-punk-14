@@ -3,12 +3,15 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector
-      weight: 90
+      weight: 65
       children:
       - id: CP14MobUndeadZombie
       - id: CP14MobUndeadZombieGearEasy1
       - id: CP14MobUndeadZombieGearEasy2
       - id: CP14MobUndeadZombieGearEasy3
+    - !type:GroupSelector
+      weight: 25
+      children:
       - id: CP14MobUndeadZombieGearMedium1
       - id: CP14MobUndeadZombieGearMedium2
     - !type:GroupSelector
