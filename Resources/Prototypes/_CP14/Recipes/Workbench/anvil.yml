@@ -207,3 +207,11 @@
   stacks:
     CP14CopperBar: 6
   result: CP14ClothingCloakBrassArmor
+
+- type: CP14Recipe
+  id: CP14Crossbolt
+  tag: CP14RecipeAnvil
+  craftTime: 1
+  stacks:
+    CP14CopperBar: 1
+  result: CP14Crossbolt
