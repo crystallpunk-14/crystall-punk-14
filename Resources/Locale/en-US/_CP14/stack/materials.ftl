@@ -9,3 +9,5 @@ cp14-stack-iron-bars = iron bars
 cp14-stack-gold-bars = gold bars
 
 cp14-stack-wallpaper = rolls of wallpaper
+
+cp14-stack-glass-sheet = glass

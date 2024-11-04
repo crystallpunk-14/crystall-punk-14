@@ -53,3 +53,10 @@
   spawn: CP14GoldBar1
   icon: { sprite: _CP14/Objects/Materials/gold_bar.rsi, state: bar_2 }
   maxCount: 10
+
+- type: stack
+  id: CP14GlassSheet
+  name: cp14-stack-glass-sheet
+  spawn: CP14GlassSheet1
+  icon: { sprite: _CP14/Objects/Materials/glass.rsi, state: glass_2 }
+  maxCount: 10
