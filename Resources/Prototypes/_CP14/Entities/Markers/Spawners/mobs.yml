@@ -19,6 +19,25 @@
 
 - type: entity
   name: walking dead spawner
+  id: CP14SpawnMobUndeadZombie
+  parent: MarkerBase
+  suffix: Random
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: full
+    - type: EntityTableSpawner
+      offset: 0.0
+      table: !type:NestedSelector
+        tableId: GenericZombie
+        prob: 0.5
+
+- type: entity
+  name: walking dead spawner
   id: CP14SpawnMobUndeadZombieEasy
   parent: MarkerBase
   suffix: Easy
