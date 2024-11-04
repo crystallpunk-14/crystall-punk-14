@@ -106,6 +106,8 @@
         variation: 0.125
   - type: SoundWhileAlive
   - type: FloorOcclusion
+  - type: StealTarget
+    stealGroup: CP14Dino
 
 - type: entity
   id: CP14MobDinoSmallHydra

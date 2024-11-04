@@ -341,6 +341,20 @@ public abstract class SharedMindSystem : EntitySystem
     }
 
     /// <summary>
+    /// CP14 Extension - Tries to create and add an objective from its prototype id, and return objective uid.
+    /// </summary>
+    /// <returns>Returns true if adding the objective succeeded.</returns>
+    public bool TryAddObjective(EntityUid mindId, MindComponent mind, string proto, out EntityUid? objective)
+    {
+        objective = _objectives.TryCreateObjective(mindId, mind, proto);
+        if (objective == null)
+            return false;
+
+        AddObjective(mindId, mind, objective.Value);
+        return true;
+    }
+
+    /// <summary>
     /// Adds an objective that already exists, and is assumed to have had its requirements checked.
     /// </summary>
     public void AddObjective(EntityUid mindId, MindComponent mind, EntityUid objective)
