@@ -29,7 +29,8 @@
         - type: StationJobs
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
-            CP14Alchemist: [ 2, 3 ]
+            CP14Alchemist: [ 2, 4 ]
+            CP14Blacksmith: [ 2, 4 ]
             CP14Innkeeper: [ 3, 4 ]
             #CP14Captain: [1, 1]
             CP14Commandant: [1, 1]
