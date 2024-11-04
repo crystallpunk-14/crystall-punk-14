@@ -12,7 +12,7 @@
     state: icon
   - type: Item
     sprite: _CP14/Objects/Weapons/Melee/Shield/shield.rsi
-    size: Ginormous
+    size: Normal
   - type: Blocking
     passiveBlockModifier:
       coefficients:

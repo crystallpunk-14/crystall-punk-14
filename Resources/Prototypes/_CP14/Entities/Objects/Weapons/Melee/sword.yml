@@ -10,7 +10,9 @@
   components:
   - type: Item
     size: Normal
-    storedRotation: -45 
+    storedRotation: 45 
+    shape:
+    - 0,0,0,2
   - type: Clothing
     equipDelay: 0.45
     unequipDelay: 0.45

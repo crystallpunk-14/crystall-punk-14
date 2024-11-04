@@ -9,6 +9,9 @@
   components:
   - type: Item
     size: Normal
+    storedRotation: 45 
+    shape:
+    - 0,0,0,2
     sprite: _CP14/Objects/Weapons/Melee/Shovel/shovel.rsi
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Shovel/shovel.rsi
