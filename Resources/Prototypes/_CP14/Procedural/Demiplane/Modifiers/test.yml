@@ -8,10 +8,10 @@
     - !type:OreDunGen
       entityMask: 
       - CP14WallStone
-      entity: CP14WallStoneGoldOre
-      count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
+      entity: CP14WallStoneGoldOre # Hellish gold 666
+      count: 6
+      minGroupSize: 6
+      maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
   id: IronOre
@@ -24,9 +24,24 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 10
+      count: 5
       minGroupSize: 10
       maxGroupSize: 15
+
+- type: cp14DemiplaneModifier
+  id: CopperOre
+  unique: false
+  reward: 0.3
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneCopperOre
+      count: 10
+      minGroupSize: 5
+      maxGroupSize: 7
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystal
@@ -225,21 +240,6 @@
       count: 10
       minGroupSize: 3
       maxGroupSize: 5
-
-- type: cp14DemiplaneModifier
-  id: CopperOre
-  unique: false
-  reward: 0.3
-  requiredTags:
-  - CP14DemiplaneCave
-  layers:
-    - !type:OreDunGen
-      entityMask: 
-      - CP14WallStone
-      entity: CP14WallStoneCopperOre
-      count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
 
 - type: cp14DemiplaneModifier
   id: Explosive
