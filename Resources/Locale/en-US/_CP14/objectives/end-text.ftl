@@ -1,4 +1,4 @@
-cp14-objective-endtext-progress = Task completed by {$value}%
+cp14-objective-endtext-progress = Task completed by [bold]{$value}%[/bold]
 
 cp14-objective-endtext-status-success = [color=#26f09c]DONe[/color]
 cp14-objective-endtext-status-success-a = [color=#f0a926]ALMOST DONE[/color]

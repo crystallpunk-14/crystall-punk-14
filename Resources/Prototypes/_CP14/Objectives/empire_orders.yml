@@ -19,7 +19,6 @@
     maxCollectionSize: 10
     objectiveText: cp14-objective-town-send-title
     descriptionText: cp14-objective-town-send-desc
-    descriptionMultiplyText: cp14-objective-town-send-multiply-desc
   - type: Objective
 
 - type: entity
@@ -53,13 +52,6 @@
 
 - type: entity
   parent: CP14BaseTownBankEarningObjective
-  id: CP14TownBankEarningObjectiveSmall
-  components:
-  - type: CP14CurrencyStoredCondition
-    currency: 10000
-
-- type: entity
-  parent: CP14BaseTownBankEarningObjective
   id: CP14TownBankEarningObjectiveMedium
   components:
   - type: CP14CurrencyStoredCondition
@@ -75,6 +67,5 @@
 - type: weightedRandom
   id: CP14BankEarningObjectiveGroup
   weights:
-    CP14TownBankEarningObjectiveSmall: 1
     CP14TownBankEarningObjectiveMedium: 0.6
     CP14TownBankEarningObjectiveBig: 0.3
