@@ -43,7 +43,6 @@
         - CP14MobUndeadZombieGearEasy2
         - CP14MobUndeadZombieGearEasy3
       chance: 0.8
-      offset: 0.0
 
 - type: entity
   name: walking dead spawner
