@@ -54,6 +54,15 @@
 
 - type: entity
   parent: CP14BaseKeyRing
+  id: CP14KeyRingBlacksmith
+  suffix: Blacksmith
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyBlacksmith
+
+- type: entity
+  parent: CP14BaseKeyRing
   id: CP14KeyRingAlchemist
   suffix: Alchemist
   components:

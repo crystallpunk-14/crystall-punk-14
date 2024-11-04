@@ -14,19 +14,22 @@
       "name": "Alchemist"
     },
     {
-      "name": "Innkeeper"
+      "name": "Banker"
+    },
+    {
+      "name": "Blacksmith"
     },
     {
       "name": "Captain"
     },
     {
+      "name": "Commandant"
+    },
+    {
       "name": "GuardCommander"
     },
     {
-      "name": "Banker"
-    },
-    {
-      "name": "Commandant"
+      "name": "Innkeeper"
     }
   ]
 }

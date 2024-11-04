@@ -76,8 +76,12 @@
   id: TavernDorms5
   complexity: 3
 
-# Alchemy 
+# Mercenary 
 
 - type: CP14LockCategory
   id: Alchemy
+  complexity: 5
+
+- type: CP14LockCategory
+  id: Blacksmith
   complexity: 5
