@@ -1,23 +1,5 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Cardboard wall
-  description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
-  id: CP14CardboardWall
-  graph: CP14WallWood
-  startNode: start
-  targetNode: WallCardboard
-  category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
-    state: full
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
   name: Wooden wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WoodenWall
@@ -27,6 +9,24 @@
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/wooden_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden window
+  description: A wooden wall with a glass window in it.
+  id: CP14WindowWooden
+  graph: CP14WallWood
+  startNode: start
+  targetNode: WindowWooden
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Windows/wooden_window.rsi
     state: full
   objectType: Structure
   placementMode: SnapgridCenter

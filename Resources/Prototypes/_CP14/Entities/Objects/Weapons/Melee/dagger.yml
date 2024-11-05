@@ -13,7 +13,9 @@
   components:
   - type: Item
     size: Normal
-    storedRotation: -45 
+    shape:
+    - 0,0,0,1
+    storedRotation: 45
   - type: Clothing
     equipDelay: 0.25
     unequipDelay: 0.25
@@ -29,7 +31,7 @@
   - type: MeleeWeapon
     angle: 60
     attackRate: 1.8
-    wideAnimationRotation: 225
+    wideAnimationRotation: 135
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
@@ -42,4 +44,4 @@
     offset: 0.15,0.15
     removalTime: 1
   - type: ThrowingAngle
-    angle: 225
+    angle: 135

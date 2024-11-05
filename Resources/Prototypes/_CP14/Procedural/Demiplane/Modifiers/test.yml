@@ -315,11 +315,10 @@
       maxCount: 6
       groups:
       - id: CP14MobDinoSmallHydra
-        amount: 3
-
+        amount: 2
 
 - type: cp14DemiplaneModifier
-  id: MonsterMole
+  id: EnemyMole
   difficulty: 0.5
   requiredTags:
   - CP14DemiplaneUnderground
@@ -329,7 +328,7 @@
       maxCount: 6
       groups:
       - id: CP14MobMonsterMole
-        amount: 3
+        amount: 1
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind
