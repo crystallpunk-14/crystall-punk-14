@@ -50,15 +50,17 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnMagicEffectInit(Entity<CP14MagicEffectComponent> ent, ref MapInitEvent args)
     {
-        if (!_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
-            return;
 
         var meta = MetaData(ent);
         var sb = new StringBuilder();
 
         sb.Append(meta.EntityDescription);
         sb.Append($"\n\n {Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{ent.Comp.ManaCost}[/color]");
-        sb.Append($"\n {Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
+
+        if (_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
+        {
+            sb.Append($"\n {Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
+        }
 
         _meta.SetEntityDescription(ent, sb.ToString());
     }

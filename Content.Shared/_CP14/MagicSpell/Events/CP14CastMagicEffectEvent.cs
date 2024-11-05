@@ -71,9 +71,9 @@ public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRela
 
     public float Multiplier = 1f;
     public EntityUid Caster;
-    public ProtoId<CP14MagicTypePrototype> MagicType;
+    public ProtoId<CP14MagicTypePrototype>? MagicType;
 
-    public CP14CalculateManacostEvent(EntityUid caster, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype> magicType)
+    public CP14CalculateManacostEvent(EntityUid caster, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype>? magicType)
     {
         Caster = caster;
         Manacost = initialManacost;

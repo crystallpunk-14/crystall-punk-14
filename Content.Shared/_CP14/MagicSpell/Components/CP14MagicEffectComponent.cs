@@ -14,8 +14,8 @@ public sealed partial class CP14MagicEffectComponent : Component
     [DataField]
     public FixedPoint2 ManaCost = 0f;
 
-    [DataField(required: true)]
-    public ProtoId<CP14MagicTypePrototype> MagicType = default!;
+    [DataField]
+    public ProtoId<CP14MagicTypePrototype>? MagicType = null;
 
     /// <summary>
     /// Can the cost of casting this magic effect be changed from clothing or other sources?

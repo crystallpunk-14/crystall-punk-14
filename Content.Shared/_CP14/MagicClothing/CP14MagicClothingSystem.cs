@@ -69,7 +69,7 @@ public sealed partial class CP14MagicClothingSystem : EntitySystem
     {
         args.Args.Multiplier += (float)ent.Comp.GlobalModifier;
 
-        if (ent.Comp.Modifiers.TryGetValue(args.Args.MagicType, out var modifier))
+        if (args.Args.MagicType is not null && ent.Comp.Modifiers.TryGetValue(args.Args.MagicType.Value, out var modifier))
         {
             args.Args.Multiplier *= (float)modifier;
         }
