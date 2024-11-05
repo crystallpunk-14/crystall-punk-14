@@ -65,20 +65,23 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnBeforeCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
     {
-        if (!TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var magicContainer))
+        if (!TryComp<CP14MagicEnergyContainerComponent>(args.Caster, out var magicContainer))
         {
             args.Cancel();
             return;
         }
 
-        if (!_magicEnergy.HasEnergy(args.Performer, ent.Comp.ManaCost, magicContainer, ent.Comp.Safe))
+        var manaEv = new CP14CalculateManacostEvent(args.Caster, ent.Comp.ManaCost);
+        RaiseLocalEvent(args.Caster, manaEv);
+
+        if (!_magicEnergy.HasEnergy(args.Caster, manaEv.GetManacost(), magicContainer, ent.Comp.Safe))
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana"));
             args.Cancel();
         }
-        else if(!_magicEnergy.HasEnergy(args.Performer, ent.Comp.ManaCost, magicContainer, true) && _net.IsServer)
+        else if(!_magicEnergy.HasEnergy(args.Caster, manaEv.GetManacost(), magicContainer, true) && _net.IsServer)
         {
-            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Performer, args.Performer, PopupType.SmallCaution);
+            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Caster, args.Caster, PopupType.SmallCaution);
         }
     }
 
@@ -139,7 +142,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
             BreakOnDamage = delayedEffect.BreakOnDamage,
             Hidden = delayedEffect.Hidden,
             BlockDuplicate = true,
-            DistanceThreshold = 100f,
+            DistanceThreshold = 100f
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -157,7 +160,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     private void OnDelayedEntityWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent,
         ref CP14DelayedEntityWorldTargetActionDoAfterEvent args)
     {
-        var endEv = new CP14EndCastMagicEffectEvent{Performer = args.User};
+        var endEv = new CP14EndCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref endEv);
 
         if (args.Cancelled || !_net.IsServer)
@@ -174,13 +177,13 @@ public partial class CP14SharedMagicSystem : EntitySystem
             effect.Effect(EntityManager, effectArgs);
         }
 
-        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        var ev = new CP14AfterCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
     }
 
     private void OnDelayedInstantActionDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
     {
-        var endEv = new CP14EndCastMagicEffectEvent{Performer = args.User};
+        var endEv = new CP14EndCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref endEv);
 
         if (args.Cancelled || !_net.IsServer)
@@ -191,13 +194,13 @@ public partial class CP14SharedMagicSystem : EntitySystem
             effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates));
         }
 
-        var ev = new CP14AfterCastMagicEffectEvent {Performer = args.User};
+        var ev = new CP14AfterCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
     }
 
     private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
     {
-        if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
+        if (TryComp<HandsComponent>(args.Caster, out var hands) || hands is not null)
         {
             var freeHand = 0;
             foreach (var hand in hands.Hands)
@@ -214,7 +217,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnVerbalAspectBeforeCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
     {
-        if (HasComp<MutedComponent>(args.Performer))
+        if (HasComp<MutedComponent>(args.Caster))
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
             args.Cancel();
@@ -225,7 +228,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
             {
                 var ev = new CP14VerbalAspectSpeechEvent
                 {
-                    Performer = args.Performer,
+                    Performer = args.Caster,
                     Speech = ent.Comp.StartSpeech,
                 };
                 RaiseLocalEvent(ent, ref ev);
@@ -240,7 +243,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
         var ev = new CP14VerbalAspectSpeechEvent
         {
-            Performer = args.Performer,
+            Performer = args.Caster,
             Speech = ent.Comp.EndSpeech,
         };
         RaiseLocalEvent(ent, ref ev);
@@ -248,10 +251,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private bool TryCastSpell(EntityUid spell, EntityUid performer)
     {
-        var ev = new CP14BeforeCastMagicEffectEvent
-        {
-            Performer = performer,
-        };
+        var ev = new CP14BeforeCastMagicEffectEvent(performer);
         RaiseLocalEvent(spell, ref ev);
         if (ev.Reason != string.Empty && _net.IsServer)
         {
@@ -260,10 +260,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
         if (!ev.Cancelled)
         {
-            var evStart = new CP14StartCastMagicEffectEvent()
-            {
-                Performer = performer,
-            };
+            var evStart = new CP14StartCastMagicEffectEvent(performer);
             RaiseLocalEvent(spell, ref evStart);
         }
         return !ev.Cancelled;
@@ -274,9 +271,12 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        if (!HasComp<CP14MagicEnergyContainerComponent>(args.Performer))
+        if (!HasComp<CP14MagicEnergyContainerComponent>(args.Caster))
             return;
 
-        _magicEnergy.TryConsumeEnergy(args.Performer.Value, ent.Comp.ManaCost, safe: ent.Comp.Safe);
+        var manaEv = new CP14CalculateManacostEvent(args.Caster.Value, ent.Comp.ManaCost);
+        RaiseLocalEvent(args.Caster.Value, manaEv);
+
+        _magicEnergy.TryConsumeEnergy(args.Caster.Value, manaEv.GetManacost(), safe: ent.Comp.Safe);
     }
 }

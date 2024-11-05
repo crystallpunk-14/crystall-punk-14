@@ -90,6 +90,6 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalBreak
+          collection: GlassBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
