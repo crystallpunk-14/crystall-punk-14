@@ -1,21 +1,21 @@
 - type: entity
-  id: CP14BaseBattleStaff
+  id: CP14MagicHealingStaff
   parent:
   - BaseItem
   - CP14BaseWeaponDestructible
-  name: battle staff
-  description: an extremely simple and effective weapon - a long straight and heavy stick.
+  name: magic healing staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into healing spells.
   components:
   - type: Item
     size: Ginormous
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/BattleStaff/battleStaff.rsi
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/healing_staff.rsi
     layers:
     - state: icon
   - type: Clothing
     equipDelay: 1
     unequipDelay: 1
-    sprite: _CP14/Objects/Weapons/Melee/BattleStaff/battleStaff.rsi
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/healing_staff.rsi
     quickEquip: false
     breakOnMove: false
     slots:

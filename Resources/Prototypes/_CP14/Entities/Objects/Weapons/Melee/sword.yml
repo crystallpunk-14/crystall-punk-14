@@ -9,10 +9,7 @@
   description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
   components:
   - type: Item
-    size: Normal
-    storedRotation: 45 
-    shape:
-    - 0,0,0,2
+    size: Ginormous
   - type: Clothing
     equipDelay: 0.45
     unequipDelay: 0.45
@@ -20,7 +17,7 @@
     quickEquip: false
     breakOnMove: false
     slots:
-    - back
+    - neck
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Sword/sword.rsi
     layers:

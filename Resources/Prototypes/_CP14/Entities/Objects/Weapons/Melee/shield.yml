@@ -38,7 +38,7 @@
     quickEquip: false
     breakOnMove: false
     slots:
-    - back
+    - neck
   - type: MeleeWeapon
     angle: 0
     range: 1.2
