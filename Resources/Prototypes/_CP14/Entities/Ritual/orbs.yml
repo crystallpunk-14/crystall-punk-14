@@ -10,30 +10,30 @@
     drawDepth: Mobs
     noRot: true
 
-- type: entity
-  parent: CP14BaseRitualOrb
-  id: CP14RitualOrbCreation
-  name: creation orb
-  categories: [ HideSpawnMenu]
-  components:
-  - type: CP14MagicRitualOrb
-    powers:
-      Creation: 1
-  - type: Sprite
-    layers:
-    - state: creation
-      shader: unshaded
-
-- type: entity
-  parent: CP14BaseRitualOrb
-  id: CP14RitualOrbDestruction
-  name: destruction orb
-  categories: [ HideSpawnMenu]
-  components:
-  - type: CP14MagicRitualOrb
-    powers:
-      Destruction: 1
-  - type: Sprite
-    layers:
-    - state: destruction
-      shader: unshaded
+#- type: entity
+#  parent: CP14BaseRitualOrb
+#  id: CP14RitualOrbCreation
+#  name: creation orb
+#  categories: [ HideSpawnMenu]
+#  components:
+#  - type: CP14MagicRitualOrb
+#    powers:
+#      Creation: 1
+#  - type: Sprite
+#    layers:
+#    - state: creation
+#      shader: unshaded
+#
+#- type: entity
+#  parent: CP14BaseRitualOrb
+#  id: CP14RitualOrbDestruction
+#  name: destruction orb
+#  categories: [ HideSpawnMenu]
+#  components:
+#  - type: CP14MagicRitualOrb
+#    powers:
+#      Destruction: 1
+#  - type: Sprite
+#    layers:
+#    - state: destruction
+#      shader: unshaded
