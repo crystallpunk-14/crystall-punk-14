@@ -22,7 +22,7 @@
     angle: 0
     attackRate: 1.2
     range: 1.2
-    wideAnimationRotation: -115
+    wideAnimationRotation: 135
     wideAnimation: CP14WeaponArcThrust
     damage:
       types:

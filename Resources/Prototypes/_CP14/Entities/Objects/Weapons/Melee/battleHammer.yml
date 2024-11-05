@@ -18,7 +18,7 @@
     quickEquip: false
     breakOnMove: false
     slots:
-    - back
+    - neck
   - type: MeleeWeapon
     angle: 120
     attackRate: 0.7

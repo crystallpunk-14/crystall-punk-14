@@ -290,7 +290,7 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - CP14ClothingRingCureWounds
+  - CP14MagicHealingStaff
   - CP14ClothingRingManaGift
   - CP14EnergyCrystalSmall
   - CP14CrystalLampOrangeEmpty
@@ -306,10 +306,10 @@
   - CP14BasePickaxe
 
 - type: loadout
-  id: CP14ClothingRingCureWounds
+  id: CP14MagicHealingStaff
   storage:
-    back:
-    - CP14ClothingRingCureWounds
+    neck:
+    - CP14MagicHealingStaff
 
 - type: loadout
   id: CP14ClothingRingManaGift

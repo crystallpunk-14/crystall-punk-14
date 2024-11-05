@@ -137,7 +137,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     private void OnDelayedEntityWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent,
         ref CP14DelayedEntityWorldTargetActionDoAfterEvent args)
     {
-        var endEv = new CP14EndCastMagicEffectEvent();
+        var endEv = new CP14EndCastMagicEffectEvent{Performer = args.User};
         RaiseLocalEvent(ent, ref endEv);
 
         if (args.Cancelled || !_net.IsServer)
@@ -160,7 +160,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnDelayedInstantActionDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
     {
-        var endEv = new CP14EndCastMagicEffectEvent();
+        var endEv = new CP14EndCastMagicEffectEvent{Performer = args.User};
         RaiseLocalEvent(ent, ref endEv);
 
         if (args.Cancelled || !_net.IsServer)

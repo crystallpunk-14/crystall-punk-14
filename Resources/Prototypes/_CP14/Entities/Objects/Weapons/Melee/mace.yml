@@ -11,9 +11,9 @@
   - type: Item
     size: Normal
   - type: Clothing
-    equipDelay: 0.25
-    unequipDelay: 0.25
-    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
+    equipDelay: 0.35
+    unequipDelay: 0.35
+    sprite: _CP14/Objects/Weapons/Melee/Mace/mace.rsi
     quickEquip: false
     breakOnMove: false
     slots:

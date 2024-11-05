@@ -3,6 +3,8 @@
   name: Ice Shards
   description: Fast ice needles, for rapid shooting of targets.
   components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -0.25
   - type: CP14MagicEffect
     manaCost: 5
     effects:
