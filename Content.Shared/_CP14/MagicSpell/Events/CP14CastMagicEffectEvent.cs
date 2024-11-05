@@ -36,6 +36,7 @@ public sealed class CP14StartCastMagicEffectEvent : EntityEventArgs
 [ByRefEvent]
 public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
 {
+    public EntityUid Performer { get; init; }
 }
 
 

@@ -3,6 +3,8 @@
   name: Earth wall
   description: Raises a solid wall of earth from the bowels.
   components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -0.9
   - type: CP14MagicEffect
     manaCost: 15
     telegraphyEffects:

@@ -3,6 +3,8 @@
   name: Fireball
   description: An effective method of destruction - an explosive fireball
   components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -0.7
   - type: CP14MagicEffect
     manaCost: 20
     effects:

@@ -3,6 +3,8 @@
   name: Cure wounds
   description: You touch the creature, healing its body from physical damage
   components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -0.5
   - type: CP14MagicEffect
     manaCost: 20
     telegraphyEffects:
