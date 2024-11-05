@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
@@ -8,6 +9,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.MagicSpell;
@@ -22,11 +24,14 @@ public partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly MetaDataSystem _meta = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
 
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
@@ -41,6 +46,21 @@ public partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14AfterCastMagicEffectEvent>(OnVerbalAspectAfterCast);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14AfterCastMagicEffectEvent>(OnAfterCastMagicEffect);
+    }
+
+    private void OnMagicEffectInit(Entity<CP14MagicEffectComponent> ent, ref MapInitEvent args)
+    {
+        if (!_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
+            return;
+
+        var meta = MetaData(ent);
+        var sb = new StringBuilder();
+
+        sb.Append(meta.EntityDescription);
+        sb.Append($"\n\n {Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{ent.Comp.ManaCost}[/color]");
+        sb.Append($"\n {Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
+
+        _meta.SetEntityDescription(ent, sb.ToString());
     }
 
     private void OnBeforeCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)

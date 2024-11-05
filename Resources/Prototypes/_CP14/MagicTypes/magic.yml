@@ -1,9 +1,39 @@
 - type: magicType
-  id: Creation
-  name: cp14-magic-type-creation
-  color: "#4bcc7d"
+  id: Abjuration
+  name: cp14-magic-type-abjuration #Преграждение
+  color: "#c94328"
 
 - type: magicType
-  id: Destruction
-  name: cp14-magic-type-destruction
-  color: "#c94c1a"
+  id: Conjuration
+  name: cp14-magic-type-conjuration #Призыв
+  color: "#8e28c9"
+
+- type: magicType
+  id: Divination
+  name: cp14-magic-type-divination #Прорицание
+  color: "#81d3e3"
+
+- type: magicType
+  id: Enchantment
+  name: cp14-magic-type-enchantment #Очарование
+  color: "#7147a1"
+
+- type: magicType
+  id: Evocation
+  name: cp14-magic-type-evocation #Воплощение
+  color: "#47a14a"
+
+- type: magicType
+  id: Illusion
+  name: cp14-magic-type-illusion #Иллюзия
+  color: "#cc1275"
+
+- type: magicType
+  id: Necromancy
+  name: cp14-magic-type-necromancy #Некромантия
+  color: "#4dc4a4"
+
+- type: magicType
+  id: Transmutation
+  name: cp14-magic-type-transmutation #Трансмутация
+  color: "#3333d4"

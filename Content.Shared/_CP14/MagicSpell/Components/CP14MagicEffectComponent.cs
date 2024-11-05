@@ -1,5 +1,7 @@
+using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Components;
 
@@ -11,6 +13,9 @@ public sealed partial class CP14MagicEffectComponent : Component
 {
     [DataField]
     public FixedPoint2 ManaCost = 0f;
+
+    [DataField(required: true)]
+    public ProtoId<CP14MagicTypePrototype> MagicType = default!;
 
     [DataField]
     public bool Safe = false;

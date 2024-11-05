@@ -6,6 +6,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -0.4
   - type: CP14MagicEffect
+    magicType: Conjuration
     manaCost: 20
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

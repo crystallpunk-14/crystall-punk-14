@@ -4,6 +4,7 @@
   description: You can transfer a small amount of your magical energy to a target entity or magical object.
   components:
   - type: CP14MagicEffect
+    magicType: Necromancy
     manaCost: 12
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
