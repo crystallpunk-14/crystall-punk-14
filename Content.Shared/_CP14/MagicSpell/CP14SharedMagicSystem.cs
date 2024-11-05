@@ -71,15 +71,21 @@ public partial class CP14SharedMagicSystem : EntitySystem
             return;
         }
 
-        var manaEv = new CP14CalculateManacostEvent(args.Caster, ent.Comp.ManaCost);
-        RaiseLocalEvent(args.Caster, manaEv);
+        var manaCost = ent.Comp.ManaCost;
 
-        if (!_magicEnergy.HasEnergy(args.Caster, manaEv.GetManacost(), magicContainer, ent.Comp.Safe))
+        if (ent.Comp.CanModifyManacost)
+        {
+            var manaEv = new CP14CalculateManacostEvent(args.Caster, ent.Comp.ManaCost, ent.Comp.MagicType);
+            RaiseLocalEvent(args.Caster, manaEv);
+            manaCost = manaEv.GetManacost();
+        }
+
+        if (!_magicEnergy.HasEnergy(args.Caster, manaCost, magicContainer, ent.Comp.Safe))
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana"));
             args.Cancel();
         }
-        else if(!_magicEnergy.HasEnergy(args.Caster, manaEv.GetManacost(), magicContainer, true) && _net.IsServer)
+        else if(!_magicEnergy.HasEnergy(args.Caster, manaCost, magicContainer, true) && _net.IsServer)
         {
             _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Caster, args.Caster, PopupType.SmallCaution);
         }
@@ -274,9 +280,16 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (!HasComp<CP14MagicEnergyContainerComponent>(args.Caster))
             return;
 
-        var manaEv = new CP14CalculateManacostEvent(args.Caster.Value, ent.Comp.ManaCost);
-        RaiseLocalEvent(args.Caster.Value, manaEv);
 
-        _magicEnergy.TryConsumeEnergy(args.Caster.Value, manaEv.GetManacost(), safe: ent.Comp.Safe);
+        var manaCost = ent.Comp.ManaCost;
+
+        if (ent.Comp.CanModifyManacost)
+        {
+            var manaEv = new CP14CalculateManacostEvent(args.Caster.Value, ent.Comp.ManaCost, ent.Comp.MagicType);
+            RaiseLocalEvent(args.Caster.Value, manaEv);
+            manaCost = manaEv.GetManacost();
+        }
+
+        _magicEnergy.TryConsumeEnergy(args.Caster.Value, manaCost, safe: ent.Comp.Safe);
     }
 }

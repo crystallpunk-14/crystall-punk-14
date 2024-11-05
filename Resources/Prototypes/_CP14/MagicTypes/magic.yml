@@ -1,6 +1,6 @@
 - type: magicType
   id: Abjuration
-  name: cp14-magic-type-abjuration #Преграждение
+  name: cp14-magic-type-abjuration #Ограждение
   color: "#c94328"
 
 - type: magicType

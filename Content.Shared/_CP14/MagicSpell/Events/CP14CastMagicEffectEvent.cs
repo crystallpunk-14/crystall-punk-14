@@ -1,4 +1,7 @@
+using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared.FixedPoint;
+using Content.Shared.Inventory;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
 
@@ -61,21 +64,26 @@ public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
     }
 }
 
-public sealed class CP14CalculateManacostEvent : EntityEventArgs
+public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRelayEvent
 {
     public FixedPoint2 Manacost = 0f;
 
+
     public float Multiplier = 1f;
     public EntityUid Caster;
+    public ProtoId<CP14MagicTypePrototype> MagicType;
 
-    public CP14CalculateManacostEvent(EntityUid caster, FixedPoint2 initialManacost)
+    public CP14CalculateManacostEvent(EntityUid caster, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype> magicType)
     {
         Caster = caster;
         Manacost = initialManacost;
+        MagicType = magicType;
     }
 
     public float GetManacost()
     {
         return (float)Manacost * Multiplier;
     }
+
+    public SlotFlags TargetSlots { get; } = SlotFlags.All;
 }

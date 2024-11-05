@@ -1,4 +1,5 @@
 using Content.Shared._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Chemistry;
 using Content.Shared.Damage;
 using Content.Shared.Electrocution;
@@ -24,6 +25,12 @@ public partial class InventorySystem
 {
     public void InitializeRelay()
     {
+        //CP14 Relayed events
+        SubscribeLocalEvent<InventoryComponent, CP14MagicEnergyScanEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, CP14CalculateManacostEvent>(RelayInventoryEvent);
+
+        //CP14 End
+
         SubscribeLocalEvent<InventoryComponent, DamageModifyEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, ElectrocutionAttemptEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SlipAttemptEvent>(RelayInventoryEvent);
@@ -47,7 +54,6 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, GetEyeProtectionEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, GetBlurEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SolutionScanEvent>(RelayInventoryEvent);
-        SubscribeLocalEvent<InventoryComponent, CP14MagicEnergyScanEvent>(RelayInventoryEvent); //CP14 Magic scanning
 
         // ComponentActivatedClientSystems
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowJobIconsComponent>>(RelayInventoryEvent);
