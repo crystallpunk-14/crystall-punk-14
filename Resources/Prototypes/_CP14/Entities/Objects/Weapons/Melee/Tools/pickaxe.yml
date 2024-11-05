@@ -10,15 +10,16 @@
   components:
   - type: Item
     size: Normal
+    storedRotation: 45
     shape:
     - 0,0,2,0
-    - 1,1,1,2
+    - 1,1,1,1
     sprite: _CP14/Objects/Weapons/Melee/Pickaxe/pickaxe.rsi
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Pickaxe/pickaxe.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: 300
+    wideAnimationRotation: 135
     damage:
       types:
         Piercing: 5

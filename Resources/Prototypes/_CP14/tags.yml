@@ -53,6 +53,12 @@
   id: CP14Rabbit
   
 - type: Tag
+  id: CP14Pig
+
+- type: Tag
+  id: CP14Boar
+
+- type: Tag
   id: CP14Wheat
 
 - type: Tag

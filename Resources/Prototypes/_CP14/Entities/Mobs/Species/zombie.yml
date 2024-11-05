@@ -74,6 +74,7 @@
     damage:
       types:
         Slash: 4
+        Structural: 2
   - type: Pullable
   - type: GhostTakeoverAvailable
   - type: SpamEmitSound
@@ -85,12 +86,16 @@
         variation: 0.125
   - type: SoundWhileAlive
   - type: Strippable
+  - type: Climbing
+  - type: ReplacementAccent
+    accent: zombie
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
   - type: InventorySlots
   - type: ContainerContainer
+  - type: FloorOcclusion
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:

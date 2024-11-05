@@ -2,16 +2,18 @@
   crystallPunkAllowed: true
   locFilter: "en-US"
   id: CP14_EN
-  name: cp14-guide-entry-english
+  name: Welcome to CrystallPunk
   text: "/ServerInfo/_CP14/Guidebook_EN/Welcome.xml"
   children:
   - CP14_EN_Alchemy
+  - CP14_EN_Demiplanes
 
 - type: guideEntry
   crystallPunkAllowed: true
   locFilter: "ru-RU"
   id: CP14_RU
-  name: cp14-guide-entry-russian
+  name: Добро пожаловать в CrystallPunk
   text: "/ServerInfo/_CP14/Guidebook_RU/Welcome.xml"
   children:
   - CP14_RU_Alchemy
+  - CP14_RU_Demiplanes

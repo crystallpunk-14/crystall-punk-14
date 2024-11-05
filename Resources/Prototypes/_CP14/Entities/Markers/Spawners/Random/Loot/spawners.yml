@@ -1,0 +1,128 @@
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerExpeditionLootCommon
+  name: Expedition common loot spawner
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Objects/Materials/copper_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 1.0
+      tableId: CP14TableExpeditionLootCommon
+
+- type: entityTable
+  id: CP14TableExpeditionLootCommon
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - !type:GroupSelector
+        children:
+        - id: CP14SilverCoin1
+          weight: 0.1
+        - id: CP14CopperCoin
+          weight: 0.1
+        - id: CP14CopperCoin5
+          weight: 0.5
+        - id: CP14CopperCoin1
+          weight: 1
+      - !type:GroupSelector
+        children:
+        - id: CP14DyeRed
+        - id: CP14DyeYellow
+        - id: CP14DyeBlue
+        - id: CP14DyeGreen
+        - id: CP14DyePurple
+        - id: CP14DyeBlack
+      - id: CP14EnergyCrystalSmall
+      - id: CP14Bucket
+      - id: CP14CrystalLampBlueEmpty
+      - id: CP14Scissors
+      - id: CP14BaseSharpeningStone
+      - id: CP14Rope
+        weight: 2
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - !type:GroupSelector
+        children:
+        - id: CP14VialSmallBloodFlowerSap
+        - id: CP14VialSmallAgaricMushroom
+        - id: CP14VialSmallGroundQuartz
+        - id: CP14VialSmallWildSage
+        - id: CP14VialSmallBlueAmanita
+        - id: CP14VialTinyChromiumSlime
+        - id: CP14VialTinyLumiMushroom
+      - !type:GroupSelector
+        children:
+        - id: CP14ChromiumSlime
+        - id: CP14LumiMushroom
+      - id: CP14SilverCoin5
+      - id: CP14EnergyCrystalMedium
+      - id: CP14DemiplanKey
+      # remove this when players can create their own magic items
+      - !type:GroupSelector
+        children:
+        - id: CP14ClothingRingIceDagger
+        - id: CP14ClothingRingIceShards
+        - id: CP14ClothingRingFlameCreation
+        - id: CP14ClothingRingFireball
+        - id: CP14ClothingRingCureWounds
+        - id: CP14ClothingRingShadowStep
+        - id: CP14ClothingRingShadowGrab
+        - id: CP14ClothingRingEarthWall
+        - id: CP14ClothingRingManaGift
+        - id: CP14ClothingRingSphereOfLight
+        - id: CP14ClothingRingFlashLight
+      - !type:GroupSelector
+        children:
+        - id: CP14ClothingCloakArmoredRed
+        - id: CP14ClothingCloakBlacksmithArpon
+        - id: CP14ClothingCloakMaidArpon
+        - id: CP14ClothingCloakBrassArmor
+        - id: CP14ClothingCloakCuirass
+        - id: CP14ClothingCloakInfantryCuirass
+        - id: CP14ClothingCloakCuirassLoincloth
+        - id: CP14ClothingCloakCuirassLeg
+        - id: CP14ClothingHeadCapellina
+      - !type:GroupSelector
+        children:
+        - id: CP14ClothingCloakFurcapeBlack
+        - id: CP14ClothingCloakFurcapeBlue
+        - id: CP14ClothingCloakSimpleWhite
+        - id: CP14ClothingCloakSimpleDarkBlue
+        - id: CP14ClothingCloakRitualAttireLeather
+        - id: CP14ClothingHeadBeretMercenary
+        - id: CP14ClothingPantsMercenaryTrousers
+        - id: CP14ClothingPantsSouthernMagician
+        - id: CP14ClothingShirtMercenary
+        - id: CP14ClothingShirtYellowWizard
+
+- type: entityTable
+  id: CP14TableBureaucracy
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - id: CP14Paper
+    # Rare
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: CP14PaperFolderBlue
+      - id: CP14PaperFolderRed
+      - id: CP14PenFeather
+    # Very rare
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: CP14Inkwell

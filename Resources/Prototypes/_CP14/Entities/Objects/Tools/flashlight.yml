@@ -1,19 +1,20 @@
 - type: entity
-  parent: BaseItem
-  id: CP14OldLantern
-  name: old lantern
-  description: Relic of the Techomagic's past. Large, weighty, unpractical. At least feels good to crack some skulls with it.
+  parent: 
+  - BaseItem
+  - CP14BaseCrystalSlot
+  id: CP14CrystalLamp
+  abstract: true
+  name: crystal lamp
+  description: A device that converts energy from crystals into a source of directional light.  Convenient for traveling
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Tools/magic-lamp.rsi
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
     noRot: false
-    layers:
-    - state: lamp
   - type: Clothing
     equipDelay: 0.25
     unequipDelay: 0.25
-    sprite: _CP14/Objects/Tools/magic-lamp.rsi
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
     quickEquip: false
     breakOnMove: false
     slots:
@@ -24,7 +25,7 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 8
+        Blunt: 3
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
@@ -32,13 +33,89 @@
     sound:
       path: /Audio/Items/toolbox_drop.ogg
   - type: Item
-    sprite: _CP14/Objects/Tools/magic-lamp.rsi
-    storedRotation: -90
+    size: Normal
+    shape:
+    - 0, 0, 1, 1
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
   - type: Rotatable
   - type: PointLight
-    color: "#47F8FFFF"
+    enabled: false
+    color: "#FFFFFF"
+    mask: /Textures/_CP14/Effects/LightMasks/crystal_cone.png
     autoRot: true
-    energy: 4
-    radius: 4
-    netsync: false
+    energy: 3
+    radius: 6
   - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CP14MagicSlotVisuals.Powered:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: CP14MagicLantern
+  - type: CP14MagicEnergyDraw
+    energy: -0.1
+    delay: 3
+  - type: ItemSlots
+    slots:
+      crystal_slot:
+        insertSound: 
+          path: /Audio/_CP14/Items/crystal_insert.ogg
+          params:
+            variation: 0.05
+        ejectSound: 
+          path: /Audio/_CP14/Items/crystal_eject.ogg
+          params:
+            variation: 0.05
+        ejectOnInteract: false
+        name: cp14-magic-energy-crystal-slot-name
+        whitelist:
+          components:
+          - CP14MagicEnergyCrystal
+ 
+- type: entity
+  parent: CP14CrystalLamp
+  id: CP14CrystalLampBlueEmpty
+  name: blue crystal lamp
+  suffix: Blue, Empty
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: light_icon
+      color: "#47F8FF"
+      visible: false
+      map: ["crystal"]
+    - state: light_icon
+      color: "#47F8FF"
+      visible: false
+      map: ["light"]
+      shader: unshaded
+  - type: PointLight
+    color: "#47F8FF"
+
+- type: entity
+  parent: CP14CrystalLamp
+  id: CP14CrystalLampOrangeEmpty
+  name: orange crystal lamp
+  suffix: Orange, Empty
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: light_icon
+      color: "#d68f4d"
+      map: ["crystal"]
+      visible: false
+    - state: light_icon
+      color: "#d68f4d"
+      map: ["light"]
+      visible: false
+      shader: unshaded
+  - type: PointLight
+    color: "#d68f4d"
+    energy: 5

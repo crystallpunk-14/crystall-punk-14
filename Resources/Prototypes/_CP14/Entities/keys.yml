@@ -119,6 +119,16 @@
 
 - type: entity
   parent: CP14BaseKey
+  id: CP14KeyBlacksmith
+  name: blacksmith key
+  components:
+  - type: Sprite
+    state: key8
+  - type: CP14Key
+    autoGenerateShape: Blacksmith
+
+- type: entity
+  parent: CP14BaseKey
   id: CP14KeyBankEntrance
   name: bank entrance key
   components:

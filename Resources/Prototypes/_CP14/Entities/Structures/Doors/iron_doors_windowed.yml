@@ -64,3 +64,20 @@
   - CP14IronDoorWindowedMirrored
   id: CP14IronDoorWindowedMirroredBankEntrance
   suffix: Bank Entrance, Mirrored
+
+- type: entity
+  parent: CP14IronDoorWindowed
+  id: CP14IronDoorWindowedBlacksmith
+  suffix: Blacksmith
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Blacksmith
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorWindowedBlacksmith
+  - CP14IronDoorWindowedMirrored
+  id: CP14IronDoorWindowedMirroredBlacksmith
+  suffix: Blacksmith, Mirrored

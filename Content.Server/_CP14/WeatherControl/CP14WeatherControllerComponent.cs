@@ -13,7 +13,7 @@ public sealed partial class CP14WeatherControllerComponent : Component
     /// random time with no weather.
     /// </summary>
     [DataField]
-    public MinMax ClearDuration = new(60,600);
+    public MinMax ClearDuration = new(120,1200);
 
     [DataField]
     public HashSet<CP14WeatherData> Entries = new();

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Content.Shared._CP14.TravelingStoreShip.Prototype;
+using Content.Shared._CP14.Cargo.Prototype;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 

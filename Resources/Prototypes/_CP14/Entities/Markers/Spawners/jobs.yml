@@ -101,6 +101,20 @@
       - state: alchemist
 
 - type: entity
+  id: CP14SpawnPointBlacksmith
+  parent: CP14SpawnPointJobBase
+  name: blacksmith
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Blacksmith
+  - type: Sprite
+    layers:
+      - state: green
+      - state: blacksmith
+
+- type: entity
   id: CP14SpawnPointInnkeeper
   parent: CP14SpawnPointJobBase
   name: innkeeper

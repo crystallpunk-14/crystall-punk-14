@@ -1,6 +1,6 @@
 using Content.Server._CP14.Objectives.Components;
 using Content.Server.Objectives.Components.Targets;
-using Content.Shared._CP14.TravelingStoreShip;
+using Content.Shared._CP14.Cargo;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Stacks;
@@ -85,11 +85,8 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
 
         var group = _proto.Index(condition.Comp.CollectGroup);
 
-        var title = Loc.GetString(condition.Comp.ObjectiveText, ("itemName",  Loc.GetString(group.Name)));
-
-        var description = condition.Comp.CollectionSize > 1
-            ? Loc.GetString(condition.Comp.DescriptionMultiplyText, ("itemName", Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize))
-            : Loc.GetString(condition.Comp.DescriptionText, ("itemName", Loc.GetString(group.Name)));
+        var title = Loc.GetString(condition.Comp.ObjectiveText, ("itemName",  Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
+        var description = Loc.GetString(condition.Comp.DescriptionText, ("itemName", Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
 
         _metaData.SetEntityName(condition.Owner, title, args.Meta);
         _metaData.SetEntityDescription(condition.Owner, description, args.Meta);

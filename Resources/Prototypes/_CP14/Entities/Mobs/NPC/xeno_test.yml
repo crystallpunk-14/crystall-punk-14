@@ -3,7 +3,6 @@
   parent: MobXeno
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
@@ -13,7 +12,6 @@
   parent: MobXenoDrone
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
@@ -24,37 +22,63 @@
   parent: MobCobraSpace
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
+  - type: MeleeChemicalInjector
+    transferAmount: 2
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 2
+        Poison: 2
 
 - type: entity
   id: CP14MobPurpleSnake
   parent: MobPurpleSnake
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 1
+  - type: MeleeChemicalInjector
+    transferAmount: 3
 
 - type: entity
   id: CP14MobSmallPurpleSnake
   parent: MobSmallPurpleSnake
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone
+  - type: SolutionTransfer
+    maxTransferAmount: 0.2
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 0.5
+  - type: MeleeChemicalInjector
+    transferAmount: 2
 
 - type: entity
   id: CP14MobWatcherMagmawing
   parent: MobWatcherMagmawing
   categories: [ ForkFiltered ]
   components:
-  - type: CP14OutPVSDespawn
   - type: NpcFactionMember
     factions:
     - CP14HostileEveryone

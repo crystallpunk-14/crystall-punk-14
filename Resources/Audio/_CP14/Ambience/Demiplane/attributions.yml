@@ -1,0 +1,14 @@
+- files: ["intro1.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by PatrickLieberkind of Freesound.org'
+  source: "https://freesound.org/people/PatrickLieberkind/sounds/414266/"
+
+- files: ["intro2.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by DneproMan of Freesound.org.'
+  source: "https://freesound.org/people/DneproMan/sounds/256830/"
+
+- files: ["intro3.ogg", "intro4.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by Lumamorph of Freesound.org.'
+  source: "https://freesound.org/people/Lumamorph/sounds/634320/"

@@ -6,6 +6,8 @@
   name: tree
   description: Decades of life and growth, saturating the surrounding nature with fresh air.
   components:
+  - type: Transform
+    anchored: true
   - type: CP14WaveShader
     speed: 1
     dis: 5

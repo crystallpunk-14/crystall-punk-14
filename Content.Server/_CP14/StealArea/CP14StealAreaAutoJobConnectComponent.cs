@@ -14,4 +14,7 @@ public sealed partial class CP14StealAreaAutoJobConnectComponent : Component
 
     [DataField]
     public HashSet<ProtoId<DepartmentPrototype>> Departments = new();
+
+    [DataField]
+    public bool Stations = true;
 }

@@ -149,9 +149,6 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Construction
-    graph: CP14WallWood
-    node: WallCardboard
   - type: CP14WallpaperHolder
 
 - type: entity

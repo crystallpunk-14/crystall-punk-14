@@ -213,7 +213,7 @@
     energy: 100
   - type: CP14MagicEnergyDraw
     energy: 1
-    delay: 6 # 10m to full restore
+    delay: 3 # 5m to full restore
   - type: CP14MagicUnsafeDamage
   - type: CP14MagicUnsafeSleep
   - type: CP14MagicAttuningMind
@@ -221,6 +221,8 @@
   - type: CP14FootprintHolder
     decalProto: CP14Footprints
   - type: CP14FootprintTrailer
+  - type: CP14DemiplaneStabilizer
+    requireAlive: true
 
 
 - type: entity
