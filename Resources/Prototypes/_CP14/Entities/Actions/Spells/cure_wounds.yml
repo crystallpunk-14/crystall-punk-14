@@ -34,7 +34,6 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
-  - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureWounds
   - type: EntityWorldTargetAction
@@ -42,6 +41,7 @@
       components:
       - MobState
     useDelay: 10
+    range: 7
     itemIconStyle: BigAction
     interactOnMiss: false
     sound: !type:SoundPathSpecifier
@@ -50,8 +50,9 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: cure_wounds
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 2
-
+      delay: 3
+      breakOnMove: false
+ 
 - type: entity
   id: CP14RuneCureWounds
   parent: CP14BaseMagicRune

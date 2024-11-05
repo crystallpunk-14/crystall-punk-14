@@ -103,24 +103,6 @@
     - CP14ActionSpellFireball
 
 - type: entity
-  id: CP14ClothingRingCureWounds
-  parent: CP14ClothingRingBase
-  name: cure wounds conductive ring
-  description: A standard mana-conductive ring that allows the user to heal physical injuries.
-  suffix: Cure Wounds
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: emerald_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellCureWounds
-
-- type: entity
   id: CP14ClothingRingShadowStep
   parent: CP14ClothingRingBase
   name: shadow step conductive ring
