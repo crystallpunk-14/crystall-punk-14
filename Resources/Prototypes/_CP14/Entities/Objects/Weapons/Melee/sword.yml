@@ -25,7 +25,7 @@
   - type: MeleeWeapon
     angle: 100
     attackRate: 1.4
-    wideAnimationRotation: 210
+    wideAnimationRotation: 135
     wideAnimation: CP14WeaponArcSlash
     cPAnimationLength: 0.18
     damage:
