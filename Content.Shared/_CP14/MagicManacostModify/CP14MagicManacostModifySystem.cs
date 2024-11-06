@@ -67,12 +67,7 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
 
     private void OnCalculateManacost(Entity<CP14MagicManacostModifyComponent> ent, ref InventoryRelayedEvent<CP14CalculateManacostEvent> args)
     {
-        args.Args.Multiplier += (float)ent.Comp.GlobalModifier;
-
-        if (args.Args.MagicType is not null && ent.Comp.Modifiers.TryGetValue(args.Args.MagicType.Value, out var modifier))
-        {
-            args.Args.Multiplier *= (float)modifier;
-        }
+        OnCalculateManacost(ent, ref args.Args);
     }
 
     private void OnCalculateManacost(Entity<CP14MagicManacostModifyComponent> ent, ref CP14CalculateManacostEvent args)
