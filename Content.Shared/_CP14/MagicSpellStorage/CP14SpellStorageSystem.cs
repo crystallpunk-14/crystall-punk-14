@@ -5,6 +5,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
+using Robust.Shared.Network;
 
 namespace Content.Shared._CP14.MagicSpellStorage;
 
@@ -18,6 +19,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly CP14SharedMagicAttuningSystem _attuning = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
@@ -39,6 +41,9 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     /// </summary>
     private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> mStorage, ref MapInitEvent args)
     {
+        if (_net.IsClient)
+            return;
+
         foreach (var spell in mStorage.Comp.Spells)
         {
             var spellEnt = _actionContainer.AddAction(mStorage, spell);
@@ -54,6 +59,9 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
     private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)
     {
+        if (_net.IsClient)
+            return;
+
         foreach (var spell in mStorage.Comp.SpellEntities)
         {
             QueueDel(spell);
