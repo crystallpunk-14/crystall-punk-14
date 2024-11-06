@@ -4,7 +4,7 @@
   description: Materialization of a temporary sharp ice throwing dagger
   components:
   - type: CP14MagicEffect
-    magicType: Evocation
+    magicType: Water
     manaCost: 15
     effects:
     - !type:CP14SpellSpawnEntityOnTarget

@@ -4,7 +4,7 @@
   description: Materialization of a bright and safe light source.
   components:
   - type: CP14MagicEffect
-    magicType: Conjuration
+    magicType: LightDarkness
     manaCost: 10
     effects:
     - !type:CP14SpellSpawnEntityOnTarget

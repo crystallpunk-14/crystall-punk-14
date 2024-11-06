@@ -6,7 +6,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -0.25
   - type: CP14MagicEffect
-    magicType: Evocation
+    magicType: Water
     manaCost: 5
     effects:
     - !type:CP14SpellProjectile

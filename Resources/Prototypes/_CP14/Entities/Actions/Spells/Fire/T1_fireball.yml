@@ -6,7 +6,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -0.7
   - type: CP14MagicEffect
-    magicType: Evocation
+    magicType: Fire
     manaCost: 20
     effects:
     - !type:CP14SpellSpawnEntityOnUser

@@ -125,7 +125,7 @@
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat.rsi
-  - type: CP14MagicClothingManacostModify
+  - type: CP14MagicManacostModify
     globalModifier: 0.8
 
 - type: entity
@@ -138,5 +138,5 @@
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat_golden.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat_golden.rsi
-  - type: CP14MagicClothingManacostModify
+  - type: CP14MagicManacostModify
     globalModifier: 0.8

@@ -1,6 +1,7 @@
 cp14-trait-category-physical = Physical features
 cp14-trait-category-background = Background
 cp14-trait-category-speech = Speech peculiarities
+cp14-trait-category-magic = Known spells
 
 # Physical
 
@@ -18,6 +19,14 @@ cp14-trait-muted-desc = All you can do is mumble incoherently. The benefits of v
 
 cp14-trait-snoring-name = Loud snoring
 cp14-trait-snoring-desc = It is simply impossible to sleep next to you because you snore terribly loudly at everything.
+
+# Magic spells
+
+cp14-trait-spell-flamecreation-name = flame creation
+cp14-trait-spell-flamecreation-desc = A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
+
+cp14-trait-spell-managift-name = mana gift
+cp14-trait-spell-managift-desc = You can transfer a small amount of your magical energy to a target entity or magical object.
 
 # Backgrounds
 
