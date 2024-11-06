@@ -24,7 +24,6 @@
     canTargetSelf: false
     checkCanAccess: false
     range: 10
-    useDelay: 10
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
@@ -32,6 +31,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: shadow_grab
     event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 10
       castDelay: 2
       hidden: true
       entityDistance: 1000

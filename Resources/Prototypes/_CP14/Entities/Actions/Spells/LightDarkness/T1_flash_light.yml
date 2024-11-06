@@ -20,7 +20,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFlashLight
   - type: EntityWorldTargetAction
-    useDelay: 5
     range: 10
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
@@ -29,6 +28,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: flash_light
     event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 5
       castDelay: 0.5
 
 - type: entity

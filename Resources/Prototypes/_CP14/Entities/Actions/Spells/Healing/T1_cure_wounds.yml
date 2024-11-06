@@ -43,7 +43,6 @@
     whitelist:
       components:
       - MobState
-    useDelay: 10
     range: 7
     itemIconStyle: BigAction
     interactOnMiss: false
@@ -53,6 +52,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: cure_wounds
     event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 10
       castDelay: 3
       breakOnMove: false
  
