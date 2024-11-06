@@ -4,6 +4,7 @@ using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory;
 using Content.Shared.Mind;
 
 namespace Content.Shared._CP14.MagicSpellStorage;
@@ -72,16 +73,16 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
     private void OnClothingAddedAttune(Entity<CP14SpellStorageAccessWearingComponent> ent, ref AddedAttuneToMindEvent args)
     {
+        if (!ent.Comp.Wearing)
+            return;
+
         if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
             return;
 
         if (args.User is null)
             return;
 
-        if (!TryComp<ClothingComponent>(ent, out var clothing))
-            return;
-
-        if (clothing.InSlot is null || Transform(ent).ParentUid != args.User)
+        if (Transform(ent).ParentUid != args.User)
             return;
 
         TryGrantAccess((ent, spellStorage), args.User.Value);
@@ -89,6 +90,8 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
     private void OnClothingEquipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotEquippedEvent args)
     {
+        ent.Comp.Wearing = true;
+
         if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
             return;
 
@@ -97,6 +100,8 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
     private void OnClothingUnequipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotUnequippedEvent args)
     {
+        ent.Comp.Wearing = false;
+
         _actions.RemoveProvidedActions(args.Wearer, ent);
     }
 
