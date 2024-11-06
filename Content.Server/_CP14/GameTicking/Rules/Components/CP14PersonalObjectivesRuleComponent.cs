@@ -1,3 +1,4 @@
+using Content.Shared.Mind;
 using Content.Shared.Random;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -15,4 +16,10 @@ public sealed partial class CP14PersonalObjectivesRuleComponent : Component
 
     [DataField]
     public Dictionary<ProtoId<DepartmentPrototype>, List<ProtoId<WeightedRandomPrototype>>> DepartmentObjectives = new();
+
+    /// <summary>
+    /// All of the objectives added by this rule. 1 mind -> many objectives
+    /// </summary>
+    [DataField]
+    public Dictionary<Entity<MindComponent>, List<EntityUid>> PersonalObjectives = new();
 }

@@ -47,6 +47,12 @@ public sealed partial class CP14DayCycleComponent : Component
 [DataDefinition, NetSerializable, Serializable]
 public readonly partial record struct DayCycleEntry()
 {
+    public DayCycleEntry(Color _color, TimeSpan _duration, string _period) : this()
+    {
+        Color = _color;
+        Duration = _duration;
+        Period = _period;
+    }
     /// <summary>
     /// The color of the world's lights at the beginning of this time of day
     /// </summary>

@@ -176,8 +176,10 @@
   id: CP14QuartzCrystal
   name: quartz
   description: Quartz is an essential mineral capable of interacting with magical energy. It is highly sought after by alchemists for extracting beneficial properties from liquids
-  categories: [ HideSpawnMenu ]
+  categories: [ ForkFiltered ]
   components:
+  - type: Transform
+    anchored: true
   - type: Sprite
     drawdepth: Mobs
     sprite: _CP14/Structures/crystal.rsi
@@ -216,6 +218,12 @@
               CP14QuartzShard:
                 min: 1
                 max: 3
+  - type: RandomSprite
+    available:
+    - random:
+        big: ""
+        medium: ""
+        small: ""
   - type: Fixtures
     fixtures:
       fix1:
@@ -230,12 +238,6 @@
           - LowImpassable
           - BulletImpassable
           - Opaque
-  - type: RandomSprite
-    available:
-    - random:
-        big: ""
-        medium: ""
-        small: ""
 
 # Blue amanita
 

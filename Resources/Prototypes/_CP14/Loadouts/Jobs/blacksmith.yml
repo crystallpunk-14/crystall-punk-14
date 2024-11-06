@@ -1,0 +1,12 @@
+# Cloak
+
+- type: loadoutGroup
+  id: CP14BlacksmithCloak
+  name: cp14-loadout-blacksmith-cloak
+  loadouts:
+  - CP14ClothingCloakBlacksmithArpon
+
+- type: loadout
+  id: CP14ClothingCloakBlacksmithArpon
+  equipment:
+    cloak: CP14ClothingCloakBlacksmithArpon

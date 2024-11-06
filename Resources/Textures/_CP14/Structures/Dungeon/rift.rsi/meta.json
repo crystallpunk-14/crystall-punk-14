@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by TheShuEd (discord)",
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "rift"
+    }
+  ]
+}

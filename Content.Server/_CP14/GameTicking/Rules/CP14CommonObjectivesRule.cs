@@ -1,11 +1,15 @@
+using System.Text;
 using Content.Server._CP14.GameTicking.Rules.Components;
 using Content.Server._CP14.StationCommonObjectives;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
+using Content.Shared.Objectives.Systems;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -16,6 +20,7 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
 
     public override void Initialize()
     {
@@ -34,6 +39,9 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
         var query = EntityQueryEnumerator<CP14StationCommonObjectivesComponent>();
         while (query.MoveNext(out var stationUid, out var stationObj))
         {
+            var mindComp = EnsureComp<MindComponent>(stationUid);
+            component.StationMind = (stationUid, mindComp);
+
             foreach (var jobObj in component.JobObjectives)
             {
                 foreach (var weightGroupProto in jobObj.Value)
@@ -43,7 +51,7 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
 
                     var objectiveProto = weightGroup.Pick(_random);
 
-                    if (!TryCreateCommonObjective(objectiveProto, out var objective) || objective is null)
+                    if (!_objectives.TryCreateObjective(component.StationMind.Value, objectiveProto, out var objective))
                         continue;
 
                     stationObj.JobObjectives.Add(objective.Value, jobObj.Key);
@@ -59,35 +67,13 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
 
                     var objectiveProto = weightGroup.Pick(_random);
 
-                    if (!TryCreateCommonObjective(objectiveProto, out var objective) || objective is null)
+                    if (!_objectives.TryCreateObjective(component.StationMind.Value, objectiveProto, out var objective))
                         continue;
 
                     stationObj.DepartmentObjectives.Add(objective.Value, depObj.Key);
                 }
             }
         }
-    }
-
-    private bool TryCreateCommonObjective(string objectiveProto, out EntityUid? objective)
-    {
-        objective = null;
-
-        if (!_proto.HasIndex<EntityPrototype>(objectiveProto))
-            return false;
-
-        objective = Spawn(objectiveProto);
-
-        if (!TryComp<ObjectiveComponent>(objective, out var comp)) //TODO: мы не можем в ObjectiveSystem делать цели без привязки к разуму. Поэтому щиткодим создания тут.
-        {
-            Del(objective);
-            Log.Error($"Invalid objective prototype {objectiveProto}, missing ObjectiveComponent");
-            return false;
-        }
-
-        var afterEv = new ObjectiveAfterAssignEvent(null, null, comp, MetaData(objective.Value));
-        RaiseLocalEvent(objective.Value, ref afterEv);
-
-        return true;
     }
 
     private void OnPlayerSpawning(PlayerSpawnCompleteEvent args)
@@ -120,6 +106,57 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
                 continue;
 
             _mind.AddObjective(mindId, mind, depObj.Key);
+        }
+    }
+
+    protected override void AppendRoundEndText(EntityUid uid,
+        CP14CommonObjectivesRuleComponent component,
+        GameRuleComponent gameRule,
+        ref RoundEndTextAppendEvent args)
+    {
+        base.AppendRoundEndText(uid, component, gameRule, ref args);
+
+        var query = EntityQueryEnumerator<CP14StationCommonObjectivesComponent>();
+        while (query.MoveNext(out var objectives))
+        {
+            var grouped = new Dictionary<DepartmentPrototype, List<EntityUid>>();
+            foreach (var department in objectives.DepartmentObjectives)
+            {
+                var indexedDepartment = _proto.Index(department.Value);
+
+                if (!grouped.ContainsKey(indexedDepartment))
+                    grouped.Add(indexedDepartment, new List<EntityUid>());
+
+                grouped[indexedDepartment].Add(department.Key);
+            }
+
+            foreach (var group in grouped)
+            {
+                var sb = new StringBuilder();
+                sb.Append($"[head=3][color={group.Key.Color.ToHex()}][bold]{Loc.GetString(group.Key.Name)}[/bold][/color][/head]\n");
+
+                foreach (var objEnt in group.Value)
+                {
+                    if (!TryComp<ObjectiveComponent>(objEnt, out var objComp))
+                        continue;
+
+                    if (component.StationMind is null)
+                        continue;
+
+                    var progress = _objectives.GetProgress(objEnt, component.StationMind.Value) ?? 0;
+                    var status = "cp14-objective-endtext-status-failure";
+                    if (progress > 0.75f)
+                        status = "cp14-objective-endtext-status-success-a";
+                    if (progress > 0.99f)
+                        status = "cp14-objective-endtext-status-success";
+
+                    var meta = MetaData(objEnt);
+                    sb.Append($"{Loc.GetString(objComp.LocIssuer)}: {meta.EntityName}\n");
+                    sb.Append($"{Loc.GetString("cp14-objective-endtext-progress", ("value", (int)(progress * 100)))} - {Loc.GetString(status)}\n");
+                }
+
+                args.AddLine(sb.ToString());
+            }
         }
     }
 }

@@ -3,7 +3,10 @@
   name: Shadow step
   description: A step through the gash of reality that allows you to cover a small of distance quickly
   components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -0.4
   - type: CP14MagicEffect
+    magicType: Conjuration
     manaCost: 20
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

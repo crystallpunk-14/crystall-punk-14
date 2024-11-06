@@ -26,11 +26,11 @@ public enum SlotFlags
     LEGS = 1 << 13,
     FEET = 1 << 14,
     SUITSTORAGE = 1 << 15,
-    RING = 1 << 16,
-    PANTS = 1 << 17,
-    SHIRT = 1 << 18,
-    CLOAK = 1 << 19,
-    KEYS = 1 << 20,
+    RING = 1 << 16, //CP14
+    PANTS = 1 << 17, //CP14
+    SHIRT = 1 << 18, //CP14
+    CLOAK = 1 << 19, //CP14
+    KEYS = 1 << 20, //CP14
     All = ~NONE,
 
     WITHOUT_POCKET = All & ~POCKET

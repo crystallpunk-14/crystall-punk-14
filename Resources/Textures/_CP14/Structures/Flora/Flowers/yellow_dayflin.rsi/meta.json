@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "CLA",
-  "copyright": "Created by TheShuEd for CrystallPunk14",
+  "copyright": "Created by Max Gab for CrystallPunk14",
   "states": [
     {
       "name": "world1"
@@ -15,6 +15,12 @@
     },
     {
       "name": "world3"
+    },
+    {
+      "name": "world4"
+    },
+    {
+      "name": "world5"
     }
   ]
 }

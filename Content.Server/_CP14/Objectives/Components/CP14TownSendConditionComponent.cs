@@ -39,7 +39,4 @@ public sealed partial class CP14TownSendConditionComponent : Component
 
     [DataField(required: true)]
     public LocId DescriptionText;
-
-    [DataField(required: true)]
-    public LocId DescriptionMultiplyText;
 }

@@ -1,6 +1,20 @@
 - type: stealTargetGroup
-  id: CP14Gold
-  name: cp14-steal-target-gold-ore
+  id: CP14Dino
+  name: cp14-steal-target-dino
   sprite:
-    sprite: _CP14/Objects/Materials/gold_ore.rsi
-    state: ore1
+    sprite: _CP14/Mobs/Animals/dino.rsi
+    state: dead
+
+- type: stealTargetGroup
+  id: CP14Mole
+  name: cp14-steal-target-mole
+  sprite:
+    sprite: _CP14/Mobs/Monster/mole.rsi
+    state: dead
+
+- type: stealTargetGroup
+  id: CP14Boar
+  name: cp14-steal-target-boar
+  sprite:
+    sprite: _CP14/Mobs/Animals/boar.rsi
+    state: dead

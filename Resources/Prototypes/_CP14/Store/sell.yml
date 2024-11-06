@@ -39,3 +39,19 @@
   service: !type:CP14SellStackService
     stackId: CP14CopperBar
     count: 10
+
+- type: storePositionSell
+  id: Wheat
+  name: cp14-store-sell-wheat-name
+  desc: cp14-store-sell-wheat-desc
+  icon: 
+    sprite: _CP14/Objects/Flora/Farm/wheat.rsi
+    state: base1
+  price: 
+    min: 10
+    max: 50
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14Wheat
+    count: 10

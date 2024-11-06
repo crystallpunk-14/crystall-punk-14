@@ -1,0 +1,95 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: CP14BaseJewelry
+  categories: [ ForkFiltered ]
+  components:
+  - type: Tag
+    tags:
+    - CP14Coin
+  - type: Sprite
+    sprite: /Textures/_CP14/Objects/Economy/jewelry.rsi
+  - type: Item
+    size: Tiny
+  - type: CP14Currency
+    currency: 1
+    category: Currency
+
+- type: entity
+  parent: CP14BaseJewelry
+  id: CP14JewelryRuby
+  name: ruby
+  description: A beautiful ruby stone that's worth a lot of money.
+  suffix: 25gp
+  components:
+  - type: CP14Currency
+    currency: 2500
+  - type: Sprite
+    layers:
+      - state: ruby1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          ruby1: ""
+          ruby2: ""
+          ruby3: ""
+
+- type: entity
+  parent: CP14BaseJewelry
+  id: CP14JewelryEmerald
+  name: emerald
+  description: A beautiful emerald stone that's worth a lot of money.
+  suffix: 40gp
+  components:
+  - type: CP14Currency
+    currency: 4000
+  - type: Sprite
+    layers:
+      - state: emerald1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          emerald1: ""
+          emerald2: ""
+          emerald3: ""
+          emerald4: ""
+
+- type: entity
+  parent: CP14BaseJewelry
+  id: CP14JewelrySapphire
+  name: sapphire
+  description: A beautiful sapphire stone that's worth a lot of money.
+  suffix: 30gp
+  components:
+  - type: CP14Currency
+    currency: 3000
+  - type: Sprite
+    layers:
+      - state: sapphire1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          sapphire1: ""
+          sapphire2: ""
+          sapphire3: ""
+
+- type: entity
+  parent: CP14BaseJewelry
+  id: CP14JewelryTopaz
+  name: topaz
+  description: A beautiful topaz stone that's worth a lot of money.
+  suffix: 10gp
+  components:
+  - type: CP14Currency
+    currency: 1000
+  - type: Sprite
+    layers:
+      - state: topaz1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          topaz1: ""

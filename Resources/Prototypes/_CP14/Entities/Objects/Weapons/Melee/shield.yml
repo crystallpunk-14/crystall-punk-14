@@ -12,7 +12,7 @@
     state: icon
   - type: Item
     sprite: _CP14/Objects/Weapons/Melee/Shield/shield.rsi
-    size: Ginormous
+    size: Normal
   - type: Blocking
     passiveBlockModifier:
       coefficients:
@@ -38,7 +38,7 @@
     quickEquip: false
     breakOnMove: false
     slots:
-    - back
+    - neck
   - type: MeleeWeapon
     angle: 0
     range: 1.2

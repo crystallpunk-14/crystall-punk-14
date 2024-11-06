@@ -42,3 +42,8 @@
   license: "CC-BY-4.0"
   copyright: 'by Benboncan of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/Benboncan/sounds/64544/"
+
+- files: ["dino1.ogg, dino2.ogg, dino3.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by GreatNate98 of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/GreatNate98/sounds/586547/"

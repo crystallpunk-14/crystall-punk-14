@@ -33,6 +33,20 @@
             max: 3
 
 - type: entity
+  id: CP14WallStoneIndestructable
+  name: dense rock
+  parent: CP14BaseWall
+  suffix: Undestructable
+  description: An extremely durable stone. Your tools don't seem to be enough to break through it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_strong.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_strong.rsi
+  - type: IconSmooth
+    base: wall
+
+- type: entity
   id: CP14WallDirt
   name: earth wall
   parent: CP14BaseWall
@@ -96,7 +110,7 @@
         spawn:
           CP14OreCopper:
             min: 1
-            max: 5
+            max: 3
 
 - type: entity
   id: CP14WallStoneIronOre
@@ -125,7 +139,7 @@
         spawn:
           CP14OreIron:
             min: 1
-            max: 5
+            max: 3
 
 - type: entity
   id: CP14WallStoneGoldOre
@@ -154,9 +168,6 @@
         spawn:
           CP14OreGold:
             min: 1
-            max: 5
-          CP14StoneBlock1:
-            min: 2
             max: 3
   - type: IconSmooth
     base: wall

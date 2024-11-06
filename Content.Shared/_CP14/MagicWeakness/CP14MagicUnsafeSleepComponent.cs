@@ -1,4 +1,3 @@
-using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 
 namespace Content.Shared._CP14.MagicWeakness;

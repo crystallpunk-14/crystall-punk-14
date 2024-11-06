@@ -57,11 +57,14 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
         if (!TryGetEnergyCrystalFromSlot(ent, out var crystalUid, out var crystalComp, ent.Comp))
             return;
 
-        var scanEvent = new CP14MagicEnergyScanEvent();
-        RaiseLocalEvent(args.Examiner, scanEvent);
-
-        if (!scanEvent.CanScan)
+        if (!args.IsInDetailsRange)
             return;
+
+        //var scanEvent = new CP14MagicEnergyScanEvent();
+        //RaiseLocalEvent(args.Examiner, scanEvent);
+//
+        //if (!scanEvent.CanScan)
+        //    return;
 
         args.PushMarkup(_magicEnergy.GetEnergyExaminedText(crystalUid.Value, crystalComp));
     }
@@ -119,7 +122,8 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
 
         return true;
     }
-    public bool TryUseEnergy(EntityUid uid,
+
+    public bool TryChangeEnergy(EntityUid uid,
         FixedPoint2 energy,
         CP14MagicEnergyCrystalSlotComponent? component = null,
         EntityUid? user = null,
@@ -128,22 +132,12 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
         if (!TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp, component))
         {
             if (user != null)
-                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), uid,user.Value);
+                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), uid, user.Value);
 
             return false;
         }
 
-        if (_magicEnergy.TryConsumeEnergy(energyEnt.Value, energy, energyComp, safe))
-        {
-            if (user != null)
-                _popup.PopupEntity(
-                    Loc.GetString(safe ? "cp14-magic-energy-insufficient" : "cp14-magic-energy-insufficient-unsafe"),
-                    uid,
-                    user.Value);
-
-            return false;
-        }
-
+        _magicEnergy.ChangeEnergy(energyEnt.Value, energyComp, energy, safe);
         return true;
     }
 }

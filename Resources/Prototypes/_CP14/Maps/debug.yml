@@ -12,7 +12,7 @@
         - type: StationJobs
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
-            CP14Captain: [ -1, -1 ]
+            #CP14Captain: [ -1, -1 ]
 
 - type: gameMap
   id: Dev
@@ -32,4 +32,4 @@
           defaultMapLevel: 0
           levels:
             -1:
-              path: /Maps/_CP14/alchemy_test_layer2.yml
+              path: /Maps/_CP14/tavern_cave.yml

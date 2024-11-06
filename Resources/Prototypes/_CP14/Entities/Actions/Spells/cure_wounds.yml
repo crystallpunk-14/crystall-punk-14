@@ -3,8 +3,11 @@
   name: Cure wounds
   description: You touch the creature, healing its body from physical damage
   components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -0.5
   - type: CP14MagicEffect
-    manaCost: 15
+    magicType: Evocation
+    manaCost: 20
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -21,12 +24,19 @@
             Slash: -10
             Blunt: -10
             Piercing: -10
+            Poison: -10
+            Caustic: -10
+            Cold: -10
             Heat: -10
+            Shock: -10
+            Asphyxiation: -50
+            Bloodloss: -10
       - !type:Jitter
+      - !type:ModifyBleedAmount
+      - !type:ModifyBloodLevel
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
-  - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureWounds
   - type: EntityWorldTargetAction
@@ -34,6 +44,7 @@
       components:
       - MobState
     useDelay: 10
+    range: 7
     itemIconStyle: BigAction
     interactOnMiss: false
     sound: !type:SoundPathSpecifier
@@ -42,8 +53,9 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: cure_wounds
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 2
-
+      delay: 3
+      breakOnMove: false
+ 
 - type: entity
   id: CP14RuneCureWounds
   parent: CP14BaseMagicRune

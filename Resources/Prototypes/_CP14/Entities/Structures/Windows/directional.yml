@@ -35,7 +35,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.32,0.49,0"
+          bounds: "-0.49,-0.49,0.49,-0.30"
         density: 1500
         mask:
         - FullTileMask

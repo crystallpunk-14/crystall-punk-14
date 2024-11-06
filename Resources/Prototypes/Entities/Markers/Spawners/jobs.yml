@@ -14,6 +14,7 @@
 - type: entity
   name: observer spawn point
   id: SpawnPointObserver
+  categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
   - type: Sprite
@@ -29,6 +30,7 @@
 - type: entity
   name: latejoin spawn point
   id: SpawnPointLatejoin
+  categories: [ ForkFiltered ]
   parent: SpawnPointJobBase
   components:
   - type: Sprite

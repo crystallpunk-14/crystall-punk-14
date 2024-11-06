@@ -13,13 +13,12 @@ namespace Content.Server.Procedural;
 public sealed partial class DungeonSystem
 {
     // Temporary caches.
-    private readonly HashSet<EntityUid> _entitySet = new();
     private readonly List<DungeonRoomPrototype> _availableRooms = new();
 
     /// <summary>
     /// Gets a random dungeon room matching the specified area and whitelist.
     /// </summary>
-    public DungeonRoomPrototype? GetRoomPrototype(Vector2i size, Random random, EntityWhitelist? whitelist = null)
+    public DungeonRoomPrototype? GetRoomPrototype(Random random, EntityWhitelist? whitelist = null, Vector2i? size = null)
     {
         // Can never be true.
         if (whitelist is { Tags: null })
@@ -31,7 +30,7 @@ public sealed partial class DungeonSystem
 
         foreach (var proto in _prototype.EnumeratePrototypes<DungeonRoomPrototype>())
         {
-            if (proto.Size != size)
+            if (size is not null && proto.Size != size)
                 continue;
 
             if (whitelist == null)
@@ -99,6 +98,20 @@ public sealed partial class DungeonSystem
         return roomRotation;
     }
 
+    private static Box2 GetRotatedBox(Vector2 point1, Vector2 point2, double angle)
+    {
+        if (angle == 0)
+            return new Box2(point1, point2);
+        if (Math.Abs(angle - Math.PI / 2) < 1E-5)
+            return new Box2(point2.X, point1.Y, point1.X, point2.Y);
+        if (Math.Abs(angle - Math.PI) < 1E-5)
+            return new Box2(point2, point1);
+        if (Math.Abs(angle + Math.PI / 2) < 1E-5)
+            return new Box2(point1.X, point2.Y, point2.X, point1.Y);
+
+        throw new NotImplementedException();
+    }
+
     public void SpawnRoom(
         EntityUid gridUid,
         MapGridComponent grid,
@@ -113,18 +126,24 @@ public sealed partial class DungeonSystem
         var templateGrid = Comp<MapGridComponent>(templateMapUid);
         var roomDimensions = room.Size;
 
+        var entitySet = new HashSet<EntityUid>();
+
         var finalRoomRotation = roomTransform.Rotation();
 
-        // go BRRNNTTT on existing stuff
+        /*
         if (clearExisting)
         {
-            var gridBounds = new Box2(Vector2.Transform(-room.Size/2, roomTransform), Vector2.Transform(room.Size/2, roomTransform));
-            _entitySet.Clear();
+            var point1 = Vector2.Transform(-room.Size / 2, roomTransform);
+            var point2 = Vector2.Transform(room.Size / 2, roomTransform);
+
+            var gridBounds = GetRotatedBox(point1, point2, finalRoomRotation);
+
+            entitySet.Clear();
             // Polygon skin moment
             gridBounds = gridBounds.Enlarged(-0.05f);
-            _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, _entitySet, LookupFlags.Uncontained);
+            _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, entitySet, LookupFlags.Uncontained);
 
-            foreach (var templateEnt in _entitySet)
+            foreach (var templateEnt in entitySet)
             {
                 Del(templateEnt);
             }
@@ -137,6 +156,7 @@ public sealed partial class DungeonSystem
                 }
             }
         }
+        */
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;
@@ -156,7 +176,24 @@ public sealed partial class DungeonSystem
                 if (!clearExisting && reservedTiles?.Contains(rounded) == true)
                     continue;
 
+                if (room.IgnoreTile is not null)
+                {
+                    if (_maps.TryGetTileDef(templateGrid, indices, out var tileDef) && room.IgnoreTile == tileDef.ID)
+                        continue;
+                }
+
                 _tiles.Add((rounded, tileRef.Tile));
+
+                //CP14 clearExisting variant
+                if (clearExisting)
+                {
+                    var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
+                    foreach (var ent in anchored)
+                    {
+                        QueueDel(ent);
+                    }
+                }
+                //CP14 clearExisting variant end
             }
         }
 

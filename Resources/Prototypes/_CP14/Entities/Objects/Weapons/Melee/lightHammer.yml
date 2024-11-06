@@ -11,11 +11,20 @@
   description: A small hammer. Good for carpentry work as well as for cracking skulls.
   components:
   - type: Item
+    size: Normal
     storedRotation: -45
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/LightHammer/lightHammer.rsi
     layers:
     - state: icon
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    #sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
   - type: MeleeWeapon
     attackRate: 1.7
     range: 1

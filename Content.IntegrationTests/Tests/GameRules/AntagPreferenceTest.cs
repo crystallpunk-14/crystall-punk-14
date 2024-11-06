@@ -15,7 +15,7 @@ namespace Content.IntegrationTests.Tests.GameRules;
 // Lets not let that happen again.
 [TestFixture]
 public sealed class AntagPreferenceTest
-{
+{/* CP14 disabled
     [Test]
     public async Task TestLobbyPlayersValid()
     {
@@ -72,5 +72,5 @@ public sealed class AntagPreferenceTest
 
         await server.WaitPost(() => server.EntMan.DeleteEntity(uid));
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

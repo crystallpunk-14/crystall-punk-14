@@ -4,6 +4,7 @@
   description: You attract a ghostly hand that draws an object or entity to you
   components:
   - type: CP14MagicEffect
+    magicType: Transmutation
     manaCost: 10
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

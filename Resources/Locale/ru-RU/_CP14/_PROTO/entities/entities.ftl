@@ -312,24 +312,6 @@ ent-CP14ClothingPantsMercenaryTrousers = брюки наемника
 ent-CP14ClothingPantsSouthernMagician = платье южного фокусника
     .desc = Традиционная юбка южного мага, довольно свободная.
 
-ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубаха
-    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
-
-ent-CP14ClothingShirtCottonBlack = хлопковая черная рубаха
-    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
-
-ent-CP14ClothingShirtCottonPurple = хлопковая фиолетовая рубаха
-    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
-
-ent-CP14ClothingShirtCottonRed = хлопковая красная рубаха
-    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
-
-ent-CP14ClothingShirtCottonWhite = хлопковая белая рубаха
-    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
-
-ent-CP14ClothingShirtCottonYellow = хлопковая желтая
-    .desc = { ent-CP14ClothingShirtCottonBlue.desc }
-
 ent-CP14ClothingShirtSteampunk = укрепленная латунью рубашка
     .desc = Белая рубашка, укрепленная латунными вставками.
 

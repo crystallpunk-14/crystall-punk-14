@@ -1,7 +1,7 @@
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_EN_Alchemy
-  name: cp14-guide-entry-alchemy
+  name: Alchemy
   text: "/ServerInfo/_CP14/Guidebook_EN/Alchemy.xml"
   children:
   - CP14_EN_BasicAlchemy
@@ -11,13 +11,20 @@
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_EN_BasicAlchemy
-  name: cp14-guide-entry-basic-alchemy
+  name: Basic effects solutions
   text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/BasicAlchemy.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_EN_Biological
-  name: cp14-guide-entry-biological
+  name: Biological solutions
   text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Biological.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Demiplanes
+  name: Demiplanes exploration
+  text: "/ServerInfo/_CP14/Guidebook_EN/Demiplanes.xml"
   filterEnabled: True

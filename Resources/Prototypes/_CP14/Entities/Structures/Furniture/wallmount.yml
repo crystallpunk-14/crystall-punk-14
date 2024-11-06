@@ -103,38 +103,6 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
-    
-
-- type: entity
-  id: CP14WallmountLamp
-  name: eternal flame lamp
-  parent: CP14BaseWallmount
-  description: A fragile eternal blue fire as proof of the superiority of magic over nature. 
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
-    layers:
-      - state: base
-      - state: on
-        shader: unshaded
-        map: [ "light" ]
-  - type: PointLight
-    energy: 2
-    radius: 8
-    netsync: false
-    color: "#b0eaf6"
-  - type: Appearance
-  #TODO toggleable
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
 
 - type: entity
   id: CP14WallmountBarShelfA

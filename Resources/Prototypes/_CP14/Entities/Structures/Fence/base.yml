@@ -15,8 +15,6 @@
     bodyType: Static
   - type: Transform
     anchored: true
-  - type: Climbable
-    delay: 3.0
 
 - type: entity
   parent: CP14BaseFence

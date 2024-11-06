@@ -1,3 +1,5 @@
+# Undead
+
 - type: entity
   name: walking dead spawner
   id: CP14SpawnMobUndeadZombie
@@ -14,6 +16,8 @@
     prototypes:
     - CP14MobUndeadZombie
 
+# Animal
+
 - type: entity
   name: rabbit spawner
   id: CP14SpawnMobRabbit
@@ -29,3 +33,87 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobRabbit
+
+- type: entity
+  name: pig spawner
+  id: CP14SpawnMobPig
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/pig.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobPig
+
+- type: entity
+  name: boar spawner
+  id: CP14SpawnMobBoar
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/boar.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobBoar
+
+# Dino
+
+- type: entity
+  name: yumkaraptor spawner
+  id: CP14SpawnMobDinoYumkaraptor
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/dino.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobDinoYumkaraptor
+
+- type: entity
+  name: small hydra spawner
+  id: CP14SpawnMobDinoSmallHydra
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/hydra.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobDinoSmallHydra
+
+# Monster
+
+- type: entity
+  name: predatory mole spawner
+  id: CP14SpawnMobMonsterMole
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/mole.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobMonsterMole

@@ -108,9 +108,24 @@ CP14VialSmallChromiumSlime: CP14VialTinyChromiumSlime
 CP14VialSmallLumiMushroom: CP14VialTinyLumiMushroom
 
 #2024-10-20
-CP14SpawnPointHouseKeeper: CP14SpawnPointQuartermaster
+CP14SpawnPointHouseKeeper: CP14SpawnPointCommandant
 CP14WoodenDoorTavernDorms: null
 CP14WallWhitebrick: CP14WallMarbleBrick
+
+#2024-10-24
+CP14SpawnPointQuartermaster: CP14SpawnPointCommandant
+CP14SpawnPointMerchant: CP14SpawnPointBanker
+
+#2024-10-27
+CP14GatherableFlowersYellow: CP14GatherableDayflin
+CP14FlowersYellow: CP14Dayflin
+
+#2024-11-03
+CP14OldLantern: CP14CrystalLampBlueEmpty
+CP14ClothingRingIceFloor: CP14ClothingRingManaGift
+
+#2024-11-05
+CP14ClothingRingCureWounds: CP14MagicHealingStaff
 
 # <---> CrystallPunk migration zone end
 

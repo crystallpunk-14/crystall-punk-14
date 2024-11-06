@@ -43,32 +43,32 @@
 # Bank
 
 - type: entity
-  id: CP14SpawnPointQuartermaster
+  id: CP14SpawnPointCommandant
   parent: CP14SpawnPointJobBase
-  name: quartermaster
+  name: commandant
   categories:
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: CP14Quartermaster
+    job_id: CP14Commandant
   - type: Sprite
     layers:
       - state: green
-      - state: workman #TODO Replace
+      - state: commandant
 
 - type: entity
-  id: CP14SpawnPointMerchant
+  id: CP14SpawnPointBanker
   parent: CP14SpawnPointJobBase
   name: merchant
   categories:
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: CP14Merchant
+    job_id: CP14Banker
   - type: Sprite
     layers:
       - state: green
-      - state: workman #TODO Replace
+      - state: banker
 
 # Mercenary
 
@@ -99,6 +99,20 @@
     layers:
       - state: green
       - state: alchemist
+
+- type: entity
+  id: CP14SpawnPointBlacksmith
+  parent: CP14SpawnPointJobBase
+  name: blacksmith
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Blacksmith
+  - type: Sprite
+    layers:
+      - state: green
+      - state: blacksmith
 
 - type: entity
   id: CP14SpawnPointInnkeeper
