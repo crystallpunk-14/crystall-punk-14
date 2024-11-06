@@ -4,6 +4,7 @@
   description: Materialization of a temporary sharp ice throwing dagger
   components:
   - type: CP14MagicEffect
+    magicType: Evocation
     manaCost: 15
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
@@ -89,6 +90,6 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalBreak
+          collection: GlassBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]

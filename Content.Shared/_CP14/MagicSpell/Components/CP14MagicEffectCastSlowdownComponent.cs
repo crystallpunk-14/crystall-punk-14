@@ -1,6 +1,3 @@
-using Content.Shared._CP14.MagicSpell.Spells;
-using Content.Shared.FixedPoint;
-
 namespace Content.Shared._CP14.MagicSpell.Components;
 
 /// <summary>

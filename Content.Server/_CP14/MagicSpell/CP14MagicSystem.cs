@@ -27,22 +27,22 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 
     private void OnSlowdownCaster(Entity<CP14MagicEffectCastSlowdownComponent> ent, ref CP14StartCastMagicEffectEvent args)
     {
-        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
+        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Caster, out var caster))
             return;
 
         caster.SpeedModifiers.Add(ent.Comp.SpeedMultiplier);
-        _movement.RefreshMovementSpeedModifiers(args.Performer);
+        _movement.RefreshMovementSpeedModifiers(args.Caster);
     }
 
     private void OnUnslowdownCaster(Entity<CP14MagicEffectCastSlowdownComponent> ent, ref CP14EndCastMagicEffectEvent args)
     {
-        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
+        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Caster, out var caster))
             return;
 
         if (caster.SpeedModifiers.Contains(ent.Comp.SpeedMultiplier))
             caster.SpeedModifiers.Remove(ent.Comp.SpeedMultiplier);
 
-        _movement.RefreshMovementSpeedModifiers(args.Performer);
+        _movement.RefreshMovementSpeedModifiers(args.Caster);
     }
 
     private void OnCasterRefreshMovespeed(Entity<CP14MagicCasterSlowdownComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
@@ -64,8 +64,8 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 
     private void OnSpawnMagicVisualEffect(Entity<CP14MagicEffectCastingVisualComponent> ent, ref CP14StartCastMagicEffectEvent args)
     {
-        var vfx = SpawnAttachedTo(ent.Comp.Proto, Transform(args.Performer).Coordinates);
-        _transform.SetParent(vfx, args.Performer);
+        var vfx = SpawnAttachedTo(ent.Comp.Proto, Transform(args.Caster).Coordinates);
+        _transform.SetParent(vfx, args.Caster);
         ent.Comp.SpawnedEntity = vfx;
     }
 
