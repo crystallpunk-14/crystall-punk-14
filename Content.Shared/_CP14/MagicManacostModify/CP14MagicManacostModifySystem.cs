@@ -2,15 +2,14 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.MagicClothing;
+namespace Content.Shared._CP14.MagicManacostModify;
 
-public sealed partial class CP14MagicClothingSystem : EntitySystem
+public sealed partial class CP14MagicManacostModifySystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -18,11 +17,12 @@ public sealed partial class CP14MagicClothingSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14MagicClothingManacostModifyComponent, InventoryRelayedEvent<CP14CalculateManacostEvent>>(OnCalculateManacost);
-        SubscribeLocalEvent<CP14MagicClothingManacostModifyComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
+        SubscribeLocalEvent<CP14MagicManacostModifyComponent, InventoryRelayedEvent<CP14CalculateManacostEvent>>(OnCalculateManacost);
+        SubscribeLocalEvent<CP14MagicManacostModifyComponent, CP14CalculateManacostEvent>(OnCalculateManacost);
+        SubscribeLocalEvent<CP14MagicManacostModifyComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
     }
 
-    private void OnVerbExamine(Entity<CP14MagicClothingManacostModifyComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    private void OnVerbExamine(Entity<CP14MagicManacostModifyComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -37,7 +37,7 @@ public sealed partial class CP14MagicClothingSystem : EntitySystem
             Loc.GetString("armor-examinable-verb-message"));
     }
 
-    private FormattedMessage GetMagicClothingExamine(CP14MagicClothingManacostModifyComponent comp)
+    private FormattedMessage GetMagicClothingExamine(CP14MagicManacostModifyComponent comp)
     {
         var msg = new FormattedMessage();
         msg.AddMarkupOrThrow(Loc.GetString("cp14-clothing-magic-examine"));
@@ -65,13 +65,23 @@ public sealed partial class CP14MagicClothingSystem : EntitySystem
         return msg;
     }
 
-    private void OnCalculateManacost(Entity<CP14MagicClothingManacostModifyComponent> ent, ref InventoryRelayedEvent<CP14CalculateManacostEvent> args)
+    private void OnCalculateManacost(Entity<CP14MagicManacostModifyComponent> ent, ref InventoryRelayedEvent<CP14CalculateManacostEvent> args)
     {
         args.Args.Multiplier += (float)ent.Comp.GlobalModifier;
 
         if (args.Args.MagicType is not null && ent.Comp.Modifiers.TryGetValue(args.Args.MagicType.Value, out var modifier))
         {
             args.Args.Multiplier *= (float)modifier;
+        }
+    }
+
+    private void OnCalculateManacost(Entity<CP14MagicManacostModifyComponent> ent, ref CP14CalculateManacostEvent args)
+    {
+        args.Multiplier += (float)ent.Comp.GlobalModifier;
+
+        if (args.MagicType is not null && ent.Comp.Modifiers.TryGetValue(args.MagicType.Value, out var modifier))
+        {
+            args.Multiplier *= (float)modifier;
         }
     }
 }

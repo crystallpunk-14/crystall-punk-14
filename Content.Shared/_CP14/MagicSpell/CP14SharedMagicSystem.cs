@@ -4,7 +4,9 @@ using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
+using Content.Shared._CP14.MagicSpellStorage;
 using Content.Shared.DoAfter;
+using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
@@ -50,7 +52,6 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnMagicEffectInit(Entity<CP14MagicEffectComponent> ent, ref MapInitEvent args)
     {
-
         var meta = MetaData(ent);
         var sb = new StringBuilder();
 
@@ -83,14 +84,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
             return;
         }
 
-        var manaCost = ent.Comp.ManaCost;
-
-        if (ent.Comp.CanModifyManacost)
-        {
-            var manaEv = new CP14CalculateManacostEvent(args.Caster, ent.Comp.ManaCost, ent.Comp.MagicType);
-            RaiseLocalEvent(args.Caster, manaEv);
-            manaCost = manaEv.GetManacost();
-        }
+        var manaCost = CalculateManacost(ent, args.Caster);
 
         if (!_magicEnergy.HasEnergy(args.Caster, manaCost, magicContainer, ent.Comp.Safe))
         {
@@ -293,15 +287,25 @@ public partial class CP14SharedMagicSystem : EntitySystem
             return;
 
 
+        var manaCost = CalculateManacost(ent, args.Caster.Value);
+        _magicEnergy.TryConsumeEnergy(args.Caster.Value, manaCost, safe: ent.Comp.Safe);
+    }
+
+    private FixedPoint2 CalculateManacost(Entity<CP14MagicEffectComponent> ent, EntityUid caster)
+    {
         var manaCost = ent.Comp.ManaCost;
 
         if (ent.Comp.CanModifyManacost)
         {
-            var manaEv = new CP14CalculateManacostEvent(args.Caster.Value, ent.Comp.ManaCost, ent.Comp.MagicType);
-            RaiseLocalEvent(args.Caster.Value, manaEv);
+            var manaEv = new CP14CalculateManacostEvent(caster, ent.Comp.ManaCost, ent.Comp.MagicType);
+            RaiseLocalEvent(caster, manaEv);
+
+            if (TryComp<CP14ProvidedBySpellStorageComponent>(ent, out var provided) && provided.SpellStorage is not null)
+                RaiseLocalEvent(provided.SpellStorage.Value, manaEv);
+
             manaCost = manaEv.GetManacost();
         }
 
-        _magicEnergy.TryConsumeEnergy(args.Caster.Value, manaCost, safe: ent.Comp.Safe);
+        return manaCost;
     }
 }

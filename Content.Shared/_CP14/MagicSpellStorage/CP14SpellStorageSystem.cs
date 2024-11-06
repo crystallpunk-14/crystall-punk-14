@@ -22,6 +22,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14SpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
+        SubscribeLocalEvent<CP14SpellStorageComponent, ComponentShutdown>(OnMagicStorageShutdown);
 
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, GotEquippedHandEvent>(OnEquippedHand);
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, AddedAttuneToMindEvent>(OnHandAddedAttune);
@@ -44,7 +45,18 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
             if (spellEnt is null)
                 continue;
 
+            var provided = EntityManager.EnsureComponent<CP14ProvidedBySpellStorageComponent>(spellEnt.Value);
+            provided.SpellStorage = mStorage;
+
             mStorage.Comp.SpellEntities.Add(spellEnt.Value);
+        }
+    }
+
+    private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)
+    {
+        foreach (var spell in mStorage.Comp.SpellEntities)
+        {
+            QueueDel(spell);
         }
     }
 
