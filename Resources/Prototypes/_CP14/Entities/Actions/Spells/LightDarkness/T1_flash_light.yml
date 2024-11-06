@@ -29,7 +29,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: flash_light
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 0.5
+      castDelay: 0.5
 
 - type: entity
   id: CP14RuneFlashLight

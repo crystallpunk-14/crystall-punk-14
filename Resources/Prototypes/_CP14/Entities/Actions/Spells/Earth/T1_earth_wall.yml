@@ -31,7 +31,6 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: earth_wall
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 1
 
 - type: entity
   id: CP14RuneEarthWall

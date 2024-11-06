@@ -5,6 +5,7 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicSpellStorage;
+using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
@@ -28,6 +29,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly SharedActionsSystem _action = default!;
 
     public override void Initialize()
     {
@@ -110,13 +112,14 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (!TryCastSpell(args.Action, args.Performer))
             return;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.Delay, new CP14DelayedInstantActionDoAfterEvent(), args.Action)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, new CP14DelayedInstantActionDoAfterEvent(args.Cooldown), args.Action)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
             Hidden = delayedEffect.Hidden,
-            BlockDuplicate = true,
             DistanceThreshold = 100f,
+            CancelDuplicate = true,
+            BlockDuplicate = true,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -146,15 +149,17 @@ public partial class CP14SharedMagicSystem : EntitySystem
 
         var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
             EntityManager.GetNetCoordinates(args.Coords),
-            EntityManager.GetNetEntity(args.Entity));
+            EntityManager.GetNetEntity(args.Entity),
+            args.Cooldown);
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.Delay, doAfter, args.Action)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, doAfter, args.Action)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
             Hidden = delayedEffect.Hidden,
+            DistanceThreshold = 100f,
+            CancelDuplicate = true,
             BlockDuplicate = true,
-            DistanceThreshold = 100f
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -189,6 +194,9 @@ public partial class CP14SharedMagicSystem : EntitySystem
             effect.Effect(EntityManager, effectArgs);
         }
 
+        if (args.Cooldown is not null)
+            _action.CP14ForceUseDelay(ent, TimeSpan.FromSeconds(args.Cooldown.Value));
+
         var ev = new CP14AfterCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
     }
@@ -201,10 +209,14 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (args.Cancelled || !_net.IsServer)
             return;
 
+        _action.StartUseDelay(ent);
         foreach (var effect in ent.Comp.Effects)
         {
             effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates));
         }
+
+        if (args.Cooldown is not null)
+            _action.CP14ForceUseDelay(ent, TimeSpan.FromSeconds(args.Cooldown.Value));
 
         var ev = new CP14AfterCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref ev);

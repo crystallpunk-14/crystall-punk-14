@@ -28,7 +28,6 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: flame_creation
     event: !type:CP14DelayedInstantActionEvent
-      delay: 1
       breakOnMove: false
 
 - type: entity

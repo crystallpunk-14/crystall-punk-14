@@ -9,7 +9,10 @@ public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorl
     ICP14DelayedMagicEffect
 {
     [DataField]
-    public float Delay { get; private set; } = 1f;
+    public float Cooldown { get; private set; } = 1f;
+
+    [DataField]
+    public float CastDelay { get; private set; } = 1f;
 
     [DataField]
     public bool BreakOnMove { get; private set; } = true;
@@ -31,11 +34,14 @@ public sealed partial class CP14DelayedEntityWorldTargetActionDoAfterEvent : DoA
     public NetCoordinates? TargetPosition;
     [DataField]
     public NetEntity? TargetEntity;
+    [DataField]
+    public float? Cooldown;
 
-    public CP14DelayedEntityWorldTargetActionDoAfterEvent(NetCoordinates? targetPos, NetEntity? targetEntity)
+    public CP14DelayedEntityWorldTargetActionDoAfterEvent(NetCoordinates? targetPos, NetEntity? targetEntity, float cooldown)
     {
         TargetPosition = targetPos;
         TargetEntity = targetEntity;
+        Cooldown = cooldown;
     }
 
     public override DoAfterEvent Clone() => this;
@@ -45,7 +51,10 @@ public sealed partial class CP14DelayedEntityWorldTargetActionDoAfterEvent : DoA
 public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, ICP14DelayedMagicEffect
 {
     [DataField]
-    public float Delay { get; private set; } = 1f;
+    public float Cooldown { get; private set; } = 3f;
+
+    [DataField]
+    public float CastDelay { get; private set; } = 1f;
 
     [DataField]
     public bool BreakOnMove { get; private set; } = true;
@@ -61,6 +70,15 @@ public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, 
 }
 
 [Serializable, NetSerializable]
-public sealed partial class CP14DelayedInstantActionDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class CP14DelayedInstantActionDoAfterEvent : DoAfterEvent
 {
+    [DataField]
+    public float? Cooldown;
+
+    public CP14DelayedInstantActionDoAfterEvent(float cooldown)
+    {
+        Cooldown = cooldown;
+    }
+
+    public override DoAfterEvent Clone() => this;
 }

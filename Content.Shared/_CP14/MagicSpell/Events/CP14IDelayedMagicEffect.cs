@@ -5,7 +5,7 @@ public interface ICP14DelayedMagicEffect // The speak n spell interface
     /// <summary>
     /// Localized string spoken by the caster when casting this spell.
     /// </summary>
-    public float Delay { get; }
+    public float CastDelay { get; }
 
     public bool BreakOnMove { get; }
 

@@ -21,7 +21,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
   - type: EntityWorldTargetAction
-    useDelay: 20
     checkCanAccess: false
     raiseOnUser: true
     range: 60
@@ -32,7 +31,8 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: fireball
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 3
+      cooldown: 5
+      castDelay: 15
       breakOnMove: false
       entityDistance: 1000
 

@@ -127,7 +127,6 @@
       sprite: _CP14/Effects/Magic/spells_icons_monster.rsi
       state: subterranean_leap
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 1
       hidden: true
       breakOnMove: false
     raiseOnUser: true
