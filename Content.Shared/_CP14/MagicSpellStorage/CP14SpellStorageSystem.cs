@@ -1,10 +1,8 @@
 using Content.Shared._CP14.MagicAttuning;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
-using Content.Shared.Clothing.Components;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Inventory;
 using Content.Shared.Mind;
 
 namespace Content.Shared._CP14.MagicSpellStorage;
