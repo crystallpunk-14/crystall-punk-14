@@ -4,7 +4,7 @@
   description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
   components:
   - type: CP14MagicEffect
-    magicType: Conjuration
+    magicType: Fire
     manaCost: 5
     effects:
     - !type:CP14SpellSpawnEntityOnTarget

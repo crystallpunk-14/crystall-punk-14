@@ -1,39 +1,39 @@
 - type: magicType
-  id: Abjuration
-  name: cp14-magic-type-abjuration #Ограждение
-  color: "#c94328"
+  id: Fire
+  name: cp14-magic-type-fire
+  color: "#d9741c"
 
 - type: magicType
-  id: Conjuration
-  name: cp14-magic-type-conjuration #Призыв
-  color: "#8e28c9"
+  id: Water
+  name: cp14-magic-type-water
+  color: "#1c94d9"
 
 - type: magicType
-  id: Divination
-  name: cp14-magic-type-divination #Прорицание
-  color: "#81d3e3"
+  id: Earth
+  name: cp14-magic-type-earth
+  color: "#70533f"
 
 - type: magicType
-  id: Enchantment
-  name: cp14-magic-type-enchantment #Очарование
-  color: "#7147a1"
+  id: Healing
+  name: cp14-magic-type-healing
+  color: "#89e04f"
 
 - type: magicType
-  id: Evocation
-  name: cp14-magic-type-evocation #Воплощение
-  color: "#47a14a"
+  id: LightDarkness
+  name: cp14-magic-type-light-darkness
+  color: "#ba97b8"
 
 - type: magicType
-  id: Illusion
-  name: cp14-magic-type-illusion #Иллюзия
-  color: "#cc1275"
+  id: Meta
+  name: cp14-magic-type-meta
+  color: "#dcffdb"
 
 - type: magicType
-  id: Necromancy
-  name: cp14-magic-type-necromancy #Некромантия
-  color: "#4dc4a4"
+  id: Gate
+  name: cp14-magic-type-gate
+  color: "#32597d"
 
 - type: magicType
-  id: Transmutation
-  name: cp14-magic-type-transmutation #Трансмутация
-  color: "#3333d4"
+  id: Movement
+  name: cp14-magic-type-movement
+  color: "#63ceff"

@@ -6,7 +6,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -0.9
   - type: CP14MagicEffect
-    magicType: Evocation
+    magicType: Earth
     manaCost: 15
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

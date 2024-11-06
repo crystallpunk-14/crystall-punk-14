@@ -62,6 +62,16 @@ public partial class CP14SharedMagicSystem : EntitySystem
             sb.Append($"\n {Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
         }
 
+        if (TryComp<CP14MagicEffectVerbalAspectComponent>(ent, out var verbal))
+        {
+            sb.Append("\n" + Loc.GetString("cp14-magic-verbal-aspect"));
+        }
+
+        if (TryComp<CP14MagicEffectSomaticAspectComponent>(ent, out var somatic))
+        {
+            sb.Append("\n" + Loc.GetString("cp14-magic-somatic-aspect") + " " + somatic.FreeHandRequired);
+        }
+
         _meta.SetEntityDescription(ent, sb.ToString());
     }
 

@@ -4,7 +4,7 @@
   description: Creates a flash of bright, blinding light.
   components:
   - type: CP14MagicEffect
-    magicType: Abjuration
+    magicType: LightDarkness
     manaCost: 10
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
