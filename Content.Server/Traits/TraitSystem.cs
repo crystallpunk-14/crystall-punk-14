@@ -1,4 +1,6 @@
+using Content.Server.Actions;
 using Content.Server.GameTicking;
+using Content.Shared.Actions;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Roles;
@@ -14,6 +16,8 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly ActionsSystem _action = default!; //CP14
+    [Dependency] private readonly ActionContainerSystem _actionContainer = default!; //CP14
 
     public override void Initialize()
     {
@@ -44,9 +48,15 @@ public sealed class TraitSystem : EntitySystem
             if (_whitelistSystem.IsWhitelistFail(traitPrototype.Whitelist, args.Mob) ||
                 _whitelistSystem.IsBlacklistPass(traitPrototype.Blacklist, args.Mob))
                 continue;
+            
+            // CP14 start - add all spells to player mind
+            foreach (var spell in traitPrototype.Actions)
+                _action.AddAction(args.Mob, spell);
+            //CP14 end
 
             // Add all components required by the prototype
-            EntityManager.AddComponents(args.Mob, traitPrototype.Components, false);
+            if (traitPrototype.Components.Count > 0) //CP14 added check
+                EntityManager.AddComponents(args.Mob, traitPrototype.Components, false);
 
             // Add item required by the trait
             if (traitPrototype.TraitGear == null)

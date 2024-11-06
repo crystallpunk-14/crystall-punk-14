@@ -1,4 +1,9 @@
 - type: traitCategory
+  id: CP14Magic
+  name: cp14-trait-category-magic
+  maxTraitPoints: 1
+
+- type: traitCategory
   id: CP14PhysicalTraits
   name: cp14-trait-category-physical
   maxTraitPoints: 1
