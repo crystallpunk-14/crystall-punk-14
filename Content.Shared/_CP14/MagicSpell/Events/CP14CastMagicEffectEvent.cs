@@ -11,13 +11,13 @@ public sealed class CP14BeforeCastMagicEffectEvent : CancellableEntityEventArgs
     /// <summary>
     /// The Performer of the event, to check if they meet the requirements.
     /// </summary>
-    public EntityUid Caster { get; init; }
+    public EntityUid Performer { get; init; }
 
     public string Reason = string.Empty;
 
-    public CP14BeforeCastMagicEffectEvent(EntityUid caster)
+    public CP14BeforeCastMagicEffectEvent(EntityUid performer)
     {
-        Caster = caster;
+        Performer = performer;
     }
 
     public void PushReason(string reason)
@@ -31,7 +31,7 @@ public sealed class CP14AfterCastMagicEffectEvent : EntityEventArgs
 {
     public EntityUid? Caster { get; init; }
 
-    public CP14AfterCastMagicEffectEvent(EntityUid caster)
+    public CP14AfterCastMagicEffectEvent(EntityUid? caster)
     {
         Caster = caster;
     }

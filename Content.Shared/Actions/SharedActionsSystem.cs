@@ -657,7 +657,7 @@ public abstract class SharedActionsSystem : EntitySystem
         var worldValidated
             = ValidateWorldTargetBase(user, coords, comp.CheckCanInteract, comp.CheckCanAccess, comp.Range);
 
-        if (!entityValidated && !worldValidated)
+        if (!entityValidated || !worldValidated) //CP14 OR not AND (experiment)
             return false;
 
         var ev = new ValidateActionEntityWorldTargetEvent(user,

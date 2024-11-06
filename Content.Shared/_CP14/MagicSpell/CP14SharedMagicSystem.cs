@@ -34,6 +34,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeAspects();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
@@ -44,15 +45,12 @@ public partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedInstantActionDoAfterEvent>(OnDelayedInstantActionDoAfter);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityWorldTargetActionDoAfterEvent>(OnDelayedEntityWorldTargetDoAfter);
 
-        SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14BeforeCastMagicEffectEvent>(OnSomaticAspectBeforeCast);
-
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14BeforeCastMagicEffectEvent>(OnVerbalAspectBeforeCast);
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14AfterCastMagicEffectEvent>(OnVerbalAspectAfterCast);
-
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14AfterCastMagicEffectEvent>(OnAfterCastMagicEffect);
     }
 
+    /// <summary>
+    /// Auto generation description for spell action
+    /// </summary>
     private void OnMagicEffectInit(Entity<CP14MagicEffectComponent> ent, ref MapInitEvent args)
     {
         var meta = MetaData(ent);
@@ -79,28 +77,47 @@ public partial class CP14SharedMagicSystem : EntitySystem
         _meta.SetEntityDescription(ent, sb.ToString());
     }
 
+    /// <summary>
+    /// Checking to see if the spell can be used at all
+    /// </summary>
+    private bool CanCastSpell(EntityUid spell, EntityUid performer)
+    {
+        var ev = new CP14BeforeCastMagicEffectEvent(performer);
+        RaiseLocalEvent(spell, ref ev);
+        if (ev.Reason != string.Empty && _net.IsServer)
+        {
+            _popup.PopupEntity(ev.Reason, performer, performer);
+        }
+        return !ev.Cancelled;
+    }
+
+    /// <summary>
+    /// Before using a spell, a mana check is made for the amount of mana to show warnings.
+    /// </summary>
     private void OnBeforeCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
     {
-        if (!TryComp<CP14MagicEnergyContainerComponent>(args.Caster, out var magicContainer))
+        if (!TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var magicContainer))
         {
             args.Cancel();
             return;
         }
 
-        var manaCost = CalculateManacost(ent, args.Caster);
+        var manaCost = CalculateManacost(ent, args.Performer);
 
-        if (!_magicEnergy.HasEnergy(args.Caster, manaCost, magicContainer, ent.Comp.Safe))
+        if (!_magicEnergy.HasEnergy(args.Performer, manaCost, magicContainer, ent.Comp.Safe))
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana"));
             args.Cancel();
         }
-        else if(!_magicEnergy.HasEnergy(args.Caster, manaCost, magicContainer, true) && _net.IsServer) //фу какой некрасивый  |  хардкод
+        else if(!_magicEnergy.HasEnergy(args.Performer, manaCost, magicContainer, true) && _net.IsServer) //фу какой некрасивый  |  хардкод
         {  //                                                                                                                    \/
-            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Caster, args.Caster, PopupType.SmallCaution);
+            _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Performer, args.Performer, PopupType.SmallCaution);
         }
     }
 
-    //Action calls
+    /// <summary>
+    /// Instant action used from hotkey event
+    /// </summary>
     private void OnInstantAction(CP14DelayedInstantActionEvent args)
     {
         if (args.Handled)
@@ -109,21 +126,11 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (args is not ICP14DelayedMagicEffect delayedEffect)
             return;
 
-        if (!TryCastSpell(args.Action, args.Performer))
+        if (!CanCastSpell(args.Action, args.Performer))
             return;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, new CP14DelayedInstantActionDoAfterEvent(args.Cooldown), args.Action)
-        {
-            BreakOnMove = delayedEffect.BreakOnMove,
-            BreakOnDamage = delayedEffect.BreakOnDamage,
-            Hidden = delayedEffect.Hidden,
-            DistanceThreshold = 100f,
-            CancelDuplicate = true,
-            BlockDuplicate = true,
-        };
-
-        if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
-            return;
+        var spellArgs =
+            new CP14SpellEffectBaseArgs(args.Performer, args.Performer, Transform(args.Performer).Coordinates);
 
         var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
         RaiseLocalEvent(args.Action, ref evStart);
@@ -133,14 +140,39 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             foreach (var effect in magicEffect.TelegraphyEffects)
             {
-                effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.Performer, args.Performer, Transform(args.Performer).Coordinates));
+                effect.Effect(EntityManager, spellArgs);
             }
+        }
+
+        if (args.CastDelay > 0)
+        {
+            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, new CP14DelayedInstantActionDoAfterEvent(args.Cooldown), args.Action)
+            {
+                BreakOnMove = delayedEffect.BreakOnMove,
+                BreakOnDamage = delayedEffect.BreakOnDamage,
+                Hidden = delayedEffect.Hidden,
+                DistanceThreshold = 100f,
+                CancelDuplicate = true,
+                BlockDuplicate = true,
+            };
+
+            if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
+                return;
+        }
+        else
+        {
+            if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magic))
+                return;
+
+            CastSpell((args.Action, magic), spellArgs, args.Cooldown);
         }
 
         args.Handled = true;
     }
 
-    //Action calls
+    /// <summary>
+    /// Target action used from hotkey event
+    /// </summary>
     private void OnEntityWorldTargetAction(CP14DelayedEntityWorldTargetActionEvent args)
     {
         if (args.Handled)
@@ -149,7 +181,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (args is not ICP14DelayedMagicEffect delayedEffect)
             return;
 
-        if (!TryCastSpell(args.Action, args.Performer))
+        if (!CanCastSpell(args.Action, args.Performer))
             return;
 
         var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
@@ -157,18 +189,8 @@ public partial class CP14SharedMagicSystem : EntitySystem
             EntityManager.GetNetEntity(args.Entity),
             args.Cooldown);
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, doAfter, args.Action)
-        {
-            BreakOnMove = delayedEffect.BreakOnMove,
-            BreakOnDamage = delayedEffect.BreakOnDamage,
-            Hidden = delayedEffect.Hidden,
-            DistanceThreshold = 100f,
-            CancelDuplicate = true,
-            BlockDuplicate = true,
-        };
-
-        if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
-            return;
+        var spellArgs =
+            new CP14SpellEffectBaseArgs(args.Performer, args.Entity, args.Coords);
 
         var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
         RaiseLocalEvent(args.Action, ref evStart);
@@ -178,8 +200,31 @@ public partial class CP14SharedMagicSystem : EntitySystem
         {
             foreach (var effect in magicEffect.TelegraphyEffects)
             {
-                effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.Performer, args.Entity, args.Coords));
+                effect.Effect(EntityManager, spellArgs);
             }
+        }
+
+        if (args.CastDelay > 0)
+        {
+            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, doAfter, args.Action)
+            {
+                BreakOnMove = delayedEffect.BreakOnMove,
+                BreakOnDamage = delayedEffect.BreakOnDamage,
+                Hidden = delayedEffect.Hidden,
+                DistanceThreshold = 100f,
+                CancelDuplicate = true,
+                BlockDuplicate = true,
+            };
+
+            if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
+                return;
+        }
+        else
+        {
+            if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magic))
+                return;
+
+            CastSpell((args.Action, magic), spellArgs, args.Cooldown);
         }
 
         args.Handled = true;
@@ -199,21 +244,9 @@ public partial class CP14SharedMagicSystem : EntitySystem
             return;
 
         var targetPos = EntityManager.GetCoordinates(args.TargetPosition);
-        EntityUid? targetEnt;
-        EntityManager.TryGetEntity(args.TargetEntity, out targetEnt);
+        EntityManager.TryGetEntity(args.TargetEntity, out var targetEnt);
 
-        var effectArgs = new CP14SpellEffectBaseArgs(args.User, targetEnt, targetPos);
-
-        foreach (var effect in ent.Comp.Effects)
-        {
-            effect.Effect(EntityManager, effectArgs);
-        }
-
-        if (args.Cooldown is not null)
-            _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(args.Cooldown.Value));
-
-        var ev = new CP14AfterCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref ev);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, targetEnt, targetPos), args.Cooldown ?? 0);
 
         args.Handled = true;
     }
@@ -230,84 +263,30 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (!_net.IsServer)
             return;
 
-        foreach (var effect in ent.Comp.Effects)
-        {
-            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates));
-        }
-
-        if (args.Cooldown is not null)
-            _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(args.Cooldown.Value));
-
-        var ev = new CP14AfterCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref ev);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates), args.Cooldown ?? 0);
 
         args.Handled = true;
     }
 
 
-
-
-
-
-    private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
+    private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args, float cooldown)
     {
-        if (TryComp<HandsComponent>(args.Caster, out var hands) || hands is not null)
-        {
-            var freeHand = 0;
-            foreach (var hand in hands.Hands)
-            {
-                if (hand.Value.IsEmpty)
-                    freeHand++;
-            }
-            if (freeHand >= ent.Comp.FreeHandRequired)
-                return;
-        }
-        args.PushReason(Loc.GetString("cp14-magic-spell-need-somatic-component"));
-        args.Cancel();
-    }
 
-    private void OnVerbalAspectBeforeCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
-    {
-        if (HasComp<MutedComponent>(args.Caster))
-        {
-            args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
-            args.Cancel();
-        }
-    }
+        _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(cooldown));
 
-    private void OnVerbalAspectStartCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14StartCastMagicEffectEvent args)
-    {
-        var ev = new CP14VerbalAspectSpeechEvent
-        {
-            Performer = args.Caster,
-            Speech = ent.Comp.StartSpeech,
-        };
-        RaiseLocalEvent(ent, ref ev);
-    }
-
-    private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
-    {
-        if (_net.IsClient)
+        if (!_net.IsServer)
             return;
 
-        var ev = new CP14VerbalAspectSpeechEvent
+        foreach (var effect in ent.Comp.Effects)
         {
-            Performer = args.Caster,
-            Speech = ent.Comp.EndSpeech,
-        };
+            effect.Effect(EntityManager, args);
+        }
+
+        var ev = new CP14AfterCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
     }
 
-    private bool TryCastSpell(EntityUid spell, EntityUid performer)
-    {
-        var ev = new CP14BeforeCastMagicEffectEvent(performer);
-        RaiseLocalEvent(spell, ref ev);
-        if (ev.Reason != string.Empty && _net.IsServer)
-        {
-            _popup.PopupEntity(ev.Reason, performer, performer);
-        }
-        return !ev.Cancelled;
-    }
+
 
     private void OnAfterCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
     {

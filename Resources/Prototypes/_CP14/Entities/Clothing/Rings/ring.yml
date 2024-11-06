@@ -23,8 +23,6 @@
     layers:
     - state: brass_ring
     - state: saphhire_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -41,8 +39,6 @@
     layers:
     - state: brass_ring
     - state: saphhire_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -59,8 +55,6 @@
     layers:
     - state: brass_ring
     - state: saphhire_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -77,8 +71,6 @@
     layers:
     - state: brass_ring
     - state: ruby_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -95,8 +87,6 @@
     layers:
     - state: brass_ring
     - state: ruby_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -113,8 +103,6 @@
     layers:
     - state: brass_ring
     - state: amethyst_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -131,8 +119,6 @@
     layers:
     - state: brass_ring
     - state: amethyst_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -149,8 +135,6 @@
     layers:
     - state: brass_ring
     - state: berill_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -167,8 +151,6 @@
     layers:
     - state: brass_ring
     - state: citrine_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:
@@ -185,8 +167,6 @@
     layers:
     - state: brass_ring
     - state: citrine_stone_small
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
     spells:

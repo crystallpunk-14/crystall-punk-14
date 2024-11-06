@@ -1,10 +1,7 @@
 namespace Content.Shared._CP14.MagicSpell.Events;
 
-public interface ICP14DelayedMagicEffect // The speak n spell interface
+public interface ICP14DelayedMagicEffect
 {
-    /// <summary>
-    /// Localized string spoken by the caster when casting this spell.
-    /// </summary>
     public float CastDelay { get; }
 
     public bool BreakOnMove { get; }

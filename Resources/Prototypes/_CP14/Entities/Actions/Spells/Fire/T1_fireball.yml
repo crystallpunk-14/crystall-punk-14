@@ -31,8 +31,8 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: fireball
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      cooldown: 5
-      castDelay: 15
+      cooldown: 15
+      castDelay: 5
       breakOnMove: false
       entityDistance: 1000
 
