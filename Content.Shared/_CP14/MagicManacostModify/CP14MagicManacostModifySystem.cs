@@ -72,7 +72,7 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
 
     private void OnCalculateManacost(Entity<CP14MagicManacostModifyComponent> ent, ref CP14CalculateManacostEvent args)
     {
-        args.Multiplier += (float)ent.Comp.GlobalModifier;
+        args.Multiplier *= (float)ent.Comp.GlobalModifier;
 
         if (args.MagicType is not null && ent.Comp.Modifiers.TryGetValue(args.MagicType.Value, out var modifier))
         {

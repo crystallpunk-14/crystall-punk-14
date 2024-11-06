@@ -94,8 +94,8 @@ public partial class CP14SharedMagicSystem : EntitySystem
             args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana"));
             args.Cancel();
         }
-        else if(!_magicEnergy.HasEnergy(args.Caster, manaCost, magicContainer, true) && _net.IsServer)
-        {
+        else if(!_magicEnergy.HasEnergy(args.Caster, manaCost, magicContainer, true) && _net.IsServer) //фу какой некрасивый  |  хардкод
+        {  //                                                                                                                    \/
             _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Caster, args.Caster, PopupType.SmallCaution);
         }
     }
