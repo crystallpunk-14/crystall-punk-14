@@ -79,7 +79,6 @@
     icon: Interface/Actions/scream.png
     checkCanInteract: false
     event: !type:BooActionEvent
-    startDelay: true
     useDelay: 120
 
 - type: entity
