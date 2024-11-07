@@ -283,12 +283,13 @@
 - type: cp14DemiplaneModifier
   id: EnemyZombie
   difficulty: 0.4
+  generationWeight: 20
   layers:
     - !type:OreDunGen
-      entity: CP14SpawnMobUndeadZombie
-      count: 3
-      minGroupSize: 1
-      maxGroupSize: 3
+      entity: CP14SpawnMobUndeadZombieRandom
+      count: 4
+      minGroupSize: 3
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: EnemyDyno
