@@ -20,7 +20,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSphereOfLight
   - type: InstantAction
-    useDelay: 15
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
@@ -28,7 +27,8 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: sphere_of_light
     event: !type:CP14DelayedInstantActionEvent
-      delay: 0.5
+      cooldown: 15
+      castDelay: 0.5
       breakOnMove: false
 
 - type: entity

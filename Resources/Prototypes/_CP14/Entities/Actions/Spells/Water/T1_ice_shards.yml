@@ -4,7 +4,7 @@
   description: Fast ice needles, for rapid shooting of targets.
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.25
+    speedMultiplier: 0.75
   - type: CP14MagicEffect
     magicType: Water
     manaCost: 5
@@ -17,7 +17,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceShards
   - type: EntityWorldTargetAction
-    useDelay: 0.5
     repeat: true
     checkCanAccess: false
     raiseOnUser: true
@@ -29,7 +28,8 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: ice_shards
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 0.5
+      cooldown: 0.5
+      castDelay: 0.5
       breakOnMove: false
       entityDistance: 1000
 

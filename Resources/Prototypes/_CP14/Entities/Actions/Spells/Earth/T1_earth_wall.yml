@@ -4,7 +4,7 @@
   description: Raises a solid wall of earth from the bowels.
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.9
+    speedMultiplier: 0.3
   - type: CP14MagicEffect
     magicType: Earth
     manaCost: 15
@@ -22,7 +22,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneEarthWall
   - type: EntityWorldTargetAction
-    useDelay: 10
     range: 10
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
@@ -31,7 +30,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: earth_wall
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 1
+      cooldown: 10
 
 - type: entity
   id: CP14RuneEarthWall

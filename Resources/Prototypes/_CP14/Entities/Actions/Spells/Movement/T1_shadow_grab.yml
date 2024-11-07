@@ -20,21 +20,24 @@
       spawns:
       - CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
-  - type: EntityWorldTargetAction
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Item
     canTargetSelf: false
     checkCanAccess: false
     range: 10
-    useDelay: 10
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: shadow_grab
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 2
-      hidden: true
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 5
+      castDelay: 0.5
       entityDistance: 1000
+      breakOnMove: false
 
 - type: entity
   id: CP14ImpactEffectShadowGrab

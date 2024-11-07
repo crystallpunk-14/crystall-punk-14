@@ -26,12 +26,11 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaGift
-  - type: EntityWorldTargetAction
+  - type: EntityTargetAction
     whitelist:
       components:
       - CP14MagicEnergyContainer
       - CP14MagicEnergyCrystalSlot
-    useDelay: 5
     itemIconStyle: BigAction
     interactOnMiss: false
     sound: !type:SoundPathSpecifier
@@ -39,8 +38,9 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: mana_gift
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 2
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 5
+      castDelay: 2
 
 - type: entity
   id: CP14RuneManaGift

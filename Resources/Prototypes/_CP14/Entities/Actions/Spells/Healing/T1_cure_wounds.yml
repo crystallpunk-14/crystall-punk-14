@@ -4,7 +4,7 @@
   description: You touch the creature, healing its body from physical damage
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.5
+    speedMultiplier: 0.5
   - type: CP14MagicEffect
     magicType: Healing
     manaCost: 20
@@ -39,11 +39,10 @@
     endSpeech: "vulnera tua"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureWounds
-  - type: EntityWorldTargetAction
+  - type: EntityTargetAction
     whitelist:
       components:
       - MobState
-    useDelay: 10
     range: 7
     itemIconStyle: BigAction
     interactOnMiss: false
@@ -52,8 +51,9 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: cure_wounds
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 3
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 10
+      castDelay: 3
       breakOnMove: false
  
 - type: entity

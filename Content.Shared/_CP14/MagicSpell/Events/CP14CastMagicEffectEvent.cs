@@ -5,19 +5,22 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
 
+/// <summary>
+/// Called first to verify that all conditions are met and the spell can be performed.
+/// </summary>
 [ByRefEvent]
-public sealed class CP14BeforeCastMagicEffectEvent : CancellableEntityEventArgs
+public sealed class CP14CastMagicEffectAttemptEvent : CancellableEntityEventArgs
 {
     /// <summary>
     /// The Performer of the event, to check if they meet the requirements.
     /// </summary>
-    public EntityUid Caster { get; init; }
+    public EntityUid Performer { get; init; }
 
     public string Reason = string.Empty;
 
-    public CP14BeforeCastMagicEffectEvent(EntityUid caster)
+    public CP14CastMagicEffectAttemptEvent(EntityUid performer)
     {
-        Caster = caster;
+        Performer = performer;
     }
 
     public void PushReason(string reason)
@@ -26,56 +29,21 @@ public sealed class CP14BeforeCastMagicEffectEvent : CancellableEntityEventArgs
     }
 }
 
-[ByRefEvent]
-public sealed class CP14AfterCastMagicEffectEvent : EntityEventArgs
-{
-    public EntityUid? Caster { get; init; }
-
-    public CP14AfterCastMagicEffectEvent(EntityUid caster)
-    {
-        Caster = caster;
-    }
-}
 /// <summary>
-/// is invoked if all conditions are met and the spell has begun to be cast
+/// An event that checks all sorts of conditions, and calculates the total cost of casting a spell. Called before the spell is cast.
 /// </summary>
-[ByRefEvent]
-public sealed class CP14StartCastMagicEffectEvent : EntityEventArgs
-{
-    public EntityUid Caster { get; init; }
-
-    public CP14StartCastMagicEffectEvent(EntityUid caster)
-    {
-        Caster = caster;
-    }
-}
-
-/// <summary>
-/// is invoked on the spell itself when the spell process has been completed or interrupted
-/// </summary>
-[ByRefEvent]
-public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
-{
-    public EntityUid Caster { get; init; }
-
-    public CP14EndCastMagicEffectEvent(EntityUid caster)
-    {
-        Caster = caster;
-    }
-}
-
+/// <remarks>TODO: This call is duplicated at the beginning of the cast for checks, and at the end of the cast for mana subtraction.</remarks>
 public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRelayEvent
 {
     public FixedPoint2 Manacost = 0f;
 
-
     public float Multiplier = 1f;
-    public EntityUid Caster;
+    public EntityUid Performer;
     public ProtoId<CP14MagicTypePrototype>? MagicType;
 
-    public CP14CalculateManacostEvent(EntityUid caster, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype>? magicType)
+    public CP14CalculateManacostEvent(EntityUid performer, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype>? magicType)
     {
-        Caster = caster;
+        Performer = performer;
         Manacost = initialManacost;
         MagicType = magicType;
     }
@@ -86,4 +54,46 @@ public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRela
     }
 
     public SlotFlags TargetSlots { get; } = SlotFlags.All;
+}
+
+/// <summary>
+/// is invoked if all conditions are met and the spell has begun to be cast (doAfter start moment)
+/// </summary>
+[ByRefEvent]
+public sealed class CP14StartCastMagicEffectEvent : EntityEventArgs
+{
+    public EntityUid Performer { get; init; }
+
+    public CP14StartCastMagicEffectEvent(EntityUid performer)
+    {
+        Performer = performer;
+    }
+}
+
+/// <summary>
+/// is invoked on the spell itself when the spell process has been completed or interrupted (doAfter end moment)
+/// </summary>
+[ByRefEvent]
+public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
+{
+    public EntityUid Performer { get; init; }
+
+    public CP14EndCastMagicEffectEvent(EntityUid performer)
+    {
+        Performer = performer;
+    }
+}
+
+/// <summary>
+/// is invoked only if the spell has been successfully cast
+/// </summary>
+[ByRefEvent]
+public sealed class CP14AfterCastMagicEffectEvent : EntityEventArgs
+{
+    public EntityUid? Performer { get; init; }
+
+    public CP14AfterCastMagicEffectEvent(EntityUid? performer)
+    {
+        Performer = performer;
+    }
 }

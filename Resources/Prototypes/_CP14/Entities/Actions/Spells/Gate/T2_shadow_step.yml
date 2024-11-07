@@ -4,7 +4,7 @@
   description: A step through the gash of reality that allows you to cover a small of distance quickly
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.4
+    speedMultiplier: 0.8
   - type: CP14MagicEffect
     magicType: Gate
     manaCost: 20
@@ -18,7 +18,6 @@
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
   - type: EntityWorldTargetAction
-    useDelay: 10
     range: 7
     checkCanAccess: false
     itemIconStyle: BigAction
@@ -28,7 +27,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: shadow_step
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 1
+      cooldown: 10
       hidden: true
       breakOnMove: false
 

@@ -247,6 +247,18 @@ public abstract class SharedActionsSystem : EntitySystem
         Dirty(actionId.Value, action);
     }
 
+    public void CP14StartCustomDelay(EntityUid? actionId, TimeSpan delay)
+    {
+        if (actionId == null)
+            return;
+
+        if (!TryGetActionData(actionId, out var action))
+            return;
+
+        action.Cooldown = (GameTiming.CurTime, GameTiming.CurTime + delay);
+        Dirty(actionId.Value, action);
+    }
+
     public void SetUseDelay(EntityUid? actionId, TimeSpan? delay)
     {
         if (!TryGetActionData(actionId, out var action) || action.UseDelay == delay)

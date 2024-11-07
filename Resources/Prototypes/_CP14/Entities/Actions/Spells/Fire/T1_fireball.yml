@@ -4,7 +4,7 @@
   description: An effective method of destruction - an explosive fireball
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.7
+    speedMultiplier: 0.3
   - type: CP14MagicEffect
     magicType: Fire
     manaCost: 20
@@ -21,7 +21,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
   - type: EntityWorldTargetAction
-    useDelay: 20
     checkCanAccess: false
     raiseOnUser: true
     range: 60
@@ -32,7 +31,8 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: fireball
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      delay: 3
+      cooldown: 15
+      castDelay: 5
       breakOnMove: false
       entityDistance: 1000
 

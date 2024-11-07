@@ -13,6 +13,23 @@
     ambientLightColor: "#020a1c"
 
 - type: dungeonConfig
+  id: CP14EdTestLayers
+  layers:
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeode
+    #- !type:EntityTableDunGen
+    #  minCount: 20
+    #  maxCount: 20
+    #  table: !type:GroupSelector
+    #    children:
+    #    - id: CP14DemiplanePassway
+    - !type:OreDunGen
+      entity: CP14DemiplanePassway
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: dungeonConfig
   id: CP14DemiplaneGrassGeode
   layers:
     # Masks
