@@ -4,7 +4,7 @@
   description: Raises a solid wall of earth from the bowels.
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.9
+    speedMultiplier: 0.3
   - type: CP14MagicEffect
     magicType: Earth
     manaCost: 15

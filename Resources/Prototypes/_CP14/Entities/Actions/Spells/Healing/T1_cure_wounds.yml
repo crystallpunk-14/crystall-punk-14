@@ -4,7 +4,7 @@
   description: You touch the creature, healing its body from physical damage
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.5
+    speedMultiplier: 0.5
   - type: CP14MagicEffect
     magicType: Healing
     manaCost: 20

@@ -4,7 +4,7 @@
   description: Fast ice needles, for rapid shooting of targets.
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.25
+    speedMultiplier: 0.75
   - type: CP14MagicEffect
     magicType: Water
     manaCost: 5

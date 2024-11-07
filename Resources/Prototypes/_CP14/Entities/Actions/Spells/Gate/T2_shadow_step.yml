@@ -4,7 +4,7 @@
   description: A step through the gash of reality that allows you to cover a small of distance quickly
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.4
+    speedMultiplier: 0.8
   - type: CP14MagicEffect
     magicType: Gate
     manaCost: 20

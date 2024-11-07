@@ -5,18 +5,18 @@ using Content.Shared.Speech.Muting;
 
 namespace Content.Shared._CP14.MagicSpell;
 
-public partial class CP14SharedMagicSystem
+public abstract partial class CP14SharedMagicSystem
 {
     private void InitializeAspects()
     {
-        SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14BeforeCastMagicEffectEvent>(OnSomaticAspectBeforeCast);
+        SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14CastMagicEffectAttemptEvent>(OnSomaticAspectBeforeCast);
 
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14BeforeCastMagicEffectEvent>(OnVerbalAspectBeforeCast);
+        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalAspectBeforeCast);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14AfterCastMagicEffectEvent>(OnVerbalAspectAfterCast);
     }
 
-    private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
+    private void OnSomaticAspectBeforeCast(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
     {
         if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
         {
@@ -33,7 +33,7 @@ public partial class CP14SharedMagicSystem
         args.Cancel();
     }
 
-    private void OnVerbalAspectBeforeCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
+    private void OnVerbalAspectBeforeCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
     {
         if (HasComp<MutedComponent>(args.Performer))
         {
@@ -46,7 +46,7 @@ public partial class CP14SharedMagicSystem
     {
         var ev = new CP14VerbalAspectSpeechEvent
         {
-            Performer = args.Caster,
+            Performer = args.Performer,
             Speech = ent.Comp.StartSpeech,
         };
         RaiseLocalEvent(ent, ref ev);
@@ -59,7 +59,7 @@ public partial class CP14SharedMagicSystem
 
         var ev = new CP14VerbalAspectSpeechEvent
         {
-            Performer = args.Caster,
+            Performer = args.Performer,
             Speech = ent.Comp.EndSpeech,
         };
         RaiseLocalEvent(ent, ref ev);

@@ -4,7 +4,7 @@
   description: An effective method of destruction - an explosive fireball
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: -0.7
+    speedMultiplier: 0.3
   - type: CP14MagicEffect
     magicType: Fire
     manaCost: 20

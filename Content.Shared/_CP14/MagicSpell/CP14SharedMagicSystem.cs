@@ -8,9 +8,8 @@ using Content.Shared._CP14.MagicSpellStorage;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
-using Content.Shared.Hands.Components;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Speech.Muting;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -20,7 +19,7 @@ namespace Content.Shared._CP14.MagicSpell;
 /// <summary>
 /// This system handles the basic mechanics of spell use, such as doAfter, event invocation, and energy spending.
 /// </summary>
-public partial class CP14SharedMagicSystem : EntitySystem
+public abstract partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -30,6 +29,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
 
     public override void Initialize()
     {
@@ -37,7 +37,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
         InitializeAspects();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
-        SubscribeLocalEvent<CP14MagicEffectComponent, CP14BeforeCastMagicEffectEvent>(OnBeforeCastMagicEffect);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14CastMagicEffectAttemptEvent>(OnBeforeCastMagicEffect);
 
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
         SubscribeLocalEvent<CP14DelayedEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
@@ -46,6 +46,10 @@ public partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityWorldTargetActionDoAfterEvent>(OnDelayedEntityWorldTargetDoAfter);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14AfterCastMagicEffectEvent>(OnAfterCastMagicEffect);
+
+        SubscribeLocalEvent<CP14MagicEffectCastSlowdownComponent, CP14StartCastMagicEffectEvent>(OnSlowdownCaster);
+        SubscribeLocalEvent<CP14MagicEffectCastSlowdownComponent, CP14EndCastMagicEffectEvent>(OnUnslowdownCaster);
+        SubscribeLocalEvent<CP14MagicCasterSlowdownComponent, RefreshMovementSpeedModifiersEvent>(OnCasterRefreshMovespeed);
     }
 
     /// <summary>
@@ -82,7 +86,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     /// </summary>
     private bool CanCastSpell(EntityUid spell, EntityUid performer)
     {
-        var ev = new CP14BeforeCastMagicEffectEvent(performer);
+        var ev = new CP14CastMagicEffectAttemptEvent(performer);
         RaiseLocalEvent(spell, ref ev);
         if (ev.Reason != string.Empty && _net.IsServer)
         {
@@ -94,7 +98,7 @@ public partial class CP14SharedMagicSystem : EntitySystem
     /// <summary>
     /// Before using a spell, a mana check is made for the amount of mana to show warnings.
     /// </summary>
-    private void OnBeforeCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14BeforeCastMagicEffectEvent args)
+    private void OnBeforeCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
     {
         if (!TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var magicContainer))
         {
@@ -129,43 +133,26 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (!CanCastSpell(args.Action, args.Performer))
             return;
 
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, args.Performer, Transform(args.Performer).Coordinates);
+        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
+            return;
+
+        if (args.CastDelay > 0)
+        {
+            var doAfter = new CP14DelayedInstantActionDoAfterEvent(args.Cooldown);
+            if (!TryCastSpellDelayed(delayedEffect, doAfter, args.Action, args.Performer))
+                return;
+        }
 
         var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
         RaiseLocalEvent(args.Action, ref evStart);
 
-        //Telegraphy effects
-        if (_net.IsServer && TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
-        {
-            foreach (var effect in magicEffect.TelegraphyEffects)
-            {
-                effect.Effect(EntityManager, spellArgs);
-            }
-        }
+        var spellArgs =
+            new CP14SpellEffectBaseArgs(args.Performer, args.Performer, Transform(args.Performer).Coordinates);
 
-        if (args.CastDelay > 0)
-        {
-            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, new CP14DelayedInstantActionDoAfterEvent(args.Cooldown), args.Action)
-            {
-                BreakOnMove = delayedEffect.BreakOnMove,
-                BreakOnDamage = delayedEffect.BreakOnDamage,
-                Hidden = delayedEffect.Hidden,
-                DistanceThreshold = 100f,
-                CancelDuplicate = true,
-                BlockDuplicate = true,
-            };
+        CastTelegraphy((args.Action, magicEffect), spellArgs);
 
-            if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
-                return;
-        }
-        else
-        {
-            if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magic))
-                return;
-
-            CastSpell((args.Action, magic), spellArgs, args.Cooldown);
-        }
+        if (args.CastDelay == 0)
+            CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
 
         args.Handled = true;
     }
@@ -184,53 +171,37 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (!CanCastSpell(args.Action, args.Performer))
             return;
 
-        var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
-            EntityManager.GetNetCoordinates(args.Coords),
-            EntityManager.GetNetEntity(args.Entity),
-            args.Cooldown);
+        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
+            return;
 
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, args.Entity, args.Coords);
+        if (args.CastDelay > 0)
+        {
+            var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
+                EntityManager.GetNetCoordinates(args.Coords),
+                EntityManager.GetNetEntity(args.Entity),
+                args.Cooldown);
+
+            if (!TryCastSpellDelayed(delayedEffect, doAfter, args.Action, args.Performer))
+                return;
+        }
 
         var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
         RaiseLocalEvent(args.Action, ref evStart);
 
-        //Telegraphy effects
-        if (_net.IsServer && TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
-        {
-            foreach (var effect in magicEffect.TelegraphyEffects)
-            {
-                effect.Effect(EntityManager, spellArgs);
-            }
-        }
+        var spellArgs =
+            new CP14SpellEffectBaseArgs(args.Performer, args.Entity, args.Coords);
 
-        if (args.CastDelay > 0)
-        {
-            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Performer, delayedEffect.CastDelay, doAfter, args.Action)
-            {
-                BreakOnMove = delayedEffect.BreakOnMove,
-                BreakOnDamage = delayedEffect.BreakOnDamage,
-                Hidden = delayedEffect.Hidden,
-                DistanceThreshold = 100f,
-                CancelDuplicate = true,
-                BlockDuplicate = true,
-            };
+        CastTelegraphy((args.Action, magicEffect), spellArgs);
 
-            if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
-                return;
-        }
-        else
-        {
-            if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magic))
-                return;
-
-            CastSpell((args.Action, magic), spellArgs, args.Cooldown);
-        }
+        if (args.CastDelay == 0)
+            CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
 
         args.Handled = true;
     }
 
-    //Action doAfter end
+    /// <summary>
+    /// Action doAfter finished or interrupted
+    /// </summary>
     private void OnDelayedEntityWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent,
         ref CP14DelayedEntityWorldTargetActionDoAfterEvent args)
     {
@@ -238,9 +209,6 @@ public partial class CP14SharedMagicSystem : EntitySystem
         RaiseLocalEvent(ent, ref endEv);
 
         if (args.Cancelled || args.Handled)
-            return;
-
-        if (!_net.IsServer)
             return;
 
         var targetPos = EntityManager.GetCoordinates(args.TargetPosition);
@@ -251,7 +219,10 @@ public partial class CP14SharedMagicSystem : EntitySystem
         args.Handled = true;
     }
 
-    //Action doAfter end
+
+    /// <summary>
+    /// Action doAfter finished or interrupted
+    /// </summary>
     private void OnDelayedInstantActionDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
     {
         var endEv = new CP14EndCastMagicEffectEvent(args.User);
@@ -260,44 +231,63 @@ public partial class CP14SharedMagicSystem : EntitySystem
         if (args.Cancelled || args.Handled)
             return;
 
-        if (!_net.IsServer)
-            return;
-
         CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates), args.Cooldown ?? 0);
 
         args.Handled = true;
     }
 
+    private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
+    {
+        if (!_net.IsServer)
+            return;
+        
+        foreach (var effect in ent.Comp.TelegraphyEffects)
+        {
+            effect.Effect(EntityManager, args);
+        }
+    }
+
+    private bool TryCastSpellDelayed(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, EntityUid action, EntityUid  performer)
+    {
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, delayedEffect.CastDelay, doAfter, action)
+        {
+            BreakOnMove = delayedEffect.BreakOnMove,
+            BreakOnDamage = delayedEffect.BreakOnDamage,
+            Hidden = delayedEffect.Hidden,
+            DistanceThreshold = 100f,
+            CancelDuplicate = true,
+            BlockDuplicate = true,
+        };
+
+        return _doAfter.TryStartDoAfter(doAfterEventArgs);
+    }
 
     private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args, float cooldown)
     {
-
         _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(cooldown));
 
-        if (!_net.IsServer)
-            return;
-
-        foreach (var effect in ent.Comp.Effects)
+        if (_net.IsServer)
         {
-            effect.Effect(EntityManager, args);
+            foreach (var effect in ent.Comp.Effects)
+            {
+                effect.Effect(EntityManager, args);
+            }
         }
 
         var ev = new CP14AfterCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
     }
 
-
-
     private void OnAfterCastMagicEffect(Entity<CP14MagicEffectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
     {
         if (_net.IsClient)
             return;
 
-        if (!HasComp<CP14MagicEnergyContainerComponent>(args.Caster))
+        if (!HasComp<CP14MagicEnergyContainerComponent>(args.Performer))
             return;
 
-        var manaCost = CalculateManacost(ent, args.Caster.Value);
-        _magicEnergy.TryConsumeEnergy(args.Caster.Value, manaCost, safe: ent.Comp.Safe);
+        var manaCost = CalculateManacost(ent, args.Performer.Value);
+        _magicEnergy.TryConsumeEnergy(args.Performer.Value, manaCost, safe: ent.Comp.Safe);
     }
 
     private FixedPoint2 CalculateManacost(Entity<CP14MagicEffectComponent> ent, EntityUid caster)
@@ -316,5 +306,36 @@ public partial class CP14SharedMagicSystem : EntitySystem
         }
 
         return manaCost;
+    }
+
+    private void OnSlowdownCaster(Entity<CP14MagicEffectCastSlowdownComponent> ent, ref CP14StartCastMagicEffectEvent args)
+    {
+        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
+            return;
+
+        caster.SpeedModifiers.Add(ent.Comp.SpeedMultiplier);
+        _movement.RefreshMovementSpeedModifiers(args.Performer);
+    }
+
+    private void OnUnslowdownCaster(Entity<CP14MagicEffectCastSlowdownComponent> ent, ref CP14EndCastMagicEffectEvent args)
+    {
+        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
+            return;
+
+        if (caster.SpeedModifiers.Contains(ent.Comp.SpeedMultiplier))
+            caster.SpeedModifiers.Remove(ent.Comp.SpeedMultiplier);
+
+        _movement.RefreshMovementSpeedModifiers(args.Performer);
+    }
+
+    private void OnCasterRefreshMovespeed(Entity<CP14MagicCasterSlowdownComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
+    {
+        var result = 1f;
+        foreach (var modifier in ent.Comp.SpeedModifiers)
+        {
+            result = MathF.Min(result, modifier);
+        }
+
+        args.ModifySpeed(result);
     }
 }
