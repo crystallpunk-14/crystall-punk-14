@@ -69,3 +69,12 @@
   icon: { sprite: _CP14/Objects/Materials/gold_bar.rsi, state: bar_2 }
   color: "#FFD700"
   price: 0 #?
+
+- type: material
+  id: CP14FloraMaterial
+  stackEntity: CP14FloraMaterial1
+  name: cp14-material-flora
+  unit: materials-unit-bunch
+  icon: { sprite: _CP14/Objects/Materials/flora.rsi, state: grass_material1 }
+  color: "#85903e"
+  price: 0 #?

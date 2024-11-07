@@ -60,3 +60,10 @@
   spawn: CP14GlassSheet1
   icon: { sprite: _CP14/Objects/Materials/glass.rsi, state: glass_2 }
   maxCount: 10
+
+- type: stack
+  id: CP14FloraMaterial
+  name: cp14-stack-flora
+  icon: { sprite: "_CP14/Objects/Materials/flora.rsi", state: grass_material1 }
+  spawn: CP14FloraMaterial1
+  maxCount: 2
