@@ -92,7 +92,7 @@ public abstract partial class CP14SharedMagicSystem
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
 
-        if (args.CastDelay == 0)
+        if (args.CastDelay <= 0)
             CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
 
         args.Handled = true;
@@ -133,7 +133,8 @@ public abstract partial class CP14SharedMagicSystem
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
 
-        if (args.CastDelay == 0)
+        //TODO: Bug! If CastDelay = 0, cooldown dont want apply to spell aftercast
+        if (args.CastDelay <= 0)
             CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
 
         args.Handled = true;

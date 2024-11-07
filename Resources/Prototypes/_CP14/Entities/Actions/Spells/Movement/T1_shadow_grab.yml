@@ -34,9 +34,10 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: shadow_grab
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 10
-      castDelay: 0
+      cooldown: 5
+      castDelay: 0.5
       entityDistance: 1000
+      breakOnMove: false
 
 - type: entity
   id: CP14ImpactEffectShadowGrab
