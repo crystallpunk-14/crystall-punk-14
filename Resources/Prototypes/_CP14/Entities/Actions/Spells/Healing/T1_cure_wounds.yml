@@ -39,7 +39,7 @@
     endSpeech: "vulnera tua"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureWounds
-  - type: EntityWorldTargetAction
+  - type: EntityTargetAction
     whitelist:
       components:
       - MobState
@@ -51,7 +51,7 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: cure_wounds
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+    event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
       castDelay: 3
       breakOnMove: false

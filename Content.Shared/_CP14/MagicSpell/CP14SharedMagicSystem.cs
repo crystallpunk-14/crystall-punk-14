@@ -34,22 +34,14 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeActions();
         InitializeAspects();
+        InitializeSlowdown();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14CastMagicEffectAttemptEvent>(OnBeforeCastMagicEffect);
 
-        SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
-        SubscribeLocalEvent<CP14DelayedEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
-
-        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedInstantActionDoAfterEvent>(OnDelayedInstantActionDoAfter);
-        SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityWorldTargetActionDoAfterEvent>(OnDelayedEntityWorldTargetDoAfter);
-
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14AfterCastMagicEffectEvent>(OnAfterCastMagicEffect);
-
-        SubscribeLocalEvent<CP14MagicEffectCastSlowdownComponent, CP14StartCastMagicEffectEvent>(OnSlowdownCaster);
-        SubscribeLocalEvent<CP14MagicEffectCastSlowdownComponent, CP14EndCastMagicEffectEvent>(OnUnslowdownCaster);
-        SubscribeLocalEvent<CP14MagicCasterSlowdownComponent, RefreshMovementSpeedModifiersEvent>(OnCasterRefreshMovespeed);
     }
 
     /// <summary>
@@ -119,128 +111,11 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
     }
 
-    /// <summary>
-    /// Instant action used from hotkey event
-    /// </summary>
-    private void OnInstantAction(CP14DelayedInstantActionEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        if (args is not ICP14DelayedMagicEffect delayedEffect)
-            return;
-
-        if (!CanCastSpell(args.Action, args.Performer))
-            return;
-
-        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
-            return;
-
-        if (args.CastDelay > 0)
-        {
-            var doAfter = new CP14DelayedInstantActionDoAfterEvent(args.Cooldown);
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, args.Action, args.Performer))
-                return;
-        }
-
-        var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
-        RaiseLocalEvent(args.Action, ref evStart);
-
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, args.Performer, Transform(args.Performer).Coordinates);
-
-        CastTelegraphy((args.Action, magicEffect), spellArgs);
-
-        if (args.CastDelay == 0)
-            CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
-
-        args.Handled = true;
-    }
-
-    /// <summary>
-    /// Target action used from hotkey event
-    /// </summary>
-    private void OnEntityWorldTargetAction(CP14DelayedEntityWorldTargetActionEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        if (args is not ICP14DelayedMagicEffect delayedEffect)
-            return;
-
-        if (!CanCastSpell(args.Action, args.Performer))
-            return;
-
-        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
-            return;
-
-        if (args.CastDelay > 0)
-        {
-            var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
-                EntityManager.GetNetCoordinates(args.Coords),
-                EntityManager.GetNetEntity(args.Entity),
-                args.Cooldown);
-
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, args.Action, args.Performer))
-                return;
-        }
-
-        var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
-        RaiseLocalEvent(args.Action, ref evStart);
-
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, args.Entity, args.Coords);
-
-        CastTelegraphy((args.Action, magicEffect), spellArgs);
-
-        if (args.CastDelay == 0)
-            CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
-
-        args.Handled = true;
-    }
-
-    /// <summary>
-    /// Action doAfter finished or interrupted
-    /// </summary>
-    private void OnDelayedEntityWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent,
-        ref CP14DelayedEntityWorldTargetActionDoAfterEvent args)
-    {
-        var endEv = new CP14EndCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref endEv);
-
-        if (args.Cancelled || args.Handled)
-            return;
-
-        var targetPos = EntityManager.GetCoordinates(args.TargetPosition);
-        EntityManager.TryGetEntity(args.TargetEntity, out var targetEnt);
-
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, targetEnt, targetPos), args.Cooldown ?? 0);
-
-        args.Handled = true;
-    }
-
-
-    /// <summary>
-    /// Action doAfter finished or interrupted
-    /// </summary>
-    private void OnDelayedInstantActionDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
-    {
-        var endEv = new CP14EndCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref endEv);
-
-        if (args.Cancelled || args.Handled)
-            return;
-
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates), args.Cooldown ?? 0);
-
-        args.Handled = true;
-    }
-
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
         if (!_net.IsServer)
             return;
-        
+
         foreach (var effect in ent.Comp.TelegraphyEffects)
         {
             effect.Effect(EntityManager, args);
@@ -306,36 +181,5 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
 
         return manaCost;
-    }
-
-    private void OnSlowdownCaster(Entity<CP14MagicEffectCastSlowdownComponent> ent, ref CP14StartCastMagicEffectEvent args)
-    {
-        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
-            return;
-
-        caster.SpeedModifiers.Add(ent.Comp.SpeedMultiplier);
-        _movement.RefreshMovementSpeedModifiers(args.Performer);
-    }
-
-    private void OnUnslowdownCaster(Entity<CP14MagicEffectCastSlowdownComponent> ent, ref CP14EndCastMagicEffectEvent args)
-    {
-        if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
-            return;
-
-        if (caster.SpeedModifiers.Contains(ent.Comp.SpeedMultiplier))
-            caster.SpeedModifiers.Remove(ent.Comp.SpeedMultiplier);
-
-        _movement.RefreshMovementSpeedModifiers(args.Performer);
-    }
-
-    private void OnCasterRefreshMovespeed(Entity<CP14MagicCasterSlowdownComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
-    {
-        var result = 1f;
-        foreach (var modifier in ent.Comp.SpeedModifiers)
-        {
-            result = MathF.Min(result, modifier);
-        }
-
-        args.ModifySpeed(result);
     }
 }

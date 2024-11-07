@@ -27,6 +27,50 @@ public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorl
     public float EntityDistance { get; private set; } = 100f;
 }
 
+//Entity Target
+public sealed partial class CP14DelayedEntityTargetActionEvent : EntityTargetActionEvent,
+    ICP14DelayedMagicEffect
+{
+    [DataField]
+    public float Cooldown { get; private set; } = 1f;
+
+    [DataField]
+    public float CastDelay { get; private set; } = 1f;
+
+    [DataField]
+    public bool BreakOnMove { get; private set; } = true;
+
+    [DataField]
+    public bool BreakOnDamage { get; private set; } = true;
+
+    [DataField]
+    public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public float EntityDistance { get; private set; } = 100f;
+}
+
+public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, ICP14DelayedMagicEffect
+{
+    [DataField]
+    public float Cooldown { get; private set; } = 3f;
+
+    [DataField]
+    public float CastDelay { get; private set; } = 1f;
+
+    [DataField]
+    public bool BreakOnMove { get; private set; } = true;
+
+    [DataField]
+    public bool BreakOnDamage { get; private set; } = true;
+
+    [DataField]
+    public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public float EntityDistance { get; private set; } = 100f;
+}
+
 [Serializable, NetSerializable]
 public sealed partial class CP14DelayedEntityWorldTargetActionDoAfterEvent : DoAfterEvent
 {
@@ -47,26 +91,21 @@ public sealed partial class CP14DelayedEntityWorldTargetActionDoAfterEvent : DoA
     public override DoAfterEvent Clone() => this;
 }
 
-//Instant
-public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, ICP14DelayedMagicEffect
+[Serializable, NetSerializable]
+public sealed partial class CP14DelayedEntityTargetActionDoAfterEvent : DoAfterEvent
 {
     [DataField]
-    public float Cooldown { get; private set; } = 3f;
-
+    public NetEntity? TargetEntity;
     [DataField]
-    public float CastDelay { get; private set; } = 1f;
+    public float? Cooldown;
 
-    [DataField]
-    public bool BreakOnMove { get; private set; } = true;
+    public CP14DelayedEntityTargetActionDoAfterEvent(NetEntity? targetEntity, float cooldown)
+    {
+        TargetEntity = targetEntity;
+        Cooldown = cooldown;
+    }
 
-    [DataField]
-    public bool BreakOnDamage { get; private set; } = true;
-
-    [DataField]
-    public bool Hidden { get; private set; } = false;
-
-    [DataField]
-    public float EntityDistance { get; private set; } = 100f;
+    public override DoAfterEvent Clone() => this;
 }
 
 [Serializable, NetSerializable]

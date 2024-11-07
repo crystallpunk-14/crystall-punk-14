@@ -2,6 +2,8 @@ namespace Content.Shared._CP14.MagicSpell.Events;
 
 public interface ICP14DelayedMagicEffect
 {
+    public float Cooldown { get; }
+
     public float CastDelay { get; }
 
     public bool BreakOnMove { get; }
