@@ -18,7 +18,7 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
             return;
 
-        caster.SpeedModifiers.Add(ent.Comp.SpeedMultiplier);
+        caster.SpeedModifier = ent.Comp.SpeedMultiplier;
         _movement.RefreshMovementSpeedModifiers(args.Performer);
     }
 
@@ -27,20 +27,13 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicCasterSlowdownComponent>(args.Performer, out var caster))
             return;
 
-        if (caster.SpeedModifiers.Contains(ent.Comp.SpeedMultiplier))
-            caster.SpeedModifiers.Remove(ent.Comp.SpeedMultiplier);
+        caster.SpeedModifier = 1f;
 
         _movement.RefreshMovementSpeedModifiers(args.Performer);
     }
 
     private void OnCasterRefreshMovespeed(Entity<CP14MagicCasterSlowdownComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
-        var result = 1f;
-        foreach (var modifier in ent.Comp.SpeedModifiers)
-        {
-            result = MathF.Min(result, modifier);
-        }
-
-        args.ModifySpeed(result);
+        args.ModifySpeed(ent.Comp.SpeedModifier);
     }
 }
