@@ -92,6 +92,7 @@
     damageModifierSet: CP14Zombie
   - type: PassiveDamage
     allowedStates:
+    - Alive
     - Critical
     damage:
       groups:
