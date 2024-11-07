@@ -7,7 +7,7 @@
 
 - type: stack
   id: CP14Gauze
-  name: cp14-stack-pack-bandage
+  name: cp14-stack-pack-gauze
   icon: { sprite: "_CP14/Objects/Specific/Medical/medical.rsi", state: bandage_3 }
   spawn: CP14Gauze
   maxCount: 10
