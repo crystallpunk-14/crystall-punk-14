@@ -11,7 +11,7 @@
       state: bar_3
   - type: EntityTableSpawner
     table: !type:NestedSelector
-      prob: 1.0
+      prob: 0.7
       tableId: CP14TableExpeditionLootCommon
 
 - type: entityTable
@@ -60,13 +60,16 @@
         - id: CP14VialSmallBlueAmanita
         - id: CP14VialTinyChromiumSlime
         - id: CP14VialTinyLumiMushroom
-      - !type:GroupSelector
-        children:
-        - id: CP14ChromiumSlime
-        - id: CP14LumiMushroom
       - id: CP14SilverCoin5
+      - id: CP14Nail10
+      - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMedium
       - id: CP14DemiplanKey
+      - !type:AllSelector
+        children:
+        - id: CP14Crossbolt
+        - id: CP14Crossbolt
+        - id: CP14Crossbolt
       # remove this when players can create their own magic items
       - !type:GroupSelector
         children:
