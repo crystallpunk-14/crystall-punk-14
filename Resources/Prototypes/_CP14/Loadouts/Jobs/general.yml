@@ -7,7 +7,6 @@
   loadouts:
   - CP14ClothingCloakSimpleWhite
   - CP14ClothingCloakSimpleDarkBlue
-  - CP14ClothingCloakBlacksmithArpon
   - CP14ClothingCloakFurcapeBlack
   - CP14ClothingCloakFurcapeBlue
   - CP14ClothingCloakMaidArpon
@@ -22,11 +21,6 @@
   id: CP14ClothingCloakSimpleDarkBlue
   equipment:
     cloak: CP14ClothingCloakSimpleDarkBlue
-
-- type: loadout
-  id: CP14ClothingCloakBlacksmithArpon
-  equipment:
-    cloak: CP14ClothingCloakBlacksmithArpon
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -296,17 +290,68 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - CP14ClothingRingCureWounds
+  - CP14MagicHealingStaff
+  - CP14ClothingRingManaGift
+  - CP14EnergyCrystalSmall
+  - CP14CrystalLampOrangeEmpty
+  - CP14BaseSharpeningStone
+  - CP14Scissors
+  - CP14Bucket
+  - CP14Rope
   - CP14PenFeather
-  - CP14Paper
-  - CP14CopperCoin10
-  - CP14BaseCrowbar
+  - CP14PaperFolderBlue
+  - CP14SilverCoin5
+  - CP14BaseDagger
+  - CP14BaseSickle
+  - CP14BasePickaxe
 
 - type: loadout
-  id: CP14ClothingRingCureWounds
+  id: CP14MagicHealingStaff
+  storage:
+    neck:
+    - CP14MagicHealingStaff
+
+- type: loadout
+  id: CP14ClothingRingManaGift
   storage:
     back:
-    - CP14ClothingRingCureWounds
+    - CP14ClothingRingManaGift
+
+- type: loadout
+  id: CP14EnergyCrystalSmall
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+
+- type: loadout
+  id: CP14CrystalLampOrangeEmpty
+  storage:
+    back:
+    - CP14CrystalLampOrangeEmpty
+
+- type: loadout
+  id: CP14BaseSharpeningStone
+  storage:
+    back:
+    - CP14BaseSharpeningStone
+
+- type: loadout
+  id: CP14Scissors
+  storage:
+    back:
+    - CP14Scissors
+
+- type: loadout
+  id: CP14Bucket
+  storage:
+    back:
+    - CP14Bucket
+
+- type: loadout
+  id: CP14Rope
+  storage:
+    back:
+    - CP14Rope
 
 - type: loadout
   id: CP14PenFeather
@@ -315,19 +360,31 @@
     - CP14PenFeather
 
 - type: loadout
-  id: CP14Paper
+  id: CP14PaperFolderBlue
   storage:
     back:
-    - CP14Paper
+    - CP14PaperFolderBlue
 
 - type: loadout
-  id: CP14CopperCoin10
+  id: CP14SilverCoin5
   storage:
     back:
-    - CP14CopperCoin
+    - CP14SilverCoin5
 
 - type: loadout
-  id: CP14BaseCrowbar
+  id: CP14BaseDagger
   storage:
     back:
-    - CP14BaseCrowbar
+    - CP14BaseDagger
+
+- type: loadout
+  id: CP14BaseSickle
+  storage:
+    back:
+    - CP14BaseSickle
+
+- type: loadout
+  id: CP14BasePickaxe
+  storage:
+    back:
+    - CP14BasePickaxe

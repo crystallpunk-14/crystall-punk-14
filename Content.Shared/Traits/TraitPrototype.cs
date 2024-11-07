@@ -41,7 +41,7 @@ public sealed partial class TraitPrototype : IPrototype
     /// The components that get added to the player, when they pick this trait.
     /// </summary>
     [DataField]
-    public ComponentRegistry Components { get; private set; } = default!;
+    public ComponentRegistry Components { get; private set; } = new(); //CP14 new()
 
     /// <summary>
     /// Gear that is given to the player, when they pick this trait.
@@ -60,4 +60,10 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
+
+    /// <summary>
+    /// CP14 - adding permanent spells into players mind
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> Actions = new();
 }

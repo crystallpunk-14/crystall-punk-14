@@ -5,16 +5,22 @@
     "y": 32
   },
   "license": "CLA",
-  "copyright": "Created by .kreks.",
+  "copyright": "Created by .kreks., mana_gift by TheShuEd",
   "states": [
     {
       "name": "cure_wounds"
     },
     {
-      "name": "flame_creation"
+      "name": "earth_wall"
     },
     {
       "name": "fireball"
+    },
+    {
+      "name": "flame_creation"
+    },
+    {
+      "name": "flash_light"
     },
     {
       "name": "ice_dagger"
@@ -23,22 +29,16 @@
       "name": "ice_shards"
     },
     {
-      "name": "shadow_step"
+      "name": "mana_gift"
     },
     {
       "name": "shadow_grab"
     },
     {
-      "name": "ice_floor"
-    },
-    {
-      "name": "earth_wall"
+      "name": "shadow_step"
     },
     {
       "name": "sphere_of_light"
-    },
-    {
-      "name": "flash_light"
     }
   ]
 }

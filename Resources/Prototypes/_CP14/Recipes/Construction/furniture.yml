@@ -110,6 +110,26 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: Crystal wall lamp
+  description: A simple wallmount magical device that converts crystal energy into bright light. 
+  id: CP14WallmountLampEmpty
+  graph: CP14WallmountLampEmpty
+  startNode: start
+  targetNode: CP14WallmountLampEmpty
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+    - !type:CP14WallRequired
+
+- type: construction
+  crystallPunkAllowed: true
   name: Wooden chest
   description: a simple wooden chest for easy storage of junk.
   id: CP14WoodenChest

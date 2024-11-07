@@ -9,3 +9,5 @@ cp14-stack-iron-bars = железные слитки
 cp14-stack-gold-bars = золотые слитки
 
 cp14-stack-wallpaper = рулон розоев
+
+cp14-stack-glass-sheet = стекло

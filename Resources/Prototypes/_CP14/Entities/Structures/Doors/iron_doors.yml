@@ -43,6 +43,25 @@
   #  graph: CP14WoodenDoor
   #  node: CP14WoodenDoorMirrored
 
+#Blacksmith
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBlacksmith
+  suffix: Blacksmith
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Blacksmith
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorBlacksmith
+  - CP14IronDoorMirrored
+  id: CP14IronDoorMirroredBlacksmith
+  suffix: Blacksmith, Mirrored
+
 # Bank
 
 - type: entity

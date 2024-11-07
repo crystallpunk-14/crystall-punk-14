@@ -4,6 +4,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
+    drawdepth: Mobs #CP14
     color: '#3F38'
   - type: ConstructionGhost
   - type: Clickable

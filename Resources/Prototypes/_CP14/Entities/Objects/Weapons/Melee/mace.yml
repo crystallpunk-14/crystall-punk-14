@@ -10,6 +10,14 @@
   components:
   - type: Item
     size: Normal
+  - type: Clothing
+    equipDelay: 0.35
+    unequipDelay: 0.35
+    sprite: _CP14/Objects/Weapons/Melee/Mace/mace.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Mace/mace.rsi
     layers:
@@ -19,7 +27,7 @@
     angle: 100
     attackRate: 0.9
     range: 1.5
-    wideAnimationRotation: 205
+    wideAnimationRotation: 135
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:

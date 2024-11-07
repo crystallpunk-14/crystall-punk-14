@@ -110,7 +110,7 @@
         spawn:
           CP14OreCopper:
             min: 1
-            max: 5
+            max: 3
 
 - type: entity
   id: CP14WallStoneIronOre
@@ -139,7 +139,7 @@
         spawn:
           CP14OreIron:
             min: 1
-            max: 5
+            max: 3
 
 - type: entity
   id: CP14WallStoneGoldOre
@@ -168,9 +168,6 @@
         spawn:
           CP14OreGold:
             min: 1
-            max: 5
-          CP14StoneBlock1:
-            min: 2
             max: 3
   - type: IconSmooth
     base: wall

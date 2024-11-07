@@ -1,3 +1,4 @@
+using Content.Server._CP14.StationCommonObjectives;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
 using Content.Server.Objectives.Components;
@@ -26,6 +27,15 @@ public sealed class CP14StealAreaAutoJobConnectSystem : EntitySystem
     {
         if (!TryComp<StealAreaComponent>(autoConnect, out var stealArea))
             return;
+
+        if (autoConnect.Comp.Stations)
+        {
+            var query = EntityQueryEnumerator<CP14StationCommonObjectivesComponent>();
+            while (query.MoveNext(out var uid, out _))
+            {
+                stealArea.Owners.Add(uid);
+            }
+        }
 
         foreach (var player in _playerManager.Sessions)
         {

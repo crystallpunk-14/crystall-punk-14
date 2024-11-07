@@ -13,6 +13,8 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14VerbalAspectSpeechEvent>(OnSpellSpoken);
 
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);

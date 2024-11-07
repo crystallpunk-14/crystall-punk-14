@@ -10,8 +10,10 @@
   description: A weapon that has done its duty since the age of the giants.
   components:
   - type: Item
-    storedRotation: 0
-    size: Large
+    size: Normal
+    storedRotation: 45 
+    shape:
+    - 0,0,0,3
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/ThrowableSpear/throwableSpear.rsi
     layers:
@@ -20,7 +22,7 @@
     angle: 0
     attackRate: 1.2
     range: 1.2
-    wideAnimationRotation: -115
+    wideAnimationRotation: 135
     wideAnimation: CP14WeaponArcThrust
     damage:
       types:
@@ -31,14 +33,14 @@
     cPAnimationOffset: -1.3
   - type: EmbeddableProjectile
     offset: 0.15,0.15
-    removalTime: 1.5
+    removalTime: 1
   - type: ThrowingAngle
-    angle: 245
+    angle: 135
   - type: DamageOtherOnHit
     damage:
       types:
         Piercing: 18
-  - type: DamageOnLand
-    damage:
-      types:
-        Piercing: 18
+  #- type: DamageOnLand
+  #  damage:
+  #    types:
+  #      Piercing: 18

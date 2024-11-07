@@ -1,23 +1,78 @@
 - type: Tag
-  id: CP14GrasslandIsland
+  id: CP14DemiplanRuins
 
 - type: entity
-  id: CP14GrasslandIslandExteriorRoomSpawner
+  id: CP14DemiplanRuinsRoomSpawner
   categories: [ ForkFiltered ]
   parent: BaseRoomMarker
-  name: Grassland island exterior room spawner
+  name: Demiplan ruins room spawner
   components:
   - type: RoomFill
-    size: 11,5
     roomWhitelist:
       tags:
-      - CP14GrasslandIsland
+      - CP14DemiplanRuins
 
-# 11x5
+# 7x7
 - type: dungeonRoom
-  id: CP14GrasslandIslandExterior_11x5_a
-  size: 11,5
-  atlas: /Maps/_CP14/Dungeon/grassland_island_exterior.yml
+  id: CP14GrasslandIslandExterior_7x7_a
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  ignoreTile: FloorShuttlePurple
   offset: 0,0
   tags:
-    - CP14GrasslandIsland
+    - CP14DemiplanRuins
+
+# 5x5
+- type: dungeonRoom
+  id: CP14GrasslandIslandExterior_5x5_a
+  size: 5,5
+  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,8
+  tags:
+    - CP14DemiplanRuins
+
+- type: dungeonRoom
+  id: CP14GrasslandIslandExterior_5x5_b
+  size: 5,5
+  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 6,8
+  tags:
+    - CP14DemiplanRuins
+
+- type: dungeonRoom
+  id: CP14GrasslandIslandExterior_5x5_c
+  size: 5,5
+  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 12,8
+  tags:
+    - CP14DemiplanRuins
+
+- type: dungeonRoom
+  id: CP14GrasslandIslandExterior_5x5_d
+  size: 5,5
+  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 18,8
+  tags:
+    - CP14DemiplanRuins
+
+- type: dungeonRoom
+  id: CP14GrasslandIslandExterior_5x5_e
+  size: 5,5
+  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,8
+  tags:
+    - CP14DemiplanRuins
+
+- type: dungeonRoom
+  id: CP14GrasslandIslandExterior_5x5_g
+  size: 5,5
+  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 30,8
+  tags:
+    - CP14DemiplanRuins

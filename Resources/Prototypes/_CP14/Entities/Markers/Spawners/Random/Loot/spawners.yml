@@ -11,7 +11,7 @@
       state: bar_3
   - type: EntityTableSpawner
     table: !type:NestedSelector
-      prob: 1.0
+      prob: 0.7
       tableId: CP14TableExpeditionLootCommon
 
 - type: entityTable
@@ -42,7 +42,7 @@
         - id: CP14DyeBlack
       - id: CP14EnergyCrystalSmall
       - id: CP14Bucket
-      - id: CP14OldLantern
+      - id: CP14CrystalLampBlueEmpty
       - id: CP14Scissors
       - id: CP14BaseSharpeningStone
       - id: CP14Rope
@@ -60,13 +60,16 @@
         - id: CP14VialSmallBlueAmanita
         - id: CP14VialTinyChromiumSlime
         - id: CP14VialTinyLumiMushroom
-      - !type:GroupSelector
-        children:
-        - id: CP14ChromiumSlime
-        - id: CP14LumiMushroom
       - id: CP14SilverCoin5
+      - id: CP14Nail10
+      - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMedium
       - id: CP14DemiplanKey
+      - !type:AllSelector
+        children:
+        - id: CP14Crossbolt
+        - id: CP14Crossbolt
+        - id: CP14Crossbolt
       # remove this when players can create their own magic items
       - !type:GroupSelector
         children:
@@ -74,11 +77,11 @@
         - id: CP14ClothingRingIceShards
         - id: CP14ClothingRingFlameCreation
         - id: CP14ClothingRingFireball
-        - id: CP14ClothingRingCureWounds
+        - id: CP14MagicHealingStaff
         - id: CP14ClothingRingShadowStep
         - id: CP14ClothingRingShadowGrab
         - id: CP14ClothingRingEarthWall
-        - id: CP14ClothingRingIceFloor
+        - id: CP14ClothingRingManaGift
         - id: CP14ClothingRingSphereOfLight
         - id: CP14ClothingRingFlashLight
       - !type:GroupSelector

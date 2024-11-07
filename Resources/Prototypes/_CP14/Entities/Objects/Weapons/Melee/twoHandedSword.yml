@@ -18,12 +18,12 @@
     quickEquip: false
     breakOnMove: false
     slots:
-    - back
+    - neck
   - type: MeleeWeapon
     angle: 120
     attackRate: 0.7
     range: 1.8
-    wideAnimationRotation: 205
+    wideAnimationRotation: 135
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
@@ -71,7 +71,6 @@
     angle: 110
     attackRate: 0.6
     range: 1.4
-    wideAnimationRotation: 205
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:

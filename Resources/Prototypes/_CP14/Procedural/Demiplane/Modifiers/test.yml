@@ -8,10 +8,10 @@
     - !type:OreDunGen
       entityMask: 
       - CP14WallStone
-      entity: CP14WallStoneGoldOre
-      count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
+      entity: CP14WallStoneGoldOre # Hellish gold 666
+      count: 6
+      minGroupSize: 6
+      maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
   id: IronOre
@@ -24,9 +24,24 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 10
+      count: 5
       minGroupSize: 10
       maxGroupSize: 15
+
+- type: cp14DemiplaneModifier
+  id: CopperOre
+  unique: false
+  reward: 0.3
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneCopperOre
+      count: 10
+      minGroupSize: 5
+      maxGroupSize: 7
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystal
@@ -227,42 +242,26 @@
       maxGroupSize: 5
 
 - type: cp14DemiplaneModifier
-  id: CopperOre
-  unique: false
-  reward: 0.3
-  requiredTags:
-  - CP14DemiplaneCave
-  layers:
-    - !type:OreDunGen
-      entityMask: 
-      - CP14WallStone
-      entity: CP14WallStoneCopperOre
-      count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
-
-- type: cp14DemiplaneModifier
   id: Explosive
   difficulty: 0.4
   generationWeight: 0.25
   layers:
-    - !type:MobsDunGen
-      minCount: 25
-      maxCount: 50
-      groups:
-      - id: LandMineExplosive
-        amount: 1
+    - !type:OreDunGen
+      entity: LandMineExplosive
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
-  id: CommonLoot
-  reward: 0.25
+  id: Ruins
+  reward: 0.35
   generationWeight: 2
   layers:
-    - !type:EntityTableDunGen
-      minCount: 15
-      maxCount: 30
-      table: !type:NestedSelector
-        tableId: CP14TableExpeditionLootCommon
+    - !type:OreDunGen
+      entity: CP14DemiplanRuinsRoomSpawner
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: EnemyXeno
@@ -270,65 +269,112 @@
   requiredTags:
   - CP14DemiplaneUnderground
   layers:
-    - !type:MobsDunGen
-      minCount: 2
-      maxCount: 3
-      groups:
-      - id: CP14MobXenoDrone
-        amount: 1
-      - id: CP14MobXeno
-        amount: 1
+    - !type:OreDunGen
+      entity: CP14MobXenoDrone
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      entity: CP14MobXeno
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: EnemyZombie
   difficulty: 0.4
   layers:
-    - !type:MobsDunGen
-      minCount: 3
-      maxCount: 6
-      groups:
-      - id: CP14SpawnMobUndeadZombie
-        amount: 1
+    - !type:OreDunGen
+      entity: CP14SpawnMobUndeadZombie
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyDyno
   difficulty: 0.5
   requiredTags:
   - CP14DemiplaneOpenSky
+  - CP14DemiplaneGrass
   layers:
-    - !type:MobsDunGen
-      minCount: 3
-      maxCount: 6
-      groups:
-      - id: CP14SpawnMobDinoYumkaraptor
-        amount: 1
+    - !type:OreDunGen
+      entity: CP14SpawnMobDinoYumkaraptor
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
-  id: EnemySnakes
-  difficulty: 0.7
+  id: SmallHydra
+  difficulty: 0.5
+  requiredTags:
+  - CP14DemiplaneGrass
   layers:
-    - !type:MobsDunGen
-      minCount: 1
-      maxCount: 2
-      groups:
-      - id: CP14MobPurpleSnake
-        amount: 1
-      - id: CP14MobSmallPurpleSnake
-        amount: 1
-      - id: CP14MobSpaceCobra
-        amount: 1
+    - !type:OreDunGen
+      entity: CP14MobDinoSmallHydra
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemyMole
+  difficulty: 0.5
+  requiredTags:
+  - CP14DemiplaneUnderground
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14MobMonsterMole
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: EnemyMagmawind
   difficulty: 0.3
   generationWeight: 0.4
   layers:
-    - !type:MobsDunGen
-      minCount: 3
-      maxCount: 5
-      groups:
-      - id: CP14MobWatcherMagmawing
-        amount: 1
+    - !type:OreDunGen
+      entity: CP14MobWatcherMagmawing
+      count: 5
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: Rabbits
+  reward: 0.2
+  generationWeight: 0.4
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14MobRabbit
+      count: 3
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: Boar
+  reward: 0.2
+  difficulty: 0.2
+  generationWeight: 0.4
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14MobBoar
+      count: 3
+      minGroupSize: 2
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: Chasm

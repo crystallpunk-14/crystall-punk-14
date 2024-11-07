@@ -185,28 +185,29 @@ entities:
       rot: 3.141592653589793 rad
       pos: 29.5,3.5
       parent: 1
-- proto: CP14LamppostBlue
+- proto: CP14Lamppost
   entities:
-  - uid: 25
+  - uid: 27
     components:
     - type: Transform
-      pos: 1.4934161,6.5694375
+      pos: 29.5,0.5
       parent: 1
-  - uid: 72
+  - uid: 29
+    components:
+    - type: Transform
+      pos: 25.5,6.5
+      parent: 1
+  - uid: 69
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 16.482132,1.6401112
-      parent: 1
-  - uid: 91
-    components:
-    - type: Transform
-      pos: 29.507013,0.56821394
+      pos: 16.5,1.5
       parent: 1
   - uid: 92
     components:
     - type: Transform
-      pos: 25.435242,6.471512
+      rot: 3.141592653589793 rad
+      pos: 1.5,0.5
       parent: 1
 - proto: CP14SpawnerExpeditionLootCommon
   entities:
@@ -287,20 +288,13 @@ entities:
     - type: Transform
       pos: 18.5,3.5
       parent: 1
-- proto: CP14WallmountLamp
+- proto: CP14WallmountTorchAlwaysPowered
   entities:
-  - uid: 27
+  - uid: 25
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 5.5,4.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-  - uid: 29
-    components:
-    - type: Transform
-      pos: 4.5,1.5
+      pos: 13.5,4.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -315,7 +309,7 @@ entities:
   - uid: 46
     components:
     - type: Transform
-      pos: 11.5,3.5
+      pos: 4.5,1.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -323,7 +317,7 @@ entities:
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 13.5,3.5
+      pos: 5.5,4.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -335,14 +329,21 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-  - uid: 69
+  - uid: 70
+    components:
+    - type: Transform
+      pos: 11.5,3.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 72
     components:
     - type: Transform
       pos: 18.5,4.5
       parent: 1
     - type: Fixtures
       fixtures: {}
-  - uid: 70
+  - uid: 91
     components:
     - type: Transform
       rot: 1.5707963267948966 rad

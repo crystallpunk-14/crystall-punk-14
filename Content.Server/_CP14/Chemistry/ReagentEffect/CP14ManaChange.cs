@@ -1,4 +1,5 @@
 using Content.Server._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
@@ -34,5 +35,12 @@ public sealed partial class CP14ManaChange : EntityEffect
 
         var magicSystem = args.EntityManager.System<CP14MagicEnergySystem>();
         magicSystem.ChangeEnergy(args.TargetEntity, ManaDelta * scale, Safe);
+
+        if (args.EntityManager.TryGetComponent<CP14MagicEnergyCrystalSlotComponent>(args.TargetEntity,
+                out var crystalSlot))
+        {
+            var slotSystem = args.EntityManager.System<CP14MagicEnergyCrystalSlotSystem>();
+            slotSystem.TryChangeEnergy(args.TargetEntity, ManaDelta * scale, crystalSlot);
+        }
     }
 }
