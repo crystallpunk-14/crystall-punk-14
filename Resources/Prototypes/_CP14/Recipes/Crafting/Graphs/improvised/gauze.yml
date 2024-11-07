@@ -8,7 +8,7 @@
       steps:
       - material: CP14Cloth
         amount: 2
-        doAfter: 8
+        doAfter: 4
 
   - node: cp14gauze
     entity: CP14Gauze1

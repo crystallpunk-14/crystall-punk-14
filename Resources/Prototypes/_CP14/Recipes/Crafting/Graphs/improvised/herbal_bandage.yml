@@ -10,7 +10,7 @@
         amount: 2
       - material: CP14FloraMaterial
         amount: 2
-        doAfter: 6
+        doAfter: 4
 
   - node: cp14herbbandage
     entity: CP14HerbalBandage1
