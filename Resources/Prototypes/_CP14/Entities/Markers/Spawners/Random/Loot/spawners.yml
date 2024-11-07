@@ -62,6 +62,7 @@
         - id: CP14VialTinyLumiMushroom
       - id: CP14SilverCoin5
       - id: CP14Nail10
+      - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMedium
       - id: CP14DemiplanKey
       - !type:AllSelector
