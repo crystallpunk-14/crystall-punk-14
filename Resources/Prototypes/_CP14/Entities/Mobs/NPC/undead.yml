@@ -21,7 +21,7 @@
   id: CP14MobUndeadZombieGearEasy1
   parent: CP14MobUndeadZombie
   suffix: Zombie. Easy
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadEasy1 ]
@@ -30,7 +30,7 @@
   id: CP14MobUndeadZombieGearEasy2
   parent: CP14MobUndeadZombie
   suffix: Zombie. Easy
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadEasy2 ]
@@ -39,7 +39,7 @@
   id: CP14MobUndeadZombieGearEasy3
   parent: CP14MobUndeadZombie
   suffix: Zombie. Easy
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadEasy3 ]
@@ -48,7 +48,7 @@
   id: CP14MobUndeadZombieGearMedium1
   parent: CP14MobUndeadZombie
   suffix: Zombie. Medium
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadMedium1 ]
@@ -57,7 +57,7 @@
   id: CP14MobUndeadZombieGearMedium2
   parent: CP14MobUndeadZombie
   suffix: Zombie. Medium
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadMedium2 ]
@@ -66,7 +66,7 @@
   id: CP14MobUndeadZombieGearHard1
   parent: CP14MobUndeadZombie
   suffix: Zombie. Hard
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadHard1 ]
@@ -75,7 +75,7 @@
   id: CP14MobUndeadZombieGearHard2
   parent: CP14MobUndeadZombie
   suffix: Zombie. Hard
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadHard2 ]

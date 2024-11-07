@@ -55,16 +55,17 @@
   - type: MobState
     allowedStates:
     - Alive
+    - Critical
     - Dead
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      40: Critical
+      120: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.8
-      75: 0.6
-      90: 0.4
+      10: 0.8
+      30: 0.4
   - type: StatusEffects
     allowed:
     - KnockedDown
@@ -72,7 +73,6 @@
     - Electrocution
     - Stutter
     - TemporaryBlindness
-    - Pacified
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
@@ -92,12 +92,11 @@
     damageModifierSet: CP14Zombie
   - type: PassiveDamage
     allowedStates:
-    - Alive
-    damageCap: 99
+    - Critical
     damage:
       groups:
-        Brute: -0.3
-        Burn: -0.3
+        Brute: -2
+        Burn: -2
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
@@ -109,7 +108,6 @@
         Slash: 4
         Structural: 4
   - type: Pullable
-  - type: GhostTakeoverAvailable
   - type: SpamEmitSound
     minInterval: 10
     maxInterval: 30

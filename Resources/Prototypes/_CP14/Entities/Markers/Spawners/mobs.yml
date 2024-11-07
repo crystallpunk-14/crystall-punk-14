@@ -2,23 +2,6 @@
 
 - type: entity
   name: walking dead spawner
-  id: CP14SpawnMobUndeadZombie
-  parent: MarkerBase
-  suffix: Base
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    layers:
-    - sprite: Markers/cross.rsi
-      state: green
-    - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
-      state: full
-  - type: ConditionalSpawner
-    prototypes:
-    - CP14MobUndeadZombie
-
-- type: entity
-  name: walking dead spawner
   id: CP14SpawnMobUndeadZombieRandom
   parent: MarkerBase
   suffix: Random
@@ -30,74 +13,25 @@
       state: green
     - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
       state: full
-    - type: RandomSpawner
-      rarePrototypes:
-        - CP14MobUndeadZombieGearMedium1
-        - CP14MobUndeadZombieGearMedium2
-        - CP14MobUndeadZombieGearHard1
-        - CP14MobUndeadZombieGearHard2
-      rareChance: 0.2
-      prototypes:
-        - CP14MobUndeadZombie
-        - CP14MobUndeadZombieGearEasy1
-        - CP14MobUndeadZombieGearEasy2
-        - CP14MobUndeadZombieGearEasy3
-      chance: 0.8
-
-- type: entity
-  name: walking dead spawner
-  id: CP14SpawnMobUndeadZombieEasy
-  parent: MarkerBase
-  suffix: Easy
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    layers:
-    - sprite: Markers/cross.rsi
-      state: green
-    - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
-      state: full
-  - type: ConditionalSpawner
-    prototypes:
-    - CP14MobUndeadZombieGearEasy1
-    - CP14MobUndeadZombieGearEasy2
-    - CP14MobUndeadZombieGearEasy3
-
-- type: entity
-  name: walking dead spawner
-  id: CP14SpawnMobUndeadZombieMedium
-  parent: MarkerBase
-  suffix: Medium
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    layers:
-    - sprite: Markers/cross.rsi
-      state: green
-    - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
-      state: full
-  - type: ConditionalSpawner
-    prototypes:
-    - CP14MobUndeadZombieGearMedium1
-    - CP14MobUndeadZombieGearMedium2
-
-- type: entity
-  name: walking dead spawner
-  id: CP14SpawnMobUndeadZombieHard
-  parent: MarkerBase
-  suffix: Hard
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    layers:
-    - sprite: Markers/cross.rsi
-      state: green
-    - sprite: _CP14/Mobs/Species/Zombie/parts.rsi
-      state: full
-  - type: ConditionalSpawner
-    prototypes:
-    - CP14MobUndeadZombieGearHard1
-    - CP14MobUndeadZombieGearHard2
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 60
+        children:
+        - id: CP14MobUndeadZombieGearEasy1
+        - id: CP14MobUndeadZombieGearEasy2
+        - id: CP14MobUndeadZombieGearEasy3
+      - !type:GroupSelector
+        weight: 30
+        children:
+        - id: CP14MobUndeadZombieGearMedium1
+        - id: CP14MobUndeadZombieGearMedium2
+      - !type:GroupSelector
+        weight: 10
+        children:
+        - id: CP14MobUndeadZombieGearHard1
+        - id: CP14MobUndeadZombieGearHard2
 
 # Animal
 
