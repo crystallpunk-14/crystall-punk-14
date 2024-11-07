@@ -35,6 +35,9 @@
     },
     {
       "name": "denied_on_paper"
+    },
+    {
+      "name": "paper_stamp-generic"
     }
   ]
 }
