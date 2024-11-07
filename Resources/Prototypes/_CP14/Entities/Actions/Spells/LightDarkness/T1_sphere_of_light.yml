@@ -28,7 +28,7 @@
       state: sphere_of_light
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 15
-      delay: 0.5
+      castDelay: 0.5
       breakOnMove: false
 
 - type: entity
