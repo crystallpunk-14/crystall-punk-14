@@ -8,14 +8,14 @@
       - id: CP14KeyRingAlchemist
       - id: HandLabeler #TODO custom cp14 labeler
       - id: Syringe #TODO custom cp14 syringe
-        amount: 3
+        amount: 2
       - id: CP14Cauldron
       - id: CP14Pestle
-        amount: 2
+        amount: 1
       - id: CP14Mortar
-        amount: 2
+        amount: 1
       - id: CP14Dropper
-        amount: 2
+        amount: 1
       - id: CP14VialTiny
         amount: 7
       - id: CP14VialSmall
