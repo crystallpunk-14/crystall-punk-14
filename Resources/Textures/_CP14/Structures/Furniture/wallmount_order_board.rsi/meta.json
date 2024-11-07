@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Created by TheShuEd for CrystallPunk14",
+  "size": {
+    "x": 46,
+    "y": 84
+  },
+  "states": [
+    {
+      "name": "base",
+      "directions": 4
+    },
+    {
+      "name": "paper-0",
+      "directions": 4
+    },
+    {
+      "name": "paper-1",
+      "directions": 4
+    },
+    {
+      "name": "paper-2",
+      "directions": 4
+    },
+    {
+      "name": "paper-3",
+      "directions": 4
+    },
+    {
+      "name": "paper-4",
+      "directions": 4
+    }
+  ]
+}

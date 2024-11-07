@@ -1,0 +1,59 @@
+- type: entity
+  name: generic rubber stamp
+  parent: BaseItem
+  id: CP14StampBase
+  description: A rubber stamp for stamping important documents.
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-default
+    stampState: "denied_on_paper"
+    stampedColor: "#a23e3e"
+    sound:
+      path: /Audio/Items/Stamp/thick_stamp_sub.ogg
+      params:
+        volume: -2
+        maxDistance: 5
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/stamp.rsi
+    state: denied
+  - type: Item
+    size: Tiny
+
+- type: entity
+  id: CP14StampDenied
+  parent: CP14StampBase
+  name: denied stamp
+  components:
+  - type: Stamp
+    stampedName: cp14-stamp-denied
+    stampedColor: "#b53535"
+    stampState: "denied_on_paper"
+  - type: Sprite
+    state: denied
+
+- type: entity
+  id: CP14StampApproved
+  parent: CP14StampBase
+  name: approved stamp
+  components:
+  - type: Stamp
+    stampedName: cp14-stamp-approved
+    stampedColor: "#35b56c"
+    stampState: "approved_on_paper"
+  - type: Sprite
+    state: approved
+
+- type: entity
+  id: CP14StampCommandant
+  parent: CP14StampBase
+  name: commandant stamp
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: cp14-stamp-bank
+    stampedColor: "#e8c348"
+    stampState: "bank_on_paper"
+  - type: Sprite
+    state: bank

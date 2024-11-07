@@ -1,0 +1,58 @@
+- type: entity
+  id: CP14WallmountOrdersBorder
+  parent: 
+  - CP14BaseWallmount
+  - CP14BaseFlammableSpreading
+  name: orders board
+  description: Is there a job for a witcher?
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/wallmount_order_board.rsi
+    layers:
+      - state: base
+      - state: paper-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: StorageFillVisualizer
+    maxFillLevels: 4
+    fillBaseName: paper
+  - type: Appearance
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Storage
+    grid:
+    - 0,0,4,3
+    maxItemSize: Small
+    whitelist:
+      tags:
+        - Document
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Construction
+    graph: CP14WallmountOrdersBorder
+    node: CP14WallmountOrdersBorder
