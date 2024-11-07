@@ -253,15 +253,15 @@
       maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
-  id: CommonLoot
-  reward: 0.25
+  id: Ruins
+  reward: 0.35
   generationWeight: 2
   layers:
     - !type:OreDunGen
-      entity: CP14SpawnerExpeditionLootCommon
-      count: 10
+      entity: CP14DemiplanRuinsRoomSpawner
+      count: 5
       minGroupSize: 1
-      maxGroupSize: 3
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: EnemyXeno
