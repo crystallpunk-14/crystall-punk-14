@@ -5,6 +5,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14KeyRingAlchemist
       - id: HandLabeler #TODO custom cp14 labeler
       - id: Syringe #TODO custom cp14 syringe
         amount: 3
@@ -42,7 +43,10 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14KeyRingBanker
       - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14StampDenied
+      - id: CP14StampApproved
       - id: CP14PaperFolderRed
         amount: 2
       - id: CP14PaperFolderBlue
@@ -61,3 +65,16 @@
         prob: 0.2
       - id: CP14SilverCoin1
         prob: 0.2
+
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetCommandantFilled
+  suffix: Commandant, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14KeyRingCommandant
+      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14StampDenied
+      - id: CP14StampApproved
+      - id: CP14StampCommandant

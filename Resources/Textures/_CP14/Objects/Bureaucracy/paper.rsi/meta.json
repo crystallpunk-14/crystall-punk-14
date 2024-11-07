@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CLA",
-  "copyright": "Created by Max Gab for CrystallPunk, folders by TheShuEd",
+  "copyright": "Created by Max Gab for CrystallPunk, folders by TheShuEd, stamps on paper by viator1748",
   "size": {
     "x": 32,
     "y": 32
@@ -26,6 +26,15 @@
     {
       "name": "inhand-right",
       "directions": 4
+    },
+    {
+      "name": "approved_on_paper"
+    },
+    {
+      "name": "bank_on_paper"
+    },
+    {
+      "name": "denied_on_paper"
     }
   ]
 }
