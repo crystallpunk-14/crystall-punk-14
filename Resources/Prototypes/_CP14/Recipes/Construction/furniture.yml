@@ -110,6 +110,26 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: Wallmount orders board
+  description: Is there a job for a witcher?
+  id: CP14WallmountOrdersBorder
+  graph: CP14WallmountOrdersBorder
+  startNode: start
+  targetNode: CP14WallmountOrdersBorder
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/wallmount_order_board.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+    - !type:CP14WallRequired
+
+- type: construction
+  crystallPunkAllowed: true
   name: Crystal wall lamp
   description: A simple wallmount magical device that converts crystal energy into bright light. 
   id: CP14WallmountLampEmpty

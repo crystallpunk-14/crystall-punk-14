@@ -35,8 +35,6 @@
     - node: CP14WallmountTorch
       entity: CP14WallmountTorch
 
-
-
 - type: constructionGraph
   id: CP14WallmountLampEmpty
   start: start
@@ -53,4 +51,21 @@
               
     - node: CP14WallmountLampEmpty
       entity: CP14WallmountLampEmpty
+
+- type: constructionGraph
+  id: CP14WallmountOrdersBorder
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WallmountOrdersBorder
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 3
+              doAfter: 3
+              
+    - node: CP14WallmountOrdersBorder
+      entity: CP14WallmountOrdersBorder
 
