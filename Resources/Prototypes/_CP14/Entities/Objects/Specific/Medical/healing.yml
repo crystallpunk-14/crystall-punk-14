@@ -50,15 +50,6 @@
     count: 1
 
 - type: entity
-  id: CP14HerbalBandage10Lingering
-  parent: CP14HerbalBandage
-  suffix: Lingering, 10
-  components:
-  - type: Stack
-    lingering: true
-    count: 10
-
-- type: entity
   id: CP14Gauze
   parent: BaseItem
   name: gauze
@@ -108,12 +99,3 @@
     state: bandage
   - type: Stack
     count: 1
-
-- type: entity
-  id: CP14Gauze10Lingering
-  parent: CP14Gauze
-  suffix: Lingering, 10
-  components:
-  - type: Stack
-    lingering: true
-    count: 10
