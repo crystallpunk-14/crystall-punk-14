@@ -1309,22 +1309,13 @@ ent-CP14IronDoorBlacksmith = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Blacksmith
 
-ent-CP14IronDoorMirroredBlacksmith = None
-    .suffix = Blacksmith, Mirrored
-
 ent-CP14IronDoorBankStaff = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Bank Staff
 
-ent-CP14IronDoorMirroredBankStaff = None
-    .suffix = Bank Staff, Mirrored
-
 ent-CP14IronDoorBankVault = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Bank Vault
-
-ent-CP14IronDoorMirroredBankVault = None
-    .suffix = Bank Vault, Mirrored
 
 ent-CP14IronDoorBankSafe1 = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
