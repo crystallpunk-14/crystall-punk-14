@@ -273,10 +273,6 @@
         solution: food
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Tag
-    tags:
-    - Fruit
-    - Vegetable
   - type: Extractable
     grindableSolutionName: food
     juiceSolution:
