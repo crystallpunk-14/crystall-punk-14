@@ -283,7 +283,7 @@
 - type: cp14DemiplaneModifier
   id: EnemyZombie
   difficulty: 0.4
-  generationWeight: 20
+  generationWeight: 1.5
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobUndeadZombieRandom
