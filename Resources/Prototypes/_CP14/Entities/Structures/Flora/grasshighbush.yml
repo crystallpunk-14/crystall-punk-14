@@ -79,7 +79,7 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14FloraMaterial:
+          CP14FloraMaterial1:
             min: 0
             max: 2
   - type: SpeedModifierContacts

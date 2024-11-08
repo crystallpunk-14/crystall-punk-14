@@ -283,14 +283,18 @@
     count: 10
 
 - type: entity
-  id: CP14FloraMaterial
+  id: CP14FloraMaterial1
   parent: BaseItem
   name: flora material
   description: An organic material used for medicinal or construction purposes.
+  suffix: 1
   categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
+  - type: Stack
+    stackType: CP14FloraMaterial
+    count: 1
   - type: Sprite
     sprite: _CP14/Objects/Materials/flora.rsi
     layers:
@@ -314,6 +318,18 @@
     damage:
       types:
         Heat: 1
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14FloraMaterial: 100
+
+- type: entity
+  id: CP14FloraMaterial2
+  parent: CP14FloraMaterial1
+  suffix: 2
+  components:
+    - type: Stack
+      count: 2
 
 - type: entity
   id: CP14String

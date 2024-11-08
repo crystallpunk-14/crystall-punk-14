@@ -760,7 +760,7 @@ ent-CP14Nail10 = { ent-CP14Nail1 }
     .desc = { ent-CP14Nail1.desc }
     .suffix = 10
 
-ent-CP14FloraMaterial = растительный материал
+ent-CP14FloraMaterial1 = растительный материал
     .desc = Органический материал, используемый в лечебных или строительных целях.
 
 ent-CP14String = нитки
