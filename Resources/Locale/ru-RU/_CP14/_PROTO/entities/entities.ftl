@@ -485,9 +485,6 @@ ent-CP14SpawnPointBlacksmith = blacksmith
 ent-CP14SpawnPointInnkeeper = трактирщик
     .desc = { ent-CP14SpawnPointJobBase.desc }
 
-ent-CP14SpawnMobUndeadZombieRandom = спавнер ходячего трупа
-    .suffix = Случайный
-
 ent-CP14SpawnMobRabbit = спавнер кролика
 
 ent-CP14SpawnMobPig = спавнер свиньи
