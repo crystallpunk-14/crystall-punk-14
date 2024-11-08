@@ -77,7 +77,7 @@
   parent: FoodInjectableBase
   categories: [ ForkFiltered ]
   name: pumpkin
-  description: Big, cool pumpkin. 
+  description: Big, cool pumpkin.
   components:
   - type: Item
     size: Normal
@@ -116,7 +116,7 @@
   categories: [ ForkFiltered ]
   name: pumpkin slice
   description: Pumpkin! # TODO
-  components: 
+  components:
   - type: Item
     size: Tiny
   - type: FlavorProfile
@@ -224,7 +224,7 @@
 
 - type: entity
   id: CP14FoodTomatoes
-  parent: FoodInjectableBase
+  parent: [FoodInjectableBase, ItemHeftyBase]
   categories: [ ForkFiltered ]
   name: tomatoes
   description: A red, juicy tomato. You just want to throw it in someone's face!
@@ -248,16 +248,53 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 8
+        maxVol: 12
         reagents:
         - ReagentId: Nutriment
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 3
+        - ReagentId: JuiceTomato
+          Quantity: 6
   - type: SliceableFood
     count: 3
     sliceTime: 1
     slice: CP14FoodTomatoesSlice
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Skewer: TomatoSkewer
+      Burger: Tomato
+      Taco: Tomato
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceTomato
+        Quantity: 10
+  - type: Damageable
+    damageContainer: Biological
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 1
 
 - type: entity
   id: CP14FoodTomatoesSlice
@@ -265,7 +302,7 @@
   categories: [ ForkFiltered ]
   name: tomato slice
   description: Thin red tomato slice. It's no longer as nice to throw at people as whole tomatoes.
-  components: 
+  components:
   - type: Item
     size: Tiny
   - type: FlavorProfile
