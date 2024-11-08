@@ -18,6 +18,24 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: Wooden barrel
+  description: The simplest design for storing liquids.
+  id: CP14BaseBarrel
+  graph: CP14BaseBarrel
+  startNode: start
+  targetNode: CP14BaseBarrel
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/barrel.rsi
+    state: barrel
+  objectType: Structure
+  placementMode: PlaceFree
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   name: Wooden table
   description: A simple table made of boards.
   id: CP14TableWooden
@@ -131,7 +149,7 @@
 - type: construction
   crystallPunkAllowed: true
   name: Crystal wall lamp
-  description: A simple wallmount magical device that converts crystal energy into bright light. 
+  description: A simple wallmount magical device that converts crystal energy into bright light.
   id: CP14WallmountLampEmpty
   graph: CP14WallmountLampEmpty
   startNode: start
