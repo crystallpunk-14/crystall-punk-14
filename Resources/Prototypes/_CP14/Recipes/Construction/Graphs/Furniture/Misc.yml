@@ -82,7 +82,6 @@
             - material: CP14WoodenPlanks
               amount: 5
               doAfter: 3
-            - material: CP14Stone
-              amount: CP14Nail
+            - material: CP14Nail
               amount: 2
               doAfter: 2
