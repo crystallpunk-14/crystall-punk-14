@@ -14,7 +14,7 @@
   name: blood rose
   description: Scarlet flowers growing where blood has been spilled.
   suffix: Gatherable
-  components: 
+  components:
   - type: Sprite
     drawdepth: FloorTiles
     sprite: _CP14/Structures/Flora/Flowers/red_rose.rsi
@@ -132,7 +132,7 @@
   - type: Gatherable
     loot:
       All: CP14GatherWildSage
-      
+
 # LumiMushroom
 
 - type: entityLootTable
@@ -184,7 +184,7 @@
     drawdepth: Mobs
     sprite: _CP14/Structures/crystal.rsi
     offset: 0, 0.25
-    noRot: true   
+    noRot: true
     layers:
       - state: big
         map: ["random"]
@@ -206,6 +206,10 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
+          damage: 100
+        behaviors:
+      - trigger:
+          !type:DamageTrigger
           damage: 20
         behaviors:
           - !type:PlaySoundBehavior
@@ -218,6 +222,8 @@
               CP14QuartzShard:
                 min: 1
                 max: 3
+          - !type:DoActsBehavior
+             acts: [ "Destruction" ]
   - type: RandomSprite
     available:
     - random:

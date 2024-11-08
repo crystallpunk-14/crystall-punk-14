@@ -2,7 +2,7 @@
 
 - type: entity
   id: CP14WallmountCrystalBase
-  parent: 
+  parent:
   - CP14BaseWallmount
   abstract: true
   name: sparkling quartz
@@ -23,7 +23,11 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 20
+          damage: 80
+        behaviors:
+      - trigger:
+            !type:DamageTrigger
+            damage: 20
         behaviors:
           - !type:PlaySoundBehavior
             sound:
@@ -35,6 +39,9 @@
               CP14QuartzShard:
                 min: 0
                 max: 1
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
   - type: Fixtures
     fixtures:
       fix1:
@@ -134,7 +141,7 @@
     layers:
       - state: big
         shader: unshaded
-    noRot: true   
+    noRot: true
   - type: InteractionPopup
     interactSuccessString: popup-cp14crystal-ding
     messagePerceivedByOthers: popup-cp14crystal-ding
@@ -153,7 +160,11 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 20
+          damage: 80
+        behaviors:
+      - trigger:
+            !type:DamageTrigger
+            damage: 20
         behaviors:
           - !type:PlaySoundBehavior
             sound:
@@ -165,6 +176,8 @@
               CP14QuartzShard:
                 min: 1
                 max: 3
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
   - type: Fixtures
     fixtures:
       fix1:
@@ -179,7 +192,7 @@
           - LowImpassable
           - BulletImpassable
           - Opaque
-  
+
   - type: PointLight
     radius: 2
     energy: 2
@@ -212,7 +225,7 @@
     sprite: _CP14/Structures/crystal.rsi
     layers:
      - state: medium
-    color: "#ff3d0b"  
+    color: "#ff3d0b"
 
 - type: entity
   id: CP14CrystalRubiesBig
@@ -257,7 +270,7 @@
     sprite: _CP14/Structures/crystal.rsi
     layers:
      - state: medium
-    color: "#ffe269"  
+    color: "#ffe269"
 
 - type: entity
   id: CP14CrystalTopazesBig
@@ -302,7 +315,7 @@
     sprite: _CP14/Structures/crystal.rsi
     layers:
      - state: medium
-    color: "#30be81"  
+    color: "#30be81"
 
 - type: entity
   id: CP14CrystalEmeraldsBig
@@ -347,7 +360,7 @@
     sprite: _CP14/Structures/crystal.rsi
     layers:
      - state: medium
-    color: "#5eabeb"  
+    color: "#5eabeb"
 
 - type: entity
   id: CP14CrystalSapphiresBig
