@@ -1477,12 +1477,6 @@ ent-CP14FenceIronGrilleGate = железные решетчатые ворота
 ent-CP14BaseFenceWood = деревянный забор
     .desc = Деревянный забор. Не посадите заноз!
 
-ent-CP14FenceWoodStraight = None
-    .suffix = Straight
-
-ent-CP14FenceWoodCorner = None
-    .suffix = Corner
-
 ent-CP14FenceWoodGate = деревянные ворота для забора
     .desc = Большая дверь в большом заборе. Для больших людей.
 
