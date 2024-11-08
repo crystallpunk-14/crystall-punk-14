@@ -19,6 +19,26 @@
       entity: CP14Bonfire
 
 - type: constructionGraph
+  id: CP14BaseBarrel
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14BaseBarrel
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 5
+              doAfter: 3
+            - material: CP14Nail
+              amount: 2
+              doAfter: 2
+
+    - node: CP14BaseBarrel
+      entity: CP14BaseBarrel
+
+- type: constructionGraph
   id: CP14WallmountTorch
   start: start
   graph:
@@ -68,20 +88,3 @@
 
     - node: CP14WallmountOrdersBorder
       entity: CP14WallmountOrdersBorder
-
-- type: constructionGraph
-  id: CP14BaseBarrel
-  start: start
-  graph:
-    - node: start
-      actions:
-        - !type:DestroyEntity {}
-      edges:
-        - to: CP14BaseBarrel
-          steps:
-            - material: CP14WoodenPlanks
-              amount: 5
-              doAfter: 3
-            - material: CP14Nail
-              amount: 2
-              doAfter: 2
