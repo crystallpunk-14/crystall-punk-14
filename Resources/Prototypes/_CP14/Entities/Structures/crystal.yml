@@ -162,6 +162,8 @@
           !type:DamageTrigger
           damage: 80
         behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
       - trigger:
             !type:DamageTrigger
             damage: 20
@@ -169,8 +171,6 @@
           - !type:PlaySoundBehavior
             sound:
               collection: GlassBreak
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
           - !type:SpawnEntitiesBehavior
             spawn:
               CP14QuartzShard:
