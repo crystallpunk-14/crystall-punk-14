@@ -277,11 +277,6 @@
     tags:
     - Fruit
     - Vegetable
-  - type: FoodSequenceElement
-    entries:
-      Skewer: TomatoSkewer
-      Burger: Tomato
-      Taco: Tomato
   - type: Extractable
     grindableSolutionName: food
     juiceSolution:
