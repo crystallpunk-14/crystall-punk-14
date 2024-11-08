@@ -17,10 +17,14 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 350
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg
@@ -31,6 +35,9 @@
           CP14StoneBlock1:
             min: 2
             max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
 
 - type: entity
   id: CP14WallStoneIndestructable
@@ -65,10 +72,14 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 150
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg #TODO
@@ -79,6 +90,8 @@
           CP14DirtBlock1:
             min: 2
             max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   - type: Construction
     graph: CP14WallDirt
     node: WallDirt
@@ -97,10 +110,14 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 250
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg
@@ -111,6 +128,8 @@
           CP14OreCopper:
             min: 1
             max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: CP14WallStoneIronOre
@@ -126,10 +145,14 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 300
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg
@@ -140,6 +163,8 @@
           CP14OreIron:
             min: 1
             max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: CP14WallStoneGoldOre
@@ -155,10 +180,14 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 300
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg
@@ -169,12 +198,14 @@
           CP14OreGold:
             min: 1
             max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   - type: IconSmooth
     base: wall
 
 # We dont have silver now
 
-#- type: entity 
+#- type: entity
 #  id: CP14WallStoneSilverOre
 #  suffix: silver ore
 #  parent: CP14WallStone

@@ -5,7 +5,7 @@
   categories: [ ForkFiltered ]
   abstract: true
   placement:
-    mode: SnapgridCenter 
+    mode: SnapgridCenter
   components:
   - type: Transform
     anchored: True
@@ -55,10 +55,14 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 75
+          damage: 150
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+      - trigger:
+            !type:DamageTrigger
+            damage: 75
+        behaviors:
           - !type:PlaySoundBehavior
             sound:
               path: /Audio/Effects/break_stone.ogg
@@ -69,6 +73,8 @@
               CP14StoneBlock1:
                 min: 2
                 max: 3
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
 
 - type: entity
   id: CP14RockBig
@@ -102,10 +108,14 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 150
+          damage: 300
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+      - trigger:
+            !type:DamageTrigger
+            damage: 150
+        behaviors:
           - !type:PlaySoundBehavior
             sound:
               path: /Audio/Effects/break_stone.ogg
@@ -116,3 +126,5 @@
               CP14StoneBlock1:
                 min: 5
                 max: 8
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
