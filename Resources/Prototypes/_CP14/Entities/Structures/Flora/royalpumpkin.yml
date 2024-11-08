@@ -1,0 +1,74 @@
+- type: entity
+  id: CP14RoyalPumpkin
+  parent: CP14BaseFlammableSpreading
+  name: royal pumpkin
+  description: It's a huge pumpkin, it feels like you could even make a carriage out of it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Flora/royal_pumpkin.rsi
+    drawdepth: Mobs
+    state: royal_pumpkin
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: Food
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Inflatable
+  - type: Physics
+    bodyType: Static
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 650
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 500
+        - ReagentId: Vitamin
+          Quantity: 125
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:SpillBehavior
+        solution: food
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg # Поменять звук
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14FoodPumpkinSlice:
+            min: 20
+            max: 25

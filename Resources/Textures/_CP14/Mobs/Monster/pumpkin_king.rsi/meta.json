@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "license": "CLA",
+  "copyright": "Created by KREKS for CrystallPunk14",
+  "states": [
+    {
+      "name": "pumpkin_king",
+      "directions": 4
+    },
+    {
+      "name": "brother_pumpkin_king"
+    }
+  ]
+}
