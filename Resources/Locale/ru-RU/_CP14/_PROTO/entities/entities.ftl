@@ -1357,15 +1357,9 @@ ent-CP14IronDoorWindowedBankEntrance = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
     .suffix = Bank Entrance
 
-ent-CP14IronDoorWindowedMirroredBankEntrance = None
-    .suffix = Bank Entrance, Mirrored
-
 ent-CP14IronDoorWindowedBlacksmith = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
     .suffix = Blacksmith
-
-ent-CP14IronDoorWindowedMirroredBlacksmith = None
-    .suffix = Blacksmith, Mirrored
 
 ent-CP14WoodenDoor = деревянная дверь
     .desc = Не самая прочная конструкция, но это лучше, чем ничего.
@@ -1378,9 +1372,6 @@ ent-CP14WoodenDoorMirrored = { ent-CP14WoodenDoor }
 ent-CP14WoodenDoorTavernStaff = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
     .suffix = Tavern Staff
-
-ent-CP14WoodenDoorTavernStaffMirrored = None
-    .suffix = Tavern Staff, Mirrored
 
 ent-CP14WoodenDoorTavernDorms1 = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
@@ -1406,9 +1397,6 @@ ent-CP14WoodenDoorTavernAlchemy = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
     .suffix = Alchemy
 
-ent-CP14WoodenDoorTavernAlchemyMirrored = None
-    .suffix = Alchemy, Mirrored
-
 ent-CP14WoodenDoorWindowed = деревянная дверь с окном
     .desc = Не самая прочная конструкция, но это лучше, чем ничего.
     .suffix = Opened
@@ -1420,9 +1408,6 @@ ent-CP14WoodenDoorWindowedMirrored = { ent-CP14WoodenDoorWindowed }
 ent-CP14WoodenDoorWindowedTavernHall = { ent-CP14WoodenDoorWindowed }
     .desc = { ent-CP14WoodenDoorWindowed.desc }
     .suffix = Tavern Hall
-
-ent-CP14WoodenDoorTavernHallMirrored = None
-    .suffix = Tavern Hall, Mirrored
 
 ent-CP14BaseFenceStraight = { ent-CP14BaseFence }
     .desc = { ent-CP14BaseFence.desc }
@@ -1455,12 +1440,6 @@ ent-CP14CliffEndRight = { ent-CP14Cliff }
 
 ent-CP14FenceIronGrilleBase = железная решетка
     .desc = Прочный барьер из сваренных вместе железных прутьев.
-
-ent-CP14FenceIronGrilleStraight = None
-    .suffix = Straight
-
-ent-CP14FenceIronGrilleCorner = None
-    .suffix = Corner
 
 ent-CP14FenceIronGrilleGate = железные решетчатые ворота
     .desc = Тяжелые железные ворота в решетках. Выглядит серьезно.
