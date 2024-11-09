@@ -39,8 +39,8 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: mana_gift
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 5
-      castDelay: 2
+      cooldown: 1
+      castDelay: 1
 
 - type: entity
   id: CP14RuneManaGift

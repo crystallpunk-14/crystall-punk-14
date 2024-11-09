@@ -44,6 +44,10 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellCureWounds
-  - type: CP14MagicManacostModify
-    modifiers:
-     Healing: 1.1
+  #- type: CP14MagicManacostModify
+  #  modifiers:
+  #   Healing: 1.1
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    energy: 80
+    maxEnergy: 80

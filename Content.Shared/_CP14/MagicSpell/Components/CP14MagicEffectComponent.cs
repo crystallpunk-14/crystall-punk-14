@@ -1,5 +1,6 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Spells;
+using Content.Shared._CP14.MagicSpellStorage;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
@@ -8,9 +9,15 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 /// <summary>
 /// Restricts the use of this action, by spending mana or user requirements.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
+[RegisterComponent, Access(typeof(CP14SharedMagicSystem), typeof(CP14SpellStorageSystem))]
 public sealed partial class CP14MagicEffectComponent : Component
 {
+    /// <summary>
+    /// if this effect was provided by an spellstorage, it will be recorded here automatically.
+    /// </summary>
+    [DataField]
+    public Entity<CP14SpellStorageComponent>? SpellStorage;
+
     [DataField]
     public FixedPoint2 ManaCost = 0f;
 

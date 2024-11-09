@@ -1,0 +1,103 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BaseSpellScroll
+  categories: [ ForkFiltered ]
+  name: spell scroll
+  description: A piece of paper with a spell embedded in it. The use of magic destroys the fragile paper, making these scrolls short-lived consumables.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+  - type: Item
+    size: Tiny
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            Ash:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Food
+    solution: food
+    delay: 7
+    forceFeedDelay: 7
+  - type: FlavorProfile
+    flavors:
+    - paper
+    - CP14Magic
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Document
+  - type: CP14SpellStorageAccessHolding
+  - type: CP14SpellStorageUseDamage
+    damagePerMana:
+      types:
+        Heat: 1
+  - type: CP14MagicEnergyContainer
+    energy: 30
+    maxEnergy: 50
+  - type: CP14MagicUnsafeDamage
+
+- type: entity
+  parent: CP14BaseSpellScroll
+  id: CP14SpellScrollFireball
+  name: fireball spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFireball
+
+- type: entity
+  parent: CP14BaseSpellScroll
+  id: CP14SpellScrollCureWounds
+  name: cure wound spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellCureWounds
+
+- type: entity
+  parent: CP14BaseSpellScroll
+  id: CP14SpellScrollIceShards
+  name: ice shards spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceShards
+
+- type: entity
+  parent: CP14BaseSpellScroll
+  id: CP14SpellScrollManaGift
+  name: mana gift spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaGift

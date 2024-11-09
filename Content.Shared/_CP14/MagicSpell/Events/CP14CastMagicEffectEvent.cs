@@ -1,4 +1,5 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
+using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Robust.Shared.Prototypes;
@@ -95,5 +96,20 @@ public sealed class CP14AfterCastMagicEffectEvent : EntityEventArgs
     public CP14AfterCastMagicEffectEvent(EntityUid? performer)
     {
         Performer = performer;
+    }
+}
+
+[ByRefEvent]
+public sealed class CP14SpellFromSpellStorageUsedEvent : EntityEventArgs
+{
+    public EntityUid? Performer { get; init; }
+    public Entity<CP14MagicEffectComponent> Action { get; init; }
+    public FixedPoint2 Manacost { get; init; }
+
+    public CP14SpellFromSpellStorageUsedEvent(EntityUid? performer, Entity<CP14MagicEffectComponent> action, FixedPoint2 manacost)
+    {
+        Performer = performer;
+        Action = action;
+        Manacost = manacost;
     }
 }

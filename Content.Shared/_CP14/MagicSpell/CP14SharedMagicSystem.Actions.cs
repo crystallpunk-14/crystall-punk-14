@@ -29,16 +29,18 @@ public abstract partial class CP14SharedMagicSystem
         if (args is not ICP14DelayedMagicEffect delayedEffect)
             return;
 
-        if (!CanCastSpell(args.Action, args.Performer))
+        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
+        Entity<CP14MagicEffectComponent> spell = (args.Action, magicEffect);
+
+        if (!CanCastSpell(spell, args.Performer))
             return;
 
         if (args.CastDelay > 0)
         {
             var doAfter = new CP14DelayedInstantActionDoAfterEvent(args.Cooldown);
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, args.Action, args.Performer))
+            if (!TryCastSpellDelayed(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
                 return;
         }
 
@@ -67,11 +69,14 @@ public abstract partial class CP14SharedMagicSystem
         if (args is not ICP14DelayedMagicEffect delayedEffect)
             return;
 
-        if (!CanCastSpell(args.Action, args.Performer))
-            return;
-
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
+
+        Entity<CP14MagicEffectComponent> spell = (args.Action, magicEffect);
+
+        if (!CanCastSpell(spell, args.Performer))
+            return;
+
 
         if (args.CastDelay > 0)
         {
@@ -80,7 +85,7 @@ public abstract partial class CP14SharedMagicSystem
                 EntityManager.GetNetEntity(args.Entity),
                 args.Cooldown);
 
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, args.Action, args.Performer))
+            if (!TryCastSpellDelayed(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
                 return;
         }
 
@@ -109,10 +114,12 @@ public abstract partial class CP14SharedMagicSystem
         if (args is not ICP14DelayedMagicEffect delayedEffect)
             return;
 
-        if (!CanCastSpell(args.Action, args.Performer))
+        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
+        Entity<CP14MagicEffectComponent> spell = (args.Action, magicEffect);
+
+        if (!CanCastSpell(spell, args.Performer))
             return;
 
         if (args.CastDelay > 0)
@@ -121,7 +128,7 @@ public abstract partial class CP14SharedMagicSystem
                 EntityManager.GetNetEntity(args.Target),
                 args.Cooldown);
 
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, args.Action, args.Performer))
+            if (!TryCastSpellDelayed(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
                 return;
         }
 
