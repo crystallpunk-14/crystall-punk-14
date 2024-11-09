@@ -122,9 +122,16 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
     }
 
-    private bool TryCastSpellDelayed(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, EntityUid action, EntityUid  performer)
+    private bool TryCastSpellDelayed(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, EntityUid action, EntityUid performer)
     {
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, delayedEffect.CastDelay, doAfter, action)
+        EntityUid? used = null;
+
+        if (TryComp<CP14ProvidedBySpellStorageComponent>(action, out var provided) && provided.SpellStorage is not null)
+        {
+            used = provided.SpellStorage;
+        }
+
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, delayedEffect.CastDelay, doAfter, action, used: used)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
@@ -132,6 +139,8 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             DistanceThreshold = 100f,
             CancelDuplicate = true,
             BlockDuplicate = true,
+            BreakOnDropItem = true,
+            NeedHand = true,
         };
 
         return _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -163,6 +172,12 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         var manaCost = CalculateManacost(ent, args.Performer.Value);
         _magicEnergy.TryConsumeEnergy(args.Performer.Value, manaCost, safe: ent.Comp.Safe);
+
+        if (TryComp<CP14ProvidedBySpellStorageComponent>(ent, out var provider) && provider.SpellStorage is not null)
+        {
+            var spellEv = new CP14SpellFromSpellStorageUsedEvent(args.Performer, ent, manaCost);
+            RaiseLocalEvent(provider.SpellStorage.Value, ref spellEv);
+        }
     }
 
     private FixedPoint2 CalculateManacost(Entity<CP14MagicEffectComponent> ent, EntityUid caster)
