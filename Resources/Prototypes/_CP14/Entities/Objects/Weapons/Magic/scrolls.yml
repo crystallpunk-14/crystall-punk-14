@@ -28,7 +28,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 15
+        damage: 1
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
@@ -57,10 +57,14 @@
     tags:
     - Document
   - type: CP14SpellStorageAccessHolding
-  - type: CP14SpellStorageUseDamage
-    damagePerMana:
-      types:
-        Heat: 1
+  #- type: CP14SpellStorageUseDamage
+  #  damagePerMana:
+  #    types:
+  #      Heat: 1
+  - type: CP14MagicEnergyContainer
+    energy: 10
+    maxEnergy: 10
+  - type: CP14MagicUnsafeDamage
 
 - type: entity
   parent: CP14BaseSpellScroll
@@ -74,8 +78,27 @@
 - type: entity
   parent: CP14BaseSpellScroll
   id: CP14SpellScrollCureWounds
-  name: cure wounsd spell scroll
+  name: cure wound spell scroll
   components:
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellCureWounds
+
+- type: entity
+  parent: CP14BaseSpellScroll
+  id: CP14SpellScrollIceShards
+  name: ice shards spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceShards
+
+
+- type: entity
+  parent: CP14BaseSpellScroll
+  id: CP14SpellScrollManaGift
+  name: mana gift spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaGift

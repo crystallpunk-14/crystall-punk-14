@@ -1,4 +1,5 @@
 using Content.Shared._CP14.MagicAttuning;
+using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
@@ -60,7 +61,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
             if (spellEnt is null)
                 continue;
 
-            var provided = EntityManager.EnsureComponent<CP14ProvidedBySpellStorageComponent>(spellEnt.Value);
+            var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
             provided.SpellStorage = mStorage;
 
             mStorage.Comp.SpellEntities.Add(spellEnt.Value);
