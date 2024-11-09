@@ -57,13 +57,13 @@
     tags:
     - Document
   - type: CP14SpellStorageAccessHolding
-  #- type: CP14SpellStorageUseDamage
-  #  damagePerMana:
-  #    types:
-  #      Heat: 1
+  - type: CP14SpellStorageUseDamage
+    damagePerMana:
+      types:
+        Heat: 1
   - type: CP14MagicEnergyContainer
-    energy: 10
-    maxEnergy: 10
+    energy: 30
+    maxEnergy: 50
   - type: CP14MagicUnsafeDamage
 
 - type: entity
@@ -92,7 +92,6 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellIceShards
-
 
 - type: entity
   parent: CP14BaseSpellScroll

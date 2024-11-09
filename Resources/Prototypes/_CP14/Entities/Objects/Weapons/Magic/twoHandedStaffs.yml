@@ -51,4 +51,3 @@
   - type: CP14MagicEnergyContainer
     energy: 80
     maxEnergy: 80
-  - type: CP14MagicUnsafeDamage

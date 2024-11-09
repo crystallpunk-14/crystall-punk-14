@@ -122,14 +122,10 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
             var manaCost = CalculateManacost(ent, ent.Comp.SpellStorage.Value);
 
-            if (!_magicEnergy.HasEnergy(ent.Comp.SpellStorage.Value, manaCost, magicContainer, ent.Comp.Safe))
+            if (!_magicEnergy.HasEnergy(ent.Comp.SpellStorage.Value, manaCost, magicContainer, true))
             {
-                args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana-item"));
+                args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana-item", ("item", MetaData(ent.Comp.SpellStorage.Value).EntityName)));
                 args.Cancel();
-            }
-            else if(!_magicEnergy.HasEnergy(ent.Comp.SpellStorage.Value, manaCost, magicContainer, true) && _net.IsServer) //фу какой некрасивый хардкод
-            {  //                                                                                                                  \/
-                _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-item-"+_random.Next(3), ("item", MetaData(ent.Comp.SpellStorage.Value).EntityName)), args.Performer, args.Performer, PopupType.SmallCaution);
             }
         }
     }
