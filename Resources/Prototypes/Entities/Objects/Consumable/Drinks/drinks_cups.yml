@@ -56,7 +56,7 @@
 
 - type: entity
   parent: CP14VialSmall
-  id: DrinkBaseMug
+  id: CP14BaseVial
   abstract: true
   name: mug
   description: A mug.
