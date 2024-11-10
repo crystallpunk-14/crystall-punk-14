@@ -86,3 +86,11 @@
     - type: TimedDespawn
       lifetime: 0.5
 
+- type: entity
+  parent: CP14BaseSpellScrollLightDarkness
+  id: CP14SpellScrollFlashLight
+  name: flash light spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFlashLight

@@ -79,3 +79,12 @@
     - state: particles_up
       color: "#79b330"
       shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollCureWounds
+  name: cure wounds spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellCureWounds

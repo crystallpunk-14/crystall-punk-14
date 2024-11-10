@@ -40,3 +40,12 @@
     layers:
     - state: wave_up
       color: "#5e427e"
+
+- type: entity
+  parent: CP14BaseSpellScrollGate
+  id: CP14SpellScrollShadowStep
+  name: shadow step spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellShadowStep

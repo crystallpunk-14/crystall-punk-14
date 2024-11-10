@@ -34,25 +34,25 @@
           weight: 1
       - !type:GroupSelector
         children:
-        - id: CP14SpellScrollFireball
-        - id: CP14SpellScrollCureWounds
         - id: CP14SpellScrollIceShards
+        - id: CP14SpellScrollIceDagger
+        - id: CP14SpellScrollShadowGrab
         - id: CP14SpellScrollManaGift
-      - !type:GroupSelector
-        children:
-        - id: CP14DyeRed
-        - id: CP14DyeYellow
-        - id: CP14DyeBlue
-        - id: CP14DyeGreen
-        - id: CP14DyePurple
-        - id: CP14DyeBlack
+        - id: CP14SpellScrollSphereOfLight
+        - id: CP14SpellScrollCureWounds
+        - id: CP14SpellScrollShadowStep
+        - id: CP14SpellScrollFireball
+        - id: CP14SpellScrollFlameCreation
+        - id: CP14SpellScrollEarthWall
+        - id: CP14SpellScrollFlashLight
       - id: CP14EnergyCrystalSmall
       - id: CP14Bucket
       - id: CP14CrystalLampBlueEmpty
       - id: CP14Scissors
       - id: CP14BaseSharpeningStone
       - id: CP14Rope
-        weight: 2
+      - id: CP14GlassShard
+      - id: CP14Paper
     # Rare
     - !type:GroupSelector
       weight: 25
@@ -84,7 +84,6 @@
         - id: CP14ClothingRingFlameCreation
         - id: CP14ClothingRingFireball
         - id: CP14MagicHealingStaff
-        - id: CP14ClothingRingShadowStep
         - id: CP14ClothingRingShadowGrab
         - id: CP14ClothingRingEarthWall
         - id: CP14ClothingRingManaGift

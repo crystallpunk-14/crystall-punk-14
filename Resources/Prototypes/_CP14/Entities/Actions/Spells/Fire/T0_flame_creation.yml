@@ -138,3 +138,12 @@
   - type: IgnitionSource
     temperature: 400
     ignited: true
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollFlameCreation
+  name: flame creation spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFlameCreation
