@@ -133,6 +133,8 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private bool TryCastSpellDelayed(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
     {
+        var fromItem = action.Comp.SpellStorage is not null;
+
         var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, delayedEffect.CastDelay, doAfter, action, used: action.Comp.SpellStorage)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
@@ -141,8 +143,8 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             DistanceThreshold = 100f,
             CancelDuplicate = true,
             BlockDuplicate = true,
-            BreakOnDropItem = true,
-            NeedHand = true,
+            BreakOnDropItem = fromItem,
+            NeedHand = fromItem,
         };
 
         return _doAfter.TryStartDoAfter(doAfterEventArgs);
