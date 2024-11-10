@@ -148,6 +148,18 @@
 
 - type: entity
   abstract: true
+  id: CP14BaseSpellScrollNecromancy
+  parent: CP14BaseSpellScroll
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#55877a"
+
+- type: entity
+  abstract: true
   id: CP14BaseSpellScrollWater
   parent: CP14BaseSpellScroll
   components:

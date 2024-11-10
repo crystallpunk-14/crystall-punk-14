@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "CLA",
-  "copyright": "Created by .kreks., mana_gift by TheShuEd",
+  "copyright": "Created by .kreks., mana_gift and resurrection by TheShuEd",
   "states": [
     {
       "name": "cure_wounds"
@@ -30,6 +30,9 @@
     },
     {
       "name": "mana_gift"
+    },
+    {
+      "name": "resurrection"
     },
     {
       "name": "shadow_grab"

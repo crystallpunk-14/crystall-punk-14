@@ -212,7 +212,7 @@
     Medicine:
       effects:
       - !type:Emote
-        showInChat: true
+        showInChat: false
         emote: Cough
         probability: 0.3
 
