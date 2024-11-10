@@ -1,0 +1,14 @@
+﻿- type: palette
+  id: CP14wood
+  name: CP14Wood
+  colors:
+    #light: "#000000"
+    #medium: "#000000"
+    #dark: "#000000"
+    #black: "#000000"
+
+    oak: "#513a2e"
+    red: "#4b2828"
+    birch: "#a7855a"
+    dark: "#33251d"
+    acacia: "#6a2a23"
