@@ -98,22 +98,6 @@
     - CP14ActionSpellFireball
 
 - type: entity
-  id: CP14ClothingRingShadowStep
-  parent: CP14ClothingRingBase
-  name: shadow step conductive ring
-  description: A standard mana-conductive ring that allows the user to step throught shadows.
-  suffix: Shadow step
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: amethyst_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellShadowStep
-
-- type: entity
   id: CP14ClothingRingShadowGrab
   parent: CP14ClothingRingBase
   name: shadow grab conductive ring
