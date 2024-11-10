@@ -3,7 +3,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_box
 
 - type: decal
@@ -11,7 +11,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_corner_ne
 
 - type: decal
@@ -19,7 +19,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_corner_se
 
 - type: decal
@@ -27,7 +27,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_corner_nw
 
 - type: decal
@@ -35,7 +35,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_corner_sw
 
 - type: decal
@@ -43,7 +43,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_inner_ne
 
 - type: decal
@@ -51,7 +51,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_inner_se
 
 - type: decal
@@ -59,7 +59,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_inner_nw
 
 - type: decal
@@ -67,7 +67,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_inner_sw
 
 - type: decal
@@ -75,7 +75,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_end_n
 
 - type: decal
@@ -83,7 +83,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_end_e
 
 - type: decal
@@ -91,7 +91,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_end_s
 
 - type: decal
@@ -99,7 +99,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_end_w
 
 - type: decal
@@ -107,7 +107,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_line_n
 
 - type: decal
@@ -115,7 +115,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_line_e
 
 - type: decal
@@ -123,7 +123,7 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_line_s
 
 - type: decal
@@ -131,5 +131,5 @@
   defaultSnap: true
   showMenu: true
   sprite:
-    sprite: _CP14/Decals/stone.rsi
+    sprite: _CP14/Decals/Stone.rsi
     state: stone_line_w
