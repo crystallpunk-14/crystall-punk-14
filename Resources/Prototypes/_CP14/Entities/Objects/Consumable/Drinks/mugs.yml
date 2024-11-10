@@ -1,5 +1,68 @@
 ﻿- type: entity
-  parent: DrinkBaseMug
+  parent: BaseItem
+  id: CP14DrinkBaseMug
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug.rsi
+    layers:
+      - state: icon-0
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: icon-3
+        visible: false
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      mug:
+        maxVol: 10
+  - type: CP14SolutionTemperature
+  - type: MixableSolution
+    solution: mug
+  - type: FitsInDispenser
+    solution: mug
+  - type: RefillableSolution
+    solution: mug
+  - type: DrainableSolution
+    solution: mug
+  - type: ExaminableSolution
+    solution: mug
+  - type: DrawableSolution
+    solution: mug
+  - type: InjectableSolution
+    solution: mug
+  - type: SolutionItemStatus
+    solution: mug
+  - type: TrashOnSolutionEmpty
+    solution: mug
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: mug
+  - type: Drink
+    solution: mug
+  - type: Appearance
+  - type: Injector
+    solutionName: mug
+    injectOnly: false
+    ignoreMobs: true
+    minTransferAmount: 1
+    maxTransferAmount: 10
+    transferAmount: 1
+    toggleState: 1 # draw
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: icon-
+
+- type: entity
+  parent: CP14DrinkBaseMug
   id: CP14MetalBeerMug
   name: Metal mug
   categories: [ ForkFiltered ]
@@ -9,7 +72,7 @@
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_4.rsi
 
 - type: entity
-  parent: DrinkBaseMug
+  parent: CP14DrinkBaseMug
   id: CP14WoodenBeerMug
   name: Wooden mug
   categories: [ ForkFiltered ]
@@ -19,7 +82,7 @@
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_1.rsi
 
 - type: entity
-  parent: DrinkBaseMug
+  parent: CP14DrinkBaseMug
   id: CP14SteelBeerMug
   name: Beer mug
   categories: [ ForkFiltered ]
@@ -29,7 +92,7 @@
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_2.rsi
 
 - type: entity
-  parent: DrinkBaseMug
+  parent: CP14DrinkBaseMug
   id: CP14SteelWoodBeerMug
   name: Beer mug
   categories: [ ForkFiltered ]

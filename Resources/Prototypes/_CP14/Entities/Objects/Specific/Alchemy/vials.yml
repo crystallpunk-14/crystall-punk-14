@@ -37,6 +37,8 @@
         type: TransferAmountBoundUserInterface
   - type: Drink
     solution: vial
+  - type: Spillable
+    solution: vial
   - type: Appearance
   - type: Damageable
     damageContainer: Inorganic
