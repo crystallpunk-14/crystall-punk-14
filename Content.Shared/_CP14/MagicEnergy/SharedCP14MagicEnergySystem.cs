@@ -101,7 +101,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         if (safe == false)
             return true;
 
-        return component.Energy > energy;
+        return component.Energy >= energy;
     }
 
     public bool TryConsumeEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)

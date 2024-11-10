@@ -8,6 +8,7 @@
   name: Demiplan ruins room spawner
   components:
   - type: RoomFill
+    clearExisting: true
     roomWhitelist:
       tags:
       - CP14DemiplanRuins

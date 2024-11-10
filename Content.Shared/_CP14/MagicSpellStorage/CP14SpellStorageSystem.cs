@@ -1,7 +1,10 @@
 using Content.Shared._CP14.MagicAttuning;
+using Content.Shared._CP14.MagicSpell.Components;
+using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
+using Content.Shared.Damage;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
@@ -20,11 +23,14 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     [Dependency] private readonly CP14SharedMagicAttuningSystem _attuning = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14SpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
         SubscribeLocalEvent<CP14SpellStorageComponent, ComponentShutdown>(OnMagicStorageShutdown);
+
+        SubscribeLocalEvent<CP14SpellStorageUseDamageComponent, CP14SpellFromSpellStorageUsedEvent>(OnSpellUsed);
 
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, GotEquippedHandEvent>(OnEquippedHand);
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, AddedAttuneToMindEvent>(OnHandAddedAttune);
@@ -34,6 +40,11 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotUnequippedEvent>(OnClothingUnequipped);
 
         SubscribeLocalEvent<CP14SpellStorageRequireAttuneComponent, RemovedAttuneFromMindEvent>(OnRemovedAttune);
+    }
+
+    private void OnSpellUsed(Entity<CP14SpellStorageUseDamageComponent> ent, ref CP14SpellFromSpellStorageUsedEvent args)
+    {
+        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerMana * args.Manacost);
     }
 
     /// <summary>
@@ -50,7 +61,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
             if (spellEnt is null)
                 continue;
 
-            var provided = EntityManager.EnsureComponent<CP14ProvidedBySpellStorageComponent>(spellEnt.Value);
+            var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
             provided.SpellStorage = mStorage;
 
             mStorage.Comp.SpellEntities.Add(spellEnt.Value);

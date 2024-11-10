@@ -34,6 +34,12 @@
           weight: 1
       - !type:GroupSelector
         children:
+        - id: CP14SpellScrollFireball
+        - id: CP14SpellScrollCureWounds
+        - id: CP14SpellScrollIceShards
+        - id: CP14SpellScrollManaGift
+      - !type:GroupSelector
+        children:
         - id: CP14DyeRed
         - id: CP14DyeYellow
         - id: CP14DyeBlue
