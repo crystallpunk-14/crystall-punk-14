@@ -55,7 +55,7 @@
     price: 125
 
 - type: entity
-  parent: CP14VialSmall
+  parent: DrinkBaseCup
   id: DrinkBaseMug
   abstract: true
   name: mug
