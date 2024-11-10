@@ -37,3 +37,8 @@
   id: Water
   name: cp14-magic-type-water
   color: "#1c94d9"
+
+- type: magicType
+  id: Necromancy
+  name: cp14-magic-type-necro
+  color: "#55877a"

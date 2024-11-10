@@ -44,6 +44,7 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellCureWounds
+    - CP14ActionSpellResurrection
   #- type: CP14MagicManacostModify
   #  modifiers:
   #   Healing: 1.1
