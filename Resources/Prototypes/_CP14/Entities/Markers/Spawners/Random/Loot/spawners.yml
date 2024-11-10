@@ -89,6 +89,7 @@
         - id: CP14ClothingRingManaGift
         - id: CP14ClothingRingSphereOfLight
         - id: CP14ClothingRingFlashLight
+        - id: CP14SpellScrollResurrection
       - !type:GroupSelector
         children:
         - id: CP14ClothingCloakArmoredRed

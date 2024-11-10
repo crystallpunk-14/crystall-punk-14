@@ -6,6 +6,7 @@ cp14-magic-type-light-darkness = Свет и тьма
 cp14-magic-type-meta = Метамагия
 cp14-magic-type-gate = Пространство
 cp14-magic-type-movement = Движение
+cp14-magic-type-necro = Некромантия
 
 cp14-magic-manacost = Затраты маны
 cp14-magic-magic-type = Тип магии
