@@ -11,11 +11,6 @@
     - ring
   - type: Sprite
     sprite: _CP14/Clothing/Rings/rings.rsi
-  - type: CP14MagicEnergyExaminable
-  - type: CP14MagicEnergyContainer
-    energy: 50
-    maxEnergy: 50
-  - type: CP14MagicUnsafeDamage
 
 - type: entity
   id: CP14ClothingRingIceDagger
@@ -96,22 +91,6 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellFireball
-
-- type: entity
-  id: CP14ClothingRingShadowStep
-  parent: CP14ClothingRingBase
-  name: shadow step conductive ring
-  description: A standard mana-conductive ring that allows the user to step throught shadows.
-  suffix: Shadow step
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: amethyst_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellShadowStep
 
 - type: entity
   id: CP14ClothingRingShadowGrab

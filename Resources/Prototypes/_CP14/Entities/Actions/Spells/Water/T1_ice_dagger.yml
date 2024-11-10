@@ -93,3 +93,12 @@
           collection: GlassBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
+
+- type: entity
+  parent: CP14BaseSpellScrollWater
+  id: CP14SpellScrollIceDagger
+  name: ice dagger spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceDagger
