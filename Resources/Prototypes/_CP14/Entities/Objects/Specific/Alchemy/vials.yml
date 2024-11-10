@@ -38,7 +38,7 @@
   - type: Drink
     solution: vial
   - type: Spillable
-    solution: mug
+    solution: vial
   - type: Appearance
   - type: Damageable
     damageContainer: Inorganic
