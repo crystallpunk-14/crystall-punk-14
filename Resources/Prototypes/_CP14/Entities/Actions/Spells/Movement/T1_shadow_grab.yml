@@ -48,3 +48,12 @@
     layers:
     - state: particles_up
       color: "#5e427e"
+
+- type: entity
+  parent: CP14BaseSpellScrollMovement
+  id: CP14SpellScrollShadowGrab
+  name: shadow grab spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellShadowGrab

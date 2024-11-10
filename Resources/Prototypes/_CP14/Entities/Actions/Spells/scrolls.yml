@@ -8,10 +8,6 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Bureaucracy/paper.rsi
-    layers:
-    - state: paper_filled
-    - state: magic
-      shader: unshaded
   - type: Item
     size: Tiny
   - type: Flammable
@@ -67,37 +63,97 @@
   - type: CP14MagicUnsafeDamage
 
 - type: entity
+  abstract: true
+  id: CP14BaseSpellScrollEarth
   parent: CP14BaseSpellScroll
-  id: CP14SpellScrollFireball
-  name: fireball spell scroll
   components:
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellFireball
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#70533f"
 
 - type: entity
+  abstract: true
+  id: CP14BaseSpellScrollFire
   parent: CP14BaseSpellScroll
-  id: CP14SpellScrollCureWounds
-  name: cure wound spell scroll
   components:
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellCureWounds
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#d9741c"
 
 - type: entity
+  abstract: true
+  id: CP14BaseSpellScrollGate
   parent: CP14BaseSpellScroll
-  id: CP14SpellScrollIceShards
-  name: ice shards spell scroll
   components:
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellIceShards
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#32597d"
 
 - type: entity
+  abstract: true
+  id: CP14BaseSpellScrollHealing
   parent: CP14BaseSpellScroll
-  id: CP14SpellScrollManaGift
-  name: mana gift spell scroll
   components:
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellManaGift
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#89e04f"
+
+- type: entity
+  abstract: true
+  id: CP14BaseSpellScrollLightDarkness
+  parent: CP14BaseSpellScroll
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#ba97b8"
+
+- type: entity
+  abstract: true
+  id: CP14BaseSpellScrollMeta
+  parent: CP14BaseSpellScroll
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#dcffdb"
+
+- type: entity
+  abstract: true
+  id: CP14BaseSpellScrollMovement
+  parent: CP14BaseSpellScroll
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#63ceff"
+
+- type: entity
+  abstract: true
+  id: CP14BaseSpellScrollWater
+  parent: CP14BaseSpellScroll
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#1c94d9"

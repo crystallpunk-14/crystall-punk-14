@@ -66,3 +66,12 @@
     layers:
     - state: shard
       shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollWater
+  id: CP14SpellScrollIceShards
+  name: ice shards spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceShards

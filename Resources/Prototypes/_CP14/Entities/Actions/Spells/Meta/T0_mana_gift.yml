@@ -68,3 +68,12 @@
     - state: particles_up
       color: "#5096d4"
       shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollMeta
+  id: CP14SpellScrollManaGift
+  name: mana gift spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaGift

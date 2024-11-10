@@ -89,3 +89,12 @@
     lifetime: 1.2
   - type: SpawnOnDespawn
     prototype: CP14WallDirt
+
+- type: entity
+  parent: CP14BaseSpellScrollEarth
+  id: CP14SpellScrollEarthWall
+  name: earth wall spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellEarthWall

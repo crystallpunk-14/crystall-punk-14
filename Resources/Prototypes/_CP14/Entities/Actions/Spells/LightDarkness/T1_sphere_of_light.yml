@@ -113,3 +113,12 @@
           params:
             variation: 0.250
             volume: -12
+
+- type: entity
+  parent: CP14BaseSpellScrollLightDarkness
+  id: CP14SpellScrollSphereOfLight
+  name: sphere of light spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
