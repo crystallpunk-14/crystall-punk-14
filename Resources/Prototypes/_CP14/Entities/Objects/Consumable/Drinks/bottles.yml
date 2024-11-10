@@ -1,7 +1,7 @@
 ﻿#Base for future bottles
 - type: entity
   name: Green Bottle
-  parent: [CP14BaseVial, CP14BaseVialFragile]
+  parent: CP14BaseVialFragile
   id: CP14GreenBottle
   suffix: Empty
   categories: [ ForkFiltered ]
