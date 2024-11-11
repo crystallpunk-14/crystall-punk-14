@@ -5,6 +5,7 @@
 
 - type: reaction
   id: CP14BloodFlowerBrewing
+  impact: Low
   minTemp: 500
   priority: 1
   quantized: true
@@ -32,6 +33,7 @@
   products:
     CP14BasicEffectDamageBrute: 0.5
   cp14RandomProducts:
+  - CP14BasicEffectBloodRestore: 0.5
   - CP14BasicEffectRainbow: 0.5
   - CP14BasicEffectDamageCold: 0.5
   - CP14BasicEffectDrunk: 0.5
@@ -51,7 +53,7 @@
       amount: 0.5
   products:
     CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectSatiateHunger: 0.5
+    CP14BasicEffectBloodRestore: 0.5
     CP14BasicEffectHealBrute: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -70,7 +72,7 @@
       amount: 0.5
   products:
     CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectSatiateHunger: 0.5
+    CP14BasicEffectBloodRestore: 0.5
     CP14BasicEffectHealCold: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -89,7 +91,7 @@
       amount: 0.5
   products:
     CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectSatiateHunger: 0.25
+    CP14BasicEffectBloodRestore: 0.5
     CP14BasicEffectHealPoison: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
