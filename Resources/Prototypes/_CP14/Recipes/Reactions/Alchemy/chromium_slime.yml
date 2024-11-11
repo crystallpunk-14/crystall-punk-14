@@ -33,6 +33,12 @@
       CP14BasicEffectDamageMana: CP14BasicEffectHealMana
       CP14BasicEffectHealMana: CP14BasicEffectDamageMana
       #
+      CP14BasicEffectBloodAbsorption: CP14BasicEffectBloodRestore
+      CP14BasicEffectBloodRestore: CP14BasicEffectBloodAbsorption
+      #
+      CP14BasicEffectSpeedDown: CP14BasicEffectSpeedUp
+      CP14BasicEffectSpeedUp: CP14BasicEffectSpeedDown
+      #
       #CP14BasicEffectRainbow: 
       #CP14BasicEffectEmoteCough:
 
