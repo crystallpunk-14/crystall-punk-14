@@ -7,7 +7,10 @@
   description: Mop for cleaning floors from various unpleasant liquids
   components:
   - type: Item
-    size: Large
+    size: Normal
+    storedRotation: 0
+    shape:
+    - 0,0,0,2
     sprite: _CP14/Objects/Tools/mop.rsi
   - type: Sprite
     sprite: _CP14/Objects/Tools/mop.rsi
@@ -30,7 +33,7 @@
   - type: SolutionContainerManager
     solutions:
       absorbed:
-        maxVol: 100
+        maxVol: 50
 
 - type: entity
   id: CP14BaseBroom
