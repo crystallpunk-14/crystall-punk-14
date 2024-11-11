@@ -38,7 +38,7 @@
 - type: entity
   name: Blue vial
   parent: CP14GreenBottle
-  id: CP14BlueVial
+  id: CP14BlueBottle
   description: A blue vial perfect for drinking whiskey.
   components:
   - type: Sprite
@@ -54,7 +54,7 @@
 - type: entity
   name: Green vial
   parent: CP14GreenBottle
-  id: CP14GreenVial
+  id: CP14GreenBottle
   description: Just a little green vial.
   components:
   - type: Sprite

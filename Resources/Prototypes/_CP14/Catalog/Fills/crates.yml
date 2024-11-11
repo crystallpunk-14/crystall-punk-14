@@ -79,8 +79,8 @@
     children:
     - id: CP14VialSmall
     - id: CP14VialTiny
-    - id: CP14GreenVial
-    - id: CP14BlueVial
+    - id: CP14GreenBottle
+    - id: CP14BlueBottle
     - id: CP14RedBottle
     #Common
     - !type:GroupSelector
