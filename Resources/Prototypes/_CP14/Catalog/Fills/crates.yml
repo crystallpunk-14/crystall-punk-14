@@ -85,7 +85,9 @@
     - id: CP14VialSmall
     - id: CP14VialTiny
     - id: CP14GreenBottle
+    - id: CP14GreenBottle2
     - id: CP14BlueBottle
+    - id: CP14OrangeBottle
     - id: CP14RedBottle
     #Common
     - !type:GroupSelector
