@@ -227,3 +227,15 @@
         reagents:
         - ReagentId: CP14LumiMushroom
           Quantity: 300
+
+- type: entity
+  id: CP14BarrelDayflin
+  parent: CP14BaseBarrel
+  suffix: Dayflin
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14YellowDayflinPulp
+          Quantity: 300

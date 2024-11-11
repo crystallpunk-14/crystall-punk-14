@@ -46,11 +46,7 @@
         - id: CP14SpellScrollEarthWall
         - id: CP14SpellScrollFlashLight
       - id: CP14EnergyCrystalSmall
-      - id: CP14Bucket
-      - id: CP14CrystalLampBlueEmpty
-      - id: CP14Scissors
       - id: CP14BaseSharpeningStone
-      - id: CP14Rope
       - id: CP14GlassShard
       - id: CP14Paper
     # Rare
@@ -67,10 +63,10 @@
         - id: CP14VialTinyChromiumSlime
         - id: CP14VialTinyLumiMushroom
       - id: CP14SilverCoin5
-      - id: CP14Nail10
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMedium
       - id: CP14DemiplanKey
+        weight: 2
       - !type:AllSelector
         children:
         - id: CP14Crossbolt
@@ -90,29 +86,9 @@
         - id: CP14ClothingRingSphereOfLight
         - id: CP14ClothingRingFlashLight
         - id: CP14SpellScrollResurrection
-      - !type:GroupSelector
-        children:
-        - id: CP14ClothingCloakArmoredRed
-        - id: CP14ClothingCloakBlacksmithArpon
-        - id: CP14ClothingCloakMaidArpon
-        - id: CP14ClothingCloakBrassArmor
-        - id: CP14ClothingCloakCuirass
-        - id: CP14ClothingCloakInfantryCuirass
-        - id: CP14ClothingCloakCuirassLoincloth
-        - id: CP14ClothingCloakCuirassLeg
-        - id: CP14ClothingHeadCapellina
-      - !type:GroupSelector
-        children:
-        - id: CP14ClothingCloakFurcapeBlack
-        - id: CP14ClothingCloakFurcapeBlue
-        - id: CP14ClothingCloakSimpleWhite
-        - id: CP14ClothingCloakSimpleDarkBlue
-        - id: CP14ClothingCloakRitualAttireLeather
-        - id: CP14ClothingHeadBeretMercenary
-        - id: CP14ClothingPantsMercenaryTrousers
-        - id: CP14ClothingPantsSouthernMagician
-        - id: CP14ClothingShirtMercenary
-        - id: CP14ClothingShirtYellowWizard
+      # Rare standard village crates loot
+      - !type:NestedSelector
+        tableId: CP14StationCrateLoot
 
 - type: entityTable
   id: CP14TableBureaucracy
