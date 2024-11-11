@@ -44,7 +44,10 @@
   description: Sweeps up dried footprints and other stains from the floor
   components:
   - type: Item
-    size: Large
+    size: Normal
+    storedRotation: 0
+    shape:
+    - 0,0,0,2
     sprite: _CP14/Objects/Tools/broom.rsi
   - type: Sprite
     sprite: _CP14/Objects/Tools/broom.rsi
