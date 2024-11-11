@@ -45,9 +45,14 @@
     - !type:GroupSelector
       children:
       - id: CP14Scissors
+      - id: CP14BaseCrowbar
+      - id: CP14BaseWrench
+      - id: CP14BaseShovel
+      - id: CP14BaseMop
+      - id: CP14BaseBroom
+      - id: CP14BasePickaxe
       - id: CP14CrystalLampBlueEmpty
       - id: CP14CrystalLampOrangeEmpty
-      - id: CP14Bucket
       - id: CP14Rope
       - id: CP14Nail10
       - id: CP14EnergyCrystalSmall
