@@ -1,6 +1,7 @@
 - type: cp14DemiplaneLocation
   id: T1GrasslandIsland
   locationConfig: CP14DemiplaneGrasslandIsland
+  name: cp14-demiplane-location-grassland-island
   tags:
   - CP14DemiplaneCave
   - CP14DemiplaneOpenSky

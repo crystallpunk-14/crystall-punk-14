@@ -4,12 +4,16 @@ using Content.Server._CP14.Demiplane.Components;
 using Content.Server._CP14.Demiplane.Jobs;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
+using Content.Shared._CP14.MagicManacostModify;
+using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Verbs;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Demiplane;
 
@@ -19,10 +23,70 @@ public sealed partial class CP14DemiplaneSystem
     private readonly List<(CP14SpawnRandomDemiplaneJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
     private const double JobMaxTime = 0.002;
 
+    [Dependency] private readonly ExamineSystemShared _examine = default!;
+
     private void InitGeneration()
     {
         SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, MapInitEvent>(GeneratorMapInit);
         SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, UseInHandEvent>(GeneratorUsedInHand);
+
+        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
+    }
+
+    private void OnVerbExamine(Entity<CP14DemiplaneGeneratorDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        var markup = GetDemiplanExamine(ent.Comp);
+        _examine.AddDetailedExamineVerb(
+            args,
+            ent.Comp,
+            markup,
+            Loc.GetString("cp14-demiplan-examine"),
+            "/Textures/Interface/VerbIcons/dot.svg.192dpi.png"); //TODO custom icon
+    }
+
+    private FormattedMessage GetDemiplanExamine(CP14DemiplaneGeneratorDataComponent comp)
+    {
+        var msg = new FormattedMessage();
+
+        if (!_proto.TryIndex(comp.Location, out var indexedLocation))
+            return msg;
+
+        msg.AddMarkupOrThrow(
+            indexedLocation.Name is not null && _random.Prob(indexedLocation.ExamineProb)
+                ? Loc.GetString("cp14-demiplane-examine-title", ("location", Loc.GetString(indexedLocation.Name)))
+                : Loc.GetString("cp14-demiplane-examine-title-unknown"));
+
+        List<LocId> modifierNames = new();
+        foreach (var modifier in comp.Modifiers)
+        {
+            if (!_proto.TryIndex(modifier, out var indexedModifier))
+                continue;
+
+            if (!_random.Prob(indexedModifier.ExamineProb))
+                continue;
+
+            if (indexedModifier.Name is null)
+                continue;
+
+            if (modifierNames.Contains(indexedModifier.Name.Value))
+                continue;
+
+            modifierNames.Add(indexedModifier.Name.Value);
+        }
+
+        if (modifierNames.Count > 0)
+        {
+            msg.AddMarkupOrThrow("\n" + Loc.GetString("cp14-demiplane-examine-modifiers"));
+            foreach (var name in modifierNames)
+            {
+                msg.AddMarkupOrThrow("\n- " + Loc.GetString(name));
+            }
+        }
+
+        return msg;
     }
 
     private void UpdateGeneration(float frameTime)
