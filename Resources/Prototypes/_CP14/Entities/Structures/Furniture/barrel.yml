@@ -10,6 +10,29 @@
   placement:
     mode: PlaceFree
   components:
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {visible: false}
+          False: {visible: true}
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/barrel.rsi
+    noRot: true
+    layers:
+      - state: barrel_open
+      - state: liq1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: barrel
+        map: ["enum.OpenableVisuals.Layer"]
   - type: Transform
     noRot: true
   - type: InteractionOutline
@@ -65,15 +88,6 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Appearance
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: _CP14/Structures/Furniture/barrel.rsi
-    noRot: true
-    layers:
-      - state: barrel_open
-      - state: liq1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
   - type: SolutionContainerManager
     solutions:
       barrel:
