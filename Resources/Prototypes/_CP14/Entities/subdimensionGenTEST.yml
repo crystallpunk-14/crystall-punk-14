@@ -27,26 +27,6 @@
     maxModifiers: 6
 
 - type: entity
-  id: CP14DemiplanKeyHard
-  parent: CP14BaseSubdimensionalKey
-  name: hard demiplan key - hard
-  components:
-  - type: CP14DemiplaneGeneratorData
-    rewardLimit: 2.25
-    difficultyLimit: 1.75
-    maxModifiers: 10
-
-- type: entity
-  id: CP14DemiplanKeyHardcore
-  parent: CP14BaseSubdimensionalKey
-  name: demiplan key - HARDCORE
-  components: 
-  - type: CP14DemiplaneGeneratorData
-    rewardLimit: 4.25
-    difficultyLimit: 2.75
-    maxModifiers: 15
-
-- type: entity
   id: CP14DemiplanRiftCore
   categories: [ ForkFiltered ]
   name: demiplan rift core

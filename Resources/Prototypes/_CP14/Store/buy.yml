@@ -63,10 +63,10 @@
       CP14BrassChestFilledFarmSeeds: 1
 
 - type: storePositionBuy
-  id: Demiplan
+  id: Demiplane
   name: cp14-store-buy-alchemy-demiplan-name
   desc: cp14-store-buy-alchemy-demiplan-desc
-  code: DEMIPLAN
+  code: DEMIPLANE
   icon: 
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
     state: pulse
@@ -76,4 +76,4 @@
   services:
   - !type:CP14BuyItemsService
     product:
-      CP14DemiplanKey: 1
+      CP14BrassChestFilledDemiplanes: 1

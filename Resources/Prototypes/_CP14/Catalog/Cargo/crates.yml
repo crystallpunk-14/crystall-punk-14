@@ -60,3 +60,19 @@
         amount: 3
       - id: CP14SeedTomato
         amount: 3
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledDemiplanes
+  suffix: Demiplanes
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14BaseSubdimensionalKey
+        amount: 9
+      - id: CP14BaseSubdimensionalKey
+        amount: 1
+        prob: 0.5
+      - id: CP14BaseSubdimensionalKey
+        amount: 1
+        prob: 0.5
