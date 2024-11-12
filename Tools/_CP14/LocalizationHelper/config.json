@@ -1,0 +1,8 @@
+{
+    "paths": {
+        "prototypes": "../../../Resources/Prototypes/_CP14/Entities",
+        "localization": "../../../Resources/Locale/ru-RU/_CP14/_PROTO/entities",
+        "error_log_path": "logs/errors.log",
+        "yml_parser_last_launch": "last_launch/yml_parser.json"
+    }
+}
