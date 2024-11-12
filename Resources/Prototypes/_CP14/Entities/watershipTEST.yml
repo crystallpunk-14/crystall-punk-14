@@ -1,0 +1,59 @@
+- type: entity
+  name: ship paddle
+  id: CP14BaseWatershipPaddle
+  abstract: true
+  parent: 
+  - BaseStructure
+  description: bulb bulb
+  categories: [ ForkFiltered ]
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.05"
+        density: 190
+        mask:
+        - TableMask
+  - type: Sprite
+    sprite: _CP14/Structures/Shuttle/paddle.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 2
+            max: 4
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+  - type: Pullable
+  - type: CP14WaterShipPaddle
+
+- type: entity
+  parent: CP14BaseWatershipPaddle
+  id: CP14WatershipPaddleLeft
+  suffix: Left
+  components:
+  - type: Sprite
+    state: wooden_l
+
+- type: entity
+  parent: CP14BaseWatershipPaddle
+  id: CP14WatershipPaddleRight
+  suffix: Right
+  components:
+  - type: Sprite
+    state: wooden_r

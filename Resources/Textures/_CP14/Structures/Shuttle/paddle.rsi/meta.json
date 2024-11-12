@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Created by TheShuEd (Github) for CrystallPunk14",
+  "size": {
+    "x": 96,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "wooden_l"
+    },
+    {
+      "name": "wooden_r"
+    }
+  ]
+}
