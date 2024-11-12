@@ -1,3 +1,3 @@
 @echo off
-python localization_helper.py
+python main.py
 pause
