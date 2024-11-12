@@ -41,6 +41,7 @@
   - type: Anchorable
   - type: Pullable
   - type: CP14WaterShipPaddle
+    impulseAngle: 90
 
 - type: entity
   parent: CP14BaseWatershipPaddle
@@ -49,6 +50,7 @@
   components:
   - type: Sprite
     state: wooden_l
+  - type: CP14WaterShipPaddle
 
 - type: entity
   parent: CP14BaseWatershipPaddle
@@ -57,3 +59,4 @@
   components:
   - type: Sprite
     state: wooden_r
+  - type: CP14WaterShipPaddle

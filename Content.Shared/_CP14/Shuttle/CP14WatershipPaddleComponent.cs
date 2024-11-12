@@ -7,5 +7,8 @@ namespace Content.Shared._CP14.Shuttle;
 public sealed partial class CP14WaterShipPaddleComponent : Component
 {
     [DataField]
-    public float Power = 10f;
+    public float Power = 5f;
+
+    [DataField]
+    public Angle ImpulseAngle = Angle.FromDegrees(90f);
 }

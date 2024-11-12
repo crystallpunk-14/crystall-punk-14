@@ -59,7 +59,8 @@ public sealed class CP14WatershipSystem : EntitySystem
         if (paddleTransform.GridUid is null)
             return;
 
-        var impulseDirection = paddleTransform.LocalRotation.ToVec();
+        var direction = _transform.GetWorldRotation(paddleTransform) + ent.Comp.ImpulseAngle;
+        var impulseDirection = direction.ToVec();
 
         _physics.ApplyLinearImpulse(paddleTransform.GridUid.Value, impulseDirection * ent.Comp.Power * modifier, paddleTransform.LocalPosition);
     }
