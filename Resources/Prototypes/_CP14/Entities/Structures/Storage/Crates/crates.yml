@@ -44,7 +44,7 @@
           False: { state: icon }
   - type: Storage
     grid:
-    - 0,0,6,6
+    - 0,0,7,7
     maxItemSize: Large
     storageOpenSound: /Audio/Effects/closetopen.ogg
     storageCloseSound: /Audio/Effects/closetclose.ogg
@@ -62,7 +62,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.4,-0.4,0.4,0.4"
-        density: 155
+        density: 255
         mask:
         - MachineMask
         layer:
@@ -79,14 +79,14 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.3,-0.3,0.3,0.3"
-        density: 95
+        density: 135
         mask:
         - MachineMask
         layer:
         - WallLayer
   - type: Storage
     grid:
-    - 0,0,4,4
+    - 0,0,5,5
     maxItemSize: Normal
   - type: Destructible
     thresholds:
@@ -168,208 +168,3 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-
-- type: entity
-  abstract: true
-  id: BRFilledTemp
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14Crossbolt
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14Crossbolt
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14Crossbolt
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseSharpeningStone
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseSharpeningStone
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseBattleStaff
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseDagger
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseHandheldAxe
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseLightHammer
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseMace
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseSickle
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseThrowableSpear
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseLightCrossbow
-        prob: 0.2
-        onGroup: Weapon
-      - id: CP14BaseShovel
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14BaseHoe
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14BasePickaxe
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14ClothingRingIceDagger
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14ClothingRingIceShards
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14ClothingRingFlameCreation
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14ClothingRingFireball
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14ClothingRingCureWounds
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14ClothingRingShadowStep
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14ClothingRingShadowGrab
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14AuraScanner
-        prob: 0.2
-        onGroup: Weapon2
-      - id: CP14CopperCoin1
-        prob: 0.2
-        onGroup: Currency
-      - id: CP14CopperCoin5
-        prob: 0.2
-        onGroup: Currency
-      - id: CP14CopperCoin
-        prob: 0.2
-        onGroup: Currency
-      - id: CP14SilverCoin1
-        prob: 0.2
-        onGroup: Currency
-      - id: CP14SilverCoin5
-        prob: 0.2
-        onGroup: Currency
-      - id: CP14DirtBlock10
-        prob: 0.2
-        onGroup: Material
-      - id: CP14StoneBlock10
-        prob: 0.2
-        onGroup: Material
-      - id: CP14WoodLog
-        prob: 0.2
-        onGroup: Material
-      - id: CP14WoodenPlanks10
-        prob: 0.2
-        onGroup: Material
-      - id: CP14Nail1
-        prob: 0.2
-        onGroup: Material
-      - id: CP14Nail10
-        prob: 0.2
-        onGroup: Material
-      - id: CP14BloodFlower
-        prob: 0.2
-        onGroup: Material
-      - id: CP14AgaricMushroom
-        prob: 0.2
-        onGroup: Material
-      - id: CP14ChromiumSlime
-        prob: 0.2
-        onGroup: Material
-      - id: CP14WildSage
-        prob: 0.2
-        onGroup: Material
-      - id: CP14QuartzShard
-        prob: 0.2
-        onGroup: Material
-      - id: CP14LumiMushroom
-        prob: 0.2
-        onGroup: Material
-      - id: CP14Pestle
-        prob: 0.2
-        onGroup: Material
-      - id: CP14Mortar
-        prob: 0.2
-        onGroup: Material
-      - id: CP14Dropper
-        prob: 0.2
-        onGroup: Material
-      - id: CP14VialSmallBloodFlowerSap
-        prob: 0.2
-        onGroup: Material
-      - id: CP14VialSmallAgaricMushroom
-        prob: 0.2
-        onGroup: Material
-      - id: CP14VialSmallGroundQuartz
-        prob: 0.2
-        onGroup: Material
-      - id: CP14VialSmallWildSage
-        prob: 0.2
-        onGroup: Material
-      - id: CP14VialSmallChromiumSlime
-        prob: 0.2
-        onGroup: Material
-      - id: CP14VialSmallLumiMushroom
-        prob: 0.2
-        onGroup: Material
-      - id: CP14EnergyCrystalMedium
-        prob: 0.2
-        onGroup: Material
-      - id: CP14EnergyCrystalSmall
-        prob: 0.2
-        onGroup: Material
-      - id: CP14DyeRed
-        prob: 0.2
-        onGroup: Material
-      - id: CP14DyeYellow
-        prob: 0.2
-        onGroup: Material
-      - id: CP14DyeBlue
-        prob: 0.2
-        onGroup: Material
-      - id: CP14DyeGreen
-        prob: 0.2
-        onGroup: Material
-      - id: CP14DyePurple
-        prob: 0.2
-        onGroup: Material
-      - id: CP14DyeBlack
-        prob: 0.2
-        onGroup: Material
-      - id: CP14String
-        prob: 0.2
-        onGroup: Material
-      - id: CP14Cloth10
-        prob: 0.2
-        onGroup: Material
-      - id: CP14Scissors 
-        prob: 0.2
-        onGroup: Material
-
-
-- type: entity
-  id: CP14SmallWoodenCrateFilled
-  parent: 
-  - CP14SmallWoodenCrate
-  #- BRFilledTemp
-  suffix: Filled, Battleroyale
-
-- type: entity
-  id: CP14LargeWoodenCrateFilled
-  suffix: Filled, Battleroyale
-  parent: 
-  - CP14LargeWoodenCrate
-  #- BRFilledTemp

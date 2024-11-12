@@ -11,7 +11,7 @@
     - state: unwielded
       map: [ base ]
   - type: Item
-    size: Small
+    size: Normal
   - type: Clothing
     equipDelay: 0.45
     unequipDelay: 0.45

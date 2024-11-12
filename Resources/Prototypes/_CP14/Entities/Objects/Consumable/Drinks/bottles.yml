@@ -1,6 +1,6 @@
 ﻿#Base for future bottles
 - type: entity
-  name: Green Bottle
+  name: green Bottle
   parent: CP14BaseVialFragile
   id: CP14GreenBottle
   suffix: Empty
@@ -36,9 +36,9 @@
     fillBaseName: fill-
 
 - type: entity
-  name: Blue vial
+  name: blue bottle
   parent: CP14GreenBottle
-  id: CP14BlueVial
+  id: CP14BlueBottle
   description: A blue vial perfect for drinking whiskey.
   components:
   - type: Sprite
@@ -52,9 +52,9 @@
     fillBaseName: fill-
 
 - type: entity
-  name: Green vial
+  name: green bottle
   parent: CP14GreenBottle
-  id: CP14GreenVial
+  id: CP14GreenBottle2
   description: Just a little green vial.
   components:
   - type: Sprite
@@ -65,7 +65,7 @@
         maxVol: 15
 
 - type: entity
-  name: Orange bottle
+  name: orange bottle
   parent: CP14GreenBottle
   id: CP14OrangeBottle
   description: Just a orange bottle.
@@ -74,7 +74,7 @@
     sprite: _CP14/Objects/Consumable/Drinks/orange_bottle.rsi
 
 - type: entity
-  name: Red Bottle
+  name: red Bottle
   parent: CP14GreenBottle
   id: CP14RedBottle
   description: A red bottle perfect for drinking wine.
