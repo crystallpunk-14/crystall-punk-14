@@ -12,5 +12,5 @@ cp14-store-buy-alchemy-bureaucracy-desc = Feather pens, inkwells and a big stack
 cp14-store-buy-alchemy-farm-seeds-name = Seeds for farming
 cp14-store-buy-alchemy-farm-seeds-desc = A set of different seeds, for farming of all kinds! Don't limit yourself, buy several boxes at once, just in case the farmers eat everything and don't have any food left to process into seeds.
 
-cp14-store-buy-alchemy-demiplan-name = Demiplan key
-cp14-store-buy-alchemy-demiplan-desc = An unstable pocket dimension where doom or riches may await you? What could be better for your adventurers? Buy from us for a couple of gold pieces - resell to them for more, or bail them out.
+cp14-store-buy-alchemy-demiplan-name = 10 demiplane Keys
+cp14-store-buy-alchemy-demiplan-desc = Unstable pocket dimensions where doom or riches may await you? What could be better for your adventurers? Buy from us for a couple of gold pieces - resell to them for more, or bail them out.

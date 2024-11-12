@@ -1,6 +1,7 @@
 - type: cp14DemiplaneLocation
   id: T1GrassGeode
   locationConfig: CP14DemiplaneGrassGeode
+  name: cp14-demiplane-location-cave-grass
   tags:
   - CP14DemiplaneCave
   - CP14DemiplaneGrass

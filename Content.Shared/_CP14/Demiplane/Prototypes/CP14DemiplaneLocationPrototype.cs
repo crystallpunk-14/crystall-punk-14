@@ -26,4 +26,10 @@ public sealed partial class CP14DemiplaneLocationPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<TagPrototype>> Tags = new();
+
+    [DataField]
+    public LocId? Name;
+
+    [DataField]
+    public float ExamineProb = 0.75f;
 }
