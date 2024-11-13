@@ -4,7 +4,6 @@
   name: bucket
   description: It's a boring old bucket.
   categories: [ ForkFiltered ]
-  suffix: CP14
   components: 
   - type: Drink
     solution: bucket
