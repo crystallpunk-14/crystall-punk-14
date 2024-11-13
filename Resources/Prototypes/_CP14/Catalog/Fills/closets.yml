@@ -7,7 +7,7 @@
     contents:
       - id: CP14KeyRingAlchemist
       - id: HandLabeler #TODO custom cp14 labeler
-      - id: Syringe #TODO custom cp14 syringe
+      - id: CP14Syringe
         amount: 2
       - id: CP14Cauldron
       - id: CP14Pestle
