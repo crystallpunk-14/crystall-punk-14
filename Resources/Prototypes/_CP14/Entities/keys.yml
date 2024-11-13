@@ -169,60 +169,10 @@
 
 - type: entity
   parent: CP14BaseKey
-  id: CP14KeyBankSafe1
-  name: bank safe 1 key
+  id: CP14KeyBankSafe
+  name: bank safe key
   components:
   - type: Sprite
     state: key12
   - type: CP14Key
-    autoGenerateShape: BankSafe1
-
-- type: entity
-  parent: CP14BaseKey
-  id: CP14KeyBankSafe2
-  name: bank safe 2 key
-  components:
-  - type: Sprite
-    state: key12
-  - type: CP14Key
-    autoGenerateShape: BankSafe2
-
-- type: entity
-  parent: CP14BaseKey
-  id: CP14KeyBankSafe3
-  name: bank safe 3 key
-  components:
-  - type: Sprite
-    state: key12
-  - type: CP14Key
-    autoGenerateShape: BankSafe3
-
-- type: entity
-  parent: CP14BaseKey
-  id: CP14KeyBankSafe4
-  name: bank safe 4 key
-  components:
-  - type: Sprite
-    state: key12
-  - type: CP14Key
-    autoGenerateShape: BankSafe4
-
-- type: entity
-  parent: CP14BaseKey
-  id: CP14KeyBankSafe5
-  name: bank safe 5 key
-  components:
-  - type: Sprite
-    state: key12
-  - type: CP14Key
-    autoGenerateShape: BankSafe5
-
-- type: entity
-  parent: CP14BaseKey
-  id: CP14KeyBankSafe6
-  name: bank safe 6 key
-  components:
-  - type: Sprite
-    state: key12
-  - type: CP14Key
-    autoGenerateShape: BankSafe6
+    autoGenerateShape: BankSafe
