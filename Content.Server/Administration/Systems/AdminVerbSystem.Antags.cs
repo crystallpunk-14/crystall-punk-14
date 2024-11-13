@@ -54,9 +54,9 @@ public sealed partial class AdminVerbSystem
         var targetPlayer = targetActor.PlayerSession;
 
 
-        Verb CP14Bandit = new()
+        Verb CP14Sociopath = new()
         {
-            Text = Loc.GetString("cp14-admin-verb-text-make-bandit"),
+            Text = Loc.GetString("cp14-admin-verb-text-make-sociopath"),
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Hands/Gloves/Color/black.rsi"),
                 "icon"), //TODO
@@ -65,9 +65,9 @@ public sealed partial class AdminVerbSystem
                 //_antag.ForceMakeAntag<CP14BanditRoleComponent>(targetPlayer, "CP14Bandit"); //TODO
             },
             Impact = LogImpact.High,
-            Message = Loc.GetString("cp14-admin-verb-make-bandit"),
+            Message = Loc.GetString("cp14-admin-verb-make-sociopath"),
         };
-        args.Verbs.Add(CP14Bandit);
+        args.Verbs.Add(CP14Sociopath);
 
         /* CP14 disable default antags
         Verb traitor = new()
