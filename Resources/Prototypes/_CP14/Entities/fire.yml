@@ -3,16 +3,16 @@
   name: fire
   description: it's fire!
   categories: [ ForkFiltered ]
-  suffix: cp14
   placement:
     mode: SnapgridCenter
   components:
   - type: Sprite
-    drawDepth: Mobs
+    drawdepth: Effects
     snapCardinals: true
     sprite: _CP14/Effects/fire.rsi
     layers:
       - state: full
+        shader: unshaded
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full

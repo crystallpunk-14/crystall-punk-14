@@ -8,6 +8,7 @@ using Content.Shared.Storage;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Shared.Prototypes;
+
 namespace Content.Server._CP14.Currency;
 
 public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
@@ -17,6 +18,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+
     public override void Initialize()
     {
         base.Initialize();

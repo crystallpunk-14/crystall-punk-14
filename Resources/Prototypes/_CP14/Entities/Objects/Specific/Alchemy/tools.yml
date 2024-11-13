@@ -223,3 +223,43 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: liq-
+
+- type: entity
+  id: CP14Syringe
+  parent: BaseItem
+  name: syringe
+  description: Used to draw blood samples from mobs, or to inject them with reagents.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/syringe.rsi
+    layers:
+      - state: syringe1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: base
+        map: ["enum.SolutionContainerLayers.Base"]
+  - type: Icon
+    sprite: _CP14/Objects/Specific/Alchemy/syringe.rsi
+    state: base
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/syringe.rsi
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 10
+  - type: Injector
+    injectOnly: false
+    toggleState: Draw
+  - type: ExaminableSolution
+    solution: injector
+  - type: Spillable
+    solution: injector
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: syringe
+  - type: Tag
+    tags:
+    - Syringe

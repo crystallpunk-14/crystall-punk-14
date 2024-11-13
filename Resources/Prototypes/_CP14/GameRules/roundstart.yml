@@ -23,24 +23,24 @@
       - CP14PersonalCurrencyCollectObjectiveGroup
 
 - type: entity
-  id: CP14BanditsRule
+  id: CP14SociopathsRule
   parent: CP14BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 0 #Increase when bigger online
+    minPlayers: 2 #Increase when bigger online
   - type: AntagSelection
     definitions:
-    - prefRoles: [ CP14Bandit ]
-      startingGear: CP14BanditGear
+    - prefRoles: [ CP14Sociopath ]
+      startingGear: CP14SociopathGear
       max: 8
       playerRatio: 10
-      blacklist:
-        components:
-        - AntagImmune
+      #blacklist:
+      #  components:
+      #  - AntagImmune
       lateJoinAdditional: true
       mindRoles:
-      - CP14MindRoleBandit
+      - CP14MindRoleSociopath
       briefing:
-        text: cp14-roles-antag-bandit-briefing
+        text: cp14-roles-antag-sociopath-briefing
         color: "#cc3010"
         sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"

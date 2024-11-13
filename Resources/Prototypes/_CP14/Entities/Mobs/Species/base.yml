@@ -180,8 +180,6 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.VoiceMaskUIKey.Key:
-        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
@@ -224,6 +222,7 @@
   - type: CP14FootprintTrailer
   - type: CP14DemiplaneStabilizer
     requireAlive: true
+  - type: CanEnterCryostorage
 
 
 - type: entity
@@ -256,6 +255,9 @@
     - Pacified
     - StaminaModifier
     - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
   - type: Blindable
   - type: Bloodstream
     bloodReagent: CP14Blood
@@ -271,6 +273,11 @@
     heatDamage:
       types:
         Heat: 1.5 #per second, scales with temperature & other constants
+  - type: TemperatureSpeed
+    thresholds:
+      293: 0.8
+      280: 0.6
+      260: 0.4
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
