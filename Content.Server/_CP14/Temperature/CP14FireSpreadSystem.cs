@@ -23,6 +23,7 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
     [Dependency] private readonly ITileDefinitionManager _tiledef = default!;
 
     private EntProtoId _fireProto = "CP14Fire";
+
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14FireSpreadComponent, OnFireChangedEvent>(OnCompInit);
@@ -103,7 +104,9 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
 
     private void IgniteEntities(EntityUid uid, CP14FireSpreadComponent spread)
     {
-        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(uid), spread.Radius, LookupFlags.Uncontained);
+        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(uid),
+            spread.Radius,
+            LookupFlags.Uncontained);
         foreach (var target in targets)
         {
             if (!_random.Prob(spread.Prob))
@@ -143,7 +146,7 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
                 continue;
 
             Spawn(_fireProto, _mapSystem.ToCenterCoordinates(tileref, grid));
-            _tile.ReplaceTile(tileref, (ContentTileDefinition) _tiledef[tile.BurnedTile]);
+            _tile.ReplaceTile(tileref, (ContentTileDefinition)_tiledef[tile.BurnedTile]);
         }
     }
 }

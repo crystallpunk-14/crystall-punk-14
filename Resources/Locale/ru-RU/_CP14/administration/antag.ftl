@@ -1,2 +1,2 @@
-cp14-admin-verb-text-make-bandit = Сделать бандитом
-cp14-admin-verb-make-bandit = Добавить цели роль антагониста "Бандит"
+cp14-admin-verb-text-make-sociopath = Сделать социопатом
+cp14-admin-verb-make-sociopath = Добавить цели роль антагониста "Социопат"

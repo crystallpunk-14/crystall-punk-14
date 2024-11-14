@@ -20,29 +20,8 @@
   id: BankCommandantRoom
   complexity: 7
 
-
 - type: CP14LockCategory
-  id: BankSafe1
-  complexity: 5
-
-- type: CP14LockCategory
-  id: BankSafe2
-  complexity: 5
-
-- type: CP14LockCategory
-  id: BankSafe3
-  complexity: 5
-
-- type: CP14LockCategory
-  id: BankSafe4
-  complexity: 5
-
-- type: CP14LockCategory
-  id: BankSafe5
-  complexity: 5
-
-- type: CP14LockCategory
-  id: BankSafe6
+  id: BankSafe
   complexity: 5
 
 # Tavern 

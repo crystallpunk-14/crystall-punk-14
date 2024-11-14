@@ -102,11 +102,11 @@
 
 - type: entity
   parent: CP14IronDoor
-  id: CP14IronDoorBankSafe1
-  suffix: Bank Safe 1
+  id: CP14IronDoorBankSafe
+  suffix: Bank Safe
   components:
   - type: CP14Lock
-    autoGenerateShape: BankSafe1
+    autoGenerateShape: BankSafe
   - type: Lock
     locked: true
 
@@ -117,55 +117,5 @@
   components:
   - type: CP14Lock
     autoGenerateShape: BankCommandantRoom
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankSafe2
-  suffix: Bank Safe 2
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankSafe2
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankSafe3
-  suffix: Bank Safe 3
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankSafe3
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankSafe4
-  suffix: Bank Safe 4
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankSafe4
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankSafe5
-  suffix: Bank Safe 5
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankSafe5
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankSafe6
-  suffix: Bank Safe 6
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankSafe6
   - type: Lock
     locked: true

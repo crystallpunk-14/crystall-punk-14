@@ -7,7 +7,7 @@
     contents:
       - id: CP14KeyRingAlchemist
       - id: HandLabeler #TODO custom cp14 labeler
-      - id: Syringe #TODO custom cp14 syringe
+      - id: CP14Syringe
         amount: 2
       - id: CP14Cauldron
       - id: CP14Pestle
@@ -78,3 +78,29 @@
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14StampCommandant
+
+- type: entity
+  parent: CP14SafeVault
+  id: CP14SafeVaultFilled25
+  suffix: Vault, Filled 25gp
+  components:
+  - type: EntityTableContainerFill
+    containers: 
+      entity_storage: !type:GroupSelector
+        children:
+          - id: CP14JewelryRuby
+            weight: 0.1
+          - !type:GroupSelector
+            children:
+            # or 5gp
+            - id: CP14GoldCoin5
+            # or 50sp
+            - !type:AllSelector
+              children:
+              - id: CP14SilverCoin
+              - id: CP14SilverCoin
+              - id: CP14SilverCoin
+              - id: CP14SilverCoin 
+              - id: CP14SilverCoin
+            rolls: !type:ConstantNumberSelector
+              value: 5

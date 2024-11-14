@@ -43,8 +43,8 @@ public sealed partial class ContentAudioSystem
 
    private void CP14UpdateAmbientLoops()
    {
-       //TEMPORALY DISABLE - Client error spam
-       return;
+
+       return; //DISABLED UNTIL CLIENT ERROR SPAM FIXED
 
        if (_timing.CurTime <= _nextUpdateTime)
            return;
