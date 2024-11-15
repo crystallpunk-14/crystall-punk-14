@@ -51,8 +51,6 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     {
         sprite.Visible = MagicVisible;
 
-
-
         if (MagicVisible == false)
             return;
 

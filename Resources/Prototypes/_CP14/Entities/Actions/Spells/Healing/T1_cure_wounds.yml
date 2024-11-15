@@ -16,6 +16,7 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectCureWounds
+      - CP14MagicTraceCureWounds
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
@@ -48,13 +49,25 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Effects/Magic/spells_icons.rsi 
       state: cure_wounds
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
       castDelay: 3
       breakOnMove: false
- 
+
+- type: entity
+  id: CP14MagicTraceCureWounds
+  parent: CP14BaseMagicTrace
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: cure_wounds
+        shader: unshaded
+  - type: CP14MagicVisionMarker
+    visibilityTime: 20
+
 - type: entity
   id: CP14RuneCureWounds
   parent: CP14BaseMagicRune

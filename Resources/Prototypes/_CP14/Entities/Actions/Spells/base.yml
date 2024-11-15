@@ -35,3 +35,14 @@
     drawdepth: Effects
     sprite: _CP14/Effects/Magic/cast_impact.rsi
     noRot: true
+
+- type: entity
+  id: CP14BaseMagicTrace
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    drawdepth: Effects
+  - type: Clickable
+  - type: CP14MagicVisionMarker
+    visibilityTime: 30
