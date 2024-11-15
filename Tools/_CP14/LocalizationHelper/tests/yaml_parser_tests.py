@@ -9,22 +9,22 @@ yaml_parser_result = YamlParser().get_prototypes(yaml_files_path)
 VALID_PROTOTYPES_COUNT = 4
 INVALID_PROTOTYPE_ID = "ForTest2"
 EXPECTED_PROTOTYPES = {
-    'CP14Fire': {
-        'id': 'CP14Fire',
+    'CP14Fire_ForTest': {
+        'id': 'CP14Fire_ForTest',
         'name': 'fire',
         'description': 'its fireee!!!',
         'parent': None,
         'suffix': 'cp14'
     },
-    'CP14KeyTavern': {
-        'id': 'CP14KeyTavern',
+    'CP14KeyTavern_ForTest': {
+        'id': 'CP14KeyTavern_ForTest',
         'name': 'ключ от таверны',
         'description': None,
         'parent': 'CP14BaseKey',
         'suffix': None
     },
-    'CP14Wallet': {
-        'id': 'CP14Wallet',
+    'CP14Wallet_ForTest': {
+        'id': 'CP14Wallet_ForTest',
         'name': 'wallet',
         'description': 'A small wallet, handy for storing coins.',
         'parent': 'BaseStorageItem',
