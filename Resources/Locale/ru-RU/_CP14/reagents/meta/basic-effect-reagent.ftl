@@ -48,3 +48,15 @@ cp14-reagent-desc-basic-damage-mana = Вещество, стремительно
 
 cp14-reagent-name-basic-unstable = Нестабильный раствор
 cp14-reagent-desc-basic-unstable = При остывании, немедленно преобразует все реагенты в химическое облако, размер которого зависит от количества нестабильного вещества.
+
+cp14-reagent-name-basic-blood-restore = Крововостанавливающий раствор
+cp14-reagent-desc-basic-blood-restore = Вступая в контакт с организмом, восстанавливает уровень крови того же типа, что используется этим организмом.
+
+cp14-reagent-name-basic-blood-absorption = Кровопоглощающий раствор
+cp14-reagent-desc-basic-blood-absorption = Жидкость, сжигающая кровь в организме. Крайне опасное вещество, способное вызывать длительные недомогания.
+
+cp14-reagent-name-basic-speed-up = Ускоряющий раствор
+cp14-reagent-desc-basic-speed-up = Повышает тонус мышц, что позволяет существам двигаться и реагировать быстрее обычного.
+
+cp14-reagent-name-basic-speed-down = Замедляющий раствор
+cp14-reagent-desc-basic-speed-down = Заставляет мыслить и двигаться медленнее.

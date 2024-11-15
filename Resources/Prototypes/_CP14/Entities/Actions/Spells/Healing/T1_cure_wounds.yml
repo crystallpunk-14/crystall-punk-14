@@ -29,11 +29,10 @@
             Cold: -10
             Heat: -10
             Shock: -10
-            Asphyxiation: -50
-            Bloodloss: -10
       - !type:Jitter
       - !type:ModifyBleedAmount
       - !type:ModifyBloodLevel
+        amount: 5
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
@@ -79,3 +78,12 @@
     - state: particles_up
       color: "#79b330"
       shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollCureWounds
+  name: cure wounds spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellCureWounds

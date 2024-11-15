@@ -1,6 +1,7 @@
 - type: cp14DemiplaneLocation
   id: T1GrasslandIsland
-  locationConfig: CP14ExpeditionGrasslandIsland
+  locationConfig: CP14DemiplaneGrasslandIsland
+  name: cp14-demiplane-location-grassland-island
   tags:
   - CP14DemiplaneCave
   - CP14DemiplaneOpenSky
@@ -41,15 +42,15 @@
       color: '#120906FF'
 
 - type: dungeonConfig
-  id: CP14ExpeditionGrasslandIsland
+  id: CP14DemiplaneGrasslandIsland
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14ExpeditionGrasslandIslandFloorMaskSand
+      proto: CP14DemiplaneGrasslandIslandFloorMaskSand
     - !type:PrototypeDunGen
-      proto: CP14ExpeditionGrasslandIslandFloorMaskGrass
+      proto: CP14DemiplaneGrasslandIslandFloorMaskGrass
     - !type:PrototypeDunGen
-      proto: CP14ExpeditionGrasslandIslandFloorMaskStone
+      proto: CP14DemiplaneGrasslandIslandFloorMaskStone
     # Biomes
     - !type:BiomeDunGen
       biomeTemplate: CP14CavesGeneric
@@ -61,7 +62,7 @@
       - CP14FloorGrass
 
 - type: dungeonConfig
-  id: CP14ExpeditionGrasslandIslandFloorMaskStone
+  id: CP14DemiplaneGrasslandIslandFloorMaskStone
   layers:
   - !type:NoiseDistanceDunGen
     size: 110, 110
@@ -79,7 +80,7 @@
         gain: 0.5
 
 - type: dungeonConfig
-  id: CP14ExpeditionGrasslandIslandFloorMaskGrass
+  id: CP14DemiplaneGrasslandIslandFloorMaskGrass
   layers:
   - !type:NoiseDistanceDunGen
     size: 150, 150
@@ -97,7 +98,7 @@
         gain: 0.5
 
 - type: dungeonConfig
-  id: CP14ExpeditionGrasslandIslandFloorMaskSand
+  id: CP14DemiplaneGrasslandIslandFloorMaskSand
   layers:
   - !type:NoiseDistanceDunGen
     size: 160, 160

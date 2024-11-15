@@ -34,25 +34,21 @@
           weight: 1
       - !type:GroupSelector
         children:
-        - id: CP14SpellScrollFireball
-        - id: CP14SpellScrollCureWounds
         - id: CP14SpellScrollIceShards
+        - id: CP14SpellScrollIceDagger
+        - id: CP14SpellScrollShadowGrab
         - id: CP14SpellScrollManaGift
-      - !type:GroupSelector
-        children:
-        - id: CP14DyeRed
-        - id: CP14DyeYellow
-        - id: CP14DyeBlue
-        - id: CP14DyeGreen
-        - id: CP14DyePurple
-        - id: CP14DyeBlack
+        - id: CP14SpellScrollSphereOfLight
+        - id: CP14SpellScrollCureWounds
+        - id: CP14SpellScrollShadowStep
+        - id: CP14SpellScrollFireball
+        - id: CP14SpellScrollFlameCreation
+        - id: CP14SpellScrollEarthWall
+        - id: CP14SpellScrollFlashLight
       - id: CP14EnergyCrystalSmall
-      - id: CP14Bucket
-      - id: CP14CrystalLampBlueEmpty
-      - id: CP14Scissors
       - id: CP14BaseSharpeningStone
-      - id: CP14Rope
-        weight: 2
+      - id: CP14GlassShard
+      - id: CP14Paper
     # Rare
     - !type:GroupSelector
       weight: 25
@@ -67,10 +63,10 @@
         - id: CP14VialTinyChromiumSlime
         - id: CP14VialTinyLumiMushroom
       - id: CP14SilverCoin5
-      - id: CP14Nail10
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMedium
       - id: CP14DemiplanKey
+        weight: 2
       - !type:AllSelector
         children:
         - id: CP14Crossbolt
@@ -84,35 +80,15 @@
         - id: CP14ClothingRingFlameCreation
         - id: CP14ClothingRingFireball
         - id: CP14MagicHealingStaff
-        - id: CP14ClothingRingShadowStep
         - id: CP14ClothingRingShadowGrab
         - id: CP14ClothingRingEarthWall
         - id: CP14ClothingRingManaGift
         - id: CP14ClothingRingSphereOfLight
         - id: CP14ClothingRingFlashLight
-      - !type:GroupSelector
-        children:
-        - id: CP14ClothingCloakArmoredRed
-        - id: CP14ClothingCloakBlacksmithArpon
-        - id: CP14ClothingCloakMaidArpon
-        - id: CP14ClothingCloakBrassArmor
-        - id: CP14ClothingCloakCuirass
-        - id: CP14ClothingCloakInfantryCuirass
-        - id: CP14ClothingCloakCuirassLoincloth
-        - id: CP14ClothingCloakCuirassLeg
-        - id: CP14ClothingHeadCapellina
-      - !type:GroupSelector
-        children:
-        - id: CP14ClothingCloakFurcapeBlack
-        - id: CP14ClothingCloakFurcapeBlue
-        - id: CP14ClothingCloakSimpleWhite
-        - id: CP14ClothingCloakSimpleDarkBlue
-        - id: CP14ClothingCloakRitualAttireLeather
-        - id: CP14ClothingHeadBeretMercenary
-        - id: CP14ClothingPantsMercenaryTrousers
-        - id: CP14ClothingPantsSouthernMagician
-        - id: CP14ClothingShirtMercenary
-        - id: CP14ClothingShirtYellowWizard
+        - id: CP14SpellScrollResurrection
+      # Rare standard village crates loot
+      - !type:NestedSelector
+        tableId: CP14StationCrateLoot
 
 - type: entityTable
   id: CP14TableBureaucracy

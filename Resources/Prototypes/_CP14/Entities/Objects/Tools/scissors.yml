@@ -5,6 +5,8 @@
   categories: [ ForkFiltered ]
   parent: BaseItem
   components:
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Tools/scissors.rsi
     state: icon

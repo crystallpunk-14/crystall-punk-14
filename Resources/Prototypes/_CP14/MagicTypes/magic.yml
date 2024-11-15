@@ -1,17 +1,17 @@
 - type: magicType
+  id: Earth
+  name: cp14-magic-type-earth
+  color: "#70533f"
+
+- type: magicType
   id: Fire
   name: cp14-magic-type-fire
   color: "#d9741c"
 
 - type: magicType
-  id: Water
-  name: cp14-magic-type-water
-  color: "#1c94d9"
-
-- type: magicType
-  id: Earth
-  name: cp14-magic-type-earth
-  color: "#70533f"
+  id: Gate
+  name: cp14-magic-type-gate
+  color: "#32597d"
 
 - type: magicType
   id: Healing
@@ -29,11 +29,16 @@
   color: "#dcffdb"
 
 - type: magicType
-  id: Gate
-  name: cp14-magic-type-gate
-  color: "#32597d"
-
-- type: magicType
   id: Movement
   name: cp14-magic-type-movement
   color: "#63ceff"
+
+- type: magicType
+  id: Water
+  name: cp14-magic-type-water
+  color: "#1c94d9"
+
+- type: magicType
+  id: Necromancy
+  name: cp14-magic-type-necro
+  color: "#55877a"

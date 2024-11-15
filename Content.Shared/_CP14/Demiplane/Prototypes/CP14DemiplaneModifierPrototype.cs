@@ -59,4 +59,10 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<TagPrototype>> RequiredTags = new();
+
+    [DataField]
+    public LocId? Name;
+
+    [DataField]
+    public float ExamineProb = 0.75f;
 }

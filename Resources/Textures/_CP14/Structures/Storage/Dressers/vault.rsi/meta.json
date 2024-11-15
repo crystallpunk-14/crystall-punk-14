@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "Created by omsoyk (discord)",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "base",
+      "directions": 4
+    },
+    {
+      "name": "base_open",
+      "directions": 4
+    },
+    {
+      "name": "base_door",
+      "directions": 4
+    }
+  ]
+}

@@ -48,3 +48,15 @@ cp14-reagent-desc-basic-damage-mana = A substance that rapidly drains all magica
 
 cp14-reagent-name-basic-unstable = Unstable solution
 cp14-reagent-desc-basic-unstable = When cooled, immediately converts all reagents into a chemical cloud, the size of which depends on the amount of unstable solution in it.
+
+cp14-reagent-name-basic-blood-restore = Blood-healing solution
+cp14-reagent-desc-basic-blood-restore = Coming into contact with the body restores blood levels of the same type used by that body.
+
+cp14-reagent-name-basic-blood-absorption = Blood-absorbing solution
+cp14-reagent-desc-basic-blood-absorption = A liquid that burns blood in the body. An extremely dangerous substance that can cause long-term sickness.
+
+cp14-reagent-name-basic-speed-up = Accelerating solution
+cp14-reagent-desc-basic-speed-up = Increases muscle tone, allowing creatures to move and react faster than normal.
+
+cp14-reagent-name-basic-speed-down = Slowing solution
+cp14-reagent-desc-basic-speed-down = Makes you think and move slower.

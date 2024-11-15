@@ -126,6 +126,25 @@ CP14ClothingRingIceFloor: CP14ClothingRingManaGift
 
 #2024-11-05
 CP14ClothingRingCureWounds: CP14MagicHealingStaff
+CP14ClothingRingShadowStep: CP14ClothingRingManaGift
+
+#2024-11-11
+CP14BlueVial: CP14BlueBottle
+CP14GreenVial: CP14GreenBottle
+
+#2024-13-11
+CP14IronDoorBankSafe1: CP14IronDoorBankSafe
+CP14IronDoorBankSafe2: CP14IronDoorBankSafe
+CP14IronDoorBankSafe3: CP14IronDoorBankSafe
+CP14IronDoorBankSafe4: CP14IronDoorBankSafe
+CP14IronDoorBankSafe5: CP14IronDoorBankSafe
+CP14IronDoorBankSafe6: CP14IronDoorBankSafe
+CP14KeyBankSafe1: CP14KeyBankSafe
+CP14KeyBankSafe2: CP14KeyBankSafe
+CP14KeyBankSafe3: CP14KeyBankSafe
+CP14KeyBankSafe4: CP14KeyBankSafe
+CP14KeyBankSafe5: CP14KeyBankSafe
+CP14KeyBankSafe6: CP14KeyBankSafe
 
 # <---> CrystallPunk migration zone end
 

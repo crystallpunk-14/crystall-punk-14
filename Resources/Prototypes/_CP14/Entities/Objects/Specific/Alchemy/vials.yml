@@ -37,6 +37,8 @@
         type: TransferAmountBoundUserInterface
   - type: Drink
     solution: vial
+  - type: Spillable
+    solution: vial
   - type: Appearance
   - type: Damageable
     damageContainer: Inorganic
@@ -140,7 +142,6 @@
     maxFillLevels: 5
     fillBaseName: liq-
 
-
 # Filled small
 
 - type: entity
@@ -201,6 +202,18 @@
       vial:
         reagents:
         - ReagentId: CP14BlueAmanita
+          Quantity: 10
+
+- type: entity
+  id: CP14VialSmallDayflin
+  parent: CP14VialSmall
+  suffix: Dayflin
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14YellowDayflinPulp
           Quantity: 10
 
 # Filled tiny

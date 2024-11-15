@@ -42,6 +42,10 @@
   - type: Anchorable
   - type: Rotatable
   - type: Appearance
+  - type: Transform
+    anchored: true
+  - type: Lock
+    locked: false
 
 - type: entity
   name: wooden cabinet

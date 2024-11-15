@@ -1,0 +1,107 @@
+- type: entity
+  id: CP14SmallWoodenCrateFilled
+  parent: 
+  - CP14SmallWoodenCrate
+  suffix: Filled, Tools and Fluff
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: CP14StationCrateLootTools
+        rolls: !type:RangeNumberSelector
+          range: 1, 5
+
+- type: entity
+  id: CP14LargeWoodenCrateFilled
+  suffix: Filled, Tools and Fluff
+  parent: 
+  - CP14LargeWoodenCrate
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: CP14StationCrateLoot
+
+- type: entityTable
+  id: CP14StationCrateLoot
+  table: !type:AllSelector
+    children:
+    # Tools
+    - !type:NestedSelector
+      tableId: CP14StationCrateLootTools
+      rolls: !type:RangeNumberSelector
+        range: 1, 5
+    # Fluff
+    - !type:NestedSelector
+      tableId: CP14StationCrateLootFluff
+      prob: 0.33
+      rolls: !type:RangeNumberSelector
+        range: 0, 2
+
+- type: entityTable
+  id: CP14StationCrateLootTools
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: CP14Scissors
+      - id: CP14BaseCrowbar
+      - id: CP14BaseWrench
+      - id: CP14BaseShovel
+      - id: CP14BaseMop
+      - id: CP14BaseBroom
+      - id: CP14BasePickaxe
+      - id: CP14CrystalLampBlueEmpty
+      - id: CP14CrystalLampOrangeEmpty
+      - id: CP14Rope
+      - id: CP14Nail10
+      - id: CP14EnergyCrystalSmall
+      - id: CP14BaseSharpeningStone
+      - !type:NestedSelector
+        tableId: CP14RandomVials
+
+- type: entityTable
+  id: CP14StationCrateLootFluff
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: CP14ClothingCloakFurcapeBlack
+      - id: CP14ClothingCloakFurcapeBlue
+      - id: CP14ClothingCloakSimpleWhite
+      - id: CP14ClothingCloakSimpleDarkBlue
+      - id: CP14ClothingCloakRitualAttireLeather
+      - id: CP14ClothingHeadBeretMercenary
+      - id: CP14ClothingPantsMercenaryTrousers
+      - id: CP14ClothingPantsSouthernMagician
+      - id: CP14ClothingShirtMercenary
+      - id: CP14ClothingShirtYellowWizard
+
+
+- type: entityTable
+  id: CP14RandomVials
+  table: !type:GroupSelector
+    children:
+    - id: CP14VialSmall
+    - id: CP14VialTiny
+    - id: CP14GreenBottle
+    - id: CP14GreenBottle2
+    - id: CP14BlueBottle
+    - id: CP14OrangeBottle
+    - id: CP14RedBottle
+    #Common
+    - !type:GroupSelector
+      weight: 0.5
+      children:
+      - id: CP14VialSmallDayflin
+      - id: CP14VialSmallBlueAmanita
+      - id: CP14VialSmallWildSage
+      - id: CP14VialSmallGroundQuartz
+      - id: CP14VialSmallAgaricMushroom
+      - id: CP14VialSmallBloodFlowerSap
+    #Rare
+    - !type:GroupSelector
+      weight: 0.15
+      children:
+      - id: CP14VialTinyLumiMushroom
+      - id: CP14VialTinyChromiumSlime

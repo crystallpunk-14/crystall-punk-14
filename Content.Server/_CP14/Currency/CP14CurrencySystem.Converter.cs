@@ -106,10 +106,10 @@ public sealed partial class CP14CurrencySystem
     }
 
 
-
     private void OnConverterExamine(Entity<CP14CurrencyConverterComponent> ent, ref ExaminedEvent args)
     {
-        var push = $"{Loc.GetString("cp14-currency-converter-examine-title")} {GetCurrencyPrettyString(ent.Comp.Balance)}";
+        var push =
+            $"{Loc.GetString("cp14-currency-converter-examine-title")} {GetCurrencyPrettyString(ent.Comp.Balance)}";
         args.PushMarkup(push);
     }
 
@@ -129,7 +129,10 @@ public sealed partial class CP14CurrencySystem
         _audio.PlayPvs(ent.Comp.InsertSound, ent, AudioParams.Default.WithMaxDistance(3));
     }
 
-    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType, int target, EntityCoordinates coordinates, out int remainder)
+    public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType,
+        int target,
+        EntityCoordinates coordinates,
+        out int remainder)
     {
         remainder = target;
         HashSet<EntityUid> spawns = new();
@@ -164,7 +167,8 @@ public sealed partial class CP14CurrencySystem
         spawns.Add(ent);
         remainder -= singleCurrency;
 
-        if (TryComp<StackComponent>(ent, out var stack) && _proto.TryIndex<StackPrototype>(stack.StackTypeId, out var indexedStack))
+        if (TryComp<StackComponent>(ent, out var stack) &&
+            _proto.TryIndex<StackPrototype>(stack.StackTypeId, out var indexedStack))
         {
             AdjustStack(ent, stack, indexedStack, singleCurrency, ref remainder);
         }
@@ -172,7 +176,11 @@ public sealed partial class CP14CurrencySystem
         return false;
     }
 
-    private void AdjustStack(EntityUid ent, StackComponent stack, StackPrototype stackProto, float singleCurrency, ref int remainder)
+    private void AdjustStack(EntityUid ent,
+        StackComponent stack,
+        StackPrototype stackProto,
+        float singleCurrency,
+        ref int remainder)
     {
         var singleStackCurrency = singleCurrency / stack.Count;
         var stackLeftSpace = stackProto.MaxCount - stack.Count;
@@ -188,5 +196,4 @@ public sealed partial class CP14CurrencySystem
             }
         }
     }
-
 }

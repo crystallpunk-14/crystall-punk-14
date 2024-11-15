@@ -14,14 +14,23 @@
   metabolisms:
     Food:
       effects:
-      - !type:SatiateHunger
-        factor: 2
+      - !type:ModifyBloodLevel
     Poison:
       effects:
       - !type:HealthChange
         damage:
           types:
-            Poison: 0.25
+            Poison: 0.15
+
+- type: reagent
+  id: CP14YellowDayflinPulp
+  group: CP14Biological
+  name: cp14-reagent-name-yellow-dayflin-pulp
+  desc: cp14-reagent-desc-yellow-dayflin-pulp
+  flavor: CP14Sweetly
+  color: "#ffe269"
+  physicalDesc: cp14-reagent-physical-desc-pureed
+  slippery: false
 
 - type: reagent
   id: CP14AgaricMushroom

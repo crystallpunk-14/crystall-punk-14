@@ -30,9 +30,6 @@ public sealed partial class CP14MagicEffectComponent : Component
     [DataField]
     public bool CanModifyManacost = true;
 
-    [DataField]
-    public bool Safe = false;
-
     /// <summary>
     /// Effects that will trigger at the beginning of the cast, before mana is spent. Should have no gameplay importance, just special effects, popups and sounds.
     /// </summary>
