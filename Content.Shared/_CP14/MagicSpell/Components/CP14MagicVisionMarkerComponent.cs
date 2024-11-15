@@ -6,12 +6,4 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 [RegisterComponent, AutoGenerateComponentPause]
 public sealed partial class CP14MagicVisionMarkerComponent : Component
 {
-    [DataField, AutoPausedField]
-    public TimeSpan SpawnTime = TimeSpan.Zero;
-
-    [DataField, AutoPausedField]
-    public TimeSpan EndTime = TimeSpan.Zero;
-
-    [DataField]
-    public TimeSpan VisibilityTime = TimeSpan.FromMinutes(2f);
 }

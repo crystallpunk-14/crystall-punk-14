@@ -66,6 +66,7 @@
       - state: cure_wounds
         shader: unshaded
   - type: CP14MagicVisionMarker
+  - type: CP14MagicVisionFade
     visibilityTime: 20
 
 - type: entity

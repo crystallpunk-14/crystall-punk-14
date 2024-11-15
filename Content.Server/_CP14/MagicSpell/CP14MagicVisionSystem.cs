@@ -12,7 +12,7 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CP14MagicVisionMarkerComponent>();
+        var query = EntityQueryEnumerator<CP14MagicVisionFadeComponent>();
         while (query.MoveNext(out var uid, out var marker))
         {
             if (_timing.CurTime < marker.EndTime)

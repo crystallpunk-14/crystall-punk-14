@@ -10,10 +10,10 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14MagicVisionMarkerComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14MagicVisionFadeComponent, ComponentStartup>(OnStartupFade);
     }
 
-    private void OnMapInit(Entity<CP14MagicVisionMarkerComponent> ent, ref MapInitEvent args)
+    private void OnStartupFade(Entity<CP14MagicVisionFadeComponent> ent, ref ComponentStartup args)
     {
         ent.Comp.SpawnTime = _timing.CurTime;
         ent.Comp.EndTime = _timing.CurTime + ent.Comp.VisibilityTime;
