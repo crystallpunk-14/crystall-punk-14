@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14MagicTrace
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    snapCardinals: true
+    sprite: _CP14/Effects/fire.rsi
+    layers:
+      - state: full
+        shader: unshaded
+  - type: Clickable
+  - type: CP14MagicVisionMarker
+    visibilityTime: 30
