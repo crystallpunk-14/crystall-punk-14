@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14Fire
+  id: CP14Fire_ForTest
   name: fire
   description: its fireee!!!
   suffix: cp14
@@ -64,7 +64,7 @@
   - type: CP14DespawnOnExtinguish
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14BaseKey_ForTest
   id: CP14KeyTavern
   name: ключ от таверны
   components:
@@ -76,7 +76,7 @@
 - type: entity
   name: wallet
   description: A small wallet, handy for storing coins.
-  id: CP14Wallet
+  id: CP14Wallet_ForTest
   parent: BaseStorageItem
   components:
   - type: Sprite
