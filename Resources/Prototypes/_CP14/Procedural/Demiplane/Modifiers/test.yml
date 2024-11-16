@@ -286,17 +286,28 @@
       minGroupSize: 1
       maxGroupSize: 2
 
+#- type: cp14DemiplaneModifier
+#  id: Ruins
+#  name: cp14-modifier-ruins
+#  reward: 0.35
+#  generationWeight: 2
+#  layers:
+#    - !type:OreDunGen
+#      entity: ##CP14DemiplanRuinsRoomSpawner
+#      count: 5
+#      minGroupSize: 1
+#      maxGroupSize: 1
+
 - type: cp14DemiplaneModifier
-  id: Ruins
-  name: cp14-modifier-ruins
+  id: Loot
   reward: 0.35
   generationWeight: 2
   layers:
     - !type:OreDunGen
-      entity: CP14DemiplanRuinsRoomSpawner
-      count: 5
+      entity: CP14SpawnerExpeditionLootCommon
+      count: 15
       minGroupSize: 1
-      maxGroupSize: 1
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyXeno
