@@ -37,3 +37,8 @@
     fuckupChance: 0.5
     requiredSkills:
     - Warcraft
+  - type: Tag
+    tags:
+    - CP14Sword
+  - type: CP14Currency
+    currency: 1200

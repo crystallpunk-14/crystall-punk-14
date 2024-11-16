@@ -51,7 +51,7 @@
 
 - type: Tag
   id: CP14Rabbit
-
+  
 - type: Tag
   id: CP14Pig
 
@@ -60,3 +60,18 @@
 
 - type: Tag
   id: CP14Wheat
+
+- type: Tag
+  id: CP14Sword
+
+- type: Tag
+  id: CP14Hammer
+
+- type: Tag
+  id: CP14Dagger
+
+- type: Tag
+  id: CP14Axe
+
+- type: Tag
+  id: CP14Mace
