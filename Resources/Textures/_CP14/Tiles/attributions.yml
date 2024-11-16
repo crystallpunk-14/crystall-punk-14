@@ -13,7 +13,7 @@
 
 - files: ["stonebricks.png", "stonebricks_small_carved_1.png", "stonebricks_small_carved_2.png", "stonebricks_square_carved.png"]
   license: "CLA"
-  copyright: "Created by Jaraten for CrystallPunk14"
+  copyright: "Created by Jaraten"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
 - files: ["red_woodplanks.png", "red_woodplanks_big.png", "red_woodplanks_big_broken.png", "red_woodplanks_broken.png", "red_woodplanks_cruciform.png", "red_woodplanks_cruciform_broken.png", "red_woodplanks_stairways.png", "red_woodplanks_stairways_broken.png"]
@@ -28,5 +28,5 @@
 
 - files: ["woodplanks_big_burned.png", "woodplanks_burned.png", "woodplanks_cruciform_burned.png", "woodplanks_stairways_burned.png"]
   license: "CLA"
-  copyright: "Created by Jaraten for CrystallPunk14"
+  copyright: "Created by Jaraten"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"

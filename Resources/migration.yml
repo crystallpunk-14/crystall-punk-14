@@ -1,4 +1,4 @@
-# <---> CrystallPunk migration zone
+# <---> CrystallEdge migration zone
 
 # 2024-05-24
 CP14CardboardWall: CP14WallCardboard
@@ -146,7 +146,7 @@ CP14KeyBankSafe4: CP14KeyBankSafe
 CP14KeyBankSafe5: CP14KeyBankSafe
 CP14KeyBankSafe6: CP14KeyBankSafe
 
-# <---> CrystallPunk migration zone end
+# <---> CrystallEdge migration zone end
 
 
 # This is a basic dictionary that maps old entity prototype ids to new ids. This only works for entity prototypes, and
