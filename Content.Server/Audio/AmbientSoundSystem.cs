@@ -14,7 +14,7 @@ public sealed class AmbientSoundSystem : SharedAmbientSoundSystem
         base.Initialize();
         SubscribeLocalEvent<AmbientOnPoweredComponent, PowerChangedEvent>(HandlePowerChange);
         SubscribeLocalEvent<AmbientOnPoweredComponent, PowerNetBatterySupplyEvent>(HandlePowerSupply);
-        SubscribeLocalEvent<CP14FlammableAmbientSoundComponent, OnFireChangedEvent>(OnFireChanged); //CrystallPunk bonfire moment
+        SubscribeLocalEvent<CP14FlammableAmbientSoundComponent, OnFireChangedEvent>(OnFireChanged); //CrystallEdge bonfire moment
     }
 
     private void HandlePowerSupply(EntityUid uid, AmbientOnPoweredComponent component, ref PowerNetBatterySupplyEvent args)
@@ -27,10 +27,10 @@ public sealed class AmbientSoundSystem : SharedAmbientSoundSystem
         SetAmbience(uid, args.Powered);
     }
 
-    //CrystallPunk bonfire moment
+    //CrystallEdge bonfire moment
     private void OnFireChanged(Entity<CP14FlammableAmbientSoundComponent> ent, ref OnFireChangedEvent args)
     {
         SetAmbience(ent, args.OnFire);
     }
-    //CrystallPunk bonfire moment end
+    //CrystallEdge bonfire moment end
 }

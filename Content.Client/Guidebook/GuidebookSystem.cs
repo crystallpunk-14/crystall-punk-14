@@ -32,7 +32,7 @@ public sealed class GuidebookSystem : EntitySystem
     [Dependency] private readonly RgbLightControllerSystem _rgbLightControllerSystem = default!;
     [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
     [Dependency] private readonly TagSystem _tags = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!; //CrystallPunk guidebook filter
+    [Dependency] private readonly IPrototypeManager _proto = default!; //CrystallEdge guidebook filter
 
     public event Action<List<ProtoId<GuideEntryPrototype>>,
         List<ProtoId<GuideEntryPrototype>>?,
@@ -47,7 +47,7 @@ public sealed class GuidebookSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<GuideHelpComponent, MapInitEvent>(OnCrystallPunkMapInit); //CrystallPunk guidebook filter
+        SubscribeLocalEvent<GuideHelpComponent, MapInitEvent>(OnCrystallEdgeMapInit); //CrystallEdge guidebook filter
         SubscribeLocalEvent<GuideHelpComponent, GetVerbsEvent<ExamineVerb>>(OnGetVerbs);
         SubscribeLocalEvent<GuideHelpComponent, ActivateInWorldEvent>(OnInteract);
 
@@ -57,12 +57,12 @@ public sealed class GuidebookSystem : EntitySystem
             OnGuidebookControlsTestGetAlternateVerbs);
     }
 
-    //CrystallPunk guidebook filter
-    private void OnCrystallPunkMapInit(Entity<GuideHelpComponent> ent, ref MapInitEvent args)
+    //CrystallEdge guidebook filter
+    private void OnCrystallEdgeMapInit(Entity<GuideHelpComponent> ent, ref MapInitEvent args)
     {
         foreach (var guide in ent.Comp.Guides)
         {
-            var guideProto = _proto.Index<GuideEntryPrototype>(guide);
+            var guideProto = _proto.Index(guide);
             if (!guideProto.CrystallPunkAllowed) //REMOVE unnecessary guidebook
             {
                 RemComp<GuideHelpComponent>(ent);
@@ -70,7 +70,7 @@ public sealed class GuidebookSystem : EntitySystem
             }
         }
     }
-    //CrystallPunk guidebook filter end
+    //CrystallEdge guidebook filter end
 
     /// <summary>
     /// Gets a user entity to use for verbs and examinations. If the player has no attached entity, this will use a

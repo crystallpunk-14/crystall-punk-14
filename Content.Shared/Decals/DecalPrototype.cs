@@ -10,7 +10,7 @@ namespace Content.Shared.Decals
         [IdDataField] public string ID { get; } = null!;
         [DataField("sprite")] public SpriteSpecifier Sprite { get; private set; } = SpriteSpecifier.Invalid;
         [DataField("tags")] public List<string> Tags = new();
-        [DataField("showMenu")] public bool ShowMenu = false; //CrystallPunk decal filter
+        [DataField("showMenu")] public bool ShowMenu = false; //CrystallEdge decal filter
 
         /// <summary>
         /// If the decal is rotated compared to our eye should we snap it to south.

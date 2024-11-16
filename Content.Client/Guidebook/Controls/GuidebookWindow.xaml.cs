@@ -168,8 +168,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
         var parent = forcedRoot == null ? null : AddEntry(forcedRoot.Value, null, addedEntries);
         foreach (var entry in GetSortedEntries(roots))
         {
-            if (!entry.CrystallPunkAllowed) continue; //CrystallPunk guidebook filter
-            if (entry.LocFilter is not null && entry.LocFilter != ContentLocalizationManager.Culture) continue; //CrystallPunk guidebook filter
+            if (!entry.CrystallPunkAllowed) continue; //CrystallEdge guidebook filter
+            if (entry.LocFilter is not null && entry.LocFilter != ContentLocalizationManager.Culture) continue; //CrystallEdge guidebook filter
 
             AddEntry(entry.Id, parent, addedEntries);
         }

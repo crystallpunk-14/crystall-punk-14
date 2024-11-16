@@ -1,5 +1,5 @@
 /*
- * All right reserved to CrystallPunk.
+ * All right reserved to CrystallEdge.
  *
  * BUT this file is sublicensed under MIT License
  *

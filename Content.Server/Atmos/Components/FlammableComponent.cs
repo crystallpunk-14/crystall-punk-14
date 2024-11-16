@@ -84,7 +84,7 @@ namespace Content.Server.Atmos.Components
         public ProtoId<AlertPrototype> FireAlert = "Fire";
 
         /// <summary>
-        /// CrystallPunk fireplace fuel
+        /// CrystallEdge fireplace fuel
         /// </summary>
         [DataField]
         public float CP14FireplaceFuel = 10f;
