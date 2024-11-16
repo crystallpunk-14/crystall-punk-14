@@ -2,10 +2,10 @@
   id: DemiplaneConnections
   layers:
     - !type:OreDunGen
-      entity: CP14DemiplanEnterRoomMarker
+      entity: CP14DemiplaneEntryPointMarker
       count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
+      minGroupSize: 4
+      maxGroupSize: 4
     - !type:OreDunGen
       entity: CP14DemiplanePassway
       count: 2

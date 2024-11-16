@@ -1,17 +1,17 @@
 - type: Tag
   id: CP14DemiplanRuins
 
-- type: entity
-  id: CP14DemiplanRuinsRoomSpawner
-  categories: [ ForkFiltered ]
-  parent: BaseRoomMarker
-  name: Demiplan ruins room spawner
-  components:
-  - type: RoomFill
-    clearExisting: true
-    roomWhitelist:
-      tags:
-      - CP14DemiplanRuins
+#- type: entity
+#  id: CP14DemiplanRuinsRoomSpawner
+#  categories: [ ForkFiltered ]
+#  parent: BaseRoomMarker
+#  name: Demiplan ruins room spawner
+#  components:
+#  - type: RoomFill
+#    clearExisting: true
+#    roomWhitelist:
+#      tags:
+#      - CP14DemiplanRuins
 
 # 7x7
 - type: dungeonRoom
