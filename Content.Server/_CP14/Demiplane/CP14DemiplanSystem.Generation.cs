@@ -55,7 +55,7 @@ public sealed partial class CP14DemiplaneSystem
             return msg;
 
         msg.AddMarkupOrThrow(
-            indexedLocation.Name is not null && _random.Prob(indexedLocation.ExamineProb)
+            indexedLocation.Name is not null/* && _random.Prob(indexedLocation.ExamineProb)*/
                 ? Loc.GetString("cp14-demiplane-examine-title", ("location", Loc.GetString(indexedLocation.Name)))
                 : Loc.GetString("cp14-demiplane-examine-title-unknown"));
 
@@ -65,8 +65,8 @@ public sealed partial class CP14DemiplaneSystem
             if (!_proto.TryIndex(modifier, out var indexedModifier))
                 continue;
 
-            if (!_random.Prob(indexedModifier.ExamineProb))
-                continue;
+            //if (!_random.Prob(indexedModifier.ExamineProb)) //temp disable
+            //    continue;
 
             if (indexedModifier.Name is null)
                 continue;
