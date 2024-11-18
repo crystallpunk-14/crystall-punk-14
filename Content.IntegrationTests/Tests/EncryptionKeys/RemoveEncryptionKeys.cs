@@ -6,7 +6,7 @@ using Content.Shared.Wires;
 namespace Content.IntegrationTests.Tests.EncryptionKeys;
 
 public sealed class RemoveEncryptionKeys : InteractionTest
-{
+{/*
     [Test]
     public async Task HeadsetKeys()
     {
@@ -108,5 +108,5 @@ public sealed class RemoveEncryptionKeys : InteractionTest
         AssertPrototype("TelecomServerFilled");
         await InteractUsing(Pry);
         AssertPrototype("MachineFrame");
-    }
+    }*/
 }

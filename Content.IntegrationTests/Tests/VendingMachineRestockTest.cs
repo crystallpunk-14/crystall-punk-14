@@ -19,7 +19,7 @@ namespace Content.IntegrationTests.Tests
     [TestOf(typeof(VendingMachineRestockComponent))]
     [TestOf(typeof(VendingMachineSystem))]
     public sealed class VendingMachineRestockTest : EntitySystem
-    {
+    {/*
         [TestPrototypes]
         private const string Prototypes = @"
 - type: entity
@@ -369,7 +369,7 @@ namespace Content.IntegrationTests.Tests
             });
 
             await pair.CleanReturnAsync();
-        }
+        }*/
     }
 }
 

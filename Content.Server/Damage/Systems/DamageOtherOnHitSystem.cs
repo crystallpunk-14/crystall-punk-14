@@ -37,14 +37,14 @@ namespace Content.Server.Damage.Systems
         {
             if (!TerminatingOrDeleted(args.Target))
             {
-                //CrystallPunk Melee upgrade
+                //CrystallEdge Melee upgrade
                 var damage = component.Damage;
 
                 if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
                     damage *= sharp.Sharpness;
 
                 var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
-                //CrystallPunk Melee upgrade end
+                //CrystallEdge Melee upgrade end
 
                 // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
                 if (dmg != null && HasComp<MobStateComponent>(args.Target))

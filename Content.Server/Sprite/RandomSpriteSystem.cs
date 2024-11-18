@@ -39,7 +39,7 @@ public sealed class RandomSpriteSystem: SharedRandomSpriteSystem
 
         component.Selected.EnsureCapacity(groups.Count);
 
-        Color? previousColor = component.CP14InheritBaseColor; //CrystallPunk
+        Color? previousColor = component.CP14InheritBaseColor; //CrystallEdge
 
         foreach (var group in groups)
         {

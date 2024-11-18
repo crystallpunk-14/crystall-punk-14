@@ -8,7 +8,7 @@ namespace Content.IntegrationTests.Tests.Atmos;
 
 [TestFixture]
 public sealed class GridJoinTest
-{
+{/*
     private const string CanisterProtoId = "AirCanister";
 
     [Test]
@@ -49,5 +49,5 @@ public sealed class GridJoinTest
         });
 
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

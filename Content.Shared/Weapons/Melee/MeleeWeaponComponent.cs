@@ -72,7 +72,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public bool ResistanceBypass = false;
-    
+
     /// <summary>
     /// Base damage for this weapon. Can be modified via heavy damage or other means.
     /// </summary>
@@ -120,19 +120,19 @@ public sealed partial class MeleeWeaponComponent : Component
     public bool SwingLeft;
 
     /// <summary>
-    /// CrystallPunk Melee upgrade. Allows each attack to take turns being either left or right
+    /// CrystallEdge Melee upgrade. Allows each attack to take turns being either left or right
     /// </summary>
     [DataField]
     public bool CPSwingBeverage = true;
 
     /// <summary>
-    /// CrystallPunk Melee upgrade. Modifier of wide attack animation speed
+    /// CrystallEdge Melee upgrade. Modifier of wide attack animation speed
     /// </summary>
     [DataField]
     public float CPAnimationLength = 0.5f;
 
     /// <summary>
-    /// CrystallPunk Melee upgrade. how far away from the player the animation should be played.
+    /// CrystallEdge Melee upgrade. how far away from the player the animation should be played.
     /// </summary>
     [DataField]
     public float CPAnimationOffset = -1f;

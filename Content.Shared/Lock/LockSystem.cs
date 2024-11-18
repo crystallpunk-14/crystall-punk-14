@@ -47,7 +47,7 @@ public sealed class LockSystem : EntitySystem
         SubscribeLocalEvent<LockComponent, GotEmaggedEvent>(OnEmagged);
         SubscribeLocalEvent<LockComponent, LockDoAfter>(OnDoAfterLock);
         SubscribeLocalEvent<LockComponent, UnlockDoAfter>(OnDoAfterUnlock);
-        SubscribeLocalEvent<LockComponent, BeforeDoorOpenedEvent>(OnBeforeDoorOpened); //CrystallPunk Lock System Adapt
+        SubscribeLocalEvent<LockComponent, BeforeDoorOpenedEvent>(OnBeforeDoorOpened); //CrystallEdge Lock System Adapt
         SubscribeLocalEvent<LockComponent, StorageInteractAttemptEvent>(OnStorageInteractAttempt);
 
         SubscribeLocalEvent<LockedWiresPanelComponent, LockToggleAttemptEvent>(OnLockToggleAttempt);
@@ -68,7 +68,7 @@ public sealed class LockSystem : EntitySystem
         if (args.Handled || !args.Complex)
             return;
 
-        //CrystallPunk LockSystem Adapt - we cant unlock\lock objects via direct hand interaction
+        //CrystallEdge LockSystem Adapt - we cant unlock\lock objects via direct hand interaction
 
         // Only attempt an unlock by default on Activate
         //if (lockComp.Locked && lockComp.UnlockOnClick)
@@ -82,7 +82,7 @@ public sealed class LockSystem : EntitySystem
         //    args.Handled = true;
         //}
 
-        //CrystallPunk LockSystem Adapt End
+        //CrystallEdge LockSystem Adapt End
     }
     private void OnBeforeDoorOpened(EntityUid uid, LockComponent component, BeforeDoorOpenedEvent args)
     {
@@ -275,7 +275,7 @@ public sealed class LockSystem : EntitySystem
 
     private void AddToggleLockVerb(EntityUid uid, LockComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        //CrystallPunk Lock System Adapt
+        //CrystallEdge Lock System Adapt
 
         //if (!args.CanAccess || !args.CanInteract)
         //    return;
@@ -292,7 +292,7 @@ public sealed class LockSystem : EntitySystem
         //};
         //args.Verbs.Add(verb);
 
-        //CrystallPunk Lock System Adapt End
+        //CrystallEdge Lock System Adapt End
     }
 
     private void OnEmagged(EntityUid uid, LockComponent component, ref GotEmaggedEvent args)

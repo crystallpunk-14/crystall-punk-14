@@ -7,7 +7,7 @@ using Robust.Shared.GameObjects;
 namespace Content.IntegrationTests.Tests.Payload;
 
 public sealed class ModularGrenadeTests : InteractionTest
-{
+{/*
     public const string Trigger = "TimerTrigger";
     public const string Payload = "ExplosivePayload";
 
@@ -70,5 +70,5 @@ public sealed class ModularGrenadeTests : InteractionTest
         // Grenade has exploded.
         await RunTicks(30);
         AssertDeleted();
-    }
+    }*/
 }

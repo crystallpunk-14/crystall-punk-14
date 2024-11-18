@@ -20,7 +20,7 @@ public enum WeaponArcAnimation : byte
     None,
     Thrust,
     Slash,
-    //CrystallPunk Melee upgrade
+    //CrystallEdge Melee upgrade
     CPSlash,
     CPThrust
 }

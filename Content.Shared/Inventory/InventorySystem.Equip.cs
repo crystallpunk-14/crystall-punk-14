@@ -168,7 +168,7 @@ public abstract partial class InventorySystem
                 target,
                 itemUid)
             {
-                BreakOnMove = clothing.BreakOnMove, //CrystallPunk weapon unequipping on move
+                BreakOnMove = clothing.BreakOnMove, //CrystallEdge weapon unequipping on move
                 NeedHand = true,
             };
 
@@ -434,7 +434,7 @@ public abstract partial class InventorySystem
                 target,
                 removedItem.Value)
             {
-                BreakOnMove = clothing.BreakOnMove, //CrystallPunk weapon unequipping on move
+                BreakOnMove = clothing.BreakOnMove, //CrystallEdge weapon unequipping on move
                 NeedHand = true,
             };
 
