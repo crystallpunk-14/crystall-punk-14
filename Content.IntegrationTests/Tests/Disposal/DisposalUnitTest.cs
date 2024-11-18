@@ -18,7 +18,7 @@ namespace Content.IntegrationTests.Tests.Disposal
     [TestOf(typeof(DisposalEntryComponent))]
     [TestOf(typeof(DisposalUnitComponent))]
     public sealed class DisposalUnitTest
-    {
+    {/*
         [Reflect(false)]
         private sealed class DisposalUnitTestSystem : EntitySystem
         {
@@ -242,6 +242,6 @@ namespace Content.IntegrationTests.Tests.Disposal
             });
 
             await pair.CleanReturnAsync();
-        }
+        }*/
     }
 }

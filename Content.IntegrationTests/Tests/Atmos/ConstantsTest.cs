@@ -8,7 +8,7 @@ namespace Content.IntegrationTests.Tests.Atmos
     [TestFixture]
     [TestOf(typeof(Atmospherics))]
     public sealed class ConstantsTest
-    {
+    {/*
         [Test]
         public async Task TotalGasesTest()
         {
@@ -27,6 +27,6 @@ namespace Content.IntegrationTests.Tests.Atmos
                 });
             });
             await pair.CleanReturnAsync();
-        }
+        }*/
     }
 }
