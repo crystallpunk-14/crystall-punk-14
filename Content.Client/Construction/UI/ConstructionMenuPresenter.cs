@@ -170,7 +170,7 @@ namespace Content.Client.Construction.UI
                 if (recipe.Hide)
                     continue;
 
-                if (!recipe.CrystallPunkAllowed) //CrystallPunk clearing recipes
+                if (!recipe.CrystallPunkAllowed) //CrystallEdge clearing recipes
                     continue;
 
                 if (_playerManager.LocalSession == null

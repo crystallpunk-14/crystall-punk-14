@@ -47,20 +47,20 @@ namespace Content.Shared.Humanoid
             switch (gender)
             {
                 case Gender.Male:
-                    return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallPunk name localization
+                    return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallEdge name localization
                 case Gender.Female:
-                    return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallPunk name localization
+                    return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallEdge name localization
                 default:
                     if (_random.Prob(0.5f))
-                        return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallPunk name localization
+                        return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallEdge name localization
                     else
-                        return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallPunk name localization
+                        return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallEdge name localization
             }
         }
 
         public string GetLastName(SpeciesPrototype speciesProto)
         {
-            return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.LastNames).Values)); //CrystallPunk name localization
+            return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.LastNames).Values)); //CrystallEdge name localization
         }
     }
 }

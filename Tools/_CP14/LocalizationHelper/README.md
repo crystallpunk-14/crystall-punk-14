@@ -41,5 +41,5 @@ Author: asqw: Discord - .asqw, GitHub - comasqw
 
 Date: 24.06.2024
 
-License: All right reserved for CrystallPunk14 project only
+License: All right reserved for CrystallEdge project only
 

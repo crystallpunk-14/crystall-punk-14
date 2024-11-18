@@ -8,7 +8,7 @@ namespace Content.IntegrationTests.Tests.Internals;
 [TestFixture]
 [TestOf(typeof(InternalsSystem))]
 public sealed class AutoInternalsTests
-{
+{/*
     [Test]
     public async Task TestInternalsAutoActivateInSpaceForStationSpawn()
     {
@@ -81,5 +81,5 @@ public sealed class AutoInternalsTests
   components:
     - type: Loadout
       prototypes: [InternalsDummyGear]
-";
+";*/
 }

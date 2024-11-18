@@ -44,15 +44,15 @@ namespace Content.IntegrationTests.Tests
         };
 
         private static readonly string[] GameMaps =
-        {//CrystallPunk Map replacement
+        {//CrystallEdge Map replacement
             "Dev",
             "CentComm",
             "MeteorArena",
 
-            //CrystallPunk maps
+            //CrystallEdge maps
             "Village",
             "Island",
-            //CrystallPunk Map replacement end
+            //CrystallEdge Map replacement end
         };
 
         /// <summary>

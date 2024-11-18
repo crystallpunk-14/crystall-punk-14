@@ -2,7 +2,7 @@
   crystallPunkAllowed: true
   locFilter: "en-US"
   id: CP14_EN
-  name: Welcome to CrystallPunk
+  name: Welcome to CrystallEdge
   text: "/ServerInfo/_CP14/Guidebook_EN/Welcome.xml"
   children:
   - CP14_EN_Alchemy
@@ -12,7 +12,7 @@
   crystallPunkAllowed: true
   locFilter: "ru-RU"
   id: CP14_RU
-  name: Добро пожаловать в CrystallPunk
+  name: Добро пожаловать в CrystallEdge
   text: "/ServerInfo/_CP14/Guidebook_RU/Welcome.xml"
   children:
   - CP14_RU_Alchemy

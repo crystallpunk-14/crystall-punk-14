@@ -78,7 +78,7 @@ public sealed partial class ClothingComponent : Component
     public TimeSpan StripDelay = TimeSpan.Zero;
 
     [DataField]
-    public bool BreakOnMove = true; //CrystallPunk weapon unequipping on move
+    public bool BreakOnMove = true; //CrystallEdge weapon unequipping on move
 }
 
 [Serializable, NetSerializable]

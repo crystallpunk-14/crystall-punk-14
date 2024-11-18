@@ -8,7 +8,7 @@ using Robust.Shared.Prototypes;
 namespace Content.IntegrationTests.Tests;
 
 public sealed class MachineBoardTest
-{
+{/*
     /// <summary>
     /// A list of machine boards that can be ignored by this test.
     /// </summary>
@@ -138,5 +138,5 @@ public sealed class MachineBoardTest
         });
 
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

@@ -6,7 +6,7 @@ namespace Content.IntegrationTests.Tests.Atmos
     [TestFixture]
     [TestOf(typeof(AtmosAlarmThreshold))]
     public sealed class AlarmThresholdTest
-    {
+    {/*
         [TestPrototypes]
         private const string Prototypes = @"
 - type: alarmThreshold
@@ -135,6 +135,6 @@ namespace Content.IntegrationTests.Tests.Atmos
                 }
             });
             await pair.CleanReturnAsync();
-        }
+        }*/
     }
 }

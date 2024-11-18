@@ -130,7 +130,6 @@ public sealed partial class DungeonSystem
 
         var finalRoomRotation = roomTransform.Rotation();
 
-        /*
         if (clearExisting)
         {
             var point1 = Vector2.Transform(-room.Size / 2, roomTransform);
@@ -156,7 +155,6 @@ public sealed partial class DungeonSystem
                 }
             }
         }
-        */
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;
@@ -185,14 +183,14 @@ public sealed partial class DungeonSystem
                 _tiles.Add((rounded, tileRef.Tile));
 
                 //CP14 clearExisting variant
-                if (clearExisting)
-                {
-                    var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
-                    foreach (var ent in anchored)
-                    {
-                        QueueDel(ent);
-                    }
-                }
+                //if (clearExisting)
+                //{
+                //    var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
+                //    foreach (var ent in anchored)
+                //    {
+                //        QueueDel(ent);
+                //    }
+                //}
                 //CP14 clearExisting variant end
             }
         }

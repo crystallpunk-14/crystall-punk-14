@@ -317,10 +317,10 @@ namespace Content.Server.Atmos.EntitySystems
             _ignitionSourceSystem.SetIgnited(uid, false);
 
 
-            //CrystallPunk bonfire moment
+            //CrystallEdge bonfire moment
             var ev = new OnFireChangedEvent(flammable.OnFire);
             RaiseLocalEvent(uid, ref ev);
-            //CrystallPunk bonfire moment end
+            //CrystallEdge bonfire moment end
 
             UpdateAppearance(uid, flammable);
         }
@@ -344,10 +344,10 @@ namespace Content.Server.Atmos.EntitySystems
                     _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSource):actor}");
                 flammable.OnFire = true;
 
-                //CrystallPunk fireplace moment
+                //CrystallEdge fireplace moment
                 var ev = new OnFireChangedEvent(flammable.OnFire);
                 RaiseLocalEvent(uid, ref ev);
-                //CrystallPunk fireplace moment end
+                //CrystallEdge fireplace moment end
             }
 
             UpdateAppearance(uid, flammable);

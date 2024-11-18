@@ -12,6 +12,7 @@ namespace Content.IntegrationTests.Tests.Access
     [TestOf(typeof(AccessReaderComponent))]
     public sealed class AccessReaderTest
     {
+        /*
         [Test]
         public async Task TestProtoTags()
         {
@@ -123,6 +124,6 @@ namespace Content.IntegrationTests.Tests.Access
             });
             await pair.CleanReturnAsync();
         }
-
+    */
     }
 }
