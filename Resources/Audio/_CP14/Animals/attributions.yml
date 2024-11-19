@@ -47,3 +47,8 @@
   license: "CC-BY-4.0"
   copyright: 'by GreatNate98 of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/GreatNate98/sounds/586547/"
+
+- files: ["swarm.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by bruno.auzet of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/bruno.auzet/sounds/578267/"
