@@ -66,7 +66,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: TimedDespawn
-    lifetime: 300 # 5 min
+    lifetime: 180 # 3 min
   - type: Sprite
     sprite: _CP14/Effects/Magic/sphere_of_light.rsi
     noRot: true
@@ -93,8 +93,8 @@
   - type: LandAtCursor
   - type: MovementIgnoreGravity
   - type: PointLight
-    radius: 6.0
-    energy: 2
+    radius: 5.0
+    energy: 1
     color: "#efedff"
   - type: Damageable
   - type: EmitSoundOnLand
