@@ -44,9 +44,12 @@
     children:
     - !type:GroupSelector
       children:
-      - id: CP14Scissors
       - id: CP14BaseCrowbar
+        weight: 2
       - id: CP14BaseWrench
+        weight: 2
+      - id: CP14Scissors
+      - id: CP14ManaOperationGlove
       - id: CP14BaseShovel
       - id: CP14BaseMop
       - id: CP14BaseBroom

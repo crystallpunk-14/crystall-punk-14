@@ -148,6 +148,11 @@ CP14KeyBankSafe6: CP14KeyBankSafe
 
 #2024-19-11
 CP14ClothingRingManaGift: CP14ManaOperationGlove
+CP14ClothingRingIceDagger: CP14ManaOperationGlove
+CP14ClothingRingFlameCreation: null
+CP14ClothingRingShadowGrab: null
+CP14ClothingRingEarthWall: null
+CP14ClothingRingSphereOfLight: null
 
 # <---> CrystallEdge migration zone end
 
