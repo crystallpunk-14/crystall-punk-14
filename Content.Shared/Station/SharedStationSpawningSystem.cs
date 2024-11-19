@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Actions;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -22,6 +23,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SharedActionsSystem _action = default!; //CP14
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -82,6 +84,15 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     {
         EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
         EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent);
+        CP14EquipStartingActions(entity, loadout);
+    }
+
+    private void CP14EquipStartingActions(EntityUid entity, LoadoutPrototype loadout)
+    {
+        foreach (var action in loadout.Actions)
+        {
+            _action.AddAction(entity, action);
+        }
     }
 
     /// <summary>

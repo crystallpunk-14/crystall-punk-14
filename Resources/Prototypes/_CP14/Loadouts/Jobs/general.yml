@@ -408,31 +408,47 @@
 - type: loadout
   id: CP14ActionSpellFlameCreation
   dummyEntity: CP14ActionSpellFlameCreation
+  actions:
+  - CP14ActionSpellFlameCreation
 
 - type: loadout
   id: CP14ActionSpellCureWounds
   dummyEntity: CP14ActionSpellCureWounds
+  actions:
+  - CP14ActionSpellCureWounds
 
 - type: loadout
   id: CP14ActionSpellSphereOfLight
   dummyEntity: CP14ActionSpellSphereOfLight
+  actions:
+  - CP14ActionSpellSphereOfLight
 
 - type: loadout
   id: CP14ActionSpellManaConsume
   dummyEntity: CP14ActionSpellManaConsume
+  actions:
+  - CP14ActionSpellManaConsume
 
 - type: loadout
   id: CP14ActionSpellManaGift
   dummyEntity: CP14ActionSpellManaGift
+  actions:
+  - CP14ActionSpellManaGift
 
 - type: loadout
   id: CP14ActionSpellShadowGrab
   dummyEntity: CP14ActionSpellShadowGrab
+  actions:
+  - CP14ActionSpellShadowGrab
 
 - type: loadout
   id: CP14ActionSpellIceDagger
   dummyEntity: CP14ActionSpellIceDagger
+  actions:
+  - CP14ActionSpellIceDagger
 
 - type: loadout
   id: CP14ActionSpellWaterCreation
   dummyEntity: CP14ActionSpellWaterCreation
+  actions:
+  - CP14ActionSpellWaterCreation

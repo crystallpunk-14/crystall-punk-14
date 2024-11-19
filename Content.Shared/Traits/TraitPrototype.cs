@@ -60,10 +60,4 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
-
-    /// <summary>
-    /// CP14 - adding permanent spells into players mind
-    /// </summary>
-    [DataField]
-    public List<EntProtoId> Actions = new();
 }

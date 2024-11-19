@@ -44,4 +44,10 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// <inheritdoc />
     [DataField]
     public Dictionary<string, List<EntProtoId>> Storage { get; set; } = new();
+
+    /// <summary>
+    /// CP14 - it is possible to give action spells or spells to players who have taken this loadout
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> Actions { get; set; } = new();
 }
