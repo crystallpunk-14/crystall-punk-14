@@ -291,7 +291,7 @@
   maxLimit: 2
   loadouts:
   - CP14MagicHealingStaff
-  - CP14ClothingRingManaGift
+  - CP14ManaOperationGlove
   - CP14EnergyCrystalSmall
   - CP14CrystalLampOrangeEmpty
   - CP14BaseSharpeningStone
@@ -307,15 +307,14 @@
 
 - type: loadout
   id: CP14MagicHealingStaff
-  storage:
-    neck:
-    - CP14MagicHealingStaff
+  inhand:
+  - CP14MagicHealingStaff
 
 - type: loadout
-  id: CP14ClothingRingManaGift
+  id: CP14ManaOperationGlove
   storage:
     back:
-    - CP14ClothingRingManaGift
+    - CP14ManaOperationGlove
 
 - type: loadout
   id: CP14EnergyCrystalSmall
