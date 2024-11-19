@@ -3,6 +3,9 @@
   name: Flame creation
   description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: flame_creation
   - type: CP14MagicEffect
     magicType: Fire
     manaCost: 5
@@ -73,7 +76,7 @@
       - state: inhand-right
         shader: unshaded
   - type: TimedDespawn
-    lifetime: 300 # 5 min
+    lifetime: 60 # 1 min
   - type: Sprite
     sprite: _CP14/Objects/Misc/artificial_flame.rsi
     layers:

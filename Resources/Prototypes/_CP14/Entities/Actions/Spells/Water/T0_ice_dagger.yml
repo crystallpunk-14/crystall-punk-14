@@ -3,6 +3,9 @@
   name: Ice dagger
   description: Materialization of a temporary sharp ice throwing dagger
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: ice_dagger
   - type: CP14MagicEffect
     magicType: Water
     manaCost: 15

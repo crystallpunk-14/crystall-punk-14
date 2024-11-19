@@ -13,12 +13,14 @@ public abstract partial class CP14SpellEffect
 public record class CP14SpellEffectBaseArgs
 {
     public EntityUid? User;
+    public EntityUid? Used;
     public EntityUid? Target;
     public EntityCoordinates? Position;
 
-    public CP14SpellEffectBaseArgs(EntityUid? user, EntityUid? target, EntityCoordinates? position)
+    public CP14SpellEffectBaseArgs(EntityUid? user, EntityUid? used, EntityUid? target, EntityCoordinates? position)
     {
         User = user;
+        Used = used;
         Target = target;
         Position = position;
     }

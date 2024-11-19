@@ -1,20 +1,16 @@
 {
   "version": 1,
   "size": {
-    "x": 48,
-    "y": 48
+    "x": 32,
+    "y": 32
   },
   "license": "CLA",
   "copyright": "Created by TheShuEd",
   "states": [
     {
-      "name": "particles_down",
+      "name": "liq-1",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
           0.2,
           0.2,
           0.2,
@@ -23,13 +19,28 @@
       ]
     },
     {
-      "name": "particles_up",
+      "name": "inhand-left-fill1",
+      "directions": 4,
       "delays": [
         [
           0.2,
           0.2,
           0.2,
+          0.2
+        ],
+        [
           0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
           0.2,
           0.2,
           0.2,
@@ -38,13 +49,28 @@
       ]
     },
     {
-      "name": "wave_up",
+      "name": "inhand-right-fill1",
+      "directions": 4,
       "delays": [
         [
           0.2,
           0.2,
           0.2,
+          0.2
+        ],
+        [
           0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
           0.2,
           0.2,
           0.2,

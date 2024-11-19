@@ -1,6 +1,7 @@
 - type: roleLoadout
   id: JobCP14Adventurer
   groups:
+  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
   - CP14GeneralMask
@@ -15,6 +16,7 @@
 - type: roleLoadout
   id: JobCP14Alchemist
   groups:
+  - CP14GeneralSpells
   - CP14AlchemistHead #
   - CP14AlchemistEyes #
   - CP14GeneralMask
@@ -29,6 +31,7 @@
 - type: roleLoadout
   id: JobCP14Innkeeper
   groups:
+  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
   - CP14GeneralMask
@@ -43,6 +46,7 @@
 - type: roleLoadout
   id: JobCP14Blacksmith
   groups:
+  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
   - CP14GeneralMask
@@ -57,6 +61,7 @@
 - type: roleLoadout
   id: JobCP14Captain
   groups:
+  - CP14GeneralSpells
   - CP14CaptainHead #
   - CP14GeneralEyes
   - CP14GeneralMask
@@ -71,6 +76,7 @@
 - type: roleLoadout
   id: JobCP14GuardCommander
   groups:
+  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
   - CP14GeneralMask
@@ -85,6 +91,7 @@
 - type: roleLoadout
   id: JobCP14Commandant
   groups:
+  - CP14GeneralSpells
   - CP14CommandantHead
   - CP14GeneralEyes
   - CP14CommandantCloak
@@ -97,6 +104,7 @@
 - type: roleLoadout
   id: JobCP14Banker
   groups:
+  - CP14GeneralSpells
   - CP14BankHead
   - CP14GeneralEyes
   - CP14BankShirt

@@ -3,6 +3,9 @@
   name: Shadow step
   description: A step through the gash of reality that allows you to cover a small of distance quickly
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: shadow_step
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffect
