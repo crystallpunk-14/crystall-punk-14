@@ -73,7 +73,7 @@
       - state: inhand-right
         shader: unshaded
   - type: TimedDespawn
-    lifetime: 300 # 5 min
+    lifetime: 60 # 1 min
   - type: Sprite
     sprite: _CP14/Objects/Misc/artificial_flame.rsi
     layers:

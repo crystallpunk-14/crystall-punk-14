@@ -8,7 +8,7 @@
   "copyright": "Created by TheShuEd",
   "states": [
     {
-      "name": "icon",
+      "name": "liq-1",
       "delays": [
         [
           0.2,
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "name": "inhand-left",
+      "name": "inhand-left-fill1",
       "directions": 4,
       "delays": [
         [
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "name": "inhand-right",
+      "name": "inhand-right-fill1",
       "directions": 4,
       "delays": [
         [
