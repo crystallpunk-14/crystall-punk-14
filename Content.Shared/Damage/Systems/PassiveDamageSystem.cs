@@ -11,6 +11,8 @@ public sealed class PassiveDamageSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
+    private EntityQuery<MobStateComponent> _mobStateQuery; //CP14
+
     public override void Initialize()
     {
         base.Initialize();
@@ -30,8 +32,8 @@ public sealed class PassiveDamageSystem : EntitySystem
         var curTime = _timing.CurTime;
 
         // Go through every entity with the component
-        var query = EntityQueryEnumerator<PassiveDamageComponent, DamageableComponent, MobStateComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var damage, out var mobState))
+        var query = EntityQueryEnumerator<PassiveDamageComponent, DamageableComponent /*, MobStateComponent*/>();
+        while (query.MoveNext(out var uid, out var comp, out var damage /*, out var mobState*/))
         {
             // Make sure they're up for a damage tick
             if (comp.NextDamage > curTime)
@@ -43,12 +45,26 @@ public sealed class PassiveDamageSystem : EntitySystem
             // Set the next time they can take damage
             comp.NextDamage = curTime + TimeSpan.FromSeconds(1f);
 
-            // Damage them
-            foreach (var allowedState in comp.AllowedStates)
+            //CP14 logic replacement
+            //
+            //// Damage them
+            //foreach (var allowedState in comp.AllowedStates)
+            //{
+            //    if(allowedState == mobState.CurrentState)
+            //        _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage);
+            //}
+            if (comp.AllowedStates.Count > 0)
             {
-                if(allowedState == mobState.CurrentState)
+                if (_mobStateQuery.TryComp(uid, out var mobState) && comp.AllowedStates.Contains(mobState.CurrentState))
+                {
                     _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage);
+                }
             }
+            else
+            {
+                _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage);
+            }
+            //CP14 logic replacement end
         }
     }
 }

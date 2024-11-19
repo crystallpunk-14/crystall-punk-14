@@ -404,6 +404,7 @@
   - CP14ActionSpellShadowGrab
   - CP14ActionSpellIceDagger
   - CP14ActionSpellWaterCreation
+  - CP14ActionSpellBeerCreation
 
 - type: loadout
   id: CP14ActionSpellFlameCreation
@@ -452,3 +453,20 @@
   dummyEntity: CP14ActionSpellWaterCreation
   actions:
   - CP14ActionSpellWaterCreation
+
+- type: loadout
+  id: CP14ActionSpellBeerCreation
+  dummyEntity: CP14ActionSpellBeerCreation
+  actions:
+  - CP14ActionSpellBeerCreation
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Dwarf
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: CP14JobInnkeeper
+      time: 7200 # 2 hour

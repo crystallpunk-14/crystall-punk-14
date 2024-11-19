@@ -92,14 +92,9 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: PassiveDamage # Around 8 damage a minute healed
-    allowedStates:
-    - Alive
     damage:
       groups:
         Brute: 0.016 # ~ 1 minute
-  - type: MobState #Hack for passiveDamage
-    allowedStates:
-      - Alive
   - type: Damageable
     damageContainer: Biological
   - type: Food
