@@ -122,11 +122,11 @@ CP14FlowersYellow: CP14Dayflin
 
 #2024-11-03
 CP14OldLantern: CP14CrystalLampBlueEmpty
-CP14ClothingRingIceFloor: CP14ClothingRingManaGift
+CP14ClothingRingIceFloor: CP14ManaOperationGlove
 
 #2024-11-05
 CP14ClothingRingCureWounds: CP14MagicHealingStaff
-CP14ClothingRingShadowStep: CP14ClothingRingManaGift
+CP14ClothingRingShadowStep: null
 
 #2024-11-11
 CP14BlueVial: CP14BlueBottle
