@@ -17,6 +17,8 @@ public sealed class PassiveDamageSystem : EntitySystem
     {
         base.Initialize();
 
+        _mobStateQuery = GetEntityQuery<MobStateComponent>(); //CP14
+
         SubscribeLocalEvent<PassiveDamageComponent, MapInitEvent>(OnPendingMapInit);
     }
 
@@ -53,11 +55,12 @@ public sealed class PassiveDamageSystem : EntitySystem
             //    if(allowedState == mobState.CurrentState)
             //        _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage);
             //}
-            if (comp.AllowedStates.Count > 0)
+            if (comp.AllowedStates.Count > 0 && _mobStateQuery.TryComp(uid, out var mobState))
             {
-                if (_mobStateQuery.TryComp(uid, out var mobState) && comp.AllowedStates.Contains(mobState.CurrentState))
+                foreach (var allowedState in comp.AllowedStates)
                 {
-                    _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage);
+                    if(allowedState == mobState.CurrentState)
+                        _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage);
                 }
             }
             else
