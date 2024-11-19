@@ -6,7 +6,7 @@ A script to help support game translation
 ## The right version of python: 3.10+
 
 
-## Deployment
+## Dependencies Install
 
 in console
 
@@ -31,10 +31,18 @@ or just run
 run.bat
 ```
 
-## Demo
+## Tests
+in console
 
+```bash
+python run_tests.py
+```
+or just run
 
-https://youtu.be/5HfDjLzhjA4
+```bash
+tests.bat
+```
+
 ## License
 
 Author: asqw: Discord - .asqw, GitHub - comasqw
