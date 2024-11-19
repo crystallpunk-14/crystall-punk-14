@@ -61,8 +61,9 @@ class LocalizationHelper:
         if yaml_prototype_obj.attrs_dict != last_launch_prototype_obj.attrs_dict:
             log_text = f"Has been updated from: {final_prototype_obj.attrs_dict}, to: "
 
-            final_prototype_obj.attrs_dict.update(yaml_prototype_obj.attrs_dict)
-            final_prototype_obj.reinitialize_with_attrs_dict()
+            for key, value in yaml_prototype_obj.attrs_dict.items():
+                if final_prototype_obj.attrs_dict[key] != value:
+                    final_prototype_obj.set_attrs_dict_value(key, value)
 
             log_text += f"{final_prototype_obj.attrs_dict}"
             logger.debug(log_text)
@@ -75,7 +76,6 @@ class LocalizationHelper:
         general_prototypes_dict = {}
 
         last_launch_result = self._read_prototypes_from_last_launch_result()
-
         for prototype_id, yaml_prototype_obj in yaml_parser_prototypes.items():
             final_prototype_obj = yaml_prototype_obj
             if prototype_id in ftl_parser_prototypes:
@@ -87,7 +87,6 @@ class LocalizationHelper:
                                                                                        last_launch_prototype_obj,
                                                                                        final_prototype_obj)
             general_prototypes_dict[prototype_id] = final_prototype_obj
-
         return general_prototypes_dict
 
     @staticmethod
@@ -130,10 +129,12 @@ class LocalizationHelper:
 
     def _create_general_prototypes_dict(self, yaml_parser_prototypes: dict[str, Prototype],
                                         ftl_parser_prototypes: dict[str, Prototype]) -> dict[str, Prototype]:
+
         general_prototypes_dict = self._merge_yaml_parser_prototypes_and_ftl_parser_prototypes(yaml_parser_prototypes,
                                                                                                ftl_parser_prototypes)
-        general_prototypes_dict = self._parent_checks(general_prototypes_dict)
 
+        self._save_yaml_parser_last_launch_result(yaml_parser_prototypes)
+        general_prototypes_dict = self._parent_checks(general_prototypes_dict)
         return general_prototypes_dict
 
     @staticmethod
@@ -169,7 +170,6 @@ class LocalizationHelper:
             general_prototypes_dict = self._create_general_prototypes_dict(prototypes_list_parsed_from_yaml,
                                                                            prototypes_list_parsed_from_ftl)
 
-            self._save_yaml_parser_last_launch_result(prototypes_list_parsed_from_yaml)
             self._save_result(general_prototypes_dict)
             self._print_info(general_prototypes_dict)
         except ErrorWhileWritingToFile as e:
