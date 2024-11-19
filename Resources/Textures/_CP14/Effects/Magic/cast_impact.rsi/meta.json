@@ -8,6 +8,21 @@
   "copyright": "Created by TheShuEd",
   "states": [
     {
+      "name": "particles_down",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
       "name": "particles_up",
       "delays": [
         [

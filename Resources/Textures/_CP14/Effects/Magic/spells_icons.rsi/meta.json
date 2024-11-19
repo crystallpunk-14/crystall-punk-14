@@ -29,6 +29,9 @@
       "name": "ice_shards"
     },
     {
+      "name": "mana_consume"
+    },
+    {
       "name": "mana_gift"
     },
     {
