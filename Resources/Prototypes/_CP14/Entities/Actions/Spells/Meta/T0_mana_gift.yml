@@ -3,6 +3,9 @@
   name: Mana transfer
   description: You can transfer a small amount of your magical energy to a target entity or magical object.
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: mana_gift
   - type: CP14MagicEffect
     magicType: Meta
     manaCost: 12

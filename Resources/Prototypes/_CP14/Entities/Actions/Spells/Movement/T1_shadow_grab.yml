@@ -3,6 +3,9 @@
   name: Shadow grab
   description: You attract a ghostly hand that draws an object or entity to you
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: shadow_grab
   - type: CP14MagicEffect
     magicType: Movement
     manaCost: 10

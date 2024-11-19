@@ -3,6 +3,9 @@
   name: Sphere of Light
   description: Materialization of a bright and safe light source.
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: sphere_of_light
   - type: CP14MagicEffect
     magicType: LightDarkness
     manaCost: 10

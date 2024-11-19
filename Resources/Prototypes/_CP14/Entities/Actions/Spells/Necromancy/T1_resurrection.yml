@@ -3,6 +3,9 @@
   name: Resurrection
   description: You're trying to put the soul back into the body.
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: resurrection
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.2
   - type: CP14MagicEffect

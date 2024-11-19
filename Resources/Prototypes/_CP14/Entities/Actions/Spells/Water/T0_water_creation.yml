@@ -3,6 +3,9 @@
   name: Water creation
   description: Creating a clot of water that is held in a floating balloon shape for some time
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: water_creation
   - type: CP14MagicEffect
     magicType: Water
     manaCost: 10

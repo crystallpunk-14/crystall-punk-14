@@ -3,6 +3,9 @@
   name: Mana consume
   description: You absorb a small amount of mana from the target. 
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: mana_consume
   - type: CP14MagicEffect
     magicType: Meta
     manaCost: 0
