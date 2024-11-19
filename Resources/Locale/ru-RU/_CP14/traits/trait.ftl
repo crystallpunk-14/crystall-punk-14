@@ -20,14 +20,6 @@ cp14-trait-muted-desc = Все что вы можете - бессвязно м�
 cp14-trait-snoring-name = Громкий храп
 cp14-trait-snoring-desc = Спать рядом с вами просто невозможно, потому что во все вы жутко громко храпите.
 
-# Magic spells
-
-cp14-trait-spell-flamecreation-name = создание пламени
-cp14-trait-spell-flamecreation-desc = A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
-
-cp14-trait-spell-managift-name = передача маны
-cp14-trait-spell-managift-desc = You can transfer a small amount of your magical energy to a target entity or magical object.
-
 # Backgrounds
 
 cp14-trait-bg-entertainer-name = Артист
