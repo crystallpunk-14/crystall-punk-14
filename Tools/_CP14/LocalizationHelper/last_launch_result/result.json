@@ -1,0 +1,5247 @@
+{
+    "CP14BaseFlammableSpreading": {
+        "id": "CP14BaseFlammableSpreading",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseFlammable",
+        "suffix": null
+    },
+    "CP14BaseFlammableSpreadingStrong": {
+        "id": "CP14BaseFlammableSpreadingStrong",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseFlammableSpreading",
+        "suffix": null
+    },
+    "CP14Fire": {
+        "id": "CP14Fire",
+        "name": "fire",
+        "description": "it's fire!",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14BaseKeyRing": {
+        "id": "CP14BaseKeyRing",
+        "name": "key ring",
+        "description": "Allows you to comfortably store a large number of keys in one place.",
+        "parent": "BaseItem",
+        "suffix": "Empty"
+    },
+    "CP14KeyRingInnkeeper": {
+        "id": "CP14KeyRingInnkeeper",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseKeyRing",
+        "suffix": "Innkeeper"
+    },
+    "CP14KeyRingBlacksmith": {
+        "id": "CP14KeyRingBlacksmith",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseKeyRing",
+        "suffix": "Blacksmith"
+    },
+    "CP14KeyRingAlchemist": {
+        "id": "CP14KeyRingAlchemist",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseKeyRing",
+        "suffix": "Alchemist"
+    },
+    "CP14KeyRingBanker": {
+        "id": "CP14KeyRingBanker",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseKeyRing",
+        "suffix": "Banker"
+    },
+    "CP14KeyRingCommandant": {
+        "id": "CP14KeyRingCommandant",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseKeyRing",
+        "suffix": "Commandant"
+    },
+    "CP14BaseKey": {
+        "id": "CP14BaseKey",
+        "name": "key",
+        "description": "A small, intricate piece of iron that opens certain locks. Don't give it to just anyone!",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14BaseLockpick": {
+        "id": "CP14BaseLockpick",
+        "name": "lockpick",
+        "description": "A thief's tool that, with proper skill and skill, allows you to pick any lock.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14KeyTavernHall": {
+        "id": "CP14KeyTavernHall",
+        "name": "tavern hall key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyTavernStaff": {
+        "id": "CP14KeyTavernStaff",
+        "name": "tavern staff key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyTavernDorms1": {
+        "id": "CP14KeyTavernDorms1",
+        "name": "tavern room 1 key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyTavernDorms2": {
+        "id": "CP14KeyTavernDorms2",
+        "name": "tavern room 2 key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyTavernDorms3": {
+        "id": "CP14KeyTavernDorms3",
+        "name": "tavern room 3 key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyTavernDorms4": {
+        "id": "CP14KeyTavernDorms4",
+        "name": "tavern room 4 key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyTavernDorms5": {
+        "id": "CP14KeyTavernDorms5",
+        "name": "tavern room 5 key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyAlchemy": {
+        "id": "CP14KeyAlchemy",
+        "name": "alchemist key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyBlacksmith": {
+        "id": "CP14KeyBlacksmith",
+        "name": "blacksmith key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyBankEntrance": {
+        "id": "CP14KeyBankEntrance",
+        "name": "bank entrance key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyBankStaff": {
+        "id": "CP14KeyBankStaff",
+        "name": "bank staff key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyBankVault": {
+        "id": "CP14KeyBankVault",
+        "name": "bank vault key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyBankCommandantRoom": {
+        "id": "CP14KeyBankCommandantRoom",
+        "name": "bank commandant room key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14KeyBankSafe": {
+        "id": "CP14KeyBankSafe",
+        "name": "bank safe key",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
+    },
+    "CP14BaseSubdimensionalKey": {
+        "id": "CP14BaseSubdimensionalKey",
+        "name": "demiplan key",
+        "description": "The core that connects the real world to the demiplane. Use it to open a temporary passage to the other world.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14DemiplanKey": {
+        "id": "CP14DemiplanKey",
+        "name": "demiplan key",
+        "description": null,
+        "parent": "CP14BaseSubdimensionalKey",
+        "suffix": null
+    },
+    "CP14DemiplanRiftCore": {
+        "id": "CP14DemiplanRiftCore",
+        "name": "demiplan rift core",
+        "description": "A subtle connection between the real world and the demiplane where the adventurers went. Sooner or later they will return from there.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14DemiplaneTimedRadiusPassway": {
+        "id": "CP14DemiplaneTimedRadiusPassway",
+        "name": "pulsating demiplane rift",
+        "description": "This rift is gaining strength, and will trap all nearby creatures in a demiplane in a second!",
+        "parent": "CP14DemiplanRiftCore",
+        "suffix": null
+    },
+    "CP14DemiplanePassway": {
+        "id": "CP14DemiplanePassway",
+        "name": "demiplane rift",
+        "description": "A gap in space that allows you to travel between world and demiplanes.",
+        "parent": "CP14DemiplanRiftCore",
+        "suffix": null
+    },
+    "CP14DemiplaneEntryPointMarker": {
+        "id": "CP14DemiplaneEntryPointMarker",
+        "name": "demiplane entry point",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14BaseMagicRune": {
+        "id": "CP14BaseMagicRune",
+        "name": "magic rune",
+        "description": "manifestation of magical energy in the physical plane",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14BaseMagicImpact": {
+        "id": "CP14BaseMagicImpact",
+        "name": "magic impact",
+        "description": "manifestation of magical energy in the physical plane",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14BaseSpellScroll": {
+        "id": "CP14BaseSpellScroll",
+        "name": "spell scroll",
+        "description": "A piece of paper with a spell embedded in it. The use of magic destroys the fragile paper, making these scrolls short-lived consumables.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollEarth": {
+        "id": "CP14BaseSpellScrollEarth",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollFire": {
+        "id": "CP14BaseSpellScrollFire",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollGate": {
+        "id": "CP14BaseSpellScrollGate",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollHealing": {
+        "id": "CP14BaseSpellScrollHealing",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollLightDarkness": {
+        "id": "CP14BaseSpellScrollLightDarkness",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollMeta": {
+        "id": "CP14BaseSpellScrollMeta",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollMovement": {
+        "id": "CP14BaseSpellScrollMovement",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollNecromancy": {
+        "id": "CP14BaseSpellScrollNecromancy",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14BaseSpellScrollWater": {
+        "id": "CP14BaseSpellScrollWater",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpellScroll",
+        "suffix": null
+    },
+    "CP14ActionSpellEarthWall": {
+        "id": "CP14ActionSpellEarthWall",
+        "name": "Earth wall",
+        "description": "Raises a solid wall of earth from the bowels.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneEarthWall": {
+        "id": "CP14RuneEarthWall",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectEarthWall": {
+        "id": "CP14ImpactEffectEarthWall",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollEarthWall": {
+        "id": "CP14SpellScrollEarthWall",
+        "name": "earth wall spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollEarth",
+        "suffix": null
+    },
+    "CP14ActionSpellFlameCreation": {
+        "id": "CP14ActionSpellFlameCreation",
+        "name": "Flame creation",
+        "description": "A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneFlameCreation": {
+        "id": "CP14RuneFlameCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectFlameCreation": {
+        "id": "CP14ImpactEffectFlameCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14FlameCreationArtificialFlame": {
+        "id": "CP14FlameCreationArtificialFlame",
+        "name": "artificial flame",
+        "description": "A magically created artificial flame burning directly into the air. Not a bad light source, or a weapon if you throw it in someone's face.",
+        "parent": [
+            "BaseItem",
+            "ItemHeftyBase"
+        ],
+        "suffix": null
+    },
+    "CP14SpellScrollFlameCreation": {
+        "id": "CP14SpellScrollFlameCreation",
+        "name": "flame creation spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollFire",
+        "suffix": null
+    },
+    "CP14ActionSpellFireball": {
+        "id": "CP14ActionSpellFireball",
+        "name": "Fireball",
+        "description": "An effective method of destruction - an explosive fireball",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneFireball": {
+        "id": "CP14RuneFireball",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectFireball": {
+        "id": "CP14ImpactEffectFireball",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14Fireball": {
+        "id": "CP14Fireball",
+        "name": "artificial flame",
+        "description": null,
+        "parent": "BulletRocket",
+        "suffix": null
+    },
+    "CP14SpellScrollFireball": {
+        "id": "CP14SpellScrollFireball",
+        "name": "fireball spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollFire",
+        "suffix": null
+    },
+    "CP14ActionSpellShadowStep": {
+        "id": "CP14ActionSpellShadowStep",
+        "name": "Shadow step",
+        "description": "A step through the gash of reality that allows you to cover a small of distance quickly",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14ImpactEffectShadowStep": {
+        "id": "CP14ImpactEffectShadowStep",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollShadowStep": {
+        "id": "CP14SpellScrollShadowStep",
+        "name": "shadow step spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollGate",
+        "suffix": null
+    },
+    "CP14ActionSpellCureWounds": {
+        "id": "CP14ActionSpellCureWounds",
+        "name": "Cure wounds",
+        "description": "You touch the creature, healing its body from physical damage",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneCureWounds": {
+        "id": "CP14RuneCureWounds",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectCureWounds": {
+        "id": "CP14ImpactEffectCureWounds",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollCureWounds": {
+        "id": "CP14SpellScrollCureWounds",
+        "name": "cure wounds spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollHealing",
+        "suffix": null
+    },
+    "CP14ActionSpellSphereOfLight": {
+        "id": "CP14ActionSpellSphereOfLight",
+        "name": "Sphere of Light",
+        "description": "Materialization of a bright and safe light source.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneSphereOfLight": {
+        "id": "CP14RuneSphereOfLight",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectSphereOfLight": {
+        "id": "CP14ImpactEffectSphereOfLight",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SphereOfLight": {
+        "id": "CP14SphereOfLight",
+        "name": "Sphere of light",
+        "description": "A lump of bright light in the shape of a sphere.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14SpellScrollSphereOfLight": {
+        "id": "CP14SpellScrollSphereOfLight",
+        "name": "sphere of light spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollLightDarkness",
+        "suffix": null
+    },
+    "CP14ActionSpellFlashLight": {
+        "id": "CP14ActionSpellFlashLight",
+        "name": "Flash Light",
+        "description": "Creates a flash of bright, blinding light.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneFlashLight": {
+        "id": "CP14RuneFlashLight",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectFlashLight": {
+        "id": "CP14ImpactEffectFlashLight",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollFlashLight": {
+        "id": "CP14SpellScrollFlashLight",
+        "name": "flash light spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollLightDarkness",
+        "suffix": null
+    },
+    "CP14ActionSpellManaConsume": {
+        "id": "CP14ActionSpellManaConsume",
+        "name": "Mana consume",
+        "description": "You absorb a small amount of mana from the target.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneManaConsume": {
+        "id": "CP14RuneManaConsume",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectManaConsume": {
+        "id": "CP14ImpactEffectManaConsume",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14ActionSpellManaGift": {
+        "id": "CP14ActionSpellManaGift",
+        "name": "Mana transfer",
+        "description": "You can transfer a small amount of your magical energy to a target entity or magical object.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneManaGift": {
+        "id": "CP14RuneManaGift",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectManaGift": {
+        "id": "CP14ImpactEffectManaGift",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollManaGift": {
+        "id": "CP14SpellScrollManaGift",
+        "name": "mana gift spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollMeta",
+        "suffix": null
+    },
+    "CP14ActionSpellShadowGrab": {
+        "id": "CP14ActionSpellShadowGrab",
+        "name": "Shadow grab",
+        "description": "You attract a ghostly hand that draws an object or entity to you",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14ImpactEffectShadowGrab": {
+        "id": "CP14ImpactEffectShadowGrab",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollShadowGrab": {
+        "id": "CP14SpellScrollShadowGrab",
+        "name": "shadow grab spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollMovement",
+        "suffix": null
+    },
+    "CP14ActionSpellResurrection": {
+        "id": "CP14ActionSpellResurrection",
+        "name": "Resurrection",
+        "description": "You're trying to put the soul back into the body.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneResurrection": {
+        "id": "CP14RuneResurrection",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectResurrection": {
+        "id": "CP14ImpactEffectResurrection",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollResurrection": {
+        "id": "CP14SpellScrollResurrection",
+        "name": "resurrection spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollNecromancy",
+        "suffix": null
+    },
+    "CP14ActionSpellIceDagger": {
+        "id": "CP14ActionSpellIceDagger",
+        "name": "Ice dagger",
+        "description": "Materialization of a temporary sharp ice throwing dagger",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneIceDagger": {
+        "id": "CP14RuneIceDagger",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectIceDagger": {
+        "id": "CP14ImpactEffectIceDagger",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14DaggerIce": {
+        "id": "CP14DaggerIce",
+        "name": "ice dagger",
+        "description": "A piece of sharp magical ice. In a little while, the spell will wear off, and he will disappear.",
+        "parent": [
+            "CP14BaseDagger"
+        ],
+        "suffix": null
+    },
+    "CP14SpellScrollIceDagger": {
+        "id": "CP14SpellScrollIceDagger",
+        "name": "ice dagger spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
+    "CP14ActionSpellWaterCreation": {
+        "id": "CP14ActionSpellWaterCreation",
+        "name": "Water creation",
+        "description": "Creating a clot of water that is held in a floating balloon shape for some time",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneWaterCreation": {
+        "id": "CP14RuneWaterCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14LiquidDropWater": {
+        "id": "CP14LiquidDropWater",
+        "name": "floating liquid drop",
+        "description": "A clot of liquid held in the shape of a ball by magic",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14ImpactEffectWaterCreation": {
+        "id": "CP14ImpactEffectWaterCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollWaterCreation": {
+        "id": "CP14SpellScrollWaterCreation",
+        "name": "water creation spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
+    "CP14ActionSpellBeerCreation": {
+        "id": "CP14ActionSpellBeerCreation",
+        "name": "Beer creation",
+        "description": "A secret spell that materializes beer from pure mana.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneBeerCreation": {
+        "id": "CP14RuneBeerCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14LiquidDropBeer": {
+        "id": "CP14LiquidDropBeer",
+        "name": null,
+        "description": null,
+        "parent": "CP14LiquidDropWater",
+        "suffix": null
+    },
+    "CP14ImpactEffectBeerCreation": {
+        "id": "CP14ImpactEffectBeerCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollBeerCreation": {
+        "id": "CP14SpellScrollBeerCreation",
+        "name": "beer creation spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
+    "CP14ActionSpellIceShards": {
+        "id": "CP14ActionSpellIceShards",
+        "name": "Ice Shards",
+        "description": "Fast ice needles, for rapid shooting of targets.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneIceShards": {
+        "id": "CP14RuneIceShards",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14IceShard": {
+        "id": "CP14IceShard",
+        "name": "ice shard",
+        "description": null,
+        "parent": "BaseBullet",
+        "suffix": null
+    },
+    "CP14SpellScrollIceShards": {
+        "id": "CP14SpellScrollIceShards",
+        "name": "ice shards spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
+    "CP14TorsoHuman": {
+        "id": "CP14TorsoHuman",
+        "name": null,
+        "description": null,
+        "parent": "TorsoHuman",
+        "suffix": null
+    },
+    "CP14HeadHuman": {
+        "id": "CP14HeadHuman",
+        "name": null,
+        "description": null,
+        "parent": "HeadHuman",
+        "suffix": null
+    },
+    "CP14LeftArmHuman": {
+        "id": "CP14LeftArmHuman",
+        "name": null,
+        "description": null,
+        "parent": "LeftArmHuman",
+        "suffix": null
+    },
+    "CP14RightArmHuman": {
+        "id": "CP14RightArmHuman",
+        "name": null,
+        "description": null,
+        "parent": "RightArmHuman",
+        "suffix": null
+    },
+    "CP14LeftHandHuman": {
+        "id": "CP14LeftHandHuman",
+        "name": null,
+        "description": null,
+        "parent": "LeftHandHuman",
+        "suffix": null
+    },
+    "CP14RightHandHuman": {
+        "id": "CP14RightHandHuman",
+        "name": null,
+        "description": null,
+        "parent": "RightHandHuman",
+        "suffix": null
+    },
+    "CP14LeftLegHuman": {
+        "id": "CP14LeftLegHuman",
+        "name": null,
+        "description": null,
+        "parent": "LeftLegHuman",
+        "suffix": null
+    },
+    "CP14RightLegHuman": {
+        "id": "CP14RightLegHuman",
+        "name": null,
+        "description": null,
+        "parent": "RightLegHuman",
+        "suffix": null
+    },
+    "CP14LeftFootHuman": {
+        "id": "CP14LeftFootHuman",
+        "name": null,
+        "description": null,
+        "parent": "LeftFootHuman",
+        "suffix": null
+    },
+    "CP14RightFootHuman": {
+        "id": "CP14RightFootHuman",
+        "name": null,
+        "description": null,
+        "parent": "RightFootHuman",
+        "suffix": null
+    },
+    "CP14TorsoZombie": {
+        "id": "CP14TorsoZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14TorsoHuman",
+        "suffix": null
+    },
+    "CP14HeadZombie": {
+        "id": "CP14HeadZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14HeadHuman",
+        "suffix": null
+    },
+    "CP14LeftArmZombie": {
+        "id": "CP14LeftArmZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14LeftArmHuman",
+        "suffix": null
+    },
+    "CP14RightArmZombie": {
+        "id": "CP14RightArmZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14RightArmHuman",
+        "suffix": null
+    },
+    "CP14LeftHandZombie": {
+        "id": "CP14LeftHandZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14LeftHandHuman",
+        "suffix": null
+    },
+    "CP14RightHandZombie": {
+        "id": "CP14RightHandZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14RightHandHuman",
+        "suffix": null
+    },
+    "CP14LeftLegZombie": {
+        "id": "CP14LeftLegZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14LeftLegHuman",
+        "suffix": null
+    },
+    "CP14RightLegZombie": {
+        "id": "CP14RightLegZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14RightLegHuman",
+        "suffix": null
+    },
+    "CP14LeftFootZombie": {
+        "id": "CP14LeftFootZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14LeftFootHuman",
+        "suffix": null
+    },
+    "CP14RightFootZombie": {
+        "id": "CP14RightFootZombie",
+        "name": null,
+        "description": null,
+        "parent": "CP14RightFootHuman",
+        "suffix": null
+    },
+    "CP14ClothingBackpackLeather": {
+        "id": "CP14ClothingBackpackLeather",
+        "name": "leather backpack",
+        "description": "You wear this on your back and put items into it.",
+        "parent": "CP14ClothingBackpackBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakBase": {
+        "id": "CP14ClothingCloakBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingCloakArmoredRed": {
+        "id": "CP14ClothingCloakArmoredRed",
+        "name": "armored red cape",
+        "description": "Huge metal shoulder pads give extra protection from getting your head chopped off.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakBlacksmithArpon": {
+        "id": "CP14ClothingCloakBlacksmithArpon",
+        "name": "blacksmith's apron",
+        "description": "Loose leather strips, still actually being clothing.",
+        "parent": [
+            "CP14ClothingCloakBase",
+            "ClothingSlotBase"
+        ],
+        "suffix": null
+    },
+    "CP14ClothingCloakMaidArpon": {
+        "id": "CP14ClothingCloakMaidArpon",
+        "name": "maid's apron",
+        "description": "Cleanliness, orderliness and obedience are the main traits of a good maid.",
+        "parent": [
+            "CP14ClothingCloakBase",
+            "ClothingSlotBase"
+        ],
+        "suffix": null
+    },
+    "CP14ClothingCloakBrassArmor": {
+        "id": "CP14ClothingCloakBrassArmor",
+        "name": "brass armor",
+        "description": "Quality brass armour, has good protection and is not too heavy.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakCuirass": {
+        "id": "CP14ClothingCloakCuirass",
+        "name": "cuirass",
+        "description": "Light armour plate on the chest, little protection, little heaviness.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakInfantryCuirass": {
+        "id": "CP14ClothingCloakInfantryCuirass",
+        "name": "infantry cuirass",
+        "description": "The light infantry cuirass, unlike the original, also protects from the back.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakCuirassLoincloth": {
+        "id": "CP14ClothingCloakCuirassLoincloth",
+        "name": "cuirass loincloth",
+        "description": "A heavier version of the cuirass, covering only the top of the legs.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakCuirassLeg": {
+        "id": "CP14ClothingCloakCuirassLeg",
+        "name": "cuirass leg",
+        "description": "A heavier cuirass that completely covers the legs.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakAlchemist": {
+        "id": "CP14ClothingCloakAlchemist",
+        "name": "alchemist's cloak",
+        "description": "An expensive fabric that can withstand acid splashes - the standard for alchemist experts.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakCommandantJacket": {
+        "id": "CP14ClothingCloakCommandantJacket",
+        "name": "commandant's jacket",
+        "description": "the colors white and gold tell you that you're looking at a higher power.",
+        "parent": [
+            "CP14ClothingCloakBase",
+            "ClothingSlotBase"
+        ],
+        "suffix": null
+    },
+    "CP14ClothingCloakCaptainJacket": {
+        "id": "CP14ClothingCloakCaptainJacket",
+        "name": "captain's jacket",
+        "description": "the colors white and gold tell you that you're looking at a higher power.",
+        "parent": [
+            "CP14ClothingCloakBase",
+            "ClothingSlotBase"
+        ],
+        "suffix": null
+    },
+    "CP14ClothingCloakFurcapeBlack": {
+        "id": "CP14ClothingCloakFurcapeBlack",
+        "name": "furcape",
+        "description": "Brutal woolen wool cape.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakFurcapeBlue": {
+        "id": "CP14ClothingCloakFurcapeBlue",
+        "name": "furcape",
+        "description": "Brutal woolen wool cape.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakSimpleWhite": {
+        "id": "CP14ClothingCloakSimpleWhite",
+        "name": "white cloak",
+        "description": "Long coat with a high collar.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakSimpleDarkBlue": {
+        "id": "CP14ClothingCloakSimpleDarkBlue",
+        "name": "dark cloak",
+        "description": "Long coat with a high collar.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakRitualAttireLeather": {
+        "id": "CP14ClothingCloakRitualAttireLeather",
+        "name": "ritual attire with leather",
+        "description": "The traditional attire of Southern mages who have undergone the ritual.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingEyesBase": {
+        "id": "CP14ClothingEyesBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingEyesMonocle": {
+        "id": "CP14ClothingEyesMonocle",
+        "name": "monocle",
+        "description": "Aristocratic, fancy.",
+        "parent": "CP14ClothingEyesBase",
+        "suffix": null
+    },
+    "CP14ClothingEyesGlasses": {
+        "id": "CP14ClothingEyesGlasses",
+        "name": "glasses",
+        "description": "Aristocratic, fancy.",
+        "parent": "CP14ClothingEyesBase",
+        "suffix": null
+    },
+    "CP14ClothingEyesAlchemyGlasses": {
+        "id": "CP14ClothingEyesAlchemyGlasses",
+        "name": "alchemy glasses",
+        "description": "Special magic infused glasses that allow you to clearly see the composition of any mixtures.",
+        "parent": "CP14ClothingEyesBase",
+        "suffix": null
+    },
+    "CP14ClothingEyesAlchemyMonocle": {
+        "id": "CP14ClothingEyesAlchemyMonocle",
+        "name": "alchemy monocle",
+        "description": "Special magic infused monocle that allow you to clearly see the composition of any mixtures.",
+        "parent": "CP14ClothingEyesBase",
+        "suffix": null
+    },
+    "CP14ClothingEyesThaumaturgyGlasses": {
+        "id": "CP14ClothingEyesThaumaturgyGlasses",
+        "name": "thaumaturgy glasses",
+        "description": "Goggles that allow you to scan magical items and creatures to clearly see the amount of energy left in them.",
+        "parent": "CP14ClothingEyesBase",
+        "suffix": null
+    },
+    "CP14ClothingGlovesBase": {
+        "id": "CP14ClothingGlovesBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingGlovesGirdles": {
+        "id": "CP14ClothingGlovesGirdles",
+        "name": "iron girdles",
+        "description": "Armored combat girdles.",
+        "parent": "CP14ClothingGlovesBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBase": {
+        "id": "CP14ClothingHeadBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingHeadCapellina": {
+        "id": "CP14ClothingHeadCapellina",
+        "name": "capellina",
+        "description": "Protects against large object strikes to the head.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadWreath": {
+        "id": "CP14ClothingHeadWreath",
+        "name": "floral wreath",
+        "description": "A simple flower decoration. That's so sweet.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadAlchemistBandana": {
+        "id": "CP14ClothingHeadAlchemistBandana",
+        "name": "alchemist's bandana",
+        "description": "Hides your hair from chemical fumes",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadAlchemistBeret": {
+        "id": "CP14ClothingHeadAlchemistBeret",
+        "name": "alchemist's beret",
+        "description": "You seem very smart.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBowler": {
+        "id": "CP14ClothingHeadBowler",
+        "name": "bowler hat",
+        "description": "It has an aristocratic air about it...",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBowlerGolden": {
+        "id": "CP14ClothingHeadBowlerGolden",
+        "name": "golden bowler hat",
+        "description": "What an exquisite hat. It's clearly a hat that only sophisticated people prefer to wear.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadCaptainCap": {
+        "id": "CP14ClothingHeadCaptainCap",
+        "name": "captain's cap",
+        "description": "No, look how handsome he is!",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBeretBase": {
+        "id": "CP14ClothingHeadBeretBase",
+        "name": null,
+        "description": "this is beret.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBeretRed": {
+        "id": "CP14ClothingHeadBeretRed",
+        "name": "red beret",
+        "description": null,
+        "parent": "CP14ClothingHeadBeretBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBeretPurple": {
+        "id": "CP14ClothingHeadBeretPurple",
+        "name": "purple beret",
+        "description": null,
+        "parent": "CP14ClothingHeadBeretBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBeretYellow": {
+        "id": "CP14ClothingHeadBeretYellow",
+        "name": "yellow beret",
+        "description": null,
+        "parent": "CP14ClothingHeadBeretBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBeretBlue": {
+        "id": "CP14ClothingHeadBeretBlue",
+        "name": "blue beret",
+        "description": null,
+        "parent": "CP14ClothingHeadBeretBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBeretBlack": {
+        "id": "CP14ClothingHeadBeretBlack",
+        "name": "black beret",
+        "description": null,
+        "parent": "CP14ClothingHeadBeretBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBandanaBase": {
+        "id": "CP14ClothingHeadBandanaBase",
+        "name": null,
+        "description": "Favorite mage headdress",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBandanaWhite": {
+        "id": "CP14ClothingHeadBandanaWhite",
+        "name": "white bandana",
+        "description": null,
+        "parent": "CP14ClothingHeadBandanaBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBandanaYellow": {
+        "id": "CP14ClothingHeadBandanaYellow",
+        "name": "yellow bandana",
+        "description": null,
+        "parent": "CP14ClothingHeadBandanaBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadBeretMercenary": {
+        "id": "CP14ClothingHeadBeretMercenary",
+        "name": "mercenary beret",
+        "description": "A large red wool hat decorated with a feather.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadMetalHeadband": {
+        "id": "CP14ClothingHeadMetalHeadband",
+        "name": "metall headband",
+        "description": "The odds of it protecting you from a head shot are slim to none.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadTriangularHat": {
+        "id": "CP14ClothingHeadTriangularHat",
+        "name": "triangular hat",
+        "description": "a big, pointy hat for those who like to look smart.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingHeadTriangularHatGolden": {
+        "id": "CP14ClothingHeadTriangularHatGolden",
+        "name": "golden triangular hat",
+        "description": "a big, pointy hat for those who like to look smart. Decorated with a gold hoop.",
+        "parent": "CP14ClothingHeadBase",
+        "suffix": null
+    },
+    "CP14ClothingMaskBase": {
+        "id": "CP14ClothingMaskBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingMaskSinner": {
+        "id": "CP14ClothingMaskSinner",
+        "name": "Sinner's Mask",
+        "description": "A mask intented to be worn by not the brightest individuals. Executioners put them on themselves and the victim before execution.",
+        "parent": "CP14ClothingMaskBase",
+        "suffix": null
+    },
+    "CP14ClothingMaskSteelMask": {
+        "id": "CP14ClothingMaskSteelMask",
+        "name": "steel mask",
+        "description": "A steel mask that protects the face from the external effects of iron.",
+        "parent": "CP14ClothingMaskBase",
+        "suffix": null
+    },
+    "CP14ClothingPantsBase": {
+        "id": "CP14ClothingPantsBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingPantsTrouserWhite": {
+        "id": "CP14ClothingPantsTrouserWhite",
+        "name": "white trouser",
+        "description": "Wide, loose pants made of plain canvas cloth.",
+        "parent": "CP14ClothingPantsBase",
+        "suffix": null
+    },
+    "CP14ClothingPantsTrouserDarkBlue": {
+        "id": "CP14ClothingPantsTrouserDarkBlue",
+        "name": "dark trouser",
+        "description": "Wide, loose pants made of plain canvas cloth.",
+        "parent": "CP14ClothingPantsBase",
+        "suffix": null
+    },
+    "CP14ClothingPantsAristocratic": {
+        "id": "CP14ClothingPantsAristocratic",
+        "name": "aristocrat's pants",
+        "description": "Pants with enough quality fabric that you don't want to cave in them.",
+        "parent": "CP14ClothingPantsBase",
+        "suffix": null
+    },
+    "CP14ClothingPantsLoincloth": {
+        "id": "CP14ClothingPantsLoincloth",
+        "name": "loincloth",
+        "description": "Free, spacious, nothing gets in the way, and it also looks extremely rugged",
+        "parent": "CP14ClothingPantsBase",
+        "suffix": null
+    },
+    "CP14ClothingDressBlack": {
+        "id": "CP14ClothingDressBlack",
+        "name": "black dress",
+        "description": "A roomy, feminine skirt",
+        "parent": "CP14ClothingPantsBase",
+        "suffix": null
+    },
+    "CP14ClothingPantsMercenaryTrousers": {
+        "id": "CP14ClothingPantsMercenaryTrousers",
+        "name": "mercenary trousers",
+        "description": "Colourful mercenary trousers. Don't tear them.",
+        "parent": "CP14ClothingPantsBase",
+        "suffix": null
+    },
+    "CP14ClothingPantsSouthernMagician": {
+        "id": "CP14ClothingPantsSouthernMagician",
+        "name": "southern magician's dress",
+        "description": "A traditional southern mage skirt, rather loose.",
+        "parent": "CP14ClothingPantsBase",
+        "suffix": null
+    },
+    "CP14ClothingRingBase": {
+        "id": "CP14ClothingRingBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingRingIceShards": {
+        "id": "CP14ClothingRingIceShards",
+        "name": "ice shards conductive ring",
+        "description": "A standard mana-conductive ring that allows the user to summon ice shards.",
+        "parent": "CP14ClothingRingBase",
+        "suffix": "Ice Shards"
+    },
+    "CP14ClothingRingFireball": {
+        "id": "CP14ClothingRingFireball",
+        "name": "fireball conductive ring",
+        "description": "A standard mana-conductive ring that allows the user to summon fireballs.",
+        "parent": "CP14ClothingRingBase",
+        "suffix": "Fireball"
+    },
+    "CP14ClothingRingFlashLight": {
+        "id": "CP14ClothingRingFlashLight",
+        "name": "flash conductive ring",
+        "description": "A standard mana-conductive ring that allows the user to create a bright flash of light that blinds enemies.",
+        "parent": "CP14ClothingRingBase",
+        "suffix": "Flash Light"
+    },
+    "CP14ClothingShirtBase": {
+        "id": "CP14ClothingShirtBase",
+        "name": null,
+        "description": "Pleasant to the touch material, in a comfortable loose shirt shape.",
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingShirtBanker": {
+        "id": "CP14ClothingShirtBanker",
+        "name": "banker's shirt",
+        "description": "A white shirt with bronze inserts. Standard bank employee costume.",
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtCottonBlue": {
+        "id": "CP14ClothingShirtCottonBlue",
+        "name": "cotton blue shirt",
+        "description": null,
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtCottonBlack": {
+        "id": "CP14ClothingShirtCottonBlack",
+        "name": "cotton black shirt",
+        "description": null,
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtCottonPurple": {
+        "id": "CP14ClothingShirtCottonPurple",
+        "name": "cotton purple shirt",
+        "description": null,
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtCottonRed": {
+        "id": "CP14ClothingShirtCottonRed",
+        "name": "cotton red shirt",
+        "description": null,
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtCottonWhite": {
+        "id": "CP14ClothingShirtCottonWhite",
+        "name": "cotton white shirt",
+        "description": null,
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtCottonYellow": {
+        "id": "CP14ClothingShirtCottonYellow",
+        "name": "cotton yellow shirt",
+        "description": null,
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtMercenary": {
+        "id": "CP14ClothingShirtMercenary",
+        "name": "mercenary shirt",
+        "description": "A mercenary's colourful shirt.",
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShirtYellowWizard": {
+        "id": "CP14ClothingShirtYellowWizard",
+        "name": "yellow wizard shirt",
+        "description": "A loose magician's shirt, comfortable and nice looking.",
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
+    "CP14ClothingShoesBase": {
+        "id": "CP14ClothingShoesBase",
+        "name": null,
+        "description": null,
+        "parent": "Clothing",
+        "suffix": null
+    },
+    "CP14ClothingShoesBlack": {
+        "id": "CP14ClothingShoesBlack",
+        "name": "simple black boots",
+        "description": "They won't hold moisture, but it's better than going barefoot.",
+        "parent": "CP14ClothingShoesBase",
+        "suffix": null
+    },
+    "CP14ClothingShoesAristocraticBlack": {
+        "id": "CP14ClothingShoesAristocraticBlack",
+        "name": "aristocratic black boots",
+        "description": "They're expensive enough that you don't want to go caving in them.",
+        "parent": "CP14ClothingShoesBase",
+        "suffix": null
+    },
+    "CP14ClothingShoesSandals": {
+        "id": "CP14ClothingShoesSandals",
+        "name": "sandals",
+        "description": "Sandals made of rough leather and metal fastenings",
+        "parent": "CP14ClothingShoesBase",
+        "suffix": null
+    },
+    "CP14Mist": {
+        "id": "CP14Mist",
+        "name": "mist",
+        "description": null,
+        "parent": "BaseFoam",
+        "suffix": null
+    },
+    "CP14WeaponArcSlash": {
+        "id": "CP14WeaponArcSlash",
+        "name": null,
+        "description": null,
+        "parent": "WeaponArcStatic",
+        "suffix": null
+    },
+    "CP14WeaponArcThrust": {
+        "id": "CP14WeaponArcThrust",
+        "name": null,
+        "description": null,
+        "parent": "WeaponArcStatic",
+        "suffix": null
+    },
+    "CP14AuraNodeBase": {
+        "id": "CP14AuraNodeBase",
+        "name": "aura node",
+        "description": "An energy node that affects the elemental energy in the surrounding space.",
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14BankStorageMarker": {
+        "id": "CP14BankStorageMarker",
+        "name": "Bank vault marker",
+        "description": "Marks the specified area as a “bank vault” to credit all bankers with treasure storage goals",
+        "parent": "MarkerBase",
+        "suffix": "ONCE ON MAP"
+    },
+    "CP14SpawnPointJobBase": {
+        "id": "CP14SpawnPointJobBase",
+        "name": null,
+        "description": null,
+        "parent": "SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointCaptain": {
+        "id": "CP14SpawnPointCaptain",
+        "name": "captain",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointGuardCommander": {
+        "id": "CP14SpawnPointGuardCommander",
+        "name": "guard commander",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointCommandant": {
+        "id": "CP14SpawnPointCommandant",
+        "name": "commandant",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointBanker": {
+        "id": "CP14SpawnPointBanker",
+        "name": "merchant",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointAdventurer": {
+        "id": "CP14SpawnPointAdventurer",
+        "name": "adventurer",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointAlchemist": {
+        "id": "CP14SpawnPointAlchemist",
+        "name": "alchemist",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointBlacksmith": {
+        "id": "CP14SpawnPointBlacksmith",
+        "name": "blacksmith",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnPointInnkeeper": {
+        "id": "CP14SpawnPointInnkeeper",
+        "name": "innkeeper",
+        "description": null,
+        "parent": "CP14SpawnPointJobBase",
+        "suffix": null
+    },
+    "CP14SpawnMobUndeadZombieRandom": {
+        "id": "CP14SpawnMobUndeadZombieRandom",
+        "name": "walking dead spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": "Random"
+    },
+    "CP14SpawnMobRabbit": {
+        "id": "CP14SpawnMobRabbit",
+        "name": "rabbit spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14SpawnMobPig": {
+        "id": "CP14SpawnMobPig",
+        "name": "pig spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14SpawnMobBoar": {
+        "id": "CP14SpawnMobBoar",
+        "name": "boar spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14SpawnMobDinoYumkaraptor": {
+        "id": "CP14SpawnMobDinoYumkaraptor",
+        "name": "yumkaraptor spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14SpawnMobDinoSmallHydra": {
+        "id": "CP14SpawnMobDinoSmallHydra",
+        "name": "small hydra spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14SpawnMobMonsterMole": {
+        "id": "CP14SpawnMobMonsterMole",
+        "name": "predatory mole spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14ConstrainedSpawnerBase": {
+        "id": "CP14ConstrainedSpawnerBase",
+        "name": null,
+        "description": "lol",
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14ConstrainedSpawnerXeno": {
+        "id": "CP14ConstrainedSpawnerXeno",
+        "name": "xeno constrained spawner",
+        "description": null,
+        "parent": "CP14ConstrainedSpawnerBase",
+        "suffix": null
+    },
+    "CP14RandomSpawnerGatherAgaricShroom": {
+        "id": "CP14RandomSpawnerGatherAgaricShroom",
+        "name": "agaric shroom spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14RandomDirtLootSpawner": {
+        "id": "CP14RandomDirtLootSpawner",
+        "name": "dirt spawner",
+        "description": null,
+        "parent": "CP14DirtEffect",
+        "suffix": null
+    },
+    "CP14BaseBiomeSpawner": {
+        "id": "CP14BaseBiomeSpawner",
+        "name": "biome spawner",
+        "description": null,
+        "parent": null,
+        "suffix": null
+    },
+    "CP14BiomeSpawnerGrassland": {
+        "id": "CP14BiomeSpawnerGrassland",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBiomeSpawner",
+        "suffix": "Grassland"
+    },
+    "CP14BiomeSpawnerCave": {
+        "id": "CP14BiomeSpawnerCave",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBiomeSpawner",
+        "suffix": "Cave"
+    },
+    "CP14BiomeSpawnerCaveEmpty": {
+        "id": "CP14BiomeSpawnerCaveEmpty",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBiomeSpawner",
+        "suffix": "Cave Open"
+    },
+    "CP14BiomeSpawnerForest": {
+        "id": "CP14BiomeSpawnerForest",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBiomeSpawner",
+        "suffix": "Forest"
+    },
+    "CP14SpawnerExpeditionLootCommon": {
+        "id": "CP14SpawnerExpeditionLootCommon",
+        "name": "Expedition common loot spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14MobRabbit": {
+        "id": "CP14MobRabbit",
+        "name": "rabbit",
+        "description": "A little fluffy rabbit. I could eat it.",
+        "parent": "SimpleMobBase",
+        "suffix": null
+    },
+    "CP14MobPig": {
+        "id": "CP14MobPig",
+        "name": "pig",
+        "description": "An omnivorous and unpretentious animal that is sure to make juicy cuts of meat.",
+        "parent": "SimpleMobBase",
+        "suffix": null
+    },
+    "CP14MobBoar": {
+        "id": "CP14MobBoar",
+        "name": "boar",
+        "description": "A distant relative of pigs, same pros, but unlike its peaceful relatives, will definitely try to pick you up on its fangs if you show aggression towards it.",
+        "parent": "CP14MobPig",
+        "suffix": null
+    },
+    "CP14MobDino": {
+        "id": "CP14MobDino",
+        "name": "dino",
+        "description": null,
+        "parent": "SimpleMobBase",
+        "suffix": null
+    },
+    "CP14MobDinoYumkaraptor": {
+        "id": "CP14MobDinoYumkaraptor",
+        "name": "yumkaraptor",
+        "description": "A large scaly lizard, an obvious predator that liked to snack on meat.",
+        "parent": "CP14MobDino",
+        "suffix": null
+    },
+    "CP14MobDinoSmallHydra": {
+        "id": "CP14MobDinoSmallHydra",
+        "name": "small hydra",
+        "description": "The small two-headed lizard, despite its size, can be quite dangerous.",
+        "parent": "CP14MobDino",
+        "suffix": null
+    },
+    "CP14MobMonsterMole": {
+        "id": "CP14MobMonsterMole",
+        "name": "predatory mole",
+        "description": "Hunts in the dark and loves the taste of meat and blood in its mouth.",
+        "parent": "SimpleMobBase",
+        "suffix": null
+    },
+    "CP14ActionMoleSpellSubterraneanLeap": {
+        "id": "CP14ActionMoleSpellSubterraneanLeap",
+        "name": "Subterranean leap",
+        "description": "Make a subterranean leap, quickly approaching the victim.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14ImpactEffectDigging": {
+        "id": "CP14ImpactEffectDigging",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14MobUndeadZombie": {
+        "id": "CP14MobUndeadZombie",
+        "name": "walking dead",
+        "description": "A reanimated rotting body of a dead man wanting to devour the living.",
+        "parent": "CP14BaseMobZombie",
+        "suffix": null
+    },
+    "CP14MobUndeadZombieGearEasy1": {
+        "id": "CP14MobUndeadZombieGearEasy1",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobUndeadZombie",
+        "suffix": "Zombie. Easy"
+    },
+    "CP14MobUndeadZombieGearEasy2": {
+        "id": "CP14MobUndeadZombieGearEasy2",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobUndeadZombie",
+        "suffix": "Zombie. Easy"
+    },
+    "CP14MobUndeadZombieGearEasy3": {
+        "id": "CP14MobUndeadZombieGearEasy3",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobUndeadZombie",
+        "suffix": "Zombie. Easy"
+    },
+    "CP14MobUndeadZombieGearMedium1": {
+        "id": "CP14MobUndeadZombieGearMedium1",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobUndeadZombie",
+        "suffix": "Zombie. Medium"
+    },
+    "CP14MobUndeadZombieGearMedium2": {
+        "id": "CP14MobUndeadZombieGearMedium2",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobUndeadZombie",
+        "suffix": "Zombie. Medium"
+    },
+    "CP14MobUndeadZombieGearHard1": {
+        "id": "CP14MobUndeadZombieGearHard1",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobUndeadZombie",
+        "suffix": "Zombie. Hard"
+    },
+    "CP14MobUndeadZombieGearHard2": {
+        "id": "CP14MobUndeadZombieGearHard2",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobUndeadZombie",
+        "suffix": "Zombie. Hard"
+    },
+    "CP14MobXeno": {
+        "id": "CP14MobXeno",
+        "name": null,
+        "description": null,
+        "parent": "MobXeno",
+        "suffix": null
+    },
+    "CP14MobXenoDrone": {
+        "id": "CP14MobXenoDrone",
+        "name": null,
+        "description": null,
+        "parent": "MobXenoDrone",
+        "suffix": null
+    },
+    "CP14MobSpaceCobra": {
+        "id": "CP14MobSpaceCobra",
+        "name": "cobra",
+        "description": null,
+        "parent": "MobCobraSpace",
+        "suffix": null
+    },
+    "CP14MobPurpleSnake": {
+        "id": "CP14MobPurpleSnake",
+        "name": null,
+        "description": null,
+        "parent": "MobPurpleSnake",
+        "suffix": null
+    },
+    "CP14MobSmallPurpleSnake": {
+        "id": "CP14MobSmallPurpleSnake",
+        "name": null,
+        "description": null,
+        "parent": "MobSmallPurpleSnake",
+        "suffix": null
+    },
+    "CP14MobWatcherMagmawing": {
+        "id": "CP14MobWatcherMagmawing",
+        "name": null,
+        "description": null,
+        "parent": "MobWatcherMagmawing",
+        "suffix": null
+    },
+    "CP14MobDwarf": {
+        "id": "CP14MobDwarf",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMobDwarf",
+        "suffix": null
+    },
+    "CP14MobElf": {
+        "id": "CP14MobElf",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMobElf",
+        "suffix": null
+    },
+    "CP14MobGoblin": {
+        "id": "CP14MobGoblin",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMobGoblin",
+        "suffix": null
+    },
+    "CP14MobHuman": {
+        "id": "CP14MobHuman",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMobHuman",
+        "suffix": null
+    },
+    "CP14MobTiefling": {
+        "id": "CP14MobTiefling",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMobTiefling",
+        "suffix": null
+    },
+    "CP14BaseMobDwarf": {
+        "id": "CP14BaseMobDwarf",
+        "name": "Mr. Dwarf",
+        "description": null,
+        "parent": "CP14BaseMobSpeciesOrganic",
+        "suffix": null
+    },
+    "CP14MobDwarfDummy": {
+        "id": "CP14MobDwarfDummy",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpeciesDummy",
+        "suffix": null
+    },
+    "CP14BaseMobElf": {
+        "id": "CP14BaseMobElf",
+        "name": "Mr. Elf",
+        "description": null,
+        "parent": "CP14BaseMobSpeciesOrganic",
+        "suffix": null
+    },
+    "CP14MobElfDummy": {
+        "id": "CP14MobElfDummy",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpeciesDummy",
+        "suffix": null
+    },
+    "CP14BaseMobGoblin": {
+        "id": "CP14BaseMobGoblin",
+        "name": "Mr. Goblin",
+        "description": null,
+        "parent": "CP14BaseMobSpeciesOrganic",
+        "suffix": null
+    },
+    "CP14MobGoblinDummy": {
+        "id": "CP14MobGoblinDummy",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpeciesDummy",
+        "suffix": null
+    },
+    "CP14BaseMobHuman": {
+        "id": "CP14BaseMobHuman",
+        "name": "Mr. Human",
+        "description": null,
+        "parent": "CP14BaseMobSpeciesOrganic",
+        "suffix": null
+    },
+    "CP14MobHumanDummy": {
+        "id": "CP14MobHumanDummy",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpeciesDummy",
+        "suffix": null
+    },
+    "CP14BaseMobTiefling": {
+        "id": "CP14BaseMobTiefling",
+        "name": "Mr. Tiefling",
+        "description": null,
+        "parent": "CP14BaseMobSpeciesOrganic",
+        "suffix": null
+    },
+    "CP14MobTieflingDummy": {
+        "id": "CP14MobTieflingDummy",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpeciesDummy",
+        "suffix": null
+    },
+    "CP14BaseMobZombie": {
+        "id": "CP14BaseMobZombie",
+        "name": "Mr. Zombie",
+        "description": null,
+        "parent": [
+            "BaseSimpleMob",
+            "MobFlammable",
+            "MobCombat"
+        ],
+        "suffix": null
+    },
+    "CP14MobZombieDummy": {
+        "id": "CP14MobZombieDummy",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseSpeciesDummy",
+        "suffix": null
+    },
+    "CP14BaseOre": {
+        "id": "CP14BaseOre",
+        "name": null,
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14OreCopper": {
+        "id": "CP14OreCopper",
+        "name": "copper ore",
+        "description": "A piece of pale, heavy copper.",
+        "parent": "CP14BaseOre",
+        "suffix": null
+    },
+    "CP14OreIron": {
+        "id": "CP14OreIron",
+        "name": "iron ore",
+        "description": "A piece of cold, heavy iron.",
+        "parent": "CP14BaseOre",
+        "suffix": null
+    },
+    "CP14OreGold": {
+        "id": "CP14OreGold",
+        "name": "gold ore",
+        "description": "A piece of soft, pure gold.",
+        "parent": "CP14BaseOre",
+        "suffix": null
+    },
+    "CP14RitualGrimoire": {
+        "id": "CP14RitualGrimoire",
+        "name": "ritualist's grimoire",
+        "description": "a book that holds the knowledge of hundreds of ritualists before you. Use it on an active ritual to get all the information about its current state.",
+        "parent": "BookBase",
+        "suffix": null
+    },
+    "CP14PaperFolderBase": {
+        "id": "CP14PaperFolderBase",
+        "name": "folder",
+        "description": "A folder filled with some paperwork.",
+        "parent": "BaseStorageItem",
+        "suffix": null
+    },
+    "CP14PaperFolderBlue": {
+        "id": "CP14PaperFolderBlue",
+        "name": null,
+        "description": null,
+        "parent": "CP14PaperFolderBase",
+        "suffix": null
+    },
+    "CP14PaperFolderRed": {
+        "id": "CP14PaperFolderRed",
+        "name": null,
+        "description": null,
+        "parent": "CP14PaperFolderBase",
+        "suffix": null
+    },
+    "CP14BasePaper": {
+        "id": "CP14BasePaper",
+        "name": null,
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14Paper": {
+        "id": "CP14Paper",
+        "name": "paper",
+        "description": "A piece of white paper",
+        "parent": "CP14BasePaper",
+        "suffix": null
+    },
+    "CP14PenFeather": {
+        "id": "CP14PenFeather",
+        "name": "fountain pen",
+        "description": "A sharp clipped feather of a bird, adapted as a writing implement.",
+        "parent": "Pen",
+        "suffix": null
+    },
+    "CP14Inkwell": {
+        "id": "CP14Inkwell",
+        "name": "inkwell",
+        "description": "An endless (for now) source of ink for your letters",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14StampBase": {
+        "id": "CP14StampBase",
+        "name": "generic rubber stamp",
+        "description": "A rubber stamp for stamping important documents.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14StampDenied": {
+        "id": "CP14StampDenied",
+        "name": "denied stamp",
+        "description": null,
+        "parent": "CP14StampBase",
+        "suffix": null
+    },
+    "CP14StampApproved": {
+        "id": "CP14StampApproved",
+        "name": "approved stamp",
+        "description": null,
+        "parent": "CP14StampBase",
+        "suffix": null
+    },
+    "CP14StampCommandant": {
+        "id": "CP14StampCommandant",
+        "name": "commandant stamp",
+        "description": null,
+        "parent": "CP14StampBase",
+        "suffix": "DO NOT MAP"
+    },
+    "CP14GreenBottle": {
+        "id": "CP14GreenBottle",
+        "name": "green Bottle",
+        "description": "A green bottle perfect for drinking beer.",
+        "parent": "CP14BaseVialFragile",
+        "suffix": "Empty"
+    },
+    "CP14BlueBottle": {
+        "id": "CP14BlueBottle",
+        "name": "blue bottle",
+        "description": "A blue vial perfect for drinking whiskey.",
+        "parent": "CP14GreenBottle",
+        "suffix": null
+    },
+    "CP14GreenBottle2": {
+        "id": "CP14GreenBottle2",
+        "name": "green bottle",
+        "description": "Just a little green vial.",
+        "parent": "CP14GreenBottle",
+        "suffix": null
+    },
+    "CP14OrangeBottle": {
+        "id": "CP14OrangeBottle",
+        "name": "orange bottle",
+        "description": "Just a orange bottle.",
+        "parent": "CP14GreenBottle",
+        "suffix": null
+    },
+    "CP14RedBottle": {
+        "id": "CP14RedBottle",
+        "name": "red Bottle",
+        "description": "A red bottle perfect for drinking wine.",
+        "parent": "CP14GreenBottle",
+        "suffix": null
+    },
+    "CP14DrinkBaseMug": {
+        "id": "CP14DrinkBaseMug",
+        "name": null,
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14MetalBeerMug": {
+        "id": "CP14MetalBeerMug",
+        "name": "Metal mug",
+        "description": "The most common metal mug.",
+        "parent": "CP14DrinkBaseMug",
+        "suffix": null
+    },
+    "CP14WoodenBeerMug": {
+        "id": "CP14WoodenBeerMug",
+        "name": "Wooden mug",
+        "description": "Wooden mug for beer.",
+        "parent": "CP14DrinkBaseMug",
+        "suffix": null
+    },
+    "CP14SteelBeerMug": {
+        "id": "CP14SteelBeerMug",
+        "name": "Beer mug",
+        "description": "Wooden mug with iron inclusions.",
+        "parent": "CP14DrinkBaseMug",
+        "suffix": null
+    },
+    "CP14SteelWoodBeerMug": {
+        "id": "CP14SteelWoodBeerMug",
+        "name": "Beer mug",
+        "description": "Wooden mug with iron inclusions.",
+        "parent": "CP14DrinkBaseMug",
+        "suffix": null
+    },
+    "CP14FoodCheeseWheel": {
+        "id": "CP14FoodCheeseWheel",
+        "name": "cheese wheel",
+        "description": "A large wheel of soft, fragrant piece of cheese.",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodCheesePart": {
+        "id": "CP14FoodCheesePart",
+        "name": "cheese",
+        "description": "A triangle of soft, fragrant cheese.",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodCheeseSlice": {
+        "id": "CP14FoodCheeseSlice",
+        "name": "cheese slice",
+        "description": "A thin slice of delicious smelling cheese.",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodDoughLarge": {
+        "id": "CP14FoodDoughLarge",
+        "name": "large piece of dough",
+        "description": "The perfect ingredient for any flour product. The only thing left to do is to shape it.",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodDoughMedium": {
+        "id": "CP14FoodDoughMedium",
+        "name": "Medium piece of dough.",
+        "description": null,
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodDoughMediumFlat": {
+        "id": "CP14FoodDoughMediumFlat",
+        "name": "rolled dough",
+        "description": null,
+        "parent": "CP14FoodDoughMedium",
+        "suffix": null
+    },
+    "CP14FoodEggBase": {
+        "id": "CP14FoodEggBase",
+        "name": null,
+        "description": "An egg!",
+        "parent": [
+            "FoodInjectableBase",
+            "ItemHeftyBase"
+        ],
+        "suffix": null
+    },
+    "CP14Eggshells": {
+        "id": "CP14Eggshells",
+        "name": "eggshells",
+        "description": "You're walkin' on 'em bud.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14FoodEgg": {
+        "id": "CP14FoodEgg",
+        "name": "egg",
+        "description": null,
+        "parent": "CP14FoodEggBase",
+        "suffix": null
+    },
+    "CP14FoodMeatBase": {
+        "id": "CP14FoodMeatBase",
+        "name": null,
+        "description": null,
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodMeatSliceBase": {
+        "id": "CP14FoodMeatSliceBase",
+        "name": null,
+        "description": null,
+        "parent": "CP14FoodMeatBase",
+        "suffix": null
+    },
+    "CP14FoodMeatLamb": {
+        "id": "CP14FoodMeatLamb",
+        "name": "raw lamb",
+        "description": "Succulent lamb steak",
+        "parent": "CP14FoodMeatBase",
+        "suffix": null
+    },
+    "CP14FoodMeatLambSlice": {
+        "id": "CP14FoodMeatLambSlice",
+        "name": "meat pieces",
+        "description": "Succulent lamb steak",
+        "parent": "CP14FoodMeatSliceBase",
+        "suffix": null
+    },
+    "CP14FoodMeatLambCutlet": {
+        "id": "CP14FoodMeatLambCutlet",
+        "name": "lamb cutlet",
+        "description": "the result of mixing sliced lamb and egg - a raw round cutlet.",
+        "parent": "CP14FoodMeatSliceBase",
+        "suffix": null
+    },
+    "CP14BasePlate": {
+        "id": "CP14BasePlate",
+        "name": null,
+        "description": "This is your plate for a delicious meal!",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14PlateWooden": {
+        "id": "CP14PlateWooden",
+        "name": "wooden plate",
+        "description": null,
+        "parent": "CP14BasePlate",
+        "suffix": null
+    },
+    "CP14PlateWooden2": {
+        "id": "CP14PlateWooden2",
+        "name": null,
+        "description": null,
+        "parent": "CP14PlateWooden",
+        "suffix": null
+    },
+    "CP14PlateCeramic": {
+        "id": "CP14PlateCeramic",
+        "name": "ceramic plate",
+        "description": null,
+        "parent": "CP14BasePlate",
+        "suffix": null
+    },
+    "CP14PlateIron": {
+        "id": "CP14PlateIron",
+        "name": "iron plate",
+        "description": null,
+        "parent": "CP14BasePlate",
+        "suffix": null
+    },
+    "CP14FoodCabbage": {
+        "id": "CP14FoodCabbage",
+        "name": "cabbage",
+        "description": "Green edible ball.",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodCabbageSlice": {
+        "id": "CP14FoodCabbageSlice",
+        "name": "cabbage leaf",
+        "description": "Time to make green salads",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodPumpkin": {
+        "id": "CP14FoodPumpkin",
+        "name": "pumpkin",
+        "description": "Big, cool pumpkin.",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodPumpkinSlice": {
+        "id": "CP14FoodPumpkinSlice",
+        "name": "pumpkin slice",
+        "description": "Pumpkin!",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodPotato": {
+        "id": "CP14FoodPotato",
+        "name": "potato",
+        "description": "Cute potato",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodCucumber": {
+        "id": "CP14FoodCucumber",
+        "name": "cucumber",
+        "description": "An oblong green vegetable. Refreshing!",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14FoodTomatoes": {
+        "id": "CP14FoodTomatoes",
+        "name": "tomatoes",
+        "description": "A red, juicy tomato. You just want to throw it in someone's face!",
+        "parent": [
+            "FoodInjectableBase",
+            "ItemHeftyBase"
+        ],
+        "suffix": null
+    },
+    "CP14FoodTomatoesSlice": {
+        "id": "CP14FoodTomatoesSlice",
+        "name": "tomato slice",
+        "description": "Thin red tomato slice. It's no longer as nice to throw at people as whole tomatoes.",
+        "parent": "FoodInjectableBase",
+        "suffix": null
+    },
+    "CP14BaseCoin": {
+        "id": "CP14BaseCoin",
+        "name": null,
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14CopperCoin": {
+        "id": "CP14CopperCoin",
+        "name": "copper coin",
+        "description": "The smallest denomination coin. Copper.",
+        "parent": "CP14BaseCoin",
+        "suffix": "10 coins"
+    },
+    "CP14CopperCoin5": {
+        "id": "CP14CopperCoin5",
+        "name": null,
+        "description": null,
+        "parent": "CP14CopperCoin",
+        "suffix": "5 coins"
+    },
+    "CP14CopperCoin1": {
+        "id": "CP14CopperCoin1",
+        "name": null,
+        "description": null,
+        "parent": "CP14CopperCoin",
+        "suffix": "1 coin"
+    },
+    "CP14SilverCoin": {
+        "id": "CP14SilverCoin",
+        "name": "silver coin",
+        "description": "A valuable coin made from a precisely calibrated silver alloy..... and something else. Equal in value to ten coppers.",
+        "parent": "CP14BaseCoin",
+        "suffix": "10 coins"
+    },
+    "CP14SilverCoin5": {
+        "id": "CP14SilverCoin5",
+        "name": null,
+        "description": null,
+        "parent": "CP14SilverCoin",
+        "suffix": "5 coins"
+    },
+    "CP14SilverCoin1": {
+        "id": "CP14SilverCoin1",
+        "name": null,
+        "description": null,
+        "parent": "CP14SilverCoin",
+        "suffix": "1 coin"
+    },
+    "CP14GoldCoin": {
+        "id": "CP14GoldCoin",
+        "name": "gold coin",
+        "description": "A gold, big, beautiful coin. Valuable enough to be stolen by bandits. Equal in value to ten silver coins.",
+        "parent": "CP14BaseCoin",
+        "suffix": "10 coins"
+    },
+    "CP14GoldCoin5": {
+        "id": "CP14GoldCoin5",
+        "name": null,
+        "description": null,
+        "parent": "CP14GoldCoin",
+        "suffix": "5 coins"
+    },
+    "CP14GoldCoin1": {
+        "id": "CP14GoldCoin1",
+        "name": null,
+        "description": null,
+        "parent": "CP14GoldCoin",
+        "suffix": "1 coin"
+    },
+    "CP14PlatinumCoin": {
+        "id": "CP14PlatinumCoin",
+        "name": "platinum coin",
+        "description": "A platinum coin? It's so rare. Ten gold pieces is the price of one.",
+        "parent": "CP14BaseCoin",
+        "suffix": "10 coins"
+    },
+    "CP14PlatinumCoin5": {
+        "id": "CP14PlatinumCoin5",
+        "name": null,
+        "description": null,
+        "parent": "CP14PlatinumCoin",
+        "suffix": "5 coins"
+    },
+    "CP14PlatinumCoin1": {
+        "id": "CP14PlatinumCoin1",
+        "name": null,
+        "description": null,
+        "parent": "CP14PlatinumCoin",
+        "suffix": "1 coin"
+    },
+    "CP14BaseJewelry": {
+        "id": "CP14BaseJewelry",
+        "name": null,
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14JewelryRuby": {
+        "id": "CP14JewelryRuby",
+        "name": "ruby",
+        "description": "A beautiful ruby stone that's worth a lot of money.",
+        "parent": "CP14BaseJewelry",
+        "suffix": "25gp"
+    },
+    "CP14JewelryEmerald": {
+        "id": "CP14JewelryEmerald",
+        "name": "emerald",
+        "description": "A beautiful emerald stone that's worth a lot of money.",
+        "parent": "CP14BaseJewelry",
+        "suffix": "40gp"
+    },
+    "CP14JewelrySapphire": {
+        "id": "CP14JewelrySapphire",
+        "name": "sapphire",
+        "description": "A beautiful sapphire stone that's worth a lot of money.",
+        "parent": "CP14BaseJewelry",
+        "suffix": "30gp"
+    },
+    "CP14JewelryTopaz": {
+        "id": "CP14JewelryTopaz",
+        "name": "topaz",
+        "description": "A beautiful topaz stone that's worth a lot of money.",
+        "parent": "CP14BaseJewelry",
+        "suffix": "10gp"
+    },
+    "CP14Wallet": {
+        "id": "CP14Wallet",
+        "name": "wallet",
+        "description": "A small wallet, handy for storing coins.",
+        "parent": "BaseStorageItem",
+        "suffix": "Empty"
+    },
+    "CP14WalletFilledTest": {
+        "id": "CP14WalletFilledTest",
+        "name": null,
+        "description": null,
+        "parent": "CP14Wallet",
+        "suffix": "Filled test"
+    },
+    "CP14Wheat": {
+        "id": "CP14Wheat",
+        "name": "wheat bushel",
+        "description": "You have the choice of either planting the grains again or grinding them into flour.",
+        "parent": "ProduceBase",
+        "suffix": null
+    },
+    "CP14WildProduceBase": {
+        "id": "CP14WildProduceBase",
+        "name": null,
+        "description": null,
+        "parent": "FoodProduceBase",
+        "suffix": null
+    },
+    "CP14BloodFlower": {
+        "id": "CP14BloodFlower",
+        "name": "blood rose",
+        "description": "Scarlet flowers growing where blood has been spilled.",
+        "parent": "CP14WildProduceBase",
+        "suffix": null
+    },
+    "CP14AgaricMushroom": {
+        "id": "CP14AgaricMushroom",
+        "name": "fly agaric",
+        "description": "This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.",
+        "parent": "CP14WildProduceBase",
+        "suffix": null
+    },
+    "CP14ChromiumSlime": {
+        "id": "CP14ChromiumSlime",
+        "name": "chromium slime",
+        "description": "This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.",
+        "parent": "CP14WildProduceBase",
+        "suffix": null
+    },
+    "CP14WildSage": {
+        "id": "CP14WildSage",
+        "name": "wild sage root",
+        "description": "Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.",
+        "parent": "CP14WildProduceBase",
+        "suffix": null
+    },
+    "CP14QuartzShard": {
+        "id": "CP14QuartzShard",
+        "name": "rough quartz",
+        "description": "a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14LumiMushroom": {
+        "id": "CP14LumiMushroom",
+        "name": "lumishroom",
+        "description": "A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.",
+        "parent": "CP14WildProduceBase",
+        "suffix": null
+    },
+    "CP14BlueAmanita": {
+        "id": "CP14BlueAmanita",
+        "name": "blue Amanita",
+        "description": "A sky blue flower known for its medicinal and magical properties.",
+        "parent": "CP14WildProduceBase",
+        "suffix": null
+    },
+    "CP14Dayflin": {
+        "id": "CP14Dayflin",
+        "name": "yellow dayflin",
+        "description": "A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.",
+        "parent": "CP14WildProduceBase",
+        "suffix": null
+    },
+    "CP14CopperBar1": {
+        "id": "CP14CopperBar1",
+        "name": "copper bar",
+        "description": "A heavy, slightly green, piece of refined copper",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14CopperBar5": {
+        "id": "CP14CopperBar5",
+        "name": null,
+        "description": null,
+        "parent": "CP14CopperBar1",
+        "suffix": 5
+    },
+    "CP14CopperBar10": {
+        "id": "CP14CopperBar10",
+        "name": null,
+        "description": null,
+        "parent": "CP14CopperBar1",
+        "suffix": 10
+    },
+    "CP14IronBar1": {
+        "id": "CP14IronBar1",
+        "name": "iron bar",
+        "description": "A heavy piece of refined iron",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14IronBar5": {
+        "id": "CP14IronBar5",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronBar1",
+        "suffix": 5
+    },
+    "CP14IronBar10": {
+        "id": "CP14IronBar10",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronBar1",
+        "suffix": 10
+    },
+    "CP14GoldBar1": {
+        "id": "CP14GoldBar1",
+        "name": "gold bar",
+        "description": "A warm to the touch, soft piece of refined gold.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14GoldBar5": {
+        "id": "CP14GoldBar5",
+        "name": null,
+        "description": null,
+        "parent": "CP14GoldBar1",
+        "suffix": 5
+    },
+    "CP14GoldBar10": {
+        "id": "CP14GoldBar10",
+        "name": null,
+        "description": null,
+        "parent": "CP14GoldBar1",
+        "suffix": 10
+    },
+    "CP14GlassSheet1": {
+        "id": "CP14GlassSheet1",
+        "name": "glass sheet",
+        "description": "Treated quartz glass, transmits light well, and is nice to look at!",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14GlassSheet5": {
+        "id": "CP14GlassSheet5",
+        "name": null,
+        "description": null,
+        "parent": "CP14GlassSheet1",
+        "suffix": 5
+    },
+    "CP14GlassSheet10": {
+        "id": "CP14GlassSheet10",
+        "name": null,
+        "description": null,
+        "parent": "CP14GlassSheet1",
+        "suffix": 10
+    },
+    "CP14BaseDye": {
+        "id": "CP14BaseDye",
+        "name": "dye",
+        "description": "A bright, colorful dye used to paint various things.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14DyeRed": {
+        "id": "CP14DyeRed",
+        "name": "red dye",
+        "description": null,
+        "parent": "CP14BaseDye",
+        "suffix": null
+    },
+    "CP14DyeYellow": {
+        "id": "CP14DyeYellow",
+        "name": "yellow dye",
+        "description": null,
+        "parent": "CP14BaseDye",
+        "suffix": null
+    },
+    "CP14DyeBlue": {
+        "id": "CP14DyeBlue",
+        "name": "blue dye",
+        "description": null,
+        "parent": "CP14BaseDye",
+        "suffix": null
+    },
+    "CP14DyeGreen": {
+        "id": "CP14DyeGreen",
+        "name": "green dye",
+        "description": null,
+        "parent": "CP14BaseDye",
+        "suffix": null
+    },
+    "CP14DyePurple": {
+        "id": "CP14DyePurple",
+        "name": "purple dye",
+        "description": null,
+        "parent": "CP14BaseDye",
+        "suffix": null
+    },
+    "CP14DyeBlack": {
+        "id": "CP14DyeBlack",
+        "name": "black dye",
+        "description": null,
+        "parent": "CP14BaseDye",
+        "suffix": null
+    },
+    "CP14DirtBlock1": {
+        "id": "CP14DirtBlock1",
+        "name": "dirt block",
+        "description": "A block of excellent black soil.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14DirtBlock10": {
+        "id": "CP14DirtBlock10",
+        "name": null,
+        "description": null,
+        "parent": "CP14DirtBlock1",
+        "suffix": 10
+    },
+    "CP14StoneBlock1": {
+        "id": "CP14StoneBlock1",
+        "name": "stone block",
+        "description": "A block of cold stone.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14StoneBlock10": {
+        "id": "CP14StoneBlock10",
+        "name": null,
+        "description": null,
+        "parent": "CP14StoneBlock1",
+        "suffix": 10
+    },
+    "CP14WoodLog": {
+        "id": "CP14WoodLog",
+        "name": "wooden log",
+        "description": "A piece of unprocessed wood. Good material for building, or starting a fire.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14WoodenPlanks1": {
+        "id": "CP14WoodenPlanks1",
+        "name": "wooden planks",
+        "description": "Treated and ready-to-use wood.",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14WoodenPlanks10": {
+        "id": "CP14WoodenPlanks10",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenPlanks1",
+        "suffix": 10
+    },
+    "CP14Nail1": {
+        "id": "CP14Nail1",
+        "name": "nails",
+        "description": "A basic carpenter's tool that allows you to do unimaginable things with wood.",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14Nail10": {
+        "id": "CP14Nail10",
+        "name": null,
+        "description": null,
+        "parent": "CP14Nail1",
+        "suffix": 10
+    },
+    "CP14FloraMaterial1": {
+        "id": "CP14FloraMaterial1",
+        "name": "flora material",
+        "description": "An organic material used for medicinal or construction purposes.",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14FloraMaterial2": {
+        "id": "CP14FloraMaterial2",
+        "name": null,
+        "description": null,
+        "parent": "CP14FloraMaterial1",
+        "suffix": 2
+    },
+    "CP14String": {
+        "id": "CP14String",
+        "name": "strings",
+        "description": "Thin thread. Material for mending clothes, or sewing new ones.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14Cloth1": {
+        "id": "CP14Cloth1",
+        "name": "cloth",
+        "description": "White cloth roll",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14Cloth10": {
+        "id": "CP14Cloth10",
+        "name": null,
+        "description": null,
+        "parent": "CP14Cloth1",
+        "suffix": 10
+    },
+    "CP14GlassShard": {
+        "id": "CP14GlassShard",
+        "name": null,
+        "description": null,
+        "parent": "ShardGlass",
+        "suffix": null
+    },
+    "CP14Cauldron": {
+        "id": "CP14Cauldron",
+        "name": "cauldron",
+        "description": "A heavy cauldron. It is not as bulky as a vat, but can be carried in your hands.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14Pestle": {
+        "id": "CP14Pestle",
+        "name": "pestle",
+        "description": "A device for conveniently grinding various materials into liquid",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14Mortar": {
+        "id": "CP14Mortar",
+        "name": "mortar",
+        "description": "Alchemical sturdy plate for grinding reagents",
+        "parent": "BaseStorageItem",
+        "suffix": null
+    },
+    "CP14Dropper": {
+        "id": "CP14Dropper",
+        "name": "dropper",
+        "description": "Small dropper for managing very small values of liquids",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14Syringe": {
+        "id": "CP14Syringe",
+        "name": "syringe",
+        "description": "Used to draw blood samples from mobs, or to inject them with reagents.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14BaseVial": {
+        "id": "CP14BaseVial",
+        "name": null,
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14BaseVialFragile": {
+        "id": "CP14BaseVialFragile",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseVial",
+        "suffix": null
+    },
+    "CP14VialTiny": {
+        "id": "CP14VialTiny",
+        "name": "tiny vial",
+        "description": "A sturdy glass vial to hold a tiny amount of liquid.",
+        "parent": "CP14BaseVial",
+        "suffix": null
+    },
+    "CP14VialSmall": {
+        "id": "CP14VialSmall",
+        "name": "small vial",
+        "description": "A fragile glass vial to hold a small amount of liquid.",
+        "parent": "CP14BaseVialFragile",
+        "suffix": null
+    },
+    "CP14VialSmallBloodFlowerSap": {
+        "id": "CP14VialSmallBloodFlowerSap",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialSmall",
+        "suffix": "Bloodflower sap"
+    },
+    "CP14VialSmallAgaricMushroom": {
+        "id": "CP14VialSmallAgaricMushroom",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialSmall",
+        "suffix": "Fly agaric juice"
+    },
+    "CP14VialSmallGroundQuartz": {
+        "id": "CP14VialSmallGroundQuartz",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialSmall",
+        "suffix": "Ground Quartz"
+    },
+    "CP14VialSmallWildSage": {
+        "id": "CP14VialSmallWildSage",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialSmall",
+        "suffix": "Wild sage Sap"
+    },
+    "CP14VialSmallBlueAmanita": {
+        "id": "CP14VialSmallBlueAmanita",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialSmall",
+        "suffix": "Blue Amanita"
+    },
+    "CP14VialSmallDayflin": {
+        "id": "CP14VialSmallDayflin",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialSmall",
+        "suffix": "Dayflin"
+    },
+    "CP14VialTinyChromiumSlime": {
+        "id": "CP14VialTinyChromiumSlime",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialTiny",
+        "suffix": "Chromium Slime"
+    },
+    "CP14VialTinyLumiMushroom": {
+        "id": "CP14VialTinyLumiMushroom",
+        "name": null,
+        "description": null,
+        "parent": "CP14VialTiny",
+        "suffix": "LumiShroom"
+    },
+    "CP14BaseSeed": {
+        "id": "CP14BaseSeed",
+        "name": null,
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14SeedWheat": {
+        "id": "CP14SeedWheat",
+        "name": "wheat seeds",
+        "description": "Small wheat seeds. What will you do with them? Grind them into flour, or plant them again?",
+        "parent": "CP14BaseSeed",
+        "suffix": null
+    },
+    "CP14SeedPumpkin": {
+        "id": "CP14SeedPumpkin",
+        "name": "pumpkin seeds",
+        "description": "Pumpkin seeds. Some pumpkin seems to have been gutted and butchered.",
+        "parent": "CP14BaseSeed",
+        "suffix": null
+    },
+    "CP14SeedCabbage": {
+        "id": "CP14SeedCabbage",
+        "name": "cabbage seeds",
+        "description": "Oh, no, my cabbage!",
+        "parent": "CP14BaseSeed",
+        "suffix": null
+    },
+    "CP14SeedCucumber": {
+        "id": "CP14SeedCucumber",
+        "name": "cucumber seeds",
+        "description": "Are cucumber seeds. You know what to do with them.",
+        "parent": "CP14BaseSeed",
+        "suffix": null
+    },
+    "CP14SeedTomato": {
+        "id": "CP14SeedTomato",
+        "name": "tomato seeds",
+        "description": "It looks like powder! They're so small, these seeds.",
+        "parent": "CP14BaseSeed",
+        "suffix": null
+    },
+    "CP14HerbalBandage": {
+        "id": "CP14HerbalBandage",
+        "name": "herbal bandage",
+        "description": "A bandage net woven from grass, not the most reliable or useful thing, but better than nothing.",
+        "parent": "BaseItem",
+        "suffix": 10
+    },
+    "CP14HerbalBandage1": {
+        "id": "CP14HerbalBandage1",
+        "name": null,
+        "description": null,
+        "parent": "CP14HerbalBandage",
+        "suffix": 1
+    },
+    "CP14Gauze": {
+        "id": "CP14Gauze",
+        "name": "gauze",
+        "description": "Dense cloth gauze, to prevent valuable blood from leaking out of the body.",
+        "parent": "BaseItem",
+        "suffix": 10
+    },
+    "CP14Gauze1": {
+        "id": "CP14Gauze1",
+        "name": null,
+        "description": null,
+        "parent": "CP14Gauze",
+        "suffix": 1
+    },
+    "CP14EnergyCrystalBase": {
+        "id": "CP14EnergyCrystalBase",
+        "name": null,
+        "description": "A crystal shard capable of storing magical energy.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14EnergyCrystalSmall": {
+        "id": "CP14EnergyCrystalSmall",
+        "name": "small energyshard",
+        "description": null,
+        "parent": "CP14EnergyCrystalBase",
+        "suffix": "Full"
+    },
+    "CP14EnergyCrystalSmallEmpty": {
+        "id": "CP14EnergyCrystalSmallEmpty",
+        "name": null,
+        "description": null,
+        "parent": "CP14EnergyCrystalSmall",
+        "suffix": "Empty"
+    },
+    "CP14EnergyCrystalMedium": {
+        "id": "CP14EnergyCrystalMedium",
+        "name": "energyshard",
+        "description": null,
+        "parent": "CP14EnergyCrystalBase",
+        "suffix": "Full"
+    },
+    "CP14EnergyCrystalMediumEmpty": {
+        "id": "CP14EnergyCrystalMediumEmpty",
+        "name": null,
+        "description": null,
+        "parent": "CP14EnergyCrystalMedium",
+        "suffix": "Empty"
+    },
+    "CP14AuraScanner": {
+        "id": "CP14AuraScanner",
+        "name": "aura scanner",
+        "description": "Scans the polarity of the elemental energy flows in this place.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14RitualChalk": {
+        "id": "CP14RitualChalk",
+        "name": "ritual chalk",
+        "description": "Quartz chalk, handy for drawing temporary ritual circles.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14ManaOperationGlove": {
+        "id": "CP14ManaOperationGlove",
+        "name": "mana glove",
+        "description": "An unsophisticated but aesthetically pleasing blend of technology and magic crystals that allows you to operate with raw mana: siphoning it from some objects and pumping it into others.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponLight",
+            "CP14BaseWeaponShort"
+        ],
+        "suffix": null
+    },
+    "CP14Bucket": {
+        "id": "CP14Bucket",
+        "name": "bucket",
+        "description": "It's a boring old bucket.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14CrystalLamp": {
+        "id": "CP14CrystalLamp",
+        "name": "crystal lamp",
+        "description": "A device that converts energy from crystals into a source of directional light.  Convenient for traveling",
+        "parent": [
+            "BaseItem",
+            "CP14BaseCrystalSlot"
+        ],
+        "suffix": null
+    },
+    "CP14CrystalLampBlueEmpty": {
+        "id": "CP14CrystalLampBlueEmpty",
+        "name": "blue crystal lamp",
+        "description": null,
+        "parent": "CP14CrystalLamp",
+        "suffix": "Blue, Empty"
+    },
+    "CP14CrystalLampOrangeEmpty": {
+        "id": "CP14CrystalLampOrangeEmpty",
+        "name": "orange crystal lamp",
+        "description": null,
+        "parent": "CP14CrystalLamp",
+        "suffix": "Orange, Empty"
+    },
+    "CP14Rope": {
+        "id": "CP14Rope",
+        "name": "rope",
+        "description": "Multifunctional rope. You can tie something with it. Or someone.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14Scissors": {
+        "id": "CP14Scissors",
+        "name": "scissors",
+        "description": "A tool for shredding wool, hair, clothing, and, if not handled carefully, even fingers.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14BaseSharpeningStone": {
+        "id": "CP14BaseSharpeningStone",
+        "name": "sharpening stone",
+        "description": "Allows you to sharpen blunted weapons. If you overdo it, you may well sharpen the weapon completely.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14WallpaperBank": {
+        "id": "CP14WallpaperBank",
+        "name": "wallpaper \"banker's integrity\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14WallpaperBank2": {
+        "id": "CP14WallpaperBank2",
+        "name": "wallpaper \"banker's wealth\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14BaseWallpaper": {
+        "id": "CP14BaseWallpaper",
+        "name": null,
+        "description": "Thin paper wallpaper. You can glue them on the walls from different sides, or peel them off with any sharp object.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14WallpaperBlack": {
+        "id": "CP14WallpaperBlack",
+        "name": "wallpaper \"inkwell black\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14WallpaperGreen": {
+        "id": "CP14WallpaperGreen",
+        "name": "wallpaper \"green orthogonality\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14WallpaperPurple": {
+        "id": "CP14WallpaperPurple",
+        "name": "wallpaper \"purple glory\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14WallpaperRed": {
+        "id": "CP14WallpaperRed",
+        "name": "wallpaper \"burgundy\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14WallpaperWhite": {
+        "id": "CP14WallpaperWhite",
+        "name": "wallpaper \"flowers on white\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14WallpaperWhite2": {
+        "id": "CP14WallpaperWhite2",
+        "name": "wallpaper \"pure white\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14WallpaperYellow": {
+        "id": "CP14WallpaperYellow",
+        "name": "wallpaper \"solar rhythm\"",
+        "description": null,
+        "parent": "CP14BaseWallpaper",
+        "suffix": null
+    },
+    "CP14MagicHealingStaff": {
+        "id": "CP14MagicHealingStaff",
+        "name": "magic healing staff",
+        "description": "A long, half-tech, half-magic stick designed to convert magical energy into healing spells.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible"
+        ],
+        "suffix": null
+    },
+    "CP14BaseBattleHammer": {
+        "id": "CP14BaseBattleHammer",
+        "name": "battle hammer",
+        "description": "A big heavy hammer. You better not get in his way!",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSelfDamage"
+        ],
+        "suffix": null
+    },
+    "CP14BaseBattleStaff": {
+        "id": "CP14BaseBattleStaff",
+        "name": "battle staff",
+        "description": "an extremely simple and effective weapon - a long straight and heavy stick.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible"
+        ],
+        "suffix": null
+    },
+    "CP14BaseDagger": {
+        "id": "CP14BaseDagger",
+        "name": "dagger",
+        "description": "A small, multi-purpose, sharp blade. You can cut meat or throw it at a goblin.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSharp",
+            "CP14BaseWeaponChemical",
+            "CP14BaseWeaponThrowable",
+            "CP14BaseWeaponLight",
+            "CP14BaseWeaponShort"
+        ],
+        "suffix": null
+    },
+    "CP14BaseHandheldAxe": {
+        "id": "CP14BaseHandheldAxe",
+        "name": "hand axe",
+        "description": "A small axe, great for chopping wood or sinew.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSharp",
+            "CP14BaseWeaponChemical",
+            "CP14BaseWeaponThrowable",
+            "CP14BaseWeaponLight"
+        ],
+        "suffix": null
+    },
+    "CP14BaseLightHammer": {
+        "id": "CP14BaseLightHammer",
+        "name": "light hammer",
+        "description": "A small hammer. Good for carpentry work as well as for cracking skulls.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponThrowable",
+            "CP14BaseWeaponLight",
+            "CP14BaseWeaponShort",
+            "CP14BaseWeaponSelfDamage"
+        ],
+        "suffix": null
+    },
+    "CP14BaseMace": {
+        "id": "CP14BaseMace",
+        "name": "mace",
+        "description": "A heavy piece of metal on a long stick. What could be simpler than that?",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponThrowable",
+            "CP14BaseWeaponSelfDamage"
+        ],
+        "suffix": null
+    },
+    "CP14BaseShield": {
+        "id": "CP14BaseShield",
+        "name": "shield",
+        "description": "A wooden shield capable of withstanding multiple blows.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponLight",
+            "CP14BaseWeaponThrowable"
+        ],
+        "suffix": null
+    },
+    "CP14BaseSickle": {
+        "id": "CP14BaseSickle",
+        "name": "sickle",
+        "description": "Originally developed as a weapon against grass, the sickle suddenly proved itself good at the bloodier harvest as well.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSharp",
+            "CP14BaseWeaponChemical",
+            "CP14BaseWeaponLight",
+            "CP14BaseWeaponShort"
+        ],
+        "suffix": null
+    },
+    "CP14BaseThrowableSpear": {
+        "id": "CP14BaseThrowableSpear",
+        "name": "throwing javelin",
+        "description": "A weapon that has done its duty since the age of the giants.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSharp",
+            "CP14BaseWeaponChemical",
+            "CP14BaseWeaponThrowable"
+        ],
+        "suffix": null
+    },
+    "CP14BaseSword": {
+        "id": "CP14BaseSword",
+        "name": "sword",
+        "description": "the gold standard of edged weapons. Medium length, comfortable grip. No frills.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSharp",
+            "CP14BaseWeaponChemical"
+        ],
+        "suffix": null
+    },
+    "CP14BaseTwoHandedSword": {
+        "id": "CP14BaseTwoHandedSword",
+        "name": "two-handed sword",
+        "description": "A powerful weapon that requires tremendous strength and skill to use effectively.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSharp",
+            "CP14BaseWeaponChemical"
+        ],
+        "suffix": null
+    },
+    "CP14TwoHandedSwordScythe": {
+        "id": "CP14TwoHandedSwordScythe",
+        "name": "scythe",
+        "description": "A large, two-handed scythe. What will you mow with it? Millet or heads?",
+        "parent": "CP14BaseTwoHandedSword",
+        "suffix": null
+    },
+    "CP14BaseCrowbar": {
+        "id": "CP14BaseCrowbar",
+        "name": "crowbar",
+        "description": "A versatile and useful iron, for taking apart floors or other objects.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponChemical"
+        ],
+        "suffix": null
+    },
+    "CP14BaseHoe": {
+        "id": "CP14BaseHoe",
+        "name": "hoe",
+        "description": "A gardening tool to prepare the soil for planting, or to clear weeds",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSelfDamage",
+            "CP14BaseWeaponLight"
+        ],
+        "suffix": null
+    },
+    "CP14BaseMop": {
+        "id": "CP14BaseMop",
+        "name": "wooden mop",
+        "description": "Mop for cleaning floors from various unpleasant liquids",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible"
+        ],
+        "suffix": null
+    },
+    "CP14BaseBroom": {
+        "id": "CP14BaseBroom",
+        "name": "wooden broom",
+        "description": "Sweeps up dried footprints and other stains from the floor",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible"
+        ],
+        "suffix": null
+    },
+    "CP14BasePickaxe": {
+        "id": "CP14BasePickaxe",
+        "name": "pickaxe",
+        "description": "Notched to perfection, for jamming it into rocks",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSelfDamage",
+            "CP14BaseWeaponChemical"
+        ],
+        "suffix": null
+    },
+    "CP14BaseShovel": {
+        "id": "CP14BaseShovel",
+        "name": "shovel",
+        "description": "An implement for digging up earth, digging beds or graves.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible",
+            "CP14BaseWeaponSelfDamage"
+        ],
+        "suffix": null
+    },
+    "CP14BaseWrench": {
+        "id": "CP14BaseWrench",
+        "name": "wrench",
+        "description": "A common tool for assembly and disassembly. Remember: lefty latchy, righty removey.",
+        "parent": [
+            "BaseItem",
+            "CP14BaseWeaponDestructible"
+        ],
+        "suffix": null
+    },
+    "CP14BaseLightCrossbow": {
+        "id": "CP14BaseLightCrossbow",
+        "name": "light crossbow",
+        "description": "A small, compact crossbow that is comfortable to hold with one hand. Not too accurate on the reverse side.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14BaseCrossbolt": {
+        "id": "CP14BaseCrossbolt",
+        "name": null,
+        "description": null,
+        "parent": "BaseArrow",
+        "suffix": null
+    },
+    "CP14Crossbolt": {
+        "id": "CP14Crossbolt",
+        "name": "crossbow bolt",
+        "description": "Rod with a sharpened spike. No plumage, they're not bows.",
+        "parent": "CP14BaseCrossbolt",
+        "suffix": null
+    },
+    "CP14RitualEnd": {
+        "id": "CP14RitualEnd",
+        "name": "end of ritual",
+        "description": null,
+        "parent": "CP14BaseRitualPhase",
+        "suffix": null
+    },
+    "CP14_NeutralCluster_Base": {
+        "id": "CP14_NeutralCluster_Base",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseRitualPhase",
+        "suffix": null
+    },
+    "CP14_NeutralCluster_Root": {
+        "id": "CP14_NeutralCluster_Root",
+        "name": "Te-Se-Ra",
+        "description": "The perfect energetic position to begin any ritual.",
+        "parent": "CP14_NeutralCluster_Base",
+        "suffix": null
+    },
+    "CP14_NeutralCluster_00": {
+        "id": "CP14_NeutralCluster_00",
+        "name": "Li-Ra",
+        "description": null,
+        "parent": "CP14_NeutralCluster_Base",
+        "suffix": null
+    },
+    "CP14Chasm": {
+        "id": "CP14Chasm",
+        "name": "chasm",
+        "description": "You can't even see the bottom.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14WallmountCrystalBase": {
+        "id": "CP14WallmountCrystalBase",
+        "name": "sparkling quartz",
+        "description": "bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.",
+        "parent": [
+            "CP14BaseWallmount"
+        ],
+        "suffix": null
+    },
+    "CP14WallmountCrystalRubies": {
+        "id": "CP14WallmountCrystalRubies",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountCrystalBase",
+        "suffix": "Red"
+    },
+    "CP14WallmountCrystalTopazes": {
+        "id": "CP14WallmountCrystalTopazes",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountCrystalBase",
+        "suffix": "Yellow"
+    },
+    "CP14WallmountCrystalEmeralds": {
+        "id": "CP14WallmountCrystalEmeralds",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountCrystalBase",
+        "suffix": "Green"
+    },
+    "CP14WallmountCrystalSapphires": {
+        "id": "CP14WallmountCrystalSapphires",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountCrystalBase",
+        "suffix": "Cyan"
+    },
+    "CP14WallmountCrystalAmethysts": {
+        "id": "CP14WallmountCrystalAmethysts",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountCrystalBase",
+        "suffix": "Purple"
+    },
+    "CP14WallmountCrystalDiamonds": {
+        "id": "CP14WallmountCrystalDiamonds",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountCrystalBase",
+        "suffix": "White"
+    },
+    "CP14CrystalBase": {
+        "id": "CP14CrystalBase",
+        "name": "sparkling quartz",
+        "description": "bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.",
+        "parent": "BaseRock",
+        "suffix": null
+    },
+    "CP14CrystalRubiesSmall": {
+        "id": "CP14CrystalRubiesSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Red, Small"
+    },
+    "CP14CrystalRubiesMedium": {
+        "id": "CP14CrystalRubiesMedium",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Red, Medium"
+    },
+    "CP14CrystalRubiesBig": {
+        "id": "CP14CrystalRubiesBig",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Red, Big"
+    },
+    "CP14CrystalTopazesSmall": {
+        "id": "CP14CrystalTopazesSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Yellow, Small"
+    },
+    "CP14CrystalTopazesMedium": {
+        "id": "CP14CrystalTopazesMedium",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Yellow, Medium"
+    },
+    "CP14CrystalTopazesBig": {
+        "id": "CP14CrystalTopazesBig",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Yellow, Big"
+    },
+    "CP14CrystalEmeraldsSmall": {
+        "id": "CP14CrystalEmeraldsSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Green, Small"
+    },
+    "CP14CrystalEmeraldsMedium": {
+        "id": "CP14CrystalEmeraldsMedium",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Green, Medium"
+    },
+    "CP14CrystalEmeraldsBig": {
+        "id": "CP14CrystalEmeraldsBig",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Green, Big"
+    },
+    "CP14CrystalSapphiresSmall": {
+        "id": "CP14CrystalSapphiresSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Cyan, Small"
+    },
+    "CP14CrystalSapphiresMedium": {
+        "id": "CP14CrystalSapphiresMedium",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Cyan, Medium"
+    },
+    "CP14CrystalSapphiresBig": {
+        "id": "CP14CrystalSapphiresBig",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Cyan, Big"
+    },
+    "CP14CrystalAmethystsSmall": {
+        "id": "CP14CrystalAmethystsSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Purple, Small"
+    },
+    "CP14CrystalAmethystsMedium": {
+        "id": "CP14CrystalAmethystsMedium",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Purple, Medium"
+    },
+    "CP14CrystalAmethystsBig": {
+        "id": "CP14CrystalAmethystsBig",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "Purple, Big"
+    },
+    "CP14CrystalDiamondsSmall": {
+        "id": "CP14CrystalDiamondsSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "White, Small"
+    },
+    "CP14CrystalDiamondsMedium": {
+        "id": "CP14CrystalDiamondsMedium",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "White, Medium"
+    },
+    "CP14CrystalDiamondsBig": {
+        "id": "CP14CrystalDiamondsBig",
+        "name": null,
+        "description": null,
+        "parent": "CP14CrystalBase",
+        "suffix": "White, Big"
+    },
+    "CP14DungeonEntrance": {
+        "id": "CP14DungeonEntrance",
+        "name": "dungeon entrance",
+        "description": "The dark depths of the underworld are calling you.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14DungeonExit": {
+        "id": "CP14DungeonExit",
+        "name": "dungeon exit",
+        "description": "A way out of the dark underworld into the overworld.",
+        "parent": "CP14DungeonEntrance",
+        "suffix": null
+    },
+    "CP14DungeonEntranceAutoLink": {
+        "id": "CP14DungeonEntranceAutoLink",
+        "name": null,
+        "description": null,
+        "parent": "CP14DungeonEntrance",
+        "suffix": null
+    },
+    "CP14DungeonExitAutoLink": {
+        "id": "CP14DungeonExitAutoLink",
+        "name": null,
+        "description": null,
+        "parent": "CP14DungeonExit",
+        "suffix": null
+    },
+    "CP14BaseSharpeningStoneStructure": {
+        "id": "CP14BaseSharpeningStoneStructure",
+        "name": "stationary sharpening stone",
+        "description": "A strong, durable sharpening stone capable of sharpening weapons without much damage to them.",
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14TravelingShop": {
+        "id": "CP14TravelingShop",
+        "name": "city trading information board",
+        "description": "Allows you to track what the city is selling and buying right now.",
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14BaseWallmountPainting": {
+        "id": "CP14BaseWallmountPainting",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseWallmount",
+        "suffix": null
+    },
+    "CP14WallmountPaintingSkull": {
+        "id": "CP14WallmountPaintingSkull",
+        "name": "skull painting",
+        "description": "A bizarre skull painting. Depressing.",
+        "parent": "CP14BaseWallmountPainting",
+        "suffix": null
+    },
+    "CP14WallmountPaintingCandle": {
+        "id": "CP14WallmountPaintingCandle",
+        "name": "candle painting",
+        "description": "A nicely drawn candle in a frame.",
+        "parent": "CP14BaseWallmountPainting",
+        "suffix": null
+    },
+    "CP14WallmountPaintingWoman": {
+        "id": "CP14WallmountPaintingWoman",
+        "name": "painting of a woman",
+        "description": "The painting depicts a woman with a mysterious smile.",
+        "parent": "CP14BaseWallmountPainting",
+        "suffix": null
+    },
+    "CP14WallmountPaintingSaint": {
+        "id": "CP14WallmountPaintingSaint",
+        "name": "painting of a saint",
+        "description": "A drawing of a nun with a halo over her head. This is how you can feel the holiness of the picture.",
+        "parent": "CP14BaseWallmountPainting",
+        "suffix": null
+    },
+    "CP14StatueGob": {
+        "id": "CP14StatueGob",
+        "name": "statue of Gob",
+        "description": "It's beautiful.",
+        "parent": "BaseStructure",
+        "suffix": "Normal"
+    },
+    "CP14StatueGobVines": {
+        "id": "CP14StatueGobVines",
+        "name": "statue of Gob",
+        "description": null,
+        "parent": "CP14StatueGob",
+        "suffix": "Normal. Overgrown."
+    },
+    "CP14StatueGobRuined": {
+        "id": "CP14StatueGobRuined",
+        "name": "broken statue of Gob",
+        "description": null,
+        "parent": "CP14StatueGob",
+        "suffix": "Ruined"
+    },
+    "CP14StatueGobRuinedVines": {
+        "id": "CP14StatueGobRuinedVines",
+        "name": "broken statue of Gob",
+        "description": null,
+        "parent": "CP14StatueGob",
+        "suffix": "Ruined. Overgrown."
+    },
+    "CP14BaseDoor": {
+        "id": "CP14BaseDoor",
+        "name": null,
+        "description": null,
+        "parent": "BaseMaterialDoorNavMap",
+        "suffix": null
+    },
+    "CP14BaseDoorFrame": {
+        "id": "CP14BaseDoorFrame",
+        "name": null,
+        "description": null,
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14WoodenDoorFrame": {
+        "id": "CP14WoodenDoorFrame",
+        "name": "wooden door frame",
+        "description": "An unfinished wooden door",
+        "parent": "CP14BaseDoorFrame",
+        "suffix": null
+    },
+    "CP14WoodenDoorFrameMirrored": {
+        "id": "CP14WoodenDoorFrameMirrored",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoorFrame",
+        "suffix": null
+    },
+    "CP14IronDoor": {
+        "id": "CP14IronDoor",
+        "name": "iron door",
+        "description": "Well, if there's a solid iron door, there must be something valuable behind it.",
+        "parent": [
+            "CP14BaseDoor"
+        ],
+        "suffix": "Opened"
+    },
+    "CP14IronDoorMirrored": {
+        "id": "CP14IronDoorMirrored",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoor",
+        "suffix": "Opened, Mirrored"
+    },
+    "CP14IronDoorBlacksmith": {
+        "id": "CP14IronDoorBlacksmith",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoor",
+        "suffix": "Blacksmith"
+    },
+    "CP14IronDoorMirroredBlacksmith": {
+        "id": "CP14IronDoorMirroredBlacksmith",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14IronDoorBlacksmith",
+            "CP14IronDoorMirrored"
+        ],
+        "suffix": "Blacksmith, Mirrored"
+    },
+    "CP14IronDoorBankStaff": {
+        "id": "CP14IronDoorBankStaff",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoor",
+        "suffix": "Bank Staff"
+    },
+    "CP14IronDoorMirroredBankStaff": {
+        "id": "CP14IronDoorMirroredBankStaff",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14IronDoorBankStaff",
+            "CP14IronDoorMirrored"
+        ],
+        "suffix": "Bank Staff, Mirrored"
+    },
+    "CP14IronDoorBankVault": {
+        "id": "CP14IronDoorBankVault",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoor",
+        "suffix": "Bank Vault"
+    },
+    "CP14IronDoorMirroredBankVault": {
+        "id": "CP14IronDoorMirroredBankVault",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14IronDoorBankVault",
+            "CP14IronDoorMirrored"
+        ],
+        "suffix": "Bank Vault, Mirrored"
+    },
+    "CP14IronDoorBankSafe": {
+        "id": "CP14IronDoorBankSafe",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoor",
+        "suffix": "Bank Safe"
+    },
+    "CP14IronDoorBankCommandantRoom": {
+        "id": "CP14IronDoorBankCommandantRoom",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoor",
+        "suffix": "Bank Commandant room"
+    },
+    "CP14IronDoorWindowed": {
+        "id": "CP14IronDoorWindowed",
+        "name": "iron windowed door",
+        "description": "a solid iron door with a small window. You can look through it, of course, but it's hard to put your hand through.",
+        "parent": [
+            "CP14BaseDoor"
+        ],
+        "suffix": "Opened"
+    },
+    "CP14IronDoorWindowedMirrored": {
+        "id": "CP14IronDoorWindowedMirrored",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoorWindowed",
+        "suffix": "Opened, Mirrored"
+    },
+    "CP14IronDoorWindowedBankEntrance": {
+        "id": "CP14IronDoorWindowedBankEntrance",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoorWindowed",
+        "suffix": "Bank Entrance"
+    },
+    "CP14IronDoorWindowedMirroredBankEntrance": {
+        "id": "CP14IronDoorWindowedMirroredBankEntrance",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14IronDoorWindowedBankEntrance",
+            "CP14IronDoorWindowedMirrored"
+        ],
+        "suffix": "Bank Entrance, Mirrored"
+    },
+    "CP14IronDoorWindowedBlacksmith": {
+        "id": "CP14IronDoorWindowedBlacksmith",
+        "name": null,
+        "description": null,
+        "parent": "CP14IronDoorWindowed",
+        "suffix": "Blacksmith"
+    },
+    "CP14IronDoorWindowedMirroredBlacksmith": {
+        "id": "CP14IronDoorWindowedMirroredBlacksmith",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14IronDoorWindowedBlacksmith",
+            "CP14IronDoorWindowedMirrored"
+        ],
+        "suffix": "Blacksmith, Mirrored"
+    },
+    "CP14WoodenDoor": {
+        "id": "CP14WoodenDoor",
+        "name": "wooden door",
+        "description": "Not the most solid construction, but it's better than nothing.",
+        "parent": [
+            "CP14BaseDoor",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": "Opened"
+    },
+    "CP14WoodenDoorMirrored": {
+        "id": "CP14WoodenDoorMirrored",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Opened, Mirrored"
+    },
+    "CP14WoodenDoorTavernStaff": {
+        "id": "CP14WoodenDoorTavernStaff",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Tavern Staff"
+    },
+    "CP14WoodenDoorTavernStaffMirrored": {
+        "id": "CP14WoodenDoorTavernStaffMirrored",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14WoodenDoorTavernStaff",
+            "CP14WoodenDoorMirrored"
+        ],
+        "suffix": "Tavern Staff, Mirrored"
+    },
+    "CP14WoodenDoorTavernDorms1": {
+        "id": "CP14WoodenDoorTavernDorms1",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Tavern Dorms 1"
+    },
+    "CP14WoodenDoorTavernDorms2": {
+        "id": "CP14WoodenDoorTavernDorms2",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Tavern Dorms 2"
+    },
+    "CP14WoodenDoorTavernDorms3": {
+        "id": "CP14WoodenDoorTavernDorms3",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Tavern Dorms 3"
+    },
+    "CP14WoodenDoorTavernDorms4": {
+        "id": "CP14WoodenDoorTavernDorms4",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Tavern Dorms 4"
+    },
+    "CP14WoodenDoorTavernDorms5": {
+        "id": "CP14WoodenDoorTavernDorms5",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Tavern Dorms 5"
+    },
+    "CP14WoodenDoorTavernAlchemy": {
+        "id": "CP14WoodenDoorTavernAlchemy",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoor",
+        "suffix": "Alchemy"
+    },
+    "CP14WoodenDoorTavernAlchemyMirrored": {
+        "id": "CP14WoodenDoorTavernAlchemyMirrored",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14WoodenDoorTavernAlchemy",
+            "CP14WoodenDoorMirrored"
+        ],
+        "suffix": "Alchemy, Mirrored"
+    },
+    "CP14WoodenDoorWindowed": {
+        "id": "CP14WoodenDoorWindowed",
+        "name": "wooden windowed door",
+        "description": "Not the most solid construction, but it's better than nothing.",
+        "parent": [
+            "CP14BaseDoor",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": "Opened"
+    },
+    "CP14WoodenDoorWindowedMirrored": {
+        "id": "CP14WoodenDoorWindowedMirrored",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoorWindowed",
+        "suffix": "Opened, Mirrored"
+    },
+    "CP14WoodenDoorWindowedTavernHall": {
+        "id": "CP14WoodenDoorWindowedTavernHall",
+        "name": null,
+        "description": null,
+        "parent": "CP14WoodenDoorWindowed",
+        "suffix": "Tavern Hall"
+    },
+    "CP14WoodenDoorTavernHallMirrored": {
+        "id": "CP14WoodenDoorTavernHallMirrored",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14WoodenDoorWindowedTavernHall",
+            "CP14WoodenDoorWindowedMirrored"
+        ],
+        "suffix": "Tavern Hall, Mirrored"
+    },
+    "CP14BaseFence": {
+        "id": "CP14BaseFence",
+        "name": null,
+        "description": null,
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14BaseFenceStraight": {
+        "id": "CP14BaseFenceStraight",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseFence",
+        "suffix": null
+    },
+    "CP14BaseFenceCorner": {
+        "id": "CP14BaseFenceCorner",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseFence",
+        "suffix": null
+    },
+    "CP14BaseFenceDoor": {
+        "id": "CP14BaseFenceDoor",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseFenceStraight",
+        "suffix": null
+    },
+    "CP14Cliff": {
+        "id": "CP14Cliff",
+        "name": "cliff",
+        "description": "Severe unevenness of the natural landscape.",
+        "parent": "BaseStructure",
+        "suffix": "Straight"
+    },
+    "CP14CliffCorner": {
+        "id": "CP14CliffCorner",
+        "name": null,
+        "description": null,
+        "parent": "CP14Cliff",
+        "suffix": "Corner"
+    },
+    "CP14CliffCornerSmall": {
+        "id": "CP14CliffCornerSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14Cliff",
+        "suffix": "CornerSmall"
+    },
+    "CP14CliffEndLeft": {
+        "id": "CP14CliffEndLeft",
+        "name": null,
+        "description": null,
+        "parent": "CP14Cliff",
+        "suffix": "Left End"
+    },
+    "CP14CliffEndRight": {
+        "id": "CP14CliffEndRight",
+        "name": null,
+        "description": null,
+        "parent": "CP14Cliff",
+        "suffix": "Right End"
+    },
+    "CP14FenceIronGrilleBase": {
+        "id": "CP14FenceIronGrilleBase",
+        "name": "iron grille",
+        "description": "A strong barrier made of iron bars welded together.",
+        "parent": [
+            "CP14BaseFence"
+        ],
+        "suffix": null
+    },
+    "CP14FenceIronGrilleStraight": {
+        "id": "CP14FenceIronGrilleStraight",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14FenceIronGrilleBase",
+            "CP14BaseFenceStraight"
+        ],
+        "suffix": "Straight"
+    },
+    "CP14FenceIronGrilleCorner": {
+        "id": "CP14FenceIronGrilleCorner",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14BaseFenceCorner",
+            "CP14FenceIronGrilleBase"
+        ],
+        "suffix": "Corner"
+    },
+    "CP14FenceIronGrilleGate": {
+        "id": "CP14FenceIronGrilleGate",
+        "name": "iron grille gate",
+        "description": "Heavy iron gates in bars. Looks serious.",
+        "parent": [
+            "CP14BaseFenceDoor",
+            "CP14FenceIronGrilleStraight"
+        ],
+        "suffix": null
+    },
+    "CP14BaseFenceWood": {
+        "id": "CP14BaseFenceWood",
+        "name": "wooden fence",
+        "description": "A wooden fence. Don't plant splinters!",
+        "parent": [
+            "CP14BaseFence",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": null
+    },
+    "CP14FenceWoodStraight": {
+        "id": "CP14FenceWoodStraight",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14BaseFenceStraight",
+            "CP14BaseFenceWood"
+        ],
+        "suffix": "Straight"
+    },
+    "CP14FenceWoodCorner": {
+        "id": "CP14FenceWoodCorner",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14BaseFenceCorner",
+            "CP14BaseFenceWood"
+        ],
+        "suffix": "Corner"
+    },
+    "CP14FenceWoodGate": {
+        "id": "CP14FenceWoodGate",
+        "name": "wooden fence gate",
+        "description": "Big door in a big fence. For big people.",
+        "parent": [
+            "CP14BaseFenceDoor",
+            "CP14BaseFenceWood"
+        ],
+        "suffix": null
+    },
+    "CP14BaseFenceWoodSmall": {
+        "id": "CP14BaseFenceWoodSmall",
+        "name": "small wooden fence",
+        "description": "A small wooden fence. It protects the area from unnecessary visitors who don't have a towel.",
+        "parent": [
+            "CP14BaseFence",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": null
+    },
+    "CP14FenceWoodSmallStraight": {
+        "id": "CP14FenceWoodSmallStraight",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14BaseFenceStraight",
+            "CP14BaseFenceWoodSmall"
+        ],
+        "suffix": "Straight"
+    },
+    "CP14FenceWoodSmallCorner": {
+        "id": "CP14FenceWoodSmallCorner",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14BaseFenceCorner",
+            "CP14BaseFenceWoodSmall"
+        ],
+        "suffix": "Corner"
+    },
+    "CP14FenceWoodSmallGate": {
+        "id": "CP14FenceWoodSmallGate",
+        "name": "small wooden fence gate",
+        "description": "Looking at this gate, a familiar image pops up in your head. Where's my piggy?",
+        "parent": [
+            "CP14BaseFenceDoor",
+            "CP14BaseFenceWoodSmall"
+        ],
+        "suffix": null
+    },
+    "CP14FloorWater": {
+        "id": "CP14FloorWater",
+        "name": "water",
+        "description": "A trough of plain water. Clean enough for consumption",
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14HighBush": {
+        "id": "CP14HighBush",
+        "name": "high bush",
+        "description": "Very tall and dense thickets. Perhaps someone is watching you from them",
+        "parent": "CP14BaseFlammableSpreading",
+        "suffix": null
+    },
+    "CP14RandomBushOffsetSpawner": {
+        "id": "CP14RandomBushOffsetSpawner",
+        "name": "random bush offset spawner",
+        "description": null,
+        "parent": "MarkerBase",
+        "suffix": null
+    },
+    "CP14BaseRock": {
+        "id": "CP14BaseRock",
+        "name": "rock",
+        "description": "A piece of rock. Hard, heavy, useless.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RockSmall": {
+        "id": "CP14RockSmall",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseRock",
+        "suffix": "Small"
+    },
+    "CP14RockBig": {
+        "id": "CP14RockBig",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseRock",
+        "suffix": "Big"
+    },
+    "CP14RoyalPumpkin": {
+        "id": "CP14RoyalPumpkin",
+        "name": "royal pumpkin",
+        "description": "It's a huge pumpkin, it feels like you could even make a carriage out of it.",
+        "parent": "CP14BaseFlammableSpreading",
+        "suffix": null
+    },
+    "CP14BaseTree": {
+        "id": "CP14BaseTree",
+        "name": "tree",
+        "description": "Decades of life and growth, saturating the surrounding nature with fresh air.",
+        "parent": "CP14BaseFlammableSpreading",
+        "suffix": null
+    },
+    "CP14BaseTreeLarge": {
+        "id": "CP14BaseTreeLarge",
+        "name": "large tree",
+        "description": null,
+        "parent": "CP14BaseTree",
+        "suffix": null
+    },
+    "CP14FloraTree01": {
+        "id": "CP14FloraTree01",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTree",
+        "suffix": null
+    },
+    "CP14FloraTree02": {
+        "id": "CP14FloraTree02",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTree",
+        "suffix": null
+    },
+    "CP14FloraTree03": {
+        "id": "CP14FloraTree03",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTree",
+        "suffix": null
+    },
+    "CP14FloraTree04": {
+        "id": "CP14FloraTree04",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTree",
+        "suffix": null
+    },
+    "CP14FloraTree05": {
+        "id": "CP14FloraTree05",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTree",
+        "suffix": null
+    },
+    "CP14FloraTree06": {
+        "id": "CP14FloraTree06",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTree",
+        "suffix": null
+    },
+    "CP14FloraTreeLarge01": {
+        "id": "CP14FloraTreeLarge01",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTreeLarge",
+        "suffix": null
+    },
+    "CP14FloraTreeLarge02": {
+        "id": "CP14FloraTreeLarge02",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTreeLarge",
+        "suffix": null
+    },
+    "CP14FloraTreeLarge03": {
+        "id": "CP14FloraTreeLarge03",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTreeLarge",
+        "suffix": null
+    },
+    "CP14FloraTreeLarge04": {
+        "id": "CP14FloraTreeLarge04",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTreeLarge",
+        "suffix": null
+    },
+    "CP14FloraTreeLarge05": {
+        "id": "CP14FloraTreeLarge05",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTreeLarge",
+        "suffix": null
+    },
+    "CP14FloraTreeLarge06": {
+        "id": "CP14FloraTreeLarge06",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseTreeLarge",
+        "suffix": null
+    },
+    "CP14GatherableBase": {
+        "id": "CP14GatherableBase",
+        "name": null,
+        "description": null,
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14GatherableWildBase": {
+        "id": "CP14GatherableWildBase",
+        "name": null,
+        "description": null,
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14GatherablePlantBase": {
+        "id": "CP14GatherablePlantBase",
+        "name": null,
+        "description": null,
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14GatherableDayflin": {
+        "id": "CP14GatherableDayflin",
+        "name": "yellow dayflin",
+        "description": "A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.",
+        "parent": "CP14GatherableWildBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableBloodFlower": {
+        "id": "CP14GatherableBloodFlower",
+        "name": "blood rose",
+        "description": "Scarlet flowers growing where blood has been spilled.",
+        "parent": "CP14GatherableWildBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableFlyAgaric": {
+        "id": "CP14GatherableFlyAgaric",
+        "name": "fly agaric",
+        "description": "This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.",
+        "parent": "CP14GatherableWildBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableChromiumSlime": {
+        "id": "CP14GatherableChromiumSlime",
+        "name": "chromium slime",
+        "description": "This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.",
+        "parent": "CP14GatherableWildBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableWildSage": {
+        "id": "CP14GatherableWildSage",
+        "name": "wild sage",
+        "description": "Root of this ubiquitous medicinal plant not bad at healing physical injuries, and inducing coughing.",
+        "parent": "CP14GatherableWildBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableLumiMushroom": {
+        "id": "CP14GatherableLumiMushroom",
+        "name": "lumishroom",
+        "description": "A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.",
+        "parent": "CP14GatherableWildBase",
+        "suffix": "Gatherable"
+    },
+    "CP14QuartzCrystal": {
+        "id": "CP14QuartzCrystal",
+        "name": "quartz",
+        "description": "Quartz is an essential mineral capable of interacting with magical energy. It is highly sought after by alchemists for extracting beneficial properties from liquids",
+        "parent": "BaseRock",
+        "suffix": null
+    },
+    "CP14GatherableBlueAmanita": {
+        "id": "CP14GatherableBlueAmanita",
+        "name": "blue Amanita",
+        "description": "A sky blue flower known for its medicinal and magical properties.",
+        "parent": "CP14GatherableWildBase",
+        "suffix": "Gatherable"
+    },
+    "CP14PlantCabbage": {
+        "id": "CP14PlantCabbage",
+        "name": "cabbage",
+        "description": "OOO",
+        "parent": "CP14GatherablePlantBase",
+        "suffix": null
+    },
+    "CP14PlantCabbageDeath": {
+        "id": "CP14PlantCabbageDeath",
+        "name": "dead cabbage",
+        "description": "The sad spectacle of wasted food.",
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14PlantCucumber": {
+        "id": "CP14PlantCucumber",
+        "name": "cucumber",
+        "description": "OOO",
+        "parent": "CP14GatherablePlantBase",
+        "suffix": null
+    },
+    "CP14PlantCucumberDeath": {
+        "id": "CP14PlantCucumberDeath",
+        "name": "dead cucumber",
+        "description": "The sad spectacle of wasted food.",
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14PlantPotato": {
+        "id": "CP14PlantPotato",
+        "name": "potato",
+        "description": "OOO",
+        "parent": "CP14GatherablePlantBase",
+        "suffix": null
+    },
+    "CP14PlantPotatoDeath": {
+        "id": "CP14PlantPotatoDeath",
+        "name": "dead potato",
+        "description": "The sad spectacle of wasted food.",
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14PlantPumpkin": {
+        "id": "CP14PlantPumpkin",
+        "name": "pumpkin",
+        "description": "OOO",
+        "parent": "CP14GatherablePlantBase",
+        "suffix": null
+    },
+    "CP14PlantPumpkinDeath": {
+        "id": "CP14PlantPumpkinDeath",
+        "name": "dead pumpkin",
+        "description": "The sad spectacle of wasted food.",
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14PlantTomatoes": {
+        "id": "CP14PlantTomatoes",
+        "name": "tomatoes",
+        "description": "OOO",
+        "parent": "CP14GatherablePlantBase",
+        "suffix": null
+    },
+    "CP14PlantTomatoesDeath": {
+        "id": "CP14PlantTomatoesDeath",
+        "name": "dead tomatoes",
+        "description": "The sad spectacle of wasted food.",
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14PlantWheat": {
+        "id": "CP14PlantWheat",
+        "name": "wheat",
+        "description": "Most popular crop. Unpretentious, it opens the way to an abundance of flour products.",
+        "parent": "CP14GatherablePlantBase",
+        "suffix": null
+    },
+    "CP14PlantWheatDeath": {
+        "id": "CP14PlantWheatDeath",
+        "name": "dead wheat",
+        "description": "The sad spectacle of wasted food.",
+        "parent": "CP14GatherableBase",
+        "suffix": null
+    },
+    "CP14BaseBarrel": {
+        "id": "CP14BaseBarrel",
+        "name": "wooden barrel",
+        "description": "The simplest design for storing liquids.",
+        "parent": [
+            "BaseStructureDynamic",
+            "CP14BaseFlammable"
+        ],
+        "suffix": "Empty"
+    },
+    "CP14BarrelWater": {
+        "id": "CP14BarrelWater",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Water"
+    },
+    "CP14BarrelBlood": {
+        "id": "CP14BarrelBlood",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Blood"
+    },
+    "CP14BarrelBloodTiefling": {
+        "id": "CP14BarrelBloodTiefling",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Tiefling Blood"
+    },
+    "CP14BarrelBloodElf": {
+        "id": "CP14BarrelBloodElf",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Elf Blood"
+    },
+    "CP14BarrelBloodGoblin": {
+        "id": "CP14BarrelBloodGoblin",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Goblin Blood"
+    },
+    "CP14BarrelBloodFlowerSap": {
+        "id": "CP14BarrelBloodFlowerSap",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Bloodflower sap"
+    },
+    "CP14BarrelAgaricMushroom": {
+        "id": "CP14BarrelAgaricMushroom",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Agaric mushroom"
+    },
+    "CP14BarrelChromiumSlime": {
+        "id": "CP14BarrelChromiumSlime",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Chromium Slime"
+    },
+    "CP14BarrelWildSageSap": {
+        "id": "CP14BarrelWildSageSap",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Wild Sage sap"
+    },
+    "CP14BarrelGroundQuartz": {
+        "id": "CP14BarrelGroundQuartz",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Ground Quartz"
+    },
+    "CP14BarrelLumiMushroom": {
+        "id": "CP14BarrelLumiMushroom",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "LumiShroom"
+    },
+    "CP14BarrelDayflin": {
+        "id": "CP14BarrelDayflin",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseBarrel",
+        "suffix": "Dayflin"
+    },
+    "CP14WoodenBed": {
+        "id": "CP14WoodenBed",
+        "name": "wooden bed",
+        "description": "Wooden bed. Better than nothing.",
+        "parent": [
+            "BaseStructure",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": null
+    },
+    "CP14Bonfire": {
+        "id": "CP14Bonfire",
+        "name": "bonfire",
+        "description": "A pile of logs stacked together, ready to burst into flames at the slightest spark.",
+        "parent": "CP14BaseFireplace",
+        "suffix": null
+    },
+    "CP14CabinetBase": {
+        "id": "CP14CabinetBase",
+        "name": null,
+        "description": null,
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14WoodenCabinet": {
+        "id": "CP14WoodenCabinet",
+        "name": "wooden cabinet",
+        "description": "A regular wooden cabinet.",
+        "parent": [
+            "CP14CabinetBase",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": null
+    },
+    "C14IronCabinet": {
+        "id": "C14IronCabinet",
+        "name": "iron cabinet",
+        "description": "an iron cabinet. Sturdy, lockable. You can store your valuables here without fear of some burglar taking it all for himself.",
+        "parent": "CP14CabinetBase",
+        "suffix": null
+    },
+    "C14IronCabinetCargo": {
+        "id": "C14IronCabinetCargo",
+        "name": "trade box",
+        "description": "An armored vault for storing money for trade with the city. City workers will unload their earnings here, or take them from here when you want to buy something.",
+        "parent": "C14IronCabinet",
+        "suffix": null
+    },
+    "CP14ChairWooden": {
+        "id": "CP14ChairWooden",
+        "name": "wooden chair",
+        "description": "Made of the most common planks. Simple and effective!",
+        "parent": [
+            "UnanchoredChairBase",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14ClosetBase": {
+        "id": "CP14ClosetBase",
+        "name": "closet",
+        "description": "Just an ordinary, decrepit closet.",
+        "parent": "BaseStructureDynamic",
+        "suffix": null
+    },
+    "CP14WoodenCloset": {
+        "id": "CP14WoodenCloset",
+        "name": "wooden closet",
+        "description": "It's a regular wooden closet.",
+        "parent": [
+            "CP14ClosetBase",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14Safe": {
+        "id": "CP14Safe",
+        "name": "safe",
+        "description": "A giant iron box for storing your most precious possessions. Extremely heavy and extremely strong.",
+        "parent": [
+            "CP14ClosetBase"
+        ],
+        "suffix": null
+    },
+    "CP14SafeVault": {
+        "id": "CP14SafeVault",
+        "name": "vault safe",
+        "description": null,
+        "parent": "CP14Safe",
+        "suffix": null
+    },
+    "CP14BaseCurtains": {
+        "id": "CP14BaseCurtains",
+        "name": "curtains",
+        "description": "Hides what others shouldn't see.",
+        "parent": [
+            "BaseStructure",
+            "CP14BaseFlammableSpreadingStrong"
+        ],
+        "suffix": null
+    },
+    "CP14CurtainsWhite": {
+        "id": "CP14CurtainsWhite",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseCurtains",
+        "suffix": "White"
+    },
+    "CP14CurtainsWhiteOpened": {
+        "id": "CP14CurtainsWhiteOpened",
+        "name": null,
+        "description": null,
+        "parent": "CP14CurtainsWhite",
+        "suffix": "White, Open"
+    },
+    "CP14CurtainsBlue": {
+        "id": "CP14CurtainsBlue",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseCurtains",
+        "suffix": "Blue"
+    },
+    "CP14CurtainsBlueOpened": {
+        "id": "CP14CurtainsBlueOpened",
+        "name": null,
+        "description": null,
+        "parent": "CP14CurtainsBlue",
+        "suffix": "Blue, Open"
+    },
+    "CP14CurtainsRed": {
+        "id": "CP14CurtainsRed",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseCurtains",
+        "suffix": "Red"
+    },
+    "CP14CurtainsRedOpened": {
+        "id": "CP14CurtainsRedOpened",
+        "name": null,
+        "description": null,
+        "parent": "CP14CurtainsRed",
+        "suffix": "Red, Open"
+    },
+    "CP14Lamppost": {
+        "id": "CP14Lamppost",
+        "name": "lamppost",
+        "description": "A lantern hanging from a pole.",
+        "parent": "CP14BaseLamppost",
+        "suffix": "Always powered"
+    },
+    "CP14LamppostBlue": {
+        "id": "CP14LamppostBlue",
+        "name": "lamppost",
+        "description": "A lantern hanging from a pole.",
+        "parent": "CP14BaseLamppost",
+        "suffix": "Always powered, Blue"
+    },
+    "CP14Mannequin": {
+        "id": "CP14Mannequin",
+        "name": "mannequin",
+        "description": "A handy stand for clothing or armour.",
+        "parent": [
+            "Mannequin",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14WoodenPallet": {
+        "id": "CP14WoodenPallet",
+        "name": "wooden pallet",
+        "description": "wooden goods stand",
+        "parent": [
+            "CP14BasePallets",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14WoodenPalletSell": {
+        "id": "CP14WoodenPalletSell",
+        "name": "selling wooden pallet",
+        "description": null,
+        "parent": "CP14WoodenPallet",
+        "suffix": null
+    },
+    "CP14WoodenPalletBuy": {
+        "id": "CP14WoodenPalletBuy",
+        "name": "buying wooden pallet",
+        "description": null,
+        "parent": "CP14WoodenPallet",
+        "suffix": null
+    },
+    "CP14TableWoodenFrame": {
+        "id": "CP14TableWoodenFrame",
+        "name": "wooden table frame",
+        "description": "Base for any wooden table",
+        "parent": "CP14WoodenTableBase",
+        "suffix": null
+    },
+    "CP14TableWooden": {
+        "id": "CP14TableWooden",
+        "name": "wooden table",
+        "description": "A simple table made of boards.",
+        "parent": "CP14WoodenTableBase",
+        "suffix": null
+    },
+    "CP14TableWoodenRound": {
+        "id": "CP14TableWoodenRound",
+        "name": "round wooden table",
+        "description": "A simple table made of boards.",
+        "parent": "CP14WoodenTableBase",
+        "suffix": null
+    },
+    "CP14TableWoodenCounter": {
+        "id": "CP14TableWoodenCounter",
+        "name": "wooden counter",
+        "description": null,
+        "parent": "CP14TableWooden",
+        "suffix": null
+    },
+    "CP14WallmountTorch": {
+        "id": "CP14WallmountTorch",
+        "name": "wallmount torch",
+        "description": "A good, reliable light source. Too bad it doesn't last.",
+        "parent": "CP14BaseWallmount",
+        "suffix": null
+    },
+    "CP14WallmountTorchAlwaysPowered": {
+        "id": "CP14WallmountTorchAlwaysPowered",
+        "name": "always powered wallmount torch",
+        "description": null,
+        "parent": "CP14BaseWallmount",
+        "suffix": null
+    },
+    "CP14WallmountBarShelfA": {
+        "id": "CP14WallmountBarShelfA",
+        "name": "bar shelf",
+        "description": "Wall shelves to store your wine collection",
+        "parent": "CP14BaseWallmount",
+        "suffix": 1
+    },
+    "CP14WallmountBarShelfB": {
+        "id": "CP14WallmountBarShelfB",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountBarShelfA",
+        "suffix": 2
+    },
+    "CP14WallmountLampEmpty": {
+        "id": "CP14WallmountLampEmpty",
+        "name": "crystal wall lamp",
+        "description": "A simple wallmount magical device that converts crystal energy into bright light.",
+        "parent": [
+            "CP14BaseWallmount",
+            "CP14BaseCrystalSlot"
+        ],
+        "suffix": "Empty"
+    },
+    "CP14WallmountLamp": {
+        "id": "CP14WallmountLamp",
+        "name": null,
+        "description": null,
+        "parent": "CP14WallmountLampEmpty",
+        "suffix": "Small crystal"
+    },
+    "CP14WallmountOrdersBorder": {
+        "id": "CP14WallmountOrdersBorder",
+        "name": "orders board",
+        "description": "Is there a job for a witcher?",
+        "parent": [
+            "CP14BaseWallmount",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": null
+    },
+    "CP14Workbench": {
+        "id": "CP14Workbench",
+        "name": "workbench",
+        "description": "Table for the production of various basic tools.",
+        "parent": [
+            "CP14BaseWorkbench",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14WorkbenchCooking": {
+        "id": "CP14WorkbenchCooking",
+        "name": "cooking table",
+        "description": "A table to work with food. Time to cook!",
+        "parent": [
+            "CP14BaseWorkbench",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14WorkbenchSewing": {
+        "id": "CP14WorkbenchSewing",
+        "name": "sewing table",
+        "description": "A table with embroidery tools to create different clothing and materials.",
+        "parent": [
+            "CP14BaseWorkbench",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14WorkbenchAnvil": {
+        "id": "CP14WorkbenchAnvil",
+        "name": "anvil",
+        "description": "I feel really bad, please someone fix this.",
+        "parent": [
+            "CP14BaseWorkbench"
+        ],
+        "suffix": null
+    },
+    "CP14WorkbenchFurnace": {
+        "id": "CP14WorkbenchFurnace",
+        "name": "melting furnace",
+        "description": "I feel really bad, please someone fix this.",
+        "parent": [
+            "CP14BaseWorkbench"
+        ],
+        "suffix": null
+    },
+    "CP14FrameWooden": {
+        "id": "CP14FrameWooden",
+        "name": "wooden wall frame",
+        "description": "Wooden frame for any wooden wall.",
+        "parent": [
+            "BaseStructureDynamic",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": null
+    },
+    "CP14BaseCrushed": {
+        "id": "CP14BaseCrushed",
+        "name": null,
+        "description": null,
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14FrameWoodenCrushedMedium": {
+        "id": "CP14FrameWoodenCrushedMedium",
+        "name": "wooden wall frame",
+        "description": null,
+        "parent": "CP14BaseCrushed",
+        "suffix": "CrushedMedium"
+    },
+    "CP14FrameWoodenCrushedLow": {
+        "id": "CP14FrameWoodenCrushedLow",
+        "name": "wooden wall frame",
+        "description": null,
+        "parent": "CP14BaseCrushed",
+        "suffix": "CrushedLow"
+    },
+    "CP14WallStonebrickCrushedMedium": {
+        "id": "CP14WallStonebrickCrushedMedium",
+        "name": "stone brick wall",
+        "description": null,
+        "parent": "CP14BaseCrushed",
+        "suffix": "CrushedMedium"
+    },
+    "CP14WallStonebrickCrushedLow": {
+        "id": "CP14WallStonebrickCrushedLow",
+        "name": "stone brick wall",
+        "description": null,
+        "parent": "CP14BaseCrushed",
+        "suffix": "CrushedLow"
+    },
+    "CP14TravelingStoreshipAnchor": {
+        "id": "CP14TravelingStoreshipAnchor",
+        "name": "traveling storeship anchor",
+        "description": "the point of adhesion of a traveling storeship to the surface. Keep your eyes to the sky so you don't get crushed!",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14ShuttleWingBase": {
+        "id": "CP14ShuttleWingBase",
+        "name": "airship wing",
+        "description": "Giant webbed wings, capable, along with magic, of holding the heaviest objects in the air.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14ShuttleWingSmallR": {
+        "id": "CP14ShuttleWingSmallR",
+        "name": null,
+        "description": null,
+        "parent": "CP14ShuttleWingBase",
+        "suffix": "Right, Small"
+    },
+    "CP14ShuttleWingSmallL": {
+        "id": "CP14ShuttleWingSmallL",
+        "name": null,
+        "description": null,
+        "parent": "CP14ShuttleWingBase",
+        "suffix": "Left, Small"
+    },
+    "CP14ShuttleWingBigL": {
+        "id": "CP14ShuttleWingBigL",
+        "name": null,
+        "description": null,
+        "parent": "CP14ShuttleWingBase",
+        "suffix": "Left, Big"
+    },
+    "CP14ShuttleWingBigR": {
+        "id": "CP14ShuttleWingBigR",
+        "name": null,
+        "description": null,
+        "parent": "CP14ShuttleWingBase",
+        "suffix": "Right, Big"
+    },
+    "CP14BaseFireplace": {
+        "id": "CP14BaseFireplace",
+        "name": null,
+        "description": null,
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14AlchemyFurnace": {
+        "id": "CP14AlchemyFurnace",
+        "name": "alchemy furnace",
+        "description": "A furnace fueled by wood, coal, or any other burning material. Handy for heating your alchemical potions.",
+        "parent": "CP14BaseFireplace",
+        "suffix": null
+    },
+    "CP14AlchemyNormalizer": {
+        "id": "CP14AlchemyNormalizer",
+        "name": "solution normalizer",
+        "description": "An alchemical device that removes fine precipitates from solutions, and stabilizes it for further work",
+        "parent": [
+            "BaseStructureDynamic",
+            "CP14BaseCrystalSlot"
+        ],
+        "suffix": null
+    },
+    "CP14BaseVat": {
+        "id": "CP14BaseVat",
+        "name": "big vat",
+        "description": "A very large vat for storing huge amounts of liquid. Heavy, uncomfortable to carry.",
+        "parent": [
+            "BaseStructureDynamic"
+        ],
+        "suffix": null
+    },
+    "CP14CashConverter": {
+        "id": "CP14CashConverter",
+        "name": "cash converter",
+        "description": "A simple magical device connected by small portals to the empire's central bank. It allows you to convert coins between denominations, and doesn't even charge interest! That's generous.",
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14SeedbedWooden": {
+        "id": "CP14SeedbedWooden",
+        "name": "seedbed",
+        "description": "A wooden tub with a pile of earth adapted for growing plants.",
+        "parent": "CP14BaseFarmingSoil",
+        "suffix": null
+    },
+    "CP14ChestGeneric": {
+        "id": "CP14ChestGeneric",
+        "name": "Chest",
+        "description": "Chest.",
+        "parent": "BaseStructureDynamic",
+        "suffix": null
+    },
+    "CP14WoodenChestFrame": {
+        "id": "CP14WoodenChestFrame",
+        "name": "wooden chest frame",
+        "description": "Base for any wooden chest",
+        "parent": [
+            "BaseStructureDynamic",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14WoodenChest": {
+        "id": "CP14WoodenChest",
+        "name": "wooden chest",
+        "description": "A simple wooden chest for easy storage of junk.",
+        "parent": [
+            "CP14ChestGeneric",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14BrassChest": {
+        "id": "CP14BrassChest",
+        "name": "brass chest",
+        "description": "A simple brass chest for easy storage of junk.",
+        "parent": [
+            "CP14WoodenChest"
+        ],
+        "suffix": null
+    },
+    "CP14CrateCoffin": {
+        "id": "CP14CrateCoffin",
+        "name": "coffin",
+        "description": "A comfortable and nice looking coffin to comfortably await your resurrection.",
+        "parent": [
+            "CP14ChestGeneric",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14BaseCrate": {
+        "id": "CP14BaseCrate",
+        "name": null,
+        "description": null,
+        "parent": "BaseStructureDynamic",
+        "suffix": null
+    },
+    "CP14BaseSmallCrate": {
+        "id": "CP14BaseSmallCrate",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseCrate",
+        "suffix": null
+    },
+    "CP14LargeWoodenCrate": {
+        "id": "CP14LargeWoodenCrate",
+        "name": "large wooden crate",
+        "description": "solid wooden crate",
+        "parent": [
+            "CP14BaseCrate",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14SmallWoodenCrate": {
+        "id": "CP14SmallWoodenCrate",
+        "name": "small wooden crate",
+        "description": "solid wooden crate",
+        "parent": [
+            "CP14BaseSmallCrate",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    },
+    "CP14WallStone": {
+        "id": "CP14WallStone",
+        "name": "rock",
+        "description": "A solid stone natural wall. It has a cave-like coldness to it.",
+        "parent": "CP14BaseWall",
+        "suffix": null
+    },
+    "CP14WallStoneIndestructable": {
+        "id": "CP14WallStoneIndestructable",
+        "name": "dense rock",
+        "description": "An extremely durable stone. Your tools don't seem to be enough to break through it.",
+        "parent": "CP14BaseWall",
+        "suffix": "Undestructable"
+    },
+    "CP14WallDirt": {
+        "id": "CP14WallDirt",
+        "name": "earth wall",
+        "description": "A tall pile of dirt. Can a house be built from it?",
+        "parent": "CP14BaseWall",
+        "suffix": null
+    },
+    "CP14WallStoneCopperOre": {
+        "id": "CP14WallStoneCopperOre",
+        "name": null,
+        "description": "A solid stone natural wall. You can see the sharp flecks of copper in it.",
+        "parent": "CP14WallStone",
+        "suffix": "copper ore"
+    },
+    "CP14WallStoneIronOre": {
+        "id": "CP14WallStoneIronOre",
+        "name": null,
+        "description": "A solid stone natural wall. You can see the sharp flecks of iron in it.",
+        "parent": "CP14WallStone",
+        "suffix": "iron ore"
+    },
+    "CP14WallStoneGoldOre": {
+        "id": "CP14WallStoneGoldOre",
+        "name": null,
+        "description": "A solid stone natural wall. You see the tantalizing particles of gold in it.",
+        "parent": "CP14WallStone",
+        "suffix": "gold ore"
+    },
+    "CP14BaseWall": {
+        "id": "CP14BaseWall",
+        "name": "wall",
+        "description": "Sturdy enough to cover you from threats or cold winds.",
+        "parent": "BaseWall",
+        "suffix": null
+    },
+    "CP14WallStonebrick": {
+        "id": "CP14WallStonebrick",
+        "name": "stone brick wall",
+        "description": null,
+        "parent": "CP14BaseWall",
+        "suffix": null
+    },
+    "CP14WallMarbleBrick": {
+        "id": "CP14WallMarbleBrick",
+        "name": "marble brick wall",
+        "description": null,
+        "parent": "CP14BaseWall",
+        "suffix": null
+    },
+    "CP14WallBrownbrick": {
+        "id": "CP14WallBrownbrick",
+        "name": "brick wall",
+        "description": null,
+        "parent": "CP14BaseWall",
+        "suffix": null
+    },
+    "CP14WallWooden": {
+        "id": "CP14WallWooden",
+        "name": "wooden wall",
+        "description": null,
+        "parent": [
+            "CP14BaseWall",
+            "CP14BaseFlammableSpreading"
+        ],
+        "suffix": null
+    },
+    "CP14WallCardboard": {
+        "id": "CP14WallCardboard",
+        "name": "cardboard Wall",
+        "description": "A thin, flimsy wall made of paper and cardboard. Popular in warm countries.",
+        "parent": [
+            "CP14WallWooden",
+            "CP14BaseFlammableSpreadingStrong"
+        ],
+        "suffix": null
+    },
+    "CP14WallCyan": {
+        "id": "CP14WallCyan",
+        "name": "cyan wall",
+        "description": null,
+        "parent": "CP14BaseWall",
+        "suffix": null
+    },
+    "CP14WallSkulls": {
+        "id": "CP14WallSkulls",
+        "name": "skulls wall",
+        "description": null,
+        "parent": "CP14BaseWall",
+        "suffix": null
+    },
+    "CP14WindowDirectional": {
+        "id": "CP14WindowDirectional",
+        "name": "directional window",
+        "description": "Don't smudge up the glass down there.",
+        "parent": "BaseStructure",
+        "suffix": null
+    },
+    "CP14WindowBase": {
+        "id": "CP14WindowBase",
+        "name": null,
+        "description": null,
+        "parent": "Window",
+        "suffix": null
+    },
+    "CP14WindowStoneBrick": {
+        "id": "CP14WindowStoneBrick",
+        "name": "stone brick window",
+        "description": "A stone brick wall with a glass window in it.",
+        "parent": "CP14WindowBase",
+        "suffix": null
+    },
+    "CP14WindowMarbleBrick": {
+        "id": "CP14WindowMarbleBrick",
+        "name": "marble brick window",
+        "description": "A stone brick wall with a glass window in it.",
+        "parent": "CP14WindowBase",
+        "suffix": null
+    },
+    "CP14WindowWooden": {
+        "id": "CP14WindowWooden",
+        "name": "wooden window",
+        "description": "A wooden wall with a glass window in it.",
+        "parent": [
+            "CP14WindowBase",
+            "CP14BaseFlammable"
+        ],
+        "suffix": null
+    }
+}
