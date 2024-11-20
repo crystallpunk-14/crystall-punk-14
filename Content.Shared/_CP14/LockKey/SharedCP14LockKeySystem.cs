@@ -5,6 +5,7 @@ using Content.Shared.Lock;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
+using Content.Shared.Doors.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -81,6 +82,12 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
 
         if (!args.CanReach || args.Target is not { Valid: true })
             return;
+
+        if (TryComp<DoorComponent>(args.Target, out var doorComponent))
+        {
+            if (doorComponent.State == DoorState.Open)
+                return;
+        }
 
         if (!_lockQuery.TryComp(args.Target, out _))
             return;
