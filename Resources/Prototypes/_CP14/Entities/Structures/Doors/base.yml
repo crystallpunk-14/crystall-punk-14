@@ -19,3 +19,10 @@
     locked: false
   - type: PlacementReplacement
     key: walls
+  - type: InteractionPopup
+    interactSuccessString: cp14-closed-door-interact-popup
+    messagePerceivedByOthers: cp14-closed-door-interact-popup
+    interactSuccessSound:
+      collection: CP14Doorknob
+      params:
+        variation: 0.03
