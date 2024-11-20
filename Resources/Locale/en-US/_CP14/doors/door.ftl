@@ -1,1 +1,1 @@
-cp14-closed-door-interact-popup = The door is locked.
+cp14-closed-door-interact-popup = Locked.
