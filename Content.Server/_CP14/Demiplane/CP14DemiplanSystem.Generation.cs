@@ -5,7 +5,6 @@ using Content.Server._CP14.Demiplane.Jobs;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.MagicManacostModify;
-using Content.Shared.Storage.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Verbs;
@@ -15,6 +14,8 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Map.Components;
+
 
 namespace Content.Server._CP14.Demiplane;
 
@@ -140,9 +141,9 @@ public sealed partial class CP14DemiplaneSystem
         if (generator.Comp.Location is null)
             return;
 
-        if (HasComp<StorageFillComponent>(_transform.GetParentUid(args.User)))
+        if (!HasComp<MapGridComponent>(_transform.GetParentUid(generator.Owner)))
         {
-            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-in-crate", ("name", MetaData(generator).EntityName)), generator, args.User);
+            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
             return;
         }
 
