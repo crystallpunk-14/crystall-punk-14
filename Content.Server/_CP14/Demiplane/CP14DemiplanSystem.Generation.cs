@@ -5,6 +5,7 @@ using Content.Server._CP14.Demiplane.Jobs;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.MagicManacostModify;
+using Content.Shared.Storage.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Verbs;
@@ -138,6 +139,12 @@ public sealed partial class CP14DemiplaneSystem
     {
         if (generator.Comp.Location is null)
             return;
+
+        if (HasComp<StorageFillComponent>(_transform.GetParentUid(args.User)))
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-in-crate", ("name", MetaData(generator).EntityName)), generator, args.User);
+            return;
+        }
 
         //We cant open demiplan in another demiplan
         if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid))
