@@ -23,6 +23,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
     private EntityQuery<LockComponent> _lockQuery;
     private EntityQuery<CP14LockComponent> _cp14LockQuery;
     private EntityQuery<CP14KeyComponent> _keyQuery;
+    private EntityQuery<DoorComponent> _doorQuery;
 
     public const int DepthComplexity = 2;
 
@@ -33,6 +34,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         _lockQuery = GetEntityQuery<LockComponent>();
         _cp14LockQuery = GetEntityQuery<CP14LockComponent>();
         _keyQuery = GetEntityQuery<CP14KeyComponent>();
+        _doorQuery = GetEntityQuery<DoorComponent>();
 
         SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
@@ -83,11 +85,8 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!args.CanReach || args.Target is not { Valid: true })
             return;
 
-        if (TryComp<DoorComponent>(args.Target, out var doorComponent))
-        {
-            if (doorComponent.State == DoorState.Open)
-                return;
-        }
+        if (_doorQuery.TryComp(args.Target, out var doorComponent) && doorComponent.State == DoorState.Open)
+            return;
 
         if (!_lockQuery.TryComp(args.Target, out _))
             return;
