@@ -141,14 +141,8 @@ public sealed partial class CP14DemiplaneSystem
         if (generator.Comp.Location is null)
             return;
 
-        if (!HasComp<MapGridComponent>(_transform.GetParentUid(generator.Owner)))
-        {
-            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
-            return;
-        }
-
-        //We cant open demiplan in another demiplan
-        if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid))
+        //We cant open demiplan in another demiplan or if parent is not Map
+        if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid) || !HasComp<MapGridComponent>(_transform.GetParentUid(generator.Owner)))
         {
             _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
             return;
