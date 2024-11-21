@@ -21,11 +21,11 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TileSystem _tile = default!;
-    [Dependency] private readonly ITileDefinitionManager _tiledef = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
 
-    private EntProtoId _fireProto = "CP14Fire";
+    private readonly EntProtoId _fireProto = "CP14Fire";
 
-    private HashSet<Entity<CP14FireSpreadComponent>> _spreadUids = new();
+    private readonly HashSet<Entity<CP14FireSpreadComponent>> _spreadEnts = new();
 
     public override void Update(float frameTime)
     {
@@ -58,7 +58,7 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
 
     private void UpdateFireSpread()
     {
-        _spreadUids.Clear();
+        _spreadEnts.Clear();
 
         var query = EntityQueryEnumerator<CP14ActiveFireSpreadingComponent, CP14FireSpreadComponent, FlammableComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out _, out var spread, out var flammable, out var xform))
@@ -75,57 +75,57 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
             var cooldown = _random.NextFloat(spread.SpreadCooldownMin, spread.SpreadCooldownMax);
             spread.NextSpreadTime = _gameTiming.CurTime + TimeSpan.FromSeconds(cooldown);
 
-            _spreadUids.Add(new Entity<CP14FireSpreadComponent>(uid, spread));
+            _spreadEnts.Add(new Entity<CP14FireSpreadComponent>(uid, spread));
         }
 
-        foreach (var uid in _spreadUids)
+        foreach (var uid in _spreadEnts)
         {
-            IgniteEntities(uid, uid.Comp);
-            IgniteTiles(uid, uid.Comp);
+            IgniteEntities(uid);
+            IgniteTiles(uid);
         }
     }
 
-    private void IgniteEntities(EntityUid uid, CP14FireSpreadComponent spread)
+    private void IgniteEntities(Entity<CP14FireSpreadComponent> spread)
     {
-        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(uid),
-            spread.Radius,
+        var targets = _lookup.GetEntitiesInRange<FlammableComponent>(_transform.GetMapCoordinates(spread),
+            spread.Comp.Radius,
             LookupFlags.Uncontained);
         foreach (var target in targets)
         {
-            if (!_random.Prob(spread.Prob))
+            if (!_random.Prob(spread.Comp.Prob))
                 continue;
 
-            _flammable.Ignite(target, uid);
+            _flammable.Ignite(target, spread);
         }
     }
 
-    private void IgniteTiles(EntityUid uid, CP14FireSpreadComponent spread)
+    private void IgniteTiles(Entity<CP14FireSpreadComponent> spread)
     {
-        var xform = Transform(uid);
+        var xform = Transform(spread);
         // Ignore items inside containers
         if (!TryComp<MapGridComponent>(xform.ParentUid, out var grid))
             return;
 
         var localPos = xform.Coordinates.Position;
-        var tileRefs = _mapSystem.GetLocalTilesIntersecting(grid.Owner,
+        var tileRefs = _mapSystem.GetLocalTilesIntersecting(xform.ParentUid,
                 grid,
                 new Box2(
-                    localPos + new Vector2(-spread.Radius, -spread.Radius),
-                    localPos + new Vector2(spread.Radius, spread.Radius)))
+                    localPos + new Vector2(-spread.Comp.Radius, -spread.Comp.Radius),
+                    localPos + new Vector2(spread.Comp.Radius, spread.Comp.Radius)))
             .ToList();
 
-        foreach (var tileref in tileRefs)
+        foreach (var tileRef in tileRefs)
         {
-            if (!_random.Prob(spread.ProbTile))
+            if (!_random.Prob(spread.Comp.ProbTile))
                 continue;
 
-            var tile = tileref.Tile.GetContentTileDefinition();
+            var tile = tileRef.Tile.GetContentTileDefinition();
 
             if (tile.BurnedTile is null)
                 continue;
 
-            Spawn(_fireProto, _mapSystem.ToCenterCoordinates(tileref, grid));
-            _tile.ReplaceTile(tileref, (ContentTileDefinition)_tiledef[tile.BurnedTile]);
+            Spawn(_fireProto, _mapSystem.ToCenterCoordinates(tileRef, grid));
+            _tile.ReplaceTile(tileRef, (ContentTileDefinition)_tileDef[tile.BurnedTile]);
         }
     }
 }
