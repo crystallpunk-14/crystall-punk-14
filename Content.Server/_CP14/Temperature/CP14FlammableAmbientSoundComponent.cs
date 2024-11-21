@@ -9,12 +9,3 @@ namespace Content.Server._CP14.Temperature;
 public sealed partial class CP14FlammableAmbientSoundComponent : Component
 {
 }
-
-/// <summary>
-/// Raised whenever an FlammableComponen OnFire is Changed
-/// </summary>
-[ByRefEvent]
-public readonly record struct OnFireChangedEvent(bool OnFire)
-{
-    public readonly bool OnFire = OnFire;
-}

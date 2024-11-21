@@ -76,7 +76,7 @@
       - state: inhand-right
         shader: unshaded
   - type: TimedDespawn
-    lifetime: 60 # 1 min
+    lifetime: 120 # 2 min
   - type: Sprite
     sprite: _CP14/Objects/Misc/artificial_flame.rsi
     layers:
@@ -84,6 +84,8 @@
       shader: unshaded
   - type: PointLight
     color: "#eea911"
+    energy: 0.5
+    radius: 2.5
   - type: Fixtures
     fixtures:
       fix1:
@@ -138,9 +140,8 @@
         variation: 0.250
         volume: -12
     cPAnimationLength: 0.15
-  - type: IgnitionSource
-    temperature: 400
-    ignited: true
+  - type: CP14DelayedIgnitionSource
+    enabled: true
 
 - type: entity
   parent: CP14BaseSpellScrollFire
