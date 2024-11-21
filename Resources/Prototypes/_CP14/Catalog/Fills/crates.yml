@@ -49,6 +49,8 @@
       - id: CP14BaseWrench
         weight: 2
       - id: CP14Scissors
+      - id: CP14Torch
+      - id: CP14Lighter
       - id: CP14ManaOperationGlove
       - id: CP14BaseShovel
       - id: CP14BaseMop
@@ -59,7 +61,6 @@
       - id: CP14Rope
       - id: CP14Nail10
       - id: CP14EnergyCrystalSmall
-      - id: CP14Lighter
       - id: CP14BaseSharpeningStone
       - !type:NestedSelector
         tableId: CP14RandomVials

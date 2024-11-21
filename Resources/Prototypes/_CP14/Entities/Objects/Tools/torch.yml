@@ -11,7 +11,10 @@
       - state: torch-unlit
         map: ["fuel"]
   - type: Item
-    size: Small
+    size: Normal
+    shape:
+    - 0,0,0,2
+    storedRotation: -65
   - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false

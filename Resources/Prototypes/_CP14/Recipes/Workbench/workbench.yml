@@ -51,3 +51,12 @@
   stacks:
     CP14WoodenPlanks: 3
   result: CP14BaseBattleStaff
+
+- type: CP14Recipe
+  id: CP14Torch
+  tag: CP14RecipeWorkbench
+  craftTime: 4
+  stacks:
+    CP14WoodenPlanks: 3
+    CP14Cloth: 1
+  result: CP14Torch

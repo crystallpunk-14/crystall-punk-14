@@ -51,6 +51,9 @@
             - material: CP14WoodenPlanks
               amount: 3
               doAfter: 3
+            - material: CP14Cloth
+              amount: 1
+              doAfter: 1
 
     - node: CP14WallmountTorch
       entity: CP14WallmountTorch

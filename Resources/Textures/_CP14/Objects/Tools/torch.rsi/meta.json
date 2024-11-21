@@ -85,12 +85,6 @@
     },
     {
       "name": "torch-unlit"
-    },
-    {
-      "name": "unlit-inhand-left"
-    },
-    {
-      "name": "unlit-inhand-right"
     }
   ]
 }
