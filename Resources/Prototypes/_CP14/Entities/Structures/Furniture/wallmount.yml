@@ -37,13 +37,6 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTypeTrigger
-          damageType: Heat
-          damage: 50
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
   - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
