@@ -11,4 +11,5 @@
     sprite: _CP14/Objects/Tools/flint.rsi
     state: icon
   - type: CP14DelayedIgnitionSource
+    enabled: true
   # TODO: Damageable, Ignite attempt self damage, Ignite prob

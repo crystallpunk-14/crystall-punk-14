@@ -48,6 +48,9 @@ public abstract partial class CP14SharedFireSpreadSystem : EntitySystem
         if (!args.CanReach || args.Handled || args.Target == null)
             return;
 
+        if (!ent.Comp.Enabled)
+            return;
+
         var time = ent.Comp.Delay;
         var caution = true;
 

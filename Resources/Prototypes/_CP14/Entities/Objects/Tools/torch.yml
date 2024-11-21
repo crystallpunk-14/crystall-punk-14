@@ -1,0 +1,58 @@
+- type: entity
+  id: CP14Torch
+  parent: BaseItem
+  name: torch
+  description: At its core, a stick burning on one side. Used to light up the area.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/torch.rsi
+    layers:
+      - state: torch-unlit
+  - type: Item
+    size: Small
+  - type: CP14FlammableAmbientSound
+  - type: AmbientSound
+    enabled: false
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 1.0
+    firestackFade: 0.1
+    damage:
+      types:
+        Heat: 0.03
+  - type: FireVisuals
+    sprite: _CP14/Objects/Tools/torch.rsi
+    normalState: lit-overlay
+  - type: ToggleableLightVisuals
+    spriteLayer: null
+    inhandVisuals:
+      left:
+      - state: lit-inhand-left
+        shader: unshaded
+      right:
+      - state: lit-inhand-right
+        shader: unshaded
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: CP14DelayedIgnitionSource

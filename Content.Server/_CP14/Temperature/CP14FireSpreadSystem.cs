@@ -34,6 +34,13 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
         base.Initialize();
 
         SubscribeLocalEvent<FlammableComponent, CP14IgnitionDoAfter>(OnFlammableIgnited);
+        SubscribeLocalEvent<CP14DelayedIgnitionSourceComponent, OnFireChangedEvent>(OnIgnitionSourceFireChanged);
+    }
+
+    private void OnIgnitionSourceFireChanged(Entity<CP14DelayedIgnitionSourceComponent> ent, ref OnFireChangedEvent args)
+    {
+        ent.Comp.Enabled = args.OnFire;
+        Dirty(ent);
     }
 
     private void OnFlammableIgnited(Entity<FlammableComponent> ent, ref CP14IgnitionDoAfter args)

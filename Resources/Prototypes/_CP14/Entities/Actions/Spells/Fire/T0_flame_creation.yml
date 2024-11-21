@@ -139,6 +139,7 @@
         volume: -12
     cPAnimationLength: 0.15
   - type: CP14DelayedIgnitionSource
+    enabled: true
 
 - type: entity
   parent: CP14BaseSpellScrollFire

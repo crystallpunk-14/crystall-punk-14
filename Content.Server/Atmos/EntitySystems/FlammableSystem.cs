@@ -454,8 +454,10 @@ namespace Content.Server.Atmos.EntitySystems
                         continue;
                     }
 
-                    var source = EnsureComp<IgnitionSourceComponent>(uid);
-                    _ignitionSourceSystem.SetIgnited((uid, source));
+                    //CP14 ignitionSource replace
+                    //var source = EnsureComp<IgnitionSourceComponent>(uid);
+                    //_ignitionSourceSystem.SetIgnited((uid, source));
+                    //CP14 ignitionSource replace end
 
                     if (TryComp(uid, out TemperatureComponent? temp))
                         _temperatureSystem.ChangeHeat(uid, 12500 * flammable.FireStacks, false, temp);
