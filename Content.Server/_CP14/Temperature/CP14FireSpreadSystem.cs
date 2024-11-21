@@ -24,22 +24,31 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
 
     private EntProtoId _fireProto = "CP14Fire";
 
+    private HashSet<Entity<CP14FireSpreadComponent>> _spreadUids = new();
+
     public override void Initialize()
     {
-        SubscribeLocalEvent<CP14FireSpreadComponent, OnFireChangedEvent>(OnCompInit);
-        SubscribeLocalEvent<CP14DespawnOnExtinguishComponent, OnFireChangedEvent>(OnFireChanged);
+        SubscribeLocalEvent<CP14FireSpreadComponent, OnFireChangedEvent>(OnFireChangedSpread);
+        SubscribeLocalEvent<CP14DespawnOnExtinguishComponent, OnFireChangedEvent>(OnFireChangedDespawn);
     }
 
-    private void OnFireChanged(Entity<CP14DespawnOnExtinguishComponent> ent, ref OnFireChangedEvent args)
+    private void OnFireChangedDespawn(Entity<CP14DespawnOnExtinguishComponent> ent, ref OnFireChangedEvent args)
     {
         if (!args.OnFire)
             QueueDel(ent);
     }
 
-    private void OnCompInit(Entity<CP14FireSpreadComponent> ent, ref OnFireChangedEvent args)
+    private void OnFireChangedSpread(Entity<CP14FireSpreadComponent> ent, ref OnFireChangedEvent args)
     {
-        if (!args.OnFire)
-            return;
+        if (args.OnFire)
+        {
+            EnsureComp<CP14ActiveFireSpreadingComponent>(ent);
+        }
+        else
+        {
+            if (HasComp<CP14ActiveFireSpreadingComponent>(ent))
+                RemCompDeferred<CP14ActiveFireSpreadingComponent>(ent);
+        }
 
         var cooldown = _random.NextFloat(ent.Comp.SpreadCooldownMin, ent.Comp.SpreadCooldownMax);
         ent.Comp.NextSpreadTime = _gameTiming.CurTime + TimeSpan.FromSeconds(cooldown);
@@ -76,9 +85,10 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
 
     private void UpdateFireSpread()
     {
-        List<Entity<CP14FireSpreadComponent>> spreadUids = new();
-        var query = EntityQueryEnumerator<CP14FireSpreadComponent, FlammableComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var spread, out var flammable, out var xform))
+        _spreadUids.Clear();
+
+        var query = EntityQueryEnumerator<CP14ActiveFireSpreadingComponent, CP14FireSpreadComponent, FlammableComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out _, out var spread, out var flammable, out var xform))
         {
             if (!flammable.OnFire)
                 continue;
@@ -92,10 +102,10 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
             var cooldown = _random.NextFloat(spread.SpreadCooldownMin, spread.SpreadCooldownMax);
             spread.NextSpreadTime = _gameTiming.CurTime + TimeSpan.FromSeconds(cooldown);
 
-            spreadUids.Add(new Entity<CP14FireSpreadComponent>(uid, spread));
+            _spreadUids.Add(new Entity<CP14FireSpreadComponent>(uid, spread));
         }
 
-        foreach (var uid in spreadUids)
+        foreach (var uid in _spreadUids)
         {
             IgniteEntities(uid, uid.Comp);
             IgniteTiles(uid, uid.Comp);
@@ -119,11 +129,8 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
     private void IgniteTiles(EntityUid uid, CP14FireSpreadComponent spread)
     {
         var xform = Transform(uid);
-        if (!TryComp<MapGridComponent>(xform.GridUid, out var grid))
-            return;
-
         // Ignore items inside containers
-        if (!HasComp<MapGridComponent>(xform.ParentUid))
+        if (!TryComp<MapGridComponent>(xform.ParentUid, out var grid))
             return;
 
         var localPos = xform.Coordinates.Position;
@@ -133,7 +140,6 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
                     localPos + new Vector2(-spread.Radius, -spread.Radius),
                     localPos + new Vector2(spread.Radius, spread.Radius)))
             .ToList();
-
 
         foreach (var tileref in tileRefs)
         {

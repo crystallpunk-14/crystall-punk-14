@@ -77,7 +77,8 @@
         Heat: 0
   - type: CP14Fireplace
     fuel: 15
-  #- type: CP14AutoIgnite
+  - type: CP14AutoIgnite
+  - type: CP14ActiveFireSpreading
   - type: TimedDespawn
     lifetime: 60
   - type: CP14FireSpread
