@@ -92,6 +92,7 @@
   - type: Tag
     tags:
       - FootstepSound
+      - CP14Mosquito
   - type: StealTarget
     stealGroup: CP14Mole
 
@@ -150,7 +151,7 @@
   components:
   - type: HTN
     rootTask:
-      task: CP14JustAttackingHostileCompound
+      task: CP14ApproachEnemyCompound
     blackboard:
       VisionRadius: !type:Single
         8
@@ -169,7 +170,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.30
+          radius: 0.70
         density: 5
         mask:
         - FlyingMobMask
@@ -191,18 +192,25 @@
   - type: Stamina
     critThreshold: 50
   - type: CombatMode
-  - type: MeleeWeapon
-    animation:
-    angle: 0
+  - type: DamageContacts
     damage:
       types:
         Piercing: 1
         Bloodloss: 1
-    soundHit:
-        path: /Audio/Effects/bite.ogg
+    ignoreWhitelist:
+      tags:
+      - CP14Mosquito
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.9
+    sprintSpeedModifier: 0.9
+    ignoreWhitelist:
+      tags:
+      - CP14Mosquito
+  - type: MovementIgnoreGravity
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 2.5
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2
+    friction: 2
   - type: Grammar
     attributes:
       gender: epicene
