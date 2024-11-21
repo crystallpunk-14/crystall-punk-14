@@ -56,8 +56,10 @@
       - id: CP14BaseMop
       - id: CP14BaseBroom
       - id: CP14BasePickaxe
-      - id: CP14CrystalLampBlueEmpty
-      - id: CP14CrystalLampOrangeEmpty
+      - !type:GroupSelector
+        children:
+        - id: CP14CrystalLampBlueEmpty
+        - id: CP14CrystalLampOrangeEmpty
       - id: CP14Rope
       - id: CP14Nail10
       - id: CP14EnergyCrystalSmall
