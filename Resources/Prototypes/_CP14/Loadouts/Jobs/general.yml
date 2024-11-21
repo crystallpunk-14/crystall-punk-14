@@ -304,6 +304,7 @@
   - CP14BaseDagger
   - CP14BaseSickle
   - CP14BasePickaxe
+  - CP14Lighter
 
 - type: loadout
   id: CP14MagicHealingStaff
@@ -387,6 +388,12 @@
   storage:
     back:
     - CP14BasePickaxe
+
+- type: loadout
+  id: CP14Lighter
+  storage:
+    back:
+    - CP14Lighter
 
 # Spells
 

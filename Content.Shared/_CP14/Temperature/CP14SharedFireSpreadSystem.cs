@@ -70,6 +70,7 @@ public abstract partial class CP14SharedFireSpreadSystem : EntitySystem
             BreakOnDropItem = true,
             BreakOnHandChange = true,
             BlockDuplicate = true,
+            CancelDuplicate = true
         });
 
         var selfMessage = Loc.GetString("cp14-attempt-ignite-caution-self",

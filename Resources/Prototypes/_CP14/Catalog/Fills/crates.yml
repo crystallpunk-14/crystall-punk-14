@@ -59,6 +59,7 @@
       - id: CP14Rope
       - id: CP14Nail10
       - id: CP14EnergyCrystalSmall
+      - id: CP14Lighter
       - id: CP14BaseSharpeningStone
       - !type:NestedSelector
         tableId: CP14RandomVials

@@ -7,5 +7,5 @@ namespace Content.Shared._CP14.Temperature;
 public sealed partial class CP14DelayedIgnitionSourceComponent : Component
 {
     [DataField]
-    public TimeSpan Delay = TimeSpan.FromSeconds(2f);
+    public TimeSpan Delay = TimeSpan.FromSeconds(3f);
 }
