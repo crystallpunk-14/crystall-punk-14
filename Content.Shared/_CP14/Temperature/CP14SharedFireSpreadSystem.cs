@@ -2,6 +2,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Content.Shared.Temperature;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
@@ -19,6 +20,7 @@ public abstract partial class CP14SharedFireSpreadSystem : EntitySystem
 
         SubscribeLocalEvent<CP14FireSpreadComponent, OnFireChangedEvent>(OnFireChangedSpread);
         SubscribeLocalEvent<CP14DespawnOnExtinguishComponent, OnFireChangedEvent>(OnFireChangedDespawn);
+        SubscribeLocalEvent<CP14DelayedIgnitionSourceComponent, OnFireChangedEvent>(OnIgnitionSourceFireChanged);
         SubscribeLocalEvent<CP14DelayedIgnitionSourceComponent, AfterInteractEvent>(OnDelayedIgniteAttempt);
     }
 
@@ -86,6 +88,12 @@ public abstract partial class CP14SharedFireSpreadSystem : EntitySystem
             args.User,
             args.User,
             caution ? PopupType.MediumCaution : PopupType.Small);
+    }
+
+    private void OnIgnitionSourceFireChanged(Entity<CP14DelayedIgnitionSourceComponent> ent, ref OnFireChangedEvent args)
+    {
+        ent.Comp.Enabled = args.OnFire;
+        Dirty(ent);
     }
 }
 

@@ -144,15 +144,16 @@ namespace Content.Server.Atmos.EntitySystems
         {
             if (args.Handled)
                 return;
-
             var isHotEvent = new IsHotEvent();
             RaiseLocalEvent(args.Used, isHotEvent);
 
             if (!isHotEvent.IsHot)
                 return;
 
+            /* //CP14 disabling igniting via direact interact. Only from DelayedIgnitionSource
             Ignite(uid, args.Used, flammable, args.User);
             args.Handled = true;
+            */
         }
 
         private void OnExtinguishActivateInWorld(EntityUid uid, ExtinguishOnInteractComponent component, ActivateInWorldEvent args)
@@ -263,6 +264,13 @@ namespace Content.Server.Atmos.EntitySystems
 
         public void UpdateAppearance(EntityUid uid, FlammableComponent? flammable = null, AppearanceComponent? appearance = null)
         {
+            //CrystallEdge bonfire moment
+            if (!Resolve(uid, ref flammable))
+                return;
+            var ev = new OnFireChangedEvent(flammable.OnFire);
+            RaiseLocalEvent(uid, ref ev);
+            //CrystallEdge bonfire moment end
+
             if (!Resolve(uid, ref flammable, ref appearance))
                 return;
 
@@ -316,12 +324,6 @@ namespace Content.Server.Atmos.EntitySystems
 
             _ignitionSourceSystem.SetIgnited(uid, false);
 
-
-            //CrystallEdge bonfire moment
-            var ev = new OnFireChangedEvent(flammable.OnFire);
-            RaiseLocalEvent(uid, ref ev);
-            //CrystallEdge bonfire moment end
-
             UpdateAppearance(uid, flammable);
         }
 
@@ -343,11 +345,6 @@ namespace Content.Server.Atmos.EntitySystems
                 else
                     _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSource):actor}");
                 flammable.OnFire = true;
-
-                //CrystallEdge fireplace moment
-                var ev = new OnFireChangedEvent(flammable.OnFire);
-                RaiseLocalEvent(uid, ref ev);
-                //CrystallEdge fireplace moment end
             }
 
             UpdateAppearance(uid, flammable);
@@ -454,10 +451,8 @@ namespace Content.Server.Atmos.EntitySystems
                         continue;
                     }
 
-                    //CP14 ignitionSource replace
-                    //var source = EnsureComp<IgnitionSourceComponent>(uid);
-                    //_ignitionSourceSystem.SetIgnited((uid, source));
-                    //CP14 ignitionSource replace end
+                    var source = EnsureComp<IgnitionSourceComponent>(uid);
+                    _ignitionSourceSystem.SetIgnited((uid, source));
 
                     if (TryComp(uid, out TemperatureComponent? temp))
                         _temperatureSystem.ChangeHeat(uid, 12500 * flammable.FireStacks, false, temp);
