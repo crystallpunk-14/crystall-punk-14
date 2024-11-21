@@ -37,13 +37,6 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTypeTrigger
-          damageType: Heat
-          damage: 50
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
   - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
@@ -81,6 +74,8 @@
   - type: Construction
     graph: CP14WallmountTorch
     node: CP14WallmountTorch
+  - type: CP14IgnitionModifier
+    hideCaution: true
 
 - type: entity
   id: CP14WallmountTorchAlwaysPowered

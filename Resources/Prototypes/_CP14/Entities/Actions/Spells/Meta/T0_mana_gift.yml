@@ -33,7 +33,7 @@
       - CP14MagicEnergyCrystalSlot
     itemIconStyle: BigAction
     interactOnMiss: false
-    canTargetSelf: false
+    canTargetSelf: true
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:

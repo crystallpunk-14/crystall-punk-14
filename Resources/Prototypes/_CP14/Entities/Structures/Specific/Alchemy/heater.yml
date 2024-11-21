@@ -53,13 +53,16 @@
     maxItemSize: Normal
     grid:
     - 0,0,2,2
-    blacklist:
+    cP14Ignorelist:
       components:
         - IgnitionSource
+        - CP14DelayedIgnitionSource
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+  - type: CP14IgnitionModifier
+    hideCaution: true
 
 - type: entity
   id: CP14AlchemyFurnace

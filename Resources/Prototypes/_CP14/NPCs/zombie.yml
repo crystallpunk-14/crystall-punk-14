@@ -1,0 +1,9 @@
+- type: htnCompound
+  id: CP14ZombieCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: CP14MeleeWeaponlessCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
