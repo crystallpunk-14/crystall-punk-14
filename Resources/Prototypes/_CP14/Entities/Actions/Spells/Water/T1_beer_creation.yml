@@ -54,6 +54,7 @@
   id: CP14LiquidDropBeer
   parent: CP14LiquidDropWater
   categories: [ ForkFiltered ]
+  suffix: Beer
   components:
   - type: SolutionContainerManager
     solutions:
