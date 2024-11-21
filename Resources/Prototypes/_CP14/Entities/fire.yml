@@ -6,6 +6,7 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Clickable
   - type: Sprite
     drawdepth: Effects
     snapCardinals: true
@@ -75,9 +76,11 @@
     damage:
       types:
         Heat: 0
+  - type: Damageable
   - type: CP14Fireplace
     fuel: 15
-  #- type: CP14AutoIgnite
+  - type: CP14AutoIgnite
+  - type: CP14ActiveFireSpreading
   - type: TimedDespawn
     lifetime: 60
   - type: CP14FireSpread

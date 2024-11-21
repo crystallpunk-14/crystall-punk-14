@@ -3,6 +3,9 @@
   name: Flash Light
   description: Creates a flash of bright, blinding light.
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: flash_light
   - type: CP14MagicEffect
     magicType: LightDarkness
     manaCost: 10

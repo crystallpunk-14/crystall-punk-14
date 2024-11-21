@@ -291,7 +291,7 @@
   maxLimit: 2
   loadouts:
   - CP14MagicHealingStaff
-  - CP14ClothingRingManaGift
+  - CP14ManaOperationGlove
   - CP14EnergyCrystalSmall
   - CP14CrystalLampOrangeEmpty
   - CP14BaseSharpeningStone
@@ -304,18 +304,19 @@
   - CP14BaseDagger
   - CP14BaseSickle
   - CP14BasePickaxe
+  - CP14Lighter
+  - CP14Torch
 
 - type: loadout
   id: CP14MagicHealingStaff
-  storage:
-    neck:
-    - CP14MagicHealingStaff
+  inhand:
+  - CP14MagicHealingStaff
 
 - type: loadout
-  id: CP14ClothingRingManaGift
+  id: CP14ManaOperationGlove
   storage:
     back:
-    - CP14ClothingRingManaGift
+    - CP14ManaOperationGlove
 
 - type: loadout
   id: CP14EnergyCrystalSmall
@@ -388,3 +389,98 @@
   storage:
     back:
     - CP14BasePickaxe
+
+- type: loadout
+  id: CP14Lighter
+  storage:
+    back:
+    - CP14Lighter
+
+- type: loadout
+  id: CP14Torch
+  storage:
+    back:
+    - CP14Torch
+
+# Spells
+
+- type: loadoutGroup
+  id: CP14GeneralSpells
+  name: cp14-loadout-general-spells
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CP14ActionSpellFlameCreation
+  - CP14ActionSpellCureWounds
+  - CP14ActionSpellSphereOfLight
+  - CP14ActionSpellManaConsume
+  - CP14ActionSpellManaGift
+  - CP14ActionSpellShadowGrab
+  - CP14ActionSpellIceDagger
+  - CP14ActionSpellWaterCreation
+  - CP14ActionSpellBeerCreation
+
+- type: loadout
+  id: CP14ActionSpellFlameCreation
+  dummyEntity: CP14ActionSpellFlameCreation
+  actions:
+  - CP14ActionSpellFlameCreation
+
+- type: loadout
+  id: CP14ActionSpellCureWounds
+  dummyEntity: CP14ActionSpellCureWounds
+  actions:
+  - CP14ActionSpellCureWounds
+
+- type: loadout
+  id: CP14ActionSpellSphereOfLight
+  dummyEntity: CP14ActionSpellSphereOfLight
+  actions:
+  - CP14ActionSpellSphereOfLight
+
+- type: loadout
+  id: CP14ActionSpellManaConsume
+  dummyEntity: CP14ActionSpellManaConsume
+  actions:
+  - CP14ActionSpellManaConsume
+
+- type: loadout
+  id: CP14ActionSpellManaGift
+  dummyEntity: CP14ActionSpellManaGift
+  actions:
+  - CP14ActionSpellManaGift
+
+- type: loadout
+  id: CP14ActionSpellShadowGrab
+  dummyEntity: CP14ActionSpellShadowGrab
+  actions:
+  - CP14ActionSpellShadowGrab
+
+- type: loadout
+  id: CP14ActionSpellIceDagger
+  dummyEntity: CP14ActionSpellIceDagger
+  actions:
+  - CP14ActionSpellIceDagger
+
+- type: loadout
+  id: CP14ActionSpellWaterCreation
+  dummyEntity: CP14ActionSpellWaterCreation
+  actions:
+  - CP14ActionSpellWaterCreation
+
+- type: loadout
+  id: CP14ActionSpellBeerCreation
+  dummyEntity: CP14ActionSpellBeerCreation
+  actions:
+  - CP14ActionSpellBeerCreation
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Dwarf
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: CP14JobInnkeeper
+      time: 7200 # 2 hour

@@ -8,6 +8,9 @@
   "copyright": "Created by .kreks., mana_gift and resurrection by TheShuEd",
   "states": [
     {
+      "name": "beer_creation"
+    },
+    {
       "name": "cure_wounds"
     },
     {
@@ -29,6 +32,9 @@
       "name": "ice_shards"
     },
     {
+      "name": "mana_consume"
+    },
+    {
       "name": "mana_gift"
     },
     {
@@ -42,6 +48,9 @@
     },
     {
       "name": "sphere_of_light"
+    },
+    {
+      "name": "water_creation"
     }
   ]
 }

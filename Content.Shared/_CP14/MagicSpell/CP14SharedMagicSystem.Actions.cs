@@ -48,7 +48,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(args.Action, ref evStart);
 
         var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, args.Performer, Transform(args.Performer).Coordinates);
+            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Performer, Transform(args.Performer).Coordinates);
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
 
@@ -93,7 +93,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(args.Action, ref evStart);
 
         var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, args.Entity, args.Coords);
+            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Entity, args.Coords);
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
 
@@ -136,7 +136,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(args.Action, ref evStart);
 
         var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, args.Target, Transform(args.Target).Coordinates);
+            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Target, Transform(args.Target).Coordinates);
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
 
@@ -158,7 +158,7 @@ public abstract partial class CP14SharedMagicSystem
         if (args.Cancelled || args.Handled)
             return;
 
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.User, Transform(args.User).Coordinates), args.Cooldown ?? 0);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, args.User, Transform(args.User).Coordinates), args.Cooldown ?? 0);
 
         args.Handled = true;
     }
@@ -178,7 +178,7 @@ public abstract partial class CP14SharedMagicSystem
         var targetPos = EntityManager.GetCoordinates(args.TargetPosition);
         EntityManager.TryGetEntity(args.TargetEntity, out var targetEnt);
 
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, targetEnt, targetPos), args.Cooldown ?? 0);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, targetEnt, targetPos), args.Cooldown ?? 0);
 
         args.Handled = true;
     }
@@ -198,7 +198,7 @@ public abstract partial class CP14SharedMagicSystem
         EntityCoordinates? targetPos = null;
         if (targetEnt is not null) { targetPos = Transform(targetEnt.Value).Coordinates; }
 
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, targetEnt, targetPos), args.Cooldown ?? 0);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, targetEnt, targetPos), args.Cooldown ?? 0);
 
         args.Handled = true;
     }

@@ -13,38 +13,6 @@
     sprite: _CP14/Clothing/Rings/rings.rsi
 
 - type: entity
-  id: CP14ClothingRingIceDagger
-  parent: CP14ClothingRingBase
-  name: ice dagger conductive ring
-  suffix: Ice Dagger
-  description: A standard mana-conductive ring that allows the user to summon ice daggers.
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: saphhire_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellIceDagger
-
-- type: entity
-  id: CP14ClothingRingManaGift
-  parent: CP14ClothingRingBase
-  name: mana transfering conductive ring
-  suffix: Mana gift
-  description: A standard mana-conductive ring that allows you to transfer some of your magical energy to other objects.
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: saphhire_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellManaGift
-
-- type: entity
   id: CP14ClothingRingIceShards
   parent: CP14ClothingRingBase
   name: ice shards conductive ring
@@ -61,22 +29,6 @@
     - CP14ActionSpellIceShards
 
 - type: entity
-  id: CP14ClothingRingFlameCreation
-  parent: CP14ClothingRingBase
-  name: flame creation conductive ring
-  description: A standard mana-conductive ring that allows the user to summon artificial flames.
-  suffix: Flame creation
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: ruby_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellFlameCreation
-
-- type: entity
   id: CP14ClothingRingFireball
   parent: CP14ClothingRingBase
   name: fireball conductive ring
@@ -91,54 +43,6 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellFireball
-
-- type: entity
-  id: CP14ClothingRingShadowGrab
-  parent: CP14ClothingRingBase
-  name: shadow grab conductive ring
-  description: A standard mana-conductive ring that allows the user to summon grabbing shadow hand.
-  suffix: Shadow grab
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: amethyst_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellShadowGrab
-
-- type: entity
-  id: CP14ClothingRingEarthWall
-  parent: CP14ClothingRingBase
-  name: earth wall conductive ring
-  description: A standard mana-conductive ring that allows you to lift a piece of earth rock.
-  suffix: Earth wall
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: berill_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellEarthWall
-
-- type: entity
-  id: CP14ClothingRingSphereOfLight
-  parent: CP14ClothingRingBase
-  name: light sphere conductive ring
-  description: A standard mana-conductive ring that allows the user to create a sphere of light.
-  suffix: Sphere of Light
-  components:
-  - type: Sprite
-    layers:
-    - state: brass_ring
-    - state: citrine_stone_small
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellSphereOfLight
 
 - type: entity
   id: CP14ClothingRingFlashLight

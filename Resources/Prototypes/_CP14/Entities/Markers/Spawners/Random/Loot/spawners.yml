@@ -45,6 +45,8 @@
         - id: CP14SpellScrollFlameCreation
         - id: CP14SpellScrollEarthWall
         - id: CP14SpellScrollFlashLight
+        - id: CP14SpellScrollWaterCreation
+        - id: CP14SpellScrollBeerCreation
       - id: CP14EnergyCrystalSmall
       - id: CP14BaseSharpeningStone
       - id: CP14GlassShard
@@ -75,16 +77,10 @@
       # remove this when players can create their own magic items
       - !type:GroupSelector
         children:
-        - id: CP14ClothingRingIceDagger
         - id: CP14ClothingRingIceShards
-        - id: CP14ClothingRingFlameCreation
         - id: CP14ClothingRingFireball
-        - id: CP14MagicHealingStaff
-        - id: CP14ClothingRingShadowGrab
-        - id: CP14ClothingRingEarthWall
-        - id: CP14ClothingRingManaGift
-        - id: CP14ClothingRingSphereOfLight
         - id: CP14ClothingRingFlashLight
+        - id: CP14MagicHealingStaff
         - id: CP14SpellScrollResurrection
       # Rare standard village crates loot
       - !type:NestedSelector

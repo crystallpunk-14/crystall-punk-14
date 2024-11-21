@@ -3,6 +3,9 @@
   name: Mana transfer
   description: You can transfer a small amount of your magical energy to a target entity or magical object.
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: mana_gift
   - type: CP14MagicEffect
     magicType: Meta
     manaCost: 12
@@ -20,9 +23,6 @@
       - !type:CP14ManaChange
         manaDelta: 10
         safe: false
-  - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Energia..."
-    endSpeech: "te reficit"
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaGift
@@ -33,7 +33,7 @@
       - CP14MagicEnergyCrystalSlot
     itemIconStyle: BigAction
     interactOnMiss: false
-    canTargetSelf: false
+    canTargetSelf: true
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:

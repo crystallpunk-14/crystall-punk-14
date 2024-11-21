@@ -17,6 +17,12 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
      * You can either use an existing StartingGearPrototype or specify it inline to avoid bloating yaml.
      */
 
+    /// <summary>
+    /// An entity whose sprite, name and description is used for display in the interface. If null, tries to get the proto of the item from gear (if it is a single item).
+    /// </summary>
+    [DataField]
+    public EntProtoId? DummyEntity;
+
     [DataField]
     public ProtoId<StartingGearPrototype>? StartingGear;
 
@@ -38,4 +44,10 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// <inheritdoc />
     [DataField]
     public Dictionary<string, List<EntProtoId>> Storage { get; set; } = new();
+
+    /// <summary>
+    /// CP14 - it is possible to give action spells or spells to players who have taken this loadout
+    /// </summary>
+    [DataField]
+    public List<EntProtoId> Actions { get; set; } = new();
 }
