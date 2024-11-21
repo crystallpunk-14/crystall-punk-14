@@ -45,16 +45,9 @@ public sealed class InteractionPopupSystem : EntitySystem
 
     private void OnInteractHand(EntityUid uid, InteractionPopupComponent component, InteractHandEvent args)
     {
-        // CP14 Change: Processing goes in CP14DoorInteractSystem
-        if (HasComp<LockComponent>(args.Target))
-            return;
-
         SharedInteract(uid, component, args, args.Target, args.User);
     }
-
-    // CP14 Change: from privite to public
-    // Need for CP14DoorInteractSystem
-    public void SharedInteract(
+    private void SharedInteract(
         EntityUid uid,
         InteractionPopupComponent component,
         HandledEntityEventArgs args,
