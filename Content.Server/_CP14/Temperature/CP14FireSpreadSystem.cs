@@ -6,6 +6,7 @@ using Content.Server.DoAfter;
 using Content.Shared._CP14.Temperature;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
+using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
@@ -34,6 +35,18 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
         base.Initialize();
 
         SubscribeLocalEvent<FlammableComponent, CP14IgnitionDoAfter>(OnFlammableIgnited);
+        SubscribeLocalEvent<CP14FlammableBonusDamageComponent, MeleeHitEvent>(OnFlammableMeleeHit);
+    }
+
+    private void OnFlammableMeleeHit(Entity<CP14FlammableBonusDamageComponent> ent, ref MeleeHitEvent args)
+    {
+        if (!TryComp<FlammableComponent>(ent, out var flammable))
+            return;
+
+        if (!flammable.OnFire)
+            return;
+
+        args.BonusDamage += ent.Comp.DamagePerStack * flammable.FireStacks;
     }
 
     private void OnFlammableIgnited(Entity<FlammableComponent> ent, ref CP14IgnitionDoAfter args)

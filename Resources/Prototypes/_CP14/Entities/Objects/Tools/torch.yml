@@ -67,3 +67,13 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: CP14DelayedIgnitionSource
+  - type: CP14IgnitionModifier
+    hideCaution: true
+  - type: MeleeWeapon
+    attackRate: 1.5
+    wideAnimationRotation: 225
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 4
+  - type: CP14FlammableBonusDamage

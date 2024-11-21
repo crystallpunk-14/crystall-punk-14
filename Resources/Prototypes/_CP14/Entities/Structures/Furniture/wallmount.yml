@@ -74,6 +74,8 @@
   - type: Construction
     graph: CP14WallmountTorch
     node: CP14WallmountTorch
+  - type: CP14IgnitionModifier
+    hideCaution: true
 
 - type: entity
   id: CP14WallmountTorchAlwaysPowered
