@@ -48,6 +48,7 @@
       visible: false
   - type: Cuffable
   - type: Hands
+  - type: ComplexInteraction
   - type: Icon
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
     state: full
