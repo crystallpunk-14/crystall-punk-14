@@ -2,7 +2,9 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.DoAfter;
 using Content.Shared._CP14.Temperature;
+using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -26,6 +28,23 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
     private readonly EntProtoId _fireProto = "CP14Fire";
 
     private readonly HashSet<Entity<CP14FireSpreadComponent>> _spreadEnts = new();
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<FlammableComponent, CP14IgnitionDoAfter>(OnFlammableIgnited);
+    }
+
+    private void OnFlammableIgnited(Entity<FlammableComponent> ent, ref CP14IgnitionDoAfter args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        _flammable.AdjustFireStacks(ent, ent.Comp.FirestacksOnIgnite, ent.Comp, true);
+
+        args.Handled = true;
+    }
 
     public override void Update(float frameTime)
     {

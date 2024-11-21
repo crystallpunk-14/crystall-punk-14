@@ -121,6 +121,8 @@
   - type: Climbing
   - type: ReplacementAccent
     accent: zombie
+  - type: FireVisuals
+    alternateState: Standing #TODO - custom visuals
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:

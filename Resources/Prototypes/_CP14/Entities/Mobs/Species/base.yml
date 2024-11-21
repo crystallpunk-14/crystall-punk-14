@@ -223,6 +223,8 @@
   - type: CP14DemiplaneStabilizer
     requireAlive: true
   - type: CanEnterCryostorage
+  - type: CP14IgnitionModifier
+    ignitionTimeModifier: 2.5
 
 
 - type: entity

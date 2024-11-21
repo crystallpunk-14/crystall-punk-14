@@ -138,9 +138,7 @@
         variation: 0.250
         volume: -12
     cPAnimationLength: 0.15
-  - type: IgnitionSource
-    temperature: 400
-    ignited: true
+  - type: CP14DelayedIgnitionSource
 
 - type: entity
   parent: CP14BaseSpellScrollFire

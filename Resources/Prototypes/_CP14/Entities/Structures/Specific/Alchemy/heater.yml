@@ -60,6 +60,8 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+  - type: CP14IgnitionModifier
+    hideCaution: true
 
 - type: entity
   id: CP14AlchemyFurnace
