@@ -54,7 +54,7 @@ public abstract partial class CP14SharedFireSpreadSystem : EntitySystem
         if (TryComp<CP14IgnitionModifierComponent>(args.Target, out var modifier))
         {
             time *= modifier.IgnitionTimeModifier;
-            caution = modifier.HideCaution;
+            caution = !modifier.HideCaution;
         }
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,

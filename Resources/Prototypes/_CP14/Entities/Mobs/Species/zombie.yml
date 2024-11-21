@@ -41,6 +41,13 @@
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: Cuffable
+  - type: Hands
   - type: Icon
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
     state: full
