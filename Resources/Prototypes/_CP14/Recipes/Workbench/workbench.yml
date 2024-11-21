@@ -60,3 +60,12 @@
     CP14WoodenPlanks: 3
     CP14Cloth: 1
   result: CP14Torch
+
+- type: CP14Recipe
+  id: CP14Lighter
+  tag: CP14RecipeWorkbench
+  craftTime: 4
+  stacks:
+    CP14Stone: 1
+    CP14IronBar: 1
+  result: CP14Lighter
