@@ -134,3 +134,19 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobMonsterMole
+
+- type: entity
+  name: bloodworm mosquitoes spawner
+  id: CP14SpawnMobMonsterMosquito
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/mosquito.rsi
+      state: mosquitos
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobMonsterMosquito
