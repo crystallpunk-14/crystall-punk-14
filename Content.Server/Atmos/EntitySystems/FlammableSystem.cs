@@ -1,4 +1,3 @@
-using Content.Server._CP14.Temperature;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.IgnitionSource;
@@ -6,6 +5,7 @@ using Content.Server.Stunnable;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Server.Damage.Components;
+using Content.Shared._CP14.Temperature;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;

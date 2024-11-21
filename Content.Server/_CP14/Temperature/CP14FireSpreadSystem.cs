@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Shared._CP14.Temperature;
 using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -11,7 +12,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature;
 
-public sealed partial class CP14FireSpreadSystem : EntitySystem
+public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
 {
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -25,34 +26,6 @@ public sealed partial class CP14FireSpreadSystem : EntitySystem
     private EntProtoId _fireProto = "CP14Fire";
 
     private HashSet<Entity<CP14FireSpreadComponent>> _spreadUids = new();
-
-    public override void Initialize()
-    {
-        SubscribeLocalEvent<CP14FireSpreadComponent, OnFireChangedEvent>(OnFireChangedSpread);
-        SubscribeLocalEvent<CP14DespawnOnExtinguishComponent, OnFireChangedEvent>(OnFireChangedDespawn);
-    }
-
-    private void OnFireChangedDespawn(Entity<CP14DespawnOnExtinguishComponent> ent, ref OnFireChangedEvent args)
-    {
-        if (!args.OnFire)
-            QueueDel(ent);
-    }
-
-    private void OnFireChangedSpread(Entity<CP14FireSpreadComponent> ent, ref OnFireChangedEvent args)
-    {
-        if (args.OnFire)
-        {
-            EnsureComp<CP14ActiveFireSpreadingComponent>(ent);
-        }
-        else
-        {
-            if (HasComp<CP14ActiveFireSpreadingComponent>(ent))
-                RemCompDeferred<CP14ActiveFireSpreadingComponent>(ent);
-        }
-
-        var cooldown = _random.NextFloat(ent.Comp.SpreadCooldownMin, ent.Comp.SpreadCooldownMax);
-        ent.Comp.NextSpreadTime = _gameTiming.CurTime + TimeSpan.FromSeconds(cooldown);
-    }
 
     public override void Update(float frameTime)
     {
