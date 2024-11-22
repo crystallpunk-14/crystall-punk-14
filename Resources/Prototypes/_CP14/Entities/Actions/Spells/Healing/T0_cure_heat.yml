@@ -28,7 +28,6 @@
             Burn: -10
             Shock: -10
       - !type:Jitter
-        amount: 5
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Pellis dolorem..."
     endSpeech: "non novit"
