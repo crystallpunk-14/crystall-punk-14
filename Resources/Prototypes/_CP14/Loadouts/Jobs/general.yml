@@ -412,6 +412,7 @@
   loadouts:
   - CP14ActionSpellFlameCreation
   - CP14ActionSpellCureWounds
+  - CP14ActionSpellCureBurn
   - CP14ActionSpellSphereOfLight
   - CP14ActionSpellManaConsume
   - CP14ActionSpellManaGift
@@ -431,6 +432,12 @@
   dummyEntity: CP14ActionSpellCureWounds
   actions:
   - CP14ActionSpellCureWounds
+
+- type: loadout
+  id: CP14ActionSpellCureBurn
+  dummyEntity: CP14ActionSpellCureBurn
+  actions:
+  - CP14ActionSpellCureBurn
 
 - type: loadout
   id: CP14ActionSpellSphereOfLight
