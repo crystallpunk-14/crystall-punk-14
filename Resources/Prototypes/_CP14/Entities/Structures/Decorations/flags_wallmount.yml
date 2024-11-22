@@ -1,0 +1,107 @@
+- type: entity
+  id: CP14WallmountFlagBase
+  abstract: true
+  parent: 
+  - CP14BaseWallmount
+  - CP14BaseFlammableSpreadingStrong
+  categories: [ ForkFiltered ]
+  name: tapestry
+  description: A piece of cloth pinned to the wall. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Decoration/flags_wallmount.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Cloth1:
+            min: 1
+            max: 2
+
+# Mercenary
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagAlchemist
+  name: alchemist tapestry
+  description: A tapestry with a potion symbol, indicating that alchemists dwell here.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_mercenary
+    - state: icon_potion
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagBlacksmith
+  name: blacksmith tapestry
+  description: A tapestry with a anvil symbol, indicating that blacksmiths dwell here.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_mercenary
+    - state: icon_anvil
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagTavern
+  name: tavern tapestry
+  description: A tapestry with a ?? symbol, indicating that blacksmiths dwell here.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_mercenary #TODO: Icon
+
+# Bank
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagBank
+  name: bank tapestry
+  description: A tapestry with a coins symbol indicating that this is where the bankers live.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_bank
+    - state: icon_coins
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagBankVault
+  name: bank vault tapestry
+  description: A tapestry with a vault symbol indicating that this is where the bank vaults reside.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_bank
+    - state: icon_vault
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagBankShip
+  name: bank ship tapestry
+  description: A tapestry with a ship symbol denoting that there is a ship here to trade with the city.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_bank
+    - state: icon_ship
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagBankCommandant
+  name: commandant tapestry
+  description: A tapestry with a ?? symbol indicating that the Commandant lives here.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_bank #TODO: Icon
