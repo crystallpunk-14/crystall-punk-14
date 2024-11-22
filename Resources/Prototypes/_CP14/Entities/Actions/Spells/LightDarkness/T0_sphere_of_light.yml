@@ -92,6 +92,7 @@
         - Opaque
   - type: LandAtCursor
   - type: MovementIgnoreGravity
+  - type: CP14FollowOnUseInHand
   - type: PointLight
     radius: 5.0
     energy: 1
