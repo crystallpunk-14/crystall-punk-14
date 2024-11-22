@@ -267,8 +267,14 @@ namespace Content.Server.Atmos.EntitySystems
             //CrystallEdge bonfire moment
             if (!Resolve(uid, ref flammable))
                 return;
-            var ev = new OnFireChangedEvent(flammable.OnFire);
-            RaiseLocalEvent(uid, ref ev);
+
+            if (flammable.OnFireOld != flammable.OnFire)
+            {
+                var ev = new OnFireChangedEvent(flammable.OnFire);
+                RaiseLocalEvent(uid, ref ev);
+
+                flammable.OnFireOld = flammable.OnFire;
+            }
             //CrystallEdge bonfire moment end
 
             if (!Resolve(uid, ref flammable, ref appearance))

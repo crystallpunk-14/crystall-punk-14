@@ -24,7 +24,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types: 
-        Blunt: 4
+        Blunt: 6
   - type: MeleeWeapon
     angle: 100
     attackRate: 1.3
@@ -33,21 +33,23 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 4
+        Blunt: 6
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.3
     cPAnimationOffset: -1.3
-  #- type: CP14SpellStorageRequireAttune
-  #- type: CP14MagicAttuningItem
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellCureWounds
+    - CP14ActionSpellCureBurn
+    - CP14ActionSpellBloodPurification
     - CP14ActionSpellResurrection
-  #- type: CP14MagicManacostModify
-  #  modifiers:
-  #   Healing: 1.1
+  - type: CP14MagicManacostModify
+    modifiers:
+     Healing: 1.4
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
     energy: 80

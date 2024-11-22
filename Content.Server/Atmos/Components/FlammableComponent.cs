@@ -88,5 +88,11 @@ namespace Content.Server.Atmos.Components
         /// </summary>
         [DataField]
         public float CP14FireplaceFuel = 10f;
+
+        /// <summary>
+        /// the value is cached to check if it has changed
+        /// </summary>
+        [DataField]
+        public bool OnFireOld = false;
     }
 }

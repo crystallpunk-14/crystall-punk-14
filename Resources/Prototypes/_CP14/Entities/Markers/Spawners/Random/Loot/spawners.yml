@@ -37,9 +37,10 @@
         - id: CP14SpellScrollIceShards
         - id: CP14SpellScrollIceDagger
         - id: CP14SpellScrollShadowGrab
-        - id: CP14SpellScrollManaGift
         - id: CP14SpellScrollSphereOfLight
         - id: CP14SpellScrollCureWounds
+        - id: CP14SpellScrollBloodPurification
+        - id: CP14SpellScrollCureBurn
         - id: CP14SpellScrollShadowStep
         - id: CP14SpellScrollFireball
         - id: CP14SpellScrollFlameCreation
@@ -47,6 +48,7 @@
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollBeerCreation
+          weight: 0.2
       - id: CP14EnergyCrystalSmall
       - id: CP14BaseSharpeningStone
       - id: CP14GlassShard

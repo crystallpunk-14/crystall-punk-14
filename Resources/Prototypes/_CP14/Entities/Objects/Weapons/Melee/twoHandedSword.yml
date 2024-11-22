@@ -27,8 +27,8 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Slash: 4
-        Blunt: 3
+        Slash: 5
+        Blunt: 4
         Structural: 1
     soundHit:
       collection: MetalThud
@@ -37,8 +37,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 7
-        Blunt: 2
+        Slash: 12
+        Blunt: 4
         Structural: 3
   - type: Item
     size: Ginormous
