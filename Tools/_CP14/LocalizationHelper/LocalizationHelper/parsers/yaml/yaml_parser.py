@@ -45,7 +45,6 @@ class YamlParser(BaseParser):
             if file_prototypes_list:
                 for prototype_dict in file_prototypes_list:
                     prototype_type = prototype_dict.get("type")
-                    print(prototype_type)
                     if prototype_type == "entity":
                         prototype_obj = Entity(prototype_dict)
                         if isinstance(prototype_obj.parent, list):
