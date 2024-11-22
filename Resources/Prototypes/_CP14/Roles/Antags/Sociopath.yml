@@ -6,7 +6,7 @@
   objective: cp14-roles-antag-sociopath-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    time: 7200 # 2h
   #guides: TODO
 
 - type: startingGear
