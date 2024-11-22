@@ -19,6 +19,6 @@ public sealed partial class CP14DoorInteractionPopupComponent : Component
     public SoundSpecifier InteractSound;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan LastInteractTime;
+    public TimeSpan LastInteractTime = TimeSpan.Zero;
 
 }

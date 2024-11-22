@@ -12,8 +12,6 @@ public sealed class CP14DoorInteractionPopupSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
-    private EntityQuery<LockComponent> _lockQuery;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -24,7 +22,7 @@ public sealed class CP14DoorInteractionPopupSystem : EntitySystem
     private void OnInteractHand(EntityUid uid, CP14DoorInteractionPopupComponent component, InteractHandEvent args)
     {
 
-        if (_lockQuery.TryComp(args.Target, out var lockComponent) && !lockComponent.Locked)
+        if (TryComp<LockComponent>(args.Target, out var lockComponent) && !lockComponent.Locked)
             return;
 
         var curTime = _gameTiming.CurTime;
