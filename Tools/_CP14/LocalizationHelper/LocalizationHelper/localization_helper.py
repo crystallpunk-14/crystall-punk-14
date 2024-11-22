@@ -114,16 +114,16 @@ class LocalizationHelper:
 
                 parent_prototype_obj = general_prototypes_dict.get(prototype_parent_id)
 
-                if parent_prototype_obj and check_prototype_attrs(parent_prototype_obj):
+                if parent_prototype_obj and check_prototype_attrs(parent_prototype_obj, True):
                     self._set_parent_attrs(prototype_parent_id, prototype_obj, parent_prototype_obj)
                 else:
-                    if not check_prototype_attrs(prototype_obj):
+                    if not check_prototype_attrs(prototype_obj, True):
                         to_delete.append(prototype_id)
             else:
                 if not prototype_obj.name:
-                    prototype_obj.name = f"{{ ent-{prototype_parent_id} }}"
+                    prototype_obj.name = f"CONFLICT{{ ent-{prototype_parent_id} }}"
                 if not prototype_obj.description:
-                    prototype_obj.description = f"{{ ent-{prototype_parent_id}.desc }}"
+                    prototype_obj.description = f"CONFLICT{{ ent-{prototype_parent_id}.desc }}"
 
         for prototype_id in to_delete:
             logger.debug("%s %s: %s", prototype_id, LogText.HAS_BEEN_DELETED, general_prototypes_dict[prototype_id])

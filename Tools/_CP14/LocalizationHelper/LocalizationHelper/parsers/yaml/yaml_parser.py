@@ -27,6 +27,7 @@ class YamlParser(BaseParser):
             else:
                 prototype_obj.parent = available_parents[0]
 
+            logger.debug("%s: %s", LogText.HAS_BEEN_PROCESSED, prototype_obj)
             prototypes[prototype_obj.id] = prototype_obj
 
         return prototypes
@@ -45,12 +46,13 @@ class YamlParser(BaseParser):
             if file_prototypes_list:
                 for prototype_dict in file_prototypes_list:
                     prototype_type = prototype_dict.get("type")
-                    print(prototype_type)
                     if prototype_type == "entity":
                         prototype_obj = Entity(prototype_dict)
-                        if isinstance(prototype_obj.parent, list):
-                            prototypes_with_multiple_parents[prototype_obj.id] = prototype_obj
-                        elif check_prototype_attrs(prototype_obj):
+                        if check_prototype_attrs(prototype_obj):
+                            if isinstance(prototype_obj.parent, list):
+                                prototypes_with_multiple_parents[prototype_obj.id] = prototype_obj
+                                continue
+
                             logger.debug("%s: %s", LogText.HAS_BEEN_PROCESSED, prototype_obj)
                             prototypes[prototype_obj.id] = prototype_obj
 

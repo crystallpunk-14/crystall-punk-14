@@ -79,12 +79,14 @@ class Entity:
         return str(self._attrs_dict)
 
 
-def check_prototype_attrs(prototype: Entity) -> bool:
+def check_prototype_attrs(prototype: Entity, without_parent_check: bool = False) -> bool:
     if prototype.name:
         return True
     elif prototype.description:
         return True
     elif prototype.suffix:
+        return True
+    elif not without_parent_check and prototype.parent:
         return True
 
     return False
