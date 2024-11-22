@@ -80,3 +80,10 @@
       types:
         Blunt: 4
   - type: CP14FlammableBonusDamage
+  - type: UseDelay
+  - type: ExtinguishOnInteract
+    extinguishAttemptSound:
+      path: /Audio/Items/candle_blowing.ogg #TODO sound
+      params:
+        variation: 0.05
+        volume: 10
