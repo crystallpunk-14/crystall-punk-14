@@ -25,7 +25,7 @@
         damage:
           types:
             Cold: -10
-            Burn: -10
+            Heat: -10
             Shock: -10
       - !type:Jitter
   - type: CP14MagicEffectVerbalAspect
