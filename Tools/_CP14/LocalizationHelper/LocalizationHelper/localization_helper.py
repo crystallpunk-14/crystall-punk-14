@@ -121,9 +121,9 @@ class LocalizationHelper:
                         to_delete.append(prototype_id)
             else:
                 if not prototype_obj.name:
-                    prototype_obj.name = f"{{ ent-{prototype_parent_id} }}"
+                    prototype_obj.name = f"CONFLICT{{ ent-{prototype_parent_id} }}"
                 if not prototype_obj.description:
-                    prototype_obj.description = f"{{ ent-{prototype_parent_id}.desc }}"
+                    prototype_obj.description = f"CONFLICT{{ ent-{prototype_parent_id}.desc }}"
 
         for prototype_id in to_delete:
             logger.debug("%s %s: %s", prototype_id, LogText.HAS_BEEN_DELETED, general_prototypes_dict[prototype_id])
