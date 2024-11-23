@@ -1,0 +1,9 @@
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtGuardsChainmailShirt
+  name: "guard's chainmail shirt"
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/Guard/wb_chainmail.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/Guard/wb_chainmail.rsi

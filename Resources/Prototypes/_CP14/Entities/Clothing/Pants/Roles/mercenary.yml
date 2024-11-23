@@ -1,18 +1,4 @@
 - type: entity
-  abstract: true
-  parent: Clothing
-  id: CP14ClothingPantsBase
-  categories: [ ForkFiltered ]
-  components:
-  - type: Clothing
-    equipDelay: 1
-    unequipDelay: 1
-    slots:
-    - pants
-  - type: Sprite
-    state: icon
-
-- type: entity
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsTrouserWhite
   name: white trouser
@@ -33,17 +19,6 @@
     sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
-
-- type: entity
-  parent: CP14ClothingPantsBase
-  id: CP14ClothingPantsAristocratic
-  name: aristocrat's pants
-  description: Pants with enough quality fabric that you don't want to cave in them.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Pants/aristocratic.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Pants/aristocratic.rsi
 
 - type: entity
   parent: CP14ClothingPantsBase
