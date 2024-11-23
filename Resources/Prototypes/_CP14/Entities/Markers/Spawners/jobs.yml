@@ -38,7 +38,21 @@
   - type: Sprite
     layers:
       - state: green
-      - state: workman #TODO Replace
+      - state: guard_commander
+
+- type: entity
+  id: CP14SpawnPointGuard
+  parent: CP14SpawnPointJobBase
+  name: guard
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Guard
+  - type: Sprite
+    layers:
+      - state: green
+      - state: guard
 
 # Bank
 
