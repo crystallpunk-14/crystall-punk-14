@@ -19,7 +19,6 @@
   - CP14GeneralSpells
   - CP14AlchemistHead #
   - CP14AlchemistEyes #
-  - CP14GeneralMask
   - CP14AlchemistCloak #
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -34,7 +33,6 @@
   - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
-  - CP14GeneralMask
   - CP14GeneralCloak
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -49,7 +47,6 @@
   - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
-  - CP14GeneralMask
   - CP14BlacksmithCloak
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -64,7 +61,6 @@
   - CP14GeneralSpells
   - CP14GuardHead
   - CP14GeneralEyes
-  - CP14GeneralMask
   - CP14GuardCommanderCloak #
   - CP14GeneralGloves
   - CP14GuardShirt
@@ -79,7 +75,6 @@
   - CP14GeneralSpells
   - CP14GuardHead
   - CP14GeneralEyes
-  - CP14GeneralMask
   - CP14GuardCloak #
   - CP14GeneralGloves
   - CP14GuardShirt

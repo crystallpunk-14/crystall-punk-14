@@ -5,10 +5,9 @@
   playTimeTracker: CP14JobGuard
   startingGear: CP14GuardGear
   icon: "CP14JobIconGuard"
-  supervisors: cp14-job-supervisors-commandant #TODO
+  supervisors: cp14-job-supervisors-guard-commander
 
 - type: startingGear
-  id: CP14JobGuard
+  id: CP14GuardGear
   equipment:
     belt1: CP14WalletFilledTest
-    keys: CP14KeyRingBanker
