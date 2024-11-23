@@ -11,6 +11,10 @@
   supervisors: cp14-job-supervisors-command
   weight: 2
   setPreference: true
+  special:
+  - !type:CP14AddSkillSpecial
+    skills:
+    - Warcraft
 
 - type: startingGear
   id: CP14GuardCommanderGear
