@@ -2,7 +2,7 @@
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsGuardsChainmailSkirt
   name: "guard's chainmail skirt"
-  description: Skirt with stitched clutch padding, in standard Imperial Guard uniform colors
+  description: Skirt with stitched clutch padding, in standard Imperial Guard uniform colors.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Pants/Roles/Guard/wb_chainmail.rsi

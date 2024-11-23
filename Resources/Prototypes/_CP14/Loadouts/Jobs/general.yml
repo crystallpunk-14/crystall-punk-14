@@ -5,22 +5,10 @@
   name: cp14-loadout-general-cloak
   minLimit: 0
   loadouts:
-  - CP14ClothingCloakSimpleWhite
-  - CP14ClothingCloakSimpleDarkBlue
   - CP14ClothingCloakFurcapeBlack
   - CP14ClothingCloakFurcapeBlue
   - CP14ClothingCloakMaidArpon
   - CP14ClothingCloakRitualAttireLeather
-
-- type: loadout
-  id: CP14ClothingCloakSimpleWhite
-  equipment:
-    cloak: CP14ClothingCloakSimpleWhite
-
-- type: loadout
-  id: CP14ClothingCloakSimpleDarkBlue
-  equipment:
-    cloak: CP14ClothingCloakSimpleDarkBlue
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack

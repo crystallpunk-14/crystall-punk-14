@@ -22,28 +22,6 @@
 
 - type: entity
   parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakSimpleWhite
-  name: white cloak
-  description: Long coat with a high collar.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi
-
-- type: entity
-  parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakSimpleDarkBlue
-  name: dark cloak
-  description: Long coat with a high collar.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Roles/General/dark_blue.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Roles/General/dark_blue.rsi
-
-- type: entity
-  parent: CP14ClothingCloakBase
   id: CP14ClothingCloakRitualAttireLeather
   name: ritual attire with leather
   description: The traditional attire of Southern mages who have undergone the ritual.

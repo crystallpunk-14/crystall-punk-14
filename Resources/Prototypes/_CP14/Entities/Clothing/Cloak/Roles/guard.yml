@@ -1,0 +1,24 @@
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakGuardBase
+  abstract: true
+  name: "guard's cloak"
+  description: Shoulder cape in the standard Imperial Guard colors
+
+- type: entity
+  parent: CP14ClothingCloakGuardBase
+  id: CP14ClothingCloakGuardWhite
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/white.rsi
+
+- type: entity
+  parent: CP14ClothingCloakGuardBase
+  id: CP14ClothingCloakGuardBlue
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/blue.rsi
