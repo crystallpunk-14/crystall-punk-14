@@ -30,8 +30,8 @@ public sealed class CP14DoorInteractionPopupSystem : EntitySystem
         if (curTime < component.LastInteractTime + component.InteractDelay)
             return;
 
-        _popupSystem.PopupEntity(Loc.GetString(component.InteractString), args.Target);
-        _audio.PlayPvs(component.InteractSound, args.Target);
+        _popupSystem.PopupPredicted(Loc.GetString(component.InteractString), args.Target);
+        _audio.PlayPredicted(component.InteractSound, args.Target);
 
         component.LastInteractTime = curTime;
     }
