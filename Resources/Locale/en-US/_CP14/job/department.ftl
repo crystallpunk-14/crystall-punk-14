@@ -6,3 +6,6 @@ department-CP14Command-desc = Persons responsible for carrying out the task assi
 
 department-CP14Bank = Bank
 department-CP14Bank-desc = Persons closely connected with the economy and commerce working in a bank.
+
+department-CP14Guard = Guards
+department-CP14Guard-desc = Protectors and warriors who oversee security and law and order in all corners of the Empire.

@@ -59,31 +59,31 @@
   - CP14GeneralTrinkets
 
 - type: roleLoadout
-  id: JobCP14Captain
+  id: JobCP14GuardCommander
   groups:
   - CP14GeneralSpells
-  - CP14CaptainHead #
+  - CP14GuardHead
   - CP14GeneralEyes
   - CP14GeneralMask
-  - CP14CaptainCloak #
+  - CP14GuardCommanderCloak #
   - CP14GeneralGloves
-  - CP14GeneralShirt
-  - CP14GeneralPants
+  - CP14GuardShirt
+  - CP14GuardPants
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
-  id: JobCP14GuardCommander
+  id: JobCP14Guard
   groups:
   - CP14GeneralSpells
-  - CP14GeneralHead
+  - CP14GuardHead
   - CP14GeneralEyes
   - CP14GeneralMask
-  - CP14GuardCommanderCloak #
+  - CP14GuardCloak #
   - CP14GeneralGloves
-  - CP14GeneralShirt
-  - CP14GeneralPants
+  - CP14GuardShirt
+  - CP14GuardPants
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets

@@ -1,0 +1,14 @@
+- type: job
+  id: CP14Guard
+  name: cp14-job-name-guard
+  description: cp14-job-desc-guard
+  playTimeTracker: CP14JobGuard
+  startingGear: CP14GuardGear
+  icon: "CP14JobIconGuard"
+  supervisors: cp14-job-supervisors-commandant #TODO
+
+- type: startingGear
+  id: CP14JobGuard
+  equipment:
+    belt1: CP14WalletFilledTest
+    keys: CP14KeyRingBanker

@@ -1,0 +1,61 @@
+
+# Cloak
+
+- type: loadoutGroup
+  id: CP14GuardCloak
+  name: cp14-loadout-guard-cloak
+  minLimit: 0
+  loadouts:
+  - CP14ClothingCloakGuardBlue
+  - CP14ClothingCloakGuardWhite
+
+- type: loadout
+  id: CP14ClothingCloakGuardWhite
+  equipment:
+    cloak: CP14ClothingCloakGuardWhite
+
+- type: loadout
+  id: CP14ClothingCloakGuardBlue
+  equipment:
+    cloak: CP14ClothingCloakGuardBlue
+
+# Head
+
+- type: loadoutGroup
+  id: CP14GuardHead
+  name: cp14-loadout-guard-head
+  minLimit: 0
+  loadouts:
+  - CP14ClothingHeadMetalHeadband
+
+# Pants
+
+- type: loadoutGroup
+  id: CP14GuardPants
+  name: cp14-loadout-guard-pants
+  loadouts:
+  - CP14ClothingPantsGuardsChainmailSkirt
+
+- type: loadout
+  id: CP14ClothingPantsGuardsChainmailSkirt
+  equipment:
+    pants: CP14ClothingPantsGuardsChainmailSkirt
+
+# Shirt
+
+- type: loadoutGroup
+  id: CP14GuardShirt
+  name: cp14-loadout-guard-shirt
+  loadouts:
+  - CP14ClothingShirtGuardsChainmailShirtWB
+  - CP14ClothingShirtGuardsChainmailShirtB
+
+- type: loadout
+  id: CP14ClothingShirtGuardsChainmailShirtWB
+  equipment:
+    shirt: CP14ClothingShirtGuardsChainmailShirtWB
+
+- type: loadout
+  id: CP14ClothingShirtGuardsChainmailShirtB
+  equipment:
+    shirt: CP14ClothingShirtGuardsChainmailShirtB

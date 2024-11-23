@@ -10,7 +10,7 @@
   canBeAntag: false
   supervisors: cp14-job-supervisors-command
   weight: 2
-  setPreference: false #TEMP
+  setPreference: true
 
 - type: startingGear
   id: CP14GuardCommanderGear
