@@ -40,4 +40,4 @@ class LogText:
     UNKNOWN_ERROR = "An error occurred during execution"
     HAS_BEEN_DELETED = "Has been deleted due to lack of relevant data"
     HAS_BEEN_PROCESSED = "Has been processed"
-    FORMING_FTL_FOR_PROTOTYPE = "Forming FTL for Prototype"
+    FORMING_FTL_FOR_PROTOTYPE = "Forming FTL for Entity"
