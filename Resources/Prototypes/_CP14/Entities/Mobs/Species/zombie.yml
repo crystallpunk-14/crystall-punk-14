@@ -138,6 +138,9 @@
   - type: InventorySlots
   - type: ContainerContainer
   - type: FloorOcclusion
+  - type: Tag
+    tags:
+      - CP14Mosquito
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:
