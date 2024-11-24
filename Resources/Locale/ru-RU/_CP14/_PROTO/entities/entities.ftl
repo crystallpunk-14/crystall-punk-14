@@ -1,9 +1,49 @@
+ent-CP14BrassChestFilledAlchemy = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Алхимические склянки
+
+ent-CP14BrassChestFilledBureaucracy = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Бюрократические припасы
+
+ent-CP14BrassChestFilledFarmSeeds = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Семена
+
+ent-CP14BrassChestFilledDemiplanes = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Демпланы
+
+ent-CP14WoodenClosetAlchemyFilled = { ent-CP14WoodenCloset }
+    .desc = { ent-CP14WoodenCloset.desc }
+    .suffix = Алхимик, заполенный
+
+ent-CP14WoodenClosetBankerFilled = { ent-CP14WoodenCloset }
+    .desc = { ent-CP14WoodenCloset.desc }
+    .suffix = Банкир, заполненный
+
+ent-CP14WoodenClosetCommandantFilled = { ent-CP14WoodenCloset }
+    .desc = { ent-CP14WoodenCloset.desc }
+    .suffix = Комендант, заполненный
+
+ent-CP14SafeVaultFilled25 = { ent-CP14SafeVault }
+    .desc = { ent-CP14SafeVault.desc }
+    .suffix = Хранилище, 25зм
+
+ent-CP14WoodenCabinetAlchemist = { ent-CP14WoodenCabinet }
+    .desc = { ent-CP14WoodenCabinet.desc }
+    .suffix = Алхимик, заполненный
+
+ent-CP14WoodenCabinetBanker = { ent-CP14WoodenCabinet }
+    .desc = { ent-CP14WoodenCabinet.desc }
+    .suffix = Банкир, заполненный
+
+ent-CP14WoodenCabinetCommandant = { ent-CP14WoodenCabinet }
+    .desc = { ent-CP14WoodenCabinet.desc }
+    .suffix = Комендант, заполненный
+
 ent-CP14BaseFlammableSpreadingStrong = { ent-CP14BaseFlammableSpreading }
     .desc = { ent-CP14BaseFlammableSpreading.desc }
-
-ent-CP14Fire = огонь
-    .desc = Это огонь!
-    .suffix = cp14
 
 ent-CP14BaseKeyRing = кольцо для ключей
     .desc = Позволяет комфортно носить большое количество ключей в одном месте.
@@ -151,9 +191,6 @@ ent-CP14RuneFlameCreation = { ent-CP14BaseMagicRune }
 ent-CP14ImpactEffectFlameCreation = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14FlameCreationArtificialFlame = искусственное пламя
-    .desc = Магически созданное искусственное пламя, горящее прямо в воздухе. Неплохой источник света или оружие, если бросить его кому-нибудь в лицо.
-
 ent-CP14SpellScrollFlameCreation = свиток заклинания создания пламени
     .desc = { ent-CP14BaseSpellScrollFire.desc }
 
@@ -180,8 +217,32 @@ ent-CP14ImpactEffectShadowStep = { ent-CP14BaseMagicImpact }
 ent-CP14SpellScrollShadowStep = свиток заклинания теневого шага
     .desc = { ent-CP14BaseSpellScrollGate.desc }
 
+ent-CP14ActionSpellCureBurn = Лечение ожогов
+    .desc = Вы излечиваете кожные повреждения, вызванные крайне высокой или низкой температурой.
+
+ent-CP14RuneCureBurn = { ent-CP14BaseMagicRune }
+    .desc = { ent-CP14BaseMagicRune.desc }
+
+ent-CP14ImpactEffectCureBurn = { ent-CP14BaseMagicImpact }
+    .desc = { ent-CP14BaseMagicImpact.desc }
+
+ent-CP14SpellScrollCureBurn = свиток заклинания лечения ожогов
+    .desc = { ent-CP14BaseSpellScrollHealing.desc }
+
+ent-CP14ActionSpellBloodPurification = Очищение крови
+    .desc = Вы очищаете кровь цели от ядов, и слегка восстанавливаете её объем.
+
+ent-CP14RuneBloodPurification = { ent-CP14BaseMagicRune }
+    .desc = { ent-CP14BaseMagicRune.desc }
+
+ent-CP14ImpactEffectBloodPurification = { ent-CP14BaseMagicImpact }
+    .desc = { ent-CP14BaseMagicImpact.desc }
+
+ent-CP14SpellScrollBloodPurification = свиток заклинания очищения крови
+    .desc = { ent-CP14BaseSpellScrollHealing.desc }
+
 ent-CP14ActionSpellCureWounds = Лечение ран
-    .desc = Вы касаетесь существа, исцеляя его тело от физических повреждений.
+    .desc = Вы излечиваете цель от физических ранений.
 
 ent-CP14RuneCureWounds = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
@@ -270,9 +331,6 @@ ent-CP14RuneIceDagger = { ent-CP14BaseMagicRune }
 ent-CP14ImpactEffectIceDagger = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14DaggerIce = ледяной кинжал
-    .desc = Кусок острого магического льда. Через некоторое время действие заклинания ослабнет, и он исчезнет.
-
 ent-CP14SpellScrollIceDagger = свиток заклинания ледяного кинжала
     .desc = { ent-CP14BaseSpellScrollWater.desc }
 
@@ -281,9 +339,6 @@ ent-CP14ActionSpellWaterCreation = Создание воды
 
 ent-CP14RuneWaterCreation = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
-
-ent-CP14LiquidDropWater = парящая капля жидкости
-    .desc = Сгусток жидкости, удерживаемый в форме шара с помощью магии.
 
 ent-CP14ImpactEffectWaterCreation = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -299,6 +354,7 @@ ent-CP14RuneBeerCreation = { ent-CP14BaseMagicRune }
 
 ent-CP14LiquidDropBeer = { ent-CP14LiquidDropWater }
     .desc = { ent-CP14LiquidDropWater.desc }
+    .suffix = Пиво
 
 ent-CP14ImpactEffectBeerCreation = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -320,15 +376,6 @@ ent-CP14SpellScrollIceShards = свиток заклинания ледяных 
 ent-CP14ClothingBackpackLeather = кожаный рюкзак
     .desc = Вы носите его на спине и кладете в него предметы.
 
-ent-CP14ClothingCloakArmoredRed = бронированная красная накидка
-    .desc = Огромные металлические наплечники дают дополнительную защиту от отрубания головы.
-
-ent-CP14ClothingCloakBlacksmithArpon = фартук кузнеца
-    .desc = Свободные кожанные полоски, все еще фактически являющиеся одеждой.
-
-ent-CP14ClothingCloakMaidArpon = фартук горничной
-    .desc = Чистота, порядок и послушание - вот основные черты хорошей горничной.
-
 ent-CP14ClothingCloakBrassArmor = латунная броня
     .desc = Качественная латунная броня, хорошо защищающая и не слишком тяжелая.
 
@@ -347,23 +394,23 @@ ent-CP14ClothingCloakCuirassLeg = кираса для ног
 ent-CP14ClothingCloakAlchemist = плащ алхимика
     .desc = Дорогая ткань, выдерживающая брызги кислоты, - стандарт для экспертов-алхимиков.
 
-ent-CP14ClothingCloakCommandantJacket = жилет коменданта
-    .desc = Белое золото говорит о том, что вы смотрите на серьезного представителя власти.
+ent-CP14ClothingCloakGuardBase = накидка стражи
+    .desc = Наплечная накидка в стандартных цветах Имперской гвардии.
 
-ent-CP14ClothingCloakCaptainJacket = капитанский жилет
-    .desc = Белое золото говорит о том, что вы смотрите на серьезного представителя власти.
+ent-CP14ClothingCloakGuardWhite = { ent-CP14ClothingCloakGuardBase }
+    .desc = { ent-CP14ClothingCloakGuardBase.desc }
+
+ent-CP14ClothingCloakGuardBlue = { ent-CP14ClothingCloakGuardBase }
+    .desc = { ent-CP14ClothingCloakGuardBase.desc }
+
+ent-CP14ClothingCloakGuardCommander = бронированный плащ командира гвардии
+    .desc = Это чрезвычайно прочная и легкая накидка, разработанная специально для командиров Имперской гвардии.
 
 ent-CP14ClothingCloakFurcapeBlack = меховая накидка
     .desc = Брутальная, выделанная из шерсти, накидка на плечи.
 
 ent-CP14ClothingCloakFurcapeBlue = { ent-CP14ClothingCloakFurcapeBlack }
     .desc = { ent-CP14ClothingCloakFurcapeBlack.desc }
-
-ent-CP14ClothingCloakSimpleWhite = белый плащ
-    .desc = Длинный плащ с высоким воротником.
-
-ent-CP14ClothingCloakSimpleDarkBlue = темный плащ
-    .desc = { ent-CP14ClothingCloakSimpleWhite.desc }
 
 ent-CP14ClothingCloakRitualAttireLeather = ритуальный наряд из кожи
     .desc = Традиционное одеяние магов Юга, прошедших ритуал.
@@ -452,14 +499,17 @@ ent-CP14ClothingMaskSinner = маска грешника
 ent-CP14ClothingMaskSteelMask = стальная маска
     .desc = Стальная маска, защищающая лицо от внешнего воздействия железа.
 
+ent-CP14ClothingPantsAristocratic = штаны аристократа
+    .desc = Они из достаточно дорогой ткани, чтобы вы не хотели в них шляться по пещерам.
+
+ent-CP14ClothingPantsGuardsChainmailSkirt = кольчужная юбка стражи
+    .desc = Юбка с вшитой подкладкой из кольчуги, окрашенная в стандартные цвета униформы Имперской гвардии.
+
 ent-CP14ClothingPantsTrouserWhite = белые штаны
     .desc = Широкие, свободные штаны из простой холщовой ткани.
 
 ent-CP14ClothingPantsTrouserDarkBlue = темные штаны
     .desc = Широкие, свободные штаны из простой холщовой ткани.
-
-ent-CP14ClothingPantsAristocratic = штаны аристократа
-    .desc = Они из достаточно дорогой ткани, чтобы вы не хотели в них шляться по пещерам.
 
 ent-CP14ClothingPantsLoincloth = набедренная повязка
     .desc = Свободные, ничего не мешает, да еще и выглядят экстремально брутально
@@ -490,6 +540,15 @@ ent-CP14ClothingShirtBase = None
 
 ent-CP14ClothingShirtBanker = рубашка банкира
     .desc = Белая рубашка с бронзовыми вставками. Стандартный костюм банковского служащего.
+
+ent-CP14ClothingShirtGuardBase = кольчуга стражника
+    .desc = Рубашка с вшитой подкладкой из кольчуги, окрашенная в стандартные цвета униформы Имперской гвардии.
+
+ent-CP14ClothingShirtGuardsChainmailShirtWB = { ent-CP14ClothingShirtGuardBase }
+    .desc = { ent-CP14ClothingShirtGuardBase.desc }
+
+ent-CP14ClothingShirtGuardsChainmailShirtB = { ent-CP14ClothingShirtGuardBase }
+    .desc = { ent-CP14ClothingShirtGuardBase.desc }
 
 ent-CP14ClothingShirtCottonBlue = холщовая синяя рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
@@ -533,11 +592,10 @@ ent-CP14BankStorageMarker = маркер хранилища банка
     .desc = Отметьте указанную область как «банковское хранилище», чтобы зачесть всем банкирам цели по хранению сокровищ
     .suffix = ОДИН НА КАРТУ
 
-ent-CP14SpawnPointCaptain = капитан
-    .desc = { ent-CP14SpawnPointJobBase.desc }
-
 ent-CP14SpawnPointGuardCommander = командир стражи
     .desc = { ent-CP14SpawnPointJobBase.desc }
+
+ent-CP14SpawnPointGuard = стража
 
 ent-CP14SpawnPointCommandant = коммендант
     .desc = { ent-CP14SpawnPointJobBase.desc }
@@ -681,8 +739,6 @@ ent-CP14BaseMobHuman = мистер Человек
 
 ent-CP14BaseMobTiefling = мистер Тифлинг
 
-ent-CP14BaseMobZombie = мистер Зомби
-
 ent-CP14OreCopper = медная руда
     .desc = Кусочек бледной, тяжелой меди.
 
@@ -776,9 +832,6 @@ ent-CP14FoodDoughMedium = средний кусок теста
 ent-CP14FoodDoughMediumFlat = раскатанное тесто
     .desc = { ent-CP14FoodDoughMedium.desc }
 
-ent-CP14FoodEggBase = None
-    .desc = Это яйцо!
-
 ent-CP14Eggshells = яичная скорлупа
     .desc = Ты ходишь по ним, приятель.
 
@@ -829,9 +882,6 @@ ent-CP14FoodPotato = картошка
 
 ent-CP14FoodCucumber = огурец
     .desc = Продолговатый зеленый овощ. Освежает!
-
-ent-CP14FoodTomatoes = помидор
-    .desc = Красный, сочный помидор. Так и хочется бросить его кому-нибудь в лицо!
 
 ent-CP14FoodTomatoesSlice = срез помидора
     .desc = Тонкий ломтик красного помидора. Их уже не так приятно бросать в людей, как целые помидоры.
@@ -1166,20 +1216,17 @@ ent-CP14AuraScanner = сканер ауры
 ent-CP14RitualChalk = ритуальный мелок
     .desc = Кварцевый мелок, удобный для рисования временных ритуальных кругов.
 
-ent-CP14ManaOperationGlove = перчатка оперирования маной
-    .desc = Несложная, но эстетически приятная смесь технологии и магических кристаллов, позволяющая оперировать сырой маной: высасывать ее из одних предметов и вливать в другие.
-
 ent-CP14Bucket = ведро
     .desc = Старое скучное ведро
-
-ent-CP14CrystalLamp = кристалльная лампа
-    .desc = Устройство, преобразующее энергию кристаллов в источник направленного света.  Удобно для путешествий
 
 ent-CP14CrystalLampBlueEmpty = голубая кристалльная лампа
     .desc = { ent-CP14CrystalLamp.desc }
 
 ent-CP14CrystalLampOrangeEmpty = оранжевая кристалльная лампа
     .desc = { ent-CP14CrystalLamp.desc }
+
+ent-CP14Lighter = зажигалка
+    .desc = Позволяет поджигать вещи. Абсолютно, на 100% не из майнкрафта.
 
 ent-CP14Rope = веревка
     .desc = Многофункциональная веревка. Ей можно связать что-нить. Или кого-нибудь.
@@ -1189,6 +1236,9 @@ ent-CP14Scissors = ножницы
 
 ent-CP14BaseSharpeningStone = точильный камень
     .desc = Позволит заточить притупленное оружие. Если перестараться, вы вполне можете сточить оружие полностью.
+
+ent-CP14Torch = факел
+    .desc = В основе - палка, горящая с одной стороны. Используется для освещения территории.
 
 ent-CP14WallpaperBank = обои "честность банкира"
     .desc = { ent-CP14BaseWallpaper.desc }
@@ -1220,65 +1270,8 @@ ent-CP14WallpaperWhite2 = обои "чистый белый"
 ent-CP14WallpaperYellow = обои "солнечный ритм"
     .desc = { ent-CP14BaseWallpaper.desc }
 
-ent-CP14MagicHealingStaff = магический посох лечения
-    .desc = Длинная, наполовину технологическая, наполовину магическая палка, предназначенная для преобразования магической энергии в целительные заклинания.
-
-ent-CP14BaseBattleHammer = боевой молот
-    .desc = Большой тяжелый молот. Лучше вам не стоять у него на пути!
-
-ent-CP14BaseBattleStaff = боевой посох
-    .desc = Нет оружия проще и эффективнее, чем длинная и тяжелая палка!
-
-ent-CP14BaseDagger = кинжал
-    .desc = Небольшое многофункциональное острое лезвие. И мясо порезать, и в гоблина метнуть.
-
-ent-CP14BaseHandheldAxe = ручной топор
-    .desc = Небольшой топор, отлично подходящий для рубки деревьев или сухожилий.
-
-ent-CP14BaseLightHammer = легкий молот
-    .desc = Небольшой молоток. Хорош как для плотнических работ, так и для проламывания черепов.
-
-ent-CP14BaseMace = булава
-    .desc = Тяжелый кусок металла на длинной палке. Что может быть проще?
-
-ent-CP14BaseShield = щит
-    .desc = Деревянный щит, способный выдержать несколько ударов.
-
-ent-CP14BaseSickle = серп
-    .desc = Изначально разработанное как оружие против травы, серп внезапно показал себя хорош и в более кровавой жатве.
-
-ent-CP14BaseThrowableSpear = метательное копьё
-    .desc = Оружие, исправно выполняющее свой долг еще со времен эпохи великанов.
-
-ent-CP14BaseSword = меч
-    .desc = Золотой стандарт холодного оружия. Средняя длина, удобная рукоять и никаких излишеств.
-
-ent-CP14BaseTwoHandedSword = двуручный меч
-    .desc = Мощное оружие, требующее огромной силы и умения для эффективного использования.
-
 ent-CP14TwoHandedSwordScythe = коса
     .desc = Большая двуручная коса. Что вы будете косить ею? Пшено, или головы своих врагов?
-
-ent-CP14BaseCrowbar = гвоздодёр
-    .desc = Универсальный и полезный инструмент для разборки полов и других предметов.
-
-ent-CP14BaseHoe = мотыга
-    .desc = Фермерский инструмент для подготовки почвы под посадки, либо очистки от сорняков.
-
-ent-CP14BaseMop = деревянная швабра
-    .desc = Швабра для мытья полов от различных неприятных жидкостей.
-
-ent-CP14BaseBroom = деревянная метла
-    .desc = Убирает засохшие следы и другие пятна с пола.
-
-ent-CP14BasePickaxe = кирка
-    .desc = Идеально заточена, и готова вгрызаться в земную твердь.
-
-ent-CP14BaseShovel = лопата
-    .desc = Орудие для вскапывания земли, рытья грядок или могил.
-
-ent-CP14BaseWrench = гаечный ключ
-    .desc = Обычный инструмент для сборки и разборки. Помните: влево закручивать, вправо откручивать.
 
 ent-CP14BaseLightCrossbow = легкий арбалет
     .desc = Небольшой, компактный арбалет, который удобно держать одной рукой. Не слишком меткий с обратной стороны.
@@ -1296,9 +1289,6 @@ ent-CP14_NeutralCluster_00 = Li-Ra
 
 ent-CP14Chasm = бездна
     .desc = И вы не видите ее дна...
-
-ent-CP14WallmountCrystalBase = сверкающий кварц
-    .desc = Биолюминесцентные кристаллы кварца, которые могут принимать любой цвет, - очень удобный источник света в глубоких пещерах. К сожалению, светящиеся свойства очень трудно сохранить.
 
 ent-CP14WallmountCrystalRubies = { ent-CP14WallmountCrystalBase }
     .desc = { ent-CP14WallmountCrystalBase.desc }
@@ -1451,10 +1441,6 @@ ent-CP14WoodenDoorFrame = каркас деревянной двери
 ent-CP14WoodenDoorFrameMirrored = { ent-CP14WoodenDoorFrame }
     .desc = { ent-CP14WoodenDoorFrame.desc }
 
-ent-CP14IronDoor = железная дверь
-    .desc = Если есть массивная железная дверь, то за ней должно быть что-то ценное.
-    .suffix = Открытая
-
 ent-CP14IronDoorMirrored = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Opened, Mirrored
@@ -1463,22 +1449,13 @@ ent-CP14IronDoorBlacksmith = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Blacksmith
 
-ent-CP14IronDoorMirroredBlacksmith = None
-    .suffix = Blacksmith, Mirrored
-
 ent-CP14IronDoorBankStaff = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Bank Staff
 
-ent-CP14IronDoorMirroredBankStaff = None
-    .suffix = Bank Staff, Mirrored
-
 ent-CP14IronDoorBankVault = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Bank Vault
-
-ent-CP14IronDoorMirroredBankVault = None
-    .suffix = Bank Vault, Mirrored
 
 ent-CP14IronDoorBankSafe = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
@@ -1488,10 +1465,6 @@ ent-CP14IronDoorBankCommandantRoom = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Bank Commandant room
 
-ent-CP14IronDoorWindowed = железная дверь с окном
-    .desc = Массивная железная дверь с маленьким окошком. В него, конечно, можно заглянуть, но руку просунуть сложно.
-    .suffix = Opened
-
 ent-CP14IronDoorWindowedMirrored = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
     .suffix = Opened, Mirrored
@@ -1500,19 +1473,9 @@ ent-CP14IronDoorWindowedBankEntrance = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
     .suffix = Bank Entrance
 
-ent-CP14IronDoorWindowedMirroredBankEntrance = None
-    .suffix = Bank Entrance, Mirrored
-
 ent-CP14IronDoorWindowedBlacksmith = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
     .suffix = Blacksmith
-
-ent-CP14IronDoorWindowedMirroredBlacksmith = None
-    .suffix = Blacksmith, Mirrored
-
-ent-CP14WoodenDoor = деревянная дверь
-    .desc = Не самая прочная конструкция, но это лучше, чем ничего.
-    .suffix = Открыто
 
 ent-CP14WoodenDoorMirrored = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
@@ -1521,9 +1484,6 @@ ent-CP14WoodenDoorMirrored = { ent-CP14WoodenDoor }
 ent-CP14WoodenDoorTavernStaff = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
     .suffix = Tavern Staff
-
-ent-CP14WoodenDoorTavernStaffMirrored = None
-    .suffix = Tavern Staff, Mirrored
 
 ent-CP14WoodenDoorTavernDorms1 = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
@@ -1549,13 +1509,6 @@ ent-CP14WoodenDoorTavernAlchemy = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
     .suffix = Alchemy
 
-ent-CP14WoodenDoorTavernAlchemyMirrored = None
-    .suffix = Alchemy, Mirrored
-
-ent-CP14WoodenDoorWindowed = деревянная дверь с окном
-    .desc = Не самая прочная конструкция, но это лучше, чем ничего.
-    .suffix = Opened
-
 ent-CP14WoodenDoorWindowedMirrored = { ent-CP14WoodenDoorWindowed }
     .desc = { ent-CP14WoodenDoorWindowed.desc }
     .suffix = Opened, Mirrored
@@ -1563,9 +1516,6 @@ ent-CP14WoodenDoorWindowedMirrored = { ent-CP14WoodenDoorWindowed }
 ent-CP14WoodenDoorWindowedTavernHall = { ent-CP14WoodenDoorWindowed }
     .desc = { ent-CP14WoodenDoorWindowed.desc }
     .suffix = Tavern Hall
-
-ent-CP14WoodenDoorTavernHallMirrored = None
-    .suffix = Tavern Hall, Mirrored
 
 ent-CP14BaseFenceStraight = { ent-CP14BaseFence }
     .desc = { ent-CP14BaseFence.desc }
@@ -1595,32 +1545,6 @@ ent-CP14CliffEndLeft = { ent-CP14Cliff }
 ent-CP14CliffEndRight = { ent-CP14Cliff }
     .desc = { ent-CP14Cliff.desc }
     .suffix = Правый край
-
-ent-CP14FenceIronGrilleBase = железная решетка
-    .desc = Прочный барьер из сваренных вместе железных прутьев.
-
-ent-CP14FenceIronGrilleGate = железные решетчатые ворота
-    .desc = Тяжелые железные ворота в решетках. Выглядит серьезно.
-
-ent-CP14BaseFenceWood = деревянный забор
-    .desc = Деревянный забор. Не посадите заноз!
-
-ent-CP14FenceWoodGate = деревянные ворота для забора
-    .desc = Большая дверь в большом заборе. Для больших людей.
-
-ent-CP14BaseFenceWoodSmall = низкий деревянный забор
-    .desc = A small wooden fence. It protects the area from unnecessary visitors who don't have a towel.
-
-ent-CP14FenceWoodSmallStraight = { ent-CP14BaseFenceWoodSmall }
-    .desc = { ent-CP14BaseFenceWoodSmall.desc }
-    .suffix = Прямой
-
-ent-CP14FenceWoodSmallCorner = { ent-CP14BaseFenceWoodSmall }
-    .desc = { ent-CP14BaseFenceWoodSmall.desc }
-    .suffix = Угол
-
-ent-CP14FenceWoodSmallGate = маленькие деревянные ворота для забора
-    .desc = Представляете ли вы, что ждет вас за этими воротами? Это может быть как туалет, так и роскошный особняк.
 
 ent-CP14FloorWater = вода
     .desc = Впадина с обычной водой. Достаточна чиста для употребления.
@@ -1729,10 +1653,6 @@ ent-CP14PlantWheat = пшеница
 ent-CP14PlantWheatDeath = мертвая пшеница
     .desc = Грустное зрелище потерянной еды.
 
-ent-CP14BaseBarrel = деревянная бочка
-    .desc = Большая, удобная емкость для хранения жидкостей.
-    .suffix = Пустая
-
 ent-CP14BarrelWater = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }
     .suffix = Вода
@@ -1781,14 +1701,8 @@ ent-CP14BarrelDayflin = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }
     .suffix = Днецвет
 
-ent-CP14WoodenBed = деревянная кровать
-    .desc = Деревянная кровать. Лучше, чем ничего.
-
 ent-CP14Bonfire = костёр
     .desc = Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
-
-ent-CP14WoodenCabinet = деревянный комод
-    .desc = Непримечательный деревянный комод.
 
 ent-C14IronCabinet = железный комод
     .desc = Железный шкаф. Прочный, запираемый. Вы можете хранить здесь свои ценности, не опасаясь, что какой-нибудь грабитель заберет все себе.
@@ -1796,23 +1710,11 @@ ent-C14IronCabinet = железный комод
 ent-C14IronCabinetCargo = торговый ящик
     .desc = Бронированное хранилище для хранения денег, предназначенных для торговли с городом. Городские работники будут выгружать сюда свои доходы или забирать их отсюда, когда вы захотите что-то купить.
 
-ent-CP14ChairWooden = деревянный стул
-    .desc = Сколочен из самых обычных досок. Просто и эффективно!
-
 ent-CP14ClosetBase = шкаф
     .desc = Обычный, ветхий шкаф.
 
-ent-CP14WoodenCloset = деревянный шкаф
-    .desc = Непримечательный, высокий деревянный шкаф.
-
-ent-CP14Safe = сейф
-    .desc = Гигантский железный ящик для хранения самых ценных вещей. Очень тяжелый и очень прочный.
-
 ent-CP14SafeVault = сейф хранилища банка
     .desc = { ent-CP14Safe.desc }
-
-ent-CP14BaseCurtains = шторы
-    .desc = Скрывает то, что не должны видеть другие.
 
 ent-CP14CurtainsWhite = { ent-CP14BaseCurtains }
     .desc = { ent-CP14BaseCurtains.desc }
@@ -1846,12 +1748,6 @@ ent-CP14LamppostBlue = фонарный столб
     .desc = Фонарь, подвешенный на столбе.
     .suffix = Вечногорящий, Синий
 
-ent-CP14Mannequin = манекен
-    .desc = Удобная подставка для одежды или доспехов.
-
-ent-CP14WoodenPallet = деревянный поддон
-    .desc = деревянная подставка для товаров
-
 ent-CP14WoodenPalletSell = деревянный поддон для продажи
     .desc = { ent-CP14WoodenPallet.desc }
 
@@ -1883,28 +1779,9 @@ ent-CP14WallmountBarShelfB = { ent-CP14WallmountBarShelfA }
     .desc = { ent-CP14WallmountBarShelfA.desc }
     .suffix = 2
 
-ent-CP14WallmountLampEmpty = кристалльный настенный светильник
-    .desc = Простое настенное магическое устройство, преобразующее энергию кристаллов в яркий свет.
-    .suffix = Empty
-
 ent-CP14WallmountLamp = { ent-CP14WallmountLampEmpty }
     .desc = { ent-CP14WallmountLampEmpty.desc }
     .suffix = Small crystal
-
-ent-CP14WallmountOrdersBorder = доска заказов
-    .desc = Здесь найдется работка для ведьмака?
-
-ent-CP14Workbench = верстак
-    .desc = Стол для создания различного базового инструментария.
-
-ent-CP14WorkbenchCooking = кухонный стол
-    .desc = Стол для работы с едой. Время готовить!
-
-ent-CP14WorkbenchSewing = ткацкий станок
-    .desc = Стол с инструментами для вышивания, позволяющими создавать различную одежду и материалы.
-
-ent-CP14FrameWooden = каркас деревянной стены
-    .desc = Деревянный каркас для деревянных стен любых видов.
 
 ent-CP14TravelingStoreshipAnchor = якорь для торгового корабля
     .desc = Точка приземления путешествующего корабля к поверхности. Следите за небом, чтобы вас не раздавило!
@@ -1931,12 +1808,6 @@ ent-CP14ShuttleWingBigR = { ent-CP14ShuttleWingBase }
 ent-CP14AlchemyFurnace = алхимическая печь
     .desc = Печь, работающая на дровах, угле или любом другом горящем материале. Удобна для подогрева алхимических зелий.
 
-ent-CP14AlchemyNormalizer = нормализатор растворов
-    .desc = Алхимический прибор, удаляющий мелкий осадок из растворов и стабилизирующий его для дальнейшей работы
-
-ent-CP14BaseVat = чан
-    .desc = Очень большой чан для хранения огромного количества жидкости. Тяжелый, неудобный для переноски.
-
 ent-CP14CashConverter = конвертер валюты
     .desc = Простое магическое устройство, соединенное маленькими порталами с центральным банком империи. Он позволяет конвертировать монеты между номиналами и даже не взимает проценты! Это щедрость.
 
@@ -1946,26 +1817,8 @@ ent-CP14SeedbedWooden = грядка
 ent-CP14ChestGeneric = сундук
     .desc = Chest.
 
-ent-CP14WoodenChestFrame = каркас деревянного сундука
-    .desc = Base for any wooden chest
-
-ent-CP14WoodenChest = деревянный сундук
-    .desc = Простой деревянный сундук для хранения всякого хлама.
-
-ent-CP14BrassChest = латунный сундук
-    .desc = Простой латунный сундук для удобного хранения хлама.
-
-ent-CP14CrateCoffin = гроб
-    .desc = Удобный и красивый гроб, чтобы с удобствами дождаться своего воскрешения.
-
 ent-CP14BaseSmallCrate = { ent-CP14BaseCrate }
     .desc = { ent-CP14BaseCrate.desc }
-
-ent-CP14LargeWoodenCrate = большой деревянный ящик
-    .desc = Ящик из дерева.
-
-ent-CP14SmallWoodenCrate = малый деревянный ящик
-    .desc = Ящик из дерева.
 
 ent-CP14WallStone = камень
     .desc = Природная стена из цельного камня. В ней ощущается холод пещеры.
@@ -2001,11 +1854,6 @@ ent-CP14WallMarbleBrick = мраморная кирпичная стена
 ent-CP14WallBrownbrick = кирпичная стена
     .desc = { ent-CP14BaseWall.desc }
 
-ent-CP14WallWooden = деревянная стена
-
-ent-CP14WallCardboard = картонная стена
-    .desc = Тонкая, непрочная стена из бумаги и картона. Популярна в теплых странах.
-
 ent-CP14WallCyan = голубая стена
     .desc = { ent-CP14BaseWall.desc }
 
@@ -2021,6 +1869,260 @@ ent-CP14WindowStoneBrick = окно в стене из каменного кир
 ent-CP14WindowMarbleBrick = окно в стене из мраморного кирпича
     .desc = Мраморная кирпичная стена со стеклянным окном в ней.
 
+ent-CP14SmallWoodenCrateFilled = None
+    .suffix = Заполнен. Инструменты и приколы
+
+ent-CP14LargeWoodenCrateFilled = None
+    .suffix = Заполнен. Инструменты и приколы
+
+ent-CP14FlameCreationArtificialFlame = искуственное пламя
+    .desc = Магически созданное искусственное пламя, горящее прямо в воздухе. Неплохой источник света или оружие, если бросить его кому-нибудь в лицо.
+
+ent-CP14DaggerIce = ледяной кинжал
+    .desc = Кусок острого магического льда. Через некоторое время действие заклинания ослабнет, и он исчезнет.
+
+ent-CP14LiquidDropWater = парящая капля жидкости
+    .desc = Сгусток жидкости, удерживаемый в форме шара с помощью магии.
+    .suffix = Вода
+
+ent-CP14ClothingCloakBlacksmithArpon = фартук кузнеца
+    .desc = Свободные кожаные полоски, остающиеся на самом деле одеждой.
+
+ent-CP14ClothingCloakMaidArpon = фартук горничной
+    .desc = Чистота, порядок и послушание - главные черты хорошей горничной.
+
+ent-CP14ClothingCloakCommandantJacket = куртка коменданта
+    .desc = Белый и золотой цвета говорят о том, что вы обращаетесь к высшим силам.
+
+ent-CP14ClothingCloakCaptainJacket = куртка капитана
+    .desc = Белый и золотой цвета говорят о том, что вы обращаетесь к высшим силам.
+
+ent-CP14BaseMobZombie = Мистер Зомби
+
+ent-CP14FoodTomatoes = помидор
+    .desc = Красный, сочный помидор. Так и хочется бросить его кому-нибудь в лицо!
+
+ent-CP14ManaOperationGlove = mana glove
+    .desc = Несложная, но эстетически приятная смесь технологии и магических кристаллов, позволяющая оперировать сырой маной: высасывать ее из одних предметов и вливать в другие.
+
+ent-CP14CrystalLamp = кристалльная лампа
+    .desc = Устройство, преобразующее энергию кристаллов в источник направленного света.  Удобно для путешествий.
+
+ent-CP14MagicHealingStaff = посох исцеления
+    .desc = Длинная, наполовину технологическая, наполовину магическая палка, предназначенная для преобразования магической энергии в целительные заклинания.
+
+ent-CP14BaseBattleHammer = боевой молот
+    .desc = Большой тяжелый молот. Лучше не вставать у него на пути!
+
+ent-CP14BaseBattleStaff = боевой посох
+    .desc = Чрезвычайно простое и эффективное оружие - длинная прямая и тяжелая палка.
+
+ent-CP14BaseDagger = кинжал
+    .desc = Маленький, многофункциональный, острый клинок. Им можно резать мясо или бросать в гоблинов.
+
+ent-CP14BaseHandheldAxe = ручной топор
+    .desc = Небольшой топор, отлично подходит для рубки дерева или сухожилий.
+
+ent-CP14BaseLightHammer = лёгкий молоток
+    .desc = Небольшой молоток. Хорошо подходит для плотницких работ, а также для раскалывания черепов.
+
+ent-CP14BaseMace = булава
+    .desc = Тяжелый кусок металла на длинной палке. Что может быть проще этого?
+
+ent-CP14BaseShield = щит
+    .desc = Деревянный щит, способный выдержать несколько ударов.
+
+ent-CP14BaseSickle = серп
+    .desc = Изначально созданный как оружие против травы, серп неожиданно оказался хорош и при сборе кровавого урожая.
+
+ent-CP14BaseThrowableSpear = метательное копье
+    .desc = Оружие, которое выполняет свои обязанности с эпохи гигантов.
+
+ent-CP14BaseSword = меч
+    .desc = золотой стандарт остроконечного оружия. Средняя длина, удобная рукоять. Без излишеств.
+
+ent-CP14BaseTwoHandedSword = двуручный меч
+    .desc = Мощное оружие, требующее огромной силы и мастерства для эффективного использования.
+
+ent-CP14BaseCrowbar = лом
+    .desc = Универсальная и полезная железяка, предназначенная для разборки полов и других предметов.
+
+ent-CP14BaseHoe = мотыга
+    .desc = Садовый инструмент для подготовки почвы к посадке или для удаления сорняков
+
+ent-CP14BaseMop = деревянная швабра
+    .desc = Швабра для мытья полов от различных неприятных жидкостей
+
+ent-CP14BaseBroom = деревянная метла
+    .desc = Подметать засохшие следы и другие пятна с пола
+
+ent-CP14BasePickaxe = кирка
+    .desc = Зазубренный до совершенства, для втыкания в камни
+
+ent-CP14BaseShovel = лопата
+    .desc = Орудие для вскапывания земли, рытья грядок или могил.
+
+ent-CP14BaseWrench = гаечный ключ
+    .desc = Обычный инструмент для сборки и разборки. Помните: левша защелкивается, правша снимается.
+
+ent-CP14IronDoor = железная дверь
+    .desc = Ну, если здесь есть массивная железная дверь, то за ней должно быть что-то ценное.
+    .suffix = Открыто
+
+ent-CP14IronDoorMirroredBlacksmith = None
+    .suffix = Blacksmith, Mirrored
+
+ent-CP14IronDoorMirroredBankStaff = None
+    .suffix = Bank Staff, Mirrored
+
+ent-CP14IronDoorMirroredBankVault = None
+    .suffix = Bank Vault, Mirrored
+
+ent-CP14IronDoorWindowed = железная дверь с окном
+    .desc = массивная железная дверь с маленьким окошком. В него, конечно, можно заглянуть, но руку просунуть трудно.
+    .suffix = Opened
+
+ent-CP14IronDoorWindowedMirroredBankEntrance = None
+    .suffix = Bank Entrance, Mirrored
+
+ent-CP14IronDoorWindowedMirroredBlacksmith = None
+    .suffix = Blacksmith, Mirrored
+
+ent-CP14WoodenDoor = деревянная дверь
+    .desc = Не самая прочная конструкция, но это лучше, чем ничего.
+    .suffix = Открыто
+
+ent-CP14WoodenDoorTavernStaffMirrored = None
+    .suffix = Tavern Staff, Mirrored
+
+ent-CP14WoodenDoorTavernAlchemyMirrored = None
+    .suffix = Alchemy, Mirrored
+
+ent-CP14WoodenDoorWindowed = деревянная дверь с окном
+    .desc = Не самая прочная конструкция, но это лучше, чем ничего.
+    .suffix = Opened
+
+ent-CP14WoodenDoorTavernHallMirrored = None
+    .suffix = Tavern Hall, Mirrored
+
+ent-CP14FenceIronGrilleBase = железная решётка
+    .desc = Прочный барьер из сваренных вместе железных прутьев.
+
+ent-CP14FenceIronGrilleStraight = { ent-CP14FenceIronGrilleBase }
+    .desc = { ent-CP14FenceIronGrilleBase.desc }
+    .suffix = Straight
+
+ent-CP14FenceIronGrilleCorner = { ent-CP14FenceIronGrilleBase }
+    .desc = { ent-CP14FenceIronGrilleBase.desc }
+    .suffix = Corner
+
+ent-CP14FenceIronGrilleGate = железные решетчатые ворота
+    .desc = Тяжелые железные ворота в решетках. Выглядит серьезно.
+
+ent-CP14BaseFenceWood = деревянный забор
+    .desc = Деревянный забор. Не посадите заноз!
+
+ent-CP14FenceWoodStraight = { ent-CP14BaseFenceWood }
+    .desc = { ent-CP14BaseFenceWood.desc }
+    .suffix = Straight
+
+ent-CP14FenceWoodCorner = { ent-CP14BaseFenceWood }
+    .desc = { ent-CP14BaseFenceWood.desc }
+    .suffix = Corner
+
+ent-CP14FenceWoodGate = деревянные ворота для забора
+    .desc = Большая дверь в большом заборе. Для больших людей.
+
+ent-CP14BaseFenceWoodSmall = низкий деревянный забор
+    .desc = Небольшой деревянный забор. Он защищает территорию от лишних посетителей, у которых нет полотенца.
+
+ent-CP14FenceWoodSmallStraight = { ent-CP14BaseFenceWoodSmall }
+    .desc = { ent-CP14BaseFenceWoodSmall.desc }
+    .suffix = Прямой
+
+ent-CP14FenceWoodSmallCorner = { ent-CP14BaseFenceWoodSmall }
+    .desc = { ent-CP14BaseFenceWoodSmall.desc }
+    .suffix = Угол
+
+ent-CP14FenceWoodSmallGate = маленькие деревянные ворота для забора
+    .desc = Представляете ли вы, что ждет вас за этими воротами? Это может быть как туалет, так и роскошный особняк.
+
+ent-CP14BaseBarrel = wooden barrel
+    .desc = The simplest design for storing liquids.
+    .suffix = Empty
+
+ent-CP14WoodenBed = wooden bed
+    .desc = Wooden bed. Better than nothing.
+
+ent-CP14WoodenCabinet = деревянный комод
+    .desc = Непримечательный деревянный комод.
+
+ent-CP14ChairWooden = деревянный стул
+    .desc = Изготовлен из самых обычных досок. Просто и эффектно!
+
+ent-CP14WoodenCloset = деревянный шкаф
+    .desc = Это обычный деревянный шкаф.
+
+ent-CP14Safe = сейф
+    .desc = Гигантский железный ящик для хранения самых ценных вещей. Очень тяжелый и очень прочный.
+
+ent-CP14BaseCurtains = шторы
+    .desc = Скрывает то, что другие не должны видеть.
+
+ent-CP14Mannequin = манекен
+    .desc = Удобная подставка для одежды или доспехов.
+
+ent-CP14WoodenPallet = деревянный поддон
+    .desc = деревянная подставка для товаров
+
+ent-CP14WallmountLampEmpty = хрустальный настенный светильник
+    .desc = Простой настенный магический прибор, преобразующий энергию кристаллов в яркий свет.
+    .suffix = Empty
+
+ent-CP14WallmountOrdersBorder = доска заказов
+    .desc = Есть ли работа для ведьмака?
+
+ent-CP14Workbench = верстак
+    .desc = Стол для изготовления различных основных инструментов.
+
+ent-CP14WorkbenchCooking = кулинарный стол
+    .desc = Стол для работы с едой. Пора готовить!
+
+ent-CP14WorkbenchSewing = швейный стол
+    .desc = Стол с инструментами для вышивания, позволяющими создавать различную одежду и материалы.
+
+ent-CP14FrameWooden = деревянная настенная рама
+    .desc = Деревянная рама для любой деревянной стены.
+
+ent-CP14AlchemyNormalizer = нормализатор растворов
+    .desc = Алхимический прибор, который удаляет мелкий осадок из растворов и стабилизирует его для дальнейшей работы.
+
+ent-CP14BaseVat = большой чан
+    .desc = Очень большой чан для хранения огромного количества жидкости. Тяжелый, неудобный для переноски.
+
+ent-CP14WoodenChestFrame = Рама для деревянного сундука
+    .desc = Основание для любого деревянного сундука
+
+ent-CP14WoodenChest = деревянный сундук
+    .desc = Простой деревянный сундук для удобного хранения хлама.
+
+ent-CP14BrassChest = Латунный сундук
+    .desc = Простой латунный сундук для удобного хранения хлама.
+
+ent-CP14CrateCoffin = Гроб
+    .desc = Удобный и красивый гроб для комфортного ожидания воскрешения.
+
+ent-CP14LargeWoodenCrate = большой деревянный ящик
+    .desc = прочный деревянный ящик
+
+ent-CP14SmallWoodenCrate = маленький деревянный ящик
+    .desc = массивный деревянный ящик
+
+ent-CP14WallWooden = деревянная стена
+
+ent-CP14WallCardboard = картонная стена
+    .desc = Тонкая, непрочная стена из бумаги и картона. Популярна в теплых странах.
+
 ent-CP14WindowWooden = деревянное окно
-    .desc = Деревянная стена со стеклянным окном.
+    .desc = Деревянная стена со стеклянным окном в ней.
 
