@@ -1,0 +1,40 @@
+- type: body
+  id: CP14Skeleton
+  name: skeleton
+  root: torso
+  slots:
+    head:
+      part: CP14HeadSkeleton
+      connections:
+      - torso
+    torso:
+      part: TorsoHuman
+      connections:
+      - right_arm
+      - left_arm
+      - right_leg
+      - left_leg
+    right_arm:
+      part: CP14RightArmSkeleton
+      connections:
+      - right_hand
+    left_arm:
+      part: CP14LeftArmSkeleton
+      connections:
+      - left_hand
+    right_hand:
+      part: CP14RightHandSkeleton
+    left_hand:
+      part: CP14LeftHandSkeleton
+    right_leg:
+      part: CP14RightLegSkeleton
+      connections:
+      - right_foot
+    left_leg:
+      part: CP14LeftLegSkeleton
+      connections:
+      - left_foot
+    right_foot:
+      part: CP14RightFootSkeleton
+    left_foot:
+      part: CP14LeftFootSkeleton

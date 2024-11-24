@@ -51,3 +51,12 @@
     back: CP14BaseShield
     head: CP14ClothingHeadCapellina
     mask: CP14ClothingMaskSteelMask
+
+- type: startingGear
+  id: CP14MobSkeleton
+  equipment:
+    pants: CP14ClothingPantsLoincloth
+    neck: CP14BaseSword
+    belt1: CP14BaseDagger
+  inhand:
+    - CP14TorchIgnited
