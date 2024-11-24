@@ -1,0 +1,2 @@
+cp14-ghost-role-information-name-skeleton = Demiplane skeleton
+cp14-ghost-role-information-description-skeleton = A spawn of necromancy that seeks to kill all living things that have infiltrated the demiplane.

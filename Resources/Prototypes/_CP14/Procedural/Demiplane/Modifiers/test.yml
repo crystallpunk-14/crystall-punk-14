@@ -305,14 +305,14 @@
   layers:
     - !type:OreDunGen
       entity: CP14SpawnerExpeditionLootCommon
-      count: 15
-      minGroupSize: 1
+      count: 20
+      minGroupSize: 2
       maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyXeno
   name: cp14-modifier-xeno
-  difficulty: 0.5
+  difficulty: 0.4
   requiredTags:
   - CP14DemiplaneUnderground
   layers:
@@ -330,7 +330,7 @@
 - type: cp14DemiplaneModifier
   id: EnemyZombie
   name: cp14-modifier-zombie
-  difficulty: 0.4
+  difficulty: 0.3
   generationWeight: 1.5
   layers:
     - !type:OreDunGen
@@ -340,9 +340,21 @@
       maxGroupSize: 8
 
 - type: cp14DemiplaneModifier
+  id: EnemySkeleton
+  name: cp14-modifier-zombie
+  difficulty: 0.3
+  generationWeight: 1.5
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneSkeleton
+      count: 1
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
   id: EnemyDyno
   name: cp14-modifier-dyno
-  difficulty: 0.5
+  difficulty: 0.3
   requiredTags:
   - CP14DemiplaneOpenSky
   - CP14DemiplaneGrass
@@ -356,7 +368,7 @@
 - type: cp14DemiplaneModifier
   id: SmallHydra
   name: cp14-modifier-dyno
-  difficulty: 0.5
+  difficulty: 0.3
   requiredTags:
   - CP14DemiplaneGrass
   layers:
@@ -369,7 +381,7 @@
 - type: cp14DemiplaneModifier
   id: MonsterMosquito
   name: cp14-modifier-dyno
-  difficulty: 0.5
+  difficulty: 0.15
   requiredTags:
   - CP14DemiplaneGrass
   layers:

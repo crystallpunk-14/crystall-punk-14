@@ -1,0 +1,40 @@
+- type: entity
+  id: CP14MobUndeadSkeleton
+  parent: CP14BaseMobSkeleton
+  name: skeleton
+  description: animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
+  categories: [ ForkFiltered ]
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CP14Undead
+  - type: Loadout
+    prototypes: 
+    - CP14MobSkeleton
+  - type: CP14SkillsStorage
+  - type: CP14AutoAddSkill
+    skills:
+    - Warcraft
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeleton
+  name: ghost role spawn point
+  suffix: rat king
+  categories: [ ForkFiltered ]
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
+    allowMovement: true
+    description: cp14-ghost-role-information-description-skeleton
+    rules: cp14-ghost-role-information-rules-demiplane
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeleton
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _CP14/Mobs/Species/Skeleton/parts.rsi
+        state: full

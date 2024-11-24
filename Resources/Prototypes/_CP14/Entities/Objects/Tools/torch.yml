@@ -87,3 +87,9 @@
       params:
         variation: 0.05
         volume: 10
+
+- type: entity
+  parent: CP14Torch
+  id: CP14TorchIgnited
+  components:
+  - type: CP14AutoIgnite
