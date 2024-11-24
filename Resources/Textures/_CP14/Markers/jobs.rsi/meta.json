@@ -26,6 +26,12 @@
       "name": "green"
     },
     {
+      "name": "guard"
+    },
+    {
+      "name": "guard_commander"
+    },
+    {
       "name": "workman"
     }
   ]

@@ -75,8 +75,6 @@
       children:
       - id: CP14ClothingCloakFurcapeBlack
       - id: CP14ClothingCloakFurcapeBlue
-      - id: CP14ClothingCloakSimpleWhite
-      - id: CP14ClothingCloakSimpleDarkBlue
       - id: CP14ClothingCloakRitualAttireLeather
       - id: CP14ClothingHeadBeretMercenary
       - id: CP14ClothingPantsMercenaryTrousers

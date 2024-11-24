@@ -9,7 +9,7 @@ CP14CaveStoneWallSilverOre: null
 CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
 
 # 2024-06-10
-CP14ClothingCloakHoodieYellow: CP14ClothingCloakSimpleWhite
+CP14ClothingCloakHoodieYellow: null
 CP14ClothingPantsHarlequinRed: CP14ClothingPantsTrouserDarkBlue
 CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlack
 
@@ -153,6 +153,12 @@ CP14ClothingRingFlameCreation: CP14Lighter
 CP14ClothingRingShadowGrab: null
 CP14ClothingRingEarthWall: null
 CP14ClothingRingSphereOfLight: null
+
+#2024-14-11
+CP14ClothingCloakSimpleWhite: null
+CP14ClothingCloakSimpleDarkBlue: null
+CP14ClothingCloakArmoredRed: CP14ClothingCloakGuardCommander
+CP14SpawnPointCaptain: null
 
 # <---> CrystallEdge migration zone end
 

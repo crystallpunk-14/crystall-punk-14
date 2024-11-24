@@ -10,9 +10,13 @@
   canBeAntag: false
   supervisors: cp14-job-supervisors-command
   weight: 2
-  setPreference: false #TEMP
+  setPreference: true
+  special:
+  - !type:CP14AddSkillSpecial
+    skills:
+    - Warcraft
 
 - type: startingGear
   id: CP14GuardCommanderGear
   equipment:
-    belt1: CP14KeyRingInnkeeper
+    belt1: CP14WalletFilledTest

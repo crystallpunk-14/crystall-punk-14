@@ -4,9 +4,9 @@
   id: CP14GuardCommanderCloak
   name: cp14-loadout-guard-commander-cloak
   loadouts:
-  - CP14ClothingCloakArmoredRed
+  - CP14ClothingCloakGuardCommander
 
 - type: loadout
-  id: CP14ClothingCloakArmoredRed
+  id: CP14ClothingCloakGuardCommander
   equipment:
-    cloak: CP14ClothingCloakArmoredRed
+    cloak: CP14ClothingCloakGuardCommander
