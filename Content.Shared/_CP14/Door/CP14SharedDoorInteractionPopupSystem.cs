@@ -8,32 +8,29 @@ namespace Content.Shared._CP14.Door;
 
 public sealed class CP14DoorInteractionPopupSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<CP14DoorInteractionPopupComponent, InteractHandEvent>(OnInteractHand);
+        SubscribeLocalEvent<CP14DoorInteractionPopupComponent, ActivateInWorldEvent>(OnActivatedInWorld);
     }
 
-
-    private void OnInteractHand(EntityUid uid, CP14DoorInteractionPopupComponent component, InteractHandEvent args)
+    private void OnActivatedInWorld(Entity<CP14DoorInteractionPopupComponent> door, ref ActivateInWorldEvent args)
     {
-
         if (TryComp<LockComponent>(args.Target, out var lockComponent) && !lockComponent.Locked)
             return;
 
-        var curTime = _gameTiming.CurTime;
+        var curTime = _timing.CurTime;
 
-        if (curTime < component.LastInteractTime + component.InteractDelay)
+        if (curTime < door.Comp.LastInteractTime + door.Comp.InteractDelay)
             return;
 
-        _popupSystem.PopupPredicted(Loc.GetString(component.InteractString), args.Target);
-        _audio.PlayPredicted(component.InteractSound, args.Target);
+        _popup.PopupPredicted(Loc.GetString(door.Comp.InteractString), args.Target, args.Target);
+        _audio.PlayPredicted(door.Comp.InteractSound, args.Target, args.Target);
 
-        component.LastInteractTime = curTime;
+        door.Comp.LastInteractTime = curTime;
     }
-
 }

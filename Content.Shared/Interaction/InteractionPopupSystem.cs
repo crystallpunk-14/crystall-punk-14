@@ -4,7 +4,6 @@ using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Lock;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -47,6 +46,7 @@ public sealed class InteractionPopupSystem : EntitySystem
     {
         SharedInteract(uid, component, args, args.Target, args.User);
     }
+
     private void SharedInteract(
         EntityUid uid,
         InteractionPopupComponent component,

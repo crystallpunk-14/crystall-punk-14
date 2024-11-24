@@ -24,3 +24,4 @@
       collection: CP14Doorknob
       params:
         variation: 0.03
+        volume: -5
