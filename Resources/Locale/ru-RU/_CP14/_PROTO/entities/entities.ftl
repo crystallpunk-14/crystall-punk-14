@@ -615,9 +615,6 @@ ent-CP14SpawnPointBlacksmith = кузнец
 ent-CP14SpawnPointInnkeeper = трактирщик
     .desc = { ent-CP14SpawnPointJobBase.desc }
 
-ent-CP14SpawnMobUndeadZombieRandom = спавнер ходячей нежити
-    .suffix = Случайный
-
 ent-CP14SpawnMobRabbit = спавнер кролика
 
 ent-CP14SpawnMobPig = спавнер свиньи
@@ -1290,104 +1287,8 @@ ent-CP14_NeutralCluster_00 = Li-Ra
 ent-CP14Chasm = бездна
     .desc = И вы не видите ее дна...
 
-ent-CP14WallmountCrystalRubies = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Красный
-
-ent-CP14WallmountCrystalTopazes = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Желтый
-
-ent-CP14WallmountCrystalEmeralds = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Зеленый
-
-ent-CP14WallmountCrystalSapphires = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Голубой
-
-ent-CP14WallmountCrystalAmethysts = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Фиолетовый
-
-ent-CP14WallmountCrystalDiamonds = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Белый
-
 ent-CP14CrystalBase = сверкающий кварц
     .desc = Биолюминесцентные кристаллы кварца, которые могут принимать любой цвет, - очень удобный источник света в глубоких пещерах. К сожалению, светящиеся свойства очень трудно сохранить.
-
-ent-CP14CrystalRubiesSmall = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Red, Small
-
-ent-CP14CrystalRubiesMedium = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Red, Medium
-
-ent-CP14CrystalRubiesBig = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Red, Big
-
-ent-CP14CrystalTopazesSmall = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Yellow, Small
-
-ent-CP14CrystalTopazesMedium = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Yellow, Medium
-
-ent-CP14CrystalTopazesBig = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Yellow, Big
-
-ent-CP14CrystalEmeraldsSmall = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Green, Small
-
-ent-CP14CrystalEmeraldsMedium = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Green, Medium
-
-ent-CP14CrystalEmeraldsBig = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Green, Big
-
-ent-CP14CrystalSapphiresSmall = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Cyan, Small
-
-ent-CP14CrystalSapphiresMedium = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Cyan, Medium
-
-ent-CP14CrystalSapphiresBig = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Cyan, Big
-
-ent-CP14CrystalAmethystsSmall = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Purple, Small
-
-ent-CP14CrystalAmethystsMedium = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Purple, Medium
-
-ent-CP14CrystalAmethystsBig = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = Purple, Big
-
-ent-CP14CrystalDiamondsSmall = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = White, Small
-
-ent-CP14CrystalDiamondsMedium = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = White, Medium
-
-ent-CP14CrystalDiamondsBig = { ent-CP14CrystalBase }
-    .desc = { ent-CP14CrystalBase.desc }
-    .suffix = White, Big
 
 ent-CP14DungeonEntrance = спуск в подземелье
     .desc = Темные глубины подземного мира зовут вас.
@@ -1869,12 +1770,6 @@ ent-CP14WindowStoneBrick = окно в стене из каменного кир
 ent-CP14WindowMarbleBrick = окно в стене из мраморного кирпича
     .desc = Мраморная кирпичная стена со стеклянным окном в ней.
 
-ent-CP14SmallWoodenCrateFilled = None
-    .suffix = Заполнен. Инструменты и приколы
-
-ent-CP14LargeWoodenCrateFilled = None
-    .suffix = Заполнен. Инструменты и приколы
-
 ent-CP14FlameCreationArtificialFlame = искуственное пламя
     .desc = Магически созданное искусственное пламя, горящее прямо в воздухе. Неплохой источник света или оружие, если бросить его кому-нибудь в лицо.
 
@@ -1969,41 +1864,17 @@ ent-CP14IronDoor = железная дверь
     .desc = Ну, если здесь есть массивная железная дверь, то за ней должно быть что-то ценное.
     .suffix = Открыто
 
-ent-CP14IronDoorMirroredBlacksmith = None
-    .suffix = Blacksmith, Mirrored
-
-ent-CP14IronDoorMirroredBankStaff = None
-    .suffix = Bank Staff, Mirrored
-
-ent-CP14IronDoorMirroredBankVault = None
-    .suffix = Bank Vault, Mirrored
-
 ent-CP14IronDoorWindowed = железная дверь с окном
     .desc = массивная железная дверь с маленьким окошком. В него, конечно, можно заглянуть, но руку просунуть трудно.
     .suffix = Opened
-
-ent-CP14IronDoorWindowedMirroredBankEntrance = None
-    .suffix = Bank Entrance, Mirrored
-
-ent-CP14IronDoorWindowedMirroredBlacksmith = None
-    .suffix = Blacksmith, Mirrored
 
 ent-CP14WoodenDoor = деревянная дверь
     .desc = Не самая прочная конструкция, но это лучше, чем ничего.
     .suffix = Открыто
 
-ent-CP14WoodenDoorTavernStaffMirrored = None
-    .suffix = Tavern Staff, Mirrored
-
-ent-CP14WoodenDoorTavernAlchemyMirrored = None
-    .suffix = Alchemy, Mirrored
-
 ent-CP14WoodenDoorWindowed = деревянная дверь с окном
     .desc = Не самая прочная конструкция, но это лучше, чем ничего.
     .suffix = Opened
-
-ent-CP14WoodenDoorTavernHallMirrored = None
-    .suffix = Tavern Hall, Mirrored
 
 ent-CP14FenceIronGrilleBase = железная решётка
     .desc = Прочный барьер из сваренных вместе железных прутьев.
