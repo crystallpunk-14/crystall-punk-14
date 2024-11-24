@@ -16628,10 +16628,10 @@ entities:
       parent: 1
 - proto: C14IronCabinet
   entities:
-  - uid: 9716
+  - uid: 9708
     components:
     - type: Transform
-      pos: 9.5,40.5
+      pos: 10.5,40.5
       parent: 1
   - uid: 9717
     components:
@@ -76276,25 +76276,6 @@ entities:
       parent: 9931
     - type: Physics
       canCollide: False
-- proto: CP14ClothingRingEarthWall
-  entities:
-  - uid: 3567
-    components:
-    - type: Transform
-      parent: 5206
-    - type: Physics
-      canCollide: False
-  - uid: 3568
-    components:
-    - type: Transform
-      parent: 5206
-    - type: Physics
-      canCollide: False
-  - uid: 9902
-    components:
-    - type: Transform
-      pos: -45.775013,34.870655
-      parent: 1
 - proto: CP14ClothingRingFireball
   entities:
   - uid: 3571
@@ -76315,32 +76296,6 @@ entities:
       parent: 2024
     - type: Physics
       canCollide: False
-- proto: CP14ClothingRingFlameCreation
-  entities:
-  - uid: 3552
-    components:
-    - type: Transform
-      parent: 5206
-    - type: Physics
-      canCollide: False
-  - uid: 3644
-    components:
-    - type: Transform
-      parent: 5206
-    - type: Physics
-      canCollide: False
-  - uid: 3672
-    components:
-    - type: Transform
-      pos: -5.5267277,27.4278
-      parent: 1
-  - uid: 5094
-    components:
-    - type: Transform
-      pos: 15.651007,-2.211171
-      parent: 1
-    - type: CollisionWake
-      enabled: False
 - proto: CP14ClothingRingFlashLight
   entities:
   - uid: 5145
@@ -76353,66 +76308,6 @@ entities:
     components:
     - type: Transform
       parent: 9808
-    - type: Physics
-      canCollide: False
-- proto: CP14ClothingRingIceDagger
-  entities:
-  - uid: 11174
-    components:
-    - type: Transform
-      parent: 9808
-    - type: Physics
-      canCollide: False
-  - uid: 11175
-    components:
-    - type: Transform
-      parent: 9808
-    - type: Physics
-      canCollide: False
-- proto: CP14ClothingRingManaGift
-  entities:
-  - uid: 11662
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 21.3135,17.714169
-      parent: 1
-    - type: CollisionWake
-      enabled: False
-  - uid: 11670
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 17.749138,13.826114
-      parent: 1
-  - uid: 11671
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 17.774132,13.606224
-      parent: 1
-- proto: CP14ClothingRingShadowGrab
-  entities:
-  - uid: 11663
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 21.623446,17.699177
-      parent: 1
-    - type: CollisionWake
-      enabled: False
-- proto: CP14ClothingRingSphereOfLight
-  entities:
-  - uid: 8817
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 24.28268,45.63914
-      parent: 1
-  - uid: 11223
-    components:
-    - type: Transform
-      parent: 5487
     - type: Physics
       canCollide: False
 - proto: CP14CopperBar1
@@ -78362,12 +78257,6 @@ entities:
         3552:
           position: 1,0
           _rotation: South
-        3567:
-          position: 2,0
-          _rotation: South
-        3568:
-          position: 3,0
-          _rotation: South
         3571:
           position: 5,0
           _rotation: South
@@ -78384,8 +78273,6 @@ entities:
           occludes: True
           ents:
           - 3552
-          - 3567
-          - 3568
           - 3571
           - 3585
           - 3644
@@ -78450,9 +78337,6 @@ entities:
         10551:
           position: 5,0
           _rotation: South
-        11223:
-          position: 5,1
-          _rotation: South
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -78467,7 +78351,6 @@ entities:
           - 5509
           - 5511
           - 10551
-          - 11223
   - uid: 9808
     components:
     - type: Transform
@@ -78645,6 +78528,32 @@ entities:
     - type: Transform
       pos: -10.5,22.5
       parent: 1
+- proto: CP14Lighter
+  entities:
+  - uid: 3552
+    components:
+    - type: Transform
+      parent: 5206
+    - type: Physics
+      canCollide: False
+  - uid: 3644
+    components:
+    - type: Transform
+      parent: 5206
+    - type: Physics
+      canCollide: False
+  - uid: 3672
+    components:
+    - type: Transform
+      pos: -5.5267277,27.4278
+      parent: 1
+  - uid: 5094
+    components:
+    - type: Transform
+      pos: 15.651007,-2.211171
+      parent: 1
+    - type: CollisionWake
+      enabled: False
 - proto: CP14MagicHealingStaff
   entities:
   - uid: 5452
@@ -78685,6 +78594,40 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 20.353672,17.644205
+      parent: 1
+- proto: CP14ManaOperationGlove
+  entities:
+  - uid: 11174
+    components:
+    - type: Transform
+      parent: 9808
+    - type: Physics
+      canCollide: False
+  - uid: 11175
+    components:
+    - type: Transform
+      parent: 9808
+    - type: Physics
+      canCollide: False
+  - uid: 11662
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.3135,17.714169
+      parent: 1
+    - type: CollisionWake
+      enabled: False
+  - uid: 11670
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 17.749138,13.826114
+      parent: 1
+  - uid: 11671
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 17.774132,13.606224
       parent: 1
 - proto: CP14Mannequin
   entities:
@@ -80776,19 +80719,11 @@ entities:
     - type: Transform
       pos: -5.5,15.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: top
   - uid: 4322
     components:
     - type: Transform
       pos: -6.5,15.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: top
   - uid: 5093
     components:
     - type: Transform
@@ -80819,10 +80754,6 @@ entities:
     - type: Transform
       pos: -9.5,16.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: left
   - uid: 5134
     components:
     - type: Transform
@@ -80833,28 +80764,16 @@ entities:
     - type: Transform
       pos: -9.5,19.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: left
   - uid: 5144
     components:
     - type: Transform
       pos: -7.5,15.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: top
   - uid: 5146
     components:
     - type: Transform
       pos: -8.5,15.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: top
   - uid: 5152
     components:
     - type: Transform
@@ -80870,19 +80789,11 @@ entities:
     - type: Transform
       pos: 20.5,-4.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: top
   - uid: 5165
     components:
     - type: Transform
       pos: 17.5,-4.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: top
   - uid: 5169
     components:
     - type: Transform
@@ -80898,19 +80809,11 @@ entities:
     - type: Transform
       pos: 20.5,0.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: bottom
   - uid: 5174
     components:
     - type: Transform
       pos: 17.5,0.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: bottom
   - uid: 5176
     components:
     - type: Transform
@@ -80921,10 +80824,6 @@ entities:
     - type: Transform
       pos: 21.5,-0.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: right
   - uid: 5180
     components:
     - type: Transform
@@ -80935,10 +80834,6 @@ entities:
     - type: Transform
       pos: 19.5,-4.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: top
   - uid: 5191
     components:
     - type: Transform
@@ -80949,10 +80844,6 @@ entities:
     - type: Transform
       pos: 16.5,-1.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: left
   - uid: 5196
     components:
     - type: Transform
@@ -80963,10 +80854,6 @@ entities:
     - type: Transform
       pos: 16.5,-0.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: left
   - uid: 5201
     components:
     - type: Transform
@@ -80987,28 +80874,16 @@ entities:
     - type: Transform
       pos: 21.5,-3.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: right
   - uid: 5234
     components:
     - type: Transform
       pos: 16.5,-2.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: left
   - uid: 5235
     components:
     - type: Transform
       pos: 16.5,-3.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_green.rsi
-        state: left
   - uid: 9309
     components:
     - type: Transform
@@ -81039,10 +80914,6 @@ entities:
     - type: Transform
       pos: -8.5,20.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: bottom
   - uid: 9318
     components:
     - type: Transform
@@ -81053,10 +80924,6 @@ entities:
     - type: Transform
       pos: -5.5,20.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: bottom
   - uid: 9325
     components:
     - type: Transform
@@ -81067,10 +80934,6 @@ entities:
     - type: Transform
       pos: -6.5,20.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: bottom
   - uid: 9327
     components:
     - type: Transform
@@ -81156,17 +81019,16 @@ entities:
     - type: Transform
       pos: -4.5,26.5
       parent: 1
+  - uid: 9699
+    components:
+    - type: Transform
+      pos: 17.5,5.5
+      parent: 1
   - uid: 9922
     components:
     - type: Transform
       pos: -5.5,18.5
       parent: 1
-    - type: CP14WallpaperHolder
-      layers:
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: bottom
-      - sprite: _CP14/Structures/Wallpaper/wallpaper_red.rsi
-        state: right
   - uid: 9925
     components:
     - type: Transform
@@ -81782,6 +81644,160 @@ entities:
     components:
     - type: Transform
       pos: 23.5,39.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: CP14WallmountFlagAlchemist
+  entities:
+  - uid: 3568
+    components:
+    - type: Transform
+      pos: -1.5,19.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 8817
+    components:
+    - type: Transform
+      pos: -4.5,19.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9688
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -4.5,18.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9696
+    components:
+    - type: Transform
+      pos: 20.5,-0.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9697
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,1.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9698
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 22.5,-0.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9700
+    components:
+    - type: Transform
+      pos: 17.5,4.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: CP14WallmountFlagBank
+  entities:
+  - uid: 9716
+    components:
+    - type: Transform
+      pos: 4.5,29.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9902
+    components:
+    - type: Transform
+      pos: 9.5,29.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: CP14WallmountFlagBankCommandant
+  entities:
+  - uid: 9701
+    components:
+    - type: Transform
+      pos: 11.5,41.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: CP14WallmountFlagBankShip
+  entities:
+  - uid: 3567
+    components:
+    - type: Transform
+      pos: 1.5,43.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9709
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,47.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: CP14WallmountFlagBankVault
+  entities:
+  - uid: 9702
+    components:
+    - type: Transform
+      pos: 7.5,40.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9707
+    components:
+    - type: Transform
+      pos: 9.5,40.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: CP14WallmountFlagBlacksmith
+  entities:
+  - uid: 9691
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 16.5,19.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9692
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 18.5,19.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9695
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,17.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+- proto: CP14WallmountFlagTavern
+  entities:
+  - uid: 9689
+    components:
+    - type: Transform
+      pos: 19.5,29.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 9690
+    components:
+    - type: Transform
+      pos: 21.5,29.5
       parent: 1
     - type: Fixtures
       fixtures: {}
