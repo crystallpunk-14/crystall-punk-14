@@ -183,15 +183,8 @@
     damageContainer: Biological
     damageModifierSet: CP14LittleInsects
   - type: Appearance
-  - type: Body
-    prototype: Bloodsucker
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      10: Dead
   - type: Stamina
     critThreshold: 50
-  - type: CombatMode
   - type: DamageContacts
     damage:
       types:
@@ -210,20 +203,23 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 2
-    friction: 2
-  - type: Grammar
-    attributes:
-      gender: epicene
+    friction: 0.5
+    acceleration: 3
   - type: AmbientSound
-    volume: -4
-    range: 5
+    volume: -1
+    range: 6
     sound:
       path: /Audio/_CP14/Animals/swarm.ogg
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 10
+          damage: 50
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+
+  - type: MeleeSound
+    soundGroups:
+      Burn:
+        path: /Audio/_CP14/Animals/swarm_hit.ogg
