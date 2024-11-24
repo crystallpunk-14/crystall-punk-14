@@ -1,0 +1,9 @@
+- files: ["doorknob_1.ogg"]
+  license: "CC-BY-3.0"
+  copyright: 'by Leady.'
+  source: "https://freesound.org/people/Leady/sounds/12739/"
+
+- files: ["doorknob_2.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by BenjaminNelan.'
+  source: "https://freesound.org/people/BenjaminNelan/sounds/321087/"
