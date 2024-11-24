@@ -73,9 +73,9 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 2
+        Slash: 5
         Piercing: 2
-        Cold: 2
+        Cold: 3
   - type: DamageOtherOnHit
     damage:
       types:

@@ -22,13 +22,13 @@
     wideAnimationRotation: 135
     damage:
       types:
-        Piercing: 5
+        Piercing: 8
     soundHit:
       collection: MetalThud
   - type: IncreaseDamageOnWield
     damage:
       groups:
-        Brute: 5
+        Brute: 8
       types:
         Structural: 10
   - type: Wieldable

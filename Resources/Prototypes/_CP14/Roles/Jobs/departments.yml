@@ -6,9 +6,18 @@
   weight: 10
   color: "#3ec8fa"
   roles:
-  - CP14Captain
   - CP14Commandant
   - CP14GuardCommander
+
+- type: department
+  id: CP14Guard
+  name: department-CP14Guard
+  description: department-CP14Guard-desc
+  weight: 1
+  color: "#576384"
+  roles:
+  - CP14GuardCommander
+  - CP14Guard
 
 - type: department
   id: CP14Bank
@@ -25,7 +34,7 @@
   name: department-CP14Mercenary
   description: department-CP14Mercenary-desc
   weight: 0
-  color: "#429976"
+  color: "#588151"
   roles:
   - CP14Adventurer
   - CP14Alchemist

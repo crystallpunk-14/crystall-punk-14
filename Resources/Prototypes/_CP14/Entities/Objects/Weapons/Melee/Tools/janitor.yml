@@ -19,7 +19,7 @@
     wideAnimationRotation: 10
     damage:
       types:
-        Blunt: 2
+        Blunt: 7
     soundHit:
       collection: MetalThud
   - type: Wieldable
@@ -56,7 +56,7 @@
     wideAnimationRotation: 10
     damage:
       types:
-        Blunt: 2
+        Blunt: 5
     soundHit:
       collection: MetalThud
   - type: CP14DecalCleaner

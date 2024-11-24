@@ -21,14 +21,16 @@ cp14-loadout-alchemist-eyes = Alchemical goggles
 
 cp14-loadout-blacksmith-cloak = Blacksmith's cloak
 
-# Captain
-
-cp14-loadout-captain-cloak = Captain's cloak
-cp14-loadout-captain-head = Captain's head
-
 # Guard commander
 
 cp14-loadout-guard-commander-cloak = Guard commander's cloak
+
+# Guard
+
+cp14-loadout-guard-cloak  = Guard's cloak
+cp14-loadout-guard-head = Guard's head
+cp14-loadout-guard-pants = Guard's pants
+cp14-loadout-guard-shirt = Guard's shirt
 
 # Bank
 

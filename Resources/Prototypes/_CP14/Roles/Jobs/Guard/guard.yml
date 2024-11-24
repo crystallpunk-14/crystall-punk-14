@@ -1,0 +1,17 @@
+- type: job
+  id: CP14Guard
+  name: cp14-job-name-guard
+  description: cp14-job-desc-guard
+  playTimeTracker: CP14JobGuard
+  startingGear: CP14GuardGear
+  icon: "CP14JobIconGuard"
+  supervisors: cp14-job-supervisors-guard-commander
+  special:
+  - !type:CP14AddSkillSpecial
+    skills:
+    - Warcraft
+
+- type: startingGear
+  id: CP14GuardGear
+  equipment:
+    belt1: CP14WalletFilledTest

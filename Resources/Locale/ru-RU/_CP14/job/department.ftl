@@ -6,3 +6,6 @@ department-CP14Command-desc = Лица, ответственные за выпо
 
 department-CP14Bank = Банк
 department-CP14Bank-desc = Лица, тесно связанные с экономикой и торговлей, работающие в банке.
+
+department-CP14Guard = Стража
+department-CP14Guard-desc = Защитники и войны, следящие за безопасностью и правопорядком во всех уголках империи.

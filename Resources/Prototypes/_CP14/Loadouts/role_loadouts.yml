@@ -19,7 +19,6 @@
   - CP14GeneralSpells
   - CP14AlchemistHead #
   - CP14AlchemistEyes #
-  - CP14GeneralMask
   - CP14AlchemistCloak #
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -34,7 +33,6 @@
   - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
-  - CP14GeneralMask
   - CP14GeneralCloak
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -49,23 +47,7 @@
   - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralEyes
-  - CP14GeneralMask
   - CP14BlacksmithCloak
-  - CP14GeneralGloves
-  - CP14GeneralShirt
-  - CP14GeneralPants
-  - CP14GeneralShoes
-  - CP14GeneralBack
-  - CP14GeneralTrinkets
-
-- type: roleLoadout
-  id: JobCP14Captain
-  groups:
-  - CP14GeneralSpells
-  - CP14CaptainHead #
-  - CP14GeneralEyes
-  - CP14GeneralMask
-  - CP14CaptainCloak #
   - CP14GeneralGloves
   - CP14GeneralShirt
   - CP14GeneralPants
@@ -77,13 +59,26 @@
   id: JobCP14GuardCommander
   groups:
   - CP14GeneralSpells
-  - CP14GeneralHead
+  - CP14GuardHead
   - CP14GeneralEyes
-  - CP14GeneralMask
   - CP14GuardCommanderCloak #
   - CP14GeneralGloves
-  - CP14GeneralShirt
-  - CP14GeneralPants
+  - CP14GuardShirt
+  - CP14GuardPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobCP14Guard
+  groups:
+  - CP14GeneralSpells
+  - CP14GuardHead
+  - CP14GeneralEyes
+  - CP14GuardCloak #
+  - CP14GeneralGloves
+  - CP14GuardShirt
+  - CP14GuardPants
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets

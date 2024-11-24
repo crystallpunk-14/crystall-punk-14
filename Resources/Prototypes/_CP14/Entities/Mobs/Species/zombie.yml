@@ -41,6 +41,14 @@
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: Cuffable
+  - type: Hands
+  - type: ComplexInteraction
   - type: Icon
     sprite: _CP14/Mobs/Species/Zombie/parts.rsi
     state: full
@@ -106,8 +114,8 @@
       path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Slash: 4
-        Structural: 4
+        Slash: 5
+        Structural: 6
   - type: Pullable
   - type: SpamEmitSound
     minInterval: 10
@@ -121,6 +129,8 @@
   - type: Climbing
   - type: ReplacementAccent
     accent: zombie
+  - type: FireVisuals
+    alternateState: Standing #TODO - custom visuals
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:
@@ -128,6 +138,9 @@
   - type: InventorySlots
   - type: ContainerContainer
   - type: FloorOcclusion
+  - type: Tag
+    tags:
+      - CP14Mosquito
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:

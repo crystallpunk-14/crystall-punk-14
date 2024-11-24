@@ -15,8 +15,8 @@
     wideAnimationRotation: 65
     damage:
       types:
-        Piercing: 2
-        Slash: 2
+        Piercing: 4
+        Slash: 3
     soundHit:
       collection: MetalThud
   - type: Item

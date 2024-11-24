@@ -47,6 +47,14 @@
 
 - type: jobIcon
   parent: CP14JobIcon
+  id: CP14JobIconGuard
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Guard
+  jobName: cp14-job-name-guard
+
+- type: jobIcon
+  parent: CP14JobIcon
   id: CP14JobIconCommandant
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi

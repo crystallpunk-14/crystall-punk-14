@@ -367,6 +367,19 @@
       maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
+  id: MonsterMosquito
+  name: cp14-modifier-dyno
+  difficulty: 0.5
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobMonsterMosquito
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
   id: EnemyMole
   name: cp14-modifier-mole
   difficulty: 0.4

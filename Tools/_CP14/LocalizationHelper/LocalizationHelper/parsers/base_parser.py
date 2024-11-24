@@ -2,7 +2,7 @@ import os
 from abc import ABC, abstractmethod
 
 
-from LocalizationHelper.prototype import Prototype
+from LocalizationHelper.entity import Entity
 
 
 class BaseParser(ABC):
@@ -24,5 +24,5 @@ class BaseParser(ABC):
         return False
 
     @abstractmethod
-    def get_prototypes(self, prototypes_files_path: str) -> list[Prototype]:
+    def get_prototypes(self, prototypes_files_path: str) -> list[Entity]:
         pass

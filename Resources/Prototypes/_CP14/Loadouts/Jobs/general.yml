@@ -5,22 +5,10 @@
   name: cp14-loadout-general-cloak
   minLimit: 0
   loadouts:
-  - CP14ClothingCloakSimpleWhite
-  - CP14ClothingCloakSimpleDarkBlue
   - CP14ClothingCloakFurcapeBlack
   - CP14ClothingCloakFurcapeBlue
   - CP14ClothingCloakMaidArpon
   - CP14ClothingCloakRitualAttireLeather
-
-- type: loadout
-  id: CP14ClothingCloakSimpleWhite
-  equipment:
-    cloak: CP14ClothingCloakSimpleWhite
-
-- type: loadout
-  id: CP14ClothingCloakSimpleDarkBlue
-  equipment:
-    cloak: CP14ClothingCloakSimpleDarkBlue
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -304,6 +292,8 @@
   - CP14BaseDagger
   - CP14BaseSickle
   - CP14BasePickaxe
+  - CP14Lighter
+  - CP14Torch
 
 - type: loadout
   id: CP14MagicHealingStaff
@@ -388,6 +378,18 @@
     back:
     - CP14BasePickaxe
 
+- type: loadout
+  id: CP14Lighter
+  storage:
+    back:
+    - CP14Lighter
+
+- type: loadout
+  id: CP14Torch
+  storage:
+    back:
+    - CP14Torch
+
 # Spells
 
 - type: loadoutGroup
@@ -398,6 +400,8 @@
   loadouts:
   - CP14ActionSpellFlameCreation
   - CP14ActionSpellCureWounds
+  - CP14ActionSpellCureBurn
+  - CP14ActionSpellBloodPurification
   - CP14ActionSpellSphereOfLight
   - CP14ActionSpellManaConsume
   - CP14ActionSpellManaGift
@@ -417,6 +421,19 @@
   dummyEntity: CP14ActionSpellCureWounds
   actions:
   - CP14ActionSpellCureWounds
+
+- type: loadout
+  id: CP14ActionSpellCureBurn
+  dummyEntity: CP14ActionSpellCureBurn
+  actions:
+  - CP14ActionSpellCureBurn
+
+
+- type: loadout
+  id: CP14ActionSpellBloodPurification
+  dummyEntity: CP14ActionSpellBloodPurification
+  actions:
+  - CP14ActionSpellBloodPurification
 
 - type: loadout
   id: CP14ActionSpellSphereOfLight

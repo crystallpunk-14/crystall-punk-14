@@ -14,6 +14,8 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Robust.Shared.Map.Components;
+
 
 namespace Content.Server._CP14.Demiplane;
 
@@ -139,8 +141,8 @@ public sealed partial class CP14DemiplaneSystem
         if (generator.Comp.Location is null)
             return;
 
-        //We cant open demiplan in another demiplan
-        if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid))
+        //We cant open demiplan in another demiplan or if parent is not Map
+        if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid) || !HasComp<MapGridComponent>(_transform.GetParentUid(args.User)))
         {
             _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
             return;

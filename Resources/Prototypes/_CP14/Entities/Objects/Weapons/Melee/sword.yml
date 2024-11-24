@@ -30,7 +30,7 @@
     cPAnimationLength: 0.18
     damage:
       types:
-        Slash: 9
+        Slash: 17
     soundHit:
       collection: MetalThud
   - type: CP14SkillRequirement

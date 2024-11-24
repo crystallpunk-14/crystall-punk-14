@@ -60,3 +60,6 @@
 
 - type: Tag
   id: CP14Wheat
+
+- type: Tag
+  id: CP14Mosquito

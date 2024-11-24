@@ -13,10 +13,10 @@
   id: CP14JobInnkeeper
 
 - type: playTimeTracker
-  id: CP14JobCaptain
+  id: CP14JobGuardCommander
 
 - type: playTimeTracker
-  id: CP14JobGuardCommander
+  id: CP14JobGuard
 
 - type: playTimeTracker
   id: CP14JobCommandant
