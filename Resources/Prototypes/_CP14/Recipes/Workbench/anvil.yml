@@ -198,17 +198,6 @@
   result: CP14Scissors
 
 - type: CP14Recipe
-  id: CP14ClothingCloakArmoredRed
-  tag: CP14RecipeAnvil
-  craftTime: 2
-  entities:
-    CP14DyeRed: 1
-  stacks:
-    CP14Cloth: 3
-    CP14IronBar: 5
-  result: CP14ClothingCloakArmoredRed
-
-- type: CP14Recipe
   id: CP14ClothingCloakBrassArmor
   tag: CP14RecipeAnvil
   craftTime: 2

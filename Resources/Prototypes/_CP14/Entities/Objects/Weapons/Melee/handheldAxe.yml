@@ -24,7 +24,7 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Slash: 6
+        Slash: 12
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25

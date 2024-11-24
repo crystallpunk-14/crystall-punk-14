@@ -126,14 +126,14 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Heat: 8
+        Heat: 12
   - type: MeleeWeapon
     attackRate: 1.8
     wideAnimationRotation: 225
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Heat: 5
+        Heat: 8
     soundHit:
       path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
       params:

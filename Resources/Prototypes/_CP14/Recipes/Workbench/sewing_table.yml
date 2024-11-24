@@ -89,27 +89,6 @@
   result: CP14ClothingShirtYellowWizard
 
 - type: CP14Recipe
-  id: CP14ClothingCloakSimpleDarkBlue
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlue: 1
-  stacks:
-    CP14Cloth: 3
-  result: CP14ClothingCloakSimpleDarkBlue
-
-- type: CP14Recipe
-  id: CP14ClothingCloakSimpleWhite
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-  stacks:
-    CP14Cloth: 3
-  result: CP14ClothingCloakSimpleWhite
-
-- type: CP14Recipe
   id: CP14ClothingPantsTrouserWhite
   tag: CP14RecipeSewing
   craftTime: 2

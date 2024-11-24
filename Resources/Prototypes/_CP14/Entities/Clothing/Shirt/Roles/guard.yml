@@ -1,0 +1,32 @@
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtGuardBase
+  abstract: true
+  name: "guard's chainmail shirt"
+  description: Skirt with stitched clutch padding, in standard Imperial Guard uniform colors.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.85
+        Heat: 0.90
+  
+- type: entity
+  parent: CP14ClothingShirtGuardBase
+  id: CP14ClothingShirtGuardsChainmailShirtWB
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/Guard/wb_chainmail.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/Guard/wb_chainmail.rsi
+  
+- type: entity
+  parent: CP14ClothingShirtGuardBase
+  id: CP14ClothingShirtGuardsChainmailShirtB
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/Guard/b_chainmail.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/Guard/b_chainmail.rsi

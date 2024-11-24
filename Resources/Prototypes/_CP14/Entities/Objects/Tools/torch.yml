@@ -74,9 +74,16 @@
     hideCaution: true
   - type: MeleeWeapon
     attackRate: 1.5
-    wideAnimationRotation: 225
+    wideAnimationRotation: 240
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
         Blunt: 4
   - type: CP14FlammableBonusDamage
+  - type: UseDelay
+  - type: ExtinguishOnInteract
+    extinguishAttemptSound:
+      path: /Audio/Items/candle_blowing.ogg #TODO sound
+      params:
+        variation: 0.05
+        volume: 10

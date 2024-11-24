@@ -114,8 +114,8 @@
       path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Slash: 4
-        Structural: 4
+        Slash: 5
+        Structural: 6
   - type: Pullable
   - type: SpamEmitSound
     minInterval: 10

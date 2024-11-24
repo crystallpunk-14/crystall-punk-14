@@ -22,14 +22,16 @@ cp14-loadout-alchemist-eyes = Алхимические очки
 
 cp14-loadout-blacksmith-cloak = Накидка кузнеца
 
-# Captain
-
-cp14-loadout-captain-cloak = Капитанская накидка
-cp14-loadout-captain-head = Капитанская шляпа
-
 # Guard commander
 
 cp14-loadout-guard-commander-cloak = Накидка командира стражи
+
+# Guard
+
+cp14-loadout-guard-cloak  = Накидка стражи
+cp14-loadout-guard-head = Шляпа стражи
+cp14-loadout-guard-pants = Штаны стражи
+cp14-loadout-guard-shirt = Рубашка стражи
 
 # Bank
 

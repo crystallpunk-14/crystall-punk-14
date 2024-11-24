@@ -3,10 +3,13 @@
 cp14-job-name-captain = Captain
 cp14-job-desc-captain = You are the most important person. Organize your wards and manage the processes to complete the task set from the empire.
 
-# Security
+# Guards
 
 cp14-job-name-guard-commander = Guard commander
 cp14-job-desc-guard-commander = The most dangerous person in the neighborhood. Manage a squad of soldiers to ensure the safety of all members of the command.
+
+cp14-job-name-guard = Guard
+cp14-job-desc-guard = A fighting unit of the Empire, sworn to protect its people. Watch for safety, and defend others from possible dangers.
 
 # Bank
 
