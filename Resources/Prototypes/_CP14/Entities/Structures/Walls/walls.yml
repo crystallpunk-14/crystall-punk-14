@@ -122,6 +122,38 @@
   - type: CP14WallpaperHolder
 
 - type: entity
+  id: CP14WallWoodenPalisade
+  name: wooden wall
+  parent:
+  - CP14BaseWall
+  - CP14BaseFlammableSpreading
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wooden_palisad.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wooden_palisad.rsi
+  - type: IconSmooth
+    key: CP14palisade
+    base: wood
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+  - type: Occluder
+    enabled: false
+
+- type: entity
   id: CP14WallCardboard
   name: cardboard Wall
   description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
