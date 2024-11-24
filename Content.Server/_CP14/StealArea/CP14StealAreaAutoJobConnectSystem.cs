@@ -1,7 +1,7 @@
 using Content.Server._CP14.StationCommonObjectives;
-using Content.Server.GameTicking;
 using Content.Server.Mind;
 using Content.Server.Objectives.Components;
+using Content.Shared.GameTicking;
 using Content.Shared.Roles.Jobs;
 using Robust.Server.Player;
 using Robust.Shared.Prototypes;

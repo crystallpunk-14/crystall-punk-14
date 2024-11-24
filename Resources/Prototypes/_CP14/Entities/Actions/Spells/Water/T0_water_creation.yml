@@ -46,9 +46,12 @@
 
 - type: entity
   id: CP14LiquidDropWater
-  parent: BaseItem
+  parent: 
+  - BaseItem
+  - ItemHeftyBase
   name: floating liquid drop
   description: A clot of liquid held in the shape of a ball by magic
+  suffix: Water
   categories: [ ForkFiltered ]
   components:
   - type: Item

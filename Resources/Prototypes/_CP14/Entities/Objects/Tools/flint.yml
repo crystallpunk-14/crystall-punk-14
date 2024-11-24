@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseItem
+  id: CP14Lighter
+  name: flint and steel
+  description: "Setting things on fire. Absolutely, 100% not from minecraft." # TODO: remove minecraft sprite and desc
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/flint.rsi
+    state: icon
+  - type: CP14DelayedIgnitionSource
+    enabled: true
+  # TODO: Damageable, Ignite attempt self damage, Ignite prob

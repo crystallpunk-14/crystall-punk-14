@@ -1,12 +1,12 @@
 from LocalizationHelper import get_logger, LogText
-from LocalizationHelper.prototype import Prototype
+from LocalizationHelper.entity import Entity
 
 logger = get_logger(__name__)
 
 INDENT = "    "
 
 
-def create_ftl(prototype: Prototype) -> str:
+def create_ftl(prototype: Entity) -> str:
     logger.debug("%s: %s", LogText.FORMING_FTL_FOR_PROTOTYPE, prototype.attrs_dict)
     ftl = ""
 

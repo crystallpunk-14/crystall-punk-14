@@ -7,7 +7,7 @@
   components:
   - type: HTN
     rootTask:
-      task: SimpleHostileCompound
+      task: CP14ZombieCompound
     blackboard:
       NavClimb: !type:Bool
         true
@@ -23,7 +23,7 @@
   suffix: Zombie. Easy
   categories: [ HideSpawnMenu ]
   components:
-  - type: Loadout
+  - type: Loadout 
     prototypes: [ CP14MobUndeadEasy1 ]
 
 - type: entity

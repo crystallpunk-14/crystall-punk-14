@@ -1,6 +1,7 @@
 using Content.Server._CP14.Temperature;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Shared._CP14.Temperature;
 using Content.Shared.Audio;
 using Content.Shared.Mobs;
 using Content.Shared.Power;

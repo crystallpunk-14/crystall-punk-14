@@ -1,15 +1,10 @@
 using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
-using Content.Server.Popups;
 using Content.Server.Stack;
 using Content.Shared._CP14.Temperature;
-using Content.Shared.Interaction;
 using Content.Shared.Stacks;
-using Content.Shared.Throwing;
 using Robust.Server.Audio;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature.Fireplace;

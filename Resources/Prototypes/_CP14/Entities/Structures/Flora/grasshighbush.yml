@@ -92,6 +92,9 @@
       collection: CP14GrassGathering
   - type: TriggerOnCollide
     fixtureID: fix1
+  - type: CP14IgnitionModifier
+    ignitionTimeModifier: 0.75
+    hideCaution: true
 
 - type: entity
   id: CP14RandomBushOffsetSpawner

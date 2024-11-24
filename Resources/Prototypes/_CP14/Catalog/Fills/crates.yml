@@ -49,13 +49,17 @@
       - id: CP14BaseWrench
         weight: 2
       - id: CP14Scissors
+      - id: CP14Torch
+      - id: CP14Lighter
       - id: CP14ManaOperationGlove
       - id: CP14BaseShovel
       - id: CP14BaseMop
       - id: CP14BaseBroom
       - id: CP14BasePickaxe
-      - id: CP14CrystalLampBlueEmpty
-      - id: CP14CrystalLampOrangeEmpty
+      - !type:GroupSelector
+        children:
+        - id: CP14CrystalLampBlueEmpty
+        - id: CP14CrystalLampOrangeEmpty
       - id: CP14Rope
       - id: CP14Nail10
       - id: CP14EnergyCrystalSmall
@@ -71,8 +75,6 @@
       children:
       - id: CP14ClothingCloakFurcapeBlack
       - id: CP14ClothingCloakFurcapeBlue
-      - id: CP14ClothingCloakSimpleWhite
-      - id: CP14ClothingCloakSimpleDarkBlue
       - id: CP14ClothingCloakRitualAttireLeather
       - id: CP14ClothingHeadBeretMercenary
       - id: CP14ClothingPantsMercenaryTrousers

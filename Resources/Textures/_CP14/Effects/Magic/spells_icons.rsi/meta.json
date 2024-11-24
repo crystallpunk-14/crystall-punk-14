@@ -5,10 +5,16 @@
     "y": 32
   },
   "license": "CLA",
-  "copyright": "Created by .kreks., mana_gift and resurrection by TheShuEd",
+  "copyright": "Created by .kreks., cure_poison, cure_burn, mana_gift, water creation, beer creation and resurrection by TheShuEd",
   "states": [
     {
       "name": "beer_creation"
+    },
+    {
+      "name": "cure_burn"
+    },
+    {
+      "name": "cure_poison"
     },
     {
       "name": "cure_wounds"

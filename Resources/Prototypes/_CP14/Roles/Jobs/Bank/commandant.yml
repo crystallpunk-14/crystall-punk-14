@@ -10,6 +10,10 @@
   canBeAntag: false
   supervisors: cp14-job-supervisors-command
   weight: 2
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: CP14Bank
+      time: 3600 # 1 hours
 
 - type: startingGear
   id: CP14CommandantGear

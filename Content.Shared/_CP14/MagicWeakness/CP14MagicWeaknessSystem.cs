@@ -53,12 +53,12 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
     private void OnMagicEnergyBurnOutDamage(Entity<CP14MagicUnsafeDamageComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
     {
         _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out"), ent, ent, PopupType.LargeCaution);
-        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.BurnOutEnergy);
+        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.BurnOutEnergy, interruptsDoAfters: false);
     }
 
     private void OnMagicEnergyOverloadDamage(Entity<CP14MagicUnsafeDamageComponent> ent, ref CP14MagicEnergyOverloadEvent args)
     {
         _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-overload"), ent, ent, PopupType.LargeCaution);
-        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.OverloadEnergy);
+        _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.OverloadEnergy, interruptsDoAfters: false);
     }
 }

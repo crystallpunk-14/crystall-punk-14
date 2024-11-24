@@ -9,7 +9,7 @@ CP14CaveStoneWallSilverOre: null
 CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
 
 # 2024-06-10
-CP14ClothingCloakHoodieYellow: CP14ClothingCloakSimpleWhite
+CP14ClothingCloakHoodieYellow: null
 CP14ClothingPantsHarlequinRed: CP14ClothingPantsTrouserDarkBlue
 CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlack
 
@@ -149,10 +149,16 @@ CP14KeyBankSafe6: CP14KeyBankSafe
 #2024-19-11
 CP14ClothingRingManaGift: CP14ManaOperationGlove
 CP14ClothingRingIceDagger: CP14ManaOperationGlove
-CP14ClothingRingFlameCreation: null
+CP14ClothingRingFlameCreation: CP14Lighter
 CP14ClothingRingShadowGrab: null
 CP14ClothingRingEarthWall: null
 CP14ClothingRingSphereOfLight: null
+
+#2024-14-11
+CP14ClothingCloakSimpleWhite: null
+CP14ClothingCloakSimpleDarkBlue: null
+CP14ClothingCloakArmoredRed: CP14ClothingCloakGuardCommander
+CP14SpawnPointCaptain: null
 
 # <---> CrystallEdge migration zone end
 
@@ -599,3 +605,43 @@ BlueprintFlare: null
 
 # 2024-10-04
 BaseAdvancedPen: Pen
+
+# 2024-10-09
+# Removal of separate borg chassis parts, replace them with generic borg parts.
+LeftArmBorgEngineer: LeftArmBorg
+RightArmBorgEngineer: RightArmBorg
+LeftLegBorgEngineer: LeftLegBorg
+RightLegBorgEngineer: RightLegBorg
+HeadBorgEngineer: LightHeadBorg
+TorsoBorgEngineer: TorsoBorg
+
+LeftArmBorgMedical: LeftArmBorg
+RightArmBorgMedical: RightArmBorg
+LeftLegBorgMedical: LeftLegBorg
+RightLegBorgMedical: RightLegBorg
+HeadBorgMedical: LightHeadBorg
+TorsoBorgMedical: TorsoBorg
+
+LeftArmBorgMining: LeftArmBorg
+RightArmBorgMining: RightArmBorg
+LeftLegBorgMining: LeftLegBorg
+RightLegBorgMining: RightLegBorg
+HeadBorgMining: LightHeadBorg
+TorsoBorgMining: TorsoBorg
+
+LeftArmBorgService: LeftArmBorg
+RightArmBorgService: RightArmBorg
+LeftLegBorgService: LeftLegBorg
+RightLegBorgService: RightLegBorg
+HeadBorgService: LightHeadBorg
+TorsoBorgService: TorsoBorg
+
+LeftLegBorgJanitor: LeftLegBorg
+RightLegBorgJanitor: RightLegBorg
+HeadBorgJanitor: LightHeadBorg
+TorsoBorgJanitor: TorsoBorg
+
+# 2024-11-17
+PresentRandomAsh: PresentRandomCoal
+# 2024-11-19
+CrateCrewMonitoringBoards: CrateCrewMonitoring
