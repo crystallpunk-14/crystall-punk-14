@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseItem
+  id: CP14GripWooden
+  name: wooden grip
+  description: A short wooden handle for a weapon or tool. The cheapest and most unstable material.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/grips.rsi
+    layers:
+    - state: wooden
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - Blade
+
+- type: entity
+  parent: BaseItem
+  id: CP14GripWoodenLong
+  name: long wooden grip
+  description: long, two-handed wooden handle for heavy weapons or large tools.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/grips48.rsi
+    layers:
+    - state: wooden_long
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - Blade

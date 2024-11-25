@@ -7,5 +7,5 @@ namespace Content.Shared._CP14.ModularCraft.Components;
 public sealed partial class CP14ModularCraftPartComponent : Component
 {
     [DataField(required: true)]
-    public HashSet<ProtoId<CP14ModularCraftPartPrototype>> PossiblePartProto = new();
+    public HashSet<ProtoId<CP14ModularCraftPartPrototype>> PossibleParts = new();
 }

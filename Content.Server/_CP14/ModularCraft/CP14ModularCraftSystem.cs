@@ -35,7 +35,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         List<CP14ModularCraftPartPrototype> possiblePart = new();
 
         //Calculate possible slots
-        foreach (var possibleProto in ent.Comp.PossiblePartProto)
+        foreach (var possibleProto in ent.Comp.PossibleParts)
         {
             if (!starterPoint.FreeSlots.Contains(possibleProto.Id))
                 continue;
@@ -83,7 +83,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
     private void AddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
         Entity<CP14ModularCraftPartComponent> part)
     {
-        foreach (var partProto in part.Comp.PossiblePartProto)
+        foreach (var partProto in part.Comp.PossibleParts)
         {
             if (!_proto.TryIndex(partProto, out var partIndexed))
                 continue;
@@ -95,7 +95,6 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             {
                 QueueDel(part);
             }
-
             return;
         }
     }

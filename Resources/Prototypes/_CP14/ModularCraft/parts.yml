@@ -1,4 +1,15 @@
 - type: modularPart
-  id: IronGrip
-  targetSlot: Grip
-  sourcePart: null
+  id: BladeIronDagger
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronDagger
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/blade.rsi
+      state: iron_dagger
+
+- type: modularPart
+  id: BladeIronMice
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronMice
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/blade.rsi
+      state: iron_mice

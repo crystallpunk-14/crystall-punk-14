@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronDagger
+  categories: [ ForkFiltered ]
+  name: iron dagger blade
+  description: a dagger blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/blade.rsi
+    layers:
+    - state: iron_dagger
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronDagger
+
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronMice
+  categories: [ ForkFiltered ]
+  name: iron mice ball
+  description: a mace ball without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/blade.rsi
+    layers:
+    - state: iron_mice
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronDagger

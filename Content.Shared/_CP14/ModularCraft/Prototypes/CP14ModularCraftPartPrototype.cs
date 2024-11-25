@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.ModularCraft.Prototypes;
 
@@ -16,7 +17,7 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     /// By design, the original item with this prototype from which the weapon was assembled.
     /// </summary>
     [DataField]
-    public List<EntProtoId> SourceParts = new();
+    public EntProtoId? SourcePart = string.Empty;
 
     [DataField]
     public List<CP14ModularCraftModifier> Modifiers = new();
@@ -24,7 +25,8 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     [DataField]
     public HashSet<ProtoId<CP14ModularCraftSlotPrototype>> AddSlots = new();
 
-    //Icon
+    [DataField]
+    public List<PrototypeLayerData>? IconSprite;
 
     //Inhand left right
 
