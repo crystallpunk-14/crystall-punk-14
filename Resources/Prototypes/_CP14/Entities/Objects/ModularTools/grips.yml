@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseItem
-  id: CP14GripWooden
+  id: CP14ModularGripWooden
   name: wooden grip
   description: A short wooden handle for a weapon or tool. The cheapest and most unstable material.
   categories: [ ForkFiltered ]
@@ -15,7 +15,7 @@
 
 - type: entity
   parent: BaseItem
-  id: CP14GripWoodenLong
+  id: CP14ModularGripWoodenLong
   name: long wooden grip
   description: long, two-handed wooden handle for heavy weapons or large tools.
   categories: [ ForkFiltered ]

@@ -112,6 +112,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         var indexedPart = _proto.Index(part);
         start.Comp.FreeSlots.AddRange(indexedPart.AddSlots);
 
+        Dirty(start);
         return true;
     }
 }

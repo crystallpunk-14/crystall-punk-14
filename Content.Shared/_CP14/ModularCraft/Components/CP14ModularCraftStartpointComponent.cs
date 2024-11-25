@@ -1,9 +1,10 @@
 using Content.Shared._CP14.ModularCraft.Prototypes;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.ModularCraft.Components;
 
-[RegisterComponent, Access(typeof(CP14SharedModularCraftSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(CP14SharedModularCraftSystem))]
 public sealed partial class CP14ModularCraftStartPointComponent : Component
 {
     /// <summary>
@@ -21,6 +22,11 @@ public sealed partial class CP14ModularCraftStartPointComponent : Component
     /// <summary>
     /// A list of all installed parts.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public List<ProtoId<CP14ModularCraftPartPrototype>> InstalledParts = new();
+
+    /// <summary>
+    /// Clentside visual layers from installedParts
+    /// </summary>
+    public HashSet<string> RevealedLayers = new();
 }

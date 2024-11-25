@@ -3,7 +3,7 @@
   id: CP14ModularBladeIronDagger
   categories: [ ForkFiltered ]
   name: iron dagger blade
-  description: a dagger blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  description: A dagger blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/blade.rsi
@@ -15,10 +15,25 @@
 
 - type: entity
   parent: BaseItem
+  id: CP14ModularBladeIronSword
+  categories: [ ForkFiltered ]
+  name: iron sword blade
+  description: A sword blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/blade.rsi
+    layers:
+    - state: iron_sword
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSword
+
+- type: entity
+  parent: BaseItem
   id: CP14ModularBladeIronMice
   categories: [ ForkFiltered ]
   name: iron mice ball
-  description: a mace ball without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  description: A mace ball without a hilt. A blacksmith can use it as a spare part to create a weapon.
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/blade.rsi
@@ -26,4 +41,34 @@
     - state: iron_mice
   - type: CP14ModularCraftPart
     possibleParts:
-    - BladeIronDagger
+    - BladeIronMice
+
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronSickle
+  categories: [ ForkFiltered ]
+  name: iron sickle blade
+  description: A sickle blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/blade.rsi
+    layers:
+    - state: iron_sickle
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSickle
+
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronSwordTwoHanded
+  categories: [ ForkFiltered ]
+  name: iron two-handed sword blade
+  description: A two-handed sword blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/blade48.rsi
+    layers:
+    - state: iron_sword_twohanded
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSwordTwoHanded

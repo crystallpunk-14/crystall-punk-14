@@ -2,9 +2,21 @@
   id: BladeIronDagger
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronDagger
+  addSlots:
+  - Jewerly1
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/blade.rsi
       state: iron_dagger
+
+- type: modularPart
+  id: BladeIronSword
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronSword
+  addSlots:
+  - Jewerly1
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/blade.rsi
+      state: iron_sword
 
 - type: modularPart
   id: BladeIronMice
@@ -13,3 +25,55 @@
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/blade.rsi
       state: iron_mice
+
+- type: modularPart
+  id: BladeIronSickle
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronSickle
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/blade.rsi
+      state: iron_sickle
+
+- type: modularPart
+  id: BladeIronSwordTwoHanded
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronTwoHanded
+  addSlots:
+  - Jewerly1
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/blade48.rsi
+      state: iron_sword_twohanded
+
+
+
+- type: modularPart
+  id: JewerlyEmerald
+  targetSlot: Jewerly1
+  sourcePart: CP14JewelryEmerald
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/jewerly.rsi
+      state: emerald
+
+- type: modularPart
+  id: JewerlyRuby
+  targetSlot: Jewerly1
+  sourcePart: CP14JewelryRuby
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/jewerly.rsi
+      state: ruby
+
+- type: modularPart
+  id: JewerlySapphire
+  targetSlot: Jewerly1
+  sourcePart: CP14JewelrySapphire
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/jewerly.rsi
+      state: sapphire
+
+- type: modularPart
+  id: JewerlyTopaz
+  targetSlot: Jewerly1
+  sourcePart: CP14JewelryTopaz
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/jewerly.rsi
+      state: topaz
