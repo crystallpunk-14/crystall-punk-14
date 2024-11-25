@@ -21,6 +21,9 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     [DataField]
     public List<CP14ModularCraftModifier> Modifiers = new();
 
+    [DataField]
+    public HashSet<ProtoId<CP14ModularCraftSlotPrototype>> AddSlots = new();
+
     //Icon
 
     //Inhand left right
