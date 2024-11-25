@@ -1,0 +1,4 @@
+- type: modularPart
+  id: IronGrip
+  targetSlot: Grip
+  sourcePart: null

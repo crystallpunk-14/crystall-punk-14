@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "license": "CLA",
+  "copyright": "Created by Jaraten (Github) ",
+  "states": [
+    {
+      "name": "iron_long"
+    },
+    {
+      "name": "wooden_long"
+    }
+  ]
+}

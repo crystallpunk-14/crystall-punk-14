@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CLA",
+  "copyright": "Created by Jaraten (Github) ",
+  "states": [
+    {
+      "name": "iron_dagger"
+    },
+    {
+      "name": "iron_mice"
+    },
+    {
+      "name": "iron_sickle"
+    },
+    {
+      "name": "iron_spear"
+    },
+    {
+      "name": "iron_sword"
+    }
+  ]
+}

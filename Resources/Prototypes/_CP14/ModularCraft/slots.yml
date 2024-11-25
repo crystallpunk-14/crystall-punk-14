@@ -1,0 +1,7 @@
+- type: modularSlot
+  id: Grip
+  name: cp14-modular-slot-grip
+
+- type: modularSlot
+  id: Blade
+  name: cp14-modular-slot-blade
