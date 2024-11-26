@@ -53,18 +53,38 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
             var indexedPart = _proto.Index(part);
 
             if (indexedPart.IconSprite is null)
-                continue;
-
-            var counter = 0;
-            foreach (var layer in indexedPart.IconSprite)
             {
-                var keyCode = $"cp14-modular-icon-layer-{counterPart}-{counter}";
-                start.Comp.RevealedLayers.Add(keyCode);
-                var index = sprite.AddLayer(layer);
-                sprite.LayerMapSet(keyCode, index);
+                //Try get default sprite
+                if (indexedPart.RsiPath is null)
+                    continue;
 
-                counter++;
+                var state = $"icon";
+
+                var defaultLayer = new PrototypeLayerData
+                {
+                    RsiPath = indexedPart.RsiPath,
+                    State = state,
+                };
+
+                var keyCode = $"cp14-modular-icon-layer-{counterPart}-default";
+                start.Comp.RevealedLayers.Add(keyCode);
+                var index = sprite.AddLayer(defaultLayer);
+                sprite.LayerMapSet(keyCode, index);
             }
+            else
+            {
+                var counter = 0;
+                foreach (var layer in indexedPart.IconSprite)
+                {
+                    var keyCode = $"cp14-modular-icon-layer-{counterPart}-{counter}";
+                    start.Comp.RevealedLayers.Add(keyCode);
+                    var index = sprite.AddLayer(layer);
+                    sprite.LayerMapSet(keyCode, index);
+
+                    counter++;
+                }
+            }
+
 
             counterPart++;
         }

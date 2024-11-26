@@ -2,6 +2,7 @@
   id: BladeIronDagger
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronDagger
+  rsiPath: _CP14/Objects/ModularTools/iron_dagger.rsi
   addSlots:
   - Jewerly1
   modifiers:
@@ -25,15 +26,12 @@
   - !type:CP14ModularModifierModifySize
     newSize: Normal
     adjustSize: 0, 1
-  rsiPath: _CP14/Objects/ModularTools/iron_dagger.rsi
-  iconSprite:
-  - sprite: _CP14/Objects/ModularTools/iron_dagger.rsi
-    state: icon
 
 - type: modularPart
   id: BladeIronSickle
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronSickle
+  rsiPath: _CP14/Objects/ModularTools/iron_sickle.rsi
   modifiers:
   - !type:CP14ModularModifierAddComponents
     copyFromProto:
@@ -48,10 +46,6 @@
   - !type:CP14ModularModifierModifySize
     newSize: Normal
     adjustSize: 0, 2
-  rsiPath: _CP14/Objects/ModularTools/iron_sickle.rsi
-  iconSprite:
-  - sprite: _CP14/Objects/ModularTools/iron_sickle.rsi
-    state: icon
 
 #- type: modularPart
 #  id: BladeIronSword
