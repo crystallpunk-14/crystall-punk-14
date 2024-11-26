@@ -147,9 +147,7 @@
   id: JewerlyRuby
   targetSlot: Jewerly1
   sourcePart: CP14JewelryRuby
-  iconSprite:
-    - sprite: _CP14/Objects/ModularTools/jewerly.rsi
-      state: ruby
+  rsiPath: _CP14/Objects/ModularTools/ruby_jewerly1.rsi
 
 - type: modularPart
   id: JewerlySapphire
