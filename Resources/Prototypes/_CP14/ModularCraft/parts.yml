@@ -115,7 +115,6 @@
     resetOnHandSelected: true # Disable fast swap
     bonusRange: 0.2
     angleMultiplier: 1.2
-    attackRateMultiplier: 1
     bonusDamage:
       types:
         Slash: 10
@@ -124,50 +123,6 @@
     newSize: Normal
     adjustSize: 0, 2
 
-#- type: modularPart
-#  id: BladeIronSword
-#  targetSlot: Blade
-#  sourcePart: CP14ModularBladeIronSword
-#  addSlots:
-#  - Jewerly1
-#  modifiers:
-#  - !type:CP14ModularModifierAddComponents
-#    copyFromProto:
-#    - CP14BaseWeaponThrowable
-#    - CP14BaseWeaponChemical
-#    - CP14BaseWeaponSharp
-#    components:
-#    - type: CP14SkillRequirement
-#      fuckupChance: 0.5
-#      requiredSkills:
-#      - Warcraft
-#  - !type:CP14ModularModifierModifyDamage
-#    resetOnHandSelected: true # Disable fast swap
-#    attackRateMultiplier: 1.4
-#    bonusRange: 0.2
-#    bonusDamage:
-#      types:
-#        Slash: 17
-#  iconSprite:
-#    - sprite: _CP14/Objects/ModularTools/blade.rsi
-#      state: iron_sword
-#
-#- type: modularPart
-#  id: BladeIronMice
-#  targetSlot: Blade
-#  sourcePart: CP14ModularBladeIronMice
-#  iconSprite:
-#    - sprite: _CP14/Objects/ModularTools/blade.rsi
-#      state: iron_mice
-#
-#- type: modularPart
-#  id: BladeIronSickle
-#  targetSlot: Blade
-#  sourcePart: CP14ModularBladeIronSickle
-#  iconSprite:
-#    - sprite: _CP14/Objects/ModularTools/blade.rsi
-#      state: iron_sickle
-#
 #- type: modularPart
 #  id: BladeIronSwordTwoHanded
 #  targetSlot: Blade
