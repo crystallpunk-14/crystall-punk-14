@@ -12,10 +12,10 @@
     - CP14BaseWeaponChemical
     - CP14BaseWeaponSharp
     components:
-    #- type: ThrowingAngle
-    #  angle: 135
+    - type: ThrowingAngle
+      angle: 135
     - type: EmbeddableProjectile
-      offset: 0.15,0.15
+      offset: -0.15,-0.15
       removalTime: 0.5
   - !type:CP14ModularModifierModifyDamage
     attackRateMultiplier: 1.2
@@ -62,7 +62,7 @@
     - type: ThrowingAngle
       angle: 135
     - type: EmbeddableProjectile
-      offset: 0.15,0.15
+      offset: -0.15,-0.15
       removalTime: 1.5
   - !type:CP14ModularModifierModifyDamage
     newWideAnimation: CP14WeaponArcThrust
@@ -72,6 +72,26 @@
         Piercing: 11
   - !type:CP14ModularModifierModifySize
     newSize: Normal
+    adjustSize: 0, 1
+
+- type: modularPart
+  id: BladeIronMace
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronMace
+  rsiPath: _CP14/Objects/ModularTools/iron_mace.rsi
+  modifiers:
+  - !type:CP14ModularModifierAddComponents
+    copyFromProto:
+    - CP14BaseWeaponChemical
+  - !type:CP14ModularModifierModifyDamage
+    resetOnHandSelected: true # Disable fast swap
+    attackRateMultiplier: 0.75
+    bonusDamage:
+      types:
+        Blunt: 9
+        Piercing: 3
+  - !type:CP14ModularModifierModifySize
+    newSize: Large
     adjustSize: 0, 1
 
 #- type: modularPart

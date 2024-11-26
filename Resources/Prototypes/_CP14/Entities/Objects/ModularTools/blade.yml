@@ -30,6 +30,22 @@
     possibleParts:
     - BladeIronSpear
 
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronMace
+  categories: [ ForkFiltered ]
+  name: mace ball
+  description: A mace ball without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/iron_mace.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronMace
+
 #- type: entity
 #  parent: BaseItem
 #  id: CP14ModularBladeIronSword
@@ -44,21 +60,6 @@
 #  - type: CP14ModularCraftPart
 #    possibleParts:
 #    - BladeIronSword
-#
-#- type: entity
-#  parent: BaseItem
-#  id: CP14ModularBladeIronMice
-#  categories: [ ForkFiltered ]
-#  name: iron mice ball
-#  description: A mace ball without a hilt. A blacksmith can use it as a spare part to create a weapon.
-#  components:
-#  - type: Sprite
-#    sprite: _CP14/Objects/ModularTools/blade.rsi
-#    layers:
-#    - state: iron_mice
-#  - type: CP14ModularCraftPart
-#    possibleParts:
-#    - BladeIronMice
 #
 - type: entity
   parent: BaseItem
