@@ -20,6 +20,9 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     public EntProtoId? SourcePart = string.Empty;
 
     [DataField]
+    public float DestroyProb = 0.25f;
+
+    [DataField]
     public List<CP14ModularCraftModifier> Modifiers = new();
 
     [DataField]
