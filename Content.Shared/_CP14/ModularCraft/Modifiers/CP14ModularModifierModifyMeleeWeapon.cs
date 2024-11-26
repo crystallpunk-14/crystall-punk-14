@@ -14,6 +14,9 @@ public sealed partial class CP14ModularModifierModifyDamage : CP14ModularCraftMo
     public EntProtoId? NewWideAnimation;
 
     [DataField]
+    public float? AngleMultiplier;
+
+    [DataField]
     public DamageSpecifier? BonusDamage;
 
     [DataField]
@@ -38,6 +41,9 @@ public sealed partial class CP14ModularModifierModifyDamage : CP14ModularCraftMo
 
         if (NewWideAnimation is not null)
             melee.WideAnimation = NewWideAnimation.Value;
+
+        if (AngleMultiplier is not null)
+            melee.Angle = Angle.FromDegrees(melee.Angle.Degrees * AngleMultiplier.Value);
 
         if (BonusDamage is not null)
             melee.Damage += BonusDamage;

@@ -14,6 +14,22 @@
     possibleParts:
     - BladeIronDagger
 
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronSpear
+  categories: [ ForkFiltered ]
+  name: iron spearhead
+  description: Hiltless spearhead. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/iron_spear.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSpear
+
 #- type: entity
 #  parent: BaseItem
 #  id: CP14ModularBladeIronSword

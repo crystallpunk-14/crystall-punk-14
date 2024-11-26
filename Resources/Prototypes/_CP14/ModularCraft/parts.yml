@@ -12,11 +12,11 @@
     - CP14BaseWeaponChemical
     - CP14BaseWeaponSharp
     components:
-    - type: ThrowingAngle
-      angle: 135
+    #- type: ThrowingAngle
+    #  angle: 135
     - type: EmbeddableProjectile
       offset: 0.15,0.15
-      removalTime: 1
+      removalTime: 0.5
   - !type:CP14ModularModifierModifyDamage
     attackRateMultiplier: 1.2
     bonusDamage:
@@ -46,6 +46,33 @@
   - !type:CP14ModularModifierModifySize
     newSize: Normal
     adjustSize: 0, 2
+
+- type: modularPart
+  id: BladeIronSpear
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronSpear
+  rsiPath: _CP14/Objects/ModularTools/iron_spear.rsi
+  modifiers:
+  - !type:CP14ModularModifierAddComponents
+    copyFromProto:
+    - CP14BaseWeaponThrowable
+    - CP14BaseWeaponChemical
+    - CP14BaseWeaponSharp
+    components:
+    - type: ThrowingAngle
+      angle: 135
+    - type: EmbeddableProjectile
+      offset: 0.15,0.15
+      removalTime: 1.5
+  - !type:CP14ModularModifierModifyDamage
+    newWideAnimation: CP14WeaponArcThrust
+    angleMultiplier: 0
+    bonusDamage:
+      types:
+        Piercing: 11
+  - !type:CP14ModularModifierModifySize
+    newSize: Normal
+    adjustSize: 0, 1
 
 #- type: modularPart
 #  id: BladeIronSword
