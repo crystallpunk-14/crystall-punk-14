@@ -4,6 +4,8 @@
   abstract: true
   categories: [ ForkFiltered ]
   components:
+  - type: Item
+    storedRotation: 45
   - type: ExaminableDamage
     messages: CP14WeaponMessages
   - type: Damageable
@@ -30,6 +32,9 @@
   name: wooden grip
   description: A short wooden handle for a weapon or tool. The cheapest and most unstable material.
   components:
+  - type: Item
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/wooden_grip.rsi
     state: icon
@@ -52,7 +57,7 @@
     resetOnHandSelected: false #Fast swap
     range: 1.0 # 1.5 standart
     cPAnimationOffset: -0.75 #-1 standart
-    attackRate: 1.5 # 1 standart
+    attackRate: 1.3 # 1 standart
 
 - type: entity
   parent: CP14ModularGripBase
@@ -60,6 +65,9 @@
   name: long wooden grip
   description: long, two-handed wooden handle for heavy weapons or large tools.
   components:
+  - type: Item
+    shape:
+    - 0,0,0,1
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/wooden_grip_long.rsi
     state: icon
