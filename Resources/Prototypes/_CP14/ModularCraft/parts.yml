@@ -94,6 +94,36 @@
     newSize: Large
     adjustSize: 0, 1
 
+- type: modularPart
+  id: BladeIronSword
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronSword
+  rsiPath: _CP14/Objects/ModularTools/iron_sword.rsi
+  addSlots:
+  - Jewerly1
+  modifiers:
+  - !type:CP14ModularModifierAddComponents
+    copyFromProto:
+    - CP14BaseWeaponChemical
+    - CP14BaseWeaponSharp
+    components:
+    - type: CP14SkillRequirement
+      fuckupChance: 0.5
+      requiredSkills:
+      - Warcraft
+  - !type:CP14ModularModifierModifyDamage
+    resetOnHandSelected: true # Disable fast swap
+    bonusRange: 0.2
+    angleMultiplier: 1.2
+    attackRateMultiplier: 1
+    bonusDamage:
+      types:
+        Slash: 10
+        Piercing: 5
+  - !type:CP14ModularModifierModifySize
+    newSize: Normal
+    adjustSize: 0, 2
+
 #- type: modularPart
 #  id: BladeIronSword
 #  targetSlot: Blade
