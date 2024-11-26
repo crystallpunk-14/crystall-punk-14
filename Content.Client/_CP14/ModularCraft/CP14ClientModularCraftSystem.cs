@@ -3,13 +3,18 @@ using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared.Hands;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
+using Robust.Client.ResourceManagement;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
+using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.ModularCraft;
 
 public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IResourceCache _resCache = default!;
 
     public override void Initialize()
     {
@@ -19,7 +24,8 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, GetInhandVisualsEvent>(OnGetInhandVisuals);
     }
 
-    private void OnAfterHandleState(Entity<CP14ModularCraftStartPointComponent> start, ref AfterAutoHandleStateEvent args)
+    private void OnAfterHandleState(Entity<CP14ModularCraftStartPointComponent> start,
+        ref AfterAutoHandleStateEvent args)
     {
         if (!TryComp<SpriteComponent>(start, out var sprite))
             return;
@@ -37,6 +43,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
         {
             sprite.RemoveLayer(key);
         }
+
         start.Comp.RevealedLayers.Clear();
 
         //Add new layers
@@ -72,18 +79,32 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
         {
             var indexedPart = _proto.Index(part);
 
-            if (indexedPart.InhandVisuals is null)
-                continue;
-
-            if (!indexedPart.InhandVisuals.TryGetValue(args.Location, out var layers))
-                continue;
-
-            var i = 0;
-            foreach (var layer in layers)
+            if (indexedPart.InhandVisuals is not null && indexedPart.InhandVisuals.TryGetValue(args.Location, out var layers))
             {
-                var key = $"{defaultKey}-{counterPart}-{i}";
-                args.Layers.Add((key, layer));
-                i++;
+                var i = 0;
+                foreach (var layer in layers)
+                {
+                    var key = $"{defaultKey}-{counterPart}-{i}";
+                    args.Layers.Add((key, layer));
+                    i++;
+                }
+            }
+            else
+            {
+                //Try get default visuals
+                if (indexedPart.RsiPath is null)
+                    continue;
+
+                var state = $"inhand-{args.Location.ToString().ToLowerInvariant()}";
+
+                var defaultLayer = new PrototypeLayerData
+                {
+                    RsiPath = indexedPart.RsiPath,
+                    State = state,
+                };
+
+                var key = $"{defaultKey}-{counterPart}-default";
+                args.Layers.Add((key, defaultLayer));
             }
 
             counterPart++;

@@ -30,12 +30,13 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     public HashSet<ProtoId<CP14ModularCraftSlotPrototype>> AddSlots = new();
 
     [DataField]
+    public string? RsiPath;
+
+    [DataField]
     public List<PrototypeLayerData>? IconSprite;
 
     [DataField]
     public Dictionary<HandLocation, List<PrototypeLayerData>>? InhandVisuals;
-
-    //Inhand left right
 
     //Clothing
 
