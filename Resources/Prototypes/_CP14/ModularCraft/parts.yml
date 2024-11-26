@@ -85,11 +85,16 @@
     - CP14BaseWeaponChemical
   - !type:CP14ModularModifierModifyDamage
     resetOnHandSelected: true # Disable fast swap
-    attackRateMultiplier: 0.75
+    attackRateMultiplier: 0.85
     bonusDamage:
       types:
-        Blunt: 9
-        Piercing: 3
+        Blunt: 4
+        Piercing: 1
+  - !type:CP14ModularModifierModifyWieldedDamage
+    bonusDamage:
+      types:
+        Blunt: 5
+        Piercing: 2
   - !type:CP14ModularModifierModifySize
     newSize: Large
     adjustSize: 0, 1
@@ -117,8 +122,13 @@
     angleMultiplier: 1.2
     bonusDamage:
       types:
-        Slash: 10
+        Slash: 8
         Piercing: 5
+  - !type:CP14ModularModifierModifyWieldedDamage
+    bonusDamage:
+      types:
+        Slash: 5
+        Piercing: 2
   - !type:CP14ModularModifierModifySize
     newSize: Normal
     adjustSize: 0, 2
