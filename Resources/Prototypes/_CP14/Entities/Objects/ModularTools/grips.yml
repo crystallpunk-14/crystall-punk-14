@@ -96,3 +96,24 @@
     damage:
       types:
         Blunt: 0
+
+- type: entity
+  parent: CP14ModularGripWoodenLong
+  id: CP14ModularGripIronLong
+  name: long iron grip
+  description: long, two-handed iron handle for heavy weapons or large tools.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/iron_grip_long.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 #x2 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
