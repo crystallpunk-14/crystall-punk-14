@@ -1,9 +1,34 @@
 - type: entity
   parent: BaseItem
+  id: CP14ModularGripBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: ExaminableDamage
+    messages: CP14WeaponMessages
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5 # 100 hits
+  - type: MeleeWeapon
+    angle: 45
+    attackRate: 1
+    wideAnimationRotation: 135
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+
+- type: entity
+  parent: CP14ModularGripBase
   id: CP14ModularGripWooden
   name: wooden grip
   description: A short wooden handle for a weapon or tool. The cheapest and most unstable material.
-  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/grips.rsi
@@ -12,8 +37,6 @@
   - type: CP14ModularCraftStartPoint
     startSlots:
     - Blade
-  - type: Damageable
-    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -26,13 +49,17 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: MeleeWeapon
+    resetOnHandSelected: false #Fast swap
+    range: 1.0 # 1.5 standart
+    cPAnimationOffset: -0.75 #-1 standart
+    attackRate: 1.5 # 1 standart
 
 - type: entity
-  parent: BaseItem
+  parent: CP14ModularGripBase
   id: CP14ModularGripWoodenLong
   name: long wooden grip
   description: long, two-handed wooden handle for heavy weapons or large tools.
-  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/grips48.rsi
@@ -41,8 +68,6 @@
   - type: CP14ModularCraftStartPoint
     startSlots:
     - Blade
-  - type: Damageable
-    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -55,3 +80,7 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: MeleeWeapon
+    resetOnHandSelected: true
+    range: 1.5 # 1.5 standart
+    cPAnimationOffset: -1
