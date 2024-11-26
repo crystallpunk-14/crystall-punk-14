@@ -116,6 +116,11 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         var indexedPart = _proto.Index(part);
         start.Comp.FreeSlots.AddRange(indexedPart.AddSlots);
 
+        foreach (var modifier in indexedPart.Modifiers)
+        {
+            modifier.Effect(EntityManager, start);
+        }
+
         Dirty(start);
         return true;
     }
