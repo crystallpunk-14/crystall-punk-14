@@ -1,5 +1,7 @@
+using System.Linq;
 using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
+using Content.Shared.Hands;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 
@@ -14,6 +16,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, AfterAutoHandleStateEvent>(OnAfterHandleState);
+        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, GetInhandVisualsEvent>(OnGetInhandVisuals);
     }
 
     private void OnAfterHandleState(Entity<CP14ModularCraftStartPointComponent> start, ref AfterAutoHandleStateEvent args)
@@ -48,12 +51,39 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
             var counter = 0;
             foreach (var layer in indexedPart.IconSprite)
             {
-                var keyCode = $"cp14-modular-part-layer-{counterPart}-{counter}";
+                var keyCode = $"cp14-modular-icon-layer-{counterPart}-{counter}";
                 start.Comp.RevealedLayers.Add(keyCode);
                 var index = sprite.AddLayer(layer);
                 sprite.LayerMapSet(keyCode, index);
 
                 counter++;
+            }
+
+            counterPart++;
+        }
+    }
+
+    private void OnGetInhandVisuals(Entity<CP14ModularCraftStartPointComponent> start, ref GetInhandVisualsEvent args)
+    {
+        var defaultKey = $"cp14-modular-inhand-layer-{args.Location.ToString().ToLowerInvariant()}";
+
+        var counterPart = 0;
+        foreach (var part in start.Comp.InstalledParts)
+        {
+            var indexedPart = _proto.Index(part);
+
+            if (indexedPart.InhandVisuals is null)
+                continue;
+
+            if (!indexedPart.InhandVisuals.TryGetValue(args.Location, out var layers))
+                continue;
+
+            var i = 0;
+            foreach (var layer in layers)
+            {
+                var key = $"{defaultKey}-{counterPart}-{i}";
+                args.Layers.Add((key, layer));
+                i++;
             }
 
             counterPart++;

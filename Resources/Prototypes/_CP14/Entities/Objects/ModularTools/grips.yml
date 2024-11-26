@@ -31,9 +31,8 @@
   description: A short wooden handle for a weapon or tool. The cheapest and most unstable material.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/grips.rsi
-    layers:
-    - state: wooden
+    sprite: _CP14/Objects/ModularTools/wooden_grip.rsi
+    state: icon
   - type: CP14ModularCraftStartPoint
     startSlots:
     - Blade
@@ -62,9 +61,8 @@
   description: long, two-handed wooden handle for heavy weapons or large tools.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/grips48.rsi
-    layers:
-    - state: wooden_long
+    sprite: _CP14/Objects/ModularTools/wooden_grip_long.rsi
+    state: icon
   - type: CP14ModularCraftStartPoint
     startSlots:
     - Blade

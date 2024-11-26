@@ -1,3 +1,4 @@
+using Content.Shared.Hands.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -30,6 +31,9 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
 
     [DataField]
     public List<PrototypeLayerData>? IconSprite;
+
+    [DataField]
+    public Dictionary<HandLocation, List<PrototypeLayerData>>? InhandVisuals;
 
     //Inhand left right
 

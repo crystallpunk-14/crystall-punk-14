@@ -1,3 +1,4 @@
+using Content.Server.Item;
 using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared._CP14.ModularCraft.Prototypes;
@@ -16,6 +17,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ItemSystem _item = default!;
 
     public override void Initialize()
     {
@@ -120,6 +122,8 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         {
             modifier.Effect(EntityManager, start);
         }
+
+        _item.VisualsChanged(start);
 
         Dirty(start);
         return true;
