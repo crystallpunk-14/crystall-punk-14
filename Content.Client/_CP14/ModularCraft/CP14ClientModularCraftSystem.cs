@@ -1,20 +1,18 @@
-using System.Linq;
 using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared.Hands;
+using Content.Shared.Item;
+using Content.Shared.Wieldable.Components;
 using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
-using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.ModularCraft;
 
 public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IResourceCache _resCache = default!;
+    [Dependency] private readonly SharedItemSystem _item = default!;
 
     public override void Initialize()
     {
@@ -85,7 +83,6 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                 }
             }
 
-
             counterPart++;
         }
     }
@@ -94,12 +91,20 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
     {
         var defaultKey = $"cp14-modular-inhand-layer-{args.Location.ToString().ToLowerInvariant()}";
 
+        if  (!TryComp<ItemComponent>(start, out var item))
+            return;
+
+        var wielded = item.HeldPrefix == "wielded"; //SHITCOOOOOOODE
+
         var counterPart = 0;
         foreach (var part in start.Comp.InstalledParts)
         {
             var indexedPart = _proto.Index(part);
 
-            if (indexedPart.InhandVisuals is not null && indexedPart.InhandVisuals.TryGetValue(args.Location, out var layers))
+            var targetLayers =
+                wielded ? indexedPart.WieldedInhandVisuals : indexedPart.InhandVisuals;
+
+            if (targetLayers is not null && targetLayers.TryGetValue(args.Location, out var layers))
             {
                 var i = 0;
                 foreach (var layer in layers)
@@ -116,6 +121,9 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                     continue;
 
                 var state = $"inhand-{args.Location.ToString().ToLowerInvariant()}";
+
+                if (wielded)
+                    state = $"wielded-{state}";
 
                 var defaultLayer = new PrototypeLayerData
                 {

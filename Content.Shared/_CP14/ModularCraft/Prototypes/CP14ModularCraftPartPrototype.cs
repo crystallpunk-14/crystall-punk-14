@@ -38,7 +38,8 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     [DataField]
     public Dictionary<HandLocation, List<PrototypeLayerData>>? InhandVisuals;
 
-    //Clothing
+    [DataField]
+    public Dictionary<HandLocation, List<PrototypeLayerData>>? WieldedInhandVisuals;
 
-    //Inhand wielding
+    //Clothing
 }
