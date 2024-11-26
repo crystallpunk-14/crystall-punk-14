@@ -25,6 +25,11 @@
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    quickEquip: false
+    breakOnMove: false
 
 - type: entity
   parent: CP14ModularGripBase
@@ -58,6 +63,9 @@
     range: 1.0 # 1.5 standart
     cPAnimationOffset: -0.75 #-1 standart
     attackRate: 1 # 1 standart
+  - type: Clothing
+    slots:
+    - belt
 
 - type: entity
   parent: CP14ModularGripBase
@@ -96,6 +104,9 @@
     damage:
       types:
         Blunt: 0
+  - type: Clothing
+    slots:
+    - neck
 
 - type: entity
   parent: CP14ModularGripWooden
