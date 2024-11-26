@@ -6,13 +6,14 @@ using Content.Shared.Wieldable.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 namespace Content.Client._CP14.ModularCraft;
 
 public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedItemSystem _item = default!;
+    [Dependency] private readonly IResourceCache _resCache = default!;
 
     public override void Initialize()
     {
@@ -57,6 +58,13 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                     continue;
 
                 var state = $"icon";
+
+                var rsi = _resCache
+                    .GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / indexedPart.RsiPath)
+                    .RSI;
+
+                if (!rsi.TryGetState(state, out _))
+                    continue;
 
                 var defaultLayer = new PrototypeLayerData
                 {
@@ -120,10 +128,17 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                 if (indexedPart.RsiPath is null)
                     continue;
 
+                var rsi = _resCache
+                    .GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / indexedPart.RsiPath)
+                    .RSI;
+
                 var state = $"inhand-{args.Location.ToString().ToLowerInvariant()}";
 
                 if (wielded)
                     state = $"wielded-{state}";
+
+                if (!rsi.TryGetState(state, out _))
+                    continue;
 
                 var defaultLayer = new PrototypeLayerData
                 {

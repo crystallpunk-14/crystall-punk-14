@@ -98,6 +98,29 @@
         Blunt: 0
 
 - type: entity
+  parent: CP14ModularGripWooden
+  id: CP14ModularGripIron
+  name: iron grip
+  description: A short iron handle for a weapon or tool.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/iron_grip.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 #x2 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: MeleeWeapon
+    attackRate: 0.8 # 1 standart
+
+- type: entity
   parent: CP14ModularGripWoodenLong
   id: CP14ModularGripIronLong
   name: long iron grip
@@ -117,3 +140,5 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: MeleeWeapon
+    attackRate: 0.3 # 1 standart
