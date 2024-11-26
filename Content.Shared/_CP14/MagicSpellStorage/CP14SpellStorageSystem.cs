@@ -5,9 +5,12 @@ using Content.Shared.Actions;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
+using Content.Shared.Interaction;
+using Content.Shared.Popups;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Network;
 
 namespace Content.Shared._CP14.MagicSpellStorage;
@@ -21,6 +24,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly CP14SharedMagicAttuningSystem _attuning = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -40,6 +44,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotUnequippedEvent>(OnClothingUnequipped);
 
         SubscribeLocalEvent<CP14SpellStorageRequireAttuneComponent, RemovedAttuneFromMindEvent>(OnRemovedAttune);
+        SubscribeLocalEvent<CP14SpellStorageComponent, AfterInteractEvent>(OnInteract);
     }
 
     private void OnSpellUsed(Entity<CP14SpellStorageUseDamageComponent> ent, ref CP14SpellFromSpellStorageUsedEvent args)
@@ -57,14 +62,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
         foreach (var spell in mStorage.Comp.Spells)
         {
-            var spellEnt = _actionContainer.AddAction(mStorage, spell);
-            if (spellEnt is null)
-                continue;
-
-            var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
-            provided.SpellStorage = mStorage;
-
-            mStorage.Comp.SpellEntities.Add(spellEnt.Value);
+            TryAddNewSpellEntity(mStorage, spell);
         }
     }
 
@@ -77,6 +75,38 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         {
             QueueDel(spell);
         }
+    }
+
+    private void OnInteract(Entity<CP14SpellStorageComponent> storage, ref AfterInteractEvent args)
+    {
+        if (_net.IsClient || args.Target is null)
+            return;
+
+        if (!storage.Comp.AllowSpellsTransfering || storage.Comp.AllowSpellsGetting)
+        {
+            _popup.PopupPredicted(Loc.GetString("cp14-spells-storage-cant-transfer"), args.Used, args.Used);
+            return;
+        }
+
+        if (!TryComp<CP14SpellStorageComponent>(args.Target, out var targetStorage))
+            return;
+
+        if (!targetStorage.AllowSpellsGetting)
+        {
+            _popup.PopupPredicted(Loc.GetString("cp14-spells-storage-cant-get-spells"), args.Target.Value, args.Used);
+            return;
+        }
+
+        var targetEnt = new Entity<CP14SpellStorageComponent>(args.Target.Value, targetStorage);
+
+        foreach (var spell in storage.Comp.Spells)
+        {
+            targetStorage.Spells.Add(spell);
+            TryAddNewSpellEntity(targetEnt, spell);
+        }
+
+        if (storage.Comp.DeleteStorageAfterInteract)
+            QueueDel(args.Used);
     }
 
     private void OnEquippedHand(Entity<CP14SpellStorageAccessHoldingComponent> ent, ref GotEquippedHandEvent args)
@@ -129,6 +159,22 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     private void OnClothingUnequipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotUnequippedEvent args)
     {
         _actions.RemoveProvidedActions(args.Wearer, ent);
+    }
+
+    private bool TryAddNewSpellEntity(Entity<CP14SpellStorageComponent> mStorage, EntProtoId spell)
+    {
+        if (mStorage.Comp.SpellEntities.Count == mStorage.Comp.MaxSpellsCount)
+            return false;
+
+        var spellEnt = _actionContainer.AddAction(mStorage, spell);
+        if (spellEnt is null)
+            return false;
+
+        var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
+        provided.SpellStorage = mStorage;
+
+        mStorage.Comp.SpellEntities.Add(spellEnt.Value);
+        return true;
     }
 
     private bool TryGrantAccess(Entity<CP14SpellStorageComponent> storage, EntityUid user)

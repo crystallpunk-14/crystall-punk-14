@@ -23,7 +23,7 @@
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
-      types: 
+      types:
         Blunt: 6
   - type: MeleeWeapon
     angle: 100
@@ -42,6 +42,7 @@
   - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorage
+    maxSpellsCount: 4
     spells:
     - CP14ActionSpellCureWounds
     - CP14ActionSpellCureBurn
