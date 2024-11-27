@@ -7,6 +7,8 @@
   components:
   - type: Item
     storedRotation: 45
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/iron_dagger.rsi
     state: icon
@@ -23,6 +25,8 @@
   components:
   - type: Item
     storedRotation: 45
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/iron_spear.rsi
     state: icon
@@ -39,6 +43,8 @@
   components:
   - type: Item
     storedRotation: 45
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/iron_mace.rsi
     state: icon
@@ -55,6 +61,8 @@
   components:
   - type: Item
     storedRotation: 45
+    shape:
+    - 0,0,0,1
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/iron_sword.rsi
     state: icon
@@ -71,6 +79,8 @@
   components:
   - type: Item
     storedRotation: 45
+    shape:
+    - 0,0,0,0
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/iron_sickle.rsi
     state: icon

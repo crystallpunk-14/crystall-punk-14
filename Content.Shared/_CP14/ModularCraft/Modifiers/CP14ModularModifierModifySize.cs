@@ -17,6 +17,9 @@ public sealed partial class CP14ModularModifierModifySize : CP14ModularCraftModi
     [DataField]
     public Vector2i? AdjustShape;
 
+    [DataField]
+    public Vector2i? StoredOffsetBonus;
+
     public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start)
     {
         if (!entManager.TryGetComponent<ItemComponent>(start, out var itemComp) || itemComp.Shape is null)
@@ -27,12 +30,19 @@ public sealed partial class CP14ModularModifierModifySize : CP14ModularCraftModi
         if (NewSize is not null)
             itemSystem.SetSize(start, NewSize.Value);
 
-        if (AdjustShape is not null && itemSystem.GetItemShape((start, itemComp)).Count == 1)
+        var itemShape = itemSystem.GetItemShape((start, itemComp));
+        if (AdjustShape is not null && itemShape.Count == 1)
         {
             var box = itemComp.Shape.First();
             box.Right += AdjustShape.Value.X;
-            box.Bottom += AdjustShape.Value.Y;
+            box.Top += AdjustShape.Value.Y;
             itemSystem.SetShape(start, new List<Box2i>{box});
+        }
+
+        if (StoredOffsetBonus is not null)
+        {
+            var newOffset = itemComp.StoredOffset + StoredOffsetBonus.Value;
+            itemSystem.SetStoredOffset(start, itemComp, newOffset);
         }
     }
 }

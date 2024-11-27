@@ -25,7 +25,8 @@
         Piercing: 5
   - !type:CP14ModularModifierModifySize
     newSize: Normal
-    adjustSize: 0, 1
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
 
 - type: modularPart
   id: BladeIronSickle
@@ -45,7 +46,8 @@
         Piercing: 3
   - !type:CP14ModularModifierModifySize
     newSize: Normal
-    adjustSize: 0, 2
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
 
 - type: modularPart
   id: BladeIronSpear
@@ -72,7 +74,8 @@
         Piercing: 11
   - !type:CP14ModularModifierModifySize
     newSize: Normal
-    adjustSize: 0, 1
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
 
 - type: modularPart
   id: BladeIronMace
@@ -97,7 +100,8 @@
         Piercing: 2
   - !type:CP14ModularModifierModifySize
     newSize: Large
-    adjustSize: 0, 1
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
 
 - type: modularPart
   id: BladeIronSword
@@ -131,7 +135,8 @@
         Piercing: 2
   - !type:CP14ModularModifierModifySize
     newSize: Normal
-    adjustSize: 0, 2
+    adjustShape: 0, 2
+    storedOffsetBonus: 0, 10
 
 #- type: modularPart
 #  id: BladeIronSwordTwoHanded

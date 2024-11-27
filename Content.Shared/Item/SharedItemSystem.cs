@@ -84,6 +84,15 @@ public abstract class SharedItemSystem : EntitySystem
         VisualsChanged(uid);
     }
 
+    /// <summary>
+    /// CP14 extension - ability to edit stored offset
+    /// </summary>
+    public void SetStoredOffset(EntityUid uid, ItemComponent component, Vector2i newOffset)
+    {
+        component.StoredOffset = newOffset;
+        Dirty(uid, component);
+    }
+
     #endregion
 
     private void OnHandInteract(EntityUid uid, ItemComponent component, InteractHandEvent args)
