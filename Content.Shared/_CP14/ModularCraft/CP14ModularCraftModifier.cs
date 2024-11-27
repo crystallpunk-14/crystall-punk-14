@@ -7,5 +7,5 @@ namespace Content.Shared._CP14.ModularCraft;
 [MeansImplicitUse]
 public abstract partial class CP14ModularCraftModifier
 {
-    public abstract void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start);
+    public abstract void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start, Entity<CP14ModularCraftPartComponent>? part);
 }

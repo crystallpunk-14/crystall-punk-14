@@ -31,7 +31,7 @@ public sealed partial class CP14ModularModifierModifyDamage : CP14ModularCraftMo
     [DataField]
     public bool? ResetOnHandSelected;
 
-    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start)
+    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start, Entity<CP14ModularCraftPartComponent>? part)
     {
         if (!entManager.TryGetComponent<MeleeWeaponComponent>(start, out var melee))
             return;

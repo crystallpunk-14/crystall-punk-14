@@ -49,16 +49,16 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
             possiblePart.Add(_proto.Index(possibleProto));
         }
 
-        foreach (var part in possiblePart)
+        foreach (var partProto in possiblePart)
         {
-            var indexedSlot = _proto.Index(part.TargetSlot);
+            var indexedSlot = _proto.Index(partProto.TargetSlot);
             var verb = new UtilityVerb()
             {
                 Text = Loc.GetString("cp14-modular-craft-add-part-verb-text", ("slot", indexedSlot.Name)),
                 Category = VerbCategory.CP14ModularCraft,
                 Act = () =>
                 {
-                    if (TryAddPartToSlot(starter, part, indexedSlot))
+                    if (TryAddPartToSlot(starter, ent, partProto, indexedSlot))
                         QueueDel(ent);
                 },
             };
@@ -78,7 +78,7 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
             if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot))
                 continue;
 
-            if (TryAddPartToSlot(start, partProto, partIndexed.TargetSlot))
+            if (TryAddPartToSlot(start, part, partProto, partIndexed.TargetSlot))
             {
                 QueueDel(part);
             }
@@ -100,21 +100,22 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
 
 
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
-        ProtoId<CP14ModularCraftPartPrototype> part,
+        Entity<CP14ModularCraftPartComponent>? part,
+        ProtoId<CP14ModularCraftPartPrototype> partProto,
         ProtoId<CP14ModularCraftSlotPrototype> slot)
     {
         if (!start.Comp.FreeSlots.Contains(slot))
             return false;
 
         start.Comp.FreeSlots.Remove(slot);
-        start.Comp.InstalledParts.Add(part);
+        start.Comp.InstalledParts.Add(partProto);
 
-        var indexedPart = _proto.Index(part);
+        var indexedPart = _proto.Index(partProto);
         start.Comp.FreeSlots.AddRange(indexedPart.AddSlots);
 
         foreach (var modifier in indexedPart.Modifiers)
         {
-            modifier.Effect(EntityManager, start);
+            modifier.Effect(EntityManager, start, part);
         }
 
         _item.VisualsChanged(start);

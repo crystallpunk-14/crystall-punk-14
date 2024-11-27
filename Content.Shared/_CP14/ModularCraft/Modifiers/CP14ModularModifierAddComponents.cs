@@ -9,26 +9,11 @@ public sealed partial class CP14ModularModifierAddComponents : CP14ModularCraftM
     public ComponentRegistry? Components;
 
     [DataField]
-    public List<EntProtoId>? CopyFromProto;
+    public bool Override = false;
 
-    [DataField]
-    public bool Override = true;
-
-    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start)
+    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start, Entity<CP14ModularCraftPartComponent>? part)
     {
         if (Components is not null)
             entManager.AddComponents(start, Components, Override);
-
-        if (CopyFromProto is not null)
-        {
-            var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-            foreach (var proto in CopyFromProto)
-            {
-                if (!prototypeManager.TryIndex(proto, out var indexed))
-                    continue;
-
-                entManager.AddComponents(start, indexed.Components, Override);
-            }
-        }
     }
 }

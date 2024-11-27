@@ -12,7 +12,7 @@ public sealed partial class CP14ModularModifierModifyWieldedDamage : CP14Modular
     [DataField]
     public float? DamageMultiplier;
 
-    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start)
+    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start, Entity<CP14ModularCraftPartComponent>? part)
     {
         if (!entManager.TryGetComponent<IncreaseDamageOnWieldComponent>(start, out var wield))
             return;
@@ -24,4 +24,5 @@ public sealed partial class CP14ModularModifierModifyWieldedDamage : CP14Modular
         if (DamageMultiplier is not null)
             wield.BonusDamage *= DamageMultiplier.Value;
     }
+
 }

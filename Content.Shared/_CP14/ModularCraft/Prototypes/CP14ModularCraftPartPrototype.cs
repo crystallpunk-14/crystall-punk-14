@@ -10,7 +10,7 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField(required: true)]
+    [DataField]
     public ProtoId<CP14ModularCraftSlotPrototype> TargetSlot = string.Empty;
 
     /// <summary>

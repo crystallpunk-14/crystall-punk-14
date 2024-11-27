@@ -20,7 +20,7 @@ public sealed partial class CP14ModularModifierModifySize : CP14ModularCraftModi
     [DataField]
     public Vector2i? StoredOffsetBonus;
 
-    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start)
+    public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start, Entity<CP14ModularCraftPartComponent>? part)
     {
         if (!entManager.TryGetComponent<ItemComponent>(start, out var itemComp) || itemComp.Shape is null)
             return;

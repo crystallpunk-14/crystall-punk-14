@@ -6,11 +6,12 @@
   addSlots:
   - Jewerly1
   modifiers:
+  - !type:CP14ModularModifierInherit
+    copyFrom:
+    - BaseWeaponThrowable
+    - BaseWeaponChemical
+    - BaseWeaponSharp
   - !type:CP14ModularModifierAddComponents
-    copyFromProto:
-    - CP14BaseWeaponThrowable
-    - CP14BaseWeaponChemical
-    - CP14BaseWeaponSharp
     components:
     - type: ThrowingAngle
       angle: 135
@@ -34,10 +35,10 @@
   sourcePart: CP14ModularBladeIronSickle
   rsiPath: _CP14/Objects/ModularTools/iron_sickle.rsi
   modifiers:
-  - !type:CP14ModularModifierAddComponents
-    copyFromProto:
-    - CP14BaseWeaponChemical
-    - CP14BaseWeaponSharp
+  - !type:CP14ModularModifierInherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponSharp
     #components: TODO Add gathering tag
   - !type:CP14ModularModifierModifyDamage
     bonusDamage:
@@ -55,11 +56,12 @@
   sourcePart: CP14ModularBladeIronSpear
   rsiPath: _CP14/Objects/ModularTools/iron_spear.rsi
   modifiers:
+  - !type:CP14ModularModifierInherit
+    copyFrom:
+    - BaseWeaponThrowable
+    - BaseWeaponChemical
+    - BaseWeaponSharp
   - !type:CP14ModularModifierAddComponents
-    copyFromProto:
-    - CP14BaseWeaponThrowable
-    - CP14BaseWeaponChemical
-    - CP14BaseWeaponSharp
     components:
     - type: ThrowingAngle
       angle: 135
@@ -83,9 +85,9 @@
   sourcePart: CP14ModularBladeIronMace
   rsiPath: _CP14/Objects/ModularTools/iron_mace.rsi
   modifiers:
-  - !type:CP14ModularModifierAddComponents
-    copyFromProto:
-    - CP14BaseWeaponChemical
+  - !type:CP14ModularModifierInherit
+    copyFrom:
+    - BaseWeaponChemical
   - !type:CP14ModularModifierModifyDamage
     resetOnHandSelected: true # Disable fast swap
     attackRateMultiplier: 0.85
@@ -111,10 +113,11 @@
   addSlots:
   - Jewerly1
   modifiers:
+  - !type:CP14ModularModifierInherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponSharp
   - !type:CP14ModularModifierAddComponents
-    copyFromProto:
-    - CP14BaseWeaponChemical
-    - CP14BaseWeaponSharp
     components:
     - type: CP14SkillRequirement
       fuckupChance: 0.5

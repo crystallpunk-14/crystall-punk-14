@@ -1,4 +1,5 @@
 - type: entity
+  abstract: true
   id: CP14BaseWeaponChemical
   categories: [ HideSpawnMenu ]
   components:
@@ -19,6 +20,7 @@
     maxTransferAmount: 2
 
 - type: entity
+  abstract: true
   id: CP14BaseWeaponThrowable
   categories: [ HideSpawnMenu ]
   components:
@@ -47,6 +49,7 @@
         friction: 0.2
 
 - type: entity
+  abstract: true
   id: CP14BaseWeaponLight
   categories: [ HideSpawnMenu ]
   components:
@@ -54,6 +57,7 @@
     resetOnHandSelected: false
 
 - type: entity
+  abstract: true
   id: CP14BaseWeaponShort
   categories: [ HideSpawnMenu ]
   components:
@@ -62,6 +66,7 @@
     cPAnimationOffset: -0.75
 
 - type: entity
+  abstract: true
   id: CP14BaseWeaponSharp
   categories: [ HideSpawnMenu ]
   components:
@@ -80,6 +85,7 @@
   - type: CP14WallpaperRemover
 
 - type: entity
+  abstract: true
   id: CP14BaseWeaponDestructible
   categories: [ HideSpawnMenu ]
   components:
@@ -101,6 +107,7 @@
   - type: CP14MeleeParriable
 
 - type: entity
+  abstract: true
   id: CP14BaseWeaponSelfDamage
   categories: [ HideSpawnMenu ]
   components:
