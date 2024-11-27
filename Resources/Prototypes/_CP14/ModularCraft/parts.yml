@@ -1,3 +1,7 @@
+#Concept:
+# + Fast attackRate
+#   fast swing
+# - Low damage
 - type: modularPart
   id: BladeIronDagger
   targetSlot: Blade
@@ -19,16 +23,19 @@
       offset: -0.15,-0.15
       removalTime: 0.5
   - !type:CP14ModularModifierModifyDamage
-    attackRateMultiplier: 1.2
+    attackRateMultiplier: 1.4
     bonusDamage:
       types:
-        Slash: 5
-        Piercing: 5
+        Slash: 3
+        Piercing: 3
   - !type:CP14ModularModifierModifySize
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
 
+#Concept:
+# Copy of dagger with lesser damage 
+# But can gather grass from world
 - type: modularPart
   id: BladeIronSickle
   targetSlot: Blade
@@ -41,15 +48,20 @@
     - BaseWeaponSharp
     #components: TODO Add gathering tag
   - !type:CP14ModularModifierModifyDamage
+    attackRateMultiplier: 1.4
     bonusDamage:
       types:
-        Slash: 9
-        Piercing: 3
+        Slash: 4
+        Piercing: 1
   - !type:CP14ModularModifierModifySize
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
 
+#Concept:
+# + High Throwable damage
+#   Piercing animation
+# - Low Melee Damage
 - type: modularPart
   id: BladeIronSpear
   targetSlot: Blade
@@ -62,7 +74,12 @@
     - BaseWeaponChemical
     - BaseWeaponSharp
   - !type:CP14ModularModifierAddComponents
+    override: true
     components:
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Piercing: 15
     - type: ThrowingAngle
       angle: 135
     - type: EmbeddableProjectile
@@ -73,12 +90,15 @@
     angleMultiplier: 0
     bonusDamage:
       types:
-        Piercing: 11
+        Piercing: 7
   - !type:CP14ModularModifierModifySize
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
 
+#Concept:
+# + High Wielded damage
+# - Low AttackRate
 - type: modularPart
   id: BladeIronMace
   targetSlot: Blade
@@ -98,13 +118,17 @@
   - !type:CP14ModularModifierModifyWieldedDamage
     bonusDamage:
       types:
-        Blunt: 5
-        Piercing: 2
+        Blunt: 8
+        Piercing: 4
   - !type:CP14ModularModifierModifySize
     newSize: Large
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
 
+#Concept:
+# + Additional range
+# + High Damage! + Wielded buff
+# - Required Warcraft skill
 - type: modularPart
   id: BladeIronSword
   targetSlot: Blade
