@@ -1,0 +1,29 @@
+- type: entity
+  id: CP14ModularIronSpear
+  parent: CP14ModularGripWoodenLong
+  name: iron spear
+  description: A weapon that has done its duty since the age of the giants.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/iron_spear.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronSpear
+
+- type: entity
+  id: CP14ModularIronKunai
+  parent: CP14ModularGripWooden
+  name: iron kunai
+  description: An effective throwing weapon. Throw it at a wall, or no, better yet, at a goblin!
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/iron_spear.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronSpear

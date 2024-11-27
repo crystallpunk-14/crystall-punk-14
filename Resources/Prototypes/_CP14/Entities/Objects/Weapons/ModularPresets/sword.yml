@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularIronSword
+  parent: CP14ModularGripWooden
+  name: iron sword
+  description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/iron_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronSword

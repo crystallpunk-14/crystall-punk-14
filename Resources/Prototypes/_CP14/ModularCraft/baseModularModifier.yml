@@ -55,7 +55,6 @@
     components:
     - type: Sharp
     - type: CP14Sharpened
-      sharpness: 0
     - type: CP14SharpeningStone
     - type: UseDelay
     - type: Tool
