@@ -55,7 +55,7 @@ public sealed class CP14DPSMeterSystem : EntitySystem
         var totalDamage = ent.Comp.TotalDamage.GetTotal();
         var totalSeconds = (ent.Comp.LastHitTime - ent.Comp.StartTrackTime).TotalSeconds;
 
-        var DPS = totalDamage / Math.Min(totalSeconds, 1f);
+        var DPS = totalDamage / Math.Max(totalSeconds, 1f);
 
         return DPS;
     }
