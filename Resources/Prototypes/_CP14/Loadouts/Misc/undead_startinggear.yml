@@ -57,6 +57,6 @@
   equipment:
     pants: CP14ClothingPantsLoincloth
     neck: CP14BaseSword
-    belt1: CP14BaseDagger
+    belt1: CP14ModularIronDagger
   inhand:
     - CP14TorchIgnited

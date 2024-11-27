@@ -35,7 +35,6 @@
       - !type:GroupSelector
         children:
         - id: CP14SpellScrollIceShards
-        - id: CP14SpellScrollIceDagger
         - id: CP14SpellScrollShadowGrab
         - id: CP14SpellScrollSphereOfLight
         - id: CP14SpellScrollCureWounds

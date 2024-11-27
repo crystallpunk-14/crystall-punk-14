@@ -32,7 +32,7 @@
     - type: DamageOnLand
       damage:
         types:
-          Piercing: 10
+          Piercing: 3
     - type: Fixtures
       fixtures:
         fix1:

@@ -21,17 +21,6 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
 
         var sourceCoord = _transform.GetMapCoordinates(target);
 
-        //Spawn source startpoint
-        if (modular.InstalledParts.Count > 0)
-        {
-            var meta = MetaData(target).EntityPrototype;
-            if (meta is not null)
-            {
-                var spawned = Spawn(meta.ID, sourceCoord);
-                _throwing.TryThrow(spawned, _random.NextAngle().ToWorldVec(), 1f);
-            }
-        }
-
         //Spawn parts
         foreach (var part in modular.InstalledParts)
         {

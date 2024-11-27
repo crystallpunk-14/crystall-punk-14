@@ -1,47 +1,14 @@
 - type: entity
-  id: CP14BaseDagger
-  parent: 
-  - BaseItem
-  - CP14BaseWeaponDestructible
-  - CP14BaseWeaponSharp
-  - CP14BaseWeaponChemical
-  - CP14BaseWeaponThrowable
-  - CP14BaseWeaponLight
-  - CP14BaseWeaponShort
+  id: CP14ModularIronDagger
+  parent: CP14ModularGripWooden
   name: dagger
   description: A small, multi-purpose, sharp blade. You can cut meat or throw it at a goblin.
   components:
-  - type: Item
-    size: Normal
-    shape:
-    - 0,0,0,1
-    storedRotation: 45
-  - type: Clothing
-    equipDelay: 0.25
-    unequipDelay: 0.25
-    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
-    quickEquip: false
-    breakOnMove: false
-    slots:
-    - belt
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     layers:
     - state: icon
-  - type: MeleeWeapon
-    angle: 60
-    attackRate: 1.8
-    wideAnimationRotation: 135
-    wideAnimation: CP14WeaponArcSlash
-    damage:
-      types:
-        Slash: 5
-        Piercing: 5
-    soundHit:
-      collection: MetalThud
-    cPAnimationLength: 0.15
-  - type: EmbeddableProjectile
-    offset: 0.15,0.15
-    removalTime: 1
-  - type: ThrowingAngle
-    angle: 135
+    - sprite: _CP14/Objects/ModularTools/iron_dagger.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronDagger

@@ -289,7 +289,7 @@
   - CP14PenFeather
   - CP14PaperFolderBlue
   - CP14SilverCoin5
-  - CP14BaseDagger
+  - CP14ModularIronDagger
   - CP14BaseSickle
   - CP14BasePickaxe
   - CP14Lighter
@@ -361,10 +361,10 @@
     - CP14SilverCoin5
 
 - type: loadout
-  id: CP14BaseDagger
+  id: CP14ModularIronDagger
   storage:
     back:
-    - CP14BaseDagger
+    - CP14ModularIronDagger
 
 - type: loadout
   id: CP14BaseSickle
@@ -406,7 +406,6 @@
   - CP14ActionSpellManaConsume
   - CP14ActionSpellManaGift
   - CP14ActionSpellShadowGrab
-  - CP14ActionSpellIceDagger
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellBeerCreation
 
@@ -457,12 +456,6 @@
   dummyEntity: CP14ActionSpellShadowGrab
   actions:
   - CP14ActionSpellShadowGrab
-
-- type: loadout
-  id: CP14ActionSpellIceDagger
-  dummyEntity: CP14ActionSpellIceDagger
-  actions:
-  - CP14ActionSpellIceDagger
 
 - type: loadout
   id: CP14ActionSpellWaterCreation

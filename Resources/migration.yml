@@ -160,6 +160,9 @@ CP14ClothingCloakSimpleDarkBlue: null
 CP14ClothingCloakArmoredRed: CP14ClothingCloakGuardCommander
 CP14SpawnPointCaptain: null
 
+#2024-27-11
+CP14BaseDagger: CP14ModularIronDagger
+
 # <---> CrystallEdge migration zone end
 
 

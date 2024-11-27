@@ -6,5 +6,5 @@
     pants: CP14ClothingPantsLoincloth
     shoes: CP14ClothingShoesSandals
   inhand:
-    - CP14BaseDagger
-    - CP14BaseDagger
+    - CP14ModularIronDagger
+    - CP14ModularIronDagger

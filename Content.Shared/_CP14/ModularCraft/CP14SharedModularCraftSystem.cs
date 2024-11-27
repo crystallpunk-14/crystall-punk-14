@@ -27,6 +27,14 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
         {
             ent.Comp.FreeSlots.Add(startSlot);
         }
+
+        if (TryComp<CP14ModularCraftAutoAssembleComponent>(ent, out var autoAssemble))
+        {
+            foreach (var detail in autoAssemble.Details)
+            {
+                AddPartToFirstSlot(ent, detail);
+            }
+        }
     }
 
     private void OnPartGetVerb(Entity<CP14ModularCraftPartComponent> ent, ref GetVerbsEvent<UtilityVerb> args)
@@ -66,7 +74,6 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
         }
     }
 
-
     private void AddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
         Entity<CP14ModularCraftPartComponent> part)
     {
@@ -86,6 +93,18 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
         }
     }
 
+    private void AddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
+        ProtoId<CP14ModularCraftPartPrototype> partProto)
+    {
+        if (!_proto.TryIndex(partProto, out var partIndexed))
+            return;
+
+        if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot))
+            return;
+
+        TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot);
+    }
+
     private void OnAfterInteractPart(Entity<CP14ModularCraftPartComponent> ent, ref AfterInteractEvent args)
     {
         if (args.Handled || args.Target is null)
@@ -98,15 +117,11 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
         args.Handled = true;
     }
 
-
-    private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
+    private void AddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
         Entity<CP14ModularCraftPartComponent>? part,
         ProtoId<CP14ModularCraftPartPrototype> partProto,
         ProtoId<CP14ModularCraftSlotPrototype> slot)
     {
-        if (!start.Comp.FreeSlots.Contains(slot))
-            return false;
-
         start.Comp.FreeSlots.Remove(slot);
         start.Comp.InstalledParts.Add(partProto);
 
@@ -119,8 +134,22 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
         }
 
         _item.VisualsChanged(start);
-
         Dirty(start);
+    }
+
+    private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
+        Entity<CP14ModularCraftPartComponent>? part,
+        ProtoId<CP14ModularCraftPartPrototype> partProto,
+        ProtoId<CP14ModularCraftSlotPrototype> slot)
+    {
+        if (!start.Comp.FreeSlots.Contains(slot))
+            return false;
+
+        var xform = Transform(start);
+        if (xform.GridUid != xform.ParentUid)
+            return false;
+
+        AddPartToSlot(start, part, partProto, slot);
         return true;
     }
 }
