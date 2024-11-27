@@ -52,7 +52,7 @@ public sealed partial class CP14ModularModifierModifyDamage : CP14ModularCraftMo
             melee.Damage *= DamageMultiplier.Value;
 
         if (AttackRateMultiplier is not null)
-            melee.AttackRate += AttackRateMultiplier.Value;
+            melee.AttackRate *= AttackRateMultiplier.Value;
 
         if (BonusRange is not null)
             melee.Range += BonusRange.Value;

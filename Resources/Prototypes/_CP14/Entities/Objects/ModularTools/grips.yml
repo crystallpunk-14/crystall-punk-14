@@ -30,6 +30,7 @@
     unequipDelay: 0.25
     quickEquip: false
     breakOnMove: false
+  - type: CP14MeleeParriable
 
 - type: entity
   parent: CP14ModularGripBase
@@ -99,7 +100,7 @@
   - type: MeleeWeapon
     resetOnHandSelected: true
     range: 1.5 # 1.5 standart
-    attackRate: 0.5 # 1 standart
+    attackRate: 0.7 # 1 standart
     cPAnimationOffset: -1
   - type: Wieldable
   - type: IncreaseDamageOnWield
@@ -130,8 +131,6 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: MeleeWeapon
-    attackRate: 0.8 # 1 standart
 
 - type: entity
   parent: CP14ModularGripWoodenLong
@@ -153,5 +152,3 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: MeleeWeapon
-    attackRate: 0.3 # 1 standart
