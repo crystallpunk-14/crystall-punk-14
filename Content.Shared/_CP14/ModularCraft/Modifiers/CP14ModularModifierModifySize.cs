@@ -42,7 +42,7 @@ public sealed partial class CP14ModularModifierModifySize : CP14ModularCraftModi
         if (StoredOffsetBonus is not null)
         {
             var newOffset = itemComp.StoredOffset + StoredOffsetBonus.Value;
-            itemSystem.SetStoredOffset(start, itemComp, newOffset);
+            itemSystem.SetStoredOffset(start, newOffset, itemComp);
         }
     }
 }

@@ -55,6 +55,15 @@ public abstract class SharedItemSystem : EntitySystem
         Dirty(uid, component);
     }
 
+    public void SetStoredOffset(EntityUid uid, Vector2i newOffset, ItemComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, false))
+            return;
+
+        component.StoredOffset = newOffset;
+        Dirty(uid, component);
+    }
+
     public void SetHeldPrefix(EntityUid uid, string? heldPrefix, bool force = false, ItemComponent? component = null)
     {
         if (!Resolve(uid, ref component, false))
@@ -82,15 +91,6 @@ public abstract class SharedItemSystem : EntitySystem
 
         Dirty(uid, item);
         VisualsChanged(uid);
-    }
-
-    /// <summary>
-    /// CP14 extension - ability to edit stored offset
-    /// </summary>
-    public void SetStoredOffset(EntityUid uid, ItemComponent component, Vector2i newOffset)
-    {
-        component.StoredOffset = newOffset;
-        Dirty(uid, component);
     }
 
     #endregion
