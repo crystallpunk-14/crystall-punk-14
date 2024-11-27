@@ -162,6 +162,8 @@ CP14SpawnPointCaptain: null
 
 #2024-27-11
 CP14BaseDagger: CP14ModularIronDagger
+CP14BaseMace: CP14ModularIronMace
+CP14BaseSickle: CP14ModularIronSickle
 
 # <---> CrystallEdge migration zone end
 

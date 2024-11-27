@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ModularIronDagger
   parent: CP14ModularGripWooden
-  name: dagger
+  name: iron dagger
   description: A small, multi-purpose, sharp blade. You can cut meat or throw it at a goblin.
   components:
   - type: Sprite
