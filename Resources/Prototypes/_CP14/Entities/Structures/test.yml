@@ -21,3 +21,30 @@
     interfaces:
       enum.CP14StoreUiKey.Key:
         type: CP14StoreBoundUserInterface
+
+- type: entity
+  id: CP14DPSMeter
+  parent: BaseStructureDynamic
+  categories: [ ForkFiltered ]
+  name: DPS Meter
+  suffix: Debug, DO NOT MAP
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Security/target.rsi
+    state: target_stake
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 200
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Physics
+  - type: Damageable
+  - type: CP14DPSMeter
