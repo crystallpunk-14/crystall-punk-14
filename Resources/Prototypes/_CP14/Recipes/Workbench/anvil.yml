@@ -104,3 +104,75 @@
   stacks:
     CP14CopperBar: 1
   result: CP14Crossbolt
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronDagger
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularBladeIronDagger
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularBladeIronSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularBladeIronMace
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 2
+  result: CP14ModularBladeIronSword
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronSickle
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularBladeIronSickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularBladeIronShovel
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularBladeIronPickaxe
+
+- type: CP14Recipe
+  id: CP14ModularGripIron
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularGripIron
+
+- type: CP14Recipe
+  id: CP14ModularGripIronLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 2
+  result: CP14ModularGripIronLong
