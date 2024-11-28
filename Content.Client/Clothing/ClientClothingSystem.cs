@@ -30,7 +30,7 @@ public sealed class ClientClothingSystem : ClothingSystem
     /// For some context, im currently refactoring inventory. Part of that is slots not being indexed by a massive enum anymore, but by strings.
     /// Problem here: Every rsi-state is using the old enum-names in their state. I already used the new inventoryslots ALOT. tldr: its this or another week of renaming files.
     /// </summary>
-    private static readonly Dictionary<string, string> TemporarySlotMap = new()
+    public static readonly Dictionary<string, string> TemporarySlotMap = new() //CP14 Public
     {
         {"head", "HELMET"},
         {"eyes", "EYES"},

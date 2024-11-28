@@ -1,6 +1,9 @@
+using Content.Client.Clothing;
 using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
+using Content.Shared.Clothing;
 using Content.Shared.Hands;
+using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Wieldable.Components;
 using Robust.Client.GameObjects;
@@ -21,6 +24,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
 
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, AfterAutoHandleStateEvent>(OnAfterHandleState);
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, GetInhandVisualsEvent>(OnGetInhandVisuals);
+        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, GetEquipmentVisualsEvent>(OnGetEquipmentVisuals);
     }
 
     private void OnAfterHandleState(Entity<CP14ModularCraftStartPointComponent> start,
@@ -99,7 +103,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
     {
         var defaultKey = $"cp14-modular-inhand-layer-{args.Location.ToString().ToLowerInvariant()}";
 
-        if  (!TryComp<ItemComponent>(start, out var item))
+        if (!TryComp<ItemComponent>(start, out var item))
             return;
 
         var wielded = item.HeldPrefix == "wielded"; //SHITCOOOOOOODE
@@ -151,6 +155,59 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
             }
 
             counterPart++;
+        }
+    }
+
+    private void OnGetEquipmentVisuals(Entity<CP14ModularCraftStartPointComponent> start,
+        ref GetEquipmentVisualsEvent args)
+    {
+        if (!TryComp(args.Equipee, out InventoryComponent? inventory))
+            return;
+
+        var defaultKey = $"cp14-modular-clothing-layer-{args.Slot}";
+
+        var counterPart = 0;
+        foreach (var part in start.Comp.InstalledParts)
+        {
+            var indexedPart = _proto.Index(part);
+
+            if (indexedPart.ClothingVisuals is not null && indexedPart.ClothingVisuals.TryGetValue(args.Slot, out var layers))
+            {
+                var i = 0;
+                foreach (var layer in layers)
+                {
+                    var key = $"{defaultKey}-{counterPart}-{i}";
+                    args.Layers.Add((key, layer));
+                    i++;
+                }
+            }
+            else
+            {
+                //Try get default sprites
+                if (indexedPart.RsiPath is null)
+                    continue;
+
+                var rsi = _resCache
+                    .GetResource<RSIResource>(SpriteSpecifierSerializer.TextureRoot / indexedPart.RsiPath)
+                    .RSI;
+
+                if (!ClientClothingSystem.TemporarySlotMap.TryGetValue(args.Slot, out var correctedSlot))
+                    continue;
+
+                var state = $"equipped-{correctedSlot}";
+
+                if (!rsi.TryGetState(state, out _))
+                    continue;
+
+                var defaultLayer = new PrototypeLayerData
+                {
+                    RsiPath = indexedPart.RsiPath,
+                    State = state,
+                };
+
+                var key = $"{defaultKey}-{counterPart}-default";
+                args.Layers.Add((key, defaultLayer));
+            }
         }
     }
 }

@@ -1,11 +1,11 @@
 {
   "version": 1,
+  "license": "CLA",
+  "copyright": "Created by TheShuEd (Github)",
   "size": {
     "x": 32,
     "y": 32
   },
-  "license": "CLA",
-  "copyright": "Created by TheShuEd (Github) ",
   "states": [
     {
       "name": "icon"
@@ -16,6 +16,14 @@
     },
     {
       "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BELT1",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BELT2",
       "directions": 4
     }
   ]
