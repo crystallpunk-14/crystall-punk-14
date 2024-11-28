@@ -9,6 +9,6 @@ namespace Content.Shared._CP14.Damageable;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CP14DamageableModifierComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float Modifier = 1f;
 }

@@ -16,21 +16,25 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
         SubscribeLocalEvent<CP14ModularCraftPartComponent, AfterInteractEvent>(OnAfterInteractPart);
     }
 
-    private void OnAfterInteractPart(Entity<CP14ModularCraftPartComponent> ent, ref AfterInteractEvent args)
+    private void OnAfterInteractPart(Entity<CP14ModularCraftPartComponent> start, ref AfterInteractEvent args)
     {
         if (args.Handled || args.Target is null)
             return;
 
-        if (!TryComp<CP14ModularCraftStartPointComponent>(args.Target, out var starterPoint))
+        if (!HasComp<CP14ModularCraftStartPointComponent>(args.Target))
+            return;
+
+        var xform = Transform(args.Target.Value);
+        if (xform.GridUid != xform.ParentUid)
             return;
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,
-            ent.Comp.DoAfter,
+            start.Comp.DoAfter,
             new CP14ModularCraftAddPartDoAfter(),
             args.Target,
             args.Target,
-            ent)
+            start)
         {
             BreakOnDamage = true,
             BreakOnMove = true,

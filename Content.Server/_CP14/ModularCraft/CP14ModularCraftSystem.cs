@@ -33,8 +33,8 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!TryComp<CP14ModularCraftPartComponent>(args.Used, out var partComp))
             return;
 
-        AddPartToFirstSlot(ent, (args.Used.Value, partComp));
-        QueueDel(args.Used);
+        if (!TryAddPartToFirstSlot(ent, (args.Used.Value, partComp)))
+            return;
 
         //TODO: Sound
 
@@ -52,11 +52,12 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         {
             foreach (var detail in autoAssemble.Details)
             {
-                AddPartToFirstSlot(ent, detail);
+                TryAddPartToFirstSlot(ent, detail);
             }
         }
     }
-    private void AddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
+
+    private bool TryAddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
         Entity<CP14ModularCraftPartComponent> part)
     {
         foreach (var partProto in part.Comp.PossibleParts)
@@ -70,21 +71,23 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             if (TryAddPartToSlot(start, part, partProto, partIndexed.TargetSlot))
             {
                 QueueDel(part);
+                return true;
             }
-            return;
         }
+        return false;
     }
-    private void AddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
+    private bool TryAddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
         ProtoId<CP14ModularCraftPartPrototype> partProto)
     {
         if (!_proto.TryIndex(partProto, out var partIndexed))
-            return;
+            return false;
 
         if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot))
-            return;
+            return false;
 
-        TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot);
+        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot);
     }
+
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
         Entity<CP14ModularCraftPartComponent>? part,
         ProtoId<CP14ModularCraftPartPrototype> partProto,

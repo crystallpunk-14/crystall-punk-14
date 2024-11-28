@@ -17,7 +17,7 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     /// By design, the original item with this prototype from which the weapon was assembled.
     /// </summary>
     [DataField]
-    public EntProtoId? SourcePart = string.Empty;
+    public EntProtoId? SourcePart;
 
     [DataField]
     public float DestroyProb = 0.25f;
