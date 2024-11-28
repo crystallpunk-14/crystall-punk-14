@@ -291,7 +291,7 @@
   - CP14SilverCoin5
   - CP14ModularIronDagger
   - CP14ModularIronSickle
-  - CP14BasePickaxe
+  - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
 
@@ -373,10 +373,10 @@
     - CP14ModularIronSickle
 
 - type: loadout
-  id: CP14BasePickaxe
+  id: CP14ModularIronPickaxe
   storage:
     back:
-    - CP14BasePickaxe
+    - CP14ModularIronPickaxe
 
 - type: loadout
   id: CP14Lighter

@@ -55,7 +55,7 @@
       - id: CP14ModularIronShovel
       - id: CP14BaseMop
       - id: CP14BaseBroom
-      - id: CP14BasePickaxe
+      - id: CP14ModularIronPickaxe
       - !type:GroupSelector
         children:
         - id: CP14CrystalLampBlueEmpty
