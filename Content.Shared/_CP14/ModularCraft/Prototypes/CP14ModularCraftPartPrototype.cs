@@ -10,7 +10,7 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField]
-    public ProtoId<CP14ModularCraftSlotPrototype> TargetSlot = string.Empty;
+    public ProtoId<CP14ModularCraftSlotPrototype>? TargetSlot;
 
     /// <summary>
     /// An entity that can drop out of the final modular item when destroyed.
@@ -42,6 +42,4 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
 
     [DataField]
     public Dictionary<string, List<PrototypeLayerData>>? ClothingVisuals;
-
-    //Clothing
 }

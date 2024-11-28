@@ -65,10 +65,13 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             if (!_proto.TryIndex(partProto, out var partIndexed))
                 continue;
 
-            if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot))
+            if (partIndexed.TargetSlot is null)
                 continue;
 
-            if (TryAddPartToSlot(start, part, partProto, partIndexed.TargetSlot))
+            if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
+                continue;
+
+            if (TryAddPartToSlot(start, part, partProto, partIndexed.TargetSlot.Value))
             {
                 QueueDel(part);
                 return true;
@@ -82,10 +85,13 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!_proto.TryIndex(partProto, out var partIndexed))
             return false;
 
-        if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot))
+        if (partIndexed.TargetSlot is null)
             return false;
 
-        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot);
+        if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
+            return false;
+
+        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot.Value);
     }
 
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
@@ -148,6 +154,9 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
                 continue;
 
             if (_random.Prob(indexedPart.DestroyProb))
+                continue;
+
+            if (indexedPart.SourcePart is null)
                 continue;
 
             var spawned = Spawn(indexedPart.SourcePart, sourceCoord);
