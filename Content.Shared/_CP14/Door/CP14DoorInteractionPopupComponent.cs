@@ -16,7 +16,7 @@ public sealed partial class CP14DoorInteractionPopupComponent : Component
     public string InteractString = "cp14-closed-door-interact-popup";
 
     [DataField("interactSound")]
-    public SoundSpecifier InteractSound;
+    public SoundSpecifier? InteractSound;
 
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan LastInteractTime = TimeSpan.Zero;

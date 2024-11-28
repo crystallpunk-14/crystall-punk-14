@@ -1,0 +1,68 @@
+- type: modularPart
+  id: BaseWeaponChemical
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: SolutionContainerManager
+      solutions:
+        melee:
+          maxVol: 4
+    - type: MeleeChemicalInjector
+      solution: melee
+    - type: RefillableSolution
+      solution: melee
+    - type: InjectableSolution
+      solution: melee
+    - type: SolutionInjectOnEmbed
+      transferAmount: 2
+      solution: melee
+    - type: SolutionTransfer
+      maxTransferAmount: 2
+
+- type: modularPart
+  id: BaseWeaponThrowable
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: LandAtCursor
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Piercing: 10
+    - type: DamageOnLand
+      damage:
+        types:
+          Piercing: 3
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PolygonShape
+            vertices:
+              - -0.40,-0.30
+              - -0.30,-0.40
+              - 0.40,0.30
+              - 0.30,0.40
+          density: 10
+          mask:
+          - ItemMask
+          restitution: 0.3
+          friction: 0.2
+
+- type: modularPart
+  id: BaseWeaponSharp
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: Sharp
+    - type: CP14Sharpened
+    - type: CP14SharpeningStone
+    - type: UseDelay
+    - type: Tool
+      qualities:
+        - Slicing
+      useSound:
+        path: /Audio/Items/Culinary/chop.ogg
+    - type: Utensil
+      types:
+        - Knife
+    - type: CP14WallpaperRemover

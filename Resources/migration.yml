@@ -15,7 +15,7 @@ CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlack
 
 # 2024-07-18
 CP14ClothingShirtCottonBlueDark: CP14ClothingShirtCottonBlack
-CP14Shovel: CP14BaseShovel
+CP14Shovel: CP14ModularIronShovel
 CP14Hoe: CP14BaseHoe
 CP14WallStoneSilverOre: CP14WallStoneGoldOre
 
@@ -159,6 +159,15 @@ CP14ClothingCloakSimpleWhite: null
 CP14ClothingCloakSimpleDarkBlue: null
 CP14ClothingCloakArmoredRed: CP14ClothingCloakGuardCommander
 CP14SpawnPointCaptain: null
+
+#2024-27-11
+CP14BaseDagger: CP14ModularIronDagger
+CP14BaseMace: CP14ModularIronMace
+CP14BaseSickle: CP14ModularIronSickle
+CP14BaseThrowableSpear: CP14ModularIronSpear
+CP14BaseSword: CP14ModularIronSword
+CP14BaseShovel: CP14ModularIronShovel
+CP14BasePickaxe: CP14ModularIronPickaxe
 
 # <---> CrystallEdge migration zone end
 

@@ -52,10 +52,10 @@
       - id: CP14Torch
       - id: CP14Lighter
       - id: CP14ManaOperationGlove
-      - id: CP14BaseShovel
+      - id: CP14ModularIronShovel
       - id: CP14BaseMop
       - id: CP14BaseBroom
-      - id: CP14BasePickaxe
+      - id: CP14ModularIronPickaxe
       - !type:GroupSelector
         children:
         - id: CP14CrystalLampBlueEmpty
