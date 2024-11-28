@@ -36,6 +36,8 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         AddPartToFirstSlot(ent, (args.Used.Value, partComp));
         QueueDel(args.Used);
 
+        //TODO: Sound
+
         args.Handled = true;
     }
 
@@ -125,6 +127,16 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             return;
 
         var sourceCoord = _transform.GetMapCoordinates(target);
+
+        //Spawn start part
+        if (modular.StartProtoPart is not null)
+        {
+            if (_random.Prob(0.5f)) //TODO: Dehardcode
+            {
+                var spawned = Spawn(modular.StartProtoPart, sourceCoord);
+                _throwing.TryThrow(spawned, _random.NextAngle().ToWorldVec(), 1f);
+            }
+        }
 
         //Spawn parts
         foreach (var part in modular.InstalledParts)

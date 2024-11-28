@@ -26,7 +26,7 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,
-            2f,
+            ent.Comp.DoAfter,
             new CP14ModularCraftAddPartDoAfter(),
             args.Target,
             args.Target,

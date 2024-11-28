@@ -26,6 +26,12 @@ public sealed partial class CP14ModularCraftStartPointComponent : Component
     public List<ProtoId<CP14ModularCraftPartPrototype>> InstalledParts = new();
 
     /// <summary>
+    /// Spawned on disassembling
+    /// </summary>
+    [DataField]
+    public EntProtoId? StartProtoPart;
+
+    /// <summary>
     /// Clentside visual layers from installedParts
     /// </summary>
     public HashSet<string> RevealedLayers = new();

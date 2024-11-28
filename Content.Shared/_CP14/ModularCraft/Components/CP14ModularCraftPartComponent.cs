@@ -8,4 +8,9 @@ public sealed partial class CP14ModularCraftPartComponent : Component
 {
     [DataField(required: true)]
     public HashSet<ProtoId<CP14ModularCraftPartPrototype>> PossibleParts = new();
+
+    [DataField]
+    public float DoAfter = 1f;
+
+    //TODO: Sound
 }
