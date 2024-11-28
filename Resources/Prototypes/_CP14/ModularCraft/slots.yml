@@ -1,7 +1,3 @@
 - type: modularSlot
   id: Blade
   name: cp14-modular-slot-blade
-
-- type: modularSlot
-  id: Jewerly1
-  name: cp14-modular-slot-jewerly1

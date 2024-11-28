@@ -34,9 +34,6 @@
           ruby1: ""
           ruby2: ""
           ruby3: ""
-  - type: CP14ModularCraftPart
-    possibleParts:
-    - JewerlyRuby
 
 - type: entity
   parent: CP14BaseJewelry
@@ -58,9 +55,6 @@
           emerald2: ""
           emerald3: ""
           emerald4: ""
-  - type: CP14ModularCraftPart
-    possibleParts:
-    - JewerlyEmerald
 
 - type: entity
   parent: CP14BaseJewelry
@@ -81,9 +75,6 @@
           sapphire1: ""
           sapphire2: ""
           sapphire3: ""
-  - type: CP14ModularCraftPart
-    possibleParts:
-    - JewerlySapphire
 
 - type: entity
   parent: CP14BaseJewelry
@@ -102,6 +93,3 @@
     available:
       - random:
           topaz1: ""
-  - type: CP14ModularCraftPart
-    possibleParts:
-    - JewerlyTopaz
