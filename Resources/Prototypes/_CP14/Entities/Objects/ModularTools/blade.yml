@@ -73,7 +73,7 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronSword
-#
+
 - type: entity
   parent: BaseItem
   id: CP14ModularBladeIronSickle
@@ -92,6 +92,25 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronSickle
+
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronShovel
+  categories: [ ForkFiltered ]
+  name: iron shovel blade
+  description: A shovel blade without a hilt. A blacksmith can use it as a spare part to create a tool.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/iron_shovel.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronShovel
 #
 #- type: entity
 #  parent: BaseItem

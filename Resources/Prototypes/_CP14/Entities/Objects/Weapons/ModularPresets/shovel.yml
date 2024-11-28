@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularIronShovel
+  parent: CP14ModularGripWoodenLong
+  name: iron shovel
+  description: An implement for digging up earth, digging beds or graves.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/iron_shovel.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronShovel

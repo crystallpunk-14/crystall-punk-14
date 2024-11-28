@@ -3,7 +3,6 @@ using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared.Item;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.ModularCraft.Modifiers;
 

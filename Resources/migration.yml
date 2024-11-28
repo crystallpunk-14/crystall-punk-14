@@ -166,6 +166,7 @@ CP14BaseMace: CP14ModularIronMace
 CP14BaseSickle: CP14ModularIronSickle
 CP14BaseThrowableSpear: CP14ModularIronSpear
 CP14BaseSword: CP14ModularIronSword
+CP14BaseShovel: CP14ModularIronShovel
 
 # <---> CrystallEdge migration zone end
 
