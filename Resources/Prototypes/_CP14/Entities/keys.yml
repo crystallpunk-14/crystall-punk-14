@@ -5,7 +5,7 @@
   categories: [ ForkFiltered ]
   name: key
   description: A small, intricate piece of iron that opens certain locks. Don't give it to just anyone!
-  components: 
+  components:
   - type: Tag
     tags:
     - CP14Key
@@ -35,7 +35,7 @@
     state: lockpick
   - type: CP14Lockpick
 
-# Tavern 
+# Tavern
 
 - type: entity
   parent: CP14BaseKey
@@ -107,6 +107,8 @@
   - type: CP14Key
     autoGenerateShape: TavernDorms5
 
+# Mercenary
+
 - type: entity
   parent: CP14BaseKey
   id: CP14KeyAlchemy
@@ -126,6 +128,8 @@
     state: key8
   - type: CP14Key
     autoGenerateShape: Blacksmith
+
+# Bank
 
 - type: entity
   parent: CP14BaseKey
@@ -176,3 +180,45 @@
     state: key12
   - type: CP14Key
     autoGenerateShape: BankSafe
+
+# Guard
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuardEntrance
+  name: guard entrance key
+  components:
+  - type: Sprite
+    state: key13
+  - type: CP14Key
+    autoGenerateShape: GuardEntrance
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuard
+  name: guard key
+  components:
+  - type: Sprite
+    state: key13
+  - type: CP14Key
+    autoGenerateShape: Guard
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuardCommandant
+  name: guard commandant key
+  components:
+  - type: Sprite
+    state: key14
+  - type: CP14Key
+    autoGenerateShape: GuardCommandant
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuardWeaponStorage
+  name: guard weapon storage key
+  components:
+  - type: Sprite
+    state: key14
+  - type: CP14Key
+    autoGenerateShape: GuardWeaponStorage

@@ -59,11 +59,13 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14IronDoorWindowedBankEntrance
   - CP14IronDoorWindowedMirrored
   id: CP14IronDoorWindowedMirroredBankEntrance
   suffix: Bank Entrance, Mirrored
+
+# Mercenary
 
 - type: entity
   parent: CP14IronDoorWindowed
@@ -76,8 +78,27 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14IronDoorWindowedBlacksmith
   - CP14IronDoorWindowedMirrored
   id: CP14IronDoorWindowedMirroredBlacksmith
   suffix: Blacksmith, Mirrored
+
+# Guard
+
+- type: entity
+  parent: CP14IronDoorWindowed
+  id: CP14IronDoorWindowedGuardEntrance
+  suffix: Guard, Entrance
+  components:
+  - type: CP14Lock
+    autoGenerateShape: GuardEntrance
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent:
+  - CP14IronDoorWindowedGuard
+  - CP14IronDoorWindowedMirrored
+  id: CP14IronDoorWindowedMirroredGuardEntrance
+  suffix: Guard, Entrance, Mirrored

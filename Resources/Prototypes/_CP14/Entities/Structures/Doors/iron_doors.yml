@@ -56,7 +56,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14IronDoorBlacksmith
   - CP14IronDoorMirrored
   id: CP14IronDoorMirroredBlacksmith
@@ -75,7 +75,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14IronDoorBankStaff
   - CP14IronDoorMirrored
   id: CP14IronDoorMirroredBankStaff
@@ -93,7 +93,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14IronDoorBankVault
   - CP14IronDoorMirrored
   id: CP14IronDoorMirroredBankVault
@@ -117,5 +117,37 @@
   components:
   - type: CP14Lock
     autoGenerateShape: BankCommandantRoom
+  - type: Lock
+    locked: true
+
+# Guard
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuard
+  suffix: Guard
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Guard
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuardCommandantRoom
+  suffix: Guard, Commandant
+  components:
+  - type: CP14Lock
+    autoGenerateShape: GuardCommandant
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuardWeaponStorage
+  suffix: Guard, Weapon Storage
+  components:
+  - type: CP14Lock
+    autoGenerateShape: GuardWeaponStorage
   - type: Lock
     locked: true

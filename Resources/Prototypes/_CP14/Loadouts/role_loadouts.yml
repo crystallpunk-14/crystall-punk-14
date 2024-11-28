@@ -82,6 +82,7 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
+  - CP14GuardSpells
 
 - type: roleLoadout
   id: JobCP14Commandant

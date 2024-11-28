@@ -93,3 +93,25 @@
     - id: CP14KeyBankEntrance
     - id: CP14KeyBankStaff
     - id: CP14KeyBankSafe
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingGuardian
+  suffix: Guardian
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyGuardEntrance
+    - id: CP14KeyGuard
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingGuardCommandant
+  suffix: Guardian
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyGuardEntrance
+    - id: CP14KeyGuard
+    - id: CP14KeyGuardCommandant
+    - id: CP14KeyGuardWeaponStorage

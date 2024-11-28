@@ -32,6 +32,7 @@ cp14-loadout-guard-cloak  = Накидка стражи
 cp14-loadout-guard-head = Шляпа стражи
 cp14-loadout-guard-pants = Штаны стражи
 cp14-loadout-guard-shirt = Рубашка стражи
+cp14-loadout-guard-spells = Заклинания стражи
 
 # Bank
 
