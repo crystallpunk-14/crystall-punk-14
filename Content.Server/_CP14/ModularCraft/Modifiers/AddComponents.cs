@@ -1,9 +1,10 @@
+using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.ModularCraft.Modifiers;
+namespace Content.Server._CP14.ModularCraft.Modifiers;
 
-public sealed partial class CP14ModularModifierAddComponents : CP14ModularCraftModifier
+public sealed partial class AddComponents : CP14ModularCraftModifier
 {
     [DataField]
     public ComponentRegistry? Components;

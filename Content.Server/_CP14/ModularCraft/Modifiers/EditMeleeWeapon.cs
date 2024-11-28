@@ -1,11 +1,12 @@
+using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared.Damage;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.ModularCraft.Modifiers;
+namespace Content.Server._CP14.ModularCraft.Modifiers;
 
-public sealed partial class CP14ModularModifierModifyDamage : CP14ModularCraftModifier
+public sealed partial class EditMeleeWeapon : CP14ModularCraftModifier
 {
     [DataField]
     public EntProtoId? NewAnimation;

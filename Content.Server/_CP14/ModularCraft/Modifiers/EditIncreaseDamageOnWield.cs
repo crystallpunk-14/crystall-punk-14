@@ -1,10 +1,11 @@
+using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared.Damage;
 using Content.Shared.Wieldable.Components;
 
-namespace Content.Shared._CP14.ModularCraft.Modifiers;
+namespace Content.Server._CP14.ModularCraft.Modifiers;
 
-public sealed partial class CP14ModularModifierModifyWieldedDamage : CP14ModularCraftModifier
+public sealed partial class EditIncreaseDamageOnWield : CP14ModularCraftModifier
 {
     [DataField]
     public DamageSpecifier? BonusDamage;
@@ -19,7 +20,6 @@ public sealed partial class CP14ModularModifierModifyWieldedDamage : CP14Modular
 
         if (BonusDamage is not null)
             wield.BonusDamage += BonusDamage;
-
 
         if (DamageMultiplier is not null)
             wield.BonusDamage *= DamageMultiplier.Value;

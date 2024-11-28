@@ -1,12 +1,13 @@
 using System.Linq;
+using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared.Item;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.ModularCraft.Modifiers;
+namespace Content.Server._CP14.ModularCraft.Modifiers;
 
-public sealed partial class CP14ModularModifierModifySize : CP14ModularCraftModifier
+public sealed partial class EditItem : CP14ModularCraftModifier
 {
     [DataField]
     public ProtoId<ItemSizePrototype>? NewSize;

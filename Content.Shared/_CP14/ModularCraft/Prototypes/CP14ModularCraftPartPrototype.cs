@@ -1,6 +1,5 @@
 using Content.Shared.Hands.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.ModularCraft.Prototypes;
 
@@ -23,7 +22,7 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     [DataField]
     public float DestroyProb = 0.25f;
 
-    [DataField]
+    [DataField(serverOnly: true)]
     public List<CP14ModularCraftModifier> Modifiers = new();
 
     [DataField]

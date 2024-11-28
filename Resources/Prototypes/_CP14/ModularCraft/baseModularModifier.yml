@@ -1,7 +1,7 @@
 - type: modularPart
   id: BaseWeaponChemical
   modifiers:
-  - !type:CP14ModularModifierAddComponents
+  - !type:AddComponents
     components:
     - type: SolutionContainerManager
       solutions:
@@ -22,7 +22,7 @@
 - type: modularPart
   id: BaseWeaponThrowable
   modifiers:
-  - !type:CP14ModularModifierAddComponents
+  - !type:AddComponents
     components:
     - type: LandAtCursor
     - type: DamageOtherOnHit
@@ -51,7 +51,7 @@
 - type: modularPart
   id: BaseWeaponSharp
   modifiers:
-  - !type:CP14ModularModifierAddComponents
+  - !type:AddComponents
     components:
     - type: Sharp
     - type: CP14Sharpened
