@@ -98,7 +98,7 @@
 
 - type: entity
   parent:
-  - CP14IronDoorWindowedGuard
+  - CP14IronDoorWindowedGuardEntrance
   - CP14IronDoorWindowedMirrored
   id: CP14IronDoorWindowedMirroredGuardEntrance
   suffix: Guard, Entrance, Mirrored

@@ -107,7 +107,7 @@
 - type: entity
   parent: CP14BaseKeyRing
   id: CP14KeyRingGuardCommandant
-  suffix: Guardian
+  suffix: Guard Commandant
   components:
   - type: StorageFill
     contents:
