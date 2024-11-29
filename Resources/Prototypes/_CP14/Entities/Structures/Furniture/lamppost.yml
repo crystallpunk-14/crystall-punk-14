@@ -67,7 +67,7 @@
     noRot: true
     sprite: _CP14/Structures/Furniture/lamppost.rsi
     drawdepth: Mobs
-    offset: 0,1.1
+    offset: 0,0.9
   - type: PointLight
     energy: 5
     radius: 8

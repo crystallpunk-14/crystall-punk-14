@@ -53,3 +53,23 @@
         prob: 0.2
       - id: CP14ClothingEyesGlasses
         prob: 0.3
+
+- type: entity
+  parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetBlacksmith
+  suffix: Blacksmith, Filled
+  #components:
+  #- type: StorageFill
+  #  contents:
+  #    - id: CP14ClothingCloakCommandantJacket
+  #      prob: 1
+  #    - id: CP14ClothingHeadBowlerGolden
+  #      prob: 0.5
+  #    - id: CP14ClothingPantsAristocratic
+  #      prob: 0.5
+  #    - id: CP14ClothingShirtBanker
+  #      prob: 0.5
+  #    - id: CP14ClothingEyesMonocle
+  #      prob: 0.2
+  #    - id: CP14ClothingEyesGlasses
+  #      prob: 0.3

@@ -51,7 +51,7 @@ namespace Content.IntegrationTests.Tests
 
             //CrystallEdge maps
             "Village",
-            "Island",
+            "Comoss",
             //CrystallEdge Map replacement end
         };
 
