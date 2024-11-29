@@ -32,7 +32,6 @@
             CP14Alchemist: [ 2, 4 ]
             CP14Blacksmith: [ 1, 1 ]
             CP14Innkeeper: [ 3, 4 ]
-            #CP14Captain: [1, 1]
             CP14Commandant: [1, 1]
             CP14Banker: [3, 4]
             #CP14GuardCommander: [1, 1]
@@ -43,18 +42,24 @@
               path: /Maps/_CP14/tavern_cave.yml
 
 - type: gameMap
-  id: Island
-  mapName: Island
-  mapPath: /Maps/_CP14/island.yml
+  id: Comoss
+  mapName: "Comoss island"
+  mapPath: /Maps/_CP14/comoss.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
   stations:
-    Island:
+    Comoss:
       stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Island"
+          mapNameTemplate: "Comoss island"
         - type: StationJobs
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
+            CP14Alchemist: [ 2, 4 ]
+            CP14Blacksmith: [ 1, 1 ]
+            CP14Innkeeper: [ 3, 4 ]
+            CP14Commandant: [1, 1]
+            CP14Banker: [3, 4]
+            #CP14GuardCommander: [1, 1]

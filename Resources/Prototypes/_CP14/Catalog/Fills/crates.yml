@@ -81,7 +81,15 @@
       - id: CP14ClothingPantsSouthernMagician
       - id: CP14ClothingShirtMercenary
       - id: CP14ClothingShirtYellowWizard
-
+      - id: CP14Cloth10
+    - !type:GroupSelector
+      children:
+      - id: CP14DyeYellow
+      - id: CP14DyeGreen
+      - id: CP14DyeRed
+      - id: CP14DyePurple
+      - id: CP14DyeBlack
+      - id: CP14DyeBlue
 
 - type: entityTable
   id: CP14RandomVials
