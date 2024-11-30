@@ -9,6 +9,7 @@
     snap:
     - Wall
   components:
+  - type: CP14FishingPool
   - type: PlacementReplacement
     key: floorTile
   - type: Sprite
@@ -51,7 +52,7 @@
   - type: SolutionContainerManager
     solutions:
       pool:
-        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable. 
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
         reagents:
         - ReagentId: Water
           Quantity: 9999999
