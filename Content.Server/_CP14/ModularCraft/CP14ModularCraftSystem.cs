@@ -52,7 +52,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         {
             foreach (var detail in autoAssemble.Details)
             {
-                TryAddPartToFirstSlot(ent, detail);
+                TryAddPartToFirstSlot(ent, detail, false); // we want auto assemble when spawned in crates
             }
         }
     }
@@ -77,10 +77,13 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
                 return true;
             }
         }
+
         return false;
     }
+
     private bool TryAddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
-        ProtoId<CP14ModularCraftPartPrototype> partProto)
+        ProtoId<CP14ModularCraftPartPrototype> partProto,
+        bool blockStorage = true)
     {
         if (!_proto.TryIndex(partProto, out var partIndexed))
             return false;
@@ -91,20 +94,24 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
             return false;
 
-        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot.Value);
+        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot.Value, blockStorage);
     }
 
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
         Entity<CP14ModularCraftPartComponent>? part,
         ProtoId<CP14ModularCraftPartPrototype> partProto,
-        ProtoId<CP14ModularCraftSlotPrototype> slot)
+        ProtoId<CP14ModularCraftSlotPrototype> slot,
+        bool blockStorage = true)
     {
         if (!start.Comp.FreeSlots.Contains(slot))
             return false;
 
-        var xform = Transform(start);
-        if (xform.GridUid != xform.ParentUid)
-            return false;
+        if (blockStorage)
+        {
+            var xform = Transform(start);
+            if (xform.GridUid != xform.ParentUid)
+                return false;
+        }
 
         AddPartToSlot(start, part, partProto, slot);
         return true;

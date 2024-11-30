@@ -65,4 +65,5 @@ cp14-tiles-stonebricks-small-carved1 = пол из резного кирпича
 cp14-tiles-stonebricks-small-carved2 = пол из резного кирпича
 cp14-tiles-stonebricks-square-carved = пол из резного кирпича
 cp14-tiles-stonebricks = каменный кирпичный пол
+cp14-tiles-stonebricks-weather = уличный каменный кирпичный пол
 cp14-tiles-stonebricks-marble = мраморный пол

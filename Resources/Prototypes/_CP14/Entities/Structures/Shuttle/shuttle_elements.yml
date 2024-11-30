@@ -1,25 +1,4 @@
 - type: entity
-  id: CP14TravelingStoreshipAnchor
-  name: traveling storeship anchor
-  categories: [ ForkFiltered ]
-  placement:
-    mode: SnapgridCenter
-  description: the point of adhesion of a traveling storeship to the surface. Keep your eyes to the sky so you don't get crushed!
-  components:
-  - type: Clickable
-  - type: Sprite
-    sprite: _CP14/Structures/Shuttle/traveling_storeship_anchor.rsi
-    state: base
-    drawdepth: FloorTiles
-  - type: Icon
-    sprite: _CP14/Structures/Shuttle/traveling_storeship_anchor.rsi
-    state: base
-  - type: Transform
-    anchored: true
-  - type: CP14TravelingStoreShipFTLTarget
-  - type: FTLSmashImmune
-
-- type: entity
   id: CP14ShuttleWingBase
   abstract: true
   categories: [ ForkFiltered ]
