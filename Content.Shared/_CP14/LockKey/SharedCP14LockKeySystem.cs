@@ -52,6 +52,9 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!args.CanReach || args.Target is not { Valid: true })
             return;
 
+        if (_doorQuery.TryComp(args.Target, out var doorComponent) && doorComponent.State == DoorState.Open)
+            return;
+
         if (!TryComp<StorageComponent>(keyring, out var storageComp))
             return;
 
