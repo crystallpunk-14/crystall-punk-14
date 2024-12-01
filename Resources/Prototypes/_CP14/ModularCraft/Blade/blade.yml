@@ -1,37 +1,4 @@
 #Concept:
-# + Fast attackRate
-#   fast swing
-# - Low damage
-- type: modularPart
-  id: BladeIronDagger
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeIronDagger
-  rsiPath: _CP14/Objects/ModularTools/iron_dagger.rsi
-  modifiers:
-  - !type:Inherit
-    copyFrom:
-    - BaseWeaponThrowable
-    - BaseWeaponChemical
-    - BaseWeaponSharp
-  - !type:AddComponents
-    components:
-    - type: ThrowingAngle
-      angle: 135
-    - type: EmbeddableProjectile
-      offset: -0.15,-0.15
-      removalTime: 0.5
-  - !type:EditMeleeWeapon
-    attackRateMultiplier: 1.4
-    bonusDamage:
-      types:
-        Slash: 3
-        Piercing: 3
-  - !type:EditItem
-    newSize: Normal
-    adjustShape: 0, 1
-    storedOffsetBonus: 0, 5
-
-#Concept:
 # Copy of dagger with lesser damage 
 # But can gather grass from world
 - type: modularPart

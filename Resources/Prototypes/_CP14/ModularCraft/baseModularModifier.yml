@@ -66,3 +66,27 @@
       types:
         - Knife
     - type: CP14WallpaperRemover
+
+- type: modularPart
+  id: BaseWeaponIron
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 1
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 1
+
+- type: modularPart
+  id: BaseWeaponCopper
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 1.5
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 1.5
+
+- type: modularPart
+  id: BaseWeaponGold
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 3
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 3
