@@ -36,3 +36,16 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldPickaxe
+
+- type: entity
+  parent: CP14ModularBladePickaxeBase
+  id: CP14ModularBladeCopperPickaxe
+  categories: [ ForkFiltered ]
+  name: copper pickaxe head
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Pickaxe/copper_pickaxe.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperPickaxe

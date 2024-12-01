@@ -1,4 +1,3 @@
-
 - type: modularPart
   id: BaseBladePickaxe
   modifiers:
@@ -32,10 +31,21 @@
 - type: modularPart
   id: BladeGoldPickaxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeIronPickaxe
+  sourcePart: CP14ModularBladeGoldPickaxe
   rsiPath: _CP14/Objects/ModularTools/Pickaxe/gold_pickaxe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
     - BaseWeaponGold
+
+- type: modularPart
+  id: BladeCopperPickaxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeCopperPickaxe
+  rsiPath: _CP14/Objects/ModularTools/Pickaxe/copper_pickaxe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseWeaponCopper
