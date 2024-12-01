@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeRapierBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A rapier blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,1
+    storedOffset: 0, 10
+
+- type: entity
+  parent: CP14ModularBladeRapierBase
+  id: CP14ModularBladeIronRapier
+  categories: [ ForkFiltered ]
+  name: iron rapier blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/iron_rapier.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronRapier
+
+- type: entity
+  parent: CP14ModularBladeRapierBase
+  id: CP14ModularBladeGoldRapier
+  categories: [ ForkFiltered ]
+  name: golden rapier blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/gold_rapier.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldRapier
+
+- type: entity
+  parent: CP14ModularBladeRapierBase
+  id: CP14ModularBladeCopperRapier
+  categories: [ ForkFiltered ]
+  name: copper rapier blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/copper_rapier.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperRapier

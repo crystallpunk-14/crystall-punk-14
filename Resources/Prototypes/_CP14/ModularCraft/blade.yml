@@ -22,6 +22,9 @@
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
 
 #Concept:
 # + High Throwable damage
@@ -60,6 +63,9 @@
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
 
 #Concept:
 # + High Wielded damage
@@ -127,6 +133,9 @@
     newSize: Large
     adjustShape: 0, 2
     storedOffsetBonus: 0, 10
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
 
 - type: modularPart
   id: BladeIronShovel
@@ -160,3 +169,6 @@
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde

@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularGardeBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: Garde? Garde!
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSharpGold
+  categories: [ ForkFiltered ]
+  name: sharp gold garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/gold_sharp.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSharpGold
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSharpIron
+  categories: [ ForkFiltered ]
+  name: sharp iron garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/iron_sharp.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSharpIron
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSharpCopper
+  categories: [ ForkFiltered ]
+  name: sharp copper garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/copper_sharp.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSharpCopper
