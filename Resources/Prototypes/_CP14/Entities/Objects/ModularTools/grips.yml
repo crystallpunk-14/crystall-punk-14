@@ -36,14 +36,14 @@
   parent: CP14ModularGripBase
   id: CP14ModularGripWooden
   name: wooden grip
-  description: A short wooden handle for a weapon or tool. The cheapest and most unstable material.
+  description: A short handle for a weapon or tool.
   components:
   - type: Item
     shape:
     - 0,0,0,0
     storedOffset: 0, -5
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/wooden_grip.rsi
+    sprite: _CP14/Objects/ModularTools/Grip/wooden_grip.rsi
     state: icon
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripWooden
@@ -74,7 +74,7 @@
   parent: CP14ModularGripBase
   id: CP14ModularGripWoodenLong
   name: long wooden grip
-  description: long, two-handed wooden handle for heavy weapons or large tools.
+  description: long, two-handed handle for heavy weapons or large tools.
   components:
   - type: Item
     shape:
@@ -117,10 +117,9 @@
   parent: CP14ModularGripWooden
   id: CP14ModularGripIron
   name: iron grip
-  description: A short iron handle for a weapon or tool.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/iron_grip.rsi
+    sprite: _CP14/Objects/ModularTools/Grip/iron_grip.rsi
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripIron
   - type: Destructible
@@ -137,10 +136,53 @@
         acts: ["Destruction"]
 
 - type: entity
+  parent: CP14ModularGripWooden
+  id: CP14ModularGripGolden
+  name: golden grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/gold_grip.rsi
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripGolden
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20 #~x0.3 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripWooden
+  id: CP14ModularGripCopper
+  name: copper grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/copper_grip.rsi
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripCopper
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70 #~x0.66 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
   parent: CP14ModularGripWoodenLong
   id: CP14ModularGripIronLong
   name: long iron grip
-  description: long, two-handed iron handle for heavy weapons or large tools.
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/iron_grip_long.rsi
