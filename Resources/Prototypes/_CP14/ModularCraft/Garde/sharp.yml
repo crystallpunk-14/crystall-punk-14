@@ -30,3 +30,14 @@
     copyFrom:
     - BaseGardeSharp
     - BaseWeaponIron
+
+- type: modularPart
+  id: GardeSharpCopper
+  targetSlot: Garde
+  sourcePart: CP14ModularGardeSharpCopper
+  rsiPath: _CP14/Objects/ModularTools/Garde/copper_sharp.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSharp
+    - BaseWeaponCopper

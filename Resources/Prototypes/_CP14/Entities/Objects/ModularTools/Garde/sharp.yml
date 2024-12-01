@@ -36,3 +36,16 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSharpIron
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSharpCopper
+  categories: [ ForkFiltered ]
+  name: sharp copper garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/copper_sharp.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSharpCopper

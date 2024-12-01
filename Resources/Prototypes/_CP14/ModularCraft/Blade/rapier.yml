@@ -32,6 +32,8 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
+  - !type:EditDamageableModifier # Only 1 ingot t craft, so less health
+    multiplier: 2
 
 - type: modularPart
   id: BladeIronRapier
