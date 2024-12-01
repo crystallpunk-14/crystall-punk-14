@@ -93,25 +93,6 @@
     possibleParts:
     - BladeIronShovel
 
-- type: entity
-  parent: BaseItem
-  id: CP14ModularBladeIronPickaxe
-  categories: [ ForkFiltered ]
-  name: iron pickaxe head
-  description: A pickaxe head without a hilt. A blacksmith can use it as a spare part to create a tool.
-  components:
-  - type: Item
-    storedRotation: 45
-    shape:
-    - 0,0,1,0
-    storedOffset: 0, 5
-  - type: Sprite
-    sprite: _CP14/Objects/ModularTools/iron_pickaxe.rsi
-    state: icon
-  - type: CP14ModularCraftPart
-    possibleParts:
-    - BladeIronPickaxe
-
 #- type: entity
 #  parent: BaseItem
 #  id: CP14ModularBladeIronSwordTwoHanded

@@ -1,0 +1,41 @@
+
+- type: modularPart
+  id: BaseBladePickaxe
+  modifiers:
+  - !type:EditMeleeWeapon
+    attackRateMultiplier: 0.75
+    angleMultiplier: 1.2
+    bonusDamage:
+      types:
+        Piercing: 9
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Piercing: 4
+        Structural: 10
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 1, 1
+    storedOffsetBonus: 0, 5
+
+- type: modularPart
+  id: BladeIronPickaxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronPickaxe
+  rsiPath: _CP14/Objects/ModularTools/Pickaxe/iron_pickaxe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseWeaponIron
+
+- type: modularPart
+  id: BladeGoldPickaxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronPickaxe
+  rsiPath: _CP14/Objects/ModularTools/Pickaxe/gold_pickaxe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseWeaponGold
