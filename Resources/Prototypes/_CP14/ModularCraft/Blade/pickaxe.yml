@@ -16,6 +16,9 @@
     newSize: Normal
     adjustShape: 1, 1
     storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
 
 - type: modularPart
   id: BladeIronPickaxe
