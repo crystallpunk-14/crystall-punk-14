@@ -34,7 +34,7 @@
   id: BladeIronRapier
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronRapier
-  rsiPath: _CP14/Objects/ModularTools/Rapier/iron_rapier.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/iron_rapier.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -45,7 +45,7 @@
   id: BladeGoldRapier
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldRapier
-  rsiPath: _CP14/Objects/ModularTools/Rapier/gold_rapier.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/gold_rapier.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -56,7 +56,7 @@
   id: BladeCopperRapier
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperRapier
-  rsiPath: _CP14/Objects/ModularTools/Rapier/copper_rapier.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/copper_rapier.rsi
   modifiers:
   - !type:Inherit
     copyFrom:

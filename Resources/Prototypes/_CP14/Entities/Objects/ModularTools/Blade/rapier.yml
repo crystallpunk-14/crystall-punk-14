@@ -18,7 +18,7 @@
   name: iron rapier blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Rapier/iron_rapier.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/iron_rapier.rsi
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:
@@ -31,7 +31,7 @@
   name: golden rapier blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Rapier/gold_rapier.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/gold_rapier.rsi
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:
@@ -44,7 +44,7 @@
   name: copper rapier blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Rapier/copper_rapier.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/copper_rapier.rsi
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:

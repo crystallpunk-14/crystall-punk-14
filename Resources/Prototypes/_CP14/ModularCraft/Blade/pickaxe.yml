@@ -21,7 +21,7 @@
   id: BladeIronPickaxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronPickaxe
-  rsiPath: _CP14/Objects/ModularTools/Pickaxe/iron_pickaxe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/iron_pickaxe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -32,7 +32,7 @@
   id: BladeGoldPickaxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldPickaxe
-  rsiPath: _CP14/Objects/ModularTools/Pickaxe/gold_pickaxe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/gold_pickaxe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -43,7 +43,7 @@
   id: BladeCopperPickaxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperPickaxe
-  rsiPath: _CP14/Objects/ModularTools/Pickaxe/copper_pickaxe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/copper_pickaxe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:

@@ -33,7 +33,7 @@
   id: BladeIronDagger
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronDagger
-  rsiPath: _CP14/Objects/ModularTools/Dagger/iron_dagger.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/iron_dagger.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -44,7 +44,7 @@
   id: BladeGoldDagger
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldDagger
-  rsiPath: _CP14/Objects/ModularTools/Dagger/gold_dagger.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/gold_dagger.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -55,7 +55,7 @@
   id: BladeCopperDagger
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperDagger
-  rsiPath: _CP14/Objects/ModularTools/Dagger/copper_dagger.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/copper_dagger.rsi
   modifiers:
   - !type:Inherit
     copyFrom:

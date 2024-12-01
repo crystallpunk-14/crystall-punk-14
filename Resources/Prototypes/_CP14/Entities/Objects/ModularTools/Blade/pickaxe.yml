@@ -18,7 +18,7 @@
   name: iron pickaxe head
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Pickaxe/iron_pickaxe.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/iron_pickaxe.rsi
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:
@@ -31,7 +31,7 @@
   name: golden pickaxe head
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Pickaxe/gold_pickaxe.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/gold_pickaxe.rsi
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:
@@ -44,7 +44,7 @@
   name: copper pickaxe head
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Pickaxe/copper_pickaxe.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/copper_pickaxe.rsi
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:
