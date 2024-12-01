@@ -29,6 +29,9 @@
     newSize: Large
     adjustShape: 0, 2
     storedOffsetBonus: 0, 10
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
 
 - type: modularPart
   id: BladeIronRapier

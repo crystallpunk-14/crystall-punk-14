@@ -1,3 +1,7 @@
 - type: modularSlot
   id: Blade
   name: cp14-modular-slot-blade
+
+- type: modularSlot
+  id: Garde
+  name: cp14-modular-slot-garde

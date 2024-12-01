@@ -1,0 +1,21 @@
+# Concept
+# + Damage
+
+- type: modularPart
+  id: BaseGardeAttacking
+  modifiers:
+  - !type:EditMeleeWeapon
+    bonusDamage:
+      types:
+        Piercing: 3
+
+- type: modularPart
+  id: GardeAttackingGold
+  targetSlot: Garde
+  sourcePart: CP14ModularGardeAttackingGold
+  rsiPath: _CP14/Objects/ModularTools/Garde/gold_attacking.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeAttacking
+    - BaseWeaponGold

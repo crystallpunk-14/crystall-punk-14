@@ -87,6 +87,6 @@
   id: BaseWeaponGold
   modifiers:
   - !type:EditDamageableModifier
-    multiplier: 3
+    multiplier: 2
   - !type:EditSharpened
     sharpnessDamageMultiplier: 3
