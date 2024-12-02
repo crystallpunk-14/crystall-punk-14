@@ -46,11 +46,11 @@
     contents:
     - id: CP14KeyTavernHall
     - id: CP14KeyTavernStaff
-    #- id: CP14KeyTavernDorms1
-    #- id: CP14KeyTavernDorms2
-    #- id: CP14KeyTavernDorms3
-    #- id: CP14KeyTavernDorms4
-    #- id: CP14KeyTavernDorms5
+    - id: CP14KeyTavernDormsAbstract # TODO: Move to main innkeeper
+    - id: CP14KeyTavernDormsAbstract
+    - id: CP14KeyTavernDormsAbstract
+    - id: CP14KeyTavernDormsAbstract
+    - id: CP14KeyTavernDormsAbstract
 
 - type: entity
   parent: CP14BaseKeyRing
@@ -58,8 +58,17 @@
   suffix: Blacksmith
   components:
   - type: StorageFill
-    #contents:
-    #- id: CP14KeyBlacksmith
+    contents:
+    - id: CP14KeyTavernBlacksmithAbstract
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingPersonalHouse
+  suffix: Personal House
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyPersonalHouseAbstract
 
 - type: entity
   parent: CP14BaseKeyRing
@@ -67,8 +76,8 @@
   suffix: Alchemist
   components:
   - type: StorageFill
-    #contents:
-    #- id: CP14KeyAlchemy
+    contents:
+    - id: CP14KeyTavernAlchemistAbstract
 
 - type: entity
   parent: CP14BaseKeyRing

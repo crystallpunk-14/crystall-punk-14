@@ -9,5 +9,5 @@ namespace Content.Shared._CP14.LockKey.Components;
 public sealed partial class CP14StationKeyDistributionComponent : Component
 {
     [DataField]
-    public Dictionary<ProtoId<CP14LockGroupPrototype>, int> Keys = new();
+    public List<ProtoId<CP14LockTypePrototype>> Keys = new();
 }

@@ -69,7 +69,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         args.PushMarkup(markup);
     }
 
-    private List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
+    public List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
     {
         if (_roundKeyData.ContainsKey(category))
             return _roundKeyData[category];

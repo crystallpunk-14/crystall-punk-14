@@ -1,0 +1,101 @@
+# Wooden
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse1
+  suffix: PersonalHouse1
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse1
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse2
+  suffix: PersonalHouse2
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse2
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse3
+  suffix: PersonalHouse3
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse3
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse4
+  suffix: PersonalHouse4
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse4
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse5
+  suffix: PersonalHouse5
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse5
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse6
+  suffix: PersonalHouse6
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse6
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse7
+  suffix: PersonalHouse7
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse7
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse8
+  suffix: PersonalHouse8
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse8
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse9
+  suffix: PersonalHouse9
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse9
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse10
+  suffix: PersonalHouse10
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse10
+  - type: Lock
+    locked: true

@@ -76,3 +76,55 @@
   id: Blacksmith2
   group: Blacksmith
   complexity: 5
+
+# Personal house
+
+- type: CP14LockType
+  id: PersonalHouse1
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse2
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse3
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse4
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse5
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse6
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse7
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse8
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse9
+  group: PersonalHouse
+  complexity: 3
+
+- type: CP14LockType
+  id: PersonalHouse10
+  group: PersonalHouse
+  complexity: 3
