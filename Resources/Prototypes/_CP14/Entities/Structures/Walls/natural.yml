@@ -203,6 +203,47 @@
   - type: IconSmooth
     base: wall
 
+- type: entity
+  id: CP14WallStoneShiningIronOre
+  suffix: glowing iron ore
+  parent: CP14WallStone
+  description: A solid stone natural wall. You see the shining particles in it.
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_glowingiron.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_glowingiron.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14OreGlowingIron:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: IconSmooth
+    base: wall
+
 # We dont have silver now
 
 #- type: entity

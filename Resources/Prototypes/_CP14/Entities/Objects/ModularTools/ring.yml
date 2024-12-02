@@ -1,0 +1,19 @@
+- type: entity
+  parent: Clothing
+  id: CP14ClothingMagicRingBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+  - type: Clothing
+    slots:
+    - ring
+  - type: Sprite
+    sprite: _CP14/Clothing/Rings/rings.rsi
+    state: brass_ring_blue
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ClothingMagicRingBase
+    startSlots:
+    - MagicCrystal1

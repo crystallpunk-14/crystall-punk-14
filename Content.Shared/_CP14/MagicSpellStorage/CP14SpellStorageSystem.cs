@@ -3,6 +3,7 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Actions;
 using Content.Shared.Clothing;
+using Robust.Shared.Prototypes;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
 using Content.Shared.Hands;
@@ -57,14 +58,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
         foreach (var spell in mStorage.Comp.Spells)
         {
-            var spellEnt = _actionContainer.AddAction(mStorage, spell);
-            if (spellEnt is null)
-                continue;
-
-            var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
-            provided.SpellStorage = mStorage;
-
-            mStorage.Comp.SpellEntities.Add(spellEnt.Value);
+            TryAddSpellToStorage(mStorage, spell);
         }
     }
 
@@ -149,6 +143,21 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         return true;
     }
 
+    public bool TryAddSpellToStorage(Entity<CP14SpellStorageComponent> mStorage, EntProtoId spell)
+    {
+        if (_net.IsClient)
+            return false;
+
+        var spellEnt = _actionContainer.AddAction(mStorage, spell);
+        if (spellEnt is null)
+            return false;
+
+        var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
+        provided.SpellStorage = mStorage;
+
+        mStorage.Comp.SpellEntities.Add(spellEnt.Value);
+        return true;
+    }
     private void OnRemovedAttune(Entity<CP14SpellStorageRequireAttuneComponent> ent, ref RemovedAttuneFromMindEvent args)
     {
         if (args.User is null)

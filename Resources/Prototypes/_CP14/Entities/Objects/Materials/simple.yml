@@ -143,6 +143,57 @@
         acts: [ "Destruction" ]
 
 - type: entity
+  id: CP14GlowingWoodLog
+  parent: BaseItem
+  name: glowing wooden log
+  description: A piece of unprocessed wood. Good material for building, or starting a fire.
+  categories: [ ForkFiltered ]
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/wood.rsi
+    layers:
+      - state: log
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 30
+    damage:
+      types:
+        Heat: 1
+  - type: Log
+    spawnedPrototype: CP14WoodenPlanks1
+    spawnCount: 3
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
   id: CP14WoodenPlanks1
   parent: BaseItem
   name: wooden planks

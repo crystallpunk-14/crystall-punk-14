@@ -17,7 +17,7 @@
   id: CP14OreCopper
   parent: CP14BaseOre
   name: copper ore
-  description: A piece of pale, heavy copper. 
+  description: A piece of pale, heavy copper.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Materials/copper_ore.rsi
@@ -29,7 +29,7 @@
   id: CP14OreIron
   parent: CP14BaseOre
   name: iron ore
-  description: A piece of cold, heavy iron. 
+  description: A piece of cold, heavy iron.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Materials/iron_ore.rsi
@@ -45,6 +45,22 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Materials/gold_ore.rsi
+    layers:
+      - state: ore1
+        map: ["random"]
+
+- type: entity
+  id: CP14OreGlowingIron
+  parent: CP14BaseOre
+  name: glowing iron ore
+  description: A piece of soft, glowing iron.
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/glowingiron_ore.rsi
     layers:
       - state: ore1
         map: ["random"]

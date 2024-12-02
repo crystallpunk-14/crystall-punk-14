@@ -29,3 +29,11 @@
   entities:
     CP14QuartzShard: 1
   result: CP14GlassSheet1
+
+- type: CP14Recipe
+  id: CP14GlowingIron1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  entities:
+    CP14OreGlowingIron: 4
+  result: CP14GlowingIronBar1

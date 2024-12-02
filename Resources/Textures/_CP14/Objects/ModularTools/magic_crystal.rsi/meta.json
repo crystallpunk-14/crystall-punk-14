@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CLA",
+    "copyright": "Created by TheShuEd. Recolored by comasqw (Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ring_grey_icon"
+        },
+        {
+            "name": "blueholder_grey_icon1"
+        },
+        {
+            "name": "blueholder_grey_icon2"
+        },
+        {
+            "name": "blueholder_grey_icon3"
+        },
+        {
+            "name": "blueholder_grey_icon4"
+        }
+    ]
+}

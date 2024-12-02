@@ -1,0 +1,33 @@
+- type: entity
+  id: CP14MagicCrystalBase
+  parent: BaseItem
+  abstract: true
+  name: magic crystal
+  description: Mana-conducting crystal, contains a spell.
+  categories: [ ForkFiltered ]
+  components:
+  - type: CP14SpellStorageAccessHolding
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Magic/magic_crystal.rsi
+    state: crystal_grey
+  - type: PointLight
+    radius: 1.2
+    energy: 2
+    color: "#808080"
+
+- type: entity
+  id: CP14MagicCrystalSpellSphereOfLight
+  parent: CP14MagicCrystalBase
+  components:
+  - type: Sprite
+    color: "#FFFF00"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
+  - type: PointLight
+    color: "#FFFF00"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellSphereOfLight

@@ -67,3 +67,10 @@
   icon: { sprite: "_CP14/Objects/Materials/flora.rsi", state: grass_material1 }
   spawn: CP14FloraMaterial1
   maxCount: 2
+
+- type: stack
+  id: CP14GlowingIronBar
+  name: cp14-stack-glowing-iron-bars
+  spawn: CP14GlowingIronBar1
+  icon: { sprite: _CP14/Objects/Materials/glowingiron_bar.rsi, state: bar_2 }
+  maxCount: 10

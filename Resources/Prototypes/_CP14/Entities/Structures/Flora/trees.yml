@@ -209,3 +209,54 @@
   components:
   - type: Sprite
     state: treelarge06
+
+- type: entity
+  parent: CP14BaseTree
+  id: CP14FloraGlowingTree
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Flora/Trees/glowing_tree.rsi
+    state: tree1
+    drawdepth: Mobs
+    offset: 0,0.9
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14GlowingWoodLog:
+            min: 1
+            max: 2
+          CP14FoodGlowingFruit:
+            min: 1
+            max: 2
+

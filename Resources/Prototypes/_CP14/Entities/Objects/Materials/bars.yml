@@ -168,3 +168,48 @@
   components:
   - type: Stack
     count: 10
+
+- type: entity
+  id: CP14GlowingIronBar1
+  parent: BaseItem
+  name: glowing iron bar
+  suffix: 1
+  description: A heavy piece of refined glowing iron
+  categories: [ ForkFiltered ]
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/glowingiron_bar.rsi
+    layers:
+      - state: bar
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14GlowingIronBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+
+- type: entity
+  id: CP14GlowingIronBar5
+  parent: CP14GlowingIronBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14GlowingIronBar10
+  parent: CP14GlowingIronBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10

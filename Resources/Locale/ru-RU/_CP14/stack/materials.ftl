@@ -8,6 +8,7 @@ cp14-stack-flora = пучки травы
 cp14-stack-copper-bars = медные слитки
 cp14-stack-iron-bars = железные слитки
 cp14-stack-gold-bars = золотые слитки
+cp14-stack-glowing-iron-bars = слитки сверкающего железа
 
 cp14-stack-wallpaper = рулон обоев
 
