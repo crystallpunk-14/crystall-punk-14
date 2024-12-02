@@ -21,3 +21,7 @@
 - type: modularSlot
   id: MagicCrystalHolder
   name: cp14-modular-slot-magic-crystal-holder
+
+- type: modularSlot
+  id: Garde
+  name: cp14-modular-slot-garde

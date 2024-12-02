@@ -176,3 +176,115 @@
   stacks:
     CP14IronBar: 2
   result: CP14ModularGripIronLong
+
+- type: CP14Recipe
+  id: CP14ModularGripCopperLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 2
+  result: CP14ModularGripCopperLong
+
+- type: CP14Recipe
+  id: CP14ModularGripGoldLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 2
+  result: CP14ModularGripGoldLong
+
+- type: CP14Recipe
+  id: CP14ModularGripCopper
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ModularGripCopper
+
+- type: CP14Recipe
+  id: CP14ModularGripGolden
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ModularGripGolden
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 2
+  result: CP14ModularBladeGoldPickaxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 2
+  result: CP14ModularBladeCopperPickaxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldDagger
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ModularBladeGoldDagger
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperDagger
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ModularBladeCopperDagger
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpCopper
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ModularGardeSharpCopper
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpIron
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularGardeSharpIron
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpGold
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ModularGardeSharpGold
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 1
+  result: CP14ModularBladeIronRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ModularBladeGoldRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ModularBladeCopperRapier

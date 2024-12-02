@@ -1,0 +1,66 @@
+#Concept:
+# + Fast attackRate
+#   fast swing
+# - Low damage
+
+- type: modularPart
+  id: BaseBladeDagger
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponThrowable
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:AddComponents
+    components:
+    - type: ThrowingAngle
+      angle: 135
+    - type: EmbeddableProjectile
+      offset: -0.15,-0.15
+      removalTime: 0.5
+  - !type:EditMeleeWeapon
+    attackRateMultiplier: 1.4
+    bonusDamage:
+      types:
+        Slash: 3
+        Piercing: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+
+- type: modularPart
+  id: BladeIronDagger
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronDagger
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/iron_dagger.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseWeaponIron
+
+- type: modularPart
+  id: BladeGoldDagger
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeGoldDagger
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/gold_dagger.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseWeaponGold
+
+- type: modularPart
+  id: BladeCopperDagger
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeCopperDagger
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/copper_dagger.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseWeaponCopper
