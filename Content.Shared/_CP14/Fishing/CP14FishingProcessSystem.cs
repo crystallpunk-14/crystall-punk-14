@@ -2,12 +2,14 @@
 using Content.Shared._CP14.Fishing.FishingPool;
 using Content.Shared._CP14.Fishing.FishingRod;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.Fishing;
 
 public sealed class CP14FishingProcessSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private EntityQuery<CP14FishingRodComponent> _fishingRod;
 
@@ -34,14 +36,30 @@ public sealed class CP14FishingProcessSystem : EntitySystem
         var fishingRodComponent = _fishingRod.GetComponent(process.Comp.FishingRod!.Value);
 
         if (fishingRodComponent.Reeling)
-            process.Comp.Player.Position += fishingRodComponent.Speed * frameTime;
+        {
+            process.Comp.Player.Velocity += fishingRodComponent.Speed * frameTime;
+        }
         else
-            process.Comp.Player.Position -= process.Comp.Gravity * frameTime;
+        {
+            process.Comp.Player.Velocity -= fishingRodComponent.Gravity * frameTime;
+        }
 
-        // Simple collision with board
-        // TODO: bouncing
-        process.Comp.Player.Clamp(process.Comp.Size);
-        process.Comp.Loot.Clamp(process.Comp.Size);
+        const float drag = 0.98f;
+        process.Comp.Player.Velocity *= drag;
+
+        process.Comp.Player.Velocity = Math.Clamp(process.Comp.Player.Velocity,
+            fishingRodComponent.MinVelocity,
+            fishingRodComponent.MaxVelocity);
+
+        process.Comp.Player.Position += process.Comp.Player.Velocity * frameTime;
+
+        process.Comp.Player.ClampPosition(process.Comp.Size);
+
+        process.Comp.Loot.SimulateFishMovement(_random, frameTime, 0.25f, 0.95f, 0.75f, process.Comp.Size);
+        process.Comp.Loot.ClampPosition(process.Comp.Size);
+
+        var progressAdditive = process.Comp.Collides ? 0.05f : -0.1f;
+        process.Comp.Progress = Math.Clamp(process.Comp.Progress + progressAdditive * frameTime, 0, 1);
     }
 
     public bool TryGetByUser(EntityUid userEntityUid, [NotNullWhen(true)] out Entity<CP14FishingProcessComponent>? process)
@@ -83,7 +101,6 @@ public sealed class CP14FishingProcessSystem : EntitySystem
         ensureComponent.User = user;
 
         ensureComponent.Size = prototype.Size;
-        ensureComponent.Gravity = prototype.Gravity;
 
         ensureComponent.Player = new CP14FishingProcessComponent.Box(prototype.PlayerSize);
         ensureComponent.Loot = new CP14FishingProcessComponent.Box(prototype.LootSize);

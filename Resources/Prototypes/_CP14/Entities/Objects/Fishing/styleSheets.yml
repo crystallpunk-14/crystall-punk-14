@@ -5,6 +5,8 @@
     offset: 10, 0
     handleOffset: 16, 4
     handleHeight: 141
+    progressOffset: 31, 3
+    progressSize: 4, 144
   handle:
     topTexture: /Textures/_CP14/Interface/Fishing/Handle/top.png
     middleTexture: /Textures/_CP14/Interface/Fishing/Handle/middle.png

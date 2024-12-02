@@ -30,6 +30,12 @@ public sealed partial class CP14FishingProcessStyleSheetPrototype : IPrototype
         [DataField("handleHeight"), ViewVariables(VVAccess.ReadWrite)]
         public float HandleHeightPixels = 149;
 
+        [DataField("progressOffset"), ViewVariables(VVAccess.ReadWrite)]
+        public Vector2 ProgressOffsetPixels = new(31, 3);
+
+        [DataField("progressSize"), ViewVariables(VVAccess.ReadWrite)]
+        public Vector2 ProgressSizePixels = new(4, 144);
+
         /// <remarks>
         /// In units (<c>pixels / 32</c>).
         /// </remarks>
@@ -41,6 +47,18 @@ public sealed partial class CP14FishingProcessStyleSheetPrototype : IPrototype
         /// </remarks>
         [ViewVariables]
         public Vector2 HandleOffset => HandleOffsetPixels / 32f;
+
+        /// <remarks>
+        /// In units (<c>pixels / 32</c>).
+        /// </remarks>
+        [ViewVariables]
+        public Vector2 ProgressOffset => ProgressOffsetPixels / 32f;
+
+        /// <remarks>
+        /// In units (<c>pixels / 32</c>).
+        /// </remarks>
+        [ViewVariables]
+        public Vector2 ProgressSize => ProgressSizePixels / 32f;
 
         /// <remarks>
         /// In units (<c>pixels / 32</c>).

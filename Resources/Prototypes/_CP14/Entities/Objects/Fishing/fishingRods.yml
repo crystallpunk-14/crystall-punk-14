@@ -13,4 +13,3 @@
     sprite: _CP14/Objects/ModularTools/iron_spear.rsi
     state: icon
   - type: CP14FishingRod
-    speed: 1
