@@ -117,17 +117,34 @@
 
 - type: entity
   parent: CP14WoodenDoor
-  id: CP14WoodenDoorTavernAlchemy
+  id: CP14WoodenDoorTavernAlchemy1
   suffix: Alchemy
   components:
   - type: CP14Lock
-    autoGenerateShape: Alchemy
+    autoGenerateShape: Alchemy1
   - type: Lock
     locked: true
 
 - type: entity
   parent: 
-  - CP14WoodenDoorTavernAlchemy
+  - CP14WoodenDoorTavernAlchemy1
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorTavernAlchemyMirrored
+  suffix: Alchemy, Mirrored
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorTavernAlchemy2
+  suffix: Alchemy
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Alchemy2
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14WoodenDoorTavernAlchemy2
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorTavernAlchemyMirrored
   suffix: Alchemy, Mirrored

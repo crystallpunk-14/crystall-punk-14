@@ -47,19 +47,36 @@
 
 - type: entity
   parent: CP14IronDoor
-  id: CP14IronDoorBlacksmith
+  id: CP14IronDoorBlacksmith1
   suffix: Blacksmith
   components:
   - type: CP14Lock
-    autoGenerateShape: Blacksmith
+    autoGenerateShape: Blacksmith1
   - type: Lock
     locked: true
 
 - type: entity
   parent: 
-  - CP14IronDoorBlacksmith
+  - CP14IronDoorBlacksmith1
   - CP14IronDoorMirrored
-  id: CP14IronDoorMirroredBlacksmith
+  id: CP14IronDoorMirroredBlacksmith1
+  suffix: Blacksmith, Mirrored
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBlacksmith2
+  suffix: Blacksmith
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Blacksmith2
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorBlacksmith2
+  - CP14IronDoorMirrored
+  id: CP14IronDoorMirroredBlacksmith2
   suffix: Blacksmith, Mirrored
 
 # Bank

@@ -63,3 +63,9 @@
             CP14Commandant: [1, 1]
             CP14Banker: [3, 4]
             #CP14GuardCommander: [1, 1]
+        - type: CP14StationKeyDistribution
+          keys:
+            PersonalHouse: 10
+            TavernDorms: 3
+            Alchemist: 2
+            Blacksmith: 1

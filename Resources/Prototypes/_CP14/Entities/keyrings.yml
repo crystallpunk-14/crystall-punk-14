@@ -46,11 +46,11 @@
     contents:
     - id: CP14KeyTavernHall
     - id: CP14KeyTavernStaff
-    - id: CP14KeyTavernDorms1
-    - id: CP14KeyTavernDorms2
-    - id: CP14KeyTavernDorms3
-    - id: CP14KeyTavernDorms4
-    - id: CP14KeyTavernDorms5
+    #- id: CP14KeyTavernDorms1
+    #- id: CP14KeyTavernDorms2
+    #- id: CP14KeyTavernDorms3
+    #- id: CP14KeyTavernDorms4
+    #- id: CP14KeyTavernDorms5
 
 - type: entity
   parent: CP14BaseKeyRing
@@ -58,8 +58,8 @@
   suffix: Blacksmith
   components:
   - type: StorageFill
-    contents:
-    - id: CP14KeyBlacksmith
+    #contents:
+    #- id: CP14KeyBlacksmith
 
 - type: entity
   parent: CP14BaseKeyRing
@@ -67,8 +67,8 @@
   suffix: Alchemist
   components:
   - type: StorageFill
-    contents:
-    - id: CP14KeyAlchemy
+    #contents:
+    #- id: CP14KeyAlchemy
 
 - type: entity
   parent: CP14BaseKeyRing
