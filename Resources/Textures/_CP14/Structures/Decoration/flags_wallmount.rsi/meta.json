@@ -16,6 +16,10 @@
       "directions": 4
     },
     {
+      "name": "fill_guard",
+      "directions": 4
+    },
+    {
       "name": "icon_anvil",
       "directions": 4
     },
@@ -33,6 +37,30 @@
     },
     {
       "name": "icon_vault",
+      "directions": 4
+    },
+    {
+      "name": "icon_bank1",
+      "directions": 4
+    },
+    {
+      "name": "icon_bank2",
+      "directions": 4
+    },
+    {
+      "name": "icon_bank3",
+      "directions": 4
+    },
+    {
+      "name": "icon_shield",
+      "directions": 4
+    },
+    {
+      "name": "icon_swords",
+      "directions": 4
+    },
+    {
+      "name": "icon_star",
       "directions": 4
     }
   ]
