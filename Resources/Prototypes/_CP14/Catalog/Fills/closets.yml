@@ -5,7 +5,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingAlchemist
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14Syringe
         amount: 2
@@ -43,7 +42,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingBanker
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14StampDenied
       - id: CP14StampApproved
@@ -73,7 +71,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingCommandant
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14StampDenied
       - id: CP14StampApproved

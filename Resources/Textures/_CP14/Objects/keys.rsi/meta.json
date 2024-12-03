@@ -81,6 +81,9 @@
     },
     {
       "name": "ring-3"
+    },
+    {
+      "name": "vault_key"
     }
   ]
 }

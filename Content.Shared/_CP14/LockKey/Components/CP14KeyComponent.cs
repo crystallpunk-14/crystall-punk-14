@@ -15,5 +15,5 @@ public sealed partial class CP14KeyComponent : Component
     /// If not null, automatically generates a key for the specified category on initialization. This ensures that the lock will be opened with a key of the same category.
     /// </summary>
     [DataField]
-    public ProtoId<CP14LockCategoryPrototype>? AutoGenerateShape = null;
+    public ProtoId<CP14LockTypePrototype>? AutoGenerateShape = null;
 }

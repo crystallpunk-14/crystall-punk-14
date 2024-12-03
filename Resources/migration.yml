@@ -51,8 +51,8 @@ CP14WoodDoorTavernDorms2Opened: CP14WoodenDoorTavernDorms2
 CP14WoodDoorTavernDorms3Opened: CP14WoodenDoorTavernDorms3
 CP14WoodDoorTavernDorms4Opened: CP14WoodenDoorTavernDorms5
 CP14WoodDoorTavernDorms5Opened: CP14WoodenDoorTavernDorms4
-CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy
-CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy
+CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
+CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy1
 CP14WoodenDoorOpened: CP14WoodenDoor
 CP14CuttingBoard: null
 
@@ -63,7 +63,7 @@ CP14WoodenDoorTavernDorms2Locked: CP14WoodenDoorTavernDorms2
 CP14WoodenDoorTavernDorms3Locked: CP14WoodenDoorTavernDorms3
 CP14WoodenDoorTavernDorms4Locked: CP14WoodenDoorTavernDorms4
 CP14WoodenDoorTavernDorms5Locked: CP14WoodenDoorTavernDorms5
-CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy
+CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy1
 
 #2024-09-24
 CP14WallpaperPink30: CP14WallpaperPurple
@@ -168,6 +168,14 @@ CP14BaseThrowableSpear: CP14ModularIronSpear
 CP14BaseSword: CP14ModularIronSword
 CP14BaseShovel: CP14ModularIronShovel
 CP14BasePickaxe: CP14ModularIronPickaxe
+
+#2024-02-12
+CP14WoodenDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorTavernAlchemyMirrored1
+CP14IronDoorBlacksmith: CP14IronDoorBlacksmith1
+CP14IronDoorMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
+CP14IronDoorWindowedBlacksmith: CP14IronDoorBlacksmith1
+CP14IronDoorWindowedMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
 
 # <---> CrystallEdge migration zone end
 
