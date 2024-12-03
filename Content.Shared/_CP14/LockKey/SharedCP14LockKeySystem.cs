@@ -129,7 +129,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                 },
                 Text = Loc.GetString("cp14-lock-verb-lock-pick-use-text") + $" {height}",
                 Message = Loc.GetString("cp14-lock-verb-lock-pick-use-message"),
-                Category = VerbCategory.Lockpick,
+                Category = VerbCategory.CP14LockPick,
                 Priority = height,
                 CloseMenu = false,
             };

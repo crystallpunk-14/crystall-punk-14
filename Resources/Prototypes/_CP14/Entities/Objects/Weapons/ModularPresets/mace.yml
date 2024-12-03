@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularIronMace
+  parent: CP14ModularGripWooden
+  name: iron mace
+  description: A heavy piece of metal on a long stick. What could be simpler than that?
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/iron_mace.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronMace

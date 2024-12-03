@@ -448,6 +448,7 @@ namespace Content.Server.Atmos.EntitySystems
 
                 if (flammable.FireStacks > 0)
                 {
+/* CP14 Airtight walls should burn too!
                     var air = _atmosphereSystem.GetContainingMixture(uid);
 
                     // If we're in an oxygenless environment, put the fire out.
@@ -456,7 +457,7 @@ namespace Content.Server.Atmos.EntitySystems
                         Extinguish(uid, flammable);
                         continue;
                     }
-
+*/
                     var source = EnsureComp<IgnitionSourceComponent>(uid);
                     _ignitionSourceSystem.SetIgnited((uid, source));
 

@@ -69,3 +69,19 @@
     CP14Stone: 1
     CP14IronBar: 1
   result: CP14Lighter
+
+- type: CP14Recipe
+  id: CP14ModularGripWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  stacks:
+    CP14WoodenPlanks: 1
+  result: CP14ModularGripWooden
+
+- type: CP14Recipe
+  id: CP14ModularGripWoodenLong
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  stacks:
+    CP14WoodenPlanks: 2
+  result: CP14ModularGripWoodenLong

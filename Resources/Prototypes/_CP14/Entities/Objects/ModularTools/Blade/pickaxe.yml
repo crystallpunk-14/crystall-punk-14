@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladePickaxeBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A pickaxe head without a hilt. A blacksmith can use it as a spare part to create a tool.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,1,0
+    storedOffset: 0, 5
+
+- type: entity
+  parent: CP14ModularBladePickaxeBase
+  id: CP14ModularBladeIronPickaxe
+  categories: [ ForkFiltered ]
+  name: iron pickaxe head
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/iron_pickaxe.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronPickaxe
+
+- type: entity
+  parent: CP14ModularBladePickaxeBase
+  id: CP14ModularBladeGoldPickaxe
+  categories: [ ForkFiltered ]
+  name: golden pickaxe head
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/gold_pickaxe.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldPickaxe
+
+- type: entity
+  parent: CP14ModularBladePickaxeBase
+  id: CP14ModularBladeCopperPickaxe
+  categories: [ ForkFiltered ]
+  name: copper pickaxe head
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/copper_pickaxe.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperPickaxe
