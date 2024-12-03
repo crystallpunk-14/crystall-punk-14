@@ -43,11 +43,19 @@ public sealed partial class CP14KeyDistributionSystem : EntitySystem
         if (!TryComp<CP14StationKeyDistributionComponent>(member.Station, out var distribution))
             return false;
 
-        foreach (var keyA in distribution.Keys)
+        var keysList = new List<ProtoId<CP14LockTypePrototype>>(distribution.Keys);
+        while (keysList.Count > 0)
         {
+            var randomIndex = _random.Next(keysList.Count);
+            var keyA = keysList[randomIndex];
+
             var indexedKey = _proto.Index(keyA);
+
             if (indexedKey.Group != ent.Comp.Group)
+            {
+                keysList.RemoveAt(randomIndex);
                 continue;
+            }
 
             _keyGeneration.SetShape((ent, key), indexedKey);
             distribution.Keys.Remove(indexedKey);
