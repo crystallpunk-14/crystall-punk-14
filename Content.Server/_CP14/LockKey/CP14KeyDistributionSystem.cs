@@ -49,7 +49,7 @@ public sealed partial class CP14KeyDistributionSystem : EntitySystem
             if (indexedKey.Group != ent.Comp.Group)
                 continue;
 
-            key.LockShape = _keyGeneration.GetKeyLockData(indexedKey);
+            _keyGeneration.SetShape((ent, key), indexedKey);
             distribution.Keys.Remove(indexedKey);
             return true;
         }

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Labels;
 using Content.Shared._CP14.LockKey;
 using Content.Shared._CP14.LockKey.Components;
 using Content.Shared.Examine;
@@ -12,6 +13,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly LabelSystem _label = default!;
 
     private Dictionary<ProtoId<CP14LockTypePrototype>, List<int>> _roundKeyData = new();
 
@@ -37,7 +39,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     {
         if (keyEnt.Comp.AutoGenerateShape != null)
         {
-            keyEnt.Comp.LockShape = GetKeyLockData(keyEnt.Comp.AutoGenerateShape.Value);
+            SetShape(keyEnt, keyEnt.Comp.AutoGenerateShape.Value);
         }
     }
 
@@ -45,7 +47,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     {
         if (lockEnt.Comp.AutoGenerateShape != null)
         {
-            lockEnt.Comp.LockShape = GetKeyLockData(lockEnt.Comp.AutoGenerateShape.Value);
+            SetShape(lockEnt, lockEnt.Comp.AutoGenerateShape.Value);
         }
     }
     #endregion
@@ -69,7 +71,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         args.PushMarkup(markup);
     }
 
-    public List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
+    private List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
     {
         if (_roundKeyData.ContainsKey(category))
             return _roundKeyData[category];
@@ -77,6 +79,24 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         var newData = GenerateNewUniqueLockData(category);
         _roundKeyData[category] = newData;
         return newData;
+    }
+
+    public void SetShape(Entity<CP14KeyComponent> keyEnt, ProtoId<CP14LockTypePrototype> type)
+    {
+        keyEnt.Comp.LockShape = GetKeyLockData(type);
+
+        var indexedType = _proto.Index(type);
+        if (indexedType.Name is not null)
+            _label.Label(keyEnt, Loc.GetString(indexedType.Name.Value));
+    }
+
+    public void SetShape(Entity<CP14LockComponent> lockEnt, ProtoId<CP14LockTypePrototype> type)
+    {
+        lockEnt.Comp.LockShape = GetKeyLockData(type);
+
+        var indexedType = _proto.Index(type);
+        if (indexedType.Name is not null)
+            _label.Label(lockEnt, Loc.GetString(indexedType.Name.Value));
     }
 
     private List<int> GenerateNewUniqueLockData(ProtoId<CP14LockTypePrototype> category)
