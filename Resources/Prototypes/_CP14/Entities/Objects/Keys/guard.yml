@@ -1,0 +1,27 @@
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuardEntrance
+  components:
+  - type: CP14Key
+    autoGenerateShape: GuardEntrance
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuard
+  components:
+  - type: CP14Key
+    autoGenerateShape: Guard
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuardCommandant
+  components:
+  - type: CP14Key
+    autoGenerateShape: GuardCommandant
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGuardWeaponStorage
+  components:
+  - type: CP14Key
+    autoGenerateShape: GuardWeaponStorage
