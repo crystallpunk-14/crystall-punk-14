@@ -10,14 +10,6 @@
     {
       "name": "straight",
       "directions": 4
-    },
-    {
-      "name": "door_closed",
-      "directions": 4
-    },
-    {
-      "name": "door_opened",
-      "directions": 4
     }
   ]
 }

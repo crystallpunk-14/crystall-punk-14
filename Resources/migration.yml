@@ -176,6 +176,7 @@ CP14IronDoorBlacksmith: CP14IronDoorBlacksmith1
 CP14IronDoorMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
 CP14IronDoorWindowedBlacksmith: CP14IronDoorBlacksmith1
 CP14IronDoorWindowedMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
+CP14FenceIronGrilleCorner: null
 
 # <---> CrystallEdge migration zone end
 
