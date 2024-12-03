@@ -28,3 +28,8 @@ cp14-lock-shape-personalhouse7 = house  №7
 cp14-lock-shape-personalhouse8 = house  №8
 cp14-lock-shape-personalhouse9 = house  №9
 cp14-lock-shape-personalhouse10 = house  №10
+
+cp14-lock-shaper-guard-entrance = barracks, entrance
+cp14-lock-shaper-guard-staff = barracks
+cp14-lock-shaper-guard-commander = guardhouse
+cp14-lock-shaper-guard-weapon-storage = weapons storage

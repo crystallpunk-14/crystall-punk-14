@@ -49,3 +49,15 @@
   - CP14IronDoorWindowedMirrored
   id: CP14IronDoorWindowedMirroredGuardEntrance
   suffix: Guard, Entrance, Mirrored
+
+# Grill Gate
+
+- type: entity
+  parent: CP14FenceIronGrilleGate
+  id: CP14FenceIronGrilleGateGuard
+  suffix: Guard
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Guard
+  - type: Lock
+    locked: true

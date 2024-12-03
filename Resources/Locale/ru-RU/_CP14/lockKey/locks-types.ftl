@@ -28,3 +28,8 @@ cp14-lock-shape-personalhouse7 = дом №7
 cp14-lock-shape-personalhouse8 = дом №8
 cp14-lock-shape-personalhouse9 = дом №9
 cp14-lock-shape-personalhouse10 = дом №10
+
+cp14-lock-shaper-guard-entrance = казармы, вход
+cp14-lock-shaper-guard-staff = казармы
+cp14-lock-shaper-guard-commander = дом главы стражи
+cp14-lock-shaper-guard-weapon-storage = хранилище оружия
