@@ -10,10 +10,6 @@
     {
       "name": "straight",
       "directions": 4
-    },
-    {
-      "name": "corner",
-      "directions": 4
     }
   ]
 }

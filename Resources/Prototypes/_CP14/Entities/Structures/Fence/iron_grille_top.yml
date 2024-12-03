@@ -46,7 +46,5 @@
         mask:
         - Impassable
         layer:
-        #- Impassable
         - MidImpassable
-        #- LowImpassable
         - HighImpassable
