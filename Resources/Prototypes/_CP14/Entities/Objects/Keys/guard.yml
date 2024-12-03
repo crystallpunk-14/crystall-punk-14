@@ -1,6 +1,7 @@
 - type: entity
   parent: CP14BaseKey
   id: CP14KeyGuardEntrance
+  suffix: Guard Entrance
   components:
   - type: CP14Key
     autoGenerateShape: GuardEntrance
@@ -8,20 +9,23 @@
 - type: entity
   parent: CP14BaseKey
   id: CP14KeyGuard
+  suffix: Guard
   components:
   - type: CP14Key
     autoGenerateShape: Guard
 
 - type: entity
   parent: CP14BaseKey
-  id: CP14KeyGuardCommandant
+  id: CP14KeyGuardCommander
+  suffix: Guard Commander
   components:
   - type: CP14Key
-    autoGenerateShape: GuardCommandant
+    autoGenerateShape: GuardCommander
 
 - type: entity
   parent: CP14BaseKey
   id: CP14KeyGuardWeaponStorage
+  suffix: Guard Weapon Storage
   components:
   - type: CP14Key
     autoGenerateShape: GuardWeaponStorage

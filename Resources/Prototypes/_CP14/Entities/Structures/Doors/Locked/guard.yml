@@ -17,7 +17,7 @@
   suffix: Guard Commander
   components:
   - type: CP14Lock
-    autoGenerateShape: GuardCommandant
+    autoGenerateShape: GuardCommander
   - type: Lock
     locked: true
 
