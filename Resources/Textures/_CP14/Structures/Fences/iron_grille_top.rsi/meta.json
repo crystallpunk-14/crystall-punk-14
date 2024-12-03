@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "by TheShuEd (github)",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "straight",
+      "directions": 4
+    },
+    {
+      "name": "corner",
+      "directions": 4
+    }
+  ]
+}
