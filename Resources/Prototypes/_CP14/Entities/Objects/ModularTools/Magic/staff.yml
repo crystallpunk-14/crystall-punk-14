@@ -28,8 +28,6 @@
       collection: MetalThud
     cPAnimationLength: 0.3
     cPAnimationOffset: -1.3
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorage
   - type: CP14MagicEnergyExaminable
@@ -62,16 +60,7 @@
     startSlots:
     - MagicCrystalHolder
   - type: CP14MagicManacostModify
-    modifiers:
-     Earth: 1.1
-     Fire: 1.1
-     Gate: 1.1
-     Healing: 1.1
-     LightDarkness: 1.1
-     Meta: 1.1
-     Movement: 1.1
-     Water: 1.1
-     Necromancy: 1.1
+    globalModifier: 0.9
 
 # Wooden staff
 - type: entity
@@ -95,13 +84,4 @@
     startSlots:
     - MagicCrystalHolder
   - type: CP14MagicManacostModify
-    modifiers:
-     Earth: 0.9
-     Fire: 0.9
-     Gate: 0.9
-     Healing: 0.9
-     LightDarkness: 0.9
-     Meta: 0.9
-     Movement: 0.9
-     Water: 0.9
-     Necromancy: 0.9
+    globalModifier: 1.1

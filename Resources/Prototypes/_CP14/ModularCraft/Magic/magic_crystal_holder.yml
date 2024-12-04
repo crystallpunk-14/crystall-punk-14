@@ -5,15 +5,15 @@
   modifiers:
   - !type:EditManacostModify
     modifiers:
-     Earth: 1.05
-     Fire: 1.05
-     Gate: 1.05
-     Healing: 1.05
-     LightDarkness: 1.05
-     Meta: 1.05
-     Movement: 1.05
-     Water: 1.05
-     Necromancy: 1.05
+     Earth: 0.95
+     Fire: 0.95
+     Gate: 0.95
+     Healing: 0.95
+     LightDarkness: 0.95
+     Meta: 0.95
+     Movement: 0.95
+     Water: 0.95
+     Necromancy: 0.95
 
 - type: modularPart
   id: StaffMagicCrystalHolder_Blue1
