@@ -47,3 +47,28 @@
     copyFrom:
     - BaseBladeSword
     - BaseWeaponIron
+
+- type: modularPart
+  id: BladeBoneSword
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeBoneSword
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSword
+  - !type:EditMeleeWeapon
+    bonusDamage:
+      types:
+        Slash: -4
+        Piercing: -3
+        Blunt: 2
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: -3
+        Piercing: -2
+  - !type:EditDamageableModifier
+    multiplier: 2.5
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 3
