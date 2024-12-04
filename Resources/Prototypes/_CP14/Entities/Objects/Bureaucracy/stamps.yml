@@ -57,3 +57,16 @@
     stampState: "bank_on_paper"
   - type: Sprite
     state: bank
+
+- type: entity
+  id: CP14StampGuardCommander
+  parent: CP14StampBase
+  name: guard commander stamp
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: cp14-stamp-guard-commander
+    stampedColor: "#436a92"
+    stampState: "guard_on_paper"
+  - type: Sprite
+    state: guard

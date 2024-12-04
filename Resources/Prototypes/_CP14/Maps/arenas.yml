@@ -62,7 +62,8 @@
             CP14Innkeeper: [ 3, 4 ]
             CP14Commandant: [1, 1]
             CP14Banker: [3, 4]
-            #CP14GuardCommander: [1, 1]
+            CP14Guard: [8, 8]
+            CP14GuardCommander: [1, 1]
         - type: CP14StationKeyDistribution
           keys:
           - TavernDorms1
@@ -81,3 +82,7 @@
           - PersonalHouse8
           - PersonalHouse9
           - PersonalHouse10
+          - PersonalHouse11
+          - PersonalHouse12
+          - PersonalHouse13
+          - PersonalHouse14

@@ -70,7 +70,7 @@ CP14WallpaperPink30: CP14WallpaperPurple
 
 #2024-09-25
 CP14IronGrilleStraight: CP14FenceIronGrilleStraight
-CP14IronGrilleCorner: CP14FenceIronGrilleCorner
+CP14IronGrilleCorner: null
 CP14IronGrilleGate: CP14FenceIronGrilleGate
 CP14IronGrilleTJunction: null
 CP14FenceWoodSmallTJunction: null
@@ -177,6 +177,10 @@ CP14IronDoorMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
 CP14IronDoorWindowedBlacksmith: CP14IronDoorBlacksmith1
 CP14IronDoorWindowedMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
 CP14FenceIronGrilleCorner: null
+
+#2024-04-12
+CP14ClothingShirtGuardsChainmailShirtWB: CP14ClothingShirtGuardsChainmailShirtB
+CP14KeyRingGuardCommandant: CP14KeyRingGuardCommander
 
 # <---> CrystallEdge migration zone end
 

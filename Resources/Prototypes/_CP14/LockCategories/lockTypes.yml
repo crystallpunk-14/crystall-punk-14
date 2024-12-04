@@ -154,3 +154,25 @@
   group: PersonalHouse
   complexity: 3
   name: cp14-lock-shape-personalhouse10
+
+# Guard
+
+- type: CP14LockType
+  id: GuardEntrance
+  complexity: 3
+  name: cp14-lock-shaper-guard-entrance
+
+- type: CP14LockType
+  id: Guard
+  complexity: 5
+  name: cp14-lock-shaper-guard-staff
+
+- type: CP14LockType
+  id: GuardCommander
+  complexity: 7
+  name: cp14-lock-shaper-guard-commander
+
+- type: CP14LockType
+  id: GuardWeaponStorage
+  complexity: 7
+  name: cp14-lock-shaper-guard-weapon-storage
