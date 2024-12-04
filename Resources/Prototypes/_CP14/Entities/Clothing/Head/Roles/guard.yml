@@ -14,7 +14,7 @@
 - type: entity
   parent: CP14ClothingHeadGuardBase
   id: CP14ClothingHeadGuardHelmet
-  name: red beret
+  name: "guard's helmet"
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Head/Roles/Guard/helmet.rsi

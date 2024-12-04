@@ -222,6 +222,16 @@
         acts: ["Destruction"]
 
 - type: entity
+  parent: CP14ModularGripIronLong
+  id: CP14ModularGripIronLongGuard
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/iron_grip_long_guard.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripIronLongGuard
+
+- type: entity
   parent: CP14ModularGripLong
   id: CP14ModularGripGoldLong
   name: long golden grip
