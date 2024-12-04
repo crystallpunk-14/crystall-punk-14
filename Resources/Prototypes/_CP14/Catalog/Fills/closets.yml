@@ -136,6 +136,7 @@
       - id: CP14Crossbolt
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
+      - id: CP14BookImperialLawsHandBook
 
 - type: entity
   parent: CP14WoodenCloset
@@ -153,3 +154,4 @@
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
       - id: CP14StampGuardCommander
+      - id: CP14BookImperialLawsHandBook
