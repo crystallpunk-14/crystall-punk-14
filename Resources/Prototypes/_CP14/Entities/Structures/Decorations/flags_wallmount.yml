@@ -74,6 +74,7 @@
     layers:
     - state: fill_bank
     - state: icon_coin
+      color: "#ad633b"
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -85,6 +86,7 @@
     layers:
     - state: fill_bank
     - state: icon_safe
+      color: "#ad633b"
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -96,6 +98,7 @@
     layers:
     - state: fill_bank
     - state: icon_crates
+      color: "#ad633b"
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -107,6 +110,7 @@
     layers:
     - state: fill_bank
     - state: icon_ship
+      color: "#ad633b"
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -118,6 +122,7 @@
     layers:
     - state: fill_bank
     - state: icon_star
+      color: "#ad633b"
 
 # Guard
 
