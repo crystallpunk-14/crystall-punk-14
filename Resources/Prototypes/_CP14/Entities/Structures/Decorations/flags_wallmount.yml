@@ -55,11 +55,11 @@
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagTavern
   name: tavern tapestry
-  description: A tapestry with a ?? symbol, indicating that blacksmiths dwell here.
+  description: A tapestry with a beer symbol, indicating that tavern is here.
   components:
   - type: Sprite
     layers:
-    - state: fill_mercenary #TODO: Icon
+    - state: fill_mercenary
     - state: icon_tavern
 
 # Bank
@@ -73,7 +73,7 @@
   - type: Sprite
     layers:
     - state: fill_bank
-    - state: icon_coins
+    - state: icon_coin
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -84,7 +84,18 @@
   - type: Sprite
     layers:
     - state: fill_bank
-    - state: icon_vault
+    - state: icon_safe
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagBankCrates
+  name: bank crates tapestry
+  description: A tapestry with a crates symbol indicating that this is where the bank vaults reside.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_bank
+    - state: icon_crates
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -101,7 +112,7 @@
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagBankCommandant
   name: commandant tapestry
-  description: A tapestry with a star symbol indicating that the Commandant lives here.
+  description: A tapestry with a star symbol indicating that the commandant lives here.
   components:
   - type: Sprite
     layers:
@@ -121,7 +132,6 @@
     - state: fill_guard
     - state: icon_swords
 
-
 - type: entity
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagGuardShield
@@ -135,8 +145,8 @@
 
 - type: entity
   parent: CP14WallmountFlagBase
-  id: CP14WallmountFlagGuardCommandant
-  name: guard commandant tapestry
+  id: CP14WallmountFlagGuardCommander
+  name: guard commander tapestry
   description: A tapestry with a star symbol indicating that the Guard Commandant lives here.
   components:
   - type: Sprite
