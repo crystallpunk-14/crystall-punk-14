@@ -30,3 +30,12 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/cheetah_skin.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/cheetah_skin.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakWhite
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi

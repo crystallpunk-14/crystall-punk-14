@@ -7,12 +7,6 @@
   minLimit: 0
   loadouts:
   - CP14ClothingCloakGuardBlue
-  - CP14ClothingCloakGuardWhite
-
-- type: loadout
-  id: CP14ClothingCloakGuardWhite
-  equipment:
-    cloak: CP14ClothingCloakGuardWhite
 
 - type: loadout
   id: CP14ClothingCloakGuardBlue
@@ -47,13 +41,7 @@
   id: CP14GuardShirt
   name: cp14-loadout-guard-shirt
   loadouts:
-  - CP14ClothingShirtGuardsChainmailShirtWB
   - CP14ClothingShirtGuardsChainmailShirtB
-
-- type: loadout
-  id: CP14ClothingShirtGuardsChainmailShirtWB
-  equipment:
-    shirt: CP14ClothingShirtGuardsChainmailShirtWB
 
 - type: loadout
   id: CP14ClothingShirtGuardsChainmailShirtB
