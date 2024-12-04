@@ -105,7 +105,7 @@
 
 - type: entity
   parent: CP14BaseKeyRing
-  id: CP14KeyRingGuardian
+  id: CP14KeyRingGuard
   suffix: Guardian
   components:
   - type: StorageFill
@@ -115,12 +115,12 @@
 
 - type: entity
   parent: CP14BaseKeyRing
-  id: CP14KeyRingGuardCommandant
-  suffix: Guard Commandant
+  id: CP14KeyRingGuardCommander
+  suffix: Guard Commander
   components:
   - type: StorageFill
     contents:
     - id: CP14KeyGuardEntrance
     - id: CP14KeyGuard
-    - id: CP14KeyGuardCommandant
-    - id: CP14KeyGuardWeaponStorage
+    - id: CP14KeyGuardCommander
+    #- id: CP14KeyGuardWeaponStorage

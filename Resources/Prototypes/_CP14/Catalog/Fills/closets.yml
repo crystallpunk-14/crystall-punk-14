@@ -129,6 +129,11 @@
       - id: CP14ModularGripIronLongGuard
       - id: CP14ModularGripIronLongGuard
       - id: CP14BaseLightCrossbow
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
 
@@ -145,7 +150,6 @@
       - id: CP14BaseShield
       - id: CP14ModularGripIronLongGuard
       - id: CP14ModularGripIronLongGuard
-      - id: CP14BaseLightCrossbow
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
       - id: CP14StampGuardCommander
