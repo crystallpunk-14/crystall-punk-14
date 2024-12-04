@@ -286,7 +286,6 @@
   loadouts:
   - CP14MagicHealingStaff
   - CP14ManaOperationGlove
-  - CP14EnergyCrystalSmall
   - CP14CrystalLampOrangeEmpty
   - CP14BaseSharpeningStone
   - CP14Scissors
@@ -311,12 +310,6 @@
   storage:
     back:
     - CP14ManaOperationGlove
-
-- type: loadout
-  id: CP14EnergyCrystalSmall
-  storage:
-    back:
-    - CP14EnergyCrystalSmall
 
 - type: loadout
   id: CP14CrystalLampOrangeEmpty

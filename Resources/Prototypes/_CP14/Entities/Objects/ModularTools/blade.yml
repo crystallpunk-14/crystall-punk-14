@@ -38,25 +38,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CP14ModularBladeIronSword
-  categories: [ ForkFiltered ]
-  name: iron sword blade
-  description: A sword blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
-  components:
-  - type: Item
-    storedRotation: 45
-    shape:
-    - 0,0,0,1
-    storedOffset: 0, 10
-  - type: Sprite
-    sprite: _CP14/Objects/ModularTools/iron_sword.rsi
-    state: icon
-  - type: CP14ModularCraftPart
-    possibleParts:
-    - BladeIronSword
-
-- type: entity
-  parent: BaseItem
   id: CP14ModularBladeIronSickle
   categories: [ ForkFiltered ]
   name: iron sickle blade

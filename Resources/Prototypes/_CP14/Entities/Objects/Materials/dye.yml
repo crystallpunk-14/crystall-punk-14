@@ -10,6 +10,9 @@
     size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Materials/dye.rsi
+  - type: Tag
+    tags:
+    - CP14Dye
 
 - type: entity
   id: CP14DyeRed

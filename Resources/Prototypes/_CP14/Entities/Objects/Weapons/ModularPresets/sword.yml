@@ -7,7 +7,7 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/iron_sword.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/iron_sword.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
@@ -22,7 +22,7 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/iron_sword.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/iron_sword.rsi
       state: icon
     - sprite: _CP14/Objects/ModularTools/Garde/iron_sharp.rsi
       state: icon
@@ -30,3 +30,18 @@
     details:
     - BladeIronSword
     - GardeSharpIron
+
+- type: entity
+  id: CP14ModularSkeletonHalberd
+  parent: CP14ModularGripWoodenLong
+  name: bone halberd
+  description: Monstrous weapons of bone and copper.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeBoneSword

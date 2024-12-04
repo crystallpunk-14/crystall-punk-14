@@ -12,5 +12,14 @@ cp14-store-buy-alchemy-bureaucracy-desc = Feather pens, inkwells and a big stack
 cp14-store-buy-alchemy-farm-seeds-name = Seeds for farming
 cp14-store-buy-alchemy-farm-seeds-desc = A set of different seeds, for farming of all kinds! Don't limit yourself, buy several boxes at once, just in case the farmers eat everything and don't have any food left to process into seeds.
 
-cp14-store-buy-alchemy-demiplan-name = 10 demiplane Keys
+cp14-store-buy-alchemy-demiplan-name = 5 demiplane Keys
 cp14-store-buy-alchemy-demiplan-desc = Unstable pocket dimensions where doom or riches may await you? What could be better for your adventurers? Buy from us for a couple of gold pieces - resell to them for more, or bail them out.
+
+cp14-store-buy-wood-name = Wood stockpile
+cp14-store-buy-wood-desc = Fresh wood delivered to your settlement! Do you live in a land where trees don't grow? Or you just don't have the manpower to go out and chop them yourself? We are ready to do it for you! Or rather, for your money.
+
+cp14-store-buy-fabric-name = Stock of textiles
+cp14-store-buy-fabric-desc = Large stock of fabric and strings, for making exquisite outfits or other tools. Today only, now only, last years only.
+
+cp14-store-buy-energy-name = Energy reserve
+cp14-store-buy-energy-desc = Energy crystals in both medium and small sizes, and in addition, mana gloves. A complete set to supply your energy devices with energy.

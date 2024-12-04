@@ -13,6 +13,10 @@
 
 - type: startingGear
   id: CP14AdventurerGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalSmall
   equipment:
     keys: CP14KeyRingPersonalHouse
     belt1: CP14WalletFilledTest

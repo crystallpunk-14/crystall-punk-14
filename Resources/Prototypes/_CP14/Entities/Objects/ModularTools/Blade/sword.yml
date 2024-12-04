@@ -1,0 +1,36 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeSwordBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A sword blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,1
+    storedOffset: 0, 10
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeIronSword
+  name: iron sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/iron_sword.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSword
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeBoneSword
+  name: bone sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBoneSword
