@@ -28,6 +28,11 @@ cp14-lock-shape-personalhouse7 = house  №7
 cp14-lock-shape-personalhouse8 = house  №8
 cp14-lock-shape-personalhouse9 = house  №9
 cp14-lock-shape-personalhouse10 = house  №10
+cp14-lock-shape-personalhouse11 = house  №11
+cp14-lock-shape-personalhouse12 = house  №12
+cp14-lock-shape-personalhouse13 = house  №13
+cp14-lock-shape-personalhouse14 = house  №14
+cp14-lock-shape-personalhouse15 = house  №15
 
 cp14-lock-shaper-guard-entrance = barracks, entrance
 cp14-lock-shaper-guard-staff = barracks

@@ -28,6 +28,11 @@ cp14-lock-shape-personalhouse7 = дом №7
 cp14-lock-shape-personalhouse8 = дом №8
 cp14-lock-shape-personalhouse9 = дом №9
 cp14-lock-shape-personalhouse10 = дом №10
+cp14-lock-shape-personalhouse11 = дом №11
+cp14-lock-shape-personalhouse12 = дом №12
+cp14-lock-shape-personalhouse13 = дом №13
+cp14-lock-shape-personalhouse14 = дом №14
+cp14-lock-shape-personalhouse15 = дом №15
 
 cp14-lock-shaper-guard-entrance = казармы, вход
 cp14-lock-shaper-guard-staff = казармы
