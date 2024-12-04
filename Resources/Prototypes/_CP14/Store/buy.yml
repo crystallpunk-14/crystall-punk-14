@@ -7,8 +7,8 @@
     sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
     state: base
   price: 
-    min: 400
-    max: 800
+    min: 200
+    max: 400
   services:
   - !type:CP14BuyItemsService
     product:
@@ -77,3 +77,51 @@
   - !type:CP14BuyItemsService
     product:
       CP14BrassChestFilledDemiplanes: 1
+
+- type: storePositionBuy
+  id: Wood
+  name: cp14-store-buy-wood-name
+  desc: cp14-store-buy-wood-desc
+  code: WOOD
+  icon: 
+    sprite: _CP14/Objects/Materials/wood.rsi
+    state: planks_3
+  price: 
+    min: 25
+    max: 50
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledWood: 1
+
+- type: storePositionBuy
+  id: Fabric
+  name: cp14-store-buy-fabric-name
+  desc: cp14-store-buy-fabric-desc
+  code: FABRIC
+  icon: 
+    sprite: _CP14/Objects/Materials/cloth.rsi
+    state: cloth_3
+  price: 
+    min: 30
+    max: 80
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledFabric: 1
+
+- type: storePositionBuy
+  id: EnergyCrystals
+  name: cp14-store-buy-energy-name
+  desc: cp14-store-buy-energy-desc
+  code: ENERGY
+  icon: 
+    sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi 
+    state: icon
+  price: 
+    min: 30
+    max: 80
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledEnergyCrystals: 1

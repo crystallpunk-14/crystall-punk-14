@@ -55,3 +55,33 @@
       tags: 
       - CP14Wheat
     count: 10
+
+- type: storePositionSell
+  id: Dye
+  name: cp14-store-sell-dye-name
+  desc: cp14-store-sell-dye-desc
+  icon: 
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: preview
+  price: 
+    min: 50
+    max: 100
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14Dye
+    count: 10
+
+- type: storePositionSell
+  id: Wood
+  name: cp14-store-sell-wood-name
+  desc: cp14-store-sell-wood-desc
+  icon: 
+    sprite: _CP14/Objects/Materials/wood.rsi
+    state: planks_3
+  price: 
+    min: 10
+    max: 55
+  service: !type:CP14SellStackService
+    stackId: CP14WoodenPlanks
+    count: 50
