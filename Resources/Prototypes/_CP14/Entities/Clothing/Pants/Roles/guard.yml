@@ -5,6 +5,6 @@
   description: Skirt with stitched clutch padding, in standard Imperial Guard uniform colors.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Pants/Roles/Guard/wb_chainmail.rsi
+    sprite: _CP14/Clothing/Pants/Roles/Guard/b_chainmail.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Pants/Roles/Guard/wb_chainmail.rsi
+    sprite: _CP14/Clothing/Pants/Roles/Guard/b_chainmail.rsi

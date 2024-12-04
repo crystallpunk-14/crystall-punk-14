@@ -5,7 +5,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingAlchemist
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14Syringe
         amount: 2
@@ -43,7 +42,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingBanker
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14StampDenied
       - id: CP14StampApproved
@@ -73,7 +71,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingCommandant
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14StampDenied
       - id: CP14StampApproved
@@ -109,11 +106,52 @@
   parent: CP14WoodenCloset
   id: CP14WoodenClosetBlacksmithFilled
   suffix: Blacksmith, Filled
-  #components:
-  #- type: StorageFill
-  #  contents:
-  #    - id: CP14KeyRingCommandant
-  #    - id: HandLabeler #TODO custom cp14 labeler
-  #    - id: CP14StampDenied
-  #    - id: CP14StampApproved
-  #    - id: CP14StampCommandant
+  components:
+  - type: StorageFill
+    contents:
+      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14WoodenPlanks10
+      - id: CP14Nail10
+      - id: CP14CopperBar10
+      - id: CP14IronBar5
+
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetGuardFilled
+  suffix: Guard, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Rope
+      - id: CP14Rope
+      - id: CP14ModularGuardHalberd
+      - id: CP14BaseShield
+      - id: CP14ModularGripIronLongGuard
+      - id: CP14ModularGripIronLongGuard
+      - id: CP14BaseLightCrossbow
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
+      - id: CP14Crossbolt
+      - id: CP14EnergyCrystalSmall
+      - id: CP14CrystalLampBlueEmpty
+      - id: CP14BookImperialLawsHandBook
+
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetGuardCommanderFilled
+  suffix: Guard Commander, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Rope
+      - id: CP14Rope
+      - id: CP14ModularGuardHalberd
+      - id: CP14BaseShield
+      - id: CP14ModularGripIronLongGuard
+      - id: CP14ModularGripIronLongGuard
+      - id: CP14EnergyCrystalSmall
+      - id: CP14CrystalLampBlueEmpty
+      - id: CP14StampGuardCommander
+      - id: CP14BookImperialLawsHandBook

@@ -75,48 +75,6 @@ ent-CP14BaseKey = ключ
 ent-CP14BaseLockpick = отмычка
     .desc = Воровской инструмент, позволяющий с достаточными навыками и сноровкой открыть любой замок.
 
-ent-CP14KeyTavernHall = ключ от таверны
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyTavernStaff = ключ от служебных помещений таверны
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyTavernDorms1 = ключ от комнаты таверны 1
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyTavernDorms2 = ключ от комнаты таверны 2
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyTavernDorms3 = ключ от комнаты таверны 3
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyTavernDorms4 = ключ от комнаты таверны 4
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyTavernDorms5 = ключ от комнаты таверны 5
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyAlchemy = ключ алхимика
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyBlacksmith = ключ кузнеца
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyBankEntrance = ключ к входу в банк
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyBankStaff = ключ служебных помещений банка
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyBankVault = ключ банковского хранилища
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyBankCommandantRoom = ключ комнаты комеднанта
-    .desc = { ent-CP14BaseKey.desc }
-
-ent-CP14KeyBankSafe = ключ от банковских сейфов
-    .desc = { ent-CP14BaseKey.desc }
-
 ent-CP14BaseSubdimensionalKey = ключ демиплана
     .desc = Ядро, соединяющее реальный мир с демипланом. Используйте его, чтобы открыть временный проход в другой мир.
 

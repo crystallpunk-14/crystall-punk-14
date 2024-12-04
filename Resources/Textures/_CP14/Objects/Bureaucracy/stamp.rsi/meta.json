@@ -15,6 +15,9 @@
     },
     {
       "name": "denied"
+    },
+    {
+      "name": "guard"
     }
   ]
 }

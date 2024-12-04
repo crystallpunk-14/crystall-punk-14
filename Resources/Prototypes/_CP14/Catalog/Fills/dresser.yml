@@ -58,18 +58,40 @@
   parent: CP14WoodenCabinet
   id: CP14WoodenCabinetBlacksmith
   suffix: Blacksmith, Filled
-  #components:
-  #- type: StorageFill
-  #  contents:
-  #    - id: CP14ClothingCloakCommandantJacket
-  #      prob: 1
-  #    - id: CP14ClothingHeadBowlerGolden
-  #      prob: 0.5
-  #    - id: CP14ClothingPantsAristocratic
-  #      prob: 0.5
-  #    - id: CP14ClothingShirtBanker
-  #      prob: 0.5
-  #    - id: CP14ClothingEyesMonocle
-  #      prob: 0.2
-  #    - id: CP14ClothingEyesGlasses
-  #      prob: 0.3
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ClothingCloakBlacksmithArpon
+        prob: 1
+
+- type: entity
+  parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetGuard
+  suffix: Guard, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ClothingHeadGuardHelmet
+        prob: 0.7
+      - id: CP14ClothingPantsGuardsChainmailSkirt
+        prob: 0.7
+      - id: CP14ClothingShirtGuardsChainmailShirtB
+        prob: 0.7
+      - id: CP14ClothingCloakGuardBlue
+        prob: 0.5
+
+- type: entity
+  parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetGuardCommander
+  suffix: Guard Commander, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ClothingHeadGuardHelmet
+        prob: 0.7
+      - id: CP14ClothingPantsGuardsChainmailSkirt
+        prob: 0.7
+      - id: CP14ClothingShirtGuardsChainmailShirtB
+        prob: 0.7
+      - id: CP14ClothingCloakGuardCommander
+        prob: 1
