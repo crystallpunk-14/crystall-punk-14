@@ -288,3 +288,11 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularBladeCopperRapier
+
+- type: CP14Recipe
+  id: CP14BaseLockpick
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 1
+  result: CP14BaseLockpick
