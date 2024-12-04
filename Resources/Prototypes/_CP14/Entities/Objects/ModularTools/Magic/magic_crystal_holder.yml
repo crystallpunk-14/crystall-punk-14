@@ -1,0 +1,77 @@
+# Base holder
+- type: entity
+  id: CP14MagicCrystalHolderBase
+  parent: BaseItem
+  abstract: true
+  name: magic crystals holder
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+
+# Blue holder
+
+- type: entity
+  id: CP14MagicCrystalHolder_BaseBlue
+  parent: CP14MagicCrystalHolderBase
+  name: magic crystals holder
+  abstract: true
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    sprite: _CP14/Objects/Magic/Holders/magic_crystal_holder_blue.rsi
+
+- type: entity
+  id: CP14MagicCrystalHolder_Blue1
+  parent: CP14MagicCrystalHolder_BaseBlue
+  name: magic crystals holder
+  description:  Holder for magic crystals, has one slot.
+  suffix: 1 slot
+  components:
+  - type: Sprite
+    state: blue1
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Blue1
+
+- type: entity
+  id: CP14MagicCrystalHolder_Blue2
+  parent: CP14MagicCrystalHolder_BaseBlue
+  name: magic crystals holder
+  description:  Holder for magic crystals, has two slots.
+  suffix: 2 slots
+  components:
+  - type: Sprite
+    state: blue2
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Blue2
+
+- type: entity
+  id: CP14MagicCrystalHolder_Blue3
+  parent: CP14MagicCrystalHolder_BaseBlue
+  name: magic crystals holder
+  description:  Holder for magic crystals, has three slots.
+  suffix: 3 slots
+  components:
+  - type: Sprite
+    state: blue3
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Blue3
+
+- type: entity
+  id: CP14MagicCrystalHolder_Blue4
+  parent: CP14MagicCrystalHolder_BaseBlue
+  name: magic crystals holder
+  description:  Holder for magic crystals, has four slots.
+  suffix: 4 slots
+  components:
+  - type: Sprite
+    state: blue4
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Blue4

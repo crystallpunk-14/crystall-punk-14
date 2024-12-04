@@ -1,7 +1,9 @@
+# Base ring
 - type: entity
   parent: Clothing
   id: CP14ClothingMagicRingBase
   categories: [ ForkFiltered ]
+  abstract: true
   components:
   - type: Item
     size: Tiny
@@ -10,10 +12,21 @@
     - ring
   - type: Sprite
     sprite: _CP14/Clothing/Rings/rings.rsi
-    state: brass_ring_blue
   - type: CP14SpellStorageAccessWearing
   - type: CP14SpellStorage
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ClothingMagicRingBase
     startSlots:
-    - MagicCrystal1
+    - RingMagicCrystal1
+
+# Blue ring
+- type: entity
+  parent: CP14ClothingMagicRingBase
+  id: CP14ClothingMagicRingBlue
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    state: brass_ring_blue

@@ -31,3 +31,7 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - RingMagicCrystal1_SpellSphereOfLight
+    - BlueHolderMagicCrystal1_SpellSphereOfLight
+    - BlueHolderMagicCrystal2_SpellSphereOfLight
+    - BlueHolderMagicCrystal3_SpellSphereOfLight
+    - BlueHolderMagicCrystal4_SpellSphereOfLight

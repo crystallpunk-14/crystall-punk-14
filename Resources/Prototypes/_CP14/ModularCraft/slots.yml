@@ -3,19 +3,19 @@
   name: cp14-modular-slot-blade
 
 - type: modularSlot
-  id: MagicCrystal1
+  id: HolderMagicCrystal1
   name: cp14-modular-slot-magical-crystal
 
 - type: modularSlot
-  id: MagicCrystal2
+  id: HolderMagicCrystal2
   name: cp14-modular-slot-magical-crystal
 
 - type: modularSlot
-  id: MagicCrystal3
+  id: HolderMagicCrystal3
   name: cp14-modular-slot-magical-crystal
 
 - type: modularSlot
-  id: MagicCrystal4
+  id: HolderMagicCrystal4
   name: cp14-modular-slot-magic-crystal
 
 - type: modularSlot
@@ -25,3 +25,7 @@
 - type: modularSlot
   id: Garde
   name: cp14-modular-slot-garde
+
+- type: modularSlot
+  id: RingMagicCrystal1
+  name: cp14-modular-slot-magical-crystal

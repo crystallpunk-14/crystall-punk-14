@@ -1,0 +1,64 @@
+- type: modularPart
+  id: RingMagicCrystal1_SpellSphereOfLight
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellSphereOfLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#FFFF00"
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
+
+- type: modularPart
+  id: BlueHolderMagicCrystal1_SpellSphereOfLight
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellSphereOfLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: blueholder_grey_icon1
+      color: "#FFFF00"
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
+
+- type: modularPart
+  id: BlueHolderMagicCrystal2_SpellSphereOfLight
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellSphereOfLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: blueholder_grey_icon2
+      color: "#FFFF00"
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
+
+- type: modularPart
+  id: BlueHolderMagicCrystal3_SpellSphereOfLight
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellSphereOfLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: blueholder_grey_icon3
+      color: "#FFFF00"
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
+
+- type: modularPart
+  id: BlueHolderMagicCrystal4_SpellSphereOfLight
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellSphereOfLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: blueholder_grey_icon4
+      color: "#FFFF00"
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight

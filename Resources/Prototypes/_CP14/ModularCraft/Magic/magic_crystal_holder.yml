@@ -1,0 +1,86 @@
+# Blue Holders
+
+- type: modularPart
+  id: BaseBlueHolderManacostModify
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Blue1
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Blue1
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+      state: icon1
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+  - !type:Inherit
+    copyFrom:
+    - BaseBlueHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Blue2
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Blue2
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+      state: icon2
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal3
+  - !type:Inherit
+    copyFrom:
+    - BaseBlueHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Blue3
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Blue3
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+      state: icon3
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseBlueHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Blue4
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Blue4
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+      state: icon4
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_blue.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal3
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseBlueHolderManacostModify
