@@ -62,7 +62,7 @@
             CP14Innkeeper: [ 3, 4 ]
             CP14Commandant: [1, 1]
             CP14Banker: [3, 4]
-            CP14Guard: [6, 6]
+            CP14Guard: [8, 8]
             CP14GuardCommander: [1, 1]
         - type: CP14StationKeyDistribution
           keys:
