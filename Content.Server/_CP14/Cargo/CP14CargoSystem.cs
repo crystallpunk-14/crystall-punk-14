@@ -10,6 +10,7 @@ using Content.Shared.Paper;
 using Content.Shared.Physics;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -67,6 +68,18 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         base.Update(frameTime);
 
         UpdateShuttle();
+    }
+    
+    /// <summary>
+    /// Allows other systems to additionally add items to the queue that are brought to the settlement on a merchant ship.
+    /// </summary>
+    [PublicAPI]
+    public void AddBuyQueue(Entity<CP14StationTravelingStoreShipTargetComponent> station, List<EntProtoId> products)
+    {
+        foreach (var product in products)
+        {
+            station.Comp.BuyedQueue.Enqueue(product);
+        }
     }
 
     private void OnPostInit(Entity<CP14StationTravelingStoreShipTargetComponent> station, ref StationPostInitEvent args)
