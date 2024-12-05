@@ -572,9 +572,6 @@ ent-CP14SpawnPointBlacksmith = кузнец
 ent-CP14SpawnPointInnkeeper = трактирщик
     .desc = { ent-CP14SpawnPointJobBase.desc }
 
-ent-CP14SpawnMobUndeadZombieRandom = спавнер ходячей нежити
-    .suffix = Случайный
-
 ent-CP14SpawnMobRabbit = спавнер кролика
 
 ent-CP14SpawnMobPig = спавнер свиньи
@@ -647,10 +644,6 @@ ent-CP14ImpactEffectDigging = { ent-CP14BaseMagicImpact }
 
 ent-CP14MobUndeadSkeleton = скелет
     .desc = Оживленный темной магией хрупкий скелет. Обычно скелеты - чрезвычайно разумные существа, управляемые недавно умершей душой.
-
-ent-SpawnPointGhostDemiplaneSkeleton = спавнер роли призрака
-    .suffix = скелет
-
 ent-CP14MobSpaceCobra = кобра
 
 ent-CP14MobUndeadZombie = ходячий труп
@@ -1562,30 +1555,6 @@ ent-CP14_NeutralCluster_00 = Li-Ra
 ent-CP14Chasm = бездна
     .desc = И вы не видите ее дна...
 
-ent-CP14WallmountCrystalRubies = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Red
-
-ent-CP14WallmountCrystalTopazes = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Yellow
-
-ent-CP14WallmountCrystalEmeralds = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Green
-
-ent-CP14WallmountCrystalSapphires = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Cyan
-
-ent-CP14WallmountCrystalAmethysts = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = Purple
-
-ent-CP14WallmountCrystalDiamonds = { ent-CP14WallmountCrystalBase }
-    .desc = { ent-CP14WallmountCrystalBase.desc }
-    .suffix = White
-
 ent-CP14CrystalBase = сверкающий кварц
     .desc = Биолюминесцентные кристаллы кварца, которые могут принимать любой цвет, - очень удобный источник света в глубоких пещерах. К сожалению, светящиеся свойства очень трудно сохранить.
 
@@ -1678,9 +1647,6 @@ ent-CP14BaseSharpeningStoneStructure = стационарный точильны
 
 ent-CP14TravelingShop = городская торговая информационная доска
     .desc = Позволяет отслеживать, что продается и покупается в городе прямо сейчас.
-
-ent-CP14DPSMeter = DPS Meter
-    .suffix = Debug, DO NOT MAP
 
 ent-CP14WallmountFlagAlchemist = гобелен алхимика
     .desc = Гобелен с символом зелья, указывающий на то, что здесь обитают алхимики.
@@ -2153,18 +2119,6 @@ ent-CP14WallmountBarShelfB = { ent-CP14WallmountBarShelfA }
 ent-CP14WallmountLamp = { ent-CP14WallmountLampEmpty }
     .desc = { ent-CP14WallmountLampEmpty.desc }
     .suffix = Small crystal
-
-ent-CP14FrameWoodenCrushedMedium = wooden wall frame
-    .suffix = CrushedMedium
-
-ent-CP14FrameWoodenCrushedLow = wooden wall frame
-    .suffix = CrushedLow
-
-ent-CP14WallStonebrickCrushedMedium = stone brick wall
-    .suffix = CrushedMedium
-
-ent-CP14WallStonebrickCrushedLow = stone brick wall
-    .suffix = CrushedLow
 
 ent-CP14ShuttleWingBase = крыло воздушного корабля
     .desc = Гигантские перепончатые крылья, способные, наряду с магией, удерживать в воздухе самые тяжелые предметы.
