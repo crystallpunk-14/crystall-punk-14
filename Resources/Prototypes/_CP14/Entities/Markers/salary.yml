@@ -5,3 +5,7 @@
   name: station salary spawner
   components:
   - type: CP14SalarySpawner
+  - type: Sprite
+    layers:
+    - sprite: /Textures/_CP14/Objects/Economy/jewelry.rsi
+      state: ruby1
