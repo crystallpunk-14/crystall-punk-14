@@ -20,7 +20,7 @@
         prob: 0.2
       - id: CP14VialTiny
         prob: 0.2
-      - id: ShardGlass #Lol. Something broken
+      - id: CP14GlassShard #Lol. Something broken
         prob: 0.2
 
 - type: entity

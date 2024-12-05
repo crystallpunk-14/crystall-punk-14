@@ -69,7 +69,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
         UpdateShuttle();
     }
-    
+
     /// <summary>
     /// Allows other systems to additionally add items to the queue that are brought to the settlement on a merchant ship.
     /// </summary>

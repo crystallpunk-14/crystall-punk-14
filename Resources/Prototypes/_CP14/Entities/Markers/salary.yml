@@ -1,0 +1,5 @@
+- type: entity
+  id: CP14SalarySpawner
+  parent: BaseItem
+  components:
+  - type: CP14SalarySpawner
