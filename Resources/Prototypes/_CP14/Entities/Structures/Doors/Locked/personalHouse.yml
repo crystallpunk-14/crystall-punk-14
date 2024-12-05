@@ -106,7 +106,7 @@
   suffix: PersonalHouse11
   components:
   - type: CP14Lock
-    autoGenerateShape: PersonalHouse10
+    autoGenerateShape: PersonalHouse11
   - type: Lock
     locked: true
 
@@ -116,7 +116,7 @@
   suffix: PersonalHouse12
   components:
   - type: CP14Lock
-    autoGenerateShape: PersonalHouse10
+    autoGenerateShape: PersonalHouse12
   - type: Lock
     locked: true
 
@@ -126,7 +126,7 @@
   suffix: PersonalHouse13
   components:
   - type: CP14Lock
-    autoGenerateShape: PersonalHouse10
+    autoGenerateShape: PersonalHouse13
   - type: Lock
     locked: true
 
@@ -136,7 +136,7 @@
   suffix: PersonalHouse14
   components:
   - type: CP14Lock
-    autoGenerateShape: PersonalHouse10
+    autoGenerateShape: PersonalHouse14
   - type: Lock
     locked: true
 
@@ -146,6 +146,6 @@
   suffix: PersonalHouse15
   components:
   - type: CP14Lock
-    autoGenerateShape: PersonalHouse10
+    autoGenerateShape: PersonalHouse15
   - type: Lock
     locked: true
