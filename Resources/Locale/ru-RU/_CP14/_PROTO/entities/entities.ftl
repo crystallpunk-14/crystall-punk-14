@@ -12,11 +12,23 @@ ent-CP14BrassChestFilledFarmSeeds = { ent-CP14BrassChest }
 
 ent-CP14BrassChestFilledDemiplanes = { ent-CP14BrassChest }
     .desc = { ent-CP14BrassChest.desc }
-    .suffix = Демпланы
+    .suffix = Демипланы
+
+ent-CP14BrassChestFilledWood = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Древесина
+
+ent-CP14BrassChestFilledFabric = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Текстиль
+
+ent-CP14BrassChestFilledEnergyCrystals = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Энергокристаллы
 
 ent-CP14WoodenClosetAlchemyFilled = { ent-CP14WoodenCloset }
     .desc = { ent-CP14WoodenCloset.desc }
-    .suffix = Алхимик, заполенный
+    .suffix = Алхимик, заполненный
 
 ent-CP14WoodenClosetBankerFilled = { ent-CP14WoodenCloset }
     .desc = { ent-CP14WoodenCloset.desc }
@@ -30,6 +42,18 @@ ent-CP14SafeVaultFilled25 = { ent-CP14SafeVault }
     .desc = { ent-CP14SafeVault.desc }
     .suffix = Хранилище, 25зм
 
+ent-CP14WoodenClosetBlacksmithFilled = { ent-CP14WoodenCloset }
+    .desc = { ent-CP14WoodenCloset.desc }
+    .suffix = Кузнец, заполненный
+
+ent-CP14WoodenClosetGuardFilled = { ent-CP14WoodenCloset }
+    .desc = { ent-CP14WoodenCloset.desc }
+    .suffix = Стража, заполненный
+
+ent-CP14WoodenClosetGuardCommanderFilled = { ent-CP14WoodenCloset }
+    .desc = { ent-CP14WoodenCloset.desc }
+    .suffix = Командир стражи, заполненный
+
 ent-CP14WoodenCabinetAlchemist = { ent-CP14WoodenCabinet }
     .desc = { ent-CP14WoodenCabinet.desc }
     .suffix = Алхимик, заполненный
@@ -42,38 +66,23 @@ ent-CP14WoodenCabinetCommandant = { ent-CP14WoodenCabinet }
     .desc = { ent-CP14WoodenCabinet.desc }
     .suffix = Комендант, заполненный
 
+ent-CP14WoodenCabinetBlacksmith = { ent-CP14WoodenCabinet }
+    .desc = { ent-CP14WoodenCabinet.desc }
+    .suffix = Кузнец, заполненный
+
+ent-CP14WoodenCabinetGuard = { ent-CP14WoodenCabinet }
+    .desc = { ent-CP14WoodenCabinet.desc }
+    .suffix = Стража, заполненный
+
+ent-CP14WoodenCabinetGuardCommander = { ent-CP14WoodenCabinet }
+    .desc = { ent-CP14WoodenCabinet.desc }
+    .suffix = Командир стражи, заполненный
+
 ent-CP14BaseFlammableSpreadingStrong = { ent-CP14BaseFlammableSpreading }
     .desc = { ent-CP14BaseFlammableSpreading.desc }
 
-ent-CP14BaseKeyRing = кольцо для ключей
-    .desc = Позволяет комфортно носить большое количество ключей в одном месте.
-    .suffix = Пустое
-
-ent-CP14KeyRingInnkeeper = { ent-CP14BaseKeyRing }
-    .desc = { ent-CP14BaseKeyRing.desc }
-    .suffix = Трактирщик
-
-ent-CP14KeyRingBlacksmith = { ent-CP14BaseKeyRing }
-    .desc = { ent-CP14BaseKeyRing.desc }
-    .suffix = Кузнец
-
-ent-CP14KeyRingAlchemist = { ent-CP14BaseKeyRing }
-    .desc = { ent-CP14BaseKeyRing.desc }
-    .suffix = Алхимик
-
-ent-CP14KeyRingBanker = { ent-CP14BaseKeyRing }
-    .desc = { ent-CP14BaseKeyRing.desc }
-    .suffix = Банкир
-
-ent-CP14KeyRingCommandant = { ent-CP14BaseKeyRing }
-    .desc = { ent-CP14BaseKeyRing.desc }
-    .suffix = Комендант
-
-ent-CP14BaseKey = ключ
-    .desc = Небольшой замысловатый кусочек железа, открывающий определенные замки. Не отдавайте кому попало!
-
-ent-CP14BaseLockpick = отмычка
-    .desc = Воровской инструмент, позволяющий с достаточными навыками и сноровкой открыть любой замок.
+ent-CP14Fire = огонь
+    .desc = Это огонь!
 
 ent-CP14BaseSubdimensionalKey = ключ демиплана
     .desc = Ядро, соединяющее реальный мир с демипланом. Используйте его, чтобы открыть временный проход в другой мир.
@@ -280,18 +289,6 @@ ent-CP14ImpactEffectResurrection = { ent-CP14BaseMagicImpact }
 ent-CP14SpellScrollResurrection = свиток заклинания воскрешения
     .desc = { ent-CP14BaseSpellScrollNecromancy.desc }
 
-ent-CP14ActionSpellIceDagger = Ледяной кинжал
-    .desc = Материализация временного острого ледяного метательного кинжала.
-
-ent-CP14RuneIceDagger = { ent-CP14BaseMagicRune }
-    .desc = { ent-CP14BaseMagicRune.desc }
-
-ent-CP14ImpactEffectIceDagger = { ent-CP14BaseMagicImpact }
-    .desc = { ent-CP14BaseMagicImpact.desc }
-
-ent-CP14SpellScrollIceDagger = свиток заклинания ледяного кинжала
-    .desc = { ent-CP14BaseSpellScrollWater.desc }
-
 ent-CP14ActionSpellWaterCreation = Создание воды
     .desc = Создайте сгусток воды, который удерживается в форме парящего шара в течение некоторого времени.
 
@@ -331,6 +328,9 @@ ent-CP14IceShard = ice shard
 ent-CP14SpellScrollIceShards = свиток заклинания ледяных осколков
     .desc = { ent-CP14BaseSpellScrollWater.desc }
 
+ent-CP14HeadSkeleton = череп
+    .desc = Бедный Йорик...
+
 ent-CP14ClothingBackpackLeather = кожаный рюкзак
     .desc = Вы носите его на спине и кладете в него предметы.
 
@@ -354,9 +354,6 @@ ent-CP14ClothingCloakAlchemist = плащ алхимика
 
 ent-CP14ClothingCloakGuardBase = накидка стражи
     .desc = Наплечная накидка в стандартных цветах Имперской гвардии.
-
-ent-CP14ClothingCloakGuardWhite = { ent-CP14ClothingCloakGuardBase }
-    .desc = { ent-CP14ClothingCloakGuardBase.desc }
 
 ent-CP14ClothingCloakGuardBlue = { ent-CP14ClothingCloakGuardBase }
     .desc = { ent-CP14ClothingCloakGuardBase.desc }
@@ -451,6 +448,8 @@ ent-CP14ClothingHeadTriangularHat = остроконечная шляпа
 ent-CP14ClothingHeadTriangularHatGolden = позолоченная остроконечная шляпа
     .desc = Большая остроконечная шляпа для тех, кто любит выглядеть умным. Украшена золотым обручем.
 
+ent-CP14ClothingHeadGuardHelmet = шлем стражи
+
 ent-CP14ClothingMaskSinner = маска грешника
     .desc = Маска предназначенная для ношения не самыми светлыми личностями. Палачи надевают их на себя и на жертву перед казнью.
 
@@ -502,9 +501,6 @@ ent-CP14ClothingShirtBanker = рубашка банкира
 ent-CP14ClothingShirtGuardBase = кольчуга стражника
     .desc = Рубашка с вшитой подкладкой из кольчуги, окрашенная в стандартные цвета униформы Имперской гвардии.
 
-ent-CP14ClothingShirtGuardsChainmailShirtWB = { ent-CP14ClothingShirtGuardBase }
-    .desc = { ent-CP14ClothingShirtGuardBase.desc }
-
 ent-CP14ClothingShirtGuardsChainmailShirtB = { ent-CP14ClothingShirtGuardBase }
     .desc = { ent-CP14ClothingShirtGuardBase.desc }
 
@@ -550,6 +546,9 @@ ent-CP14BankStorageMarker = маркер хранилища банка
     .desc = Отметьте указанную область как «банковское хранилище», чтобы зачесть всем банкирам цели по хранению сокровищ
     .suffix = ОДИН НА КАРТУ
 
+ent-CP14TravelingStoreshipAnchor = якорь для торгового корабля
+    .desc = Точка приземления путешествующего корабля к поверхности. Следите за небом, чтобы вас не раздавило!
+
 ent-CP14SpawnPointGuardCommander = командир стражи
     .desc = { ent-CP14SpawnPointJobBase.desc }
 
@@ -573,6 +572,9 @@ ent-CP14SpawnPointBlacksmith = кузнец
 ent-CP14SpawnPointInnkeeper = трактирщик
     .desc = { ent-CP14SpawnPointJobBase.desc }
 
+ent-CP14SpawnMobUndeadZombieRandom = спавнер ходячей нежити
+    .suffix = Случайный
+
 ent-CP14SpawnMobRabbit = спавнер кролика
 
 ent-CP14SpawnMobPig = спавнер свиньи
@@ -584,6 +586,8 @@ ent-CP14SpawnMobDinoYumkaraptor = спавнер Юмкараптора
 ent-CP14SpawnMobDinoSmallHydra = спавнер малой гидры
 
 ent-CP14SpawnMobMonsterMole = спавнер хищного крота
+
+ent-CP14SpawnMobMonsterMosquito = спавнер роя москитов
 
 ent-CP14ConstrainedSpawnerBase = Неа
     .desc = лол
@@ -641,6 +645,14 @@ ent-CP14ActionMoleSpellSubterraneanLeap = Подземный прыжок
 ent-CP14ImpactEffectDigging = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
+ent-CP14MobUndeadSkeleton = скелет
+    .desc = Оживленный темной магией хрупкий скелет. Обычно скелеты - чрезвычайно разумные существа, управляемые недавно умершей душой.
+
+ent-SpawnPointGhostDemiplaneSkeleton = спавнер роли призрака
+    .suffix = скелет
+
+ent-CP14MobSpaceCobra = кобра
+
 ent-CP14MobUndeadZombie = ходячий труп
     .desc = Ожившее гниющее тело мертвеца, желающее пожрать живых.
 
@@ -672,8 +684,6 @@ ent-CP14MobUndeadZombieGearHard2 = { ent-CP14MobUndeadZombie }
     .desc = { ent-CP14MobUndeadZombie.desc }
     .suffix = Zombie. Hard
 
-ent-CP14MobSpaceCobra = кобра
-
 ent-CP14MobDwarf = мистер Дварф
 
 ent-CP14MobElf = мистер Эльф
@@ -693,6 +703,9 @@ ent-CP14BaseMobGoblin = мистер Гоблин
 ent-CP14BaseMobHuman = мистер Человек
 
 ent-CP14BaseMobTiefling = мистер Тифлинг
+
+ent-CP14BookImperialLawsHandBook = имперские законы
+    .desc = Книга об имперских законах.
 
 ent-CP14OreCopper = медная руда
     .desc = Кусочек бледной, тяжелой меди.
@@ -734,6 +747,10 @@ ent-CP14StampApproved = штамп утверждения
     .desc = { ent-CP14StampBase.desc }
 
 ent-CP14StampCommandant = штамп коменданта
+    .desc = { ent-CP14StampBase.desc }
+    .suffix = НЕ МАППИТЬ
+
+ent-CP14StampGuardCommander = штамп командира стража
     .desc = { ent-CP14StampBase.desc }
     .suffix = НЕ МАППИТЬ
 
@@ -940,6 +957,180 @@ ent-CP14BlueAmanita = лазурная Аманита
 ent-CP14Dayflin = желтый днецвет
     .desc = Желтый солнечный цветок, пахнущий топленым молоком. Может быть переработан в желтый краситель.
 
+ent-CP14KeyTavernAlchemistAbstract = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Алхимик, абстрактный
+
+ent-CP14KeyAlchemy1 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Алхимик 1
+
+ent-CP14KeyAlchemy2 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Алхимик 2
+
+ent-CP14KeyBankEntrance = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Вход в банк
+
+ent-CP14KeyBankStaff = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Служебные помещения банка
+
+ent-CP14KeyBankVault = golden key
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Банковское хранилище
+
+ent-CP14KeyBankCommandantRoom = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Коммендант
+
+ent-CP14KeyBankSafe = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Банковские сейфы
+
+ent-CP14BaseKey = ключ
+    .desc = Небольшой замысловатый кусочек железа, открывающий определенные замки. Не отдавайте кому попало!
+
+ent-CP14BaseLockpick = отмычка
+    .desc = Воровской инструмент, позволяющий с достаточными навыками и сноровкой открыть любой замок.
+
+ent-CP14KeyTavernBlacksmithAbstract = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Кузнец, абстрактный
+
+ent-CP14KeyBlacksmith = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Кузнец 1
+
+ent-CP14KeyGuardEntrance = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Стража, вход
+
+ent-CP14KeyGuard = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Стража
+
+ent-CP14KeyGuardCommander = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Командир стражи
+
+ent-CP14KeyGuardWeaponStorage = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Хранилище оружия
+
+ent-CP14BaseKeyRing = кольцо для ключей
+    .desc = Позволяет комфортно носить большое количество ключей в одном месте.
+    .suffix = Пустое
+
+ent-CP14KeyRingInnkeeper = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Трактирщик
+
+ent-CP14KeyRingBlacksmith = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Кузнец
+
+ent-CP14KeyRingPersonalHouse = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Personal House
+
+ent-CP14KeyRingAlchemist = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Алхимик
+
+ent-CP14KeyRingBanker = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Банкир
+
+ent-CP14KeyRingCommandant = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Комендант
+
+ent-CP14KeyRingGuard = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Стража
+
+ent-CP14KeyRingGuardCommander = { ent-CP14BaseKeyRing }
+    .desc = { ent-CP14BaseKeyRing.desc }
+    .suffix = Командир стражи
+
+ent-CP14KeyPersonalHouseAbstract = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Личный дом, абстрактный
+
+ent-CP14KeyPersonalHouse1 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse1
+
+ent-CP14KeyPersonalHouse2 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse2
+
+ent-CP14KeyPersonalHouse3 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse3
+
+ent-CP14KeyPersonalHouse4 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse4
+
+ent-CP14KeyPersonalHouse5 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse5
+
+ent-CP14KeyPersonalHouse6 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse6
+
+ent-CP14KeyPersonalHouse7 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse7
+
+ent-CP14KeyPersonalHouse8 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse8
+
+ent-CP14KeyPersonalHouse9 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse9
+
+ent-CP14KeyPersonalHouse10 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = PersonalHouse10
+
+ent-CP14KeyTavernHall = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Вход в таверну
+
+ent-CP14KeyTavernStaff = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Служебные помещения таверны
+
+ent-CP14KeyTavernDormsAbstract = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Комнаты таверны, абстрактный
+
+ent-CP14KeyTavernDorms1 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Tavern Dorms 1
+
+ent-CP14KeyTavernDorms2 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Tavern Dorms 2
+
+ent-CP14KeyTavernDorms3 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Tavern Dorms 3
+
+ent-CP14KeyTavernDorms4 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Tavern Dorms 4
+
+ent-CP14KeyTavernDorms5 = { ent-CP14BaseKey }
+    .desc = { ent-CP14BaseKey.desc }
+    .suffix = Tavern Dorms 5
+
 ent-CP14CopperBar1 = медный слиток
     .desc = Тяжелый, слегка зеленый кусок обработанной меди.
     .suffix = 1
@@ -1058,6 +1249,105 @@ ent-CP14Cloth1 = ткань
 ent-CP14Cloth10 = { ent-CP14Cloth1 }
     .desc = { ent-CP14Cloth1.desc }
     .suffix = 10
+
+ent-CP14ModularBladeIronSpear = железный наконечник копья
+    .desc = Кусок копья без рукояти. Кузнец может использовать это, чтобы сделать оружие.
+
+ent-CP14ModularBladeIronMace = железный шар булавы
+    .desc = Тяжелый шар булавы без рукояти. Кузнец может использовать это, чтобы сделать оружие.
+
+ent-CP14ModularBladeIronSickle = железное лезвие серпа
+    .desc = Лезвие серпа без рукояти. Кузнец может использовать это, чтобы сделать оружие или инструмент.
+
+ent-CP14ModularBladeIronShovel = железная головка лопаты
+    .desc = Лезвие лопаты без рукояти. Кузнец может использовать это, чтобы сделать инструмент.
+
+ent-CP14ModularGripShort = None
+    .desc = Короткая рукоять для оружия или инстумента.
+
+ent-CP14ModularGripLong = None
+    .desc = Длинная, двуручная рукоять для тяжелого оружия или больших инструментов.
+
+ent-CP14ModularGripWooden = деревянная рукоять
+    .desc = { ent-CP14ModularGripShort.desc }
+
+ent-CP14ModularGripIron = железная рукоять
+    .desc = { ent-CP14ModularGripShort.desc }
+
+ent-CP14ModularGripGolden = золотая рукоять
+    .desc = { ent-CP14ModularGripShort.desc }
+
+ent-CP14ModularGripCopper = медная рукоять
+    .desc = { ent-CP14ModularGripShort.desc }
+
+ent-CP14ModularGripWoodenLong = длинная деревянная рукоять
+    .desc = { ent-CP14ModularGripLong.desc }
+
+ent-CP14ModularGripIronLong = длинная железная рукоять
+    .desc = { ent-CP14ModularGripLong.desc }
+
+ent-CP14ModularGripIronLongGuard = { ent-CP14ModularGripIronLong }
+    .desc = { ent-CP14ModularGripIronLong.desc }
+
+ent-CP14ModularGripGoldLong = длинная золотая рукоять
+    .desc = { ent-CP14ModularGripLong.desc }
+
+ent-CP14ModularGripCopperLong = длинная медная рукоять
+    .desc = { ent-CP14ModularGripLong.desc }
+
+ent-CP14ModularBladeDaggerBase = None
+    .desc = Лезвие кинжала. Кузнец может использовать это, чтобы сделать оружие.
+
+ent-CP14ModularBladeIronDagger = железное лезвие кинжала
+    .desc = { ent-CP14ModularBladeDaggerBase.desc }
+
+ent-CP14ModularBladeGoldDagger = золотое лезвие кинжала
+    .desc = { ent-CP14ModularBladeDaggerBase.desc }
+
+ent-CP14ModularBladeCopperDagger = медное лезвие кинжала
+    .desc = { ent-CP14ModularBladeDaggerBase.desc }
+
+ent-CP14ModularBladePickaxeBase = None
+    .desc = Массивная острая головка кирки без рукояти. Кузнец может использовать это, чтобы сделать инструмент.
+
+ent-CP14ModularBladeIronPickaxe = железная головка кирки
+    .desc = { ent-CP14ModularBladePickaxeBase.desc }
+
+ent-CP14ModularBladeGoldPickaxe = золотая головка кирки
+    .desc = { ent-CP14ModularBladePickaxeBase.desc }
+
+ent-CP14ModularBladeCopperPickaxe = медная головка кирки
+    .desc = { ent-CP14ModularBladePickaxeBase.desc }
+
+ent-CP14ModularBladeRapierBase = None
+    .desc = Лезвие рапиры без рукояти. Кузнец может использовать это, чтобы сделать оружие.
+
+ent-CP14ModularBladeIronRapier = железное лезвие рапиры
+    .desc = { ent-CP14ModularBladeRapierBase.desc }
+
+ent-CP14ModularBladeGoldRapier = золотое лезвие рапиры
+    .desc = { ent-CP14ModularBladeRapierBase.desc }
+
+ent-CP14ModularBladeCopperRapier = медное лезвие рапиры
+    .desc = { ent-CP14ModularBladeRapierBase.desc }
+
+ent-CP14ModularBladeSwordBase = None
+    .desc = Лезвие меча без рукояти. Кузнец может использовать это, чтобы сделать оружие.
+
+ent-CP14ModularBladeIronSword = железное лезвие меча
+    .desc = { ent-CP14ModularBladeSwordBase.desc }
+
+ent-CP14ModularBladeBoneSword = костяное лезвие меча
+    .desc = { ent-CP14ModularBladeSwordBase.desc }
+
+ent-CP14ModularGardeSharpGold = острая золотая гарда
+    .desc = { ent-CP14ModularGardeBase.desc }
+
+ent-CP14ModularGardeSharpIron = острая железная гарда
+    .desc = { ent-CP14ModularGardeBase.desc }
+
+ent-CP14ModularGardeSharpCopper = острая медная гарда
+    .desc = { ent-CP14ModularGardeBase.desc }
 
 ent-CP14Cauldron = котел
     .desc = Тяжелый котелок. Он не такой громоздкий, как чан, но его можно нести в руках.
@@ -1195,6 +1485,9 @@ ent-CP14BaseSharpeningStone = точильный камень
 ent-CP14Torch = факел
     .desc = В основе - палка, горящая с одной стороны. Используется для освещения территории.
 
+ent-CP14TorchIgnited = { ent-CP14Torch }
+    .desc = { ent-CP14Torch.desc }
+
 ent-CP14WallpaperBank = обои "честность банкира"
     .desc = { ent-CP14BaseWallpaper.desc }
 
@@ -1228,6 +1521,30 @@ ent-CP14WallpaperYellow = обои "солнечный ритм"
 ent-CP14TwoHandedSwordScythe = коса
     .desc = Большая двуручная коса. Что вы будете косить ею? Пшено, или головы своих врагов?
 
+ent-CP14ModularIronDagger = железный кинжал
+    .desc = Маленький, многофункциональный, острый клинок. Им можно резать мясо или бросать в гоблинов.
+
+ent-CP14ModularIronMace = железная булава
+    .desc = Тяжелый кусок металла на длинной палке. Что может быть проще этого?
+
+ent-CP14ModularIronPickaxe = железная кирка
+    .desc = Идеальна для забуривания в камни.
+
+ent-CP14ModularIronShovel = железная лопата
+    .desc = Орудие для вскапывания земли, рытья грядок или могил.
+
+ent-CP14ModularIronSickle = железный серп
+    .desc = Серп, изначально созданный как оружие для борьбы с травой, неожиданно оказался хорош и для сбора более кровавого урожая.
+
+ent-CP14ModularIronKunai = железный кунай
+    .desc = Эффективное метательное оружие. Бросьте его в стену или, нет, лучше в гоблина!
+
+ent-CP14ModularIronSword = железный меч
+    .desc = Золотой стандарт остроконечного оружия. Средняя длина, удобная рукоять. Без излишеств.
+
+ent-CP14ModularGuardHalberd = алебарда стражника
+    .desc = Стандартное вооружение имперской гвардии. Длинная железная алебарда, украшенная синими перьями и латунью.
+
 ent-CP14BaseLightCrossbow = легкий арбалет
     .desc = Небольшой, компактный арбалет, который удобно держать одной рукой. Не слишком меткий с обратной стороны.
 
@@ -1245,8 +1562,104 @@ ent-CP14_NeutralCluster_00 = Li-Ra
 ent-CP14Chasm = бездна
     .desc = И вы не видите ее дна...
 
+ent-CP14WallmountCrystalRubies = { ent-CP14WallmountCrystalBase }
+    .desc = { ent-CP14WallmountCrystalBase.desc }
+    .suffix = Red
+
+ent-CP14WallmountCrystalTopazes = { ent-CP14WallmountCrystalBase }
+    .desc = { ent-CP14WallmountCrystalBase.desc }
+    .suffix = Yellow
+
+ent-CP14WallmountCrystalEmeralds = { ent-CP14WallmountCrystalBase }
+    .desc = { ent-CP14WallmountCrystalBase.desc }
+    .suffix = Green
+
+ent-CP14WallmountCrystalSapphires = { ent-CP14WallmountCrystalBase }
+    .desc = { ent-CP14WallmountCrystalBase.desc }
+    .suffix = Cyan
+
+ent-CP14WallmountCrystalAmethysts = { ent-CP14WallmountCrystalBase }
+    .desc = { ent-CP14WallmountCrystalBase.desc }
+    .suffix = Purple
+
+ent-CP14WallmountCrystalDiamonds = { ent-CP14WallmountCrystalBase }
+    .desc = { ent-CP14WallmountCrystalBase.desc }
+    .suffix = White
+
 ent-CP14CrystalBase = сверкающий кварц
     .desc = Биолюминесцентные кристаллы кварца, которые могут принимать любой цвет, - очень удобный источник света в глубоких пещерах. К сожалению, светящиеся свойства очень трудно сохранить.
+
+ent-CP14CrystalRubiesSmall = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Red, Small
+
+ent-CP14CrystalRubiesMedium = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Red, Medium
+
+ent-CP14CrystalRubiesBig = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Red, Big
+
+ent-CP14CrystalTopazesSmall = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Yellow, Small
+
+ent-CP14CrystalTopazesMedium = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Yellow, Medium
+
+ent-CP14CrystalTopazesBig = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Yellow, Big
+
+ent-CP14CrystalEmeraldsSmall = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Green, Small
+
+ent-CP14CrystalEmeraldsMedium = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Green, Medium
+
+ent-CP14CrystalEmeraldsBig = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Green, Big
+
+ent-CP14CrystalSapphiresSmall = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Cyan, Small
+
+ent-CP14CrystalSapphiresMedium = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Cyan, Medium
+
+ent-CP14CrystalSapphiresBig = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Cyan, Big
+
+ent-CP14CrystalAmethystsSmall = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Purple, Small
+
+ent-CP14CrystalAmethystsMedium = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Purple, Medium
+
+ent-CP14CrystalAmethystsBig = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = Purple, Big
+
+ent-CP14CrystalDiamondsSmall = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = White, Small
+
+ent-CP14CrystalDiamondsMedium = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = White, Medium
+
+ent-CP14CrystalDiamondsBig = { ent-CP14CrystalBase }
+    .desc = { ent-CP14CrystalBase.desc }
+    .suffix = White, Big
 
 ent-CP14DungeonEntrance = спуск в подземелье
     .desc = Темные глубины подземного мира зовут вас.
@@ -1265,6 +1678,21 @@ ent-CP14BaseSharpeningStoneStructure = стационарный точильны
 
 ent-CP14TravelingShop = городская торговая информационная доска
     .desc = Позволяет отслеживать, что продается и покупается в городе прямо сейчас.
+
+ent-CP14DPSMeter = DPS Meter
+    .suffix = Debug, DO NOT MAP
+
+ent-CP14WallmountFlagAlchemist = гобелен алхимика
+    .desc = Гобелен с символом зелья, указывающий на то, что здесь обитают алхимики.
+
+ent-CP14WallmountFlagBlacksmith = гобелен кузнеца
+    .desc = Гобелен с символом наковальни, указывающий на то, что здесь обитают кузнецы.
+
+ent-CP14WallmountFlagTavern = гобелен таверны
+    .desc = Гобелен с символом зелья, указывающий на то, что здесь находится таверна.
+
+ent-CP14WallmountFlagBank = гобелен банка
+    .desc = Гобелен с символом денег, указывающий на то, что здесь находится банк.
 
 ent-CP14WallmountPaintingSkull = картина черепа
     .desc = Причудливая картина с черепом. Угнетает.
@@ -1304,9 +1732,25 @@ ent-CP14IronDoorMirrored = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Opened, Mirrored
 
-ent-CP14IronDoorBlacksmith = { ent-CP14IronDoor }
-    .desc = { ent-CP14IronDoor.desc }
-    .suffix = Blacksmith
+ent-CP14IronDoorWindowedMirrored = { ent-CP14IronDoorWindowed }
+    .desc = { ent-CP14IronDoorWindowed.desc }
+    .suffix = Opened, Mirrored
+
+ent-CP14WoodenDoorMirrored = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = Opened, Mirrored
+
+ent-CP14WoodenDoorWindowedMirrored = { ent-CP14WoodenDoorWindowed }
+    .desc = { ent-CP14WoodenDoorWindowed.desc }
+    .suffix = Opened, Mirrored
+
+ent-CP14WoodenDoorTavernAlchemy1 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = Alchemy 1
+
+ent-CP14WoodenDoorTavernAlchemy2 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = Alchemy 2
 
 ent-CP14IronDoorBankStaff = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
@@ -1324,21 +1768,97 @@ ent-CP14IronDoorBankCommandantRoom = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Bank Commandant room
 
-ent-CP14IronDoorWindowedMirrored = { ent-CP14IronDoorWindowed }
-    .desc = { ent-CP14IronDoorWindowed.desc }
-    .suffix = Opened, Mirrored
-
 ent-CP14IronDoorWindowedBankEntrance = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
     .suffix = Bank Entrance
 
-ent-CP14IronDoorWindowedBlacksmith = { ent-CP14IronDoorWindowed }
-    .desc = { ent-CP14IronDoorWindowed.desc }
+ent-CP14IronDoorBlacksmith1 = { ent-CP14IronDoor }
+    .desc = { ent-CP14IronDoor.desc }
     .suffix = Blacksmith
 
-ent-CP14WoodenDoorMirrored = { ent-CP14WoodenDoor }
+ent-CP14IronDoorBlacksmith2 = { ent-CP14IronDoor }
+    .desc = { ent-CP14IronDoor.desc }
+    .suffix = Blacksmith
+
+ent-CP14IronDoorGuard = { ent-CP14IronDoor }
+    .desc = { ent-CP14IronDoor.desc }
+    .suffix = Guard
+
+ent-CP14IronDoorGuardCommandantRoom = { ent-CP14IronDoor }
+    .desc = { ent-CP14IronDoor.desc }
+    .suffix = Guard Commander
+
+ent-CP14IronDoorGuardWeaponStorage = { ent-CP14IronDoor }
+    .desc = { ent-CP14IronDoor.desc }
+    .suffix = Guard, Weapon Storage
+
+ent-CP14IronDoorWindowedGuardEntrance = { ent-CP14IronDoorWindowed }
+    .desc = { ent-CP14IronDoorWindowed.desc }
+    .suffix = Guard, Entrance
+
+ent-CP14FenceIronGrilleGateGuard = { ent-CP14FenceIronGrilleGate }
+    .desc = { ent-CP14FenceIronGrilleGate.desc }
+    .suffix = Guard
+
+ent-CP14WoodenDoorPersonalHouse1 = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
-    .suffix = Opened, Mirrored
+    .suffix = PersonalHouse1
+
+ent-CP14WoodenDoorPersonalHouse2 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse2
+
+ent-CP14WoodenDoorPersonalHouse3 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse3
+
+ent-CP14WoodenDoorPersonalHouse4 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse4
+
+ent-CP14WoodenDoorPersonalHouse5 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse5
+
+ent-CP14WoodenDoorPersonalHouse6 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse6
+
+ent-CP14WoodenDoorPersonalHouse7 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse7
+
+ent-CP14WoodenDoorPersonalHouse8 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse8
+
+ent-CP14WoodenDoorPersonalHouse9 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse9
+
+ent-CP14WoodenDoorPersonalHouse10 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse10
+
+ent-CP14WoodenDoorPersonalHouse11 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse11
+
+ent-CP14WoodenDoorPersonalHouse12 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse12
+
+ent-CP14WoodenDoorPersonalHouse13 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse13
+
+ent-CP14WoodenDoorPersonalHouse14 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse14
+
+ent-CP14WoodenDoorPersonalHouse15 = { ent-CP14WoodenDoor }
+    .desc = { ent-CP14WoodenDoor.desc }
+    .suffix = PersonalHouse15
 
 ent-CP14WoodenDoorTavernStaff = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
@@ -1363,14 +1883,6 @@ ent-CP14WoodenDoorTavernDorms4 = { ent-CP14WoodenDoor }
 ent-CP14WoodenDoorTavernDorms5 = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
     .suffix = Tavern Dorms 5
-
-ent-CP14WoodenDoorTavernAlchemy = { ent-CP14WoodenDoor }
-    .desc = { ent-CP14WoodenDoor.desc }
-    .suffix = Alchemy
-
-ent-CP14WoodenDoorWindowedMirrored = { ent-CP14WoodenDoorWindowed }
-    .desc = { ent-CP14WoodenDoorWindowed.desc }
-    .suffix = Opened, Mirrored
 
 ent-CP14WoodenDoorWindowedTavernHall = { ent-CP14WoodenDoorWindowed }
     .desc = { ent-CP14WoodenDoorWindowed.desc }
@@ -1642,8 +2154,17 @@ ent-CP14WallmountLamp = { ent-CP14WallmountLampEmpty }
     .desc = { ent-CP14WallmountLampEmpty.desc }
     .suffix = Small crystal
 
-ent-CP14TravelingStoreshipAnchor = якорь для торгового корабля
-    .desc = Точка приземления путешествующего корабля к поверхности. Следите за небом, чтобы вас не раздавило!
+ent-CP14FrameWoodenCrushedMedium = wooden wall frame
+    .suffix = CrushedMedium
+
+ent-CP14FrameWoodenCrushedLow = wooden wall frame
+    .suffix = CrushedLow
+
+ent-CP14WallStonebrickCrushedMedium = stone brick wall
+    .suffix = CrushedMedium
+
+ent-CP14WallStonebrickCrushedLow = stone brick wall
+    .suffix = CrushedLow
 
 ent-CP14ShuttleWingBase = крыло воздушного корабля
     .desc = Гигантские перепончатые крылья, способные, наряду с магией, удерживать в воздухе самые тяжелые предметы.
@@ -1731,9 +2252,6 @@ ent-CP14WindowMarbleBrick = окно в стене из мраморного к�
 ent-CP14FlameCreationArtificialFlame = искуственное пламя
     .desc = Магически созданное искусственное пламя, горящее прямо в воздухе. Неплохой источник света или оружие, если бросить его кому-нибудь в лицо.
 
-ent-CP14DaggerIce = ледяной кинжал
-    .desc = Кусок острого магического льда. Через некоторое время действие заклинания ослабнет, и он исчезнет.
-
 ent-CP14LiquidDropWater = парящая капля жидкости
     .desc = Сгусток жидкости, удерживаемый в форме шара с помощью магии.
     .suffix = Вода
@@ -1749,6 +2267,11 @@ ent-CP14ClothingCloakCommandantJacket = куртка коменданта
 
 ent-CP14ClothingCloakCaptainJacket = куртка капитана
     .desc = Белый и золотой цвета говорят о том, что вы обращаетесь к высшим силам.
+
+ent-CP14MobMonsterMosquito = рой москитов-кровопийц
+    .desc = Кровожадный рой мелких комаров только и ждет мягкой плоти для кровавого пиршества.
+
+ent-CP14BaseMobSkeleton = Мистер Скелет
 
 ent-CP14BaseMobZombie = Мистер Зомби
 
@@ -1770,29 +2293,14 @@ ent-CP14BaseBattleHammer = боевой молот
 ent-CP14BaseBattleStaff = боевой посох
     .desc = Чрезвычайно простое и эффективное оружие - длинная прямая и тяжелая палка.
 
-ent-CP14BaseDagger = кинжал
-    .desc = Маленький, многофункциональный, острый клинок. Им можно резать мясо или бросать в гоблинов.
-
 ent-CP14BaseHandheldAxe = ручной топор
     .desc = Небольшой топор, отлично подходит для рубки дерева или сухожилий.
 
 ent-CP14BaseLightHammer = лёгкий молоток
     .desc = Небольшой молоток. Хорошо подходит для плотницких работ, а также для раскалывания черепов.
 
-ent-CP14BaseMace = булава
-    .desc = Тяжелый кусок металла на длинной палке. Что может быть проще этого?
-
 ent-CP14BaseShield = щит
     .desc = Деревянный щит, способный выдержать несколько ударов.
-
-ent-CP14BaseSickle = серп
-    .desc = Изначально созданный как оружие против травы, серп неожиданно оказался хорош и при сборе кровавого урожая.
-
-ent-CP14BaseThrowableSpear = метательное копье
-    .desc = Оружие, которое выполняет свои обязанности с эпохи гигантов.
-
-ent-CP14BaseSword = меч
-    .desc = золотой стандарт остроконечного оружия. Средняя длина, удобная рукоять. Без излишеств.
 
 ent-CP14BaseTwoHandedSword = двуручный меч
     .desc = Мощное оружие, требующее огромной силы и мастерства для эффективного использования.
@@ -1809,14 +2317,11 @@ ent-CP14BaseMop = деревянная швабра
 ent-CP14BaseBroom = деревянная метла
     .desc = Подметать засохшие следы и другие пятна с пола
 
-ent-CP14BasePickaxe = кирка
-    .desc = Зазубренный до совершенства, для втыкания в камни
-
-ent-CP14BaseShovel = лопата
-    .desc = Орудие для вскапывания земли, рытья грядок или могил.
-
 ent-CP14BaseWrench = гаечный ключ
     .desc = Обычный инструмент для сборки и разборки. Помните: левша защелкивается, правша снимается.
+
+ent-CP14WallmountFlagBase = гобелен
+    .desc = Кусок ткани, прикрепленный к стене.
 
 ent-CP14IronDoor = железная дверь
     .desc = Ну, если здесь есть массивная железная дверь, то за ней должно быть что-то ценное.
@@ -1841,12 +2346,11 @@ ent-CP14FenceIronGrilleStraight = { ent-CP14FenceIronGrilleBase }
     .desc = { ent-CP14FenceIronGrilleBase.desc }
     .suffix = Straight
 
-ent-CP14FenceIronGrilleCorner = { ent-CP14FenceIronGrilleBase }
-    .desc = { ent-CP14FenceIronGrilleBase.desc }
-    .suffix = Corner
-
 ent-CP14FenceIronGrilleGate = железные решетчатые ворота
     .desc = Тяжелые железные ворота в решетках. Выглядит серьезно.
+
+ent-CP14FenceIronGrilleWindowBase = окно в железной решетке
+    .desc = Прочный барьер из сваренных вместе железных прутьев. Отсутствие нижней части позволяет проносить через него предметы.
 
 ent-CP14BaseFenceWood = деревянный забор
     .desc = Деревянный забор. Не посадите заноз!
