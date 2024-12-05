@@ -8,6 +8,7 @@ using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared.Maps;
 using Content.Shared.Paper;
 using Content.Shared.Physics;
+using Content.Shared.Station.Components;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using JetBrains.Annotations;
@@ -97,6 +98,9 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle.Value);
         travelingStoreShipComp.Station = station;
+
+        var member = EnsureComp<StationMemberComponent>(shuttle);
+        member.Station = station;
 
         station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);
         UpdateStorePositions(station);
@@ -276,44 +280,10 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         {
             var coord = Transform(moneyBox.Value).Coordinates;
 
-            if (station.Comp.Balance > 0)
+            var coins = _currency.GenerateMoney(station.Comp.Balance, coord);
+            foreach (var coin in coins)
             {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.PP.Key, station.Comp.Balance, coord, out var remainder);
-                station.Comp.Balance = remainder;
-                foreach (var coin in coins)
-                {
-                    _storage.Insert(moneyBox.Value, coin, out _);
-                }
-            }
-
-            if (station.Comp.Balance > 0)
-            {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.GP.Key, station.Comp.Balance, coord, out var remainder);
-                station.Comp.Balance = remainder;
-                foreach (var coin in coins)
-                {
-                    _storage.Insert(moneyBox.Value, coin, out _);
-                }
-            }
-
-            if (station.Comp.Balance > 0)
-            {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.SP.Key, station.Comp.Balance, coord, out var remainder);
-                station.Comp.Balance = remainder;
-                foreach (var coin in coins)
-                {
-                    _storage.Insert(moneyBox.Value, coin, out _);
-                }
-            }
-
-            if (station.Comp.Balance > 0)
-            {
-                var coins = _currency.GenerateMoney(CP14SharedCurrencySystem.CP.Key, station.Comp.Balance, coord, out var remainder);
-                station.Comp.Balance = remainder;
-                foreach (var coin in coins)
-                {
-                    _storage.Insert(moneyBox.Value, coin, out _);
-                }
+                _storage.Insert(moneyBox.Value, coin, out _);
             }
         }
     }

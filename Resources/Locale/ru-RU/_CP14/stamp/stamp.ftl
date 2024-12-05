@@ -1,4 +1,4 @@
-cp14-stamp-empire = Империя
+cp14-stamp-salary = Интендант гвардии
 
 cp14-stamp-denied = Отказано
 cp14-stamp-approved = Утверждено

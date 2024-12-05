@@ -7,10 +7,10 @@ namespace Content.Server._CP14.RoleSalary;
 public sealed partial class CP14StationSalaryComponent : Component
 {
     /// <summary>
-    /// listing all the roles and their salaries
+    /// listing all the departments and their salaries
     /// </summary>
     [DataField]
-    public Dictionary<JobPrototype, int> Salary = new();
+    public Dictionary<ProtoId<DepartmentPrototype>, int> Salary = new();
 
     [DataField, AutoPausedField]
     public TimeSpan NextSalaryTime = TimeSpan.Zero;

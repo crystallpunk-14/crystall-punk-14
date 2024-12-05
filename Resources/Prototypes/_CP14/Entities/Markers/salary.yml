@@ -1,5 +1,7 @@
 - type: entity
   id: CP14SalarySpawner
+  categories: [ ForkFiltered ]
   parent: BaseItem
+  name: station salary spawner
   components:
   - type: CP14SalarySpawner
