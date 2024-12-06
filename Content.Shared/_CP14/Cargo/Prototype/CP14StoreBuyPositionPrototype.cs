@@ -40,13 +40,16 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
 
     [DataField(required: true)]
     public List<CP14StoreBuyService> Services = new();
+
+    [DataField]
+    public bool RoundstartAvailable = true;
 }
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]
 public abstract partial class CP14StoreBuyService
 {
-    public abstract void Buy(EntityManager entManager, Entity<CP14StationTravelingStoreShipTargetComponent> station);
+    public abstract void Buy(EntityManager entManager, IPrototypeManager prototype,  Entity<CP14StationTravelingStoreShipTargetComponent> station);
 
     public abstract string? GetDescription(IPrototypeManager prototype, IEntityManager entSys);
 }

@@ -34,6 +34,9 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
 
     [DataField(required: true)]
     public CP14StoreSellService Service = default!;
+
+    [DataField]
+    public bool RoundstartAvailable = true;
 }
 
 [ImplicitDataDefinitionForInheritors]

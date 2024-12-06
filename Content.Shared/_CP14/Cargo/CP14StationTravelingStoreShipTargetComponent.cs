@@ -32,6 +32,21 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     [DataField]
     public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(4);
 
+    /// <summary>
+    /// Available to random selecting and pusharing
+    /// </summary>
+    [DataField]
+    public HashSet<CP14StoreBuyPositionPrototype> AvailableBuyPosition = new();
+
+    /// <summary>
+    /// Available to random selecting and pusharing
+    /// </summary>
+    [DataField]
+    public HashSet<CP14StoreSellPositionPrototype> AvailableSellPosition = new();
+
+    /// <summary>
+    /// Fixed prices and positions of the current flight
+    /// </summary>
     [DataField]
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentBuyPositions = new(); //Proto, price
 

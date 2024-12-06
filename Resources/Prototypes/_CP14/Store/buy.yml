@@ -1,5 +1,25 @@
 - type: storePositionBuy
+  id: AlchemyUnlockT1
+  name: cp14-store-buy-alchemy-unlock-t1-name
+  desc: cp14-store-buy-alchemy-unlock-t1-desc
+  code: ALCHEMY
+  icon: 
+    sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
+    state: full
+  price: 
+    min: 100
+    max: 200
+  services:
+  - !type:CP14UnlockPositionsService
+    addBuyPositions:
+    - AlchemyNormalizer
+    - AlchemyVials
+    removeBuyPositions:
+    - AlchemyUnlockT1
+
+- type: storePositionBuy
   id: AlchemyNormalizer
+  roundstartAvailable: false
   name: cp14-store-buy-alchemy-normalizer-name
   desc: cp14-store-buy-alchemy-normalizer-desc
   code: NORMALIZER
@@ -7,8 +27,8 @@
     sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
     state: base
   price: 
-    min: 200
-    max: 400
+    min: 150
+    max: 300
   services:
   - !type:CP14BuyItemsService
     product:
@@ -16,6 +36,7 @@
 
 - type: storePositionBuy
   id: AlchemyVials
+  roundstartAvailable: false
   name: cp14-store-buy-alchemy-vials-name
   desc: cp14-store-buy-alchemy-vials-desc
   code: VIALS
@@ -23,8 +44,8 @@
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
   price: 
-    min: 80
-    max: 180
+    min: 60
+    max: 140
   services:
   - !type:CP14BuyItemsService
     product:
