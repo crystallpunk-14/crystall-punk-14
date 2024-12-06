@@ -46,6 +46,7 @@
     solutionName: vat
     injectOnly: false
     ignoreMobs: true
+    ignoreClosed: false
     minTransferAmount: 10
     maxTransferAmount: 100
     transferAmount: 15
@@ -138,6 +139,7 @@
     solutionName: mortar
     injectOnly: false
     ignoreMobs: true
+    ignoreClosed: false
     minTransferAmount: 1
     maxTransferAmount: 10
     transferAmount: 5
@@ -209,6 +211,7 @@
     solutionName: vial
     injectOnly: false
     ignoreMobs: true
+    ignoreClosed: false
     minTransferAmount: 0.25
     maxTransferAmount: 1
     transferAmount: 0.25
