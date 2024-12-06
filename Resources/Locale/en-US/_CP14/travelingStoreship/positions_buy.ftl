@@ -26,3 +26,6 @@ cp14-store-buy-fabric-desc = Large stock of fabric and strings, for making exqui
 
 cp14-store-buy-energy-name = Energy reserve
 cp14-store-buy-energy-desc = Energy crystals in both medium and small sizes, and in addition, mana gloves. A complete set to supply your energy devices with energy.
+
+cp14-store-buy-cheese-name = Cheese stockpile
+cp14-store-buy-cheese-desc = Cheese. Lots of cheese, in case you don't have cheese.

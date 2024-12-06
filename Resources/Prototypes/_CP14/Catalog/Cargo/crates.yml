@@ -125,3 +125,13 @@
         amount: 3
       - id: CP14ManaOperationGlove
         amount: 2
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledCheese
+  suffix: Cheese
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14FoodCheeseWheel
+        amount: 5

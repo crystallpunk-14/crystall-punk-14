@@ -146,3 +146,19 @@
   - !type:CP14BuyItemsService
     product:
       CP14BrassChestFilledEnergyCrystals: 1
+
+- type: storePositionBuy
+  id: Cheese
+  name: cp14-store-buy-cheese-name
+  desc: cp14-store-buy-cheese-desc
+  code: CHEESE
+  icon: 
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: cheese_wheel
+  price: 
+    min: 100
+    max: 250
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledCheese: 1

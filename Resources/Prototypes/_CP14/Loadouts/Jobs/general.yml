@@ -299,6 +299,7 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
+  - CP14DemiplanKey
 
 - type: loadout
   id: CP14MagicHealingStaff
@@ -388,6 +389,12 @@
   storage:
     back:
     - CP14Torch
+
+- type: loadout
+  id: CP14DemiplanKey
+  storage:
+    back:
+    - CP14DemiplanKey
 
 # Spells
 
