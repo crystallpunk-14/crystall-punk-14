@@ -103,7 +103,30 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         member.Station = station;
 
         station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);
+
+        AddRoundstartTradingPositions(station);
         UpdateStorePositions(station);
+    }
+
+    private void AddRoundstartTradingPositions(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    {
+        if (_buyProto is not null)
+        {
+            foreach (var buy in _buyProto)
+            {
+                if (buy.RoundstartAvailable)
+                    station.Comp.AvailableBuyPosition.Add(buy);
+            }
+        }
+
+        if (_sellProto is not null)
+        {
+            foreach (var sell in _sellProto)
+            {
+                if (sell.RoundstartAvailable)
+                    station.Comp.AvailableSellPosition.Add(sell);
+            }
+        }
     }
 
     private void UpdateStorePositions(Entity<CP14StationTravelingStoreShipTargetComponent> station)
@@ -111,19 +134,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         station.Comp.CurrentBuyPositions.Clear();
         station.Comp.CurrentSellPositions.Clear();
 
-        if (_buyProto is not null)
+        foreach (var buyPos in station.Comp.AvailableBuyPosition)
         {
-            foreach (var buyPos in _buyProto)
-            {
-                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
-            }
+            station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
         }
-        if (_sellProto is not null)
+        foreach (var sellPos in station.Comp.AvailableSellPosition)
         {
-            foreach (var sellPos in _sellProto)
-            {
-                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
-            }
+            station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
         }
     }
 
@@ -239,7 +256,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             foreach (var service in indexedBuyed.Services)
             {
-                service.Buy(EntityManager, station);
+                service.Buy(EntityManager, _proto, station);
             }
         }
     }
