@@ -14,8 +14,8 @@
       shader: unshaded
   - type: PointLight
     castShadows: false
-    radius: 25
+    radius: 50
     energy: 5.0
-    mask: /Textures/Effects/LightMasks/double_cone.png
+    mask: /Textures/_CP14/Effects/LightMasks/lighthouse_cone.png
   - type: RotatingLight
     speed: 15
