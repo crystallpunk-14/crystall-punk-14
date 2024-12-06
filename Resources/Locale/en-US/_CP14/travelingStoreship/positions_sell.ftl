@@ -15,5 +15,5 @@ cp14-store-sell-wheat-desc = We're waiting for a description from the lorekeeper
 cp14-store-sell-dye-name = 10 dyes
 cp14-store-sell-dye-desc = We're waiting for a description from the lorekeepers.
 
-cp14-store-sell-wood-name = 10 wooden planks
+cp14-store-sell-wood-name = 30 wooden planks
 cp14-store-sell-wood-desc = We're waiting for a description from the lorekeepers.

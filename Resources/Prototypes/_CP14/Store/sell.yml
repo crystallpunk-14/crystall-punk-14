@@ -84,4 +84,4 @@
     max: 55
   service: !type:CP14SellStackService
     stackId: CP14WoodenPlanks
-    count: 50
+    count: 30
