@@ -53,13 +53,17 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
     public override string? GetDescription(IPrototypeManager prototype, IEntityManager entSys)
     {
         var sb = new StringBuilder();
+        if (AddBuyPositions.Count > 0)
+            sb.Append(Loc.GetString("cp14-store-service-unlock-buy") + "\n");
         foreach (var buy in AddBuyPositions)
         {
             if (!prototype.TryIndex(buy, out var indexedBuy))
                 continue;
 
-            sb.Append(Loc.GetString("cp14-store-service-unlock-buy") + " " + Loc.GetString(indexedBuy.Name) + "\n");
+            sb.Append(Loc.GetString(indexedBuy.Name) + "\n");
         }
+        if (AddSellPositions.Count > 0)
+            sb.Append(Loc.GetString("cp14-store-service-unlock-sell") + "\n");
         foreach (var sell in AddSellPositions)
         {
             if (!prototype.TryIndex(sell, out var indexedSell))
