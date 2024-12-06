@@ -86,6 +86,8 @@
       - id: CP14ClothingShirtYellowWizard
       - id: CP14FoodPotato
       - id: CP14Cloth10
+      - id: CP14CrayonWhite
+        weight: 2
     - !type:GroupSelector
       children:
       - id: CP14DyeYellow
