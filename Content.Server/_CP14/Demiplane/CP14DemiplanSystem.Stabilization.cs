@@ -67,8 +67,8 @@ public sealed partial class CP14DemiplaneSystem
 
         while (query.MoveNext(out var uid, out var stabilizer, out var xform))
         {
-            TryTeleportOutDemiplane(demiplane, uid);
-            _body.GibBody(uid);
+            if (TryTeleportOutDemiplane(demiplane, uid))
+                _body.GibBody(uid);
         }
 
         QueueDel(demiplane);
