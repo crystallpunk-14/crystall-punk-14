@@ -8,7 +8,6 @@ using Content.Shared.Fluids.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Maps;
-using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -30,8 +29,8 @@ public sealed class CP14FootprintsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<Components.CP14FootprintTrailerComponent, MoveEvent>(OnTrailerMove);
-        SubscribeLocalEvent<Components.CP14FootprintTrailerComponent, StartCollideEvent>(OnTrailerCollide);
+        SubscribeLocalEvent<CP14FootprintTrailerComponent, MoveEvent>(OnTrailerMove);
+        SubscribeLocalEvent<CP14FootprintTrailerComponent, StartCollideEvent>(OnTrailerCollide);
 
         SubscribeLocalEvent<CP14FootprintHolderComponent, GotEquippedEvent>(OnHolderEquipped);
         SubscribeLocalEvent<CP14FootprintHolderComponent, GotUnequippedEvent>(OnHolderUnequipped);
@@ -135,6 +134,9 @@ public sealed class CP14FootprintsSystem : EntitySystem
 
     private void OnTrailerMove(Entity<Components.CP14FootprintTrailerComponent> ent, ref MoveEvent args)
     {
+        //Temporaly disabled
+        return;
+        
         if (ent.Comp.holder is null)
             return;
         var footprint = ent.Comp.holder;
