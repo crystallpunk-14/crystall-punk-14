@@ -33,6 +33,7 @@
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 5
       castDelay: 0.5
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneFlashLight
