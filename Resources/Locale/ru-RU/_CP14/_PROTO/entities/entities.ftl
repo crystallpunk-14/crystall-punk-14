@@ -26,6 +26,10 @@ ent-CP14BrassChestFilledEnergyCrystals = { ent-CP14BrassChest }
     .desc = { ent-CP14BrassChest.desc }
     .suffix = Энергокристаллы
 
+ent-CP14BrassChestFilledCheese = { ent-CP14BrassChest }
+    .desc = { ent-CP14BrassChest.desc }
+    .suffix = Сыр
+
 ent-CP14WoodenClosetAlchemyFilled = { ent-CP14WoodenCloset }
     .desc = { ent-CP14WoodenCloset.desc }
     .suffix = Алхимик, заполненный
@@ -370,6 +374,12 @@ ent-CP14ClothingCloakFurcapeBlue = { ent-CP14ClothingCloakFurcapeBlack }
 ent-CP14ClothingCloakRitualAttireLeather = ритуальный наряд из кожи
     .desc = Традиционное одеяние магов Юга, прошедших ритуал.
 
+ent-CP14ClothingCloakWhite = белый плащ
+    .desc = Просторный белый плащ. Для тех, кто любит выглядеть эстетично.
+
+ent-CP14ClothingCloakGreen = зеленый плащ
+    .desc = Просторный зеленый плащ. Для тех, кто любит выглядеть эстетично.
+
 ent-CP14ClothingEyesMonocle = монокль
     .desc = Аристократично и красиво.
 
@@ -549,6 +559,8 @@ ent-CP14BankStorageMarker = маркер хранилища банка
 ent-CP14TravelingStoreshipAnchor = якорь для торгового корабля
     .desc = Точка приземления путешествующего корабля к поверхности. Следите за небом, чтобы вас не раздавило!
 
+ent-CP14SalarySpawner = спавнер зарплаты
+
 ent-CP14SpawnPointGuardCommander = командир стражи
     .desc = { ent-CP14SpawnPointJobBase.desc }
 
@@ -600,11 +612,11 @@ ent-CP14BaseBiomeSpawner = спавнер биомов
 
 ent-CP14BiomeSpawnerGrassland = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
-    .suffix = Луга
+    .suffix = Comoss, grassland
 
 ent-CP14BiomeSpawnerCave = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
-    .suffix = Пещеры
+    .suffix = Comoss, cave
 
 ent-CP14BiomeSpawnerCaveEmpty = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
@@ -644,6 +656,7 @@ ent-CP14ImpactEffectDigging = { ent-CP14BaseMagicImpact }
 
 ent-CP14MobUndeadSkeleton = скелет
     .desc = Оживленный темной магией хрупкий скелет. Обычно скелеты - чрезвычайно разумные существа, управляемые недавно умершей душой.
+
 ent-CP14MobSpaceCobra = кобра
 
 ent-CP14MobUndeadZombie = ходячий труп
@@ -696,6 +709,33 @@ ent-CP14BaseMobGoblin = мистер Гоблин
 ent-CP14BaseMobHuman = мистер Человек
 
 ent-CP14BaseMobTiefling = мистер Тифлинг
+
+ent-CP14Crayon = мелок
+    .desc = Цветной мелок для рисования.
+
+ent-CP14CrayonWhite = белый мелок
+    .desc = { ent-CP14Crayon.desc }
+
+ent-CP14CrayonRainbow = магический радуждный мелок
+    .desc = { ent-CP14Crayon.desc }
+
+ent-CP14CrayonBlack = черный мелок
+    .desc = { ent-CP14Crayon.desc }
+
+ent-CP14CrayonRed = красный мелок
+    .desc = { ent-CP14Crayon.desc }
+
+ent-CP14CrayonYellow = желтый мелок
+    .desc = { ent-CP14Crayon.desc }
+
+ent-CP14CrayonGreen = зеленый мелок
+    .desc = { ent-CP14Crayon.desc }
+
+ent-CP14CrayonBlue = синий мелок
+    .desc = { ent-CP14Crayon.desc }
+
+ent-CP14CrayonPurple = фиолетовый мелок
+    .desc = { ent-CP14Crayon.desc }
 
 ent-CP14BookImperialLawsHandBook = имперские законы
     .desc = Книга об имперских законах.
@@ -1051,6 +1091,9 @@ ent-CP14KeyRingGuardCommander = { ent-CP14BaseKeyRing }
 ent-CP14KeyPersonalHouseAbstract = { ent-CP14BaseKey }
     .desc = { ent-CP14BaseKey.desc }
     .suffix = Личный дом, абстрактный
+
+ent-CP14KeyPersonalHouseAbstractLoadoutDummy = Ключ к случайному личному дом (ограничено на карту)
+    .desc = { ent-CP14BaseKey.desc }
 
 ent-CP14KeyPersonalHouse1 = { ent-CP14BaseKey }
     .desc = { ent-CP14BaseKey.desc }
@@ -1642,6 +1685,9 @@ ent-CP14DungeonEntranceAutoLink = { ent-CP14DungeonEntrance }
 ent-CP14DungeonExitAutoLink = { ent-CP14DungeonExit }
     .desc = { ent-CP14DungeonExit.desc }
 
+ent-CP14Lighthouse = маяк
+    .desc = Свет во тьме.
+
 ent-CP14BaseSharpeningStoneStructure = стационарный точильный камень
     .desc = Прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
 
@@ -1659,6 +1705,24 @@ ent-CP14WallmountFlagTavern = гобелен таверны
 
 ent-CP14WallmountFlagBank = гобелен банка
     .desc = Гобелен с символом денег, указывающий на то, что здесь находится банк.
+
+ent-CP14WallmountFlagBankVault = гобелен банка
+    .desc = Гобелен с символом сейфы, указывающий что здесь находится хранилище банка.
+
+ent-CP14WallmountFlagBankShip = гобелен торгового корабля
+    .desc = Гобелен с символом корабля, указывающий что здесь находится торговый корабль.
+
+ent-CP14WallmountFlagBankCommandant = гобелен коменданта
+    .desc = Гобелен с символом звезды, указывающий что тут живет комендант.
+
+ent-CP14WallmountFlagGuardSwords = гобелен стражи
+    .desc = Гобелен с символом мечей, указывающий что тут обитает стража.
+
+ent-CP14WallmountFlagGuardShield = гобелен стражи
+    .desc = Гобелен с символом щита, указывающий что тут обитает стража.
+
+ent-CP14WallmountFlagGuardCommander = гобелен командира стражи
+    .desc = Гобелен с символом звезды, указывающий что тут обитает командир стражи.
 
 ent-CP14WallmountPaintingSkull = картина черепа
     .desc = Причудливая картина с черепом. Угнетает.
@@ -2334,12 +2398,12 @@ ent-CP14FenceWoodSmallCorner = { ent-CP14BaseFenceWoodSmall }
 ent-CP14FenceWoodSmallGate = маленькие деревянные ворота для забора
     .desc = Представляете ли вы, что ждет вас за этими воротами? Это может быть как туалет, так и роскошный особняк.
 
-ent-CP14BaseBarrel = wooden barrel
-    .desc = The simplest design for storing liquids.
+ent-CP14BaseBarrel = деревянная бочка
+    .desc = Самая простая конструкция для хранения жидкостей.
     .suffix = Empty
 
-ent-CP14WoodenBed = wooden bed
-    .desc = Wooden bed. Better than nothing.
+ent-CP14WoodenBed = деревянная кровать
+    .desc = Деревянная кровать. Лучше, чем ничего.
 
 ent-CP14WoodenCabinet = деревянный комод
     .desc = Непримечательный деревянный комод.

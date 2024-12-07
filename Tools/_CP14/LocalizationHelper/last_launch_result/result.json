@@ -55,6 +55,13 @@
         "parent": "CP14BrassChest",
         "suffix": "EnergyCrystals"
     },
+    "CP14BrassChestFilledCheese": {
+        "id": "CP14BrassChestFilledCheese",
+        "name": null,
+        "description": null,
+        "parent": "CP14BrassChest",
+        "suffix": "Cheese"
+    },
     "CP14WoodenClosetAlchemyFilled": {
         "id": "CP14WoodenClosetAlchemyFilled",
         "name": null,
@@ -1051,8 +1058,15 @@
     },
     "CP14ClothingCloakWhite": {
         "id": "CP14ClothingCloakWhite",
-        "name": null,
-        "description": null,
+        "name": "white cloak",
+        "description": "A spacious white coat. For those who like to look aesthetically pleasing.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakGreen": {
+        "id": "CP14ClothingCloakGreen",
+        "name": "green cloak",
+        "description": "A spacious green coat. For those who like to look aesthetically pleasing.",
         "parent": "CP14ClothingCloakBase",
         "suffix": null
     },
@@ -1539,6 +1553,13 @@
         "parent": "MarkerBase",
         "suffix": null
     },
+    "CP14SalarySpawner": {
+        "id": "CP14SalarySpawner",
+        "name": "station salary spawner",
+        "description": null,
+        "parent": "BaseItem",
+        "suffix": null
+    },
     "CP14SpawnPointJobBase": {
         "id": "CP14SpawnPointJobBase",
         "name": null,
@@ -1698,14 +1719,14 @@
         "name": null,
         "description": null,
         "parent": "CP14BaseBiomeSpawner",
-        "suffix": "Grassland"
+        "suffix": "Comoss, grassland"
     },
     "CP14BiomeSpawnerCave": {
         "id": "CP14BiomeSpawnerCave",
         "name": null,
         "description": null,
         "parent": "CP14BaseBiomeSpawner",
-        "suffix": "Cave"
+        "suffix": "Comoss, cave"
     },
     "CP14BiomeSpawnerCaveEmpty": {
         "id": "CP14BiomeSpawnerCaveEmpty",
@@ -2020,6 +2041,69 @@
         "name": null,
         "description": null,
         "parent": "CP14BaseSpeciesDummy",
+        "suffix": null
+    },
+    "CP14Crayon": {
+        "id": "CP14Crayon",
+        "name": "crayon",
+        "description": "A colourful crayon.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14CrayonWhite": {
+        "id": "CP14CrayonWhite",
+        "name": "white crayon",
+        "description": null,
+        "parent": "CP14Crayon",
+        "suffix": null
+    },
+    "CP14CrayonRainbow": {
+        "id": "CP14CrayonRainbow",
+        "name": "magic rainbow crayon",
+        "description": null,
+        "parent": "CP14Crayon",
+        "suffix": null
+    },
+    "CP14CrayonBlack": {
+        "id": "CP14CrayonBlack",
+        "name": "black crayon",
+        "description": null,
+        "parent": "CP14Crayon",
+        "suffix": null
+    },
+    "CP14CrayonRed": {
+        "id": "CP14CrayonRed",
+        "name": "red crayon",
+        "description": null,
+        "parent": "CP14Crayon",
+        "suffix": null
+    },
+    "CP14CrayonYellow": {
+        "id": "CP14CrayonYellow",
+        "name": "yellow crayon",
+        "description": null,
+        "parent": "CP14Crayon",
+        "suffix": null
+    },
+    "CP14CrayonGreen": {
+        "id": "CP14CrayonGreen",
+        "name": "green crayon",
+        "description": null,
+        "parent": "CP14Crayon",
+        "suffix": null
+    },
+    "CP14CrayonBlue": {
+        "id": "CP14CrayonBlue",
+        "name": "blue crayon",
+        "description": null,
+        "parent": "CP14Crayon",
+        "suffix": null
+    },
+    "CP14CrayonPurple": {
+        "id": "CP14CrayonPurple",
+        "name": "purple crayon",
+        "description": null,
+        "parent": "CP14Crayon",
         "suffix": null
     },
     "CP14BookImperialLawsHandBook": {
@@ -2784,6 +2868,13 @@
         "description": null,
         "parent": "CP14BaseKey",
         "suffix": "Abstract Personal house"
+    },
+    "CP14KeyPersonalHouseAbstractLoadoutDummy": {
+        "id": "CP14KeyPersonalHouseAbstractLoadoutDummy",
+        "name": "a key to a random personal home (limited per map)",
+        "description": null,
+        "parent": "CP14BaseKey",
+        "suffix": null
     },
     "CP14KeyPersonalHouse1": {
         "id": "CP14KeyPersonalHouse1",
@@ -4099,6 +4190,13 @@
         "name": null,
         "description": null,
         "parent": "CP14DungeonExit",
+        "suffix": null
+    },
+    "CP14Lighthouse": {
+        "id": "CP14Lighthouse",
+        "name": "lighthouse",
+        "description": "Light in the darkness.",
+        "parent": "BaseStructure",
         "suffix": null
     },
     "CP14BaseSharpeningStoneStructure": {
