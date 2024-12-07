@@ -10,6 +10,7 @@
   - CP14ClothingCloakMaidArpon
   - CP14ClothingCloakRitualAttireLeather
   - CP14ClothingCloakWhite
+  - CP14ClothingCloakGreen
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -35,6 +36,11 @@
   id: CP14ClothingCloakWhite
   equipment:
     cloak: CP14ClothingCloakWhite
+
+- type: loadout
+  id: CP14ClothingCloakGreen
+  equipment:
+    cloak: CP14ClothingCloakGreen
 
 # Eyes
 

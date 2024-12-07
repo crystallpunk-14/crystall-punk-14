@@ -21,19 +21,13 @@
         amount: 5
         #Random start resource
       - id: CP14VialSmallGroundQuartz
-        prob: 0.9
+      - id: CP14VialSmallGroundQuartz
       - id: CP14VialSmallBloodFlowerSap
-        prob: 0.7
       - id: CP14VialSmallAgaricMushroom
-        prob: 0.7
       - id: CP14VialSmallWildSage
-        prob: 0.7
       - id: CP14VialSmallBlueAmanita
-        prob: 0.7
       - id: CP14VialTinyChromiumSlime
-        prob: 0.3
       - id: CP14VialTinyLumiMushroom
-        prob: 0.3
 
 - type: entity
   parent: CP14WoodenCloset
@@ -111,9 +105,10 @@
     contents:
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14WoodenPlanks10
-      - id: CP14Nail10
       - id: CP14CopperBar10
-      - id: CP14IronBar5
+      - id: CP14CopperBar10
+      - id: CP14IronBar10
+      - id: CP14GoldBar5
 
 - type: entity
   parent: CP14WoodenCloset

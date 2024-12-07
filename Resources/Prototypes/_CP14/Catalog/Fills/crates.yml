@@ -74,8 +74,14 @@
   id: CP14StationCrateLootFluff
   table: !type:GroupSelector
     children:
+    - id: CP14FoodPotato
+    - id: CP14AgaricMushroom #dont eat
+    - id: CP14Cloth10
+    - id: CP14CrayonWhite
     - !type:GroupSelector
       children:
+      - id: CP14ClothingCloakGreen
+      - id: CP14ClothingCloakWhite
       - id: CP14ClothingCloakFurcapeBlack
       - id: CP14ClothingCloakFurcapeBlue
       - id: CP14ClothingCloakRitualAttireLeather
@@ -84,10 +90,6 @@
       - id: CP14ClothingPantsSouthernMagician
       - id: CP14ClothingShirtMercenary
       - id: CP14ClothingShirtYellowWizard
-      - id: CP14FoodPotato
-      - id: CP14Cloth10
-      - id: CP14CrayonWhite
-        weight: 2
     - !type:GroupSelector
       children:
       - id: CP14DyeYellow
