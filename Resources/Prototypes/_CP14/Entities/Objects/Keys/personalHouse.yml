@@ -5,7 +5,12 @@
   components:
   - type: CP14AbstractKey
     group: PersonalHouse
-    
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouseAbstractLoadoutDummy
+  name: a key to a random personal home (limited per map)
+
 - type: entity
   parent: CP14BaseKey
   id: CP14KeyPersonalHouse1

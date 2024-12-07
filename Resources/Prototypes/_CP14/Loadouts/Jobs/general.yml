@@ -293,7 +293,7 @@
   - CP14Rope
   - CP14PenFeather
   - CP14PaperFolderBlue
-  - CP14SilverCoin5
+  - CP14SilverCoin
   - CP14ModularIronDagger
   - CP14ModularIronSickle
   - CP14ModularIronPickaxe
@@ -355,10 +355,10 @@
     - CP14PaperFolderBlue
 
 - type: loadout
-  id: CP14SilverCoin5
+  id: CP14SilverCoin
   storage:
     back:
-    - CP14SilverCoin5
+    - CP14SilverCoin
 
 - type: loadout
   id: CP14ModularIronDagger
@@ -395,6 +395,23 @@
   storage:
     back:
     - CP14DemiplanKey
+
+# Keys
+
+- type: loadoutGroup
+  id: CP14GeneralKeys
+  name: cp14-loadout-general-keys
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CP14KeyPersonalHouseAbstract
+
+- type: loadout
+  id: CP14KeyPersonalHouseAbstract
+  dummyEntity: CP14KeyPersonalHouseAbstractLoadoutDummy
+  storage:
+    back:
+    - CP14KeyPersonalHouseAbstract
 
 # Spells
 

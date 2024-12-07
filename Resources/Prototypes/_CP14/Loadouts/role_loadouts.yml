@@ -12,6 +12,7 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
+  - CP14GeneralKeys
 
 - type: roleLoadout
   id: JobCP14Alchemist

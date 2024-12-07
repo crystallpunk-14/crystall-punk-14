@@ -18,5 +18,5 @@
     - CP14EnergyCrystalSmall
     - CP14EnergyCrystalSmall
   equipment:
-    keys: CP14KeyRingPersonalHouse
+    keys: CP14BaseKeyRing
     belt1: CP14WalletFilledTest
