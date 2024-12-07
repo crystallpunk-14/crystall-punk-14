@@ -38,7 +38,7 @@
   - type: EntityStorage
     isCollidableWhenOpen: true
     enteringOffset: 0, -0.4
-    enteringRange: 0.06
+    enteringRange: 0.10
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
