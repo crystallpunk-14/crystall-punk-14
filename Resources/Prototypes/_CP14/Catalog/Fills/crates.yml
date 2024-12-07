@@ -85,6 +85,7 @@
       - id: CP14ClothingShirtMercenary
       - id: CP14ClothingShirtYellowWizard
       - id: CP14FoodPotato
+      - id: CP14AgaricMushroom #dont eat
       - id: CP14Cloth10
       - id: CP14CrayonWhite
         weight: 2

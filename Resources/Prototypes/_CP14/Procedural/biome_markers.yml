@@ -1,9 +1,0 @@
-
-- type: biomeMarkerLayer
-  id: CP14OreGold
-  entityMask:
-    CP14WallStone: CP14PlantPumpkinDeath
-  maxCount: 30
-  minGroupSize: 10
-  maxGroupSize: 15
-  radius: 4
