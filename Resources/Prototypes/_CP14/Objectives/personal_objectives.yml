@@ -31,7 +31,7 @@
   - type: Objective
     difficulty: 1
   - type: CP14CurrencyCollectCondition
-    currency: 1000
+    currency: 500
 
 - type: weightedRandom
   id: CP14PersonalCurrencyCollectObjectiveGroup
