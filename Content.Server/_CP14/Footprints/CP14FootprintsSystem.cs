@@ -136,7 +136,7 @@ public sealed class CP14FootprintsSystem : EntitySystem
     {
         //Temporaly disabled
         return;
-        
+
         if (ent.Comp.holder is null)
             return;
         var footprint = ent.Comp.holder;
