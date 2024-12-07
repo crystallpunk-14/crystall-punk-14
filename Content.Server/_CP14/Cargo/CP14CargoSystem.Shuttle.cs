@@ -23,11 +23,8 @@ public sealed partial class CP14CargoSystem
     [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly StationJobsSystem _stationJobs = default!;
 
-    private EntityQuery<ArrivalsBlacklistComponent> _blacklistQuery;
-
     private void InitializeShuttle()
     {
-        _blacklistQuery = GetEntityQuery<ArrivalsBlacklistComponent>();
         SubscribeLocalEvent<CP14TravelingStoreShipComponent, FTLCompletedEvent>(OnFTLCompleted);
     }
 
