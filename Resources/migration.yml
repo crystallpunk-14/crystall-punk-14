@@ -182,6 +182,9 @@ CP14FenceIronGrilleCorner: null
 CP14ClothingShirtGuardsChainmailShirtWB: CP14ClothingShirtGuardsChainmailShirtB
 CP14KeyRingGuardCommandant: CP14KeyRingGuardCommander
 
+#2024-08-12
+CP14BaseHandheldAxe: CP14ModularGripWoodenLong
+
 # <---> CrystallEdge migration zone end
 
 

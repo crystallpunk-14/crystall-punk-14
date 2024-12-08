@@ -1,59 +1,61 @@
 #Concept:
-# + High Wielded damage
-# - Low AttackRate
+# + Very high damage
+# - Very low attack speed
 
 - type: modularPart
-  id: BaseBladeMace
+  id: BaseBladeAxe
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseWeaponChemical
+    - BaseWeaponSharp
   - !type:EditMeleeWeapon
     resetOnHandSelected: true # Disable fast swap
-    attackRateMultiplier: 0.85
+    attackRateMultiplier: 0.6
+    angleMultiplier: 1.2
     bonusDamage:
       types:
-        Blunt: 4
-        Piercing: 1
+        Slash: 13
+        Piercing: 3
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Blunt: 8
-        Piercing: 4
+        Slash: 8
+        Piercing: 3
   - !type:EditItem
-    newSize: Large
+    newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
 
 - type: modularPart
-  id: BladeIronMace
+  id: BladeIronAxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeIronMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/iron_mace.rsi
+  sourcePart: CP14ModularBladeIronAxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/iron_axe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeMace
+    - BaseBladeAxe
     - BaseWeaponIron
 
 - type: modularPart
-  id: BladeGoldMace
+  id: BladeGoldAxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/gold_mace.rsi
+  sourcePart: CP14ModularBladeGoldAxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/gold_axe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeMace
+    - BaseBladeAxe
     - BaseWeaponGold
 
 - type: modularPart
-  id: BladeCopperMace
+  id: BladeCopperAxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/copper_mace.rsi
+  sourcePart: CP14ModularBladeCopperAxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/copper_axe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeMace
+    - BaseBladeAxe
     - BaseWeaponCopper

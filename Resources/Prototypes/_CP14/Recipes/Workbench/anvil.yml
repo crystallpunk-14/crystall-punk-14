@@ -361,3 +361,27 @@
   stacks:
     CP14IronBar: 1
   result: CP14BaseLockpick
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 2
+  result: CP14ModularBladeIronAxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 2
+  result: CP14ModularBladeCopperAxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 2
+  result: CP14ModularBladeGoldAxe
