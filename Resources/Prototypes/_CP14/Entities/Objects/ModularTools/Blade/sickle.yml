@@ -25,6 +25,18 @@
 
 - type: entity
   parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeCopperSickle
+  name: copper sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/copper_sickle.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperSickle
+
+- type: entity
+  parent: CP14ModularBladeSickleBase
   id: CP14ModularBladeGoldSickle
   name: golden sickle blade
   components:
