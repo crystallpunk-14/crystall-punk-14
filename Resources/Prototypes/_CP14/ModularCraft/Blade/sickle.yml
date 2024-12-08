@@ -44,3 +44,14 @@
     copyFrom:
     - BaseBladeSickle
     - BaseWeaponGold
+
+- type: modularPart
+  id: BladeCopperSickle
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeCopperSickle
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/copper_sickle.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSickle
+    - BaseWeaponCopper
