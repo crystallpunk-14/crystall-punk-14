@@ -1,6 +1,8 @@
 ﻿using System.Numerics;
 using Content.Client.Resources;
-using Content.Shared._CP14.Fishing;
+using Content.Shared._CP14.Fishing.Components;
+using Content.Shared._CP14.Fishing.Prototypes;
+using Content.Shared._CP14.Fishing.Systems;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -12,8 +14,10 @@ namespace Content.Client._CP14.Fishing;
 
 public sealed class CP14FishingOverlay : Overlay
 {
+    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
 
     private readonly SpriteSystem _sprite;
@@ -29,7 +33,7 @@ public sealed class CP14FishingOverlay : Overlay
 
     private Vector2 _backgroundOffset;
     private Vector2 _backgroundHandleOffset;
-    private float _backgroundHandleHeight;
+    private Vector2 _backgroundHandleSize;
 
     private Vector2 _progressOffset;
     private Vector2 _progressSize;
@@ -61,17 +65,26 @@ public sealed class CP14FishingOverlay : Overlay
             _process = fishingProcess.Value.Owner;
             UpdateCachedStyleSheet(fishingProcess.Value.Comp.StyleSheet);
 
-            _lootTexture = _sprite.GetPrototypeIcon(fishingProcess.Value.Comp.LootProtoId).Default;
+            var prototype = _prototype.Index(fishingProcess.Value.Comp.LootProtoId);
+            var iconPath = CP14FishingIconComponent.DefaultTexturePath;
+
+            if (prototype.Components.TryGetComponent(_factory.GetComponentName(typeof(CP14FishingIconComponent)), out var iconComponent))
+            {
+                var comp = (CP14FishingIconComponent) iconComponent;
+                iconPath = comp.TexturePath;
+            }
+
+            _lootTexture = _resourceCache.GetTexture(iconPath);
         }
 
         // Getting the position of the player we will be working from
         var worldPosition = _transform.GetWorldPosition(localEntity);
 
         // Calculate the shift of the player relative to the bottom of the coordinates
-        var playerOffset = fishingProcess.Value.Comp.PlayerPositionNormalized * _backgroundHandleHeight;
-        var playerHalfSize = fishingProcess.Value.Comp.PlayerHalfSizeNormalized * _backgroundHandleHeight;
+        var playerOffset = fishingProcess.Value.Comp.PlayerPositionNormalized * _backgroundHandleSize;
+        var playerHalfSize = fishingProcess.Value.Comp.PlayerHalfSizeNormalized * _backgroundHandleSize;
 
-        var lootOffset = fishingProcess.Value.Comp.LootPositionNormalized * _backgroundHandleHeight;
+        var lootOffset = fishingProcess.Value.Comp.LootPositionNormalized * _backgroundHandleSize + Vector2.UnitX * _backgroundHandleSize.X / 2;
 
         DrawBackground(args.WorldHandle, worldPosition - _backgroundOffset);
         DrawProgress(args.WorldHandle, worldPosition - _backgroundOffset + _progressOffset, _progressSize, fishingProcess.Value.Comp.Progress);
@@ -114,7 +127,7 @@ public sealed class CP14FishingOverlay : Overlay
 
     private void DrawLoot(DrawingHandleWorld handle, Vector2 position)
     {
-        handle.DrawTexture(_lootTexture, position + Vector2.UnitX * 0.140625f - _lootTexture.Size / 64f);
+        handle.DrawTexture(_lootTexture, position - _lootTexture.Size / 64f);
     }
 
     private void UpdateCachedStyleSheet(CP14FishingProcessStyleSheetPrototype styleSheet)
@@ -127,7 +140,7 @@ public sealed class CP14FishingOverlay : Overlay
         _backgroundOffset = styleSheet.Background.Offset + Vector2.UnitX * _backgroundTexture.Width / 32f;
 
         _backgroundHandleOffset = styleSheet.Background.HandleOffset;
-        _backgroundHandleHeight = styleSheet.Background.HandleHeight;
+        _backgroundHandleSize = styleSheet.Background.HandleSize;
 
         _progressOffset = styleSheet.Background.ProgressOffset;
         _progressSize = styleSheet.Background.ProgressSize;

@@ -1,4 +1,4 @@
-﻿using Content.Shared._CP14.Fishing.FishingRod;
+﻿using Content.Shared._CP14.Fishing.Systems;
 
 namespace Content.Server._CP14.Fishing;
 

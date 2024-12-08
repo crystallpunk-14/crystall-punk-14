@@ -1,0 +1,13 @@
+- type: CP14FishingProcessStyleSheet
+  id: Default
+  background:
+    texture: /Textures/_CP14/Interface/Fishing/Styles/Default/background.png
+    offset: 10, 0
+    handleOffset: 14, 5
+    handleSize: 11, 141
+    progressOffset: 4, 4
+    progressSize: 2, 142
+  handle:
+    topTexture: /Textures/_CP14/Interface/Fishing/Styles/Default/Handle/top.png
+    middleTexture: /Textures/_CP14/Interface/Fishing/Styles/Default/Handle/middle.png
+    bottomTexture: /Textures/_CP14/Interface/Fishing/Styles/Default/Handle/bottom.png

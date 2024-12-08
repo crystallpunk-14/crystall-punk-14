@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Fishing.FishingPool;
+namespace Content.Shared._CP14.Fishing.Prototypes;
 
 [Prototype("CP14FishingPoolLootTable")]
 public sealed class CP14FishingPoolLootTablePrototype : IPrototype

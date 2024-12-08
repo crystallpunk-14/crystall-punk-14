@@ -1,9 +1,9 @@
-﻿using Content.Shared._CP14.Fishing.FishingPool;
+﻿using Content.Shared._CP14.Fishing.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CP14.Fishing.FishingRod;
+namespace Content.Shared._CP14.Fishing.Systems;
 
 public abstract class CP14SharedFishingRodSystem : EntitySystem
 {
@@ -43,7 +43,7 @@ public abstract class CP14SharedFishingRodSystem : EntitySystem
         if (!TryComp<CP14FishingRodComponent>(args.Used, out var fishingRodComponent))
             return;
 
-        fishingRodComponent.Process = _fishingProcess.Start("Debug", (args.Used, fishingRodComponent), entity, args.User);
+        fishingRodComponent.Process = _fishingProcess.Start((args.Used, fishingRodComponent), entity, args.User);
     }
 
 

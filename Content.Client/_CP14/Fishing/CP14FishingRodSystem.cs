@@ -1,5 +1,6 @@
 ﻿using Content.Client.Hands.Systems;
-using Content.Shared._CP14.Fishing.FishingRod;
+using Content.Shared._CP14.Fishing.Components;
+using Content.Shared._CP14.Fishing.Systems;
 using Robust.Client.GameObjects;
 using Robust.Shared.Input;
 using Robust.Shared.Timing;

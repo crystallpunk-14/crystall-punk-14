@@ -1,6 +1,0 @@
-- type: CP14FishingProcess
-  id: Debug
-  size: 10
-  playerSize: 1
-  lootSize: 0
-  lootProtoId: CP14FloorWater
