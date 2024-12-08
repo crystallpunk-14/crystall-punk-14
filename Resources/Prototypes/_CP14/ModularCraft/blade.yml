@@ -1,32 +1,4 @@
 #Concept:
-# Copy of dagger with lesser damage 
-# But can gather grass from world
-- type: modularPart
-  id: BladeIronSickle
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeIronSickle
-  rsiPath: _CP14/Objects/ModularTools/iron_sickle.rsi
-  modifiers:
-  - !type:Inherit
-    copyFrom:
-    - BaseWeaponChemical
-    - BaseWeaponSharp
-    #components: TODO Add gathering tag
-  - !type:EditMeleeWeapon
-    attackRateMultiplier: 1.4
-    bonusDamage:
-      types:
-        Slash: 4
-        Piercing: 1
-  - !type:EditItem
-    newSize: Normal
-    adjustShape: 0, 1
-    storedOffsetBonus: 0, 5
-  - !type:EditModularSlots
-    addSlots:
-    - Garde
-
-#Concept:
 # + High Throwable damage
 #   Piercing animation
 # - Low Melee Damage
