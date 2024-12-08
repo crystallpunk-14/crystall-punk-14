@@ -38,25 +38,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CP14ModularBladeIronSickle
-  categories: [ ForkFiltered ]
-  name: iron sickle blade
-  description: A sickle blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
-  components:
-  - type: Item
-    storedRotation: 45
-    shape:
-    - 0,0,0,0
-    storedOffset: 0, 5
-  - type: Sprite
-    sprite: _CP14/Objects/ModularTools/iron_sickle.rsi
-    state: icon
-  - type: CP14ModularCraftPart
-    possibleParts:
-    - BladeIronSickle
-
-- type: entity
-  parent: BaseItem
   id: CP14ModularBladeIronShovel
   categories: [ ForkFiltered ]
   name: iron shovel blade

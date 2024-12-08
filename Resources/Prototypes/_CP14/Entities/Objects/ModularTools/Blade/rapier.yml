@@ -14,7 +14,6 @@
 - type: entity
   parent: CP14ModularBladeRapierBase
   id: CP14ModularBladeIronRapier
-  categories: [ ForkFiltered ]
   name: iron rapier blade
   components:
   - type: Sprite
@@ -27,7 +26,6 @@
 - type: entity
   parent: CP14ModularBladeRapierBase
   id: CP14ModularBladeGoldRapier
-  categories: [ ForkFiltered ]
   name: golden rapier blade
   components:
   - type: Sprite
@@ -40,7 +38,6 @@
 - type: entity
   parent: CP14ModularBladeRapierBase
   id: CP14ModularBladeCopperRapier
-  categories: [ ForkFiltered ]
   name: copper rapier blade
   components:
   - type: Sprite
