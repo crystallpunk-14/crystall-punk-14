@@ -68,7 +68,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponCopper
+    - BaseWeaponCoppe
 
 - type: modularPart
   id: BladeBoneSword

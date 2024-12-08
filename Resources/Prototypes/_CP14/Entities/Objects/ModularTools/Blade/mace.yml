@@ -1,0 +1,48 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeMaceBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A mace ball without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronMace
+  name: iron mace ball
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/iron_mace.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronMace
+
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeGoldMace
+  name: golden mace ball
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/gold_mace.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldMace
+
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeCopperMace
+  name: copper mace ball
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/copper_mace.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperMace

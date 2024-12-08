@@ -130,6 +130,22 @@
   result: CP14ModularBladeIronMace
 
 - type: CP14Recipe
+  id: CP14ModularBladeGoldMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ModularBladeGoldMace
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ModularBladeCopperMace
+
+- type: CP14Recipe
   id: CP14ModularBladeIronSword
   tag: CP14RecipeAnvil
   craftTime: 4
