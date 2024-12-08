@@ -9,7 +9,7 @@
   - type: UseDelay
   - type: InteractionOutline
   - type: Sprite
-    sprite: _CP14/Structures/Specific/sharpening_stone.rsi
+    sprite: _CP14/Structures/Specific/Blacksmith/sharpening_stone.rsi
     state: base
   - type: PlaceableSurface
   - type: ItemPlacer
