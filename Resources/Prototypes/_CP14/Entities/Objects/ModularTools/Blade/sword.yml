@@ -25,6 +25,30 @@
 
 - type: entity
   parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeGoldSword
+  name: golden sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/gold_sword.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldSword
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeCopperSword
+  name: copper sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/copper_sword.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperSword
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
   id: CP14ModularBladeBoneSword
   name: bone sword blade
   components:
