@@ -12,7 +12,7 @@
     storedOffset: 0, 5
 
 - type: entity
-  parent: BaseItem
+  parent: CP14ModularBladeMaceBase
   id: CP14ModularBladeIronMace
   name: iron mace ball
   components:
@@ -24,7 +24,7 @@
     - BladeIronMace
 
 - type: entity
-  parent: BaseItem
+  parent: CP14ModularBladeMaceBase
   id: CP14ModularBladeGoldMace
   name: golden mace ball
   components:
@@ -36,7 +36,7 @@
     - BladeGoldMace
 
 - type: entity
-  parent: BaseItem
+  parent: CP14ModularBladeMaceBase
   id: CP14ModularBladeCopperMace
   name: copper mace ball
   components:
