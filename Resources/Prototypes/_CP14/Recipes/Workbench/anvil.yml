@@ -202,6 +202,23 @@
   result: CP14ModularBladeIronShovel
 
 - type: CP14Recipe
+  id: CP14ModularBladeGoldShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ModularBladeGoldShovel
+
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ModularBladeCopperShovel
+
+- type: CP14Recipe
   id: CP14ModularBladeIronPickaxe
   tag: CP14RecipeAnvil
   craftTime: 2
