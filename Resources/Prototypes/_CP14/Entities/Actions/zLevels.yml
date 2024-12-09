@@ -1,0 +1,17 @@
+- type: entity
+  id: CP14ActionZLevelUp
+  name: Move up
+  description: Move up one Z-Level
+  components:
+  - type: InstantAction
+    icon: _CP14/Actions/zLevel.rsi/up.png
+    event: !type:CP14ZLevelActionUp
+
+- type: entity
+  id: CP14ActionZLevelDown
+  name: Move down
+  description: Move down one Z-Level
+  components:
+  - type: InstantAction
+    icon: _CP14/Actions/zLevel.rsi/down.png
+    event: !type:CP14ZLevelActionDown

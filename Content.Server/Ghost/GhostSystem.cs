@@ -213,18 +213,22 @@ namespace Content.Server.Ghost
 
         private void OnMapInit(EntityUid uid, GhostComponent component, MapInitEvent args)
         {
-            if (_actions.AddAction(uid, ref component.BooActionEntity, out var act, component.BooAction)
-                && act.UseDelay != null)
-            {
-                var start = _gameTiming.CurTime;
-                var end = start + act.UseDelay.Value;
-                _actions.SetCooldown(component.BooActionEntity.Value, start, end);
-            }
+            //if (_actions.AddAction(uid, ref component.BooActionEntity, out var act, component.BooAction)
+            //    && act.UseDelay != null)
+            //{
+            //    var start = _gameTiming.CurTime;
+            //    var end = start + act.UseDelay.Value;
+            //    _actions.SetCooldown(component.BooActionEntity.Value, start, end);
+            //}
 
             _actions.AddAction(uid, ref component.ToggleGhostHearingActionEntity, component.ToggleGhostHearingAction);
             _actions.AddAction(uid, ref component.ToggleLightingActionEntity, component.ToggleLightingAction);
             _actions.AddAction(uid, ref component.ToggleFoVActionEntity, component.ToggleFoVAction);
             _actions.AddAction(uid, ref component.ToggleGhostsActionEntity, component.ToggleGhostsAction);
+            //CP14
+            _actions.AddAction(uid, ref component.CP14ZLevelUpActionEntity, component.CP14ZLevelUpAction);
+            _actions.AddAction(uid, ref component.CP14ZLevelDownActionEntity, component.CP14ZLevelDownAction);
+            //CP14 end
         }
 
         private void OnGhostExamine(EntityUid uid, GhostComponent component, ExaminedEvent args)

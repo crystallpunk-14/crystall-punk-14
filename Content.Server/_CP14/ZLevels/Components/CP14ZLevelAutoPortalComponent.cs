@@ -1,7 +1,7 @@
-using Content.Server._CP14.StationDungeonMap.EntitySystems;
+using Content.Server._CP14.ZLevels.EntitySystems;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.StationDungeonMap.Components;
+namespace Content.Server._CP14.ZLevels.Components;
 
 /// <summary>
 /// automatically creates a linked portal at a different relative z-level, and then the component is removed
