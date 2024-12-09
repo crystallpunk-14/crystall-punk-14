@@ -396,7 +396,7 @@ ent-CP14ClothingEyesThaumaturgyGlasses = тауматургические очк
     .desc = Очки, позволяющие сканировать магические предметы и существ, чтобы четко видеть количество оставшейся в них энергии.
 
 ent-CP14ClothingGlovesGirdles = железные наручи
-    .desc = Бронированные боевые наручи из металла.
+    .desc = Бронированные боевые наручи из железа.
 
 ent-CP14ClothingHeadCapellina = капеллина
     .desc = Защита от ударов крупными предметами по голове.
@@ -449,7 +449,7 @@ ent-CP14ClothingHeadBandanaYellow = желтая бандана
 ent-CP14ClothingHeadBeretMercenary = берет наемника
     .desc = Большая красная шерстяная шляпа, украшенная пером.
 
-ent-CP14ClothingHeadMetalHeadband = металлический обруч
+ent-CP14ClothingHeadMetalHeadband = железный обруч
     .desc = Вероятность, что он защитит от попадания в голову, крайне мала.
 
 ent-CP14ClothingHeadTriangularHat = остроконечная шляпа
@@ -807,8 +807,8 @@ ent-CP14RedBottle = красная бутылка
     .desc = Красная бутылка, идеально подходит для вина.
     .suffix = Пустая
 
-ent-CP14MetalBeerMug = металлическая кружка
-    .desc = Самая обычная металлическая кружка.
+ent-CP14MetalBeerMug = железная кружка
+    .desc = Самая обычная железная кружка.
 
 ent-CP14WoodenBeerMug = деревянная кружка
     .desc = Деревянная кружка для пива.

@@ -1,4 +1,5 @@
 using Content.Server._CP14.Currency;
+using Content.Server._CP14.RoundRemoveShuttle;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
@@ -101,6 +102,9 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
         var member = EnsureComp<StationMemberComponent>(shuttle);
         member.Station = station;
+
+        var roundRemover = EnsureComp<CP14RoundRemoveShuttleComponent>(shuttle);
+        roundRemover.Station = station;
 
         station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);
 
