@@ -64,6 +64,11 @@
             CP14Banker: [3, 4]
             CP14Guard: [8, 8]
             CP14GuardCommander: [1, 1]
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_CP14/comoss_d.yml
         - type: CP14StationKeyDistribution
           keys:
           - TavernDorms1
