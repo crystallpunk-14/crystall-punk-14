@@ -213,13 +213,13 @@ namespace Content.Server.Ghost
 
         private void OnMapInit(EntityUid uid, GhostComponent component, MapInitEvent args)
         {
-            //if (_actions.AddAction(uid, ref component.BooActionEntity, out var act, component.BooAction)
-            //    && act.UseDelay != null)
-            //{
-            //    var start = _gameTiming.CurTime;
-            //    var end = start + act.UseDelay.Value;
-            //    _actions.SetCooldown(component.BooActionEntity.Value, start, end);
-            //}
+            if (_actions.AddAction(uid, ref component.BooActionEntity, out var act, component.BooAction)
+                && act.UseDelay != null)
+            {
+                var start = _gameTiming.CurTime;
+                var end = start + act.UseDelay.Value;
+                _actions.SetCooldown(component.BooActionEntity.Value, start, end);
+            }
 
             _actions.AddAction(uid, ref component.ToggleGhostHearingActionEntity, component.ToggleGhostHearingAction);
             _actions.AddAction(uid, ref component.ToggleLightingActionEntity, component.ToggleLightingAction);
