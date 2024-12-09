@@ -55,12 +55,13 @@
     breakOnMove: false
     slots:
     - neck
+  - type: CP14MagicManacostModify
+    globalModifier: 0.9
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14MagicStaff_GlowingWooden
     startSlots:
     - MagicCrystalHolder
-  - type: CP14MagicManacostModify
-    globalModifier: 0.9
+    - OldMagicScroll1
 
 # Wooden staff
 - type: entity
@@ -79,9 +80,10 @@
     breakOnMove: false
     slots:
     - neck
+  - type: CP14MagicManacostModify
+    globalModifier: 1.1
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14MagicStaff_Wooden
     startSlots:
     - MagicCrystalHolder
-  - type: CP14MagicManacostModify
-    globalModifier: 1.1
+    - OldMagicScroll1

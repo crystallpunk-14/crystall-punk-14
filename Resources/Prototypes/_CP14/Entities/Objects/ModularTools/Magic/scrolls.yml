@@ -1,0 +1,98 @@
+# Base
+- type: entity
+  parent: BaseItem
+  id: CP14BaseOldMagicScroll
+  categories: [ ForkFiltered ]
+  name: old magic scroll
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+  - type: Item
+    size: Tiny
+  - type: Flammable
+    fireSpread: true
+    alwaysCombustible: true
+    damage:
+      types:
+        Heat: 1
+  - type: FireVisuals
+    sprite: Effects/fire.rsi
+    normalState: fire
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            Ash:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Food
+    solution: food
+    delay: 7
+    forceFeedDelay: 7
+  - type: FlavorProfile
+    flavors:
+    - paper
+    - CP14Magic
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 1
+
+# Earth
+
+- type: entity
+  id: CP14OldMagicScroll_Earth5
+  parent: CP14BaseOldMagicScroll
+  suffix: Earth, 5
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - OldMagicScroll_Earth5
+
+- type: entity
+  id: CP14OldMagicScroll_Earth10
+  parent: CP14BaseOldMagicScroll
+  suffix: Earth, 10
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - OldMagicScroll_Earth10
+
+- type: entity
+  id: CP14OldMagicScroll_Earth15
+  parent: CP14BaseOldMagicScroll
+  suffix: Earth, 15
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - OldMagicScroll_Earth15

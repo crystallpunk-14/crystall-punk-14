@@ -1,0 +1,27 @@
+# Earth
+- type: modularPart
+  id: OldMagicScroll_Earth5
+  targetSlot: OldMagicScroll1
+  sourcePart: CP14OldMagicScroll_Earth5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 0.95
+
+- type: modularPart
+  id: OldMagicScroll_Earth10
+  targetSlot: OldMagicScroll1
+  sourcePart: CP14OldMagicScroll_Earth10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 0.90
+
+- type: modularPart
+  id: OldMagicScroll_Earth15
+  targetSlot: OldMagicScroll1
+  sourcePart: CP14OldMagicScroll_Earth15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 0.85
