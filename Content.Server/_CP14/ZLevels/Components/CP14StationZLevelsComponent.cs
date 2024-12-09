@@ -1,8 +1,8 @@
-using Content.Server._CP14.StationDungeonMap.EntitySystems;
+using Content.Server._CP14.ZLevels.EntitySystems;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
 
-namespace Content.Server._CP14.StationDungeonMap.Components;
+namespace Content.Server._CP14.ZLevels.Components;
 
 /// <summary>
 /// Initializes the z-level system by creating a series of linked maps
