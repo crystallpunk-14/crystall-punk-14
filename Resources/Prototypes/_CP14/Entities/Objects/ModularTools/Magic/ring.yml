@@ -19,7 +19,7 @@
     startProtoPart: CP14ClothingMagicRingBase
     startSlots:
     - RingMagicCrystal1
-    - MagicArtefact1
+    - MagicArtifact1
   - type: CP14MagicManacostModify
 
 # Blue ring
