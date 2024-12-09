@@ -24,6 +24,7 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
     {
         base.Initialize();
         InitializePortals();
+        InitActions();
 
         SubscribeLocalEvent<CP14StationZLevelsComponent, StationPostInitEvent>(OnStationPostInit);
     }
