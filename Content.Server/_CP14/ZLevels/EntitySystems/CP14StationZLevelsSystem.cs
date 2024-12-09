@@ -86,8 +86,8 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
 
     public MapId? GetMapOffset(EntityUid mapUid, int offset)
     {
-        var query = EntityQueryEnumerator<CP14StationZLevelsComponent, StationDataComponent>();
-        while (query.MoveNext(out var uid, out var zLevel, out _))
+        var query = EntityQueryEnumerator<CP14StationZLevelsComponent>();
+        while (query.MoveNext(out var uid, out var zLevel))
         {
             if (!zLevel.LevelEntities.TryGetValue(Transform(mapUid).MapID, out var currentLevel))
                 continue;
