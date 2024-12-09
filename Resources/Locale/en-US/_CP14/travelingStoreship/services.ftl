@@ -1,7 +1,9 @@
 
 # Buy
 
-cp14-store-service-buy-items = Purchase of goods:
+
+cp14-store-service-unlock-sell = Unlocks the ability to sell:
+cp14-store-service-unlock-buy = Unlocks the ability to buy:
 
 # Sell
 

@@ -9,6 +9,10 @@
 
 - type: startingGear
   id: CP14BankerGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalSmall
   equipment:
     belt1: CP14WalletFilledTest
     keys: CP14KeyRingBanker

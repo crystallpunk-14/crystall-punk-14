@@ -21,6 +21,8 @@
   parent: CP14BaseSubdimensionalKey
   name: demiplan key
   components:
+  - type: Item
+    size: Tiny
   - type: CP14DemiplaneGeneratorData
     rewardLimit: 1.25
     difficultyLimit: 0.75

@@ -34,8 +34,21 @@
 - type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakWhite
+  name: white cloak
+  description: A spacious white coat. For those who like to look aesthetically pleasing.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakGreen
+  name: green cloak
+  description: A spacious green coat. For those who like to look aesthetically pleasing.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/green.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/green.rsi

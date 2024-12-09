@@ -7,22 +7,22 @@
 
 - type: CP14LockType
   id: BankStaff
-  complexity: 4
+  complexity: 3
   name: cp14-lock-shape-bank-staff
 
 - type: CP14LockType
   id: BankCommandantRoom
-  complexity: 5
+  complexity: 4
   name: cp14-lock-shape-bank-commandant
 
 - type: CP14LockType
   id: BankSafe
-  complexity: 6
+  complexity: 5
   name: cp14-lock-shape-bank-safe
 
 - type: CP14LockType
   id: BankVault
-  complexity: 7
+  complexity: 6
   name: cp14-lock-shape-bank-vault
 
 # Tavern 
@@ -34,7 +34,7 @@
 
 - type: CP14LockType
   id: TavernStaff
-  complexity: 4
+  complexity: 3
   name: cp14-lock-shape-tavern-staff
 
 - type: CP14LockType
@@ -72,25 +72,25 @@
 - type: CP14LockType
   id: Alchemy1
   group: Alchemist
-  complexity: 4
+  complexity: 3
   name: cp14-lock-shape-alchemist1
   
 - type: CP14LockType
   id: Alchemy2
   group: Alchemist
-  complexity: 4
+  complexity: 3
   name: cp14-lock-shape-alchemist2
 
 - type: CP14LockType
   id: Blacksmith1
   group: Blacksmith
-  complexity: 4
+  complexity: 3
   name: cp14-lock-shape-blacksmith1
 
 - type: CP14LockType
   id: Blacksmith2
   group: Blacksmith
-  complexity: 4
+  complexity: 3
   name: cp14-lock-shape-blacksmith2
 
 # Personal house
@@ -155,6 +155,36 @@
   complexity: 3
   name: cp14-lock-shape-personalhouse10
 
+- type: CP14LockType
+  id: PersonalHouse11
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse11
+
+- type: CP14LockType
+  id: PersonalHouse12
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse12
+
+- type: CP14LockType
+  id: PersonalHouse13
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse13
+
+- type: CP14LockType
+  id: PersonalHouse14
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse14
+
+- type: CP14LockType
+  id: PersonalHouse15
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse15
+
 # Guard
 
 - type: CP14LockType
@@ -164,15 +194,15 @@
 
 - type: CP14LockType
   id: Guard
-  complexity: 5
+  complexity: 4
   name: cp14-lock-shaper-guard-staff
 
 - type: CP14LockType
   id: GuardCommander
-  complexity: 7
+  complexity: 5
   name: cp14-lock-shaper-guard-commander
 
 - type: CP14LockType
   id: GuardWeaponStorage
-  complexity: 7
+  complexity: 5
   name: cp14-lock-shaper-guard-weapon-storage

@@ -1,0 +1,61 @@
+#Concept:
+# + Very high damage
+# - Very low attack speed
+
+- type: modularPart
+  id: BaseBladeAxe
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:EditMeleeWeapon
+    resetOnHandSelected: true # Disable fast swap
+    attackRateMultiplier: 0.6
+    angleMultiplier: 1.2
+    bonusDamage:
+      types:
+        Slash: 13
+        Piercing: 3
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: 8
+        Piercing: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+
+- type: modularPart
+  id: BladeIronAxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronAxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/iron_axe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseWeaponIron
+
+- type: modularPart
+  id: BladeGoldAxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeGoldAxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/gold_axe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseWeaponGold
+
+- type: modularPart
+  id: BladeCopperAxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeCopperAxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/copper_axe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseWeaponCopper

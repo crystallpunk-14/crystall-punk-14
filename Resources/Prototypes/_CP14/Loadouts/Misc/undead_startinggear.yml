@@ -56,7 +56,6 @@
   id: CP14MobSkeleton
   equipment:
     pants: CP14ClothingPantsLoincloth
-    neck: CP14ModularIronSword
-    belt1: CP14ModularIronDagger
+    neck: CP14ModularSkeletonHalberd
   inhand:
     - CP14TorchIgnited

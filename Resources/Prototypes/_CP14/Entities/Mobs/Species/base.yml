@@ -136,15 +136,19 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
-  - type: ComplexInteraction
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
   - type: Identity
   - type: Hands
+  - type: ComplexInteraction
   - type: Inventory
   - type: InventorySlots
-  - type: FloatingVisuals
+  #- type: FloatingVisuals
   - type: Climbing
   - type: Cuffable
   - type: Ensnareable

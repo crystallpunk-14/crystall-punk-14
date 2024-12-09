@@ -1,0 +1,48 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeSickleBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A sickle blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+
+- type: entity
+  parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeIronSickle
+  name: iron sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/iron_sickle.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSickle
+
+- type: entity
+  parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeCopperSickle
+  name: copper sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/copper_sickle.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperSickle
+
+- type: entity
+  parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeGoldSickle
+  name: golden sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/gold_sickle.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldSickle

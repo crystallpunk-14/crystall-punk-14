@@ -1,3 +1,4 @@
+using Content.Server.Body.Systems;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared.Mobs.Systems;
 
@@ -9,6 +10,7 @@ public sealed partial class CP14DemiplaneSystem
     private TimeSpan _nextCheckTime = TimeSpan.Zero;
 
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly BodySystem _body = default!;
 
     private void InitStabilization()
     {
@@ -49,13 +51,26 @@ public sealed partial class CP14DemiplaneSystem
         }
 
         var query2 = EntityQueryEnumerator<CP14DemiplaneComponent, CP14DemiplaneDestroyWithoutStabilizationComponent>();
-        while (query2.MoveNext(out var uid, out var demiplan, out var stabilization))
+        while (query2.MoveNext(out var uid, out var demiplane, out var stabilization))
         {
             if (_timing.CurTime < stabilization.EndProtectionTime)
                 continue;
 
             if (!stabilizedMaps.Contains(uid))
-                QueueDel(uid);
+                DeleteDemiplane((uid, demiplane));
         }
+    }
+
+    private void DeleteDemiplane(Entity<CP14DemiplaneComponent> demiplane)
+    {
+        var query = EntityQueryEnumerator<CP14DemiplaneStabilizerComponent, TransformComponent>();
+
+        while (query.MoveNext(out var uid, out var stabilizer, out var xform))
+        {
+            if (TryTeleportOutDemiplane(demiplane, uid))
+                _body.GibBody(uid);
+        }
+
+        QueueDel(demiplane);
     }
 }

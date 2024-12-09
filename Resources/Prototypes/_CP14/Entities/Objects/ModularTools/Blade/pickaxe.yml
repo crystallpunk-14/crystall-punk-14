@@ -14,7 +14,6 @@
 - type: entity
   parent: CP14ModularBladePickaxeBase
   id: CP14ModularBladeIronPickaxe
-  categories: [ ForkFiltered ]
   name: iron pickaxe head
   components:
   - type: Sprite
@@ -27,7 +26,6 @@
 - type: entity
   parent: CP14ModularBladePickaxeBase
   id: CP14ModularBladeGoldPickaxe
-  categories: [ ForkFiltered ]
   name: golden pickaxe head
   components:
   - type: Sprite
@@ -40,7 +38,6 @@
 - type: entity
   parent: CP14ModularBladePickaxeBase
   id: CP14ModularBladeCopperPickaxe
-  categories: [ ForkFiltered ]
   name: copper pickaxe head
   components:
   - type: Sprite

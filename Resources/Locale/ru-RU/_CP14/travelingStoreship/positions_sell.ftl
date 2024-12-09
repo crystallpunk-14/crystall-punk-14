@@ -10,4 +10,10 @@ cp14-store-sell-copperbar-name = 10 медных слитков
 cp14-store-sell-copperbar-desc = Ждем описания от лороведов.
 
 cp14-store-sell-wheat-name = 10 снопов пшеницы
-cp14-store-sell-wheat-desc = Запасы продовольствия на зиму для скота.
+cp14-store-sell-wheat-desc = Ждем описания от лороведов.
+
+cp14-store-sell-dye-name = 10 красителей
+cp14-store-sell-dye-desc = Ждем описания от лороведов.
+
+cp14-store-sell-wood-name = 30 деревянных досок
+cp14-store-sell-wood-desc = Ждем описания от лороведов.
