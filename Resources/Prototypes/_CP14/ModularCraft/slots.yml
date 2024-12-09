@@ -29,3 +29,7 @@
 - type: modularSlot
   id: RingMagicCrystal1
   name: cp14-modular-slot-magical-crystal
+
+- type: modularSlot
+  id: MagicArtifact1
+  name: cp14-modular-slot-magic-artifact

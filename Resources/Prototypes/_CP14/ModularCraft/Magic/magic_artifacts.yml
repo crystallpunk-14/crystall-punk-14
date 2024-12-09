@@ -1,0 +1,251 @@
+# Earth
+- type: modularPart
+  id: MagicArtifact_Earth5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Earth5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Earth10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Earth10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Earth15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Earth15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 0.85
+
+# Fire
+- type: modularPart
+  id: MagicArtifact_Fire5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Fire5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Fire: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Fire10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Fire10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Fire: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Fire15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Fire15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Fire: 0.85
+
+# Gate
+- type: modularPart
+  id: MagicArtifact_Gate5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Gate5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Gate: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Gate10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Gate10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Gate: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Gate15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Gate15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Gate: 0.85
+
+# Healing
+- type: modularPart
+  id: MagicArtifact_Healing5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Healing5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Healing: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Healing10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Healing10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Healing: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Healing15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Healing15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Healing: 0.85
+
+# LightDarkness
+- type: modularPart
+  id: MagicArtifact_LightDarkness5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_LightDarkness5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     LightDarkness: 0.95
+
+- type: modularPart
+  id: MagicArtifact_LightDarkness10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_LightDarkness10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     LightDarkness: 0.90
+
+- type: modularPart
+  id: MagicArtifact_LightDarkness15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_LightDarkness15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     LightDarkness: 0.85
+
+# Meta
+- type: modularPart
+  id: MagicArtifact_Meta5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Meta5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Meta: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Meta10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Meta10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Meta: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Meta15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Meta15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Meta: 0.85
+
+# Movement
+- type: modularPart
+  id: MagicArtifact_Movement5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Movement5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Movement: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Movement10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Movement10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Movement: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Movement15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Movement15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Movement: 0.85
+
+# Water
+- type: modularPart
+  id: MagicArtifact_Water5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Water5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Water: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Water10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Water10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Water: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Water15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Water15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Water: 0.85
+
+# Necromancy
+- type: modularPart
+  id: MagicArtifact_Necromancy5
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Necromancy5
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Necromancy: 0.95
+
+- type: modularPart
+  id: MagicArtifact_Necromancy10
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Necromancy10
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Necromancy: 0.90
+
+- type: modularPart
+  id: MagicArtifact_Necromancy15
+  targetSlot: MagicArtifact1
+  sourcePart: CP14OldMagicScroll_Necromancy15
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Necromancy: 0.85

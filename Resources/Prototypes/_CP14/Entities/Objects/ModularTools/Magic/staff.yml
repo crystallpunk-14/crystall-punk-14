@@ -61,7 +61,7 @@
     startProtoPart: CP14MagicStaff_GlowingWooden
     startSlots:
     - MagicCrystalHolder
-    - OldMagicScroll1
+    - MagicArtifact1
 
 # Wooden staff
 - type: entity
@@ -86,4 +86,4 @@
     startProtoPart: CP14MagicStaff_Wooden
     startSlots:
     - MagicCrystalHolder
-    - OldMagicScroll1
+    - MagicArtifact1

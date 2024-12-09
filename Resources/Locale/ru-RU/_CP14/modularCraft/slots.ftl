@@ -3,3 +3,4 @@ cp14-modular-slot-jewerly1 = украшение (1)
 cp14-modular-slot-magic-crystal = магический кристалл
 cp14-modular-slot-magic-crystal-holder = держатель магических кристаллов
 cp14-modular-slot-garde = гарда
+cp14-modular-slot-magic-artifact = магический артефакт

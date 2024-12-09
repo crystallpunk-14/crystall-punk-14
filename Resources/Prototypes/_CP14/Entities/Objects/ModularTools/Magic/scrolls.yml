@@ -4,6 +4,7 @@
   id: CP14BaseOldMagicScroll
   categories: [ ForkFiltered ]
   name: old magic scroll
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells.
   abstract: true
   components:
   - type: Sprite
@@ -51,11 +52,11 @@
           Quantity: 1
 
 # Earth
-
 - type: entity
   id: CP14OldMagicScroll_Earth5
   parent: CP14BaseOldMagicScroll
   suffix: Earth, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Earth" type by 5%
   components:
   - type: Sprite
     layers:
@@ -63,29 +64,37 @@
       color: "#000000"
     - state: magic
       shader: unshaded
+      color: "#70533f"
   - type: CP14ModularCraftPart
     possibleParts:
-    - OldMagicScroll_Earth5
+    - MagicArtifact_Earth5
 
 - type: entity
   id: CP14OldMagicScroll_Earth10
-  parent: CP14BaseOldMagicScroll
+  parent: CP14OldMagicScroll_Earth5
   suffix: Earth, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Earth" type by 10%
   components:
-  - type: Sprite
-    layers:
-    - state: paper_filled
-      color: "#000000"
-    - state: magic
-      shader: unshaded
   - type: CP14ModularCraftPart
     possibleParts:
-    - OldMagicScroll_Earth10
+    - MagicArtifact_Earth10
 
 - type: entity
   id: CP14OldMagicScroll_Earth15
-  parent: CP14BaseOldMagicScroll
+  parent: CP14OldMagicScroll_Earth5
   suffix: Earth, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Earth" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Earth15
+
+# Fire
+- type: entity
+  id: CP14OldMagicScroll_Fire5
+  parent: CP14BaseOldMagicScroll
+  suffix: Fire, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Fire" type by 5%
   components:
   - type: Sprite
     layers:
@@ -93,6 +102,293 @@
       color: "#000000"
     - state: magic
       shader: unshaded
+      color: "#d9741c"
   - type: CP14ModularCraftPart
     possibleParts:
-    - OldMagicScroll_Earth15
+    - MagicArtifact_Fire5
+
+- type: entity
+  id: CP14OldMagicScroll_Fire10
+  parent: CP14OldMagicScroll_Fire5
+  suffix: Fire, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Fire" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Fire10
+
+- type: entity
+  id: CP14OldMagicScroll_Fire15
+  parent: CP14OldMagicScroll_Fire5
+  suffix: Fire, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Fire" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Fire15
+
+# Gate
+- type: entity
+  id: CP14OldMagicScroll_Gate5
+  parent: CP14BaseOldMagicScroll
+  suffix: Gate, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Gate" type by 5%
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+      color: "#32597d"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Gate5
+
+- type: entity
+  id: CP14OldMagicScroll_Gate10
+  parent: CP14OldMagicScroll_Gate5
+  suffix: Gate, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Gate" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Gate10
+
+- type: entity
+  id: CP14OldMagicScroll_Gate15
+  parent: CP14OldMagicScroll_Gate5
+  suffix: Gate, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Gate" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Gate15
+
+# Healing
+- type: entity
+  id: CP14OldMagicScroll_Healing5
+  parent: CP14BaseOldMagicScroll
+  suffix: Healing, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Healing" type by 5%
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+      color: "#89e04f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Healing5
+
+- type: entity
+  id: CP14OldMagicScroll_Healing10
+  parent: CP14OldMagicScroll_Healing5
+  suffix: Healing, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Healing" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Healing10
+
+- type: entity
+  id: CP14OldMagicScroll_Healing15
+  parent: CP14OldMagicScroll_Healing5
+  suffix: Healing, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Healing" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Healing15
+
+# LightDarkness
+- type: entity
+  id: CP14OldMagicScroll_LightDarkness5
+  parent: CP14BaseOldMagicScroll
+  suffix: LightDarkness, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "LightDarkness" type by 5%
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+      color: "#ba97b8"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_LightDarkness5
+
+- type: entity
+  id: CP14OldMagicScroll_LightDarkness10
+  parent: CP14OldMagicScroll_LightDarkness5
+  suffix: LightDarkness, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "LightDarkness" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_LightDarkness10
+
+- type: entity
+  id: CP14OldMagicScroll_LightDarkness15
+  parent: CP14OldMagicScroll_LightDarkness5
+  suffix: LightDarkness, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "LightDarkness" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_LightDarkness15
+
+# Meta
+- type: entity
+  id: CP14OldMagicScroll_Meta5
+  parent: CP14BaseOldMagicScroll
+  suffix: Meta, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Meta" type by 5%
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+      color: "#dcffdb"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Meta5
+
+- type: entity
+  id: CP14OldMagicScroll_Meta10
+  parent: CP14OldMagicScroll_Meta5
+  suffix: Meta, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Meta" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Meta10
+
+- type: entity
+  id: CP14OldMagicScroll_Meta15
+  parent: CP14OldMagicScroll_Meta5
+  suffix: Meta, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Meta" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Meta15
+
+# Movement
+- type: entity
+  id: CP14OldMagicScroll_Movement5
+  parent: CP14BaseOldMagicScroll
+  suffix: Movement, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Movement" type by 5%
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+      color: "#63ceff"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Movement5
+
+- type: entity
+  id: CP14OldMagicScroll_Movement10
+  parent: CP14OldMagicScroll_Movement5
+  suffix: Movement, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Movement" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Movement10
+
+- type: entity
+  id: CP14OldMagicScroll_Movement15
+  parent: CP14OldMagicScroll_Movement5
+  suffix: Movement, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Movement" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Movement15
+
+# Water
+- type: entity
+  id: CP14OldMagicScroll_Water5
+  parent: CP14BaseOldMagicScroll
+  suffix: Water, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Water" type by 5%
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+      color: "#1c94d9"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Water5
+
+- type: entity
+  id: CP14OldMagicScroll_Water10
+  parent: CP14OldMagicScroll_Water5
+  suffix: Water, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Water" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Water10
+
+- type: entity
+  id: CP14OldMagicScroll_Water15
+  parent: CP14OldMagicScroll_Water5
+  suffix: Water, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Water" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Water15
+
+# Necromancy
+- type: entity
+  id: CP14OldMagicScroll_Necromancy5
+  parent: CP14BaseOldMagicScroll
+  suffix: Necromancy, 5
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Necromancy" type by 5%
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+      color: "#000000"
+    - state: magic
+      shader: unshaded
+      color: "#1c94d9"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Necromancy5
+
+- type: entity
+  id: CP14OldMagicScroll_Necromancy10
+  parent: CP14OldMagicScroll_Necromancy5
+  suffix: Necromancy, 10
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Necromancy" type by 10%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Necromancy10
+
+- type: entity
+  id: CP14OldMagicScroll_Necromancy15
+  parent: CP14OldMagicScroll_Necromancy5
+  suffix: Necromancy, 15
+  description: An ancient magical artefact. Can be used on magical items. Reduces mana consumption for spells with the "Necromancy" type by 15%
+  components:
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - MagicArtifact_Necromancy15
