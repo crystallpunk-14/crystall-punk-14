@@ -13,11 +13,11 @@
   - type: Physics
     bodyType: Static
   - type: Sprite
-    sprite: /Textures/_CP14/Structures/Dungeon/holes.rsi
+    sprite: /Textures/_CP14/Structures/Dungeon/ladders.rsi
     drawdepth: FloorTiles
     layers:
-    - state: hole_big
-    - state: ladder_big_top_part
+    - state: ladder
+    - state: down
   - type: Fixtures
     fixtures:
       portalFixture:
@@ -42,10 +42,11 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: /Textures/_CP14/Structures/Dungeon/holes.rsi
-    drawdepth: Mobs
+    sprite: /Textures/_CP14/Structures/Dungeon/ladders.rsi
+    drawdepth: FloorTiles
     layers:
-    - state: ladder_bottom_part
+    - state: ladder
+    - state: top
   - type: PointLight
     color: White
     radius: 3

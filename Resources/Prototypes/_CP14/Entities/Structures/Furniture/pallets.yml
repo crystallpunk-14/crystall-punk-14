@@ -12,6 +12,9 @@
     drawdepth: FloorTiles
   - type: Transform
     anchored: true
+  - type: Tag
+    tags:
+      - Catwalk
 
 - type: entity
   id: CP14WoodenPallet
