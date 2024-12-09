@@ -1,3 +1,11 @@
+# SpellSphereOfLight
+- type: modularPart
+  id: BaseCrystalModifiers_SpellSphereOfLight
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
+
 - type: modularPart
   id: RingMagicCrystal1_SpellSphereOfLight
   targetSlot: RingMagicCrystal1
@@ -7,9 +15,9 @@
       state: ring_grey_icon
       color: "#FFFF00"
   modifiers:
-  - !type:AddSpellsToSpellStorage
-    spells:
-    - CP14ActionSpellSphereOfLight
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
   id: BlueHolderMagicCrystal1_SpellSphereOfLight
@@ -17,12 +25,12 @@
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
-      state: blueholder_grey_icon1
+      state: holder_grey_icon1
       color: "#FFFF00"
   modifiers:
-  - !type:AddSpellsToSpellStorage
-    spells:
-    - CP14ActionSpellSphereOfLight
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
   id: BlueHolderMagicCrystal2_SpellSphereOfLight
@@ -30,12 +38,12 @@
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
-      state: blueholder_grey_icon2
+      state: holder_grey_icon2
       color: "#FFFF00"
   modifiers:
-  - !type:AddSpellsToSpellStorage
-    spells:
-    - CP14ActionSpellSphereOfLight
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
   id: BlueHolderMagicCrystal3_SpellSphereOfLight
@@ -43,12 +51,12 @@
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
-      state: blueholder_grey_icon3
+      state: holder_grey_icon3
       color: "#FFFF00"
   modifiers:
-  - !type:AddSpellsToSpellStorage
-    spells:
-    - CP14ActionSpellSphereOfLight
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
   id: BlueHolderMagicCrystal4_SpellSphereOfLight
@@ -56,9 +64,9 @@
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
-      state: blueholder_grey_icon4
+      state: holder_grey_icon4
       color: "#FFFF00"
   modifiers:
-  - !type:AddSpellsToSpellStorage
-    spells:
-    - CP14ActionSpellSphereOfLight
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellSphereOfLight

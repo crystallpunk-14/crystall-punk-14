@@ -20,6 +20,7 @@
 - type: entity
   id: CP14MagicCrystalSpellSphereOfLight
   parent: CP14MagicCrystalBase
+  suffix: SphereOfLight
   components:
   - type: Sprite
     color: "#FFFF00"

@@ -4,6 +4,7 @@
   id: CP14ClothingMagicRingBase
   categories: [ ForkFiltered ]
   abstract: true
+  name: ring
   components:
   - type: Item
     size: Tiny

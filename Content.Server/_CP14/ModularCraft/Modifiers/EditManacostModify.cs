@@ -24,7 +24,7 @@ public sealed partial class EditManacostModify : CP14ModularCraftModifier
                 if (modifier >= 1f)
                     manacostModifyComp.Modifiers[magicType] += modifier - 1f;
                 else
-                    manacostModifyComp.Modifiers[magicType] += 1f - modifier;
+                    manacostModifyComp.Modifiers[magicType] -= 1f - modifier;
             }
             else
             {
