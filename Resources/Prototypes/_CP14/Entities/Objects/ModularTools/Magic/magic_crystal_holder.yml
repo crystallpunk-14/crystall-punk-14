@@ -32,7 +32,7 @@
   suffix: 1 slot
   components:
   - type: Sprite
-    state: blue1
+    state: icon1
   - type: CP14ModularCraftPart
     possibleParts:
     - StaffMagicCrystalHolder_Blue1
@@ -45,7 +45,7 @@
   suffix: 2 slots
   components:
   - type: Sprite
-    state: blue2
+    state: icon2
   - type: CP14ModularCraftPart
     possibleParts:
     - StaffMagicCrystalHolder_Blue2
@@ -58,7 +58,7 @@
   suffix: 3 slots
   components:
   - type: Sprite
-    state: blue3
+    state: icon3
   - type: CP14ModularCraftPart
     possibleParts:
     - StaffMagicCrystalHolder_Blue3
@@ -71,7 +71,7 @@
   suffix: 4 slots
   components:
   - type: Sprite
-    state: blue4
+    state: icon4
   - type: CP14ModularCraftPart
     possibleParts:
     - StaffMagicCrystalHolder_Blue4

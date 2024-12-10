@@ -13,7 +13,7 @@
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
       state: ring_grey_icon
-      color: "#FFFF00"
+      color: "#FFFFE0"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -26,7 +26,7 @@
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
       state: holder_grey_icon1
-      color: "#FFFF00"
+      color: "#FFFFE0"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -39,7 +39,7 @@
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
       state: holder_grey_icon2
-      color: "#FFFF00"
+      color: "#FFFFE0"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -52,7 +52,7 @@
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
       state: holder_grey_icon3
-      color: "#FFFF00"
+      color: "#FFFFE0"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -65,7 +65,7 @@
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
       state: holder_grey_icon4
-      color: "#FFFF00"
+      color: "#FFFFE0"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -78,8 +78,1298 @@
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
       state: staff_holder_icon1
-      color: "#FFFF00"
+      color: "#FFFFE0"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseCrystalModifiers_SpellSphereOfLight
+
+# SpellFlashLight
+- type: modularPart
+  id: BaseCrystalModifiers_SpellFlashLight
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellFlashLight
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellFlashLight
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFlashLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#FFFFE0"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlashLight
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellFlashLight
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFlashLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#FFFFE0"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlashLight
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellFlashLight
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellFlashLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#FFFFE0"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlashLight
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellFlashLight
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellFlashLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#FFFFE0"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlashLight
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellFlashLight
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellFlashLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#FFFFE0"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlashLight
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellFlashLight
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFlashLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#FFFFE0"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlashLight
+
+# SpellEarthWall
+- type: modularPart
+  id: BaseCrystalModifiers_SpellEarthWall
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellEarthWall
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellEarthWall
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellEarthWall
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#8B4513"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellEarthWall
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellEarthWall
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellEarthWall
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#8B4513"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellEarthWall
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellEarthWall
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellEarthWall
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#8B4513"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellEarthWall
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellEarthWall
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellEarthWall
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#8B4513"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellEarthWall
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellEarthWall
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellEarthWall
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#8B4513"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellEarthWall
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellEarthWall
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellEarthWall
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#8B4513"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellEarthWall
+
+# SpellFlameCreation
+- type: modularPart
+  id: BaseCrystalModifiers_SpellFlameCreation
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellFlameCreation
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellFlameCreation
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFlameCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlameCreation
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellFlameCreation
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFlameCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlameCreation
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellFlameCreation
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellFlameCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlameCreation
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellFlameCreation
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellFlameCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlameCreation
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellFlameCreation
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellFlameCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlameCreation
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellFlameCreation
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFlameCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFlameCreation
+
+# SpellFireball
+- type: modularPart
+  id: BaseCrystalModifiers_SpellFireball
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellFireball
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellFireball
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFireball
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFireball
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellFireball
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFireball
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFireball
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellFireball
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellFireball
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFireball
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellFireball
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellFireball
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFireball
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellFireball
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellFireball
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFireball
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellFireball
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellFireball
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#FF4500"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellFireball
+
+# SpellShadowStep
+- type: modularPart
+  id: BaseCrystalModifiers_SpellShadowStep
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellShadowStep
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellShadowStep
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellShadowStep
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowStep
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellShadowStep
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellShadowStep
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowStep
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellShadowStep
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellShadowStep
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowStep
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellShadowStep
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellShadowStep
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowStep
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellShadowStep
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellShadowStep
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowStep
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellShadowStep
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellShadowStep
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowStep
+
+# SpellCureBurn
+- type: modularPart
+  id: BaseCrystalModifiers_SpellCureBurn
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellCureBurn
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellCureBurn
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellCureBurn
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureBurn
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellCureBurn
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellCureBurn
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureBurn
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellCureBurn
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellCureBurn
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureBurn
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellCureBurn
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellCureBurn
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureBurn
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellCureBurn
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellCureBurn
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureBurn
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellCureBurn
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellCureBurn
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureBurn
+
+# SpellBloodPurification
+- type: modularPart
+  id: BaseCrystalModifiers_SpellBloodPurification
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellBloodPurification
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellBloodPurification
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellBloodPurification
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBloodPurification
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellBloodPurification
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellBloodPurification
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBloodPurification
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellBloodPurification
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellBloodPurification
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBloodPurification
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellBloodPurification
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellBloodPurification
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBloodPurification
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellBloodPurification
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellBloodPurification
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBloodPurification
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellBloodPurification
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellBloodPurification
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBloodPurification
+
+# SpellCureWounds
+- type: modularPart
+  id: BaseCrystalModifiers_SpellCureWounds
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellCureWounds
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellCureWounds
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellCureWounds
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureWounds
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellCureWounds
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellCureWounds
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureWounds
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellCureWounds
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellCureWounds
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureWounds
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellCureWounds
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellCureWounds
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureWounds
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellCureWounds
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellCureWounds
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureWounds
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellCureWounds
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellCureWounds
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#7CFC00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellCureWounds
+
+# SpellManaConsume
+- type: modularPart
+  id: BaseCrystalModifiers_SpellManaConsume
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellManaConsume
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellManaConsume
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellManaConsume
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaConsume
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellManaConsume
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellManaConsume
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaConsume
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellManaConsume
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellManaConsume
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaConsume
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellManaConsume
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellManaConsume
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaConsume
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellManaConsume
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellManaConsume
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaConsume
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellManaConsume
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellManaConsume
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaConsume
+
+# SpellManaGift
+- type: modularPart
+  id: BaseCrystalModifiers_SpellManaGift
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellManaGift
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellManaGift
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellManaGift
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaGift
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellManaGift
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellManaGift
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaGift
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellManaGift
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellManaGift
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaGift
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellManaGift
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellManaGift
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaGift
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellManaGift
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellManaGift
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaGift
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellManaGift
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellManaGift
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#66CDAA"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellManaGift
+
+# SpellShadowGrab
+- type: modularPart
+  id: BaseCrystalModifiers_SpellShadowGrab
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellShadowGrab
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellShadowGrab
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellShadowGrab
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowGrab
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellShadowGrab
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellShadowGrab
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowGrab
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellShadowGrab
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellShadowGrab
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowGrab
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellShadowGrab
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellShadowGrab
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowGrab
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellShadowGrab
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellShadowGrab
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowGrab
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellShadowGrab
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellShadowGrab
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#483D8B"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellShadowGrab
+
+# SpellResurrection
+- type: modularPart
+  id: BaseCrystalModifiers_SpellResurrection
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellResurrection
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellResurrection
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellResurrection
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#2E8B57"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellResurrection
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellResurrection
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellResurrection
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#2E8B57"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellResurrection
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellResurrection
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellResurrection
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#2E8B57"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellResurrection
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellResurrection
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellResurrection
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#2E8B57"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellResurrection
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellResurrection
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellResurrection
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#2E8B57"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellResurrection
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellResurrection
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellResurrection
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#2E8B57"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellResurrection
+
+# SpellWaterCreation
+- type: modularPart
+  id: BaseCrystalModifiers_SpellWaterCreation
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellWaterCreation
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellWaterCreation
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellWaterCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellWaterCreation
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellWaterCreation
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellWaterCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellWaterCreation
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellWaterCreation
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellWaterCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellWaterCreation
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellWaterCreation
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellWaterCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellWaterCreation
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellWaterCreation
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellWaterCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellWaterCreation
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellWaterCreation
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellWaterCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellWaterCreation
+
+# SpellBeerCreation
+- type: modularPart
+  id: BaseCrystalModifiers_SpellBeerCreation
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellBeerCreation
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellBeerCreation
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellBeerCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBeerCreation
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellBeerCreation
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellBeerCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBeerCreation
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellBeerCreation
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellBeerCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBeerCreation
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellBeerCreation
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellBeerCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBeerCreation
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellBeerCreation
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellBeerCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBeerCreation
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellBeerCreation
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellBeerCreation
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellBeerCreation
+
+# SpellIceShards
+- type: modularPart
+  id: BaseCrystalModifiers_SpellIceShards
+  modifiers:
+  - !type:AddSpellsToSpellStorage
+    spells:
+    - CP14ActionSpellIceShards
+
+- type: modularPart
+  id: RingMagicCrystal1_SpellIceShards
+  targetSlot: RingMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellIceShards
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: ring_grey_icon
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellIceShards
+
+- type: modularPart
+  id: HolderMagicCrystal1_SpellIceShards
+  targetSlot: HolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellIceShards
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon1
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellIceShards
+
+- type: modularPart
+  id: HolderMagicCrystal2_SpellIceShards
+  targetSlot: HolderMagicCrystal2
+  sourcePart: CP14MagicCrystalSpellIceShards
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon2
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellIceShards
+
+- type: modularPart
+  id: HolderMagicCrystal3_SpellIceShards
+  targetSlot: HolderMagicCrystal3
+  sourcePart: CP14MagicCrystalSpellIceShards
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon3
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellIceShards
+
+- type: modularPart
+  id: HolderMagicCrystal4_SpellIceShards
+  targetSlot: HolderMagicCrystal4
+  sourcePart: CP14MagicCrystalSpellIceShards
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: holder_grey_icon4
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellIceShards
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellIceShards
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellIceShards
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
+      color: "#5eabeb"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellIceShards

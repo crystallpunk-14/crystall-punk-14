@@ -8,16 +8,16 @@
   "copyright": "Created by comasqw (Github)",
   "states": [
     {
-      "name": "blue1"
+      "name": "icon1"
     },
     {
-        "name": "blue2"
+        "name": "icon2"
     },
     {
-        "name": "blue3"
+        "name": "icon3"
     },
     {
-        "name": "blue4"
+        "name": "icon4"
     }
   ]
 }

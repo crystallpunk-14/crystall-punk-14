@@ -1,3 +1,4 @@
+# Base
 - type: entity
   id: CP14MagicCrystalBase
   parent: BaseItem
@@ -17,18 +18,19 @@
     energy: 2
     color: "#808080"
 
+# SpellSphereOfLight
 - type: entity
   id: CP14MagicCrystalSpellSphereOfLight
   parent: CP14MagicCrystalBase
   suffix: SphereOfLight
   components:
   - type: Sprite
-    color: "#FFFF00"
+    color: "#FFFFE0"
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellSphereOfLight
   - type: PointLight
-    color: "#FFFF00"
+    color: "#FFFFE0"
   - type: CP14ModularCraftPart
     possibleParts:
     - RingMagicCrystal1_SpellSphereOfLight
@@ -37,3 +39,333 @@
     - HolderMagicCrystal3_SpellSphereOfLight
     - HolderMagicCrystal4_SpellSphereOfLight
     - StaffHolderMagicCrystal1_SpellSphereOfLight
+
+# SpellFlashLight
+- type: entity
+  id: CP14MagicCrystalSpellSpellFlashLight
+  parent: CP14MagicCrystalBase
+  suffix: SpellFlashLight
+  components:
+  - type: Sprite
+    color: "#FFFFE0"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSpellFlashLight
+  - type: PointLight
+    color: "#FFFFE0"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellSpellFlashLight
+    - HolderMagicCrystal1_SpellSpellFlashLight
+    - HolderMagicCrystal2_SpellSpellFlashLight
+    - HolderMagicCrystal3_SpellSpellFlashLight
+    - HolderMagicCrystal4_SpellSpellFlashLight
+    - StaffHolderMagicCrystal1_SpellSpellFlashLight
+
+# SpellEarthWall
+- type: entity
+  id: CP14MagicCrystalSpellEarthWall
+  parent: CP14MagicCrystalBase
+  suffix: SpellEarthWall
+  components:
+  - type: Sprite
+    color: "#8B4513"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellEarthWall
+  - type: PointLight
+    color: "#8B4513"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellEarthWall
+    - HolderMagicCrystal1_SpellEarthWall
+    - HolderMagicCrystal2_SpellEarthWall
+    - HolderMagicCrystal3_SpellEarthWall
+    - HolderMagicCrystal4_SpellEarthWall
+    - StaffHolderMagicCrystal1_SpellEarthWall
+
+# SpellFlameCreation
+- type: entity
+  id: CP14MagicCrystalSpellFlameCreation
+  parent: CP14MagicCrystalBase
+  suffix: SpellFlameCreation
+  components:
+  - type: Sprite
+    color: "#FF4500"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFlameCreation
+  - type: PointLight
+    color: "#FF4500"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellFlameCreation
+    - HolderMagicCrystal1_SpellFlameCreation
+    - HolderMagicCrystal2_SpellFlameCreation
+    - HolderMagicCrystal3_SpellFlameCreation
+    - HolderMagicCrystal4_SpellFlameCreation
+    - StaffHolderMagicCrystal1_SpellFlameCreation
+
+# SpellFireball
+- type: entity
+  id: CP14MagicCrystalSpellFireball
+  parent: CP14MagicCrystalBase
+  suffix: SpellFireball
+  components:
+  - type: Sprite
+    color: "#FF4500"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFireball
+  - type: PointLight
+    color: "#FF4500"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellFireball
+    - HolderMagicCrystal1_SpellFireball
+    - HolderMagicCrystal2_SpellFireball
+    - HolderMagicCrystal3_SpellFireball
+    - HolderMagicCrystal4_SpellFireball
+    - StaffHolderMagicCrystal1_SpellFireball
+
+# SpellShadowStep
+- type: entity
+  id: CP14MagicCrystalSpellShadowStep
+  parent: CP14MagicCrystalBase
+  suffix: SpellShadowStep
+  components:
+  - type: Sprite
+    color: "#483D8B"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellShadowStep
+  - type: PointLight
+    color: "#483D8B"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellShadowStep
+    - HolderMagicCrystal1_SpellShadowStep
+    - HolderMagicCrystal2_SpellShadowStep
+    - HolderMagicCrystal3_SpellShadowStep
+    - HolderMagicCrystal4_SpellShadowStep
+    - StaffHolderMagicCrystal1_SpellShadowStep
+
+# SpellCureBurn
+- type: entity
+  id: CP14MagicCrystalSpellCureBurn
+  parent: CP14MagicCrystalBase
+  suffix: SpellCureBurn
+  components:
+  - type: Sprite
+    color: "#7CFC00"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellCureBurn
+  - type: PointLight
+    color: "#7CFC00"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellCureBurn
+    - HolderMagicCrystal1_SpellCureBurn
+    - HolderMagicCrystal2_SpellCureBurn
+    - HolderMagicCrystal3_SpellCureBurn
+    - HolderMagicCrystal4_SpellCureBurn
+    - StaffHolderMagicCrystal1_SpellCureBurn
+
+# SpellBloodPurification
+- type: entity
+  id: CP14MagicCrystalSpellBloodPurification
+  parent: CP14MagicCrystalBase
+  suffix: SpellBloodPurification
+  components:
+  - type: Sprite
+    color: "#7CFC00"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellBloodPurification
+  - type: PointLight
+    color: "#7CFC00"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellBloodPurification
+    - HolderMagicCrystal1_SpellBloodPurification
+    - HolderMagicCrystal2_SpellBloodPurification
+    - HolderMagicCrystal3_SpellBloodPurification
+    - HolderMagicCrystal4_SpellBloodPurification
+    - StaffHolderMagicCrystal1_SpellBloodPurification
+
+# SpellCureWounds
+- type: entity
+  id: CP14MagicCrystalSpellCureWounds
+  parent: CP14MagicCrystalBase
+  suffix: SpellCureWounds
+  components:
+  - type: Sprite
+    color: "#7CFC00"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellCureWounds
+  - type: PointLight
+    color: "#7CFC00"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellCureWounds
+    - HolderMagicCrystal1_SpellCureWounds
+    - HolderMagicCrystal2_SpellCureWounds
+    - HolderMagicCrystal3_SpellCureWounds
+    - HolderMagicCrystal4_SpellCureWounds
+    - StaffHolderMagicCrystal1_SpellCureWounds
+
+# SpellManaConsume
+- type: entity
+  id: CP14MagicCrystalSpellManaConsume
+  parent: CP14MagicCrystalBase
+  suffix: SpellManaConsume
+  components:
+  - type: Sprite
+    color: "#66CDAA"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaConsume
+  - type: PointLight
+    color: "#66CDAA"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellManaConsume
+    - HolderMagicCrystal1_SpellManaConsume
+    - HolderMagicCrystal2_SpellManaConsume
+    - HolderMagicCrystal3_SpellManaConsume
+    - HolderMagicCrystal4_SpellManaConsume
+    - StaffHolderMagicCrystal1_SpellManaConsume
+
+# SpellManaGift
+- type: entity
+  id: CP14MagicCrystalSpellManaGift
+  parent: CP14MagicCrystalBase
+  suffix: SpellManaGift
+  components:
+  - type: Sprite
+    color: "#66CDAA"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaGift
+  - type: PointLight
+    color: "#66CDAA"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellManaGift
+    - HolderMagicCrystal1_SpellManaGift
+    - HolderMagicCrystal2_SpellManaGift
+    - HolderMagicCrystal3_SpellManaGift
+    - HolderMagicCrystal4_SpellManaGift
+    - StaffHolderMagicCrystal1_SpellManaGift
+
+# SpellShadowGrab
+- type: entity
+  id: CP14MagicCrystalSpellShadowGrab
+  parent: CP14MagicCrystalBase
+  suffix: SpellShadowGrab
+  components:
+  - type: Sprite
+    color: "#483D8B"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellShadowGrab
+  - type: PointLight
+    color: "#483D8B"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellShadowGrab
+    - HolderMagicCrystal1_SpellShadowGrab
+    - HolderMagicCrystal2_SpellShadowGrab
+    - HolderMagicCrystal3_SpellShadowGrab
+    - HolderMagicCrystal4_SpellShadowGrab
+    - StaffHolderMagicCrystal1_SpellShadowGrab
+
+# SpellResurrection
+- type: entity
+  id: CP14MagicCrystalSpellResurrection
+  parent: CP14MagicCrystalBase
+  suffix: SpellResurrection
+  components:
+  - type: Sprite
+    color: "#2E8B57"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellResurrection
+  - type: PointLight
+    color: "#2E8B57"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellResurrection
+    - HolderMagicCrystal1_SpellResurrection
+    - HolderMagicCrystal2_SpellResurrection
+    - HolderMagicCrystal3_SpellResurrection
+    - HolderMagicCrystal4_SpellResurrection
+    - StaffHolderMagicCrystal1_SpellResurrection
+
+# SpellWaterCreation
+- type: entity
+  id: CP14MagicCrystalSpellWaterCreation
+  parent: CP14MagicCrystalBase
+  suffix: SpellWaterCreation
+  components:
+  - type: Sprite
+    color: "#5eabeb"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellWaterCreation
+  - type: PointLight
+    color: "#5eabeb"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellWaterCreation
+    - HolderMagicCrystal1_SpellWaterCreation
+    - HolderMagicCrystal2_SpellWaterCreation
+    - HolderMagicCrystal3_SpellWaterCreation
+    - HolderMagicCrystal4_SpellWaterCreation
+    - StaffHolderMagicCrystal1_SpellWaterCreation
+
+# SpellBeerCreation
+- type: entity
+  id: CP14MagicCrystalSpellBeerCreation
+  parent: CP14MagicCrystalBase
+  suffix: SpellBeerCreation
+  components:
+  - type: Sprite
+    color: "#5eabeb"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellBeerCreation
+  - type: PointLight
+    color: "#5eabeb"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellBeerCreation
+    - HolderMagicCrystal1_SpellBeerCreation
+    - HolderMagicCrystal2_SpellBeerCreation
+    - HolderMagicCrystal3_SpellBeerCreation
+    - HolderMagicCrystal4_SpellBeerCreation
+    - StaffHolderMagicCrystal1_SpellBeerCreation
+
+# SpellIceShards
+- type: entity
+  id: CP14MagicCrystalSpellIceShards
+  parent: CP14MagicCrystalBase
+  suffix: SpellIceShards
+  components:
+  - type: Sprite
+    color: "#5eabeb"
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceShards
+  - type: PointLight
+    color: "#5eabeb"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - RingMagicCrystal1_SpellIceShards
+    - HolderMagicCrystal1_SpellIceShards
+    - HolderMagicCrystal2_SpellIceShards
+    - HolderMagicCrystal3_SpellIceShards
+    - HolderMagicCrystal4_SpellIceShards
+    - StaffHolderMagicCrystal1_SpellIceShards
