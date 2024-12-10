@@ -20,7 +20,7 @@
     - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
-  id: BlueHolderMagicCrystal1_SpellSphereOfLight
+  id: HolderMagicCrystal1_SpellSphereOfLight
   targetSlot: HolderMagicCrystal1
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
@@ -33,7 +33,7 @@
     - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
-  id: BlueHolderMagicCrystal2_SpellSphereOfLight
+  id: HolderMagicCrystal2_SpellSphereOfLight
   targetSlot: HolderMagicCrystal2
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
@@ -46,7 +46,7 @@
     - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
-  id: BlueHolderMagicCrystal3_SpellSphereOfLight
+  id: HolderMagicCrystal3_SpellSphereOfLight
   targetSlot: HolderMagicCrystal3
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
@@ -59,12 +59,25 @@
     - BaseCrystalModifiers_SpellSphereOfLight
 
 - type: modularPart
-  id: BlueHolderMagicCrystal4_SpellSphereOfLight
+  id: HolderMagicCrystal4_SpellSphereOfLight
   targetSlot: HolderMagicCrystal4
   sourcePart: CP14MagicCrystalSpellSphereOfLight
   iconSprite:
     - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
       state: holder_grey_icon4
+      color: "#FFFF00"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCrystalModifiers_SpellSphereOfLight
+
+- type: modularPart
+  id: StaffHolderMagicCrystal1_SpellSphereOfLight
+  targetSlot: StaffHolderMagicCrystal1
+  sourcePart: CP14MagicCrystalSpellSphereOfLight
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/magic_crystal.rsi
+      state: staff_holder_icon1
       color: "#FFFF00"
   modifiers:
   - !type:Inherit

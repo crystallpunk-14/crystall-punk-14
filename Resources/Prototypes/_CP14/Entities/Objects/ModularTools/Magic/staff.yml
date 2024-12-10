@@ -87,3 +87,61 @@
     startSlots:
     - MagicCrystalHolder
     - MagicArtifact1
+
+# Glowing Iron Staff
+- type: entity
+  id: CP14MagicStaff_GlowingIron
+  parent: CP14MagicStaffBase
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/blue_staff.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/blue_staff.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: CP14MagicManacostModify
+    globalModifier: 0.9
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14MagicStaff_GlowingWooden
+    startSlots:
+    - MagicCrystalHolder
+    - MagicArtifact1
+
+- type: entity
+  id: CP14MagicStaff_GlowingIronHolder
+  parent: CP14MagicStaffBase
+  components:
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/blue_staff.rsi
+    layers:
+    - state: icon_holder
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/blue_staff.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: CP14MagicManacostModify
+    globalModifier: 0.9
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14MagicStaff_GlowingWooden
+    startSlots:
+    - MagicCrystalHolder
+    - MagicArtifact1
+    - StaffHolderMagicCrystal1

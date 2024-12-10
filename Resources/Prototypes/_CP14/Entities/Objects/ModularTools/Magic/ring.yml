@@ -5,6 +5,7 @@
   categories: [ ForkFiltered ]
   abstract: true
   name: ring
+  description: Magic Ring. Has space for a magic crystal.
   components:
   - type: Item
     size: Tiny
@@ -32,6 +33,6 @@
     energy: 2
     color: "#87CEEB"
   - type: Sprite
-    state: brass_ring_blue
+    state: blue_ring
   - type: CP14MagicManacostModify
     globalModifier: 0.9

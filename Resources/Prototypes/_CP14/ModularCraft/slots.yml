@@ -33,3 +33,7 @@
 - type: modularSlot
   id: MagicArtifact1
   name: cp14-modular-slot-magic-artifact
+
+- type: modularSlot
+  id: StaffHolderMagicCrystal1
+  name: cp14-modular-slot-magic-crystal
