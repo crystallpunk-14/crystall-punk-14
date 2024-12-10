@@ -89,6 +89,7 @@ entities:
       - visuals: CP14Rain
       - visuals: CP14Storm
       - visuals: CP14Mist
+    - type: CP14MapDamage
     - type: LoadedMap
     - type: Parallax
       parallax: CP14Ocean

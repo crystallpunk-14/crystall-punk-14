@@ -232,9 +232,10 @@
   - type: CanMoveInAir # read: CanSwimInOcean lol
   - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
-    weightlessAcceleration: 0.5 # Slow swimming
+    weightlessAcceleration: 0.7 # Slow swimming
     weightlessFriction: 3
-    weightlessModifier: 0.4
+    weightlessModifier: 0.5
+  - type: CP14DamageableByMap
 
 
 - type: entity
