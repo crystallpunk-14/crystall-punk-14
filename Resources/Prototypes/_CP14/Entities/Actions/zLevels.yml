@@ -4,6 +4,7 @@
   description: Move up one Z-Level
   components:
   - type: InstantAction
+    checkCanInteract: false
     icon: _CP14/Actions/zLevel.rsi/up.png
     event: !type:CP14ZLevelActionUp
 
@@ -13,5 +14,6 @@
   description: Move down one Z-Level
   components:
   - type: InstantAction
+    checkCanInteract: false
     icon: _CP14/Actions/zLevel.rsi/down.png
     event: !type:CP14ZLevelActionDown
