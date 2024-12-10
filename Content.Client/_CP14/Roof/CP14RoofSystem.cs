@@ -44,40 +44,6 @@ public sealed class CP14RoofSystem : EntitySystem
         var player = _playerManager.LocalEntity;
         var spriteQuery = GetEntityQuery<SpriteComponent>();
 
-        //if (TryComp(player, out TransformComponent? playerXform) &&
-        //    _stateManager.CurrentState is GameplayState state &&
-        //    spriteQuery.TryGetComponent(player, out var playerSprite))
-        //{
-        //    var roofQuery = GetEntityQuery<CP14RoofComponent>();
-        //    var mapPos = _transform.GetMapCoordinates(_playerManager.LocalEntity!.Value, xform: playerXform);
-//
-        //    // Also want to handle large entities even if they may not be clickable.
-        //    var underRoof = false;
-        //    foreach (var ent in state.GetClickableEntities(mapPos))
-        //    {
-        //        if (ent == player)
-        //            continue;
-//
-        //        if (!spriteQuery.TryGetComponent(ent, out var sprite) ||
-        //            sprite.DrawDepth < playerSprite.DrawDepth)
-        //            continue;
-//
-        //        if (!roofQuery.HasComp(ent))
-        //            continue;
-//
-        //        underRoof = true;
-        //    }
-//
-        //    if (underRoof && _roofVisible)
-        //    {
-        //        RoofVisibility = false;
-        //    }
-        //    if (!underRoof && !_roofVisible)
-        //    {
-        //        RoofVisibility = true;
-        //    }
-        //}
-
         if (TryComp(player, out TransformComponent? playerXform))
         {
             var grid = playerXform.GridUid;
