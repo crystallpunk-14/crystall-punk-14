@@ -44,6 +44,7 @@ public sealed partial class CP14StationZLevelsSystem
 
         var otherSidePortal = Spawn(autoPortal.Comp.OtherSideProto, targetMapPos);
 
+        _transform.SetWorldRotation(otherSidePortal, _transform.GetWorldRotation(autoPortal));
         if (_linkedEntity.TryLink(autoPortal, otherSidePortal, true))
             RemComp<CP14ZLevelAutoPortalComponent>(autoPortal);
     }

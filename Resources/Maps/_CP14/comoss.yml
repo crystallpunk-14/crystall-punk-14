@@ -89,11 +89,7 @@ entities:
       - visuals: CP14Rain
       - visuals: CP14Storm
       - visuals: CP14Mist
-    - type: Gravity
-      gravityShakeSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/alert.ogg
-      inherent: True
-      enabled: True
+    - type: CP14MapDamage
     - type: LoadedMap
     - type: Parallax
       parallax: CP14Ocean
@@ -499,6 +495,8 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
+      inherent: True
+      enabled: True
     - type: DecalGrid
       chunkCollection:
         version: 2
