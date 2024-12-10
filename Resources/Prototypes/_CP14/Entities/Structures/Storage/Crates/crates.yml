@@ -133,7 +133,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
+          CP14WoodenPlanks1:
             min: 1
             max: 4
       - !type:DoActsBehavior
@@ -163,7 +163,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
+          CP14WoodenPlanks1:
             min: 1
             max: 4
       - !type:DoActsBehavior
