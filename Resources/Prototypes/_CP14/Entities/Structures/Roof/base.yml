@@ -1,0 +1,26 @@
+- type: entity
+  id: CP14BaseRoof
+  categories: [ ForkFiltered ]
+  #abstract: true
+  description: A roof over your head to protect you from the heat of the sun or the weather.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: PlacementReplacement
+    key: roof
+  - type: Clickable
+  - type: Physics
+    bodyType: Static 
+  - type: Transform
+    anchored: true
+  #- type: Occluder
+  #  enabled: false
+  - type: BlockWeather
+  - type: CP14Roof
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: Effects
+    sprite: _CP14/Structures/Roof/test.rsi
+    state: base
