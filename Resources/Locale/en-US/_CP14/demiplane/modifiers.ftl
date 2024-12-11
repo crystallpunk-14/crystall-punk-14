@@ -1,7 +1,6 @@
 cp14-modifier-gold-ore = gold ore
 cp14-modifier-iron-ore = iron ore
 cp14-modifier-copper-ore = copper ore
-cp14-modifier-glowing-iron-ore = glowing iron ore
 cp14-modifier-quartz-crystal = quartz crystals
 cp14-modifier-dayflin = dayflins
 cp14-modifier-fly-agaric = fly agaric
@@ -18,4 +17,3 @@ cp14-modifier-mole = predatory moles
 cp14-modifier-rabbits = rabbits
 cp14-modifier-boars = wild boars
 cp14-modifier-chasm = bottomless chasms
-cp14-modifier-glowing-tree = glowing trees

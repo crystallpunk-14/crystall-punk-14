@@ -15,22 +15,6 @@
       maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
-  id: GlowingIronOre
-  name: cp14-modifier-glowing-iron-ore
-  unique: false
-  reward: 0.5
-  requiredTags:
-  - CP14DemiplaneCave
-  layers:
-    - !type:OreDunGen
-      entityMask:
-      - CP14WallStone
-      entity: CP14WallStoneGlowingIronOre
-      count: 6
-      minGroupSize: 6
-      maxGroupSize: 6
-
-- type: cp14DemiplaneModifier
   id: IronOre
   name: cp14-modifier-iron-ore
   unique: false
@@ -491,20 +475,3 @@
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
-  id: GlowingTree
-  name: cp14-modifier-glowing-tree
-  requiredTags:
-  - CP14DemiplaneGrass
-  - CP14DemiplaneOpenSky
-  layers:
-    - !type:OreDunGen
-      tileMask:
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
-      entity: CP14RoyalPumpkin
-      count: 6
-      minGroupSize: 1
-      maxGroupSize: 3

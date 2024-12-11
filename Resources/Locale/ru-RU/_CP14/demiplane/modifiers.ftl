@@ -1,7 +1,6 @@
 cp14-modifier-gold-ore = золотой руды
 cp14-modifier-iron-ore = железной руды
 cp14-modifier-copper-ore = медной руды
-cp14-modifier-glowing-iron-ore = руды сверкающего жезела
 cp14-modifier-quartz-crystal = кварцевых кристаллов
 cp14-modifier-dayflin = днецветов
 cp14-modifier-fly-agaric = мухоморов
@@ -18,4 +17,3 @@ cp14-modifier-mole = хищных кротов
 cp14-modifier-rabbits = кроликов
 cp14-modifier-boars = диких кабанов
 cp14-modifier-chasm = бездонных пропастей
-cp14-modifier-glowing-tree = сверкающих деревьев
