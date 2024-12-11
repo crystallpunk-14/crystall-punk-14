@@ -71,11 +71,6 @@
 
 # Rules
 - type: rules
-  id: AlwaysTrue
-  rules:
-    - !type:AlwaysTrueRule
-
-- type: rules
   id: NearMagic
   rules:
     - !type:NearbyEntitiesRule
