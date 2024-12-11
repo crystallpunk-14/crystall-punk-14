@@ -250,10 +250,10 @@
     - /Audio/Ambience/shipambience.ogg
 
 # Rules
-- type: rules
-  id: AlwaysTrue
-  rules:
-    - !type:AlwaysTrueRule
+#- type: rules
+#  id: AlwaysTrue
+#  rules:
+#    - !type:AlwaysTrueRule
 
 - type: rules
   id: InSpace
