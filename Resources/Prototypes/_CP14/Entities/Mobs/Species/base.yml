@@ -229,6 +229,13 @@
   - type: CanEnterCryostorage
   - type: CP14IgnitionModifier
     ignitionTimeModifier: 2.5
+  - type: CanMoveInAir # read: CanSwimInOcean lol
+  - type: MovementAlwaysTouching
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 0.7 # Slow swimming
+    weightlessFriction: 3
+    weightlessModifier: 0.5
+  - type: CP14DamageableByMap
 
 
 - type: entity

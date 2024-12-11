@@ -1,6 +1,6 @@
 - type: entity
   id: CP14DungeonEntrance
-  name: dungeon entrance
+  name: stairway down
   categories: [ HideSpawnMenu ]
   description: The dark depths of the underworld are calling you.
   placement:
@@ -13,17 +13,17 @@
   - type: Physics
     bodyType: Static
   - type: Sprite
-    sprite: /Textures/_CP14/Structures/Dungeon/holes.rsi
+    sprite: /Textures/_CP14/Structures/Dungeon/ladders.rsi
     drawdepth: FloorTiles
     layers:
-    - state: hole_big
-    - state: ladder_big_top_part
+    - state: ladder
+    #- state: down
   - type: Fixtures
     fixtures:
       portalFixture:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.48,0.25,0.48"
+          bounds: "-0.48,-0.48,0.48,-0.05"
         mask:
         - FullTileMask
         layer:
@@ -36,16 +36,27 @@
 - type: entity
   parent: CP14DungeonEntrance
   id: CP14DungeonExit
-  name: dungeon exit
+  name: stairway up
   categories: [ HideSpawnMenu ]
   description: A way out of the dark underworld into the overworld.
   components:
   - type: Sprite
-    noRot: true
-    sprite: /Textures/_CP14/Structures/Dungeon/holes.rsi
+    sprite: /Textures/_CP14/Structures/Dungeon/ladders_up.rsi
     drawdepth: Mobs
     layers:
-    - state: ladder_bottom_part
+    - state: ladder
+    #- state: top
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.48,0.48,0.48,0.05"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
   - type: PointLight
     color: White
     radius: 3

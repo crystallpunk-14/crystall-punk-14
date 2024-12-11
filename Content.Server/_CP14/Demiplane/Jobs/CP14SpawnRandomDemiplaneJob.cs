@@ -108,9 +108,9 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         }
 
         //Setup gravity
-        var gravity = _entManager.EnsureComponent<GravityComponent>(DemiplaneMapUid);
+        var gravity = _entManager.EnsureComponent<GravityComponent>(grid);
         gravity.Enabled = true;
-        _entManager.Dirty(DemiplaneMapUid, gravity, metadata);
+        _entManager.Dirty(grid, gravity, metadata);
 
         // Setup default atmos
         var moles = new float[Atmospherics.AdjustedNumberOfGases];
