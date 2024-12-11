@@ -204,7 +204,7 @@
     base: wall
 
 - type: entity
-  id: CP14WallStoneShiningIronOre
+  id: CP14WallStoneGlowingIronOre
   suffix: glowing iron ore
   parent: CP14WallStone
   description: A solid stone natural wall. You see the shining particles in it.

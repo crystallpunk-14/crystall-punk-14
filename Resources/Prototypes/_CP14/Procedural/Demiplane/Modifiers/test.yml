@@ -7,9 +7,25 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneGoldOre # Hellish gold 666
+      count: 6
+      minGroupSize: 6
+      maxGroupSize: 6
+
+- type: cp14DemiplaneModifier
+  id: GlowingIronOre
+  name: cp14-modifier-glowing-iron-ore
+  unique: false
+  reward: 0.5
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      entityMask:
+      - CP14WallStone
+      entity: CP14WallStoneGlowingIronOre
       count: 6
       minGroupSize: 6
       maxGroupSize: 6
@@ -23,7 +39,7 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneIronOre
       count: 5
@@ -39,7 +55,7 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneCopperOre
       count: 10
@@ -54,7 +70,7 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       entity: CP14QuartzCrystal
       count: 10
@@ -71,7 +87,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       entity: CP14CrystalRubiesMedium
       count: 30
@@ -87,7 +103,7 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       - CP14FloorSand
       entity: CP14CrystalTopazesMedium
@@ -104,7 +120,7 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       - CP14FloorGrass
       - CP14FloorGrassLight
@@ -123,7 +139,7 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       - CP14FloorGrass
       - CP14FloorGrassLight
@@ -143,7 +159,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       entity: CP14CrystalAmethystsMedium
       count: 30
@@ -160,7 +176,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       - CP14FloorSand
       entity: CP14CrystalDiamondsMedium
@@ -177,7 +193,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -194,7 +210,7 @@
   - CP14DemiplaneGrass
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       - CP14FloorGrass
       - CP14FloorGrassLight
@@ -212,7 +228,7 @@
   - CP14DemiplaneGrass
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -229,7 +245,7 @@
   - CP14DemiplaneGrass
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -247,7 +263,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -264,7 +280,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -400,7 +416,7 @@
   - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       entity: CP14MobMonsterMole
       count: 6
@@ -416,7 +432,7 @@
   - CP14DemiplaneGrass
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -435,7 +451,7 @@
   - CP14DemiplaneGrass
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -467,7 +483,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -475,3 +491,20 @@
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: GlowingTree
+  name: cp14-modifier-glowing-tree
+  requiredTags:
+  - CP14DemiplaneGrass
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14RoyalPumpkin
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 3

@@ -221,7 +221,7 @@
   parent: CP14WildProduceBase
   name: blue Amanita
   description: A sky blue flower known for its medicinal and magical properties.
-  components: 
+  components:
   - type: Sprite
     sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
     layers:
@@ -244,7 +244,7 @@
         reagents:
         - ReagentId: CP14BlueAmanita
           Quantity: 5
-  
+
 - type: entity
   id: CP14Dayflin
   parent: CP14WildProduceBase
@@ -272,4 +272,43 @@
         maxVol: 5
         reagents:
         - ReagentId: CP14YellowDayflinPulp
+          Quantity: 4
+
+- type: entity
+  id: CP14FoodGlowingFruit
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: glowing fruit
+  description: Glowing Fruit. Exudes mana.
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: PointLight
+    radius: 1.3
+    energy: 2
+    color: "#87CEEB"
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - CP14Magic
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/glowing_fruit.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14BlueAmanita
           Quantity: 4
