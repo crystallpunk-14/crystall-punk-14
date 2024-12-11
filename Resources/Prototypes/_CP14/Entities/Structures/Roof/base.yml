@@ -29,7 +29,9 @@
     base: roof
 
 - type: entity
-  parent: CP14BaseRoof
+  parent: 
+  - CP14BaseRoof
+  - CP14BaseFlammableSpreading
   id: CP14RoofWooden
   name: wooden roof
   components:
@@ -37,3 +39,55 @@
     sprite: _CP14/Structures/Roof/wooden.rsi
   - type: Icon
     sprite: _CP14/Structures/Roof/wooden.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14RoofWooden
+    node: CP14RoofWooden
+
+- type: entity
+  parent: 
+  - CP14BaseRoof
+  id: CP14RoofStone
+  name: stone roof
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Roof/stone.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Roof/stone.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14RoofStone
+    node: CP14RoofStone
