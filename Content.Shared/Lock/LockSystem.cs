@@ -145,9 +145,25 @@ public sealed class LockSystem : EntitySystem
                 });
         }
 
-        _sharedPopupSystem.PopupClient(Loc.GetString("lock-comp-do-lock-success",
+        Lock(uid, user, lockComp);
+        return true;
+    }
+
+    /// <summary>
+    ///     Forces a given entity to be locked, does not activate a do-after.
+    /// </summary>
+    public void Lock(EntityUid uid, EntityUid? user, LockComponent? lockComp = null)
+    {
+        if (!Resolve(uid, ref lockComp))
+            return;
+
+        if (user is { Valid: true })
+        {
+            _sharedPopupSystem.PopupClient(Loc.GetString("lock-comp-do-lock-success",
                 ("entityName", Identity.Name(uid, EntityManager))), uid, user);
-        _audio.PlayPvs(lockComp.LockSound, uid);
+        }
+
+        _audio.PlayPredicted(lockComp.LockSound, uid, user);
 
         lockComp.Locked = true;
         _appearanceSystem.SetData(uid, LockVisuals.Locked, true);
@@ -155,7 +171,6 @@ public sealed class LockSystem : EntitySystem
 
         var ev = new LockToggledEvent(true);
         RaiseLocalEvent(uid, ref ev, true);
-        return true;
     }
 
     /// <summary>
@@ -178,7 +193,7 @@ public sealed class LockSystem : EntitySystem
                 ("entityName", Identity.Name(uid, EntityManager))), uid, user.Value);
         }
 
-        _audio.PlayPvs(lockComp.UnlockSound, uid);
+        _audio.PlayPredicted(lockComp.UnlockSound, uid, user);
 
         lockComp.Locked = false;
         _appearanceSystem.SetData(uid, LockVisuals.Locked, false);
@@ -300,7 +315,7 @@ public sealed class LockSystem : EntitySystem
         if (!component.Locked || !component.BreakOnEmag)
             return;
 
-        _audio.PlayPvs(component.UnlockSound, uid);
+        _audio.PlayPredicted(component.UnlockSound, uid, args.UserUid);
 
         component.Locked = false;
         _appearanceSystem.SetData(uid, LockVisuals.Locked, false);
