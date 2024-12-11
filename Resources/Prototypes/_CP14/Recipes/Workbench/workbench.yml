@@ -85,3 +85,19 @@
   stacks:
     CP14WoodenPlanks: 2
   result: CP14ModularGripWoodenLong
+
+- type: CP14Recipe
+  id: CP14MagicStaff_GlowingWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  stacks:
+    CP14GlowingWoodenPlanks: 2
+  result: CP14MagicStaff_GlowingWooden
+
+- type: CP14Recipe
+  id: CP14MagicStaff_Wooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  stacks:
+    CP14WoodenPlanks: 2
+  result: CP14MagicStaff_Wooden

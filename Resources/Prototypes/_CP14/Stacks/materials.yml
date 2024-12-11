@@ -74,3 +74,10 @@
   spawn: CP14GlowingIronBar1
   icon: { sprite: _CP14/Objects/Materials/glowingiron_bar.rsi, state: bar_2 }
   maxCount: 10
+
+- type: stack
+  id: CP14GlowingWoodenPlanks
+  name: cp14-stack-glowing-wood-planks
+  spawn: CP14GlowingWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
+  maxCount: 10

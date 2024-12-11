@@ -78,3 +78,21 @@
   icon: { sprite: _CP14/Objects/Materials/flora.rsi, state: grass_material1 }
   color: "#85903e"
   price: 0 #?
+
+- type: material
+  id: CP14GlowingIron
+  stackEntity: CP14GlowingIronBar1
+  name: cp14-material-glowing-iron
+  unit: materials-unit-bar
+  icon: { sprite: _CP14/Objects/Materials/glowingiron_bar.rsi, state: bar_2 }
+  color: "#87CEEB"
+  price: 0 #?
+
+- type: material
+  id: CP14GlowingWoodenPlanks
+  stackEntity: CP14GlowingWoodenPlanks1
+  name: cp14-material-glowing-wooden-planks
+  unit: materials-unit-plank
+  icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
+  color: "#874d3a"
+  price: 0 #?

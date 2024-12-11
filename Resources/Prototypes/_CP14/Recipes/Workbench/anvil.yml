@@ -385,3 +385,204 @@
   stacks:
     CP14GoldBar: 2
   result: CP14ModularBladeGoldAxe
+
+- type: CP14Recipe
+  id: CP14ClothingMagicRingBlue
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GlowingIronBar: 1
+  result: CP14ClothingMagicRingBlue
+
+- type: CP14Recipe
+  id: CP14ClothingMagicRingCooper
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ClothingMagicRingCooper
+
+- type: CP14Recipe
+  id: CP14ClothingMagicRingIron
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 1
+  result: CP14ClothingMagicRingIron
+
+- type: CP14Recipe
+  id: CP14ClothingMagicRingGold
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ClothingMagicRingGold
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Blue1
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GlowingIronBar: 1
+  result: CP14MagicCrystalHolder_Blue1
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Blue2
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GlowingIronBar: 2
+  result: CP14MagicCrystalHolder_Blue2
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Blue3
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GlowingIronBar: 3
+  result: CP14MagicCrystalHolder_Blue3
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Blue4
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GlowingIronBar: 4
+  result: CP14MagicCrystalHolder_Blue4
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Cooper1
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 1
+  result: CP14MagicCrystalHolder_Cooper1
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Cooper2
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 2
+  result: CP14MagicCrystalHolder_Cooper2
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Cooper3
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 3
+  result: CP14MagicCrystalHolder_Cooper3
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Cooper4
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 4
+  result: CP14MagicCrystalHolder_Cooper4
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Iron1
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 1
+  result: CP14MagicCrystalHolder_Iron1
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Iron2
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 2
+  result: CP14MagicCrystalHolder_Iron2
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Iron3
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 3
+  result: CP14MagicCrystalHolder_Iron3
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Iron4
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 4
+  result: CP14MagicCrystalHolder_Iron4
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Gold1
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 1
+  result: CP14MagicCrystalHolder_Gold1
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Gold2
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 2
+  result: CP14MagicCrystalHolder_Gold2
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Gold3
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 3
+  result: CP14MagicCrystalHolder_Gold3
+
+- type: CP14Recipe
+  id: CP14MagicCrystalHolder_Gold4
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 4
+  result: CP14MagicCrystalHolder_Gold4
+
+- type: CP14Recipe
+  id: CP14MagicStaff_GlowingIron
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GlowingIronBar: 2
+  result: CP14MagicStaff_GlowingIron
+
+- type: CP14Recipe
+  id: CP14MagicStaff_GlowingIronHolder
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GlowingIronBar: 2
+    CP14IronBar: 1
+  result: CP14MagicStaff_GlowingIronHolder
+
+- type: CP14Recipe
+  id: CP14MagicStaff_Cooper
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 2
+  result: CP14MagicStaff_Cooper
+
+- type: CP14Recipe
+  id: CP14MagicStaff_Iron
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 2
+  result: CP14MagicStaff_Iron
+
+- type: CP14Recipe
+  id: CP14MagicStaff_Gold
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14GoldBar: 2
+  result: CP14MagicStaff_Gold
