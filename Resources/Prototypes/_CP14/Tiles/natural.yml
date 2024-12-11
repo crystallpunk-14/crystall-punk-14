@@ -38,6 +38,7 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
+  weather: true
   color: "#452f27"
 
 - type: tile
@@ -69,6 +70,7 @@
   footstepSounds:
     collection: FootstepSnow #TODO
   heatCapacity: 10000
+  weather: true
   color: "#dccd9e"
 
 - type: tile
@@ -101,6 +103,7 @@
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
+  weather: true
   color: "#4a613a"
 
 - type: tile
@@ -133,6 +136,7 @@
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
+  weather: true
   color: "#4a613a"
 
 - type: tile
@@ -165,4 +169,5 @@
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
+  weather: true
   color: "#4a613a"

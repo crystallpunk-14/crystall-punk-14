@@ -6,11 +6,9 @@
   description: A roof over your head to protect you from the heat of the sun or the weather.
   placement:
     mode: SnapgridCenter
-    snap:
-    - Wall
   components:
   - type: PlacementReplacement
-    key: roof
+    key: CP14Roof
   - type: Clickable
   - type: Physics
     bodyType: Static 
