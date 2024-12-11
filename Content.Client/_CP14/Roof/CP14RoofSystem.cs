@@ -1,8 +1,7 @@
-using Content.Client.Gameplay;
 using Content.Shared._CP14.Roof;
+using Content.Shared.Ghost;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
-using Robust.Client.State;
 using Robust.Shared.Console;
 using Robust.Shared.Map.Components;
 
@@ -11,16 +10,17 @@ namespace Content.Client._CP14.Roof;
 public sealed class CP14RoofSystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IStateManager _stateManager = default!;
-    [Dependency] private readonly OccluderSystem _occluder = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
 
     private bool _roofVisible = true;
+    public bool DisabledByCommand = false;
+
+    private EntityQuery<GhostComponent> _ghostQuery;
+    private EntityQuery<TransformComponent> _xformQuery;
 
     public bool RoofVisibility
     {
-        get => _roofVisible;
+        get => _roofVisible && !DisabledByCommand;
         set
         {
             _roofVisible = value;
@@ -32,6 +32,8 @@ public sealed class CP14RoofSystem : EntitySystem
     {
         base.Initialize();
 
+        _ghostQuery = GetEntityQuery<GhostComponent>();
+        _xformQuery = GetEntityQuery<TransformComponent>();
 
         SubscribeLocalEvent<CP14RoofComponent, ComponentStartup>(RoofStartup);
         SubscribeLocalEvent<EyeComponent, CP14ToggleRoofVisibilityEvent>(OnToggleRoof);
@@ -42,9 +44,11 @@ public sealed class CP14RoofSystem : EntitySystem
         base.Update(frameTime);
 
         var player = _playerManager.LocalEntity;
-        var spriteQuery = GetEntityQuery<SpriteComponent>();
 
-        if (TryComp(player, out TransformComponent? playerXform))
+        if (_ghostQuery.HasComp(player))
+            return;
+
+        if (_xformQuery.TryComp(player, out var playerXform))
         {
             var grid = playerXform.GridUid;
             if (grid == null || !TryComp<MapGridComponent>(grid, out var gridComp))
@@ -74,7 +78,8 @@ public sealed class CP14RoofSystem : EntitySystem
 
     private void OnToggleRoof(Entity<EyeComponent> ent, ref CP14ToggleRoofVisibilityEvent args)
     {
-        RoofVisibility = !_roofVisible;
+        DisabledByCommand = !DisabledByCommand;
+        UpdateRoofVisibilityAll();
     }
 
     private void RoofStartup(Entity<CP14RoofComponent> ent, ref ComponentStartup args)
@@ -87,10 +92,10 @@ public sealed class CP14RoofSystem : EntitySystem
 
     private void UpdateVisibility(Entity<CP14RoofComponent> ent, SpriteComponent sprite)
     {
-        sprite.Visible = _roofVisible;
+        sprite.Visible = RoofVisibility;
     }
 
-    private void UpdateRoofVisibilityAll()
+    public void UpdateRoofVisibilityAll()
     {
         var query = EntityQueryEnumerator<CP14RoofComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var marker, out var sprite))
@@ -110,6 +115,8 @@ internal sealed class ShowRoof : LocalizedCommands
 
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        _entitySystemManager.GetEntitySystem<CP14RoofSystem>().RoofVisibility ^= true;
+        var roofSystem = _entitySystemManager.GetEntitySystem<CP14RoofSystem>();
+        roofSystem.DisabledByCommand = !roofSystem.DisabledByCommand;
+        roofSystem.UpdateRoofVisibilityAll();
     }
 }

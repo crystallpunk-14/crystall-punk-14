@@ -9,7 +9,7 @@
 
 - type: tileAlias
   id: CP14FloorStonebricksWeather
-  target: CP14FloorStonebricks
+  target: FloorIce
 ### /CP14 UPD
 
 - type: tileAlias
