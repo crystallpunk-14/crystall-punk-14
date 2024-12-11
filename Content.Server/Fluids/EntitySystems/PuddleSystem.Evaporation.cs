@@ -25,7 +25,7 @@ public sealed partial class PuddleSystem
             var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
             var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
 
-            entity.Comp.CP14ForceEvaporation = tileDef.Weather;
+            entity.Comp.CP14ForceEvaporation = tileDef.SuckReagents;
         }
         //CP14 End force evaporation under sky
     }

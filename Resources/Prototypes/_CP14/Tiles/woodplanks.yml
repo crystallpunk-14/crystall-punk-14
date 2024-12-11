@@ -28,7 +28,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -59,7 +59,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
@@ -90,7 +90,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
     
 - type: tile #Stairways
@@ -121,7 +121,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -153,7 +153,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -183,7 +183,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
   
 - type: tile #Cruci
@@ -213,7 +213,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
@@ -243,7 +243,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
@@ -280,7 +280,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -311,7 +311,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
@@ -342,7 +342,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
     
 - type: tile #Stairways
@@ -373,7 +373,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -405,7 +405,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -435,7 +435,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
   
 - type: tile #Cruci
@@ -465,7 +465,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
@@ -495,7 +495,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
@@ -532,7 +532,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -563,7 +563,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
@@ -594,7 +594,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
     
 - type: tile #Stairways
@@ -625,7 +625,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -657,7 +657,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -687,7 +687,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
   
 - type: tile #Cruci
@@ -717,7 +717,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
@@ -747,7 +747,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
@@ -784,7 +784,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -815,7 +815,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
@@ -846,7 +846,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
     
 - type: tile #Stairways
@@ -877,7 +877,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -909,7 +909,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -939,7 +939,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
   
 - type: tile #Cruci
@@ -969,7 +969,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
@@ -999,7 +999,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
@@ -1036,7 +1036,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -1067,7 +1067,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
@@ -1098,7 +1098,7 @@
   heatCapacity: 10000
   deconstructTools: [ Prying ]
   itemDrop: CP14WoodenPlanks1
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
     
 - type: tile #Stairways
@@ -1129,7 +1129,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -1161,7 +1161,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -1191,7 +1191,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
   
 - type: tile #Cruci
@@ -1221,7 +1221,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
   
 - type: tile #Stairways
@@ -1251,7 +1251,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 

@@ -39,6 +39,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  suckReagents: true
   color: "#452f27"
 
 - type: tile
@@ -71,6 +72,7 @@
     collection: FootstepSnow #TODO
   heatCapacity: 10000
   weather: true
+  suckReagents: true
   color: "#dccd9e"
 
 - type: tile
@@ -104,6 +106,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  suckReagents: true
   color: "#4a613a"
 
 - type: tile
@@ -137,6 +140,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  suckReagents: true
   color: "#4a613a"
 
 - type: tile
@@ -170,4 +174,5 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  suckReagents: true
   color: "#4a613a"

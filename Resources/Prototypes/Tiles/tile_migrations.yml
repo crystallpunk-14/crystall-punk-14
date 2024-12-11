@@ -6,6 +6,10 @@
 - type: tileAlias
   id: CP14FloorWoodPlanksBig
   target: CP14FloorOakWoodPlanksBig
+
+- type: tileAlias
+  id: CP14FloorStonebricksWeather
+  target: FloorIce
 ### /CP14 UPD
 
 - type: tileAlias

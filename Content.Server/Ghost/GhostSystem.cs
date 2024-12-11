@@ -221,13 +221,14 @@ namespace Content.Server.Ghost
                 _actions.SetCooldown(component.BooActionEntity.Value, start, end);
             }
 
-            _actions.AddAction(uid, ref component.ToggleGhostHearingActionEntity, component.ToggleGhostHearingAction);
+            //_actions.AddAction(uid, ref component.ToggleGhostHearingActionEntity, component.ToggleGhostHearingAction); //Dont need in CP14
             _actions.AddAction(uid, ref component.ToggleLightingActionEntity, component.ToggleLightingAction);
             _actions.AddAction(uid, ref component.ToggleFoVActionEntity, component.ToggleFoVAction);
             _actions.AddAction(uid, ref component.ToggleGhostsActionEntity, component.ToggleGhostsAction);
             //CP14
             _actions.AddAction(uid, ref component.CP14ZLevelUpActionEntity, component.CP14ZLevelUpAction);
             _actions.AddAction(uid, ref component.CP14ZLevelDownActionEntity, component.CP14ZLevelDownAction);
+            _actions.AddAction(uid, ref component.CP14ToggleRoofActionEntity, component.CP14ToggleRoofAction);
             //CP14 end
         }
 

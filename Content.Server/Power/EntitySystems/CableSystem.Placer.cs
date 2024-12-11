@@ -35,7 +35,7 @@ public sealed partial class CableSystem
         var snapPos = grid.TileIndicesFor(args.ClickLocation);
         var tileDef = (ContentTileDefinition) _tileManager[_map.GetTileRef(gridUid, grid,snapPos).Tile.TypeId];
 
-        if ((!tileDef.IsSubFloor || !tileDef.Sturdy) && placer.Comp.CP14OnlySubfloor) //CP14 if only subfloor
+        if (!tileDef.IsSubFloor || !tileDef.Sturdy)
             return;
 
         foreach (var anchored in grid.GetAnchoredEntities(snapPos))

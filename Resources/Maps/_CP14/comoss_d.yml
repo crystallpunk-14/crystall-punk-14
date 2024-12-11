@@ -11,7 +11,7 @@ tilemap:
   49: CP14FloorStonebricks
   50: CP14FloorStonebricksSmallCarved1
   51: CP14FloorStonebricksSmallCarved2
-  53: CP14FloorStonebricksWeather
+  53: FloorIce
 entities:
 - proto: ""
   entities:
@@ -21,6 +21,7 @@ entities:
       name: Map Entity
     - type: Transform
     - type: Map
+      mapPaused: True
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids
@@ -34,6 +35,7 @@ entities:
         path: /Audio/Effects/alert.ogg
       inherent: True
       enabled: True
+    - type: LoadedMap
   - uid: 2
     components:
     - type: MetaData
@@ -120,7 +122,7 @@ entities:
           version: 6
         1,0:
           ind: 1,0
-          tiles: CQAAAAAMCQAAAAABGwAAAAANMQAAAAACCQAAAAALCQAAAAADMQAAAAABGwAAAAANCQAAAAANCQAAAAAJCQAAAAAMCQAAAAABCQAAAAACCQAAAAAKCQAAAAABCQAAAAAICQAAAAAFCQAAAAAIGwAAAAAHMQAAAAAICQAAAAAJCQAAAAADMQAAAAABGwAAAAAIGwAAAAAFGwAAAAACGwAAAAACGwAAAAADGwAAAAAAGwAAAAAJGwAAAAAGGwAAAAABCQAAAAANCQAAAAAIGwAAAAACMQAAAAAFCQAAAAABCQAAAAAAMQAAAAABGwAAAAAFNQAAAAACNQAAAAAFNQAAAAAGNQAAAAAENQAAAAAHNQAAAAACNQAAAAAINQAAAAAACQAAAAADCQAAAAAKGwAAAAALMQAAAAAGCQAAAAAICQAAAAAGMQAAAAADGwAAAAALNQAAAAAANQAAAAAENQAAAAAGNQAAAAAINQAAAAABNQAAAAAFNQAAAAAGNQAAAAADCQAAAAAACQAAAAAEGwAAAAAKMQAAAAAECQAAAAAFCQAAAAALMQAAAAACGwAAAAACNQAAAAABNQAAAAAFGwAAAAAFNQAAAAABCQAAAAABCQAAAAAINQAAAAACNQAAAAAGCQAAAAAFCQAAAAAAGwAAAAACMQAAAAAECQAAAAANCQAAAAAJMQAAAAADNQAAAAACNQAAAAAINQAAAAABGwAAAAAJCQAAAAAMCQAAAAAAHAAAAAACCQAAAAAGNQAAAAAIGwAAAAACGwAAAAANGwAAAAACMQAAAAAICQAAAAAKCQAAAAAEMQAAAAAFNQAAAAAFNQAAAAAANQAAAAAIGwAAAAAMHAAAAAADHAAAAAAFCQAAAAAHGwAAAAAINQAAAAAFMgAAAAAAMgAAAAAAMwAAAAAAMQAAAAADCQAAAAAACQAAAAABMQAAAAACMQAAAAAIMQAAAAAFMQAAAAAFGwAAAAAFGwAAAAAGGwAAAAAAGwAAAAAMGwAAAAAGGwAAAAAGCQAAAAAICQAAAAAJCQAAAAAGCQAAAAAACQAAAAACCQAAAAADCQAAAAAKCQAAAAAHCQAAAAABMQAAAAAHGwAAAAACCQAAAAAACQAAAAAGCQAAAAANCQAAAAABCQAAAAAFCQAAAAABCQAAAAAFCQAAAAAHCQAAAAAHCQAAAAADCQAAAAAECQAAAAAFCQAAAAAECQAAAAAAMQAAAAAEGwAAAAADCQAAAAAJCQAAAAANCQAAAAAMCQAAAAAICQAAAAABMgAAAAAAMgAAAAAAMwAAAAAAMQAAAAAEMQAAAAAFMQAAAAAFMQAAAAAEMQAAAAAFMQAAAAAAMQAAAAAFGwAAAAALCQAAAAABCQAAAAAHCQAAAAANCQAAAAAECQAAAAALGwAAAAAAGwAAAAAJGwAAAAAKGwAAAAAMGwAAAAAAGwAAAAAIGwAAAAAHGwAAAAAGGwAAAAAIGwAAAAAAGwAAAAAKCQAAAAAECQAAAAAECQAAAAAACQAAAAAJCQAAAAAKCQAAAAAICQAAAAAICQAAAAAFCQAAAAABCQAAAAALCQAAAAAACQAAAAADCQAAAAAMCQAAAAAHCQAAAAABCQAAAAANCQAAAAAACQAAAAACCQAAAAAACQAAAAAKCQAAAAAKCQAAAAAFCQAAAAAKCQAAAAAGCQAAAAAJCQAAAAAGCQAAAAAMCQAAAAAJCQAAAAACCQAAAAAMCQAAAAAJCQAAAAAMCQAAAAAJCQAAAAAECQAAAAAJCQAAAAALCQAAAAABCQAAAAALCQAAAAALCQAAAAADCQAAAAAICQAAAAAECQAAAAAECQAAAAAJCQAAAAADCQAAAAAGCQAAAAAHCQAAAAAACQAAAAADCQAAAAAKCQAAAAACCQAAAAAMCQAAAAAACQAAAAACCQAAAAAKCQAAAAAJCQAAAAAGCQAAAAAGCQAAAAAICQAAAAAECQAAAAANCQAAAAAECQAAAAALCQAAAAAJCQAAAAANCQAAAAAJCQAAAAANCQAAAAAFCQAAAAAH
+          tiles: CQAAAAAMCQAAAAABGwAAAAANMQAAAAACCQAAAAALCQAAAAADMQAAAAABGwAAAAANCQAAAAANCQAAAAAJCQAAAAAMCQAAAAABCQAAAAACCQAAAAAKCQAAAAABCQAAAAAICQAAAAAFCQAAAAAIGwAAAAAHMQAAAAAICQAAAAAJCQAAAAADMQAAAAABGwAAAAAIGwAAAAAFGwAAAAACGwAAAAACGwAAAAADGwAAAAAAGwAAAAAJGwAAAAAGGwAAAAABCQAAAAANCQAAAAAIGwAAAAACMQAAAAAFCQAAAAABCQAAAAAAMQAAAAABGwAAAAAFMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAACQAAAAADCQAAAAAKGwAAAAALMQAAAAAGCQAAAAAICQAAAAAGMQAAAAADGwAAAAALMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAAMQAAAAAACQAAAAAACQAAAAAEGwAAAAAKMQAAAAAECQAAAAAFCQAAAAALMQAAAAACGwAAAAACMQAAAAAAMQAAAAAAGwAAAAAFMQAAAAAACQAAAAABCQAAAAAIMQAAAAAAMQAAAAAACQAAAAAFCQAAAAAAGwAAAAACMQAAAAAECQAAAAANCQAAAAAJMQAAAAADMQAAAAAAMQAAAAAAMQAAAAAAGwAAAAAJCQAAAAAMCQAAAAAAHAAAAAACCQAAAAAGMQAAAAAAGwAAAAACGwAAAAANGwAAAAACMQAAAAAICQAAAAAKCQAAAAAEMQAAAAAFMQAAAAAAMQAAAAAAMQAAAAAAGwAAAAAMHAAAAAADHAAAAAAFCQAAAAAHGwAAAAAIMQAAAAAAMgAAAAAAMgAAAAAAMwAAAAAAMQAAAAADCQAAAAAACQAAAAABMQAAAAACMQAAAAAIMQAAAAAFMQAAAAAFGwAAAAAFGwAAAAAGGwAAAAAAGwAAAAAMGwAAAAAGGwAAAAAGCQAAAAAICQAAAAAJCQAAAAAGCQAAAAAACQAAAAACCQAAAAADCQAAAAAKCQAAAAAHCQAAAAABMQAAAAAHGwAAAAACCQAAAAAACQAAAAAGCQAAAAANCQAAAAABCQAAAAAFCQAAAAABCQAAAAAFCQAAAAAHCQAAAAAHCQAAAAADCQAAAAAECQAAAAAFCQAAAAAECQAAAAAAMQAAAAAEGwAAAAADCQAAAAAJCQAAAAANCQAAAAAMCQAAAAAICQAAAAABMgAAAAAAMgAAAAAAMwAAAAAAMQAAAAAEMQAAAAAFMQAAAAAFMQAAAAAEMQAAAAAFMQAAAAAAMQAAAAAFGwAAAAALCQAAAAABCQAAAAAHCQAAAAANCQAAAAAECQAAAAALGwAAAAAAGwAAAAAJGwAAAAAKGwAAAAAMGwAAAAAAGwAAAAAIGwAAAAAHGwAAAAAGGwAAAAAIGwAAAAAAGwAAAAAKCQAAAAAECQAAAAAECQAAAAAACQAAAAAJCQAAAAAKCQAAAAAICQAAAAAICQAAAAAFCQAAAAABCQAAAAALCQAAAAAACQAAAAADCQAAAAAMCQAAAAAHCQAAAAABCQAAAAANCQAAAAAACQAAAAACCQAAAAAACQAAAAAKCQAAAAAKCQAAAAAFCQAAAAAKCQAAAAAGCQAAAAAJCQAAAAAGCQAAAAAMCQAAAAAJCQAAAAACCQAAAAAMCQAAAAAJCQAAAAAMCQAAAAAJCQAAAAAECQAAAAAJCQAAAAALCQAAAAABCQAAAAALCQAAAAALCQAAAAADCQAAAAAICQAAAAAECQAAAAAECQAAAAAJCQAAAAADCQAAAAAGCQAAAAAHCQAAAAAACQAAAAADCQAAAAAKCQAAAAACCQAAAAAMCQAAAAAACQAAAAACCQAAAAAKCQAAAAAJCQAAAAAGCQAAAAAGCQAAAAAICQAAAAAECQAAAAANCQAAAAAECQAAAAALCQAAAAAJCQAAAAANCQAAAAAJCQAAAAANCQAAAAAFCQAAAAAH
           version: 6
         1,-1:
           ind: 1,-1
@@ -128,7 +130,7 @@ entities:
           version: 6
         2,0:
           ind: 2,0
-          tiles: CQAAAAABCQAAAAAGCQAAAAAECQAAAAADCQAAAAAJCQAAAAAECQAAAAAACQAAAAAFCQAAAAAFCQAAAAAMCQAAAAALCQAAAAAFCQAAAAAJCQAAAAACCQAAAAAICQAAAAADGwAAAAAGGwAAAAADCQAAAAAKCQAAAAAECQAAAAAKCQAAAAADCQAAAAAJCQAAAAALCQAAAAALCQAAAAACCQAAAAAACQAAAAANCQAAAAAACQAAAAAKCQAAAAAHCQAAAAAANQAAAAAHGwAAAAAGCQAAAAANCQAAAAABCQAAAAANCQAAAAABCQAAAAABCQAAAAAGCQAAAAAJCQAAAAAICQAAAAACCQAAAAAMCQAAAAAACQAAAAANCQAAAAAHCQAAAAAINQAAAAAIGwAAAAAICQAAAAAJCQAAAAADCQAAAAAFCQAAAAADCQAAAAADCQAAAAAKCQAAAAAHCQAAAAAICQAAAAAKCQAAAAAICQAAAAAJCQAAAAANCQAAAAACCQAAAAAENQAAAAABGwAAAAABCQAAAAANCQAAAAAECQAAAAANCQAAAAAKCQAAAAAICQAAAAAICQAAAAAHCQAAAAADCQAAAAAFCQAAAAANCQAAAAANCQAAAAADCQAAAAALCQAAAAAINQAAAAAFGwAAAAAACQAAAAAHCQAAAAALCQAAAAALCQAAAAAACQAAAAAFCQAAAAAICQAAAAADCQAAAAAJCQAAAAALCQAAAAABCQAAAAALCQAAAAAHCQAAAAAICQAAAAAJNQAAAAADGwAAAAAJCQAAAAAMCQAAAAAMCQAAAAAHCQAAAAADCQAAAAAGCQAAAAAECQAAAAAACQAAAAANCQAAAAANCQAAAAADCQAAAAAJCQAAAAANCQAAAAAGCQAAAAADGwAAAAACGwAAAAANCQAAAAACCQAAAAAGCQAAAAAKCQAAAAAGCQAAAAAMCQAAAAALCQAAAAAKCQAAAAAJCQAAAAAHCQAAAAACCQAAAAADCQAAAAADCQAAAAAFCQAAAAAMCQAAAAANCQAAAAANCQAAAAAJCQAAAAAKCQAAAAANCQAAAAAGCQAAAAAGCQAAAAACCQAAAAALCQAAAAAFCQAAAAAKCQAAAAABCQAAAAADCQAAAAAECQAAAAAFCQAAAAABCQAAAAAHCQAAAAACCQAAAAACCQAAAAAECQAAAAAACQAAAAAECQAAAAAICQAAAAAECQAAAAAHCQAAAAAACQAAAAABCQAAAAAKCQAAAAAACQAAAAADCQAAAAAACQAAAAAECQAAAAADCQAAAAAFCQAAAAAHCQAAAAAECQAAAAACCQAAAAAACQAAAAAGCQAAAAAFCQAAAAADCQAAAAAMCQAAAAAKCQAAAAACCQAAAAACCQAAAAAICQAAAAAKCQAAAAANCQAAAAAHCQAAAAAKCQAAAAAFCQAAAAAJCQAAAAAICQAAAAALCQAAAAAICQAAAAAGCQAAAAALCQAAAAAACQAAAAADCQAAAAAACQAAAAAACQAAAAAFCQAAAAAKCQAAAAAMCQAAAAADCQAAAAADCQAAAAANCQAAAAAFCQAAAAACCQAAAAACCQAAAAAKCQAAAAAICQAAAAAACQAAAAAICQAAAAAHCQAAAAAFCQAAAAAICQAAAAADCQAAAAAKCQAAAAAICQAAAAAJCQAAAAAJCQAAAAABCQAAAAAHCQAAAAANCQAAAAACCQAAAAANCQAAAAAKCQAAAAAECQAAAAABCQAAAAAFCQAAAAAECQAAAAAMCQAAAAACCQAAAAABCQAAAAAMCQAAAAAKCQAAAAAHCQAAAAAMCQAAAAADCQAAAAAFCQAAAAAHCQAAAAAGCQAAAAABCQAAAAANCQAAAAAACQAAAAAGCQAAAAAJCQAAAAAFCQAAAAALCQAAAAAKCQAAAAANCQAAAAAECQAAAAADCQAAAAAKCQAAAAADCQAAAAAECQAAAAAGCQAAAAAFCQAAAAAECQAAAAAGCQAAAAAHCQAAAAAFCQAAAAAHCQAAAAACCQAAAAANCQAAAAADCQAAAAAL
+          tiles: CQAAAAABCQAAAAAGCQAAAAAECQAAAAADCQAAAAAJCQAAAAAECQAAAAAACQAAAAAFCQAAAAAFCQAAAAAMCQAAAAALCQAAAAAFCQAAAAAJCQAAAAACCQAAAAAICQAAAAADGwAAAAAGGwAAAAADCQAAAAAKCQAAAAAECQAAAAAKCQAAAAADCQAAAAAJCQAAAAALCQAAAAALCQAAAAACCQAAAAAACQAAAAANCQAAAAAACQAAAAAKCQAAAAAHCQAAAAAAMQAAAAAAGwAAAAAGCQAAAAANCQAAAAABCQAAAAANCQAAAAABCQAAAAABCQAAAAAGCQAAAAAJCQAAAAAICQAAAAACCQAAAAAMCQAAAAAACQAAAAANCQAAAAAHCQAAAAAIMQAAAAAAGwAAAAAICQAAAAAJCQAAAAADCQAAAAAFCQAAAAADCQAAAAADCQAAAAAKCQAAAAAHCQAAAAAICQAAAAAKCQAAAAAICQAAAAAJCQAAAAANCQAAAAACCQAAAAAEMQAAAAAAGwAAAAABCQAAAAANCQAAAAAECQAAAAANCQAAAAAKCQAAAAAICQAAAAAICQAAAAAHCQAAAAADCQAAAAAFCQAAAAANCQAAAAANCQAAAAADCQAAAAALCQAAAAAIMQAAAAAAGwAAAAAACQAAAAAHCQAAAAALCQAAAAALCQAAAAAACQAAAAAFCQAAAAAICQAAAAADCQAAAAAJCQAAAAALCQAAAAABCQAAAAALCQAAAAAHCQAAAAAICQAAAAAJMQAAAAAAGwAAAAAJCQAAAAAMCQAAAAAMCQAAAAAHCQAAAAADCQAAAAAGCQAAAAAECQAAAAAACQAAAAANCQAAAAANCQAAAAADCQAAAAAJCQAAAAANCQAAAAAGCQAAAAADGwAAAAACGwAAAAANCQAAAAACCQAAAAAGCQAAAAAKCQAAAAAGCQAAAAAMCQAAAAALCQAAAAAKCQAAAAAJCQAAAAAHCQAAAAACCQAAAAADCQAAAAADCQAAAAAFCQAAAAAMCQAAAAANCQAAAAANCQAAAAAJCQAAAAAKCQAAAAANCQAAAAAGCQAAAAAGCQAAAAACCQAAAAALCQAAAAAFCQAAAAAKCQAAAAABCQAAAAADCQAAAAAECQAAAAAFCQAAAAABCQAAAAAHCQAAAAACCQAAAAACCQAAAAAECQAAAAAACQAAAAAECQAAAAAICQAAAAAECQAAAAAHCQAAAAAACQAAAAABCQAAAAAKCQAAAAAACQAAAAADCQAAAAAACQAAAAAECQAAAAADCQAAAAAFCQAAAAAHCQAAAAAECQAAAAACCQAAAAAACQAAAAAGCQAAAAAFCQAAAAADCQAAAAAMCQAAAAAKCQAAAAACCQAAAAACCQAAAAAICQAAAAAKCQAAAAANCQAAAAAHCQAAAAAKCQAAAAAFCQAAAAAJCQAAAAAICQAAAAALCQAAAAAICQAAAAAGCQAAAAALCQAAAAAACQAAAAADCQAAAAAACQAAAAAACQAAAAAFCQAAAAAKCQAAAAAMCQAAAAADCQAAAAADCQAAAAANCQAAAAAFCQAAAAACCQAAAAACCQAAAAAKCQAAAAAICQAAAAAACQAAAAAICQAAAAAHCQAAAAAFCQAAAAAICQAAAAADCQAAAAAKCQAAAAAICQAAAAAJCQAAAAAJCQAAAAABCQAAAAAHCQAAAAANCQAAAAACCQAAAAANCQAAAAAKCQAAAAAECQAAAAABCQAAAAAFCQAAAAAECQAAAAAMCQAAAAACCQAAAAABCQAAAAAMCQAAAAAKCQAAAAAHCQAAAAAMCQAAAAADCQAAAAAFCQAAAAAHCQAAAAAGCQAAAAABCQAAAAANCQAAAAAACQAAAAAGCQAAAAAJCQAAAAAFCQAAAAALCQAAAAAKCQAAAAANCQAAAAAECQAAAAADCQAAAAAKCQAAAAADCQAAAAAECQAAAAAGCQAAAAAFCQAAAAAECQAAAAAGCQAAAAAHCQAAAAAFCQAAAAAHCQAAAAACCQAAAAANCQAAAAADCQAAAAAL
           version: 6
         2,-1:
           ind: 2,-1
@@ -38828,6 +38830,827 @@ entities:
       rot: 3.141592653589793 rad
       pos: -5.5,-26.5
       parent: 2
+- proto: CP14RoofWooden
+  entities:
+  - uid: 7522
+    components:
+    - type: Transform
+      pos: -18.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7523
+    components:
+    - type: Transform
+      pos: -18.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7524
+    components:
+    - type: Transform
+      pos: -18.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7525
+    components:
+    - type: Transform
+      pos: -18.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7526
+    components:
+    - type: Transform
+      pos: -18.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7527
+    components:
+    - type: Transform
+      pos: -18.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7528
+    components:
+    - type: Transform
+      pos: -18.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7529
+    components:
+    - type: Transform
+      pos: -17.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7530
+    components:
+    - type: Transform
+      pos: -17.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7531
+    components:
+    - type: Transform
+      pos: -17.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7532
+    components:
+    - type: Transform
+      pos: -17.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7533
+    components:
+    - type: Transform
+      pos: -17.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7534
+    components:
+    - type: Transform
+      pos: -17.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7535
+    components:
+    - type: Transform
+      pos: -17.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7536
+    components:
+    - type: Transform
+      pos: -16.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7537
+    components:
+    - type: Transform
+      pos: -16.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7538
+    components:
+    - type: Transform
+      pos: -16.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7539
+    components:
+    - type: Transform
+      pos: -16.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7540
+    components:
+    - type: Transform
+      pos: -16.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7541
+    components:
+    - type: Transform
+      pos: -16.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7542
+    components:
+    - type: Transform
+      pos: -16.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7543
+    components:
+    - type: Transform
+      pos: -15.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7544
+    components:
+    - type: Transform
+      pos: -15.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7545
+    components:
+    - type: Transform
+      pos: -15.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7546
+    components:
+    - type: Transform
+      pos: -15.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7547
+    components:
+    - type: Transform
+      pos: -15.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7548
+    components:
+    - type: Transform
+      pos: -15.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7549
+    components:
+    - type: Transform
+      pos: -15.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7550
+    components:
+    - type: Transform
+      pos: -14.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7551
+    components:
+    - type: Transform
+      pos: -14.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7552
+    components:
+    - type: Transform
+      pos: -14.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7553
+    components:
+    - type: Transform
+      pos: -14.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7554
+    components:
+    - type: Transform
+      pos: -14.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7555
+    components:
+    - type: Transform
+      pos: -14.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7556
+    components:
+    - type: Transform
+      pos: -14.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7557
+    components:
+    - type: Transform
+      pos: -13.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7558
+    components:
+    - type: Transform
+      pos: -13.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7559
+    components:
+    - type: Transform
+      pos: -13.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7560
+    components:
+    - type: Transform
+      pos: -13.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7561
+    components:
+    - type: Transform
+      pos: -13.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7562
+    components:
+    - type: Transform
+      pos: -13.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7563
+    components:
+    - type: Transform
+      pos: -12.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7564
+    components:
+    - type: Transform
+      pos: -13.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7565
+    components:
+    - type: Transform
+      pos: -12.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7566
+    components:
+    - type: Transform
+      pos: -12.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7567
+    components:
+    - type: Transform
+      pos: -12.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7568
+    components:
+    - type: Transform
+      pos: -12.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7569
+    components:
+    - type: Transform
+      pos: -12.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7570
+    components:
+    - type: Transform
+      pos: -12.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7571
+    components:
+    - type: Transform
+      pos: -11.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7572
+    components:
+    - type: Transform
+      pos: -11.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7573
+    components:
+    - type: Transform
+      pos: -11.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7574
+    components:
+    - type: Transform
+      pos: -11.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7575
+    components:
+    - type: Transform
+      pos: -11.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7576
+    components:
+    - type: Transform
+      pos: -11.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7577
+    components:
+    - type: Transform
+      pos: -11.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7578
+    components:
+    - type: Transform
+      pos: -10.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7579
+    components:
+    - type: Transform
+      pos: -10.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7580
+    components:
+    - type: Transform
+      pos: -10.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7581
+    components:
+    - type: Transform
+      pos: -10.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7582
+    components:
+    - type: Transform
+      pos: -10.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7583
+    components:
+    - type: Transform
+      pos: -10.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7584
+    components:
+    - type: Transform
+      pos: -9.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7585
+    components:
+    - type: Transform
+      pos: -10.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7586
+    components:
+    - type: Transform
+      pos: -9.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7587
+    components:
+    - type: Transform
+      pos: -9.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7588
+    components:
+    - type: Transform
+      pos: -9.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7589
+    components:
+    - type: Transform
+      pos: -9.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7590
+    components:
+    - type: Transform
+      pos: -8.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7591
+    components:
+    - type: Transform
+      pos: -9.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7592
+    components:
+    - type: Transform
+      pos: -8.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7593
+    components:
+    - type: Transform
+      pos: -8.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7594
+    components:
+    - type: Transform
+      pos: -9.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7595
+    components:
+    - type: Transform
+      pos: -8.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7596
+    components:
+    - type: Transform
+      pos: -8.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7597
+    components:
+    - type: Transform
+      pos: -7.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7598
+    components:
+    - type: Transform
+      pos: -7.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7599
+    components:
+    - type: Transform
+      pos: -7.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7600
+    components:
+    - type: Transform
+      pos: -7.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7601
+    components:
+    - type: Transform
+      pos: -7.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7602
+    components:
+    - type: Transform
+      pos: -7.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7603
+    components:
+    - type: Transform
+      pos: -6.5,-15.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7604
+    components:
+    - type: Transform
+      pos: -6.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7605
+    components:
+    - type: Transform
+      pos: -6.5,-13.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7606
+    components:
+    - type: Transform
+      pos: -6.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7607
+    components:
+    - type: Transform
+      pos: -6.5,-10.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7608
+    components:
+    - type: Transform
+      pos: -6.5,-9.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7609
+    components:
+    - type: Transform
+      pos: -7.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7610
+    components:
+    - type: Transform
+      pos: -6.5,-12.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7611
+    components:
+    - type: Transform
+      pos: -8.5,-11.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7612
+    components:
+    - type: Transform
+      pos: -8.5,-14.5
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
 - proto: CP14WallmountLamp
   entities:
   - uid: 585
