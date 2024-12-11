@@ -36,7 +36,7 @@ public sealed class CP14RoofSystem : EntitySystem
         _xformQuery = GetEntityQuery<TransformComponent>();
 
         SubscribeLocalEvent<CP14RoofComponent, ComponentStartup>(RoofStartup);
-        SubscribeLocalEvent<EyeComponent, CP14ToggleRoofVisibilityEvent>(OnToggleRoof);
+        SubscribeLocalEvent<GhostComponent, CP14ToggleRoofVisibilityAction>(OnToggleRoof);
     }
 
     public override void Update(float frameTime)
@@ -76,10 +76,15 @@ public sealed class CP14RoofSystem : EntitySystem
         }
     }
 
-    private void OnToggleRoof(Entity<EyeComponent> ent, ref CP14ToggleRoofVisibilityEvent args)
+    private void OnToggleRoof(Entity<GhostComponent> ent, ref CP14ToggleRoofVisibilityAction args)
     {
+        if (args.Handled)
+            return;
+
         DisabledByCommand = !DisabledByCommand;
         UpdateRoofVisibilityAll();
+
+        args.Handled = true;
     }
 
     private void RoofStartup(Entity<CP14RoofComponent> ent, ref ComponentStartup args)

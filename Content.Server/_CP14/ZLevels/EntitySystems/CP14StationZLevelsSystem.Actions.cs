@@ -15,12 +15,22 @@ public sealed partial class CP14StationZLevelsSystem
 
     private void OnZLevelDown(Entity<GhostComponent> ent, ref CP14ZLevelActionDown args)
     {
+        if (args.Handled)
+            return;
+
         ZLevelMove(ent, -1);
+
+        args.Handled = true;
     }
 
     private void OnZLevelUp(Entity<GhostComponent> ent, ref CP14ZLevelActionUp args)
     {
+        if (args.Handled)
+            return;
+
         ZLevelMove(ent, 1);
+
+        args.Handled = true;
     }
 
     private void ZLevelMove(EntityUid ent, int offset)

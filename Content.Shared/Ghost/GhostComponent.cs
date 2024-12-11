@@ -51,6 +51,12 @@ public sealed partial class GhostComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? CP14ZLevelDownActionEntity;
+
+    [DataField]
+    public EntProtoId CP14ToggleRoofAction = "CP14ActionToggleRoofs";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CP14ToggleRoofActionEntity;
     //CP14 Ghost entities end
 
     // End actions

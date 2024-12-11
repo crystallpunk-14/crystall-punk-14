@@ -10,6 +10,6 @@ public sealed partial class CP14RoofComponent : Component
 {
 }
 
-public sealed partial class CP14ToggleRoofVisibilityEvent : InstantActionEvent
+public sealed partial class CP14ToggleRoofVisibilityAction : InstantActionEvent
 {
 }

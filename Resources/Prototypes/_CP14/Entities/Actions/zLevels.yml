@@ -21,3 +21,16 @@
       sprite: _CP14/Actions/zLevel.rsi
       state: down
     event: !type:CP14ZLevelActionDown
+
+- type: entity
+  id: CP14ActionToggleRoofs
+  name: Toggle roofs
+  description: Show or hide roofs
+  components:
+  - type: InstantAction
+    clientExclusive: true
+    checkCanInteract: false
+    icon: 
+      sprite: _CP14/Actions/zLevel.rsi
+      state: roof
+    event: !type:CP14ToggleRoofVisibilityAction
