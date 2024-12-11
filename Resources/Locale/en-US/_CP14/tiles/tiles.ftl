@@ -7,6 +7,8 @@ cp14-tiles-grass-light = light grass
 cp14-tiles-grass-tall = tall grass
 cp14-tiles-dirt = soil
 cp14-tiles-sand = sand
+cp14-tiles-snow = snow
+cp14-tiles-snow-deep = deep snow
 
 # Produced
 cp14-tiles-foundation = foundation

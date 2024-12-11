@@ -7,6 +7,8 @@ cp14-tiles-grass-light = светлая трава
 cp14-tiles-grass-tall = высокая трава
 cp14-tiles-dirt = почва
 cp14-tiles-sand = песок
+cp14-tiles-snow = снег
+cp14-tiles-snow-deep = глубокий снег
 
 # Produced
 cp14-tiles-foundation = фундамент
