@@ -35,4 +35,70 @@
   - type: Sprite
     state: blue_ring
   - type: CP14MagicManacostModify
-    globalModifier: 0.9
+    modifiers:
+     Earth: 0.9
+     Fire: 0.9
+     Gate: 0.9
+     Healing: 0.9
+     LightDarkness: 0.9
+     Meta: 0.9
+     Movement: 0.9
+     Water: 0.9
+     Necromancy: 0.9
+
+# cooper ring
+- type: entity
+  parent: CP14ClothingMagicRingBase
+  id: CP14ClothingMagicRingCooper
+  components:
+  - type: Sprite
+    state: cooper_ring
+  - type: CP14MagicManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+
+# iron ring
+- type: entity
+  parent: CP14ClothingMagicRingBase
+  id: CP14ClothingMagicRingIron
+  components:
+  - type: Sprite
+    state: iron_ring
+  - type: CP14MagicManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+
+# gold ring
+- type: entity
+  parent: CP14ClothingMagicRingBase
+  id: CP14ClothingMagicRingGold
+  components:
+  - type: Sprite
+    state: gold_ring
+  - type: CP14MagicManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05

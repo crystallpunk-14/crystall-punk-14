@@ -56,7 +56,16 @@
     slots:
     - neck
   - type: CP14MagicManacostModify
-    globalModifier: 0.9
+    modifiers:
+     Earth: 0.90
+     Fire: 0.90
+     Gate: 0.90
+     Healing: 0.90
+     LightDarkness: 0.90
+     Meta: 0.90
+     Movement: 0.90
+     Water: 0.90
+     Necromancy: 0.90
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14MagicStaff_GlowingWooden
     startSlots:
@@ -81,7 +90,16 @@
     slots:
     - neck
   - type: CP14MagicManacostModify
-    globalModifier: 1.1
+    modifiers:
+     Earth: 1.15
+     Fire: 1.15
+     Gate: 1.15
+     Healing: 1.15
+     LightDarkness: 1.15
+     Meta: 1.15
+     Movement: 1.15
+     Water: 1.15
+     Necromancy: 1.15
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14MagicStaff_Wooden
     startSlots:
@@ -110,7 +128,16 @@
     slots:
     - neck
   - type: CP14MagicManacostModify
-    globalModifier: 0.9
+    modifiers:
+     Earth: 0.90
+     Fire: 0.90
+     Gate: 0.90
+     Healing: 0.90
+     LightDarkness: 0.90
+     Meta: 0.90
+     Movement: 0.90
+     Water: 0.90
+     Necromancy: 0.90
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14MagicStaff_GlowingWooden
     startSlots:
@@ -138,10 +165,121 @@
     slots:
     - neck
   - type: CP14MagicManacostModify
-    globalModifier: 0.9
+    modifiers:
+     Earth: 0.90
+     Fire: 0.90
+     Gate: 0.90
+     Healing: 0.90
+     LightDarkness: 0.90
+     Meta: 0.90
+     Movement: 0.90
+     Water: 0.90
+     Necromancy: 0.90
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14MagicStaff_GlowingWooden
     startSlots:
     - MagicCrystalHolder
     - MagicArtifact1
     - StaffHolderMagicCrystal1
+
+# Cooper staff
+- type: entity
+  id: CP14MagicStaff_Cooper
+  parent: CP14MagicStaffBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/cooper_staff.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/cooper_staff.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: CP14MagicManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14MagicStaff_Cooper
+    startSlots:
+    - MagicCrystalHolder
+    - MagicArtifact1
+
+# Iron staff
+- type: entity
+  id: CP14MagicStaff_Iron
+  parent: CP14MagicStaffBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/iron_staff.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/iron_staff.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: CP14MagicManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14MagicStaff_Iron
+    startSlots:
+    - MagicCrystalHolder
+    - MagicArtifact1
+
+# Gold staff
+- type: entity
+  id: CP14MagicStaff_Gold
+  parent: CP14MagicStaffBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/gold_staff.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    sprite: _CP14/Objects/ModularTools/Magic/Staffs/gold_staff.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14MagicStaff_Gold
+    startSlots:
+    - MagicCrystalHolder
+    - MagicArtifact1
+  - type: CP14MagicManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05

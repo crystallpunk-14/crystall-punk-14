@@ -1,5 +1,4 @@
 # Blue Holders
-
 - type: modularPart
   id: BaseBlueHolderManacostModify
   modifiers:
@@ -84,3 +83,261 @@
   - !type:Inherit
     copyFrom:
     - BaseBlueHolderManacostModify
+
+# Cooper Holders
+- type: modularPart
+  id: BaseCooperHolderManacostModify
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Cooper1
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Cooper1
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+      state: icon1
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+  - !type:Inherit
+    copyFrom:
+    - BaseCooperHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Cooper2
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Cooper2
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+      state: icon2
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal3
+  - !type:Inherit
+    copyFrom:
+    - BaseCooperHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Cooper3
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Cooper3
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+      state: icon3
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseCooperHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Cooper4
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Cooper4
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+      state: icon4
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_cooper.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal3
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseCooperHolderManacostModify
+
+# Iron Holders
+- type: modularPart
+  id: BaseIronHolderManacostModify
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Iron1
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Iron1
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+      state: icon1
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+  - !type:Inherit
+    copyFrom:
+    - BaseIronHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Iron2
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Iron2
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+      state: icon2
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal3
+  - !type:Inherit
+    copyFrom:
+    - BaseIronHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Iron3
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Iron3
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+      state: icon3
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseIronHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Iron4
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Iron4
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+      state: icon4
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_iron.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal3
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseIronHolderManacostModify
+
+# Gold Holders
+- type: modularPart
+  id: BaseGoldHolderManacostModify
+  modifiers:
+  - !type:EditManacostModify
+    modifiers:
+     Earth: 1.05
+     Fire: 1.05
+     Gate: 1.05
+     Healing: 1.05
+     LightDarkness: 1.05
+     Meta: 1.05
+     Movement: 1.05
+     Water: 1.05
+     Necromancy: 1.05
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Gold1
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Gold1
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+      state: icon1
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+  - !type:Inherit
+    copyFrom:
+    - BaseGoldHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Gold2
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Gold2
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+      state: icon2
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal3
+  - !type:Inherit
+    copyFrom:
+    - BaseGoldHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Gold3
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Gold3
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+      state: icon3
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseGoldHolderManacostModify
+
+- type: modularPart
+  id: StaffMagicCrystalHolder_Gold4
+  targetSlot: MagicCrystalHolder
+  sourcePart: CP14MagicCrystalHolder_Gold4
+  iconSprite:
+    - sprite: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+      state: icon4
+  rsiPath: _CP14/Objects/ModularTools/Magic/Holders/magic_crystals_holder_gold.rsi
+  modifiers:
+  - !type:EditModularSlots
+    addSlots:
+    - HolderMagicCrystal1
+    - HolderMagicCrystal2
+    - HolderMagicCrystal3
+    - HolderMagicCrystal4
+  - !type:Inherit
+    copyFrom:
+    - BaseGoldHolderManacostModify

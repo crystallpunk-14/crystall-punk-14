@@ -42,7 +42,7 @@
 
 # SpellFlashLight
 - type: entity
-  id: CP14MagicCrystalSpellSpellFlashLight
+  id: CP14MagicCrystalSpellFlashLight
   parent: CP14MagicCrystalBase
   suffix: SpellFlashLight
   components:
@@ -50,17 +50,17 @@
     color: "#FFFFE0"
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellSpellFlashLight
+    - CP14ActionSpellFlashLight
   - type: PointLight
     color: "#FFFFE0"
   - type: CP14ModularCraftPart
     possibleParts:
-    - RingMagicCrystal1_SpellSpellFlashLight
-    - HolderMagicCrystal1_SpellSpellFlashLight
-    - HolderMagicCrystal2_SpellSpellFlashLight
-    - HolderMagicCrystal3_SpellSpellFlashLight
-    - HolderMagicCrystal4_SpellSpellFlashLight
-    - StaffHolderMagicCrystal1_SpellSpellFlashLight
+    - RingMagicCrystal1_SpellFlashLight
+    - HolderMagicCrystal1_SpellFlashLight
+    - HolderMagicCrystal2_SpellFlashLight
+    - HolderMagicCrystal3_SpellFlashLight
+    - HolderMagicCrystal4_SpellFlashLight
+    - StaffHolderMagicCrystal1_SpellFlashLight
 
 # SpellEarthWall
 - type: entity

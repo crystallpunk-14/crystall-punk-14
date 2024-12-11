@@ -10,7 +10,6 @@
     size: Tiny
 
 # Blue holder
-
 - type: entity
   id: CP14MagicCrystalHolder_BaseBlue
   parent: CP14MagicCrystalHolderBase
@@ -75,3 +74,186 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - StaffMagicCrystalHolder_Blue4
+
+# cooper holder
+- type: entity
+  id: CP14MagicCrystalHolder_BaseCooper
+  parent: CP14MagicCrystalHolderBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Magic/Holders/magic_crystal_holder_cooper.rsi
+
+- type: entity
+  id: CP14MagicCrystalHolder_Cooper1
+  parent: CP14MagicCrystalHolder_BaseCooper
+  name: magic crystals holder
+  description:  Holder for magic crystals, has one slot.
+  suffix: 1 slot
+  components:
+  - type: Sprite
+    state: icon1
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Cooper1
+
+- type: entity
+  id: CP14MagicCrystalHolder_Cooper2
+  parent: CP14MagicCrystalHolder_BaseCooper
+  name: magic crystals holder
+  description:  Holder for magic crystals, has two slots.
+  suffix: 2 slots
+  components:
+  - type: Sprite
+    state: icon2
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Cooper2
+
+- type: entity
+  id: CP14MagicCrystalHolder_Cooper3
+  parent: CP14MagicCrystalHolder_BaseCooper
+  name: magic crystals holder
+  description:  Holder for magic crystals, has three slots.
+  suffix: 3 slots
+  components:
+  - type: Sprite
+    state: icon3
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Cooper3
+
+- type: entity
+  id: CP14MagicCrystalHolder_Cooper4
+  parent: CP14MagicCrystalHolder_BaseCooper
+  name: magic crystals holder
+  description:  Holder for magic crystals, has four slots.
+  suffix: 4 slots
+  components:
+  - type: Sprite
+    state: icon4
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Cooper4
+
+# iron holder
+- type: entity
+  id: CP14MagicCrystalHolder_BaseIron
+  parent: CP14MagicCrystalHolderBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Magic/Holders/magic_crystal_holder_iron.rsi
+
+- type: entity
+  id: CP14MagicCrystalHolder_Iron1
+  parent: CP14MagicCrystalHolder_BaseIron
+  name: magic crystals holder
+  description:  Holder for magic crystals, has one slot.
+  suffix: 1 slot
+  components:
+  - type: Sprite
+    state: icon1
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Iron1
+
+- type: entity
+  id: CP14MagicCrystalHolder_Iron2
+  parent: CP14MagicCrystalHolder_BaseIron
+  name: magic crystals holder
+  description:  Holder for magic crystals, has two slots.
+  suffix: 2 slots
+  components:
+  - type: Sprite
+    state: icon2
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Iron2
+
+- type: entity
+  id: CP14MagicCrystalHolder_Iron3
+  parent: CP14MagicCrystalHolder_BaseIron
+  name: magic crystals holder
+  description:  Holder for magic crystals, has three slots.
+  suffix: 3 slots
+  components:
+  - type: Sprite
+    state: icon3
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Iron3
+
+- type: entity
+  id: CP14MagicCrystalHolder_Iron4
+  parent: CP14MagicCrystalHolder_BaseIron
+  name: magic crystals holder
+  description:  Holder for magic crystals, has four slots.
+  suffix: 4 slots
+  components:
+  - type: Sprite
+    state: icon4
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Iron4
+
+# gold holder
+- type: entity
+  id: CP14MagicCrystalHolder_BaseGold
+  parent: CP14MagicCrystalHolderBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Magic/Holders/magic_crystal_holder_gold.rsi
+
+- type: entity
+  id: CP14MagicCrystalHolder_Gold1
+  parent: CP14MagicCrystalHolder_BaseGold
+  name: magic crystals holder
+  description:  Holder for magic crystals, has one slot.
+  suffix: 1 slot
+  components:
+  - type: Sprite
+    state: icon1
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Gold1
+
+- type: entity
+  id: CP14MagicCrystalHolder_Gold2
+  parent: CP14MagicCrystalHolder_BaseGold
+  name: magic crystals holder
+  description:  Holder for magic crystals, has two slots.
+  suffix: 2 slots
+  components:
+  - type: Sprite
+    state: icon2
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Gold2
+
+- type: entity
+  id: CP14MagicCrystalHolder_Gold3
+  parent: CP14MagicCrystalHolder_BaseGold
+  name: magic crystals holder
+  description:  Holder for magic crystals, has three slots.
+  suffix: 3 slots
+  components:
+  - type: Sprite
+    state: icon3
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Gold3
+
+- type: entity
+  id: CP14MagicCrystalHolder_Gold4
+  parent: CP14MagicCrystalHolder_BaseGold
+  name: magic crystals holder
+  description:  Holder for magic crystals, has four slots.
+  suffix: 4 slots
+  components:
+  - type: Sprite
+    state: icon4
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - StaffMagicCrystalHolder_Gold4
