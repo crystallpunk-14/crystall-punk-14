@@ -1,7 +1,8 @@
 - type: entity
   id: CP14BaseRoof
   categories: [ ForkFiltered ]
-  #abstract: true
+  abstract: true
+  name: roof
   description: A roof over your head to protect you from the heat of the sun or the weather.
   placement:
     mode: SnapgridCenter
@@ -15,8 +16,6 @@
     bodyType: Static 
   - type: Transform
     anchored: true
-  #- type: Occluder
-  #  enabled: false
   - type: BlockWeather
   - type: CP14Roof
   - type: Sprite
@@ -27,4 +26,14 @@
     state: full
   - type: IconSmooth
     key: CP14roof
-    base: wood
+    base: roof
+
+- type: entity
+  parent: CP14BaseRoof
+  id: CP14RoofWooden
+  name: wooden roof
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Roof/wooden.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Roof/wooden.rsi
