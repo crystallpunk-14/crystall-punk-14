@@ -11,7 +11,8 @@
     key: CP14Roof
   - type: Clickable
   - type: Physics
-    bodyType: Static 
+    bodyType: Static
+    canCollide: false
   - type: Transform
     anchored: true
   - type: BlockWeather
