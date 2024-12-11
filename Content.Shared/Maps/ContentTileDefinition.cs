@@ -135,5 +135,11 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField]
         public Color? Color;
+
+        /// <summary>
+        /// CP14 - auto removing spilled reagents from tile
+        /// </summary>
+        [DataField]
+        public bool SuckReagents = false;
     }
 }
