@@ -1,0 +1,46 @@
+- type: biomeTemplate
+  id: CP14SnowFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: CP14FloorSnowDeepDeep
+    - !type:BiomeTileLayer 
+      tile: CP14FloorSnowDeep
+      threshold: 0
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.02
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+    - !type:BiomeTileLayer
+      tile: CP14FloorSnow
+      threshold: 0.45
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.02
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+    - !type:BiomeEntityLayer # More Trees
+      threshold: 0.4
+      noise:
+        seed: 4
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.7
+      allowedTiles:
+        - CP14FloorSnow
+        - CP14FloorSnowDeep
+        - CP14FloorSnowDeepDeep
+      entities:
+        - CP14FloraTreeSnow
+        #- CP14FloraTreeGreenLarge

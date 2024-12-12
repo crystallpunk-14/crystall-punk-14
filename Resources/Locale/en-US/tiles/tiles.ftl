@@ -1,4 +1,4 @@
-tiles-space = space
+tiles-space = ocean
 tiles-plating = plating
 tiles-lattice = lattice
 tiles-lattice-train = train lattice
