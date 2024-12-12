@@ -52,9 +52,6 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!args.CanReach || args.Target is not { Valid: true })
             return;
 
-        if (_doorQuery.TryComp(args.Target, out var doorComponent) && doorComponent.State == DoorState.Open)
-            return;
-
         if (!TryComp<StorageComponent>(keyring, out var storageComp))
             return;
 
@@ -86,9 +83,6 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             return;
 
         if (!args.CanReach || args.Target is not { Valid: true })
-            return;
-
-        if (_doorQuery.TryComp(args.Target, out var doorComponent) && doorComponent.State == DoorState.Open)
             return;
 
         if (!_lockQuery.TryComp(args.Target, out _))
@@ -232,6 +226,9 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
     private void TryUseKeyOnLock(EntityUid user, Entity<CP14LockComponent> target, Entity<CP14KeyComponent> key)
     {
         if (!TryComp<LockComponent>(target, out var lockComp))
+            return;
+
+        if (_doorQuery.TryComp(target, out var doorComponent) && doorComponent.State == DoorState.Open)
             return;
 
         var keyShape = key.Comp.LockShape;
