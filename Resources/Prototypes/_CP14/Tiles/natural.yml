@@ -178,10 +178,10 @@
   color: "#4a613a"
 
 - type: tile
-  id: CP14FloorSnowDeep
+  id: CP14FloorSnowDeepDeep
   editorHidden: false
-  name: cp14-tiles-snow-deep
-  sprite: /Textures/_CP14/Tiles/DeepSnow/snow.png
+  name: cp14-tiles-snow-deep-deep
+  sprite: /Textures/_CP14/Tiles/SnowDeepDeep/snow.png
   variants: 6
   placementVariants:
   - 1.0
@@ -192,14 +192,47 @@
   - 1.0
   edgeSpritePriority: 1000 # Because snowfall!
   edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/DeepSnow/single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/DeepSnow/single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/DeepSnow/single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/DeepSnow/single_edge_SW.png
-    South: /Textures/_CP14/Tiles/DeepSnow/double_edge_S.png
-    East: /Textures/_CP14/Tiles/DeepSnow/double_edge_E.png
-    North: /Textures/_CP14/Tiles/DeepSnow/double_edge_N.png
-    West: /Textures/_CP14/Tiles/DeepSnow/double_edge_W.png
+    SouthEast: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_S.png
+    East: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_E.png
+    North: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_N.png
+    West: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true
+  suckReagents: true
+
+- type: tile
+  id: CP14FloorSnowDeep
+  editorHidden: false
+  name: cp14-tiles-snow-deep
+  sprite: /Textures/_CP14/Tiles/SnowDeep/snow.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1001 # Because snowfall!
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/SnowDeep/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/SnowDeep/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/SnowDeep/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/SnowDeep/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/SnowDeep/double_edge_S.png
+    East: /Textures/_CP14/Tiles/SnowDeep/double_edge_E.png
+    North: /Textures/_CP14/Tiles/SnowDeep/double_edge_N.png
+    West: /Textures/_CP14/Tiles/SnowDeep/double_edge_W.png
   baseTurf: CP14FloorDirt
   deconstructTools: [ CP14Digging ]
   itemDrop: CP14RandomDirtLootSpawner
@@ -223,7 +256,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 1001 # Because snowfall!
+  edgeSpritePriority: 1002 # Because snowfall!
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/Snow/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/Snow/single_edge_NE.png

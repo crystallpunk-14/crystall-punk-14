@@ -9,6 +9,7 @@ cp14-tiles-dirt = soil
 cp14-tiles-sand = sand
 cp14-tiles-snow = snow
 cp14-tiles-snow-deep = deep snow
+cp14-tiles-snow-deep-deep = deep deep snow
 
 # Produced
 cp14-tiles-foundation = foundation
