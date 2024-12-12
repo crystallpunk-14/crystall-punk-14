@@ -215,6 +215,54 @@
     count: 10
 
 - type: entity
+  id: CP14ManariumWoodLog
+  parent: CP14WoodLog
+  name: manarium log
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/manarium_wood.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Log
+    spawnedPrototype: CP14ManariumWoodenPlanks1
+    spawnCount: 3
+
+- type: entity
+  id: CP14ManariumWoodenPlanks1
+  parent: CP14WoodenPlanks1
+  name: manarium planks
+  suffix: 1
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/manarium_wood.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Stack
+    stackType: CP14ManariumWoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+
+- type: entity
+  id: CP14ManariumWoodenPlanks10
+  parent: CP14ManariumWoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
   id: CP14Nail1
   parent: BaseItem
   name: nails

@@ -55,6 +55,20 @@
   maxCount: 10
 
 - type: stack
+  id: CP14MithrilBar
+  name: cp14-stack-mithril-bars
+  spawn: CP14MithrilBar1
+  icon: { sprite: _CP14/Objects/Materials/mithril_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: CP14ManariumWoodenPlanks
+  name: cp14-material-manarium-planks
+  spawn: CP14ManariumWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/manarium_wood.rsi, state: planks_2 }
+  maxCount: 10
+
+- type: stack
   id: CP14GlassSheet
   name: cp14-stack-glass-sheet
   spawn: CP14GlassSheet1

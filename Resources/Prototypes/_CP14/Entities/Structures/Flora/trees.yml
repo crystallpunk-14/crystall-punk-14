@@ -209,3 +209,136 @@
   components:
   - type: Sprite
     state: treelarge06
+
+- type: entity
+  id: CP14BaseManariumTree
+  abstract: true
+  parent: CP14BaseTree
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Flora/manarium.rsi
+    drawdepth: Mobs
+    offset: 0,0.9
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ManariumWoodLog:
+            min: 1
+            max: 3
+
+- type: entity
+  parent: CP14BaseManariumTree
+  id: CP14BaseManariumTreeLarge
+  name: large tree
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.18,-0.35,0.18,0.35"
+        density: 2000
+        layer:
+        - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ManariumWoodLog:
+            min: 3
+            max: 6
+
+- type: entity
+  parent: CP14BaseManariumTreeLarge
+  id: CP14ManariumTreeLarge01
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: CP14BaseManariumTreeLarge
+  id: CP14ManariumTreeLarge02
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: CP14BaseManariumTree
+  id: CP14ManariumTree01
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: CP14BaseManariumTree
+  id: CP14ManariumTree02
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: CP14BaseManariumTree
+  id: CP14ManariumTree03
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: CP14BaseManariumTree
+  id: CP14ManariumTree04
+  components:
+  - type: Sprite
+    state: tree06
