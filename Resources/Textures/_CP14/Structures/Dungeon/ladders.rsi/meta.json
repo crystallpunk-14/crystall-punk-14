@@ -8,14 +8,16 @@
   },
   "states": [
     {
-      "name": "ladder",
+      "name": "marble",
       "directions": 4
     },
     {
-      "name": "top"
+      "name": "stone",
+      "directions": 4
     },
     {
-      "name": "down"
+      "name": "wood",
+      "directions": 4
     }
   ]
 }
