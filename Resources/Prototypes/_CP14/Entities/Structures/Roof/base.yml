@@ -9,7 +9,6 @@
   components:
   - type: PlacementReplacement
     key: CP14Roof
-  - type: Clickable
   - type: Physics
     bodyType: Static
     canCollide: false
