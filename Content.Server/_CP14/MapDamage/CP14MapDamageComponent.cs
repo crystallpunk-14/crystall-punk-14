@@ -15,7 +15,7 @@ public sealed partial class CP14MapDamageComponent : Component
     {
         DamageDict = new Dictionary<string, FixedPoint2>()
         {
-            {"Asphyxiation", 10}
+            {"Asphyxiation", 5}
         }
     };
 
