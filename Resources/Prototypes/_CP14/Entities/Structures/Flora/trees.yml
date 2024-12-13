@@ -183,7 +183,6 @@
 
 - type: entity
   id: CP14BaseLucensTree
-  abstract: true
   parent: CP14BaseTree
   components:
   - type: PointLight
@@ -195,6 +194,16 @@
     sprite: _CP14/Structures/Flora/lucens.rsi
     drawdepth: Mobs
     offset: 0,0.9
+    layers:
+    - state: tree03
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree03: ""
+        tree04: ""
+        tree05: ""
+        tree06: ""
   - type: Destructible
     thresholds:
     - trigger:
@@ -232,8 +241,20 @@
   parent: CP14BaseLucensTree
   id: CP14BaseLucensTreeLarge
   name: large tree
-  abstract: true
   components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Flora/lucens.rsi
+    drawdepth: Mobs
+    offset: 0,0.9
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
   - type: Fixtures
     fixtures:
       fix1:
@@ -275,45 +296,3 @@
           CP14LucensWoodLog:
             min: 3
             max: 6
-
-- type: entity
-  parent: CP14BaseLucensTreeLarge
-  id: CP14LucensTreeLarge01
-  components:
-  - type: Sprite
-    state: tree01
-
-- type: entity
-  parent: CP14BaseLucensTreeLarge
-  id: CP14LucensTreeLarge02
-  components:
-  - type: Sprite
-    state: tree02
-
-- type: entity
-  parent: CP14BaseLucensTree
-  id: CP14LucensTree01
-  components:
-  - type: Sprite
-    state: tree03
-
-- type: entity
-  parent: CP14BaseLucensTree
-  id: CP14LucensTree02
-  components:
-  - type: Sprite
-    state: tree04
-
-- type: entity
-  parent: CP14BaseLucensTree
-  id: CP14LucensTree03
-  components:
-  - type: Sprite
-    state: tree05
-
-- type: entity
-  parent: CP14BaseLucensTree
-  id: CP14LucensTree04
-  components:
-  - type: Sprite
-    state: tree06
