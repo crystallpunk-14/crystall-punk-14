@@ -62,7 +62,7 @@ cp14-tiles-stonebricks = каменный кирпичный пол
 cp14-tiles-stonebricks-weather = уличный каменный кирпичный пол
 cp14-tiles-stonebricks-marble = мраморный пол
 
-cp14-tiles-lucens-woodplanks = люценовые доски
+cp14-tiles-lucens-woodplanks = люценcовые доски
 cp14-tiles-lucens-woodplanks-big = большие люценовые доски
 cp14-tiles-lucens-woodplanks-cruciform = паркетные люценовые доски
 cp14-tiles-lucens-woodplanks-stairways = узорчатые люценовые доски

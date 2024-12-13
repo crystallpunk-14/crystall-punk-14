@@ -1128,7 +1128,7 @@
     West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
   baseTurf: CP14FloorFoundation
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14LucensWoodenPlanks1
   isSubfloor: false
   footstepSounds:
     collection: FootstepWood
@@ -1160,7 +1160,7 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14LucensWoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1191,7 +1191,7 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14LucensWoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -1222,7 +1222,7 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14LucensWoodenPlanks1
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
