@@ -63,10 +63,10 @@ cp14-tiles-stonebricks-weather = уличный каменный кирпичн�
 cp14-tiles-stonebricks-marble = мраморный пол
 
 cp14-tiles-lucens-woodplanks = люценcовые доски
-cp14-tiles-lucens-woodplanks-big = большие люценовые доски
-cp14-tiles-lucens-woodplanks-cruciform = паркетные люценовые доски
-cp14-tiles-lucens-woodplanks-stairways = узорчатые люценовые доски
-cp14-tiles-lucens-woodplanks-broken = сломанные люценовые доски
-cp14-tiles-lucens-woodplanks-big-broken = сломанные большие люценовые доски
-cp14-tiles-lucens-woodplanks-cruciform-broken = сломанные паркетные люценовые доски
-cp14-tiles-lucens-woodplanks-stairways-broken = сломанные узорчатые люценовые доски
+cp14-tiles-lucens-woodplanks-big = большие люценcовые доски
+cp14-tiles-lucens-woodplanks-cruciform = паркетные люценcовые доски
+cp14-tiles-lucens-woodplanks-stairways = узорчатые люценcовые доски
+cp14-tiles-lucens-woodplanks-broken = сломанные люценcовые доски
+cp14-tiles-lucens-woodplanks-big-broken = сломанные большие люценcовые доски
+cp14-tiles-lucens-woodplanks-cruciform-broken = сломанные паркетные люценcовые доски
+cp14-tiles-lucens-woodplanks-stairways-broken = сломанные узорчатые люценcовые доски
