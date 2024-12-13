@@ -186,6 +186,10 @@
   abstract: true
   parent: CP14BaseTree
   components:
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+    color: "#87CEEB"
   - type: Sprite
     noRot: true
     sprite: _CP14/Structures/Flora/lucens.rsi
