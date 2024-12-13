@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CLA",
+  "copyright": "Created by TheShuEd (Github)",
+  "states": [
+    {
+      "name": "meta"
+    }
+  ]
+}

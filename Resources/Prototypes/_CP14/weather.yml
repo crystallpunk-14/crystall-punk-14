@@ -28,3 +28,36 @@
   sprite:
     sprite: /Textures/_CP14/Effects/parallax.rsi
     state: noise
+
+- type: weather
+  id: CP14SnowLight
+  sprite:
+    sprite: /Textures/_CP14/Effects/weather.rsi
+    state: snowfall_light
+  sound:
+    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    params:
+      loop: true
+      volume: -6
+
+- type: weather
+  id: CP14SnowMedium
+  sprite:
+    sprite: /Textures/_CP14/Effects/weather.rsi
+    state: snowfall_med
+  sound:
+    path: /Audio/Effects/Weather/snowstorm_weak.ogg
+    params:
+      loop: true
+      volume: -6
+
+- type: weather
+  id: CP14SnowHeavy
+  sprite:
+    sprite: /Textures/_CP14/Effects/weather.rsi
+    state: snowfall_heavy
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -6

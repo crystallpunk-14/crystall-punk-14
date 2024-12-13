@@ -97,6 +97,46 @@
     node: WallDirt
 
 - type: entity
+  id: CP14WallSnow
+  name: snow wall
+  parent: CP14BaseWall
+  description: A tall pile of snow. Can a house be built from it?
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/snow_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/snow_wall.rsi
+  - type: IconSmooth
+    base: wall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg #TODO
+          params:
+            volume: -6
+      #- !type:SpawnEntitiesBehavior
+      #  spawn:
+      #    CP14DirtBlock1:
+      #      min: 2
+      #      max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
   id: CP14WallStoneCopperOre
   suffix: copper ore
   parent: CP14WallStone
