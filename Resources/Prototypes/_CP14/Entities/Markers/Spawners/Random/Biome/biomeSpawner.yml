@@ -72,3 +72,15 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14GrasslandHills
+
+- type: entity
+  id: CP14BiomeSpawnerSnowland
+  parent: CP14BaseBiomeSpawner
+  suffix: Snowland
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14Snowland
