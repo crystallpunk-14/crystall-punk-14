@@ -24,8 +24,8 @@ CP14PloughedGround: CP14SeedbedWooden
 CP14SeedbedDefault: CP14SeedbedWooden
 
 # 2024-08-24
-CP14DungeonEntrance: CP14DungeonEntranceAutoLink
-CP14DungeonExit: CP14DungeonExitAutoLink
+CP14DungeonEntrance: CP14LaddersDownStoneAutoLink
+CP14DungeonExit: CP14LaddersUpStoneAutoLink
 CP14Nail110: CP14Nail10
 
 # 2024-09-09
