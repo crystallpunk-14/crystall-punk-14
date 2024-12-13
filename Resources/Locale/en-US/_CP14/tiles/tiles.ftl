@@ -59,10 +59,10 @@ cp14-tiles-acacia-woodplanks-big-broken = broken big acacia planks
 cp14-tiles-acacia-woodplanks-cruciform-broken = broken cruciform acacia planks
 cp14-tiles-acacia-woodplanks-stairways-broken = broken stairways acacia planks
 
-cp14-tiles-woodplanks-burned = burned planks 
-cp14-tiles-woodplanks-big-burned = big burned planks 
-cp14-tiles-woodplanks-cruciform-burned = cruciform burned planks 
-cp14-tiles-woodplanks-stairways-burned = stairways burned planks 
+cp14-tiles-woodplanks-burned = burned planks
+cp14-tiles-woodplanks-big-burned = big burned planks
+cp14-tiles-woodplanks-cruciform-burned = cruciform burned planks
+cp14-tiles-woodplanks-stairways-burned = stairways burned planks
 
 cp14-tiles-stonebricks-small-carved1 = carved brick floor
 cp14-tiles-stonebricks-small-carved2 = carved brick floor
@@ -70,3 +70,12 @@ cp14-tiles-stonebricks-square-carved = carved brick floor
 cp14-tiles-stonebricks = stonebrick floor
 cp14-tiles-stonebricks-weather = street stonebrick floor
 cp14-tiles-stonebricks-marble = marble floor
+
+cp14-tiles-lucens-woodplanks = lucens woodplanks
+cp14-tiles-lucens-woodplanks-big = big lucens planks
+cp14-tiles-lucens-woodplanks-cruciform = cruciform lucens planks
+cp14-tiles-lucens-woodplanks-stairways = stairways lucens planks
+cp14-tiles-lucens-woodplanks-broken = broken lucens planks
+cp14-tiles-lucens-woodplanks-big-broken = broken big lucens planks
+cp14-tiles-lucens-woodplanks-cruciform-broken = broken cruciform lucens planks
+cp14-tiles-lucens-woodplanks-stairways-broken = broken stairways lucens planks
