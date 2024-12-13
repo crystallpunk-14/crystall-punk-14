@@ -91,4 +91,18 @@
       color: "#a878d1"
   - type: PointLight
     color: "#a878d1"
+
+- type: entity
+  parent: CP14WallmauntGarlandBase
+  id: CP14WallmountGarlandBlue
+  suffix: Blue
+  components:
+  - type: Sprite
+    layers:
+    - state: string
+    - state: crystals
+      shader: unshaded
+      color: "#5eabeb"
+  - type: PointLight
+    color: "#5eabeb"
   
