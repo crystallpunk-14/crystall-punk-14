@@ -34,30 +34,3 @@
     solutions:
       absorbed:
         maxVol: 50
-
-- type: entity
-  id: CP14BaseBroom
-  parent: 
-  - BaseItem
-  - CP14BaseWeaponDestructible
-  name: wooden broom
-  description: Sweeps up dried footprints and other stains from the floor
-  components:
-  - type: Item
-    size: Normal
-    storedRotation: 0
-    shape:
-    - 0,0,0,2
-    sprite: _CP14/Objects/Tools/broom.rsi
-  - type: Sprite
-    sprite: _CP14/Objects/Tools/broom.rsi
-    state: icon
-  - type: MeleeWeapon
-    wideAnimationRotation: 10
-    damage:
-      types:
-        Blunt: 5
-    soundHit:
-      collection: MetalThud
-  - type: CP14DecalCleaner
-    delay: 0.75

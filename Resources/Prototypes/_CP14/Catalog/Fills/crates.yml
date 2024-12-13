@@ -54,7 +54,6 @@
       - id: CP14ManaOperationGlove
       - id: CP14ModularIronShovel
       - id: CP14BaseMop
-      - id: CP14BaseBroom
       - id: CP14ModularIronPickaxe
       - id: CP14ModularIronSickle
       - !type:GroupSelector
