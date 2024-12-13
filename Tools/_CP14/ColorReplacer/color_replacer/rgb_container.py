@@ -18,10 +18,11 @@ class RGBContainer:
     def from_hex(cls, hex_color: str):
         hex_color = hex_color.lstrip('#')
 
-        if len(hex_color) not in [6, 8]:
+        hex_len = len(hex_color)
+        if hex_len not in (6, 8):
             raise InvalidHexLen("HEX string length must be 6 or 8 characters.")
 
-        if len(hex_color) == 6:
+        if hex_len == 6:
             hex_color += 'FF'
 
         red = int(hex_color[0:2], 16)
