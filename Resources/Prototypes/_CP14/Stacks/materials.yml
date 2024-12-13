@@ -62,10 +62,10 @@
   maxCount: 10
 
 - type: stack
-  id: CP14ManariumWoodenPlanks
-  name: cp14-material-manarium-planks
-  spawn: CP14ManariumWoodenPlanks1
-  icon: { sprite: _CP14/Objects/Materials/manarium_wood.rsi, state: planks_2 }
+  id: CP14LucensWoodenPlanks
+  name: cp14-material-lucens-planks
+  spawn: CP14LucensWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/lucens_wood.rsi, state: planks_2 }
   maxCount: 10
 
 - type: stack

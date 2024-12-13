@@ -182,13 +182,13 @@
         treelarge06: ""
 
 - type: entity
-  id: CP14BaseManariumTree
+  id: CP14BaseLucensTree
   abstract: true
   parent: CP14BaseTree
   components:
   - type: Sprite
     noRot: true
-    sprite: _CP14/Structures/Flora/manarium.rsi
+    sprite: _CP14/Structures/Flora/lucens.rsi
     drawdepth: Mobs
     offset: 0,0.9
   - type: Destructible
@@ -220,13 +220,13 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14ManariumWoodLog:
+          CP14LucensWoodLog:
             min: 1
             max: 3
 
 - type: entity
-  parent: CP14BaseManariumTree
-  id: CP14BaseManariumTreeLarge
+  parent: CP14BaseLucensTree
+  id: CP14BaseLucensTreeLarge
   name: large tree
   abstract: true
   components:
@@ -268,48 +268,48 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14ManariumWoodLog:
+          CP14LucensWoodLog:
             min: 3
             max: 6
 
 - type: entity
-  parent: CP14BaseManariumTreeLarge
-  id: CP14ManariumTreeLarge01
+  parent: CP14BaseLucensTreeLarge
+  id: CP14LucensTreeLarge01
   components:
   - type: Sprite
     state: tree01
 
 - type: entity
-  parent: CP14BaseManariumTreeLarge
-  id: CP14ManariumTreeLarge02
+  parent: CP14BaseLucensTreeLarge
+  id: CP14LucensTreeLarge02
   components:
   - type: Sprite
     state: tree02
 
 - type: entity
-  parent: CP14BaseManariumTree
-  id: CP14ManariumTree01
+  parent: CP14BaseLucensTree
+  id: CP14LucensTree01
   components:
   - type: Sprite
     state: tree03
 
 - type: entity
-  parent: CP14BaseManariumTree
-  id: CP14ManariumTree02
+  parent: CP14BaseLucensTree
+  id: CP14LucensTree02
   components:
   - type: Sprite
     state: tree04
 
 - type: entity
-  parent: CP14BaseManariumTree
-  id: CP14ManariumTree03
+  parent: CP14BaseLucensTree
+  id: CP14LucensTree03
   components:
   - type: Sprite
     state: tree05
 
 - type: entity
-  parent: CP14BaseManariumTree
-  id: CP14ManariumTree04
+  parent: CP14BaseLucensTree
+  id: CP14LucensTree04
   components:
   - type: Sprite
     state: tree06

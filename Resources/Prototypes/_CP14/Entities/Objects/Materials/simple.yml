@@ -215,12 +215,12 @@
     count: 10
 
 - type: entity
-  id: CP14ManariumWoodLog
+  id: CP14LucensWoodLog
   parent: CP14WoodLog
-  name: manarium log
+  name: lucens log
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Materials/manarium_wood.rsi
+    sprite: _CP14/Objects/Materials/lucens_wood.rsi
     layers:
       - state: log
         map: ["random"]
@@ -231,22 +231,22 @@
           log_2: ""
           log_3: ""
   - type: Log
-    spawnedPrototype: CP14ManariumWoodenPlanks1
+    spawnedPrototype: CP14LucensWoodenPlanks1
     spawnCount: 3
 
 - type: entity
-  id: CP14ManariumWoodenPlanks1
+  id: CP14LucensWoodenPlanks1
   parent: CP14WoodenPlanks1
-  name: manarium planks
+  name: lucens planks
   suffix: 1
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Materials/manarium_wood.rsi
+    sprite: _CP14/Objects/Materials/lucens_wood.rsi
     layers:
       - state: planks
         map: ["base"]
   - type: Stack
-    stackType: CP14ManariumWoodenPlanks
+    stackType: CP14LucensWoodenPlanks
     count: 1
     baseLayer: base
     layerStates:
@@ -255,8 +255,8 @@
     - planks_3
 
 - type: entity
-  id: CP14ManariumWoodenPlanks10
-  parent: CP14ManariumWoodenPlanks1
+  id: CP14LucensWoodenPlanks10
+  parent: CP14LucensWoodenPlanks1
   suffix: 10
   components:
   - type: Stack

@@ -80,11 +80,11 @@
   price: 0 #?
 
 - type: material
-  id: CP14ManariumWoodenPlanks
-  stackEntity: CP14ManariumWoodenPlanks1
-  name: cp14-material-manarium-planks
+  id: CP14LucensWoodenPlanks
+  stackEntity: CP14LucensWoodenPlanks1
+  name: cp14-material-lucens-planks
   unit: materials-unit-bar
-  icon: { sprite: _CP14/Objects/Materials/manarium_wood.rsi, state: planks_2 }
+  icon: { sprite: _CP14/Objects/Materials/lucens_wood.rsi, state: planks_2 }
   color: "#1a1e22"
   price: 0 #?
 
