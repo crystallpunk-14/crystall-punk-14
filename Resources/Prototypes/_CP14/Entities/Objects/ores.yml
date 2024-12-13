@@ -53,7 +53,7 @@
   id: CP14OreMithril
   parent: CP14BaseOre
   name: mithril ore
-  description: A piece of soft, pure mithril.
+  description: A piece of enchanted, pure mithril.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Materials/mithril_ore.rsi
