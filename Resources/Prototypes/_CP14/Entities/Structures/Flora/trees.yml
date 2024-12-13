@@ -184,6 +184,7 @@
 - type: entity
   id: CP14BaseLucensTree
   parent: CP14BaseTree
+  name: lucens tree
   components:
   - type: PointLight
     radius: 1.5
@@ -240,7 +241,7 @@
 - type: entity
   parent: CP14BaseLucensTree
   id: CP14BaseLucensTreeLarge
-  name: large tree
+  name: large lucens tree
   components:
   - type: Sprite
     noRot: true
