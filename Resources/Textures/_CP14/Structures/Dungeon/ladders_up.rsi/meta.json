@@ -8,7 +8,15 @@
   },
   "states": [
     {
-      "name": "ladder",
+      "name": "stone",
+      "directions": 4
+    },
+    {
+      "name": "wood",
+      "directions": 4
+    },
+    {
+      "name": "marble",
       "directions": 4
     }
   ]

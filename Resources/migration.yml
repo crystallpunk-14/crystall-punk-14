@@ -185,6 +185,23 @@ CP14KeyRingGuardCommandant: CP14KeyRingGuardCommander
 #2024-08-12
 CP14BaseHandheldAxe: CP14ModularGripWoodenLong
 
+#2024-12-12
+CP14FloraTree01: CP14FloraTreeGreen
+CP14FloraTree02: CP14FloraTreeGreen
+CP14FloraTree03: CP14FloraTreeGreen
+CP14FloraTree04: CP14FloraTreeGreen
+CP14FloraTree05: CP14FloraTreeGreen
+CP14FloraTree06: CP14FloraTreeGreen
+CP14FloraTreeLarge01: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge02: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge03: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge04: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge05: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge06: CP14FloraTreeGreenLarge
+
+CP14DungeonEntranceAutoLink: CP14LaddersDownStoneAutoLink
+CP14DungeonExitAutoLink: CP14LaddersUpStoneAutoLink
+
 # <---> CrystallEdge migration zone end
 
 

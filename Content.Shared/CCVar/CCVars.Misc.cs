@@ -12,7 +12,7 @@ public sealed partial class CCVars
     ///     Should we pre-load all of the procgen atlasses.
     /// </summary>
     public static readonly CVarDef<bool> ProcgenPreload =
-        CVarDef.Create("procgen.preload", true, CVar.SERVERONLY);
+        CVarDef.Create("procgen.preload", false, CVar.SERVERONLY); //CP14 false by default
 
     /// <summary>
     ///     Enabled: Cloning has 70% cost and reclaimer will refuse to reclaim corpses with souls. (For LRP).
@@ -84,7 +84,7 @@ public sealed partial class CCVars
         CVarDef.Create("entgc.maximum_time_ms", 5, CVar.SERVERONLY);
 
     public static readonly CVarDef<bool> GatewayGeneratorEnabled =
-        CVarDef.Create("gateway.generator_enabled", true);
+        CVarDef.Create("gateway.generator_enabled", false); //CP14 false by default
 
     public static readonly CVarDef<string> TippyEntity =
         CVarDef.Create("tippy.entity", "Tippy", CVar.SERVER | CVar.REPLICATED);
