@@ -131,12 +131,6 @@ namespace Content.Shared.Maps
         public ProtoId<ContentTileDefinition>? BurnedTile { get; private set; } = null;
 
         /// <summary>
-        /// CP14 - color for footprints
-        /// </summary>
-        [DataField]
-        public Color? Color;
-
-        /// <summary>
         /// CP14 - auto removing spilled reagents from tile
         /// </summary>
         [DataField]

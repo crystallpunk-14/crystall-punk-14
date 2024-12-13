@@ -13,7 +13,6 @@
     state: icon
   - type: Item
     size: Normal
-  - type: CP14FootprintHolder
     
 - type: entity
   parent: CP14ClothingShoesBase

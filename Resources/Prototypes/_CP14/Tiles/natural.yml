@@ -40,7 +40,6 @@
   heatCapacity: 10000
   weather: true
   suckReagents: true
-  color: "#452f27"
 
 - type: tile
   editorHidden: false
@@ -73,7 +72,6 @@
   heatCapacity: 10000
   weather: true
   suckReagents: true
-  color: "#dccd9e"
 
 - type: tile
   id: CP14FloorGrass
@@ -107,7 +105,6 @@
   heatCapacity: 10000
   weather: true
   suckReagents: true
-  color: "#4a613a"
 
 - type: tile
   id: CP14FloorGrassLight
@@ -141,7 +138,6 @@
   heatCapacity: 10000
   weather: true
   suckReagents: true
-  color: "#4a613a"
 
 - type: tile
   id: CP14FloorGrassTall
@@ -175,7 +171,6 @@
   heatCapacity: 10000
   weather: true
   suckReagents: true
-  color: "#4a613a"
 
 - type: tile
   id: CP14FloorSnowDeepDeep

@@ -37,5 +37,4 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
-  color: "#38373b"
   indestructible: true

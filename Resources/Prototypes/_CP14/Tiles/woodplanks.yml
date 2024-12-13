@@ -1281,7 +1281,6 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
 
 - type: tile #Big
   editorHidden: false
@@ -1305,7 +1304,6 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
   
 - type: tile #Cruci
   editorHidden: false
@@ -1329,7 +1327,6 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
   
 - type: tile #Stairways
   editorHidden: false
@@ -1353,6 +1350,5 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
 ### /BURNED
 
