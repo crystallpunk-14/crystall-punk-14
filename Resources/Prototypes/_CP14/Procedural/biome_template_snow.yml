@@ -30,6 +30,12 @@
         gain: 0.7
         domainWarpType: OpenSimplex2
         domainWarpAmp: 120
+
+- type: biomeTemplate
+  id: CP14Snowland
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14SnowFill
     - !type:BiomeEntityLayer # More Trees
       threshold: 0.4
       noise:
@@ -44,3 +50,21 @@
       entities:
         - CP14FloraTreeSnow
         #- CP14FloraTreeGreenLarge
+    - !type:BiomeEntityLayer # Snowdrifts
+      threshold: 0.3
+      noise:
+        seed: 23
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorSnow
+        - CP14FloorSnowDeep
+        - CP14FloorSnowDeepDeep
+      entities:
+        - CP14Snowdrift

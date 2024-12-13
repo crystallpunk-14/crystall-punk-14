@@ -1,11 +1,11 @@
 {
   "version": 1,
   "size": {
-    "x": 48,
-    "y": 48
+    "x": 32,
+    "y": 32
   },
   "license": "CC-BY-SA-3.0",
-  "copyright": " by vladimir.s",
+  "copyright": "Edited by Flareguy for Space Station 14, original sprite taken from https://github.com/tgstation/tgstation/blob/master/icons/effects/bleed.dmi",
   "states": [
     {
       "name": "bleed0"
