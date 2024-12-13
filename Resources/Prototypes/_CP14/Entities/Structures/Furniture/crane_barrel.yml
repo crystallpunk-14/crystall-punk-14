@@ -1,0 +1,141 @@
+- type: entity
+  id: CP14CraneBarrel
+  parent: [BaseStructure, CP14BarrelSolution, CP14BaseFlammable]
+  name: wooden crane barrel
+  description: Large lying barrel with tap, for storing valuable liquids.
+  suffix: Empty
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel.rsi
+    layers:
+      - state: barrel
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 80
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:SpillBehavior
+        solution: barrel
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        maxVol: 500
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelFull
+  suffix: Full
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Beer
+          Quantity: 500
+
+- type: entity
+  id: CP14CraneBarrelSmall
+  parent: [BaseStructureDynamic, CP14BarrelSolution, CP14BaseFlammable]
+  name: wooden small crane barrel
+  description: A small lying barrel with a tap to quickly pour liquid into mugs.
+  suffix: Empty
+  categories: [ ForkFiltered ]
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    drawdepth: Items
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel_small.rsi
+    layers:
+      - state: barrel
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        mask:
+        - TabletopMachineMask
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:SpillBehavior
+        solution: barrel
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        maxVol: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallFull
+  suffix: Full
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Beer
+          Quantity: 50
