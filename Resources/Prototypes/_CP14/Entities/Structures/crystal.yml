@@ -16,6 +16,10 @@
       - state: crystal1
         map: ["random"]
         shader: unshaded
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
