@@ -35,16 +35,6 @@
   result: CP14BaseMop
 
 - type: CP14Recipe
-  id: CP14BaseBroom
-  tag: CP14RecipeWorkbench
-  craftTime: 3
-  entities:
-    CP14Wheat: 2
-  stacks:
-    CP14WoodenPlanks: 2
-  result: CP14BaseBroom
-
-- type: CP14Recipe
   id: CP14BaseBattleStaff
   tag: CP14RecipeWorkbench
   craftTime: 4

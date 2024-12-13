@@ -202,6 +202,8 @@ CP14FloraTreeLarge06: CP14FloraTreeGreenLarge
 CP14DungeonEntranceAutoLink: CP14LaddersDownStoneAutoLink
 CP14DungeonExitAutoLink: CP14LaddersUpStoneAutoLink
 
+CP14BaseBroom: null
+
 # <---> CrystallEdge migration zone end
 
 
