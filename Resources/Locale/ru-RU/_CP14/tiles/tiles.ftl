@@ -50,15 +50,6 @@ cp14-tiles-dark-woodplanks-big-broken = сломанные большие тём
 cp14-tiles-dark-woodplanks-cruciform-broken = сломанные паркетные тёмные доски
 cp14-tiles-dark-woodplanks-stairways-broken = сломанные узорчатые тёмные доски
 
-cp14-tiles-acacia-woodplanks = акациевые доски
-cp14-tiles-acacia-woodplanks-big = большие акациевые доски
-cp14-tiles-acacia-woodplanks-cruciform = паркетные акациевые доски
-cp14-tiles-acacia-woodplanks-stairways = узорчатые акациевые доски
-cp14-tiles-acacia-woodplanks-broken = сломанные акациевые доски
-cp14-tiles-acacia-woodplanks-big-broken = сломанные большие акациевые доски
-cp14-tiles-acacia-woodplanks-cruciform-broken = сломанные паркетные акациевые доски
-cp14-tiles-acacia-woodplanks-stairways-broken = сломанные узорчатые акациевые доски
-
 cp14-tiles-woodplanks-burned = сгоревшие доски
 cp14-tiles-woodplanks-big-burned = большие сгоревшие доски
 cp14-tiles-woodplanks-cruciform-burned = паркетные сгоревшие доски

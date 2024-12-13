@@ -50,15 +50,6 @@ cp14-tiles-dark-woodplanks-big-broken = broken big dark planks
 cp14-tiles-dark-woodplanks-cruciform-broken = broken cruciform dark planks
 cp14-tiles-dark-woodplanks-stairways-broken = broken stairways dark planks
 
-cp14-tiles-acacia-woodplanks = acacia woodplanks
-cp14-tiles-acacia-woodplanks-big = big acacia planks
-cp14-tiles-acacia-woodplanks-cruciform = cruciform acacia planks
-cp14-tiles-acacia-woodplanks-stairways = stairways acacia planks
-cp14-tiles-acacia-woodplanks-broken = broken acacia planks
-cp14-tiles-acacia-woodplanks-big-broken = broken big acacia planks
-cp14-tiles-acacia-woodplanks-cruciform-broken = broken cruciform acacia planks
-cp14-tiles-acacia-woodplanks-stairways-broken = broken stairways acacia planks
-
 cp14-tiles-woodplanks-burned = burned planks
 cp14-tiles-woodplanks-big-burned = big burned planks
 cp14-tiles-woodplanks-cruciform-burned = cruciform burned planks
