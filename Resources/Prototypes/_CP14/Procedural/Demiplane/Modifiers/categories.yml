@@ -1,0 +1,8 @@
+- type: cp14DemiplaneModifierCategory
+  id: Danger
+
+- type: cp14DemiplaneModifierCategory
+  id: Reward
+
+- type: cp14DemiplaneModifierCategory
+  id: Fun

@@ -1,0 +1,135 @@
+- type: cp14DemiplaneModifier
+  id: QuartzCrystal
+  name: cp14-modifier-quartz-crystal
+  reward: 0.1
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14QuartzCrystal
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 4
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalRubies
+  name: cp14-modifier-quartz-crystal
+  reward: 0.2
+  generationWeight: 0.1
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneCave
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalRubiesMedium
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalTopazes
+  name: cp14-modifier-quartz-crystal
+  reward: 0.2
+  generationWeight: 0.1
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      - CP14FloorSand
+      entity: CP14CrystalTopazesMedium
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalEmeralds
+  name: cp14-modifier-quartz-crystal
+  reward: 0.2
+  generationWeight: 0.1
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalEmeraldsMedium
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalSapphires
+  name: cp14-modifier-quartz-crystal
+  reward: 0.2
+  generationWeight: 0.1
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalSapphiresMedium
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalAmethysts
+  name: cp14-modifier-quartz-crystal
+  reward: 0.2
+  generationWeight: 0.1
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneCave
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalAmethystsMedium
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4
+
+- type: cp14DemiplaneModifier
+  id: QuartzCrystalDiamonds
+  name: cp14-modifier-quartz-crystal
+  reward: 0.2
+  generationWeight: 0.1
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneCave
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      - CP14FloorSand
+      entity: CP14CrystalDiamondsMedium
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 4

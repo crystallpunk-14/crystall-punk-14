@@ -1,0 +1,67 @@
+- type: cp14DemiplaneModifier
+  id: Loot
+  reward: 0.35
+  generationWeight: 2
+  categories:
+  - Reward
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnerExpeditionLootCommon
+      count: 20
+      minGroupSize: 2
+      maxGroupSize: 3
+
+#- type: cp14DemiplaneModifier
+#  id: Ruins
+#  name: cp14-modifier-ruins
+#  reward: 0.35
+#  generationWeight: 2
+#  categories:
+#  - Reward
+#  layers:
+#    - !type:OreDunGen
+#      entity: ##CP14DemiplanRuinsRoomSpawner
+#      count: 5
+#      minGroupSize: 1
+#      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: Rabbits
+  name: cp14-modifier-rabbits
+  reward: 0.2
+  generationWeight: 0.4
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14MobRabbit
+      count: 3
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: Boar
+  name: cp14-modifier-boars
+  reward: 0.2
+  difficulty: 0.2
+  generationWeight: 0.4
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14MobBoar
+      count: 3
+      minGroupSize: 2
+      maxGroupSize: 3

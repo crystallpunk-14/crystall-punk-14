@@ -1,0 +1,33 @@
+- type: cp14DemiplaneModifier
+  id: RoyalPumpkin
+  generationWeight: 0.1
+  requiredTags:
+  - CP14DemiplaneGrass
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14RoyalPumpkin
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: LOTRoyalPumpkin
+  generationWeight: 0.01
+  requiredTags:
+  - CP14DemiplaneGrass
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14RoyalPumpkin
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 1

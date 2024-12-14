@@ -1,0 +1,117 @@
+- type: cp14DemiplaneModifier
+  id: Dayflin
+  name: cp14-modifier-dayflin
+  reward: 0.2
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneGrass
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableDayflin
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: FlyAgaric
+  name: cp14-modifier-fly-agaric
+  reward: 0.2
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableFlyAgaric
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: BlueAmanita
+  name: cp14-modifier-blue-amanita
+  reward: 0.2
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableBlueAmanita
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: BloodFlower
+  name: cp14-modifier-blood-flower
+  reward: 0.2
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableBloodFlower
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: WildSage
+  name: cp14-modifier-wild-sage
+  reward: 0.2
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneGrass
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14GatherableWildSage
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: LumiShroom
+  name: cp14-modifier-lumisroom
+  reward: 0.2
+  categories:
+  - Reward
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      - CP14FloorBase
+      entity: CP14GatherableLumiMushroom
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5

@@ -1,0 +1,29 @@
+- type: cp14DemiplaneModifier
+  id: Chasm
+  name: cp14-modifier-chasm
+  difficulty: 0.2
+  generationWeight: 0.6
+  categories:
+  - Danger
+  layers:
+    - !type:OreDunGen
+      entity: CP14Chasm
+      tileMask:
+      - CP14FloorBase
+      count: 5
+      minGroupSize: 2
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: Explosive
+  name: cp14-modifier-explosive
+  difficulty: 0.4
+  generationWeight: 0.25
+  categories:
+  - Danger
+  layers:
+    - !type:OreDunGen
+      entity: LandMineExplosive
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2

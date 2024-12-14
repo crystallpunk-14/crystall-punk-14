@@ -1,0 +1,111 @@
+- type: cp14DemiplaneModifier
+  id: EnemyXeno
+  name: cp14-modifier-xeno
+  difficulty: 0.4
+  categories:
+  - Danger
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobXenoDrone
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      entity: CP14MobXeno
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14DemiplaneModifier
+  id: EnemyZombie
+  name: cp14-modifier-zombie
+  difficulty: 0.3
+  generationWeight: 1.5
+  categories:
+  - Danger
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobUndeadZombieRandom
+      count: 4
+      minGroupSize: 5
+      maxGroupSize: 8
+
+- type: cp14DemiplaneModifier
+  id: EnemySkeleton
+  name: cp14-modifier-zombie
+  difficulty: 0.3
+  generationWeight: 1.5
+  categories:
+  - Danger
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneSkeleton
+      count: 1
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemyDyno
+  name: cp14-modifier-dyno
+  difficulty: 0.3
+  categories:
+  - Danger
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobDinoYumkaraptor
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: SmallHydra
+  name: cp14-modifier-dyno
+  difficulty: 0.3
+  categories:
+  - Danger
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobDinoSmallHydra
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: MonsterMosquito
+  name: cp14-modifier-dyno
+  difficulty: 0.15
+  categories:
+  - Danger
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobMonsterMosquito
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemyMole
+  name: cp14-modifier-mole
+  difficulty: 0.4
+  categories:
+  - Danger
+  requiredTags:
+  - CP14DemiplaneUnderground
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14MobMonsterMole
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 1

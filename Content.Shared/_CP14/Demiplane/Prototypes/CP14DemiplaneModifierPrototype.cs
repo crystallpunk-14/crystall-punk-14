@@ -13,6 +13,12 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     [IdDataField] public string ID { get; } = default!;
 
     /// <summary>
+    /// Each modifier belongs to specific categories. Used by the generator to determine what to generate
+    /// </summary>
+    [DataField(required: true)]
+    public List<ProtoId<CP14DemiplaneModifierCategoryPrototype>> Categories = new();
+
+    /// <summary>
     /// Abstract danger of this modifier. The demiplane has a threat limit, which it gains from modifiers until it reaches the limit.
     /// </summary>
     [DataField]
