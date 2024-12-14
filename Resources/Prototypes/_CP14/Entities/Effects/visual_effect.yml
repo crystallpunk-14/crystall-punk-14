@@ -2,25 +2,40 @@
   id: CP14DirtEffect
   categories: [ HideSpawnMenu ]
   components:
-  - type: TimedDespawn
-    lifetime: 2
   - type: Sprite
+    sprite: _CP14/Effects/material_splash.rsi
     drawdepth: Effects
     noRot: true
     layers:
-      - sprite: _CP14/Effects/dirt.rsi
-        state: dirt1
+      - state: dirt1
         map: [ "random" ]
-  - type: EffectVisuals
-  - type: Tag
-    tags:
-      - HideContextMenu
-  - type: AnimationPlayer
   - type: RandomSprite
     available:
       - random:
           dirt1: ""
           dirt2: ""
+  - type: TimedDespawn
+    lifetime: 2
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
+  
+- type: entity
+  id: CP14SnowEffect
+  parent: CP14DirtEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: snow1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          snow1: ""
+          snow2: ""
 
 - type: entity
   id: CP14DustEffect

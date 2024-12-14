@@ -197,7 +197,7 @@
     West: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_W.png
   baseTurf: CP14FloorDirt
   deconstructTools: [ CP14Digging ]
-  itemDrop: CP14RandomDirtLootSpawner
+  itemDrop: CP14RandomSnowLootSpawner
   isSubfloor: false
   footstepSounds:
     collection: FootstepSnow
@@ -228,9 +228,9 @@
     East: /Textures/_CP14/Tiles/SnowDeep/double_edge_E.png
     North: /Textures/_CP14/Tiles/SnowDeep/double_edge_N.png
     West: /Textures/_CP14/Tiles/SnowDeep/double_edge_W.png
-  baseTurf: CP14FloorDirt
+  baseTurf: CP14FloorSnowDeepDeep
   deconstructTools: [ CP14Digging ]
-  itemDrop: CP14RandomDirtLootSpawner
+  itemDrop: CP14RandomSnowLootSpawner
   isSubfloor: false
   footstepSounds:
     collection: FootstepSnow
@@ -261,9 +261,9 @@
     East: /Textures/_CP14/Tiles/Snow/double_edge_E.png
     North: /Textures/_CP14/Tiles/Snow/double_edge_N.png
     West: /Textures/_CP14/Tiles/Snow/double_edge_W.png
-  baseTurf: CP14FloorDirt
+  baseTurf: CP14FloorSnowDeep
   deconstructTools: [ CP14Digging ]
-  itemDrop: CP14RandomDirtLootSpawner
+  itemDrop: CP14RandomSnowLootSpawner
   isSubfloor: false
   footstepSounds:
     collection: FootstepSnow
