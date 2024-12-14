@@ -1,11 +1,11 @@
 - type: constructionGraph
   id: CP14Snowdrift
-  start: CP14Snowdrift
+  start: start
   graph:
-    - node: CP14Snowdrift
+    - node: start
       entity: CP14Snowdrift
       edges:
-        - to: end
+        - to: CP14Snowdrift
           steps:
             - tool: CP14Digging
               doAfter: 1
@@ -18,6 +18,5 @@
               amount: 1
             - !type:PlaySound
               sound: /Audio/_CP14/Effects/snowball.ogg
-    - node: end
-      actions:
-        - !type:DestroyEntity {}
+            - !type:DeleteEntity {}
+    - node: CP14Snowdrift

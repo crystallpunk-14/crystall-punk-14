@@ -80,4 +80,4 @@
           volume: 15
   - type: Construction
     graph: CP14Snowdrift
-    node: CP14Snowdrift
+    node: start
