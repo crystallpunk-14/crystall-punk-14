@@ -1,4 +1,4 @@
 - type: CP14FishingPoolLootTable
   id: Default
   prototypes:
-  - CP14FloorWater
+  - CP14BaseLockpick

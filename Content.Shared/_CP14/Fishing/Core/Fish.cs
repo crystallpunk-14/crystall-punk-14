@@ -11,13 +11,19 @@ public sealed class Fish
     private const float MaxPosition = 1f;
     private const float MinPosition = 0f;
 
+    [ViewVariables(VVAccess.ReadWrite)]
     public float Position { get; private set; }
 
+    [ViewVariables(VVAccess.ReadWrite)]
     private readonly Behavior _behavior;
+
     private readonly IRobustRandom _random;
     private readonly IGameTiming _timing;
 
+    [ViewVariables(VVAccess.ReadWrite)]
     private float _speed;
+
+    [ViewVariables(VVAccess.ReadWrite)]
     private TimeSpan _updateSpeedTime;
 
     public Fish(Behavior behavior, IRobustRandom random, IGameTiming timing)

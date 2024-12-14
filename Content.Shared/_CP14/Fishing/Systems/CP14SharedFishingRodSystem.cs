@@ -1,21 +1,18 @@
 ﻿using Content.Shared._CP14.Fishing.Components;
+using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
-using Content.Shared.Interaction;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Fishing.Systems;
 
 public abstract class CP14SharedFishingRodSystem : EntitySystem
 {
-    [Dependency] private readonly CP14FishingProcessSystem _fishingProcess = default!;
-
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeAllEvent<RequestFishingRodReelMessage>(OnReel);
-
-        SubscribeLocalEvent<CP14FishingPoolComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
+        SubscribeLocalEvent<CP14FishingRodComponent, HandDeselectedEvent>(OnDeselected);
     }
 
     private void OnReel(RequestFishingRodReelMessage msg, EntitySessionEventArgs args)
@@ -35,17 +32,11 @@ public abstract class CP14SharedFishingRodSystem : EntitySystem
         Dirty(hands.ActiveHandEntity.Value, fishingRodComponent);
     }
 
-    private void OnAfterInteractUsing(Entity<CP14FishingPoolComponent> entity, ref AfterInteractUsingEvent args)
+    private void OnDeselected(Entity<CP14FishingRodComponent> entity, ref HandDeselectedEvent args)
     {
-        if (args.Handled || !args.CanReach)
-            return;
-
-        if (!TryComp<CP14FishingRodComponent>(args.Used, out var fishingRodComponent))
-            return;
-
-        fishingRodComponent.Process = _fishingProcess.Start((args.Used, fishingRodComponent), entity, args.User);
+        entity.Comp.Reeling = false;
+        Dirty(entity);
     }
-
 
     [Serializable, NetSerializable]
     protected sealed class RequestFishingRodReelMessage : EntityEventArgs

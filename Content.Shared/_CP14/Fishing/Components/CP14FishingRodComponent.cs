@@ -37,6 +37,9 @@ public sealed partial class CP14FishingRodComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public float Size = 0.25f;
 
+    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    public float ThrowPower = 10f;
+
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ProtoId<CP14FishingProcessStyleSheetPrototype> Style = DefaultStyle;
 }

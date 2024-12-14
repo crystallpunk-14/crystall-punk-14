@@ -7,7 +7,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Fishing.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14FishingProcessSystem))]
+[Access(typeof(CP14SharedFishingProcessSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CP14FishingProcessComponent : Component
 {
     /**
@@ -32,13 +33,13 @@ public sealed partial class CP14FishingProcessComponent : Component
      */
 
     [ViewVariables, AutoNetworkedField]
-    public EntityUid? FishingRod;
+    public EntityUid? FishingRod = null;
 
     [ViewVariables, AutoNetworkedField]
-    public EntityUid? User;
+    public EntityUid? User = null;
 
     [ViewVariables, AutoNetworkedField]
-    public EntityUid? FishingPool;
+    public EntityUid? FishingPool = null;
 
     /**
      * Loot

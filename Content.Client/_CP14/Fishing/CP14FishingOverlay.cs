@@ -22,7 +22,7 @@ public sealed class CP14FishingOverlay : Overlay
 
     private readonly SpriteSystem _sprite;
     private readonly TransformSystem _transform;
-    private readonly CP14FishingProcessSystem _fishingProcess;
+    private readonly CP14SharedFishingProcessSystem _sharedFishingProcess;
 
     private Texture _backgroundTexture = default!;
     private Texture _handleTopTexture = default!;
@@ -48,7 +48,7 @@ public sealed class CP14FishingOverlay : Overlay
 
         _sprite = _entity.System<SpriteSystem>();
         _transform = _entity.System<TransformSystem>();
-        _fishingProcess = _entity.System<CP14FishingProcessSystem>();
+        _sharedFishingProcess = _entity.System<CP14SharedFishingProcessSystem>();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -56,7 +56,7 @@ public sealed class CP14FishingOverlay : Overlay
         if (_player.LocalEntity is not { } localEntity)
             return;
 
-        if (!_fishingProcess.TryGetByUser(localEntity, out var fishingProcess))
+        if (!_sharedFishingProcess.TryGetByUser(localEntity, out var fishingProcess))
             return;
 
         // Refresh the texture cache, with a new fishing process
@@ -100,7 +100,7 @@ public sealed class CP14FishingOverlay : Overlay
     private void DrawProgress(DrawingHandleWorld handle, Vector2 position, Vector2 size, float progress)
     {
         var vectorA = position;
-        var vectorB = position + size with { Y = size.Y * progress };
+        var vectorB = position + new Vector2(size.X, size.Y * progress);
         var box = new Box2(vectorA, vectorB);
 
         handle.DrawRect(box, Color.Aqua);
