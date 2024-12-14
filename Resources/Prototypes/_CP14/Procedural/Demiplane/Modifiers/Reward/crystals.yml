@@ -1,9 +1,8 @@
 - type: cp14DemiplaneModifier
   id: QuartzCrystal
   name: cp14-modifier-quartz-crystal
-  reward: 0.1
   categories:
-  - Reward
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneCave
   layers:
@@ -18,10 +17,9 @@
 - type: cp14DemiplaneModifier
   id: QuartzCrystalRubies
   name: cp14-modifier-quartz-crystal
-  reward: 0.2
   generationWeight: 0.1
   categories:
-  - Reward
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneCave
   - CP14DemiplaneUnderground
@@ -37,10 +35,9 @@
 - type: cp14DemiplaneModifier
   id: QuartzCrystalTopazes
   name: cp14-modifier-quartz-crystal
-  reward: 0.2
   generationWeight: 0.1
   categories:
-  - Reward
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneCave
   layers:
@@ -56,10 +53,9 @@
 - type: cp14DemiplaneModifier
   id: QuartzCrystalEmeralds
   name: cp14-modifier-quartz-crystal
-  reward: 0.2
   generationWeight: 0.1
   categories:
-  - Reward
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneCave
   layers:
@@ -77,10 +73,9 @@
 - type: cp14DemiplaneModifier
   id: QuartzCrystalSapphires
   name: cp14-modifier-quartz-crystal
-  reward: 0.2
   generationWeight: 0.1
   categories:
-  - Reward
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneCave
   layers:
@@ -98,10 +93,9 @@
 - type: cp14DemiplaneModifier
   id: QuartzCrystalAmethysts
   name: cp14-modifier-quartz-crystal
-  reward: 0.2
   generationWeight: 0.1
   categories:
-  - Reward
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneCave
   - CP14DemiplaneUnderground
@@ -117,10 +111,9 @@
 - type: cp14DemiplaneModifier
   id: QuartzCrystalDiamonds
   name: cp14-modifier-quartz-crystal
-  reward: 0.2
   generationWeight: 0.1
   categories:
-  - Reward
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneCave
   - CP14DemiplaneUnderground

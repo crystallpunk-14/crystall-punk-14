@@ -16,19 +16,7 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// Each modifier belongs to specific categories. Used by the generator to determine what to generate
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<CP14DemiplaneModifierCategoryPrototype>> Categories = new();
-
-    /// <summary>
-    /// Abstract danger of this modifier. The demiplane has a threat limit, which it gains from modifiers until it reaches the limit.
-    /// </summary>
-    [DataField]
-    public float Difficulty = 0;
-
-    /// <summary>
-    /// The abstract value of this modifier. The demiplane has a limit of rewards it gains from modifiers until it reaches the limit.
-    /// </summary>
-    [DataField]
-    public float Reward = 0;
+    public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Categories = new();
 
     /// <summary>
     /// How often can this modifier be generated? Determined by weight from all modifiers available for the location

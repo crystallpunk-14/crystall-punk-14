@@ -1,9 +1,8 @@
 - type: cp14DemiplaneModifier
   id: Dayflin
   name: cp14-modifier-dayflin
-  reward: 0.2
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneGrass
   - CP14DemiplaneOpenSky
@@ -21,9 +20,8 @@
 - type: cp14DemiplaneModifier
   id: FlyAgaric
   name: cp14-modifier-fly-agaric
-  reward: 0.2
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneGrass
   layers:
@@ -41,9 +39,8 @@
 - type: cp14DemiplaneModifier
   id: BlueAmanita
   name: cp14-modifier-blue-amanita
-  reward: 0.2
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneGrass
   layers:
@@ -60,9 +57,8 @@
 - type: cp14DemiplaneModifier
   id: BloodFlower
   name: cp14-modifier-blood-flower
-  reward: 0.2
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneGrass
   layers:
@@ -79,9 +75,8 @@
 - type: cp14DemiplaneModifier
   id: WildSage
   name: cp14-modifier-wild-sage
-  reward: 0.2
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneGrass
   - CP14DemiplaneOpenSky
@@ -99,9 +94,8 @@
 - type: cp14DemiplaneModifier
   id: LumiShroom
   name: cp14-modifier-lumisroom
-  reward: 0.2
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneUnderground
   layers:

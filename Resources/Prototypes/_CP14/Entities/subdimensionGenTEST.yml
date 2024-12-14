@@ -24,9 +24,10 @@
   - type: Item
     size: Tiny
   - type: CP14DemiplaneGeneratorData
-    rewardLimit: 1.25
-    difficultyLimit: 0.75
-    maxModifiers: 6
+    limits:
+      Reward: 1
+      Danger: 1
+      Fun: 1
 
 - type: entity
   id: CP14DemiplanRiftCore

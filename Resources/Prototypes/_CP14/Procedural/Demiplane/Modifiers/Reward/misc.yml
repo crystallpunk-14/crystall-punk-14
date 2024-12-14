@@ -1,9 +1,8 @@
 - type: cp14DemiplaneModifier
   id: Loot
-  reward: 0.35
   generationWeight: 2
   categories:
-  - Reward
+    Reward: 0.35
   layers:
     - !type:OreDunGen
       entity: CP14SpawnerExpeditionLootCommon
@@ -14,10 +13,9 @@
 #- type: cp14DemiplaneModifier
 #  id: Ruins
 #  name: cp14-modifier-ruins
-#  reward: 0.35
 #  generationWeight: 2
 #  categories:
-#  - Reward
+#    Reward: 0.35
 #  layers:
 #    - !type:OreDunGen
 #      entity: ##CP14DemiplanRuinsRoomSpawner
@@ -28,10 +26,9 @@
 - type: cp14DemiplaneModifier
   id: Rabbits
   name: cp14-modifier-rabbits
-  reward: 0.2
   generationWeight: 0.4
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneGrass
   layers:
@@ -48,11 +45,9 @@
 - type: cp14DemiplaneModifier
   id: Boar
   name: cp14-modifier-boars
-  reward: 0.2
-  difficulty: 0.2
   generationWeight: 0.4
   categories:
-  - Reward
+    Reward: 0.2
   requiredTags:
   - CP14DemiplaneGrass
   layers:

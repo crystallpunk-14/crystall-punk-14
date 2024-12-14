@@ -2,9 +2,8 @@
   id: GoldOre
   name: cp14-modifier-gold-ore
   unique: false
-  reward: 0.5
   categories:
-  - Reward
+    Reward: 0.5
   requiredTags:
   - CP14DemiplaneCave
   layers:
@@ -20,9 +19,8 @@
   id: IronOre
   name: cp14-modifier-iron-ore
   unique: false
-  reward: 0.4
   categories:
-  - Reward
+    Reward: 0.4
   requiredTags:
   - CP14DemiplaneCave
   layers:
@@ -38,9 +36,8 @@
   id: CopperOre
   name: cp14-modifier-copper-ore
   unique: false
-  reward: 0.3
   categories:
-  - Reward
+    Reward: 0.3
   requiredTags:
   - CP14DemiplaneCave
   layers:

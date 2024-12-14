@@ -62,7 +62,7 @@ public sealed partial class CP14DemiplaneSystem
                 : Loc.GetString("cp14-demiplane-examine-title-unknown"));
 
         List<LocId> modifierNames = new();
-        foreach (var modifier in comp.Modifiers)
+        foreach (var modifier in comp.SelectedModifiers)
         {
             if (!_proto.TryIndex(modifier, out var indexedModifier))
                 continue;
@@ -148,7 +148,7 @@ public sealed partial class CP14DemiplaneSystem
             return;
         }
 
-        SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.Modifiers, out var demiplane, out var mapId);
+        SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.SelectedModifiers, out var demiplane, out var mapId);
 
         //Admin log needed
         //TEST
@@ -219,26 +219,48 @@ public sealed partial class CP14DemiplaneSystem
             }
         }
 
-        var difficulty = 0f;
-        var reward = 0f;
-        while (generator.Comp.Modifiers.Count < generator.Comp.MaxModifiers && suitableModifiersWeights.Count > 0)
+        Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> limits = new();
+        foreach (var limit in generator.Comp.Limits)
+        {
+            limits.Add(limit.Key, limit.Value);
+        }
+
+        while (suitableModifiersWeights.Count > 0)
         {
             var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
-            if (difficulty + selectedModifier.Difficulty > generator.Comp.DifficultyLimit)
+
+            if (selectedModifier.ID == "RoyalPumpkin")
             {
-                suitableModifiersWeights.Remove(selectedModifier);
-                continue;
+                Log.Debug("RoyalPumpkin");
             }
 
-            if (reward + selectedModifier.Reward > generator.Comp.RewardLimit)
+            var passed = true;
+            foreach (var category in selectedModifier.Categories)
             {
-                suitableModifiersWeights.Remove(selectedModifier);
-                continue;
+                if (!limits.ContainsKey(category.Key))
+                {
+                    suitableModifiersWeights.Remove(selectedModifier);
+                    passed = false;
+                    continue;
+                }
+
+                if (limits[category.Key] - category.Value < 0)
+                {
+                    suitableModifiersWeights.Remove(selectedModifier);
+                    passed = false;
+                    continue;
+                }
             }
 
-            generator.Comp.Modifiers.Add(selectedModifier);
-            reward += selectedModifier.Reward;
-            difficulty += selectedModifier.Difficulty;
+            if (!passed)
+                continue;
+
+            generator.Comp.SelectedModifiers.Add(selectedModifier);
+
+            foreach (var category in selectedModifier.Categories)
+            {
+                limits[category.Key] -= category.Value;
+            }
 
             if (selectedModifier.Unique)
                 suitableModifiersWeights.Remove(selectedModifier);
@@ -274,5 +296,4 @@ public sealed partial class CP14DemiplaneSystem
         // Shouldn't happen
         throw new InvalidOperationException($"Invalid weighted pick in CP14DemiplanSystem.Generation!");
     }
-
 }

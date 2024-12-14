@@ -1,6 +1,8 @@
 - type: cp14DemiplaneModifier
   id: RoyalPumpkin
   generationWeight: 0.1
+  categories:
+    Fun: 0.2 
   requiredTags:
   - CP14DemiplaneGrass
   - CP14DemiplaneOpenSky
@@ -18,6 +20,8 @@
 - type: cp14DemiplaneModifier
   id: LOTRoyalPumpkin
   generationWeight: 0.01
+  categories:
+    Fun: 0.5
   requiredTags:
   - CP14DemiplaneGrass
   - CP14DemiplaneOpenSky

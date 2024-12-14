@@ -1,10 +1,9 @@
 - type: cp14DemiplaneModifier
   id: Chasm
   name: cp14-modifier-chasm
-  difficulty: 0.2
   generationWeight: 0.6
   categories:
-  - Danger
+    Danger: 0.33
   layers:
     - !type:OreDunGen
       entity: CP14Chasm
@@ -17,10 +16,9 @@
 - type: cp14DemiplaneModifier
   id: Explosive
   name: cp14-modifier-explosive
-  difficulty: 0.4
   generationWeight: 0.25
   categories:
-  - Danger
+    Danger: 0.4
   layers:
     - !type:OreDunGen
       entity: LandMineExplosive

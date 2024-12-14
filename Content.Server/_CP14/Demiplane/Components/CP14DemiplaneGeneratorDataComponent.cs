@@ -13,14 +13,8 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
     public ProtoId<CP14DemiplaneLocationPrototype>? Location;
 
     [DataField]
-    public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = new();
+    public List<ProtoId<CP14DemiplaneModifierPrototype>> SelectedModifiers = new();
 
-    [DataField]
-    public float DifficultyLimit = 1;
-
-    [DataField]
-    public float RewardLimit = 1;
-
-    [DataField]
-    public int MaxModifiers = 6;
+    [DataField(required: true)]
+    public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Limits;
 }
