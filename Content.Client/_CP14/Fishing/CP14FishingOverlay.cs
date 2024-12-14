@@ -63,7 +63,8 @@ public sealed class CP14FishingOverlay : Overlay
         if (_process != fishingProcess.Value.Owner)
         {
             _process = fishingProcess.Value.Owner;
-            UpdateCachedStyleSheet(fishingProcess.Value.Comp.StyleSheet);
+
+            UpdateCachedStyleSheet(_sharedFishingProcess.GetStyle(fishingProcess.Value));
 
             var prototype = _prototype.Index(fishingProcess.Value.Comp.LootProtoId);
             var iconPath = CP14FishingIconComponent.DefaultTexturePath;

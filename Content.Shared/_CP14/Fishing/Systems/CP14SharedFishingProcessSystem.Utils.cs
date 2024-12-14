@@ -20,7 +20,12 @@ public abstract partial class CP14SharedFishingProcessSystem
         return (entityUid, component);
     }
 
-    protected CP14FishingProcessStyleSheetPrototype GetStyle(Entity<CP14FishingRodComponent> fishingRod)
+    public CP14FishingProcessStyleSheetPrototype GetStyle(Entity<CP14FishingProcessComponent> process)
+    {
+        return GetStyle(GetRod(process));
+    }
+
+    public CP14FishingProcessStyleSheetPrototype GetStyle(Entity<CP14FishingRodComponent> fishingRod)
     {
         if (_prototype.TryIndex(fishingRod.Comp.Style, out var style))
             return style;

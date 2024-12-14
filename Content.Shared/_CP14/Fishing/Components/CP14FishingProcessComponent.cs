@@ -16,10 +16,10 @@ public sealed partial class CP14FishingProcessComponent : Component
      */
 
     [ViewVariables, AutoNetworkedField]
-    public Player Player;
+    public Player? Player;
 
     [ViewVariables, AutoNetworkedField]
-    public Fish Fish;
+    public Fish? Fish;
 
     /**
      * Progress
@@ -53,13 +53,13 @@ public sealed partial class CP14FishingProcessComponent : Component
      */
 
     [ViewVariables]
-    public CP14FishingProcessStyleSheetPrototype StyleSheet;
+    public CP14FishingProcessStyleSheetPrototype? StyleSheet;
 
     /**
      * Normalized
      */
 
-    public Vector2 LootPositionNormalized => Vector2.UnitY * Fish.Position;
-    public Vector2 PlayerPositionNormalized => Vector2.UnitY * Player.Position;
-    public Vector2 PlayerHalfSizeNormalized => Vector2.UnitY * Player.HalfSize;
+    public Vector2 LootPositionNormalized => Vector2.UnitY * Fish?.Position ?? Vector2.Zero;
+    public Vector2 PlayerPositionNormalized => Vector2.UnitY * Player?.Position ?? Vector2.Zero;
+    public Vector2 PlayerHalfSizeNormalized => Vector2.UnitY * Player?.HalfSize ?? Vector2.Zero;
 }

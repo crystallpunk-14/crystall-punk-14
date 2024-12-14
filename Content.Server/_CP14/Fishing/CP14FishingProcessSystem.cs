@@ -32,7 +32,7 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
         Entity<CP14FishingPoolComponent> fishingPool,
         EntityUid user)
     {
-        var process = CreateProcess(fishingRod);
+        var process = CreateProcess(fishingRod.Owner);
         var loot = _pool.GetLootPrototypeId(fishingPool);
         var style = GetStyle(fishingRod);
 
@@ -74,20 +74,26 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
         Entity<CP14FishingRodComponent> fishingRod,
         float frameTime)
     {
+        if (process.Comp.Player is not { } player)
+            return;
+
         if (fishingRod.Comp.Reeling)
         {
-            process.Comp.Player.Velocity += fishingRod.Comp.Speed * frameTime;
+            player.Velocity += fishingRod.Comp.Speed * frameTime;
             return;
         }
 
-        process.Comp.Player.Velocity -= fishingRod.Comp.Gravity * frameTime;
+        player.Velocity -= fishingRod.Comp.Gravity * frameTime;
     }
 
     private void UpdateVelocity(Entity<CP14FishingProcessComponent> process,
         Entity<CP14FishingRodComponent> fishingRod)
     {
-        process.Comp.Player.Velocity *= fishingRod.Comp.Drag;
-        process.Comp.Player.Velocity = Math.Clamp(process.Comp.Player.Velocity,
+        if (process.Comp.Player is not { } player)
+            return;
+
+        player.Velocity *= fishingRod.Comp.Drag;
+        player.Velocity = Math.Clamp(player.Velocity,
             fishingRod.Comp.MinVelocity,
             fishingRod.Comp.MaxVelocity);
     }
@@ -95,7 +101,10 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
     private void UpdatePosition(Entity<CP14FishingProcessComponent> process,
         float frameTime)
     {
-        process.Comp.Player.Position += process.Comp.Player.Velocity * frameTime;
+        if (process.Comp.Player is not { } player)
+            return;
+
+        player.Position += process.Comp.Player.Velocity * frameTime;
 
         var halfSize = process.Comp.Player.HalfSize;
         process.Comp.Player.Position = Math.Clamp(process.Comp.Player.Position, halfSize, 1 - halfSize);
@@ -103,15 +112,18 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
 
     private void Update(Entity<CP14FishingProcessComponent> process, float frameTime)
     {
+        if (process.Comp.Player is not { } player || process.Comp.Fish is not { } fish)
+            return;
+
         var fishingRod = GetRod(process);
 
         UpdateReeling(process, fishingRod, frameTime);
         UpdateVelocity(process, fishingRod);
         UpdatePosition(process, frameTime);
 
-        process.Comp.Fish.Update(frameTime);
+        fish.Update(frameTime);
 
-        var collides = Collide(process.Comp.Fish, process.Comp.Player);
+        var collides = Collide(fish, player);
 
         var progressAdditive = collides ? 0.1f : -0.2f;
         process.Comp.Progress = Math.Clamp(process.Comp.Progress + progressAdditive * frameTime, 0, 1);

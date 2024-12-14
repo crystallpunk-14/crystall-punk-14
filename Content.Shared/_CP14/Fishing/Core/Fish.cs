@@ -17,7 +17,10 @@ public sealed class Fish
     [ViewVariables(VVAccess.ReadWrite)]
     private readonly Behavior _behavior;
 
+    [NonSerialized]
     private readonly IRobustRandom _random;
+
+    [NonSerialized]
     private readonly IGameTiming _timing;
 
     [ViewVariables(VVAccess.ReadWrite)]
@@ -49,6 +52,6 @@ public sealed class Fish
     private void UpdateSpeed()
     {
         _speed = _behavior.CalculateSpeed(_random);
-        _updateSpeedTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(1f / _behavior.Difficulty, 1f * _behavior.Difficulty));
+        _updateSpeedTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(1f / _behavior.Difficulty, 1f - 1f / _behavior.Difficulty));
     }
 }
