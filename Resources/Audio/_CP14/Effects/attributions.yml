@@ -32,3 +32,8 @@
   license: "CC-BY-4.0"
   copyright: 'by EminYILDIRIM of Freesound.org.'
   source: "https://freesound.org/people/EminYILDIRIM/sounds/536105/"
+
+- files: ["snowball.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by bajko of Freesound.org.'
+  source: "https://freesound.org/people/bajko/sounds/378058/"
