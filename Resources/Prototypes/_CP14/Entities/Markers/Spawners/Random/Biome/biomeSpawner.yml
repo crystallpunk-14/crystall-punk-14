@@ -83,4 +83,4 @@
       - state: snow
       - state: frame
   - type: CP14BiomeSpawner
-    biome: CP14Snowland
+    biome: CP14SnowlandTestResult
