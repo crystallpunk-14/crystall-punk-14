@@ -17,7 +17,7 @@ public sealed partial class CP14FishingRodComponent : Component
     public bool Reeling;
 
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public float Speed = 0.05f;
+    public float Speed = 0.1f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public float Gravity = 0.075f;

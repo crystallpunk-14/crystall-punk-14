@@ -16,15 +16,73 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly CP14FishingPoolSystem _pool = default!;
 
+    /*
+    private readonly TimeSpan _dirtyDelay = TimeSpan.FromTicks(10000000000000);
+    private TimeSpan _dirtyDelayTime;
+    */
+
     public override void Update(float frameTime)
     {
-        base.Update(frameTime);
+        // DON'T CALL BASE METHOD!!!
 
         var query = EntityQueryEnumerator<CP14FishingProcessComponent>();
         while (query.MoveNext(out var entityUid, out var processComponent))
         {
-            Update((entityUid, processComponent), frameTime);
+            Update((entityUid, processComponent), frameTime * 2);
         }
+    }
+
+    public override void FishPreUpdate(Entity<CP14FishingProcessComponent> process, Fish fish, float frameTime)
+    {
+        base.FishPreUpdate(process, fish, frameTime);
+
+        fish.UpdateSpeed(_random, _timing);
+        Dirty(process);
+    }
+
+    public override void UpdateDirty(Entity<CP14FishingProcessComponent> process)
+    {
+        base.UpdateDirty(process);
+
+        /*
+        if (_timing.CurTime < _dirtyDelayTime)
+            return;
+
+        _dirtyDelayTime = _timing.CurTime + _dirtyDelay;
+        Dirty(process);
+        */
+    }
+
+    public override void Finish(Entity<CP14FishingProcessComponent> process, bool success)
+    {
+        base.Finish(process, success);
+
+        if (success)
+        {
+            Reward(process);
+        }
+
+        // Raising events before deletion
+        var ev = new CP14FishingFinishedEvent(success);
+        RaiseLocalEvent(process, ref ev, true);
+
+        // Either way, we need to delete the process
+        Stop(process);
+    }
+
+    public override void Reward(Entity<CP14FishingProcessComponent> process)
+    {
+        base.Reward(process);
+
+        var pool = GetPool(process);
+        var rod = GetRod(process);
+
+        var coordinates = Transform(pool).Coordinates;
+        var targetCoordinates = Transform(process.Comp.User!.Value).Coordinates;
+
+        var loot = Spawn(process.Comp.LootProtoId, coordinates);
+
+        _throwing.TryThrow(loot, targetCoordinates, rod.Comp.ThrowPower);
     }
 
     public Entity<CP14FishingProcessComponent> Start(
@@ -42,7 +100,7 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
         process.Comp.User = user;
 
         process.Comp.Player = new Player(fishingRod.Comp.Size);
-        process.Comp.Fish = new Fish(new MixedBehavior(), _random, _timing);
+        process.Comp.Fish = new Fish(new MixedBehavior(), _timing.CurTime + TimeSpan.FromSeconds(0.5f));
 
         process.Comp.LootProtoId = loot;
         process.Comp.StyleSheet = style;
@@ -53,112 +111,11 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
         return process;
     }
 
-    public void Stop(Entity<CP14FishingProcessComponent> process)
-    {
-        var rod = GetRod(process);
-        rod.Comp.Process = null;
-        Dirty(rod);
-
-        Del(process);
-    }
-
     public Entity<CP14FishingProcessComponent> CreateProcess(EntityUid parent)
     {
-        var entityUid = SpawnAttachedTo("MobHuman", Transform(parent).Coordinates);
+        var entityUid = SpawnAttachedTo(null, Transform(parent).Coordinates);
         var ensureComponent = AddComp<CP14FishingProcessComponent>(entityUid);
 
         return (entityUid, ensureComponent);
-    }
-
-    private void UpdateReeling(Entity<CP14FishingProcessComponent> process,
-        Entity<CP14FishingRodComponent> fishingRod,
-        float frameTime)
-    {
-        if (process.Comp.Player is not { } player)
-            return;
-
-        if (fishingRod.Comp.Reeling)
-        {
-            player.Velocity += fishingRod.Comp.Speed * frameTime;
-            return;
-        }
-
-        player.Velocity -= fishingRod.Comp.Gravity * frameTime;
-    }
-
-    private void UpdateVelocity(Entity<CP14FishingProcessComponent> process,
-        Entity<CP14FishingRodComponent> fishingRod)
-    {
-        if (process.Comp.Player is not { } player)
-            return;
-
-        player.Velocity *= fishingRod.Comp.Drag;
-        player.Velocity = Math.Clamp(player.Velocity,
-            fishingRod.Comp.MinVelocity,
-            fishingRod.Comp.MaxVelocity);
-    }
-
-    private void UpdatePosition(Entity<CP14FishingProcessComponent> process,
-        float frameTime)
-    {
-        if (process.Comp.Player is not { } player)
-            return;
-
-        player.Position += process.Comp.Player.Velocity * frameTime;
-
-        var halfSize = process.Comp.Player.HalfSize;
-        process.Comp.Player.Position = Math.Clamp(process.Comp.Player.Position, halfSize, 1 - halfSize);
-    }
-
-    private void Update(Entity<CP14FishingProcessComponent> process, float frameTime)
-    {
-        if (process.Comp.Player is not { } player || process.Comp.Fish is not { } fish)
-            return;
-
-        var fishingRod = GetRod(process);
-
-        UpdateReeling(process, fishingRod, frameTime);
-        UpdateVelocity(process, fishingRod);
-        UpdatePosition(process, frameTime);
-
-        fish.Update(frameTime);
-
-        var collides = Collide(fish, player);
-
-        var progressAdditive = collides ? 0.1f : -0.2f;
-        process.Comp.Progress = Math.Clamp(process.Comp.Progress + progressAdditive * frameTime, 0, 1);
-
-        Dirty(process);
-
-        //if (process.Comp.Progress is 1 or 0)
-       //     Finish(process, process.Comp.Progress is 1);
-    }
-
-    private void Finish(Entity<CP14FishingProcessComponent> process, bool success)
-    {
-        if (success)
-        {
-            Reward(process);
-        }
-
-        // Raising events before deletion
-        var ev = new CP14FishingFinishedEvent(success);
-        RaiseLocalEvent(process, ref ev, true);
-
-        // Either way, we need to delete the process
-        Stop(process);
-    }
-
-    private void Reward(Entity<CP14FishingProcessComponent> process)
-    {
-        var pool = GetPool(process);
-        var rod = GetRod(process);
-
-        var coordinates = Transform(pool).Coordinates;
-        var targetCoordinates = Transform(process.Comp.User!.Value).Coordinates;
-
-        var loot = Spawn(process.Comp.LootProtoId, coordinates);
-
-        _throwing.TryThrow(loot, targetCoordinates, rod.Comp.ThrowPower);
     }
 }

@@ -17,31 +17,20 @@ public sealed class Fish
     [ViewVariables(VVAccess.ReadWrite)]
     private readonly Behavior _behavior;
 
-    [NonSerialized]
-    private readonly IRobustRandom _random;
-
-    [NonSerialized]
-    private readonly IGameTiming _timing;
-
     [ViewVariables(VVAccess.ReadWrite)]
     private float _speed;
 
     [ViewVariables(VVAccess.ReadWrite)]
     private TimeSpan _updateSpeedTime;
 
-    public Fish(Behavior behavior, IRobustRandom random, IGameTiming timing)
+    public Fish(Behavior behavior, TimeSpan updateSpeedTime)
     {
         _behavior = behavior;
-        _random = random;
-        _timing = timing;
+        _updateSpeedTime = updateSpeedTime;
     }
 
     public void Update(float frameTime)
     {
-        // Update speed
-        if (_timing.CurTime > _updateSpeedTime)
-            UpdateSpeed();
-
         // Update position
         Position += _speed * frameTime;
 
@@ -49,9 +38,12 @@ public sealed class Fish
         Position = Math.Clamp(Position, MinPosition, MaxPosition);
     }
 
-    private void UpdateSpeed()
+    public void UpdateSpeed(IRobustRandom random, IGameTiming timing)
     {
-        _speed = _behavior.CalculateSpeed(_random);
-        _updateSpeedTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(1f / _behavior.Difficulty, 1f - 1f / _behavior.Difficulty));
+        if (_updateSpeedTime > timing.CurTime)
+            return;
+
+        _speed = _behavior.CalculateSpeed(random);
+        _updateSpeedTime = timing.CurTime + TimeSpan.FromSeconds(random.NextFloat(1.5f - 1f / _behavior.Difficulty, 2.5f - 1f / _behavior.Difficulty));
     }
 }

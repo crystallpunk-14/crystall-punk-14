@@ -9,7 +9,7 @@ namespace Content.Shared._CP14.Fishing.Core.Behaviors;
 public abstract partial class Behavior
 {
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float Speed { get; set; } = 0.05f;
+    public float Speed { get; set; } = 0.25f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float Difficulty { get; set; } = 2f;
