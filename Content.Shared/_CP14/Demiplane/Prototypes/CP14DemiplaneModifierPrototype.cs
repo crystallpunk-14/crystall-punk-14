@@ -25,6 +25,14 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     public float GenerationWeight = 1;
 
     /// <summary>
+    /// If this modifier is chosen to be generated - it can simply be ignored with some chance.
+    /// This is useful, for example, for the Fun category. According to the basic logic it should always be filled,
+    /// but thanks to this field, we can just have a chance that nothing will be generated.
+    /// </summary>
+    [DataField]
+    public float GenerationProb = 1f;
+
+    /// <summary>
     /// Can this modifier be generated multiple times within a single demiplane?
     /// </summary>
     [DataField]

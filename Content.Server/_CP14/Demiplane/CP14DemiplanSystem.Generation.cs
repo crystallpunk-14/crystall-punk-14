@@ -229,9 +229,10 @@ public sealed partial class CP14DemiplaneSystem
         {
             var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
 
-            if (selectedModifier.ID == "RoyalPumpkin")
+            if (!_random.Prob(selectedModifier.GenerationProb))
             {
-                Log.Debug("RoyalPumpkin");
+                suitableModifiersWeights.Remove(selectedModifier);
+                continue;
             }
 
             var passed = true;
