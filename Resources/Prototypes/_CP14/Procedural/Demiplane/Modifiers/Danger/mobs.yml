@@ -25,7 +25,7 @@
     Danger: 0.4
   requiredTags:
   - CP14DemiplaneOpenSky
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobDinoYumkaraptor
@@ -42,7 +42,7 @@
   categories:
     Danger: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobMonsterMosquito
@@ -79,7 +79,7 @@
   categories:
     Danger: 0.3
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   layers:
     - !type:OreDunGen
       entity: CP14MobDinoSmallHydra
@@ -113,7 +113,6 @@
     Danger: 0.4
   requiredTags:
   - CP14DemiplaneUnderground
-  - CP14DemiplaneCave
   layers:
     - !type:OreDunGen
       tileMask: 

@@ -201,7 +201,9 @@ public sealed partial class CP14DemiplaneSystem
 
         if (selectedConfig is null)
         {
-            Log.Error("Expedition mission generation failed: No suitable location configs.");
+            // We dont should be here
+
+            Log.Warning("Expedition mission generation failed: No suitable location configs.");
             QueueDel(generator);
             return;
         }

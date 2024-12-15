@@ -4,9 +4,9 @@
   locationConfig: CP14DemiplaneGrasslandIsland
   name: cp14-demiplane-location-grassland-island
   tags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
+  - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
-  - CP14DemiplaneGrass
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"

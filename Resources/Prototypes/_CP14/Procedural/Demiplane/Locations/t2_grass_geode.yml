@@ -4,8 +4,8 @@
   locationConfig: CP14DemiplaneGrassGeode
   name: cp14-demiplane-location-cave-grass
   tags:
-  - CP14DemiplaneCave
-  - CP14DemiplaneGrass
+  - CP14DemiplaneOres
+  - CP14DemiplaneHerbals
   - CP14DemiplaneUnderground
 
 - type: dungeonConfig
