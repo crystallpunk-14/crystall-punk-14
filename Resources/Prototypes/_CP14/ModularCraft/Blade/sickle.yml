@@ -1,5 +1,5 @@
 #Concept:
-# Copy of dagger with lesser damage 
+# Copy of dagger with lesser damage
 # But can gather grass from world
 - type: modularPart
   id: BaseBladeSickle
@@ -55,3 +55,14 @@
     copyFrom:
     - BaseBladeSickle
     - BaseWeaponCopper
+
+- type: modularPart
+  id: BladeMithrilSickle
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilSickle
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/mithril_sickle.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSickle
+    - BaseWeaponMithril

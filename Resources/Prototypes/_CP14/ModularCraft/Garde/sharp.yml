@@ -41,3 +41,14 @@
     copyFrom:
     - BaseGardeSharp
     - BaseWeaponCopper
+
+- type: modularPart
+  id: GardeSharpMithril
+  targetSlot: Garde
+  sourcePart: CP14ModularGardeSharpMithril
+  rsiPath: _CP14/Objects/ModularTools/Garde/mithril_sharp.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSharp
+    - BaseWeaponMithril

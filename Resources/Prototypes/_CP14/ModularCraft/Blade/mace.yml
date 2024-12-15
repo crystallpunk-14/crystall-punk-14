@@ -57,3 +57,14 @@
     copyFrom:
     - BaseBladeMace
     - BaseWeaponCopper
+
+- type: modularPart
+  id: BladeMithrilMace
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilMace
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/mithril_mace.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeMace
+    - BaseWeaponMithril

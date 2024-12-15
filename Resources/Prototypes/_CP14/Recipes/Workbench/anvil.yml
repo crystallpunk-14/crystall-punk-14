@@ -385,3 +385,93 @@
   stacks:
     CP14GoldBar: 2
   result: CP14ModularBladeGoldAxe
+
+## mithril
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilDagger
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularBladeMithrilDagger
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularBladeMithrilMace
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14MithrilBar: 2
+  result: CP14ModularBladeMithrilSword
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilSickle
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularBladeMithrilSickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularBladeMithrilShovel
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularBladeMithrilPickaxe
+
+- type: CP14Recipe
+  id: CP14ModularGripMithril
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularGripMithril
+
+- type: CP14Recipe
+  id: CP14ModularGripMithrilLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14MithrilBar: 2
+  result: CP14ModularGripMithrilLong
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpMithril
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularGardeSharpMithril
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularBladeMithrilRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14MithrilBar: 2
+  result: CP14ModularBladeMithrilAxe

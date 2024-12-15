@@ -90,3 +90,11 @@
     multiplier: 2
   - !type:EditSharpened
     sharpnessDamageMultiplier: 3
+
+- type: modularPart
+  id: BaseWeaponMithril
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 1
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 1

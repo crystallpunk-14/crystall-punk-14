@@ -104,7 +104,30 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
-        
+
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripLucens
+  name: lucens grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/lucens_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripLucens
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
 - type: entity
   parent: CP14ModularGripShort
   id: CP14ModularGripIron
@@ -120,6 +143,29 @@
     - trigger:
         !type:DamageTrigger
         damage: 100 #x2 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripMithril
+  name: mithril grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/mithril_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120 #x2.4 durability
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -200,6 +246,29 @@
 
 - type: entity
   parent: CP14ModularGripLong
+  id: CP14ModularGripLucensLong
+  name: long lucens grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/lucens_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripLucensLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripLong
   id: CP14ModularGripIronLong
   name: long iron grip
   components:
@@ -213,6 +282,29 @@
     - trigger:
         !type:DamageTrigger
         damage: 100 #x2 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripMithrilLong
+  name: long mithril grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/mithril_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripMithrilLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120 #x2.4 durability
       behaviors:
       - !type:PlaySoundBehavior
         sound:
