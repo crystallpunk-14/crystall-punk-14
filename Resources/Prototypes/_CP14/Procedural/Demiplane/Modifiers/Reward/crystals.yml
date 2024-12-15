@@ -7,7 +7,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -27,7 +27,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
@@ -46,7 +46,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -65,7 +65,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -86,7 +86,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -107,7 +107,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
@@ -126,7 +126,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen

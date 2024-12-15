@@ -6,7 +6,7 @@
   categories:
     Fun: 1
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen

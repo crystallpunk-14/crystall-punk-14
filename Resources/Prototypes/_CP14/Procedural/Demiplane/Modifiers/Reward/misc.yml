@@ -35,7 +35,7 @@
   categories:
     Reward: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplanePeacefulAnimals
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -55,7 +55,7 @@
   categories:
     Reward: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplanePeacefulAnimals
   layers:
     - !type:OreDunGen
       tileMask: 

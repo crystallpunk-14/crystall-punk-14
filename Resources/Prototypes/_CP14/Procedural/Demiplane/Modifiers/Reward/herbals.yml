@@ -7,7 +7,7 @@
   categories:
     Reward: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
@@ -27,7 +27,7 @@
   categories:
     Reward: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -47,7 +47,7 @@
   categories:
     Reward: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -66,7 +66,7 @@
   categories:
     Reward: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -85,7 +85,7 @@
   categories:
     Reward: 0.2
   requiredTags:
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
