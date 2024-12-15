@@ -1,0 +1,123 @@
+# TIER 1
+
+- type: cp14DemiplaneModifier
+  id: EnemyZombie
+  tiers:
+    - 1
+  name: cp14-modifier-zombie
+  generationWeight: 1.5
+  categories:
+    Danger: 0.3
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobUndeadZombieRandom
+      count: 4
+      minGroupSize: 5
+      maxGroupSize: 8
+
+- type: cp14DemiplaneModifier
+  id: EnemyDyno
+  tiers:
+    - 1
+    - 2
+  name: cp14-modifier-dyno
+  categories:
+    Danger: 0.4
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobDinoYumkaraptor
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: MonsterMosquito
+  tiers:
+    - 1
+    - 2
+  name: cp14-modifier-dyno
+  categories:
+    Danger: 0.2
+  requiredTags:
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobMonsterMosquito
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemyXeno
+  tiers:
+    - 1
+  name: cp14-modifier-xeno
+  categories:
+    Danger: 0.4
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobXenoDrone
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      entity: CP14MobXeno
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14DemiplaneModifier
+  id: SmallHydra
+  tiers:
+    - 1
+  name: cp14-modifier-dyno
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobDinoSmallHydra
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
+# TIER 2
+
+- type: cp14DemiplaneModifier
+  id: EnemySkeleton
+  tiers:
+    - 2
+  name: cp14-modifier-zombie
+  generationWeight: 1.5
+  categories:
+    Danger: 0.5
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneSkeleton
+      count: 1
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemyMole
+  tiers:
+    - 2
+  name: cp14-modifier-mole
+  categories:
+    Danger: 0.4
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14MobMonsterMole
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 2

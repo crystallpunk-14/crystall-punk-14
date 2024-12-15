@@ -35,3 +35,16 @@
     anchored: true
   - type: CP14TravelingStoreShipFTLTarget
   - type: FTLSmashImmune
+
+- type: entity
+  parent: MarkerBase
+  id: CP14DemiplaneEntryPointMarker
+  name: demiplane entry point
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+      state: pulse
+  - type: CP14DemiplaneRift

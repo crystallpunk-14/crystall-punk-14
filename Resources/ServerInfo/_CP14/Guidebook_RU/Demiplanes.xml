@@ -12,7 +12,7 @@
 В мире игры существуют «ключи», позволяющие временно активировать портал для перехода в процедурно сгенерированный демиплан с противниками и ресурсами. Внутри локации будут сгенерированы выходы с демиплана которые вам предстоит найти самим.
 
 <Box>
-<GuideEntityEmbed Entity="CP14DemiplanKey"/>
+<GuideEntityEmbed Entity="CP14DemiplaneKeyT1"/>
 <GuideEntityEmbed Entity="CP14DemiplanRiftCore"/>
 </Box>
 

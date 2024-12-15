@@ -62,7 +62,7 @@ public sealed partial class CP14DemiplaneSystem
                 : Loc.GetString("cp14-demiplane-examine-title-unknown"));
 
         List<LocId> modifierNames = new();
-        foreach (var modifier in comp.Modifiers)
+        foreach (var modifier in comp.SelectedModifiers)
         {
             if (!_proto.TryIndex(modifier, out var indexedModifier))
                 continue;
@@ -148,7 +148,7 @@ public sealed partial class CP14DemiplaneSystem
             return;
         }
 
-        SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.Modifiers, out var demiplane, out var mapId);
+        SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.SelectedModifiers, out var demiplane, out var mapId);
 
         //Admin log needed
         //TEST
@@ -178,14 +178,36 @@ public sealed partial class CP14DemiplaneSystem
             suitableConfigs.Add(locationConfig);
         }
 
-        if (suitableConfigs.Count == 0)
+        CP14DemiplaneLocationPrototype? selectedConfig = null;
+        while (suitableConfigs.Count > 0)
         {
-            Log.Error("Expedition mission generation failed: No suitable location configs.");
+            var randomConfig = _random.Pick(suitableConfigs);
+
+            if (!generator.Comp.TiersContent.ContainsKey(randomConfig.Tier))
+            {
+                suitableConfigs.Remove(randomConfig);
+                continue;
+            }
+
+            if (!_random.Prob(generator.Comp.TiersContent[randomConfig.Tier]))
+            {
+                suitableConfigs.Remove(randomConfig);
+                continue;
+            }
+
+            selectedConfig = randomConfig;
+            break;
+        }
+
+        if (selectedConfig is null)
+        {
+            // We dont should be here
+
+            Log.Warning("Expedition mission generation failed: No suitable location configs.");
             QueueDel(generator);
             return;
         }
 
-        var selectedConfig = _random.Pick(suitableConfigs);
         generator.Comp.Location = selectedConfig;
 
         //Modifier generation
@@ -204,41 +226,99 @@ public sealed partial class CP14DemiplaneSystem
             }
 
             //Tag required filter
-            foreach (var reqTag in modifier.RequiredTags)
+            if (passed)
             {
-                if (!selectedConfig.Tags.Contains(reqTag))
+                foreach (var reqTag in modifier.RequiredTags)
                 {
+                    if (!selectedConfig.Tags.Contains(reqTag))
+                    {
+                        passed = false;
+                        break;
+                    }
+                }
+            }
+
+            //Tier filter
+            if (passed)
+            {
+                foreach (var tier in modifier.Tiers)
+                {
+                    if (!generator.Comp.TiersContent.ContainsKey(tier))
+                    {
+                        passed = false;
+                        break;
+                    }
+                }
+            }
+
+            // Tier weight filter
+            if (passed)
+            {
+                var maxProb = 0f;
+                foreach (var tier in modifier.Tiers)
+                {
+                    maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
+                }
+
+                if (!_random.Prob(maxProb))
+                {
+                    passed = false;
+                }
+            }
+
+            //Random prob filter
+            if (passed)
+            {
+                if (!_random.Prob(modifier.GenerationProb))
+                {
+                    passed = false;
+                }
+            }
+
+            if (passed)
+                suitableModifiersWeights.Add(modifier, modifier.GenerationWeight);
+        }
+
+
+        //Limits calculation
+        Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> limits = new();
+        foreach (var limit in generator.Comp.Limits)
+        {
+            limits.Add(limit.Key, limit.Value);
+        }
+
+        while (suitableModifiersWeights.Count > 0)
+        {
+            var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
+
+            //Fill demiplane under limits
+            var passed = true;
+            foreach (var category in selectedModifier.Categories)
+            {
+                if (!limits.ContainsKey(category.Key))
+                {
+                    suitableModifiersWeights.Remove(selectedModifier);
+                    passed = false;
+                    break;
+                }
+
+                if (limits[category.Key] - category.Value < 0)
+                {
+                    suitableModifiersWeights.Remove(selectedModifier);
                     passed = false;
                     break;
                 }
             }
 
-            if (passed)
-            {
-                suitableModifiersWeights.Add(modifier, modifier.GenerationWeight);
-            }
-        }
-
-        var difficulty = 0f;
-        var reward = 0f;
-        while (generator.Comp.Modifiers.Count < generator.Comp.MaxModifiers && suitableModifiersWeights.Count > 0)
-        {
-            var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
-            if (difficulty + selectedModifier.Difficulty > generator.Comp.DifficultyLimit)
-            {
-                suitableModifiersWeights.Remove(selectedModifier);
+            if (!passed)
                 continue;
-            }
 
-            if (reward + selectedModifier.Reward > generator.Comp.RewardLimit)
+            generator.Comp.SelectedModifiers.Add(selectedModifier);
+
+            foreach (var category in selectedModifier.Categories)
             {
-                suitableModifiersWeights.Remove(selectedModifier);
-                continue;
+                limits[category.Key] -= category.Value;
             }
-
-            generator.Comp.Modifiers.Add(selectedModifier);
-            reward += selectedModifier.Reward;
-            difficulty += selectedModifier.Difficulty;
 
             if (selectedModifier.Unique)
                 suitableModifiersWeights.Remove(selectedModifier);
@@ -274,5 +354,4 @@ public sealed partial class CP14DemiplaneSystem
         // Shouldn't happen
         throw new InvalidOperationException($"Invalid weighted pick in CP14DemiplanSystem.Generation!");
     }
-
 }

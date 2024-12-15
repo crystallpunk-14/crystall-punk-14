@@ -100,15 +100,15 @@ public sealed class RandomGiftSystem : EntitySystem
             if (proto.Abstract || proto.HideSpawnMenu || proto.Components.ContainsKey(mapGridCompName) || !proto.Components.ContainsKey(physicsCompName))
                 continue;
 
-            _possibleGiftsUnsafe.Add(proto.ID);
-
-            if (!proto.Components.ContainsKey(itemCompName))
-                continue;
-
             //CP14 Only cp14 items
             if (!proto.Categories.Contains(indexedFilter))
                 continue;
             //CP14 end
+
+            _possibleGiftsUnsafe.Add(proto.ID);
+
+            if (!proto.Components.ContainsKey(itemCompName))
+                continue;
 
             _possibleGiftsSafe.Add(proto.ID);
         }

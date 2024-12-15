@@ -12,6 +12,12 @@ public sealed partial class CP14DemiplaneLocationPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 
+    /// <summary>
+    /// Location Tier. Can be generated only in demiplane keys with the corresponding tier
+    /// </summary>
+    [DataField]
+    public int Tier = 1;
+
     [DataField(required: true)]
     public ProtoId<DungeonConfigPrototype> LocationConfig;
 

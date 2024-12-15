@@ -1,8 +1,16 @@
-- type: Tag
-  id: CP14DemiplaneCave
+
+# Content types
 
 - type: Tag
-  id: CP14DemiplaneGrass
+  id: CP14DemiplaneOres
+
+- type: Tag
+  id: CP14DemiplanePeacefulAnimals
+
+- type: Tag
+  id: CP14DemiplaneHerbals
+
+# Demiplane features
 
 - type: Tag
   id: CP14DemiplaneOpenSky

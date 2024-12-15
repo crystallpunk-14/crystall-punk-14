@@ -1,4 +1,3 @@
-using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -14,14 +13,14 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
     public ProtoId<CP14DemiplaneLocationPrototype>? Location;
 
     [DataField]
-    public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = new();
+    public List<ProtoId<CP14DemiplaneModifierPrototype>> SelectedModifiers = new();
 
-    [DataField]
-    public float DifficultyLimit = 1;
+    /// <summary>
+    /// Generator Tier. Determines which modifiers and locations will be selected for this demiplane
+    /// </summary>
+    [DataField(required: true)]
+    public Dictionary<int, float> TiersContent = new();
 
-    [DataField]
-    public float RewardLimit = 1;
-
-    [DataField]
-    public int MaxModifiers = 6;
+    [DataField(required: true)]
+    public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Limits;
 }

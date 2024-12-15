@@ -1,0 +1,52 @@
+# TIER 1
+
+- type: cp14DemiplaneModifier
+  id: Chasm
+  tiers:
+    - 1
+    - 2
+    - 3
+  name: cp14-modifier-chasm
+  generationWeight: 0.6
+  categories:
+    Danger: 0.33
+  layers:
+    - !type:OreDunGen
+      entity: CP14Chasm
+      tileMask:
+      - CP14FloorBase
+      count: 5
+      minGroupSize: 2
+      maxGroupSize: 5
+
+# TIER 2
+
+- type: cp14DemiplaneModifier
+  id: Explosive
+  tiers:
+    - 2
+    - 3
+  name: cp14-modifier-explosive
+  generationWeight: 0.25
+  categories:
+    Danger: 0.4
+  layers:
+    - !type:OreDunGen
+      entity: LandMineExplosive
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14DemiplaneModifier
+  id: ShadowKudzuDebug
+  tiers:
+    - 2
+    - 3
+  categories:
+    Danger: 0.3
+  layers:
+    - !type:OreDunGen
+      entity: ShadowKudzu
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1

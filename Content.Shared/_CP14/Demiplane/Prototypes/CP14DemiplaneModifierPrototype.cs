@@ -13,22 +13,30 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     [IdDataField] public string ID { get; } = default!;
 
     /// <summary>
-    /// Abstract danger of this modifier. The demiplane has a threat limit, which it gains from modifiers until it reaches the limit.
+    /// Modifier Tier. Can be generated only in demiplane keys with the corresponding tier
     /// </summary>
-    [DataField]
-    public float Difficulty = 0;
+    [DataField(required: true)]
+    public List<int> Tiers = new();
 
     /// <summary>
-    /// The abstract value of this modifier. The demiplane has a limit of rewards it gains from modifiers until it reaches the limit.
+    /// Each modifier belongs to specific categories. Used by the generator to determine what to generate
     /// </summary>
-    [DataField]
-    public float Reward = 0;
+    [DataField(required: true)]
+    public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Categories = new();
 
     /// <summary>
     /// How often can this modifier be generated? Determined by weight from all modifiers available for the location
     /// </summary>
     [DataField]
     public float GenerationWeight = 1;
+
+    /// <summary>
+    /// If this modifier is chosen to be generated - it can simply be ignored with some chance.
+    /// This is useful, for example, for the Fun category. According to the basic logic it should always be filled,
+    /// but thanks to this field, we can just have a chance that nothing will be generated.
+    /// </summary>
+    [DataField]
+    public float GenerationProb = 1f;
 
     /// <summary>
     /// Can this modifier be generated multiple times within a single demiplane?

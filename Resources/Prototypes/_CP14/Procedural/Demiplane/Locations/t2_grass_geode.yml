@@ -1,17 +1,12 @@
 - type: cp14DemiplaneLocation
   id: T1GrassGeode
+  tier: 2
   locationConfig: CP14DemiplaneGrassGeode
   name: cp14-demiplane-location-cave-grass
   tags:
-  - CP14DemiplaneCave
-  - CP14DemiplaneGrass
+  - CP14DemiplaneOres
+  - CP14DemiplaneHerbals
   - CP14DemiplaneUnderground
-  components:
-  - type: CP14WeatherController
-    entries:
-    - visuals: CP14Mist
-  - type: MapLight
-    ambientLightColor: "#020a1c"
 
 - type: dungeonConfig
   id: CP14EdTestLayers

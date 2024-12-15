@@ -1,0 +1,23 @@
+- type: cp14DemiplaneModifier
+  id: RoyalPumpkin
+  tiers:
+    - 1
+    - 2
+    - 3
+  generationWeight: 0.1
+  generationProb: 0.1
+  categories:
+    Fun: 1
+  requiredTags:
+  - CP14DemiplaneHerbals
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14RoyalPumpkin
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1

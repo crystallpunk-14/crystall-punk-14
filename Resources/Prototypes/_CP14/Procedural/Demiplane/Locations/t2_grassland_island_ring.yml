@@ -1,10 +1,11 @@
 - type: cp14DemiplaneLocation
   id: T1GrasslandIslandRing
+  tier: 2
   locationConfig: CP14DemiplaneGrasslandIslandRing
   name: cp14-demiplane-location-grassland-island
   tags:
   - CP14DemiplaneOpenSky
-  - CP14DemiplaneGrass
+  - CP14DemiplaneHerbals
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
@@ -13,33 +14,6 @@
   - type: Parallax
     parallax: CP14Ocean
   - type: CP14CloudShadows
-  - type: CP14WeatherController
-    entries:
-    - visuals: CP14Rain
-    - visuals: CP14Storm
-    - visuals: CP14Mist
-  - type: CP14DayCycle
-    timeEntries:
-    - duration: 80
-      color: '#754A4AFF'
-    - duration: 80
-      color: '#E0BA87FF'
-    - duration: 80
-      color: '#BFEEFFFF'
-    - period: Night
-      duration: 80
-      color: '#385163FF'
-    - period: Night
-      duration: 80
-      color: '#060D12FF'
-    - period: Night
-      duration: 80
-      color: '#000000FF'
-    - period: Night
-      duration: 80
-      color: '#000000FF'
-    - duration: 80
-      color: '#120906FF'
 
 - type: dungeonConfig
   id: CP14DemiplaneGrasslandIslandRing

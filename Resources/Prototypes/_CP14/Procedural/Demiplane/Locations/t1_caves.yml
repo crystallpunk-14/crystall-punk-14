@@ -1,14 +1,11 @@
 - type: cp14DemiplaneLocation
   id: T1Caves
+  tier: 1
   locationConfig: CP14DemiplaneCaves
   name: cp14-demiplane-location-cave
   tags:
-  - CP14DemiplaneCave
+  - CP14DemiplaneOres
   - CP14DemiplaneUnderground
-  components:
-  - type: CP14WeatherController
-    entries:
-    - visuals: CP14Mist
 
 - type: dungeonConfig
   id: CP14DemiplaneCaves
