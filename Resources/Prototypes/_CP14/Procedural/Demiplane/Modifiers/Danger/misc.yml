@@ -2,7 +2,10 @@
 
 - type: cp14DemiplaneModifier
   id: Chasm
-  tier: 1
+  tiers:
+    - 1
+    - 2
+    - 3
   name: cp14-modifier-chasm
   generationWeight: 0.6
   categories:
@@ -20,7 +23,9 @@
 
 - type: cp14DemiplaneModifier
   id: Explosive
-  tier: 2
+  tiers:
+    - 2
+    - 3
   name: cp14-modifier-explosive
   generationWeight: 0.25
   categories:
@@ -34,7 +39,9 @@
 
 - type: cp14DemiplaneModifier
   id: ShadowKudzuDebug
-  tier: 2
+  tiers:
+    - 2
+    - 3
   categories:
     Danger: 0.3
   layers:

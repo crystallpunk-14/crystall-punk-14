@@ -6,3 +6,6 @@
 
 - type: cp14DemiplaneModifierCategory
   id: Fun
+
+- type: cp14DemiplaneModifierCategory
+  id: Weather

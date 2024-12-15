@@ -6,10 +6,6 @@
   tags:
   - CP14DemiplaneCave
   - CP14DemiplaneUnderground
-  components:
-  - type: CP14WeatherController
-    entries:
-    - visuals: CP14Mist
 
 - type: dungeonConfig
   id: CP14DemiplaneCavesRing

@@ -8,9 +8,6 @@
   - CP14DemiplaneGrass
   - CP14DemiplaneUnderground
   components:
-  - type: CP14WeatherController
-    entries:
-    - visuals: CP14Mist
   - type: MapLight
     ambientLightColor: "#020a1c"
 

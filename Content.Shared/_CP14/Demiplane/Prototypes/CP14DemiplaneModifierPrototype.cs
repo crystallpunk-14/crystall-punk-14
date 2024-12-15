@@ -15,8 +15,8 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// <summary>
     /// Modifier Tier. Can be generated only in demiplane keys with the corresponding tier
     /// </summary>
-    [DataField]
-    public int Tier = 1;
+    [DataField(required: true)]
+    public List<int> Tiers = new();
 
     /// <summary>
     /// Each modifier belongs to specific categories. Used by the generator to determine what to generate

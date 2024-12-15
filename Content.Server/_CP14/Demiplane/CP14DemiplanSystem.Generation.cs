@@ -250,14 +250,22 @@ public sealed partial class CP14DemiplaneSystem
         {
             var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
 
-
-            if (!generator.Comp.TiersContent.ContainsKey(selectedModifier.Tier))
+            var tierPassed = false;
+            foreach (var tier in selectedModifier.Tiers)
+            {
+                if (generator.Comp.TiersContent.ContainsKey(tier))
+                {
+                    tierPassed = true;
+                    break;
+                }
+            }
+            if (!tierPassed)
             {
                 suitableModifiersWeights.Remove(selectedModifier);
                 continue;
             }
 
-            if (!_random.Prob(generator.Comp.TiersContent[selectedModifier.Tier]))
+            if (!_random.Prob(generator.Comp.TiersContent[_random.Pick(selectedModifier.Tiers)])) //Fuck this
             {
                 suitableModifiersWeights.Remove(selectedModifier);
                 continue;

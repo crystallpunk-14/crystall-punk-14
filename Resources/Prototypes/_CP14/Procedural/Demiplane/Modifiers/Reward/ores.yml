@@ -2,7 +2,8 @@
 
 - type: cp14DemiplaneModifier
   id: IronOre
-  tier: 1
+  tiers:
+    - 1
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -20,7 +21,8 @@
 
 - type: cp14DemiplaneModifier
   id: CopperOre
-  tier: 1
+  tiers:
+    - 1
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -40,7 +42,8 @@
 
 - type: cp14DemiplaneModifier
   id: GoldOre
-  tier: 2
+  tiers:
+    - 2
   name: cp14-modifier-gold-ore
   unique: false
   categories:
@@ -58,7 +61,8 @@
 
 - type: cp14DemiplaneModifier
   id: MithrilOre 
-  tier: 2
+  tiers:
+    - 2
   name: cp14-modifier-mithril-ore
   unique: false
   categories:

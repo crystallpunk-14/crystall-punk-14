@@ -32,6 +32,7 @@
       Reward: 1
       Danger: 1
       Fun: 1
+      Weather: 1
 
 - type: entity
   id: CP14DemiplaneKeyT2
@@ -52,3 +53,4 @@
       Reward: 1.5
       Danger: 2
       Fun: 1
+      Weather: 1
