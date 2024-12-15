@@ -212,11 +212,6 @@ public sealed partial class CP14DemiplaneSystem
         Dictionary<CP14DemiplaneModifierPrototype, float> suitableModifiersWeights = new();
         foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
         {
-            if (modifier.ID == "MapLightDarkness")
-            {
-                Log.Debug("MapLightDarkness");
-            }
-
             var passed = true;
             //Tag blacklist filter
             foreach (var configTag in selectedConfig.Tags)
@@ -229,40 +224,53 @@ public sealed partial class CP14DemiplaneSystem
             }
 
             //Tag required filter
-            foreach (var reqTag in modifier.RequiredTags)
+            if (passed)
             {
-                if (!selectedConfig.Tags.Contains(reqTag))
+                foreach (var reqTag in modifier.RequiredTags)
                 {
-                    passed = false;
-                    break;
+                    if (!selectedConfig.Tags.Contains(reqTag))
+                    {
+                        passed = false;
+                        break;
+                    }
                 }
             }
 
             //Tier filter
-            foreach (var tier in modifier.Tiers)
+            if (passed)
             {
-                if (!generator.Comp.TiersContent.ContainsKey(tier))
+                foreach (var tier in modifier.Tiers)
                 {
-                    passed = false;
-                    break;
+                    if (!generator.Comp.TiersContent.ContainsKey(tier))
+                    {
+                        passed = false;
+                        break;
+                    }
                 }
             }
 
             // Tier weight filter
-            var maxProb = 0f;
-            foreach (var tier in modifier.Tiers)
+            if (passed)
             {
-                maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
-            }
-            if (!_random.Prob(maxProb))
-            {
-                passed = false;
+                var maxProb = 0f;
+                foreach (var tier in modifier.Tiers)
+                {
+                    maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
+                }
+
+                if (!_random.Prob(maxProb))
+                {
+                    passed = false;
+                }
             }
 
             //Random prob filter
-            if (!_random.Prob(modifier.GenerationProb))
+            if (passed)
             {
-                passed = false;
+                if (!_random.Prob(modifier.GenerationProb))
+                {
+                    passed = false;
+                }
             }
 
             if (passed)
@@ -280,13 +288,6 @@ public sealed partial class CP14DemiplaneSystem
         while (suitableModifiersWeights.Count > 0)
         {
             var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
-
-
-            if (selectedModifier.ID == "MapLightDarkness")
-            {
-                Log.Debug("MapLightDarkness");
-            }
-
 
             //Fill demiplane under limits
             var passed = true;
