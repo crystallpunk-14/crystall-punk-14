@@ -305,7 +305,7 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
-  - CP14DemiplanKey
+  - CP14DemiplaneKeyT1
 
 - type: loadout
   id: CP14MagicHealingStaff
@@ -397,10 +397,10 @@
     - CP14Torch
 
 - type: loadout
-  id: CP14DemiplanKey
+  id: CP14DemiplaneKeyT1
   storage:
     back:
-    - CP14DemiplanKey
+    - CP14DemiplaneKeyT1
 
 # Keys
 

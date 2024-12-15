@@ -1,14 +1,14 @@
 # TIER 1
 
 - type: cp14DemiplaneModifier
-  id: Loot
+  id: LootT1
   tier: 1
   generationWeight: 2
   categories:
     Reward: 0.35
   layers:
     - !type:OreDunGen
-      entity: CP14SpawnerExpeditionLootCommon
+      entity: CP14SpawnerDemiplaneLootT1
       count: 20
       minGroupSize: 2
       maxGroupSize: 3
@@ -64,5 +64,20 @@
       - CP14FloorGrassTall
       entity: CP14MobBoar
       count: 3
+      minGroupSize: 2
+      maxGroupSize: 3
+
+# TIER 2
+
+- type: cp14DemiplaneModifier
+  id: LootT2
+  tier: 2
+  generationWeight: 2
+  categories:
+    Reward: 0.35
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnerDemiplaneLootT2
+      count: 20
       minGroupSize: 2
       maxGroupSize: 3

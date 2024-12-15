@@ -1,0 +1,54 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BaseSubdimensionalKey
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: demiplane key
+  description: The core that connects the real world to the demiplane. Use it to open a temporary passage to the other world.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
+    layers:
+    - state: core
+      shader: unshaded
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
+
+- type: entity
+  id: CP14DemiplaneKeyT1
+  parent: CP14BaseSubdimensionalKey
+  suffix: T1
+  components:
+  - type: CP14DemiplaneGeneratorData
+    tiersContent:
+      1: 1
+      2: 0
+      3: 0
+    limits:
+      Reward: 1
+      Danger: 1
+      Fun: 1
+
+- type: entity
+  id: CP14DemiplaneKeyT2
+  parent: CP14BaseSubdimensionalKey
+  suffix: T2
+  components:
+  - type: Sprite
+    layers:
+    - state: core
+      shader: unshaded
+      color: red
+  - type: CP14DemiplaneGeneratorData
+    tiersContent:
+      1: 0.25
+      2: 1
+      3: 0
+    limits:
+      Reward: 1
+      Danger: 1
+      Fun: 1
