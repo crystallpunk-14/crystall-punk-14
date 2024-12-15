@@ -71,6 +71,17 @@
     - BaseWeaponCopper
 
 - type: modularPart
+  id: BladeMithrilSword
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilSword
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/mithril_sword.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSword
+    - BaseWeaponMithril
+
+- type: modularPart
   id: BladeBoneSword
   targetSlot: Blade
   sourcePart: CP14ModularBladeBoneSword

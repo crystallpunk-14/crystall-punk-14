@@ -59,3 +59,14 @@
     copyFrom:
     - BaseBladeAxe
     - BaseWeaponCopper
+
+- type: modularPart
+  id: BladeMithrilAxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilAxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/mithril_axe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseWeaponMithril

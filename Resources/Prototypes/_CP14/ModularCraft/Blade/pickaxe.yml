@@ -52,3 +52,14 @@
     copyFrom:
     - BaseBladePickaxe
     - BaseWeaponCopper
+
+- type: modularPart
+  id: BladeMithrilPickaxe
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilPickaxe
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/mithril_pickaxe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseWeaponMithril

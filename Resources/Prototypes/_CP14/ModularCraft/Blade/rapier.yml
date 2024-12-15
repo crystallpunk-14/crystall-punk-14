@@ -67,3 +67,14 @@
     copyFrom:
     - BaseBladeRapier
     - BaseWeaponCopper
+
+- type: modularPart
+  id: BladeMithrilRapier
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilRapier
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/mithril_rapier.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeRapier
+    - BaseWeaponMithril
