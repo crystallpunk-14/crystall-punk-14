@@ -1,22 +1,8 @@
-- type: cp14DemiplaneModifier
-  id: GoldOre
-  name: cp14-modifier-gold-ore
-  unique: false
-  categories:
-    Reward: 0.5
-  requiredTags:
-  - CP14DemiplaneCave
-  layers:
-    - !type:OreDunGen
-      entityMask: 
-      - CP14WallStone
-      entity: CP14WallStoneGoldOre # Hellish gold 666
-      count: 6
-      minGroupSize: 6
-      maxGroupSize: 6
+# TIER 1
 
 - type: cp14DemiplaneModifier
   id: IronOre
+  tier: 1
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -34,6 +20,7 @@
 
 - type: cp14DemiplaneModifier
   id: CopperOre
+  tier: 1
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -48,3 +35,41 @@
       count: 10
       minGroupSize: 5
       maxGroupSize: 7
+
+# TIER 2
+
+- type: cp14DemiplaneModifier
+  id: GoldOre
+  tier: 2
+  name: cp14-modifier-gold-ore
+  unique: false
+  categories:
+    Reward: 0.5
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneGoldOre # Hellish gold 666
+      count: 6
+      minGroupSize: 6
+      maxGroupSize: 6
+
+- type: cp14DemiplaneModifier
+  id: MithrilOre 
+  tier: 2
+  name: cp14-modifier-mithril-ore
+  unique: false
+  categories:
+    Reward: 0.5
+  requiredTags:
+  - CP14DemiplaneCave
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneMithrilOre 
+      count: 5
+      minGroupSize: 4
+      maxGroupSize: 8

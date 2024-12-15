@@ -1,5 +1,8 @@
+# TIER 1
+
 - type: cp14DemiplaneModifier
   id: QuartzCrystal
+  tier: 1
   name: cp14-modifier-quartz-crystal
   categories:
     Reward: 0.1
@@ -14,8 +17,11 @@
       minGroupSize: 1
       maxGroupSize: 4
 
+# TIER 2
+
 - type: cp14DemiplaneModifier
   id: QuartzCrystalRubies
+  tier: 2
   name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:
@@ -34,6 +40,7 @@
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalTopazes
+  tier: 2
   name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:
@@ -52,6 +59,7 @@
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalEmeralds
+  tier: 2
   name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:
@@ -72,6 +80,7 @@
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalSapphires
+  tier: 2
   name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:
@@ -92,6 +101,7 @@
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalAmethysts
+  tier: 2
   name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:
@@ -110,6 +120,7 @@
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalDiamonds
+  tier: 2
   name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:

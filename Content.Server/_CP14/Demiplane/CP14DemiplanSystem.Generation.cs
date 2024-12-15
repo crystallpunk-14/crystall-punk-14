@@ -178,14 +178,34 @@ public sealed partial class CP14DemiplaneSystem
             suitableConfigs.Add(locationConfig);
         }
 
-        if (suitableConfigs.Count == 0)
+        CP14DemiplaneLocationPrototype? selectedConfig = null;
+        while (suitableConfigs.Count > 0)
+        {
+            var randomConfig = _random.Pick(suitableConfigs);
+
+            if (!generator.Comp.TiersContent.ContainsKey(randomConfig.Tier))
+            {
+                suitableConfigs.Remove(randomConfig);
+                continue;
+            }
+
+            if (!_random.Prob(generator.Comp.TiersContent[randomConfig.Tier]))
+            {
+                suitableConfigs.Remove(randomConfig);
+                continue;
+            }
+
+            selectedConfig = randomConfig;
+            break;
+        }
+
+        if (selectedConfig is null)
         {
             Log.Error("Expedition mission generation failed: No suitable location configs.");
             QueueDel(generator);
             return;
         }
 
-        var selectedConfig = _random.Pick(suitableConfigs);
         generator.Comp.Location = selectedConfig;
 
         //Modifier generation
@@ -219,6 +239,7 @@ public sealed partial class CP14DemiplaneSystem
             }
         }
 
+
         Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> limits = new();
         foreach (var limit in generator.Comp.Limits)
         {
@@ -228,6 +249,19 @@ public sealed partial class CP14DemiplaneSystem
         while (suitableModifiersWeights.Count > 0)
         {
             var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
+
+
+            if (!generator.Comp.TiersContent.ContainsKey(selectedModifier.Tier))
+            {
+                suitableModifiersWeights.Remove(selectedModifier);
+                continue;
+            }
+
+            if (!_random.Prob(generator.Comp.TiersContent[selectedModifier.Tier]))
+            {
+                suitableModifiersWeights.Remove(selectedModifier);
+                continue;
+            }
 
             if (!_random.Prob(selectedModifier.GenerationProb))
             {

@@ -15,6 +15,12 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
     [DataField]
     public List<ProtoId<CP14DemiplaneModifierPrototype>> SelectedModifiers = new();
 
+    /// <summary>
+    /// Generator Tier. Determines which modifiers and locations will be selected for this demiplane
+    /// </summary>
+    [DataField(required: true)]
+    public Dictionary<int, float> TiersContent = new();
+
     [DataField(required: true)]
     public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Limits;
 }

@@ -1,5 +1,6 @@
 - type: cp14DemiplaneModifier
   id: RoyalPumpkin
+  tier: 2
   generationWeight: 0.1
   generationProb: 0.1
   categories:

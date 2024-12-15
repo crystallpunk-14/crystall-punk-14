@@ -24,6 +24,27 @@
   - type: Item
     size: Tiny
   - type: CP14DemiplaneGeneratorData
+    tiersContent:
+      1: 1
+      2: 0
+      3: 0
+    limits:
+      Reward: 1
+      Danger: 1
+      Fun: 1
+
+- type: entity
+  id: CP14DemiplanKey2
+  parent: CP14BaseSubdimensionalKey
+  name: demiplan key 2
+  components:
+  - type: Item
+    size: Tiny
+  - type: CP14DemiplaneGeneratorData
+    tiersContent:
+      1: 0
+      2: 1
+      3: 0
     limits:
       Reward: 1
       Danger: 1

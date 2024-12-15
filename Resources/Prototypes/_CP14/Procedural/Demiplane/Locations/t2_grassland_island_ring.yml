@@ -1,5 +1,6 @@
 - type: cp14DemiplaneLocation
   id: T1GrasslandIslandRing
+  tier: 2
   locationConfig: CP14DemiplaneGrasslandIslandRing
   name: cp14-demiplane-location-grassland-island
   tags:

@@ -1,5 +1,8 @@
+# TIER 1
+
 - type: cp14DemiplaneModifier
   id: Chasm
+  tier: 1
   name: cp14-modifier-chasm
   generationWeight: 0.6
   categories:
@@ -13,8 +16,11 @@
       minGroupSize: 2
       maxGroupSize: 5
 
+# TIER 2
+
 - type: cp14DemiplaneModifier
   id: Explosive
+  tier: 2
   name: cp14-modifier-explosive
   generationWeight: 0.25
   categories:

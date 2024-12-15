@@ -1,5 +1,8 @@
+# TIER 1
+
 - type: cp14DemiplaneModifier
   id: Loot
+  tier: 1
   generationWeight: 2
   categories:
     Reward: 0.35
@@ -12,6 +15,7 @@
 
 #- type: cp14DemiplaneModifier
 #  id: Ruins
+#  tier: 1
 #  name: cp14-modifier-ruins
 #  generationWeight: 2
 #  categories:
@@ -25,6 +29,7 @@
 
 - type: cp14DemiplaneModifier
   id: Rabbits
+  tier: 1
   name: cp14-modifier-rabbits
   generationWeight: 0.4
   categories:
@@ -44,6 +49,7 @@
 
 - type: cp14DemiplaneModifier
   id: Boar
+  tier: 1
   name: cp14-modifier-boars
   generationWeight: 0.4
   categories:

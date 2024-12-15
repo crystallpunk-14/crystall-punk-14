@@ -1,5 +1,53 @@
+# TIER 1
+
+- type: cp14DemiplaneModifier
+  id: EnemyZombie
+  tier: 1
+  name: cp14-modifier-zombie
+  generationWeight: 1.5
+  categories:
+    Danger: 0.3
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobUndeadZombieRandom
+      count: 4
+      minGroupSize: 5
+      maxGroupSize: 8
+
+- type: cp14DemiplaneModifier
+  id: EnemyDyno
+  tier: 1
+  name: cp14-modifier-dyno
+  categories:
+    Danger: 0.4
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobDinoYumkaraptor
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: MonsterMosquito
+  tier: 1
+  name: cp14-modifier-dyno
+  categories:
+    Danger: 0.2
+  requiredTags:
+  - CP14DemiplaneGrass
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnMobMonsterMosquito
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
 - type: cp14DemiplaneModifier
   id: EnemyXeno
+  tier: 1
   name: cp14-modifier-xeno
   categories:
     Danger: 0.4
@@ -18,48 +66,8 @@
       maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
-  id: EnemyZombie
-  name: cp14-modifier-zombie
-  generationWeight: 1.5
-  categories:
-    Danger: 0.3
-  layers:
-    - !type:OreDunGen
-      entity: CP14SpawnMobUndeadZombieRandom
-      count: 4
-      minGroupSize: 5
-      maxGroupSize: 8
-
-- type: cp14DemiplaneModifier
-  id: EnemySkeleton
-  name: cp14-modifier-zombie
-  generationWeight: 1.5
-  categories:
-    Danger: 0.5
-  layers:
-    - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneSkeleton
-      count: 1
-      minGroupSize: 2
-      maxGroupSize: 3
-
-- type: cp14DemiplaneModifier
-  id: EnemyDyno
-  name: cp14-modifier-dyno
-  categories:
-    Danger: 0.4
-  requiredTags:
-  - CP14DemiplaneOpenSky
-  - CP14DemiplaneGrass
-  layers:
-    - !type:OreDunGen
-      entity: CP14SpawnMobDinoYumkaraptor
-      count: 6
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
   id: SmallHydra
+  tier: 1
   name: cp14-modifier-dyno
   categories:
     Danger: 0.3
@@ -72,22 +80,25 @@
       minGroupSize: 2
       maxGroupSize: 3
 
+# TIER 2
+
 - type: cp14DemiplaneModifier
-  id: MonsterMosquito
-  name: cp14-modifier-dyno
+  id: EnemySkeleton
+  tier: 2
+  name: cp14-modifier-zombie
+  generationWeight: 1.5
   categories:
-    Danger: 0.2
-  requiredTags:
-  - CP14DemiplaneGrass
+    Danger: 0.5
   layers:
     - !type:OreDunGen
-      entity: CP14SpawnMobMonsterMosquito
-      count: 4
+      entity: SpawnPointGhostDemiplaneSkeleton
+      count: 1
       minGroupSize: 2
       maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyMole
+  tier: 2
   name: cp14-modifier-mole
   categories:
     Danger: 0.4
