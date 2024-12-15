@@ -31,3 +31,15 @@
       count: 20
       minGroupSize: 1
       maxGroupSize: 2
+
+- type: cp14DemiplaneModifier
+  id: ShadowKudzuDebug
+  tier: 2
+  categories:
+    Danger: 0.3
+  layers:
+    - !type:OreDunGen
+      entity: ShadowKudzu
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1

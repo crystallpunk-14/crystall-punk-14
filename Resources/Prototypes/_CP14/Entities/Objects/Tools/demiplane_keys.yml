@@ -45,10 +45,10 @@
       color: red
   - type: CP14DemiplaneGeneratorData
     tiersContent:
-      1: 0.25
+      1: 0.8 # We dont have lot t2 content now. In future, decrease to 0.33
       2: 1
       3: 0
     limits:
-      Reward: 1
-      Danger: 1
+      Reward: 1.5
+      Danger: 2
       Fun: 1
