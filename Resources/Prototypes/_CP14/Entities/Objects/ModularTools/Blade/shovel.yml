@@ -46,3 +46,15 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperShovel
+
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeMithrilShovel
+  name: mithril shovel blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/mithril_shovel.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilShovel

@@ -46,3 +46,15 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperPickaxe
+
+- type: entity
+  parent: CP14ModularBladePickaxeBase
+  id: CP14ModularBladeMithrilPickaxe
+  name: mithril pickaxe head
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/mithril_pickaxe.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilPickaxe

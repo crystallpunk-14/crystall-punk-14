@@ -49,3 +49,16 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSharpCopper
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSharpMithril
+  categories: [ ForkFiltered ]
+  name: sharp mithril garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/mithril_sharp.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSharpMithril

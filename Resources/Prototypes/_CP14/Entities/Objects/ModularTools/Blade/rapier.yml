@@ -46,3 +46,15 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperRapier
+
+- type: entity
+  parent: CP14ModularBladeRapierBase
+  id: CP14ModularBladeMithrilRapier
+  name: mithril rapier blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/mithril_rapier.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilRapier

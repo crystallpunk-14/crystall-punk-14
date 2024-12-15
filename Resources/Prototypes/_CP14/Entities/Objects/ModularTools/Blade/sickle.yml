@@ -46,3 +46,15 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldSickle
+
+- type: entity
+  parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeMithrilSickle
+  name: mithril sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/mithril_sickle.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilSickle

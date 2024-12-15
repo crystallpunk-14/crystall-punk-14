@@ -64,3 +64,14 @@
     copyFrom:
     - BaseBladeDagger
     - BaseWeaponCopper
+
+- type: modularPart
+  id: BladeMithrilDagger
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilDagger
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/mithril_dagger.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseWeaponMithril

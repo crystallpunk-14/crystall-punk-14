@@ -46,3 +46,15 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperAxe
+
+- type: entity
+  parent: CP14ModularBladeAxeBase
+  id: CP14ModularBladeMithrilAxe
+  name: mithril axe blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Axe/mithril_axe.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilAxe

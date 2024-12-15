@@ -46,3 +46,15 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperMace
+
+- type: entity
+  parent: CP14ModularBladeMaceBase
+  id: CP14ModularBladeMithrilMace
+  name: mithril mace ball
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/mithril_mace.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilMace

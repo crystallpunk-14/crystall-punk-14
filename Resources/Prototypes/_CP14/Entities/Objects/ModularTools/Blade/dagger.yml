@@ -46,3 +46,15 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperDagger
+
+- type: entity
+  parent: CP14ModularBladeDaggerBase
+  id: CP14ModularBladeMithrilDagger
+  name: mithril dagger blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/mithril_dagger.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilDagger
