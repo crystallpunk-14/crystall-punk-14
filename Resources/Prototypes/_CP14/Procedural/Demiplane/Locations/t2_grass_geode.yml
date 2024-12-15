@@ -7,9 +7,6 @@
   - CP14DemiplaneCave
   - CP14DemiplaneGrass
   - CP14DemiplaneUnderground
-  components:
-  - type: MapLight
-    ambientLightColor: "#020a1c"
 
 - type: dungeonConfig
   id: CP14EdTestLayers

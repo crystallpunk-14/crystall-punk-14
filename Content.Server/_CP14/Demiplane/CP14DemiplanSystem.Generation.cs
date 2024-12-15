@@ -212,6 +212,11 @@ public sealed partial class CP14DemiplaneSystem
         Dictionary<CP14DemiplaneModifierPrototype, float> suitableModifiersWeights = new();
         foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
         {
+            if (modifier.ID == "MapLightDarkness")
+            {
+                Log.Debug("MapLightDarkness");
+            }
+
             var passed = true;
             //Tag blacklist filter
             foreach (var configTag in selectedConfig.Tags)
@@ -233,13 +238,39 @@ public sealed partial class CP14DemiplaneSystem
                 }
             }
 
-            if (passed)
+            //Tier filter
+            foreach (var tier in modifier.Tiers)
             {
-                suitableModifiersWeights.Add(modifier, modifier.GenerationWeight);
+                if (!generator.Comp.TiersContent.ContainsKey(tier))
+                {
+                    passed = false;
+                    break;
+                }
             }
+
+            // Tier weight filter
+            var maxProb = 0f;
+            foreach (var tier in modifier.Tiers)
+            {
+                maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
+            }
+            if (!_random.Prob(maxProb))
+            {
+                passed = false;
+            }
+
+            //Random prob filter
+            if (!_random.Prob(modifier.GenerationProb))
+            {
+                passed = false;
+            }
+
+            if (passed)
+                suitableModifiersWeights.Add(modifier, modifier.GenerationWeight);
         }
 
 
+        //Limits calculation
         Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> limits = new();
         foreach (var limit in generator.Comp.Limits)
         {
@@ -250,33 +281,14 @@ public sealed partial class CP14DemiplaneSystem
         {
             var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
 
-            var tierPassed = false;
-            foreach (var tier in selectedModifier.Tiers)
+
+            if (selectedModifier.ID == "MapLightDarkness")
             {
-                if (generator.Comp.TiersContent.ContainsKey(tier))
-                {
-                    tierPassed = true;
-                    break;
-                }
-            }
-            if (!tierPassed)
-            {
-                suitableModifiersWeights.Remove(selectedModifier);
-                continue;
+                Log.Debug("MapLightDarkness");
             }
 
-            if (!_random.Prob(generator.Comp.TiersContent[_random.Pick(selectedModifier.Tiers)])) //Fuck this
-            {
-                suitableModifiersWeights.Remove(selectedModifier);
-                continue;
-            }
 
-            if (!_random.Prob(selectedModifier.GenerationProb))
-            {
-                suitableModifiersWeights.Remove(selectedModifier);
-                continue;
-            }
-
+            //Fill demiplane under limits
             var passed = true;
             foreach (var category in selectedModifier.Categories)
             {
@@ -284,14 +296,14 @@ public sealed partial class CP14DemiplaneSystem
                 {
                     suitableModifiersWeights.Remove(selectedModifier);
                     passed = false;
-                    continue;
+                    break;
                 }
 
                 if (limits[category.Key] - category.Value < 0)
                 {
                     suitableModifiersWeights.Remove(selectedModifier);
                     passed = false;
-                    continue;
+                    break;
                 }
             }
 

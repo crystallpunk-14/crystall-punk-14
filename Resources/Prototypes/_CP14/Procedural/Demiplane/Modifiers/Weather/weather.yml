@@ -9,7 +9,7 @@
     Weather: 1
 
 - type: cp14DemiplaneModifier
-  id: Mist
+  id: WeatherMist
   tiers:
     - 1
     - 2
@@ -28,7 +28,7 @@
         max: 10000
 
 - type: cp14DemiplaneModifier
-  id: Rain
+  id: WeatherRain
   tiers:
     - 1
     - 2
@@ -48,7 +48,7 @@
         max: 10000
 
 - type: cp14DemiplaneModifier
-  id: Storm
+  id: WeatherStorm
   tiers:
     - 2
     - 3

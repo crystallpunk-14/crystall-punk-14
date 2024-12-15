@@ -33,6 +33,7 @@
       Danger: 1
       Fun: 1
       Weather: 1
+      MapLight: 1
 
 - type: entity
   id: CP14DemiplaneKeyT2
@@ -54,3 +55,4 @@
       Danger: 2
       Fun: 1
       Weather: 1
+      MapLight: 1

@@ -9,3 +9,6 @@
 
 - type: cp14DemiplaneModifierCategory
   id: Weather
+
+- type: cp14DemiplaneModifierCategory
+  id: MapLight
