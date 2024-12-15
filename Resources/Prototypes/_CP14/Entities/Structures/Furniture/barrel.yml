@@ -6,8 +6,6 @@
   - type: Appearance
   - type: DrainableSolution
     solution: barrel
-  - type: ExaminableSolution
-    solution: barrel
   - type: MixableSolution
     solution: barrel
   - type: RefillableSolution
@@ -115,6 +113,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq
+  - type: ExaminableSolution
+    solution: barrel
 
 - type: entity
   id: CP14BarrelWater

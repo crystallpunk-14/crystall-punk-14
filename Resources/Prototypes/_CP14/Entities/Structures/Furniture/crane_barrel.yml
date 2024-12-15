@@ -7,12 +7,16 @@
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
+    drawdepth: Mobs
     sprite: _CP14/Structures/Furniture/Barrels/crane_barrel.rsi
     layers:
       - state: barrel
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Transform
+  - type: Anchorable
+    delay: 3
   - type: Destructible
     thresholds:
     - trigger:
@@ -53,8 +57,8 @@
 
 - type: entity
   parent: CP14CraneBarrel
-  id: CP14CraneBarrelFull
-  suffix: Full
+  id: CP14CraneBarrelBeer
+  suffix: Beer
   categories: [ ForkFiltered ]
   components:
   - type: SolutionContainerManager
@@ -75,17 +79,25 @@
     mode: PlaceFree
   components:
   - type: Sprite
-    drawdepth: Items
+    drawdepth: Mobs
     sprite: _CP14/Structures/Furniture/Barrels/crane_barrel_small.rsi
     layers:
       - state: barrel
   - type: Transform
+    anchored: true
     noRot: true
+  - type: Pullable
   - type: Fixtures
     fixtures:
       fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 200
         mask:
         - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -129,8 +141,8 @@
 
 - type: entity
   parent: CP14CraneBarrelSmall
-  id: CP14CraneBarrelSmallFull
-  suffix: Full
+  id: CP14CraneBarrelSmallBeer
+  suffix: Beer
   categories: [ ForkFiltered ]
   components:
   - type: SolutionContainerManager
