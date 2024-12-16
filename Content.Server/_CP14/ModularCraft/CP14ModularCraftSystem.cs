@@ -48,17 +48,8 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
     private FormattedMessage GetExamine(CP14ModularCraftStartPointComponent comp)
     {
         var msg = new FormattedMessage();
-        msg.AddMarkupOrThrow(Loc.GetString("cp14-modular-craft-examine-startslots"));
 
-        foreach (var slot in comp.StartSlots)
-        {
-            if (!_proto.TryIndex(slot, out var slotProto))
-                continue;
-
-            msg.AddMarkupOrThrow("\n - " + Loc.GetString(slotProto.Name));
-        }
-
-        msg.AddMarkupOrThrow("\n" + Loc.GetString("cp14-modular-craft-examine-freeslots"));
+        msg.AddMarkupOrThrow(Loc.GetString("cp14-modular-craft-examine-freeslots"));
 
         foreach (var slot in comp.FreeSlots)
         {
@@ -68,18 +59,6 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             msg.AddMarkupOrThrow("\n - " + Loc.GetString(slotProto.Name));
         }
 
-        msg.AddMarkupOrThrow("\n" + Loc.GetString("cp14-modular-craft-examine-installed"));
-
-        foreach (var part in comp.InstalledParts)
-        {
-            if (!_proto.TryIndex(part, out var partProto))
-                continue;
-
-            if (partProto.TargetSlot is null || !_proto.TryIndex(partProto.TargetSlot, out var slotProto))
-                continue;
-
-            msg.AddMarkupOrThrow("\n - " + Loc.GetString(slotProto.Name));
-        }
         return msg;
     }
 
