@@ -76,7 +76,7 @@
   suffix: Empty
   categories: [ ForkFiltered ]
   placement:
-    mode: PlaceFree
+    mode: SnapgridCenter
   components:
   - type: Sprite
     drawdepth: Mobs
