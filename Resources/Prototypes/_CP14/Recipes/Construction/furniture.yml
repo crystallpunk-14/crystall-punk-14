@@ -26,7 +26,7 @@
   targetNode: CP14BaseBarrel
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Furniture/barrel.rsi
+    sprite: _CP14/Structures/Furniture/Barrels/barrel.rsi
     state: barrel
   objectType: Structure
   placementMode: PlaceFree
