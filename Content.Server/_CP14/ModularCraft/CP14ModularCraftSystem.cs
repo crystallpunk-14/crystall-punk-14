@@ -3,9 +3,12 @@ using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared._CP14.ModularCraft.Prototypes;
 using Content.Shared.Throwing;
+using Content.Shared.Examine;
+using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.ModularCraft;
 
@@ -17,12 +20,67 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ItemSystem _item = default!;
 
+    [Dependency] private readonly ExamineSystemShared _examine = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, MapInitEvent>(OnStartPointMapInit);
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, CP14ModularCraftAddPartDoAfter>(OnAddedPart);
+        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
+    }
+
+    private void OnVerbExamine(Entity<CP14ModularCraftStartPointComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        var markup = GetExamine(ent.Comp);
+        _examine.AddDetailedExamineVerb(
+            args,
+            ent.Comp,
+            markup,
+            Loc.GetString("cp14-modular-craft-examine"),
+            "/Textures/Interface/VerbIcons/settings.svg.192dpi.png");
+    }
+
+    private FormattedMessage GetExamine(CP14ModularCraftStartPointComponent comp)
+    {
+        var msg = new FormattedMessage();
+        msg.AddMarkupOrThrow(Loc.GetString("cp14-modular-craft-examine-startslots"));
+
+        foreach (var slot in comp.StartSlots)
+        {
+            if (!_proto.TryIndex(slot, out var slotProto))
+                continue;
+
+            msg.AddMarkupOrThrow("\n - " + Loc.GetString(slotProto.Name));
+        }
+
+        msg.AddMarkupOrThrow("\n" + Loc.GetString("cp14-modular-craft-examine-freeslots"));
+
+        foreach (var slot in comp.FreeSlots)
+        {
+            if (!_proto.TryIndex(slot, out var slotProto))
+                continue;
+
+            msg.AddMarkupOrThrow("\n - " + Loc.GetString(slotProto.Name));
+        }
+
+        msg.AddMarkupOrThrow("\n" + Loc.GetString("cp14-modular-craft-examine-installed"));
+
+        foreach (var part in comp.InstalledParts)
+        {
+            if (!_proto.TryIndex(part, out var partProto))
+                continue;
+
+            if (partProto.TargetSlot is null || !_proto.TryIndex(partProto.TargetSlot, out var slotProto))
+                continue;
+
+            msg.AddMarkupOrThrow("\n - " + Loc.GetString(slotProto.Name));
+        }
+        return msg;
     }
 
     private void OnAddedPart(Entity<CP14ModularCraftStartPointComponent> ent, ref CP14ModularCraftAddPartDoAfter args)
