@@ -1,0 +1,96 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularFishingRodGripBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    shape:
+    - 0,0,0,0
+  - type: Sprite
+    state: icon
+  - type: ExaminableDamage
+    messages: CP14WeaponMessages
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - FishingRodShaft
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5
+  - type: MeleeWeapon
+    angle: 45
+    attackRate: 1
+    wideAnimationRotation: 135
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+
+- type: entity
+  parent: CP14ModularFishingRodGripBase
+  id: CP14ModularFishingRodGripWooden
+  name: wooden fishing rod grip
+  description: A simple wooden grip for a modular fishing rod. Lightweight and easy to handle, perfect for beginners or casual fishing.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Grips/wooden.rsi
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularFishingRodGripWooden
+
+- type: entity
+  parent: CP14ModularFishingRodGripBase
+  id: CP14ModularFishingRodGripCopper
+  name: copper fishing rod grip
+  description: A sturdy copper grip for a modular fishing rod. Durable and resistant to wear, ideal for intermediate anglers.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Grips/copper.rsi
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularFishingRodGripCopper
+
+- type: entity
+  parent: CP14ModularFishingRodGripBase
+  id: CP14ModularFishingRodGripIron
+  name: iron fishing rod grip
+  description: A heavy-duty iron grip for a modular fishing rod. Provides excellent stability and control for tough fishing conditions.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Grips/iron.rsi
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularFishingRodGripIron
+
+- type: entity
+  parent: CP14ModularFishingRodGripBase
+  id: CP14ModularFishingRodGripGold
+  name: gold fishing rod grip
+  description: A luxurious gold grip for a modular fishing rod. Beautifully crafted and highly durable, favored by elite anglers.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Grips/gold.rsi
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularFishingRodGripGold

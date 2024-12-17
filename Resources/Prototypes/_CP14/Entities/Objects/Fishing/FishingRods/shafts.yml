@@ -1,0 +1,58 @@
+- type: entity
+  parent: BaseItem
+  id: CP14FishingRodShaftBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+  - type: Sprite
+    state: icon
+  - type: CP14ModularCraftPart
+
+- type: entity
+  parent: CP14FishingRodShaftBase
+  id: CP14FishingRodShaftWooden
+  name: wooden fishing rod shaft
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Shafts/wooden.rsi
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - FishingRodShaftWooden
+
+- type: entity
+  parent: CP14FishingRodShaftBase
+  id: CP14FishingRodShaftCopper
+  name: copper fishing rod shaft
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Shafts/copper.rsi
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - FishingRodShaftCopper
+
+- type: entity
+  parent: CP14FishingRodShaftBase
+  id: CP14FishingRodShaftIron
+  name: iron fishing rod shaft
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Shafts/iron.rsi
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - FishingRodShaftIron
+
+- type: entity
+  parent: CP14FishingRodShaftBase
+  id: CP14FishingRodShaftGold
+  name: gold fishing rod shaft
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fishing/Shafts/gold.rsi
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - FishingRodShaftGold
