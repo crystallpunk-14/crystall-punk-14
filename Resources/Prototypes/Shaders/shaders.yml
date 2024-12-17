@@ -120,3 +120,4 @@
     FalloffClampMax: 1.0
     FalloffStrength: 0.75
     FalloffPow: 3.0
+    HDR: 1.5
