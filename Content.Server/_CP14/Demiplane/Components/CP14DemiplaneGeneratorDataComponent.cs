@@ -23,4 +23,16 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
 
     [DataField(required: true)]
     public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Limits;
+
+    [DataField]
+    public bool NeedDemiplaneCrystal = true;
+
+    [DataField]
+    public float DemiplaneCrystalRange = 15f;
+
+    [DataField]
+    public TimeSpan UseDelay = TimeSpan.FromSeconds(1.0);
+
+    [DataField]
+    public TimeSpan LastUseTime = TimeSpan.Zero;
 }

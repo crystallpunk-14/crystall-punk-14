@@ -26,6 +26,7 @@ public sealed partial class CP14DemiplaneSystem
     private const double JobMaxTime = 0.002;
 
     [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private void InitGeneration()
     {
@@ -140,6 +141,23 @@ public sealed partial class CP14DemiplaneSystem
     {
         if (generator.Comp.Location is null)
             return;
+
+        var curTime = _timing.CurTime;
+
+        if (curTime < generator.Comp.LastUseTime + generator.Comp.UseDelay)
+            return;
+
+        generator.Comp.LastUseTime = curTime;
+
+        if (generator.Comp.NeedDemiplaneCrystal)
+        {
+            var demiplaneCrystals = _lookup.GetEntitiesInRange<CP14DemiplaneCrystalComponent>(Transform(generator).Coordinates, generator.Comp.DemiplaneCrystalRange);
+            if (demiplaneCrystals.Count == 0)
+            {
+                return;
+            }
+
+        }
 
         //We cant open demiplan in another demiplan or if parent is not Map
         if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid) || !HasComp<MapGridComponent>(_transform.GetParentUid(args.User)))
