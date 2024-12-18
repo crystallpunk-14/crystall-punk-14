@@ -2961,6 +2961,9 @@ entities:
     - type: Transform
       pos: -47.5,-72.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 15363
 - proto: CP14BankStorageMarker
   entities:
   - uid: 1269
@@ -42805,6 +42808,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 108.5,59.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 10144
+      - 10140
+      - 10150
+      - 10135
 - proto: CP14BrassChest
   entities:
   - uid: 687
@@ -43668,6 +43677,33 @@ entities:
     - type: Transform
       pos: -16.707724,-16.458473
       parent: 2
+- proto: CP14CraneBarrelSmallAleBloodyTear
+  entities:
+  - uid: 2291
+    components:
+    - type: Transform
+      pos: -3.5,-11.5
+      parent: 2
+    - type: Physics
+      bodyType: Static
+- proto: CP14CraneBarrelSmallBeerBlowLaw
+  entities:
+  - uid: 2029
+    components:
+    - type: Transform
+      pos: -5.5,-11.5
+      parent: 2
+    - type: Physics
+      bodyType: Static
+- proto: CP14CraneBarrelSmallBeerBreeze
+  entities:
+  - uid: 2057
+    components:
+    - type: Transform
+      pos: -4.5,-11.5
+      parent: 2
+    - type: Physics
+      bodyType: Static
 - proto: CP14CrateCoffin
   entities:
   - uid: 1349
@@ -44654,7 +44690,7 @@ entities:
     - type: Transform
       pos: -4.638483,-32.429073
       parent: 2
-- proto: CP14DemiplanKey
+- proto: CP14DemiplaneKeyT1
   entities:
   - uid: 5537
     components:
@@ -85184,7 +85220,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.5,17.5
       parent: 2
-- proto: CP14SpawnerExpeditionLootCommon
+- proto: CP14SpawnerDemiplaneLootT1
   entities:
   - uid: 983
     components:
@@ -86387,16 +86423,15 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,-13.5
       parent: 2
-  - uid: 2029
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,-12.5
-      parent: 2
   - uid: 2041
     components:
     - type: Transform
       pos: -7.5,2.5
+      parent: 2
+  - uid: 2056
+    components:
+    - type: Transform
+      pos: -5.5,-11.5
       parent: 2
   - uid: 2066
     components:
@@ -87503,13 +87538,6 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-11.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 5534
-    components:
-    - type: Transform
-      pos: -5.5,-11.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -106484,12 +106512,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -7.5,-11.5
-      parent: 2
-  - uid: 2291
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -5.5,-11.5
       parent: 2
   - uid: 4108
     components:
