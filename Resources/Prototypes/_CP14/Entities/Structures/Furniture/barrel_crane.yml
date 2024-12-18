@@ -57,16 +57,138 @@
 
 - type: entity
   parent: CP14CraneBarrel
-  id: CP14CraneBarrelBeer
-  suffix: Beer
+  id: CP14CraneBarrelDwarfBeer
+  suffix: Beer. Dwarf
   categories: [ ForkFiltered ]
   components:
   - type: SolutionContainerManager
     solutions:
       barrel:
         reagents:
-        - ReagentId: Beer
+        - ReagentId: CP14DwarfBeer
           Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-dwarfbeer
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelBeerGerbil
+  suffix: Beer. Gerbil
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerGerbil
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-gerbil
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelBeerBreeze
+  suffix: Beer. Breeze
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBreeze
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-breeze
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelBeerBlowLaw
+  suffix: Beer. BlowLaw
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBlowLaw
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-blowlaw
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelAleBloodyTear
+  suffix: Ale. BloodyTear
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBloodyTear
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-bloodytear
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelAleBottomless
+  suffix: Ale. Bottomless
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBottomless
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-bottomless
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelWineZellasianPleasure
+  suffix: Wine. ZellasianPleasure
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14WineZellasianPleasure
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-zellasian-pleasure
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelWineLeeks
+  suffix: Wine. Leeks
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14WineLeeks
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-leeks
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelWineDurandate
+  suffix: Wine. Durandate
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14WineDurandate
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-durandate
 
 - type: entity
   id: CP14CraneBarrelSmall
@@ -141,13 +263,78 @@
 
 - type: entity
   parent: CP14CraneBarrelSmall
-  id: CP14CraneBarrelSmallBeer
-  suffix: Beer
+  id: CP14CraneBarrelSmallDwarfBeer
+  suffix: Beer. Dwarf
   categories: [ ForkFiltered ]
   components:
   - type: SolutionContainerManager
     solutions:
       barrel:
         reagents:
-        - ReagentId: Beer
+        - ReagentId: CP14DwarfBeer
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallBeerGerbil
+  suffix: Beer. Gerbil
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerGerbil
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallBeerBreeze
+  suffix: Beer. Breeze
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBreeze
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallBeerBlowLaw
+  suffix: Beer. BlowLaw
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBlowLaw
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallAleBloodyTear
+  suffix: Ale. BloodyTear
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBloodyTear
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallAleBottomless
+  suffix: Ale. Bottomless
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBottomless
           Quantity: 50
