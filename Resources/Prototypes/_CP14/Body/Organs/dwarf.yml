@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14OrganDwarfHeart
+  parent: OrganHumanHeart
+  name: dwarf heart
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [CP14Dwarf]
+
+- type: entity
+  id: CP14DwarfOrganDwarfLiver
+  parent: OrganHumanLiver
+  name: dwarf liver
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [CP14Dwarf]
+
+- type: entity
+  id: CP14DwarfOrganDwarfStomach
+  parent: OrganHumanStomach
+  name: dwarf stomach
+  components:
+  - type: Sprite
+    state: stomach
+  - type: Organ
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 75
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Stomach
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [CP14Dwarf]
