@@ -14,6 +14,8 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Physics
+    bodyType: Static
   - type: Transform
   - type: Anchorable
     delay: 3
@@ -209,6 +211,8 @@
     anchored: true
     noRot: true
   - type: Pullable
+  - type: Physics
+    bodyType: Static
   - type: Fixtures
     fixtures:
       fix1:

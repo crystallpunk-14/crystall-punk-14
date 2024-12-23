@@ -215,7 +215,7 @@
   id: CP14AleBloodyTear
   name: cp14-reagent-name-ale
   parent: BaseAlcohol
-  desc: cp14-reagent-desc-ale-bloody-tear
+  desc: cp14-reagent-desc-ale-bloodytear
   physicalDesc: reagent-physical-desc-bubbly
   flavor: CP14bloodyTear
   color: "#993333"
