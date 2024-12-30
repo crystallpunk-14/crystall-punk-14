@@ -94,3 +94,20 @@
       map: ["ritual"]
       visible: false
       shader: unshaded
+
+- type: entity
+  id: CP14StatueGobHoliday
+  parent: CP14StatueGob
+  name: holiday statue of Gob
+  suffix: Holiday
+  components:
+  - type: Sprite
+    layers:
+    - state: gob
+    - state: wire
+    - state: anim
+      shader: unshaded
+    - state: eyes
+      map: ["ritual"]
+      visible: false
+      shader: unshaded
