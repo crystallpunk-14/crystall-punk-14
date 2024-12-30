@@ -100,7 +100,7 @@
 - type: flavor
   id: CP14bloodyTear
   flavorType: Complex
-  description: cp14-flavor-complex-bloodytear
+  description: cp14-flavor-complex-bloody-tear
 
 - type: flavor
   id: CP14bottomless

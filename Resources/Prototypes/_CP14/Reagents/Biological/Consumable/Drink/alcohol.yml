@@ -2,7 +2,7 @@
 
 - type: reagent
   id: CP14DwarfBeer
-  name: cp14-reagent-name-beer
+  name: cp14-reagent-name-dwarfbeer
   parent: BaseAlcohol
   desc: cp14-reagent-desc-beer
   slippery: true
@@ -76,7 +76,7 @@
 
 - type: reagent
   id: CP14BeerGerbil
-  name: cp14-reagent-name-beer
+  name: cp14-reagent-name-gerbil
   parent: BaseAlcohol
   desc: cp14-reagent-desc-beer
   physicalDesc: reagent-physical-desc-bubbly
@@ -93,7 +93,7 @@
 
 - type: reagent
   id: CP14BeerBreeze
-  name: cp14-reagent-name-beer
+  name: cp14-reagent-name-breeze
   parent: BaseAlcohol
   desc: cp14-reagent-desc-beer
   physicalDesc: reagent-physical-desc-bubbly
@@ -110,7 +110,7 @@
 
 - type: reagent
   id: CP14BeerBlowLaw
-  name: cp14-reagent-name-beer
+  name: cp14-reagent-name-blowlaw
   parent: BaseAlcohol
   desc: cp14-reagent-desc-beer
   physicalDesc: reagent-physical-desc-bubbly
@@ -142,7 +142,7 @@
 
 - type: reagent
   id: CP14WineZellasianPleasure
-  name: cp14-reagent-name-wine
+  name: cp14-reagent-name-zellasian-pleasure
   parent: BaseAlcohol
   desc: cp14-reagent-desc-wine
   physicalDesc: reagent-physical-desc-translucent
@@ -160,7 +160,7 @@
 
 - type: reagent
   id: CP14WineLeeks
-  name: cp14-reagent-name-wine
+  name: cp14-reagent-name-leeks
   parent: BaseAlcohol
   desc: cp14-reagent-desc-wine
   physicalDesc: reagent-physical-desc-translucent
@@ -177,7 +177,7 @@
 
 - type: reagent
   id: CP14WineDurandate
-  name: cp14-reagent-name-wine
+  name: cp14-reagent-name-durandate
   parent: BaseAlcohol
   desc: cp14-reagent-desc-wine
   physicalDesc: reagent-physical-desc-translucent
@@ -213,9 +213,9 @@
 
 - type: reagent
   id: CP14AleBloodyTear
-  name: cp14-reagent-name-ale
+  name: cp14-reagent-name-bloody-tear
   parent: BaseAlcohol
-  desc: cp14-reagent-desc-ale-bloodytear
+  desc: cp14-reagent-desc-ale
   physicalDesc: reagent-physical-desc-bubbly
   flavor: CP14bloodyTear
   color: "#993333"
@@ -230,7 +230,7 @@
 
 - type: reagent
   id: CP14AleBottomless
-  name: cp14-reagent-name-ale
+  name: cp14-reagent-name-bottomless
   parent: BaseAlcohol
   desc: cp14-reagent-desc-ale
   physicalDesc: reagent-physical-desc-bubbly
