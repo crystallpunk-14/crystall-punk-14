@@ -130,7 +130,7 @@
         - ReagentId: CP14AleBloodyTear
           Quantity: 500
   - type: Label
-    currentLabel: cp14-reagent-name-bloodytear
+    currentLabel: cp14-reagent-name-bloody-tear
 
 - type: entity
   parent: CP14CraneBarrel

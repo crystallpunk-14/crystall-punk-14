@@ -11,6 +11,7 @@ marking-CP14HumanHairBigBraid = Хвост во весь рост
 marking-CP14HumanHairCrazyBald = Безумная проплешина
 marking-CP14HumanHairBigDoubleBun = Два пунпона
 marking-CP14HumanHairPonyTail7 = Конский хвост
+marking-CP14HumanHairPulato = Пулато
 marking-CP14HumanHairSideTail4 = Хвост сбоку
 marking-CP14HumanHairSwept2 = Суровый взгляд
 marking-CP14HumanHairUpdo = Пучок
