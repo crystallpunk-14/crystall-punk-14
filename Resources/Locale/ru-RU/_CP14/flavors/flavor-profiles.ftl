@@ -22,5 +22,5 @@ cp14-flavor-complex-zellasian-pleasure = аристократично и вин�
 cp14-flavor-complex-leeks = фруктово и мистически
 cp14-flavor-complex-durandate = дешёвое и терпкое
 cp14-flavor-complex-ale = как хлеб
-cp14-flavor-complex-bloodytear = печально и алкогольно
+cp14-flavor-complex-bloody-tear = печально и алкогольно
 cp14-flavor-complex-bottomless = полубожественно и опасно
