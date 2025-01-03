@@ -6,6 +6,7 @@ using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicSpellStorage;
 using Content.Shared.Actions;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Systems;
@@ -30,6 +31,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!;
 
     private EntityQuery<CP14MagicEnergyContainerComponent> _magicContainerQuery;
     private EntityQuery<CP14MagicEffectComponent> _magicEffectQuery;
@@ -38,7 +40,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     {
         base.Initialize();
         InitializeActions();
-        InitializeAspects();
+        InitializeChecks();
         InitializeSlowdown();
 
         _magicContainerQuery = GetEntityQuery<CP14MagicEnergyContainerComponent>();
@@ -46,7 +48,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
 
-        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnCheckManacost);
+        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14AfterCastMagicEffectEvent>(OnStaminaCostAfterCast);
     }
 
     /// <summary>
@@ -59,9 +61,14 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         sb.Append(meta.EntityDescription);
 
-        if (TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost))
+        if (TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost) && manaCost.ManaCost > 0)
         {
             sb.Append($"\n\n {Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{manaCost.ManaCost}[/color]");
+        }
+
+        if (TryComp<CP14MagicEffectStaminaCostComponent>(ent, out var staminaCost) && staminaCost.Stamina > 0)
+        {
+            sb.Append($"\n\n {Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{staminaCost.Stamina}[/color]");
         }
 
         if (_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
@@ -94,52 +101,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             _popup.PopupEntity(ev.Reason, performer, performer);
         }
         return !ev.Cancelled;
-    }
-
-    private void OnCheckManacost(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (!_magicEffectQuery.TryComp(ent, out var magicEffect))
-            return;
-
-        var requiredMana = ent.Comp.ManaCost;
-
-        if (ent.Comp.CanModifyManacost)
-        {
-            var manaEv = new CP14CalculateManacostEvent(args.Performer, ent.Comp.ManaCost, magicEffect.MagicType);
-
-            RaiseLocalEvent(args.Performer, manaEv);
-
-            if (magicEffect.SpellStorage is not null)
-                RaiseLocalEvent(magicEffect.SpellStorage.Value, manaEv);
-
-            requiredMana = manaEv.GetManacost();
-        }
-
-        //Try check mana from item
-        if (magicEffect.SpellStorage is not null)
-        {
-            if (_magicContainerQuery.TryComp(magicEffect.SpellStorage, out var magicContainer))
-            {
-                requiredMana = MathF.Max(0, (float)(requiredMana - magicContainer.Energy));
-
-                var spellEv = new CP14SpellFromSpellStorageUsedEvent(args.Performer, (ent, magicEffect), requiredMana);
-                RaiseLocalEvent(magicEffect.SpellStorage.Value, ref spellEv);
-
-                if (magicContainer.Energy > 0)
-                {
-                    //TODO: FIX THIS SHIT
-                    var cashedEnergy = magicContainer.Energy;
-                    _magicEnergy.TryConsumeEnergy(magicEffect.SpellStorage.Value, requiredMana, magicContainer, false);
-                    requiredMana = MathF.Max(0, (float)(requiredMana - cashedEnergy));
-                }
-            }
-        }
-
-        //Try get mana from caster
-        if (requiredMana > 0)
-        {
-            _magicEnergy.TryConsumeEnergy(args.Performer, requiredMana, safe: false);
-        }
     }
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
@@ -186,5 +147,33 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         var ev = new CP14AfterCastMagicEffectEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
+    }
+
+    protected FixedPoint2 CalculateManacost(Entity<CP14MagicEffectManaCostComponent> ent, EntityUid? caster)
+    {
+        var manaCost = ent.Comp.ManaCost;
+
+        if (ent.Comp.CanModifyManacost && _magicEffectQuery.TryComp(ent, out var magicEffect))
+        {
+            var manaEv = new CP14CalculateManacostEvent(caster, ent.Comp.ManaCost, magicEffect.MagicType);
+
+            if (caster is not null)
+                RaiseLocalEvent(caster.Value, manaEv);
+
+            if (magicEffect.SpellStorage is not null)
+                RaiseLocalEvent(magicEffect.SpellStorage.Value, manaEv);
+
+            manaCost = manaEv.GetManacost();
+        }
+
+        return manaCost;
+    }
+
+    private void OnStaminaCostAfterCast(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14AfterCastMagicEffectEvent args)
+    {
+        if (args.Performer is null)
+            return;
+
+        _stamina.TryTakeStamina(args.Performer.Value, ent.Comp.Stamina);
     }
 }
