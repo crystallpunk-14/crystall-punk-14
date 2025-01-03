@@ -1,6 +1,4 @@
 cp14-magic-spell-not-enough-mana = Not enough mana!
-cp14-magic-spell-not-enough-mana-item = Not enough mana in {$item}!
-
 
 cp14-magic-spell-not-enough-mana-cast-warning-0 = Everything inside you starts to whine unpleasantly...
 cp14-magic-spell-not-enough-mana-cast-warning-1 = Your head starts to buzz...

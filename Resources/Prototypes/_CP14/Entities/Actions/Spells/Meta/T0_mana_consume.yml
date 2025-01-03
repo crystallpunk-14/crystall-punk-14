@@ -8,8 +8,6 @@
     state: mana_consume
   - type: CP14MagicEffect
     magicType: Meta
-    manaCost: 0
-    canModifyManacost: false
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

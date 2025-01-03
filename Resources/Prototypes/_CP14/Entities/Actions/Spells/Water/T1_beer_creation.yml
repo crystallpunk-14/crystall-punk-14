@@ -6,9 +6,10 @@
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
     state: beer_creation
+  - type: CP14MagicEffectManaCost
+    manaCost: 50
   - type: CP14MagicEffect
     magicType: Water
-    manaCost: 50
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
