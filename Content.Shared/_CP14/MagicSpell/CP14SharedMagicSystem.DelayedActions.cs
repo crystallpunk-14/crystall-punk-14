@@ -1,13 +1,14 @@
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
+using Content.Shared.DoAfter;
 using Robust.Shared.Map;
 
 namespace Content.Shared._CP14.MagicSpell;
 
 public abstract partial class CP14SharedMagicSystem
 {
-    private void InitializeActions()
+    private void InitializeDelayedActions()
     {
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
         SubscribeLocalEvent<CP14DelayedEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
@@ -16,6 +17,25 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedInstantActionDoAfterEvent>(OnDelayedInstantActionDoAfter);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityWorldTargetActionDoAfterEvent>(OnDelayedEntityWorldTargetDoAfter);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnDelayedEntityTargetDoAfter);
+    }
+    
+    private bool TryCastSpellDelayed(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+    {
+        var fromItem = action.Comp.SpellStorage is not null;
+
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, delayedEffect.CastDelay, doAfter, action, used: action.Comp.SpellStorage)
+        {
+            BreakOnMove = delayedEffect.BreakOnMove,
+            BreakOnDamage = delayedEffect.BreakOnDamage,
+            Hidden = delayedEffect.Hidden,
+            DistanceThreshold = 100f,
+            CancelDuplicate = true,
+            BlockDuplicate = true,
+            BreakOnDropItem = fromItem,
+            NeedHand = fromItem,
+        };
+
+        return _doAfter.TryStartDoAfter(doAfterEventArgs);
     }
 
     /// <summary>
@@ -76,7 +96,6 @@ public abstract partial class CP14SharedMagicSystem
 
         if (!CanCastSpell(spell, args.Performer))
             return;
-
 
         if (args.CastDelay > 0)
         {

@@ -14,6 +14,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.MagicSpell;
 
@@ -32,6 +33,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private EntityQuery<CP14MagicEnergyContainerComponent> _magicContainerQuery;
     private EntityQuery<CP14MagicEffectComponent> _magicEffectQuery;
@@ -39,7 +41,8 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        InitializeActions();
+        InitializeDelayedActions();
+        InitializeToggleableActions();
         InitializeChecks();
         InitializeSlowdown();
 
@@ -48,7 +51,14 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
 
-        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14AfterCastMagicEffectEvent>(OnStaminaCostAfterCast);
+        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        UpdateToggleableActions();
     }
 
     /// <summary>
@@ -114,28 +124,10 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
     }
 
-    private bool TryCastSpellDelayed(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+    private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args, float? cooldown = null)
     {
-        var fromItem = action.Comp.SpellStorage is not null;
-
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, delayedEffect.CastDelay, doAfter, action, used: action.Comp.SpellStorage)
-        {
-            BreakOnMove = delayedEffect.BreakOnMove,
-            BreakOnDamage = delayedEffect.BreakOnDamage,
-            Hidden = delayedEffect.Hidden,
-            DistanceThreshold = 100f,
-            CancelDuplicate = true,
-            BlockDuplicate = true,
-            BreakOnDropItem = fromItem,
-            NeedHand = fromItem,
-        };
-
-        return _doAfter.TryStartDoAfter(doAfterEventArgs);
-    }
-
-    private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args, float cooldown)
-    {
-        _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(cooldown));
+        if (cooldown is not null)
+            _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(cooldown.Value));
 
         if (_net.IsServer)
         {
@@ -145,7 +137,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             }
         }
 
-        var ev = new CP14AfterCastMagicEffectEvent(args.User);
+        var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
     }
 
@@ -169,7 +161,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         return manaCost;
     }
 
-    private void OnStaminaCostAfterCast(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14AfterCastMagicEffectEvent args)
+    private void OnStaminaConsume(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (args.Performer is null)
             return;

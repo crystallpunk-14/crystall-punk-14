@@ -23,7 +23,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
 
-        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14AfterCastMagicEffectEvent>(OnManaCostAfterCast);
+        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
     }
 
     private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14VerbalAspectSpeechEvent args)
@@ -45,7 +45,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         ent.Comp.SpawnedEntity = null;
     }
 
-    private void OnManaCostAfterCast(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14AfterCastMagicEffectEvent args)
+    private void OnManaConsume(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (!TryComp<CP14MagicEffectComponent>(ent, out var magicEffect))
             return;

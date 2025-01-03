@@ -18,7 +18,7 @@ public abstract partial class CP14SharedMagicSystem
 
         //Verbal speaking
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14AfterCastMagicEffectEvent>(OnVerbalAspectAfterCast);
+        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
     }
 
     /// <summary>
@@ -102,7 +102,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(ent, ref ev);
     }
 
-    private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14AfterCastMagicEffectEvent args)
+    private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (_net.IsClient)
             return;

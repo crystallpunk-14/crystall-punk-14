@@ -27,9 +27,9 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: water_creation
-    event: !type:CP14DelayedInstantActionEvent
+    event: !type:CP14ToggleableInstantActionEvent
       cooldown: 10
-      castDelay: 0.8
+      castTime: 10
       breakOnMove: false
 
 - type: entity
