@@ -50,8 +50,17 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         _magicEffectQuery = GetEntityQuery<CP14MagicEffectComponent>();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
+        SubscribeLocalEvent<CP14MagicEffectComponent, ComponentShutdown>(OnMagicEffectShutdown);
 
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
+    }
+
+    private void OnMagicEffectShutdown(Entity<CP14MagicEffectComponent> ent, ref ComponentShutdown args)
+    {
+        if (_doAfter.IsRunning(ent.Comp.ActiveDoAfter))
+        {
+            _doAfter.Cancel(ent.Comp.ActiveDoAfter);
+        }
     }
 
     public override void Update(float frameTime)
