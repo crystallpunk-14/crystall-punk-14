@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
+using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
@@ -45,6 +46,30 @@ public sealed partial class CP14ToggleableInstantActionEvent : InstantActionEven
     public float EntityDistance { get; private set; } = 100f;
 }
 
+public sealed partial class CP14ToggleableEntityWorldTargetActionEvent : EntityWorldTargetActionEvent, ICP14ToggleableMagicEffect
+{
+    [DataField]
+    public float EffectFrequency { get; private set; } = 1f;
+
+    [DataField]
+    public float Cooldown { get; private set; } = 3f;
+
+    [DataField]
+    public float CastTime { get; private set; } = 10f;
+
+    [DataField]
+    public bool BreakOnMove { get; private set; } = false;
+
+    [DataField]
+    public bool BreakOnDamage { get; private set; } = true;
+
+    [DataField]
+    public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public float EntityDistance { get; private set; } = 100f;
+}
+
 [Serializable, NetSerializable]
 public sealed partial class CP14ToggleableInstantActionDoAfterEvent : DoAfterEvent
 {
@@ -53,6 +78,26 @@ public sealed partial class CP14ToggleableInstantActionDoAfterEvent : DoAfterEve
 
     public CP14ToggleableInstantActionDoAfterEvent(float cooldown)
     {
+        Cooldown = cooldown;
+    }
+
+    public override DoAfterEvent Clone() => this;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class CP14ToggleableEntityWorldTargetActionDoAfterEvent : DoAfterEvent
+{
+    [DataField]
+    public NetCoordinates? TargetPosition;
+    [DataField]
+    public NetEntity? TargetEntity;
+    [DataField]
+    public float? Cooldown;
+
+    public CP14ToggleableEntityWorldTargetActionDoAfterEvent(NetCoordinates? targetPos, NetEntity? targetEntity, float cooldown)
+    {
+        TargetPosition = targetPos;
+        TargetEntity = targetEntity;
         Cooldown = cooldown;
     }
 

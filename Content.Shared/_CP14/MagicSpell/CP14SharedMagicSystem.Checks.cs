@@ -35,13 +35,6 @@ public abstract partial class CP14SharedMagicSystem
         {
             if (_magicContainerQuery.TryComp(magicEffect.SpellStorage, out var magicContainer)) // We have item that provides this spell
                 requiredMana = MathF.Max(0, (float)(requiredMana - magicContainer.Energy));
-
-            if (requiredMana > 0)
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-not-enough-mana-item"));
-                args.Cancel();
-                return;
-            }
         }
 
         if (requiredMana > 0 && _magicContainerQuery.TryComp(args.Performer, out var playerMana))

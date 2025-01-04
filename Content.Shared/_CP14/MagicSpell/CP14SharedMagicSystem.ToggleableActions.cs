@@ -2,6 +2,7 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.DoAfter;
+using Robust.Shared.Map;
 
 namespace Content.Shared._CP14.MagicSpell;
 
@@ -10,8 +11,10 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeToggleableActions()
     {
         SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnInstantAction);
+        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableInstantActionDoAfterEvent>(OnToggleableInstantActionDoAfterEvent);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableEntityWorldTargetActionDoAfterEvent>(OnToggleableEntityWorldTargetActionDoAfterEvent);
     }
 
     private void UpdateToggleableActions()
@@ -29,7 +32,7 @@ public abstract partial class CP14SharedMagicSystem
             toggled.NextTick = _timing.CurTime + TimeSpan.FromSeconds(toggled.Frequency);
 
             var spellArgs =
-                new CP14SpellEffectBaseArgs(toggled.Performer, effect.SpellStorage, toggled.Performer, Transform(toggled.Performer.Value).Coordinates);
+                new CP14SpellEffectBaseArgs(toggled.Performer, effect.SpellStorage, toggled.EntityTarget, toggled.WorldTarget);
 
             if (!CanCastSpell((uid, effect), toggled.Performer.Value))
             {
@@ -46,7 +49,12 @@ public abstract partial class CP14SharedMagicSystem
         EndToggleableAction(ent, args.User, args.Cooldown);
     }
 
-    private void StartToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+    private void OnToggleableEntityWorldTargetActionDoAfterEvent(Entity<CP14MagicEffectComponent> ent, ref CP14ToggleableEntityWorldTargetActionDoAfterEvent args)
+    {
+        EndToggleableAction(ent, args.User, args.Cooldown);
+    }
+
+    private void StartToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer, EntityUid? entityTarget = null, EntityCoordinates? worldTarget = null)
     {
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             return;
@@ -76,6 +84,9 @@ public abstract partial class CP14SharedMagicSystem
             toggled.DoAfterId = doAfterId;
             toggled.Cooldown = toggleable.Cooldown;
 
+            toggled.EntityTarget = entityTarget;
+            toggled.WorldTarget = worldTarget;
+
             action.Comp.ActiveDoAfter = doAfterId;
         }
     }
@@ -92,7 +103,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(action, ref endEv);
     }
 
-    private void UseToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+    private void ToggleToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer, EntityUid? entityTarget = null, EntityCoordinates? worldTarget = null)
     {
         if (!CanCastSpell(action, performer))
             return;
@@ -103,7 +114,7 @@ public abstract partial class CP14SharedMagicSystem
         }
         else
         {
-            StartToggleableAction(toggleable, doAfter, action, performer);
+            StartToggleableAction(toggleable, doAfter, action, performer, entityTarget, worldTarget);
         }
     }
 
@@ -122,7 +133,30 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var doAfter = new CP14ToggleableInstantActionDoAfterEvent(args.Cooldown);
-        UseToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer);
+        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Performer, Transform(args.Performer).Coordinates);
+
+        args.Handled = true;
+    }
+
+    /// <summary>
+    /// Target action used from hotkey event
+    /// </summary>
+    private void OnEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (args is not ICP14ToggleableMagicEffect toggleable)
+            return;
+
+        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
+            return;
+
+        var doAfter = new CP14ToggleableEntityWorldTargetActionDoAfterEvent(
+            EntityManager.GetNetCoordinates(args.Coords),
+            EntityManager.GetNetEntity(args.Entity),
+            args.Cooldown);
+        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Entity, args.Coords);
 
         args.Handled = true;
     }

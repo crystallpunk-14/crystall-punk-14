@@ -31,9 +31,9 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: ice_shards
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
-      cooldown: 0.5
-      castDelay: 0.5
+    event: !type:CP14ToggleableEntityWorldTargetActionEvent
+      cooldown: 10
+      castTime: 10
       breakOnMove: false
       entityDistance: 1000
 

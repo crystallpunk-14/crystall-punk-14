@@ -1,4 +1,5 @@
 using Content.Shared.DoAfter;
+using Robust.Shared.Map;
 
 namespace Content.Shared._CP14.MagicSpell.Components;
 
@@ -21,4 +22,10 @@ public sealed partial class CP14MagicEffectToggledComponent : Component
     public EntityUid? Performer;
 
     public DoAfterId? DoAfterId;
+
+    [DataField]
+    public EntityUid? EntityTarget;
+
+    [DataField]
+    public EntityCoordinates? WorldTarget;
 }
