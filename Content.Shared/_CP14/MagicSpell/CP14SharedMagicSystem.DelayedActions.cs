@@ -52,8 +52,6 @@ public abstract partial class CP14SharedMagicSystem
         var endEv = new CP14EndCastMagicEffectEvent(performer);
         RaiseLocalEvent(action, ref endEv);
 
-        _doAfter.Cancel(action.Comp.ActiveDoAfter);
-
         if (cooldown is not null)
             _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
     }
@@ -65,7 +63,7 @@ public abstract partial class CP14SharedMagicSystem
 
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
         {
-            EndDelayedAction(action, performer, delayedEffect.Cooldown);
+            _doAfter.Cancel(action.Comp.ActiveDoAfter);
         }
         else
         {

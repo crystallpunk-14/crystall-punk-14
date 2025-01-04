@@ -100,8 +100,6 @@ public abstract partial class CP14SharedMagicSystem
 
     private void EndToggleableAction(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
     {
-        _doAfter.Cancel(action.Comp.ActiveDoAfter);
-
         if (cooldown is not null)
             _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
         RemCompDeferred<CP14MagicEffectToggledComponent>(action);
@@ -117,7 +115,7 @@ public abstract partial class CP14SharedMagicSystem
 
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
         {
-            EndToggleableAction(action, performer, toggleable.Cooldown);
+            _doAfter.Cancel(action.Comp.ActiveDoAfter);
         }
         else
         {

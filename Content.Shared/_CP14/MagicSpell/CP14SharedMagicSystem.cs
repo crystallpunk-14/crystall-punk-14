@@ -55,14 +55,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
     }
 
-    private void OnMagicEffectShutdown(Entity<CP14MagicEffectComponent> ent, ref ComponentShutdown args)
-    {
-        if (_doAfter.IsRunning(ent.Comp.ActiveDoAfter))
-        {
-            _doAfter.Cancel(ent.Comp.ActiveDoAfter);
-        }
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -82,17 +74,17 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         if (TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost) && manaCost.ManaCost > 0)
         {
-            sb.Append($"\n\n {Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{manaCost.ManaCost}[/color]");
+            sb.Append($"\n\n{Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{manaCost.ManaCost}[/color]");
         }
 
         if (TryComp<CP14MagicEffectStaminaCostComponent>(ent, out var staminaCost) && staminaCost.Stamina > 0)
         {
-            sb.Append($"\n\n {Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{staminaCost.Stamina}[/color]");
+            sb.Append($"\n\n{Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{staminaCost.Stamina}[/color]");
         }
 
         if (_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
         {
-            sb.Append($"\n {Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
+            sb.Append($"\n{Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
         }
 
         if (TryComp<CP14MagicEffectVerbalAspectComponent>(ent, out var verbal))
@@ -106,6 +98,14 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
 
         _meta.SetEntityDescription(ent, sb.ToString());
+    }
+
+    private void OnMagicEffectShutdown(Entity<CP14MagicEffectComponent> ent, ref ComponentShutdown args)
+    {
+        if (_doAfter.IsRunning(ent.Comp.ActiveDoAfter))
+        {
+            _doAfter.Cancel(ent.Comp.ActiveDoAfter);
+        }
     }
 
     /// <summary>
