@@ -11,6 +11,7 @@ marking-CP14HumanHairBigBraid = Full Braid
 marking-CP14HumanHairCrazyBald = CrazyBald
 marking-CP14HumanHairBigDoubleBun = Double Bun
 marking-CP14HumanHairPonyTail7 = Ponytail
+marking-CP14HumanHairPulato = Pulato
 marking-CP14HumanHairSideTail4 = Side tail
 marking-CP14HumanHairSwept2 = Swept
 marking-CP14HumanHairUpdo = Updo

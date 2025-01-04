@@ -121,3 +121,8 @@
     FalloffStrength: 0.75
     FalloffPow: 3.0
     HDR: 1.5
+
+- type: shader
+  id: Hologram
+  kind: source
+  path: "/Textures/Shaders/hologram.swsl"
