@@ -1,4 +1,5 @@
 ﻿using Content.Shared._CP14.DayCycle.Components;
+using Content.Shared._CP14.DayCycle.Prototypes;
 using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
