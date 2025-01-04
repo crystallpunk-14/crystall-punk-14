@@ -43,18 +43,17 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnToggleableInstantActionDoAfterEvent(Entity<CP14MagicEffectComponent> ent, ref CP14ToggleableInstantActionDoAfterEvent args)
     {
-        if (!TryComp<CP14MagicEffectToggledComponent>(ent, out var toggled))
-            return;
-
-        _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(toggled.Cooldown));
-        RemCompDeferred<CP14MagicEffectToggledComponent>(ent);
-
-        var endEv = new CP14EndCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref endEv);
+        EndToggleableCasting(ent, args.User, args.Cooldown);
     }
 
     private void StartToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
     {
+        if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
+            return;
+
+        var evStart = new CP14StartCastMagicEffectEvent(performer);
+        RaiseLocalEvent(action, ref evStart);
+
         var fromItem = action.Comp.SpellStorage is not null;
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage)
@@ -69,13 +68,28 @@ public abstract partial class CP14SharedMagicSystem
             NeedHand = fromItem,
         };
 
-        _doAfter.TryStartDoAfter(doAfterEventArgs, out var doAfterId);
+        if (_doAfter.TryStartDoAfter(doAfterEventArgs, out var doAfterId))
+        {
+            EnsureComp<CP14MagicEffectToggledComponent>(action, out var toggled);
+            toggled.Frequency = toggleable.EffectFrequency;
+            toggled.Performer = performer;
+            toggled.DoAfterId = doAfterId;
+            toggled.Cooldown = toggleable.Cooldown;
 
-        EnsureComp<CP14MagicEffectToggledComponent>(action, out var toggled);
-        toggled.Frequency = toggleable.EffectFrequency;
-        toggled.Performer = performer;
-        toggled.DoAfterId = doAfterId;
-        toggled.Cooldown = toggleable.Cooldown;
+            action.Comp.ActiveDoAfter = doAfterId;
+        }
+    }
+
+    private void EndToggleableCasting(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
+    {
+        _doAfter.Cancel(action.Comp.ActiveDoAfter);
+
+        if (cooldown is not null)
+            _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
+        RemCompDeferred<CP14MagicEffectToggledComponent>(action);
+
+        var endEv = new CP14EndCastMagicEffectEvent(performer);
+        RaiseLocalEvent(action, ref endEv);
     }
 
     /// <summary>
@@ -97,12 +111,15 @@ public abstract partial class CP14SharedMagicSystem
         if (!CanCastSpell(spell, args.Performer))
             return;
 
-        var doAfter = new CP14ToggleableInstantActionDoAfterEvent(args.Cooldown);
-
-        StartToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer);
-
-        var evStart = new CP14StartCastMagicEffectEvent(args.Performer);
-        RaiseLocalEvent(args.Action, ref evStart);
+        if (_doAfter.IsRunning(magicEffect.ActiveDoAfter))
+        {
+            EndToggleableCasting((args.Action, magicEffect), args.Performer, toggleable.Cooldown);
+        }
+        else
+        {
+            var doAfter = new CP14ToggleableInstantActionDoAfterEvent(args.Cooldown);
+            StartToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer);
+        }
 
         args.Handled = true;
     }

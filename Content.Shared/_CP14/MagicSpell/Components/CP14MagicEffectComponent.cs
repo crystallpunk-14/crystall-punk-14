@@ -1,6 +1,7 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicSpellStorage;
+using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Components;
@@ -28,4 +29,7 @@ public sealed partial class CP14MagicEffectComponent : Component
 
     [DataField]
     public List<CP14SpellEffect> Effects = new();
+
+    [DataField]
+    public DoAfterId? ActiveDoAfter;
 }

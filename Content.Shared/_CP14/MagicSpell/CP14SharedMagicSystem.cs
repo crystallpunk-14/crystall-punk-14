@@ -124,11 +124,8 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
     }
 
-    private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args, float? cooldown = null)
+    private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        if (cooldown is not null)
-            _action.CP14StartCustomDelay(ent, TimeSpan.FromSeconds(cooldown.Value));
-
         if (_net.IsServer)
         {
             foreach (var effect in ent.Comp.Effects)

@@ -18,12 +18,15 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityWorldTargetActionDoAfterEvent>(OnDelayedEntityWorldTargetDoAfter);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnDelayedEntityTargetDoAfter);
     }
-    
-    private bool TryCastSpellDelayed(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+
+    private bool TryStartDelayedAction(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
     {
+        if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
+            return false;
+
         var fromItem = action.Comp.SpellStorage is not null;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, delayedEffect.CastDelay, doAfter, action, used: action.Comp.SpellStorage)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, MathF.Max(delayedEffect.CastDelay, 1f), doAfter, action, used: action.Comp.SpellStorage)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
@@ -35,7 +38,24 @@ public abstract partial class CP14SharedMagicSystem
             NeedHand = fromItem,
         };
 
-        return _doAfter.TryStartDoAfter(doAfterEventArgs);
+        if (_doAfter.TryStartDoAfter(doAfterEventArgs, out var doAfterId))
+        {
+            action.Comp.ActiveDoAfter = doAfterId;
+            return true;
+        }
+
+        return false;
+    }
+
+    private void EndDelayedAction(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
+    {
+        var endEv = new CP14EndCastMagicEffectEvent(performer);
+        RaiseLocalEvent(action, ref endEv);
+
+        _doAfter.Cancel(action.Comp.ActiveDoAfter);
+
+        if (cooldown is not null)
+            _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
     }
 
     /// <summary>
@@ -57,12 +77,9 @@ public abstract partial class CP14SharedMagicSystem
         if (!CanCastSpell(spell, args.Performer))
             return;
 
-        if (args.CastDelay > 0)
-        {
-            var doAfter = new CP14DelayedInstantActionDoAfterEvent(args.Cooldown);
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
-                return;
-        }
+        var doAfter = new CP14DelayedInstantActionDoAfterEvent(args.Cooldown);
+        if (!TryStartDelayedAction(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
+            return;
 
         var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
         RaiseLocalEvent(args.Action, ref evStart);
@@ -71,9 +88,6 @@ public abstract partial class CP14SharedMagicSystem
             new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Performer, Transform(args.Performer).Coordinates);
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
-
-        if (args.CastDelay == 0)
-            CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
 
         args.Handled = true;
     }
@@ -97,16 +111,13 @@ public abstract partial class CP14SharedMagicSystem
         if (!CanCastSpell(spell, args.Performer))
             return;
 
-        if (args.CastDelay > 0)
-        {
-            var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
-                EntityManager.GetNetCoordinates(args.Coords),
-                EntityManager.GetNetEntity(args.Entity),
-                args.Cooldown);
+        var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
+            EntityManager.GetNetCoordinates(args.Coords),
+            EntityManager.GetNetEntity(args.Entity),
+            args.Cooldown);
 
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
-                return;
-        }
+        if (!TryStartDelayedAction(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
+            return;
 
         var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
         RaiseLocalEvent(args.Action, ref evStart);
@@ -116,8 +127,6 @@ public abstract partial class CP14SharedMagicSystem
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
 
-        if (args.CastDelay <= 0)
-            CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
 
         args.Handled = true;
     }
@@ -141,15 +150,10 @@ public abstract partial class CP14SharedMagicSystem
         if (!CanCastSpell(spell, args.Performer))
             return;
 
-        if (args.CastDelay > 0)
-        {
-            var doAfter = new CP14DelayedEntityTargetActionDoAfterEvent(
-                EntityManager.GetNetEntity(args.Target),
-                args.Cooldown);
+        var doAfter = new CP14DelayedEntityTargetActionDoAfterEvent(EntityManager.GetNetEntity(args.Target), args.Cooldown);
 
-            if (!TryCastSpellDelayed(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
-                return;
-        }
+        if (!TryStartDelayedAction(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
+            return;
 
         var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
         RaiseLocalEvent(args.Action, ref evStart);
@@ -159,10 +163,6 @@ public abstract partial class CP14SharedMagicSystem
 
         CastTelegraphy((args.Action, magicEffect), spellArgs);
 
-        //TODO: Bug! If CastDelay = 0, cooldown dont want apply to spell aftercast
-        if (args.CastDelay <= 0)
-            CastSpell((args.Action, magicEffect), spellArgs, args.Cooldown);
-
         args.Handled = true;
     }
 
@@ -171,13 +171,12 @@ public abstract partial class CP14SharedMagicSystem
     /// </summary>
     private void OnDelayedInstantActionDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedInstantActionDoAfterEvent args)
     {
-        var endEv = new CP14EndCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref endEv);
+        EndDelayedAction(ent, args.User, args.Cooldown);
 
         if (args.Cancelled || args.Handled)
             return;
 
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, args.User, Transform(args.User).Coordinates), args.Cooldown ?? 0);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, args.User, Transform(args.User).Coordinates));
 
         args.Handled = true;
     }
@@ -188,8 +187,7 @@ public abstract partial class CP14SharedMagicSystem
     private void OnDelayedEntityWorldTargetDoAfter(Entity<CP14MagicEffectComponent> ent,
         ref CP14DelayedEntityWorldTargetActionDoAfterEvent args)
     {
-        var endEv = new CP14EndCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref endEv);
+        EndDelayedAction(ent, args.User, args.Cooldown);
 
         if (args.Cancelled || args.Handled)
             return;
@@ -197,7 +195,7 @@ public abstract partial class CP14SharedMagicSystem
         var targetPos = EntityManager.GetCoordinates(args.TargetPosition);
         EntityManager.TryGetEntity(args.TargetEntity, out var targetEnt);
 
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, targetEnt, targetPos), args.Cooldown ?? 0);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, targetEnt, targetPos));
 
         args.Handled = true;
     }
@@ -207,8 +205,7 @@ public abstract partial class CP14SharedMagicSystem
     /// </summary>
     private void OnDelayedEntityTargetDoAfter(Entity<CP14MagicEffectComponent> ent, ref CP14DelayedEntityTargetActionDoAfterEvent args)
     {
-        var endEv = new CP14EndCastMagicEffectEvent(args.User);
-        RaiseLocalEvent(ent, ref endEv);
+        EndDelayedAction(ent, args.User, args.Cooldown);
 
         if (args.Cancelled || args.Handled)
             return;
@@ -217,7 +214,7 @@ public abstract partial class CP14SharedMagicSystem
         EntityCoordinates? targetPos = null;
         if (targetEnt is not null) { targetPos = Transform(targetEnt.Value).Coordinates; }
 
-        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, targetEnt, targetPos), args.Cooldown ?? 0);
+        CastSpell(ent, new CP14SpellEffectBaseArgs(args.User, args.Used, targetEnt, targetPos));
 
         args.Handled = true;
     }
