@@ -18,7 +18,8 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Sickle/iron_sickle.rsi
-    state: icon
+    layers:
+    - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronSickle
@@ -30,7 +31,9 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Sickle/copper_sickle.rsi
-    state: icon
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperSickle
@@ -42,7 +45,9 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Sickle/gold_sickle.rsi
-    state: icon
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldSickle
@@ -54,7 +59,9 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Sickle/mithril_sickle.rsi
-    state: icon
+    layers:
+    - state: icon
+      color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilSickle

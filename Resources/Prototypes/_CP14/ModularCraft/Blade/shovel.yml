@@ -35,7 +35,7 @@
   id: BladeIronShovel
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronShovel
-  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/iron_shovel.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -46,7 +46,8 @@
   id: BladeGoldShovel
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldShovel
-  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/gold_shovel.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -57,7 +58,8 @@
   id: BladeCopperShovel
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperShovel
-  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/copper_shovel.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -68,7 +70,8 @@
   id: BladeMithrilShovel
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilShovel
-  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/mithril_shovel.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
