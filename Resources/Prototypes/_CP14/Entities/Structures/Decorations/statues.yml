@@ -15,6 +15,12 @@
       map: ["ritual"]
       visible: false
       shader: unshaded
+    - state: wire
+      map: ["wire"]
+      visible: false
+    - state: anim
+      map: ["garland"]
+      visible: false
     drawdepth: Mobs
     offset: "0.0,0.5"
   - type: Fixtures
@@ -52,6 +58,20 @@
   - type: CP14MagicRitual
     startPhase: CP14_NeutralCluster_Root
   - type: Appearance
+  - type: HolidayVisuals
+    holidays:
+      festive:
+      - FestiveSeason
+  - type: GenericVisualizer
+    visuals:
+      enum.HolidayVisuals.Holiday:
+        wire:
+          festive:
+            state: wire
+        garland:
+          festive:
+            state: anim
+            shader: unshaded
 
 - type: entity
   id: CP14StatueGobVines
@@ -66,6 +86,12 @@
       map: ["ritual"]
       visible: false
       shader: unshaded
+    - state: wire
+      map: ["wire"]
+      visible: false
+    - state: anim
+      map: ["garland"]
+      visible: false
 
 - type: entity
   id: CP14StatueGobRuined
@@ -80,6 +106,12 @@
       map: ["ritual"]
       visible: false
       shader: unshaded
+    - state: wire
+      map: ["wire"]
+      visible: false
+    - state: anim
+      map: ["garland"]
+      visible: false
 
 - type: entity
   id: CP14StatueGobRuinedVines
@@ -94,3 +126,9 @@
       map: ["ritual"]
       visible: false
       shader: unshaded
+    - state: wire
+      map: ["wire"]
+      visible: false
+    - state: anim
+      map: ["garland"]
+      visible: false
