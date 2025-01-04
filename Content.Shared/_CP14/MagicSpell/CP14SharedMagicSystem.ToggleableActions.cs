@@ -43,7 +43,7 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnToggleableInstantActionDoAfterEvent(Entity<CP14MagicEffectComponent> ent, ref CP14ToggleableInstantActionDoAfterEvent args)
     {
-        EndToggleableCasting(ent, args.User, args.Cooldown);
+        EndToggleableAction(ent, args.User, args.Cooldown);
     }
 
     private void StartToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
@@ -80,7 +80,7 @@ public abstract partial class CP14SharedMagicSystem
         }
     }
 
-    private void EndToggleableCasting(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
+    private void EndToggleableAction(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
     {
         _doAfter.Cancel(action.Comp.ActiveDoAfter);
 
@@ -90,6 +90,21 @@ public abstract partial class CP14SharedMagicSystem
 
         var endEv = new CP14EndCastMagicEffectEvent(performer);
         RaiseLocalEvent(action, ref endEv);
+    }
+
+    private void UseToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+    {
+        if (!CanCastSpell(action, performer))
+            return;
+
+        if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
+        {
+            EndToggleableAction(action, performer, toggleable.Cooldown);
+        }
+        else
+        {
+            StartToggleableAction(toggleable, doAfter, action, performer);
+        }
     }
 
     /// <summary>
@@ -106,20 +121,8 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        Entity<CP14MagicEffectComponent> spell = (args.Action, magicEffect);
-
-        if (!CanCastSpell(spell, args.Performer))
-            return;
-
-        if (_doAfter.IsRunning(magicEffect.ActiveDoAfter))
-        {
-            EndToggleableCasting((args.Action, magicEffect), args.Performer, toggleable.Cooldown);
-        }
-        else
-        {
-            var doAfter = new CP14ToggleableInstantActionDoAfterEvent(args.Cooldown);
-            StartToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer);
-        }
+        var doAfter = new CP14ToggleableInstantActionDoAfterEvent(args.Cooldown);
+        UseToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer);
 
         args.Handled = true;
     }
