@@ -19,10 +19,4 @@ public sealed partial class CP14SpellStorageComponent : Component
     /// </summary>
     [DataField]
     public List<EntityUid> SpellEntities = new();
-
-    /// <summary>
-    /// allows you to use an caster's mana to create spells.
-    /// </summary>
-    [DataField]
-    public bool CanUseCasterMana = true;
 }

@@ -8,9 +8,10 @@
     state: resurrection
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.2
+  - type: CP14MagicEffectManaCost
+    manaCost: 100
   - type: CP14MagicEffect
     magicType: Necromancy
-    manaCost: 100
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

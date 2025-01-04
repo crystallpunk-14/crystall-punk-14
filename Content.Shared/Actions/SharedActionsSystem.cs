@@ -716,7 +716,7 @@ public abstract class SharedActionsSystem : EntitySystem
                 action.Enabled = false;
         }
 
-        action.Cooldown = null;
+        //action.Cooldown = null; //CP14 - disabling auto cooldown after using
         if (action is { UseDelay: not null, Charges: null or < 1 })
         {
             dirty = true;

@@ -6,10 +6,11 @@
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
     state: mana_gift
-  - type: CP14MagicEffect
-    magicType: Meta
+  - type: CP14MagicEffectManaCost
     manaCost: 12
     canModifyManacost: false
+  - type: CP14MagicEffect
+    magicType: Meta
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -39,9 +40,9 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: mana_gift
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 1
-      castDelay: 1
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 5
+      castTime: 10
 
 - type: entity
   id: CP14RuneManaGift

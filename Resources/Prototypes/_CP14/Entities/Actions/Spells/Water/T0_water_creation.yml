@@ -6,9 +6,10 @@
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
     state: water_creation
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
   - type: CP14MagicEffect
     magicType: Water
-    manaCost: 10
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
