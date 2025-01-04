@@ -7,7 +7,7 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/Blade/Axe/iron_axe.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
