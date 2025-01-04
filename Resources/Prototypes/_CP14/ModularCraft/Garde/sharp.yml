@@ -18,7 +18,6 @@
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
-    - BaseWeaponIron
 
 - type: modularPart
   id: GardeSharpGold
@@ -30,7 +29,6 @@
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
-    - BaseWeaponGold
 
 - type: modularPart
   id: GardeSharpCopper
@@ -42,7 +40,6 @@
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
-    - BaseWeaponCopper
 
 - type: modularPart
   id: GardeSharpMithril
@@ -54,4 +51,3 @@
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
-    - BaseWeaponMithril

@@ -44,7 +44,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldRapier
@@ -56,7 +56,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperRapier
@@ -68,7 +68,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilRapier
@@ -80,4 +80,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponMithril
+    - BaseBladeMithril

@@ -46,7 +46,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldSword
@@ -58,7 +58,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperSword
@@ -70,7 +70,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilSword
@@ -82,7 +82,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponMithril
+    - BaseBladeMithril
 
 - type: modularPart
   id: BladeBoneSword
@@ -93,18 +93,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-  - !type:EditMeleeWeapon
-    bonusDamage:
-      types:
-        Slash: -4
-        Piercing: -3
-        Blunt: 2
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Slash: -3
-        Piercing: -2
-  - !type:EditDamageableModifier
-    multiplier: 2.5
-  - !type:EditSharpened
-    sharpnessDamageMultiplier: 3
+    - BaseBladeBone

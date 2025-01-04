@@ -29,7 +29,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldPickaxe
@@ -41,7 +41,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperPickaxe
@@ -53,7 +53,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilPickaxe
@@ -65,4 +65,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponMithril
+    - BaseBladeMithril

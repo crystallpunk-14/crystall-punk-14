@@ -36,7 +36,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldAxe
@@ -48,7 +48,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperAxe
@@ -60,7 +60,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilAxe
@@ -72,4 +72,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponMithril
+    - BaseBladeMithril

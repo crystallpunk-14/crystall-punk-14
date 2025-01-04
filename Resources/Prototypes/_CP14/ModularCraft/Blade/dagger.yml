@@ -41,7 +41,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeDagger
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldDagger
@@ -53,7 +53,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeDagger
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperDagger
@@ -65,7 +65,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeDagger
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilDagger
@@ -77,4 +77,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeDagger
-    - BaseWeaponMithril
+    - BaseBladeMithril

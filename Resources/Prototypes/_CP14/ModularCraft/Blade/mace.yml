@@ -34,7 +34,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldMace
@@ -46,7 +46,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperMace
@@ -58,7 +58,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilMace
@@ -70,4 +70,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponMithril
+    - BaseBladeMithril

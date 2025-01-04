@@ -40,7 +40,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeShovel
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldShovel
@@ -52,7 +52,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeShovel
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperShovel
@@ -64,7 +64,7 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeShovel
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilShovel
@@ -76,4 +76,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeShovel
-    - BaseWeaponMithril
+    - BaseBladeMithril
