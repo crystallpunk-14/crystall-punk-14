@@ -62,9 +62,7 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
-        {
             _doAfter.Cancel(action.Comp.ActiveDoAfter);
-        }
         else
         {
             if (TryStartDelayedAction(delayedEffect, doAfter, action, performer))

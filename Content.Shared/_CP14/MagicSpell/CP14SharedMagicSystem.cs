@@ -103,9 +103,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     private void OnMagicEffectShutdown(Entity<CP14MagicEffectComponent> ent, ref ComponentShutdown args)
     {
         if (_doAfter.IsRunning(ent.Comp.ActiveDoAfter))
-        {
             _doAfter.Cancel(ent.Comp.ActiveDoAfter);
-        }
     }
 
     /// <summary>
@@ -135,6 +133,9 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
+        var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
+        RaiseLocalEvent(ent, ref ev);
+
         if (_net.IsServer)
         {
             foreach (var effect in ent.Comp.Effects)
@@ -142,9 +143,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
                 effect.Effect(EntityManager, args);
             }
         }
-
-        var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
-        RaiseLocalEvent(ent, ref ev);
     }
 
     protected FixedPoint2 CalculateManacost(Entity<CP14MagicEffectManaCostComponent> ent, EntityUid? caster)
@@ -172,6 +170,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         if (args.Performer is null)
             return;
 
-        _stamina.TryTakeStamina(args.Performer.Value, ent.Comp.Stamina);
+        _stamina.TakeStaminaDamage(args.Performer.Value, ent.Comp.Stamina, visual: false);
     }
 }

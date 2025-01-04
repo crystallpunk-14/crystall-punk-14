@@ -38,7 +38,8 @@ public abstract partial class CP14SharedMagicSystem
 
             if (!CanCastSpell((uid, effect), toggled.Performer.Value))
             {
-                _doAfter.Cancel(toggled.DoAfterId);
+                if (_doAfter.IsRunning(toggled.DoAfterId))
+                    _doAfter.Cancel(toggled.DoAfterId);
                 continue;
             }
 
@@ -114,13 +115,9 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
-        {
             _doAfter.Cancel(action.Comp.ActiveDoAfter);
-        }
         else
-        {
             StartToggleableAction(toggleable, doAfter, action, performer, entityTarget, worldTarget);
-        }
     }
 
     /// <summary>
