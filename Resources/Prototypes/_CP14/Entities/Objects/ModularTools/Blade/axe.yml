@@ -17,8 +17,9 @@
   name: iron axe blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Axe/iron_axe.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+    layers:
+    - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronAxe
@@ -29,8 +30,10 @@
   name: golden axe blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Axe/gold_axe.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldAxe
@@ -41,8 +44,10 @@
   name: copper axe blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Axe/copper_axe.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperAxe
@@ -53,8 +58,10 @@
   name: mithril axe blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Axe/mithril_axe.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilAxe

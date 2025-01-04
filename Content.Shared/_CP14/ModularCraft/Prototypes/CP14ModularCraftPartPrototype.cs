@@ -28,6 +28,12 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     [DataField]
     public string? RsiPath;
 
+    /// <summary>
+    /// Automatic colored all states, QoL for YML size reducing
+    /// </summary>
+    [DataField]
+    public Color? Color;
+
     [DataField]
     public List<PrototypeLayerData>? IconSprite;
 
