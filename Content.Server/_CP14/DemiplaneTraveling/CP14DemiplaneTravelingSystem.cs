@@ -1,4 +1,5 @@
 using Content.Server._CP14.Demiplane;
+using Content.Server.Interaction;
 using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Shared._CP14.Demiplane;
@@ -19,8 +20,8 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly InteractionSystem _interaction = default!;
 
     public override void Initialize()
     {
@@ -43,6 +44,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
 
             passWay.NextTimeTeleport = _timing.CurTime + passWay.Delay;
 
+            //Get all teleporting entities
             HashSet<EntityUid> teleportedEnts = new();
             var nearestEnts = _lookup.GetEntitiesInRange(uid, passWay.Radius);
             foreach (var ent in nearestEnts)
@@ -53,6 +55,9 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                 if (!_mind.TryGetMind(ent, out var mindId, out var mind))
                     continue;
 
+                if (!_interaction.InRangeUnobstructed(ent, uid))
+                    continue;
+
                 teleportedEnts.Add(ent);
             }
 
@@ -61,6 +66,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                 teleportedEnts.Remove(_random.Pick(teleportedEnts));
             }
 
+            //Aaaand teleport it
             var map = Transform(uid).MapUid;
             if (TryComp<CP14DemiplaneComponent>(map, out var demiplan))
             {
@@ -101,7 +107,6 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
     private void RadiusMapInit(Entity<CP14DemiplaneRadiusTimedPasswayComponent> radiusPassWay, ref MapInitEvent args)
     {
         radiusPassWay.Comp.NextTimeTeleport = _timing.CurTime + radiusPassWay.Comp.Delay;
-        //Popup caution here
     }
 
     private void OnOpenRiftInteractDoAfter(Entity<CP14DemiplaneRiftOpenedComponent> passWay, ref CP14DemiplanPasswayUseDoAfter args)

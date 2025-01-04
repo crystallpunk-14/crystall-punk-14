@@ -15,7 +15,7 @@ CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlack
 
 # 2024-07-18
 CP14ClothingShirtCottonBlueDark: CP14ClothingShirtCottonBlack
-CP14Shovel: CP14BaseShovel
+CP14Shovel: CP14ModularIronShovel
 CP14Hoe: CP14BaseHoe
 CP14WallStoneSilverOre: CP14WallStoneGoldOre
 
@@ -24,8 +24,8 @@ CP14PloughedGround: CP14SeedbedWooden
 CP14SeedbedDefault: CP14SeedbedWooden
 
 # 2024-08-24
-CP14DungeonEntrance: CP14DungeonEntranceAutoLink
-CP14DungeonExit: CP14DungeonExitAutoLink
+CP14DungeonEntrance: CP14LaddersDownStoneAutoLink
+CP14DungeonExit: CP14LaddersUpStoneAutoLink
 CP14Nail110: CP14Nail10
 
 # 2024-09-09
@@ -51,8 +51,8 @@ CP14WoodDoorTavernDorms2Opened: CP14WoodenDoorTavernDorms2
 CP14WoodDoorTavernDorms3Opened: CP14WoodenDoorTavernDorms3
 CP14WoodDoorTavernDorms4Opened: CP14WoodenDoorTavernDorms5
 CP14WoodDoorTavernDorms5Opened: CP14WoodenDoorTavernDorms4
-CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy
-CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy
+CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
+CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy1
 CP14WoodenDoorOpened: CP14WoodenDoor
 CP14CuttingBoard: null
 
@@ -63,14 +63,14 @@ CP14WoodenDoorTavernDorms2Locked: CP14WoodenDoorTavernDorms2
 CP14WoodenDoorTavernDorms3Locked: CP14WoodenDoorTavernDorms3
 CP14WoodenDoorTavernDorms4Locked: CP14WoodenDoorTavernDorms4
 CP14WoodenDoorTavernDorms5Locked: CP14WoodenDoorTavernDorms5
-CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy
+CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy1
 
 #2024-09-24
 CP14WallpaperPink30: CP14WallpaperPurple
 
 #2024-09-25
 CP14IronGrilleStraight: CP14FenceIronGrilleStraight
-CP14IronGrilleCorner: CP14FenceIronGrilleCorner
+CP14IronGrilleCorner: null
 CP14IronGrilleGate: CP14FenceIronGrilleGate
 CP14IronGrilleTJunction: null
 CP14FenceWoodSmallTJunction: null
@@ -159,6 +159,54 @@ CP14ClothingCloakSimpleWhite: null
 CP14ClothingCloakSimpleDarkBlue: null
 CP14ClothingCloakArmoredRed: CP14ClothingCloakGuardCommander
 CP14SpawnPointCaptain: null
+
+#2024-27-11
+CP14BaseDagger: CP14ModularIronDagger
+CP14BaseMace: CP14ModularIronMace
+CP14BaseSickle: CP14ModularIronSickle
+CP14BaseThrowableSpear: CP14ModularIronSpear
+CP14BaseSword: CP14ModularIronSword
+CP14BaseShovel: CP14ModularIronShovel
+CP14BasePickaxe: CP14ModularIronPickaxe
+
+#2024-02-12
+CP14WoodenDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorTavernAlchemyMirrored1
+CP14IronDoorBlacksmith: CP14IronDoorBlacksmith1
+CP14IronDoorMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
+CP14IronDoorWindowedBlacksmith: CP14IronDoorBlacksmith1
+CP14IronDoorWindowedMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
+CP14FenceIronGrilleCorner: null
+
+#2024-04-12
+CP14ClothingShirtGuardsChainmailShirtWB: CP14ClothingShirtGuardsChainmailShirtB
+CP14KeyRingGuardCommandant: CP14KeyRingGuardCommander
+
+#2024-08-12
+CP14BaseHandheldAxe: CP14ModularGripWoodenLong
+
+#2024-12-12
+CP14FloraTree01: CP14FloraTreeGreen
+CP14FloraTree02: CP14FloraTreeGreen
+CP14FloraTree03: CP14FloraTreeGreen
+CP14FloraTree04: CP14FloraTreeGreen
+CP14FloraTree05: CP14FloraTreeGreen
+CP14FloraTree06: CP14FloraTreeGreen
+CP14FloraTreeLarge01: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge02: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge03: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge04: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge05: CP14FloraTreeGreenLarge
+CP14FloraTreeLarge06: CP14FloraTreeGreenLarge
+
+CP14DungeonEntranceAutoLink: CP14LaddersDownStoneAutoLink
+CP14DungeonExitAutoLink: CP14LaddersUpStoneAutoLink
+
+CP14BaseBroom: null
+
+#2024-15-12
+CP14DemiplanKey: CP14DemiplaneKeyT1
+CP14SpawnerExpeditionLootCommon: CP14SpawnerDemiplaneLootT1
 
 # <---> CrystallEdge migration zone end
 
@@ -643,5 +691,62 @@ TorsoBorgJanitor: TorsoBorg
 
 # 2024-11-17
 PresentRandomAsh: PresentRandomCoal
+
 # 2024-11-19
 CrateCrewMonitoringBoards: CrateCrewMonitoring
+
+# 2024-11-25
+CrateSlimepersonLifeSupport: CrateNitrogenInternals
+
+# 2024-12-01
+DungeonMasterCircuitBoard: GameMasterCircuitBoard
+
+# 2024-12-12
+FloraRockSolid01: FloraRockSolid
+FloraRockSolid02: FloraRockSolid
+FloraRockSolid03: FloraRockSolid
+FloraStalagmite1: FloraStalagmite
+FloraStalagmite2: FloraStalagmite
+FloraStalagmite3: FloraStalagmite
+FloraStalagmite4: FloraStalagmite
+FloraStalagmite5: FloraStalagmite
+FloraStalagmite6: FloraStalagmite
+FloraGreyStalagmite1: FloraGreyStalagmite
+FloraGreyStalagmite2: FloraGreyStalagmite
+FloraGreyStalagmite3: FloraGreyStalagmite
+FloraGreyStalagmite4: FloraGreyStalagmite
+FloraGreyStalagmite5: FloraGreyStalagmite
+FloraGreyStalagmite6: FloraGreyStalagmite
+FloraTree01: FloraTree
+FloraTree02: FloraTree
+FloraTree03: FloraTree
+FloraTree04: FloraTree
+FloraTree05: FloraTree
+FloraTree06: FloraTree
+FloraTreeSnow01: FloraTreeSnow
+FloraTreeSnow02: FloraTreeSnow
+FloraTreeSnow03: FloraTreeSnow
+FloraTreeSnow04: FloraTreeSnow
+FloraTreeSnow05: FloraTreeSnow
+FloraTreeSnow06: FloraTreeSnow
+FloraTreeLarge01: FloraTreeLarge
+FloraTreeLarge02: FloraTreeLarge
+FloraTreeLarge03: FloraTreeLarge
+FloraTreeLarge04: FloraTreeLarge
+FloraTreeLarge05: FloraTreeLarge
+FloraTreeLarge06: FloraTreeLarge
+FloraTreeConifer01: FloraTreeConifer
+FloraTreeConifer02: FloraTreeConifer
+FloraTreeConifer03: FloraTreeConifer
+ShadowTree01: ShadowTree
+ShadowTree02: ShadowTree
+ShadowTree03: ShadowTree
+ShadowTree04: ShadowTree
+ShadowTree05: ShadowTree
+ShadowTree06: ShadowTree
+LightTree01: LightTree
+LightTree02: LightTree
+LightTree03: LightTree
+LightTree04: LightTree
+LightTree05: LightTree
+LightTree06: LightTree

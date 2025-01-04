@@ -11,6 +11,7 @@ cp14-loadout-general-shoes = Shoes
 cp14-loadout-general-back = Back
 cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-general-spells = Spells
+cp14-loadout-general-keys = Keys
 
 # Alchemist
 
@@ -31,6 +32,7 @@ cp14-loadout-guard-cloak  = Guard's cloak
 cp14-loadout-guard-head = Guard's head
 cp14-loadout-guard-pants = Guard's pants
 cp14-loadout-guard-shirt = Guard's shirt
+cp14-loadout-guard-spells = Guard's spells
 
 # Bank
 

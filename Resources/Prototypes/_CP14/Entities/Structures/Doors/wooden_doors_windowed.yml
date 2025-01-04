@@ -46,22 +46,3 @@
   - type: Construction
     graph: CP14WoodenDoor
     node: CP14WoodenDoorWindowedMirrored
-
-# Tavern
-
-- type: entity
-  parent: CP14WoodenDoorWindowed
-  id: CP14WoodenDoorWindowedTavernHall
-  suffix: Tavern Hall
-  components:
-  - type: CP14Lock
-    autoGenerateShape: TavernHall
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: 
-  - CP14WoodenDoorWindowedTavernHall
-  - CP14WoodenDoorWindowedMirrored
-  id: CP14WoodenDoorTavernHallMirrored
-  suffix: Tavern Hall, Mirrored

@@ -1,0 +1,370 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularGripBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    storedRotation: 45
+  - type: ExaminableDamage
+    messages: CP14WeaponMessages
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5 # 100 hits
+  - type: MeleeWeapon
+    angle: 45
+    attackRate: 1
+    wideAnimationRotation: 135
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    quickEquip: false
+    breakOnMove: false
+  - type: CP14MeleeParriable
+
+- type: entity
+  parent: CP14ModularGripBase
+  id: CP14ModularGripShort
+  abstract: true
+  description: A short handle for a weapon or tool.
+  components:
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - Blade
+  - type: Item
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, -5
+  - type: MeleeWeapon
+    resetOnHandSelected: false #Fast swap
+    range: 1.0 # 1.5 standart
+    cPAnimationOffset: -0.75 #-1 standart
+    attackRate: 1 # 1 standart
+  - type: Clothing
+    slots:
+    - belt
+
+- type: entity
+  parent: CP14ModularGripBase
+  id: CP14ModularGripLong
+  abstract: true
+  description: long, two-handed handle for heavy weapons or large tools.
+  components:
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - Blade
+  - type: Item
+    shape:
+    - 0,0,0,1
+    storedOffset: 0, -15
+  - type: MeleeWeapon
+    resetOnHandSelected: true
+    range: 1.5 # 1.5 standart
+    attackRate: 0.7 # 1 standart
+    cPAnimationOffset: -1
+  - type: Clothing
+    slots:
+    - neck
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 0
+
+# Shorts
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripWooden
+  name: wooden grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/wooden_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripWooden
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripLucens
+  name: lucens grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/lucens_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripLucens
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripIron
+  name: iron grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/iron_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 #x2 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripMithril
+  name: mithril grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/mithril_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripMithril
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120 #x2.4 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripGolden
+  name: golden grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/gold_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripGolden
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20 #~x0.3 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripCopper
+  name: copper grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/copper_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripCopper
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70 #~x0.66 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+# Long
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripWoodenLong
+  name: long wooden grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/wooden_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripWoodenLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripLucensLong
+  name: long lucens grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/lucens_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripLucensLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripIronLong
+  name: long iron grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/iron_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripIronLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100 #x2 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripMithrilLong
+  name: long mithril grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/mithril_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripMithrilLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120 #x2.4 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripIronLong
+  id: CP14ModularGripIronLongGuard
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/iron_grip_long_guard.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripIronLongGuard
+
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripGoldLong
+  name: long golden grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/gold_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripGoldLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40 #~x0.3 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripCopperLong
+  name: long copper grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/copper_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripCopperLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70 #~x0.66 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

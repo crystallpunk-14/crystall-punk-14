@@ -138,7 +138,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _CP14/Effects/dirt.rsi
+    sprite: _CP14/Effects/material_splash.rsi
     layers:
     - state: dirt1
 

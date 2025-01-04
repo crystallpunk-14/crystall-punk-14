@@ -6,9 +6,10 @@
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
     state: flash_light
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
   - type: CP14MagicEffect
     magicType: LightDarkness
-    manaCost: 10
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -33,6 +34,7 @@
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 5
       castDelay: 0.5
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneFlashLight

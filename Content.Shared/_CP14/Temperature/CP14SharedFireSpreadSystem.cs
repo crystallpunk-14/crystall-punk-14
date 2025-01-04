@@ -68,7 +68,7 @@ public abstract partial class CP14SharedFireSpreadSystem : EntitySystem
             new CP14IgnitionDoAfter(),
             args.Target,
             args.Target,
-            args.Used)
+            ent)
         {
             BreakOnDamage = true,
             BreakOnMove = true,

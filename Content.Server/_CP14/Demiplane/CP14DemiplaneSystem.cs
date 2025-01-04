@@ -44,6 +44,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         UpdateGeneration(frameTime);
         UpdateStabilization(frameTime);
     }
+
     /// <summary>
     /// Teleports the entity inside the demiplane, to one of the random entry points.
     /// </summary>

@@ -1,0 +1,23 @@
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyTavernAlchemistAbstract
+  suffix: Abstract Alchemist
+  components:
+  - type: CP14AbstractKey
+    group: Alchemist
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyAlchemy1
+  suffix: Alchemy 1
+  components:
+  - type: CP14Key
+    autoGenerateShape: Alchemy1
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyAlchemy2
+  suffix: Alchemy 2
+  components:
+  - type: CP14Key
+    autoGenerateShape: Alchemy2

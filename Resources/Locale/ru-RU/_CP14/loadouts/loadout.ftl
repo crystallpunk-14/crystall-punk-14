@@ -11,6 +11,7 @@ cp14-loadout-general-shoes = Обувь
 cp14-loadout-general-back = Спина
 cp14-loadout-general-trinkets = Безделушки
 cp14-loadout-general-spells = Заклинания
+cp14-loadout-general-keys = Ключи
 
 # Alchemist
 
@@ -32,6 +33,7 @@ cp14-loadout-guard-cloak  = Накидка стражи
 cp14-loadout-guard-head = Шляпа стражи
 cp14-loadout-guard-pants = Штаны стражи
 cp14-loadout-guard-shirt = Рубашка стражи
+cp14-loadout-guard-spells = Заклинания стражи
 
 # Bank
 

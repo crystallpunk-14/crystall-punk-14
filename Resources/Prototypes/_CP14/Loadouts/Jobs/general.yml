@@ -9,6 +9,8 @@
   - CP14ClothingCloakFurcapeBlue
   - CP14ClothingCloakMaidArpon
   - CP14ClothingCloakRitualAttireLeather
+  - CP14ClothingCloakWhite
+  - CP14ClothingCloakGreen
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -29,6 +31,16 @@
   id: CP14ClothingCloakRitualAttireLeather
   equipment:
     cloak: CP14ClothingCloakRitualAttireLeather
+
+- type: loadout
+  id: CP14ClothingCloakWhite
+  equipment:
+    cloak: CP14ClothingCloakWhite
+
+- type: loadout
+  id: CP14ClothingCloakGreen
+  equipment:
+    cloak: CP14ClothingCloakGreen
 
 # Eyes
 
@@ -280,7 +292,6 @@
   loadouts:
   - CP14MagicHealingStaff
   - CP14ManaOperationGlove
-  - CP14EnergyCrystalSmall
   - CP14CrystalLampOrangeEmpty
   - CP14BaseSharpeningStone
   - CP14Scissors
@@ -288,12 +299,13 @@
   - CP14Rope
   - CP14PenFeather
   - CP14PaperFolderBlue
-  - CP14SilverCoin5
-  - CP14BaseDagger
-  - CP14BaseSickle
-  - CP14BasePickaxe
+  - CP14SilverCoin
+  - CP14ModularIronDagger
+  - CP14ModularIronSickle
+  - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
+  - CP14DemiplaneKeyT1
 
 - type: loadout
   id: CP14MagicHealingStaff
@@ -305,12 +317,6 @@
   storage:
     back:
     - CP14ManaOperationGlove
-
-- type: loadout
-  id: CP14EnergyCrystalSmall
-  storage:
-    back:
-    - CP14EnergyCrystalSmall
 
 - type: loadout
   id: CP14CrystalLampOrangeEmpty
@@ -355,28 +361,28 @@
     - CP14PaperFolderBlue
 
 - type: loadout
-  id: CP14SilverCoin5
+  id: CP14SilverCoin
   storage:
     back:
-    - CP14SilverCoin5
+    - CP14SilverCoin
 
 - type: loadout
-  id: CP14BaseDagger
+  id: CP14ModularIronDagger
   storage:
     back:
-    - CP14BaseDagger
+    - CP14ModularIronDagger
 
 - type: loadout
-  id: CP14BaseSickle
+  id: CP14ModularIronSickle
   storage:
     back:
-    - CP14BaseSickle
+    - CP14ModularIronSickle
 
 - type: loadout
-  id: CP14BasePickaxe
+  id: CP14ModularIronPickaxe
   storage:
     back:
-    - CP14BasePickaxe
+    - CP14ModularIronPickaxe
 
 - type: loadout
   id: CP14Lighter
@@ -389,6 +395,29 @@
   storage:
     back:
     - CP14Torch
+
+- type: loadout
+  id: CP14DemiplaneKeyT1
+  storage:
+    back:
+    - CP14DemiplaneKeyT1
+
+# Keys
+
+- type: loadoutGroup
+  id: CP14GeneralKeys
+  name: cp14-loadout-general-keys
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CP14KeyPersonalHouseAbstract
+
+- type: loadout
+  id: CP14KeyPersonalHouseAbstract
+  dummyEntity: CP14KeyPersonalHouseAbstractLoadoutDummy
+  storage:
+    back:
+    - CP14KeyPersonalHouseAbstract
 
 # Spells
 
@@ -406,7 +435,6 @@
   - CP14ActionSpellManaConsume
   - CP14ActionSpellManaGift
   - CP14ActionSpellShadowGrab
-  - CP14ActionSpellIceDagger
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellBeerCreation
 
@@ -457,12 +485,6 @@
   dummyEntity: CP14ActionSpellShadowGrab
   actions:
   - CP14ActionSpellShadowGrab
-
-- type: loadout
-  id: CP14ActionSpellIceDagger
-  dummyEntity: CP14ActionSpellIceDagger
-  actions:
-  - CP14ActionSpellIceDagger
 
 - type: loadout
   id: CP14ActionSpellWaterCreation

@@ -52,10 +52,10 @@
       - id: CP14Torch
       - id: CP14Lighter
       - id: CP14ManaOperationGlove
-      - id: CP14BaseShovel
+      - id: CP14ModularIronShovel
       - id: CP14BaseMop
-      - id: CP14BaseBroom
-      - id: CP14BasePickaxe
+      - id: CP14ModularIronPickaxe
+      - id: CP14ModularIronSickle
       - !type:GroupSelector
         children:
         - id: CP14CrystalLampBlueEmpty
@@ -63,6 +63,8 @@
       - id: CP14Rope
       - id: CP14Nail10
       - id: CP14EnergyCrystalSmall
+      - id: CP14CopperCoin5
+        weight: 0.5
       - id: CP14BaseSharpeningStone
       - !type:NestedSelector
         tableId: CP14RandomVials
@@ -71,8 +73,14 @@
   id: CP14StationCrateLootFluff
   table: !type:GroupSelector
     children:
+    - id: CP14FoodPotato
+    - id: CP14AgaricMushroom #dont eat
+    - id: CP14Cloth10
+    - id: CP14CrayonWhite
     - !type:GroupSelector
       children:
+      - id: CP14ClothingCloakGreen
+      - id: CP14ClothingCloakWhite
       - id: CP14ClothingCloakFurcapeBlack
       - id: CP14ClothingCloakFurcapeBlue
       - id: CP14ClothingCloakRitualAttireLeather
@@ -81,7 +89,14 @@
       - id: CP14ClothingPantsSouthernMagician
       - id: CP14ClothingShirtMercenary
       - id: CP14ClothingShirtYellowWizard
-
+    - !type:GroupSelector
+      children:
+      - id: CP14DyeYellow
+      - id: CP14DyeGreen
+      - id: CP14DyeRed
+      - id: CP14DyePurple
+      - id: CP14DyeBlack
+      - id: CP14DyeBlue
 
 - type: entityTable
   id: CP14RandomVials

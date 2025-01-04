@@ -1,0 +1,22 @@
+- type: constructionGraph
+  id: CP14Snowdrift
+  start: start
+  graph:
+    - node: start
+      entity: CP14Snowdrift
+      edges:
+        - to: CP14Snowdrift
+          steps:
+            - tool: CP14Digging
+              doAfter: 1
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14Snowball
+              amount: 3
+            - !type:SpawnPrototype
+              prototype: CP14SnowEffect
+              amount: 1
+            - !type:PlaySound
+              sound: /Audio/_CP14/Effects/snowball.ogg
+            - !type:DeleteEntity {}
+    - node: CP14Snowdrift

@@ -97,6 +97,52 @@
     node: WallDirt
 
 - type: entity
+  id: CP14WallSnow
+  name: snow wall
+  parent: CP14BaseWall
+  description: A tall pile of snow. Can a house be built from it?
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/snow_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/snow_wall.rsi
+  - type: IconSmooth
+    base: wall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_CP14/Effects/snowball.ogg
+          params:
+            variation: 0.250
+            volume: 15
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Snowball:
+            min: 3
+            max: 5
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SnowEffect:
+            min: 2
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
   id: CP14WallStoneCopperOre
   suffix: copper ore
   parent: CP14WallStone
@@ -202,6 +248,44 @@
         acts: ["Destruction"]
   - type: IconSmooth
     base: wall
+
+- type: entity
+  id: CP14WallStoneMithrilOre
+  suffix: mithril ore
+  parent: CP14WallStone
+  description: A solid stone natural wall. You see the tantalizing particles of mithril in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_mithril.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cave_stone_mithril.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14OreMithril:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: IconSmooth
+    base: wall
+
 
 # We dont have silver now
 

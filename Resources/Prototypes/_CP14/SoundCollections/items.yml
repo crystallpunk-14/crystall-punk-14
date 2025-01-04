@@ -29,13 +29,6 @@
   - /Audio/_CP14/Items/sawing3.ogg
   - /Audio/_CP14/Items/sawing4.ogg
   - /Audio/_CP14/Items/sawing5.ogg
-  
-- type: soundCollection
-  id: CP14Broom
-  files:
-  - /Audio/_CP14/Items/broom1.ogg
-  - /Audio/_CP14/Items/broom2.ogg
-  - /Audio/_CP14/Items/broom3.ogg
 
 - type: soundCollection
   id: CP14Parry

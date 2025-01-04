@@ -1,6 +1,6 @@
 - type: entity
   parent: 
-  - BaseMobSpecies
+  - CP14BaseMobSpecies
   - MobFlammable
   id: CP14BaseMobSkeleton
   name: Mr. Skeleton
@@ -92,19 +92,19 @@
         !type:DamageTrigger
         damage: 50
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior
   - type: Vocal
     sounds:
       Male: Skeleton
       Female: Skeleton
       Unsexed: Skeleton
-  #- type: ReplacementAccent
-  #  accent: Skeleton
+  - type: SkeletonAccent
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
   - type: ContainerContainer
   - type: Inventory
     templateId: CP14Human
+  - type: TransferMindOnGib
 
 - type: entity
   parent: CP14BaseSpeciesDummy

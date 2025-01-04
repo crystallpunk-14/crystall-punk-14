@@ -1,0 +1,36 @@
+- type: entity
+  id: CP14ActionZLevelUp
+  name: Move up
+  description: Move up one Z-Level
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    icon: 
+      sprite: _CP14/Actions/zLevel.rsi
+      state: up
+    event: !type:CP14ZLevelActionUp
+
+- type: entity
+  id: CP14ActionZLevelDown
+  name: Move down
+  description: Move down one Z-Level
+  components:
+  - type: InstantAction
+    checkCanInteract: false
+    icon: 
+      sprite: _CP14/Actions/zLevel.rsi
+      state: down
+    event: !type:CP14ZLevelActionDown
+
+- type: entity
+  id: CP14ActionToggleRoofs
+  name: Toggle roofs
+  description: Show or hide roofs
+  components:
+  - type: InstantAction
+    clientExclusive: true
+    checkCanInteract: false
+    icon: 
+      sprite: _CP14/Actions/zLevel.rsi
+      state: roof
+    event: !type:CP14ToggleRoofVisibilityAction

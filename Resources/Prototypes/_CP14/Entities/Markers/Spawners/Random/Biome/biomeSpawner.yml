@@ -26,19 +26,19 @@
 - type: entity
   id: CP14BiomeSpawnerGrassland
   parent: CP14BaseBiomeSpawner
-  suffix: Grassland
+  suffix: Comoss, grassland
   components:
   - type: Sprite
     layers:
       - state: grass
       - state: frame
   - type: CP14BiomeSpawner
-    biome: CP14GrasslandTestResult
+    biome: CP14GrasslandComossResources
 
 - type: entity
   id: CP14BiomeSpawnerCave
   parent: CP14BaseBiomeSpawner
-  suffix: Cave
+  suffix: Comoss, cave
   components:
   - type: Sprite
     layers:
@@ -47,7 +47,7 @@
         state: rock0
       - state: frame
   - type: CP14BiomeSpawner
-    biome: CP14CavesGeneric
+    biome: CP14CavesComossResources
 
 - type: entity
   id: CP14BiomeSpawnerCaveEmpty
@@ -72,3 +72,15 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14GrasslandHills
+
+- type: entity
+  id: CP14BiomeSpawnerSnowland
+  parent: CP14BaseBiomeSpawner
+  suffix: Snowland
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14SnowlandTestResult

@@ -1,16 +1,31 @@
-cp14-store-buy-hint = If you want to buy {$name}, leave your money and order in the trade box: Any paper that says {$code} on it will do.
+cp14-store-buy-hint = To purchase "{$name}", leave your money and order in the trade box: Any paper that says {$code} on it will do.
+
+cp14-store-buy-alchemy-unlock-t1-name = Trade Alliance: Alchemists
+cp14-store-buy-alchemy-unlock-t1-desc = The Alchemists Guild of the Kingdom of Klanir is willing to include the settlement in their trade route in return for small gifts and payment.
 
 cp14-store-buy-alchemy-normalizer-name = Solution normalizer
-cp14-store-buy-alchemy-normalizer-desc = Are your alchemists making poor quality potions? Fix it with a modern technological device made by Dwarf! “Alchemical Normalizer” - will remove any residue from your potions!
+cp14-store-buy-alchemy-normalizer-desc = Tired of constantly cleaning potion drops from everywhere? Fix it with a state-of-the-art technological device of imperial manufacture! “Alchemical Normalizer” - will remove unpleasant excess from your potions!
 
 cp14-store-buy-alchemy-vials-name = Alchemical vials
-cp14-store-buy-alchemy-vials-desc = Now the problem of shortage of potion vessels is no longer a problem! After all, for a rather modest price you can order batches of shiny vials directly from the glassblowing factory! Random alchemical devices as a gift.
+cp14-store-buy-alchemy-vials-desc = Now the shortage of potion vessels is no longer a problem! After all, for a rather modest price, you can order batches of shiny vials directly from the best artisans! Random alchemical devices as a gift.
 
 cp14-store-buy-alchemy-bureaucracy-name = Bureaucratic reserve
-cp14-store-buy-alchemy-bureaucracy-desc = Feather pens, inkwells and a big stack of paper. In folders of different colors, or without folders at all: because we make sure that you can choose the option that is most comfortable for you.
+cp14-store-buy-alchemy-bureaucracy-desc = Pens, ink pots and a big stack of paper. In folders of different colors, or without folders at all: because we make sure that you can choose the option that is most comfortable for you.
 
 cp14-store-buy-alchemy-farm-seeds-name = Seeds for farming
 cp14-store-buy-alchemy-farm-seeds-desc = A set of different seeds, for farming of all kinds! Don't limit yourself, buy several boxes at once, just in case the farmers eat everything and don't have any food left to process into seeds.
 
-cp14-store-buy-alchemy-demiplan-name = 10 demiplane Keys
-cp14-store-buy-alchemy-demiplan-desc = Unstable pocket dimensions where doom or riches may await you? What could be better for your adventurers? Buy from us for a couple of gold pieces - resell to them for more, or bail them out.
+cp14-store-buy-alchemy-demiplan-name = 5 demiplane Keys
+cp14-store-buy-alchemy-demiplan-desc = Unstable pocket dimensions in which doom or riches may await you. What could be better for your adventurers?
+
+cp14-store-buy-wood-name = Wood stockpile
+cp14-store-buy-wood-desc = Fresh wood with delivery to your settlement! Do you live in a region where trees do not grow? Or you simply do not have the working hands to go and cut them yourself? We are ready to do it for you! Or rather, for your money.
+
+cp14-store-buy-fabric-name = Stock of textiles
+cp14-store-buy-fabric-desc =  A large supply of fabric and thread, to make exquisite outfits or other tools. Only today, only now, only for the last six months.
+
+cp14-store-buy-energy-name = Energy reserve
+cp14-store-buy-energy-desc = Energy crystals in both medium and small sizes, and in addition, mana manipulation gauntlets. A complete set to power your energy devices.
+
+cp14-store-buy-cheese-name = Cheese stockpile
+cp14-store-buy-cheese-desc = Cows don't like to sail on ships, but their cheese is quite fond of traveling! So pay its way to your table!

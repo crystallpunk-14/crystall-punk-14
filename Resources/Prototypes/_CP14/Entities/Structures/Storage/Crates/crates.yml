@@ -30,7 +30,7 @@
         acts: [ "Destruction" ]
   - type: Climbable
   - type: Sprite
-    snapCardinals: true
+    noRot: true
     drawdepth: Mobs
     layers:
       - map: [ base ]
@@ -60,8 +60,8 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.4"
+          !type:PhysShapeCircle
+          radius: 0.45
         density: 255
         mask:
         - MachineMask
@@ -77,8 +77,8 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
+          !type:PhysShapeCircle
+          radius: 0.35
         density: 135
         mask:
         - MachineMask
@@ -133,7 +133,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
+          CP14WoodenPlanks1:
             min: 1
             max: 4
       - !type:DoActsBehavior
@@ -163,7 +163,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
+          CP14WoodenPlanks1:
             min: 1
             max: 4
       - !type:DoActsBehavior

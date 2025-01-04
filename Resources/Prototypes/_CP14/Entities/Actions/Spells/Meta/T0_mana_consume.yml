@@ -8,8 +8,6 @@
     state: mana_consume
   - type: CP14MagicEffect
     magicType: Meta
-    manaCost: 0
-    canModifyManacost: false
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -34,9 +32,9 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: mana_consume
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 1
-      castDelay: 2
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 5
+      castTime: 10
       breakOnMove: true
 
 - type: entity

@@ -39,6 +39,26 @@ public sealed partial class GhostComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? BooActionEntity;
 
+    //CP14 Ghost abilities
+    [DataField]
+    public EntProtoId CP14ZLevelUpAction = "CP14ActionZLevelUp";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CP14ZLevelUpActionEntity;
+
+    [DataField]
+    public EntProtoId CP14ZLevelDownAction = "CP14ActionZLevelDown";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CP14ZLevelDownActionEntity;
+
+    [DataField]
+    public EntProtoId CP14ToggleRoofAction = "CP14ActionToggleRoofs";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CP14ToggleRoofActionEntity;
+    //CP14 Ghost entities end
+
     // End actions
 
     [ViewVariables(VVAccess.ReadWrite), DataField]

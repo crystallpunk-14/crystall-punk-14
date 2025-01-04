@@ -7,6 +7,7 @@
   children:
   - CP14_EN_Alchemy
   - CP14_EN_Demiplanes
+  - CP14_EN_Imperial_Laws
 
 - type: guideEntry
   crystallPunkAllowed: true
@@ -17,3 +18,4 @@
   children:
   - CP14_RU_Alchemy
   - CP14_RU_Demiplanes
+  - CP14_RU_Imperial_Laws

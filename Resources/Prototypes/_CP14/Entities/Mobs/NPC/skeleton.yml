@@ -19,7 +19,7 @@
 - type: entity
   id: SpawnPointGhostDemiplaneSkeleton
   name: ghost role spawn point
-  suffix: rat king
+  suffix: skeleton
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:

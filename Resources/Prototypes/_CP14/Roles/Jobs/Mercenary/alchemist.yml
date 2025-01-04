@@ -13,6 +13,10 @@
 
 - type: startingGear
   id: CP14AlchemistGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalSmall
   equipment:
     belt1: CP14WalletFilledTest
     keys: CP14KeyRingAlchemist

@@ -136,15 +136,19 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
-  - type: ComplexInteraction
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
   - type: Identity
   - type: Hands
+  - type: ComplexInteraction
   - type: Inventory
   - type: InventorySlots
-  - type: FloatingVisuals
+  #- type: FloatingVisuals
   - type: Climbing
   - type: Cuffable
   - type: Ensnareable
@@ -217,14 +221,18 @@
   - type: CP14MagicUnsafeSleep
   - type: CP14MagicAttuningMind
     autoCopyToMind: true
-  - type: CP14FootprintHolder
-    decalProto: CP14Footprints
-  - type: CP14FootprintTrailer
   - type: CP14DemiplaneStabilizer
     requireAlive: true
   - type: CanEnterCryostorage
   - type: CP14IgnitionModifier
     ignitionTimeModifier: 2.5
+  - type: CanMoveInAir # read: CanSwimInOcean lol
+  - type: MovementAlwaysTouching
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 0.8 # Slow swimming
+    weightlessFriction: 2
+    weightlessModifier: 0.6
+  - type: CP14DamageableByMap
 
 
 - type: entity

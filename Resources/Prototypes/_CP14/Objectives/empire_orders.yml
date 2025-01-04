@@ -28,7 +28,7 @@
   - type: CP14TownSendCondition
     collectGroup: CP14Dino
     minCollectionSize: 10
-    maxCollectionSize: 50
+    maxCollectionSize: 20
 
 - type: entity
   parent: CP14BaseTownSendObjective
@@ -37,7 +37,7 @@
   - type: CP14TownSendCondition
     collectGroup: CP14Mole
     minCollectionSize: 10
-    maxCollectionSize: 50
+    maxCollectionSize: 20
 
 - type: entity
   parent: CP14BaseTownSendObjective
@@ -45,8 +45,8 @@
   components:
   - type: CP14TownSendCondition
     collectGroup: CP14Boar
-    minCollectionSize: 10
-    maxCollectionSize: 50
+    minCollectionSize: 15
+    maxCollectionSize: 20
 
 - type: weightedRandom
   id: CP14TownSendObjectiveGroup

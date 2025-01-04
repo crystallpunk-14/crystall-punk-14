@@ -1,0 +1,40 @@
+#Concept:
+# + High Throwable damage
+#   Piercing animation
+# - Low Melee Damage
+- type: modularPart
+  id: BladeIronSpear
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronSpear
+  rsiPath: _CP14/Objects/ModularTools/iron_spear.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponThrowable
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:AddComponents
+    override: true
+    components:
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Piercing: 15
+    - type: ThrowingAngle
+      angle: 135
+    - type: EmbeddableProjectile
+      offset: -0.15,-0.15
+      removalTime: 1.5
+  - !type:EditMeleeWeapon
+    newWideAnimation: CP14WeaponArcThrust
+    angleMultiplier: 0
+    bonusDamage:
+      types:
+        Piercing: 7
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde

@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularIronSickle
+  parent: CP14ModularGripWooden
+  name: iron sickle
+  description: Originally developed as a weapon against grass, the sickle suddenly proved itself good at the bloodier harvest as well.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sickle/iron_sickle.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronSickle

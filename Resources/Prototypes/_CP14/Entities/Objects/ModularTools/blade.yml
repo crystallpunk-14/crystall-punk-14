@@ -1,0 +1,33 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeIronSpear
+  categories: [ ForkFiltered ]
+  name: iron spearhead
+  description: Hiltless spearhead. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/iron_spear.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSpear
+
+#- type: entity
+#  parent: BaseItem
+#  id: CP14ModularBladeIronSwordTwoHanded
+#  categories: [ ForkFiltered ]
+#  name: iron two-handed sword blade
+#  description: A two-handed sword blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+#  components:
+#  - type: Sprite
+#    sprite: _CP14/Objects/ModularTools/blade48.rsi
+#    layers:
+#    - state: iron_sword_twohanded
+#  - type: CP14ModularCraftPart
+#    possibleParts:
+#    - BladeIronSwordTwoHanded

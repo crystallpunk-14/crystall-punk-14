@@ -1,0 +1,83 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14Snowdrift
+  name: snowdrift
+  description: A big, cold pile of snow.
+  categories: [ ForkFiltered ]
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: PlacementReplacement
+    key: floorTile
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/snowdrift.rsi
+    drawdepth: BelowFloor
+  - type: Icon
+    sprite: _CP14/Structures/Flora/snowdrift.rsi
+    state: full
+  - type: IconSmooth
+    key: CP14Snowdrift
+    base: state
+  - type: FloorOccluder
+  - type: Transform
+    anchored: true
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.5
+    sprintSpeedModifier: 0.5
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSnow
+      params:
+        volume: 8
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Snowball:
+            min: 1
+            max: 3
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SnowEffect:
+            min: 1
+            max: 2
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/_CP14/Effects/snowball.ogg
+        params:
+          variation: 0.250
+          volume: 15
+  - type: Construction
+    graph: CP14Snowdrift
+    node: start

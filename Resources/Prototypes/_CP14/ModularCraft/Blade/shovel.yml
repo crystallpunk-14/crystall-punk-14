@@ -1,0 +1,76 @@
+- type: modularPart
+  id: BaseBladeShovel
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: ToolTileCompatible
+    - type: Tool
+      qualities:
+        - CP14Digging
+      useSound:
+        collection: CP14Digging
+        params:
+          variation: 0.03
+          volume: 2
+  - !type:EditMeleeWeapon
+    angleMultiplier: 1.2
+    bonusDamage:
+      types:
+        Slash: 3
+        Blunt: 3
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: 3
+        Blunt: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+
+- type: modularPart
+  id: BladeIronShovel
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeIronShovel
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/iron_shovel.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseWeaponIron
+
+- type: modularPart
+  id: BladeGoldShovel
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeGoldShovel
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/gold_shovel.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseWeaponGold
+
+- type: modularPart
+  id: BladeCopperShovel
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeCopperShovel
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/copper_shovel.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseWeaponCopper
+
+- type: modularPart
+  id: BladeMithrilShovel
+  targetSlot: Blade
+  sourcePart: CP14ModularBladeMithrilShovel
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/mithril_shovel.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseWeaponMithril

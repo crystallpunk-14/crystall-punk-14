@@ -307,3 +307,57 @@
   entities:
     CP14DyeYellow: 1
   result: CP14WallpaperYellow
+
+- type: CP14Recipe
+  id: CP14CrayonBlack
+  tag: CP14RecipeSewing
+  craftTime: 2
+  entities:
+    CP14CrayonWhite: 1
+    CP14DyeBlack: 1
+  result: CP14CrayonBlack
+
+- type: CP14Recipe
+  id: CP14CrayonRed
+  tag: CP14RecipeSewing
+  craftTime: 2
+  entities:
+    CP14CrayonWhite: 1
+    CP14DyeRed: 1
+  result: CP14CrayonRed
+
+- type: CP14Recipe
+  id: CP14CrayonYellow
+  tag: CP14RecipeSewing
+  craftTime: 2
+  entities:
+    CP14CrayonWhite: 1
+    CP14DyeYellow: 1
+  result: CP14CrayonYellow
+
+- type: CP14Recipe
+  id: CP14CrayonGreen
+  tag: CP14RecipeSewing
+  craftTime: 2
+  entities:
+    CP14CrayonWhite: 1
+    CP14DyeGreen: 1
+  result: CP14CrayonGreen
+
+- type: CP14Recipe
+  id: CP14CrayonBlue
+  tag: CP14RecipeSewing
+  craftTime: 2
+  entities:
+    CP14CrayonWhite: 1
+    CP14DyeBlue: 1
+  result: CP14CrayonBlue
+
+- type: CP14Recipe
+  id: CP14CrayonPurple
+  tag: CP14RecipeSewing
+  craftTime: 2
+  entities:
+    CP14CrayonWhite: 1
+    CP14DyePurple: 1
+  result: CP14CrayonPurple

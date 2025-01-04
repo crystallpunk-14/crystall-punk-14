@@ -12,7 +12,7 @@ As an adventurer, you can sell resources from the demiplane to artisans and othe
 There are "keys" in the game world that allow you to temporarily activate a portal to move into a procedurally generated demiplane with enemies and resources. Within the location there will be generated exits from the demiplane that you will have to find on your own.
 
 <Box>
-<GuideEntityEmbed Entity="CP14DemiplanKey"/>
+<GuideEntityEmbed Entity="CP14DemiplaneKeyT1"/>
 <GuideEntityEmbed Entity="CP14DemiplanRiftCore"/>
 </Box>.
 
@@ -31,8 +31,8 @@ When you decide to leave the demiplane after finding the portal, you must touch 
 
 <Box>
 <GuideEntityEmbed Entity="CP14BaseShield"/>
-<GuideEntityEmbed Entity="CP14BaseSword"/>
-<GuideEntityEmbed Entity="CP14BasePickaxe"/>
+<GuideEntityEmbed Entity="CP14ModularIronSword"/>
+<GuideEntityEmbed Entity="CP14ModularIronPickaxe"/>
 <GuideEntityEmbed Entity="CP14CrystalLampBlueEmpty"/>
 <GuideEntityEmbed Entity="CP14BaseSharpeningStone"/>
 </Box>

@@ -92,10 +92,18 @@ public sealed class RandomGiftSystem : EntitySystem
         var mapGridCompName = _componentFactory.GetComponentName(typeof(MapGridComponent));
         var physicsCompName = _componentFactory.GetComponentName(typeof(PhysicsComponent));
 
+        if (!_prototype.TryIndex<EntityCategoryPrototype>("ForkFiltered", out var indexedFilter))
+            return;
+
         foreach (var proto in _prototype.EnumeratePrototypes<EntityPrototype>())
         {
             if (proto.Abstract || proto.HideSpawnMenu || proto.Components.ContainsKey(mapGridCompName) || !proto.Components.ContainsKey(physicsCompName))
                 continue;
+
+            //CP14 Only cp14 items
+            if (!proto.Categories.Contains(indexedFilter))
+                continue;
+            //CP14 end
 
             _possibleGiftsUnsafe.Add(proto.ID);
 

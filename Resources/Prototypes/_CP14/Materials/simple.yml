@@ -71,6 +71,24 @@
   price: 0 #?
 
 - type: material
+  id: CP14Mithril
+  stackEntity: CP14MithrilBar1
+  name: cp14-material-mithril
+  unit: materials-unit-bar
+  icon: { sprite: _CP14/Objects/Materials/mithril_bar.rsi, state: bar_2 }
+  color: "#006c83"
+  price: 0 #?
+
+- type: material
+  id: CP14LucensWoodenPlanks
+  stackEntity: CP14LucensWoodenPlanks1
+  name: cp14-material-lucens-planks
+  unit: materials-unit-bar
+  icon: { sprite: _CP14/Objects/Materials/lucens_wood.rsi, state: planks_2 }
+  color: "#1a1e22"
+  price: 0 #?
+
+- type: material
   id: CP14FloraMaterial
   stackEntity: CP14FloraMaterial1
   name: cp14-material-flora

@@ -39,7 +39,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// <summary>
     /// Starts attack cooldown when equipped if true.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField]
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField] //CP14 AutoNetworked
     public bool ResetOnHandSelected = true;
 
     /*
