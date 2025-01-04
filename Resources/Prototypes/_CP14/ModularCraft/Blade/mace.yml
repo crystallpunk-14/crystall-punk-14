@@ -29,7 +29,7 @@
   id: BladeIronMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/iron_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -40,7 +40,8 @@
   id: BladeGoldMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/gold_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -51,7 +52,8 @@
   id: BladeCopperMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/copper_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -62,7 +64,8 @@
   id: BladeMithrilMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/mithril_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
