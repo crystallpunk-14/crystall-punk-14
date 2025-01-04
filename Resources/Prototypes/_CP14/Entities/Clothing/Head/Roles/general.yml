@@ -140,3 +140,14 @@
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat_golden.rsi
   - type: CP14MagicManacostModify
     globalModifier: 0.8
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadChristmasHat
+  name: christmas hat
+  description: A festive red hat, nobody remembers why it is customary to wear it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/christmas_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/christmas_hat.rsi
