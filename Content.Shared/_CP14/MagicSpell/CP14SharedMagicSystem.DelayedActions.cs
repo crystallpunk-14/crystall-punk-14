@@ -58,6 +58,30 @@ public abstract partial class CP14SharedMagicSystem
             _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
     }
 
+    private void UseDelayedAction(ICP14DelayedMagicEffect delayedEffect, Entity<CP14MagicEffectComponent> action, DoAfterEvent doAfter, EntityUid performer)
+    {
+        if (!CanCastSpell(action, performer))
+            return;
+
+        if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
+        {
+            EndDelayedAction(action, performer, delayedEffect.Cooldown);
+        }
+        else
+        {
+            if (TryStartDelayedAction(delayedEffect, doAfter, action, performer))
+            {
+                var evStart = new CP14StartCastMagicEffectEvent(performer);
+                RaiseLocalEvent(action, ref evStart);
+
+                var spellArgs =
+                    new CP14SpellEffectBaseArgs(performer, action.Comp.SpellStorage, performer, Transform(performer).Coordinates);
+
+                CastTelegraphy(action, spellArgs);
+            }
+        }
+    }
+
     /// <summary>
     /// Instant action used from hotkey event
     /// </summary>
@@ -72,22 +96,8 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        Entity<CP14MagicEffectComponent> spell = (args.Action, magicEffect);
-
-        if (!CanCastSpell(spell, args.Performer))
-            return;
-
         var doAfter = new CP14DelayedInstantActionDoAfterEvent(args.Cooldown);
-        if (!TryStartDelayedAction(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
-            return;
-
-        var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
-        RaiseLocalEvent(args.Action, ref evStart);
-
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Performer, Transform(args.Performer).Coordinates);
-
-        CastTelegraphy((args.Action, magicEffect), spellArgs);
+        UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer);
 
         args.Handled = true;
     }
@@ -106,27 +116,11 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        Entity<CP14MagicEffectComponent> spell = (args.Action, magicEffect);
-
-        if (!CanCastSpell(spell, args.Performer))
-            return;
-
         var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
             EntityManager.GetNetCoordinates(args.Coords),
             EntityManager.GetNetEntity(args.Entity),
             args.Cooldown);
-
-        if (!TryStartDelayedAction(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
-            return;
-
-        var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
-        RaiseLocalEvent(args.Action, ref evStart);
-
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Entity, args.Coords);
-
-        CastTelegraphy((args.Action, magicEffect), spellArgs);
-
+        UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer);
 
         args.Handled = true;
     }
@@ -145,23 +139,8 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        Entity<CP14MagicEffectComponent> spell = (args.Action, magicEffect);
-
-        if (!CanCastSpell(spell, args.Performer))
-            return;
-
         var doAfter = new CP14DelayedEntityTargetActionDoAfterEvent(EntityManager.GetNetEntity(args.Target), args.Cooldown);
-
-        if (!TryStartDelayedAction(delayedEffect, doAfter, (args.Action, magicEffect), args.Performer))
-            return;
-
-        var evStart = new CP14StartCastMagicEffectEvent( args.Performer);
-        RaiseLocalEvent(args.Action, ref evStart);
-
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Target, Transform(args.Target).Coordinates);
-
-        CastTelegraphy((args.Action, magicEffect), spellArgs);
+        UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer);
 
         args.Handled = true;
     }
