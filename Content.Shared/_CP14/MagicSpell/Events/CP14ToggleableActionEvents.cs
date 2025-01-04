@@ -70,6 +70,30 @@ public sealed partial class CP14ToggleableEntityWorldTargetActionEvent : EntityW
     public float EntityDistance { get; private set; } = 100f;
 }
 
+public sealed partial class CP14ToggleableEntityTargetActionEvent : EntityTargetActionEvent, ICP14ToggleableMagicEffect
+{
+    [DataField]
+    public float EffectFrequency { get; private set; } = 1f;
+
+    [DataField]
+    public float Cooldown { get; private set; } = 3f;
+
+    [DataField]
+    public float CastTime { get; private set; } = 10f;
+
+    [DataField]
+    public bool BreakOnMove { get; private set; } = false;
+
+    [DataField]
+    public bool BreakOnDamage { get; private set; } = true;
+
+    [DataField]
+    public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public float EntityDistance { get; private set; } = 100f;
+}
+
 [Serializable, NetSerializable]
 public sealed partial class CP14ToggleableInstantActionDoAfterEvent : DoAfterEvent
 {
@@ -97,6 +121,24 @@ public sealed partial class CP14ToggleableEntityWorldTargetActionDoAfterEvent : 
     public CP14ToggleableEntityWorldTargetActionDoAfterEvent(NetCoordinates? targetPos, NetEntity? targetEntity, float cooldown)
     {
         TargetPosition = targetPos;
+        TargetEntity = targetEntity;
+        Cooldown = cooldown;
+    }
+
+    public override DoAfterEvent Clone() => this;
+}
+
+
+[Serializable, NetSerializable]
+public sealed partial class CP14ToggleableEntityTargetActionDoAfterEvent : DoAfterEvent
+{
+    [DataField]
+    public NetEntity? TargetEntity;
+    [DataField]
+    public float? Cooldown;
+
+    public CP14ToggleableEntityTargetActionDoAfterEvent(NetEntity? targetEntity, float cooldown)
+    {
         TargetEntity = targetEntity;
         Cooldown = cooldown;
     }
