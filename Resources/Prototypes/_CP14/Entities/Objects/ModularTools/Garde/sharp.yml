@@ -18,8 +18,9 @@
   name: sharp gold garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/gold_sharp.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    layers:
+    - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSharpGold
@@ -31,8 +32,10 @@
   name: sharp iron garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/iron_sharp.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSharpIron
@@ -44,8 +47,10 @@
   name: sharp copper garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/copper_sharp.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSharpCopper
@@ -57,8 +62,10 @@
   name: sharp mithril garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/mithril_sharp.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSharpMithril
