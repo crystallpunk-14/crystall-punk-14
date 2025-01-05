@@ -56,7 +56,7 @@
     species: CP14Silva
   - type: Hunger
   - type: Icon
-    sprite: _CP14/Mobs/Species/Tiefling/parts.rsi #TODO
+    sprite: _CP14/Mobs/Species/Elf/parts.rsi #TODO
     state: full
   - type: Thirst
   - type: Butcherable
@@ -69,7 +69,7 @@
     requiredLegs: 2
   - type: Wagging
   - type: Bloodstream
-    bloodReagent: CP14BloodTiefling #TODO
+    bloodReagent: CP14BloodFlowerSap #Lol
   - type: Inventory
     templateId: CP14Human
     displacements:
