@@ -1,0 +1,29 @@
+- type: entity
+  id: CP14ActionSpellSprint
+  name: Sprint
+  description: At the cost of heavy stamina expenditure, you accelerate significantly in movement.
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: sprint
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 1.6
+  - type: CP14MagicEffectStaminaCost
+    stamina: 3
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14DustEffect
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: sprint
+    event: !type:CP14ToggleableInstantActionEvent
+      effectFrequency: 0.2
+      cooldown: 10
+      castTime: 10
+      hidden: true

@@ -437,6 +437,7 @@
   - CP14ActionSpellShadowGrab
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellBeerCreation
+  - CP14ActionSpellSprint
 
 - type: loadout
   id: CP14ActionSpellFlameCreation
@@ -508,3 +509,9 @@
       !type:RoleTimeRequirement
       role: CP14JobInnkeeper
       time: 7200 # 2 hour
+
+- type: loadout
+  id: CP14ActionSpellSprint
+  dummyEntity: CP14ActionSpellSprint
+  actions:
+  - CP14ActionSpellSprint

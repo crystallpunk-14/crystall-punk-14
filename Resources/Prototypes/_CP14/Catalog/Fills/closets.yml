@@ -119,6 +119,8 @@
     contents:
       - id: CP14Rope
       - id: CP14Rope
+      - id: Bola
+      - id: Bola
       - id: CP14ModularGuardHalberd
       - id: CP14BaseShield
       - id: CP14ModularGripIronLongGuard
@@ -142,6 +144,8 @@
     contents:
       - id: CP14Rope
       - id: CP14Rope
+      - id: Bola
+      - id: Bola
       - id: CP14ModularGuardHalberd
       - id: CP14BaseShield
       - id: CP14ModularGripIronLongGuard
