@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.MagicSpellStorage;
+namespace Content.Shared._CP14.MagicSpellStorage.Components;
 
 /// <summary>
 /// The ability to access spellcasting is limited by the attuning requirement

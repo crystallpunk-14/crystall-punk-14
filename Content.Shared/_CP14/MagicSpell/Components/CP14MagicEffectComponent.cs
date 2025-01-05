@@ -1,6 +1,7 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicSpellStorage;
+using Content.Shared._CP14.MagicSpellStorage.Components;
 using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
 
