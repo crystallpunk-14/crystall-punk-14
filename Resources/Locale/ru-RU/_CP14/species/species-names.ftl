@@ -534,3 +534,47 @@ cp14-species-name-goblin-female-first-21 = Хашак
 cp14-species-name-goblin-female-first-22 = Шедруор
 cp14-species-name-goblin-female-first-23 = Эхаас
 cp14-species-name-goblin-female-first-24 = Элуун
+
+# SILVA
+
+cp14-species-name-silva-male-first-1 = Абур
+cp14-species-name-silva-male-first-2 = Бануа
+cp14-species-name-silva-male-first-3 = Гьютай
+cp14-species-name-silva-male-first-4 = Дампунтс
+cp14-species-name-silva-male-first-5 = Джара
+cp14-species-name-silva-male-first-6 = Кватча
+cp14-species-name-silva-male-first-7 = Магни
+cp14-species-name-silva-male-first-8 = Таргай
+cp14-species-name-silva-male-first-9 = Тачу
+cp14-species-name-silva-male-first-10 = Чонай
+cp14-species-name-silva-male-first-11 = Пердран
+cp14-species-name-silva-male-first-12 = Рейвал
+cp14-species-name-silva-male-first-13 = Сандрел
+cp14-species-name-silva-male-first-14 = Тарвель
+cp14-species-name-silva-male-first-15 = Ундорис
+cp14-species-name-silva-male-first-16 = Файрен
+cp14-species-name-silva-male-first-17 = Хорвин
+cp14-species-name-silva-male-first-18 = Чалдор
+cp14-species-name-silva-male-first-19 = Элиндир
+cp14-species-name-silva-male-first-20 = Янтерис
+
+cp14-species-name-silva-female-first-1 = Квилла
+cp14-species-name-silva-female-first-2 = Кока
+cp14-species-name-silva-female-first-3 = Кьюра
+cp14-species-name-silva-female-first-4 = Оллсил
+cp14-species-name-silva-female-first-5 = Пола
+cp14-species-name-silva-female-first-6 = Рима
+cp14-species-name-silva-female-first-7 = Сайка
+cp14-species-name-silva-female-first-8 = Сисоу
+cp14-species-name-silva-female-first-9 = Чиака
+cp14-species-name-silva-female-first-10 = Чокуе
+cp14-species-name-silva-female-first-11 = Оливианна
+cp14-species-name-silva-female-first-12 = Перелина
+cp14-species-name-silva-female-first-13 = Рилланта
+cp14-species-name-silva-female-first-14 = Селанис
+cp14-species-name-silva-female-first-15 = Таления
+cp14-species-name-silva-female-first-16 = Фелиндра
+cp14-species-name-silva-female-first-17 = Халисса
+cp14-species-name-silva-female-first-18 = Челана
+cp14-species-name-silva-female-first-19 = Элирин
+cp14-species-name-silva-female-first-20 = Юнелия

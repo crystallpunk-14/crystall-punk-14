@@ -1,0 +1,128 @@
+- type: entity
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobSilva
+  name: Mr. Silva
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      shader: unshaded
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - shader: StencilClear
+      sprite: _CP14/Mobs/Species/Human/parts.rsi
+      state: l_leg
+    - shader: StencilMask
+      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+      sprite: Mobs/Customization/masking_helpers.rsi
+      state: unisex_full
+      visible: false
+    - map: [ "shirt" ]
+    - map: [ "pants" ]
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.LHand" ]
+    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt1" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: HumanoidAppearance
+    species: CP14Silva
+  - type: Hunger
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Tiefling/parts.rsi #TODO
+    state: full
+  - type: Thirst
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodMeatHuman
+        amount: 5
+  - type: Body
+    prototype: CP14Tiefling #TODO
+    requiredLegs: 2
+  - type: Wagging
+  - type: Bloodstream
+    bloodReagent: CP14BloodTiefling #TODO
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+    femaleDisplacements:
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt
+
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobSilvaDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: CP14Silva
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+    femaleDisplacements:
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt
