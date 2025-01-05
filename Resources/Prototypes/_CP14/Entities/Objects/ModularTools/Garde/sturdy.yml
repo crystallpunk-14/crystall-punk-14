@@ -1,71 +1,58 @@
 - type: entity
-  parent: BaseItem
-  id: CP14ModularGardeBase
-  categories: [ ForkFiltered ]
-  abstract: true
-  description: Garde? Garde!
-  components:
-  - type: Item
-    storedRotation: 45
-    shape:
-    - 0,0,0,0
-    storedOffset: 0, 5
-
-- type: entity
   parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpIron
+  id: CP14ModularGardeSturdyIron
   categories: [ ForkFiltered ]
-  name: sharp iron garde
+  name: sturdy iron garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
     layers:
     - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpIron
+    - GardeSturdyIron
 
 - type: entity
   parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpGold
+  id: CP14ModularGardeSturdyGold
   categories: [ ForkFiltered ]
-  name: sharp gold garde
+  name: sturdy gold garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
     layers:
     - state: icon
       color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpGold
+    - GardeSturdyGold
 
 - type: entity
   parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpCopper
+  id: CP14ModularGardeSturdyCopper
   categories: [ ForkFiltered ]
-  name: sharp copper garde
+  name: sturdy copper garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
     layers:
     - state: icon
       color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpCopper
+    - GardeSturdyCopper
 
 - type: entity
   parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpMithril
+  id: CP14ModularGardeSturdyMithril
   categories: [ ForkFiltered ]
-  name: sharp mithril garde
+  name: sturdy mithril garde
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
     layers:
     - state: icon
       color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpMithril
+    - GardeSturdyMithril

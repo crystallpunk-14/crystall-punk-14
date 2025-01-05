@@ -5,9 +5,9 @@
   id: BaseGardeSharp
   modifiers:
   - !type:EditMeleeWeapon
-    bonusDamage:
-      types:
-        Piercing: 3
+    damageMultiplier: 1.2
+  - !type:EditIncreaseDamageOnWield
+    damageMultiplier: 1.2
 
 - type: modularPart
   id: GardeSharpIron
