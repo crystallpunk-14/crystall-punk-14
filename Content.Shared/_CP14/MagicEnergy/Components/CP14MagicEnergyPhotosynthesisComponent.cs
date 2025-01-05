@@ -1,4 +1,5 @@
 using Content.Shared.FixedPoint;
+using Content.Shared.Guidebook;
 
 namespace Content.Shared._CP14.MagicEnergy.Components;
 
@@ -9,9 +10,11 @@ namespace Content.Shared._CP14.MagicEnergy.Components;
 public sealed partial class CP14MagicEnergyPhotosynthesisComponent : Component
 {
     [DataField]
+    [GuidebookData]
     public FixedPoint2 DaylightEnergy = 2f;
 
     [DataField]
+    [GuidebookData]
     public FixedPoint2 DarknessEnergy = -2f;
 
     /// <summary>
