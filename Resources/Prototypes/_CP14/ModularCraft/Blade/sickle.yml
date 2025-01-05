@@ -27,42 +27,45 @@
   id: BladeIronSickle
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronSickle
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/iron_sickle.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSickle
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldSickle
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronSickle
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/gold_sickle.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSickle
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperSickle
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperSickle
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/copper_sickle.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSickle
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilSickle
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilSickle
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/mithril_sickle.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSickle
-    - BaseWeaponMithril
+    - BaseBladeMithril

@@ -80,6 +80,9 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                 start.Comp.RevealedLayers.Add(keyCode);
                 var index = sprite.AddLayer(defaultLayer);
                 sprite.LayerMapSet(keyCode, index);
+
+                if (indexedPart.Color is not null)
+                    sprite.LayerSetColor(keyCode, indexedPart.Color.Value);
             }
             else
             {
@@ -148,6 +151,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                 {
                     RsiPath = indexedPart.RsiPath,
                     State = state,
+                    Color = indexedPart.Color,
                 };
 
                 var key = $"{defaultKey}-{counterPart}-default";
@@ -203,6 +207,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                 {
                     RsiPath = indexedPart.RsiPath,
                     State = state,
+                    Color = indexedPart.Color,
                 };
 
                 var key = $"{defaultKey}-{counterPart}-default";

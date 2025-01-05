@@ -39,42 +39,45 @@
   id: BladeIronRapier
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronRapier
-  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/iron_rapier.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldRapier
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldRapier
-  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/gold_rapier.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperRapier
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperRapier
-  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/copper_rapier.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilRapier
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilRapier
-  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/mithril_rapier.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeRapier
-    - BaseWeaponMithril
+    - BaseBladeMithril

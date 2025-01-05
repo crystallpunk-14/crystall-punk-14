@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseItem
-  id: CP14ModularGardeBase
+  id: CP14ModularBladeSpearBase
   categories: [ ForkFiltered ]
   abstract: true
-  description: Garde? Garde!
+  description: Hiltless spearhead. A blacksmith can use it as a spare part to create a weapon.
   components:
   - type: Item
     storedRotation: 45
@@ -12,60 +12,60 @@
     storedOffset: 0, 5
 
 - type: entity
-  parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpIron
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeIronSpear
   categories: [ ForkFiltered ]
-  name: sharp iron garde
+  name: iron spearhead
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
     layers:
     - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpIron
+    - BladeIronSpear
 
 - type: entity
-  parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpGold
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeGoldSpear
   categories: [ ForkFiltered ]
-  name: sharp gold garde
+  name: gold spearhead
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
     layers:
     - state: icon
       color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpGold
+    - BladeGoldSpear
 
 - type: entity
-  parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpCopper
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeCopperSpear
   categories: [ ForkFiltered ]
-  name: sharp copper garde
+  name: copper spearhead
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
     layers:
     - state: icon
       color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpCopper
+    - BladeCopperSpear
 
 - type: entity
-  parent: CP14ModularGardeBase
-  id: CP14ModularGardeSharpMithril
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeMithrilSpear
   categories: [ ForkFiltered ]
-  name: sharp mithril garde
+  name: mithril spearhead
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
     layers:
     - state: icon
       color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GardeSharpMithril
+    - BladeMithrilSpear

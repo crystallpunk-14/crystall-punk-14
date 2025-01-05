@@ -1,10 +1,10 @@
 #Concept:
-# + Fast attackRate
-#   fast swing
-# - Low damage
+# + High Throwable damage
+#   Piercing animation
+# - Low Melee Damage
 
 - type: modularPart
-  id: BaseBladeDagger
+  id: BaseBladeSpear
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -12,18 +12,23 @@
     - BaseWeaponChemical
     - BaseWeaponSharp
   - !type:AddComponents
+    override: true
     components:
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Piercing: 15
     - type: ThrowingAngle
       angle: 135
     - type: EmbeddableProjectile
       offset: -0.15,-0.15
-      removalTime: 0.5
+      removalTime: 1.5
   - !type:EditMeleeWeapon
-    attackRateMultiplier: 1.4
+    newWideAnimation: CP14WeaponArcThrust
+    angleMultiplier: 0
     bonusDamage:
       types:
-        Slash: 3
-        Piercing: 3
+        Piercing: 7
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
@@ -33,48 +38,48 @@
     - Garde
 
 - type: modularPart
-  id: BladeIronDagger
+  id: BladeIronSpear
   targetSlot: Blade
-  sourcePart: CP14ModularBladeIronDagger
-  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  sourcePart: CP14ModularBladeIronSpear
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeDagger
+    - BaseBladeSpear
     - BaseBladeIron
 
 - type: modularPart
-  id: BladeGoldDagger
+  id: BladeGoldSpear
   targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldDagger
-  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  sourcePart: CP14ModularBladeGoldSpear
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeDagger
+    - BaseBladeSpear
     - BaseBladeGold
 
 - type: modularPart
-  id: BladeCopperDagger
+  id: BladeCopperSpear
   targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperDagger
-  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  sourcePart: CP14ModularBladeCopperSpear
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeDagger
+    - BaseBladeSpear
     - BaseBladeCopper
 
 - type: modularPart
-  id: BladeMithrilDagger
+  id: BladeMithrilSpear
   targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilDagger
-  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  sourcePart: CP14ModularBladeMithrilSpear
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeDagger
+    - BaseBladeSpear
     - BaseBladeMithril

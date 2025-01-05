@@ -41,45 +41,48 @@
   id: BladeIronSword
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronSword
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/iron_sword.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldSword
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldSword
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/gold_sword.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperSword
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperSword
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/copper_sword.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilSword
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilSword
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/mithril_sword.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-    - BaseWeaponMithril
+    - BaseBladeMithril
 
 - type: modularPart
   id: BladeBoneSword
@@ -90,18 +93,4 @@
   - !type:Inherit
     copyFrom:
     - BaseBladeSword
-  - !type:EditMeleeWeapon
-    bonusDamage:
-      types:
-        Slash: -4
-        Piercing: -3
-        Blunt: 2
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Slash: -3
-        Piercing: -2
-  - !type:EditDamageableModifier
-    multiplier: 2.5
-  - !type:EditSharpened
-    sharpnessDamageMultiplier: 3
+    - BaseBladeBone

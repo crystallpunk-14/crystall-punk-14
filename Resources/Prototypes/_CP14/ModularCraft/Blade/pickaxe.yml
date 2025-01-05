@@ -24,42 +24,45 @@
   id: BladeIronPickaxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronPickaxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/iron_pickaxe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldPickaxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldPickaxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/gold_pickaxe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperPickaxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperPickaxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/copper_pickaxe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilPickaxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilPickaxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/mithril_pickaxe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladePickaxe
-    - BaseWeaponMithril
+    - BaseBladeMithril

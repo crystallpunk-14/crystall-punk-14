@@ -3,7 +3,7 @@
   name: cp14-tool-quality-digging-name
   toolName: cp14-tool-quality-digging-tool-name
   spawn: CP14ModularIronShovel
-  icon: { sprite: _CP14/Objects/ModularTools/Blade/Shovel/iron_shovel.rsi, state: tool}
+  icon: { sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi, state: tool}
 
 - type:  tool
   id: CP14Hammering

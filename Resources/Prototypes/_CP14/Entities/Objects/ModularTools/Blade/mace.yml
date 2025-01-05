@@ -17,8 +17,9 @@
   name: iron mace ball
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Mace/iron_mace.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+    layers:
+    - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronMace
@@ -29,8 +30,10 @@
   name: golden mace ball
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Mace/gold_mace.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldMace
@@ -41,8 +44,10 @@
   name: copper mace ball
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Mace/copper_mace.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperMace
@@ -53,8 +58,10 @@
   name: mithril mace ball
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Mace/mithril_mace.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilMace
