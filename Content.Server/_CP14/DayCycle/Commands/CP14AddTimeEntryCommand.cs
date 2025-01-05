@@ -1,6 +1,7 @@
 using Content.Server.Administration;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.DayCycle.Components;
+using Content.Shared._CP14.DayCycle.Prototypes;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;

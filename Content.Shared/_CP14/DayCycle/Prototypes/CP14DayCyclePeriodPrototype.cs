@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.DayCycle;
+namespace Content.Shared._CP14.DayCycle.Prototypes;
 
 [Prototype("CP14DayCyclePeriod")]
 public sealed class CP14DayCyclePeriodPrototype : IPrototype
