@@ -19,7 +19,7 @@
     Hair: CP14MobSilvaAnyMarking
     FacialHair: CP14MobSilvaAnyMarking
     Snout: CP14MobSilvaMarkingMatchSkin
-    Tail: CP14MobSilvaMarkingMatchSkin
+    Tail: CP14MobSilvaAnyMarking
     Chest: CP14MobSilvaTorso
     Eyes: CP14MobSilvaEyes
     LArm: CP14MobSilvaLArm
@@ -39,6 +39,12 @@
       required: false
     FacialHair:
       points: 1
+      required: false
+    HeadTop:
+      points: 2
+      required: false
+    Tail:
+      points: 2
       required: false
     Snout:
       points: 1

@@ -1,0 +1,83 @@
+- type: marking
+  id: CP14SilvaBodyBark1
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_body_bark.rsi
+    state: bark1
+
+- type: marking
+  id: CP14SilvaBodyBark2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_body_bark.rsi
+    state: bark2
+
+- type: marking
+  id: CP14SilvaBodyBark3
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_body_bark.rsi
+    state: bark3
+
+- type: marking
+  id: CP14SilvaBodyBark4
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d977c2" #Pink flowers!
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_body_bark.rsi
+    state: bark4
+
+- type: marking
+  id: CP14SilvaBodyBark5
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_body_bark.rsi
+    state: bark5
+
+- type: marking
+  id: CP14SilvaBodyBark6
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d977c2" #Pink flowers!
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_body_bark.rsi
+    state: bark6
