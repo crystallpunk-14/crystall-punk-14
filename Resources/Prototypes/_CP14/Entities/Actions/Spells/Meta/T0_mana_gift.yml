@@ -43,6 +43,7 @@
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 5
       castTime: 10
+      breakOnMove: true
 
 - type: entity
   id: CP14RuneManaGift

@@ -208,6 +208,10 @@ CP14BaseBroom: null
 CP14DemiplanKey: CP14DemiplaneKeyT1
 CP14SpawnerExpeditionLootCommon: CP14SpawnerDemiplaneLootT1
 
+#2024-06-01
+CP14AuraNodeBase: null
+CP14AuraScanner: null
+
 # <---> CrystallEdge migration zone end
 
 

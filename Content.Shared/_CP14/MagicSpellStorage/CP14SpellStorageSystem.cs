@@ -58,6 +58,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
             mStorage.Comp.SpellEntities.Add(spellEnt.Value);
         }
+        _actions.GrantActions(mStorage, mStorage.Comp.SpellEntities, mStorage);
     }
 
     private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)
