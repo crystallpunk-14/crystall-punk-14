@@ -17,7 +17,7 @@
   name: iron sickle blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sickle/iron_sickle.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
     layers:
     - state: icon
   - type: CP14ModularCraftPart
@@ -30,7 +30,7 @@
   name: copper sickle blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sickle/copper_sickle.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
     layers:
     - state: icon
       color: "#ffaf47"
@@ -44,7 +44,7 @@
   name: golden sickle blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sickle/gold_sickle.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
     layers:
     - state: icon
       color: "#bd712f"
@@ -58,7 +58,7 @@
   name: mithril sickle blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sickle/mithril_sickle.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
     layers:
     - state: icon
       color: "#45d2a4"

@@ -122,6 +122,30 @@
   result: CP14ModularBladeIronSpear
 
 - type: CP14Recipe
+  id: CP14ModularBladeCopperSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14CopperBar: 1
+  result: CP14ModularBladeCopperSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14GoldBar: 1
+  result: CP14ModularBladeGoldSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  stacks:
+    CP14MithrilBar: 1
+  result: CP14ModularBladeMithrilSpear
+
+- type: CP14Recipe
   id: CP14ModularBladeIronMace
   tag: CP14RecipeAnvil
   craftTime: 2
