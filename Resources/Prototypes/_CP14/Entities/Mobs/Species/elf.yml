@@ -69,11 +69,11 @@
       shirt:
         sizeMaps:
           32:
-            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: male_shirt
     femaleDisplacements:
       shirt:
         sizeMaps:
           32:
-            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: female_shirt
