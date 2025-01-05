@@ -532,3 +532,47 @@ cp14-species-name-goblin-female-first-21 = Hashak
 cp14-species-name-goblin-female-first-22 = Shadruor
 cp14-species-name-goblin-female-first-23 = Ehaas
 cp14-species-name-goblin-female-first-24 = Eluun
+
+# SILVA
+
+cp14-species-name-silva-male-first-1 = Abur  
+cp14-species-name-silva-male-first-2 = Banua  
+cp14-species-name-silva-male-first-3 = Gyutai  
+cp14-species-name-silva-male-first-4 = Dampunts  
+cp14-species-name-silva-male-first-5 = Jara  
+cp14-species-name-silva-male-first-6 = Kvatcha  
+cp14-species-name-silva-male-first-7 = Magni  
+cp14-species-name-silva-male-first-8 = Targai  
+cp14-species-name-silva-male-first-9 = Tachu  
+cp14-species-name-silva-male-first-10 = Chonai  
+cp14-species-name-silva-male-first-11 = Perdran  
+cp14-species-name-silva-male-first-12 = Reival  
+cp14-species-name-silva-male-first-13 = Sandrel  
+cp14-species-name-silva-male-first-14 = Tarvel  
+cp14-species-name-silva-male-first-15 = Undoris  
+cp14-species-name-silva-male-first-16 = Firen  
+cp14-species-name-silva-male-first-17 = Horwin  
+cp14-species-name-silva-male-first-18 = Chaldor  
+cp14-species-name-silva-male-first-19 = Elindir  
+cp14-species-name-silva-male-first-20 = Yantheris  
+
+cp14-species-name-silva-female-first-1 = Quilla  
+cp14-species-name-silva-female-first-2 = Koka  
+cp14-species-name-silva-female-first-3 = Kyura  
+cp14-species-name-silva-female-first-4 = Ollsil  
+cp14-species-name-silva-female-first-5 = Pola  
+cp14-species-name-silva-female-first-6 = Rima  
+cp14-species-name-silva-female-first-7 = Saika  
+cp14-species-name-silva-female-first-8 = Sisou  
+cp14-species-name-silva-female-first-9 = Chiaka  
+cp14-species-name-silva-female-first-10 = Chokue  
+cp14-species-name-silva-female-first-11 = Oliviana  
+cp14-species-name-silva-female-first-12 = Perelina  
+cp14-species-name-silva-female-first-13 = Rillanta  
+cp14-species-name-silva-female-first-14 = Selanis  
+cp14-species-name-silva-female-first-15 = Talenia  
+cp14-species-name-silva-female-first-16 = Felindra  
+cp14-species-name-silva-female-first-17 = Halissa  
+cp14-species-name-silva-female-first-18 = Chelana  
+cp14-species-name-silva-female-first-19 = Elirin  
+cp14-species-name-silva-female-first-20 = Yunelia  
