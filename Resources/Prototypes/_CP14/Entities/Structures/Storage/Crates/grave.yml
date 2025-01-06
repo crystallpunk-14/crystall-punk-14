@@ -3,7 +3,7 @@
   id: CP14CrateDirtPitGrave
   categories: [ ForkFiltered ]
   name: dirt pit
-  description: There's something buried here... or someone...
+  description: "There's something buried here... or someone..."
   components:
   - type: Sprite
     noRot: false
