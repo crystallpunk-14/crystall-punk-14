@@ -74,7 +74,6 @@
   - type: Body
     prototype: CP14Silva
     requiredLegs: 2
-  - type: Wagging
   - type: Bloodstream
     bloodReagent: CP14BloodFlowerSap #Lol
   - type: Inventory
