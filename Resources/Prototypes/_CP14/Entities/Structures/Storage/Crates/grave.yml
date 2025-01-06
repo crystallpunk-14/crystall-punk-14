@@ -55,3 +55,50 @@
   - type: Construction
     graph: CP14CrateDirtPitGrave
     node: CP14CrateDirtPitGrave
+
+- type: entity
+  parent: CP14CrateDirtPitGrave
+  id: CP14CrateDirtPitGraveFilled
+  suffix: Random filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: CP14TombstoneTable
+        rolls: !type:ConstantNumberSelector
+          value: 4
+
+- type: entityTable
+  id: CP14TombstoneTable
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector # Body parts
+      children:
+      - id: CP14TorsoZombie
+      - id: CP14LeftArmZombie
+      - id: CP14LeftFootZombie
+      - id: CP14LeftHandZombie
+      - id: CP14LeftLegZombie
+      - id: CP14RightArmZombie
+      - id: CP14RightFootZombie
+      - id: CP14RightHandZombie
+      - id: CP14RightLegZombie
+      - id: CP14HeadZombie
+        weight: 2
+      - id: CP14TorsoSkeleton
+      - id: CP14LeftArmSkeleton
+      - id: CP14LeftFootSkeleton
+      - id: CP14LeftHandSkeleton
+      - id: CP14LeftLegSkeleton
+      - id: CP14RightArmSkeleton
+      - id: CP14RightFootSkeleton
+      - id: CP14RightHandSkeleton
+      - id: CP14RightLegSkeleton
+      - id: CP14HeadSkeleton
+        weight: 2
+    - !type:GroupSelector # Rarities
+      weight: 0.2
+      children:
+      - id: CP14ModularSkeletonHalberd
+      - !type:NestedSelector
+        tableId: CP14StationCrateLoot
