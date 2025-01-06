@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellTieflingInnerFire
   name: Inner fire
-  description: You unleash your inner fire, setting yourself on fire, restoring your stamina and temporarily speeding up your movement.
+  description: You unleash your inner fire, setting yourself on fire and temporarily speeding up your movement.
   components:
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
@@ -36,7 +36,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: tiefling_revenge
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 60
+      cooldown: 10
       breakOnMove: false
 
 - type: entity
