@@ -38,6 +38,21 @@
       breakOnMove: true
 
 - type: entity
+  id: CP14ActionSpellManaConsumeElf
+  parent: CP14ActionSpellManaConsume
+  name: Carefull mana consume
+  description: You absorb a small amount of mana from the target neatly and without loss.
+  components:
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaConsume
+    - !type:CP14SpellConsumeManaEffect
+      mana: 10
+      lossMultiplier: 1
+
+- type: entity
   id: CP14RuneManaConsume
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]

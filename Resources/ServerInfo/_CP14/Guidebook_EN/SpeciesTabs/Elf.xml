@@ -1,0 +1,22 @@
+<Document>
+# Elves
+
+<Box>
+<GuideEntityEmbed Entity="CP14MobElf" Caption="Elf"/>
+</Box>
+
+There will be a lore description
+
+## Ancient Magic
+
+Elves have a magic reserve 5 times higher than normal, but their natural regeneration of magical energy is nearly nullified. 
+
+## Careful Mana Manipulation
+
+Elves cannot take the Mana Consume spell, but they have an improved version of it that absorbs energy without the standard 20% loss.
+
+<Box>
+<GuideEntityEmbed Entity="CP14ActionSpellManaConsumeElf"/>
+</Box>
+
+</Document>
