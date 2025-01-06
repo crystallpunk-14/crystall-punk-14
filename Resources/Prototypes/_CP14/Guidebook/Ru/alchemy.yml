@@ -35,3 +35,19 @@
   name: Имперские законы
   text: "/ServerInfo/_CP14/Guidebook_RU/ImperialLaws.xml"
   filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Species
+  name: Играбельные расы
+  text: "/ServerInfo/_CP14/Guidebook_RU/Species.xml"
+  children:
+  - CP14_RU_Silva
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Silva
+  name: Сильва
+  text: "/ServerInfo/_CP14/Guidebook_RU/SpeciesTabs/Silva.xml"
+  filterEnabled: True

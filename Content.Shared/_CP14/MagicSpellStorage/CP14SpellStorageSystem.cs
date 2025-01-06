@@ -42,22 +42,24 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     /// <summary>
     /// When we initialize, we create action entities, and add them to this item.
     /// </summary>
-    private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> mStorage, ref MapInitEvent args)
+    private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> storage, ref MapInitEvent args)
     {
         if (_net.IsClient)
             return;
 
-        foreach (var spell in mStorage.Comp.Spells)
+        foreach (var spell in storage.Comp.Spells)
         {
-            var spellEnt = _actionContainer.AddAction(mStorage, spell);
+            var spellEnt = _actionContainer.AddAction(storage, spell);
             if (spellEnt is null)
                 continue;
 
             var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
-            provided.SpellStorage = mStorage;
+            provided.SpellStorage = storage;
 
-            mStorage.Comp.SpellEntities.Add(spellEnt.Value);
+            storage.Comp.SpellEntities.Add(spellEnt.Value);
         }
+        if (storage.Comp.GrantAccessToSelf)
+            _actions.GrantActions(storage, storage.Comp.SpellEntities, storage);
     }
 
     private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)

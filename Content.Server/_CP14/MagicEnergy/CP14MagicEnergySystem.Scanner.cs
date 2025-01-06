@@ -17,8 +17,6 @@ public partial class CP14MagicEnergySystem
         SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, CP14MagicEnergyScanEvent>(OnMagicScanAttempt);
         SubscribeLocalEvent<CP14MagicEnergyScannerComponent, InventoryRelayedEvent<CP14MagicEnergyScanEvent>>((e, c, ev) => OnMagicScanAttempt(e, c, ev.Args));
-
-        SubscribeLocalEvent<CP14AuraScannerComponent, UseInHandEvent>(OnAuraScannerUseInHand);
     }
 
     private void OnMagicScanAttempt(EntityUid uid, CP14MagicEnergyScannerComponent component, CP14MagicEnergyScanEvent args)
@@ -41,23 +39,5 @@ public partial class CP14MagicEnergySystem
         //    return;
 
         args.PushMarkup(GetEnergyExaminedText(ent, magicContainer));
-    }
-
-    private void OnAuraScannerUseInHand(Entity<CP14AuraScannerComponent> scanner, ref UseInHandEvent args)
-    {
-        FixedPoint2 sumDraw = 0f;
-        var query = EntityQueryEnumerator<CP14AuraNodeComponent, TransformComponent>();
-        while (query.MoveNext(out var auraUid, out var node, out var xform))
-        {
-            if (xform.MapUid != Transform(scanner).MapUid)
-                continue;
-
-            var distance = Vector2.Distance(_transform.GetWorldPosition(auraUid), _transform.GetWorldPosition(scanner));
-            if (distance > node.Range)
-                continue;
-
-            sumDraw += node.Energy * (1 - distance / node.Range);
-        }
-        _popup.PopupCoordinates(Loc.GetString("cp14-magic-scanner", ("power", sumDraw)), Transform(scanner).Coordinates, args.User);
     }
 }

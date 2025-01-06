@@ -438,6 +438,7 @@
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
+  - CP14ActionSpellPlantGrowth
 
 - type: loadout
   id: CP14ActionSpellFlameCreation
@@ -515,3 +516,16 @@
   dummyEntity: CP14ActionSpellSprint
   actions:
   - CP14ActionSpellSprint
+
+- type: loadout
+  id: CP14ActionSpellPlantGrowth
+  dummyEntity: CP14ActionSpellPlantGrowth
+  actions:
+  - CP14ActionSpellPlantGrowth
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Silva
+      inverted: true # Silvas cannot take this spell, thwy have buffed version by default
