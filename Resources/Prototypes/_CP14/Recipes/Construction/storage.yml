@@ -1,15 +1,15 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Seedbed
-  description: A wooden tub with a pile of earth adapted for growing plants. Can only be built on dirt tiles.
-  id: CP14SeedbedWooden
-  graph: CP14Seedbed
+  name: Dirt pit
+  description: you're wasting dirt to create a hole. Makes sense, doesn't it? Can only be built on dirt tiles.
+  id: CP14CrateDirtPitGrave
+  graph: CP14CrateDirtPitGrave
   startNode: start
-  targetNode: CP14SeedbedWooden
+  targetNode: CP14CrateDirtPitGrave
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
-    state: seedbed_default
+    sprite: _CP14/Structures/Storage/dirt_pit.rsi
+    state: open
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
