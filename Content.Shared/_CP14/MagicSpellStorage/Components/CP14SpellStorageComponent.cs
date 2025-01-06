@@ -9,6 +9,12 @@ namespace Content.Shared._CP14.MagicSpellStorage.Components;
 public sealed partial class CP14SpellStorageComponent : Component
 {
     /// <summary>
+    /// Set true when giving starting abilities to creatures in this way
+    /// </summary>
+    [DataField]
+    public bool GrantAccessToSelf = false;
+
+    /// <summary>
     /// list of spell prototypes used for initialization.
     /// </summary>
     [DataField]
