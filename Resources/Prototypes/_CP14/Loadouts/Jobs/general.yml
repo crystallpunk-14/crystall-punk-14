@@ -475,7 +475,7 @@
       !type:SpeciesRequirement
       species:
       - CP14Silva
-      inverted: true # Silvas cannot take this spell, thwy have buffed version by default
+      inverted: true # Silvas cannot take this spell, they have buffed version by default
 
 - type: loadout
   id: CP14ActionSpellSphereOfLight
@@ -494,7 +494,7 @@
       !type:SpeciesRequirement
       species:
       - CP14Elf
-      inverted: true # Elves cannot take this spell, thwy have buffed version by default
+      inverted: true # Elves cannot take this spell, they have buffed version by default
 
 - type: loadout
   id: CP14ActionSpellManaGift
@@ -536,3 +536,10 @@
   dummyEntity: CP14ActionSpellSprint
   actions:
   - CP14ActionSpellSprint
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Goblin
+      inverted: true # Goblins cannot take this spell, they have buffed version by default
