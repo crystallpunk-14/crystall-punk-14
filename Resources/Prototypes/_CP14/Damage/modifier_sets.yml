@@ -45,3 +45,11 @@
     Heat: 1.3
     Cold: 0.8
     Poison: 0.2
+
+# Species
+
+- type: damageModifierSet
+  id: CP14Tiefling
+  coefficients:
+    Heat: 0.5
+    Cold: 1.5

@@ -14,8 +14,9 @@ public sealed partial class CP14MagicUnsafeDamageComponent : Component
     {
         DamageDict = new Dictionary<string, FixedPoint2>
         {
-            {"Blunt", 0.5},
-            {"Heat", 0.5},
+            {"Blunt", 0.3},
+            {"Poison", 0.4},
+            {"Heat", 0.3},
         },
     };
 }
