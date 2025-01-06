@@ -1,0 +1,23 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Species
+  name: Playable species
+  text: "/ServerInfo/_CP14/Guidebook_EN/Species.xml"
+  children:
+  - CP14_EN_Elf
+  - CP14_EN_Silva
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Silva
+  name: Silva
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Silva.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Elf
+  name: Elf
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Elf.xml"
+  filterEnabled: True

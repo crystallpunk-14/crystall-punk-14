@@ -431,6 +431,7 @@
   - CP14ActionSpellCureWounds
   - CP14ActionSpellCureBurn
   - CP14ActionSpellBloodPurification
+  - CP14ActionSpellPlantGrowth
   - CP14ActionSpellSphereOfLight
   - CP14ActionSpellManaConsume
   - CP14ActionSpellManaGift
@@ -438,7 +439,6 @@
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
-  - CP14ActionSpellPlantGrowth
 
 - type: loadout
   id: CP14ActionSpellFlameCreation
@@ -465,6 +465,19 @@
   - CP14ActionSpellBloodPurification
 
 - type: loadout
+  id: CP14ActionSpellPlantGrowth
+  dummyEntity: CP14ActionSpellPlantGrowth
+  actions:
+  - CP14ActionSpellPlantGrowth
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Silva
+      inverted: true # Silvas cannot take this spell, thwy have buffed version by default
+
+- type: loadout
   id: CP14ActionSpellSphereOfLight
   dummyEntity: CP14ActionSpellSphereOfLight
   actions:
@@ -475,6 +488,13 @@
   dummyEntity: CP14ActionSpellManaConsume
   actions:
   - CP14ActionSpellManaConsume
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Elf
+      inverted: true # Elves cannot take this spell, thwy have buffed version by default
 
 - type: loadout
   id: CP14ActionSpellManaGift
@@ -516,16 +536,3 @@
   dummyEntity: CP14ActionSpellSprint
   actions:
   - CP14ActionSpellSprint
-
-- type: loadout
-  id: CP14ActionSpellPlantGrowth
-  dummyEntity: CP14ActionSpellPlantGrowth
-  actions:
-  - CP14ActionSpellPlantGrowth
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:SpeciesRequirement
-      species:
-      - CP14Silva
-      inverted: true # Silvas cannot take this spell, thwy have buffed version by default
