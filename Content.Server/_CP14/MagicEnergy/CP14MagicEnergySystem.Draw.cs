@@ -17,7 +17,7 @@ public partial class CP14MagicEnergySystem
 
     private void OnDamageChanged(Entity<CP14MagicEnergyFromDamageComponent> ent, ref DamageChangedEvent args)
     {
-        if (args.DamageDelta is null)
+        if (args.DamageDelta is null || !args.DamageIncreased)
             return;
 
         foreach (var dict in args.DamageDelta.DamageDict)

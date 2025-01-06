@@ -197,7 +197,7 @@
   abstract: true
   components:
   - type: Flammable
-    fireSpread: true
+    fireSpread: false #CP14 false
     canResistFire: true
     damage: #per second, scales with number of fire 'stacks'
       types:

@@ -1,15 +1,24 @@
 <Document>
-# Тифлинги
+# Tieflings
 
 <Box>
-<GuideEntityEmbed Entity="CP14MobTiefling" Caption="Тифлинг"/>
+<GuideEntityEmbed Entity="CP14MobTiefling" Caption="Tiefling"/>
 </Box>
 
-Тифлинги - тут будет лорное описание.
+The Tieflings are a race of humanoid demonoids that left the Fire Archipelago long ago. They are heavily populated throughout Sylate and have integrated themselves into the culture of all lands.
 
-# Демоническое происхождение
+# Link with Fire
 
-Тифлинги получают в 2 раза меньше урона от огня, но в 2 раза больше урона от холода.
+- Tieflings take 2x less damage from fire, but 2x more damage from cold.
+- Basic mana regeneration is slightly impaired, but taking fire damage greatly speeds up mana regeneration, while frostbite on the contrary causes mana drain.
+- Tieflings can slowly regenerate damage from fire burns, up to a certain limit.
 
-ПЕРЕВЕДИ НА АНГЛ
+# Inner Flame
+
+Tieflings have a special innate ability called Inner Flame. This ability sets the caster on fire, regenerates stamina, and temporarily speeds him up. 
+
+<Box>
+<GuideEntityEmbed Entity="CP14ActionSpellTieflingInnerFire"/>
+</Box>
+
 </Document>

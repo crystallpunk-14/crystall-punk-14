@@ -33,10 +33,17 @@
     damage:
       types:
         Heat: -0.14 # Around 8 damage a minute healed
+  - type: CP14MagicEnergyDraw
+    energy: 0.75
+    delay: 3 # 5m to full restore
   - type: CP14MagicEnergyFromDamage
     damage:
-      Heat: 4 #Magic regen from fire
-      Cold: -2
+      Heat: 1 #Magic regen from fire
+      Cold: -1
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellTieflingInnerFire
   - type: Inventory
     templateId: CP14Human
     femaleDisplacements:

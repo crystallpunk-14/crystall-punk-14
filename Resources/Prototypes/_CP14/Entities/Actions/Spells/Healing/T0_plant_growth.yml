@@ -63,7 +63,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: plant_growth
     event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 15
+      cooldown: 2
       castTime: 10
       breakOnMove: true
 
