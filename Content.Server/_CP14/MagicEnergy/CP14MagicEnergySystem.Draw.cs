@@ -1,6 +1,7 @@
 using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared.Damage;
 
 namespace Content.Server._CP14.MagicEnergy;
 
@@ -11,6 +12,24 @@ public partial class CP14MagicEnergySystem
     private void InitializeDraw()
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnDrawMapInit);
+        SubscribeLocalEvent<CP14MagicEnergyFromDamageComponent, DamageChangedEvent>(OnDamageChanged);
+    }
+
+    private void OnDamageChanged(Entity<CP14MagicEnergyFromDamageComponent> ent, ref DamageChangedEvent args)
+    {
+        if (args.DamageDelta is null || !args.DamageIncreased)
+            return;
+
+        foreach (var dict in args.DamageDelta.DamageDict)
+        {
+            if (dict.Value <= 0)
+                continue;
+
+            if (!ent.Comp.Damage.TryGetValue(dict.Key, out var modifier))
+                continue;
+
+            ChangeEnergy(ent, modifier * dict.Value, true);
+        }
     }
 
     private void OnDrawMapInit(Entity<CP14MagicEnergyDrawComponent> ent, ref MapInitEvent args)

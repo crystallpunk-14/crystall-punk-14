@@ -1,10 +1,6 @@
-using System.Numerics;
-using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 
 namespace Content.Server._CP14.MagicEnergy;

@@ -4,8 +4,17 @@
   name: Playable species
   text: "/ServerInfo/_CP14/Guidebook_EN/Species.xml"
   children:
-  - CP14_EN_Elf
+  - CP14_EN_Human
   - CP14_EN_Silva
+  - CP14_EN_Elf
+  - CP14_EN_Tiefling
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Human
+  name: Human
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Human.xml"
   filterEnabled: True
 
 - type: guideEntry
@@ -20,4 +29,11 @@
   id: CP14_EN_Elf
   name: Elf
   text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Elf.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Tiefling
+  name: Tiefling
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Tiefling.xml"
   filterEnabled: True
