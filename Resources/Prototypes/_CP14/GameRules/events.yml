@@ -1,0 +1,16 @@
+- type: entityTable
+  id: CP14BasicCalmEventsTable
+  table: !type:AllSelector
+    children:
+    - id: CP14ClosetSkeleton
+
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14ClosetSkeleton
+  components:
+  - type: StationEvent
+    weight: 5
+    duration: 1
+    minimumPlayers: 10
+  - type: RandomEntityStorageSpawnRule
+    prototype: CP14MobUndeadSkeletonCloset
