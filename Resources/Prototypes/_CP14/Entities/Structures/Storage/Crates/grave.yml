@@ -10,11 +10,9 @@
     snapCardinals: true
     sprite: _CP14/Structures/Storage/dirt_pit.rsi
     layers:
-    - state: closed
+    - state: base
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
-  - type: Icon
-    sprite: _CP14/Structures/Storage/dirt_pit.rsi
   - type: Destructible
     thresholds:
     - trigger:
