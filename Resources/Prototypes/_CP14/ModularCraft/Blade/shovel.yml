@@ -3,6 +3,7 @@
   modifiers:
   - !type:AddComponents
     components:
+    - type: Shovel
     - type: ToolTileCompatible
     - type: Tool
       qualities:
