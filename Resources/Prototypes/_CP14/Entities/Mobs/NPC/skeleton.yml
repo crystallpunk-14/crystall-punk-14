@@ -17,6 +17,22 @@
     - Warcraft
 
 - type: entity
+  id: CP14MobUndeadSkeletonCloset
+  parent: CP14MobUndeadSkeleton
+  components:
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
+    allowMovement: true
+    description: cp14-ghost-role-information-description-skeleton
+    rules: cp14-ghost-role-information-rules-free
+    raffle:
+      settings: default
+  - type: Loadout
+    prototypes: 
+    - CP14MobSkeletonCloset
+
+- type: entity
   id: SpawnPointGhostDemiplaneSkeleton
   name: ghost role spawn point
   suffix: skeleton
