@@ -71,6 +71,7 @@
   - type: PointLight
     energy: 5
     radius: 8
+  - type: VentCritterSpawnLocation # Uggh, need something better
 
 - type: entity
   parent: CP14BaseLamppost
