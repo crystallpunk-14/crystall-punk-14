@@ -10,6 +10,7 @@
     Reward: 0.4
   requiredTags:
   - CP14DemiplaneOres
+  - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -49,6 +50,7 @@
     Reward: 0.3
   requiredTags:
   - CP14DemiplaneOres
+  - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -90,6 +92,7 @@
     Reward: 0.5
   requiredTags:
   - CP14DemiplaneOres
+  - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -129,6 +132,7 @@
     Reward: 0.5
   requiredTags:
   - CP14DemiplaneOres
+  - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
       entityMask: 
