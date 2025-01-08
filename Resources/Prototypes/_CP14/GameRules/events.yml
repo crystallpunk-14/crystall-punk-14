@@ -15,6 +15,7 @@
     - id: CP14ClosetSkeleton
     - id: CP14ZombiesSpawn
     - id: CP14HydrasSpawn
+    - id: CP14MosquitoSpawn
 
 - type: entity
   parent: CP14BaseGameRule
@@ -59,4 +60,22 @@
   - type: VentCrittersRule
     entries:
     - id: CP14MobGroupSpawnerHydras
+      prob: 0.05
+
+
+- type: entity
+  parent: CP14BaseStationEventShortDelay
+  id: CP14MosquitoSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-demiplane-outbreak
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: CP14MobGroupSpawnerMosquito
       prob: 0.05
