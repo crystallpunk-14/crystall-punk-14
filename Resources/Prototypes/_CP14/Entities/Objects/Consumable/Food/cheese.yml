@@ -66,6 +66,8 @@
   description: A thin slice of delicious smelling cheese.
   categories: [ ForkFiltered ]
   components:
+  - type: Item
+    size: Tiny
   - type: FlavorProfile
     flavors:
       - cheesy
