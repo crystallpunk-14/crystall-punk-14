@@ -28,7 +28,8 @@
   categories:
     Reward: 0.4
   requiredTags:
-  - CP14DemiplaneOresUnderground
+  - CP14DemiplaneOres
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -66,7 +67,8 @@
   categories:
     Reward: 0.3
   requiredTags:
-  - CP14DemiplaneOresUnderground
+  - CP14DemiplaneOres
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -106,7 +108,8 @@
   categories:
     Reward: 0.5
   requiredTags:
-  - CP14DemiplaneOresUnderground
+  - CP14DemiplaneOres
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       entityMask: 
@@ -144,7 +147,8 @@
   categories:
     Reward: 0.5
   requiredTags:
-  - CP14DemiplaneOresUnderground
+  - CP14DemiplaneOres
+  - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       entityMask: 
