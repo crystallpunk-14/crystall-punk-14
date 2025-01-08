@@ -35,7 +35,7 @@
   id: CP14ModularSkeletonHalberd
   parent: CP14ModularGripWoodenLong
   name: bone halberd
-  description: Monstrous weapons of bone and copper.
+  description: Monstrous weapons of bone.
   components:
   - type: Sprite
     layers:

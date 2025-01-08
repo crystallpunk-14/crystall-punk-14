@@ -2,7 +2,7 @@
   id: CP14ModularIronSpear
   parent: CP14ModularGripWoodenLong
   name: iron spear
-  description: A weapon that has done its duty since the age of the giants.
+  description: The spear is a weapon whose effectiveness has stood the test of time.
   components:
   - type: Sprite
     layers:
