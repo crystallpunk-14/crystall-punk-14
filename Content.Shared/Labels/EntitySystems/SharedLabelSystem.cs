@@ -49,3 +49,10 @@ public abstract partial class SharedLabelSystem : EntitySystem
             args.AddModifier("comp-label-format", extraArgs: ("label", entity.Comp.CurrentLabel));
     }
 }
+
+//CP14 Labeling Event
+public sealed class CP14LabeledEvent : EntityEventArgs
+{
+    public EntityUid? LabeledEntity;
+    public string? Text;
+}
