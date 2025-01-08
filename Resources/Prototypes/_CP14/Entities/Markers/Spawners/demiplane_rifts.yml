@@ -1,4 +1,18 @@
 - type: entity
+  id: CP14VentCritterMarker
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  name: Mob spawners marker
+  description: random creatures breaking out of the demiplanes will spawn at this location
+  components:
+  - type: VentCritterSpawnLocation
+  - type: Sprite
+    layers:
+    - state: pink
+    - sprite: /Textures/_CP14/Mobs/Monster/mole.rsi
+      state: live
+
+- type: entity
   id: CP14BaseMobGroupSpawner
   abstract: true
   categories: [ ForkFiltered ]
@@ -72,3 +86,18 @@
         range: 1, 3
       children:
       - id: CP14MobDinoSmallHydra
+
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerMosquito
+  suffix: 2-3 Mosquito
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobMonsterMosquito
