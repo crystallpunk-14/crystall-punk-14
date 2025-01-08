@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: ClothingBeltStorageBase
+  id: CP14ClothingBeltQuiver
+  name: quiver
+  description: Holds many crossbow bolts, and fits snug around your waist.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/quiver.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.StorageContainerVisualLayers.Fill" ]
+      visible: false
+  - type: Clothing
+    equipDelay: 0.45
+    unequipDelay: 0.45
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
+  - type: Storage
+    grid:
+    - 0,0,7,3
+    maxItemSize: Small
+    whitelist:
+      tags:
+      - CP14CrossbowBolt
+  - type: Appearance
+  - type: StorageContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-

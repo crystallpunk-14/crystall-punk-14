@@ -4,7 +4,7 @@
   locationConfig: CP14DemiplaneCaves
   name: cp14-demiplane-location-cave
   tags:
-  - CP14DemiplaneOres
+  - CP14DemiplaneOresUnderground
   - CP14DemiplaneUnderground
 
 - type: dungeonConfig

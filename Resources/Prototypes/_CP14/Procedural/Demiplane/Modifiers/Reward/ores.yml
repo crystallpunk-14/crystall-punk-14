@@ -20,6 +20,25 @@
       maxGroupSize: 15
 
 - type: cp14DemiplaneModifier
+  id: IronOreUnderground
+  tiers:
+    - 1
+  name: cp14-modifier-iron-ore
+  unique: false
+  categories:
+    Reward: 0.4
+  requiredTags:
+  - CP14DemiplaneOresUnderground
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneIronOre
+      count: 10
+      minGroupSize: 10
+      maxGroupSize: 15
+
+- type: cp14DemiplaneModifier
   id: CopperOre
   tiers:
     - 1
@@ -35,6 +54,25 @@
       - CP14WallStone
       entity: CP14WallStoneCopperOre
       count: 10
+      minGroupSize: 5
+      maxGroupSize: 7
+
+- type: cp14DemiplaneModifier
+  id: CopperOreUnderground
+  tiers:
+    - 1
+  name: cp14-modifier-copper-ore
+  unique: false
+  categories:
+    Reward: 0.3
+  requiredTags:
+  - CP14DemiplaneOresUnderground
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneCopperOre
+      count: 20
       minGroupSize: 5
       maxGroupSize: 7
 
@@ -60,6 +98,25 @@
       maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
+  id: GoldOreUnderground
+  tiers:
+    - 2
+  name: cp14-modifier-gold-ore
+  unique: false
+  categories:
+    Reward: 0.5
+  requiredTags:
+  - CP14DemiplaneOresUnderground
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneGoldOre # Hellish gold 666
+      count: 10
+      minGroupSize: 6
+      maxGroupSize: 6
+
+- type: cp14DemiplaneModifier
   id: MithrilOre 
   tiers:
     - 2
@@ -75,5 +132,24 @@
       - CP14WallStone
       entity: CP14WallStoneMithrilOre 
       count: 5
+      minGroupSize: 4
+      maxGroupSize: 8
+
+- type: cp14DemiplaneModifier
+  id: MithrilOreUnderground
+  tiers:
+    - 2
+  name: cp14-modifier-mithril-ore
+  unique: false
+  categories:
+    Reward: 0.5
+  requiredTags:
+  - CP14DemiplaneOresUnderground
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      entity: CP14WallStoneMithrilOre 
+      count: 8
       minGroupSize: 4
       maxGroupSize: 8

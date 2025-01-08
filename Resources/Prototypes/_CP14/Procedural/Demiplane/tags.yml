@@ -5,6 +5,9 @@
   id: CP14DemiplaneOres
 
 - type: Tag
+  id: CP14DemiplaneOresUnderground
+
+- type: Tag
   id: CP14DemiplanePeacefulAnimals
 
 - type: Tag
