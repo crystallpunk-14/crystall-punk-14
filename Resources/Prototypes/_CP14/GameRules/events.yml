@@ -62,7 +62,6 @@
     - id: CP14MobGroupSpawnerHydras
       prob: 0.05
 
-
 - type: entity
   parent: CP14BaseStationEventShortDelay
   id: CP14MosquitoSpawn
