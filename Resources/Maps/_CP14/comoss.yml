@@ -2943,13 +2943,6 @@ entities:
     - type: ItemPlacer
       placedEntities:
       - 15363
-- proto: CP14AuraNodeBase
-  entities:
-  - uid: 17838
-    components:
-    - type: Transform
-      pos: -25.5,-69.5
-      parent: 2
 - proto: CP14BankStorageMarker
   entities:
   - uid: 1269
@@ -43335,8 +43328,6 @@ entities:
     - type: Transform
       pos: -3.5,-11.5
       parent: 2
-    - type: Physics
-      bodyType: Static
 - proto: CP14CraneBarrelSmallBeerBlowLaw
   entities:
   - uid: 2029
@@ -43344,8 +43335,6 @@ entities:
     - type: Transform
       pos: -5.5,-11.5
       parent: 2
-    - type: Physics
-      bodyType: Static
 - proto: CP14CraneBarrelSmallBeerBreeze
   entities:
   - uid: 2057
@@ -43353,8 +43342,6 @@ entities:
     - type: Transform
       pos: -4.5,-11.5
       parent: 2
-    - type: Physics
-      bodyType: Static
 - proto: CP14CrateCoffin
   entities:
   - uid: 1349
@@ -87391,6 +87378,163 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 12.50742,-56.913044
+      parent: 2
+- proto: CP14VentCritterMarker
+  entities:
+  - uid: 5510
+    components:
+    - type: Transform
+      pos: 21.5,9.5
+      parent: 2
+  - uid: 7805
+    components:
+    - type: Transform
+      pos: -3.5,0.5
+      parent: 2
+  - uid: 12906
+    components:
+    - type: Transform
+      pos: 2.5,-1.5
+      parent: 2
+  - uid: 12907
+    components:
+    - type: Transform
+      pos: 0.5,9.5
+      parent: 2
+  - uid: 12922
+    components:
+    - type: Transform
+      pos: -10.5,8.5
+      parent: 2
+  - uid: 17838
+    components:
+    - type: Transform
+      pos: -21.5,9.5
+      parent: 2
+  - uid: 17888
+    components:
+    - type: Transform
+      pos: -22.5,-21.5
+      parent: 2
+  - uid: 17889
+    components:
+    - type: Transform
+      pos: 17.5,19.5
+      parent: 2
+  - uid: 17890
+    components:
+    - type: Transform
+      pos: 10.5,8.5
+      parent: 2
+  - uid: 17891
+    components:
+    - type: Transform
+      pos: 31.5,8.5
+      parent: 2
+  - uid: 17892
+    components:
+    - type: Transform
+      pos: 20.5,-0.5
+      parent: 2
+  - uid: 17893
+    components:
+    - type: Transform
+      pos: 22.5,-9.5
+      parent: 2
+  - uid: 17894
+    components:
+    - type: Transform
+      pos: 13.5,-11.5
+      parent: 2
+  - uid: 17895
+    components:
+    - type: Transform
+      pos: 5.5,-10.5
+      parent: 2
+  - uid: 17896
+    components:
+    - type: Transform
+      pos: -0.5,-11.5
+      parent: 2
+  - uid: 17897
+    components:
+    - type: Transform
+      pos: -0.5,-21.5
+      parent: 2
+  - uid: 17898
+    components:
+    - type: Transform
+      pos: 0.5,-28.5
+      parent: 2
+  - uid: 17899
+    components:
+    - type: Transform
+      pos: -0.5,-36.5
+      parent: 2
+  - uid: 17900
+    components:
+    - type: Transform
+      pos: 0.5,-43.5
+      parent: 2
+  - uid: 17901
+    components:
+    - type: Transform
+      pos: -12.5,-37.5
+      parent: 2
+  - uid: 17902
+    components:
+    - type: Transform
+      pos: -8.5,-26.5
+      parent: 2
+  - uid: 17903
+    components:
+    - type: Transform
+      pos: -10.5,-1.5
+      parent: 2
+  - uid: 17904
+    components:
+    - type: Transform
+      pos: -24.5,-15.5
+      parent: 2
+  - uid: 17905
+    components:
+    - type: Transform
+      pos: -20.5,-28.5
+      parent: 2
+  - uid: 17906
+    components:
+    - type: Transform
+      pos: -1.5,-66.5
+      parent: 2
+  - uid: 17907
+    components:
+    - type: Transform
+      pos: 1.5,22.5
+      parent: 2
+  - uid: 17908
+    components:
+    - type: Transform
+      pos: 26.5,-14.5
+      parent: 2
+  - uid: 17909
+    components:
+    - type: Transform
+      pos: 25.5,-38.5
+      parent: 2
+  - uid: 17910
+    components:
+    - type: Transform
+      pos: 15.5,-48.5
+      parent: 2
+  - uid: 17911
+    components:
+    - type: Transform
+      pos: -17.5,-68.5
+      parent: 2
+  - uid: 17912
+    components:
+    - type: Transform
+      pos: 4.5,-15.5
       parent: 2
 - proto: CP14VialSmall
   entities:
