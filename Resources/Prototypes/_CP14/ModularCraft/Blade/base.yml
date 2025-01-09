@@ -38,9 +38,9 @@
   id: BaseBladeMithril
   modifiers:
   - !type:EditDamageableModifier
-    multiplier: 1
+    multiplier: 0.80
   - !type:EditSharpened
-    sharpnessDamageMultiplier: 1
+    sharpnessDamageMultiplier: 0.80
   - !type:EditMeleeWeapon
     damageMultiplier: 1.25
   - !type:EditIncreaseDamageOnWield

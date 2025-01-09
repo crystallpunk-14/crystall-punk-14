@@ -13,7 +13,7 @@
   - !type:AddComponents
     components:
     - type: CP14SkillRequirement
-      fuckupChance: 0.5
+      fuckupChance: 0.3
       requiredSkills:
       - Warcraft
   - !type:EditMeleeWeapon
@@ -22,7 +22,7 @@
     angleMultiplier: 1.2
     bonusDamage:
       types:
-        Slash: 8
+        Slash: 9
         Piercing: 5
   - !type:EditIncreaseDamageOnWield
     bonusDamage:

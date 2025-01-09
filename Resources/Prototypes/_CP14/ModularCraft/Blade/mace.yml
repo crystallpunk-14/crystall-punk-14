@@ -13,8 +13,8 @@
     attackRateMultiplier: 0.85
     bonusDamage:
       types:
-        Blunt: 4
-        Piercing: 1
+        Blunt: 5
+        Piercing: 2
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:

@@ -11,7 +11,7 @@
     bonusDamage:
       types:
         Piercing: 4
-        Structural: 10
+        Structural: 14
   - !type:EditItem
     newSize: Normal
     adjustShape: 1, 1

@@ -17,7 +17,7 @@
     - type: DamageOtherOnHit
       damage:
         types:
-          Piercing: 15
+          Piercing: 23
     - type: ThrowingAngle
       angle: 135
     - type: EmbeddableProjectile
@@ -28,7 +28,7 @@
     angleMultiplier: 0
     bonusDamage:
       types:
-        Piercing: 7
+        Piercing: 8
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1

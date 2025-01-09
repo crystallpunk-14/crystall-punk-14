@@ -10,11 +10,10 @@
     - BaseWeaponSharp
     #components: TODO Add gathering tag
   - !type:EditMeleeWeapon
-    attackRateMultiplier: 1.4
+    attackRateMultiplier: 1.5
     bonusDamage:
       types:
         Slash: 4
-        Piercing: 1
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
