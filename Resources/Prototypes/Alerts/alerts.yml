@@ -202,8 +202,8 @@
     state: health0
   - sprite: /Textures/_CP14/Interface/Alerts/empty.rsi
     state: empty
-  name: alerts-health-name
-  description: alerts-health-desc
+  name: cp14-alerts-health-name #CP14 replaced
+  description: cp14-alerts-health-desc #CP14 replaced
   minSeverity: 0
   maxSeverity: 5
 
