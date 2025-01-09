@@ -28,7 +28,7 @@ cp14-job-name-alchemist = Alchemist
 cp14-job-desc-alchemist = A scientist of sorts, exploring the nature of substances. Create poisons and medicines from numerous natural plants and ingredients and earn money by selling them to people in need.
 
 cp14-job-name-innkeeper = Innkeeper [Early WIP]
-cp14-job-desc-innkeeper = Anywhere in Eberron there will be people looking to drink and relax. And you can capitalize on that desire! Find a way to provide people with good rest, food and drink.
+cp14-job-desc-innkeeper = Anywhere in Sylate there will be people looking to drink and relax. And you can capitalize on that desire! Find a way to provide people with good rest, food and drink.
 
 cp14-job-name-blacksmith = Blacksmith
 cp14-job-desc-blacksmith = Create and improve equipment for everyone in need! You have the power of metal and fire in your hands, and only you know how to use them carefully to create masterpieces.
