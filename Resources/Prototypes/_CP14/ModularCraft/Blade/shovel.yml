@@ -17,20 +17,17 @@
     angleMultiplier: 1.2
     bonusDamage:
       types:
-        Slash: 3
+        Slash: 2
         Blunt: 3
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Slash: 3
+        Slash: 1
         Blunt: 3
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
-  - !type:EditModularSlots
-    addSlots:
-    - Garde
 
 - type: modularPart
   id: BladeIronShovel

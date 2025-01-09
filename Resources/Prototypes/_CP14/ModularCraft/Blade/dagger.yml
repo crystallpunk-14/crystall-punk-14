@@ -19,10 +19,10 @@
       offset: -0.15,-0.15
       removalTime: 0.5
   - !type:EditMeleeWeapon
-    attackRateMultiplier: 1.4
+    attackRateMultiplier: 1.5
     bonusDamage:
       types:
-        Slash: 3
+        Slash: 4
         Piercing: 3
   - !type:EditItem
     newSize: Normal
