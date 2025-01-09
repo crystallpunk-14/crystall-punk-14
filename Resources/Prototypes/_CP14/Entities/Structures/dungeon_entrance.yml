@@ -30,6 +30,8 @@
   - type: Portal
     canTeleportToOtherMaps: true
     randomTeleport: false
+    arrivalSound: /Audio/_CP14/Effects/wood_up_stairs.ogg
+    departureSound: /Audio/_CP14/Effects/wood_down_stairs.ogg
 
 - type: entity
   parent: CP14LaddersDownBase
@@ -58,7 +60,9 @@
     radius: 3
     energy: 1
     netsync: false
-
+  - type: Portal
+    arrivalSound: /Audio/_CP14/Effects/wood_down_stairs.ogg
+    departureSound: /Audio/_CP14/Effects/wood_up_stairs.ogg
 
 # Basic stone
 - type: entity
