@@ -94,8 +94,8 @@
     sprite: _CP14/Objects/Materials/glass.rsi
     state: glass_3
   price: 
-    min: 10
-    max: 55
+    min: 50
+    max: 250
   service: !type:CP14SellStackService
     stackId: CP14GlassSheet
     count: 10
