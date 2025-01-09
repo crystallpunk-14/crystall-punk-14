@@ -58,3 +58,11 @@
   entities:
     CP14Wheat: 1 
   result: CP14SeedWheat
+
+- type: CP14Recipe
+  id: CP14SeedTomato
+  tag: CP14RecipeCooking
+  craftTime: 1
+  entities:
+    CP14FoodTomatoesSlice: 1 
+  result: CP14SeedTomato
