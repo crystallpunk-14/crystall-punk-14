@@ -132,6 +132,54 @@
       CP14BrassChestFilledFabric: 1
 
 - type: storePositionBuy
+  id: CopperBar
+  name: cp14-store-buy-copper-name
+  desc: cp14-store-buy-copper-desc
+  code: COPPER
+  icon: 
+    sprite: _CP14/Objects/Materials/copper_bar.rsi
+    state: bar_3
+  price: 
+    min: 40
+    max: 60
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14CopperBar10: 1
+
+- type: storePositionBuy
+  id: IronBar
+  name: cp14-store-buy-iron-name
+  desc: cp14-store-buy-iron-desc
+  code: IRON
+  icon: 
+    sprite: _CP14/Objects/Materials/iron_bar.rsi
+    state: bar_3
+  price: 
+    min: 400
+    max: 600
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14IronBar10: 1
+
+- type: storePositionBuy
+  id: GoldBar
+  name: cp14-store-buy-gold-name
+  desc: cp14-store-buy-gold-desc
+  code: GOLD
+  icon: 
+    sprite: _CP14/Objects/Materials/gold_bar.rsi
+    state: bar_3
+  price: 
+    min: 2000
+    max: 2500
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14GoldBar10: 1
+
+- type: storePositionBuy
   id: EnergyCrystals
   name: cp14-store-buy-energy-name
   desc: cp14-store-buy-energy-desc

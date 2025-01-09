@@ -17,3 +17,6 @@ cp14-store-sell-dye-desc = Textile workers will gladly buy dyes from you to sati
 
 cp14-store-sell-wood-name = 30 wooden planks
 cp14-store-sell-wood-desc = Do you really think anyone needs planks from a faraway island? Well, you're right, we hope your settlement has something to keep you warm in the winter.
+
+cp14-store-sell-glass-name = 10 glass
+cp14-store-sell-glass-desc = A fine material prized in the Empire for its versatility. The windows of palaces, the lenses of craftsmen, and even the mirrors of mages all require glass. Your labors are sure to find a use for it!
