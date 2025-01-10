@@ -94,9 +94,9 @@
 
 - type: entity
   id: CP14VialTiny
-  parent: CP14BaseVial
+  parent: CP14BaseVialFragile
   name: tiny vial
-  description: A sturdy glass vial to hold a tiny amount of liquid.
+  description: A fragile glass vial to hold a tiny amount of liquid.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -105,6 +105,34 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 5
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: Injector
+    maxTransferAmount: 5
+
+- type: entity
+  id: CP14VialTinyReinforced
+  parent: CP14BaseVial
+  name: reinforced tiny vial
+  description: A reinforced glass vial to hold a tiny amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -131,6 +159,32 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+
+- type: entity
+  id: CP14VialSmallReinforced
+  parent: CP14BaseVial
+  name: small vial
+  description: A reinforced glass vial to hold a small amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
