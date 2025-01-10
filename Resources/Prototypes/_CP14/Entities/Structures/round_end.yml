@@ -1,0 +1,46 @@
+- type: entity
+  id: CP14TestMonolith
+  categories: [ ForkFiltered ]
+  name: demiplane monolith
+  description: yeahaa
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: SpriteFade
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Furniture/lamppost.rsi
+    layers:
+    - state: double
+    - state: light_double_blue
+      shader: unshaded
+    drawdepth: Mobs
+    offset: 0,0.9
+  - type: PointLight
+    color: "#8bc5d9"
+    energy: 5
+    radius: 8
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 1000
+    energy: 1000
+  - type: CP14MagicContainerRoundFinisher
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyDraw
+    energy: -11
+    delay: 60 # 1h 30 minutes to full discharge

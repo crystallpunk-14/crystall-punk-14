@@ -47,3 +47,9 @@
   license: "CC0-1.0"
   copyright: 'by qubodup of Freesound.org.'
   source: "https://freesound.org/people/qubodup/sounds/442771/"
+
+
+- files: ["round_start.ogg", "round_end.ogg"]
+  license: "CC0-1.0"
+  copyright: 'Created by MIXnikita'
+  source: "https://github.com/crystallpunk-14/crystall-punk-14"
