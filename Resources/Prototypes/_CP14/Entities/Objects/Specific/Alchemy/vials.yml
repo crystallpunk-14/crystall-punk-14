@@ -92,6 +92,8 @@
       types:
         Blunt: 5
 
+# Vials 
+
 - type: entity
   id: CP14VialTiny
   parent: CP14BaseVialFragile
@@ -173,7 +175,7 @@
 - type: entity
   id: CP14VialSmallReinforced
   parent: CP14BaseVial
-  name: small vial
+  name: reinforced small vial
   description: A reinforced glass vial to hold a small amount of liquid.
   components:
   - type: Sprite

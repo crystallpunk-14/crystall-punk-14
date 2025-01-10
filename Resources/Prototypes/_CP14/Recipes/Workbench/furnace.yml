@@ -37,3 +37,46 @@
   entities:
     CP14QuartzShard: 1
   result: CP14GlassSheet1
+
+- type: CP14Recipe
+  id: CP14GlassSheetShard1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 2
+  entities:
+    CP14GlassShard: 3
+  result: CP14GlassSheet1
+
+- type: CP14Recipe
+  id: CP14VialTiny
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14GlassSheet: 1
+  result: CP14VialTiny
+
+- type: CP14Recipe
+  id: CP14VialTinyReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14CopperBar: 1
+    CP14GlassSheet: 1
+  result: CP14VialTinyReinforced
+
+- type: CP14Recipe
+  id: CP14VialSmall
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14GlassSheet: 2
+  result: CP14VialSmall
+
+- type: CP14Recipe
+  id: CP14VialSmallReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14CopperBar: 1
+    CP14GlassSheet: 2
+  result: CP14VialSmallReinforced
+  
