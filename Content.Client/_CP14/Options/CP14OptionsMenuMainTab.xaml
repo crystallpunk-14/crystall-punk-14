@@ -20,8 +20,8 @@
                 <CheckBox Name="WaveShaderEnabled"
                     Text="{Loc 'cp14-ui-options-main-graphics-wave-shader'}"/>
                 <CheckBox Name="PostProcessCheckBox"
-                    Text="{Loc 'ui-options-postprocess'}"
-                    ToolTip="{Loc 'ui-options-postprocess-tooltip'}"/>
+                    Text="{Loc 'cp14-ui-options-postprocess'}"
+                    ToolTip="{Loc 'cp14-ui-options-postprocess-tooltip'}"/>
 
             </BoxContainer>
         </ScrollContainer>

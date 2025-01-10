@@ -13,7 +13,7 @@
       - state: burning
   - type: PointLight
     radius: 5
-    energy: 2.5
+    energy: 3
     color: "#FFC90C"
   - type: Damageable
     damageContainer: StructuralInorganic
