@@ -21,8 +21,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(
-            OnFinisherMagicEnergyLevelChange);
+        SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(OnFinisherMagicEnergyLevelChange);
     }
 
     public override void Update(float frameTime)
