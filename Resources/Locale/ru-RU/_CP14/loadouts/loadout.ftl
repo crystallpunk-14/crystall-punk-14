@@ -13,6 +13,10 @@ cp14-loadout-general-trinkets = Безделушки
 cp14-loadout-general-spells = Заклинания
 cp14-loadout-general-keys = Ключи
 
+# Apprentice
+
+cp14-loadout-apprentice-bundle = Набор подмастерья
+
 # Alchemist
 
 cp14-loadout-alchemist-head = Шляпа алхимика

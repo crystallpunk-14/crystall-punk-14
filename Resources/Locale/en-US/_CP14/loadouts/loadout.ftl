@@ -12,6 +12,9 @@ cp14-loadout-general-back = Back
 cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-general-spells = Spells
 cp14-loadout-general-keys = Keys
+# Apprentice
+
+cp14-loadout-apprentice-bundle = Apprentice bundle
 
 # Alchemist
 

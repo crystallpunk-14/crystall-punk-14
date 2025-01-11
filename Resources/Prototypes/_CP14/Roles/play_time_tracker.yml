@@ -1,6 +1,9 @@
 
 # Jobs
 - type: playTimeTracker
+  id: CP14JobApprentice
+
+- type: playTimeTracker
   id: CP14JobAdventurer
 
 - type: playTimeTracker
