@@ -2,6 +2,8 @@ using System.Linq;
 using System.Threading;
 using Content.Server._CP14.Demiplane.Components;
 using Content.Server._CP14.Demiplane.Jobs;
+using Content.Server._CP14.RoundEnd;
+using Content.Server.GameTicking;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.MagicManacostModify;
@@ -26,6 +28,7 @@ public sealed partial class CP14DemiplaneSystem
     private const double JobMaxTime = 0.002;
 
     [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly CP14RoundEndSystem _roundEnd = default!;
 
     private void InitGeneration()
     {
@@ -141,6 +144,11 @@ public sealed partial class CP14DemiplaneSystem
         if (generator.Comp.Location is null)
             return;
 
+        if (!_roundEnd.IsMonolithActive())
+        {
+            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-end-round"), generator, args.User);
+            return;
+        }
         //We cant open demiplan in another demiplan or if parent is not Map
         if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid) || !HasComp<MapGridComponent>(_transform.GetParentUid(args.User)))
         {
@@ -151,9 +159,9 @@ public sealed partial class CP14DemiplaneSystem
         SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.SelectedModifiers, out var demiplane, out var mapId);
 
         //Admin log needed
-        //TEST
         EnsureComp<CP14DemiplaneDestroyWithoutStabilizationComponent>(demiplane);
 
+        //Ура, щиткод и магические переменные!
         var tempRift = EntityManager.Spawn("CP14DemiplaneTimedRadiusPassway");
         var tempRift2 = EntityManager.Spawn("CP14DemiplanRiftCore");
         _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
