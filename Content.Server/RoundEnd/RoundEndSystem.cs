@@ -145,9 +145,6 @@ namespace Content.Server.RoundEnd
 
         public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement")
         {
-            //CP14 disable default round end
-            return;
-            //CP14 end
             if (_gameTicker.RunLevel != GameRunLevel.InRound)
                 return;
 
