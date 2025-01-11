@@ -1,0 +1,51 @@
+[whitelist]
+enabled = true
+
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+level = 1
+enabled = false
+
+[net]
+tickrate = 30
+port = 1212
+bindto = "::,0.0.0.0"
+max_connections = 100
+
+[status]
+# The status ser        ver is the TCP side, used by the launcher to determine engine version, etc.
+# To be clear: Disabling it makes the launcher unable to connect!
+enabled = true
+
+[game]
+hostname = "⚔️  CrystallEdge Alpha ⚔️  "
+desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in>
+lobbyenabled = true
+soft_max_players = 40
+
+[server]
+rules_file = "CP14SandboxRU"
+
+[console]
+# If this is true, people connecting from this machine (loopback)
+# will automatically be elevated to full admin privileges.
+# This literally works by checking if address == 127.0.0.1 || address == ::1
+loginlocal = true
+
+[hub]
+# Set to true to show this server on the public server list
+# Before enabling this, read: https://docs.spacestation14.io/hosts/hub-rules
+advertise = true
+# Comma-separated list of tags, useful for categorizing your server.
+# See https://docs.spacestation14.io/hosts/hub-rules for more details on this when it becomes relevant.
+tags = "lang:ru, lang:en, rp:med, region:eu_e"
+# URL of your server. Fill this in if you have a domain name,
+# want to use HTTPS (with a reverse proxy), or other advanced scenarios.
+# Must be in the form of an ss14:// or ss14s:// URI pointing to the status API.
+server_url = ""
+# Comma-separated list of URLs of hub servers to advertise to.
+hub_urls = "https://hub.spacestation14.com/"
+
+[infolinks]
+discord = "https://discord.gg/8BEPa9JbZ6"
