@@ -135,7 +135,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         if (ent.Comp.MagicAlert == null)
             return;
 
-        var level = ContentHelpers.RoundToLevels(MathF.Max(0f, (float) ent.Comp.Energy), (float) ent.Comp.MaxEnergy, 6);
+        var level = ContentHelpers.RoundToLevels(MathF.Max(0f, (float) ent.Comp.Energy), (float) ent.Comp.MaxEnergy, 11);
         _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short)level);
     }
 }
