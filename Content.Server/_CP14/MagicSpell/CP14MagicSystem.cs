@@ -60,10 +60,9 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 
             if (magicStorage.Energy > 0)
             {
-                //TODO: FIX THIS SHIT
                 var cashedEnergy = magicStorage.Energy;
-                _magicEnergy.TryConsumeEnergy(magicEffect.SpellStorage.Value, requiredMana, magicStorage, false);
-                requiredMana = MathF.Max(0, (float)(requiredMana - cashedEnergy));
+                if (_magicEnergy.TryConsumeEnergy(magicEffect.SpellStorage.Value, requiredMana, magicStorage, false))
+                    requiredMana = MathF.Max(0, (float)(requiredMana - cashedEnergy));
             }
         }
 

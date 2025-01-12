@@ -26,24 +26,29 @@ public abstract partial class CP14SharedMagicSystem
     /// </summary>
     private void OnManaCheck(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
     {
+        //Total man required
         var requiredMana = CalculateManacost(ent, args.Performer);
 
-        if (!_magicEffectQuery.TryComp(ent, out var magicEffect))
-            return;
-
-        if (magicEffect.SpellStorage is not null)
+        //First - trying get mana from item
+        if (_magicEffectQuery.TryComp(ent, out var magicEffect))
         {
-            if (_magicContainerQuery.TryComp(magicEffect.SpellStorage, out var magicContainer)) // We have item that provides this spell
+            if (magicEffect.SpellStorage is not null && _magicContainerQuery.TryComp(magicEffect.SpellStorage, out var magicContainer))
                 requiredMana = MathF.Max(0, (float)(requiredMana - magicContainer.Energy));
         }
 
-        if (requiredMana > 0 && _magicContainerQuery.TryComp(args.Performer, out var playerMana))
+        if (requiredMana <= 0)
+            return;
+
+        //Second - trying get mana from performer
+        if (!_magicContainerQuery.TryComp(args.Performer, out var playerMana))
         {
-            if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true) && _net.IsServer)
-            {
-                _popup.PopupEntity(Loc.GetString("cp14-magic-spell-not-enough-mana-cast-warning-"+_random.Next(5)), args.Performer, args.Performer, PopupType.SmallCaution);
-            }
+            args.PushReason(Loc.GetString("cp14-magic-spell-no-mana-component"));
+            args.Cancel();
+            return;
         }
+
+        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true) && _net.IsServer)
+            _popup.PopupEntity(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"), args.Performer, args.Performer, PopupType.SmallCaution);
     }
 
     private void OnStaminaCheck(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
