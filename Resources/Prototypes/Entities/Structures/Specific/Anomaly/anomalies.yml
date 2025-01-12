@@ -165,7 +165,7 @@
       visible: false
   - type: PointLight
     radius: 2.0
-    energy: 5.5
+    energy: 5.0
     color: "#ffffaa"
     castShadows: false
   - type: ElectricityAnomaly
