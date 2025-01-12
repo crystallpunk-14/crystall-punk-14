@@ -1351,10 +1351,10 @@ ent-CP14Cloth10 = { ent-CP14Cloth1 }
     .desc = { ent-CP14Cloth1.desc }
     .suffix = 10
 
-ent-CP14ModularGripShort = Отсутствует
+ent-CP14ModularGripShort = None
     .desc = Короткая рукоять для оружия или инструмента.
 
-ent-CP14ModularGripLong = Отсутствует
+ent-CP14ModularGripLong = None
     .desc = Длинная, двуручная рукоять для тяжелого оружия или больших инструментов.
 
 ent-CP14ModularGripWooden = деревянная рукоять
@@ -1396,7 +1396,7 @@ ent-CP14ModularGripCopperLong = длинная медная рукоять
 ent-CP14ModularGripMithrilLong = длинная мифриловая рукоять
     .desc = { ent-CP14ModularGripLong.desc }
 
-ent-CP14ModularBladeAxeBase = Отсутствует
+ent-CP14ModularBladeAxeBase = None
     .desc = Лезвие топора без рукояти. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronAxe = железная головка топора
@@ -1411,7 +1411,7 @@ ent-CP14ModularBladeCopperAxe = медная головка топора
 ent-CP14ModularBladeMithrilAxe = мифриловая головка топора
     .desc = { ent-CP14ModularBladeAxeBase.desc }
 
-ent-CP14ModularBladeDaggerBase = Отсутствует
+ent-CP14ModularBladeDaggerBase = None
     .desc = Лезвие кинжала. Кузнец может использовать это, чтобы сделать оружие.
 
 ent-CP14ModularBladeIronDagger = железное лезвие кинжала
@@ -1426,7 +1426,7 @@ ent-CP14ModularBladeCopperDagger = медное лезвие кинжала
 ent-CP14ModularBladeMithrilDagger = мифриловое лезвие кинжала
     .desc = { ent-CP14ModularBladeDaggerBase.desc }
 
-ent-CP14ModularBladeMaceBase = Отсутствует
+ent-CP14ModularBladeMaceBase = None
     .desc = Булава-шар без рукояти. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronMace = железный шар булавы
@@ -1441,7 +1441,7 @@ ent-CP14ModularBladeCopperMace = медный шар булавы
 ent-CP14ModularBladeMithrilMace = мифриловый шар булавы
     .desc = { ent-CP14ModularBladeMaceBase.desc }
 
-ent-CP14ModularBladePickaxeBase = Отсутствует
+ent-CP14ModularBladePickaxeBase = None
     .desc = Массивная острая головка кирки без рукояти. Кузнец может использовать это, чтобы сделать инструмент.
 
 ent-CP14ModularBladeIronPickaxe = железная головка кирки
@@ -1456,7 +1456,7 @@ ent-CP14ModularBladeCopperPickaxe = медная головка кирки
 ent-CP14ModularBladeMithrilPickaxe = мифриловая головка кирки
     .desc = { ent-CP14ModularBladePickaxeBase.desc }
 
-ent-CP14ModularBladeRapierBase = Отсутствует
+ent-CP14ModularBladeRapierBase = None
     .desc = Лезвие рапиры без рукояти. Кузнец может использовать это, чтобы сделать оружие.
 
 ent-CP14ModularBladeIronRapier = железное лезвие рапиры
@@ -1471,7 +1471,7 @@ ent-CP14ModularBladeCopperRapier = медное лезвие рапиры
 ent-CP14ModularBladeMithrilRapier = мифриловое лезвие рапиры
     .desc = { ent-CP14ModularBladeRapierBase.desc }
 
-ent-CP14ModularBladeShovelBase = Отсутствует
+ent-CP14ModularBladeShovelBase = None
     .desc = Лезвие лопаты без рукояти. Кузнец может использовать его как запасную часть для создания инструмента.
 
 ent-CP14ModularBladeIronShovel = железное лезвие лопаты
@@ -1486,7 +1486,7 @@ ent-CP14ModularBladeCopperShovel = медное лезвие лопаты
 ent-CP14ModularBladeMithrilShovel = мифриловое лезвие лопаты
     .desc = { ent-CP14ModularBladeShovelBase.desc }
 
-ent-CP14ModularBladeSickleBase = Отсутствует
+ent-CP14ModularBladeSickleBase = None
     .desc = Серповидный клинок без рукояти. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronSickle = железное лезвие серпа
@@ -1501,7 +1501,7 @@ ent-CP14ModularBladeGoldSickle = золотое лезвие серпа
 ent-CP14ModularBladeMithrilSickle = мифриловое лезвие серпа
     .desc = { ent-CP14ModularBladeSickleBase.desc }
 
-ent-CP14ModularBladeSpearBase = Отсутствует
+ent-CP14ModularBladeSpearBase = None
     .desc = Наконечник копья. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronSpear = железный наконечник копья
@@ -1516,7 +1516,7 @@ ent-CP14ModularBladeCopperSpear = медный наконечник копья
 ent-CP14ModularBladeMithrilSpear = мифриловый наконечник копья
     .desc = { ent-CP14ModularBladeSpearBase.desc }
 
-ent-CP14ModularBladeSwordBase = Отсутствует
+ent-CP14ModularBladeSwordBase = None
     .desc = Лезвие меча без рукояти. Кузнец может использовать это, чтобы сделать оружие.
 
 ent-CP14ModularBladeIronSword = железное лезвие меча
@@ -2659,7 +2659,7 @@ ent-CP14FoodTomatoes = помидор
 ent-CP14Snowball = снежок
     .desc = Небольшая горсть снега, удобная для метания.
 
-ent-CP14ManaOperationGlove = мана-перчатки
+ent-CP14ManaOperationGlove = мана-перчатка
     .desc = Несложная, но эстетически приятная смесь технологии и магических кристаллов, позволяющая оперировать сырой маной: высасывать ее из одних предметов и вливать в другие.
 
 ent-CP14CrystalLamp = кристалльная лампа
