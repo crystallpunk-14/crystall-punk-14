@@ -64,10 +64,13 @@ public sealed class CP14SetTimeEntryCommand : LocalizedCommands
                 if (!entityManager.TryGetComponent<CP14DayCycleComponent>(entityManager.GetEntity(mapUid), out var component))
                     return CompletionResult.Empty;
 
-                if (component.TimeEntries.Count - 1 < 0)
+                if (component.IndexedCycle is null)
                     return CompletionResult.Empty;
 
-                var indices = new string[component.TimeEntries.Count - 1];
+                if (component.IndexedCycle.TimeEntries.Count - 1 < 0)
+                    return CompletionResult.Empty;
+
+                var indices = new string[component.IndexedCycle.TimeEntries.Count - 1];
                 for (var i = 0; i < indices.Length; i++)
                 {
                     indices[i] = i.ToString();

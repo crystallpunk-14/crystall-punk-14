@@ -8,9 +8,10 @@
     state: cure_wounds
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
   - type: CP14MagicEffect
     magicType: Healing
-    manaCost: 10
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

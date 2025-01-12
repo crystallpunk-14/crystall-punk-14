@@ -34,9 +34,6 @@
       startingGear: CP14SociopathGear
       max: 8
       playerRatio: 10
-      #blacklist:
-      #  components:
-      #  - AntagImmune
       lateJoinAdditional: true
       mindRoles:
       - CP14MindRoleSociopath
@@ -44,3 +41,20 @@
         text: cp14-roles-antag-sociopath-briefing
         color: "#cc3010"
         sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
+
+# event schedulers
+
+- type: entity
+  id: CP14BasicStationEventScheduler
+  parent: CP14BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: CP14BasicGameRulesTable
+
+- type: entityTable
+  id: CP14BasicGameRulesTable
+  table: !type:AllSelector
+    children:
+      - !type:NestedSelector
+        tableId: CP14BasicCalmEventsTable

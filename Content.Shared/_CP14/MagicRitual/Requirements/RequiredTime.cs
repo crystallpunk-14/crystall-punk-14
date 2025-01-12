@@ -1,5 +1,6 @@
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.DayCycle.Components;
+using Content.Shared._CP14.DayCycle.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicRitual.Requirements;

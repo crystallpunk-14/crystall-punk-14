@@ -20,6 +20,9 @@ cp14-trait-muted-desc = All you can do is mumble incoherently. The benefits of v
 cp14-trait-snoring-name = Loud snoring
 cp14-trait-snoring-desc = It is simply impossible to sleep next to you because you snore terribly loudly at everything.
 
+cp14-trait-mana-wasting-name = Magical mediocrity.
+cp14-trait-mana-wasting-desc = Fate has decreed that magic is just an empty sound for you. You are unable to store or use magical energy.
+
 # Backgrounds
 
 cp14-trait-bg-entertainer-name = Entertainer

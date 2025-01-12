@@ -44,7 +44,7 @@
   - type: TimedDespawn
     lifetime: 0.4
   - type: Sprite
-    drawdepth: Effects
+    drawdepth: Items
     sprite: _CP14/Effects/dust.rsi
     state: dust
   - type: EffectVisuals

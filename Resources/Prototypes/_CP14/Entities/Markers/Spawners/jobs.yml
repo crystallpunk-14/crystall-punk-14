@@ -71,6 +71,20 @@
 # Mercenary
 
 - type: entity
+  id: CP14SpawnPointApprentice
+  parent: CP14SpawnPointJobBase
+  name: apprentice
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Apprentice
+  - type: Sprite
+    layers:
+      - state: green
+      - state: workman #TODO Replace
+
+- type: entity
   id: CP14SpawnPointAdventurer
   parent: CP14SpawnPointJobBase
   name: adventurer

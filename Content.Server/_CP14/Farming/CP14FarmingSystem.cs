@@ -8,6 +8,7 @@ using Content.Shared._CP14.Farming;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Tag;
+using Content.Shared.Examine;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -46,6 +47,7 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         SubscribeLocalEvent<CP14PlantComponent, EntityUnpausedEvent>(OnUnpaused);
         SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CP14PlantAutoRootComponent, MapInitEvent>(OnAutoRootMapInit);
+        SubscribeLocalEvent<CP14PlantComponent, ExaminedEvent>(OnExamine);
     }
 
     public override void Update(float frameTime)
@@ -84,6 +86,15 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
         var newTime = _random.NextFloat(plant.Comp.UpdateFrequency);
         plant.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
+    }
+
+    private void OnExamine(EntityUid uid, CP14PlantComponent component, ExaminedEvent args)
+    {
+        if (component.Energy <= 0)
+            args.PushMarkup(Loc.GetString("cp14-farming-low-energy"));
+
+        if (component.Resource <= 0)
+            args.PushMarkup(Loc.GetString("cp14-farming-low-resources"));
     }
 
     private void OnAutoRootMapInit(Entity<CP14PlantAutoRootComponent> autoRoot, ref MapInitEvent args)

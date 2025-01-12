@@ -50,7 +50,6 @@ namespace Content.IntegrationTests.Tests
             "MeteorArena",
 
             //CrystallEdge maps
-            "Village",
             "Comoss",
             //CrystallEdge Map replacement end
         };

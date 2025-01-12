@@ -352,9 +352,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null)
     {
-        sender ??= Loc.GetString("chat-manager-sender-announcement");
+        sender ??= Loc.GetString("cp14-announcement-gamemaster"); //CP14 - replaced default sender
 
-        var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
+        var wrappedMessage = Loc.GetString("cp14-announcement-wrapped", ("sender", sender), ("message", FormattedMessage.EscapeText(message))); //CP14 - replaced default wrapped
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
         if (playSound)
         {

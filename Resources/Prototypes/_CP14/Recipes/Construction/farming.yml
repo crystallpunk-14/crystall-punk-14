@@ -1,7 +1,7 @@
 - type: construction
   crystallPunkAllowed: true
   name: Seedbed
-  description: A wooden tub with a pile of earth adapted for growing plants.
+  description: A wooden tub with a pile of earth adapted for growing plants. Can only be built on dirt tiles.
   id: CP14SeedbedWooden
   graph: CP14Seedbed
   startNode: start

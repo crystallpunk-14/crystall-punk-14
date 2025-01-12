@@ -17,8 +17,9 @@
   name: iron dagger blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Dagger/iron_dagger.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronDagger
@@ -29,8 +30,10 @@
   name: golden dagger blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Dagger/gold_dagger.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldDagger
@@ -41,8 +44,10 @@
   name: copper dagger blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Dagger/copper_dagger.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperDagger
@@ -53,8 +58,10 @@
   name: mithril dagger blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Dagger/mithril_dagger.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilDagger

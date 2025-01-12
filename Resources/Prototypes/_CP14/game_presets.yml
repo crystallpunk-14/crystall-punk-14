@@ -19,6 +19,7 @@
   rules:
     - CP14SociopathsRule
     - CP14RoundObjectivesRule
+    - CP14BasicStationEventScheduler
 
 - type: gamePreset
   id: CP14Sandbox
@@ -31,3 +32,4 @@
   rules:
     - Sandbox
     - CP14RoundObjectivesRule
+    - CP14BasicStationEventScheduler

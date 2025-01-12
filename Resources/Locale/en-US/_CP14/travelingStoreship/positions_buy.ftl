@@ -29,3 +29,12 @@ cp14-store-buy-energy-desc = Energy crystals in both medium and small sizes, and
 
 cp14-store-buy-cheese-name = Cheese stockpile
 cp14-store-buy-cheese-desc = Cows don't like to sail on ships, but their cheese is quite fond of traveling! So pay its way to your table!
+
+cp14-store-buy-copper-name = 10 copper bars
+cp14-store-buy-copper-desc = Looking for quality copper ingots? Our copper ingots are suitable for all needs, whether it is blacksmithing or coinage. Order right now, before they are sold out by craftsmen from all over the empire.
+
+cp14-store-buy-iron-name = 10 iron bars
+cp14-store-buy-iron-desc = Durable, reliable and versatile metal for the most daring projects! Do you need armor, weapons, or fasteners? The highest grade iron ingots are at your service. This is the foundation of your success!
+
+cp14-store-buy-gold-name = 10 gold bars
+cp14-store-buy-gold-desc = For those who appreciate luxury and elegance. Bars of the purest gold for jewelry, inlay or investment in the future. Gold is always in the price, and our delivery is always on time!

@@ -22,6 +22,32 @@
   - type: Wagging
   - type: Bloodstream
     bloodReagent: CP14BloodTiefling
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: CP14Tiefling
+  - type: PassiveDamage
+    damageCap: 65
+    allowedStates:
+    - Alive
+    - Critical
+    damage:
+      types:
+        Heat: -0.14 # Around 8 damage a minute healed
+  - type: CP14MagicEnergyDraw
+    energy: 0.75
+    delay: 3 # 5m to full restore
+  - type: CP14MagicEnergyFromDamage
+    damage:
+      Heat: 1 #Magic regen from fire
+      Cold: -1
+  - type: CP14MagicManacostModify
+    globalModifier: 1.2
+    modifiers:
+      Fire: 0.5
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellTieflingInnerFire
   - type: Inventory
     templateId: CP14Human
     femaleDisplacements:

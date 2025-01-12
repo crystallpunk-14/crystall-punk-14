@@ -265,7 +265,7 @@ public sealed partial class StaminaSystem : EntitySystem
         if (oldDamage < slowdownThreshold &&
             component.StaminaDamage > slowdownThreshold)
         {
-            _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(3), true, 0.8f, 0.8f);
+            //_stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(3), true, 0.8f, 0.8f); //CP14 remove stamina slowdown
         }
 
         SetStaminaAlert(uid, component);
@@ -382,10 +382,13 @@ public sealed partial class StaminaSystem : EntitySystem
         }
 
         component.Critical = false;
-        component.StaminaDamage = 0f;
+        //CP14 Stamina edit
+        //component.StaminaDamage = 0f;
+        component.StaminaDamage = component.CritThreshold * 0.8f;
+        //CP14 stamina edit end
         component.NextUpdate = _timing.CurTime;
         SetStaminaAlert(uid, component);
-        RemComp<ActiveStaminaComponent>(uid);
+        //RemComp<ActiveStaminaComponent>(uid); //CP14
         Dirty(uid, component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
     }

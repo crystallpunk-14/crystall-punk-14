@@ -17,8 +17,9 @@
   name: iron shovel blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Shovel/iron_shovel.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronShovel
@@ -29,8 +30,10 @@
   name: golden shovel blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Shovel/gold_shovel.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldShovel
@@ -41,8 +44,10 @@
   name: copper shovel blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Shovel/copper_shovel.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperShovel
@@ -53,8 +58,10 @@
   name: mithril shovel blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Shovel/mithril_shovel.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilShovel

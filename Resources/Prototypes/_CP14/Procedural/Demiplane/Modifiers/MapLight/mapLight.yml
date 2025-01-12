@@ -12,6 +12,17 @@
     ambientLightColor: "#000000"
 
 - type: cp14DemiplaneModifier
+  id: MapLightCycleDefault
+  tiers:
+    - 1
+    - 2
+    - 3
+  categories:
+    MapLight: 1
+  components:
+  - type: CP14DayCycle
+
+- type: cp14DemiplaneModifier
   id: MapLightDarkRed
   tiers:
     - 2

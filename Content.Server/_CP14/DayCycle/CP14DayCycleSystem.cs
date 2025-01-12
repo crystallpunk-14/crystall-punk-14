@@ -1,6 +1,7 @@
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.DayCycle.Components;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -13,6 +14,7 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
 
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
@@ -23,10 +25,12 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
 
     private void OnMapInitDayCycle(Entity<CP14DayCycleComponent> dayCycle, ref MapInitEvent args)
     {
+        dayCycle.Comp.IndexedCycle = _proto.Index(dayCycle.Comp.CycleProto);
+
         Init(dayCycle);
 
-        if (dayCycle.Comp.StartWithRandomEntry && dayCycle.Comp.TimeEntries.Count > 1)
-            SetTimeEntry(dayCycle, _random.Next(dayCycle.Comp.TimeEntries.Count));
+        if (dayCycle.Comp.StartWithRandomEntry && dayCycle.Comp.IndexedCycle.TimeEntries.Count > 1)
+            SetTimeEntry(dayCycle, _random.Next(dayCycle.Comp.IndexedCycle.TimeEntries.Count));
     }
 
     public override void Update(float frameTime)
@@ -38,7 +42,10 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
         {
             var entity = new Entity<CP14DayCycleComponent, MapLightComponent>(uid, dayCycle, mapLight);
 
-            if (dayCycle.TimeEntries.Count < MinTimeEntryCount)
+            if (dayCycle.IndexedCycle is null)
+                continue;
+
+            if (dayCycle.IndexedCycle.TimeEntries.Count < MinTimeEntryCount)
                 continue;
 
             SetAmbientColor((entity, entity), GetCurrentColor(entity, _timing.CurTime.TotalSeconds));
@@ -52,32 +59,41 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
 
     public void Init(Entity<CP14DayCycleComponent> dayCycle)
     {
-        if (dayCycle.Comp.TimeEntries.Count < MinTimeEntryCount)
+        if (dayCycle.Comp.IndexedCycle is null)
+            return;
+
+        if (dayCycle.Comp.IndexedCycle.TimeEntries.Count < MinTimeEntryCount)
         {
-            Log.Warning($"Attempting to init a daily cycle with the number of time entries less than {MinTimeEntryCount}");
+            Log.Warning($"Attempting to init a day/night cycle with the number of time entries less than {MinTimeEntryCount}");
             return;
         }
 
         dayCycle.Comp.CurrentTimeEntryIndex = 0;
         dayCycle.Comp.EntryStartTime = _timing.CurTime;
-        dayCycle.Comp.EntryEndTime = _timing.CurTime + dayCycle.Comp.CurrentTimeEntry.Duration;
+        dayCycle.Comp.EntryEndTime = _timing.CurTime + dayCycle.Comp.CurrentTimeEntry!.Value.Duration;
 
         Dirty(dayCycle);
     }
 
     public void AddTimeEntry(Entity<CP14DayCycleComponent> dayCycle, DayCycleEntry entry)
     {
-        dayCycle.Comp.TimeEntries.Add(entry);
+        if (dayCycle.Comp.IndexedCycle is null)
+            return;
+
+        dayCycle.Comp.IndexedCycle.TimeEntries.Add(entry);
         Dirty(dayCycle);
     }
 
     public void SetTimeEntry(Entity<CP14DayCycleComponent> dayCycle, int nextEntry)
     {
-        nextEntry = Math.Clamp(nextEntry, 0, dayCycle.Comp.TimeEntries.Count - 1);
+        if (dayCycle.Comp.IndexedCycle is null)
+            return;
+
+        nextEntry = Math.Clamp(nextEntry, 0, dayCycle.Comp.IndexedCycle.TimeEntries.Count - 1);
 
         dayCycle.Comp.CurrentTimeEntryIndex = nextEntry;
         dayCycle.Comp.EntryStartTime = dayCycle.Comp.EntryEndTime;
-        dayCycle.Comp.EntryEndTime += dayCycle.Comp.CurrentTimeEntry.Duration;
+        dayCycle.Comp.EntryEndTime += dayCycle.Comp.CurrentTimeEntry!.Value.Duration;
 
         var ev = new DayCycleChangedEvent(dayCycle.Comp.CurrentTimeEntry);
         RaiseLocalEvent(dayCycle, ref ev, true);
@@ -97,7 +113,7 @@ public sealed partial class CP14DayCycleSystem : CP14SharedDayCycleSystem
     private Color GetCurrentColor(Entity<CP14DayCycleComponent> dayCycle, double totalSeconds)
     {
         var timeScale = GetTimeScale(dayCycle, totalSeconds);
-        return Color.InterpolateBetween(dayCycle.Comp.StartColor, dayCycle.Comp.EndColor, timeScale);
+        return Color.InterpolateBetween(dayCycle.Comp.StartColor ?? Color.Black, dayCycle.Comp.EndColor ?? Color.Black, timeScale);
     }
 
     private float GetTimeScale(Entity<CP14DayCycleComponent> dayCycle, double totalSeconds)

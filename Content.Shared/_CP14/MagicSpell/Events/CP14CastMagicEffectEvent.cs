@@ -89,11 +89,11 @@ public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
 /// is invoked only if the spell has been successfully cast
 /// </summary>
 [ByRefEvent]
-public sealed class CP14AfterCastMagicEffectEvent : EntityEventArgs
+public sealed class CP14MagicEffectConsumeResourceEvent : EntityEventArgs
 {
     public EntityUid? Performer { get; init; }
 
-    public CP14AfterCastMagicEffectEvent(EntityUid? performer)
+    public CP14MagicEffectConsumeResourceEvent(EntityUid? performer)
     {
         Performer = performer;
     }
