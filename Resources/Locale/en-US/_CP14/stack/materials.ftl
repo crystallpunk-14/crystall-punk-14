@@ -13,3 +13,5 @@ cp14-stack-mithril-bars = mithril bars
 cp14-stack-wallpaper = rolls of wallpaper
 
 cp14-stack-glass-sheet = glass
+
+cp14-stack-ash-pile = pile of ashes

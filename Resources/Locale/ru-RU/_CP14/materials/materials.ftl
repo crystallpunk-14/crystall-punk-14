@@ -5,3 +5,4 @@ cp14-material-mithril = мифрил
 cp14-material-lucens-planks = люценсовые доски
 cp14-material-cloth = ткань
 cp14-material-flora = растительный материал
+cp14-material-ash = пепел

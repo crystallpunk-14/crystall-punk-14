@@ -5,3 +5,4 @@ cp14-material-mithril = mithril
 cp14-material-lucens-planks = lucens planks
 cp14-material-cloth = cloth
 cp14-material-flora = flora material
+cp14-material-ash = ash
