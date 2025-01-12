@@ -48,7 +48,6 @@
     damage:
       groups:
         Burn: -0.2
-      groups:
         Brute: -0.2
   - type: Stamina
     decay: 5 # 3 default
