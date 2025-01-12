@@ -14,8 +14,16 @@
   - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
     state: mana4
   - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
-    state: mana4
+    state: mana5
+  - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
+    state: mana6
+  - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
+    state: mana7
+  - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
+    state: mana8
+  - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
+    state: mana9 
   name: cp14-alerts-magic-energy-name
   description: cp14-alerts-magic-energy-desc
   minSeverity: 0
-  maxSeverity: 6
+  maxSeverity: 10
