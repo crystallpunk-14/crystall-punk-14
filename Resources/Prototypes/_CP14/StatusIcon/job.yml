@@ -23,6 +23,14 @@
 
 - type: jobIcon
   parent: CP14JobIcon
+  id: CP14JobIconApprentice
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Apprentice
+  jobName: cp14-job-name-apprentice
+
+- type: jobIcon
+  parent: CP14JobIcon
   id: CP14JobIconInnkeeper
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
