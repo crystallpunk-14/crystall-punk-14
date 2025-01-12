@@ -15,7 +15,7 @@
 
 - type: entity
   id: CP14RandomSnowLootSpawner
-  name: dirt spawner
+  name: snow spawner
   parent: CP14SnowEffect
   categories: [ ForkFiltered ]
   components:

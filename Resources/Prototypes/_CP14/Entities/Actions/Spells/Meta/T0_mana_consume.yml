@@ -8,8 +8,6 @@
     state: mana_consume
   - type: CP14MagicEffect
     magicType: Meta
-    manaCost: 0
-    canModifyManacost: false
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -34,10 +32,25 @@
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: mana_consume
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 1
-      castDelay: 2
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 5
+      castTime: 10
       breakOnMove: true
+
+- type: entity
+  id: CP14ActionSpellManaConsumeElf
+  parent: CP14ActionSpellManaConsume
+  name: Carefull mana consume
+  description: You absorb a small amount of mana from the target neatly and without loss.
+  components:
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaConsume
+    - !type:CP14SpellConsumeManaEffect
+      mana: 10
+      lossMultiplier: 1
 
 - type: entity
   id: CP14RuneManaConsume

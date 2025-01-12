@@ -1,0 +1,58 @@
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSturdyIron
+  categories: [ ForkFiltered ]
+  name: sturdy iron garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSturdyIron
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSturdyGold
+  categories: [ ForkFiltered ]
+  name: sturdy gold garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSturdyGold
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSturdyCopper
+  categories: [ ForkFiltered ]
+  name: sturdy copper garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSturdyCopper
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSturdyMithril
+  categories: [ ForkFiltered ]
+  name: sturdy mithril garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSturdyMithril

@@ -13,8 +13,8 @@
     attackRateMultiplier: 0.85
     bonusDamage:
       types:
-        Blunt: 4
-        Piercing: 1
+        Blunt: 5
+        Piercing: 2
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
@@ -29,42 +29,45 @@
   id: BladeIronMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/iron_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/gold_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/copper_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilMace
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilMace
-  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/mithril_mace.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeMace
-    - BaseWeaponMithril
+    - BaseBladeMithril

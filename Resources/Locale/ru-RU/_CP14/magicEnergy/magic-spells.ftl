@@ -1,5 +1,6 @@
 cp14-magic-spell-not-enough-mana = Недостаточно магической энергии!
-cp14-magic-spell-not-enough-mana-item = Недостаточно магической энергии в {$item}!
+
+cp14-magic-spell-no-mana-component = Вы не можете пользоваться магией.
 
 cp14-magic-spell-not-enough-mana-cast-warning-0 = Внутри вас все начинает неприятно ныть...
 cp14-magic-spell-not-enough-mana-cast-warning-1 = Голова начинает шуметь...
@@ -13,3 +14,6 @@ cp14-magic-energy-damage-burn-out-fall = Вы теряете сознание о
 
 cp14-magic-spell-need-verbal-component = Вы не можете произнести заклинание вслух.
 cp14-magic-spell-need-somatic-component = Вам не хватает свободных рук.
+
+cp14-magic-spell-stamina-not-enough = Вам не хватает сил, чтобы сделать это.
+cp14-magic-staminacost = Затраты энергии

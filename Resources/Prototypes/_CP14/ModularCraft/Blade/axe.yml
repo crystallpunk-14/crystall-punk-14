@@ -31,42 +31,45 @@
   id: BladeIronAxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeIronAxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/iron_axe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponIron
+    - BaseBladeIron
 
 - type: modularPart
   id: BladeGoldAxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeGoldAxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/gold_axe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+  color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponGold
+    - BaseBladeGold
 
 - type: modularPart
   id: BladeCopperAxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeCopperAxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/copper_axe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponCopper
+    - BaseBladeCopper
 
 - type: modularPart
   id: BladeMithrilAxe
   targetSlot: Blade
   sourcePart: CP14ModularBladeMithrilAxe
-  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/mithril_axe.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseBladeAxe
-    - BaseWeaponMithril
+    - BaseBladeMithril

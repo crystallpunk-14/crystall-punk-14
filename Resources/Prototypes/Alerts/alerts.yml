@@ -200,10 +200,12 @@
     state: health1
   - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
     state: health0
-  name: alerts-health-name
-  description: alerts-health-desc
+  - sprite: /Textures/_CP14/Interface/Alerts/empty.rsi
+    state: empty
+  name: cp14-alerts-health-name #CP14 replaced
+  description: cp14-alerts-health-desc #CP14 replaced
   minSeverity: 0
-  maxSeverity: 4
+  maxSeverity: 5
 
 - type: alert
   id: BorgHealth

@@ -1,0 +1,1 @@
+cp14-event-announcement-demiplane-outbreak = A sense of danger pierces the air... Something from other worlds is invading your town.

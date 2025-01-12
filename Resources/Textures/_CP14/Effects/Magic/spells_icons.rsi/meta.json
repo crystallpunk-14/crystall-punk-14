@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "CLA",
-  "copyright": "Created by .kreks., cure_poison, cure_burn, mana_gift, water creation, beer creation and resurrection by TheShuEd",
+  "copyright": "Created by .kreks., cure_poison, cure_burn, mana_gift, water creation, plant_growth, beer creation, sprint, tiefling_revenge and resurrection by TheShuEd",
   "states": [
     {
       "name": "beer_creation"
@@ -44,6 +44,9 @@
       "name": "mana_gift"
     },
     {
+      "name": "plant_growth"
+    },
+    {
       "name": "resurrection"
     },
     {
@@ -54,6 +57,12 @@
     },
     {
       "name": "sphere_of_light"
+    },
+    {
+      "name": "sprint"
+    },
+    {
+      "name": "tiefling_revenge"
     },
     {
       "name": "water_creation"

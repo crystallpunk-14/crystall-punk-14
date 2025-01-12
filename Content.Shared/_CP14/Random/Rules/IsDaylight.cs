@@ -1,5 +1,6 @@
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.DayCycle.Components;
+using Content.Shared._CP14.DayCycle.Prototypes;
 using Content.Shared.Random.Rules;
 using Robust.Shared.Prototypes;
 
@@ -17,6 +18,9 @@ public sealed partial class CP14TimePeriod : RulesRule
         var transform = entManager.System<SharedTransformSystem>();
 
         var map = transform.GetMap(uid);
-        return entManager.TryGetComponent<CP14DayCycleComponent>(map, out var dayCycle) && Periods.Contains(dayCycle.CurrentPeriod);
+        if (!entManager.TryGetComponent<CP14DayCycleComponent>(map, out var dayCycle))
+            return false;
+
+        return dayCycle.CurrentPeriod is not null && Periods.Contains(dayCycle.CurrentPeriod.Value);
     }
 }

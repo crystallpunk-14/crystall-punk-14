@@ -1,0 +1,18 @@
+- type: job
+  id: CP14Apprentice
+  name: cp14-job-name-apprentice
+  description: cp14-job-desc-apprentice
+  playTimeTracker: CP14JobApprentice
+  startingGear: CP14ApprenticeGear
+  icon: "CP14JobIconApprentice"
+  supervisors: cp14-job-supervisors-command
+
+- type: startingGear
+  id: CP14ApprenticeGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalSmall
+  equipment:
+    keys: CP14BaseKeyRing
+    belt1: CP14WalletFilledTest

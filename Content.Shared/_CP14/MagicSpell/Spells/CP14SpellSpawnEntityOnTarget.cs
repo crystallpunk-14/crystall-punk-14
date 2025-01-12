@@ -13,7 +13,7 @@ public sealed partial class CP14SpellSpawnEntityOnTarget : CP14SpellEffect
         EntityCoordinates? targetPoint = null;
         if (args.Position is not null)
             targetPoint = args.Position.Value;
-        else if (args.Target is not null && entManager.TryGetComponent<TransformComponent>(args.Target.Value, out var transformComponent))
+        if (args.Target is not null && entManager.TryGetComponent<TransformComponent>(args.Target.Value, out var transformComponent))
             targetPoint = transformComponent.Coordinates;
 
         if (targetPoint is null)

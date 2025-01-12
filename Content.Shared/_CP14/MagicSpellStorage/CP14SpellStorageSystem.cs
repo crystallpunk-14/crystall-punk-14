@@ -1,11 +1,9 @@
 using Content.Shared._CP14.MagicAttuning;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
+using Content.Shared._CP14.MagicSpellStorage.Components;
 using Content.Shared.Actions;
-using Content.Shared.Clothing;
-using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
-using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
 using Robust.Shared.Network;
@@ -27,18 +25,12 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
     public override void Initialize()
     {
+        InitializeAccess();
+
         SubscribeLocalEvent<CP14SpellStorageComponent, MapInitEvent>(OnMagicStorageInit);
         SubscribeLocalEvent<CP14SpellStorageComponent, ComponentShutdown>(OnMagicStorageShutdown);
 
         SubscribeLocalEvent<CP14SpellStorageUseDamageComponent, CP14SpellFromSpellStorageUsedEvent>(OnSpellUsed);
-
-        SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, GotEquippedHandEvent>(OnEquippedHand);
-        SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, AddedAttuneToMindEvent>(OnHandAddedAttune);
-
-        SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, AddedAttuneToMindEvent>(OnClothingAddedAttune);
-        SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotEquippedEvent>(OnClothingEquipped);
-        SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotUnequippedEvent>(OnClothingUnequipped);
-
         SubscribeLocalEvent<CP14SpellStorageRequireAttuneComponent, RemovedAttuneFromMindEvent>(OnRemovedAttune);
     }
 
@@ -50,22 +42,24 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     /// <summary>
     /// When we initialize, we create action entities, and add them to this item.
     /// </summary>
-    private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> mStorage, ref MapInitEvent args)
+    private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> storage, ref MapInitEvent args)
     {
         if (_net.IsClient)
             return;
 
-        foreach (var spell in mStorage.Comp.Spells)
+        foreach (var spell in storage.Comp.Spells)
         {
-            var spellEnt = _actionContainer.AddAction(mStorage, spell);
+            var spellEnt = _actionContainer.AddAction(storage, spell);
             if (spellEnt is null)
                 continue;
 
             var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
-            provided.SpellStorage = mStorage;
+            provided.SpellStorage = storage;
 
-            mStorage.Comp.SpellEntities.Add(spellEnt.Value);
+            storage.Comp.SpellEntities.Add(spellEnt.Value);
         }
+        if (storage.Comp.GrantAccessToSelf)
+            _actions.GrantActions(storage, storage.Comp.SpellEntities, storage);
     }
 
     private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)
@@ -77,58 +71,6 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         {
             QueueDel(spell);
         }
-    }
-
-    private void OnEquippedHand(Entity<CP14SpellStorageAccessHoldingComponent> ent, ref GotEquippedHandEvent args)
-    {
-        if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
-            return;
-
-        TryGrantAccess((ent, spellStorage), args.User);
-    }
-
-    private void OnHandAddedAttune(Entity<CP14SpellStorageAccessHoldingComponent> ent, ref AddedAttuneToMindEvent args)
-    {
-        if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
-            return;
-
-        if (args.User is null)
-            return;
-
-        if (!_hands.IsHolding(args.User.Value, ent))
-            return;
-
-        TryGrantAccess((ent, spellStorage), args.User.Value);
-    }
-
-    private void OnClothingAddedAttune(Entity<CP14SpellStorageAccessWearingComponent> ent, ref AddedAttuneToMindEvent args)
-    {
-        if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
-            return;
-
-        if (args.User is null)
-            return;
-
-        if (!TryComp<ClothingComponent>(ent, out var clothing))
-            return;
-
-        if (clothing.InSlot is null || Transform(ent).ParentUid != args.User)
-            return;
-
-        TryGrantAccess((ent, spellStorage), args.User.Value);
-    }
-
-    private void OnClothingEquipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotEquippedEvent args)
-    {
-        if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
-            return;
-
-        TryGrantAccess((ent, spellStorage), args.Wearer);
-    }
-
-    private void OnClothingUnequipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotUnequippedEvent args)
-    {
-        _actions.RemoveProvidedActions(args.Wearer, ent);
     }
 
     private bool TryGrantAccess(Entity<CP14SpellStorageComponent> storage, EntityUid user)

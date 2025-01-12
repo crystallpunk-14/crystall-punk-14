@@ -41,7 +41,10 @@ public sealed class CP14InitDayCycleCommand : LocalizedCommands
             return;
         }
 
-        if (dayCycle.TimeEntries.Count < CP14DayCycleSystem.MinTimeEntryCount)
+        if (dayCycle.IndexedCycle is null)
+            return;
+
+        if (dayCycle.IndexedCycle.TimeEntries.Count < CP14DayCycleSystem.MinTimeEntryCount)
         {
             shell.WriteError($"Attempting to init a daily cycle with the number of time entries less than {CP14DayCycleSystem.MinTimeEntryCount}");
             return;

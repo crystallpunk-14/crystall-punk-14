@@ -92,11 +92,13 @@
       types:
         Blunt: 5
 
+# Vials 
+
 - type: entity
   id: CP14VialTiny
-  parent: CP14BaseVial
+  parent: CP14BaseVialFragile
   name: tiny vial
-  description: A sturdy glass vial to hold a tiny amount of liquid.
+  description: A fragile glass vial to hold a tiny amount of liquid.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -105,6 +107,34 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 5
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: Injector
+    maxTransferAmount: 5
+
+- type: entity
+  id: CP14VialTinyReinforced
+  parent: CP14BaseVial
+  name: reinforced tiny vial
+  description: A reinforced glass vial to hold a tiny amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -142,102 +172,28 @@
     maxFillLevels: 5
     fillBaseName: liq-
 
-# Filled small
-
 - type: entity
-  id: CP14VialSmallBloodFlowerSap
-  parent: CP14VialSmall
-  suffix: Bloodflower sap
+  id: CP14VialSmallReinforced
+  parent: CP14BaseVial
+  name: reinforced small vial
+  description: A reinforced glass vial to hold a small amount of liquid.
   components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
   - type: SolutionContainerManager
     solutions:
       vial:
-        reagents:
-        - ReagentId: CP14BloodFlowerSap
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallAgaricMushroom
-  parent: CP14VialSmall
-  suffix: Fly agaric juice
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14AgaricMushroom
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallGroundQuartz
-  parent: CP14VialSmall
-  suffix: Ground Quartz
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14GroundQuartz
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallWildSage
-  parent: CP14VialSmall
-  suffix: Wild sage Sap
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14WildSageSap
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallBlueAmanita
-  parent: CP14VialSmall
-  suffix: Blue Amanita
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14BlueAmanita
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallDayflin
-  parent: CP14VialSmall
-  suffix: Dayflin
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14YellowDayflinPulp
-          Quantity: 10
-
-# Filled tiny
-
-- type: entity
-  id: CP14VialTinyChromiumSlime
-  parent: CP14VialTiny
-  suffix: Chromium Slime
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14ChromiumSlime
-          Quantity: 5
-
-- type: entity
-  id: CP14VialTinyLumiMushroom
-  parent: CP14VialTiny
-  suffix: LumiShroom
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14LumiMushroom
-          Quantity: 5
+        maxVol: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-

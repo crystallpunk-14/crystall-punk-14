@@ -37,3 +37,13 @@
   license: "CC0-1.0"
   copyright: 'by bajko of Freesound.org.'
   source: "https://freesound.org/people/bajko/sounds/378058/"
+
+- files: ["wood_down_stairs.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by qubodup of Freesound.org.'
+  source: "https://freesound.org/people/qubodup/sounds/442770/"
+
+- files: ["wood_up_stairs.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by qubodup of Freesound.org.'
+  source: "https://freesound.org/people/qubodup/sounds/442771/"

@@ -46,6 +46,7 @@
         - id: CP14SpellScrollEarthWall
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
+        - id: CP14SpellScrollPlantGrowth
       - id: CP14EnergyCrystalSmall
       - id: CP14BaseSharpeningStone
       - id: CP14GlassShard

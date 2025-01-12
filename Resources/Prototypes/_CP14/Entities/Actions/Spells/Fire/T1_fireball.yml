@@ -8,9 +8,10 @@
     state: fireball
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
   - type: CP14MagicEffect
     magicType: Fire
-    manaCost: 20
     effects:
     - !type:CP14SpellSpawnEntityOnUser
       spawns:

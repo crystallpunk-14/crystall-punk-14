@@ -1,0 +1,47 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Species
+  name: Играбельные расы
+  text: "/ServerInfo/_CP14/Guidebook_RU/Species.xml"
+  children:
+  - CP14_RU_Human
+  - CP14_RU_Silva
+  - CP14_RU_Elf
+  - CP14_RU_Tiefling
+  - CP14_RU_Goblin
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Human
+  name: Человек
+  text: "/ServerInfo/_CP14/Guidebook_RU/SpeciesTabs/Human.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Silva
+  name: Сильва
+  text: "/ServerInfo/_CP14/Guidebook_RU/SpeciesTabs/Silva.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Elf
+  name: Эльф
+  text: "/ServerInfo/_CP14/Guidebook_RU/SpeciesTabs/Elf.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Tiefling
+  name: Тифлинг
+  text: "/ServerInfo/_CP14/Guidebook_RU/SpeciesTabs/Tiefling.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Goblin
+  name: Гоблин
+  text: "/ServerInfo/_CP14/Guidebook_RU/SpeciesTabs/Goblin.xml"
+  filterEnabled: True

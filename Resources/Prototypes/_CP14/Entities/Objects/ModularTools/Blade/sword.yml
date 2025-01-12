@@ -17,7 +17,7 @@
   name: iron sword blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sword/iron_sword.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:
@@ -29,8 +29,10 @@
   name: golden sword blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sword/gold_sword.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldSword
@@ -41,8 +43,10 @@
   name: copper sword blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sword/copper_sword.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperSword
@@ -53,8 +57,10 @@
   name: mithril sword blade
   components:
   - type: Sprite
-    sprite: _CP14/Objects/ModularTools/Blade/Sword/mithril_sword.rsi
-    state: icon
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilSword

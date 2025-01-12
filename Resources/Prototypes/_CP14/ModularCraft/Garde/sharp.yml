@@ -5,50 +5,49 @@
   id: BaseGardeSharp
   modifiers:
   - !type:EditMeleeWeapon
-    bonusDamage:
-      types:
-        Piercing: 3
-
-- type: modularPart
-  id: GardeSharpGold
-  targetSlot: Garde
-  sourcePart: CP14ModularGardeSharpGold
-  rsiPath: _CP14/Objects/ModularTools/Garde/gold_sharp.rsi
-  modifiers:
-  - !type:Inherit
-    copyFrom:
-    - BaseGardeSharp
-    - BaseWeaponGold
+    damageMultiplier: 1.2
+  - !type:EditIncreaseDamageOnWield
+    damageMultiplier: 1.2
 
 - type: modularPart
   id: GardeSharpIron
   targetSlot: Garde
   sourcePart: CP14ModularGardeSharpIron
-  rsiPath: _CP14/Objects/ModularTools/Garde/iron_sharp.rsi
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
-    - BaseWeaponIron
+
+- type: modularPart
+  id: GardeSharpGold
+  targetSlot: Garde
+  sourcePart: CP14ModularGardeSharpGold
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSharp
 
 - type: modularPart
   id: GardeSharpCopper
   targetSlot: Garde
   sourcePart: CP14ModularGardeSharpCopper
-  rsiPath: _CP14/Objects/ModularTools/Garde/copper_sharp.rsi
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+  color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
-    - BaseWeaponCopper
 
 - type: modularPart
   id: GardeSharpMithril
   targetSlot: Garde
   sourcePart: CP14ModularGardeSharpMithril
-  rsiPath: _CP14/Objects/ModularTools/Garde/mithril_sharp.rsi
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+  color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
-    - BaseWeaponMithril

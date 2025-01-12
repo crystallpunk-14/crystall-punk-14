@@ -259,6 +259,61 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14TargetStake
+  name: target stake
+  description: A wooden stand on which to fix a target for firing.
+  graph: CP14TargetStake
+  startNode: start
+  targetNode: CP14targetStake
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/target.rsi
+    state: target_stake
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14Target
+  name: target
+  description: A target for marksmanship practice.
+  graph: CP14TargetStake
+  startNode: start
+  targetNode: CP14target
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/target.rsi
+    state: target
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14TargetEffigy
+  name: target
+  description: A target for marksmanship practice.
+  graph: CP14TargetEffigy
+  startNode: start
+  targetNode: CP14targetEffigy
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/target.rsi
+    state: target_effigy
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14WoodenDoor
   name: wooden door
   description: Not the most solid construction, but it's better than nothing.
@@ -450,5 +505,3 @@
   canBuildInImpassable: true
   conditions:
     - !type:TileNotBlocked
-
-
