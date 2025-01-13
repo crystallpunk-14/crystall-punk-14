@@ -3,7 +3,7 @@
   parent:
   - CP14BaseWorkbench
   name: melting furnace
-  description: A red-hot stone cosntruction that allows ores to be smelted into pure metal
+  description: A red-hot stone construction that allows ores to be smelted into pure metal
   components:
   - type: Sprite
     snapCardinals: false
