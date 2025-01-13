@@ -69,7 +69,7 @@
     drawdepth: Mobs
     offset: 0,0.9
   - type: PointLight
-    energy: 5
+    energy: 2.5
     radius: 8
 
 - type: entity

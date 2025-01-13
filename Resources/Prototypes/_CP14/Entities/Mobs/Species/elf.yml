@@ -21,12 +21,12 @@
     requiredLegs: 2
   - type: Bloodstream
     bloodReagent: CP14BloodElf
-  - type: CP14MagicEnergyContainer #BIG mana container
-    maxEnergy: 500
-    energy: 250
-  - type: CP14MagicEnergyDraw #No passive mana regen
+  - type: CP14MagicEnergyContainer #Increased mana container
+    maxEnergy: 200
+    energy: 200
+  - type: CP14MagicEnergyDraw #Half of standard mana regeneration
     energy: 0.5
-    delay: 10
+    delay: 3
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:

@@ -24,7 +24,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types: 
-        Blunt: 8
+        Blunt: 4
   - type: MeleeWeapon
     angle: 100
     attackRate: 1.3
@@ -33,7 +33,7 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 8
+        Blunt: 6
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.3

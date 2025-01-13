@@ -441,28 +441,66 @@
   - CP14ActionSpellSprint
 
 - type: loadout
+  id: CP14ActionSpellBase
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
   id: CP14ActionSpellFlameCreation
   dummyEntity: CP14ActionSpellFlameCreation
   actions:
   - CP14ActionSpellFlameCreation
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellCureWounds
   dummyEntity: CP14ActionSpellCureWounds
   actions:
   - CP14ActionSpellCureWounds
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellCureBurn
   dummyEntity: CP14ActionSpellCureBurn
   actions:
   - CP14ActionSpellCureBurn
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellBloodPurification
   dummyEntity: CP14ActionSpellBloodPurification
   actions:
   - CP14ActionSpellBloodPurification
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellPlantGrowth
@@ -476,12 +514,25 @@
       species:
       - CP14Silva
       inverted: true # Silvas cannot take this spell, they have buffed version by default
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellSphereOfLight
   dummyEntity: CP14ActionSpellSphereOfLight
   actions:
   - CP14ActionSpellSphereOfLight
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellManaConsume
@@ -495,24 +546,51 @@
       species:
       - CP14Elf
       inverted: true # Elves cannot take this spell, they have buffed version by default
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellManaGift
   dummyEntity: CP14ActionSpellManaGift
   actions:
   - CP14ActionSpellManaGift
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellShadowGrab
   dummyEntity: CP14ActionSpellShadowGrab
   actions:
   - CP14ActionSpellShadowGrab
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellWaterCreation
   dummyEntity: CP14ActionSpellWaterCreation
   actions:
   - CP14ActionSpellWaterCreation
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellBeerCreation
@@ -530,6 +608,12 @@
       !type:RoleTimeRequirement
       role: CP14JobInnkeeper
       time: 7200 # 2 hour
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellSprint
