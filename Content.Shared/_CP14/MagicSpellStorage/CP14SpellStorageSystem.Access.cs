@@ -42,6 +42,9 @@ public sealed partial class CP14SpellStorageSystem
 
     private void OnClothingAddedAttune(Entity<CP14SpellStorageAccessWearingComponent> ent, ref AddedAttuneToMindEvent args)
     {
+        if (!ent.Comp.Wearing)
+            return;
+
         if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
             return;
 
@@ -51,7 +54,7 @@ public sealed partial class CP14SpellStorageSystem
         if (!TryComp<ClothingComponent>(ent, out var clothing))
             return;
 
-        if (clothing.InSlot is null || Transform(ent).ParentUid != args.User)
+        if (Transform(ent).ParentUid != args.User)
             return;
 
         TryGrantAccess((ent, spellStorage), args.User.Value);
@@ -59,6 +62,8 @@ public sealed partial class CP14SpellStorageSystem
 
     private void OnClothingEquipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotEquippedEvent args)
     {
+        ent.Comp.Wearing = true;
+
         if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
             return;
 
@@ -67,7 +72,8 @@ public sealed partial class CP14SpellStorageSystem
 
     private void OnClothingUnequipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotUnequippedEvent args)
     {
+        ent.Comp.Wearing = false;
+
         _actions.RemoveProvidedActions(args.Wearer, ent);
     }
-
 }

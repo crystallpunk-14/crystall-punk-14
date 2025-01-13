@@ -12,17 +12,6 @@
     ambientLightColor: "#000000"
 
 - type: cp14DemiplaneModifier
-  id: MapLightCycleDefault
-  tiers:
-    - 1
-    - 2
-    - 3
-  categories:
-    MapLight: 1
-  components:
-  - type: CP14DayCycle
-
-- type: cp14DemiplaneModifier
   id: MapLightDarkRed
   tiers:
     - 2
@@ -43,8 +32,6 @@
   - type: MapLight
     ambientLightColor: "#09010f"
 
-# Open sky time entries
-
 - type: cp14DemiplaneModifier
   id: MapLightDarkNight
   tiers:
@@ -53,64 +40,37 @@
     - 3
   categories:
     MapLight: 1
-  requiredTags:
-  - CP14DemiplaneOpenSky
   components:
   - type: MapLight
     ambientLightColor: "#010714"
 
-- type: cp14DemiplaneModifier
-  id: MapLightDawn
-  tiers:
-    - 1
-    - 2
-    - 3
-  categories:
-    MapLight: 1
-  requiredTags:
-  - CP14DemiplaneOpenSky
-  components:
-  - type: MapLight
-    ambientLightColor: "#754A4A"
+# Open sky time entries
 
 - type: cp14DemiplaneModifier
-  id: MapLightMidday
+  id: MapLightCycleDefault
   tiers:
     - 1
     - 2
     - 3
   categories:
     MapLight: 1
+  generationWeight: 2
   requiredTags:
   - CP14DemiplaneOpenSky
   components:
-  - type: MapLight
-    ambientLightColor: "#E0BA87"
+  - type: CP14DayCycle
 
 - type: cp14DemiplaneModifier
-  id: MapLightMidday2
+  id: MapLightCycleDay
   tiers:
     - 1
     - 2
     - 3
   categories:
     MapLight: 1
+  generationWeight: 2
   requiredTags:
   - CP14DemiplaneOpenSky
   components:
-  - type: MapLight
-    ambientLightColor: "#BFEEFF"
-
-- type: cp14DemiplaneModifier
-  id: MapLightEvening
-  tiers:
-    - 1
-    - 2
-    - 3
-  categories:
-    MapLight: 1
-  requiredTags:
-  - CP14DemiplaneOpenSky
-  components:
-  - type: MapLight
-    ambientLightColor: "#385163"
+  - type: CP14DayCycle
+    cycleProto: CP14DemiplaneEternalDay

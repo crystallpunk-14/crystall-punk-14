@@ -47,7 +47,7 @@
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollPlantGrowth
-      - id: CP14EnergyCrystalSmall
+      - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
       - id: CP14GlassShard
       - id: CP14Paper
@@ -71,7 +71,7 @@
         - id: CP14VialTinyLumiMushroom
       - id: CP14SilverCoin5
       - id: CP14BaseLockpick
-      - id: CP14EnergyCrystalMedium
+      - id: CP14EnergyCrystalMediumEmpty
       - id: CP14DemiplaneKeyT1
         weight: 2
       - id: CP14DemiplaneKeyT2
@@ -124,7 +124,7 @@
         - id: CP14SpellScrollFireball
         - id: CP14SpellScrollBeerCreation
           weight: 0.2
-      - id: CP14EnergyCrystalMedium
+      - id: CP14EnergyCrystalMediumEmpty
     # Rare
     - !type:GroupSelector
       weight: 25

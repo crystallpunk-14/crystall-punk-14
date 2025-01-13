@@ -6,4 +6,6 @@ namespace Content.Shared._CP14.MagicSpellStorage.Components;
 [RegisterComponent, Access(typeof(CP14SpellStorageSystem))]
 public sealed partial class CP14SpellStorageAccessWearingComponent : Component
 {
+    [DataField]
+    public bool Wearing;
 }
