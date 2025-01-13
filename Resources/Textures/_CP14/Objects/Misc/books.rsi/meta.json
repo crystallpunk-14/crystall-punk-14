@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "license": "CLA",
+  "copyright": "created by ripmax https://discord.com/channels/1221923073759121468/1297234364609990769 and Viator",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "paper"
+    },
+    {
+      "name": "cover_red"
+    },
+    {
+      "name": "cover_black"
+    },
+    {
+      "name": "cover_blue"
+    },
+    {
+      "name": "cover_brown"
+    },
+    {
+      "name": "cover_green"
+    },
+    {
+      "name": "icon_image"
+    },
+    {
+      "name": "icon_moon"
+    },
+    {
+      "name": "icon_text"
+    },
+    {
+      "name": "icon_plate"
+    },
+    {
+      "name": "icon_uptext"
+    },
+    {
+      "name": "icon_magic"
+    },
+    {
+      "name": "bookmark_red"
+    },
+    {
+      "name": "bookmark_short"
+    },
+    {
+      "name": "bookmark_none"
+    },
+    {
+      "name": "bookmark_long"
+    },
+    {
+      "name": "edging_gold"
+    },
+    {
+      "name": "edging_mithril"
+    },
+    {
+      "name": "full_bestiary"
+    }
+  ]
+}
