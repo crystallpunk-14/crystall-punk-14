@@ -72,7 +72,7 @@ public abstract partial class CP14SharedMagicSystem
 
         var fromItem = action.Comp.SpellStorage is not null;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage, target: entityTarget)
         {
             BreakOnMove = toggleable.BreakOnMove,
             BreakOnDamage = toggleable.BreakOnDamage,
