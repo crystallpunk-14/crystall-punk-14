@@ -8,7 +8,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Transform
-    anchored: true
+    anchored: false
   - type: Rotatable
   - type: Sprite
     sprite: _CP14/Structures/Furniture/bench.rsi
