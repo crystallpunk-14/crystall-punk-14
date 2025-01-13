@@ -13,7 +13,7 @@ public sealed partial class CP14SpellConsumeManaEffect : CP14SpellEffect
     public bool Safe = false;
 
     [DataField]
-    public float LossMultiplier = 0.8f;
+    public float LossMultiplier = 1.0f;
 
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
