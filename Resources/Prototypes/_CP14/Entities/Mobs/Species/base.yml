@@ -2,7 +2,7 @@
   save: false
   parent: 
   - BaseMob
-  - MobDamageable
+  - CP14MobDamageable
   - MobCombat
   id: CP14BaseMobSpecies
   categories: [ ForkFiltered ]

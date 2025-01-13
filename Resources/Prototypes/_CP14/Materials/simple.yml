@@ -96,3 +96,12 @@
   icon: { sprite: _CP14/Objects/Materials/flora.rsi, state: grass_material1 }
   color: "#85903e"
   price: 0 #?
+
+- type: material
+  id: CP14Ash
+  stackEntity: CP14Ash1
+  name: cp14-material-ash
+  unit: cp14-materials-unit-pile
+  icon: { sprite: _CP14/Objects/Materials/ash.rsi, state: ash_1 }
+  color: "#2d313c"
+  price: 0 #?

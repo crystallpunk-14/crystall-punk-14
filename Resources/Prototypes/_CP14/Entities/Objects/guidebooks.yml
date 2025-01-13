@@ -6,13 +6,18 @@
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
+    sprite: _CP14/Objects/Misc/books.rsi
     layers:
     - state: paper
-    - state: cover_base
-      color: "#871619"
-    - state: decor_wingette
-      color: "#a3181d"
-    - state: icon_law
+    - state: cover_red
+      map: [ "cover" ]
+    - state: edging_gold
+      map: [ "edging" ]
+    - state: icon_image
+      map: [ "icon" ]
+    - state: bookmark_red
+      map: [ "bookmark" ]
+
   - type: GuideHelp
     guides:
     - CP14_RU_Imperial_Laws
