@@ -52,3 +52,14 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/green.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/green.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakBlue
+  name: blue cloak
+  description: Blue cape covering her entire body.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/blue.rsi
