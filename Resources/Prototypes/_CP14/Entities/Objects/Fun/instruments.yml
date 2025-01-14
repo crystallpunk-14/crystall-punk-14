@@ -21,7 +21,7 @@
   parent: BaseHandheldInstrument
   id: CP14LyraInstrument
   name: lyra
-  description: A common stringed instrument throughout Sileit, popular with various bards and musical troupes.
+  description: A common stringed instrument throughout Sylate, popular with various bards and musical troupes.
   categories: [ ForkFiltered ]
   components:
   - type: Instrument
