@@ -48,16 +48,20 @@
       color: "#8f6a2b"
       shader: unshaded
   - type: CP14AreaEntityEffect
-    range: 3 
+    range: 3
     whitelist:
       components:
-      - Item
+      - Damageable
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectShadowStep
-    - !type:CP14SpellThrowToUser
-      throwPower: 10
+      - CP14ImpactEffectFlameCreation
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 10
 
 - type: entity
   parent: CP14BaseSpellScrollFire
