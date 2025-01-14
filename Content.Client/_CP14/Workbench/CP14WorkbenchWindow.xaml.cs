@@ -24,16 +24,12 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
     public event Action<CP14WorkbenchUiRecipesEntry>? OnCraft;
     public event Action<string>? OnTextUpdated;
 
-    private readonly SpriteSystem _sprite;
-
     private CP14WorkbenchUiRecipesEntry? _selectedEntry;
 
     public CP14WorkbenchWindow()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-
-        _sprite = _entity.System<SpriteSystem>();
 
         SearchBar.OnTextChanged += _ =>
         {
@@ -117,7 +113,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         var result = _prototype.Index(recipe.Result);
 
-        ItemView.Texture = _sprite.GetPrototypeIcon(recipe.Result).Default;
+        ItemView.SetPrototype(recipe.Result);
         ItemName.Text = result.Name;
         ItemDescription.Text = result.Description;
 
