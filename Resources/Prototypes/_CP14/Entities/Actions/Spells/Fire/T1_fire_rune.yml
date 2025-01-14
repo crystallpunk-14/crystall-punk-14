@@ -48,7 +48,7 @@
       color: "#8f6a2b"
       shader: unshaded
   - type: CP14AreaEntityEffect
-    range: 3
+    range: 2
     whitelist:
       components:
       - Damageable
