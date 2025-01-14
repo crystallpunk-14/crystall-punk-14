@@ -2,7 +2,8 @@
                xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                Title="{Loc 'cp14-workbench-ui-title'}"
-               MinSize="700 600">
+               SetSize="700 500"
+               MinSize="700 300">
     <BoxContainer Orientation="Vertical">
         <!-- Main -->
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
