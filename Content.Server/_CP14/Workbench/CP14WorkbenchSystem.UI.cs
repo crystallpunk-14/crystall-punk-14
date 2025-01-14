@@ -27,8 +27,10 @@ public sealed partial class CP14WorkbenchSystem
         var recipes = new List<CP14WorkbenchUiRecipesEntry>();
         foreach (var recipeId in entity.Comp.Recipes)
         {
-            var recipe = _proto.Index(recipeId);
-            var entry = new CP14WorkbenchUiRecipesEntry(recipeId, CanCraftRecipe(recipe, placedEntities));
+            if (!_proto.TryIndex(recipeId, out var indexedRecipe))
+                continue;
+
+            var entry = new CP14WorkbenchUiRecipesEntry(recipeId, CanCraftRecipe(indexedRecipe, placedEntities));
 
             recipes.Add(entry);
         }

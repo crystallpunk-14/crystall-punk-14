@@ -84,7 +84,10 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             return;
         }
 
-        var resultEntity = Spawn(_proto.Index(args.Recipe).Result);
+        if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
+            return;
+
+        var resultEntity = Spawn(indexedRecipe.Result);
         _stack.TryMergeToContacts(resultEntity);
 
         _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSoln, out var resultSolution);
