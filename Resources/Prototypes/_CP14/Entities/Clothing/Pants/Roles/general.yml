@@ -2,7 +2,6 @@
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsTrouserWhite
   name: white trouser
-  description: Wide, loose pants made of plain canvas cloth.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Pants/Trousers/white.rsi
@@ -13,7 +12,6 @@
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsTrouserDarkBlue
   name: dark trouser
-  description: Wide, loose pants made of plain canvas cloth.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
@@ -24,29 +22,16 @@
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsLoincloth
   name: loincloth
-  description: Free, spacious, nothing gets in the way, and it also looks extremely rugged
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Pants/loincloth.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/loincloth.rsi
-
-- type: entity
-  parent: CP14ClothingPantsBase
-  id: CP14ClothingDressBlack #TODO rename to CP14ClothingPantsDressBlack
-  name: black dress
-  description: A roomy, feminine skirt
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Pants/Dress/black.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Pants/Dress/black.rsi
 
 - type: entity
   parent: CP14ClothingPantsBase
   id: CP14ClothingPantsMercenaryTrousers
   name: mercenary trousers
-  description: Colourful mercenary trousers. Don't tear them.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
@@ -55,11 +40,20 @@
 
 - type: entity
   parent: CP14ClothingPantsBase
-  id: CP14ClothingPantsSouthernMagician
-  name: southern magician's dress
-  description: A traditional southern mage skirt, rather loose.
+  id: CP14ClothingPantsGreen
+  name: green pants
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Pants/Dress/yellow_magician_dress.rsi
+    sprite: _CP14/Clothing/Pants/green.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Pants/Dress/yellow_magician_dress.rsi
+    sprite: _CP14/Clothing/Pants/green.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsBrown
+  name: brown pants
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/brown.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/brown.rsi

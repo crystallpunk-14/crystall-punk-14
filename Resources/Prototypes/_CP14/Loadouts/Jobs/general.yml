@@ -174,7 +174,15 @@
   - CP14ClothingPantsTrouserDarkBlue
   - CP14ClothingPantsAristocratic
   - CP14ClothingPantsLoincloth
-  - CP14ClothingDressBlack
+  - CP14ClothingPantsGreen
+  - CP14ClothingPantsBrown
+  # Dress
+  - CP14ClothingPantsDressBlack
+  - CP14ClothingPantsDressBlue
+  - CP14ClothingPantsDressBrown
+  - CP14ClothingPantsDressGreen
+  - CP14ClothingPantsDressGreenBelt
+  - CP14ClothingPantsDressRed
 
 - type: loadout
   id: CP14ClothingPantsTrouserWhite
@@ -197,9 +205,49 @@
     pants: CP14ClothingPantsLoincloth
 
 - type: loadout
-  id: CP14ClothingDressBlack
+  id: CP14ClothingPantsGreen
   equipment:
-    pants: CP14ClothingDressBlack
+    pants: CP14ClothingPantsGreen
+
+- type: loadout
+  id: CP14ClothingPantsBrown
+  equipment:
+    pants: CP14ClothingPantsBrown
+
+- type: loadout
+  id: CP14ClothingPantsDressBlack
+  equipment:
+    pants: CP14ClothingPantsDressBlack
+
+- type: loadout
+  id: CP14ClothingPantsDressBlue
+  equipment:
+    pants: CP14ClothingPantsDressBlue
+
+- type: loadout
+  id: CP14ClothingPantsDressBrown 
+  equipment:
+    pants: CP14ClothingPantsDressBrown
+
+- type: loadout
+  id: CP14ClothingPantsDressGreen
+  equipment:
+    pants: CP14ClothingPantsDressGreen
+
+- type: loadout
+  id: CP14ClothingPantsDressGreenBelt
+  equipment:
+    pants: CP14ClothingPantsDressGreenBelt
+
+- type: loadout
+  id: CP14ClothingPantsDressRed
+  equipment:
+    pants: CP14ClothingPantsDressRed
+
+- type: loadout
+  id: CP14ClothingPantsDressYellow
+  equipment:
+    pants: CP14ClothingPantsDressYellow
 
 # Shirt
 
