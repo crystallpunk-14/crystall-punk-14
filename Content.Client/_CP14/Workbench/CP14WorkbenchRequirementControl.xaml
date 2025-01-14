@@ -1,11 +1,12 @@
 ﻿<Control xmlns="https://spacestation14.io">
     <Button Name="Button">
         <GridContainer Columns="2">
-            <TextureRect Name="View"
-                         Margin="0,0,4,0"
-                         MinSize="48 48"
-                         HorizontalAlignment="Left"
-                         Stretch="KeepAspectCentered"/>
+            <EntityPrototypeView Name="View"
+                                 Margin="0,0,4,0"
+                                 MinSize="48 48"
+                                 Scale="2,2"
+                                 HorizontalAlignment="Center"
+                                 VerticalExpand="True"/>
             <Label Name="Name"/>
         </GridContainer>
     </Button>
