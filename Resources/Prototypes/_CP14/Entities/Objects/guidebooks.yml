@@ -17,7 +17,6 @@
       map: [ "icon" ]
     - state: bookmark_red
       map: [ "bookmark" ]
-
   - type: GuideHelp
     guides:
     - CP14_RU_Imperial_Laws

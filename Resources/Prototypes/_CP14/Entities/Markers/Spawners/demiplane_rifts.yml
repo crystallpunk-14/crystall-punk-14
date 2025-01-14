@@ -70,8 +70,6 @@
       - id: CP14MobUndeadZombieGearEasy1
       - id: CP14MobUndeadZombieGearEasy2
       - id: CP14MobUndeadZombieGearEasy3
-      - id: CP14MobUndeadZombieGearMedium1
-      - id: CP14MobUndeadZombieGearMedium2
 
 - type: entity
   parent: CP14BaseMobGroupSpawner
