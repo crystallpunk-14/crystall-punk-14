@@ -208,9 +208,15 @@ CP14BaseBroom: null
 CP14DemiplanKey: CP14DemiplaneKeyT1
 CP14SpawnerExpeditionLootCommon: CP14SpawnerDemiplaneLootT1
 
-#2024-06-01
+#2025-06-01
 CP14AuraNodeBase: null
 CP14AuraScanner: null
+
+#2025-01-14
+CP14BaseBattleStaff: null
+CP14BaseTwoHandedSword: null
+CP14TwoHandedSwordScythe: null
+
 
 # <---> CrystallEdge migration zone end
 
