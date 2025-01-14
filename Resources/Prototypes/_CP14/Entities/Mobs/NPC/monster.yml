@@ -159,7 +159,7 @@
         7
   - type: NpcFactionMember
     factions:
-    - CP14Insects
+    - CP14Monster
   - type: Sprite
     drawdepth: Mobs
     layers:

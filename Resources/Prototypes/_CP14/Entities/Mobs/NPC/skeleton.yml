@@ -7,7 +7,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - CP14Undead
+    - CP14Monster
   - type: Loadout
     prototypes: 
     - CP14MobSkeleton
