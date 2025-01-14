@@ -1,0 +1,69 @@
+- type: entity
+  id: CP14ActionSpellFireRune
+  name: Fire rune
+  description: You create an area where a scalding stream of fire occurs with little delay.
+  components: 
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: earth_wall
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14MagicEffectManaCost
+    manaCost: 15
+  - type: CP14MagicEffect
+    magicType: Fire
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectEarthWall
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14AreaEntityEffectFireRune
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneEarthWall
+  - type: EntityWorldTargetAction
+    range: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: earth_wall
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 10
+
+- type: entity
+  id: CP14AreaEntityEffectFireRune
+  parent: CP14BaseMagicRune
+  components:
+  - type: PointLight
+    color: "#8f6a2b"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#8f6a2b"
+      shader: unshaded
+    - state: medium_circle
+      color: "#8f6a2b"
+      shader: unshaded
+  - type: CP14AreaEntityEffect
+    range: 3 
+    whitelist:
+      components:
+      - Item
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectShadowStep
+    - !type:CP14SpellThrowToUser
+      throwPower: 10
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollFireRune
+  name: fire rune spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFireRune
