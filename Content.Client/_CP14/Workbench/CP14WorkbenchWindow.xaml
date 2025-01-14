@@ -7,10 +7,14 @@
         <!-- Main -->
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
             <GridContainer HorizontalExpand="True" VerticalExpand="True" Columns="2">
-                <!-- Crafts container -->
-                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
-                    <BoxContainer Name="CraftsContainer" Orientation="Vertical" HorizontalExpand="True"/>
-                </ScrollContainer>
+                <BoxContainer HorizontalExpand="True" Orientation="Vertical">
+                    <!-- Search Bar -->
+                    <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Search" HorizontalExpand="True"/>
+                    <!-- Crafts container -->
+                    <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
+                        <BoxContainer Name="CraftsContainer" Orientation="Vertical" HorizontalExpand="True"/>
+                    </ScrollContainer>
+                </BoxContainer>
 
                 <!-- Craft view -->
                 <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">

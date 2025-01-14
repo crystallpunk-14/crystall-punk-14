@@ -19,11 +19,14 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
+    private CP14WorkbenchUiRecipesState? _cachedState;
+
     public event Action<CP14WorkbenchUiRecipesEntry>? OnCraft;
+    public event Action<string>? OnTextUpdated;
 
     private readonly SpriteSystem _sprite;
 
-    private CP14WorkbenchUiRecipesEntry? _selectedEntry ;
+    private CP14WorkbenchUiRecipesEntry? _selectedEntry;
 
     public CP14WorkbenchWindow()
     {
@@ -32,6 +35,10 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         _sprite = _entity.System<SpriteSystem>();
 
+        SearchBar.OnTextChanged += _ =>
+        {
+            OnTextUpdated?.Invoke(SearchBar.Text);
+        };
         CraftButton.OnPressed += _ =>
         {
             if (_selectedEntry is null)
@@ -41,13 +48,34 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         };
     }
 
-    public void UpdateRecipes(CP14WorkbenchUiRecipesState recipesState)
+    public void UpdateFilter(string? search)
     {
+        if (_cachedState is null)
+            return;
+
+        UpdateRecipes(_cachedState, search);
+    }
+
+    public void UpdateRecipes(CP14WorkbenchUiRecipesState recipesState, string? search = null)
+    {
+        _cachedState = recipesState;
         CraftsContainer.RemoveAllChildren();
 
         List<CP14WorkbenchUiRecipesEntry> uncraftableList = new();
         foreach (var entry in recipesState.Recipes)
         {
+            if (search is not null && search != "")
+            {
+                if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
+                    continue;
+
+                if (!_prototype.TryIndex(indexedEntry.Result, out var indexedResult))
+                    continue;
+
+                if (!indexedResult.Name.Contains(search))
+                    continue;
+            }
+
             if (entry.Craftable)
             {
                 var control = new CP14WorkbenchRequirementControl(entry);
