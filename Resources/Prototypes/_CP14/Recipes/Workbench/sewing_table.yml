@@ -110,7 +110,7 @@
   result: CP14ClothingPantsTrouserDarkBlue
 
 - type: CP14Recipe
-  id: CP14ClothingDressBlack
+  id: CP14ClothingPantsDressBlack
   tag: CP14RecipeSewing
   craftTime: 2
   entities:
@@ -118,7 +118,7 @@
     CP14DyeBlack: 1
   stacks:
     CP14Cloth: 2
-  result: CP14ClothingDressBlack
+  result: CP14ClothingPantsDressBlack
 
 - type: CP14Recipe
   id: CP14ClothingPantsSouthernMagician
