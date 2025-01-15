@@ -91,5 +91,7 @@
 - type: entity
   parent: CP14Torch
   id: CP14TorchIgnited
+  suffix: Ignited
+
   components:
   - type: CP14AutoIgnite

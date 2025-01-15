@@ -1,0 +1,45 @@
+- type: entity
+  name: ground tobacco
+  parent: BaseItem
+  id: CP14GroundTobacco
+  description: Grinded and dried tabac leaves, some like it is a cur.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 15
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/reagent_fillings.rsi
+    state: tobacco_small
+  - type: Tag
+    tags:
+      - Smokable
+
+- type: entity
+  name: ground salvia
+  parent: BaseItem
+  id: CP14GroundSalvia
+  description: Ground and dried salvia root as it turns out is an excellent substitute for tobacco.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 12
+        - ReagentId: Happiness
+          Quantity: 3
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/reagent_fillings.rsi
+    state: salvia_powder
+  - type: Tag
+    tags:
+      - Smokable
