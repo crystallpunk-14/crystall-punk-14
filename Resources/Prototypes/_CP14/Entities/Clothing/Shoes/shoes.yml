@@ -13,7 +13,8 @@
     state: icon
   - type: Item
     size: Normal
-    
+  - type: ProtectedFromStepTriggers
+
 - type: entity
   parent: CP14ClothingShoesBase
   id: CP14ClothingShoesBlack
