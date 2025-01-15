@@ -13,7 +13,7 @@ public sealed partial class CP14KnowledgePrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
-    public LocId? Name{ get; private set; }
+    public LocId Name { get; private set; } = default!;
 
     [DataField]
     public LocId? Desc{ get; private set; }

@@ -1,9 +1,10 @@
+using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Knowledge.Components;
+namespace Content.Server._CP14.Knowledge;
 
 /// <summary>
 /// a component that can be hung on an entity to immediately teach it some skills
@@ -17,7 +18,7 @@ public sealed partial class CP14AddKnowledgeSpecial : JobSpecial
     public override void AfterEquip(EntityUid mob)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
-        var knowledgeSystem = entMan.System<SharedCP14KnowledgeSystem>();
+        var knowledgeSystem = entMan.System<CP14KnowledgeSystem>();
         foreach (var skill in Knowledge)
         {
             knowledgeSystem.TryLearnKnowledge(mob, skill);
