@@ -6,7 +6,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - CP14AggressiveAnimals
+    - CP14Monster
   - type: Sprite
     drawdepth: Mobs
   - type: ReplacementAccent
