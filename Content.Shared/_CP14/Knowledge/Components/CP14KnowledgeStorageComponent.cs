@@ -10,5 +10,5 @@ namespace Content.Shared._CP14.Knowledge.Components;
 public sealed partial class CP14KnowledgeStorageComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public List<ProtoId<CP14KnowledgePrototype>> Skills { get; private set; }= new();
+    public HashSet<ProtoId<CP14KnowledgePrototype>> Knowledges { get; private set; }= new();
 }

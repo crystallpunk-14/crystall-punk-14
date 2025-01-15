@@ -3,9 +3,9 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Knowledge.Prototypes;
 
 /// <summary>
-///
+/// Abstract knowledge that may be required to use items or crafts.
 /// </summary>
-[Prototype("CP14Skill")]
+[Prototype("CP14Knowledge")]
 public sealed partial class CP14KnowledgePrototype : IPrototype
 {
     [ViewVariables]
@@ -18,6 +18,9 @@ public sealed partial class CP14KnowledgePrototype : IPrototype
     [DataField]
     public LocId? Desc{ get; private set; }
 
+    /// <summary>
+    /// to study this knowledge, other knowledge on which it is based may be necessary.
+    /// </summary>
     [DataField]
-    public ComponentRegistry Components = new();
+    public HashSet<ProtoId<CP14KnowledgePrototype>> Dependencies = new();
 }

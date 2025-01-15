@@ -17,9 +17,9 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
 
     private void AutoAddSkill(Entity<CP14AutoAddKnowledgeComponent> ent, ref MapInitEvent args)
     {
-        foreach (var skill in ent.Comp.Knowledge)
+        foreach (var knowledge in ent.Comp.Knowledge)
         {
-            TryAddKnowledge(ent, skill);
+            TryLearnKnowledge(ent, knowledge);
         }
 
         RemComp(ent, ent.Comp);
@@ -27,53 +27,78 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
 
     private void OnMapInit(Entity<CP14KnowledgeStorageComponent> ent, ref MapInitEvent args)
     {
-        foreach (var skill in ent.Comp.Skills)
+        foreach (var knowledge in ent.Comp.Knowledges)
         {
-            TryAddKnowledge(ent, skill, force: true);
+            TryLearnKnowledge(ent, knowledge, force: true);
         }
     }
 
-    public bool TryAddKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> skill, bool force = false)
+    public bool TryLearnKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto, bool force = false)
     {
-        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var skillStorage))
+        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var knowledgeStorage))
             return false;
 
-        if (!skillStorage.Skills.Contains(skill))
+        if (force)
         {
-            skillStorage.Skills.Add(skill);
-            if (!force)
+            if (!_proto.TryIndex(proto, out var indexedKnowledge))
                 return false;
+
+            //If we teach by force - we automatically teach all the basics that are necessary for that skill.
+            foreach (var dependency in indexedKnowledge.Dependencies)
+            {
+                if (!TryLearnKnowledge(uid, dependency, true))
+                    return false;
+            }
         }
 
-        var proto = _proto.Index(skill);
-        EntityManager.AddComponents(uid, proto.Components);
+        return knowledgeStorage.Knowledges.Add(proto);
+    }
+
+    public bool TryForgotKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto)
+    {
+        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var knowledgeStorage))
+            return false;
+
+        if (!knowledgeStorage.Knowledges.Contains(proto))
+            return false;
+
+        knowledgeStorage.Knowledges.Remove(proto);
 
         return true;
     }
 
-    public bool TryForgotSkill(EntityUid uid, ProtoId<CP14KnowledgePrototype> skill)
+    public bool TryUseKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> knowledge, CP14KnowledgeStorageComponent? knowledgeStorage = null)
     {
-        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var skillStorage))
+        if (!Resolve(uid, ref knowledgeStorage, false))
             return false;
 
-        if (!skillStorage.Skills.Contains(skill))
+        if (!knowledgeStorage.Knowledges.Contains(knowledge))
             return false;
 
-        skillStorage.Skills.Remove(skill);
-
-        var proto = _proto.Index(skill);
-        EntityManager.RemoveComponents(uid, proto.Components);
-
+        var ev = new CP14KnowledgeUsedEvent(uid, knowledge);
+        RaiseLocalEvent(uid, ev);
         return true;
     }
 }
 
-public sealed partial class CP14TrySkillIssueEvent : EntityEventArgs
+public sealed class CP14TrySkillIssueEvent : EntityEventArgs
 {
     public readonly EntityUid User;
 
     public CP14TrySkillIssueEvent(EntityUid uid)
     {
         User = uid;
+    }
+}
+
+public sealed class CP14KnowledgeUsedEvent : EntityEventArgs
+{
+    public readonly EntityUid User;
+    public readonly ProtoId<CP14KnowledgePrototype> Knowledge;
+
+    public CP14KnowledgeUsedEvent(EntityUid uid, ProtoId<CP14KnowledgePrototype> knowledge)
+    {
+        User = uid;
+        Knowledge = knowledge;
     }
 }

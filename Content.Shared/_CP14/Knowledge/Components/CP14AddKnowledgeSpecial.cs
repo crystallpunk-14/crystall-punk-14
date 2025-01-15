@@ -20,7 +20,7 @@ public sealed partial class CP14AddKnowledgeSpecial : JobSpecial
         var knowledgeSystem = entMan.System<SharedCP14KnowledgeSystem>();
         foreach (var skill in Knowledge)
         {
-            knowledgeSystem.TryAddKnowledge(mob, skill);
+            knowledgeSystem.TryLearnKnowledge(mob, skill);
         }
     }
 }
