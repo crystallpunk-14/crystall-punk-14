@@ -12,7 +12,7 @@
       food:
         reagents:
         - ReagentId: Nicotine
-          Quantity: 15
+          Quantity: 10
   - type: Sprite
     sprite: _CP14/Objects/Misc/reagent_fillings.rsi
     state: tobacco_small
@@ -34,9 +34,9 @@
       food:
         reagents:
         - ReagentId: THC
-          Quantity: 12
+          Quantity: 8
         - ReagentId: Happiness
-          Quantity: 3
+          Quantity: 2
   - type: Sprite
     sprite: _CP14/Objects/Misc/reagent_fillings.rsi
     state: salvia_powder
