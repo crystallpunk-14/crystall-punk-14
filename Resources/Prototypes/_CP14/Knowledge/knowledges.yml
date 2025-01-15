@@ -10,6 +10,21 @@
   name: cp14-knowledge-wallpaper-name
   desc: cp14-knowledge-wallpaper-desc
 
+- type: CP14Knowledge
+  id: T1_WoodWork
+  name: cp14-knowledge-woodwork-name
+  desc: cp14-knowledge-woodwork-desc
+
+- type: CP14Knowledge
+  id: T1_MetallMelting
+  name: cp14-knowledge-metall-melting-name
+  desc: cp14-knowledge-metall-melting-desc
+
+- type: CP14Knowledge
+  id: T1_Glasswork
+  name: cp14-knowledge-glasswork-name
+  desc: cp14-knowledge-glasswork-desc
+
 # T2
 
 - type: CP14Knowledge
@@ -18,3 +33,8 @@
   desc: cp14-knowledge-sewing2-desc
   dependencies:
   - T1_ClothingSewing
+
+- type: CP14Knowledge
+  id: T1_MetallMelting #TODO
+  name: cp14-knowledge-metall-melting-name
+  desc: cp14-knowledge-metall-melting-desc

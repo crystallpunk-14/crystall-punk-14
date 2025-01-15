@@ -5,6 +5,7 @@
   entities:
     CP14OreCopper: 4
   result: CP14CopperBar1
+  knowledgeRequired: T1_MetallMelting
 
 - type: CP14Recipe
   id: CP14IronBar1
@@ -13,6 +14,7 @@
   entities:
     CP14OreIron: 4
   result: CP14IronBar1
+  knowledgeRequired: T1_MetallMelting
 
 - type: CP14Recipe
   id: CP14GoldBar1
@@ -21,6 +23,7 @@
   entities:
     CP14OreGold: 4
   result: CP14GoldBar1
+  knowledgeRequired: T1_MetallMelting
 
 - type: CP14Recipe
   id: CP14MithrilBar1
@@ -37,6 +40,7 @@
   entities:
     CP14QuartzShard: 1
   result: CP14GlassSheet1
+  knowledgeRequired: T1_Glasswork
 
 - type: CP14Recipe
   id: CP14GlassSheetShard1
@@ -45,6 +49,7 @@
   entities:
     CP14GlassShard: 3
   result: CP14GlassSheet1
+  knowledgeRequired: T1_Glasswork
 
 - type: CP14Recipe
   id: CP14VialTiny
@@ -53,6 +58,7 @@
   stacks:
     CP14GlassSheet: 1
   result: CP14VialTiny
+  knowledgeRequired: T1_Glasswork
 
 - type: CP14Recipe
   id: CP14VialTinyReinforced
@@ -62,6 +68,7 @@
     CP14CopperBar: 1
     CP14GlassSheet: 1
   result: CP14VialTinyReinforced
+  knowledgeRequired: T1_Glasswork
 
 - type: CP14Recipe
   id: CP14VialSmall
@@ -70,6 +77,7 @@
   stacks:
     CP14GlassSheet: 2
   result: CP14VialSmall
+  knowledgeRequired: T1_Glasswork
 
 - type: CP14Recipe
   id: CP14VialSmallReinforced
@@ -79,5 +87,5 @@
     CP14CopperBar: 1
     CP14GlassSheet: 2
   result: CP14VialSmallReinforced
-  knowledgeRequired: Alchemy 
+  knowledgeRequired: T1_Glasswork
   

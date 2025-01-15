@@ -6,6 +6,15 @@ cp14-knowledge-sewing-desc = как создавать простую одежд
 cp14-knowledge-wallpaper-name = Изготовление обоев
 cp14-knowledge-wallpaper-desc = как создавать обои на ткацком станке
 
+cp14-knowledge-woodwork-name = Работа по дереву
+cp14-knowledge-woodwork-desc = как создавать простые предметы из дерева
+
+cp14-knowledge-metall-melting-name = Переплавка металлов
+cp14-knowledge-metall-melting-desc = как переплавлять руду в ценные металлы
+
+cp14-knowledge-metall-glasswork-name = Работа с стеклом
+cp14-knowledge-metall-glasswork-desc = как работать со стеклом
+
 # T2
 
 cp14-knowledge-sewing2-name = Продвинутое шитье одежды

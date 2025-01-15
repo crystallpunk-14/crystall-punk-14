@@ -24,9 +24,6 @@
         type: CrayonBoundUserInterface
   - type: Crayon
     capacity: 15
-  - type: CP14KnowledgeLearningSource
-    knowledges:
-    - T1_WallpaperCraft
 
 - type: entity
   parent: CP14Crayon
