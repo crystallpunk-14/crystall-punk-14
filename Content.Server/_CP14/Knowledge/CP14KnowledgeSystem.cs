@@ -11,6 +11,7 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Database;
+using Content.Shared.DoAfter;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -27,11 +28,59 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
 
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<CP14AutoAddKnowledgeComponent, MapInitEvent>(AutoAddSkill);
         SubscribeLocalEvent<CP14KnowledgeStorageComponent, GetVerbsEvent<Verb>>(AddKnowledgeAdminVerb);
+        SubscribeLocalEvent<CP14KnowledgeLearningSourceComponent, GetVerbsEvent<Verb>>(AddKnowledgeLearningVerb);
+        SubscribeLocalEvent<CP14KnowledgeStorageComponent, CP14KnowledgeLearnDoAfterEvent>(KnowledgeLearnedEvent);
+    }
+
+    private void KnowledgeLearnedEvent(Entity<CP14KnowledgeStorageComponent> ent, ref CP14KnowledgeLearnDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        args.Handled = true;
+
+        TryLearnKnowledge(ent, args.Knowledge);
+    }
+
+    private void AddKnowledgeLearningVerb(Entity<CP14KnowledgeLearningSourceComponent> ent, ref GetVerbsEvent<Verb> args)
+    {
+        var user = args.User;
+        foreach (var knowledge in ent.Comp.Knowledges)
+        {
+            if (!_proto.TryIndex(knowledge, out var indexedKnowledge))
+                continue;
+
+            args.Verbs.Add(new Verb()
+            {
+                Text = $"{Loc.GetString(indexedKnowledge.Name)}",
+                Message = Loc.GetString(indexedKnowledge.Desc),
+                Category = VerbCategory.CP14KnowledgeLearn,
+                Act = () =>
+                {
+                    _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
+                        user,
+                        ent.Comp.DoAfter,
+                        new CP14KnowledgeLearnDoAfterEvent() {Knowledge = knowledge},
+                        user,
+                        ent,
+                        ent)
+                    {
+                        BreakOnDamage = true,
+                        BreakOnMove = true,
+                    });
+                },
+                Disabled = HasKnowledge(user, knowledge),
+                Impact = LogImpact.Medium,
+            });
+        }
     }
 
     private void AddKnowledgeAdminVerb(Entity<CP14KnowledgeStorageComponent> ent, ref GetVerbsEvent<Verb> args)
@@ -130,7 +179,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
                     passed = false;
                     sb.Append("\n- " + Loc.GetString(indexedDependency.Desc));
                 }
-                
+
                 if (!passed)
                 {
                     var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", sb.ToString()));

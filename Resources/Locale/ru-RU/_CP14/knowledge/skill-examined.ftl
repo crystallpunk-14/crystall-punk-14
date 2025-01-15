@@ -4,8 +4,9 @@ cp14-skill-examined-need-all = Вам нужно владеть всеми сл�
 
 cp14-skill-examined-skill = [color={$color}] - {$skill} [/color]
 
-cp14-verb-categories-knowledge-add = Научить знаниям
-cp14-verb-categories-knowledge-remove = Удалить знания
+cp14-verb-categories-knowledge-add = Научить знаниям:
+cp14-verb-categories-knowledge-remove = Удалить знания:
+cp14-verb-categories-knowledge-learn = Изучить знания:
 cp14-learned-new-knowledge = Вы изучили знания о [bold]"{$name}[/bold]"!
 cp14-forgot-knowledge = Вы потеряли свои знания о [bold]"{$name}[/bold]"!
 

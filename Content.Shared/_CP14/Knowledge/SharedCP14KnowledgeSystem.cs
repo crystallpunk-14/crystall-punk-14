@@ -1,7 +1,10 @@
 using Content.Shared._CP14.Knowledge.Components;
 using Content.Shared._CP14.Knowledge.Prototypes;
+using Content.Shared.DoAfter;
+using Content.Shared.MagicMirror;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Knowledge;
 
@@ -35,16 +38,6 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
     }
 }
 
-public sealed class CP14TrySkillIssueEvent : EntityEventArgs
-{
-    public readonly EntityUid User;
-
-    public CP14TrySkillIssueEvent(EntityUid uid)
-    {
-        User = uid;
-    }
-}
-
 public sealed class CP14KnowledgeUsedEvent : EntityEventArgs
 {
     public readonly EntityUid User;
@@ -57,4 +50,11 @@ public sealed class CP14KnowledgeUsedEvent : EntityEventArgs
         Knowledge = knowledge;
         Factor = factor;
     }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class CP14KnowledgeLearnDoAfterEvent : DoAfterEvent
+{
+    public ProtoId<CP14KnowledgePrototype> Knowledge;
+    public override DoAfterEvent Clone() => this;
 }
