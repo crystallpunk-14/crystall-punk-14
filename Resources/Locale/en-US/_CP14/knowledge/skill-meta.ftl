@@ -1,11 +1,12 @@
-cp14-skill-name-alchemy = Alchemy
-cp14-skill-desc-alchemy = You are experienced enough to use complex alchemical equipment with confidence.
+# T1
 
-cp14-skill-name-blacksmith = Blacksmithing
-cp14-skill-desc-blacksmith = You know the intricacies of working with metal
+cp14-knowledge-sewing-name = Clothing sewing
+cp14-knowledge-sewing-desc = how to make simple clothes on sewing table
 
-cp14-skill-name-warcraft = Mastery of martial weapons
-cp14-skill-desc-warcraft = You're good with a serious, martial weapon.
+cp14-knowledge-wallpaper-name = Wallpaper production
+cp14-knowledge-wallpaper-desc = how to create wallpaper on sewing table
 
-cp14-skill-name-firearms = Firearms shooting
-cp14-skill-desc-firearms = You are experienced enough to use firearms.
+# T2
+
+cp14-knowledge-sewing2-name = Advanced clothing sewing
+cp14-knowledge-sewing2-desc = how to create quality clothes on sewing table

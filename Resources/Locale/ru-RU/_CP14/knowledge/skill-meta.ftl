@@ -1,11 +1,12 @@
-cp14-skill-name-alchemy = Алхимия
-cp14-skill-desc-alchemy = Вы достаточно опытны, чтобы уверенно пользоваться сложным алхимическим оборудованием.
+# T1
 
-cp14-skill-name-blacksmith = Кузнечное дело
-cp14-skill-desc-blacksmith = Вы знаете все тонкости работы с металлом.
+cp14-knowledge-sewing-name = Шитье одежды
+cp14-knowledge-sewing-desc = как создавать простую одежду на ткацком станке
 
-cp14-skill-name-warcraft = Владение воинским оружием
-cp14-skill-desc-warcraft = Вы хорошо управляетесь с серьезным, воинским оружием.
+cp14-knowledge-wallpaper-name = Изготовление обоев
+cp14-knowledge-wallpaper-desc = как создавать обои на ткацком станке
 
-cp14-skill-name-firearms = Стрельба из огнестрела
-cp14-skill-desc-firearms = Вы достаточно опытны, чтобы пользоваться огнестрельным оружием.
+# T2
+
+cp14-knowledge-sewing2-name = Продвинутое шитье одежды
+cp14-knowledge-sewing2-desc = как создавать качественную одежду на ткацком станке

@@ -1,19 +1,20 @@
-- type: CP14Knowledge
-  id: Alchemy
-  name: cp14-skill-name-alchemy
-  desc: cp14-skill-desc-alchemy
+# T1
 
 - type: CP14Knowledge
-  id: Blacksmith
-  name: cp14-skill-name-blacksmith
-  desc: cp14-skill-desc-blacksmith
+  id: T1_ClothingSewing
+  name: cp14-knowledge-sewing-name
+  desc: cp14-knowledge-sewing-desc
 
 - type: CP14Knowledge
-  id: Warcraft
-  name: cp14-skill-name-warcraft
-  desc: cp14-skill-desc-warcraft
+  id: T1_WallpaperCraft
+  name: cp14-knowledge-wallpaper-name
+  desc: cp14-knowledge-wallpaper-desc
+
+# T2
 
 - type: CP14Knowledge
-  id: Firearms
-  name: cp14-skill-name-firearms
-  desc: cp14-skill-desc-firearms
+  id: T2_ClothingSewing
+  name: cp14-knowledge-sewing2-name
+  desc: cp14-knowledge-sewing2-desc
+  dependencies:
+  - T1_ClothingSewing
