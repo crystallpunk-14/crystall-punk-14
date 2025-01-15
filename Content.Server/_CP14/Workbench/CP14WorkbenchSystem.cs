@@ -69,7 +69,6 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         UpdateUIRecipes(ent, args.User);
     }
 
-    // TODO: Replace Del to QueueDel when it's will be works with events
     private void OnCraftFinished(Entity<CP14WorkbenchComponent> ent, ref CP14CraftDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
@@ -89,14 +88,17 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
             return;
 
+        if (recipe.KnowledgeRequired is not null)
+            _knowledge.UseKnowledge(args.User, recipe.KnowledgeRequired.Value);
+
         var resultEntity = Spawn(indexedRecipe.Result);
         _stack.TryMergeToContacts(resultEntity);
 
-        _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSoln, out var resultSolution);
-        if (recipe.TryMergeSolutions && resultSoln is not null)
+        _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSolution, out _);
+        if (recipe.TryMergeSolutions && resultSolution is not null)
         {
-            resultSoln.Value.Comp.Solution.MaxVolume = 0;
-            _solutionContainer.RemoveAllSolution(resultSoln.Value); //If we combine ingredient solutions, we do not use the default solution prescribed in the entity.
+            resultSolution.Value.Comp.Solution.MaxVolume = 0;
+            _solutionContainer.RemoveAllSolution(resultSolution.Value); //If we combine ingredient solutions, we do not use the default solution prescribed in the entity.
         }
 
         foreach (var requiredIngredient  in recipe.Entities)
@@ -112,11 +114,11 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 {
                     // Trying merge solutions
                     if (recipe.TryMergeSolutions
-                        && resultSoln is not null
+                        && resultSolution is not null
                         && _solutionContainer.TryGetSolution(placedEntity, recipe.Solution, out var ingredientSoln, out var ingredientSolution))
                     {
-                        resultSoln.Value.Comp.Solution.MaxVolume += ingredientSoln.Value.Comp.Solution.MaxVolume;
-                        _solutionContainer.TryAddSolution(resultSoln.Value, ingredientSolution);
+                        resultSolution.Value.Comp.Solution.MaxVolume += ingredientSoln.Value.Comp.Solution.MaxVolume;
+                        _solutionContainer.TryAddSolution(resultSolution.Value, ingredientSolution);
                     }
 
                     requiredCount--;
@@ -207,25 +209,6 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 return false;
         }
         return true;
-    }
-
-    private string GetCraftRecipeMessage(string desc, CP14WorkbenchRecipePrototype recipe)
-    {
-        var result = desc + "\n \n" + Loc.GetString("cp14-workbench-recipe-list")+ "\n";
-
-        foreach (var pair in recipe.Entities)
-        {
-            var proto = _proto.Index(pair.Key);
-            result += $"{proto.Name} x{pair.Value}\n";
-        }
-
-        foreach (var pair in recipe.Stacks)
-        {
-            var proto = _proto.Index(pair.Key);
-            result += $"{proto.Name} x{pair.Value}\n";
-        }
-
-        return result;
     }
 
     private Dictionary<EntProtoId, int> IndexIngredients(HashSet<EntityUid> ingredients)

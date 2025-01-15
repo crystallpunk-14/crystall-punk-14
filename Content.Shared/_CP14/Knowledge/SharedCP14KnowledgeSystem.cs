@@ -13,7 +13,7 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
     {
     }
 
-    public bool TryUseKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> knowledge, CP14KnowledgeStorageComponent? knowledgeStorage = null)
+    public bool UseKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> knowledge, float factor = 1f, CP14KnowledgeStorageComponent? knowledgeStorage = null)
     {
         if (!Resolve(uid, ref knowledgeStorage, false))
             return false;
@@ -21,7 +21,7 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
         if (!knowledgeStorage.Knowledges.Contains(knowledge))
             return false;
 
-        var ev = new CP14KnowledgeUsedEvent(uid, knowledge);
+        var ev = new CP14KnowledgeUsedEvent(uid, knowledge, factor);
         RaiseLocalEvent(uid, ev);
         return true;
     }
@@ -49,10 +49,12 @@ public sealed class CP14KnowledgeUsedEvent : EntityEventArgs
 {
     public readonly EntityUid User;
     public readonly ProtoId<CP14KnowledgePrototype> Knowledge;
+    public readonly float Factor;
 
-    public CP14KnowledgeUsedEvent(EntityUid uid, ProtoId<CP14KnowledgePrototype> knowledge)
+    public CP14KnowledgeUsedEvent(EntityUid uid, ProtoId<CP14KnowledgePrototype> knowledge, float factor)
     {
         User = uid;
         Knowledge = knowledge;
+        Factor = factor;
     }
 }
