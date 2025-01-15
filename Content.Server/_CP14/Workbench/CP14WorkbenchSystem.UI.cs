@@ -20,7 +20,7 @@ public sealed partial class CP14WorkbenchSystem
         StartCraft(entity, args.Actor, prototype);
     }
 
-    private void UpdateUIRecipes(Entity<CP14WorkbenchComponent> entity)
+    private void UpdateUIRecipes(Entity<CP14WorkbenchComponent> entity, EntityUid user)
     {
         var placedEntities = _lookup.GetEntitiesInRange(Transform(entity).Coordinates, entity.Comp.WorkbenchRadius);
 
@@ -30,7 +30,13 @@ public sealed partial class CP14WorkbenchSystem
             if (!_proto.TryIndex(recipeId, out var indexedRecipe))
                 continue;
 
-            var entry = new CP14WorkbenchUiRecipesEntry(recipeId, CanCraftRecipe(indexedRecipe, placedEntities));
+            if (indexedRecipe.KnowledgeRequired is not null)
+            {
+                if (!_knowledge.HasKnowledge(user, indexedRecipe.KnowledgeRequired.Value))
+                    continue;
+            }
+
+            var entry = new CP14WorkbenchUiRecipesEntry(recipeId, CanCraftRecipe(indexedRecipe, placedEntities, user));
 
             recipes.Add(entry);
         }

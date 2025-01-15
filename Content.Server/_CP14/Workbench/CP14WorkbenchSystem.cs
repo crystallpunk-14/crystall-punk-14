@@ -6,6 +6,7 @@
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server.Stack;
+using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Chemistry.EntitySystems;
@@ -29,6 +30,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedCP14KnowledgeSystem _knowledge = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -64,7 +66,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
     private void OnBeforeUIOpen(Entity<CP14WorkbenchComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        UpdateUIRecipes(ent);
+        UpdateUIRecipes(ent, args.User);
     }
 
     // TODO: Replace Del to QueueDel when it's will be works with events
@@ -78,9 +80,9 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
         var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates, ent.Comp.WorkbenchRadius, LookupFlags.Uncontained);
 
-        if (!CanCraftRecipe(recipe, placedEntities))
+        if (!CanCraftRecipe(recipe, placedEntities, args.User))
         {
-            _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
+            _popup.PopupEntity(Loc.GetString("cp14-workbench-cant-craft"), ent, args.User);
             return;
         }
 
@@ -145,7 +147,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             }
         }
         _transform.SetCoordinates(resultEntity,  Transform(ent).Coordinates);
-        UpdateUIRecipes(ent);
+        UpdateUIRecipes(ent, args.User);
         args.Handled = true;
     }
 
@@ -172,8 +174,13 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         _audio.PlayPvs(recipe.OverrideCraftSound ?? workbench.Comp.CraftSound, workbench);
     }
 
-    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities)
+    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities, EntityUid user)
     {
+        //Knowledge check
+        if (recipe.KnowledgeRequired is not null && !_knowledge.HasKnowledge(user, recipe.KnowledgeRequired.Value))
+            return false;
+
+        //Ingredients check
         var indexedIngredients = IndexIngredients(entities);
         foreach (var requiredIngredient  in recipe.Entities)
         {

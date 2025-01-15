@@ -25,6 +25,14 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
         RaiseLocalEvent(uid, ev);
         return true;
     }
+
+    public bool HasKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> knowledge, CP14KnowledgeStorageComponent? knowledgeStorage = null)
+    {
+        if (!Resolve(uid, ref knowledgeStorage, false))
+            return false;
+
+        return knowledgeStorage.Knowledges.Contains(knowledge);
+    }
 }
 
 public sealed class CP14TrySkillIssueEvent : EntityEventArgs
