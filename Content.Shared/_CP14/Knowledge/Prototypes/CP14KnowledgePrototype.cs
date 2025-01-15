@@ -1,12 +1,12 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Skills.Prototypes;
+namespace Content.Shared._CP14.Knowledge.Prototypes;
 
 /// <summary>
 ///
 /// </summary>
 [Prototype("CP14Skill")]
-public sealed partial class CP14SkillPrototype : IPrototype
+public sealed partial class CP14KnowledgePrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]

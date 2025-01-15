@@ -311,7 +311,7 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
-  - type: CP14SkillsStorage
+  - type: CP14KnowledgeStorage
 
 - type: entity
   save: false

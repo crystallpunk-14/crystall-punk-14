@@ -6,10 +6,6 @@
   startingGear: CP14AdventurerGear
   icon: "CP14JobIconAdventurer"
   supervisors: cp14-job-supervisors-command
-  special:
-  - !type:CP14AddSkillSpecial
-    skills:
-    - Warcraft
 
 - type: startingGear
   id: CP14AdventurerGear

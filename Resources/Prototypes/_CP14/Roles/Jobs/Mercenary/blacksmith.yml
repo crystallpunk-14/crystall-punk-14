@@ -6,10 +6,6 @@
   startingGear: CP14BlacksmithGear
   icon: "CP14JobIconBlacksmith"
   supervisors: cp14-job-supervisors-command
-  special:
-  - !type:CP14AddSkillSpecial
-    skills:
-    - Blacksmith
 
 - type: startingGear
   id: CP14BlacksmithGear

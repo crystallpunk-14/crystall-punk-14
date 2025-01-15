@@ -1,41 +1,41 @@
-using Content.Shared._CP14.Skills.Components;
-using Content.Shared._CP14.Skills.Prototypes;
+using Content.Shared._CP14.Knowledge.Components;
+using Content.Shared._CP14.Knowledge.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Shared._CP14.Skills;
+namespace Content.Shared._CP14.Knowledge;
 
-public partial class SharedCP14SkillSystem : EntitySystem
+public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<CP14SkillsStorageComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<CP14AutoAddSkillComponent, MapInitEvent>(AutoAddSkill);
+        SubscribeLocalEvent<CP14KnowledgeStorageComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14AutoAddKnowledgeComponent, MapInitEvent>(AutoAddSkill);
     }
 
-    private void AutoAddSkill(Entity<CP14AutoAddSkillComponent> ent, ref MapInitEvent args)
+    private void AutoAddSkill(Entity<CP14AutoAddKnowledgeComponent> ent, ref MapInitEvent args)
     {
-        foreach (var skill in ent.Comp.Skills)
+        foreach (var skill in ent.Comp.Knowledge)
         {
-            TryLearnSkill(ent, skill);
+            TryAddKnowledge(ent, skill);
         }
 
         RemComp(ent, ent.Comp);
     }
 
-    private void OnMapInit(Entity<CP14SkillsStorageComponent> ent, ref MapInitEvent args)
+    private void OnMapInit(Entity<CP14KnowledgeStorageComponent> ent, ref MapInitEvent args)
     {
         foreach (var skill in ent.Comp.Skills)
         {
-            TryLearnSkill(ent, skill, force: true);
+            TryAddKnowledge(ent, skill, force: true);
         }
     }
 
-    public bool TryLearnSkill(EntityUid uid, ProtoId<CP14SkillPrototype> skill, bool force = false)
+    public bool TryAddKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> skill, bool force = false)
     {
-        if (!TryComp<CP14SkillsStorageComponent>(uid, out var skillStorage))
+        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var skillStorage))
             return false;
 
         if (!skillStorage.Skills.Contains(skill))
@@ -51,9 +51,9 @@ public partial class SharedCP14SkillSystem : EntitySystem
         return true;
     }
 
-    public bool TryForgotSkill(EntityUid uid, ProtoId<CP14SkillPrototype> skill)
+    public bool TryForgotSkill(EntityUid uid, ProtoId<CP14KnowledgePrototype> skill)
     {
-        if (!TryComp<CP14SkillsStorageComponent>(uid, out var skillStorage))
+        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var skillStorage))
             return false;
 
         if (!skillStorage.Skills.Contains(skill))

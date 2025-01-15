@@ -1,22 +1,14 @@
-using Content.Server._CP14.Alchemy;
 using Content.Server.Popups;
-using Content.Shared._CP14.MeleeWeapon.EntitySystems;
-using Content.Shared._CP14.Skills;
-using Content.Shared._CP14.Skills.Components;
+using Content.Shared._CP14.Knowledge;
 using Content.Shared.Damage;
-using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Popups;
 using Content.Shared.Throwing;
-using Content.Shared.Weapons.Melee;
-using Content.Shared.Weapons.Melee.Events;
-using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._CP14.Skills;
+namespace Content.Server._CP14.Knowledge;
 
-public sealed partial class CP14SkillSystem : SharedCP14SkillSystem
+public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
