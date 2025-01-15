@@ -6,5 +6,9 @@ cp14-skill-examined-skill = [color={$color}] - {$skill} [/color]
 
 cp14-verb-categories-knowledge-add = Add knowledge
 cp14-verb-categories-knowledge-remove = Delete knowledge
-cp14-learned-new-knowledge = You have learned the knowledge of [bold]"{$name}[/bold]!"
-cp14-forgot-knowledge = You've lost your knowledge of [bold]"{$name}[/bold]!"
+cp14-learned-new-knowledge = You have learned the knowledge of [bold]"{$name}[/bold]"!
+cp14-forgot-knowledge = You've lost your knowledge of [bold]"{$name}[/bold]"!
+
+cp14-cant-learn-knowledge-dependencies = 
+    You were unable to understand {$target}... 
+    You lack the following knowledge: 

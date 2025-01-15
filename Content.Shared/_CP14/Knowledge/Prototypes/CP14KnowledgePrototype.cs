@@ -16,7 +16,7 @@ public sealed partial class CP14KnowledgePrototype : IPrototype
     public LocId Name { get; private set; } = default!;
 
     [DataField]
-    public LocId? Desc{ get; private set; }
+    public LocId Desc{ get; private set; } = default!;
 
     /// <summary>
     /// to study this knowledge, other knowledge on which it is based may be necessary.

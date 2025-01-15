@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Server.Chat.Managers;
 using Content.Server.Mind;
 using Content.Server.Popups;
@@ -5,12 +6,11 @@ using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Knowledge.Components;
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.Administration;
+using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Database;
-using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Throwing;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -24,10 +24,9 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
     public override void Initialize()
     {
@@ -43,9 +42,13 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         //Remove knowledge
         foreach (var knowledge in ent.Comp.Knowledges)
         {
+            if (!_proto.TryIndex(knowledge, out var indexedKnowledge))
+                continue;
+
             args.Verbs.Add(new Verb()
             {
-                Text = $"Remove: {knowledge.Id}",
+                Text = $"{Loc.GetString(indexedKnowledge.Name)}",
+                Message = Loc.GetString(indexedKnowledge.Desc),
                 Category = VerbCategory.CP14KnowledgeRemove,
                 Act = () =>
                 {
@@ -63,11 +66,12 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
 
             args.Verbs.Add(new Verb()
             {
-                Text = $"Add: {knowledge.ID}",
+                Text = $"{Loc.GetString(knowledge.Name)}",
+                Message = Loc.GetString(knowledge.Desc),
                 Category = VerbCategory.CP14KnowledgeAdd,
                 Act = () =>
                 {
-                    TryLearnKnowledge(ent, knowledge, true);
+                    TryLearnKnowledge(ent, knowledge, false);
                 },
                 Impact = LogImpact.High,
             });
@@ -92,31 +96,72 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         if (!_proto.TryIndex(proto, out var indexedKnowledge))
             return false;
 
-        if (force)
+        if (knowledgeStorage.Knowledges.Contains(proto))
+            return false;
+
+        if (!_mind.TryGetMind(uid, out var mind, out var mindComp))
+            return false;
+
+        if (mindComp.Session is null)
+            return false;
+
+        foreach (var dependency in indexedKnowledge.Dependencies)
         {
-            //If we teach by force - we automatically teach all the basics that are necessary for that skill.
-            foreach (var dependency in indexedKnowledge.Dependencies)
+            if (!_proto.TryIndex(dependency, out var indexedDependency))
+                return false;
+
+            if (force)
             {
+                //If we teach by force - we automatically teach all the basics that are necessary for that skill.
                 if (!TryLearnKnowledge(uid, dependency, true))
                     return false;
             }
+            else
+            {
+                var passed = true;
+                var sb = new StringBuilder();
+
+                sb.Append(Loc.GetString("cp14-cant-learn-knowledge-dependencies",
+                    ("target", Loc.GetString(indexedKnowledge.Desc))));
+
+                //We cant learnt
+                if (!HasKnowledge(uid, dependency))
+                {
+                    passed = false;
+                    sb.Append("\n- " + Loc.GetString(indexedDependency.Desc));
+                }
+                
+                if (!passed)
+                {
+                    var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", sb.ToString()));
+                    _chat.ChatMessageToOne(
+                        ChatChannel.Server,
+                        sb.ToString(),
+                        wrappedMessage,
+                        default,
+                        false,
+                        mindComp.Session.Channel);
+
+                    return false;
+                }
+            }
         }
 
-        if (_mind.TryGetMind(uid, out var mind, out var mindComp) && mindComp.Session is not null)
-        {
-            var message = Loc.GetString("cp14-learned-new-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
-            var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+        var message = Loc.GetString("cp14-learned-new-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
+        var wrappedMessage2 = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
 
-            _chat.ChatMessageToOne(
-                ChatChannel.Server,
-                message,
-                wrappedMessage,
-                default,
-                false,
-                mindComp.Session.Channel);
-        }
+        _chat.ChatMessageToOne(
+            ChatChannel.Server,
+            message,
+            wrappedMessage2,
+            default,
+            false,
+            mindComp.Session.Channel);
 
-        //TODO: Logging
+        _adminLogger.Add(
+            LogType.Mind,
+            LogImpact.Medium,
+            $"{EntityManager.ToPrettyString(uid):player} learned new knowledge: {Loc.GetString(indexedKnowledge.Name)}");
         return knowledgeStorage.Knowledges.Add(proto);
     }
 
@@ -147,7 +192,10 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
                 mindComp.Session.Channel);
         }
 
-        //TODO: Logging
+        _adminLogger.Add(
+            LogType.Mind,
+            LogImpact.Medium,
+            $"{EntityManager.ToPrettyString(uid):player} forgot knowledge: {Loc.GetString(indexedKnowledge.Name)}");
         return true;
     }
 }

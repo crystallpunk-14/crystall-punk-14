@@ -106,7 +106,8 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             var requiredCount = requiredIngredient.Value;
             foreach (var placedEntity in placedEntities)
             {
-                if (!TryComp<MetaDataComponent>(placedEntity, out var metaData) || metaData.EntityPrototype is null)
+                var metaData = MetaData(placedEntity);
+                if (metaData.EntityPrototype is null)
                     continue;
 
                 var placedProto = metaData.EntityPrototype.ID;
