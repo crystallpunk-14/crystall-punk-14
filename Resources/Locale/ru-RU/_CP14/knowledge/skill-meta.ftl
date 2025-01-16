@@ -15,8 +15,8 @@ cp14-knowledge-metall-melting-desc = как переплавлять руду в
 cp14-knowledge-metall-forging-name = Ковка металлов
 cp14-knowledge-metall-forging-desc = как перековывать металл в различные формы
 
-cp14-knowledge-metall-glasswork-name = Работа с стеклом
-cp14-knowledge-metall-glasswork-desc = как работать со стеклом
+cp14-knowledge-glasswork-name = Работа с стеклом
+cp14-knowledge-glasswork-desc = как работать со стеклом
 
 # T2
 

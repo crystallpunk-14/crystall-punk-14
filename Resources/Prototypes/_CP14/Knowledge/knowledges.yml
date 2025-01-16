@@ -41,8 +41,3 @@
   desc: cp14-knowledge-sewing2-desc
   dependencies:
   - T1_ClothingSewing
-
-- type: CP14Knowledge
-  id: T1_MetallMelting
-  name: cp14-knowledge-metall-melting-name
-  desc: cp14-knowledge-metall-melting-desc

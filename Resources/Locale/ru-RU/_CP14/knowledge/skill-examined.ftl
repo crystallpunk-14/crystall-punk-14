@@ -13,3 +13,6 @@ cp14-forgot-knowledge = Вы потеряли свои знания о [bold]"{$
 cp14-cant-learn-knowledge-dependencies = 
     Вы не смогли понять {$target}... 
     Вам не хватает понимания: 
+
+cp14-knowledge-book-pre-text = Здесь подробно описаны инструкции, объясняющие
+cp14-knowledge-book-post-text = (Чтобы изучить эти знания, нажмите ПКМ по книге, и выберите "Изучение знаний")
