@@ -12,16 +12,16 @@ namespace Content.Server._CP14.Knowledge;
 [UsedImplicitly]
 public sealed partial class CP14AddKnowledgeSpecial : JobSpecial
 {
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    [DataField(required: true), ViewVariables(VVAccess.ReadOnly)]
     public List<ProtoId<CP14KnowledgePrototype>> Knowledge = new();
 
     public override void AfterEquip(EntityUid mob)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
         var knowledgeSystem = entMan.System<CP14KnowledgeSystem>();
-        foreach (var skill in Knowledge)
+        foreach (var knowledge in Knowledge)
         {
-            knowledgeSystem.TryLearnKnowledge(mob, skill);
+            knowledgeSystem.TryLearnKnowledge(mob, knowledge, true, true);
         }
     }
 }

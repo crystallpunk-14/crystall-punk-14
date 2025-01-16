@@ -137,7 +137,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         RemComp(ent, ent.Comp);
     }
 
-    public bool TryLearnKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto, bool force = false)
+    public bool TryLearnKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto, bool force = false, bool silent = false)
     {
         if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var knowledgeStorage))
             return false;
@@ -146,12 +146,6 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
             return false;
 
         if (knowledgeStorage.Knowledges.Contains(proto))
-            return false;
-
-        if (!_mind.TryGetMind(uid, out var mind, out var mindComp))
-            return false;
-
-        if (mindComp.Session is null)
             return false;
 
         foreach (var dependency in indexedKnowledge.Dependencies)
@@ -182,30 +176,37 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
 
                 if (!passed)
                 {
-                    var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", sb.ToString()));
-                    _chat.ChatMessageToOne(
-                        ChatChannel.Server,
-                        sb.ToString(),
-                        wrappedMessage,
-                        default,
-                        false,
-                        mindComp.Session.Channel);
+                    if (!silent && _mind.TryGetMind(uid, out var mind, out var mindComp) && mindComp.Session is not null)
+                    {
+                        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", sb.ToString()));
+                        _chat.ChatMessageToOne(
+                            ChatChannel.Server,
+                            sb.ToString(),
+                            wrappedMessage,
+                            default,
+                            false,
+                            mindComp.Session.Channel);
+                    }
 
                     return false;
                 }
             }
         }
 
-        var message = Loc.GetString("cp14-learned-new-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
-        var wrappedMessage2 = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+        //TODO: coding on a sleepy head is a bad idea. Remove duplicate variables. >:(
+        if (!silent && _mind.TryGetMind(uid, out var mind2, out var mindComp2) && mindComp2.Session is not null)
+        {
+            var message = Loc.GetString("cp14-learned-new-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
+            var wrappedMessage2 = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
 
-        _chat.ChatMessageToOne(
-            ChatChannel.Server,
-            message,
-            wrappedMessage2,
-            default,
-            false,
-            mindComp.Session.Channel);
+            _chat.ChatMessageToOne(
+                ChatChannel.Server,
+                message,
+                wrappedMessage2,
+                default,
+                false,
+                mindComp2.Session.Channel);
+        }
 
         _adminLogger.Add(
             LogType.Mind,
@@ -214,7 +215,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         return knowledgeStorage.Knowledges.Add(proto);
     }
 
-    public bool TryForgotKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto)
+    public bool TryForgotKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto, bool silent = false)
     {
         if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var knowledgeStorage))
             return false;
@@ -229,16 +230,19 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
 
         if (_mind.TryGetMind(uid, out var mind, out var mindComp) && mindComp.Session is not null)
         {
-            var message = Loc.GetString("cp14-forgot-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
-            var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+            if (!silent)
+            {
+                var message = Loc.GetString("cp14-forgot-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
+                var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
 
-            _chat.ChatMessageToOne(
-                ChatChannel.Server,
-                message,
-                wrappedMessage,
-                default,
-                false,
-                mindComp.Session.Channel);
+                _chat.ChatMessageToOne(
+                    ChatChannel.Server,
+                    message,
+                    wrappedMessage,
+                    default,
+                    false,
+                    mindComp.Session.Channel);
+            }
         }
 
         _adminLogger.Add(
