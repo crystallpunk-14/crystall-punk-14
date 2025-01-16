@@ -15,7 +15,7 @@ public sealed partial class CP14MagicEnergyPhotosynthesisComponent : Component
 
     [DataField]
     [GuidebookData]
-    public FixedPoint2 DarknessEnergy = -0.25f;
+    public FixedPoint2 DarknessEnergy = 0f;
 
     /// <summary>
     /// how often objects will try to change magic energy. In Seconds
