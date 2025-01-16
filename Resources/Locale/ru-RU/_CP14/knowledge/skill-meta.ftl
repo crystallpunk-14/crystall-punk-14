@@ -12,6 +12,9 @@ cp14-knowledge-woodwork-desc = как создавать простые пред
 cp14-knowledge-metall-melting-name = Переплавка металлов
 cp14-knowledge-metall-melting-desc = как переплавлять руду в ценные металлы
 
+cp14-knowledge-metall-forging-name = Ковка металлов
+cp14-knowledge-metall-forging-desc = как перековывать металл в различные формы
+
 cp14-knowledge-metall-glasswork-name = Работа с стеклом
 cp14-knowledge-metall-glasswork-desc = как работать со стеклом
 

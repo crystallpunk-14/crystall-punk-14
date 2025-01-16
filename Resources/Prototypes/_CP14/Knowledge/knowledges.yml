@@ -1,3 +1,6 @@
+# T0
+
+
 # T1
 
 - type: CP14Knowledge
@@ -21,6 +24,11 @@
   desc: cp14-knowledge-metall-melting-desc
 
 - type: CP14Knowledge
+  id: T1_MetallForging
+  name: cp14-knowledge-metall-forging-name
+  desc: cp14-knowledge-metall-forging-desc
+
+- type: CP14Knowledge
   id: T1_Glasswork
   name: cp14-knowledge-glasswork-name
   desc: cp14-knowledge-glasswork-desc
@@ -35,6 +43,6 @@
   - T1_ClothingSewing
 
 - type: CP14Knowledge
-  id: T1_MetallMelting #TODO
+  id: T1_MetallMelting
   name: cp14-knowledge-metall-melting-name
   desc: cp14-knowledge-metall-melting-desc

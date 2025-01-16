@@ -32,6 +32,7 @@
   entities:
     CP14OreMithril: 4
   result: CP14MithrilBar1
+  knowledgeRequired: T1_MetallMelting
 
 - type: CP14Recipe
   id: CP14GlassSheet1
