@@ -69,6 +69,10 @@
         - id: CP14VialSmallBlueAmanita
         - id: CP14VialTinyChromiumSlime
         - id: CP14VialTinyLumiMushroom
+      - !type:GroupSelector
+        children:
+        - id: CP14BookKnowledgeClothingSewing
+        - id: CP14BookKnowledgeWallpaperCraft
       - id: CP14SilverCoin5
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
@@ -124,6 +128,9 @@
         - id: CP14SpellScrollFireball
         - id: CP14SpellScrollBeerCreation
           weight: 0.2
+      - !type:GroupSelector
+        children:
+        - id: CP14BookKnowledgeAdvancedClothingSewing
       - id: CP14EnergyCrystalMediumEmpty
     # Rare
     - !type:GroupSelector

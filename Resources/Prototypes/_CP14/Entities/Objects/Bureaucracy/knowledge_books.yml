@@ -10,23 +10,7 @@
 
 #TODO: Уникальный визуал каждой книжке
 
-- type: entity
-  parent: CP14BookKnowledgeBase
-  id: CP14BookKnowledgeClothingSewing
-  suffix: Clothing Sewing
-  components:
-  - type: CP14KnowledgeLearningSource
-    knowledges:
-    - T1_ClothingSewing
-
-- type: entity
-  parent: CP14BookKnowledgeBase
-  id: CP14BookKnowledgeWallpaperCraft
-  suffix: Wallpaper Craft
-  components:
-  - type: CP14KnowledgeLearningSource
-    knowledges:
-    - T1_WallpaperCraft
+# T0
 
 - type: entity
   parent: CP14BookKnowledgeBase
@@ -35,36 +19,7 @@
   components:
   - type: CP14KnowledgeLearningSource
     knowledges:
-    - T1_WoodWork
-
-- type: entity
-  parent: CP14BookKnowledgeBase
-  id: CP14BookKnowledgeMetallForging
-  suffix: Metall Forging
-  components:
-  - type: CP14KnowledgeLearningSource
-    knowledges:
-    - T1_MetallForging
-
-- type: entity
-  parent: CP14BookKnowledgeBase
-  id: CP14BookKnowledgeGlasswork
-  suffix: Glasswork
-  components:
-  - type: CP14KnowledgeLearningSource
-    knowledges:
-    - T1_Glasswork
-
-# T2
-
-- type: entity
-  parent: CP14BookKnowledgeBase
-  id: CP14BookKnowledgeClothingSewingT2
-  suffix: Advanced Clothing Sewing
-  components:
-  - type: CP14KnowledgeLearningSource
-    knowledges:
-    - T2_ClothingSewing
+    - WoodWork
 
 - type: entity
   parent: CP14BookKnowledgeBase
@@ -73,5 +28,54 @@
   components:
   - type: CP14KnowledgeLearningSource
     knowledges:
-    - T1_MetallMelting
+    - MetallMelting
+
+- type: entity
+  parent: CP14BookKnowledgeBase
+  id: CP14BookKnowledgeMetallForging
+  suffix: Metall Forging
+  components:
+  - type: CP14KnowledgeLearningSource
+    knowledges:
+    - MetallForging
+
+- type: entity
+  parent: CP14BookKnowledgeBase
+  id: CP14BookKnowledgeGlasswork
+  suffix: Glasswork
+  components:
+  - type: CP14KnowledgeLearningSource
+    knowledges:
+    - Glasswork
+
+# T1
+
+- type: entity
+  parent: CP14BookKnowledgeBase
+  id: CP14BookKnowledgeClothingSewing
+  suffix: Clothing Sewing
+  components:
+  - type: CP14KnowledgeLearningSource
+    knowledges:
+    - ClothingSewing
+
+- type: entity
+  parent: CP14BookKnowledgeBase
+  id: CP14BookKnowledgeWallpaperCraft
+  suffix: Wallpaper Craft
+  components:
+  - type: CP14KnowledgeLearningSource
+    knowledges:
+    - WallpaperCraft
+
+# T2
+
+- type: entity
+  parent: CP14BookKnowledgeBase
+  id: CP14BookKnowledgeAdvancedClothingSewing
+  suffix: Advanced Clothing Sewing
+  components:
+  - type: CP14KnowledgeLearningSource
+    knowledges:
+    - AdvancedClothingSewing
  

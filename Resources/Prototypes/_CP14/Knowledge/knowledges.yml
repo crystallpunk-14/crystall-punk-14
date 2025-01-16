@@ -1,43 +1,42 @@
 # T0
 
-
-# T1
-
 - type: CP14Knowledge
-  id: T1_ClothingSewing
-  name: cp14-knowledge-sewing-name
-  desc: cp14-knowledge-sewing-desc
-
-- type: CP14Knowledge
-  id: T1_WallpaperCraft
-  name: cp14-knowledge-wallpaper-name
-  desc: cp14-knowledge-wallpaper-desc
-
-- type: CP14Knowledge
-  id: T1_WoodWork
+  id: WoodWork
   name: cp14-knowledge-woodwork-name
   desc: cp14-knowledge-woodwork-desc
 
 - type: CP14Knowledge
-  id: T1_MetallMelting
+  id: MetallMelting
   name: cp14-knowledge-metall-melting-name
   desc: cp14-knowledge-metall-melting-desc
 
 - type: CP14Knowledge
-  id: T1_MetallForging
+  id: MetallForging
   name: cp14-knowledge-metall-forging-name
   desc: cp14-knowledge-metall-forging-desc
 
 - type: CP14Knowledge
-  id: T1_Glasswork
+  id: Glasswork
   name: cp14-knowledge-glasswork-name
   desc: cp14-knowledge-glasswork-desc
+
+# T1
+
+- type: CP14Knowledge
+  id: ClothingSewing
+  name: cp14-knowledge-sewing-name
+  desc: cp14-knowledge-sewing-desc
+
+- type: CP14Knowledge
+  id: WallpaperCraft
+  name: cp14-knowledge-wallpaper-name
+  desc: cp14-knowledge-wallpaper-desc
 
 # T2
 
 - type: CP14Knowledge
-  id: T2_ClothingSewing
+  id: AdvancedClothingSewing
   name: cp14-knowledge-sewing2-name
   desc: cp14-knowledge-sewing2-desc
   dependencies:
-  - T1_ClothingSewing
+  - ClothingSewing

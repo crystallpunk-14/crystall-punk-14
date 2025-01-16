@@ -6,7 +6,7 @@
     CP14WoodenPlanks: 2
     CP14IronBar: 2
   result: CP14BaseShield
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseCrowbar
@@ -15,7 +15,7 @@
   stacks:
     CP14IronBar: 2
   result: CP14BaseCrowbar
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseWrench
@@ -24,7 +24,7 @@
   stacks:
     CP14IronBar: 2
   result: CP14BaseWrench
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingCloakCuirass
@@ -33,7 +33,7 @@
   stacks:
     CP14IronBar: 5
   result: CP14ClothingCloakCuirass
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingCloakInfantryCuirass
@@ -42,7 +42,7 @@
   stacks:
     CP14IronBar: 6
   result: CP14ClothingCloakInfantryCuirass
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingCloakCuirassLoincloth
@@ -51,7 +51,7 @@
   stacks:
     CP14IronBar: 6
   result: CP14ClothingCloakCuirassLoincloth
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingCloakCuirassLeg
@@ -60,7 +60,7 @@
   stacks:
     CP14IronBar: 7
   result: CP14ClothingCloakCuirassLeg
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14Nail10
@@ -69,7 +69,7 @@
   stacks:
     CP14IronBar: 2
   result: CP14Nail10
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14CrystalLampBlueEmpty
@@ -79,7 +79,7 @@
     CP14CopperBar: 2
     CP14IronBar: 1
   result: CP14CrystalLampBlueEmpty
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14CrystalLampOrangeEmpty
@@ -89,7 +89,7 @@
     CP14CopperBar: 2
     CP14IronBar: 1
   result: CP14CrystalLampOrangeEmpty
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14Scissors
@@ -98,7 +98,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14Scissors
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingCloakBrassArmor
@@ -107,7 +107,7 @@
   stacks:
     CP14CopperBar: 6
   result: CP14ClothingCloakBrassArmor
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14Crossbolt
@@ -116,7 +116,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14Crossbolt
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseLockpick
@@ -125,7 +125,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14BaseLockpick
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Dagger
 
@@ -136,7 +136,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularBladeIronDagger
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldDagger
@@ -145,7 +145,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularBladeGoldDagger
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperDagger
@@ -154,7 +154,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularBladeCopperDagger
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilDagger
@@ -163,7 +163,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularBladeMithrilDagger
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Spear
 
@@ -174,7 +174,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularBladeIronSpear
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperSpear
@@ -183,7 +183,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularBladeCopperSpear
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldSpear
@@ -192,7 +192,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularBladeGoldSpear
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilSpear
@@ -201,7 +201,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularBladeMithrilSpear
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Mace
 
@@ -212,7 +212,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularBladeIronMace
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldMace
@@ -221,7 +221,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularBladeGoldMace
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperMace
@@ -230,7 +230,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularBladeCopperMace
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilMace
@@ -239,7 +239,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularBladeMithrilMace
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Sword
 
@@ -250,7 +250,7 @@
   stacks:
     CP14IronBar: 2
   result: CP14ModularBladeIronSword
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldSword
@@ -259,7 +259,7 @@
   stacks:
     CP14GoldBar: 2
   result: CP14ModularBladeGoldSword
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperSword
@@ -268,7 +268,7 @@
   stacks:
     CP14CopperBar: 2
   result: CP14ModularBladeCopperSword
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilSword
@@ -277,7 +277,7 @@
   stacks:
     CP14MithrilBar: 2
   result: CP14ModularBladeMithrilSword
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Sickle
 
@@ -288,7 +288,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularBladeIronSickle
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperSickle
@@ -297,7 +297,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularBladeCopperSickle
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldSickle
@@ -306,7 +306,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularBladeGoldSickle
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilSickle
@@ -315,7 +315,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularBladeMithrilSickle
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Shovel
 
@@ -326,7 +326,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularBladeIronShovel
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldShovel
@@ -335,7 +335,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularBladeGoldShovel
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 
 - type: CP14Recipe
@@ -345,7 +345,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularBladeCopperShovel
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilShovel
@@ -354,7 +354,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularBladeMithrilShovel
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Pickaxe
 
@@ -365,7 +365,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularBladeIronPickaxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldPickaxe
@@ -374,7 +374,7 @@
   stacks:
     CP14GoldBar: 2
   result: CP14ModularBladeGoldPickaxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperPickaxe
@@ -383,7 +383,7 @@
   stacks:
     CP14CopperBar: 2
   result: CP14ModularBladeCopperPickaxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilPickaxe
@@ -392,7 +392,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularBladeMithrilPickaxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Grip
 
@@ -403,7 +403,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularGripIron
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGripCopper
@@ -412,7 +412,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularGripCopper
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGripGolden
@@ -421,7 +421,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularGripGolden
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGripMithril
@@ -430,7 +430,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularGripMithril
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Grip long
 
@@ -441,7 +441,7 @@
   stacks:
     CP14IronBar: 2
   result: CP14ModularGripIronLong
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGripCopperLong
@@ -450,7 +450,7 @@
   stacks:
     CP14CopperBar: 2
   result: CP14ModularGripCopperLong
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGripGoldLong
@@ -459,7 +459,7 @@
   stacks:
     CP14GoldBar: 2
   result: CP14ModularGripGoldLong
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGripMithrilLong
@@ -468,7 +468,7 @@
   stacks:
     CP14MithrilBar: 2
   result: CP14ModularGripMithrilLong
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Rapier
 
@@ -479,7 +479,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularBladeIronRapier
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldRapier
@@ -488,7 +488,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularBladeGoldRapier
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperRapier
@@ -497,7 +497,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularBladeCopperRapier
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilRapier
@@ -506,7 +506,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularBladeMithrilRapier
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Axe
 
@@ -517,7 +517,7 @@
   stacks:
     CP14IronBar: 2
   result: CP14ModularBladeIronAxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeCopperAxe
@@ -526,7 +526,7 @@
   stacks:
     CP14CopperBar: 2
   result: CP14ModularBladeCopperAxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeGoldAxe
@@ -535,7 +535,7 @@
   stacks:
     CP14GoldBar: 2
   result: CP14ModularBladeGoldAxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularBladeMithrilAxe
@@ -544,7 +544,7 @@
   stacks:
     CP14MithrilBar: 2
   result: CP14ModularBladeMithrilAxe
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Sharp garde
 
@@ -555,7 +555,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularGardeSharpCopper
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSharpIron
@@ -564,7 +564,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularGardeSharpIron
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSharpGold
@@ -573,7 +573,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularGardeSharpGold
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSharpMithril
@@ -582,7 +582,7 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularGardeSharpMithril
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 # Sturdy garde
 
@@ -593,7 +593,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14ModularGardeSturdyCopper
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSturdyIron
@@ -602,7 +602,7 @@
   stacks:
     CP14IronBar: 1
   result: CP14ModularGardeSturdyIron
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSturdyGold
@@ -611,7 +611,7 @@
   stacks:
     CP14GoldBar: 1
   result: CP14ModularGardeSturdyGold
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSturdyMithril
@@ -620,4 +620,4 @@
   stacks:
     CP14MithrilBar: 1
   result: CP14ModularGardeSturdyMithril
-  knowledgeRequired: T1_MetallForging
+  knowledgeRequired: MetallForging

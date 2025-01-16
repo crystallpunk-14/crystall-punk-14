@@ -8,7 +8,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingShirtCottonBlue
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonBlack
@@ -20,7 +20,7 @@
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonBlack
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonPurple
@@ -32,7 +32,7 @@
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonPurple
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonRed
@@ -44,7 +44,7 @@
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonRed
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonWhite
@@ -55,7 +55,7 @@
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonWhite
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonYellow
@@ -67,7 +67,7 @@
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtCottonYellow
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingPantsTrouserWhite
@@ -78,7 +78,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsTrouserWhite
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingPantsTrouserDarkBlue
@@ -90,7 +90,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsTrouserDarkBlue
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingPantsDressBlack
@@ -102,7 +102,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsDressBlack
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingPantsSouthernMagician
@@ -114,7 +114,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsSouthernMagician
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretRed
@@ -126,7 +126,7 @@
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadBeretRed
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretPurple
@@ -138,7 +138,7 @@
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadBeretPurple
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretYellow
@@ -150,7 +150,7 @@
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadBeretYellow
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretBlue
@@ -162,7 +162,7 @@
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadBeretBlue
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretBlack
@@ -174,7 +174,7 @@
   stacks:
     CP14Cloth: 1
   result: CP14ClothingHeadBeretBlack
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBandanaWhite
@@ -185,7 +185,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingHeadBandanaWhite
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBandanaYellow
@@ -197,7 +197,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingHeadBandanaYellow
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadWreath
@@ -207,7 +207,7 @@
     CP14BloodFlower: 2
     CP14Dayflin: 2
   result: CP14ClothingHeadWreath
-  knowledgeRequired: T1_ClothingSewing
+  knowledgeRequired: ClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingShirtMercenary
@@ -220,7 +220,7 @@
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtMercenary
-  knowledgeRequired: T2_ClothingSewing
+  knowledgeRequired: AdvancedClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingShirtYellowWizard
@@ -234,7 +234,7 @@
   stacks:
     CP14Cloth: 3
   result: CP14ClothingShirtYellowWizard
-  knowledgeRequired: T2_ClothingSewing
+  knowledgeRequired: AdvancedClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretMercenary
@@ -247,7 +247,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingHeadBeretMercenary
-  knowledgeRequired: T2_ClothingSewing
+  knowledgeRequired: AdvancedClothingSewing
 
 - type: CP14Recipe
   id: CP14ClothingPantsMercenaryTrousers
@@ -260,7 +260,7 @@
   stacks:
     CP14Cloth: 2
   result: CP14ClothingPantsMercenaryTrousers
-  knowledgeRequired: T2_ClothingSewing
+  knowledgeRequired: AdvancedClothingSewing
 
 # Wallpaper (TODO: Move to separate workbench?)
 
@@ -273,7 +273,7 @@
   entities:
     CP14DyeBlack: 1
   result: CP14WallpaperBlack
-  knowledgeRequired: T1_WallpaperCraft
+  knowledgeRequired: WallpaperCraft
 
 - type: CP14Recipe
   id: CP14WallpaperGreen
@@ -284,7 +284,7 @@
   entities:
     CP14DyeGreen: 1
   result: CP14WallpaperGreen
-  knowledgeRequired: T1_WallpaperCraft
+  knowledgeRequired: WallpaperCraft
 
 - type: CP14Recipe
   id: CP14WallpaperPurple
@@ -295,7 +295,7 @@
   entities:
     CP14DyePurple: 1
   result: CP14WallpaperPurple
-  knowledgeRequired: T1_WallpaperCraft
+  knowledgeRequired: WallpaperCraft
 
 - type: CP14Recipe
   id: CP14WallpaperRed
@@ -306,7 +306,7 @@
   entities:
     CP14DyeRed: 1
   result: CP14WallpaperRed
-  knowledgeRequired: T1_WallpaperCraft
+  knowledgeRequired: WallpaperCraft
 
 - type: CP14Recipe
   id: CP14WallpaperWhite
@@ -315,7 +315,7 @@
   stacks:
     CP14Cloth: 10
   result: CP14WallpaperWhite
-  knowledgeRequired: T1_WallpaperCraft
+  knowledgeRequired: WallpaperCraft
 
 - type: CP14Recipe
   id: CP14WallpaperWhite2
@@ -324,7 +324,7 @@
   stacks:
     CP14Cloth: 10
   result: CP14WallpaperWhite2
-  knowledgeRequired: T1_WallpaperCraft
+  knowledgeRequired: WallpaperCraft
 
 - type: CP14Recipe
   id: CP14WallpaperYellow
@@ -335,7 +335,7 @@
   entities:
     CP14DyeYellow: 1
   result: CP14WallpaperYellow
-  knowledgeRequired: T1_WallpaperCraft
+  knowledgeRequired: WallpaperCraft
 
 - type: CP14Recipe
   id: CP14CrayonBlack

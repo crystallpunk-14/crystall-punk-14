@@ -7,7 +7,7 @@
   stacks:
     CP14WoodenPlanks: 3
   result: CP14Bucket
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14WoodenBeerMug
@@ -17,7 +17,7 @@
     CP14WoodenPlanks: 2
     CP14Nail: 1
   result: CP14WoodenBeerMug
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14PlateWooden
@@ -26,7 +26,7 @@
   stacks:
     CP14WoodenPlanks: 2
   result: CP14PlateWooden
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14BaseMop
@@ -36,7 +36,7 @@
     CP14WoodenPlanks: 2
     CP14Cloth: 1
   result: CP14BaseMop
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14Torch
@@ -63,7 +63,7 @@
   stacks:
     CP14WoodenPlanks: 1
   result: CP14ModularGripWooden
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripWoodenLong
@@ -72,7 +72,7 @@
   stacks:
     CP14WoodenPlanks: 2
   result: CP14ModularGripWoodenLong
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripLucens
@@ -81,7 +81,7 @@
   stacks:
     CP14LucensWoodenPlanks: 1
   result: CP14ModularGripLucens
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripLucensLong
@@ -90,4 +90,4 @@
   stacks:
     CP14LucensWoodenPlanks: 2
   result: CP14ModularGripLucensLong
-  knowledgeRequired: T1_WoodWork
+  knowledgeRequired: WoodWork

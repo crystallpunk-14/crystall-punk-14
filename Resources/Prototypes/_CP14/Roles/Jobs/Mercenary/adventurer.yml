@@ -6,6 +6,10 @@
   startingGear: CP14AdventurerGear
   icon: "CP14JobIconAdventurer"
   supervisors: cp14-job-supervisors-command
+  special:
+  - !type:CP14AddKnowledgeSpecial
+    knowledge:
+    - WoodWork
 
 - type: startingGear
   id: CP14AdventurerGear
