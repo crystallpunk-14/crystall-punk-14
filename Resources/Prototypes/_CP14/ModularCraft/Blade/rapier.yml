@@ -12,10 +12,6 @@
     - BaseWeaponSharp
   - !type:AddComponents
     components:
-    - type: CP14SkillRequirement
-      fuckupChance: 0.5
-      requiredSkills:
-      - Warcraft
   - !type:EditMeleeWeapon
     newWideAnimation: CP14WeaponArcThrust
     resetOnHandSelected: true # Disable fast swap

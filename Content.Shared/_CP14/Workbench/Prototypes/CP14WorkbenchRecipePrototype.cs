@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
@@ -39,4 +40,10 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
 
     [DataField]
     public string Solution = "food";
+
+    /// <summary>
+    /// If the player does not have this knowledge, the recipe will not be displayed in the workbench.
+    /// </summary>
+    [DataField]
+    public ProtoId<CP14KnowledgePrototype>? KnowledgeRequired;
 }

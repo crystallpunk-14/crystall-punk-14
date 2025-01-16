@@ -7,9 +7,12 @@
   icon: "CP14JobIconBlacksmith"
   supervisors: cp14-job-supervisors-command
   special:
-  - !type:CP14AddSkillSpecial
-    skills:
-    - Blacksmith
+  - !type:CP14AddKnowledgeSpecial
+    knowledge:
+    - WoodWork
+    - MetallMelting
+    - MetallForging
+    - Glasswork
 
 - type: startingGear
   id: CP14BlacksmithGear

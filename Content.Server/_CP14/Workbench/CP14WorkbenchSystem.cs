@@ -6,6 +6,7 @@
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server.Stack;
+using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Chemistry.EntitySystems;
@@ -29,6 +30,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedCP14KnowledgeSystem _knowledge = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -64,10 +66,9 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
     private void OnBeforeUIOpen(Entity<CP14WorkbenchComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        UpdateUIRecipes(ent);
+        UpdateUIRecipes(ent, args.User);
     }
 
-    // TODO: Replace Del to QueueDel when it's will be works with events
     private void OnCraftFinished(Entity<CP14WorkbenchComponent> ent, ref CP14CraftDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
@@ -78,20 +79,26 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
         var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates, ent.Comp.WorkbenchRadius, LookupFlags.Uncontained);
 
-        if (!CanCraftRecipe(recipe, placedEntities))
+        if (!CanCraftRecipe(recipe, placedEntities, args.User))
         {
-            _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
+            _popup.PopupEntity(Loc.GetString("cp14-workbench-cant-craft"), ent, args.User);
             return;
         }
 
-        var resultEntity = Spawn(_proto.Index(args.Recipe).Result);
+        if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
+            return;
+
+        if (recipe.KnowledgeRequired is not null)
+            _knowledge.UseKnowledge(args.User, recipe.KnowledgeRequired.Value);
+
+        var resultEntity = Spawn(indexedRecipe.Result);
         _stack.TryMergeToContacts(resultEntity);
 
-        _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSoln, out var resultSolution);
-        if (recipe.TryMergeSolutions && resultSoln is not null)
+        _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSolution, out _);
+        if (recipe.TryMergeSolutions && resultSolution is not null)
         {
-            resultSoln.Value.Comp.Solution.MaxVolume = 0;
-            _solutionContainer.RemoveAllSolution(resultSoln.Value); //If we combine ingredient solutions, we do not use the default solution prescribed in the entity.
+            resultSolution.Value.Comp.Solution.MaxVolume = 0;
+            _solutionContainer.RemoveAllSolution(resultSolution.Value); //If we combine ingredient solutions, we do not use the default solution prescribed in the entity.
         }
 
         foreach (var requiredIngredient  in recipe.Entities)
@@ -99,7 +106,8 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             var requiredCount = requiredIngredient.Value;
             foreach (var placedEntity in placedEntities)
             {
-                if (!TryComp<MetaDataComponent>(placedEntity, out var metaData) || metaData.EntityPrototype is null)
+                var metaData = MetaData(placedEntity);
+                if (metaData.EntityPrototype is null)
                     continue;
 
                 var placedProto = metaData.EntityPrototype.ID;
@@ -107,11 +115,11 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 {
                     // Trying merge solutions
                     if (recipe.TryMergeSolutions
-                        && resultSoln is not null
+                        && resultSolution is not null
                         && _solutionContainer.TryGetSolution(placedEntity, recipe.Solution, out var ingredientSoln, out var ingredientSolution))
                     {
-                        resultSoln.Value.Comp.Solution.MaxVolume += ingredientSoln.Value.Comp.Solution.MaxVolume;
-                        _solutionContainer.TryAddSolution(resultSoln.Value, ingredientSolution);
+                        resultSolution.Value.Comp.Solution.MaxVolume += ingredientSoln.Value.Comp.Solution.MaxVolume;
+                        _solutionContainer.TryAddSolution(resultSolution.Value, ingredientSolution);
                     }
 
                     requiredCount--;
@@ -142,7 +150,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             }
         }
         _transform.SetCoordinates(resultEntity,  Transform(ent).Coordinates);
-        UpdateUIRecipes(ent);
+        UpdateUIRecipes(ent, args.User);
         args.Handled = true;
     }
 
@@ -169,8 +177,13 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         _audio.PlayPvs(recipe.OverrideCraftSound ?? workbench.Comp.CraftSound, workbench);
     }
 
-    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities)
+    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities, EntityUid user)
     {
+        //Knowledge check
+        if (recipe.KnowledgeRequired is not null && !_knowledge.HasKnowledge(user, recipe.KnowledgeRequired.Value))
+            return false;
+
+        //Ingredients check
         var indexedIngredients = IndexIngredients(entities);
         foreach (var requiredIngredient  in recipe.Entities)
         {
@@ -197,25 +210,6 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                 return false;
         }
         return true;
-    }
-
-    private string GetCraftRecipeMessage(string desc, CP14WorkbenchRecipePrototype recipe)
-    {
-        var result = desc + "\n \n" + Loc.GetString("cp14-workbench-recipe-list")+ "\n";
-
-        foreach (var pair in recipe.Entities)
-        {
-            var proto = _proto.Index(pair.Key);
-            result += $"{proto.Name} x{pair.Value}\n";
-        }
-
-        foreach (var pair in recipe.Stacks)
-        {
-            var proto = _proto.Index(pair.Key);
-            result += $"{proto.Name} x{pair.Value}\n";
-        }
-
-        return result;
     }
 
     private Dictionary<EntProtoId, int> IndexIngredients(HashSet<EntityUid> ingredients)
