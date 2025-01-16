@@ -11,10 +11,6 @@
   - type: Loadout
     prototypes: 
     - CP14MobSkeleton
-  - type: CP14SkillsStorage
-  - type: CP14AutoAddSkill
-    skills:
-    - Warcraft
 
 - type: entity
   id: CP14MobUndeadSkeletonCloset

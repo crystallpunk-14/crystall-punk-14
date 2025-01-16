@@ -49,10 +49,6 @@
   - type: MeleeThrowOnHit
     lifetime: 0.05
     speed: 5
-  - type: CP14SkillRequirement
-    fuckupChance: 0.5
-    requiredSkills:
-    - Warcraft
   - type: Tool
     qualities:
       - CP14Hammering
