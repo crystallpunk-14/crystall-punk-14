@@ -26,16 +26,6 @@
       children:
       - !type:GroupSelector
         children:
-        - id: CP14SilverCoin1
-          weight: 0.1
-        - id: CP14CopperCoin
-          weight: 0.1
-        - id: CP14CopperCoin5
-          weight: 0.5
-        - id: CP14CopperCoin1
-          weight: 1
-      - !type:GroupSelector
-        children:
         - id: CP14SpellScrollIceShards
         - id: CP14SpellScrollShadowGrab
         - id: CP14SpellScrollSphereOfLight
@@ -113,15 +103,6 @@
       - !type:NestedSelector
         tableId: CP14TableDemiplaneLootT1
         weight: 0.25
-      # Coins
-      - !type:GroupSelector
-        children:
-        - id: CP14SilverCoin5
-          weight: 0.1
-        - id: CP14SilverCoin1
-          weight: 0.3
-        - id: CP14CopperCoin5
-          weight: 0.5
       - !type:GroupSelector
         children:
         - id: CP14SpellScrollShadowStep
