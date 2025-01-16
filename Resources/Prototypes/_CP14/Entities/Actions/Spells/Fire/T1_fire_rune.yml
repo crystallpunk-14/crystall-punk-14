@@ -15,7 +15,7 @@
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectEarthWall
+      - CP14TelegraphyFireRune
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -34,28 +34,49 @@
       cooldown: 10
 
 - type: entity
-  id: CP14AreaEntityEffectFireRune
-  parent: CP14BaseMagicRune
+  id: CP14TelegraphyFireRune
+  parent: CP14BaseMagicImpact
   components:
   - type: PointLight
-    color: "#8f6a2b"
+    color: "#eea911"
+  - type: TimedDespawn
+    lifetime: 0.8
   - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _CP14/Effects/Magic/area_impact.rsi
     layers:
-    - state: medium_line
-      color: "#8f6a2b"
+    - state: area_impact_in
+      color: "#eea911"
+      scale: 2, 2
       shader: unshaded
-    - state: medium_circle
-      color: "#8f6a2b"
+
+- type: entity
+  id: CP14AreaEntityEffectFireRune
+  parent: CP14BaseMagicImpact
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _CP14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#eea911"
+      scale: 2, 2
       shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.8
   - type: CP14AreaEntityEffect
-    range: 2
+    range: 1
     whitelist:
       components:
       - Damageable
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectFlameCreation
+      - CP14ImpactEffectTieflingRevenge
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
