@@ -1,6 +1,6 @@
 - type: cp14DemiplaneLocation
   id: T1SwampGeode
-  tier: 2
+  tier: 1
   locationConfig: CP14DemiplaneSwampGeode
   name: cp14-demiplane-location-cave-grass
   tags:
@@ -19,8 +19,6 @@
       proto: CP14DemiplaneGrassGeodeFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFloorMaskAir
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneGrassGeodeFloorMaskWater
     # Biomes
     - !type:BiomeDunGen
       biomeTemplate: CP14CavesIndestructibleFill
@@ -34,26 +32,6 @@
       biomeTemplate: CP14CavesGeneric
       tileMask:
       - CP14FloorSand
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneGrassGeodeFillWater
-
-- type: dungeonConfig
-  id: CP14DemiplaneGrassGeodeFloorMaskWater
-  layers:
-  - !type:NoiseDistanceDunGen
-    size: 80, 80
-    distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 0.7
-    layers:
-    - tile: CP14FloorDirt
-      threshold: 0.70
-      noise:
-        frequency: 0.030
-        noiseType: OpenSimplex2
-        fractalType: FBm
-        octaves: 5
-        lacunarity: 2
-        gain: 0.5
 
 - type: dungeonConfig
   id: CP14DemiplaneGrassGeodeFloorMaskAir
@@ -108,14 +86,3 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14DemiplaneGrassGeodeFillWater
-  reserveTiles: true
-  data:
-    entities:
-      Fill: CP14FloorWater
-  layers:
-  - !type:FillGridDunGen
-    allowedTiles:
-    - CP14FloorDirt

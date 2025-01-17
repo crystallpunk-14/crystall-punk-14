@@ -8,7 +8,6 @@
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   - CP14DemiplanePeacefulAnimals
-  - CP14DemiplaneWater
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
