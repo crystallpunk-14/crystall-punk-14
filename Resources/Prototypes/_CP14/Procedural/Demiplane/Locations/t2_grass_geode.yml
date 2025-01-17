@@ -10,7 +10,7 @@
   - CP14DemiplaneWater
 
 - type: dungeonConfig
-  id: CP14DemiplaneGrassGeode
+  id: CP14DemiplaneSwampGeode
   layers:
     # Masks
     - !type:PrototypeDunGen
