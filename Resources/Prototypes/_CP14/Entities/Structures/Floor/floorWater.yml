@@ -59,11 +59,6 @@
     solution: pool
   - type: Drink
     solution: pool
-  - type: RandomSpawner
-    prototypes:
-    - CP14GatherableChromiumSlime
-    chance: 0.01
-    deleteSpawnerAfterSpawn: false
   - type: Tag
     tags:
       - HideContextMenu
@@ -77,3 +72,44 @@
   - type: TileEntityEffect
     effects:
     - !type:ExtinguishReaction
+  - type: RandomSpawner
+    prototypes:
+    - CP14GatherableChromiumSlime
+    chance: 0.01
+    deleteSpawnerAfterSpawn: false
+
+- type: entity
+  parent: CP14FloorWater
+  id: CP14FloorWaterLilies
+  suffix: Water lily spawner
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - CP14WaterLilies
+    chance: 1
+    offset: 0.2
+    deleteSpawnerAfterSpawn: false
+
+- type: entity
+  parent: CP14FloorWater
+  id: CP14FloorWaterReeds
+  suffix: Reeds spawner
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - CP14WaterReeds
+    chance: 1
+    offset: 0.2
+    deleteSpawnerAfterSpawn: false
+
+- type: entity
+  parent: CP14FloorWater
+  id: CP14FloorWaterAirLily
+  suffix: Air lily spawner
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - CP14GatherableWaterAirLily
+    chance: 1
+    offset: 0.2
+    deleteSpawnerAfterSpawn: false

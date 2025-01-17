@@ -84,3 +84,15 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14SnowlandTestResult
+
+- type: entity
+  id: CP14BiomeSpawnerSwamp
+  parent: CP14BaseBiomeSpawner
+  suffix: Swamp
+  components:
+  - type: Sprite
+    layers:
+      - state: forest
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14SwampFill

@@ -259,3 +259,15 @@
         reagents:
         - ReagentId: CP14YellowDayflinPulp
           Quantity: 300
+
+- type: entity
+  id: CP14BarrelAirLily
+  parent: CP14BaseBarrel
+  suffix: Air Lily
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AirLily
+          Quantity: 300
