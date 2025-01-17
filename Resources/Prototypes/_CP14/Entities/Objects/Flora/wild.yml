@@ -292,12 +292,12 @@
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: CP14YellowDayflinPulp #TODO
+      - ReagentId: CP14AirLily
         Quantity: 4
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
-        - ReagentId: CP14YellowDayflinPulp #TODO
+        - ReagentId: CP14AirLily
           Quantity: 4

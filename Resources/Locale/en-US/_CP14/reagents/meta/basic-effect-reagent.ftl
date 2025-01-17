@@ -13,6 +13,12 @@ cp14-reagent-desc-basic-damage-poison = Capable of causing extreme indigestion, 
 cp14-reagent-name-basic-heal-poison = Antidote solution
 cp14-reagent-desc-basic-heal-poison = Effective as a good antidote.
 
+cp14-reagent-name-basic-damage-airloss = Asphyxiating Solution
+cp14-reagent-desc-basic-damage-airloss =  A viscous slurry that rapidly glues the victim's insides together, causing severe shortness of breath.
+
+cp14-reagent-name-basic-heal-airloss = Air solution
+cp14-reagent-desc-basic-heal-airloss = A refreshing liquid that saturates the body with air.
+
 cp14-reagent-name-see-rainbow = Hallucinogenic solution
 cp14-reagent-desc-see-rainbow = Causes cheerful hallucinations, colors the whole world in rainbow bright colors.
 

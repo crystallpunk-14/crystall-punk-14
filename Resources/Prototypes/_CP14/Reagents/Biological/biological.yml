@@ -156,3 +156,29 @@
           types:
             Poison: 0.1
 
+- type: reagent
+  id: CP14AirLily
+  group: CP14Biological
+  name: cp14-reagent-name-air-lily-juice
+  desc: cp14-reagent-desc-air-lily-juice
+  flavor: fizzy
+  color: "#92cae0"
+  physicalDesc: reagent-physical-desc-milky
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: -2
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.6
+      - !type:Emote
+        showInChat: false
+        emote: Cough
+        probability: 0.3
+

@@ -76,8 +76,8 @@
   id: CP14GatherAirLily
   entries:
   - id: CP14AirLily
-    amount: 1
-    maxAmount: 2
+    amount: 2
+    maxAmount: 3
 
 - type: entity
   id: CP14GatherableWaterAirLily
