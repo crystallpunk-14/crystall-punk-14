@@ -217,7 +217,12 @@ CP14BaseBattleStaff: null
 CP14BaseTwoHandedSword: null
 CP14TwoHandedSwordScythe: null
 
-
+#2025-17-01
+CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
+CP14ClothingCloakCuirass: CP14ClothingOuterClothingCuirass
+CP14ClothingCloakInfantryCuirass: CP14ClothingOuterClothingInfantryCuirass
+CP14ClothingCloakCuirassLoincloth: CP14ClothingOuterClothingCuirassLoincloth
+CP14ClothingCloakCuirassLeg: CP14ClothingOuterClothingCuirassLeg
 # <---> CrystallEdge migration zone end
 
 
