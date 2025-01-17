@@ -1,29 +1,13 @@
 - type: cp14DemiplaneLocation
-  id: T1GrassGeode
+  id: T1SwampGeode
   tier: 2
-  locationConfig: CP14DemiplaneGrassGeode
+  locationConfig: CP14DemiplaneSwampGeode
   name: cp14-demiplane-location-cave-grass
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneHerbals
   - CP14DemiplaneUnderground
-
-- type: dungeonConfig
-  id: CP14EdTestLayers
-  layers:
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneGrassGeode
-    #- !type:EntityTableDunGen
-    #  minCount: 20
-    #  maxCount: 20
-    #  table: !type:GroupSelector
-    #    children:
-    #    - id: CP14DemiplanePassway
-    - !type:OreDunGen
-      entity: CP14DemiplanePassway
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 1
+  - CP14DemiplaneWater
 
 - type: dungeonConfig
   id: CP14DemiplaneGrassGeode
@@ -43,7 +27,7 @@
       tileMask:
       - Plating
     - !type:BiomeDunGen
-      biomeTemplate: CP14GrasslandTestResult
+      biomeTemplate: CP14SwampFill
       tileMask:
       - CP14FloorGrass
     - !type:BiomeDunGen
