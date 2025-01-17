@@ -34,7 +34,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: small_attractor
     event: !type:CP14DelayedEntityWorldTargetActionEvent
-      cooldown: 20
+      cooldown: 15
       castDelay: 1.5
       breakOnMove: false
 
