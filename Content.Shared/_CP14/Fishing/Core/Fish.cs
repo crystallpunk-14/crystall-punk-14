@@ -11,6 +11,9 @@ public sealed class Fish
     private const float MaxPosition = 1f;
     private const float MinPosition = 0f;
 
+    private const int SpeedLoopSize = 8;
+    private const int DelayLoopSize = 12;
+
     [ViewVariables(VVAccess.ReadWrite)]
     public float Position { get; private set; }
 
@@ -18,32 +21,64 @@ public sealed class Fish
     private readonly Behavior _behavior;
 
     [ViewVariables(VVAccess.ReadWrite)]
+    private TimeSpan _delay;
+
+    [ViewVariables(VVAccess.ReadWrite)]
     private float _speed;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private TimeSpan _updateSpeedTime;
+    private float[] _speedLoop = new float[SpeedLoopSize];
 
-    public Fish(Behavior behavior, TimeSpan updateSpeedTime)
+    [ViewVariables(VVAccess.ReadWrite)]
+    private TimeSpan[] _delayLoop = new TimeSpan[DelayLoopSize];
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    private int _speedIndex;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    private int _delayIndex;
+
+    public Fish(Behavior behavior, TimeSpan delay)
     {
         _behavior = behavior;
-        _updateSpeedTime = updateSpeedTime;
+        _delay = delay;
+    }
+
+    public void Init(IRobustRandom random)
+    {
+        for (var i = 0; i < SpeedLoopSize; i++)
+        {
+            _speedLoop[i] = _behavior.CalculateSpeed(random);
+        }
+
+        for (var i = 0; i < DelayLoopSize; i++)
+        {
+            _delayLoop[i] = _behavior.CalculateDelay(random);
+        }
     }
 
     public void Update(float frameTime)
     {
-        // Update position
         Position += _speed * frameTime;
-
-        // Clamp position
         Position = Math.Clamp(Position, MinPosition, MaxPosition);
     }
 
-    public void UpdateSpeed(IRobustRandom random, IGameTiming timing)
+    public void UpdateSpeed(IGameTiming timing)
     {
-        if (_updateSpeedTime > timing.CurTime)
+        if (_delay > timing.CurTime)
             return;
 
-        _speed = _behavior.CalculateSpeed(random);
-        _updateSpeedTime = timing.CurTime + TimeSpan.FromSeconds(random.NextFloat(1.5f - 1f / _behavior.Difficulty, 2.5f - 1f / _behavior.Difficulty));
+        _speed = GetNextSpeed();
+        _delay = GetNextDelay(timing);
+    }
+
+    private float GetNextSpeed()
+    {
+        return _speedLoop[_speedIndex++ % _speedLoop.Length];
+    }
+
+    private TimeSpan GetNextDelay(IGameTiming timing)
+    {
+        return timing.CurTime + _delayLoop[_delayIndex++ % _delayLoop.Length];
     }
 }

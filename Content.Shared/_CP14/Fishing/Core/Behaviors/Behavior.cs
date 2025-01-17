@@ -15,4 +15,9 @@ public abstract partial class Behavior
     public float Difficulty { get; set; } = 2f;
 
     public abstract float CalculateSpeed(IRobustRandom random);
+
+    public virtual TimeSpan CalculateDelay(IRobustRandom random)
+    {
+        return TimeSpan.FromSeconds(random.NextFloat(1.5f - 1f / Difficulty, 2.5f - 1f / Difficulty));
+    }
 }

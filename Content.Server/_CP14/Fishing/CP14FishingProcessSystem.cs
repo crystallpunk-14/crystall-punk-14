@@ -16,43 +16,6 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly CP14FishingPoolSystem _pool = default!;
 
-    /*
-    private readonly TimeSpan _dirtyDelay = TimeSpan.FromTicks(10000000000000);
-    private TimeSpan _dirtyDelayTime;
-    */
-
-    public override void Update(float frameTime)
-    {
-        // DON'T CALL BASE METHOD!!!
-
-        var query = EntityQueryEnumerator<CP14FishingProcessComponent>();
-        while (query.MoveNext(out var entityUid, out var processComponent))
-        {
-            Update((entityUid, processComponent), frameTime * 2);
-        }
-    }
-
-    public override void FishPreUpdate(Entity<CP14FishingProcessComponent> process, Fish fish, float frameTime)
-    {
-        base.FishPreUpdate(process, fish, frameTime);
-
-        fish.UpdateSpeed(_random, _timing);
-        Dirty(process);
-    }
-
-    public override void UpdateDirty(Entity<CP14FishingProcessComponent> process)
-    {
-        base.UpdateDirty(process);
-
-        /*
-        if (_timing.CurTime < _dirtyDelayTime)
-            return;
-
-        _dirtyDelayTime = _timing.CurTime + _dirtyDelay;
-        Dirty(process);
-        */
-    }
-
     public override void Finish(Entity<CP14FishingProcessComponent> process, bool success)
     {
         base.Finish(process, success);
@@ -101,6 +64,7 @@ public sealed class CP14FishingProcessSystem : CP14SharedFishingProcessSystem
 
         process.Comp.Player = new Player(fishingRod.Comp.Size);
         process.Comp.Fish = new Fish(new MixedBehavior(), _timing.CurTime + TimeSpan.FromSeconds(0.5f));
+        process.Comp.Fish.Init(_random);
 
         process.Comp.LootProtoId = loot;
         process.Comp.StyleSheet = style;
