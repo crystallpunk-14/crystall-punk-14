@@ -273,3 +273,31 @@
         reagents:
         - ReagentId: CP14YellowDayflinPulp
           Quantity: 4
+
+- type: entity
+  id: CP14AirLily
+  parent: CP14WildProduceBase
+  name: air lily
+  description: A light, delicate and airy flower. It is said that its special properties even allow it to breathe underwater...
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/water_lilies.rsi
+    layers:
+      - state: lily_icon
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        lily_icon: "" #TODO: more sprites
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14YellowDayflinPulp #TODO
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14YellowDayflinPulp #TODO
+          Quantity: 4
