@@ -27,39 +27,39 @@
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ClothingCloakCuirass
+  id: CP14ClothingOuterClothingCuirass
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
     CP14IronBar: 5
-  result: CP14ClothingCloakCuirass
+  result: CP14ClothingOuterClothingCuirass
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ClothingCloakInfantryCuirass
+  id: CP14ClothingOuterClothingInfantryCuirass
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
     CP14IronBar: 6
-  result: CP14ClothingCloakInfantryCuirass
+  result: CP14ClothingOuterClothingInfantryCuirass
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ClothingCloakCuirassLoincloth
+  id: CP14ClothingOuterClothingCuirassLoincloth
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
     CP14IronBar: 6
-  result: CP14ClothingCloakCuirassLoincloth
+  result: CP14ClothingOuterClothingCuirassLoincloth
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ClothingCloakCuirassLeg
+  id: CP14ClothingOuterClothingCuirassLeg
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
     CP14IronBar: 7
-  result: CP14ClothingCloakCuirassLeg
+  result: CP14ClothingOuterClothingCuirassLeg
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
@@ -101,12 +101,12 @@
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ClothingCloakBrassArmor
+  id: CP14ClothingOuterClothingCopperArmor
   tag: CP14RecipeAnvil
   craftTime: 2
   stacks:
     CP14CopperBar: 6
-  result: CP14ClothingCloakBrassArmor
+  result: CP14ClothingOuterClothingCopperArmor
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
