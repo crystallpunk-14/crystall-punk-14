@@ -24,7 +24,7 @@
 # Splitting
 
 - type: reaction
-  id: CP14BlueAmanitaSplitting
+  id: CP14AirLilySplitting
   minTemp: 450
   priority: 3
   reactants:
