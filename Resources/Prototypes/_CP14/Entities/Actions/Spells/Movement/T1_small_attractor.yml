@@ -1,0 +1,120 @@
+- type: entity
+  id: CP14ActionSpellSmallAttractor
+  name: Small attractor
+  description: The power of magical gravity draws objects and creatures to it with great force.
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: small_attractor
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.6
+  - type: CP14MagicEffectManaCost
+    manaCost: 15
+  - type: CP14MagicEffect
+    magicType: Movement
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectEarthWall
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14WallSpawnSmallAttractor
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Motus magni..."
+    endSpeech: "retro retrahe"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneSmallAttractor
+  - type: EntityWorldTargetAction
+    range: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: small_attractor
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 20
+      castDelay: 1.5
+      breakOnMove: false
+
+- type: entity
+  id: CP14RuneSmallAttractor
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#63ceff"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#63ceff"
+      shader: unshaded
+    - state: medium_circle
+      color: "#63ceff"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectSmallAttractor
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#63ceff"
+      shader: unshaded
+
+- type: entity
+  id: CP14WallSpawnSmallAttractor
+  name: small attractor
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ActiveTimerTrigger
+    timeRemaining: 0.1
+  - type: SoundOnTrigger
+    removeOnTrigger: true
+    sound:
+      path: /Audio/Effects/Grenades/Supermatter/supermatter_start.ogg
+      volume: 5
+  - type: AnchorOnTrigger
+    removeOnTrigger: true
+  - type: TwoStageTrigger
+    triggerDelay: 3
+    components:
+      - type: AmbientSound
+        enabled: true
+        volume: -5
+        range: 14
+        sound:
+          path: /Audio/Effects/Grenades/Supermatter/supermatter_loop.ogg
+      - type: GravityWell
+        maxRange: 8
+        baseRadialAcceleration: 145
+        baseTangentialAcceleration: 5
+        gravPulsePeriod: 0.01
+      - type: SingularityDistortion
+        intensity: 150
+        falloffPower: 1.5
+      - type: PointLight
+        enabled: true
+        color: "#ffaa44"
+        energy: 8
+        radius: 6
+        softness: 1
+        offset: "0, 0"
+      - type: SoundOnTrigger
+        sound:
+          path: /Audio/Effects/Grenades/Supermatter/supermatter_end.ogg
+          params:
+            volume: 5
+      - type: DeleteOnTrigger
+
+- type: entity
+  parent: CP14BaseSpellScrollMovement
+  id: CP14SpellScrollSmallAttractor
+  name: small attractor spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSmallAttractor
