@@ -73,16 +73,3 @@
     - state: tomato
   - type: CP14Seed
     plantProto: CP14PlantTomatoes
-
-- type: entity
-  id: CP14SeedPotato
-  name: potato seeds
-  description: Future potatoes, small now, but extremely nutritious in the future.
-  parent: CP14BaseSeed
-  components:
-  - type: Sprite
-    layers:
-    - state: bag
-    - state: potatoes
-  - type: CP14Seed
-    plantProto: CP14PlantPotato
