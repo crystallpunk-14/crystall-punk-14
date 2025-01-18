@@ -264,6 +264,6 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         if (!TryComp<CP14KnowledgeStorageComponent>(entity, out var knowledgeComp))
             return;
 
-        RaiseNetworkEvent(new CP14KnowledgeInfoEvent(GetNetEntity(entity),knowledgeComp.Knowledges));
+        RaiseNetworkEvent(new CP14KnowledgeInfoEvent(GetNetEntity(entity),knowledgeComp.Knowledges), args.SenderSession);
     }
 }

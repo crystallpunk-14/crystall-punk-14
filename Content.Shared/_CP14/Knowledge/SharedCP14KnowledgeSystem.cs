@@ -93,6 +93,7 @@ public sealed partial class CP14KnowledgeLearnDoAfterEvent : DoAfterEvent
     public override DoAfterEvent Clone() => this;
 }
 
+[Serializable, NetSerializable]
 public sealed class CP14KnowledgeInfoEvent : EntityEventArgs
 {
     public readonly NetEntity NetEntity;

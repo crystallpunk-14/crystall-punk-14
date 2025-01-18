@@ -1,11 +1,9 @@
 using Content.Client._CP14.Knowledge;
 using Content.Client._CP14.UserInterface.Systems.Knowledge.Windows;
-using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Input;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
@@ -21,8 +19,6 @@ public sealed class CP14KnowledgeUIController : UIController, IOnStateEntered<Ga
 {
     [Dependency] private readonly IPlayerManager _player = default!;
     [UISystemDependency] private readonly ClientCP14KnowledgeSystem _knowledge = default!;
-    [UISystemDependency] private readonly SpriteSystem _sprite = default!;
-
 
     private CP14KnowledgeWindow? _window;
 
