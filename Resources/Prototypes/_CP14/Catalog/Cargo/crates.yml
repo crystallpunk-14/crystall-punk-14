@@ -63,6 +63,8 @@
         amount: 3
       - id: CP14SeedTomato
         amount: 3
+      - id: CP14SeedPotato
+        amount: 3
 
 - type: entity
   parent: CP14BrassChest
