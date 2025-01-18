@@ -1,0 +1,10 @@
+<windows:CP14KnowledgeWindow
+    xmlns="https://spacestation14.io"
+    xmlns:cc="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:windows="clr-namespace:Content.Client._CP14.UserInterface.Systems.Knowledge.Windows"
+    Title="{Loc 'cp14-knowledge-info-title'}"
+    MinWidth="400"
+    MinHeight="545">
+    <ScrollContainer>
+    </ScrollContainer>
+</windows:CP14KnowledgeWindow>

@@ -92,3 +92,26 @@ public sealed partial class CP14KnowledgeLearnDoAfterEvent : DoAfterEvent
     public ProtoId<CP14KnowledgePrototype> Knowledge;
     public override DoAfterEvent Clone() => this;
 }
+
+public sealed class CP14KnowledgeInfoEvent : EntityEventArgs
+{
+    public readonly NetEntity NetEntity;
+    public readonly HashSet<ProtoId<CP14KnowledgePrototype>> AllKnowledge;
+
+    public CP14KnowledgeInfoEvent(NetEntity netEntity, HashSet<ProtoId<CP14KnowledgePrototype>> allKnowledge)
+    {
+        NetEntity = netEntity;
+        AllKnowledge = allKnowledge;
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class RequestKnowledgeInfoEvent : EntityEventArgs
+{
+    public readonly NetEntity NetEntity;
+
+    public RequestKnowledgeInfoEvent(NetEntity netEntity)
+    {
+        NetEntity = netEntity;
+    }
+}

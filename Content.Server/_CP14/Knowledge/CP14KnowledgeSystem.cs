@@ -38,6 +38,8 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         SubscribeLocalEvent<CP14KnowledgeStorageComponent, GetVerbsEvent<Verb>>(AddKnowledgeAdminVerb);
         SubscribeLocalEvent<CP14KnowledgeLearningSourceComponent, GetVerbsEvent<Verb>>(AddKnowledgeLearningVerb);
         SubscribeLocalEvent<CP14KnowledgeStorageComponent, CP14KnowledgeLearnDoAfterEvent>(KnowledgeLearnedEvent);
+
+        SubscribeNetworkEvent<RequestKnowledgeInfoEvent>(OnRequestKnowledgeInfoEvent);
     }
 
     private void KnowledgeLearnedEvent(Entity<CP14KnowledgeStorageComponent> ent, ref CP14KnowledgeLearnDoAfterEvent args)
@@ -250,5 +252,18 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
             LogImpact.Medium,
             $"{EntityManager.ToPrettyString(uid):player} forgot knowledge: {Loc.GetString(indexedKnowledge.Name)}");
         return true;
+    }
+
+    private void OnRequestKnowledgeInfoEvent(RequestKnowledgeInfoEvent msg, EntitySessionEventArgs args)
+    {
+        if (!args.SenderSession.AttachedEntity.HasValue || args.SenderSession.AttachedEntity != GetEntity(msg.NetEntity))
+            return;
+
+        var entity = args.SenderSession.AttachedEntity.Value;
+
+        if (!TryComp<CP14KnowledgeStorageComponent>(entity, out var knowledgeComp))
+            return;
+
+        RaiseNetworkEvent(new CP14KnowledgeInfoEvent(GetNetEntity(entity),knowledgeComp.Knowledges));
     }
 }
