@@ -36,6 +36,7 @@
   weight: 0
   color: "#588151"
   roles:
+  - CP14Apprentice
   - CP14Adventurer
   - CP14Alchemist
   - CP14Innkeeper

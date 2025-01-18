@@ -26,16 +26,6 @@
       children:
       - !type:GroupSelector
         children:
-        - id: CP14SilverCoin1
-          weight: 0.1
-        - id: CP14CopperCoin
-          weight: 0.1
-        - id: CP14CopperCoin5
-          weight: 0.5
-        - id: CP14CopperCoin1
-          weight: 1
-      - !type:GroupSelector
-        children:
         - id: CP14SpellScrollIceShards
         - id: CP14SpellScrollShadowGrab
         - id: CP14SpellScrollSphereOfLight
@@ -47,7 +37,7 @@
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollPlantGrowth
-      - id: CP14EnergyCrystalSmall
+      - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
       - id: CP14GlassShard
       - id: CP14Paper
@@ -69,9 +59,13 @@
         - id: CP14VialSmallBlueAmanita
         - id: CP14VialTinyChromiumSlime
         - id: CP14VialTinyLumiMushroom
+      - !type:GroupSelector
+        children:
+        - id: CP14BookKnowledgeClothingSewing
+        - id: CP14BookKnowledgeWallpaperCraft
       - id: CP14SilverCoin5
       - id: CP14BaseLockpick
-      - id: CP14EnergyCrystalMedium
+      - id: CP14EnergyCrystalMediumEmpty
       - id: CP14DemiplaneKeyT1
         weight: 2
       - id: CP14DemiplaneKeyT2
@@ -109,22 +103,16 @@
       - !type:NestedSelector
         tableId: CP14TableDemiplaneLootT1
         weight: 0.25
-      # Coins
-      - !type:GroupSelector
-        children:
-        - id: CP14SilverCoin5
-          weight: 0.1
-        - id: CP14SilverCoin1
-          weight: 0.3
-        - id: CP14CopperCoin5
-          weight: 0.5
       - !type:GroupSelector
         children:
         - id: CP14SpellScrollShadowStep
         - id: CP14SpellScrollFireball
         - id: CP14SpellScrollBeerCreation
           weight: 0.2
-      - id: CP14EnergyCrystalMedium
+      - !type:GroupSelector
+        children:
+        - id: CP14BookKnowledgeAdvancedClothingSewing
+      - id: CP14EnergyCrystalMediumEmpty
     # Rare
     - !type:GroupSelector
       weight: 25

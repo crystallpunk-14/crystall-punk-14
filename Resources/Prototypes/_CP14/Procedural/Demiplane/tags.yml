@@ -17,3 +17,12 @@
 
 - type: Tag
   id: CP14DemiplaneUnderground
+
+- type: Tag
+  id: CP14DemiplaneWater
+  
+  #Cold
+  
+  #Hot
+  
+  #Dry

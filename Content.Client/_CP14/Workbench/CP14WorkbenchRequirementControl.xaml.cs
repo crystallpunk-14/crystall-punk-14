@@ -59,6 +59,6 @@ public sealed partial class CP14WorkbenchRequirementControl : Control
 
     private void UpdateView()
     {
-        View.Texture = _sprite.GetPrototypeIcon(_recipePrototype.Result).Default;
+        View.SetPrototype(_recipePrototype.Result);
     }
 }

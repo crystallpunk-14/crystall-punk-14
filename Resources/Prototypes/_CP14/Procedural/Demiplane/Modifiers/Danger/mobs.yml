@@ -12,8 +12,8 @@
     - !type:OreDunGen
       entity: CP14SpawnMobUndeadZombieRandom
       count: 4
-      minGroupSize: 5
-      maxGroupSize: 8
+      minGroupSize: 3
+      maxGroupSize: 5
 
 - type: cp14DemiplaneModifier
   id: EnemyDyno
@@ -29,7 +29,7 @@
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobDinoYumkaraptor
-      count: 6
+      count: 5
       minGroupSize: 1
       maxGroupSize: 1
 
@@ -48,28 +48,7 @@
       entity: CP14SpawnMobMonsterMosquito
       count: 4
       minGroupSize: 2
-      maxGroupSize: 3
-
-- type: cp14DemiplaneModifier
-  id: EnemyXeno
-  tiers:
-    - 1
-  name: cp14-modifier-xeno
-  categories:
-    Danger: 0.4
-  requiredTags:
-  - CP14DemiplaneUnderground
-  layers:
-    - !type:OreDunGen
-      entity: CP14MobXenoDrone
-      count: 3
-      minGroupSize: 1
-      maxGroupSize: 2
-    - !type:OreDunGen
-      entity: CP14MobXeno
-      count: 3
-      minGroupSize: 1
-      maxGroupSize: 2
+      maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
   id: SmallHydra

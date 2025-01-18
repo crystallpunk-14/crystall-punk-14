@@ -7,7 +7,7 @@
     sprite: _CP14/Effects/Magic/spells_icons.rsi
     state: mana_gift
   - type: CP14MagicEffectManaCost
-    manaCost: 12
+    manaCost: 10
     canModifyManacost: false
   - type: CP14MagicEffect
     magicType: Meta

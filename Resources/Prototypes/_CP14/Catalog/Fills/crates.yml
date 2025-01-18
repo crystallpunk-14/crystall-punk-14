@@ -58,6 +58,20 @@
       - id: CP14ModularIronSickle
       - !type:GroupSelector
         children:
+        - id: CP14Candle
+        - id: CP14CandleRed
+        - id: CP14CandleBlue
+        - id: CP14CandleBlack
+        - id: CP14CandleGreen
+        - id: CP14CandlePurple
+        - id: CP14CandleSmall
+        - id: CP14CandleRedSmall
+        - id: CP14CandleBlueSmall
+        - id: CP14CandleBlackSmall
+        - id: CP14CandleGreenSmall
+        - id: CP14CandlePurpleSmall
+      - !type:GroupSelector
+        children:
         - id: CP14CrystalLampBlueEmpty
         - id: CP14CrystalLampOrangeEmpty
       - id: CP14Rope

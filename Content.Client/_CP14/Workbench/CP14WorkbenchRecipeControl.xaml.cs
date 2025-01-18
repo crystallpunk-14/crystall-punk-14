@@ -31,7 +31,9 @@ public sealed partial class CP14WorkbenchRecipeControl : Control
     {
         var entityName = prototype.Name;
         Name.Text =  count <= 1 ? entityName : $"{entityName} x{count}";
-        View.Texture = _sprite.GetPrototypeIcon(prototype).Default;
+
+        View.Visible = false;
+        EntityView.SetPrototype(prototype);
     }
 
     public CP14WorkbenchRecipeControl(StackPrototype prototype, int count) : this()
@@ -43,6 +45,7 @@ public sealed partial class CP14WorkbenchRecipeControl : Control
         if (icon is null)
             return;
 
+        EntityView.Visible = false;
         View.Texture = _sprite.Frame0(icon);
     }
 }

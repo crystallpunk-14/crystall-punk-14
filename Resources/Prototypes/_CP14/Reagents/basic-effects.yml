@@ -76,6 +76,38 @@
             Poison: 10
 
 - type: reagent
+  id: CP14BasicEffectHealAirloss
+  name: cp14-reagent-name-basic-heal-airloss
+  desc: cp14-reagent-desc-basic-heal-airloss
+  group: CP14BasicEffect
+  flavor: fizzy
+  color: "#e6f4f5"
+  physicalDesc: reagent-physical-desc-milky
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageAirloss
+  name: cp14-reagent-name-basic-damage-airloss
+  desc: cp14-reagent-desc-basic-damage-airloss
+  group: CP14BasicEffect
+  flavor: horrible
+  color: "#73091e"
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: 10
+
+- type: reagent
   id: CP14BasicEffectSatiateHunger
   name: cp14-reagent-name-basic-satiate-hunger
   desc: cp14-reagent-desc-basic-satiate-hunger

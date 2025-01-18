@@ -86019,6 +86019,18 @@ entities:
     - type: Transform
       pos: -36.5,2.5
       parent: 2
+- proto: CP14SpawnPointApprentice
+  entities:
+  - uid: 17913
+    components:
+    - type: Transform
+      pos: -0.5,-50.5
+      parent: 2
+  - uid: 17914
+    components:
+    - type: Transform
+      pos: 33.5,9.5
+      parent: 2
 - proto: CP14SpawnPointBanker
   entities:
   - uid: 1512

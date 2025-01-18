@@ -21,6 +21,9 @@ cp14-job-desc-banker = Make deals, store entrusted valuables, issue interest-bea
 
 # Mercenary
 
+cp14-job-name-apprentice = Apprentice
+cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Choose a specialisation in equipment, and try to help others in their work, in exchange for a salary and invaluable experience.
+
 cp14-job-name-adventurer = Adventurer
 cp14-job-desc-adventurer = A hunter for thrills, riches and fame, constantly risking his life. Fulfill the most dangerous orders, earning a living by mining resources or killing monsters.
 

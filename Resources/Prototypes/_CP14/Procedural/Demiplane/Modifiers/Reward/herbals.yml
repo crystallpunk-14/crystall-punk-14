@@ -108,6 +108,27 @@
       minGroupSize: 3
       maxGroupSize: 5
 
+- type: cp14DemiplaneModifier
+  id: AirLily
+  tiers:
+    - 1
+    - 2
+  name: cp14-modifier-air-lily
+  categories:
+    Reward: 0.2
+  requiredTags:
+  - CP14DemiplaneHerbals
+  - CP14DemiplaneWater
+  layers:
+    - !type:OreDunGen
+      entityMask: 
+      - CP14FloorWater
+      - CP14FloorWaterLilies
+      entity: CP14FloorWaterAirLily
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
+
 # TIER 2
 
 - type: cp14DemiplaneModifier

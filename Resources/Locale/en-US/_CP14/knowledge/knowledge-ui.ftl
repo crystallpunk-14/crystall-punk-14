@@ -1,0 +1,1 @@
+cp14-knowledge-info-title = Character knowledge

@@ -208,10 +208,21 @@ CP14BaseBroom: null
 CP14DemiplanKey: CP14DemiplaneKeyT1
 CP14SpawnerExpeditionLootCommon: CP14SpawnerDemiplaneLootT1
 
-#2024-06-01
+#2025-06-01
 CP14AuraNodeBase: null
 CP14AuraScanner: null
 
+#2025-01-14
+CP14BaseBattleStaff: null
+CP14BaseTwoHandedSword: null
+CP14TwoHandedSwordScythe: null
+
+#2025-17-01
+CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
+CP14ClothingCloakCuirass: CP14ClothingOuterClothingCuirass
+CP14ClothingCloakInfantryCuirass: CP14ClothingOuterClothingInfantryCuirass
+CP14ClothingCloakCuirassLoincloth: CP14ClothingOuterClothingCuirassLoincloth
+CP14ClothingCloakCuirassLeg: CP14ClothingOuterClothingCuirassLeg
 # <---> CrystallEdge migration zone end
 
 

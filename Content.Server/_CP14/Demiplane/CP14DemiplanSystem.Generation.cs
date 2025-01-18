@@ -249,13 +249,19 @@ public sealed partial class CP14DemiplaneSystem
             //Tier filter
             if (passed)
             {
+                var innerPassed = false;
                 foreach (var tier in modifier.Tiers)
                 {
-                    if (!generator.Comp.TiersContent.ContainsKey(tier))
+                    if (generator.Comp.TiersContent.ContainsKey(tier))
                     {
-                        passed = false;
+                        innerPassed = true;
                         break;
                     }
+                }
+
+                if (!innerPassed)
+                {
+                    passed = false;
                 }
             }
 
@@ -265,7 +271,8 @@ public sealed partial class CP14DemiplaneSystem
                 var maxProb = 0f;
                 foreach (var tier in modifier.Tiers)
                 {
-                    maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
+                    if (generator.Comp.TiersContent.ContainsKey(tier))
+                        maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
                 }
 
                 if (!_random.Prob(maxProb))

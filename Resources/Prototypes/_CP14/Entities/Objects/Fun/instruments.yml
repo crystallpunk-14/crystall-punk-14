@@ -1,0 +1,45 @@
+﻿- type: entity
+  parent: BaseHandheldInstrument
+  id: CP14FluteInstrument
+  name: flute
+  description: A compact musical wind instrument, popular in villages as well as with large musical troupes.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Instrument
+    program: 75
+  - type: Sprite
+    sprite: _CP14/Objects/Fun/Instruments/flute.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _CP14/Objects/Fun/Instruments/flute.rsi
+  - type: Tag
+    tags:
+    - WoodwindInstrument
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: CP14LyraInstrument
+  name: lyra
+  description: A common stringed instrument throughout Sylate, popular with various bards and musical troupes.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Instrument
+    program: 46
+  - type: Sprite
+    sprite: _CP14/Objects/Fun/Instruments/lira.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _CP14/Objects/Fun/Instruments/lira.rsi
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    sprite: _CP14/Objects/Fun/Instruments/lira.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
+  - type: Tag
+    tags:
+    - StringInstrument
