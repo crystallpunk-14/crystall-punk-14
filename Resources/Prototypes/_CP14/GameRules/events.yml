@@ -12,21 +12,21 @@
   id: CP14BasicCalmEventsTable
   table: !type:AllSelector
     children:
-    - id: CP14ClosetSkeleton
+    #- id: CP14ClosetSkeleton
     - id: CP14ZombiesSpawn
     - id: CP14HydrasSpawn
     - id: CP14MosquitoSpawn
 
-- type: entity
-  parent: CP14BaseGameRule
-  id: CP14ClosetSkeleton
-  components:
-  - type: StationEvent
-    weight: 5
-    duration: 1
-    minimumPlayers: 10
-  - type: RandomEntityStorageSpawnRule
-    prototype: CP14MobUndeadSkeletonCloset
+#- type: entity
+#  parent: CP14BaseGameRule
+#  id: CP14ClosetSkeleton
+#  components:
+#  - type: StationEvent
+#    weight: 5
+#    duration: 1
+#    minimumPlayers: 10
+#  - type: RandomEntityStorageSpawnRule
+#    prototype: CP14MobUndeadSkeletonCloset
 
 - type: entity
   parent: CP14BaseStationEventShortDelay

@@ -21,24 +21,15 @@ public sealed partial class CP14StoreProductControl : Control
 
         _sprite = _entity.System<SpriteSystem>();
 
-        UpdateName(entry.Name);
-        UpdateView(entry.Icon);
-        UpdatePrice(entry.Price);
-    }
-
-    private void UpdatePrice(int price)
-    {
         PriceHolder.RemoveAllChildren();
-        PriceHolder.AddChild(new CP14PriceControl(price));
-    }
+        PriceHolder.AddChild(new CP14PriceControl(entry.Price));
+        ProductName.Text = $"[bold]{entry.Name}[/bold]";
 
-    private void UpdateName(string name)
-    {
-        ProductName.Text = $"[bold]{name}[/bold]";
+        SpecialLabel.Visible = entry.Special;
+        View.Texture = _sprite.Frame0(entry.Icon);
     }
 
     private void UpdateView(SpriteSpecifier spriteSpecifier)
     {
-        View.Texture = _sprite.Frame0(spriteSpecifier);
     }
 }

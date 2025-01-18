@@ -65,5 +65,5 @@
   id: CP14GatherPotato
   entries:
   - id: CP14FoodPotato
-    amount: 2
-    maxAmount: 4
+    amount: 3
+    maxAmount: 5

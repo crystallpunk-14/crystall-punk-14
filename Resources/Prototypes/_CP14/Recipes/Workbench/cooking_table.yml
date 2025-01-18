@@ -66,3 +66,11 @@
   entities:
     CP14FoodTomatoesSlice: 1 
   result: CP14SeedTomato
+
+- type: CP14Recipe
+  id: CP14SeedCabbage
+  tag: CP14RecipeCooking
+  craftTime: 1
+  entities:
+    CP14FoodCabbageSlice: 1 
+  result: CP14SeedCabbage
