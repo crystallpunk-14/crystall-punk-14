@@ -137,14 +137,47 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     {
         station.Comp.CurrentBuyPositions.Clear();
         station.Comp.CurrentSellPositions.Clear();
+        station.Comp.CurrentSpecialBuyPositions.Clear();
+        station.Comp.CurrentSpecialSellPositions.Clear();
 
+        var availableSpecialSellPositions = new List<CP14StoreSellPositionPrototype>();
+        var availableSpecialBuyPositions = new List<CP14StoreBuyPositionPrototype>();
+
+        //Add static positions + cash special ones
         foreach (var buyPos in station.Comp.AvailableBuyPosition)
         {
-            station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
+            if (buyPos.Special)
+                availableSpecialBuyPositions.Add(buyPos);
+            else
+                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
         }
         foreach (var sellPos in station.Comp.AvailableSellPosition)
         {
-            station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
+            if (sellPos.Special)
+                availableSpecialSellPositions.Add(sellPos);
+            else
+                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
+        }
+
+        //Random and select special positions
+        _random.Shuffle(availableSpecialSellPositions);
+        _random.Shuffle(availableSpecialBuyPositions);
+
+        var currentSpecialBuyPositions = station.Comp.SpecialBuyPositionCount.Next(_random);
+        var currentSpecialSellPositions = station.Comp.SpecialSellPositionCount.Next(_random);
+
+        foreach (var buyPos in availableSpecialBuyPositions)
+        {
+            if (station.Comp.CurrentSpecialBuyPositions.Count >= currentSpecialBuyPositions)
+                break;
+            station.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
+        }
+
+        foreach (var sellPos in availableSpecialSellPositions)
+        {
+            if (station.Comp.CurrentSpecialSellPositions.Count >= currentSpecialSellPositions)
+                break;
+            station.Comp.CurrentSpecialSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
         }
     }
 

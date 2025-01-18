@@ -53,32 +53,50 @@ public sealed partial class CP14CargoSystem
         var prodBuy = new HashSet<CP14StoreUiProductEntry>();
         var prodSell = new HashSet<CP14StoreUiProductEntry>();
 
-        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentBuyPositions)
+        //Add special buy positions
+        foreach (var (proto, price) in ent.Comp.Station.Value.Comp.CurrentSpecialBuyPositions)
         {
-
-            var name = Loc.GetString(proto.Key.Name);
+            var name = Loc.GetString(proto.Name);
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
-            foreach (var service in proto.Key.Services)
-            {
-                desc.Append(service.GetDescription(_proto, EntityManager));
-            }
+            desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Key.Name)), ("code", "[color=yellow][bold]#" + proto.Key.Code + "[/bold][/color]")));
-
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
         }
 
+        //Add static buy positions
+        foreach (var (proto, price) in ent.Comp.Station.Value.Comp.CurrentBuyPositions)
+        {
+            var name = Loc.GetString(proto.Name);
+            var desc = new StringBuilder();
+            desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
+
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, false));
+        }
+
+        //Add special sell positions
+        foreach (var (proto, price) in ent.Comp.Station.Value.Comp.CurrentSpecialSellPositions)
+        {
+            var name = Loc.GetString(proto.Name);
+
+            var desc = new StringBuilder();
+            desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Name))));
+
+            prodSell.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
+        }
+
+        //Add static sell positions
         foreach (var proto in ent.Comp.Station.Value.Comp.CurrentSellPositions)
         {
             var name = Loc.GetString(proto.Key.Name);
 
             var desc = new StringBuilder();
             desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
-            desc.Append(proto.Key.Service.GetDescription(_proto, EntityManager) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Key.Name))));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value));
+            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value, false));
         }
 
         var stationComp = ent.Comp.Station.Value.Comp;

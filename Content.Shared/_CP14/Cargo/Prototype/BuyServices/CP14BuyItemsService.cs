@@ -18,9 +18,4 @@ public sealed partial class CP14BuyItemsService : CP14StoreBuyService
             }
         }
     }
-
-    public override string? GetDescription(IPrototypeManager prototype, IEntityManager entSys)
-    {
-        return null;
-    }
 }
