@@ -1,8 +1,9 @@
 - type: entity
-  id: CP14TestMonolith
+  id: CP14DemiplaneLinkCrystal
   categories: [ ForkFiltered ]
-  name: demiplane monolith
-  description: yeahaa
+  name: demiplane link crystal
+  description: Maintains communication with the demiplanes while charged. Causes mosnters from the demiplanes to attack the city. Once it is discharged, the game is over.
+  suffix: ONE TO MAP
   placement:
     mode: SnapgridCenter
     snap:
@@ -25,28 +26,20 @@
         - WallLayer
   - type: Sprite
     noRot: true
-    sprite: _CP14/Structures/Furniture/lamppost.rsi
+    sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
     layers:
-    - state: double
-    - state: light_double_blue
-      shader: unshaded
+    - state: base
     drawdepth: Mobs
     offset: 0,0.9
   - type: PointLight
-    color: "#8bc5d9"
-    energy: 5
-    radius: 8
-  #- type: CP14MagicEnergyContainer
-  #  maxEnergy: 1000
-  #  energy: 1000
+    color: "#42166b"
+    energy: 3
+    radius: 5
   - type: CP14MagicContainerRoundFinisher
   - type: CP14MagicEnergyExaminable
-  #- type: CP14MagicEnergyDraw
-  #  energy: -11
-  #  delay: 60 # 1h 30 minutes to full discharge
   - type: CP14MagicEnergyContainer
-    maxEnergy: 100
-    energy: 100
+    maxEnergy: 1000
+    energy: 1000
   - type: CP14MagicEnergyDraw
-    energy: -5
-    delay: 6
+    energy: -10
+    delay: 60 # 1h 30 minutes to full discharge
