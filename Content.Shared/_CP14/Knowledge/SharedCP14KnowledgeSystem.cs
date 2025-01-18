@@ -2,6 +2,7 @@ using System.Text;
 using Content.Shared._CP14.Knowledge.Components;
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.DoAfter;
+using Content.Shared.Ghost;
 using Content.Shared.MagicMirror;
 using Content.Shared.Paper;
 using Robust.Shared.Prototypes;
@@ -65,6 +66,9 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
         ProtoId<CP14KnowledgePrototype> knowledge,
         CP14KnowledgeStorageComponent? knowledgeStorage = null)
     {
+        if (HasComp<GhostComponent>(uid)) //All-knowing ghosts
+            return true;
+        
         if (!Resolve(uid, ref knowledgeStorage, false))
             return false;
 
