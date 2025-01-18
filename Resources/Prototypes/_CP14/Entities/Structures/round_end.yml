@@ -36,11 +36,17 @@
     color: "#8bc5d9"
     energy: 5
     radius: 8
-  - type: CP14MagicEnergyContainer
-    maxEnergy: 1000
-    energy: 1000
+  #- type: CP14MagicEnergyContainer
+  #  maxEnergy: 1000
+  #  energy: 1000
   - type: CP14MagicContainerRoundFinisher
   - type: CP14MagicEnergyExaminable
+  #- type: CP14MagicEnergyDraw
+  #  energy: -11
+  #  delay: 60 # 1h 30 minutes to full discharge
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 100
+    energy: 100
   - type: CP14MagicEnergyDraw
-    energy: -11
-    delay: 60 # 1h 30 minutes to full discharge
+    energy: -5
+    delay: 6

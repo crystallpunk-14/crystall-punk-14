@@ -28,7 +28,7 @@ public sealed partial class CP14DemiplaneSystem
     private const double JobMaxTime = 0.002;
 
     [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private readonly CP14RoundEndSystem _roundEnd = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     private void InitGeneration()
     {
@@ -144,7 +144,7 @@ public sealed partial class CP14DemiplaneSystem
         if (generator.Comp.Location is null)
             return;
 
-        if (!_roundEnd.IsMonolithActive())
+        if (_gameTicker.RunLevel != GameRunLevel.InRound)
         {
             _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-end-round"), generator, args.User);
             return;

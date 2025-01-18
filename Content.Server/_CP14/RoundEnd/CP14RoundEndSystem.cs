@@ -14,14 +14,15 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
 
-    private readonly TimeSpan _roundEndDelay = TimeSpan.FromMinutes(15);
+    private readonly TimeSpan _roundEndDelay = TimeSpan.FromMinutes(1);
     private TimeSpan _roundEndMoment = TimeSpan.Zero;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(OnFinisherMagicEnergyLevelChange);
+        SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(
+            OnFinisherMagicEnergyLevelChange);
     }
 
     public override void Update(float frameTime)
@@ -37,30 +38,24 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         EndRound();
     }
 
-    public bool IsMonolithActive()
-    {
-        if (_gameTicker.RunLevel != GameRunLevel.InRound)
-            return false;
-
-        if (_roundEndMoment != TimeSpan.Zero)
-            return false;
-
-        return true;
-    }
-
     private void OnFinisherMagicEnergyLevelChange(Entity<CP14MagicContainerRoundFinisherComponent> ent,
         ref CP14MagicEnergyLevelChangeEvent args)
     {
-        //We initiate round end timer
-        if (_roundEndMoment == TimeSpan.Zero && args.NewValue == 0)
+        //Alarm 50% magic energy left
+        if (args.NewValue < args.OldValue && args.OldValue >= args.MaxValue / 2 && args.NewValue <= args.MaxValue / 2)
         {
-            StartRoundEndTimer();
+            _chatSystem.DispatchGlobalAnnouncement(
+                Loc.GetString("cp14-round-end-monolith-50"),
+                announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
         }
 
+        //We initiate round end timer
+        if (_roundEndMoment == TimeSpan.Zero && args.NewValue == 0)
+            StartRoundEndTimer();
+
+        //Full charged - cancel roundEnd
         if (_roundEndMoment != TimeSpan.Zero && args.NewValue == args.MaxValue)
-        {
-            EndRoundEndTimer();
-        }
+            CancelRoundEndTimer();
     }
 
     private void StartRoundEndTimer()
@@ -80,7 +75,6 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
             unitsLocString = "eta-units-minutes";
         }
 
-        _demiplane.DeleteAllDemiplanes(safe: true);
         _chatSystem.DispatchGlobalAnnouncement(
             Loc.GetString(
                 "cp14-round-end-monolith-discharged",
@@ -89,7 +83,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
     }
 
-    private void EndRoundEndTimer()
+    private void CancelRoundEndTimer()
     {
         _roundEndMoment = TimeSpan.Zero;
 
@@ -106,5 +100,6 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
         _roundEndMoment = TimeSpan.Zero;
         _gameTicker.EndRound();
+        _demiplane.DeleteAllDemiplanes(safe: false);
     }
 }
