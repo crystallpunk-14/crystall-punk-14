@@ -66,3 +66,15 @@
 
 - type: Tag
   id: CP14Dye
+
+- type: Tag
+  id: CP14Meat
+
+- type: Tag
+  id: CP14MeatSlice
+
+- type: Tag
+  id: CP14Torch
+
+- type: Tag
+  id: CP14SpellScroll
