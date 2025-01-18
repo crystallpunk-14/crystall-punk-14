@@ -44,9 +44,4 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
 
         return true;
     }
-
-    public override string? GetDescription(IPrototypeManager prototype, IEntityManager entSys)
-    {
-        return null;
-    }
 }

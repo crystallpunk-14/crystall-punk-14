@@ -51,10 +51,16 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentBuyPositions = new(); //Proto, price
 
     [DataField]
+    public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentSpecialBuyPositions = new(); //Proto, price
+
+    [DataField]
     public MinMax SpecialBuyPositionCount = new(1, 2);
 
     [DataField]
     public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSellPositions = new(); //Proto, price
+
+    [DataField]
+    public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSpecialSellPositions = new(); //Proto, price
 
     [DataField]
     public MinMax SpecialSellPositionCount = new(1, 2);

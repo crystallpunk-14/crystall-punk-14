@@ -1,7 +1,10 @@
 using Content.Server._CP14.Demiplane;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
+using Content.Server.RoundEnd;
 using Content.Shared._CP14.MagicEnergy;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 
@@ -13,10 +16,12 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
+    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
+    [Dependency] private readonly IConfigurationManager _configManager = default!;
 
-    private readonly TimeSpan _roundEndDelay = TimeSpan.FromMinutes(1);
     private TimeSpan _roundEndMoment = TimeSpan.Zero;
 
+    //TODO: вообще нет поддержки нескольких кристаллов на карте.
     public override void Initialize()
     {
         base.Initialize();
@@ -60,18 +65,20 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
 
     private void StartRoundEndTimer()
     {
-        _roundEndMoment = _timing.CurTime + _roundEndDelay;
+        var roundEndDelay = TimeSpan.FromMinutes(_configManager.GetCVar(CCVars.CP14RoundEndMinutes));
 
-        var time = _roundEndDelay.Minutes;
+        _roundEndMoment = _timing.CurTime + roundEndDelay;
+
+        var time = roundEndDelay.Minutes;
         string unitsLocString;
-        if (_roundEndDelay.TotalSeconds < 60)
+        if (roundEndDelay.TotalSeconds < 60)
         {
-            time = _roundEndDelay.Seconds;
+            time = roundEndDelay.Seconds;
             unitsLocString = "eta-units-seconds";
         }
         else
         {
-            time = _roundEndDelay.Minutes;
+            time = roundEndDelay.Minutes;
             unitsLocString = "eta-units-minutes";
         }
 
@@ -99,7 +106,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
         _roundEndMoment = TimeSpan.Zero;
-        _gameTicker.EndRound();
+        _roundEnd.EndRound();
         _demiplane.DeleteAllDemiplanes(safe: false);
     }
 }
