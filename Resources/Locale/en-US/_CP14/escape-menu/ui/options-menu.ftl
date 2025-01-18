@@ -14,3 +14,9 @@ cp14-ui-options-postprocess-tooltip =
     additive lighting will be present. This does not control
     post-process effects that affect the game or otherwise
     carry some form of gameplay-related meaning.
+
+
+## Controls menu
+
+ui-options-header-cp14 = CrystallEdge
+ui-options-function-cp14-open-knowledge-menu = Open character knowledge menu.
