@@ -4,7 +4,10 @@
     xmlns:windows="clr-namespace:Content.Client._CP14.UserInterface.Systems.Knowledge.Windows"
     Title="{Loc 'cp14-knowledge-info-title'}"
     MinWidth="400"
-    MinHeight="545">
+    MinHeight="200">
     <ScrollContainer>
+        <BoxContainer Name="KnowledgeContent" Margin="5" Access="Public" Orientation="Vertical">
+
+        </BoxContainer>
     </ScrollContainer>
 </windows:CP14KnowledgeWindow>

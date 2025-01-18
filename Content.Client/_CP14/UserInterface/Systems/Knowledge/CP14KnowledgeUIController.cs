@@ -9,6 +9,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Character;
@@ -18,6 +19,7 @@ public sealed class CP14KnowledgeUIController : UIController, IOnStateEntered<Ga
     IOnSystemChanged<ClientCP14KnowledgeSystem>
 {
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [UISystemDependency] private readonly ClientCP14KnowledgeSystem _knowledge = default!;
 
     private CP14KnowledgeWindow? _window;
@@ -97,8 +99,25 @@ public sealed class CP14KnowledgeUIController : UIController, IOnStateEntered<Ga
         if (_window is null)
             return;
 
+        _window.KnowledgeContent.RemoveAllChildren();
+
         var (entity, allKnowledge) = data;
 
+        foreach (var knowledge in allKnowledge)
+        {
+            if (!_proto.TryIndex(knowledge, out var indexedKnowledge))
+                continue;
+
+            var knowledgeButton = new Button()
+            {
+                Access = AccessLevel.Public,
+                Text = Loc.GetString(indexedKnowledge.Name),
+                ToolTip = Loc.GetString(indexedKnowledge.Desc),
+                TextAlign = Label.AlignMode.Center,
+            };
+
+            _window.KnowledgeContent.AddChild(knowledgeButton);
+        }
     }
 
     private void CharacterDetached(EntityUid uid)

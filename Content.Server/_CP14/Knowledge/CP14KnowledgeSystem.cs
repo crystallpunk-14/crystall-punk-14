@@ -122,7 +122,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
                 Category = VerbCategory.CP14KnowledgeAdd,
                 Act = () =>
                 {
-                    TryLearnKnowledge(ent, knowledge, false);
+                    TryLearnKnowledge(ent, knowledge, true);
                 },
                 Impact = LogImpact.High,
             });
