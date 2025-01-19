@@ -210,3 +210,19 @@
   - !type:CP14BuyItemsService
     product:
       CP14BrassChestFilledCheese: 1
+
+- type: storePositionBuy
+  id: Guidebook
+  name: cp14-store-buy-guidebook-name
+  desc: cp14-store-buy-guidebook-desc
+  code: KNOWLEDGE
+  icon: 
+    sprite: Objects/Misc/books.rsi
+    state: book_icon
+  price: 
+    min: 100
+    max: 250
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledGuidebook: 1
