@@ -89,3 +89,17 @@
   - type: Construction
     graph: CP14RoofStone
     node: CP14RoofStone
+
+- type: entity
+  parent: 
+  - CP14BaseRoof
+  id: CP14RoofRemover
+  name: roof remover debug
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Roof/stone.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Roof/stone.rsi
+  - type: TimedDespawn
+    lifetime: 2
+    

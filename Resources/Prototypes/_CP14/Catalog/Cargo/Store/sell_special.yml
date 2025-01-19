@@ -107,8 +107,8 @@
     sprite: _CP14/Objects/Materials/ash.rsi
     state: ash_1
   price: 
-    min: 100
-    max: 250
+    min: 50
+    max: 150
   service: !type:CP14SellStackService
     stackId: CP14Ash
     count: 10
