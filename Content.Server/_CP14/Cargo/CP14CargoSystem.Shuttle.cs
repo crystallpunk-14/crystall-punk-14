@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Shared._CP14.Cargo;
+using Content.Shared.Gravity;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
@@ -12,6 +13,15 @@ public sealed partial class CP14CargoSystem
     private void InitializeShuttle()
     {
         SubscribeLocalEvent<CP14TravelingStoreShipComponent, FTLCompletedEvent>(OnFTLCompleted);
+        SubscribeLocalEvent<CP14TravelingStoreShipComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnMapInit(Entity<CP14TravelingStoreShipComponent> ent, ref MapInitEvent args)
+    {
+        //TODO: This is shitcode! Because shouldnt related to traveling ship
+        EnsureComp<GravityComponent>(ent, out var gravity);
+        gravity.Enabled = true;
+        gravity.Inherent = true;
     }
 
     private void UpdateShuttle()
