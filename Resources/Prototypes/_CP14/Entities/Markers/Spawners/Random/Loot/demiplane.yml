@@ -112,6 +112,9 @@
       - !type:GroupSelector
         children:
         - id: CP14BookKnowledgeAdvancedClothingSewing
+        - id: CP14BookKnowledgeMetallMelting
+        - id: CP14BookKnowledgeMetallForging
+        - id: CP14BookKnowledgeGlasswork
       - id: CP14EnergyCrystalMediumEmpty
     # Rare
     - !type:GroupSelector
