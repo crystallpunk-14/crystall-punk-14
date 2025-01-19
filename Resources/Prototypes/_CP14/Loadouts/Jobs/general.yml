@@ -724,11 +724,6 @@
       - CP14Dwarf
   - !type:JobRequirementLoadoutEffect
     requirement:
-      !type:RoleTimeRequirement
-      role: CP14JobInnkeeper
-      time: 7200 # 2 hour
-  - !type:JobRequirementLoadoutEffect
-    requirement:
       !type:TraitsRequirement
       inverted: true
       traits:
