@@ -159,3 +159,15 @@
     contents:
       - id: CP14FoodCheeseWheel
         amount: 5
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledGuidebook
+  suffix: Guidebook
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14BookKnowledgeWoodWork
+      - id: CP14BookKnowledgeMetallMelting
+      - id: CP14BookKnowledgeMetallForging
+      - id: CP14BookKnowledgeGlasswork

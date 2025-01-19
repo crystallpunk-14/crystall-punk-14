@@ -4,14 +4,12 @@ using Content.Server.Chat.Systems;
 using Content.Server.Mind;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Systems;
+using Content.Server.StationRecords;
+using Content.Server.StationRecords.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
-using Content.Shared.IdentityManagement.Components;
-using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Roles;
-using Content.Shared.Roles.Jobs;
-using Robust.Shared.Network;
+using Content.Shared.StationRecords;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.RoundRemoveShuttle;
@@ -24,17 +22,21 @@ public sealed partial class CP14RoundRemoveShuttleSystem : EntitySystem
     [Dependency] private readonly StationJobsSystem _stationJobs = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14RoundRemoveShuttleComponent, FTLCompletedEvent>(OnFTLComplete);
+        SubscribeLocalEvent<CP14RoundRemoveShuttleComponent, FTLStartedEvent>(OnFTL);
     }
 
-    private void OnFTLComplete(Entity<CP14RoundRemoveShuttleComponent> ent, ref FTLCompletedEvent args)
+    private void OnFTL(Entity<CP14RoundRemoveShuttleComponent> ent, ref FTLStartedEvent args)
     {
         var childrens = Transform(ent).ChildEnumerator;
+
+        if (!TryComp<StationRecordsComponent>(ent.Comp.Station, out var stationRecords))
+            return;
 
         HashSet<EntityUid> toDelete = new();
         while (childrens.MoveNext(out var uid))
@@ -42,14 +44,24 @@ public sealed partial class CP14RoundRemoveShuttleSystem : EntitySystem
             if (!_mind.TryGetMind(uid, out _, out var mindComp))
                 continue;
 
+            var name = Name(uid);
+            var recordId = _stationRecords.GetRecordByName(ent.Comp.Station, name);
+
+            if (recordId is null)
+                return;
+
+            var key = new StationRecordKey(recordId.Value, ent.Comp.Station);
+            if (!_stationRecords.TryGetRecord<GeneralStationRecord>(key, out var entry, stationRecords))
+                return;
+
+            _stationRecords.RemoveRecord(key, stationRecords);
             //Trying return all jobs roles
             var userId = mindComp.UserId;
-            ProtoId<JobPrototype>? playerJob = null;
-            string? jobName = null;
+            string? jobName = entry.JobTitle;
             if (userId is not null)
             {
-                RestoreJobs(ent.Comp.Station, userId.Value, out playerJob);
-                if (_proto.TryIndex(playerJob, out var indexedJob))
+                _stationJobs.TryAdjustJobSlot(ent.Comp.Station, entry.JobPrototype, 1, clamp: true);
+                if (_proto.TryIndex(entry.JobPrototype, out var indexedJob))
                 {
                     jobName = Loc.GetString(indexedJob.Name);
                 }
@@ -77,19 +89,5 @@ public sealed partial class CP14RoundRemoveShuttleSystem : EntitySystem
             toDelete.Remove(r);
             QueueDel(r);
         }
-    }
-
-    private void RestoreJobs(EntityUid station, NetUserId userId, out ProtoId<JobPrototype>? outJob)
-    {
-        outJob = null;
-        if (!_stationJobs.TryGetPlayerJobs(station, userId, out var jobs))
-            return;
-
-        foreach (var job in jobs)
-        {
-            _stationJobs.TryAdjustJobSlot(station, job, 1, clamp: true);
-            outJob = job;
-        }
-        _stationJobs.TryRemovePlayerJobs(station, userId);
     }
 }

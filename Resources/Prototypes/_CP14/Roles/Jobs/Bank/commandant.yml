@@ -14,6 +14,10 @@
     - !type:DepartmentTimeRequirement
       department: CP14Bank
       time: 3600 # 1 hours
+  special:
+  - !type:CP14AddKnowledgeSpecial
+    knowledge:
+    - WoodWork
 
 - type: startingGear
   id: CP14CommandantGear
