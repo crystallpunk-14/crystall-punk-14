@@ -3,7 +3,6 @@ using Content.Server._CP14.RoundRemoveShuttle;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
-using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.Cargo;
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared.Maps;
@@ -26,7 +25,6 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
