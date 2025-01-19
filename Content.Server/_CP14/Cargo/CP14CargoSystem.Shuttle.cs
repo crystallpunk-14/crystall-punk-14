@@ -75,6 +75,7 @@ public sealed partial class CP14CargoSystem
             shuttleComp,
             new EntityCoordinates(tradePostMap, Vector2.Zero),
             Angle.Zero,
+            startupTime: 10f,
             hyperspaceTime: 20f);
     }
 
