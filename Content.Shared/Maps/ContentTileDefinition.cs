@@ -129,11 +129,5 @@ namespace Content.Shared.Maps
         /// </summary>
         [DataField]
         public ProtoId<ContentTileDefinition>? BurnedTile { get; private set; } = null;
-
-        /// <summary>
-        /// CP14 - auto removing spilled reagents from tile
-        /// </summary>
-        [DataField]
-        public bool SuckReagents = false;
     }
 }
