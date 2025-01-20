@@ -12,7 +12,7 @@ public sealed partial class CP14MagicRitualComponent : Component
     public EntProtoId StartPhase;
 
     [DataField]
-    public Entity<CP14MagicRitualPhaseComponent>? CurrentPhase;
+    public EntityUid? CurrentPhase;
 
     [DataField]
     public float Stability = 1f;

@@ -22,18 +22,21 @@ public partial class CP14SharedRitualSystem : EntitySystem
         ritual.Comp.Stability = newS;
     }
 
-    public void AddOrbToRitual(Entity<CP14MagicRitualComponent> ritual, EntProtoId orb)
+    public void AddOrbToRitual(EntityUid uid, EntProtoId orb, CP14MagicRitualComponent? ritual = null)
     {
         if (_net.IsClient)
+            return;
+
+        if (!Resolve(uid, ref ritual))
             return;
 
         if (!_proto.TryIndex(orb, out var indexedOrb))
             return;
 
-        if (ritual.Comp.Orbs.Count >= ritual.Comp.MaxOrbCapacity)
+        if (ritual.Orbs.Count >= ritual.MaxOrbCapacity)
             return;
 
-        var spawnedOrb = Spawn(orb, _transform.GetMapCoordinates(ritual));
+        var spawnedOrb = Spawn(orb, _transform.GetMapCoordinates(uid));
 
         if (!TryComp<CP14MagicRitualOrbComponent>(spawnedOrb, out var orbComp))
         {
@@ -41,8 +44,8 @@ public partial class CP14SharedRitualSystem : EntitySystem
             return;
         }
 
-        _followerSystem.StartFollowingEntity(spawnedOrb, ritual);
-        ritual.Comp.Orbs.Add((spawnedOrb, orbComp));
+        _followerSystem.StartFollowingEntity(spawnedOrb, uid);
+        ritual.Orbs.Add((spawnedOrb, orbComp));
     }
 
     public void ConsumeOrbType(Entity<CP14MagicRitualComponent> ritual, ProtoId<CP14MagicTypePrototype> magicType)

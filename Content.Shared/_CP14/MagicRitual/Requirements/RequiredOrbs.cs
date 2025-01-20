@@ -41,8 +41,11 @@ public sealed partial class RequiredOrbs : CP14RitualRequirement
         if (phaseEnt.Comp.Ritual is null)
             return false;
 
+        if (!entManager.TryGetComponent<CP14MagicRitualComponent>(phaseEnt, out var ritualComp))
+            return false;
+
         var count = 0;
-        foreach (var orb in phaseEnt.Comp.Ritual.Value.Comp.Orbs)
+        foreach (var orb in ritualComp.Orbs)
         {
             foreach (var power in orb.Comp.Powers)
             {
