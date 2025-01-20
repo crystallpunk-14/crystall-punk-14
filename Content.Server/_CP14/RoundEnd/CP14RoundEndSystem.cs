@@ -4,7 +4,6 @@ using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared.CCVar;
-using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
