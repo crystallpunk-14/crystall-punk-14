@@ -11,8 +11,10 @@ namespace Content.Shared.HUD
         [IdDataField]
         public string ID { get; private set; } = string.Empty;
 
+        // CP14-Theme-Start
         [DataField]
         public bool IsCP { get; }
+        // CP14-Theme-End
 
         [DataField("path", required: true)]
         public string Path { get; private set; } = string.Empty;
