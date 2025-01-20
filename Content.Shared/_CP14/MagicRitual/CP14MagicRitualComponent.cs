@@ -33,5 +33,5 @@ public sealed partial class CP14MagicRitualComponent : Component
     public TimeSpan TriggerTime = TimeSpan.Zero;
 
     [DataField]
-    public List<Entity<CP14MagicRitualOrbComponent>> Orbs = new();
+    public List<EntityUid> Orbs = new();
 }
