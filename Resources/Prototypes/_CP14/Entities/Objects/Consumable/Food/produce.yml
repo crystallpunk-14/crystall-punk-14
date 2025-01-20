@@ -320,3 +320,67 @@
   - type: FoodSequenceElement
     entries:
       CP14Plate: CP14PlateTomatoesSlice
+
+- type: entity
+  id: CP14FoodApple
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: apple
+  description: A fruit for lovers of a quick snack.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - apple
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/apple.rsi
+    layers:
+      - state: base1
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 12
+  - type: SliceableFood
+    count: 4
+    sliceTime: 1.5
+    slice: CP14FoodAppleSlice
+
+- type: entity
+  id: CP14FoodAppleSlice
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: apple slice
+  description: Small slices to eat at one time.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - apple
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/apple.rsi
+    layers:
+      - state: slice1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Vitamin
+          Quantity: 1
+#  - type: FoodSequenceElement   #no sprite
+#    entries:
+#      CP14Plate: CP14PlateAppleSlice
