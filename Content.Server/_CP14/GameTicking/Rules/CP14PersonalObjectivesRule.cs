@@ -122,10 +122,14 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
             sb.Append($"[color=#949494]{ckey}[/color]\n");
             foreach (var objEnt in objectives)
             {
-                if (!TryComp<ObjectiveComponent>(objEnt, out var objComp))
+                if (!HasComp<ObjectiveComponent>(objEnt))
                     continue;
 
                 var progress = _objectives.GetProgress(objEnt, mind) ?? 0;
+
+                if (progress <= 0.75f)
+                    continue;
+
                 var status = "cp14-objective-endtext-status-failure";
                 if (progress > 0.75f)
                     status = "cp14-objective-endtext-status-success-a";
