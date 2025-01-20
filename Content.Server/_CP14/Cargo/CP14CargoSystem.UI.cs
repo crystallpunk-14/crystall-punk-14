@@ -50,11 +50,14 @@ public sealed partial class CP14CargoSystem
         if (ent.Comp.Station is null)
             return;
 
+        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(ent.Comp.Station.Value, out var storeTargetComp))
+            return;
+
         var prodBuy = new HashSet<CP14StoreUiProductEntry>();
         var prodSell = new HashSet<CP14StoreUiProductEntry>();
 
         //Add special buy positions
-        foreach (var (proto, price) in ent.Comp.Station.Value.Comp.CurrentSpecialBuyPositions)
+        foreach (var (proto, price) in storeTargetComp.CurrentSpecialBuyPositions)
         {
             var name = Loc.GetString(proto.Name);
             var desc = new StringBuilder();
@@ -65,7 +68,7 @@ public sealed partial class CP14CargoSystem
         }
 
         //Add static buy positions
-        foreach (var (proto, price) in ent.Comp.Station.Value.Comp.CurrentBuyPositions)
+        foreach (var (proto, price) in storeTargetComp.CurrentBuyPositions)
         {
             var name = Loc.GetString(proto.Name);
             var desc = new StringBuilder();
@@ -76,7 +79,7 @@ public sealed partial class CP14CargoSystem
         }
 
         //Add special sell positions
-        foreach (var (proto, price) in ent.Comp.Station.Value.Comp.CurrentSpecialSellPositions)
+        foreach (var (proto, price) in storeTargetComp.CurrentSpecialSellPositions)
         {
             var name = Loc.GetString(proto.Name);
 
@@ -88,7 +91,7 @@ public sealed partial class CP14CargoSystem
         }
 
         //Add static sell positions
-        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentSellPositions)
+        foreach (var proto in storeTargetComp.CurrentSellPositions)
         {
             var name = Loc.GetString(proto.Key.Name);
 
@@ -99,7 +102,7 @@ public sealed partial class CP14CargoSystem
             prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value, false));
         }
 
-        var stationComp = ent.Comp.Station.Value.Comp;
+        var stationComp = storeTargetComp;
         _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime));
     }
 }

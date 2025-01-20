@@ -218,6 +218,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 station.Comp.Balance += sellPos.Value;
             }
         }
+        foreach (var sellPos in station.Comp.CurrentSpecialSellPositions)
+        {
+            while (sellPos.Key.Service.TrySell(EntityManager, toSell))
+            {
+                station.Comp.Balance += sellPos.Value;
+            }
+        }
     }
 
     /// <summary>
@@ -269,6 +276,11 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             foreach (var fragment in splittedText)
             {
                 foreach (var buyPosition in station.Comp.CurrentBuyPositions)
+                {
+                    if (fragment.StartsWith(buyPosition.Key.Code))
+                        requests.Add(buyPosition);
+                }
+                foreach (var buyPosition in station.Comp.CurrentSpecialBuyPositions)
                 {
                     if (fragment.StartsWith(buyPosition.Key.Code))
                         requests.Add(buyPosition);
