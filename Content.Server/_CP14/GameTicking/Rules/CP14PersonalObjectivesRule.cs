@@ -5,6 +5,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Random.Helpers;
@@ -56,10 +57,10 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
 
                     if (objective is not null)
                     {
-                        if (!personalObj.PersonalObjectives.ContainsKey((mindId.Value, mind)))
-                            personalObj.PersonalObjectives.Add((mindId.Value, mind), new());
+                        if (!personalObj.PersonalObjectives.ContainsKey(mindId.Value))
+                            personalObj.PersonalObjectives.Add(mindId.Value, new());
 
-                        personalObj.PersonalObjectives[(mindId.Value, mind)].Add(objective.Value);
+                        personalObj.PersonalObjectives[mindId.Value].Add(objective.Value);
                     }
                 }
             }
@@ -84,10 +85,10 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
 
                     if (objective is not null)
                     {
-                        if (!personalObj.PersonalObjectives.ContainsKey((mindId.Value, mind)))
-                            personalObj.PersonalObjectives.Add((mindId.Value, mind), new());
+                        if (!personalObj.PersonalObjectives.ContainsKey(mindId.Value))
+                            personalObj.PersonalObjectives.Add(mindId.Value, new());
 
-                        personalObj.PersonalObjectives[(mindId.Value, mind)].Add(objective.Value);
+                        personalObj.PersonalObjectives[mindId.Value].Add(objective.Value);
                     }
                 }
             }
@@ -106,16 +107,19 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
 
         foreach (var (mind, objectives) in component.PersonalObjectives)
         {
-            var name = mind.Comp.CharacterName ?? Loc.GetString("cp14-objective-unknown");
+            if (!TryComp<MindComponent>(mind, out var mindComp))
+                continue;
+
+            var name = mindComp.CharacterName ?? Loc.GetString("cp14-objective-unknown");
             var role = Loc.GetString("cp14-objective-unknown");
             var ckey = Loc.GetString("cp14-objective-unknown");
 
             if (_jobs.MindTryGetJob(mind, out var job))
                 role = Loc.GetString(job.Name);
 
-            if (mind.Comp.UserId is not null)
+            if (mindComp.UserId is not null)
             {
-                ckey = _player.GetPlayerData(mind.Comp.UserId.Value).UserName;
+                ckey = _player.GetPlayerData(mindComp.UserId.Value).UserName;
             }
 
             sb.Append($"[head=3]{name} - {role}[/head]\n");
@@ -125,7 +129,7 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
                 if (!HasComp<ObjectiveComponent>(objEnt))
                     continue;
 
-                var progress = _objectives.GetProgress(objEnt, mind) ?? 0;
+                var progress = _objectives.GetProgress(objEnt, (mind, mindComp)) ?? 0;
 
                 if (progress <= 0.75f)
                     continue;
