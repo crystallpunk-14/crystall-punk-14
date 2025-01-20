@@ -84,21 +84,23 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
             }
             else
             {
-                if (rift.Demiplan is not null)
+                if (rift.Demiplane is not null &&
+                    TryComp<CP14DemiplaneComponent>(rift.Demiplane.Value, out var riftDemiplane))
                 {
-                    if (!_demiplan.TryGetDemiplanEntryPoint(rift.Demiplan.Value, out _))
+                    if (!_demiplan.TryGetDemiplanEntryPoint((rift.Demiplane.Value, riftDemiplane), out _))
                         break;
 
                     foreach (var ent in teleportedEnts) //We out demiplan, tp IN
                     {
                         if (TryComp<PullerComponent>(ent, out var puller))
-                            _demiplan.TryTeleportIntoDemiplane(rift.Demiplan.Value, puller.Pulling);
+                            _demiplan.TryTeleportIntoDemiplane((rift.Demiplane.Value, riftDemiplane), puller.Pulling);
 
-                        _demiplan.TryTeleportIntoDemiplane(rift.Demiplan.Value, ent);
+                        _demiplan.TryTeleportIntoDemiplane((rift.Demiplane.Value, riftDemiplane), ent);
                         _audio.PlayPvs(passWay.ArrivalSound, ent);
                     }
                 }
             }
+
             _audio.PlayPvs(passWay.DepartureSound, Transform(uid).Coordinates);
             QueueDel(uid);
         }
@@ -109,7 +111,8 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
         radiusPassWay.Comp.NextTimeTeleport = _timing.CurTime + radiusPassWay.Comp.Delay;
     }
 
-    private void OnOpenRiftInteractDoAfter(Entity<CP14DemiplaneRiftOpenedComponent> passWay, ref CP14DemiplanPasswayUseDoAfter args)
+    private void OnOpenRiftInteractDoAfter(Entity<CP14DemiplaneRiftOpenedComponent> passWay,
+        ref CP14DemiplanPasswayUseDoAfter args)
     {
         if (args.Cancelled || args.Handled)
             return;
@@ -125,12 +128,13 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
         }
         else
         {
-            if (TryComp<CP14DemiplaneRiftComponent>(passWay, out var exitPoint) && exitPoint.Demiplan is not null)
+            if (TryComp<CP14DemiplaneRiftComponent>(passWay, out var exitPoint) && exitPoint.Demiplane is not null &&
+                TryComp<CP14DemiplaneComponent>(exitPoint.Demiplane.Value, out var exitDemiplane))
             {
                 if (TryComp<PullerComponent>(args.User, out var puller))
-                    _demiplan.TryTeleportIntoDemiplane(exitPoint.Demiplan.Value, puller.Pulling);
+                    _demiplan.TryTeleportIntoDemiplane((exitPoint.Demiplane.Value, exitDemiplane), puller.Pulling);
 
-                used = _demiplan.TryTeleportIntoDemiplane(exitPoint.Demiplan.Value, args.User);
+                used = _demiplan.TryTeleportIntoDemiplane((exitPoint.Demiplane.Value, exitDemiplane), args.User);
             }
         }
 
@@ -145,7 +149,6 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                     QueueDel(passWay);
             }
         }
-
 
         args.Handled = true;
     }
