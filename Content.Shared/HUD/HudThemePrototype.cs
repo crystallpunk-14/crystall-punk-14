@@ -11,6 +11,9 @@ namespace Content.Shared.HUD
         [IdDataField]
         public string ID { get; private set; } = string.Empty;
 
+        [DataField]
+        public bool IsCP { get; }
+
         [DataField("path", required: true)]
         public string Path { get; private set; } = string.Empty;
 

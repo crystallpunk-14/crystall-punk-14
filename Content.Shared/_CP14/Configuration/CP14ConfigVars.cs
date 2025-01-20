@@ -16,4 +16,10 @@ public sealed class CP14ConfigVars : CVars
     /// </summary>
     public static readonly CVarDef<bool>
         PostProcess = CVarDef.Create("cp14_graphics.post_process", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    /// Change the UITheme
+    /// </summary>
+    public static readonly CVarDef<string>
+        InterfaceTheme = CVarDef.Create("cp14_interface.theme", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 }
