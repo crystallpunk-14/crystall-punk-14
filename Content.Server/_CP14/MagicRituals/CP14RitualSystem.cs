@@ -71,7 +71,6 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         args.Verbs.Add(verb);
     }
 
-
     private void OnOrbExamine(Entity<CP14MagicRitualOrbComponent> ent, ref ExaminedEvent args)
     {
         var sb = new StringBuilder();
@@ -91,66 +90,12 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         args.PushMarkup(sb.ToString());
     }
 
-    public void StartRitual(Entity<CP14MagicRitualComponent> ritual)
-    {
-        EndRitual(ritual);
-
-        var ev = new CP14RitualStartEvent(ritual);
-        RaiseLocalEvent(ritual, ev);
-
-        ChangePhase(ritual, ritual.Comp.StartPhase);
-        _appearance.SetData(ritual, RitualVisuals.Enabled, true);
-    }
-
-    private void ChangePhase(Entity<CP14MagicRitualComponent> ritual, EntProtoId newPhase)
-    {
-        QueueDel(ritual.Comp.CurrentPhase);
-
-        var newPhaseEnt = Spawn(newPhase, Transform(ritual).Coordinates);
-        _transform.SetParent(newPhaseEnt, ritual);
-        var newPhaseComp = EnsureComp<CP14MagicRitualPhaseComponent>(newPhaseEnt);
-
-        ritual.Comp.CurrentPhase = (newPhaseEnt, newPhaseComp);
-        newPhaseComp.Ritual = ritual;
-
-        foreach (var edge in newPhaseComp.Edges)
-        {
-            foreach (var trigger in edge.Triggers)
-            {
-                trigger.Initialize(EntityManager, ritual.Comp.CurrentPhase.Value, edge);
-            }
-        }
-
-        var ev = new CP14RitualPhaseBoundEvent(ritual, newPhaseEnt);
-        RaiseLocalEvent(ritual, ev);
-        RaiseLocalEvent(newPhaseEnt, ev);
-
-        if (newPhaseComp.DeadEnd)
-            EndRitual(ritual);
-    }
-
-    public void EndRitual(Entity<CP14MagicRitualComponent> ritual)
-    {
-        if (ritual.Comp.CurrentPhase is null)
-            return;
-
-        QueueDel(ritual.Comp.CurrentPhase);
-        ritual.Comp.CurrentPhase = null;
-
-        var ev = new CP14RitualEndEvent(ritual);
-        RaiseLocalEvent(ritual, ev);
-
-        _appearance.SetData(ritual, RitualVisuals.Enabled, false);
-
-        foreach (var orb in ritual.Comp.Orbs)
-        {
-            QueueDel(orb);
-        }
-    }
-
     private void OnPhaseTrigger(Entity<CP14MagicRitualPhaseComponent> phase, ref CP14RitualTriggerEvent args)
     {
         if (phase.Comp.Ritual is null)
+            return;
+
+        if (!TryComp<CP14MagicRitualComponent>(phase, out var ritualComp))
             return;
 
         RitualPhaseEdge? selectedEdge = null;
@@ -169,7 +114,7 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         var passed = true;
         foreach (var req in selectedEdge.Value.Requirements)
         {
-            if (!req.Check(EntityManager, phase, phase.Comp.Ritual.Value.Comp.Stability)) //lol
+            if (!req.Check(EntityManager, phase, ritualComp.Stability)) //lol
             {
                 ChangeRitualStability(phase.Comp.Ritual.Value, -req.FailStabilityCost);
                 passed = false;
@@ -186,5 +131,71 @@ public partial class CP14RitualSystem : CP14SharedRitualSystem
         }
 
         ChangePhase(phase.Comp.Ritual.Value, args.NextPhase);
+    }
+
+    public void StartRitual(EntityUid uid, CP14MagicRitualComponent? ritual = null)
+    {
+        if (!Resolve(uid, ref ritual, false))
+            return;
+
+        EndRitual(uid);
+
+        var ev = new CP14RitualStartEvent(uid);
+        RaiseLocalEvent(uid, ev);
+
+        ChangePhase(uid, ritual.StartPhase);
+        _appearance.SetData(uid, RitualVisuals.Enabled, true);
+    }
+
+    private void ChangePhase(EntityUid uid, EntProtoId newPhase, CP14MagicRitualComponent? ritual = null)
+    {
+        if (!Resolve(uid, ref ritual, false))
+            return;
+
+        QueueDel(ritual.CurrentPhase);
+
+        var newPhaseEnt = Spawn(newPhase, Transform(uid).Coordinates);
+        _transform.SetParent(newPhaseEnt, uid);
+        var newPhaseComp = EnsureComp<CP14MagicRitualPhaseComponent>(newPhaseEnt);
+
+        ritual.CurrentPhase = newPhaseEnt;
+        newPhaseComp.Ritual = uid;
+
+        foreach (var edge in newPhaseComp.Edges)
+        {
+            foreach (var trigger in edge.Triggers)
+            {
+                trigger.Initialize(EntityManager, ritual.CurrentPhase.Value, edge);
+            }
+        }
+
+        var ev = new CP14RitualPhaseBoundEvent(uid, newPhaseEnt);
+        RaiseLocalEvent(uid, ev);
+        RaiseLocalEvent(newPhaseEnt, ev);
+
+        if (newPhaseComp.DeadEnd)
+            EndRitual(uid);
+    }
+
+    public void EndRitual(EntityUid uid, CP14MagicRitualComponent? ritual = null)
+    {
+        if (!Resolve(uid, ref ritual, false))
+            return;
+
+        if (ritual.CurrentPhase is null)
+            return;
+
+        QueueDel(ritual.CurrentPhase);
+        ritual.CurrentPhase = null;
+
+        var ev = new CP14RitualEndEvent(uid);
+        RaiseLocalEvent(uid, ev);
+
+        _appearance.SetData(uid, RitualVisuals.Enabled, false);
+
+        foreach (var orb in ritual.Orbs)
+        {
+            QueueDel(orb);
+        }
     }
 }

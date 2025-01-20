@@ -25,6 +25,7 @@
   components:
   - type: MindRole
     antagPrototype: CP14Sociopath
+    roleType: SoloAntagonist
     exclusiveAntag: true
   - type: CP14SociopathRole
   - type: RoleBriefing

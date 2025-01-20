@@ -1,0 +1,5 @@
+
+- type: roleType
+  id: CP14DemiplaneAntagonist
+  name: cp14-role-type-demiplane-antag-name
+  color: '#e03876'
