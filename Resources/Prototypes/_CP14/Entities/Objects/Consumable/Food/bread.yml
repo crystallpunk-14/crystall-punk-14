@@ -1,0 +1,32 @@
+﻿- type: entity
+  parent: FoodInjectableBase
+  id: CP14FoodBreadBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+  - type: Food
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/bread.rsi
+  - type: Tag
+    tags:
+    - CP14Bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 26
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+
+- type: entity
+  name: bread loaf
+  parent: CP14FoodBreadBase
+  id: CP14FoodBread
+  description: Baked loaf of bread. It looks crispy.
+  components:
+  - type: Sprite
+    layers:
+    - state: bread
