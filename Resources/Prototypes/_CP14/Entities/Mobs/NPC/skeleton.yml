@@ -25,7 +25,7 @@
     description: cp14-ghost-role-information-description-skeleton
     rules: cp14-ghost-role-information-rules-demiplane
     mindRoles:
-    - CP14DemiplaneAntagonist
+    - CP14MindRoleDemiplaneAntag
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
