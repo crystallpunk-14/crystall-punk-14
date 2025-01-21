@@ -19,7 +19,6 @@
       components:
       - Portal
       - MindContainer
-      - CP14WorldBounding
   - type: PlacementReplacement
     key: CP14BiomeSpawner
 

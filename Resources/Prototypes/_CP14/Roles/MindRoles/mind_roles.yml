@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: CP14MindRoleDemiplaneAntag
+  name: Demiplane Antag Role
+  components:
+  - type: MindRole
+    roleType: CP14DemiplaneAntagonist
+    antagPrototype: CP14DemiplaneAntag
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: CP14MindRoleSociopath
+  categories: [ ForkFiltered ]
+  name: Sociopath Role
+  components:
+  - type: MindRole
+    antagPrototype: CP14Sociopath
+    roleType: SoloAntagonist
+    exclusiveAntag: true
+  - type: CP14SociopathRole
+  - type: RoleBriefing
+    briefing: cp14-roles-antag-sociopath-briefing
