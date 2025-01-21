@@ -27,33 +27,33 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         SubscribeLocalEvent<CP14TemperatureTransformationComponent, OnTemperatureChangeEvent>(OnTemperatureChanged);
     }
 
-    private void OnTemperatureChanged(Entity<CP14TemperatureTransformationComponent> start, ref OnTemperatureChangeEvent args)
+    private void OnTemperatureChanged(Entity<CP14TemperatureTransformationComponent> start,
+        ref OnTemperatureChangeEvent args)
     {
         var xform = Transform(start);
         foreach (var entry in start.Comp.Entries)
         {
-            if (args.CurrentTemperature > entry.TemperatureRange.X && args.CurrentTemperature < entry.TemperatureRange.Y)
+            if (args.CurrentTemperature > entry.TemperatureRange.X &&
+                args.CurrentTemperature < entry.TemperatureRange.Y)
             {
                 var result = SpawnAtPosition(entry.TransformTo, xform.Coordinates);
 
                 //Try putting in container
                 _transform.DropNextTo(result, (start, xform));
 
-                if (!_solutionContainer.TryGetSolution(result,
+                if (_solutionContainer.TryGetSolution(result,
                         start.Comp.Solution,
                         out var resultSoln,
-                        out _))
-                    continue;
-
-                if (!_solutionContainer.TryGetSolution(start.Owner,
+                        out _)
+                    && _solutionContainer.TryGetSolution(start.Owner,
                         start.Comp.Solution,
                         out var startSoln,
                         out var startSolution))
-                    continue;
-
-                _solutionContainer.RemoveAllSolution(resultSoln.Value); //Remove all YML reagents
-                resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
-                _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
+                {
+                    _solutionContainer.RemoveAllSolution(resultSoln.Value); //Remove all YML reagents
+                    resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
+                    _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
+                }
 
                 QueueDel(start);
                 break;
@@ -87,7 +87,11 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         {
             foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((uid, container)))
             {
-                if (TryAffectTemp(soln.Comp.Solution.Temperature, temp.StandardTemp, soln.Comp.Solution.Volume, out var newT, power: 0.05f))
+                if (TryAffectTemp(soln.Comp.Solution.Temperature,
+                        temp.StandardTemp,
+                        soln.Comp.Solution.Volume,
+                        out var newT,
+                        power: 0.05f))
                     _solutionContainer.SetTemperature(soln, newT);
             }
         }
@@ -95,7 +99,8 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
 
     private void FlammableEntityHeating()
     {
-        var flammableQuery = EntityQueryEnumerator<CP14FlammableEntityHeaterComponent, ItemPlacerComponent, FlammableComponent>();
+        var flammableQuery =
+            EntityQueryEnumerator<CP14FlammableEntityHeaterComponent, ItemPlacerComponent, FlammableComponent>();
         while (flammableQuery.MoveNext(out _, out var heater, out var itemPlacer, out var flammable))
         {
             if (!flammable.OnFire)
@@ -125,7 +130,10 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
 
                 foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((heatingEntity, container)))
                 {
-                    if (TryAffectTemp(soln.Comp.Solution.Temperature, GetTargetTemperature(flammable, heater), soln.Comp.Solution.Volume, out var newT))
+                    if (TryAffectTemp(soln.Comp.Solution.Temperature,
+                            GetTargetTemperature(flammable, heater),
+                            soln.Comp.Solution.Volume,
+                            out var newT))
                         _solutionContainer.SetTemperature(soln, newT);
                 }
             }
@@ -139,7 +147,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         if (mass == 0)
             return false;
 
-        newT = (float) (oldT + (targetT - oldT) / mass * power);
+        newT = (float)(oldT + (targetT - oldT) / mass * power);
         return true;
     }
 }
