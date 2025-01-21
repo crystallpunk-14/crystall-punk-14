@@ -20,6 +20,10 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 20
+  - type: SliceableFood
+    count: 4
+    sliceTime: 2
+    slice: CP14FoodBreadSlice
 
 - type: entity
   name: bread loaf
@@ -30,3 +34,30 @@
   - type: Sprite
     layers:
     - state: bread
+
+- type: entity
+  id: CP14FoodBreadSlice
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: bread slice
+  description: A little slice of bread.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - bread
+  - type: Tag
+    tags:
+    - CP14Bread
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/bread.rsi
+    layers:
+      - state: bread_slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5

@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CLA",
-    "copyright": "By perzonaz (discord)",
+    "copyright": "bread by perzonaz (discord) & resprited by omsoyk",
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +9,9 @@
     "states": [
         {
             "name": "bread"
+        },
+        {
+            "name": "bread_slice"
         }
     ]
 }
