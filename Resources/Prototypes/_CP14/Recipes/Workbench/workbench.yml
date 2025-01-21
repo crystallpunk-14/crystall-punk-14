@@ -20,12 +20,12 @@
   knowledgeRequired: WoodWork
 
 - type: CP14Recipe
-  id: CP14PlateWooden
+  id: CP14Plate
   tag: CP14RecipeWorkbench
   craftTime: 3
   stacks:
     CP14WoodenPlanks: 2
-  result: CP14PlateWooden
+  result: CP14Plate
   knowledgeRequired: WoodWork
 
 - type: CP14Recipe

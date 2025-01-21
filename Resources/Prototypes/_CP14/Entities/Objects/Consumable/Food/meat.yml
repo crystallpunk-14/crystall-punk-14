@@ -73,6 +73,36 @@
     size: Tiny
     shape:
     - 0,0,1,0
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatLambCooked
+
+- type: entity
+  id: CP14FoodMeatLambCooked
+  parent: CP14FoodMeatLamb
+  name: cooked lamb steak
+  components:
+  - type: Sprite
+    state: sheepmeat_cooked
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodMeatLambCookedSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 1
+        - ReagentId: Fat
+          Quantity: 6
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
 
 - type: entity
   id: CP14FoodMeatLambSlice
@@ -93,6 +123,41 @@
           sheepmeat_slice: ""
           sheepmeat_slice2: ""
           sheepmeat_slice3: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatLambCookedSlice
+
+- type: entity
+  id: CP14FoodMeatLambCookedSlice
+  parent: CP14FoodMeatLambSlice
+  name: cooked meat pieces
+  components:
+  - type: Sprite
+    layers:
+      - state: sheepmeat_slice_cooked
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          sheepmeat_slice_cooked: ""
+          sheepmeat_slice2_cooked: ""
+          sheepmeat_slice3_cooked: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 0.33
+        - ReagentId: Fat
+          Quantity: 6
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
 
 - type: entity
   id: CP14FoodMeatLambCutlet
@@ -116,3 +181,33 @@
           Quantity: 4
         - ReagentId: Egg
           Quantity: 6
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatLambCutletCooked
+
+- type: entity
+  id: CP14FoodMeatLambCutletCooked
+  parent: CP14FoodMeatLambCutlet
+  name: cooked lamb cutlet
+  description: Yammi!
+  components:
+  - type: Sprite
+    state: cutlet_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 0.66
+        - ReagentId: Fat
+          Quantity: 4
+        - ReagentId: EggCooked
+          Quantity: 6
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
