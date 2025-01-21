@@ -42,7 +42,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
                 if (!_solutionContainer.TryGetSolution(result,
                         start.Comp.Solution,
                         out var resultSoln,
-                        out var resultSolution))
+                        out _))
                     continue;
 
                 if (!_solutionContainer.TryGetSolution(start.Owner,
