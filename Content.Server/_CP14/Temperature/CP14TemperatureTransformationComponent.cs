@@ -22,6 +22,6 @@ public sealed partial class CP14TemperatureTransformationComponent : Component
 [DataRecord]
 public record struct CP14TemperatureTransformEntry()
 {
-    public EntProtoId TransformTo { get; set; } = new();
+    public EntProtoId? TransformTo { get; set; } = null;
     public Vector2 TemperatureRange { get; set; } = new();
 }

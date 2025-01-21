@@ -11,6 +11,9 @@
             "name": "bread_cooked"
         },
         {
+            "name": "bread_slice"
+        },
+        {
             "name": "bun_cooked"
         },
         {

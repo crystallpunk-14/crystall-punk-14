@@ -36,23 +36,26 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             if (args.CurrentTemperature > entry.TemperatureRange.X &&
                 args.CurrentTemperature < entry.TemperatureRange.Y)
             {
-                var result = SpawnAtPosition(entry.TransformTo, xform.Coordinates);
-
-                //Try putting in container
-                _transform.DropNextTo(result, (start, xform));
-
-                if (_solutionContainer.TryGetSolution(result,
-                        start.Comp.Solution,
-                        out var resultSoln,
-                        out _)
-                    && _solutionContainer.TryGetSolution(start.Owner,
-                        start.Comp.Solution,
-                        out var startSoln,
-                        out var startSolution))
+                if (entry.TransformTo is not null)
                 {
-                    _solutionContainer.RemoveAllSolution(resultSoln.Value); //Remove all YML reagents
-                    resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
-                    _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
+                    var result = SpawnAtPosition(entry.TransformTo, xform.Coordinates);
+
+                    //Try putting in container
+                    _transform.DropNextTo(result, (start, xform));
+
+                    if (_solutionContainer.TryGetSolution(result,
+                            start.Comp.Solution,
+                            out var resultSoln,
+                            out _)
+                        && _solutionContainer.TryGetSolution(start.Owner,
+                            start.Comp.Solution,
+                            out var startSoln,
+                            out var startSolution))
+                    {
+                        _solutionContainer.RemoveAllSolution(resultSoln.Value); //Remove all YML reagents
+                        resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
+                        _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
+                    }
                 }
 
                 Del(start);

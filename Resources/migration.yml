@@ -223,6 +223,19 @@ CP14ClothingCloakCuirass: CP14ClothingOuterClothingCuirass
 CP14ClothingCloakInfantryCuirass: CP14ClothingOuterClothingInfantryCuirass
 CP14ClothingCloakCuirassLoincloth: CP14ClothingOuterClothingCuirassLoincloth
 CP14ClothingCloakCuirassLeg: CP14ClothingOuterClothingCuirassLeg
+
+#2025-21-01
+CP14PlateWooden: CP14Plate
+CP14PlateWooden2: CP14Plate
+CP14PlateCeramic: CP14Plate
+CP14PlateIron: CP14Plate
+
+
+
+
+
+
+
 # <---> CrystallEdge migration zone end
 
 
