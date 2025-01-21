@@ -68,9 +68,6 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 0.25
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateCabbageSlice
 
 - type: entity
   id: CP14FoodPumpkin
@@ -143,9 +140,6 @@
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlatePumpkinSlice
 
 - type: entity
   id: CP14FoodPotato
@@ -218,9 +212,6 @@
           Quantity: 2
         - ReagentId: Water
           Quantity: 3
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateCucumber
 
 - type: entity
   id: CP14FoodTomatoes
@@ -317,9 +308,6 @@
           Quantity: 1
         - ReagentId: Vitamin
           Quantity: 1
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateTomatoesSlice
 
 - type: entity
   id: CP14FoodApple
@@ -381,3 +369,4 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 1
+ 
