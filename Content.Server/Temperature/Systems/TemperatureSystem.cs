@@ -135,7 +135,7 @@ public sealed class TemperatureSystem : EntitySystem
         //    return;
         if (temperature == null)
             return;
-        //CrystallEdge may try place on heater and entity, and solutions END
+        //CrystallEdge may try place on heater and entity, and solutions END ?
 
         if (!ignoreHeatResistance)
         {
