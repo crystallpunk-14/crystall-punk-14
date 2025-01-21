@@ -6,8 +6,8 @@
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
-    layers:
-    - state: plate
+    sprite: _CP14/Objects/Consumable/Food/plates.rsi
+    state: plate
   - type: Item
     shape:
     - 0,0,1,0
