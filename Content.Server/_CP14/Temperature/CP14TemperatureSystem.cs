@@ -99,7 +99,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         while (flammableQuery.MoveNext(out _, out var heater, out var itemPlacer, out var flammable))
         {
             if (!flammable.OnFire)
-                return;
+                continue;
 
             var energy = flammable.FireStacks * heater.DegreesPerStack;
             foreach (var ent in itemPlacer.PlacedEntities)
