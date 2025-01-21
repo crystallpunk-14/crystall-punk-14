@@ -55,7 +55,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
                     _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
                 }
 
-                QueueDel(start);
+                Del(start);
                 break;
             }
         }

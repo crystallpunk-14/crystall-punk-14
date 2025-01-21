@@ -75,7 +75,7 @@
     - 0,0,1,0
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 350, 500
+    - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCooked
 
 - type: entity
@@ -101,7 +101,7 @@
           Quantity: 6
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 350, 500
+    - temperatureRange: 400, 500
       transformTo: CP14Ash1
 
 - type: entity
@@ -125,7 +125,7 @@
           sheepmeat_slice3: ""
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 350, 500
+    - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCookedSlice
 
 - type: entity
@@ -156,7 +156,7 @@
           Quantity: 6
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 350, 500
+    - temperatureRange: 400, 500
       transformTo: CP14Ash1
 
 - type: entity
@@ -183,7 +183,7 @@
           Quantity: 6
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 350, 500
+    - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCutletCooked
 
 - type: entity
@@ -209,5 +209,5 @@
           Quantity: 6
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 350, 500
+    - temperatureRange: 400, 500
       transformTo: CP14Ash1
