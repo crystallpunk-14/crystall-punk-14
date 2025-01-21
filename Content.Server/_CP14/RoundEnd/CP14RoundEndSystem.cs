@@ -3,6 +3,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
 using Content.Shared._CP14.MagicEnergy;
+using Content.Shared.GameTicking;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Audio;
@@ -26,8 +27,13 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(
-            OnFinisherMagicEnergyLevelChange);
+        SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(OnFinisherMagicEnergyLevelChange);
+        SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
+    }
+
+    private void OnRoundEndMessage(RoundEndMessageEvent ev)
+    {
+        _roundEndMoment = TimeSpan.Zero; //Reset timer, so it cant affect next round in any case
     }
 
     public override void Update(float frameTime)
@@ -47,7 +53,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         ref CP14MagicEnergyLevelChangeEvent args)
     {
         //Alarm 50% magic energy left
-        if (args.NewValue < args.OldValue && args.OldValue >= args.MaxValue / 2 && args.NewValue <= args.MaxValue / 2)
+        if (args.NewValue < args.OldValue && args.OldValue > args.MaxValue / 2 && args.NewValue <= args.MaxValue / 2)
         {
             _chatSystem.DispatchGlobalAnnouncement(
                 Loc.GetString("cp14-round-end-monolith-50"),

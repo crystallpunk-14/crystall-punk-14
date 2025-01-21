@@ -7,6 +7,7 @@
   components:
   - type: Item
     size: Normal
+  - type: Temperature
   - type: FlavorProfile
     flavors:
       - bread #TODO smth disguisting. raw dough
@@ -25,6 +26,58 @@
   - type: SliceableFood
     count: 5
     slice: CP14FoodDoughMedium
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodBread
+
+- type: entity
+  id: CP14FoodBread
+  parent: CP14FoodDoughLarge
+  name: bread
+  description: Crispy and so flavourful!
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/dough.rsi
+    state: bread_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Protein
+          Quantity: 2
+  - type: SliceableFood
+    count: 5
+    slice: CP14FoodBreadSlice
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodBreadSlice
+  parent: CP14FoodBread
+  name: bread slice
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/dough.rsi
+    state: bread_slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6 # 1/5 bread
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 0.4
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: null
 
 - type: entity
   parent: FoodInjectableBase
@@ -34,6 +87,7 @@
   components:
   - type: Item
     size: Tiny
+  - type: Temperature
   - type: FlavorProfile
     flavors:
       - bread #TODO smth disguisting. raw dough
@@ -46,9 +100,62 @@
         maxVol: 6 # 1/5 large dough
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4.2
+          Quantity: 4
         - ReagentId: UncookedAnimalProteins
           Quantity: 0.4
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodBreadBun
+
+- type: entity
+  parent: CP14FoodDoughMedium
+  id: CP14FoodBreadBun
+  name: bread bun
+  description: it's like regular bread, only smaller and funnier.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/dough.rsi
+    state: bun_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6 # 1/5 large dough
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 0.4
+  - type: SliceableFood
+    count: 2
+    slice: CP14FoodBreadBunSlice
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  parent: CP14FoodDoughMedium
+  id: CP14FoodBreadBunSlice
+  name: bread bun slice
+  description: it's like regular bread, only smaller and funnier. And cut in half
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/dough.rsi
+    state: bun_cooked_slice_bottom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3 # 1/2 bun
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 0.2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
 
 - type: entity
   parent: CP14FoodDoughMedium
@@ -65,6 +172,10 @@
         maxVol: 6 # 1/5 large dough
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4.2
+          Quantity: 4
         - ReagentId: UncookedAnimalProteins
           Quantity: 0.4
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1 #TODO: лаваш?
