@@ -381,6 +381,3 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 1
-#  - type: FoodSequenceElement   #no sprite
-#    entries:
-#      CP14Plate: CP14PlateAppleSlice
