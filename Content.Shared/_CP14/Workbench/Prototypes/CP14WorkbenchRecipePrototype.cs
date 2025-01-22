@@ -36,6 +36,9 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
     public EntProtoId Result;
 
     [DataField]
+    public int ResultCount = 1;
+
+    [DataField]
     public bool TryMergeSolutions = false;
 
     [DataField]

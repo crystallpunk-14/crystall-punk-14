@@ -114,7 +114,8 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         var result = _prototype.Index(recipe.Result);
 
         ItemView.SetPrototype(recipe.Result);
-        ItemName.Text = result.Name;
+        var counter = recipe.ResultCount > 1 ? $" x{recipe.ResultCount}" : "";
+        ItemName.Text = result.Name + counter;
         ItemDescription.Text = result.Description;
 
         ItemRequirements.RemoveAllChildren();
