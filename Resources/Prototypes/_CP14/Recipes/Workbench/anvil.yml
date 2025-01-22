@@ -128,6 +128,15 @@
   result: CP14BaseLockpick
   knowledgeRequired: MetallForging
 
+- type: CP14Recipe
+  id: CP14ClothingHeadCapellina
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 3
+  result: CP14ClothingHeadCapellina
+  knowledgeRequired: MetallForging
+
 # Dagger
 
 - type: CP14Recipe
