@@ -1,24 +1,5 @@
 # <---> CrystallEdge migration zone
 
-# 2024-05-24
-CP14CardboardWall: CP14WallCardboard
-
-# 2024-06-06
-CP14CaveStoneWall: CP14WallStone
-CP14CaveStoneWallSilverOre: null
-CP14CaveStoneWallGoldOre: CP14WallStoneGoldOre
-
-# 2024-06-10
-CP14ClothingCloakHoodieYellow: null
-CP14ClothingPantsHarlequinRed: CP14ClothingPantsTrouserDarkBlue
-CP14ClothingShirtHarlequineRed: CP14ClothingShirtCottonBlack
-
-# 2024-07-18
-CP14ClothingShirtCottonBlueDark: CP14ClothingShirtCottonBlack
-CP14Shovel: CP14ModularIronShovel
-CP14Hoe: CP14BaseHoe
-CP14WallStoneSilverOre: CP14WallStoneGoldOre
-
 # 2024-08-22
 CP14PloughedGround: CP14SeedbedWooden
 CP14SeedbedDefault: CP14SeedbedWooden
@@ -230,6 +211,8 @@ CP14PlateWooden2: CP14Plate
 CP14PlateCeramic: CP14Plate
 CP14PlateIron: CP14Plate
 
+#2025-22-01
+CP14BaseLightHammer: CP14ModularIronHammer
 
 
 
