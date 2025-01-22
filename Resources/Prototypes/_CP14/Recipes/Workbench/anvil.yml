@@ -116,6 +116,7 @@
   stacks:
     CP14CopperBar: 1
   result: CP14Crossbolt
+  resultCount: 3
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
