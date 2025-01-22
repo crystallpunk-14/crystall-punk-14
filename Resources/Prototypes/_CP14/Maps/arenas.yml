@@ -53,12 +53,12 @@
           - Blacksmith2
           - PersonalHouse1
           - PersonalHouse2
-          - PersonalHouse3
+          #- PersonalHouse3 #TODO: return
           - PersonalHouse4
           - PersonalHouse5
           - PersonalHouse6
           - PersonalHouse7
-          - PersonalHouse8
+          #- PersonalHouse8 #TODO: return 8 house
           - PersonalHouse9
           - PersonalHouse10
           - PersonalHouse11
