@@ -6,7 +6,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
-    sprite: Clothing/Belt/quiver.rsi
+    sprite: _CP14/Clothing/Belt/quiver.rsi
     layers:
     - state: icon
     - map: [ "enum.StorageContainerVisualLayers.Fill" ]
@@ -25,6 +25,7 @@
     whitelist:
       tags:
       - CP14CrossbowBolt
+      - CP14Arrow
   - type: Appearance
   - type: StorageContainerVisuals
     maxFillLevels: 3
