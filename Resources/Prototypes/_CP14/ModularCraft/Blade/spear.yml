@@ -17,7 +17,7 @@
     - type: DamageOtherOnHit
       damage:
         types:
-          Piercing: 23
+          Piercing: 16
     - type: ThrowingAngle
       angle: 135
     - type: EmbeddableProjectile

@@ -1,141 +1,3 @@
-- type: CP14Recipe
-  id: CP14BaseShield
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14WoodenPlanks: 2
-    CP14IronBar: 2
-  result: CP14BaseShield
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14BaseCrowbar
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 2
-  result: CP14BaseCrowbar
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14BaseWrench
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 2
-  result: CP14BaseWrench
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingCuirass
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 5
-  result: CP14ClothingOuterClothingCuirass
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingInfantryCuirass
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 6
-  result: CP14ClothingOuterClothingInfantryCuirass
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingCuirassLoincloth
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 6
-  result: CP14ClothingOuterClothingCuirassLoincloth
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingCuirassLeg
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 7
-  result: CP14ClothingOuterClothingCuirassLeg
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14Nail10
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 2
-  result: CP14Nail10
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14CrystalLampBlueEmpty
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14CopperBar: 2
-    CP14IronBar: 1
-  result: CP14CrystalLampBlueEmpty
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14CrystalLampOrangeEmpty
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14CopperBar: 2
-    CP14IronBar: 1
-  result: CP14CrystalLampOrangeEmpty
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14Scissors
-  tag: CP14RecipeAnvil
-  craftTime: 2
-  stacks:
-    CP14IronBar: 1
-  result: CP14Scissors
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingCopperArmor
-  tag: CP14RecipeAnvil
-  craftTime: 2
-  stacks:
-    CP14CopperBar: 6
-  result: CP14ClothingOuterClothingCopperArmor
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14Crossbolt
-  tag: CP14RecipeAnvil
-  craftTime: 1
-  stacks:
-    CP14CopperBar: 1
-  result: CP14Crossbolt
-  resultCount: 3
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14BaseLockpick
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 1
-  result: CP14BaseLockpick
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ClothingHeadCapellina
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 3
-  result: CP14ClothingHeadCapellina
-  knowledgeRequired: MetallForging
 
 # Dagger
 
@@ -556,78 +418,41 @@
   result: CP14ModularBladeMithrilAxe
   knowledgeRequired: MetallForging
 
-# Sharp garde
+# Hammer
 
 - type: CP14Recipe
-  id: CP14ModularGardeSharpCopper
+  id: CP14ModularBladeIronHammer
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
-    CP14CopperBar: 1
-  result: CP14ModularGardeSharpCopper
+    CP14IronBar: 2
+  result: CP14ModularBladeIronHammer
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ModularGardeSharpIron
+  id: CP14ModularBladeCopperHammer
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
-    CP14IronBar: 1
-  result: CP14ModularGardeSharpIron
+    CP14CopperBar: 2
+  result: CP14ModularBladeCopperHammer
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ModularGardeSharpGold
+  id: CP14ModularBladeGoldHammer
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
-    CP14GoldBar: 1
-  result: CP14ModularGardeSharpGold
+    CP14GoldBar: 2
+  result: CP14ModularBladeGoldHammer
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14ModularGardeSharpMithril
+  id: CP14ModularBladeMithrilHammer
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
-    CP14MithrilBar: 1
-  result: CP14ModularGardeSharpMithril
+    CP14MithrilBar: 2
+  result: CP14ModularBladeMithrilHammer
   knowledgeRequired: MetallForging
-
-# Sturdy garde
-
-- type: CP14Recipe
-  id: CP14ModularGardeSturdyCopper
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14CopperBar: 1
-  result: CP14ModularGardeSturdyCopper
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ModularGardeSturdyIron
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14IronBar: 1
-  result: CP14ModularGardeSturdyIron
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ModularGardeSturdyGold
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14GoldBar: 1
-  result: CP14ModularGardeSturdyGold
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14ModularGardeSturdyMithril
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14MithrilBar: 1
-  result: CP14ModularGardeSturdyMithril
-  knowledgeRequired: MetallForging
+  
