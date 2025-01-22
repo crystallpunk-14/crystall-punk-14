@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularIronHammer
+  parent: CP14ModularGripWooden
+  name: iron hammer
+  description: A small hammer. Good for carpentry work as well as for cracking skulls.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronHammer
