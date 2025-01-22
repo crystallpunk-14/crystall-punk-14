@@ -136,3 +136,15 @@
     CP14IronBar: 3
   result: CP14ClothingHeadCapellina
   knowledgeRequired: MetallForging
+
+- type: CP14Recipe
+  id: CP14BaseLightCrossbow
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14CopperBar: 1
+    CP14IronBar: 3
+  entities:
+    CP14String: 1
+  result: CP14BaseLightCrossbow
+  knowledgeRequired: MetallForging
