@@ -82,7 +82,7 @@
 - type: entity
   parent: FoodInjectableBase
   id: CP14FoodDoughMedium
-  name: Medium piece of dough.
+  name: medium piece of dough
   categories: [ ForkFiltered ]
   components:
   - type: Item

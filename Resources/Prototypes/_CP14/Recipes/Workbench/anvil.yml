@@ -27,6 +27,15 @@
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
+  id: CP14PlatePie
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  stacks:
+    CP14IronBar: 1
+  result: CP14PlatePie
+  knowledgeRequired: MetallForging
+
+- type: CP14Recipe
   id: CP14ClothingOuterClothingCuirass
   tag: CP14RecipeAnvil
   craftTime: 4

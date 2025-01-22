@@ -13,7 +13,7 @@
   tag: CP14RecipeCooking
   craftTime: 3
   entities:
-    CP14FoodDoughMedium: 5
+    CP14FoodDoughMedium: 4
   result: CP14FoodDoughLarge
   tryMergeSolutions: true
 
@@ -22,9 +22,8 @@
   tag: CP14RecipeCooking
   craftTime: 3
   entities:
-    CP14FoodDoughMediumFlat: 1
+    CP14Wheat: 2
   result: CP14FoodDoughMedium
-  tryMergeSolutions: true
 
 - type: CP14Recipe
   id: CP14FoodDoughMediumFlat
@@ -74,3 +73,21 @@
   entities:
     CP14FoodCabbageSlice: 1 
   result: CP14SeedCabbage
+
+- type: CP14Recipe
+  id: CP14FoodPieAppleRaw
+  tag: CP14RecipeCooking
+  craftTime: 3
+  entities:
+    CP14FoodDoughMediumFlat: 1
+    CP14FoodAppleSlice: 4
+  result: CP14FoodPieAppleRaw
+
+- type: CP14Recipe
+  id: CP14FoodPieMeatRaw
+  tag: CP14RecipeCooking
+  craftTime: 3
+  entities:
+    CP14FoodDoughMediumFlat: 1
+    CP14FoodMeatLambSlice: 3
+  result: CP14FoodPieMeatRaw
