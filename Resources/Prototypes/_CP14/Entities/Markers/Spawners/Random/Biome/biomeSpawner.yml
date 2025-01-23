@@ -25,7 +25,7 @@
 - type: entity
   id: CP14BiomeSpawnerGrassland
   parent: CP14BaseBiomeSpawner
-  suffix: Comoss, grassland
+  suffix: T0 Resources, Grassland
   components:
   - type: Sprite
     layers:
@@ -37,7 +37,7 @@
 - type: entity
   id: CP14BiomeSpawnerCave
   parent: CP14BaseBiomeSpawner
-  suffix: Comoss, cave
+  suffix: T0 Resources, Cave Tunnels
   components:
   - type: Sprite
     layers:
@@ -92,6 +92,8 @@
   - type: Sprite
     layers:
       - state: forest
+      - sprite: _CP14/Tiles/Water/water.rsi
+        state: full
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14SwampFill
