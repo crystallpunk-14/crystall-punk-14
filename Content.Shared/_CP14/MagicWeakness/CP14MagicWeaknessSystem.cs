@@ -1,6 +1,7 @@
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Damage;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 
@@ -26,11 +27,15 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicUnsafeSleepComponent, CP14MagicEnergyOverloadEvent>(OnMagicEnergyOverloadSleep);
     }
 
-    private void OnMagicEnergyBurnOutSleep(Entity<CP14MagicUnsafeSleepComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
+    private void OnMagicEnergyBurnOutSleep(Entity<CP14MagicUnsafeSleepComponent> ent,
+        ref CP14MagicEnergyBurnOutEvent args)
     {
         if (args.BurnOutEnergy > ent.Comp.SleepThreshold)
         {
-            _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out-fall"), ent, ent, PopupType.LargeCaution);
+            _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out-fall"),
+                ent,
+                ent,
+                PopupType.LargeCaution);
             _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(ent,
                 StatusEffectKey,
                 TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.BurnOutEnergy),
@@ -38,11 +43,15 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
         }
     }
 
-    private void OnMagicEnergyOverloadSleep(Entity<CP14MagicUnsafeSleepComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    private void OnMagicEnergyOverloadSleep(Entity<CP14MagicUnsafeSleepComponent> ent,
+        ref CP14MagicEnergyOverloadEvent args)
     {
         if (args.OverloadEnergy > ent.Comp.SleepThreshold)
         {
-            _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out-fall"), ent, ent, PopupType.LargeCaution);
+            _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out-fall"),
+                ent,
+                ent,
+                PopupType.LargeCaution);
             _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(ent,
                 StatusEffectKey,
                 TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.OverloadEnergy),
@@ -50,15 +59,43 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
         }
     }
 
-    private void OnMagicEnergyBurnOutDamage(Entity<CP14MagicUnsafeDamageComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
+    private void OnMagicEnergyBurnOutDamage(Entity<CP14MagicUnsafeDamageComponent> ent,
+        ref CP14MagicEnergyBurnOutEvent args)
     {
-        _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-burn-out"), ent, ent, PopupType.LargeCaution);
+        //TODO: Idk why this dont popup recipient
+        //Others popup
+        _popup.PopupPredicted(Loc.GetString("cp14-magic-energy-damage-burn-out"),
+            Loc.GetString("cp14-magic-energy-damage-burn-out-other"),
+            ent,
+            ent);
+
+        //Local self popup
+        _popup.PopupEntity(
+            Loc.GetString("cp14-magic-energy-damage-burn-out"),
+            ent,
+            ent,
+            PopupType.LargeCaution);
+
         _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.BurnOutEnergy, interruptsDoAfters: false);
     }
 
-    private void OnMagicEnergyOverloadDamage(Entity<CP14MagicUnsafeDamageComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    private void OnMagicEnergyOverloadDamage(Entity<CP14MagicUnsafeDamageComponent> ent,
+        ref CP14MagicEnergyOverloadEvent args)
     {
-        _popup.PopupEntity(Loc.GetString("cp14-magic-energy-damage-overload"), ent, ent, PopupType.LargeCaution);
+        //TODO: Idk why this dont popup recipient
+        //Others popup
+        _popup.PopupPredicted(Loc.GetString("cp14-magic-energy-damage-overload"),
+            Loc.GetString("cp14-magic-energy-damage-overload-other"),
+            ent,
+            ent);
+
+        //Local self popup
+        _popup.PopupEntity(
+            Loc.GetString("cp14-magic-energy-damage-overload"),
+            ent,
+            ent,
+            PopupType.LargeCaution);
+
         _damageable.TryChangeDamage(ent, ent.Comp.DamagePerEnergy * args.OverloadEnergy, interruptsDoAfters: false);
     }
 }
