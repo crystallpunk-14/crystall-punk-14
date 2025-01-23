@@ -65,7 +65,7 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
         //TODO: Idk why this dont popup recipient
         //Others popup
         _popup.PopupPredicted(Loc.GetString("cp14-magic-energy-damage-burn-out"),
-            Loc.GetString("cp14-magic-energy-damage-burn-out-other"),
+            Loc.GetString("cp14-magic-energy-damage-burn-out-other", ("name", Identity.Name(ent, EntityManager))),
             ent,
             ent);
 
@@ -85,7 +85,7 @@ public partial class CP14MagicWeaknessSystem : EntitySystem
         //TODO: Idk why this dont popup recipient
         //Others popup
         _popup.PopupPredicted(Loc.GetString("cp14-magic-energy-damage-overload"),
-            Loc.GetString("cp14-magic-energy-damage-overload-other"),
+            Loc.GetString("cp14-magic-energy-damage-overload-other", ("name", Identity.Name(ent, EntityManager))),
             ent,
             ent);
 
