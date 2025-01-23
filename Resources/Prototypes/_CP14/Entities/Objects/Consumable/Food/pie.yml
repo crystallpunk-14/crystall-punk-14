@@ -21,8 +21,8 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 11
-        - ReagentId: Vitamin
+          Quantity: 12
+        - ReagentId: Protein
           Quantity: 5
   - type: Food
     trash:
@@ -52,7 +52,7 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 11
+          Quantity: 12
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: Food
@@ -71,6 +71,17 @@
     flavors:
       - raw dough
       - apple
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 5
   - type: Sprite
     layers:
     - state: tin
@@ -93,6 +104,17 @@
     flavors:
       - sweet
       - apple
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 5
   - type: Sprite
     layers:
     - state: tin
