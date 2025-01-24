@@ -366,7 +366,7 @@
     checkCanAccess: false
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
-      path: /Audio/Effects/gib3.ogg
+      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Effects/Magic/spells_icons_monster.rsi
       state: subterranean_leap
