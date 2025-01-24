@@ -15,7 +15,7 @@
     - Glasswork
   requirements:
     - !type:RoleTimeRequirement
-      role: CP14Apprentice
+      role: CP14JobApprentice
       time: 3600 # 1 hours
 
 - type: startingGear
