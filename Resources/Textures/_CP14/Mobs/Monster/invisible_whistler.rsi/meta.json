@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "license": "CLA",
+  "copyright": "Created by .kreks. (discord)",
+  "states": [
+    {
+      "name": "live"
+    },
+    {
+      "name": "dead"
+    }
+  ]
+}
