@@ -13,6 +13,10 @@
     - MetallMelting
     - MetallForging
     - Glasswork
+  requirements:
+    - !type:RoleTimeRequirement
+      role: CP14Apprentice
+      time: 3600 # 1 hours
 
 - type: startingGear
   id: CP14BlacksmithGear
