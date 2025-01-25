@@ -63,7 +63,6 @@
         children:
         - id: CP14BookKnowledgeClothingSewing
         - id: CP14BookKnowledgeWallpaperCraft
-      - id: CP14SilverCoin5
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
       - id: CP14DemiplaneKeyT1
@@ -112,6 +111,9 @@
       - !type:GroupSelector
         children:
         - id: CP14BookKnowledgeAdvancedClothingSewing
+        - id: CP14BookKnowledgeMetallMelting
+        - id: CP14BookKnowledgeMetallForging
+        - id: CP14BookKnowledgeGlasswork
       - id: CP14EnergyCrystalMediumEmpty
     # Rare
     - !type:GroupSelector

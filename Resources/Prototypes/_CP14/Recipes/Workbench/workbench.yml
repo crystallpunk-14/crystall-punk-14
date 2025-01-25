@@ -20,12 +20,12 @@
   knowledgeRequired: WoodWork
 
 - type: CP14Recipe
-  id: CP14PlateWooden
+  id: CP14Plate
   tag: CP14RecipeWorkbench
   craftTime: 3
   stacks:
     CP14WoodenPlanks: 2
-  result: CP14PlateWooden
+  result: CP14Plate
   knowledgeRequired: WoodWork
 
 - type: CP14Recipe
@@ -90,4 +90,26 @@
   stacks:
     CP14LucensWoodenPlanks: 2
   result: CP14ModularGripLucensLong
+  knowledgeRequired: WoodWork
+
+- type: CP14Recipe
+  id: CP14Bow
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  entities:
+    CP14String: 1
+  stacks:
+    CP14WoodenPlanks: 2
+  result: CP14BowCombat
+  knowledgeRequired: WoodWork
+
+- type: CP14Recipe
+  id: CP14Arrow
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 1
+  result: CP14Arrow
+  resultCount: 4
   knowledgeRequired: WoodWork

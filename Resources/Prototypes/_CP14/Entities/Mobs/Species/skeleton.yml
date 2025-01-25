@@ -18,15 +18,16 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
     - map: [ "shoes" ]
     - map: [ "shirt" ]
     - map: [ "pants" ]
-    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]
@@ -105,6 +106,7 @@
   - type: Inventory
     templateId: CP14Human
   - type: TransferMindOnGib
+  - type: CP14KnowledgeStorage
 
 - type: entity
   parent: CP14BaseSpeciesDummy

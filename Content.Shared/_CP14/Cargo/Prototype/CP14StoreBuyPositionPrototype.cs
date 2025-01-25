@@ -14,12 +14,6 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     [IdDataField, ViewVariables]
     public string ID { get; private set; } = default!;
 
-    /// <summary>
-    /// if true, this item becomes available for purchase only after unlocking by other purchases
-    /// </summary>
-    [DataField]
-    public bool Unlockable = false;
-
     [DataField(required: true)]
     public MinMax Price = new();
 
@@ -43,6 +37,12 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
 
     [DataField]
     public bool RoundstartAvailable = true;
+
+    /// <summary>
+    /// If true, this item will randomly appear under the ‘Special Offer’ heading. With a chance to show up every time the ship arrives.
+    /// </summary>
+    [DataField]
+    public bool Special = false;
 }
 
 [ImplicitDataDefinitionForInheritors]
@@ -50,6 +50,4 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
 public abstract partial class CP14StoreBuyService
 {
     public abstract void Buy(EntityManager entManager, IPrototypeManager prototype,  Entity<CP14StationTravelingStoreShipTargetComponent> station);
-
-    public abstract string? GetDescription(IPrototypeManager prototype, IEntityManager entSys);
 }

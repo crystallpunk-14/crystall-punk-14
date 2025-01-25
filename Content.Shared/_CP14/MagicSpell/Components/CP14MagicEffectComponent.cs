@@ -17,7 +17,7 @@ public sealed partial class CP14MagicEffectComponent : Component
     /// if this effect was provided by an spellstorage, it will be recorded here automatically.
     /// </summary>
     [DataField]
-    public Entity<CP14SpellStorageComponent>? SpellStorage;
+    public EntityUid? SpellStorage;
 
     [DataField]
     public ProtoId<CP14MagicTypePrototype>? MagicType = null;

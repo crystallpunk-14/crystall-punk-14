@@ -52,6 +52,7 @@
   - type: Tag
     tags:
     - Document
+    - CP14SpellScroll
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorageUseDamage
     damagePerMana:

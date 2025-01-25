@@ -65,5 +65,5 @@
   id: CP14GatherPumpkin
   entries:
   - id: CP14FoodPumpkin
-    amount: 1
-    maxAmount: 2
+    amount: 2
+    maxAmount: 3

@@ -13,5 +13,5 @@ public sealed partial class CP14DamageableByMapComponent : Component
     public bool Enabled = false;
 
     [DataField]
-    public Entity<CP14MapDamageComponent>? CurrentMap;
+    public EntityUid? CurrentMap;
 }

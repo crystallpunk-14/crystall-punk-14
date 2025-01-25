@@ -15,8 +15,8 @@ cp14-knowledge-metall-melting-desc = how to smelt ore into valuable metals
 cp14-knowledge-metall-forging-name = Metall forging
 cp14-knowledge-metall-forging-desc = how to forge metal into different shapes
 
-cp14-knowledge-metall-glasswork-name = Glasswork
-cp14-knowledge-metall-glasswork-desc = how to work with glass.
+cp14-knowledge-glasswork-name = Glasswork
+cp14-knowledge-glasswork-desc = how to work with glass.
 
 # T2
 

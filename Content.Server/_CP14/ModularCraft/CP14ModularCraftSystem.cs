@@ -27,7 +27,8 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, MapInitEvent>(OnStartPointMapInit);
-        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, CP14ModularCraftAddPartDoAfter>(OnAddedPart);
+        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, CP14ModularCraftAddPartDoAfter>(OnAddedToStart);
+        SubscribeLocalEvent<CP14ModularCraftPartComponent, CP14ModularCraftAddPartDoAfter>(OnAddedToPart);
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
     }
 
@@ -62,7 +63,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         return msg;
     }
 
-    private void OnAddedPart(Entity<CP14ModularCraftStartPointComponent> ent, ref CP14ModularCraftAddPartDoAfter args)
+    private void OnAddedToStart(Entity<CP14ModularCraftStartPointComponent> start, ref CP14ModularCraftAddPartDoAfter args)
     {
         if (args.Cancelled || args.Handled)
             return;
@@ -70,7 +71,23 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!TryComp<CP14ModularCraftPartComponent>(args.Used, out var partComp))
             return;
 
-        if (!TryAddPartToFirstSlot(ent, (args.Used.Value, partComp)))
+        if (!TryAddPartToFirstSlot(start, (args.Used.Value, partComp)))
+            return;
+
+        //TODO: Sound
+
+        args.Handled = true;
+    }
+
+    private void OnAddedToPart(Entity<CP14ModularCraftPartComponent> part, ref CP14ModularCraftAddPartDoAfter args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        if (!TryComp<CP14ModularCraftStartPointComponent>(args.Used, out var startComp))
+            return;
+
+        if (!TryAddPartToFirstSlot((args.Used.Value, startComp), part))
             return;
 
         //TODO: Sound
@@ -89,7 +106,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         {
             foreach (var detail in autoAssemble.Details)
             {
-                TryAddPartToFirstSlot(ent, detail, false); // we want auto assemble when spawned in crates
+                TryAddPartToFirstSlot(ent, detail);
             }
         }
     }
@@ -119,8 +136,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
     }
 
     private bool TryAddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
-        ProtoId<CP14ModularCraftPartPrototype> partProto,
-        bool blockStorage = true)
+        ProtoId<CP14ModularCraftPartPrototype> partProto)
     {
         if (!_proto.TryIndex(partProto, out var partIndexed))
             return false;
@@ -131,24 +147,18 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
             return false;
 
-        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot.Value, blockStorage);
+        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot.Value);
     }
 
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
         Entity<CP14ModularCraftPartComponent>? part,
         ProtoId<CP14ModularCraftPartPrototype> partProto,
-        ProtoId<CP14ModularCraftSlotPrototype> slot,
-        bool blockStorage = true)
+        ProtoId<CP14ModularCraftSlotPrototype> slot)
     {
         if (!start.Comp.FreeSlots.Contains(slot))
             return false;
 
-        if (blockStorage)
-        {
-            var xform = Transform(start);
-            if (xform.GridUid != xform.ParentUid)
-                return false;
-        }
+        //TODO: Size changing broken in gridstorage
 
         AddPartToSlot(start, part, partProto, slot);
         return true;
