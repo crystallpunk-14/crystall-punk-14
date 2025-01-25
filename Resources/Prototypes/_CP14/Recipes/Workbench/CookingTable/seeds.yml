@@ -1,0 +1,39 @@
+- type: CP14Recipe
+  id: CP14SeedWheat
+  tag: CP14RecipeCooking
+  craftTime: 1
+  entities:
+    CP14Wheat: 1 
+  result: CP14SeedWheat
+
+- type: CP14Recipe
+  id: CP14SeedTomato
+  tag: CP14RecipeCooking
+  craftTime: 1
+  entities:
+    CP14FoodTomatoesSlice: 1 
+  result: CP14SeedTomato
+
+- type: CP14Recipe
+  id: CP14SeedCabbage
+  tag: CP14RecipeCooking
+  craftTime: 1
+  entities:
+    CP14FoodCabbageSlice: 1 
+  result: CP14SeedCabbage
+
+- type: CP14Recipe
+  id: CP14SeedPumpkin
+  tag: CP14RecipeCooking
+  craftTime: 1
+  entities:
+    CP14FoodPumpkinSlice: 1 
+  result: CP14SeedPumpkin
+
+- type: CP14Recipe
+  id: CP14SeedCucumber
+  tag: CP14RecipeCooking
+  craftTime: 1
+  entities:
+    CP14FoodCucumber: 1 
+  result: CP14SeedCucumber
