@@ -10,6 +10,9 @@
   - !type:CP14AddKnowledgeSpecial
     knowledge:
     - WoodWork
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600 # 1 hours
 
 - type: startingGear
   id: CP14BankerGear
