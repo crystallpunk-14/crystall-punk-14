@@ -8,6 +8,7 @@
   roles:
   - CP14Commandant
   - CP14GuardCommander
+  - CP14Guildmaster
 
 - type: department
   id: CP14Guard
@@ -36,6 +37,7 @@
   weight: 0
   color: "#588151"
   roles:
+  - CP14Guildmaster
   - CP14Apprentice
   - CP14Adventurer
   - CP14Alchemist
