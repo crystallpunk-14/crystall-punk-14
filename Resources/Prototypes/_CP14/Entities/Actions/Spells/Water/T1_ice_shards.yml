@@ -17,7 +17,6 @@
       prototype: CP14IceShard
   - type: CP14MagicEffectVerbalAspect
     endSpeech: "Glacies acus!"
-  - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceShards
   - type: EntityWorldTargetAction

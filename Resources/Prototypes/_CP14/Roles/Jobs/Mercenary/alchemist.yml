@@ -10,6 +10,10 @@
   - !type:CP14AddKnowledgeSpecial
     knowledge:
     - WoodWork
+  requirements:
+    - !type:RoleTimeRequirement
+      role: CP14JobApprentice
+      time: 3600 # 1 hours
 
 - type: startingGear
   id: CP14AlchemistGear
