@@ -38,3 +38,4 @@ cp14-lock-shaper-guard-entrance = barracks, entrance
 cp14-lock-shaper-guard-staff = barracks
 cp14-lock-shaper-guard-commander = guardhouse
 cp14-lock-shaper-guard-weapon-storage = weapons storage
+cp14-lock-shape-guildmaster = guildmaster
