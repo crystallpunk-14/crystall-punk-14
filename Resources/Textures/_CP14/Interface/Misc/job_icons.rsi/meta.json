@@ -26,13 +26,13 @@
       "name": "Guard"
     },
     {
-      "name": "Captain"
-    },
-    {
       "name": "Commandant"
     },
     {
       "name": "GuardCommander"
+    },
+    {
+      "name": "Guildmaster"
     },
     {
       "name": "Innkeeper"

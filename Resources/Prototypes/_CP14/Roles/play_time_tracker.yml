@@ -26,3 +26,6 @@
 
 - type: playTimeTracker
   id: CP14JobBanker
+
+- type: playTimeTracker
+  id: CP14JobGuildmaster
