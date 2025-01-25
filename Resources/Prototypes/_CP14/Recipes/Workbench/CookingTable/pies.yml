@@ -1,0 +1,21 @@
+- type: CP14Recipe
+  id: CP14FoodPieAppleRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  entities:
+    CP14PlatePie: 1
+    CP14FoodDoughMediumFlat: 1
+    CP14FoodAppleSlice: 4
+  result: CP14FoodPieAppleRaw
+  tryMergeSolutions: true
+
+- type: CP14Recipe
+  id: CP14FoodPieMeatRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  entities:
+    CP14PlatePie: 1
+    CP14FoodDoughMediumFlat: 1
+    CP14FoodMeatLambSlice: 3
+  result: CP14FoodPieMeatRaw
+  tryMergeSolutions: true

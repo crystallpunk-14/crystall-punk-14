@@ -94,9 +94,8 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         for (int i = 0; i < recipe.ResultCount; i++)
         {
             var resultEntity = Spawn(recipe.Result);
+
             resultEntities.Add(resultEntity);
-            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates);
-            _stack.TryMergeToContacts(resultEntity);
 
             if (recipe.TryMergeSolutions)
             {
@@ -116,7 +115,9 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             var requiredCount = requiredIngredient.Value;
             foreach (var placedEntity in placedEntities)
             {
-                var metaData = MetaData(placedEntity);
+                if (!TryComp<MetaDataComponent>(placedEntity, out var metaData))
+                    continue;
+
                 if (metaData.EntityPrototype is null)
                     continue;
 
@@ -131,24 +132,24 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
                             out var ingredientSoln,
                             out var ingredientSolution);
 
-                        if (ingredientSoln is null ||
-                            ingredientSolution is null)
-                            continue;
-
-                        var splitted = _solutionContainer.SplitSolution(ingredientSoln.Value,
-                            ingredientSolution.Volume / recipe.ResultCount);
-
-                        foreach (var resultEntity in resultEntities)
+                        if (ingredientSoln is not null &&
+                            ingredientSolution is not null)
                         {
-                            _solutionContainer.TryGetSolution(resultEntity,
-                                recipe.Solution,
-                                out var resultSolution,
-                                out _);
-                            if (resultSolution is not null)
+                            var splitted = _solutionContainer.SplitSolution(ingredientSoln.Value,
+                                ingredientSolution.Volume / recipe.ResultCount);
+
+                            foreach (var resultEntity in resultEntities)
                             {
-                                resultSolution.Value.Comp.Solution.MaxVolume +=
-                                    ingredientSoln.Value.Comp.Solution.MaxVolume / recipe.ResultCount;
-                                _solutionContainer.TryAddSolution(resultSolution.Value, splitted);
+                                _solutionContainer.TryGetSolution(resultEntity,
+                                    recipe.Solution,
+                                    out var resultSolution,
+                                    out _);
+                                if (resultSolution is not null)
+                                {
+                                    resultSolution.Value.Comp.Solution.MaxVolume +=
+                                        ingredientSoln.Value.Comp.Solution.MaxVolume / recipe.ResultCount;
+                                    _solutionContainer.TryAddSolution(resultSolution.Value, splitted);
+                                }
                             }
                         }
                     }
@@ -179,6 +180,12 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
                 requiredCount -= count;
             }
+        }
+
+        //We teleport result to workbench AFTER craft.
+        foreach (var resultEntity in resultEntities)
+        {
+            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates);
         }
 
         UpdateUIRecipes(ent, args.User);
