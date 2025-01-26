@@ -13,7 +13,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: CP14Bank
-      time: 3600 # 1 hours
+      time: 7800 # 2 hours
   special:
   - !type:CP14AddKnowledgeSpecial
     knowledge:

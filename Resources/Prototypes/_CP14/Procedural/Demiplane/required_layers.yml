@@ -1,11 +1,16 @@
 - type: dungeonConfig
   id: DemiplaneConnections
   layers:
+    #- !type:OreDunGen
+    #  entity: CP14DemiplaneEntryPointMarker
+    #  count: 1
+    #  minGroupSize: 4
+    #  maxGroupSize: 4
     - !type:OreDunGen
-      entity: CP14DemiplaneEntryPointMarker
+      entity: CP14DemiplanEnterRoomMarker
       count: 1
-      minGroupSize: 4
-      maxGroupSize: 4
+      minGroupSize: 1
+      maxGroupSize: 1
     - !type:OreDunGen
       entity: CP14DemiplanePassway
       count: 2

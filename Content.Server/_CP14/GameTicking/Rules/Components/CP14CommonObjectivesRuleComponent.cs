@@ -21,5 +21,5 @@ public sealed partial class CP14CommonObjectivesRuleComponent : Component
     /// all tasks must have a “mind”. This mind has all the common tasks for compatibility
     /// </summary>
     [DataField]
-    public Entity<MindComponent>? StationMind;
+    public EntityUid? StationMind;
 }

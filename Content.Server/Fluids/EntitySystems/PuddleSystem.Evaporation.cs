@@ -77,6 +77,8 @@ public sealed partial class PuddleSystem
                 Spawn("PuddleSparkle", xformQuery.GetComponent(uid).Coordinates);
                 QueueDel(uid);
             }
+
+            _solutionContainerSystem.UpdateChemicals(puddle.Solution.Value);
         }
     }
 }

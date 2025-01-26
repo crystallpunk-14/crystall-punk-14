@@ -41,11 +41,6 @@
       - id: CP14BaseSharpeningStone
       - id: CP14GlassShard
       - id: CP14Paper
-      - !type:AllSelector
-        children:
-        - id: CP14Crossbolt
-        - id: CP14Crossbolt
-        - id: CP14Crossbolt
     # Rare
     - !type:GroupSelector
       weight: 25
@@ -63,7 +58,6 @@
         children:
         - id: CP14BookKnowledgeClothingSewing
         - id: CP14BookKnowledgeWallpaperCraft
-      - id: CP14SilverCoin5
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
       - id: CP14DemiplaneKeyT1

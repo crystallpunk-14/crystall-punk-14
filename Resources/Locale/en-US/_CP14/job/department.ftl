@@ -9,3 +9,6 @@ department-CP14Bank-desc = Persons closely connected with the economy and commer
 
 department-CP14Guard = Guards
 department-CP14Guard-desc = Protectors and warriors who oversee security and law and order in all corners of the Empire.
+
+department-CP14Artisan = Artisans
+department-CP14Artisan-desc = People who have learnt peaceful professions, people who help the settlement with their knowledge and skills.

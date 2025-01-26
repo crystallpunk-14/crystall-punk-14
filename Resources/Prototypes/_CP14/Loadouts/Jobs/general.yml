@@ -416,7 +416,6 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - CP14MagicHealingStaff
   - CP14ManaOperationGlove
   - CP14CrystalLampOrangeEmpty
   - CP14BaseSharpeningStone
@@ -431,11 +430,7 @@
   - CP14DemiplaneKeyT1
   - CP14FluteInstrument
   - CP14LyraInstrument
-
-- type: loadout
-  id: CP14MagicHealingStaff
-  inhand:
-  - CP14MagicHealingStaff
+  - CP14ClothingBeltQuiver
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -520,6 +515,12 @@
   storage:
     back:
     - CP14FluteInstrument
+
+- type: loadout
+  id: CP14ClothingBeltQuiver
+  storage:
+    back:
+    - CP14ClothingBeltQuiver
 
 # Keys
 

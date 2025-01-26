@@ -32,7 +32,7 @@
       - !type:HealthChange
         damage:
           types:
-            Asphyxiation: -50
+            Asphyxiation: -500
             Bloodloss: -10
       - !type:Jitter
   - type: CP14MagicEffectVerbalAspect
