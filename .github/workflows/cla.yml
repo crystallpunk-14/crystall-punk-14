@@ -31,7 +31,7 @@ jobs:
           path-to-document: 'https://github.com/crystallpunk-14/crystall-punk-14/blob/master/CLA.md' # e.g. a CLA or a DCO document
           # branch should not be protected
           branch: 'master'
-          allowlist: bot*
+          allowlist: TheShuEd,bot*
 
          # the followings are the optional inputs - If the optional inputs are not given, then default values will be taken
           #custom-pr-sign-comment: 'The signature to be committed in order to sign the CLA'
