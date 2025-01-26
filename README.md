@@ -19,7 +19,7 @@ We welcome any support from the community in the development of the game! Join o
 
 ## Licensing/Attriibution
 
-These are just the most important points, Please read [Legal.md](TODO) for the specifics around licensing/attribution/copyright.
+These are just the most important points, Please read [Legal.md](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/Legal.md) for the specifics around licensing/attribution/copyright.
 - Unless specified otherwise, all Source Code, inside any _CP14 or CP14 folders, fall under the terms specified in LICENSE_CE.TXT (all right reserved) with Exhibit B enforced and the CrystallEdge CLA. All assets/content in those folders falls under CC-BY-SA 4.0 unless otherwise specified.
 - Any content from SpaceWizards/SpaceStation14 without specified licensing of any code is licensed under MIT (LICENSE.txt). Any Space Wizards content licensed under CC-BY-SA 3.0 to Space Wizards Federation & Contributors.
 - You may not use CrystallEdge code in other projects without specific permission from the CrystallEdge author (TheShuEd)

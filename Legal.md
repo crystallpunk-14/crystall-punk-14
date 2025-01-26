@@ -1,7 +1,7 @@
 # Disclaimer
 - The information presented here is for informational purposes only and does not constitute legal advice, nor is it a replacement for reading license text. If there is a conflict between this text and any of the attached licenses/agreements, or other agreements with CrystallEdge those agreements take precedence.
 
-## To contribute you or your legal guardian (or employer if they have a legal right to your contributions) must agree to the [CrystallEdge Contributor Agreement](TODO) 
+## To contribute you or your legal guardian (or employer if they have a legal right to your contributions) must agree to the [CrystallEdge Contributor Agreement](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/CLA.md) 
 
 This process is automated, with a bot prompting you to agree to the CLA when you open your first PR. This may also be done by sending an email with the subject "\<your name\> CA Agreement", with a signed version of the agreement.
 
@@ -15,7 +15,7 @@ Non-legalese summary of the terms of this agreement (This is not a replacement f
 - The CLA may be amended with 30 days of notice by email. *If you do not agree to the new CLA your contributions will be kept under the old version.*
 
 # Licensing/Attribution:
-- Unless specified otherwise, all Source Code, inside any **\_CP14 or CP14 folders**, fall under the terms specified in LICENSE_CE.TXT *with Exhibit B enforced* and the [CrystallEdge CLA](TODO). All assets/content in those folders fall under CC-BY-SA 4.0.
+- Unless specified otherwise, all Source Code, inside any **\_CP14 or CP14 folders**, fall under the terms specified in LICENSE_CE.TXT *with Exhibit B enforced* and the [CrystallEdge CLA](https://github.com/crystallpunk-14/crystall-punk-14/blob/master/CLA.md). All assets/content in those folders fall under CC-BY-SA 4.0.
 - Any content from SpaceWizards/SpaceStation14 without specified licensing of any code is licensed under MIT (LICENSE.TXT). Any Space Wizards content licensed under CC-BY-SA to Space Wizards Federation & Contributors.
 - __**You may not use CrystallEdge code/content (All right reserved). This is to make sure that CrystallEdge code is available to be improved by the community.**__
 - **We are in the process of removing/replacing content that is currently not under an approved license.**
