@@ -16595,8 +16595,6 @@ entities:
         - 0
     - type: RadiationGridResistance
     - type: CP14CloudShadows
-    - type: CP14WorldEdge
-      range: 60
     - type: LoadedMap
 - proto: AcousticGuitarInstrument
   entities:

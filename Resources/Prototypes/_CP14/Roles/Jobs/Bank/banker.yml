@@ -6,6 +6,13 @@
   startingGear: CP14BankerGear
   icon: "CP14JobIconBanker"
   supervisors: cp14-job-supervisors-commandant
+  special:
+  - !type:CP14AddKnowledgeSpecial
+    knowledge:
+    - WoodWork
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600 # 1 hours
 
 - type: startingGear
   id: CP14BankerGear

@@ -17,25 +17,31 @@ public sealed partial class CP14DemiplaneSystem
         if (TryComp<CP14DemiplaneComponent>(map, out var demiplan)) // In demiplan
         {
             if (rift.Comp.TryAutoLinkToMap)
-                rift.Comp.Demiplan = (map.Value, demiplan);
+                rift.Comp.Demiplane = map.Value;
 
             if (rift.Comp.ActiveTeleport)
                 AddDemiplanRandomEntryPoint((map.Value, demiplan), rift);
         }
-        else if (rift.Comp.Demiplan is not null) //We out of demiplan
+        else if (rift.Comp.Demiplane is not null) //We out of demiplan
         {
-            if (rift.Comp.ActiveTeleport)
-                AddDemiplanRandomExitPoint(rift.Comp.Demiplan.Value, rift);
+            if (TryComp<CP14DemiplaneComponent>(rift.Comp.Demiplane, out var riftDemiplane))
+            {
+                if (rift.Comp.ActiveTeleport)
+                    AddDemiplanRandomExitPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);
+            }
         }
     }
 
     private void OnRiftShutdown(Entity<CP14DemiplaneRiftComponent> rift, ref ComponentShutdown args)
     {
-        if (rift.Comp.Demiplan is null)
+        if (rift.Comp.Demiplane is null)
             return;
 
-        RemoveDemiplanRandomEntryPoint(rift.Comp.Demiplan, rift);
-        RemoveDemiplanRandomExitPoint(rift.Comp.Demiplan, rift);
+        if (!TryComp<CP14DemiplaneComponent>(rift.Comp.Demiplane, out var riftDemiplane))
+            return;
+
+        RemoveDemiplanRandomEntryPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);
+        RemoveDemiplanRandomExitPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);
     }
 
     /// <summary>
@@ -48,22 +54,25 @@ public sealed partial class CP14DemiplaneSystem
             return;
 
         demiplan.Comp.ExitPoints.Add(exitPoint);
-        exitPoint.Comp.Demiplan = demiplan;
+        exitPoint.Comp.Demiplane = demiplan;
     }
 
     /// <summary>
     /// Removing the demiplan exit point, one of which the player can exit to
     /// </summary>
     private void RemoveDemiplanRandomExitPoint(Entity<CP14DemiplaneComponent>? demiplan,
-        Entity<CP14DemiplaneRiftComponent> exitPoint)
+        EntityUid exitPoint)
     {
+        if (!TryComp<CP14DemiplaneRiftComponent>(exitPoint, out var riftComp))
+            return;
+
         if (demiplan is not null && demiplan.Value.Comp.ExitPoints.Contains(exitPoint))
         {
             demiplan.Value.Comp.ExitPoints.Remove(exitPoint);
-            exitPoint.Comp.Demiplan = null;
+            riftComp.Demiplane = null;
         }
 
-        if (exitPoint.Comp.DeleteAfterDisconnect)
+        if (riftComp.DeleteAfterDisconnect)
             QueueDel(exitPoint);
     }
 
@@ -77,23 +86,26 @@ public sealed partial class CP14DemiplaneSystem
             return;
 
         demiplan.Comp.EntryPoints.Add(entryPoint);
-        entryPoint.Comp.Demiplan = demiplan;
+        entryPoint.Comp.Demiplane = demiplan;
     }
 
     private void RemoveDemiplanRandomEntryPoint(Entity<CP14DemiplaneComponent>? demiplan,
-        Entity<CP14DemiplaneRiftComponent> entryPoint)
+        EntityUid entryPoint)
     {
+        if (!TryComp<CP14DemiplaneRiftComponent>(entryPoint, out var riftComp))
+            return;
+
         if (demiplan is not null && demiplan.Value.Comp.EntryPoints.Contains(entryPoint))
         {
             demiplan.Value.Comp.EntryPoints.Remove(entryPoint);
-            entryPoint.Comp.Demiplan = null;
+            riftComp.Demiplane = null;
         }
 
-        if (entryPoint.Comp.DeleteAfterDisconnect)
+        if (riftComp.DeleteAfterDisconnect)
             QueueDel(entryPoint);
     }
 
-    public bool TryGetDemiplanEntryPoint(Entity<CP14DemiplaneComponent> demiplan, out Entity<CP14DemiplaneRiftComponent>? entryPoint)
+    public bool TryGetDemiplanEntryPoint(Entity<CP14DemiplaneComponent> demiplan, out EntityUid? entryPoint)
     {
         entryPoint = null;
 
@@ -105,7 +117,7 @@ public sealed partial class CP14DemiplaneSystem
     }
 
     public bool TryGetDemiplanExitPoint(Entity<CP14DemiplaneComponent> demiplan,
-        out Entity<CP14DemiplaneRiftComponent>? exitPoint)
+        out EntityUid? exitPoint)
     {
         exitPoint = null;
 

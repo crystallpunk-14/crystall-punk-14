@@ -15,7 +15,7 @@
         true
   - type: NpcFactionMember
     factions:
-    - CP14Undead
+    - CP14Monster
 
 - type: entity
   id: CP14MobUndeadZombieGearEasy1

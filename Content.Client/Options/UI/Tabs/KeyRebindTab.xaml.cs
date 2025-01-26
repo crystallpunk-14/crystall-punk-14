@@ -265,6 +265,11 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.HideUI);
             AddButton(ContentKeyFunctions.InspectEntity);
 
+            //CP14
+            AddHeader("ui-options-header-cp14");
+            AddButton(ContentKeyFunctions.CP14OpenKnowledgeMenu);
+            //CP14 end
+
             foreach (var control in _keyControls.Values)
             {
                 UpdateKeyControl(control);

@@ -3,7 +3,6 @@ using Content.Server._CP14.RoundRemoveShuttle;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
-using Content.Shared._CP14.Currency;
 using Content.Shared._CP14.Cargo;
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared.Maps;
@@ -26,7 +25,6 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -137,14 +135,47 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     {
         station.Comp.CurrentBuyPositions.Clear();
         station.Comp.CurrentSellPositions.Clear();
+        station.Comp.CurrentSpecialBuyPositions.Clear();
+        station.Comp.CurrentSpecialSellPositions.Clear();
 
+        var availableSpecialSellPositions = new List<CP14StoreSellPositionPrototype>();
+        var availableSpecialBuyPositions = new List<CP14StoreBuyPositionPrototype>();
+
+        //Add static positions + cash special ones
         foreach (var buyPos in station.Comp.AvailableBuyPosition)
         {
-            station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
+            if (buyPos.Special)
+                availableSpecialBuyPositions.Add(buyPos);
+            else
+                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
         }
         foreach (var sellPos in station.Comp.AvailableSellPosition)
         {
-            station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
+            if (sellPos.Special)
+                availableSpecialSellPositions.Add(sellPos);
+            else
+                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
+        }
+
+        //Random and select special positions
+        _random.Shuffle(availableSpecialSellPositions);
+        _random.Shuffle(availableSpecialBuyPositions);
+
+        var currentSpecialBuyPositions = station.Comp.SpecialBuyPositionCount.Next(_random);
+        var currentSpecialSellPositions = station.Comp.SpecialSellPositionCount.Next(_random);
+
+        foreach (var buyPos in availableSpecialBuyPositions)
+        {
+            if (station.Comp.CurrentSpecialBuyPositions.Count >= currentSpecialBuyPositions)
+                break;
+            station.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
+        }
+
+        foreach (var sellPos in availableSpecialSellPositions)
+        {
+            if (station.Comp.CurrentSpecialSellPositions.Count >= currentSpecialSellPositions)
+                break;
+            station.Comp.CurrentSpecialSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
         }
     }
 
@@ -181,6 +212,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         RaiseLocalEvent(ev);
 
         foreach (var sellPos in station.Comp.CurrentSellPositions)
+        {
+            while (sellPos.Key.Service.TrySell(EntityManager, toSell))
+            {
+                station.Comp.Balance += sellPos.Value;
+            }
+        }
+        foreach (var sellPos in station.Comp.CurrentSpecialSellPositions)
         {
             while (sellPos.Key.Service.TrySell(EntityManager, toSell))
             {
@@ -238,6 +276,11 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             foreach (var fragment in splittedText)
             {
                 foreach (var buyPosition in station.Comp.CurrentBuyPositions)
+                {
+                    if (fragment.StartsWith(buyPosition.Key.Code))
+                        requests.Add(buyPosition);
+                }
+                foreach (var buyPosition in station.Comp.CurrentSpecialBuyPositions)
                 {
                     if (fragment.StartsWith(buyPosition.Key.Code))
                         requests.Add(buyPosition);

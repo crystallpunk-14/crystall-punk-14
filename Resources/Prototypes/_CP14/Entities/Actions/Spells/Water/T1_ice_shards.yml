@@ -17,7 +17,6 @@
       prototype: CP14IceShard
   - type: CP14MagicEffectVerbalAspect
     endSpeech: "Glacies acus!"
-  - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceShards
   - type: EntityWorldTargetAction
@@ -66,7 +65,7 @@
         Cold: 4
         Piercing: 4
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Dagger/ice_dagger.rsi
+    sprite: _CP14/Effects/Magic/ice_shard.rsi
     layers:
     - state: shard
       shader: unshaded

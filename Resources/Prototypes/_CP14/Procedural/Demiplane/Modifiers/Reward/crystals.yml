@@ -14,9 +14,9 @@
       tileMask: 
       - CP14FloorBase
       entity: CP14QuartzCrystal
-      count: 10
+      count: 30
       minGroupSize: 1
-      maxGroupSize: 4
+      maxGroupSize: 2
 
 # TIER 2
 
@@ -40,7 +40,7 @@
       entity: CP14CrystalRubiesMedium
       count: 30
       minGroupSize: 1
-      maxGroupSize: 4
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalTopazes
@@ -62,7 +62,7 @@
       entity: CP14CrystalTopazesMedium
       count: 30
       minGroupSize: 1
-      maxGroupSize: 4
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalEmeralds
@@ -86,7 +86,7 @@
       entity: CP14CrystalEmeraldsMedium
       count: 30
       minGroupSize: 1
-      maxGroupSize: 4
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalSapphires
@@ -110,7 +110,7 @@
       entity: CP14CrystalSapphiresMedium
       count: 30
       minGroupSize: 1
-      maxGroupSize: 4
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalAmethysts
@@ -132,7 +132,7 @@
       entity: CP14CrystalAmethystsMedium
       count: 30
       minGroupSize: 1
-      maxGroupSize: 4
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: QuartzCrystalDiamonds
@@ -155,4 +155,4 @@
       entity: CP14CrystalDiamondsMedium
       count: 30
       minGroupSize: 1
-      maxGroupSize: 4
+      maxGroupSize: 2

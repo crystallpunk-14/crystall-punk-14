@@ -60,10 +60,16 @@
       uiWindowPos: 2,1
       strippingWindowPos: 2,3
       displayName: Ring
+    - name: outerClothing
+      slotTexture: suit
+      slotFlags: OUTERCLOTHING
+      uiWindowPos: 2,2
+      strippingWindowPos: 2,1
+      displayName: Armor
     - name: cloak
       slotTexture: cloak
       slotFlags: CLOAK
-      uiWindowPos: 2,2
+      uiWindowPos: 2,3
       strippingWindowPos: 2,2
       displayName: Cloak
     # Main hotbar

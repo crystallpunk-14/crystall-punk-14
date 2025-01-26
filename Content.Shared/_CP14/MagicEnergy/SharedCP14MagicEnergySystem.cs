@@ -84,7 +84,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         {
             RaiseLocalEvent(uid, new CP14MagicEnergyLevelChangeEvent()
             {
-                OldValue = component.Energy,
+                OldValue = oldEnergy,
                 NewValue = newEnergy,
                 MaxValue = component.MaxEnergy,
             });
