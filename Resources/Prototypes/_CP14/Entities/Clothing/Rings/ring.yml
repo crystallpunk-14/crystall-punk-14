@@ -60,3 +60,18 @@
     spells:
     - CP14ActionSpellFlashLight
 
+- type: entity
+  id: CP14ClothingRingStoneFist
+  parent: CP14ClothingRingBase
+  name: stone fist conductive ring
+  description: A standard mana-conductive ring that allows the user to summon stone fist.
+  suffix: Stone fist
+  components:
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: berill_stone_small
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellStoneFist

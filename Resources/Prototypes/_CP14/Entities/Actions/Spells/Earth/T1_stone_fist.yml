@@ -1,0 +1,95 @@
+- type: entity
+  id: CP14ActionSpellStoneFist
+  name: Stone fist
+  description: After being hit by this dense ball of earth, not everyone can resist.
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: stone_fist
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.6
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffect
+    magicType: Earth
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectStoneFist
+    - !type:CP14SpellProjectile
+      prototype: CP14StoneFist
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Virtus de profundis terrae... "
+    endSpeech: "stupet eo"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneStoneFist
+  - type: EntityWorldTargetAction
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 60
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: stone_fist
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 6
+      castDelay: 2
+      breakOnMove: false
+      entityDistance: 1000
+
+- type: entity
+  id: CP14RuneStoneFist
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#8f6a2b"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#8f6a2b"
+      shader: unshaded
+    - state: medium_circle
+      color: "#8f6a2b"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectStoneFist
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#8f6a2b"
+      shader: unshaded
+
+- type: entity
+  id: CP14StoneFist
+  parent: BaseBullet
+  name: stone fist
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StunOnCollide
+    stunAmount: 3
+    knockdownAmount: 2
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/Object/stone_fist.rsi
+    layers:
+    - state: icon
+
+- type: entity
+  parent: CP14BaseSpellScrollEarth
+  id: CP14SpellScrollStoneFist
+  name: stone fist spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellStoneFist
