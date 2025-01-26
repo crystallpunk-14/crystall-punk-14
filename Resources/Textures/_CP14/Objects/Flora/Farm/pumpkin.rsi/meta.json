@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "license": "CLA",
+    "license": "All right reserved",
     "copyright": "Created by omsoyk (Discord)",
     "size": {
       "x": 32,
@@ -30,15 +30,6 @@
       },
       {
         "name": "slice4"
-      },
-      {
-        "name": "plate1"
-      },
-      {
-        "name": "plate2"
-      },
-      {
-        "name": "plate3"
       }
     ]
 }

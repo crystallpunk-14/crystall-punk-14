@@ -7,5 +7,5 @@ namespace Content.Shared._CP14.Cargo;
 public sealed partial class CP14CargoStoreComponent : Component
 {
     [DataField]
-    public Entity<CP14StationTravelingStoreShipTargetComponent>? Station = null;
+    public EntityUid? Station = null;
 }

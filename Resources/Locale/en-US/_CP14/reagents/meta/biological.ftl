@@ -32,4 +32,7 @@ cp14-reagent-name-lumi-shroom = Lumishroom sap
 cp14-reagent-desc-lumi-shroom = A faintly shimmering slurry extracted from lumigrib. Often used by alchemists as a means of concentrating solutions.
 
 cp14-reagent-name-yellow-dayflin-pulp = Yellow dayfline pulp
-cp14-reagent-desc-yellow-dayflin-pulp = Crushed flowers of sunny dayflines
+cp14-reagent-desc-yellow-dayflin-pulp = Crushed flowers of sunny dayflines.
+
+cp14-reagent-name-yellow-air-lily-juice = Air lily juice
+cp14-reagent-desc-yellow-air-lily-juice = The juice of flowers growing on water. Possesses healing air properties.

@@ -41,7 +41,7 @@
   id: CP14ActionSpellManaConsumeElf
   parent: CP14ActionSpellManaConsume
   name: Carefull mana consume
-  description: You absorb a small amount of mana from the target neatly and without loss.
+  description: You absorb mana at a tremendous rate without dealing damage to the mana holder.
   components:
   - type: CP14MagicEffect
     effects:
@@ -49,7 +49,8 @@
       spawns:
       - CP14ImpactEffectManaConsume
     - !type:CP14SpellConsumeManaEffect
-      mana: 10
+      safe: true
+      mana: 20
       lossMultiplier: 1
 
 - type: entity

@@ -50,38 +50,59 @@ public sealed partial class CP14CargoSystem
         if (ent.Comp.Station is null)
             return;
 
+        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(ent.Comp.Station.Value, out var storeTargetComp))
+            return;
+
         var prodBuy = new HashSet<CP14StoreUiProductEntry>();
         var prodSell = new HashSet<CP14StoreUiProductEntry>();
 
-        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentBuyPositions)
+        //Add special buy positions
+        foreach (var (proto, price) in storeTargetComp.CurrentSpecialBuyPositions)
         {
-
-            var name = Loc.GetString(proto.Key.Name);
+            var name = Loc.GetString(proto.Name);
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
-            foreach (var service in proto.Key.Services)
-            {
-                desc.Append(service.GetDescription(_proto, EntityManager));
-            }
+            desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Key.Name)), ("code", "[color=yellow][bold]#" + proto.Key.Code + "[/bold][/color]")));
-
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
         }
 
-        foreach (var proto in ent.Comp.Station.Value.Comp.CurrentSellPositions)
+        //Add static buy positions
+        foreach (var (proto, price) in storeTargetComp.CurrentBuyPositions)
+        {
+            var name = Loc.GetString(proto.Name);
+            var desc = new StringBuilder();
+            desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
+
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, false));
+        }
+
+        //Add special sell positions
+        foreach (var (proto, price) in storeTargetComp.CurrentSpecialSellPositions)
+        {
+            var name = Loc.GetString(proto.Name);
+
+            var desc = new StringBuilder();
+            desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Name))));
+
+            prodSell.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
+        }
+
+        //Add static sell positions
+        foreach (var proto in storeTargetComp.CurrentSellPositions)
         {
             var name = Loc.GetString(proto.Key.Name);
 
             var desc = new StringBuilder();
             desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
-            desc.Append(proto.Key.Service.GetDescription(_proto, EntityManager) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Key.Name))));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value));
+            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value, false));
         }
 
-        var stationComp = ent.Comp.Station.Value.Comp;
+        var stationComp = storeTargetComp;
         _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime));
     }
 }

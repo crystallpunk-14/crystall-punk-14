@@ -6,6 +6,7 @@
   tags:
   - CP14DemiplaneOpenSky
   - CP14DemiplaneHerbals
+  - CP14DemiplanePeacefulAnimals
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"

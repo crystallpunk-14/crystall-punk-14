@@ -17,6 +17,7 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, AfterInteractEvent>(OnAfterInteractStart);
         SubscribeLocalEvent<CP14ModularCraftPartComponent, AfterInteractEvent>(OnAfterInteractPart);
         SubscribeLocalEvent<CP14LabeledRenamingComponent, CP14LabeledEvent>(OnLabelRenaming);
     }
@@ -29,7 +30,35 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
         _label.Label(ent, null);
     }
 
-    private void OnAfterInteractPart(Entity<CP14ModularCraftPartComponent> start, ref AfterInteractEvent args)
+    private void OnAfterInteractStart(Entity<CP14ModularCraftStartPointComponent> start, ref AfterInteractEvent args)
+    {
+        if (args.Handled || args.Target is null)
+            return;
+
+        if (!TryComp<CP14ModularCraftPartComponent>(args.Target, out var part))
+            return;
+
+        var xform = Transform(args.Target.Value);
+        if (xform.GridUid != xform.ParentUid)
+            return;
+
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
+            args.User,
+            part.DoAfter,
+            new CP14ModularCraftAddPartDoAfter(),
+            args.Target,
+            args.Target,
+            start)
+        {
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            BreakOnDropItem = true,
+        });
+
+        args.Handled = true;
+    }
+
+    private void OnAfterInteractPart(Entity<CP14ModularCraftPartComponent> part, ref AfterInteractEvent args)
     {
         if (args.Handled || args.Target is null)
             return;
@@ -43,11 +72,11 @@ public abstract class CP14SharedModularCraftSystem : EntitySystem
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,
-            start.Comp.DoAfter,
+            part.Comp.DoAfter,
             new CP14ModularCraftAddPartDoAfter(),
             args.Target,
             args.Target,
-            start)
+            part)
         {
             BreakOnDamage = true,
             BreakOnMove = true,

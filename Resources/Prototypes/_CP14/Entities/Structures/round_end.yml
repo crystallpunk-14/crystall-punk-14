@@ -1,0 +1,45 @@
+- type: entity
+  id: CP14DemiplaneLinkCrystal
+  categories: [ ForkFiltered ]
+  name: demiplane link crystal
+  description: Maintains communication with the demiplanes while charged. Causes mosnters from the demiplanes to attack the city. Once it is discharged, the game is over.
+  suffix: ONE TO MAP
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: SpriteFade
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
+    layers:
+    - state: base
+    drawdepth: Mobs
+    offset: 0,0.9
+  - type: PointLight
+    color: "#42166b"
+    energy: 3
+    radius: 5
+  - type: CP14MagicContainerRoundFinisher
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 1000
+    energy: 1000
+  - type: CP14MagicEnergyDraw
+    energy: -10
+    delay: 60 # 1h 30 minutes to full discharge

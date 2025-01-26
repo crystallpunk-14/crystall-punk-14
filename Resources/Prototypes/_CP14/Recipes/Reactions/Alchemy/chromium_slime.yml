@@ -39,6 +39,9 @@
       CP14BasicEffectSpeedDown: CP14BasicEffectSpeedUp
       CP14BasicEffectSpeedUp: CP14BasicEffectSpeedDown
       #
+      CP14BasicEffectDamageAirloss: CP14BasicEffectHealAirloss
+      CP14BasicEffectHealAirloss: CP14BasicEffectDamageAirloss
+      #
       #CP14BasicEffectRainbow: 
       #CP14BasicEffectEmoteCough:
 

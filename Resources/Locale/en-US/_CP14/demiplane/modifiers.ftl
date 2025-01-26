@@ -18,3 +18,4 @@ cp14-modifier-mole = predatory moles
 cp14-modifier-rabbits = rabbits
 cp14-modifier-boars = wild boars
 cp14-modifier-chasm = bottomless chasms
+cp14-modifier-air-lily = air lilies

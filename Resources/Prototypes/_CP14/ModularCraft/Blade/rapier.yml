@@ -12,10 +12,6 @@
     - BaseWeaponSharp
   - !type:AddComponents
     components:
-    - type: CP14SkillRequirement
-      fuckupChance: 0.5
-      requiredSkills:
-      - Warcraft
   - !type:EditMeleeWeapon
     newWideAnimation: CP14WeaponArcThrust
     resetOnHandSelected: true # Disable fast swap
@@ -24,7 +20,7 @@
     attackRateMultiplier: 1.4
     bonusDamage:
       types:
-        Piercing: 16
+        Piercing: 14
   - !type:EditItem
     newSize: Large
     adjustShape: 0, 2

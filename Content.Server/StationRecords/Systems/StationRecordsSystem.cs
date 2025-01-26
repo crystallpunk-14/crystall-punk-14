@@ -87,13 +87,13 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             || !_prototypeManager.HasIndex<JobPrototype>(jobId))
             return;
 
-        if (!_inventory.TryGetSlotEntity(player, "id", out var idUid))
-            return;
+        //if (!_inventory.TryGetSlotEntity(player, "id", out var idUid)) //CP14 - dont have id, but need
+        //    return;
 
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
 
-        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
+        CreateGeneralRecord(station, null/*CP14 null*/, profile.Name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
     }
 
 

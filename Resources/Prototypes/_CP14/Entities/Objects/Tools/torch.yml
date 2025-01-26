@@ -87,6 +87,9 @@
       params:
         variation: 0.05
         volume: 10
+  - type: Tag
+    tags:
+    - CP14Torch
 
 - type: entity
   parent: CP14Torch

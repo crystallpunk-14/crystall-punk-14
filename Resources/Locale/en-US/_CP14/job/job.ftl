@@ -1,8 +1,3 @@
-# Command
-
-cp14-job-name-captain = Captain
-cp14-job-desc-captain = You are the most important person. Organize your wards and manage the processes to complete the task set from the empire.
-
 # Guards
 
 cp14-job-name-guard-commander = Guard commander
@@ -20,6 +15,9 @@ cp14-job-name-banker = Banker
 cp14-job-desc-banker = Make deals, store entrusted valuables, issue interest-bearing deposits, and do any other economic work that will enrich your bank.
 
 # Mercenary
+
+cp14-job-name-guildmaster = Guildmaster
+cp14-job-desc-guildmaster = Provide adventurers and artisans with work, and make sure they get enough profit for it. 
 
 cp14-job-name-apprentice = Apprentice
 cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Choose a specialisation in equipment, and try to help others in their work, in exchange for a salary and invaluable experience.

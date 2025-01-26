@@ -416,15 +416,11 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - CP14MagicHealingStaff
   - CP14ManaOperationGlove
   - CP14CrystalLampOrangeEmpty
   - CP14BaseSharpeningStone
   - CP14Scissors
-  - CP14Bucket
   - CP14Rope
-  - CP14PenFeather
-  - CP14PaperFolderBlue
   - CP14SilverCoin
   - CP14ModularIronDagger
   - CP14ModularIronSickle
@@ -432,11 +428,9 @@
   - CP14Lighter
   - CP14Torch
   - CP14DemiplaneKeyT1
-
-- type: loadout
-  id: CP14MagicHealingStaff
-  inhand:
-  - CP14MagicHealingStaff
+  - CP14FluteInstrument
+  - CP14LyraInstrument
+  - CP14ClothingBeltQuiver
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -463,28 +457,10 @@
     - CP14Scissors
 
 - type: loadout
-  id: CP14Bucket
-  storage:
-    back:
-    - CP14Bucket
-
-- type: loadout
   id: CP14Rope
   storage:
     back:
     - CP14Rope
-
-- type: loadout
-  id: CP14PenFeather
-  storage:
-    back:
-    - CP14PenFeather
-
-- type: loadout
-  id: CP14PaperFolderBlue
-  storage:
-    back:
-    - CP14PaperFolderBlue
 
 - type: loadout
   id: CP14SilverCoin
@@ -533,6 +509,24 @@
   storage:
     back:
     - CP14DemiplaneKeyT1
+
+- type: loadout
+  id: CP14LyraInstrument
+  storage:
+    back:
+    - CP14LyraInstrument
+
+- type: loadout
+  id: CP14FluteInstrument
+  storage:
+    back:
+    - CP14FluteInstrument
+
+- type: loadout
+  id: CP14ClothingBeltQuiver
+  storage:
+    back:
+    - CP14ClothingBeltQuiver
 
 # Keys
 
@@ -735,11 +729,6 @@
       !type:SpeciesRequirement
       species:
       - CP14Dwarf
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: CP14JobInnkeeper
-      time: 7200 # 2 hour
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:TraitsRequirement

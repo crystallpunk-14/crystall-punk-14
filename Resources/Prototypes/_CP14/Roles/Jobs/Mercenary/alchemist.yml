@@ -7,9 +7,13 @@
   icon: "CP14JobIconAlchemist"
   supervisors: cp14-job-supervisors-command
   special:
-  - !type:CP14AddSkillSpecial
-    skills:
-    - Alchemy
+  - !type:CP14AddKnowledgeSpecial
+    knowledge:
+    - WoodWork
+  requirements:
+    - !type:RoleTimeRequirement
+      role: CP14JobApprentice
+      time: 3600 # 1 hours
 
 - type: startingGear
   id: CP14AlchemistGear
@@ -20,3 +24,4 @@
   equipment:
     belt1: CP14WalletFilledTest
     keys: CP14KeyRingAlchemist
+    neck: CP14MagicHealingStaff

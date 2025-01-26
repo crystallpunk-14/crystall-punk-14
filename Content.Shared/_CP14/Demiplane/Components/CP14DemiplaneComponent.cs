@@ -13,14 +13,14 @@ public sealed partial class CP14DemiplaneComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField]
-    public HashSet<Entity<CP14DemiplaneRiftComponent>> ExitPoints = new();
+    public HashSet<EntityUid> ExitPoints = new();
 
     /// <summary>
     /// All entities in the demiplane in which the objects entered in the demiplane appear
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField]
-    public HashSet<Entity<CP14DemiplaneRiftComponent>> EntryPoints = new();
+    public HashSet<EntityUid> EntryPoints = new();
 
     /// <summary>
     ///  The sound of entering a demiplane, played locally to the player who entered it.
