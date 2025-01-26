@@ -191,6 +191,16 @@
   category: Health
   icons:
   - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
+    state: health9    
+  - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
+    state: health8
+  - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
+    state: health7
+  - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
+    state: health6    
+  - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
+    state: health5    
+  - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
     state: health4
   - sprite: /Textures/_CP14/Interface/Alerts/alive.rsi
     state: health3
@@ -205,7 +215,7 @@
   name: cp14-alerts-health-name #CP14 replaced
   description: cp14-alerts-health-desc #CP14 replaced
   minSeverity: 0
-  maxSeverity: 5
+  maxSeverity: 10
 
 - type: alert
   id: BorgHealth

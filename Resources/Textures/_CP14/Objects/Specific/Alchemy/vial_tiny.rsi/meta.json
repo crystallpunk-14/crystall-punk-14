@@ -4,7 +4,7 @@
     "x": 32,
     "y": 32
   },
-  "license": "CLA",
+  "license": "All right reserved",
   "copyright": "Created by TheShuEd (Github) ",
   "states": [
     {
@@ -24,6 +24,12 @@
     },
     {
       "name": "liq-5"
+    },
+    {
+      "name": "reinforcement"
+    },
+    {
+      "name": "reinforcement_back"
     }
   ]
 }

@@ -13,24 +13,3 @@
 - type: CP14DayCyclePeriod
   id: Evening
   name: cp14-daycycle-evening
-
-- type: CP14DayCycle #
-  id: Default
-  timeEntries:
-  - duration: 145
-    color: '#754A4A' #Dawn
-  - duration: 145
-    color: '#E0BA87' #
-  - duration: 145
-    color: '#BFEEFF' #Day
-  - period: Night
-    duration: 145
-    color: '#385163' #Evening
-  - period: Night
-    duration: 80
-    color: '#060D12' #Night
-  - period: Night
-    duration: 160
-    color: '#000000' #BLACK NIGHT
-  - duration: 80
-    color: '#120906' #Night

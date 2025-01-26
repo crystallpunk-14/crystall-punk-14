@@ -5,6 +5,7 @@
   entities:
     CP14OreCopper: 4
   result: CP14CopperBar1
+  knowledgeRequired: MetallMelting
 
 - type: CP14Recipe
   id: CP14IronBar1
@@ -13,6 +14,7 @@
   entities:
     CP14OreIron: 4
   result: CP14IronBar1
+  knowledgeRequired: MetallMelting
 
 - type: CP14Recipe
   id: CP14GoldBar1
@@ -21,6 +23,7 @@
   entities:
     CP14OreGold: 4
   result: CP14GoldBar1
+  knowledgeRequired: MetallMelting
 
 - type: CP14Recipe
   id: CP14MithrilBar1
@@ -29,6 +32,7 @@
   entities:
     CP14OreMithril: 4
   result: CP14MithrilBar1
+  knowledgeRequired: MetallMelting
 
 - type: CP14Recipe
   id: CP14GlassSheet1
@@ -37,3 +41,52 @@
   entities:
     CP14QuartzShard: 1
   result: CP14GlassSheet1
+  knowledgeRequired: Glasswork
+
+- type: CP14Recipe
+  id: CP14GlassSheetShard1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 2
+  entities:
+    CP14GlassShard: 3
+  result: CP14GlassSheet1
+  knowledgeRequired: Glasswork
+
+- type: CP14Recipe
+  id: CP14VialTiny
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14GlassSheet: 1
+  result: CP14VialTiny
+  knowledgeRequired: Glasswork
+
+- type: CP14Recipe
+  id: CP14VialTinyReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14CopperBar: 1
+    CP14GlassSheet: 1
+  result: CP14VialTinyReinforced
+  knowledgeRequired: Glasswork
+
+- type: CP14Recipe
+  id: CP14VialSmall
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14GlassSheet: 2
+  result: CP14VialSmall
+  knowledgeRequired: Glasswork
+
+- type: CP14Recipe
+  id: CP14VialSmallReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  stacks:
+    CP14CopperBar: 1
+    CP14GlassSheet: 2
+  result: CP14VialSmallReinforced
+  knowledgeRequired: Glasswork
+  

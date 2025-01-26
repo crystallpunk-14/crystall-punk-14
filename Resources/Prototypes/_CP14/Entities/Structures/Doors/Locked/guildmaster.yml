@@ -1,0 +1,21 @@
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuardGuildmaster
+  suffix: Guildmaster
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Guildmaster
+  - type: Lock
+    locked: true
+
+# Grill Gate
+
+- type: entity
+  parent: CP14FenceIronGrilleGate
+  id: CP14FenceIronGrilleGateGuildmaster
+  suffix: Guildmaster
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Guildmaster
+  - type: Lock
+    locked: true

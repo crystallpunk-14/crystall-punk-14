@@ -15,23 +15,30 @@
         amount: 1
       - id: CP14Dropper
         amount: 1
+      - id: CP14VialTinyReinforced
+        amount: 1
       - id: CP14VialTiny
-        amount: 7
+        amount: 3
+      - id: CP14VialSmallReinforced
+        amount: 1
       - id: CP14VialSmall
-        amount: 5
-      - id: CP14Paper
-        amount: 2
+        amount: 3
+      - id: CP14PaperFolderBlue
       - id: CP14PenFeather
         amount: 1
         #Random start resource
+      - id: CP14VialSmallHealthPotion
+      - id: CP14VialSmallHealthPotion
+      - id: CP14VialSmallHealthPotion
+      - id: CP14VialSmallManaPotion
+      - id: CP14VialSmallManaPotion
+      - id: CP14VialSmallManaPotion
       - id: CP14VialSmallGroundQuartz
       - id: CP14VialSmallGroundQuartz
       - id: CP14VialSmallBloodFlowerSap
       - id: CP14VialSmallAgaricMushroom
       - id: CP14VialSmallWildSage
       - id: CP14VialSmallBlueAmanita
-      - id: CP14VialTinyChromiumSlime
-      - id: CP14VialTinyLumiMushroom
 
 - type: entity
   parent: CP14WoodenCloset
@@ -113,8 +120,7 @@
       - id: CP14CopperBar10
       - id: CP14IronBar10
       - id: CP14GoldBar5
-      - id: CP14Paper
-        amount: 2
+      - id: CP14PaperFolderRed
       - id: CP14PenFeather
         amount: 1
 

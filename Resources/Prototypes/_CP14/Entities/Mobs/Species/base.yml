@@ -2,7 +2,7 @@
   save: false
   parent: 
   - BaseMob
-  - MobDamageable
+  - CP14MobDamageable
   - MobCombat
   id: CP14BaseMobSpecies
   categories: [ ForkFiltered ]
@@ -26,15 +26,16 @@
       sprite: Mobs/Customization/masking_helpers.rsi
       state: unisex_full
       visible: false
-    - map: [ "shirt" ]
-    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
+    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]
@@ -311,7 +312,7 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
-  - type: CP14SkillsStorage
+  - type: CP14KnowledgeStorage
 
 - type: entity
   save: false

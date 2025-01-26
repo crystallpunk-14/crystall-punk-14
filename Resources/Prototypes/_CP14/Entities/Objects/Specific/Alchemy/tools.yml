@@ -87,10 +87,6 @@
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: pestle
   - type: CP14Pestle
-  - type: CP14SkillRequirement
-    fuckupChance: 0.05
-    requiredSkills:
-    - Alchemy
   - type: GuideHelp
     guides:
     - CP14_RU_Alchemy

@@ -54,11 +54,12 @@ public sealed partial class CP14WorkbenchRequirementControl : Control
     private void UpdateName()
     {
         var result = _prototype.Index(_recipePrototype.Result);
-        Name.Text = Loc.GetString(result.Name);
+        var counter = _recipePrototype.ResultCount > 1 ? $" x{_recipePrototype.ResultCount}" : "";
+        Name.Text = $"{Loc.GetString(result.Name)} {counter}" ;
     }
 
     private void UpdateView()
     {
-        View.Texture = _sprite.GetPrototypeIcon(_recipePrototype.Result).Default;
+        View.SetPrototype(_recipePrototype.Result);
     }
 }

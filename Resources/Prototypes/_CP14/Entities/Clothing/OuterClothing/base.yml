@@ -1,0 +1,13 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingOuterClothingBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2
+    slots:
+    - outerClothing
+  - type: Sprite
+    state: icon

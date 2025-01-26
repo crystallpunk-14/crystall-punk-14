@@ -6,4 +6,4 @@ cp14-store-ui-next-travel-in = Before arrival:
 
 cp14-store-ui-tab-buy = Buying
 cp14-store-ui-tab-sell = Selling
-cp14-store-ui-tab-special = [bold][color=red]Temporary offer![/color][/bold]
+cp14-store-ui-tab-special = [bold][color=#eba346]Temporary offer![/color][/bold]

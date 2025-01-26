@@ -21,5 +21,5 @@ public sealed partial class CP14PersonalObjectivesRuleComponent : Component
     /// All of the objectives added by this rule. 1 mind -> many objectives
     /// </summary>
     [DataField]
-    public Dictionary<Entity<MindComponent>, List<EntityUid>> PersonalObjectives = new();
+    public Dictionary<EntityUid, List<EntityUid>> PersonalObjectives = new();
 }

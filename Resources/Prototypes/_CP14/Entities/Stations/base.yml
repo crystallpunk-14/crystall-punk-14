@@ -6,6 +6,7 @@
   - BaseStationAllEventsEligible
   - BaseStationJobsSpawning
   - BaseStationAlertLevels #Checks fail without it
+  - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationTrading
   - CP14BaseStationCommonObjectives
   - CP14BaseStationSalary

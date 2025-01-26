@@ -38,3 +38,6 @@ cp14-store-buy-iron-desc = Durable, reliable and versatile metal for the most da
 
 cp14-store-buy-gold-name = 10 gold bars
 cp14-store-buy-gold-desc = For those who appreciate luxury and elegance. Bars of the purest gold for jewelry, inlay or investment in the future. Gold is always in the price, and our delivery is always on time!
+
+cp14-store-buy-guidebook-name = Educational books
+cp14-store-buy-guidebook-desc = Have you run out of specialists in key areas? No problem, with this set of training literature you can make even an infant a professional, and put him to work for the good of the Empire! (OOC: There are only books for the blacksmith so far.)

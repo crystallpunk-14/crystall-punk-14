@@ -11,6 +11,7 @@
   - CP14ClothingCloakRitualAttireLeather
   - CP14ClothingCloakWhite
   - CP14ClothingCloakGreen
+  - CP14ClothingCloakBlue
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -41,6 +42,11 @@
   id: CP14ClothingCloakGreen
   equipment:
     cloak: CP14ClothingCloakGreen
+
+- type: loadout
+  id: CP14ClothingCloakBlue
+  equipment:
+    cloak: CP14ClothingCloakBlue
 
 # Eyes
 
@@ -174,7 +180,15 @@
   - CP14ClothingPantsTrouserDarkBlue
   - CP14ClothingPantsAristocratic
   - CP14ClothingPantsLoincloth
-  - CP14ClothingDressBlack
+  - CP14ClothingPantsGreen
+  - CP14ClothingPantsBrown
+  # Dress
+  - CP14ClothingPantsDressBlack
+  - CP14ClothingPantsDressBlue
+  - CP14ClothingPantsDressBrown
+  - CP14ClothingPantsDressGreen
+  - CP14ClothingPantsDressGreenBelt
+  - CP14ClothingPantsDressRed
 
 - type: loadout
   id: CP14ClothingPantsTrouserWhite
@@ -197,9 +211,49 @@
     pants: CP14ClothingPantsLoincloth
 
 - type: loadout
-  id: CP14ClothingDressBlack
+  id: CP14ClothingPantsGreen
   equipment:
-    pants: CP14ClothingDressBlack
+    pants: CP14ClothingPantsGreen
+
+- type: loadout
+  id: CP14ClothingPantsBrown
+  equipment:
+    pants: CP14ClothingPantsBrown
+
+- type: loadout
+  id: CP14ClothingPantsDressBlack
+  equipment:
+    pants: CP14ClothingPantsDressBlack
+
+- type: loadout
+  id: CP14ClothingPantsDressBlue
+  equipment:
+    pants: CP14ClothingPantsDressBlue
+
+- type: loadout
+  id: CP14ClothingPantsDressBrown 
+  equipment:
+    pants: CP14ClothingPantsDressBrown
+
+- type: loadout
+  id: CP14ClothingPantsDressGreen
+  equipment:
+    pants: CP14ClothingPantsDressGreen
+
+- type: loadout
+  id: CP14ClothingPantsDressGreenBelt
+  equipment:
+    pants: CP14ClothingPantsDressGreenBelt
+
+- type: loadout
+  id: CP14ClothingPantsDressRed
+  equipment:
+    pants: CP14ClothingPantsDressRed
+
+- type: loadout
+  id: CP14ClothingPantsDressYellow
+  equipment:
+    pants: CP14ClothingPantsDressYellow
 
 # Shirt
 
@@ -207,17 +261,29 @@
   id: CP14GeneralShirt
   name: cp14-loadout-general-shirt
   loadouts:
-  - CP14ClothingShirtCottonWhite
-  - CP14ClothingShirtCottonBlue
   - CP14ClothingShirtCottonBlack
+  - CP14ClothingShirtCottonBlue
+  - CP14ClothingShirtCottonBlueCollar
+  - CP14ClothingShirtBlueOpen
+  - CP14ClothingShirtRedOpen
+  - CP14ClothingShirtYellowOpen
   - CP14ClothingShirtCottonPurple
   - CP14ClothingShirtCottonRed
+  - CP14ClothingShirtCottonWhite
+  - CP14ClothingShirtCottonWhiteBelt
+  - CP14ClothingShirtCottonWhiteBrownVest
+  - CP14ClothingShirtCottonWhiteBrownVest2
+  - CP14ClothingShirtCottonWhiteBrownVest3
+  - CP14ClothingShirtCottonWhiteCollar
+  - CP14ClothingShirtCottonWhiteGreenVest
+  - CP14ClothingShirtCottonWhiteGreenVest2
   - CP14ClothingShirtCottonYellow
+  - CP14ClothingShirtCottonYellowCollar
 
 - type: loadout
-  id: CP14ClothingShirtCottonWhite
+  id: CP14ClothingShirtCottonBlack
   equipment:
-    shirt: CP14ClothingShirtCottonWhite
+    shirt: CP14ClothingShirtCottonBlack
 
 - type: loadout
   id: CP14ClothingShirtCottonBlue
@@ -225,9 +291,24 @@
     shirt: CP14ClothingShirtCottonBlue
 
 - type: loadout
-  id: CP14ClothingShirtCottonBlack
+  id: CP14ClothingShirtCottonBlueCollar
   equipment:
-    shirt: CP14ClothingShirtCottonBlack
+    shirt: CP14ClothingShirtCottonBlueCollar
+
+- type: loadout
+  id: CP14ClothingShirtBlueOpen
+  equipment:
+    shirt: CP14ClothingShirtBlueOpen
+
+- type: loadout
+  id: CP14ClothingShirtRedOpen
+  equipment:
+    shirt: CP14ClothingShirtRedOpen
+
+- type: loadout
+  id: CP14ClothingShirtYellowOpen
+  equipment:
+    shirt: CP14ClothingShirtYellowOpen
 
 - type: loadout
   id: CP14ClothingShirtCottonPurple
@@ -240,9 +321,54 @@
     shirt: CP14ClothingShirtCottonRed
 
 - type: loadout
+  id: CP14ClothingShirtCottonWhite
+  equipment:
+    shirt: CP14ClothingShirtCottonWhite
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhiteBelt
+  equipment:
+    shirt: CP14ClothingShirtCottonWhiteBelt
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhiteBrownVest
+  equipment:
+    shirt: CP14ClothingShirtCottonWhiteBrownVest
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhiteBrownVest2
+  equipment:
+    shirt: CP14ClothingShirtCottonWhiteBrownVest2
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhiteBrownVest3
+  equipment:
+    shirt: CP14ClothingShirtCottonWhiteBrownVest3
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhiteCollar
+  equipment:
+    shirt: CP14ClothingShirtCottonWhiteCollar
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhiteGreenVest
+  equipment:
+    shirt: CP14ClothingShirtCottonWhiteGreenVest
+
+- type: loadout
+  id: CP14ClothingShirtCottonWhiteGreenVest2
+  equipment:
+    shirt: CP14ClothingShirtCottonWhiteGreenVest2
+
+- type: loadout
   id: CP14ClothingShirtCottonYellow
   equipment:
     shirt: CP14ClothingShirtCottonYellow
+
+- type: loadout
+  id: CP14ClothingShirtCottonYellowCollar
+  equipment:
+    shirt: CP14ClothingShirtCottonYellowCollar
 
 # Shoes
 
@@ -290,15 +416,11 @@
   minLimit: 0
   maxLimit: 2
   loadouts:
-  - CP14MagicHealingStaff
   - CP14ManaOperationGlove
   - CP14CrystalLampOrangeEmpty
   - CP14BaseSharpeningStone
   - CP14Scissors
-  - CP14Bucket
   - CP14Rope
-  - CP14PenFeather
-  - CP14PaperFolderBlue
   - CP14SilverCoin
   - CP14ModularIronDagger
   - CP14ModularIronSickle
@@ -306,11 +428,9 @@
   - CP14Lighter
   - CP14Torch
   - CP14DemiplaneKeyT1
-
-- type: loadout
-  id: CP14MagicHealingStaff
-  inhand:
-  - CP14MagicHealingStaff
+  - CP14FluteInstrument
+  - CP14LyraInstrument
+  - CP14ClothingBeltQuiver
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -337,28 +457,10 @@
     - CP14Scissors
 
 - type: loadout
-  id: CP14Bucket
-  storage:
-    back:
-    - CP14Bucket
-
-- type: loadout
   id: CP14Rope
   storage:
     back:
     - CP14Rope
-
-- type: loadout
-  id: CP14PenFeather
-  storage:
-    back:
-    - CP14PenFeather
-
-- type: loadout
-  id: CP14PaperFolderBlue
-  storage:
-    back:
-    - CP14PaperFolderBlue
 
 - type: loadout
   id: CP14SilverCoin
@@ -402,6 +504,24 @@
     back:
     - CP14DemiplaneKeyT1
 
+- type: loadout
+  id: CP14LyraInstrument
+  storage:
+    back:
+    - CP14LyraInstrument
+
+- type: loadout
+  id: CP14FluteInstrument
+  storage:
+    back:
+    - CP14FluteInstrument
+
+- type: loadout
+  id: CP14ClothingBeltQuiver
+  storage:
+    back:
+    - CP14ClothingBeltQuiver
+
 # Keys
 
 - type: loadoutGroup
@@ -441,28 +561,66 @@
   - CP14ActionSpellSprint
 
 - type: loadout
+  id: CP14ActionSpellBase
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
   id: CP14ActionSpellFlameCreation
   dummyEntity: CP14ActionSpellFlameCreation
   actions:
   - CP14ActionSpellFlameCreation
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellCureWounds
   dummyEntity: CP14ActionSpellCureWounds
   actions:
   - CP14ActionSpellCureWounds
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellCureBurn
   dummyEntity: CP14ActionSpellCureBurn
   actions:
   - CP14ActionSpellCureBurn
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellBloodPurification
   dummyEntity: CP14ActionSpellBloodPurification
   actions:
   - CP14ActionSpellBloodPurification
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellPlantGrowth
@@ -476,12 +634,25 @@
       species:
       - CP14Silva
       inverted: true # Silvas cannot take this spell, they have buffed version by default
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellSphereOfLight
   dummyEntity: CP14ActionSpellSphereOfLight
   actions:
   - CP14ActionSpellSphereOfLight
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellManaConsume
@@ -495,24 +666,51 @@
       species:
       - CP14Elf
       inverted: true # Elves cannot take this spell, they have buffed version by default
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellManaGift
   dummyEntity: CP14ActionSpellManaGift
   actions:
   - CP14ActionSpellManaGift
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellShadowGrab
   dummyEntity: CP14ActionSpellShadowGrab
   actions:
   - CP14ActionSpellShadowGrab
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellWaterCreation
   dummyEntity: CP14ActionSpellWaterCreation
   actions:
   - CP14ActionSpellWaterCreation
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellBeerCreation
@@ -527,9 +725,10 @@
       - CP14Dwarf
   - !type:JobRequirementLoadoutEffect
     requirement:
-      !type:RoleTimeRequirement
-      role: CP14JobInnkeeper
-      time: 7200 # 2 hour
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: loadout
   id: CP14ActionSpellSprint

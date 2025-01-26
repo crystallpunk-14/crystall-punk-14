@@ -1,12 +1,14 @@
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared._CP14.MagicWeakness;
 
 /// <summary>
 /// imposes damage on excessive use of magic
 /// </summary>
-[RegisterComponent, Access(typeof(CP14MagicWeaknessSystem))]
+[RegisterComponent, NetworkedComponent]
+[Access(typeof(CP14MagicWeaknessSystem))]
 public sealed partial class CP14MagicUnsafeDamageComponent : Component
 {
     [DataField]

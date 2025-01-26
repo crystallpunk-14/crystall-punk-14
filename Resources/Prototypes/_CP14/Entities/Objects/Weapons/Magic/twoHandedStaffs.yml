@@ -25,6 +25,23 @@
     damage:
       types: 
         Blunt: 3
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 1 # 50 hits
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   - type: MeleeWeapon
     angle: 100
     attackRate: 1.3

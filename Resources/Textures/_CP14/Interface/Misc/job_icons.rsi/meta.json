@@ -4,7 +4,7 @@
     "x": 9,
     "y": 9
   },
-  "license": "CLA",
+  "license": "All right reserved",
   "copyright": "Created by TheShuEd (Github)",
   "states": [
     {
@@ -12,6 +12,9 @@
     },
     {
       "name": "Alchemist"
+    },
+    {
+      "name": "Apprentice"
     },
     {
       "name": "Banker"
@@ -23,13 +26,13 @@
       "name": "Guard"
     },
     {
-      "name": "Captain"
-    },
-    {
       "name": "Commandant"
     },
     {
       "name": "GuardCommander"
+    },
+    {
+      "name": "Guildmaster"
     },
     {
       "name": "Innkeeper"

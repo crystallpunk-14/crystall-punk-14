@@ -19,7 +19,8 @@ public sealed partial class CP14DemiplaneSystem
         SubscribeLocalEvent<CP14DemiplaneDestroyWithoutStabilizationComponent, MapInitEvent>(OnStabilizationMapInit);
     }
 
-    private void OnStabilizationMapInit(Entity<CP14DemiplaneDestroyWithoutStabilizationComponent> ent, ref MapInitEvent args)
+    private void OnStabilizationMapInit(Entity<CP14DemiplaneDestroyWithoutStabilizationComponent> ent,
+        ref MapInitEvent args)
     {
         ent.Comp.EndProtectionTime = _timing.CurTime + ent.Comp.ProtectedSpawnTime;
     }
@@ -61,14 +62,27 @@ public sealed partial class CP14DemiplaneSystem
         }
     }
 
-    private void DeleteDemiplane(Entity<CP14DemiplaneComponent> demiplane)
+    public void DeleteAllDemiplanes(bool safe = true)
+    {
+        var query = EntityQueryEnumerator<CP14DemiplaneComponent>();
+
+        while (query.MoveNext(out var uid, out var demiplane))
+        {
+            DeleteDemiplane((uid, demiplane), safe);
+        }
+    }
+
+    private void DeleteDemiplane(Entity<CP14DemiplaneComponent> demiplane, bool safe = false)
     {
         var query = EntityQueryEnumerator<CP14DemiplaneStabilizerComponent, TransformComponent>();
 
         while (query.MoveNext(out var uid, out var stabilizer, out var xform))
         {
             if (TryTeleportOutDemiplane(demiplane, uid))
-                _body.GibBody(uid);
+            {
+                if (!safe)
+                    _body.GibBody(uid);
+            }
         }
 
         QueueDel(demiplane);
