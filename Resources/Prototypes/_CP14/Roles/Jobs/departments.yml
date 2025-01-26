@@ -37,7 +37,6 @@
   weight: 7
   color: "#834833"
   roles:
-  - CP14Guildmaster
   - CP14Alchemist
   - CP14Blacksmith
   - CP14Apprentice
