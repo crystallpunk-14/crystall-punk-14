@@ -41,11 +41,6 @@
       - id: CP14BaseSharpeningStone
       - id: CP14GlassShard
       - id: CP14Paper
-      - !type:AllSelector
-        children:
-        - id: CP14Crossbolt
-        - id: CP14Crossbolt
-        - id: CP14Crossbolt
     # Rare
     - !type:GroupSelector
       weight: 25

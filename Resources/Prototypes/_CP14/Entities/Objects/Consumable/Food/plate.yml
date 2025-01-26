@@ -11,3 +11,20 @@
   - type: Item
     shape:
     - 0,0,1,0
+
+- type: entity
+  id: CP14PlatePie
+  parent: BaseItem
+  name: pie plate
+  description: A mould for making a delicious pie.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/pie.rsi
+    state: tin
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Tag
+    tags:
+    - CP14PlatePie

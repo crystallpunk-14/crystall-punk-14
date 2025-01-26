@@ -44,9 +44,6 @@
               path: /Maps/_CP14/comoss_d.yml
         - type: CP14StationKeyDistribution
           keys:
-          - TavernDorms1
-          - TavernDorms2
-          - TavernDorms3
           - Alchemy1
           - Alchemy2
           - Blacksmith1
@@ -58,7 +55,7 @@
           - PersonalHouse5
           - PersonalHouse6
           - PersonalHouse7
-          #- PersonalHouse8 #TODO: return 8 house
+          - PersonalHouse8
           - PersonalHouse9
           - PersonalHouse10
           - PersonalHouse11

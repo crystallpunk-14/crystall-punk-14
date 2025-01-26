@@ -93,6 +93,11 @@
   complexity: 3
   name: cp14-lock-shape-blacksmith2
 
+- type: CP14LockType
+  id: Guildmaster
+  complexity: 5
+  name: cp14-lock-shape-guildmaster
+
 # Personal house
 
 - type: CP14LockType

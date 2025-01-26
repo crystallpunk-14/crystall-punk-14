@@ -84,3 +84,11 @@
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
     state: Blacksmith
   jobName: cp14-job-name-blacksmith
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGuildmaster
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Guildmaster
+  jobName: cp14-job-name-guildmaster
