@@ -4,6 +4,9 @@ using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
+using Content.Shared._CP14.MagicSpell.Spells;
+using Content.Shared.EntityEffects;
+using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 
 namespace Content.Server._CP14.MagicSpell;
@@ -13,17 +16,42 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CP14AreaEntityEffectComponent, MapInitEvent>(OnAoEMapInit);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14VerbalAspectSpeechEvent>(OnSpellSpoken);
 
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
 
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
+    }
+
+    private void OnAoEMapInit(Entity<CP14AreaEntityEffectComponent> ent, ref MapInitEvent args)
+    {
+        var entitiesAround = _lookup.GetEntitiesInRange(ent, ent.Comp.Range, LookupFlags.Uncontained);
+
+        var count = 0;
+        foreach (var entity in entitiesAround)
+        {
+            if (ent.Comp.Whitelist is not null && !_whitelist.IsValid(ent.Comp.Whitelist, entity))
+                continue;
+
+            foreach (var effect in ent.Comp.Effects)
+            {
+                effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(ent, null, entity, Transform(entity).Coordinates));
+            }
+
+            count++;
+
+            if (ent.Comp.MaxTargets > 0 && count >= ent.Comp.MaxTargets)
+                break;
+        }
     }
 
     private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14VerbalAspectSpeechEvent args)
@@ -60,10 +88,9 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 
             if (magicStorage.Energy > 0)
             {
-                //TODO: FIX THIS SHIT
                 var cashedEnergy = magicStorage.Energy;
-                _magicEnergy.TryConsumeEnergy(magicEffect.SpellStorage.Value, requiredMana, magicStorage, false);
-                requiredMana = MathF.Max(0, (float)(requiredMana - cashedEnergy));
+                if (_magicEnergy.TryConsumeEnergy(magicEffect.SpellStorage.Value, requiredMana, magicStorage, false))
+                    requiredMana = MathF.Max(0, (float)(requiredMana - cashedEnergy));
             }
         }
 

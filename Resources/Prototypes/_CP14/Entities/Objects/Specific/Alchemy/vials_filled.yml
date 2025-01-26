@@ -61,6 +61,18 @@
           Quantity: 10
 
 - type: entity
+  id: CP14VialSmallAirLily
+  parent: CP14VialSmall
+  suffix: Air lily
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14AirLily
+          Quantity: 10
+
+- type: entity
   id: CP14VialSmallDayflin
   parent: CP14VialSmall
   suffix: Dayflin

@@ -14,9 +14,12 @@ public sealed partial class CP14MapDamageSystem : EntitySystem
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
 
+    private EntityQuery<CP14MapDamageComponent> _mapQuery;
     public override void Initialize()
     {
         base.Initialize();
+
+        _mapQuery = GetEntityQuery<CP14MapDamageComponent>();
 
         SubscribeLocalEvent<CP14DamageableByMapComponent, EntParentChangedMessage>(OnParentChanged);
     }
@@ -42,8 +45,11 @@ public sealed partial class CP14MapDamageSystem : EntitySystem
             if (!_mobState.IsAlive(uid, mobState))
                 continue;
 
-            _damageable.TryChangeDamage(uid, damage.CurrentMap.Value.Comp.Damage, damageable: damageable);
-            _stamina.TakeStaminaDamage(uid, damage.CurrentMap.Value.Comp.StaminaDamage);
+            if (!_mapQuery.TryComp(damage.CurrentMap.Value, out var mapDamage))
+                continue;
+
+            _damageable.TryChangeDamage(uid, mapDamage.Damage, damageable: damageable);
+            _stamina.TakeStaminaDamage(uid, mapDamage.StaminaDamage);
         }
     }
 

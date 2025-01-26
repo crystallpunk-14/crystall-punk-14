@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.Cargo;
+namespace Content.Shared._CP14.Cargo.Prototype;
 
 /// <summary>
 /// Stores the price and product/service pair that players can buy.
@@ -13,12 +13,6 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
 {
     [IdDataField, ViewVariables]
     public string ID { get; private set; } = default!;
-
-    /// <summary>
-    /// if true, this item becomes available for purchase only after unlocking by other purchases
-    /// </summary>
-    [DataField]
-    public bool Unlockable = false;
 
     [DataField(required: true)]
     public MinMax Price = new();
@@ -37,6 +31,12 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
 
     [DataField]
     public bool RoundstartAvailable = true;
+
+    /// <summary>
+    /// If true, this item will randomly appear under the ‘Special Offer’ heading. With a chance to show up every time the ship arrives.
+    /// </summary>
+    [DataField]
+    public bool Special = false;
 }
 
 [ImplicitDataDefinitionForInheritors]
@@ -44,6 +44,4 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
 public abstract partial class CP14StoreSellService
 {
     public abstract bool TrySell(EntityManager entManager, HashSet<EntityUid> entities);
-
-    public abstract string? GetDescription(IPrototypeManager prototype, IEntityManager entSys);
 }

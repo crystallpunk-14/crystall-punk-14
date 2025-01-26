@@ -82,3 +82,9 @@
         - MidImpassable
         - LowImpassable
         - WallLayer
+  - type: CP14DoorInteractionPopup
+    interactSound:
+      collection: CP14Doorknob
+      params:
+        variation: 0.03
+        volume: -5

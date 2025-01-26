@@ -13,6 +13,12 @@ cp14-reagent-desc-basic-damage-poison = Способен вызвать край
 cp14-reagent-name-basic-heal-poison = Ядовыводящий раствор
 cp14-reagent-desc-basic-heal-poison = Эффективен как хорошее противоядовое средство.
 
+cp14-reagent-name-basic-damage-airloss = Удушающий раствор
+cp14-reagent-desc-basic-damage-airloss = Вязкая жижа, стремительно склеивающая внутренности жертвы, вызывая острую нехватку воздуха.
+
+cp14-reagent-name-basic-heal-airloss = Воздушный раствор
+cp14-reagent-desc-basic-heal-airloss = Веющая свежестью жидкость, насыщающая организм воздухом.
+
 cp14-reagent-name-see-rainbow = Галлюциногенный раствор
 cp14-reagent-desc-see-rainbow = Вызывает веселые галлюцинации, окрашивает весь мир в радужные яркие тона.
 

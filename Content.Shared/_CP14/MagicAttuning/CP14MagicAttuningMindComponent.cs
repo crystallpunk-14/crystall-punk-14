@@ -1,9 +1,12 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared._CP14.MagicAttuning;
 
 /// <summary>
 /// A mind that can focus on objects
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedMagicAttuningSystem))]
+[RegisterComponent, NetworkedComponent]
+[Access(typeof(CP14SharedMagicAttuningSystem))]
 public sealed partial class CP14MagicAttuningMindComponent : Component
 {
     [DataField]

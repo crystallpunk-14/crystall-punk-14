@@ -84,7 +84,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         {
             RaiseLocalEvent(uid, new CP14MagicEnergyLevelChangeEvent()
             {
-                OldValue = component.Energy,
+                OldValue = oldEnergy,
                 NewValue = newEnergy,
                 MaxValue = component.MaxEnergy,
             });
@@ -135,7 +135,9 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         if (ent.Comp.MagicAlert == null)
             return;
 
-        var level = ContentHelpers.RoundToLevels(MathF.Max(0f, (float) ent.Comp.Energy), (float) ent.Comp.MaxEnergy, 6);
+        var level = ContentHelpers.RoundToLevels(MathF.Max(0f, (float)ent.Comp.Energy),
+            (float)ent.Comp.MaxEnergy,
+            _alerts.GetMaxSeverity(ent.Comp.MagicAlert.Value));
         _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short)level);
     }
 }

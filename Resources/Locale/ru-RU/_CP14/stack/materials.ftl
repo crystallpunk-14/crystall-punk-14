@@ -13,3 +13,5 @@ cp14-stack-mithril-bars = мифриловые слитки
 cp14-stack-wallpaper = рулон обоев
 
 cp14-stack-glass-sheet = стекло
+
+cp14-stack-ash-pile = кучка пепла

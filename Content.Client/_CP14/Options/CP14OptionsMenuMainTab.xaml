@@ -16,11 +16,12 @@
                 <Label Text="{Loc 'cp14-ui-options-main-graphics-label'}"
                        StyleClasses="LabelKeyText"/>
 
-                <!-- CP14 Wave shader settings -->
-                <BoxContainer Orientation="Horizontal">
-                    <Label Text="{Loc 'cp14-ui-options-main-graphics-wave-shader'}" Margin="0 0 4 0"/>
-                    <CheckBox Name="WaveShaderEnabled"/>
-                </BoxContainer>
+                <CheckBox Name="WaveShaderEnabled"
+                    Text="{Loc 'cp14-ui-options-main-graphics-wave-shader'}"/>
+                    <!-- TODO: Wave shader tooltip -->
+                <CheckBox Name="PostProcessCheckBox"
+                    Text="{Loc 'cp14-ui-options-postprocess'}"
+                    ToolTip="{Loc 'cp14-ui-options-postprocess-tooltip'}"/>
 
             </BoxContainer>
         </ScrollContainer>

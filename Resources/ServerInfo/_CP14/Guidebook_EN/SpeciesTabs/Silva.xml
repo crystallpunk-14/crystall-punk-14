@@ -9,7 +9,7 @@ The Silva are a race of humanoid plants living in deep relic forests. Emerging f
 
 ## Magical photosynthesis
 
-Silvas regenerate [protodata="CP14MobSilva" comp="CP14MagicEnergyPhotosynthesis" member="DaylightEnergy"/] mana while in sunlight, but without it they gradually lose [protodata="CP14MobSilva" comp="CP14MagicEnergyPhotosynthesis" member="DarknessEnergy"/] mana. 
+Silvas regenerate [protodata="CP14MobSilva" comp="CP14MagicEnergyPhotosynthesis" member="DaylightEnergy"/] mana while in sunlight, but without it, mana regeneration is completely absent. 
 
 ## Blessing of the silvas
 

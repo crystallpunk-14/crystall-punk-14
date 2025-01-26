@@ -13,6 +13,7 @@ public sealed partial class CP14OptionsMenuMainTab : Control
         RobustXamlLoader.Load(this);
 
         Control.AddOptionCheckBox(CP14ConfigVars.WaveShaderEnabled, WaveShaderEnabled);
+        Control.AddOptionCheckBox(CP14ConfigVars.PostProcess, PostProcessCheckBox);
 
         Control.Initialize();
     }

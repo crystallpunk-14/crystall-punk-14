@@ -1,0 +1,50 @@
+- type: entity
+  parent: BaseItem
+  id: CP14Ash1
+  name: ash #Возможный реагент в будущем
+  description: It used to be something that could be interesting and useful, now it's not.
+  suffix: 1
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/ash.rsi
+    layers:
+      - state: ash_1
+        map: ["base"]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Ash
+          Quantity: 10
+  - type: SolutionSpiker
+    sourceSolution: food
+    ignoreEmpty: true
+  - type: ScoopableSolution
+    solution: food
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Ash
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ash_1
+    - ash_2
+    - ash_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Ash: 100
+
+- type: entity
+  id: CP14Ash3
+  parent: CP14Ash1
+  suffix: 3
+  components:
+  - type: Stack
+    count: 3

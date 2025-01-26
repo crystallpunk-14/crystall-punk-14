@@ -138,7 +138,7 @@
     otherSideProto: CP14LaddersDownWood
 
 
-# Wood
+# Marble
 - type: entity
   parent: CP14LaddersDownBase
   id: CP14LaddersDownMarble
@@ -166,7 +166,7 @@
     otherSideProto: CP14LaddersUpMarble
 
 - type: entity
-  parent: CP14LaddersUpWood
+  parent: CP14LaddersUpMarble
   id: CP14LaddersUpMarbleAutoLink
   suffix: Marble
   components:

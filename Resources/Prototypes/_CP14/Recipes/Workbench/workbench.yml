@@ -7,6 +7,7 @@
   stacks:
     CP14WoodenPlanks: 3
   result: CP14Bucket
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14WoodenBeerMug
@@ -16,14 +17,16 @@
     CP14WoodenPlanks: 2
     CP14Nail: 1
   result: CP14WoodenBeerMug
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
-  id: CP14PlateWooden
+  id: CP14Plate
   tag: CP14RecipeWorkbench
   craftTime: 3
   stacks:
     CP14WoodenPlanks: 2
-  result: CP14PlateWooden
+  result: CP14Plate
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14BaseMop
@@ -33,14 +36,7 @@
     CP14WoodenPlanks: 2
     CP14Cloth: 1
   result: CP14BaseMop
-
-- type: CP14Recipe
-  id: CP14BaseBattleStaff
-  tag: CP14RecipeWorkbench
-  craftTime: 4
-  stacks:
-    CP14WoodenPlanks: 3
-  result: CP14BaseBattleStaff
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14Torch
@@ -67,6 +63,7 @@
   stacks:
     CP14WoodenPlanks: 1
   result: CP14ModularGripWooden
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripWoodenLong
@@ -75,6 +72,7 @@
   stacks:
     CP14WoodenPlanks: 2
   result: CP14ModularGripWoodenLong
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripLucens
@@ -83,6 +81,7 @@
   stacks:
     CP14LucensWoodenPlanks: 1
   result: CP14ModularGripLucens
+  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripLucensLong
@@ -91,3 +90,26 @@
   stacks:
     CP14LucensWoodenPlanks: 2
   result: CP14ModularGripLucensLong
+  knowledgeRequired: WoodWork
+
+- type: CP14Recipe
+  id: CP14Bow
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  entities:
+    CP14String: 1
+  stacks:
+    CP14WoodenPlanks: 2
+  result: CP14BowCombat
+  knowledgeRequired: WoodWork
+
+- type: CP14Recipe
+  id: CP14Arrow
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  stacks:
+    CP14WoodenPlanks: 1
+    CP14IronBar: 1
+  result: CP14Arrow
+  resultCount: 4
+  knowledgeRequired: WoodWork

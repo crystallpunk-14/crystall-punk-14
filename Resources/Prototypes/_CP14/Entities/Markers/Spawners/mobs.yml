@@ -22,11 +22,6 @@
         - id: CP14MobUndeadZombieGearEasy1
         - id: CP14MobUndeadZombieGearEasy2
         - id: CP14MobUndeadZombieGearEasy3
-      - !type:GroupSelector
-        weight: 30
-        children:
-        - id: CP14MobUndeadZombieGearMedium1
-        - id: CP14MobUndeadZombieGearMedium2
 
 # Animal
 

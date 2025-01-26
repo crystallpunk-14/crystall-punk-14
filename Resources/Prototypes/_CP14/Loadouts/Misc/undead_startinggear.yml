@@ -17,21 +17,6 @@
     mask: CP14ClothingMaskSinner
 
 - type: startingGear
-  id: CP14MobUndeadMedium1
-  equipment:
-    cloak: CP14ClothingCloakCuirass
-    shirt: CP14ClothingShirtCottonRed
-    pants: CP14ClothingPantsTrouserWhite
-
-- type: startingGear
-  id: CP14MobUndeadMedium2
-  equipment:
-    cloak: CP14ClothingCloakCuirass
-    shirt: CP14ClothingShirtCottonRed
-    pants: CP14ClothingPantsTrouserWhite
-    head: CP14ClothingHeadBeretRed
-
-- type: startingGear
   id: CP14MobSkeleton
   equipment:
     pants: CP14ClothingPantsLoincloth

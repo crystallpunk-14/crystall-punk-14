@@ -90,7 +90,7 @@
         shader: unshaded
   - type: PointLight
     color: "#e67c34"
-    energy: 5
+    energy: 2
     radius: 8
   - type: AmbientSound
     enabled: true

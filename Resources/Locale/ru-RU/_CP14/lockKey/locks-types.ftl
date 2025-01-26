@@ -38,3 +38,4 @@ cp14-lock-shaper-guard-entrance = казармы, вход
 cp14-lock-shaper-guard-staff = казармы
 cp14-lock-shaper-guard-commander = дом главы стражи
 cp14-lock-shaper-guard-weapon-storage = хранилище оружия
+cp14-lock-shape-guildmaster = гильдмастер
