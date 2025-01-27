@@ -499,6 +499,12 @@
     - CP14Torch
 
 - type: loadout
+  id: CP14Pipe
+  storage:
+    back:
+    - CP14SmokingPipeFilledTobacco
+
+- type: loadout
   id: CP14DemiplaneKeyT1
   storage:
     back:
