@@ -13,3 +13,11 @@
   components:
   - type: CP14Key
     autoGenerateShape: Blacksmith1
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyBlacksmith2
+  suffix: Blacksmith 2
+  components:
+  - type: CP14Key
+    autoGenerateShape: Blacksmith2
