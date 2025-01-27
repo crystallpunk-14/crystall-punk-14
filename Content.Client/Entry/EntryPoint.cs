@@ -22,6 +22,7 @@ using Content.Client.Singularity;
 using Content.Client.Stylesheets;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Shared._CP14.Configuration;
 using Content.Shared.Ame.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Gravity;
@@ -167,8 +168,8 @@ namespace Content.Client.Entry
             _clientPreferencesManager.Initialize();
             _euiManager.Initialize();
             _voteManager.Initialize();
-            _userInterfaceManager.SetDefaultTheme("SS14DefaultTheme");
-            _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CVars.InterfaceTheme));
+            _userInterfaceManager.SetDefaultTheme("CP14DefaultTheme"); // CP14-Theme
+            _userInterfaceManager.SetActiveTheme(_configManager.GetCVar(CP14ConfigVars.PostProcess)); // CP14-Theme
             _documentParsingManager.Initialize();
             _titleWindowManager.Initialize();
 
