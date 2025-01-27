@@ -1,14 +1,35 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-4.0",
-  "copyright": "Created by TheShued (github) ",
+  "license": "CLA",
+  "copyright": "Created by vladimir.s ",
   "size": {
     "x": 48,
     "y": 84
   },
   "states": [
     {
-      "name": "base"
+      "name": "full"
+    },
+    {
+      "name": "empty"
+    },
+    {
+      "name": "frame"
+    },
+    {
+      "name": "warning",
+      "delays": [
+        [
+          0.3,
+          0.1,
+          0.1,
+          0.1,
+          0.3,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
     }
   ]
 }

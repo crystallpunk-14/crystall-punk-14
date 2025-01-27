@@ -28,13 +28,27 @@
     noRot: true
     sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
     layers:
-    - state: base
+    - state: warning
+      shader: unshaded
+    - state: frame
     drawdepth: Mobs
     offset: 0,0.9
   - type: PointLight
-    color: "#42166b"
-    energy: 3
+    enabled: true
+    color: "#8f42ff"
+    energy: 30
     radius: 5
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 2
+        minValue: 1.0
+        maxValue: 40.0
+        property: Energy
+        isLooped: true
+        enabled: true
   - type: CP14MagicContainerRoundFinisher
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
