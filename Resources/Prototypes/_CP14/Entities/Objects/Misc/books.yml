@@ -1,0 +1,80 @@
+- type: entity
+  parent: BookBase
+  id: CP14BookBase
+  name: CP14EntityBookName
+  description: CP14EntityBookDescription
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_brown
+      map: [ "cover" ]
+    - state: icon_text
+      map: [ "icon" ]
+    - state: bookmark_none
+      map: [ "bookmark" ]
+
+- type: entity
+  parent: CP14BookBase
+  id: CP14BookRandom
+  name: CP14EntityBookName
+  description: CP14EntityBookDescription
+  categories: [ ForkFiltered ]
+  components:
+  - type: RandomSprite
+    available:
+      - paper:
+          paper: ""
+        cover:
+          cover_red: ""
+          cover_black: ""
+          cover_green: ""
+          cover_blue: ""
+          cover_brown: ""
+        icon:
+          icon_image: ""
+          icon_moon: ""
+          icon_text: ""
+          icon_plate: ""
+          icon_uptext: ""
+        bookmark:
+          bookmark_red: ""
+          bookmark_short: ""
+          bookmark_none: ""
+
+- type: entity
+  parent: CP14BookBase
+  id: CP14BookBestiary
+  name: CP14EntityBookBestiaryName
+  description: CP14EntityBookBestiaryDescription
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/books.rsi
+    layers:
+    - state: full_bestiary
+      map: [ "full" ]
+  - type: Paper
+    content: cp14-book-bestiary
+
+- type: entity
+  parent: CP14BookBase
+  id: CP14BookMagicalLore
+  name: Rules of wourld- magic
+  description: Treatise of the Archmage of the Kingdom of Klanir. On the Nature of Magic and Its Interaction in the Universe
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_blue
+      map: [ "cover" ]
+    - state: icon_magic
+      map: [ "icon" ]
+    - state: edging_mithril
+      map: [ "edging" ]
+    - state: bookmark_short
+      map: [ "bookmark" ]
+  - type: Paper
+    content: cp14-book-magicrules
