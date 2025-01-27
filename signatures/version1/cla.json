@@ -1,4 +1,20 @@
 {
   "signedContributors": [
+    {
+      "name": "Nimfar11",
+      "id": 128169402,
+      "comment_id": 2614442386,
+      "created_at": "2025-01-26T14:13:50Z",
+      "repoId": 778936029,
+      "pullRequestNo": 813
+    },
+    {
+      "name": "Jaraten",
+      "id": 116667537,
+      "comment_id": 2614442923,
+      "created_at": "2025-01-26T14:15:22Z",
+      "repoId": 778936029,
+      "pullRequestNo": 734
+    }
   ]
 }

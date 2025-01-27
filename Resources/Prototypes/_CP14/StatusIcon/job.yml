@@ -39,14 +39,6 @@
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconCaptain
-  icon:
-    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Captain
-  jobName: cp14-job-name-captain
-
-- type: jobIcon
-  parent: CP14JobIcon
   id: CP14JobIconGuardCommander
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
