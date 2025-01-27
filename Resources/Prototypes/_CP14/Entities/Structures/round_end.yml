@@ -28,8 +28,7 @@
     noRot: true
     sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
     layers:
-    - state: warning
-      shader: unshaded
+    - state: full
     - state: frame
     drawdepth: Mobs
     offset: 0,0.9
@@ -43,7 +42,7 @@
     behaviours:
       - !type:PulseBehaviour
         interpolate: Cubic
-        maxDuration: 2
+        maxDuration: 5
         minValue: 1.0
         maxValue: 40.0
         property: Energy
