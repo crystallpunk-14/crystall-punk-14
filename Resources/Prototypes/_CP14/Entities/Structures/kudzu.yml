@@ -43,6 +43,7 @@
 - type: entity
   id: CP14AstralHazeKudzuLootSpawner
   parent: MarkerBase
+  categories: [ ForkFiltered ]
   components:
     - type: Sprite
       layers:
