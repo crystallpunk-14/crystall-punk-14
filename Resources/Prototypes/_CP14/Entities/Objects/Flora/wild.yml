@@ -140,36 +140,6 @@
           Quantity: 15
 
 - type: entity
-  id: CP14QuartzShard
-  parent: BaseItem
-  name: rough quartz
-  description: a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.
-  categories: [ ForkFiltered ]
-  components:
-  - type: Tag
-    tags:
-    - CP14FitInMortar
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-      - state: shard
-        map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        shard: ""
-        shard2: ""
-        shard3: ""
-        shard4: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14GroundQuartz
-        Quantity: 7
-
-- type: entity
   id: CP14LumiMushroom
   parent: CP14WildProduceBase
   name: lumishroom

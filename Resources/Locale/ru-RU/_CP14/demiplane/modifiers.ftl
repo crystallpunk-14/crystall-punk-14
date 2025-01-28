@@ -2,7 +2,6 @@ cp14-modifier-gold-ore = золотой руды
 cp14-modifier-iron-ore = железной руды
 cp14-modifier-copper-ore = медной руды
 cp14-modifier-mithril-ore = мифриловой руды
-cp14-modifier-quartz-crystal = кварцевых кристаллов
 cp14-modifier-dayflin = днецветов
 cp14-modifier-fly-agaric = мухоморов
 cp14-modifier-blue-amanita = лазурной аманиты
