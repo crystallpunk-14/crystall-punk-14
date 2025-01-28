@@ -54,12 +54,12 @@
       offset: 0.05
       chance: 0.5
       prototypes:
-        - CP14CrystalAmethystsSmall
-        - CP14CrystalAmethystsSmall
-        - CP14CrystalAmethystsSmall
-        - CP14CrystalAmethystsMedium
-        - CP14CrystalAmethystsMedium
-        - CP14CrystalAmethystsBig
+        - CP14CrystalElementalDarknessSmall
+        - CP14CrystalElementalDarknessSmall
+        - CP14CrystalElementalDarknessSmall
+        - CP14CrystalElementalDarknessMedium
+        - CP14CrystalElementalDarknessMedium
+        - CP14CrystalElementalDarknessBig
       rareChance: 0.05
       #rarePrototypes:
       #  - MobCatShadow

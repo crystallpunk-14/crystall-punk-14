@@ -1,158 +1,207 @@
-# TIER 1
 
 - type: cp14DemiplaneModifier
-  id: QuartzCrystal
-  tiers:
-    - 1
-  name: cp14-modifier-quartz-crystal
-  categories:
-    Reward: 0.1
-  requiredTags:
-  - CP14DemiplaneOres
-  layers:
-    - !type:OreDunGen
-      tileMask: 
-      - CP14FloorBase
-      entity: CP14QuartzCrystal
-      count: 30
-      minGroupSize: 1
-      maxGroupSize: 2
-
-# TIER 2
-
-- type: cp14DemiplaneModifier
-  id: QuartzCrystalRubies
+  id: CrystalFire
   tiers:
     - 1
     - 2
     - 3
-  name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:
     Reward: 0.1
-  requiredTags:
+  requiredTags: #TODO: Hot places
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
-      entity: CP14CrystalRubiesMedium
+      entity: CP14CrystalElementalFireSmall
       count: 30
       minGroupSize: 1
+      maxGroupSize: 3
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalElementalFireMedium
+      count: 20
+      minGroupSize: 1
       maxGroupSize: 2
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalElementalFireBig
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
-  id: QuartzCrystalTopazes
+  id: CrystalElectric
   tiers:
     - 1
     - 2
     - 3
-  name: cp14-modifier-quartz-crystal
   generationWeight: 0.1
   categories:
     Reward: 0.1
-  requiredTags:
-  - CP14DemiplaneOres
   layers:
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
       - CP14FloorSand
-      entity: CP14CrystalTopazesMedium
+      entity: CP14CrystalElementalElectricSmall
       count: 30
       minGroupSize: 1
-      maxGroupSize: 2
-
-- type: cp14DemiplaneModifier
-  id: QuartzCrystalEmeralds
-  tiers:
-    - 1
-    - 2
-    - 3
-  name: cp14-modifier-quartz-crystal
-  generationWeight: 0.1
-  categories:
-    Reward: 0.1
-  requiredTags:
-  - CP14DemiplaneOres
-  layers:
-    - !type:OreDunGen
-      tileMask: 
-      - CP14FloorBase
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
-      entity: CP14CrystalEmeraldsMedium
-      count: 30
-      minGroupSize: 1
-      maxGroupSize: 2
-
-- type: cp14DemiplaneModifier
-  id: QuartzCrystalSapphires
-  tiers:
-    - 1
-    - 2
-    - 3
-  name: cp14-modifier-quartz-crystal
-  generationWeight: 0.1
-  categories:
-    Reward: 0.1
-  requiredTags:
-  - CP14DemiplaneOres
-  layers:
-    - !type:OreDunGen
-      tileMask: 
-      - CP14FloorBase
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
-      entity: CP14CrystalSapphiresMedium
-      count: 30
-      minGroupSize: 1
-      maxGroupSize: 2
-
-- type: cp14DemiplaneModifier
-  id: QuartzCrystalAmethysts
-  tiers:
-    - 1
-    - 2
-    - 3
-  name: cp14-modifier-quartz-crystal
-  generationWeight: 0.1
-  categories:
-    Reward: 0.1
-  requiredTags:
-  - CP14DemiplaneOres
-  - CP14DemiplaneUnderground
-  layers:
-    - !type:OreDunGen
-      tileMask: 
-      - CP14FloorBase
-      entity: CP14CrystalAmethystsMedium
-      count: 30
-      minGroupSize: 1
-      maxGroupSize: 2
-
-- type: cp14DemiplaneModifier
-  id: QuartzCrystalDiamonds
-  tiers:
-    - 1
-    - 2
-    - 3
-  name: cp14-modifier-quartz-crystal
-  generationWeight: 0.1
-  categories:
-    Reward: 0.1
-  requiredTags:
-  - CP14DemiplaneOres
-  - CP14DemiplaneUnderground
-  layers:
+      maxGroupSize: 3
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
       - CP14FloorSand
-      entity: CP14CrystalDiamondsMedium
-      count: 30
+      entity: CP14CrystalElementalElectricMedium
+      count: 20
       minGroupSize: 1
       maxGroupSize: 2
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      - CP14FloorSand
+      entity: CP14CrystalElementalElectricBig
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CrystalHealing
+  tiers:
+    - 1
+    - 2
+    - 3
+  generationWeight: 0.1
+  categories:
+    Reward: 0.1
+  requiredTags:
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:OreDunGen
+      tileMask:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalElementalElectricSmall
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 3
+    - !type:OreDunGen
+      tileMask:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalElementalElectricMedium
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      tileMask:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalElementalElectricBig
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CrystalWater
+  tiers:
+    - 1
+    - 2
+    - 3
+  generationWeight: 0.1
+  categories:
+    Reward: 0.1
+  requiredTags:
+  - CP14DemiplaneWater
+    #TODO Cold places filter
+  layers:
+    - !type:OreDunGen
+      tileMask:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalElementalWaterSmall
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 3
+    - !type:OreDunGen
+      tileMask:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalElementalWaterMedium
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      tileMask:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14CrystalElementalWaterBig
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CrystalDarkness
+  tiers:
+    - 1
+    - 2
+    - 3
+  generationWeight: 0.1
+  categories:
+    Reward: 0.1
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      entity: CP14CrystalElementalDarknessSmall
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 3
+    - !type:OreDunGen
+      entity: CP14CrystalElementalDarknessMedium
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      entity: CP14CrystalElementalDarknessBig
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CrystalLight
+  tiers:
+    - 1
+    - 2
+    - 3
+  generationWeight: 0.1
+  categories:
+    Reward: 0.1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      entity: CP14CrystalElementalLightSmall
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 3
+    - !type:OreDunGen
+      entity: CP14CrystalElementalLightMedium
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      entity: CP14CrystalElementalLightBig
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
