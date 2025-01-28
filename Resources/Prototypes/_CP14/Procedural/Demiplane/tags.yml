@@ -20,6 +20,9 @@
 
 - type: Tag
   id: CP14DemiplaneWater
+
+- type: Tag
+  id: CP14DemiplaneCold
   
   #Cold
   

@@ -59,8 +59,8 @@
         pitch: 0.5
         variation: 0.03
   - type: PointLight
-    radius: 2
-    energy: 2.5
+    radius: 4
+    energy: 1.5
   - type: RandomSprite
     available:
     - random:
@@ -86,8 +86,8 @@
         pitch: 1
         variation: 0.03
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    radius: 2.5
+    energy: 1
   - type: RandomSprite
     available:
     - random:
@@ -115,8 +115,8 @@
         pitch: 1.5
         variation: 0.03
   - type: PointLight
-    radius: 1.1
-    energy: 2
+    radius: 1.5
+    energy: 0.5
   - type: RandomSprite
     available:
     - random:

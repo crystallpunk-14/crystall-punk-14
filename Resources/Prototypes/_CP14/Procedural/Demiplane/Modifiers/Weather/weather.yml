@@ -66,3 +66,64 @@
       duration:
         min: 10000
         max: 10000
+
+- type: cp14DemiplaneModifier
+  id: WeatherSnowLight
+  tiers:
+    - 1
+    - 2
+  categories:
+    Weather: 1
+  requiredTags:
+  - CP14DemiplaneCold
+  components:
+  - type: CP14WeatherController
+    clearDuration:
+      min: 0
+      max: 0
+    entries:
+    - visuals: CP14SnowLight
+      duration:
+        min: 10000
+        max: 10000
+
+- type: cp14DemiplaneModifier
+  id: WeatherSnowMedium
+  tiers:
+    - 1
+    - 2
+    - 3
+  categories:
+    Weather: 1
+  requiredTags:
+  - CP14DemiplaneCold
+  components:
+  - type: CP14WeatherController
+    clearDuration:
+      min: 0
+      max: 0
+    entries:
+    - visuals: CP14SnowMedium
+      duration:
+        min: 10000
+        max: 10000
+
+- type: cp14DemiplaneModifier
+  id: WeatherSnowHeavy
+  tiers:
+    - 2
+    - 3
+  categories:
+    Weather: 1
+  requiredTags:
+  - CP14DemiplaneCold
+  components:
+  - type: CP14WeatherController
+    clearDuration:
+      min: 0
+      max: 0
+    entries:
+    - visuals: CP14SnowHeavy 
+      duration:
+        min: 10000
+        max: 10000

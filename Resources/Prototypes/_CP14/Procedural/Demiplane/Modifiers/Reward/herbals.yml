@@ -147,6 +147,9 @@
       - CP14FloorGrassLight
       - CP14FloorGrassTall
       - CP14FloorBase
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14GatherableLumiMushroom
       count: 10
       minGroupSize: 3

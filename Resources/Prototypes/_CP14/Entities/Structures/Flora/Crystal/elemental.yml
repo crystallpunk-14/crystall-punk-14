@@ -655,11 +655,6 @@
   - CP14CrystalSmallBase
   - CP14CrystalDarknessBase
   components:
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Crystal/crystal_small.rsi
-    layers:
-      - state: small1
-        map: ["random"]
   - type: Destructible
     thresholds:
       - trigger:
@@ -695,11 +690,6 @@
   - CP14CrystalMediumBase
   - CP14CrystalDarknessBase
   components:
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Crystal/crystal_medium.rsi
-    layers:
-      - state: medium4
-        map: ["random"]
   - type: Destructible
     thresholds:
       - trigger:

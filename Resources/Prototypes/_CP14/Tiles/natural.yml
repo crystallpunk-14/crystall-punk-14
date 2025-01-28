@@ -262,3 +262,22 @@
     collection: FootstepSnow
   heatCapacity: 10000
   weather: true
+
+- type: tile
+  id: CP14FloorIce
+  editorHidden: false
+  name: tiles-ice
+  sprite: /Textures/_CP14/Tiles/ice.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  isSubfloor: false
+  heatCapacity: 10000
+  mobFriction: 0.5
+  mobFrictionNoInput: 0.05
+  mobAcceleration: 2
+  weather: true
