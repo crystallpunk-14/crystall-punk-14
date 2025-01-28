@@ -2,7 +2,6 @@ cp14-modifier-gold-ore = gold ore
 cp14-modifier-iron-ore = iron ore
 cp14-modifier-copper-ore = copper ore
 cp14-modifier-mithril-ore = mithril ore
-cp14-modifier-quartz-crystal = quartz crystals
 cp14-modifier-dayflin = dayflins
 cp14-modifier-fly-agaric = fly agaric
 cp14-modifier-blue-amanita = azure amanita
