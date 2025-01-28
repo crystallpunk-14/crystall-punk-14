@@ -68,6 +68,9 @@
   components:
   - type: Sprite
     color: "#e6ff6b"
+  - type: Electrified
+    requirePower: false
+    shockTime: 1
 
 - type: entity
   parent: CP14CrystalShardBase
