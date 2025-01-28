@@ -39,7 +39,6 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
-  suckReagents: true
 
 - type: tile
   editorHidden: false
@@ -71,7 +70,6 @@
     collection: FootstepSnow #TODO
   heatCapacity: 10000
   weather: true
-  suckReagents: true
 
 - type: tile
   id: CP14FloorGrass
@@ -104,7 +102,6 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  suckReagents: true
 
 - type: tile
   id: CP14FloorGrassLight
@@ -137,7 +134,6 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  suckReagents: true
 
 - type: tile
   id: CP14FloorGrassTall
@@ -170,7 +166,6 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  suckReagents: true
 
 - type: tile
   id: CP14FloorSnowDeepDeep
@@ -203,7 +198,6 @@
     collection: FootstepSnow
   heatCapacity: 10000
   weather: true
-  suckReagents: true
 
 - type: tile
   id: CP14FloorSnowDeep
@@ -236,7 +230,6 @@
     collection: FootstepSnow
   heatCapacity: 10000
   weather: true
-  suckReagents: true
 
 - type: tile
   id: CP14FloorSnow
@@ -269,4 +262,3 @@
     collection: FootstepSnow
   heatCapacity: 10000
   weather: true
-  suckReagents: true

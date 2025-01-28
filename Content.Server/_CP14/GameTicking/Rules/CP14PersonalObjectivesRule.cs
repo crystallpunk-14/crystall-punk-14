@@ -39,7 +39,8 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
         {
             if (!_mind.TryGetMind(args.Player.UserId, out var mindId, out var mind))
             {
-                Log.Error($"{ToPrettyString(args.Mob):player} was trying to get the expedition objectives by {ToPrettyString(uid):rule} but had no mind attached!");
+                Log.Error(
+                    $"{ToPrettyString(args.Mob):player} was trying to get the expedition objectives by {ToPrettyString(uid):rule} but had no mind attached!");
                 return;
             }
 
@@ -122,8 +123,11 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
                 ckey = _player.GetPlayerData(mindComp.UserId.Value).UserName;
             }
 
-            sb.Append($"[head=3]{name} - {role}[/head]\n");
-            sb.Append($"[color=#949494]{ckey}[/color]\n");
+            //We dont show players without completed objectives
+            var show = false;
+            var sbLocal = new StringBuilder();
+            sbLocal.Append($"[head=3]{name} - {role}[/head]\n");
+            sbLocal.Append($"[color=#949494]{ckey}[/color]\n");
             foreach (var objEnt in objectives)
             {
                 if (!HasComp<ObjectiveComponent>(objEnt))
@@ -140,10 +144,16 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
                 if (progress > 0.99f)
                     status = "cp14-objective-endtext-status-success";
 
+                show = true;
+
                 var meta = MetaData(objEnt);
-                sb.Append($"{meta.EntityName} - {Loc.GetString(status)} ({(int)(progress * 100)}%)\n");
+                sbLocal.Append($"{meta.EntityName} - {Loc.GetString(status)} ({(int)(progress * 100)}%)\n");
             }
+
+            if (show)
+                sb.Append(sbLocal);
         }
+
         args.AddLine(sb.ToString());
     }
 }

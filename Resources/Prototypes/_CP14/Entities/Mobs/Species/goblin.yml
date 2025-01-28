@@ -83,6 +83,11 @@
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: cloak
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
       eyes:
         sizeMaps:
           32:
@@ -139,6 +144,11 @@
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: belt
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
