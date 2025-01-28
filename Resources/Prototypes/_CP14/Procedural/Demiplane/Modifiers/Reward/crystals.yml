@@ -11,6 +11,8 @@
   requiredTags: #TODO: Hot places
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
+  blacklistTags:
+  - CP14DemiplaneCold
   layers:
     - !type:OreDunGen
       tileMask: 
@@ -48,6 +50,9 @@
       tileMask: 
       - CP14FloorBase
       - CP14FloorSand
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalElectricSmall
       count: 30
       minGroupSize: 1
@@ -56,6 +61,9 @@
       tileMask: 
       - CP14FloorBase
       - CP14FloorSand
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalElectricMedium
       count: 20
       minGroupSize: 1
@@ -64,6 +72,9 @@
       tileMask: 
       - CP14FloorBase
       - CP14FloorSand
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalElectricBig
       count: 10
       minGroupSize: 1
@@ -86,6 +97,9 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalElectricSmall
       count: 30
       minGroupSize: 1
@@ -95,6 +109,9 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalElectricMedium
       count: 20
       minGroupSize: 1
@@ -104,6 +121,9 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalElectricBig
       count: 10
       minGroupSize: 1
@@ -126,6 +146,9 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalWaterSmall
       count: 30
       minGroupSize: 1
@@ -135,6 +158,9 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalWaterMedium
       count: 20
       minGroupSize: 1
@@ -144,6 +170,9 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
       entity: CP14CrystalElementalWaterBig
       count: 10
       minGroupSize: 1
