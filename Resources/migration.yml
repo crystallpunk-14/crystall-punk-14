@@ -215,10 +215,27 @@ CP14PlateIron: CP14Plate
 CP14BaseLightHammer: CP14ModularIronHammer
 CP14BaseBattleHammer: CP14ModularIronHammer
 
+#2025-28-01
+CP14CrystalRubiesSmall: CP14CrystalElementalFireSmall
+CP14CrystalRubiesMedium: CP14CrystalElementalFireMedium
+CP14CrystalRubiesBig: CP14CrystalElementalFireBig
+CP14CrystalTopazesSmall: null
+CP14CrystalTopazesMedium: null
+CP14CrystalTopazesBig: null
+CP14CrystalEmeraldsSmall: CP14CrystalElementalHealingSmall
+CP14CrystalEmeraldsMedium: CP14CrystalElementalHealingMedium
+CP14CrystalEmeraldsBig: CP14CrystalElementalHealingBig
+CP14CrystalSapphiresSmall: CP14CrystalElementalWaterSmall
+CP14CrystalSapphiresMedium: CP14CrystalElementalWaterMedium
+CP14CrystalSapphiresBig: CP14CrystalElementalWaterBig
+CP14CrystalAmethystsSmall: CP14CrystalElementalDarknessSmall
+CP14CrystalAmethystsMedium: CP14CrystalElementalDarknessMedium
+CP14CrystalAmethystsBig: CP14CrystalElementalDarknessBig
+CP14CrystalDiamondsSmall: CP14CrystalElementalLightSmall
+CP14CrystalDiamondsMedium: CP14CrystalElementalLightMedium
+CP14CrystalDiamondsBig: CP14CrystalElementalLightBig
 
-
-
-
+CP14QuartzShard: null
 
 # <---> CrystallEdge migration zone end
 
