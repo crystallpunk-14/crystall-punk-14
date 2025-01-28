@@ -50,6 +50,11 @@
   - type: Inventory
     templateId: CP14Human
     femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
       cloak:
         sizeMaps:
           32:
@@ -83,6 +88,11 @@
     templateId: CP14Human
     femaleDisplacements:
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi

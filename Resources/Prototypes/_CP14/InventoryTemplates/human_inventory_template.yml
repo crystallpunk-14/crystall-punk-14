@@ -14,7 +14,7 @@
       slotTexture: mask
       slotFlags: MASK
       uiWindowPos: 0,2
-      strippingWindowPos: 1,2
+      strippingWindowPos: 2,0
       displayName: Mask
     - name: eyes
       slotTexture: eyes

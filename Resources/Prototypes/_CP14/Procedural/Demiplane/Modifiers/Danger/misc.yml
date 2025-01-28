@@ -46,7 +46,7 @@
     Danger: 0.3
   layers:
     - !type:OreDunGen
-      entity: ShadowKudzu
+      entity: CP14AstralHaze
       count: 10
       minGroupSize: 1
       maxGroupSize: 1
