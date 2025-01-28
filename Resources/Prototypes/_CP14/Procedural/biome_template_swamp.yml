@@ -59,6 +59,7 @@
         frequency: 0.02
       entities:
         - CP14FloorWater
+      #Lakes end
 
     - !type:BiomeTileLayer 
       tile: CP14FloorGrassLight

@@ -94,9 +94,23 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:OreDunGen
-      tileMask: 
-      - CP14FloorBase
       entity: CP14MobMonsterMole
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14DemiplaneModifier
+  id: EnemyIceSpectre
+  tiers:
+    - 2
+  name: cp14-modifier-zombie
+  categories:
+    Danger: 0.4
+  requiredTags:
+  - CP14DemiplaneCold
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobIceSpectre
       count: 6
       minGroupSize: 1
       maxGroupSize: 2

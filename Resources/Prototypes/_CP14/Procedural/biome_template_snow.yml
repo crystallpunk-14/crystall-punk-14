@@ -69,9 +69,9 @@
         - CP14FloraTreeSnow
         #- CP14FloraTreeGreenLarge
 
-# Подбиомы
+# Subbiomes
 
-# Лес
+# Forest
 
 - type: biomeTemplate
   id: CP14SnowlandForest
@@ -93,7 +93,7 @@
         - CP14FloraTreeSnow
         #- CP14FloraTreeGreenLarge
 
-# Холмы
+# Hills
 
 - type: biomeTemplate
   id: CP14SnowlandHills # Холмы
@@ -122,6 +122,36 @@
       threshold: -1.0
       entities:
         - CP14WallSnow
+
+# Frozen swamp
+
+- type: biomeTemplate
+  id: CP14SnowlandSwamp
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14Snowland
+    - !type:BiomeTileLayer
+      tile: CP14FloorIce
+      threshold: 0.0
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.1
+    - !type:BiomeEntityLayer # More Trees
+      threshold: 0.2
+      noise:
+        seed: 4
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - CP14FloorSnow
+        - CP14FloorSnowDeep
+        - CP14FloorSnowDeepDeep
+      entities:
+        - CP14FloraTreeSnow
+        #- CP14FloraTreeGreenLarge
 
 - type: biomeTemplate
   id: CP14SnowlandTestResult

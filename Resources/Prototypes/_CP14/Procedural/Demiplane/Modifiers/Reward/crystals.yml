@@ -119,8 +119,7 @@
   categories:
     Reward: 0.1
   requiredTags:
-  - CP14DemiplaneWater
-    #TODO Cold places filter
+  - CP14DemiplaneCold
   layers:
     - !type:OreDunGen
       tileMask:
