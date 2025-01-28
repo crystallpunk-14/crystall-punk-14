@@ -71,3 +71,21 @@
   - type: Tag
     tags:
       - HideContextMenu
+
+- type: entity
+  id: CP14ElectrifiedEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    drawdepth: Effects
+    layers:
+    - state: electrified
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+      - HideContextMenu

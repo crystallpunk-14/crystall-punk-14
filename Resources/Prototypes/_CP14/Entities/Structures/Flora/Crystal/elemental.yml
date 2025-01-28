@@ -9,6 +9,13 @@
     color: "#5eabeb"
   - type: Sprite
     color: "#5eabeb"
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Cryo
+    maxIntensity: 30
+    intensitySlope: 1.5
+    totalIntensity: 30
+    canCreateVacuum: false
   
 - type: entity
   id: CP14CrystalElementalWaterSmall
@@ -37,8 +44,11 @@
               CP14CrystalShardWater:
                 min: 0
                 max: 1
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Explosive
+    totalIntensity: 15
   
 - type: entity
   id: CP14CrystalElementalWaterMedium
@@ -67,8 +77,11 @@
               CP14CrystalShardWater:
                 min: 1
                 max: 2
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Explosive
+    totalIntensity: 20
 
 - type: entity
   id: CP14CrystalElementalWaterBig
@@ -97,10 +110,50 @@
               CP14CrystalShardWater:
                 min: 2
                 max: 3
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Explosive
+    totalIntensity: 25
+    intensitySlope: 0.5
 
 # Healing
+
+- type: entity
+  id: CP14AreaEntityEffectCrystalHealing
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#79b330"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _CP14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#79b330"
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: CP14AreaEntityEffect
+    range: 1
+    whitelist:
+      components:
+      - Damageable
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectCureWounds
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -10
+            Blunt: -10
+            Piercing: -10
+      - !type:Jitter
 
 - type: entity
   id: CP14CrystalHealingBase
@@ -139,6 +192,11 @@
               CP14CrystalShardHealing:
                 min: 0
                 max: 1
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14AreaEntityEffectCrystalHealing:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   
@@ -169,6 +227,11 @@
               CP14CrystalShardHealing:
                 min: 1
                 max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14AreaEntityEffectCrystalHealing:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
 
@@ -199,6 +262,11 @@
               CP14CrystalShardHealing:
                 min: 2
                 max: 3
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14AreaEntityEffectCrystalHealing:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
 
@@ -213,6 +281,13 @@
     color: "#ed731c"
   - type: Sprite
     color: "#ed731c"
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: FireBomb
+    maxIntensity: 10
+    intensitySlope: 1.5
+    totalIntensity: 30
+    canCreateVacuum: false
   
 - type: entity
   id: CP14CrystalElementalFireSmall
@@ -241,8 +316,11 @@
               CP14CrystalShardFire:
                 min: 0
                 max: 1
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Explosive
+    totalIntensity: 5
   
 - type: entity
   id: CP14CrystalElementalFireMedium
@@ -271,8 +349,11 @@
               CP14CrystalShardFire:
                 min: 1
                 max: 2
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Explosive
+    totalIntensity: 10
 
 - type: entity
   id: CP14CrystalElementalFireBig
@@ -301,8 +382,12 @@
               CP14CrystalShardFire:
                 min: 2
                 max: 3
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: Explosive
+    totalIntensity: 20
+    intensitySlope: 0.5
 
 # Light
 
@@ -343,6 +428,11 @@
               CP14CrystalShardLight:
                 min: 0
                 max: 1
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              AdminInstantEffectFlash:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   
@@ -373,6 +463,11 @@
               CP14CrystalShardLight:
                 min: 1
                 max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              AdminInstantEffectFlash:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
 
@@ -403,6 +498,11 @@
               CP14CrystalShardLight:
                 min: 2
                 max: 3
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              AdminInstantEffectFlash:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
 
@@ -420,6 +520,10 @@
   - type: Electrified
     requirePower: false
     shockTime: 8
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: SpawnOnTrigger
+    proto: CP14ElectrifiedEffect
   
 - type: entity
   id: CP14CrystalElementalElectricSmall
@@ -447,6 +551,11 @@
             spawn:
               CP14CrystalShardElectric:
                 min: 0
+                max: 1
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14ElectrifiedEffect:
+                min: 1
                 max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -480,6 +589,11 @@
               CP14CrystalShardElectric:
                 min: 1
                 max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14ElectrifiedEffect:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   - type: Electrified
@@ -512,6 +626,11 @@
               CP14CrystalShardElectric:
                 min: 2
                 max: 3
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14ElectrifiedEffect:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   - type: Electrified
@@ -525,7 +644,7 @@
   description: Natural quartz crystals that can absorb the magical energy of the world around them. This crystal seems to have absorbed the energy of darkness.
   components:
   - type: PointLight
-    color: "#e8ffb5"
+    color: "#391c57"
   - type: Sprite
     color: "#391c57"
    
@@ -561,10 +680,13 @@
               CP14CrystalShardDarkness:
                 min: 0
                 max: 1
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14AstralHaze:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: PointLight
-    energy: -2
   
 - type: entity
   id: CP14CrystalElementalDarknessMedium
@@ -598,10 +720,13 @@
               CP14CrystalShardDarkness:
                 min: 1
                 max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14AstralHaze:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: PointLight
-    energy: -2
 
 - type: entity
   id: CP14CrystalElementalDarknessBig
@@ -630,7 +755,10 @@
               CP14CrystalShardDarkness:
                 min: 2
                 max: 3
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14AstralHaze:
+                min: 1
+                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: PointLight
-    energy: -2

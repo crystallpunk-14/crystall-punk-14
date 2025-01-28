@@ -26,8 +26,6 @@
       chance: 0.45
       prototypes:
       - CP14AstralCorrosion
-      rarePrototypes:
-      - CP14AstralHazeKudzuLootSpawner
     - type: Tag
       tags:
         - HideContextMenu
@@ -39,28 +37,3 @@
           data: { state: spookysmoke }
         - options: ReducedMotion
           data: { state: spookysmoke_static }
-
-- type: entity
-  id: CP14AstralHazeKudzuLootSpawner
-  parent: MarkerBase
-  categories: [ ForkFiltered ]
-  components:
-    - type: Sprite
-      layers:
-      - state: red
-      - sprite: Structures/Specific/Anomalies/shadow_anom.rsi
-        state: anom
-    - type: RandomSpawner
-      offset: 0.05
-      chance: 0.5
-      prototypes:
-        - CP14CrystalElementalDarknessSmall
-        - CP14CrystalElementalDarknessSmall
-        - CP14CrystalElementalDarknessSmall
-        - CP14CrystalElementalDarknessMedium
-        - CP14CrystalElementalDarknessMedium
-        - CP14CrystalElementalDarknessBig
-      rareChance: 0.05
-      #rarePrototypes:
-      #  - MobCatShadow
-      #  - ArtifactFragment
