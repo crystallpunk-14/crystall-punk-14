@@ -12,11 +12,11 @@
     equipDelay: 0.7
     unequipDelay: 0.4
     slots: [mask]
-    
+
 - type: entity
   parent: CP14ClothingMaskBase
   id: CP14ClothingMaskSinner
-  name: Sinner's Mask
+  name: Sinner's mask
   description: A mask intented to be worn by not the brightest individuals. Executioners put them on themselves and the victim before execution.
   components:
   - type: Sprite
@@ -24,6 +24,7 @@
   - type: Clothing
     sprite: _CP14/Clothing/Masks/sinner.rsi
   - type: IdentityBlocker
+  - type: IngestionBlocker
 
 - type: entity
   parent: CP14ClothingMaskBase
@@ -36,6 +37,7 @@
   - type: Clothing
     sprite: _CP14/Clothing/Masks/steel_mask.rsi
   - type: IdentityBlocker
+  - type: IngestionBlocker
   - type: Armor
     modifiers:
       coefficients:
