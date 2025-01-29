@@ -4,12 +4,12 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client._Stalker.Discord;
+namespace Content.Client._CP14.Discord;
 [GenerateTypedNameReferences]
 public sealed partial class DiscordAuthGui : Control
 {
     [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
-    private const string DiscordLink = "https://discord.com/invite/Y6fdHySWBD";
+    private const string DiscordLink = "https://discord.com/invite/Sud2DMfhCC"; //TODO: Unhardcode
 
     public DiscordAuthGui()
     {

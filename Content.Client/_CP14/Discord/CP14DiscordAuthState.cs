@@ -1,4 +1,5 @@
 using System.Threading;
+using Content.Shared.Discord;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Network;
@@ -19,10 +20,12 @@ public sealed class DiscordAuthState : State
         _gui = new DiscordAuthGui();
         _userInterfaceManager.StateRoot.AddChild(_gui);
 
-        Timer.SpawnRepeating(TimeSpan.FromSeconds(5), () =>
-        {
-            _netManager.ClientSendMessage(new MsgDiscordAuthCheck());
-        }, _checkTimerCancel.Token);
+        Timer.SpawnRepeating(TimeSpan.FromSeconds(5),
+            () =>
+            {
+                _netManager.ClientSendMessage(new MsgDiscordAuthCheck());
+            },
+            _checkTimerCancel.Token);
     }
 
     protected override void Shutdown()

@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared._CP14.Discord;
@@ -42,7 +43,7 @@ public sealed class DiscordAuthManager
 
     private async void OnAuthCheck(MsgDiscordAuthCheck msg)
     {
-        var verified = await IsVerified(msg.MsgChannel.UserName);
+        var verified = await IsVerified(msg.MsgChannel.UserId);
         if (!verified)
             return;
 
@@ -63,7 +64,7 @@ public sealed class DiscordAuthManager
 
         if (args.NewStatus == SessionStatus.Connected)
         {
-            var verified = await IsVerified(args.Session.Name);
+            var verified = await IsVerified(args.Session.UserId);
             if (verified)
             {
                 PlayerVerified?.Invoke(this, args.Session);
@@ -75,12 +76,17 @@ public sealed class DiscordAuthManager
         }
     }
 
-    public async Task<bool> IsVerified(string ckey, CancellationToken cancel = default)
+    public async Task<bool> IsVerified(NetUserId userId, CancellationToken cancel = default)
     {
-        _sawmill.Debug($"Player {ckey} check Discord verification");
+        _sawmill.Debug($"Player {userId} check Discord verification");
 
-        var requestUrl = $"{_apiUrl}?ckey={ckey}&api={_apiKey}";
-        var response = await _httpClient.GetAsync(requestUrl, cancel);
+        var requestUrl = $"{_apiUrl}?method=ss14&id={userId}";
+        var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
+
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+
+        var response = await _httpClient.SendAsync(request, cancel);
+
         _sawmill.Debug($"{await response.Content.ReadAsStringAsync(cancel)}");
         _sawmill.Debug($"{(int) response.StatusCode}");
         return response.StatusCode == HttpStatusCode.OK;
