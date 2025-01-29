@@ -1,5 +1,6 @@
 - type: entity
-  parent: 
+  parent:
+  - CP14MobDamageable
   - BaseSimpleMob
   - MobFlammable
   - MobCombat
