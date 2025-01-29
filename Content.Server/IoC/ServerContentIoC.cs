@@ -1,3 +1,6 @@
+using Content.Server._CP14.Discord;
+using Content.Server._CP14.JoinQueue;
+using Content.Server._CP14.Sponsors;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -36,6 +39,11 @@ namespace Content.Server.IoC
     {
         public static void Register()
         {
+            //CP14
+            IoCManager.Register<DiscordAuthManager>();
+            IoCManager.Register<JoinQueueManager>();
+            IoCManager.Register<SponsorsManager>();
+            //CP14 end
             IoCManager.Register<IChatManager, ChatManager>();
             IoCManager.Register<ISharedChatManager, ChatManager>();
             IoCManager.Register<IChatSanitizationManager, ChatSanitizationManager>();
