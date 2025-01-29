@@ -70,6 +70,7 @@
   id: XenoTurret
   tiers:
     - 1
+  generationWeight: 0.1
   categories:
     Danger: 0.3
   layers:
