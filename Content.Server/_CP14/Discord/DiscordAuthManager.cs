@@ -1,6 +1,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared._CP14.Discord;
@@ -10,6 +11,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server._CP14.Discord;
 
@@ -39,6 +41,12 @@ public sealed class DiscordAuthManager
         _netMgr.RegisterNetMessage<MsgDiscordAuthCheck>(OnAuthCheck);
 
         _playerMgr.PlayerStatusChanged += OnPlayerStatusChanged;
+        PlayerVerified += OnPlayerVerified;
+    }
+
+    private void OnPlayerVerified(object? obj, ICommonSession session)
+    {
+        Timer.Spawn(0, () => _playerMgr.JoinGame(session));
     }
 
     private async void OnAuthCheck(MsgDiscordAuthCheck msg)
@@ -81,6 +89,7 @@ public sealed class DiscordAuthManager
         _sawmill.Debug($"Player {userId} check Discord verification");
 
         var requestUrl = $"{_apiUrl}/api/uuid?method=ss14&id={userId}";
+        _sawmill.Debug($"Auth request url:{requestUrl}");
         var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
 
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
@@ -90,5 +99,32 @@ public sealed class DiscordAuthManager
         _sawmill.Debug($"{await response.Content.ReadAsStringAsync(cancel)}");
         _sawmill.Debug($"{(int) response.StatusCode}");
         return response.StatusCode == HttpStatusCode.OK;
+    }
+
+    public async Task<string?> GenerateLink(NetUserId userId, CancellationToken cancel = default)
+    {
+        _sawmill.Debug($"Generating link for {userId}");
+        var requestUrl = $"{_apiUrl}/link?userid={userId}&api_token={_apiKey}";
+
+        // try catch block to catch HttpRequestExceptions due to remote service unavailability
+        try
+        {
+            var response = await _httpClient.GetAsync(requestUrl, cancel);
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var link = await response.Content.ReadFromJsonAsync<DiscordLinkResponse>(cancel);
+            return link!.Link;
+        }
+        catch (HttpRequestException)
+        {
+            _sawmill.Error("Remote auth service is unreachable. Check if its online!");
+            return null;
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
+            return null;
+        }
     }
 }
