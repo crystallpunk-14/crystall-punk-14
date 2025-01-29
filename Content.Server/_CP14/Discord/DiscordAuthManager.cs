@@ -80,7 +80,7 @@ public sealed class DiscordAuthManager
     {
         _sawmill.Debug($"Player {userId} check Discord verification");
 
-        var requestUrl = $"{_apiUrl}?method=ss14&id={userId}";
+        var requestUrl = $"{_apiUrl}/api/uuid?method=ss14&id={userId}";
         var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
 
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
