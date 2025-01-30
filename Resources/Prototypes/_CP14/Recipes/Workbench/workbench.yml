@@ -2,114 +2,160 @@
   id: CP14Bucket
   tag: CP14RecipeWorkbench
   craftTime: 2
-  entities:
-    CP14Rope: 1
-  stacks:
-    CP14WoodenPlanks: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14Rope
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14Bucket
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14WoodenBeerMug
   tag: CP14RecipeWorkbench
   craftTime: 3
-  stacks:
-    CP14WoodenPlanks: 2
-    CP14Nail: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 2
+  - !type:StackResource
+    stack: CP14Nail
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14WoodenBeerMug
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14Plate
   tag: CP14RecipeWorkbench
   craftTime: 3
-  stacks:
-    CP14WoodenPlanks: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14Plate
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14BaseMop
   tag: CP14RecipeWorkbench
   craftTime: 3
-  stacks:
-    CP14WoodenPlanks: 2
-    CP14Cloth: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 2
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14BaseMop
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14Torch
   tag: CP14RecipeWorkbench
   craftTime: 4
-  stacks:
-    CP14WoodenPlanks: 3
-    CP14Cloth: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 3
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
   result: CP14Torch
 
 - type: CP14Recipe
   id: CP14Lighter
   tag: CP14RecipeWorkbench
   craftTime: 4
-  stacks:
-    CP14Stone: 1
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Stone
+    count: 2
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
   result: CP14Lighter
 
 - type: CP14Recipe
   id: CP14ModularGripWooden
   tag: CP14RecipeWorkbench
   craftTime: 2
-  stacks:
-    CP14WoodenPlanks: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14ModularGripWooden
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripWoodenLong
   tag: CP14RecipeWorkbench
   craftTime: 2
-  stacks:
-    CP14WoodenPlanks: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14ModularGripWoodenLong
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripLucens
   tag: CP14RecipeWorkbench
   craftTime: 2
-  stacks:
-    CP14LucensWoodenPlanks: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14LucensWoodenPlanks
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14ModularGripLucens
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14ModularGripLucensLong
   tag: CP14RecipeWorkbench
   craftTime: 2
-  stacks:
-    CP14LucensWoodenPlanks: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14LucensWoodenPlanks
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14ModularGripLucensLong
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14Bow
   tag: CP14RecipeWorkbench
   craftTime: 2
-  entities:
-    CP14String: 1
-  stacks:
-    CP14WoodenPlanks: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 4
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14BowCombat
-  knowledgeRequired: WoodWork
 
 - type: CP14Recipe
   id: CP14Arrow
   tag: CP14RecipeWorkbench
   craftTime: 3
-  stacks:
-    CP14WoodenPlanks: 1
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 1
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: WoodWork
   result: CP14Arrow
   resultCount: 4
-  knowledgeRequired: WoodWork

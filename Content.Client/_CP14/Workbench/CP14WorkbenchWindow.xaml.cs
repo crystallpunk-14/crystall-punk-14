@@ -74,7 +74,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
             if (entry.Craftable)
             {
-                var control = new CP14WorkbenchRequirementControl(entry);
+                var control = new CP14WorkbenchRecipeControl(entry);
                 control.OnSelect += RecipeSelect;
                 CraftsContainer.AddChild(control);
             }
@@ -84,7 +84,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         foreach (var entry in uncraftableList)
         {
-            var control = new CP14WorkbenchRequirementControl(entry);
+            var control = new CP14WorkbenchRecipeControl(entry);
             control.OnSelect += RecipeSelect;
             CraftsContainer.AddChild(control);
         }
@@ -119,14 +119,10 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         ItemDescription.Text = result.Description;
 
         ItemRequirements.RemoveAllChildren();
-        foreach (var (entProtoId, count) in recipe.Entities)
-        {
-            ItemRequirements.AddChild(new CP14WorkbenchRecipeControl(_prototype.Index(entProtoId), count));
-        }
 
-        foreach (var (stackProtoId, count) in recipe.Stacks)
+        foreach (var requirement in recipe.Requirements)
         {
-            ItemRequirements.AddChild(new CP14WorkbenchRecipeControl(_prototype.Index(stackProtoId), count));
+            ItemRequirements.AddChild(new CP14WorkbenchRequirementControl(requirement));
         }
 
         CraftButton.Disabled = !entry.Craftable;
