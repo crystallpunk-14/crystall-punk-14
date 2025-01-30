@@ -42,7 +42,7 @@
     - BladeCopperSickle
   - type: CP14Material
     materials:
-      CP14Gold: 10
+      CP14Copper: 10
 
 - type: entity
   parent: CP14ModularBladeSickleBase
@@ -59,7 +59,7 @@
     - BladeGoldSickle
   - type: CP14Material
     materials:
-      CP14Copper: 10
+      CP14Gold: 10
 
 - type: entity
   parent: CP14ModularBladeSickleBase
