@@ -30,7 +30,7 @@
 - type: modularPart
   id: BladeIronAxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeIronAxe
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   modifiers:
   - !type:Inherit
@@ -41,7 +41,7 @@
 - type: modularPart
   id: BladeGoldAxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldAxe
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   color: "#ffaf47"
   modifiers:
@@ -53,7 +53,7 @@
 - type: modularPart
   id: BladeCopperAxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperAxe
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   color: "#bd712f"
   modifiers:
@@ -65,7 +65,7 @@
 - type: modularPart
   id: BladeMithrilAxe
   targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilAxe
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   color: "#45d2a4"
   modifiers:

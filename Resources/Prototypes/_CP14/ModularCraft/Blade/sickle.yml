@@ -25,7 +25,7 @@
 - type: modularPart
   id: BladeIronSickle
   targetSlot: Blade
-  sourcePart: CP14ModularBladeIronSickle
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   modifiers:
   - !type:Inherit
@@ -36,7 +36,7 @@
 - type: modularPart
   id: BladeGoldSickle
   targetSlot: Blade
-  sourcePart: CP14ModularBladeIronSickle
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   color: "#ffaf47"
   modifiers:
@@ -48,7 +48,7 @@
 - type: modularPart
   id: BladeCopperSickle
   targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperSickle
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   color: "#bd712f"
   modifiers:
@@ -60,7 +60,7 @@
 - type: modularPart
   id: BladeMithrilSickle
   targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilSickle
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   color: "#45d2a4"
   modifiers:
