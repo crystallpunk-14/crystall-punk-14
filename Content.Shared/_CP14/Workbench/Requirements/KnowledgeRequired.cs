@@ -43,6 +43,6 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
     {
-        return new SpriteSpecifier.Texture(new("/Textures/Interface/hammer_scaled.svg.192dpi.png"));
+        return new SpriteSpecifier.Texture(new("/Textures/Interface/students-cap.svg.192dpi.png"));
     }
 }

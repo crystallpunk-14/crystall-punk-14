@@ -2,37 +2,49 @@
   id: CP14CopperBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
-    CP14OreCopper: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14OreCopper
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallMelting
   result: CP14CopperBar1
-  knowledgeRequired: MetallMelting
 
 - type: CP14Recipe
   id: CP14IronBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
-    CP14OreIron: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14OreIron
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallMelting
   result: CP14IronBar1
-  knowledgeRequired: MetallMelting
 
 - type: CP14Recipe
   id: CP14GoldBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
-    CP14OreGold: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14OreGold    
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallMelting
   result: CP14GoldBar1
-  knowledgeRequired: MetallMelting
 
 - type: CP14Recipe
   id: CP14MithrilBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
-    CP14OreMithril: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14OreMithril
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallMelting
   result: CP14MithrilBar1
-  knowledgeRequired: MetallMelting
 
 #- type: CP14Recipe
 #  id: CP14GlassSheet1
@@ -47,46 +59,65 @@
   id: CP14GlassSheetShard1
   tag: CP14RecipeMeltingFurnace
   craftTime: 2
-  entities:
-    CP14GlassShard: 3
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14GlassShard
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
   result: CP14GlassSheet1
-  knowledgeRequired: Glasswork
 
 - type: CP14Recipe
   id: CP14VialTiny
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
-  stacks:
-    CP14GlassSheet: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
   result: CP14VialTiny
-  knowledgeRequired: Glasswork
 
 - type: CP14Recipe
   id: CP14VialTinyReinforced
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
-  stacks:
-    CP14CopperBar: 1
-    CP14GlassSheet: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
   result: CP14VialTinyReinforced
-  knowledgeRequired: Glasswork
 
 - type: CP14Recipe
   id: CP14VialSmall
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
-  stacks:
-    CP14GlassSheet: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
   result: CP14VialSmall
-  knowledgeRequired: Glasswork
 
 - type: CP14Recipe
   id: CP14VialSmallReinforced
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
-  stacks:
-    CP14CopperBar: 1
-    CP14GlassSheet: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
   result: CP14VialSmallReinforced
-  knowledgeRequired: Glasswork
   

@@ -9,8 +9,6 @@
   - !type:ProtoIdResource
     protoId: CP14Rope
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14Bucket
 
 - type: CP14Recipe
@@ -24,8 +22,6 @@
   - !type:StackResource
     stack: CP14Nail
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14WoodenBeerMug
 
 - type: CP14Recipe
@@ -36,8 +32,6 @@
   - !type:StackResource
     stack: CP14WoodenPlanks
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14Plate
 
 - type: CP14Recipe
@@ -51,8 +45,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14BaseMop
 
 - type: CP14Recipe
@@ -89,8 +81,6 @@
   - !type:StackResource
     stack: CP14WoodenPlanks
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14ModularGripWooden
 
 - type: CP14Recipe
@@ -101,8 +91,6 @@
   - !type:StackResource
     stack: CP14WoodenPlanks
     count: 4
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14ModularGripWoodenLong
 
 - type: CP14Recipe
@@ -113,8 +101,6 @@
   - !type:StackResource
     stack: CP14LucensWoodenPlanks
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14ModularGripLucens
 
 - type: CP14Recipe
@@ -125,8 +111,6 @@
   - !type:StackResource
     stack: CP14LucensWoodenPlanks
     count: 4
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14ModularGripLucensLong
 
 - type: CP14Recipe
@@ -140,8 +124,6 @@
   - !type:ProtoIdResource
     protoId: CP14String
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14BowCombat
 
 - type: CP14Recipe
@@ -155,7 +137,5 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: WoodWork
   result: CP14Arrow
   resultCount: 4

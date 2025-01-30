@@ -12,7 +12,6 @@
   - !type:KnowledgeRequired
     knowledge: MetallForging
   result: CP14BaseShield
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseCrowbar
