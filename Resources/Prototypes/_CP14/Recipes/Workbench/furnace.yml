@@ -3,9 +3,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
-  - !type:StackResource
-    stack: CP14OreCopper
-    count: 4
+  - !type:MaterialResource
+    material: CP14Copper
+    count: 10
   - !type:KnowledgeRequired
     knowledge: MetallMelting
   result: CP14CopperBar1
@@ -15,9 +15,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
-  - !type:StackResource
-    stack: CP14OreIron
-    count: 4
+  - !type:MaterialResource
+    material: CP14Iron
+    count: 10
   - !type:KnowledgeRequired
     knowledge: MetallMelting
   result: CP14IronBar1
@@ -27,9 +27,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
-  - !type:StackResource
-    stack: CP14OreGold    
-    count: 4
+  - !type:MaterialResource
+    material: CP14Gold
+    count: 10
   - !type:KnowledgeRequired
     knowledge: MetallMelting
   result: CP14GoldBar1
@@ -39,9 +39,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
-  - !type:StackResource
-    stack: CP14OreMithril
-    count: 4
+  - !type:MaterialResource
+    material: CP14Mithril
+    count: 10
   - !type:KnowledgeRequired
     knowledge: MetallMelting
   result: CP14MithrilBar1

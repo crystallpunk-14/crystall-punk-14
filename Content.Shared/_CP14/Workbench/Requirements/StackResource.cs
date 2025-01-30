@@ -25,13 +25,13 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         var count = 0;
         foreach (var ent in placedEntities)
         {
-            if (entManager.TryGetComponent<StackComponent>(ent, out var stack))
-            {
-                if (stack.StackTypeId != Stack)
-                    continue;
+            if (!entManager.TryGetComponent<StackComponent>(ent, out var stack))
+                continue;
 
-                count += stack.Count;
-            }
+            if (stack.StackTypeId != Stack)
+                continue;
+
+            count += stack.Count;
         }
 
         if (count < Count)
