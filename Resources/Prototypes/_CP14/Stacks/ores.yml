@@ -1,0 +1,27 @@
+- type: stack
+  id: CP14OreCopper
+  name: cp14-stack-copper-ore
+  spawn: CP14OreCopper1
+  icon: { sprite: _CP14/Objects/Materials/copper_ore.rsi, state: ore3 }
+  maxCount: 10
+
+- type: stack
+  id: CP14OreIron
+  name: cp14-stack-iron-ore
+  spawn: CP14OreIron1
+  icon: { sprite: _CP14/Objects/Materials/iron_ore.rsi, state: ore3 }
+  maxCount: 10
+
+- type: stack
+  id: CP14OreGold
+  name: cp14-stack-gold-ore
+  spawn: CP14OreGold1
+  icon: { sprite: _CP14/Objects/Materials/gold_ore.rsi, state: ore3 }
+  maxCount: 10
+
+- type: stack
+  id: CP14OreMithril
+  name: cp14-stack-mithril-ore
+  spawn: CP14OreMithril1
+  icon: { sprite: _CP14/Objects/Materials/mithril_ore.rsi, state: ore3 }
+  maxCount: 10
