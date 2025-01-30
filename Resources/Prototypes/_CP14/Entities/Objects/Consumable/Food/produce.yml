@@ -34,6 +34,9 @@
     count: 4
     sliceTime: 1.5
     slice: CP14FoodCabbageSlice
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodCabbageSlice
@@ -106,6 +109,9 @@
     count: 5
     sliceTime: 2
     slice: CP14FoodPumpkinSlice
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodPumpkinSlice
@@ -176,6 +182,9 @@
           Quantity: 2
   - type: CP14Seed
     plantProto: CP14PlantPotato #TODO sliceable potato
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodCucumber
@@ -212,6 +221,9 @@
           Quantity: 2
         - ReagentId: Water
           Quantity: 3
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodTomatoes
@@ -277,6 +289,9 @@
     damage:
       types:
         Blunt: 1
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodTomatoesSlice
@@ -343,6 +358,9 @@
     count: 4
     sliceTime: 1.5
     slice: CP14FoodAppleSlice
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodAppleSlice
