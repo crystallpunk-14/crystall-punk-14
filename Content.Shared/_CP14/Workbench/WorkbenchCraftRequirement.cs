@@ -4,7 +4,6 @@
  */
 
 using JetBrains.Annotations;
-using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -15,12 +14,8 @@ namespace Content.Shared._CP14.Workbench;
 public abstract partial class CP14WorkbenchCraftRequirement
 {
     /// <summary>
-    ///
+    /// Here a check is made that the recipe as a whole can be fulfilled at the current moment. Do not add anything that affects gameplay here, and only perform checks here.
     /// </summary>
-    /// <param name="entManager"></param>
-    /// <param name="protoManager"></param>
-    /// <param name="placedEntities"></param>
-    /// <param name="user"></param>
     /// <returns></returns>
     public abstract bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
@@ -28,19 +23,24 @@ public abstract partial class CP14WorkbenchCraftRequirement
         EntityUid user);
 
     /// <summary>
-    ///
+    /// An event that is triggered after crafting. This is the place to put important things like removing items, spending stacks or other things.
     /// </summary>
-    /// <param name="entManager"></param>
-    /// <param name="placedEntities"></param>
-    /// <param name="resultEntities"></param>
-    /// <param name="user"></param>
     public abstract void PostCraft(EntityManager entManager,
         HashSet<EntityUid> placedEntities,
-        HashSet<EntityUid> resultEntities,
         EntityUid user);
 
-    //For UI representation
+    /// <summary>
+    /// This text will be displayed in the description of the craft recipe. Write something like ‘Wooden planks: х10’ here
+    /// </summary>
     public abstract string GetRequirementTitle(IPrototypeManager protoManager);
+
+    /// <summary>
+    /// You can specify an icon generated from an entity. It will support layering, colour changes and other layer options. Return null to disable.
+    /// </summary>
     public abstract EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager);
+
+    /// <summary>
+    /// You can specify the texture directly. Return null to disable.
+    /// </summary>
     public abstract SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager);
 }

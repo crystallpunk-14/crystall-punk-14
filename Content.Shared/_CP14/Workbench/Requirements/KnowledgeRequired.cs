@@ -13,14 +13,17 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
     [DataField(required: true)]
     public ProtoId<CP14KnowledgePrototype> Knowledge;
 
-    public override bool CheckRequirement(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override bool CheckRequirement(EntityManager entManager,
+        IPrototypeManager protoManager,
+        HashSet<EntityUid> placedEntities,
+        EntityUid user)
     {
         var knowledgeSystem = entManager.System<SharedCP14KnowledgeSystem>();
 
         return knowledgeSystem.HasKnowledge(user, Knowledge);
     }
 
-    public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, HashSet<EntityUid> resultEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, EntityUid user)
     {
         var knowledgeSystem = entManager.System<SharedCP14KnowledgeSystem>();
         knowledgeSystem.UseKnowledge(user, Knowledge);
@@ -28,7 +31,9 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
-        return !protoManager.TryIndex(Knowledge, out var indexedKnowledge) ? "Error knowledge" : Loc.GetString(indexedKnowledge.Name);
+        return !protoManager.TryIndex(Knowledge, out var indexedKnowledge)
+            ? "Error knowledge"
+            : $"{Loc.GetString("cp14-knowledge")}: {Loc.GetString(indexedKnowledge.Name)}";
     }
 
     public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
@@ -38,6 +43,6 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
     {
-        return null;
+        return new SpriteSpecifier.Texture(new("/Textures/Interface/hammer_scaled.svg.192dpi.png"));
     }
 }

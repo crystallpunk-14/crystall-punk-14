@@ -96,7 +96,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
         foreach (var req in recipe.Requirements)
         {
-            req.PostCraft(EntityManager, placedEntities, resultEntities, args.User);
+            req.PostCraft(EntityManager, placedEntities, args.User);
         }
 
         //We teleport result to workbench AFTER craft.

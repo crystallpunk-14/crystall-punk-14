@@ -42,7 +42,6 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
 
     public override void PostCraft(EntityManager entManager,
         HashSet<EntityUid> placedEntities,
-        HashSet<EntityUid> resultEntities,
         EntityUid user)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
@@ -70,9 +69,9 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(Stack, out var indexedStack))
-            return "Error";
+            return "Error stack";
 
-        return Loc.GetString(indexedStack.Name);
+        return $"{Loc.GetString(indexedStack.Name)} x{Count}";
     }
 
     public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)

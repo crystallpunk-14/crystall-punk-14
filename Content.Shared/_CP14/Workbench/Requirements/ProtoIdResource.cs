@@ -28,7 +28,6 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
 
     public override void PostCraft(EntityManager entManager,
         HashSet<EntityUid> placedEntities,
-        HashSet<EntityUid> resultEntities,
         EntityUid user)
     {
         var requiredCount = Count;
@@ -53,9 +52,9 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(ProtoId, out var indexedProto))
-            return "Error";
+            return "Error entity";
 
-        return indexedProto.Name;
+        return $"{indexedProto.Name} x{Count}";
     }
 
     public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)

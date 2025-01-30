@@ -3,8 +3,6 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
-using Content.Shared._CP14.Knowledge.Prototypes;
-using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
