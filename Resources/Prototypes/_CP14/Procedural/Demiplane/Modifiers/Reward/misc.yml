@@ -77,7 +77,6 @@
   tiers:
     - 1
     - 2
-  name: cp14-modifier-frogs
   generationWeight: 0.4
   categories:
     Reward: 0.2

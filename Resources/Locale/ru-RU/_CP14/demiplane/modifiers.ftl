@@ -16,6 +16,5 @@ cp14-modifier-dyno = доисторической фауны
 cp14-modifier-mole = хищных кротов
 cp14-modifier-rabbits = кроликов
 cp14-modifier-boars = диких кабанов
-cp14-modifier-frogs = лягушек
 cp14-modifier-chasm = бездонных пропастей
 cp14-modifier-air-lily = воздушных лилий
