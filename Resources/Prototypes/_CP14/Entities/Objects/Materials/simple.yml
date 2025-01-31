@@ -215,6 +215,14 @@
     count: 10
 
 - type: entity
+  id: CP14WoodenPlanks20
+  parent: CP14WoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
+
+- type: entity
   id: CP14LucensWoodLog
   parent: CP14WoodLog
   name: lucens log
@@ -269,6 +277,14 @@
   components:
   - type: Stack
     count: 10
+
+- type: entity
+  id: CP14LucensWoodenPlanks20
+  parent: CP14LucensWoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
 
 - type: entity
   id: CP14Nail1
