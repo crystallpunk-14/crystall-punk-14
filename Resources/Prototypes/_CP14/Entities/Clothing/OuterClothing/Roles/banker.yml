@@ -1,5 +1,7 @@
 - type: entity
-  parent: CP14ClothingOuterClothingBase
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterClothingBase
   id: CP14ClothingOuterClothingBankerWaistCoat
   name: "banker's waistcoat"
   description: Stylish waistcoat made of expensive leather. A special uniform for bank employees that makes customers feel like beggars.
