@@ -4,37 +4,41 @@
   id: CP14ModularGardeSharpCopper
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14CopperBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
   result: CP14ModularGardeSharpCopper
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSharpIron
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
   result: CP14ModularGardeSharpIron
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSharpGold
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14GoldBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
   result: CP14ModularGardeSharpGold
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSharpMithril
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14MithrilBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
   result: CP14ModularGardeSharpMithril
-  knowledgeRequired: MetallForging
 
 # Sturdy garde
 
@@ -42,34 +46,46 @@
   id: CP14ModularGardeSturdyCopper
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14CopperBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSturdyCopper
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSturdyIron
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSturdyIron
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSturdyGold
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14GoldBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSturdyGold
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ModularGardeSturdyMithril
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14MithrilBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSturdyMithril
-  knowledgeRequired: MetallForging
