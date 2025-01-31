@@ -22,9 +22,10 @@
     - bar
     - bar_2
     - bar_3
-  - type: CP14Material
-    materials:
-      CP14Copper: 10
+  - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Copper: 10
 
 - type: entity
   id: CP14CopperBar5
@@ -68,9 +69,10 @@
     - bar
     - bar_2
     - bar_3
-  - type: CP14Material
-    materials:
-      CP14Iron: 10
+  - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Iron: 10
 
 - type: entity
   id: CP14IronBar5
@@ -113,9 +115,10 @@
     - bar
     - bar_2
     - bar_3
-  - type: CP14Material
-    materials:
-      CP14Gold: 10
+  - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Gold: 10
 
 - type: entity
   id: CP14GoldBar5
@@ -157,6 +160,7 @@
     - glass
     - glass_2
     - glass_3
+  - type: Material
 
 - type: entity
   id: CP14GlassSheet5
@@ -197,9 +201,10 @@
     - bar
     - bar_2
     - bar_3
-  - type: CP14Material
-    materials:
-      CP14Mithril: 10
+  - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Mithril: 10
 
 - type: entity
   id: CP14MithrilBar5
