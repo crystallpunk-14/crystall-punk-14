@@ -1,2 +1,0 @@
-cp14-world-edge-pre-remove-message = [color=red]CAUTION![/color] You are leaving the game zone! If you do not return within [color=red]{$second}[/color] seconds, you will be permanently removed from the round!
-cp14-world-edge-cancel-removing-message = The exit round has been canceled.

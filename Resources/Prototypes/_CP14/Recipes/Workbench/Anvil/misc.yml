@@ -98,7 +98,7 @@
   result: CP14ClothingOuterClothingCuirassLeg
 
 - type: CP14Recipe
-  id: CP14Nail10
+  id: CP14Nail20
   tag: CP14RecipeAnvil
   craftTime: 4
   requirements:
@@ -107,7 +107,7 @@
     count: 2
   - !type:KnowledgeRequired
     knowledge: MetallForging
-  result: CP14Nail10
+  result: CP14Nail20
 
 - type: CP14Recipe
   id: CP14CrystalLampBlueEmpty
