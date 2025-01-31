@@ -73,6 +73,22 @@
     prototypes:
     - CP14MobBoar
 
+- type: entity
+  name: frog spawner
+  id: CP14SpawnMobFrog
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/frog.rsi
+      state: frog
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobFrog
+
 # Dino
 
 - type: entity

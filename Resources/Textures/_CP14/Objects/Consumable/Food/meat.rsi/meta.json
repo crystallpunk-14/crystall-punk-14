@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "All right reserved",
-    "copyright": "sheepmeat and sheepmeat_cooked By omsoyk, sheepmeat_slice and sheepmeat_slice_cooked by TheShuEd, cutlet and cutlet_cooked and meat_slice by Artista.rar",
+    "copyright": "sheepmeat and sheepmeat_cooked By omsoyk, sheepmeat_slice and sheepmeat_slice_cooked by TheShuEd, cutlet and cutlet_cooked and meat_slice by Artista.rar, frog_leg by Max Gab",
     "size": {
         "x": 32,
         "y": 32
@@ -39,6 +39,9 @@
         },
         {
             "name": "sheepmeat_slice3_cooked"
+        },
+        {
+            "name": "frog_leg"
         }
     ]
 }
