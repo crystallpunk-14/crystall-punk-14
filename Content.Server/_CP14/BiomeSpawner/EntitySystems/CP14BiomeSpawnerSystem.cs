@@ -31,12 +31,12 @@ public sealed class CP14BiomeSpawnerSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<CP14BiomeSpawnerComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<RoundEndMessageEvent>(OnRoundEnd);
+        SubscribeLocalEvent<Shared.GameTicking.RoundEndMessageEvent>(OnRoundEnd);
 
         UpdateSeed();
     }
 
-    private void OnRoundEnd(RoundEndMessageEvent ev)
+    private void OnRoundEnd(Shared.GameTicking.RoundEndMessageEvent ev)
     {
         UpdateSeed();
     }
