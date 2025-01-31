@@ -9,7 +9,6 @@
   - !type:KnowledgeRequired
     knowledge: MetallMelting
   result: CP14CopperBar1
-  resultCount: 3
 
 - type: CP14Recipe
   id: CP14IronBar1
