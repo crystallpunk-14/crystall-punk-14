@@ -46,3 +46,10 @@ cp14-loadout-banker-outer = Banker's waistcoat
 cp14-loadout-bank-shirt = Bank Employee shirt
 cp14-loadout-bank-pants = Bank Employee pants
 cp14-loadout-bank-shoes = Bank Employee shoes
+
+# Guildmaster
+
+cp14-loadout-guildmaster-cloak = Guildmaster cloak
+cp14-loadout-guildmaster-shirt = Guildmaster shirt
+cp14-loadout-guildmaster-pants = Guildmaster pants
+cp14-loadout-guildmaster-shoes = Guildmaster shoes

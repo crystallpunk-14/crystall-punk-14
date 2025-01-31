@@ -275,8 +275,6 @@
   - CP14ClothingShirtCottonWhiteBrownVest2
   - CP14ClothingShirtCottonWhiteBrownVest3
   - CP14ClothingShirtCottonWhiteCollar
-  - CP14ClothingShirtCottonWhiteGreenVest
-  - CP14ClothingShirtCottonWhiteGreenVest2
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
 
@@ -349,16 +347,6 @@
   id: CP14ClothingShirtCottonWhiteCollar
   equipment:
     shirt: CP14ClothingShirtCottonWhiteCollar
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteGreenVest
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteGreenVest
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteGreenVest2
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteGreenVest2
 
 - type: loadout
   id: CP14ClothingShirtCottonYellow

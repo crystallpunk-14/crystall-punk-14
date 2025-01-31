@@ -116,6 +116,18 @@
   - CP14GeneralTrinkets
 
 - type: roleLoadout
+  id: JobCP14Guildmaster
+  groups:
+  - CP14GeneralSpells
+  - CP14GeneralEyes
+  - CP14GuildmasterCloak
+  - CP14GuildmasterShirt
+  - CP14GuildmasterPants
+  - CP14GuildmasterShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+
+- type: roleLoadout
   id: JobCP14Banker
   groups:
   - CP14GeneralSpells

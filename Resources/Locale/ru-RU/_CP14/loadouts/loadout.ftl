@@ -48,3 +48,10 @@ cp14-loadout-banker-outer = Жилет банкира
 cp14-loadout-bank-shirt = Рубашка работника банка
 cp14-loadout-bank-pants = Штаны работника банка
 cp14-loadout-bank-shoes = Ботинки работника банка
+
+# Guildmaster
+
+cp14-loadout-guildmaster-cloak = Накидка гильдмастера
+cp14-loadout-guildmaster-shirt = Рубашка гильдмастера
+cp14-loadout-guildmaster-pants = Штаны гильдмастера
+cp14-loadout-guildmaster-shoes = Ботинки гильдмастера
