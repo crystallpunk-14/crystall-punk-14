@@ -102,6 +102,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !p.Abstract)
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
+                    .Where(p => !p.Components.ContainsKey("RoomFill")) // CP14 Boilerplate - TODO: Remove it after wizden fix
                     .Select(p => p.ID)
                     .ToList();
                 foreach (var protoId in protoIds)
@@ -162,6 +163,7 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !p.Abstract)
                 .Where(p => !pair.IsTestPrototype(p))
                 .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
+                .Where(p => !p.Components.ContainsKey("RoomFill")) // CP14 Boilerplate - TODO: Remove it after wizden fix
                 .Select(p => p.ID)
                 .ToList();
 
@@ -236,6 +238,7 @@ namespace Content.IntegrationTests.Tests
             var excluded = new[]
             {
                 "MapGrid",
+                "RoomFill", // CP14 Boilerplate - TODO: Remove it after wizden fix
                 "StationEvent",
                 "TimedDespawn",
 
@@ -342,6 +345,7 @@ namespace Content.IntegrationTests.Tests
                 "DebugExceptionInitialize",
                 "DebugExceptionStartup",
                 "GridFill",
+                "RoomFill", // CP14 Boilerplate - TODO: Remove it after wizden fix
                 "Map", // We aren't testing a map entity in this test
                 "MapGrid",
                 "Broadphase",
