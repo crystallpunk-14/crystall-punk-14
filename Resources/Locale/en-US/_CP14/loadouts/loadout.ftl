@@ -42,6 +42,7 @@ cp14-loadout-guard-spells = Guard's spells
 cp14-loadout-bank-head = Bank employee hat
 cp14-loadout-commandant-head = Commandant's hat
 cp14-loadout-commandant-cloak = Commandant's cloak
+cp14-loadout-banker-outer = Banker's waistcoat
 cp14-loadout-bank-shirt = Bank Employee shirt
 cp14-loadout-bank-pants = Bank Employee pants
 cp14-loadout-bank-shoes = Bank Employee shoes

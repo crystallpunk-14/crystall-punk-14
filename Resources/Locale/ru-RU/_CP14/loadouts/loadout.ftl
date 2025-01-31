@@ -44,6 +44,7 @@ cp14-loadout-guard-spells = Заклинания стражи
 cp14-loadout-bank-head = Шляпа работника банка
 cp14-loadout-commandant-head = Шляпа коменданта
 cp14-loadout-commandant-cloak = Накидка коменданта
+cp14-loadout-banker-outer = Жилет банкира
 cp14-loadout-bank-shirt = Рубашка работника банка
 cp14-loadout-bank-pants = Штаны работника банка
 cp14-loadout-bank-shoes = Ботинки работника банка

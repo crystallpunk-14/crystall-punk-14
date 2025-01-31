@@ -37,6 +37,26 @@
   equipment:
     cloak: CP14ClothingCloakCommandantJacket
 
+# OuterClothing
+
+- type: loadoutGroup
+  id: CP14BankOuterClothing
+  name: cp14-loadout-banker-outer
+  minLimit: 0
+  loadouts:
+  - CP14ClothingOuterClothingBankerWaistCoat
+  - CP14ClothingOuterClothingBankerWaistCoatOpen
+
+- type: loadout
+  id: CP14ClothingOuterClothingBankerWaistCoat
+  equipment:
+    outerClothing: CP14ClothingOuterClothingBankerWaistCoat
+
+- type: loadout
+  id: CP14ClothingOuterClothingBankerWaistCoatOpen
+  equipment:
+    outerClothing: CP14ClothingOuterClothingBankerWaistCoatOpen
+
 # Shirt
 
 - type: loadoutGroup
