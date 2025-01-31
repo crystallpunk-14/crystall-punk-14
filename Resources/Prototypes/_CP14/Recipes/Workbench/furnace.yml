@@ -2,7 +2,7 @@
   id: CP14CopperBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
+  entities:
     CP14OreCopper: 4
   result: CP14CopperBar1
   knowledgeRequired: MetallMelting
@@ -11,7 +11,7 @@
   id: CP14IronBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
+  entities:
     CP14OreIron: 4
   result: CP14IronBar1
   knowledgeRequired: MetallMelting
@@ -20,7 +20,7 @@
   id: CP14GoldBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
+  entities:
     CP14OreGold: 4
   result: CP14GoldBar1
   knowledgeRequired: MetallMelting
@@ -29,19 +29,19 @@
   id: CP14MithrilBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  stacks:
+  entities:
     CP14OreMithril: 4
   result: CP14MithrilBar1
   knowledgeRequired: MetallMelting
 
-#- type: CP14Recipe
-#  id: CP14GlassSheet1
-#  tag: CP14RecipeMeltingFurnace
-#  craftTime: 4
-#  entities:
-#    CP14QuartzShard: 1
-#  result: CP14GlassSheet1
-#  knowledgeRequired: Glasswork
+- type: CP14Recipe
+  id: CP14GlassSheet1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  entities:
+    CP14QuartzShard: 1
+  result: CP14GlassSheet1
+  knowledgeRequired: Glasswork
 
 - type: CP14Recipe
   id: CP14GlassSheetShard1

@@ -1,0 +1,17 @@
+# Contains Magical or archaic resources, like slime
+
+- type: reagent
+  id: CP14ChromiumSlime
+  group: CP14Archaic
+  name: cp14-reagent-name-chromium-slime
+  desc: cp14-reagent-desc-chromium-slime
+  flavor: CP14Vomit
+  color: "#3b4872"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  slippery: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateThirst
+      - !type:ChemVomit
+        probability: 0.05

@@ -1,12 +1,12 @@
 # Idea:
-# BloodFlower is a special reagent that can yield different base reagents, depending on the type of blood it is mixed with.
+# BloodFlower is a special reagent that can react with essense to create simple solutions
 
 # Red color dye
 
 - type: reaction
   id: CP14BloodFlowerBrewing
   impact: Low
-  minTemp: 500
+  minTemp: 393
   priority: 1
   quantized: true
   conserveEnergy: false
@@ -15,7 +15,7 @@
       amount: 10
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -250
+    addTemperature: -50
   - !type:CreateEntityReactionEffect
       entity: CP14DyeRed
 
@@ -38,80 +38,98 @@
   - CP14BasicEffectDamageCold: 0.5
   - CP14BasicEffectDrunk: 0.5
 
+#  Flower brewing
+
+- type: reaction
+  id: CP14BloodFlowerBrewingRestoration
+  minTemp: 474
+  priority: 2
+  reactants:
+    CP14SaltedWater:
+      amount: 0.5
+    CP14BloodFlowerSap:
+      amount: 0.5
+  products:
+    CP14BasicEffectImpurity: 0.75
+    CP14BasicEffectBloodRestore: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -119
+
 #  Blood brewing
 
 - type: reaction
-  id: CP14BloodFlowerBrewingBloodHuman
-  minTemp: 500
+  id: CP14BloodFlowerBrewingEssenseHuman
+  minTemp: 560
   priority: 2
   reactants:
-    CP14Blood:
+    CP14Essense:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5
-    CP14GroundQuartz:
-      amount: 0.5
+    CP14AlchemistSalt:
+      amount: 0.25
   products:
-    CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectBloodRestore: 0.5
-    CP14BasicEffectHealBrute: 0.25
+    CP14BasicEffectHealBrute: 0.50
+    CP14BasicEffectBloodRestore: 0.50
+    CP14BasicEffectImpurity: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -250
+    addTemperature: -200
 
 - type: reaction
-  id: CP14BloodFlowerBrewingBloodTiefling
-  minTemp: 500
+  id: CP14BloodFlowerBrewingEssenseTiefling
+  minTemp: 620
   priority: 2
   reactants:
-    CP14BloodTiefling:
+    CP14EssenseTiefling:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5
-    CP14GroundQuartz:
-      amount: 0.5
+    CP14AlchemistSalt:
+      amount: 0.25
   products:
-    CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectBloodRestore: 0.5
-    CP14BasicEffectHealCold: 0.25
+    CP14BasicEffectHealCold: 0.75
+    CP14BasicEffectImpurity: 0.5
+    CP14BasicEffectHealHeat: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -250
+    addTemperature: -270
 
 - type: reaction
-  id: CP14BloodFlowerBrewingBloodElf
-  minTemp: 500
+  id: CP14BloodFlowerBrewingEssenseElf
+  minTemp: 560
   priority: 2
   reactants:
-    CP14BloodElf:
+    CP14EssenseElf:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5
-    CP14GroundQuartz:
-      amount: 0.5
+    CP14AlchemistSalt:
+      amount: 0.25
   products:
-    CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectBloodRestore: 0.5
-    CP14BasicEffectHealPoison: 0.25
+    CP14BasicEffectImpurity: 0.75
+    CP14BasicEffectHealPoison: 0.5
+    CP14BasicEffectHealMana: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -250
+    addTemperature: -200
 
 - type: reaction
-  id: CP14BloodFlowerBrewingBloodGoblin
-  minTemp: 500
+  id: CP14BloodFlowerBrewingEssenseGoblin
+  minTemp: 520
   priority: 2
   reactants:
-    CP14BloodGoblin:
+    CP14EssenseGoblin:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5
-    CP14GroundQuartz:
-      amount: 0.5
+    CP14AlchemistSalt:
+      amount: 0.25
   products:
-    CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectRainbow: 0.25
-    CP14BasicEffectVomit: 0.25
+    CP14BasicEffectDamagePoison: 0.75
+    CP14BasicEffectImpurity: 0.5
+    CP14BasicEffectSpeedUp: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -250
+    addTemperature: -160
