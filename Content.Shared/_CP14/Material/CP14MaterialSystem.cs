@@ -21,7 +21,7 @@ public sealed partial class CP14MaterialSystem : EntitySystem
 
         var sb = new StringBuilder();
 
-        sb.Append("Состоит из материалов:\n");
+        sb.Append($"{Loc.GetString("cp14-material-examine")}\n");
         foreach (var material in ent.Comp.Materials)
         {
             if (!_proto.TryIndex(material.Key, out var indexedMaterial))
