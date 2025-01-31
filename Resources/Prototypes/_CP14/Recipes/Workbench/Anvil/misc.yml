@@ -72,12 +72,12 @@
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe
-  id: CP14Nail10
+  id: CP14Nail20
   tag: CP14RecipeAnvil
   craftTime: 4
   stacks:
-    CP14IronBar: 2
-  result: CP14Nail10
+    CP14IronBar: 1
+  result: CP14Nail20
   knowledgeRequired: MetallForging
 
 - type: CP14Recipe

@@ -331,12 +331,20 @@
     launchForwardsMultiplier: 0
 
 - type: entity
-  id: CP14Nail10
+  id: CP14Nail20
   parent: CP14Nail1
-  suffix: 10
+  suffix: 20
   components:
   - type: Stack
-    count: 10
+    count: 20
+
+- type: entity
+  id: CP14Nail50
+  parent: CP14Nail1
+  suffix: 50
+  components:
+  - type: Stack
+    count: 50
 
 - type: entity
   id: CP14FloraMaterial1
