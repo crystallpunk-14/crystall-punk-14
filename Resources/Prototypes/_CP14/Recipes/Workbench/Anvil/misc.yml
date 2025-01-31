@@ -2,158 +2,203 @@
   id: CP14BaseShield
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14WoodenPlanks: 2
-    CP14IronBar: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 2
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14BaseShield
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseCrowbar
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14BaseCrowbar
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseWrench
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14BaseWrench
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14PlatePie
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14PlatePie
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingOuterClothingCuirass
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 5
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 5
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ClothingOuterClothingCuirass
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingOuterClothingInfantryCuirass
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 6
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ClothingOuterClothingInfantryCuirass
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingOuterClothingCuirassLoincloth
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 6
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ClothingOuterClothingCuirassLoincloth
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingOuterClothingCuirassLeg
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 7
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 7
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ClothingOuterClothingCuirassLeg
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14Nail10
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14Nail10
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14CrystalLampBlueEmpty
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14CopperBar: 2
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14CrystalLampBlueEmpty
-  knowledgeRequired: MetallForging
-
-- type: CP14Recipe
-  id: CP14CrystalLampOrangeEmpty
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  stacks:
-    CP14CopperBar: 2
-    CP14IronBar: 1
-  result: CP14CrystalLampOrangeEmpty
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14Scissors
   tag: CP14RecipeAnvil
   craftTime: 2
-  stacks:
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14Scissors
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingOuterClothingCopperArmor
   tag: CP14RecipeAnvil
   craftTime: 2
-  stacks:
-    CP14CopperBar: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 6
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ClothingOuterClothingCopperArmor
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14Crossbolt
   tag: CP14RecipeAnvil
   craftTime: 1
-  stacks:
-    CP14CopperBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14Crossbolt
   resultCount: 3
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseLockpick
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14BaseLockpick
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14ClothingHeadCapellina
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14IronBar: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 3
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ClothingHeadCapellina
-  knowledgeRequired: MetallForging
 
 - type: CP14Recipe
   id: CP14BaseLightCrossbow
   tag: CP14RecipeAnvil
   craftTime: 4
-  stacks:
-    CP14CopperBar: 1
-    CP14IronBar: 3
-  entities:
-    CP14String: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14BaseLightCrossbow
-  knowledgeRequired: MetallForging

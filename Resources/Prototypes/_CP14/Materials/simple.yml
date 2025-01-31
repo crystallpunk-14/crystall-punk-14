@@ -48,7 +48,7 @@
   stackEntity: CP14CopperBar1
   name: cp14-material-copper
   unit: materials-unit-bar
-  icon: { sprite: _CP14/Objects/Materials/copper_bar.rsi, state: bar_2 }
+  icon: { sprite: _CP14/Objects/Materials/copper_scrap.rsi, state: scrap }
   color: "#9a5e22"
   price: 0
 
@@ -57,7 +57,7 @@
   stackEntity: CP14IronBar1
   name: cp14-material-iron
   unit: materials-unit-bar
-  icon: { sprite: _CP14/Objects/Materials/iron_bar.rsi, state: bar_2 }
+  icon: { sprite: _CP14/Objects/Materials/iron_scrap.rsi, state: scrap_2 }
   color: "#9093a1"
   price: 0
 
@@ -66,7 +66,7 @@
   stackEntity: CP14GoldBar1
   name: cp14-material-gold
   unit: materials-unit-bar
-  icon: { sprite: _CP14/Objects/Materials/gold_bar.rsi, state: bar_2 }
+  icon: { sprite: _CP14/Objects/Materials/gold_scrap.rsi, state: scrap_3 }
   color: "#FFD700"
   price: 0
 
@@ -75,7 +75,7 @@
   stackEntity: CP14MithrilBar1
   name: cp14-material-mithril
   unit: materials-unit-bar
-  icon: { sprite: _CP14/Objects/Materials/mithril_bar.rsi, state: bar_2 }
+  icon: { sprite: _CP14/Objects/Materials/mithril_scrap.rsi, state: scrap }
   color: "#006c83"
   price: 0
 
