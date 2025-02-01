@@ -102,8 +102,8 @@
     objectiveText: cp14-objective-no-demiplane-death-title
     objectiveDescription: cp14-objective-no-demiplane-death-desc
     objectiveSprite:
-      sprite: /Textures/_CP14/Effects/Magic/spells_icons.rsi
-      state: plant_growth
+      sprite: /Textures/_CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+      state: tool
 
 - type: weightedRandom
   id: CP14GuildmasterNoDemiplaneObjectiveGroup

@@ -2881,6 +2881,64 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+- proto: ActionToggleBlock
+  entities:
+  - uid: 13977
+    components:
+    - type: Transform
+      parent: 13336
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 13336
+  - uid: 13978
+    components:
+    - type: Transform
+      parent: 13876
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 13876
+  - uid: 13979
+    components:
+    - type: Transform
+      parent: 13335
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 13335
+  - uid: 13980
+    components:
+    - type: Transform
+      parent: 619
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 619
+  - uid: 13982
+    components:
+    - type: Transform
+      parent: 13981
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 13981
+  - uid: 13984
+    components:
+    - type: Transform
+      parent: 13983
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 13983
+  - uid: 13986
+    components:
+    - type: Transform
+      parent: 13985
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 13985
+  - uid: 13988
+    components:
+    - type: Transform
+      parent: 13987
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 13987
 - proto: CP14AlchemyFurnace
   entities:
   - uid: 936
@@ -2913,6 +2971,90 @@ entities:
     - type: ItemPlacer
       placedEntities:
       - 15363
+- proto: CP14Arrow
+  entities:
+  - uid: 13955
+    components:
+    - type: Transform
+      pos: -0.8673811,-17.455278
+      parent: 2
+  - uid: 13957
+    components:
+    - type: Transform
+      pos: -1.9140058,-15.633688
+      parent: 2
+  - uid: 13964
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13965
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13966
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13967
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13968
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13969
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13970
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13971
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13972
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13973
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13974
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13975
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
 - proto: CP14BankStorageMarker
   entities:
   - uid: 1269
@@ -3129,6 +3271,11 @@ entities:
     - type: Transform
       pos: 14.454906,-37.17427
       parent: 2
+  - uid: 13959
+    components:
+    - type: Transform
+      pos: -1.346062,-16.465773
+      parent: 2
 - proto: CP14BaseLockpick
   entities:
   - uid: 12912
@@ -3275,9 +3422,17 @@ entities:
   - uid: 619
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.3470995,-24.278017
-      parent: 2
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13980
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13980
   - uid: 7861
     components:
     - type: Transform
@@ -3317,21 +3472,101 @@ entities:
   - uid: 13335
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.7409906,-24.244284
-      parent: 2
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13979
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13979
   - uid: 13336
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.538418,-24.457928
-      parent: 2
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13977
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13977
   - uid: 13876
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.9885783,-24.457928
-      parent: 2
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13978
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13978
+  - uid: 13981
+    components:
+    - type: Transform
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13982
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13982
+  - uid: 13983
+    components:
+    - type: Transform
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13984
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13984
+  - uid: 13985
+    components:
+    - type: Transform
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13986
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13986
+  - uid: 13987
+    components:
+    - type: Transform
+      parent: 13976
+    - type: Blocking
+      blockingToggleActionEntity: 13988
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 13988
 - proto: CP14BaseTombstone
   entities:
   - uid: 461
@@ -42549,6 +42784,24 @@ entities:
       rot: 3.141592653589793 rad
       pos: 12.802945,-33.41739
       parent: 2
+  - uid: 13961
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13962
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
+  - uid: 13963
+    components:
+    - type: Transform
+      parent: 13960
+    - type: Physics
+      canCollide: False
 - proto: CP14BrassChest
   entities:
   - uid: 687
@@ -43177,6 +43430,16 @@ entities:
       parent: 2
 - proto: CP14ClothingBeltQuiver
   entities:
+  - uid: 5537
+    components:
+    - type: Transform
+      pos: -1.7395523,-16.53324
+      parent: 2
+  - uid: 5539
+    components:
+    - type: Transform
+      pos: -1.5383277,-16.33084
+      parent: 2
   - uid: 17925
     components:
     - type: Transform
@@ -43429,6 +43692,18 @@ entities:
       parent: 2
 - proto: CP14Crossbolt
   entities:
+  - uid: 2062
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.7061898,-15.397556
+      parent: 2
+  - uid: 5540
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.728699,-15.599956
+      parent: 2
   - uid: 7785
     components:
     - type: Transform
@@ -43653,6 +43928,42 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 12.32648,-37.455616
+      parent: 2
+  - uid: 13954
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.751207,-15.22889
+      parent: 2
+  - uid: 13956
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.7061898,-15.465022
+      parent: 2
+  - uid: 13958
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.773715,-15.127691
+      parent: 2
+  - uid: 13990
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.7399523,-15.296357
+      parent: 2
+  - uid: 13991
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.751207,-15.734887
+      parent: 2
+  - uid: 13992
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.751207,-15.858576
       parent: 2
 - proto: CP14CrystalElementalElectricBig
   entities:
@@ -44376,26 +44687,6 @@ entities:
     components:
     - type: Transform
       pos: -5.841518,-14.157722
-      parent: 2
-  - uid: 5537
-    components:
-    - type: Transform
-      pos: -17.584808,26.598608
-      parent: 2
-  - uid: 5539
-    components:
-    - type: Transform
-      pos: -17.325966,26.328743
-      parent: 2
-  - uid: 5540
-    components:
-    - type: Transform
-      pos: -17.618572,26.250032
-      parent: 2
-  - uid: 5541
-    components:
-    - type: Transform
-      pos: -17.348475,25.991411
       parent: 2
   - uid: 8583
     components:
@@ -47203,6 +47494,51 @@ entities:
     - type: Transform
       pos: -45.5,-74.5
       parent: 2
+  - uid: 13976
+    components:
+    - type: Transform
+      pos: -1.5,-14.5
+      parent: 2
+    - type: Storage
+      storedItems:
+        13336:
+          position: 0,0
+          _rotation: South
+        13876:
+          position: 2,0
+          _rotation: South
+        13335:
+          position: 4,0
+          _rotation: South
+        619:
+          position: 6,0
+          _rotation: South
+        13981:
+          position: 0,2
+          _rotation: South
+        13983:
+          position: 2,2
+          _rotation: South
+        13985:
+          position: 4,2
+          _rotation: South
+        13987:
+          position: 6,2
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 13336
+          - 13876
+          - 13335
+          - 619
+          - 13981
+          - 13983
+          - 13985
+          - 13987
 - proto: CP14LargeWoodenCrateFilled
   entities:
   - uid: 479
@@ -47318,11 +47654,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 22.5,19.5
-      parent: 2
-  - uid: 8806
-    components:
-    - type: Transform
-      pos: -1.5,-14.5
       parent: 2
   - uid: 12914
     components:
@@ -47644,15 +47975,15 @@ entities:
   - uid: 2075
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.2602825,-24.31175
-      parent: 2
+      parent: 8982
+    - type: Physics
+      canCollide: False
   - uid: 2124
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.091472,-24.390461
-      parent: 2
+      parent: 8982
+    - type: Physics
+      canCollide: False
   - uid: 12504
     components:
     - type: Transform
@@ -47668,8 +47999,9 @@ entities:
   - uid: 1083
     components:
     - type: Transform
-      pos: 5.7233057,-24.266773
-      parent: 2
+      parent: 8982
+    - type: Physics
+      canCollide: False
   - uid: 12065
     components:
     - type: Transform
@@ -47680,8 +48012,9 @@ entities:
   - uid: 1135
     components:
     - type: Transform
-      pos: 5.45321,-24.31175
-      parent: 2
+      parent: 8982
+    - type: Physics
+      canCollide: False
   - uid: 8874
     components:
     - type: Transform
@@ -47699,6 +48032,18 @@ entities:
     components:
     - type: Transform
       pos: 14.230516,45.45195
+      parent: 2
+  - uid: 10700
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.3688526,-17.002651
+      parent: 2
+  - uid: 13993
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.2338047,-17.339983
       parent: 2
 - proto: CP14ModularIronShovel
   entities:
@@ -47725,23 +48070,23 @@ entities:
   - uid: 617
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.6975818,-24.345484
-      parent: 2
+      parent: 8982
+    - type: Physics
+      canCollide: False
 - proto: CP14ModularIronSpear
   entities:
   - uid: 2065
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 4.9917946,-24.165573
-      parent: 2
+      parent: 8982
+    - type: Physics
+      canCollide: False
   - uid: 2151
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.0143023,-24.547882
-      parent: 2
+      parent: 8982
+    - type: Physics
+      canCollide: False
   - uid: 7860
     components:
     - type: Transform
@@ -47833,6 +48178,26 @@ entities:
     components:
     - type: Transform
       pos: -19.350714,26.635136
+      parent: 2
+  - uid: 5541
+    components:
+    - type: Transform
+      pos: -17.570698,26.43613
+      parent: 2
+  - uid: 8394
+    components:
+    - type: Transform
+      pos: -13.326466,22.911493
+      parent: 2
+  - uid: 8802
+    components:
+    - type: Transform
+      pos: -14.368698,16.498537
+      parent: 2
+  - uid: 8806
+    components:
+    - type: Transform
+      pos: -28.378479,18.575125
       parent: 2
 - proto: CP14Paper
   entities:
@@ -83006,6 +83371,47 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -12.5,-5.5
       parent: 2
+  - uid: 8982
+    components:
+    - type: Transform
+      pos: -1.5,-17.5
+      parent: 2
+    - type: Storage
+      storedItems:
+        2124:
+          position: 0,2
+          _rotation: South
+        2075:
+          position: 3,3
+          _rotation: South
+        617:
+          position: 2,3
+          _rotation: South
+        2151:
+          position: 1,2
+          _rotation: South
+        2065:
+          position: 4,2
+          _rotation: South
+        1135:
+          position: 5,3
+          _rotation: South
+        1083:
+          position: 0,4
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 2124
+          - 2075
+          - 617
+          - 2151
+          - 2065
+          - 1135
+          - 1083
   - uid: 9785
     components:
     - type: Transform
@@ -83018,6 +83424,79 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 104.5,61.5
       parent: 2
+  - uid: 13960
+    components:
+    - type: Transform
+      pos: -2.5,-14.5
+      parent: 2
+    - type: Storage
+      storedItems:
+        13961:
+          position: 0,0
+          _rotation: South
+        13962:
+          position: 2,0
+          _rotation: South
+        13963:
+          position: 4,0
+          _rotation: South
+        13972:
+          position: 2,2
+          _rotation: South
+        13971:
+          position: 1,2
+          _rotation: South
+        13964:
+          position: 0,2
+          _rotation: South
+        13965:
+          position: 0,4
+          _rotation: South
+        13966:
+          position: 1,4
+          _rotation: South
+        13967:
+          position: 2,4
+          _rotation: South
+        13968:
+          position: 3,4
+          _rotation: South
+        13969:
+          position: 4,4
+          _rotation: South
+        13970:
+          position: 5,4
+          _rotation: South
+        13973:
+          position: 3,2
+          _rotation: South
+        13974:
+          position: 4,2
+          _rotation: South
+        13975:
+          position: 5,2
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 13961
+          - 13962
+          - 13963
+          - 13965
+          - 13966
+          - 13967
+          - 13968
+          - 13969
+          - 13970
+          - 13964
+          - 13971
+          - 13972
+          - 13973
+          - 13974
+          - 13975
 - proto: CP14SmallWoodenCrateFilled
   entities:
   - uid: 451
@@ -83242,16 +83721,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -11.5,-8.5
-      parent: 2
-  - uid: 8802
-    components:
-    - type: Transform
-      pos: -2.5,-14.5
-      parent: 2
-  - uid: 8982
-    components:
-    - type: Transform
-      pos: -1.5,-17.5
       parent: 2
   - uid: 12915
     components:
@@ -86032,11 +86501,6 @@ entities:
     - type: Transform
       pos: 3.5,-24.5
       parent: 2
-  - uid: 2062
-    components:
-    - type: Transform
-      pos: 2.5,-24.5
-      parent: 2
   - uid: 2149
     components:
     - type: Transform
@@ -86286,6 +86750,12 @@ entities:
     components:
     - type: Transform
       pos: -14.5,-20.5
+      parent: 2
+  - uid: 13989
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -6.5,-17.5
       parent: 2
 - proto: CP14TableWoodenFrame
   entities:
