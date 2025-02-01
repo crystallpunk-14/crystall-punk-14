@@ -1,0 +1,76 @@
+- type: entity
+  abstract: true
+  id: CP14BaseEssence
+  categories: [ ForkFiltered ]
+  name: magic essence
+  description: Particles of magical energy polarised into a particular type of magic. Will be gone soon, so try to collect them as soon as possible!
+  components:
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _CP14/Objects/Specific/Thaumaturgy/essence.rsi
+    layers:
+    - state: small
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 60
+  - type: CanMoveInAir
+  - type: RandomWalk
+    minSpeed: 0.5
+    maxSpeed: 1
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        #- ItemMask # CP14 swap ItemMask to Impassable only
+        - Impassable
+        restitution: 0.3  # fite me
+        friction: 0.2
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceFire
+  name: fire essence
+  components:
+  - type: Sprite
+    color: "#d9741c"
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceEarth
+  name: earth essence
+  components:
+  - type: Sprite
+    color: "#70533f"
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceWater
+  name: water essence
+  components:
+  - type: Sprite
+    color: "#1c94d9"
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceLight
+  name: light essence
+  components:
+  - type: Sprite
+    color: "#ba97b8"
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceDarkness
+  name: darkness essence
+  components:
+  - type: Sprite
+    color: "#391c57"
