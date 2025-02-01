@@ -26,7 +26,6 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
         _stealQuery = GetEntityQuery<StealTargetComponent>();
         _stackQuery = GetEntityQuery<StackComponent>();
 
-        SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveAssignedEvent>(OnAssigned);
         SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
         SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
 
@@ -70,12 +69,6 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
             ev.Sent.Remove(remove);
             QueueDel(remove);
         }
-    }
-
-    private void OnAssigned(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveAssignedEvent args)
-    {
-        //TODO: Add ability to create mindfree objectives to Wizden
-        //condition.Comp.CollectionSize = _random.Next(condition.Comp.MinCollectionSize, condition.Comp.MaxCollectionSize);
     }
 
     //Set the visual, name, icon for the objective.

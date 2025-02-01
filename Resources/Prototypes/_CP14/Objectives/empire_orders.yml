@@ -88,3 +88,24 @@
   weights:
     CP14TownBankEarningObjectiveMedium: 0.6
     CP14TownBankEarningObjectiveBig: 0.3
+
+# No Demiplane death objective
+- type: entity
+  parent: CP14BaseTownObjective
+  id: CP14GuildmasterNoDemiplaneDeathObjective
+  components:
+  - type: CP14StatisticRangeConditionComponent
+    statistic: DemiplaneDeaths
+    range:
+      min: 0
+      max: 3 #TODO Adaptive to player count
+    objectiveText: cp14-objective-no-demiplane-death-title
+    objectiveDescription: cp14-objective-no-demiplane-death-desc
+    objectiveSprite:
+      sprite: /Textures/_CP14/Effects/Magic/spells_icons.rsi
+      state: plant_growth
+
+- type: weightedRandom
+  id: CP14GuildmasterNoDemiplaneObjectiveGroup
+  weights:
+    CP14GuildmasterNoDemiplaneDeathObjective: 1

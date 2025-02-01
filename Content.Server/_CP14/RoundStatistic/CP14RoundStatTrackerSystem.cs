@@ -58,12 +58,12 @@ public sealed partial class CP14RoundStatTrackerSystem : EntitySystem
         _tracking[proto] += Math.Max(dif, 0);
     }
 
-    public int GetTrack(ProtoId<CP14RoundStatTrackerPrototype> proto)
+    public int? GetTrack(ProtoId<CP14RoundStatTrackerPrototype> proto)
     {
         if (!_tracking.TryGetValue(proto, out var stat))
         {
             Log.Error($"Failed to get round statistic: {proto}");
-            return 0;
+            return null;
         }
 
         return stat;
