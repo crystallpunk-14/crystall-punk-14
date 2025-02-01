@@ -2,11 +2,9 @@ using System.Linq;
 using System.Threading;
 using Content.Server._CP14.Demiplane.Components;
 using Content.Server._CP14.Demiplane.Jobs;
-using Content.Server._CP14.RoundEnd;
 using Content.Server.GameTicking;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
-using Content.Shared._CP14.MagicManacostModify;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Verbs;
@@ -157,6 +155,8 @@ public sealed partial class CP14DemiplaneSystem
         }
 
         SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.SelectedModifiers, out var demiplane, out var mapId);
+
+        _statistic.TrackAdd(generator.Comp.Statistic, 1);
 
         //Admin log needed
         EnsureComp<CP14DemiplaneDestroyWithoutStabilizationComponent>(demiplane);

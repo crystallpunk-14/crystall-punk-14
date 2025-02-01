@@ -1,0 +1,7 @@
+- type: statisticTracker
+  id: DemiplaneOpen
+  text: cp14-tracker-demiplane-open
+
+- type: statisticTracker
+  id: DemiplaneDeaths
+  text: cp14-tracker-demiplane-deaths
