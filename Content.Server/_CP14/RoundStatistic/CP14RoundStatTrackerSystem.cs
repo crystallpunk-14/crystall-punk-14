@@ -29,9 +29,10 @@ public sealed partial class CP14RoundStatTrackerSystem : EntitySystem
 
     private void OnRoundEndTextAppend(RoundEndTextAppendEvent ev)
     {
+        //TODO: Move to separate UI Text block
         var sb = new StringBuilder();
 
-        sb.Append("СТАТИСТИКА \n");
+        sb.Append($"[head=3]{Loc.GetString("cp14-tracker-header")}[/head] \n");
         foreach (var pair in _tracking)
         {
             if (!_proto.TryIndex(pair.Key, out var indexedTracker))
