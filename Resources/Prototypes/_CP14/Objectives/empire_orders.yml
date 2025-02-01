@@ -94,7 +94,7 @@
   parent: CP14BaseTownObjective
   id: CP14GuildmasterNoDemiplaneDeathObjective
   components:
-  - type: CP14StatisticRangeConditionComponent
+  - type: CP14StatisticRangeCondition
     statistic: DemiplaneDeaths
     range:
       min: 0
