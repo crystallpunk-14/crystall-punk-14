@@ -5,3 +5,11 @@
   components:
   - type: CP14Key
     autoGenerateShape: Guildmaster
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyDemiplaneCrystal
+  suffix: Demiplane Crystal
+  components:
+  - type: CP14Key
+    autoGenerateShape: DemiplaneCrystal
