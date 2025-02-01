@@ -28,13 +28,18 @@
           mapNameTemplate: "Comoss island"
         - type: StationJobs
           availableJobs:
-            CP14Apprentice: [ 5, 5 ]
+            #Mercenary
+            CP14Guildmaster: [1, 1]
             CP14Adventurer: [ -1, -1 ]
+            #Artisans
+            CP14Apprentice: [ 5, 5 ]
             CP14Alchemist: [ 2, 2 ]
             CP14Blacksmith: [ 2, 2 ]
             CP14Innkeeper: [ 3, 4 ]
+            #Bank
             CP14Commandant: [1, 1]
             CP14Banker: [3, 4]
+            #Guard
             CP14Guard: [8, 8]
             CP14GuardCommander: [1, 1]
         - type: CP14StationZLevels

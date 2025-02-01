@@ -108,9 +108,22 @@
   - CP14CommandantHead
   - CP14GeneralEyes
   - CP14CommandantCloak
+  - CP14BankOuterClothing
   - CP14BankShirt
   - CP14BankPants
   - CP14BankShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobCP14Guildmaster
+  groups:
+  - CP14GeneralSpells
+  - CP14GeneralEyes
+  - CP14GuildmasterCloak
+  - CP14GuildmasterShirt
+  - CP14GuildmasterPants
+  - CP14GuildmasterShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
 
@@ -119,6 +132,7 @@
   groups:
   - CP14GeneralSpells
   - CP14BankHead
+  - CP14BankOuterClothing
   - CP14GeneralEyes
   - CP14BankShirt
   - CP14BankPants

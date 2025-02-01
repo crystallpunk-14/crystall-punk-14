@@ -1,4 +1,5 @@
 using Content.Shared._CP14.Demiplane.Prototypes;
+using Content.Shared._CP14.RoundStatistic;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Demiplane.Components;
@@ -23,4 +24,7 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
 
     [DataField(required: true)]
     public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Limits;
+
+    [DataField]
+    public ProtoId<CP14RoundStatTrackerPrototype> Statistic = "DemiplaneOpen";
 }

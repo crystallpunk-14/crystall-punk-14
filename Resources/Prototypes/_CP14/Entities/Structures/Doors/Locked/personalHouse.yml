@@ -149,3 +149,13 @@
     autoGenerateShape: PersonalHouse15
   - type: Lock
     locked: true
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorPersonalHouse16
+  suffix: PersonalHouse16
+  components:
+  - type: CP14Lock
+    autoGenerateShape: PersonalHouse16
+  - type: Lock
+    locked: true

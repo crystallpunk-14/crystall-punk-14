@@ -33,3 +33,20 @@
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorTavernAlchemyMirrored2
   suffix: Alchemy 2, Mirrored
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorTavernAlchemy3
+  suffix: Alchemy 3
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Alchemy3
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14WoodenDoorTavernAlchemy3
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorTavernAlchemyMirrored3
+  suffix: Alchemy 3, Mirrored

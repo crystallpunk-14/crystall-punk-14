@@ -149,25 +149,6 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtCottonWhiteGreenVest
-  name: cotton white green vest shirt
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_green_vest.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_green_vest.rsi
-
-- type: entity
-  parent: CP14ClothingShirtCottonWhiteGreenVest
-  id: CP14ClothingShirtCottonWhiteGreenVest2
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_green_vest2.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_green_vest2.rsi
-
-- type: entity
-  parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonYellow
   name: cotton yellow shirt
   components:
