@@ -43224,14 +43224,6 @@ entities:
       parent: 12897
     - type: Physics
       canCollide: False
-- proto: CP14ClothingCloakGuildmasterCape
-  entities:
-  - uid: 5543
-    components:
-    - type: Transform
-      parent: 8378
-    - type: Physics
-      canCollide: False
 - proto: CP14ClothingGlovesGirdles
   entities:
   - uid: 12900
@@ -43298,24 +43290,6 @@ entities:
       parent: 12897
     - type: Physics
       canCollide: False
-- proto: CP14ClothingShirtGuildmasterVest
-  entities:
-  - uid: 5544
-    components:
-    - type: Transform
-      parent: 8394
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: CP14ClothingShirtGuildmasterVest2
-  entities:
-  - uid: 5545
-    components:
-    - type: Transform
-      parent: 8394
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: CP14ClothingShoesAristocraticBlack
   entities:
   - uid: 12896
@@ -86335,6 +86309,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,20.5
       parent: 2
+  - uid: 5545
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,-11.5
+      parent: 2
   - uid: 5753
     components:
     - type: Transform
@@ -89676,6 +89656,14 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 8380
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -3.5,-12.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 8795
     components:
     - type: Transform
@@ -89689,13 +89677,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -6.5,-17.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 10700
-    components:
-    - type: Transform
-      pos: -5.5,-11.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -105312,6 +105293,11 @@ entities:
     - type: Transform
       pos: -3.5,-7.5
       parent: 2
+  - uid: 5543
+    components:
+    - type: Transform
+      pos: -4.5,-11.5
+      parent: 2
   - uid: 6081
     components:
     - type: Transform
@@ -105331,11 +105317,6 @@ entities:
     components:
     - type: Transform
       pos: 14.5,-16.5
-      parent: 2
-  - uid: 8380
-    components:
-    - type: Transform
-      pos: -3.5,-11.5
       parent: 2
   - uid: 8617
     components:
@@ -105514,23 +105495,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 18.5,13.5
       parent: 2
-  - uid: 8378
-    components:
-    - type: Transform
-      pos: -4.5,-11.5
-      parent: 2
-    - type: Storage
-      storedItems:
-        5543:
-          position: 0,0
-          _rotation: South
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5543
   - uid: 8631
     components:
     - type: Transform
@@ -105648,6 +105612,13 @@ entities:
     - type: Transform
       pos: 20.5,-40.5
       parent: 2
+- proto: CP14WoodenCabinetGuildmaster
+  entities:
+  - uid: 8378
+    components:
+    - type: Transform
+      pos: -5.5,-11.5
+      parent: 2
 - proto: CP14WoodenChest
   entities:
   - uid: 9784
@@ -105739,23 +105710,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 18.5,14.5
       parent: 2
-  - uid: 8394
-    components:
-    - type: Transform
-      pos: -6.5,-11.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5544
-          - 5545
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 8914
     components:
     - type: Transform
@@ -105867,6 +105821,13 @@ entities:
     components:
     - type: Transform
       pos: 17.5,-14.5
+      parent: 2
+- proto: CP14WoodenClosetGuildmasterFilled
+  entities:
+  - uid: 5544
+    components:
+    - type: Transform
+      pos: -6.5,-11.5
       parent: 2
 - proto: CP14WoodenDoor
   entities:
