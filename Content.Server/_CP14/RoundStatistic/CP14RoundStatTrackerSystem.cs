@@ -1,3 +1,5 @@
+using System.Text;
+using Content.Server.GameTicking;
 using Content.Shared._CP14.RoundStatistic;
 using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
@@ -8,7 +10,7 @@ public sealed partial class CP14RoundStatTrackerSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    private Dictionary<ProtoId<CP14RoundStatTrackerPrototype>, int> _tracking = new();
+    private readonly Dictionary<ProtoId<CP14RoundStatTrackerPrototype>, int> _tracking = new();
 
     public override void Initialize()
     {
@@ -16,12 +18,28 @@ public sealed partial class CP14RoundStatTrackerSystem : EntitySystem
         InitializeDemiplaneDeath();
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundReset);
+        SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndTextAppend);
         ClearStatistic();
     }
 
     private void OnRoundReset(RoundRestartCleanupEvent ev)
     {
         ClearStatistic();
+    }
+
+    private void OnRoundEndTextAppend(RoundEndTextAppendEvent ev)
+    {
+        var sb = new StringBuilder();
+
+        sb.Append("СТАТИСТИКА \n");
+        foreach (var pair in _tracking)
+        {
+            if (!_proto.TryIndex(pair.Key, out var indexedTracker))
+                continue;
+
+            sb.Append($"- {Loc.GetString(indexedTracker.Text)}: {pair.Value}\n");
+        }
+        ev.AddLine(sb.ToString());
     }
 
     private void ClearStatistic()
