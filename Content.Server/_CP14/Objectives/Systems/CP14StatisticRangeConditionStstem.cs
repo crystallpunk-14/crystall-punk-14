@@ -29,7 +29,7 @@ public sealed class CP14StatisticRangeConditionSystem : EntitySystem
             ("min", condition.Comp.Range.Min),
             ("max", condition.Comp.Range.Max));
 
-        var description = Loc.GetString(condition.Comp.DescriptionText,
+        var description = Loc.GetString(condition.Comp.ObjectiveDescription,
             ("min", condition.Comp.Range.Min),
             ("max", condition.Comp.Range.Max));
 

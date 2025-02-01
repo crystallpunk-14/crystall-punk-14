@@ -18,7 +18,7 @@
     minCollectionSize: 5
     maxCollectionSize: 10
     objectiveText: cp14-objective-town-send-title
-    descriptionText: cp14-objective-town-send-desc
+    objectiveDescription: cp14-objective-town-send-desc
   - type: Objective
 
 - type: entity

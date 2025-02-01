@@ -79,7 +79,7 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
         var group = _proto.Index(condition.Comp.CollectGroup);
 
         var title = Loc.GetString(condition.Comp.ObjectiveText, ("itemName",  Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
-        var description = Loc.GetString(condition.Comp.DescriptionText, ("itemName", Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
+        var description = Loc.GetString(condition.Comp.ObjectiveDescription, ("itemName", Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
 
         _metaData.SetEntityName(condition.Owner, title, args.Meta);
         _metaData.SetEntityDescription(condition.Owner, description, args.Meta);

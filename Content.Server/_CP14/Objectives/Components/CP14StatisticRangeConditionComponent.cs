@@ -19,7 +19,7 @@ public sealed partial class CP14StatisticRangeConditionComponent : Component
     public LocId ObjectiveText;
 
     [DataField(required: true)]
-    public LocId DescriptionText;
+    public LocId ObjectiveDescription;
 
     [DataField(required: true)]
     public SpriteSpecifier? ObjectiveSprite;
