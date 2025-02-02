@@ -23,7 +23,7 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
     public Dictionary<int, float> TiersContent = new();
 
     [DataField(required: true)]
-    public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Limits;
+    public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Limits = new();
 
     [DataField]
     public ProtoId<CP14RoundStatTrackerPrototype> Statistic = "DemiplaneOpen";
