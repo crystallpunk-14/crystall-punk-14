@@ -87,99 +87,16 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
             return;
         }
 
-        if (recipe.KnowledgeRequired is not null)
-            _knowledge.UseKnowledge(args.User, recipe.KnowledgeRequired.Value);
-
         var resultEntities = new HashSet<EntityUid>();
         for (int i = 0; i < recipe.ResultCount; i++)
         {
             var resultEntity = Spawn(recipe.Result);
-
             resultEntities.Add(resultEntity);
-
-            if (recipe.TryMergeSolutions)
-            {
-                _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSolution, out _);
-
-                if (resultSolution is not null)
-                {
-                    resultSolution.Value.Comp.Solution.MaxVolume = 0;
-                    _solutionContainer.RemoveAllSolution(resultSolution
-                        .Value); //If we combine ingredient solutions, we do not use the default solution prescribed in the entity.
-                }
-            }
         }
 
-        foreach (var requiredIngredient in recipe.Entities)
+        foreach (var req in recipe.Requirements)
         {
-            var requiredCount = requiredIngredient.Value;
-            foreach (var placedEntity in placedEntities)
-            {
-                if (!TryComp<MetaDataComponent>(placedEntity, out var metaData))
-                    continue;
-
-                if (metaData.EntityPrototype is null)
-                    continue;
-
-                var placedProto = metaData.EntityPrototype.ID;
-                if (placedProto == requiredIngredient.Key && requiredCount > 0)
-                {
-                    // Trying merge solutions
-                    if (recipe.TryMergeSolutions)
-                    {
-                        _solutionContainer.TryGetSolution(placedEntity,
-                            recipe.Solution,
-                            out var ingredientSoln,
-                            out var ingredientSolution);
-
-                        if (ingredientSoln is not null &&
-                            ingredientSolution is not null)
-                        {
-                            var splitted = _solutionContainer.SplitSolution(ingredientSoln.Value,
-                                ingredientSolution.Volume / recipe.ResultCount);
-
-                            foreach (var resultEntity in resultEntities)
-                            {
-                                _solutionContainer.TryGetSolution(resultEntity,
-                                    recipe.Solution,
-                                    out var resultSolution,
-                                    out _);
-                                if (resultSolution is not null)
-                                {
-                                    resultSolution.Value.Comp.Solution.MaxVolume +=
-                                        ingredientSoln.Value.Comp.Solution.MaxVolume / recipe.ResultCount;
-                                    _solutionContainer.TryAddSolution(resultSolution.Value, splitted);
-                                }
-                            }
-                        }
-                    }
-
-                    requiredCount--;
-                    Del(placedEntity);
-                }
-            }
-        }
-
-        foreach (var requiredStack in recipe.Stacks)
-        {
-            var requiredCount = requiredStack.Value;
-            foreach (var placedEntity in placedEntities)
-            {
-                if (!_stackQuery.TryGetComponent(placedEntity, out var stack))
-                    continue;
-
-                if (stack.StackTypeId != requiredStack.Key)
-                    continue;
-
-                var count = (int)MathF.Min(requiredCount, stack.Count);
-
-                if (stack.Count - count <= 0)
-                    Del(placedEntity);
-                else
-                    _stack.SetCount(placedEntity, stack.Count - count, stack);
-
-                requiredCount -= count;
-            }
+            req.PostCraft(EntityManager, placedEntities, args.User);
         }
 
         //We teleport result to workbench AFTER craft.
@@ -219,56 +136,12 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
     private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities, EntityUid user)
     {
-        //Knowledge check
-        if (recipe.KnowledgeRequired is not null && !_knowledge.HasKnowledge(user, recipe.KnowledgeRequired.Value))
-            return false;
-
-        //Ingredients check
-        var indexedIngredients = IndexIngredients(entities);
-        foreach (var requiredIngredient in recipe.Entities)
+        foreach (var req in recipe.Requirements)
         {
-            if (!indexedIngredients.TryGetValue(requiredIngredient.Key, out var availableQuantity) ||
-                availableQuantity < requiredIngredient.Value)
-                return false;
-        }
-
-        foreach (var (key, value) in recipe.Stacks)
-        {
-            var count = 0;
-            foreach (var ent in entities)
-            {
-                if (_stackQuery.TryGetComponent(ent, out var stack))
-                {
-                    if (stack.StackTypeId != key)
-                        continue;
-
-                    count += stack.Count;
-                }
-            }
-
-            if (count < value)
+            if (!req.CheckRequirement(EntityManager, _proto, entities, user))
                 return false;
         }
 
         return true;
-    }
-
-    private Dictionary<EntProtoId, int> IndexIngredients(HashSet<EntityUid> ingredients)
-    {
-        var indexedIngredients = new Dictionary<EntProtoId, int>();
-
-        foreach (var ingredient in ingredients)
-        {
-            var protoId = _metaQuery.GetComponent(ingredient).EntityPrototype?.ID;
-            if (protoId == null)
-                continue;
-
-            if (indexedIngredients.ContainsKey(protoId))
-                indexedIngredients[protoId]++;
-            else
-                indexedIngredients[protoId] = 1;
-        }
-
-        return indexedIngredients;
     }
 }

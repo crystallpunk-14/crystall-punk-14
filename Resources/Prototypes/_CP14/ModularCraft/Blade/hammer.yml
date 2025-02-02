@@ -47,7 +47,7 @@
 - type: modularPart
   id: BladeIronHammer
   targetSlot: Blade
-  sourcePart: CP14ModularBladeIronHammer
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   modifiers:
   - !type:Inherit
@@ -58,7 +58,7 @@
 - type: modularPart
   id: BladeGoldHammer
   targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldHammer
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   color: "#ffaf47"
   modifiers:
@@ -70,7 +70,7 @@
 - type: modularPart
   id: BladeCopperHammer
   targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperHammer
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   color: "#bd712f"
   modifiers:
@@ -82,7 +82,7 @@
 - type: modularPart
   id: BladeMithrilHammer
   targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilHammer
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   color: "#45d2a4"
   modifiers:

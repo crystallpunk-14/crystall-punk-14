@@ -275,8 +275,6 @@
   - CP14ClothingShirtCottonWhiteBrownVest2
   - CP14ClothingShirtCottonWhiteBrownVest3
   - CP14ClothingShirtCottonWhiteCollar
-  - CP14ClothingShirtCottonWhiteGreenVest
-  - CP14ClothingShirtCottonWhiteGreenVest2
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
 
@@ -351,16 +349,6 @@
     shirt: CP14ClothingShirtCottonWhiteCollar
 
 - type: loadout
-  id: CP14ClothingShirtCottonWhiteGreenVest
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteGreenVest
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteGreenVest2
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteGreenVest2
-
-- type: loadout
   id: CP14ClothingShirtCottonYellow
   equipment:
     shirt: CP14ClothingShirtCottonYellow
@@ -402,11 +390,17 @@
   name: cp14-loadout-general-back
   loadouts:
   - CP14ClothingBackpackLeather
+  - CP14ClothingSatchelLeather
 
 - type: loadout
   id: CP14ClothingBackpackLeather
   equipment:
     back: CP14ClothingBackpackLeather
+
+- type: loadout
+  id: CP14ClothingSatchelLeather
+  equipment:
+    back: CP14ClothingSatchelLeather
 
 # Trinkets
 
@@ -427,7 +421,6 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
-  - CP14DemiplaneKeyT1
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
@@ -503,12 +496,6 @@
   storage:
     back:
     - CP14SmokingPipeFilledTobacco
-
-- type: loadout
-  id: CP14DemiplaneKeyT1
-  storage:
-    back:
-    - CP14DemiplaneKeyT1
 
 - type: loadout
   id: CP14LyraInstrument

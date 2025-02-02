@@ -1,3 +1,5 @@
+cp14-material-examine = Состоит из материалов:
+
 cp14-material-wooden-planks = деревянные доски
 cp14-material-dirt-block = земля
 cp14-material-stone-block = камень

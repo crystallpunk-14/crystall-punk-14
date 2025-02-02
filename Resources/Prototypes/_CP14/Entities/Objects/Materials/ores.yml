@@ -21,7 +21,9 @@
     - ore1
     - ore2
     - ore3
-  - type: Material
+  - type: CP14Material
+    materials:
+      CP14Copper: 2
 
 - type: entity
   id: CP14OreCopper5
@@ -64,7 +66,9 @@
     - ore1
     - ore2
     - ore3
-  - type: Material
+  - type: CP14Material
+    materials:
+      CP14Iron: 2
 
 - type: entity
   id: CP14OreIron5
@@ -107,7 +111,9 @@
     - ore1
     - ore2
     - ore3
-  - type: Material
+  - type: CP14Material
+    materials:
+      CP14Gold: 2
 
 - type: entity
   id: CP14OreGold5
@@ -150,7 +156,9 @@
     - ore1
     - ore2
     - ore3
-  - type: Material
+  - type: CP14Material
+    materials:
+      CP14Mithril: 2
 
 - type: entity
   id: CP14OreMithril5
