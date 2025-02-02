@@ -390,11 +390,17 @@
   name: cp14-loadout-general-back
   loadouts:
   - CP14ClothingBackpackLeather
+  - CP14ClothingSatchelLeather
 
 - type: loadout
   id: CP14ClothingBackpackLeather
   equipment:
     back: CP14ClothingBackpackLeather
+
+- type: loadout
+  id: CP14ClothingSatchelLeather
+  equipment:
+    back: CP14ClothingSatchelLeather
 
 # Trinkets
 
@@ -415,7 +421,6 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
-  - CP14DemiplaneKeyT1
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
@@ -485,12 +490,6 @@
   storage:
     back:
     - CP14Torch
-
-- type: loadout
-  id: CP14DemiplaneKeyT1
-  storage:
-    back:
-    - CP14DemiplaneKeyT1
 
 - type: loadout
   id: CP14LyraInstrument
