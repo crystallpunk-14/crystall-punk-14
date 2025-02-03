@@ -140,8 +140,8 @@
     sprite: _CP14/Objects/Materials/copper_bar.rsi
     state: bar_3
   price: 
-    min: 40
-    max: 60
+    min: 200
+    max: 300
   services:
   - !type:CP14BuyItemsService
     product:
