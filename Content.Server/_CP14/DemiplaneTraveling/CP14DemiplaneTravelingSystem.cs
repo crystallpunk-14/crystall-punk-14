@@ -70,7 +70,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
             var map = Transform(uid).MapUid;
             if (TryComp<CP14DemiplaneComponent>(map, out var demiplan))
             {
-                if (!_demiplan.TryGetDemiplanExitPoint((map.Value, demiplan), out _))
+                if (!_demiplan.TryGetDemiplaneExitPoint((map.Value, demiplan), out _))
                     break;
 
                 foreach (var ent in teleportedEnts) //We in demiplan, tp OUT
@@ -87,7 +87,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                 if (rift.Demiplane is not null &&
                     TryComp<CP14DemiplaneComponent>(rift.Demiplane.Value, out var riftDemiplane))
                 {
-                    if (!_demiplan.TryGetDemiplanEntryPoint((rift.Demiplane.Value, riftDemiplane), out _))
+                    if (!_demiplan.TryGetDemiplaneEntryPoint((rift.Demiplane.Value, riftDemiplane), out _))
                         break;
 
                     foreach (var ent in teleportedEnts) //We out demiplan, tp IN
