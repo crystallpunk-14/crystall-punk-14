@@ -185,8 +185,8 @@ public sealed partial class CP14DemiplaneSystem
 
         var connection = EnsureComp<CP14DemiplaneRiftComponent>(tempRift);
         var connection2 = EnsureComp<CP14DemiplaneRiftComponent>(tempRift2);
-        AddDemiplanRandomExitPoint(demiplane.Value, (tempRift, connection));
-        AddDemiplanRandomExitPoint(demiplane.Value, (tempRift2, connection2));
+        AddDemiplaneRandomExitPoint(demiplane.Value, (tempRift, connection));
+        AddDemiplaneRandomExitPoint(demiplane.Value, (tempRift2, connection2));
 
 #if !DEBUG
         QueueDel(generator); //wtf its crash debug build!
