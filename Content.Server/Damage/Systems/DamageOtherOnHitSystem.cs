@@ -1,5 +1,3 @@
-// all commits made by @noverd in this file are licensed under MIT
-
 using Content.Server.Administration.Logs;
 using Content.Server.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
