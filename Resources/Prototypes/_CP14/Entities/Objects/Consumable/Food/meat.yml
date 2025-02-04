@@ -163,7 +163,7 @@
   id: CP14FoodMeatLambCutlet
   parent: CP14FoodMeatSliceBase
   name: lamb cutlet
-  description: the result of mixing sliced lamb and egg - a raw round cutlet.
+  description: The result of mixing sliced lamb and egg - a raw round cutlet.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
@@ -223,8 +223,6 @@
     state: frog_leg
   - type: Item
     size: Tiny
-    shape:
-    - 0,0,1,0
   - type: SolutionContainerManager
     solutions:
       food:
@@ -233,6 +231,29 @@
         - ReagentId: Nutriment
           Quantity: 3
         - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatFrogLegCooked
+
+- type: entity
+  id: CP14FoodMeatFrogLegCooked
+  parent: CP14FoodMeatFrogLeg
+  name: cooked frog leg
+  description: It even seems edible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: frog_leg_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Protein
           Quantity: 1
   - type: CP14TemperatureTransformation
     entries:

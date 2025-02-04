@@ -224,7 +224,7 @@
     baseWalkSpeed: 3
     baseSprintSpeed: 5
   - type: Sprite
-    drawdepth: Mobs
+    drawdepth: SmallMobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       sprite: _CP14/Mobs/Animals/frog.rsi
@@ -274,9 +274,16 @@
       Dead:
         Base: frog_dead
   - type: Butcherable
+    butcherDelay: 2
     spawned:
     - id: CP14FoodMeatFrogLeg
       amount: 2
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 0
   - type: InteractionPopup
     successChance: 0.6
     interactSuccessString: petting-success-frog
@@ -284,6 +291,7 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/frog_ribbit.ogg
+  - type: CanEscapeInventory
   - type: Bloodstream
     bloodMaxVolume: 30
     bloodReagent: CP14Blood
