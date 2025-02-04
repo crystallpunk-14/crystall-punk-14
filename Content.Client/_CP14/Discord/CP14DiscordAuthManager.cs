@@ -1,4 +1,4 @@
-using Content.Shared.Discord;
+using Content.Shared._CP14.Discord;
 using Robust.Client.State;
 using Robust.Shared.Network;
 
@@ -21,6 +21,7 @@ public sealed class DiscordAuthManager
     {
         if (_stateManager.CurrentState is DiscordAuthState)
             return;
+        AuthUrl = msg.AuthUrl;
         _stateManager.RequestStateChange<DiscordAuthState>();
     }
 }

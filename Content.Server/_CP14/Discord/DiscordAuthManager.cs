@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared._CP14.Discord;
@@ -104,7 +105,7 @@ public sealed class DiscordAuthManager
     public async Task<string?> GenerateLink(NetUserId userId, CancellationToken cancel = default)
     {
         _sawmill.Debug($"Generating link for {userId}");
-        var requestUrl = $"{_apiUrl}/link?userid={userId}&api_token={_apiKey}";
+        var requestUrl = $"{_apiUrl}/api/link?uid={userId}";
 
         // try catch block to catch HttpRequestExceptions due to remote service unavailability
         try
@@ -126,5 +127,11 @@ public sealed class DiscordAuthManager
             _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
             return null;
         }
+    }
+
+    sealed class DiscordLinkResponse
+    {
+        [JsonPropertyName("link")]
+        public string Link { get; set; } = string.Empty;
     }
 }

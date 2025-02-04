@@ -5,10 +5,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._CP14.Discord;
+
 [GenerateTypedNameReferences]
 public sealed partial class DiscordAuthGui : Control
 {
     [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+    [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
+
     private const string DiscordLink = "https://discord.com/invite/Sud2DMfhCC"; //TODO: Unhardcode
 
     public DiscordAuthGui()
@@ -17,14 +20,27 @@ public sealed partial class DiscordAuthGui : Control
         IoCManager.InjectDependencies(this);
         LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 
-        QuitButton.OnPressed += (_) =>
+        var link = _discordAuthManager.AuthUrl;
+
+        AuthLinkEdit.SetText(link);
+        DLinkEdit.SetText(DiscordLink);
+        InfoLabel.SetMessage(Loc.GetString("cp14-discord-info"));
+
+        var uriOpener = IoCManager.Resolve<IUriOpener>();
+
+        QuitButton.OnPressed += _ =>
         {
             _consoleHost.ExecuteCommand("quit");
         };
 
-        OpenUrlButton.OnPressed += (_) =>
+        AuthorizeButton.OnPressed += _ =>
         {
-            IoCManager.Resolve<IUriOpener>().OpenUri(DiscordLink);
+            uriOpener.OpenUri(link);
+        };
+
+        DiscordButton.OnPressed += _ =>
+        {
+            uriOpener.OpenUri(DiscordLink);
         };
     }
 }

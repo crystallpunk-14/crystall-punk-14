@@ -1,5 +1,5 @@
 using System.Threading;
-using Content.Shared.Discord;
+using Content.Shared._CP14.Discord;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Network;
