@@ -50,10 +50,12 @@
   id: CP14GlassSheet1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
-  entities:
-    CP14CrystalShardBase: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrystalShardBase
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
   result: CP14GlassSheet1
-  knowledgeRequired: Glasswork
 
 - type: CP14Recipe
   id: CP14GlassSheetShard1
