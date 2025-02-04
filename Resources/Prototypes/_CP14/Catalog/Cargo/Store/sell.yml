@@ -6,8 +6,8 @@
     sprite: _CP14/Objects/Materials/copper_bar.rsi
     state: bar_3
   price: 
-    min: 20
-    max: 30
+    min: 100
+    max: 150
   service: !type:CP14SellStackService
     stackId: CP14CopperBar
     count: 10

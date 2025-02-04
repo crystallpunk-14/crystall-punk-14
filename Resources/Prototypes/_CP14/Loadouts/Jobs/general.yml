@@ -12,6 +12,7 @@
   - CP14ClothingCloakWhite
   - CP14ClothingCloakGreen
   - CP14ClothingCloakBlue
+  - CP14ClothingCloakFurCoat
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -47,6 +48,11 @@
   id: CP14ClothingCloakBlue
   equipment:
     cloak: CP14ClothingCloakBlue
+
+- type: loadout
+  id: CP14ClothingCloakFurCoat
+  equipment:
+    cloak: CP14ClothingCloakFurCoat
 
 # Eyes
 
