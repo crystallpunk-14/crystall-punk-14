@@ -51,3 +51,7 @@ flavor_text = true
 
 [tips]
 dataset = "CP14Tips"
+
+[ooc]
+show_ooc_patron_color = false
+enable_during_round = true
