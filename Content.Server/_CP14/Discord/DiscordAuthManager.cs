@@ -81,6 +81,7 @@ public sealed class DiscordAuthManager
             }
 
             var message = new MsgDiscordAuthRequired();
+            message.AuthUrl = await GenerateLink(args.Session.UserId) ?? string.Empty;
             args.Session.Channel.SendMessage(message);
         }
     }
@@ -89,7 +90,7 @@ public sealed class DiscordAuthManager
     {
         _sawmill.Debug($"Player {userId} check Discord verification");
 
-        var requestUrl = $"{_apiUrl}/api/uuid?method=ss14&id={userId}";
+        var requestUrl = $"{_apiUrl}/api/uuid?method=uid&id={userId}";
         _sawmill.Debug($"Auth request url:{requestUrl}");
         var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
 
