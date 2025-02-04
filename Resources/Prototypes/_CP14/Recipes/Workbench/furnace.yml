@@ -46,14 +46,14 @@
     knowledge: MetallMelting
   result: CP14MithrilBar1
 
-#- type: CP14Recipe
-#  id: CP14GlassSheet1
-#  tag: CP14RecipeMeltingFurnace
-#  craftTime: 4
-#  entities:
-#    CP14QuartzShard: 1
-#  result: CP14GlassSheet1
-#  knowledgeRequired: Glasswork
+- type: CP14Recipe
+  id: CP14GlassSheet1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  entities:
+    CP14CrystalShardBase: 1
+  result: CP14GlassSheet1
+  knowledgeRequired: Glasswork
 
 - type: CP14Recipe
   id: CP14GlassSheetShard1

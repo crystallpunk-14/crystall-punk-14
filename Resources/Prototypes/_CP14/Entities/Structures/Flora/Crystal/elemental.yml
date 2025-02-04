@@ -1,3 +1,113 @@
+# Normal
+
+- type: entity
+  id: CP14CrystalSmall
+  suffix: Normal, Small
+  parent: CP14CrystalSmallBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/Crystal/crystal_small.rsi
+    layers:
+      - state: small1
+        map: ["random"]
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+            !type:DamageTrigger
+            damage: 10
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardBase:
+                min: 0
+                max: 1
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: PointLight
+    enabled: false
+
+- type: entity
+  id: CP14CrystalMedium
+  suffix: Normal, Medium
+  parent: CP14CrystalMediumBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/Crystal/crystal_medium.rsi
+    layers:
+      - state: medium1
+        map: ["random"]
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardBase:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: PointLight
+    enabled: false
+
+- type: entity
+  id: CP14CrystalBig
+  suffix: Normal, Big
+  parent: CP14CrystalBigBase
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/Crystal/crystal_big.rsi
+    layers:
+      - state: big1
+        map: ["random"]
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 40
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+            !type:DamageTrigger
+            damage: 20
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardBase:
+                min: 2
+                max: 3
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: PointLight
+    enabled: false
+
 # Water
 
 - type: entity
