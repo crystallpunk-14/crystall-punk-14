@@ -56,3 +56,6 @@ dataset = "CP14Tips"
 [ooc]
 show_ooc_patron_color = false
 enable_during_round = true
+
+[cp14]
+discord_auth_enabled = true
