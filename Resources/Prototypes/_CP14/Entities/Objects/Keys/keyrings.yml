@@ -124,3 +124,13 @@
     - id: CP14KeyGuard
     - id: CP14KeyGuardCommander
     #- id: CP14KeyGuardWeaponStorage
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingGuildmaster
+  suffix: Guildmaster
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyGuildmaster
+    - id: CP14KeyDemiplaneCrystal

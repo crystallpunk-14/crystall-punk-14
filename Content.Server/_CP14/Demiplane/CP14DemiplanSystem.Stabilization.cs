@@ -81,10 +81,20 @@ public sealed partial class CP14DemiplaneSystem
             if (TryTeleportOutDemiplane(demiplane, uid))
             {
                 if (!safe)
+                {
+                    var ev = new CP14DemiplaneUnsafeExit();
+                    RaiseLocalEvent(uid, ev);
+
                     _body.GibBody(uid);
+                }
             }
         }
 
         QueueDel(demiplane);
     }
+}
+
+public sealed class CP14DemiplaneUnsafeExit : EntityEventArgs
+{
+
 }

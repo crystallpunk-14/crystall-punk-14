@@ -95,3 +95,17 @@
         prob: 0.7
       - id: CP14ClothingCloakGuardCommander
         prob: 1
+
+- type: entity
+  parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetGuildmaster
+  suffix: Guildmaster, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ClothingCloakGuildmasterCape
+        prob: 1
+      - id: CP14ClothingShirtGuildmasterVest
+        prob: 0.6
+      - id: CP14ClothingShirtGuildmasterVest2
+        prob: 0.6

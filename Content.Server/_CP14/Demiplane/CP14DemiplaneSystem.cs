@@ -1,3 +1,4 @@
+using Content.Server._CP14.RoundStatistic;
 using Content.Server.Flash;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplane;
@@ -25,6 +26,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     [Dependency] private readonly FlashSystem _flash = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly CP14RoundStatTrackerSystem _statistic = default!;
 
     public override void Initialize()
     {
@@ -56,7 +58,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         if (entity is null)
             return false;
 
-        if (!TryGetDemiplanEntryPoint(demiplane, out var entryPoint) || entryPoint is null)
+        if (!TryGetDemiplaneEntryPoint(demiplane, out var entryPoint) || entryPoint is null)
         {
             Log.Error($"{entity} cant get in demiplane {demiplane}: no active entry points!");
             return false;
@@ -84,7 +86,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         if (Transform(entity.Value).MapUid != demiplane.Owner)
             return false;
 
-        if (!TryGetDemiplanExitPoint(demiplane, out var connection) || connection is null)
+        if (!TryGetDemiplaneExitPoint(demiplane, out var connection) || connection is null)
         {
             Log.Error($"{entity} cant get out of demiplane {demiplane}: no active connections!");
             return false;
@@ -117,7 +119,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 
         foreach (var entry in demiplane.Comp.EntryPoints)
         {
-            RemoveDemiplanRandomEntryPoint(demiplane, entry);
+            RemoveDemiplaneRandomEntryPoint(demiplane, entry);
         }
     }
 }
