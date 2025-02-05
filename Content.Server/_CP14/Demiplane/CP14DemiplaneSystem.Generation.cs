@@ -146,7 +146,7 @@ public sealed partial class CP14DemiplaneSystem
             return;
         }
         //We cant open demiplane in another demiplane or if parent is not Map
-        if (HasComp<CP14DemiplaneComponent>(Transform(generator).MapUid) || !HasComp<MapGridComponent>(_transform.GetParentUid(args.User)))
+        if (_demiplaneQuery.HasComp(Transform(generator).MapUid) || !HasComp<MapGridComponent>(_transform.GetParentUid(args.User)))
         {
             _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
             return;

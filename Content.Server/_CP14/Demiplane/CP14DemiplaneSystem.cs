@@ -1,3 +1,4 @@
+using Content.Server._CP14.Demiplane.Components;
 using Content.Server._CP14.RoundStatistic;
 using Content.Server.Flash;
 using Content.Server.Procedural;
@@ -28,15 +29,43 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly CP14RoundStatTrackerSystem _statistic = default!;
 
+    private EntityQuery<CP14DemiplaneComponent> _demiplaneQuery;
+
     public override void Initialize()
     {
         base.Initialize();
 
+        _demiplaneQuery = GetEntityQuery<CP14DemiplaneComponent>();
+
         InitGeneration();
         InitConnections();
         InitStabilization();
+        InitEchoes();
 
         SubscribeLocalEvent<CP14DemiplaneComponent, ComponentShutdown>(OnDemiplanShutdown);
+        SubscribeLocalEvent<CP14SpawnOutOfDemiplaneComponent, MapInitEvent>(OnSpawnOutOfDemiplane);
+    }
+
+    private void OnSpawnOutOfDemiplane(Entity<CP14SpawnOutOfDemiplaneComponent> ent, ref MapInitEvent args)
+    {
+        //Check if entity is in demiplane
+        var map = Transform(ent).MapUid;
+        if (!_demiplaneQuery.TryComp(map, out var demiplane))
+            return;
+
+        //Get random exit demiplane point and spawn entity there
+        if (demiplane.ExitPoints.Count == 0)
+            return;
+
+        var exit = _random.Pick(demiplane.ExitPoints);
+        var coordinates = Transform(exit).Coordinates;
+
+        var proto = ent.Comp.Proto;
+
+        if (proto is null)
+            proto = MetaData(ent).EntityPrototype?.ID;
+
+        Spawn(proto, coordinates);
     }
 
     public override void Update(float frameTime)

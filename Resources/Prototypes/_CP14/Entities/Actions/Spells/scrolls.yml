@@ -113,7 +113,7 @@
 
 - type: entity
   abstract: true
-  id: CP14BaseSpellScrollLightDarkness
+  id: CP14BaseSpellScrollLight
   parent: CP14BaseSpellScroll
   components:
   - type: Sprite

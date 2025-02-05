@@ -35,7 +35,7 @@
   - type: PointLight
     enabled: true
     color: "#8f42ff"
-    energy: 30
+    energy: 1
     radius: 5
     netsync: false
   - type: LightBehaviour
