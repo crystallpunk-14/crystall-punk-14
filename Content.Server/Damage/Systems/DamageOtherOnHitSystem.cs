@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared._CP14.MeleeWeapon.Components;
+using Content.Shared._CP14.MeleeWeapon.EntitySystems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
@@ -41,7 +42,10 @@ namespace Content.Server.Damage.Systems
                 var damage = component.Damage;
 
                 if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
+                {
+                    CP14SharpeningSystem.ReduceSharpness((uid, sharp), damage);
                     damage *= sharp.Sharpness;
+                }
 
                 var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
                 //CrystallEdge Melee upgrade end
