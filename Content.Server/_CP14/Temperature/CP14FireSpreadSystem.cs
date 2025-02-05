@@ -2,10 +2,12 @@ using System.Linq;
 using System.Numerics;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.DoAfter;
+using Content.Server.Nutrition.Components;
+using Content.Server.Nutrition.EntitySystems;
 using Content.Shared._CP14.Temperature;
-using Content.Shared.Interaction;
 using Content.Shared.Maps;
+using Content.Shared.Nutrition.Components;
+using Content.Shared.Smoking;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -25,6 +27,7 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
+    [Dependency] private readonly SmokingSystem _smoking = default!;
 
     private readonly EntProtoId _fireProto = "CP14Fire";
 
@@ -35,6 +38,8 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
         base.Initialize();
 
         SubscribeLocalEvent<FlammableComponent, CP14IgnitionDoAfter>(OnFlammableIgnited);
+        SubscribeLocalEvent<SmokableComponent, CP14IgnitionDoAfter>(OnDelayedIgnite);
+        SubscribeLocalEvent<SmokingPipeComponent, CP14IgnitionDoAfter>(OnDelayedPipeIgnite);
         SubscribeLocalEvent<CP14FlammableBonusDamageComponent, MeleeHitEvent>(OnFlammableMeleeHit);
     }
 
@@ -57,6 +62,22 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
         _flammable.AdjustFireStacks(ent, ent.Comp.FirestacksOnIgnite, ent.Comp, true);
 
         args.Handled = true;
+    }
+
+    //For smokable cigars
+    private void OnDelayedIgnite(Entity<SmokableComponent> ent, ref CP14IgnitionDoAfter args)
+    {
+        _smoking.SetSmokableState(ent, SmokableState.Lit, ent.Comp);
+    }
+
+    //For smokable pipes
+    private void OnDelayedPipeIgnite(Entity<SmokingPipeComponent> pipe, ref CP14IgnitionDoAfter args)
+    {
+        if (!TryComp<SmokableComponent>(pipe, out var smokable))
+            return;
+
+        if (_smoking.TryTransferReagents(pipe, (pipe.Owner, smokable)))
+            _smoking.SetSmokableState(pipe, SmokableState.Lit, smokable);
     }
 
     public override void Update(float frameTime)

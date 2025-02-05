@@ -74,7 +74,7 @@ namespace Content.Server.Nutrition.EntitySystems
         }
 
         // Convert smokable item into reagents to be smoked
-        private bool TryTransferReagents(Entity<SmokingPipeComponent> entity, Entity<SmokableComponent> smokable)
+        public bool TryTransferReagents(Entity<SmokingPipeComponent> entity, Entity<SmokableComponent> smokable) //CP14 make it public
         {
             if (entity.Comp.BowlSlot.Item == null)
                 return false;
