@@ -19,9 +19,14 @@
   color: "#89e04f"
 
 - type: magicType
-  id: LightDarkness
-  name: cp14-magic-type-light-darkness
+  id: Light
+  name: cp14-magic-type-light
   color: "#ba97b8"
+
+- type: magicType
+  id: Darkness
+  name: cp14-magic-type-darkness
+  color: "#4e0691"
 
 - type: magicType
   id: Meta

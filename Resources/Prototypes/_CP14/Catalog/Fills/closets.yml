@@ -133,19 +133,16 @@
   - type: StorageFill
     contents:
       - id: CP14Rope
-      - id: CP14Rope
+        amount: 2
       - id: Bola
-      - id: Bola
+        amount: 2
       - id: CP14ModularGuardHalberd
       - id: CP14BaseShield
       - id: CP14ModularGripIronLongGuard
-      - id: CP14ModularGripIronLongGuard
+        amount: 2
       - id: CP14BaseLightCrossbow
       - id: CP14Crossbolt
-      - id: CP14Crossbolt
-      - id: CP14Crossbolt
-      - id: CP14Crossbolt
-      - id: CP14Crossbolt
+        amount: 5
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
       - id: CP14BookImperialLawsHandBook
@@ -158,13 +155,13 @@
   - type: StorageFill
     contents:
       - id: CP14Rope
-      - id: CP14Rope
+        amount: 2
       - id: Bola
       - id: Bola
       - id: CP14ModularGuardHalberd
       - id: CP14BaseShield
       - id: CP14ModularGripIronLongGuard
-      - id: CP14ModularGripIronLongGuard
+        amount: 2
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
       - id: CP14StampGuardCommander
@@ -182,3 +179,9 @@
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14PaperFolderBlue
+      - id: CP14SpellscrollSignalLightBlue
+        amount: 4
+      - id: CP14SpellscrollSignalLightYellow
+        amount: 4
+      - id: CP14SpellscrollSignalLightRed
+        amount: 4
