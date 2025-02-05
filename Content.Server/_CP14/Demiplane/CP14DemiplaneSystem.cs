@@ -59,7 +59,13 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 
         var exit = _random.Pick(demiplane.ExitPoints);
         var coordinates = Transform(exit).Coordinates;
-        Spawn(ent.Comp.Proto, coordinates);
+
+        var proto = ent.Comp.Proto;
+
+        if (proto is null)
+            proto = MetaData(ent).EntityPrototype?.ID;
+
+        Spawn(proto, coordinates);
     }
 
     public override void Update(float frameTime)
