@@ -14,7 +14,7 @@ public sealed partial class CP14DemiplaneSystem
     private void OnRiftInit(Entity<CP14DemiplaneRiftComponent> rift, ref MapInitEvent args)
     {
         var map = Transform(rift).MapUid;
-        if (TryComp<CP14DemiplaneComponent>(map, out var demiplane)) // In demiplane
+        if (_demiplaneQuery.TryComp(map, out var demiplane)) // In demiplane
         {
             if (rift.Comp.TryAutoLinkToMap)
                 rift.Comp.Demiplane = map.Value;
@@ -24,7 +24,7 @@ public sealed partial class CP14DemiplaneSystem
         }
         else if (rift.Comp.Demiplane is not null) //We out of demiplane
         {
-            if (TryComp<CP14DemiplaneComponent>(rift.Comp.Demiplane, out var riftDemiplane))
+            if (_demiplaneQuery.TryComp(rift.Comp.Demiplane, out var riftDemiplane))
             {
                 if (rift.Comp.ActiveTeleport)
                     AddDemiplaneRandomExitPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);
@@ -37,7 +37,7 @@ public sealed partial class CP14DemiplaneSystem
         if (rift.Comp.Demiplane is null)
             return;
 
-        if (!TryComp<CP14DemiplaneComponent>(rift.Comp.Demiplane, out var riftDemiplane))
+        if (!_demiplaneQuery.TryComp(rift.Comp.Demiplane, out var riftDemiplane))
             return;
 
         RemoveDemiplaneRandomEntryPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);

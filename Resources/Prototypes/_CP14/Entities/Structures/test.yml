@@ -80,6 +80,8 @@
     guides:
     - CP14_RU_Demiplanes
     - CP14_EN_Demiplanes
+  - type: Speech
+    speechVerb: Ghost
 
 - type: entity
   id: CP14DemiplaneTimedRadiusPassway

@@ -29,13 +29,18 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly CP14RoundStatTrackerSystem _statistic = default!;
 
+    private EntityQuery<CP14DemiplaneComponent> _demiplaneQuery;
+
     public override void Initialize()
     {
         base.Initialize();
 
+        _demiplaneQuery = GetEntityQuery<CP14DemiplaneComponent>();
+
         InitGeneration();
         InitConnections();
         InitStabilization();
+        InitEchoes();
 
         SubscribeLocalEvent<CP14DemiplaneComponent, ComponentShutdown>(OnDemiplanShutdown);
         SubscribeLocalEvent<CP14SpawnOutOfDemiplaneComponent, MapInitEvent>(OnSpawnOutOfDemiplane);
@@ -45,7 +50,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     {
         //Check if entity is in demiplane
         var map = Transform(ent).MapUid;
-        if (!TryComp<CP14DemiplaneComponent>(map, out var demiplane))
+        if (!_demiplaneQuery.TryComp(map, out var demiplane))
             return;
 
         //Get random exit demiplane point and spawn entity there
