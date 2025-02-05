@@ -30,6 +30,11 @@
   flavorType: Base
   description: cp14-flavor-base-magic
 
+- type: flavor
+  id: CP14Salty
+  flavorType: Base
+  description: cp14-flavor-base-salt
+
 # Complex
 
 - type: flavor

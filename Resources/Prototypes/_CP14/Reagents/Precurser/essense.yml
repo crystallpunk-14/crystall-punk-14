@@ -1,0 +1,187 @@
+# Alchemized Blood / Raw Essense
+
+- type: reagent
+  id: CP14AlchemizedBlood
+  group: CP14Biological
+  name: cp14-reagent-name-alchemizedblood
+  desc: cp14-reagent-desc-alchemizedblood
+  flavor: CP14Bitterly
+  color: "#562020"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-powdery
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: -2
+      - !type:ChemVomit
+        probability: 0.10
+
+- type: reagent
+  id: CP14AlchemizedBloodTiefling
+  group: CP14Biological
+  desc: cp14-reagent-desc-alchemizedblood-tiefling
+  name: cp14-reagent-name-alchemizedblood-tiefling
+  flavor: CP14Bitterly
+  color: "#593722"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-powdery
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: -2
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 2
+
+- type: reagent
+  id: CP14AlchemizedBloodElf
+  group: CP14Biological
+  desc: cp14-reagent-desc-alchemizedblood-elf
+  name: cp14-reagent-name-alchemizedblood-elf
+  flavor: CP14Bitterly
+  color: "#592840"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-powdery
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: -2
+      - !type:CP14ManaChange
+        manaDelta: -1
+
+- type: reagent
+  id: CP14AlchemizedBloodGoblin
+  group: CP14Biological
+  desc: cp14-reagent-desc-alchemizedblood-goblin
+  name: cp14-reagent-name-alchemizedblood-goblin
+  flavor: CP14Bitterly
+  color: "#6E7563"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-powdery
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: -2
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1.5
+
+# Refined / Processed Essense
+
+- type: reagent
+  id: CP14Essense
+  group: CP14Biological
+  name: cp14-reagent-name-essense
+  desc: cp14-reagent-desc-essense
+  flavor: CP14Magic
+  color: "#7F3E13"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-shimmering
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 2
+      - !type:ChemVomit
+        probability: 0.25
+
+- type: reagent
+  id: CP14EssenseTiefling
+  group: CP14Biological
+  desc: cp14-reagent-desc-essense-tiefling
+  name: cp14-reagent-name-essense-tiefling
+  flavor: CP14Magic
+  color: "#A37130"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-shimmering
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 2
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 2
+
+- type: reagent
+  id: CP14EssenseElf
+  group: CP14Biological
+  name: cp14-reagent-name-essense-elf
+  desc: cp14-reagent-desc-essense-elf
+  flavor: CP14Magic
+  color: "#933E53"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-shimmering
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 2
+      - !type:CP14ManaChange
+        manaDelta: -5
+
+- type: reagent
+  id: CP14EssenseGoblin
+  group: CP14Biological
+  name: cp14-reagent-name-essense-goblin
+  desc: cp14-reagent-desc-essense-goblin
+  flavor: CP14Magic
+  color: "#83993D"
+  recognizable: false
+  physicalDesc: cp14-reagent-physical-desc-shimmering
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 2
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3

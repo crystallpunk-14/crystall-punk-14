@@ -1,0 +1,142 @@
+# Idea:
+# Alchemized Blood, and Essense, are states of blood processed for use in alchemical reactions.
+
+#  Blood Alchemization
+
+- type: reaction
+  id: CP14HumanBloodAlchemization
+  minTemp: 424
+  priority: 2
+  reactants:
+    CP14Blood:
+      amount: 0.75
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14AlchemizedBlood: 0.75
+    CP14BasicEffectImpurity: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -116
+
+- type: reaction
+  id: CP14TieflingBloodAlchemization
+  minTemp: 464
+  priority: 2
+  reactants:
+    CP14BloodTiefling:
+      amount: 0.75
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14AlchemizedBloodTiefling: 0.75
+    CP14BasicEffectImpurity: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -116
+
+- type: reaction
+  id: CP14ElfBloodAlchemization
+  minTemp: 424
+  priority: 2
+  reactants:
+    CP14BloodElf:
+      amount: 0.75
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14AlchemizedBloodElf: 0.75
+    CP14BasicEffectImpurity: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -116
+
+- type: reaction
+  id: CP14GoblinBloodAlchemization
+  minTemp: 414
+  priority: 2
+  reactants:
+    CP14BloodGoblin:
+      amount: 0.75
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14AlchemizedBloodGoblin: 0.75
+    CP14BasicEffectImpurity: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -106
+
+# Essense Refining
+
+- type: reaction
+  id: CP14HumanEssenseRefinement
+  minTemp: 510
+  priority: 2
+  reactants:
+    CP14AlchemizedBlood:
+      amount: 0.75
+    CP14BloodFlowerSap:
+      amount: 0.25
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14Essense: 1
+    CP14BasicEffectEmpty: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14TieflingEssenseRefinement
+  minTemp: 550
+  priority: 2
+  reactants:
+    CP14AlchemizedBloodTiefling:
+      amount: 0.75
+    CP14BloodFlowerSap:
+      amount: 0.25
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14EssenseTiefling: 1
+    CP14BasicEffectEmpty: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -160
+
+- type: reaction
+  id: CP14ElfEssenseRefinement
+  minTemp: 510
+  priority: 2
+  reactants:
+    CP14AlchemizedBloodElf:
+      amount: 0.75
+    CP14BloodFlowerSap:
+      amount: 0.25
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14EssenseElf: 1
+    CP14BasicEffectEmpty: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14GoblinEssenseRefinement
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14AlchemizedBloodGoblin:
+      amount: 0.75
+    CP14BloodFlowerSap:
+      amount: 0.25
+    CP14GroundQuartz:
+      amount: 0.25
+  products:
+    CP14EssenseGoblin: 1
+    CP14BasicEffectEmpty: 0.25
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -140

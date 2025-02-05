@@ -6,6 +6,8 @@
   children:
   - CP14_EN_BasicAlchemy
   - CP14_EN_Biological
+  - CP14_EN_Inorganic
+  - CP14_EN_Archaic
   filterEnabled: True
 
 - type: guideEntry
@@ -20,6 +22,20 @@
   id: CP14_EN_Biological
   name: Biological solutions
   text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Biological.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Inorganic
+  name: Inorganic solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Inorganic.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Archaic
+  name: Archaic solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Archaic.xml"
   filterEnabled: True
 
 - type: guideEntry

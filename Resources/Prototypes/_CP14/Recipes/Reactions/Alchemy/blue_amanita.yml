@@ -3,7 +3,7 @@
 
 - type: reaction
   id: CP14BlueAmanitaColor
-  minTemp: 500
+  minTemp: 393
   priority: 1
   quantized: true
   conserveEnergy: false
@@ -12,7 +12,7 @@
       amount: 10
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -250
+    addTemperature: -50
   - !type:CreateEntityReactionEffect
       entity: CP14DyeBlue
 

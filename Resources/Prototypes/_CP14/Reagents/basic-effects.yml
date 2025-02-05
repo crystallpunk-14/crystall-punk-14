@@ -1,3 +1,25 @@
+# This file contains Tier 0 and Tier 1 effects & solutions 
+
+# T0 / Precurser
+
+
+- type: reagent
+  id: CP14BasicEffectImpurity
+  name: cp14-reagent-name-basic-impurity
+  desc: cp14-reagent-desc-basic-impurity
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#82ba3d"
+  physicalDesc: cp14-reagent-physical-desc-powdery
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ChemVomit
+        probability: 0.3
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -1
 
 - type: reagent
   id: CP14BasicEffectEmpty
@@ -8,8 +30,8 @@
   color: "#858585"
   physicalDesc: cp14-reagent-physical-desc-colorless
 
-# USEFUL
-# Effects that have a direct impact on gameplay
+# T1 / Simple or Basic solutions
+# Have simple effects, shouldn't be able to replace their occupational 
 
 - type: reagent
   id: CP14BasicEffectHealBrute
@@ -44,6 +66,54 @@
             Brute: 3
 
 - type: reagent
+  id: CP14BasicEffectHealHeat
+  name: cp14-reagent-name-basic-heal-heat
+  desc: cp14-reagent-desc-basic-heal-heat
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#BF361E"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -5
+
+- type: reagent
+  id: CP14BasicEffectHealCold
+  name: cp14-reagent-name-basic-heal-cold
+  desc: cp14-reagent-desc-basic-heal-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#a3511a"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -5
+
+- type: reagent
+  id: CP14BasicEffectDamageCold
+  name: cp14-reagent-name-basic-damage-cold
+  desc: cp14-reagent-desc-basic-damage-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#1a95a3"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 5
+
+- type: reagent
   id: CP14BasicEffectHealPoison
   name: cp14-reagent-name-basic-heal-poison
   desc: cp14-reagent-desc-basic-heal-poison
@@ -57,7 +127,7 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: -10
+            Poison: -6
 
 - type: reagent
   id: CP14BasicEffectDamagePoison
@@ -73,7 +143,7 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: 10
+            Poison: 6
 
 - type: reagent
   id: CP14BasicEffectHealAirloss
@@ -88,8 +158,9 @@
       effects:
       - !type:HealthChange
         damage:
-          groups:
-            Airloss: -10
+          types:
+            Asphyxiation: -8    
+            Bloodloss: -2
 
 - type: reagent
   id: CP14BasicEffectDamageAirloss
@@ -104,8 +175,36 @@
       effects:
       - !type:HealthChange
         damage:
-          groups:
-            Airloss: 10
+          types:
+            Asphyxiation: 10
+
+- type: reagent
+  id: CP14BasicEffectBloodRestore
+  name: cp14-reagent-name-basic-blood-restore
+  desc: cp14-reagent-desc-basic-blood-restore
+  group: CP14BasicEffect
+  flavor: CP14Metallic
+  color: "#e31010"
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 10
+
+- type: reagent
+  id: CP14BasicEffectBloodAbsorption
+  name: cp14-reagent-name-basic-blood-absorption
+  desc: cp14-reagent-desc-basic-blood-absorption
+  group: CP14BasicEffect
+  flavor: CP14Metallic
+  color: "#2b0e0b"
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Poison:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: -10
 
 - type: reagent
   id: CP14BasicEffectSatiateHunger
@@ -136,38 +235,6 @@
         factor: 6
 
 - type: reagent
-  id: CP14BasicEffectHealCold
-  name: cp14-reagent-name-basic-heal-cold
-  desc: cp14-reagent-desc-basic-heal-cold
-  group: CP14BasicEffect
-  flavor: CP14Stinging
-  color: "#a3511a"
-  physicalDesc: cp14-reagent-physical-desc-sparkling
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Cold: -10
-
-- type: reagent
-  id: CP14BasicEffectDamageCold
-  name: cp14-reagent-name-basic-damage-cold
-  desc: cp14-reagent-desc-basic-damage-cold
-  group: CP14BasicEffect
-  flavor: CP14Stinging
-  color: "#1a95a3"
-  physicalDesc: cp14-reagent-physical-desc-sparkling
-  metabolisms:
-    Poison:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Cold: 10
-
-- type: reagent
   id: CP14BasicEffectHealMana
   name: cp14-reagent-name-basic-heal-mana
   desc: cp14-reagent-desc-basic-heal-mana
@@ -194,34 +261,6 @@
       effects:
       - !type:CP14ManaChange
         manaDelta: -10
-
-- type: reagent
-  id: CP14BasicEffectBloodRestore
-  name: cp14-reagent-name-basic-blood-restore
-  desc: cp14-reagent-desc-basic-blood-restore
-  group: CP14BasicEffect
-  flavor: CP14Metallic
-  color: "#e31010"
-  physicalDesc: cp14-reagent-physical-desc-scarlet
-  metabolisms:
-    Poison:
-      effects:
-      - !type:ModifyBloodLevel
-        amount: 10
-
-- type: reagent
-  id: CP14BasicEffectBloodAbsorption
-  name: cp14-reagent-name-basic-blood-absorption
-  desc: cp14-reagent-desc-basic-blood-absorption
-  group: CP14BasicEffect
-  flavor: CP14Metallic
-  color: "#2b0e0b"
-  physicalDesc: cp14-reagent-physical-desc-scarlet
-  metabolisms:
-    Poison:
-      effects:
-      - !type:ModifyBloodLevel
-        amount: -10
 
 - type: reagent
   id: CP14BasicEffectUnstable
@@ -275,9 +314,8 @@
         key: Stutter
         component: StutteringAccent
 
-# USELESS
-# Things that don't directly affect gameplay.
-
+# Gimmick solutions, otherwise doesn't give a mechanical benefit
+  
 - type: reagent
   id: CP14BasicEffectRainbow
   name: cp14-reagent-name-see-rainbow
@@ -352,4 +390,3 @@
     Food:
       effects:
       - !type:Jitter
-  
