@@ -67,9 +67,7 @@
     drawdepth: Effects
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
     layers:
-    - state: core
-      shader: unshaded
-    - state: pulse
+    - state: connective
       shader: unshaded
   - type: PointLight
     radius: 2
