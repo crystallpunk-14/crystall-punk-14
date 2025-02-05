@@ -33,6 +33,16 @@ public abstract partial  class CP14SharedDemiplaneSystem : EntitySystem
             MovementThreshold = 0.2f,
         });
     }
+
+    public virtual bool TryTeleportIntoDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
+    {
+        return true;
+    }
+
+    public virtual bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
+    {
+        return true;
+    }
 }
 
 [Serializable, NetSerializable]

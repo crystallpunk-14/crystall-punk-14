@@ -82,7 +82,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     /// <param name="demiplane">The demiplane the entity will be teleported to</param>
     /// <param name="entity">The entity to be teleported</param>
     /// <returns></returns>
-    public bool TryTeleportIntoDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
+    public override bool TryTeleportIntoDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
     {
         if (entity is null)
             return false;
@@ -107,7 +107,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     /// <param name="demiplane">The demiplane from which the entity will be teleported</param>
     /// <param name="entity">An entity that will be teleported into the real world. This entity must be in the demiplane, otherwise the function will not work.</param>
     /// <returns></returns>
-    public bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
+    public override bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
     {
         if (entity is null)
             return false;
