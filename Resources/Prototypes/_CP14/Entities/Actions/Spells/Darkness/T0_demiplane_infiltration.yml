@@ -5,7 +5,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
-    state: rift_shield
+    state: rift_arrow
   - type: CP14MagicEffectManaCost
     manaCost: 50
   - type: CP14MagicEffect
@@ -18,7 +18,7 @@
     - !type:CP14SpellDemiplaneInfiltration
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Ego intrabo et..."
-    endSpeech: "...salvabo socios meos"
+    endSpeech: "salvabo socios meos"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneDemiplaneInfiltration
   - type: EntityTargetAction
@@ -33,7 +33,7 @@
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
-      state: rift_shield
+      state: rift_arrow
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 50
       castDelay: 5

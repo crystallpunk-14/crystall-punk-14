@@ -6,6 +6,7 @@ using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared.Popups;
 using Robust.Server.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -93,12 +94,25 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
             return false;
         }
 
-        var targetCoord = Transform(entryPoint.Value).Coordinates;
-        _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
-        _transform.SetCoordinates(entity.Value, targetCoord);
-        _audio.PlayGlobal(demiplane.Comp.ArrivalSound, entity.Value);
+        TeleportEntityToCoordinate(entity.Value, Transform(entryPoint.Value).Coordinates, demiplane.Comp.ArrivalSound);
 
         return true;
+    }
+
+    /// <summary>
+    /// Simple teleportation, with common special effects for all the game's teleportation mechanics
+    /// </summary>
+    /// <param name="entity"></param>
+    /// <param name="coordinates"></param>
+    /// <param name="sound"></param>
+    public void TeleportEntityToCoordinate(EntityUid? entity, EntityCoordinates coordinates, SoundSpecifier? sound = null)
+    {
+        if (entity is null)
+            return;
+
+        _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
+        _transform.SetCoordinates(entity.Value, coordinates);
+        _audio.PlayGlobal(sound, entity.Value);
     }
 
     /// <summary>
@@ -121,11 +135,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
             return false;
         }
 
-        var targetCoord = Transform(connection.Value).Coordinates;
-        _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
-        _transform.SetCoordinates(entity.Value, targetCoord);
-        _audio.PlayGlobal(demiplane.Comp.DepartureSound, entity.Value);
-
+        TeleportEntityToCoordinate(entity.Value, Transform(connection.Value).Coordinates, demiplane.Comp.DepartureSound);
         return true;
     }
 

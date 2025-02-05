@@ -23,7 +23,6 @@
   - type: CP14MagicEffectSomaticAspect
   - type: EntityWorldTargetAction
     range: 7
-    checkCanAccess: false
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg

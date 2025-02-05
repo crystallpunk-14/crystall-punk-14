@@ -8,13 +8,3 @@
     sprite: _CP14/Clothing/Cloak/Roles/Guard/guard_commander_cloak.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/Guard/guard_commander_cloak.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Heat: 0.7
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
