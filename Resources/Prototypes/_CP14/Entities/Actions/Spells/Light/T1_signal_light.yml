@@ -5,7 +5,7 @@
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
   - type: CP14MagicEffectManaCost
-    manaCost: 10
+    manaCost: 5
   - type: CP14MagicEffect
     magicType: Light
   - type: CP14MagicEffectSomaticAspect
@@ -21,7 +21,7 @@
 # RED
 
 - type: entity
-  id: cP14ActionSpellSignalLightRed
+  id: CP14ActionSpellSignalLightRed
   parent: CP14ActionSpellSignalLightBase
   name: Red signal Light
   description: You launch a hovering ball of light, briefly emitting a bright glow of red. This glow is able to penetrate the real world even from the demiplane. 
@@ -53,6 +53,103 @@
       color: "#db1616"
       shader: unshaded
 
+- type: entity
+  parent: CP14BaseSpellScrollLight
+  id: CP14SpellscrollSignalLightRed
+  name: red signal light spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - cP14ActionSpellSignalLightRed
+
+# YELLOW
+
+- type: entity
+  id: CP14ActionSpellSignalLightYellow
+  parent: CP14ActionSpellSignalLightBase
+  name: Yellow signal Light
+  description: You launch a hovering ball of light, briefly emitting a bright glow of yellow. This glow is able to penetrate the real world even from the demiplane. 
+  components:
+  - type: Sprite
+    state: signal_light_yellow
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SignalLightYellow
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneSignalLightYellow
+  - type: InstantAction
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: signal_light_yellow
+
+- type: entity
+  id: CP14RuneSignalLightYellow
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#ebc942"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#ebc942"
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollLight
+  id: CP14SpellscrollSignalLightYellow
+  name: yellow signal light spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - cP14ActionSpellSignalLightYellow
+
+# BLUE
+
+- type: entity
+  id: CP14ActionSpellSignalLightBlue
+  parent: CP14ActionSpellSignalLightBase
+  name: Blue signal Light
+  description: You launch a hovering ball of light, briefly emitting a bright glow of blue. This glow is able to penetrate the real world even from the demiplane. 
+  components:
+  - type: Sprite
+    state: signal_light_blue
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SignalLightBlue
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneSignalLightBlue
+  - type: InstantAction
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: signal_light_blue
+
+- type: entity
+  id: CP14RuneSignalLightBlue
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#42aaeb"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#42aaeb"
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollLight
+  id: CP14SpellscrollSignalLightBlue
+  name: blue signal light spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSignalLightBlue
+
 # Signals
 
 - type: entity
@@ -74,7 +171,15 @@
     energy: 1
     netsync: false
     mask: /Textures/_CP14/Effects/LightMasks/lighthouse_cone.png
-    #TODO ambient sound
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/Items/Flare/flare_on.ogg
+  - type: AmbientSound
+    enabled: true
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Items/Flare/flare_burn.ogg #TODO sound redesign
 
 - type: entity
   id: CP14SignalLightRed
