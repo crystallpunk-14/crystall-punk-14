@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "All right reserved",
-  "copyright": "Created by .kreks., cure_poison, cure_burn, mana_gift, water creation, plant_growth, beer creation, sprint, tiefling_revenge, signal_light_blue, signal_light_red, signal_light_yellow and resurrection by TheShuEd",
+  "copyright": "Created by .kreks., cure_poison, cure_burn, mana_gift, water creation, plant_growth, beer creation, sprint, tiefling_revenge, demi_arrow, rift_shield, rift_arrow, signal_light_blue, signal_light_red, signal_light_yellow and resurrection by TheShuEd",
   "states": [
     {
       "name": "beer_creation"
@@ -18,6 +18,9 @@
     },
     {
       "name": "cure_wounds"
+    },
+    {
+      "name": "demi_arrow"
     },
     {
       "name": "earth_wall"
@@ -48,6 +51,12 @@
     },
     {
       "name": "resurrection"
+    },
+    {
+      "name": "rift_arrow"
+    },
+    {
+      "name": "rift_shield"
     },
     {
       "name": "shadow_grab"

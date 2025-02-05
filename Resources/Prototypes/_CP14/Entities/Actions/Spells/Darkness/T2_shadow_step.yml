@@ -11,7 +11,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 20
   - type: CP14MagicEffect
-    magicType: Gate
+    magicType: Darkness
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -23,7 +23,6 @@
   - type: CP14MagicEffectSomaticAspect
   - type: EntityWorldTargetAction
     range: 7
-    checkCanAccess: false
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
@@ -46,7 +45,7 @@
       color: "#5e427e"
 
 - type: entity
-  parent: CP14BaseSpellScrollGate
+  parent: CP14BaseSpellScrollDarkness
   id: CP14SpellScrollShadowStep
   name: shadow step spell scroll
   components:

@@ -9,7 +9,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 10
   - type: CP14MagicEffect
-    magicType: Movement
+    magicType: Darkness
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -54,7 +54,7 @@
       color: "#5e427e"
 
 - type: entity
-  parent: CP14BaseSpellScrollMovement
+  parent: CP14BaseSpellScrollDarkness
   id: CP14SpellScrollShadowGrab
   name: shadow grab spell scroll
   components:
