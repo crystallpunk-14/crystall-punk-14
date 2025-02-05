@@ -21,10 +21,10 @@
       - Smokable
 
 - type: entity
-  name: ground salvia
+  name: ground sage
   parent: BaseItem
-  id: CP14GroundSalvia
-  description: Ground and dried salvia root as it turns out is an excellent substitute for tobacco.
+  id: CP14GroundSage
+  description: Ground and dried sage root as it turns out is an excellent substitute for tobacco.
   categories: [ ForkFiltered ]
   components:
   - type: Item
@@ -39,7 +39,7 @@
           Quantity: 2
   - type: Sprite
     sprite: _CP14/Objects/Misc/reagent_fillings.rsi
-    state: salvia_powder
+    state: sage_powder
   - type: Tag
     tags:
       - Smokable

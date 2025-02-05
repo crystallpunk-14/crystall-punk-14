@@ -42,9 +42,9 @@
         path: /Audio/Weapons/Guns/Empty/empty.ogg
 
 - type: entity
-  id: CP14SmokingPipeFilledSalvia
+  id: CP14SmokingPipeFilledSage
   parent: CP14SmokingPipe
-  suffix: Salvia
+  suffix: Sage
   categories: [ ForkFiltered ]
   components:
   - type: ContainerContainer
@@ -54,7 +54,7 @@
   - type: SmokingPipe
     bowl_slot:
       name: smoking-pipe-slot-component-slot-name-bowl
-      startingItem: CP14GroundSalvia
+      startingItem: CP14GroundSage
       whitelist:
         tags:
           - Smokable
