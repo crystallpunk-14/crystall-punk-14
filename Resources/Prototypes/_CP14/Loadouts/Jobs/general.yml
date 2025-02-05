@@ -556,6 +556,7 @@
   - CP14ActionSpellManaGift
   - CP14ActionSpellShadowGrab
   - CP14ActionSpellWaterCreation
+  - CP14ActionSpellFreeze
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
 
@@ -703,6 +704,19 @@
   dummyEntity: CP14ActionSpellWaterCreation
   actions:
   - CP14ActionSpellWaterCreation
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellFreeze
+  dummyEntity: CP14ActionSpellFreeze
+  actions:
+  - CP14ActionSpellFreeze
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:

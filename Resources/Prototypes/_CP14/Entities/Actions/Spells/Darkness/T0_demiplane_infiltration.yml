@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellDemiplaneInfiltration
   name: Demiplane infiltration
-  description: Mastery of demiplane space magic allows you to reach inside any open demiplanes
+  description: You get inside the demiplane of your choice.
   components:
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
