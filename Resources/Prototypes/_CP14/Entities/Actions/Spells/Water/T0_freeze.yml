@@ -38,7 +38,7 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: freeze
     event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 2
+      cooldown: 15
       castTime: 10
       breakOnMove: false
 
