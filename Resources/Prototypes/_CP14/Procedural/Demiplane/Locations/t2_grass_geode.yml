@@ -8,6 +8,7 @@
   - CP14DemiplaneHerbals
   - CP14DemiplaneUnderground
   - CP14DemiplaneWater
+  - CP14DemiplaneAnimalsSwamp
 
 - type: dungeonConfig
   id: CP14DemiplaneSwampGeode
