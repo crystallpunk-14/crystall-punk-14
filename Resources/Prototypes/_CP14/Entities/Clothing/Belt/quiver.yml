@@ -30,3 +30,25 @@
   - type: StorageContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
+
+- type: entity
+  parent: CP14ClothingBeltQuiver
+  id: CP14ClothingBeltQuiverArrow
+  categories: [ ForkFiltered ]
+  suffix: Full. Arrow
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Arrow
+        amount: 16
+
+- type: entity
+  parent: CP14ClothingBeltQuiver
+  id: CP14ClothingBeltQuiverCrossbowBolt
+  categories: [ ForkFiltered ]
+  suffix: Full. CrossbowBolt
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14CrossbowBolt
+        amount: 32
