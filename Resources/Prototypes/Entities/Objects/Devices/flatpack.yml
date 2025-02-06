@@ -7,7 +7,7 @@
   - HideSpawnMenu
   components:
   - type: Item
-    size: Large
+    size: Small
   - type: Sprite
     sprite: Objects/Devices/flatpack.rsi
     layers:
@@ -79,8 +79,6 @@
   - type: Sprite
     layers:
     - state: singularity-generator
-  - type: GuideHelp
-    guides: [ Singularity, Power ]
 
 - type: entity
   parent: BaseFlatpack
@@ -93,8 +91,6 @@
   - type: Sprite
     layers:
     - state: radiation-collector
-  - type: GuideHelp
-    guides: [ Singularity, Power ]
 
 - type: entity
   parent: BaseFlatpack

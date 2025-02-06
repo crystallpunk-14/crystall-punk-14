@@ -15,7 +15,7 @@
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice
   - type: WirelessNetworkConnection
-    range: 200
+    range: 2000
   - type: DeviceLinkSink
     ports:
     - Trigger
