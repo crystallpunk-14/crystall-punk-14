@@ -20,23 +20,32 @@
       throwPower: 9
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14DustEffect
+      - CP14DustEffectKickSound
   - type: CP14MagicEffectVerbalAspect
+    startSpeech: cp14-kick-emote-start
     endSpeech: cp14-kick-emote
     emote: true
   - type: EntityTargetAction
     canTargetSelf: false
     range: 1
     itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Effects/hit_kick.ogg
-      params:
-        pitch: 2
     icon:
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: kick
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
-      castDelay: 1
-      entityDistance: 1
+      castDelay: 0.5
+      distanceThreshold: 1.5
       breakOnMove: false
+      breakOnDamage: false
+
+- type: entity
+  id: CP14DustEffectKickSound
+  parent: CP14DustEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EmitSoundOnSpawn
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        pitch: 1

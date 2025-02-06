@@ -29,7 +29,7 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePlantFreeze
   - type: EntityTargetAction
-    range: 10
+    range: 5
     interactOnMiss: false
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
@@ -40,6 +40,7 @@
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 15
       castTime: 10
+      distanceThreshold: 5
       breakOnMove: false
 
 - type: entity

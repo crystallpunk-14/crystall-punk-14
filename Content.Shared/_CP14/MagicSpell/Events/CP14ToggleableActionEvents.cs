@@ -17,9 +17,9 @@ public interface ICP14ToggleableMagicEffect
 
     public bool BreakOnDamage { get; }
 
-    public bool Hidden{ get; }
+    public float DistanceThreshold { get; }
 
-    public float EntityDistance { get; }
+    public bool Hidden{ get; }
 }
 
 public sealed partial class CP14ToggleableInstantActionEvent : InstantActionEvent, ICP14ToggleableMagicEffect
@@ -40,10 +40,10 @@ public sealed partial class CP14ToggleableInstantActionEvent : InstantActionEven
     public bool BreakOnDamage { get; private set; } = true;
 
     [DataField]
-    public bool Hidden { get; private set; } = false;
+    public float DistanceThreshold { get; private set; } = 100f;
 
     [DataField]
-    public float EntityDistance { get; private set; } = 100f;
+    public bool Hidden { get; private set; } = false;
 }
 
 public sealed partial class CP14ToggleableEntityWorldTargetActionEvent : EntityWorldTargetActionEvent, ICP14ToggleableMagicEffect
@@ -64,10 +64,10 @@ public sealed partial class CP14ToggleableEntityWorldTargetActionEvent : EntityW
     public bool BreakOnDamage { get; private set; } = true;
 
     [DataField]
-    public bool Hidden { get; private set; } = false;
+    public float DistanceThreshold { get; private set; } = 100f;
 
     [DataField]
-    public float EntityDistance { get; private set; } = 100f;
+    public bool Hidden { get; private set; } = false;
 }
 
 public sealed partial class CP14ToggleableEntityTargetActionEvent : EntityTargetActionEvent, ICP14ToggleableMagicEffect
@@ -88,10 +88,10 @@ public sealed partial class CP14ToggleableEntityTargetActionEvent : EntityTarget
     public bool BreakOnDamage { get; private set; } = true;
 
     [DataField]
-    public bool Hidden { get; private set; } = false;
+    public float DistanceThreshold { get; private set; } = 100f;
 
     [DataField]
-    public float EntityDistance { get; private set; } = 100f;
+    public bool Hidden { get; private set; } = false;
 }
 
 [Serializable, NetSerializable]

@@ -19,19 +19,19 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnDelayedEntityTargetDoAfter);
     }
 
-    private bool TryStartDelayedAction(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+    private bool TryStartDelayedAction(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid? target, EntityUid performer)
     {
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             return false;
 
         var fromItem = action.Comp.SpellStorage is not null;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, MathF.Max(delayedEffect.CastDelay, 0.3f), doAfter, action, used: action.Comp.SpellStorage)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, MathF.Max(delayedEffect.CastDelay, 0.3f), doAfter, action, used: action.Comp.SpellStorage, target: target)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
             Hidden = delayedEffect.Hidden,
-            DistanceThreshold = 100f,
+            DistanceThreshold = delayedEffect.DistanceThreshold,
             CancelDuplicate = true,
             BlockDuplicate = true,
             BreakOnDropItem = fromItem,
@@ -65,7 +65,7 @@ public abstract partial class CP14SharedMagicSystem
             _doAfter.Cancel(action.Comp.ActiveDoAfter);
         else
         {
-            if (TryStartDelayedAction(delayedEffect, doAfter, action, performer))
+            if (TryStartDelayedAction(delayedEffect, doAfter, action, target, performer))
             {
                 var evStart = new CP14StartCastMagicEffectEvent(performer);
                 RaiseLocalEvent(action, ref evStart);
