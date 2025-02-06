@@ -114,7 +114,7 @@ public sealed class DoorSystem : SharedDoorSystem
 
                 return;
             case DoorState.Opening:
-                if (entity.Comp.OpeningAnimationTime == 0.0)
+                if (entity.Comp.OpeningAnimationTime == 0.5)
                     return;
 
                 _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.AnimationKey);

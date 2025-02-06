@@ -97,7 +97,7 @@ public sealed partial class DamageVisualsComponent : Component
     ///     and you want to avoid duplicating
     ///     these sprites.
     /// </remarks>
-    [DataField("damageDivisor")] public float Divisor = 1;
+    [DataField("damageDivisor")] public float Divisor = 2;
 
     /// <summary>
     ///     Set this to track all damage, instead of specific groups.
