@@ -10,7 +10,7 @@ namespace Content.Shared.Localizations
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         // If you want to change your codebase's language, do it here.
-        //public const string Culture = "en-US";
+        //public const string Culture = "ru-RU";
         public const string Culture = "en-US";
 
         /// <summary>
