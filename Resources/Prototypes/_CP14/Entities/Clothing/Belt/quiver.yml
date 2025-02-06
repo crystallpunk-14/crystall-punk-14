@@ -44,11 +44,11 @@
 
 - type: entity
   parent: CP14ClothingBeltQuiver
-  id: CP14ClothingBeltQuiverCrossbowBolt
+  id: CP14ClothingBeltQuiverCrossbolt
   categories: [ ForkFiltered ]
-  suffix: Full. CrossbowBolt
+  suffix: Full. Crossbolt
   components:
   - type: StorageFill
     contents:
-      - id: CP14CrossbowBolt
+      - id: CP14Crossbolt
         amount: 32
