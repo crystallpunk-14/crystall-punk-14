@@ -12,6 +12,7 @@
   - CP14ClothingCloakWhite
   - CP14ClothingCloakGreen
   - CP14ClothingCloakBlue
+  - CP14ClothingCloakFurCoat
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -47,6 +48,11 @@
   id: CP14ClothingCloakBlue
   equipment:
     cloak: CP14ClothingCloakBlue
+
+- type: loadout
+  id: CP14ClothingCloakFurCoat
+  equipment:
+    cloak: CP14ClothingCloakFurCoat
 
 # Eyes
 
@@ -421,6 +427,7 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
+  - CP14SmokingPipeFilledTobacco
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
@@ -492,6 +499,12 @@
     - CP14Torch
 
 - type: loadout
+  id: CP14SmokingPipeFilledTobacco
+  storage:
+    back:
+    - CP14SmokingPipeFilledTobacco
+
+- type: loadout
   id: CP14LyraInstrument
   storage:
     back:
@@ -544,8 +557,10 @@
   - CP14ActionSpellManaGift
   - CP14ActionSpellShadowGrab
   - CP14ActionSpellWaterCreation
+  - CP14ActionSpellFreeze
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
+  - CP14ActionSpellKick
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -700,6 +715,19 @@
       - CP14ManaWasting
 
 - type: loadout
+  id: CP14ActionSpellFreeze
+  dummyEntity: CP14ActionSpellFreeze
+  actions:
+  - CP14ActionSpellFreeze
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
   id: CP14ActionSpellBeerCreation
   dummyEntity: CP14ActionSpellBeerCreation
   actions:
@@ -729,3 +757,9 @@
       species:
       - CP14Goblin
       inverted: true # Goblins cannot take this spell, they have buffed version by default
+
+- type: loadout
+  id: CP14ActionSpellKick
+  dummyEntity: CP14ActionSpellKick
+  actions:
+  - CP14ActionSpellKick

@@ -8,6 +8,9 @@
   id: CP14DemiplanePeacefulAnimals
 
 - type: Tag
+  id: CP14DemiplaneAnimalsSwamp
+
+- type: Tag
   id: CP14DemiplaneHerbals
 
 # Demiplane features

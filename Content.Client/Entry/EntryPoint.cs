@@ -1,3 +1,4 @@
+using Content.Client._CP14.Discord;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -43,6 +44,9 @@ namespace Content.Client.Entry
 {
     public sealed class EntryPoint : GameClient
     {
+        //CP14
+        [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
+        //CP14 end
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IGameController _gameController = default!;
         [Dependency] private readonly IStateManager _stateManager = default!;
@@ -160,7 +164,10 @@ namespace Content.Client.Entry
 
             _parallaxManager.LoadDefaultParallax();
 
-            _overlayManager.AddOverlay(new CP14BasePostProcessOverlay()); // CP14-PostProcess
+            //CP14
+            _overlayManager.AddOverlay(new CP14BasePostProcessOverlay());
+            _discordAuth.Initialize();
+            //CP14 end
             _overlayManager.AddOverlay(new SingularityOverlay());
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
             _chatManager.Initialize();

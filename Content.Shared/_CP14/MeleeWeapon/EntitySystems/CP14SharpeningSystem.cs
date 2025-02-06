@@ -23,8 +23,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<CP14SharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage,
-            after: [typeof(WieldableSystem)]);
+        SubscribeLocalEvent<CP14SharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: [typeof(SharedWieldableSystem]);
         SubscribeLocalEvent<CP14SharpenedComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14SharpenedComponent, MeleeHitEvent>(OnMeleeHit);
 

@@ -126,6 +126,7 @@
   - CP14GuildmasterShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
+  - CP14GuildmasterSpells
 
 - type: roleLoadout
   id: JobCP14Banker

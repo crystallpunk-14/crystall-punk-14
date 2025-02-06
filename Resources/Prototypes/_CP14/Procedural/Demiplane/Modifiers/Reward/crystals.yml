@@ -1,8 +1,37 @@
 
 - type: cp14DemiplaneModifier
-  id: CrystalFire
+  id: CrystalNormal
   tiers:
     - 1
+  generationWeight: 0.1
+  categories:
+    Reward: 0.1
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalSmall
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 3
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalMedium
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorBase
+      entity: CP14CrystalBig
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CrystalFire
+  tiers:
     - 2
     - 3
   generationWeight: 0.1
@@ -36,10 +65,11 @@
       minGroupSize: 1
       maxGroupSize: 1
 
+# TIER 2
+
 - type: cp14DemiplaneModifier
   id: CrystalElectric
   tiers:
-    - 1
     - 2
     - 3
   generationWeight: 0.1
@@ -83,7 +113,6 @@
 - type: cp14DemiplaneModifier
   id: CrystalHealing
   tiers:
-    - 1
     - 2
     - 3
   generationWeight: 0.1
@@ -132,7 +161,6 @@
 - type: cp14DemiplaneModifier
   id: CrystalWater
   tiers:
-    - 1
     - 2
     - 3
   generationWeight: 0.1
@@ -181,7 +209,6 @@
 - type: cp14DemiplaneModifier
   id: CrystalDarkness
   tiers:
-    - 1
     - 2
     - 3
   generationWeight: 0.1
@@ -209,7 +236,6 @@
 - type: cp14DemiplaneModifier
   id: CrystalLight
   tiers:
-    - 1
     - 2
     - 3
   generationWeight: 0.1

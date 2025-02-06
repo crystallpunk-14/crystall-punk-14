@@ -231,8 +231,8 @@ CP14CrystalDiamondsSmall: CP14CrystalElementalLightSmall
 CP14CrystalDiamondsMedium: CP14CrystalElementalLightMedium
 CP14CrystalDiamondsBig: CP14CrystalElementalLightBig
 
-CP14QuartzCrystal: null
-CP14QuartzShard: null
+CP14QuartzCrystal: CP14CrystalMedium
+CP14QuartzShard: CP14CrystalShardBase
 
 #2025-30-01
 CP14OreCopper: CP14OreCopper1
@@ -786,3 +786,7 @@ LightTree06: LightTree
 
 #2024-12-28
 DrinkIrishCarBomb: DrinkIrishSlammer
+
+#2025-01-06
+ClothingMaskSexyClown: ClothingMaskBlushingClown
+ClothingMaskSexyMime: ClothingMaskBlushingMime

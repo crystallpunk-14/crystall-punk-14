@@ -234,6 +234,11 @@
     weightlessFriction: 2
     weightlessModifier: 0.6
   - type: CP14DamageableByMap
+  - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
 
 
 - type: entity

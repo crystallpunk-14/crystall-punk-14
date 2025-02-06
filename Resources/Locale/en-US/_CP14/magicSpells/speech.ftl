@@ -1,0 +1,1 @@
+cp14-kick-emote = makes a strong kick
