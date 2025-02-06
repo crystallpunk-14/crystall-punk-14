@@ -25,7 +25,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14SharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: new[] { typeof(WieldableSystem) });
+        SubscribeLocalEvent<CP14SharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: new[] { typeof(SharedWieldableSystem) });
         SubscribeLocalEvent<CP14SharpenedComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14SharpenedComponent, MeleeHitEvent>(OnMeleeHit);
 
