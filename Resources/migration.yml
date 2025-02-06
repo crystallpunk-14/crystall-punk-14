@@ -3,7 +3,7 @@
 # 2024-08-24
 CP14DungeonEntrance: CP14LaddersDownStoneAutoLink
 CP14DungeonExit: CP14LaddersUpStoneAutoLink
-CP14Nail110: CP14Nail10
+CP14Nail110: CP14Nail20
 
 # 2024-09-09
 CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
@@ -231,14 +231,15 @@ CP14CrystalDiamondsSmall: CP14CrystalElementalLightSmall
 CP14CrystalDiamondsMedium: CP14CrystalElementalLightMedium
 CP14CrystalDiamondsBig: CP14CrystalElementalLightBig
 
-CP14QuartzCrystal: null
-CP14QuartzShard: null
+CP14QuartzCrystal: CP14CrystalMedium
+CP14QuartzShard: CP14CrystalShardBase
 
 #2025-30-01
 CP14OreCopper: CP14OreCopper1
 CP14OreIron: CP14OreIron1
 CP14OreGold: CP14OreGold1
 CP14OreMithril: CP14OreMithril1
+CP14Nail10: CP14Nail20
 
 # <---> CrystallEdge migration zone end
 

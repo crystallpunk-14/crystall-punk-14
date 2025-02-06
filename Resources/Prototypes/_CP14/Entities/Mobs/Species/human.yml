@@ -7,6 +7,10 @@
   - type: HumanoidAppearance
     species: CP14Human
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Human/parts.rsi
     state: full

@@ -90,3 +90,51 @@
   components:
   - type: CP14Key
     autoGenerateShape: PersonalHouse10
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse11
+  suffix: PersonalHouse11
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse11
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse12
+  suffix: PersonalHouse12
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse12
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse13
+  suffix: PersonalHouse13
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse13
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse14
+  suffix: PersonalHouse14
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse14
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse15
+  suffix: PersonalHouse15
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse15
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse16
+  suffix: PersonalHouse16
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse16

@@ -9,29 +9,24 @@
   color: "#d9741c"
 
 - type: magicType
-  id: Gate
-  name: cp14-magic-type-gate
-  color: "#32597d"
-
-- type: magicType
   id: Healing
   name: cp14-magic-type-healing
   color: "#89e04f"
 
 - type: magicType
-  id: LightDarkness
-  name: cp14-magic-type-light-darkness
+  id: Light
+  name: cp14-magic-type-light
   color: "#ba97b8"
+
+- type: magicType
+  id: Darkness
+  name: cp14-magic-type-darkness
+  color: "#4e0691"
 
 - type: magicType
   id: Meta
   name: cp14-magic-type-meta
   color: "#dcffdb"
-
-- type: magicType
-  id: Movement
-  name: cp14-magic-type-movement
-  color: "#63ceff"
 
 - type: magicType
   id: Water

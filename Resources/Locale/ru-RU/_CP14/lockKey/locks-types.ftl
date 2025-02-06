@@ -14,9 +14,11 @@ cp14-lock-shape-tavern-dorm5 = комната таверны №5
 
 cp14-lock-shape-alchemist1 = лаборатория алхимика №1
 cp14-lock-shape-alchemist2 = лаборатория алхимика №2
+cp14-lock-shape-alchemist3 = лаборатория алхимика №3
 
 cp14-lock-shape-blacksmith1 = кузня №1
 cp14-lock-shape-blacksmith2 = кузня №2
+cp14-lock-shape-blacksmith3 = кузня №3
 
 cp14-lock-shape-personalhouse1 = дом №1
 cp14-lock-shape-personalhouse2 = дом №2
@@ -33,9 +35,12 @@ cp14-lock-shape-personalhouse12 = дом №12
 cp14-lock-shape-personalhouse13 = дом №13
 cp14-lock-shape-personalhouse14 = дом №14
 cp14-lock-shape-personalhouse15 = дом №15
+cp14-lock-shape-personalhouse16 = дом №16
 
 cp14-lock-shaper-guard-entrance = казармы, вход
 cp14-lock-shaper-guard-staff = казармы
 cp14-lock-shaper-guard-commander = дом главы стражи
 cp14-lock-shaper-guard-weapon-storage = хранилище оружия
+
 cp14-lock-shape-guildmaster = гильдмастер
+cp14-lock-shape-demiplane-crystal = кристалл демиплана

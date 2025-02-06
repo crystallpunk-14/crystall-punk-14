@@ -1,7 +1,6 @@
 - type: entity
   id: CP14CrystalShardBase
   parent: BaseItem
-  abstract: true
   name: quartz shard
   description: Natural quartz crystals that can absorb the magical energy of the world around them.
   categories: [ ForkFiltered ]

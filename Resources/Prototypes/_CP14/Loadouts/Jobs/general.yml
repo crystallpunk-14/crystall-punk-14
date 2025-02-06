@@ -12,6 +12,7 @@
   - CP14ClothingCloakWhite
   - CP14ClothingCloakGreen
   - CP14ClothingCloakBlue
+  - CP14ClothingCloakFurCoat
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -47,6 +48,11 @@
   id: CP14ClothingCloakBlue
   equipment:
     cloak: CP14ClothingCloakBlue
+
+- type: loadout
+  id: CP14ClothingCloakFurCoat
+  equipment:
+    cloak: CP14ClothingCloakFurCoat
 
 # Eyes
 
@@ -275,8 +281,6 @@
   - CP14ClothingShirtCottonWhiteBrownVest2
   - CP14ClothingShirtCottonWhiteBrownVest3
   - CP14ClothingShirtCottonWhiteCollar
-  - CP14ClothingShirtCottonWhiteGreenVest
-  - CP14ClothingShirtCottonWhiteGreenVest2
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
 
@@ -351,16 +355,6 @@
     shirt: CP14ClothingShirtCottonWhiteCollar
 
 - type: loadout
-  id: CP14ClothingShirtCottonWhiteGreenVest
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteGreenVest
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteGreenVest2
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteGreenVest2
-
-- type: loadout
   id: CP14ClothingShirtCottonYellow
   equipment:
     shirt: CP14ClothingShirtCottonYellow
@@ -402,11 +396,17 @@
   name: cp14-loadout-general-back
   loadouts:
   - CP14ClothingBackpackLeather
+  - CP14ClothingSatchelLeather
 
 - type: loadout
   id: CP14ClothingBackpackLeather
   equipment:
     back: CP14ClothingBackpackLeather
+
+- type: loadout
+  id: CP14ClothingSatchelLeather
+  equipment:
+    back: CP14ClothingSatchelLeather
 
 # Trinkets
 
@@ -427,7 +427,7 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
-  - CP14DemiplaneKeyT1
+  - CP14SmokingPipeFilledTobacco
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
@@ -499,10 +499,10 @@
     - CP14Torch
 
 - type: loadout
-  id: CP14DemiplaneKeyT1
+  id: CP14SmokingPipeFilledTobacco
   storage:
     back:
-    - CP14DemiplaneKeyT1
+    - CP14SmokingPipeFilledTobacco
 
 - type: loadout
   id: CP14LyraInstrument
@@ -557,8 +557,10 @@
   - CP14ActionSpellManaGift
   - CP14ActionSpellShadowGrab
   - CP14ActionSpellWaterCreation
+  - CP14ActionSpellFreeze
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
+  - CP14ActionSpellKick
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -713,6 +715,19 @@
       - CP14ManaWasting
 
 - type: loadout
+  id: CP14ActionSpellFreeze
+  dummyEntity: CP14ActionSpellFreeze
+  actions:
+  - CP14ActionSpellFreeze
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
   id: CP14ActionSpellBeerCreation
   dummyEntity: CP14ActionSpellBeerCreation
   actions:
@@ -742,3 +757,9 @@
       species:
       - CP14Goblin
       inverted: true # Goblins cannot take this spell, they have buffed version by default
+
+- type: loadout
+  id: CP14ActionSpellKick
+  dummyEntity: CP14ActionSpellKick
+  actions:
+  - CP14ActionSpellKick

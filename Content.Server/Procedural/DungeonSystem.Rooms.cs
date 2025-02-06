@@ -130,31 +130,31 @@ public sealed partial class DungeonSystem
 
         var finalRoomRotation = roomTransform.Rotation();
 
-        if (clearExisting)
-        {
-            var point1 = Vector2.Transform(-room.Size / 2, roomTransform);
-            var point2 = Vector2.Transform(room.Size / 2, roomTransform);
-
-            var gridBounds = GetRotatedBox(point1, point2, finalRoomRotation);
-
-            entitySet.Clear();
-            // Polygon skin moment
-            gridBounds = gridBounds.Enlarged(-0.05f);
-            _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, entitySet, LookupFlags.Uncontained);
-
-            foreach (var templateEnt in entitySet)
-            {
-                Del(templateEnt);
-            }
-
-            if (TryComp(gridUid, out DecalGridComponent? decalGrid))
-            {
-                foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
-                {
-                    _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
-                }
-            }
-        }
+        //if (clearExisting) //CP14 disable default clearExisting
+        //{
+        //    var point1 = Vector2.Transform(-room.Size / 2, roomTransform);
+        //    var point2 = Vector2.Transform(room.Size / 2, roomTransform);
+//
+        //    var gridBounds = GetRotatedBox(point1, point2, finalRoomRotation);
+//
+        //    entitySet.Clear();
+        //    // Polygon skin moment
+        //    gridBounds = gridBounds.Enlarged(-0.05f);
+        //    _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, entitySet, LookupFlags.Uncontained);
+//
+        //    foreach (var templateEnt in entitySet)
+        //    {
+        //        Del(templateEnt);
+        //    }
+//
+        //    if (TryComp(gridUid, out DecalGridComponent? decalGrid))
+        //    {
+        //        foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
+        //        {
+        //            _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
+        //        }
+        //    }
+        //}
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;
@@ -183,14 +183,14 @@ public sealed partial class DungeonSystem
                 _tiles.Add((rounded, tileRef.Tile));
 
                 //CP14 clearExisting variant
-                //if (clearExisting)
-                //{
-                //    var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
-                //    foreach (var ent in anchored)
-                //    {
-                //        QueueDel(ent);
-                //    }
-                //}
+                if (clearExisting)
+                {
+                    var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
+                    foreach (var ent in anchored)
+                    {
+                        QueueDel(ent);
+                    }
+                }
                 //CP14 clearExisting variant end
             }
         }

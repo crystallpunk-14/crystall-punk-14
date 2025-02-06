@@ -28,6 +28,9 @@
   id: CP14PeacefulAnimals
 
 - type: npcFaction
+  id: CP14Neutrals
+
+- type: npcFaction
   id: CP14AggressiveAnimals
   hostile:
   - CP14Adventurers

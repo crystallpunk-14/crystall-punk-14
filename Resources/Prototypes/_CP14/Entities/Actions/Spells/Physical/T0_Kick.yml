@@ -1,0 +1,42 @@
+- type: entity
+  id: CP14ActionSpellKick
+  name: Kick
+  description: You perform an epic leg kick at your chosen object, pushing it away from you.
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    state: kick
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.4
+  - type: CP14MagicEffectStaminaCost
+    stamina: 40
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Paralyze
+        paralyzeTime: 1
+    - !type:CP14SpellThrowFromUser
+      throwPower: 9
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14DustEffect
+  - type: CP14MagicEffectVerbalAspect
+    endSpeech: cp14-kick-emote
+    emote: true
+  - type: EntityTargetAction
+    canTargetSelf: false
+    range: 1
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        pitch: 2
+    icon:
+      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      state: kick
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 5
+      castDelay: 1
+      entityDistance: 1
+      breakOnMove: false

@@ -19,3 +19,13 @@
     autoGenerateShape: Guildmaster
   - type: Lock
     locked: true
+
+- type: entity
+  parent: CP14FenceIronGrilleGate
+  id: CP14FenceIronGrilleGateDemiplaneCrystal
+  suffix: DemiplaneCrystal
+  components:
+  - type: CP14Lock
+    autoGenerateShape: DemiplaneCrystal
+  - type: Lock
+    locked: true

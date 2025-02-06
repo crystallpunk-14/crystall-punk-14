@@ -13,29 +13,25 @@
   equipment:
     head: CP14ClothingHeadBowler
 
-- type: loadoutGroup
-  id: CP14CommandantHead
-  name: cp14-loadout-commandant-head
-  loadouts:
-  - CP14ClothingHeadBowlerGolden
-
-- type: loadout
-  id: CP14ClothingHeadBowlerGolden
-  equipment:
-    head: CP14ClothingHeadBowlerGolden
-
-# Cloak
+# OuterClothing
 
 - type: loadoutGroup
-  id: CP14CommandantCloak
-  name: cp14-loadout-commandant-cloak
+  id: CP14BankOuterClothing
+  name: cp14-loadout-banker-outer
+  minLimit: 0
   loadouts:
-  - CP14ClothingCloakCommandantJacket
+  - CP14ClothingOuterClothingBankerWaistCoat
+  - CP14ClothingOuterClothingBankerWaistCoatOpen
 
 - type: loadout
-  id: CP14ClothingCloakCommandantJacket
+  id: CP14ClothingOuterClothingBankerWaistCoat
   equipment:
-    cloak: CP14ClothingCloakCommandantJacket
+    outerClothing: CP14ClothingOuterClothingBankerWaistCoat
+
+- type: loadout
+  id: CP14ClothingOuterClothingBankerWaistCoatOpen
+  equipment:
+    outerClothing: CP14ClothingOuterClothingBankerWaistCoatOpen
 
 # Shirt
 

@@ -14,7 +14,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._CP14.Workbench;
 
 [GenerateTypedNameReferences]
-public sealed partial class CP14WorkbenchRequirementControl : Control
+public sealed partial class CP14WorkbenchRecipeControl : Control
 {
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -26,7 +26,7 @@ public sealed partial class CP14WorkbenchRequirementControl : Control
     private readonly CP14WorkbenchRecipePrototype _recipePrototype;
     private readonly bool _craftable;
 
-    public CP14WorkbenchRequirementControl(CP14WorkbenchUiRecipesEntry entry)
+    public CP14WorkbenchRecipeControl(CP14WorkbenchUiRecipesEntry entry)
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);

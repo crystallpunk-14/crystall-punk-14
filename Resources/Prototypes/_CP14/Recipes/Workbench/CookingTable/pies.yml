@@ -2,20 +2,40 @@
   id: CP14FoodPieAppleRaw
   tag: CP14RecipeCooking
   craftTime: 5
-  entities:
-    CP14PlatePie: 1
-    CP14FoodDoughMediumFlat: 1
-    CP14FoodAppleSlice: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
+    protoId: CP14FoodAppleSlice
+    count: 4
   result: CP14FoodPieAppleRaw
-  tryMergeSolutions: true
 
 - type: CP14Recipe
   id: CP14FoodPieMeatRaw
   tag: CP14RecipeCooking
   craftTime: 5
-  entities:
-    CP14PlatePie: 1
-    CP14FoodDoughMediumFlat: 1
-    CP14FoodMeatLambSlice: 3
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatLambSlice
+    count: 3
   result: CP14FoodPieMeatRaw
-  tryMergeSolutions: true
+
+- type: CP14Recipe
+  id: CP14FoodPiePumpkinRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
+    protoId: CP14FoodPumpkinSlice
+    count: 5
+  result: CP14FoodPiePumpkinRaw
