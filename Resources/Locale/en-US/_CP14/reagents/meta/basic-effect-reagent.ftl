@@ -1,5 +1,5 @@
 cp14-reagent-name-basic-impurity = Mild Impurities
-cp14-reagent-desc-basic-impurity = The natural, undesiriable biproducts of alchemy. Worse than useless, being difficult for the body to process.
+cp14-reagent-desc-basic-impurity = The natural, undesirable by products of alchemy. Worse than useless, being difficult for the body to process.
 
 cp14-reagent-name-basic-empty = Empty solution
 cp14-reagent-desc-basic-empty = Natural solvent. Essentially a useless liquid that dilutes useful effects. Getting rid of it will give you much more concentrated solutions.

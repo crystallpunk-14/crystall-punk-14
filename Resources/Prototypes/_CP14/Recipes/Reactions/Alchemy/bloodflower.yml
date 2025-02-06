@@ -1,5 +1,5 @@
 # Idea:
-# BloodFlower is a special reagent that can react with essense to create simple solutions
+# BloodFlower is a special reagent that can react with essence to create simple solutions
 
 # Red color dye
 
@@ -59,11 +59,11 @@
 #  Blood brewing
 
 - type: reaction
-  id: CP14BloodFlowerBrewingEssenseHuman
+  id: CP14BloodFlowerBrewingEssenceHuman
   minTemp: 560
   priority: 2
   reactants:
-    CP14Essense:
+    CP14Essence:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5
@@ -78,11 +78,11 @@
     addTemperature: -200
 
 - type: reaction
-  id: CP14BloodFlowerBrewingEssenseTiefling
+  id: CP14BloodFlowerBrewingEssenceTiefling
   minTemp: 620
   priority: 2
   reactants:
-    CP14EssenseTiefling:
+    CP14EssenceTiefling:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5
@@ -97,11 +97,11 @@
     addTemperature: -270
 
 - type: reaction
-  id: CP14BloodFlowerBrewingEssenseElf
+  id: CP14BloodFlowerBrewingEssenceElf
   minTemp: 560
   priority: 2
   reactants:
-    CP14EssenseElf:
+    CP14EssenceElf:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5
@@ -116,11 +116,11 @@
     addTemperature: -200
 
 - type: reaction
-  id: CP14BloodFlowerBrewingEssenseGoblin
+  id: CP14BloodFlowerBrewingEssenceGoblin
   minTemp: 520
   priority: 2
   reactants:
-    CP14EssenseGoblin:
+    CP14EssenceGoblin:
       amount: 0.5
     CP14BloodFlowerSap:
       amount: 0.5

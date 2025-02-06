@@ -1,4 +1,4 @@
-# Alchemized Blood / Raw Essense
+# Alchemized Blood / Raw Essence
 
 - type: reagent
   id: CP14AlchemizedBlood
@@ -92,13 +92,13 @@
           types:
             Poison: 1.5
 
-# Refined / Processed Essense
+# Refined / Processed Essence
 
 - type: reagent
-  id: CP14Essense
+  id: CP14Essence
   group: CP14Biological
-  name: cp14-reagent-name-essense
-  desc: cp14-reagent-desc-essense
+  name: cp14-reagent-name-essence
+  desc: cp14-reagent-desc-essence
   flavor: CP14Magic
   color: "#7F3E13"
   recognizable: false
@@ -117,10 +117,10 @@
         probability: 0.25
 
 - type: reagent
-  id: CP14EssenseTiefling
+  id: CP14EssenceTiefling
   group: CP14Biological
-  desc: cp14-reagent-desc-essense-tiefling
-  name: cp14-reagent-name-essense-tiefling
+  desc: cp14-reagent-desc-essence-tiefling
+  name: cp14-reagent-name-essence-tiefling
   flavor: CP14Magic
   color: "#A37130"
   recognizable: false
@@ -141,10 +141,10 @@
             Heat: 2
 
 - type: reagent
-  id: CP14EssenseElf
+  id: CP14EssenceElf
   group: CP14Biological
-  name: cp14-reagent-name-essense-elf
-  desc: cp14-reagent-desc-essense-elf
+  name: cp14-reagent-name-essence-elf
+  desc: cp14-reagent-desc-essence-elf
   flavor: CP14Magic
   color: "#933E53"
   recognizable: false
@@ -163,10 +163,10 @@
         manaDelta: -5
 
 - type: reagent
-  id: CP14EssenseGoblin
+  id: CP14EssenceGoblin
   group: CP14Biological
-  name: cp14-reagent-name-essense-goblin
-  desc: cp14-reagent-desc-essense-goblin
+  name: cp14-reagent-name-essence-goblin
+  desc: cp14-reagent-desc-essence-goblin
   flavor: CP14Magic
   color: "#83993D"
   recognizable: false
