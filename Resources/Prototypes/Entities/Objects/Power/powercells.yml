@@ -10,7 +10,7 @@
   - type: PowerCell
   - type: Explosive
     explosionType: Default
-    maxIntensity: 200
+    maxIntensity: 2000
     intensitySlope: 1.5
   - type: Sprite
     sprite: Objects/Power/power_cells.rsi
@@ -47,8 +47,8 @@
     layers:
     - state: potato
   - type: Battery
-    maxCharge: 70
-    startingCharge: 70
+    maxCharge: 700
+    startingCharge: 700
   - type: Tag
     tags:
       - PotatoBattery

@@ -14,9 +14,6 @@
     - type: Tag
       tags:
       - RipleyCentralControlModule
-    - type: GuideHelp
-      guides:
-      - Robotics
 
 - type: entity
   id: RipleyPeripheralsElectronics
@@ -30,9 +27,6 @@
     - type: Tag
       tags:
       - RipleyPeripheralsControlModule
-    - type: GuideHelp
-      guides:
-      - Robotics
 
 # H.O.N.K.
 

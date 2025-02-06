@@ -82,6 +82,13 @@
         flatReductions:
           Blunt: 1
           Slash: 1
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      damage:
+        types:
+          Slash: 10
+      soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
 
 - type: entity
   name: riot laser shield
