@@ -6,6 +6,8 @@
   - type: Sprite
     sprite: _CP14/Effects/Magic/spells_icons.rsi
     state: kick
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.4
   - type: CP14MagicEffectStaminaCost
     stamina: 40
   - type: CP14MagicEffect
@@ -35,6 +37,6 @@
       state: kick
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
-      castDelay: 0.25
+      castDelay: 1
       entityDistance: 1
-      breakOnMove: true
+      breakOnMove: false

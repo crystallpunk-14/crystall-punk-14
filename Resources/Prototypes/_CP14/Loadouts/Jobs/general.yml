@@ -427,6 +427,7 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
+  - CP14SmokingPipeFilledTobacco
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
@@ -498,7 +499,7 @@
     - CP14Torch
 
 - type: loadout
-  id: CP14Pipe
+  id: CP14SmokingPipeFilledTobacco
   storage:
     back:
     - CP14SmokingPipeFilledTobacco
