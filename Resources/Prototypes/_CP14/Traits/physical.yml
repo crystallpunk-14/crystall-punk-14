@@ -67,6 +67,15 @@
   components:
     - type: Muted
 
+- type: trait
+  id: CP14PainNumbness
+  name: trait-painnumbness-name
+  description: trait-painnumbness-desc
+  cost: -1
+  category: CP14PhysicalTraits
+  components:
+  - type: PainNumbness
+
 # 0
 
 - type: trait
