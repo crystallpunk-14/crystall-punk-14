@@ -13,7 +13,7 @@
     CP14ChromiumSlime:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 1
+    CP14BasicEffectSimpleBase: 1
   effects:
   - !type:CP14InverseEffect
     inversion:
@@ -49,7 +49,7 @@
 
 - type: reaction
   id: CP14ChromiumBrewing
-  minTemp: 500
+  minTemp: 650
   priority: 2
   reactants:
     CP14ChromiumSlime:

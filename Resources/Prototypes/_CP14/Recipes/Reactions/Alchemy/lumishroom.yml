@@ -3,12 +3,12 @@
 
 - type: reaction
   id: CP14LumiMushroomBrewing
-  minTemp: 500
+  minTemp: 530
   priority: 2
   reactants:
     CP14LumiMushroom:
       amount: 1
-    CP14GroundQuartz:
+    CP14BasicEffectSimpleBase:
       amount: 1
   products:
     CP14BasicEffectEmpty: 0.75

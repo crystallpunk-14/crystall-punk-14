@@ -10,7 +10,7 @@
   reactants:
     CP14Blood:
       amount: 0.75
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14AlchemizedBlood: 0.75
@@ -26,7 +26,7 @@
   reactants:
     CP14BloodTiefling:
       amount: 0.75
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14AlchemizedBloodTiefling: 0.75
@@ -42,7 +42,7 @@
   reactants:
     CP14BloodElf:
       amount: 0.75
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14AlchemizedBloodElf: 0.75
@@ -58,7 +58,7 @@
   reactants:
     CP14BloodGoblin:
       amount: 0.75
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14AlchemizedBloodGoblin: 0.75
@@ -78,7 +78,7 @@
       amount: 0.75
     CP14BloodFlowerSap:
       amount: 0.25
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14Essense: 1
@@ -96,7 +96,7 @@
       amount: 0.75
     CP14BloodFlowerSap:
       amount: 0.25
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14EssenseTiefling: 1
@@ -114,7 +114,7 @@
       amount: 0.75
     CP14BloodFlowerSap:
       amount: 0.25
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14EssenseElf: 1
@@ -132,7 +132,7 @@
       amount: 0.75
     CP14BloodFlowerSap:
       amount: 0.25
-    CP14GroundQuartz:
+    CP14AlchemistSalt:
       amount: 0.25
   products:
     CP14EssenseGoblin: 1

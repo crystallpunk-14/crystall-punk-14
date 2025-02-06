@@ -4,6 +4,9 @@ cp14-reagent-desc-basic-impurity = The natural, undesirable by products of alche
 cp14-reagent-name-basic-empty = Empty solution
 cp14-reagent-desc-basic-empty = Natural solvent. Essentially a useless liquid that dilutes useful effects. Getting rid of it will give you much more concentrated solutions.
 
+cp14-reagent-name-basic-simplebase = Simple solvent
+cp14-reagent-desc-basic-simplebase = Simple solvent, often used in brewing basic potions in place of water or more specialized solvents.
+
 cp14-reagent-name-basic-heal-brute = Healing solution
 cp14-reagent-desc-basic-heal-brute = Can heal all types of physical damage.
 

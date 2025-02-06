@@ -1,31 +1,13 @@
-
-# Blue color dye
-
-- type: reaction
-  id: CP14BlueAmanitaColor
-  minTemp: 393
-  priority: 1
-  quantized: true
-  conserveEnergy: false
-  reactants:
-    CP14BlueAmanita:
-      amount: 10
-  effects:
-  - !type:CP14AffectSolutionTemperature
-    addTemperature: -50
-  - !type:CreateEntityReactionEffect
-      entity: CP14DyeBlue
-
 # Simple brewing
 
 - type: reaction
   id: CP14BlueAmanitaBrewing
-  minTemp: 500
+  minTemp: 530
   priority: 2
   reactants:
     CP14BlueAmanita:
       amount: 1
-    CP14GroundQuartz:
+    CP14BasicEffectSimpleBase:
       amount: 1
   products:
     CP14BasicEffectEmpty: 1

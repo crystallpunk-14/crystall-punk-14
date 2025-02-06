@@ -1,6 +1,6 @@
 - type: reaction
   id: CP14OverbrewingFail
-  minTemp: 800
+  minTemp: 780
   reactants:
     CP14BasicEffectEmpty:
       amount: 1
@@ -33,7 +33,7 @@
     CP14GroundQuartz:
       amount: 0.5
   products:
-    CP14AlchemistSalt: 0.5
+    CP14AlchemistSalt: 0.75
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -300
@@ -48,3 +48,14 @@
       amount: 0.5
   products:
     CP14SaltedWater: 0.5
+
+- type: reaction
+  id: CP14SimpleSolvent
+  minTemp: 420 
+  reactants:
+    CP14SaltedWater:
+      ammount: 0.5
+    CP14GroundQuartz:
+      amount: 0.5
+  products:
+    CP14BasicEffectSimpleBase: 1

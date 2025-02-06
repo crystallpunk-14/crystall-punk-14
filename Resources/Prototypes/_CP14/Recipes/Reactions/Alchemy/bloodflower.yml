@@ -1,24 +1,6 @@
 # Idea:
 # BloodFlower is a special reagent that can react with essence to create simple solutions
 
-# Red color dye
-
-- type: reaction
-  id: CP14BloodFlowerBrewing
-  impact: Low
-  minTemp: 393
-  priority: 1
-  quantized: true
-  conserveEnergy: false
-  reactants:
-    CP14BloodFlowerSap:
-      amount: 10
-  effects:
-  - !type:CP14AffectSolutionTemperature
-    addTemperature: -50
-  - !type:CreateEntityReactionEffect
-      entity: CP14DyeRed
-
 # Splitting
 
 - type: reaction

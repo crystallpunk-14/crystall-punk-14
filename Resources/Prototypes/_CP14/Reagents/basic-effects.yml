@@ -30,6 +30,15 @@
   color: "#858585"
   physicalDesc: cp14-reagent-physical-desc-colorless
 
+- type: reagent
+  id: CP14BasicEffectSimplebase
+  name: cp14-reagent-name-basic-simplebase
+  desc: cp14-reagent-desc-basic-simplebase
+  group: CP14BasicEffect
+  flavor: CP14Salty
+  color: "#AFBFBF"
+  physicalDesc: cp14-reagent-physical-desc-powdery
+
 # T1 / Simple or Basic solutions
 # Have simple effects, shouldn't be able to replace their occupational 
 
