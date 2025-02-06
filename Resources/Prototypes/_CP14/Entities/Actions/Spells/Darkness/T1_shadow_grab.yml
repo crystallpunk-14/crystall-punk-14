@@ -29,7 +29,6 @@
       components:
       - Item
     canTargetSelf: false
-    checkCanAccess: false
     range: 10
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier

@@ -427,6 +427,7 @@
   - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
+  - CP14SmokingPipeFilledTobacco
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
@@ -498,7 +499,7 @@
     - CP14Torch
 
 - type: loadout
-  id: CP14Pipe
+  id: CP14SmokingPipeFilledTobacco
   storage:
     back:
     - CP14SmokingPipeFilledTobacco
@@ -559,6 +560,7 @@
   - CP14ActionSpellFreeze
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
+  - CP14ActionSpellKick
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -755,3 +757,9 @@
       species:
       - CP14Goblin
       inverted: true # Goblins cannot take this spell, they have buffed version by default
+
+- type: loadout
+  id: CP14ActionSpellKick
+  dummyEntity: CP14ActionSpellKick
+  actions:
+  - CP14ActionSpellKick
