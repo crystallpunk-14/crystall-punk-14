@@ -24,6 +24,7 @@
         statusLifetime: 2
       - !type:AdjustTemperature
         amount: -12000
+      - !type:ExtinguishReaction
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Vos adepto frigus..."
   - type: CP14MagicEffectCastingVisual
