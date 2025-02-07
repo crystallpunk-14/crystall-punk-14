@@ -427,6 +427,9 @@ ent-CP14ClothingCloakGuardBlue = { ent-CP14ClothingCloakGuardBase }
 ent-CP14ClothingCloakGuardCommander = бронированный плащ командира гвардии
     .desc = Это чрезвычайно прочная и легкая накидка, разработанная специально для командиров Имперской гвардии.
 
+ent-CP14ClothingCloakFurCoat = Меховая шуба
+    .desc = Тепло под дождем, тепло под снегом, тепло на ветру. Славно.
+
 ent-CP14ClothingEyesMonocle = монокль
     .desc = Аристократично и красиво.
 

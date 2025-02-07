@@ -186,6 +186,18 @@
   result: CP14ClothingHeadCapellina
 
 - type: CP14Recipe
+  id: CP14ClothingHeadBascinet
+  tag: CP14RecipeAnvil
+  craftTime: 5
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar #Add skin as well?
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ClothingHeadBascinet
+
+- type: CP14Recipe
   id: CP14BaseLightCrossbow
   tag: CP14RecipeAnvil
   craftTime: 4

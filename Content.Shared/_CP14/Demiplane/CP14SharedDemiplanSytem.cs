@@ -14,10 +14,10 @@ public abstract partial  class CP14SharedDemiplaneSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14DemiplaneRiftOpenedComponent, InteractHandEvent>(OnDemiplanPasswayInteract);
+        SubscribeLocalEvent<CP14DemiplaneRiftOpenedComponent, InteractHandEvent>(OnDemiplanePasswayInteract);
     }
 
-    private void OnDemiplanPasswayInteract(Entity<CP14DemiplaneRiftOpenedComponent> passway, ref InteractHandEvent args)
+    private void OnDemiplanePasswayInteract(Entity<CP14DemiplaneRiftOpenedComponent> passway, ref InteractHandEvent args)
     {
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,
@@ -32,6 +32,16 @@ public abstract partial  class CP14SharedDemiplaneSystem : EntitySystem
             NeedHand = true,
             MovementThreshold = 0.2f,
         });
+    }
+
+    public virtual bool TryTeleportIntoDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
+    {
+        return true;
+    }
+
+    public virtual bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
+    {
+        return true;
     }
 }
 

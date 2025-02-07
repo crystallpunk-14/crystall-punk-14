@@ -39,15 +39,16 @@ cp14-loadout-guard-pants = Штаны стражи
 cp14-loadout-guard-shirt = Рубашка стражи
 cp14-loadout-guard-spells = Заклинания стражи
 
-# Bank
+# Trade guild
 
-cp14-loadout-bank-head = Шляпа работника банка
 cp14-loadout-commandant-head = Шляпа коменданта
 cp14-loadout-commandant-cloak = Накидка коменданта
-cp14-loadout-banker-outer = Жилет банкира
-cp14-loadout-bank-shirt = Рубашка работника банка
-cp14-loadout-bank-pants = Штаны работника банка
-cp14-loadout-bank-shoes = Ботинки работника банка
+
+cp14-loadout-merchant-head = Шляпа торговца
+cp14-loadout-merchant-outer = Жилет торговца
+cp14-loadout-merchant-shirt = Рубашка торговца
+cp14-loadout-merchant-pants = Штаны торговца
+cp14-loadout-merchant-shoes = Ботинки торговца
 
 # Guildmaster
 
@@ -55,3 +56,4 @@ cp14-loadout-guildmaster-cloak = Накидка гильдмастера
 cp14-loadout-guildmaster-shirt = Рубашка гильдмастера
 cp14-loadout-guildmaster-pants = Штаны гильдмастера
 cp14-loadout-guildmaster-shoes = Ботинки гильдмастера
+cp14-loadout-guildmaster-spells = Заклинания гильдмастера

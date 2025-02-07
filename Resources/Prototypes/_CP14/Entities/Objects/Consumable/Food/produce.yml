@@ -142,7 +142,7 @@
       food:
         maxVol: 6 # 1/5 pumpkin
         reagents:
-        - ReagentId: Nutriment
+        - ReagentId: PumpkinFlesh
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1

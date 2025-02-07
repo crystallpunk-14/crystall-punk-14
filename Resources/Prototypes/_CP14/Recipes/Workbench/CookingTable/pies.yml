@@ -25,3 +25,17 @@
     protoId: CP14FoodMeatLambSlice
     count: 3
   result: CP14FoodPieMeatRaw
+
+- type: CP14Recipe
+  id: CP14FoodPiePumpkinRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
+    protoId: CP14FoodPumpkinSlice
+    count: 5
+  result: CP14FoodPiePumpkinRaw

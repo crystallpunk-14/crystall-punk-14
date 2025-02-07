@@ -38,7 +38,6 @@
       cooldown: 15
       castDelay: 5
       breakOnMove: false
-      entityDistance: 1000
 
 - type: entity
   id: CP14RuneFireball

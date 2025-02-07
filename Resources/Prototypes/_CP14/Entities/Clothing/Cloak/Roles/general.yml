@@ -63,3 +63,14 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/blue.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/blue.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakFurCoat
+  name: fur coat
+  description: Warm in the rain, warm in the snow, warm in the wind. Nice.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat.rsi

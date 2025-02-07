@@ -117,6 +117,10 @@
     solution: drop
   - type: MixableSolution
     solution: drop
+  #- type: SolutionTransfer
+  #  canChangeTransferAmount: false
+  - type: SolutionItemStatus
+    solution: drop
   - type: CP14SolutionTemperature
   - type: Appearance
   - type: Sprite
@@ -129,6 +133,13 @@
     fillBaseName: liq-
     inHandsMaxFillLevels: 1
     inHandsFillBaseName: -fill
+  - type: Injector
+    solutionName: drop
+    injectOnly: true
+    minTransferAmount: 10
+    maxTransferAmount: 10
+    transferAmount: 10
+    toggleState: 0
 
 - type: entity
   id: CP14ImpactEffectWaterCreation

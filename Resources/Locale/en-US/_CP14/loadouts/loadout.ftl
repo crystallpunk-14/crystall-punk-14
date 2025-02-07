@@ -12,6 +12,7 @@ cp14-loadout-general-back = Back
 cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-general-spells = Spells
 cp14-loadout-general-keys = Keys
+
 # Apprentice
 
 cp14-loadout-apprentice-bundle = Apprentice bundle
@@ -21,6 +22,7 @@ cp14-loadout-apprentice-bundle = Apprentice bundle
 cp14-loadout-alchemist-head = Alchemist's head
 cp14-loadout-alchemist-cloak = Alchemist's cloak
 cp14-loadout-alchemist-eyes = Alchemical goggles
+
 # Blacksmith
 
 cp14-loadout-blacksmith-cloak = Blacksmith's cloak
@@ -37,15 +39,16 @@ cp14-loadout-guard-pants = Guard's pants
 cp14-loadout-guard-shirt = Guard's shirt
 cp14-loadout-guard-spells = Guard's spells
 
-# Bank
+# Trade guild
 
-cp14-loadout-bank-head = Bank employee hat
 cp14-loadout-commandant-head = Commandant's hat
 cp14-loadout-commandant-cloak = Commandant's cloak
-cp14-loadout-banker-outer = Banker's waistcoat
-cp14-loadout-bank-shirt = Bank Employee shirt
-cp14-loadout-bank-pants = Bank Employee pants
-cp14-loadout-bank-shoes = Bank Employee shoes
+
+cp14-loadout-merchant-head = Merchant's hat
+cp14-loadout-merchant-outer = Merchant's waistcoat
+cp14-loadout-merchant-shirt = Merchant's shirt
+cp14-loadout-merchant-pants = Merchant's pants
+cp14-loadout-merchant-shoes = Merchant's shoes
 
 # Guildmaster
 
@@ -53,3 +56,4 @@ cp14-loadout-guildmaster-cloak = Guildmaster cloak
 cp14-loadout-guildmaster-shirt = Guildmaster shirt
 cp14-loadout-guildmaster-pants = Guildmaster pants
 cp14-loadout-guildmaster-shoes = Guildmaster shoes
+cp14-loadout-guildmaster-spells = Guildmaster spells

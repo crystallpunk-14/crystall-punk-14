@@ -63,11 +63,11 @@
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconBanker
+  id: CP14JobIconMerchant
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Banker
-  jobName: cp14-job-name-banker
+    state: Merchant
+  jobName: cp14-job-name-merchant
 
 - type: jobIcon
   parent: CP14JobIcon

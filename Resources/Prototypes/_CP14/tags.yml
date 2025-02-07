@@ -87,3 +87,6 @@
 
 - type: Tag
   id: CP14FarmFood
+
+- type: Tag
+  id: CP14AlchemicalHerbals
