@@ -5,7 +5,7 @@
   playTimeTracker: CP14JobAdventurer
   startingGear: CP14AdventurerGear
   icon: "CP14JobIconAdventurer"
-  supervisors: cp14-job-supervisors-command
+  supervisors: cp14-job-supervisors-guildmaster
   special:
   - !type:CP14AddKnowledgeSpecial
     knowledge:
