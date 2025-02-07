@@ -49,7 +49,7 @@
     state: planks_3
   price: 
     min: 10
-    max: 55
+    max: 30
   service: !type:CP14SellStackService
     stackId: CP14WoodenPlanks
     count: 30
