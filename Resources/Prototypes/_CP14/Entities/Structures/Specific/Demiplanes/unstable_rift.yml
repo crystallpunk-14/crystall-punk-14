@@ -1,0 +1,132 @@
+- type: entity
+  id: CP14DangerousMobSpawnCrystal
+  name: unstable demiplane link crystal
+  description: Capable of opening many portals summoning creepy creatures if not destroyed in time! Hurry up! When it runs out of mana, it will start to collapse!
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  components:
+  - type: SpriteFade
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
+    layers:
+    - state: warning
+      color: red
+    drawdepth: Mobs
+    offset: 0,0.9
+  - type: PointLight
+    enabled: true
+    color: red
+    energy: 3
+    radius: 10
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 1
+        minValue: 1.0
+        maxValue: 40.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 2
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14DemiplaneKeyT1:
+            min: 0
+            max: 2
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14DemiplaneKeyT2:
+            min: 1
+            max: 1
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 500
+    energy: 500
+  - type: CP14MagicEnergyDraw
+    energy: -5
+    delay: 6 # 10m to discharge
+    safe: false
+  - type: CP14MagicUnsafeDamage
+    damagePerEnergy:
+      types:
+        Heat: 0.1
+  - type: DeleteOnTrigger
+  - type: SpawnOnTrigger
+    proto: CP14MobGroupSpawnerRandom
+  - type: CP14DemiplaneStabilizer
+
+- type: entity
+  parent: MarkerBase
+  name: mob group random spawner
+  id: CP14MobGroupSpawnerRandom
+  components:
+  - type: CP14SpawnOutOfDemiplane
+  - type: EntityTableSpawner
+    offset: 3
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 1, 2
+      children:
+      - id: CP14MobGroupSpawnerHydras
+      - id: CP14MobGroupSpawnerMosquito
+      - id: CP14MobGroupSpawnerZombie
+
+- type: entity
+  id: CP14AutoDemiplaneKeyT1
+  parent: CP14DemiplaneKeyT1
+  suffix: T1, Auto Open
+  components:
+  - type: CP14DemiplaneAutoOpen
+  - type: CP14DemiplaneGeneratorData
+    autoRifts:
+    - CP14DemiplanRiftCore
+    - CP14DemiplanePasswayRed
+    selectedModifiers:
+    - UnstableDemiplaneCrystal
+
+- type: entity
+  id: CP14AutoDemiplaneKeyT2
+  parent: CP14DemiplaneKeyT2
+  suffix: T2, Auto Open
+  components:
+  - type: CP14DemiplaneAutoOpen
+  - type: CP14DemiplaneGeneratorData
+    autoRifts:
+    - CP14DemiplanRiftCore
+    - CP14DemiplanePasswayRed
+    selectedModifiers:
+    - UnstableDemiplaneCrystal

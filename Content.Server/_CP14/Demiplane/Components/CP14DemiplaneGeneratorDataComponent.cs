@@ -27,4 +27,7 @@ public sealed partial class CP14DemiplaneGeneratorDataComponent : Component
 
     [DataField]
     public ProtoId<CP14RoundStatTrackerPrototype> Statistic = "DemiplaneOpen";
+
+    [DataField]
+    public List<EntProtoId> AutoRifts = new() { "CP14DemiplaneTimedRadiusPassway", "CP14DemiplanRiftCore" };
 }

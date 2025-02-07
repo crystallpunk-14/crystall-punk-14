@@ -18,3 +18,4 @@ cp14-modifier-rabbits = кроликов
 cp14-modifier-boars = диких кабанов
 cp14-modifier-chasm = бездонных пропастей
 cp14-modifier-air-lily = воздушных лилий
+cp14-modifier-unstable-demiplane-crystal = нестабильного кристалла демипланов

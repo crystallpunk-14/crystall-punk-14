@@ -17,6 +17,7 @@
     guides:
     - CP14_RU_Demiplanes
     - CP14_EN_Demiplanes
+  - type: CP14DemiplaneUsingOpen
 
 - type: entity
   id: CP14DemiplaneKeyT1
