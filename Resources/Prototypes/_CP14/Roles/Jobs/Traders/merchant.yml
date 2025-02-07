@@ -1,10 +1,10 @@
 - type: job
-  id: CP14Banker
-  name: cp14-job-name-banker
-  description: cp14-job-desc-banker
-  playTimeTracker: CP14JobBanker
-  startingGear: CP14BankerGear
-  icon: "CP14JobIconBanker"
+  id: CP14Merchant
+  name: cp14-job-name-merchant
+  description: cp14-job-desc-merchant
+  playTimeTracker: CP14JobMerchant
+  startingGear: CP14MerchantGear
+  icon: "CP14JobIconMerchant"
   supervisors: cp14-job-supervisors-commandant
   special:
   - !type:CP14AddKnowledgeSpecial
@@ -15,11 +15,11 @@
       time: 3600 # 1 hours
 
 - type: startingGear
-  id: CP14BankerGear
+  id: CP14MerchantGear
   storage:
     back:
     - CP14EnergyCrystalSmall
     - CP14EnergyCrystalSmall
   equipment:
     belt1: CP14WalletFilledTest
-    keys: CP14KeyRingBanker
+    keys: CP14KeyRingMerchant

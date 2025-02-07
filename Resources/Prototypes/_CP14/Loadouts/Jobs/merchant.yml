@@ -1,0 +1,63 @@
+
+# Head
+
+- type: loadoutGroup
+  id: CP14MerchantHead
+  name: cp14-loadout-merchant-head
+  minLimit: 0
+  loadouts:
+  - CP14ClothingHeadBowler
+
+- type: loadout
+  id: CP14ClothingHeadBowler
+  equipment:
+    head: CP14ClothingHeadBowler
+
+# OuterClothing
+
+- type: loadoutGroup
+  id: CP14MerchantOuterClothing
+  name: cp14-loadout-merchant-outer
+  minLimit: 0
+  loadouts:
+  - CP14ClothingOuterClothingMerchantWaistCoat
+  - CP14ClothingOuterClothingMerchantWaistCoatOpen
+
+- type: loadout
+  id: CP14ClothingOuterClothingMerchantWaistCoat
+  equipment:
+    outerClothing: CP14ClothingOuterClothingMerchantWaistCoat
+
+- type: loadout
+  id: CP14ClothingOuterClothingMerchantWaistCoatOpen
+  equipment:
+    outerClothing: CP14ClothingOuterClothingMerchantWaistCoatOpen
+
+# Shirt
+
+- type: loadoutGroup
+  id: CP14MerchantShirt
+  name: cp14-loadout-merchant-shirt
+  loadouts:
+  - CP14ClothingShirtMerchant
+
+- type: loadout
+  id: CP14ClothingShirtMerchant
+  equipment:
+    shirt: CP14ClothingShirtMerchant
+
+# Pants
+
+- type: loadoutGroup
+  id: CP14MerchantPants
+  name: cp14-loadout-merchant-pants
+  loadouts:
+  - CP14ClothingPantsAristocratic
+
+# Shoes
+
+- type: loadoutGroup
+  id: CP14MerchantShoes
+  name: cp14-loadout-merchant-shoes
+  loadouts:
+  - CP14ShoesAristocraticBlack

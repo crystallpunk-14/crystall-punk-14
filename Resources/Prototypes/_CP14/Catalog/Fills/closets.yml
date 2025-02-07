@@ -42,8 +42,8 @@
 
 - type: entity
   parent: CP14WoodenCloset
-  id: CP14WoodenClosetBankerFilled
-  suffix: Banker, Filled
+  id: CP14WoodenClosetMerchantFilled
+  suffix: Merchant, Filled
   components:
   - type: StorageFill
     contents:

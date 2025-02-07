@@ -81,7 +81,7 @@
 
 - type: entity
   parent: CP14BaseKeyRing
-  id: CP14KeyRingBanker
+  id: CP14KeyRingMerchant
   suffix: Banker
   components:
   - type: StorageFill

@@ -28,7 +28,7 @@
   color: "#fadb3e"
   roles:
   - CP14Commandant
-  - CP14Banker
+  - CP14Merchant
 
 - type: department
   id: CP14Artisan
