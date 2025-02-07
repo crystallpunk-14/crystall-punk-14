@@ -88,6 +88,11 @@
   - type: SpawnOnTrigger
     proto: CP14MobGroupSpawnerRandom
   - type: CP14DemiplaneStabilizer
+  - type: AmbientSound
+    volume: 10
+    range: 15
+    sound:
+      path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
 
 - type: entity
   parent: MarkerBase
