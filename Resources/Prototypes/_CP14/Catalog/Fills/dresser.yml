@@ -18,8 +18,8 @@
 
 - type: entity
   parent: CP14WoodenCabinet
-  id: CP14WoodenCabinetBanker
-  suffix: Banker, Filled
+  id: CP14WoodenCabinetMerchant
+  suffix: Merchant, Filled
   components:
   - type: StorageFill
     contents:
@@ -27,7 +27,7 @@
         prob: 0.5
       - id: CP14ClothingPantsAristocratic
         prob: 0.5
-      - id: CP14ClothingShirtBanker
+      - id: CP14ClothingShirtMerchant
         prob: 0.5
       - id: CP14ClothingEyesMonocle
         prob: 0.2
@@ -47,7 +47,7 @@
         prob: 0.5
       - id: CP14ClothingPantsAristocratic
         prob: 0.5
-      - id: CP14ClothingShirtBanker
+      - id: CP14ClothingShirtMerchant
         prob: 0.5
       - id: CP14ClothingEyesMonocle
         prob: 0.2

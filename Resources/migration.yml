@@ -246,6 +246,8 @@ CP14ClothingOuterClothingBankerWaistCoat: CP14ClothingOuterClothingMerchantWaist
 CP14ClothingOuterClothingBankerWaistCoatOpen: CP14ClothingOuterClothingMerchantWaistCoatOpen
 CP14ClothingShirtBanker: CP14ClothingShirtMerchant
 CP14KeyRingBanker: CP14KeyRingMerchant
+CP14WoodenCabinetBanker: CP14WoodenCabinetMerchant
+CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 
 
 # <---> CrystallEdge migration zone end
