@@ -2,8 +2,8 @@
 # Head
 
 - type: loadoutGroup
-  id: CP14BankHead
-  name: cp14-loadout-bank-head
+  id: CP14TraderHead
+  name: cp14-loadout-merchant-head
   minLimit: 0
   loadouts:
   - CP14ClothingHeadBowler
@@ -16,8 +16,8 @@
 # OuterClothing
 
 - type: loadoutGroup
-  id: CP14BankOuterClothing
-  name: cp14-loadout-banker-outer
+  id: CP14TraderOuterClothing
+  name: cp14-loadout-merchant-outer
   minLimit: 0
   loadouts:
   - CP14ClothingOuterClothingBankerWaistCoat
@@ -36,8 +36,8 @@
 # Shirt
 
 - type: loadoutGroup
-  id: CP14BankShirt
-  name: cp14-loadout-bank-shirt
+  id: CP14TraderShirt
+  name: cp14-loadout-merchant-shirt
   loadouts:
   - CP14ClothingShirtBanker
 
@@ -49,15 +49,15 @@
 # Pants
 
 - type: loadoutGroup
-  id: CP14BankPants
-  name: cp14-loadout-bank-pants
+  id: CP14TraderPants
+  name: cp14-loadout-merchant-pants
   loadouts:
   - CP14ClothingPantsAristocratic
 
 # Shoes
 
 - type: loadoutGroup
-  id: CP14BankShoes
-  name: cp14-loadout-bank-shoes
+  id: CP14TraderShoes
+  name: cp14-loadout-merchant-shoes
   loadouts:
   - CP14ShoesAristocraticBlack

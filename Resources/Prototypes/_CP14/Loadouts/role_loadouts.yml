@@ -108,10 +108,10 @@
   - CP14CommandantHead
   - CP14GeneralEyes
   - CP14CommandantCloak
-  - CP14BankOuterClothing
-  - CP14BankShirt
-  - CP14BankPants
-  - CP14BankShoes
+  - CP14TraderOuterClothing
+  - CP14TraderShirt
+  - CP14TraderPants
+  - CP14TraderShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
 
@@ -132,11 +132,11 @@
   id: JobCP14Merchant
   groups:
   - CP14GeneralSpells
-  - CP14BankHead
-  - CP14BankOuterClothing
+  - CP14TraderHead
+  - CP14TraderOuterClothing
   - CP14GeneralEyes
-  - CP14BankShirt
-  - CP14BankPants
-  - CP14BankShoes
+  - CP14TraderShirt
+  - CP14TraderPants
+  - CP14TraderShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
