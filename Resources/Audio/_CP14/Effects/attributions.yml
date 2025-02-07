@@ -57,3 +57,8 @@
   license: "CC-BY-4.0"
   copyright: 'Created by MIXnikita'
   source: "https://github.com/crystallpunk-14/crystall-punk-14"
+
+- files: ["demiplane_heartbeat.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by SpaceLife on Freesound.org'
+  source: "https://freesound.org/people/SpaceLife/sounds/545938/"
