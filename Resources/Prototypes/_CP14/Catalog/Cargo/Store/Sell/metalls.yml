@@ -23,7 +23,7 @@
     min: 10
     max: 20
   service: !type:CP14SellStackService
-    stackId: CP14CopperOre
+    stackId: CP14OreCopper
     count: 10
 
 - type: storePositionSell
@@ -51,7 +51,7 @@
     min: 20
     max: 30
   service: !type:CP14SellStackService
-    stackId: CP14IronOre
+    stackId: CP14OreIron
     count: 10
 
 - type: storePositionSell
@@ -79,7 +79,7 @@
     min: 100
     max: 150
   service: !type:CP14SellStackService
-    stackId: CP14GoldOre
+    stackId: CP14OreGold
     count: 10
 
 - type: storePositionSell
@@ -107,5 +107,5 @@
     min: 200
     max: 300
   service: !type:CP14SellStackService
-    stackId: CP14MithrilOre
+    stackId: CP14OreMithril
     count: 10

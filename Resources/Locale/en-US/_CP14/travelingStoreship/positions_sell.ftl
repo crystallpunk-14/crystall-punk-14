@@ -6,6 +6,9 @@ cp14-store-sell-wood-desc = Do you really think anyone needs planks from a faraw
 cp14-store-sell-glass-name = 10 glass
 cp14-store-sell-glass-desc = A fine material prized in the Empire for its versatility. The windows of palaces, the lenses of craftsmen, and even the mirrors of mages all require glass. Your labors are sure to find a use for it!
 
+cp14-store-sell-alchemical-herbals-name = 10 alchemical herbals
+cp14-store-sell-alchemical-herbals-desc = TODO
+
 # Metalls
 
 cp14-store-sell-copperbar-name = 10 copper bars

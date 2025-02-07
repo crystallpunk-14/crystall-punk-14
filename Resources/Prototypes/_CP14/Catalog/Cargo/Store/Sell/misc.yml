@@ -25,3 +25,19 @@
   service: !type:CP14SellStackService
     stackId: CP14GlassSheet
     count: 10
+
+- type: storePositionSell
+  id: AlchemicalHerbals
+  name: cp14-store-sell-alchemical-herbals-name
+  desc: cp14-store-sell-alchemical-herbals-desc
+  icon: 
+    sprite: _CP14/Objects/Flora/Wild/store_position.rsi
+    state: sell
+  price: 
+    min: 30
+    max: 60
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14AlchemicalHerbals
+    count: 10

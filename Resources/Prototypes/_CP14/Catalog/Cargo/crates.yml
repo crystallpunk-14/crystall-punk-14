@@ -72,7 +72,9 @@
   - type: StorageFill
     contents:
       - id: CP14DemiplaneKeyT1
-        amount: 5
+        amount: 4
+      - id: CP14DemiplaneKeyT2
+        amount: 1
 
 - type: entity
   parent: CP14BrassChest
