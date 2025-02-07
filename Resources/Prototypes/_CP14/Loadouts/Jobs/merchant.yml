@@ -2,7 +2,7 @@
 # Head
 
 - type: loadoutGroup
-  id: CP14TraderHead
+  id: CP14MerchantHead
   name: cp14-loadout-merchant-head
   minLimit: 0
   loadouts:
@@ -16,40 +16,40 @@
 # OuterClothing
 
 - type: loadoutGroup
-  id: CP14TraderOuterClothing
+  id: CP14MerchantOuterClothing
   name: cp14-loadout-merchant-outer
   minLimit: 0
   loadouts:
-  - CP14ClothingOuterClothingBankerWaistCoat
-  - CP14ClothingOuterClothingBankerWaistCoatOpen
+  - CP14ClothingOuterClothingMerchantWaistCoat
+  - CP14ClothingOuterClothingMerchantWaistCoatOpen
 
 - type: loadout
-  id: CP14ClothingOuterClothingBankerWaistCoat
+  id: CP14ClothingOuterClothingMerchantWaistCoat
   equipment:
-    outerClothing: CP14ClothingOuterClothingBankerWaistCoat
+    outerClothing: CP14ClothingOuterClothingMerchantWaistCoat
 
 - type: loadout
-  id: CP14ClothingOuterClothingBankerWaistCoatOpen
+  id: CP14ClothingOuterClothingMerchantWaistCoatOpen
   equipment:
-    outerClothing: CP14ClothingOuterClothingBankerWaistCoatOpen
+    outerClothing: CP14ClothingOuterClothingMerchantWaistCoatOpen
 
 # Shirt
 
 - type: loadoutGroup
-  id: CP14TraderShirt
+  id: CP14MerchantShirt
   name: cp14-loadout-merchant-shirt
   loadouts:
-  - CP14ClothingShirtBanker
+  - CP14ClothingShirtMerchant
 
 - type: loadout
-  id: CP14ClothingShirtBanker
+  id: CP14ClothingShirtMerchant
   equipment:
-    shirt: CP14ClothingShirtBanker
+    shirt: CP14ClothingShirtMerchant
 
 # Pants
 
 - type: loadoutGroup
-  id: CP14TraderPants
+  id: CP14MerchantPants
   name: cp14-loadout-merchant-pants
   loadouts:
   - CP14ClothingPantsAristocratic
@@ -57,7 +57,7 @@
 # Shoes
 
 - type: loadoutGroup
-  id: CP14TraderShoes
+  id: CP14MerchantShoes
   name: cp14-loadout-merchant-shoes
   loadouts:
   - CP14ShoesAristocraticBlack

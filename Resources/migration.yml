@@ -242,6 +242,10 @@ CP14Nail10: CP14Nail20
 
 #2025-07-02
 CP14SpawnPointBanker: CP14SpawnPointMerchant
+CP14ClothingOuterClothingBankerWaistCoat: CP14ClothingOuterClothingMerchantWaistCoat
+CP14ClothingOuterClothingBankerWaistCoatOpen: CP14ClothingOuterClothingMerchantWaistCoatOpen
+CP14ClothingShirtBanker: CP14ClothingShirtMerchant
+
 
 # <---> CrystallEdge migration zone end
 
