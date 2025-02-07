@@ -98,6 +98,7 @@
   parent: MarkerBase
   name: mob group random spawner
   id: CP14MobGroupSpawnerRandom
+  categories: [ ForkFiltered ]
   components:
   - type: CP14SpawnOutOfDemiplane
   - type: EntityTableSpawner
