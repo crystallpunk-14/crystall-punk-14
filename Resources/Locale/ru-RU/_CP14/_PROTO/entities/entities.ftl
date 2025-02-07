@@ -342,15 +342,6 @@ ent-CP14RuneSignalLightYellow = { ent-CP14BaseMagicRune }
 ent-CP14RuneSignalLightBlue = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
-ent-CP14SignalLightRed = { ent-CP14SignalLightBase }
-    .suffix = Red
-
-ent-CP14SignalLightYellow = { ent-CP14SignalLightBase }
-    .suffix = Yellow
-
-ent-CP14SignalLightBlue = { ent-CP14SignalLightBase }
-    .suffix = Blue
-
 ent-CP14ActionSpellManaConsume = Поглощение маны
     .desc = Вы поглощаете небольшое количество маны у цели.
 
