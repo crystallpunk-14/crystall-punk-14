@@ -18,7 +18,7 @@
   desc: cp14-store-sell-copperore-desc
   icon: 
     sprite: _CP14/Objects/Materials/copper_ore.rsi
-    state: ore_3
+    state: ore3
   price: 
     min: 10
     max: 20
@@ -46,7 +46,7 @@
   desc: cp14-store-sell-ironore-desc
   icon: 
     sprite: _CP14/Objects/Materials/iron_ore.rsi
-    state: ore_3
+    state: ore3
   price: 
     min: 20
     max: 30
@@ -74,7 +74,7 @@
   desc: cp14-store-sell-goldore-desc
   icon: 
     sprite: _CP14/Objects/Materials/gold_ore.rsi
-    state: ore_3
+    state: ore3
   price: 
     min: 100
     max: 150
@@ -102,7 +102,7 @@
   desc: cp14-store-sell-mithrilore-desc
   icon: 
     sprite: _CP14/Objects/Materials/mithril_ore.rsi
-    state: ore_3
+    state: ore3
   price: 
     min: 200
     max: 300
