@@ -722,9 +722,6 @@ ent-CP14ClothingShirtGuardBase = кольчуга стражника
 ent-CP14ClothingShirtGuardsChainmailShirtB = { ent-CP14ClothingShirtGuardBase }
     .desc = { ent-CP14ClothingShirtGuardBase.desc }
 
-ent-CP14ClothingShirtGuildmasterVest2 = { ent-CP14ClothingShirtGuildmasterVest }
-    .desc = { ent-CP14ClothingShirtGuildmasterVest.desc }
-
 ent-CP14ClothingShoesBlack = простые черные ботинки
     .desc = Влагу они не удержат, но это лучше чем ходить босиком.
 
