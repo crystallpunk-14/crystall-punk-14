@@ -39,7 +39,6 @@
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
       castDelay: 0.5
-      entityDistance: 1000
       breakOnMove: false
 
 - type: entity

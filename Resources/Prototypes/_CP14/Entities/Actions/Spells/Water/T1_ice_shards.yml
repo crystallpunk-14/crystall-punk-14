@@ -34,7 +34,6 @@
       cooldown: 0.25
       castDelay: 0.25
       breakOnMove: false
-      entityDistance: 1000
 
 - type: entity
   id: CP14RuneIceShards
