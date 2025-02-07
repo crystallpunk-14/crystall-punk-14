@@ -129,7 +129,7 @@
   - CP14GuildmasterSpells
 
 - type: roleLoadout
-  id: JobCP14Banker
+  id: JobCP14Merchant
   groups:
   - CP14GeneralSpells
   - CP14BankHead
