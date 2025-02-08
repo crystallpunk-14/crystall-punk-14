@@ -6,24 +6,23 @@ cp14-job-desc-guard-commander = The most dangerous person in the neighborhood. M
 cp14-job-name-guard = Guard
 cp14-job-desc-guard = A fighting unit of the Empire, sworn to protect its people. Watch for safety, and defend others from possible dangers.
 
-# Bank
+# Trade guild
 
 cp14-job-name-commandant = Commandant
 cp14-job-desc-commandant = Control the economy of the settlement by trading with the Empire. Manage stocks and finances by directing resources to the laboring hands.
 
-cp14-job-name-banker = Banker
-cp14-job-desc-banker = Make deals, store entrusted valuables, issue interest-bearing deposits, and do any other economic work that will enrich your bank.
+cp14-job-name-merchant = Merchant
+cp14-job-desc-merchant = You have the ability to buy and sell almost anything in your hands! Use it to enrich yourself and your trade guild.
 
 # Mercenary
 
 cp14-job-name-guildmaster = Guildmaster
-cp14-job-desc-guildmaster = Provide adventurers and artisans with work, and make sure they get enough profit for it. 
-
-cp14-job-name-apprentice = Apprentice
-cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Choose a specialisation in equipment, and try to help others in their work, in exchange for a salary and invaluable experience.
+cp14-job-desc-guildmaster = Protect the lives of your adventurers, provide them with everything they need, and make sure they do their job.
 
 cp14-job-name-adventurer = Adventurer
 cp14-job-desc-adventurer = A hunter for thrills, riches and fame, constantly risking his life. Fulfill the most dangerous orders, earning a living by mining resources or killing monsters.
+
+# Artisans
 
 cp14-job-name-alchemist = Alchemist
 cp14-job-desc-alchemist = A scientist of sorts, exploring the nature of substances. Create poisons and medicines from numerous natural plants and ingredients and earn money by selling them to people in need.
@@ -33,3 +32,6 @@ cp14-job-desc-innkeeper = Anywhere in Sylate there will be people looking to dri
 
 cp14-job-name-blacksmith = Blacksmith
 cp14-job-desc-blacksmith = Create and improve equipment for everyone in need! You have the power of metal and fire in your hands, and only you know how to use them carefully to create masterpieces.
+
+cp14-job-name-apprentice = Apprentice
+cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Choose a specialisation in equipment, and try to help others in their work, in exchange for a salary and invaluable experience.

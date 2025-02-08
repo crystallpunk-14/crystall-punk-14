@@ -56,9 +56,6 @@
         - id: CP14VialTinyLumiMushroom
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
-      - id: CP14DemiplaneKeyT1
-        weight: 2
-      - id: CP14DemiplaneKeyT2
       # Rare standard village crates loot
       - !type:NestedSelector
         tableId: CP14StationCrateLoot

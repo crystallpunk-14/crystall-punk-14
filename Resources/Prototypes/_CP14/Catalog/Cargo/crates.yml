@@ -72,7 +72,9 @@
   - type: StorageFill
     contents:
       - id: CP14DemiplaneKeyT1
-        amount: 5
+        amount: 4
+      - id: CP14DemiplaneKeyT2
+        amount: 1
 
 - type: entity
   parent: CP14BrassChest
@@ -83,16 +85,6 @@
     contents:
       - id: CP14WoodenPlanks10
         amount: 5
-        # Gift
-      - id: CP14WoodLog
-        amount: 2
-        prob: 0.5
-      - id: CP14WoodLog
-        amount: 2
-        prob: 0.4
-      - id: CP14WoodLog
-        amount: 2
-        prob: 0.3
 
 - type: entity
   parent: CP14BrassChest

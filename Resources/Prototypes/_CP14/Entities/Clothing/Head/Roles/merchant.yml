@@ -2,12 +2,12 @@
   parent: CP14ClothingHeadBase
   id: CP14ClothingHeadBowler
   name: bowler hat
-  description: It has an aristocratic air about it...
+  description: It has an aristocratic vibe about it...
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/Bank/bowler_hat.rsi
+    sprite: _CP14/Clothing/Head/Roles/Merchant/bowler_hat.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/Bank/bowler_hat.rsi
+    sprite: _CP14/Clothing/Head/Roles/Merchant/bowler_hat.rsi
 
 - type: entity
   parent: CP14ClothingHeadBase
@@ -16,6 +16,6 @@
   description: What an exquisite hat. It's clearly a hat that only sophisticated people prefer to wear.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/Bank/bowler_golden_hat.rsi
+    sprite: _CP14/Clothing/Head/Roles/Merchant/bowler_golden_hat.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/Bank/bowler_golden_hat.rsi
+    sprite: _CP14/Clothing/Head/Roles/Merchant/bowler_golden_hat.rsi
