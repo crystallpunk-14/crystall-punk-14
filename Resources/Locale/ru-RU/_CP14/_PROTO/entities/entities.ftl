@@ -2747,7 +2747,7 @@ ent-CP14CrystalBig = { ent-CP14CrystalBigBase }
     .desc = { ent-CP14CrystalBigBase.desc }
     .suffix = Обычный, большой
 
-ent-CP14CrystalShardBase = осколок кварцы
+ent-CP14CrystalShardBase = осколок кварца
     .desc = Природные кристаллы кварца, способные впитывать магическую энергию окружающего мира.
 
 ent-CP14CrystalShardWater = { ent-CP14CrystalShardBase }
