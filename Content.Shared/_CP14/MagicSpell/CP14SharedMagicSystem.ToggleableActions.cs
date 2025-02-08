@@ -67,12 +67,17 @@ public abstract partial class CP14SharedMagicSystem
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             return;
 
+        // event may return an empty entity with id = 0, which causes bugs
+        var _target = entityTarget;
+        if (_target is not null && _target.Value.Id == 0)
+            _target = null;
+
         var evStart = new CP14StartCastMagicEffectEvent(performer);
         RaiseLocalEvent(action, ref evStart);
 
         var fromItem = action.Comp.SpellStorage is not null;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage, target: entityTarget)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage, target: _target)
         {
             BreakOnMove = toggleable.BreakOnMove,
             BreakOnDamage = toggleable.BreakOnDamage,
@@ -92,7 +97,7 @@ public abstract partial class CP14SharedMagicSystem
             toggled.DoAfterId = doAfterId;
             toggled.Cooldown = toggleable.Cooldown;
 
-            toggled.EntityTarget = entityTarget;
+            toggled.EntityTarget = _target;
             toggled.WorldTarget = worldTarget;
 
             action.Comp.ActiveDoAfter = doAfterId;
