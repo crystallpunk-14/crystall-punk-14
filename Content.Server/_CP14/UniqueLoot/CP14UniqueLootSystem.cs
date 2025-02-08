@@ -28,7 +28,6 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
         var loot = GetNextUniqueLoot();
 
         Spawn(loot, Transform(ent).Coordinates);
-        QueueDel(ent);
     }
 
     private void OnRoundStart(RoundStartingEvent ev)
