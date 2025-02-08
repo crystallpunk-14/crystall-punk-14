@@ -45,8 +45,6 @@
       shader: unshaded
       color: red
   - type: CP14DemiplaneGeneratorData
-    selectedModifiers:
-    - ArtifactRoom
     tiersContent:
       1: 0.75 # We dont have lot t2 content now. In future, decrease to 0.33
       2: 1
