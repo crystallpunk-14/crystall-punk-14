@@ -11,14 +11,14 @@
             "name": "icon"
         },
         {
-            "name": "equipped-SHIRT",
+            "name": "equipped-OUTERCLOTHING",
             "directions": 4
         },
         {
             "name": "icon-open"
         },
         {
-            "name": "open-equipped-SHIRT",
+            "name": "open-equipped-OUTERCLOTHING",
             "directions": 4
         }
     ]
