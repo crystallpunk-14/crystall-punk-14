@@ -47,3 +47,35 @@
     sprite: _CP14/Clothing/Shoes/sandals.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/sandals.rsi
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesArtifactFlightboots
+  name: flight boots
+  suffix: Artifact, DO NOT MAP
+  description: Enchanted boots that allow their wearer to walk through the air a short distance from the ground. It looks extremely spectacular!
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/flightboots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/flightboots.rsi
+  - type: AntiGravityClothing
+  - type: ClothingSpeedModifier
+    walkModifier: 2
+    sprintModifier: 2
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesArtifactSpeedboots
+  name: hermes boots
+  suffix: Artifact, DO NOT MAP
+  description: Enchanted boots that allow their wearer to walk through the air a short distance from the ground. It looks extremely spectacular!
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/speedboots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/speedboots.rsi
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellMagicalAcceleration
