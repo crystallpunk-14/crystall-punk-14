@@ -259,3 +259,664 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+
+# Human Meat
+
+- type: entity
+  id: CP14FoodMeatHuman
+  parent: CP14FoodMeatBase
+  name: raw human meat
+  description: This meat has a suspicious look to it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: human_meat1
+        map: [ "random" ]
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Fat
+          Quantity: 2
+  - type: RandomSprite
+    available:
+      - random:
+          human_meat1: ""
+          human_meat2: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatHumanCooked
+
+- type: entity
+  id: CP14FoodMeatHumanCooked
+  parent: CP14FoodMeatHuman
+  name: cooked human meat
+  components:
+  - type: Sprite
+    layers:
+      - state: human_meat1 # We need fried sprites
+        map: [ "random" ]
+        color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: Fat
+          Quantity: 2
+  - type: RandomSprite
+    available:
+      - random:
+          human_meat1: ""
+          human_meat2: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+# Dino Meat
+
+- type: entity
+  id: CP14FoodMeatDino
+  parent: CP14FoodMeatBase
+  name: raw dino meat
+  description: Now who's going to eat who?
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: dino_meat1
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatDinoCooked
+
+- type: entity
+  id: CP14FoodMeatDinoCooked
+  parent: CP14FoodMeatDino
+  name: cooked dino meat
+  components:
+  - type: Sprite
+    state: dino_meat1 # We need fried sprites
+    color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatHydra
+  parent: CP14FoodMeatBase
+  name: raw hydra meat
+  description: Not as much meat as I would have liked.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: dino_meat2
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5.5
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatHydraCooked
+
+- type: entity
+  id: CP14FoodMeatHydraCooked
+  parent: CP14FoodMeatHydra
+  name: cooked hydra meat
+  components:
+  - type: Sprite
+    state: dino_meat2 # We need fried sprites
+    color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5.5
+        - ReagentId: Protein
+          Quantity: 3
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+# Rabbit Meat
+
+- type: entity
+  id: CP14FoodMeatRabbit
+  parent: CP14FoodMeatBase
+  name: raw rabbit meat
+  description: The meat seems tough and the odour is unpleasant.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: rabbit_meat1
+        map: [ "random" ]
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+  - type: RandomSprite
+    available:
+      - random:
+          rabbit_meat1: ""
+          rabbit_meat2: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatRabbitCooked
+
+- type: entity
+  id: CP14FoodMeatRabbitCooked
+  parent: CP14FoodMeatRabbit
+  name: cooked rabbit meat
+  description: The frying went to good use, now the meat seems juicy and tender.
+  components:
+  - type: Sprite
+    layers:
+      - state: rabbit_meat1 # We need fried sprites
+        map: [ "random" ]
+        color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 3
+  - type: RandomSprite
+    available:
+      - random:
+          rabbit_meat1: ""
+          rabbit_meat2: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+# Pig and Boar Meat
+
+- type: entity
+  id: CP14FoodMeatPig
+  parent: CP14FoodMeatBase
+  name: raw pig meat
+  description: I've eaten pork, I eat pork, and it looks like I'll be eating pork forever and ever.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: pig_meat1
+        map: [ "random" ]
+  - type: Item
+    size: Small
+  - type: SliceableFood
+    count: 4
+    slice: CP14FoodMeatPigSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 4
+        - ReagentId: Fat
+          Quantity: 8
+  - type: RandomSprite
+    available:
+      - random:
+          pig_meat1: ""
+          pig_meat4: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatPigCooked
+
+- type: entity
+  id: CP14FoodMeatPigCooked
+  parent: CP14FoodMeatPig
+  name: cooked pig meat
+  components:
+  - type: Sprite
+    layers:
+      - state: pig_meat1 # We need fried sprites
+        map: [ "random" ]
+        color: "#9d3f49"
+  - type: SliceableFood
+    count: 4
+    slice: CP14FoodMeatPigCookedSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 4
+        - ReagentId: Fat
+          Quantity: 8
+  - type: RandomSprite
+    available:
+      - random:
+          pig_meat1: ""
+          pig_meat4: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatPigLeg
+  parent: CP14FoodMeatBase
+  name: raw pig leg meat
+  description: A decent ham, albeit with a large preponderance of bone.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: pig_meat5
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 4
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatPigLegCooked
+
+- type: entity
+  id: CP14FoodMeatPigLegCooked
+  parent: CP14FoodMeatPigLeg
+  name: cooked pig leg meat # Jamon? - Хамон?
+  components:
+  - type: Sprite
+    state: pig_meat5 # We need fried sprites
+    color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Protein
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 4
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatBoar
+  parent: CP14FoodMeatBase
+  name: raw boar meat
+  description: It's like pig meat, except more odorous.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: pig_meat2
+        map: [ "random" ]
+  - type: Item
+    size: Small
+  - type: SliceableFood
+    count: 4
+    slice: CP14FoodMeatPigSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 4
+        - ReagentId: Fat
+          Quantity: 8
+  - type: RandomSprite
+    available:
+      - random:
+          pig_meat2: ""
+          pig_meat3: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatBoarCooked
+
+- type: entity
+  id: CP14FoodMeatBoarCooked
+  parent: CP14FoodMeatBoar
+  name: cooked boar meat
+  description: After a good frying, it's almost indistinguishable from pork meat.
+  components:
+  - type: Sprite
+    layers:
+      - state: pig_meat2 # We need fried sprites
+        map: [ "random" ]
+        color: "#9d3f49"
+  - type: SliceableFood
+    count: 4
+    slice: CP14FoodMeatPigCookedSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 4
+        - ReagentId: Fat
+          Quantity: 8
+  - type: RandomSprite
+    available:
+      - random:
+          pig_meat2: ""
+          pig_meat3: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatPigSlice
+  parent: CP14FoodMeatSliceBase
+  name: meat pieces
+  description: Pork meat ball with veins of lard.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: pig_meat6
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Fat
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatPigCookedSlice
+
+- type: entity
+  id: CP14FoodMeatPigCookedSlice
+  parent: CP14FoodMeatPigSlice
+  name: cooked meat pieces
+  components:
+  - type: Sprite
+    layers:
+      - state: pig_meat6 # We need fried sprites
+        color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: Protein
+          Quantity: 1
+        - ReagentId: Fat
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+# Mole Meat
+
+- type: entity
+  id: CP14FoodMeatMole
+  parent: CP14FoodMeatBase
+  name: raw mole meat
+  description: The colour is quite suspicious, not everyone would dare to try it out, perhaps give it to a goblin?
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: mole_meat1
+        map: [ "random" ]
+  - type: Item
+    size: Small
+  - type: SliceableFood
+    count: 4
+    slice: CP14FoodMeatMoleSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20 # Add a reagent that restores mana, possibly poisonous
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 6
+  - type: RandomSprite
+    available:
+      - random:
+          mole_meat1: ""
+          mole_meat2: ""
+          mole_meat3: ""
+          mole_meat4: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatMoleCooked
+
+- type: entity
+  id: CP14FoodMeatMoleCooked
+  parent: CP14FoodMeatMole
+  name: cooked mole meat
+  components:
+  - type: Sprite
+    layers:
+      - state: mole_meat1 # We need fried sprites
+        map: [ "random" ]
+        color: "#9d3f49"
+  - type: SliceableFood
+    count: 4
+    slice: CP14FoodMeatMoleCookedSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 6
+  - type: RandomSprite
+    available:
+      - random:
+          mole_meat1: ""
+          mole_meat2: ""
+          mole_meat3: ""
+          mole_meat4: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatMoleLeg
+  parent: CP14FoodMeatBase
+  name: raw mole leg meat
+  description: The suspicious colour of the meat makes you question its edibility, but if you're really hungry...
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: mole_meat5
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20 # Add a reagent that restores mana, possibly poisonous
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 4
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatMoleLegCooked
+
+- type: entity
+  id: CP14FoodMeatMoleLegCooked
+  parent: CP14FoodMeatMoleLeg
+  name: cooked mole leg meat # Jamon? - Хамон?
+  components:
+  - type: Sprite
+    state: mole_meat5 # We need fried sprites
+    color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Protein
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 4
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatMoleSlice
+  parent: CP14FoodMeatSliceBase
+  name: monster meat piece
+  description: Monster meat balls with their trademark suspicious colour.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: mole_meat6
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5 # Add a reagent that restores mana, possibly poisonous
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1.5
+        - ReagentId: Fat
+          Quantity: 1.5
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatMoleCookedSlice
+
+- type: entity
+  id: CP14FoodMeatMoleCookedSlice
+  parent: CP14FoodMeatMoleSlice
+  name: cooked monster meat pieces
+  components:
+  - type: Sprite
+    layers:
+      - state: mole_meat6 # We need fried sprites
+        color: "#9d3f49"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: Protein
+          Quantity: 1.5
+        - ReagentId: Fat
+          Quantity: 1.5
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
