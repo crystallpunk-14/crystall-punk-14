@@ -1,5 +1,5 @@
 [whitelist]
-enabled = false
+enabled = true
 
 [log]
 path = "logs"
