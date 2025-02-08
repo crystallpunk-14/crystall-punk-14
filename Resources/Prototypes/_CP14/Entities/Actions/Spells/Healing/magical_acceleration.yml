@@ -31,6 +31,7 @@
 - type: entity
   id: CP14MagicAccelerationDustEffect
   parent: CP14DustEffect
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     drawdepth: Items

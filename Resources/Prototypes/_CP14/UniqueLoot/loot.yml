@@ -15,9 +15,5 @@
   entity: CP14MagicHealingStaff
 
 - type: uniqueLoot
-  id: CP14ClothingRingFlashLight
-  entity: CP14ClothingRingFlashLight
-
-- type: uniqueLoot
-  id: CP14ClothingRingIceShards
-  entity: CP14ClothingRingIceShards
+  id: CP14MagicShadowStaff
+  entity: CP14MagicShadowStaff
