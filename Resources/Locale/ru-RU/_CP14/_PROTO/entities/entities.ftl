@@ -252,7 +252,7 @@ ent-CP14TelegraphyFireRune = { ent-CP14BaseMagicImpact }
 ent-CP14AreaEntityEffectFireRune = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14SpellScrollFireRune = fire rune spell scroll
+ent-CP14SpellScrollFireRune = свиток заклинаний руны огня
     .desc = { ent-CP14BaseSpellScrollFire.desc }
 
 ent-CP14ActionSpellCureBurn = Лечение ожогов
@@ -396,7 +396,7 @@ ent-CP14ImpactEffectFreeze = { ent-CP14BaseMagicImpact }
 ent-CP14RunePlantFreeze = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
-ent-CP14SpellScrollFreeze = freeze spell scroll
+ent-CP14SpellScrollFreeze = свиток заклинания заморозки
     .desc = { ent-CP14BaseSpellScrollWater.desc }
 
 ent-CP14ActionSpellWaterCreation = Создание воды
@@ -581,10 +581,10 @@ ent-CP14ClothingOuterClothingCuirass = кираса
 ent-CP14ClothingOuterClothingInfantryCuirass = пехотная кираса
     .desc = Кираса легкой пехоты, в отличие от оригинала, защищает и спину.
 
-ent-CP14ClothingOuterClothingCuirassLoincloth = набедренная повязка с кирасой
+ent-CP14ClothingOuterClothingCuirassLoincloth = кираса с набедренником
     .desc = Более тяжелый вариант кирасы, закрывающий только верхнюю часть ног.
 
-ent-CP14ClothingOuterClothingCuirassLeg = кираса для ног
+ent-CP14ClothingOuterClothingCuirassLeg = кираса с поножами
     .desc = Более тяжелая кираса, полностью закрывающий ноги.
 
 ent-CP14ClothingPantsBase = None
@@ -917,31 +917,31 @@ ent-CP14BookKnowledgeBase = книга знаний
 
 ent-CP14BookKnowledgeWoodWork = { ent-CP14BookKnowledgeBase }
     .desc = { ent-CP14BookKnowledgeBase.desc }
-    .suffix = Wood Work
+    .suffix = Работа по дереву
 
 ent-CP14BookKnowledgeMetallMelting = { ent-CP14BookKnowledgeBase }
     .desc = { ent-CP14BookKnowledgeBase.desc }
-    .suffix = Metall Melting
+    .suffix = Плавка металла
 
 ent-CP14BookKnowledgeMetallForging = { ent-CP14BookKnowledgeBase }
     .desc = { ent-CP14BookKnowledgeBase.desc }
-    .suffix = Metall Forging
+    .suffix = Ковка металла
 
 ent-CP14BookKnowledgeGlasswork = { ent-CP14BookKnowledgeBase }
     .desc = { ent-CP14BookKnowledgeBase.desc }
-    .suffix = Glasswork
+    .suffix = Работа со стеклом
 
 ent-CP14BookKnowledgeClothingSewing = { ent-CP14BookKnowledgeBase }
     .desc = { ent-CP14BookKnowledgeBase.desc }
-    .suffix = Clothing Sewing
+    .suffix = Шитье одежды
 
 ent-CP14BookKnowledgeWallpaperCraft = { ent-CP14BookKnowledgeBase }
     .desc = { ent-CP14BookKnowledgeBase.desc }
-    .suffix = Wallpaper Craft
+    .suffix = Изготовление обоев
 
 ent-CP14BookKnowledgeAdvancedClothingSewing = { ent-CP14BookKnowledgeBase }
     .desc = { ent-CP14BookKnowledgeBase.desc }
-    .suffix = Advanced Clothing Sewing
+    .suffix = Продвинутое шитье одежды
 
 ent-CP14Paper = бумага
     .desc = Лист белой бумаги.
@@ -1542,8 +1542,8 @@ ent-CP14DyePurple = фиолетовый краситель
 ent-CP14DyeBlack = черный краситель
     .desc = { ent-CP14BaseDye.desc }
 
-ent-CP14OreCopper1 = copper ore
-    .desc = A piece of pale, heavy copper.
+ent-CP14OreCopper1 = медная руда
+    .desc = Кусок бледной, тяжелой меди.
 
 ent-CP14OreCopper5 = { ent-CP14OreCopper1 }
     .desc = { ent-CP14OreCopper1.desc }
@@ -1553,8 +1553,8 @@ ent-CP14OreCopper10 = { ent-CP14OreCopper1 }
     .desc = { ent-CP14OreCopper1.desc }
     .suffix = 10
 
-ent-CP14OreIron1 = медная руда
-    .desc = Кусочек бледной, тяжелой меди.
+ent-CP14OreIron1 = железная руда
+    .desc = Кусок холодного, тяжелого железа.
 
 ent-CP14OreIron5 = { ent-CP14OreIron1 }
     .desc = { ent-CP14OreIron1.desc }
@@ -2752,27 +2752,27 @@ ent-CP14CrystalShardBase = осколок кварца
 
 ent-CP14CrystalShardWater = { ent-CP14CrystalShardBase }
     .desc = { ent-CP14CrystalShardBase.desc }
-    .suffix = Water
+    .suffix = Вода
 
 ent-CP14CrystalShardHealing = { ent-CP14CrystalShardBase }
     .desc = { ent-CP14CrystalShardBase.desc }
-    .suffix = Healing
+    .suffix = Лечение
 
 ent-CP14CrystalShardFire = { ent-CP14CrystalShardBase }
     .desc = { ent-CP14CrystalShardBase.desc }
-    .suffix = Fire
+    .suffix = Огонь
 
 ent-CP14CrystalShardLight = { ent-CP14CrystalShardBase }
     .desc = { ent-CP14CrystalShardBase.desc }
-    .suffix = Light
+    .suffix = Свет
 
 ent-CP14CrystalShardElectric = { ent-CP14CrystalShardBase }
     .desc = { ent-CP14CrystalShardBase.desc }
-    .suffix = Electric
+    .suffix = Электрический
 
 ent-CP14CrystalShardDarkness = { ent-CP14CrystalShardBase }
     .desc = { ent-CP14CrystalShardBase.desc }
-    .suffix = Darkness
+    .suffix = Тьма
 
 ent-CP14GatherableWildBase = { ent-CP14GatherableBase }
     .desc = { ent-CP14GatherableBase.desc }
@@ -2953,7 +2953,7 @@ ent-CP14CurtainsWhite = { ent-CP14BaseCurtains }
 
 ent-CP14CurtainsWhiteOpened = { ent-CP14CurtainsWhite }
     .desc = { ent-CP14CurtainsWhite.desc }
-    .suffix = Белые, открытые
+    .suffix = Белые. Открытые
 
 ent-CP14CurtainsBlue = { ent-CP14BaseCurtains }
     .desc = { ent-CP14BaseCurtains.desc }
@@ -2961,7 +2961,7 @@ ent-CP14CurtainsBlue = { ent-CP14BaseCurtains }
 
 ent-CP14CurtainsBlueOpened = { ent-CP14CurtainsBlue }
     .desc = { ent-CP14CurtainsBlue.desc }
-    .suffix = Синие, открытые
+    .suffix = Синие. Открытые
 
 ent-CP14CurtainsRed = { ent-CP14BaseCurtains }
     .desc = { ent-CP14BaseCurtains.desc }
@@ -2969,7 +2969,7 @@ ent-CP14CurtainsRed = { ent-CP14BaseCurtains }
 
 ent-CP14CurtainsRedOpened = { ent-CP14CurtainsRed }
     .desc = { ent-CP14CurtainsRed.desc }
-    .suffix = Красные, открытые
+    .suffix = Красные. Открытые
 
 ent-CP14Lamppost = фонарный столб
     .desc = Фонарь, подвешенный на столбе.
@@ -2977,12 +2977,12 @@ ent-CP14Lamppost = фонарный столб
 
 ent-CP14LamppostBlue = фонарный столб
     .desc = Фонарь, подвешенный на столбе.
-    .suffix = Вечногорящий, Синий
+    .suffix = Вечногорящий. Синий
 
 ent-CP14WoodenPalletSell = деревянный поддон для продажи
     .desc = { ent-CP14WoodenPallet.desc }
 
-ent-CP14WoodenPalletBuy = деревянный поддн для покупки
+ent-CP14WoodenPalletBuy = деревянный поддон для покупки
     .desc = { ent-CP14WoodenPallet.desc }
 
 ent-CP14TableWoodenFrame = каркас деревянного стола
