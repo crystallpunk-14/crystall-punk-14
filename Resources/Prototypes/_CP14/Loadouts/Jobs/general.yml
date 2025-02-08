@@ -54,6 +54,32 @@
   equipment:
     cloak: CP14ClothingCloakFurCoat
 
+# OuterClothing
+
+- type: loadoutGroup
+  id: CP14GeneralOuterClothing
+  name: cp14-loadout-general-outer
+  minLimit: 0
+  loadouts:
+  - CP14ClothingOuterClothingBrownVest1
+  - CP14ClothingOuterClothingBrownVest2
+  - CP14ClothingOuterClothingBrownVest3
+
+- type: loadout
+  id: CP14ClothingOuterClothingBrownVest1
+  equipment:
+    cloak: CP14ClothingOuterClothingBrownVest1
+
+- type: loadout
+  id: CP14ClothingOuterClothingBrownVest2
+  equipment:
+    cloak: CP14ClothingOuterClothingBrownVest2
+
+- type: loadout
+  id: CP14ClothingOuterClothingBrownVest3
+  equipment:
+    cloak: CP14ClothingOuterClothingBrownVest3
+
 # Eyes
 
 - type: loadoutGroup
@@ -276,11 +302,6 @@
   - CP14ClothingShirtCottonPurple
   - CP14ClothingShirtCottonRed
   - CP14ClothingShirtCottonWhite
-  - CP14ClothingShirtCottonWhiteBelt
-  - CP14ClothingShirtCottonWhiteBrownVest
-  - CP14ClothingShirtCottonWhiteBrownVest2
-  - CP14ClothingShirtCottonWhiteBrownVest3
-  - CP14ClothingShirtCottonWhiteCollar
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
 
@@ -328,31 +349,6 @@
   id: CP14ClothingShirtCottonWhite
   equipment:
     shirt: CP14ClothingShirtCottonWhite
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteBelt
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteBelt
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteBrownVest
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteBrownVest
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteBrownVest2
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteBrownVest2
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteBrownVest3
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteBrownVest3
-
-- type: loadout
-  id: CP14ClothingShirtCottonWhiteCollar
-  equipment:
-    shirt: CP14ClothingShirtCottonWhiteCollar
 
 - type: loadout
   id: CP14ClothingShirtCottonYellow
@@ -431,6 +427,7 @@
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
+  - CP14ClothingBeltBrown
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -521,6 +518,12 @@
   storage:
     back:
     - CP14ClothingBeltQuiver
+
+- type: loadout
+  id: CP14ClothingBeltBrown
+  storage:
+    back:
+    - CP14ClothingBeltBrown
 
 # Keys
 

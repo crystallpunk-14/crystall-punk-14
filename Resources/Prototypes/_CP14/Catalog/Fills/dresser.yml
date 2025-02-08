@@ -105,7 +105,9 @@
     contents:
       - id: CP14ClothingCloakGuildmasterCape
         prob: 1
-      - id: CP14ClothingShirtGuildmasterVest
+      - id: CP14ClothingShirtCottonWhite
+        prob: 1
+      - id: CP14ClothingOuterClothingGreenVest
         prob: 0.6
-      - id: CP14ClothingShirtGuildmasterVest2
+      - id: CP14ClothingOuterClothingRedVest
         prob: 0.6
