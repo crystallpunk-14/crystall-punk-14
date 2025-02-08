@@ -29,7 +29,9 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
 
         if (!Deleted(ent))
             Spawn(loot, Transform(ent).Coordinates);
-        QueueDel(ent);
+
+        if (!TerminatingOrDeleted(ent) && Exists(ent))
+            QueueDel(ent);
     }
 
     private void OnRoundStart(RoundStartingEvent ev)
