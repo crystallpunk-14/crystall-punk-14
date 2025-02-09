@@ -110,41 +110,6 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  id: CP14LargeWoodenCrateFrame
-  name: large wooden crate frame
-  description: Unfinished large wooden crate.
-  parent: 
-  - BaseStructureDynamic
-  - CP14BaseFlammable
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Storage/Crates/large_wooden_crate.rsi
-    state: open
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 75
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14WoodenPlanks1:
-            min: 1
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Construction
-    graph: CP14LargeWoodenCrate
-    node: CP14LargeWoodenCrateFrame
-
-- type: entity
   id: CP14LargeWoodenCrate
   name: large wooden crate
   description: Solid wooden crate.
@@ -176,40 +141,6 @@
   - type: Construction
     graph: CP14LargeWoodenCrate
     node: CP14LargeWoodenCrate
-
-- type: entity
-  id: CP14SmallWoodenCrateFrame
-  name: small wooden crate frame
-  description: Unfinished small wooden crate frame.
-  parent: 
-  - BaseStructureDynamic
-  - CP14BaseFlammable
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Storage/Crates/small_wooden_crate.rsi
-    state: open
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14WoodenPlanks1:
-            min: 1
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Construction
-    graph: CP14SmallWoodenCrate
-    node: CP14SmallWoodenCrateFrame
 
 - type: entity
   id: CP14SmallWoodenCrate

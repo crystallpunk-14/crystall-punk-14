@@ -3,60 +3,33 @@
   start: start
   graph:
     - node: start
-      actions:
-        - !type:DestroyEntity {}
-      edges:
-        - to: CP14SmallWoodenCrateFrame
-          steps:
-            - material: CP14WoodenPlanks
-              amount: 2
-              doAfter: 2
-              
-    - node: CP14SmallWoodenCrateFrame
-      entity: CP14SmallWoodenCrateFrame
       edges:
         - to: CP14SmallWoodenCrate
+          completed:
+            - !type:SnapToGrid
           steps:
             - material: CP14WoodenPlanks
               amount: 2
-              doAfter: 2
             - material: CP14Nail
               amount: 1
-              doAfter: 1
-            - tool: CP14Hammering
-              doAfter: 2
-              
+              doAfter: 4
     - node: CP14SmallWoodenCrate
-      entity: CP14SmallWoodenCrate
-
+      entity: CP14SmallWoodenCrate 
 
 - type: constructionGraph
   id: CP14LargeWoodenCrate
   start: start
   graph:
     - node: start
-      actions:
-        - !type:DestroyEntity {}
-      edges:
-        - to: CP14LargeWoodenCrateFrame
-          steps:
-            - material: CP14WoodenPlanks
-              amount: 2
-              doAfter: 2
-              
-    - node: CP14LargeWoodenCrateFrame
-      entity: CP14LargeWoodenCrateFrame
       edges:
         - to: CP14LargeWoodenCrate
+          completed:
+            - !type:SnapToGrid
           steps:
             - material: CP14WoodenPlanks
-              amount: 2
-              doAfter: 2
+              amount: 4
             - material: CP14Nail
-              amount: 1
-              doAfter: 1
-            - tool: CP14Hammering
-              doAfter: 2
-              
+              amount: 2
+              doAfter: 4
     - node: CP14LargeWoodenCrate
-      entity: CP14LargeWoodenCrate
+      entity: CP14LargeWoodenCrate 
