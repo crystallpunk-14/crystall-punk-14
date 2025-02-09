@@ -1,13 +1,18 @@
 using Content.Server._CP14.Demiplane.Components;
 using Content.Server._CP14.RoundStatistic;
+using Content.Server.Chat.Managers;
+using Content.Server.Chat.Systems;
 using Content.Server.Flash;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
+using Content.Shared.Chat;
 using Content.Shared.Popups;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -29,6 +34,8 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly CP14RoundStatTrackerSystem _statistic = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     private EntityQuery<CP14DemiplaneComponent> _demiplaneQuery;
 
@@ -42,6 +49,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         InitConnections();
         InitStabilization();
         InitEchoes();
+        InitDestruction();
 
         SubscribeLocalEvent<CP14DemiplaneComponent, ComponentShutdown>(OnDemiplanShutdown);
         SubscribeLocalEvent<CP14SpawnOutOfDemiplaneComponent, MapInitEvent>(OnSpawnOutOfDemiplane);
@@ -75,6 +83,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 
         UpdateGeneration(frameTime);
         UpdateStabilization(frameTime);
+        UpdateDestruction(frameTime);
     }
 
     /// <summary>
@@ -160,5 +169,20 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         {
             RemoveDemiplaneRandomEntryPoint(demiplane, entry);
         }
+    }
+
+    private void DemiplaneAnnounce(EntityUid mapUid, string text)
+    {
+        var mapId = Comp<MapComponent>(mapUid).MapId;
+
+        _chatManager.ChatMessageToManyFiltered(
+            Filter.BroadcastMap(mapId),
+            ChatChannel.Radio,
+            text,
+            text,
+            _mapManager.GetMapEntityId(mapId),
+            false,
+            true,
+            null);
     }
 }

@@ -18,9 +18,9 @@
       - CP14FloorSnow
       - CP14FloorSnowDeep
       - CP14FloorSnowDeepDeep
-      count: 5
-      minGroupSize: 2
-      maxGroupSize: 5
+      count: 4
+      minGroupSize: 5
+      maxGroupSize: 8
 
 # TIER 2
 
@@ -32,7 +32,7 @@
   name: cp14-modifier-explosive
   generationWeight: 0.25
   categories:
-    Danger: 0.4
+    Danger: 0.2
   layers:
     - !type:OreDunGen
       entity: LandMineExplosive
@@ -45,6 +45,7 @@
   tiers:
     - 2
     - 3
+  name: cp14-modifier-shadow-kudzu
   categories:
     Danger: 0.3
   layers:
@@ -55,17 +56,14 @@
       maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
-  id: UnstableDemiplaneCrystal
-  generationWeight: 0.05 # Very rare
+  id: TimeLimit10
+  generationWeight: 0.4 
   tiers:
+    - 1
     - 2
-    - 3
-  name: cp14-modifier-unstable-demiplane-crystal
+  name: cp14-modifier-time-limit-10
   categories:
-    Danger: 0.3
-  layers:
-    - !type:OreDunGen
-      entity: CP14DangerousMobSpawnCrystal
-      count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
+    Danger: 0.1
+  components:
+    - type: CP14DemiplaneTimedDestruction
+      timeToDestruction: 600 # 10 minutes

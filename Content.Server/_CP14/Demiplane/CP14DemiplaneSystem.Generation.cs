@@ -248,26 +248,13 @@ public sealed partial class CP14DemiplaneSystem
         foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
         {
             var passed = true;
-            //Tag blacklist filter
-            foreach (var configTag in selectedConfig.Tags)
-            {
-                if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
-                {
-                    passed = false;
-                    break;
-                }
-            }
 
-            //Tag required filter
+            //Random prob filter
             if (passed)
             {
-                foreach (var reqTag in modifier.RequiredTags)
+                if (!_random.Prob(modifier.GenerationProb))
                 {
-                    if (!selectedConfig.Tags.Contains(reqTag))
-                    {
-                        passed = false;
-                        break;
-                    }
+                    passed = false;
                 }
             }
 
@@ -306,12 +293,26 @@ public sealed partial class CP14DemiplaneSystem
                 }
             }
 
-            //Random prob filter
-            if (passed)
+            //Tag blacklist filter
+            foreach (var configTag in selectedConfig.Tags)
             {
-                if (!_random.Prob(modifier.GenerationProb))
+                if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
                 {
                     passed = false;
+                    break;
+                }
+            }
+
+            //Tag required filter
+            if (passed)
+            {
+                foreach (var reqTag in modifier.RequiredTags)
+                {
+                    if (!selectedConfig.Tags.Contains(reqTag))
+                    {
+                        passed = false;
+                        break;
+                    }
                 }
             }
 
