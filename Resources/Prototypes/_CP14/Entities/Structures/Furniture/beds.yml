@@ -53,3 +53,6 @@
     noRot: true
   - type: Anchorable
   - type: Pullable
+  - type: Construction
+    graph: CP14WoodenBed
+    node: CP14WoodenBed

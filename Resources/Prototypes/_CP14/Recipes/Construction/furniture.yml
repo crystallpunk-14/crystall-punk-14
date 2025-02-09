@@ -222,6 +222,25 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WoodenBed
+  name: Wooden bed
+  description: Comfortable bed for sleeping.
+  graph: CP14WoodenBed
+  startNode: start
+  targetNode: CP14WoodenBed
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/wooden_bed.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
 # Small fence
 
 - type: construction
@@ -339,5 +358,3 @@
   canBuildInImpassable: true
   conditions:
     - !type:TileNotBlocked
-
-#кровать шкаф полка комод ящик

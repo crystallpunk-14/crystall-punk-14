@@ -1,0 +1,30 @@
+- type: constructionGraph
+  id: CP14WoodenCloset
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WoodenClosetFrame
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14WoodenClosetFrame
+      entity: CP14WoodenClosetFrame
+      edges:
+        - to: CP14WoodenCloset
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 2
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - tool: CP14Hammering
+              doAfter: 2
+              
+    - node: CP14WoodenCloset
+      entity: CP14WoodenCloset

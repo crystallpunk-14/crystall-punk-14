@@ -130,6 +130,9 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: Construction
+    graph: CP14WallmountBarShelfA
+    node: CP14WallmountBarShelfA
 
 - type: entity
   id: CP14WallmountBarShelfB
@@ -143,3 +146,6 @@
     - map: ["enum.StorageFillLayers.Fill"]
   - type: StorageFillVisualizer
     fillBaseName: bottleB
+  - type: Construction
+    graph: CP14WallmountBarShelfB
+    node: CP14WallmountBarShelfB

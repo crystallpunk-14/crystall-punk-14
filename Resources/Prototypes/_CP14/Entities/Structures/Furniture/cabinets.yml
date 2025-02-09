@@ -48,6 +48,38 @@
     locked: false
 
 - type: entity
+  name: wooden cabinet frame
+  parent:
+  - BaseStructure
+  - CP14BaseFlammableSpreading
+  categories: [ ForkFiltered ]
+  id: CP14WoodenCabinetFrame
+  description: Unfinished wooden cabinet.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Dressers/wood_cabinet.rsi
+    state: icon-open
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WoodenCabinet
+    node: CP14WoodenCabinetFrame
+
+- type: entity
   name: wooden cabinet
   parent:
   - CP14CabinetBase
@@ -74,10 +106,46 @@
             max: 6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WoodenCabinet
+    node: CP14WoodenCabinet
+
+- type: entity
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  id: CP14IronCabinetFrame
+  name: iron cabinet frame
+  description: Unfinished iron cabinet.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Dressers/iron_cabinet.rsi
+    state: icon-open
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14IronBar1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14IronCabinet
+    node: CP14IronCabinetFrame
 
 - type: entity
   parent: CP14CabinetBase
-  id: C14IronCabinet
+  id: CP14IronCabinet
   name: iron cabinet
   description: an iron cabinet. Sturdy, lockable. You can store your valuables here without fear of some burglar taking it all for himself.
   components:
@@ -96,12 +164,20 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14IronBar1:
+            min: 2
+            max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WoodenCabinet
+    node: CP14WoodenCabinet
 
 - type: entity
-  parent: C14IronCabinet
-  id: C14IronCabinetCargo
+  parent: CP14IronCabinet
+  id: CP14IronCabinetCargo
   name: trade box
   description: An armored vault for storing money for trade with the city. City workers will unload their earnings here, or take them from here when you want to buy something.
   components:
