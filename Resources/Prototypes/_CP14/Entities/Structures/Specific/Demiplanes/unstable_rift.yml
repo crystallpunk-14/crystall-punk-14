@@ -143,6 +143,7 @@
   parent: MarkerBase
   name: mob group random spawner
   id: CP14MobGroupSpawnerRandom
+  suffix: Spawn self copy out of demiplane
   categories: [ ForkFiltered ]
   components:
   - type: CP14SpawnOutOfDemiplane
