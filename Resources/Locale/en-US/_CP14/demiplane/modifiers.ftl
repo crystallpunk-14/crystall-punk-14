@@ -19,3 +19,5 @@ cp14-modifier-boars = wild boars
 cp14-modifier-chasm = bottomless chasms
 cp14-modifier-air-lily = air lilies
 cp14-modifier-unstable-demiplane-crystal = unstable demiplane crystal
+cp14-modifier-time-limit-10 = temporary disintegration (10 minutes)
+cp14-modifier-shadow-kudzu = spreading darkness

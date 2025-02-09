@@ -32,7 +32,7 @@
   name: cp14-modifier-explosive
   generationWeight: 0.25
   categories:
-    Danger: 0.4
+    Danger: 0.2
   layers:
     - !type:OreDunGen
       entity: LandMineExplosive
@@ -45,6 +45,7 @@
   tiers:
     - 2
     - 3
+  name: cp14-modifier-shadow-kudzu
   categories:
     Danger: 0.3
   layers:
@@ -62,10 +63,23 @@
     - 3
   name: cp14-modifier-unstable-demiplane-crystal
   categories:
-    Danger: 0.3
+    Danger: 0.1
   layers:
     - !type:OreDunGen
       entity: CP14DangerousMobSpawnCrystal
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: TimeLimit10
+  generationWeight: 0.4 
+  tiers:
+    - 1
+    - 2
+  name: cp14-modifier-time-limit-10
+  categories:
+    Danger: 0.1
+  components:
+    - type: CP14DemiplaneTimedDestruction
+      timeToDestruction: 600 # 10 minutes

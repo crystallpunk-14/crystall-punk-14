@@ -48,13 +48,13 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// Generation layers that will be added to the location generation after the main layers.
     /// </summary>
     [DataField]
-    public List<IDunGenLayer> Layers = new();
+    public List<IDunGenLayer>? Layers;
 
     /// <summary>
     /// Components that will be added to the map
     /// </summary>
     [DataField]
-    public ComponentRegistry Components = new();
+    public ComponentRegistry? Components;
 
     /// <summary>
     /// Modifier cannot be applied to locations with the following tags. Leave empty for disable

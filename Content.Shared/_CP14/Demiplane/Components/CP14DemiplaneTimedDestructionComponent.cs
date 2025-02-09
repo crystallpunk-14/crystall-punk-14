@@ -23,7 +23,7 @@ public sealed partial class CP14DemiplaneTimedDestructionComponent : Component
     /// <summary>
     /// Sound that plays when the demiplane start to collapse.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField]
+    [DataField]
     public SoundSpecifier Sound = new SoundCollectionSpecifier("ExpeditionEnd")
     {
         Params = AudioParams.Default.WithVolume(-5),
@@ -33,5 +33,5 @@ public sealed partial class CP14DemiplaneTimedDestructionComponent : Component
     /// Song selected on MapInit so we can predict the audio countdown properly.
     /// </summary>
     [DataField]
-    public SoundPathSpecifier SelectedSong;
+    public SoundPathSpecifier? SelectedSong;
 }

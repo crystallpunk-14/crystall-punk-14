@@ -22,6 +22,10 @@ public sealed partial class CP14DemiplaneSystem
         while (query.MoveNext(out var uid, out var destruction, out var demiplane))
         {
             var remaining = destruction.EndTime - _timing.CurTime;
+
+            if (destruction.SelectedSong is null)
+                continue;
+            
             var audioLength = _audio.GetAudioLength(destruction.SelectedSong.Path.ToString());
 
             if (destruction.Stream is null && remaining < audioLength)
