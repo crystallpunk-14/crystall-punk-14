@@ -18,9 +18,9 @@
       - CP14FloorSnow
       - CP14FloorSnowDeep
       - CP14FloorSnowDeepDeep
-      count: 5
-      minGroupSize: 2
-      maxGroupSize: 5
+      count: 4
+      minGroupSize: 5
+      maxGroupSize: 8
 
 # TIER 2
 
