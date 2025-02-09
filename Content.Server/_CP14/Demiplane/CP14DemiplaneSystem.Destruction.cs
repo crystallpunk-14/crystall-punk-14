@@ -34,13 +34,12 @@ public sealed partial class CP14DemiplaneSystem
                 destruction.Stream = audio?.Entity;
                 _audio.SetMapAudio(audio);
                 Dirty(uid, destruction);
-                DemiplaneAnnounce(uid, Loc.GetString("salvage-expedition-announcement-countdown-minutes", ("duration", audioLength.Minutes)));
+                DemiplaneAnnounce(uid, Loc.GetString("cp14-demiplane-countdown", ("duration", audioLength.Minutes)));
             }
 
             if (remaining <= TimeSpan.Zero)
             {
                 _audio.Stop(destruction.Stream);
-                DemiplaneAnnounce(uid, Loc.GetString("salvage-expedition-announcement-countdown-minutes", ("duration", 0)));
                 DeleteDemiplane((uid, demiplane));
             }
         }

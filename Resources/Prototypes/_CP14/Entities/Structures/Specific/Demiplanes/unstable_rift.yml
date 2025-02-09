@@ -122,10 +122,10 @@
         acts: [ "Destruction" ]
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
-    maxEnergy: 500
-    energy: 500
+    maxEnergy: 600
+    energy: 600
   - type: CP14MagicEnergyDraw
-    energy: -5
+    energy: -6
     delay: 6 # 10m to discharge
     safe: false
   - type: CP14MagicUnsafeTrigger
@@ -145,12 +145,11 @@
   id: CP14MobGroupSpawnerRandom
   categories: [ ForkFiltered ]
   components:
-  - type: CP14SpawnOutOfDemiplane
   - type: EntityTableSpawner
     offset: 3
     table: !type:GroupSelector
       rolls: !type:RangeNumberSelector
-        range: 2, 3
+        range: 2, 2
       children:
       - id: CP14MobGroupSpawnerIceSpectres
       - id: CP14MobGroupSpawnerZombie
@@ -183,4 +182,4 @@
     selectedModifiers:
     - EntryRoom
     - UnstableDemiplaneCrystal #Spawn exit when broken
-    - TimeLimit11
+    - TimeLimit10
