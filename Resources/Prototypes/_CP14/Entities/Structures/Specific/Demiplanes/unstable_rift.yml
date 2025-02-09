@@ -145,6 +145,7 @@
   id: CP14MobGroupSpawnerRandom
   categories: [ ForkFiltered ]
   components:
+  - type: CP14SpawnOutOfDemiplane
   - type: EntityTableSpawner
     offset: 3
     table: !type:GroupSelector
