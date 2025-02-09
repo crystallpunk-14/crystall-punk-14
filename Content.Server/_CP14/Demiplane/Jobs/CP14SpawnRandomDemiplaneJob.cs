@@ -103,12 +103,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
             _sawmill.Debug($"Added modifier: {_seed} - {modifier.Id}");
         }
 
-        //Enter and exits
-        if (_prototypeManager.TryIndex<DungeonConfigPrototype>("DemiplaneConnections", out var indexedConnections))
-        {
-            dungeonConfig.Layers.AddRange(indexedConnections.Layers);
-        }
-
         //Setup gravity
         var gravity = _entManager.EnsureComponent<GravityComponent>(grid);
         gravity.Enabled = true;

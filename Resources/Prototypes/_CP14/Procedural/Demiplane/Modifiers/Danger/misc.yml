@@ -56,22 +56,6 @@
       maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
-  id: UnstableDemiplaneCrystal
-  generationWeight: 0.05 # Very rare
-  tiers:
-    - 2
-    - 3
-  name: cp14-modifier-unstable-demiplane-crystal
-  categories:
-    Danger: 0.1
-  layers:
-    - !type:OreDunGen
-      entity: CP14DangerousMobSpawnCrystal
-      count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
   id: TimeLimit10
   generationWeight: 0.4 
   tiers:

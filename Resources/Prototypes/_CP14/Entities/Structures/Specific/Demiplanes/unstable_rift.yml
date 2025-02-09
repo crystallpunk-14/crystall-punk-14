@@ -103,7 +103,7 @@
 - type: entity
   id: CP14AutoDemiplaneKeyT1
   parent: CP14DemiplaneKeyT1
-  suffix: T1, Auto Open
+  suffix: T1 Unstable rift event, Auto Open
   components:
   - type: CP14DemiplaneAutoOpen
   - type: CP14DemiplaneGeneratorData
@@ -111,12 +111,13 @@
     - CP14DemiplanRiftCore
     - CP14DemiplanePasswayRed
     selectedModifiers:
-    - UnstableDemiplaneCrystal
+    - EntryRoom
+    - UnstableDemiplaneCrystal #Spawn exit when broken
 
 - type: entity
   id: CP14AutoDemiplaneKeyT2
   parent: CP14DemiplaneKeyT2
-  suffix: T2, Auto Open
+  suffix: T2 Unstable rift event, Auto Open
   components:
   - type: CP14DemiplaneAutoOpen
   - type: CP14DemiplaneGeneratorData
@@ -124,4 +125,5 @@
     - CP14DemiplanRiftCore
     - CP14DemiplanePasswayRed
     selectedModifiers:
-    - UnstableDemiplaneCrystal
+    - EntryRoom
+    - UnstableDemiplaneCrystal #Spawn exit when broken

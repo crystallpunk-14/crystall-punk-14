@@ -25,7 +25,7 @@ public sealed partial class CP14DemiplaneSystem
 
             if (destruction.SelectedSong is null)
                 continue;
-            
+
             var audioLength = _audio.GetAudioLength(destruction.SelectedSong.Path.ToString());
 
             if (destruction.Stream is null && remaining < audioLength)
