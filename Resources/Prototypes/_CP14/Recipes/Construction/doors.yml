@@ -73,3 +73,79 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14IronDoor
+  name: iron door
+  description: Solid iron door.
+  graph: CP14IronDoor
+  startNode: start
+  targetNode: CP14IronDoor
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Doors/iron_door.rsi
+    state: closed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14IronDoorMirrored
+  name: iron door (mirrored)
+  description: Solid iron door.
+  graph: CP14IronDoor
+  startNode: start
+  targetNode: CP14IronDoorMirrored
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Doors/iron_door.rsi
+    state: closed_mirrored
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14IronDoorWindowed
+  name: iron windowed door
+  description: The same sturdy iron door, but with a small window.
+  graph: CP14IronDoor
+  startNode: start
+  targetNode: CP14IronDoorWindowed
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Doors/iron_windowed_door.rsi
+    state: closed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14IronDoorWindowedMirrored
+  name: iron windowed door
+  description: The same sturdy iron door, but with a small window.
+  graph: CP14IronDoor
+  startNode: start
+  targetNode: CP14IronDoorWindowedMirrored
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Doors/iron_windowed_door.rsi
+    state: closed_mirrored
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

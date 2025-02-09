@@ -72,24 +72,6 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Bonfire
-  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
-  id: CP14Bonfire
-  graph: CP14Bonfire
-  startNode: start
-  targetNode: CP14Bonfire
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/bonfire.rsi
-    state: base
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
   name: Wallmount torch
   description: A torch attached to the wall
   id: CP14WallmountTorch

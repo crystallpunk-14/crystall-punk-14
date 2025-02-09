@@ -27,9 +27,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  #- type: Construction
-  #  graph: CP14WoodenDoor
-  #  node: CP14WoodenDoor
+  - type: Construction
+    graph: CP14IronDoor
+    node: CP14IronDoor
 
 - type: entity
   id: CP14IronDoorMirrored
@@ -39,6 +39,6 @@
   - type: Door
     openSpriteState: open_mirrored
     closedSpriteState: closed_mirrored
-  #- type: Construction
-  #  graph: CP14WoodenDoor
-  #  node: CP14WoodenDoorMirrored
+  - type: Construction
+    graph: CP14IronDoor
+    node: CP14IronDoorMirrored
