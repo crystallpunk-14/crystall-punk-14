@@ -169,7 +169,7 @@
     selectedModifiers:
     - EntryRoom
     - UnstableDemiplaneCrystal #Spawn exit when broken
-    - TimeLimit11
+    - TimeLimit10
 
 - type: entity
   id: CP14AutoDemiplaneKeyT2
