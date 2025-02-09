@@ -6,7 +6,7 @@
   graph: CP14CrateDirtPitGrave
   startNode: start
   targetNode: CP14CrateDirtPitGrave
-  category: construction-category-furniture
+  category: construction-category-storage
   icon:
     sprite: _CP14/Structures/Storage/dirt_pit.rsi
     state: open
@@ -18,3 +18,39 @@
     - !type:TileType
       targets:
         - CP14FloorDirt
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden chest
+  description: a simple wooden chest for easy storage of junk.
+  id: CP14WoodenChest
+  graph: CP14WoodenChest
+  startNode: start
+  targetNode: CP14WoodenChest
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden barrel
+  description: The simplest design for storing liquids.
+  id: CP14BaseBarrel
+  graph: CP14BaseBarrel
+  startNode: start
+  targetNode: CP14BaseBarrel
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Furniture/Barrels/barrel.rsi
+    state: barrel
+  objectType: Structure
+  placementMode: PlaceFree
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
