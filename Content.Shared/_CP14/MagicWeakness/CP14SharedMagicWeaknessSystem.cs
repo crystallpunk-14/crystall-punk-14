@@ -7,7 +7,7 @@ using Content.Shared.StatusEffect;
 
 namespace Content.Shared._CP14.MagicWeakness;
 
-public partial class CP14MagicWeaknessSystem : EntitySystem
+public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
 {
     [ValidatePrototypeId<StatusEffectPrototype>]
     private const string StatusEffectKey = "ForcedSleep";

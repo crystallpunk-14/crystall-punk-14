@@ -46,14 +46,6 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 2
-      behaviors:
-      - !type:TriggerBehavior
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
         !type:DamageTrigger
         damage: 50
       behaviors:
@@ -80,10 +72,7 @@
     energy: -5
     delay: 6 # 10m to discharge
     safe: false
-  - type: CP14MagicUnsafeDamage
-    damagePerEnergy:
-      types:
-        Heat: 0.1
+  - type: CP14MagicUnsafeTrigger
   - type: DeleteOnTrigger
   - type: SpawnOnTrigger
     proto: CP14MobGroupSpawnerRandom
