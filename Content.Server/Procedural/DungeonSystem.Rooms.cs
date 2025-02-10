@@ -98,20 +98,6 @@ public sealed partial class DungeonSystem
         return roomRotation;
     }
 
-    private static Box2 GetRotatedBox(Vector2 point1, Vector2 point2, double angle)
-    {
-        if (angle == 0)
-            return new Box2(point1, point2);
-        if (Math.Abs(angle - Math.PI / 2) < 1E-5)
-            return new Box2(point2.X, point1.Y, point1.X, point2.Y);
-        if (Math.Abs(angle - Math.PI) < 1E-5)
-            return new Box2(point2, point1);
-        if (Math.Abs(angle + Math.PI / 2) < 1E-5)
-            return new Box2(point1.X, point2.Y, point2.X, point1.Y);
-
-        throw new NotImplementedException();
-    }
-
     public void SpawnRoom(
         EntityUid gridUid,
         MapGridComponent grid,
@@ -129,32 +115,6 @@ public sealed partial class DungeonSystem
         var entitySet = new HashSet<EntityUid>();
 
         var finalRoomRotation = roomTransform.Rotation();
-
-        //if (clearExisting) //CP14 disable default clearExisting
-        //{
-        //    var point1 = Vector2.Transform(-room.Size / 2, roomTransform);
-        //    var point2 = Vector2.Transform(room.Size / 2, roomTransform);
-//
-        //    var gridBounds = GetRotatedBox(point1, point2, finalRoomRotation);
-//
-        //    entitySet.Clear();
-        //    // Polygon skin moment
-        //    gridBounds = gridBounds.Enlarged(-0.05f);
-        //    _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, entitySet, LookupFlags.Uncontained);
-//
-        //    foreach (var templateEnt in entitySet)
-        //    {
-        //        Del(templateEnt);
-        //    }
-//
-        //    if (TryComp(gridUid, out DecalGridComponent? decalGrid))
-        //    {
-        //        foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
-        //        {
-        //            _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
-        //        }
-        //    }
-        //}
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;
@@ -182,7 +142,6 @@ public sealed partial class DungeonSystem
 
                 _tiles.Add((rounded, tileRef.Tile));
 
-                //CP14 clearExisting variant
                 if (clearExisting)
                 {
                     var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
@@ -191,7 +150,6 @@ public sealed partial class DungeonSystem
                         QueueDel(ent);
                     }
                 }
-                //CP14 clearExisting variant end
             }
         }
 
