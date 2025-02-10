@@ -47,3 +47,14 @@
     sprite: _CP14/Clothing/Shoes/sandals.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/sandals.rsi
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14LongLeatherBoots
+  name: long leather boots
+  description: A great tool for mass distribution of kicks
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
