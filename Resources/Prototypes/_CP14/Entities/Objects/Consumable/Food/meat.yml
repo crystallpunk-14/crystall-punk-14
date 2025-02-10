@@ -305,7 +305,7 @@
     layers:
       - state: human_meat1 # We need fried sprites
         map: [ "random" ]
-        color: "#9d3f49"
+        color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -320,8 +320,8 @@
   - type: RandomSprite
     available:
       - random:
-          human_meat1: ""
-          human_meat2: ""
+          human_meat1: CP14cookedMeat
+          human_meat2: CP14cookedMeat
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -363,7 +363,7 @@
   components:
   - type: Sprite
     state: dino_meat1 # We need fried sprites
-    color: "#9d3f49"
+    color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -412,7 +412,7 @@
   components:
   - type: Sprite
     state: dino_meat2 # We need fried sprites
-    color: "#9d3f49"
+    color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -471,7 +471,7 @@
     layers:
       - state: rabbit_meat1 # We need fried sprites
         map: [ "random" ]
-        color: "#9d3f49"
+        color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -484,8 +484,8 @@
   - type: RandomSprite
     available:
       - random:
-          rabbit_meat1: ""
-          rabbit_meat2: ""
+          rabbit_meat1: CP14cookedMeat
+          rabbit_meat2: CP14cookedMeat
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -539,7 +539,7 @@
     layers:
       - state: pig_meat1 # We need fried sprites
         map: [ "random" ]
-        color: "#9d3f49"
+        color: "#c98367"
   - type: SliceableFood
     count: 4
     slice: CP14FoodMeatPigCookedSlice
@@ -557,8 +557,8 @@
   - type: RandomSprite
     available:
       - random:
-          pig_meat1: ""
-          pig_meat4: ""
+          pig_meat1: CP14cookedMeat
+          pig_meat4: CP14cookedMeat
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -598,7 +598,7 @@
   components:
   - type: Sprite
     state: pig_meat5 # We need fried sprites
-    color: "#9d3f49"
+    color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -662,7 +662,7 @@
     layers:
       - state: pig_meat2 # We need fried sprites
         map: [ "random" ]
-        color: "#9d3f49"
+        color: "#c98367"
   - type: SliceableFood
     count: 4
     slice: CP14FoodMeatPigCookedSlice
@@ -680,8 +680,8 @@
   - type: RandomSprite
     available:
       - random:
-          pig_meat2: ""
-          pig_meat3: ""
+          pig_meat2: CP14cookedMeat
+          pig_meat3: CP14cookedMeat
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -723,7 +723,7 @@
   - type: Sprite
     layers:
       - state: pig_meat6 # We need fried sprites
-        color: "#9d3f49"
+        color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -790,7 +790,7 @@
     layers:
       - state: mole_meat1 # We need fried sprites
         map: [ "random" ]
-        color: "#9d3f49"
+        color: "#c98367"
   - type: SliceableFood
     count: 4
     slice: CP14FoodMeatMoleCookedSlice
@@ -808,10 +808,10 @@
   - type: RandomSprite
     available:
       - random:
-          mole_meat1: ""
-          mole_meat2: ""
-          mole_meat3: ""
-          mole_meat4: ""
+          mole_meat1: CP14cookedMeat
+          mole_meat2: CP14cookedMeat
+          mole_meat3: CP14cookedMeat
+          mole_meat4: CP14cookedMeat
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -851,7 +851,7 @@
   components:
   - type: Sprite
     state: mole_meat5 # We need fried sprites
-    color: "#9d3f49"
+    color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -904,7 +904,7 @@
   - type: Sprite
     layers:
       - state: mole_meat6 # We need fried sprites
-        color: "#9d3f49"
+        color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
