@@ -2447,13 +2447,13 @@ ent-CP14BaseTombstone = надгробие
     .desc = Кусок камня, установленный в память о павших.
 
 ent-CP14IronDoorFrame = каркас железной двери
-    .desc = Незаконченная железная дверь
+    .desc = Незаконченная железная дверь.
 
 ent-CP14IronDoorFrameMirrored = { ent-CP14IronDoorFrame }
     .desc = { ent-CP14IronDoorFrame.desc }
 
 ent-CP14WoodenDoorFrame = каркас деревянной двери
-    .desc = Незаконченная деревянная дверь
+    .desc = Незаконченная деревянная дверь.
 
 ent-CP14WoodenDoorFrameMirrored = { ent-CP14WoodenDoorFrame }
     .desc = { ent-CP14WoodenDoorFrame.desc }
@@ -3232,6 +3232,9 @@ ent-CP14FenceIronGrilleStraight = { ent-CP14FenceIronGrilleBase }
     .desc = { ent-CP14FenceIronGrilleBase.desc }
     .suffix = Прямой
 
+ent-CP14FenceIronGrilleGateFrame = рама железных решетчатых ворот
+    .desc = Незаконченные железные решетчатые ворота.
+
 ent-CP14FenceIronGrilleGate = железные решетчатые ворота
     .desc = Тяжелые железные ворота в решетках. Выглядит серьезно.
 
@@ -3307,7 +3310,7 @@ ent-CP14Mannequin = манекен
     .desc = Удобная подставка для одежды или доспехов.
 
 ent-CP14WoodenPallet = деревянный поддон
-    .desc = деревянная подставка для товаров
+    .desc = Деревянная подставка для товаров.
 
 ent-CP14Target = мишень
     .desc = Мишень для тренировки меткости.
