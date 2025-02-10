@@ -101,54 +101,6 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtCottonWhiteBelt
-  name: cotton white belt shirt
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_belt.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_belt.rsi
-
-- type: entity
-  parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtCottonWhiteBrownVest
-  name: cotton white brown vest shirt
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_brown_vest.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_brown_vest.rsi
-
-- type: entity
-  parent: CP14ClothingShirtCottonWhiteBrownVest
-  id: CP14ClothingShirtCottonWhiteBrownVest2
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_brown_vest2.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_brown_vest2.rsi
-
-- type: entity
-  parent: CP14ClothingShirtCottonWhiteBrownVest
-  id: CP14ClothingShirtCottonWhiteBrownVest3
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_brown_vest3.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_brown_vest3.rsi
-
-- type: entity
-  parent: CP14ClothingShirtBase
-  id: CP14ClothingShirtCottonWhiteCollar
-  name: cotton white collar shirt
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_collar.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/General/white_collar.rsi
-
-- type: entity
-  parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonYellow
   name: cotton yellow shirt
   components:

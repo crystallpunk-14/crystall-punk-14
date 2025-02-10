@@ -14,24 +14,26 @@
   equipment:
     cloak: CP14ClothingCloakGuildmasterCape
 
+# OuterClothing
+
+- type: loadoutGroup
+  id: CP14GuildmasterOuterClothing
+  name: cp14-loadout-guildmaster-outer
+  loadouts:
+  - CP14ClothingOuterClothingGreenVest
+
+- type: loadout
+  id: CP14ClothingOuterClothingGreenVest
+  equipment:
+    cloak: CP14ClothingOuterClothingGreenVest
+
 # Shirt
 
 - type: loadoutGroup
   id: CP14GuildmasterShirt
   name: cp14-loadout-guildmaster-shirt
   loadouts:
-  - CP14ClothingShirtGuildmasterVest
-  - CP14ClothingShirtGuildmasterVest2
-
-- type: loadout
-  id: CP14ClothingShirtGuildmasterVest
-  equipment:
-    shirt: CP14ClothingShirtGuildmasterVest
-
-- type: loadout
-  id: CP14ClothingShirtGuildmasterVest2
-  equipment:
-    shirt: CP14ClothingShirtGuildmasterVest2
+  - CP14ClothingShirtCottonWhite
 
 # Pants
 
