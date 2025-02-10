@@ -97,7 +97,7 @@
         spawn:
           CP14WoodenPlanks1:
             min: 2
-            max: 5
+            max: 4
   - type: Construction
     graph: CP14WoodenCloset
     node: CP14WoodenCloset
