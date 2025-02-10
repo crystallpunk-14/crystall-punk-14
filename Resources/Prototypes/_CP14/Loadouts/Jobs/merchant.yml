@@ -21,17 +21,11 @@
   minLimit: 0
   loadouts:
   - CP14ClothingOuterClothingMerchantWaistCoat
-  - CP14ClothingOuterClothingMerchantWaistCoatOpen
 
 - type: loadout
   id: CP14ClothingOuterClothingMerchantWaistCoat
   equipment:
     outerClothing: CP14ClothingOuterClothingMerchantWaistCoat
-
-- type: loadout
-  id: CP14ClothingOuterClothingMerchantWaistCoatOpen
-  equipment:
-    outerClothing: CP14ClothingOuterClothingMerchantWaistCoatOpen
 
 # Shirt
 

@@ -1,5 +1,6 @@
 # General
 
+cp14-loadout-general-outer = Outer Clothes
 cp14-loadout-general-cloak = Cloak
 cp14-loadout-general-eyes = Goggles
 cp14-loadout-general-gloves = Gloves
@@ -52,6 +53,7 @@ cp14-loadout-merchant-shoes = Merchant's shoes
 
 # Guildmaster
 
+cp14-loadout-guildmaster-outer = Guildmaster outer clothes
 cp14-loadout-guildmaster-cloak = Guildmaster cloak
 cp14-loadout-guildmaster-shirt = Guildmaster shirt
 cp14-loadout-guildmaster-pants = Guildmaster pants

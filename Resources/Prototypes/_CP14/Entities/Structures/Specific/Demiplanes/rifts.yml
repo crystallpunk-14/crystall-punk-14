@@ -1,4 +1,37 @@
 - type: entity
+  id: CP14DemiplanRiftCore
+  categories: [ ForkFiltered ]
+  name: demiplan rift core
+  description: A subtle connection between the real world and the demiplane where the adventurers went. Sooner or later they will return from there.
+  components:
+  - type: CP14DemiplaneRift
+  - type: Transform
+    anchored: True
+  - type: Clickable
+  - type: Physics
+    canCollide: false
+    bodyType: Static
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
+    layers:
+    - state: connective
+      shader: unshaded
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: "#371c5c"
+    netsync: false
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Demiplanes
+    - CP14_EN_Demiplanes
+  - type: Speech
+    speechVerb: Ghost
+
+
+- type: entity
   id: CP14DemiplaneTimedRadiusPassway
   parent: CP14DemiplanRiftCore
   name: pulsating demiplane rift
@@ -71,34 +104,3 @@
       color: red
   - type: PointLight
     color: red
-
-- type: entity
-  id: CP14DemiplanRiftCore
-  categories: [ ForkFiltered ]
-  name: demiplan rift core
-  description: A subtle connection between the real world and the demiplane where the adventurers went. Sooner or later they will return from there.
-  components:
-  - type: CP14DemiplaneRift
-  - type: Transform
-    anchored: True
-  - type: Clickable
-  - type: Physics
-    canCollide: false
-    bodyType: Static
-  - type: Sprite
-    drawdepth: Effects
-    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
-    layers:
-    - state: connective
-      shader: unshaded
-  - type: PointLight
-    radius: 2
-    energy: 2
-    color: "#371c5c"
-    netsync: false
-  - type: GuideHelp
-    guides:
-    - CP14_RU_Demiplanes
-    - CP14_EN_Demiplanes
-  - type: Speech
-    speechVerb: Ghost

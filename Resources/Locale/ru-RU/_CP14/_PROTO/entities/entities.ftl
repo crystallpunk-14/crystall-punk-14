@@ -656,6 +656,24 @@ ent-CP14ClothingRingFlashLight = проводящее кольцо вспышк�
     .desc = Стандартное манапроводящее кольцо, позволяющее вызвать яркую ослепляющую вспышку света.
     .suffix = Вспышка света
 
+ent-CP14ClothingBeltBrown = коричневый пояс
+    .desc = Простой коричневый пояс. Он поможет рубашке не развеваться на ветру.
+
+ent-CP14ClothingOuterClothingGreenVest = зелёная жилетка
+    .desc = Стильный зеленый жилет с золотыми пуговицами.
+
+ent-CP14ClothingOuterClothingRedVest = красная жилетка
+    .desc = Стильный красный жилет с золотыми крапинками.
+
+ent-CP14ClothingOuterClothingBrownVest1 = коричневый жилет
+    .desc = Простой, приличный кожаный жилет. Довольно стильно.
+
+ent-CP14ClothingOuterClothingBrownVest2 = коричневый жилет с застежками
+    .desc = Тот же простой коричневый кожаный жилет, но с застежками.
+
+ent-CP14ClothingOuterClothingBrownVest3 = лёгкий кожаный жилет
+    .desc = Два кожаных лоскута, соединенных ремнем снизу.
+
 ent-CP14ClothingShirtBase = рубашка
     .desc = Приятный на ощупь материал, удобная свободная форма рубашки.
 
@@ -690,21 +708,6 @@ ent-CP14ClothingShirtCottonRed = холщовая красная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonWhite = холщовая белая рубашка
-    .desc = { ent-CP14ClothingShirtBase.desc }
-
-ent-CP14ClothingShirtCottonWhiteBelt = холщовая опоясанная белая рубашка
-    .desc = { ent-CP14ClothingShirtBase.desc }
-
-ent-CP14ClothingShirtCottonWhiteBrownVest = холщовая опоясанная бело-коричневая рубашка
-    .desc = { ent-CP14ClothingShirtBase.desc }
-
-ent-CP14ClothingShirtCottonWhiteBrownVest2 = { ent-CP14ClothingShirtCottonWhiteBrownVest }
-    .desc = { ent-CP14ClothingShirtCottonWhiteBrownVest.desc }
-
-ent-CP14ClothingShirtCottonWhiteBrownVest3 = { ent-CP14ClothingShirtCottonWhiteBrownVest }
-    .desc = { ent-CP14ClothingShirtCottonWhiteBrownVest.desc }
-
-ent-CP14ClothingShirtCottonWhiteCollar = холщовая белая рубашка с воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonYellow = холщовая желтая рубашка
