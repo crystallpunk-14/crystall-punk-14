@@ -2449,8 +2449,14 @@ ent-CP14StatueAngelLimestone = { ent-CP14StatueAngel }
 ent-CP14BaseTombstone = надгробие
     .desc = Кусок камня, установленный в память о павших.
 
+ent-CP14IronDoorFrame = каркас железной двери
+    .desc = Незаконченная железная дверь.
+
+ent-CP14IronDoorFrameMirrored = { ent-CP14IronDoorFrame }
+    .desc = { ent-CP14IronDoorFrame.desc }
+
 ent-CP14WoodenDoorFrame = каркас деревянной двери
-    .desc = Незаконченная деревянная дверь
+    .desc = Незаконченная деревянная дверь.
 
 ent-CP14WoodenDoorFrameMirrored = { ent-CP14WoodenDoorFrame }
     .desc = { ent-CP14WoodenDoorFrame.desc }
@@ -2938,10 +2944,10 @@ ent-CP14CraneBarrelSmallAleBottomless = { ent-CP14CraneBarrelSmall }
 ent-CP14Bonfire = костёр
     .desc = Груда бревен, сложенных вместе, и готовых вспыхнуть от малейшей искры.
 
-ent-C14IronCabinet = железный комод
+ent-CP14IronCabinet = железный комод
     .desc = Железный шкаф. Прочный, запираемый. Вы можете хранить здесь свои ценности, не опасаясь, что какой-нибудь грабитель заберет все себе.
 
-ent-C14IronCabinetCargo = торговый ящик
+ent-CP14IronCabinetCargo = торговый ящик
     .desc = Бронированное хранилище для хранения денег, предназначенных для торговли с городом. Городские работники будут выгружать сюда свои доходы или забирать их отсюда, когда вы захотите что-то купить.
 
 ent-CP14ClosetBase = шкаф
@@ -3229,6 +3235,9 @@ ent-CP14FenceIronGrilleStraight = { ent-CP14FenceIronGrilleBase }
     .desc = { ent-CP14FenceIronGrilleBase.desc }
     .suffix = Прямой
 
+ent-CP14FenceIronGrilleGateFrame = рама железных решетчатых ворот
+    .desc = Незаконченные железные решетчатые ворота.
+
 ent-CP14FenceIronGrilleGate = железные решетчатые ворота
     .desc = Тяжелые железные ворота в решетках. Выглядит серьезно.
 
@@ -3304,7 +3313,7 @@ ent-CP14Mannequin = манекен
     .desc = Удобная подставка для одежды или доспехов.
 
 ent-CP14WoodenPallet = деревянный поддон
-    .desc = деревянная подставка для товаров
+    .desc = Деревянная подставка для товаров.
 
 ent-CP14Target = мишень
     .desc = Мишень для тренировки меткости.

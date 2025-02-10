@@ -24,8 +24,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 3
-            max: 5
+            min: 1
+            max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Climbable
@@ -104,15 +104,15 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 3
-            max: 5
+            min: 1
+            max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
 - type: entity
   id: CP14LargeWoodenCrate
   name: large wooden crate
-  description: solid wooden crate
+  description: Solid wooden crate.
   parent: 
   - CP14BaseCrate
   - CP14BaseFlammable
@@ -134,15 +134,18 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 1
+            min: 2
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14LargeWoodenCrate
+    node: CP14LargeWoodenCrate
 
 - type: entity
   id: CP14SmallWoodenCrate
   name: small wooden crate
-  description: solid wooden crate
+  description: Solid wooden crate.
   parent: 
   - CP14BaseSmallCrate
   - CP14BaseFlammable
@@ -165,6 +168,9 @@
         spawn:
           CP14WoodenPlanks1:
             min: 1
-            max: 4
+            max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14SmallWoodenCrate
+    node: CP14SmallWoodenCrate

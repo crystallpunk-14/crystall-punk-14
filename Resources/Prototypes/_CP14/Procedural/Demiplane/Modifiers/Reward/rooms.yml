@@ -1,11 +1,12 @@
 - type: cp14DemiplaneModifier
   id: ArtifactRoom
   tiers:
+    - 1
     - 2
     - 3
-  generationWeight: 0.05
+  generationWeight: 0.1
   categories:
-    Reward: 0.4
+    Reward: 0.3
   layers:
     - !type:OreDunGen
       entity: CP14DemiplaneArtifactRoomSpawner

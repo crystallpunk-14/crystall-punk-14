@@ -71,8 +71,9 @@
 - type: cp14DemiplaneModifier
   id: EnemySkeleton
   tiers:
+    - 1
     - 2
-  name: cp14-modifier-zombie
+  name: cp14-modifier-skeleton
   generationWeight: 1.5
   categories:
     Danger: 0.5
@@ -80,7 +81,7 @@
     - !type:OreDunGen
       entity: SpawnPointGhostDemiplaneSkeleton
       count: 1
-      minGroupSize: 2
+      minGroupSize: 1
       maxGroupSize: 3
 
 - type: cp14DemiplaneModifier

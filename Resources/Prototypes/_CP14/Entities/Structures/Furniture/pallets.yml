@@ -22,7 +22,7 @@
   - CP14BasePallets
   - CP14BaseFlammable
   name: wooden pallet
-  description: wooden goods stand
+  description: Wooden goods stand.
   components:
   - type: Sprite
     state: wooden
@@ -51,6 +51,9 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WoodenPallet
+    node: CP14WoodenPallet
 
 - type: entity
   id: CP14WoodenPalletSell

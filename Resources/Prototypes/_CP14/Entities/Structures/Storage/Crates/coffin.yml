@@ -36,3 +36,8 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14CrateCoffin
+    node: CP14CrateCoffin
+    containers:
+    - entity_storage

@@ -54,16 +54,3 @@
       count: 10
       minGroupSize: 1
       maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
-  id: TimeLimit10
-  generationWeight: 0.4 
-  tiers:
-    - 1
-    - 2
-  name: cp14-modifier-time-limit-10
-  categories:
-    Danger: 0.1
-  components:
-    - type: CP14DemiplaneTimedDestruction
-      timeToDestruction: 600 # 10 minutes
