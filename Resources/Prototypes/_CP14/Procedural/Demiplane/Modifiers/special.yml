@@ -26,3 +26,14 @@
       count: 2
       minGroupSize: 1
       maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: TimeLimit10
+  generationProb: 0.33
+  tiers:
+    - 1
+    - 2
+  name: cp14-modifier-time-limit-10
+  components:
+    - type: CP14DemiplaneTimedDestruction
+      timeToDestruction: 600 # 10 minutes
