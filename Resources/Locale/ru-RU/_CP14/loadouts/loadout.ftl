@@ -1,5 +1,6 @@
 # General
 
+cp14-loadout-general-outer = Верхняя одежда
 cp14-loadout-general-cloak = Накидка
 cp14-loadout-general-eyes = Очки
 cp14-loadout-general-gloves = Перчатки
@@ -52,6 +53,7 @@ cp14-loadout-merchant-shoes = Ботинки торговца
 
 # Guildmaster
 
+cp14-loadout-guildmaster-outer = Верхняя одежда гильдмастера
 cp14-loadout-guildmaster-cloak = Накидка гильдмастера
 cp14-loadout-guildmaster-shirt = Рубашка гильдмастера
 cp14-loadout-guildmaster-pants = Штаны гильдмастера

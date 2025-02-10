@@ -45,51 +45,96 @@
   - type: Damageable
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 2
-      behaviors:
-      - !type:TriggerBehavior
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+    
+    # First wave
     - trigger:
         !type:DamageTrigger
         damage: 50
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
+        offset: 6
         spawn:
-          CP14DemiplaneKeyT1:
-            min: 0
-            max: 2
+          CP14MobGroupSpawnerMosquito:
+            min: 1
+            max: 1
+    
+    # Second wave
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
       - !type:SpawnEntitiesBehavior
+        offset: 6
+        spawn:
+          CP14MobGroupSpawnerHydras:
+            min: 1
+            max: 1
+    
+    # Third wave
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        offset: 6
+        spawn:
+          CP14MobGroupSpawnerIceSpectres:
+            min: 1
+            max: 1
+      - !type:SpawnEntitiesBehavior
+        offset: 6
+        spawn:
+          CP14MobGroupSpawnerZombie:
+            min: 1
+            max: 1
+    
+    # Destroyed Yay!
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:SpawnEntitiesBehavior # Reward
+        offset: 5
+        spawn:
+          CP14SpawnerDemiplaneLootT1:
+            min: 4
+            max: 8
+      - !type:SpawnEntitiesBehavior
+        offset: 2
         spawn:
           CP14DemiplaneKeyT2:
             min: 1
             max: 1
-      - !type:PlaySoundBehavior
+      - !type:SpawnEntitiesBehavior # Exit
+        spawn:
+          CP14DemiplanePasswayRed:
+            min: 1
+            max: 1
+      - !type:PlaySoundBehavior #SFX
         sound:
           collection: GlassBreak
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/demon_dies.ogg
+          params:
+            pitch: 1.5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
-    maxEnergy: 500
-    energy: 500
+    maxEnergy: 600
+    energy: 600
   - type: CP14MagicEnergyDraw
-    energy: -5
+    energy: -6
     delay: 6 # 10m to discharge
     safe: false
-  - type: CP14MagicUnsafeDamage
-    damagePerEnergy:
-      types:
-        Heat: 0.1
+  - type: CP14MagicUnsafeTrigger
   - type: DeleteOnTrigger
   - type: SpawnOnTrigger
     proto: CP14MobGroupSpawnerRandom
   - type: CP14DemiplaneStabilizer
   - type: AmbientSound
-    volume: 10
+    volume: 20
     range: 15
     sound:
       path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
@@ -98,6 +143,7 @@
   parent: MarkerBase
   name: mob group random spawner
   id: CP14MobGroupSpawnerRandom
+  suffix: Spawn self copy out of demiplane
   categories: [ ForkFiltered ]
   components:
   - type: CP14SpawnOutOfDemiplane
@@ -105,16 +151,15 @@
     offset: 3
     table: !type:GroupSelector
       rolls: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 2
       children:
-      - id: CP14MobGroupSpawnerHydras
-      - id: CP14MobGroupSpawnerMosquito
+      - id: CP14MobGroupSpawnerIceSpectres
       - id: CP14MobGroupSpawnerZombie
 
 - type: entity
   id: CP14AutoDemiplaneKeyT1
   parent: CP14DemiplaneKeyT1
-  suffix: T1, Auto Open
+  suffix: T1 Unstable rift event, Auto Open
   components:
   - type: CP14DemiplaneAutoOpen
   - type: CP14DemiplaneGeneratorData
@@ -122,12 +167,14 @@
     - CP14DemiplanRiftCore
     - CP14DemiplanePasswayRed
     selectedModifiers:
-    - UnstableDemiplaneCrystal
+    - EntryRoom
+    - UnstableDemiplaneCrystal #Spawn exit when broken
+    - TimeLimit10
 
 - type: entity
   id: CP14AutoDemiplaneKeyT2
   parent: CP14DemiplaneKeyT2
-  suffix: T2, Auto Open
+  suffix: T2 Unstable rift event, Auto Open
   components:
   - type: CP14DemiplaneAutoOpen
   - type: CP14DemiplaneGeneratorData
@@ -135,4 +182,6 @@
     - CP14DemiplanRiftCore
     - CP14DemiplanePasswayRed
     selectedModifiers:
-    - UnstableDemiplaneCrystal
+    - EntryRoom
+    - UnstableDemiplaneCrystal #Spawn exit when broken
+    - TimeLimit10
