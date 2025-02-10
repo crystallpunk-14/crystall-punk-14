@@ -68,6 +68,24 @@
   id: CP14Dye
 
 - type: Tag
+  id: CP14DyeRed
+
+- type: Tag
+  id: CP14DyeYellow
+
+- type: Tag
+  id: CP14DyeBlue
+
+- type: Tag
+  id: CP14DyeGreen
+
+- type: Tag
+  id: CP14DyePurple
+
+- type: Tag
+  id: CP14DyeBlack
+
+- type: Tag
   id: CP14Meat
 
 - type: Tag

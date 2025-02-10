@@ -56,6 +56,9 @@
     solutions:
       barrel:
         maxVol: 500
+  - type: Construction
+    graph: CP14CraneBarrel
+    node: CP14CraneBarrel
 
 - type: entity
   parent: CP14CraneBarrel
@@ -264,6 +267,9 @@
     solutions:
       barrel:
         maxVol: 50
+  - type: Construction
+    graph: CP14CraneBarrelSmall
+    node: CP14CraneBarrelSmall
 
 - type: entity
   parent: CP14CraneBarrelSmall
