@@ -223,6 +223,82 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  crystallPunkAllowed: true
+  name: Wood bench
+  description: A bench carved from wood, a comfortable part of the interior designed for sitting and relaxing.
+  id: CP14BenchWood
+  graph: CP14BenchWood
+  startNode: start
+  targetNode: CP14BenchWood
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/bench.rsi
+    state: wooden
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Curtains white
+  description: Two hanging sheets made of white fabric.
+  id: CP14CurtainsWhite
+  graph: CP14Curtains
+  startNode: start
+  targetNode: CP14CurtainsWhite
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/curtains.rsi
+    state: white_closed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:EmptyOrWindowValidInTile 
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Curtains blue
+  description: Two hanging sheets made of blue fabric.
+  id: CP14CurtainsBlue
+  graph: CP14Curtains
+  startNode: start
+  targetNode: CP14CurtainsBlue
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/curtains.rsi
+    state: blue_closed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:EmptyOrWindowValidInTile 
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Curtains red
+  description: Two hanging sheets made of red fabric.
+  id: CP14CurtainsRed
+  graph: CP14Curtains
+  startNode: start
+  targetNode: CP14CurtainsRed
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/curtains.rsi
+    state: red_closed
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:EmptyOrWindowValidInTile 
+
 # Small fence
 
 - type: construction

@@ -165,6 +165,44 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: Wooden crane barrel
+  description: Large lying barrel with tap, for storing valuable liquids.
+  id: CP14CraneBarrel
+  graph: CP14CraneBarrel
+  startNode: start
+  targetNode: CP14CraneBarrel
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel.rsi
+    state: barrel
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wooden small crane barrel
+  description: A small lying barrel with a tap to quickly pour liquid into mugs.
+  id: CP14CraneBarrelSmall
+  graph: CP14CraneBarrelSmall
+  startNode: start
+  targetNode: CP14CraneBarrelSmall
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel_small.rsi
+    state: barrel
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   name: Bar shelf (1)
   description: Wall shelves to store your wine collection.
   id: CP14WallmountBarShelfA

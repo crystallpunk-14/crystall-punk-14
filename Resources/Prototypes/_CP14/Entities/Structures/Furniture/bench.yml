@@ -16,3 +16,6 @@
     - state: wooden
   - type: Physics
     bodyType: Static
+  - type: Construction
+    graph: CP14BenchWood
+    node: CP14BenchWood
