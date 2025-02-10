@@ -109,5 +109,3 @@
         prob: 1
       - id: CP14ClothingOuterClothingGreenVest
         prob: 0.6
-      - id: CP14ClothingOuterClothingRedVest
-        prob: 0.6

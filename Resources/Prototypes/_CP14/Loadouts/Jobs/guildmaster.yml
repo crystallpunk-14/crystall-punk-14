@@ -21,17 +21,11 @@
   name: cp14-loadout-guildmaster-outer
   loadouts:
   - CP14ClothingOuterClothingGreenVest
-  - CP14ClothingOuterClothingRedVest
 
 - type: loadout
   id: CP14ClothingOuterClothingGreenVest
   equipment:
     cloak: CP14ClothingOuterClothingGreenVest
-
-- type: loadout
-  id: CP14ClothingOuterClothingRedVest
-  equipment:
-    cloak: CP14ClothingOuterClothingRedVest
 
 # Shirt
 

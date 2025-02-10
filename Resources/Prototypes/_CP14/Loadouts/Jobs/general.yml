@@ -64,6 +64,7 @@
   - CP14ClothingOuterClothingBrownVest1
   - CP14ClothingOuterClothingBrownVest2
   - CP14ClothingOuterClothingBrownVest3
+  - CP14ClothingOuterClothingRedVest
 
 - type: loadout
   id: CP14ClothingOuterClothingBrownVest1
@@ -79,6 +80,11 @@
   id: CP14ClothingOuterClothingBrownVest3
   equipment:
     cloak: CP14ClothingOuterClothingBrownVest3
+
+- type: loadout
+  id: CP14ClothingOuterClothingRedVest
+  equipment:
+    cloak: CP14ClothingOuterClothingRedVest
 
 # Eyes
 
