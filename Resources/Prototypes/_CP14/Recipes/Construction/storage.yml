@@ -156,7 +156,7 @@
   category: construction-category-storage
   icon:
     sprite: _CP14/Structures/Furniture/Barrels/barrel.rsi
-    state: barrel
+    state: icon
   objectType: Structure
   placementMode: PlaceFree
   canBuildInImpassable: false
