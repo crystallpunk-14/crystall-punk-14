@@ -28,8 +28,8 @@
       visible: false
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "shoes" ]
     - map: [ "shirt" ]
+    - map: [ "shoes" ]
     - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
