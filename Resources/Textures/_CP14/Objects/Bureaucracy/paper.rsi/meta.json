@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by Max Gab, folders by TheShuEd, stamps on paper by viator1748",
+  "copyright": "Created by Max Gab, folders and passport by TheShuEd, stamps on paper by viator1748",
   "size": {
     "x": 32,
     "y": 32
@@ -18,14 +18,6 @@
     },
     {
       "name": "paper_filled"
-    },
-    {
-      "name": "inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "inhand-right",
-      "directions": 4
     },
     {
       "name": "approved_on_paper"
@@ -50,6 +42,9 @@
     },
     {
       "name": "magic"
+    },
+    {
+      "name": "passport"
     }
   ]
 }
