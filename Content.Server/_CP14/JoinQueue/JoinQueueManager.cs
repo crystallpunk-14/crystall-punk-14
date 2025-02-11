@@ -100,7 +100,7 @@ public sealed class JoinQueueManager
             return;
         }
 
-        //_queue.Add(session);
+        _queue.Add(session);
         ProcessQueue(false, session.ConnectedTime);
     }
 
