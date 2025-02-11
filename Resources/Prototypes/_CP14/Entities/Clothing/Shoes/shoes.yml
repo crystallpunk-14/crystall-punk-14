@@ -79,3 +79,14 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellMagicalAcceleration
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14LongLeatherBoots
+  name: long leather boots
+  description: the perfect tool for kicking left and right
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
