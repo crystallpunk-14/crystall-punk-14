@@ -93,6 +93,22 @@
   result: CP14ClothingShirtCottonYellow
 
 - type: CP14Recipe
+  id: CP14ClothingShirtBlackDress
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlack
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
+  - !type:KnowledgeRequired
+    knowledge: ClothingSewing
+  result: CP14ClothingShirtBlackDress
+
+- type: CP14Recipe
   id: CP14ClothingPantsTrouserWhite
   tag: CP14RecipeSewing
   craftTime: 2
@@ -121,38 +137,6 @@
   - !type:KnowledgeRequired
     knowledge: ClothingSewing
   result: CP14ClothingPantsTrouserDarkBlue
-
-- type: CP14Recipe
-  id: CP14ClothingPantsDressBlack
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyeBlack
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 2
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
-  result: CP14ClothingPantsDressBlack
-
-- type: CP14Recipe
-  id: CP14ClothingPantsSouthernMagician
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyeYellow
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 2
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
-  result: CP14ClothingPantsSouthernMagician
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretRed
@@ -298,7 +282,7 @@
   result: CP14ClothingShirtMercenary
 
 - type: CP14Recipe
-  id: CP14ClothingShirtYellowWizard
+  id: CP14ClothingYellowWizardDress
   tag: CP14RecipeSewing
   craftTime: 2
   requirements:
@@ -315,7 +299,7 @@
     count: 3
   - !type:KnowledgeRequired
     knowledge: AdvancedClothingSewing
-  result: CP14ClothingShirtYellowWizard
+  result: CP14ClothingYellowWizardDress
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretMercenary
