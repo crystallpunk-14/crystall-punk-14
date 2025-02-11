@@ -42,12 +42,6 @@ public sealed class DiscordAuthManager
         _netMgr.RegisterNetMessage<MsgDiscordAuthCheck>(OnAuthCheck);
 
         _playerMgr.PlayerStatusChanged += OnPlayerStatusChanged;
-        PlayerVerified += OnPlayerVerified;
-    }
-
-    private void OnPlayerVerified(object? obj, ICommonSession session)
-    {
-        Timer.Spawn(0, () => _playerMgr.JoinGame(session));
     }
 
     private async void OnAuthCheck(MsgDiscordAuthCheck msg)
