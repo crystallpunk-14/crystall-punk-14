@@ -92,6 +92,9 @@
   id: CP14MeatSlice
 
 - type: Tag
+  id: CP14RawMeatSlice
+
+- type: Tag
   id: CP14Torch
 
 - type: Tag
