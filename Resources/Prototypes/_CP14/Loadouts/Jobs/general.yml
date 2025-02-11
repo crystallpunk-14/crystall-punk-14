@@ -471,7 +471,6 @@
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
-  - CP14ClothingBeltBrown
 
 - type: loadout
   id: CP14ManaOperationGlove
