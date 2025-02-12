@@ -26,6 +26,7 @@
   description: department-CP14Bank-desc
   weight: 8
   color: "#fadb3e"
+  editorHidden: true
   roles:
   - CP14Commandant
   - CP14Merchant

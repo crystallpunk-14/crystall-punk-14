@@ -1,6 +1,6 @@
 using System.Text;
 using Content.Shared.GameTicking;
-using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory;
 using Content.Shared.Paper;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -12,8 +12,8 @@ public sealed partial class CP14PassportSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
 
     public readonly EntProtoId PassportProto = "CP14Passport";
     public override void Initialize()
@@ -39,7 +39,7 @@ public sealed partial class CP14PassportSystem : EntitySystem
                 StampedName = Loc.GetString("cp14-passport-stamp")
             },
             "");
-        _hands.TryPickupAnyHand(ev.Mob, passport);
+        _inventory.TryEquip(ev.Mob, passport, "pocket1");
     }
 
     private string GeneratePassportText(PlayerSpawnCompleteEvent ev)
