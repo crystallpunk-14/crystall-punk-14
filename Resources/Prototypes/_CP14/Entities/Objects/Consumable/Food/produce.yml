@@ -381,7 +381,7 @@
     size: Tiny
   - type: FlavorProfile
     flavors:
-      - pepper
+      - peppery
   - type: Sprite
     sprite: _CP14/Objects/Flora/Farm/pepper.rsi
     layers:
