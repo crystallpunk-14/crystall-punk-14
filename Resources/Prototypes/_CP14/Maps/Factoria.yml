@@ -1,6 +1,6 @@
 - type: gameMap
   id: Factoria
-  mapName: "Fatoria island"
+  mapName: "Factoria"
   mapPath: /Maps/_CP14/factoria.yml
   maxRandomOffset: 0
   randomRotation: false
