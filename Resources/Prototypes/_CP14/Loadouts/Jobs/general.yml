@@ -129,6 +129,7 @@
   loadouts:
   - CP14ClothingMaskSinner
   - CP14ClothingMaskSteelMask
+  - CP14ClothingMaskNeckerchief
 
 - type: loadout
   id: CP14ClothingMaskSinner
@@ -139,6 +140,11 @@
   id: CP14ClothingMaskSteelMask
   equipment:
     mask: CP14ClothingMaskSteelMask
+
+- type: loadout
+  id: CP14ClothingMaskNeckerchief
+  equipment:
+    mask: CP14ClothingMaskNeckerchief
 
 # Head
 

@@ -45,3 +45,16 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskNeckerchief
+  name: neckerchief
+  description: It hides your face to the best of its ability.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/neckerchief.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/neckerchief.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
