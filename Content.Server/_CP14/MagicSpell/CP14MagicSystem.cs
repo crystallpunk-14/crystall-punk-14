@@ -5,7 +5,6 @@ using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
-using Content.Shared.EntityEffects;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 

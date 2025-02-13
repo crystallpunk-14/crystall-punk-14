@@ -100,9 +100,8 @@
       - id: CP14ClothingCloakRitualAttireLeather
       - id: CP14ClothingHeadBeretMercenary
       - id: CP14ClothingPantsMercenaryTrousers
-      - id: CP14ClothingPantsSouthernMagician
       - id: CP14ClothingShirtMercenary
-      - id: CP14ClothingShirtYellowWizard
+      - id: CP14ClothingYellowWizardDress
     - !type:GroupSelector
       children:
       - id: CP14DyeYellow

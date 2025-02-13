@@ -73,8 +73,14 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatLamb # to replace the other meat
-      amount: 4
+    - id: CP14FoodMeatMole
+      amount: 3
+    - id: CP14FoodMeatPig
+      amount: 1
+      prob: 0.3
+    - id: CP14FoodMeatMoleLeg
+      amount: 1
+      prob: 0.6
   - type: Bloodstream
     bloodMaxVolume: 200
     bloodReagent: CP14Blood

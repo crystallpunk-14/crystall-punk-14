@@ -27,10 +27,6 @@
   - CP14DemiplanePeacefulAnimals
   layers:
     - !type:OreDunGen
-      tileMask: 
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
       entity: CP14MobRabbit
       count: 3
       minGroupSize: 2
@@ -49,10 +45,6 @@
   - CP14DemiplanePeacefulAnimals
   layers:
     - !type:OreDunGen
-      tileMask: 
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
       entity: CP14MobBoar
       count: 3
       minGroupSize: 2

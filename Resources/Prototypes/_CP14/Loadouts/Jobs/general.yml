@@ -69,22 +69,22 @@
 - type: loadout
   id: CP14ClothingOuterClothingBrownVest1
   equipment:
-    cloak: CP14ClothingOuterClothingBrownVest1
+    outerClothing: CP14ClothingOuterClothingBrownVest1
 
 - type: loadout
   id: CP14ClothingOuterClothingBrownVest2
   equipment:
-    cloak: CP14ClothingOuterClothingBrownVest2
+    outerClothing: CP14ClothingOuterClothingBrownVest2
 
 - type: loadout
   id: CP14ClothingOuterClothingBrownVest3
   equipment:
-    cloak: CP14ClothingOuterClothingBrownVest3
+    outerClothing: CP14ClothingOuterClothingBrownVest3
 
 - type: loadout
   id: CP14ClothingOuterClothingRedVest
   equipment:
-    cloak: CP14ClothingOuterClothingRedVest
+    outerClothing: CP14ClothingOuterClothingRedVest
 
 # Eyes
 
@@ -477,7 +477,6 @@
   - CP14FluteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
-  - CP14ClothingBeltBrown
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -565,15 +564,8 @@
 
 - type: loadout
   id: CP14ClothingBeltQuiver
-  storage:
-    back:
-    - CP14ClothingBeltQuiver
-
-- type: loadout
-  id: CP14ClothingBeltBrown
-  storage:
-    back:
-    - CP14ClothingBeltBrown
+  equipment:
+    belt2: CP14ClothingBeltQuiver
 
 # Keys
 

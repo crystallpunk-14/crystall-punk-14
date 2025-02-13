@@ -5,9 +5,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/copper_bar.rsi
     state: bar_3
-  price: 
-    min: 100
-    max: 150
+  price: 150
   service: !type:CP14SellStackService
     stackId: CP14CopperBar
     count: 10
@@ -19,9 +17,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/copper_ore.rsi
     state: ore3
-  price: 
-    min: 10
-    max: 20
+  price: 20
   service: !type:CP14SellStackService
     stackId: CP14OreCopper
     count: 10
@@ -33,9 +29,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/iron_bar.rsi
     state: bar_3
-  price: 
-    min: 200
-    max: 300
+  price: 300
   service: !type:CP14SellStackService
     stackId: CP14IronBar
     count: 10
@@ -47,9 +41,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/iron_ore.rsi
     state: ore3
-  price: 
-    min: 20
-    max: 30
+  price: 30
   service: !type:CP14SellStackService
     stackId: CP14OreIron
     count: 10
@@ -61,9 +53,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/gold_bar.rsi
     state: bar_3
-  price: 
-    min: 1000
-    max: 1500
+  price: 1200
   service: !type:CP14SellStackService
     stackId: CP14GoldBar
     count: 10
@@ -75,9 +65,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/gold_ore.rsi
     state: ore3
-  price: 
-    min: 100
-    max: 150
+  price: 120
   service: !type:CP14SellStackService
     stackId: CP14OreGold
     count: 10
@@ -89,9 +77,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/mithril_bar.rsi
     state: bar_3
-  price: 
-    min: 2000
-    max: 3000
+  price: 2500
   service: !type:CP14SellStackService
     stackId: CP14MithrilBar
     count: 10
@@ -103,9 +89,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/mithril_ore.rsi
     state: ore3
-  price: 
-    min: 200
-    max: 300
+  price: 250
   service: !type:CP14SellStackService
     stackId: CP14OreMithril
     count: 10
