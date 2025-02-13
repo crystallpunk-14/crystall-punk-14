@@ -42,3 +42,12 @@
       color: "#4097bd"
   - type: PointLight
     color: "#4097bd"
+
+- type: entity
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollMagicalAcceleration
+  name: magical accseleration spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellMagicalAcceleration

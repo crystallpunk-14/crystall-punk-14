@@ -590,7 +590,7 @@
   id: CP14GeneralSpells
   name: cp14-loadout-general-spells
   minLimit: 0
-  maxLimit: 2
+  maxLimit: 3
   loadouts:
   - CP14ActionSpellFlameCreation
   - CP14ActionSpellCureWounds
@@ -600,6 +600,7 @@
   - CP14ActionSpellSphereOfLight
   - CP14ActionSpellManaConsume
   - CP14ActionSpellManaGift
+  - CP14ActionSpellCounterSpell
   - CP14ActionSpellShadowGrab
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellFreeze
@@ -764,6 +765,19 @@
   dummyEntity: CP14ActionSpellFreeze
   actions:
   - CP14ActionSpellFreeze
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellCounterSpell
+  dummyEntity: CP14ActionSpellCounterSpell
+  actions:
+  - CP14ActionSpellCounterSpell
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
