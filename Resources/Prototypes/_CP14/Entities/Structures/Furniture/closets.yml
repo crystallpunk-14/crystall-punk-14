@@ -159,3 +159,32 @@
   components:
   - type: CP14Lock
     autoGenerateShape: BankVault
+
+- type: entity
+  id: CP14ClosetGlassShowcase
+  parent: CP14ClosetBase
+  name: glass showcase
+  description: Something of value can be placed here without fear of it being discreetly stolen!
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+    sprite: _CP14/Structures/Storage/glass_showcase.rsi
+    state: base
+  - type: EntityStorage
+    isCollidableWhenOpen: true
+    enteringOffset: 0, 0
+    capacity: 5
+    showContents: true
+    occludesLight: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.40,-0.40,0.40,0.40"
+        density: 75
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
