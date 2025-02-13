@@ -61149,10 +61149,10 @@ entities:
       parent: 2
 - proto: CP14BrassChestFilledWood
   entities:
-  - uid: 4
+  - uid: 13198
     components:
     - type: Transform
-      pos: -9.5,8.5
+      pos: -12.5,4.5
       parent: 2
 - proto: CP14Bucket
   entities:
@@ -63634,14 +63634,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -44.5,3.5
       parent: 2
-- proto: CP14FenceIronGrilleGateGuard
-  entities:
-  - uid: 208
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -44.5,5.5
-      parent: 2
 - proto: CP14FenceIronGrilleStraight
   entities:
   - uid: 167
@@ -63649,6 +63641,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 10.5,-14.5
+      parent: 2
+  - uid: 185
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -44.5,5.5
       parent: 2
   - uid: 567
     components:
@@ -64058,6 +64056,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -44.5,1.5
+      parent: 2
+  - uid: 13458
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -44.5,2.5
       parent: 2
   - uid: 14299
     components:
@@ -68163,6 +68167,36 @@ entities:
     - type: Transform
       pos: -19.5,7.5
       parent: 2
+  - uid: 17830
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 21.5,-3.5
+      parent: 2
+  - uid: 17831
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 17.5,-1.5
+      parent: 2
+  - uid: 17832
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,0.5
+      parent: 2
+  - uid: 17833
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 10.5,16.5
+      parent: 2
+  - uid: 17834
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 9.5,25.5
+      parent: 2
 - proto: CP14FloraTreeGreenLarge
   entities:
   - uid: 579
@@ -68209,6 +68243,30 @@ entities:
     components:
     - type: Transform
       pos: 9.5,18.5
+      parent: 2
+  - uid: 17826
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 7.5,-9.5
+      parent: 2
+  - uid: 17827
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 19.5,-16.5
+      parent: 2
+  - uid: 17828
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,-12.5
+      parent: 2
+  - uid: 17829
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 24.5,-11.5
       parent: 2
 - proto: CP14FoodApple
   entities:
@@ -68617,14 +68675,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -30.5,-8.5
       parent: 2
-- proto: CP14IronDoor
-  entities:
-  - uid: 493
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -45.5,-10.5
-      parent: 2
 - proto: CP14IronDoorBankCommandantRoom
   entities:
   - uid: 276
@@ -68720,6 +68770,17 @@ entities:
       parent: 2
 - proto: CP14IronDoorGuard
   entities:
+  - uid: 208
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -45.5,-10.5
+      parent: 2
+  - uid: 216
+    components:
+    - type: Transform
+      pos: -46.5,-10.5
+      parent: 2
   - uid: 17709
     components:
     - type: Transform
@@ -68742,6 +68803,12 @@ entities:
       parent: 2
 - proto: CP14IronDoorGuardGuildmaster
   entities:
+  - uid: 13197
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -16.5,-10.5
+      parent: 2
   - uid: 14355
     components:
     - type: Transform
@@ -68759,14 +68826,6 @@ entities:
     components:
     - type: Transform
       pos: -40.5,-10.5
-      parent: 2
-- proto: CP14IronDoorMirrored
-  entities:
-  - uid: 185
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -46.5,-10.5
       parent: 2
 - proto: CP14IronDoorWindowedBankEntrance
   entities:
@@ -84362,6 +84421,39 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -4.5,-17.5
       parent: 2
+- proto: CP14SpawnPointGuard
+  entities:
+  - uid: 217
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -47.5,-12.5
+      parent: 2
+  - uid: 13429
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -46.5,-12.5
+      parent: 2
+  - uid: 13455
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -45.5,-12.5
+      parent: 2
+  - uid: 13456
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -44.5,-12.5
+      parent: 2
+- proto: CP14SpawnPointGuardCommander
+  entities:
+  - uid: 13457
+    components:
+    - type: Transform
+      pos: -38.5,-4.5
+      parent: 2
 - proto: CP14SpawnPointGuildmaster
   entities:
   - uid: 14350
@@ -86014,6 +86106,21 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 14360
+    components:
+    - type: Transform
+      pos: -18.5,-16.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 15389
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -11.5,-15.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: CP14WallmountFlagTavern
   entities:
   - uid: 15995
@@ -86032,19 +86139,18 @@ entities:
       fixtures: {}
 - proto: CP14WallmountLamp
   entities:
+  - uid: 13203
+    components:
+    - type: Transform
+      pos: -17.5,-4.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 15374
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -9.5,6.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 15389
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -18.5,-6.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -102278,16 +102384,6 @@ entities:
     - type: Transform
       pos: -19.5,-4.5
       parent: 2
-  - uid: 216
-    components:
-    - type: Transform
-      pos: -19.5,-5.5
-      parent: 2
-  - uid: 217
-    components:
-    - type: Transform
-      pos: -19.5,-6.5
-      parent: 2
   - uid: 218
     components:
     - type: Transform
@@ -105067,6 +105163,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -24.5,11.5
       parent: 2
+  - uid: 493
+    components:
+    - type: Transform
+      pos: -19.5,-5.5
+      parent: 2
   - uid: 513
     components:
     - type: Transform
@@ -105226,6 +105327,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 6.5,1.5
+      parent: 2
+  - uid: 13196
+    components:
+    - type: Transform
+      pos: -19.5,-6.5
       parent: 2
   - uid: 14157
     components:
@@ -106026,14 +106132,6 @@ entities:
     - type: Transform
       pos: 11.5,28.5
       parent: 2
-- proto: CP14WoodenDoorWindowed
-  entities:
-  - uid: 14360
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -16.5,-10.5
-      parent: 2
 - proto: CP14WoodenDoorWindowedTavernHall
   entities:
   - uid: 14219
@@ -106050,6 +106148,11 @@ entities:
       parent: 2
 - proto: CP14Workbench
   entities:
+  - uid: 4
+    components:
+    - type: Transform
+      pos: -9.5,8.5
+      parent: 2
   - uid: 14364
     components:
     - type: Transform
