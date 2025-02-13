@@ -27,8 +27,8 @@
             #Guard
             CP14Guard: [8, 8]
             CP14GuardCommander: [1, 1]
-        - type: CP14StationZLevels
-          defaultMapLevel: 0
+        #- type: CP14StationZLevels
+        #  defaultMapLevel: 0
         - type: CP14StationKeyDistribution
           keys:
           - Alchemy1
