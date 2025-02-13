@@ -1,7 +1,7 @@
 - type: gameMap
   id: Factoria
   mapName: "Fatoria island"
-  mapPath: /Maps/_CP14/factoia.yml
+  mapPath: /Maps/_CP14/factoria.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
