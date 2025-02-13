@@ -47,3 +47,23 @@
     protoId: CP14FoodCucumber
     count: 1
   result: CP14SeedCucumber
+
+- type: CP14Recipe
+  id: CP14SeedOnion
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodOnion
+    count: 1
+  result: CP14SeedOnion
+
+- type: CP14Recipe
+  id: CP14SeedPepper
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPepper
+    count: 1
+  result: CP14SeedPepper
