@@ -10,7 +10,7 @@
       stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Fatoria island"
+          mapNameTemplate: "Factoria"
         - type: StationJobs
           availableJobs:
             #Mercenary
