@@ -306,7 +306,7 @@
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
-      - id: FoodMeat
+      - id: CP14FoodMeatHuman
         amount: 5
   - type: Respirator
     damage:

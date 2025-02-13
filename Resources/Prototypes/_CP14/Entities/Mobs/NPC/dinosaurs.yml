@@ -92,8 +92,8 @@
   - type: Climbing
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatLamb # to replace the dino meat
-      amount: 5
+    - id: CP14FoodMeatDino
+      amount: 4
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: SpamEmitSound
@@ -164,7 +164,7 @@
     acceleration: 16.0
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatLamb # to replace the dino meat
+    - id: CP14FoodMeatHydra
       amount: 2
   - type: Bloodstream
     bloodMaxVolume: 100
