@@ -219,3 +219,11 @@
             max: 2
       - !type:DoActsBehavior 
         acts: [ "Destruction" ]
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+        showEnts: True
+        occludes: False
+      paper_label: !type:ContainerSlot
+        showEnts: False
+        occludes: True
