@@ -1,1 +1,1 @@
-cp14-recipe-title-meat = Разное мясо
+cp14-recipe-title-meat = разные кусочки сырого мяса
