@@ -50,6 +50,7 @@ namespace Content.IntegrationTests.Tests
 
             //CrystallEdge maps
             "Comoss",
+            "Factoria",
             //CrystallEdge Map replacement end
         };
 

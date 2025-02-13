@@ -74,9 +74,9 @@ entities:
     - type: CP14DayCycle
     - type: CP14WeatherController
       entries:
-      - visuals: CP14Snow
-      - visuals: CP14SnowLight
-      - visuals: CP14SnowMedium
+      - visuals: CP14Mist
+      - visuals: CP14Rain
+      - visuals: CP14Storm
     - type: CP14MapDamage
     - type: LoadedMap
     - type: Parallax
@@ -86,8 +86,9 @@ entities:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: -0.796875,0.171875
       parent: 1
+    - type: BecomesStation
+      id: Factoria
     - type: MapGrid
       chunks:
         0,0:
