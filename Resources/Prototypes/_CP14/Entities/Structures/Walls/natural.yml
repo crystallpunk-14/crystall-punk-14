@@ -97,6 +97,92 @@
     node: WallDirt
 
 - type: entity
+  id: CP14WallLeaf
+  parent: 
+  - CP14BaseFlammableSpreading
+  - CP14BaseWall
+  name: leaf wall
+  description: Dense, marginal bushes. You can climb through them, but watch out for thorny branches!
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/leaf.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/leaf.rsi
+  - type: IconSmooth
+    key: CP14wallLeaf
+    base: wall
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: CP14GrassGathering
+        params:
+          variation: 0.05
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+      fix2: #For melee or laser
+        hard: true
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        mask:
+        - FullTileMask 
+        layer:
+        - Opaque
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: CP14GrassGathering
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14FloraMaterial1:
+            min: 1
+            max: 3
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.25
+    sprintSpeedModifier: 0.25
+  - type: EmitSoundOnTrigger
+    sound:
+      params:
+        volume: -8
+      collection: CP14GrassGathering
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: DamageContacts
+    damage:
+      types:
+        Slash: 0.2
+        Piercing: 0.2
+
+- type: entity
   id: CP14WallSnow
   name: snow wall
   parent: CP14BaseWall
