@@ -10,9 +10,9 @@ public abstract partial class CP14SharedMagicSystem
 {
     private void InitializeToggleableActions()
     {
-        SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnInstantAction);
-        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
-        SubscribeLocalEvent<CP14ToggleableEntityTargetActionEvent>(OnEntityTargetAction);
+        SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnToggleableInstantAction);
+        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
+        SubscribeLocalEvent<CP14ToggleableEntityTargetActionEvent>(OnToggleableEntityTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableInstantActionDoAfterEvent>(OnToggleableInstantActionDoAfterEvent);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableEntityWorldTargetActionDoAfterEvent>(OnToggleableEntityWorldTargetActionDoAfterEvent);
@@ -128,7 +128,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Instant action used from hotkey event
     /// </summary>
-    private void OnInstantAction(CP14ToggleableInstantActionEvent args)
+    private void OnToggleableInstantAction(CP14ToggleableInstantActionEvent args)
     {
         if (args.Handled)
             return;
@@ -148,7 +148,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Target action used from hotkey event
     /// </summary>
-    private void OnEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
+    private void OnToggleableEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
     {
         if (args.Handled)
             return;
@@ -171,7 +171,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Entity target action used from hotkey event
     /// </summary>
-    private void OnEntityTargetAction(CP14ToggleableEntityTargetActionEvent args)
+    private void OnToggleableEntityTargetAction(CP14ToggleableEntityTargetActionEvent args)
     {
         if (args.Handled)
             return;

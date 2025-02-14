@@ -43,6 +43,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         base.Initialize();
         InitializeDelayedActions();
         InitializeToggleableActions();
+        InitializeInstantActions();
         InitializeChecks();
         InitializeSlowdown();
 
