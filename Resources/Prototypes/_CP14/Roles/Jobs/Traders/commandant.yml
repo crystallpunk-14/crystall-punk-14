@@ -3,7 +3,6 @@
   name: cp14-job-name-commandant
   description: cp14-job-desc-commandant
   playTimeTracker: CP14JobCommandant
-  setPreference: false
   startingGear: CP14CommandantGear
   icon: "CP14JobIconCommandant"
   requireAdminNotify: true

@@ -85,6 +85,14 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+- proto: C14IronCabinetCargo
+  entities:
+  - uid: 55
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-3.5
+      parent: 1
 - proto: CP14BlueBottle
   entities:
   - uid: 73
@@ -95,6 +103,12 @@ entities:
       parent: 1
 - proto: CP14ChairWooden
   entities:
+  - uid: 39
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.4904509,1.7075868
+      parent: 1
   - uid: 69
     components:
     - type: Transform
@@ -222,13 +236,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.0687864,6.6510777
       parent: 1
-- proto: CP14IronCabinetCargo
+- proto: CP14IronDoorBankStaff
   entities:
-  - uid: 55
+  - uid: 50
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-3.5
+      pos: 0.5,0.5
       parent: 1
 - proto: CP14OrangeBottle
   entities:
@@ -275,6 +288,8 @@ entities:
     - type: Transform
       pos: -1.5,-4.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 79
@@ -282,6 +297,8 @@ entities:
     - type: Transform
       pos: -1.5,-3.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 80
@@ -289,6 +306,8 @@ entities:
     - type: Transform
       pos: -1.5,-2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 81
@@ -296,6 +315,8 @@ entities:
     - type: Transform
       pos: -1.5,-1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 82
@@ -303,6 +324,8 @@ entities:
     - type: Transform
       pos: -1.5,-0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 83
@@ -310,6 +333,8 @@ entities:
     - type: Transform
       pos: -1.5,0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 84
@@ -317,6 +342,8 @@ entities:
     - type: Transform
       pos: -0.5,-4.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 85
@@ -324,6 +351,8 @@ entities:
     - type: Transform
       pos: -0.5,-3.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 86
@@ -331,6 +360,8 @@ entities:
     - type: Transform
       pos: -0.5,-2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 87
@@ -338,6 +369,8 @@ entities:
     - type: Transform
       pos: -0.5,-1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 88
@@ -345,6 +378,8 @@ entities:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 89
@@ -352,6 +387,8 @@ entities:
     - type: Transform
       pos: -0.5,0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 90
@@ -359,6 +396,8 @@ entities:
     - type: Transform
       pos: 0.5,-4.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 91
@@ -366,6 +405,8 @@ entities:
     - type: Transform
       pos: 0.5,-3.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 92
@@ -373,6 +414,8 @@ entities:
     - type: Transform
       pos: 0.5,-2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 93
@@ -380,6 +423,8 @@ entities:
     - type: Transform
       pos: 0.5,-1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 94
@@ -387,6 +432,8 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 95
@@ -394,6 +441,8 @@ entities:
     - type: Transform
       pos: 0.5,0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 96
@@ -401,6 +450,8 @@ entities:
     - type: Transform
       pos: 1.5,-4.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 97
@@ -408,6 +459,8 @@ entities:
     - type: Transform
       pos: 1.5,-3.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 98
@@ -415,6 +468,8 @@ entities:
     - type: Transform
       pos: 1.5,-1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 99
@@ -422,6 +477,8 @@ entities:
     - type: Transform
       pos: 1.5,-0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 100
@@ -429,6 +486,8 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 101
@@ -436,6 +495,8 @@ entities:
     - type: Transform
       pos: 2.5,-4.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 102
@@ -443,6 +504,8 @@ entities:
     - type: Transform
       pos: 2.5,-3.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 103
@@ -450,6 +513,8 @@ entities:
     - type: Transform
       pos: 2.5,-2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 104
@@ -457,6 +522,8 @@ entities:
     - type: Transform
       pos: 2.5,-1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 105
@@ -464,6 +531,8 @@ entities:
     - type: Transform
       pos: 2.5,-0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 106
@@ -471,6 +540,8 @@ entities:
     - type: Transform
       pos: 1.5,-2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 107
@@ -478,6 +549,8 @@ entities:
     - type: Transform
       pos: 2.5,0.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 108
@@ -485,6 +558,8 @@ entities:
     - type: Transform
       pos: 1.5,1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 109
@@ -492,6 +567,8 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 110
@@ -499,6 +576,8 @@ entities:
     - type: Transform
       pos: -0.5,1.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 111
@@ -506,6 +585,8 @@ entities:
     - type: Transform
       pos: 1.5,2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 112
@@ -513,6 +594,8 @@ entities:
     - type: Transform
       pos: 0.5,2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 113
@@ -520,6 +603,8 @@ entities:
     - type: Transform
       pos: -0.5,2.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
   - uid: 114
@@ -527,6 +612,8 @@ entities:
     - type: Transform
       pos: 0.5,3.5
       parent: 1
+    - type: Physics
+      canCollide: False
     - type: Fixtures
       fixtures: {}
 - proto: CP14ShuttleWingBigL
@@ -681,6 +768,16 @@ entities:
     - type: Transform
       pos: 2.5,-0.5
       parent: 1
+  - uid: 43
+    components:
+    - type: Transform
+      pos: -0.5,0.5
+      parent: 1
+  - uid: 44
+    components:
+    - type: Transform
+      pos: 1.5,0.5
+      parent: 1
 - proto: CP14WallmountFlagBankShip
   entities:
   - uid: 17
@@ -717,6 +814,14 @@ entities:
       fixtures: {}
 - proto: CP14WallmountLamp
   entities:
+  - uid: 57
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,1.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
   - uid: 67
     components:
     - type: Transform
@@ -779,11 +884,6 @@ entities:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
-  - uid: 39
-    components:
-    - type: Transform
-      pos: -0.5,0.5
-      parent: 1
 - proto: CP14WoodenPalletSell
   entities:
   - uid: 2
@@ -805,10 +905,5 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-1.5
-      parent: 1
-  - uid: 43
-    components:
-    - type: Transform
-      pos: 1.5,0.5
       parent: 1
 ...
