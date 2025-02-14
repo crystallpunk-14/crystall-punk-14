@@ -42,3 +42,25 @@
       color: "#4097bd"
   - type: PointLight
     color: "#4097bd"
+
+- type: entity
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollMagicalAcceleration
+  name: magical accseleration spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellMagicalAcceleration
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            CP14Ash1:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

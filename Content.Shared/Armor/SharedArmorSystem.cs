@@ -79,4 +79,30 @@ public abstract class SharedArmorSystem : EntitySystem
 
         return msg;
     }
+
+    //CP14 public armor edit API
+    public void EditArmorCoefficients(EntityUid uid, DamageModifierSet modifiers, ArmorComponent? armor = null)
+    {
+        if (!Resolve(uid, ref armor))
+            return;
+
+        //Merge old and new coefficients
+        foreach (var (armorType, coefficient) in modifiers.Coefficients)
+        {
+            if (armor.Modifiers.Coefficients.ContainsKey(armorType))
+                armor.Modifiers.Coefficients[armorType] += coefficient;
+            else
+                armor.Modifiers.Coefficients[armorType] = coefficient;
+        }
+
+        //Merge old and new flat reductions
+        foreach (var (armorType, reduction) in modifiers.FlatReduction)
+        {
+            if (armor.Modifiers.FlatReduction.ContainsKey(armorType))
+                armor.Modifiers.FlatReduction[armorType] += reduction;
+            else
+                armor.Modifiers.FlatReduction[armorType] = reduction;
+        }
+    }
+    //CP14 public armor edit API end
 }
