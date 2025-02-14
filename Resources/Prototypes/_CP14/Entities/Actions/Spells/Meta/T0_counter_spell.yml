@@ -33,7 +33,7 @@
       state: counter_spell
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
-      castTime: 0.5
+      castDelay: 0.75
       breakOnMove: false 
 
 - type: entity
