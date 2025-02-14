@@ -755,19 +755,19 @@ ent-CP14BaseMobGroupSpawner = пульсирующий разлом демипл
 
 ent-CP14MobGroupSpawnerZombie = { ent-CP14BaseMobGroupSpawner }
     .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = 1-3 Zombie
+    .suffix = 1-3 Зомби
 
 ent-CP14MobGroupSpawnerHydras = { ent-CP14BaseMobGroupSpawner }
     .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = 1-3 Hydras
+    .suffix = 1-3 Гидры
 
 ent-CP14MobGroupSpawnerMosquito = { ent-CP14BaseMobGroupSpawner }
     .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = 2-3 Mosquito
+    .suffix = 2-3 Москитов
 
 ent-CP14MobGroupSpawnerRabbits = { ent-CP14BaseMobGroupSpawner }
     .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = 2-3 Rabbits
+    .suffix = 2-3 Кроликов
 
 ent-CP14SpawnPointGuardCommander = командир стражи
     .desc = { ent-CP14SpawnPointJobBase.desc }
@@ -1762,7 +1762,7 @@ ent-CP14Crayon = мелок
 ent-CP14CrayonWhite = белый мелок
     .desc = { ent-CP14Crayon.desc }
 
-ent-CP14CrayonRainbow = магический радуждный мелок
+ent-CP14CrayonRainbow = магический радужный мелок
     .desc = { ent-CP14Crayon.desc }
 
 ent-CP14CrayonBlack = черный мелок
