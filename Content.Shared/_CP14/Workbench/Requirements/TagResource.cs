@@ -62,7 +62,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         if (Title is null)
             return "Error tag name";
 
-        return Loc.GetString(Title);
+        return $"{Loc.GetString(Title)} x{Count}";
     }
 
     public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
