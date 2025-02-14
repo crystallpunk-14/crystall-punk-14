@@ -26,6 +26,7 @@
       - CP14MagicEnergyContainer
     itemIconStyle: BigAction
     interactOnMiss: false
+    range: 60
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
@@ -33,7 +34,7 @@
       state: counter_spell
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
-      castDelay: 0.75
+      castDelay: 0.25
       breakOnMove: false 
 
 - type: entity
