@@ -8,7 +8,7 @@
   description: This button can activate something! 
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Wallmount/buttons.rsi
+    sprite: _CP14/Structures/Specific/Device/wallmount_buttons.rsi
   - type: Clickable
   - type: InteractionOutline
   - type: Physics
@@ -16,22 +16,28 @@
   - type: UseDelay
     delay: 0.5 # prevent light-toggling auto-clickers.
   - type: SignalSwitch
-    onPort: Pressed
-    offPort: Pressed
-    statusPort: Pressed
+    onPort: CP14Pressed
+    offPort: CP14Pressed
+    statusPort: CP14Pressed
   - type: Fixtures
   - type: DeviceNetwork
     deviceNetId: Wireless
   - type: WirelessNetworkConnection
-    range: 100
+    range: 10
   - type: DeviceLinkSource
     ports:
-      - Pressed
+      - CP14Pressed
 
 - type: entity
   id: CP14WallmouontButtonWooden
   parent: CP14WallmountButtonBase
-  name: wooden wall button
   components:
   - type: Sprite
     state: wooden
+
+- type: entity
+  id: CP14WallmouontButtonStone
+  parent: CP14WallmountButtonBase
+  components:
+  - type: Sprite
+    state: stone
