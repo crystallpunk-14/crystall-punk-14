@@ -8,6 +8,8 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSharpCopper
 
 - type: CP14Recipe
@@ -18,6 +20,8 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSharpIron
 
 - type: CP14Recipe
@@ -28,6 +32,8 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSharpGold
 
 - type: CP14Recipe
@@ -38,6 +44,8 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
   result: CP14ModularGardeSharpMithril
 
 # Sturdy garde
