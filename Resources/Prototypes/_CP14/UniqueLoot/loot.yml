@@ -17,3 +17,7 @@
 - type: uniqueLoot
   id: CP14MagicShadowStaff
   entity: CP14MagicShadowStaff
+
+- type: uniqueLoot
+  id: CP14CrayonRainbow
+  entity: CP14CrayonRainbow
