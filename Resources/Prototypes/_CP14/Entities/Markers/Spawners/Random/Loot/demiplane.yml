@@ -38,7 +38,7 @@
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollPlantGrowth
         - id: CP14SpellScrollCounterSpell
-        - id: CP14ActionSpellMagicalAcceleration
+        - id: CP14SpellScrollMagicalAcceleration
       - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
       - id: CP14ScrapCopper

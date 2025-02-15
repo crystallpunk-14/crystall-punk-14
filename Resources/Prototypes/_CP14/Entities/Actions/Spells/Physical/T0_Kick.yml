@@ -21,6 +21,12 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14DustEffectKickSound
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: 5
   - type: CP14MagicEffectVerbalAspect
     startSpeech: cp14-kick-emote-start
     endSpeech: cp14-kick-emote
