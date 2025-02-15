@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14WallmountButtonBase
+  abstract: true
+  parent:
+  - CP14BaseWallmount
+  categories: [ ForkFiltered ]
+  name: wall button
+  description: This button can activate something! 
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Wallmount/buttons.rsi
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    canCollide: false
+  - type: UseDelay
+    delay: 0.5 # prevent light-toggling auto-clickers.
+  - type: SignalSwitch
+    onPort: Pressed
+    offPort: Pressed
+    statusPort: Pressed
+  - type: Fixtures
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+  - type: WirelessNetworkConnection
+    range: 100
+  - type: DeviceLinkSource
+    ports:
+      - Pressed
+
+- type: entity
+  id: CP14WallmouontButtonWooden
+  parent: CP14WallmountButtonBase
+  name: wooden wall button
+  components:
+  - type: Sprite
+    state: wooden

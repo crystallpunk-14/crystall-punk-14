@@ -3,3 +3,4 @@ cp14-demiplane-location-cave-grass = Заросшие пещеры
 cp14-demiplane-location-grassland-island = Зеленый остров
 cp14-demiplane-location-ice-cave = Ледяные пещеры
 cp14-demiplane-location-snow-island = Заснеженный остров
+cp14-demiplane-location-leaf-maze = Травяной лабиринт
