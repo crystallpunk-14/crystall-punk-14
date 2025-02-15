@@ -26,6 +26,9 @@
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronAxe

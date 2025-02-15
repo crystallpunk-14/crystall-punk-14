@@ -1,0 +1,22 @@
+- type: entity
+  parent: CP14ModularInlayBase
+  id: CP14ModularInlayQuartzBase
+  name: quartz inlay
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+
+- type: entity
+  parent: CP14ModularInlayQuartzBase
+  id: CP14ModularInlayQuartzElectric
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+    layers:
+    - state: item
+      color: "#e6ff6b"
+    - state: frame
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - InlayQuartzElectric

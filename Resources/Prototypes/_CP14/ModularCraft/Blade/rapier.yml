@@ -28,6 +28,7 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
+    - BladeInlay
   - !type:EditDamageableModifier # Only 1 ingot t craft, so less health
     multiplier: 2
 

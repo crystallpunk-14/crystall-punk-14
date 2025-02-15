@@ -1,0 +1,12 @@
+- type: modularPart
+  id: InlayQuartzElectric
+  slots:
+  - BladeInlay
+  rsiPath: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  color: "#e6ff6b"
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: Electrified
+      requirePower: false
+      shockTime: 2

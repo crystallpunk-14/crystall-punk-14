@@ -19,6 +19,7 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronPickaxe

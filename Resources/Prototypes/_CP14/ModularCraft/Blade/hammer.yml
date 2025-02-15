@@ -43,6 +43,9 @@
     storedOffsetBonus: 0, 5
   - !type:EditDamageableModifier # How you can break a hammer?
     multiplier: 0.8
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronHammer
