@@ -66,8 +66,6 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-# TIER 2
-
 - type: cp14DemiplaneModifier
   id: EnemySkeleton
   tiers:
@@ -83,6 +81,8 @@
       count: 1
       minGroupSize: 1
       maxGroupSize: 3
+
+# TIER 2
 
 - type: cp14DemiplaneModifier
   id: EnemyMole
