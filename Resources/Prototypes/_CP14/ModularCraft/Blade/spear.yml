@@ -39,7 +39,8 @@
 
 - type: modularPart
   id: BladeIronSpear
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   modifiers:
@@ -50,7 +51,8 @@
 
 - type: modularPart
   id: BladeGoldSpear
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#ffaf47"
@@ -62,7 +64,8 @@
 
 - type: modularPart
   id: BladeCopperSpear
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#bd712f"
@@ -74,7 +77,8 @@
 
 - type: modularPart
   id: BladeMithrilSpear
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#45d2a4"

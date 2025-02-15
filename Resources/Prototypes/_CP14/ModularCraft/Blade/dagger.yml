@@ -34,7 +34,8 @@
 
 - type: modularPart
   id: BladeIronDagger
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   modifiers:
@@ -45,7 +46,8 @@
 
 - type: modularPart
   id: BladeGoldDagger
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   color: "#ffaf47"
@@ -57,7 +59,8 @@
 
 - type: modularPart
   id: BladeCopperDagger
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   color: "#bd712f"
@@ -69,7 +72,8 @@
 
 - type: modularPart
   id: BladeMithrilDagger
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   color: "#45d2a4"

@@ -22,7 +22,8 @@
 
 - type: modularPart
   id: BladeIronPickaxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
   modifiers:
@@ -33,7 +34,8 @@
 
 - type: modularPart
   id: BladeGoldPickaxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
   color: "#ffaf47"
@@ -45,7 +47,8 @@
 
 - type: modularPart
   id: BladeCopperPickaxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
   color: "#bd712f"
@@ -57,7 +60,8 @@
 
 - type: modularPart
   id: BladeMithrilPickaxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
   color: "#45d2a4"

@@ -33,7 +33,8 @@
 
 - type: modularPart
   id: BladeIronRapier
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
   modifiers:
@@ -44,7 +45,8 @@
 
 - type: modularPart
   id: BladeGoldRapier
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
   color: "#ffaf47"
@@ -56,7 +58,8 @@
 
 - type: modularPart
   id: BladeCopperRapier
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
   color: "#bd712f"
@@ -68,7 +71,8 @@
 
 - type: modularPart
   id: BladeMithrilRapier
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
   color: "#45d2a4"
