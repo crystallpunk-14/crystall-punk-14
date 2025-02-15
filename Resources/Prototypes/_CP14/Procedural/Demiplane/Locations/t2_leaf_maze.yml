@@ -1,0 +1,35 @@
+- type: cp14DemiplaneLocation
+  id: T1LeafMaze
+  tier: 1
+  locationConfig: CP14DemiplanLeafMaze
+  name: cp14-demiplane-location-leaf-maze
+  tags:
+  - CP14DemiplaneHerbals
+  - CP14DemiplaneOpenSky
+  - CP14DemiplanePeacefulAnimals
+  - CP14DemiplaneWater
+  - CP14DemiplaneAnimalsSwamp
+
+- type: dungeonConfig
+  id: CP14DemiplaneLeafMaze
+  layers:
+    # Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplanePlatingMaskBorder
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneCavesFloorMaskStone
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneCavesFloorMaskAir
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesIndestructibleFill
+      tileMask:
+      - Plating
+    - !type:BiomeDunGen
+      biomeTemplate: CP14LeafMaze
+      tileMask:
+      - CP14FloorSand
+    - !type:BiomeDunGen
+      biomeTemplate: CP14Grassland
+      tileMask:
+      - CP14FloorGrass

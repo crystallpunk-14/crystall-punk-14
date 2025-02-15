@@ -124,3 +124,16 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14IceCavesGeneric
+
+- type: entity
+  id: CP14BiomeSpawnerLeafMaze
+  parent: CP14BaseBiomeSpawner
+  suffix: Leaf maze
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+        color: green
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14LeafMaze
