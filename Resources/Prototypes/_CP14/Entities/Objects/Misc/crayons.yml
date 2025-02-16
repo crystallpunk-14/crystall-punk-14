@@ -52,7 +52,8 @@
   parent: CP14Crayon
   id: CP14CrayonRainbow
   name: magic rainbow crayon
-  suffix: Artifact, DO NOT MAP
+  categories: [ DoNotMap ]
+  suffix: Artifact
   components:
   - type: Sprite
     layers:

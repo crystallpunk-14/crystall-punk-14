@@ -25,10 +25,9 @@
 - type: entity
   id: CP14DPSMeter
   parent: BaseStructureDynamic
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   name: DPS Meter
   description: Counts the average damage per second. If you stop hitting it, it shows the result.
-  suffix: Debug, DO NOT MAP
   components:
   - type: Sprite
     sprite: Objects/Specific/Security/target.rsi

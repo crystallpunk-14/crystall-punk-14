@@ -100,24 +100,24 @@ public sealed class CP14RoofSystem : EntitySystem
 
         UpdateVisibility(ent, sprite);
 
-        var xform = Transform(ent);
-
-        if (_gridQuery.TryComp(xform.GridUid, out var grid))
-        {
-            var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
-            _roof.SetRoof((xform.GridUid.Value, grid, null), index, true);
-        }
+        //var xform = Transform(ent);
+//
+        //if (_gridQuery.TryComp(xform.GridUid, out var grid))
+        //{
+        //    var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
+        //    _roof.SetRoof((xform.GridUid.Value, grid, null), index, true);
+        //}
     }
 
     private void RoofRemove(Entity<CP14RoofComponent> ent, ref ComponentRemove args)
     {
-        var xform = Transform(ent);
-
-        if (_gridQuery.TryComp(xform.GridUid, out var grid))
-        {
-            var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
-            _roof.SetRoof((xform.GridUid.Value, grid, null), index, false);
-        }
+        //var xform = Transform(ent);
+//
+        //if (_gridQuery.TryComp(xform.GridUid, out var grid))
+        //{
+        //    var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
+        //    _roof.SetRoof((xform.GridUid.Value, grid, null), index, false);
+        //}
     }
 
     private void UpdateVisibility(Entity<CP14RoofComponent> ent, SpriteComponent sprite)

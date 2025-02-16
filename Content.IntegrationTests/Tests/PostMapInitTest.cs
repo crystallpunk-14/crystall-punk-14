@@ -38,7 +38,11 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] Grids =
         {
-            "/Maps/centcomm.yml"
+            "/Maps/centcomm.yml",
+
+            //CrystallEdge z-levels
+            "/Maps/_CP14/comoss_d.yml"
+            //CrystallEdge z-levels end
         };
 
         private static readonly string[] DoNotMapWhitelist =
@@ -50,7 +54,8 @@ namespace Content.IntegrationTests.Tests
         };
 
         private static readonly string[] GameMaps =
-        {//CrystallEdge Map replacement
+        {
+            //CrystallEdge Map replacement
             "Dev",
             "CentComm",
             "MeteorArena",

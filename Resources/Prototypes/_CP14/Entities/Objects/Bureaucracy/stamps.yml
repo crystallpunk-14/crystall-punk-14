@@ -49,7 +49,7 @@
   id: CP14StampCommandant
   parent: CP14StampBase
   name: commandant stamp
-  suffix: DO NOT MAP
+  categories: [ DoNotMap ]
   components:
   - type: Stamp
     stampedName: cp14-stamp-bank
@@ -62,7 +62,7 @@
   id: CP14StampGuardCommander
   parent: CP14StampBase
   name: guard commander stamp
-  suffix: DO NOT MAP
+  categories: [ DoNotMap ]
   components:
   - type: Stamp
     stampedName: cp14-stamp-guard-commander
@@ -75,7 +75,7 @@
   id: CP14StampGuildmaster
   parent: CP14StampBase
   name: guildmaster stamp
-  suffix: DO NOT MAP
+  categories: [ DoNotMap ]
   components:
   - type: Stamp
     stampedName: cp14-stamp-guildmaster
