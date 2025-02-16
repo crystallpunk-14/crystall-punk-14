@@ -17,6 +17,7 @@ public sealed class CP14RoofSystem : EntitySystem
     private bool _roofVisible = true;
     public bool DisabledByCommand = false;
 
+    private EntityQuery<MapGridComponent> _gridQuery;
     private EntityQuery<GhostComponent> _ghostQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -36,8 +37,11 @@ public sealed class CP14RoofSystem : EntitySystem
 
         _ghostQuery = GetEntityQuery<GhostComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
+        _gridQuery = GetEntityQuery<MapGridComponent>();
 
         SubscribeLocalEvent<CP14RoofComponent, ComponentStartup>(RoofStartup);
+        SubscribeLocalEvent<CP14RoofComponent, ComponentRemove>(RoofRemove);
+
         SubscribeLocalEvent<GhostComponent, CP14ToggleRoofVisibilityAction>(OnToggleRoof);
     }
 
@@ -95,6 +99,25 @@ public sealed class CP14RoofSystem : EntitySystem
             return;
 
         UpdateVisibility(ent, sprite);
+
+        var xform = Transform(ent);
+
+        if (_gridQuery.TryComp(xform.GridUid, out var grid))
+        {
+            var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
+            _roof.SetRoof((xform.GridUid.Value, grid, null), index, true);
+        }
+    }
+
+    private void RoofRemove(Entity<CP14RoofComponent> ent, ref ComponentRemove args)
+    {
+        var xform = Transform(ent);
+
+        if (_gridQuery.TryComp(xform.GridUid, out var grid))
+        {
+            var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
+            _roof.SetRoof((xform.GridUid.Value, grid, null), index, false);
+        }
     }
 
     private void UpdateVisibility(Entity<CP14RoofComponent> ent, SpriteComponent sprite)
