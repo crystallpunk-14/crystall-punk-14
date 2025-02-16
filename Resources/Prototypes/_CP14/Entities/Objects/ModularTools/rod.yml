@@ -58,7 +58,7 @@
     - state: tail
     - state: icon
   - type: CP14ModularCraftStartPoint
-    startProtoPart: CP14ModularGripRodWooden
+    startProtoPart: CP14ModularRodWooden
   - type: Destructible
     thresholds:
     - trigger:
@@ -84,7 +84,7 @@
     - state: icon
       color: "#0398fc"
   - type: CP14ModularCraftStartPoint
-    startProtoPart: CP14ModularGripRodLucens
+    startProtoPart: CP14ModularRodLucens
   - type: Destructible
     thresholds:
     - trigger:
