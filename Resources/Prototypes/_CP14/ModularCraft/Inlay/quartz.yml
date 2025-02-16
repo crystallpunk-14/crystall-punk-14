@@ -1,0 +1,129 @@
+- type: modularPart
+  id: InlayQuartzWater
+  slots:
+  - BladeInlay
+  rsiPath: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  color: "#5eabeb"
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14SpellEffectOnHit
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectFreeze
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:MovespeedModifier
+          walkSpeedModifier: 0.75
+          sprintSpeedModifier: 0.75
+          statusLifetime: 2
+        - !type:AdjustTemperature
+          amount: -6000
+        - !type:ExtinguishReaction
+
+- type: modularPart
+  id: InlayQuartzHealing
+  slots:
+  - BladeInlay
+  rsiPath: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  color: "#79b330"
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14SpellEffectOnHit
+      effects:
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Slash: -0.5
+              Blunt: -0.5
+              Piercing: -0.5
+              Poison: -0.5
+              Bloodloss: -0.5
+              Caustic: -0.5
+              Cold: -0.5
+              Heat: -0.5
+              Shock: -0.5
+        - !type:Jitter
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectCureWounds
+
+- type: modularPart
+  id: InlayQuartzFire
+  slots:
+  - BladeInlay
+  rsiPath: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  color: "#ed731c"
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14SpellEffectOnHit
+      whitelist:
+        components:
+        - MobState #Please dont burn all map
+      effects:
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:FlammableReaction
+          multiplier: 0.5
+        - !type:AdjustTemperature
+          amount: 6000
+        - !type:Ignite
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectFlameCreation
+
+- type: modularPart
+  id: InlayQuartzLight
+  slots:
+  - BladeInlay
+  rsiPath: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  color: "#f1c7ff"
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: PointLight
+      color: "#f1c7ff"
+      radius: 3
+
+- type: modularPart
+  id: InlayQuartzElectric
+  slots:
+  - BladeInlay
+  rsiPath: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  color: "#e6ff6b"
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14SpellEffectOnHit
+      prob: 0.15
+      effects:
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Electrocute
+          electrocuteTime: 0.5
+          electrocuteDamageScale: 1
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ElectrifiedEffect
+
+- type: modularPart
+  id: InlayQuartzDarkness
+  slots:
+  - BladeInlay
+  rsiPath: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  color: "#391c57"
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14SpellEffectOnHit
+      effects:
+      - !type:CP14SpellThrowFromUser
+        throwPower: 9
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectShadowGrab
