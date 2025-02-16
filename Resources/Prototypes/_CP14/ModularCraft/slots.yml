@@ -9,3 +9,11 @@
 - type: modularSlot
   id: BladeInlay
   name: cp14-modular-slot-blade-inlay
+
+- type: modularSlot
+  id: Rod
+  name: cp14-modular-slot-rod
+
+- type: modularSlot
+  id: Tip
+  name: cp14-modular-slot-tip

@@ -127,17 +127,25 @@
   result: CP14BowCombat
 
 - type: CP14Recipe
-  id: CP14Arrow
+  id: CP14ModularGripRodWooden
   tag: CP14RecipeWorkbench
   craftTime: 3
   requirements:
   - !type:StackResource
     stack: CP14WoodenPlanks
     count: 1
+  result: CP14ModularGripRodWooden
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14ModularGripRodLucens
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  requirements:
   - !type:StackResource
-    stack: CP14IronBar
+    stack: CP14LucensWoodenPlanks
     count: 1
-  result: CP14Arrow
+  result: CP14ModularGripRodLucens
   resultCount: 4
 
 - type: CP14Recipe
