@@ -249,6 +249,10 @@ CP14KeyRingBanker: CP14KeyRingMerchant
 CP14WoodenCabinetBanker: CP14WoodenCabinetMerchant
 CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 
+#2025-16-02
+CP14Arrow: CP14ModularIronArrow
+CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiverIronArrow
+
 
 # <---> CrystallEdge migration zone end
 

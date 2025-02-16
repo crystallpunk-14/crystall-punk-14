@@ -33,7 +33,7 @@
 
 - type: entity
   parent: CP14ClothingBeltQuiver
-  id: CP14ClothingBeltQuiverArrow
+  id: CP14ClothingBeltQuiverIronArrow
   categories: [ ForkFiltered ]
   suffix: Full. Iron. Arrow
   components:
