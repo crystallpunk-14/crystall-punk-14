@@ -1,5 +1,6 @@
 using Content.Shared._CP14.Roof;
 using Content.Shared.Ghost;
+using Content.Shared.Light.EntitySystems;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Console;
@@ -11,6 +12,7 @@ public sealed class CP14RoofSystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly SharedRoofSystem _roof = default!;
 
     private bool _roofVisible = true;
     public bool DisabledByCommand = false;
