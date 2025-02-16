@@ -15,5 +15,5 @@
   name: cp14-modular-slot-rod
 
 - type: modularSlot
-  id: Tip
-  name: cp14-modular-slot-tip
+  id: ArrowTip
+  name: cp14-modular-slot-arrow-tip

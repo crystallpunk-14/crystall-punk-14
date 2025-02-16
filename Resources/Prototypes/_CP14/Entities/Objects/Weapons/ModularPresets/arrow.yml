@@ -1,6 +1,6 @@
 - type: entity
   id: CP14ModularIronArrow
-  parent: CP14ModularGripRodWooden
+  parent: CP14ModularRodWooden
   name: iron arrow
   description: Standard arrow, balance between damage and reliability.
   components:
@@ -16,7 +16,7 @@
 
 - type: entity
   id: CP14ModularMithrilArrow
-  parent: CP14ModularGripRodLucens
+  parent: CP14ModularRodLucens
   name: mithril arrow
   description: An arrow made of expensive wood and magical iron, you shoot money, but the damage matches.
   components:

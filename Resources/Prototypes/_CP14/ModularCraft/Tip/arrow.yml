@@ -19,7 +19,7 @@
 - type: modularPart
   id: TipIronArrow
   slots:
-  - Tip
+  - ArrowTip
   rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
   modifiers:
   - !type:Inherit
@@ -38,7 +38,7 @@
 - type: modularPart
   id: TipGoldArrow
   slots:
-  - Tip
+  - ArrowTip
   rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
   color: "#ffaf47"
   modifiers:
@@ -58,7 +58,7 @@
 - type: modularPart
   id: TipCopperArrow
   slots:
-  - Tip
+  - ArrowTip
   rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
   color: "#bd712f"
   modifiers:
@@ -78,7 +78,7 @@
 - type: modularPart
   id: TipMithrilArrow
   slots:
-  - Tip
+  - ArrowTip
   rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
   color: "#45d2a4"
   modifiers:
