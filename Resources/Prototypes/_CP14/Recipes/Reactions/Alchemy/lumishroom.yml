@@ -18,6 +18,20 @@
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
 
+- type: reaction
+  id: CP14PurifyingSaltLumi
+  minTemp: 600
+  reactants:
+    CP14LumiMushroom:
+      ammount: 1
+    CP14AlchemistSalt:
+      amount: 0.5
+  products:
+    CP14BasicEffectPurification: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -300
+
 # Splitting
 
 - type: reaction

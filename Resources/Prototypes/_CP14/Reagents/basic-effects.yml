@@ -155,6 +155,24 @@
             Poison: 6
 
 - type: reagent
+  id: CP14BasicEffectPurification
+  name: cp14-reagent-name-basic-purification
+  desc: cp14-reagent-desc-basic-purification
+  group: CP14BasicEffect
+  flavor: CP14Salty
+  color: "#977CB2"
+  physicalDesc: cp14-reagent-physical-desc-grainy
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -3
+      - !type:SatiateThirst
+        factor: -2
+
+- type: reagent
   id: CP14BasicEffectHealAirloss
   name: cp14-reagent-name-basic-heal-airloss
   desc: cp14-reagent-desc-basic-heal-airloss

@@ -1,4 +1,4 @@
-cp14-reagent-name-basic-impurity = Mild Impurities
+cp14-reagent-name-basic-impurity = Mild impurities
 cp14-reagent-desc-basic-impurity = The natural, undesirable by products of alchemy. Worse than useless, being difficult for the body to process.
 
 cp14-reagent-name-basic-empty = Empty solution
@@ -22,11 +22,14 @@ cp14-reagent-desc-basic-heal-cold = Capable of healing even serious frostbite.
 cp14-reagent-name-basic-damage-cold = Ice solution
 cp14-reagent-desc-basic-damage-cold = Dangerous substance that causes severe frostbite.
 
+cp14-reagent-name-basic-heal-poison = Antidote solution
+cp14-reagent-desc-basic-heal-poison = Effective as a good antidote.
+
 cp14-reagent-name-basic-damage-poison = Poisonous solution
 cp14-reagent-desc-basic-damage-poison = Capable of causing extreme indigestion, ulcers, intoxication, and in sufficient dosage to cause death.
 
-cp14-reagent-name-basic-heal-poison = Antidote solution
-cp14-reagent-desc-basic-heal-poison = Effective as a good antidote.
+cp14-reagent-name-basic-purification = Cleansing salt
+cp14-reagent-desc-basic-purification = An alchemical salt that binds with impurities and renders them harmless
 
 cp14-reagent-name-basic-damage-airloss = Asphyxiating Solution
 cp14-reagent-desc-basic-damage-airloss =  A viscous slurry that rapidly glues the victim's insides together, causing severe shortness of breath.

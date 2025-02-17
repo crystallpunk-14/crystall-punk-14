@@ -59,3 +59,17 @@
       amount: 0.5
   products:
     CP14BasicEffectSimpleBase: 1
+
+- type: reaction
+  id: CP14PurifyingSaltAntidote
+  minTemp: 580
+  reactants:
+    CP14BasicEffectHealPoison:
+      ammount: 0.25
+    CP14AlchemistSalt:
+      amount: 1
+  products:
+    CP14BasicEffectPurification: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -220
