@@ -39,6 +39,15 @@
     addTemperature: -300
 
 - type: reaction
+  id: CP14SaltDehydrating
+  minTemp: 620
+  reactants:
+    CP14SaltedWater:
+      amount: 0.5
+  products:
+    CP14AlchemistSalt: 0.5
+
+- type: reaction
   id: CP14SaltDisolving
   minTemp: 350
   reactants:
