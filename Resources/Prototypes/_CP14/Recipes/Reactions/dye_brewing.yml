@@ -30,7 +30,6 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -50
-  effects:
   - !type:CreateEntityReactionEffect
       entity: CP14DyeYellow
 
