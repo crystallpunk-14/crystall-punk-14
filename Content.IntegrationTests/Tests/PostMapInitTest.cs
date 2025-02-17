@@ -46,6 +46,9 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] DoNotMapWhitelist =
         {
+            //CrystallEdge Map replacement
+            "/Maps/_CP14/dev_map.yml",
+            //CrystallEdge Map replacement end
             "/Maps/centcomm.yml",
             "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
             "/Maps/gate.yml", // Contains positronic brain and LSE-1200c "Perforator"
