@@ -32,35 +32,29 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] NoSpawnMaps =
         {
-            "CentComm",
-            "Dart"
+            //CrystallEdge Map replacement
+
+            //CrystallEdge Map replacement end
         };
 
         private static readonly string[] Grids =
         {
-            "/Maps/centcomm.yml",
+            //CrystallEdge Map replacement
 
-            //CrystallEdge z-levels
-            "/Maps/_CP14/comoss_d.yml"
-            //CrystallEdge z-levels end
+            //CrystallEdge Map replacement end
         };
 
         private static readonly string[] DoNotMapWhitelist =
         {
-            "/Maps/centcomm.yml",
-            "/Maps/Shuttles/cargo.yml",
-            "/Maps/Shuttles/emergency.yml",
-            "/Maps/Shuttles/infiltrator.yml",
+            //CrystallEdge Map replacement
+            "/Maps/_CP14/dev_map.yml",
+            //CrystallEdge Map replacement end
         };
 
         private static readonly string[] GameMaps =
         {
             //CrystallEdge Map replacement
             "Dev",
-            "CentComm",
-            "MeteorArena",
-
-            //CrystallEdge maps
             "Comoss",
             "Factoria",
             //CrystallEdge Map replacement end
