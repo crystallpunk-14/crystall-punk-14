@@ -1,3 +1,4 @@
+using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
@@ -15,7 +16,7 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
         var targetEntity = args.Target.Value;
 
         var throwing = entManager.System<ThrowingSystem>();
-        var xfom = entManager.System<SharedTransformSystem>();
+        var xform = entManager.System<SharedTransformSystem>();
 
         if (!entManager.TryGetComponent<TransformComponent>(args.User, out var userTransform))
             return;
@@ -23,8 +24,15 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
         if (!entManager.TryGetComponent<TransformComponent>(targetEntity, out var targetTransform))
             return;
 
-        var worldPos = xfom.GetWorldPosition(args.User.Value);
-        var foo = xfom.GetWorldPosition(args.Target.Value) - worldPos;
+        var worldPos = xform.GetWorldPosition(args.User.Value);
+        var foo = xform.GetWorldPosition(args.Target.Value) - worldPos;
+
+        if (entManager.TryGetComponent<EmbeddableProjectileComponent>(targetEntity, out var embeddable))
+        {
+            var projectile = entManager.System<SharedProjectileSystem>();
+
+            projectile.EmbedDetach(targetEntity, embeddable);
+        }
 
         throwing.TryThrow(targetEntity, foo * 2.5f, ThrowPower, args.User, doSpin: true);
     }

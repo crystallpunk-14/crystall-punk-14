@@ -5,7 +5,8 @@ using Content.Server.Station.Systems;
 using Content.Shared.Maps;
 using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 
 namespace Content.Server._CP14.ZLevels.EntitySystems;
@@ -60,10 +61,9 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
                 continue;
             }
 
-            var path = level.Path.ToString();
-            if (path is null)
+            if (level.Path is null)
             {
-                Log.Error($"path {path} for CP14StationZLevelsSystem at level {map} don't exist!");
+                Log.Error($"path {level.Path.ToString()} for CP14StationZLevelsSystem at level {map} don't exist!");
                 continue;
             }
 
@@ -72,9 +72,8 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
             member.Station = ent;
 
             Log.Info($"Created map {mapId} for CP14StationZLevelsSystem at level {map}");
-            var options = new MapLoadOptions { LoadMap = true };
 
-            if (!_mapLoader.TryLoad(mapId, path, out var grids, options))
+            if (!_mapLoader.TryLoadMap(level.Path.Value, out var mapEnt, out var grids))
             {
                 Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {map}!");
                 Del(mapUid);

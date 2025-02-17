@@ -1,7 +1,7 @@
 - type: gameMap
   id: MeteorArena
   mapName: Meteor Arena
-  mapPath: /Maps/_CP14/meteor-arena.yml
+  mapPath: /Maps/Nonstations/meteor-arena.yml
   minPlayers: 0
   stations:
     Arena:
@@ -11,4 +11,4 @@
           mapNameTemplate: "Meteor Arena"
         - type: StationJobs
           availableJobs:
-            CP14Adventurer: [ -1, -1 ]
+            Passenger: [ -1, -1 ]

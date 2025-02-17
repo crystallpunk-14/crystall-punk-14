@@ -52,7 +52,8 @@
   parent: CP14ClothingShoesBase
   id: CP14ClothingShoesArtifactFlightboots
   name: flight boots
-  suffix: Artifact, DO NOT MAP
+  categories: [ DoNotMap ]
+  suffix: Artifact
   description: Enchanted boots that allow their wearer to walk through the air a short distance from the ground. It looks extremely spectacular!
   components:
   - type: Sprite
@@ -68,7 +69,8 @@
   parent: CP14ClothingShoesBase
   id: CP14ClothingShoesArtifactSpeedboots
   name: hermes boots
-  suffix: Artifact, DO NOT MAP
+  categories: [ DoNotMap ]
+  suffix: Artifact
   description: Enchanted boots that allow their wearer to walk through the air a short distance from the ground. It looks extremely spectacular!
   components:
   - type: Sprite
