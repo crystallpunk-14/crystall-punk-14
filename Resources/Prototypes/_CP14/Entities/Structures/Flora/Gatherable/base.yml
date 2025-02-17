@@ -8,6 +8,7 @@
     snapCardinals: true
     drawdepth: FloorTiles
   - type: Transform
+  - type: InteractionOutline
   - type: Physics
     canCollide: false
     bodyType: Static
@@ -69,7 +70,6 @@
   parent: CP14GatherableBase
   abstract: true
   components:
-  - type: InteractionOutline
   - type: Appearance
   - type: CP14PlantVisuals
     growthSteps: 5

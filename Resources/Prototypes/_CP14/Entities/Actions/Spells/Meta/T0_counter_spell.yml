@@ -1,6 +1,6 @@
 - type: entity
   id: CP14ActionSpellCounterSpell
-  name: counter spell
+  name: Counter spell
   description: By affecting the magical energy itself, you can interrupt the cast of someone else's spell.
   components:
   - type: Sprite
