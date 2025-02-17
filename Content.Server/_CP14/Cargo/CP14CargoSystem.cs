@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server._CP14.Currency;
 using Content.Server._CP14.RoundRemoveShuttle;
 using Content.Server.Shuttles.Systems;
@@ -13,6 +14,7 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -87,14 +89,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         if (!Deleted(station.Comp.Shuttle))
             return;
 
-        var tradepostMap = _mapManager.CreateMap();
-
-        if (!_loader.TryLoad(tradepostMap, station.Comp.ShuttlePath.ToString(), out var shuttleUids))
+        if (!_loader.TryLoadMap(station.Comp.ShuttlePath, out var tradepostMap, out var shuttleUids))
             return;
 
-        var shuttle =  shuttleUids[0];
+
+        var shuttle =  shuttleUids.First();
         station.Comp.Shuttle = shuttle;
-        station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
+        station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap.Value.Comp.MapId);
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle.Value);
         travelingStoreShipComp.Station = station;
 

@@ -68,7 +68,7 @@
   parent: MarkerBase
   id: CP14SpawnerDemiplaneLootT2
   name: Demiplane T2 Loot
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: Sprite
     layers:
