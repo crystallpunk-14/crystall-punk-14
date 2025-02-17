@@ -10,6 +10,9 @@
   reactants:
     CP14BloodFlowerSap:
       amount: 10
+    Water:
+      amount: 1
+      catalyst: true
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -50
@@ -27,6 +30,9 @@
   reactants:
     CP14YellowDayflinPulp:
       amount: 10
+    Water:
+      amount: 1
+      catalyst: true
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -50
@@ -44,6 +50,9 @@
   reactants:
     CP14BlueAmanita:
       amount: 10
+    Water:
+      amount: 1
+      catalyst: true
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -50
