@@ -46,9 +46,9 @@
   parent: CP14ClothingBeltQuiver
   id: CP14ClothingBeltQuiverCrossbolt
   categories: [ ForkFiltered ]
-  suffix: Full. Crossbolt
+  suffix: Full. Iron. Crossbolt
   components:
   - type: StorageFill
     contents:
-      - id: CP14Crossbolt
+      - id: CP14CrossboltIron
         amount: 32
