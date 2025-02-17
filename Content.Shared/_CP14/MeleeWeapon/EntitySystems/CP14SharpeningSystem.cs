@@ -127,7 +127,12 @@ public sealed class CP14SharpeningSystem : EntitySystem
 
     private void OnGetMeleeDamage(Entity<CP14SharpenedComponent> sharpened, ref GetMeleeDamageEvent args)
     {
-        args.Damage *= sharpened.Comp.Sharpness;
+        var slashDamage = args.Damage.DamageDict.GetValueOrDefault("Slash");
+        var piercingDamage = args.Damage.DamageDict.GetValueOrDefault("Piercing");
+
+        args.Damage.DamageDict["Slash"] = slashDamage * sharpened.Comp.Sharpness;
+        args.Damage.DamageDict["Piercing"] = piercingDamage * sharpened.Comp.Sharpness;
+        args.Damage.DamageDict["Blunt"] = (slashDamage + piercingDamage) / 2 * (1f - sharpened.Comp.Sharpness);
     }
 
 }
