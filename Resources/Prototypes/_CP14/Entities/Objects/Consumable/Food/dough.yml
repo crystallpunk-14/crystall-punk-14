@@ -126,9 +126,13 @@
           Quantity: 5.2
         - ReagentId: Protein
           Quantity: 0.5
-  - type: SliceableFood
-    count: 2
-    slice: CP14FoodBreadBunSlice
+  - type: Butcherable
+    butcherDelay: 1
+    spawned:
+      - id: CP14FoodBreadBunBottom
+        amount: 1
+      - id: CP14FoodBreadBunTop
+        amount: 1
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -136,13 +140,36 @@
 
 - type: entity
   parent: CP14FoodDoughMedium
-  id: CP14FoodBreadBunSlice
-  name: bread bun slice
-  description: it's like regular bread, only smaller and funnier. And cut in half
+  id: CP14FoodBreadBunBottom
+  name: botton bread bun
+  description: It's like regular bread, only smaller and funnier. And cut in half.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/dough.rsi
     state: bun_cooked_slice_bottom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4 # 1/2 bun
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.6
+        - ReagentId: Protein
+          Quantity: 0.25
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  parent: CP14FoodDoughMedium
+  id: CP14FoodBreadBunTop
+  name: top bread bun
+  description: It's like regular bread, only smaller and funnier. And cut in half.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/dough.rsi
+    state: bun_cooked_slice_top
   - type: SolutionContainerManager
     solutions:
       food:
