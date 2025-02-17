@@ -78,6 +78,7 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
 
             Log.Info($"Created map {mapEnt.Value.Comp.MapId} for CP14StationZLevelsSystem at level {map}");
 
+            _map.InitializeMap(mapEnt.Value.Comp.MapId);
             var member = EnsureComp<StationMemberComponent>(mapEnt.Value);
             member.Station = ent;
 
