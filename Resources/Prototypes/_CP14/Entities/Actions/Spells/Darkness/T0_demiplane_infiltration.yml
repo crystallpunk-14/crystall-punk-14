@@ -7,7 +7,7 @@
     sprite: _CP14/Effects/Magic/spells_icons.rsi
     state: rift_arrow
   - type: CP14MagicEffectManaCost
-    manaCost: 50
+    manaCost: 25
   - type: CP14MagicEffect
     magicType: Darkness
     telegraphyEffects:
@@ -37,7 +37,7 @@
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 50
       castDelay: 5
-      entityDistance: 3
+      distanceThreshold: 3
       breakOnMove: true
 
 - type: entity

@@ -20,6 +20,10 @@
     - !type:RoleTimeRequirement
       role: CP14JobAdventurer
       time: 7200 # 2 hours
+    - !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
 
 - type: startingGear
   id: CP14GuildmasterGear

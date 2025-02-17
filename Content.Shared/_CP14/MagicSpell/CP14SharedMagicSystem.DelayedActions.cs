@@ -19,19 +19,19 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedEntityTargetActionDoAfterEvent>(OnDelayedEntityTargetDoAfter);
     }
 
-    private bool TryStartDelayedAction(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer)
+    private bool TryStartDelayedAction(ICP14DelayedMagicEffect delayedEffect, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid? target, EntityUid performer)
     {
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             return false;
 
         var fromItem = action.Comp.SpellStorage is not null;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, MathF.Max(delayedEffect.CastDelay, 0.3f), doAfter, action, used: action.Comp.SpellStorage)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, MathF.Max(delayedEffect.CastDelay, 0.3f), doAfter, action, used: action.Comp.SpellStorage, target: target)
         {
             BreakOnMove = delayedEffect.BreakOnMove,
             BreakOnDamage = delayedEffect.BreakOnDamage,
             Hidden = delayedEffect.Hidden,
-            DistanceThreshold = 100f,
+            DistanceThreshold = delayedEffect.DistanceThreshold,
             CancelDuplicate = true,
             BlockDuplicate = true,
             BreakOnDropItem = fromItem,
@@ -61,17 +61,22 @@ public abstract partial class CP14SharedMagicSystem
         if (!CanCastSpell(action, performer))
             return;
 
+        // event may return an empty entity with id = 0, which causes bugs
+        var _target = target;
+        if (_target is not null && _target.Value.Id == 0)
+            _target = null;
+
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             _doAfter.Cancel(action.Comp.ActiveDoAfter);
         else
         {
-            if (TryStartDelayedAction(delayedEffect, doAfter, action, performer))
+            if (TryStartDelayedAction(delayedEffect, doAfter, action, _target, performer))
             {
                 var evStart = new CP14StartCastMagicEffectEvent(performer);
                 RaiseLocalEvent(action, ref evStart);
 
                 var spellArgs =
-                    new CP14SpellEffectBaseArgs(performer, action.Comp.SpellStorage, target, worldTarget);
+                    new CP14SpellEffectBaseArgs(performer, action.Comp.SpellStorage, _target, worldTarget);
 
                 CastTelegraphy(action, spellArgs);
             }

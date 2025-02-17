@@ -23,6 +23,21 @@
       ]
     },
     {
+      "name": "circle_increase",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
       "name": "particles_down",
       "delays": [
         [

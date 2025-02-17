@@ -139,3 +139,69 @@
     count: 1
   result: CP14Arrow
   resultCount: 4
+
+- type: CP14Recipe
+  id: CP14CrayonWhite
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+  - !type:ProtoIdResource
+    protoId: CP14CrystalShardBase
+  result: CP14CrayonWhite
+
+- type: CP14Recipe
+  id: CP14CrayonRed
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  result: CP14CrayonRed
+
+- type: CP14Recipe
+  id: CP14CrayonBlue
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  result: CP14CrayonBlue
+
+- type: CP14Recipe
+  id: CP14CrayonYellow
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: CP14DyeYellow
+  result: CP14CrayonYellow
+
+- type: CP14Recipe
+  id: CP14CrayonGreen
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: CP14DyeGreen
+  result: CP14CrayonGreen
+
+- type: CP14Recipe
+  id: CP14CrayonPurple
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: CP14DyePurple
+  result: CP14CrayonPurple

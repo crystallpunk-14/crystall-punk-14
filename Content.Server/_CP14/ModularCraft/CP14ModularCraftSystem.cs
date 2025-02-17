@@ -119,16 +119,19 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             if (!_proto.TryIndex(partProto, out var partIndexed))
                 continue;
 
-            if (partIndexed.TargetSlot is null)
+            if (partIndexed.Slots.Count == 0)
                 continue;
 
-            if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
-                continue;
-
-            if (TryAddPartToSlot(start, part, partProto, partIndexed.TargetSlot.Value))
+            foreach (var slot in partIndexed.Slots)
             {
-                QueueDel(part);
-                return true;
+                if (!start.Comp.FreeSlots.Contains(slot))
+                    continue;
+
+                if (TryAddPartToSlot(start, part, partProto, slot))
+                {
+                    QueueDel(part);
+                    return true;
+                }
             }
         }
 
@@ -141,13 +144,18 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!_proto.TryIndex(partProto, out var partIndexed))
             return false;
 
-        if (partIndexed.TargetSlot is null)
+        if (partIndexed.Slots.Count == 0)
             return false;
 
-        if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
-            return false;
+        foreach (var slot in partIndexed.Slots)
+        {
+            if (!start.Comp.FreeSlots.Contains(slot))
+                continue;
 
-        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot.Value);
+            return TryAddPartToSlot(start, null, partProto, slot);
+        }
+
+        return false;
     }
 
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,

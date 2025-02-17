@@ -43,6 +43,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         base.Initialize();
         InitializeDelayedActions();
         InitializeToggleableActions();
+        InitializeInstantActions();
         InitializeChecks();
         InitializeSlowdown();
 
@@ -52,7 +53,25 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
         SubscribeLocalEvent<CP14MagicEffectComponent, ComponentShutdown>(OnMagicEffectShutdown);
 
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14StartCastMagicEffectEvent>(OnStartCast);
+        SubscribeLocalEvent<CP14MagicEffectComponent, CP14EndCastMagicEffectEvent>(OnEndCast);
+
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
+    }
+
+    private void OnStartCast(Entity<CP14MagicEffectComponent> ent, ref CP14StartCastMagicEffectEvent args)
+    {
+        var caster = EnsureComp<CP14MagicCasterComponent>(args.Performer);
+
+        caster.CastedSpells.Add(ent);
+    }
+
+    private void OnEndCast(Entity<CP14MagicEffectComponent> ent, ref CP14EndCastMagicEffectEvent args)
+    {
+        if (TryComp<CP14MagicCasterComponent>(args.Performer, out var caster))
+        {
+            caster.CastedSpells.Remove(ent);
+        }
     }
 
     public override void Update(float frameTime)

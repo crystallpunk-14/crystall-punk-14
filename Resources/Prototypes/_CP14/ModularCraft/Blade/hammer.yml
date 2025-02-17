@@ -43,10 +43,14 @@
     storedOffsetBonus: 0, 5
   - !type:EditDamageableModifier # How you can break a hammer?
     multiplier: 0.8
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronHammer
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   modifiers:
@@ -57,7 +61,8 @@
 
 - type: modularPart
   id: BladeGoldHammer
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   color: "#ffaf47"
@@ -69,7 +74,8 @@
 
 - type: modularPart
   id: BladeCopperHammer
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   color: "#bd712f"
@@ -81,7 +87,8 @@
 
 - type: modularPart
   id: BladeMithrilHammer
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
   color: "#45d2a4"

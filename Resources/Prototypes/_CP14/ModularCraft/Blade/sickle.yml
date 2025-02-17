@@ -21,10 +21,12 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronSickle
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   modifiers:
@@ -35,7 +37,8 @@
 
 - type: modularPart
   id: BladeGoldSickle
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   color: "#ffaf47"
@@ -47,7 +50,8 @@
 
 - type: modularPart
   id: BladeCopperSickle
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   color: "#bd712f"
@@ -59,7 +63,8 @@
 
 - type: modularPart
   id: BladeMithrilSickle
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
   color: "#45d2a4"

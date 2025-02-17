@@ -17,6 +17,7 @@
     guides:
     - CP14_RU_Demiplanes
     - CP14_EN_Demiplanes
+  - type: CP14DemiplaneUsingOpen
 
 - type: entity
   id: CP14DemiplaneKeyT1
@@ -32,6 +33,9 @@
       Fun: 1
       Weather: 1
       MapLight: 1
+    selectedModifiers:
+    - EntryRoom
+    - Exit
 
 - type: entity
   id: CP14DemiplaneKeyT2
@@ -45,11 +49,14 @@
       color: red
   - type: CP14DemiplaneGeneratorData
     tiersContent:
-      1: 0.75 # We dont have lot t2 content now. In future, decrease to 0.33
+      1: 0.6 # We dont have lot t2 content now. In future, decrease to 0.33
       2: 1
     limits:
-      Reward: 1.5
-      Danger: 2
+      Reward: 1
+      Danger: 1
       Fun: 1
       Weather: 1
       MapLight: 1
+    selectedModifiers:
+    - EntryRoom
+    - Exit
