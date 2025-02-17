@@ -6,6 +6,8 @@
   children:
   - CP14_RU_BasicAlchemy
   - CP14_RU_Biological
+  - CP14_RU_Inorganic
+  - CP14_RU_Archaic
   filterEnabled: True
 
 - type: guideEntry
@@ -20,6 +22,20 @@
   id: CP14_RU_Biological
   name: Биологические растворы
   text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Biological.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Inorganic
+  name: Неорганический растворы
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Inorganic.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Archaic
+  name: Архаичный растворы
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Archaic.xml"
   filterEnabled: True
 
 - type: guideEntry
