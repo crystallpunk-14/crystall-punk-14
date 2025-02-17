@@ -55,6 +55,7 @@ namespace Content.IntegrationTests.Tests
         {
             //CrystallEdge Map replacement
             "Dev",
+            "MeteorArena",
             "Comoss",
             "Factoria",
             //CrystallEdge Map replacement end
