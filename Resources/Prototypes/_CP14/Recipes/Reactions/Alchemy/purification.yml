@@ -7,7 +7,7 @@
   priority: 3
   reactants:
     Water:
-      ammount: 0.25
+      amount: 0.25
     CP14BasicEffectPurification:
       amount: 0.25
     CP14BasicEffectImpurity:
@@ -21,7 +21,7 @@
   priority: 3
   reactants:
     Water:
-      ammount: 0.5
+      amount: 0.5
     CP14BasicEffectPurification:
       amount: 0.5
     CP14BasicEffectDamagePoison:
@@ -35,7 +35,7 @@
   priority: 3
   reactants:
     Water:
-      ammount: 0.25
+      amount: 0.25
     CP14BasicEffectPurification:
       amount: 0.25
     CP14BasicEffectVomit:

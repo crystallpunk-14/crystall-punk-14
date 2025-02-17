@@ -29,7 +29,7 @@
   minTemp: 600
   reactants:
     Water:
-      ammount: 0.5
+      amount: 0.5
     CP14GroundQuartz:
       amount: 0.5
   products:
@@ -43,7 +43,7 @@
   minTemp: 350
   reactants:
     Water:
-      ammount: 0.5
+      amount: 0.5
     CP14AlchemistSalt:
       amount: 0.5
   products:
@@ -54,7 +54,7 @@
   minTemp: 420 
   reactants:
     CP14SaltedWater:
-      ammount: 0.5
+      amount: 0.5
     CP14GroundQuartz:
       amount: 0.5
   products:
@@ -65,7 +65,7 @@
   minTemp: 580
   reactants:
     CP14BasicEffectHealPoison:
-      ammount: 0.25
+      amount: 0.25
     CP14AlchemistSalt:
       amount: 1
   products:

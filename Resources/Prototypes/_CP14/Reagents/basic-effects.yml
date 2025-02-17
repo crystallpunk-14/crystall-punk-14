@@ -31,7 +31,7 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
 
 - type: reagent
-  id: CP14BasicEffectSimplebase
+  id: CP14BasicEffectSimpleBase
   name: cp14-reagent-name-basic-simplebase
   desc: cp14-reagent-desc-basic-simplebase
   group: CP14BasicEffect
