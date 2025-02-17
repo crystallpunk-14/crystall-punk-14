@@ -1,5 +1,5 @@
 # Idea:
-# Alchemized Blood, and Essense, are states of blood processed for use in alchemical reactions.
+# Alchemized Blood, and Essence, are states of blood processed for use in alchemical reactions.
 
 #  Blood Alchemization
 
@@ -67,10 +67,10 @@
   - !type:CP14AffectSolutionTemperature
     addTemperature: -106
 
-# Essense Refining
+# Essence Refining
 
 - type: reaction
-  id: CP14HumanEssenseRefinement
+  id: CP14HumanEssenceRefinement
   minTemp: 510
   priority: 2
   reactants:
@@ -81,14 +81,14 @@
     CP14AlchemistSalt:
       amount: 0.25
   products:
-    CP14Essense: 1
+    CP14Essence: 1
     CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14TieflingEssenseRefinement
+  id: CP14TieflingEssenceRefinement
   minTemp: 550
   priority: 2
   reactants:
@@ -99,14 +99,14 @@
     CP14AlchemistSalt:
       amount: 0.25
   products:
-    CP14EssenseTiefling: 1
+    CP14EssenceTiefling: 1
     CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -160
 
 - type: reaction
-  id: CP14ElfEssenseRefinement
+  id: CP14ElfEssenceRefinement
   minTemp: 510
   priority: 2
   reactants:
@@ -117,14 +117,14 @@
     CP14AlchemistSalt:
       amount: 0.25
   products:
-    CP14EssenseElf: 1
+    CP14EssenceElf: 1
     CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14GoblinEssenseRefinement
+  id: CP14GoblinEssenceRefinement
   minTemp: 500
   priority: 2
   reactants:
@@ -135,7 +135,7 @@
     CP14AlchemistSalt:
       amount: 0.25
   products:
-    CP14EssenseGoblin: 1
+    CP14EssenceGoblin: 1
     CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature

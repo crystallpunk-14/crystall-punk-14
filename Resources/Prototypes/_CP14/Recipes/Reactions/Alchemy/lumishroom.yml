@@ -23,7 +23,7 @@
   minTemp: 600
   reactants:
     CP14LumiMushroom:
-      ammount: 1
+      amount: 1
     CP14AlchemistSalt:
       amount: 0.5
   products:
