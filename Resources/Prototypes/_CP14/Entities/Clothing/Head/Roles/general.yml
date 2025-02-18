@@ -151,3 +151,14 @@
     sprite: _CP14/Clothing/Head/Roles/General/christmas_hat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/christmas_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadHuntersHat
+  name: hunter's hat
+  description: A headdress revered by hunters on undead.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
