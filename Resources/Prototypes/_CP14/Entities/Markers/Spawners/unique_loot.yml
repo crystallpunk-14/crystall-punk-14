@@ -2,8 +2,7 @@
   name: random artifact spawner
   id: CP14SpawnUniqueArtifact
   parent: MarkerBase
-  suffix: Unique, DO NOT MAP
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: CP14UniqueLootSpawner
   - type: Sprite
