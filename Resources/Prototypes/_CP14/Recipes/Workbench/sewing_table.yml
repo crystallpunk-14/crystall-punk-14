@@ -219,6 +219,22 @@
   result: CP14ClothingHeadBeretBlack
 
 - type: CP14Recipe
+  id: CP14ClothingHeadHuntersHat
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlack
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: ClothingSewing
+  result: CP14ClothingHeadHuntersHat
+
+- type: CP14Recipe
   id: CP14ClothingHeadBandanaWhite
   tag: CP14RecipeSewing
   craftTime: 2

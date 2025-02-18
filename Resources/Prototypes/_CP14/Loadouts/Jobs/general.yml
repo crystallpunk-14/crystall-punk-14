@@ -161,6 +161,7 @@
   - CP14ClothingHeadBeretYellow
   - CP14ClothingHeadBeretBlue
   - CP14ClothingHeadBeretBlack
+  - CP14ClothingHeadHuntersHat
   - CP14ClothingHeadBandanaWhite
   - CP14ClothingHeadBandanaYellow
 
@@ -203,6 +204,11 @@
   id: CP14ClothingHeadBeretBlack
   equipment:
     head: CP14ClothingHeadBeretBlack
+
+- type: loadout
+  id: CP14ClothingHeadHuntersHat
+  equipment:
+    head: CP14ClothingHeadHuntersHat
 
 - type: loadout
   id: CP14ClothingHeadBandanaWhite
