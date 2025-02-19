@@ -13,12 +13,24 @@ namespace Content.Server.Procedural;
 public sealed partial class DungeonSystem
 {
     // Temporary caches.
+    private readonly HashSet<EntityUid> _entitySet = new();
     private readonly List<DungeonRoomPrototype> _availableRooms = new();
 
     /// <summary>
-    /// Gets a random dungeon room matching the specified area and whitelist.
+    /// Gets a random dungeon room matching the specified area, whitelist and size.
     /// </summary>
-    public DungeonRoomPrototype? GetRoomPrototype(Random random, EntityWhitelist? whitelist = null, Vector2i? size = null)
+    public DungeonRoomPrototype? GetRoomPrototype(Vector2i size, Random random, EntityWhitelist? whitelist = null)
+    {
+        return GetRoomPrototype(random, whitelist, minSize: size, maxSize: size);
+    }
+
+    /// <summary>
+    /// Gets a random dungeon room matching the specified area and whitelist and size range
+    /// </summary>
+    public DungeonRoomPrototype? GetRoomPrototype(Random random,
+        EntityWhitelist? whitelist = null,
+        Vector2i? minSize = null,
+        Vector2i? maxSize = null)
     {
         // Can never be true.
         if (whitelist is { Tags: null })
@@ -30,7 +42,10 @@ public sealed partial class DungeonSystem
 
         foreach (var proto in _prototype.EnumeratePrototypes<DungeonRoomPrototype>())
         {
-            if (size is not null && proto.Size != size)
+            if (minSize is not null && (proto.Size.X < minSize.Value.X || proto.Size.Y < minSize.Value.Y))
+                continue;
+
+            if (maxSize is not null && (proto.Size.X > maxSize.Value.X || proto.Size.Y > maxSize.Value.Y))
                 continue;
 
             if (whitelist == null)
@@ -112,9 +127,30 @@ public sealed partial class DungeonSystem
         var templateGrid = Comp<MapGridComponent>(templateMapUid);
         var roomDimensions = room.Size;
 
-        var entitySet = new HashSet<EntityUid>();
-
         var finalRoomRotation = roomTransform.Rotation();
+
+        // go BRRNNTTT on existing stuff
+        if (clearExisting)
+        {
+            var gridBounds = new Box2(Vector2.Transform(-room.Size/2, roomTransform), Vector2.Transform(room.Size/2, roomTransform));
+            _entitySet.Clear();
+            // Polygon skin moment
+            gridBounds = gridBounds.Enlarged(-0.05f);
+            _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, _entitySet, LookupFlags.Uncontained);
+
+            foreach (var templateEnt in _entitySet)
+            {
+                Del(templateEnt);
+            }
+
+            if (TryComp(gridUid, out DecalGridComponent? decalGrid))
+            {
+                foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
+                {
+                    _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
+                }
+            }
+        }
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;

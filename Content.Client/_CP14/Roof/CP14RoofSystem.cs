@@ -1,5 +1,6 @@
 using Content.Shared._CP14.Roof;
 using Content.Shared.Ghost;
+using Content.Shared.Light.EntitySystems;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Console;
@@ -11,10 +12,12 @@ public sealed class CP14RoofSystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly SharedRoofSystem _roof = default!;
 
     private bool _roofVisible = true;
     public bool DisabledByCommand = false;
 
+    private EntityQuery<MapGridComponent> _gridQuery;
     private EntityQuery<GhostComponent> _ghostQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -34,8 +37,11 @@ public sealed class CP14RoofSystem : EntitySystem
 
         _ghostQuery = GetEntityQuery<GhostComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
+        _gridQuery = GetEntityQuery<MapGridComponent>();
 
         SubscribeLocalEvent<CP14RoofComponent, ComponentStartup>(RoofStartup);
+        SubscribeLocalEvent<CP14RoofComponent, ComponentRemove>(RoofRemove);
+
         SubscribeLocalEvent<GhostComponent, CP14ToggleRoofVisibilityAction>(OnToggleRoof);
     }
 
@@ -93,6 +99,25 @@ public sealed class CP14RoofSystem : EntitySystem
             return;
 
         UpdateVisibility(ent, sprite);
+
+        //var xform = Transform(ent);
+//
+        //if (_gridQuery.TryComp(xform.GridUid, out var grid))
+        //{
+        //    var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
+        //    _roof.SetRoof((xform.GridUid.Value, grid, null), index, true);
+        //}
+    }
+
+    private void RoofRemove(Entity<CP14RoofComponent> ent, ref ComponentRemove args)
+    {
+        //var xform = Transform(ent);
+//
+        //if (_gridQuery.TryComp(xform.GridUid, out var grid))
+        //{
+        //    var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
+        //    _roof.SetRoof((xform.GridUid.Value, grid, null), index, false);
+        //}
     }
 
     private void UpdateVisibility(Entity<CP14RoofComponent> ent, SpriteComponent sprite)

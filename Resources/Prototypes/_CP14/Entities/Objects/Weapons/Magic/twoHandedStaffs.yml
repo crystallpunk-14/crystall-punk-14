@@ -77,7 +77,8 @@
   parent: CP14MagicHealingStaff
   name: magic shadow staff
   description: A long, half-tech, half-magic stick designed to convert magical energy into shadow spells.
-  suffix: Artifact, DO NOT MAP
+  categories: [ DoNotMap ]
+  suffix: Artifact
   components:
   - type: CP14MagicManacostModify
     modifiers:

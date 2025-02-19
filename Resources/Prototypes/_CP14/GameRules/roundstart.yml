@@ -30,27 +30,6 @@
       - CP14PersonalCurrencyCollectObjectiveGroup
       CP14Innkeeper:
       - CP14PersonalCurrencyCollectObjectiveGroup
-      
-
-- type: entity
-  id: CP14SociopathsRule
-  parent: CP14BaseGameRule
-  components:
-  - type: GameRule
-    minPlayers: 2 #Increase when bigger online
-  - type: AntagSelection
-    definitions:
-    - prefRoles: [ CP14Sociopath ]
-      startingGear: CP14SociopathGear
-      max: 8
-      playerRatio: 10
-      lateJoinAdditional: true
-      mindRoles:
-      - CP14MindRoleSociopath
-      briefing:
-        text: cp14-roles-antag-sociopath-briefing
-        color: "#cc3010"
-        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
 
 # event schedulers
 
