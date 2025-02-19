@@ -67,7 +67,7 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
+      - id: CP14FoodMeatHuman # Replace it with silva meat, heh.
         amount: 5
   - type: CP14MagicEnergyPhotosynthesis # Silva special feature
   - type: CP14SpellStorage
