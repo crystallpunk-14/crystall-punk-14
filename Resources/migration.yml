@@ -253,6 +253,10 @@ CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 C14IronCabinet: CP14IronCabinet
 C14IronCabinetCargo: CP14IronCabinetCargo
 
+#2025-17-02
+CP14Crossbolt: CP14CrossboltIron
+
+
 # <---> CrystallEdge migration zone end
 
 
