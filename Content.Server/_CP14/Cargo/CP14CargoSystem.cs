@@ -89,20 +89,21 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         if (!Deleted(station.Comp.Shuttle))
             return;
 
-        if (!_loader.TryLoadMap(station.Comp.ShuttlePath, out var tradepostMap, out var shuttleUids))
+        var tradepostMap = _mapManager.CreateMap();
+
+        if (!_loader.TryLoadGrid(tradepostMap ,station.Comp.ShuttlePath, out var shuttle))
             return;
 
 
-        var shuttle =  shuttleUids.First();
         station.Comp.Shuttle = shuttle;
-        station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap.Value.Comp.MapId);
+        station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle.Value);
         travelingStoreShipComp.Station = station;
 
-        var member = EnsureComp<StationMemberComponent>(shuttle);
+        var member = EnsureComp<StationMemberComponent>(shuttle.Value);
         member.Station = station;
 
-        var roundRemover = EnsureComp<CP14RoundRemoveShuttleComponent>(shuttle);
+        var roundRemover = EnsureComp<CP14RoundRemoveShuttleComponent>(shuttle.Value);
         roundRemover.Station = station;
 
         station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);

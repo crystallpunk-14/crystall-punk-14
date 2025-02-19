@@ -1,3 +1,0 @@
-cp14-roles-antag-sociopath-name = Sociopath
-cp14-roles-antag-sociopath-objective = You don't understand morality or empathy. As long as other people are constrained by them, you don't have to worry about exactly how to accomplish your tasks.
-cp14-roles-antag-sociopath-briefing = From birth you don't know what emotion, morality or empathy are. You only know that other people are constrained by them, and this prevents them from being effective. You have certain goals - and you can strive to accomplish them by ANY means.
