@@ -2,7 +2,7 @@
 
 - type: reagent
   id: CP14AlchemizedBlood
-  group: CP14Biological
+  group: CP14Arcane
   name: cp14-reagent-name-alchemizedblood
   desc: cp14-reagent-desc-alchemizedblood
   flavor: CP14Bitterly
@@ -24,7 +24,7 @@
 
 - type: reagent
   id: CP14AlchemizedBloodTiefling
-  group: CP14Biological
+  group: CP14Arcane
   desc: cp14-reagent-desc-alchemizedblood-tiefling
   name: cp14-reagent-name-alchemizedblood-tiefling
   flavor: CP14Bitterly
@@ -48,7 +48,7 @@
 
 - type: reagent
   id: CP14AlchemizedBloodElf
-  group: CP14Biological
+  group: CP14Arcane
   desc: cp14-reagent-desc-alchemizedblood-elf
   name: cp14-reagent-name-alchemizedblood-elf
   flavor: CP14Bitterly
@@ -70,7 +70,7 @@
 
 - type: reagent
   id: CP14AlchemizedBloodGoblin
-  group: CP14Biological
+  group: CP14Arcane
   desc: cp14-reagent-desc-alchemizedblood-goblin
   name: cp14-reagent-name-alchemizedblood-goblin
   flavor: CP14Bitterly
@@ -96,7 +96,7 @@
 
 - type: reagent
   id: CP14Essence
-  group: CP14Biological
+  group: CP14Arcane
   name: cp14-reagent-name-essence
   desc: cp14-reagent-desc-essence
   flavor: CP14Magic
@@ -118,7 +118,7 @@
 
 - type: reagent
   id: CP14EssenceTiefling
-  group: CP14Biological
+  group: CP14Arcane
   desc: cp14-reagent-desc-essence-tiefling
   name: cp14-reagent-name-essence-tiefling
   flavor: CP14Magic
@@ -142,7 +142,7 @@
 
 - type: reagent
   id: CP14EssenceElf
-  group: CP14Biological
+  group: CP14Arcane
   name: cp14-reagent-name-essence-elf
   desc: cp14-reagent-desc-essence-elf
   flavor: CP14Magic
@@ -164,7 +164,7 @@
 
 - type: reagent
   id: CP14EssenceGoblin
-  group: CP14Biological
+  group: CP14Arcane
   name: cp14-reagent-name-essence-goblin
   desc: cp14-reagent-desc-essence-goblin
   flavor: CP14Magic

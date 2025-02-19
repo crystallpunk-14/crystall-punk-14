@@ -23,7 +23,7 @@ cp14-reagent-name-basic-damage-cold = Ice solution
 cp14-reagent-desc-basic-damage-cold = Dangerous substance that causes severe frostbite.
 
 cp14-reagent-name-basic-heal-poison = Antidote solution
-cp14-reagent-desc-basic-heal-poison = Effective as a good antidote.
+cp14-reagent-desc-basic-heal-poison = An effective antidote used for treating most common poisons.
 
 cp14-reagent-name-basic-damage-poison = Poisonous solution
 cp14-reagent-desc-basic-damage-poison = Capable of causing extreme indigestion, ulcers, intoxication, and in sufficient dosage to cause death.

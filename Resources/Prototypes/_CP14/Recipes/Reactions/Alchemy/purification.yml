@@ -12,6 +12,8 @@
       amount: 0.25
     CP14BasicEffectImpurity:
       amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -200
@@ -26,6 +28,8 @@
       amount: 0.5
     CP14BasicEffectDamagePoison:
       amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -230
@@ -40,6 +44,8 @@
       amount: 0.25
     CP14BasicEffectVomit:
       amount: 1
+  products:
+    CP14BasicEffectEmpty: 0.1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -200

@@ -33,7 +33,7 @@
     CP14BasicEffectImpurity: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -116
+    addTemperature: -156
 
 - type: reaction
   id: CP14ElfBloodAlchemization
@@ -103,7 +103,7 @@
     CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
-    addTemperature: -160
+    addTemperature: -190
 
 - type: reaction
   id: CP14ElfEssenceRefinement

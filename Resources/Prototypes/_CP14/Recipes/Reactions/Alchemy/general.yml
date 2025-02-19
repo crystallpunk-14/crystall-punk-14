@@ -57,6 +57,9 @@
       amount: 0.5
   products:
     CP14SaltedWater: 0.5
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -350
 
 - type: reaction
   id: CP14SimpleSolvent

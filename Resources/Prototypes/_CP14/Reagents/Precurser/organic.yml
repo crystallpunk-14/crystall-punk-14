@@ -4,7 +4,7 @@
 
 - type: reagent
   id: CP14BloodFlowerSap
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-bloodflowersap
   desc: cp14-reagent-desc-bloodflowersap
   flavor: CP14Metallic
@@ -28,7 +28,7 @@
 
 - type: reagent
   id: CP14YellowDayflinPulp
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-yellow-dayflin-pulp
   desc: cp14-reagent-desc-yellow-dayflin-pulp
   flavor: CP14Sweetly
@@ -38,7 +38,7 @@
 
 - type: reagent
   id: CP14AirLily
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-air-lily-juice
   desc: cp14-reagent-desc-air-lily-juice
   flavor: fizzy
@@ -66,7 +66,7 @@
 
 - type: reagent
   id: CP14AgaricMushroom
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-agaric-shroom
   desc: cp14-reagent-desc-agaric-shroom
   flavor: CP14Bitterly
@@ -93,7 +93,7 @@
 
 - type: reagent
   id: CP14LumiMushroom
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-lumi-shroom
   desc: cp14-reagent-desc-lumi-shroom
   flavor: CP14Vomit
@@ -120,7 +120,7 @@
 
 - type: reagent
   id: CP14BlueAmanita
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-blue-amanita
   desc: cp14-reagent-desc-blue-amanita
   flavor: CP14Magic
@@ -142,7 +142,7 @@
 
 - type: reagent
   id: CP14WildSageSap
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-wild-sage-sap
   desc: cp14-reagent-desc-wild-sage-sap
   flavor: CP14Sweetly
