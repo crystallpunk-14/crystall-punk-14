@@ -48,6 +48,7 @@ namespace Content.IntegrationTests.Tests
         {
             //CrystallEdge Map replacement
             "/Maps/_CP14/dev_map.yml",
+            "/Maps/_CP14/Dungeon/artifact_room.yml",
             //CrystallEdge Map replacement end
             "/Maps/centcomm.yml",
             "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
