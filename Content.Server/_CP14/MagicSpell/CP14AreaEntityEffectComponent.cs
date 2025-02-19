@@ -1,11 +1,10 @@
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.Whitelist;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.MagicSpell;
 
 /// <summary>
-///
+/// Component that allows an entity to apply effects to other entities in an area.
 /// </summary>
 [RegisterComponent]
 public sealed partial class CP14AreaEntityEffectComponent : Component

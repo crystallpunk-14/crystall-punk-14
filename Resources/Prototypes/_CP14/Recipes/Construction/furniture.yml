@@ -18,24 +18,6 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden barrel
-  description: The simplest design for storing liquids.
-  id: CP14BaseBarrel
-  graph: CP14BaseBarrel
-  startNode: start
-  targetNode: CP14BaseBarrel
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/Barrels/barrel.rsi
-    state: barrel
-  objectType: Structure
-  placementMode: PlaceFree
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
   name: Wooden table
   description: A simple table made of boards.
   id: CP14TableWooden
@@ -82,24 +64,6 @@
   icon:
     sprite: _CP14/Structures/Furniture/Tables/wood_counter.rsi
     state: full
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Bonfire
-  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
-  id: CP14Bonfire
-  graph: CP14Bonfire
-  startNode: start
-  targetNode: CP14Bonfire
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/bonfire.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -165,78 +129,6 @@
   conditions:
     - !type:TileNotBlocked
     - !type:CP14WallRequired
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Wooden chest
-  description: a simple wooden chest for easy storage of junk.
-  id: CP14WoodenChest
-  graph: CP14WoodenChest
-  startNode: start
-  targetNode: CP14WoodenChest
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
-    state: icon
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Workbench
-  description: Table for the production of various basic tools.
-  id: CP14Workbench
-  graph: CP14Workbench
-  startNode: start
-  targetNode: CP14Workbench
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: workbench
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Cooking table
-  description: A table to work with food. Time to cook!
-  id: CP14WorkbenchCooking
-  graph: CP14WorkbenchCooking
-  startNode: start
-  targetNode: CP14WorkbenchCooking
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: cooking_table
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Sewing table
-  description: A table with embroidery tools to create different clothing and materials.
-  id: CP14WorkbenchSewing
-  graph: CP14WorkbenchSewing
-  startNode: start
-  targetNode: CP14WorkbenchSewing
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: sewing_table
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true
@@ -314,16 +206,35 @@
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14WoodenDoor
-  name: wooden door
-  description: Not the most solid construction, but it's better than nothing.
-  graph: CP14WoodenDoor
+  id: CP14WoodenBed
+  name: Wooden bed
+  description: Comfortable bed for sleeping.
+  graph: CP14WoodenBed
   startNode: start
-  targetNode: CP14WoodenDoor
+  targetNode: CP14WoodenBed
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Doors/wooden_door.rsi
-    state: closed
+    sprite: _CP14/Structures/Furniture/wooden_bed.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: Wood bench
+  description: A bench carved from wood, a comfortable part of the interior designed for sitting and relaxing.
+  id: CP14BenchWood
+  graph: CP14BenchWood
+  startNode: start
+  targetNode: CP14BenchWood
+  category: construction-category-furniture
+  icon:
+    sprite: _CP14/Structures/Furniture/bench.rsi
+    state: wooden
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -333,60 +244,60 @@
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14WoodenDoorMirrored
-  name: wooden door (mirrored)
-  description: Not the most solid construction, but it's better than nothing.
-  graph: CP14WoodenDoor
+  name: Curtains white
+  description: Two hanging sheets made of white fabric.
+  id: CP14CurtainsWhite
+  graph: CP14Curtains
   startNode: start
-  targetNode: CP14WoodenDoorMirrored
+  targetNode: CP14CurtainsWhite
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Doors/wooden_door.rsi
-    state: closed_mirrored
+    sprite: _CP14/Structures/Furniture/curtains.rsi
+    state: white_closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
   canBuildInImpassable: false
   conditions:
-    - !type:TileNotBlocked
+    - !type:EmptyOrWindowValidInTile 
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14WoodenDoorWindowed
-  name: wooden windowed door
-  description: Not the most solid construction, but it's better than nothing.
-  graph: CP14WoodenDoor
+  name: Curtains blue
+  description: Two hanging sheets made of blue fabric.
+  id: CP14CurtainsBlue
+  graph: CP14Curtains
   startNode: start
-  targetNode: CP14WoodenDoorWindowed
+  targetNode: CP14CurtainsBlue
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Doors/wooden_windowed_door.rsi
-    state: closed
+    sprite: _CP14/Structures/Furniture/curtains.rsi
+    state: blue_closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
   canBuildInImpassable: false
   conditions:
-    - !type:TileNotBlocked
+    - !type:EmptyOrWindowValidInTile 
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14WoodenDoorWindowedMirrored
-  name: wooden windowed door
-  description: Not the most solid construction, but it's better than nothing.
-  graph: CP14WoodenDoor
+  name: Curtains red
+  description: Two hanging sheets made of red fabric.
+  id: CP14CurtainsRed
+  graph: CP14Curtains
   startNode: start
-  targetNode: CP14WoodenDoorWindowedMirrored
+  targetNode: CP14CurtainsRed
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Doors/wooden_windowed_door.rsi
-    state: closed_mirrored
+    sprite: _CP14/Structures/Furniture/curtains.rsi
+    state: red_closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
   canBuildInImpassable: false
   conditions:
-    - !type:TileNotBlocked
+    - !type:EmptyOrWindowValidInTile 
 
 # Small fence
 

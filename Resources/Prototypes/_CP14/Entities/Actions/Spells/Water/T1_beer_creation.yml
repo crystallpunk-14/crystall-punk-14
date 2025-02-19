@@ -62,7 +62,7 @@
       drop:
         maxVol: 10
         reagents:
-        - ReagentId: Beer
+        - ReagentId: CP14DwarfBeer
           Quantity: 10
 
 - type: entity

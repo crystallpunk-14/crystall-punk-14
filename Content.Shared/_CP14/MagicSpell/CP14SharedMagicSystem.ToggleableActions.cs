@@ -10,9 +10,9 @@ public abstract partial class CP14SharedMagicSystem
 {
     private void InitializeToggleableActions()
     {
-        SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnInstantAction);
-        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
-        SubscribeLocalEvent<CP14ToggleableEntityTargetActionEvent>(OnEntityTargetAction);
+        SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnToggleableInstantAction);
+        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
+        SubscribeLocalEvent<CP14ToggleableEntityTargetActionEvent>(OnToggleableEntityTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableInstantActionDoAfterEvent>(OnToggleableInstantActionDoAfterEvent);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableEntityWorldTargetActionDoAfterEvent>(OnToggleableEntityWorldTargetActionDoAfterEvent);
@@ -67,17 +67,22 @@ public abstract partial class CP14SharedMagicSystem
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             return;
 
+        // event may return an empty entity with id = 0, which causes bugs
+        var _target = entityTarget;
+        if (_target is not null && _target.Value.Id == 0)
+            _target = null;
+
         var evStart = new CP14StartCastMagicEffectEvent(performer);
         RaiseLocalEvent(action, ref evStart);
 
         var fromItem = action.Comp.SpellStorage is not null;
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage, target: _target)
         {
             BreakOnMove = toggleable.BreakOnMove,
             BreakOnDamage = toggleable.BreakOnDamage,
             Hidden = toggleable.Hidden,
-            DistanceThreshold = 100f,
+            DistanceThreshold = toggleable.DistanceThreshold,
             CancelDuplicate = true,
             BlockDuplicate = true,
             BreakOnDropItem = fromItem,
@@ -92,7 +97,7 @@ public abstract partial class CP14SharedMagicSystem
             toggled.DoAfterId = doAfterId;
             toggled.Cooldown = toggleable.Cooldown;
 
-            toggled.EntityTarget = entityTarget;
+            toggled.EntityTarget = _target;
             toggled.WorldTarget = worldTarget;
 
             action.Comp.ActiveDoAfter = doAfterId;
@@ -123,7 +128,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Instant action used from hotkey event
     /// </summary>
-    private void OnInstantAction(CP14ToggleableInstantActionEvent args)
+    private void OnToggleableInstantAction(CP14ToggleableInstantActionEvent args)
     {
         if (args.Handled)
             return;
@@ -143,7 +148,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Target action used from hotkey event
     /// </summary>
-    private void OnEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
+    private void OnToggleableEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
     {
         if (args.Handled)
             return;
@@ -166,7 +171,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Entity target action used from hotkey event
     /// </summary>
-    private void OnEntityTargetAction(CP14ToggleableEntityTargetActionEvent args)
+    private void OnToggleableEntityTargetAction(CP14ToggleableEntityTargetActionEvent args)
     {
         if (args.Handled)
             return;

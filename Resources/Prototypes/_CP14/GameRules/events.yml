@@ -8,6 +8,16 @@
       min:  10
       max:  20
 
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14BaseStationEventLongDelay
+  abstract: true
+  components:
+  - type: GameRule
+    delay:
+      min:  40
+      max:  60
+
 - type: entityTable
   id: CP14BasicCalmEventsTable
   table: !type:AllSelector
@@ -16,6 +26,9 @@
     - id: CP14HydrasSpawn
     - id: CP14MosquitoSpawn
     - id: CP14RabbitsSpawn
+    - id: CP14FrogsSpawn
+    - id: CP14UnstableDemiplaneT1
+    - id: CP14UnstableDemiplaneT2
 
 - type: entity
   parent: CP14BaseStationEventShortDelay
@@ -69,7 +82,7 @@
       prob: 0.08
 
 - type: entity
-  parent: CP14BaseStationEventShortDelay
+  parent: CP14BaseStationEventLongDelay
   id: CP14RabbitsSpawn
   components:
   - type: StationEvent
@@ -84,3 +97,54 @@
     entries:
     - id: CP14MobGroupSpawnerRabbits
       prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14FrogsSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-demiplane-outbreak
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 10
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: CP14MobGroupSpawnerFrogs
+      prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventShortDelay
+  id: CP14UnstableDemiplaneT1
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-unstable-demiplane
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    specialEntries:
+    - id: CP14AutoDemiplaneKeyT1
+      prob: 0.001
+
+- type: entity
+  parent: CP14BaseStationEventShortDelay
+  id: CP14UnstableDemiplaneT2
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-unstable-demiplane
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 30
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    specialEntries:
+    - id: CP14AutoDemiplaneKeyT2
+      prob: 0.001

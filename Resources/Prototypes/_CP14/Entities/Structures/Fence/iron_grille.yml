@@ -49,6 +49,9 @@
         - MidImpassable
         - LowImpassable
         - WallLayer
+  - type: Construction
+    graph: CP14FenceIronGrilleStraight
+    node: CP14FenceIronGrilleStraight
 
 - type: entity
   parent:
@@ -88,3 +91,6 @@
       params:
         variation: 0.03
         volume: -5
+  - type: Construction
+    graph: CP14FenceIronGrilleGate
+    node: CP14FenceIronGrilleGate

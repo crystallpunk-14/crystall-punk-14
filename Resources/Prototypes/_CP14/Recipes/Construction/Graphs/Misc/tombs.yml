@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: CP14BaseTombstone
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14BaseTombstone
+          steps:
+            - material: CP14Stone
+              amount: 5
+              doAfter: 2
+    - node: CP14BaseTombstone
+      entity: CP14BaseTombstone

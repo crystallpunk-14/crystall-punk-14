@@ -37,6 +37,8 @@
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollPlantGrowth
+        - id: CP14SpellScrollCounterSpell
+        - id: CP14SpellScrollMagicalAcceleration
       - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
       - id: CP14ScrapCopper
@@ -56,9 +58,6 @@
         - id: CP14VialTinyLumiMushroom
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
-      - id: CP14DemiplaneKeyT1
-        weight: 2
-      - id: CP14DemiplaneKeyT2
       # Rare standard village crates loot
       - !type:NestedSelector
         tableId: CP14StationCrateLoot
@@ -69,7 +68,7 @@
   parent: MarkerBase
   id: CP14SpawnerDemiplaneLootT2
   name: Demiplane T2 Loot
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: Sprite
     layers:
@@ -109,8 +108,6 @@
       children:
       - !type:GroupSelector # remove this when players can create their own magic items
         children:
-        - id: CP14ClothingRingIceShards
-        - id: CP14ClothingRingFireball
-        - id: CP14ClothingRingFlashLight
-        - id: CP14MagicHealingStaff
         - id: CP14SpellScrollResurrection
+        - id: CP14ClothingRingIceShards
+        - id: CP14ClothingRingFlashLight

@@ -48,3 +48,6 @@
         layer:
         - MidImpassable
         - HighImpassable
+  - type: Construction
+    graph: CP14FenceIronGrilleWindowStraight
+    node: CP14FenceIronGrilleWindowStraight

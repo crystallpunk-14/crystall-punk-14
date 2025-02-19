@@ -1,0 +1,13 @@
+- type: entity
+  name: random artifact spawner
+  id: CP14SpawnUniqueArtifact
+  parent: MarkerBase
+  categories: [ ForkFiltered, DoNotMap ]
+  components:
+  - type: CP14UniqueLootSpawner
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Clothing/Shoes/flightboots.rsi
+      state: icon

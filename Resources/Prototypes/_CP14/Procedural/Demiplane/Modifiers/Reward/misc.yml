@@ -14,20 +14,6 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-#- type: cp14DemiplaneModifier
-#  id: Ruins
-#  tier: 1
-#  name: cp14-modifier-ruins
-#  generationWeight: 2
-#  categories:
-#    Reward: 0.35
-#  layers:
-#    - !type:OreDunGen
-#      entity: ##CP14DemiplanRuinsRoomSpawner
-#      count: 5
-#      minGroupSize: 1
-#      maxGroupSize: 1
-
 - type: cp14DemiplaneModifier
   id: Rabbits
   tiers:
@@ -41,10 +27,6 @@
   - CP14DemiplanePeacefulAnimals
   layers:
     - !type:OreDunGen
-      tileMask: 
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
       entity: CP14MobRabbit
       count: 3
       minGroupSize: 2
@@ -63,10 +45,6 @@
   - CP14DemiplanePeacefulAnimals
   layers:
     - !type:OreDunGen
-      tileMask: 
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
       entity: CP14MobBoar
       count: 3
       minGroupSize: 2

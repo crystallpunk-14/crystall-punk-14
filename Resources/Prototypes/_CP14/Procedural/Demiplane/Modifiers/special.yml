@@ -1,0 +1,39 @@
+- type: cp14DemiplaneModifier
+  id: UnstableDemiplaneCrystal
+  layers:
+    - !type:OreDunGen
+      entity: CP14DangerousMobSpawnCrystal
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: EntryRoom
+  generationProb: 0
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplanEnterRoomMarker
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: Exit
+  generationProb: 0
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplanePassway
+      count: 2
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: TimeLimit10
+  generationProb: 0.33
+  tiers:
+    - 1
+    - 2
+  name: cp14-modifier-time-limit-10
+  components:
+    - type: CP14DemiplaneTimedDestruction
+      timeToDestruction: 600 # 10 minutes

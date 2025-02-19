@@ -68,10 +68,31 @@
   id: CP14Dye
 
 - type: Tag
+  id: CP14DyeRed
+
+- type: Tag
+  id: CP14DyeYellow
+
+- type: Tag
+  id: CP14DyeBlue
+
+- type: Tag
+  id: CP14DyeGreen
+
+- type: Tag
+  id: CP14DyePurple
+
+- type: Tag
+  id: CP14DyeBlack
+
+- type: Tag
   id: CP14Meat
 
 - type: Tag
   id: CP14MeatSlice
+
+- type: Tag
+  id: CP14RawMeatSlice
 
 - type: Tag
   id: CP14Torch
@@ -84,3 +105,9 @@
 
 - type: Tag
   id: CP14PlatePie
+
+- type: Tag
+  id: CP14FarmFood
+
+- type: Tag
+  id: CP14AlchemicalHerbals

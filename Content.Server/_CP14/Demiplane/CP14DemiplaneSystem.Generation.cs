@@ -31,7 +31,7 @@ public sealed partial class CP14DemiplaneSystem
     private void InitGeneration()
     {
         SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, MapInitEvent>(GeneratorMapInit);
-        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, UseInHandEvent>(GeneratorUsedInHand);
+        SubscribeLocalEvent<CP14DemiplaneUsingOpenComponent, UseInHandEvent>(GeneratorUsedInHand);
 
         SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
     }
@@ -137,18 +137,20 @@ public sealed partial class CP14DemiplaneSystem
         _expeditionQueue.EnqueueJob(job);
     }
 
-    private void GeneratorUsedInHand(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref UseInHandEvent args)
+    private void UseGenerator(Entity<CP14DemiplaneGeneratorDataComponent> generator, EntityUid? user = null)
     {
         //block the opening of demiplanes after the end of a round
         if (_gameTicker.RunLevel != GameRunLevel.InRound)
         {
-            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-end-round"), generator, args.User);
+            if (user is not null)
+                _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-end-round"), generator, user.Value);
             return;
         }
         //We cant open demiplane in another demiplane or if parent is not Map
-        if (_demiplaneQuery.HasComp(Transform(generator).MapUid) || !HasComp<MapGridComponent>(_transform.GetParentUid(args.User)))
+        if (_demiplaneQuery.HasComp(Transform(generator).MapUid))
         {
-            _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, args.User);
+            if (user is not null)
+                _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, user.Value);
             return;
         }
 
@@ -177,20 +179,27 @@ public sealed partial class CP14DemiplaneSystem
         //Admin log needed
         EnsureComp<CP14DemiplaneDestroyWithoutStabilizationComponent>(demiplane.Value);
 
-        //Ура, щиткод и магические переменные!
-        var tempRift = EntityManager.Spawn("CP14DemiplaneTimedRadiusPassway");
-        var tempRift2 = EntityManager.Spawn("CP14DemiplanRiftCore");
-        _transform.SetCoordinates(tempRift, Transform(args.User).Coordinates);
-        _transform.SetCoordinates(tempRift2, Transform(args.User).Coordinates);
-
-        var connection = EnsureComp<CP14DemiplaneRiftComponent>(tempRift);
-        var connection2 = EnsureComp<CP14DemiplaneRiftComponent>(tempRift2);
-        AddDemiplaneRandomExitPoint(demiplane.Value, (tempRift, connection));
-        AddDemiplaneRandomExitPoint(demiplane.Value, (tempRift2, connection2));
+        //Rifts spawning
+        foreach (var rift in generator.Comp.AutoRifts)
+        {
+            var spawnedRift = EntityManager.Spawn(rift);
+            _transform.SetCoordinates(spawnedRift, Transform(generator).Coordinates);
+            _transform.AttachToGridOrMap(spawnedRift);
+            var connection = EnsureComp<CP14DemiplaneRiftComponent>(spawnedRift);
+            AddDemiplaneRandomExitPoint(demiplane.Value, (spawnedRift, connection));
+        }
 
 #if !DEBUG
         QueueDel(generator); //wtf its crash debug build!
 #endif
+    }
+
+    private void GeneratorUsedInHand(Entity<CP14DemiplaneUsingOpenComponent> ent, ref UseInHandEvent args)
+    {
+        if (!TryComp<CP14DemiplaneGeneratorDataComponent>(ent, out var generator))
+            return;
+
+        UseGenerator((ent, generator), args.User);
     }
 
     private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
@@ -239,26 +248,13 @@ public sealed partial class CP14DemiplaneSystem
         foreach (var modifier in _proto.EnumeratePrototypes<CP14DemiplaneModifierPrototype>())
         {
             var passed = true;
-            //Tag blacklist filter
-            foreach (var configTag in selectedConfig.Tags)
-            {
-                if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
-                {
-                    passed = false;
-                    break;
-                }
-            }
 
-            //Tag required filter
+            //Random prob filter
             if (passed)
             {
-                foreach (var reqTag in modifier.RequiredTags)
+                if (!_random.Prob(modifier.GenerationProb))
                 {
-                    if (!selectedConfig.Tags.Contains(reqTag))
-                    {
-                        passed = false;
-                        break;
-                    }
+                    passed = false;
                 }
             }
 
@@ -297,12 +293,26 @@ public sealed partial class CP14DemiplaneSystem
                 }
             }
 
-            //Random prob filter
-            if (passed)
+            //Tag blacklist filter
+            foreach (var configTag in selectedConfig.Tags)
             {
-                if (!_random.Prob(modifier.GenerationProb))
+                if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
                 {
                     passed = false;
+                    break;
+                }
+            }
+
+            //Tag required filter
+            if (passed)
+            {
+                foreach (var reqTag in modifier.RequiredTags)
+                {
+                    if (!selectedConfig.Tags.Contains(reqTag))
+                    {
+                        passed = false;
+                        break;
+                    }
                 }
             }
 
@@ -358,6 +368,9 @@ public sealed partial class CP14DemiplaneSystem
         //Scenario generation
 
         //ETC generation
+
+        if (HasComp<CP14DemiplaneAutoOpenComponent>(generator))
+            UseGenerator(generator);
     }
 
 

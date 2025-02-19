@@ -42,6 +42,8 @@ namespace Content.Server.Connection
         /// <param name="duration">How long the bypass should last for.</param>
         void AddTemporaryConnectBypass(NetUserId user, TimeSpan duration);
 
+        Task<bool> HavePrivilegedJoin(NetUserId userId); //CP14 Join Queue
+
         void Update();
     }
 
@@ -363,5 +365,17 @@ namespace Content.Server.Connection
             await _db.AssignUserIdAsync(name, assigned);
             return assigned;
         }
+
+        //CP14 Join Queue
+        public async Task<bool> HavePrivilegedJoin(NetUserId userId)
+        {
+            var adminBypass = _cfg.GetCVar(CCVars.AdminBypassMaxPlayers) && await _db.GetAdminDataForAsync(userId) != null;
+            //var havePriorityJoin = _sponsors
+            var wasInGame = EntitySystem.TryGet<GameTicker>(out var ticker) &&
+                            ticker.PlayerGameStatuses.TryGetValue(userId, out var status) &&
+                            status == PlayerGameStatus.JoinedGame;
+            return adminBypass || wasInGame;
+        }
+        //CP14 Join Queue end
     }
 }

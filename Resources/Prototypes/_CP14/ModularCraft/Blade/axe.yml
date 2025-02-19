@@ -26,10 +26,14 @@
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronAxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   modifiers:
@@ -40,7 +44,8 @@
 
 - type: modularPart
   id: BladeGoldAxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   color: "#ffaf47"
@@ -52,7 +57,8 @@
 
 - type: modularPart
   id: BladeCopperAxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   color: "#bd712f"
@@ -64,7 +70,8 @@
 
 - type: modularPart
   id: BladeMithrilAxe
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
   color: "#45d2a4"

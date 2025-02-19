@@ -89,5 +89,4 @@
       cooldown: 0.5
       castDelay: 0.2
       breakOnMove: false
-      entityDistance: 1000
       hidden: true

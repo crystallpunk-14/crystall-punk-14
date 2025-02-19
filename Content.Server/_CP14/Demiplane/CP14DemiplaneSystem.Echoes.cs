@@ -5,8 +5,6 @@ namespace Content.Server._CP14.Demiplane;
 
 public sealed partial class CP14DemiplaneSystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-
     private void InitEchoes()
     {
         SubscribeLocalEvent<EntitySpokeEvent>(OnSpeak);
@@ -27,7 +25,7 @@ public sealed partial class CP14DemiplaneSystem
         _chat.TrySendInGameICMessage(exit,
             ev.Message,
             InGameICChatType.Whisper,
-            ChatTransmitRange.NoGhosts,
+            ChatTransmitRange.HideChat,
             nameOverride: Loc.GetString("cp14-demiplane-echoes"),
             hideLog: true);
     }

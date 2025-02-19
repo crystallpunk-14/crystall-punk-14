@@ -1,0 +1,12 @@
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingMerchantWaistCoat
+  name: "merchant's waistcoat"
+  description: Stylish waistcoat made of expensive leather. A special uniform for merchants that makes customers feel like beggars.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/Merchant/vest_merchant.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/Merchant/vest_merchant.rsi

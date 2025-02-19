@@ -7,7 +7,7 @@ namespace Content.Shared._CP14.MagicManacostModify;
 /// <summary>
 /// Changes the manacost of spells for the bearer
 /// </summary>
-[RegisterComponent, Access(typeof(CP14MagicManacostModifySystem))]
+[RegisterComponent]
 public sealed partial class CP14MagicManacostModifyComponent : Component
 {
     [DataField]

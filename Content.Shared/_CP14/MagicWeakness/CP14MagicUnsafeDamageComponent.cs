@@ -8,7 +8,7 @@ namespace Content.Shared._CP14.MagicWeakness;
 /// imposes damage on excessive use of magic
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(CP14MagicWeaknessSystem))]
+[Access(typeof(CP14SharedMagicWeaknessSystem))]
 public sealed partial class CP14MagicUnsafeDamageComponent : Component
 {
     [DataField]

@@ -10,3 +10,5 @@ cp14-round-end = The demiplane link crystal was completely discharged. The conne
 
 
 cp14-demiplane-echoes = Echoes of voices
+
+cp14-demiplane-countdown = The Demiplane is beginning to collapse! You have {$duration} minutes to escape!

@@ -24,12 +24,13 @@
         statusLifetime: 2
       - !type:AdjustTemperature
         amount: -12000
+      - !type:ExtinguishReaction
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Vos adepto frigus..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePlantFreeze
   - type: EntityTargetAction
-    range: 10
+    range: 5
     interactOnMiss: false
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
@@ -38,8 +39,9 @@
       sprite: _CP14/Effects/Magic/spells_icons.rsi
       state: freeze
     event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 15
-      castTime: 10
+      cooldown: 5
+      castTime: 3
+      distanceThreshold: 5
       breakOnMove: false
 
 - type: entity
