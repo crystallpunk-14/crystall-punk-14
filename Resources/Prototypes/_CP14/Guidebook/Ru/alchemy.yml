@@ -5,9 +5,9 @@
   text: "/ServerInfo/_CP14/Guidebook_RU/Alchemy.xml"
   children:
   - CP14_RU_BasicAlchemy
-  - CP14_RU_Biological
+  - CP14_RU_Organic
   - CP14_RU_Inorganic
-  - CP14_RU_Archaic
+  - CP14_RU_Arcane
   filterEnabled: True
 
 - type: guideEntry
@@ -19,9 +19,9 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Biological
-  name: Биологические растворы
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Biological.xml"
+  id: CP14_RU_Organic
+  name: Органические решения
+  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Organic.xml"
   filterEnabled: True
 
 - type: guideEntry
@@ -33,9 +33,9 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Archaic
-  name: Архаичный растворы
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Archaic.xml"
+  id: CP14_RU_Arcane
+  name: Алхимизированные решения
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Arcane.xml"
   filterEnabled: True
 
 - type: guideEntry
