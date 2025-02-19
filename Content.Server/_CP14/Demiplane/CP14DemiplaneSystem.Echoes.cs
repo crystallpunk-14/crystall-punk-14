@@ -25,7 +25,7 @@ public sealed partial class CP14DemiplaneSystem
         _chat.TrySendInGameICMessage(exit,
             ev.Message,
             InGameICChatType.Whisper,
-            ChatTransmitRange.NoGhosts,
+            ChatTransmitRange.HideChat,
             nameOverride: Loc.GetString("cp14-demiplane-echoes"),
             hideLog: true);
     }

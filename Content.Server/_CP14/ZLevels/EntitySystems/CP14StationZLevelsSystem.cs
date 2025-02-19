@@ -67,19 +67,22 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
                 continue;
             }
 
-            var mapUid = _map.CreateMap(out var mapId);
-            var member = EnsureComp<StationMemberComponent>(mapUid);
-            member.Station = ent;
+            //var mapUid = _map.CreateMap(out var mapId);
 
-            Log.Info($"Created map {mapId} for CP14StationZLevelsSystem at level {map}");
 
             if (!_mapLoader.TryLoadMap(level.Path.Value, out var mapEnt, out var grids))
             {
                 Log.Error($"Failed to load map for CP14StationZLevelsSystem at level {map}!");
-                Del(mapUid);
                 continue;
             }
-            ent.Comp.LevelEntities.Add(mapId, map);
+
+            Log.Info($"Created map {mapEnt.Value.Comp.MapId} for CP14StationZLevelsSystem at level {map}");
+
+            _map.InitializeMap(mapEnt.Value.Comp.MapId);
+            var member = EnsureComp<StationMemberComponent>(mapEnt.Value);
+            member.Station = ent;
+
+            ent.Comp.LevelEntities.Add(mapEnt.Value.Comp.MapId, map);
         }
     }
 
