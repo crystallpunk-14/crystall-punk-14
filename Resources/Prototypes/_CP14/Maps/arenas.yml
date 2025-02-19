@@ -11,4 +11,4 @@
           mapNameTemplate: "Meteor Arena"
         - type: StationJobs
           availableJobs:
-            Passenger: [ -1, -1 ]
+            CP14Adventurer: [ -1, -1 ]
