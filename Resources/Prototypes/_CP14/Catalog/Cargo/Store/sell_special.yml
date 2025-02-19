@@ -59,19 +59,6 @@
     count: 20
 
 - type: storePositionSell
-  id: BountyFloraMaterial
-  special: true
-  name: cp14-store-sell-special-flora-name
-  desc: cp14-store-sell-special-flora-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/flora.rsi
-    state: grass_material1
-  price: 200
-  service: !type:CP14SellStackService
-    stackId: CP14FloraMaterial
-    count: 15
-
-- type: storePositionSell
   id: BountySpellScroll
   special: true
   name: cp14-store-sell-special-spell-scroll-name
