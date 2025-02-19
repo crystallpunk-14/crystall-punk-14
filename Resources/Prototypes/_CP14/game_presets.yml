@@ -17,7 +17,6 @@
   showInVote: true
   cP14Allowed: true
   rules:
-    - CP14SociopathsRule
     - CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
 
