@@ -253,6 +253,10 @@ CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 C14IronCabinet: CP14IronCabinet
 C14IronCabinetCargo: CP14IronCabinetCargo
 
+#2025-16-02
+CP14Arrow: CP14ModularIronArrow
+CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiverIronArrow
+
 #2025-17-02
 CP14Crossbolt: CP14CrossboltIron
 

@@ -1,0 +1,88 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeTipBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: The tip on an arrow shaft, a well-finished little piece of metal.
+  components:
+  - type: Item
+    storedRotation: 0
+
+- type: entity
+  parent: CP14ModularBladeTipBase
+  id: CP14ModularTipIronArrow
+  name: iron tip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+    layers:
+    - state: icon
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - TipIronArrow
+  - type: CP14Material
+    materials:
+      CP14Iron: 2
+
+- type: entity
+  parent: CP14ModularBladeTipBase
+  id: CP14ModularTipGoldArrow
+  name: golden tip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - TipGoldArrow
+  - type: CP14Material
+    materials:
+      CP14Gold: 2
+
+- type: entity
+  parent: CP14ModularBladeTipBase
+  id: CP14ModularTipCopperArrow
+  name: copper tip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - TipCopperArrow
+  - type: CP14Material
+    materials:
+      CP14Copper: 2
+
+- type: entity
+  parent: CP14ModularBladeTipBase
+  id: CP14ModularTipMithrilArrow
+  name: mithril tip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - TipMithrilArrow
+  - type: CP14Material
+    materials:
+      CP14Mithril: 2
