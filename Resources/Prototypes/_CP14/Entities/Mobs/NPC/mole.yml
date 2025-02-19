@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobMonsterMole
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: predatory mole
   description: Hunts in the dark and loves the taste of meat and blood in its mouth.
   categories: [ ForkFiltered ]
