@@ -296,6 +296,7 @@
   - CP14ClothingCottonWhiteCollarDress
   - CP14ClothinGreenBeltDress
   - CP14ClothinGreenBeltDress2
+  - CP14ClothinGreenLightDress
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
   - CP14ClothingCottonYellowCollarDress
@@ -400,6 +401,11 @@
   id: CP14ClothinGreenBeltDress2
   equipment:
     shirt: CP14ClothinGreenBeltDress2
+
+- type: loadout
+  id: CP14ClothinGreenLightDress
+  equipment:
+    shirt: CP14ClothinGreenLightDress
 
 - type: loadout
   id: CP14ClothingShirtCottonYellow
