@@ -2102,7 +2102,7 @@ ent-CP14SeedTomato = семена помидоров
 
 ent-CP14HerbalBandage = травяной бинт
     .desc = Бинт для перевязки, сплетенная из травы. Не самая надежная и полезная вещь, но лучше, чем ничего.
-    .suffix = 10
+    .suffix = 5
 
 ent-CP14HerbalBandage1 = { ent-CP14HerbalBandage }
     .desc = { ent-CP14HerbalBandage.desc }
@@ -2110,7 +2110,7 @@ ent-CP14HerbalBandage1 = { ent-CP14HerbalBandage }
 
 ent-CP14Gauze = марля
     .desc = Марля из плотной ткани, чтобы предотвратить кровотечение.
-    .suffix = 10
+    .suffix = 5
 
 ent-CP14Gauze1 = { ent-CP14Gauze }
     .desc = { ent-CP14Gauze.desc }
