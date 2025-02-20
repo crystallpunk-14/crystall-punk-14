@@ -13,6 +13,7 @@
   - CP14ClothingCloakGreen
   - CP14ClothingCloakBlue
   - CP14ClothingCloakFurCoat
+  - CP14ClothingCloakInsulated
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -53,6 +54,11 @@
   id: CP14ClothingCloakFurCoat
   equipment:
     cloak: CP14ClothingCloakFurCoat
+
+- type: loadout
+  id: CP14ClothingCloakInsulated
+  equipment:
+    cloak: CP14ClothingCloakInsulated
 
 # OuterClothing
 
