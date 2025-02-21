@@ -74,3 +74,14 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakInsulated
+  name: insulated mantle
+  description: Winter is coming...
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/insulated_mantle.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/insulated_mantle.rsi

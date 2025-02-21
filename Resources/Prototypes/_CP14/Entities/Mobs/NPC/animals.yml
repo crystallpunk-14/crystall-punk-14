@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobRabbit
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: rabbit
   description: A little fluffy rabbit. I could eat it.
   categories: [ ForkFiltered ]
@@ -46,6 +46,9 @@
     thresholds:
       0: Alive
       30: Dead
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
   - type: CombatMode
   - type: MeleeWeapon
     angle: 0
@@ -79,7 +82,7 @@
 
 - type: entity
   id: CP14MobPig
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: pig
   description: An omnivorous and unpretentious animal that is sure to make juicy cuts of meat.
   categories: [ ForkFiltered ]
@@ -224,7 +227,7 @@
 
 - type: entity
   name: frog
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   id: CP14MobFrog
   description: Green and constantly jumping frog, and perhaps thanks to it mosquitoes have not completely filled the marshes.
   categories: [ ForkFiltered ]
