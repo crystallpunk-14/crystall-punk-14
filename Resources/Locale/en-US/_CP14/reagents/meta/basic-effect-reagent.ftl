@@ -13,6 +13,9 @@ cp14-reagent-desc-basic-heal-brute = Can heal all types of physical damage.
 cp14-reagent-name-basic-damage-brute = Ulcer solution
 cp14-reagent-desc-basic-damage-brute = If ingested, causes flesh eating and other mechanical injuries.
 
+cp14-reagent-name-basic-damage-heat = Incendiary solution
+cp14-reagent-desc-basic-damage-heat = Causes severe fire burns and even sets fire.
+
 cp14-reagent-name-basic-heal-heat = Soothing Solution
 cp14-reagent-desc-basic-heal-heat = Capable of healing most burns.
 

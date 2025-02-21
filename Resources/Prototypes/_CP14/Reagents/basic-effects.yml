@@ -50,15 +50,17 @@
   flavor: CP14Metallic
   color: "#e31010"
   physicalDesc: cp14-reagent-physical-desc-scarlet
+  worksOnTheDead: true
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:ModifyBleedAmount
         amount: -2
       - !type:HealthChange
         damage:
           groups:
-            Brute: -3
+            Brute: -6
 
 - type: reagent
   id: CP14BasicEffectDamageBrute
@@ -68,8 +70,10 @@
   flavor: CP14Stinging
   color: "#633223"
   physicalDesc: cp14-reagent-physical-desc-ferrous
+  worksOnTheDead: true
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
@@ -84,13 +88,37 @@
   flavor: CP14Stinging
   color: "#BF361E"
   physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Heat: -5
+            Heat: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageHeat
+  name: cp14-reagent-name-basic-damage-heat
+  desc: cp14-reagent-desc-basic-damage-heat
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#d4772a"
+  tileReactions:
+  - !type:CreateEntityTileReaction
+    entity: CP14Fire
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:FlammableReaction
+        multiplier: 1.5
+      - !type:AdjustTemperature
+        amount: 2000
+      - !type:Ignite
 
 - type: reagent
   id: CP14BasicEffectHealCold
@@ -100,13 +128,15 @@
   flavor: CP14Stinging
   color: "#a3511a"
   physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Cold: -5
+            Cold: -10
 
 - type: reagent
   id: CP14BasicEffectDamageCold
@@ -116,13 +146,15 @@
   flavor: CP14Stinging
   color: "#1a95a3"
   physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Cold: 5
+            Cold: 3
 
 - type: reagent
   id: CP14BasicEffectHealPoison
@@ -132,13 +164,15 @@
   flavor: CP14Bitterly
   color: "#82ba3d"
   physicalDesc: cp14-reagent-physical-desc-viscous
+  worksOnTheDead: true
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Poison: -6
+            Poison: -10
 
 - type: reagent
   id: CP14BasicEffectDamagePoison
@@ -148,13 +182,15 @@
   flavor: CP14Bitterly
   color: "#768551"
   physicalDesc: cp14-reagent-physical-desc-viscous
+  worksOnTheDead: true
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Poison: 6
+            Poison: 3
 
 - type: reagent
   id: CP14BasicEffectPurification
@@ -164,13 +200,15 @@
   flavor: CP14Salty
   color: "#977CB2"
   physicalDesc: cp14-reagent-physical-desc-grainy
+  worksOnTheDead: true
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Poison: -3
+            Poison: -4
       - !type:SatiateThirst
         factor: -2
 
@@ -181,15 +219,16 @@
   group: CP14BasicEffect
   flavor: fizzy
   color: "#e6f4f5"
+  worksOnTheDead: true
   physicalDesc: reagent-physical-desc-milky
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Asphyxiation: -8    
-            Bloodloss: -2
+            Asphyxiation: -10
 
 - type: reagent
   id: CP14BasicEffectDamageAirloss
@@ -198,14 +237,16 @@
   group: CP14BasicEffect
   flavor: horrible
   color: "#73091e"
+  worksOnTheDead: true
   physicalDesc: reagent-physical-desc-viscous
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
           types:
-            Asphyxiation: 10
+            Asphyxiation: 3
 
 - type: reagent
   id: CP14BasicEffectBloodRestore
@@ -214,12 +255,14 @@
   group: CP14BasicEffect
   flavor: CP14Metallic
   color: "#e31010"
+  worksOnTheDead: true
   physicalDesc: cp14-reagent-physical-desc-scarlet
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:ModifyBloodLevel
-        amount: 10
+        amount: 20
 
 - type: reagent
   id: CP14BasicEffectBloodAbsorption
@@ -228,9 +271,11 @@
   group: CP14BasicEffect
   flavor: CP14Metallic
   color: "#2b0e0b"
+  worksOnTheDead: true
   physicalDesc: cp14-reagent-physical-desc-scarlet
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:ModifyBloodLevel
         amount: -10
@@ -245,9 +290,10 @@
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Food:
+      metabolismRate: 0.05
       effects:
       - !type:SatiateHunger
-        factor: 6
+        factor: 15
 
 - type: reagent
   id: CP14BasicEffectSatiateThirst
@@ -259,9 +305,10 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Drink:
+      metabolismRate: 0.05
       effects:
       - !type:SatiateThirst
-        factor: 6
+        factor: 15
 
 - type: reagent
   id: CP14BasicEffectHealMana
@@ -273,9 +320,10 @@
   physicalDesc: cp14-reagent-physical-desc-iridescent
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:CP14ManaChange
-        manaDelta: 10
+        manaDelta: 20
 
 - type: reagent
   id: CP14BasicEffectDamageMana
@@ -287,9 +335,10 @@
   physicalDesc: cp14-reagent-physical-desc-iridescent
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:CP14ManaChange
-        manaDelta: -10
+        manaDelta: -20
 
 - type: reagent
   id: CP14BasicEffectUnstable
@@ -301,6 +350,7 @@
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Poison:
+      metabolismRate: 0.05
       effects:
       - !type:HealthChange
         damage:
@@ -317,10 +367,12 @@
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Poison:
+      metabolismRate: 0.1
       effects:
       - !type:MovespeedModifier
         walkSpeedModifier: 1.35
         sprintSpeedModifier: 1.35
+        statusLifetime: 1.5
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -335,10 +387,12 @@
   physicalDesc: cp14-reagent-physical-desc-viscous
   metabolisms:
     Poison:
+      metabolismRate: 0.1
       effects:
       - !type:MovespeedModifier
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
+        statusLifetime: 1.5
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -355,6 +409,7 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Narcotic:
+      metabolismRate: 0.05
       effects:
       - !type:GenericStatusEffect
         key: SeeingRainbows
@@ -373,6 +428,7 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Medicine:
+      metabolismRate: 0.05
       effects:
       - !type:Emote
         showInChat: false
@@ -389,6 +445,7 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Food:
+      metabolismRate: 0.05
       effects:
       - !type:ChemVomit
         probability: 0.25
@@ -403,6 +460,7 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Food:
+      metabolismRate: 0.05
       effects:
       - !type:Drunk
         boozePower: 15
@@ -417,5 +475,6 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
   metabolisms:
     Food:
+      metabolismRate: 0.05
       effects:
       - !type:Jitter
