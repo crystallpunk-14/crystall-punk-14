@@ -426,6 +426,18 @@
     layers:
       - state: cloth_1
         map: ["base"]
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: -3
+        Piercing: -3
+    bloodlossModifier: -10
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Appearance
   - type: Stack
     stackType: CP14Cloth

@@ -7,7 +7,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Small
+    size: Normal
   - type: Sprite
     sprite: _CP14/Objects/Specific/Medical/medical.rsi
     state: herbbandage_3
@@ -23,9 +23,10 @@
       - Biological
     damage:
       types:
-        Slash: -1
-        Piercing: -1
-    bloodlossModifier: -4
+        Slash: -2
+        Piercing: -2
+    bloodlossModifier: -6
+    delay: 2.5
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
@@ -58,7 +59,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Small
+    size: Normal
   - type: Sprite
     sprite: _CP14/Objects/Specific/Medical/medical.rsi
     state: bandage_3
@@ -74,9 +75,10 @@
       - Biological
     damage:
       types:
-        Slash: -4
-        Piercing: -4
-    bloodlossModifier: -10
+        Slash: -6
+        Piercing: -6
+    bloodlossModifier: -15
+    delay: 2
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
