@@ -1,20 +1,12 @@
 - type: entity
   id: CP14DemiplaneLinkCrystal
+  parent: BaseStructure
   categories: [ ForkFiltered ]
   name: demiplane link crystal
   description: Maintains communication with the demiplanes while charged. Causes mosnters from the demiplanes to attack the city. Once it is discharged, the game is over.
   suffix: ONE TO MAP
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
   components:
-  - type: Transform
-    anchored: true
   - type: SpriteFade
-  - type: Clickable
-  - type: Physics
-    bodyType: Static
   - type: Fixtures
     fixtures:
       fix1:
@@ -31,7 +23,7 @@
     - state: full
     - state: frame
     drawdepth: Mobs
-    offset: 0,0.9
+    offset: 0,0.8
   - type: PointLight
     enabled: true
     color: "#8f42ff"

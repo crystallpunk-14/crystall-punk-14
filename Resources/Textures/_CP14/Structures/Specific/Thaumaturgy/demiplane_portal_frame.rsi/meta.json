@@ -3,13 +3,12 @@
   "license": "All right reserved",
   "copyright": "Created by TheShuEd for CrystallEdge",
   "size": {
-    "x": 64,
-    "y": 96
+    "x": 32,
+    "y": 48
   },
   "states": [
     {
-      "name": "frame",
-      "directions": 4
+      "name": "frame"
     }
   ]
 }
