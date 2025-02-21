@@ -433,7 +433,7 @@
       types:
         Slash: -3
         Piercing: -3
-    bloodlossModifier: -10
+    bloodlossModifier: -8
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:

@@ -77,7 +77,7 @@
       types:
         Slash: -6
         Piercing: -6
-    bloodlossModifier: -15
+    bloodlossModifier: -10
     delay: 2
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
