@@ -7,7 +7,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Normal
+    size: Small
   - type: Sprite
     sprite: _CP14/Objects/Specific/Medical/medical.rsi
     state: herbbandage_3
@@ -58,7 +58,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Normal
+    size: Small
   - type: Sprite
     sprite: _CP14/Objects/Specific/Medical/medical.rsi
     state: bandage_3
