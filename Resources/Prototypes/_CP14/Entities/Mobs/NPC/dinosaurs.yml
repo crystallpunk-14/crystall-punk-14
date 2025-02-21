@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobDino
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: dino
   abstract: true
   components:

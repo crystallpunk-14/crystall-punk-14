@@ -1,0 +1,54 @@
+
+# Tip
+
+- type: CP14Recipe
+  id: CP14ModularTipIronArrow
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularTipIronArrow
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14ModularTipGoldArrow
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularTipGoldArrow
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14ModularTipCopperArrow
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularTipCopperArrow
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14ModularTipMithrilArrow
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularTipMithrilArrow
+  resultCount: 4

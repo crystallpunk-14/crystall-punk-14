@@ -78,6 +78,7 @@
       30: 0.4
   - type: StatusEffects
     allowed:
+    - Stun
     - KnockedDown
     - SlowedDown
     - Electrocution
