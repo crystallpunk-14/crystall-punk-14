@@ -26,3 +26,6 @@
         acts: ["Destruction"]
   - type: CP14SharpeningStone
     sharpnessHeal: 0.1
+  - type: Tag
+    tags:
+    - CP14SharpeningStone

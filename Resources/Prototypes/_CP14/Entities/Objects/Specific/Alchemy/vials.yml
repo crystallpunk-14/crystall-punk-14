@@ -51,6 +51,9 @@
     maxTransferAmount: 10
     transferAmount: 1
     toggleState: 1 # draw
+  - type: Tag
+    tags:
+    - CP14Vial
 
 - type: entity
   parent: CP14BaseVial
