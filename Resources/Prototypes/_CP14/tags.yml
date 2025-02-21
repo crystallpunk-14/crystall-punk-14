@@ -111,3 +111,18 @@
 
 - type: Tag
   id: CP14AlchemicalHerbals
+
+- type: Tag
+  id: CP14Lighter
+
+- type: Tag
+  id: CP14Scissors
+
+- type: Tag
+  id: CP14SharpeningStone
+
+- type: Tag
+  id: CP14Nail
+
+- type: Tag
+  id: CP14Vial

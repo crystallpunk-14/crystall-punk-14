@@ -1,0 +1,13 @@
+- type: entity
+  abstract: true
+  id: CP14ClothingBaseContainer
+  categories: [ ForkFiltered ]
+  components:
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface

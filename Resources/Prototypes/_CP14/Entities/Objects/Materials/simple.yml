@@ -345,6 +345,9 @@
     slipSound:
       path: /Audio/Effects/weak_hit2.ogg
     launchForwardsMultiplier: 0
+  - type: Tag
+    tags:
+    - CP14Nail
 
 - type: entity
   id: CP14Nail20

@@ -27,3 +27,6 @@
         Piercing: 7
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
+  - type: Tag
+    tags:
+    - CP14Scissors
