@@ -13,7 +13,7 @@
     CP14ChromiumSlime:
       amount: 1
   products:
-    CP14BasicEffectSimpleBase: 1
+    CP14BasicEffectEmpty: 1
   effects:
   - !type:CP14InverseEffect
     inversion:
