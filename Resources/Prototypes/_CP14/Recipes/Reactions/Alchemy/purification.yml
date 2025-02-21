@@ -1,0 +1,45 @@
+# T0 - T1
+
+# Cleansing salt needs to have 1-1 water to work, can't disolve right otherwise
+
+- type: reaction
+  id: CP14CleansingImpurity
+  priority: 3
+  reactants:
+    Water:
+      amount: 0.25
+    CP14BasicEffectPurification:
+      amount: 0.25
+    CP14BasicEffectImpurity:
+      amount: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -200
+
+- type: reaction
+  id: CP14CleansingPoison
+  priority: 3
+  reactants:
+    Water:
+      amount: 0.5
+    CP14BasicEffectPurification:
+      amount: 0.5
+    CP14BasicEffectDamagePoison:
+      amount: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -230
+
+- type: reaction
+  id: CP14CleansingVomit
+  priority: 3
+  reactants:
+    Water:
+      amount: 0.25
+    CP14BasicEffectPurification:
+      amount: 0.25
+    CP14BasicEffectVomit:
+      amount: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -200

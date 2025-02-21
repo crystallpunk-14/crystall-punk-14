@@ -1,18 +1,17 @@
-
 # Simple brewing
 
 - type: reaction
   id: CP14WildSageSapBrewing
-  minTemp: 500
+  minTemp: 530
   priority: 2
   reactants:
     CP14WildSageSap:
       amount: 1
-    CP14GroundQuartz:
+    CP14BasicEffectSimpleBase:
       amount: 1
   products:
     CP14BasicEffectEmpty: 0.75
-    CP14BasicEffectHealBrute: 0.5
+    CP14BasicEffectHealBrute: 0.25
     CP14BasicEffectEmoteCough: 0.25
   cp14RandomProducts:
   - CP14BasicEffectRainbow: 0.25
@@ -21,6 +20,8 @@
     CP14BasicEffectHealPoison: 0.25
   - CP14BasicEffectEmoteCough: 0.25
     CP14BasicEffectHealPoison: 0.25
+  - CP14BasicEffectImpurity: 0.25
+    CP14BasicEffectEmpty: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
