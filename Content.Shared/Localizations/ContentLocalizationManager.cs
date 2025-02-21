@@ -10,8 +10,8 @@ namespace Content.Shared.Localizations
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         // If you want to change your codebase's language, do it here.
-        //public const string Culture = "en-US";
-        public const string Culture = "ru-RU";
+        public const string Culture = "en-US";
+        //public const string Culture = "ru-RU";
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -29,9 +29,9 @@ namespace Content.Shared.Localizations
             var culture = new CultureInfo(Culture);
             _loc.LoadCulture(culture);
             // Uncomment for Ru localization
-            var fallbackCulture = new CultureInfo("en-US");
-            _loc.LoadCulture(fallbackCulture);
-            _loc.SetFallbackCluture(fallbackCulture);
+            //var fallbackCulture = new CultureInfo("en-US");
+            //_loc.LoadCulture(fallbackCulture);
+            //_loc.SetFallbackCluture(fallbackCulture);
             //
 
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
