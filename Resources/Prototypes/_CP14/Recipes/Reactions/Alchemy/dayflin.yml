@@ -37,3 +37,4 @@
   - CP14BasicEffectDamageMana: 0.5
   - CP14BasicEffectHealCold: 0.5
   - CP14BasicEffectSatiateThirst: 0.5
+  - CP14BasicEffectDamageHeat: 0.5

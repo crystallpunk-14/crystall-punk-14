@@ -22,6 +22,8 @@
     CP14BasicEffectHealPoison: 0.25
   - CP14BasicEffectImpurity: 0.25
     CP14BasicEffectEmpty: 0.25
+  - CP14BasicEffectImpurity: 0.25
+    CP14BasicEffectDamageHeat: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250

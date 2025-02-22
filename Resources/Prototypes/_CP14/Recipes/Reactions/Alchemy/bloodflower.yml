@@ -73,7 +73,7 @@
   products:
     CP14BasicEffectImpurity: 0.75
     CP14BasicEffectHealCold: 0.5
-    CP14BasicEffectHealHeat: 0.25
+    CP14BasicEffectDamageHeat: 0.25
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -270

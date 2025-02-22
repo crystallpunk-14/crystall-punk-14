@@ -23,6 +23,9 @@
       CP14BasicEffectHealPoison: CP14BasicEffectDamagePoison
       CP14BasicEffectDamagePoison: CP14BasicEffectHealPoison
       #
+      CP14BasicEffectDamageHeat: CP14BasicEffectHealHeat
+      CP14BasicEffectHealHeat: CP14BasicEffectDamageHeat
+      #
       CP14BasicEffectDamageCold: CP14BasicEffectHealCold
       CP14BasicEffectHealCold: CP14BasicEffectDamageCold
       #
