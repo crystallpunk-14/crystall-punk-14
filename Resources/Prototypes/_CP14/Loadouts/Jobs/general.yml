@@ -235,7 +235,6 @@
   - CP14ClothingPantsTrouserWhite
   - CP14ClothingPantsTrouserDarkBlue
   - CP14ClothingPantsAristocratic
-  - CP14ClothingPantsLoincloth
   - CP14ClothingPantsGreen
   - CP14ClothingPantsBrown
   
@@ -254,11 +253,6 @@
   id: CP14ClothingPantsAristocratic
   equipment:
     pants: CP14ClothingPantsAristocratic
-
-- type: loadout
-  id: CP14ClothingPantsLoincloth
-  equipment:
-    pants: CP14ClothingPantsLoincloth
 
 - type: loadout
   id: CP14ClothingPantsGreen
