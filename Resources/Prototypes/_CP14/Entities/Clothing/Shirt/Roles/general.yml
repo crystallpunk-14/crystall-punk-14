@@ -249,3 +249,14 @@
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothinWarriorsGarbDress
+  name: warrior's garb
+  description: show your strength.
+  components: 
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
