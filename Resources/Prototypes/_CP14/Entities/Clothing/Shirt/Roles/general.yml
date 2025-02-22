@@ -252,7 +252,17 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothinWarriorsGarbDress
+  id: CP14ClothinGreenLightDress
+  name: light green dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingWarriorsGarbDress
   name: warrior's garb
   description: show your strength.
   components: 
