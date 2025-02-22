@@ -23,9 +23,10 @@
       - Biological
     damage:
       types:
-        Slash: -1
-        Piercing: -1
-    bloodlossModifier: -4
+        Slash: -2
+        Piercing: -2
+    bloodlossModifier: -6
+    delay: 2.5
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
@@ -74,9 +75,10 @@
       - Biological
     damage:
       types:
-        Slash: -4
-        Piercing: -4
+        Slash: -6
+        Piercing: -6
     bloodlossModifier: -10
+    delay: 2
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
