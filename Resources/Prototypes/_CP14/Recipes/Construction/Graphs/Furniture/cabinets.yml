@@ -12,9 +12,10 @@
               amount: 3
             - material: CP14Nail
               amount: 2
-              doAfter: 4
+            - tool: CP14Hammering
+              doAfter: 2
     - node: CP14WoodenCabinet
-      entity: CP14WoodenCabinet 
+      entity: CP14WoodenCabinet
 
 - type: constructionGraph
   id: CP14IronCabinet
