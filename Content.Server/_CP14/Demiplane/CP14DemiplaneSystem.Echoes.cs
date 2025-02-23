@@ -16,7 +16,7 @@ public sealed partial class CP14DemiplaneSystem
 
         if (!_demiplaneQuery.TryComp(map, out var demiplane))
             return;
-        
+
         //Get random exit, and send message there
         if (demiplane.ExitPoints.Count == 0)
             return;
