@@ -12,7 +12,6 @@
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
     layers:
     - state: core
-      shader: unshaded
   - type: GuideHelp
     guides:
     - CP14_RU_Demiplanes
@@ -45,7 +44,6 @@
   - type: Sprite
     layers:
     - state: core
-      shader: unshaded
       color: red
   - type: CP14DemiplaneGeneratorData
     tiersContent:

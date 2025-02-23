@@ -25,6 +25,7 @@
   - type: IconSmooth
     key: CP14roof
     base: roof
+  - type: IsRoof
 
 - type: entity
   parent: 

@@ -132,11 +132,4 @@ namespace Content.Shared.Maps
         [DataField]
         public ProtoId<ContentTileDefinition>? BurnedTile { get; private set; } = null;
     }
-
-    [Flags]
-    public enum TileFlag : byte
-    {
-        None = 0,
-        Roof = 1 << 0,
-    }
 }
