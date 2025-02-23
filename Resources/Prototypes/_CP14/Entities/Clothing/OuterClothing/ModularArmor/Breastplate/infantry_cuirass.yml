@@ -39,7 +39,9 @@
       color: "#ffaf47"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
-    color: "#ffaf47"
+    layers:
+    - state: icon
+      color: "#ffaf47"
   - type: Armor
     modifiers:
       coefficients:
@@ -69,7 +71,9 @@
       color: "#bd712f"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
-    color: "#bd712f"
+    layers:
+    - state: icon
+      color: "#bd712f"
   - type: Armor
     modifiers:
       coefficients:
@@ -99,7 +103,7 @@
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     layers:
-    - state: equipped-OUTERCLOTHING
+    - state: icon
       color: "#45d2a4"
   - type: Armor
     modifiers:
