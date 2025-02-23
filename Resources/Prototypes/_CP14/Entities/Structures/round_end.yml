@@ -18,7 +18,7 @@
         - WallLayer
   - type: Sprite
     noRot: true
-    sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
+    sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_big.rsi
     layers:
     - state: dimension
     - state: frame
@@ -53,3 +53,39 @@
     range: 10
     sound:
       path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
+
+- type: entity
+  id: CP14PortalFrameCrystal
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  name: portal frame
+  description: A structure made of shadow crystals used to create a stable portal to another location.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: Tag
+    tags:
+      - Structure
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_small.rsi
+    layers:
+    - state: dimension
+    - state: frame 
+    drawdepth: Mobs
+    offset: 0,0.4

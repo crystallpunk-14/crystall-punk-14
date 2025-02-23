@@ -1,0 +1,60 @@
+- type: entity
+  id: CP14ThaumaturgyPlatformBase
+  abstract: true
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  placement:
+    mode: SnapgridCenter
+  name: thaumaturgical platform
+  description: A brass platform used to link various magical devices together into a single structure.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Thaumaturgy/thaum_platform.rsi
+    drawdepth: FloorTiles
+  - type: Transform
+    anchored: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: CP14ThaumaturgyPlatformBase
+  id: CP14ThaumaturgyPlatform2Slot_Inner
+  components:
+  - type: Sprite
+    state: 2_slot_inner
+
+- type: entity
+  parent: CP14ThaumaturgyPlatformBase
+  id: CP14ThaumaturgyPlatform2Slot
+  components:
+  - type: Sprite
+    state: 2_slot
+
+- type: entity
+  parent: CP14ThaumaturgyPlatformBase
+  id: CP14ThaumaturgyPlatform3Slot_Inner
+  components:
+  - type: Sprite
+    state: 3_slot_inner
+
+- type: entity
+  parent: CP14ThaumaturgyPlatformBase
+  id: CP14ThaumaturgyPlatform3Slot
+  components:
+  - type: Sprite
+    state: 3_slot
+
+- type: entity
+  parent: CP14ThaumaturgyPlatformBase
+  id: CP14ThaumaturgyPlatform4Slot
+  components:
+  - type: Sprite
+    state: 4_slot
