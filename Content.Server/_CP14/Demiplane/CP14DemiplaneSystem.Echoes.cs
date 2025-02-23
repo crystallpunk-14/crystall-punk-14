@@ -16,7 +16,7 @@ public sealed partial class CP14DemiplaneSystem
 
         if (!_demiplaneQuery.TryComp(map, out var demiplane))
             return;
-
+        
         //Get random exit, and send message there
         if (demiplane.ExitPoints.Count == 0)
             return;
@@ -25,8 +25,10 @@ public sealed partial class CP14DemiplaneSystem
         _chat.TrySendInGameICMessage(exit,
             ev.Message,
             InGameICChatType.Whisper,
-            hideChat: true,
+            ChatTransmitRange.Normal,
+            true,
+            checkRadioPrefix: false,
             nameOverride: Loc.GetString("cp14-demiplane-echoes"),
-            hideLog: true);
+            ignoreActionBlocker: false);
     }
 }
