@@ -1,6 +1,10 @@
+# Contains Flora and fauna, like flower, roots, mushrooms, etc, 
+
+# Flower based
+
 - type: reagent
   id: CP14BloodFlowerSap
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-bloodflowersap
   desc: cp14-reagent-desc-bloodflowersap
   flavor: CP14Metallic
@@ -24,7 +28,7 @@
 
 - type: reagent
   id: CP14YellowDayflinPulp
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-yellow-dayflin-pulp
   desc: cp14-reagent-desc-yellow-dayflin-pulp
   flavor: CP14Sweetly
@@ -33,8 +37,36 @@
   slippery: false
 
 - type: reagent
+  id: CP14AirLily
+  group: CP14Organic
+  name: cp14-reagent-name-air-lily-juice
+  desc: cp14-reagent-desc-air-lily-juice
+  flavor: fizzy
+  color: "#92cae0"
+  physicalDesc: reagent-physical-desc-milky
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: -2
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.6
+      - !type:Emote
+        showInChat: false
+        emote: Cough
+        probability: 0.3
+
+# Fungus based
+
+- type: reagent
   id: CP14AgaricMushroom
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-agaric-shroom
   desc: cp14-reagent-desc-agaric-shroom
   flavor: CP14Bitterly
@@ -60,58 +92,8 @@
         refresh: false
 
 - type: reagent
-  id: CP14ChromiumSlime
-  group: CP14Biological
-  name: cp14-reagent-name-chromium-slime
-  desc: cp14-reagent-desc-chromium-slime
-  flavor: CP14Vomit
-  color: "#3b4872"
-  physicalDesc: cp14-reagent-physical-desc-colorless
-  slippery: true
-  metabolisms:
-    Food:
-      effects:
-      - !type:SatiateThirst
-      - !type:ChemVomit
-        probability: 0.05
-
-- type: reagent
-  id: CP14WildSageSap
-  group: CP14Biological
-  name: cp14-reagent-name-wild-sage-sap
-  desc: cp14-reagent-desc-wild-sage-sap
-  flavor: CP14Sweetly
-  color: "#6b462c"
-  physicalDesc: cp14-reagent-physical-desc-cloudy
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Blunt: -1
-      - !type:Emote
-        emote: Cough
-        showInChat: true
-        probability: 0.15
-
-- type: reagent
-  id: CP14GroundQuartz
-  group: CP14Biological #TODO
-  name: cp14-reagent-name-grounded-quartz
-  desc: cp14-reagent-desc-grounded-quartz
-  flavor: CP14Quartz
-  color: "#9aa6ad"
-  physicalDesc: cp14-reagent-physical-desc-colorless
-  metabolisms:
-    Food:
-      effects:
-      - !type:ChemVomit
-        probability: 0.05
-
-- type: reagent
   id: CP14LumiMushroom
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-lumi-shroom
   desc: cp14-reagent-desc-lumi-shroom
   flavor: CP14Vomit
@@ -138,7 +120,7 @@
 
 - type: reagent
   id: CP14BlueAmanita
-  group: CP14Biological
+  group: CP14Organic
   name: cp14-reagent-name-blue-amanita
   desc: cp14-reagent-desc-blue-amanita
   flavor: CP14Magic
@@ -156,29 +138,24 @@
           types:
             Poison: 0.1
 
+# Root based
+
 - type: reagent
-  id: CP14AirLily
-  group: CP14Biological
-  name: cp14-reagent-name-air-lily-juice
-  desc: cp14-reagent-desc-air-lily-juice
-  flavor: fizzy
-  color: "#92cae0"
-  physicalDesc: reagent-physical-desc-milky
+  id: CP14WildSageSap
+  group: CP14Organic
+  name: cp14-reagent-name-wild-sage-sap
+  desc: cp14-reagent-desc-wild-sage-sap
+  flavor: CP14Sweetly
+  color: "#6b462c"
+  physicalDesc: cp14-reagent-physical-desc-cloudy
   metabolisms:
     Medicine:
       effects:
       - !type:HealthChange
         damage:
-          groups:
-            Airloss: -2
-    Poison:
-      effects:
-      - !type:HealthChange
-        damage:
           types:
-            Poison: 0.6
+            Blunt: -1
       - !type:Emote
-        showInChat: false
         emote: Cough
-        probability: 0.3
-
+        showInChat: true
+        probability: 0.15

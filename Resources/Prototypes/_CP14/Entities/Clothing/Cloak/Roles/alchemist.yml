@@ -1,5 +1,7 @@
 - type: entity
-  parent: CP14ClothingCloakBase
+  parent: 
+  - CP14ClothingCloakBase
+  - CP14ClothingBaseContainer
   id: CP14ClothingCloakAlchemist
   name: alchemist's cloak
   description: An expensive fabric that can withstand acid splashes - the standard for alchemist experts.
@@ -13,3 +15,11 @@
       coefficients:
         Heat: 0.9
         Caustic: 0.75
+  - type: Storage
+    maxItemSize: Tiny
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,1,1
+    whitelist:
+      tags:
+        - CP14Vial
