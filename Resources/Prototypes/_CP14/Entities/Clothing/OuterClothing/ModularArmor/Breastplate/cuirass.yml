@@ -1,0 +1,130 @@
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14ModularArmorBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: CP14LabeledRenaming
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - Cuisses
+    - Greave
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorIronCuirass
+  name: iron cuirass
+  description: Light armour plate on the chest, little protection, little heaviness.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    state: icon
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    state: icon
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.95
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.98
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorIronCuirass
+  - type: CP14Material
+    materials:
+      CP14Iron: 50
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorGoldCuirass
+  name: golden cuirass
+  description: Light armour plate on the chest, little protection, little heaviness.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    color: "#ffaf47"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.92
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorGoldCuirass
+  - type: CP14Material
+    materials:
+      CP14Gold: 50
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorCopperCuirass
+  name: copper cuirass
+  description: Light armour plate on the chest, little protection, little heaviness.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    color: "#bd712f"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorCopperCuirass
+  - type: CP14Material
+    materials:
+      CP14Copper: 50
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorMithrilCuirass
+  name: mithril cuirass
+  description: Light armour plate on the chest, little protection, little heaviness.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    layers:
+    - state: equipped-OUTERCLOTHING
+      color: "#45d2a4"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.82
+        Piercing: 0.82
+        Heat: 0.80
+  - type: ClothingSpeedModifier
+    walkModifier: 0.97
+    sprintModifier: 0.97
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorMithrilCuirass
+  - type: CP14Material
+    materials:
+      CP14Mithril: 50

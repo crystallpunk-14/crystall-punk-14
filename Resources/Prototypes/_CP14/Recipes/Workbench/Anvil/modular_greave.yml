@@ -1,0 +1,50 @@
+
+# Cuirass
+
+- type: CP14Recipe
+  id: CP14ModularGreaveIronCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveIronCuirass
+
+- type: CP14Recipe
+  id: CP14ModularGreaveGoldCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveGoldCuirass
+
+- type: CP14Recipe
+  id: CP14ModularGreaveCopperCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveCopperCuirass
+
+- type: CP14Recipe
+  id: CP14ModularGreaveMithrilCuirass
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveMithrilCuirass

@@ -1,0 +1,93 @@
+- type: modularPart
+  id: BaseGreaveCuirass
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseClothingArmor
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.96
+        Piercing: 0.96
+        Heat: 0.96
+  - !type:EditClothingSpeed
+    walkModifier: 0.98
+    sprintModifier: 0.98
+
+- type: modularPart
+  id: GreaveIronCuirass
+  slots:
+  - Greave
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveCuirass
+
+- type: modularPart
+  id: GreaveGoldCuirass
+  slots:
+  - Greave
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveCuirass
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: 0.97
+        Slash: 0.98
+        Piercing: 0.98
+        Heat: 0.98
+  - !type:EditClothingSpeed
+    walkModifier: 0.96
+    sprintModifier: 0.96
+
+- type: modularPart
+  id: GreaveCopperCuirass
+  slots:
+  - Greave
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveCuirass
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: 0.97
+        Slash: 0.96
+        Piercing: 0.96
+        Heat: 0.98
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
+
+- type: modularPart
+  id: GreaveMithrilCuirass
+  slots:
+  - Greave
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveCuirass
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: 0.94
+        Slash: 0.92
+        Piercing: 0.92
+        Heat: 0.90
+  - !type:EditClothingSpeed
+    walkModifier: 0.98
+    sprintModifier: 0.98
