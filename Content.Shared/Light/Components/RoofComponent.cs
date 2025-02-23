@@ -11,7 +11,7 @@ public sealed partial class RoofComponent : Component
     public const int ChunkSize = 8;
 
     [DataField, AutoNetworkedField]
-    public Color Color = Color.Black;
+    public Color Color = new (80, 80, 80); //CP14 Black color replaced on Dark gray
 
     /// <summary>
     /// Chunk origin and bitmask of value in chunk.
