@@ -30,6 +30,7 @@
     noRot: true
     sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_portal_frame.rsi
     layers:
+    - state: dimension
     - state: frame 
     drawdepth: Mobs
     offset: 0,0.4

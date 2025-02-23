@@ -8,28 +8,10 @@
   },
   "states": [
     {
-      "name": "full"
-    },
-    {
-      "name": "empty"
+      "name": "dimension"
     },
     {
       "name": "frame"
-    },
-    {
-      "name": "warning",
-      "delays": [
-        [
-          0.3,
-          0.1,
-          0.1,
-          0.1,
-          0.3,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
     }
   ]
 }

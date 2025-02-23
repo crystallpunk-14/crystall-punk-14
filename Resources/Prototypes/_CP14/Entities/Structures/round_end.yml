@@ -20,7 +20,7 @@
     noRot: true
     sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
     layers:
-    - state: full
+    - state: dimension
     - state: frame
     drawdepth: Mobs
     offset: 0,0.8
