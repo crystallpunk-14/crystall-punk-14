@@ -21,10 +21,8 @@
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
-    state: icon
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
-    state: icon
   - type: Armor
     modifiers:
       coefficients:
@@ -54,9 +52,19 @@
       color: "#ffaf47"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
-    layers:
-    - state: icon
-      color: "#ffaf47"
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#ffaf47"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffaf47"
+      right:
+      - state: inhand-right
+        color: "#ffaf47"
   - type: Armor
     modifiers:
       coefficients:
@@ -86,9 +94,19 @@
       color: "#bd712f"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
-    layers:
-    - state: icon
-      color: "#bd712f"
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#bd712f"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#bd712f"
+      right:
+      - state: inhand-right
+        color: "#bd712f"
   - type: Armor
     modifiers:
       coefficients:
@@ -114,9 +132,19 @@
       color: "#45d2a4"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
-    layers:
-    - state: icon
-      color: "#45d2a4"
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#45d2a4"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#45d2a4"
+      right:
+      - state: inhand-right
+        color: "#45d2a4"
   - type: Armor
     modifiers:
       coefficients:
