@@ -89,3 +89,8 @@
     - state: frame 
     drawdepth: Mobs
     offset: 0,0.4
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 100
+    energy: 100
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyPortRelay
