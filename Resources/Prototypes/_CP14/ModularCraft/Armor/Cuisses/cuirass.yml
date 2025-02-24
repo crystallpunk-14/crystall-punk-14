@@ -4,16 +4,6 @@
   - !type:Inherit
     copyFrom:
     - BaseClothingArmor
-  - !type:EditArmor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.96
-        Piercing: 0.96
-        Heat: 0.96
-  - !type:EditClothingSpeed
-    walkModifier: 0.98
-    sprintModifier: 0.98
 
 - type: modularPart
   id: CuissesIronCuirass
@@ -25,6 +15,16 @@
   - !type:Inherit
     copyFrom:
     - BaseCuissesCuirass
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.05
+        Slash: -0.07
+        Piercing: -0.07
+        Heat: -0.05
+  - !type:EditClothingSpeed
+    walkModifier: 0.94
+    sprintModifier: 0.94
 
 - type: modularPart
   id: CuissesGoldCuirass
@@ -40,13 +40,12 @@
   - !type:EditArmor
     modifiers:
       coefficients:
-        Blunt: 0.97
-        Slash: 0.98
-        Piercing: 0.98
-        Heat: 0.98
+        Blunt: -0.01
+        Slash: -0.01
+        Piercing: -0.05
   - !type:EditClothingSpeed
-    walkModifier: 0.96
-    sprintModifier: 0.96
+    walkModifier: 0.94
+    sprintModifier: 0.94
 
 - type: modularPart
   id: CuissesCopperCuirass
@@ -62,13 +61,13 @@
   - !type:EditArmor
     modifiers:
       coefficients:
-        Blunt: 0.97
-        Slash: 0.96
-        Piercing: 0.96
-        Heat: 0.98
+        Blunt: -0.03
+        Slash: -0.03
+        Piercing: -0.03
+        Heat: -0.03
   - !type:EditClothingSpeed
-    walkModifier: 0.99
-    sprintModifier: 0.99
+    walkModifier: 0.98
+    sprintModifier: 0.98
 
 - type: modularPart
   id: CuissesMithrilCuirass
@@ -84,10 +83,10 @@
   - !type:EditArmor
     modifiers:
       coefficients:
-        Blunt: 0.94
-        Slash: 0.92
-        Piercing: 0.92
-        Heat: 0.90
+        Blunt: -0.10
+        Slash: -0.10
+        Piercing: -0.10
+        Heat: -0.10
   - !type:EditClothingSpeed
     walkModifier: 0.98
     sprintModifier: 0.98

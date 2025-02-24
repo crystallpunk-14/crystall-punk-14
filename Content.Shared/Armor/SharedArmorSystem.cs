@@ -104,7 +104,7 @@ public abstract class SharedArmorSystem : EntitySystem
         foreach (var (armorType, coefficient) in modifiers.Coefficients)
         {
             if (armor.Modifiers.Coefficients.ContainsKey(armorType))
-                armor.Modifiers.Coefficients[armorType] *= coefficient;
+                armor.Modifiers.Coefficients[armorType] += coefficient;
             else
                 armor.Modifiers.Coefficients[armorType] = coefficient;
         }

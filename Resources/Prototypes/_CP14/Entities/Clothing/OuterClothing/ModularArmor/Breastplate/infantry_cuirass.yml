@@ -11,13 +11,13 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.88
-        Heat: 0.93
+        Blunt: 0.88
+        Slash: 0.83
+        Piercing: 0.83
+        Heat: 0.88
   - type: ClothingSpeedModifier
-    walkModifier: 0.98
-    sprintModifier: 0.98
+    walkModifier: 0.93
+    sprintModifier: 0.93
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorIronInfantryCuirass
   - type: CP14Material
@@ -53,13 +53,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.92
-        Slash: 0.90
-        Piercing: 0.92
-        Heat: 0.92
+        Blunt: 0.93
+        Slash: 0.93
+        Piercing: 0.85
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.88
+    sprintModifier: 0.88
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorGoldInfantryCuirass
   - type: CP14Material
@@ -95,12 +94,14 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.95
-        Slash: 0.92
-        Piercing: 0.92
+        Blunt: 0.91
+        Slash: 0.91
+        Piercing: 0.91
+        Heat: 0.91
+        Caustic: 0.86
   - type: ClothingSpeedModifier
-    walkModifier: 0.99
-    sprintModifier: 0.99
+    walkModifier: 0.96
+    sprintModifier: 0.96
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorCopperInfantryCuirass
   - type: CP14Material
@@ -136,13 +137,13 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.82
-        Slash: 0.76
-        Piercing: 0.78
-        Heat: 0.76
+        Blunt: 0.81
+        Slash: 0.80
+        Piercing: 0.80
+        Heat: 0.81
   - type: ClothingSpeedModifier
-    walkModifier: 0.97
-    sprintModifier: 0.97
+    walkModifier: 0.96
+    sprintModifier: 0.96
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorMithrilInfantryCuirass
   - type: CP14Material
