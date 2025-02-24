@@ -353,6 +353,22 @@
     knowledge: AdvancedClothingSewing
   result: CP14ClothingPantsMercenaryTrousers
 
+# Misc
+
+- type: CP14Recipe
+  id: CP14SackFarming
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: ClothingSewing
+  result: CP14SackFarming
+
 # Wallpaper (TODO: Move to separate workbench?)
 
 - type: CP14Recipe
