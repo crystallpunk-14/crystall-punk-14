@@ -171,5 +171,5 @@
   bodyPart: Hair
   markingCategory: Hair
   sprites:
-    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+    - sprite: _CP14/Mobs/Customization/CP14_human_hair.rsi
       state: dismas
