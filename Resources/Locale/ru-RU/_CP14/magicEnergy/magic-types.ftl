@@ -9,6 +9,3 @@ cp14-magic-type-necro = Некромантия
 
 cp14-magic-manacost = Затраты маны
 cp14-magic-magic-type = Тип магии
-
-cp14-magic-verbal-aspect = Требуется возможность говорить
-cp14-magic-somatic-aspect = Требуются свободные руки:
