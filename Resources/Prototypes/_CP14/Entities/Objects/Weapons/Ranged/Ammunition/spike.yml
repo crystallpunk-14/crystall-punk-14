@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/spike.rsi
-    state: pen
+    state: spike
   - type: DamageOtherOnHit
     damage:
       types:
