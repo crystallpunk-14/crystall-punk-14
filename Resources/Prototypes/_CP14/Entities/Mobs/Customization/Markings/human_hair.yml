@@ -165,3 +165,11 @@
   sprites:
     - sprite: _CP14/Mobs/Customization/human_hair.rsi
       state: maxy_shagy
+
+- type: marking
+  id: CP14HumanHairDismas
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: dismas
