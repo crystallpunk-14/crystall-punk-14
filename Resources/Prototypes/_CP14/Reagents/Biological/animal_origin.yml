@@ -5,7 +5,7 @@
   group: CP14Biological
   name: cp14-reagent-name-sleepy-poison
   desc: cp14-reagent-desc-sleepy-poison
-  flavor: CP14VerySweet
+  flavor: Sweet
   color: "#6bb4bf"
   physicalDesc: reagent-physical-desc-powdery
   metabolisms:
