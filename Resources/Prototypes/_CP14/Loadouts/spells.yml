@@ -22,7 +22,8 @@
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
   - CP14ActionSpellKick
-  - CP14ActionSpellHealMusic
+  - CP14ActionSpellHealBallade
+  - CP14ActionSpellSpeedBallade
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -253,10 +254,23 @@
   - CP14ActionSpellKick
 
 - type: loadout
-  id: CP14ActionSpellHealMusic
-  dummyEntity: CP14ActionSpellHealMusic
+  id: CP14ActionSpellHealBallade
+  dummyEntity: CP14ActionSpellHealBallade
   actions:
-  - CP14ActionSpellHealMusic
+  - CP14ActionSpellHealBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellSpeedBallade
+  dummyEntity: CP14ActionSpellSpeedBallade
+  actions:
+  - CP14ActionSpellSpeedBallade
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
