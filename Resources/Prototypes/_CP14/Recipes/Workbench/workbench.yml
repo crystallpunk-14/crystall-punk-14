@@ -48,19 +48,6 @@
   result: CP14BaseMop
 
 - type: CP14Recipe
-  id: CP14Torch
-  tag: CP14RecipeWorkbench
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
-    count: 3
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 1
-  result: CP14Torch
-
-- type: CP14Recipe
   id: CP14Lighter
   tag: CP14RecipeWorkbench
   craftTime: 4

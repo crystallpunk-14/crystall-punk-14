@@ -19,3 +19,4 @@ marking-CP14HumanHairVLongFringe = Прямая челка
 marking-CP14HumanHairVolaju = Вояж
 marking-CP14HumanHairWisp = Огонек
 marking-CP14HumanHairMaxyShagy = Максимальная лохматость
+marking-CP14HumanHairDismas = С большой дороги

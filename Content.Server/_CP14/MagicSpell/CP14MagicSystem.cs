@@ -1,6 +1,7 @@
 using Content.Server._CP14.MagicEnergy;
 using Content.Server.Atmos.Components;
 using Content.Server.Chat.Systems;
+using Content.Server.Instruments;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
@@ -39,6 +40,8 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
 
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
+
+        SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, CP14CastMagicEffectAttemptEvent>(OnMusicCheck);
     }
 
     private void OnProjectileHit(Entity<CP14SpellEffectOnHitComponent> ent, ref ThrowDoHitEvent args)
@@ -137,6 +140,31 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
             TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var playerMana))
         {
             _magicEnergy.ChangeEnergy(args.Performer.Value, -requiredMana, out _, out _, playerMana, safe: false);
+        }
+    }
+
+
+
+    private void OnMusicCheck(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    {
+        var passed = false;
+        var query = EntityQueryEnumerator<ActiveInstrumentComponent, InstrumentComponent>();
+        while (query.MoveNext(out var uid, out var active, out var instrument))
+        {
+            if (!instrument.Playing)
+                continue;
+
+            if (Transform(uid).ParentUid != args.Performer)
+                continue;
+
+            passed = true;
+            break;
+        }
+
+        if (!passed)
+        {
+            args.PushReason(Loc.GetString("cp14-magic-music-aspect"));
+            args.Cancel();
         }
     }
 }

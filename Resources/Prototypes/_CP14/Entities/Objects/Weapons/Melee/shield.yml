@@ -53,7 +53,6 @@
     cPAnimationLength: 0.3
     cPAnimationOffset: -0.5
   - type: MeleeThrowOnHit
-    lifetime: 0.05
     speed: 3
   - type: DamageOnLand
     damage:

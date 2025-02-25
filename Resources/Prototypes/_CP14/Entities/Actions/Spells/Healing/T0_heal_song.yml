@@ -1,0 +1,64 @@
+- type: entity
+  id: CP14ActionSpellHealMusic
+  name: Healing music
+  description: Your music is filled with healing magic, slowly healing all the creatures around you.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: heal_music
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.8
+  - type: CP14MagicEffectManaCost
+    manaCost: 5
+  - type: CP14MagicEffect
+    magicType: Healing
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectCureWounds
+      - CP14AreaEntityEffectHealMusic
+  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneCureWounds
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/healing.rsi
+      state: heal_music
+    event: !type:CP14ToggleableInstantActionEvent
+      effectFrequency: 1
+      cooldown: 15
+      castTime: 120
+      hidden: true
+
+- type: entity
+  id: CP14AreaEntityEffectHealMusic
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: CP14AreaEntityEffect
+    range: 3
+    maxTargets: 4
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectBloodPurification
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -2
+            Blunt: -2
+            Piercing: -2
+            Cold: -2
+            Heat: -2
+            Shock: -2
+            Poison: -2
+            Bloodloss: -2
+            Caustic: -2

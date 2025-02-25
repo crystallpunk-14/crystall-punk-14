@@ -265,21 +265,6 @@
   result: CP14ClothingHeadBandanaYellow
 
 - type: CP14Recipe
-  id: CP14ClothingHeadWreath
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14BloodFlower
-    count: 2
-  - !type:ProtoIdResource
-    protoId: CP14Dayflin
-    count: 2
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
-  result: CP14ClothingHeadWreath
-
-- type: CP14Recipe
   id: CP14ClothingShirtMercenary
   tag: CP14RecipeSewing
   craftTime: 2
@@ -352,6 +337,22 @@
   - !type:KnowledgeRequired
     knowledge: AdvancedClothingSewing
   result: CP14ClothingPantsMercenaryTrousers
+
+# Misc
+
+- type: CP14Recipe
+  id: CP14SackFarming
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: ClothingSewing
+  result: CP14SackFarming
 
 # Wallpaper (TODO: Move to separate workbench?)
 
