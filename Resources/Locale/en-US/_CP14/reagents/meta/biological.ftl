@@ -30,3 +30,6 @@ cp14-reagent-desc-lumi-shroom = A faintly shimmering slurry extracted from lumig
 
 cp14-reagent-name-wild-sage-sap = Wild sage juice
 cp14-reagent-desc-wild-sage-sap = Juice of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.
+
+cp14-reagent-name-sleepy-poison = Sleepy poison
+cp14-reagent-desc-sleepy-poison = A poison secreted by dangerous magical monsters to quickly put their victim to sleep.
