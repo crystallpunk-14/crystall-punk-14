@@ -51,7 +51,6 @@
     - !type:CP14SpellConsumeManaEffect
       safe: true
       mana: 20
-      lossMultiplier: 1
 
 - type: entity
   id: CP14RuneManaConsume

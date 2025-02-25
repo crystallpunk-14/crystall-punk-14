@@ -12,6 +12,7 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
     {
         InitializeDraw();
         InitializeScanner();
+        InitializePortRelay();
     }
 
     public override void Update(float frameTime)
@@ -19,5 +20,6 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
         base.Update(frameTime);
 
         UpdateDraw(frameTime);
+        UpdatePortRelay(frameTime);
     }
 }

@@ -9,7 +9,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 25
   - type: CP14MagicEffect
-    magicType: Darkness
+    magicType: Dimension
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -54,7 +54,7 @@
       shader: unshaded
 
 - type: entity
-  parent: CP14BaseSpellScrollDarkness
+  parent: CP14BaseSpellScrollDimension
   id: CP14SpellScrollDemiplaneInfiltration
   name: demiplane infiltration spell scroll
   components:
