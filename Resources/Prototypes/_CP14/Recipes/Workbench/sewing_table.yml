@@ -265,21 +265,6 @@
   result: CP14ClothingHeadBandanaYellow
 
 - type: CP14Recipe
-  id: CP14ClothingHeadWreath
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14BloodFlower
-    count: 2
-  - !type:ProtoIdResource
-    protoId: CP14Dayflin
-    count: 2
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
-  result: CP14ClothingHeadWreath
-
-- type: CP14Recipe
   id: CP14ClothingShirtMercenary
   tag: CP14RecipeSewing
   craftTime: 2

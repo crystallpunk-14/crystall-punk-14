@@ -25,6 +25,6 @@
               doAfter: 1
             - tool: CP14Hammering
               doAfter: 2
-              
+
     - node: CP14WoodenChest
       entity: CP14WoodenChest
