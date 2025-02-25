@@ -11,8 +11,9 @@
 
 - type: modularPart
   id: GardeSturdyIron
-  targetSlot: Garde
-  sourcePart: CP14ModularGardeSturdyIron
+  slots:
+  - Garde
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
   modifiers:
   - !type:Inherit
@@ -21,8 +22,9 @@
 
 - type: modularPart
   id: GardeSturdyGold
-  targetSlot: Garde
-  sourcePart: CP14ModularGardeSturdyGold
+  slots:
+  - Garde
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
   color: "#ffaf47"
   modifiers:
@@ -32,8 +34,9 @@
 
 - type: modularPart
   id: GardeSturdyCopper
-  targetSlot: Garde
-  sourcePart: CP14ModularGardeSturdyCopper
+  slots:
+  - Garde
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
   color: "#bd712f"
   modifiers:
@@ -43,8 +46,9 @@
 
 - type: modularPart
   id: GardeSturdyMithril
-  targetSlot: Garde
-  sourcePart: CP14ModularGardeSturdyMithril
+  slots:
+  - Garde
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
   color: "#45d2a4"
   modifiers:

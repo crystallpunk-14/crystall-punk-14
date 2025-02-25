@@ -22,7 +22,6 @@
     sprite: _CP14/Clothing/Head/Roles/Guard/helmet.rsi
   - type: HideLayerClothing
     slots:
-    - Hair
     - Snout
     - HeadTop
     - HeadSide

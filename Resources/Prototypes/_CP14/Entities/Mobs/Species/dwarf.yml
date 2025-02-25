@@ -7,6 +7,10 @@
   - type: HumanoidAppearance
     species: CP14Dwarf
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Dwarf/parts.rsi
     state: full
@@ -14,7 +18,7 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
+      - id: CP14FoodMeatHuman
         amount: 5
   - type: Body
     prototype: CP14Dwarf

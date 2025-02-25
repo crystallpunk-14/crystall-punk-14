@@ -28,13 +28,26 @@
     noRot: true
     sprite: _CP14/Structures/Specific/Thaumaturgy/demiplane_link_crystal.rsi
     layers:
-    - state: base
+    - state: full
+    - state: frame
     drawdepth: Mobs
     offset: 0,0.9
   - type: PointLight
-    color: "#42166b"
-    energy: 3
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
     radius: 5
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 5
+        minValue: 1.0
+        maxValue: 40.0
+        property: Energy
+        isLooped: true
+        enabled: true
   - type: CP14MagicContainerRoundFinisher
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
@@ -43,3 +56,8 @@
   - type: CP14MagicEnergyDraw
     energy: -10
     delay: 60 # 1h 30 minutes to full discharge
+  - type: AmbientSound
+    volume: 5
+    range: 10
+    sound:
+      path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg

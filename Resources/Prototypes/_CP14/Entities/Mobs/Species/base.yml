@@ -28,9 +28,9 @@
       visible: false
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
     - map: [ "shoes" ]
     - map: [ "shirt" ]
-    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
@@ -234,6 +234,11 @@
     weightlessFriction: 2
     weightlessModifier: 0.6
   - type: CP14DamageableByMap
+  - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
 
 
 - type: entity
@@ -301,7 +306,7 @@
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
-      - id: FoodMeat
+      - id: CP14FoodMeatHuman
         amount: 5
   - type: Respirator
     damage:
@@ -337,15 +342,24 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "shirt" ]
-    - map: [ "pants" ]
+    - shader: StencilClear
+      sprite: _CP14/Mobs/Species/Human/parts.rsi
+      state: l_leg
+    - shader: StencilMask
+      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+      sprite: Mobs/Customization/masking_helpers.rsi
+      state: unisex_full
+      visible: false
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]

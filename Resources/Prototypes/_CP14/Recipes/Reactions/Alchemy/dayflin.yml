@@ -1,33 +1,14 @@
-
-# Yellow color dye
-
-- type: reaction
-  id: CP14DayflinDyeBrewing
-  impact: Low
-  minTemp: 500
-  priority: 1
-  quantized: true
-  conserveEnergy: false
-  reactants:
-    CP14YellowDayflinPulp:
-      amount: 10
-  effects:
-  - !type:CP14AffectSolutionTemperature
-    addTemperature: -250
-  - !type:CreateEntityReactionEffect
-      entity: CP14DyeYellow
-
 # Simple brewing
 
 - type: reaction
   id: CP14DayflinBrewing
   impact: Low
-  minTemp: 500
+  minTemp: 530
   priority: 2
   reactants:
     CP14YellowDayflinPulp:
       amount: 1
-    CP14GroundQuartz:
+    CP14BasicEffectSimpleBase:
       amount: 1
   products:
     CP14BasicEffectEmpty: 0.75
@@ -56,3 +37,4 @@
   - CP14BasicEffectDamageMana: 0.5
   - CP14BasicEffectHealCold: 0.5
   - CP14BasicEffectSatiateThirst: 0.5
+  - CP14BasicEffectDamageHeat: 0.5

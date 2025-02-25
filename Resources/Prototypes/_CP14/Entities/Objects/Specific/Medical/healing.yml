@@ -3,11 +3,11 @@
   parent: BaseItem
   name: herbal bandage
   description: A bandage net woven from grass, not the most reliable or useful thing, but better than nothing.
-  suffix: 10
+  suffix: 5
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Small
+    size: Normal
   - type: Sprite
     sprite: _CP14/Objects/Specific/Medical/medical.rsi
     state: herbbandage_3
@@ -23,16 +23,17 @@
       - Biological
     damage:
       types:
-        Slash: -1
-        Piercing: -1
-    bloodlossModifier: -4
+        Slash: -2
+        Piercing: -2
+    bloodlossModifier: -6
+    delay: 2.5
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
       path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Stack
     stackType: CP14HerbalBandage
-    count: 10
+    count: 5
     baseLayer: base
     layerStates:
     - herbbandage
@@ -54,11 +55,11 @@
   parent: BaseItem
   name: gauze
   description: Dense cloth gauze, to prevent valuable blood from leaking out of the body.
-  suffix: 10
+  suffix: 5
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Small
+    size: Normal
   - type: Sprite
     sprite: _CP14/Objects/Specific/Medical/medical.rsi
     state: bandage_3
@@ -74,16 +75,17 @@
       - Biological
     damage:
       types:
-        Slash: -4
-        Piercing: -4
+        Slash: -6
+        Piercing: -6
     bloodlossModifier: -10
+    delay: 2
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
       path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Stack
     stackType: CP14Gauze
-    count: 10
+    count: 5
     baseLayer: base
     layerStates:
     - bandage

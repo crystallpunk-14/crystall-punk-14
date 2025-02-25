@@ -18,6 +18,10 @@
     {
       "name": "door_opened",
       "directions": 4
+    },
+    {
+      "name": "door_closed_frame",
+      "directions": 4
     }
   ]
 }

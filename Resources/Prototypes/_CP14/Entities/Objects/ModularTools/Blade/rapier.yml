@@ -23,6 +23,9 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronRapier
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
 
 - type: entity
   parent: CP14ModularBladeRapierBase
@@ -37,6 +40,9 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldRapier
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
 
 - type: entity
   parent: CP14ModularBladeRapierBase
@@ -51,6 +57,9 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperRapier
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
 
 - type: entity
   parent: CP14ModularBladeRapierBase
@@ -65,3 +74,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilRapier
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

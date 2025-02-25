@@ -1,3 +1,5 @@
+using Content.Client._CP14.Discord;
+using Content.Client._CP14.JoinQueue;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -33,6 +35,10 @@ namespace Content.Client.IoC
         {
             var collection = IoCManager.Instance!;
 
+            //CP14
+            collection.Register<DiscordAuthManager>();
+            collection.Register<JoinQueueManager>();
+            //CP14 end
             collection.Register<IParallaxManager, ParallaxManager>();
             collection.Register<IChatManager, ChatManager>();
             collection.Register<ISharedChatManager, ChatManager>();

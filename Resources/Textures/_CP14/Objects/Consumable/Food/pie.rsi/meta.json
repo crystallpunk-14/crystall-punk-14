@@ -4,8 +4,8 @@
     "x": 32,
     "y": 32
   },
-  "license": "CLA",
-  "copyright": "Created by Artista",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by Artista, pumpkin by aeoli (discord)",
   "states": [
     {
       "name": "apple"
@@ -24,6 +24,12 @@
     },
     {
       "name": "meat_raw"
+    },
+    {
+      "name": "pumpkin"
+    },
+    {
+      "name": "pumpkin_raw"
     },
     {
       "name": "tin"

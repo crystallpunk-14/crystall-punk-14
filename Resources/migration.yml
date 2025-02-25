@@ -1,13 +1,9 @@
 # <---> CrystallEdge migration zone
 
-# 2024-08-22
-CP14PloughedGround: CP14SeedbedWooden
-CP14SeedbedDefault: CP14SeedbedWooden
-
 # 2024-08-24
 CP14DungeonEntrance: CP14LaddersDownStoneAutoLink
 CP14DungeonExit: CP14LaddersUpStoneAutoLink
-CP14Nail110: CP14Nail10
+CP14Nail110: CP14Nail20
 
 # 2024-09-09
 CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
@@ -95,7 +91,6 @@ CP14WallWhitebrick: CP14WallMarbleBrick
 
 #2024-10-24
 CP14SpawnPointQuartermaster: CP14SpawnPointCommandant
-CP14SpawnPointMerchant: CP14SpawnPointBanker
 
 #2024-10-27
 CP14GatherableFlowersYellow: CP14GatherableDayflin
@@ -215,9 +210,55 @@ CP14PlateIron: CP14Plate
 CP14BaseLightHammer: CP14ModularIronHammer
 CP14BaseBattleHammer: CP14ModularIronHammer
 
+#2025-28-01
+CP14CrystalRubiesSmall: CP14CrystalElementalFireSmall
+CP14CrystalRubiesMedium: CP14CrystalElementalFireMedium
+CP14CrystalRubiesBig: CP14CrystalElementalFireBig
+CP14CrystalTopazesSmall: CP14CrystalElementalElectricSmall
+CP14CrystalTopazesMedium: CP14CrystalElementalElectricMedium
+CP14CrystalTopazesBig: CP14CrystalElementalElectricBig
+CP14CrystalEmeraldsSmall: CP14CrystalElementalHealingSmall
+CP14CrystalEmeraldsMedium: CP14CrystalElementalHealingMedium
+CP14CrystalEmeraldsBig: CP14CrystalElementalHealingBig
+CP14CrystalSapphiresSmall: CP14CrystalElementalWaterSmall
+CP14CrystalSapphiresMedium: CP14CrystalElementalWaterMedium
+CP14CrystalSapphiresBig: CP14CrystalElementalWaterBig
+CP14CrystalAmethystsSmall: CP14CrystalElementalDarknessSmall
+CP14CrystalAmethystsMedium: CP14CrystalElementalDarknessMedium
+CP14CrystalAmethystsBig: CP14CrystalElementalDarknessBig
+CP14CrystalDiamondsSmall: CP14CrystalElementalLightSmall
+CP14CrystalDiamondsMedium: CP14CrystalElementalLightMedium
+CP14CrystalDiamondsBig: CP14CrystalElementalLightBig
 
+CP14QuartzCrystal: CP14CrystalMedium
+CP14QuartzShard: CP14CrystalShardBase
 
+#2025-30-01
+CP14OreCopper: CP14OreCopper1
+CP14OreIron: CP14OreIron1
+CP14OreGold: CP14OreGold1
+CP14OreMithril: CP14OreMithril1
+CP14Nail10: CP14Nail20
 
+#2025-07-02
+CP14SpawnPointBanker: CP14SpawnPointMerchant
+CP14ClothingOuterClothingBankerWaistCoat: CP14ClothingOuterClothingMerchantWaistCoat
+CP14ClothingOuterClothingBankerWaistCoatOpen: null
+CP14ClothingShirtBanker: CP14ClothingShirtMerchant
+CP14KeyRingBanker: CP14KeyRingMerchant
+CP14WoodenCabinetBanker: CP14WoodenCabinetMerchant
+CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
+
+#2025-02-09
+C14IronCabinet: CP14IronCabinet
+C14IronCabinetCargo: CP14IronCabinetCargo
+
+#2025-16-02
+CP14Arrow: CP14ModularIronArrow
+CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiverIronArrow
+
+#2025-17-02
+CP14Crossbolt: CP14CrossboltIron
 
 
 # <---> CrystallEdge migration zone end
@@ -542,7 +583,6 @@ MagazineBoxLightRifleRubber: MagazineBoxLightRifle
 MagazineBoxRifleRubber: MagazineBoxRifle
 MagazineBoxRifleBigRubber: MagazineBoxRifleBig
 MagazineBoxCaselessRifleRubber: MagazineBoxCaselessRifle
-MagazineBoxCaselessRifleBigRubber: MagazineBoxCaselessRifle10x24
 BoxMagazinePistolRubber: BoxMagazinePistol
 BoxMagazinePistolHighCapacityRubber: BoxMagazinePistolHighCapacity
 BoxMagazinePistolSubMachineGunRubber: BoxMagazinePistolSubMachineGun
@@ -552,7 +592,6 @@ BoxMagazineCaselessRifleRubber: BoxMagazinePistolCaselessRifle
 BoxMagazineMagnumSubMachineGunRubber: BoxMagazineMagnumSubMachineGun
 WeaponPistolMk58Nonlethal: WeaponPistolMk58
 WeaponPistolN1984Nonlethal: WeaponPistolN1984
-WeaponSubMachineGunVectorRubber: WeaponSubMachineGunVector
 WeaponSubMachineGunDrozdRubber: WeaponSubMachineGunDrozd
 WeaponRifleLecterRubber: WeaponRifleLecter
 
@@ -765,3 +804,20 @@ LightTree06: LightTree
 
 #2024-12-28
 DrinkIrishCarBomb: DrinkIrishSlammer
+
+#2025-01-06
+ClothingMaskSexyClown: ClothingMaskBlushingClown
+ClothingMaskSexyMime: ClothingMaskBlushingMime
+
+# 2025-01-27
+FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
+
+#2025-02-05
+WeaponSubMachineGunVector: null
+WeaponSubMachineGunVectorRubber: null
+
+# 2025-02-20
+MagazineBoxAntiMaterielBig: null
+MagazineBoxCaselessRifle10x24: null
+MagazineBoxCaselessRifleBig: null
+MagazinePistolHighCapacityRubber: null

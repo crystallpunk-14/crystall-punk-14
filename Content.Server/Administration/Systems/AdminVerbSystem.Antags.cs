@@ -1,4 +1,3 @@
-using Content.Server._CP14.Roles;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
@@ -52,22 +51,6 @@ public sealed partial class AdminVerbSystem
             return;
 
         var targetPlayer = targetActor.PlayerSession;
-
-
-        Verb CP14Sociopath = new()
-        {
-            Text = Loc.GetString("cp14-admin-verb-text-make-sociopath"),
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Hands/Gloves/Color/black.rsi"),
-                "icon"), //TODO
-            Act = () =>
-            {
-                //_antag.ForceMakeAntag<CP14BanditRoleComponent>(targetPlayer, "CP14Bandit"); //TODO
-            },
-            Impact = LogImpact.High,
-            Message = Loc.GetString("cp14-admin-verb-make-sociopath"),
-        };
-        args.Verbs.Add(CP14Sociopath);
 
         /* CP14 disable default antags
         Verb traitor = new()

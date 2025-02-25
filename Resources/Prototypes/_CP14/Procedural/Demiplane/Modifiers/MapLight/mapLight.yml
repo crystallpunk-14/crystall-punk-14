@@ -40,7 +40,7 @@
     MapLight: 1
   components:
   - type: MapLight
-    ambientLightColor: "#031f04"
+    ambientLightColor: "#000502"
 
 - type: cp14DemiplaneModifier
   id: MapLightDarkNight

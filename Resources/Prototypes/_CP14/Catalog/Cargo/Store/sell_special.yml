@@ -6,9 +6,7 @@
   icon: 
     sprite: _CP14/Objects/Flora/Farm/wheat.rsi
     state: base1
-  price: 
-    min: 100
-    max: 200
+  price: 150
   service: !type:CP14SellWhitelistService
     whitelist:
       tags: 
@@ -23,9 +21,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/dye.rsi
     state: preview
-  price: 
-    min: 100
-    max: 300
+  price: 200
   service: !type:CP14SellWhitelistService
     whitelist:
       tags: 
@@ -40,9 +36,7 @@
   icon: 
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat
-  price: 
-    min: 100
-    max: 300
+  price: 200
   service: !type:CP14SellWhitelistService
     whitelist:
       tags: 
@@ -57,29 +51,12 @@
   icon: 
     sprite: _CP14/Objects/Tools/torch.rsi
     state: torch-unlit
-  price: 
-    min: 100
-    max: 300
+  price: 200
   service: !type:CP14SellWhitelistService
     whitelist:
       tags: 
       - CP14Torch
     count: 20
-
-- type: storePositionSell
-  id: BountyFloraMaterial
-  special: true
-  name: cp14-store-sell-special-flora-name
-  desc: cp14-store-sell-special-flora-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/flora.rsi
-    state: grass_material1
-  price: 
-    min: 100
-    max: 300
-  service: !type:CP14SellStackService
-    stackId: CP14FloraMaterial
-    count: 15
 
 - type: storePositionSell
   id: BountySpellScroll
@@ -89,9 +66,7 @@
   icon: 
     sprite: _CP14/Objects/Bureaucracy/paper.rsi
     state: magic
-  price: 
-    min: 100
-    max: 300
+  price: 200
   service: !type:CP14SellWhitelistService
     whitelist:
       tags: 
@@ -106,9 +81,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/ash.rsi
     state: ash_1
-  price: 
-    min: 50
-    max: 150
+  price: 100
   service: !type:CP14SellStackService
     stackId: CP14Ash
     count: 10
@@ -121,9 +94,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/lucens_wood.rsi
     state: planks_2
-  price: 
-    min: 300
-    max: 650
+  price: 300
   service: !type:CP14SellStackService
     stackId: CP14LucensWoodenPlanks
     count: 10

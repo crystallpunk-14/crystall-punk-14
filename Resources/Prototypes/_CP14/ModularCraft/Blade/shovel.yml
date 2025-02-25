@@ -28,11 +28,15 @@
     newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronShovel
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeIronShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
   modifiers:
   - !type:Inherit
@@ -42,8 +46,9 @@
 
 - type: modularPart
   id: BladeGoldShovel
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
   color: "#ffaf47"
   modifiers:
@@ -54,8 +59,9 @@
 
 - type: modularPart
   id: BladeCopperShovel
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
   color: "#bd712f"
   modifiers:
@@ -66,8 +72,9 @@
 
 - type: modularPart
   id: BladeMithrilShovel
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
   color: "#45d2a4"
   modifiers:

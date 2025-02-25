@@ -1,5 +1,6 @@
 - type: entity
-  parent: 
+  parent:
+  - CP14MobDamageable
   - BaseSimpleMob
   - MobFlammable
   - MobCombat
@@ -21,9 +22,9 @@
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
     - map: [ "shoes" ]
     - map: [ "shirt" ]
-    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
@@ -77,6 +78,7 @@
       30: 0.4
   - type: StatusEffects
     allowed:
+    - Stun
     - KnockedDown
     - SlowedDown
     - Electrocution
@@ -145,6 +147,11 @@
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
       cloak:
         sizeMaps:
           32:
@@ -172,6 +179,11 @@
     templateId: CP14Partial
     femaleDisplacements:
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi

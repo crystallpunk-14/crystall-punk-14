@@ -3,12 +3,12 @@
 
 - type: reaction
   id: CP14LumiMushroomBrewing
-  minTemp: 500
+  minTemp: 530
   priority: 2
   reactants:
     CP14LumiMushroom:
       amount: 1
-    CP14GroundQuartz:
+    CP14BasicEffectSimpleBase:
       amount: 1
   products:
     CP14BasicEffectEmpty: 0.75
@@ -17,6 +17,20 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -250
+
+- type: reaction
+  id: CP14PurifyingSaltLumi
+  minTemp: 600
+  reactants:
+    CP14LumiMushroom:
+      amount: 1
+    CP14AlchemistSalt:
+      amount: 0.5
+  products:
+    CP14BasicEffectPurification: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -300
 
 # Splitting
 

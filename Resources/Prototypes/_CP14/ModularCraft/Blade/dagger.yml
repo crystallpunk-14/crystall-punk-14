@@ -31,11 +31,13 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronDagger
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeIronDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   modifiers:
   - !type:Inherit
@@ -45,8 +47,9 @@
 
 - type: modularPart
   id: BladeGoldDagger
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   color: "#ffaf47"
   modifiers:
@@ -57,8 +60,9 @@
 
 - type: modularPart
   id: BladeCopperDagger
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   color: "#bd712f"
   modifiers:
@@ -69,8 +73,9 @@
 
 - type: modularPart
   id: BladeMithrilDagger
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
   color: "#45d2a4"
   modifiers:

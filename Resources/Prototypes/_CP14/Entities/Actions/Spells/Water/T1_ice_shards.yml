@@ -4,7 +4,7 @@
   description: Fast ice needles, for rapid shooting of targets.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/water.rsi
     state: ice_shards
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.75
@@ -15,6 +15,9 @@
     effects:
     - !type:CP14SpellProjectile
       prototype: CP14IceShard
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectWaterCreation
   - type: CP14MagicEffectVerbalAspect
     endSpeech: "Glacies acus!"
   - type: CP14MagicEffectCastingVisual
@@ -28,13 +31,10 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/water.rsi
       state: ice_shards
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
-      cooldown: 0.25
-      castDelay: 0.25
-      breakOnMove: false
-      entityDistance: 1000
+    event: !type:CP14EntityWorldTargetActionEvent
+      cooldown: 0.5
 
 - type: entity
   id: CP14RuneIceShards

@@ -1,0 +1,164 @@
+- type: biomeTemplate
+  id: CP14SwampFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: CP14FloorDirt
+    - !type:BiomeTileLayer 
+      tile: CP14FloorGrass
+      threshold: 0
+      noise:
+        seed: 5
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.09
+        octaves: 2
+        lacunarity: 1.4
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+
+      #Lakes
+    - !type:BiomeTileLayer
+      tile: CP14FloorDirt
+      threshold: 0.2
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.02
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorDirt
+      threshold: 0.2
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.02
+      entities:
+        - CP14FloorWaterReeds
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorDirt
+      threshold: 0.4
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.02
+      entities:
+        - CP14FloorWaterLilies
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorDirt
+      threshold: 0.5
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.02
+      entities:
+        - CP14FloorWater
+      #Lakes end
+
+    - !type:BiomeTileLayer 
+      tile: CP14FloorGrassLight
+      threshold: 0.3
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.09
+        octaves: 2
+        lacunarity: 1.4
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+    - !type:BiomeDecalLayer #Grass decal
+      allowedTiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      threshold: 0
+      divisions: 1
+      noise:
+        seed: 12
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      decals:
+        - CP14FloraGrass1
+        - CP14FloraGrass2
+        - CP14FloraGrass3
+        - CP14FloraGrass4
+        - CP14FloraGrass5
+        - CP14FloraGrass6
+        - CP14FloraGrass7
+        - CP14FloraGrass8
+        - CP14FloraGrass9
+        - CP14FloraGrass10
+        - CP14FloraGrass11
+        - CP14FloraGrass12
+        - CP14FloraGrass13
+        - CP14FloraGrass14
+    - !type:BiomeDecalLayer #Bush decal
+      allowedTiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      threshold: 0.35
+      divisions: 1
+      noise:
+        seed: 12
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      decals:
+        - CP14GrassBushes1
+        - CP14GrassBushes2
+        - CP14GrassBushes3
+        - CP14GrassBushes4
+        - CP14GrassBushes5
+        - CP14GrassBushes6
+        - CP14GrassBushes7
+        - CP14GrassBushes8
+        - CP14GrassBushes9
+    - !type:BiomeEntityLayer # Tall grass!
+      threshold: 0.3
+      noise:
+        seed: 23
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.02
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrassLight
+      entities:
+        - CP14RandomBushOffsetSpawner
+    - !type:BiomeEntityLayer # More Trees
+      threshold: 0.5
+      noise:
+        seed: 4
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 1
+      allowedTiles:
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      entities:
+        - CP14FloraTreeGreen
+        - CP14FloraTreeGreenLarge

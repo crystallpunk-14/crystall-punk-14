@@ -4,8 +4,8 @@
   description: You create an area where a scalding stream of fire occurs with little delay.
   components: 
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
-    state: earth_wall
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: tiefling_revenge
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
@@ -28,8 +28,8 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
-      state: earth_wall
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: tiefling_revenge
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 10
 

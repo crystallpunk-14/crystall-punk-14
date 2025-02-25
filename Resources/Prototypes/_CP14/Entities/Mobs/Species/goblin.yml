@@ -7,6 +7,10 @@
   - type: HumanoidAppearance
     species: CP14Goblin
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Goblin/parts.rsi
     state: full
@@ -19,8 +23,8 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
-        amount: 5
+      - id: CP14FoodMeatHuman
+        amount: 3
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
@@ -83,6 +87,11 @@
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: cloak
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
       eyes:
         sizeMaps:
           32:
@@ -139,6 +148,11 @@
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: belt
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi

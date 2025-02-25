@@ -18,7 +18,7 @@ A large number of “raw” substances can be found in the world. The juices of 
 </Box>
 <Box>
 <GuideEntityEmbed Entity="CP14WildSage"/>
-<GuideEntityEmbed Entity="CP14QuartzShard"/>
+<GuideEntityEmbed Entity="CP14AirLily"/>
 <GuideEntityEmbed Entity="CP14LumiMushroom"/>
 </Box>
 

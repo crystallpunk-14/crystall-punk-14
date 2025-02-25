@@ -15,7 +15,7 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
-    public MinMax Price = new();
+    public int Price = 100;
 
     [DataField(required: true)]
     public LocId Name = string.Empty;

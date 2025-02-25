@@ -215,3 +215,73 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+
+- type: entity
+  name: raw pumpkin pie
+  parent: CP14FoodPieBaseRaw
+  id: CP14FoodPiePumpkinRaw
+  description: Raw dough with pumpkin, can be a satisfyingly flavorful dish.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - raw dough
+      - pumpkin
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: pumpkin_raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 2
+        - ReagentId: PumpkinFlesh
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Fruit
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodPiePumpkin
+
+- type: entity
+  name: pumpkin pie
+  parent: CP14FoodPieBase
+  id: CP14FoodPiePumpkin
+  description: Delicious pumpkin pie, with a toasted crust on the outside.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: pumpkin
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 2
+        - ReagentId: PumpkinFlesh
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1

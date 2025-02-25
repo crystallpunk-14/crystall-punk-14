@@ -34,6 +34,9 @@
     count: 4
     sliceTime: 1.5
     slice: CP14FoodCabbageSlice
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodCabbageSlice
@@ -106,6 +109,9 @@
     count: 5
     sliceTime: 2
     slice: CP14FoodPumpkinSlice
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodPumpkinSlice
@@ -136,7 +142,7 @@
       food:
         maxVol: 6 # 1/5 pumpkin
         reagents:
-        - ReagentId: Nutriment
+        - ReagentId: PumpkinFlesh
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
@@ -176,6 +182,9 @@
           Quantity: 2
   - type: CP14Seed
     plantProto: CP14PlantPotato #TODO sliceable potato
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodCucumber
@@ -212,6 +221,9 @@
           Quantity: 2
         - ReagentId: Water
           Quantity: 3
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodTomatoes
@@ -277,6 +289,9 @@
     damage:
       types:
         Blunt: 1
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodTomatoesSlice
@@ -343,6 +358,9 @@
     count: 4
     sliceTime: 1.5
     slice: CP14FoodAppleSlice
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodAppleSlice
@@ -369,4 +387,71 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 1
- 
+
+- type: entity
+  id: CP14FoodPepper
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: pepper
+  description: Red and sweetish.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - peppery
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/pepper.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 6
+
+- type: entity
+  id: CP14FoodOnion
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: onion
+  description: If you eat too much, you can cry tears of joy.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - onion
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/onion.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 17
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Allicin
+          Quantity: 3

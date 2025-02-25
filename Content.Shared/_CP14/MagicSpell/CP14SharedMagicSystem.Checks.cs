@@ -2,6 +2,7 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.Instruments;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 
@@ -60,7 +61,6 @@ public abstract partial class CP14SharedMagicSystem
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-stamina-not-enough"));
             args.Cancel();
-            return;
         }
     }
 
@@ -95,7 +95,8 @@ public abstract partial class CP14SharedMagicSystem
         var ev = new CP14VerbalAspectSpeechEvent
         {
             Performer = args.Performer,
-            Speech = ent.Comp.StartSpeech,
+            Speech = Loc.GetString(ent.Comp.StartSpeech),
+            Emote = ent.Comp.Emote
         };
         RaiseLocalEvent(ent, ref ev);
     }
@@ -108,7 +109,8 @@ public abstract partial class CP14SharedMagicSystem
         var ev = new CP14VerbalAspectSpeechEvent
         {
             Performer = args.Performer,
-            Speech = ent.Comp.EndSpeech,
+            Speech = Loc.GetString(ent.Comp.EndSpeech),
+            Emote = ent.Comp.Emote
         };
         RaiseLocalEvent(ent, ref ev);
     }

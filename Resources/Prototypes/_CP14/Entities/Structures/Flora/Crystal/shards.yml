@@ -1,0 +1,77 @@
+- type: entity
+  id: CP14CrystalShardBase
+  parent: BaseItem
+  name: quartz shard
+  description: Natural quartz crystals that can absorb the magical energy of the world around them.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/Crystal/crystal_shard.rsi
+    layers:
+      - state: shard0
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        shard0: ""
+        shard1: ""
+        shard2: ""
+        shard3: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14GroundQuartz
+        Quantity: 7
+
+- type: entity
+  parent: CP14CrystalShardBase
+  id: CP14CrystalShardWater
+  suffix: Water
+  components:
+  - type: Sprite
+    color: "#5eabeb"
+
+- type: entity
+  parent: CP14CrystalShardBase
+  id: CP14CrystalShardHealing
+  suffix: Healing
+  components:
+  - type: Sprite
+    color: "#3de063"
+
+- type: entity
+  parent: CP14CrystalShardBase
+  id: CP14CrystalShardFire
+  suffix: Fire
+  components:
+  - type: Sprite
+    color: "#ed731c"
+
+- type: entity
+  parent: CP14CrystalShardBase
+  id: CP14CrystalShardLight
+  suffix: Light
+  components:
+  - type: Sprite
+    color: "#f1c7ff"
+
+- type: entity
+  parent: CP14CrystalShardBase
+  id: CP14CrystalShardElectric
+  suffix: Electric
+  components:
+  - type: Sprite
+    color: "#e6ff6b"
+
+- type: entity
+  parent: CP14CrystalShardBase
+  id: CP14CrystalShardDarkness
+  suffix: Darkness
+  components:
+  - type: Sprite
+    color: "#391c57"

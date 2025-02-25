@@ -42,6 +42,11 @@
         reagents:
         - ReagentId: CP14BloodFlowerSap
           Quantity: 12
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
+    - CP14BloodFlower
 
 - type: entity
   id: CP14AgaricMushroom
@@ -74,6 +79,10 @@
         reagents:
         - ReagentId: CP14AgaricMushroom
           Quantity: 3
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14ChromiumSlime
@@ -138,36 +147,10 @@
         reagents:
         - ReagentId: CP14WildSageSap
           Quantity: 15
-
-- type: entity
-  id: CP14QuartzShard
-  parent: BaseItem
-  name: rough quartz
-  description: a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.
-  categories: [ ForkFiltered ]
-  components:
   - type: Tag
     tags:
     - CP14FitInMortar
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-      - state: shard
-        map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        shard: ""
-        shard2: ""
-        shard3: ""
-        shard4: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14GroundQuartz
-        Quantity: 7
+    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14LumiMushroom
@@ -203,6 +186,10 @@
         reagents:
         - ReagentId: CP14LumiMushroom
           Quantity: 4
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14BlueAmanita
@@ -232,6 +219,10 @@
         reagents:
         - ReagentId: CP14BlueAmanita
           Quantity: 5
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
   
 - type: entity
   id: CP14Dayflin
@@ -261,6 +252,11 @@
         reagents:
         - ReagentId: CP14YellowDayflinPulp
           Quantity: 4
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
+    - CP14Dayflin
 
 - type: entity
   id: CP14AirLily
@@ -289,3 +285,7 @@
         reagents:
         - ReagentId: CP14AirLily
           Quantity: 4
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals

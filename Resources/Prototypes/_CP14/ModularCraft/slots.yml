@@ -5,3 +5,15 @@
 - type: modularSlot
   id: Garde
   name: cp14-modular-slot-garde
+
+- type: modularSlot
+  id: BladeInlay
+  name: cp14-modular-slot-blade-inlay
+
+- type: modularSlot
+  id: Rod
+  name: cp14-modular-slot-rod
+
+- type: modularSlot
+  id: ArrowTip
+  name: cp14-modular-slot-arrow-tip

@@ -6,9 +6,7 @@
   icon: 
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: full
-  price: 
-    min: 100
-    max: 200
+  price: 150
   services:
   - !type:CP14UnlockPositionsService
     addBuyPositions:
@@ -26,9 +24,7 @@
   icon: 
     sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
     state: base
-  price: 
-    min: 150
-    max: 300
+  price: 200
   services:
   - !type:CP14BuyItemsService
     product:
@@ -43,9 +39,7 @@
   icon: 
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
-  price: 
-    min: 60
-    max: 140
+  price: 100
   services:
   - !type:CP14BuyItemsService
     product:
@@ -59,9 +53,7 @@
   icon: 
     sprite: _CP14/Objects/Bureaucracy/paper.rsi
     state: folder_red
-  price: 
-    min: 50
-    max: 150
+  price: 100
   services:
   - !type:CP14BuyItemsService
     product:
@@ -75,9 +67,7 @@
   icon: 
     sprite: _CP14/Objects/Specific/Farming/seeds.rsi
     state: seeds
-  price: 
-    min: 30
-    max: 100
+  price: 70
   services:
   - !type:CP14BuyItemsService
     product:
@@ -91,9 +81,7 @@
   icon: 
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
     state: pulse
-  price: 
-    min: 100
-    max: 200
+  price: 150
   services:
   - !type:CP14BuyItemsService
     product:
@@ -107,9 +95,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/wood.rsi
     state: planks_3
-  price: 
-    min: 25
-    max: 50
+  price: 50
   services:
   - !type:CP14BuyItemsService
     product:
@@ -123,9 +109,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/cloth.rsi
     state: cloth_3
-  price: 
-    min: 30
-    max: 80
+  price: 50
   services:
   - !type:CP14BuyItemsService
     product:
@@ -139,9 +123,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/copper_bar.rsi
     state: bar_3
-  price: 
-    min: 40
-    max: 60
+  price: 250
   services:
   - !type:CP14BuyItemsService
     product:
@@ -155,9 +137,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/iron_bar.rsi
     state: bar_3
-  price: 
-    min: 400
-    max: 600
+  price: 500
   services:
   - !type:CP14BuyItemsService
     product:
@@ -171,9 +151,7 @@
   icon: 
     sprite: _CP14/Objects/Materials/gold_bar.rsi
     state: bar_3
-  price: 
-    min: 2000
-    max: 2500
+  price: 2000
   services:
   - !type:CP14BuyItemsService
     product:
@@ -187,9 +165,7 @@
   icon: 
     sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi 
     state: icon
-  price: 
-    min: 30
-    max: 80
+  price: 50
   services:
   - !type:CP14BuyItemsService
     product:
@@ -203,9 +179,7 @@
   icon: 
     sprite: _CP14/Objects/Consumable/Food/cheese.rsi
     state: cheese_wheel
-  price: 
-    min: 100
-    max: 250
+  price: 100
   services:
   - !type:CP14BuyItemsService
     product:
@@ -219,9 +193,7 @@
   icon: 
     sprite: Objects/Misc/books.rsi
     state: book_icon
-  price: 
-    min: 100
-    max: 250
+  price: 300
   services:
   - !type:CP14BuyItemsService
     product:

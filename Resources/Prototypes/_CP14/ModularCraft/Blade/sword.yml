@@ -32,11 +32,13 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronSword
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeIronSword
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
   modifiers:
   - !type:Inherit
@@ -46,8 +48,9 @@
 
 - type: modularPart
   id: BladeGoldSword
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldSword
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
   color: "#ffaf47"
   modifiers:
@@ -58,8 +61,9 @@
 
 - type: modularPart
   id: BladeCopperSword
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperSword
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
   color: "#bd712f"
   modifiers:
@@ -70,8 +74,9 @@
 
 - type: modularPart
   id: BladeMithrilSword
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilSword
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
   color: "#45d2a4"
   modifiers:
@@ -82,7 +87,8 @@
 
 - type: modularPart
   id: BladeBoneSword
-  targetSlot: Blade
+  slots:
+  - Blade
   sourcePart: CP14ModularBladeBoneSword
   rsiPath: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
   modifiers:

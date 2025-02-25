@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server._CP14.Currency;
 using Content.Server._CP14.RoundRemoveShuttle;
 using Content.Server.Shuttles.Systems;
@@ -13,6 +14,7 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -89,19 +91,19 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
         var tradepostMap = _mapManager.CreateMap();
 
-        if (!_loader.TryLoad(tradepostMap, station.Comp.ShuttlePath.ToString(), out var shuttleUids))
+        if (!_loader.TryLoadGrid(tradepostMap ,station.Comp.ShuttlePath, out var shuttle))
             return;
 
-        var shuttle =  shuttleUids[0];
+
         station.Comp.Shuttle = shuttle;
         station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
         var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle.Value);
         travelingStoreShipComp.Station = station;
 
-        var member = EnsureComp<StationMemberComponent>(shuttle);
+        var member = EnsureComp<StationMemberComponent>(shuttle.Value);
         member.Station = station;
 
-        var roundRemover = EnsureComp<CP14RoundRemoveShuttleComponent>(shuttle);
+        var roundRemover = EnsureComp<CP14RoundRemoveShuttleComponent>(shuttle.Value);
         roundRemover.Station = station;
 
         station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);
@@ -147,14 +149,14 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             if (buyPos.Special)
                 availableSpecialBuyPositions.Add(buyPos);
             else
-                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
+                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price);
         }
         foreach (var sellPos in station.Comp.AvailableSellPosition)
         {
             if (sellPos.Special)
                 availableSpecialSellPositions.Add(sellPos);
             else
-                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
+                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price);
         }
 
         //Random and select special positions
@@ -168,14 +170,14 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         {
             if (station.Comp.CurrentSpecialBuyPositions.Count >= currentSpecialBuyPositions)
                 break;
-            station.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price.Next(_random)/10*10);
+            station.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price);
         }
 
         foreach (var sellPos in availableSpecialSellPositions)
         {
             if (station.Comp.CurrentSpecialSellPositions.Count >= currentSpecialSellPositions)
                 break;
-            station.Comp.CurrentSpecialSellPositions.Add(sellPos, sellPos.Price.Next(_random)/10*10);
+            station.Comp.CurrentSpecialSellPositions.Add(sellPos, sellPos.Price);
         }
     }
 

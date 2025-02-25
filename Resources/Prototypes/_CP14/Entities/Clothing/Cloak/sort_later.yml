@@ -2,19 +2,6 @@
   parent: 
   - CP14ClothingCloakBase
   - ClothingSlotBase
-  id: CP14ClothingCloakBlacksmithArpon
-  name: blacksmith's apron
-  description: Loose leather strips, still actually being clothing. 
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
-
-- type: entity
-  parent: 
-  - CP14ClothingCloakBase
-  - ClothingSlotBase
   id: CP14ClothingCloakMaidArpon
   name: maid's apron
   description: Cleanliness, orderliness and obedience are the main traits of a good maid.

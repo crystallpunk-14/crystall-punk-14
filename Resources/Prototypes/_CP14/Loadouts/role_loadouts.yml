@@ -3,6 +3,7 @@
   groups:
   - CP14GeneralSpells
   - CP14GeneralHead
+  - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14GeneralMask
   - CP14GeneralCloak
@@ -19,6 +20,7 @@
   groups:
   - CP14GeneralSpells
   - CP14GeneralHead
+  - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -34,6 +36,7 @@
   groups:
   - CP14GeneralSpells
   - CP14AlchemistHead #
+  - CP14GeneralOuterClothing
   - CP14AlchemistEyes #
   - CP14AlchemistCloak #
   - CP14GeneralGloves
@@ -48,6 +51,7 @@
   groups:
   - CP14GeneralSpells
   - CP14GeneralHead
+  - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14GeneralCloak
   - CP14GeneralGloves
@@ -62,6 +66,7 @@
   groups:
   - CP14GeneralSpells
   - CP14GeneralHead
+  - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14BlacksmithCloak
   - CP14GeneralGloves
@@ -76,6 +81,7 @@
   groups:
   - CP14GeneralSpells
   - CP14GuardHead
+  - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14GuardCommanderCloak #
   - CP14GeneralGloves
@@ -91,6 +97,7 @@
   groups:
   - CP14GeneralSpells
   - CP14GuardHead
+  - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14GuardCloak #
   - CP14GeneralGloves
@@ -106,22 +113,38 @@
   groups:
   - CP14GeneralSpells
   - CP14CommandantHead
+  - CP14MerchantOuterClothing
   - CP14GeneralEyes
   - CP14CommandantCloak
-  - CP14BankShirt
-  - CP14BankPants
-  - CP14BankShoes
+  - CP14MerchantShirt
+  - CP14MerchantPants
+  - CP14MerchantShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
-  id: JobCP14Banker
+  id: JobCP14Guildmaster
   groups:
   - CP14GeneralSpells
-  - CP14BankHead
+  - CP14GuildmasterOuterClothing
   - CP14GeneralEyes
-  - CP14BankShirt
-  - CP14BankPants
-  - CP14BankShoes
+  - CP14GuildmasterCloak
+  - CP14GuildmasterShirt
+  - CP14GuildmasterPants
+  - CP14GuildmasterShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+  - CP14GuildmasterSpells
+
+- type: roleLoadout
+  id: JobCP14Merchant
+  groups:
+  - CP14GeneralSpells
+  - CP14MerchantHead
+  - CP14MerchantOuterClothing
+  - CP14GeneralEyes
+  - CP14MerchantShirt
+  - CP14MerchantPants
+  - CP14MerchantShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets

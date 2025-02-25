@@ -1,6 +1,6 @@
 - type: decal
   id: 0
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -10,7 +10,7 @@
 
 - type: decal
   id: 1
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -20,7 +20,7 @@
 
 - type: decal
   id: 2
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -30,7 +30,7 @@
 
 - type: decal
   id: 3
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -40,7 +40,7 @@
 
 - type: decal
   id: 4
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -50,7 +50,7 @@
 
 - type: decal
   id: 5
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -60,7 +60,7 @@
 
 - type: decal
   id: 6
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -70,7 +70,7 @@
 
 - type: decal
   id: 7
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -80,7 +80,7 @@
 
 - type: decal
   id: 8
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -90,7 +90,7 @@
 
 - type: decal
   id: 9
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1040,7 +1040,7 @@
 
 - type: decal
   id: a
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1050,7 +1050,7 @@
 
 - type: decal
   id: b
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1060,7 +1060,7 @@
 
 - type: decal
   id: c
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1070,7 +1070,7 @@
 
 - type: decal
   id: d
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1080,7 +1080,7 @@
 
 - type: decal
   id: e
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1090,7 +1090,7 @@
 
 - type: decal
   id: f
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1100,7 +1100,7 @@
 
 - type: decal
   id: g
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1110,7 +1110,7 @@
 
 - type: decal
   id: h
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1120,7 +1120,7 @@
 
 - type: decal
   id: i
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1130,7 +1130,7 @@
 
 - type: decal
   id: j
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1140,7 +1140,7 @@
 
 - type: decal
   id: k
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1150,7 +1150,7 @@
 
 - type: decal
   id: l
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1160,7 +1160,7 @@
 
 - type: decal
   id: m
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1170,7 +1170,7 @@
 
 - type: decal
   id: n
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1180,7 +1180,7 @@
 
 - type: decal
   id: o
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1190,7 +1190,7 @@
 
 - type: decal
   id: p
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1200,7 +1200,7 @@
 
 - type: decal
   id: q
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1210,7 +1210,7 @@
 
 - type: decal
   id: r
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1220,7 +1220,7 @@
 
 - type: decal
   id: s
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1230,7 +1230,7 @@
 
 - type: decal
   id: t
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1240,7 +1240,7 @@
 
 - type: decal
   id: u
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1250,7 +1250,7 @@
 
 - type: decal
   id: v
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1260,7 +1260,7 @@
 
 - type: decal
   id: w
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1270,7 +1270,7 @@
 
 - type: decal
   id: x
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1280,7 +1280,7 @@
 
 - type: decal
   id: y
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false
@@ -1290,7 +1290,7 @@
 
 - type: decal
   id: z
-  tags: ["crayon", "crayon-2-alphanum"]
+  tags: ["crayon", "CP14crayon", "crayon-2-alphanum"]
   defaultCleanable: true
   defaultCustomColor: true
   defaultSnap: false

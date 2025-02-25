@@ -97,3 +97,43 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14SwampFill
+
+- type: entity
+  id: CP14BiomeSpawnerFrozenSwamp
+  parent: CP14BaseBiomeSpawner
+  suffix: Frozen swamp
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+      - sprite: _CP14/Tiles/Water/water.rsi
+        state: full
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14SnowlandSwamp
+
+- type: entity
+  id: CP14BiomeSpawnerFrozenCave
+  parent: CP14BaseBiomeSpawner
+  suffix: Frozen cave
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+        color: blue
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14IceCavesGeneric
+
+- type: entity
+  id: CP14BiomeSpawnerLeafMaze
+  parent: CP14BaseBiomeSpawner
+  suffix: Leaf maze
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+        color: green
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14LeafMaze

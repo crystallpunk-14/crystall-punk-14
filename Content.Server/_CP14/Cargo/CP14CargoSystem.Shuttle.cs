@@ -110,6 +110,7 @@ public sealed partial class CP14CargoSystem
             station.OnStation = true;
 
             CashOut((ent.Comp.Station, station));
+            station.Balance = 0;
         }
 
         UpdateAllStores();

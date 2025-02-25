@@ -7,6 +7,10 @@
   - type: HumanoidAppearance
     species: CP14Elf
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Elf/parts.rsi
     state: full
@@ -14,8 +18,8 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
-        amount: 5
+      - id: CP14FoodMeatHuman
+        amount: 4
   - type: Body
     prototype: CP14Elf
     requiredLegs: 2
@@ -35,6 +39,11 @@
     templateId: CP14Human
     displacements:
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
@@ -67,6 +76,11 @@
     templateId: CP14Human
     displacements:
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi

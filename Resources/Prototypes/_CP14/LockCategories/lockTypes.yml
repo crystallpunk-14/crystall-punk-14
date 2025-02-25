@@ -67,36 +67,55 @@
   complexity: 3
   name: cp14-lock-shape-tavern-dorm5
 
-# Mercenary 
+# Artisans 
 
 - type: CP14LockType
   id: Alchemy1
   group: Alchemist
-  complexity: 3
+  complexity: 4
   name: cp14-lock-shape-alchemist1
   
 - type: CP14LockType
   id: Alchemy2
   group: Alchemist
-  complexity: 3
+  complexity: 4
   name: cp14-lock-shape-alchemist2
+  
+- type: CP14LockType
+  id: Alchemy3
+  group: Alchemist
+  complexity: 4
+  name: cp14-lock-shape-alchemist3
 
 - type: CP14LockType
   id: Blacksmith1
   group: Blacksmith
-  complexity: 3
+  complexity: 4
   name: cp14-lock-shape-blacksmith1
 
 - type: CP14LockType
   id: Blacksmith2
   group: Blacksmith
-  complexity: 3
+  complexity: 4
   name: cp14-lock-shape-blacksmith2
+
+- type: CP14LockType
+  id: Blacksmith3
+  group: Blacksmith
+  complexity: 4
+  name: cp14-lock-shape-blacksmith3
+
+# Mercenary
 
 - type: CP14LockType
   id: Guildmaster
   complexity: 5
   name: cp14-lock-shape-guildmaster
+
+- type: CP14LockType
+  id: DemiplaneCrystal
+  complexity: 5
+  name: cp14-lock-shape-demiplane-crystal
 
 # Personal house
 
@@ -189,6 +208,12 @@
   group: PersonalHouse
   complexity: 3
   name: cp14-lock-shape-personalhouse15
+
+- type: CP14LockType
+  id: PersonalHouse16
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse16
 
 # Guard
 

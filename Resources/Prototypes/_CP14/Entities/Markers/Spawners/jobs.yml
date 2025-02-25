@@ -38,7 +38,7 @@
       - state: green
       - state: guard
 
-# Bank
+# Traders
 
 - type: entity
   id: CP14SpawnPointCommandant
@@ -55,18 +55,18 @@
       - state: commandant
 
 - type: entity
-  id: CP14SpawnPointBanker
+  id: CP14SpawnPointMerchant
   parent: CP14SpawnPointJobBase
   name: merchant
   categories:
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: CP14Banker
+    job_id: CP14Merchant
   - type: Sprite
     layers:
       - state: green
-      - state: banker
+      - state: merchant
 
 # Mercenary
 
@@ -96,8 +96,7 @@
   - type: Sprite
     layers:
       - state: green
-      - state: adventurer #TODO
-        color: red
+      - state: guildmaster
 
 # Artisans
 

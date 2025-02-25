@@ -26,9 +26,9 @@
       visible: false
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
     - map: [ "shoes" ]
     - map: [ "shirt" ]
-    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # Bark Before clothing
@@ -56,6 +56,10 @@
   - type: HumanoidAppearance
     species: CP14Silva
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Elf/parts.rsi #TODO
     state: full
@@ -63,7 +67,7 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
+      - id: CP14FoodMeatHuman # Replace it with silva meat, heh.
         amount: 5
   - type: CP14MagicEnergyPhotosynthesis # Silva special feature
   - type: CP14SpellStorage
@@ -80,6 +84,11 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
       cloak:
         sizeMaps:
           32:
@@ -127,17 +136,18 @@
       sprite: Mobs/Customization/masking_helpers.rsi
       state: unisex_full
       visible: false
-    - map: [ "shirt" ]
-    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # Bark Before clothing
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ] # Bark Before clothing
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]
@@ -161,6 +171,11 @@
     templateId: CP14Human
     displacements:
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi

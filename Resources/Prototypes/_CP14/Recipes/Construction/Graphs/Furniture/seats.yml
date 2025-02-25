@@ -9,8 +9,23 @@
         - to: CP14ChairWooden
           steps:
             - material: CP14WoodenPlanks
-              amount: 4
+              amount: 2
               doAfter: 2
-              
     - node: CP14ChairWooden
       entity: CP14ChairWooden
+
+- type: constructionGraph
+  id: CP14BenchWood
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14BenchWood
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 3
+              doAfter: 2
+    - node: CP14BenchWood
+      entity: CP14BenchWood

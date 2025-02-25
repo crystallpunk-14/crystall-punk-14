@@ -37,10 +37,12 @@
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollPlantGrowth
+        - id: CP14SpellScrollCounterSpell
+        - id: CP14SpellScrollMagicalAcceleration
       - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
-      - id: CP14GlassShard
-      - id: CP14Paper
+      - id: CP14ScrapCopper
+      - id: CP14ScrapIron
     # Rare
     - !type:GroupSelector
       weight: 25
@@ -54,15 +56,8 @@
         - id: CP14VialSmallBlueAmanita
         - id: CP14VialTinyChromiumSlime
         - id: CP14VialTinyLumiMushroom
-      - !type:GroupSelector
-        children:
-        - id: CP14BookKnowledgeClothingSewing
-        - id: CP14BookKnowledgeWallpaperCraft
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
-      - id: CP14DemiplaneKeyT1
-        weight: 2
-      - id: CP14DemiplaneKeyT2
       # Rare standard village crates loot
       - !type:NestedSelector
         tableId: CP14StationCrateLoot
@@ -73,7 +68,7 @@
   parent: MarkerBase
   id: CP14SpawnerDemiplaneLootT2
   name: Demiplane T2 Loot
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: Sprite
     layers:
@@ -96,28 +91,23 @@
       # T1 loot chance
       - !type:NestedSelector
         tableId: CP14TableDemiplaneLootT1
-        weight: 0.25
+        weight: 2 #Temp (small amount T2 loot)
       - !type:GroupSelector
         children:
         - id: CP14SpellScrollShadowStep
         - id: CP14SpellScrollFireball
         - id: CP14SpellScrollBeerCreation
           weight: 0.2
-      - !type:GroupSelector
-        children:
-        - id: CP14BookKnowledgeAdvancedClothingSewing
-        - id: CP14BookKnowledgeMetallMelting
-        - id: CP14BookKnowledgeMetallForging
-        - id: CP14BookKnowledgeGlasswork
       - id: CP14EnergyCrystalMediumEmpty
+      - id: CP14ScrapGold
+      - id: CP14ScrapMithril
+        weight: 0.5
     # Rare
     - !type:GroupSelector
       weight: 25
       children:
       - !type:GroupSelector # remove this when players can create their own magic items
         children:
-        - id: CP14ClothingRingIceShards
-        - id: CP14ClothingRingFireball
-        - id: CP14ClothingRingFlashLight
-        - id: CP14MagicHealingStaff
         - id: CP14SpellScrollResurrection
+        - id: CP14ClothingRingIceShards
+        - id: CP14ClothingRingFlashLight

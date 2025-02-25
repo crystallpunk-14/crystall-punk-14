@@ -36,11 +36,13 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
+    - BladeInlay
 
 - type: modularPart
   id: BladeIronSpear
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeIronSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   modifiers:
   - !type:Inherit
@@ -50,8 +52,9 @@
 
 - type: modularPart
   id: BladeGoldSpear
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeGoldSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#ffaf47"
   modifiers:
@@ -62,8 +65,9 @@
 
 - type: modularPart
   id: BladeCopperSpear
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeCopperSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#bd712f"
   modifiers:
@@ -74,8 +78,9 @@
 
 - type: modularPart
   id: BladeMithrilSpear
-  targetSlot: Blade
-  sourcePart: CP14ModularBladeMithrilSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
   color: "#45d2a4"
   modifiers:

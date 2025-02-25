@@ -1,0 +1,22 @@
+- type: constructionGraph
+  id: CP14HeadWreath
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cp14headwreath
+      steps:
+      - tag: CP14BloodFlower
+        name: blood rose
+        icon:
+          sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
+          state: base1
+      - tag: CP14Dayflin
+        name: yellow dayflin
+        icon:
+          sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
+          state: base1
+        doAfter: 2
+
+  - node: cp14headwreath
+    entity: CP14ClothingHeadWreath

@@ -1,0 +1,64 @@
+- type: entity
+  id: CP14SmokingPipe
+  parent: BaseSmokingPipe
+  name: pipe
+  description: A comfortable and practical smoking pipe, the latest fashion in the Empire.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Smokeables/Pipes/pipe.rsi
+    state: unlit-icon
+  - type: Clothing
+    sprite: _CP14/Objects/Consumable/Smokeables/Pipes/pipe.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Consumable/Smokeables/Pipes/pipe.rsi
+  - type: Appearance
+  - type: BurnStateVisuals
+    unlitIcon: unlit-icon
+
+- type: entity
+  id: CP14SmokingPipeFilledTobacco
+  parent: CP14SmokingPipe
+  suffix: Tobacco
+  categories: [ ForkFiltered ]
+  components:
+  - type: ContainerContainer
+    containers:
+      bowl_slot: !type:ContainerSlot
+  - type: ItemSlots
+  - type: SmokingPipe
+    bowl_slot:
+      name: smoking-pipe-slot-component-slot-name-bowl
+      startingItem: CP14GroundTobacco
+      whitelist:
+        tags:
+          - Smokable
+      insertSound:
+        path: /Audio/Weapons/Guns/Empty/empty.ogg
+      ejectSound:
+        path: /Audio/Weapons/Guns/Empty/empty.ogg
+
+- type: entity
+  id: CP14SmokingPipeFilledSage
+  parent: CP14SmokingPipe
+  suffix: Sage
+  categories: [ ForkFiltered ]
+  components:
+  - type: ContainerContainer
+    containers:
+      bowl_slot: !type:ContainerSlot
+  - type: ItemSlots
+  - type: SmokingPipe
+    bowl_slot:
+      name: smoking-pipe-slot-component-slot-name-bowl
+      startingItem: CP14GroundSage
+      whitelist:
+        tags:
+          - Smokable
+      insertSound:
+        path: /Audio/Weapons/Guns/Empty/empty.ogg
+      ejectSound:
+        path: /Audio/Weapons/Guns/Empty/empty.ogg

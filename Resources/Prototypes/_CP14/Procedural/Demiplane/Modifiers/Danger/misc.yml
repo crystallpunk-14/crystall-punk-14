@@ -15,9 +15,12 @@
       entity: CP14Chasm
       tileMask:
       - CP14FloorBase
-      count: 5
-      minGroupSize: 2
-      maxGroupSize: 5
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
+      count: 4
+      minGroupSize: 5
+      maxGroupSize: 8
 
 # TIER 2
 
@@ -29,7 +32,7 @@
   name: cp14-modifier-explosive
   generationWeight: 0.25
   categories:
-    Danger: 0.4
+    Danger: 0.2
   layers:
     - !type:OreDunGen
       entity: LandMineExplosive
@@ -42,11 +45,12 @@
   tiers:
     - 2
     - 3
+  name: cp14-modifier-shadow-kudzu
   categories:
     Danger: 0.3
   layers:
     - !type:OreDunGen
-      entity: ShadowKudzu
+      entity: CP14AstralHaze
       count: 10
       minGroupSize: 1
       maxGroupSize: 1
