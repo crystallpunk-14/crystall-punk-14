@@ -9,6 +9,3 @@ cp14-magic-type-necro = Necromancy
 
 cp14-magic-manacost = Manacost
 cp14-magic-magic-type = Magic type
-
-cp14-magic-verbal-aspect = Requires the ability to speak
-cp14-magic-somatic-aspect = Requires a free hand:
