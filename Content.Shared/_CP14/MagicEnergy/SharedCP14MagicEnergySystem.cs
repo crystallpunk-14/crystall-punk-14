@@ -118,7 +118,14 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         if (!Resolve(from, ref fromComponent) || !Resolve(to, ref toComponent))
             return;
 
-        ChangeEnergy(from, -energy, out var change, out var overload, fromComponent, safe);
+        var transferEnergy = energy;
+        //We check how much space is left in the container so as not to overload it, but only if it does not support overloading
+        if (!toComponent.UnsafeSupport || safe)
+        {
+            transferEnergy = toComponent.MaxEnergy - toComponent.Energy;
+        }
+
+        ChangeEnergy(from, -transferEnergy, out var change, out var overload, fromComponent, safe);
         ChangeEnergy(to , -(change + overload), out changedEnergy, out overloadEnergy, toComponent, safe);
     }
 
