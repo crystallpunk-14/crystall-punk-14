@@ -4,7 +4,7 @@
   description: You get inside the demiplane of your choice.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/dimension.rsi
     state: rift_arrow
   - type: CP14MagicEffectManaCost
     manaCost: 25
@@ -32,7 +32,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/dimension.rsi
       state: rift_arrow
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 50

@@ -4,7 +4,7 @@
   description: You're trying to put the soul back into the body.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/necromancy.rsi
     state: resurrection
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.2
@@ -51,7 +51,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/necromancy.rsi
       state: resurrection
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 300

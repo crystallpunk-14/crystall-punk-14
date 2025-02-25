@@ -4,7 +4,7 @@
   description: You open a dimensional rift that transports the creatures around it to the demiplane link crystal
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/dimension.rsi
     state: demi_arrow
   - type: CP14MagicEffectManaCost
     manaCost: 25
@@ -29,7 +29,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/dimension.rsi
       state: demi_arrow
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 50
