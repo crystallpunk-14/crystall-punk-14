@@ -28,7 +28,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Effects/gib3.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons_monster.rsi
+      sprite: _CP14/Actions/Spells/earth.rsi
       state: subterranean_leap
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       hidden: true

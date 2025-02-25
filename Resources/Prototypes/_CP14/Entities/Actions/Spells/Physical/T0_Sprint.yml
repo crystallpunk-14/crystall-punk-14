@@ -4,7 +4,7 @@
   description: At the cost of heavy stamina expenditure, you accelerate significantly in movement.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1.3
@@ -20,7 +20,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/physical.rsi
       state: sprint
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 0.2
