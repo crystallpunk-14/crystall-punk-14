@@ -4,9 +4,12 @@
     "x": 32,
     "y": 32
   },
-  "license": "CC-BY-SA-4.0",
-  "copyright": "Created by TheShuEd (github)",
+  "license": "All right reserved",
+  "copyright": "Created by TheShuEd",
   "states": [
+    {
+      "name": "earth_wall"
+    },
     {
       "name": "subterranean_leap"
     }
