@@ -122,7 +122,8 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         //We check how much space is left in the container so as not to overload it, but only if it does not support overloading
         if (!toComponent.UnsafeSupport || safe)
         {
-            transferEnergy = toComponent.MaxEnergy - toComponent.Energy;
+            var freeSpace = toComponent.MaxEnergy - toComponent.Energy;
+            transferEnergy = FixedPoint2.Min(freeSpace, energy);
         }
 
         ChangeEnergy(from, -transferEnergy, out var change, out var overload, fromComponent, safe);

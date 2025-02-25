@@ -25,5 +25,5 @@ public sealed partial class CP14MagicEnergyContainerComponent : Component
     /// Does this container support unsafe energy manipulation?
     /// </summary>
     [DataField]
-    public bool UnsafeSupport = true;
+    public bool UnsafeSupport = false;
 }

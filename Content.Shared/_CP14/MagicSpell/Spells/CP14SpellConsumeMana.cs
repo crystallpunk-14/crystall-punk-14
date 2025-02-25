@@ -24,13 +24,25 @@ public sealed partial class CP14SpellConsumeManaEffect : CP14SpellEffect
         //First - used object
         if (args.Used is not null)
         {
-            magicEnergy.TransferEnergy(targetEntity, args.Used.Value, Mana, out var transferedEnergy, out var overloadedEnergy, safe: Safe);
+            magicEnergy.TransferEnergy(targetEntity,
+                args.Used.Value,
+                Mana,
+                out _,
+                out _,
+                safe: Safe);
+            return;
+        }
 
-            var diff = Mana - (transferedEnergy + overloadedEnergy);
-            if (diff > 0 && args.User is not null)
-            {
-                magicEnergy.ChangeEnergy(args.User.Value, diff, out _, out _, safe: Safe);
-            }
+        //Second - player
+        if (args.User is not null)
+        {
+            magicEnergy.TransferEnergy(targetEntity,
+                args.User.Value,
+                Mana,
+                out _,
+                out _,
+                safe: Safe);
+            return;
         }
     }
 }

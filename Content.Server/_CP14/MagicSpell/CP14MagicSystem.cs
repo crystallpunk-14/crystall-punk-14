@@ -7,6 +7,7 @@ using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
+using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
@@ -124,15 +125,13 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         var requiredMana = CalculateManacost(ent, args.Performer);
 
         //First - used object
-        if (magicEffect.SpellStorage is not null &&
-            TryComp<CP14MagicEnergyContainerComponent>(magicEffect.SpellStorage, out var magicStorage))
+        if (magicEffect.SpellStorage is not null && TryComp<CP14MagicEnergyContainerComponent>(magicEffect.SpellStorage, out var magicStorage))
         {
             var spellEv = new CP14SpellFromSpellStorageUsedEvent(args.Performer, (ent, magicEffect), requiredMana);
             RaiseLocalEvent(magicEffect.SpellStorage.Value, ref spellEv);
 
-            _magicEnergy.ChangeEnergy(magicEffect.SpellStorage.Value, -requiredMana, out var transferedEnergy, out var overloadedEnergy, magicStorage, safe: false);
-
-            requiredMana = MathF.Max(0, (float)(requiredMana - -(transferedEnergy + overloadedEnergy)));
+            _magicEnergy.ChangeEnergy(magicEffect.SpellStorage.Value, -requiredMana, out var changedEnergy, out var overloadedEnergy, magicStorage, safe: false);
+            requiredMana -= FixedPoint2.Abs(changedEnergy + overloadedEnergy);
         }
 
         //Second - action user
@@ -142,8 +141,6 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
             _magicEnergy.ChangeEnergy(args.Performer.Value, -requiredMana, out _, out _, playerMana, safe: false);
         }
     }
-
-
 
     private void OnMusicCheck(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
     {
