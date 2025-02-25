@@ -72,6 +72,9 @@
     spawned:
     - id: CP14FoodMeatMole
       amount: 3
+    - id: CP14PartsMonsterGlands
+      amount: 1
+      prob: 0.7
   - type: Bloodstream
     bloodMaxVolume: 200
     bloodReagent: CP14Blood
