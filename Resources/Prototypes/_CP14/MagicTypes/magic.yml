@@ -19,8 +19,8 @@
   color: "#ba97b8"
 
 - type: magicType
-  id: Darkness
-  name: cp14-magic-type-darkness
+  id: Dimension
+  name: cp14-magic-type-dimension
   color: "#4e0691"
 
 - type: magicType

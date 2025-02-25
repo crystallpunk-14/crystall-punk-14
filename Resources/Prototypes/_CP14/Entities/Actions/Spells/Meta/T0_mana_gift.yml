@@ -4,7 +4,7 @@
   description: You can transfer a small amount of your magical energy to a target entity or magical object.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_gift
   - type: CP14MagicEffectManaCost
     manaCost: 10
@@ -38,7 +38,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_gift
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 2

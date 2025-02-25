@@ -2,8 +2,9 @@
   save: false
   parent: 
   - BaseMob
-  - CP14MobDamageable
   - MobCombat
+  - CP14MobDamageable
+  - CP14MobMagical
   id: CP14BaseMobSpecies
   categories: [ ForkFiltered ]
   abstract: true
@@ -210,18 +211,6 @@
   - type: Tag
     tags:
     - FootstepSound
-  - type: CP14MagicCasterSlowdown
-  - type: CP14MagicEnergyContainer
-    magicAlert: CP14MagicEnergy
-    maxEnergy: 100
-    energy: 100
-  - type: CP14MagicEnergyDraw
-    energy: 1
-    delay: 3 # 5m to full restore
-  - type: CP14MagicUnsafeDamage
-  - type: CP14MagicUnsafeSleep
-  - type: CP14MagicAttuningMind
-    autoCopyToMind: true
   - type: CP14DemiplaneStabilizer
     requireAlive: true
   - type: CanEnterCryostorage

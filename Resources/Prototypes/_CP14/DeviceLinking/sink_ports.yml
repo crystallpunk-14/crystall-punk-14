@@ -1,0 +1,4 @@
+- type: sinkPort
+  id: CP14PowerTarget
+  name: cp14-signal-port-name-power-target
+  description: cp14-signal-port-description-hold-power-target

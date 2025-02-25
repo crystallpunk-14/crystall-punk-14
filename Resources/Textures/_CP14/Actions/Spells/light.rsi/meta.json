@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by .kreks., signal_light_blue, signal_light_red, signal_light_yellow by TheShuEd",
+  "states": [
+    {
+      "name": "flash_light"
+    },
+    {
+      "name": "signal_light_blue"
+    },
+    {
+      "name": "signal_light_red"
+    },
+    {
+      "name": "signal_light_yellow"
+    },
+    {
+      "name": "sphere_of_light"
+    }
+  ]
+}
