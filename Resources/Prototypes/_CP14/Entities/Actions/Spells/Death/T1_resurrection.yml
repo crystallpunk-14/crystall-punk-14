@@ -11,7 +11,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 100
   - type: CP14MagicEffect
-    magicType: Necromancy
+    magicType: Death
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

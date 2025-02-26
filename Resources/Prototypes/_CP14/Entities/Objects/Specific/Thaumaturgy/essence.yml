@@ -37,6 +37,14 @@
 
 - type: entity
   parent: CP14BaseEssence
+  id: CP14EssenceEarth
+  name: earth essence
+  components:
+  - type: Sprite
+    color: "#70533f"
+
+- type: entity
+  parent: CP14BaseEssence
   id: CP14EssenceFire
   name: fire essence
   components:
@@ -45,11 +53,11 @@
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssenceEarth
-  name: earth essence
+  id: CP14EssenceLife
+  name: life essence
   components:
   - type: Sprite
-    color: "#70533f"
+    color: "#89e04f"
 
 - type: entity
   parent: CP14BaseEssence
@@ -69,8 +77,16 @@
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssenceDarkness
-  name: darkness essence
+  id: CP14EssenceDimension
+  name: dimension essence
   components:
   - type: Sprite
     color: "#391c57"
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceDeath
+  name: death essence
+  components:
+  - type: Sprite
+    color: "#55877a"
