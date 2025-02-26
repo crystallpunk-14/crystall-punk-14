@@ -56,3 +56,4 @@
       - HideContextMenu
   - type: AnimationPlayer
   #TODO: EmitSoundOnSpawn
+  #TODO: Sprite cutting
