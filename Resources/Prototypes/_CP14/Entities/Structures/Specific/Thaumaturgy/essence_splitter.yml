@@ -49,10 +49,12 @@
   - type: PointLight
     radius: 1.5
   - type: TimedDespawn
-    lifetime: 0.45
+    lifetime: 3.95
   - type: EffectVisuals
   - type: Tag
     tags:
       - HideContextMenu
   - type: AnimationPlayer
-  #TODO: EmitSoundOnSpawn
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/Magic/ethereal_enter.ogg
