@@ -22,6 +22,7 @@
     endSpeech: "Glacies acus!"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceShards
+  - type: CP14MagicEffectPacifiedBlock
   - type: EntityWorldTargetAction
     repeat: true
     checkCanAccess: false

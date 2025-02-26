@@ -71,7 +71,7 @@
   - type: Sprite
     sprite: _CP14/Effects/music.rsi
     layers:
-    - state: notes_3
+    - state: notes_5
       color: "#79b330"
       shader: unshaded
  
