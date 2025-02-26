@@ -145,7 +145,7 @@
         amount: 5
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
-      - id: CP14BookImperialLawsHandBook
+      - id: CP14GuidebookImperialLaws
 
 - type: entity
   parent: CP14WoodenCloset
@@ -165,7 +165,7 @@
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
       - id: CP14StampGuardCommander
-      - id: CP14BookImperialLawsHandBook
+      - id: CP14GuidebookImperialLaws
 
 - type: entity
   parent: CP14WoodenCloset
