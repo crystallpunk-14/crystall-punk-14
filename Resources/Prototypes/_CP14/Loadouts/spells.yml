@@ -26,6 +26,7 @@
   - CP14ActionSpellSpeedBallade
   - CP14ActionSpellPeaceBallade
   - CP14ActionSpellHellBallade
+  - CP14ActionSpellMagicBallade
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -311,3 +312,16 @@
       !type:SpeciesRequirement
       species:
       - CP14Tiefling
+
+- type: loadout
+  id: CP14ActionSpellMagicBallade
+  dummyEntity: CP14ActionSpellMagicBallade
+  actions:
+  - CP14ActionSpellMagicBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
