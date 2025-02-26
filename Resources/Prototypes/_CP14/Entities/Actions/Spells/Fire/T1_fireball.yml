@@ -24,6 +24,7 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
+  - type: CP14MagicEffectPacifiedBlock
   - type: EntityWorldTargetAction
     checkCanAccess: false
     raiseOnUser: true

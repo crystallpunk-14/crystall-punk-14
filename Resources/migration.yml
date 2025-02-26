@@ -260,7 +260,10 @@ CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiverIronArrow
 #2025-17-02
 CP14Crossbolt: CP14CrossboltIron
 
-#2025-25-02
+#2025-26-02
+CP14BookImperialLawsHandBook: CP14GuidebookImperialLaws
+
+#2025-26-02
 CP14ClothingOuterClothingCuirass: CP14ArmorIronCuirass
 CP14ClothingOuterClothingInfantryCuirass: CP14ArmorIronCuirass
 CP14ClothingOuterClothingCuirassLoincloth: CP14ArmorIronCuirass

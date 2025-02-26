@@ -17,3 +17,4 @@ cp14-magic-spell-need-somatic-component = Вам не хватает свобо�
 
 cp14-magic-spell-stamina-not-enough = Вам не хватает сил, чтобы сделать это.
 cp14-magic-staminacost = Затраты энергии
+cp14-magic-spell-pacified = Это может навредить кому либо!

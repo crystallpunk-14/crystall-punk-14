@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: TimedDespawn
-    lifetime: 10
+    lifetime: 120
   - type: Sprite
     noRot: true
     drawDepth: FloorTiles

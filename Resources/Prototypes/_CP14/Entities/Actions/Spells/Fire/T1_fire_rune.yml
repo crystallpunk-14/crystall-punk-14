@@ -22,6 +22,7 @@
       - CP14AreaEntityEffectFireRune
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneEarthWall
+  - type: CP14MagicEffectPacifiedBlock
   - type: EntityWorldTargetAction
     range: 10
     itemIconStyle: BigAction

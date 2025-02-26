@@ -1,15 +1,3 @@
-- type: entity
-  parent: BookRandom
-  id: CP14BookKnowledgeBase
-  abstract: true
-  categories: [ ForkFiltered ]
-  name: knowledge book 
-  description: This book holds valuable knowledge that you can learn... if you're ready for it. 
-  components:
-  - type: CP14KnowledgePaperText
-
-#TODO: Уникальный визуал каждой книжке
-
 # T0
 
 - type: entity

@@ -22,7 +22,10 @@
   - CP14ActionSpellBeerCreation
   - CP14ActionSpellSprint
   - CP14ActionSpellKick
-  - CP14ActionSpellHealMusic
+  - CP14ActionSpellHealBallade
+  - CP14ActionSpellSpeedBallade
+  - CP14ActionSpellPeaceBallade
+  - CP14ActionSpellHellBallade
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -253,10 +256,10 @@
   - CP14ActionSpellKick
 
 - type: loadout
-  id: CP14ActionSpellHealMusic
-  dummyEntity: CP14ActionSpellHealMusic
+  id: CP14ActionSpellHealBallade
+  dummyEntity: CP14ActionSpellHealBallade
   actions:
-  - CP14ActionSpellHealMusic
+  - CP14ActionSpellHealBallade
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
@@ -264,3 +267,47 @@
       inverted: true
       traits:
       - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellSpeedBallade
+  dummyEntity: CP14ActionSpellSpeedBallade
+  actions:
+  - CP14ActionSpellSpeedBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellPeaceBallade
+  dummyEntity: CP14ActionSpellPeaceBallade
+  actions:
+  - CP14ActionSpellPeaceBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellHellBallade
+  dummyEntity: CP14ActionSpellHellBallade
+  actions:
+  - CP14ActionSpellHellBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Tiefling
