@@ -6,26 +6,34 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
+  #Dimension
+  - CP14ActionSpellShadowGrab
+  #Earth
+  #Fire
   - CP14ActionSpellFlameCreation
+  - CP14ActionSpellHellBallade
+  #Healing
   - CP14ActionSpellCureWounds
   - CP14ActionSpellCureBurn
   - CP14ActionSpellBloodPurification
   - CP14ActionSpellPlantGrowth
+  - CP14ActionSpellHealBallade
+  - CP14ActionSpellSpeedBallade
+  - CP14ActionSpellPeaceBallade
+  #Light
   - CP14ActionSpellSphereOfLight
-  - CP14ActionSpellManaConsume
-  - CP14ActionSpellManaGift
+  #Meta
+  - CP14ActionSpellManaManipulation
   - CP14ActionSpellCounterSpell
-  - CP14ActionSpellShadowGrab
+  - CP14ActionSpellMagicBallade
+  #Physical
+  - CP14ActionSpellSprint
+  - CP14ActionSpellKick
+  #Water
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellIceShards
   - CP14ActionSpellFreeze
   - CP14ActionSpellBeerCreation
-  - CP14ActionSpellSprint
-  - CP14ActionSpellKick
-  - CP14ActionSpellHealBallade
-  - CP14ActionSpellSpeedBallade
-  - CP14ActionSpellPeaceBallade
-  - CP14ActionSpellHellBallade
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -122,9 +130,10 @@
       - CP14ManaWasting
 
 - type: loadout
-  id: CP14ActionSpellManaConsume
-  dummyEntity: CP14ActionSpellManaConsume
+  id: CP14ActionSpellManaManipulation
+  dummyEntity: CP14DummyActionSpellManaManipulation
   actions:
+  - CP14ActionSpellManaGift
   - CP14ActionSpellManaConsume
   effects:
   - !type:JobRequirementLoadoutEffect
@@ -133,19 +142,6 @@
       species:
       - CP14Elf
       inverted: true # Elves cannot take this spell, they have buffed version by default
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-
-- type: loadout
-  id: CP14ActionSpellManaGift
-  dummyEntity: CP14ActionSpellManaGift
-  actions:
-  - CP14ActionSpellManaGift
-  effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:TraitsRequirement
@@ -311,3 +307,16 @@
       !type:SpeciesRequirement
       species:
       - CP14Tiefling
+
+- type: loadout
+  id: CP14ActionSpellMagicBallade
+  dummyEntity: CP14ActionSpellMagicBallade
+  actions:
+  - CP14ActionSpellMagicBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
