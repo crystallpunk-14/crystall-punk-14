@@ -31,6 +31,7 @@
     startSpeech: cp14-kick-emote-start
     endSpeech: cp14-kick-emote
     emote: true
+  - type: CP14MagicEffectPacifiedBlock
   - type: EntityTargetAction
     canTargetSelf: false
     range: 1

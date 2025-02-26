@@ -24,6 +24,7 @@
   - CP14ActionSpellKick
   - CP14ActionSpellHealBallade
   - CP14ActionSpellSpeedBallade
+  - CP14ActionSpellPeaceBallade
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -271,6 +272,19 @@
   dummyEntity: CP14ActionSpellSpeedBallade
   actions:
   - CP14ActionSpellSpeedBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellPeaceBallade
+  dummyEntity: CP14ActionSpellPeaceBallade
+  actions:
+  - CP14ActionSpellPeaceBallade
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:

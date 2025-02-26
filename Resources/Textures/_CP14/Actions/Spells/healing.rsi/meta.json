@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "All right reserved",
-  "copyright": "Created by .kreks., cure_burn, cure_poison, heal_music, speed_music, plant_growth by TheShuEd",
+  "copyright": "Created by TheShuEd, cure_wounds created by .kreks.",
   "states": [
     {
       "name": "cure_burn"
@@ -18,6 +18,9 @@
     },
     {
       "name": "heal_music"
+    },
+    {
+      "name": "peace_music"
     },
     {
       "name": "plant_growth"
