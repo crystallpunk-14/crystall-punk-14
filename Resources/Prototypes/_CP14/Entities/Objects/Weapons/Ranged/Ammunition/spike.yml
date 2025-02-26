@@ -3,6 +3,7 @@
   id: CP14SpikeWhistle
   name: spike
   description: Organically spiked with an unknown liquid inside.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/spike.rsi
