@@ -35,6 +35,11 @@
   flavorType: Base
   description: cp14-flavor-base-salt
 
+- type: flavor
+  id: CP14VerySweet
+  flavorType: Base
+  description: cp14-flavor-base-very-sweet
+
 # Complex
 
 - type: flavor

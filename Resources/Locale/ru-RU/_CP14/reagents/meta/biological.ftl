@@ -30,3 +30,6 @@ cp14-reagent-desc-lumi-shroom = Слабо мерцающая жижа, добы
 
 cp14-reagent-name-wild-sage-sap = Сок дикого шалфея
 cp14-reagent-desc-wild-sage-sap = Сок вездерастущего лечебного растения, неплохо заживляющий физические травмы, и вызывающий откашливание.
+
+cp14-reagent-name-sleepy-poison = Сонный яд
+cp14-reagent-desc-sleepy-poison = Яд, выделяемый опасными магическими монстрами, чтобы быстро усыпить свою жертву.

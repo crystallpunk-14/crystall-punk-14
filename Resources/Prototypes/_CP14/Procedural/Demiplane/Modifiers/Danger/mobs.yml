@@ -115,3 +115,19 @@
       count: 6
       minGroupSize: 1
       maxGroupSize: 2
+
+- type: cp14DemiplaneModifier
+  id: EnemyInvisibleWhistler
+  tiers:
+    - 2
+  name: cp14-modifier-invisible-whistler
+  categories:
+    Danger: 0.4
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobMonsterInvisibleWhistler
+      count: 2
+      minGroupSize: 1
+      maxGroupSize: 2
