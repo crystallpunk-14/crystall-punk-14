@@ -37,17 +37,3 @@
   name: Алхимизированные решения
   text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Arcane.xml"
   filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_RU_Demiplanes
-  name: Исследование демипланов
-  text: "/ServerInfo/_CP14/Guidebook_RU/Demiplanes.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_RU_Imperial_Laws
-  name: Имперские законы
-  text: "/ServerInfo/_CP14/Guidebook_RU/ImperialLaws.xml"
-  filterEnabled: True
