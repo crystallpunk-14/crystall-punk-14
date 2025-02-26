@@ -17,6 +17,9 @@
       "name": "mana_consume"
     },
     {
+      "name": "mana"
+    },
+    {
       "name": "mana_gift"
     }
   ]
