@@ -2,6 +2,7 @@
   id: CP14DummyActionSpellManaManipulation
   name: Mana manipulation
   description: You can manipulate mana by giving it to other objects or taking it from them.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
