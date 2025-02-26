@@ -22,7 +22,7 @@
     drawdepth: Mobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      sprite: _CP14/Mobs/Monster/mole.rsi #Temporary monster sprite, you need your own
+      sprite: _CP14/Mobs/Monster/invisible_whistler.rsi #Temporary monster sprite, you need your own
       state: live
   - type: Fixtures
     fixtures:
@@ -43,7 +43,7 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 5
+        Piercing: 6
         Structural: 3
   - type: Damageable
     damageContainer: Biological
@@ -60,8 +60,8 @@
   - type: Stamina
     critThreshold: 200
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3
-    baseSprintSpeed: 3
+    baseWalkSpeed: 2.8
+    baseSprintSpeed: 2.8
   - type: DamageStateVisuals
     states:
       Alive:
