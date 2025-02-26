@@ -1,13 +1,26 @@
 using System.Text;
+using Content.Shared._CP14.MagicEnergy;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
+using Content.Shared.Throwing;
+using Content.Shared.Whitelist;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.MagicEssence;
 
 public partial class CP14MagicEssenceSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -16,11 +29,55 @@ public partial class CP14MagicEssenceSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEssenceScannerComponent, CP14MagicEssenceScanEvent>(OnMagicScanAttempt);
         SubscribeLocalEvent<CP14MagicEssenceScannerComponent, InventoryRelayedEvent<CP14MagicEssenceScanEvent>>((e, c, ev) => OnMagicScanAttempt(e, c, ev.Args));
+
+        SubscribeLocalEvent<CP14MagicEssenceSplitterComponent, CP14MagicEnergyOverloadEvent>(OnEnergyOverload);
+    }
+
+    private void OnEnergyOverload(Entity<CP14MagicEssenceSplitterComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    {
+        //TODO unhardcode
+        _magicEnergy.ChangeEnergy(ent, -100, out var changed, out var overloaded, safe: true);
+        //TODO move to server
+        if (_net.IsClient)
+            return;
+
+        var entities = _lookup.GetEntitiesInRange(ent, 0.5f, LookupFlags.Uncontained);
+        foreach (var entUid in entities)
+        {
+            var splitting = !(ent.Comp.Whitelist is not null && !_whitelist.IsValid(ent.Comp.Whitelist, entUid));
+            if (splitting)
+                TrySplitToEssence(entUid);
+
+            var dir = _random.NextAngle().ToWorldVec() * ent.Comp.ThrowForce;
+            _throwing.TryThrow(entUid, dir, ent.Comp.ThrowForce);
+        }
+        SpawnAttachedTo(ent.Comp.ImpactEffect, Transform(ent).Coordinates);
     }
 
     private void OnMagicScanAttempt(EntityUid uid, CP14MagicEssenceScannerComponent component, CP14MagicEssenceScanEvent args)
     {
         args.CanScan = true;
+    }
+
+    private bool TrySplitToEssence(EntityUid uid)
+    {
+        if (!TryComp<CP14MagicEssenceContainerComponent>(uid, out var essenceContainer))
+            return false;
+
+        foreach (var essence in essenceContainer.Essences)
+        {
+            if (_proto.TryIndex(essence.Key, out var magicType))
+            {
+                for (var i = 0; i < essence.Value; i++)
+                {
+                    var spawned = SpawnAtPosition(magicType.EssenceProto, Transform(uid).Coordinates);
+                    _transform.AttachToGridOrMap(spawned);
+                }
+            }
+        }
+
+        QueueDel(uid);
+        return true;
     }
 
     private void OnExamine(Entity<CP14MagicEssenceContainerComponent> ent, ref ExaminedEvent args)
