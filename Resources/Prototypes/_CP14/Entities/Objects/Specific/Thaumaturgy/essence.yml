@@ -90,3 +90,11 @@
   components:
   - type: Sprite
     color: "#55877a"
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceElectric
+  name: electric essence
+  components:
+  - type: Sprite
+    color: "#caed72"

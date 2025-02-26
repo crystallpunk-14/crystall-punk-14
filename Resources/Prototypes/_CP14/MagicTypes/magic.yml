@@ -44,3 +44,9 @@
   name: cp14-magic-type-death
   color: "#55877a"
   essenceProto: CP14EssenceDeath
+
+- type: magicType
+  id: Electric
+  name: cp14-magic-type-electric
+  color: "#caed72"
+  essenceProto: CP14EssenceElectric

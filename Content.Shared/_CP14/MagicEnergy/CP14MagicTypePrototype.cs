@@ -12,7 +12,7 @@ public sealed class CP14MagicTypePrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
-    public string Name = string.Empty;
+    public LocId Name = string.Empty;
 
     [DataField(required: true)]
     public Color Color = Color.White;

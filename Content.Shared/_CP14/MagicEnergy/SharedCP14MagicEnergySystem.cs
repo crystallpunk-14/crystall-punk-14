@@ -178,9 +178,3 @@ public sealed class CP14MagicEnergyBurnOutEvent : EntityEventArgs
 {
     public FixedPoint2 BurnOutEnergy;
 }
-
-public sealed class CP14MagicEnergyScanEvent : EntityEventArgs, IInventoryRelayEvent
-{
-    public bool CanScan;
-    public SlotFlags TargetSlots { get; } = SlotFlags.EYES;
-}

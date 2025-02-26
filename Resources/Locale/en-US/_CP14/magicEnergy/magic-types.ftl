@@ -9,3 +9,4 @@ cp14-magic-type-death = Death
 
 cp14-magic-manacost = Manacost
 cp14-magic-magic-type = Magic type
+cp14-magic-essence-title = From here, essences can be extracted:

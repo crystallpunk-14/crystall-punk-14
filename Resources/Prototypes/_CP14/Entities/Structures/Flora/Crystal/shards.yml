@@ -35,14 +35,20 @@
   components:
   - type: Sprite
     color: "#5eabeb"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Water: 3
 
 - type: entity
   parent: CP14CrystalShardBase
   id: CP14CrystalShardHealing
-  suffix: Healing
+  suffix: Life
   components:
   - type: Sprite
     color: "#3de063"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Life: 3
 
 - type: entity
   parent: CP14CrystalShardBase
@@ -51,6 +57,9 @@
   components:
   - type: Sprite
     color: "#ed731c"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Fire: 3
 
 - type: entity
   parent: CP14CrystalShardBase
@@ -59,6 +68,9 @@
   components:
   - type: Sprite
     color: "#f1c7ff"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Light: 3
 
 - type: entity
   parent: CP14CrystalShardBase
@@ -67,11 +79,17 @@
   components:
   - type: Sprite
     color: "#e6ff6b"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Electric: 3
 
 - type: entity
   parent: CP14CrystalShardBase
   id: CP14CrystalShardDarkness
-  suffix: Darkness
+  suffix: Dimension
   components:
   - type: Sprite
     color: "#391c57"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Dimension: 3
