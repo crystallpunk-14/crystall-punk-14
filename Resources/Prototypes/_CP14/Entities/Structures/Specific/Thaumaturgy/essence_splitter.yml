@@ -49,11 +49,10 @@
   - type: PointLight
     radius: 1.5
   - type: TimedDespawn
-    lifetime: 1.45
+    lifetime: 0.45
   - type: EffectVisuals
   - type: Tag
     tags:
       - HideContextMenu
   - type: AnimationPlayer
   #TODO: EmitSoundOnSpawn
-  #TODO: Sprite cutting
