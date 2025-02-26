@@ -25,6 +25,7 @@
   - CP14ActionSpellHealBallade
   - CP14ActionSpellSpeedBallade
   - CP14ActionSpellPeaceBallade
+  - CP14ActionSpellHellBallade
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -292,3 +293,21 @@
       inverted: true
       traits:
       - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellHellBallade
+  dummyEntity: CP14ActionSpellHellBallade
+  actions:
+  - CP14ActionSpellHellBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Tiefling
