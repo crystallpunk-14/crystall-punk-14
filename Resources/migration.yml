@@ -195,10 +195,10 @@ CP14TwoHandedSwordScythe: null
 
 #2025-17-01
 CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
-CP14ClothingCloakCuirass: CP14ClothingOuterClothingCuirass
-CP14ClothingCloakInfantryCuirass: CP14ClothingOuterClothingInfantryCuirass
-CP14ClothingCloakCuirassLoincloth: CP14ClothingOuterClothingCuirassLoincloth
-CP14ClothingCloakCuirassLeg: CP14ClothingOuterClothingCuirassLeg
+CP14ClothingCloakCuirass: CP14ArmorIronCuirass
+CP14ClothingCloakInfantryCuirass: CP14ArmorIronCuirass
+CP14ClothingCloakCuirassLoincloth: CP14ArmorIronCuirass
+CP14ClothingCloakCuirassLeg: CP14ArmorIronCuirass
 
 #2025-21-01
 CP14PlateWooden: CP14Plate
@@ -262,6 +262,12 @@ CP14Crossbolt: CP14CrossboltIron
 
 #2025-26-02
 CP14BookImperialLawsHandBook: CP14GuidebookImperialLaws
+
+#2025-26-02
+CP14ClothingOuterClothingCuirass: CP14ArmorIronCuirass
+CP14ClothingOuterClothingInfantryCuirass: CP14ArmorIronCuirass
+CP14ClothingOuterClothingCuirassLoincloth: CP14ArmorIronCuirass
+CP14ClothingOuterClothingCuirassLeg: CP14ArmorIronCuirass
 
 # <---> CrystallEdge migration zone end
 

@@ -25,3 +25,9 @@
     sprite: _CP14/Clothing/Gloves/girdles.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Gloves/girdles.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.99
+        Slash: 0.98
+        Piercing: 0.99
