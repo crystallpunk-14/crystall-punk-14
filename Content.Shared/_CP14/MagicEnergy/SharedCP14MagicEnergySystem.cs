@@ -55,7 +55,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         changedEnergy = 0;
         overloadEnergy = 0;
 
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return;
 
         if (!safe)
