@@ -1,10 +1,10 @@
 # Poison
 
 - type: reagent
-  id: CP14SleepyPoison
+  id: CP14WhistlerPoison
   group: CP14Biological
-  name: cp14-reagent-name-sleepy-poison
-  desc: cp14-reagent-desc-sleepy-poison
+  name: cp14-reagent-name-whistler-poison
+  desc: cp14-reagent-desc-whistler-poison
   flavor: CP14VerySweet
   color: "#6bb4bf"
   physicalDesc: reagent-physical-desc-powdery

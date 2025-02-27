@@ -17,7 +17,7 @@
       melee:
         maxVol: 4
         reagents:
-        - ReagentId: CP14SleepyPoison
+        - ReagentId: CP14WhistlerPoison
           Quantity: 4
   - type: SolutionInjectOnEmbed
     transferAmount: 4

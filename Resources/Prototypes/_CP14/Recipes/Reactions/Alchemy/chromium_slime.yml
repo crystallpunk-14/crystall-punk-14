@@ -45,8 +45,11 @@
       CP14BasicEffectDamageAirloss: CP14BasicEffectHealAirloss
       CP14BasicEffectHealAirloss: CP14BasicEffectDamageAirloss
       #
-    # CP14BasicEffectRainbow: 
-    # CP14BasicEffectEmoteCough:
+      CP14BasicEffectUnsleep: CP14BasicEffectSleep
+      CP14BasicEffectSleep: CP14BasicEffectUnsleep
+      #
+      CP14BasicEffectRainbow: CP14BasicEffectEmoteCough
+      CP14BasicEffectEmoteCough: CP14BasicEffectRainbow
   
 # Simple brewing
 

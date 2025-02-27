@@ -396,6 +396,60 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
+        
+- type: reagent
+  id: CP14BasicEffectSleep
+  name: cp14-reagent-name-basic-sleep
+  desc: cp14-reagent-desc-basic-sleep
+  group: CP14BasicEffect
+  flavor: CP14VerySweet
+  color: "#425e8a"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.1
+      effects:
+      - !type:Emote
+        emote: Yawn
+        showInChat: true
+        probability: 0.2
+      - !type:GenericStatusEffect
+        key: ForcedSleep
+        component: ForcedSleeping
+        type: Add
+        
+- type: reagent
+  id: CP14BasicEffectUnsleep
+  name: cp14-reagent-name-basic-unsleep
+  desc: cp14-reagent-desc-basic-unsleep
+  group: CP14BasicEffect
+  flavor: CP14VerySweet
+  color: "#6bc97e"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.1
+      effects:
+      - !type:ResetNarcolepsy
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: ForcedSleep
+        time: 3
+        type: Remove
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: CP14BasicEffectSleep
+          min: 1
+        reagent: CP14BasicEffectSleep
+        amount: -10
 
 # Gimmick solutions, otherwise doesn't give a mechanical benefit
   
