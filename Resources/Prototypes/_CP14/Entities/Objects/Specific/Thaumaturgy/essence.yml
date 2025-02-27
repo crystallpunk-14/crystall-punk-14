@@ -34,6 +34,12 @@
         - Impassable
         restitution: 0.3  # fite me
         friction: 0.2
+  - type: ChasingWalk
+    maxChaseRadius: 5
+    minSpeed: 2
+    maxSpeed: 3
+    chasingComponent:
+    - type: CP14MagicEssenceAttractor
 
 - type: entity
   parent: CP14BaseEssence

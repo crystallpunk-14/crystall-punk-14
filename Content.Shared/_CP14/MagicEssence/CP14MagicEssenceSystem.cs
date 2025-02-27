@@ -6,6 +6,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Throwing;
 using Content.Shared.Whitelist;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -32,6 +33,22 @@ public partial class CP14MagicEssenceSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEssenceScannerComponent, InventoryRelayedEvent<CP14MagicEssenceScanEvent>>((e, c, ev) => OnMagicScanAttempt(e, c, ev.Args));
 
         SubscribeLocalEvent<CP14MagicEssenceSplitterComponent, CP14MagicEnergyOverloadEvent>(OnEnergyOverload);
+
+        SubscribeLocalEvent<CP14MagicEssenceCollectorComponent, CP14SlotCrystalPowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<CP14MagicEssenceCollectorComponent, StartCollideEvent>(OnCollectorCollide);
+    }
+
+    private void OnPowerChanged(Entity<CP14MagicEssenceCollectorComponent> ent, ref CP14SlotCrystalPowerChangedEvent args)
+    {
+        if (args.Powered)
+            EnsureComp<CP14MagicEssenceAttractorComponent>(ent);
+        else
+            RemCompDeferred<CP14MagicEssenceAttractorComponent>(ent);
+    }
+
+    private void OnCollectorCollide(Entity<CP14MagicEssenceCollectorComponent> ent, ref StartCollideEvent args)
+    {
+        
     }
 
     private void OnEnergyOverload(Entity<CP14MagicEssenceSplitterComponent> ent, ref CP14MagicEnergyOverloadEvent args)
