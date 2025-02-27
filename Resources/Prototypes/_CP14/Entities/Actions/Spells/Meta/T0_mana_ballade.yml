@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffectManaCost
-    manaCost: 9
+    manaCost: 5
     canModifyManacost: false
   - type: CP14MagicEffect
     magicType: Meta
@@ -40,8 +40,8 @@
   - type: TimedDespawn
     lifetime: 1.6
   - type: CP14AreaEntityEffect
-    range: 3
-    maxTargets: 4
+    range: 5
+    maxTargets: 5
     whitelist:
       components:
       - CP14MagicEnergyContainer
@@ -53,8 +53,8 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: 3
-        safe: false
+        manaDelta: 1.2
+        safe: true
 
 - type: entity
   id: CP14ImpactEffectMagicBallade

@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1
   - type: CP14MagicEffectManaCost
-    manaCost: 5
+    manaCost: 1
   - type: CP14MagicEffect
     magicType: Life
     effects:
@@ -53,7 +53,7 @@
       - !type:MovespeedModifier
         walkSpeedModifier: 1.15
         sprintSpeedModifier: 1.15
-        statusLifetime: 1.5
+        statusLifetime: 1.8
 
 - type: entity
   id: CP14ImpactEffectSpeedBallade

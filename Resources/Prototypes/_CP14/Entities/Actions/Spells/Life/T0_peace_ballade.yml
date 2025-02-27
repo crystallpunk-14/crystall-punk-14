@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffectManaCost
-    manaCost: 5
+    manaCost: 2
   - type: CP14MagicEffect
     magicType: Life
     effects:
@@ -54,7 +54,7 @@
         key: Pacified
         component: Pacified
         type: Add
-        time: 1.5
+        time: 1.8
 
 - type: entity
   id: CP14ImpactEffectPeaceBallade
