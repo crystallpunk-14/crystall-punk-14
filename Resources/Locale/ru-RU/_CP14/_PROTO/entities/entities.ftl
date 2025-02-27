@@ -174,7 +174,7 @@ ent-CP14ActionSpellMonolithWarp = Телепорт к монолиту
 
 ent-CP14GuildmaterTimedTeleport = пульсирующий разлом демиплана
     .desc = Этот разлом набирает силу, и через секунду все ближайшие существа окажутся в ловушке демиплана!
-    .suffix = Телепорт в кристалл демиплана
+    .suffix = Телепорт к кристаллу демиплана
 
 ent-CP14SpellScrollMonolithWarp = свиток заклинания телепорта к монолиту
     .desc = { ent-CP14BaseSpellScrollDarkness.desc }
@@ -384,7 +384,7 @@ ent-CP14SignalLightYellow = { ent-CP14SignalLightBase }
 ent-CP14SignalLightBlue = { ent-CP14SignalLightBase }
     .suffix = Синий
 
-ent-CP14ActionSpellCounterSpell = Контр-заклинание
+ent-CP14ActionSpellCounterSpell = Контрспелл
     .desc = Воздействуя на саму магическую энергию, вы можете прервать произнесение чужого заклинания.
 
 ent-CP14RuneCounterSpell = { ent-CP14BaseMagicRune }
@@ -393,7 +393,7 @@ ent-CP14RuneCounterSpell = { ent-CP14BaseMagicRune }
 ent-CP14ImpactEffectCounterSpell = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14SpellScrollCounterSpell = свиток заклинаний контр-заклинания
+ent-CP14SpellScrollCounterSpell = свиток заклинаний контрспелла
     .desc = { ent-CP14BaseSpellScrollMeta.desc }
 
 ent-CP14ActionSpellManaConsume = Поглощение маны
@@ -571,7 +571,7 @@ ent-CP14ClothingHeadCapellina = капеллина
     .desc = Защита от ударов крупными предметами по голове.
 
 ent-CP14ClothingHeadBascinet = бацинет
-    .desc = Защищает большую часть головы, но лицо все равно не спасает от ударов.
+    .desc = Защищает большую часть головы, но все равно не спасет от удара в лицо.
 
 ent-CP14ClothingHeadWreath = цветочный венок
     .desc = Простое украшение из цветов. Это так мило.
@@ -812,7 +812,7 @@ ent-CP14ClothingShoesArtifactSpeedboots = ботинки Гермеса
     .suffix = Артефакт
 
 ent-CP14LongLeatherBoots = длинные кожаные сапоги
-    .desc = Идеальный инструмент для ударов слева и справа.
+    .desc = Удобная обувь для ударов ногой слева и справа.
 
 ent-CP14Mist = облако
 
@@ -851,11 +851,11 @@ ent-CP14MobGroupSpawnerRabbits = { ent-CP14BaseMobGroupSpawner }
 
 ent-CP14MobGroupSpawnerFrogs = { ent-CP14BaseMobGroupSpawner }
     .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = 2-3 Frogs
+    .suffix = 2-3 Лягушки
 
 ent-CP14MobGroupSpawnerIceSpectres = { ent-CP14BaseMobGroupSpawner }
     .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = 1-2 Ice spectres
+    .suffix = 1-2 Ледяных спектра
 
 ent-CP14SpawnPointGuardCommander = командир стражи
     .desc = { ent-CP14SpawnPointJobBase.desc }
@@ -920,7 +920,7 @@ ent-CP14RandomSnowLootSpawner = спавнер снега
 ent-CP14BaseBiomeSpawner = спавнер биомов
 
 ent-CP14BiomeSpawnerGrassland = { ent-CP14BaseBiomeSpawner }
-    .suffix = T0 Ресурсы, Пастбище
+    .suffix = T0 Ресурсы, Травянистые земли
 
 ent-CP14BiomeSpawnerCave = { ent-CP14BaseBiomeSpawner }
     .suffix = T0 Ресурсы, Пещерные туннели
@@ -2242,7 +2242,7 @@ ent-CP14ModularInlayQuartzLight = светлая кварцевая инкрус
 ent-CP14ModularInlayQuartzElectric = электрическая кварцевая инкрустация
     .desc = { ent-CP14ModularInlayQuartzBase.desc }
 
-ent-CP14ModularInlayQuartzDarkness = темная кварцевая инкрустация
+ent-CP14ModularInlayQuartzDarkness = пространственная кварцевая инкрустация
     .desc = { ent-CP14ModularInlayQuartzBase.desc }
 
 ent-CP14ModularBladeTipBase = None
@@ -2426,7 +2426,7 @@ ent-CP14EssenceWater = водная эссенция
 ent-CP14EssenceLight = светлая эссенция
     .desc = { ent-CP14BaseEssence.desc }
 
-ent-CP14EssenceDarkness = тёмная эссенция
+ent-CP14EssenceDarkness = эссенция пространства
     .desc = { ent-CP14BaseEssence.desc }
 
 ent-CP14RitualChalk = ритуальный мелок
@@ -2501,7 +2501,7 @@ ent-CP14WallpaperWhite2 = обои "чистый белый"
 ent-CP14WallpaperYellow = обои "солнечный ритм"
     .desc = { ent-CP14BaseWallpaper.desc }
 
-ent-CP14MagicShadowStaff = волшебный посох тьмы
+ent-CP14MagicShadowStaff = волшебный посох пространства
     .desc = Длинный, наполовину технологический, наполовину магический посох, предназначенный для преобразования магической энергии в теневые заклинания.
     .suffix = Артефакт
 
@@ -3404,15 +3404,19 @@ ent-CP14WallmountLamp = { ent-CP14WallmountLampEmpty }
     .suffix = Маленький кристалл
 
 ent-CP14FrameWoodenCrushedMedium = деревянная рама стены
+    .desc = Стена, не устоявшая перед потоком времени и агрессивных условий.
     .suffix = Раскрошенный. Средний
 
 ent-CP14FrameWoodenCrushedLow = деревянная рама стены
+    .desc = { ent-CP14FrameWoodenCrushedMedium.desc }
     .suffix = Раскрошенный. Низкий
 
 ent-CP14WallStonebrickCrushedMedium = каменная кирпичная стена
+    .desc = { ent-CP14FrameWoodenCrushedMedium.desc }
     .suffix = Раскрошенный. Средний
 
 ent-CP14WallStonebrickCrushedLow = каменная кирпичная стена
+    .desc = { ent-CP14FrameWoodenCrushedMedium.desc }
     .suffix = Раскрошенный. Низкий
 
 ent-CP14BaseRoof = крыша
