@@ -23,7 +23,10 @@
       food:
         maxVol: 15
         reagents:
-        - ReagentId: CP14SleepyPoison
+        - ReagentId: CP14WhistlerPoison
           Quantity: 15
   - type: Extractable
     grindableSolutionName: food
+  - type: Tag
+    tags:
+    - CP14FitInMortar

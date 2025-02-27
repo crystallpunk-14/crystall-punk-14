@@ -81,3 +81,9 @@ cp14-reagent-desc-basic-drunk = A substance that causes dizziness and slurred sp
 
 cp14-reagent-name-basic-jitter = Jitter solution
 cp14-reagent-desc-basic-jitter = A substance that causes uncontrollable but safe spasms throughout the body.
+
+cp14-reagent-name-basic-sleep = Sleeping solution
+cp14-reagent-desc-basic-sleep = Dangerous substance, even in small doses, that sends you to sleep.
+
+cp14-reagent-name-basic-unsleep = Awakening solution
+cp14-reagent-desc-basic-unsleep = A substance that stimulates the body and instantly brings it out of any sleep.
