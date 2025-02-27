@@ -1,6 +1,4 @@
-using Content.Shared._CP14.MagicRitual.Prototypes;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicEssence;
 
@@ -16,4 +14,7 @@ public sealed partial class CP14MagicEssenceCollectorComponent : Component
 
     [DataField]
     public float AttractRange = 5f;
+
+    [DataField]
+    public string Solution = "collector";
 }

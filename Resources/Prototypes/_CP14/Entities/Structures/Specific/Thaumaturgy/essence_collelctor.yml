@@ -7,6 +7,8 @@
   description: Being powered by the energy crystal, it will start sucking in all the essence floating in the air and converting it into useful liquid.
   categories: [ ForkFiltered ]
   components:
+  - type: Transform
+    anchored: true
   - type: InteractionOutline
   - type: Sprite
     drawdepth: Mobs
@@ -39,12 +41,15 @@
   - type: Fixtures
     fixtures:
       fix1:
+        hard: false
         shape:
           !type:PhysShapeAabb
           bounds: "-0.25,-0.25,0.25,0.25"
         density: 125
         mask:
         - TabletopMachineMask
+        layer:
+        - WallLayer
   - type: SolutionContainerManager
     solutions:
       collector:
