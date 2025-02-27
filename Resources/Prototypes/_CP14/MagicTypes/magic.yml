@@ -2,26 +2,31 @@
   id: Earth
   name: cp14-magic-type-earth
   color: "#70533f"
+  essenceProto: CP14EssenceEarth
 
 - type: magicType
   id: Fire
   name: cp14-magic-type-fire
   color: "#d9741c"
+  essenceProto: CP14EssenceFire
 
 - type: magicType
-  id: Healing
+  id: Life
   name: cp14-magic-type-healing
   color: "#89e04f"
+  essenceProto: CP14EssenceLife
 
 - type: magicType
   id: Light
   name: cp14-magic-type-light
   color: "#ba97b8"
+  essenceProto: CP14EssenceLight
 
 - type: magicType
   id: Dimension
   name: cp14-magic-type-dimension
   color: "#4e0691"
+  essenceProto: CP14EssenceDimension
 
 - type: magicType
   id: Meta
@@ -32,8 +37,16 @@
   id: Water
   name: cp14-magic-type-water
   color: "#1c94d9"
+  essenceProto: CP14EssenceWater
 
 - type: magicType
-  id: Necromancy
-  name: cp14-magic-type-necro
+  id: Death
+  name: cp14-magic-type-death
   color: "#55877a"
+  essenceProto: CP14EssenceDeath
+
+- type: magicType
+  id: Electric
+  name: cp14-magic-type-electric
+  color: "#caed72"
+  essenceProto: CP14EssenceElectric

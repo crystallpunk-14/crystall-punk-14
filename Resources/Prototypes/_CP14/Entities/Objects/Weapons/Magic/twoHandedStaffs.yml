@@ -66,7 +66,7 @@
     - CP14ActionSpellResurrection
   - type: CP14MagicManacostModify
     modifiers:
-     Healing: 1.4
+     Life: 1.4
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
     energy: 80

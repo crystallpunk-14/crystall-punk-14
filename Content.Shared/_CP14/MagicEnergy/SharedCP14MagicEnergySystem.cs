@@ -55,7 +55,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         changedEnergy = 0;
         overloadEnergy = 0;
 
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return;
 
         if (!safe)
@@ -177,10 +177,4 @@ public sealed class CP14MagicEnergyOverloadEvent : EntityEventArgs
 public sealed class CP14MagicEnergyBurnOutEvent : EntityEventArgs
 {
     public FixedPoint2 BurnOutEnergy;
-}
-
-public sealed class CP14MagicEnergyScanEvent : EntityEventArgs, IInventoryRelayEvent
-{
-    public bool CanScan;
-    public SlotFlags TargetSlots { get; } = SlotFlags.EYES;
 }

@@ -1,42 +1,39 @@
 - type: entity
-  id: CP14ActionSpellBloodPurification
-  name: Blood purification
-  description: You cleanse the target's blood of poisons, and restore its volume slightly
+  id: CP14ActionSpellCureWounds
+  name: Cure wounds
+  description: You heal the target from physical damage
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_poison
+    state: cure_wounds
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
     manaCost: 10
   - type: CP14MagicEffect
-    magicType: Healing
+    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectBloodPurification
+      - CP14ImpactEffectCureWounds
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectBloodPurification
+      - CP14ImpactEffectCureWounds
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
         damage:
           types:
-            Poison: -10
-            Bloodloss: -10
-            Caustic: -10
+            Slash: -10
+            Blunt: -10
+            Piercing: -10
       - !type:Jitter
-      - !type:ModifyBleedAmount
-      - !type:ModifyBloodLevel
-        amount: 10
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Nella coda..."
-    endSpeech: "sta il veleno"
+    startSpeech: "Et curabuntur..."
+    endSpeech: "vulnera tua"
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneBloodPurification
+    proto: CP14RuneCureWounds
   - type: EntityTargetAction
     whitelist:
       components:
@@ -48,14 +45,14 @@
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
-      state: cure_poison
+      state: cure_wounds
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
       castDelay: 1.5
       breakOnMove: false
  
 - type: entity
-  id: CP14RuneBloodPurification
+  id: CP14RuneCureWounds
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   components:
@@ -66,12 +63,9 @@
     - state: sun
       color: "#79b330"
       shader: unshaded
-    - state: double_outer
-      color: "#a1252f"
-      shader: unshaded
 
 - type: entity
-  id: CP14ImpactEffectBloodPurification
+  id: CP14ImpactEffectCureWounds
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   components:
@@ -83,9 +77,9 @@
 
 - type: entity
   parent: CP14BaseSpellScrollHealing
-  id: CP14SpellScrollBloodPurification
-  name: blood purification spell scroll
+  id: CP14SpellScrollCureWounds
+  name: cure wounds spell scroll
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellBloodPurification
+    - CP14ActionSpellCureWounds
