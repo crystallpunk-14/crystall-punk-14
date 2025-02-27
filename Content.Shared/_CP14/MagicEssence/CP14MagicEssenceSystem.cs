@@ -1,5 +1,6 @@
 using System.Text;
 using Content.Shared._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Throwing;
@@ -35,8 +36,11 @@ public partial class CP14MagicEssenceSystem : EntitySystem
 
     private void OnEnergyOverload(Entity<CP14MagicEssenceSplitterComponent> ent, ref CP14MagicEnergyOverloadEvent args)
     {
-        //TODO unhardcode
-        _magicEnergy.ChangeEnergy(ent, -100, out var changed, out var overloaded, safe: true);
+        if (!TryComp<CP14MagicEnergyContainerComponent>(ent, out var energyContainer))
+            return;
+
+        _magicEnergy.ChangeEnergy(ent, -energyContainer.Energy, out _, out _, energyContainer, safe: true);
+
         //TODO move to server
         if (_net.IsClient)
             return;
@@ -48,7 +52,8 @@ public partial class CP14MagicEssenceSystem : EntitySystem
             if (splitting)
                 TrySplitToEssence(entUid);
 
-            var dir = _random.NextAngle().ToWorldVec() * ent.Comp.ThrowForce;
+            //Vector from splitter to item
+            var dir = (Transform(entUid).Coordinates.Position - Transform(ent).Coordinates.Position).Normalized() * ent.Comp.ThrowForce;
             _throwing.TryThrow(entUid, dir, ent.Comp.ThrowForce);
         }
         SpawnAttachedTo(ent.Comp.ImpactEffect, Transform(ent).Coordinates);
