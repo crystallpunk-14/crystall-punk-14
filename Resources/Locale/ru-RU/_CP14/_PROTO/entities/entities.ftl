@@ -812,7 +812,7 @@ ent-CP14ClothingShoesArtifactSpeedboots = ботинки Гермеса
     .suffix = Артефакт
 
 ent-CP14LongLeatherBoots = длинные кожаные сапоги
-    .desc = Удобная обувь для ударов ногой слева и справа.
+    .desc = Удобная обувь для ударов ногой налево и направо.
 
 ent-CP14Mist = облако
 
@@ -926,7 +926,7 @@ ent-CP14BiomeSpawnerCave = { ent-CP14BaseBiomeSpawner }
     .suffix = T0 Ресурсы, Пещерные туннели
 
 ent-CP14BiomeSpawnerCaveEmpty = { ent-CP14BaseBiomeSpawner }
-    .suffix = Пещера открыта
+    .suffix = Пещера открытая
 
 ent-CP14BiomeSpawnerForest = { ent-CP14BaseBiomeSpawner }
     .suffix = Лес
