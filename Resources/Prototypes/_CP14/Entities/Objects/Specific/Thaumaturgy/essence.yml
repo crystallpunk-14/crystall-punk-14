@@ -258,21 +258,6 @@
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssencePoison
-  name: venenum
-  components:
-  - type: Sprite
-    color: "#619e20"
-  - type: SolutionContainerManager
-    solutions:
-      essence:
-        maxVol: 1
-        reagents:
-        - ReagentId: CP14EssencePoison
-          Quantity: 1
-
-- type: entity
-  parent: CP14BaseEssence
   id: CP14EssenceCrystal
   name: vitreus
   components:
