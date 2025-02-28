@@ -1,23 +1,54 @@
-cp14-reagent-name-essence-earth = Essence of earth
-cp14-reagent-desc-essence-earth = Liquid embodiment of the element earth
+# Basic 6
 
-cp14-reagent-name-essence-fire = Essence of fire
-cp14-reagent-desc-essence-fire = Liquid embodiment of the element fire
+cp14-reagent-name-essence-earth = Terra essence
+cp14-reagent-desc-essence-earth = Liquid embodiment of the element earth.
 
-cp14-reagent-name-essence-life = Essence of life
-cp14-reagent-desc-essence-life = Liquid embodiment of the element life
+cp14-reagent-name-essence-fire = Ignis essence
+cp14-reagent-desc-essence-fire = Liquid embodiment of the element fire.
 
-cp14-reagent-name-essence-water = Essence of water
-cp14-reagent-desc-essence-water = Liquid embodiment of the element water
+cp14-reagent-name-essence-water = Aqua essence
+cp14-reagent-desc-essence-water = Liquid embodiment of the element water.
 
-cp14-reagent-name-essence-light = Essence of light
-cp14-reagent-desc-essence-light = Liquid embodiment of the element light
+cp14-reagent-name-essence-air = Aer essence
+cp14-reagent-desc-essence-air = Liquid embodiment of the element air.
 
-cp14-reagent-name-essence-dimension = Essence of dimension
-cp14-reagent-desc-essence-dimension = Liquid embodiment of the element dimension
+cp14-reagent-name-essence-order = Ordo essence
+cp14-reagent-desc-essence-order = A liquid embodiment of the elements of order, organization and cleanliness.
 
-cp14-reagent-name-essence-death = Essence of death
-cp14-reagent-desc-essence-death = Liquid embodiment of the element death
+cp14-reagent-name-essence-chaos = Perditio essence
+cp14-reagent-desc-essence-chaos = The liquid embodiment of the elements of entropy, chaos and destruction.
 
-cp14-reagent-name-essence-electric = Essence of electric
-cp14-reagent-desc-essence-electric = Liquid embodiment of the element electric
+# Complex tier 1
+
+cp14-reagent-name-essence-frost = Gelum essence
+cp14-reagent-desc-essence-frost = The liquid embodiment of the elements of ice, frost and cold.
+
+cp14-reagent-name-essence-light = Lux essence
+cp14-reagent-desc-essence-light = The liquid embodiment of the elements of light.
+
+cp14-reagent-name-essence-motion = Motus essence
+cp14-reagent-desc-essence-motion = The liquid embodiment of the elements of movement and animation.
+
+cp14-reagent-name-essence-cycle = Permutatio essence
+cp14-reagent-desc-essence-cycle = The liquid embodiment of the elements of circulation and exchange.
+
+cp14-reagent-name-essence-electric = Energia essence
+cp14-reagent-desc-essence-electric = The liquid embodiment of the elements of energy, force, and lightning.
+
+cp14-reagent-name-essence-poison = Venenum essence
+cp14-reagent-desc-essence-poison = The liquid embodiment of the elements of poison, narcotic, and filth.
+
+cp14-reagent-name-essence-void = Vacuos essence
+cp14-reagent-desc-essence-void = The liquid embodiment of the elements of emptiness, obscurity, and secrecy.
+ 
+cp14-reagent-name-essence-life = Victus essence
+cp14-reagent-desc-essence-life = The liquid embodiment of the elements of life, food, and sustenance.
+
+cp14-reagent-name-essence-crystal = Vitreus essence
+cp14-reagent-desc-essence-crystal = The liquid embodiment of the elements of glass, crystal, and transparency.
+
+
+
+
+
+

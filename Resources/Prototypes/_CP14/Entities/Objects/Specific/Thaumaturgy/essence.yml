@@ -42,10 +42,12 @@
     - type: CP14MagicEssenceAttractor
   - type: CP14MagicEssence
 
+# Basic 6
+
 - type: entity
   parent: CP14BaseEssence
   id: CP14EssenceEarth
-  name: earth essence
+  name: terra
   components:
   - type: Sprite
     color: "#70533f"
@@ -60,7 +62,7 @@
 - type: entity
   parent: CP14BaseEssence
   id: CP14EssenceFire
-  name: fire essence
+  name: ignis
   components:
   - type: Sprite
     color: "#d9741c"
@@ -74,23 +76,8 @@
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssenceLife
-  name: life essence
-  components:
-  - type: Sprite
-    color: "#89e04f"
-  - type: SolutionContainerManager
-    solutions:
-      essence:
-        maxVol: 1
-        reagents:
-        - ReagentId: CP14EssenceLife
-          Quantity: 1
-
-- type: entity
-  parent: CP14BaseEssence
   id: CP14EssenceWater
-  name: water essence
+  name: aqua
   components:
   - type: Sprite
     color: "#1c94d9"
@@ -104,8 +91,70 @@
 
 - type: entity
   parent: CP14BaseEssence
+  id: CP14EssenceAir
+  name: aer
+  components:
+  - type: Sprite
+    color: "#def9ff"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceAir
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceOrder
+  name: ordo
+  components:
+  - type: Sprite
+    color: "#d9d9d9"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceOrder
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceChaos
+  name: perditio
+  components:
+  - type: Sprite
+    color: "#d9d9d9"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceChaos
+          Quantity: 1
+
+# Complex tier 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceFrost
+  name: gelum
+  components:
+  - type: Sprite
+    color: "#4f91bd"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceFrost
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
   id: CP14EssenceLight
-  name: light essence
+  name: lux
   components:
   - type: Sprite
     color: "#ba97b8"
@@ -119,38 +168,38 @@
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssenceDimension
-  name: dimension essence
+  id: CP14EssenceMotion
+  name: motus
   components:
   - type: Sprite
-    color: "#391c57"
+    color: "#575100"
   - type: SolutionContainerManager
     solutions:
       essence:
         maxVol: 1
         reagents:
-        - ReagentId: CP14EssenceDimension
+        - ReagentId: CP14EssenceMotion
           Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssenceDeath
-  name: death essence
+  id: CP14EssenceCycle
+  name: permutatio
   components:
   - type: Sprite
-    color: "#55877a"
+    color: "#063b1f"
   - type: SolutionContainerManager
     solutions:
       essence:
         maxVol: 1
         reagents:
-        - ReagentId: CP14EssenceDeath
+        - ReagentId: CP14EssenceCycle
           Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
   id: CP14EssenceElectric
-  name: electric essence
+  name: energia
   components:
   - type: Sprite
     color: "#caed72"
@@ -160,4 +209,64 @@
         maxVol: 1
         reagents:
         - ReagentId: CP14EssenceElectric
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssencePoison
+  name: venenum
+  components:
+  - type: Sprite
+    color: "#619e20"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssencePoison
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceVoid
+  name: vacuos
+  components:
+  - type: Sprite
+    color: "#12021c"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceVoid
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceLife
+  name: victus
+  components:
+  - type: Sprite
+    color: "#eb1a3d"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceLife
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceCrystal
+  name: vitreus
+  components:
+  - type: Sprite
+    color: "#538cb8"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceCrystal
           Quantity: 1
