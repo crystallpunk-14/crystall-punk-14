@@ -33,3 +33,6 @@ cp14-reagent-desc-wild-sage-sap = Juice of a ubiquitous medicinal plant, not bad
 
 cp14-reagent-name-sleepy-poison = Whistler poison
 cp14-reagent-desc-sleepy-poison = A poison secreted by dangerous magical monsters to quickly put their victim to sleep.
+
+cp14-reagent-name-whistler-poison = Whistler poison
+cp14-reagent-desc-whistler-poison = A poison secreted by a dangerous magical monster to quickly put its victim to sleep.

@@ -136,18 +136,6 @@
     entity: CP14EssenceElectric
 
 - type: reagent
-  id: CP14EssencePoison
-  name: cp14-reagent-name-essence-poison
-  desc: cp14-reagent-desc-essence-poison
-  group: CP14MagicEssence
-  flavor: CP14Bitterly
-  physicalDesc: cp14-reagent-physical-desc-sparkling
-  color: "#619e20"
-  tileReactions:
-  - !type:CreateEntityTileReaction
-    entity: CP14EssencePoison
-
-- type: reagent
   id: CP14EssenceVoid
   name: cp14-reagent-name-essence-void
   desc: cp14-reagent-desc-essence-void
@@ -158,6 +146,18 @@
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceVoid
+
+- type: reagent
+  id: CP14EssencePoison
+  name: cp14-reagent-name-essence-poison
+  desc: cp14-reagent-desc-essence-poison
+  group: CP14MagicEssence
+  flavor: CP14Bitterly
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  color: "#619e20"
+  tileReactions:
+  - !type:CreateEntityTileReaction
+    entity: CP14EssencePoison
 
 - type: reagent
   id: CP14EssenceLife
