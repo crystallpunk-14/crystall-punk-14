@@ -8,7 +8,6 @@
   - type: Item
     size: Tiny
     storedRotation: 0
-    storedOffset: 0, 0
 
 - type: entity
   parent: CP14ModularBladeTipBase
