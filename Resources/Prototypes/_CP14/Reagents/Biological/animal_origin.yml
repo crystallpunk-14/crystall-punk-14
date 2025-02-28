@@ -18,7 +18,7 @@
       - !type:GenericStatusEffect
         conditions:
         - !type:ReagentThreshold
-          reagent: CP14SleepyPoison
+          reagent: CP14WhistlerPoison
           min: 8
         key: ForcedSleep
         component: ForcedSleeping
