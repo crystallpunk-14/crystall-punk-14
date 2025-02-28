@@ -266,6 +266,11 @@ CP14CrystalElementalDarknessSmall: CP14CrystalChaos
 CP14CrystalElementalDarknessMedium: CP14CrystalChaos
 CP14CrystalElementalDarknessBig: CP14CrystalChaos
 
+CP14CrystalShardHealing: CP14CrystalShardOrder
+CP14CrystalShardLight: CP14CrystalShardAir
+CP14CrystalShardElectric: CP14CrystalShardAir
+CP14CrystalShardDarkness: CP14CrystalShardChaos
+
 # <---> CrystallEdge migration zone end
 
 
