@@ -12,7 +12,6 @@
     manaCost: 5
     canModifyManacost: false
   - type: CP14MagicEffect
-    magicType: Meta
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
