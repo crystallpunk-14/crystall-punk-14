@@ -6,7 +6,9 @@
   description: The tip on an arrow shaft, a well-finished little piece of metal.
   components:
   - type: Item
+    size: Tiny
     storedRotation: 0
+    storedOffset: 0, -5
 
 - type: entity
   parent: CP14ModularBladeTipBase
@@ -16,7 +18,7 @@
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
+    - state: tip
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
@@ -35,7 +37,7 @@
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
+    - state: tip
       color: "#ffaf47"
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -55,7 +57,7 @@
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
+    - state: tip
       color: "#bd712f"
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -75,7 +77,7 @@
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
+    - state: tip
       color: "#45d2a4"
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
