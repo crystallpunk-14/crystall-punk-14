@@ -210,26 +210,6 @@ CP14PlateIron: CP14Plate
 CP14BaseLightHammer: CP14ModularIronHammer
 CP14BaseBattleHammer: CP14ModularIronHammer
 
-#2025-28-01
-CP14CrystalRubiesSmall: CP14CrystalElementalFireSmall
-CP14CrystalRubiesMedium: CP14CrystalElementalFireMedium
-CP14CrystalRubiesBig: CP14CrystalElementalFireBig
-CP14CrystalTopazesSmall: CP14CrystalElementalElectricSmall
-CP14CrystalTopazesMedium: CP14CrystalElementalElectricMedium
-CP14CrystalTopazesBig: CP14CrystalElementalElectricBig
-CP14CrystalEmeraldsSmall: CP14CrystalElementalHealingSmall
-CP14CrystalEmeraldsMedium: CP14CrystalElementalHealingMedium
-CP14CrystalEmeraldsBig: CP14CrystalElementalHealingBig
-CP14CrystalSapphiresSmall: CP14CrystalElementalWaterSmall
-CP14CrystalSapphiresMedium: CP14CrystalElementalWaterMedium
-CP14CrystalSapphiresBig: CP14CrystalElementalWaterBig
-CP14CrystalAmethystsSmall: CP14CrystalElementalDarknessSmall
-CP14CrystalAmethystsMedium: CP14CrystalElementalDarknessMedium
-CP14CrystalAmethystsBig: CP14CrystalElementalDarknessBig
-CP14CrystalDiamondsSmall: CP14CrystalElementalLightSmall
-CP14CrystalDiamondsMedium: CP14CrystalElementalLightMedium
-CP14CrystalDiamondsBig: CP14CrystalElementalLightBig
-
 CP14QuartzCrystal: CP14CrystalMedium
 CP14QuartzShard: CP14CrystalShardBase
 
@@ -262,6 +242,29 @@ CP14Crossbolt: CP14CrossboltIron
 
 #2025-26-02
 CP14BookImperialLawsHandBook: CP14GuidebookImperialLaws
+
+#2025-28-02
+CP14CrystalSmall: CP14CrystalEmpty
+CP14CrystalMedium: CP14CrystalEmpty
+CP14CrystalBig: CP14CrystalEmpty
+CP14CrystalElementalWaterSmall: CP14CrystalWater
+CP14CrystalElementalWaterMedium: CP14CrystalWater
+CP14CrystalElementalWaterBig: CP14CrystalWater
+CP14CrystalElementalHealingSmall: CP14CrystalOrder
+CP14CrystalElementalHealingMedium: CP14CrystalOrder
+CP14CrystalElementalHealingBig: CP14CrystalOrder
+CP14CrystalElementalFireSmall: CP14CrystalFire
+CP14CrystalElementalFireMedium: CP14CrystalFire
+CP14CrystalElementalFireBig: CP14CrystalFire
+CP14CrystalElementalLightSmall: CP14CrystalAir
+CP14CrystalElementalLightMedium: CP14CrystalAir
+CP14CrystalElementalLightBig: CP14CrystalAir
+CP14CrystalElementalElectricSmall: CP14CrystalAir
+CP14CrystalElementalElectricMedium: CP14CrystalAir
+CP14CrystalElementalElectricBig: CP14CrystalAir
+CP14CrystalElementalDarknessSmall: CP14CrystalChaos
+CP14CrystalElementalDarknessMedium: CP14CrystalChaos
+CP14CrystalElementalDarknessBig: CP14CrystalChaos
 
 # <---> CrystallEdge migration zone end
 

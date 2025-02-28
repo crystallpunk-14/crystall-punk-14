@@ -21,7 +21,7 @@
 - type: magicType
   id: Air
   name: cp14-essence-air
-  color: "#1c94d9"
+  color: "#def9ff"
   essenceProto: CP14EssenceAir
 
 - type: magicType
