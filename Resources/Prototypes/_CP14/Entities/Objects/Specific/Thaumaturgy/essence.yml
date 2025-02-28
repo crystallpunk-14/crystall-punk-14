@@ -17,8 +17,8 @@
     lifetime: 60
   - type: CanMoveInAir
   - type: RandomWalk
-    minSpeed: 0.5
-    maxSpeed: 1
+    minSpeed: 0.25
+    maxSpeed: 0.75
   - type: Physics
     bodyType: Dynamic
     bodyStatus: InAir
@@ -34,6 +34,13 @@
         - Impassable
         restitution: 0.3  # fite me
         friction: 0.2
+  - type: ChasingWalk
+    maxChaseRadius: 5
+    minSpeed: 0.5
+    maxSpeed: 1
+    chasingComponent:
+    - type: CP14MagicEssenceAttractor
+  - type: CP14MagicEssence
 
 - type: entity
   parent: CP14BaseEssence
@@ -42,6 +49,13 @@
   components:
   - type: Sprite
     color: "#70533f"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceEarth
+          Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
@@ -50,6 +64,13 @@
   components:
   - type: Sprite
     color: "#d9741c"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceFire
+          Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
@@ -58,6 +79,13 @@
   components:
   - type: Sprite
     color: "#89e04f"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceLife
+          Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
@@ -66,6 +94,13 @@
   components:
   - type: Sprite
     color: "#1c94d9"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceWater
+          Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
@@ -74,6 +109,13 @@
   components:
   - type: Sprite
     color: "#ba97b8"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceLight
+          Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
@@ -82,6 +124,13 @@
   components:
   - type: Sprite
     color: "#391c57"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceDimension
+          Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
@@ -90,6 +139,13 @@
   components:
   - type: Sprite
     color: "#55877a"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceDeath
+          Quantity: 1
 
 - type: entity
   parent: CP14BaseEssence
@@ -98,3 +154,10 @@
   components:
   - type: Sprite
     color: "#caed72"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceElectric
+          Quantity: 1

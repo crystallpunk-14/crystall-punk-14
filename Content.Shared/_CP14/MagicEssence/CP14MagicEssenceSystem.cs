@@ -1,11 +1,15 @@
 using System.Text;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Throwing;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -21,6 +25,8 @@ public partial class CP14MagicEssenceSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -32,6 +38,41 @@ public partial class CP14MagicEssenceSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEssenceScannerComponent, InventoryRelayedEvent<CP14MagicEssenceScanEvent>>((e, c, ev) => OnMagicScanAttempt(e, c, ev.Args));
 
         SubscribeLocalEvent<CP14MagicEssenceSplitterComponent, CP14MagicEnergyOverloadEvent>(OnEnergyOverload);
+
+        SubscribeLocalEvent<CP14MagicEssenceCollectorComponent, CP14SlotCrystalPowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<CP14MagicEssenceCollectorComponent, StartCollideEvent>(OnCollectorCollide);
+    }
+
+    private void OnPowerChanged(Entity<CP14MagicEssenceCollectorComponent> ent, ref CP14SlotCrystalPowerChangedEvent args)
+    {
+        if (args.Powered)
+            EnsureComp<CP14MagicEssenceAttractorComponent>(ent);
+        else
+            RemCompDeferred<CP14MagicEssenceAttractorComponent>(ent);
+    }
+
+    private void OnCollectorCollide(Entity<CP14MagicEssenceCollectorComponent> ent, ref StartCollideEvent args)
+    {
+        if (!TryComp<CP14MagicEssenceComponent>(args.OtherEntity, out var essenceComp))
+            return;
+
+        if (!TryComp<SolutionContainerManagerComponent>(args.OtherEntity, out var essenceSolutionManager))
+            return;
+
+        if (!TryComp<SolutionContainerManagerComponent>(ent, out var collectorSolutionManager))
+            return;
+
+        if (!_solution.TryGetSolution((args.OtherEntity, essenceSolutionManager), essenceComp.Solution, out var essenceSoln, out var essenceSolution))
+            return;
+
+        if (!_solution.TryGetSolution((ent, collectorSolutionManager), ent.Comp.Solution, out var collectorSoln, out var collectorSolution))
+            return;
+
+        _solution.TryTransferSolution(collectorSoln.Value, essenceSolution, essenceSolution.Volume);
+        _audio.PlayPvs(essenceComp.ConsumeSound, ent);
+
+        if (_net.IsServer)
+            QueueDel(args.OtherEntity);
     }
 
     private void OnEnergyOverload(Entity<CP14MagicEssenceSplitterComponent> ent, ref CP14MagicEnergyOverloadEvent args)

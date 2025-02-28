@@ -1,31 +1,35 @@
 - type: entity
-  id: CP14AlchemyNormalizer
-  parent: 
+  id: CP14EssenceCollector
+  parent:
   - BaseStructureDynamic
   - CP14BaseCrystalSlot
-  name: solution normalizer
-  description: An alchemical device that removes fine precipitates from solutions, and stabilizes it for further work
+  name: essence collector
+  description: Being powered by the energy crystal, it will start sucking in all the essence floating in the air and converting it into useful liquid.
   categories: [ ForkFiltered ]
   components:
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
   - type: InteractionOutline
   - type: Sprite
-    drawdepth: Items
+    drawdepth: Mobs
     noRot: true
     offset: 0, 0.2
-    sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
+    sprite: _CP14/Structures/Specific/Thaumaturgy/essence_collector.rsi
     layers:
-      - state: rotate_back_stop
-        map: ["poweredBack"]
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
       - state: base
-      - state: rotate_front_stop
-        map: ["poweredFront"]
       - state: crystal
         shader: unshaded
         map: ["crystal"]
         visible: false
+      - state: active
+        map: ["power"]
+        visible: false
+        shader: unshaded
   - type: GenericVisualizer
     visuals:
       enum.CP14MagicSlotVisuals.Inserted:
@@ -33,51 +37,50 @@
           True: { visible: true }
           False: { visible: false }
       enum.CP14MagicSlotVisuals.Powered:
-        poweredFront:
-          True: { state: rotate_front }
-          False: { state: rotate_front_stop }
-        poweredBack:
-          True: { state: rotate_back }
-          False: { state: rotate_back_stop }
+        power:
+          True: { visible: true }
+          False: { visible: false }
   - type: Fixtures
     fixtures:
       fix1:
+        hard: false
         shape:
           !type:PhysShapeAabb
           bounds: "-0.25,-0.25,0.25,0.25"
         density: 125
         mask:
         - TabletopMachineMask
+        layer:
+        - WallLayer
   - type: SolutionContainerManager
     solutions:
-      normalizer:
+      collector:
         maxVol: 50
   - type: CP14SolutionTemperature
   - type: DrainableSolution
-    solution: normalizer
+    solution: collector
   - type: ExaminableSolution
-    solution: normalizer
+    solution: collector
   - type: MixableSolution
-    solution: normalizer
+    solution: collector
   - type: RefillableSolution
-    solution: normalizer
+    solution: collector
   - type: DrawableSolution
-    solution: normalizer
+    solution: collector
   - type: DumpableSolution
-    solution: normalizer
-  - type: CP14SolutionNormalizer
-    solution: normalizer
+    solution: collector
   - type: CP14MagicEnergyAmbientSound
   - type: AmbientSound
     enabled: false
     range: 6
-    volume: -3
+    volume: 3
     sound:
-      path: /Audio/_CP14/Ambience/normalizer_working.ogg
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
   - type: Appearance
   - type: SolutionContainerVisuals
-    maxFillLevels: 5
+    maxFillLevels: 7
     fillBaseName: liq-
   - type: CP14MagicEnergyDraw
-    energy: -0.2
+    energy: -1
     delay: 1
+  - type: CP14MagicEssenceCollector
