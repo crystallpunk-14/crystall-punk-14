@@ -43,8 +43,6 @@
           - LowImpassable
           - BulletImpassable
           - Opaque
-  - type: PointLight
-    netSync: false
   - type: RandomSprite
     available:
     - random:
@@ -63,6 +61,7 @@
         small4: Inherit
         small5: Inherit
   - type: PointLight
+    netSync: false
     radius: 2.5
     energy: 1
 

@@ -210,6 +210,26 @@ CP14PlateIron: CP14Plate
 CP14BaseLightHammer: CP14ModularIronHammer
 CP14BaseBattleHammer: CP14ModularIronHammer
 
+#2025-28-01
+CP14CrystalRubiesSmall: CP14CrystalFire
+CP14CrystalRubiesMedium: CP14CrystalFire
+CP14CrystalRubiesBig: CP14CrystalFire
+CP14CrystalTopazesSmall: CP14CrystalAir
+CP14CrystalTopazesMedium: CP14CrystalAir
+CP14CrystalTopazesBig: CP14CrystalAir
+CP14CrystalEmeraldsSmall: CP14CrystalOrder
+CP14CrystalEmeraldsMedium: CP14CrystalOrder
+CP14CrystalEmeraldsBig: CP14CrystalOrder
+CP14CrystalSapphiresSmall: CP14CrystalWater
+CP14CrystalSapphiresMedium: CP14CrystalWater
+CP14CrystalSapphiresBig: CP14CrystalWater
+CP14CrystalAmethystsSmall: CP14CrystalChaos
+CP14CrystalAmethystsMedium: CP14CrystalChaos
+CP14CrystalAmethystsBig: CP14CrystalChaos
+CP14CrystalDiamondsSmall: CP14CrystalAir
+CP14CrystalDiamondsMedium: CP14CrystalAir
+CP14CrystalDiamondsBig: CP14CrystalAir
+
 CP14QuartzCrystal: CP14CrystalMedium
 CP14QuartzShard: CP14CrystalShardBase
 
