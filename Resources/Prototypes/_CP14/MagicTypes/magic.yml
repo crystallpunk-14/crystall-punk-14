@@ -78,7 +78,7 @@
   id: Poison
   name: cp14-essence-poison
   color: "#619e20"
-  essenceProto: CP14EssencePosion
+  essenceProto: CP14EssencePoison
 
 - type: magicType
   id: Life
