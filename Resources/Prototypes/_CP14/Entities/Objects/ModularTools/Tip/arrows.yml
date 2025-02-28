@@ -18,9 +18,6 @@
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
     - state: tip
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
   - type: CP14ModularCraftPart
     possibleParts:
     - TipIronArrow
@@ -38,9 +35,6 @@
     layers:
     - state: tip
       color: "#ffaf47"
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
   - type: CP14ModularCraftPart
     possibleParts:
     - TipGoldArrow
@@ -58,9 +52,6 @@
     layers:
     - state: tip
       color: "#bd712f"
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
   - type: CP14ModularCraftPart
     possibleParts:
     - TipCopperArrow
@@ -78,9 +69,6 @@
     layers:
     - state: tip
       color: "#45d2a4"
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
   - type: CP14ModularCraftPart
     possibleParts:
     - TipMithrilArrow
