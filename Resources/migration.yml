@@ -293,6 +293,17 @@ CP14CrystalShardElectric: CP14CrystalShardAir
 CP14CrystalShardDarkness: CP14CrystalShardChaos
 
 CP14AlchemyNormalizer: CP14AlchemySolutionCleaner
+CP14VialSmallBloodFlowerSap: null
+CP14VialSmallAgaricMushroom: null
+CP14VialSmallGroundQuartz: null
+CP14VialSmallWildSage: null
+CP14VialSmallBlueAmanita: null
+CP14VialSmallAirLily: null
+CP14VialSmallDayflin: null
+CP14VialTinyChromiumSlime: null
+CP14VialTinyLumiMushroom: null
+CP14VialSmallHealthPotion: null
+CP14VialSmallManaPotion: null
 
 # <---> CrystallEdge migration zone end
 
