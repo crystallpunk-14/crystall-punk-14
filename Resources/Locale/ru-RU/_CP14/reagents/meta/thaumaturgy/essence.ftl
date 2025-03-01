@@ -32,8 +32,8 @@ cp14-reagent-desc-essence-motion = Жидкое воплощение стихи�
 cp14-reagent-name-essence-cycle = Эссенция Permutatio
 cp14-reagent-desc-essence-cycle = Жидкое воплощение стихии круговорота и обмена.
 
-cp14-reagent-name-essence-electric = Эссенция Energia
-cp14-reagent-desc-essence-electric = Жидкое воплощение стихии энергии, силы и молнии.
+cp14-reagent-name-essence-energia = Эссенция Energia
+cp14-reagent-desc-essence-energia = Жидкое воплощение стихии энергии, силы и молнии.
 
 cp14-reagent-name-essence-poison = Эссенция Venenum
 cp14-reagent-desc-essence-poison = Жидкое воплощение стихии яда, наркотика, грязи.

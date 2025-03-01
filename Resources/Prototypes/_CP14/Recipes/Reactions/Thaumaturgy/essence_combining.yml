@@ -57,7 +57,7 @@
     addTemperature: -150
 
 - type: reaction
-  id: CP14EssenceElectric
+  id: CP14EssenceEnergia
   minTemp: 450
   reactants:
     CP14EssenceOrder:
@@ -65,7 +65,7 @@
     CP14EssenceFire:
       amount: 1
   products:
-    CP14EssenceElectric: 2
+    CP14EssenceEnergia: 2
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150

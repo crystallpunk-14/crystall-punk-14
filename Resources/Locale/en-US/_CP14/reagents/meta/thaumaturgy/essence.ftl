@@ -32,8 +32,8 @@ cp14-reagent-desc-essence-motion = The liquid embodiment of the elements of move
 cp14-reagent-name-essence-cycle = Permutatio essence
 cp14-reagent-desc-essence-cycle = The liquid embodiment of the elements of circulation and exchange.
 
-cp14-reagent-name-essence-electric = Energia essence
-cp14-reagent-desc-essence-electric = The liquid embodiment of the elements of energy, force, and lightning.
+cp14-reagent-name-essence-energia = Energia essence
+cp14-reagent-desc-essence-energia = The liquid embodiment of the elements of energy, force, and lightning.
 
 cp14-reagent-name-essence-poison = Venenum essence
 cp14-reagent-desc-essence-poison = The liquid embodiment of the elements of poison, narcotic, and filth.

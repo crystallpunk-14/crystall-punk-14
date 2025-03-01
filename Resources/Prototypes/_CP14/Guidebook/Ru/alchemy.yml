@@ -26,6 +26,6 @@
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_TargetEffects
-  name: Целевые алхемические растворы
+  name: Целевые алхимические растворы
   text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/TargetEffects.xml"
   filterEnabled: True

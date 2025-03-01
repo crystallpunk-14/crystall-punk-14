@@ -134,17 +134,17 @@
       entity: CP14EssenceCycle
 
 - type: reaction
-  id: CP14EssenceElectricBrewing
+  id: CP14EssenceEnergiaBrewing
   minTemp: 900
   priority: 1
   quantized: true
   conserveEnergy: false
   reactants:
-    CP14EssenceElectric:
+    CP14EssenceEnergia:
       amount: 1
   effects:
   - !type:CreateEntityReactionEffect
-      entity: CP14EssenceElectric
+      entity: CP14EssenceEnergia
 
 - type: reaction
   id: CP14EssenceVoidBrewing

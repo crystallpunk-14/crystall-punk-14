@@ -63,10 +63,10 @@
   essenceProto: CP14EssenceCycle
 
 - type: magicType
-  id: Electric
-  name: cp14-essence-electric
+  id: Energia
+  name: cp14-essence-energia
   color: "#caed72"
-  essenceProto: CP14EssenceElectric
+  essenceProto: CP14EssenceEnergia
 
 - type: magicType
   id: Void
