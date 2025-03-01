@@ -134,3 +134,20 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
+
+# Complex tier 2
+
+- type: reaction
+  id: CP14EssenceMagic
+  minTemp: 450
+  priority: 3
+  reactants:
+    CP14EssenceVoid:
+      amount: 1
+    CP14EssenceEnergia:
+      amount: 1
+  products:
+    CP14EssenceMagic: 2
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150

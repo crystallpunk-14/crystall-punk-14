@@ -47,6 +47,10 @@ cp14-reagent-desc-essence-life = The liquid embodiment of the elements of life, 
 cp14-reagent-name-essence-crystal = Vitreus essence
 cp14-reagent-desc-essence-crystal = The liquid embodiment of the elements of glass, crystal, and transparency.
 
+# Complex tier 2
+
+cp14-reagent-name-essence-magic = Praecantatio essence
+cp14-reagent-desc-essence-magic = The liquid embodiment of the elements of magic, enchantment and sorcery.
 
 
 

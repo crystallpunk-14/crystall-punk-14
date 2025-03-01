@@ -91,3 +91,11 @@
   name: cp14-essence-crystal
   color: "#538cb8"
   essenceProto: CP14EssenceCrystal
+
+# Complex tier 2
+
+- type: magicType
+  id: Magic
+  name: cp14-essence-magic
+  color: "#5497d6"
+  essenceProto: CP14EssenceMagic

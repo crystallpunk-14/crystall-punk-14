@@ -46,3 +46,8 @@ cp14-reagent-desc-essence-life = Жидкое воплощение стихии 
 
 cp14-reagent-name-essence-crystal = Эссенция Vitreus
 cp14-reagent-desc-essence-crystal = Жидкое воплощение стихии стекла, кристалла, прозрачности.
+
+# Complex tier 2
+
+cp14-reagent-name-essence-magic = Эссенция Praecantatio
+cp14-reagent-desc-essence-magic = Жидкое воплощение магии, чар и колдовства.

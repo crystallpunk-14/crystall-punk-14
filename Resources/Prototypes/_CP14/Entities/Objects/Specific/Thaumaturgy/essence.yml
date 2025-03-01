@@ -270,3 +270,20 @@
         reagents:
         - ReagentId: CP14EssenceCrystal
           Quantity: 1
+
+# Complex tier 2
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceMagic
+  name: praecantatio
+  components:
+  - type: Sprite
+    color: "#5497d6"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceMagic
+          Quantity: 1
