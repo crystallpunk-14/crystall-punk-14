@@ -110421,7 +110421,7 @@ entities:
     - type: Transform
       pos: 56.5,55.5
       parent: 2
-- proto: CP14SpellScrollCounterSpell
+- proto: CP14ActionSpellMagicSplitting
   entities:
   - uid: 17519
     components:
