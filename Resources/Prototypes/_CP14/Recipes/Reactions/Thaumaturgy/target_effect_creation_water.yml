@@ -1,0 +1,353 @@
+# Simple recipes made from T0 to T1 essences
+# T1
+# The result is always 75 per cent empty solution
+
+- type: reaction
+  id: CP14T1HealBrute
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 2
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectHealBrute: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectDamageBrute
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 2
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDamageBrute: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectHealHeat
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceFire:
+      amount: 1
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectHealHeat: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectDamageHeat
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceFire:
+      amount: 1
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDamageHeat: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectHealCold
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceFrost:
+      amount: 1
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectHealCold: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectDamageCold
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceFrost:
+      amount: 1
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDamageCold: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectHealPoison
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssencePoison:
+      amount: 1
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectHealPoison: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectDamagePoison
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssencePoison:
+      amount: 1
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDamagePoison: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectHealAirloss
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectHealAirloss: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectDamageAirloss
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDamageAirloss: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectBloodRestore
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceWater:
+      amount: 1
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectBloodRestore: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectBloodAbsorption
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceWater:
+      amount: 1
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectBloodAbsorption: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+    
+# CP14BasicEffectSatiateHunger
+# CP14BasicEffectSatiateThirst
+# CP14BasicEffectHealMana
+# CP14BasicEffectDamageMana
+
+- type: reaction
+  id: CP14BasicEffectSpeedUp
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceMotion:
+      amount: 2
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectSpeedUp: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14BasicEffectSpeedDown
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceMotion:
+      amount: 2
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectSpeedDown: 1
+  cp14RandomProducts:
+  - CP14BasicEffectRainbow: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectEmoteCough: 1
+  - CP14BasicEffectDrunk: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+# CP14BasicEffectSleep
+# CP14BasicEffectUnsleep

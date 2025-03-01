@@ -198,7 +198,7 @@
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssenceElectric
+  id: CP14EssenceEnergia
   name: energia
   components:
   - type: Sprite
@@ -208,7 +208,7 @@
       essence:
         maxVol: 1
         reagents:
-        - ReagentId: CP14EssenceElectric
+        - ReagentId: CP14EssenceEnergia
           Quantity: 1
 
 - type: entity

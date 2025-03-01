@@ -117,13 +117,13 @@
 
 - type: reagent
   parent: CP14EssenceBase
-  id: CP14EssenceElectric
-  name: cp14-reagent-name-essence-electric
-  desc: cp14-reagent-desc-essence-electric
+  id: CP14EssenceEnergia
+  name: cp14-reagent-name-essence-energia
+  desc: cp14-reagent-desc-essence-energia
   color: "#caed72"
   tileReactions:
   - !type:CreateEntityTileReaction
-    entity: CP14EssenceElectric
+    entity: CP14EssenceEnergia
 
 - type: reagent
   parent: CP14EssenceBase

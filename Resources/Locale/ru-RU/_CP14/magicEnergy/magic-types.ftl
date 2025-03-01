@@ -1,4 +1,4 @@
-# Basic 6
+# Complex tier 0
 cp14-essence-earth = Terra
 cp14-essence-fire = Ignis
 cp14-essence-water = Aqua
@@ -11,11 +11,12 @@ cp14-essence-frost = Gelum
 cp14-essence-light = Lux
 cp14-essence-motion = Motus
 cp14-essence-cycle = Permutatio
-cp14-essence-electric = Energia
+cp14-essence-energia = Energia
 cp14-essence-poison = Venenum
 cp14-essence-void = Vacuos
 cp14-essence-life = Victus
 cp14-essence-crystal = Vitreus
+
 # Complex tier 2
 cp14-essence-magic = Praecantatio
 

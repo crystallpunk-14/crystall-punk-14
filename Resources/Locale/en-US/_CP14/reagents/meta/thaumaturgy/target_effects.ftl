@@ -25,9 +25,6 @@ cp14-reagent-desc-basic-heal-poison = An effective antidote used for treating mo
 cp14-reagent-name-basic-damage-poison = Poisonous solution
 cp14-reagent-desc-basic-damage-poison = Capable of causing extreme indigestion, ulcers, intoxication, and in sufficient dosage to cause death.
 
-cp14-reagent-name-basic-purification = Cleansing salt
-cp14-reagent-desc-basic-purification = An alchemical salt that binds with impurities and renders them harmless
-
 cp14-reagent-name-basic-damage-airloss = Asphyxiating Solution
 cp14-reagent-desc-basic-damage-airloss =  A viscous slurry that rapidly glues the victim's insides together, causing severe shortness of breath.
 
