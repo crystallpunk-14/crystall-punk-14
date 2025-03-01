@@ -1,0 +1,12 @@
+
+# Splitting
+
+- type: reaction
+  id: CP14ChromiumSlimeSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14ChromiumSlime:
+      amount: 1
+  products:
+    CP14EssenceCycle: 1

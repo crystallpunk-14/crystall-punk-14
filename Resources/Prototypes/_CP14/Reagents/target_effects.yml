@@ -1,26 +1,3 @@
-# This file contains Tier 0 and Tier 1 effects & solutions 
-
-# T0 / Precurser
-
-
-- type: reagent
-  id: CP14BasicEffectImpurity
-  name: cp14-reagent-name-basic-impurity
-  desc: cp14-reagent-desc-basic-impurity
-  group: CP14BasicEffect
-  flavor: CP14Bitterly
-  color: "#82ba3d"
-  physicalDesc: cp14-reagent-physical-desc-powdery
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:ChemVomit
-        probability: 0.3
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: -1
-
 - type: reagent
   id: CP14BasicEffectEmpty
   name: cp14-reagent-name-basic-empty

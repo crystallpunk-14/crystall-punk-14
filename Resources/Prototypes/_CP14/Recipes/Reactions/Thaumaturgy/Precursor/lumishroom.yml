@@ -2,14 +2,14 @@
 # Splitting
 
 - type: reaction
-  id: CP14AgaricShroomSplitting
+  id: CP14LumiMushroomSplitting
   requiredMixerCategories:
   - CP14MagicSplitting
   reactants:
-    CP14AgaricMushroom:
+    CP14LumiMushroom:
       amount: 1
   products:
-    CP14EssencePoison: 0.5
+    CP14EssenceLight: 0.5
   cp14RandomProducts:
   - CP14EssenceWater: 0.5
   - CP14EssenceEarth: 0.5

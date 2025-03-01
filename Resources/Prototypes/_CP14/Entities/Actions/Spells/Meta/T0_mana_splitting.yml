@@ -64,12 +64,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
+    sprite: Effects/electricity.rsi
     layers:
-    - state: circle_decrease
-      color: "#5096d4"
-      shader: unshaded
-    - state: circle_increase
-      color: "#5096d4"
+    - state: electrified
+      color: "#601fc2"
       shader: unshaded
 
 - type: entity
