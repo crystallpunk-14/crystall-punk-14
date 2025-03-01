@@ -230,7 +230,7 @@ CP14CrystalDiamondsSmall: CP14CrystalAir
 CP14CrystalDiamondsMedium: CP14CrystalAir
 CP14CrystalDiamondsBig: CP14CrystalAir
 
-CP14QuartzCrystal: CP14CrystalMedium
+CP14QuartzCrystal: CP14CrystalEmpty
 CP14QuartzShard: CP14CrystalShardBase
 
 #2025-30-01
