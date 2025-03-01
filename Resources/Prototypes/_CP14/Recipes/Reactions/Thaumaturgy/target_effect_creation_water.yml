@@ -42,7 +42,6 @@
   id: CP14BasicEffectHealHeat
   minTemp: 600
   priority: 2
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
