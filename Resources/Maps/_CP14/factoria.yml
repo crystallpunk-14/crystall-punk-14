@@ -63451,20 +63451,6 @@ entities:
     - type: Transform
       pos: -47.804237,1.7756424
       parent: 2
-- proto: CP14CrystalElementalHealingMedium
-  entities:
-  - uid: 14479
-    components:
-    - type: Transform
-      pos: 2.5575833,-7.520762
-      parent: 2
-- proto: CP14CrystalElementalHealingSmall
-  entities:
-  - uid: 14478
-    components:
-    - type: Transform
-      pos: 0.46383393,-3.6145117
-      parent: 2
 - proto: CP14CrystalShardElectric
   entities:
   - uid: 14492
