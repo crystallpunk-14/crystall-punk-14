@@ -16,6 +16,9 @@
       spawns:
       - CP14ImpactEffectMagicSplitting
     effects:
+    - !type:CP14SpellMixSolution
+      reactionTypes:
+      - CP14MagicSplitting
     - !type:CP14SpellInterruptSpell
     - !type:CP14SpellApplyEntityEffect
       effects:
@@ -28,6 +31,7 @@
     whitelist:
       components:
       - CP14MagicEnergyContainer
+      - ExaminableSolution
     itemIconStyle: BigAction
     interactOnMiss: false
     range: 60
