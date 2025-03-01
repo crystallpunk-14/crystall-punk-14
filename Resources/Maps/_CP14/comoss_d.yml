@@ -110856,28 +110856,28 @@ entities:
     - type: Transform
       pos: 70.53315,33.730537
       parent: 2
-- proto: CP14VialSmallAgaricMushroom
+- proto: CP14VialSmall
   entities:
   - uid: 12720
     components:
     - type: Transform
       pos: -48.855915,-73.34486
       parent: 2
-- proto: CP14VialSmallBloodFlowerSap
+- proto: CP14VialSmall
   entities:
   - uid: 2159
     components:
     - type: Transform
       pos: -49.230915,-73.12611
       parent: 2
-- proto: CP14VialSmallBlueAmanita
+- proto: CP14VialSmall
   entities:
   - uid: 2161
     components:
     - type: Transform
       pos: -48.93404,-73.18861
       parent: 2
-- proto: CP14VialSmallDayflin
+- proto: CP14VialSmall
   entities:
   - uid: 9521
     components:
@@ -110889,21 +110889,21 @@ entities:
     - type: Transform
       pos: -49.230915,-73.34486
       parent: 2
-- proto: CP14VialSmallGroundQuartz
+- proto: CP14VialSmall
   entities:
   - uid: 12734
     components:
     - type: Transform
       pos: -48.68404,-73.14173
       parent: 2
-- proto: CP14VialSmallWildSage
+- proto: CP14VialSmall
   entities:
   - uid: 12751
     components:
     - type: Transform
       pos: -48.59029,-73.29798
       parent: 2
-- proto: CP14VialTinyChromiumSlime
+- proto: CP14VialTiny
   entities:
   - uid: 9522
     components:
@@ -110915,7 +110915,7 @@ entities:
     - type: Transform
       pos: -48.199665,-73.07923
       parent: 2
-- proto: CP14VialTinyLumiMushroom
+- proto: CP14VialTiny
   entities:
   - uid: 12733
     components:

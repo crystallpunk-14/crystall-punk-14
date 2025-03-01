@@ -292,17 +292,17 @@ CP14CrystalShardElectric: CP14CrystalShardAir
 CP14CrystalShardDarkness: CP14CrystalShardChaos
 
 CP14AlchemyNormalizer: CP14AlchemySolutionCleaner
-CP14VialSmallBloodFlowerSap: null
-CP14VialSmallAgaricMushroom: null
-CP14VialSmallGroundQuartz: null
-CP14VialSmallWildSage: null
-CP14VialSmallBlueAmanita: null
-CP14VialSmallAirLily: null
-CP14VialSmallDayflin: null
-CP14VialTinyChromiumSlime: null
-CP14VialTinyLumiMushroom: null
-CP14VialSmallHealthPotion: null
-CP14VialSmallManaPotion: null
+CP14VialSmallBloodFlowerSap: CP14VialSmall
+CP14VialSmallAgaricMushroom: CP14VialSmall
+CP14VialSmallGroundQuartz: CP14VialSmall
+CP14VialSmallWildSage: CP14VialSmall
+CP14VialSmallBlueAmanita: CP14VialSmall
+CP14VialSmallAirLily: CP14VialSmall
+CP14VialSmallDayflin: CP14VialSmall
+CP14VialTinyChromiumSlime: CP14VialSmall
+CP14VialTinyLumiMushroom: CP14VialSmall
+CP14VialSmallHealthPotion: CP14VialSmall
+CP14VialSmallManaPotion: CP14VialSmall
 CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting 
 
 # <---> CrystallEdge migration zone end
