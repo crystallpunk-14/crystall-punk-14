@@ -1,10 +1,10 @@
 - type: entity
-  id: CP14AlchemyNormalizer
+  id: CP14AlchemySolutionCleaner
   parent: 
   - BaseStructureDynamic
   - CP14BaseCrystalSlot
-  name: solution normalizer
-  description: An alchemical device that removes fine precipitates from solutions, and stabilizes it for further work
+  name: solution cleaner
+  description: An alchemical device that destroys from a solution poured into it the reagent that is least in the solution. Requires an energy crystal to operate.
   categories: [ ForkFiltered ]
   components:
   - type: InteractionOutline
@@ -12,7 +12,7 @@
     drawdepth: Items
     noRot: true
     offset: 0, 0.2
-    sprite: _CP14/Structures/Specific/Alchemy/normalizer.rsi
+    sprite: _CP14/Structures/Specific/Alchemy/cleaner.rsi
     layers:
       - state: rotate_back_stop
         map: ["poweredBack"]
@@ -50,30 +50,30 @@
         - TabletopMachineMask
   - type: SolutionContainerManager
     solutions:
-      normalizer:
+      cleaner:
         maxVol: 50
   - type: CP14SolutionTemperature
   - type: DrainableSolution
-    solution: normalizer
+    solution: cleaner
   - type: ExaminableSolution
-    solution: normalizer
+    solution: cleaner
   - type: MixableSolution
-    solution: normalizer
+    solution: cleaner
   - type: RefillableSolution
-    solution: normalizer
+    solution: cleaner
   - type: DrawableSolution
-    solution: normalizer
+    solution: cleaner
   - type: DumpableSolution
-    solution: normalizer
-  - type: CP14SolutionNormalizer
-    solution: normalizer
+    solution: cleaner
+  - type: CP14SolutionCleaner
+    solution: cleaner
   - type: CP14MagicEnergyAmbientSound
   - type: AmbientSound
     enabled: false
     range: 6
     volume: -3
     sound:
-      path: /Audio/_CP14/Ambience/normalizer_working.ogg
+      path: /Audio/_CP14/Ambience/cleaner_working.ogg
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 5

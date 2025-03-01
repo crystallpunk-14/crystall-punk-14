@@ -291,6 +291,8 @@ CP14CrystalShardLight: CP14CrystalShardAir
 CP14CrystalShardElectric: CP14CrystalShardAir
 CP14CrystalShardDarkness: CP14CrystalShardChaos
 
+CP14AlchemyNormalizer: CP14AlchemySolutionCleaner
+
 # <---> CrystallEdge migration zone end
 
 

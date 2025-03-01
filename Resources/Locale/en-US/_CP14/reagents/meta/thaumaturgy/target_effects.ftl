@@ -1,11 +1,5 @@
-cp14-reagent-name-basic-impurity = Mild impurities
-cp14-reagent-desc-basic-impurity = The natural, undesirable by products of alchemy. Worse than useless, being difficult for the body to process.
-
 cp14-reagent-name-basic-empty = Empty solution
 cp14-reagent-desc-basic-empty = Natural solvent. Essentially a useless liquid that dilutes useful effects. Getting rid of it will give you much more concentrated solutions.
-
-cp14-reagent-name-basic-simplebase = Simple solvent
-cp14-reagent-desc-basic-simplebase = Simple solvent, often used in brewing basic potions in place of water or more specialized solvents.
 
 cp14-reagent-name-basic-heal-brute = Healing solution
 cp14-reagent-desc-basic-heal-brute = Can heal all types of physical damage.
@@ -57,9 +51,6 @@ cp14-reagent-desc-basic-heal-mana = A substance that causes a rapid regeneration
 
 cp14-reagent-name-basic-damage-mana = Antimagic solution
 cp14-reagent-desc-basic-damage-mana = A substance that rapidly drains all magical energy from the body.
-
-cp14-reagent-name-basic-unstable = Unstable solution
-cp14-reagent-desc-basic-unstable = When cooled, immediately converts all reagents into a chemical cloud, the size of which depends on the amount of unstable solution in it.
 
 cp14-reagent-name-basic-speed-up = Accelerating solution
 cp14-reagent-desc-basic-speed-up = Increases muscle tone, allowing creatures to move and react faster than normal.

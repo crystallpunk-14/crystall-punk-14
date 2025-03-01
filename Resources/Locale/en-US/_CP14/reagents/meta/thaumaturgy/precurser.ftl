@@ -36,3 +36,9 @@ cp14-reagent-desc-sleepy-poison = A poison secreted by dangerous magical monster
 
 cp14-reagent-name-whistler-poison = Whistler poison
 cp14-reagent-desc-whistler-poison = A poison secreted by a dangerous magical monster to quickly put its victim to sleep.
+
+cp14-reagent-name-grounded-quartz = Ground quartz
+cp14-reagent-desc-grounded-quartz = A powder obtained from grinding quartz fragments. It has weak cleaning properties.
+
+cp14-reagent-name-chromium-slime = Chromium slime
+cp14-reagent-desc-chromium-slime = A rare substance found in water streams, it has unique properties that allow it to invert the effects of reagents, but can completely ruin a potion if dosed incorrectly.

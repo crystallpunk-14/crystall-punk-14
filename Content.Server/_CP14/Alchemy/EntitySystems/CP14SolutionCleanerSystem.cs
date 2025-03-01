@@ -1,3 +1,4 @@
+using Content.Server._CP14.Alchemy.Components;
 using Content.Server._CP14.MagicEnergy;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
@@ -8,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Alchemy.EntitySystems;
 
-public sealed partial class CP14SolutionNormalizerSystem : EntitySystem
+public sealed partial class CP14SolutionCleanerSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -19,7 +20,7 @@ public sealed partial class CP14SolutionNormalizerSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<Components.CP14SolutionNormalizerComponent, SolutionContainerManagerComponent>();
+        var query = EntityQueryEnumerator<CP14SolutionCleanerComponent, SolutionContainerManagerComponent>();
         while (query.MoveNext(out var uid, out var normalizer, out var containerManager))
         {
             if (_timing.CurTime <= normalizer.NextUpdateTime)
@@ -41,31 +42,22 @@ public sealed partial class CP14SolutionNormalizerSystem : EntitySystem
             if (solution.Volume == 0)
                 continue;
 
-            Dictionary<ReagentId, FixedPoint2> affect = new();
+            var minQuantity = FixedPoint2.MaxValue;
+            ReagentId? reagentId = null;
             foreach (var (id, quantity) in solution.Contents)
             {
-                FixedPoint2 roundedQuantity = Math.Floor((float) quantity / normalizer.Factor) * normalizer.Factor;
-
-                var leakQuantity = quantity - roundedQuantity;
-
-                if (leakQuantity == 0) continue;
-
-                if (quantity - normalizer.LeakageQuantity < roundedQuantity)
-                    affect.Add(id, leakQuantity);
-                else
-                    affect.Add(id, normalizer.LeakageQuantity);
-            }
-
-            if (affect.Count > 0)
-            {
-                //Telegraphy
-                _audio.PlayPvs(normalizer.NormalizeSound, uid);
-
-                foreach (var (id, count) in affect)
+                if (quantity < minQuantity)
                 {
-                    _solutionContainer.RemoveReagent(solutionEnt.Value, id, count);
+                    reagentId = id;
+                    minQuantity = quantity;
                 }
             }
+
+            if (reagentId == null)
+                continue;
+
+            _solutionContainer.RemoveReagent(solutionEnt.Value, reagentId.Value, normalizer.LeakageQuantity);
+            _audio.PlayPvs(normalizer.NormalizeSound, uid);
         }
     }
 }

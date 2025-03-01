@@ -7,23 +7,17 @@ namespace Content.Server._CP14.Alchemy.Components;
 /// <summary>
 /// gradually rounds down all reagents in the specified solution
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SolutionNormalizerSystem))]
-public sealed partial class CP14SolutionNormalizerComponent : Component
+[RegisterComponent, Access(typeof(CP14SolutionCleanerSystem))]
+public sealed partial class CP14SolutionCleanerComponent : Component
 {
     [DataField(required: true)]
     public string Solution = string.Empty;
 
     /// <summary>
-    /// will round down any reagent in solution until it is divisible by this value
-    /// </summary>
-    [DataField]
-    public float Factor = 0.25f;
-
-    /// <summary>
     /// the reagent will flow gradually by the specified number until it becomes normalized
     /// </summary>
     [DataField]
-    public FixedPoint2 LeakageQuantity = 0.05f;
+    public FixedPoint2 LeakageQuantity = 0.25f;
 
     [DataField]
     public TimeSpan UpdateFrequency = TimeSpan.FromSeconds(4f);

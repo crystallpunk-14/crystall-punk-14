@@ -1,6 +1,6 @@
 - type: reagent
   id: CP14Blood
-  group: CP14Biological
+  group: CP14Precurser
   name: cp14-reagent-name-blood
   desc: cp14-reagent-desc-blood
   flavor: CP14Metallic
@@ -12,10 +12,10 @@
     collection: FootstepBlood
     params:
       volume: 6
-      
+
 - type: reagent
   id: CP14BloodTiefling
-  group: CP14Biological
+  group: CP14Precurser
   desc: cp14-reagent-desc-blood-tiefling
   name: cp14-reagent-name-blood-tiefling
   flavor: CP14Metallic
@@ -27,10 +27,10 @@
     collection: FootstepBlood
     params:
       volume: 6
-      
+
 - type: reagent
   id: CP14BloodElf
-  group: CP14Biological
+  group: CP14Precurser
   desc: cp14-reagent-desc-blood-elf
   name: cp14-reagent-name-blood-elf
   flavor: CP14Metallic
@@ -42,10 +42,10 @@
     collection: FootstepBlood
     params:
       volume: 6
-      
+
 - type: reagent
   id: CP14BloodGoblin
-  group: CP14Biological
+  group: CP14Precurser
   desc: cp14-reagent-desc-blood-goblin
   name: cp14-reagent-name-blood-goblin
   flavor: CP14Metallic

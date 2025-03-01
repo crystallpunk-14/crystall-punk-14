@@ -1,11 +1,5 @@
-cp14-reagent-name-basic-impurity = Легкие примеси
-cp14-reagent-desc-basic-impurity = Естественные, нежелательные побочные продукты алхимии. Хуже, чем бесполезные, поскольку организму трудно их перерабатывать.
-
 cp14-reagent-name-basic-empty = Пустой раствор
 cp14-reagent-desc-basic-empty = Природный растворитель. По сути бесполезная жидкость, разбавляющая полезные эффекты. Избавившись от нее, вы получите куда более концентрированные растворы.
-
-cp14-reagent-name-basic-simplebase = Простой растворитель
-cp14-reagent-desc-basic-simplebase = Простой растворитель, часто используемый при приготовлении базовых зелий вместо воды или более специализированных растворителей.
 
 cp14-reagent-name-basic-heal-brute = Лечебный раствор
 cp14-reagent-desc-basic-heal-brute = Способен залечивать все виды физических повреждений.
@@ -30,9 +24,6 @@ cp14-reagent-desc-basic-heal-poison = Эффективен как хорошее
 
 cp14-reagent-name-basic-damage-poison = Ядовитый раствор
 cp14-reagent-desc-basic-damage-poison = Способен вызвать крайне сильное несварение, язвы, интоксикацию, и при достаточной дозировке привести к смерти.
-
-cp14-reagent-name-basic-purification = Очищающая соль
-cp14-reagent-desc-basic-purification = Алхимическая соль, которая связывает примеси и делает их безвредными.
 
 cp14-reagent-name-basic-damage-airloss = Удушающий раствор
 cp14-reagent-desc-basic-damage-airloss = Вязкая жижа, стремительно склеивающая внутренности жертвы, вызывая острую нехватку воздуха.
@@ -60,12 +51,6 @@ cp14-reagent-desc-basic-damage-mana = Вещество, стремительно
 
 cp14-reagent-name-basic-unstable = Нестабильный раствор
 cp14-reagent-desc-basic-unstable = При остывании, немедленно преобразует все реагенты в химическое облако, размер которого зависит от количества нестабильного вещества.
-
-cp14-reagent-name-basic-speed-up = Ускоряющий раствор
-cp14-reagent-desc-basic-speed-up = Повышает тонус мышц, что позволяет существам двигаться и реагировать быстрее обычного.
-
-cp14-reagent-name-basic-speed-down = Замедляющий раствор
-cp14-reagent-desc-basic-speed-down = Заставляет мыслить и двигаться медленнее.
 
 cp14-reagent-name-see-rainbow = Галлюциногенный раствор
 cp14-reagent-desc-see-rainbow = Вызывает веселые галлюцинации, окрашивает весь мир в радужные яркие тона.
