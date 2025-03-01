@@ -451,7 +451,7 @@
         boozePower: 15
 
 - type: reagent
-  id: CP14BasicEffectDrunk
+  id: CP14BasicEffectJitter
   name: cp14-reagent-name-basic-jitter
   desc: cp14-reagent-desc-basic-jitter
   group: CP14BasicEffect

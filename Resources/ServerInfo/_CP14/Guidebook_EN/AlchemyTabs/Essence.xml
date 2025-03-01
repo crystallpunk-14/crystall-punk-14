@@ -4,15 +4,15 @@
 
 Minimal units of being. By obtaining them from splitting items and precursers, and folding them into more complex variants, you can use them to create the alchemical potions you require.
 
-Basic 6 essences:
+## Basic 6 essences:
 
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT0"/>
 
-First Compound Essences:
+## First Compound Essences:
 
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT1"/>
 
-Second Compound Essences:
+## Second Compound Essences:
 
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT2"/>
 
