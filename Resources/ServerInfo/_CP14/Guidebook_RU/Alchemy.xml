@@ -47,7 +47,7 @@
 <Box>
 <GuideEntityEmbed Entity="CP14Cauldron"/>
 <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
-<GuideEntityEmbed Entity="CP14AlchemyNormalizer"/>
+<GuideEntityEmbed Entity="CP14EssenceCollector"/>
 <GuideEntityEmbed Entity="CP14BaseVat"/>
 </Box>
 <Box>
