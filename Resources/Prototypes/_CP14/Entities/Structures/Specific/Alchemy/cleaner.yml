@@ -73,7 +73,7 @@
     range: 6
     volume: -3
     sound:
-      path: /Audio/_CP14/Ambience/cleaner_working.ogg
+      path: /Audio/_CP14/Ambience/normalizer_working.ogg
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 5
