@@ -63415,7 +63415,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -38.64112,-14.336575
       parent: 2
-- proto: CP14CrystalElementalDarknessBig
+- proto: CP14CrystalChaos
   entities:
   - uid: 13443
     components:
@@ -63427,7 +63427,7 @@ entities:
     - type: Transform
       pos: -45.897987,1.9787674
       parent: 2
-- proto: CP14CrystalElementalDarknessMedium
+- proto: CP14CrystalChaos
   entities:
   - uid: 13444
     components:
@@ -63439,7 +63439,7 @@ entities:
     - type: Transform
       pos: -48.444862,2.4943924
       parent: 2
-- proto: CP14CrystalElementalDarknessSmall
+- proto: CP14CrystalChaos
   entities:
   - uid: 13448
     components:
