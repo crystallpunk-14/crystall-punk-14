@@ -81,8 +81,8 @@ CP14WallpaperGreen30: CP14WallpaperGreen
 
 #2024-10-18
 CP14WoodenCupboard: CP14WoodenCloset
-CP14VialSmallChromiumSlime: CP14VialTinyChromiumSlime
-CP14VialSmallLumiMushroom: CP14VialTinyLumiMushroom
+CP14VialSmallChromiumSlime: null
+CP14VialSmallLumiMushroom: null
 
 #2024-10-20
 CP14SpawnPointHouseKeeper: CP14SpawnPointCommandant
