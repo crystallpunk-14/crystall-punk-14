@@ -5,7 +5,7 @@
 - type: reaction
   id: CP14BasicEffectHealBrute
   minTemp: 600
-  priority: 2
+  priority: 1
   reactants:
     CP14EssenceLife:
       amount: 2
@@ -23,7 +23,7 @@
 - type: reaction
   id: CP14BasicEffectDamageBrute
   minTemp: 600
-  priority: 2
+  priority: 1
   reactants:
     CP14EssenceLife:
       amount: 2
