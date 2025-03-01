@@ -232,6 +232,7 @@ CP14CrystalDiamondsBig: CP14CrystalAir
 
 CP14QuartzCrystal: CP14CrystalEmpty
 CP14QuartzShard: CP14CrystalShardBase
+CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting 
 
 #2025-30-01
 CP14OreCopper: CP14OreCopper1

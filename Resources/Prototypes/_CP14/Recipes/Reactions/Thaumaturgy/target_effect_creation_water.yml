@@ -5,7 +5,6 @@
 - type: reaction
   id: CP14T1HealBrute
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 2
@@ -23,7 +22,6 @@
 - type: reaction
   id: CP14BasicEffectDamageBrute
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 2
@@ -41,7 +39,6 @@
 - type: reaction
   id: CP14BasicEffectHealHeat
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -61,7 +58,6 @@
 - type: reaction
   id: CP14BasicEffectDamageHeat
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -81,7 +77,6 @@
 - type: reaction
   id: CP14BasicEffectHealCold
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -101,7 +96,6 @@
 - type: reaction
   id: CP14BasicEffectDamageCold
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -121,7 +115,6 @@
 - type: reaction
   id: CP14BasicEffectHealPoison
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -141,7 +134,6 @@
 - type: reaction
   id: CP14BasicEffectDamagePoison
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -161,7 +153,6 @@
 - type: reaction
   id: CP14BasicEffectHealAirloss
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -181,7 +172,6 @@
 - type: reaction
   id: CP14BasicEffectDamageAirloss
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -201,7 +191,6 @@
 - type: reaction
   id: CP14BasicEffectBloodRestore
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -221,7 +210,6 @@
 - type: reaction
   id: CP14BasicEffectBloodAbsorption
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -246,7 +234,6 @@
 - type: reaction
   id: CP14BasicEffectSpeedUp
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceMotion:
       amount: 2
@@ -264,7 +251,6 @@
 - type: reaction
   id: CP14BasicEffectSpeedDown
   minTemp: 500
-  priority: 2
   reactants:
     CP14EssenceMotion:
       amount: 2
