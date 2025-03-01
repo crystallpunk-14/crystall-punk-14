@@ -1,7 +1,7 @@
 - type: entity
-  id: CP14ActionSpellCounterSpell
-  name: Counter spell
-  description: By affecting the magical energy itself, you can interrupt the cast of someone else's spell.
+  id: CP14ActionSpellMagicSplitting
+  name: Magic splitting
+  description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
@@ -14,11 +14,16 @@
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectCounterSpell
+      - CP14ImpactEffectMagicSplitting
     effects:
     - !type:CP14SpellInterruptSpell
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: -50
+        safe: true
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneCounterSpell
+    proto: CP14RuneMagicSplitting
   - type: EntityTargetAction
     whitelist:
       components:
@@ -32,12 +37,12 @@
       sprite: _CP14/Actions/Spells/meta.rsi
       state: counter_spell
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 10
+      cooldown: 15
       castDelay: 0.25
       breakOnMove: false 
 
 - type: entity
-  id: CP14RuneCounterSpell
+  id: CP14RuneMagicSplitting
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   components:
@@ -50,7 +55,7 @@
       shader: unshaded
 
 - type: entity
-  id: CP14ImpactEffectCounterSpell
+  id: CP14ImpactEffectMagicSplitting
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   components:
@@ -65,9 +70,9 @@
 
 - type: entity
   parent: CP14BaseSpellScrollMeta
-  id: CP14SpellScrollCounterSpell
-  name: counter spell spell scroll #Spell spell spell spell
+  id: CP14SpellScrollMagicSplitting
+  name: magic splitting spell scroll
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellCounterSpell
+    - CP14ActionSpellMagicSplitting

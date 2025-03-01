@@ -37,7 +37,7 @@
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollPlantGrowth
-        - id: CP14SpellScrollCounterSpell
+        - id: CP14SpellScrollMagicSplitting
         - id: CP14SpellScrollMagicalAcceleration
       - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
