@@ -67,7 +67,7 @@ CP14BloodGrass: CP14BloodFlower
 CP14FlowersRed: CP14BloodFlower
 CP14GatherableBloodgrass: CP14GatherableBloodFlower
 CP14GatherableFlowersRed: CP14GatherableBloodFlower
-CP14VialSmallBloodgrassSap: CP14VialSmallBloodFlowerSap
+CP14VialSmallBloodgrassSap: null
 CP14BarrelBloodGrassSap: CP14BarrelBloodFlowerSap
 
 #2024-10-11
