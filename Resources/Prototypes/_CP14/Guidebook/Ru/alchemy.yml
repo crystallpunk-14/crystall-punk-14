@@ -4,36 +4,28 @@
   name: Алхимия
   text: "/ServerInfo/_CP14/Guidebook_RU/Alchemy.xml"
   children:
-  - CP14_RU_BasicAlchemy
-  - CP14_RU_Organic
-  - CP14_RU_Inorganic
-  - CP14_RU_Arcane
+  - CP14_RU_Precurser
+  - CP14_RU_ThaumaturgyEssence
+  - CP14_RU_TargetEffects
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_BasicAlchemy
-  name: Базовые алхимические растворы
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/BasicAlchemy.xml"
+  id: CP14_RU_Precurser
+  name: Природные исходники
+  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Precurser.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Organic
-  name: Органические решения
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Organic.xml"
+  id: CP14_RU_ThaumaturgyEssence
+  name: Тауматургические эссенции
+  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Essence.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Inorganic
-  name: Неорганический растворы
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Inorganic.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_RU_Arcane
-  name: Алхимизированные решения
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Arcane.xml"
+  id: CP14_RU_TargetEffects
+  name: Целевые алхемические растворы
+  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/TargetEffects.xml"
   filterEnabled: True

@@ -2,7 +2,6 @@
   id: CP14EssenceBase
   abstract: true
   physicalDesc: cp14-reagent-physical-desc-sparkling
-  group: CP14MagicEssence
   flavor: CP14Bitterly
   metabolisms:
     Food:
@@ -18,6 +17,7 @@
   id: CP14EssenceEarth
   name: cp14-reagent-name-essence-earth
   desc: cp14-reagent-desc-essence-earth
+  group: CP14MagicEssenceT0
   color: "#70533f"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -28,6 +28,7 @@
   id: CP14EssenceFire
   name: cp14-reagent-name-essence-fire
   desc: cp14-reagent-desc-essence-fire
+  group: CP14MagicEssenceT0
   color: "#d9741c"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -38,6 +39,7 @@
   id: CP14EssenceWater
   name: cp14-reagent-name-essence-water
   desc: cp14-reagent-desc-essence-water
+  group: CP14MagicEssenceT0
   color: "#1c94d9"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -48,6 +50,7 @@
   id: CP14EssenceAir
   name: cp14-reagent-name-essence-air
   desc: cp14-reagent-desc-essence-air
+  group: CP14MagicEssenceT0
   color: "#def9ff"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -58,6 +61,7 @@
   id: CP14EssenceOrder
   name: cp14-reagent-name-essence-order
   desc: cp14-reagent-desc-essence-order
+  group: CP14MagicEssenceT0
   color: "#d9d9d9"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -68,6 +72,7 @@
   id: CP14EssenceChaos
   name: cp14-reagent-name-essence-chaos
   desc: cp14-reagent-desc-essence-chaos
+  group: CP14MagicEssenceT0
   color: "#5c5c5c"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -80,6 +85,7 @@
   id: CP14EssenceFrost
   name: cp14-reagent-name-essence-frost
   desc: cp14-reagent-desc-essence-frost
+  group: CP14MagicEssenceT1
   color: "#4f91bd"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -90,6 +96,7 @@
   id: CP14EssenceLight
   name: cp14-reagent-name-essence-light
   desc: cp14-reagent-desc-essence-light
+  group: CP14MagicEssenceT1
   color: "#ba97b8"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -100,6 +107,7 @@
   id: CP14EssenceMotion
   name: cp14-reagent-name-essence-motion
   desc: cp14-reagent-desc-essence-motion
+  group: CP14MagicEssenceT1
   color: "#575100"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -110,6 +118,7 @@
   id: CP14EssenceCycle
   name: cp14-reagent-name-essence-cycle
   desc: cp14-reagent-desc-essence-cycle
+  group: CP14MagicEssenceT1
   color: "#063b1f"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -120,6 +129,7 @@
   id: CP14EssenceEnergia
   name: cp14-reagent-name-essence-energia
   desc: cp14-reagent-desc-essence-energia
+  group: CP14MagicEssenceT1
   color: "#caed72"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -130,6 +140,7 @@
   id: CP14EssenceVoid
   name: cp14-reagent-name-essence-void
   desc: cp14-reagent-desc-essence-void
+  group: CP14MagicEssenceT1
   color: "#12021c"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -140,6 +151,7 @@
   id: CP14EssencePoison
   name: cp14-reagent-name-essence-poison
   desc: cp14-reagent-desc-essence-poison
+  group: CP14MagicEssenceT1
   color: "#619e20"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -150,6 +162,7 @@
   id: CP14EssenceLife
   name: cp14-reagent-name-essence-life
   desc: cp14-reagent-desc-essence-life
+  group: CP14MagicEssenceT1
   color: "#eb1a3d"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -160,6 +173,7 @@
   id: CP14EssenceCrystal
   name: cp14-reagent-name-essence-crystal
   desc: cp14-reagent-desc-essence-crystal
+  group: CP14MagicEssenceT1
   color: "#538cb8"
   tileReactions:
   - !type:CreateEntityTileReaction
@@ -172,6 +186,7 @@
   id: CP14EssenceMagic
   name: cp14-reagent-name-essence-magic
   desc: cp14-reagent-desc-essence-magic
+  group: CP14MagicEssenceT2
   color: "#5497d6"
   tileReactions:
   - !type:CreateEntityTileReaction
