@@ -2,7 +2,7 @@
 
 - type: reaction
   id: CP14EssenceFrost
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceFire:
@@ -17,7 +17,7 @@
 
 - type: reaction
   id: CP14EssenceLight
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceFire:
@@ -32,7 +32,7 @@
 
 - type: reaction
   id: CP14EssenceMotion
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceOrder:
@@ -47,7 +47,7 @@
 
 - type: reaction
   id: CP14EssenceCycle
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceOrder:
@@ -62,7 +62,7 @@
 
 - type: reaction
   id: CP14EssenceEnergia
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceOrder:
@@ -77,7 +77,7 @@
 
 - type: reaction
   id: CP14EssenceVoid
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceChaos:
@@ -92,7 +92,7 @@
 
 - type: reaction
   id: CP14EssencePoison
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceChaos:
@@ -107,7 +107,7 @@
 
 - type: reaction
   id: CP14EssenceLife
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceEarth:
@@ -122,7 +122,7 @@
 
 - type: reaction
   id: CP14EssenceCrystal
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceOrder:
@@ -139,7 +139,7 @@
 
 - type: reaction
   id: CP14EssenceMagic
-  minTemp: 600
+  minTemp: 500
   priority: 2
   reactants:
     CP14EssenceVoid:

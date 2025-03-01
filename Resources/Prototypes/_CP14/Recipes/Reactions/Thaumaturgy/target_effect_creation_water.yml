@@ -3,8 +3,8 @@
 # The result is always 75 per cent empty solution
 
 - type: reaction
-  id: CP14T1HealBrute
-  minTemp: 500
+  id: CP14BasicEffectHealBrute
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 2
@@ -13,7 +13,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectHealBrute: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -21,7 +21,7 @@
 
 - type: reaction
   id: CP14BasicEffectDamageBrute
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 2
@@ -30,7 +30,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectDamageBrute: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -38,7 +38,7 @@
 
 - type: reaction
   id: CP14BasicEffectHealHeat
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -49,7 +49,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectHealHeat: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -57,7 +57,7 @@
 
 - type: reaction
   id: CP14BasicEffectDamageHeat
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -68,7 +68,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectDamageHeat: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -76,7 +76,7 @@
 
 - type: reaction
   id: CP14BasicEffectHealCold
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -87,7 +87,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectHealCold: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -95,7 +95,7 @@
 
 - type: reaction
   id: CP14BasicEffectDamageCold
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -106,7 +106,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectDamageCold: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -114,7 +114,7 @@
 
 - type: reaction
   id: CP14BasicEffectHealPoison
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -125,7 +125,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectHealPoison: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -133,7 +133,7 @@
 
 - type: reaction
   id: CP14BasicEffectDamagePoison
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -144,7 +144,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectDamagePoison: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -152,7 +152,7 @@
 
 - type: reaction
   id: CP14BasicEffectHealAirloss
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -163,7 +163,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectHealAirloss: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -171,7 +171,7 @@
 
 - type: reaction
   id: CP14BasicEffectDamageAirloss
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -182,7 +182,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectDamageAirloss: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -190,7 +190,7 @@
 
 - type: reaction
   id: CP14BasicEffectBloodRestore
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -201,7 +201,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectBloodRestore: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -209,7 +209,7 @@
 
 - type: reaction
   id: CP14BasicEffectBloodAbsorption
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceLife:
       amount: 1
@@ -220,7 +220,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectBloodAbsorption: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -233,7 +233,7 @@
 
 - type: reaction
   id: CP14BasicEffectSpeedUp
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceMotion:
       amount: 2
@@ -242,7 +242,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectSpeedUp: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -250,7 +250,7 @@
 
 - type: reaction
   id: CP14BasicEffectSpeedDown
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceMotion:
       amount: 2
@@ -259,7 +259,7 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmpty: 3
     CP14BasicEffectSpeedDown: 1
   effects:
   - !type:CP14AffectSolutionTemperature
