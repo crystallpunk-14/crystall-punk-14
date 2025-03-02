@@ -374,14 +374,18 @@ ent-CP14SpellscrollSignalLightBlue = свиток заклинаний сине�
     .desc = { ent-CP14BaseSpellScrollLight.desc }
 
 ent-CP14SignalLightBase = сигнальный свет
+    .desc = Сигнал света оставленный авантюристом, возможно попавшим в беду.
 
 ent-CP14SignalLightRed = { ent-CP14SignalLightBase }
+    .desc = { ent-CP14SignalLightBase.desc }
     .suffix = Красный
 
 ent-CP14SignalLightYellow = { ent-CP14SignalLightBase }
+    .desc = { ent-CP14SignalLightBase.desc }
     .suffix = Жёлтый
 
 ent-CP14SignalLightBlue = { ent-CP14SignalLightBase }
+    .desc = { ent-CP14SignalLightBase.desc }
     .suffix = Синий
 
 ent-CP14ActionSpellCounterSpell = Контрспелл
