@@ -72,8 +72,16 @@ public sealed class ChasingWalkSystem : VirtualController
         _lookup.GetEntitiesInRange(compType, _transform.GetMapCoordinates(xform), range, _potentialChaseTargets, LookupFlags.Uncontained);
 
         //If there are no required components in the radius, don't moving.
+        //if (_potentialChaseTargets.Count <= 0)
+        //    return;
+
+        //CP14 clear chasing ent
         if (_potentialChaseTargets.Count <= 0)
+        {
+            component.ChasingEntity = null;
             return;
+        }
+        //CP14 end
 
         //In the case of finding required components, we choose a random one of them and remember its uid.
         component.ChasingEntity = _random.Pick(_potentialChaseTargets).Owner;

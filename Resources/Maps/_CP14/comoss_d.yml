@@ -95346,214 +95346,6 @@ entities:
     - type: Transform
       pos: -18.5,-7.5
       parent: 2
-- proto: CP14CrystalElementalDarknessBig
-  entities:
-  - uid: 526
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -52.513706,-31.587868
-      parent: 2
-  - uid: 4750
-    components:
-    - type: Transform
-      pos: -4.4530544,-12.664821
-      parent: 2
-- proto: CP14CrystalElementalDarknessMedium
-  entities:
-  - uid: 4189
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.4564304,-20.670996
-      parent: 2
-  - uid: 20393
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -70.47718,27.537062
-      parent: 2
-- proto: CP14CrystalElementalDarknessSmall
-  entities:
-  - uid: 676
-    components:
-    - type: Transform
-      pos: -3.4852087,-11.596605
-      parent: 2
-  - uid: 727
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.57572365,-20.50233
-      parent: 2
-  - uid: 4191
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -4.4548235,-17.556303
-      parent: 2
-  - uid: 4721
-    components:
-    - type: Transform
-      pos: 2.7045028,-12.631088
-      parent: 2
-  - uid: 4770
-    components:
-    - type: Transform
-      pos: -6.4675236,-14.508899
-      parent: 2
-- proto: CP14CrystalElementalElectricBig
-  entities:
-  - uid: 4906
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -36.05168,31.938839
-      parent: 2
-  - uid: 9902
-    components:
-    - type: Transform
-      pos: -105.57984,21.24656
-      parent: 2
-  - uid: 11334
-    components:
-    - type: Transform
-      pos: -106.56642,24.367363
-      parent: 2
-  - uid: 11507
-    components:
-    - type: Transform
-      pos: -41.252434,23.25334
-      parent: 2
-  - uid: 11527
-    components:
-    - type: Transform
-      pos: -31.018059,30.22209
-      parent: 2
-  - uid: 11548
-    components:
-    - type: Transform
-      pos: -30.018059,25.925215
-      parent: 2
-  - uid: 11569
-    components:
-    - type: Transform
-      pos: -30.924309,22.78459
-      parent: 2
-  - uid: 11589
-    components:
-    - type: Transform
-      pos: -41.54931,28.25334
-      parent: 2
-  - uid: 11590
-    components:
-    - type: Transform
-      pos: -35.17431,19.706465
-      parent: 2
-- proto: CP14CrystalElementalElectricMedium
-  entities:
-  - uid: 11355
-    components:
-    - type: Transform
-      pos: -104.53287,22.474747
-      parent: 2
-  - uid: 11400
-    components:
-    - type: Transform
-      pos: -32.37684,20.860218
-      parent: 2
-  - uid: 11421
-    components:
-    - type: Transform
-      pos: -38.93934,20.297718
-      parent: 2
-  - uid: 11528
-    components:
-    - type: Transform
-      pos: -40.81434,25.266468
-      parent: 2
-  - uid: 11549
-    components:
-    - type: Transform
-      pos: -43.06434,29.321156
-      parent: 2
-  - uid: 11570
-    components:
-    - type: Transform
-      pos: -33.1034,30.516468
-      parent: 2
-  - uid: 11591
-    components:
-    - type: Transform
-      pos: -29.236214,24.469593
-      parent: 2
-  - uid: 15255
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -56.54992,-10.055402
-      parent: 2
-- proto: CP14CrystalElementalElectricSmall
-  entities:
-  - uid: 11401
-    components:
-    - type: Transform
-      pos: -31.430351,32.15894
-      parent: 2
-  - uid: 11422
-    components:
-    - type: Transform
-      pos: -28.180351,26.12769
-      parent: 2
-  - uid: 11463
-    components:
-    - type: Transform
-      pos: -40.0241,30.518314
-      parent: 2
-  - uid: 18709
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 12.46924,50.596863
-      parent: 2
-- proto: CP14CrystalElementalFireMedium
-  entities:
-  - uid: 437
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -54.41131,-14.440628
-      parent: 2
-  - uid: 18692
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 30.503544,54.41658
-      parent: 2
-- proto: CP14CrystalElementalHealingBig
-  entities:
-  - uid: 18698
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 38.46467,38.340416
-      parent: 2
-- proto: CP14CrystalElementalHealingMedium
-  entities:
-  - uid: 440
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -59.91631,-3.0338006
-      parent: 2
-- proto: CP14CrystalElementalLightSmall
-  entities:
-  - uid: 15225
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -55.453403,-5.6048665
-      parent: 2
 - proto: CP14CrystalLampBlueEmpty
   entities:
   - uid: 8973
@@ -110629,7 +110421,7 @@ entities:
     - type: Transform
       pos: 56.5,55.5
       parent: 2
-- proto: CP14SpellScrollCounterSpell
+- proto: CP14ActionSpellMagicSplitting
   entities:
   - uid: 17519
     components:
@@ -111064,28 +110856,28 @@ entities:
     - type: Transform
       pos: 70.53315,33.730537
       parent: 2
-- proto: CP14VialSmallAgaricMushroom
+- proto: CP14VialSmall
   entities:
   - uid: 12720
     components:
     - type: Transform
       pos: -48.855915,-73.34486
       parent: 2
-- proto: CP14VialSmallBloodFlowerSap
+- proto: CP14VialSmall
   entities:
   - uid: 2159
     components:
     - type: Transform
       pos: -49.230915,-73.12611
       parent: 2
-- proto: CP14VialSmallBlueAmanita
+- proto: CP14VialSmall
   entities:
   - uid: 2161
     components:
     - type: Transform
       pos: -48.93404,-73.18861
       parent: 2
-- proto: CP14VialSmallDayflin
+- proto: CP14VialSmall
   entities:
   - uid: 9521
     components:
@@ -111097,21 +110889,21 @@ entities:
     - type: Transform
       pos: -49.230915,-73.34486
       parent: 2
-- proto: CP14VialSmallGroundQuartz
+- proto: CP14VialSmall
   entities:
   - uid: 12734
     components:
     - type: Transform
       pos: -48.68404,-73.14173
       parent: 2
-- proto: CP14VialSmallWildSage
+- proto: CP14VialSmall
   entities:
   - uid: 12751
     components:
     - type: Transform
       pos: -48.59029,-73.29798
       parent: 2
-- proto: CP14VialTinyChromiumSlime
+- proto: CP14VialTiny
   entities:
   - uid: 9522
     components:
@@ -111123,7 +110915,7 @@ entities:
     - type: Transform
       pos: -48.199665,-73.07923
       parent: 2
-- proto: CP14VialTinyLumiMushroom
+- proto: CP14VialTiny
   entities:
   - uid: 12733
     components:

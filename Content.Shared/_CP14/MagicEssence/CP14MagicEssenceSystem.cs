@@ -5,6 +5,7 @@ using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
+using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
@@ -53,6 +54,9 @@ public partial class CP14MagicEssenceSystem : EntitySystem
 
     private void OnCollectorCollide(Entity<CP14MagicEssenceCollectorComponent> ent, ref StartCollideEvent args)
     {
+        if (!Transform(ent).Anchored)
+            return;
+
         if (!TryComp<CP14MagicEssenceComponent>(args.OtherEntity, out var essenceComp))
             return;
 
@@ -68,7 +72,9 @@ public partial class CP14MagicEssenceSystem : EntitySystem
         if (!_solution.TryGetSolution((ent, collectorSolutionManager), ent.Comp.Solution, out var collectorSoln, out var collectorSolution))
             return;
 
-        _solution.TryTransferSolution(collectorSoln.Value, essenceSolution, essenceSolution.Volume);
+        if (!_solution.TryTransferSolution(collectorSoln.Value, essenceSolution, essenceSolution.Volume))
+            return;
+
         _audio.PlayPvs(essenceComp.ConsumeSound, ent);
 
         if (_net.IsServer)
@@ -110,14 +116,24 @@ public partial class CP14MagicEssenceSystem : EntitySystem
         if (!TryComp<CP14MagicEssenceContainerComponent>(uid, out var essenceContainer))
             return false;
 
+   	    var count = 1;
+
+        if (TryComp<StackComponent>(uid, out var stack))
+        {
+            count = stack.Count;
+        }
+
         foreach (var essence in essenceContainer.Essences)
         {
             if (_proto.TryIndex(essence.Key, out var magicType))
             {
                 for (var i = 0; i < essence.Value; i++)
                 {
-                    var spawned = SpawnAtPosition(magicType.EssenceProto, Transform(uid).Coordinates);
-                    _transform.AttachToGridOrMap(spawned);
+                    for (var j = 0; j < count; j++)
+                    {
+                        var spawned = SpawnAtPosition(magicType.EssenceProto, Transform(uid).Coordinates);
+                        _transform.AttachToGridOrMap(spawned);
+                    }
                 }
             }
         }
@@ -134,13 +150,21 @@ public partial class CP14MagicEssenceSystem : EntitySystem
         if (!scanEvent.CanScan)
             return;
 
+        var count = 1;
+
+        if (TryComp<StackComponent>(ent, out var stack))
+        {
+            count = stack.Count;
+        }
+
+
         var sb = new StringBuilder();
         sb.Append(Loc.GetString("cp14-magic-essence-title") + "\n");
         foreach (var essence in ent.Comp.Essences)
         {
             if (_proto.TryIndex(essence.Key, out var magicType))
             {
-                sb.Append($"[color={magicType.Color.ToHex()}]{Loc.GetString(magicType.Name)}[/color]: x{essence.Value}\n");
+                sb.Append($"[color={magicType.Color.ToHex()}]{Loc.GetString(magicType.Name)}[/color]: x{essence.Value * count}\n");
             }
         }
 

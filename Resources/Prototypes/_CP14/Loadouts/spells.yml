@@ -24,7 +24,7 @@
   - CP14ActionSpellSphereOfLight
   #Meta
   - CP14ActionSpellManaManipulation
-  - CP14ActionSpellCounterSpell
+  - CP14ActionSpellMagicSplitting
   - CP14ActionSpellMagicBallade
   #Physical
   - CP14ActionSpellSprint
@@ -150,10 +150,10 @@
       - CP14ManaWasting
 
 - type: loadout
-  id: CP14ActionSpellCounterSpell
-  dummyEntity: CP14ActionSpellCounterSpell
+  id: CP14ActionSpellMagicSplitting
+  dummyEntity: CP14ActionSpellMagicSplitting
   actions:
-  - CP14ActionSpellCounterSpell
+  - CP14ActionSpellMagicSplitting
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:

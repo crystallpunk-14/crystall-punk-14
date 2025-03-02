@@ -20,7 +20,6 @@
     manaCost: 10
     canModifyManacost: false
   - type: CP14MagicEffect
-    magicType: Meta
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
