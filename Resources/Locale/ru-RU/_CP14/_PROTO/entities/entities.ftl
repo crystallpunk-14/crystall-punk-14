@@ -2263,16 +2263,16 @@ ent-CP14ModularInlayQuartzDarkness = пространственная кварц
 ent-CP14ModularBladeTipBase = None
     .desc = Наконечник на древке стрелы, хорошо обработанный кусочек металла.
 
-ent-CP14ModularTipIronArrow = железный наконечник
+ent-CP14ModularTipIronArrow = железный наконечник стрелы
     .desc = { ent-CP14ModularBladeTipBase.desc }
 
-ent-CP14ModularTipGoldArrow = золотой наконечник
+ent-CP14ModularTipGoldArrow = золотой наконечник стрелы
     .desc = { ent-CP14ModularBladeTipBase.desc }
 
-ent-CP14ModularTipCopperArrow = медный наконечник
+ent-CP14ModularTipCopperArrow = медный наконечник стрелы
     .desc = { ent-CP14ModularBladeTipBase.desc }
 
-ent-CP14ModularTipMithrilArrow = мифриловый наконечник
+ent-CP14ModularTipMithrilArrow = мифриловый наконечник стрелы
     .desc = { ent-CP14ModularBladeTipBase.desc }
 
 ent-CP14Cauldron = котел
