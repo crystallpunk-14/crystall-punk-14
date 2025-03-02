@@ -922,7 +922,7 @@ ent-CP14RandomDirtLootSpawner = спавнер земли
 ent-CP14RandomSnowLootSpawner = спавнер снега
 
 ent-CP14BaseBiomeSpawner = спавнер биомов
-    .desc = Спавней различных биомов на карте.
+    .desc = Спавнер различных биомов на карте.
 
 ent-CP14BiomeSpawnerGrassland = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
