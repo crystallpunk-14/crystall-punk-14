@@ -1,5 +1,7 @@
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared._CP14.MagicEssence;
 using Content.Shared.Alert;
+using Content.Shared.Audio;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Rounding;
@@ -9,11 +11,22 @@ namespace Content.Shared._CP14.MagicEnergy;
 public partial class SharedCP14MagicEnergySystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<CP14MagicEnergyAmbientSoundComponent, CP14SlotCrystalPowerChangedEvent>(OnSlotPowerChanged);
+
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentShutdown>(OnComponentShutdown);
+    }
+
+    private void OnSlotPowerChanged(Entity<CP14MagicEnergyAmbientSoundComponent> ent, ref CP14SlotCrystalPowerChangedEvent args)
+    {
+        if (TryComp<AmbientSoundComponent>(ent, out var ambient))
+        {
+            _ambient.SetAmbience(ent, args.Powered);
+        }
     }
 
     private void OnComponentStartup(Entity<CP14MagicEnergyContainerComponent> ent, ref ComponentStartup args)
@@ -55,7 +68,7 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         changedEnergy = 0;
         overloadEnergy = 0;
 
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return;
 
         if (!safe)
@@ -177,10 +190,4 @@ public sealed class CP14MagicEnergyOverloadEvent : EntityEventArgs
 public sealed class CP14MagicEnergyBurnOutEvent : EntityEventArgs
 {
     public FixedPoint2 BurnOutEnergy;
-}
-
-public sealed class CP14MagicEnergyScanEvent : EntityEventArgs, IInventoryRelayEvent
-{
-    public bool CanScan;
-    public SlotFlags TargetSlots { get; } = SlotFlags.EYES;
 }

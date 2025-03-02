@@ -9,7 +9,6 @@
   - type: CP14MagicEffectManaCost
     manaCost: 10
   - type: CP14MagicEffect
-    magicType: Dimension
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

@@ -9,9 +9,8 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffectManaCost
-    manaCost: 10
+    manaCost: 1
   - type: CP14MagicEffect
-    magicType: Fire
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -39,7 +38,7 @@
   - type: TimedDespawn
     lifetime: 1.6
   - type: CP14AreaEntityEffect
-    range: 4
+    range: 3
     maxTargets: 4
     whitelist:
       components:
@@ -54,7 +53,7 @@
       - !type:FlammableReaction
         multiplier: 0.5
       - !type:AdjustTemperature
-        amount: 1500
+        amount: 500
       - !type:Ignite
 
 - type: entity

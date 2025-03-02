@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by Nimfar11",
+  "states": [
+    {
+      "name": "spike"
+    }
+  ]
+}

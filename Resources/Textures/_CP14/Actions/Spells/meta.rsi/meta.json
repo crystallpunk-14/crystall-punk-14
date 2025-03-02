@@ -11,7 +11,13 @@
       "name": "counter_spell"
     },
     {
+      "name": "magic_music"
+    },
+    {
       "name": "mana_consume"
+    },
+    {
+      "name": "mana"
     },
     {
       "name": "mana_gift"
