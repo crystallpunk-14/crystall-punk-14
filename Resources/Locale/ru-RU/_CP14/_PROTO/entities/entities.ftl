@@ -918,32 +918,42 @@ ent-CP14RandomDirtLootSpawner = спавнер земли
 ent-CP14RandomSnowLootSpawner = спавнер снега
 
 ent-CP14BaseBiomeSpawner = спавнер биомов
+    .desc = Спавней различных биомов на карте.
 
 ent-CP14BiomeSpawnerGrassland = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = T0 Ресурсы, Травянистые земли
 
 ent-CP14BiomeSpawnerCave = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = T0 Ресурсы, Пещерные туннели
 
 ent-CP14BiomeSpawnerCaveEmpty = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Пещера открытая
 
 ent-CP14BiomeSpawnerForest = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Лес
 
 ent-CP14BiomeSpawnerSnowland = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Снежная земля
 
 ent-CP14BiomeSpawnerSwamp = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Болото
 
 ent-CP14BiomeSpawnerFrozenSwamp = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Замерзшее болото
 
 ent-CP14BiomeSpawnerFrozenCave = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Замерзшая пещера
 
 ent-CP14BiomeSpawnerLeafMaze = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Лабиринт из листьев
 
 ent-CP14SpawnerDemiplaneLootT1 = Демиплан T1 Loot
