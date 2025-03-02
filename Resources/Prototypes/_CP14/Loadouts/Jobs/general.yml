@@ -493,6 +493,7 @@
   - CP14Torch
   - CP14SmokingPipeFilledTobacco
   - CP14FluteInstrument
+  - CP14LuteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
 
@@ -573,6 +574,12 @@
   storage:
     back:
     - CP14LyraInstrument
+
+- type: loadout
+  id: CP14LuteInstrument
+  storage:
+    back:
+    - CP14LuteInstrument
 
 - type: loadout
   id: CP14FluteInstrument
