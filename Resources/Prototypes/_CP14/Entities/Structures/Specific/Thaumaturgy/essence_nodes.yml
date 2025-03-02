@@ -13,6 +13,7 @@
     layers:
     - state: node
       shader: unshaded
+  - type: Timer
   - type: TimedSpawner
     chance: 0.75
     intervalSeconds: 15
