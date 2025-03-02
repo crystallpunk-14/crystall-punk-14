@@ -81,6 +81,6 @@
     maxFillLevels: 7
     fillBaseName: liq-
   - type: CP14MagicEnergyDraw
-    energy: -1
+    energy: -0.2
     delay: 1
   - type: CP14MagicEssenceCollector
