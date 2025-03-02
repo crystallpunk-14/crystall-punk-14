@@ -10,7 +10,7 @@
       vial:
         reagents:
         - ReagentId: CP14EssenceEarth
-          Quantity: 30
+          Quantity: 50
 
 - type: entity
   id: CP14VialMediumFireEssence
@@ -22,7 +22,7 @@
       vial:
         reagents:
         - ReagentId: CP14EssenceFire
-          Quantity: 30
+          Quantity: 50
 
 - type: entity
   id: CP14VialMediumWaterEssence
@@ -34,7 +34,7 @@
       vial:
         reagents:
         - ReagentId: CP14EssenceWater
-          Quantity: 30
+          Quantity: 50
 
 - type: entity
   id: CP14VialMediumAirEssence
@@ -46,7 +46,7 @@
       vial:
         reagents:
         - ReagentId: CP14EssenceAir
-          Quantity: 30
+          Quantity: 50
 
 - type: entity
   id: CP14VialMediumOrderEssence
@@ -58,7 +58,7 @@
       vial:
         reagents:
         - ReagentId: CP14EssenceOrder
-          Quantity: 30
+          Quantity: 50
 
 - type: entity
   id: CP14VialMediumChaosEssence
@@ -70,4 +70,4 @@
       vial:
         reagents:
         - ReagentId: CP14EssenceChaos
-          Quantity: 30
+          Quantity: 50

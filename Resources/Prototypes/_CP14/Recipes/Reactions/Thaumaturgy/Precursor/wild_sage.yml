@@ -1,5 +1,5 @@
 
-# Splitting
+# Splitting: Applying magical dispel to split precursor into essences.
 
 - type: reaction
   id: CP14WildSageSplitting
@@ -13,3 +13,5 @@
   cp14RandomProducts:
   - CP14EssenceOrder: 0.5
   - CP14EssenceChaos: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.

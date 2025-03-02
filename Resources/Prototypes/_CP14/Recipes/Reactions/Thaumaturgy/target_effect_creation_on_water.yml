@@ -1,9 +1,9 @@
-# Simple recipes made from T0 to T1 essences
+# Simple recipes made from T0 and T1 essences and water
 # T1
 # The result is always 75% empty solution
 
 - type: reaction
-  id: CP14BasicEffectHealBrute
+  id: CP14WaterBrewingHealBrute
   minTemp: 600
   priority: 1
   reactants:
@@ -14,14 +14,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectHealBrute: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectDamageBrute
+  id: CP14WaterBrewingDamageBrute
   minTemp: 600
   priority: 1
   reactants:
@@ -32,14 +33,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectDamageBrute: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectHealHeat
+  id: CP14WaterBrewingHealHeat
   minTemp: 600
   priority: 2
   reactants:
@@ -52,14 +54,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectHealHeat: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectDamageHeat
+  id: CP14WaterBrewingDamageHeat
   minTemp: 600
   priority: 2
   reactants:
@@ -72,14 +75,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectDamageHeat: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectHealCold
+  id: CP14WaterBrewingHealCold
   minTemp: 600
   priority: 2
   reactants:
@@ -92,14 +96,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectHealCold: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectDamageCold
+  id: CP14WaterBrewingDamageCold
   minTemp: 600
   priority: 2
   reactants:
@@ -112,14 +117,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectDamageCold: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectHealPoison
+  id: CP14WaterBrewingHealPoison
   minTemp: 600
   priority: 2
   reactants:
@@ -132,14 +138,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectHealPoison: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectDamagePoison
+  id: CP14WaterBrewingDamagePoison
   minTemp: 600
   priority: 2
   reactants:
@@ -152,14 +159,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectDamagePoison: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectHealAirloss
+  id: CP14WaterBrewingHealAirloss
   minTemp: 600
   priority: 2
   reactants:
@@ -172,14 +180,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectHealAirloss: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectDamageAirloss
+  id: CP14WaterBrewingDamageAirloss
   minTemp: 600
   priority: 2
   reactants:
@@ -192,14 +201,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
     CP14BasicEffectDamageAirloss: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectBloodRestore
+  id: CP14WaterBrewingBloodRestore
   minTemp: 600
   priority: 2
   reactants:
@@ -212,14 +222,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectRainbow: 1
     CP14BasicEffectBloodRestore: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectBloodAbsorption
+  id: CP14WaterBrewingBloodAbsorption
   minTemp: 600
   priority: 2
   reactants:
@@ -232,7 +243,8 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectRainbow: 1
     CP14BasicEffectBloodAbsorption: 1
   effects:
   - !type:CP14AffectSolutionTemperature
@@ -240,11 +252,47 @@
     
 # CP14BasicEffectSatiateHunger
 # CP14BasicEffectSatiateThirst
-# CP14BasicEffectHealMana
-# CP14BasicEffectDamageMana
 
 - type: reaction
-  id: CP14BasicEffectSpeedUp
+  id: CP14WaterBrewingHealMana
+  minTemp: 600
+  priority: 1
+  reactants:
+    CP14EssenceEnergia:
+      amount: 2
+    CP14EssenceMotion:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDrunk: 1
+    CP14BasicEffectHealMana: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingDamageMana
+  minTemp: 600
+  priority: 1
+  reactants:
+    CP14EssenceEnergia:
+      amount: 2
+    CP14EssenceVoid:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDrunk: 1
+    CP14BasicEffectDamageMana: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingSpeedUp
   minTemp: 600
   priority: 2
   reactants:
@@ -255,14 +303,15 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectJitter: 1
     CP14BasicEffectSpeedUp: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
 
 - type: reaction
-  id: CP14BasicEffectSpeedDown
+  id: CP14WaterBrewingSpeedDown
   minTemp: 600
   priority: 2
   reactants:
@@ -273,7 +322,8 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectJitter: 1
     CP14BasicEffectSpeedDown: 1
   effects:
   - !type:CP14AffectSolutionTemperature
