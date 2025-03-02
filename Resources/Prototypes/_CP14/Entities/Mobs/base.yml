@@ -28,3 +28,70 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MeatLaserImpact
+
+- type: entity
+  id: CP14MobMagical
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: CP14MagicCasterSlowdown
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 100
+    energy: 100
+    unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: 1
+    delay: 3 # 5m to full restore
+  - type: CP14MagicUnsafeDamage
+  - type: CP14MagicUnsafeSleep
+  - type: CP14MagicAttuningMind
+    autoCopyToMind: true
+  
+
+- type: entity
+  parent:
+  - CP14MobDamageable
+  - MobRespirator
+  - MobAtmosStandard
+  - SimpleSpaceMobBase
+  id: CP14SimpleMobBase
+  suffix: AI
+  abstract: true
+  components:
+  - type: Hunger
+    thresholds:
+      Overfed: 100
+      Okay: 50
+      Peckish: 25
+      Starving: 10
+      Dead: 0
+    baseDecayRate: 0.00925925925926
+  - type: Thirst
+    thresholds:
+      OverHydrated: 200
+      Okay: 150
+      Thirsty: 100
+      Parched: 50
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - StaminaModifier
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
+  - type: Bloodstream
+    bloodMaxVolume: 150
+  - type: MobPrice
+    price: 150
+  - type: FloatingVisuals

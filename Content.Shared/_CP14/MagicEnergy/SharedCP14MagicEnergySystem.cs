@@ -1,5 +1,7 @@
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared._CP14.MagicEssence;
 using Content.Shared.Alert;
+using Content.Shared.Audio;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Rounding;
@@ -9,11 +11,22 @@ namespace Content.Shared._CP14.MagicEnergy;
 public partial class SharedCP14MagicEnergySystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<CP14MagicEnergyAmbientSoundComponent, CP14SlotCrystalPowerChangedEvent>(OnSlotPowerChanged);
+
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentShutdown>(OnComponentShutdown);
+    }
+
+    private void OnSlotPowerChanged(Entity<CP14MagicEnergyAmbientSoundComponent> ent, ref CP14SlotCrystalPowerChangedEvent args)
+    {
+        if (TryComp<AmbientSoundComponent>(ent, out var ambient))
+        {
+            _ambient.SetAmbience(ent, args.Powered);
+        }
     }
 
     private void OnComponentStartup(Entity<CP14MagicEnergyContainerComponent> ent, ref ComponentStartup args)
@@ -45,52 +58,89 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
             ("color", color));
     }
 
-    public void ChangeEnergy(EntityUid uid, FixedPoint2 energy, bool safe = false)
+    public void ChangeEnergy(EntityUid uid,
+        FixedPoint2 energy,
+        out FixedPoint2 changedEnergy,
+        out FixedPoint2 overloadEnergy,
+        CP14MagicEnergyContainerComponent? component = null,
+        bool safe = false)
     {
-        if (!TryComp<CP14MagicEnergyContainerComponent>(uid, out var energyContainer))
+        changedEnergy = 0;
+        overloadEnergy = 0;
+
+        if (!Resolve(uid, ref component, false))
             return;
 
-        ChangeEnergy(uid, energyContainer, energy, safe);
-    }
-
-    public void ChangeEnergy(EntityUid uid, CP14MagicEnergyContainerComponent component, FixedPoint2 energy, bool safe = false)
-    {
         if (!safe)
         {
             //Overload
-            if (component.Energy + energy > component.MaxEnergy)
+            if (component.Energy + energy > component.MaxEnergy && component.UnsafeSupport)
             {
-                RaiseLocalEvent(uid, new CP14MagicEnergyOverloadEvent()
-                {
-                    OverloadEnergy = (component.Energy + energy) - component.MaxEnergy,
-                });
+                overloadEnergy = (component.Energy + energy) - component.MaxEnergy;
+                    RaiseLocalEvent(uid,
+                        new CP14MagicEnergyOverloadEvent()
+                        {
+                            OverloadEnergy = (component.Energy + energy) - component.MaxEnergy,
+                        });
             }
 
             //Burn out
-            if (component.Energy + energy < 0)
+            if (component.Energy + energy < 0 && component.UnsafeSupport)
             {
-                RaiseLocalEvent(uid, new CP14MagicEnergyBurnOutEvent()
-                {
-                    BurnOutEnergy = -energy - component.Energy
-                });
+                overloadEnergy = component.Energy + energy;
+                    RaiseLocalEvent(uid,
+                        new CP14MagicEnergyBurnOutEvent()
+                        {
+                            BurnOutEnergy = -energy - component.Energy
+                        });
             }
         }
 
         var oldEnergy = component.Energy;
         var newEnergy = Math.Clamp((float)component.Energy + (float)energy, 0, (float)component.MaxEnergy);
+
+        changedEnergy = newEnergy - oldEnergy;
         component.Energy = newEnergy;
 
         if (oldEnergy != newEnergy)
         {
-            RaiseLocalEvent(uid, new CP14MagicEnergyLevelChangeEvent()
-            {
-                OldValue = oldEnergy,
-                NewValue = newEnergy,
-                MaxValue = component.MaxEnergy,
-            });
+            RaiseLocalEvent(uid,
+                new CP14MagicEnergyLevelChangeEvent()
+                {
+                    OldValue = oldEnergy,
+                    NewValue = newEnergy,
+                    MaxValue = component.MaxEnergy,
+                });
         }
 
         UpdateMagicAlert((uid, component));
+    }
+
+    public void TransferEnergy(EntityUid from,
+        EntityUid to,
+        FixedPoint2 energy,
+        out FixedPoint2 changedEnergy,
+        out FixedPoint2 overloadEnergy,
+        CP14MagicEnergyContainerComponent? fromComponent = null,
+        CP14MagicEnergyContainerComponent? toComponent = null,
+        bool safe = false)
+    {
+        changedEnergy = 0;
+        overloadEnergy = 0;
+
+        if (!Resolve(from, ref fromComponent) || !Resolve(to, ref toComponent))
+            return;
+
+        var transferEnergy = energy;
+        //We check how much space is left in the container so as not to overload it, but only if it does not support overloading
+        if (!toComponent.UnsafeSupport || safe)
+        {
+            var freeSpace = toComponent.MaxEnergy - toComponent.Energy;
+            transferEnergy = FixedPoint2.Min(freeSpace, energy);
+        }
+
+        ChangeEnergy(from, -transferEnergy, out var change, out var overload, fromComponent, safe);
+        ChangeEnergy(to , -(change + overload), out changedEnergy, out overloadEnergy, toComponent, safe);
     }
 
     public bool HasEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)
@@ -98,36 +148,10 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
         if (!Resolve(uid, ref component))
             return false;
 
-        if (safe == false)
+        if (safe == false && component.UnsafeSupport)
             return true;
 
         return component.Energy >= energy;
-    }
-
-    public bool TryConsumeEnergy(EntityUid uid, FixedPoint2 energy, CP14MagicEnergyContainerComponent? component = null, bool safe = false)
-    {
-        if (!Resolve(uid, ref component))
-            return false;
-
-        if (energy <= 0)
-            return true;
-
-        // Attempting to absorb more energy than is contained in the container available only in non-safe methods (with container destruction)
-        if (component.Energy < energy)
-        {
-            if (safe)
-            {
-                return false;
-            }
-            else
-            {
-                ChangeEnergy(uid, component, -energy, safe);
-                return true;
-            }
-        }
-
-        ChangeEnergy(uid, component, -energy, safe);
-        return true;
     }
 
     private void UpdateMagicAlert(Entity<CP14MagicEnergyContainerComponent> ent)
@@ -166,10 +190,4 @@ public sealed class CP14MagicEnergyOverloadEvent : EntityEventArgs
 public sealed class CP14MagicEnergyBurnOutEvent : EntityEventArgs
 {
     public FixedPoint2 BurnOutEnergy;
-}
-
-public sealed class CP14MagicEnergyScanEvent : EntityEventArgs, IInventoryRelayEvent
-{
-    public bool CanScan;
-    public SlotFlags TargetSlots { get; } = SlotFlags.EYES;
 }

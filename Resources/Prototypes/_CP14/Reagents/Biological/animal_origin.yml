@@ -1,0 +1,26 @@
+# Poison
+
+- type: reagent
+  id: CP14WhistlerPoison
+  group: CP14Biological
+  name: cp14-reagent-name-whistler-poison
+  desc: cp14-reagent-desc-whistler-poison
+  flavor: CP14VerySweet
+  color: "#6bb4bf"
+  physicalDesc: reagent-physical-desc-powdery
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:Emote
+        emote: Yawn
+        showInChat: true
+        probability: 0.2
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: CP14WhistlerPoison
+          min: 8
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add

@@ -2,12 +2,12 @@
 
 - type: reaction
   id: CP14AirLilyBrewing
-  minTemp: 500
+  minTemp: 530
   priority: 2
   reactants:
     CP14AirLily:
       amount: 1
-    CP14GroundQuartz:
+    CP14BasicEffectSimpleBase:
       amount: 1
   products:
     CP14BasicEffectEmpty: 1

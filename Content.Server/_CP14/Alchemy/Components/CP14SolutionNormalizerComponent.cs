@@ -1,8 +1,8 @@
-
+using Content.Server._CP14.Alchemy.EntitySystems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 
-namespace Content.Server._CP14.Alchemy;
+namespace Content.Server._CP14.Alchemy.Components;
 
 /// <summary>
 /// gradually rounds down all reagents in the specified solution

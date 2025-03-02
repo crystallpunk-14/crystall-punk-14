@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by TheShuEd, cure_wounds created by .kreks.",
+  "states": [
+    {
+      "name": "cure_burn"
+    },
+    {
+      "name": "cure_poison"
+    },
+    {
+      "name": "cure_wounds"
+    },
+    {
+      "name": "heal_music"
+    },
+    {
+      "name": "peace_music"
+    },
+    {
+      "name": "plant_growth"
+    },
+    {
+      "name": "speed_music"
+    }
+  ]
+}

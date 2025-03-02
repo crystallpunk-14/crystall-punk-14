@@ -13,6 +13,7 @@
   - CP14ClothingCloakGreen
   - CP14ClothingCloakBlue
   - CP14ClothingCloakFurCoat
+  - CP14ClothingCloakInsulated
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -53,6 +54,11 @@
   id: CP14ClothingCloakFurCoat
   equipment:
     cloak: CP14ClothingCloakFurCoat
+
+- type: loadout
+  id: CP14ClothingCloakInsulated
+  equipment:
+    cloak: CP14ClothingCloakInsulated
 
 # OuterClothing
 
@@ -290,6 +296,7 @@
   - CP14ClothingCottonWhiteCollarDress
   - CP14ClothinGreenBeltDress
   - CP14ClothinGreenBeltDress2
+  - CP14ClothinGreenLightDress
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
   - CP14ClothingCottonYellowCollarDress
@@ -394,6 +401,11 @@
   id: CP14ClothinGreenBeltDress2
   equipment:
     shirt: CP14ClothinGreenBeltDress2
+
+- type: loadout
+  id: CP14ClothinGreenLightDress
+  equipment:
+    shirt: CP14ClothinGreenLightDress
 
 - type: loadout
   id: CP14ClothingShirtCottonYellow

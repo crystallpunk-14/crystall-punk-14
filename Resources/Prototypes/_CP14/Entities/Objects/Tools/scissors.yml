@@ -24,6 +24,9 @@
     attackRate: 1
     damage:
       types:
-        Piercing: 7
+        Piercing: 4
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
+  - type: Tag
+    tags:
+    - CP14Scissors

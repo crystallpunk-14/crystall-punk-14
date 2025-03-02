@@ -1,0 +1,99 @@
+- type: entity
+  parent: CP14ModularGripBase
+  id: CP14ModularRod
+  abstract: true
+  description: A thin shaft of wood, the most important part of the future arrow. 
+  components:
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - ArrowTip
+  - type: Item
+    storedRotation: 0
+  - type: MeleeWeapon
+    resetOnHandSelected: false #Fast swap
+    range: 1.0 # 1.5 standart
+    cPAnimationOffset: -0.75 #-1 standart
+    attackRate: 1 # 1 standart
+  - type: Clothing
+    slots:
+    - belt
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    embedOnThrow: false
+  - type: ThrowingAngle
+    angle: 0
+  - type: Ammo
+    muzzleFlash: null
+  - type: Tag
+    tags:
+    - CP14Arrow
+
+# Rod
+- type: entity
+  parent: CP14ModularRod
+  id: CP14ModularRodWooden
+  name: wooden grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Rod/arrow.rsi
+    layers:
+    - state: tail
+    - state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularRodWooden
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: CP14ModularRod
+  id: CP14ModularRodLucens
+  name: lucens grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Rod/arrow.rsi
+    layers:
+    - state: tail
+    - state: icon
+      color: "#0398fc"
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularRodLucens
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 45
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

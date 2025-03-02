@@ -4,7 +4,7 @@
   description: An effective method of destruction - an explosive fireball
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/fire.rsi
     state: fireball
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
@@ -24,6 +24,7 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
+  - type: CP14MagicEffectPacifiedBlock
   - type: EntityWorldTargetAction
     checkCanAccess: false
     raiseOnUser: true
@@ -32,7 +33,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/fire.rsi
       state: fireball
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 25

@@ -1,0 +1,60 @@
+- type: entity
+  id: CP14EssenceSplitter
+  parent:
+  - BaseStructureDynamic
+  name: essence splitter
+  description: A device capable of splitting objects into magical essence when overloaded with energy.
+  categories: [ ForkFiltered ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Items
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Thaumaturgy/essence_splitter.rsi
+    layers:
+    - state: base
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 125
+        mask:
+        - TabletopMachineMask
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 50
+    energy: 0
+    unsafeSupport: true
+  - type: CP14MagicEssenceSplitter
+    whitelist:
+      components:
+      - Item
+
+- type: entity
+  id: CP14EssenceSplitterImpactEffect
+  name: essence splitter impact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Thaumaturgy/essence_splitter.rsi
+    layers:
+    - state: impact
+      shader: unshaded
+  - type: PointLight
+    radius: 1.5
+  - type: TimedDespawn
+    lifetime: 3.95
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/Magic/ethereal_enter.ogg

@@ -1,0 +1,36 @@
+- type: constructionGraph
+  id: CP14WoodenCabinet
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14WoodenCabinet
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 3
+            - material: CP14Nail
+              amount: 2
+            - tool: CP14Hammering
+              doAfter: 2
+    - node: CP14WoodenCabinet
+      entity: CP14WoodenCabinet
+
+- type: constructionGraph
+  id: CP14IronCabinet
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14IronCabinet
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: CP14IronBar
+              amount: 3
+            - material: CP14Nail
+              amount: 2
+              doAfter: 4
+    - node: CP14IronCabinet
+      entity: CP14IronCabinet
