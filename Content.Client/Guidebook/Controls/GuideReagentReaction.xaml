@@ -1,11 +1,11 @@
 ﻿<BoxContainer xmlns="https://spacestation14.io"
+              Orientation="Vertical"
               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
               Orientation="Vertical"
               HorizontalAlignment="Stretch"
               HorizontalExpand="True"
               Margin="0 0 0 5">
-    <BoxContainer
-        Orientation="Horizontal">
+    <BoxContainer Orientation="Horizontal">
         <BoxContainer Name="ReactantsContainer" Orientation="Vertical" HorizontalExpand="True"
                       VerticalAlignment="Center">
             <RichTextLabel Name="ReactantsLabel"
