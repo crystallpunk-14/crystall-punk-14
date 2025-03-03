@@ -8,6 +8,7 @@
   - type: CP14SmokeBomb
     solution: vial
   - type: Sprite
+    noRot: false
     layers:
       - state: vial
       - state: liq-1
