@@ -43,6 +43,8 @@
           !type:PhysShapeAabb
           bounds: "-0.25,-0.25,0.25,0.25"
         density: 525
+        layer:
+        - WallLayer
         mask:
         - WallLayer
   - type: SolutionContainerManager
