@@ -1,0 +1,9 @@
+- type: entity
+  id: CP14BaseAlchemyBomb
+  parent: CP14VialSmall
+  categories: [ ForkFiltered ]
+  name: alchemical bomb
+  description: A vial of liquid that explodes with an alchemical reagent cloud when thrown. 
+  components:
+  - type: CP14SmokeBomb
+    solution: vial
