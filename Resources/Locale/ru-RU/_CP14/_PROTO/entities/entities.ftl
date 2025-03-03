@@ -3591,12 +3591,12 @@ ent-CP14DemiplanEnterRoomMarker = Демиплановый маркер вход
 
 ent-CP14MindRoleDemiplaneAntag = Роль антага в демиплане
 
-ent-CP14SmallWoodenCrateFilled = None
-    .desc = { ent-CP14SmallWoodenCrate.desc }
+ent-CP14SmallWoodenCrateFilled = маленький деревянный ящик
+    .desc = Прочный деревянный ящик.
     .suffix = Заполненный, Инструменты и вещи
 
-ent-CP14LargeWoodenCrateFilled = None
-    .desc = { ent-CP14LargeWoodenCrate.desc }
+ent-CP14LargeWoodenCrateFilled = большой деревянный ящик
+    .desc = Прочный деревянный ящик.
     .suffix = Заполненный, Инструменты и вещи
 
 ent-CP14FlameCreationArtificialFlame = искусственное пламя
