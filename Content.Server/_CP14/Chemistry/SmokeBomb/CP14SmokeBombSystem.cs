@@ -30,6 +30,10 @@ public partial class CP14SmokeBombSystem : EntitySystem
 
         var position = Transform(ent).Coordinates;
         var spreadAmount = (int) solution.Value.Comp.Solution.Volume;
+
+        if (spreadAmount <= 0)
+            return;
+        
         var smokeEnt = SpawnAtPosition(ent.Comp.SmokeProto, Transform(ent).Coordinates);
         _smoke.StartSmoke(smokeEnt, solution.Value.Comp.Solution, ent.Comp.Duration, spreadAmount);
         _audio.PlayPvs(ent.Comp.Sound, position);

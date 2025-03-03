@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CP14.Chemistry.SmokeBomb;
 
 /// <summary>
-/// Requires the user to play music to use this spell
+/// A smoke bomb that creates a cloud of smoke when it lands
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
 public sealed partial class CP14SmokeBombComponent : Component
