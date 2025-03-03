@@ -149,4 +149,21 @@
   - !type:KnowledgeRequired
     knowledge: Glasswork
   result: CP14VialMediumReinforced
+
+- type: CP14Recipe
+  id: CP14BaseAlchemyBomb
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 3
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
+  - !type:KnowledgeRequired
+    knowledge: MetallMelting
+  result: CP14BaseAlchemyBomb
   

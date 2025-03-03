@@ -54,7 +54,7 @@ public partial class CP14MagicEssenceSystem : EntitySystem
 
     private void OnCollectorCollide(Entity<CP14MagicEssenceCollectorComponent> ent, ref StartCollideEvent args)
     {
-        if (!Transform(ent).Anchored)
+        if (TryComp<CP14MagicEnergyCrystalSlotComponent>(ent, out var energySlot) && !energySlot.Powered)
             return;
 
         if (!TryComp<CP14MagicEssenceComponent>(args.OtherEntity, out var essenceComp))
