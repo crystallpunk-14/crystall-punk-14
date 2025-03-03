@@ -46,7 +46,7 @@ public sealed partial class CP14RoundRemoveShuttleSystem : EntitySystem
         var query = EntityQueryEnumerator<MindContainerComponent>();
         while (query.MoveNext(out var uid, out var mindContainer))
         {
-            if (Transform(uid).MapUid != ent)
+            if (Transform(uid).GridUid != ent)
                 continue;
 
             if (!_mind.TryGetMind(uid, out _, out var mindComp, container: mindContainer))
