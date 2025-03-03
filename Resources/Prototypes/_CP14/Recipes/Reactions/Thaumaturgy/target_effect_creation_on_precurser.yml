@@ -4,7 +4,7 @@
 
 - type: reaction
   id: CP14PrecurserBrewingHealMana
-  minTemp: 600
+  minTemp: 500
   priority: 1
   reactants:
     CP14EssenceMagic:
@@ -23,7 +23,7 @@
 
 - type: reaction
   id: CP14PrecurserBrewingDamageMana
-  minTemp: 600
+  minTemp: 500
   priority: 1
   reactants:
     CP14EssenceMagic:

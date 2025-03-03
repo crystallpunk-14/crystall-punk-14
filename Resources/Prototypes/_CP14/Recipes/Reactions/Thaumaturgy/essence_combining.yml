@@ -2,7 +2,7 @@
 
 - type: reaction
   id: CP14EssenceFrost
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceFire:
       amount: 1
@@ -16,7 +16,7 @@
 
 - type: reaction
   id: CP14EssenceLight
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceFire:
       amount: 1
@@ -30,7 +30,7 @@
 
 - type: reaction
   id: CP14EssenceMotion
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceOrder:
       amount: 1
@@ -44,7 +44,7 @@
 
 - type: reaction
   id: CP14EssenceCycle
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceOrder:
       amount: 1
@@ -58,7 +58,7 @@
 
 - type: reaction
   id: CP14EssenceEnergia
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceOrder:
       amount: 1
@@ -72,7 +72,7 @@
 
 - type: reaction
   id: CP14EssenceVoid
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceChaos:
       amount: 1
@@ -86,7 +86,7 @@
 
 - type: reaction
   id: CP14EssencePoison
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceChaos:
       amount: 1
@@ -100,7 +100,7 @@
 
 - type: reaction
   id: CP14EssenceLife
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceEarth:
       amount: 1
@@ -114,7 +114,7 @@
 
 - type: reaction
   id: CP14EssenceCrystal
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceOrder:
       amount: 1
@@ -130,7 +130,7 @@
 
 - type: reaction
   id: CP14EssenceMagic
-  minTemp: 500
+  minTemp: 600
   reactants:
     CP14EssenceVoid:
       amount: 1
