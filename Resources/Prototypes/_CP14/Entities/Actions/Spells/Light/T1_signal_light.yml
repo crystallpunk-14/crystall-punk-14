@@ -156,6 +156,7 @@
   abstract: true
   categories: [ ForkFiltered ]
   name: signal light
+  description: A signal of light left by an adventurer possibly in trouble. 
   components:
   - type: TimedDespawn
     lifetime: 12
