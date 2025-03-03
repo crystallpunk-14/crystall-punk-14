@@ -12,7 +12,7 @@
 
 - type: entity
   parent: CP14ModularGreaveBase
-  id: CP14ModularGreaveIronCuirass
+  id: CP14ModularGreaveIronPlate
   name: iron greave
   description: Protects the lower part of the legs, also makes it difficult to move, but sometimes extra protection is more important than speed.
   components:
@@ -22,14 +22,14 @@
     - state: icon
   - type: CP14ModularCraftPart
     possibleParts:
-    - GreaveIronCuirass
+    - GreaveIronPlate
   - type: CP14Material
     materials:
       CP14Iron: 10
 
 - type: entity
   parent: CP14ModularGreaveBase
-  id: CP14ModularGreaveGoldCuirass
+  id: CP14ModularGreaveGoldPlate
   name: golden greave
   description: Protects the lower part of the legs, also makes it difficult to move, though the use of gold as armour seems questionable.
   components:
@@ -40,14 +40,14 @@
       color: "#ffaf47"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GreaveGoldCuirass
+    - GreaveGoldPlate
   - type: CP14Material
     materials:
       CP14Gold: 10
 
 - type: entity
   parent: CP14ModularGreaveBase
-  id: CP14ModularGreaveCopperCuirass
+  id: CP14ModularGreaveCopperPlate
   name: copper greave
   description: Protects the lower part of the legs, also makes it difficult to move, but sometimes extra protection is more important than speed.
   components:
@@ -58,14 +58,14 @@
       color: "#bd712f"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GreaveCopperCuirass
+    - GreaveCopperPlate
   - type: CP14Material
     materials:
       CP14Copper: 10
 
 - type: entity
   parent: CP14ModularGreaveBase
-  id: CP14ModularGreaveMithrilCuirass
+  id: CP14ModularGreaveMithrilPlate
   name: mithril greave
   description: Protects the lower part of the legs, also makes it difficult to move, but sometimes extra protection is more important than speed.
   components:
@@ -76,7 +76,7 @@
       color: "#45d2a4"
   - type: CP14ModularCraftPart
     possibleParts:
-    - GreaveMithrilCuirass
+    - GreaveMithrilPlate
   - type: CP14Material
     materials:
       CP14Mithril: 10

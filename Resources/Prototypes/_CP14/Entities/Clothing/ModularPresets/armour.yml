@@ -13,8 +13,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesIronCuirass
-    - GreaveIronCuirass
+    - CuissesIronPlate
+    - GreaveIronPlate
 
 - type: entity
   id: CP14ArmorGoldCuirassPresets
@@ -34,8 +34,8 @@
       color: "#ffaf47"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesGoldCuirass
-    - GreaveGoldCuirass
+    - CuissesGoldPlate
+    - GreaveGoldPlate
 
 - type: entity
   id: CP14ArmorCopperCuirassPresets
@@ -55,8 +55,8 @@
       color: "#bd712f"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesCopperCuirass
-    - GreaveCopperCuirass
+    - CuissesCopperPlate
+    - GreaveCopperPlate
 
 - type: entity
   id: CP14ArmorMithrilCuirassPresets
@@ -76,5 +76,5 @@
       color: "#45d2a4"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesMithrilCuirass
-    - GreaveMithrilCuirass
+    - CuissesMithrilPlate
+    - GreaveMithrilPlate

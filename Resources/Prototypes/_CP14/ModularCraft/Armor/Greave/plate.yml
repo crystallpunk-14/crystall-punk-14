@@ -1,20 +1,20 @@
 - type: modularPart
-  id: BaseCuissesCuirass
+  id: BaseGreavePlate
   modifiers:
   - !type:Inherit
     copyFrom:
     - BaseClothingArmor
 
 - type: modularPart
-  id: CuissesIronCuirass
+  id: GreaveIronPlate
   slots:
-  - Cuisses
+  - Greave
   sourcePart: CP14ScrapIron
-  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseCuissesCuirass
+    - BaseGreavePlate
   - !type:EditArmor
     modifiers:
       coefficients:
@@ -23,20 +23,20 @@
         Piercing: -0.07
         Heat: -0.05
   - !type:EditClothingSpeed
-    walkModifier: 0.94
-    sprintModifier: 0.94
+    walkModifier: 0.96
+    sprintModifier: 0.96
 
 - type: modularPart
-  id: CuissesGoldCuirass
+  id: GreaveGoldPlate
   slots:
-  - Cuisses
+  - Greave
   sourcePart: CP14ScrapGold
-  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
   color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseCuissesCuirass
+    - BaseGreavePlate
   - !type:EditArmor
     modifiers:
       coefficients:
@@ -48,16 +48,16 @@
     sprintModifier: 0.94
 
 - type: modularPart
-  id: CuissesCopperCuirass
+  id: GreaveCopperPlate
   slots:
-  - Cuisses
+  - Greave
   sourcePart: CP14ScrapCopper
-  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
   color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseCuissesCuirass
+    - BaseGreavePlate
   - !type:EditArmor
     modifiers:
       coefficients:
@@ -70,16 +70,16 @@
     sprintModifier: 0.98
 
 - type: modularPart
-  id: CuissesMithrilCuirass
+  id: GreaveMithrilPlate
   slots:
-  - Cuisses
+  - Greave
   sourcePart: CP14ScrapMithril
-  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
   color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseCuissesCuirass
+    - BaseGreavePlate
   - !type:EditArmor
     modifiers:
       coefficients:

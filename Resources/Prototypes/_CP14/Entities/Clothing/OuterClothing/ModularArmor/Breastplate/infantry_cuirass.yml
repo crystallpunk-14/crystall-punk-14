@@ -12,7 +12,7 @@
     modifiers:
       coefficients:
         Blunt: 0.84
-        Slash: 0.90
+        Slash: 0.94
         Piercing: 0.84
         Heat: 0.88
   - type: ClothingSpeedModifier
@@ -54,7 +54,7 @@
     modifiers:
       coefficients:
         Blunt: 0.91
-        Slash: 0.95
+        Slash: 0.98
         Piercing: 0.88
         Caustic: 0.86
   - type: ClothingSpeedModifier
@@ -96,7 +96,7 @@
     modifiers:
       coefficients:
         Blunt: 0.90
-        Slash: 0.95
+        Slash: 0.98
         Piercing: 0.90
         Heat: 0.92
   - type: ClothingSpeedModifier
@@ -138,7 +138,7 @@
     modifiers:
       coefficients:
         Blunt: 0.80
-        Slash: 0.85
+        Slash: 0.89
         Piercing: 0.80
         Heat: 0.81
   - type: ClothingSpeedModifier
