@@ -18,6 +18,7 @@ hostname = "⚔️  CrystallEdge Alpha [RU] ⚔️ Status: Whitelist only"
 desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in fantasy style"
 lobbyenabled = true
 soft_max_players = 40
+maxplayers = 80
 lobbyduration = 300
 role_timers = true
 
