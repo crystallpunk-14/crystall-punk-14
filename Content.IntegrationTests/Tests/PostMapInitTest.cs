@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Server.Shuttles.Components;
@@ -42,6 +43,7 @@ namespace Content.IntegrationTests.Tests
             //CrystallEdge Map replacement
 
             //CrystallEdge Map replacement end
+            AdminTestArenaSystem.ArenaMapPath
         };
 
         private static readonly string[] DoNotMapWhitelist =
