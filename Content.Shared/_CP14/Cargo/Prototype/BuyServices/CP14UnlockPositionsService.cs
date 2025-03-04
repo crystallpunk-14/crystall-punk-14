@@ -14,17 +14,17 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
     [DataField]
     public HashSet<ProtoId<CP14StoreBuyPositionPrototype>> RemoveBuyPositions = new();
 
-    public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14TradingPortalComponent> portal)
     {
         foreach (var buy in AddBuyPositions)
         {
             if (!prototype.TryIndex(buy, out var indexedBuy))
                 continue;
 
-            if (station.Comp.AvailableBuyPosition.Contains(indexedBuy))
+            if (portal.Comp.AvailableBuyPosition.Contains(indexedBuy))
                 continue;
 
-            station.Comp.AvailableBuyPosition.Add(indexedBuy);
+            portal.Comp.AvailableBuyPosition.Add(indexedBuy);
         }
 
         foreach (var sell in AddSellPositions)
@@ -32,10 +32,10 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
             if (!prototype.TryIndex(sell, out var indexedSell))
                 continue;
 
-            if (station.Comp.AvailableSellPosition.Contains(indexedSell))
+            if (portal.Comp.AvailableSellPosition.Contains(indexedSell))
                 continue;
 
-            station.Comp.AvailableSellPosition.Add(indexedSell);
+            portal.Comp.AvailableSellPosition.Add(indexedSell);
         }
 
         foreach (var rBuy in RemoveBuyPositions)
@@ -43,10 +43,10 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
             if (!prototype.TryIndex(rBuy, out var indexedBuy))
                 continue;
 
-            if (!station.Comp.AvailableBuyPosition.Contains(indexedBuy))
+            if (!portal.Comp.AvailableBuyPosition.Contains(indexedBuy))
                 continue;
 
-            station.Comp.AvailableBuyPosition.Remove(indexedBuy);
+            portal.Comp.AvailableBuyPosition.Remove(indexedBuy);
         }
     }
 }

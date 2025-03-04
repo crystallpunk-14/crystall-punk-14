@@ -1,36 +1,20 @@
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cargo;
 
 /// <summary>
-/// Add to the station so that traveling store ship starts running on it
+/// Add to the station so ...
 /// </summary>
 [RegisterComponent]
-public sealed partial class CP14StationTravelingStoreShipTargetComponent : Component
+public sealed partial class CP14TradingPortalComponent : Component
 {
-    [DataField]
-    public EntityUid? Shuttle;
+    [DataField(required: true)]
+    public ProtoId<CP14StoreFactionPrototype>? Faction = null;
 
     [DataField]
-    public EntityUid? TradePostMap;
-
-    [DataField]
-    public bool OnStation;
-
-    [DataField]
-    public ResPath ShuttlePath = new("/Maps/_CP14/Ships/cargo_shuttle.yml");
-
-    [DataField]
-    public TimeSpan NextTravelTime = TimeSpan.Zero;
-
-    [DataField]
-    public TimeSpan StationWaitTime = TimeSpan.FromMinutes(6);
-
-    [DataField]
-    public TimeSpan TradePostWaitTime = TimeSpan.FromMinutes(4);
+    public HashSet<EntityUid> EntitiesInPortal = new();
 
     /// <summary>
     /// Available to random selecting and pusharing
@@ -67,10 +51,4 @@ public sealed partial class CP14StationTravelingStoreShipTargetComponent : Compo
 
     [DataField]
     public int Balance = 0;
-
-    /// <summary>
-    /// a queue of purchased items. The oldest purchases are taken out one by one to be unloaded onto the ship
-    /// </summary>
-    [DataField]
-    public Queue<EntProtoId> BuyedQueue = new();
 }
