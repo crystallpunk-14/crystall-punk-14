@@ -3,9 +3,6 @@ cp14-store-buy-hint = To purchase "{$name}", leave your money and order in the t
 cp14-store-buy-alchemy-unlock-t1-name = Trade Alliance: Alchemists
 cp14-store-buy-alchemy-unlock-t1-desc = The Alchemists Guild of the Kingdom of Klanir is willing to include the settlement in their trade route in return for small gifts and payment.
 
-cp14-store-buy-alchemy-normalizer-name = Solution normalizer
-cp14-store-buy-alchemy-normalizer-desc = Tired of constantly cleaning potion drops from everywhere? Fix it with a state-of-the-art technological device of imperial manufacture! “Alchemical Normalizer” - will remove unpleasant excess from your potions!
-
 cp14-store-buy-alchemy-vials-name = Alchemical vials
 cp14-store-buy-alchemy-vials-desc = Now the shortage of potion vessels is no longer a problem! After all, for a rather modest price, you can order batches of shiny vials directly from the best artisans! Random alchemical devices as a gift.
 

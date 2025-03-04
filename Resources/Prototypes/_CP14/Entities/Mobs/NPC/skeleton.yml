@@ -2,7 +2,7 @@
   id: CP14MobUndeadSkeleton
   parent: CP14BaseMobSkeleton
   name: skeleton
-  description: animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
+  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   components:
   - type: NpcFactionMember
@@ -15,6 +15,7 @@
 - type: entity
   id: SpawnPointGhostDemiplaneSkeleton
   name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
   suffix: skeleton
   categories: [ ForkFiltered ]
   parent: MarkerBase

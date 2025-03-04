@@ -64,9 +64,9 @@
     - CP14ActionSpellCureBurn
     - CP14ActionSpellBloodPurification
     - CP14ActionSpellResurrection
-  - type: CP14MagicManacostModify
-    modifiers:
-     Healing: 1.4
+  #- type: CP14MagicManacostModify
+  #  modifiers:
+  #   Life: 1.4
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
     energy: 80
@@ -80,9 +80,9 @@
   categories: [ DoNotMap ]
   suffix: Artifact
   components:
-  - type: CP14MagicManacostModify
-    modifiers:
-     Darkness: 1.4
+  #- type: CP14MagicManacostModify
+  #  modifiers:
+  #   Dimension: 1.4
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellShadowStep

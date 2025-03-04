@@ -4,12 +4,11 @@
   description: A secret spell that materializes beer from pure mana.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/water.rsi
     state: beer_creation
   - type: CP14MagicEffectManaCost
     manaCost: 50
   - type: CP14MagicEffect
-    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -28,7 +27,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/water.rsi
       state: beer_creation
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 60

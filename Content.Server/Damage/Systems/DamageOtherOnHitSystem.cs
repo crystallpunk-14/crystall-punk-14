@@ -43,7 +43,7 @@ namespace Content.Server.Damage.Systems
                 if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
                     damage *= sharp.Sharpness;
 
-                var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
+                var dmg = _damageable.TryChangeDamage(args.Target, damage * _damageable.UniversalThrownDamageModifier, component.IgnoreResistances, origin: args.Component.Thrower);
                 //CrystallEdge Melee upgrade end
 
                 // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
@@ -66,12 +66,14 @@ namespace Content.Server.Damage.Systems
 
         private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
         {
-            var damage = component.Damage;
+            //CP14 Sharpening damage apply
+            var damage = component.Damage * _damageable.UniversalThrownDamageModifier;
 
             if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
                 damage *= sharp.Sharpness;
 
             _damageExamine.AddDamageExamine(args.Message, damage, Loc.GetString("damage-throw"));
+            //CP14 Sharpening damage apply end
         }
 
         /// <summary>

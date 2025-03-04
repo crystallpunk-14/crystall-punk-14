@@ -4,12 +4,11 @@
   description: Creating a clot of water that is held in a floating balloon shape for some time
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/water.rsi
     state: water_creation
   - type: CP14MagicEffectManaCost
     manaCost: 10
   - type: CP14MagicEffect
-    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -25,7 +24,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/water.rsi
       state: water_creation
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 10

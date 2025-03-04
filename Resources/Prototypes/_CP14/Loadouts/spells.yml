@@ -6,22 +6,34 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
+  #Dimension
+  - CP14ActionSpellShadowGrab
+  #Earth
+  #Fire
   - CP14ActionSpellFlameCreation
+  - CP14ActionSpellHellBallade
+  #Healing
   - CP14ActionSpellCureWounds
   - CP14ActionSpellCureBurn
   - CP14ActionSpellBloodPurification
   - CP14ActionSpellPlantGrowth
+  - CP14ActionSpellHealBallade
+  - CP14ActionSpellSpeedBallade
+  - CP14ActionSpellPeaceBallade
+  #Light
   - CP14ActionSpellSphereOfLight
-  - CP14ActionSpellManaConsume
-  - CP14ActionSpellManaGift
-  - CP14ActionSpellCounterSpell
-  - CP14ActionSpellShadowGrab
+  #Meta
+  - CP14ActionSpellManaManipulation
+  - CP14ActionSpellMagicSplitting
+  - CP14ActionSpellMagicBallade
+  #Physical
+  - CP14ActionSpellSprint
+  - CP14ActionSpellKick
+  #Water
   - CP14ActionSpellWaterCreation
   - CP14ActionSpellIceShards
   - CP14ActionSpellFreeze
   - CP14ActionSpellBeerCreation
-  - CP14ActionSpellSprint
-  - CP14ActionSpellKick
 
 - type: loadout
   id: CP14ActionSpellBase
@@ -118,9 +130,10 @@
       - CP14ManaWasting
 
 - type: loadout
-  id: CP14ActionSpellManaConsume
-  dummyEntity: CP14ActionSpellManaConsume
+  id: CP14ActionSpellManaManipulation
+  dummyEntity: CP14DummyActionSpellManaManipulation
   actions:
+  - CP14ActionSpellManaGift
   - CP14ActionSpellManaConsume
   effects:
   - !type:JobRequirementLoadoutEffect
@@ -137,23 +150,10 @@
       - CP14ManaWasting
 
 - type: loadout
-  id: CP14ActionSpellManaGift
-  dummyEntity: CP14ActionSpellManaGift
+  id: CP14ActionSpellMagicSplitting
+  dummyEntity: CP14ActionSpellMagicSplitting
   actions:
-  - CP14ActionSpellManaGift
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-
-- type: loadout
-  id: CP14ActionSpellCounterSpell
-  dummyEntity: CP14ActionSpellCounterSpell
-  actions:
-  - CP14ActionSpellCounterSpell
+  - CP14ActionSpellMagicSplitting
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
@@ -250,3 +250,73 @@
   dummyEntity: CP14ActionSpellKick
   actions:
   - CP14ActionSpellKick
+
+- type: loadout
+  id: CP14ActionSpellHealBallade
+  dummyEntity: CP14ActionSpellHealBallade
+  actions:
+  - CP14ActionSpellHealBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellSpeedBallade
+  dummyEntity: CP14ActionSpellSpeedBallade
+  actions:
+  - CP14ActionSpellSpeedBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellPeaceBallade
+  dummyEntity: CP14ActionSpellPeaceBallade
+  actions:
+  - CP14ActionSpellPeaceBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14ActionSpellHellBallade
+  dummyEntity: CP14ActionSpellHellBallade
+  actions:
+  - CP14ActionSpellHellBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:SpeciesRequirement
+      species:
+      - CP14Tiefling
+
+- type: loadout
+  id: CP14ActionSpellMagicBallade
+  dummyEntity: CP14ActionSpellMagicBallade
+  actions:
+  - CP14ActionSpellMagicBallade
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting

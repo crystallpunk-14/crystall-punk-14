@@ -1,0 +1,62 @@
+- type: entity
+  id: CP14ActionSpellDemiplaneInfiltration
+  name: Demiplane infiltration
+  description: You get inside the demiplane of your choice.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: rift_arrow
+  - type: CP14MagicEffectManaCost
+    manaCost: 25
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectShadowStep
+    effects:
+    - !type:CP14SpellDemiplaneInfiltration
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Ego intrabo et..."
+    endSpeech: "salvabo socios meos"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneDemiplaneInfiltration
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14DemiplaneRift
+    canTargetSelf: false
+    checkCanAccess: true
+    range: 3
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/dimension.rsi
+      state: rift_arrow
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 50
+      castDelay: 5
+      distanceThreshold: 3
+      breakOnMove: true
+
+- type: entity
+  id: CP14RuneDemiplaneInfiltration
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#5e427e"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#5e427e"
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollDimension
+  id: CP14SpellScrollDemiplaneInfiltration
+  name: demiplane infiltration spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellDemiplaneInfiltration

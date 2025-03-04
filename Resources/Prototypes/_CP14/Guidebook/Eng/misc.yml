@@ -1,0 +1,13 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Demiplanes
+  name: Demiplanes exploration
+  text: "/ServerInfo/_CP14/Guidebook_EN/Demiplanes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Imperial_Laws
+  name: Imperial laws
+  text: "/ServerInfo/_CP14/Guidebook_EN/ImperialLaws.xml"
+  filterEnabled: True

@@ -34,6 +34,9 @@
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
       CP14Dirt: 100
+  - type: CP14MagicEssenceContainer
+    essences:
+      Earth: 1
 
 - type: entity
   id: CP14DirtBlock10
@@ -79,6 +82,9 @@
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
       CP14Stone: 100
+  - type: CP14MagicEssenceContainer
+    essences:
+      Earth: 1
 
 - type: entity
   id: CP14StoneBlock10
@@ -426,6 +432,18 @@
     layers:
       - state: cloth_1
         map: ["base"]
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: -3
+        Piercing: -3
+    bloodlossModifier: -8
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Appearance
   - type: Stack
     stackType: CP14Cloth

@@ -4,14 +4,13 @@
   description: Raises a solid wall of earth from the bowels.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/earth.rsi
     state: earth_wall
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
   - type: CP14MagicEffectManaCost
     manaCost: 15
   - type: CP14MagicEffect
-    magicType: Earth
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -31,7 +30,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/earth.rsi
       state: earth_wall
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 10

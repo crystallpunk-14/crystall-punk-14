@@ -4,50 +4,28 @@
   name: Alchemy
   text: "/ServerInfo/_CP14/Guidebook_EN/Alchemy.xml"
   children:
-  - CP14_EN_BasicAlchemy
-  - CP14_EN_Organic
-  - CP14_EN_Inorganic
-  - CP14_EN_Arcane
+  - CP14_EN_Precurser
+  - CP14_EN_ThaumaturgyEssence
+  - CP14_EN_TargetEffects
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_BasicAlchemy
-  name: Basic effects solutions
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/BasicAlchemy.xml"
+  id: CP14_EN_Precurser
+  name: Precursers
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Precurser.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Organic
-  name: Organic solutions
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Organic.xml"
+  id: CP14_EN_ThaumaturgyEssence
+  name: Thaumaturgic essences
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Essence.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Inorganic
-  name: Inorganic solutions
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Inorganic.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_EN_Arcane
-  name: Alchemized solutions
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Arcane.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_EN_Demiplanes
-  name: Demiplanes exploration
-  text: "/ServerInfo/_CP14/Guidebook_EN/Demiplanes.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_EN_Imperial_Laws
-  name: Imperial laws
-  text: "/ServerInfo/_CP14/Guidebook_EN/ImperialLaws.xml"
+  id: CP14_EN_TargetEffects
+  name: Target alchemical solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/TargetEffects.xml"
   filterEnabled: True

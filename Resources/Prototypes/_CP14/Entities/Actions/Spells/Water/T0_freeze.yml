@@ -4,14 +4,13 @@
   description: You begin to severely cool down the target, slowing its movement speed.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/water.rsi
     state: freeze
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffectManaCost
     manaCost: 7
   - type: CP14MagicEffect
-    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -36,7 +35,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/water.rsi
       state: freeze
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 5

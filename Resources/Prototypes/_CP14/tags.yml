@@ -126,3 +126,9 @@
 
 - type: Tag
   id: CP14Vial
+
+- type: Tag
+  id: CP14BloodFlower
+
+- type: Tag
+  id: CP14Dayflin

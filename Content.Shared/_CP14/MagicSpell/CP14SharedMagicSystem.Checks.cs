@@ -1,7 +1,9 @@
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.Instruments;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 
@@ -15,6 +17,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
+        SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
 
         //Verbal speaking
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
@@ -60,7 +63,6 @@ public abstract partial class CP14SharedMagicSystem
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-stamina-not-enough"));
             args.Cancel();
-            return;
         }
     }
 
@@ -86,6 +88,15 @@ public abstract partial class CP14SharedMagicSystem
         if (HasComp<MutedComponent>(args.Performer))
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
+            args.Cancel();
+        }
+    }
+
+    private void OnPacifiedCheck(Entity<CP14MagicEffectPacifiedBlockComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    {
+        if (HasComp<PacifiedComponent>(args.Performer))
+        {
+            args.PushReason(Loc.GetString("cp14-magic-spell-pacified"));
             args.Cancel();
         }
     }

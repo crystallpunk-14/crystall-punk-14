@@ -5,6 +5,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14GuidebookAlchemy
       - id: CP14ClothingEyesAlchemyGlasses
         prob: 0.5
       - id: CP14ClothingEyesAlchemyMonocle
@@ -71,6 +72,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14GuidebookImperialLaws
       - id: CP14ClothingHeadGuardHelmet
         prob: 0.7
       - id: CP14ClothingPantsGuardsChainmailSkirt
@@ -87,6 +89,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14GuidebookImperialLaws
       - id: CP14ClothingHeadGuardHelmet
         prob: 0.7
       - id: CP14ClothingPantsGuardsChainmailSkirt
@@ -103,6 +106,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14GuidebookDemiplanes
       - id: CP14ClothingCloakGuildmasterCape
         prob: 1
       - id: CP14ClothingShirtCottonWhite

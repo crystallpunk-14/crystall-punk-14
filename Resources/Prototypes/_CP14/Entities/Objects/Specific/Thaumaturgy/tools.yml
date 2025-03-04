@@ -34,12 +34,14 @@
     magicAlert: CP14MagicEnergy
     maxEnergy: 50
     energy: 0
+    unsafeSupport: false
   - type: CP14MagicEnergyExaminable
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellManaGift
     - CP14ActionSpellManaConsume
+    - CP14ActionSpellMagicSplitting
   - type: ThrowingAngle #Fun
     angle: 225
   - type: MeleeWeapon
