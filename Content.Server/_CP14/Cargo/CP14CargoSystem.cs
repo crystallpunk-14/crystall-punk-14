@@ -233,6 +233,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     {
         var coins = _currency.GenerateMoney(portal.Comp.Balance, GetTradingPoint());
         portal.Comp.EntitiesInPortal.UnionWith(coins);
+
+        portal.Comp.Balance = 0;
     }
 
     /// <summary>

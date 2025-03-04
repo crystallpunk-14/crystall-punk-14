@@ -43,19 +43,19 @@ public sealed partial class CP14TradingPortalComponent : Component
     /// <summary>
     /// Fixed prices and positions of the current flight
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentBuyPositions = new(); //Proto, price
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentSpecialBuyPositions = new(); //Proto, price
 
     [DataField]
     public MinMax SpecialBuyPositionCount = new(1, 2);
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSellPositions = new(); //Proto, price
 
-    [DataField, AutoNetworkedField]
+    [DataField]
     public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSpecialSellPositions = new(); //Proto, price
 
     [DataField]
