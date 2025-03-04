@@ -307,6 +307,7 @@ CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting
 
 #2025-04-03
 CP14TravelingStoreshipAnchor: null
+CP14TravelingShop: CP14TradingBoardBase
 
 # <---> CrystallEdge migration zone end
 
