@@ -305,6 +305,9 @@ CP14VialSmallHealthPotion: CP14VialSmall
 CP14VialSmallManaPotion: CP14VialSmall
 CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting 
 
+#2025-04-03
+CP14TravelingStoreshipAnchor: null
+
 # <---> CrystallEdge migration zone end
 
 
