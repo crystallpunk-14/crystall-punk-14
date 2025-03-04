@@ -2489,7 +2489,7 @@ entities:
     - type: Transform
       pos: 5.5,-9.5
       parent: 2
-- proto: CP14TravelingShop
+- proto: CP14TradingBoardBase
   entities:
   - uid: 418
     components:
