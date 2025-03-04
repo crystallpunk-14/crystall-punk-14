@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Server._CP14.Currency;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
@@ -50,6 +51,12 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         _sellProto = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        UpdatePortals(frameTime);
     }
 
     private void OnProtoReload(PrototypesReloadedEventArgs ev)
@@ -201,7 +208,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             QueueDel(stored);
         }
 
-        //Trying spend tradebox money to buy requested things
+        //Trying to spend inner money to buy requested things
         foreach (var request in requests)
         {
             if (portal.Comp.Balance < request.Value)
@@ -224,7 +231,20 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     /// </summary>
     private void CashOut(Entity<CP14TradingPortalComponent> portal)
     {
-        var coins = _currency.GenerateMoney(portal.Comp.Balance, Transform(portal).Coordinates);
+        var coins = _currency.GenerateMoney(portal.Comp.Balance, GetTradingPoint());
         portal.Comp.EntitiesInPortal.UnionWith(coins);
+    }
+
+    /// <summary>
+    /// Return all items to the map
+    /// </summary>
+    /// <param name="portal"></param>
+    private void ReturnAllItems(Entity<CP14TradingPortalComponent> portal)
+    {
+        foreach (var stored in portal.Comp.EntitiesInPortal)
+        {
+            _transform.SetCoordinates(stored, Transform(portal).Coordinates.Offset(new Vector2(5, 0)));
+        }
+        portal.Comp.EntitiesInPortal.Clear();
     }
 }

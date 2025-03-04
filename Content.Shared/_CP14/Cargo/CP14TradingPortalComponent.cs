@@ -1,5 +1,7 @@
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared.Destructible.Thresholds;
+using Robust.Shared.GameStates;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cargo;
@@ -7,14 +9,24 @@ namespace Content.Shared._CP14.Cargo;
 /// <summary>
 /// Add to the station so ...
 /// </summary>
-[RegisterComponent]
+[NetworkedComponent, RegisterComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
 public sealed partial class CP14TradingPortalComponent : Component
 {
-    [DataField(required: true)]
+    [DataField(required: true), AutoNetworkedField]
     public ProtoId<CP14StoreFactionPrototype>? Faction = null;
 
     [DataField]
+    public EntityCoordinates? TradingPosition = null;
+
+    [DataField, AutoNetworkedField]
     public HashSet<EntityUid> EntitiesInPortal = new();
+
+    [DataField, AutoNetworkedField]
+    public TimeSpan Delay = TimeSpan.FromSeconds(3f);
+
+    [DataField, AutoNetworkedField]
+    [AutoPausedField]
+    public TimeSpan ProcessFinishTime = TimeSpan.Zero;
 
     /// <summary>
     /// Available to random selecting and pusharing
@@ -31,19 +43,19 @@ public sealed partial class CP14TradingPortalComponent : Component
     /// <summary>
     /// Fixed prices and positions of the current flight
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentBuyPositions = new(); //Proto, price
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentSpecialBuyPositions = new(); //Proto, price
 
     [DataField]
     public MinMax SpecialBuyPositionCount = new(1, 2);
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSellPositions = new(); //Proto, price
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSpecialSellPositions = new(); //Proto, price
 
     [DataField]
