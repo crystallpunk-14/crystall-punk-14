@@ -37,7 +37,7 @@
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
         - id: CP14SpellScrollPlantGrowth
-        - id: CP14SpellScrollCounterSpell
+        - id: CP14SpellScrollMagicSplitting
         - id: CP14SpellScrollMagicalAcceleration
       - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
@@ -47,15 +47,6 @@
     - !type:GroupSelector
       weight: 25
       children:
-      - !type:GroupSelector
-        children:
-        - id: CP14VialSmallBloodFlowerSap
-        - id: CP14VialSmallAgaricMushroom
-        - id: CP14VialSmallGroundQuartz
-        - id: CP14VialSmallWildSage
-        - id: CP14VialSmallBlueAmanita
-        - id: CP14VialTinyChromiumSlime
-        - id: CP14VialTinyLumiMushroom
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
       # Rare standard village crates loot

@@ -1,0 +1,80 @@
+- type: entity
+  id: CP14ActionSpellMagicSplitting
+  name: Magic splitting
+  description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: counter_spell
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.7
+  - type: CP14MagicEffectManaCost
+    manaCost: 15
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectMagicSplitting
+    effects:
+    - !type:CP14SpellMixSolution
+      reactionTypes:
+      - CP14MagicSplitting
+    - !type:CP14SpellInterruptSpell
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: -50
+        safe: true
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneMagicSplitting
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
+      - ExaminableSolution
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    range: 60
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: counter_spell
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 15
+      castDelay: 0.25
+      breakOnMove: false 
+
+- type: entity
+  id: CP14RuneMagicSplitting
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#5096d4"
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      color: "#5096d4"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectMagicSplitting
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    layers:
+    - state: electrified
+      color: "#601fc2"
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollMeta
+  id: CP14SpellScrollMagicSplitting
+  name: magic splitting spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellMagicSplitting

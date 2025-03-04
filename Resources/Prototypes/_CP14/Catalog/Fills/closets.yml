@@ -5,7 +5,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14Lighter
+      - id: CP14ManaOperationGlove
       - id: CP14Syringe
         amount: 2
       - id: CP14Cauldron
@@ -27,18 +28,12 @@
       - id: CP14PenFeather
         amount: 1
         #Random start resource
-      - id: CP14VialSmallHealthPotion
-      - id: CP14VialSmallHealthPotion
-      - id: CP14VialSmallHealthPotion
-      - id: CP14VialSmallManaPotion
-      - id: CP14VialSmallManaPotion
-      - id: CP14VialSmallManaPotion
-      - id: CP14VialSmallGroundQuartz
-      - id: CP14VialSmallGroundQuartz
-      - id: CP14VialSmallBloodFlowerSap
-      - id: CP14VialSmallAgaricMushroom
-      - id: CP14VialSmallWildSage
-      - id: CP14VialSmallBlueAmanita
+      - id: CP14VialMediumEarthEssence
+      - id: CP14VialMediumFireEssence
+      - id: CP14VialMediumWaterEssence
+      - id: CP14VialMediumAirEssence
+      - id: CP14VialMediumOrderEssence
+      - id: CP14VialMediumChaosEssence
 
 - type: entity
   parent: CP14WoodenCloset
