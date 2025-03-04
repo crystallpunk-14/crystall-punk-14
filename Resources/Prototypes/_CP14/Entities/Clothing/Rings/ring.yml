@@ -34,6 +34,7 @@
   name: skeleton wizard conductive ring
   suffix: Ice Shards, Unremoveable
   description: A mana conuctive ring for the true wizards
+  hideSpawnMenu: true
   components:
   - type: Unremoveable
   - type: CP14SpellStorageRequireAttune
