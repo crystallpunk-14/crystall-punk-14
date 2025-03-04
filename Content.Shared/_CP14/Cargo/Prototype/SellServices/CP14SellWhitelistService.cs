@@ -11,7 +11,7 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
     [DataField(required: true)]
     public int Count = 1;
 
-    public override bool TrySell(EntityManager entManager, HashSet<EntityUid> entities)
+    public override bool TrySell(EntityManager entManager, IEnumerable<EntityUid> entities)
     {
         var whitelistSystem = entManager.System<EntityWhitelistSystem>();
 
@@ -38,7 +38,6 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
 
         foreach (var selledEnt in suitable)
         {
-            entities.Remove(selledEnt);
             entManager.QueueDeleteEntity(selledEnt);
         }
 

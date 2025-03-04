@@ -1,15 +1,15 @@
+using System.Linq;
 using System.Numerics;
 using Content.Server._CP14.Currency;
-using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
+using Content.Server.Storage.Components;
+using Content.Server.Storage.EntitySystems;
 using Content.Shared._CP14.Cargo;
 using Content.Shared._CP14.Cargo.Prototype;
-using Content.Shared.Maps;
 using Content.Shared.Paper;
-using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Storage.Components;
+using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
-using Robust.Shared.EntitySerialization.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -18,21 +18,15 @@ namespace Content.Server._CP14.Cargo;
 
 public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly CP14CurrencySystem _currency = default!;
-    [Dependency] private readonly SharedStorageSystem _storage = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-
-    private EntityQuery<TransformComponent> _xformQuery;
+    [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private IEnumerable<CP14StoreBuyPositionPrototype>? _buyProto;
     private IEnumerable<CP14StoreSellPositionPrototype>? _sellProto;
@@ -44,8 +38,6 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
         InitializeUI();
         InitializePortals();
-
-        _xformQuery = GetEntityQuery<TransformComponent>();
 
         _buyProto = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
         _sellProto = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
@@ -138,14 +130,14 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     /// <summary>
     /// Sell all the items we can, and replenish the internal balance
     /// </summary>
-    private void SellingThings(Entity<CP14TradingPortalComponent> portal)
+    private void SellingThings(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        var ev = new BeforeSellEntities(ref portal.Comp.EntitiesInPortal);
-        RaiseLocalEvent(ev);
+        //var ev = new BeforeSellEntities(ref portal.Comp.EntitiesInPortal);
+        //RaiseLocalEvent(ev);
 
         foreach (var sellPos in portal.Comp.CurrentSellPositions)
         {
-            while (sellPos.Key.Service.TrySell(EntityManager, portal.Comp.EntitiesInPortal))
+            if (sellPos.Key.Service.TrySell(EntityManager, storage.Contents.ContainedEntities))
             {
                 portal.Comp.Balance += sellPos.Value;
             }
@@ -153,7 +145,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
         foreach (var sellPos in portal.Comp.CurrentSpecialSellPositions)
         {
-            while (sellPos.Key.Service.TrySell(EntityManager, portal.Comp.EntitiesInPortal))
+            if (sellPos.Key.Service.TrySell(EntityManager, storage.Contents.ContainedEntities))
             {
                 portal.Comp.Balance += sellPos.Value;
             }
@@ -163,11 +155,11 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     /// <summary>
     /// Take all the money from the portal, and credit it to the internal balance
     /// </summary>
-    private void TopUpBalance(Entity<CP14TradingPortalComponent> portal)
+    private void TopUpBalance(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
         //Get all currency in portal
         var cash = 0;
-        foreach (var stored in portal.Comp.EntitiesInPortal)
+        foreach (var stored in storage.Contents.ContainedEntities)
         {
             var price = _currency.GetTotalCurrency(stored);
             if (price > 0)
@@ -180,11 +172,11 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         portal.Comp.Balance += cash;
     }
 
-    private void BuyThings(Entity<CP14TradingPortalComponent> portal)
+    private void BuyThings(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
         //Reading all papers in portal
         List<KeyValuePair<CP14StoreBuyPositionPrototype, int>> requests = new();
-        foreach (var stored in portal.Comp.EntitiesInPortal)
+        foreach (var stored in storage.Contents.ContainedEntities)
         {
             if (!TryComp<PaperComponent>(stored, out var paper))
                 continue;
@@ -229,24 +221,31 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     /// <summary>
     /// Transform all the accumulated balance into physical money, which we will give to the players.
     /// </summary>
-    private void CashOut(Entity<CP14TradingPortalComponent> portal)
+    private void CashOut(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        var coins = _currency.GenerateMoney(portal.Comp.Balance, GetTradingPoint());
-        portal.Comp.EntitiesInPortal.UnionWith(coins);
-
+        var coins = _currency.GenerateMoney(portal.Comp.Balance, Transform(portal).Coordinates);
+        foreach (var coin in coins)
+        {
+            _entityStorage.Insert(coin, portal, storage);
+        }
         portal.Comp.Balance = 0;
     }
 
     /// <summary>
     /// Return all items to the map
     /// </summary>
-    /// <param name="portal"></param>
-    private void ReturnAllItems(Entity<CP14TradingPortalComponent> portal)
+    private void ThrowAllItems(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        foreach (var stored in portal.Comp.EntitiesInPortal)
+        var containedEntities = storage.Contents.ContainedEntities.ToList();
+
+        _entityStorage.OpenStorage(portal, storage);
+
+        var xform = Transform(portal);
+        var rotation = xform.LocalRotation;
+        foreach (var stored in containedEntities)
         {
-            _transform.SetCoordinates(stored, Transform(portal).Coordinates.Offset(new Vector2(5, 0)));
+            var targetThrowPosition = xform.Coordinates.Offset(rotation.ToWorldVec() * 2);
+            _throwing.TryThrow(stored, targetThrowPosition.Offset(new Vector2(_random.NextFloat(-1, 1), _random.NextFloat(-1, 1))));
         }
-        portal.Comp.EntitiesInPortal.Clear();
     }
 }

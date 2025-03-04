@@ -11,7 +11,7 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
     [DataField(required: true)]
     public int Count = 1;
 
-    public override bool TrySell(EntityManager entManager, HashSet<EntityUid> entities)
+    public override bool TrySell(EntityManager entManager, IEnumerable<EntityUid> entities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -38,7 +38,6 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
         {
             if (selledEnt.Key.Comp.Count == selledEnt.Value)
             {
-                entities.Remove(selledEnt.Key);
                 entManager.QueueDeleteEntity(selledEnt.Key);
             }
             else

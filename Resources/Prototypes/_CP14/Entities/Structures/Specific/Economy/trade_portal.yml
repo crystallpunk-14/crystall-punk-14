@@ -5,13 +5,16 @@
   description: bobo baby smile
   categories: [ ForkFiltered ]
   components:
-  - type: Sprite
-    snapCardinals: true
-    sprite: Structures/Decoration/statues.rsi
-    state: venus_red
   - type: Icon
-    sprite: Structures/Decoration/statues.rsi
-    state: venus_red
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    state: base
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
   - type: Clickable
   - type: InteractionOutline
   - type: CP14TradingPortal
@@ -21,10 +24,26 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,0.49"
-        density: 100
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 50
         mask:
-        - FullTileMask
+        - SmallMobMask #this is so they can go under plastic flaps
         layer:
-        - AirlockLayer
-        - Impassable 
+        - MachineLayer
+  - type: ResistLocker
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+    enteringOffset: 0, -0.15
+    enteringRange: 0.20
+  - type: PlaceableSurface
+    isPlaceable: false # defaults to closed.
+  - type: EntityStorageVisuals
+    stateDoorOpen: open
+    stateDoorClosed: closed

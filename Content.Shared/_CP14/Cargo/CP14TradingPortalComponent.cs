@@ -19,9 +19,6 @@ public sealed partial class CP14TradingPortalComponent : Component
     public EntityCoordinates? TradingPosition = null;
 
     [DataField, AutoNetworkedField]
-    public HashSet<EntityUid> EntitiesInPortal = new();
-
-    [DataField, AutoNetworkedField]
     public TimeSpan Delay = TimeSpan.FromSeconds(3f);
 
     [DataField, AutoNetworkedField]

@@ -1,4 +1,5 @@
 using System.Text;
+using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cargo.Prototype.BuyServices;
@@ -10,12 +11,14 @@ public sealed partial class CP14BuyItemsService : CP14StoreBuyService
 
     public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14TradingPortalComponent> portal)
     {
+        var storageSystem = entManager.System<SharedEntityStorageSystem>();
+
         foreach (var (protoId, count) in Product)
         {
             for (var i = 0; i < count; i++)
             {
                 var spawned = entManager.Spawn(protoId);
-                portal.Comp.EntitiesInPortal.Add(spawned);
+                storageSystem.Insert(spawned, portal);
             }
         }
     }

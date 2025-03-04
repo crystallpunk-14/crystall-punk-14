@@ -1,41 +1,34 @@
-using System.Numerics;
+using Content.Server.Storage.Components;
 using Content.Shared._CP14.Cargo;
-using Content.Shared.Mind.Components;
-using Robust.Shared.Map;
-using Robust.Shared.Physics.Events;
+using Content.Shared.Storage.Components;
 
 namespace Content.Server._CP14.Cargo;
 
 public sealed partial class CP14CargoSystem
 {
-    [Dependency] private readonly MetaDataSystem _meta = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-
-    private EntityUid? _tradingMap = null;
     private void InitializePortals()
     {
         SubscribeLocalEvent<CP14TradingPortalComponent, MapInitEvent>(OnTradePortalMapInit);
-        SubscribeLocalEvent<CP14TradingPortalComponent, EntityTerminatingEvent>(OnTradePortalRemove);
 
-        SubscribeLocalEvent<CP14TradingPortalComponent, StartCollideEvent>(OnTradePortalCollide);
+        SubscribeLocalEvent<CP14TradingPortalComponent, StorageAfterCloseEvent>(OnTradePortalClose);
+        SubscribeLocalEvent<CP14TradingPortalComponent, StorageAfterOpenEvent>(OnTradePortalOpen);
     }
 
     private void UpdatePortals(float frameTime)
     {
-        var query = EntityQueryEnumerator<CP14TradingPortalComponent>();
-        while (query.MoveNext(out var ent, out var portal))
+        var query = EntityQueryEnumerator<CP14TradingPortalComponent, EntityStorageComponent>();
+        while (query.MoveNext(out var ent, out var portal, out var storage))
         {
             if (portal.ProcessFinishTime == TimeSpan.Zero || portal.ProcessFinishTime >= _timing.CurTime)
                 continue;
 
-            //FinishProcess
             portal.ProcessFinishTime = TimeSpan.Zero;
 
-            SellingThings((ent, portal));
-            TopUpBalance((ent, portal));
-            BuyThings((ent, portal));
-            CashOut((ent, portal));
-            ReturnAllItems((ent, portal));
+            SellingThings((ent, portal), storage);
+            TopUpBalance((ent, portal), storage);
+            BuyThings((ent, portal), storage);
+            CashOut((ent, portal), storage);
+            ThrowAllItems((ent, portal), storage);
             UpdateStorePositions((ent, portal));
         }
     }
@@ -46,42 +39,13 @@ public sealed partial class CP14CargoSystem
         UpdateStorePositions(ent);
     }
 
-    private void OnTradePortalRemove(Entity<CP14TradingPortalComponent> ent, ref EntityTerminatingEvent args)
-    {
-        //TODO: return all items to the map
-    }
-
-    private void OnTradePortalCollide(Entity<CP14TradingPortalComponent> ent, ref StartCollideEvent args)
-    {
-        if (HasComp<MindContainerComponent>(args.OtherEntity))
-            return;
-
-        _transform.SetCoordinates(args.OtherEntity, GetTradingPoint());
-        ent.Comp.EntitiesInPortal.Add(args.OtherEntity);
-
-        RefreshProcessTimer(ent);
-    }
-
-    private void RefreshProcessTimer(Entity<CP14TradingPortalComponent> ent)
+    private void OnTradePortalClose(Entity<CP14TradingPortalComponent> ent, ref StorageAfterCloseEvent args)
     {
         ent.Comp.ProcessFinishTime = _timing.CurTime + ent.Comp.Delay;
     }
 
-
-
-    public EntityUid GetTradingMap()
+    private void OnTradePortalOpen(Entity<CP14TradingPortalComponent> ent, ref StorageAfterOpenEvent args)
     {
-        if (_tradingMap is not null)
-            return _tradingMap.Value;
-
-        var map = _mapSystem.CreateMap(out var mapId, false);
-        _meta.SetEntityName(map, "Trading Map");
-        return map;
-    }
-
-    public EntityCoordinates GetTradingPoint()
-    {
-        var map = GetTradingMap();
-        return new EntityCoordinates(map, Vector2.Zero);
+        ent.Comp.ProcessFinishTime = TimeSpan.Zero;
     }
 }
