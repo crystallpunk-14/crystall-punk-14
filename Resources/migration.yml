@@ -250,8 +250,8 @@ CP14WoodenCabinetBanker: CP14WoodenCabinetMerchant
 CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 
 #2025-02-09
-C14IronCabinet: null
-C14IronCabinetCargo: CP14IronCabinetCargo
+C14IronCabinet: CP14IronCabinet
+C14IronCabinetCargo: CP14IronCabinet
 
 #2025-16-02
 CP14Arrow: CP14ModularIronArrow
