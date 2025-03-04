@@ -251,7 +251,7 @@ CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 
 #2025-02-09
 C14IronCabinet: CP14IronCabinet
-C14IronCabinetCargo: CP14IronCabinetCargo
+C14IronCabinetCargo: CP14IronCabinet
 
 #2025-16-02
 CP14Arrow: CP14ModularIronArrow
@@ -304,6 +304,11 @@ CP14VialTinyLumiMushroom: CP14VialSmall
 CP14VialSmallHealthPotion: CP14VialSmall
 CP14VialSmallManaPotion: CP14VialSmall
 CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting 
+
+#2025-04-03
+CP14TravelingStoreshipAnchor: null
+CP14TravelingShop: CP14TradingBoardBase
+CP14IronCabinetCargo: CP14IronCabinet
 
 # <---> CrystallEdge migration zone end
 

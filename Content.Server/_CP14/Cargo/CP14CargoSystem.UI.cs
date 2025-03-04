@@ -8,56 +8,43 @@ public sealed partial class CP14CargoSystem
 {
     public void InitializeUI()
     {
-        SubscribeLocalEvent<CP14CargoStoreComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
+        SubscribeLocalEvent<CP14TradingInfoBoardComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
     }
 
-    private void TryInitStore(Entity<CP14CargoStoreComponent> ent)
+    private void TryInitStore(Entity<CP14TradingInfoBoardComponent> ent)
     {
-        //TODO: There's no support for multiple stations. (settlements).
-        var stations = _station.GetStations();
-
-        if (stations.Count == 0)
-            return;
-
-        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(stations[0], out var station))
-            return;
-
-        ent.Comp.Station = new Entity<CP14StationTravelingStoreShipTargetComponent>(stations[0], station);
+        //TODO: more accurate way to find the trading portal, without lookup
+        var entitiesInRange = _lookup.GetEntitiesInRange<CP14TradingPortalComponent>(Transform(ent).Coordinates, 3);
+        foreach (var trading in entitiesInRange)
+        {
+            ent.Comp.TradingPortal = trading;
+            break;
+        }
     }
 
-    private void OnBeforeUIOpen(Entity<CP14CargoStoreComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    private void OnBeforeUIOpen(Entity<CP14TradingInfoBoardComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
         //TODO: If you open a store on a mapping, and initStore() it, the entity will throw an error when you try to save the grid\map.
 
-        if (ent.Comp.Station is null)
+        if (ent.Comp.TradingPortal is null)
             TryInitStore(ent);
 
         UpdateUIProducts(ent);
     }
 
-    private void UpdateAllStores()
+    private void UpdateUIProducts(Entity<CP14TradingInfoBoardComponent> ent)
     {
-        //TODO: redo
-        var query = EntityQueryEnumerator<CP14CargoStoreComponent>();
-        while (query.MoveNext(out var uid, out var store))
-        {
-            UpdateUIProducts((uid, store));
-        }
-    }
-
-    private void UpdateUIProducts(Entity<CP14CargoStoreComponent> ent)
-    {
-        if (ent.Comp.Station is null)
+        if (ent.Comp.TradingPortal is null)
             return;
 
-        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(ent.Comp.Station.Value, out var storeTargetComp))
+        if (!TryComp<CP14TradingPortalComponent>(ent.Comp.TradingPortal.Value, out var tradePortalComp))
             return;
 
         var prodBuy = new HashSet<CP14StoreUiProductEntry>();
         var prodSell = new HashSet<CP14StoreUiProductEntry>();
 
         //Add special buy positions
-        foreach (var (proto, price) in storeTargetComp.CurrentSpecialBuyPositions)
+        foreach (var (proto, price) in tradePortalComp.CurrentSpecialBuyPositions)
         {
             var name = Loc.GetString(proto.Name);
             var desc = new StringBuilder();
@@ -68,7 +55,7 @@ public sealed partial class CP14CargoSystem
         }
 
         //Add static buy positions
-        foreach (var (proto, price) in storeTargetComp.CurrentBuyPositions)
+        foreach (var (proto, price) in tradePortalComp.CurrentBuyPositions)
         {
             var name = Loc.GetString(proto.Name);
             var desc = new StringBuilder();
@@ -79,7 +66,7 @@ public sealed partial class CP14CargoSystem
         }
 
         //Add special sell positions
-        foreach (var (proto, price) in storeTargetComp.CurrentSpecialSellPositions)
+        foreach (var (proto, price) in tradePortalComp.CurrentSpecialSellPositions)
         {
             var name = Loc.GetString(proto.Name);
 
@@ -91,7 +78,7 @@ public sealed partial class CP14CargoSystem
         }
 
         //Add static sell positions
-        foreach (var proto in storeTargetComp.CurrentSellPositions)
+        foreach (var proto in tradePortalComp.CurrentSellPositions)
         {
             var name = Loc.GetString(proto.Key.Name);
 
@@ -102,7 +89,7 @@ public sealed partial class CP14CargoSystem
             prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value, false));
         }
 
-        var stationComp = storeTargetComp;
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime));
+        var stationComp = tradePortalComp;
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell));
     }
 }
