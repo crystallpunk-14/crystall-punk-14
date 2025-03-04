@@ -29,6 +29,28 @@
     - CP14ActionSpellIceShards
 
 - type: entity
+  id: CP14ClothingRingSkeletonWizard
+  parent: CP14ClothingRingBase
+  name: skeleton wizard conductive ring
+  suffix: Ice Shards, Unremoveable
+  description: A mana conuctive ring for the true wizards
+  components:
+  - type: Unremoveable
+  - type: CP14SpellStorageRequireAttune
+  - type: CP14MagicAttuningItem
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceShards
+    - CP14ActionSpellSphereOfLight
+    - CP14ActionSpellCureWounds
+    - CP14ActionSpellFlameCreation
+  - type: Sprite
+    layers:
+    - state: brass_ring
+    - state: berill_stone_small
+
+- type: entity
   id: CP14ClothingRingFireball
   parent: CP14ClothingRingBase
   name: fireball conductive ring
