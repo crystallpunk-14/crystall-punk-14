@@ -2503,15 +2503,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,11.5
       parent: 2
-- proto: CP14TravelingStoreshipAnchor
-  entities:
-  - uid: 467
-    components:
-    - type: Transform
-      anchored: False
-      rot: 1.5707963267948966 rad
-      pos: 1.5,14.5
-      parent: 1
 - proto: CP14VialMedium
   entities:
   - uid: 45
