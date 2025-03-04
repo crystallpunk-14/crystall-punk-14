@@ -31,3 +31,20 @@
   - type: CP14ModularCraftAutoAssemble
     details:
     - TipMithrilArrow
+
+- type: entity
+  id: CP14ModularCopperArrow
+  parent: CP14ModularRodLucens
+  name: copper arrow
+  description: It's the cheapest and weakest arrow you've ever seen, but it's better than nothing.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: tail
+    - sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+      state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - TipCopperArrow

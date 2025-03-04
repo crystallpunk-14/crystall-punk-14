@@ -44,6 +44,17 @@
 
 - type: entity
   parent: CP14ClothingBeltQuiver
+  id: CP14ClothingBeltQuiverCopperArrow
+  categories: [ ForkFiltered ]
+  suffix: Full. Copper. Arrow
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14ModularCopperArrow
+        amount: 16
+
+- type: entity
+  parent: CP14ClothingBeltQuiver
   id: CP14ClothingBeltQuiverMithrilArrow
   categories: [ ForkFiltered ]
   suffix: Full. Mithril. Arrow
