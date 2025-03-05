@@ -14,8 +14,6 @@
     departmentObjectives:
       CP14Command:
       - CP14TownSendObjectiveGroup
-      CP14Bank:
-      - CP14BankEarningObjectiveGroup
   - type: CP14PersonalObjectivesRule
     roleObjectives:
       CP14Guildmaster:
@@ -30,6 +28,8 @@
       - CP14PersonalCurrencyCollectObjectiveGroup
       CP14Innkeeper:
       - CP14PersonalCurrencyCollectObjectiveGroup
+      CP14Merchant:
+      - CP14PersonalObjectiveRichestMerchantGroup
 
 # event schedulers
 

@@ -1,0 +1,29 @@
+- type: storePositionSell
+  id: CP14DyeRed
+  special: true
+  price: 75
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeRed
+    count: 5
+
+- type: storePositionSell
+  id: CP14DyeYellow
+  special: true
+  price: 75
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeYellow
+    count: 5
+
+- type: storePositionSell
+  id: CP14DyeBlue
+  special: true
+  price: 75
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeBlue
+    count: 5

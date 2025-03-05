@@ -6,7 +6,6 @@
   weight: 10
   color: "#3ec8fa"
   roles:
-  - CP14Commandant
   - CP14GuardCommander
   - CP14Guildmaster
 
@@ -21,22 +20,13 @@
   - CP14Guard
 
 - type: department
-  id: CP14Bank
-  name: department-CP14Bank
-  description: department-CP14Bank-desc
-  weight: 8
-  color: "#fadb3e"
-  roles:
-  - CP14Commandant
-  - CP14Merchant
-
-- type: department
   id: CP14Artisan
   name: department-CP14Artisan
   description: department-CP14Artisan-desc
   weight: 7
   color: "#834833"
   roles:
+  - CP14Merchant
   - CP14Alchemist
   - CP14Blacksmith
   - CP14Apprentice

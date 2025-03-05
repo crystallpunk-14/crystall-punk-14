@@ -55,40 +55,6 @@
     CP14TownSendMoleObjective: 1
     CP14TownSendBoarObjective: 1
 
-#Bank money
-- type: entity
-  abstract: true
-  parent: CP14BaseTownObjective
-  id: CP14BaseTownBankEarningObjective
-  components:
-  - type: CP14CurrencyStoredCondition
-    objectiveText: cp14-objective-bank-earning-title
-    objectiveDescription: cp14-objective-bank-earning-desc
-    objectiveSprite:
-      sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
-      state: coin10
-  - type: Objective
-
-- type: entity
-  parent: CP14BaseTownBankEarningObjective
-  id: CP14TownBankEarningObjectiveMedium
-  components:
-  - type: CP14CurrencyStoredCondition
-    currency: 20000
-
-- type: entity
-  parent: CP14BaseTownBankEarningObjective
-  id: CP14TownBankEarningObjectiveBig
-  components:
-  - type: CP14CurrencyStoredCondition
-    currency: 30000
-
-- type: weightedRandom
-  id: CP14BankEarningObjectiveGroup
-  weights:
-    CP14TownBankEarningObjectiveMedium: 0.6
-    CP14TownBankEarningObjectiveBig: 0.3
-
 # No Demiplane death objective
 - type: entity
   parent: CP14BaseTownObjective

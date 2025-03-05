@@ -37,3 +37,21 @@
   id: CP14PersonalCurrencyCollectObjectiveGroup
   weights:
     CP14PersonalCurrencyCollectObjective: 1
+
+#Richest merchant objective
+- type: entity
+  parent: CP14BasePersonalObjective
+  id: CP14PersonalObjectiveRichestMerchant
+  components:
+  - type: CP14RichestJobCondition
+    job: CP14Merchant
+    objectiveText: cp14-objective-personal-richest-merchant-title
+    objectiveDescription: cp14-objective-personal-richest-merchant-desc
+    objectiveSprite:
+      sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
+      state: coin10
+
+- type: weightedRandom
+  id: CP14PersonalObjectiveRichestMerchantGroup
+  weights:
+    CP14PersonalObjectiveRichestMerchant: 1
