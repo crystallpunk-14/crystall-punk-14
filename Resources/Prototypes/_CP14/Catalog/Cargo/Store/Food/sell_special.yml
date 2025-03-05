@@ -1,0 +1,51 @@
+- type: storePositionSell
+  id: BountyWheat
+  special: true
+  name: cp14-store-sell-special-wheat-name
+  desc: cp14-store-sell-special-wheat-desc
+  icon: 
+    sprite: _CP14/Objects/Flora/Farm/wheat.rsi
+    state: base1
+  price: 150
+  factions:
+  - Food
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14Wheat
+    count: 10
+
+- type: storePositionSell
+  id: BountyMeat
+  special: true
+  name: cp14-store-sell-special-meat-name
+  desc: cp14-store-sell-special-meat-desc
+  icon: 
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: sheepmeat
+  price: 200
+  factions:
+  - Food
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14Meat
+    count: 10
+
+- type: storePositionSell
+  id: BountyDye
+  special: true
+  name: cp14-store-sell-special-dye-name
+  desc: cp14-store-sell-special-dye-desc
+  icon: 
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: preview
+  price: 200
+  factions:
+  - Food
+  - Hunters
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14Dye
+    count: 10

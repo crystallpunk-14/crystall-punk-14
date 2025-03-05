@@ -13,7 +13,7 @@ namespace Content.Shared._CP14.Cargo;
 public sealed partial class CP14TradingPortalComponent : Component
 {
     [DataField(required: true), AutoNetworkedField]
-    public ProtoId<CP14StoreFactionPrototype>? Faction = null;
+    public ProtoId<CP14StoreFactionPrototype> Faction = default;
 
     [DataField]
     public EntityCoordinates? TradingPosition = null;

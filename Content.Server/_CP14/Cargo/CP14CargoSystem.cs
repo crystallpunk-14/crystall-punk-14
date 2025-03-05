@@ -88,14 +88,22 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         //Add static positions + cash special ones
         foreach (var buyPos in portal.Comp.AvailableBuyPosition)
         {
-            if (!buyPos.Special)
-                portal.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price);
+            if (buyPos.Special)
+                continue;
+
+            if (buyPos.Factions.Count > 0 && !buyPos.Factions.Contains(portal.Comp.Faction))
+                continue;
+
+            portal.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price);
         }
 
         foreach (var sellPos in portal.Comp.AvailableSellPosition)
         {
-            if (!sellPos.Special)
-                portal.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price);
+            if (sellPos.Special)
+                continue;
+
+            if (sellPos.Factions.Count > 0 && !sellPos.Factions.Contains(portal.Comp.Faction))
+                continue;
         }
     }
 
@@ -113,8 +121,10 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             if (portal.Comp.CurrentSpecialBuyPositions.ContainsKey(buyPos))
                 continue;
 
-            availableSpecialBuyPositions.Add(buyPos);
+            if (buyPos.Factions.Count > 0 && !buyPos.Factions.Contains(portal.Comp.Faction))
+                continue;
 
+            availableSpecialBuyPositions.Add(buyPos);
         }
 
         _random.Shuffle(availableSpecialBuyPositions);
@@ -141,6 +151,9 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 continue;
 
             if (portal.Comp.CurrentSpecialSellPositions.ContainsKey(sellPos))
+                continue;
+
+            if (sellPos.Factions.Count > 0 && !sellPos.Factions.Contains(portal.Comp.Faction))
                 continue;
 
             availableSpecialSellPositions.Add(sellPos);

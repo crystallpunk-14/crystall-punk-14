@@ -1,0 +1,12 @@
+- type: storePositionSell
+  id: BountyLucenPlanks
+  special: true
+  name: cp14-store-sell-special-lucen-name
+  desc: cp14-store-sell-special-lucen-desc
+  icon: 
+    sprite: _CP14/Objects/Materials/lucens_wood.rsi
+    state: planks_2
+  price: 300
+  service: !type:CP14SellStackService
+    stackId: CP14LucensWoodenPlanks
+    count: 10

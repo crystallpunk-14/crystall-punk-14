@@ -15,8 +15,8 @@ public sealed partial class CP14StoreFactionPrototype : IPrototype
     [DataField]
     public LocId Desc = string.Empty;
 
-    [DataField(required: true)]
-    public SpriteSpecifier Icon = default!;
+    //[DataField(required: true)]
+    //public SpriteSpecifier Icon = default!;
 
     [DataField(required: true)]
     public Color Color = Color.White;

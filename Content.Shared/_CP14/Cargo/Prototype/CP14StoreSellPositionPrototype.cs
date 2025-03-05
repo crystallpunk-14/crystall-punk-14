@@ -37,6 +37,9 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     /// </summary>
     [DataField]
     public bool Special = false;
+
+    [DataField]
+    public HashSet<ProtoId<CP14StoreFactionPrototype>> Factions = new();
 }
 
 [ImplicitDataDefinitionForInheritors]

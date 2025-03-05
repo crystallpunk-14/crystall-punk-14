@@ -1,0 +1,31 @@
+- type: storePositionBuy
+  id: AlchemyVials
+  name: cp14-store-buy-alchemy-vials-name
+  desc: cp14-store-buy-alchemy-vials-desc
+  code: VIALS
+  icon: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  price: 100
+  factions:
+  - Hunters
+  services:
+  - !type:CP14BuyItemsService
+    product:
+      CP14BrassChestFilledAlchemy: 1
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledAlchemy
+  suffix: Alchemical vials
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialTiny
+        amount: 5
+      - id: CP14VialSmall
+        amount: 5
+      - id: CP14VialMedium
+        amount: 5
+      - id: CP14GlassShard #Lol. Something broken
+        prob: 0.2

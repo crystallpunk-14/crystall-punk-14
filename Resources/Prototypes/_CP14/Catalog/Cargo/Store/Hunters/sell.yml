@@ -1,0 +1,15 @@
+- type: storePositionSell
+  id: AlchemicalHerbals
+  name: cp14-store-sell-alchemical-herbals-name
+  desc: cp14-store-sell-alchemical-herbals-desc
+  icon: 
+    sprite: _CP14/Objects/Flora/Wild/store_position.rsi
+    state: sell
+  price: 50
+  factions:
+  - Hunters
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14AlchemicalHerbals
+    count: 10

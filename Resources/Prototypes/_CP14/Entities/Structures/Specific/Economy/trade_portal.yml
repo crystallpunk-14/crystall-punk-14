@@ -1,8 +1,9 @@
 - type: entity
   parent: BaseStructure
   id: CP14TradingPortalBase
-  name: trading bobo
-  description: bobo baby smile
+  abstract: true
+  name: trade cabinet
+  description: A dimensional closet connected to a similar closet elsewhere. Not capable of moving living creatures, but great for trading at a distance.
   categories: [ ForkFiltered ]
   components:
   - type: Icon
@@ -19,7 +20,6 @@
   - type: Clickable
   - type: InteractionOutline
   - type: CP14TradingPortal
-    faction: null
   - type: Fixtures
     fixtures:
       fix1:
@@ -50,3 +50,35 @@
     stateBaseClosed: base
     stateDoorOpen: base_open
     stateDoorClosed: base_door
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalEmpire
+  suffix: Empire
+  components:
+  - type: CP14TradingPortal
+    faction: Empire
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalHelmirWeapon
+  suffix: HelmirWeapon
+  components:
+  - type: CP14TradingPortal
+    faction: HelmirWeapon
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalHunters
+  suffix: Hunters
+  components:
+  - type: CP14TradingPortal
+    faction: Hunters
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalFood
+  suffix: Food
+  components:
+  - type: CP14TradingPortal
+    faction: Food

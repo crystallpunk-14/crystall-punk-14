@@ -1,0 +1,23 @@
+- type: storeFaction
+  id: Empire
+  name: cp14-faction-name-empire
+  desc: cp14-faction-desc-empire
+  color: "#42b3f5"
+
+- type: storeFaction
+  id: HelmirWeapon
+  name: cp14-faction-name-helmir
+  desc: cp14-faction-desc-helmir
+  color: "#c91c22"
+
+- type: storeFaction
+  id: Hunters
+  name: cp14-faction-name-hunter
+  desc: cp14-faction-desc-hunter
+  color: "#33802a"
+
+- type: storeFaction
+  id: Food
+  name: cp14-faction-name-food
+  desc: cp14-faction-desc-food
+  color: "#d64db6"

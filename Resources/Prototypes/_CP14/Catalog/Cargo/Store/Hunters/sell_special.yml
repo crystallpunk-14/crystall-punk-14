@@ -1,0 +1,33 @@
+- type: storePositionSell
+  id: BountySpellScroll
+  special: true
+  name: cp14-store-sell-special-spell-scroll-name
+  desc: cp14-store-sell-special-spell-scroll-desc
+  icon: 
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    state: magic
+  price: 200
+  factions:
+  - Hunters
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14SpellScroll
+    count: 5
+
+- type: storePositionSell
+  id: BountyTorch
+  special: true
+  name: cp14-store-sell-special-torch-name
+  desc: cp14-store-sell-special-torch-desc
+  icon: 
+    sprite: _CP14/Objects/Tools/torch.rsi
+    state: torch-unlit
+  price: 200
+  factions:
+  - Hunters
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags: 
+      - CP14Torch
+    count: 20
