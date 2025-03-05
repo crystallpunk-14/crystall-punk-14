@@ -14,10 +14,11 @@ public sealed partial class CP14CargoSystem
     private void TryInitStore(Entity<CP14TradingInfoBoardComponent> ent)
     {
         //TODO: more accurate way to find the trading portal, without lookup
-        var entitiesInRange = _lookup.GetEntitiesInRange<CP14TradingPortalComponent>(Transform(ent).Coordinates, 3);
+        var entitiesInRange = _lookup.GetEntitiesInRange<CP14TradingPortalComponent>(Transform(ent).Coordinates, 1);
         foreach (var trading in entitiesInRange)
         {
             ent.Comp.TradingPortal = trading;
+            ent.Comp.CahcedFaction = trading.Comp.Faction;
             break;
         }
     }
@@ -51,7 +52,7 @@ public sealed partial class CP14CargoSystem
             desc.Append(Loc.GetString(proto.Desc) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, null, name, desc.ToString(), price, true));
         }
 
         //Add static buy positions
@@ -62,7 +63,7 @@ public sealed partial class CP14CargoSystem
             desc.Append(Loc.GetString(proto.Desc) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, false));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, null, name, desc.ToString(), price, false));
         }
 
         //Add special sell positions
@@ -74,7 +75,14 @@ public sealed partial class CP14CargoSystem
             desc.Append(Loc.GetString(proto.Desc) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
+            prodSell.Add(new CP14StoreUiProductEntry(
+                proto.ID,
+                proto.Service.GetRequirementTexture(_proto),
+                proto.Service.GetRequirementEntityView(_proto),
+                name,
+                desc.ToString(),
+                price,
+                true));
         }
 
         //Add static sell positions
@@ -86,10 +94,23 @@ public sealed partial class CP14CargoSystem
             desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value, false));
+            prodSell.Add(new CP14StoreUiProductEntry(
+                proto.Key.ID,
+                proto.Key.Service.GetRequirementTexture(_proto),
+                proto.Key.Service.GetRequirementEntityView(_proto),
+                name,
+                desc.ToString(),
+                proto.Value,
+                false));
         }
 
-        var stationComp = tradePortalComp;
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell));
+        var shopName = ":3";
+        //Get shop name
+        if (ent.Comp.CahcedFaction is not null && _proto.TryIndex(ent.Comp.CahcedFaction.Value, out var indexedShop))
+        {
+            shopName = Loc.GetString(indexedShop.Name);
+        }
+
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(shopName, prodBuy, prodSell));
     }
 }

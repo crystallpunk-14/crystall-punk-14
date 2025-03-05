@@ -1,5 +1,6 @@
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 
@@ -56,5 +57,18 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
             return ":3";
 
         return $"{Loc.GetString(proto.Name)} x{Count}";
+    }
+
+    public override EntProtoId? GetRequirementEntityView(IPrototypeManager protoManager)
+    {
+        return null;
+    }
+
+    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
+    {
+        if (!protoManager.TryIndex(StackId, out var proto))
+            return null;
+
+        return proto.Icon;
     }
 }

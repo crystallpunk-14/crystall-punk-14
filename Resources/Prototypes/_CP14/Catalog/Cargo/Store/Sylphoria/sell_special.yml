@@ -1,27 +1,6 @@
 - type: storePositionSell
-  id: BountySpellScroll
-  special: true
-  desc: cp14-store-sell-special-spell-scroll-desc
-  icon: 
-    sprite: _CP14/Objects/Bureaucracy/paper.rsi
-    state: magic
-  price: 200
-  factions:
-  - Sylphoria
-  service: !type:CP14SellWhitelistService
-    name: cp14-store-sell-special-spell-scroll-name
-    whitelist:
-      tags: 
-      - CP14SpellScroll
-    count: 5
-
-- type: storePositionSell
   id: BountyTorch
   special: true
-  desc: cp14-store-sell-special-torch-desc
-  icon: 
-    sprite: _CP14/Objects/Tools/torch.rsi
-    state: torch-unlit
   price: 200
   factions:
   - Sylphoria
@@ -32,11 +11,9 @@
 - type: storePositionSell
   id: BountyLucenPlanks
   special: true
-  desc: cp14-store-sell-special-lucen-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/lucens_wood.rsi
-    state: planks_2
   price: 300
+  factions:
+  - Sylphoria
   service: !type:CP14SellStackService
     stackId: CP14LucensWoodenPlanks
     count: 10

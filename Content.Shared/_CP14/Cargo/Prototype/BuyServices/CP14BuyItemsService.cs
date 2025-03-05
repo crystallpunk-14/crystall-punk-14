@@ -1,4 +1,3 @@
-using System.Text;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Prototypes;
 

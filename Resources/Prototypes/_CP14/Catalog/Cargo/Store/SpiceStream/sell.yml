@@ -1,9 +1,5 @@
 - type: storePositionSell
   id: CopperBars
-  desc: cp14-store-sell-copperbar-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/copper_bar.rsi
-    state: bar_3
   price: 150
   factions:
   - SpiceStream
@@ -13,10 +9,6 @@
 
 - type: storePositionSell
   id: CopperOre
-  desc: cp14-store-sell-copperore-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/copper_ore.rsi
-    state: ore3
   price: 20
   factions:
   - SpiceStream
@@ -26,10 +18,6 @@
 
 - type: storePositionSell
   id: IronBars
-  desc: cp14-store-sell-ironbar-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/iron_bar.rsi
-    state: bar_3
   price: 300
   factions:
   - SpiceStream
@@ -39,10 +27,6 @@
 
 - type: storePositionSell
   id: IronOre
-  desc: cp14-store-sell-ironore-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/iron_ore.rsi
-    state: ore3
   price: 30
   factions:
   - SpiceStream
@@ -52,10 +36,6 @@
 
 - type: storePositionSell
   id: GoldBars
-  desc: cp14-store-sell-goldbar-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/gold_bar.rsi
-    state: bar_3
   price: 1200
   factions:
   - SpiceStream
@@ -65,10 +45,6 @@
 
 - type: storePositionSell
   id: GoldOre
-  desc: cp14-store-sell-goldore-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/gold_ore.rsi
-    state: ore3
   price: 120
   factions:
   - SpiceStream
@@ -78,10 +54,6 @@
 
 - type: storePositionSell
   id: MithrilBars
-  desc: cp14-store-sell-mithrilbar-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/mithril_bar.rsi
-    state: bar_3
   price: 2500
   factions:
   - SpiceStream
@@ -91,10 +63,6 @@
 
 - type: storePositionSell
   id: MithrilOre
-  desc: cp14-store-sell-mithrilore-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/mithril_ore.rsi
-    state: ore3
   price: 250
   factions:
   - SpiceStream
@@ -104,10 +72,6 @@
 
 - type: storePositionSell
   id: Wood
-  desc: cp14-store-sell-wood-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/wood.rsi
-    state: planks_3
   price: 20
   factions:
   - SpiceStream
@@ -117,10 +81,6 @@
 
 - type: storePositionSell
   id: Glass
-  desc: cp14-store-sell-glass-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/glass.rsi
-    state: glass_3
   price: 100
   factions:
   - SpiceStream

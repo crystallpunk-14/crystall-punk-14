@@ -1,34 +1,29 @@
 - type: storePositionSell
-  id: BountyMeat
+  id: CP14DyeRed
   special: true
-  desc: cp14-store-sell-special-meat-desc
-  icon: 
-    sprite: _CP14/Objects/Consumable/Food/meat.rsi
-    state: sheepmeat
-  price: 200
+  price: 75
   factions:
-  - Food
-  service: !type:CP14SellWhitelistService
-    name: cp14-store-sell-special-meat-name
-    whitelist:
-      tags: 
-      - CP14Meat
-    count: 10
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeRed
+    count: 5
 
 - type: storePositionSell
-  id: BountyDye
+  id: CP14DyeYellow
   special: true
-  desc: cp14-store-sell-special-dye-desc
-  icon: 
-    sprite: _CP14/Objects/Materials/dye.rsi
-    state: preview
-  price: 200
+  price: 75
   factions:
-  - Food
-  - Hunters
-  service: !type:CP14SellWhitelistService
-    name: cp14-store-sell-special-dye-name
-    whitelist:
-      tags: 
-      - CP14Dye
-    count: 10
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeYellow
+    count: 5
+
+- type: storePositionSell
+  id: CP14DyeBlue
+  special: true
+  price: 75
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeBlue
+    count: 5

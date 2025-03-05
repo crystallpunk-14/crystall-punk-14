@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 
@@ -50,5 +51,15 @@ public sealed partial class CP14SellPrototypeService : CP14StoreSellService
             return ":3";
 
         return $"{proto.Name} x{Count}";
+    }
+
+    public override EntProtoId? GetRequirementEntityView(IPrototypeManager protoManager)
+    {
+        return Proto;
+    }
+
+    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
+    {
+        return null;
     }
 }

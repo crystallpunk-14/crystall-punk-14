@@ -22,6 +22,7 @@ public sealed partial class CP14StoreWindow : DefaultWindow
 
     public void UpdateUI(CP14StoreUiState state)
     {
+        Window.Title = Loc.GetString("cp14-store-ui-title", ("name", state.ShopName));
         UpdateProducts(state);
     }
 

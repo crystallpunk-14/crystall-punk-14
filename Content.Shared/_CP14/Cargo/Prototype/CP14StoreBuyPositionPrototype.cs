@@ -1,4 +1,3 @@
-using Content.Shared.Destructible.Thresholds;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -42,7 +41,7 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     /// If true, this item will randomly appear under the ‘Special Offer’ heading. With a chance to show up every time the ship arrives.
     /// </summary>
     [DataField]
-    public bool Special = false;
+    public bool Special;
 
     [DataField]
     public HashSet<ProtoId<CP14StoreFactionPrototype>> Factions = new();

@@ -1,4 +1,3 @@
-using System.Text;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cargo.Prototype.BuyServices;
@@ -24,18 +23,12 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
             if (!prototype.TryIndex(buy, out var indexedBuy))
                 continue;
 
-            if (portal.Comp.AvailableBuyPosition.Contains(indexedBuy))
-                continue;
-
             portal.Comp.AvailableBuyPosition.Add(indexedBuy);
         }
 
         foreach (var sell in AddSellPositions)
         {
             if (!prototype.TryIndex(sell, out var indexedSell))
-                continue;
-
-            if (portal.Comp.AvailableSellPosition.Contains(indexedSell))
                 continue;
 
             portal.Comp.AvailableSellPosition.Add(indexedSell);
