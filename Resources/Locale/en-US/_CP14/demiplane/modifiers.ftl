@@ -18,6 +18,7 @@ cp14-modifier-mole = predatory moles
 cp14-modifier-rabbits = rabbits
 cp14-modifier-boars = wild boars
 cp14-modifier-invisible-whistler = invisible whistlers
+cp14-modifier-sheeps = sheeps
 cp14-modifier-chasm = bottomless chasms
 cp14-modifier-air-lily = air lilies
 cp14-modifier-time-limit-10 = temporary disintegration (10 minutes)
