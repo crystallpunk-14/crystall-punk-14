@@ -286,6 +286,8 @@ CP14IronDoorBankCommandantRoom: null
 CP14IronDoorWindowedBankEntrance: null
 CP14IronDoorWindowedMirroredBankEntrance: null
 CP14IronDoorBankVault: null
+CP14BankStorageMarker: null
+CP14SpawnPointCommandant: null
 
 # <---> CrystallEdge migration zone end
 
