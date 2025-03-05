@@ -49,4 +49,12 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
 
         return true;
     }
+
+    public override string GetName(IPrototypeManager protoMan)
+    {
+        if (!protoMan.TryIndex(StackId, out var proto))
+            return ":3";
+
+        return $"{Loc.GetString(proto.Name)} x{Count}";
+    }
 }

@@ -53,11 +53,11 @@
 
 - type: entity
   parent: CP14TradingPortalBase
-  id: CP14TradingPortalEmpire
-  suffix: Empire
+  id: CP14TradingPortalSylphoria
+  suffix: Sylphoria
   components:
   - type: CP14TradingPortal
-    faction: Empire
+    faction: Sylphoria
 
 - type: entity
   parent: CP14TradingPortalBase
@@ -69,16 +69,16 @@
 
 - type: entity
   parent: CP14TradingPortalBase
-  id: CP14TradingPortalHunters
-  suffix: Hunters
+  id: CP14TradingPortalBradFamily
+  suffix: BradFamily
   components:
   - type: CP14TradingPortal
-    faction: Hunters
+    faction: BradFamily
 
 - type: entity
   parent: CP14TradingPortalBase
-  id: CP14TradingPortalFood
-  suffix: Food
+  id: CP14TradingPortalSpiceStream
+  suffix: SpiceStream
   components:
   - type: CP14TradingPortal
-    faction: Food
+    faction: SpiceStream

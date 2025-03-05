@@ -1,13 +1,11 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server._CP14.Currency;
-using Content.Server.Station.Systems;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._CP14.Cargo;
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared.Paper;
-using Content.Shared.Storage.Components;
 using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -82,8 +80,6 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     {
         portal.Comp.CurrentBuyPositions.Clear();
         portal.Comp.CurrentSellPositions.Clear();
-        portal.Comp.CurrentSpecialBuyPositions.Clear();
-        portal.Comp.CurrentSpecialSellPositions.Clear();
 
         //Add static positions + cash special ones
         foreach (var buyPos in portal.Comp.AvailableBuyPosition)
@@ -104,6 +100,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
             if (sellPos.Factions.Count > 0 && !sellPos.Factions.Contains(portal.Comp.Faction))
                 continue;
+
+            portal.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price);
         }
     }
 

@@ -8,7 +8,7 @@
     state: vial
   price: 100
   factions:
-  - Hunters
+  - BradFamily
   services:
   - !type:CP14BuyItemsService
     product:

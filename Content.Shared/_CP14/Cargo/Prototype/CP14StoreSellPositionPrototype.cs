@@ -17,9 +17,6 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     [DataField(required: true)]
     public int Price = 100;
 
-    [DataField(required: true)]
-    public LocId Name = string.Empty;
-
     [DataField]
     public LocId Desc = string.Empty;
 
@@ -47,4 +44,6 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
 public abstract partial class CP14StoreSellService
 {
     public abstract bool TrySell(EntityManager entManager, HashSet<EntityUid> entities);
+
+    public abstract string GetName(IPrototypeManager protoMan);
 }

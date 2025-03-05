@@ -1,23 +1,17 @@
-using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 
-public sealed partial class CP14SellWhitelistService : CP14StoreSellService
+public sealed partial class CP14SellPrototypeService : CP14StoreSellService
 {
     [DataField(required: true)]
-    public EntityWhitelist Whitelist = new();
+    public EntProtoId Proto;
 
-    [DataField(required: true)]
+    [DataField]
     public int Count = 1;
-
-    [DataField(required: true)]
-    public LocId Name = string.Empty;
 
     public override bool TrySell(EntityManager entManager, HashSet<EntityUid> entities)
     {
-        var whitelistSystem = entManager.System<EntityWhitelistSystem>();
-
         HashSet<EntityUid> suitable = new();
 
         var needCount = Count;
@@ -26,10 +20,13 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
             if (needCount <= 0)
                 break;
 
-            if (!entManager.TryGetComponent<MetaDataComponent>(ent, out var metaData) || metaData.EntityPrototype is null)
+            if (!entManager.TryGetComponent<MetaDataComponent>(ent, out var metaData))
                 continue;
 
-            if (!whitelistSystem.IsValid(Whitelist, ent))
+            if (metaData.EntityPrototype is null)
+                continue;
+
+            if (metaData.EntityPrototype != Proto)
                 continue;
 
             suitable.Add(ent);
@@ -41,7 +38,6 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
 
         foreach (var selledEnt in suitable)
         {
-            entities.Remove(selledEnt);
             entManager.QueueDeleteEntity(selledEnt);
         }
 
@@ -50,6 +46,9 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
 
     public override string GetName(IPrototypeManager protoMan)
     {
-        return $"{Loc.GetString(Name)} x{Count}";
+        if (!protoMan.TryIndex(Proto, out var proto))
+            return ":3";
+
+        return $"{proto.Name} x{Count}";
     }
 }

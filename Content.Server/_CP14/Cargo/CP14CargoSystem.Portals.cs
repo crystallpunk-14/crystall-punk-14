@@ -37,6 +37,8 @@ public sealed partial class CP14CargoSystem
         AddRoundstartTradingPositions(ent);
         UpdateStaticPositions(ent);
 
+        ent.Comp.CurrentSpecialBuyPositions.Clear();
+        ent.Comp.CurrentSpecialSellPositions.Clear();
         AddRandomBuySpecialPosition(ent, ent.Comp.SpecialBuyPositionCount);
         AddRandomSellSpecialPosition(ent, ent.Comp.SpecialSellPositionCount);
     }

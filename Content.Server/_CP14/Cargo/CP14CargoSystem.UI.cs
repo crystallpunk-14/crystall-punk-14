@@ -68,11 +68,11 @@ public sealed partial class CP14CargoSystem
         //Add special sell positions
         foreach (var (proto, price) in tradePortalComp.CurrentSpecialSellPositions)
         {
-            var name = Loc.GetString(proto.Name);
+            var name = proto.Service.GetName(_proto);
 
             var desc = new StringBuilder();
             desc.Append(Loc.GetString(proto.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Name))));
+            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
             prodSell.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
         }
@@ -80,11 +80,11 @@ public sealed partial class CP14CargoSystem
         //Add static sell positions
         foreach (var proto in tradePortalComp.CurrentSellPositions)
         {
-            var name = Loc.GetString(proto.Key.Name);
+            var name = proto.Key.Service.GetName(_proto);
 
             var desc = new StringBuilder();
             desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Key.Name))));
+            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
             prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value, false));
         }
