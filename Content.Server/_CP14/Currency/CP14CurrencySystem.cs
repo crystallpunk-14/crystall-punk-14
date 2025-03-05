@@ -52,7 +52,6 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         var total = 0;
         foreach (var container in ent.Comp.Containers.Values)
         {
-
             foreach (var containedEnt in container.ContainedEntities)
             {
                 total += GetTotalCurrency(containedEnt);

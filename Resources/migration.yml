@@ -267,6 +267,26 @@ CP14IronCabinetCargo: CP14IronCabinet
 CP14BrassChestFilledDemiplanes: null
 CP14BrassChestFilledWood: null
 
+CP14WoodenDoorTavernAlchemy1: CP14WoodenDoorAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored1: CP14WoodenDoorAlchemyMirrored1
+CP14WoodenDoorTavernAlchemy2: CP14WoodenDoorAlchemy2
+CP14WoodenDoorTavernAlchemyMirrored2: CP14WoodenDoorAlchemyMirrored2
+CP14WoodenDoorTavernAlchemy3: CP14WoodenDoorAlchemy3
+CP14WoodenDoorTavernAlchemyMirrored3: CP14WoodenDoorAlchemyMirrored3
+CP14SafeVault: null
+CP14WoodenClosetCommandantFilled: null
+CP14Safe: null
+CP14ClosetGlassShowcase: null
+CP14SafeVaultFilled25: null
+CP14IronDoorBankStaff: null
+CP14IronDoorMirroredBankStaff: null
+CP14IronDoorMirroredBankVault: null
+CP14IronDoorBankSafe: null
+CP14IronDoorBankCommandantRoom: null
+CP14IronDoorWindowedBankEntrance: null
+CP14IronDoorWindowedMirroredBankEntrance: null
+CP14IronDoorBankVault: null
+
 # <---> CrystallEdge migration zone end
 
 

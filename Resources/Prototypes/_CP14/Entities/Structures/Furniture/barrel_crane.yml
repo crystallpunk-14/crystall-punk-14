@@ -212,7 +212,6 @@
       - state: barrel
   - type: Transform
     anchored: true
-    noRot: true
   - type: Pullable
   - type: Physics
     bodyType: Static

@@ -14,7 +14,7 @@ public sealed partial class CP14CargoSystem
     private void TryInitStore(Entity<CP14TradingInfoBoardComponent> ent)
     {
         //TODO: more accurate way to find the trading portal, without lookup
-        var entitiesInRange = _lookup.GetEntitiesInRange<CP14TradingPortalComponent>(Transform(ent).Coordinates, 1);
+        var entitiesInRange = _lookup.GetEntitiesInRange<CP14TradingPortalComponent>(Transform(ent).Coordinates, 2);
         foreach (var trading in entitiesInRange)
         {
             ent.Comp.TradingPortal = trading;
