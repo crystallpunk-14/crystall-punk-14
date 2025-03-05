@@ -47,6 +47,22 @@
     },
     {
       "name": "base_door"
+    },
+    {
+      "name": "flag_bard",
+      "directions": 4
+    },
+    {
+      "name": "flag_helmir",
+      "directions": 4
+    },
+    {
+      "name": "flag_spice",
+      "directions": 4
+    },
+    {
+      "name": "flag_sylphoria",
+      "directions": 4
     }
   ]
 }

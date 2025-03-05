@@ -12,11 +12,6 @@
   - type: Sprite
     drawdepth: Mobs
     sprite: _CP14/Structures/Specific/Economy/trade_portal.rsi
-    layers:
-    - state: base
-      map: ["enum.StorageVisualLayers.Base"]
-    - state: base_door
-      map: ["enum.StorageVisualLayers.Door"]
   - type: Clickable
   - type: InteractionOutline
   - type: CP14TradingPortal
@@ -57,6 +52,14 @@
   id: CP14TradingPortalSylphoria
   suffix: Sylphoria
   components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_sylphoria
   - type: CP14TradingPortal
     faction: Sylphoria
 
@@ -65,6 +68,14 @@
   id: CP14TradingPortalHelmirWeapon
   suffix: HelmirWeapon
   components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_helmir
   - type: CP14TradingPortal
     faction: HelmirWeapon
 
@@ -73,6 +84,14 @@
   id: CP14TradingPortalBradFamily
   suffix: BradFamily
   components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_bard
   - type: CP14TradingPortal
     faction: BradFamily
     specialSellPositionCount: 3
@@ -82,5 +101,13 @@
   id: CP14TradingPortalSpiceStream
   suffix: SpiceStream
   components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_spice
   - type: CP14TradingPortal
     faction: SpiceStream
