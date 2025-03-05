@@ -79,7 +79,7 @@
       - !type:GroupSelector
         weight: 25
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonHalebard
+        - id: SpawnPointGhostDemiplaneSkeletonHalberd
       - !type:GroupSelector
         weight: 60
         children:
@@ -111,7 +111,7 @@
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
-    prototype: CP14MobUndeadSkeletonHalebard
+    prototype: CP14MobUndeadSkeletonHalberd
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
