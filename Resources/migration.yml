@@ -265,6 +265,7 @@ CP14TravelingStoreshipAnchor: null
 CP14TravelingShop: CP14TradingBoardBase
 CP14IronCabinetCargo: CP14IronCabinet
 CP14BrassChestFilledDemiplanes: null
+CP14BrassChestFilledWood: null
 
 # <---> CrystallEdge migration zone end
 
