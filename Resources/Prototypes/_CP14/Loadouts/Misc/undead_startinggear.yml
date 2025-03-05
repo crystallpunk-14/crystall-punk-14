@@ -17,9 +17,9 @@
     mask: CP14ClothingMaskSinner
 
 - type: startingGear
-  id: CP14MobSkeletonHalebard
+  id: CP14MobSkeletonHalberd
   equipment:
-    shirt: CP14ClothingOuterClothingBrownVest3
+    shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14ModularSkeletonHalberd
     shoes: CP14ClothingShoesSandals
@@ -49,7 +49,7 @@
 - type: startingGear
   id: CP14MobSkeletonArcher
   equipment:
-    shirt: CP14ClothingOuterClothingBrownVest3
+    shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14BowCombat
     belt1: CP14ClothingBeltQuiverCopperArrow

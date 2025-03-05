@@ -32,7 +32,7 @@
   id: CP14ClothingRingSkeletonWizard
   parent: CP14ClothingRingBase
   name: skeleton wizard conductive ring
-  suffix: Ice Shards, Unremoveable
+  suffix: Skeleton, Unremoveable
   description: A mana conuctive ring for the true wizards
   categories: [ HideSpawnMenu ]
   components:

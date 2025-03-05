@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14MobUndeadSkeletonHalebard
+  id: CP14MobUndeadSkeletonHalberd
   parent: CP14BaseMobSkeleton
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
@@ -11,11 +11,11 @@
     - CP14Monster
   - type: Loadout
     prototypes: 
-    - CP14MobSkeletonHalebard
+    - CP14MobSkeletonHalberd
 
 - type: entity
   id: CP14MobUndeadSkeletonSword
-  parent: CP14MobUndeadSkeletonHalebard
+  parent: CP14MobUndeadSkeletonHalberd
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -27,7 +27,7 @@
 
 - type: entity
   id: CP14MobUndeadSkeletonDodger
-  parent: CP14MobUndeadSkeletonHalebard
+  parent: CP14MobUndeadSkeletonHalberd
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -39,7 +39,7 @@
 
 - type: entity
   id: CP14MobUndeadSkeletonArcher
-  parent: CP14MobUndeadSkeletonHalebard
+  parent: CP14MobUndeadSkeletonHalberd
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -51,7 +51,7 @@
 
 - type: entity
   id: CP14MobUndeadSkeletonWizard
-  parent: CP14MobUndeadSkeletonHalebard
+  parent: CP14MobUndeadSkeletonHalberd
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -94,7 +94,7 @@
         state: full
 
 - type: entity
-  id: SpawnPointGhostDemiplaneSkeletonHalebard
+  id: SpawnPointGhostDemiplaneSkeletonHalberd
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
   suffix: skeleton Halebard
@@ -123,9 +123,9 @@
   id: SpawnPointGhostDemiplaneSkeletonSword
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Halebard
+  suffix: skeleton Sword
   categories: [ ForkFiltered ]
-  parent: SpawnPointGhostDemiplaneSkeletonHalebard
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonSword
@@ -134,9 +134,9 @@
   id: SpawnPointGhostDemiplaneSkeletonDodger
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Halebard
+  suffix: skeleton Dodger
   categories: [ ForkFiltered ]
-  parent: SpawnPointGhostDemiplaneSkeletonHalebard
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonDodger
@@ -145,9 +145,9 @@
   id: SpawnPointGhostDemiplaneSkeletonArcher
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Halebard
+  suffix: skeleton Archer
   categories: [ ForkFiltered ]
-  parent: SpawnPointGhostDemiplaneSkeletonHalebard
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonArcher
@@ -156,9 +156,9 @@
   id: SpawnPointGhostDemiplaneSkeletonWizard
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Halebard
+  suffix: skeleton Wizard
   categories: [ ForkFiltered ]
-  parent: SpawnPointGhostDemiplaneSkeletonHalebard
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonWizard
