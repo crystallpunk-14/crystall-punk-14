@@ -53,6 +53,7 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14CrystalShardBase
+    count: 2
   - !type:KnowledgeRequired
     knowledge: Glasswork
   result: CP14GlassSheet1
