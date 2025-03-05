@@ -1,9 +1,9 @@
 - type: storePositionBuy
   id: AlchemyVials
   code: VIALS
-  price: 100
+  price: 40
   iconOverride: 
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
     state: vial
   factions:
   - BradFamily
@@ -25,3 +25,164 @@
         amount: 5
       - id: CP14GlassShard #Lol. Something broken
         prob: 0.2
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingBrute
+  code: HEAL_BRUTE
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledSmallHealingBrute
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledSmallHealingBrute
+  name: healing potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingBrute
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingPoison
+  code: HEAL_POISON
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledSmallHealingPoison
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledSmallHealingPoison
+  name: antidote potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingPoison
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingAirloss
+  code: HEAL_AIRLOSS
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledSmallHealingAirloss
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledSmallHealingAirloss
+  name: airloss healing potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingAirloss
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingBlood
+  code: HEAL_BLOOD
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledSmallHealingBlood
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledSmallHealingBlood
+  name: blood restoration potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingBlood
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingMana
+  code: HEAL_MANA
+  price: 70
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledSmallHealingMana
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledSmallHealingMana
+  name: mana potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingMana
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingMana
+  code: SPEED_UP
+  price: 70
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledSmallSpeedUp
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledSmallSpeedUp
+  name: accseleration potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallSpeedUp
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingMana
+  code: FUNNY_POTION
+  price: 100
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledSmallRainbow
+
+- type: entity
+  parent: CP14BrassChest
+  id: CP14BrassChestFilledSmallRainbow
+  name: funny potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallRainbow
+        amount: 5

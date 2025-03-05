@@ -303,8 +303,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         foreach (var stored in containedEntities)
         {
             _transform.AttachToGridOrMap(stored);
-            var targetThrowPosition = xform.Coordinates.Offset(rotation.ToWorldVec() * 2);
-            _throwing.TryThrow(stored, targetThrowPosition.Offset(new Vector2(_random.NextFloat(-1, 1), _random.NextFloat(-1, 1))));
+            var targetThrowPosition = xform.Coordinates.Offset(rotation.ToWorldVec() * 1);
+            _throwing.TryThrow(stored, targetThrowPosition.Offset(new Vector2(_random.NextFloat(-0.5f, 0.5f), _random.NextFloat(-0.5f, 0.5f))));
         }
     }
 }
