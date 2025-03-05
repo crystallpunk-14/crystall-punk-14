@@ -1,23 +1,19 @@
 - type: storePositionBuy
   id: FarmSeeds
-  name: cp14-store-buy-alchemy-farm-seeds-name
-  desc: cp14-store-buy-alchemy-farm-seeds-desc
   code: SEEDS
-  icon: 
+  iconOverride: 
     sprite: _CP14/Objects/Specific/Farming/seeds.rsi
     state: seeds
   price: 70
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BrassChestFilledFarmSeeds: 1
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledFarmSeeds
 
 - type: entity
   parent: CP14BrassChest
   id: CP14BrassChestFilledFarmSeeds
-  suffix: Farm Seeds
+  name: farm seeds chest
   components:
   - type: StorageFill
     contents:
@@ -39,24 +35,20 @@
 
 - type: storePositionBuy
   id: Cheese
-  name: cp14-store-buy-cheese-name
-  desc: cp14-store-buy-cheese-desc
   code: CHEESE
-  icon: 
+  iconOverride: 
     sprite: _CP14/Objects/Consumable/Food/cheese.rsi
     state: cheese_wheel
   price: 100
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BrassChestFilledCheese: 1
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledCheese
 
 - type: entity
   parent: CP14BrassChest
   id: CP14BrassChestFilledCheese
-  suffix: Cheese
+  name: cheese chest
   components:
   - type: StorageFill
     contents:
@@ -66,151 +58,101 @@
 
 - type: storePositionBuy
   id: Wood
-  name: cp14-store-buy-wood-name
-  desc: cp14-store-buy-wood-desc
   code: WOOD
-  icon: 
-    sprite: _CP14/Objects/Materials/wood.rsi
-    state: planks_3
   price: 50
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14WoodenPlanks10: 5
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenPlanks10
+    count: 5
 
 
 - type: storePositionBuy
   id: Fabric
-  name: cp14-store-buy-fabric-name
-  desc: cp14-store-buy-fabric-desc
   code: FABRIC
-  icon: 
-    sprite: _CP14/Objects/Materials/cloth.rsi
-    state: cloth_3
-  price: 50
+  price: 30
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BrassChestFilledFabric: 1
+  service: !type:CP14BuyItemsService
+    product: CP14Cloth10
+    count: 3
 
-- type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledFabric
-  suffix: Fabric
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14String
-        amount: 10
-      - id: CP14Cloth10
-        amount: 3
-
+- type: storePositionBuy
+  id: CP14String
+  code: STRINGS
+  price: 30
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14String
+    count: 5
 
 - type: storePositionBuy
   id: CopperBar
-  name: cp14-store-buy-copper-name
-  desc: cp14-store-buy-copper-desc
   code: COPPER
-  icon: 
-    sprite: _CP14/Objects/Materials/copper_bar.rsi
-    state: bar_3
   price: 250
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14CopperBar10: 1
+  service: !type:CP14BuyItemsService
+    product: CP14CopperBar10
 
 
 - type: storePositionBuy
   id: IronBar
-  name: cp14-store-buy-iron-name
-  desc: cp14-store-buy-iron-desc
   code: IRON
-  icon: 
-    sprite: _CP14/Objects/Materials/iron_bar.rsi
-    state: bar_3
   price: 500
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14IronBar10: 1
+  service: !type:CP14BuyItemsService
+    product: CP14IronBar10
 
 
 - type: storePositionBuy
   id: GoldBar
-  name: cp14-store-buy-gold-name
-  desc: cp14-store-buy-gold-desc
   code: GOLD
-  icon: 
-    sprite: _CP14/Objects/Materials/gold_bar.rsi
-    state: bar_3
   price: 2000
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14GoldBar10: 1
+  service: !type:CP14BuyItemsService
+    product: CP14GoldBar10
 
 
 - type: storePositionBuy
   id: Demiplane
-  name: cp14-store-buy-alchemy-demiplan-name
-  desc: cp14-store-buy-alchemy-demiplan-desc
-  code: DEMIPLANE
-  icon: 
-    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
-    state: pulse
-  price: 150
+  code: DEMIPLANE_1
+  price: 100
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BrassChestFilledDemiplanes: 1
+  service: !type:CP14BuyItemsService
+    product: CP14DemiplaneKeyT1
+    count: 5
 
-- type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledDemiplanes
-  suffix: Demiplanes
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14DemiplaneKeyT1
-        amount: 4
-      - id: CP14DemiplaneKeyT2
-        amount: 1
-
-
+- type: storePositionBuy
+  id: Demiplane2
+  code: DEMIPLANE_2
+  price: 200
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14DemiplaneKeyT2
+    count: 5
 
 - type: storePositionBuy
   id: Bureaucracy
-  name: cp14-store-buy-alchemy-bureaucracy-name
-  desc: cp14-store-buy-alchemy-bureaucracy-desc
   code: PAPER
-  icon: 
+  iconOverride: 
     sprite: _CP14/Objects/Bureaucracy/paper.rsi
     state: folder_red
   price: 100
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BrassChestFilledBureaucracy: 1
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledBureaucracy
 
 - type: entity
   parent: CP14BrassChest
   id: CP14BrassChestFilledBureaucracy
-  suffix: Bureaucracy
+  name: bureaucracy chest
   components:
   - type: StorageFill
     contents:
@@ -223,46 +165,51 @@
       - id: CP14PenFeather
         amount: 3
 
+
 - type: storePositionBuy
-  id: Guidebook
-  name: cp14-store-buy-guidebook-name
-  desc: cp14-store-buy-guidebook-desc
-  code: KNOWLEDGE
-  icon: 
-    sprite: Objects/Misc/books.rsi
-    state: book_icon
-  price: 300
+  id: CP14BookKnowledgeMetallMelting
+  code: KNOWLEDGE_MELTING
+  price: 100
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BookKnowledgeWoodWork: 1
-      CP14BookKnowledgeMetallMelting: 1
-      CP14BookKnowledgeMetallForging: 1
-      CP14BookKnowledgeGlasswork: 1
+  service: !type:CP14BuyItemsService
+    product: CP14BookKnowledgeMetallMelting
 
+- type: storePositionBuy
+  id: CP14BookKnowledgeMetallForging
+  code: KNOWLEDGE_FORGING
+  price: 100
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14BookKnowledgeMetallForging
 
+- type: storePositionBuy
+  id: CP14BookKnowledgeGlasswork
+  code: KNOWLEDGE_GLASSWORK
+  price: 100
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14BookKnowledgeGlasswork
+
+ 
 - type: storePositionBuy
   id: EnergyCrystals
-  name: cp14-store-buy-energy-name
-  desc: cp14-store-buy-energy-desc
   code: ENERGY
-  icon: 
+  iconOverride: 
     sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi 
     state: icon
-  price: 50
+  price: 150
   factions:
   - SpiceStream
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BrassChestFilledEnergyCrystals: 1
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledEnergyCrystals
 
 - type: entity
   parent: CP14BrassChest
   id: CP14BrassChestFilledEnergyCrystals
-  suffix: EnergyCrystals
+  name: energy crystals chest
   components:
   - type: StorageFill
     contents:

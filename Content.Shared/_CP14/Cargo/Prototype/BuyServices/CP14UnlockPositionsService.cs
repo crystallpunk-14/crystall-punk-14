@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cargo.Prototype.BuyServices;
 
@@ -15,6 +16,12 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
 
     [DataField]
     public HashSet<ProtoId<CP14StoreSellPositionPrototype>> RemoveSellPositions = new();
+
+    [DataField]
+    public SpriteSpecifier? Icon = null;
+
+    [DataField]
+    public LocId Name = string.Empty;
 
     public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14TradingPortalComponent> portal)
     {
@@ -55,5 +62,20 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
 
             portal.Comp.AvailableSellPosition.Remove(indexedSell);
         }
+    }
+
+    public override string GetName(IPrototypeManager protoMan)
+    {
+        return Loc.GetString(Name);
+    }
+
+    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
+    {
+        return null;
+    }
+
+    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
+    {
+        return Icon;
     }
 }

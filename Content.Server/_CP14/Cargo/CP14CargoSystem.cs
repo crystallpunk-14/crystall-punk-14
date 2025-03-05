@@ -272,10 +272,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
                 AddRandomBuySpecialPosition(portal, 1);
             }
 
-            foreach (var service in indexedBuyed.Services)
-            {
-                service.Buy(EntityManager, _proto, portal);
-            }
+            indexedBuyed.Service.Buy(EntityManager, _proto, portal);
         }
     }
 

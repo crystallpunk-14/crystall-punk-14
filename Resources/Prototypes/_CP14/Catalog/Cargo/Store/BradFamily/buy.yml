@@ -1,23 +1,19 @@
 - type: storePositionBuy
   id: AlchemyVials
-  name: cp14-store-buy-alchemy-vials-name
-  desc: cp14-store-buy-alchemy-vials-desc
   code: VIALS
-  icon: 
+  price: 100
+  iconOverride: 
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
-  price: 100
   factions:
   - BradFamily
-  services:
-  - !type:CP14BuyItemsService
-    product:
-      CP14BrassChestFilledAlchemy: 1
+  service: !type:CP14BuyItemsService
+    product: CP14BrassChestFilledAlchemy
 
 - type: entity
   parent: CP14BrassChest
   id: CP14BrassChestFilledAlchemy
-  suffix: Alchemical vials
+  name: alchemical vials chest
   components:
   - type: StorageFill
     contents:

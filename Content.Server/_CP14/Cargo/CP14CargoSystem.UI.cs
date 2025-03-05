@@ -47,23 +47,23 @@ public sealed partial class CP14CargoSystem
         //Add special buy positions
         foreach (var (proto, price) in tradePortalComp.CurrentSpecialBuyPositions)
         {
-            var name = Loc.GetString(proto.Name);
+            var name = proto.NameOverride ?? proto.Service.GetName(_proto);
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
+            //desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", name), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, null, name, desc.ToString(), price, true));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.IconOverride ?? proto.Service.GetTexture(_proto), proto.Service.GetEntityView(_proto), name, desc.ToString(), price, true));
         }
 
         //Add static buy positions
         foreach (var (proto, price) in tradePortalComp.CurrentBuyPositions)
         {
-            var name = Loc.GetString(proto.Name);
+            var name = proto.NameOverride ?? proto.Service.GetName(_proto);
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
+            //desc.Append(Loc.GetString(proto.Desc) + "\n");
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", name), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, null, name, desc.ToString(), price, false));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID,  proto.IconOverride ?? proto.Service.GetTexture(_proto), proto.Service.GetEntityView(_proto), name, desc.ToString(), price, false));
         }
 
         //Add special sell positions
@@ -72,13 +72,13 @@ public sealed partial class CP14CargoSystem
             var name = proto.Service.GetName(_proto);
 
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Desc) + "\n");
+            //desc.Append(Loc.GetString(proto.Desc) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
             prodSell.Add(new CP14StoreUiProductEntry(
                 proto.ID,
-                proto.Service.GetRequirementTexture(_proto),
-                proto.Service.GetRequirementEntityView(_proto),
+                proto.Service.GetTexture(_proto),
+                proto.Service.GetEntityView(_proto),
                 name,
                 desc.ToString(),
                 price,
@@ -91,13 +91,13 @@ public sealed partial class CP14CargoSystem
             var name = proto.Key.Service.GetName(_proto);
 
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
+            //desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
             desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
             prodSell.Add(new CP14StoreUiProductEntry(
                 proto.Key.ID,
-                proto.Key.Service.GetRequirementTexture(_proto),
-                proto.Key.Service.GetRequirementEntityView(_proto),
+                proto.Key.Service.GetTexture(_proto),
+                proto.Key.Service.GetEntityView(_proto),
                 name,
                 desc.ToString(),
                 proto.Value,

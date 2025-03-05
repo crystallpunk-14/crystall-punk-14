@@ -53,12 +53,12 @@ public sealed partial class CP14SellPrototypeService : CP14StoreSellService
         return $"{proto.Name} x{Count}";
     }
 
-    public override EntProtoId? GetRequirementEntityView(IPrototypeManager protoManager)
+    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
     {
         return Proto;
     }
 
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
+    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
     {
         return null;
     }

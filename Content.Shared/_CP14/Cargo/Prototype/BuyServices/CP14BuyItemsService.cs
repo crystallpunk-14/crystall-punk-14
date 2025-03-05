@@ -1,24 +1,50 @@
+using Content.Shared.Stacks;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cargo.Prototype.BuyServices;
 
 public sealed partial class CP14BuyItemsService : CP14StoreBuyService
 {
     [DataField(required: true)]
-    public Dictionary<EntProtoId, int> Product = new();
+    public EntProtoId Product;
 
-    public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14TradingPortalComponent> portal)
+    [DataField]
+    public int Count = 1;
+
+    public override void Buy(EntityManager entManager,
+        IPrototypeManager prototype,
+        Entity<CP14TradingPortalComponent> portal)
     {
         var storageSystem = entManager.System<SharedEntityStorageSystem>();
 
-        foreach (var (protoId, count) in Product)
+        for (var i = 0; i < Count; i++)
         {
-            for (var i = 0; i < count; i++)
-            {
-                var spawned = entManager.Spawn(protoId);
-                storageSystem.Insert(spawned, portal);
-            }
+            var spawned = entManager.Spawn(Product);
+            storageSystem.Insert(spawned, portal);
         }
+    }
+
+    public override string GetName(IPrototypeManager protoMan)
+    {
+        if (!protoMan.TryIndex(Product, out var indexedProduct))
+            return ":3";
+
+        var count = Count;
+        if (indexedProduct.TryGetComponent<StackComponent>(out var stack))
+            count *= stack.Count;
+
+        return Count > 0 ? $"{indexedProduct.Name} x{count}" : indexedProduct.Name;
+    }
+
+    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
+    {
+        return Product;
+    }
+
+    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
+    {
+        return null;
     }
 }

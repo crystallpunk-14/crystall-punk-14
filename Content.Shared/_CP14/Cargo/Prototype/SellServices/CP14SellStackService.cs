@@ -59,12 +59,12 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
         return $"{Loc.GetString(proto.Name)} x{Count}";
     }
 
-    public override EntProtoId? GetRequirementEntityView(IPrototypeManager protoManager)
+    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
     {
         return null;
     }
 
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
+    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(StackId, out var proto))
             return null;

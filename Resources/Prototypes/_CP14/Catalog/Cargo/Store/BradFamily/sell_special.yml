@@ -1,9 +1,6 @@
 - type: storePositionSell
   id: CP14BloodFlower
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
-    state: base1
   price: 50
   factions:
   - BradFamily
@@ -14,9 +11,6 @@
 - type: storePositionSell
   id: CP14AgaricMushroom
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/agaric.rsi
-    state: base1
   price: 50
   factions:
   - BradFamily
@@ -27,9 +21,6 @@
 - type: storePositionSell
   id: CP14ChromiumSlime
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
-    state: base1
   price: 150
   factions:
   - BradFamily
@@ -40,9 +31,6 @@
 - type: storePositionSell
   id: CP14WildSage
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
-    state: base1
   price: 50
   factions:
   - BradFamily
@@ -53,9 +41,6 @@
 - type: storePositionSell
   id: CP14LumiMushroom
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
-    state: base1
   price: 100
   factions:
   - BradFamily
@@ -66,9 +51,6 @@
 - type: storePositionSell
   id: CP14BlueAmanita
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
-    state: base1
   price: 50
   factions:
   - BradFamily
@@ -79,9 +61,6 @@
 - type: storePositionSell
   id: CP14Dayflin
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
-    state: base1
   price: 50
   factions:
   - BradFamily
@@ -92,9 +71,6 @@
 - type: storePositionSell
   id: CP14AirLily
   special: true
-  icon: 
-    sprite: _CP14/Objects/Flora/Wild/water_lilies.rsi
-    state: base1
   price: 75
   factions:
   - BradFamily
@@ -105,9 +81,6 @@
 - type: storePositionSell
   id: CP14CrystalShardBase
   special: true
-  icon: 
-    sprite: _CP14/Structures/Flora/Crystal/crystal_shard.rsi
-    state: shard0
   price: 50
   factions:
   - BradFamily
@@ -118,9 +91,6 @@
 - type: storePositionSell
   id: CP14BaseAlchemyBomb
   special: true
-  icon: 
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: bomb
   price: 250
   factions:
   - BradFamily

@@ -37,6 +37,7 @@
     containers:
       entity_storage: !type:Container
   - type: EntityStorage
+    open: true
     isCollidableWhenOpen: true
     closeSound:
       path: /Audio/Effects/woodenclosetclose.ogg
@@ -74,6 +75,7 @@
   components:
   - type: CP14TradingPortal
     faction: BradFamily
+    specialSellPositionCount: 3
 
 - type: entity
   parent: CP14TradingPortalBase

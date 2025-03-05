@@ -57,12 +57,12 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
         return $"{Loc.GetString(Name)} x{Count}";
     }
 
-    public override EntProtoId? GetRequirementEntityView(IPrototypeManager protoManager)
+    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
     {
         return null;
     }
 
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
+    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
     {
         return Sprite;
     }

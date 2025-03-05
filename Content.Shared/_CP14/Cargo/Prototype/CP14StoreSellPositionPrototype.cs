@@ -17,9 +17,6 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     [DataField(required: true)]
     public int Price = 100;
 
-    [DataField]
-    public LocId Desc = string.Empty;
-
     [DataField(required: true)]
     public CP14StoreSellService Service = default!;
 
@@ -47,10 +44,10 @@ public abstract partial class CP14StoreSellService
     /// <summary>
     /// You can specify an icon generated from an entity. It will support layering, colour changes and other layer options. Return null to disable.
     /// </summary>
-    public abstract EntProtoId? GetRequirementEntityView(IPrototypeManager protoManager);
+    public abstract EntProtoId? GetEntityView(IPrototypeManager protoManager);
 
     /// <summary>
     /// You can specify the texture directly. Return null to disable.
     /// </summary>
-    public abstract SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager);
+    public abstract SpriteSpecifier? GetTexture(IPrototypeManager protoManager);
 }
