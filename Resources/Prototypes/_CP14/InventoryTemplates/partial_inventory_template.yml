@@ -60,7 +60,7 @@
       strippingWindowPos: 2,1
       displayName: Mask
     # Main hotbar
-    - name: belt1
+    - name: belt2
       slotTexture: belt
       slotFlags: BELT
       slotGroup: SecondHotbar
@@ -86,7 +86,7 @@
       displayName: Back
     # Right hand
     # Left hand
-    - name: belt2
+    - name: belt
       slotTexture: belt
       slotFlags: BELT
       slotGroup: MainHotbar

@@ -31,5 +31,5 @@
     back:
     - CP14EnergyCrystalSmall
   equipment:
-    belt1: CP14WalletFilledTest
+    belt2: CP14WalletFilledTest
     keys: CP14KeyRingGuildmaster
