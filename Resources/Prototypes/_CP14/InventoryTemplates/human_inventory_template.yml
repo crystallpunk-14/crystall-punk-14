@@ -72,7 +72,7 @@
       strippingWindowPos: 2,2
       displayName: Cloak
     # Main hotbar
-    - name: belt1
+    - name: belt2
       slotTexture: belt
       slotFlags: BELT
       slotGroup: SecondHotbar
@@ -124,7 +124,7 @@
       dependsOn: pants
       displayName: Pocket
       stripHidden: true
-    - name: belt2
+    - name: belt1
       slotTexture: belt
       slotFlags: BELT
       slotGroup: MainHotbar
