@@ -54,11 +54,10 @@ public sealed class CP14RichestJobConditionSystem : EntitySystem
 
         foreach (var otherHuman in allHumans)
         {
-            _job.MindTryGetJob(mindId, out var jobProto);
-            if (jobProto == null)
+            if (!_job.MindTryGetJob(otherHuman, out var otherJob))
                 continue;
 
-            if (jobProto != condition.Job)
+            if (otherJob != condition.Job)
                 continue;
 
             if (otherHuman.Comp.OwnedEntity is null)
@@ -69,6 +68,7 @@ public sealed class CP14RichestJobConditionSystem : EntitySystem
                 otherMaxValue = otherValue;
         }
 
-        return Math.Clamp(ourValue / (float)otherMaxValue, 0, 1);
+        // if several players have the same amount of money, no one wins.
+        return ourValue == otherMaxValue ? 0.99f : Math.Clamp(ourValue / (float)otherMaxValue, 0, 1);
     }
 }

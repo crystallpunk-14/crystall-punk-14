@@ -64,18 +64,18 @@ CP14BlueVial: CP14BlueBottle
 CP14GreenVial: CP14GreenBottle
 
 #2024-13-11
-CP14IronDoorBankSafe1: CP14IronDoorBankSafe
-CP14IronDoorBankSafe2: CP14IronDoorBankSafe
-CP14IronDoorBankSafe3: CP14IronDoorBankSafe
-CP14IronDoorBankSafe4: CP14IronDoorBankSafe
-CP14IronDoorBankSafe5: CP14IronDoorBankSafe
-CP14IronDoorBankSafe6: CP14IronDoorBankSafe
-CP14KeyBankSafe1: CP14KeyBankSafe
-CP14KeyBankSafe2: CP14KeyBankSafe
-CP14KeyBankSafe3: CP14KeyBankSafe
-CP14KeyBankSafe4: CP14KeyBankSafe
-CP14KeyBankSafe5: CP14KeyBankSafe
-CP14KeyBankSafe6: CP14KeyBankSafe
+CP14IronDoorBankSafe1: null
+CP14IronDoorBankSafe2: null
+CP14IronDoorBankSafe3: null
+CP14IronDoorBankSafe4: null
+CP14IronDoorBankSafe5: null
+CP14IronDoorBankSafe6: null
+CP14KeyBankSafe1: null
+CP14KeyBankSafe2: null
+CP14KeyBankSafe3: null
+CP14KeyBankSafe4: null
+CP14KeyBankSafe5: null
+CP14KeyBankSafe6: null
 
 #2024-19-11
 CP14ClothingRingManaGift: CP14ManaOperationGlove
@@ -101,8 +101,8 @@ CP14BaseShovel: CP14ModularIronShovel
 CP14BasePickaxe: CP14ModularIronPickaxe
 
 #2024-02-12
-CP14WoodenDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
-CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorTavernAlchemyMirrored1
+CP14WoodenDoorTavernAlchemy: CP14WoodenDoorAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorAlchemyMirrored1
 CP14IronDoorBlacksmith: CP14IronDoorBlacksmith1
 CP14IronDoorMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
 CP14IronDoorWindowedBlacksmith: CP14IronDoorBlacksmith1
