@@ -71,6 +71,24 @@
       minGroupSize: 2
       maxGroupSize: 3
 
+- type: cp14DemiplaneModifier
+  id: Sheep
+  tiers:
+    - 1
+    - 2
+  name: cp14-modifier-sheeps
+  generationWeight: 0.4
+  categories:
+    Reward: 0.2
+  requiredTags:
+  - CP14DemiplanePeacefulAnimals
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSheep
+      count: 1
+      minGroupSize: 4
+      maxGroupSize: 5
+
 # TIER 2
 
 - type: cp14DemiplaneModifier
