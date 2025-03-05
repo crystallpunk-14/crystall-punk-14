@@ -601,6 +601,9 @@ ent-CP14ClothingHeadAlchemistBeret = берет алхимика
 ent-CP14ClothingHeadCaptainCap = капитанская кепка
     .desc = Нет, ну вы посмотрите какой красавчик!
 
+ent-CP14ClothingHeadGildmaster = шляпа гильдмастера
+    .desc = Знак безграничного опыта и чести.
+
 ent-CP14ClothingHeadBeretBase = { ent-CP14ClothingHeadBase }
     .desc = Это берет.
 
