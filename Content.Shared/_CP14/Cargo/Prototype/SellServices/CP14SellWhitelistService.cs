@@ -1,5 +1,4 @@
 using Content.Shared.Whitelist;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 
@@ -11,13 +10,13 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
     [DataField(required: true)]
     public int Count = 1;
 
-    public override bool TrySell(EntityManager entManager, IEnumerable<EntityUid> entities)
+    public override bool TrySell(EntityManager entManager, HashSet<EntityUid> entities)
     {
         var whitelistSystem = entManager.System<EntityWhitelistSystem>();
 
         HashSet<EntityUid> suitable = new();
 
-        int needCount = Count;
+        var needCount = Count;
         foreach (var ent in entities)
         {
             if (needCount <= 0)
@@ -38,6 +37,7 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
 
         foreach (var selledEnt in suitable)
         {
+            entities.Remove(selledEnt);
             entManager.QueueDeleteEntity(selledEnt);
         }
 

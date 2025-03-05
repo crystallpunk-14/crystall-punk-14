@@ -43,5 +43,5 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
 [MeansImplicitUse]
 public abstract partial class CP14StoreSellService
 {
-    public abstract bool TrySell(EntityManager entManager, IEnumerable<EntityUid> entities);
+    public abstract bool TrySell(EntityManager entManager, HashSet<EntityUid> entities);
 }

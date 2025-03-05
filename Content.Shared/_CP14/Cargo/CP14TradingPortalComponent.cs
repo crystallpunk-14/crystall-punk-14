@@ -47,7 +47,7 @@ public sealed partial class CP14TradingPortalComponent : Component
     public Dictionary<CP14StoreBuyPositionPrototype, int> CurrentSpecialBuyPositions = new(); //Proto, price
 
     [DataField]
-    public MinMax SpecialBuyPositionCount = new(1, 2);
+    public int SpecialBuyPositionCount = 2;
 
     [DataField]
     public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSellPositions = new(); //Proto, price
@@ -56,7 +56,7 @@ public sealed partial class CP14TradingPortalComponent : Component
     public Dictionary<CP14StoreSellPositionPrototype, int> CurrentSpecialSellPositions = new(); //Proto, price
 
     [DataField]
-    public MinMax SpecialSellPositionCount = new(1, 2);
+    public int SpecialSellPositionCount = 2;
 
     [DataField]
     public int Balance = 0;

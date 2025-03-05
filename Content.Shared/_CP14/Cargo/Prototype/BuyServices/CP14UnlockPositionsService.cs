@@ -14,6 +14,9 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
     [DataField]
     public HashSet<ProtoId<CP14StoreBuyPositionPrototype>> RemoveBuyPositions = new();
 
+    [DataField]
+    public HashSet<ProtoId<CP14StoreSellPositionPrototype>> RemoveSellPositions = new();
+
     public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14TradingPortalComponent> portal)
     {
         foreach (var buy in AddBuyPositions)
@@ -47,6 +50,17 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
                 continue;
 
             portal.Comp.AvailableBuyPosition.Remove(indexedBuy);
+        }
+
+        foreach (var rSell in RemoveSellPositions)
+        {
+            if (!prototype.TryIndex(rSell, out var indexedSell))
+                continue;
+
+            if (!portal.Comp.AvailableSellPosition.Contains(indexedSell))
+                continue;
+
+            portal.Comp.AvailableSellPosition.Remove(indexedSell);
         }
     }
 }

@@ -29,14 +29,16 @@ public sealed partial class CP14CargoSystem
             BuyThings((ent, portal), storage);
             CashOut((ent, portal), storage);
             ThrowAllItems((ent, portal), storage);
-            UpdateStorePositions((ent, portal));
         }
     }
 
     private void OnTradePortalMapInit(Entity<CP14TradingPortalComponent> ent, ref MapInitEvent args)
     {
         AddRoundstartTradingPositions(ent);
-        UpdateStorePositions(ent);
+        UpdateStaticPositions(ent);
+
+        AddRandomBuySpecialPosition(ent, ent.Comp.SpecialBuyPositionCount);
+        AddRandomSellSpecialPosition(ent, ent.Comp.SpecialSellPositionCount);
     }
 
     private void OnTradePortalClose(Entity<CP14TradingPortalComponent> ent, ref StorageAfterCloseEvent args)

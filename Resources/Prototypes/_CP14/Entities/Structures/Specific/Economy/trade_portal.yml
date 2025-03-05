@@ -6,14 +6,15 @@
   categories: [ ForkFiltered ]
   components:
   - type: Icon
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Specific/Economy/trade_portal.rsi
     state: base
   - type: Sprite
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Specific/Economy/trade_portal.rsi
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]
-    - state: closed
+    - state: base_door
       map: ["enum.StorageVisualLayers.Door"]
   - type: Clickable
   - type: InteractionOutline
@@ -36,14 +37,16 @@
     containers:
       entity_storage: !type:Container
   - type: EntityStorage
+    isCollidableWhenOpen: true
     closeSound:
       path: /Audio/Effects/woodenclosetclose.ogg
     openSound:
       path: /Audio/Effects/woodenclosetopen.ogg
-    enteringOffset: 0, -0.15
+    enteringOffset: 0, -0.4
     enteringRange: 0.20
   - type: PlaceableSurface
     isPlaceable: false # defaults to closed.
   - type: EntityStorageVisuals
-    stateDoorOpen: open
-    stateDoorClosed: closed
+    stateBaseClosed: base
+    stateDoorOpen: base_open
+    stateDoorClosed: base_door

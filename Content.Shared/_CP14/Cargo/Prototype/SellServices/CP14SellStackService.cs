@@ -6,18 +6,18 @@ namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 public sealed partial class CP14SellStackService : CP14StoreSellService
 {
     [DataField(required: true)]
-    public ProtoId<StackPrototype> StackId = new();
+    public ProtoId<StackPrototype> StackId;
 
     [DataField(required: true)]
     public int Count = 1;
 
-    public override bool TrySell(EntityManager entManager, IEnumerable<EntityUid> entities)
+    public override bool TrySell(EntityManager entManager, HashSet<EntityUid> entities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
         Dictionary<Entity<StackComponent>, int> suitable = new();
 
-        int needCount = Count;
+        var needCount = Count;
         foreach (var ent in entities)
         {
             if (needCount <= 0)
@@ -38,6 +38,7 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
         {
             if (selledEnt.Key.Comp.Count == selledEnt.Value)
             {
+                entities.Remove(selledEnt.Key);
                 entManager.QueueDeleteEntity(selledEnt.Key);
             }
             else

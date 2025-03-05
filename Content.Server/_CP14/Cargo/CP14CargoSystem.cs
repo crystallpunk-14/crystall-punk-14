@@ -78,52 +78,83 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private void UpdateStorePositions(Entity<CP14TradingPortalComponent> portal)
+    private void UpdateStaticPositions(Entity<CP14TradingPortalComponent> portal)
     {
         portal.Comp.CurrentBuyPositions.Clear();
         portal.Comp.CurrentSellPositions.Clear();
         portal.Comp.CurrentSpecialBuyPositions.Clear();
         portal.Comp.CurrentSpecialSellPositions.Clear();
 
-        var availableSpecialSellPositions = new List<CP14StoreSellPositionPrototype>();
-        var availableSpecialBuyPositions = new List<CP14StoreBuyPositionPrototype>();
-
         //Add static positions + cash special ones
         foreach (var buyPos in portal.Comp.AvailableBuyPosition)
         {
-            if (buyPos.Special)
-                availableSpecialBuyPositions.Add(buyPos);
-            else
+            if (!buyPos.Special)
                 portal.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price);
         }
 
         foreach (var sellPos in portal.Comp.AvailableSellPosition)
         {
-            if (sellPos.Special)
-                availableSpecialSellPositions.Add(sellPos);
-            else
+            if (!sellPos.Special)
                 portal.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price);
         }
+    }
 
-        //Random and select special positions
-        _random.Shuffle(availableSpecialSellPositions);
-        _random.Shuffle(availableSpecialBuyPositions);
+    private void AddRandomBuySpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    {
+        if (_buyProto is null)
+            return;
 
-        var currentSpecialBuyPositions = portal.Comp.SpecialBuyPositionCount.Next(_random);
-        var currentSpecialSellPositions = portal.Comp.SpecialSellPositionCount.Next(_random);
-
-        foreach (var buyPos in availableSpecialBuyPositions)
+        var availableSpecialBuyPositions = new List<CP14StoreBuyPositionPrototype>();
+        foreach (var buyPos in _buyProto)
         {
-            if (portal.Comp.CurrentSpecialBuyPositions.Count >= currentSpecialBuyPositions)
-                break;
-            portal.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price);
+            if (!buyPos.Special)
+                continue;
+
+            if (portal.Comp.CurrentSpecialBuyPositions.ContainsKey(buyPos))
+                continue;
+
+            availableSpecialBuyPositions.Add(buyPos);
+
         }
 
+        _random.Shuffle(availableSpecialBuyPositions);
+
+        var added = 0;
+        foreach (var buyPos in availableSpecialBuyPositions)
+        {
+            if (added >= count)
+                break;
+            portal.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price);
+            added++;
+        }
+    }
+
+    private void AddRandomSellSpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    {
+        if (_sellProto is null)
+            return;
+
+        var availableSpecialSellPositions = new List<CP14StoreSellPositionPrototype>();
+        foreach (var sellPos in _sellProto)
+        {
+            if (!sellPos.Special)
+                continue;
+
+            if (portal.Comp.CurrentSpecialSellPositions.ContainsKey(sellPos))
+                continue;
+
+            availableSpecialSellPositions.Add(sellPos);
+        }
+
+        _random.Shuffle(availableSpecialSellPositions);
+
+        var added = 0;
         foreach (var sellPos in availableSpecialSellPositions)
         {
-            if (portal.Comp.CurrentSpecialSellPositions.Count >= currentSpecialSellPositions)
+            if (added >= count)
                 break;
             portal.Comp.CurrentSpecialSellPositions.Add(sellPos, sellPos.Price);
+            added++;
         }
     }
 
@@ -132,23 +163,35 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     /// </summary>
     private void SellingThings(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
+        var containedEntities = storage.Contents.ContainedEntities.ToHashSet();
         //var ev = new BeforeSellEntities(ref portal.Comp.EntitiesInPortal);
         //RaiseLocalEvent(ev);
 
         foreach (var sellPos in portal.Comp.CurrentSellPositions)
         {
-            if (sellPos.Key.Service.TrySell(EntityManager, storage.Contents.ContainedEntities))
+            //WHILE = sell all we can
+            while (sellPos.Key.Service.TrySell(EntityManager, containedEntities))
             {
                 portal.Comp.Balance += sellPos.Value;
             }
         }
 
+        List<CP14StoreSellPositionPrototype> toRemove = new();
         foreach (var sellPos in portal.Comp.CurrentSpecialSellPositions)
         {
-            if (sellPos.Key.Service.TrySell(EntityManager, storage.Contents.ContainedEntities))
+            //IF = only 1 try
+            if (sellPos.Key.Service.TrySell(EntityManager, containedEntities))
             {
                 portal.Comp.Balance += sellPos.Value;
+                toRemove.Add(sellPos.Key);
             }
+        }
+
+        //Remove this special position from the list and add new random one
+        foreach (var position in toRemove)
+        {
+            portal.Comp.CurrentSpecialSellPositions.Remove(position);
+            AddRandomSellSpecialPosition(portal, 1);
         }
     }
 
@@ -211,6 +254,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             if (!_proto.TryIndex<CP14StoreBuyPositionPrototype>(request.Key, out var indexedBuyed))
                 continue;
 
+            //Remove this position from the list and add new random one
+            if (request.Key.Special)
+            {
+                portal.Comp.CurrentSpecialBuyPositions.Remove(request.Key);
+                AddRandomBuySpecialPosition(portal, 1);
+            }
+
             foreach (var service in indexedBuyed.Services)
             {
                 service.Buy(EntityManager, _proto, portal);
@@ -244,6 +294,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var rotation = xform.LocalRotation;
         foreach (var stored in containedEntities)
         {
+            _transform.AttachToGridOrMap(stored);
             var targetThrowPosition = xform.Coordinates.Offset(rotation.ToWorldVec() * 2);
             _throwing.TryThrow(stored, targetThrowPosition.Offset(new Vector2(_random.NextFloat(-1, 1), _random.NextFloat(-1, 1))));
         }
