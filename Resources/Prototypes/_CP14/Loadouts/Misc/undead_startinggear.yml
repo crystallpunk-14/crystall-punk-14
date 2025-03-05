@@ -17,12 +17,55 @@
     mask: CP14ClothingMaskSinner
 
 - type: startingGear
-  id: CP14MobSkeleton
+  id: CP14MobSkeletonHalberd
   equipment:
+    shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14ModularSkeletonHalberd
+    shoes: CP14ClothingShoesSandals
   inhand:
     - CP14TorchIgnited
+
+- type: startingGear
+  id: CP14MobSkeletonSword
+  equipment:
+    pants: CP14ClothingPantsLoincloth
+    belt1: CP14ModularSkeletonSword
+    shoes: CP14ClothingShoesSandals
+    head: CP14ClothingHeadMetalHeadband
+  inhand:
+    - CP14TorchIgnited
+
+- type: startingGear
+  id: CP14MobSkeletonDodger
+  equipment:
+    mask: CP14ClothingMaskSinner
+    pants: CP14ClothingPantsLoincloth
+    belt1: CP14ModularIronDagger
+    belt2: CP14ModularIronDagger
+  inhand:
+    - CP14TorchIgnited
+
+- type: startingGear
+  id: CP14MobSkeletonArcher
+  equipment:
+    shirt: CP14ClothingWarriorsGarbDress
+    pants: CP14ClothingPantsLoincloth
+    neck: CP14BowCombat
+    belt1: CP14ClothingBeltQuiverCopperArrow
+    pocket1: CP14SpellScrollSphereOfLight
+  #inhand:
+  #  - CP14SpellScrollSphereOfLight
+
+- type: startingGear
+  id: CP14MobSkeletonWizard
+  equipment:
+    head: CP14ClothingHeadTriangularHat
+    shirt: CP14ClothingShirtCottonBlack
+    pants: CP14ClothingPantsBrown
+    shoes: CP14LongLeatherBoots
+    cloak: CP14ClothingCloakWhite
+    ring2: CP14ClothingRingSkeletonWizard
 
 - type: startingGear
   id: CP14MobSkeletonCloset
