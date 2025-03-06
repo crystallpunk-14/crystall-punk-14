@@ -1,5 +1,6 @@
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.Roles;
+using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Knowledge.Specials;
