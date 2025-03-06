@@ -77,5 +77,5 @@
     fillBaseName: liq-
   - type: CP14MagicEnergyDraw
     energy: -0.15
-    delay: 1
+    delay: 2
   - type: CP14MagicEssenceCollector

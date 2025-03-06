@@ -9,6 +9,7 @@
         <tabs:KeyRebindTab Name="KeyRebindTab" />
         <tabs:AudioTab Name="AudioTab" />
         <tabs:AccessibilityTab Name="AccessibilityTab" />
+        <tabs:AdminOptionsTab Name="AdminOptionsTab" />
         <!-- CP14-options-menu-start -->
         <options:CP14OptionsMenuMainTab Name="CP14OptionsMenuTab"/>
         <!-- CP14-options-menu-end -->

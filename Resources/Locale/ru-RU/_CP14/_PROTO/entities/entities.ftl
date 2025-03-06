@@ -601,6 +601,9 @@ ent-CP14ClothingHeadAlchemistBeret = берет алхимика
 ent-CP14ClothingHeadCaptainCap = капитанская кепка
     .desc = Нет, ну вы посмотрите какой красавчик!
 
+ent-CP14ClothingHeadGildmaster = шляпа гильдмастера
+    .desc = Знак безграничного опыта и чести.
+
 ent-CP14ClothingHeadBeretBase = { ent-CP14ClothingHeadBase }
     .desc = Это берет.
 
@@ -3591,11 +3594,11 @@ ent-CP14DemiplanEnterRoomMarker = Демиплановый маркер вход
 
 ent-CP14MindRoleDemiplaneAntag = Роль антага в демиплане
 
-ent-CP14SmallWoodenCrateFilled = None
+ent-CP14SmallWoodenCrateFilled = { ent-CP14SmallWoodenCrate }
     .desc = { ent-CP14SmallWoodenCrate.desc }
     .suffix = Заполненный, Инструменты и вещи
 
-ent-CP14LargeWoodenCrateFilled = None
+ent-CP14LargeWoodenCrateFilled = { ent-CP14LargeWoodenCrate }
     .desc = { ent-CP14LargeWoodenCrate.desc }
     .suffix = Заполненный, Инструменты и вещи
 

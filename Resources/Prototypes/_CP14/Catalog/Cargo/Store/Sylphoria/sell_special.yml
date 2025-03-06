@@ -1,0 +1,19 @@
+- type: storePositionSell
+  id: BountyTorch
+  special: true
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14Torch
+    count: 20
+
+- type: storePositionSell
+  id: BountyLucenPlanks
+  special: true
+  price: 300
+  factions:
+  - Sylphoria
+  service: !type:CP14SellStackService
+    stackId: CP14LucensWoodenPlanks
+    count: 10

@@ -1,5 +1,6 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 
@@ -11,13 +12,19 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
     [DataField(required: true)]
     public int Count = 1;
 
+    [DataField(required: true)]
+    public LocId Name = string.Empty;
+
+    [DataField(required: true)]
+    public SpriteSpecifier? Sprite = null;
+
     public override bool TrySell(EntityManager entManager, HashSet<EntityUid> entities)
     {
         var whitelistSystem = entManager.System<EntityWhitelistSystem>();
 
         HashSet<EntityUid> suitable = new();
 
-        int needCount = Count;
+        var needCount = Count;
         foreach (var ent in entities)
         {
             if (needCount <= 0)
@@ -43,5 +50,20 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
         }
 
         return true;
+    }
+
+    public override string GetName(IPrototypeManager protoMan)
+    {
+        return $"{Loc.GetString(Name)} x{Count}";
+    }
+
+    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
+    {
+        return null;
+    }
+
+    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
+    {
+        return Sprite;
     }
 }

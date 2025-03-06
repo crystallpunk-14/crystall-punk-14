@@ -1,9 +1,3 @@
-cp14-lock-shape-bank-entrance = bank hall
-cp14-lock-shape-bank-staff = bank offices
-cp14-lock-shape-bank-commandant = commandant's house
-cp14-lock-shape-bank-safe = bank safes
-cp14-lock-shape-bank-vault = bank vault
-
 cp14-lock-shape-tavern-hall = tavern hall
 cp14-lock-shape-tavern-staff = tavern staff quarters
 cp14-lock-shape-tavern-dorm1 = tavern room №1
@@ -19,6 +13,10 @@ cp14-lock-shape-alchemist3 = alchemist's lab №3
 cp14-lock-shape-blacksmith1 = forge №1
 cp14-lock-shape-blacksmith2 = forge №2
 cp14-lock-shape-blacksmith3 = forge №3
+
+cp14-lock-shape-merchant1 = shop №1
+cp14-lock-shape-merchant2 = shop №2
+cp14-lock-shape-merchant3 = shop №3
 
 cp14-lock-shape-personalhouse1 = house  №1
 cp14-lock-shape-personalhouse2 = house  №2

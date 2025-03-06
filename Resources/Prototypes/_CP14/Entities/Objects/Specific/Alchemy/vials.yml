@@ -259,7 +259,7 @@
   - type: SolutionContainerManager
     solutions:
       vial:
-        maxVol: 30
+        maxVol: 50
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq- 
