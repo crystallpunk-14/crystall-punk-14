@@ -49,7 +49,7 @@
     Food:
       effects:
       - !type:SatiateHunger
-        defaultNutritionFactor: 1
+        defaultNutritionFactor: 0.3
         conditions:
         - !type:OrganType
           type: CP14Vampire
