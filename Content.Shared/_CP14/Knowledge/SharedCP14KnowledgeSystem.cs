@@ -26,13 +26,13 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
             return;
         if (!TryComp<CP14KnowledgeLearningSourceComponent>(ent, out var knowledge))
             return;
-        if (knowledge.Knowledges.Count <= 0)
+        if (knowledge.Knowledge.Count <= 0)
             return;
 
         var sb = new StringBuilder();
 
         sb.Append(Loc.GetString("cp14-knowledge-book-pre-text"));
-        foreach (var k in knowledge.Knowledges)
+        foreach (var k in knowledge.Knowledge)
         {
             if (!_proto.TryIndex(k, out var indexedKnowledge))
                 continue;
@@ -54,7 +54,7 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
         if (!Resolve(uid, ref knowledgeStorage, false))
             return false;
 
-        if (!knowledgeStorage.Knowledges.Contains(knowledge))
+        if (!knowledgeStorage.Knowledge.Contains(knowledge))
             return false;
 
         var ev = new CP14KnowledgeUsedEvent(uid, knowledge, factor);
@@ -72,7 +72,7 @@ public abstract partial class SharedCP14KnowledgeSystem : EntitySystem
         if (!Resolve(uid, ref knowledgeStorage, false))
             return false;
 
-        return knowledgeStorage.Knowledges.Contains(knowledge);
+        return knowledgeStorage.Knowledge.Contains(knowledge);
     }
 }
 

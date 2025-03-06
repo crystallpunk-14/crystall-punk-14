@@ -55,7 +55,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
     private void AddKnowledgeLearningVerb(Entity<CP14KnowledgeLearningSourceComponent> ent, ref GetVerbsEvent<Verb> args)
     {
         var user = args.User;
-        foreach (var knowledge in ent.Comp.Knowledges)
+        foreach (var knowledge in ent.Comp.Knowledge)
         {
             if (!_proto.TryIndex(knowledge, out var indexedKnowledge))
                 continue;
@@ -91,7 +91,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
             return;
 
         //Remove knowledge
-        foreach (var knowledge in ent.Comp.Knowledges)
+        foreach (var knowledge in ent.Comp.Knowledge)
         {
             if (!_proto.TryIndex(knowledge, out var indexedKnowledge))
                 continue;
@@ -112,7 +112,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         //Add knowledge
         foreach (var knowledge in _proto.EnumeratePrototypes<CP14KnowledgePrototype>())
         {
-            if (ent.Comp.Knowledges.Contains(knowledge))
+            if (ent.Comp.Knowledge.Contains(knowledge))
                 continue;
 
             args.Verbs.Add(new Verb()
@@ -147,7 +147,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         if (!_proto.TryIndex(proto, out var indexedKnowledge))
             return false;
 
-        if (knowledgeStorage.Knowledges.Contains(proto))
+        if (knowledgeStorage.Knowledge.Contains(proto))
             return false;
 
         foreach (var dependency in indexedKnowledge.Dependencies)
@@ -214,7 +214,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
             LogType.Mind,
             LogImpact.Medium,
             $"{EntityManager.ToPrettyString(uid):player} learned new knowledge: {Loc.GetString(indexedKnowledge.Name)}");
-        return knowledgeStorage.Knowledges.Add(proto);
+        return knowledgeStorage.Knowledge.Add(proto);
     }
 
     public bool TryForgotKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto, bool silent = false)
@@ -222,13 +222,13 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var knowledgeStorage))
             return false;
 
-        if (!knowledgeStorage.Knowledges.Contains(proto))
+        if (!knowledgeStorage.Knowledge.Contains(proto))
             return false;
 
         if (!_proto.TryIndex(proto, out var indexedKnowledge))
             return false;
 
-        knowledgeStorage.Knowledges.Remove(proto);
+        knowledgeStorage.Knowledge.Remove(proto);
 
         if (_mind.TryGetMind(uid, out var mind, out var mindComp) && mindComp.Session is not null)
         {
@@ -264,6 +264,6 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         if (!TryComp<CP14KnowledgeStorageComponent>(entity, out var knowledgeComp))
             return;
 
-        RaiseNetworkEvent(new CP14KnowledgeInfoEvent(GetNetEntity(entity),knowledgeComp.Knowledges), args.SenderSession);
+        RaiseNetworkEvent(new CP14KnowledgeInfoEvent(GetNetEntity(entity),knowledgeComp.Knowledge), args.SenderSession);
     }
 }
