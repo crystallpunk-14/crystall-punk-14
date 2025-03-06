@@ -8,6 +8,7 @@ using Content.Server.Body.Systems;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
@@ -65,6 +66,22 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
             if (TryComp<MetabolizerComponent>(organUid, out var metabolizer) && metabolizer.MetabolizerTypes is not null)
             {
                 metabolizer.MetabolizerTypes.Add(ent.Comp.MetabolizerType);
+            }
+        }
+
+        if (TryComp<HungerComponent>(ent, out var hunger))
+        {
+            //Replace default alerts with vampire-specific ones
+            foreach (var alert in hunger.HungerThresholdAlerts)
+            {
+                if (alert.Value == "Starving")
+                {
+                    hunger.HungerThresholdAlerts[alert.Key] = "CP14VampireStarving";
+                }
+                else if (alert.Value == "Peckish")
+                {
+                    hunger.HungerThresholdAlerts[alert.Key] = "CP14VampirePeckish";
+                }
             }
         }
     }
