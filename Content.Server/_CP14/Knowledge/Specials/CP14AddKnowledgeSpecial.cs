@@ -1,9 +1,8 @@
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.Roles;
-using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Knowledge;
+namespace Content.Server._CP14.Knowledge.Specials;
 
 /// <summary>
 /// a component that can be hung on an entity to immediately teach it some skills
