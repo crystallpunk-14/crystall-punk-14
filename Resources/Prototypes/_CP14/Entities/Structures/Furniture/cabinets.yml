@@ -109,11 +109,3 @@
   - type: Construction
     graph: CP14WoodenCabinet
     node: CP14WoodenCabinet
-
-- type: entity
-  parent: CP14IronCabinet
-  id: CP14IronCabinetCargo
-  name: trade box
-  description: An armored vault for storing money for trade with the city. City workers will unload their earnings here, or take them from here when you want to buy something.
-  components:
-  - type: CP14CargoMoneyBox

@@ -1,0 +1,103 @@
+- type: entity
+  id: CP14ClosetGlassShowcase
+  parent: CP14ClosetBase
+  name: glass showcase
+  description: Something of value can be placed here without fear of it being discreetly stolen!
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+    sprite: _CP14/Structures/Storage/glass_showcase.rsi
+    state: base
+  - type: EntityStorage
+    isCollidableWhenOpen: true
+    enteringOffset: 0, 0
+    capacity: 5
+    showContents: true
+    occludesLight: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.40,-0.40,0.40,0.40"
+        density: 75
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmack
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150 #excess damage (nuke?). avoid computational cost of spawning entities.
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior 
+        acts: [ "Destruction" ]
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+        showEnts: True
+        occludes: False
+      paper_label: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14ClosetGlassShowcase
+  id: CP14ClosetGlassShowcaseGuildmaster
+  name: guildmaster showcase
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Guildmaster
+
+- type: entity
+  parent: CP14ClosetGlassShowcase
+  id: CP14ClosetGlassShowcaseMerchant1
+  name: merchant shop 1 showcase
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop1
+
+- type: entity
+  parent: CP14ClosetGlassShowcase
+  id: CP14ClosetGlassShowcaseMerchant2
+  name: merchant shop 2 showcase
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop2
+
+- type: entity
+  parent: CP14ClosetGlassShowcase
+  id: CP14ClosetGlassShowcaseMerchant3
+  name: merchant shop 3 showcase
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop3
