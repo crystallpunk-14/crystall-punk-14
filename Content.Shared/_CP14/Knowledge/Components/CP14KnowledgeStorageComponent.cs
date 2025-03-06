@@ -4,11 +4,11 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Knowledge.Components;
 
 /// <summary>
-/// a list of skills learned by this entity
+/// A list of <see cref="CP14KnowledgePrototype"/> learned by this entity.
 /// </summary>
 [RegisterComponent, Access(typeof(SharedCP14KnowledgeSystem))]
 public sealed partial class CP14KnowledgeStorageComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public HashSet<ProtoId<CP14KnowledgePrototype>> Knowledges { get; private set; } = new();
+    public HashSet<ProtoId<CP14KnowledgePrototype>> Knowledge { get; private set; } = [];
 }
