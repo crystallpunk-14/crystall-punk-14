@@ -13,13 +13,19 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectVampireBite
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Jitter
     effects:
+    - !type:CP14SpellSuckBlood
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectVampireBite
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:Jitter
+      - !type:Jitter 
+      - !type:ModifyBloodLevel
+        amount: -15
   - type: EntityTargetAction
     repeat: true
     whitelist:
