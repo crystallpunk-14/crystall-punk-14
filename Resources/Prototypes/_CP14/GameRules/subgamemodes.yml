@@ -1,0 +1,25 @@
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14Vampire
+  components:
+  - type: CP14VampireRule
+  #- type: AntagObjectives
+  #  objectives:
+  #  - EscapeThiefShuttleObjective #SURVIVE
+  - type: GameRule
+    minPlayers: 5
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ CP14Vampire ]
+      max: 5
+      playerRatio: 10
+      multiAntagSetting: NotExclusive
+      lateJoinAdditional: true
+      mindRoles:
+      - CP14MindRoleVampire
+      components:
+      - CP14Vampire
+      briefing:
+        text: cp14-roles-antag-vampire-briefing
+        color: "#630f24"
+        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg" #TODO change sound
