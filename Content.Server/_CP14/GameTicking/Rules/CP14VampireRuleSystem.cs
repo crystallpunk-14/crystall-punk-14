@@ -3,11 +3,11 @@ using Content.Server._CP14.GameTicking.Rules.Components;
 using Content.Server._CP14.Vampire;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
-using Content.Shared.Damage;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
@@ -16,18 +16,18 @@ namespace Content.Server._CP14.GameTicking.Rules;
 public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleComponent>
 {
     [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
+    [Dependency] private readonly BodySystem _body = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14VampireComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14VampireComponent, MapInitEvent>(OnVampireInit);
     }
 
     public override void Update(float frameTime)
@@ -56,10 +56,16 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
         }
     }
 
-
-    private void OnMapInit(Entity<CP14VampireComponent> ent, ref MapInitEvent args)
+    private void OnVampireInit(Entity<CP14VampireComponent> ent, ref MapInitEvent args)
     {
-        _damageable.SetDamageModifierSetId(ent, "CP14Vampire");
         _bloodstream.ChangeBloodReagent(ent, ent.Comp.NewBloodReagent);
+
+        foreach (var (organUid, _) in _body.GetBodyOrgans(ent))
+        {
+            if (TryComp<MetabolizerComponent>(organUid, out var metabolizer) && metabolizer.MetabolizerTypes is not null)
+            {
+                metabolizer.MetabolizerTypes.Add(ent.Comp.MetabolizerType);
+            }
+        }
     }
 }

@@ -27,13 +27,6 @@
     Poison: 0
 
 - type: damageModifierSet
-  id: CP14Vampire
-  coefficients:
-    Heat: 1.5
-    Cold: 0.5
-    Poison: 0
-
-- type: damageModifierSet
   id: CP14Dinosaur
   coefficients:
     Blunt: 0.9

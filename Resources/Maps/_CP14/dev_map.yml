@@ -78,6 +78,7 @@ entities:
       parent: 1
     - type: BecomesStation
       id: Dev
+    - type: Roof
     - type: MapGrid
       chunks:
         0,0:
