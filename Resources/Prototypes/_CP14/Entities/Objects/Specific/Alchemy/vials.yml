@@ -244,10 +244,10 @@
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
     layers:
-      - state: vial
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: vial
       - state: label
         visible: false
         map: ["enum.PaperLabelVisuals.Layer"]
@@ -259,7 +259,7 @@
   - type: SolutionContainerManager
     solutions:
       vial:
-        maxVol: 30
+        maxVol: 50
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq- 
@@ -273,10 +273,10 @@
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
     layers:
-      - state: vial
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: vial
       - state: reinforcement
       - state: label
         visible: false

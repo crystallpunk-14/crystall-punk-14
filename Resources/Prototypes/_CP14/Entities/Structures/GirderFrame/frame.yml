@@ -73,6 +73,7 @@
   categories: [ ForkFiltered ]
   parent: BaseStructure
   abstract: true
+  description: A wall that has not resisted the flow of time and aggressive conditions.
   placement:
     mode: SnapgridCenter
     snap:

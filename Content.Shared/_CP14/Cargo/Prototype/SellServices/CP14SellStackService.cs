@@ -1,12 +1,13 @@
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cargo.Prototype.SellServices;
 
 public sealed partial class CP14SellStackService : CP14StoreSellService
 {
     [DataField(required: true)]
-    public ProtoId<StackPrototype> StackId = new();
+    public ProtoId<StackPrototype> StackId;
 
     [DataField(required: true)]
     public int Count = 1;
@@ -17,7 +18,7 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
 
         Dictionary<Entity<StackComponent>, int> suitable = new();
 
-        int needCount = Count;
+        var needCount = Count;
         foreach (var ent in entities)
         {
             if (needCount <= 0)
@@ -48,5 +49,26 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
         }
 
         return true;
+    }
+
+    public override string GetName(IPrototypeManager protoMan)
+    {
+        if (!protoMan.TryIndex(StackId, out var proto))
+            return ":3";
+
+        return $"{Loc.GetString(proto.Name)} x{Count}";
+    }
+
+    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
+    {
+        return null;
+    }
+
+    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
+    {
+        if (!protoManager.TryIndex(StackId, out var proto))
+            return null;
+
+        return proto.Icon;
     }
 }

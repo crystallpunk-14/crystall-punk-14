@@ -125,7 +125,7 @@
   name: perditio
   components:
   - type: Sprite
-    color: "#d9d9d9"
+    color: "#4d4d4d"
   - type: SolutionContainerManager
     solutions:
       essence:

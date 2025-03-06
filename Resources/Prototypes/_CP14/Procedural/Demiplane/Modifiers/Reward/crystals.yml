@@ -35,6 +35,11 @@
       count: 30
       minGroupSize: 1
       maxGroupSize: 5
+    - !type:OreDunGen
+      entity: CP14EssenceNodeFire
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CrystalEarth
@@ -54,6 +59,11 @@
       count: 30
       minGroupSize: 1
       maxGroupSize: 5
+    - !type:OreDunGen
+      entity: CP14EssenceNodeEarth
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CrystalWater
@@ -71,6 +81,11 @@
       count: 30
       minGroupSize: 1
       maxGroupSize: 5
+    - !type:OreDunGen
+      entity: CP14EssenceNodeWater
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CrystalAir
@@ -90,6 +105,11 @@
       count: 30
       minGroupSize: 1
       maxGroupSize: 5
+    - !type:OreDunGen
+      entity: CP14EssenceNodeAir
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CrystalOrder
@@ -105,6 +125,11 @@
       count: 30
       minGroupSize: 1
       maxGroupSize: 5
+    - !type:OreDunGen
+      entity: CP14EssenceNodeOrder
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CrystalChaos
@@ -120,3 +145,8 @@
       count: 30
       minGroupSize: 1
       maxGroupSize: 5
+    - !type:OreDunGen
+      entity: CP14EssenceNodeChaos
+      count: 3
+      minGroupSize: 1
+      maxGroupSize: 1

@@ -271,7 +271,8 @@
       metabolismRate: 0.05
       effects:
       - !type:CP14ManaChange
-        manaDelta: 20
+        manaDelta: 30
+        safe: true
 
 - type: reagent
   id: CP14BasicEffectDamageMana
@@ -286,7 +287,8 @@
       metabolismRate: 0.05
       effects:
       - !type:CP14ManaChange
-        manaDelta: -20
+        manaDelta: -30
+        safe: false
 
 - type: reagent
   id: CP14BasicEffectSpeedUp

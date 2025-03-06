@@ -46,14 +46,9 @@ public partial class CP14SharedCurrencySystem : EntitySystem
     }
 }
 
-public sealed class CP14GetCurrencyEvent : EntityEventArgs
+public sealed class CP14GetCurrencyEvent(int currency = 0, int multiplier = 1) : EntityEventArgs
 {
-    public int Currency;
-    public float Multiplier;
-
-    public CP14GetCurrencyEvent(int cur = 0, int mult = 1)
-    {
-        Currency = cur;
-        Multiplier = mult;
-    }
+    public HashSet<EntityUid> CheckedEntities = new();
+    public int Currency = currency;
+    public float Multiplier = multiplier;
 }
