@@ -1,4 +1,3 @@
-using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
@@ -13,15 +12,16 @@ namespace Content.Server._CP14.Knowledge;
 public sealed partial class CP14AddKnowledgeSpecial : JobSpecial
 {
     [DataField(required: true), ViewVariables(VVAccess.ReadOnly)]
-    public List<ProtoId<CP14KnowledgePrototype>> Knowledge = new();
+    public List<ProtoId<CP14KnowledgePrototype>> Knowledge = [];
 
     public override void AfterEquip(EntityUid mob)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
         var knowledgeSystem = entMan.System<CP14KnowledgeSystem>();
+
         foreach (var knowledge in Knowledge)
         {
-            knowledgeSystem.TryLearnKnowledge(mob, knowledge, true, true);
+            knowledgeSystem.TryAdd(mob, knowledge, true, true);
         }
     }
 }

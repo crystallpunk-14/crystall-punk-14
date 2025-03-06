@@ -1,13 +1,7 @@
-using System.Text;
 using Content.Shared._CP14.Knowledge.Components;
 using Content.Shared._CP14.Knowledge.Events;
 using Content.Shared._CP14.Knowledge.Prototypes;
-using Content.Shared.DoAfter;
-using Content.Shared.Ghost;
-using Content.Shared.MagicMirror;
-using Content.Shared.Paper;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Knowledge;
 
