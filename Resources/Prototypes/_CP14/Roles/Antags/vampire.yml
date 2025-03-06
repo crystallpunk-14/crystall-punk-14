@@ -2,7 +2,7 @@
   id: CP14Vampire
   name: cp14-roles-antag-vampire-name
   antagonist: true
-  setPreference: false
+  setPreference: true
   objective: cp14-roles-antag-vampire-objective
   requirements:
   - !type:OverallPlaytimeRequirement
