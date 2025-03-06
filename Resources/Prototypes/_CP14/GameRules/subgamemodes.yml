@@ -20,6 +20,9 @@
       - CP14MindRoleVampire
       components:
       - type: CP14Vampire
+      - type: CP14AutoLearnAction
+        actions:
+        - CP14ActionSpellPlantGrowth
       briefing:
         text: cp14-roles-antag-vampire-briefing
         color: "#630f24"

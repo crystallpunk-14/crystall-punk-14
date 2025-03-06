@@ -7,6 +7,7 @@ using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
+using Content.Shared.Actions;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
@@ -25,6 +26,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedActionsSystem _action = default!;
 
     public override void Initialize()
     {
@@ -43,6 +45,17 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
 
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, CP14CastMagicEffectAttemptEvent>(OnMusicCheck);
+
+        SubscribeLocalEvent<CP14AutoLearnActionComponent, MapInitEvent>(OnAutoLearnAction);
+    }
+
+    private void OnAutoLearnAction(Entity<CP14AutoLearnActionComponent> ent, ref MapInitEvent args)
+    {
+        foreach (var action in ent.Comp.Actions)
+        {
+            _action.AddAction(ent, action);
+        }
+        RemCompDeferred<CP14AutoLearnActionComponent>(ent);
     }
 
     private void OnProjectileHit(Entity<CP14SpellEffectOnHitComponent> ent, ref ThrowDoHitEvent args)
