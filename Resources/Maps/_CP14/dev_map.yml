@@ -3094,7 +3094,7 @@ entities:
     - type: Transform
       pos: 3.5,-0.5
       parent: 2
-- proto: CP14WoodenDoorTavernAlchemy1
+- proto: CP14WoodenDoorAlchemy1
   entities:
   - uid: 287
     components:
