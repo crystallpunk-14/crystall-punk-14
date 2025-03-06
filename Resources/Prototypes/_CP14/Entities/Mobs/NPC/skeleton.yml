@@ -1,4 +1,15 @@
 - type: entity
+  id: CP14MobUndeadSkeletonDemiplane
+  parent: CP14BaseMobSkeleton
+  name: skeleton
+  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+
+- type: entity
   id: CP14MobUndeadSkeletonHalberd
   parent: CP14BaseMobSkeleton
   name: skeleton
@@ -6,16 +17,15 @@
   categories: [ ForkFiltered ]
   suffix: Halebard
   components:
-  - type: NpcFactionMember
-    factions:
-    - CP14Monster
   - type: Loadout
     prototypes: 
     - CP14MobSkeletonHalberd
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionSpellKick
 
 - type: entity
   id: CP14MobUndeadSkeletonSword
-  parent: CP14MobUndeadSkeletonHalberd
+  parent: CP14MobUndeadSkeletonDemiplane
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -27,7 +37,7 @@
 
 - type: entity
   id: CP14MobUndeadSkeletonDodger
-  parent: CP14MobUndeadSkeletonHalberd
+  parent: CP14MobUndeadSkeletonDemiplane
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -36,10 +46,12 @@
   - type: Loadout
     prototypes: 
     - CP14MobSkeletonDodger
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionSpellSprint
 
 - type: entity
   id: CP14MobUndeadSkeletonArcher
-  parent: CP14MobUndeadSkeletonHalberd
+  parent: CP14MobUndeadSkeletonDemiplane
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -51,7 +63,7 @@
 
 - type: entity
   id: CP14MobUndeadSkeletonWizard
-  parent: CP14MobUndeadSkeletonHalberd
+  parent: CP14MobUndeadSkeletonDemiplane
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
@@ -60,6 +72,9 @@
   - type: Loadout
     prototypes: 
     - CP14MobSkeletonWizard
+  - type: CP14MagicEnergyDraw
+    energy: 1
+    delay: 1
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeleton

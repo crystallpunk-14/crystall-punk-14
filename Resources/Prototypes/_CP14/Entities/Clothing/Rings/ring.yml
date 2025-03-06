@@ -43,9 +43,10 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellIceShards
+    - CP14ActionSpellFreeze
+    - CP14ActionSpellFlameCreation
     - CP14ActionSpellSphereOfLight
     - CP14ActionSpellCureWounds
-    - CP14ActionSpellFlameCreation
   - type: Sprite
     layers:
     - state: brass_ring
