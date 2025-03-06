@@ -4,6 +4,7 @@ using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Knowledge.Components;
+using Content.Shared._CP14.Knowledge.Events;
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Logs;
@@ -39,7 +40,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         SubscribeLocalEvent<CP14KnowledgeLearningSourceComponent, GetVerbsEvent<Verb>>(AddKnowledgeLearningVerb);
         SubscribeLocalEvent<CP14KnowledgeStorageComponent, CP14KnowledgeLearnDoAfterEvent>(KnowledgeLearnedEvent);
 
-        SubscribeNetworkEvent<RequestKnowledgeInfoEvent>(OnRequestKnowledgeInfoEvent);
+        SubscribeNetworkEvent<CP14RequestKnowledgeInfoEvent>(OnRequestKnowledgeInfoEvent);
     }
 
     private void KnowledgeLearnedEvent(Entity<CP14KnowledgeStorageComponent> ent, ref CP14KnowledgeLearnDoAfterEvent args)
@@ -254,7 +255,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         return true;
     }
 
-    private void OnRequestKnowledgeInfoEvent(RequestKnowledgeInfoEvent msg, EntitySessionEventArgs args)
+    private void OnRequestKnowledgeInfoEvent(CP14RequestKnowledgeInfoEvent msg, EntitySessionEventArgs args)
     {
         if (!args.SenderSession.AttachedEntity.HasValue || args.SenderSession.AttachedEntity != GetEntity(msg.NetEntity))
             return;
