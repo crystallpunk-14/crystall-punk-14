@@ -62,8 +62,8 @@ public sealed partial class AdminVerbSystem
         {
             Text = Loc.GetString("cp14-admin-verb-text-make-vampire"),
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Structures/Wallmounts/posters.rsi"),
-                "poster5_contraband"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Actions/Spells/vampire.rsi"),
+                "bite"),
             Act = () =>
             {
                 _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireRule);
