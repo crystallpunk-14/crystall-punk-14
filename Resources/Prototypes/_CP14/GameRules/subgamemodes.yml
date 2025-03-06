@@ -7,7 +7,7 @@
   #  objectives:
   #  - EscapeThiefShuttleObjective #SURVIVE
   - type: GameRule
-    minPlayers: 5
+    minPlayers: 0 #Increase in future
   - type: AntagSelection
     definitions:
     - prefRoles: [ CP14Vampire ]
@@ -15,11 +15,12 @@
       playerRatio: 10
       multiAntagSetting: NotExclusive
       lateJoinAdditional: true
+      allowNonHumans: true
       mindRoles:
       - CP14MindRoleVampire
       components:
-      - CP14Vampire
+      - type: CP14Vampire
       briefing:
         text: cp14-roles-antag-vampire-briefing
         color: "#630f24"
-        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg" #TODO change sound
+        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
