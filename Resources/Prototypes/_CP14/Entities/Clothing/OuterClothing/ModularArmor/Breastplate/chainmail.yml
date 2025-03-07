@@ -17,8 +17,8 @@
         Slash: 0.85
         Piercing: 0.96
   - type: ClothingSpeedModifier
-    walkModifier: 0.98
-    sprintModifier: 0.98
+    walkModifier: 0.99
+    sprintModifier: 0.99
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorIronChainmail
   - type: CP14Material
