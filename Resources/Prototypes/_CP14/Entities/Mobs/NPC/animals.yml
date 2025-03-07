@@ -68,7 +68,7 @@
   - type: Butcherable
     spawned:
     - id: CP14FoodMeatRabbit
-      amount: 2
+      amount: 4
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
