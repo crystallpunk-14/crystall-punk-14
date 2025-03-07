@@ -71,7 +71,7 @@
       amount: 2
   - type: Bloodstream
     bloodMaxVolume: 50
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: cp14-petting-success-rabbit
@@ -157,7 +157,7 @@
       prob: 0.3
   - type: Bloodstream
     bloodMaxVolume: 150
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Grammar
     attributes:
       gender: epicene
@@ -309,7 +309,7 @@
   - type: CanEscapeInventory
   - type: Bloodstream
     bloodMaxVolume: 30
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Tag
     tags:
     - CP14Mosquito
@@ -408,8 +408,8 @@
     - id: CP14String # As long as there are no mechanics to shearing wool, the only way to get string.
       amount: 4
   - type: Bloodstream
-    bloodMaxVolume: 200
-    bloodReagent: CP14Blood
+    bloodMaxVolume: 150
+    bloodReagent: CP14BloodAnimal
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-goat

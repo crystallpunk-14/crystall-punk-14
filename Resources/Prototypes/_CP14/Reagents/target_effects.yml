@@ -242,6 +242,10 @@
       effects:
       - !type:SatiateHunger
         factor: 15
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+          shouldHave: false
 
 - type: reagent
   id: CP14BasicEffectSatiateThirst

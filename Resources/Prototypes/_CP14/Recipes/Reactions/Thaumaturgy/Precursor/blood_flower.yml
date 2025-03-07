@@ -62,3 +62,16 @@
   products:
     CP14EssenceChaos: 1
     CP14EssenceLife: 1
+
+#- type: reaction
+#  id: CP14BloodFlowerVampireSplitting
+#  requiredMixerCategories:
+#  - CP14MagicSplitting
+#  reactants:
+#    CP14BloodFlowerSap:
+#      amount: 1
+#    CP14BloodVampire:
+#      amount: 1
+#  products:
+#    CP14EssenceChaos: 1 #TODO: need some advanced essences first
+#    CP14EssenceLife: 1
