@@ -77,7 +77,7 @@
       prob: 0.7
   - type: Bloodstream
     bloodMaxVolume: 200
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Grammar
     attributes:
       gender: epicene

@@ -30,7 +30,7 @@
       Dead:
         Base: dead
   - type: Bloodstream
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Tag
     tags:
       - FootstepSound

@@ -1,3 +1,9 @@
+cp14-reagent-name-blood-animal = Кровь животного
+cp14-reagent-desc-blood-animal = Жизненная энергия живого неразумного существа.
+
+cp14-reagent-name-blood-vampire = Кровь вампира
+cp14-reagent-desc-blood-vampire = Жизненная энергия могущественного кровопийпы.
+
 cp14-reagent-name-blood = Кровь
 cp14-reagent-desc-blood = Жизненная энергия живого теплокровного существа.
 

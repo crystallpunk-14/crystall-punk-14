@@ -6,7 +6,7 @@
   suffix: Wood Work
   components:
   - type: CP14KnowledgeLearningSource
-    knowledges:
+    knowledge:
     - WoodWork
 
 - type: entity
@@ -15,7 +15,7 @@
   suffix: Metall Melting
   components:
   - type: CP14KnowledgeLearningSource
-    knowledges:
+    knowledge:
     - MetallMelting
 
 - type: entity
@@ -24,7 +24,7 @@
   suffix: Metall Forging
   components:
   - type: CP14KnowledgeLearningSource
-    knowledges:
+    knowledge:
     - MetallForging
 
 - type: entity
@@ -33,7 +33,7 @@
   suffix: Glasswork
   components:
   - type: CP14KnowledgeLearningSource
-    knowledges:
+    knowledge:
     - Glasswork
 
 # T1
@@ -44,7 +44,7 @@
   suffix: Clothing Sewing
   components:
   - type: CP14KnowledgeLearningSource
-    knowledges:
+    knowledge:
     - ClothingSewing
 
 - type: entity
@@ -53,7 +53,7 @@
   suffix: Wallpaper Craft
   components:
   - type: CP14KnowledgeLearningSource
-    knowledges:
+    knowledge:
     - WallpaperCraft
 
 # T2
@@ -64,6 +64,5 @@
   suffix: Advanced Clothing Sewing
   components:
   - type: CP14KnowledgeLearningSource
-    knowledges:
+    knowledge:
     - AdvancedClothingSewing
- 

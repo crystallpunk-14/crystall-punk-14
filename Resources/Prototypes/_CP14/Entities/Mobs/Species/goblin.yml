@@ -10,6 +10,10 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: goblin # Goblin fangs state
+      visible: false
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -84,7 +88,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.25
-        density: 100
+        density: 185
         restitution: 0.0
         mask:
         - MobMask

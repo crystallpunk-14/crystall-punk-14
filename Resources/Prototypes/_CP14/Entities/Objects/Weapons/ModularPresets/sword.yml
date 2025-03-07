@@ -45,3 +45,18 @@
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeBoneSword
+
+- type: entity
+  id: CP14ModularSkeletonSword
+  parent: CP14ModularGripWooden
+  name: bone sword
+  description: Monstrous weapons of bone.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeBoneSword

@@ -1,50 +1,5 @@
 # <---> CrystallEdge migration zone
 
-# 2024-08-24
-CP14DungeonEntrance: CP14LaddersDownStoneAutoLink
-CP14DungeonExit: CP14LaddersUpStoneAutoLink
-CP14Nail110: CP14Nail20
-
-# 2024-09-09
-CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
-
-#2024-09-22
-CP14WoodDoorTavern: CP14WoodenDoorWindowedTavernHall
-CP14LockTavern: null
-CP14KeyTavern: CP14KeyTavernHall
-
-#2024-09-23
-CP14WallmountVines: null
-CP14WallmountWeb: null
-CP14WallmountWoodenBoards: null
-CP14BaseWoodDoor: CP14WoodenDoor
-CP14WoodDoorOpened: CP14WoodenDoor
-CP14WoodDoorTavernHall: CP14WoodenDoorWindowedTavernHall
-CP14WoodDoorTavernHallOpened: CP14WoodenDoorWindowedTavernHall
-CP14WoodDoorTavernStaff: CP14WoodenDoorTavernStaff
-CP14WoodDoorTavernStaffOpened: CP14WoodenDoorTavernStaff
-CP14WoodDoorTavernDorms1Opened: CP14WoodenDoorTavernDorms1
-CP14WoodDoorTavernDorms2Opened: CP14WoodenDoorTavernDorms2
-CP14WoodDoorTavernDorms3Opened: CP14WoodenDoorTavernDorms3
-CP14WoodDoorTavernDorms4Opened: CP14WoodenDoorTavernDorms5
-CP14WoodDoorTavernDorms5Opened: CP14WoodenDoorTavernDorms4
-CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
-CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy1
-CP14WoodenDoorOpened: CP14WoodenDoor
-CP14CuttingBoard: null
-
-CP14WoodenDoorTavernHallLocked: CP14WoodenDoorWindowedTavernHall
-CP14WoodenDoorTavernStaffLocked: CP14WoodenDoorTavernStaff
-CP14WoodenDoorTavernDorms1Locked: CP14WoodenDoorTavernDorms1
-CP14WoodenDoorTavernDorms2Locked: CP14WoodenDoorTavernDorms2
-CP14WoodenDoorTavernDorms3Locked: CP14WoodenDoorTavernDorms3
-CP14WoodenDoorTavernDorms4Locked: CP14WoodenDoorTavernDorms4
-CP14WoodenDoorTavernDorms5Locked: CP14WoodenDoorTavernDorms5
-CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy1
-
-#2024-09-24
-CP14WallpaperPink30: CP14WallpaperPurple
-
 #2024-09-25
 CP14IronGrilleStraight: CP14FenceIronGrilleStraight
 CP14IronGrilleCorner: null
@@ -85,12 +40,12 @@ CP14VialSmallChromiumSlime: null
 CP14VialSmallLumiMushroom: null
 
 #2024-10-20
-CP14SpawnPointHouseKeeper: CP14SpawnPointCommandant
+CP14SpawnPointHouseKeeper: null
 CP14WoodenDoorTavernDorms: null
 CP14WallWhitebrick: CP14WallMarbleBrick
 
 #2024-10-24
-CP14SpawnPointQuartermaster: CP14SpawnPointCommandant
+CP14SpawnPointQuartermaster: null
 
 #2024-10-27
 CP14GatherableFlowersYellow: CP14GatherableDayflin
@@ -109,18 +64,18 @@ CP14BlueVial: CP14BlueBottle
 CP14GreenVial: CP14GreenBottle
 
 #2024-13-11
-CP14IronDoorBankSafe1: CP14IronDoorBankSafe
-CP14IronDoorBankSafe2: CP14IronDoorBankSafe
-CP14IronDoorBankSafe3: CP14IronDoorBankSafe
-CP14IronDoorBankSafe4: CP14IronDoorBankSafe
-CP14IronDoorBankSafe5: CP14IronDoorBankSafe
-CP14IronDoorBankSafe6: CP14IronDoorBankSafe
-CP14KeyBankSafe1: CP14KeyBankSafe
-CP14KeyBankSafe2: CP14KeyBankSafe
-CP14KeyBankSafe3: CP14KeyBankSafe
-CP14KeyBankSafe4: CP14KeyBankSafe
-CP14KeyBankSafe5: CP14KeyBankSafe
-CP14KeyBankSafe6: CP14KeyBankSafe
+CP14IronDoorBankSafe1: null
+CP14IronDoorBankSafe2: null
+CP14IronDoorBankSafe3: null
+CP14IronDoorBankSafe4: null
+CP14IronDoorBankSafe5: null
+CP14IronDoorBankSafe6: null
+CP14KeyBankSafe1: null
+CP14KeyBankSafe2: null
+CP14KeyBankSafe3: null
+CP14KeyBankSafe4: null
+CP14KeyBankSafe5: null
+CP14KeyBankSafe6: null
 
 #2024-19-11
 CP14ClothingRingManaGift: CP14ManaOperationGlove
@@ -146,8 +101,8 @@ CP14BaseShovel: CP14ModularIronShovel
 CP14BasePickaxe: CP14ModularIronPickaxe
 
 #2024-02-12
-CP14WoodenDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
-CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorTavernAlchemyMirrored1
+CP14WoodenDoorTavernAlchemy: CP14WoodenDoorAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorAlchemyMirrored1
 CP14IronDoorBlacksmith: CP14IronDoorBlacksmith1
 CP14IronDoorMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
 CP14IronDoorWindowedBlacksmith: CP14IronDoorBlacksmith1
@@ -251,7 +206,7 @@ CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 
 #2025-02-09
 C14IronCabinet: CP14IronCabinet
-C14IronCabinetCargo: CP14IronCabinetCargo
+C14IronCabinetCargo: CP14IronCabinet
 
 #2025-16-02
 CP14Arrow: CP14ModularIronArrow
@@ -304,6 +259,35 @@ CP14VialTinyLumiMushroom: CP14VialSmall
 CP14VialSmallHealthPotion: CP14VialSmall
 CP14VialSmallManaPotion: CP14VialSmall
 CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting 
+
+#2025-04-03
+CP14TravelingStoreshipAnchor: null
+CP14TravelingShop: CP14TradingBoardBase
+CP14IronCabinetCargo: CP14IronCabinet
+CP14BrassChestFilledDemiplanes: null
+CP14BrassChestFilledWood: null
+
+CP14WoodenDoorTavernAlchemy1: CP14WoodenDoorAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored1: CP14WoodenDoorAlchemyMirrored1
+CP14WoodenDoorTavernAlchemy2: CP14WoodenDoorAlchemy2
+CP14WoodenDoorTavernAlchemyMirrored2: CP14WoodenDoorAlchemyMirrored2
+CP14WoodenDoorTavernAlchemy3: CP14WoodenDoorAlchemy3
+CP14WoodenDoorTavernAlchemyMirrored3: CP14WoodenDoorAlchemyMirrored3
+CP14SafeVault: null
+CP14WoodenClosetCommandantFilled: null
+CP14Safe: null
+CP14ClosetGlassShowcase: null
+CP14SafeVaultFilled25: null
+CP14IronDoorBankStaff: null
+CP14IronDoorMirroredBankStaff: null
+CP14IronDoorMirroredBankVault: null
+CP14IronDoorBankSafe: null
+CP14IronDoorBankCommandantRoom: null
+CP14IronDoorWindowedBankEntrance: null
+CP14IronDoorWindowedMirroredBankEntrance: null
+CP14IronDoorBankVault: null
+CP14BankStorageMarker: null
+CP14SpawnPointCommandant: null
 
 # <---> CrystallEdge migration zone end
 

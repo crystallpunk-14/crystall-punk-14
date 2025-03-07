@@ -7,6 +7,15 @@
     cP14Allowed: true
 
 - type: entity
+  parent: CP14BaseGameRule
+  id: CP14SubGamemodesRule
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CP14Vampire
+      prob: 0.5
+
+- type: entity
   id: CP14RoundObjectivesRule
   parent: CP14BaseGameRule
   components:
@@ -14,8 +23,6 @@
     departmentObjectives:
       CP14Command:
       - CP14TownSendObjectiveGroup
-      CP14Bank:
-      - CP14BankEarningObjectiveGroup
   - type: CP14PersonalObjectivesRule
     roleObjectives:
       CP14Guildmaster:
@@ -30,6 +37,8 @@
       - CP14PersonalCurrencyCollectObjectiveGroup
       CP14Innkeeper:
       - CP14PersonalCurrencyCollectObjectiveGroup
+      CP14Merchant:
+      - CP14PersonalObjectiveRichestMerchantGroup
 
 # event schedulers
 

@@ -78,6 +78,7 @@ entities:
       parent: 1
     - type: BecomesStation
       id: Dev
+    - type: Roof
     - type: MapGrid
       chunks:
         0,0:
@@ -2489,7 +2490,7 @@ entities:
     - type: Transform
       pos: 5.5,-9.5
       parent: 2
-- proto: CP14TravelingShop
+- proto: CP14TradingBoardBase
   entities:
   - uid: 418
     components:
@@ -2503,15 +2504,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,11.5
       parent: 2
-- proto: CP14TravelingStoreshipAnchor
-  entities:
-  - uid: 467
-    components:
-    - type: Transform
-      anchored: False
-      rot: 1.5707963267948966 rad
-      pos: 1.5,14.5
-      parent: 1
 - proto: CP14VialMedium
   entities:
   - uid: 45
@@ -3103,7 +3095,7 @@ entities:
     - type: Transform
       pos: 3.5,-0.5
       parent: 2
-- proto: CP14WoodenDoorTavernAlchemy1
+- proto: CP14WoodenDoorAlchemy1
   entities:
   - uid: 287
     components:
