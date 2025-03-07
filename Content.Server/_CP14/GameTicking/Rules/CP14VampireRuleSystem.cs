@@ -8,7 +8,9 @@ using Content.Server.Body.Systems;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
+using Content.Shared._CP14.Vampire;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
@@ -29,6 +31,29 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
         base.Initialize();
 
         SubscribeLocalEvent<CP14VampireComponent, MapInitEvent>(OnVampireInit);
+        SubscribeLocalEvent<CP14VampireComponent, CP14HungerChangedEvent>(OnVampireHungerChanged);
+    }
+
+    private void OnVampireHungerChanged(Entity<CP14VampireComponent> ent, ref CP14HungerChangedEvent args)
+    {
+        if (args.NewThreshold == HungerThreshold.Starving || args.NewThreshold == HungerThreshold.Dead)
+        {
+            RevealVampire(ent);
+        }
+        else
+        {
+            HideVampire(ent);
+        }
+    }
+
+    private void RevealVampire(Entity<CP14VampireComponent> ent)
+    {
+        EnsureComp<CP14VampireVisualsComponent>(ent);
+    }
+
+    private void HideVampire(Entity<CP14VampireComponent> ent)
+    {
+        RemCompDeferred<CP14VampireVisualsComponent>(ent);
     }
 
     public override void Update(float frameTime)

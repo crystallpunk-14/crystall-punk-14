@@ -34,6 +34,13 @@
           Starving: CP14VampireStarving
           Dead: CP14VampireStarving
         starvingSlowdownModifier: 1.25 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -1
       briefing:
         text: cp14-roles-antag-vampire-briefing
         color: "#630f24"

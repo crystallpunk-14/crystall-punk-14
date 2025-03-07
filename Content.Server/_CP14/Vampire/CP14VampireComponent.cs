@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Vampire;
 
-[RegisterComponent, AutoGenerateComponentState]
+[RegisterComponent]
 [Access(typeof(CP14VampireRuleSystem))]
 public sealed partial class CP14VampireComponent : Component
 {
