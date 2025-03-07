@@ -38,6 +38,10 @@
             Slash: -1
       - !type:SatiateThirst
         factor: 3
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+          shouldHave: false
       - !type:SatiateHunger
         factor: 3
       - !type:CP14PlantResourceModify

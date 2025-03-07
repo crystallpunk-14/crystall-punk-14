@@ -1,3 +1,9 @@
+cp14-reagent-name-blood-animal = Animal blood
+cp14-reagent-desc-blood-animal = The life energy of a living unintelligent being.
+
+cp14-reagent-name-blood-vampire = Vampire blood
+cp14-reagent-desc-blood-vampire = The life energy of a powerful blood-vampire.
+
 cp14-reagent-name-blood = Blood
 cp14-reagent-desc-blood = The life energy of a living warm-blooded creatures.
 

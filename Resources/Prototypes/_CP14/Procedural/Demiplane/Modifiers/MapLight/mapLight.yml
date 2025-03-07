@@ -7,6 +7,7 @@
   generationWeight: 2
   categories:
     MapLight: 1
+  name: cp14-modifier-night
   components:
   - type: MapLight
     ambientLightColor: "#000000"
@@ -18,6 +19,7 @@
     - 3
   categories:
     MapLight: 1
+  name: cp14-modifier-night
   components:
   - type: MapLight
     ambientLightColor: "#0f0104"
@@ -28,6 +30,7 @@
     - 1
   categories:
     MapLight: 1
+  name: cp14-modifier-night
   components:
   - type: MapLight
     ambientLightColor: "#09010f"
@@ -38,6 +41,7 @@
     - 1
   categories:
     MapLight: 1
+  name: cp14-modifier-night
   components:
   - type: MapLight
     ambientLightColor: "#000502"
@@ -50,6 +54,7 @@
     - 3
   categories:
     MapLight: 1
+  name: cp14-modifier-night
   components:
   - type: MapLight
     ambientLightColor: "#010714"

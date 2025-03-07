@@ -1,3 +1,4 @@
+using Content.Server._CP14.GameTicking.Rules.Components;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
@@ -36,6 +37,11 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
 
+    //CP14
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string CP14VampireRule = "CP14Vampire";
+    //CP14 end
+
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
     {
@@ -51,6 +57,21 @@ public sealed partial class AdminVerbSystem
             return;
 
         var targetPlayer = targetActor.PlayerSession;
+
+        Verb vampire = new()
+        {
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Actions/Spells/vampire.rsi"),
+                "bite"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
+        };
+        args.Verbs.Add(vampire);
 
         /* CP14 disable default antags
         Verb traitor = new()
