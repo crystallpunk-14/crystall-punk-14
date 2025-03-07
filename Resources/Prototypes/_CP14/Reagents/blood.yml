@@ -16,7 +16,10 @@
     Food:
       effects:
       - !type:SatiateHunger
-        defaultNutritionFactor: 1
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
         conditions:
         - !type:OrganType
           type: CP14Vampire
@@ -49,7 +52,12 @@
     Food:
       effects:
       - !type:SatiateHunger
-        defaultNutritionFactor: 0.3
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
+        factor: 1
         conditions:
         - !type:OrganType
           type: CP14Vampire
@@ -87,7 +95,10 @@
     Food:
       effects:
       - !type:SatiateHunger
-        defaultNutritionFactor: 1
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
         conditions:
         - !type:OrganType
           type: CP14Vampire
@@ -134,7 +145,10 @@
     Food:
       effects:
       - !type:SatiateHunger
-        defaultNutritionFactor: 1
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
         conditions:
         - !type:OrganType
           type: CP14Vampire
@@ -173,7 +187,10 @@
     Food:
       effects:
       - !type:SatiateHunger
-        defaultNutritionFactor: 1
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
         conditions:
         - !type:OrganType
           type: CP14Vampire

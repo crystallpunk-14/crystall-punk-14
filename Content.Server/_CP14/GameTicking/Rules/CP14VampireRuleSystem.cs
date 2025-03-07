@@ -68,21 +68,5 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
                 metabolizer.MetabolizerTypes.Add(ent.Comp.MetabolizerType);
             }
         }
-
-        if (TryComp<HungerComponent>(ent, out var hunger))
-        {
-            //Replace default alerts with vampire-specific ones
-            foreach (var alert in hunger.HungerThresholdAlerts)
-            {
-                if (alert.Value == "Starving")
-                {
-                    hunger.HungerThresholdAlerts[alert.Key] = "CP14VampireStarving";
-                }
-                else if (alert.Value == "Peckish")
-                {
-                    hunger.HungerThresholdAlerts[alert.Key] = "CP14VampirePeckish";
-                }
-            }
-        }
     }
 }

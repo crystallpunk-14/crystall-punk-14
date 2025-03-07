@@ -23,6 +23,17 @@
       - type: CP14AutoLearnAction
         actions:
         - CP14ActionVampireBite
+      - type: Hunger
+        baseDecayRate: 0.03
+        starvationDamage:
+          types:
+            Cold: 0.25
+            Bloodloss: 0.25
+        hungerThresholdAlerts:
+          Peckish: CP14VampirePeckish
+          Starving: CP14VampireStarving
+          Dead: CP14VampireStarving
+        starvingSlowdownModifier: 1.25 #Speed Up when hunger!
       briefing:
         text: cp14-roles-antag-vampire-briefing
         color: "#630f24"
