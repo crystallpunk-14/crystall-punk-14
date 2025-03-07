@@ -81,7 +81,7 @@
 
 - type: entity
   id: CP14ArmorIronСhainmailPresets
-  parent: CP14ArmorIronСhainmail
+  parent: CP14ArmorIronChainmail
   name: full iron chainmail
   description: Full iron ringed armour, lightweight and has decent protection.
   components:
@@ -99,7 +99,7 @@
 
 - type: entity
   id: CP14ArmorMithrilСhainmailPresets
-  parent: CP14ArmorMithrilСhainmail
+  parent: CP14ArmorMithrilChainmail
   name: full mithril chainmail
   description: A full mithril armour that may have been slowly and painstakingly assembled by dwarven smiths. A most valuable piece of work.
   components:
