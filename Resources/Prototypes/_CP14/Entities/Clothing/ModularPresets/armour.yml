@@ -88,9 +88,9 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Сhainmail/сhainmail.rsi
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
       state: icon
-    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Сhainmail/сhainmail.rsi
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
@@ -107,10 +107,10 @@
     layers:
     - state: icon
       color: "#45d2a4"
-    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Сhainmail/chainmail.rsi
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
       state: icon
       color: "#45d2a4"
-    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Сhainmail/chainmail.rsi
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
       state: icon
       color: "#45d2a4"
   - type: CP14ModularCraftAutoAssemble
