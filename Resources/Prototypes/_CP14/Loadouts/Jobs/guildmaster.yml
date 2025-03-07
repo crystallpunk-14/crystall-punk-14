@@ -9,7 +9,7 @@
 - type: loadout
   id: CP14ClothingHeadGildmaster
   equipment:
-    cloak: CP14ClothingHeadGildmaster
+    head: CP14ClothingHeadGildmaster
      
 # Cloak
 

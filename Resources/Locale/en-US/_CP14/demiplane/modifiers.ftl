@@ -22,4 +22,5 @@ cp14-modifier-sheeps = sheeps
 cp14-modifier-chasm = bottomless chasms
 cp14-modifier-air-lily = air lilies
 cp14-modifier-time-limit-10 = temporary disintegration (10 minutes)
-cp14-modifier-shadow-kudzu = spreading darkness
+cp14-modifier-shadow-kudzu = spreading astral haze
+cp14-modifier-night = darkness

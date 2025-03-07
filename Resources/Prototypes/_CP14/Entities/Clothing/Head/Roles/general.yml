@@ -158,3 +158,14 @@
     sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadJestersCap
+  name: jester's cap
+  description: You are the fun. You are noise. You are the jester.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/jesters_cap.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/jesters_cap.rsi

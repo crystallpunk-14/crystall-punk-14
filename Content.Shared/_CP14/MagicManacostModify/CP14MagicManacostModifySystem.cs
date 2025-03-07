@@ -47,7 +47,8 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
             msg.PushNewline();
 
             var plus = (float)comp.GlobalModifier > 1 ? "+" : "";
-            msg.AddMarkupOrThrow($"{Loc.GetString("cp14-clothing-magic-global")}: {plus}{((float)comp.GlobalModifier - 1)*100}%");
+            msg.AddMarkupOrThrow(
+                $"{Loc.GetString("cp14-clothing-magic-global")}: {plus}{MathF.Round((float)(comp.GlobalModifier - 1) * 100, MidpointRounding.AwayFromZero)}%");
         }
 
         foreach (var modifier in comp.Modifiers)

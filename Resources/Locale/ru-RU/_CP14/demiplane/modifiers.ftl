@@ -22,4 +22,5 @@ cp14-modifier-invisible-whistler = невидимых свистунов
 cp14-modifier-chasm = бездонных пропастей
 cp14-modifier-air-lily = воздушных лилий
 cp14-modifier-time-limit-10 = временного распада (10 минут)
-cp14-modifier-shadow-kudzu = распространяющейся тьмы
+cp14-modifier-shadow-kudzu = распространяющгося астрального мрака
+cp14-modifier-night = темноты
