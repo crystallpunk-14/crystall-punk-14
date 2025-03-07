@@ -55,8 +55,6 @@
     neck: CP14BowCombat
     belt1: CP14ClothingBeltQuiverCopperArrow
     pocket1: CP14SpellScrollSphereOfLight
-  #inhand:
-  #  - CP14SpellScrollSphereOfLight
 
 - type: startingGear
   id: CP14MobSkeletonWizard

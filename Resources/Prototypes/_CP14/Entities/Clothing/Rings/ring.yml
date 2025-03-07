@@ -37,16 +37,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
-  - type: CP14SpellStorageRequireAttune
-  - type: CP14MagicAttuningItem
-  - type: CP14SpellStorageAccessWearing
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellIceShards
-    - CP14ActionSpellFreeze
-    - CP14ActionSpellFlameCreation
-    - CP14ActionSpellSphereOfLight
-    - CP14ActionSpellCureWounds
   - type: Sprite
     layers:
     - state: brass_ring

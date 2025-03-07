@@ -20,8 +20,9 @@
   - type: Loadout
     prototypes: 
     - CP14MobSkeletonHalberd
-  - type: NPCUseActionOnTarget
-    actionId: CP14ActionSpellKick
+  - type: CP14AutoLearnAction
+    actions:
+    - CP14ActionSpellKick
 
 - type: entity
   id: CP14MobUndeadSkeletonSword
@@ -46,8 +47,9 @@
   - type: Loadout
     prototypes: 
     - CP14MobSkeletonDodger
-  - type: NPCUseActionOnTarget
-    actionId: CP14ActionSpellSprint
+  - type: CP14AutoLearnAction
+    actions:
+    - CP14ActionSpellSprint
 
 - type: entity
   id: CP14MobUndeadSkeletonArcher
@@ -75,6 +77,13 @@
   - type: CP14MagicEnergyDraw
     energy: 1
     delay: 1
+  - type: CP14AutoLearnAction
+    actions:
+    - CP14ActionSpellIceShards
+    - CP14ActionSpellFreeze
+    - CP14ActionSpellFlameCreation
+    - CP14ActionSpellSphereOfLight
+    - CP14ActionSpellCureWounds
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeleton
