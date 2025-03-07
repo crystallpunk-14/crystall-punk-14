@@ -201,6 +201,17 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtJestersAttire
+  name: jester's attire
+  description: It's rags, but it's colorful.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonYellowCollar
   name: cotton yellow collar shirt
   components:
