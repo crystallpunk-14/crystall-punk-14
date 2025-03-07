@@ -5,7 +5,7 @@
   - type: CP14VampireRule
   #- type: AntagObjectives
   #  objectives:
-  #  - EscapeThiefShuttleObjective #SURVIVE
+  #  - TODO: SURVIVE
   - type: GameRule
     minPlayers: 0 #Increase in future
   - type: AntagSelection
@@ -23,6 +23,7 @@
       - type: CP14AutoLearnAction
         actions:
         - CP14ActionVampireBite
+        - CP14ActionSpellVampireHypnosis
       - type: Hunger
         baseDecayRate: 0.03
         starvationDamage:
