@@ -98,3 +98,53 @@
   - !type:KnowledgeRequired
     knowledge: MetallForging
   result: CP14ArmorMithrilInfantryCuirass
+
+# Chainmail
+
+- type: CP14Recipe
+  id: CP14ArmorIronChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 8
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ArmorIronChainmail
+
+- type: CP14Recipe
+  id: CP14ArmorGoldChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 8
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ArmorGoldChainmail
+
+- type: CP14Recipe
+  id: CP14ArmorCopperChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 8
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ArmorCopperChainmail
+
+- type: CP14Recipe
+  id: CP14ArmorMithrilChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 8
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 4
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ArmorMithrilChainmail

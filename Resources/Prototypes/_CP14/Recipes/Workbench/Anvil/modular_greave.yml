@@ -48,3 +48,53 @@
   - !type:KnowledgeRequired
     knowledge: MetallForging
   result: CP14ModularGreaveMithrilPlate
+
+# Chainmail
+
+- type: CP14Recipe
+  id: CP14ModularGreaveIronChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveIronChainmail
+
+- type: CP14Recipe
+  id: CP14ModularGreaveGoldChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveGoldChainmail
+
+- type: CP14Recipe
+  id: CP14ModularGreaveCopperChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveCopperChainmail
+
+- type: CP14Recipe
+  id: CP14ModularGreaveMithrilChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularGreaveMithrilChainmail

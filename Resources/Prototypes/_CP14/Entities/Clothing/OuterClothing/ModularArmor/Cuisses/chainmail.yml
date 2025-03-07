@@ -1,0 +1,70 @@
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesIronChainmail
+  name: iron chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesIronChainmail
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesGoldChainmail
+  name: golden chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesGoldChainmail
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesCopperChainmail
+  name: copper chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesCopperChainmail
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesMithrilChainmail
+  name: mithril chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesMithrilChainmail
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

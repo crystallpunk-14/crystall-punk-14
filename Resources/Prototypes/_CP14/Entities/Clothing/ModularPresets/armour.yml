@@ -78,3 +78,42 @@
     details:
     - CuissesMithrilPlate
     - GreaveMithrilPlate
+
+- type: entity
+  id: CP14ArmorIronСhainmailPresets
+  parent: CP14ArmorIronСhainmail
+  name: full iron chainmail
+  description: Full iron ringed armour, lightweight and has decent protection.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Сhainmail/сhainmail.rsi
+      state: icon
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Сhainmail/сhainmail.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesIronСhainmail
+    - GreaveIronСhainmail
+
+- type: entity
+  id: CP14ArmorMithrilСhainmailPresets
+  parent: CP14ArmorMithrilСhainmail
+  name: full mithril chainmail
+  description: A full mithril armour that may have been slowly and painstakingly assembled by dwarven smiths. A most valuable piece of work.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#45d2a4"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Сhainmail/chainmail.rsi
+      state: icon
+      color: "#45d2a4"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Сhainmail/chainmail.rsi
+      state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesMithrilСhainmail
+    - GreaveMithrilСhainmail
