@@ -62,6 +62,7 @@
     - state: flag_sylphoria
   - type: CP14TradingPortal
     faction: Sylphoria
+    specialSellPositionCount: 3
 
 - type: entity
   parent: CP14TradingPortalBase
