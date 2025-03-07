@@ -64,7 +64,6 @@
     pants: CP14ClothingPantsBrown
     shoes: CP14LongLeatherBoots
     cloak: CP14ClothingCloakWhite
-    ring2: CP14ClothingRingSkeletonWizard
   inhand:
     - CP14ManaOperationGlove
 

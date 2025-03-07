@@ -3,7 +3,7 @@
   parent: CP14BaseMobSkeleton
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
-  categories: [ HideSpawnMenu ]
+  abstract: true
   components:
   - type: NpcFactionMember
     factions:
