@@ -33,7 +33,7 @@
           Peckish: CP14VampirePeckish
           Starving: CP14VampireStarving
           Dead: CP14VampireStarving
-        starvingSlowdownModifier: 1.25 #Speed Up when hunger!
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
       - type: PassiveDamage
         allowedStates:
         - Alive

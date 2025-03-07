@@ -116,12 +116,12 @@
         conditions:
         - !type:OrganType
           type: CP14Vampire
-        multiplier: 1.5
+        multiplier: 1
       - !type:AdjustTemperature
         conditions:
         - !type:OrganType
           type: CP14Vampire
-        amount: 2000
+        amount: 1000
       - !type:Ignite
         conditions:
         - !type:OrganType
@@ -208,6 +208,6 @@
         conditions:
         - !type:OrganType
           type: CP14Vampire
-        walkSpeedModifier: 1.35
-        sprintSpeedModifier: 1.35
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
         statusLifetime: 1.5
