@@ -94,8 +94,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesIronСhainmail
-    - GreaveIronСhainmail
+    - CuissesIronChainmail
+    - GreaveIronChainmail
 
 - type: entity
   id: CP14ArmorMithrilСhainmailPresets
@@ -115,5 +115,5 @@
       color: "#45d2a4"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesMithrilСhainmail
-    - GreaveMithrilСhainmail
+    - CuissesMithrilChainmail
+    - GreaveMithrilChainmail
