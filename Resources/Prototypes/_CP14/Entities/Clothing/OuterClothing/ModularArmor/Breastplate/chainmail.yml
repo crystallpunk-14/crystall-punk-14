@@ -6,10 +6,8 @@
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
-    state: icon
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
-    state: icon
   - type: Armor
     modifiers:
       coefficients:
@@ -99,9 +97,10 @@
       color: "#45d2a4"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
-    layers:
-    - state: equipped-OUTERCLOTHING
-      color: "#45d2a4"
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#45d2a4"
   - type: Armor
     modifiers:
       coefficients:
