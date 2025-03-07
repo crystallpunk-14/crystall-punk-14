@@ -35,6 +35,7 @@
     head: CP14ClothingHeadMetalHeadband
   inhand:
     - CP14TorchIgnited
+    - CP14BaseShield
 
 - type: startingGear
   id: CP14MobSkeletonDodger
@@ -54,8 +55,6 @@
     neck: CP14BowCombat
     belt1: CP14ClothingBeltQuiverCopperArrow
     pocket1: CP14SpellScrollSphereOfLight
-  #inhand:
-  #  - CP14SpellScrollSphereOfLight
 
 - type: startingGear
   id: CP14MobSkeletonWizard
@@ -65,7 +64,8 @@
     pants: CP14ClothingPantsBrown
     shoes: CP14LongLeatherBoots
     cloak: CP14ClothingCloakWhite
-    ring2: CP14ClothingRingSkeletonWizard
+  inhand:
+    - CP14ManaOperationGlove
 
 - type: startingGear
   id: CP14MobSkeletonCloset
