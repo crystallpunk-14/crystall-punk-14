@@ -1,9 +1,7 @@
 ﻿using Content.Shared._CP14.DayCycle.Components;
 using Content.Shared._CP14.DayCycle.Prototypes;
-using Content.Shared.Maps;
 using Content.Shared.Storage.Components;
 using Content.Shared.Weather;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
@@ -14,7 +12,6 @@ public abstract class CP14SharedDayCycleSystem : EntitySystem
     private static readonly ProtoId<CP14DayCyclePeriodPrototype> DayPeriod = "Day";
 
     [Dependency] private readonly SharedMapSystem _maps = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
 
     private EntityQuery<MapGridComponent> _mapGridQuery;
