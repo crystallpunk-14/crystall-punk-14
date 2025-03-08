@@ -3450,13 +3450,6 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-- proto: CP14ActionSpellMagicSplitting
-  entities:
-  - uid: 17519
-    components:
-    - type: Transform
-      pos: 78.744606,34.99408
-      parent: 2
 - proto: CP14AlchemyFurnace
   entities:
   - uid: 445
