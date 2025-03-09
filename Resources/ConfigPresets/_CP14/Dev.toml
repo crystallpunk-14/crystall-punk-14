@@ -61,3 +61,4 @@ enable_during_round = true
 
 [cp14]
 discord_auth_enabled = true
+closet_beta_test = true

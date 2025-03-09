@@ -38,7 +38,7 @@ public sealed partial class CP14RoundEndSystem
         //Disable any round timers
         if (nowMoscow.Hour is < 18 or > 20)
         {
-            if (_ticker.RunLevel != GameRunLevel.InRound)
+            if (_ticker.RunLevel == GameRunLevel.InRound)
                 _roundEnd.EndRound();
 
             if (!_ticker.Paused)
