@@ -1,0 +1,151 @@
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorIronInfantryCuirass
+  name: iron infantry cuirass
+  description: The light infantry cuirass, unlike the original, also protects from the back.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.84
+        Slash: 0.94
+        Piercing: 0.84
+        Heat: 0.88
+  - type: ClothingSpeedModifier
+    walkModifier: 0.93
+    sprintModifier: 0.93
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorIronInfantryCuirass
+  - type: CP14Material
+    materials:
+      CP14Iron: 60
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorGoldInfantryCuirass
+  name: golden infantry cuirass
+  description: The light infantry cuirass, unlike the original, also protects from the back.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#ffaf47"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffaf47"
+      right:
+      - state: inhand-right
+        color: "#ffaf47"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.91
+        Slash: 0.98
+        Piercing: 0.88
+        Caustic: 0.86
+  - type: ClothingSpeedModifier
+    walkModifier: 0.88
+    sprintModifier: 0.88
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorGoldInfantryCuirass
+  - type: CP14Material
+    materials:
+      CP14Gold: 60
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorCopperInfantryCuirass
+  name: copper infantry cuirass
+  description: The light infantry cuirass, unlike the original, also protects from the back.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#bd712f"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#bd712f"
+      right:
+      - state: inhand-right
+        color: "#bd712f"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.98
+        Piercing: 0.90
+        Heat: 0.92
+  - type: ClothingSpeedModifier
+    walkModifier: 0.96
+    sprintModifier: 0.96
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorCopperInfantryCuirass
+  - type: CP14Material
+    materials:
+      CP14Copper: 60
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorMithrilInfantryCuirass
+  name: mithril infantry cuirass
+  description: The light infantry cuirass, unlike the original, also protects from the back.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#45d2a4"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#45d2a4"
+      right:
+      - state: inhand-right
+        color: "#45d2a4"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.89
+        Piercing: 0.80
+        Heat: 0.81
+  - type: ClothingSpeedModifier
+    walkModifier: 0.96
+    sprintModifier: 0.96
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorMithrilInfantryCuirass
+  - type: CP14Material
+    materials:
+      CP14Mithril: 60

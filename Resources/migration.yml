@@ -150,10 +150,10 @@ CP14TwoHandedSwordScythe: null
 
 #2025-17-01
 CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
-CP14ClothingCloakCuirass: CP14ClothingOuterClothingCuirass
-CP14ClothingCloakInfantryCuirass: CP14ClothingOuterClothingInfantryCuirass
-CP14ClothingCloakCuirassLoincloth: CP14ClothingOuterClothingCuirassLoincloth
-CP14ClothingCloakCuirassLeg: CP14ClothingOuterClothingCuirassLeg
+CP14ClothingCloakCuirass: CP14ArmorIronCuirass
+CP14ClothingCloakInfantryCuirass: CP14ArmorIronCuirass
+CP14ClothingCloakCuirassLoincloth: CP14ArmorIronCuirass
+CP14ClothingCloakCuirassLeg: CP14ArmorIronCuirass
 
 #2025-21-01
 CP14PlateWooden: CP14Plate
@@ -288,6 +288,13 @@ CP14IronDoorWindowedMirroredBankEntrance: null
 CP14IronDoorBankVault: null
 CP14BankStorageMarker: null
 CP14SpawnPointCommandant: null
+
+#2025-07-03
+CP14ClothingOuterClothingCuirass: CP14ArmorIronCuirass
+CP14ClothingOuterClothingInfantryCuirass: CP14ArmorIronCuirass
+CP14ClothingOuterClothingCuirassLoincloth: CP14ArmorIronCuirass
+CP14ClothingOuterClothingCuirassLeg: CP14ArmorIronCuirass
+
 
 # <---> CrystallEdge migration zone end
 
