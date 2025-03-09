@@ -1,0 +1,26 @@
+- type: Tag
+  id: CP14UniqueSpawnTradepost
+
+- type: uniqueSpawn
+  id: CP14TradingPortalSylphoria
+  entity: CP14TradingPortalSylphoria
+  tags:
+  - CP14UniqueSpawnTradepost
+
+- type: uniqueSpawn
+  id: CP14TradingPortalHelmirWeapon
+  entity: CP14TradingPortalHelmirWeapon
+  tags:
+  - CP14UniqueSpawnTradepost
+
+- type: uniqueSpawn
+  id: CP14TradingPortalBradFamily
+  entity: CP14TradingPortalBradFamily
+  tags:
+  - CP14UniqueSpawnTradepost
+
+- type: uniqueSpawn
+  id: CP14TradingPortalSpiceStream
+  entity: CP14TradingPortalSpiceStream
+  tags:
+  - CP14UniqueSpawnTradepost

@@ -5,9 +5,25 @@
   categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: CP14UniqueLootSpawner
+    tag: CP14UniqueSpawnDemiplanetLoot
   - type: Sprite
     layers:
     - sprite: Markers/cross.rsi
       state: green
     - sprite: _CP14/Clothing/Shoes/flightboots.rsi
+      state: icon
+
+- type: entity
+  name: random tradepost spawner
+  id: CP14SpawnUniqueTradepost
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: CP14UniqueLootSpawner
+    tag: CP14UniqueSpawnTradepost
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Structures/Specific/Economy/trade_portal.rsi
       state: icon
