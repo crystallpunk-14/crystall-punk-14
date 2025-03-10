@@ -6,20 +6,18 @@
   description: The tip on an arrow shaft, a well-finished little piece of metal.
   components:
   - type: Item
+    size: Tiny
     storedRotation: 0
 
 - type: entity
   parent: CP14ModularBladeTipBase
   id: CP14ModularTipIronArrow
-  name: iron tip
+  name: iron arrow tip
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
+    - state: tip
   - type: CP14ModularCraftPart
     possibleParts:
     - TipIronArrow
@@ -30,16 +28,13 @@
 - type: entity
   parent: CP14ModularBladeTipBase
   id: CP14ModularTipGoldArrow
-  name: golden tip
+  name: golden arrow tip
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
+    - state: tip
       color: "#ffaf47"
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
   - type: CP14ModularCraftPart
     possibleParts:
     - TipGoldArrow
@@ -50,16 +45,13 @@
 - type: entity
   parent: CP14ModularBladeTipBase
   id: CP14ModularTipCopperArrow
-  name: copper tip
+  name: copper arrow tip
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
+    - state: tip
       color: "#bd712f"
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
   - type: CP14ModularCraftPart
     possibleParts:
     - TipCopperArrow
@@ -70,16 +62,13 @@
 - type: entity
   parent: CP14ModularBladeTipBase
   id: CP14ModularTipMithrilArrow
-  name: mithril tip
+  name: mithril arrow tip
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
     layers:
-    - state: icon
+    - state: tip
       color: "#45d2a4"
-    - state: solution1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
   - type: CP14ModularCraftPart
     possibleParts:
     - TipMithrilArrow

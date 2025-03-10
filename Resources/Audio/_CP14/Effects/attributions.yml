@@ -62,3 +62,13 @@
   license: "CC-BY-4.0"
   copyright: 'by SpaceLife on Freesound.org'
   source: "https://freesound.org/people/SpaceLife/sounds/545938/"
+
+- files: ["essence_consume.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by DustyWind on Freesound.org'
+  source: "https://freesound.org/people/DustyWind/sounds/715784/"
+
+- files: ["vampire_bite.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by magnuswaker on Freesound.org'
+  source: "https://freesound.org/people/magnuswaker/sounds/563491/"

@@ -9,7 +9,6 @@
   - type: CP14MagicEffectManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Fire
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

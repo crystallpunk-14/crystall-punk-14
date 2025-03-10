@@ -1,0 +1,73 @@
+# Raw materials
+
+- type: entity
+  id: CP14VialMediumEarthEssence
+  parent: CP14VialMedium
+  suffix: Terra
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14EssenceEarth
+          Quantity: 50
+
+- type: entity
+  id: CP14VialMediumFireEssence
+  parent: CP14VialMedium
+  suffix: Ignis
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14EssenceFire
+          Quantity: 50
+
+- type: entity
+  id: CP14VialMediumWaterEssence
+  parent: CP14VialMedium
+  suffix: Aqua
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14EssenceWater
+          Quantity: 50
+
+- type: entity
+  id: CP14VialMediumAirEssence
+  parent: CP14VialMedium
+  suffix: Aer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14EssenceAir
+          Quantity: 50
+
+- type: entity
+  id: CP14VialMediumOrderEssence
+  parent: CP14VialMedium
+  suffix: Ordo
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14EssenceOrder
+          Quantity: 50
+
+- type: entity
+  id: CP14VialMediumChaosEssence
+  parent: CP14VialMedium
+  suffix: Perditio
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14EssenceChaos
+          Quantity: 50

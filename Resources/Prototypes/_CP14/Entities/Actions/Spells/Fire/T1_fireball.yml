@@ -11,7 +11,6 @@
   - type: CP14MagicEffectManaCost
     manaCost: 20
   - type: CP14MagicEffect
-    magicType: Fire
     effects:
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
@@ -24,6 +23,7 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
+  - type: CP14MagicEffectPacifiedBlock
   - type: EntityWorldTargetAction
     checkCanAccess: false
     raiseOnUser: true

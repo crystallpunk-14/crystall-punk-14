@@ -122,4 +122,48 @@
   - !type:KnowledgeRequired
     knowledge: Glasswork
   result: CP14VialSmallReinforced
+
+- type: CP14Recipe
+  id: CP14VialMedium
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 6
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
+  result: CP14VialMedium
+
+- type: CP14Recipe
+  id: CP14VialMediumReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 6
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
+  result: CP14VialMediumReinforced
+
+- type: CP14Recipe
+  id: CP14BaseAlchemyBomb
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 3
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: Glasswork
+  - !type:KnowledgeRequired
+    knowledge: MetallMelting
+  result: CP14BaseAlchemyBomb
   

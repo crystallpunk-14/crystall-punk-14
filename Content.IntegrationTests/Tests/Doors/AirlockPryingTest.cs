@@ -6,6 +6,7 @@ namespace Content.IntegrationTests.Tests.Doors;
 
 public sealed class AirlockPryingTest : InteractionTest
 {
+    /* CP14 Crowbar door prying disabled
     [Test]
     public async Task PoweredClosedAirlock_Pry_DoesNotOpen()
     {
@@ -81,4 +82,5 @@ public sealed class AirlockPryingTest : InteractionTest
 
         Assert.That(doorComp.State, Is.EqualTo(DoorState.Closing), "Unpowered airlock failed to pry closed.");
     }
+    */
 }

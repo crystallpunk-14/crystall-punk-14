@@ -1,13 +1,4 @@
 - type: cp14DemiplaneModifier
-  id: UnstableDemiplaneCrystal
-  layers:
-    - !type:OreDunGen
-      entity: CP14DangerousMobSpawnCrystal
-      count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
   id: EntryRoom
   generationProb: 0
   layers:

@@ -1,7 +1,6 @@
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
 

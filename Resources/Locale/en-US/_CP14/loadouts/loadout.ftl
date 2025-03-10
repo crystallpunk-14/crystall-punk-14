@@ -54,6 +54,7 @@ cp14-loadout-merchant-shoes = Merchant's shoes
 # Guildmaster
 
 cp14-loadout-guildmaster-outer = Guildmaster outer clothes
+cp14-loadout-guildmaster-head = Guildmaster hat
 cp14-loadout-guildmaster-cloak = Guildmaster cloak
 cp14-loadout-guildmaster-shirt = Guildmaster shirt
 cp14-loadout-guildmaster-pants = Guildmaster pants

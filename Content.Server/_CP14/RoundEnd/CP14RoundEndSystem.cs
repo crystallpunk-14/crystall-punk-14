@@ -15,7 +15,6 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
@@ -27,6 +26,8 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
     {
         base.Initialize();
 
+        InitCbt();
+
         SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(OnFinisherMagicEnergyLevelChange);
         SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
     }
@@ -34,11 +35,17 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
     private void OnRoundEndMessage(RoundEndMessageEvent ev)
     {
         _roundEndMoment = TimeSpan.Zero; //Reset timer, so it cant affect next round in any case
+        _demiplane.DeleteAllDemiplanes(safe: false);
+
+        _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
+            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        UpdateCbt(frameTime);
 
         if (_roundEndMoment == TimeSpan.Zero)
             return;
@@ -46,7 +53,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         if (_roundEndMoment > _timing.CurTime)
             return;
 
-        EndRound();
+        _roundEnd.EndRound();
     }
 
     private void OnFinisherMagicEnergyLevelChange(Entity<CP14MagicContainerRoundFinisherComponent> ent,
@@ -102,17 +109,5 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
 
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end-monolith-recharged"),
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
-    }
-
-    private void EndRound()
-    {
-        if (_gameTicker.RunLevel != GameRunLevel.InRound)
-            return;
-
-        _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
-            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
-        _roundEndMoment = TimeSpan.Zero;
-        _roundEnd.EndRound();
-        _demiplane.DeleteAllDemiplanes(safe: false);
     }
 }

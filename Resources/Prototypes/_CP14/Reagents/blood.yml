@@ -1,0 +1,213 @@
+- type: reagent
+  id: CP14Blood
+  group: CP14Precurser
+  name: cp14-reagent-name-blood
+  desc: cp14-reagent-desc-blood
+  flavor: CP14Metallic
+  color: "#800000"
+  recognizable: true
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        damage:
+          groups:
+            Brute: -5
+            Burn: -5
+
+- type: reagent
+  id: CP14BloodAnimal
+  group: CP14Precurser
+  name: cp14-reagent-name-blood-animal
+  desc: cp14-reagent-desc-blood-animal
+  flavor: CP14Metallic
+  color: "#802020"
+  recognizable: true
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+
+- type: reagent
+  id: CP14BloodVampire
+  group: CP14Precurser
+  name: cp14-reagent-name-blood-vampire
+  desc: cp14-reagent-desc-blood-vampire
+  flavor: CP14Metallic
+  color: "#800000"
+  recognizable: true
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+
+- type: reagent
+  id: CP14BloodTiefling
+  group: CP14Precurser
+  desc: cp14-reagent-desc-blood-tiefling
+  name: cp14-reagent-name-blood-tiefling
+  flavor: CP14Metallic
+  color: "#803300"
+  recognizable: true
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        damage:
+          groups:
+            Brute: -3
+            Burn: -3
+      - !type:FlammableReaction
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        multiplier: 1
+      - !type:AdjustTemperature
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        amount: 1000
+      - !type:Ignite
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+
+- type: reagent
+  id: CP14BloodElf
+  group: CP14Precurser
+  desc: cp14-reagent-desc-blood-elf
+  name: cp14-reagent-name-blood-elf
+  flavor: CP14Metallic
+  color: "#80003e"
+  recognizable: true
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+    Medicine:
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 10
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        safe: true
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        damage:
+          groups:
+            Brute: -3
+            Burn: -3
+
+- type: reagent
+  id: CP14BloodGoblin
+  group: CP14Precurser
+  desc: cp14-reagent-desc-blood-goblin
+  name: cp14-reagent-name-blood-goblin
+  flavor: CP14Metallic
+  color: "#576e35"
+  recognizable: true
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  slippery: false
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        damage:
+          groups:
+            Brute: -3
+            Burn: -3
+      - !type:MovespeedModifier
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+        statusLifetime: 1.5

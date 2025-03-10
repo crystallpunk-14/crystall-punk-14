@@ -11,7 +11,6 @@
   - type: CP14MagicEffectManaCost
     manaCost: 20
   - type: CP14MagicEffect
-    magicType: Darkness
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -45,7 +44,7 @@
       color: "#5e427e"
 
 - type: entity
-  parent: CP14BaseSpellScrollDarkness
+  parent: CP14BaseSpellScrollDimension
   id: CP14SpellScrollShadowStep
   name: shadow step spell scroll
   components:

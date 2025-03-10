@@ -7,7 +7,6 @@
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_consume
   - type: CP14MagicEffect
-    magicType: Meta
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -51,7 +50,6 @@
     - !type:CP14SpellConsumeManaEffect
       safe: true
       mana: 20
-      lossMultiplier: 1
 
 - type: entity
   id: CP14RuneManaConsume

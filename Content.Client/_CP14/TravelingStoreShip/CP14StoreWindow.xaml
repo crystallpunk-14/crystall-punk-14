@@ -1,6 +1,7 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-               Title="{Loc 'cp14-store-ui-title'}"
+               Name="Window"
+               Title=""
                MinSize="800 600"
                SetSize="800 600">
     <BoxContainer Orientation="Horizontal">

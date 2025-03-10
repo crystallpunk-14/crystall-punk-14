@@ -30,48 +30,73 @@
 
 - type: entity
   parent: CP14CrystalShardBase
-  id: CP14CrystalShardWater
-  suffix: Water
+  id: CP14CrystalShardEarth
+  name: terra quartz shard
   components:
   - type: Sprite
-    color: "#5eabeb"
-
-- type: entity
-  parent: CP14CrystalShardBase
-  id: CP14CrystalShardHealing
-  suffix: Healing
-  components:
-  - type: Sprite
-    color: "#3de063"
+    color: "#70533f"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Earth: 3
+      Crystal: 1
 
 - type: entity
   parent: CP14CrystalShardBase
   id: CP14CrystalShardFire
-  suffix: Fire
+  name: ignis quartz shard
   components:
   - type: Sprite
-    color: "#ed731c"
+    color: "#d9741c"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Fire: 3
+      Crystal: 1
 
 - type: entity
   parent: CP14CrystalShardBase
-  id: CP14CrystalShardLight
-  suffix: Light
+  id: CP14CrystalShardWater
+  name: aqua quartz shard
   components:
   - type: Sprite
-    color: "#f1c7ff"
+    color: "#1c94d9"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Water: 3
+      Crystal: 1
 
 - type: entity
   parent: CP14CrystalShardBase
-  id: CP14CrystalShardElectric
-  suffix: Electric
+  id: CP14CrystalShardAir
+  name: aer quartz shard
   components:
   - type: Sprite
-    color: "#e6ff6b"
+    color: "#def9ff"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Air: 3
+      Crystal: 1
 
 - type: entity
   parent: CP14CrystalShardBase
-  id: CP14CrystalShardDarkness
-  suffix: Darkness
+  id: CP14CrystalShardOrder
+  name: ordo quartz shard
   components:
   - type: Sprite
-    color: "#391c57"
+    color: "#d9d9d9"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Order: 3
+      Crystal: 1
+
+- type: entity
+  parent: CP14CrystalShardBase
+  id: CP14CrystalShardChaos
+  name: perditio quartz shard
+  components:
+  - type: Sprite
+    color: "#5c5c5c"
+  - type: CP14MagicEssenceContainer
+    essences:
+      Chaos: 3
+      Crystal: 1
+

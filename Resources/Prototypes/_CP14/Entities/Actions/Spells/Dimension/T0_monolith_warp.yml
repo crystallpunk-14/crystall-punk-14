@@ -9,7 +9,6 @@
   - type: CP14MagicEffectManaCost
     manaCost: 25
   - type: CP14MagicEffect
-    magicType: Darkness
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -67,7 +66,7 @@
   - type: CP14MonolithTimedPassway
 
 - type: entity
-  parent: CP14BaseSpellScrollDarkness
+  parent: CP14BaseSpellScrollDimension
   id: CP14SpellScrollMonolithWarp
   name: demiplane link spell scroll
   components:

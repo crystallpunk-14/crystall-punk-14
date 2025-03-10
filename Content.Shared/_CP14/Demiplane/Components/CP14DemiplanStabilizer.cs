@@ -11,4 +11,7 @@ public sealed partial class CP14DemiplaneStabilizerComponent : Component
     /// </summary>
     [DataField]
     public bool RequireAlive = false;
+
+    [DataField]
+    public bool Enabled = true;
 }

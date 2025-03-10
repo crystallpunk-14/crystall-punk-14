@@ -1,0 +1,77 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: CP14BloodFlowerSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14BloodFlowerSap:
+      amount: 1
+  products:
+    CP14EssenceLife: 0.5
+    CP14EssenceWater: 0.5
+
+- type: reaction
+  id: CP14BloodFlowerBloodSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14BloodFlowerSap:
+      amount: 1
+    CP14BloodTiefling:
+      amount: 1
+  products:
+    CP14EssenceFire: 1
+    CP14EssenceLife: 1
+
+- type: reaction
+  id: CP14BloodFlowerTieflingSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14BloodFlowerSap:
+      amount: 1
+    CP14Blood:
+      amount: 1
+  products:
+    CP14EssenceLife: 2
+
+- type: reaction
+  id: CP14BloodFlowerElfSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14BloodFlowerSap:
+      amount: 1
+    CP14BloodElf:
+      amount: 1
+  products:
+    CP14EssenceOrder: 1
+    CP14EssenceLife: 1
+
+- type: reaction
+  id: CP14BloodFlowerGoblinSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14BloodFlowerSap:
+      amount: 1
+    CP14BloodGoblin:
+      amount: 1
+  products:
+    CP14EssenceChaos: 1
+    CP14EssenceLife: 1
+
+#- type: reaction
+#  id: CP14BloodFlowerVampireSplitting
+#  requiredMixerCategories:
+#  - CP14MagicSplitting
+#  reactants:
+#    CP14BloodFlowerSap:
+#      amount: 1
+#    CP14BloodVampire:
+#      amount: 1
+#  products:
+#    CP14EssenceChaos: 1 #TODO: need some advanced essences first
+#    CP14EssenceLife: 1

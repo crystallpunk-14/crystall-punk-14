@@ -8,6 +8,7 @@ using Content.Server.StationRecords;
 using Content.Server.StationRecords.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StationRecords;
 using Robust.Shared.Prototypes;
@@ -23,7 +24,9 @@ public sealed partial class CP14RoundRemoveShuttleSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly StationRecordsSystem _stationRecords = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
+    private readonly HashSet<Entity<MindContainerComponent>> _mindSet = new();
     public override void Initialize()
     {
         base.Initialize();
@@ -33,15 +36,20 @@ public sealed partial class CP14RoundRemoveShuttleSystem : EntitySystem
 
     private void OnFTL(Entity<CP14RoundRemoveShuttleComponent> ent, ref FTLStartedEvent args)
     {
-        var childrens = Transform(ent).ChildEnumerator;
+        _mindSet.Clear();
+        _lookup.GetChildEntities(ent, _mindSet);
 
         if (!TryComp<StationRecordsComponent>(ent.Comp.Station, out var stationRecords))
             return;
 
         HashSet<EntityUid> toDelete = new();
-        while (childrens.MoveNext(out var uid))
+        var query = EntityQueryEnumerator<MindContainerComponent>();
+        while (query.MoveNext(out var uid, out var mindContainer))
         {
-            if (!_mind.TryGetMind(uid, out _, out var mindComp))
+            if (Transform(uid).GridUid != ent)
+                continue;
+
+            if (!_mind.TryGetMind(uid, out _, out var mindComp, container: mindContainer))
                 continue;
 
             var name = Name(uid);
@@ -73,7 +81,7 @@ public sealed partial class CP14RoundRemoveShuttleSystem : EntitySystem
 
             _chatSystem.DispatchStationAnnouncement(ent.Comp.Station,
                 Loc.GetString(
-                     _mobState.IsDead(uid) ? "cp14-earlyleave-ship-announcement-dead" : "cp14-earlyleave-ship-announcement",
+                    _mobState.IsDead(uid) ? "cp14-earlyleave-ship-announcement-dead" : "cp14-earlyleave-ship-announcement",
                     ("character", mindComp.CharacterName ?? "Unknown"),
                     ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName ?? "Unknown"))
                 ),

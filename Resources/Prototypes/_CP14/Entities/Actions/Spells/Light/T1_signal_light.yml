@@ -7,7 +7,6 @@
   - type: CP14MagicEffectManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Light
   - type: CP14MagicEffectSomaticAspect
   - type: InstantAction
     itemIconStyle: BigAction
@@ -157,6 +156,7 @@
   abstract: true
   categories: [ ForkFiltered ]
   name: signal light
+  description: A signal of light left by an adventurer possibly in trouble. 
   components:
   - type: TimedDespawn
     lifetime: 12

@@ -26,7 +26,7 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
     public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, EntityUid user)
     {
         var knowledgeSystem = entManager.System<SharedCP14KnowledgeSystem>();
-        knowledgeSystem.UseKnowledge(user, Knowledge);
+        knowledgeSystem.TryUseKnowledge(user, Knowledge);
     }
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)
@@ -41,8 +41,8 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
         return null;
     }
 
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
+    public override SpriteSpecifier GetRequirementTexture(IPrototypeManager protoManager)
     {
-        return new SpriteSpecifier.Texture(new("/Textures/Interface/students-cap.svg.192dpi.png"));
+        return new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/students-cap.svg.192dpi.png"));
     }
 }

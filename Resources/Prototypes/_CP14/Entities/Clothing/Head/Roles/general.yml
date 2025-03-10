@@ -125,8 +125,6 @@
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat.rsi
-  - type: CP14MagicManacostModify
-    globalModifier: 0.8
 
 - type: entity
   parent: CP14ClothingHeadBase
@@ -138,8 +136,6 @@
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat_golden.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/triangularhat_golden.rsi
-  - type: CP14MagicManacostModify
-    globalModifier: 0.8
 
 - type: entity
   parent: CP14ClothingHeadBase
@@ -162,3 +158,14 @@
     sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadJestersCap
+  name: jester's cap
+  description: You are the fun. You are noise. You are the jester.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/jesters_cap.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/jesters_cap.rsi

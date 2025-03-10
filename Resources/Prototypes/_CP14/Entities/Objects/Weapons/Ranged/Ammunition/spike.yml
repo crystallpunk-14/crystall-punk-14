@@ -1,0 +1,48 @@
+- type: entity
+  parent: Dart
+  id: CP14SpikeWhistle
+  name: spike
+  description: Organically spiked with an unknown liquid inside.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/spike.rsi
+    state: spike
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 2
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 4
+        reagents:
+        - ReagentId: CP14WhistlerPoison
+          Quantity: 4
+  - type: SolutionInjectOnEmbed
+    transferAmount: 4
+    blockSlots: NONE
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 4
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Ammo
+    muzzleFlash: null
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
