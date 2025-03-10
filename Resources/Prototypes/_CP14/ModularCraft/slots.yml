@@ -17,3 +17,11 @@
 - type: modularSlot
   id: ArrowTip
   name: cp14-modular-slot-arrow-tip
+
+- type: modularSlot
+  id: Cuisses
+  name: cp14-modular-slot-cuisses
+
+- type: modularSlot
+  id: Greave
+  name: cp14-modular-slot-greave

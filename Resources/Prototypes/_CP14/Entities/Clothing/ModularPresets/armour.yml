@@ -1,0 +1,119 @@
+- type: entity
+  id: CP14ArmorIronCuirassPresets
+  parent: CP14ArmorIronCuirass
+  name: full iron cuirass
+  description: A full iron armour to protect its wearer from other sharp iron.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+      state: icon
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesIronPlate
+    - GreaveIronPlate
+
+- type: entity
+  id: CP14ArmorGoldCuirassPresets
+  parent: CP14ArmorGoldCuirass
+  name: full golden cuirass
+  description: A full armour of purest gold, it is as expensive as it is uncomfortable, it is hard to imagine who would wear it and why.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#ffaf47"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+      state: icon
+      color: "#ffaf47"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+      state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesGoldPlate
+    - GreaveGoldPlate
+
+- type: entity
+  id: CP14ArmorCopperCuirassPresets
+  parent: CP14ArmorCopperCuirass
+  name: full copper cuirass
+  description: Full copper armour, cheap and surly, some even find it more comfortable than iron armour.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#bd712f"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+      state: icon
+      color: "#bd712f"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+      state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesCopperPlate
+    - GreaveCopperPlate
+
+- type: entity
+  id: CP14ArmorMithrilCuirassPresets
+  parent: CP14ArmorMithrilCuirass
+  name: full mithril cuirass
+  description: Every adventurer's dream, mithril armour is strong, sturdy and almost unrestrictive to movement. If there's an ideal, this is it.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#45d2a4"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+      state: icon
+      color: "#45d2a4"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+      state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesMithrilPlate
+    - GreaveMithrilPlate
+
+- type: entity
+  id: CP14ArmorIronСhainmailPresets
+  parent: CP14ArmorIronChainmail
+  name: full iron chainmail
+  description: Full iron ringed armour, lightweight and has decent protection.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+      state: icon
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesIronChainmail
+    - GreaveIronChainmail
+
+- type: entity
+  id: CP14ArmorMithrilСhainmailPresets
+  parent: CP14ArmorMithrilChainmail
+  name: full mithril chainmail
+  description: A full mithril armour that may have been slowly and painstakingly assembled by dwarven smiths. A most valuable piece of work.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#45d2a4"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+      state: icon
+      color: "#45d2a4"
+    - sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+      state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CuissesMithrilChainmail
+    - GreaveMithrilChainmail

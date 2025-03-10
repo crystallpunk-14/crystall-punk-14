@@ -123,8 +123,8 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return;
 
-        component.WalkModifier += walkModifier;
-        component.SprintModifier += sprintModifier;
+        component.WalkModifier *= walkModifier;
+        component.SprintModifier *= sprintModifier;
 
         if (_container.TryGetContainingContainer((uid, null, null), out var container))
         {

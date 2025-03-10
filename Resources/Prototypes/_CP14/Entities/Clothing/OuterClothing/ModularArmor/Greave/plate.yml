@@ -1,0 +1,82 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularGreaveBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+    storedRotation: 0
+    shape:
+    - 0,0,0,0
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveIronPlate
+  name: iron greave
+  description: Protects the lower part of the legs, also makes it difficult to move, but sometimes extra protection is more important than speed.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveIronPlate
+  - type: CP14Material
+    materials:
+      CP14Iron: 20
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveGoldPlate
+  name: golden greave
+  description: Protects the lower part of the legs, also makes it difficult to move, though the use of gold as armour seems questionable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveGoldPlate
+  - type: CP14Material
+    materials:
+      CP14Gold: 20
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveCopperPlate
+  name: copper greave
+  description: Protects the lower part of the legs, also makes it difficult to move, but sometimes extra protection is more important than speed.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveCopperPlate
+  - type: CP14Material
+    materials:
+      CP14Copper: 20
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveMithrilPlate
+  name: mithril greave
+  description: Protects the lower part of the legs, also makes it difficult to move, but sometimes extra protection is more important than speed.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveMithrilPlate
+  - type: CP14Material
+    materials:
+      CP14Mithril: 20
