@@ -16,10 +16,11 @@
     - map: [ "mannequin" ]
       sprite: _CP14/Structures/Furniture/mannequin.rsi
       state: mannequin
-    - map: [ "shirt" ]
     - map: [ "pants" ]
-    - map: [ "gloves" ]
     - map: [ "shoes" ]
+    - map: [ "shirt" ]
+    - map: [ "gloves" ]
+    - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]
@@ -75,6 +76,10 @@
         occludes: False
         ent: null
       shoes: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      outerClothing: !type:ContainerSlot
         showEnts: False
         occludes: False
         ent: null

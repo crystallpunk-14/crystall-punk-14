@@ -47,17 +47,23 @@
       uiWindowPos: 2,0
       strippingWindowPos: 0,2
       displayName: Gloves
+    - name: outerClothing
+      slotTexture: suit
+      slotFlags: OUTERCLOTHING
+      uiWindowPos: 2,1
+      strippingWindowPos: 2,3
+      displayName: Armor
     - name: cloak
       slotTexture: cloak
       slotFlags: CLOAK
-      uiWindowPos: 2,2
+      uiWindowPos: 2,3
       strippingWindowPos: 2,2
       displayName: Cloak
     - name: mask
       slotTexture: mask
       slotFlags: MASK
       uiWindowPos: 2,3
-      strippingWindowPos: 2,1
+      strippingWindowPos: 2,2
       displayName: Mask
     # Main hotbar
     - name: belt1
