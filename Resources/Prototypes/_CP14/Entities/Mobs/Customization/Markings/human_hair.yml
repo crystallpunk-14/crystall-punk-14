@@ -423,6 +423,30 @@
       state: dreads
       
 - type: marking
+  id: CP14HumanHair_drillhair
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: drillhair
+      
+- type: marking
+  id: CP14HumanHair_drillhairextended
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: drillhairextended
+      
+- type: marking
+  id: CP14HumanHair_drillruru
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: drillruru
+      
+- type: marking
   id: CP14HumanHair_e
   bodyPart: Hair
   markingCategory: Hair
@@ -1071,6 +1095,14 @@
       state: sidetail4
       
 - type: marking
+  id: CP14HumanHair_skinhead
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: skinhead
+      
+- type: marking
   id: CP14HumanHair_spiky
   bodyPart: Hair
   markingCategory: Hair
@@ -1133,6 +1165,22 @@
   sprites:
     - sprite: _CP14/Mobs/Customization/human_hair.rsi
       state: twintail
+      
+- type: marking
+  id: CP14HumanHair_undercutright
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: undercutright
+      
+- type: marking
+  id: CP14HumanHair_uneven
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_hair.rsi
+      state: uneven
       
 - type: marking
   id: CP14HumanHair_twostrands
