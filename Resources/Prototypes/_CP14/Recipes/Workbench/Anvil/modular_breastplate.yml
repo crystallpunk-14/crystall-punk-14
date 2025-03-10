@@ -69,7 +69,7 @@
   craftTime: 4
   requirements:
   - !type:StackResource
-    stack: CP14CopperBar
+    stack: CP14GoldBar
     count: 6
   - !type:KnowledgeRequired
     knowledge: MetallForging
@@ -81,7 +81,7 @@
   craftTime: 4
   requirements:
   - !type:StackResource
-    stack: CP14GoldBar
+    stack: CP14CopperBar
     count: 6
   - !type:KnowledgeRequired
     knowledge: MetallForging
