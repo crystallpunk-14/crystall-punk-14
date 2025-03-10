@@ -19,7 +19,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.96
     sprintModifier: 0.95
- 
+
 - type: entity
   parent: CP14ClothingOuterClothingBase
   id: CP14ClothingOuterClothingCuirass
