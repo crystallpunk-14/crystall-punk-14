@@ -21,6 +21,7 @@ public sealed partial class DiscordAuthGui : Control
         LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
 
         var link = _discordAuthManager.AuthUrl;
+        var errorMessage = _discordAuthManager.ErrorMessage;
 
         AuthLinkEdit.SetText(link);
         DLinkEdit.SetText(DiscordLink);
@@ -42,5 +43,10 @@ public sealed partial class DiscordAuthGui : Control
         {
             uriOpener.OpenUri(DiscordLink);
         };
+
+        if (errorMessage != "")
+        {
+            InfoLabel.Text = errorMessage;
+        }
     }
 }
