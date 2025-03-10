@@ -15,12 +15,12 @@
     angleMultiplier: 1.2
     bonusDamage:
       types:
-        Slash: 13
+        Slash: 14
         Piercing: 3
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Slash: 8
+        Slash: 11
         Piercing: 3
   - !type:EditItem
     newSize: Normal
