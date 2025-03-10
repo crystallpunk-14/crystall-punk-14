@@ -26,7 +26,6 @@
     - map: [ "belt1" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
-    - map: [ "back" ]
     - map: [ "mask" ]
     - map: [ "head" ]
   - type: Rotatable
@@ -100,10 +99,6 @@
         occludes: False
         ent: null
       neck: !type:ContainerSlot
-        showEnts: False
-        occludes: False
-        ent: null
-      back: !type:ContainerSlot
         showEnts: False
         occludes: False
         ent: null
