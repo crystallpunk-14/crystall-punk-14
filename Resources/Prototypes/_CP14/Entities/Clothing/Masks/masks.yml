@@ -16,7 +16,7 @@
 - type: entity
   parent: CP14ClothingMaskBase
   id: CP14ClothingMaskSinner
-  name: Sinner's mask
+  name: sinner's mask
   description: A mask intented to be worn by not the brightest individuals. Executioners put them on themselves and the victim before execution.
   components:
   - type: Sprite

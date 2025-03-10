@@ -217,3 +217,15 @@
   - !type:KnowledgeRequired
     knowledge: MetallForging
   result: CP14BaseLightCrossbow
+
+- type: CP14Recipe
+  id: CP14ClothingMaskSteelMask
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ClothingMaskSteelMask
