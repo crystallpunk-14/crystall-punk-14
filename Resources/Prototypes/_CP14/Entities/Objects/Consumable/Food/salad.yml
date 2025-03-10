@@ -13,7 +13,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 47
         reagents:
         - ReagentId: PumpkinFlesh
           Quantity: 12
