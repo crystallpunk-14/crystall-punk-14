@@ -29,9 +29,6 @@
   id: CP14AmbientWater
 
 - type: Tag
-  id: CP14Plate
-
-- type: Tag
   id: CP14InkwellFittable
 
 - type: Tag
