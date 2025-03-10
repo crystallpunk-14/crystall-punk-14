@@ -1,0 +1,35 @@
+- type: entity
+  name: green salad
+  parent: FoodInjectableBase
+  id: CP14FoodSaladGreen
+  description: An extremely nutritious green salad, with a pumpkin twist.
+  categories: [ ForkFiltered ]
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+      - cabbage
+      - CP14cucumber
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 47
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 12
+        - ReagentId: Nutriment
+          Quantity: 22
+        - ReagentId: Vitamin
+          Quantity: 10
+  - type: Sprite
+    layers:
+    - sprite: _CP14/Objects/Consumable/Food/plates.rsi
+      state: plate
+    - sprite: _CP14/Objects/Consumable/Food/salad.rsi
+      state: green_salad
+  - type: Tag
+    tags:
+    - Fruit
+  - type: Food
+    trash:
+    - CP14Plate
