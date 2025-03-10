@@ -104,6 +104,9 @@
   id: CP14Arrow
 
 - type: Tag
+  id: CP14Plate
+
+- type: Tag
   id: CP14PlatePie
 
 - type: Tag

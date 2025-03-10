@@ -197,7 +197,8 @@
     size: Tiny
   - type: FlavorProfile
     flavors:
-      - CP14Water #TODO
+      - CP14Water
+      - CP14cucumber
   - type: Sprite
     sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
     layers:

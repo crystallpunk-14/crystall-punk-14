@@ -25,3 +25,4 @@ cp14-flavor-complex-durandate = дешёвое и терпкое
 cp14-flavor-complex-ale = как хлеб
 cp14-flavor-complex-bloody-tear = печально и алкогольно
 cp14-flavor-complex-bottomless = полубожественно и опасно
+cp14-flavor-complex-cucumber = как огурец

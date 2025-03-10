@@ -1,0 +1,17 @@
+- type: CP14Recipe
+  id: CP14FoodSaladGreen
+  tag: CP14RecipeCooking
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Plate
+  - !type:ProtoIdResource
+    protoId: CP14FoodCabbageSlice
+    count: 4
+  - !type:ProtoIdResource
+    protoId: CP14FoodPumpkinSlice
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14FoodCucumber
+    count: 2
+  result: CP14FoodSaladGreen
