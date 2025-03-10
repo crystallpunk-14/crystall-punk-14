@@ -67,7 +67,7 @@
     solution: cleaner
   - type: CP14SolutionCleaner
     solution: cleaner
-    leakagequantity: 1
+    leakageQuantity: 1
   - type: CP14MagicEnergyAmbientSound
   - type: AmbientSound
     enabled: false
