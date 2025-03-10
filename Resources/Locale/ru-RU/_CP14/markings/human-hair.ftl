@@ -152,4 +152,4 @@ marking-CP14HumanHair_Updo = Церемониальный узел
 marking-CP14HumanHair_VLongFringe = Прямая челка
 marking-CP14HumanHair_Volaju = Вояж
 marking-CP14HumanHair_Wisp = Огонек
-marking-CP14HumanHairDismas =С большой дороги
+marking-CP14HumanHairDismas = С большой дороги
