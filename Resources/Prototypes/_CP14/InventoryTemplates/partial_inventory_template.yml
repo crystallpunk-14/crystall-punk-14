@@ -6,9 +6,15 @@
     - name: neck
       slotTexture: neck
       slotFlags: NECK
-      uiWindowPos: 0,2
+      uiWindowPos: 0,0
       strippingWindowPos: 1,2
       displayName: Neck
+    - name: mask
+      slotTexture: mask
+      slotFlags: MASK
+      uiWindowPos: 2,3
+      strippingWindowPos: 2,1
+      displayName: Mask
     - name: eyes
       slotTexture: eyes
       slotFlags: EYES
@@ -47,18 +53,18 @@
       uiWindowPos: 2,0
       strippingWindowPos: 0,2
       displayName: Gloves
+    - name: outerClothing
+      slotTexture: suit
+      slotFlags: OUTERCLOTHING
+      uiWindowPos: 2,1
+      strippingWindowPos: 2,3
+      displayName: Armor
     - name: cloak
       slotTexture: cloak
       slotFlags: CLOAK
-      uiWindowPos: 2,2
+      uiWindowPos: 2,3
       strippingWindowPos: 2,2
       displayName: Cloak
-    - name: mask
-      slotTexture: mask
-      slotFlags: MASK
-      uiWindowPos: 2,3
-      strippingWindowPos: 2,1
-      displayName: Mask
     # Main hotbar
     - name: belt1
       slotTexture: belt
@@ -77,13 +83,6 @@
       dependsOn: pants
       displayName: Keys
       stripHidden: true
-    - name: back
-      slotTexture: back
-      slotFlags: BACK
-      slotGroup: SecondHotbar
-      uiWindowPos: 0,0
-      strippingWindowPos: 0,5
-      displayName: Back
     # Right hand
     # Left hand
     - name: belt2
