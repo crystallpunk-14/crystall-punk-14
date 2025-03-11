@@ -46,6 +46,10 @@
     stateBaseClosed: base
     stateDoorOpen: base_open
     stateDoorClosed: base_door
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Trading
+    - CP14_EN_Trading
 
 - type: entity
   parent: CP14TradingPortalBase
@@ -62,7 +66,7 @@
     - state: flag_sylphoria
   - type: CP14TradingPortal
     faction: Sylphoria
-    specialSellPositionCount: 3
+    specialSellPositionCount: 5
 
 - type: entity
   parent: CP14TradingPortalBase
@@ -79,6 +83,7 @@
     - state: flag_helmir
   - type: CP14TradingPortal
     faction: HelmirWeapon
+    specialSellPositionCount: 5
 
 - type: entity
   parent: CP14TradingPortalBase
@@ -95,7 +100,7 @@
     - state: flag_bard
   - type: CP14TradingPortal
     faction: BradFamily
-    specialSellPositionCount: 3
+    specialSellPositionCount: 5
 
 - type: entity
   parent: CP14TradingPortalBase
@@ -112,3 +117,4 @@
     - state: flag_spice
   - type: CP14TradingPortal
     faction: SpiceStream
+    specialSellPositionCount: 5

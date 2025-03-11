@@ -121,7 +121,7 @@ public sealed partial class CP14CurrencySystem
         if (ent.Comp.Whitelist is not null && !_whitelist.IsValid(ent.Comp.Whitelist, args.Used))
             return;
 
-        var delta = GetTotalCurrency(args.Used);
+        var delta = GetTotalCurrencyRecursive(args.Used);
         ent.Comp.Balance += delta;
         QueueDel(args.Used);
 
@@ -206,7 +206,7 @@ public sealed partial class CP14CurrencySystem
 
     private bool ProcessEntity(EntityUid ent, ref int remainder, HashSet<EntityUid> spawns)
     {
-        var singleCurrency = GetTotalCurrency(ent);
+        var singleCurrency = GetTotalCurrencyRecursive(ent);
 
         if (singleCurrency > remainder)
         {

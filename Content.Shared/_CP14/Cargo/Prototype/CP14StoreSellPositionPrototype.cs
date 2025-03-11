@@ -17,8 +17,14 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     [DataField(required: true)]
     public int Price = 100;
 
-    [DataField(required: true)]
+    [DataField(required: true, serverOnly: true)]
     public CP14StoreSellService Service = default!;
+
+    [DataField]
+    public SpriteSpecifier? IconOverride;
+
+    [DataField]
+    public LocId? NameOverride;
 
     [DataField]
     public bool RoundstartAvailable = true;
@@ -27,7 +33,7 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     /// If true, this item will randomly appear under the ‘Special Offer’ heading. With a chance to show up every time the ship arrives.
     /// </summary>
     [DataField]
-    public bool Special = false;
+    public bool Special;
 
     [DataField]
     public HashSet<ProtoId<CP14StoreFactionPrototype>> Factions = new();

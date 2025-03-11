@@ -45,7 +45,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
         if (mind.OwnedEntity is null)
             return 0;
 
-        count += _currency.GetTotalCurrency(mind.OwnedEntity.Value);
+        count += _currency.GetTotalCurrencyRecursive(mind.OwnedEntity.Value);
 
         var result = count / (float)condition.Currency;
         result = Math.Clamp(result, 0, 1);

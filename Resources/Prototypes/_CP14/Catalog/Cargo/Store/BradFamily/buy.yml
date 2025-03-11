@@ -186,3 +186,44 @@
     contents:
       - id: CP14VialSmallRainbow
         amount: 5
+
+
+- type: storePositionBuy
+  id: Candles
+  code: CANDLES
+  price: 100
+  iconOverride: 
+    sprite: Objects/Misc/candles.rsi
+    state: loadout
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledCandles
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledCandles
+  name: candles chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14CandleRed
+        amount: 2
+      - id: CP14CandleBlue
+        amount: 2
+      - id: CP14CandleBlack
+        amount: 2
+      - id: CP14CandleGreen
+        amount: 2
+      - id: CP14CandlePurple
+        amount: 2
+      - id: CP14CandleRedSmall
+        amount: 2
+      - id: CP14CandleBlueSmall
+        amount: 2
+      - id: CP14CandleBlackSmall
+        amount: 2
+      - id: CP14CandleGreenSmall
+        amount: 2
+      - id: CP14CandlePurpleSmall
+        amount: 2

@@ -37,7 +37,7 @@ public partial class CP14SharedCurrencySystem : EntitySystem
         return sb.ToString();
     }
 
-    public int GetTotalCurrency(EntityUid uid)
+    public int GetTotalCurrencyRecursive(EntityUid uid)
     {
         var ev = new CP14GetCurrencyEvent();
         RaiseLocalEvent(uid, ev);

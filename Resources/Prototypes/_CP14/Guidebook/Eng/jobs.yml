@@ -1,0 +1,39 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Jobs
+  name: Jobs
+  text: "/ServerInfo/_CP14/Guidebook_EN/Jobs.xml"
+  children:
+  - CP14_EN_JobAdventurer
+  - CP14_EN_JobAlchemist
+  - CP14_EN_JobMerchant
+  filterEnabled: True
+
+
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_JobAdventurer
+  name: Adventurers
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Adventurers.xml"
+  children:
+  - CP14_EN_Demiplanes
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_JobAlchemist
+  name: Alchemist
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Alchemist.xml"
+  children:
+  - CP14_EN_Alchemy
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_JobMerchant
+  name: Merchant
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Merchant.xml"
+  children:
+  - CP14_EN_Trading
+  filterEnabled: True
