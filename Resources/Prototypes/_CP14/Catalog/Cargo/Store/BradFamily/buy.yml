@@ -193,7 +193,7 @@
   code: CANDLES
   price: 100
   iconOverride: 
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    sprite: Objects/Misc/candles.rsi
     state: loadout
   factions:
   - BradFamily
