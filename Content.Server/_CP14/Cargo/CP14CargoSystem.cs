@@ -105,7 +105,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private void AddRandomBuySpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    public void AddRandomBuySpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
     {
         if (_buyProto is null)
             return;
@@ -137,7 +137,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private void AddRandomSellSpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    public void AddRandomSellSpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
     {
         if (_sellProto is null)
             return;
