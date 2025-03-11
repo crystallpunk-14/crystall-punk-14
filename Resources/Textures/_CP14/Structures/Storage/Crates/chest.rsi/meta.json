@@ -1,10 +1,10 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by Agoichi (Github), modified by Jaraten and vladimir.s",
+  "copyright": "Created by vladimir.s",
   "size": {
     "x": 32,
-    "y": 32
+    "y": 48
   },
   "states": [
     {

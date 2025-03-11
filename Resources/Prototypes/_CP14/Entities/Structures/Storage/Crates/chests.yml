@@ -8,10 +8,10 @@
   description: Base for any wooden chest
   components:
   - type: Icon
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     state: base
   - type: Sprite
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     noRot: true
     state: base
   - type: Damageable
@@ -56,10 +56,10 @@
   description: A simple wooden chest for easy storage of junk.
   components:
   - type: Icon
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     state: icon
   - type: Sprite
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]
@@ -104,16 +104,3 @@
     node: CP14WoodenChest
     containers:
     - entity_storage
-
-- type: entity
-  parent: 
-  - CP14WoodenChest
-  id: CP14BrassChest
-  name: brass chest
-  description: A simple brass chest for easy storage of junk.
-  components:
-  - type: Icon
-    sprite: _CP14/Structures/Storage/Crates/brasschest.rsi
-    state: icon
-  - type: Sprite
-    sprite: _CP14/Structures/Storage/Crates/brasschest.rsi
