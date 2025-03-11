@@ -94361,7 +94361,7 @@ entities:
     - type: ItemPlacer
       placedEntities:
       - 2240
-- proto: CP14BrassChest
+- proto: CP14WoodenChest
   entities:
   - uid: 2470
     components:
@@ -94478,14 +94478,14 @@ entities:
     - type: Transform
       pos: 23.5,1.5
       parent: 2
-- proto: CP14BrassChestFilledAlchemy
+- proto: CP14WoodenChestFilledAlchemy
   entities:
   - uid: 12843
     components:
     - type: Transform
       pos: -47.5,-73.5
       parent: 2
-- proto: CP14BrassChestFilledCheese
+- proto: CP14WoodenChestFilledCheese
   entities:
   - uid: 8943
     components:

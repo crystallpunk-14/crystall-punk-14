@@ -8,11 +8,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledFarmSeeds
+    product: CP14WoodenChestFilledFarmSeeds
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledFarmSeeds
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledFarmSeeds
   name: farm seeds chest
   components:
   - type: StorageFill
@@ -43,11 +43,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledCheese
+    product: CP14WoodenChestFilledCheese
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledCheese
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledCheese
   name: cheese chest
   components:
   - type: StorageFill
@@ -147,11 +147,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledBureaucracy
+    product: CP14WoodenChestFilledBureaucracy
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledBureaucracy
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledBureaucracy
   name: bureaucracy chest
   components:
   - type: StorageFill
@@ -204,11 +204,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledEnergyCrystals
+    product: CP14WoodenChestFilledEnergyCrystals
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledEnergyCrystals
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledEnergyCrystals
   name: energy crystals chest
   components:
   - type: StorageFill

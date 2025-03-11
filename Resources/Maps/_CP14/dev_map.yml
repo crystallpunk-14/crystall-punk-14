@@ -471,14 +471,14 @@ entities:
     - type: Transform
       pos: 2.696513,-0.36781955
       parent: 2
-- proto: CP14BrassChest
+- proto: CP14WoodenChest
   entities:
   - uid: 205
     components:
     - type: Transform
       pos: 4.5,5.5
       parent: 2
-- proto: CP14BrassChestFilledFarmSeeds
+- proto: CP14WoodenChestFilledFarmSeeds
   entities:
   - uid: 290
     components:

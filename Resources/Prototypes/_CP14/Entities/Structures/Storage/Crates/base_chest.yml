@@ -8,11 +8,12 @@
   - type: Transform
     noRot: true
   - type: Icon
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     state: icon
   - type: Sprite
+    offset: 0,0.3
     noRot: true
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]
