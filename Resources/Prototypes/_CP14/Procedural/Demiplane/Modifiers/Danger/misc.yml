@@ -22,6 +22,27 @@
       minGroupSize: 5
       maxGroupSize: 8
 
+- type: cp14DemiplaneModifier
+  id: Lava
+  tiers:
+    - 1
+    - 2
+    - 3
+  generationWeight: 0.3
+  categories:
+    Danger: 0.33
+  blacklistTags:
+  - CP14DemiplaneCold
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:OreDunGen
+      entity: CP14FloorLava
+      tileMask:
+      - CP14FloorBase
+      count: 8
+      minGroupSize: 3
+      maxGroupSize: 5
+
 # TIER 2
 
 - type: cp14DemiplaneModifier
