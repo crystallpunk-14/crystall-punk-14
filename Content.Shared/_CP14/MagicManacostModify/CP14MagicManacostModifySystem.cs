@@ -32,9 +32,9 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
             args,
             ent.Comp,
             markup,
-            Loc.GetString("armor-examinable-verb-text"),
-            "/Textures/Interface/VerbIcons/dot.svg.192dpi.png",
-            Loc.GetString("armor-examinable-verb-message"));
+            Loc.GetString("cp14-magic-examinable-verb-text"),
+            "/Textures/Interface/VerbIcons/bubbles.svg.192dpi.png",
+            Loc.GetString("cp14-magic-examinable-verb-message"));
     }
 
     private FormattedMessage GetMagicClothingExamine(CP14MagicManacostModifyComponent comp)
@@ -60,7 +60,7 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
 
             var plus = modifier.Value > 1 ? "+" : "";
             var indexedType = _proto.Index(modifier.Key);
-            msg.AddMarkupOrThrow($"[color={indexedType.Color.ToHex()}]{Loc.GetString(indexedType.Name)}[/color]: {plus}{(modifier.Value - 1)*100}%");
+            msg.AddMarkupOrThrow($"- [color={indexedType.Color.ToHex()}]{Loc.GetString(indexedType.Name)}[/color]: {plus}{(modifier.Value - 1)*100}%");
         }
 
         return msg;
