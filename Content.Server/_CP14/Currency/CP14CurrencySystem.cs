@@ -54,7 +54,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         {
             foreach (var containedEnt in container.ContainedEntities)
             {
-                total += GetTotalCurrency(containedEnt);
+                total += GetTotalCurrencyRecursive(containedEnt);
             }
         }
 
@@ -63,7 +63,7 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
 
     private void OnExamine(Entity<CP14CurrencyExaminableComponent> currency, ref ExaminedEvent args)
     {
-        var total = GetTotalCurrency(currency);
+        var total = GetTotalCurrencyRecursive(currency);
 
         var push = Loc.GetString("cp14-currency-examine-title");
         push += GetCurrencyPrettyString(total);

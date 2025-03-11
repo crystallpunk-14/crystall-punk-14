@@ -45,7 +45,7 @@ public sealed class CP14RichestJobConditionSystem : EntitySystem
         if (mind.OwnedEntity is null)
             return 0;
 
-        var ourValue = _currency.GetTotalCurrency(mind.OwnedEntity.Value);
+        var ourValue = _currency.GetTotalCurrencyRecursive(mind.OwnedEntity.Value);
         var otherMaxValue = 0;
 
         var allHumans = _mind.GetAliveHumans(mindId);
@@ -63,7 +63,7 @@ public sealed class CP14RichestJobConditionSystem : EntitySystem
             if (otherHuman.Comp.OwnedEntity is null)
                 continue;
 
-            var otherValue = _currency.GetTotalCurrency(otherHuman.Comp.OwnedEntity.Value);
+            var otherValue = _currency.GetTotalCurrencyRecursive(otherHuman.Comp.OwnedEntity.Value);
             if (otherValue > otherMaxValue)
                 otherMaxValue = otherValue;
         }

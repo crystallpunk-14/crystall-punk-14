@@ -49,36 +49,6 @@
     count: 1
 
 - type: storePositionSell
-  id: CP14SpellScrollCureWounds
-  special: true
-  price: 20
-  factions:
-  - Sylphoria
-  service: !type:CP14SellPrototypeService
-    proto: CP14SpellScrollCureWounds
-    count: 1
-
-- type: storePositionSell
-  id: CP14SpellScrollBloodPurification
-  special: true
-  price: 20
-  factions:
-  - Sylphoria
-  service: !type:CP14SellPrototypeService
-    proto: CP14SpellScrollBloodPurification
-    count: 1
-
-- type: storePositionSell
-  id: CP14SpellScrollCureBurn
-  special: true
-  price: 20
-  factions:
-  - Sylphoria
-  service: !type:CP14SellPrototypeService
-    proto: CP14SpellScrollCureBurn
-    count: 1
-
-- type: storePositionSell
   id: CP14SpellScrollFlameCreation
   special: true
   price: 20

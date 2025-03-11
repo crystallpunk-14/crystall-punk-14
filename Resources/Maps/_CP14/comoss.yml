@@ -67584,14 +67584,14 @@ entities:
     - type: Transform
       pos: 105.5,61.5
       parent: 2
-- proto: CP14TradingPortalBradFamily
+- proto: CP14SpawnUniqueTradepost
   entities:
   - uid: 8847
     components:
     - type: Transform
       pos: 104.5,61.5
       parent: 2
-- proto: CP14TradingPortalSpiceStream
+- proto: CP14SpawnUniqueTradepost
   entities:
   - uid: 1051
     components:

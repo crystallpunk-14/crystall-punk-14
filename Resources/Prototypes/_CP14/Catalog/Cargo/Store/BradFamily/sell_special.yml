@@ -79,16 +79,6 @@
     count: 5
 
 - type: storePositionSell
-  id: CP14CrystalShardBase
-  special: true
-  price: 50
-  factions:
-  - BradFamily
-  service: !type:CP14SellPrototypeService
-    proto: CP14CrystalShardBase
-    count: 5
-
-- type: storePositionSell
   id: CP14BaseAlchemyBomb
   special: true
   price: 250
