@@ -197,3 +197,63 @@
   service: !type:CP14SellPrototypeService
     proto: CP14BaseLockpick
     count: 10
+
+- type: storePositionSell
+  id: CP14MobRabbit
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobRabbit
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobPig
+  special: true
+  price: 100
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobPig
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobBoar
+  special: true
+  price: 120
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobBoar
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobFrog
+  special: true
+  price: 10
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobFrog
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobMonsterMole
+  special: true
+  price: 30
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobMonsterMole
+    count: 1
+
+- type: storePositionSell
+  id: CP14PartsMonsterGlands
+  special: true
+  price: 80
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14PartsMonsterGlands
+    count: 1
