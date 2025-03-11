@@ -43021,7 +43021,7 @@ entities:
       parent: 13960
     - type: Physics
       canCollide: False
-- proto: CP14BrassChest
+- proto: CP14WoodenChest
   entities:
   - uid: 461
     components:
@@ -43048,7 +43048,7 @@ entities:
     - type: Transform
       pos: 20.5,-45.5
       parent: 2
-- proto: CP14BrassChestFilledFarmSeeds
+- proto: CP14WoodenChestFilledFarmSeeds
   entities:
   - uid: 890
     components:
