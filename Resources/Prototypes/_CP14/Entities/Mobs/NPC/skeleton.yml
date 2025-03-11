@@ -11,14 +11,14 @@
 
 - type: entity
   id: CP14MobUndeadSkeletonHalberd
-  parent: CP14BaseMobSkeleton
+  parent: CP14MobUndeadSkeletonDemiplane
   name: skeleton
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Halebard
   components:
   - type: Loadout
-    prototypes: 
+    prototypes:
     - CP14MobSkeletonHalberd
   - type: CP14AutoLearnAction
     actions:
@@ -33,7 +33,7 @@
   suffix: Sword
   components:
   - type: Loadout
-    prototypes: 
+    prototypes:
     - CP14MobSkeletonSword
 
 - type: entity
@@ -45,7 +45,7 @@
   suffix: Dodger
   components:
   - type: Loadout
-    prototypes: 
+    prototypes:
     - CP14MobSkeletonDodger
   - type: CP14AutoLearnAction
     actions:
@@ -60,7 +60,7 @@
   suffix: Archer
   components:
   - type: Loadout
-    prototypes: 
+    prototypes:
     - CP14MobSkeletonArcher
 
 - type: entity
@@ -72,7 +72,7 @@
   suffix: Wizard
   components:
   - type: Loadout
-    prototypes: 
+    prototypes:
     - CP14MobSkeletonWizard
   - type: CP14MagicEnergyDraw
     energy: 1
