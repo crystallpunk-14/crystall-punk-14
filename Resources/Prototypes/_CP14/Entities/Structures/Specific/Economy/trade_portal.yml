@@ -46,6 +46,10 @@
     stateBaseClosed: base
     stateDoorOpen: base_open
     stateDoorClosed: base_door
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Trading
+    - CP14_EN_Trading
 
 - type: entity
   parent: CP14TradingPortalBase

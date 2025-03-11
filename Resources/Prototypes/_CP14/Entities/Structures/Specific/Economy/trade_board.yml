@@ -21,3 +21,7 @@
     interfaces:
       enum.CP14StoreUiKey.Key:
         type: CP14StoreBoundUserInterface
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Trading
+    - CP14_EN_Trading
