@@ -14,9 +14,19 @@
   layers:
     - !type:OreDunGen
       entity: CP14DemiplanePassway
-      count: 2
+      count: 1
       minGroupSize: 1
       maxGroupSize: 1
+    - !type:OreDunGen
+      entity: CP14DemiplaneHint
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 1 
+    - !type:OreDunGen
+      entity: CP14AstralCorrosion
+      count: 15
+      minGroupSize: 3
+      maxGroupSize: 10 
 
 - type: cp14DemiplaneModifier
   id: TimeLimit10
