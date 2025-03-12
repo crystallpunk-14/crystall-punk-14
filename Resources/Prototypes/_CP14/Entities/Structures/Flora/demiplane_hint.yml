@@ -23,3 +23,8 @@
             crack2: ""
             crack3: ""
             crack4: ""
+    - type: PointLight
+      netSync: false
+      radius: 1.3
+      color: "#c6529f"
+      energy: 1
