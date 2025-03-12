@@ -18,6 +18,8 @@
     state: full
   - type: IconSmooth
     key: chasm
+    additionalKeys:
+    - CP14wall
     base: chasm_
   - type: Transform
     anchored: true

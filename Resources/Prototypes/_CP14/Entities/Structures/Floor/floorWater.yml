@@ -19,6 +19,8 @@
     state: full
   - type: IconSmooth
     key: CP14Water
+    additionalKeys:
+    - CP14wall
     base: water
   - type: FloorOccluder
   - type: Transform
