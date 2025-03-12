@@ -19,10 +19,11 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
 
         SubscribeLocalEvent<CP14UniqueLootSpawnerComponent, MapInitEvent>(OnMapInit);
+
+        RefreshUniqueLoot();
     }
 
     private void OnMapInit(Entity<CP14UniqueLootSpawnerComponent> ent, ref MapInitEvent args)
@@ -39,14 +40,10 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
             QueueDel(ent);
     }
 
-    private void OnRoundStart(RoundStartingEvent ev)
-    {
-        RefreshUniqueLoot();
-    }
 
     private void OnCleanup(RoundRestartCleanupEvent ev)
     {
-        _uniqueLootCount.Clear();
+        RefreshUniqueLoot();
     }
 
     private void RefreshUniqueLoot()
