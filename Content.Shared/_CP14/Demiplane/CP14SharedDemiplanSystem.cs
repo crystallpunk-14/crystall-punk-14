@@ -9,7 +9,6 @@ namespace Content.Shared._CP14.Demiplane;
 public abstract partial  class CP14SharedDemiplaneSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     public override void Initialize()
     {
@@ -26,7 +25,7 @@ public abstract partial  class CP14SharedDemiplaneSystem : EntitySystem
         var xformHint = Transform(ent);
         var hintPos = _transform.GetWorldPosition(xformHint);
 
-        while (query.MoveNext(out var uid, out _, out var xformRift))
+        while (query.MoveNext(out _, out _, out var xformRift))
         {
             if (xformRift.MapUid != xformHint.MapUid)
                 continue;
