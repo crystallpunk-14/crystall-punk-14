@@ -18,6 +18,24 @@
 
 - type: construction
   crystallPunkAllowed: true
+  name: palisade
+  description: A wall of sharp logs. Not that it's a safe haven.
+  id: CP14WallWoodenPalisade
+  graph: CP14WallWoodenPalisade
+  startNode: start
+  targetNode: CP14WallWoodenPalisade
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/wooden_palisad.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   name: wooden window
   description: A wooden wall with a glass window in it.
   id: CP14WindowWooden

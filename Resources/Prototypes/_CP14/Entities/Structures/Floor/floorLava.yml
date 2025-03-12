@@ -38,6 +38,8 @@
   - type: IconSmooth
     shader: unshaded
     key: CP14Lava
+    additionalKeys:
+    - CP14wall
     base: water
   - type: Physics
     bodyType: Static
