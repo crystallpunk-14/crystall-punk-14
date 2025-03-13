@@ -15,10 +15,10 @@
   id: CP14MobCarcatSprites
   sprites:
     Head: CP14MobCarcatHead
-    #HeadTop: CP14MobCarcatMarkingMatchSkin
+    HeadTop: CP14MobCarcatMarkingMatchSkin
     #Hair: CP14MobCarcatAnyMarking
     #FacialHair: CP14MobCarcatAnyMarking
-    #Snout: CP14MobCarcatMarkingMatchSkin
+    Snout: CP14MobCarcatMarkingMatchSkin
     Chest: CP14MobCarcatTorso
     Eyes: CP14MobCarcatEyes
     LArm: CP14MobCarcatLArm
@@ -40,14 +40,14 @@
     #FacialHair:
     #  points: 1
     #  required: false
-    #Snout:
-    #  points: 1
-    #  required: true
-    #  defaultMarkings: [ CP14CarcatNose ]
-    #HeadTop:
-    #  points: 1
-    #  required: true
-    #  defaultMarkings: [ CP14CarcatEars ]
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14CarcatNose ]
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14CarcatEars ]
     #Chest:
     #  points: 1
     #  required: false
