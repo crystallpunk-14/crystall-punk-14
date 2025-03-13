@@ -13,7 +13,7 @@
     - state: closed
       map: ["enum.StorageVisualLayers.Door"]
     - state: paper
-      map: ["enum.PaperLabelVisuals.Layer"] 
+      map: ["enum.PaperLabelVisuals.Layer"]
   - type: Icon
     sprite: _CP14/Structures/Storage/Crates/coffin.rsi
     state: base
@@ -31,7 +31,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
+          CP14WoodenPlanks1:
             min: 1
             max: 4
       - !type:DoActsBehavior
