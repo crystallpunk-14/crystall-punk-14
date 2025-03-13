@@ -52,6 +52,9 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
             if (!tagSystem.HasTag(placedEntity, Tag))
                 continue;
 
+            if (requiredCount <= 0)
+                break;
+
             requiredCount--;
             entManager.DeleteEntity(placedEntity);
         }
