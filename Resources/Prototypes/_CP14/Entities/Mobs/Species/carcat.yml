@@ -25,6 +25,20 @@
     requiredLegs: 2
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      head:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
@@ -46,6 +60,20 @@
     species: CP14Carcat
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      head:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
   - type: Hands
     leftHandDisplacement:
       sizeMaps:

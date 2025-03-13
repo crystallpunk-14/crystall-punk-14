@@ -3,23 +3,15 @@
   "license": "CC-BY-SA-4.0",
   "copyright": "Created by TheShuEd (Github)",
   "size": {
-    "x": 32,
-    "y": 32
+    "x": 48,
+    "y": 48
   },
   "load": {
       "srgb": false
   },
   "states": [
     {
-      "name": "hands_left",
-      "directions": 4
-    },
-    {
-      "name": "hands_right",
-      "directions": 4
-    },
-    {
-      "name": "cloak",
+      "name": "head",
       "directions": 4
     }
   ]
