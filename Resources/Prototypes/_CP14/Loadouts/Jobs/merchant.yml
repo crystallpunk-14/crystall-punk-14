@@ -34,11 +34,17 @@
   name: cp14-loadout-merchant-shirt
   loadouts:
   - CP14ClothingShirtMerchant
+  - CP14ClothingShirtMerchantDress
 
 - type: loadout
   id: CP14ClothingShirtMerchant
   equipment:
     shirt: CP14ClothingShirtMerchant
+
+- type: loadout
+  id: CP14ClothingShirtMerchantDress
+  equipment:
+    shirt: CP14ClothingShirtMerchantDress
 
 # Pants
 
@@ -47,6 +53,12 @@
   name: cp14-loadout-merchant-pants
   loadouts:
   - CP14ClothingPantsAristocratic
+  - CP14ClothingPantsMerchantsPantaloons
+
+- type: loadout
+  id: CP14ClothingPantsMerchantsPantaloons
+  equipment:
+    pants: CP14ClothingPantsMerchantsPantaloons
 
 # Shoes
 
@@ -55,3 +67,9 @@
   name: cp14-loadout-merchant-shoes
   loadouts:
   - CP14ShoesAristocraticBlack
+  - CP14ClothingShoesSandals
+
+- type: loadout
+  id: CP14ClothingShoesSandals
+  equipment:
+    shoes: CP14ClothingShoesSandals

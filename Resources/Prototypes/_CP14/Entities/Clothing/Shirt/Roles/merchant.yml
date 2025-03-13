@@ -8,3 +8,14 @@
     sprite: _CP14/Clothing/Shirt/Roles/Merchant/merchant.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/Merchant/merchant.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtMerchantDress
+  name: merchant's dress
+  description: An elegant dress for equally elegant individuals.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/Merchant/merchants_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/Merchant/merchants_dress.rsi
