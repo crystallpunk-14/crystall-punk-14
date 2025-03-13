@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Server.GameTicking.Events;
 using Content.Shared._CP14.UniqueLoot;
 using Content.Shared.GameTicking;
 using Content.Shared.Tag;
@@ -35,9 +34,6 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
 
         if (!Deleted(ent))
             SpawnAtPosition(loot, Transform(ent).Coordinates);
-
-        if (!TerminatingOrDeleted(ent) && Exists(ent))
-            QueueDel(ent);
     }
 
 
