@@ -29,6 +29,14 @@
     {
       "name": "gloves",
       "directions": 4
+    },
+    {
+      "name": "mask",
+      "directions": 4
+    },
+    {
+      "name": "pants",
+      "directions": 4
     }
   ]
 }

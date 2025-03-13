@@ -54,6 +54,16 @@
           48:
             sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
             state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: pants
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
@@ -104,6 +114,16 @@
           48:
             sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
             state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: pants
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
