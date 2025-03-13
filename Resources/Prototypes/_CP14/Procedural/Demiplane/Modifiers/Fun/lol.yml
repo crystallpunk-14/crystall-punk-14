@@ -59,12 +59,8 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
-      tileMask: 
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
       entity: CP14StatueStoneHeadHigh
-      count: 10
+      count: 1
       minGroupSize: 1
       maxGroupSize: 1
 
@@ -82,11 +78,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:OreDunGen
-      tileMask: 
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
       entity: CP14StatueStoneHeadLow
-      count: 10
+      count: 1
       minGroupSize: 1
       maxGroupSize: 1
