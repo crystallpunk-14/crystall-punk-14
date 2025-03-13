@@ -26,11 +26,26 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
       cloak:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
             state: cloak
+      back:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: eyes
       head:
         sizeMaps:
           32:
@@ -61,11 +76,26 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
       cloak:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
             state: cloak
+      back:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: eyes
       head:
         sizeMaps:
           32:
