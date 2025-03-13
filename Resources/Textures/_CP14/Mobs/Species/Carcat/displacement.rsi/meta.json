@@ -25,6 +25,10 @@
     {
       "name": "eyes",
       "directions": 4
+    },
+    {
+      "name": "gloves",
+      "directions": 4
     }
   ]
 }
