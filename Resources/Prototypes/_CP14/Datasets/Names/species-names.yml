@@ -106,3 +106,11 @@
   values:
     prefix: cp14-species-name-silva-female-first-
     count: 20
+
+# Carcat
+
+- type: localizedDataset
+  id: CP14_Names_Carcat_First
+  values:
+    prefix: cp14-species-name-carcat-first-
+    count: 50

@@ -23,8 +23,18 @@
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5 # 5 slash
+  - type: FootstepModifier
+    footstepSoundCollection: null # Silent footstep
   - type: Inventory
-    templateId: CP14Human
+    templateId: CP14Carcat # Cant wear shoes
     displacements:
       belt:
         sizeMaps:
@@ -94,7 +104,7 @@
   - type: HumanoidAppearance
     species: CP14Carcat
   - type: Inventory
-    templateId: CP14Human
+    templateId: CP14Carcat
     displacements:
       belt:
         sizeMaps:
