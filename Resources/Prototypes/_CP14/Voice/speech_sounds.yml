@@ -1,8 +1,5 @@
 - type: speechSounds
   id: CP14Carcat
-  params:
-    volume: 10
-    variation: 0.125
   saySound:
     path: /Audio/_CP14/Voice/Carcat/carcat_talk3.ogg
   askSound:
