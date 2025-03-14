@@ -13,7 +13,6 @@ cp14-loadout-general-back = Спина
 cp14-loadout-general-trinkets = Безделушки
 cp14-loadout-general-spells = Заклинания
 cp14-loadout-general-keys = Ключи
-cp14-loadout-alchemist-belt = Пояс
 
 # Apprentice
 
@@ -24,6 +23,7 @@ cp14-loadout-apprentice-bundle = Набор подмастерья
 cp14-loadout-alchemist-head = Шляпа алхимика
 cp14-loadout-alchemist-cloak = Накидка алхимика
 cp14-loadout-alchemist-eyes = Алхимические очки
+cp14-loadout-alchemist-belt = Пояс
 
 # Blacksmith
 
