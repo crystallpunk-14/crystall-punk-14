@@ -42363,13 +42363,6 @@ entities:
       parent: 12897
     - type: Physics
       canCollide: False
-- proto: CP14ClothingHeadBeretBlack
-  entities:
-  - uid: 11622
-    components:
-    - type: Transform
-      pos: -74.24762,-71.93574
-      parent: 2
 - proto: CP14ClothingHeadBowler
   entities:
   - uid: 2009
