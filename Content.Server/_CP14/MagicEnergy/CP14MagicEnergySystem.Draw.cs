@@ -56,7 +56,7 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
-            if (!_mobState.IsAlive(uid) && !_mobState.IsCritical(uid))
+            if (_mobState.IsDead(uid) || _mobState.IsCritical(uid))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
@@ -70,7 +70,7 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
-            if (!_mobState.IsAlive(uid) && !_mobState.IsCritical(uid))
+            if (_mobState.IsDead(uid) || _mobState.IsCritical(uid))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
