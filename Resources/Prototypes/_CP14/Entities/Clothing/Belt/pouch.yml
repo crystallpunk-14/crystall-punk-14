@@ -1,0 +1,33 @@
+﻿- type: entity
+  parent: ClothingBeltStorageBase
+  id: CP14ClothingBeltPouchPotions
+  name: potions pouch
+  description: A pouch for storing and storing potions, they definitely won't break here.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Belt/potions_pouch.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.StorageContainerVisualLayers.Fill" ]
+      visible: false
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
+  - type: Storage
+    grid:
+    - 0,0,5,1
+    maxItemSize: Small
+    whitelist:
+      tags:
+      - CP14Vial
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: Appearance
+  - type: StorageContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: fill-
