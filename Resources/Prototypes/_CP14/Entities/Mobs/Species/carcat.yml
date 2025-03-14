@@ -14,6 +14,13 @@
   - type: Icon
     sprite: _CP14/Mobs/Species/Carcat/parts.rsi
     state: full
+  - type: Vocal
+    sounds:
+      Male: CP14UnisexCarcat
+      Female: CP14UnisexCarcat
+      Unsexed: CP14UnisexCarcat
+  - type: Speech
+    speechSounds: CP14Carcat
   - type: Thirst
   - type: Butcherable
     butcheringType: Spike
