@@ -2,12 +2,14 @@ using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
     [Dependency] private readonly CP14SharedDayCycleSystem _dayCycle = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private void InitializeDraw()
     {
@@ -54,6 +56,9 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
+            if (!_mobState.IsAlive(uid) && !_mobState.IsCritical(uid))
+                continue;
+
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
             ChangeEnergy(uid, draw.Energy, out _, out _, magicContainer, draw.Safe);
@@ -63,6 +68,9 @@ public partial class CP14MagicEnergySystem
         while (query2.MoveNext(out var uid, out var draw, out var magicContainer))
         {
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            if (!_mobState.IsAlive(uid) && !_mobState.IsCritical(uid))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
