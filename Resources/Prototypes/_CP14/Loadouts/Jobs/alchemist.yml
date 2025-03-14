@@ -53,7 +53,7 @@
 # Belt
 
 - type: loadoutGroup
-  id: CP14AlchemistCloak
+  id: CP14AlchemistBelt
   name: cp14-loadout-alchemist-belt
   loadouts:
   - CP14ClothingBeltPouchPotions
