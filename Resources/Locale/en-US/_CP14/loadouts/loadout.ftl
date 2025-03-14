@@ -13,6 +13,7 @@ cp14-loadout-general-back = Back
 cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-general-spells = Spells
 cp14-loadout-general-keys = Keys
+cp14-loadout-alchemist-belt = Belt
 
 # Apprentice
 
