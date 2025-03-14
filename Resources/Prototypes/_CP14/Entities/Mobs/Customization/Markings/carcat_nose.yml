@@ -1,0 +1,65 @@
+- type: marking
+  id: CP14CarcatNose
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_nose.rsi
+      state: 1
+
+- type: marking
+  id: CP14CarcatNose2
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_nose.rsi
+      state: 2
+
+- type: marking
+  id: CP14CarcatNose3
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_nose.rsi
+      state: 3
+
+- type: marking
+  id: CP14CarcatNose4
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_nose.rsi
+      state: 4
+
+- type: marking
+  id: CP14CarcatNose5
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_nose.rsi
+      state: 5
+
+- type: marking
+  id: CP14CarcatNose6
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_nose.rsi
+      state: 6

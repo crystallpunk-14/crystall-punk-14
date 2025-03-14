@@ -162,15 +162,8 @@
   - CP14ClothingHeadMetalHeadband
   - CP14ClothingHeadTriangularHat
   - CP14ClothingHeadTriangularHatGolden
-  - CP14ClothingHeadBeretRed
   - CP14ClothingHeadJestersCap
-  - CP14ClothingHeadBeretPurple
-  - CP14ClothingHeadBeretYellow
-  - CP14ClothingHeadBeretBlue
-  - CP14ClothingHeadBeretBlack
   - CP14ClothingHeadHuntersHat
-  - CP14ClothingHeadBandanaWhite
-  - CP14ClothingHeadBandanaYellow
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -188,49 +181,14 @@
     head: CP14ClothingHeadTriangularHatGolden
 
 - type: loadout
-  id: CP14ClothingHeadBeretRed
-  equipment:
-    head: CP14ClothingHeadBeretRed
-
-- type: loadout
   id: CP14ClothingHeadJestersCap
   equipment:
     head: CP14ClothingHeadJestersCap
 
 - type: loadout
-  id: CP14ClothingHeadBeretPurple
-  equipment:
-    head: CP14ClothingHeadBeretPurple
-
-- type: loadout
-  id: CP14ClothingHeadBeretYellow
-  equipment:
-    head: CP14ClothingHeadBeretYellow
-
-- type: loadout
-  id: CP14ClothingHeadBeretBlue
-  equipment:
-    head: CP14ClothingHeadBeretBlue
-
-- type: loadout
-  id: CP14ClothingHeadBeretBlack
-  equipment:
-    head: CP14ClothingHeadBeretBlack
-
-- type: loadout
   id: CP14ClothingHeadHuntersHat
   equipment:
     head: CP14ClothingHeadHuntersHat
-
-- type: loadout
-  id: CP14ClothingHeadBandanaWhite
-  equipment:
-    head: CP14ClothingHeadBandanaWhite
-
-- type: loadout
-  id: CP14ClothingHeadBandanaYellow
-  equipment:
-    head: CP14ClothingHeadBandanaYellow
 
 # Pants
 
