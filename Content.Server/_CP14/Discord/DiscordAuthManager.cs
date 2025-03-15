@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -12,7 +13,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server._CP14.Discord;
 
@@ -24,9 +24,19 @@ public sealed class DiscordAuthManager
 
     private ISawmill _sawmill = default!;
     private readonly HttpClient _httpClient = new();
-    private bool _enabled = false;
+    private bool _enabled;
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
+
+    //TODO unhardcode
+    private string _discordGuild = "1221923073759121468"; //CrystallEdge server required
+
+    private Dictionary<string, string> _blockedGuilds = new()
+    {
+        {"1346922008000204891", "Sunrise SQUAD"},
+        {"1186566619858731038", "2PAC和奥萨玛歌迷俱乐部"},
+        {"550379104193740831", "Old Dishonored Ed testing server"},
+    };
 
     public event EventHandler<ICommonSession>? PlayerVerified;
 
@@ -47,7 +57,7 @@ public sealed class DiscordAuthManager
     private async void OnAuthCheck(MsgDiscordAuthCheck msg)
     {
         var verified = await IsVerified(msg.MsgChannel.UserId);
-        if (!verified)
+        if (!verified.Verified)
             return;
 
         var session = _playerMgr.GetSessionById(msg.MsgChannel.UserId);
@@ -68,7 +78,7 @@ public sealed class DiscordAuthManager
         if (args.NewStatus == SessionStatus.Connected)
         {
             var verified = await IsVerified(args.Session.UserId);
-            if (verified)
+            if (verified.Verified)
             {
                 PlayerVerified?.Invoke(this, args.Session);
                 return;
@@ -76,11 +86,12 @@ public sealed class DiscordAuthManager
 
             var message = new MsgDiscordAuthRequired();
             message.AuthUrl = await GenerateLink(args.Session.UserId) ?? string.Empty;
+            message.ErrorMessage = verified.ErrorMessage;
             args.Session.Channel.SendMessage(message);
         }
     }
 
-    public async Task<bool> IsVerified(NetUserId userId, CancellationToken cancel = default)
+    public async Task<AuthData> IsVerified(NetUserId userId, CancellationToken cancel = default)
     {
         _sawmill.Debug($"Player {userId} check Discord verification");
 
@@ -93,8 +104,58 @@ public sealed class DiscordAuthManager
         var response = await _httpClient.SendAsync(request, cancel);
 
         _sawmill.Debug($"{await response.Content.ReadAsStringAsync(cancel)}");
-        _sawmill.Debug($"{(int) response.StatusCode}");
-        return response.StatusCode == HttpStatusCode.OK;
+        _sawmill.Debug($"{(int)response.StatusCode}");
+        var verified = response.StatusCode == HttpStatusCode.OK;
+        var guildsVerified = await CheckGuilds(userId, cancel);
+
+        if (!verified)
+            return new AuthData { Verified = false, ErrorMessage = Loc.GetString("cp14-discord-info")};
+
+        return guildsVerified;
+    }
+
+    private async Task<AuthData> CheckGuilds(NetUserId userId, CancellationToken cancel = default)
+    {
+        _sawmill.Debug($"Checking guilds for {userId}");
+
+        var requestUrl = $"{_apiUrl}/api/guilds?method=uid&id={userId}";
+        _sawmill.Debug($"Guilds request url:{requestUrl}");
+        var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
+
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+
+        var response = await _httpClient.SendAsync(request, cancel);
+        _sawmill.Debug($"Guilds response: {await response.Content.ReadAsStringAsync(cancel)}");
+        _sawmill.Debug($"(int) response.StatusCode: {(int)response.StatusCode}");
+        if (!response.IsSuccessStatusCode)
+        {
+            _sawmill.Debug($"Player {userId} guilds check failed: !response.IsSuccessStatusCode");
+            return new AuthData { Verified = false, ErrorMessage = "Unexpected error: !response.IsSuccessStatusCode" };
+        }
+
+        var guilds = await response.Content.ReadFromJsonAsync<DiscordGuildsResponse>(cancel);
+        if (guilds is null)
+        {
+            _sawmill.Debug($"Player {userId} guilds check failed: guilds is null");
+            return new AuthData { Verified = false, ErrorMessage = "Unexpected error: guilds is null" };
+        }
+
+        foreach (var guild in guilds.Guilds)
+        {
+            if (_blockedGuilds.TryGetValue(guild.Id, out var blockedGuildName))
+            {
+                _sawmill.Debug($"Player {userId} is in blocked guild {guild.Id}");
+                return new AuthData { Verified = false, ErrorMessage = $"You are in a blocked guild: {blockedGuildName}" };
+            }
+        }
+
+        if (guilds.Guilds.All(guild => guild.Id != _discordGuild))
+        {
+            _sawmill.Debug($"Player {userId} is not in required guild {_discordGuild}");
+            return new AuthData { Verified = false, ErrorMessage = "You are not a member of the CrystallEdge server." };
+        }
+
+        return new AuthData { Verified = true };
     }
 
     public async Task<string?> GenerateLink(NetUserId userId, CancellationToken cancel = default)
@@ -119,7 +180,8 @@ public sealed class DiscordAuthManager
         }
         catch (Exception e)
         {
-            _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
+            _sawmill.Error(
+                $"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
             return null;
         }
     }
@@ -128,5 +190,23 @@ public sealed class DiscordAuthManager
     {
         [JsonPropertyName("link")]
         public string Link { get; set; } = string.Empty;
+    }
+
+    private sealed class DiscordGuildsResponse
+    {
+        [JsonPropertyName("guilds")]
+        public DiscordGuild[] Guilds { get; set; } = [];
+    }
+
+    private sealed class DiscordGuild
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; } = null!;
+    }
+
+    public sealed class AuthData
+    {
+        public bool Verified { get; set; }
+        public string ErrorMessage { get; set; } = string.Empty;
     }
 }
