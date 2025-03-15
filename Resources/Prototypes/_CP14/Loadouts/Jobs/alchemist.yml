@@ -49,3 +49,16 @@
   id: CP14ClothingEyesAlchemyMonocle
   equipment:
     eyes: CP14ClothingEyesAlchemyMonocle
+
+# Belt
+
+- type: loadoutGroup
+  id: CP14AlchemistBelt
+  name: cp14-loadout-alchemist-belt
+  loadouts:
+  - CP14ClothingBeltPouchPotions
+
+- type: loadout
+  id: CP14ClothingBeltPouchPotions
+  equipment:
+    belt2: CP14ClothingBeltPouchPotions

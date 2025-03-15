@@ -23,6 +23,7 @@ cp14-loadout-apprentice-bundle = Набор подмастерья
 cp14-loadout-alchemist-head = Шляпа алхимика
 cp14-loadout-alchemist-cloak = Накидка алхимика
 cp14-loadout-alchemist-eyes = Алхимические очки
+cp14-loadout-alchemist-belt = Пояс алхимика
 
 # Blacksmith
 
