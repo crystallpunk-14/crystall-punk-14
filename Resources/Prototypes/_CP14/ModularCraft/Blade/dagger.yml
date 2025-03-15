@@ -24,6 +24,10 @@
       types:
         Slash: 4
         Piercing: 3
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Piercing: 3
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
