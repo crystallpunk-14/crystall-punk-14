@@ -50,11 +50,6 @@ public sealed partial class CP14RoundEndSystem
                 _ticker.TogglePause();
         }
 
-        if (nowMoscow.Hour == 17 && nowMoscow.Minute == 45)
-        {
-            _consoleHost.ExecuteCommand("shutdown"); //Restart server, load updates and other
-        }
-
         if (nowMoscow.Hour == 20 && nowMoscow.Minute == 45)
         {
             _chatSystem.DispatchGlobalAnnouncement("ВНИМАНИЕ: Сервер автоматически завершит раунд через 15 минут", announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"), sender: "Сервер");

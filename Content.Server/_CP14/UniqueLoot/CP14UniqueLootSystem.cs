@@ -32,8 +32,15 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
         if (loot == null)
             return;
 
-        if (!Deleted(ent))
-            SpawnAtPosition(loot, Transform(ent).Coordinates);
+        if (TerminatingOrDeleted(ent) || !Exists(ent) || Deleted(ent))
+            return;
+
+        var coords = Transform(ent).Coordinates;
+
+        Spawn(loot, coords);
+
+        if (!TerminatingOrDeleted(ent) && Exists(ent))
+            QueueDel(ent);
     }
 
 
