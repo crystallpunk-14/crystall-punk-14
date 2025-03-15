@@ -43,7 +43,7 @@
     - map: [ "neck" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair", "HairDisplacement" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
@@ -125,6 +125,16 @@
         32:
           sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
           state: hands
+  - type: CP14SimpleDisplacementMap
+    displacements:
+      HairDisplacement:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: head
   - type: Inventory
     templateId: CP14Human
     speciesId: goblin
