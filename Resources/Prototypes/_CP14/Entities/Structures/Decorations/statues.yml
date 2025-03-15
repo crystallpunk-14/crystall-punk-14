@@ -158,7 +158,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.45,-0.45,0.45,0.45"
-        density: 60
+        density: 120
         mask:
         - MachineMask
         layer:
@@ -213,3 +213,109 @@
       map: ["ritual"]
       visible: false
       shader: unshaded
+
+- type: entity
+  id: CP14StatueStoneHeadHigh
+  parent: BaseStructure
+  name: stone head
+  description: Strange stone heads, they seem to be watching.
+  categories: [ ForkFiltered ]
+  suffix: High
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/stone_head_high.rsi
+    layers:
+    - state: statue_head_h
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 200
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14StoneBlock1:
+            min: 4
+            max: 5
+
+- type: entity
+  id: CP14StatueStoneHeadLow
+  parent: CP14StatueStoneHeadHigh
+  suffix: Low
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Decoration/stone_head_low.rsi
+    layers:
+    - state: statue_head_l
+
+- type: entity
+  id: CP14StatueWizard
+  parent: BaseStructure
+  name: statue wizard
+  description: A statue of a magician holding magic.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/wizard_statue.rsi
+    layers:
+    - state: statue_wizard
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.20,-0.35,0.20,0.35"
+        density: 100
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: SpriteFade
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 110
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14StoneBlock1:
+            min: 2
+            max: 3
