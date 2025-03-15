@@ -19,6 +19,7 @@
 - type: startingGear
   id: CP14MobSkeletonHalberd
   equipment:
+    outerClothing: CP14ClothingOuterClothingBoneArmor
     shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14ModularSkeletonHalberd
@@ -29,6 +30,7 @@
 - type: startingGear
   id: CP14MobSkeletonSword
   equipment:
+    outerClothing: CP14ClothingOuterClothingBoneArmor
     pants: CP14ClothingPantsLoincloth
     belt1: CP14ModularSkeletonSword
     shoes: CP14ClothingShoesSandals
