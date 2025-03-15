@@ -1,6 +1,5 @@
 #Concept:
-# Copy of dagger with lesser damage
-# But can gather grass from world
+# Copy of dagger with bigger damage, but without throwing
 - type: modularPart
   id: BaseBladeSickle
   modifiers:
@@ -13,7 +12,11 @@
     attackRateMultiplier: 1.5
     bonusDamage:
       types:
-        Slash: 4
+        Slash: 8
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: 3
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
