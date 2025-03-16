@@ -223,7 +223,7 @@ ent-CP14SpellScrollFlameCreation = свиток заклинания созда�
     .desc = { ent-CP14BaseSpellScrollFire.desc }
 
 ent-CP14ActionSpellHellBallade = Адская баллада
-    .desc = Ваша музыка пронизана силой огня и буквально сжигает вас и ваших врагов.
+    .desc = Ваша музыка наполняется силой огня и буквально сжигает вас и ваших врагов.
 
 ent-CP14ImpactEffectHellBallade = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -309,7 +309,7 @@ ent-CP14SpellScrollCureWounds = свиток заклинания лечения
     .desc = { ent-CP14BaseSpellScrollHealing.desc }
 
 ent-CP14ActionSpellHealBallade = Исцеляющая баллада
-    .desc = Ваша музыка наполнена целительной магией, медленно исцеляющей всех существ вокруг вас.
+    .desc = Ваша музыка наполняется магией, медленно исцеляющей всех существ вокруг вас.
 
 ent-CP14ImpactEffectHealthBallade = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -318,7 +318,7 @@ ent-CP14RuneHealBallade = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
 ent-CP14ActionSpellPeaceBallade = Умиротворяющая баллада
-    .desc = Ваша музыка наполнена мирной магией, запрещающей всем, кто находится рядом с вами, сражаться.
+    .desc = Ваша музыка наполняется магией, запрещающей всем, кто находится рядом с вами, сражаться.
 
 ent-CP14ImpactEffectPeaceBallade = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -342,7 +342,7 @@ ent-CP14RunePlantGrowth = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
 ent-CP14ActionSpellSpeedBallade = Баллада скорости
-    .desc = Ваша музыка наполнена ускоряющей магией, ускоряющей движение всех существ поблизости.
+    .desc = Ваша музыка наполняется магией, ускоряющей движение всех существ поблизости.
 
 ent-CP14ImpactEffectSpeedBallade = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -658,7 +658,7 @@ ent-CP14ClothingHeadHuntersHat = охотничья шляпа
     .desc = Головной убор, почитаемый охотниками на нежить.
 
 ent-CP14ClothingHeadJestersCap = шутовской колпак
-    .desc = Вы - веселье. Ты - шум. Ты - шут.
+    .desc = Ты - веселье. Ты - шум. Ты - шут.
 
 ent-CP14ClothingHeadGuardHelmet = шлем стражи
 
@@ -2549,31 +2549,31 @@ ent-CP14VialMediumChaosEssence = { ent-CP14VialMedium }
     .desc = { ent-CP14VialMedium.desc }
     .suffix = Perditio
 
-ent-CP14VialSmallHealingBrute = brad's healing potion
+ent-CP14VialSmallHealingBrute = целебное зелье Брада
     .desc = { ent-CP14VialSmall.desc }
     .suffix = Исцеляющий ушибы 10%
 
-ent-CP14VialSmallHealingPoison = brad's antidote potion
+ent-CP14VialSmallHealingPoison = зелье противоядия Брада
     .desc = { ent-CP14VialSmall.desc }
     .suffix = Исцеляющий яд 10%
 
-ent-CP14VialSmallHealingAirloss = brad's airloss healing potion
+ent-CP14VialSmallHealingAirloss = зелье лечения удушения Брада
     .desc = { ent-CP14VialSmall.desc }
     .suffix = Исцеляющий удушение 10%
 
-ent-CP14VialSmallHealingBlood = brad's blood restoration potion
+ent-CP14VialSmallHealingBlood = зелье восстановления крови Брада
     .desc = { ent-CP14VialSmall.desc }
     .suffix = Восстановление крови 10%
 
-ent-CP14VialSmallHealingMana = brad's mana potion
+ent-CP14VialSmallHealingMana = зелье маны Брада
     .desc = { ent-CP14VialSmall.desc }
     .suffix = Восстановление маны 10%
 
-ent-CP14VialSmallSpeedUp = brad's accseleration potion
+ent-CP14VialSmallSpeedUp = зелье ускорения Брада
     .desc = { ent-CP14VialSmall.desc }
     .suffix = Ускорение на 10 %
 
-ent-CP14VialSmallRainbow = brad's funny potion
+ent-CP14VialSmallRainbow = веселое зелье Брада
     .desc = { ent-CP14VialSmall.desc }
     .suffix = Радуга и пьяные 20%
 
@@ -4194,7 +4194,7 @@ ent-CP14WallLeaf = стена листьев
 
 ent-CP14WallWooden = деревянная стена
 
-ent-CP14WallWoodenPalisade = палисадник
+ent-CP14WallWoodenPalisade = частокол
     .desc = Стена из острых бревен. Не то чтобы это было безопасное убежище.
 
 ent-CP14WallCardboard = картонная стена
