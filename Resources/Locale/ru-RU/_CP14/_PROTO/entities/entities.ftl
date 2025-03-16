@@ -154,6 +154,7 @@ ent-CP14ImpactEffectResurrection = { ent-CP14BaseMagicImpact }
 
 ent-CP14SpellScrollResurrection = свиток заклинания воскрешения
     .desc = { ent-CP14BaseSpellScrollNecromancy.desc }
+
 ent-CP14ActionSpellDemiplaneInfiltration = Проникновение в демиплан
     .desc = Вы проникаете в выбранный ваши демиплан.
 
@@ -348,6 +349,7 @@ ent-CP14ImpactEffectSpeedBallade = { ent-CP14BaseMagicImpact }
 
 ent-CP14RuneSpeedBallade = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
+
 ent-CP14ActionSpellSphereOfLight = Сфера света
     .desc = Материализация яркого и безопасного источника света.
 
@@ -1038,7 +1040,7 @@ ent-CP14SpawnMobMonsterInvisibleWhistler = спавнер невидимого �
 
 ent-CP14SpawnUniqueArtifact = случайный спавнер артефактов
 
-ent-CP14SpawnUniqueTradepost = случайный спаунер торговых постов
+ent-CP14SpawnUniqueTradepost = случайный спавнер торговых постов
 
 ent-CP14ConstrainedSpawnerBase = Неа
     .desc = лол
