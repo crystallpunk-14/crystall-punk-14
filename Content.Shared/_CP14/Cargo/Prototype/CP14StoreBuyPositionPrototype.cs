@@ -22,7 +22,7 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     [DataField(required: true)]
     public string Code = string.Empty;
 
-    [DataField(required: true)]
+    [DataField(required: true, serverOnly: true)]
     public CP14StoreBuyService Service = default!;
 
     [DataField]

@@ -29,16 +29,12 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         InitCbt();
 
         SubscribeLocalEvent<CP14MagicContainerRoundFinisherComponent, CP14MagicEnergyLevelChangeEvent>(OnFinisherMagicEnergyLevelChange);
-        SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
     }
 
-    private void OnRoundEndMessage(RoundEndMessageEvent ev)
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _roundEndMoment = TimeSpan.Zero; //Reset timer, so it cant affect next round in any case
-        _demiplane.DeleteAllDemiplanes(safe: false);
-
-        _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
-            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
     }
 
     public override void Update(float frameTime)
@@ -53,6 +49,9 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         if (_roundEndMoment > _timing.CurTime)
             return;
 
+        _demiplane.DeleteAllDemiplanes(safe: false);
+        _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
+            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
         _roundEnd.EndRound();
     }
 

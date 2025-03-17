@@ -23,6 +23,7 @@ cp14-loadout-apprentice-bundle = Apprentice bundle
 cp14-loadout-alchemist-head = Alchemist's head
 cp14-loadout-alchemist-cloak = Alchemist's cloak
 cp14-loadout-alchemist-eyes = Alchemical goggles
+cp14-loadout-alchemist-belt = Alchemist's belt
 
 # Blacksmith
 
