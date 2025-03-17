@@ -76,7 +76,7 @@
 
 - type: storePositionSell
   id: Wood
-  price: 20
+  price: 5
   factions:
   - SpiceStream
   - HelmirWeapon

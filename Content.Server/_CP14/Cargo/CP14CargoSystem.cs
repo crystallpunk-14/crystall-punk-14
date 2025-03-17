@@ -7,6 +7,7 @@ using Content.Shared._CP14.Cargo;
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared._CP14.Currency;
 using Content.Shared.Paper;
+using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -218,7 +219,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         {
             if (TryComp<CP14CurrencyComponent>(stored, out var currency))
             {
-                cash += currency.Currency;
+                //fix currency calculation
+                var c = currency.Currency;
+
+                if (TryComp<StackComponent>(stored, out var stack))
+                    c *= stack.Count;
+
+                cash += c;
                 QueueDel(stored);
             }
         }
