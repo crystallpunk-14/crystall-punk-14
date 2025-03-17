@@ -58,8 +58,6 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
 
     public EntProtoId? GetNextUniqueLoot(ProtoId<TagPrototype>? withTag = null)
     {
-        return "CP14ClothingShoesArtifactFlightboots";
-
         if (_uniqueLootCount.Count == 0)
             return null;
 
