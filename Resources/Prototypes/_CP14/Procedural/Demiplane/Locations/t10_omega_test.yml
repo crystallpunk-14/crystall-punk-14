@@ -1,0 +1,139 @@
+- type: cp14DemiplaneLocation
+  id: T1OmegaTest
+  tier: 1
+  locationConfig: CP14OmegaTest
+  name: cp14-demiplane-location-cave
+  tags:
+  - CP14DemiplaneOres
+  - CP14DemiplaneUnderground
+  - CP14DemiplaneHerbals
+  - CP14DemiplaneWater
+  - CP14DemiplaneAnimalsSwamp
+
+- type: dungeonConfig
+  id: CP14OmegaTest
+  layers:
+    #Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneOmegaPlatingMaskBorder
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneOmegaCavesFloorMaskStone
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneOmegaCavesFloorMaskAir
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneOmegaCavesFloorMaskAir2
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneOmegaCavesFloorMaskAir3
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesIndestructibleFill
+      tileMask:
+      - Plating
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesGeneric
+      tileMask:
+      - CP14FloorSand
+    - !type:BiomeDunGen
+      biomeTemplate: CP14Grassland
+      tileMask:
+      - CP14FloorGrass
+    - !type:BiomeDunGen
+      biomeTemplate: CP14LeafMaze
+      tileMask:
+      - CP14FloorSnow
+    - !type:BiomeDunGen
+      biomeTemplate: CP14SwampFill
+      tileMask:
+      - CP14FloorGrassTall
+
+
+
+- type: dungeonConfig
+  id: CP14DemiplaneOmegaPlatingMaskBorder
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 260, 260
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 1
+    layers:
+    - tile: Plating
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneOmegaCavesFloorMaskStone
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 200, 200
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.9
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneOmegaCavesFloorMaskAir
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 100, 100
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorGrass
+      threshold: 0.60
+      noise:
+        frequency: 0.020
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneOmegaCavesFloorMaskAir2
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 80, 80
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.5
+    layers:
+    - tile: CP14FloorSnow
+      threshold: 0.50
+      noise:
+        frequency: 0.030
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneOmegaCavesFloorMaskAir3
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 100, 100
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.4
+    layers:
+    - tile: CP14FloorGrassTall
+      threshold: 0.50
+      noise:
+        frequency: 0.045
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
