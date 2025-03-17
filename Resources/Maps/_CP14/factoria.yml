@@ -63009,14 +63009,6 @@ entities:
     - type: Transform
       pos: -112.660484,46.248337
       parent: 2
-- proto: CP14ClothingHeadCaptainCap
-  entities:
-  - uid: 471
-    components:
-    - type: Transform
-      parent: 307
-    - type: Physics
-      canCollide: False
 - proto: CP14ClothingHeadWreath
   entities:
   - uid: 10073
@@ -69054,7 +69046,7 @@ entities:
         head: !type:ContainerSlot
           showEnts: False
           occludes: False
-          ent: 471
+          ent: null
         keys: !type:ContainerSlot
           showEnts: False
           occludes: False
