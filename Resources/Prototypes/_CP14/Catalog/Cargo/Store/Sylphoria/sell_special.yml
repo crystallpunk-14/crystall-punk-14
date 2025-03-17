@@ -241,7 +241,7 @@
 - type: storePositionSell
   id: CP14MobMonsterMole
   special: true
-  price: 30
+  price: 50
   factions:
   - Sylphoria
   service: !type:CP14SellPrototypeService
@@ -251,7 +251,7 @@
 - type: storePositionSell
   id: CP14PartsMonsterGlands
   special: true
-  price: 80
+  price: 100
   factions:
   - Sylphoria
   service: !type:CP14SellPrototypeService

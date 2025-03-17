@@ -227,3 +227,27 @@
         amount: 2
       - id: CP14CandlePurpleSmall
         amount: 2
+
+- type: storePositionBuy
+  id: SmokePowder
+  code: TOBACCO
+  price: 80
+  iconOverride: 
+    sprite: _CP14/Objects/Misc/reagent_fillings.rsi
+    state: tobacco_small
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmokePowder
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmokePowder
+  name: smoking powder chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14GroundTobacco
+        amount: 10
+      - id: CP14GroundSage
+        amount: 5
