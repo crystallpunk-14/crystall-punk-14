@@ -4,8 +4,8 @@
   parent: MarkerBase
   categories: [ ForkFiltered, DoNotMap ]
   components:
-  - type: CP14UniqueLootSpawner
-    tag: CP14UniqueSpawnDemiplanetLoot
+  #- type: CP14UniqueLootSpawner
+  #  tag: CP14UniqueSpawnDemiplanetLoot
   - type: Sprite
     layers:
     - sprite: Markers/cross.rsi
