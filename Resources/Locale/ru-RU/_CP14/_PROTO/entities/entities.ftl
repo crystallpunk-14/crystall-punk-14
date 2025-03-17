@@ -692,10 +692,10 @@ ent-CP14ArmorCopperCuirassPresets = полная медная кираса
 ent-CP14ArmorMithrilCuirassPresets = полная мифриловая кираса
     .desc = Мечта любого искателя приключений, мифриловая броня - прочная, крепкая и почти не стесняющая движений. Если и существует идеал, то это именно он.
 
-ent-CP14ArmorIronСhainmailPresets = полная железная кольчуга
+ent-CP14ArmorIronChainmailPresets = полная железная кольчуга
     .desc = Полные железные кольчужные доспехи, легкие и с достойной защитой.
 
-ent-CP14ArmorMithrilСhainmailPresets = полная мифриловая кольчуга
+ent-CP14ArmorMithrilChainmailPresets = полная мифриловая кольчуга
     .desc = Полная мифриловая кольчуга, которую, возможно, медленно и кропотливо собирали гномьи кузнецы. Ценнейшая работа.
 
 ent-CP14ClothingOuterClothingCopperArmor = медная броня
