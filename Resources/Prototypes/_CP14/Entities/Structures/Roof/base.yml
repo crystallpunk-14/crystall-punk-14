@@ -26,6 +26,7 @@
     key: CP14roof
     base: roof
   - type: IsRoof
+  - type: SunShadowCast
 
 - type: entity
   parent: 
