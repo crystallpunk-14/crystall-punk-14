@@ -1,6 +1,6 @@
 - type: storePositionSell
   id: LucenPlanks
-  price: 120
+  price: 100
   factions:
   - Sylphoria
   service: !type:CP14SellStackService
@@ -96,3 +96,12 @@
   service: !type:CP14SellPrototypeService
     proto: CP14SpellScrollMagicalAcceleration
     count: 5
+
+- type: storePositionSell
+  id: CP14ClothingCloakAmuletGold
+  price: 80
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14ClothingCloakAmuletGold
+    count: 1
