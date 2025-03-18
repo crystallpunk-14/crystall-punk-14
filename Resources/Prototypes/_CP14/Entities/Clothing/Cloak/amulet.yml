@@ -24,6 +24,9 @@
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/Amulet/amulet_mana.rsi
+    layers:
+    - state: icon
+    - state: amethyst_stone
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Amulet/amulet_mana.rsi
   - type: CP14MagicManacostModify
