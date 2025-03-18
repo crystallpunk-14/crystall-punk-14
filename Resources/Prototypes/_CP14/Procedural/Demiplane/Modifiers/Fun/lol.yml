@@ -47,8 +47,9 @@
       maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
-  id: StatueStoneHeadHigh
+  id: StatueStoneHead
   tiers:
+    - 1
     - 2
     - 3
   generationWeight: 0.1
@@ -63,20 +64,6 @@
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
-  id: StatueStoneHeadLow
-  tiers:
-    - 1
-    - 2
-    - 3
-  generationWeight: 0.1
-  generationProb: 0.1
-  categories:
-    Fun: 1
-  requiredTags:
-  - CP14DemiplaneOpenSky
-  layers:
     - !type:OreDunGen
       entity: CP14StatueStoneHeadLow
       count: 1
