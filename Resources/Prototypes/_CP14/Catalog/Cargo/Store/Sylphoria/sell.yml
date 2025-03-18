@@ -1,0 +1,98 @@
+- type: storePositionSell
+  id: LucenPlanks
+  price: 120
+  factions:
+  - Sylphoria
+  service: !type:CP14SellStackService
+    stackId: CP14LucensWoodenPlanks
+    count: 10
+
+- type: storePositionSell
+  id: CP14SpellScrollIceShards
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollIceShards
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollShadowGrab
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollShadowGrab
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollSphereOfLight
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollSphereOfLight
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollFlameCreation
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollFlameCreation
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollEarthWall
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollEarthWall
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollFlashLight
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollFlashLight
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollWaterCreation
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollWaterCreation
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollPlantGrowth
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollPlantGrowth
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollMagicSplitting
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollMagicSplitting
+    count: 5
+
+- type: storePositionSell
+  id: CP14SpellScrollMagicalAcceleration
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollMagicalAcceleration
+    count: 5
