@@ -2,9 +2,9 @@
 
 - type: cp14DemiplaneModifier
   id: Dayflin
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-dayflin
   categories:
     Reward: 0.1
@@ -24,9 +24,9 @@
 
 - type: cp14DemiplaneModifier
   id: FlyAgaric
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-fly-agaric
   categories:
     Reward: 0.1
@@ -46,9 +46,9 @@
 
 - type: cp14DemiplaneModifier
   id: BlueAmanita
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-blue-amanita
   categories:
     Reward: 0.1
@@ -67,9 +67,9 @@
 
 - type: cp14DemiplaneModifier
   id: BloodFlower
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-blood-flower
   categories:
     Reward: 0.1
@@ -88,9 +88,9 @@
 
 - type: cp14DemiplaneModifier
   id: WildSage
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-wild-sage
   categories:
     Reward: 0.1
@@ -110,9 +110,9 @@
 
 - type: cp14DemiplaneModifier
   id: AirLily
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-air-lily
   categories:
     Reward: 0.1
@@ -133,8 +133,9 @@
 
 - type: cp14DemiplaneModifier
   id: LumiShroom
-  tiers:
-    - 2
+  levels:
+    min: 4
+    max: 10
   name: cp14-modifier-lumisroom
   categories:
     Reward: 0.1

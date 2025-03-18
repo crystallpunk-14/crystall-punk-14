@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1OmegaTest
-  tier: 1
+  levels:
+    min: 11
+    max: 11
   locationConfig: CP14OmegaTest
   name: cp14-demiplane-location-cave
   tags:

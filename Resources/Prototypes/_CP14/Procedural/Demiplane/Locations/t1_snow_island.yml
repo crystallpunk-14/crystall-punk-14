@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1SnowIsland
-  tier: 1
+  levels:
+    min: 1
+    max: 10
   locationConfig: CP14DemiplaneSnowIsland
   name: cp14-demiplane-location-snow-island
   tags:

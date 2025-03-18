@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1Caves
-  tier: 1
+  levels:
+    min: 1
+    max: 4
   locationConfig: CP14DemiplaneCaves
   name: cp14-demiplane-location-cave
   tags:

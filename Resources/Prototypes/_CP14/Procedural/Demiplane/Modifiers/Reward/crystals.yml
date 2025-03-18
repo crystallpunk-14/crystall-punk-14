@@ -1,8 +1,9 @@
 
 - type: cp14DemiplaneModifier
   id: CrystalNormal
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 3
   generationWeight: 0.1
   categories:
     Reward: 0.1
@@ -19,9 +20,9 @@
 
 - type: cp14DemiplaneModifier
   id: CrystalFire
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 4
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.1
@@ -43,9 +44,9 @@
 
 - type: cp14DemiplaneModifier
   id: CrystalEarth
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 4
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.1
@@ -67,9 +68,9 @@
 
 - type: cp14DemiplaneModifier
   id: CrystalWater
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 4
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.1
@@ -89,9 +90,9 @@
 
 - type: cp14DemiplaneModifier
   id: CrystalAir
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 4
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.1
@@ -113,9 +114,9 @@
 
 - type: cp14DemiplaneModifier
   id: CrystalOrder
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 4
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.1
@@ -133,9 +134,9 @@
 
 - type: cp14DemiplaneModifier
   id: CrystalChaos
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 4
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.1

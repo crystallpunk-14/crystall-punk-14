@@ -218,13 +218,8 @@ public sealed partial class CP14DemiplaneSystem
             {
                 var randomConfig = _random.Pick(suitableConfigs);
 
-                if (!generator.Comp.TiersContent.ContainsKey(randomConfig.Tier))
-                {
-                    suitableConfigs.Remove(randomConfig);
-                    continue;
-                }
-
-                if (!_random.Prob(generator.Comp.TiersContent[randomConfig.Tier]))
+                //LevelRange filter
+                if (generator.Comp.Level < randomConfig.Levels.Min || generator.Comp.Level > randomConfig.Levels.Max)
                 {
                     suitableConfigs.Remove(randomConfig);
                     continue;
@@ -265,36 +260,10 @@ public sealed partial class CP14DemiplaneSystem
                 }
             }
 
-            //Tier filter
+            //Levels filter
             if (passed)
             {
-                var innerPassed = false;
-                foreach (var tier in modifier.Tiers)
-                {
-                    if (generator.Comp.TiersContent.ContainsKey(tier))
-                    {
-                        innerPassed = true;
-                        break;
-                    }
-                }
-
-                if (!innerPassed)
-                {
-                    passed = false;
-                }
-            }
-
-            // Tier weight filter
-            if (passed)
-            {
-                var maxProb = 0f;
-                foreach (var tier in modifier.Tiers)
-                {
-                    if (generator.Comp.TiersContent.ContainsKey(tier))
-                        maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
-                }
-
-                if (!_random.Prob(maxProb))
+                if (generator.Comp.Level < modifier.Levels.Min || generator.Comp.Level > modifier.Levels.Max)
                 {
                     passed = false;
                 }

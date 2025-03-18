@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1GrasslandIsland
-  tier: 1
+  levels:
+    min: 1
+    max: 4
   locationConfig: CP14DemiplaneGrasslandIsland
   name: cp14-demiplane-location-grassland-island
   tags:

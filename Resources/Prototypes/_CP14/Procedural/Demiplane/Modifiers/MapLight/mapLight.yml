@@ -1,9 +1,8 @@
 - type: cp14DemiplaneModifier
   id: MapLightDarkness
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 3
+    max: 10
   generationWeight: 2
   categories:
     MapLight: 1
@@ -14,9 +13,9 @@
 
 - type: cp14DemiplaneModifier
   id: MapLightDarkRed
-  tiers:
-    - 2
-    - 3
+  levels:
+    min: 5
+    max: 10
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -26,8 +25,9 @@
 
 - type: cp14DemiplaneModifier
   id: MapLightDarkPurple
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 5
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -37,8 +37,9 @@
 
 - type: cp14DemiplaneModifier
   id: MapLightDarkGreen
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 5
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -48,10 +49,9 @@
 
 - type: cp14DemiplaneModifier
   id: MapLightDarkNight
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 1
+    max: 5
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -63,10 +63,9 @@
 
 - type: cp14DemiplaneModifier
   id: MapLightCycleDefault
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 1
+    max: 10
   categories:
     MapLight: 1
   generationWeight: 2
@@ -77,10 +76,9 @@
 
 - type: cp14DemiplaneModifier
   id: MapLightCycleDay
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 1
+    max: 10
   categories:
     MapLight: 1
   generationWeight: 2

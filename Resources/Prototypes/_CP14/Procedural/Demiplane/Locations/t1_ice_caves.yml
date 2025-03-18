@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1IceCaves
-  tier: 1
+  levels:
+    min: 1
+    max: 10
   locationConfig: CP14DemiplaneIceCaves
   name: cp14-demiplane-location-ice-cave
   tags:

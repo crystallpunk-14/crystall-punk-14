@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1LeafMaze
-  tier: 1
+  levels:
+    min: 4
+    max: 10
   locationConfig: CP14DemiplaneLeafMaze
   name: cp14-demiplane-location-leaf-maze
   tags:
