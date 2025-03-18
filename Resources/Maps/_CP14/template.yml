@@ -25,7 +25,7 @@ entities:
     - type: OccluderTree
     - type: CP14CloudShadows
     - type: MapLight
-    - type: CP14DayCycle
+    - type: LightCycle
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg

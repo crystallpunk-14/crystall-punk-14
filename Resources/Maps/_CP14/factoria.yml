@@ -71,7 +71,7 @@ entities:
         - 0
         - 0
         - 0
-    - type: CP14DayCycle
+    - type: LightCycle
     - type: CP14WeatherController
       entries:
       - visuals: CP14Mist

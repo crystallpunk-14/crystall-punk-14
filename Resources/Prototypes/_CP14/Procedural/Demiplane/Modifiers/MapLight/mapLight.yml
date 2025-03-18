@@ -72,18 +72,4 @@
   requiredTags:
   - CP14DemiplaneOpenSky
   components:
-  - type: CP14DayCycle
-
-- type: cp14DemiplaneModifier
-  id: MapLightCycleDay
-  levels:
-    min: 1
-    max: 10
-  categories:
-    MapLight: 1
-  generationWeight: 2
-  requiredTags:
-  - CP14DemiplaneOpenSky
-  components:
-  - type: CP14DayCycle
-    cycleProto: CP14DemiplaneEternalDay
+  - type: LightCycle

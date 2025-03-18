@@ -28,7 +28,7 @@ public sealed partial class CP14FarmingSystem
     private void OnTakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)
     {
         var gainEnergy = false;
-        var daylight = _dayCycle.UnderSunlight(regeneration);
+        var daylight = true;//_dayCycle.UnderSunlight(regeneration);
 
         if (regeneration.Comp.Daytime && daylight)
             gainEnergy = true;

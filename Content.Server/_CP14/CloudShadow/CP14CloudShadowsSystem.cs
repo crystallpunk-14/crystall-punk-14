@@ -1,7 +1,7 @@
-using Content.Shared._CP14.DayCycle.Components;
+using Content.Shared._CP14.CloudShadow;
 using Robust.Shared.Random;
 
-namespace Content.Server._CP14.DayCycle;
+namespace Content.Server._CP14.CloudShadow;
 
 public sealed class CP14CloudShadowsSystem : EntitySystem
 {

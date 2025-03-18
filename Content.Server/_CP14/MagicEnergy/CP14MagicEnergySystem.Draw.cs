@@ -1,5 +1,4 @@
 using Content.Server._CP14.MagicEnergy.Components;
-using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
 
@@ -7,8 +6,6 @@ namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
-    [Dependency] private readonly CP14SharedDayCycleSystem _dayCycle = default!;
-
     private void InitializeDraw()
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnDrawMapInit);
@@ -67,7 +64,7 @@ public partial class CP14MagicEnergySystem
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            ChangeEnergy(uid, _dayCycle.UnderSunlight(uid) ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
+            //ChangeEnergy(uid, _dayCycle.UnderSunlight(uid) ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
         }
     }
 
