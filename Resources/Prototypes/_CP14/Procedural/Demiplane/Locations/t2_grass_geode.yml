@@ -17,16 +17,10 @@
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14DemiplanePlatingMaskBorder
-    - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrassGeodeFloorMaskAir
     # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesIndestructibleFill
-      tileMask:
-      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14SwampFill
       tileMask:

@@ -8,22 +8,19 @@
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
+  components:
+  - type: Biome
+    template: CP14CavesIndestructibleFill
 
 - type: dungeonConfig
   id: CP14DemiplaneCaves
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14DemiplanePlatingMaskBorder
-    - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskAir
     # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesIndestructibleFill
-      tileMask:
-      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14CavesGeneric
       tileMask:

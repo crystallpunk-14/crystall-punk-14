@@ -12,11 +12,11 @@
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
-  - type: CP14MapFloorOccluder
-  - type: CP14MapDamage
-  - type: Parallax
-    parallax: CP14Ocean
   - type: CP14CloudShadows
+  - type: Biome
+    template: CP14SandOceanFill
+  - type: SunShadow
+  - type: Roof
 
 - type: dungeonConfig
   id: CP14DemiplaneGrasslandIslandRing

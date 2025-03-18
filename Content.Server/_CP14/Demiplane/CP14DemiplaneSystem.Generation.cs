@@ -121,7 +121,6 @@ public sealed partial class CP14DemiplaneSystem
             JobMaxTime,
             EntityManager,
             _logManager,
-            _mapManager,
             _proto,
             _dungeon,
             _metaData,

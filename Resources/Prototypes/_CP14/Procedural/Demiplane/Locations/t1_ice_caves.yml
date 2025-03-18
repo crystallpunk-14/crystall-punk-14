@@ -9,22 +9,19 @@
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
   - CP14DemiplaneCold
+  components:
+  - type: Biome
+    template: CP14IceChasmFill
 
 - type: dungeonConfig
   id: CP14DemiplaneIceCaves
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14DemiplanePlatingMaskBorder
-    - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskAir
     # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesIndestructibleFill
-      tileMask:
-      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14IceCavesGeneric
       tileMask:
