@@ -2,7 +2,7 @@
   crystallPunkAllowed: true
   id: CP14_RU_Alchemy
   name: Алхимия
-  text: "/ServerInfo/_CP14/Guidebook_RU/Alchemy.xml"
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/Alchemy.xml"
   children:
   - CP14_RU_Precurser
   - CP14_RU_ThaumaturgyEssence
@@ -13,19 +13,19 @@
   crystallPunkAllowed: true
   id: CP14_RU_Precurser
   name: Природные исходники
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Precurser.xml"
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Precurser.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_ThaumaturgyEssence
   name: Тауматургические эссенции
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Essence.xml"
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Essence.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_TargetEffects
   name: Целевые алхимические растворы
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/TargetEffects.xml"
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
   filterEnabled: True

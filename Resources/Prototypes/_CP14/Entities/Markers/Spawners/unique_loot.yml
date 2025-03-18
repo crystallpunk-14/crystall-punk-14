@@ -1,13 +1,34 @@
 - type: entity
+  id: CP14SpawnUniqueBase
+  abstract: true
+  parent: MarkerBase
+  categories: [ ForkFiltered, Spawner ]
+
+- type: entity
   name: random artifact spawner
   id: CP14SpawnUniqueArtifact
-  parent: MarkerBase
-  categories: [ ForkFiltered, DoNotMap ]
+  parent: CP14SpawnUniqueBase
+  categories: [ DoNotMap ]
   components:
   - type: CP14UniqueLootSpawner
+    tag: CP14UniqueSpawnDemiplanetLoot
   - type: Sprite
     layers:
     - sprite: Markers/cross.rsi
       state: green
     - sprite: _CP14/Clothing/Shoes/flightboots.rsi
+      state: icon
+
+- type: entity
+  name: random tradepost spawner
+  id: CP14SpawnUniqueTradepost
+  parent: CP14SpawnUniqueBase
+  components:
+  - type: CP14UniqueLootSpawner
+    tag: CP14UniqueSpawnTradepost
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Structures/Specific/Economy/trade_portal.rsi
       state: icon

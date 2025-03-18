@@ -1,0 +1,100 @@
+
+# Cuirass
+
+- type: CP14Recipe
+  id: CP14ModularCuissesIronPlate
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesIronPlate
+
+- type: CP14Recipe
+  id: CP14ModularCuissesGoldPlate
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesGoldPlate
+
+- type: CP14Recipe
+  id: CP14ModularCuissesCopperPlate
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesCopperPlate
+
+- type: CP14Recipe
+  id: CP14ModularCuissesMithrilPlate
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesMithrilPlate
+
+# Chainmail
+
+- type: CP14Recipe
+  id: CP14ModularCuissesIronChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesIronChainmail
+
+- type: CP14Recipe
+  id: CP14ModularCuissesGoldChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesGoldChainmail
+
+- type: CP14Recipe
+  id: CP14ModularCuissesCopperChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesCopperChainmail
+
+- type: CP14Recipe
+  id: CP14ModularCuissesMithrilChainmail
+  tag: CP14RecipeAnvil
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ModularCuissesMithrilChainmail

@@ -448,17 +448,20 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: UncookedAnimalProteins
           Quantity: 3
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1.5
   - type: RandomSprite
     available:
       - random:
           rabbit_meat1: ""
           rabbit_meat2: ""
+  - type: Tag
+    tags:
+    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -478,12 +481,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Protein
           Quantity: 3
+        - ReagentId: Protein
+          Quantity: 1.5
   - type: RandomSprite
     available:
       - random:

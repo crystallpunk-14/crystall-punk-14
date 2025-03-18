@@ -2,7 +2,7 @@
   crystallPunkAllowed: true
   id: CP14_EN_Alchemy
   name: Alchemy
-  text: "/ServerInfo/_CP14/Guidebook_EN/Alchemy.xml"
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/Alchemy.xml"
   children:
   - CP14_EN_Precurser
   - CP14_EN_ThaumaturgyEssence
@@ -13,19 +13,19 @@
   crystallPunkAllowed: true
   id: CP14_EN_Precurser
   name: Precursers
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Precurser.xml"
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Precurser.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_EN_ThaumaturgyEssence
   name: Thaumaturgic essences
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Essence.xml"
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Essence.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_EN_TargetEffects
   name: Target alchemical solutions
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/TargetEffects.xml"
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
   filterEnabled: True

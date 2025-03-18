@@ -90,3 +90,11 @@
     - type: SolutionContainerVisuals
       maxFillLevels: 1
       fillBaseName: solution
+
+- type: modularPart
+  id: BaseClothingArmor
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: Item
+      size: Small

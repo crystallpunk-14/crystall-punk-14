@@ -1,0 +1,39 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Jobs
+  name: Игровые роли
+  text: "/ServerInfo/_CP14/Guidebook_RU/Jobs.xml"
+  children:
+  - CP14_RU_JobAdventurer
+  - CP14_RU_JobAlchemist
+  - CP14_RU_JobMerchant
+  filterEnabled: True
+
+
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_JobAdventurer
+  name: Авантюрист
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Adventurers.xml"
+  children:
+  - CP14_RU_Demiplanes
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_JobAlchemist
+  name: Алхимик
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Alchemist.xml"
+  children:
+  - CP14_RU_Alchemy
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_JobMerchant
+  name: Торговец
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Merchant.xml"
+  children:
+  - CP14_RU_Trading
+  filterEnabled: True

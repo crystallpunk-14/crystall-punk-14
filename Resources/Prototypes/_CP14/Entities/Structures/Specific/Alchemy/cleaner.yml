@@ -67,6 +67,7 @@
     solution: cleaner
   - type: CP14SolutionCleaner
     solution: cleaner
+    leakageQuantity: 1
   - type: CP14MagicEnergyAmbientSound
   - type: AmbientSound
     enabled: false
@@ -79,5 +80,5 @@
     maxFillLevels: 5
     fillBaseName: liq-
   - type: CP14MagicEnergyDraw
-    energy: -0.2
+    energy: -0.8
     delay: 1

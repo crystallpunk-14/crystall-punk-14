@@ -6,7 +6,7 @@ namespace Content.Shared._CP14.UniqueLoot;
 /// <summary>
 /// Defines a unique loot that can only be generated a specified number of times per round.
 /// </summary>
-[Prototype("uniqueLoot")]
+[Prototype("uniqueSpawn")]
 public sealed partial class CP14UniqueLootPrototype : IPrototype
 {
     [IdDataField]

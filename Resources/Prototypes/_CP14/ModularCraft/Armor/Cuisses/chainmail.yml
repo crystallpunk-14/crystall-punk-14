@@ -1,0 +1,78 @@
+- type: modularPart
+  id: BaseCuissesChainmail
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseClothingArmor
+
+- type: modularPart
+  id: CuissesIronChainmail
+  slots:
+  - Cuisses
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCuissesChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.04
+        Slash: -0.10
+        Piercing: -0.01
+
+- type: modularPart
+  id: CuissesGoldChainmail
+  slots:
+  - Cuisses
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCuissesChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.01
+        Slash: -0.03
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
+
+- type: modularPart
+  id: CuissesCopperChainmail
+  slots:
+  - Cuisses
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCuissesChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.01
+        Slash: -0.05
+
+- type: modularPart
+  id: CuissesMithrilChainmail
+  slots:
+  - Cuisses
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseCuissesChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.05
+        Slash: -0.16
+        Piercing: -0.03

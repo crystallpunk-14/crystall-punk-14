@@ -16,16 +16,16 @@
     - map: [ "mannequin" ]
       sprite: _CP14/Structures/Furniture/mannequin.rsi
       state: mannequin
-    - map: [ "shirt" ]
     - map: [ "pants" ]
-    - map: [ "gloves" ]
     - map: [ "shoes" ]
+    - map: [ "shirt" ]
+    - map: [ "gloves" ]
+    - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
-    - map: [ "back" ]
     - map: [ "mask" ]
     - map: [ "head" ]
   - type: Rotatable
@@ -78,6 +78,10 @@
         showEnts: False
         occludes: False
         ent: null
+      outerClothing: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
       cloak: !type:ContainerSlot
         showEnts: False
         occludes: False
@@ -95,10 +99,6 @@
         occludes: False
         ent: null
       neck: !type:ContainerSlot
-        showEnts: False
-        occludes: False
-        ent: null
-      back: !type:ContainerSlot
         showEnts: False
         occludes: False
         ent: null

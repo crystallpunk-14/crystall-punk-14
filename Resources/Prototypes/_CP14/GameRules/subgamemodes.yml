@@ -24,8 +24,9 @@
         actions:
         - CP14ActionVampireBite
         - CP14ActionSpellVampireHypnosis
+        - CP14ActionSpellVampireBloodStep
       - type: Hunger
-        baseDecayRate: 0.03
+        baseDecayRate: 0.07
         starvationDamage:
           types:
             Cold: 0.25
@@ -41,7 +42,7 @@
         - Critical
         damage:
           groups:
-            Brute: -1
+            Brute: -3
       briefing:
         text: cp14-roles-antag-vampire-briefing
         color: "#630f24"

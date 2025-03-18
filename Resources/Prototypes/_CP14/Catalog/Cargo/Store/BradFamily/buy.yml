@@ -8,11 +8,11 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledAlchemy
+    product: CP14WoodenChestFilledAlchemy
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledAlchemy
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledAlchemy
   name: alchemical vials chest
   components:
   - type: StorageFill
@@ -37,11 +37,11 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledSmallHealingBrute
+    product: CP14WoodenChestFilledSmallHealingBrute
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledSmallHealingBrute
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingBrute
   name: healing potions chest
   components:
   - type: StorageFill
@@ -60,11 +60,11 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledSmallHealingPoison
+    product: CP14WoodenChestFilledSmallHealingPoison
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledSmallHealingPoison
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingPoison
   name: antidote potions chest
   components:
   - type: StorageFill
@@ -83,11 +83,11 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledSmallHealingAirloss
+    product: CP14WoodenChestFilledSmallHealingAirloss
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledSmallHealingAirloss
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingAirloss
   name: airloss healing potions chest
   components:
   - type: StorageFill
@@ -106,11 +106,11 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledSmallHealingBlood
+    product: CP14WoodenChestFilledSmallHealingBlood
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledSmallHealingBlood
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingBlood
   name: blood restoration potions chest
   components:
   - type: StorageFill
@@ -129,11 +129,11 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledSmallHealingMana
+    product: CP14WoodenChestFilledSmallHealingMana
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledSmallHealingMana
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingMana
   name: mana potions chest
   components:
   - type: StorageFill
@@ -152,11 +152,11 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledSmallSpeedUp
+    product: CP14WoodenChestFilledSmallSpeedUp
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledSmallSpeedUp
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallSpeedUp
   name: accseleration potions chest
   components:
   - type: StorageFill
@@ -175,14 +175,55 @@
   factions:
   - BradFamily
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledSmallRainbow
+    product: CP14WoodenChestFilledSmallRainbow
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledSmallRainbow
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallRainbow
   name: funny potions chest
   components:
   - type: StorageFill
     contents:
       - id: CP14VialSmallRainbow
         amount: 5
+
+
+- type: storePositionBuy
+  id: Candles
+  code: CANDLES
+  price: 100
+  iconOverride: 
+    sprite: Objects/Misc/candles.rsi
+    state: loadout
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledCandles
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledCandles
+  name: candles chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14CandleRed
+        amount: 2
+      - id: CP14CandleBlue
+        amount: 2
+      - id: CP14CandleBlack
+        amount: 2
+      - id: CP14CandleGreen
+        amount: 2
+      - id: CP14CandlePurple
+        amount: 2
+      - id: CP14CandleRedSmall
+        amount: 2
+      - id: CP14CandleBlueSmall
+        amount: 2
+      - id: CP14CandleBlackSmall
+        amount: 2
+      - id: CP14CandleGreenSmall
+        amount: 2
+      - id: CP14CandlePurpleSmall
+        amount: 2

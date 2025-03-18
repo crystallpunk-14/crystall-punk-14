@@ -10,6 +10,7 @@
   defaultSkinTone: "#74964d"
   maleFirstNames: CP14_Names_Goblin_Male_First
   femaleFirstNames: CP14_Names_Goblin_Female_First
+  naming: First
 
 - type: speciesBaseSprites
   id: CP14MobGoblinSprites

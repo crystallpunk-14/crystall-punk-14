@@ -181,6 +181,8 @@
       types:
         Slash: 0.2
         Piercing: 0.2
+  - type: Airtight
+    airBlocked: false
 
 - type: entity
   id: CP14WallSnow

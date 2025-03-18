@@ -1,6 +1,7 @@
-using Content.Server.GameTicking.Events;
+using System.Linq;
 using Content.Shared._CP14.UniqueLoot;
 using Content.Shared.GameTicking;
+using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -11,40 +12,38 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    private Dictionary<ProtoId<CP14UniqueLootPrototype>, int> _uniqueLootCount = new();
+    private readonly Dictionary<CP14UniqueLootPrototype, int> _uniqueLootCount = new();
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
 
         SubscribeLocalEvent<CP14UniqueLootSpawnerComponent, MapInitEvent>(OnMapInit);
+
+        RefreshUniqueLoot();
     }
 
     private void OnMapInit(Entity<CP14UniqueLootSpawnerComponent> ent, ref MapInitEvent args)
     {
-        var loot = GetNextUniqueLoot();
+        var loot = GetNextUniqueLoot(ent.Comp.Tag);
 
         if (loot == null)
             return;
 
-        if (!Deleted(ent))
-            SpawnAtPosition(loot, Transform(ent).Coordinates);
+        if (TerminatingOrDeleted(ent) || !Exists(ent))
+            return;
 
-        if (!TerminatingOrDeleted(ent) && Exists(ent))
-            QueueDel(ent);
+        var coords = Transform(ent).Coordinates;
+
+        EntityManager.SpawnEntity(loot, coords);
     }
 
-    private void OnRoundStart(RoundStartingEvent ev)
-    {
-        RefreshUniqueLoot();
-    }
 
     private void OnCleanup(RoundRestartCleanupEvent ev)
     {
-        _uniqueLootCount.Clear();
+        RefreshUniqueLoot();
     }
 
     private void RefreshUniqueLoot()
@@ -53,27 +52,43 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
 
         foreach (var loot in _proto.EnumeratePrototypes<CP14UniqueLootPrototype>())
         {
-            _uniqueLootCount[loot.ID] = loot.Count;
+            _uniqueLootCount[loot] = loot.Count;
         }
     }
 
-    public EntProtoId? GetNextUniqueLoot()
+    public EntProtoId? GetNextUniqueLoot(ProtoId<TagPrototype>? withTag = null)
     {
         if (_uniqueLootCount.Count == 0)
             return null;
 
-        var selectedLoot = _random.Pick(_uniqueLootCount);
+        var possibleLoot = _uniqueLootCount.Keys.ToList();
 
-        //TODO: Tag filtering
+        CP14UniqueLootPrototype? selectedLoot = null;
 
-        if (selectedLoot.Value > 1)
-            _uniqueLootCount[selectedLoot.Key] -= 1;
+        while (selectedLoot is null)
+        {
+            if (possibleLoot.Count == 0)
+                return null;
+
+            var tryLoot = _random.Pick(possibleLoot);
+
+            if (withTag != null && !tryLoot.Tags.Contains(withTag.Value))
+            {
+                possibleLoot.Remove(tryLoot);
+                continue;
+            }
+
+            selectedLoot = tryLoot;
+            break;
+        }
+
+
+
+        if (_uniqueLootCount[selectedLoot] > 1)
+            _uniqueLootCount[selectedLoot] -= 1;
         else
-            _uniqueLootCount.Remove(selectedLoot.Key);
+            _uniqueLootCount.Remove(selectedLoot);
 
-        if (!_proto.TryIndex(selectedLoot.Key, out var indexedLoot))
-            return null;
-
-        return indexedLoot.Entity;
+        return selectedLoot.Entity;
     }
 }

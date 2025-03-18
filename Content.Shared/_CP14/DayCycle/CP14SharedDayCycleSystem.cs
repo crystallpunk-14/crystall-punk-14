@@ -1,8 +1,7 @@
 ﻿using Content.Shared._CP14.DayCycle.Components;
 using Content.Shared._CP14.DayCycle.Prototypes;
-using Content.Shared.Maps;
+using Content.Shared.Storage.Components;
 using Content.Shared.Weather;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
@@ -13,7 +12,6 @@ public abstract class CP14SharedDayCycleSystem : EntitySystem
     private static readonly ProtoId<CP14DayCyclePeriodPrototype> DayPeriod = "Day";
 
     [Dependency] private readonly SharedMapSystem _maps = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
 
     private EntityQuery<MapGridComponent> _mapGridQuery;
@@ -30,14 +28,18 @@ public abstract class CP14SharedDayCycleSystem : EntitySystem
     /// </summary>
     /// <param name="target">An entity being tested to see if it is in daylight</param>
     /// <param name="checkRoof">Checks if the tile covers the weather (the only "roof" factor at the moment)</param>
-    public bool TryDaylightThere(EntityUid target, bool checkRoof = true)
+    public bool UnderSunlight(EntityUid target)
     {
+        if (HasComp<InsideEntityStorageComponent>(target))
+            return false;
+
         var xform = Transform(target);
         if (!TryComp<CP14DayCycleComponent>(xform.MapUid, out var dayCycle))
             return false;
 
         var day = dayCycle.CurrentPeriod == DayPeriod;
-        if (!checkRoof || !TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
+
+        if (!TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
             return day;
 
         var grid = xform.GridUid;
