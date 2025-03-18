@@ -16,6 +16,7 @@
   - type: Biome
     template: CP14SandOceanFill
   - type: SunShadow
+  - type: SunShadowCycle
   - type: Roof
 
 - type: dungeonConfig

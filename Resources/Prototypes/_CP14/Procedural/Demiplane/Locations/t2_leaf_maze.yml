@@ -12,8 +12,14 @@
   - CP14DemiplaneWater
   - CP14DemiplaneAnimalsSwamp
   components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
   - type: Biome
     template: CP14CavesIndestructibleFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
+  - type: CP14CloudShadows
 
 - type: dungeonConfig
   id: CP14DemiplaneLeafMaze

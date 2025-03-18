@@ -65,6 +65,7 @@ entities:
       id: Comoss
     - type: LightCycle
     - type: SunShadow
+    - type: SunShadowCycle
     - type: Biome
       forcedMarkerLayers: []
       markerLayers: []
