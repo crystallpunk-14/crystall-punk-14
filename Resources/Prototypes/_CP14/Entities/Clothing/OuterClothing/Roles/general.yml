@@ -63,3 +63,16 @@
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/Roles/General/brown_3.rsi
 
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingJagermeisterWaistcoat
+  name: jagermeister's waistcoat
+  description: Doesn't interfere with movement, looks restrained. Time to go hunting.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/jagermeister_waistcoat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/jagermeister_waistcoat.rsi
+
