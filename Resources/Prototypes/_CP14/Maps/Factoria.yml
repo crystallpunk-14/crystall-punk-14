@@ -25,8 +25,11 @@
             #Guard
             CP14Guard: [8, 8]
             CP14GuardCommander: [1, 1]
-        #- type: CP14StationZLevels
-        #  defaultMapLevel: 0
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_CP14/factoria_d.yml
         - type: CP14StationKeyDistribution
           keys:
           - Alchemy1
