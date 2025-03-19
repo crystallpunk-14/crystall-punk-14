@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobDino
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: dino
   abstract: true
   components:
@@ -30,7 +30,7 @@
       Dead:
         Base: dead
   - type: Bloodstream
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Tag
     tags:
       - FootstepSound

@@ -201,6 +201,17 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtJestersAttire
+  name: jester's attire
+  description: It's rags, but it's colorful.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
   id: CP14ClothingShirtCottonYellowCollar
   name: cotton yellow collar shirt
   components:
@@ -249,3 +260,24 @@
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothinGreenLightDress
+  name: light green dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingWarriorsGarbDress
+  name: warrior's garb
+  description: show your strength.
+  components: 
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi

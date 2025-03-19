@@ -3,11 +3,10 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/light.rsi
   - type: CP14MagicEffectManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Light
   - type: CP14MagicEffectSomaticAspect
   - type: InstantAction
     itemIconStyle: BigAction
@@ -37,7 +36,7 @@
     proto: CP14RuneSignalLightRed
   - type: InstantAction
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/light.rsi
       state: signal_light_red
 
 - type: entity
@@ -81,7 +80,7 @@
     proto: CP14RuneSignalLightYellow
   - type: InstantAction
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/light.rsi
       state: signal_light_yellow
 
 - type: entity
@@ -125,7 +124,7 @@
     proto: CP14RuneSignalLightBlue
   - type: InstantAction
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/light.rsi
       state: signal_light_blue
 
 - type: entity
@@ -157,6 +156,7 @@
   abstract: true
   categories: [ ForkFiltered ]
   name: signal light
+  description: A signal of light left by an adventurer possibly in trouble. 
   components:
   - type: TimedDespawn
     lifetime: 12

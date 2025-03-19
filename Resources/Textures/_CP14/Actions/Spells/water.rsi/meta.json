@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by TheShuEd",
+  "states": [
+    {
+      "name": "beer_creation"
+    },
+    {
+      "name": "freeze"
+    },
+    {
+      "name": "ice_dagger"
+    },
+    {
+      "name": "ice_shards"
+    },
+    {
+      "name": "water_creation"
+    }
+  ]
+}

@@ -4,6 +4,8 @@
   abstract: true
   categories: [ ForkFiltered ]
   components:
+  - type: Sprite
+    noRot: true
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -51,6 +53,29 @@
     maxTransferAmount: 10
     transferAmount: 1
     toggleState: 1 # draw
+  - type: Tag
+    tags:
+    - CP14Vial
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: ItemSlots
 
 - type: entity
   parent: CP14BaseVial
@@ -107,6 +132,9 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -135,6 +163,9 @@
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
       - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -161,6 +192,9 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
@@ -187,6 +221,9 @@
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
       - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
@@ -197,3 +234,64 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
+
+- type: entity
+  id: CP14VialMedium
+  parent: CP14BaseVialFragile
+  name: medium vial
+  description: A fragile glass vial to hold a medium amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: vial
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 50
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq- 
+
+- type: entity
+  id: CP14VialMediumReinforced
+  parent: CP14BaseVial
+  name: reinforced medium vial
+  description: A reinforced glass vial to hold a medium amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: vial
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 50
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: Injector
+    transferAmount: 10

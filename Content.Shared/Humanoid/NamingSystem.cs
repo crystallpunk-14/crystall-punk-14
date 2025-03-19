@@ -1,5 +1,6 @@
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Dataset;
+using Content.Shared.Random.Helpers;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Enums;
@@ -47,20 +48,20 @@ namespace Content.Shared.Humanoid
             switch (gender)
             {
                 case Gender.Male:
-                    return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallEdge name localization
+                    return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames));
                 case Gender.Female:
-                    return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallEdge name localization
+                    return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames));
                 default:
                     if (_random.Prob(0.5f))
-                        return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames).Values)); //CrystallEdge name localization
+                        return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.MaleFirstNames));
                     else
-                        return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames).Values)); //CrystallEdge name localization
+                        return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.FemaleFirstNames));
             }
         }
 
         public string GetLastName(SpeciesPrototype speciesProto)
         {
-            return Loc.GetString(_random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.LastNames).Values)); //CrystallEdge name localization
+            return _random.Pick(_prototypeManager.Index<LocalizedDatasetPrototype>(speciesProto.LastNames));
         }
     }
 }

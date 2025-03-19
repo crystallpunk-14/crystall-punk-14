@@ -1,6 +1,6 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Dirt pit
+  name: dirt pit
   description: You're wasting dirt to create a hole. Makes sense, doesn't it? Can only be built on dirt tiles.
   id: CP14CrateDirtPitGrave
   graph: CP14CrateDirtPitGrave
@@ -21,7 +21,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden chest
+  name: wooden chest
   description: A simple wooden chest for easy storage of junk.
   id: CP14WoodenChest
   graph: CP14WoodenChest
@@ -29,7 +29,7 @@
   targetNode: CP14WoodenChest
   category: construction-category-storage
   icon:
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     state: icon
   objectType: Structure
   placementMode: SnapgridCenter
@@ -39,61 +39,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden closet
-  description: A simple wooden wardrobe for storing clothes and other things.
-  id: CP14WoodenCloset
-  graph: CP14WoodenCloset
-  startNode: start
-  targetNode: CP14WoodenCloset
-  category: construction-category-storage
-  icon:
-    sprite: _CP14/Structures/Storage/Dressers/wood_cupboard.rsi
-    state: icon
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Wooden cabinet
-  description: An ordinary wooden cabinet for simple knickknacks.
-  id: CP14WoodenCabinet
-  graph: CP14WoodenCabinet
-  startNode: start
-  targetNode: CP14WoodenCabinet
-  category: construction-category-storage
-  icon:
-    sprite: _CP14/Structures/Storage/Dressers/wood_cabinet.rsi
-    state: icon
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Iron cabinet
-  description: An ordinary iron cabinet for simple knickknacks.
-  id: CP14IronCabinet
-  graph: CP14IronCabinet
-  startNode: start
-  targetNode: CP14IronCabinet
-  category: construction-category-storage
-  icon:
-    sprite: _CP14/Structures/Storage/Dressers/iron_cabinet.rsi
-    state: icon
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Small wooden crate
+  name: small wooden crate
   description: A small wooden crate for storing everything.
   id: CP14SmallWoodenCrate
   graph: CP14SmallWoodenCrate
@@ -111,7 +57,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Large wooden crate
+  name: large wooden crate
   description: A large wooden crate for storing a lot of things.
   id: CP14LargeWoodenCrate
   graph: CP14LargeWoodenCrate
@@ -129,7 +75,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Coffin
+  name: coffin
   description: A comfortable and nice looking coffin to comfortably await your resurrection.
   id: CP14CrateCoffin
   graph: CP14CrateCoffin
@@ -147,7 +93,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden barrel
+  name: wooden barrel
   description: The simplest design for storing liquids.
   id: CP14BaseBarrel
   graph: CP14BaseBarrel
@@ -165,7 +111,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden crane barrel
+  name: wooden crane barrel
   description: Large lying barrel with tap, for storing valuable liquids.
   id: CP14CraneBarrel
   graph: CP14CraneBarrel
@@ -184,7 +130,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden small crane barrel
+  name: wooden small crane barrel
   description: A small lying barrel with a tap to quickly pour liquid into mugs.
   id: CP14CraneBarrelSmall
   graph: CP14CraneBarrelSmall
@@ -200,43 +146,3 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Bar shelf (1)
-  description: Wall shelves to store your wine collection.
-  id: CP14WallmountBarShelfA
-  graph: CP14WallmountBarShelfA
-  startNode: start
-  targetNode: CP14WallmountBarShelfA
-  category: construction-category-storage
-  icon:
-    sprite: _CP14/Structures/Wallmount/wallmount_bar_shelf.rsi
-    state: shelf
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  canRotate: true
-  conditions:
-    - !type:TileNotBlocked
-    - !type:CP14WallRequired
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Bar shelf (2)
-  description: Wall shelves to store your wine collection.
-  id: CP14WallmountBarShelfB
-  graph: CP14WallmountBarShelfB
-  startNode: start
-  targetNode: CP14WallmountBarShelfB
-  category: construction-category-storage
-  icon:
-    sprite: _CP14/Structures/Wallmount/wallmount_bar_shelf.rsi
-    state: shelf
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  canRotate: true
-  conditions:
-    - !type:TileNotBlocked
-    - !type:CP14WallRequired

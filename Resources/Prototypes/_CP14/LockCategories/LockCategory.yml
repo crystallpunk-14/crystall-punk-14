@@ -9,3 +9,6 @@
 
 - type: CP14LockGroup
   id: PersonalHouse
+
+- type: CP14LockGroup
+  id: Merchant

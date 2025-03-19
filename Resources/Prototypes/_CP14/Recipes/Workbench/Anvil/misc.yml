@@ -50,54 +50,6 @@
   result: CP14PlatePie
 
 - type: CP14Recipe
-  id: CP14ClothingOuterClothingCuirass
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 5
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
-  result: CP14ClothingOuterClothingCuirass
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingInfantryCuirass
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 6
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
-  result: CP14ClothingOuterClothingInfantryCuirass
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingCuirassLoincloth
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 6
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
-  result: CP14ClothingOuterClothingCuirassLoincloth
-
-- type: CP14Recipe
-  id: CP14ClothingOuterClothingCuirassLeg
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 7
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
-  result: CP14ClothingOuterClothingCuirassLeg
-
-- type: CP14Recipe
   id: CP14Nail20
   tag: CP14RecipeAnvil
   craftTime: 4
@@ -139,17 +91,29 @@
 - type: CP14Recipe
   id: CP14ClothingOuterClothingCopperArmor
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 4
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
-    count: 6
+    count: 4
   - !type:KnowledgeRequired
     knowledge: MetallForging
   result: CP14ClothingOuterClothingCopperArmor
 
 - type: CP14Recipe
-  id: CP14Crossbolt
+  id: CP14ClothingGlovesGirdles
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ClothingGlovesGirdles
+
+- type: CP14Recipe
+  id: CP14CrossboltCopper
   tag: CP14RecipeAnvil
   craftTime: 1
   requirements:
@@ -158,7 +122,46 @@
     count: 1
   - !type:KnowledgeRequired
     knowledge: MetallForging
-  result: CP14Crossbolt
+  result: CP14CrossboltCopper
+  resultCount: 3
+
+- type: CP14Recipe
+  id: CP14CrossboltIron
+  tag: CP14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14CrossboltIron
+  resultCount: 3
+
+- type: CP14Recipe
+  id: CP14CrossboltGold
+  tag: CP14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14CrossboltGold
+  resultCount: 3
+
+- type: CP14Recipe
+  id: CP14CrossboltMithril
+  tag: CP14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14CrossboltMithril
   resultCount: 3
 
 - type: CP14Recipe
@@ -214,3 +217,15 @@
   - !type:KnowledgeRequired
     knowledge: MetallForging
   result: CP14BaseLightCrossbow
+
+- type: CP14Recipe
+  id: CP14ClothingMaskSteelMask
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  - !type:KnowledgeRequired
+    knowledge: MetallForging
+  result: CP14ClothingMaskSteelMask

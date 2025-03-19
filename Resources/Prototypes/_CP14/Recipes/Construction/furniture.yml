@@ -1,6 +1,6 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden chair
+  name: wooden chair
   description: Made of the most common planks. Simple and effective!
   id: CP14ChairWooden
   graph: CP14Seat
@@ -18,7 +18,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden table
+  name: wooden table
   description: A simple table made of boards.
   id: CP14TableWooden
   graph: CP14TableWooden
@@ -36,7 +36,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden table (round)
+  name: wooden table (round)
   description: A simple table made of boards.
   id: CP14TableWoodenRound
   graph: CP14TableWoodenRound
@@ -54,7 +54,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden counter
+  name: wooden counter
   description: A simple table made of boards.
   id: CP14TableWoodenCounter
   graph: CP14TableWoodenCounter
@@ -72,27 +72,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wallmount torch
-  description: A torch attached to the wall
-  id: CP14WallmountTorch
-  graph: CP14WallmountTorch
-  startNode: start
-  targetNode: CP14WallmountTorch
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
-    state: fire
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  canRotate: true
-  conditions:
-    - !type:TileNotBlocked
-    - !type:CP14WallRequired
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Wallmount orders board
+  name: wallmount orders board
   description: Is there a job for a witcher?
   id: CP14WallmountOrdersBorder
   graph: CP14WallmountOrdersBorder
@@ -105,26 +85,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  canRotate: true
-  conditions:
-    - !type:TileNotBlocked
-    - !type:CP14WallRequired
-
-- type: construction
-  crystallPunkAllowed: true
-  name: Crystal wall lamp
-  description: A simple wallmount magical device that converts crystal energy into bright light.
-  id: CP14WallmountLampEmpty
-  graph: CP14WallmountLampEmpty
-  startNode: start
-  targetNode: CP14WallmountLampEmpty
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
-    state: base
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: true
   canRotate: true
   conditions:
     - !type:TileNotBlocked
@@ -207,7 +167,7 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14WoodenBed
-  name: Wooden bed
+  name: wooden bed
   description: Comfortable bed for sleeping.
   graph: CP14WoodenBed
   startNode: start
@@ -225,7 +185,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wood bench
+  name: wood bench
   description: A bench carved from wood, a comfortable part of the interior designed for sitting and relaxing.
   id: CP14BenchWood
   graph: CP14BenchWood
@@ -244,7 +204,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Curtains white
+  name: curtains white
   description: Two hanging sheets made of white fabric.
   id: CP14CurtainsWhite
   graph: CP14Curtains
@@ -263,7 +223,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Curtains blue
+  name: curtains blue
   description: Two hanging sheets made of blue fabric.
   id: CP14CurtainsBlue
   graph: CP14Curtains
@@ -282,7 +242,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Curtains red
+  name: curtains red
   description: Two hanging sheets made of red fabric.
   id: CP14CurtainsRed
   graph: CP14Curtains
@@ -299,120 +259,56 @@
   conditions:
     - !type:EmptyOrWindowValidInTile 
 
-# Small fence
-
 - type: construction
   crystallPunkAllowed: true
-  id: CP14FenceWoodSmallStraight
-  name: small wooden fence
-  description: A small wooden fence. It protects the area from unnecessary visitors who don't have a towel.
-  graph: CP14FenceWood
+  name: wooden closet
+  description: A simple wooden wardrobe for storing clothes and other things.
+  id: CP14WoodenCloset
+  graph: CP14WoodenCloset
   startNode: start
-  targetNode: CP14FenceWoodSmallStraight
+  targetNode: CP14WoodenCloset
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Fences/wooden_fence_small.rsi
-    state: straight
+    sprite: _CP14/Structures/Storage/Dressers/wood_cupboard.rsi
+    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: true
+  canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14FenceWoodSmallCorner
-  name: small wooden fence (corner)
-  description: A small wooden fence. It protects the area from unnecessary visitors who don't have a towel.
-  graph: CP14FenceWood
+  name: wooden cabinet
+  description: An ordinary wooden cabinet for simple knickknacks.
+  id: CP14WoodenCabinet
+  graph: CP14WoodenCabinet
   startNode: start
-  targetNode: CP14FenceWoodSmallCorner
+  targetNode: CP14WoodenCabinet
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Fences/wooden_fence_small.rsi
-    state: corner
+    sprite: _CP14/Structures/Storage/Dressers/wood_cabinet.rsi
+    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: true
+  canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14FenceWoodSmallGate
-  name: small wooden fence (door)
-  description: Looking at this gate, a familiar image pops up in your head. Where's my piggy?
-  graph: CP14FenceWood
+  name: iron cabinet
+  description: An ordinary iron cabinet for simple knickknacks.
+  id: CP14IronCabinet
+  graph: CP14IronCabinet
   startNode: start
-  targetNode: CP14FenceWoodSmallGate
+  targetNode: CP14IronCabinet
   category: construction-category-furniture
   icon:
-    sprite: _CP14/Structures/Fences/wooden_fence_small.rsi
-    state: door_opened
+    sprite: _CP14/Structures/Storage/Dressers/iron_cabinet.rsi
+    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: true
-  conditions:
-    - !type:TileNotBlocked
-
-# Fence
-
-- type: construction
-  crystallPunkAllowed: true
-  id: CP14FenceWoodStraight
-  name: wooden fence
-  description: A wooden fence. Don't plant splinters!
-  graph: CP14FenceWood
-  startNode: start
-  targetNode: CP14FenceWoodStraight
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Fences/wooden_fence.rsi
-    state: straight
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: true
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  id: CP14FenceWoodCorner
-  name: wooden fence
-  description: A wooden fence. Don't plant splinters!
-  graph: CP14FenceWood
-  startNode: start
-  targetNode: CP14FenceWoodCorner
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Fences/wooden_fence.rsi
-    state: corner
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: true
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  id: CP14FenceWoodGate
-  name: wooden fence gate
-  description: Big door in a big fence. For big people.
-  graph: CP14FenceWood
-  startNode: start
-  targetNode: CP14FenceWoodGate
-  category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Fences/wooden_fence.rsi
-    state: door_opened
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: true
+  canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked

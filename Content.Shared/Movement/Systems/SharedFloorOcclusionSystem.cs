@@ -6,12 +6,11 @@ namespace Content.Shared.Movement.Systems;
 /// <summary>
 /// Applies an occlusion shader for any relevant entities.
 /// </summary>
-public abstract partial class SharedFloorOcclusionSystem : EntitySystem //CP14 partial
+public abstract class SharedFloorOcclusionSystem : EntitySystem
 {
     public override void Initialize()
     {
         base.Initialize();
-        CP14InitializeMapOccluder(); //CP14
 
         SubscribeLocalEvent<FloorOccluderComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<FloorOccluderComponent, EndCollideEvent>(OnEndCollide);

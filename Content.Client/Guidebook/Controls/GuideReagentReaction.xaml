@@ -1,44 +1,52 @@
 ﻿<BoxContainer xmlns="https://spacestation14.io"
               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-              Orientation="Horizontal"
+              Orientation="Vertical"
               HorizontalAlignment="Stretch"
               HorizontalExpand="True"
               Margin="0 0 0 5">
-    <BoxContainer Name="ReactantsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
-        <RichTextLabel Name="ReactantsLabel"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Access="Public"
-                       Visible="False"/>
-    </BoxContainer>
-    <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextureRect TexturePath="/Textures/Interface/Misc/beakerlarge.png"
-                     HorizontalAlignment="Center"
-                     Name="MixTexture"
-                     Access="Public"/>
-        <RichTextLabel Name="MixLabel"
-                       HorizontalAlignment="Center"
-                       Access="Public"
-                       Margin="2 0 0 0"/>
-    </BoxContainer>
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
-        <RichTextLabel Name="ProductsLabel"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Access="Public"
-                       Visible="False"/>
-        <!-- CP14 random reactions begin -->
-        <BoxContainer Name="RandomVariations"
-                      Orientation="Vertical"
-                      VerticalExpand="True"
-                      VerticalAlignment="Center"
-                      HorizontalAlignment="Left">
-            <controls:SplitBar MinHeight="10">
-            </controls:SplitBar>
-            <Label Name="RandomVariationsLabel" Text="{Loc 'cp14-guidebook-random-variations-title'}" Visible="False"/>
-            <controls:SplitBar MinHeight="10">
-            </controls:SplitBar>
+    <BoxContainer Orientation="Horizontal">
+        <BoxContainer Name="ReactantsContainer" Orientation="Vertical" HorizontalExpand="True"
+                      VerticalAlignment="Center">
+            <RichTextLabel Name="ReactantsLabel"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Access="Public"
+                           Visible="False" />
         </BoxContainer>
-        <!-- CP14 random reactions end -->
+        <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextureRect TexturePath="/Textures/Interface/Misc/beakerlarge.png"
+                         HorizontalAlignment="Center"
+                         Name="MixTexture"
+                         Access="Public" />
+            <RichTextLabel Name="MixLabel"
+                           HorizontalAlignment="Center"
+                           Access="Public"
+                           Margin="2 0 0 0" />
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
+            <RichTextLabel Name="ProductsLabel"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Access="Public"
+                           Visible="False" />
+            <!-- CP14 random reactions begin -->
+            <BoxContainer Name="RandomVariations"
+                          Orientation="Vertical"
+                          VerticalExpand="True"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center">
+                <controls:SplitBar MinHeight="10">
+                </controls:SplitBar>
+                <Label Name="RandomVariationsLabel"
+                       Text="{Loc 'cp14-guidebook-random-variations-title'}"
+                       Visible="False"
+                       HorizontalAlignment="Center"
+                       FontColorOverride="#1e6651" />
+                <controls:SplitBar MinHeight="10">
+                </controls:SplitBar>
+            </BoxContainer>
+            <!-- CP14 random reactions end -->
+        </BoxContainer>
     </BoxContainer>
+    <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 5" />
 </BoxContainer>

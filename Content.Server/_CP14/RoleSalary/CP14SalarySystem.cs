@@ -1,16 +1,11 @@
 using System.Text;
 using Content.Server._CP14.Cargo;
 using Content.Server._CP14.Currency;
-using Content.Server.Mind;
-using Content.Server.Station.Components;
 using Content.Server.Station.Events;
-using Content.Shared._CP14.Cargo;
-using Content.Shared._CP14.Currency;
 using Content.Shared.Paper;
 using Content.Shared.Station.Components;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Server.GameObjects;
-using Robust.Server.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -41,15 +36,15 @@ public sealed partial class CP14SalarySystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CP14StationSalaryComponent, CP14StationTravelingStoreShipTargetComponent>();
-        while (query.MoveNext(out var uid, out var salary, out var store))
-        {
-            if (_timing.CurTime < salary.NextSalaryTime)
-                continue;
-
-            salary.NextSalaryTime = _timing.CurTime + salary.SalaryFrequency;
-            _cargo.AddBuyQueue((uid, store), new List<EntProtoId> {salary.SalaryProto});
-        }
+        //var query = EntityQueryEnumerator<CP14StationSalaryComponent, CP14StationTravelingStoreShipTargetComponent>();
+        //while (query.MoveNext(out var uid, out var salary, out var store))
+        //{
+        //    if (_timing.CurTime < salary.NextSalaryTime)
+        //        continue;
+//
+        //    salary.NextSalaryTime = _timing.CurTime + salary.SalaryFrequency;
+        //    _cargo.AddBuyQueue((uid, store), new List<EntProtoId> {salary.SalaryProto});
+        //}
     }
 
     private void OnSalaryInit(Entity<CP14SalarySpawnerComponent> ent, ref MapInitEvent args)

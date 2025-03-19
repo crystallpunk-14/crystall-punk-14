@@ -4,14 +4,13 @@
   description: You create an area where a scalding stream of fire occurs with little delay.
   components: 
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
-    state: earth_wall
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: tiefling_revenge
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
     manaCost: 15
   - type: CP14MagicEffect
-    magicType: Fire
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -22,14 +21,15 @@
       - CP14AreaEntityEffectFireRune
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneEarthWall
+  - type: CP14MagicEffectPacifiedBlock
   - type: EntityWorldTargetAction
     range: 10
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
-      state: earth_wall
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: tiefling_revenge
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 10
 

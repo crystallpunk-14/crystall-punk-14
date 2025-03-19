@@ -1,30 +1,23 @@
 using System.Text;
 using Content.Server.Chat.Managers;
 using Content.Server.Mind;
-using Content.Server.Popups;
 using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Knowledge.Components;
+using Content.Shared._CP14.Knowledge.Events;
 using Content.Shared._CP14.Knowledge.Prototypes;
-using Content.Shared.Administration;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
-using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.Mind;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Knowledge;
 
-public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
+public sealed class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
 {
-    [Dependency] private readonly ISharedAdminManager _admin = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
@@ -35,32 +28,21 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14AutoAddKnowledgeComponent, MapInitEvent>(AutoAddSkill);
-        SubscribeLocalEvent<CP14KnowledgeStorageComponent, GetVerbsEvent<Verb>>(AddKnowledgeAdminVerb);
-        SubscribeLocalEvent<CP14KnowledgeLearningSourceComponent, GetVerbsEvent<Verb>>(AddKnowledgeLearningVerb);
         SubscribeLocalEvent<CP14KnowledgeStorageComponent, CP14KnowledgeLearnDoAfterEvent>(KnowledgeLearnedEvent);
+        SubscribeLocalEvent<CP14KnowledgeLearningSourceComponent, GetVerbsEvent<Verb>>(AddKnowledgeLearningVerb);
 
-        SubscribeNetworkEvent<RequestKnowledgeInfoEvent>(OnRequestKnowledgeInfoEvent);
-    }
-
-    private void KnowledgeLearnedEvent(Entity<CP14KnowledgeStorageComponent> ent, ref CP14KnowledgeLearnDoAfterEvent args)
-    {
-        if (args.Cancelled || args.Handled)
-            return;
-
-        args.Handled = true;
-
-        TryLearnKnowledge(ent, args.Knowledge);
+        SubscribeNetworkEvent<CP14RequestKnowledgeInfoEvent>(OnRequestKnowledgeInfoEvent);
     }
 
     private void AddKnowledgeLearningVerb(Entity<CP14KnowledgeLearningSourceComponent> ent, ref GetVerbsEvent<Verb> args)
     {
         var user = args.User;
-        foreach (var knowledge in ent.Comp.Knowledges)
+        foreach (var knowledge in ent.Comp.Knowledge)
         {
-            if (!_proto.TryIndex(knowledge, out var indexedKnowledge))
+            if (!_prototype.TryIndex(knowledge, out var indexedKnowledge))
                 continue;
 
-            args.Verbs.Add(new Verb()
+            args.Verbs.Add(new Verb
             {
                 Text = $"{Loc.GetString(indexedKnowledge.Name)}",
                 Message = Loc.GetString(indexedKnowledge.Desc),
@@ -70,7 +52,7 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
                     _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
                         user,
                         ent.Comp.DoAfter,
-                        new CP14KnowledgeLearnDoAfterEvent() {Knowledge = knowledge},
+                        new CP14KnowledgeLearnDoAfterEvent { Knowledge = knowledge },
                         user,
                         ent,
                         ent)
@@ -85,176 +67,137 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         }
     }
 
-    private void AddKnowledgeAdminVerb(Entity<CP14KnowledgeStorageComponent> ent, ref GetVerbsEvent<Verb> args)
+    private void KnowledgeLearnedEvent(Entity<CP14KnowledgeStorageComponent> ent, ref CP14KnowledgeLearnDoAfterEvent args)
     {
-        if (!_admin.HasAdminFlag(args.User, AdminFlags.Admin))
+        if (args.Cancelled || args.Handled)
             return;
 
-        //Remove knowledge
-        foreach (var knowledge in ent.Comp.Knowledges)
-        {
-            if (!_proto.TryIndex(knowledge, out var indexedKnowledge))
-                continue;
-
-            args.Verbs.Add(new Verb()
-            {
-                Text = $"{Loc.GetString(indexedKnowledge.Name)}",
-                Message = Loc.GetString(indexedKnowledge.Desc),
-                Category = VerbCategory.CP14KnowledgeRemove,
-                Act = () =>
-                {
-                    TryForgotKnowledge(ent, knowledge);
-                },
-                Impact = LogImpact.High,
-            });
-        }
-
-        //Add knowledge
-        foreach (var knowledge in _proto.EnumeratePrototypes<CP14KnowledgePrototype>())
-        {
-            if (ent.Comp.Knowledges.Contains(knowledge))
-                continue;
-
-            args.Verbs.Add(new Verb()
-            {
-                Text = $"{Loc.GetString(knowledge.Name)}",
-                Message = Loc.GetString(knowledge.Desc),
-                Category = VerbCategory.CP14KnowledgeAdd,
-                Act = () =>
-                {
-                    TryLearnKnowledge(ent, knowledge, true);
-                },
-                Impact = LogImpact.High,
-            });
-        }
+        args.Handled = true;
+        TryAdd(ent.Owner, args.Knowledge);
     }
 
     private void AutoAddSkill(Entity<CP14AutoAddKnowledgeComponent> ent, ref MapInitEvent args)
     {
         foreach (var knowledge in ent.Comp.Knowledge)
         {
-            TryLearnKnowledge(ent, knowledge);
+            TryAdd(ent.Owner, knowledge);
         }
 
         RemComp(ent, ent.Comp);
     }
 
-    public bool TryLearnKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto, bool force = false, bool silent = false)
+    public bool TryAdd(Entity<CP14KnowledgeStorageComponent?> entity, ProtoId<CP14KnowledgePrototype> knowledgeId, bool force = false, bool silent = false)
     {
-        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var knowledgeStorage))
+        if (!Resolve(entity, ref entity.Comp, false))
             return false;
 
-        if (!_proto.TryIndex(proto, out var indexedKnowledge))
+        if (HasKnowledge(entity, knowledgeId))
             return false;
 
-        if (knowledgeStorage.Knowledges.Contains(proto))
+        if (!_prototype.TryIndex(knowledgeId, out var knowledge))
             return false;
 
-        foreach (var dependency in indexedKnowledge.Dependencies)
+        MindComponent? mindComponent;
+
+        foreach (var dependencyKnowledgeId in knowledge.Dependencies)
         {
-            if (!_proto.TryIndex(dependency, out var indexedDependency))
+            if (!_prototype.TryIndex(dependencyKnowledgeId, out var dependencyKnowledge))
                 return false;
 
-            if (force)
-            {
-                //If we teach by force - we automatically teach all the basics that are necessary for that skill.
-                if (!TryLearnKnowledge(uid, dependency, true))
-                    return false;
-            }
-            else
-            {
-                var passed = true;
-                var sb = new StringBuilder();
+            // If we teach by force - we automatically teach all the basics that are necessary for that skill.
+            if (force && !TryAdd(entity, dependencyKnowledge, true))
+                return false;
 
-                sb.Append(Loc.GetString("cp14-cant-learn-knowledge-dependencies",
-                    ("target", Loc.GetString(indexedKnowledge.Desc))));
+            var sb = new StringBuilder();
+            sb.Append(Loc.GetString("cp14-cant-learn-knowledge-dependencies", ("target", Loc.GetString(knowledge.Desc))));
 
-                //We cant learnt
-                if (!HasKnowledge(uid, dependency))
-                {
-                    passed = false;
-                    sb.Append("\n- " + Loc.GetString(indexedDependency.Desc));
-                }
+            // We cant learnt
+            if (HasKnowledge(entity, dependencyKnowledge))
+                continue;
 
-                if (!passed)
-                {
-                    if (!silent && _mind.TryGetMind(uid, out var mind, out var mindComp) && mindComp.Session is not null)
-                    {
-                        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", sb.ToString()));
-                        _chat.ChatMessageToOne(
-                            ChatChannel.Server,
-                            sb.ToString(),
-                            wrappedMessage,
-                            default,
-                            false,
-                            mindComp.Session.Channel);
-                    }
+            sb.Append($"\n- {Loc.GetString(dependencyKnowledge.Desc)}");
 
-                    return false;
-                }
-            }
-        }
+            if (silent)
+                return false;
 
-        //TODO: coding on a sleepy head is a bad idea. Remove duplicate variables. >:(
-        if (!silent && _mind.TryGetMind(uid, out var mind2, out var mindComp2) && mindComp2.Session is not null)
-        {
-            var message = Loc.GetString("cp14-learned-new-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
-            var wrappedMessage2 = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+            if (!_mind.TryGetMind(entity, out _, out mindComponent) || mindComponent.Session is null)
+                return false;
 
+            var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", sb.ToString()));
             _chat.ChatMessageToOne(
                 ChatChannel.Server,
-                message,
-                wrappedMessage2,
+                sb.ToString(),
+                wrappedMessage,
                 default,
                 false,
-                mindComp2.Session.Channel);
+                mindComponent.Session.Channel);
+
+            return false;
         }
 
-        _adminLogger.Add(
-            LogType.Mind,
-            LogImpact.Medium,
-            $"{EntityManager.ToPrettyString(uid):player} learned new knowledge: {Loc.GetString(indexedKnowledge.Name)}");
-        return knowledgeStorage.Knowledges.Add(proto);
-    }
-
-    public bool TryForgotKnowledge(EntityUid uid, ProtoId<CP14KnowledgePrototype> proto, bool silent = false)
-    {
-        if (!TryComp<CP14KnowledgeStorageComponent>(uid, out var knowledgeStorage))
+        if (!entity.Comp.Knowledge.Add(knowledgeId))
             return false;
 
-        if (!knowledgeStorage.Knowledges.Contains(proto))
+        _adminLogger.Add(LogType.Mind, LogImpact.Medium, $"{EntityManager.ToPrettyString(entity):player} learned new knowledge: {Loc.GetString(knowledge.Name)}");
+
+        // TODO: coding on a sleepy head is a bad idea. Remove duplicate variables. >:(
+        if (silent)
+            return true;
+
+        if (!_mind.TryGetMind(entity, out _, out mindComponent) || mindComponent.Session is null)
             return false;
 
-        if (!_proto.TryIndex(proto, out var indexedKnowledge))
-            return false;
+        var message = Loc.GetString("cp14-learned-new-knowledge", ("name", Loc.GetString(knowledge.Name)));
+        var wrappedMessage2 = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
 
-        knowledgeStorage.Knowledges.Remove(proto);
+        _chat.ChatMessageToOne(
+            ChatChannel.Server,
+            message,
+            wrappedMessage2,
+            default,
+            false,
+            mindComponent.Session.Channel);
 
-        if (_mind.TryGetMind(uid, out var mind, out var mindComp) && mindComp.Session is not null)
-        {
-            if (!silent)
-            {
-                var message = Loc.GetString("cp14-forgot-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
-                var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
-
-                _chat.ChatMessageToOne(
-                    ChatChannel.Server,
-                    message,
-                    wrappedMessage,
-                    default,
-                    false,
-                    mindComp.Session.Channel);
-            }
-        }
-
-        _adminLogger.Add(
-            LogType.Mind,
-            LogImpact.Medium,
-            $"{EntityManager.ToPrettyString(uid):player} forgot knowledge: {Loc.GetString(indexedKnowledge.Name)}");
         return true;
     }
 
-    private void OnRequestKnowledgeInfoEvent(RequestKnowledgeInfoEvent msg, EntitySessionEventArgs args)
+    public bool TryRemove(Entity<CP14KnowledgeStorageComponent?> entity, ProtoId<CP14KnowledgePrototype> proto, bool silent = false)
+    {
+        if (!Resolve(entity, ref entity.Comp, false))
+            return false;
+
+        if (!entity.Comp.Knowledge.Contains(proto))
+            return false;
+
+        if (!_prototype.TryIndex(proto, out var indexedKnowledge))
+            return false;
+
+        if (!entity.Comp.Knowledge.Remove(proto))
+            return false;
+
+        _adminLogger.Add(LogType.Mind, LogImpact.Medium, $"{EntityManager.ToPrettyString(entity):player} forgot knowledge: {Loc.GetString(indexedKnowledge.Name)}");
+
+        if (silent)
+            return true;
+
+        if (!_mind.TryGetMind(entity, out _, out var mindComp) || mindComp.Session is null)
+            return true;
+
+        var message = Loc.GetString("cp14-forgot-knowledge", ("name", Loc.GetString(indexedKnowledge.Name)));
+        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+
+        _chat.ChatMessageToOne(
+            ChatChannel.Server,
+            message,
+            wrappedMessage,
+            default,
+            false,
+            mindComp.Session.Channel);
+
+        return true;
+    }
+
+    private void OnRequestKnowledgeInfoEvent(CP14RequestKnowledgeInfoEvent msg, EntitySessionEventArgs args)
     {
         if (!args.SenderSession.AttachedEntity.HasValue || args.SenderSession.AttachedEntity != GetEntity(msg.NetEntity))
             return;
@@ -264,6 +207,6 @@ public sealed partial class CP14KnowledgeSystem : SharedCP14KnowledgeSystem
         if (!TryComp<CP14KnowledgeStorageComponent>(entity, out var knowledgeComp))
             return;
 
-        RaiseNetworkEvent(new CP14KnowledgeInfoEvent(GetNetEntity(entity),knowledgeComp.Knowledges), args.SenderSession);
+        RaiseNetworkEvent(new CP14KnowledgeInfoEvent(GetNetEntity(entity),knowledgeComp.Knowledge), args.SenderSession);
     }
 }

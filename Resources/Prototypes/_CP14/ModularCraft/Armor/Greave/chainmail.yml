@@ -1,0 +1,79 @@
+- type: modularPart
+  id: BaseGreaveChainmail
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseClothingArmor
+
+- type: modularPart
+  id: GreaveIronChainmail
+  slots:
+  - Greave
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.03
+        Slash: -0.10
+        Piercing: -0.01
+
+- type: modularPart
+  id: GreaveGoldChainmail
+  slots:
+  - Greave
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.01
+        Slash: -0.04
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
+
+- type: modularPart
+  id: GreaveCopperChainmail
+  slots:
+  - Greave
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.01
+        Slash: -0.06
+        Piercing: -0.01
+
+- type: modularPart
+  id: GreaveMithrilChainmail
+  slots:
+  - Greave
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGreaveChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.05
+        Slash: -0.18
+        Piercing: -0.02

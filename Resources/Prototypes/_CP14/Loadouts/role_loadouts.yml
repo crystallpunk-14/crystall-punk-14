@@ -28,7 +28,6 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
-  - CP14ApprenticeBundle
   - CP14GeneralKeys
 
 - type: roleLoadout
@@ -41,6 +40,7 @@
   - CP14AlchemistCloak #
   - CP14GeneralGloves
   - CP14GeneralShirt
+  - CP14AlchemistBelt #
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
@@ -128,6 +128,7 @@
   - CP14GeneralSpells
   - CP14GuildmasterOuterClothing
   - CP14GeneralEyes
+  - CP14GuildmasterHead
   - CP14GuildmasterCloak
   - CP14GuildmasterShirt
   - CP14GuildmasterPants

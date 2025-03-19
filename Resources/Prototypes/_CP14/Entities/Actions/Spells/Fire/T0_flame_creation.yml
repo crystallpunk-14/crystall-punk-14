@@ -4,12 +4,11 @@
   description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
   components:
   - type: Sprite
-    sprite: _CP14/Effects/Magic/spells_icons.rsi
+    sprite: _CP14/Actions/Spells/fire.rsi
     state: flame_creation
   - type: CP14MagicEffectManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Fire
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -28,7 +27,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Effects/Magic/spells_icons.rsi
+      sprite: _CP14/Actions/Spells/fire.rsi
       state: flame_creation
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 10

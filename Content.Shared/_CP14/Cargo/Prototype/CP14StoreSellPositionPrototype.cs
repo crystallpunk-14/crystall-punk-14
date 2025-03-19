@@ -17,17 +17,14 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     [DataField(required: true)]
     public int Price = 100;
 
-    [DataField(required: true)]
-    public LocId Name = string.Empty;
+    [DataField(required: true, serverOnly: true)]
+    public CP14StoreSellService Service = default!;
 
     [DataField]
-    public LocId Desc = string.Empty;
+    public SpriteSpecifier? IconOverride;
 
-    [DataField(required: true)]
-    public SpriteSpecifier Icon = default!;
-
-    [DataField(required: true)]
-    public CP14StoreSellService Service = default!;
+    [DataField]
+    public LocId? NameOverride;
 
     [DataField]
     public bool RoundstartAvailable = true;
@@ -36,7 +33,10 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
     /// If true, this item will randomly appear under the ‘Special Offer’ heading. With a chance to show up every time the ship arrives.
     /// </summary>
     [DataField]
-    public bool Special = false;
+    public bool Special;
+
+    [DataField]
+    public HashSet<ProtoId<CP14StoreFactionPrototype>> Factions = new();
 }
 
 [ImplicitDataDefinitionForInheritors]
@@ -44,4 +44,16 @@ public sealed partial class CP14StoreSellPositionPrototype : IPrototype
 public abstract partial class CP14StoreSellService
 {
     public abstract bool TrySell(EntityManager entManager, HashSet<EntityUid> entities);
+
+    public abstract string GetName(IPrototypeManager protoMan);
+
+    /// <summary>
+    /// You can specify an icon generated from an entity. It will support layering, colour changes and other layer options. Return null to disable.
+    /// </summary>
+    public abstract EntProtoId? GetEntityView(IPrototypeManager protoManager);
+
+    /// <summary>
+    /// You can specify the texture directly. Return null to disable.
+    /// </summary>
+    public abstract SpriteSpecifier? GetTexture(IPrototypeManager protoManager);
 }

@@ -1,0 +1,259 @@
+- type: storePositionSell
+  id: BountyTorch
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14Torch
+    count: 5
+
+- type: storePositionSell
+  id: BountyLucenPlanks
+  special: true
+  price: 200
+  factions:
+  - Sylphoria
+  service: !type:CP14SellStackService
+    stackId: CP14LucensWoodenPlanks
+    count: 10
+
+- type: storePositionSell
+  id: CP14SpellScrollIceShards
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollIceShards
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollShadowGrab
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollShadowGrab
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollSphereOfLight
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollSphereOfLight
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollFlameCreation
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollFlameCreation
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollEarthWall
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollEarthWall
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollFlashLight
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollFlashLight
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollWaterCreation
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollWaterCreation
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollPlantGrowth
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollPlantGrowth
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollMagicSplitting
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollMagicSplitting
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollMagicalAcceleration
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollMagicalAcceleration
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollShadowStep
+  special: true
+  price: 40
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollShadowStep
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollFireball
+  special: true
+  price: 40
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollFireball
+    count: 1
+
+- type: storePositionSell
+  id: CP14SpellScrollBeerCreation
+  special: true
+  price: 400
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14SpellScrollBeerCreation
+    count: 1
+
+- type: storePositionSell
+  id: CP14EnergyCrystalSmallEmpty
+  special: true
+  price: 70
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14EnergyCrystalSmallEmpty
+    count: 5
+
+- type: storePositionSell
+  id: CP14EnergyCrystalMediumEmpty
+  special: true
+  price: 80
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14EnergyCrystalMediumEmpty
+    count: 3
+
+- type: storePositionSell
+  id: CP14ClothingRingIceShards
+  special: true
+  price: 100
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14ClothingRingIceShards
+    count: 1
+
+- type: storePositionSell
+  id: CP14ClothingRingFlashLight
+  special: true
+  price: 100
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14ClothingRingFlashLight
+    count: 1
+
+- type: storePositionSell
+  id: CP14BaseLockpick
+  special: true
+  price: 100
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14BaseLockpick
+    count: 10
+
+- type: storePositionSell
+  id: CP14MobRabbit
+  special: true
+  price: 20
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobRabbit
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobPig
+  special: true
+  price: 100
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobPig
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobBoar
+  special: true
+  price: 120
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobBoar
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobFrog
+  special: true
+  price: 10
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobFrog
+    count: 5
+
+- type: storePositionSell
+  id: CP14MobMonsterMole
+  special: true
+  price: 30
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14MobMonsterMole
+    count: 1
+
+- type: storePositionSell
+  id: CP14PartsMonsterGlands
+  special: true
+  price: 80
+  factions:
+  - Sylphoria
+  service: !type:CP14SellPrototypeService
+    proto: CP14PartsMonsterGlands
+    count: 1

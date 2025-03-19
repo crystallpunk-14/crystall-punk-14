@@ -1,9 +1,7 @@
-using Content.Server._CP14.DayCycle;
 using Content.Server._CP14.Farming.Components;
 using Content.Server.Destructible;
 using Content.Server.DoAfter;
 using Content.Server.Popups;
-using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
@@ -23,7 +21,6 @@ namespace Content.Server._CP14.Farming;
 public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 {
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TransformSystem _transform = default!;

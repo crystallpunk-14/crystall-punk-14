@@ -1,6 +1,6 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden wall
+  name: wooden wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WoodenWall
   graph: CP14WallWood
@@ -18,7 +18,25 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden window
+  name: palisade
+  description: A wall of sharp logs. Not that it's a safe haven.
+  id: CP14WallWoodenPalisade
+  graph: CP14WallWoodenPalisade
+  startNode: start
+  targetNode: CP14WallWoodenPalisade
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/wooden_palisad.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: wooden window
   description: A wooden wall with a glass window in it.
   id: CP14WindowWooden
   graph: CP14WallWood
@@ -36,7 +54,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Earth cliffs
+  name: earth cliffs
   description: A tall pile of dirt. Can a house be built from it?
   id: CP14WallDirt
   graph: CP14WallDirt
@@ -54,7 +72,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Stone wall
+  name: stone wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WallStonebrick
   graph: CP14WallStonebrick
@@ -72,7 +90,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Iron grille
+  name: iron grille
   description: Strong iron grille.
   id: CP14FenceIronGrilleStraight
   graph: CP14FenceIronGrilleStraight
@@ -91,7 +109,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Iron grille window
+  name: iron grille window
   description: The upper half of the solid grid.
   id: CP14FenceIronGrilleWindowStraight
   graph: CP14FenceIronGrilleWindowStraight

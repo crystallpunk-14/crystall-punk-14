@@ -13,3 +13,6 @@
   - type: CP14DelayedIgnitionSource
     enabled: true
   # TODO: Damageable, Ignite attempt self damage, Ignite prob
+  - type: Tag
+    tags:
+    - CP14Lighter

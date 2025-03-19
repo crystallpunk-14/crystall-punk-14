@@ -30,6 +30,16 @@
   flavorType: Base
   description: cp14-flavor-base-magic
 
+- type: flavor
+  id: CP14Salty
+  flavorType: Base
+  description: cp14-flavor-base-salt
+
+- type: flavor
+  id: CP14VerySweet
+  flavorType: Base
+  description: cp14-flavor-base-very-sweet
+
 # Complex
 
 - type: flavor
@@ -106,3 +116,8 @@
   id: CP14bottomless
   flavorType: Complex
   description: cp14-flavor-complex-bottomless
+
+- type: flavor
+  id: CP14cucumber
+  flavorType: Complex
+  description: cp14-flavor-complex-cucumber

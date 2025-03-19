@@ -1,0 +1,10 @@
+- type: antag
+  id: CP14Vampire
+  name: cp14-roles-antag-vampire-name
+  antagonist: true
+  setPreference: false #Impossible and boring gameplay ATM
+  objective: cp14-roles-antag-vampire-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 7200 # 2h
+  #guides: TODO

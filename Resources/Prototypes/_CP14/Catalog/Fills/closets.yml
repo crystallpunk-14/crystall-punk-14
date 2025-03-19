@@ -5,7 +5,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14Lighter
+      - id: CP14ManaOperationGlove
       - id: CP14Syringe
         amount: 2
       - id: CP14Cauldron
@@ -27,18 +28,12 @@
       - id: CP14PenFeather
         amount: 1
         #Random start resource
-      - id: CP14VialSmallHealthPotion
-      - id: CP14VialSmallHealthPotion
-      - id: CP14VialSmallHealthPotion
-      - id: CP14VialSmallManaPotion
-      - id: CP14VialSmallManaPotion
-      - id: CP14VialSmallManaPotion
-      - id: CP14VialSmallGroundQuartz
-      - id: CP14VialSmallGroundQuartz
-      - id: CP14VialSmallBloodFlowerSap
-      - id: CP14VialSmallAgaricMushroom
-      - id: CP14VialSmallWildSage
-      - id: CP14VialSmallBlueAmanita
+      - id: CP14VialMediumEarthEssence
+      - id: CP14VialMediumFireEssence
+      - id: CP14VialMediumWaterEssence
+      - id: CP14VialMediumAirEssence
+      - id: CP14VialMediumOrderEssence
+      - id: CP14VialMediumChaosEssence
 
 - type: entity
   parent: CP14WoodenCloset
@@ -68,45 +63,6 @@
         prob: 0.2
       - id: CP14SilverCoin1
         prob: 0.2
-
-- type: entity
-  parent: CP14WoodenCloset
-  id: CP14WoodenClosetCommandantFilled
-  suffix: Commandant, Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: HandLabeler #TODO custom cp14 labeler
-      - id: CP14StampDenied
-      - id: CP14StampApproved
-      - id: CP14StampCommandant
-      - id: CP14PaperFolderBlue
-
-- type: entity
-  parent: CP14SafeVault
-  id: CP14SafeVaultFilled25
-  suffix: Vault, Filled 25gp
-  components:
-  - type: EntityTableContainerFill
-    containers: 
-      entity_storage: !type:GroupSelector
-        children:
-          - id: CP14JewelryRuby
-            weight: 0.1
-          - !type:GroupSelector
-            children:
-            # or 5gp
-            - id: CP14GoldCoin5
-            # or 50sp
-            - !type:AllSelector
-              children:
-              - id: CP14SilverCoin
-              - id: CP14SilverCoin
-              - id: CP14SilverCoin
-              - id: CP14SilverCoin 
-              - id: CP14SilverCoin
-            rolls: !type:ConstantNumberSelector
-              value: 5
 
 - type: entity
   parent: CP14WoodenCloset
@@ -141,11 +97,10 @@
       - id: CP14ModularGripIronLongGuard
         amount: 2
       - id: CP14BaseLightCrossbow
-      - id: CP14Crossbolt
+      - id: CP14CrossboltIron
         amount: 5
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
-      - id: CP14BookImperialLawsHandBook
 
 - type: entity
   parent: CP14WoodenCloset
@@ -165,7 +120,6 @@
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
       - id: CP14StampGuardCommander
-      - id: CP14BookImperialLawsHandBook
 
 - type: entity
   parent: CP14WoodenCloset

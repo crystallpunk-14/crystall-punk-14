@@ -16,6 +16,10 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false #Zombie vampire?
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -78,11 +82,13 @@
       30: 0.4
   - type: StatusEffects
     allowed:
+    - Stun
     - KnockedDown
     - SlowedDown
     - Electrocution
     - Stutter
     - TemporaryBlindness
+    - Pacified
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90

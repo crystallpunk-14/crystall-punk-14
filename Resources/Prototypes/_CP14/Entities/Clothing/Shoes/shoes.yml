@@ -92,3 +92,19 @@
     sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesJestersRingers
+  name: jester's ringers
+  description: Everyone around you should know that you exist, buddy.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/jesters_ringers.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/jesters_ringers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepJester
+      params:
+        variation: 0.07

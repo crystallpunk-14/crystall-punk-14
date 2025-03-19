@@ -1,0 +1,13 @@
+- type: construction
+  crystallPunkAllowed: true
+  name: floral wreath
+  id: cp14headwreath
+  graph: CP14HeadWreath
+  startNode: start
+  targetNode: cp14headwreath
+  category: construction-category-clothing
+  objectType: Item
+  description: A simple flower decoration. That's so sweet.
+  icon:
+    sprite: _CP14/Clothing/Head/Produced/wreath.rsi
+    state: icon

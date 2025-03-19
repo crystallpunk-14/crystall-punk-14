@@ -1,30 +1,3 @@
-# Bank
-
-- type: CP14LockType
-  id: BankEntrance
-  complexity: 3
-  name: cp14-lock-shape-bank-entrance
-
-- type: CP14LockType
-  id: BankStaff
-  complexity: 3
-  name: cp14-lock-shape-bank-staff
-
-- type: CP14LockType
-  id: BankCommandantRoom
-  complexity: 4
-  name: cp14-lock-shape-bank-commandant
-
-- type: CP14LockType
-  id: BankSafe
-  complexity: 5
-  name: cp14-lock-shape-bank-safe
-
-- type: CP14LockType
-  id: BankVault
-  complexity: 6
-  name: cp14-lock-shape-bank-vault
-
 # Tavern 
 
 - type: CP14LockType
@@ -104,6 +77,24 @@
   group: Blacksmith
   complexity: 4
   name: cp14-lock-shape-blacksmith3
+
+- type: CP14LockType
+  id: Shop1
+  group: Merchant
+  complexity: 6
+  name: cp14-lock-shape-merchant1
+
+- type: CP14LockType
+  id: Shop2
+  group: Merchant
+  complexity: 6
+  name: cp14-lock-shape-merchant2
+
+- type: CP14LockType
+  id: Shop3
+  group: Merchant
+  complexity: 6
+  name: cp14-lock-shape-merchant3
 
 # Mercenary
 

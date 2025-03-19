@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseBiomeSpawner
   name: biome spawner
+  description: Spawns of various biomes on the map.
   abstract: true
   placement:
     mode: SnapgridCenter

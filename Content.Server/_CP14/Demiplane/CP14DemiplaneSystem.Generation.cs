@@ -121,7 +121,6 @@ public sealed partial class CP14DemiplaneSystem
             JobMaxTime,
             EntityManager,
             _logManager,
-            _mapManager,
             _proto,
             _dungeon,
             _metaData,
@@ -204,44 +203,46 @@ public sealed partial class CP14DemiplaneSystem
 
     private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
     {
-        //Location generation
-        HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
-        foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())
-        {
-            suitableConfigs.Add(locationConfig);
-        }
-
         CP14DemiplaneLocationPrototype? selectedConfig = null;
-        while (suitableConfigs.Count > 0)
+        //Location generation
+        if (generator.Comp.Location is null)
         {
-            var randomConfig = _random.Pick(suitableConfigs);
-
-            if (!generator.Comp.TiersContent.ContainsKey(randomConfig.Tier))
+            HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
+            foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())
             {
-                suitableConfigs.Remove(randomConfig);
-                continue;
+                suitableConfigs.Add(locationConfig);
             }
 
-            if (!_random.Prob(generator.Comp.TiersContent[randomConfig.Tier]))
+            while (suitableConfigs.Count > 0)
             {
-                suitableConfigs.Remove(randomConfig);
-                continue;
+                var randomConfig = _random.Pick(suitableConfigs);
+
+                //LevelRange filter
+                if (generator.Comp.Level < randomConfig.Levels.Min || generator.Comp.Level > randomConfig.Levels.Max)
+                {
+                    suitableConfigs.Remove(randomConfig);
+                    continue;
+                }
+
+                selectedConfig = randomConfig;
+                break;
             }
 
-            selectedConfig = randomConfig;
-            break;
-        }
+            if (selectedConfig is null)
+            {
+                // We dont should be here
 
-        if (selectedConfig is null)
+                Log.Warning("Expedition mission generation failed: No suitable location configs.");
+                QueueDel(generator);
+                return;
+            }
+            generator.Comp.Location = selectedConfig;
+        }
+        else
         {
-            // We dont should be here
-
-            Log.Warning("Expedition mission generation failed: No suitable location configs.");
-            QueueDel(generator);
-            return;
+            if (!_proto.TryIndex(generator.Comp.Location, out selectedConfig))
+                return;
         }
-
-        generator.Comp.Location = selectedConfig;
 
         //Modifier generation
         Dictionary<CP14DemiplaneModifierPrototype, float> suitableModifiersWeights = new();
@@ -258,36 +259,10 @@ public sealed partial class CP14DemiplaneSystem
                 }
             }
 
-            //Tier filter
+            //Levels filter
             if (passed)
             {
-                var innerPassed = false;
-                foreach (var tier in modifier.Tiers)
-                {
-                    if (generator.Comp.TiersContent.ContainsKey(tier))
-                    {
-                        innerPassed = true;
-                        break;
-                    }
-                }
-
-                if (!innerPassed)
-                {
-                    passed = false;
-                }
-            }
-
-            // Tier weight filter
-            if (passed)
-            {
-                var maxProb = 0f;
-                foreach (var tier in modifier.Tiers)
-                {
-                    if (generator.Comp.TiersContent.ContainsKey(tier))
-                        maxProb = Math.Max(maxProb, generator.Comp.TiersContent[tier]);
-                }
-
-                if (!_random.Prob(maxProb))
+                if (generator.Comp.Level < modifier.Levels.Min || generator.Comp.Level > modifier.Levels.Max)
                 {
                     passed = false;
                 }

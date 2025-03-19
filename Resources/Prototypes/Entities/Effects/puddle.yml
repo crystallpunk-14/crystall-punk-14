@@ -137,6 +137,8 @@
         hard: false
   - type: IconSmooth
     key: puddles
+    additionalKeys:
+    - CP14wall
     base: splat
     mode: CardinalFlags
   - type: SolutionContainerManager

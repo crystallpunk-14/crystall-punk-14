@@ -55,14 +55,6 @@
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconCommandant
-  icon:
-    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Commandant
-  jobName: cp14-job-name-commandant
-
-- type: jobIcon
-  parent: CP14JobIcon
   id: CP14JobIconMerchant
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi

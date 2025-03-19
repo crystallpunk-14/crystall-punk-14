@@ -8,19 +8,18 @@ namespace Content.Shared._CP14.Knowledge.Prototypes;
 [Prototype("CP14Knowledge")]
 public sealed partial class CP14KnowledgePrototype : IPrototype
 {
-    [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
-    public LocId Name { get; private set; } = default!;
+    public LocId Name { get; private set; }
 
     [DataField]
-    public LocId Desc{ get; private set; } = default!;
+    public LocId Desc { get; private set; }
 
     /// <summary>
-    /// to study this knowledge, other knowledge on which it is based may be necessary.
+    /// To study this knowledge, other knowledge on which it is based may be necessary.
     /// </summary>
     [DataField]
-    public HashSet<ProtoId<CP14KnowledgePrototype>> Dependencies = new();
+    public HashSet<ProtoId<CP14KnowledgePrototype>> Dependencies = [];
 }

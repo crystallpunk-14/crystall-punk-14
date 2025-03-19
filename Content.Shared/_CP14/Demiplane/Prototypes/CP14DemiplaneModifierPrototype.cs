@@ -1,3 +1,4 @@
+using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Procedural;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
@@ -13,10 +14,10 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     [IdDataField] public string ID { get; } = default!;
 
     /// <summary>
-    /// Modifier Tier. Can be generated only in demiplane keys with the corresponding tier
+    /// The difficulty levels at which this modifier can be generated.
     /// </summary>
     [DataField]
-    public List<int> Tiers = new();
+    public MinMax Levels = new(1, 10);
 
     /// <summary>
     /// Each modifier belongs to specific categories. Used by the generator to determine what to generate

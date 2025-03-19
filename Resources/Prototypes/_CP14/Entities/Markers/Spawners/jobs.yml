@@ -38,36 +38,6 @@
       - state: green
       - state: guard
 
-# Traders
-
-- type: entity
-  id: CP14SpawnPointCommandant
-  parent: CP14SpawnPointJobBase
-  name: commandant
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Commandant
-  - type: Sprite
-    layers:
-      - state: green
-      - state: commandant
-
-- type: entity
-  id: CP14SpawnPointMerchant
-  parent: CP14SpawnPointJobBase
-  name: merchant
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Merchant
-  - type: Sprite
-    layers:
-      - state: green
-      - state: merchant
-
 # Mercenary
 
 - type: entity
@@ -113,6 +83,20 @@
     layers:
       - state: green
       - state: workman #TODO Replace
+
+- type: entity
+  id: CP14SpawnPointMerchant
+  parent: CP14SpawnPointJobBase
+  name: merchant
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Merchant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: merchant
 
 - type: entity
   id: CP14SpawnPointAlchemist

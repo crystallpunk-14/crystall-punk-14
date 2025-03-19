@@ -1,0 +1,13 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: CP14WhistlerPoisonSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14WhistlerPoison:
+      amount: 1
+  products:
+    CP14EssencePoison: 1
+    #CP14EssencePoison: 0.5 #TODO Tenebrae

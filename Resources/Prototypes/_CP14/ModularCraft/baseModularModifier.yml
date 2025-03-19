@@ -66,3 +66,35 @@
       types:
         - Knife
     - type: CP14WallpaperRemover
+
+- type: modularPart
+  id: BaseWeaponRangedChemical
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: SolutionContainerManager
+      solutions:
+        ammo:
+          maxVol: 2
+    - type: MeleeChemicalInjector
+      solution: ammo
+    - type: RefillableSolution
+      solution: ammo
+    - type: InjectableSolution
+      solution: ammo
+    - type: SolutionInjectOnEmbed
+      transferAmount: 2
+      solution: ammo
+    - type: SolutionTransfer
+      maxTransferAmount: 2
+    - type: SolutionContainerVisuals
+      maxFillLevels: 1
+      fillBaseName: solution
+
+- type: modularPart
+  id: BaseClothingArmor
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: Item
+      size: Small

@@ -50,7 +50,6 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: CP14CloudShadows
-    - type: CP14MapFloorOccluder
     - type: MapLight
     - type: MapAtmosphere
       space: False
@@ -71,13 +70,12 @@ entities:
         - 0
         - 0
         - 0
-    - type: CP14DayCycle
+    - type: LightCycle
     - type: CP14WeatherController
       entries:
       - visuals: CP14Mist
       - visuals: CP14Rain
       - visuals: CP14Storm
-    - type: CP14MapDamage
     - type: LoadedMap
     - type: Parallax
       parallax: CP14Ocean
@@ -61133,26 +61131,19 @@ entities:
     - type: Transform
       pos: -36.414806,-12.267424
       parent: 2
-- proto: CP14BrassChest
+- proto: CP14WoodenChest
   entities:
   - uid: 14420
     components:
     - type: Transform
       pos: -5.5,-23.5
       parent: 2
-- proto: CP14BrassChestFilledFarmSeeds
+- proto: CP14WoodenChestFilledFarmSeeds
   entities:
   - uid: 14548
     components:
     - type: Transform
       pos: 8.5,38.5
-      parent: 2
-- proto: CP14BrassChestFilledWood
-  entities:
-  - uid: 13198
-    components:
-    - type: Transform
-      pos: -12.5,4.5
       parent: 2
 - proto: CP14Bucket
   entities:
@@ -63016,14 +63007,6 @@ entities:
     - type: Transform
       pos: -112.660484,46.248337
       parent: 2
-- proto: CP14ClothingHeadCaptainCap
-  entities:
-  - uid: 471
-    components:
-    - type: Transform
-      parent: 307
-    - type: Physics
-      canCollide: False
 - proto: CP14ClothingHeadWreath
   entities:
   - uid: 10073
@@ -63415,7 +63398,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -38.64112,-14.336575
       parent: 2
-- proto: CP14CrystalElementalDarknessBig
+- proto: CP14CrystalChaos
   entities:
   - uid: 13443
     components:
@@ -63427,7 +63410,7 @@ entities:
     - type: Transform
       pos: -45.897987,1.9787674
       parent: 2
-- proto: CP14CrystalElementalDarknessMedium
+- proto: CP14CrystalChaos
   entities:
   - uid: 13444
     components:
@@ -63439,7 +63422,7 @@ entities:
     - type: Transform
       pos: -48.444862,2.4943924
       parent: 2
-- proto: CP14CrystalElementalDarknessSmall
+- proto: CP14CrystalChaos
   entities:
   - uid: 13448
     components:
@@ -63450,20 +63433,6 @@ entities:
     components:
     - type: Transform
       pos: -47.804237,1.7756424
-      parent: 2
-- proto: CP14CrystalElementalHealingMedium
-  entities:
-  - uid: 14479
-    components:
-    - type: Transform
-      pos: 2.5575833,-7.520762
-      parent: 2
-- proto: CP14CrystalElementalHealingSmall
-  entities:
-  - uid: 14478
-    components:
-    - type: Transform
-      pos: 0.46383393,-3.6145117
       parent: 2
 - proto: CP14CrystalShardElectric
   entities:
@@ -69075,7 +69044,7 @@ entities:
         head: !type:ContainerSlot
           showEnts: False
           occludes: False
-          ent: 471
+          ent: null
         keys: !type:ContainerSlot
           showEnts: False
           occludes: False
@@ -85262,7 +85231,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -27.5,-34.5
       parent: 1
-- proto: CP14VialSmallGroundQuartz
+- proto: CP14VialSmall
   entities:
   - uid: 14506
     components:

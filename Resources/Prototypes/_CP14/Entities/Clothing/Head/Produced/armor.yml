@@ -11,11 +11,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.95
+        Blunt: 0.92
+        Slash: 0.93
+        Piercing: 0.96
   - type: ClothingSpeedModifier
-    walkModifier: 0.96
-    sprintModifier: 0.96
+    walkModifier: 0.97
+    sprintModifier: 0.97
 
 - type: entity
   parent: CP14ClothingHeadBase
@@ -32,6 +33,7 @@
       coefficients:
         Blunt: 0.87
         Slash: 0.91
+        Piercing: 0.94
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95

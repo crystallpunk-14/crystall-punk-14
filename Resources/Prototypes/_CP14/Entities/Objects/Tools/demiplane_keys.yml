@@ -12,7 +12,6 @@
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
     layers:
     - state: core
-      shader: unshaded
   - type: GuideHelp
     guides:
     - CP14_RU_Demiplanes
@@ -22,11 +21,10 @@
 - type: entity
   id: CP14DemiplaneKeyT1
   parent: CP14BaseSubdimensionalKey
-  suffix: T1
+  suffix: Level 3
   components:
   - type: CP14DemiplaneGeneratorData
-    tiersContent:
-      1: 1
+    level: 3
     limits:
       Reward: 1
       Danger: 1
@@ -40,17 +38,14 @@
 - type: entity
   id: CP14DemiplaneKeyT2
   parent: CP14BaseSubdimensionalKey
-  suffix: T2
+  suffix: Level 6
   components:
   - type: Sprite
     layers:
     - state: core
-      shader: unshaded
       color: red
   - type: CP14DemiplaneGeneratorData
-    tiersContent:
-      1: 0.6 # We dont have lot t2 content now. In future, decrease to 0.33
-      2: 1
+    level: 6
     limits:
       Reward: 1
       Danger: 1

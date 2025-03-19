@@ -1,19 +1,11 @@
 - type: cp14DemiplaneModifier
   id: WeatherNone
-  tiers:
-    - 1
-    - 2
-    - 3
   generationWeight: 3
   categories:
     Weather: 1
 
 - type: cp14DemiplaneModifier
   id: WeatherMist
-  tiers:
-    - 1
-    - 2
-    - 3
   categories:
     Weather: 1
   components:
@@ -29,9 +21,6 @@
 
 - type: cp14DemiplaneModifier
   id: WeatherRain
-  tiers:
-    - 1
-    - 2
   categories:
     Weather: 1
   requiredTags:
@@ -49,9 +38,9 @@
 
 - type: cp14DemiplaneModifier
   id: WeatherStorm
-  tiers:
-    - 2
-    - 3
+  levels:
+    min: 4
+    max: 10
   categories:
     Weather: 1
   requiredTags:
@@ -69,9 +58,9 @@
 
 - type: cp14DemiplaneModifier
   id: WeatherSnowLight
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 4
   categories:
     Weather: 1
   requiredTags:
@@ -89,10 +78,6 @@
 
 - type: cp14DemiplaneModifier
   id: WeatherSnowMedium
-  tiers:
-    - 1
-    - 2
-    - 3
   categories:
     Weather: 1
   requiredTags:
@@ -110,9 +95,9 @@
 
 - type: cp14DemiplaneModifier
   id: WeatherSnowHeavy
-  tiers:
-    - 2
-    - 3
+  levels:
+    min: 5
+    max: 10
   categories:
     Weather: 1
   requiredTags:

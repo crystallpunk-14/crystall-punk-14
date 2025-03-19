@@ -2,36 +2,30 @@
   crystallPunkAllowed: true
   id: CP14_EN_Alchemy
   name: Alchemy
-  text: "/ServerInfo/_CP14/Guidebook_EN/Alchemy.xml"
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/Alchemy.xml"
   children:
-  - CP14_EN_BasicAlchemy
-  - CP14_EN_Biological
+  - CP14_EN_Precurser
+  - CP14_EN_ThaumaturgyEssence
+  - CP14_EN_TargetEffects
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_BasicAlchemy
-  name: Basic effects solutions
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/BasicAlchemy.xml"
+  id: CP14_EN_Precurser
+  name: Precursers
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Precurser.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Biological
-  name: Biological solutions
-  text: "/ServerInfo/_CP14/Guidebook_EN/AlchemyTabs/Biological.xml"
+  id: CP14_EN_ThaumaturgyEssence
+  name: Thaumaturgic essences
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Essence.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Demiplanes
-  name: Demiplanes exploration
-  text: "/ServerInfo/_CP14/Guidebook_EN/Demiplanes.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_EN_Imperial_Laws
-  name: Imperial laws
-  text: "/ServerInfo/_CP14/Guidebook_EN/ImperialLaws.xml"
+  id: CP14_EN_TargetEffects
+  name: Target alchemical solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
   filterEnabled: True

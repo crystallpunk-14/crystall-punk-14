@@ -46,6 +46,7 @@
     tags:
     - CP14FitInMortar
     - CP14AlchemicalHerbals
+    - CP14BloodFlower
 
 - type: entity
   id: CP14AgaricMushroom
@@ -255,6 +256,7 @@
     tags:
     - CP14FitInMortar
     - CP14AlchemicalHerbals
+    - CP14Dayflin
 
 - type: entity
   id: CP14AirLily

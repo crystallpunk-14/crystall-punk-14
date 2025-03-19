@@ -77,6 +77,8 @@
       - id: CP14Rope
       - id: CP14Nail20
       - id: CP14EnergyCrystalSmall
+      - id: CP14d20Dice
+      - id: CP14d6Dice
       - id: CP14CopperCoin5
         weight: 0.5
       - id: CP14BaseSharpeningStone
@@ -122,19 +124,3 @@
     - id: CP14BlueBottle
     - id: CP14OrangeBottle
     - id: CP14RedBottle
-    #Common
-    - !type:GroupSelector
-      weight: 0.5
-      children:
-      - id: CP14VialSmallDayflin
-      - id: CP14VialSmallBlueAmanita
-      - id: CP14VialSmallWildSage
-      - id: CP14VialSmallGroundQuartz
-      - id: CP14VialSmallAgaricMushroom
-      - id: CP14VialSmallBloodFlowerSap
-    #Rare
-    - !type:GroupSelector
-      weight: 0.15
-      children:
-      - id: CP14VialTinyLumiMushroom
-      - id: CP14VialTinyChromiumSlime

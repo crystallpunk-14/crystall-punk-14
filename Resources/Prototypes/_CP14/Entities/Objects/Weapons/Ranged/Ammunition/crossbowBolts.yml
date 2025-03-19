@@ -13,10 +13,10 @@
     - CP14CrossbowBolt
 
 - type: entity
-  id: CP14Crossbolt
+  id: CP14CrossboltIron
   parent: CP14BaseCrossbolt
-  name: crossbow bolt
-  description: Rod with a sharpened spike. No plumage, they're not bows.
+  name: iron crossbow bolt
+  description: Rod with a pointed spike in iron. No plumage, they're not bows.
   components:
   - type: Projectile
     deleteOnCollide: false
@@ -31,3 +31,78 @@
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+  - type: CP14Material
+    materials:
+      CP14Iron: 3
+
+- type: entity
+  id: CP14CrossboltGold
+  parent: CP14BaseCrossbolt
+  name: gold crossbow bolt
+  description: Rod with a pointed spike in gold. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 15
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+    layers:
+    - state: rod
+      color: "#ffaf47"
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: CP14Material
+    materials:
+      CP14Gold: 3
+
+- type: entity
+  id: CP14CrossboltCopper
+  parent: CP14BaseCrossbolt
+  name: copper crossbow bolt
+  description: Rod with a pointed spike in copper. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 15
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+    layers:
+    - state: rod
+      color: "#bd712f"
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: CP14Material
+    materials:
+      CP14Copper: 3
+
+- type: entity
+  id: CP14CrossboltMithril
+  parent: CP14BaseCrossbolt
+  name: mithril crossbow bolt
+  description: Rod with a pointed spike in mithril. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 25
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+    layers:
+    - state: rod
+      color: "#45d2a4"
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: CP14Material
+    materials:
+      CP14Mithril: 3

@@ -134,6 +134,11 @@ public sealed class HungerSystem : EntitySystem
         if (calculatedHungerThreshold == component.CurrentThreshold)
             return;
 
+        //CP14 Raise hunger event for vampire
+        var ev = new CP14HungerChangedEvent(component.CurrentThreshold, calculatedHungerThreshold);
+        RaiseLocalEvent(uid, ev);
+        //CP14 Raise hunger event for vampire end
+
         component.CurrentThreshold = calculatedHungerThreshold;
         DoHungerThresholdEffects(uid, component);
     }
@@ -276,4 +281,11 @@ public sealed class HungerSystem : EntitySystem
             DoContinuousHungerEffects(uid, hunger);
         }
     }
+}
+
+
+public sealed class CP14HungerChangedEvent(HungerThreshold oldThreshold, HungerThreshold newThreshold) : EntityEventArgs
+{
+    public HungerThreshold OldThreshold { get; } = oldThreshold;
+    public HungerThreshold NewThreshold { get; } = newThreshold;
 }

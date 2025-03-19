@@ -1,6 +1,16 @@
 
 # Head
+- type: loadoutGroup
+  id: CP14GuildmasterHead
+  name: cp14-loadout-guildmaster-head
+  loadouts:
+  - CP14ClothingHeadGildmaster
 
+- type: loadout
+  id: CP14ClothingHeadGildmaster
+  equipment:
+    head: CP14ClothingHeadGildmaster
+     
 # Cloak
 
 - type: loadoutGroup

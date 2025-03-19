@@ -23,6 +23,7 @@ cp14-loadout-apprentice-bundle = Apprentice bundle
 cp14-loadout-alchemist-head = Alchemist's head
 cp14-loadout-alchemist-cloak = Alchemist's cloak
 cp14-loadout-alchemist-eyes = Alchemical goggles
+cp14-loadout-alchemist-belt = Alchemist's belt
 
 # Blacksmith
 
@@ -54,6 +55,7 @@ cp14-loadout-merchant-shoes = Merchant's shoes
 # Guildmaster
 
 cp14-loadout-guildmaster-outer = Guildmaster outer clothes
+cp14-loadout-guildmaster-head = Guildmaster hat
 cp14-loadout-guildmaster-cloak = Guildmaster cloak
 cp14-loadout-guildmaster-shirt = Guildmaster shirt
 cp14-loadout-guildmaster-pants = Guildmaster pants

@@ -67,7 +67,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
         if (!args.CanReach || args.Target == null || !TryComp<CP14SharpenedComponent>(args.Target, out var sharpened))
             return;
 
-        if (TryComp<UseDelayComponent>(stone, out var useDelay) && _useDelay.IsDelayed( new Entity<UseDelayComponent>(stone, useDelay)))
+        if (TryComp<UseDelayComponent>(stone, out var useDelay) && _useDelay.IsDelayed((stone, useDelay)))
             return;
 
         SharpThing(stone, args.Target.Value, sharpened, args.User);

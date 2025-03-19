@@ -1,0 +1,107 @@
+
+- type: entity
+  id: CP14VialSmallHealingBrute
+  parent: CP14VialSmall
+  name: "brad's healing potion"
+  suffix: Healing brute 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectHealBrute
+          Quantity: 1
+
+- type: entity
+  id: CP14VialSmallHealingPoison
+  parent: CP14VialSmall
+  name: "brad's antidote potion"
+  suffix: Healing poison 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectHealPoison
+          Quantity: 1
+
+- type: entity
+  id: CP14VialSmallHealingAirloss
+  parent: CP14VialSmall
+  name: "brad's airloss healing potion"
+  suffix: Healing airloss 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectHealAirloss
+          Quantity: 1
+
+- type: entity
+  id: CP14VialSmallHealingBlood
+  parent: CP14VialSmall
+  name: "brad's blood restoration potion"
+  suffix: Blood restore 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectBloodRestore
+          Quantity: 1
+
+- type: entity
+  id: CP14VialSmallHealingMana
+  parent: CP14VialSmall
+  name: "brad's mana potion"
+  suffix: Mana restore 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectHealMana
+          Quantity: 1
+
+- type: entity
+  id: CP14VialSmallSpeedUp
+  parent: CP14VialSmall
+  name: "brad's accseleration potion"
+  suffix: Speed up 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectSpeedUp
+          Quantity: 1
+
+- type: entity
+  id: CP14VialSmallRainbow
+  parent: CP14VialSmall
+  name: "brad's funny potion"
+  suffix: Rainbow and Drunk 20%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 6
+        - ReagentId: CP14BasicEffectRainbow
+          Quantity: 2
+        - ReagentId: CP14BasicEffectDrunk
+          Quantity: 2

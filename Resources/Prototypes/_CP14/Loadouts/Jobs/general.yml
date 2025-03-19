@@ -13,6 +13,7 @@
   - CP14ClothingCloakGreen
   - CP14ClothingCloakBlue
   - CP14ClothingCloakFurCoat
+  - CP14ClothingCloakInsulated
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -54,6 +55,11 @@
   equipment:
     cloak: CP14ClothingCloakFurCoat
 
+- type: loadout
+  id: CP14ClothingCloakInsulated
+  equipment:
+    cloak: CP14ClothingCloakInsulated
+
 # OuterClothing
 
 - type: loadoutGroup
@@ -64,6 +70,7 @@
   - CP14ClothingOuterClothingBrownVest1
   - CP14ClothingOuterClothingBrownVest2
   - CP14ClothingOuterClothingBrownVest3
+  - CP14ClothingOuterClothingJagermeisterWaistcoat
   - CP14ClothingOuterClothingRedVest
 
 - type: loadout
@@ -85,6 +92,12 @@
   id: CP14ClothingOuterClothingRedVest
   equipment:
     outerClothing: CP14ClothingOuterClothingRedVest
+
+- type: loadout
+  id: CP14ClothingOuterClothingJagermeisterWaistcoat
+  equipment:
+    outerClothing: CP14ClothingOuterClothingJagermeisterWaistcoat
+
 
 # Eyes
 
@@ -114,11 +127,17 @@
   minLimit: 0
   loadouts:
   - CP14Girdles
+  - CP14ClothingGlovesJagermeister
 
 - type: loadout
   id: CP14Girdles
   equipment:
     gloves: CP14ClothingGlovesGirdles
+
+- type: loadout
+  id: CP14ClothingGlovesJagermeister
+  equipment:
+    gloves: CP14ClothingGlovesJagermeister
 
 # Mask
 
@@ -156,14 +175,9 @@
   - CP14ClothingHeadMetalHeadband
   - CP14ClothingHeadTriangularHat
   - CP14ClothingHeadTriangularHatGolden
-  - CP14ClothingHeadBeretRed
-  - CP14ClothingHeadBeretPurple
-  - CP14ClothingHeadBeretYellow
-  - CP14ClothingHeadBeretBlue
-  - CP14ClothingHeadBeretBlack
+  - CP14ClothingHeadJestersCap
   - CP14ClothingHeadHuntersHat
-  - CP14ClothingHeadBandanaWhite
-  - CP14ClothingHeadBandanaYellow
+  - CP14ClothingHeadJagermeisterHat
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -181,29 +195,9 @@
     head: CP14ClothingHeadTriangularHatGolden
 
 - type: loadout
-  id: CP14ClothingHeadBeretRed
+  id: CP14ClothingHeadJestersCap
   equipment:
-    head: CP14ClothingHeadBeretRed
-
-- type: loadout
-  id: CP14ClothingHeadBeretPurple
-  equipment:
-    head: CP14ClothingHeadBeretPurple
-
-- type: loadout
-  id: CP14ClothingHeadBeretYellow
-  equipment:
-    head: CP14ClothingHeadBeretYellow
-
-- type: loadout
-  id: CP14ClothingHeadBeretBlue
-  equipment:
-    head: CP14ClothingHeadBeretBlue
-
-- type: loadout
-  id: CP14ClothingHeadBeretBlack
-  equipment:
-    head: CP14ClothingHeadBeretBlack
+    head: CP14ClothingHeadJestersCap
 
 - type: loadout
   id: CP14ClothingHeadHuntersHat
@@ -211,14 +205,9 @@
     head: CP14ClothingHeadHuntersHat
 
 - type: loadout
-  id: CP14ClothingHeadBandanaWhite
+  id: CP14ClothingHeadJagermeisterHat
   equipment:
-    head: CP14ClothingHeadBandanaWhite
-
-- type: loadout
-  id: CP14ClothingHeadBandanaYellow
-  equipment:
-    head: CP14ClothingHeadBandanaYellow
+    head: CP14ClothingHeadJagermeisterHat
 
 # Pants
 
@@ -228,11 +217,11 @@
   loadouts:
   - CP14ClothingPantsTrouserWhite
   - CP14ClothingPantsTrouserDarkBlue
+  - CP14ClothingPantsJestersPantaloons
   - CP14ClothingPantsAristocratic
-  - CP14ClothingPantsLoincloth
+  - CP14ClothingPantsJagermeisterTrousers
   - CP14ClothingPantsGreen
   - CP14ClothingPantsBrown
-  
 
 - type: loadout
   id: CP14ClothingPantsTrouserWhite
@@ -245,14 +234,14 @@
     pants: CP14ClothingPantsTrouserDarkBlue
 
 - type: loadout
+  id: CP14ClothingPantsJestersPantaloons
+  equipment:
+    pants: CP14ClothingPantsJestersPantaloons
+
+- type: loadout
   id: CP14ClothingPantsAristocratic
   equipment:
     pants: CP14ClothingPantsAristocratic
-
-- type: loadout
-  id: CP14ClothingPantsLoincloth
-  equipment:
-    pants: CP14ClothingPantsLoincloth
 
 - type: loadout
   id: CP14ClothingPantsGreen
@@ -263,6 +252,11 @@
   id: CP14ClothingPantsBrown
   equipment:
     pants: CP14ClothingPantsBrown
+
+- type: loadout
+  id: CP14ClothingPantsJagermeisterTrousers
+  equipment:
+    pants: CP14ClothingPantsJagermeisterTrousers
 
 # Shirt
 
@@ -277,6 +271,7 @@
   - CP14ClothingBlueCollarDress
   - CP14ClothingShirtBlueOpen
   - CP14ClothingBlueOpenDress
+  - CP14ClothingShirtJestersAttire
   - CP14ClothingShirtRedOpen
   - CP14ClothingRedOpenDress
   - CP14ClothingShirtYellowOpen
@@ -290,10 +285,11 @@
   - CP14ClothingCottonWhiteCollarDress
   - CP14ClothinGreenBeltDress
   - CP14ClothinGreenBeltDress2
+  - CP14ClothinGreenLightDress
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
   - CP14ClothingCottonYellowCollarDress
-  
+  - CP14ClothingWarriorsGarbDress
 
 - type: loadout
   id: CP14ClothingShirtCottonBlack
@@ -329,6 +325,11 @@
   id: CP14ClothingBlueOpenDress
   equipment:
     shirt: CP14ClothingBlueOpenDress
+
+- type: loadout
+  id: CP14ClothingShirtJestersAttire
+  equipment:
+    shirt: CP14ClothingShirtJestersAttire
 
 - type: loadout
   id: CP14ClothingShirtRedOpen
@@ -396,6 +397,11 @@
     shirt: CP14ClothinGreenBeltDress2
 
 - type: loadout
+  id: CP14ClothinGreenLightDress
+  equipment:
+    shirt: CP14ClothinGreenLightDress
+
+- type: loadout
   id: CP14ClothingShirtCottonYellow
   equipment:
     shirt: CP14ClothingShirtCottonYellow
@@ -410,6 +416,11 @@
   equipment:
     shirt: CP14ClothingCottonYellowCollarDress
 
+- type: loadout
+  id: CP14ClothingWarriorsGarbDress
+  equipment:
+    shirt: CP14ClothingWarriorsGarbDress
+
 # Shoes
 
 - type: loadoutGroup
@@ -420,6 +431,7 @@
   - CP14ShoesAristocraticBlack
   - CP14ShoesSandals
   - CP14LongLeatherBoots
+  - CP14ClothingShoesJestersRingers
 
 - type: loadout
   id: CP14ShoesBlack
@@ -440,6 +452,11 @@
   id: CP14LongLeatherBoots
   equipment:
     shoes: CP14LongLeatherBoots
+
+- type: loadout
+  id: CP14ClothingShoesJestersRingers
+  equipment:
+    shoes: CP14ClothingShoesJestersRingers
 
 # Back
 
@@ -481,6 +498,7 @@
   - CP14Torch
   - CP14SmokingPipeFilledTobacco
   - CP14FluteInstrument
+  - CP14LuteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
 
@@ -561,6 +579,12 @@
   storage:
     back:
     - CP14LyraInstrument
+
+- type: loadout
+  id: CP14LuteInstrument
+  storage:
+    back:
+    - CP14LuteInstrument
 
 - type: loadout
   id: CP14FluteInstrument

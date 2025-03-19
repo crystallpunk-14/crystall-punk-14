@@ -23,6 +23,7 @@ cp14-loadout-apprentice-bundle = Набор подмастерья
 cp14-loadout-alchemist-head = Шляпа алхимика
 cp14-loadout-alchemist-cloak = Накидка алхимика
 cp14-loadout-alchemist-eyes = Алхимические очки
+cp14-loadout-alchemist-belt = Пояс алхимика
 
 # Blacksmith
 
@@ -54,6 +55,7 @@ cp14-loadout-merchant-shoes = Ботинки торговца
 # Guildmaster
 
 cp14-loadout-guildmaster-outer = Верхняя одежда гильдмастера
+cp14-loadout-guildmaster-head = Шляпа гильдмастера
 cp14-loadout-guildmaster-cloak = Накидка гильдмастера
 cp14-loadout-guildmaster-shirt = Рубашка гильдмастера
 cp14-loadout-guildmaster-pants = Штаны гильдмастера

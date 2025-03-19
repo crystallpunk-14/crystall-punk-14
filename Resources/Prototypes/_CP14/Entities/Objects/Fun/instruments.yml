@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseHandheldInstrument
   id: CP14FluteInstrument
   name: flute
@@ -40,6 +40,40 @@
     breakOnMove: false
     slots:
     - belt
+  - type: Tag
+    tags:
+    - StringInstrument
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: CP14LuteInstrument
+  name: lute
+  description: A legend among bards.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Instrument
+    program: 24
+  - type: Sprite
+    sprite: _CP14/Objects/Fun/Instruments/lute.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _CP14/Objects/Fun/Instruments/lute.rsi
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    sprite: _CP14/Objects/Fun/Instruments/lute.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      collection: MetalThud
   - type: Tag
     tags:
     - StringInstrument

@@ -24,6 +24,7 @@
     whitelist:
       tags:
         - CP14Coin
+        - Dice
   - type: UseDelay
     delay: 0.3
   - type: Appearance

@@ -34,7 +34,9 @@ public sealed partial class CP14ManaChange : EntityEffect
         }
 
         var magicSystem = args.EntityManager.System<CP14MagicEnergySystem>();
-        magicSystem.ChangeEnergy(args.TargetEntity, ManaDelta * scale, Safe);
+        magicSystem.ChangeEnergy(args.TargetEntity, ManaDelta * scale, out var changed, out var overload, safe: Safe);
+
+        scale -= FixedPoint2.Abs(changed + overload);
 
         if (args.EntityManager.TryGetComponent<CP14MagicEnergyCrystalSlotComponent>(args.TargetEntity,
                 out var crystalSlot))

@@ -42,6 +42,9 @@ public sealed partial class CP14DemiplaneSystem
             if (map is null)
                 continue;
 
+            if (!stabilizer.Enabled)
+                continue;
+
             if (stabilizer.RequireAlive && !(_mobState.IsAlive(uid) || _mobState.IsCritical(uid)))
                 continue;
 

@@ -14,18 +14,15 @@ public enum CP14StoreUiKey
 [Serializable, NetSerializable]
 public sealed class CP14StoreUiState : BoundUserInterfaceState
 {
+    public readonly string ShopName;
     public readonly HashSet<CP14StoreUiProductEntry> ProductsBuy;
     public readonly HashSet<CP14StoreUiProductEntry> ProductsSell;
 
-    public bool OnStation;
-    public readonly TimeSpan NextTravelTime;
-
-    public CP14StoreUiState(HashSet<CP14StoreUiProductEntry> productsBuy, HashSet<CP14StoreUiProductEntry> productsSell, bool onStation, TimeSpan time)
+    public CP14StoreUiState(string name, HashSet<CP14StoreUiProductEntry> productsBuy, HashSet<CP14StoreUiProductEntry> productsSell)
     {
+        ShopName = name;
         ProductsBuy = productsBuy;
         ProductsSell = productsSell;
-        OnStation = onStation;
-        NextTravelTime = time;
     }
 }
 
@@ -33,16 +30,18 @@ public sealed class CP14StoreUiState : BoundUserInterfaceState
 public readonly struct CP14StoreUiProductEntry : IEquatable<CP14StoreUiProductEntry>
 {
     public readonly string ProtoId;
-    public readonly SpriteSpecifier Icon;
+    public readonly SpriteSpecifier? Icon;
+    public readonly EntProtoId? EntityView;
     public readonly string Name;
     public readonly string Desc;
     public readonly int Price;
     public readonly bool Special;
 
-    public CP14StoreUiProductEntry(string protoId, SpriteSpecifier icon, string name, string desc, int price, bool special)
+    public CP14StoreUiProductEntry(string protoId, SpriteSpecifier? icon, EntProtoId? entityView, string name, string desc, int price, bool special)
     {
         ProtoId = protoId;
         Icon = icon;
+        EntityView = entityView;
         Name = name;
         Desc = desc;
         Price = price;

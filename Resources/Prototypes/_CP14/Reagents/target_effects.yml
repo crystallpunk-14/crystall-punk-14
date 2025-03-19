@@ -1,0 +1,471 @@
+- type: reagent
+  id: CP14BasicEffectEmpty
+  name: cp14-reagent-name-basic-empty
+  desc: cp14-reagent-desc-basic-empty
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#858585"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+
+# T1 / Simple or Basic solutions
+# Have simple effects, shouldn't be able to replace their occupational 
+
+- type: reagent
+  id: CP14BasicEffectHealBrute
+  name: cp14-reagent-name-basic-heal-brute
+  desc: cp14-reagent-desc-basic-heal-brute
+  group: CP14BasicEffect
+  flavor: CP14Metallic
+  color: "#e31010"
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:ModifyBleedAmount
+        amount: -2
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -6
+
+- type: reagent
+  id: CP14BasicEffectDamageBrute
+  name: cp14-reagent-name-basic-damage-brute
+  desc: cp14-reagent-desc-basic-damage-brute
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#633223"
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  worksOnTheDead: true
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: 3
+
+- type: reagent
+  id: CP14BasicEffectHealHeat
+  name: cp14-reagent-name-basic-heal-heat
+  desc: cp14-reagent-desc-basic-heal-heat
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#BF361E"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageHeat
+  name: cp14-reagent-name-basic-damage-heat
+  desc: cp14-reagent-desc-basic-damage-heat
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#d4772a"
+  tileReactions:
+  - !type:CreateEntityTileReaction
+    entity: CP14Fire
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:FlammableReaction
+        multiplier: 1.5
+      - !type:AdjustTemperature
+        amount: 2000
+      - !type:Ignite
+
+- type: reagent
+  id: CP14BasicEffectHealCold
+  name: cp14-reagent-name-basic-heal-cold
+  desc: cp14-reagent-desc-basic-heal-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#a3511a"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageCold
+  name: cp14-reagent-name-basic-damage-cold
+  desc: cp14-reagent-desc-basic-damage-cold
+  group: CP14BasicEffect
+  flavor: CP14Stinging
+  color: "#1a95a3"
+  physicalDesc: cp14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 3
+
+- type: reagent
+  id: CP14BasicEffectHealPoison
+  name: cp14-reagent-name-basic-heal-poison
+  desc: cp14-reagent-desc-basic-heal-poison
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#82ba3d"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -10
+
+- type: reagent
+  id: CP14BasicEffectDamagePoison
+  name: cp14-reagent-name-basic-damage-poison
+  desc: cp14-reagent-desc-basic-damage-poison
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#768551"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  worksOnTheDead: true
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 3
+
+- type: reagent
+  id: CP14BasicEffectHealAirloss
+  name: cp14-reagent-name-basic-heal-airloss
+  desc: cp14-reagent-desc-basic-heal-airloss
+  group: CP14BasicEffect
+  flavor: fizzy
+  color: "#e6f4f5"
+  worksOnTheDead: true
+  physicalDesc: reagent-physical-desc-milky
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageAirloss
+  name: cp14-reagent-name-basic-damage-airloss
+  desc: cp14-reagent-desc-basic-damage-airloss
+  group: CP14BasicEffect
+  flavor: horrible
+  color: "#73091e"
+  worksOnTheDead: true
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: 3
+
+- type: reagent
+  id: CP14BasicEffectBloodRestore
+  name: cp14-reagent-name-basic-blood-restore
+  desc: cp14-reagent-desc-basic-blood-restore
+  group: CP14BasicEffect
+  flavor: CP14Metallic
+  color: "#e31010"
+  worksOnTheDead: true
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 20
+
+- type: reagent
+  id: CP14BasicEffectBloodAbsorption
+  name: cp14-reagent-name-basic-blood-absorption
+  desc: cp14-reagent-desc-basic-blood-absorption
+  group: CP14BasicEffect
+  flavor: CP14Metallic
+  color: "#2b0e0b"
+  worksOnTheDead: true
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:ModifyBloodLevel
+        amount: -10
+
+- type: reagent
+  id: CP14BasicEffectSatiateHunger
+  name: cp14-reagent-name-basic-satiate-hunger
+  desc: cp14-reagent-desc-basic-satiate-hunger
+  group: CP14BasicEffect
+  flavor: CP14Sweetly
+  color: "#a35629"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:SatiateHunger
+        factor: 15
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+          shouldHave: false
+
+- type: reagent
+  id: CP14BasicEffectSatiateThirst
+  name: cp14-reagent-name-basic-satiate-thirst
+  desc: cp14-reagent-desc-basic-satiate-thirst
+  group: CP14BasicEffect
+  flavor: CP14Water
+  color: "#2b7fed"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Drink:
+      metabolismRate: 0.05
+      effects:
+      - !type:SatiateThirst
+        factor: 15
+
+- type: reagent
+  id: CP14BasicEffectHealMana
+  name: cp14-reagent-name-basic-heal-mana
+  desc: cp14-reagent-desc-basic-heal-mana
+  group: CP14BasicEffect
+  flavor: CP14Magic
+  color: "#1497e3"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 30
+        safe: true
+
+- type: reagent
+  id: CP14BasicEffectDamageMana
+  name: cp14-reagent-name-basic-damage-mana
+  desc: cp14-reagent-desc-basic-damage-mana
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#6014e3"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: -30
+        safe: false
+
+- type: reagent
+  id: CP14BasicEffectSpeedUp
+  name: cp14-reagent-name-basic-speed-up
+  desc: cp14-reagent-desc-basic-speed-up
+  group: CP14BasicEffect
+  flavor: CP14Sweetly
+  color: "#dbff9c"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      metabolismRate: 0.1
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.35
+        sprintSpeedModifier: 1.35
+        statusLifetime: 1.5
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+
+- type: reagent
+  id: CP14BasicEffectSpeedDown
+  name: cp14-reagent-name-basic-speed-down
+  desc: cp14-reagent-desc-basic-speed-down
+  group: CP14BasicEffect
+  flavor: CP14Sweetly
+  color: "#1e4166"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      metabolismRate: 0.1
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.65
+        statusLifetime: 1.5
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+        
+- type: reagent
+  id: CP14BasicEffectSleep
+  name: cp14-reagent-name-basic-sleep
+  desc: cp14-reagent-desc-basic-sleep
+  group: CP14BasicEffect
+  flavor: CP14VerySweet
+  color: "#425e8a"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.1
+      effects:
+      - !type:Emote
+        emote: Yawn
+        showInChat: true
+        probability: 0.2
+      - !type:GenericStatusEffect
+        key: ForcedSleep
+        component: ForcedSleeping
+        type: Add
+        
+- type: reagent
+  id: CP14BasicEffectUnsleep
+  name: cp14-reagent-name-basic-unsleep
+  desc: cp14-reagent-desc-basic-unsleep
+  group: CP14BasicEffect
+  flavor: CP14VerySweet
+  color: "#6bc97e"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.1
+      effects:
+      - !type:ResetNarcolepsy
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: ForcedSleep
+        time: 3
+        type: Remove
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: CP14BasicEffectSleep
+          min: 1
+        reagent: CP14BasicEffectSleep
+        amount: -10
+
+# Gimmick solutions, otherwise doesn't give a mechanical benefit
+  
+- type: reagent
+  id: CP14BasicEffectRainbow
+  name: cp14-reagent-name-see-rainbow
+  desc: cp14-reagent-desc-see-rainbow
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#d442db"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.05
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 25
+        refresh: false
+
+- type: reagent
+  id: CP14BasicEffectEmoteCough
+  name: cp14-reagent-name-basic-emote-cough
+  desc: cp14-reagent-desc-basic-emote-cough
+  group: CP14BasicEffect
+  flavor: CP14Water
+  color: "#2b7fed"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:Emote
+        showInChat: false
+        emote: Cough
+        probability: 0.3
+
+- type: reagent
+  id: CP14BasicEffectVomit
+  name: cp14-reagent-name-basic-vomit
+  desc: cp14-reagent-desc-basic-vomit
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#87a667"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:ChemVomit
+        probability: 0.25
+
+- type: reagent
+  id: CP14BasicEffectDrunk
+  name: cp14-reagent-name-basic-drunk
+  desc: cp14-reagent-desc-basic-drunk
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#ae64c4"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:Drunk
+        boozePower: 15
+
+- type: reagent
+  id: CP14BasicEffectJitter
+  name: cp14-reagent-name-basic-jitter
+  desc: cp14-reagent-desc-basic-jitter
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#347d70"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:Jitter

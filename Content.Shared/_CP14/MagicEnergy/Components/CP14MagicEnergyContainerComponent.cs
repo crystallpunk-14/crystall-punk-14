@@ -20,4 +20,10 @@ public sealed partial class CP14MagicEnergyContainerComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype>? MagicAlert = null;
+
+    /// <summary>
+    /// Does this container support unsafe energy manipulation?
+    /// </summary>
+    [DataField]
+    public bool UnsafeSupport = false;
 }

@@ -1,4 +1,3 @@
-using Content.Shared.Destructible.Thresholds;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -17,23 +16,20 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     [DataField(required: true)]
     public int Price = 100;
 
-    [DataField(required: true)]
-    public LocId Name = string.Empty;
-
     /// <summary>
     /// a unique code that can be used to purchase items.
     /// </summary>
     [DataField(required: true)]
     public string Code = string.Empty;
 
+    [DataField(required: true, serverOnly: true)]
+    public CP14StoreBuyService Service = default!;
+
     [DataField]
-    public LocId Desc = string.Empty;
+    public SpriteSpecifier? IconOverride;
 
-    [DataField(required: true)]
-    public SpriteSpecifier Icon = default!;
-
-    [DataField(required: true)]
-    public List<CP14StoreBuyService> Services = new();
+    [DataField]
+    public LocId? NameOverride;
 
     [DataField]
     public bool RoundstartAvailable = true;
@@ -42,12 +38,27 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     /// If true, this item will randomly appear under the ‘Special Offer’ heading. With a chance to show up every time the ship arrives.
     /// </summary>
     [DataField]
-    public bool Special = false;
+    public bool Special;
+
+    [DataField]
+    public HashSet<ProtoId<CP14StoreFactionPrototype>> Factions = new();
 }
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]
 public abstract partial class CP14StoreBuyService
 {
-    public abstract void Buy(EntityManager entManager, IPrototypeManager prototype,  Entity<CP14StationTravelingStoreShipTargetComponent> station);
+    public abstract void Buy(EntityManager entManager, IPrototypeManager prototype,  Entity<CP14TradingPortalComponent> portal);
+
+    public abstract string GetName(IPrototypeManager protoMan);
+
+    /// <summary>
+    /// You can specify an icon generated from an entity. It will support layering, colour changes and other layer options. Return null to disable.
+    /// </summary>
+    public abstract EntProtoId? GetEntityView(IPrototypeManager protoManager);
+
+    /// <summary>
+    /// You can specify the texture directly. Return null to disable.
+    /// </summary>
+    public abstract SpriteSpecifier? GetTexture(IPrototypeManager protoManager);
 }

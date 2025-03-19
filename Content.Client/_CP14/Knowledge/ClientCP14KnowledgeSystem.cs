@@ -1,11 +1,12 @@
 using Content.Shared._CP14.Knowledge;
+using Content.Shared._CP14.Knowledge.Events;
 using Content.Shared._CP14.Knowledge.Prototypes;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._CP14.Knowledge;
 
-public sealed partial class ClientCP14KnowledgeSystem : SharedCP14KnowledgeSystem
+public sealed class ClientCP14KnowledgeSystem : SharedCP14KnowledgeSystem
 {
     [Dependency] private readonly IPlayerManager _players = default!;
 
@@ -24,7 +25,7 @@ public sealed partial class ClientCP14KnowledgeSystem : SharedCP14KnowledgeSyste
         if (entity is null)
             return;
 
-        RaiseNetworkEvent(new RequestKnowledgeInfoEvent(GetNetEntity(entity.Value)));
+        RaiseNetworkEvent(new CP14RequestKnowledgeInfoEvent(GetNetEntity(entity.Value)));
     }
 
     private void OnCharacterKnowledgeEvent(CP14KnowledgeInfoEvent msg, EntitySessionEventArgs args)
@@ -37,6 +38,6 @@ public sealed partial class ClientCP14KnowledgeSystem : SharedCP14KnowledgeSyste
 
     public readonly record struct KnowledgeData(
         EntityUid Entity,
-        HashSet<ProtoId<CP14KnowledgePrototype>> AllKnowledges
+        HashSet<ProtoId<CP14KnowledgePrototype>> AllKnowledge
     );
 }

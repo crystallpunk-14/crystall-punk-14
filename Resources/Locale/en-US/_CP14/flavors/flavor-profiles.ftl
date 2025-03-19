@@ -6,6 +6,7 @@ cp14-flavor-base-bitterly = bitter
 cp14-flavor-base-sweetly = sweet
 cp14-flavor-base-stinging = stinging
 cp14-flavor-base-magic = magical
+cp14-flavor-base-very-sweet = very sweet
 
 # Complex
 
@@ -24,3 +25,4 @@ cp14-flavor-complex-durandate = like cheap and tart
 cp14-flavor-complex-ale = like bread
 cp14-flavor-complex-bloody-tear = like sad and alcoholic
 cp14-flavor-complex-bottomless = like semi-divine and dangerous
+cp14-flavor-complex-cucumber = like cucumber

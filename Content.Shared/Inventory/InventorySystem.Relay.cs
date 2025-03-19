@@ -1,4 +1,4 @@
-using Content.Shared._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicEssence;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Armor;
 using Content.Shared.Chat;
@@ -30,9 +30,8 @@ public partial class InventorySystem
     public void InitializeRelay()
     {
         //CP14 Relayed events
-        SubscribeLocalEvent<InventoryComponent, CP14MagicEnergyScanEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, CP14MagicEssenceScanEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, CP14CalculateManacostEvent>(RelayInventoryEvent);
-
         //CP14 End
 
         SubscribeLocalEvent<InventoryComponent, DamageModifyEvent>(RelayInventoryEvent);

@@ -128,3 +128,13 @@
     whitelist:
       tags:
       - CP14FireplaceFuel
+
+- type: entity
+  parent: CP14AlchemyFurnace
+  id: CP14AlchemyFurnaceDebug
+  suffix: Ignited, Infinity
+  categories: [ DoNotMap ]
+  components:
+  - type: CP14AutoIgnite
+  - type: CP14Fireplace
+    fuelDrainingPerUpdate: 0

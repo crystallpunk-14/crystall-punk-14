@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobRabbit
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: rabbit
   description: A little fluffy rabbit. I could eat it.
   categories: [ ForkFiltered ]
@@ -46,6 +46,9 @@
     thresholds:
       0: Alive
       30: Dead
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
   - type: CombatMode
   - type: MeleeWeapon
     angle: 0
@@ -65,10 +68,10 @@
   - type: Butcherable
     spawned:
     - id: CP14FoodMeatRabbit
-      amount: 2
+      amount: 4
   - type: Bloodstream
     bloodMaxVolume: 50
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: cp14-petting-success-rabbit
@@ -79,7 +82,7 @@
 
 - type: entity
   id: CP14MobPig
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: pig
   description: An omnivorous and unpretentious animal that is sure to make juicy cuts of meat.
   categories: [ ForkFiltered ]
@@ -102,7 +105,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 100
+        density: 150
         mask:
         - MobMask
         layer:
@@ -154,7 +157,7 @@
       prob: 0.3
   - type: Bloodstream
     bloodMaxVolume: 150
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Grammar
     attributes:
       gender: epicene
@@ -224,7 +227,7 @@
 
 - type: entity
   name: frog
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   id: CP14MobFrog
   description: Green and constantly jumping frog, and perhaps thanks to it mosquitoes have not completely filled the marshes.
   categories: [ ForkFiltered ]
@@ -306,7 +309,7 @@
   - type: CanEscapeInventory
   - type: Bloodstream
     bloodMaxVolume: 30
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Tag
     tags:
     - CP14Mosquito
@@ -327,3 +330,90 @@
         volume: -8
         variation: 0.125
   - type: SoundWhileAlive
+
+- type: entity
+  id: CP14MobSheep
+  parent: CP14SimpleMobBase
+  name: sheep
+  description: White and fluffy as a cloud sheep.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: NpcFactionMember
+    factions:
+    - CP14PeacefulAnimals
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Animals/sheep.rsi
+      state: sheep
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - CP14Sheep
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - CP14Sheep
+    offspring:
+    - id: CP14MobSheep
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: Speech
+    speechSounds: Goat
+    speechVerb: Goat
+  - type: Vocal
+    sounds:
+      Female: Goat
+      Male: Goat
+      Unsexed: Goat
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 5
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: sheep
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatLamb
+      amount: 4
+    - id: CP14String # As long as there are no mechanics to shearing wool, the only way to get string.
+      amount: 4
+  - type: Bloodstream
+    bloodMaxVolume: 150
+    bloodReagent: CP14BloodAnimal
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-goat
+    interactFailureString: petting-failure-goat
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/goat_bah.ogg

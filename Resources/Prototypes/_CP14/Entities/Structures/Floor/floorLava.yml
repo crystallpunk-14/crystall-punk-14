@@ -1,0 +1,60 @@
+- type: entity
+  id: CP14FloorLava
+  name: lava
+  description: Don't jump in. It's not worth it, no matter how funny it is.
+  categories: [ ForkFiltered ]
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: PlacementReplacement
+    key: floorTile
+  - type: TileEmission
+    range: 0.5
+    color: "#ed811c"
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+    blacklist:
+      tags:
+        - Catwalk
+  - type: TileEntityEffect
+    effects:
+    - !type:FlammableReaction
+      multiplier: 3.75
+      multiplierOnExisting: 0.75
+    - !type:Ignite
+  - type: Transform
+    anchored: true
+  - type: SyncSprite
+  - type: Clickable
+  - type: Sprite
+    sprite: _CP14/Tiles/Water/lava.rsi
+    drawdepth: BelowFloor
+  - type: Icon
+    sprite: _CP14/Tiles/Water/lava.rsi
+    state: full
+  - type: IconSmooth
+    shader: unshaded
+    key: CP14Lava
+    additionalKeys:
+    - CP14wall
+    base: water
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: Tag
+    tags:
+      - HideContextMenu

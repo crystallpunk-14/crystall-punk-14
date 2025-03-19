@@ -1,0 +1,62 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: CP14ChromiumSlimeSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14ChromiumSlime:
+      amount: 1
+  products:
+    CP14EssenceCycle: 1
+
+
+# Chromium slime is a special reagent that inverts solution properties.
+
+- type: reaction
+  id: CP14ChromiumInverseEffect
+  quantized: true
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14ChromiumSlime:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 1
+  effects:
+  - !type:CP14InverseEffect
+    inversion:
+      CP14BasicEffectHealBrute: CP14BasicEffectDamageBrute
+      CP14BasicEffectDamageBrute: CP14BasicEffectHealBrute
+      #
+      CP14BasicEffectHealPoison: CP14BasicEffectDamagePoison
+      CP14BasicEffectDamagePoison: CP14BasicEffectHealPoison
+      #
+      CP14BasicEffectDamageHeat: CP14BasicEffectHealHeat
+      CP14BasicEffectHealHeat: CP14BasicEffectDamageHeat
+      #
+      CP14BasicEffectDamageCold: CP14BasicEffectHealCold
+      CP14BasicEffectHealCold: CP14BasicEffectDamageCold
+      #
+      CP14BasicEffectSatiateHunger: CP14BasicEffectVomit
+      CP14BasicEffectSatiateThirst: CP14BasicEffectSatiateHunger
+      CP14BasicEffectVomit: CP14BasicEffectSatiateThirst
+      #
+      CP14BasicEffectDamageMana: CP14BasicEffectHealMana
+      CP14BasicEffectHealMana: CP14BasicEffectDamageMana
+      #
+      CP14BasicEffectBloodAbsorption: CP14BasicEffectBloodRestore
+      CP14BasicEffectBloodRestore: CP14BasicEffectBloodAbsorption
+      #
+      CP14BasicEffectSpeedDown: CP14BasicEffectSpeedUp
+      CP14BasicEffectSpeedUp: CP14BasicEffectSpeedDown
+      #
+      CP14BasicEffectDamageAirloss: CP14BasicEffectHealAirloss
+      CP14BasicEffectHealAirloss: CP14BasicEffectDamageAirloss
+      #
+      CP14BasicEffectUnsleep: CP14BasicEffectSleep
+      CP14BasicEffectSleep: CP14BasicEffectUnsleep
+      #
+      CP14BasicEffectRainbow: CP14BasicEffectEmoteCough
+      CP14BasicEffectEmoteCough: CP14BasicEffectRainbow

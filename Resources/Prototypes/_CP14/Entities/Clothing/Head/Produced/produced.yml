@@ -8,3 +8,6 @@
     sprite: _CP14/Clothing/Head/Produced/wreath.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Produced/wreath.rsi
+  - type: Construction
+    graph: CP14HeadWreath
+    node: cp14headwreath

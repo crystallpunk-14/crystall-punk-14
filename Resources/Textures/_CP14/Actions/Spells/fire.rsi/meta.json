@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by .kreks., tiefling_revenge, fire_music by TheShuEd",
+  "states": [
+    {
+      "name": "fire_music"
+    },
+    {
+      "name": "fireball"
+    },
+    {
+      "name": "flame_creation"
+    },
+    {
+      "name": "tiefling_revenge"
+    }
+  ]
+}

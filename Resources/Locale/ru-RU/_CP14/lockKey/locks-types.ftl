@@ -1,9 +1,3 @@
-cp14-lock-shape-bank-entrance = холл банка
-cp14-lock-shape-bank-staff = служебные помещения банка
-cp14-lock-shape-bank-commandant = дом комменданта
-cp14-lock-shape-bank-safe = сейфы банка
-cp14-lock-shape-bank-vault = хранилище банка
-
 cp14-lock-shape-tavern-hall = зал таверны
 cp14-lock-shape-tavern-staff = служебные помещения таверны
 cp14-lock-shape-tavern-dorm1 = комната таверны №1
@@ -19,6 +13,10 @@ cp14-lock-shape-alchemist3 = лаборатория алхимика №3
 cp14-lock-shape-blacksmith1 = кузня №1
 cp14-lock-shape-blacksmith2 = кузня №2
 cp14-lock-shape-blacksmith3 = кузня №3
+
+cp14-lock-shape-merchant1 = магазин №1
+cp14-lock-shape-merchant2 = магазин №2
+cp14-lock-shape-merchant3 = магазин №3
 
 cp14-lock-shape-personalhouse1 = дом №1
 cp14-lock-shape-personalhouse2 = дом №2

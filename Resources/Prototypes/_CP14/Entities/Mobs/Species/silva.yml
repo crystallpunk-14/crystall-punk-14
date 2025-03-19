@@ -11,6 +11,10 @@
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
       shader: unshaded # Gloving eyes
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -67,15 +71,15 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
+      - id: CP14FoodMeatHuman # Replace it with silva meat, heh.
         amount: 5
-  - type: CP14MagicEnergyPhotosynthesis # Silva special feature
+  #- type: CP14MagicEnergyPhotosynthesis # Silva special feature #Disabled until sunlight fixed
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
     - CP14ActionSpellPlantGrowthSilva
-  - type: CP14MagicEnergyDraw
-    enable: false
+  #- type: CP14MagicEnergyDraw #Enabled default mana regen until sunlight fixed
+  #  enable: false
   - type: Body
     prototype: CP14Silva
     requiredLegs: 2

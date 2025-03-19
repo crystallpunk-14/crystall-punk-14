@@ -18,7 +18,7 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
+      - id: CP14FoodMeatHuman
         amount: 5
   - type: Body
     prototype: CP14Tiefling

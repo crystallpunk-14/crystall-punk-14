@@ -1,330 +1,85 @@
-# Normal
-
 - type: entity
-  id: CP14CrystalSmall
-  suffix: Normal, Small
-  parent: CP14CrystalSmallBase
+  id: CP14CrystalBase
+  abstract: true
+  parent: BaseRock
+  name: quartz
+  description: Natural quartz crystals that can absorb the magical energy of the world around them. 
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Crystal/crystal_small.rsi
-    layers:
-      - state: small1
-        map: ["random"]
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 10
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardBase:
-                min: 1
-                max: 1
-          - !type:TriggerBehavior
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: PointLight
-    enabled: false
-
-- type: entity
-  id: CP14CrystalMedium
-  suffix: Normal, Medium
-  parent: CP14CrystalMediumBase
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Crystal/crystal_medium.rsi
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Flora/Crystal/crystal.rsi
     layers:
       - state: medium1
         map: ["random"]
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 15
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardBase:
-                min: 1
-                max: 2
-          - !type:TriggerBehavior
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: PointLight
-    enabled: false
-
-- type: entity
-  id: CP14CrystalBig
-  suffix: Normal, Big
-  parent: CP14CrystalBigBase
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Crystal/crystal_big.rsi
-    layers:
-      - state: big1
-        map: ["random"]
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 20
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardBase:
-                min: 2
-                max: 3
-          - !type:TriggerBehavior
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: PointLight
-    enabled: false
-
-# Water
-
-- type: entity
-  id: CP14CrystalWaterBase
-  abstract: true
-  description: Natural quartz crystals that can absorb the magical energy of the world around them. This crystal seems to have absorbed the energy of cold and water.
-  components:
-  - type: PointLight
-    color: "#5eabeb"
-  - type: Sprite
-    color: "#5eabeb"
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Cryo
-    maxIntensity: 30
-    intensitySlope: 1.5
-    totalIntensity: 30
-    canCreateVacuum: false
-  
-- type: entity
-  id: CP14CrystalElementalWaterSmall
-  suffix: Water, Small
-  parent: 
-  - CP14CrystalSmallBase
-  - CP14CrystalWaterBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 10
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardWater:
-                min: 1
-                max: 1
-          - !type:TriggerBehavior
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Explosive
-    totalIntensity: 15
-  
-- type: entity
-  id: CP14CrystalElementalWaterMedium
-  suffix: Water, Medium
-  parent: 
-  - CP14CrystalMediumBase
-  - CP14CrystalWaterBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 15
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardWater:
-                min: 1
-                max: 2
-          - !type:TriggerBehavior
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Explosive
-    totalIntensity: 20
-
-- type: entity
-  id: CP14CrystalElementalWaterBig
-  suffix: Water, Big
-  parent: 
-  - CP14CrystalBigBase
-  - CP14CrystalWaterBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 20
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardWater:
-                min: 2
-                max: 3
-          - !type:TriggerBehavior
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Explosive
-    totalIntensity: 25
-    intensitySlope: 0.5
-
-# Healing
-
-- type: entity
-  id: CP14AreaEntityEffectCrystalHealing
-  parent: CP14BaseMagicImpact
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: PointLight
-    color: "#79b330"
-  - type: Sprite
+        shader: unshaded
+    offset: 0, 0.25
     noRot: true
-    drawdepth: BelowFloor
-    sprite: _CP14/Effects/Magic/area_impact.rsi
+  - type: InteractionPopup
+    interactSuccessString: popup-cp14crystal-ding
+    messagePerceivedByOthers: popup-cp14crystal-ding
+    interactSuccessSound:
+      collection: CP14CrystalDings
+      params:
+        variation: 0.03
+  - type: Damageable 
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 60
+        mask:
+          - MachineMask
+        layer:
+          - MidImpassable
+          - LowImpassable
+          - BulletImpassable
+          - Opaque
+  - type: RandomSprite
+    available:
+    - random:
+        big0: Inherit
+        big1: Inherit
+        big2: Inherit
+        medium0: Inherit
+        medium1: Inherit
+        medium2: Inherit
+        medium3: Inherit
+        medium4: Inherit
+        small0: Inherit
+        small1: Inherit
+        small2: Inherit
+        small3: Inherit
+        small4: Inherit
+        small5: Inherit
+  - type: PointLight
+    netSync: false
+    radius: 2.5
+    energy: 1
+
+# Normal
+
+- type: entity
+  id: CP14CrystalEmpty
+  suffix: Normal
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
     layers:
-    - state: area_impact_out
-      color: "#79b330"
-      shader: unshaded
-  - type: TimedDespawn
-    lifetime: 0.8
-  - type: CP14AreaEntityEffect
-    range: 1
-    whitelist:
-      components:
-      - Damageable
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectCureWounds
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Slash: -10
-            Blunt: -10
-            Piercing: -10
-      - !type:Jitter
-
-- type: entity
-  id: CP14CrystalHealingBase
-  abstract: true
-  description: Natural quartz crystals that can absorb the magical energy of the world around them. This crystal seems to have absorbed the energy of life.
-  components:
+      - state: medium1
+        map: ["random"] #Disabling unshaded
   - type: PointLight
-    color: "#3de063"
-  - type: Sprite
-    color: "#3de063"
-  
-- type: entity
-  id: CP14CrystalElementalHealingSmall
-  suffix: Healing, Small
-  parent: 
-  - CP14CrystalSmallBase
-  - CP14CrystalHealingBase
-  components:
+    enabled: false
   - type: Destructible
     thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 10
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardHealing:
-                min: 1
-                max: 1
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14AreaEntityEffectCrystalHealing:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  
-- type: entity
-  id: CP14CrystalElementalHealingMedium
-  suffix: Healing, Medium
-  parent: 
-  - CP14CrystalMediumBase
-  - CP14CrystalHealingBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
             !type:DamageTrigger
             damage: 15
@@ -334,119 +89,51 @@
               collection: GlassBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14CrystalShardHealing:
+              CP14CrystalShardBase:
                 min: 1
                 max: 2
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14AreaEntityEffectCrystalHealing:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-
-- type: entity
-  id: CP14CrystalElementalHealingBig
-  suffix: Healing, Big
-  parent: 
-  - CP14CrystalBigBase
-  - CP14CrystalHealingBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 20
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardHealing:
-                min: 2
-                max: 3
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14AreaEntityEffectCrystalHealing:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-
-# Fire
-
-- type: entity
-  id: CP14CrystalFireBase
-  abstract: true
-  description: Natural quartz crystals that can absorb the magical energy of the world around them. This crystal seems to have absorbed the energy of fire.
-  components:
-  - type: PointLight
-    color: "#ed731c"
-  - type: Sprite
-    color: "#ed731c"
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: FireBomb
-    maxIntensity: 10
-    intensitySlope: 1.5
-    totalIntensity: 30
-    canCreateVacuum: false
-  
-- type: entity
-  id: CP14CrystalElementalFireSmall
-  suffix: Fire, Small
-  parent: 
-  - CP14CrystalSmallBase
-  - CP14CrystalFireBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 10
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardFire:
-                min: 1
-                max: 1
           - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: Explosive
-    totalIntensity: 5
-  
+
 - type: entity
-  id: CP14CrystalElementalFireMedium
-  suffix: Fire, Medium
-  parent: 
-  - CP14CrystalMediumBase
-  - CP14CrystalFireBase
+  id: CP14CrystalEarth
+  parent: CP14CrystalBase
+  suffix: Terra
   components:
+  - type: PointLight
+    color: "#70533f"
+  - type: Sprite
+    color: "#70533f"
   - type: Destructible
     thresholds:
       - trigger:
-          !type:DamageTrigger
-          damage: 40
+            !type:DamageTrigger
+            damage: 15
         behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardEarth:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalFire
+  parent: CP14CrystalBase
+  suffix: Ignis
+  components:
+  - type: PointLight
+    color: "#d9741c"
+  - type: Sprite
+    color: "#d9741c"
+  - type: Destructible
+    thresholds:
       - trigger:
             !type:DamageTrigger
             damage: 15
@@ -462,105 +149,45 @@
           - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: Explosive
-    totalIntensity: 10
 
 - type: entity
-  id: CP14CrystalElementalFireBig
-  suffix: Fire, Big
-  parent: 
-  - CP14CrystalBigBase
-  - CP14CrystalFireBase
+  id: CP14CrystalWater
+  parent: CP14CrystalBase
+  suffix: Aqua
   components:
+  - type: PointLight
+    color: "#1c94d9"
+  - type: Sprite
+    color: "#1c94d9"
   - type: Destructible
     thresholds:
       - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
             !type:DamageTrigger
-            damage: 20
+            damage: 15
         behaviors:
           - !type:PlaySoundBehavior
             sound:
               collection: GlassBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14CrystalShardFire:
-                min: 2
-                max: 3
+              CP14CrystalShardWater:
+                min: 1
+                max: 2
           - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: Explosive
-    totalIntensity: 20
-    intensitySlope: 0.5
-
-# Light
 
 - type: entity
-  id: CP14CrystalLightBase
-  abstract: true
-  description: Natural quartz crystals that can absorb the magical energy of the world around them. This crystal seems to have absorbed the energy of light.
+  id: CP14CrystalAir
+  parent: CP14CrystalBase
+  suffix: Aer
   components:
   - type: PointLight
-    color: "#f1c7ff"
+    color: "#def9ff"
   - type: Sprite
-    color: "#f1c7ff"
-  
-- type: entity
-  id: CP14CrystalElementalLightSmall
-  suffix: Light, Small
-  parent: 
-  - CP14CrystalSmallBase
-  - CP14CrystalLightBase
-  components:
+    color: "#def9ff"
   - type: Destructible
     thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 10
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardLight:
-                min: 1
-                max: 1
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              AdminInstantEffectFlash:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  
-- type: entity
-  id: CP14CrystalElementalLightMedium
-  suffix: Light, Medium
-  parent: 
-  - CP14CrystalMediumBase
-  - CP14CrystalLightBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
             !type:DamageTrigger
             damage: 15
@@ -570,123 +197,24 @@
               collection: GlassBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14CrystalShardLight:
+              CP14CrystalShardAir:
                 min: 1
                 max: 2
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              AdminInstantEffectFlash:
-                min: 1
-                max: 1
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
 
 - type: entity
-  id: CP14CrystalElementalLightBig
-  suffix: Light, Big
-  parent: 
-  - CP14CrystalBigBase
-  - CP14CrystalLightBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 20
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardLight:
-                min: 2
-                max: 3
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              AdminInstantEffectFlash:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-
-# Electric
-
-- type: entity
-  id: CP14CrystalElectricBase
-  abstract: true
-  description: Natural quartz crystals that can absorb the magical energy of the world around them. This crystal seems to have absorbed the energy of electricity.
+  id: CP14CrystalOrder
+  parent: CP14CrystalBase
+  suffix: Ordo
   components:
   - type: PointLight
-    color: "#e6ff6b"
+    color: "#d9d9d9"
   - type: Sprite
-    color: "#e6ff6b"
-  - type: Electrified
-    requirePower: false
-    shockTime: 8
-  - type: TriggerOnCollide
-    fixtureID: fix1
-  - type: SpawnOnTrigger
-    proto: CP14ElectrifiedEffect
-  
-- type: entity
-  id: CP14CrystalElementalElectricSmall
-  suffix: Electric, Small
-  parent: 
-  - CP14CrystalSmallBase
-  - CP14CrystalElectricBase
-  components:
+    color: "#d9d9d9"
   - type: Destructible
     thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 10
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardElectric:
-                min: 1
-                max: 1
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14ElectrifiedEffect:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Electrified
-    shockTime: 2
-  
-- type: entity
-  id: CP14CrystalElementalElectricMedium
-  suffix: Electric, Medium
-  parent: 
-  - CP14CrystalMediumBase
-  - CP14CrystalElectricBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
             !type:DamageTrigger
             damage: 15
@@ -696,118 +224,24 @@
               collection: GlassBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14CrystalShardElectric:
+              CP14CrystalShardOrder:
                 min: 1
                 max: 2
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14ElectrifiedEffect:
-                min: 1
-                max: 1
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: Electrified
-    shockTime: 4
 
 - type: entity
-  id: CP14CrystalElementalElectricBig
-  suffix: Electric, Big
-  parent: 
-  - CP14CrystalBigBase
-  - CP14CrystalElectricBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 20
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardElectric:
-                min: 2
-                max: 3
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14ElectrifiedEffect:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Electrified
-    shockTime: 6
-
-# Darkness
-
-- type: entity
-  id: CP14CrystalDarknessBase
-  abstract: true
-  description: Natural quartz crystals that can absorb the magical energy of the world around them. This crystal seems to have absorbed the energy of darkness.
+  id: CP14CrystalChaos
+  parent: CP14CrystalBase
+  suffix: Perditio
   components:
   - type: PointLight
-    color: "#391c57"
+    color: "#5c5c5c"
   - type: Sprite
-    color: "#391c57"
-   
-- type: entity
-  id: CP14CrystalElementalDarknessSmall
-  suffix: Darkness, Small
-  parent: 
-  - CP14CrystalSmallBase
-  - CP14CrystalDarknessBase
-  components:
+    color: "#5c5c5c"
   - type: Destructible
     thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 10
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardDarkness:
-                min: 1
-                max: 1
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14AstralHaze:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  
-- type: entity
-  id: CP14CrystalElementalDarknessMedium
-  suffix: Darkness, Medium
-  parent: 
-  - CP14CrystalMediumBase
-  - CP14CrystalDarknessBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
       - trigger:
             !type:DamageTrigger
             damage: 15
@@ -817,48 +251,9 @@
               collection: GlassBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14CrystalShardDarkness:
+              CP14CrystalShardChaos:
                 min: 1
                 max: 2
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14AstralHaze:
-                min: 1
-                max: 1
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-
-- type: entity
-  id: CP14CrystalElementalDarknessBig
-  suffix: Darkness, Big
-  parent: 
-  - CP14CrystalBigBase
-  - CP14CrystalDarknessBase
-  components:
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 40
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 20
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CrystalShardDarkness:
-                min: 2
-                max: 3
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14AstralHaze:
-                min: 1
-                max: 1
+          - !type:TriggerBehavior
           - !type:DoActsBehavior
             acts: [ "Destruction" ]

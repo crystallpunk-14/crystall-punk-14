@@ -1,50 +1,5 @@
 # <---> CrystallEdge migration zone
 
-# 2024-08-24
-CP14DungeonEntrance: CP14LaddersDownStoneAutoLink
-CP14DungeonExit: CP14LaddersUpStoneAutoLink
-CP14Nail110: CP14Nail20
-
-# 2024-09-09
-CP14AlchemyFurnaceDebug: CP14AlchemyFurnace
-
-#2024-09-22
-CP14WoodDoorTavern: CP14WoodenDoorWindowedTavernHall
-CP14LockTavern: null
-CP14KeyTavern: CP14KeyTavernHall
-
-#2024-09-23
-CP14WallmountVines: null
-CP14WallmountWeb: null
-CP14WallmountWoodenBoards: null
-CP14BaseWoodDoor: CP14WoodenDoor
-CP14WoodDoorOpened: CP14WoodenDoor
-CP14WoodDoorTavernHall: CP14WoodenDoorWindowedTavernHall
-CP14WoodDoorTavernHallOpened: CP14WoodenDoorWindowedTavernHall
-CP14WoodDoorTavernStaff: CP14WoodenDoorTavernStaff
-CP14WoodDoorTavernStaffOpened: CP14WoodenDoorTavernStaff
-CP14WoodDoorTavernDorms1Opened: CP14WoodenDoorTavernDorms1
-CP14WoodDoorTavernDorms2Opened: CP14WoodenDoorTavernDorms2
-CP14WoodDoorTavernDorms3Opened: CP14WoodenDoorTavernDorms3
-CP14WoodDoorTavernDorms4Opened: CP14WoodenDoorTavernDorms5
-CP14WoodDoorTavernDorms5Opened: CP14WoodenDoorTavernDorms4
-CP14WoodDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
-CP14WoodDoorTavernAlchemy5Opened: CP14WoodenDoorTavernAlchemy1
-CP14WoodenDoorOpened: CP14WoodenDoor
-CP14CuttingBoard: null
-
-CP14WoodenDoorTavernHallLocked: CP14WoodenDoorWindowedTavernHall
-CP14WoodenDoorTavernStaffLocked: CP14WoodenDoorTavernStaff
-CP14WoodenDoorTavernDorms1Locked: CP14WoodenDoorTavernDorms1
-CP14WoodenDoorTavernDorms2Locked: CP14WoodenDoorTavernDorms2
-CP14WoodenDoorTavernDorms3Locked: CP14WoodenDoorTavernDorms3
-CP14WoodenDoorTavernDorms4Locked: CP14WoodenDoorTavernDorms4
-CP14WoodenDoorTavernDorms5Locked: CP14WoodenDoorTavernDorms5
-CP14WoodenDoorTavernAlchemyLocked: CP14WoodenDoorTavernAlchemy1
-
-#2024-09-24
-CP14WallpaperPink30: CP14WallpaperPurple
-
 #2024-09-25
 CP14IronGrilleStraight: CP14FenceIronGrilleStraight
 CP14IronGrilleCorner: null
@@ -67,7 +22,7 @@ CP14BloodGrass: CP14BloodFlower
 CP14FlowersRed: CP14BloodFlower
 CP14GatherableBloodgrass: CP14GatherableBloodFlower
 CP14GatherableFlowersRed: CP14GatherableBloodFlower
-CP14VialSmallBloodgrassSap: CP14VialSmallBloodFlowerSap
+CP14VialSmallBloodgrassSap: null
 CP14BarrelBloodGrassSap: CP14BarrelBloodFlowerSap
 
 #2024-10-11
@@ -81,16 +36,16 @@ CP14WallpaperGreen30: CP14WallpaperGreen
 
 #2024-10-18
 CP14WoodenCupboard: CP14WoodenCloset
-CP14VialSmallChromiumSlime: CP14VialTinyChromiumSlime
-CP14VialSmallLumiMushroom: CP14VialTinyLumiMushroom
+CP14VialSmallChromiumSlime: null
+CP14VialSmallLumiMushroom: null
 
 #2024-10-20
-CP14SpawnPointHouseKeeper: CP14SpawnPointCommandant
+CP14SpawnPointHouseKeeper: null
 CP14WoodenDoorTavernDorms: null
 CP14WallWhitebrick: CP14WallMarbleBrick
 
 #2024-10-24
-CP14SpawnPointQuartermaster: CP14SpawnPointCommandant
+CP14SpawnPointQuartermaster: null
 
 #2024-10-27
 CP14GatherableFlowersYellow: CP14GatherableDayflin
@@ -109,18 +64,18 @@ CP14BlueVial: CP14BlueBottle
 CP14GreenVial: CP14GreenBottle
 
 #2024-13-11
-CP14IronDoorBankSafe1: CP14IronDoorBankSafe
-CP14IronDoorBankSafe2: CP14IronDoorBankSafe
-CP14IronDoorBankSafe3: CP14IronDoorBankSafe
-CP14IronDoorBankSafe4: CP14IronDoorBankSafe
-CP14IronDoorBankSafe5: CP14IronDoorBankSafe
-CP14IronDoorBankSafe6: CP14IronDoorBankSafe
-CP14KeyBankSafe1: CP14KeyBankSafe
-CP14KeyBankSafe2: CP14KeyBankSafe
-CP14KeyBankSafe3: CP14KeyBankSafe
-CP14KeyBankSafe4: CP14KeyBankSafe
-CP14KeyBankSafe5: CP14KeyBankSafe
-CP14KeyBankSafe6: CP14KeyBankSafe
+CP14IronDoorBankSafe1: null
+CP14IronDoorBankSafe2: null
+CP14IronDoorBankSafe3: null
+CP14IronDoorBankSafe4: null
+CP14IronDoorBankSafe5: null
+CP14IronDoorBankSafe6: null
+CP14KeyBankSafe1: null
+CP14KeyBankSafe2: null
+CP14KeyBankSafe3: null
+CP14KeyBankSafe4: null
+CP14KeyBankSafe5: null
+CP14KeyBankSafe6: null
 
 #2024-19-11
 CP14ClothingRingManaGift: CP14ManaOperationGlove
@@ -146,8 +101,8 @@ CP14BaseShovel: CP14ModularIronShovel
 CP14BasePickaxe: CP14ModularIronPickaxe
 
 #2024-02-12
-CP14WoodenDoorTavernAlchemy: CP14WoodenDoorTavernAlchemy1
-CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorTavernAlchemyMirrored1
+CP14WoodenDoorTavernAlchemy: CP14WoodenDoorAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorAlchemyMirrored1
 CP14IronDoorBlacksmith: CP14IronDoorBlacksmith1
 CP14IronDoorMirroredBlacksmith: CP14IronDoorMirroredBlacksmith1
 CP14IronDoorWindowedBlacksmith: CP14IronDoorBlacksmith1
@@ -195,10 +150,10 @@ CP14TwoHandedSwordScythe: null
 
 #2025-17-01
 CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
-CP14ClothingCloakCuirass: CP14ClothingOuterClothingCuirass
-CP14ClothingCloakInfantryCuirass: CP14ClothingOuterClothingInfantryCuirass
-CP14ClothingCloakCuirassLoincloth: CP14ClothingOuterClothingCuirassLoincloth
-CP14ClothingCloakCuirassLeg: CP14ClothingOuterClothingCuirassLeg
+CP14ClothingCloakCuirass: CP14ArmorIronCuirass
+CP14ClothingCloakInfantryCuirass: CP14ArmorIronCuirass
+CP14ClothingCloakCuirassLoincloth: CP14ArmorIronCuirass
+CP14ClothingCloakCuirassLeg: CP14ArmorIronCuirass
 
 #2025-21-01
 CP14PlateWooden: CP14Plate
@@ -211,26 +166,26 @@ CP14BaseLightHammer: CP14ModularIronHammer
 CP14BaseBattleHammer: CP14ModularIronHammer
 
 #2025-28-01
-CP14CrystalRubiesSmall: CP14CrystalElementalFireSmall
-CP14CrystalRubiesMedium: CP14CrystalElementalFireMedium
-CP14CrystalRubiesBig: CP14CrystalElementalFireBig
-CP14CrystalTopazesSmall: CP14CrystalElementalElectricSmall
-CP14CrystalTopazesMedium: CP14CrystalElementalElectricMedium
-CP14CrystalTopazesBig: CP14CrystalElementalElectricBig
-CP14CrystalEmeraldsSmall: CP14CrystalElementalHealingSmall
-CP14CrystalEmeraldsMedium: CP14CrystalElementalHealingMedium
-CP14CrystalEmeraldsBig: CP14CrystalElementalHealingBig
-CP14CrystalSapphiresSmall: CP14CrystalElementalWaterSmall
-CP14CrystalSapphiresMedium: CP14CrystalElementalWaterMedium
-CP14CrystalSapphiresBig: CP14CrystalElementalWaterBig
-CP14CrystalAmethystsSmall: CP14CrystalElementalDarknessSmall
-CP14CrystalAmethystsMedium: CP14CrystalElementalDarknessMedium
-CP14CrystalAmethystsBig: CP14CrystalElementalDarknessBig
-CP14CrystalDiamondsSmall: CP14CrystalElementalLightSmall
-CP14CrystalDiamondsMedium: CP14CrystalElementalLightMedium
-CP14CrystalDiamondsBig: CP14CrystalElementalLightBig
+CP14CrystalRubiesSmall: CP14CrystalFire
+CP14CrystalRubiesMedium: CP14CrystalFire
+CP14CrystalRubiesBig: CP14CrystalFire
+CP14CrystalTopazesSmall: CP14CrystalAir
+CP14CrystalTopazesMedium: CP14CrystalAir
+CP14CrystalTopazesBig: CP14CrystalAir
+CP14CrystalEmeraldsSmall: CP14CrystalOrder
+CP14CrystalEmeraldsMedium: CP14CrystalOrder
+CP14CrystalEmeraldsBig: CP14CrystalOrder
+CP14CrystalSapphiresSmall: CP14CrystalWater
+CP14CrystalSapphiresMedium: CP14CrystalWater
+CP14CrystalSapphiresBig: CP14CrystalWater
+CP14CrystalAmethystsSmall: CP14CrystalChaos
+CP14CrystalAmethystsMedium: CP14CrystalChaos
+CP14CrystalAmethystsBig: CP14CrystalChaos
+CP14CrystalDiamondsSmall: CP14CrystalAir
+CP14CrystalDiamondsMedium: CP14CrystalAir
+CP14CrystalDiamondsBig: CP14CrystalAir
 
-CP14QuartzCrystal: CP14CrystalMedium
+CP14QuartzCrystal: CP14CrystalEmpty
 CP14QuartzShard: CP14CrystalShardBase
 
 #2025-30-01
@@ -251,7 +206,112 @@ CP14WoodenClosetBankerFilled: CP14WoodenClosetMerchantFilled
 
 #2025-02-09
 C14IronCabinet: CP14IronCabinet
-C14IronCabinetCargo: CP14IronCabinetCargo
+C14IronCabinetCargo: CP14IronCabinet
+
+#2025-16-02
+CP14Arrow: CP14ModularIronArrow
+CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiverIronArrow
+
+#2025-17-02
+CP14Crossbolt: CP14CrossboltIron
+
+#2025-26-02
+CP14BookImperialLawsHandBook: CP14GuidebookImperialLaws
+
+#2025-28-02
+CP14CrystalSmall: CP14CrystalEmpty
+CP14CrystalMedium: CP14CrystalEmpty
+CP14CrystalBig: CP14CrystalEmpty
+CP14CrystalElementalWaterSmall: CP14CrystalWater
+CP14CrystalElementalWaterMedium: CP14CrystalWater
+CP14CrystalElementalWaterBig: CP14CrystalWater
+CP14CrystalElementalHealingSmall: CP14CrystalOrder
+CP14CrystalElementalHealingMedium: CP14CrystalOrder
+CP14CrystalElementalHealingBig: CP14CrystalOrder
+CP14CrystalElementalFireSmall: CP14CrystalFire
+CP14CrystalElementalFireMedium: CP14CrystalFire
+CP14CrystalElementalFireBig: CP14CrystalFire
+CP14CrystalElementalLightSmall: CP14CrystalAir
+CP14CrystalElementalLightMedium: CP14CrystalAir
+CP14CrystalElementalLightBig: CP14CrystalAir
+CP14CrystalElementalElectricSmall: CP14CrystalAir
+CP14CrystalElementalElectricMedium: CP14CrystalAir
+CP14CrystalElementalElectricBig: CP14CrystalAir
+CP14CrystalElementalDarknessSmall: CP14CrystalChaos
+CP14CrystalElementalDarknessMedium: CP14CrystalChaos
+CP14CrystalElementalDarknessBig: CP14CrystalChaos
+
+CP14CrystalShardHealing: CP14CrystalShardOrder
+CP14CrystalShardLight: CP14CrystalShardAir
+CP14CrystalShardElectric: CP14CrystalShardAir
+CP14CrystalShardDarkness: CP14CrystalShardChaos
+
+CP14AlchemyNormalizer: CP14AlchemySolutionCleaner
+CP14VialSmallBloodFlowerSap: CP14VialSmall
+CP14VialSmallAgaricMushroom: CP14VialSmall
+CP14VialSmallGroundQuartz: CP14VialSmall
+CP14VialSmallWildSage: CP14VialSmall
+CP14VialSmallBlueAmanita: CP14VialSmall
+CP14VialSmallAirLily: CP14VialSmall
+CP14VialSmallDayflin: CP14VialSmall
+CP14VialTinyChromiumSlime: CP14VialSmall
+CP14VialTinyLumiMushroom: CP14VialSmall
+CP14VialSmallHealthPotion: CP14VialSmall
+CP14VialSmallManaPotion: CP14VialSmall
+CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting 
+
+#2025-04-03
+CP14TravelingStoreshipAnchor: null
+CP14TravelingShop: CP14TradingBoardBase
+CP14IronCabinetCargo: CP14IronCabinet
+CP14BrassChestFilledDemiplanes: null
+CP14BrassChestFilledWood: null
+
+CP14WoodenDoorTavernAlchemy1: CP14WoodenDoorAlchemy1
+CP14WoodenDoorTavernAlchemyMirrored1: CP14WoodenDoorAlchemyMirrored1
+CP14WoodenDoorTavernAlchemy2: CP14WoodenDoorAlchemy2
+CP14WoodenDoorTavernAlchemyMirrored2: CP14WoodenDoorAlchemyMirrored2
+CP14WoodenDoorTavernAlchemy3: CP14WoodenDoorAlchemy3
+CP14WoodenDoorTavernAlchemyMirrored3: CP14WoodenDoorAlchemyMirrored3
+CP14SafeVault: null
+CP14WoodenClosetCommandantFilled: null
+CP14Safe: null
+CP14ClosetGlassShowcase: null
+CP14SafeVaultFilled25: null
+CP14IronDoorBankStaff: null
+CP14IronDoorMirroredBankStaff: null
+CP14IronDoorMirroredBankVault: null
+CP14IronDoorBankSafe: null
+CP14IronDoorBankCommandantRoom: null
+CP14IronDoorWindowedBankEntrance: null
+CP14IronDoorWindowedMirroredBankEntrance: null
+CP14IronDoorBankVault: null
+CP14BankStorageMarker: null
+CP14SpawnPointCommandant: null
+
+#2025-07-03
+CP14ClothingOuterClothingCuirass: CP14ArmorIronCuirass
+CP14ClothingOuterClothingInfantryCuirass: CP14ArmorIronCuirass
+CP14ClothingOuterClothingCuirassLoincloth: CP14ArmorIronCuirass
+CP14ClothingOuterClothingCuirassLeg: CP14ArmorIronCuirass
+
+#2025-11-03
+CP14BrassChest: CP14WoodenChest
+CP14BrassChestFilledEnergyCrystals: CP14WoodenChestFilledEnergyCrystals
+CP14BrassChestFilledAlchemy: CP14WoodenChestFilledAlchemy
+CP14BrassChestFilledCheese: CP14WoodenChestFilledCheese
+CP14BrassChestFilledSmallHealingBrute: CP14WoodenChestFilledSmallHealingBrute
+CP14BrassChestFilledSmallHealingPoison: CP14WoodenChestFilledSmallHealingPoison
+CP14BrassChestFilledSmallHealingAirloss: CP14WoodenChestFilledSmallHealingAirloss
+CP14BrassChestFilledSmallHealingBlood: CP14WoodenChestFilledSmallHealingBlood
+CP14BrassChestFilledSmallHealingMana: CP14WoodenChestFilledSmallHealingMana
+CP14BrassChestFilledSmallSpeedUp: CP14WoodenChestFilledSmallSpeedUp
+CP14BrassChestFilledSmallRainbow: CP14WoodenChestFilledSmallRainbow
+CP14BrassChestFilledFarmSeeds: CP14WoodenChestFilledFarmSeeds
+
+
+CP14ClothingHeadCaptainCap: null
+CP14ClothingHeadBeretBlack: null
 
 # <---> CrystallEdge migration zone end
 
@@ -807,3 +867,9 @@ FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
 #2025-02-05
 WeaponSubMachineGunVector: null
 WeaponSubMachineGunVectorRubber: null
+
+# 2025-02-20
+MagazineBoxAntiMaterielBig: null
+MagazineBoxCaselessRifle10x24: null
+MagazineBoxCaselessRifleBig: null
+MagazinePistolHighCapacityRubber: null

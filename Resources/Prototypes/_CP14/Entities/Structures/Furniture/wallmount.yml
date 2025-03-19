@@ -40,7 +40,7 @@
   - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
-    volume: -5
+    volume: -15
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
@@ -94,7 +94,7 @@
     radius: 8
   - type: AmbientSound
     enabled: true
-    volume: -5
+    volume: -15
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg

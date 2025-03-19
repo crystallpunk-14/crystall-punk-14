@@ -116,6 +116,11 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             sb.Append("\n" + Loc.GetString("cp14-magic-somatic-aspect") + " " + somatic.FreeHandRequired);
         }
 
+        if (TryComp<CP14MagicEffectRequiredMusicToolComponent>(ent, out var music))
+        {
+            sb.Append("\n" + Loc.GetString("cp14-magic-music-aspect"));
+        }
+
         _meta.SetEntityDescription(ent, sb.ToString());
     }
 

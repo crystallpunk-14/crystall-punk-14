@@ -2,8 +2,9 @@
   save: false
   parent: 
   - BaseMob
-  - CP14MobDamageable
   - MobCombat
+  - CP14MobDamageable
+  - CP14MobMagical
   id: CP14BaseMobSpecies
   categories: [ ForkFiltered ]
   abstract: true
@@ -14,6 +15,10 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -210,18 +215,6 @@
   - type: Tag
     tags:
     - FootstepSound
-  - type: CP14MagicCasterSlowdown
-  - type: CP14MagicEnergyContainer
-    magicAlert: CP14MagicEnergy
-    maxEnergy: 100
-    energy: 100
-  - type: CP14MagicEnergyDraw
-    energy: 1
-    delay: 3 # 5m to full restore
-  - type: CP14MagicUnsafeDamage
-  - type: CP14MagicUnsafeSleep
-  - type: CP14MagicAttuningMind
-    autoCopyToMind: true
   - type: CP14DemiplaneStabilizer
     requireAlive: true
   - type: CanEnterCryostorage
@@ -233,7 +226,6 @@
     weightlessAcceleration: 0.8 # Slow swimming
     weightlessFriction: 2
     weightlessModifier: 0.6
-  - type: CP14DamageableByMap
   - type: Hunger
     starvationDamage:
       types:

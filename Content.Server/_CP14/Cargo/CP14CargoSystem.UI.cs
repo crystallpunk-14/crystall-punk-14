@@ -8,101 +8,105 @@ public sealed partial class CP14CargoSystem
 {
     public void InitializeUI()
     {
-        SubscribeLocalEvent<CP14CargoStoreComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
+        SubscribeLocalEvent<CP14TradingInfoBoardComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
     }
 
-    private void TryInitStore(Entity<CP14CargoStoreComponent> ent)
+    private void TryInitStore(Entity<CP14TradingInfoBoardComponent> ent)
     {
-        //TODO: There's no support for multiple stations. (settlements).
-        var stations = _station.GetStations();
-
-        if (stations.Count == 0)
-            return;
-
-        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(stations[0], out var station))
-            return;
-
-        ent.Comp.Station = new Entity<CP14StationTravelingStoreShipTargetComponent>(stations[0], station);
+        //TODO: more accurate way to find the trading portal, without lookup
+        var entitiesInRange = _lookup.GetEntitiesInRange<CP14TradingPortalComponent>(Transform(ent).Coordinates, 2);
+        foreach (var trading in entitiesInRange)
+        {
+            ent.Comp.TradingPortal = trading;
+            ent.Comp.CahcedFaction = trading.Comp.Faction;
+            break;
+        }
     }
 
-    private void OnBeforeUIOpen(Entity<CP14CargoStoreComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    private void OnBeforeUIOpen(Entity<CP14TradingInfoBoardComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
         //TODO: If you open a store on a mapping, and initStore() it, the entity will throw an error when you try to save the grid\map.
 
-        if (ent.Comp.Station is null)
+        if (ent.Comp.TradingPortal is null)
             TryInitStore(ent);
 
         UpdateUIProducts(ent);
     }
 
-    private void UpdateAllStores()
+    private void UpdateUIProducts(Entity<CP14TradingInfoBoardComponent> ent)
     {
-        //TODO: redo
-        var query = EntityQueryEnumerator<CP14CargoStoreComponent>();
-        while (query.MoveNext(out var uid, out var store))
-        {
-            UpdateUIProducts((uid, store));
-        }
-    }
-
-    private void UpdateUIProducts(Entity<CP14CargoStoreComponent> ent)
-    {
-        if (ent.Comp.Station is null)
+        if (ent.Comp.TradingPortal is null)
             return;
 
-        if (!TryComp<CP14StationTravelingStoreShipTargetComponent>(ent.Comp.Station.Value, out var storeTargetComp))
+        if (!TryComp<CP14TradingPortalComponent>(ent.Comp.TradingPortal.Value, out var tradePortalComp))
             return;
 
         var prodBuy = new HashSet<CP14StoreUiProductEntry>();
         var prodSell = new HashSet<CP14StoreUiProductEntry>();
 
         //Add special buy positions
-        foreach (var (proto, price) in storeTargetComp.CurrentSpecialBuyPositions)
+        foreach (var (proto, price) in tradePortalComp.CurrentSpecialBuyPositions)
         {
-            var name = Loc.GetString(proto.Name);
+            var name = proto.NameOverride is null ? proto.Service.GetName(_proto) : Loc.GetString(proto.NameOverride);
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", name), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.IconOverride ?? proto.Service.GetTexture(_proto), proto.Service.GetEntityView(_proto), name, desc.ToString(), price, true));
         }
 
         //Add static buy positions
-        foreach (var (proto, price) in storeTargetComp.CurrentBuyPositions)
+        foreach (var (proto, price) in tradePortalComp.CurrentBuyPositions)
         {
-            var name = Loc.GetString(proto.Name);
+            var name = proto.NameOverride is null ? proto.Service.GetName(_proto) : Loc.GetString(proto.NameOverride);
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", Loc.GetString(proto.Name)), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
+            desc.Append("\n" + Loc.GetString("cp14-store-buy-hint", ("name", name), ("code", "[color=yellow][bold]#" + proto.Code + "[/bold][/color]")));
 
-            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, false));
+            prodBuy.Add(new CP14StoreUiProductEntry(proto.ID,  proto.IconOverride ?? proto.Service.GetTexture(_proto), proto.Service.GetEntityView(_proto), name, desc.ToString(), price, false));
         }
 
         //Add special sell positions
-        foreach (var (proto, price) in storeTargetComp.CurrentSpecialSellPositions)
+        foreach (var (proto, price) in tradePortalComp.CurrentSpecialSellPositions)
         {
-            var name = Loc.GetString(proto.Name);
+            var name = proto.NameOverride is null ? proto.Service.GetName(_proto) : Loc.GetString(proto.NameOverride);
 
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Name))));
+            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.ID, proto.Icon, name, desc.ToString(), price, true));
+            prodSell.Add(new CP14StoreUiProductEntry(
+                proto.ID,
+                proto.Service.GetTexture(_proto),
+                proto.Service.GetEntityView(_proto),
+                name,
+                desc.ToString(),
+                price,
+                true));
         }
 
         //Add static sell positions
-        foreach (var proto in storeTargetComp.CurrentSellPositions)
+        foreach (var (proto, price) in tradePortalComp.CurrentSellPositions)
         {
-            var name = Loc.GetString(proto.Key.Name);
+            var name = proto.NameOverride is null ? proto.Service.GetName(_proto) : Loc.GetString(proto.NameOverride);
 
             var desc = new StringBuilder();
-            desc.Append(Loc.GetString(proto.Key.Desc) + "\n");
-            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", Loc.GetString(proto.Key.Name))));
+            desc.Append("\n" + Loc.GetString("cp14-store-sell-hint", ("name", name)));
 
-            prodSell.Add(new CP14StoreUiProductEntry(proto.Key.ID, proto.Key.Icon, name, desc.ToString(), proto.Value, false));
+            prodSell.Add(new CP14StoreUiProductEntry(
+                proto.ID,
+                proto.Service.GetTexture(_proto),
+                proto.Service.GetEntityView(_proto),
+                name,
+                desc.ToString(),
+                price,
+                false));
         }
 
-        var stationComp = storeTargetComp;
-        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(prodBuy, prodSell, stationComp.OnStation, stationComp.NextTravelTime));
+        var shopName = ":3";
+        //Get shop name
+        if (ent.Comp.CahcedFaction is not null && _proto.TryIndex(ent.Comp.CahcedFaction.Value, out var indexedShop))
+        {
+            shopName = Loc.GetString(indexedShop.Name);
+        }
+
+        _userInterface.SetUiState(ent.Owner, CP14StoreUiKey.Key, new CP14StoreUiState(shopName, prodBuy, prodSell));
     }
 }

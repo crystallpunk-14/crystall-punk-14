@@ -1,0 +1,81 @@
+- type: entity
+  id: CP14EssenceCollector
+  parent:
+  - BaseStructureDynamic
+  - CP14BaseCrystalSlot
+  name: essence collector
+  description: Being powered by the energy crystal, it will start sucking in all the essence floating in the air and converting it into useful liquid.
+  categories: [ ForkFiltered ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Thaumaturgy/essence_collector.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: base
+      - state: crystal
+        shader: unshaded
+        map: ["crystal"]
+        visible: false
+      - state: active
+        map: ["power"]
+        visible: false
+        shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CP14MagicSlotVisuals.Powered:
+        power:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 525
+        layer:
+        - WallLayer
+        mask:
+        - WallLayer
+  - type: SolutionContainerManager
+    solutions:
+      collector:
+        maxVol: 50
+  - type: CP14SolutionTemperature
+  - type: DrainableSolution
+    solution: collector
+  - type: ExaminableSolution
+    solution: collector
+  - type: MixableSolution
+    solution: collector
+  - type: RefillableSolution
+    solution: collector
+  - type: DrawableSolution
+    solution: collector
+  - type: DumpableSolution
+    solution: collector
+  - type: CP14MagicEnergyAmbientSound
+  - type: AmbientSound
+    enabled: false
+    range: 6
+    volume: 3
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 7
+    fillBaseName: liq-
+  - type: CP14MagicEnergyDraw
+    energy: -0.15
+    delay: 2
+  - type: CP14MagicEssenceCollector

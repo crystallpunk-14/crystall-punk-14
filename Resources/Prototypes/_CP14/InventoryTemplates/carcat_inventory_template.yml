@@ -1,0 +1,134 @@
+- type: inventoryTemplate
+  id: CP14Carcat #Copy of CP14Human, but without shoes
+  slots:
+    # Left hotbar
+    # 0, y
+    - name: ring1
+      slotTexture: ring
+      slotFlags: RING
+      uiWindowPos: 0,1
+      strippingWindowPos: 0,3
+      displayName: Ring
+    - name: mask
+      slotTexture: mask
+      slotFlags: MASK
+      uiWindowPos: 0,2
+      strippingWindowPos: 2,0
+      displayName: Mask
+    - name: eyes
+      slotTexture: eyes
+      slotFlags: EYES
+      uiWindowPos: 0,3
+      strippingWindowPos: 0,1
+      displayName: Eyes
+    # 1, y
+    #- name: shoes
+    #  slotTexture: shoes
+    #  slotFlags: FEET
+    #  uiWindowPos: 1,0
+    #  strippingWindowPos: 1,5
+    #  displayName: Shoes
+    - name: pants
+      slotTexture: pants
+      slotFlags: PANTS
+      uiWindowPos: 1,1
+      strippingWindowPos: 1,4
+      displayName: Pants
+    - name: shirt
+      slotTexture: shirt
+      slotFlags: SHIRT
+      uiWindowPos: 1,2
+      strippingWindowPos: 1,3
+      displayName: Shirt
+    - name: head
+      slotTexture: head
+      slotFlags: HEAD
+      uiWindowPos: 1,3
+      strippingWindowPos: 1,1
+      displayName: Head
+    # 2, y
+    - name: gloves
+      slotTexture: gloves
+      slotFlags: GLOVES
+      uiWindowPos: 2,0
+      strippingWindowPos: 0,2
+      displayName: Gloves
+    - name: ring2
+      slotTexture: ring
+      slotFlags: RING
+      uiWindowPos: 2,1
+      strippingWindowPos: 2,3
+      displayName: Ring
+    - name: outerClothing
+      slotTexture: suit
+      slotFlags: OUTERCLOTHING
+      uiWindowPos: 2,2
+      strippingWindowPos: 2,1
+      displayName: Armor
+    - name: cloak
+      slotTexture: cloak
+      slotFlags: CLOAK
+      uiWindowPos: 2,3
+      strippingWindowPos: 2,2
+      displayName: Cloak
+    # Main hotbar
+    - name: belt1
+      slotTexture: belt
+      slotFlags: BELT
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,4
+      dependsOn: pants
+      displayName: Belt
+    - name: keys
+      slotTexture: keys
+      slotFlags: KEYS
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 2,5
+      dependsOn: pants
+      displayName: Keys
+      stripHidden: true
+    - name: back
+      slotTexture: back
+      slotFlags: BACK
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,5
+      displayName: Back
+    - name: neck
+      slotTexture: neck
+      slotFlags: NECK
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 1,2
+      displayName: Neck
+      dependsOn: shirt
+    # Right hand
+    # Left hand
+    - name: pocket1
+      slotTexture: pocket
+      slotFlags: POCKET
+      slotGroup: MainHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 0,0
+      dependsOn: pants
+      displayName: Pocket
+      stripHidden: true
+    - name: pocket2
+      slotTexture: pocket
+      slotFlags: POCKET
+      slotGroup: MainHotbar
+      uiWindowPos: 1,0
+      strippingWindowPos: 1,0
+      dependsOn: pants
+      displayName: Pocket
+      stripHidden: true
+    - name: belt2
+      slotTexture: belt
+      slotFlags: BELT
+      slotGroup: MainHotbar
+      uiWindowPos: 2,0
+      strippingWindowPos: 2,4
+      dependsOn: pants
+      displayName: Belt

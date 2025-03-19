@@ -1,21 +1,15 @@
 using System.Linq;
+using System.Numerics;
 using Content.Server._CP14.Currency;
-using Content.Server._CP14.RoundRemoveShuttle;
-using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Events;
-using Content.Server.Station.Systems;
+using Content.Server.Storage.Components;
+using Content.Server.Storage.EntitySystems;
 using Content.Shared._CP14.Cargo;
 using Content.Shared._CP14.Cargo.Prototype;
-using Content.Shared.Maps;
+using Content.Shared._CP14.Currency;
 using Content.Shared.Paper;
-using Content.Shared.Physics;
-using Content.Shared.Station.Components;
-using Content.Shared.Storage;
-using Content.Shared.Storage.EntitySystems;
-using JetBrains.Annotations;
+using Content.Shared.Stacks;
+using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
-using Robust.Shared.EntitySerialization.Systems;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -24,20 +18,15 @@ namespace Content.Server._CP14.Cargo;
 
 public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly CP14CurrencySystem _currency = default!;
-    [Dependency] private readonly SharedStorageSystem _storage = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-
-    private EntityQuery<TransformComponent> _xformQuery;
+    [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
+    [Dependency] private readonly ThrowingSystem _throwing = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private IEnumerable<CP14StoreBuyPositionPrototype>? _buyProto;
     private IEnumerable<CP14StoreSellPositionPrototype>? _sellProto;
@@ -48,15 +37,18 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         base.Initialize();
 
         InitializeUI();
-        InitializeShuttle();
-
-        _xformQuery = GetEntityQuery<TransformComponent>();
+        InitializePortals();
 
         _buyProto = _proto.EnumeratePrototypes<CP14StoreBuyPositionPrototype>();
         _sellProto = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
 
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnProtoReload);
-        SubscribeLocalEvent<CP14StationTravelingStoreShipTargetComponent, StationPostInitEvent>(OnPostInit);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        UpdatePortals(frameTime);
     }
 
     private void OnProtoReload(PrototypesReloadedEventArgs ev)
@@ -65,61 +57,14 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         _sellProto = _proto.EnumeratePrototypes<CP14StoreSellPositionPrototype>();
     }
 
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        UpdateShuttle();
-    }
-
-    /// <summary>
-    /// Allows other systems to additionally add items to the queue that are brought to the settlement on a merchant ship.
-    /// </summary>
-    [PublicAPI]
-    public void AddBuyQueue(Entity<CP14StationTravelingStoreShipTargetComponent> station, List<EntProtoId> products)
-    {
-        foreach (var product in products)
-        {
-            station.Comp.BuyedQueue.Enqueue(product);
-        }
-    }
-
-    private void OnPostInit(Entity<CP14StationTravelingStoreShipTargetComponent> station, ref StationPostInitEvent args)
-    {
-        if (!Deleted(station.Comp.Shuttle))
-            return;
-
-        var tradepostMap = _mapManager.CreateMap();
-
-        if (!_loader.TryLoadGrid(tradepostMap ,station.Comp.ShuttlePath, out var shuttle))
-            return;
-
-
-        station.Comp.Shuttle = shuttle;
-        station.Comp.TradePostMap = _mapManager.GetMapEntityId(tradepostMap);
-        var travelingStoreShipComp = EnsureComp<CP14TravelingStoreShipComponent>(station.Comp.Shuttle.Value);
-        travelingStoreShipComp.Station = station;
-
-        var member = EnsureComp<StationMemberComponent>(shuttle.Value);
-        member.Station = station;
-
-        var roundRemover = EnsureComp<CP14RoundRemoveShuttleComponent>(shuttle.Value);
-        roundRemover.Station = station;
-
-        station.Comp.NextTravelTime = _timing.CurTime + TimeSpan.FromSeconds(10f);
-
-        AddRoundstartTradingPositions(station);
-        UpdateStorePositions(station);
-    }
-
-    private void AddRoundstartTradingPositions(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private void AddRoundstartTradingPositions(Entity<CP14TradingPortalComponent> portal)
     {
         if (_buyProto is not null)
         {
             foreach (var buy in _buyProto)
             {
                 if (buy.RoundstartAvailable)
-                    station.Comp.AvailableBuyPosition.Add(buy);
+                    portal.Comp.AvailableBuyPosition.Add(buy);
             }
         }
 
@@ -128,148 +73,171 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             foreach (var sell in _sellProto)
             {
                 if (sell.RoundstartAvailable)
-                    station.Comp.AvailableSellPosition.Add(sell);
+                    portal.Comp.AvailableSellPosition.Add(sell);
             }
         }
     }
 
-    private void UpdateStorePositions(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private void UpdateStaticPositions(Entity<CP14TradingPortalComponent> portal)
     {
-        station.Comp.CurrentBuyPositions.Clear();
-        station.Comp.CurrentSellPositions.Clear();
-        station.Comp.CurrentSpecialBuyPositions.Clear();
-        station.Comp.CurrentSpecialSellPositions.Clear();
-
-        var availableSpecialSellPositions = new List<CP14StoreSellPositionPrototype>();
-        var availableSpecialBuyPositions = new List<CP14StoreBuyPositionPrototype>();
+        portal.Comp.CurrentBuyPositions.Clear();
+        portal.Comp.CurrentSellPositions.Clear();
 
         //Add static positions + cash special ones
-        foreach (var buyPos in station.Comp.AvailableBuyPosition)
+        foreach (var buyPos in portal.Comp.AvailableBuyPosition)
         {
             if (buyPos.Special)
-                availableSpecialBuyPositions.Add(buyPos);
-            else
-                station.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price);
+                continue;
+
+            if (buyPos.Factions.Count > 0 && !buyPos.Factions.Contains(portal.Comp.Faction))
+                continue;
+
+            portal.Comp.CurrentBuyPositions.Add(buyPos, buyPos.Price);
         }
-        foreach (var sellPos in station.Comp.AvailableSellPosition)
+
+        foreach (var sellPos in portal.Comp.AvailableSellPosition)
         {
             if (sellPos.Special)
-                availableSpecialSellPositions.Add(sellPos);
-            else
-                station.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price);
+                continue;
+
+            if (sellPos.Factions.Count > 0 && !sellPos.Factions.Contains(portal.Comp.Faction))
+                continue;
+
+            portal.Comp.CurrentSellPositions.Add(sellPos, sellPos.Price);
+        }
+    }
+
+    public void AddRandomBuySpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    {
+        if (_buyProto is null)
+            return;
+
+        var availableSpecialBuyPositions = new List<CP14StoreBuyPositionPrototype>();
+        foreach (var buyPos in _buyProto)
+        {
+            if (!buyPos.Special)
+                continue;
+
+            if (portal.Comp.CurrentSpecialBuyPositions.ContainsKey(buyPos))
+                continue;
+
+            if (buyPos.Factions.Count > 0 && !buyPos.Factions.Contains(portal.Comp.Faction))
+                continue;
+
+            availableSpecialBuyPositions.Add(buyPos);
         }
 
-        //Random and select special positions
-        _random.Shuffle(availableSpecialSellPositions);
         _random.Shuffle(availableSpecialBuyPositions);
 
-        var currentSpecialBuyPositions = station.Comp.SpecialBuyPositionCount.Next(_random);
-        var currentSpecialSellPositions = station.Comp.SpecialSellPositionCount.Next(_random);
-
+        var added = 0;
         foreach (var buyPos in availableSpecialBuyPositions)
         {
-            if (station.Comp.CurrentSpecialBuyPositions.Count >= currentSpecialBuyPositions)
+            if (added >= count)
                 break;
-            station.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price);
+            portal.Comp.CurrentSpecialBuyPositions.Add(buyPos, buyPos.Price);
+            added++;
+        }
+    }
+
+    public void AddRandomSellSpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    {
+        if (_sellProto is null)
+            return;
+
+        var availableSpecialSellPositions = new List<CP14StoreSellPositionPrototype>();
+        foreach (var sellPos in _sellProto)
+        {
+            if (!sellPos.Special)
+                continue;
+
+            if (portal.Comp.CurrentSpecialSellPositions.ContainsKey(sellPos))
+                continue;
+
+            if (sellPos.Factions.Count > 0 && !sellPos.Factions.Contains(portal.Comp.Faction))
+                continue;
+
+            availableSpecialSellPositions.Add(sellPos);
         }
 
+        _random.Shuffle(availableSpecialSellPositions);
+
+        var added = 0;
         foreach (var sellPos in availableSpecialSellPositions)
         {
-            if (station.Comp.CurrentSpecialSellPositions.Count >= currentSpecialSellPositions)
+            if (added >= count)
                 break;
-            station.Comp.CurrentSpecialSellPositions.Add(sellPos, sellPos.Price);
+            portal.Comp.CurrentSpecialSellPositions.Add(sellPos, sellPos.Price);
+            added++;
         }
     }
 
     /// <summary>
     /// Sell all the items we can, and replenish the internal balance
     /// </summary>
-    private void SellingThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private void SellingThings(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        var shuttle = station.Comp.Shuttle;
+        var containedEntities = storage.Contents.ContainedEntities.ToHashSet();
+        //var ev = new BeforeSellEntities(ref portal.Comp.EntitiesInPortal);
+        //RaiseLocalEvent(ev);
 
-        //Get all entities sent to trading posts
-        var toSell = new HashSet<EntityUid>();
-
-        var query = EntityQueryEnumerator<CP14SellingPalettComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out _, out var palletXform))
+        foreach (var sellPos in portal.Comp.CurrentSellPositions)
         {
-            if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
-                continue;
-
-            var sentEntities = new HashSet<EntityUid>();
-
-            _lookup.GetEntitiesInRange(uid, 0.5f, sentEntities, LookupFlags.Dynamic | LookupFlags.Sundries);
-
-            foreach (var ent in sentEntities)
+            //WHILE = sell all we can
+            while (sellPos.Key.Service.TrySell(EntityManager, containedEntities))
             {
-                if (toSell.Contains(ent) || !_xformQuery.TryGetComponent(ent, out _))
-                    continue;
-
-                toSell.Add(ent);
+                portal.Comp.Balance += sellPos.Value;
             }
         }
 
-        var ev = new BeforeSellEntities(ref toSell);
-        RaiseLocalEvent(ev);
-
-        foreach (var sellPos in station.Comp.CurrentSellPositions)
+        List<CP14StoreSellPositionPrototype> toRemove = new();
+        foreach (var sellPos in portal.Comp.CurrentSpecialSellPositions)
         {
-            while (sellPos.Key.Service.TrySell(EntityManager, toSell))
+            //IF = only 1 try
+            if (sellPos.Key.Service.TrySell(EntityManager, containedEntities))
             {
-                station.Comp.Balance += sellPos.Value;
+                portal.Comp.Balance += sellPos.Value;
+                toRemove.Add(sellPos.Key);
             }
         }
-        foreach (var sellPos in station.Comp.CurrentSpecialSellPositions)
+
+        //Remove this special position from the list and add new random one
+        foreach (var position in toRemove)
         {
-            while (sellPos.Key.Service.TrySell(EntityManager, toSell))
-            {
-                station.Comp.Balance += sellPos.Value;
-            }
+            portal.Comp.CurrentSpecialSellPositions.Remove(position);
+            AddRandomSellSpecialPosition(portal, 1);
         }
     }
 
     /// <summary>
-    /// Take all the money from the tradebox, and credit it to the internal balance
+    /// Take all the money from the portal, and credit it to the internal balance
     /// </summary>
-    private void TopUpBalance(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private void TopUpBalance(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        var tradebox = GetTradeBox(station);
-
-        if (tradebox is null)
-            return;
-
-        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
-            return;
-
-        //Get all currency in tradebox
-        int cash = 0;
-        foreach (var stored in tradeStorage.Container.ContainedEntities)
+        //Get all currency in portal
+        var cash = 0;
+        foreach (var stored in storage.Contents.ContainedEntities)
         {
-            var price = _currency.GetTotalCurrency(stored);
-            if (price > 0)
+            if (TryComp<CP14CurrencyComponent>(stored, out var currency))
             {
-                cash += price;
+                //fix currency calculation
+                var c = currency.Currency;
+
+                if (TryComp<StackComponent>(stored, out var stack))
+                    c *= stack.Count;
+
+                cash += c;
                 QueueDel(stored);
             }
         }
 
-        station.Comp.Balance += cash;
+        portal.Comp.Balance += cash;
     }
 
-    private void BuyToQueue(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private void BuyThings(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        var tradebox = GetTradeBox(station);
-
-        if (tradebox is null)
-            return;
-
-        if (!TryComp<StorageComponent>(tradebox, out var tradeStorage))
-            return;
-
-        //Reading all papers in tradebox
+        //Reading all papers in portal
         List<KeyValuePair<CP14StoreBuyPositionPrototype, int>> requests = new();
-        foreach (var stored in tradeStorage.Container.ContainedEntities)
+        foreach (var stored in storage.Contents.ContainedEntities)
         {
             if (!TryComp<PaperComponent>(stored, out var paper))
                 continue;
@@ -277,12 +245,13 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             var splittedText = paper.Content.Split("#");
             foreach (var fragment in splittedText)
             {
-                foreach (var buyPosition in station.Comp.CurrentBuyPositions)
+                foreach (var buyPosition in portal.Comp.CurrentBuyPositions)
                 {
                     if (fragment.StartsWith(buyPosition.Key.Code))
                         requests.Add(buyPosition);
                 }
-                foreach (var buyPosition in station.Comp.CurrentSpecialBuyPositions)
+
+                foreach (var buyPosition in portal.Comp.CurrentSpecialBuyPositions)
                 {
                     if (fragment.StartsWith(buyPosition.Key.Code))
                         requests.Add(buyPosition);
@@ -292,80 +261,57 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
             QueueDel(stored);
         }
 
-        //Trying spend tradebox money to buy requested things
+        //Trying to spend inner money to buy requested things
         foreach (var request in requests)
         {
-            if (station.Comp.Balance < request.Value)
+            if (portal.Comp.Balance < request.Value)
                 continue;
 
-            station.Comp.Balance -= request.Value;
+            portal.Comp.Balance -= request.Value;
 
             if (!_proto.TryIndex<CP14StoreBuyPositionPrototype>(request.Key, out var indexedBuyed))
                 continue;
 
-            foreach (var service in indexedBuyed.Services)
+            //Remove this position from the list and add new random one
+            if (request.Key.Special)
             {
-                service.Buy(EntityManager, _proto, station);
+                portal.Comp.CurrentSpecialBuyPositions.Remove(request.Key);
+                AddRandomBuySpecialPosition(portal, 1);
             }
-        }
-    }
 
-    //Dequeue buyed items, and spawn they on shuttle
-    private void TrySpawnBuyedThings(Entity<CP14StationTravelingStoreShipTargetComponent> station)
-    {
-        var shuttle = station.Comp.Shuttle;
-
-        var query = EntityQueryEnumerator<CP14BuyingPalettComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out _, out var palletXform))
-        {
-            if (station.Comp.BuyedQueue.Count <= 0)
-                break;
-
-            if (palletXform.ParentUid != shuttle || !palletXform.Anchored)
-                continue;
-
-            var tileRef = palletXform.Coordinates.GetTileRef();
-            if (tileRef is null)
-                continue;
-
-            if (_turf.IsTileBlocked(tileRef.Value, CollisionGroup.ItemMask))
-                continue;
-
-            var buyedThing = station.Comp.BuyedQueue.Dequeue();
-            Spawn(buyedThing, palletXform.Coordinates);
+            indexedBuyed.Service.Buy(EntityManager, _proto, portal);
         }
     }
 
     /// <summary>
     /// Transform all the accumulated balance into physical money, which we will give to the players.
     /// </summary>
-    private void CashOut(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    private void CashOut(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        var moneyBox = GetTradeBox(station);
-        if (moneyBox is not null)
+        var coins = _currency.GenerateMoney(portal.Comp.Balance, Transform(portal).Coordinates);
+        foreach (var coin in coins)
         {
-            var coord = Transform(moneyBox.Value).Coordinates;
-
-            var coins = _currency.GenerateMoney(station.Comp.Balance, coord);
-            foreach (var coin in coins)
-            {
-                _storage.Insert(moneyBox.Value, coin, out _);
-            }
+            _entityStorage.Insert(coin, portal, storage);
         }
+        portal.Comp.Balance = 0;
     }
 
-    private EntityUid? GetTradeBox(Entity<CP14StationTravelingStoreShipTargetComponent> station)
+    /// <summary>
+    /// Return all items to the map
+    /// </summary>
+    private void ThrowAllItems(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
-        var query = EntityQueryEnumerator<CP14CargoMoneyBoxComponent, TransformComponent>();
+        var containedEntities = storage.Contents.ContainedEntities.ToList();
 
-        while (query.MoveNext(out var uid, out _, out var xform))
+        _entityStorage.OpenStorage(portal, storage);
+
+        var xform = Transform(portal);
+        var rotation = xform.LocalRotation;
+        foreach (var stored in containedEntities)
         {
-            if (xform.GridUid != station.Comp.Shuttle)
-                continue;
-
-            return uid;
+            _transform.AttachToGridOrMap(stored);
+            var targetThrowPosition = xform.Coordinates.Offset(rotation.ToWorldVec() * 1);
+            _throwing.TryThrow(stored, targetThrowPosition.Offset(new Vector2(_random.NextFloat(-0.5f, 0.5f), _random.NextFloat(-0.5f, 0.5f))));
         }
-
-        return null;
     }
 }

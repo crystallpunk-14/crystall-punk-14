@@ -197,7 +197,8 @@
     size: Tiny
   - type: FlavorProfile
     flavors:
-      - CP14Water #TODO
+      - CP14Water
+      - CP14cucumber
   - type: Sprite
     sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
     layers:
@@ -420,6 +421,9 @@
           Quantity: 8
         - ReagentId: Vitamin
           Quantity: 6
+  - type: Tag
+    tags:
+    - CP14FarmFood
 
 - type: entity
   id: CP14FoodOnion
@@ -455,3 +459,6 @@
           Quantity: 4
         - ReagentId: Allicin
           Quantity: 3
+  - type: Tag
+    tags:
+    - CP14FarmFood

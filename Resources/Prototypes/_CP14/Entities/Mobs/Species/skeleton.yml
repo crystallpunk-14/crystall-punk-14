@@ -14,6 +14,10 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false #Skeleton vampire? Lol?
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -107,6 +111,8 @@
     templateId: CP14Human
   - type: TransferMindOnGib
   - type: CP14KnowledgeStorage
+  - type: CP14DemiplaneStabilizer
+    enabled: false
 
 - type: entity
   parent: CP14BaseSpeciesDummy

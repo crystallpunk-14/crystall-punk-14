@@ -89,6 +89,22 @@
     prototypes:
     - CP14MobFrog
 
+- type: entity
+  name: sheep spawner
+  id: CP14SpawnMobSheep
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/sheep.rsi
+      state: sheep
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobSheep
+
 # Dino
 
 - type: entity
@@ -156,3 +172,19 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobMonsterMosquito
+
+- type: entity
+  name: invisible whistler spawner
+  id: CP14SpawnMobMonsterInvisibleWhistler
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/invisible_whistler.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobMonsterInvisibleWhistler

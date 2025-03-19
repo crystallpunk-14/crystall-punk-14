@@ -1,14 +1,12 @@
 using Content.Server._CP14.MagicEnergy.Components;
-using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
-    [Dependency] private readonly CP14SharedDayCycleSystem _dayCycle = default!;
-
     private void InitializeDraw()
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnDrawMapInit);
@@ -28,7 +26,7 @@ public partial class CP14MagicEnergySystem
             if (!ent.Comp.Damage.TryGetValue(dict.Key, out var modifier))
                 continue;
 
-            ChangeEnergy(ent, modifier * dict.Value, true);
+            ChangeEnergy(ent, modifier * dict.Value, out _, out _, safe: true);
         }
     }
 
@@ -56,7 +54,7 @@ public partial class CP14MagicEnergySystem
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            ChangeEnergy(uid, magicContainer, draw.Energy, draw.Safe);
+            ChangeEnergy(uid, draw.Energy, out _, out _, magicContainer, draw.Safe);
         }
 
         var query2 = EntityQueryEnumerator<CP14MagicEnergyPhotosynthesisComponent, CP14MagicEnergyContainerComponent>();
@@ -67,7 +65,18 @@ public partial class CP14MagicEnergySystem
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            ChangeEnergy(uid, magicContainer, _dayCycle.TryDaylightThere(uid) ? draw.DaylightEnergy : draw.DarknessEnergy, true);
+            var daylight = false;
+
+            //if (TryComp<MapLightComponent>(Transform(uid).MapUid, out var mapLight))
+            //{
+            //    var color = mapLight.AmbientLightColor;
+            //    var medium = (color.R + color.G + color.B) / 3f;
+            //
+            //    if (medium > draw.LightThreshold)
+            //        daylight = true;
+            //}
+
+            ChangeEnergy(uid, daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
         }
     }
 
@@ -87,7 +96,7 @@ public partial class CP14MagicEnergySystem
             if (!_magicSlot.TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp))
                 continue;
 
-            ChangeEnergy(energyEnt.Value, energyComp, draw.Energy, draw.Safe);
+            ChangeEnergy(energyEnt.Value, draw.Energy, out _, out _, energyComp, draw.Safe);
         }
     }
 }

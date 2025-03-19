@@ -70,7 +70,7 @@
     count: 3
     slice: CP14FoodMeatLambSlice
   - type: Item
-    size: Tiny
+    size: Small
     shape:
     - 0,0,1,0
   - type: CP14TemperatureTransformation
@@ -393,7 +393,7 @@
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: dino_meat2
   - type: Item
-    size: Small
+    size: Tiny
   - type: SolutionContainerManager
     solutions:
       food:
@@ -444,21 +444,24 @@
       - state: rabbit_meat1
         map: [ "random" ]
   - type: Item
-    size: Small
+    size: Tiny
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: UncookedAnimalProteins
           Quantity: 3
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1.5
   - type: RandomSprite
     available:
       - random:
           rabbit_meat1: ""
           rabbit_meat2: ""
+  - type: Tag
+    tags:
+    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -478,12 +481,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Protein
           Quantity: 3
+        - ReagentId: Protein
+          Quantity: 1.5
   - type: RandomSprite
     available:
       - random:

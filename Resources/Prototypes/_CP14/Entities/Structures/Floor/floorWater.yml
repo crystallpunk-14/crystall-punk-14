@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseStructure
-  id: CP14FloorWater
+  id: CP14FloorWaterOptimized
   name: water
   description: A trough of plain water. Clean enough for consumption
   categories: [ ForkFiltered ]
@@ -19,6 +19,8 @@
     state: full
   - type: IconSmooth
     key: CP14Water
+    additionalKeys:
+    - CP14wall
     base: water
   - type: FloorOccluder
   - type: Transform
@@ -46,6 +48,24 @@
       collection: FootstepWater
       params:
         volume: 8
+  - type: Tag
+    tags:
+      - HideContextMenu
+      - CP14AmbientWater
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+    blacklist:
+      tags:
+      - Catwalk
+  - type: TileEntityEffect
+    effects:
+    - !type:ExtinguishReaction
+
+- type: entity
+  parent: CP14FloorWaterOptimized
+  id: CP14FloorWater
+  components:
   - type: DrawableSolution
     solution: pool
   - type: SolutionContainerManager
@@ -59,19 +79,6 @@
     solution: pool
   - type: Drink
     solution: pool
-  - type: Tag
-    tags:
-      - HideContextMenu
-      - CP14AmbientWater
-  - type: StepTrigger
-    requiredTriggeredSpeed: 0
-    intersectRatio: 0.1
-    blacklist:
-      tags:
-      - Catwalk # Если ты проходишь по мостику над водой, то ты не должен потушится
-  - type: TileEntityEffect
-    effects:
-    - !type:ExtinguishReaction
   - type: RandomSpawner
     prototypes:
     - CP14GatherableChromiumSlime

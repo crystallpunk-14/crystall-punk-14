@@ -1,0 +1,52 @@
+# Wooden
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorMerchantShop1
+  suffix: Merchant shop 1
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop1
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14WoodenDoorMerchantShop1
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorMerchantShopMirrored1
+  suffix: Merchant shop 1, Mirrored
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorMerchantShop2
+  suffix: Merchant shop 2
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop2
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14WoodenDoorMerchantShop2
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorMerchantShopMirrored2
+  suffix: Merchant shop 2, Mirrored
+
+- type: entity
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorMerchantShop3
+  suffix: Merchant shop 3
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop3
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14WoodenDoorMerchantShop3
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorMerchantShopMirrored3
+  suffix: Merchant shop 3, Mirrored

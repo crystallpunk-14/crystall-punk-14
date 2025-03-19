@@ -82,26 +82,11 @@
 - type: entity
   parent: CP14BaseKeyRing
   id: CP14KeyRingMerchant
-  suffix: Banker
+  suffix: Merchant
   components:
   - type: StorageFill
     contents:
-    - id: CP14KeyBankEntrance
-    - id: CP14KeyBankStaff
-    - id: CP14KeyBankSafe
-
-- type: entity
-  parent: CP14BaseKeyRing
-  id: CP14KeyRingCommandant
-  suffix: Commandant
-  components:
-  - type: StorageFill
-    contents:
-    - id: CP14KeyBankCommandantRoom
-    - id: CP14KeyBankVault
-    - id: CP14KeyBankEntrance
-    - id: CP14KeyBankStaff
-    - id: CP14KeyBankSafe
+    - id: CP14KeyTavernMerchantShopAbstract
 
 - type: entity
   parent: CP14BaseKeyRing

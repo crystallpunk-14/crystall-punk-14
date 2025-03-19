@@ -137,7 +137,7 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
             return false;
         }
 
-        _magicEnergy.ChangeEnergy(energyEnt.Value, energyComp, energy, safe);
+        _magicEnergy.ChangeEnergy(energyEnt.Value, energy, out _, out _, energyComp, safe);
         return true;
     }
 }

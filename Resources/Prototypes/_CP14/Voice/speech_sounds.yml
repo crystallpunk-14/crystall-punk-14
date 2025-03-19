@@ -1,0 +1,8 @@
+- type: speechSounds
+  id: CP14Carcat
+  saySound:
+    path: /Audio/_CP14/Voice/Carcat/carcat_talk3.ogg
+  askSound:
+    path: /Audio/_CP14/Voice/Carcat/carcat_talk2.ogg
+  exclaimSound:
+    path: /Audio/_CP14/Voice/Carcat/carcat_talk1.ogg

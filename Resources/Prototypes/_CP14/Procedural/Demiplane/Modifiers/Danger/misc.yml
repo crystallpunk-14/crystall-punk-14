@@ -2,10 +2,9 @@
 
 - type: cp14DemiplaneModifier
   id: Chasm
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 4
+    max: 10
   name: cp14-modifier-chasm
   generationWeight: 0.6
   categories:
@@ -22,13 +21,33 @@
       minGroupSize: 5
       maxGroupSize: 8
 
+- type: cp14DemiplaneModifier
+  id: Lava
+  levels:
+    min: 4
+    max: 10
+  generationWeight: 0.3
+  categories:
+    Danger: 0.33
+  blacklistTags:
+  - CP14DemiplaneCold
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:OreDunGen
+      entity: CP14FloorLava
+      tileMask:
+      - CP14FloorBase
+      count: 8
+      minGroupSize: 3
+      maxGroupSize: 5
+
 # TIER 2
 
 - type: cp14DemiplaneModifier
   id: Explosive
-  tiers:
-    - 2
-    - 3
+  levels:
+    min: 7
+    max: 10
   name: cp14-modifier-explosive
   generationWeight: 0.25
   categories:
@@ -42,9 +61,9 @@
 
 - type: cp14DemiplaneModifier
   id: ShadowKudzuDebug
-  tiers:
-    - 2
-    - 3
+  levels:
+    min: 7
+    max: 10
   name: cp14-modifier-shadow-kudzu
   categories:
     Danger: 0.3
