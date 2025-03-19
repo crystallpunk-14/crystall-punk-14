@@ -6,19 +6,6 @@
       tile: CP14FloorBase
 
 - type: biomeTemplate
-  id: CP14CavesIndestructibleFill
-  layers:
-    - !type:BiomeTileLayer
-      threshold: -1.0
-      tile: CP14FloorBase
-    - !type:BiomeEntityLayer
-      threshold: -1
-      allowedTiles:
-        - CP14FloorBase
-      entities:
-        - CP14WallStoneIndestructable
-
-- type: biomeTemplate
   id: CP14CavesFloor
   layers:
     - !type:BiomeMetaLayer

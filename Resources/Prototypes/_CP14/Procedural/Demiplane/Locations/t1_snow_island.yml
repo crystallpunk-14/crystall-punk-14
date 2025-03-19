@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1SnowIsland
-  tier: 1
+  levels:
+    min: 1
+    max: 10
   locationConfig: CP14DemiplaneSnowIsland
   name: cp14-demiplane-location-snow-island
   tags:
@@ -11,11 +13,12 @@
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
-  - type: CP14MapFloorOccluder
-  - type: CP14MapDamage
-  - type: Parallax
-    parallax: CP14Ocean
   - type: CP14CloudShadows
+  - type: Biome
+    template: CP14IceOceanFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
 
 - type: dungeonConfig
   id: CP14DemiplaneSnowIsland

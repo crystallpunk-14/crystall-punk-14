@@ -1,3 +1,4 @@
+using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Procedural;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
@@ -13,10 +14,10 @@ public sealed partial class CP14DemiplaneLocationPrototype : IPrototype
     [IdDataField] public string ID { get; } = default!;
 
     /// <summary>
-    /// Location Tier. Can be generated only in demiplane keys with the corresponding tier
+    /// The difficulty levels at which this location can be generated.
     /// </summary>
     [DataField]
-    public int Tier = 1;
+    public MinMax Levels = new(1, 10);
 
     [DataField(required: true)]
     public ProtoId<DungeonConfigPrototype> LocationConfig;

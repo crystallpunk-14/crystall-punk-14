@@ -24,7 +24,7 @@ public sealed partial class SunShadowCycleComponent : Component
     /// <summary>
     /// Time to have each direction applied. Will lerp from the current value to the next one.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [AutoNetworkedField] //CP14 Remove DataField
     public List<(float Ratio, Vector2 Direction, float Alpha)> Directions = new()
     {
         (0f, new Vector2(0f, 3f), 0f),

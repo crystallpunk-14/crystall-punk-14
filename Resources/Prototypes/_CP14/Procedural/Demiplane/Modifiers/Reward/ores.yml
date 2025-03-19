@@ -2,8 +2,9 @@
 
 - type: cp14DemiplaneModifier
   id: IronOre
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -22,8 +23,9 @@
 
 - type: cp14DemiplaneModifier
   id: IronOreUnderground
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 10
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -42,8 +44,9 @@
 
 - type: cp14DemiplaneModifier
   id: CopperOre
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -62,8 +65,9 @@
 
 - type: cp14DemiplaneModifier
   id: CopperOreUnderground
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -84,8 +88,9 @@
 
 - type: cp14DemiplaneModifier
   id: GoldOre
-  tiers:
-    - 2
+  levels:
+    min: 3
+    max: 6
   name: cp14-modifier-gold-ore
   unique: false
   categories:
@@ -104,8 +109,9 @@
 
 - type: cp14DemiplaneModifier
   id: GoldOreUnderground
-  tiers:
-    - 2
+  levels:
+    min: 3
+    max: 6
   name: cp14-modifier-gold-ore
   unique: false
   categories:
@@ -123,9 +129,10 @@
       maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
-  id: MithrilOre 
-  tiers:
-    - 2
+  id: MithrilOre
+  levels:
+    min: 5
+    max: 10
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
@@ -144,8 +151,9 @@
 
 - type: cp14DemiplaneModifier
   id: MithrilOreUnderground
-  tiers:
-    - 2
+  levels:
+    min: 5
+    max: 10
   name: cp14-modifier-mithril-ore
   unique: false
   categories:

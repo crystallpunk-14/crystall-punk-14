@@ -1,15 +1,14 @@
 using Content.Server._CP14.MagicEnergy.Components;
-using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
-    [Dependency] private readonly CP14SharedDayCycleSystem _dayCycle = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private void InitializeDraw()
@@ -76,7 +75,18 @@ public partial class CP14MagicEnergySystem
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            ChangeEnergy(uid, _dayCycle.UnderSunlight(uid) ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
+            var daylight = false;
+
+            //if (TryComp<MapLightComponent>(Transform(uid).MapUid, out var mapLight))
+            //{
+            //    var color = mapLight.AmbientLightColor;
+            //    var medium = (color.R + color.G + color.B) / 3f;
+            //
+            //    if (medium > draw.LightThreshold)
+            //        daylight = true;
+            //}
+
+            ChangeEnergy(uid, daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
         }
     }
 

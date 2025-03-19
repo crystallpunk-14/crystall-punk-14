@@ -30,10 +30,7 @@
 
 - type: cp14DemiplaneModifier
   id: TimeLimit10
-  generationProb: 0.33
-  tiers:
-    - 1
-    - 2
+  generationProb: 0
   name: cp14-modifier-time-limit-10
   components:
     - type: CP14DemiplaneTimedDestruction
