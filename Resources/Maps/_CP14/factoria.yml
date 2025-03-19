@@ -50,7 +50,6 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: CP14CloudShadows
-    - type: CP14MapFloorOccluder
     - type: MapLight
     - type: MapAtmosphere
       space: False
@@ -77,7 +76,6 @@ entities:
       - visuals: CP14Mist
       - visuals: CP14Rain
       - visuals: CP14Storm
-    - type: CP14MapDamage
     - type: LoadedMap
     - type: Parallax
       parallax: CP14Ocean
