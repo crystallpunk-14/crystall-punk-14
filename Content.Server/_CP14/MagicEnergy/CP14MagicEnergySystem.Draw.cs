@@ -2,6 +2,7 @@ using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 
 namespace Content.Server._CP14.MagicEnergy;
@@ -56,7 +57,7 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
-            if (_mobState.IsDead(uid) || _mobState.IsCritical(uid))
+            if (!TryComp<MobStateComponent>(uid, out var mobState) || !_mobState.IsAlive(uid, mobState))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
@@ -70,7 +71,7 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
-            if (_mobState.IsDead(uid) || _mobState.IsCritical(uid))
+            if (!TryComp<MobStateComponent>(uid, out var mobState) || !_mobState.IsAlive(uid, mobState))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
