@@ -17,7 +17,7 @@
       tags:
       - CP14SpellScroll
     count: 5
-    name: cp14-spell-scrolls
+    name: cp14-groups-spell-scrolls
     sprite:
       sprite: _CP14/Objects/Bureaucracy/paper.rsi
       state: scrolls
