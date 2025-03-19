@@ -45,6 +45,9 @@
     },
     {
       "name": "passport"
+    },
+    {
+      "name": "scrolls"
     }
   ]
 }
