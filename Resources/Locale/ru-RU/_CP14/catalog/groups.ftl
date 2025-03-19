@@ -1,2 +1,2 @@
-cp14-groups-spell-scrolls = свитки
-cp14-groups-alchemical-herbals = алхимические травы
+cp14-entity-group-spell-scrolls = свитки
+cp14-entity-group-alchemical-herbals = алхимические травы

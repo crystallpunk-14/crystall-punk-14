@@ -8,7 +8,7 @@
       tags:
       - CP14AlchemicalHerbals
     count: 10
-    name: cp14-groups-alchemical-herbals
+    name: cp14-entity-group-alchemical-herbals
     sprite:
       sprite: _CP14/Objects/Flora/Wild/store_position.rsi
       state: sell

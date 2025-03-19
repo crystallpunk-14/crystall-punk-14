@@ -1,2 +1,2 @@
-cp14-groups-spell-scrolls = scrolls
-cp14-groups-alchemical-herbals = alchemical herbals
+cp14-entity-group-spell-scrolls = scrolls
+cp14-entity-group-alchemical-herbals = alchemical herbals
