@@ -25,7 +25,6 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: CP14CloudShadows
-    - type: CP14MapFloorOccluder
     - type: MapLight
     - type: MapAtmosphere
       space: False
