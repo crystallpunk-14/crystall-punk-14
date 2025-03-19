@@ -48,6 +48,7 @@
       children:
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
+      - id: CP14ClothingCloakAmuletGold
       # Rare standard village crates loot
       - !type:NestedSelector
         tableId: CP14StationCrateLoot
@@ -100,3 +101,4 @@
         - id: CP14SpellScrollResurrection
         - id: CP14ClothingRingIceShards
         - id: CP14ClothingRingFlashLight
+        - id: CP14ClothingCloakAmuletMana
