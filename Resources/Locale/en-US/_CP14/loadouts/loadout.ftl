@@ -28,6 +28,7 @@ cp14-loadout-alchemist-belt = Alchemist's belt
 # Blacksmith
 
 cp14-loadout-blacksmith-cloak = Blacksmith's cloak
+cp14-loadout-blacksmith-gloves = Blacksmith's gloves
 
 # Guard commander
 
