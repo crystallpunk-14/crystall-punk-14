@@ -67,14 +67,14 @@ public partial class CP14MagicEnergySystem
 
             var daylight = false;
 
-            if (TryComp<MapLightComponent>(Transform(uid).MapUid, out var mapLight))
-            {
-                var color = mapLight.AmbientLightColor;
-                var medium = (color.R + color.G + color.B) / 3f;
-
-                if (medium > draw.LightThreshold)
-                    daylight = true;
-            }
+            //if (TryComp<MapLightComponent>(Transform(uid).MapUid, out var mapLight))
+            //{
+            //    var color = mapLight.AmbientLightColor;
+            //    var medium = (color.R + color.G + color.B) / 3f;
+            //
+            //    if (medium > draw.LightThreshold)
+            //        daylight = true;
+            //}
 
             ChangeEnergy(uid, daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
         }

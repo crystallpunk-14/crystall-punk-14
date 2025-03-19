@@ -226,7 +226,6 @@
     weightlessAcceleration: 0.8 # Slow swimming
     weightlessFriction: 2
     weightlessModifier: 0.6
-  - type: CP14DamageableByMap
   - type: Hunger
     starvationDamage:
       types:
