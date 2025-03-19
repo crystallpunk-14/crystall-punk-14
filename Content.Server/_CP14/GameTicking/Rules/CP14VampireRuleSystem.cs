@@ -66,6 +66,7 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
 
             vampire.NextHeatTime = _timing.CurTime + vampire.HeatFrequency;
 
+            return;
             //if (!_dayCycle.UnderSunlight(uid))
             //    continue;
 
