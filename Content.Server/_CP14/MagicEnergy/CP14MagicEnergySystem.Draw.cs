@@ -57,7 +57,7 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
-            if (!TryComp<MobStateComponent>(uid, out var mobState) || !_mobState.IsAlive(uid, mobState))
+            if (TryComp<MobStateComponent>(uid, out var mobState) || !_mobState.IsAlive(uid, mobState))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
@@ -71,7 +71,7 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
-            if (!TryComp<MobStateComponent>(uid, out var mobState) || !_mobState.IsAlive(uid, mobState))
+            if (TryComp<MobStateComponent>(uid, out var mobState) || !_mobState.IsAlive(uid, mobState))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
