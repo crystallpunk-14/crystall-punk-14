@@ -1,19 +1,22 @@
 - type: cp14DemiplaneLocation
   id: T1CavesRing
-  tier: 2
+  levels:
+    min: 3
+    max: 6
   locationConfig: CP14DemiplaneCavesRing
   name: cp14-demiplane-location-cave
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
   - CP14DemiplanePeacefulAnimals
+  components:
+  - type: Biome
+    template: CP14LavaOceanFill
 
 - type: dungeonConfig
   id: CP14DemiplaneCavesRing
   layers:
     # Masks
-    - !type:PrototypeDunGen
-      proto: CP14DemiplanePlatingMaskBorder
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesRingFloorMaskStone
     - !type:PrototypeDunGen
@@ -23,10 +26,6 @@
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesRingFloorMaskBorderCenter
     # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesIndestructibleFill
-      tileMask:
-      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14CavesGeneric
       tileMask:
@@ -96,9 +95,9 @@
   - !type:NoiseDistanceDunGen
     size: 50, 50
     distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 0.9
+      blendWeight: 0.8
     layers:
-    - tile: Plating
+    - tile: Space
       threshold: 0.50
       noise:
         frequency: 0.010

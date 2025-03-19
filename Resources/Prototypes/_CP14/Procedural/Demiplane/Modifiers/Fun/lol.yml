@@ -1,9 +1,8 @@
 - type: cp14DemiplaneModifier
   id: RoyalPumpkin
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 1
+    max: 10
   generationWeight: 0.1
   generationProb: 0.1
   categories:
@@ -24,10 +23,9 @@
 
 - type: cp14DemiplaneModifier
   id: LucenTree
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 6
+    max: 10
   generationWeight: 0.1
   generationProb: 0.1
   categories:
@@ -48,10 +46,9 @@
 
 - type: cp14DemiplaneModifier
   id: StatueStoneHead
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 2
+    max: 6
   generationWeight: 0.1
   generationProb: 0.1
   categories:

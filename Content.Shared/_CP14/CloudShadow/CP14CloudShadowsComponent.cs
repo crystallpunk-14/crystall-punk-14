@@ -2,7 +2,7 @@ using System.Numerics;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.DayCycle.Components;
+namespace Content.Shared._CP14.CloudShadow;
 
 /// <summary>
 /// If added to the map, renders cloud shadows on the map

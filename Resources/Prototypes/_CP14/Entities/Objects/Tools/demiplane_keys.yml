@@ -21,11 +21,10 @@
 - type: entity
   id: CP14DemiplaneKeyT1
   parent: CP14BaseSubdimensionalKey
-  suffix: T1
+  suffix: Level 3
   components:
   - type: CP14DemiplaneGeneratorData
-    tiersContent:
-      1: 1
+    level: 3
     limits:
       Reward: 1
       Danger: 1
@@ -39,49 +38,20 @@
 - type: entity
   id: CP14DemiplaneKeyT2
   parent: CP14BaseSubdimensionalKey
-  suffix: T2
+  suffix: Level 6
   components:
   - type: Sprite
     layers:
     - state: core
       color: red
   - type: CP14DemiplaneGeneratorData
-    tiersContent:
-      1: 0.6 # We dont have lot t2 content now. In future, decrease to 0.33
-      2: 1
+    level: 6
     limits:
       Reward: 1
       Danger: 1
       Fun: 1
       Weather: 1
       MapLight: 1
-    selectedModifiers:
-    - EntryRoom
-    - Exit
-
-- type: entity
-  id: CP14DemiplaneKeyOmega
-  parent: CP14BaseSubdimensionalKey
-  suffix: Omega
-  components:
-  - type: Sprite
-    scale: 2, 2
-    layers:
-    - state: core
-      color: red
-  - type: CP14DemiplaneGeneratorData
-    tiersContent:
-      1: 0.6 # We dont have lot t2 content now. In future, decrease to 0.33
-      2: 1
-    limits:
-      Reward: 5
-      Danger: 5
-      Fun: 1
-      Weather: 1
-      MapLight: 1
-    location: T1OmegaTest
-    autoRifts:
-    - CP14DemiplanePassway
     selectedModifiers:
     - EntryRoom
     - Exit

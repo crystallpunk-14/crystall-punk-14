@@ -8,6 +8,7 @@ using Content.Shared.Gravity;
 using Content.Shared.Procedural;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Demiplane.Jobs;
@@ -16,7 +17,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
 {
     private readonly IEntityManager _entManager;
     //private readonly IGameTiming _timing;
-    private readonly IMapManager _mapManager;
     private readonly IPrototypeManager _prototypeManager;
     //private readonly AnchorableSystem _anchorable;
     private readonly DungeonSystem _dungeon;
@@ -37,7 +37,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         double maxTime,
         IEntityManager entManager,
         ILogManager logManager,
-        IMapManager mapManager,
         IPrototypeManager protoManager,
         DungeonSystem dungeon,
         MetaDataSystem metaData,
@@ -50,7 +49,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         CancellationToken cancellation = default) : base(maxTime, cancellation)
     {
         _entManager = entManager;
-        _mapManager = mapManager;
         _prototypeManager = protoManager;
         _dungeon = dungeon;
         _metaData = metaData;
@@ -67,16 +65,12 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
     protected override async Task<bool> Process()
     {
         _sawmill.Debug($"Spawning demiplane `{_config.Id}` with seed {_seed}");
-        var grid = _mapManager.CreateGridEntity(DemiplaneMapUid);
-
-        _mapManager.DoMapInitialize(_demiplaneMapId);
-        _mapManager.SetMapPaused(_demiplaneMapId, false);
+        var gridComp = _entManager.EnsureComponent<MapGridComponent>(DemiplaneMapUid);
 
         MetaDataComponent? metadata = null;
         DungeonConfigPrototype dungeonConfig = new();
 
-        _metaData.SetEntityName(DemiplaneMapUid, "TODO: MAP Expedition name generation");
-        _metaData.SetEntityName(grid, "TODO: GRID Expedition name generation");
+        _metaData.SetEntityName(DemiplaneMapUid, $"Demiplane {_config.Id} - {_seed}");
 
         //Setup demiplane config
         var expeditionConfig = _prototypeManager.Index(_config);
@@ -104,9 +98,9 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         }
 
         //Setup gravity
-        var gravity = _entManager.EnsureComponent<GravityComponent>(grid);
+        var gravity = _entManager.EnsureComponent<GravityComponent>(DemiplaneMapUid);
         gravity.Enabled = true;
-        _entManager.Dirty(grid, gravity, metadata);
+        _entManager.Dirty(DemiplaneMapUid, gravity, metadata);
 
         // Setup default atmos
         var moles = new float[Atmospherics.AdjustedNumberOfGases];
@@ -115,10 +109,13 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         _entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplaneMapUid, false, mixture);
 
+        _map.InitializeMap(_demiplaneMapId);
+        _map.SetPaused(_demiplaneMapId, false);
+
         //Spawn modified config
         _dungeon.GenerateDungeon(dungeonConfig,
-            grid,
-            grid,
+            DemiplaneMapUid,
+            gridComp,
             Vector2i.Zero,
             _seed); //TODO: Transform to Async
 

@@ -2,8 +2,9 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyZombie
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-zombie
   generationWeight: 1.5
   categories:
@@ -17,9 +18,9 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyDyno
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 3
+    max: 8
   name: cp14-modifier-dyno
   categories:
     Danger: 0.4
@@ -35,9 +36,9 @@
 
 - type: cp14DemiplaneModifier
   id: MonsterMosquito
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-dyno
   categories:
     Danger: 0.2
@@ -52,8 +53,9 @@
 
 - type: cp14DemiplaneModifier
   id: SmallHydra
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-dyno
   categories:
     Danger: 0.3
@@ -68,9 +70,9 @@
 
 - type: cp14DemiplaneModifier
   id: EnemySkeleton
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 3
+    max: 10
   name: cp14-modifier-skeleton
   generationWeight: 1.5
   categories:
@@ -86,8 +88,9 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyMole
-  tiers:
-    - 2
+  levels:
+    min: 6
+    max: 10
   name: cp14-modifier-mole
   categories:
     Danger: 0.4
@@ -102,8 +105,9 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyIceSpectre
-  tiers:
-    - 2
+  levels:
+    min: 6
+    max: 10
   name: cp14-modifier-zombie
   categories:
     Danger: 0.4
@@ -118,8 +122,9 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyInvisibleWhistler
-  tiers:
-    - 2
+  levels:
+    min: 6
+    max: 10
   name: cp14-modifier-invisible-whistler
   categories:
     Danger: 0.4

@@ -23,6 +23,9 @@ public sealed partial class CP14MagicEnergyPhotosynthesisComponent : Component
     [DataField]
     public float Delay = 3f;
 
+    [DataField]
+    public float LightThreshold = 100f;
+
     /// <summary>
     /// the time of the next magic energy change
     /// </summary>
