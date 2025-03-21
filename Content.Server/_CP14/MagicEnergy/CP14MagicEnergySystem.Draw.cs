@@ -1,12 +1,16 @@
 using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+
     private void InitializeDraw()
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnDrawMapInit);
@@ -52,6 +56,9 @@ public partial class CP14MagicEnergySystem
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
                 continue;
 
+            if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsAlive(uid, mobState))
+                continue;
+
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
             ChangeEnergy(uid, draw.Energy, out _, out _, magicContainer, draw.Safe);
@@ -61,6 +68,9 @@ public partial class CP14MagicEnergySystem
         while (query2.MoveNext(out var uid, out var draw, out var magicContainer))
         {
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsAlive(uid, mobState))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
