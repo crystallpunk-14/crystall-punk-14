@@ -105,3 +105,18 @@
           Quantity: 2
         - ReagentId: CP14BasicEffectDrunk
           Quantity: 2
+
+- type: entity
+  id: CP14VialSmallHealingManadepletion
+  parent: CP14VialSmall
+  name: "brad's mana-healing potion"
+  suffix: Healing mana 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectHealManadepletion
+          Quantity: 1

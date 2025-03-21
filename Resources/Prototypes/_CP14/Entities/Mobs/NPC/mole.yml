@@ -39,8 +39,6 @@
         - MobLayer
   - type: ReplacementAccent
     accent: xeno
-  - type: Damageable
-    damageContainer: Biological
   - type: Appearance
   - type: Body
     prototype: Animal

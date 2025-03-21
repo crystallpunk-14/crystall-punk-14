@@ -5,6 +5,8 @@
   categories: [ ForkFiltered ]
   abstract: true
   components:
+  - type: Damageable
+    damageContainer: CP14Biological
   - type: Destructible
     thresholds:
     - trigger:

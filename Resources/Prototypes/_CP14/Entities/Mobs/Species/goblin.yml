@@ -95,13 +95,15 @@
         layer:
         - MobLayer
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: CP14Goblin #+25% all damage, -50% poison
   - type: PassiveDamage
     allowedStates:
     - Alive
     damageCap: 80
     damage:
+      types:
+        CP14Manadepletion: -0.05
       groups:
         Burn: -0.2
         Brute: -0.2

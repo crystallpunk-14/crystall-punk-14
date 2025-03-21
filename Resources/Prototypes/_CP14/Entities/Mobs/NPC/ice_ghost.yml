@@ -53,7 +53,7 @@
       shader: unshaded
     drawdepth: Mobs
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
   - type: Destructible
     thresholds:
     - trigger:
