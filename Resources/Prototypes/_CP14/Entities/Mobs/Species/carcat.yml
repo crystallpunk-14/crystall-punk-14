@@ -38,6 +38,7 @@
     damage:
       types:
         Slash: 5 # 5 slash
+  - type: CP14NightVision #Night vision
   - type: FootstepModifier
     footstepSoundCollection: null # Silent footstep
   - type: Inventory
