@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "Created by TheShuEd",
+    "copyright": "Created by TheShuEd, gold_ring by trushnikov_daniel",
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +9,9 @@
     "states": [
         {
             "name": "brass_ring"
+        },
+        {
+            "name": "gold_ring"
         },
         {
             "name": "saphhire_stone_small"
