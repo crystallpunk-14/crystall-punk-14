@@ -245,6 +245,16 @@
   abstract: true
   components:
   # Organs
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 20
+    damage:
+      types:
+        Heat: -0.07
+        CP14Manadepletion: -0.02
+      groups:
+        Brute: -0.07
   - type: StatusEffects
     allowed:
     - Stun

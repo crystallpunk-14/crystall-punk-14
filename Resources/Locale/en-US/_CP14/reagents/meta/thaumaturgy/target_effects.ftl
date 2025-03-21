@@ -31,6 +31,12 @@ cp14-reagent-desc-basic-damage-airloss =  A viscous slurry that rapidly glues th
 cp14-reagent-name-basic-heal-airloss = Air solution
 cp14-reagent-desc-basic-heal-airloss = A refreshing liquid that saturates the body with air.
 
+cp14-reagent-name-basic-damage-manadepletion = Mana-depleting solution
+cp14-reagent-desc-basic-damage-manadepletion =  A dangerous solution that damages areas with mana inside the body.
+
+cp14-reagent-name-basic-heal-manadepletion = Mana-healing solution
+cp14-reagent-desc-basic-heal-manadepletion = A liquid that affects the mana within the body, revitalising areas dried up by mana.
+
 cp14-reagent-name-basic-blood-restore = Blood-healing solution
 cp14-reagent-desc-basic-blood-restore = Coming into contact with the body restores blood levels of the same type used by that body.
 

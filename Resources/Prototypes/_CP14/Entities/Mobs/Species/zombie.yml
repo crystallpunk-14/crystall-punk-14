@@ -104,7 +104,7 @@
         layer:
           - MobLayer
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: CP14Zombie
   - type: PassiveDamage
     allowedStates:
