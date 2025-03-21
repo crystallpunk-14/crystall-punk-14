@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 247.2.0
+  engineVersion: 248.0.2
   forkId: ""
   forkVersion: ""
-  time: 03/01/2025 14:04:35
-  entityCount: 385
+  time: 03/21/2025 19:01:55
+  entityCount: 371
 maps:
 - 1
 grids:
@@ -30,12 +30,12 @@ entities:
     components:
     - type: MetaData
       name: Map Entity
+    - type: Transform
     - type: Map
       mapPaused: True
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids
-    - type: Transform
     - type: MapGrid
       chunks:
         0,0:
@@ -212,6 +212,7 @@ entities:
       angularDamping: 0.05
       linearDamping: 0.05
       fixedRotation: False
+      canCollide: False
       bodyType: Dynamic
     - type: MapAtmosphere
       space: False
@@ -590,19 +591,17 @@ entities:
     - type: Transform
       pos: -11.5,25.5
       parent: 1
-- proto: CP14CrystalMedium
-  entities:
-  - uid: 117
-    components:
-    - type: Transform
-      pos: 1.9909382,-12.614093
-      parent: 1
-- proto: CP14CrystalSmall
+- proto: CP14CrystalEmpty
   entities:
   - uid: 116
     components:
     - type: Transform
       pos: 3.3815632,-9.879718
+      parent: 1
+  - uid: 117
+    components:
+    - type: Transform
+      pos: 1.9909382,-12.614093
       parent: 1
   - uid: 118
     components:
