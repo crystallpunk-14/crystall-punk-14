@@ -1,14 +1,14 @@
 - type: cp14DemiplaneLocation
-  id: T1CavesRing
+  id: T1MagmaCaves
   levels:
     min: 3
-    max: 6
+    max: 10
   locationConfig: CP14DemiplaneCavesRing
-  name: cp14-demiplane-location-cave
+  name: cp14-demiplane-location-cave-magma
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
-  - CP14DemiplanePeacefulAnimals
+  - CP14DemiplaneHot
   components:
   - type: Biome
     template: CP14LavaOceanFill
@@ -41,7 +41,7 @@
   - !type:NoiseDistanceDunGen
     size: 120, 120
     distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 0.9
+      blendWeight: 0.7
     layers:
     - tile: CP14FloorSand
       threshold: 0.50
@@ -59,7 +59,7 @@
   - !type:NoiseDistanceDunGen
     size: 110, 110
     distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 0.9
+      blendWeight: 0.8
     layers:
     - tile: CP14FloorGrass
       threshold: 0.50
@@ -77,7 +77,7 @@
   - !type:NoiseDistanceDunGen
     size: 80, 80
     distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 0.9
+      blendWeight: 0.7
     layers:
     - tile: CP14FloorSand
       threshold: 0.50
@@ -95,12 +95,26 @@
   - !type:NoiseDistanceDunGen
     size: 50, 50
     distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 0.8
+      blendWeight: 0.6
     layers:
     - tile: Space
       threshold: 0.50
       noise:
         frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  - !type:NoiseDistanceDunGen
+    size: 80, 50
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.2
+    layers:
+    - tile: Space
+      threshold: 0.50
+      noise:
+        frequency: 0.08
         noiseType: OpenSimplex2
         fractalType: FBm
         octaves: 5

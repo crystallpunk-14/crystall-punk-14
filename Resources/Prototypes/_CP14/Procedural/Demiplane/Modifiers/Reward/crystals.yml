@@ -28,8 +28,8 @@
     Reward: 0.1
   requiredTags: #TODO: Hot places
   - CP14DemiplaneUnderground
-  blacklistTags:
-  - CP14DemiplaneCold
+  requiredTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14CrystalFire

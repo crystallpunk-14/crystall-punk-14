@@ -40,7 +40,7 @@
       - CP14FloorGrassLight
       - CP14FloorGrassTall
       entity: CP14BaseLucensTreeLarge
-      count: 10
+      count: 5
       minGroupSize: 1
       maxGroupSize: 1
 

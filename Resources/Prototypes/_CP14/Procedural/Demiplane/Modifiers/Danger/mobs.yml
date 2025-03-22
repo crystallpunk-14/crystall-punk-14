@@ -44,6 +44,8 @@
     Danger: 0.2
   requiredTags:
   - CP14DemiplaneHerbals
+  blacklistTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobMonsterMosquito
@@ -113,6 +115,8 @@
     Danger: 0.4
   requiredTags:
   - CP14DemiplaneCold
+  blacklistTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14MobIceSpectre
@@ -136,3 +140,49 @@
       count: 2
       minGroupSize: 1
       maxGroupSize: 2
+
+- type: cp14DemiplaneModifier
+  id: MobSlimeElectric
+  levels:
+    min: 6
+    max: 10
+  categories:
+    Danger: 0.3
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeElectric
+      count: 3
+      minGroupSize: 4
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: MobSlimeFire
+  levels:
+    min: 6
+    max: 10
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneHot
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeFire
+      count: 3
+      minGroupSize: 4
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: MobSlimeIce
+  levels:
+    min: 1
+    max: 10
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneCold
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeIce
+      count: 3
+      minGroupSize: 4
+      maxGroupSize: 5
