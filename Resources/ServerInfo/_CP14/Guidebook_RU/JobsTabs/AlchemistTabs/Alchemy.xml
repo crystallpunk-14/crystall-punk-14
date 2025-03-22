@@ -10,15 +10,23 @@
 <Box>
 <GuideEntityEmbed Entity="CP14BlueAmanita"/>
 <GuideEntityEmbed Entity="CP14AgaricMushroom"/>
+<GuideEntityEmbed Entity="CP14Dayflin"/>
 <GuideEntityEmbed Entity="CP14ChromiumSlime"/>
 </Box>
 <Box>
 <GuideEntityEmbed Entity="CP14WildSage"/>
 <GuideEntityEmbed Entity="CP14AirLily"/>
 <GuideEntityEmbed Entity="CP14LumiMushroom"/>
+<GuideEntityEmbed Entity="CP14BloodFlower"/>
 </Box>
-
-
+<Box>
+<GuideEntityEmbed Entity="CP14CrystalAir"/>
+<GuideEntityEmbed Entity="CP14CrystalWater"/>
+<GuideEntityEmbed Entity="CP14CrystalFire"/>
+<GuideEntityEmbed Entity="CP14CrystalOrder"/>
+<GuideEntityEmbed Entity="CP14CrystalChaos"/>
+<GuideEntityEmbed Entity="CP14CrystalEarth"/>
+</Box>
 Большая часть таких "сырых" ингредиентов может быть сначала измельчена при помощи пестика и ступки:
 
 <Box>
@@ -39,29 +47,47 @@
 Так же в вашей науке вам могут помочь следующие инструменты:
 - Пипетка. Позволяет переносить небольшие дозы жидкостей, от 0.25u до 1u
 - Флаконы разных размеров и прочности.
-- Небольшой котел. Неплохая емкость, которую можно греть на алхимической плите.
-- Большой чан. Огромная емкость, которую можно разогревать на костре. Поможет для производства веществ в промышленных масштабах.
+- Котел. Неплохая емкость, вмещающая 100u, которую можно нагревать на костреили алхимической печи.
+- Большой чан. Огромная емкость, вмещающая 100u, которую можно нагревать на костре. Поможет для производства веществ в промышленных масштабах.
 - Алхимическая печь. Печь, работающая на древесном топливе, позволяющая нагревать ваши растворы.
+- Мана-перчатка. Несложная, но эстетически приятная смесь технологии и магических кристаллов, позволяющая оперировать сырой маной: высасывать ее из одних предметов и вливать в другие. Крайне важной функцией перчатки для алхимика является - [color=#5EABEB]Магическое расщеплениe[/color]. Позволяет расщеплять раствор на его составные части. Для использования выберите в панели действий [color=#5EABEB]Магическое расщеплениe[/color] и нажмите на емкость с раствором.
+<GuideEntityEmbed Entity="CP14ActionSpellMagicSplitting"/>
 - Очиститель растворов. Технологичное устройство, убирающая из раствора реагент, которого в нем меньше всего. Требует энергокрисалла для работы.
-
-<Box>
-<GuideEntityEmbed Entity="CP14Cauldron"/>
-<GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
-<GuideEntityEmbed Entity="CP14EssenceCollector"/>
-<GuideEntityEmbed Entity="CP14BaseVat"/>
-</Box>
+- Алхимическая бомба. Сосуд который вмещает 10u.  Будучи наполненным любым реагентом и брошенным на землю, создаст алхимическое облако, которое будет применять на всех существ все реагенты зелья.
+- Тауматургические очки. Очки, позволяющие сканировать предметы видеть эссенции в них.
+- Сборщик эссенций. Запитанный от энергетического кристалла, он начнет всасывать всю парящую в воздухе эссенцию и преобразовывать ее в полезную жидкость.
+- Разделитель эссенций. Устройство, способное расщеплять предметы на эссенции при перегрузке энергией.
 <Box>
 <GuideEntityEmbed Entity="CP14Dropper"/>
 <GuideEntityEmbed Entity="CP14VialTiny"/>
 <GuideEntityEmbed Entity="CP14VialSmall"/>
+<GuideEntityEmbed Entity="CP14VialMedium"/>
 </Box>
 
-## Система базовых реагентов 
+<Box>
+<GuideEntityEmbed Entity="CP14Cauldron"/>
+<GuideEntityEmbed Entity="CP14BaseVat" width="32" height="32"/>
+<GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
+</Box>
+
+<Box>
+<GuideEntityEmbed Entity="CP14ManaOperationGlove"/>
+<GuideEntityEmbed Entity="CP14AlchemySolutionCleaner"/>
+<GuideEntityEmbed Entity="CP14BaseAlchemyBomb"/>
+</Box>
+
+<Box>
+<GuideEntityEmbed Entity="CP14ClothingEyesThaumaturgyGlasses"/>
+<GuideEntityEmbed Entity="CP14EssenceCollector"/>
+<GuideEntityEmbed Entity="CP14EssenceSplitter"/>
+</Box>
+## Система базовых реагентов
 
 .
 
 ## Случайная генерация реакций
 
 .
+
 
 </Document>
