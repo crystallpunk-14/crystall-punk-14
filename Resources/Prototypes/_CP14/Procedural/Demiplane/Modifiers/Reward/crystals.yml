@@ -26,8 +26,6 @@
   generationWeight: 0.1
   categories:
     Reward: 0.1
-  requiredTags: #TODO: Hot places
-  - CP14DemiplaneUnderground
   requiredTags:
   - CP14DemiplaneHot
   layers:
