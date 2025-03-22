@@ -85,7 +85,7 @@
     range: 2
     whitelist:
       components:
-      - Damageable
+      - Flammable
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
