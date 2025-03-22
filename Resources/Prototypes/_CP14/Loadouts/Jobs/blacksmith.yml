@@ -10,3 +10,22 @@
   id: CP14ClothingCloakBlacksmithArpon
   equipment:
     cloak: CP14ClothingCloakBlacksmithArpon
+
+# Gloves 
+
+- type: loadoutGroup
+  id: CP14BlacksmithGloves
+  name: cp14-loadout-blacksmith-gloves
+  loadouts:
+  - CP14ClothingGlovesBlacksmith
+  - CP14ClothingGlovesGirdles
+
+- type: loadout
+  id: CP14ClothingGlovesBlacksmith
+  equipment:
+    gloves: CP14ClothingGlovesBlacksmith
+
+- type: loadout
+  id: CP14ClothingGlovesGirdles
+  equipment:
+    gloves: CP14ClothingGlovesGirdles

@@ -42,3 +42,14 @@
     sprite: _CP14/Clothing/Gloves/jagermeister_gloves.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Gloves/jagermeister_gloves.rsi
+
+- type: entity
+  parent: CP14ClothingGlovesBase
+  id: CP14ClothingGlovesBlacksmith
+  name: blacksmith's gloves
+  description: They say you can get your hands on a newly poured ingot in them. But it's still not worth checking.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Gloves/blacksmith_gloves.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Gloves/blacksmith_gloves.rsi
