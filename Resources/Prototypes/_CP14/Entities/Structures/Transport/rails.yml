@@ -1,0 +1,44 @@
+- type: entity
+  id: CP14RailBase
+  name: railroad
+  categories: [ ForkFiltered ]
+  description: Rails-rails, sleepers-sleepers, the train was running late.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: PlacementReplacement
+    key: CP14Rail
+  - type: Clickable
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+  - type: Sprite
+    drawdepth: ThinWire
+    sprite: _CP14/Structures/Transport/rails.rsi
+    state: rails_0
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: CollideOnAnchor
+  - type: Appearance
+  - type: CableVisualizer
+    statePrefix: rails_
+  - type: CableVis
+    node: power
+  - type: NodeContainer
+    nodes:
+      power:
+        !type:CableNode
+        #nodeGroupID: MVPower

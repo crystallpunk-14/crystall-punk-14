@@ -20,7 +20,7 @@
   components:
   - type: Sprite
     offset: 1, -0.75
-    sprite: _CP14/Structures/Shuttle/wing_small.rsi
+    sprite: _CP14/Structures/Transport/wing_small.rsi
     state: right
 
 - type: entity
@@ -30,7 +30,7 @@
   components:
   - type: Sprite
     offset: -1, -0.75
-    sprite: _CP14/Structures/Shuttle/wing_small.rsi
+    sprite: _CP14/Structures/Transport/wing_small.rsi
     state: left
 
 
@@ -41,7 +41,7 @@
   components:
   - type: Sprite
     offset: -1.75, -1.5
-    sprite: _CP14/Structures/Shuttle/wing_big.rsi
+    sprite: _CP14/Structures/Transport/wing_big.rsi
     state: left
 
 - type: entity
@@ -51,5 +51,5 @@
   components:
   - type: Sprite
     offset: 1.75, -1.5
-    sprite: _CP14/Structures/Shuttle/wing_big.rsi
+    sprite: _CP14/Structures/Transport/wing_big.rsi
     state: right
