@@ -1,0 +1,127 @@
+- type: entity
+  id: CP14MobSlimeBase
+  abstract: true
+  parent: [ CP14SimpleMobBase, MobCombat ]
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        16
+      AggroVisionRadius: !type:Single
+        12
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionSpellSlimeJump
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Mobs/Monster/slime.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: base
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: jump
+    noMovementLayers:
+      movement:
+        state: base
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - ItemMask
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 2
+  - type: Body
+    prototype: Slimes
+    requiredLegs: 1
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 3
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Slime
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+        path: /Audio/Weapons/punch3.ogg
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 3
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-slimes
+    interactFailureString: petting-failure-generic
+  - type: Speech
+    speechVerb: Slime
+    speechSounds: Slime
+  - type: TypingIndicator
+    proto: slime
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        reagents:
+        - ReagentId: Slime
+          Quantity: 50
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EntityStorage
+    isCollidableWhenOpen: true
+    enteringOffset: 0, 0
+    capacity: 2
+    showContents: true
+    occludesLight: false
+  - type: CP14MagicCasterSlowdown
+
+- type: entity
+  id: CP14ActionSpellSlimeJump
+  name: Slime jump
+  description: Jump! JUMP!
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: kick #TODO
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.1
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellThrowUserTo
+      throwPower: 8
+  - type: EntityWorldTargetAction
+    useDelay: 4
+    range: 10
+    itemIconStyle: BigAction
+    icon:
+      sprite: _CP14/Actions/Spells/physical.rsi
+      state: kick #TODO
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      hidden: true
+      breakOnMove: false
+      breakOnDamage: false
+      castDelay: 1
