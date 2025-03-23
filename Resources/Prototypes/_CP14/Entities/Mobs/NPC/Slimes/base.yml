@@ -78,8 +78,10 @@
       slime:
         maxVol: 50
         reagents:
-        - ReagentId: CP14BasicEffectEmpty #TODO
-          Quantity: 50
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 20
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 30
   - type: Destructible
     thresholds:
     - trigger:

@@ -18,9 +18,9 @@
       slime:
         maxVol: 50
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14ChromiumSlime
           Quantity: 20
-        - ReagentId: CP14BasicEffectDamageCold #TODO: Special slime reagent (loot)
+        - ReagentId: CP14EssenceEnergia
           Quantity: 30
   - type: MeleeWeapon
     altDisarm: false
