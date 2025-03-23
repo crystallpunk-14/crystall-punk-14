@@ -82,7 +82,7 @@
   parent: BaseHandheldInstrument
   id: SkeletonGuitarInstrument
   name: skelute
-  description: A real weapon for brutal rock skeletons. What does "rock" mean?
+  description: A true weapon for brutal rock skeletons. What does "rock" mean?
   categories: [ ForkFiltered ]
   components:
   - type: Instrument
