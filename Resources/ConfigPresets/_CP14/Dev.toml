@@ -1,5 +1,5 @@
 [whitelist]
-enabled = true
+enabled = false
 
 [log]
 path = "logs"
@@ -14,7 +14,7 @@ bindto = "::,0.0.0.0"
 max_connections = 100
 
 [game]
-hostname = "⚔️  CrystallEdge [RU] ⚔️ Status: Whitelist only"
+hostname = "⚔️  CrystallEdge [RU] ⚔️ Status: Открытое тестирование"
 desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in fantasy style"
 lobbyenabled = true
 soft_max_players = 40
@@ -61,4 +61,4 @@ enable_during_round = true
 
 [cp14]
 discord_auth_enabled = true
-closet_beta_test = true
+closet_beta_test = false
