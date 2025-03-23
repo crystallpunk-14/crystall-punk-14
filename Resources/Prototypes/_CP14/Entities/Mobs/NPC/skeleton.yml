@@ -13,8 +13,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonHalberd
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Halebard
   components:
@@ -28,8 +26,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonSword
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Sword
   components:
@@ -40,8 +36,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonDodger
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Dodger
   components:
@@ -55,8 +49,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonArcher
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Archer
   components:
@@ -67,8 +59,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonWizard
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Wizard
   components:
@@ -88,8 +78,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonBard
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Bard
   components:
