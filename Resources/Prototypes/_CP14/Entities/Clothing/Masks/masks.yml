@@ -108,7 +108,7 @@
 - type: entity
   parent: CP14ClothingMaskBoneMask
   id: CP14ClothingMaskBoneMaskMind
-  categories: [ DoNotMap ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: BlockMovement
   - type: Actions

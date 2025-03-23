@@ -66,7 +66,7 @@
 
   <Box>
     <GuideEntityEmbed Entity="CP14Cauldron"/>
-    <GuideEntityEmbed Entity="CP14BaseVat" width="32" height="32"/>
+    <GuideEntityEmbed Entity="CP14BaseVat"/>
     <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
   </Box>
 
