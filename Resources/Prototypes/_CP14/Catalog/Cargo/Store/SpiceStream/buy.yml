@@ -164,35 +164,6 @@
         amount: 5
       - id: CP14PenFeather
         amount: 3
-
-
-- type: storePositionBuy
-  id: CP14BookKnowledgeMetallMelting
-  code: KNOWLEDGE_MELTING
-  price: 100
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14BookKnowledgeMetallMelting
-
-- type: storePositionBuy
-  id: CP14BookKnowledgeMetallForging
-  code: KNOWLEDGE_FORGING
-  price: 100
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14BookKnowledgeMetallForging
-
-- type: storePositionBuy
-  id: CP14BookKnowledgeGlasswork
-  code: KNOWLEDGE_GLASSWORK
-  price: 100
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14BookKnowledgeGlasswork
-
  
 - type: storePositionBuy
   id: EnergyCrystals
