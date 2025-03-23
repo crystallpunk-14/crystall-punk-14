@@ -81,8 +81,8 @@
 - type: entity
   parent: BaseHandheldInstrument
   id: SkeletonGuitarInstrument
-  name: skeleton guitar
-  description: It must be a skelute
+  name: skelute
+  description: A real weapon for brutal rock skeletons. What does "rock" mean?
   categories: [ ForkFiltered ]
   components:
   - type: Instrument
