@@ -33,18 +33,6 @@
         HorizontalExpand="True"
         AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
         />
-    <!-- CP14 UI part -->
-    <ui:MenuButton
-        Name="CP14KnowledgeButton"
-        Access="Internal"
-        Icon="{xe:Tex '/Textures/Interface/students-cap.svg.192dpi.png'}"
-        ToolTip="{Loc 'cp14-game-hud-open-knowledge-menu-button-tooltip'}"
-        BoundKey = "{x:Static is:ContentKeyFunctions.CP14OpenKnowledgeMenu}"
-        MinSize="42 64"
-        HorizontalExpand="True"
-        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
-    />
-    <!-- CP14 UI part end -->
     <ui:MenuButton
         Name="CharacterButton"
         Access="Internal"

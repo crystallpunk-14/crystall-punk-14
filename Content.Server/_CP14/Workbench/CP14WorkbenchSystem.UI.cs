@@ -30,13 +30,22 @@ public sealed partial class CP14WorkbenchSystem
             if (!_proto.TryIndex(recipeId, out var indexedRecipe))
                 continue;
 
-            //if (indexedRecipe.KnowledgeRequired is not null)
-            //{
-            //    if (!_knowledge.HasKnowledge(user, indexedRecipe.KnowledgeRequired.Value))
-            //        continue;
-            //}
+            var canCraft = CanCraftRecipe(indexedRecipe, placedEntities, user);
+            var hidden = false;
 
-            var entry = new CP14WorkbenchUiRecipesEntry(recipeId, CanCraftRecipe(indexedRecipe, placedEntities, user));
+            foreach (var requirement in indexedRecipe.Requirements)
+            {
+                if (requirement.HideRecipe)
+                {
+                    hidden = true;
+                    break;
+                }
+            }
+
+            if (hidden && !canCraft)
+                continue;
+
+            var entry = new CP14WorkbenchUiRecipesEntry(recipeId, canCraft);
 
             recipes.Add(entry);
         }

@@ -310,11 +310,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.TextCompleteNext);
             AddButton(EngineKeyFunctions.TextCompletePrev);
 
-            //CP14
-            AddHeader("ui-options-header-cp14");
-            AddButton(ContentKeyFunctions.CP14OpenKnowledgeMenu);
-            //CP14 end
-
             foreach (var control in _keyControls.Values)
             {
                 UpdateKeyControl(control);

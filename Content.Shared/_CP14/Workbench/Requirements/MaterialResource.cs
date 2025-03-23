@@ -4,6 +4,7 @@
  */
 
 using Content.Shared._CP14.Material;
+using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Materials;
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
@@ -13,13 +14,20 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
 {
+    public override bool HideRecipe { get; set; } = false;
+
     [DataField(required: true)]
     public ProtoId<MaterialPrototype> Material;
 
     [DataField]
     public int Count = 1;
 
-    public override bool CheckRequirement(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override bool CheckRequirement(
+        EntityManager entManager,
+        IPrototypeManager protoManager,
+        HashSet<EntityUid> placedEntities,
+        EntityUid user,
+        CP14WorkbenchRecipePrototype recipe)
     {
         var count = 0;
         foreach (var ent in placedEntities)

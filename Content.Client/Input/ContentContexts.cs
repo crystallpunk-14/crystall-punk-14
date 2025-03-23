@@ -123,10 +123,6 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.OpenDecalSpawnWindow);
             common.AddFunction(ContentKeyFunctions.OpenAdminMenu);
             common.AddFunction(ContentKeyFunctions.OpenGuidebook);
-
-            //CP14 Keys
-            human.AddFunction(ContentKeyFunctions.CP14OpenKnowledgeMenu);
-            //CP14 Keys end
         }
     }
 }

@@ -95,11 +95,5 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory CP14RitualBook = new("cp14-verb-categories-ritual-book", null); //CP14
 
         public static readonly VerbCategory CP14CurrencyConvert = new("cp14-verb-categories-currency-converter", null); //CP14
-
-        public static readonly VerbCategory CP14KnowledgeAdd = new("cp14-verb-categories-knowledge-add", null); //CP14
-
-        public static readonly VerbCategory CP14KnowledgeRemove = new("cp14-verb-categories-knowledge-remove", null); //CP14
-
-        public static readonly VerbCategory CP14KnowledgeLearn = new("cp14-verb-categories-knowledge-learn", null); //CP14
     }
 }
