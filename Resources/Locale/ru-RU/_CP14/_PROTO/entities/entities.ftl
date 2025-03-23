@@ -678,7 +678,7 @@ ent-CP14ClothingHeadGildmaster = шляпа гильдмастера
     .desc = Знак безграничного опыта и чести.
 
 ent-CP14ClothingHeadBowler = шляпа-котелок
-    .desc = В нем чувствуется аристократизм...  
+    .desc = В нем чувствуется аристократизм...
 
 ent-CP14ClothingHeadBowlerGolden = позолоченная шляпа-котелок
     .desc = Какая изысканная шляпа. Эту шляпу предпочитают носить только утонченные люди.
@@ -3577,7 +3577,7 @@ ent-CP14BarrelWildSageSap = { ent-CP14BaseBarrel }
 
 ent-CP14BarrelGroundQuartz = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }
-    .suffix = Грубый кварц
+    .suffix = Размолотый кварц
 
 ent-CP14BarrelLumiMushroom = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }
