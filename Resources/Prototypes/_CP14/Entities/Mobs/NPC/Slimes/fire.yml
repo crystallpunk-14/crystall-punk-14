@@ -85,7 +85,7 @@
     range: 2
     whitelist:
       components:
-      - Flammable
+      - MobState
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
