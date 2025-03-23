@@ -76,6 +76,7 @@
           - id: CP14ScrapIron
           - id: CP14Snowball
           - id: CP14CopperCoin1
+          - id: CP14ModularInlayQuartzWater
           - id: CP14CrystalShardWater
             weight: 3
  
