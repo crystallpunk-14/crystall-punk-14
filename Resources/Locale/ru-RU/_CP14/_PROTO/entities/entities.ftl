@@ -1815,7 +1815,7 @@ ent-CP14KeyRingAlchemist = { ent-CP14BaseKeyRing }
 
 ent-CP14KeyRingMerchant = { ent-CP14BaseKeyRing }
     .desc = { ent-CP14BaseKeyRing.desc }
-    .suffix = Банкир
+    .suffix = Торговец
 
 ent-CP14KeyRingGuard = { ent-CP14BaseKeyRing }
     .desc = { ent-CP14BaseKeyRing.desc }
@@ -3021,8 +3021,8 @@ ent-CP14WallmountFlagBlacksmith = гобелен кузнеца
 ent-CP14WallmountFlagTavern = гобелен таверны
     .desc = Гобелен с символом пива, указывающий на то, что здесь находится таверна.
 
-ent-CP14WallmountFlagBank = гобелен банка
-    .desc = Гобелен с символом денег, указывающий на то, что здесь находится банк.
+ent-CP14WallmountFlagBank = гобелен торговца
+    .desc = Гобелен с символом денег, указывающий на то, что здесь находится лавка торговца.
 
 ent-CP14WallmountFlagBankVault = гобелен банка
     .desc = Гобелен с символом сейфы, указывающий что здесь находится хранилище банка.
