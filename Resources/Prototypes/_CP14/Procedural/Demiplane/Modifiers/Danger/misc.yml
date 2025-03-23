@@ -46,7 +46,7 @@
 - type: cp14DemiplaneModifier
   id: Explosive
   levels:
-    min: 7
+    min: 6
     max: 10
   name: cp14-modifier-explosive
   generationWeight: 0.25
