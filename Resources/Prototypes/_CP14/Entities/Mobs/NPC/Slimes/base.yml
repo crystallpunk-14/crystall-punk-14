@@ -1,7 +1,8 @@
 - type: entity
   id: CP14MobSlimeBase
-  abstract: true
   parent: [ CP14SimpleMobBase, MobCombat ]
+  name: slime
+  description: A clot of semi-intelligent slime sensitive to the elemental elements. And happy to slime the skin off your face.
   components:
   - type: HTN
     rootTask:
@@ -10,9 +11,9 @@
       NavSmash: !type:Bool
         true
       VisionRadius: !type:Single
-        16
-      AggroVisionRadius: !type:Single
         12
+      AggroVisionRadius: !type:Single
+        8
   - type: NPCUseActionOnTarget
     actionId: CP14ActionSpellSlimeJump
   - type: Sprite
@@ -62,7 +63,7 @@
     animation: WeaponArcPunch
     damage:
       types:
-        Blunt: 3
+        Blunt: 5
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-slimes
@@ -75,8 +76,9 @@
   - type: SolutionContainerManager
     solutions:
       slime:
+        maxVol: 50
         reagents:
-        - ReagentId: Slime
+        - ReagentId: CP14BasicEffectEmpty #TODO
           Quantity: 50
   - type: Destructible
     thresholds:
@@ -95,6 +97,18 @@
     showContents: true
     occludesLight: false
   - type: CP14MagicCasterSlowdown
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: CP14OreCopper1
+          - id: CP14OreIron1
+          - id: CP14ScrapCopper
+          - id: CP14ScrapIron
+          - id: CP14CopperCoin1
+            weight: 3
 
 - type: entity
   id: CP14ActionSpellSlimeJump
