@@ -1,0 +1,5 @@
+- type: cp14SkillTree
+  id: Blacksmithing
+  name: cp14-skill-tree-blaksmithing-name
+  desc: cp14-skill-tree-blaksmithing-desc
+  color: "#b52400"

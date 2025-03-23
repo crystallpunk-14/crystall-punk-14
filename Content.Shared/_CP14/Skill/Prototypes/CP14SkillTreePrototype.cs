@@ -14,7 +14,7 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
     public LocId Name;
 
     [DataField]
-    public LocId? Description;
+    public LocId? Desc;
 
     [DataField]
     public Color Color;

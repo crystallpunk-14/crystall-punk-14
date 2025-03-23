@@ -30,19 +30,19 @@ public sealed partial class CP14WorkbenchSystem
             if (!_proto.TryIndex(recipeId, out var indexedRecipe))
                 continue;
 
-            var canCraft = CanCraftRecipe(indexedRecipe, placedEntities, user);
+            var canCraft = true;
             var hidden = false;
 
             foreach (var requirement in indexedRecipe.Requirements)
             {
-                if (requirement.HideRecipe)
+                if (!requirement.CheckRequirement(EntityManager, _proto, placedEntities, user, indexedRecipe))
                 {
-                    hidden = true;
-                    break;
+                    canCraft = false;
+                    hidden = requirement.HideRecipe;
                 }
             }
 
-            if (hidden && !canCraft)
+            if (hidden)
                 continue;
 
             var entry = new CP14WorkbenchUiRecipesEntry(recipeId, canCraft);

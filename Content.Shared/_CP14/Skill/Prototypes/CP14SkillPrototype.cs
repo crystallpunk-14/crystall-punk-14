@@ -16,7 +16,7 @@ public sealed partial class CP14SkillPrototype : IPrototype
     public LocId Name;
 
     [DataField]
-    public LocId? Description;
+    public LocId? Desc;
 
     [DataField(required: true)]
     public ProtoId<CP14SkillTreePrototype> Tree = default!;
@@ -25,5 +25,5 @@ public sealed partial class CP14SkillPrototype : IPrototype
     public SpriteSpecifier Icon = default!;
 
     [DataField(required: true)]
-    public HashSet<CP14SkillEffectAddWorkbenchKnowledge> Effects = new();
+    public List<CP14SkillEffect> Effects = new();
 }
