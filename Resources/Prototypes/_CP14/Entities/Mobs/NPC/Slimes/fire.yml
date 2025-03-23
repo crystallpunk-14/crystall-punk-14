@@ -60,6 +60,7 @@
           - id: CP14ScrapCopper
           - id: CP14ScrapIron
           - id: CP14FoodMeatLambCutletCooked
+          - id: CP14CopperCoin1
           - id: CP14CrystalShardFire
             weight: 3
 

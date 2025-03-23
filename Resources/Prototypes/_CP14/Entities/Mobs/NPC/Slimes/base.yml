@@ -46,9 +46,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 2
-  - type: Body
-    prototype: Slimes
-    requiredLegs: 1
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Effects/Footsteps/slime1.ogg
@@ -114,8 +111,9 @@
     - !type:CP14SpellThrowUserTo
       throwPower: 8
   - type: EntityWorldTargetAction
-    useDelay: 4
+    useDelay: 8
     range: 10
+    checkCanAccess: false
     itemIconStyle: BigAction
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
@@ -125,3 +123,4 @@
       breakOnMove: false
       breakOnDamage: false
       castDelay: 1
+    raiseOnUser: true
