@@ -81097,9 +81097,6 @@ entities:
       parent: 2
     - type: Storage
       storedItems:
-        7131:
-          position: 0,0
-          _rotation: South
         7132:
           position: 1,0
           _rotation: South
