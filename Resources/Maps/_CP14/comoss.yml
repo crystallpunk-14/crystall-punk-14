@@ -81106,7 +81106,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 7131
           - 7132
   - uid: 14258
     components:

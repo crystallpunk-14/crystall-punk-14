@@ -17,7 +17,7 @@ public sealed class CP14WorkbenchKnowledgeSystem : SharedCP14WorkbenchKnowledgeS
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
-    public bool TryAdd(Entity<CP14WorkbenchKnowledgeStorageComponent?> entity, ProtoId<CP14WorkbenchRecipePrototype> recipeId, bool force = false, bool silent = false)
+    public override bool TryAdd(Entity<CP14WorkbenchKnowledgeStorageComponent?> entity, ProtoId<CP14WorkbenchRecipePrototype> recipeId, bool force = false, bool silent = false)
     {
         if (!Resolve(entity, ref entity.Comp, false))
             return false;
@@ -57,7 +57,7 @@ public sealed class CP14WorkbenchKnowledgeSystem : SharedCP14WorkbenchKnowledgeS
         return true;
     }
 
-    public bool TryRemove(Entity<CP14WorkbenchKnowledgeStorageComponent?> entity, ProtoId<CP14WorkbenchRecipePrototype> proto, bool silent = false)
+    public override bool TryRemove(Entity<CP14WorkbenchKnowledgeStorageComponent?> entity, ProtoId<CP14WorkbenchRecipePrototype> proto, bool silent = false)
     {
         if (!Resolve(entity, ref entity.Comp, false))
             return false;
