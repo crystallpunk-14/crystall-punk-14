@@ -10,7 +10,6 @@
     stack: CP14IronBar
     count: 2
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveIronPlate
 
 - type: CP14Recipe
@@ -22,7 +21,6 @@
     stack: CP14GoldBar
     count: 2
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveGoldPlate
 
 - type: CP14Recipe
@@ -34,7 +32,6 @@
     stack: CP14CopperBar
     count: 2
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveCopperPlate
 
 - type: CP14Recipe
@@ -46,7 +43,6 @@
     stack: CP14MithrilBar
     count: 2
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveMithrilPlate
 
 # Chainmail
@@ -60,7 +56,6 @@
     stack: CP14IronBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveIronChainmail
 
 - type: CP14Recipe
@@ -72,7 +67,6 @@
     stack: CP14GoldBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveGoldChainmail
 
 - type: CP14Recipe
@@ -84,7 +78,6 @@
     stack: CP14CopperBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveCopperChainmail
 
 - type: CP14Recipe
@@ -96,5 +89,4 @@
     stack: CP14MithrilBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGreaveMithrilChainmail

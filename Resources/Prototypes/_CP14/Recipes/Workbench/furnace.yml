@@ -7,7 +7,6 @@
     material: CP14Copper
     count: 10
   - !type:KnowledgeRequired
-    knowledge: MetallMelting
   result: CP14CopperBar1
 
 - type: CP14Recipe
@@ -19,7 +18,6 @@
     material: CP14Iron
     count: 10
   - !type:KnowledgeRequired
-    knowledge: MetallMelting
   result: CP14IronBar1
 
 - type: CP14Recipe
@@ -31,7 +29,6 @@
     material: CP14Gold
     count: 10
   - !type:KnowledgeRequired
-    knowledge: MetallMelting
   result: CP14GoldBar1
 
 - type: CP14Recipe
@@ -43,7 +40,6 @@
     material: CP14Mithril
     count: 10
   - !type:KnowledgeRequired
-    knowledge: MetallMelting
   result: CP14MithrilBar1
 
 - type: CP14Recipe
@@ -54,7 +50,6 @@
   - !type:ProtoIdResource
     protoId: CP14CrystalShardBase
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14GlassSheet1
 
 - type: CP14Recipe
@@ -66,7 +61,6 @@
     protoId: CP14GlassShard
     count: 2
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14GlassSheet1
 
 - type: CP14Recipe
@@ -78,7 +72,6 @@
     stack: CP14GlassSheet
     count: 1
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14VialTiny
 
 - type: CP14Recipe
@@ -93,7 +86,6 @@
     stack: CP14GlassSheet
     count: 1
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14VialTinyReinforced
 
 - type: CP14Recipe
@@ -105,7 +97,6 @@
     stack: CP14GlassSheet
     count: 2
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14VialSmall
 
 - type: CP14Recipe
@@ -120,7 +111,6 @@
     stack: CP14GlassSheet
     count: 2
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14VialSmallReinforced
 
 - type: CP14Recipe
@@ -132,7 +122,6 @@
     stack: CP14GlassSheet
     count: 6
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14VialMedium
 
 - type: CP14Recipe
@@ -147,7 +136,6 @@
     stack: CP14GlassSheet
     count: 6
   - !type:KnowledgeRequired
-    knowledge: Glasswork
   result: CP14VialMediumReinforced
 
 - type: CP14Recipe
@@ -162,8 +150,5 @@
     stack: CP14GoldBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: Glasswork
-  - !type:KnowledgeRequired
-    knowledge: MetallMelting
   result: CP14BaseAlchemyBomb
   

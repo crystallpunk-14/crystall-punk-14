@@ -9,7 +9,6 @@
     stack: CP14CopperBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSharpCopper
 
 - type: CP14Recipe
@@ -21,7 +20,6 @@
     stack: CP14IronBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSharpIron
 
 - type: CP14Recipe
@@ -33,7 +31,6 @@
     stack: CP14GoldBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSharpGold
 
 - type: CP14Recipe
@@ -45,7 +42,6 @@
     stack: CP14MithrilBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSharpMithril
 
 # Sturdy garde
@@ -59,7 +55,6 @@
     stack: CP14CopperBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSturdyCopper
 
 - type: CP14Recipe
@@ -71,7 +66,6 @@
     stack: CP14IronBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSturdyIron
 
 - type: CP14Recipe
@@ -83,7 +77,6 @@
     stack: CP14GoldBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSturdyGold
 
 - type: CP14Recipe
@@ -95,5 +88,4 @@
     stack: CP14MithrilBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGardeSturdyMithril

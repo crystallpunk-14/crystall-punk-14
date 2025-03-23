@@ -66852,13 +66852,6 @@ entities:
       rot: 6.283185307179586 rad
       pos: 36.98452,-65.53377
       parent: 2
-- proto: CP14BookKnowledgeClothingSewing
-  entities:
-  - uid: 14134
-    components:
-    - type: Transform
-      pos: -29.079868,-22.234352
-      parent: 2
 - proto: CP14BowCombat
   entities:
   - uid: 17516

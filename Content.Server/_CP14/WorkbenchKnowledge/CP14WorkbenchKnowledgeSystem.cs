@@ -17,11 +17,6 @@ public sealed class CP14WorkbenchKnowledgeSystem : SharedCP14WorkbenchKnowledgeS
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
-
     public bool TryAdd(Entity<CP14WorkbenchKnowledgeStorageComponent?> entity, ProtoId<CP14WorkbenchRecipePrototype> recipeId, bool force = false, bool silent = false)
     {
         if (!Resolve(entity, ref entity.Comp, false))
@@ -39,7 +34,6 @@ public sealed class CP14WorkbenchKnowledgeSystem : SharedCP14WorkbenchKnowledgeS
         _adminLogger.Add(LogType.Mind, LogImpact.Medium, $"{EntityManager.ToPrettyString(entity):player} learned new workbench recipe: {Loc.GetString(knowledge.ID)}");
         Dirty(entity);
 
-        // TODO: coding on a sleepy head is a bad idea. Remove duplicate variables. >:(
         if (silent)
             return true;
 
@@ -97,7 +91,6 @@ public sealed class CP14WorkbenchKnowledgeSystem : SharedCP14WorkbenchKnowledgeS
             default,
             false,
             mindComp.Session.Channel);
-
 
         return true;
     }

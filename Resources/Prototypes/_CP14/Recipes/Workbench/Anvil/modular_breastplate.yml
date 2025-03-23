@@ -10,7 +10,6 @@
     stack: CP14IronBar
     count: 5
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorIronCuirass
 
 - type: CP14Recipe
@@ -22,7 +21,6 @@
     stack: CP14GoldBar
     count: 5
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorGoldCuirass
 
 - type: CP14Recipe
@@ -34,7 +32,6 @@
     stack: CP14CopperBar
     count: 5
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorCopperCuirass
 
 - type: CP14Recipe
@@ -46,7 +43,6 @@
     stack: CP14MithrilBar
     count: 5
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorMithrilCuirass
 
 # Infantry cuirass
@@ -60,7 +56,6 @@
     stack: CP14IronBar
     count: 6
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorIronInfantryCuirass
 
 - type: CP14Recipe
@@ -72,7 +67,6 @@
     stack: CP14GoldBar
     count: 6
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorGoldInfantryCuirass
 
 - type: CP14Recipe
@@ -84,7 +78,6 @@
     stack: CP14CopperBar
     count: 6
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorCopperInfantryCuirass
 
 - type: CP14Recipe
@@ -96,7 +89,6 @@
     stack: CP14MithrilBar
     count: 6
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorMithrilInfantryCuirass
 
 # Chainmail
@@ -110,7 +102,6 @@
     stack: CP14IronBar
     count: 4
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorIronChainmail
 
 - type: CP14Recipe
@@ -122,7 +113,6 @@
     stack: CP14GoldBar
     count: 4
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorGoldChainmail
 
 - type: CP14Recipe
@@ -134,7 +124,6 @@
     stack: CP14CopperBar
     count: 4
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorCopperChainmail
 
 - type: CP14Recipe
@@ -146,5 +135,4 @@
     stack: CP14MithrilBar
     count: 4
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ArmorMithrilChainmail

@@ -10,7 +10,6 @@
     stack: CP14IronBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularTipIronArrow
   resultCount: 4
 
@@ -23,7 +22,6 @@
     stack: CP14GoldBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularTipGoldArrow
   resultCount: 4
 
@@ -36,7 +34,6 @@
     stack: CP14CopperBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularTipCopperArrow
   resultCount: 4
 
@@ -49,6 +46,5 @@
     stack: CP14MithrilBar
     count: 1
   - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularTipMithrilArrow
   resultCount: 4
