@@ -9,13 +9,6 @@ public sealed class ClientCP14KnowledgeSystem : SharedCP14WorkbenchKnowledgeSyst
 {
     [Dependency] private readonly IPlayerManager _players = default!;
 
-
-    public override void Initialize()
-    {
-        base.Initialize();
-
-    }
-
     public readonly record struct KnowledgeData(
         EntityUid Entity,
         HashSet<ProtoId<CP14WorkbenchRecipePrototype>> AllKnowledge

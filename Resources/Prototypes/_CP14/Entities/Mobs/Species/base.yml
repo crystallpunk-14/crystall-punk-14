@@ -231,6 +231,7 @@
       types:
         Cold: 0.25
         Bloodloss: 0.25
+  - type: CP14WorkbenchKnowledgeStorage
 
 
 - type: entity
@@ -309,7 +310,6 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
-  - type: CP14KnowledgeStorage
 
 - type: entity
   save: false
