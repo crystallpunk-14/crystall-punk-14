@@ -5,7 +5,13 @@
   color: "#b52400"
   frameIcon:
     sprite: _CP14/Interface/Skills/skill_tree.rsi
-    state: blacksmithing
+    state: base
   hoveredIcon:
     sprite: _CP14/Interface/Skills/skill_tree.rsi
     state: hovered
+  selectedIcon:
+    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    state: selected
+  learnedIcon:
+    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    state: learned

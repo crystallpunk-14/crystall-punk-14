@@ -8,10 +8,16 @@
   "copyright": "Created by TheShuEd (Github)",
   "states": [
     {
-      "name": "blacksmithing"
+      "name": "base"
     },
     {
       "name": "hovered"
+    },
+    {
+      "name": "selected"
+    },
+    {
+      "name": "learned"
     }
   ]
 }

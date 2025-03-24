@@ -3,12 +3,14 @@ using Content.Client._CP14.UserInterface.Systems.Skill.Window;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._CP14.Skill.Components;
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
+using Robust.Client.Utility;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -24,6 +26,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     [UISystemDependency] private readonly CP14ClientSkillSystem _skill = default!;
 
     private CP14SkillWindow? _window;
+    private CP14SkillPrototype? _selectedSkill;
 
     private MenuButton? SkillButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.CP14SkillButton;
 
@@ -38,12 +41,16 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             .Bind(ContentKeyFunctions.CP14OpenSkillMenu,
                 InputCmdHandler.FromDelegate(_ => ToggleWindow()))
             .Register<CP14SkillUIController>();
+
+        _window.GraphControl.OnNodeSelected += SelectNode;
     }
 
     public void OnStateExited(GameplayState state)
     {
         if (_window != null)
         {
+            _window.GraphControl.OnNodeSelected -= SelectNode;
+
             _window.Dispose();
             _window = null;
         }
@@ -93,6 +100,27 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     private void ActivateButton()
     {
         SkillButton!.Pressed = true;
+    }
+
+    private void SelectNode(CP14SkillPrototype? skill)
+    {
+        if (_window is null)
+            return;
+
+        _selectedSkill = skill;
+
+        if (skill == null)
+        {
+            _window.SkillName.Text = string.Empty;
+            _window.SkillDescription.Text = string.Empty;
+            _window.SkillView.Texture = null;
+        }
+        else
+        {
+            _window.SkillName.Text = Loc.GetString(skill.Name);
+            _window.SkillDescription.Text = Loc.GetString(skill.Desc ?? string.Empty);
+            _window.SkillView.Texture = skill.Icon.Frame0();
+        }
     }
 
     private void SkillUpdate(SkillMenuData data)

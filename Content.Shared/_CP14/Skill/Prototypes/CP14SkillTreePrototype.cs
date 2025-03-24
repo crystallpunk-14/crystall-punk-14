@@ -20,6 +20,12 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
     [DataField(required: true)]
     public SpriteSpecifier HoveredIcon = default!;
 
+    [DataField(required: true)]
+    public SpriteSpecifier SelectedIcon = default!;
+
+    [DataField(required: true)]
+    public SpriteSpecifier LearnedIcon = default!;
+
     [DataField]
     public LocId? Desc;
 
