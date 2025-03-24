@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by TheShuEd (Github)",
+  "states": [
+    {
+      "name": "blacksmithing"
+    },
+    {
+      "name": "hovered"
+    }
+  ]
+}

@@ -25,6 +25,8 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
     private CP14SkillPrototype? _hoveredNode;
     private CP14SkillPrototype? _selectedNode;
 
+    private float GridSize = 25f;
+
     public event Action<CP14SkillPrototype>? OnNodeSelected;
 
     public CP14SkillTreeGraphControl()
@@ -33,6 +35,9 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         RobustXamlLoader.Load(this);
 
         _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
+        _proto.PrototypesReloaded += _ => _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
+
+        _tree = _proto.Index<CP14SkillTreePrototype>("Blacksmithing");
     }
 
     public void SetPlayer(Entity<CP14SkillStorageComponent>? player)
@@ -45,26 +50,56 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         base.Draw(handle);
 
         _hoveredNode = null;
-        if (_player == null /*|| _tree == null*/)
+        if (_player == null || _tree == null)
         {
             return;
         }
 
         var cursor = (UserInterfaceManager.MousePositionScaled.Position * UIScale) - GlobalPixelPosition;
+        var playerSkills = _player.Value.Comp.Skills;
 
-        var x = 0;
-        foreach (var skill in _player.Value.Comp.Skills)
+        var globalOffset = new Vector2(60, 60);
+
+        //Draw connection lines
+        foreach (var skill in _allSkills)
         {
-            if (!_proto.TryIndex(skill, out var indexedSkill))
+            if (skill.Tree != _tree)
                 continue;
 
-            //if (skill.Tree != _tree)
-            //{
-            //    continue;
-            //}
+            var fromPos = skill.SkillUiPosition * GridSize * UIScale + globalOffset;
 
-            handle.DrawTexture(indexedSkill.Icon.Frame0(), new Vector2(x * 10, x * 10), Color.White);
-            x += 1;
+            foreach (var prerequisite in skill.Prerequisites)
+            {
+                if (!_proto.TryIndex(prerequisite, out var prerequisiteSkill))
+                    continue;
+
+                var toPos = prerequisiteSkill.SkillUiPosition * GridSize * UIScale + globalOffset;
+                var color = playerSkills.Contains(prerequisite) ? Color.White : Color.White;
+                handle.DrawLine(fromPos, toPos, color);
+            }
+        }
+
+        //Draw skill icons over lines
+        foreach (var skill in _allSkills)
+        {
+
+            if (skill.Tree != _tree)
+                continue;
+
+            var texture = skill.Icon.Frame0();
+            var pos = skill.SkillUiPosition * GridSize * UIScale + globalOffset;
+            var iconSize = new Vector2(texture.Width, texture.Height) * 2;
+            var iconQuad = new UIBox2(pos - iconSize / 2, pos + iconSize / 2);
+
+            var hovered = (cursor - pos).LengthSquared() <= (iconSize.X / 2) * (iconSize.X / 2);
+
+            handle.DrawTextureRect(_tree.FrameIcon.Frame0(), iconQuad, Color.White);
+            if (hovered)
+            {
+                _hoveredNode = skill;
+                handle.DrawTextureRect(_tree.HoveredIcon.Frame0(), iconQuad, Color.White);
+            }
+            handle.DrawTextureRect(texture, iconQuad, Color.White);
         }
     }
 }

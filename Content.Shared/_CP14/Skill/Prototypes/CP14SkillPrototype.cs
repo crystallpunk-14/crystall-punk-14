@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared._CP14.Skill.Specials;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -20,6 +21,12 @@ public sealed partial class CP14SkillPrototype : IPrototype
 
     [DataField(required: true)]
     public ProtoId<CP14SkillTreePrototype> Tree = default!;
+
+    [DataField]
+    public HashSet<ProtoId<CP14SkillPrototype>> Prerequisites = new();
+
+    [DataField(required: true)]
+    public Vector2 SkillUiPosition = default!;
 
     [DataField(required: true)]
     public SpriteSpecifier Icon = default!;

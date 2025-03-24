@@ -3,3 +3,9 @@
   name: cp14-skill-tree-blaksmithing-name
   desc: cp14-skill-tree-blaksmithing-desc
   color: "#b52400"
+  frameIcon:
+    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    state: blacksmithing
+  hoveredIcon:
+    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    state: hovered

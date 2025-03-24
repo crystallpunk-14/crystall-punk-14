@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Skill.Prototypes;
 
@@ -12,6 +13,12 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
 
     [DataField(required: true)]
     public LocId Name;
+
+    [DataField(required: true)]
+    public SpriteSpecifier FrameIcon = default!;
+
+    [DataField(required: true)]
+    public SpriteSpecifier HoveredIcon = default!;
 
     [DataField]
     public LocId? Desc;
