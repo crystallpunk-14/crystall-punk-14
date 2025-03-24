@@ -284,7 +284,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothinShirtMeidDress
+  id: CP14ClothinShirtMaidDress
   name: maid's dress
   components:
   - type: Sprite
