@@ -2,6 +2,7 @@ using Content.Client._CP14.Skill;
 using Content.Client._CP14.UserInterface.Systems.Skill.Window;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.Player;
@@ -99,7 +100,10 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         if (_window is null)
             return;
 
-        _window.SkillContent.RemoveAllChildren();
+        if (!EntityManager.TryGetComponent<CP14SkillStorageComponent>(data.Entity, out var storage))
+            return;
+
+        _window.GraphControl.SetPlayer((data.Entity, storage));
 
         var (entity, skills) = data;
 
@@ -115,8 +119,6 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 ToolTip = Loc.GetString(indexedSkill.Desc ?? string.Empty),
                 TextAlign = Label.AlignMode.Center,
             };
-
-            _window.SkillContent.AddChild(knowledgeButton);
         }
     }
 

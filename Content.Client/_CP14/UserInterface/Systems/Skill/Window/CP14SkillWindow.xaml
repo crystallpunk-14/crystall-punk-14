@@ -1,12 +1,70 @@
 <window:CP14SkillWindow
     xmlns="https://spacestation14.io"
     xmlns:window="clr-namespace:Content.Client._CP14.UserInterface.Systems.Skill.Window"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:ui="clr-namespace:Content.Client.Xenoarchaeology.Ui"
+    xmlns:ui1="clr-namespace:Content.Client._CP14.Skill.Ui"
     Title="{Loc 'cp14-skill-info-title'}"
-    MinWidth="400"
-    MinHeight="200">
-    <ScrollContainer>
-        <BoxContainer Name="SkillContent" Margin="5" Access="Public" Orientation="Vertical">
+    MinSize="700 350"
+    SetSize="980 550">
 
+    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+
+        <!-- Selected Skill -->
+        <BoxContainer Margin="10 10 10 10" MaxWidth="240" SetWidth="240" Orientation="Vertical"
+                      HorizontalExpand="False" VerticalExpand="True">
+            <!-- Skill View -->
+            <PanelContainer Name="BackPanel" HorizontalAlignment="Center">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxTexture Modulate="#1B1B1E" PatchMarginBottom="10" PatchMarginLeft="10"
+                                              PatchMarginRight="10" PatchMarginTop="10" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer HorizontalExpand="True" VerticalExpand="True" MinSize="128 128">
+                    <SpriteView Name="SkillView" Scale="4 4" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                HorizontalExpand="True" VerticalExpand="True" />
+                </BoxContainer>
+            </PanelContainer>
+            <customControls:HSeparator StyleClasses="HighDivider" Margin="0 15 0 10" />
+            <!-- Skill Data -->
+            <BoxContainer Name="NodeViewContainer" Orientation="Vertical" VerticalExpand="True">
+                <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True">
+                        <BoxContainer Name="InfoContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                            <BoxContainer HorizontalExpand="True">
+                                <Label Name="SkillName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                                       HorizontalExpand="True" HorizontalAlignment="Center" />
+                            </BoxContainer>
+                            <BoxContainer HorizontalExpand="True">
+                                <RichTextLabel Name="SkillDescription" HorizontalExpand="True"/>
+                            </BoxContainer>
+                        </BoxContainer>
+                    </BoxContainer>
+                </ScrollContainer>
+                <Control MinHeight="5"/>
+                <!-- Skill Buttons -->
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <Button Name="LearnButton" Text="{Loc 'cp14-skill-menu-learn-button'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35"/>
+                </BoxContainer>
+            </BoxContainer>
         </BoxContainer>
-    </ScrollContainer>
+
+        <customControls:VSeparator StyleClasses="LowDivider" />
+
+        <!-- Skills Tree -->
+        <BoxContainer HorizontalExpand="True" VerticalExpand="True">
+            <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" RectClipContent="True">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#000000FF" />
+                </PanelContainer.PanelOverride>
+
+                <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+                    <ui1:CP14SkillTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public">
+                        <!-- Procedural generation graph here -->
+                    </ui1:CP14SkillTreeGraphControl>
+
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
+    </BoxContainer>
 </window:CP14SkillWindow>
