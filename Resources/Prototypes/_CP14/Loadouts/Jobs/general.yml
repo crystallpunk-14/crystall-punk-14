@@ -266,6 +266,7 @@
   loadouts:
   - CP14ClothingShirtCottonBlack
   - CP14ClothingShirtBlackDress
+  - CP14ClothinShirtMeidDress
   - CP14ClothingShirtCottonBlue
   - CP14ClothingShirtCottonBlueCollar
   - CP14ClothingBlueCollarDress
@@ -300,6 +301,11 @@
   id: CP14ClothingShirtBlackDress
   equipment:
     shirt: CP14ClothingShirtBlackDress
+
+- type: loadout
+  id: CP14ClothinShirtMeidDress
+  equipment:
+    shirt: CP14ClothinShirtMeidDress
 
 - type: loadout
   id: CP14ClothingShirtCottonBlue
