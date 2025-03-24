@@ -70,6 +70,7 @@
   - CP14ClothingOuterClothingBrownVest1
   - CP14ClothingOuterClothingBrownVest2
   - CP14ClothingOuterClothingBrownVest3
+  - CP14ClothingOuterClothingJagermeisterWaistcoat
   - CP14ClothingOuterClothingRedVest
 
 - type: loadout
@@ -91,6 +92,12 @@
   id: CP14ClothingOuterClothingRedVest
   equipment:
     outerClothing: CP14ClothingOuterClothingRedVest
+
+- type: loadout
+  id: CP14ClothingOuterClothingJagermeisterWaistcoat
+  equipment:
+    outerClothing: CP14ClothingOuterClothingJagermeisterWaistcoat
+
 
 # Eyes
 
@@ -120,11 +127,17 @@
   minLimit: 0
   loadouts:
   - CP14Girdles
+  - CP14ClothingGlovesJagermeister
 
 - type: loadout
   id: CP14Girdles
   equipment:
     gloves: CP14ClothingGlovesGirdles
+
+- type: loadout
+  id: CP14ClothingGlovesJagermeister
+  equipment:
+    gloves: CP14ClothingGlovesJagermeister
 
 # Mask
 
@@ -152,6 +165,11 @@
   equipment:
     mask: CP14ClothingMaskNeckerchief
 
+- type: loadout
+  id: CP14ClothingMaskBoneHornedMask
+  equipment:
+    mask: CP14ClothingMaskBoneHornedMask
+
 # Head
 
 - type: loadoutGroup
@@ -164,6 +182,7 @@
   - CP14ClothingHeadTriangularHatGolden
   - CP14ClothingHeadJestersCap
   - CP14ClothingHeadHuntersHat
+  - CP14ClothingHeadJagermeisterHat
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -190,6 +209,11 @@
   equipment:
     head: CP14ClothingHeadHuntersHat
 
+- type: loadout
+  id: CP14ClothingHeadJagermeisterHat
+  equipment:
+    head: CP14ClothingHeadJagermeisterHat
+
 # Pants
 
 - type: loadoutGroup
@@ -200,6 +224,7 @@
   - CP14ClothingPantsTrouserDarkBlue
   - CP14ClothingPantsJestersPantaloons
   - CP14ClothingPantsAristocratic
+  - CP14ClothingPantsJagermeisterTrousers
   - CP14ClothingPantsGreen
   - CP14ClothingPantsBrown
 
@@ -232,6 +257,11 @@
   id: CP14ClothingPantsBrown
   equipment:
     pants: CP14ClothingPantsBrown
+
+- type: loadout
+  id: CP14ClothingPantsJagermeisterTrousers
+  equipment:
+    pants: CP14ClothingPantsJagermeisterTrousers
 
 # Shirt
 

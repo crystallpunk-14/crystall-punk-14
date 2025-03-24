@@ -1,27 +1,26 @@
 - type: cp14DemiplaneLocation
   id: T1Caves
-  tier: 1
+  levels:
+    min: 1
+    max: 4
   locationConfig: CP14DemiplaneCaves
   name: cp14-demiplane-location-cave
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
+  components:
+  - type: Biome
+    template: CP14CavesIndestructibleFill
 
 - type: dungeonConfig
   id: CP14DemiplaneCaves
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14DemiplanePlatingMaskBorder
-    - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskAir
     # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesIndestructibleFill
-      tileMask:
-      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14CavesGeneric
       tileMask:

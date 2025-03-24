@@ -59,7 +59,7 @@
 
 - type: entity
   id: CP14FoodBreadSlice
-  parent: CP14FoodBread
+  parent: CP14FoodDoughMedium
   name: bread slice
   components:
   - type: Sprite

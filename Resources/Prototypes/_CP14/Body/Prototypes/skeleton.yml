@@ -7,6 +7,8 @@
       part: CP14HeadSkeleton
       connections:
       - torso
+      organs:
+        brain: CP14ClothingMaskBoneMaskMind
     torso:
       part: TorsoHuman
       connections:

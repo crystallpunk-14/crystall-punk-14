@@ -5,6 +5,7 @@
   description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   abstract: true
   components:
+  - type: CP14NightVision
   - type: NpcFactionMember
     factions:
     - CP14Monster
@@ -12,8 +13,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonHalberd
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Halebard
   components:
@@ -27,8 +26,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonSword
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Sword
   components:
@@ -39,8 +36,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonDodger
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Dodger
   components:
@@ -54,8 +49,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonArcher
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Archer
   components:
@@ -66,8 +59,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonWizard
   parent: CP14MobUndeadSkeletonDemiplane
-  name: skeleton
-  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
   categories: [ ForkFiltered ]
   suffix: Wizard
   components:
@@ -82,8 +73,24 @@
     - CP14ActionSpellIceShards
     - CP14ActionSpellFreeze
     - CP14ActionSpellFlameCreation
-    - CP14ActionSpellSphereOfLight
     - CP14ActionSpellCureWounds
+
+- type: entity
+  id: CP14MobUndeadSkeletonBard
+  parent: CP14MobUndeadSkeletonDemiplane
+  categories: [ ForkFiltered ]
+  suffix: Bard
+  components:
+  - type: Loadout
+    prototypes:
+    - CP14MobSkeletonBard
+  - type: CP14AutoLearnAction
+    actions:
+    - CP14ActionSpellHealBallade
+    - CP14ActionSpellMagicBallade
+    - CP14ActionSpellSpeedBallade
+    - CP14ActionSpellPeaceBallade
+    - CP14ActionSpellHellBallade
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeleton
@@ -97,11 +104,12 @@
     table: !type:GroupSelector
       children:
       - !type:GroupSelector
-        weight: 10
+        weight: 15
         children:
         - id: SpawnPointGhostDemiplaneSkeletonWizard
+        - id: SpawnPointGhostDemiplaneSkeletonBard
       - !type:GroupSelector
-        weight: 25
+        weight: 20
         children:
         - id: SpawnPointGhostDemiplaneSkeletonHalberd
       - !type:GroupSelector
@@ -153,6 +161,8 @@
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonSword
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonDodger
@@ -164,6 +174,8 @@
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonDodger
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonArcher
@@ -175,6 +187,8 @@
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonArcher
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonWizard
@@ -186,3 +200,18 @@
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonWizard
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonBard
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Bard
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeletonBard
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton

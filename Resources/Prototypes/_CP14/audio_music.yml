@@ -91,9 +91,9 @@
   id: NightForest
   rules:
     - !type:CP14TimePeriod
-      periods:
-      - Night 
-      - Evening
+      #periods:
+      #- Night 
+      #- Evening
     - !type:NearbyTilesPercentRule
       ignoreAnchored: true
       percent: 0.5

@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1GrasslandIslandRing
-  tier: 2
+  levels:
+    min: 1
+    max: 4
   locationConfig: CP14DemiplaneGrasslandIslandRing
   name: cp14-demiplane-location-grassland-island
   tags:
@@ -10,11 +12,12 @@
   components:
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
-  - type: CP14MapFloorOccluder
-  - type: CP14MapDamage
-  - type: Parallax
-    parallax: CP14Ocean
   - type: CP14CloudShadows
+  - type: Biome
+    template: CP14SandOceanFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
 
 - type: dungeonConfig
   id: CP14DemiplaneGrasslandIslandRing

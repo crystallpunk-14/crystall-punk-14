@@ -31,3 +31,14 @@
         Blunt: 0.99
         Slash: 0.98
         Piercing: 0.99
+
+- type: entity
+  parent: CP14ClothingGlovesBase
+  id: CP14ClothingGlovesJagermeister
+  name: jagermeister's gloves
+  description: Leather gloves, a deep favourite of the local jagermeister's.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Gloves/jagermeister_gloves.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Gloves/jagermeister_gloves.rsi

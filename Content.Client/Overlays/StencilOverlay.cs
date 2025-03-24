@@ -1,7 +1,7 @@
 using System.Numerics;
 using Content.Client.Parallax;
 using Content.Client.Weather;
-using Content.Shared._CP14.DayCycle.Components;
+using Content.Shared._CP14.CloudShadow;
 using Content.Shared.Salvage;
 using Content.Shared.Weather;
 using Robust.Client.GameObjects;
@@ -62,7 +62,7 @@ public sealed partial class StencilOverlay : Overlay
         {
             foreach (var (proto, weather) in comp.Weather)
             {
-                if (!_protoManager.TryIndex<WeatherPrototype>(proto, out var weatherProto))
+                if (!_protoManager.TryIndex(proto, out var weatherProto))
                     continue;
 
                 var alpha = _weather.GetPercent(weather, mapUid);

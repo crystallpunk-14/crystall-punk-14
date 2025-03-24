@@ -68,3 +68,13 @@
     sprite: _CP14/Clothing/Pants/Trousers/jesters_pantaloons.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/Trousers/jesters_pantaloons.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsJagermeisterTrousers
+  name: jagermeister's trousers
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/jagermeister_trousers.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/jagermeister_trousers.rsi

@@ -1,4 +1,3 @@
-using Content.Server._CP14.DayCycle;
 using Content.Server._CP14.GameTicking.Rules.Components;
 using Content.Server._CP14.Vampire;
 using Content.Server.Atmos.Components;
@@ -22,7 +21,6 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly BodySystem _body = default!;
 
@@ -68,8 +66,9 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
 
             vampire.NextHeatTime = _timing.CurTime + vampire.HeatFrequency;
 
-            if (!_dayCycle.UnderSunlight(uid))
-                continue;
+            return;
+            //if (!_dayCycle.UnderSunlight(uid))
+            //    continue;
 
             _temperature.ChangeHeat(uid, vampire.HeatUnderSunTemperature);
             _popup.PopupEntity(Loc.GetString("cp14-heat-under-sun"), uid, uid, PopupType.SmallCaution);
