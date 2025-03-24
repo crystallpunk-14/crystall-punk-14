@@ -4,8 +4,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Skill;
 
-public sealed partial class CP14SkillSystem : EntitySystem
+public abstract partial class CP14SharedSkillSystem : EntitySystem
 {
+
     public override void Initialize()
     {
         base.Initialize();
@@ -13,7 +14,9 @@ public sealed partial class CP14SkillSystem : EntitySystem
         InitializeAdmin();
     }
 
-    public bool TryAddSkill(EntityUid target, ProtoId<CP14SkillPrototype> skill, CP14SkillStorageComponent? component = null)
+    public bool TryAddSkill(EntityUid target,
+        ProtoId<CP14SkillPrototype> skill,
+        CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
             return false;
@@ -28,11 +31,14 @@ public sealed partial class CP14SkillSystem : EntitySystem
         {
             effect.AddSkill(EntityManager, target);
         }
+
         component.Skills.Add(skill);
         return true;
     }
 
-    public bool TryRemoveSkill(EntityUid target, ProtoId<CP14SkillPrototype> skill, CP14SkillStorageComponent? component = null)
+    public bool TryRemoveSkill(EntityUid target,
+        ProtoId<CP14SkillPrototype> skill,
+        CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
             return false;
@@ -47,10 +53,13 @@ public sealed partial class CP14SkillSystem : EntitySystem
         {
             effect.RemoveSkill(EntityManager, target);
         }
+
         return true;
     }
 
-    public bool HaveSkill(EntityUid target, ProtoId<CP14SkillPrototype> skill, CP14SkillStorageComponent? component = null)
+    public bool HaveSkill(EntityUid target,
+        ProtoId<CP14SkillPrototype> skill,
+        CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
             return false;

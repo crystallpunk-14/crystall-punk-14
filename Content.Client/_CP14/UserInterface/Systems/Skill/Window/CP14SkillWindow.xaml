@@ -1,0 +1,12 @@
+<window:CP14SkillWindow
+    xmlns="https://spacestation14.io"
+    xmlns:window="clr-namespace:Content.Client._CP14.UserInterface.Systems.Skill.Window"
+    Title="{Loc 'cp14-skill-info-title'}"
+    MinWidth="400"
+    MinHeight="200">
+    <ScrollContainer>
+        <BoxContainer Name="SkillContent" Margin="5" Access="Public" Orientation="Vertical">
+
+        </BoxContainer>
+    </ScrollContainer>
+</window:CP14SkillWindow>

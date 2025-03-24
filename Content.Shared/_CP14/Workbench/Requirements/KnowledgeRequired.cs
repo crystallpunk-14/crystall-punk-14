@@ -19,7 +19,7 @@ public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
         EntityUid user,
         CP14WorkbenchRecipePrototype recipe)
     {
-        var knowledgeSystem = entManager.System<CP14SkillSystem>();
+        var knowledgeSystem = entManager.System<CP14SharedSkillSystem>();
 
         var haveAllSkills = true;
         foreach (var skill in Skills)

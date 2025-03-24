@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Skill;
 
-public sealed partial class CP14SkillSystem
+public abstract partial class CP14SharedSkillSystem
 {
     [Dependency] private readonly ISharedAdminManager _admin = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
