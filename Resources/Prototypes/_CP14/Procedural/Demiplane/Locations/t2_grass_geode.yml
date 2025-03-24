@@ -11,6 +11,9 @@
   - CP14DemiplaneUnderground
   - CP14DemiplaneWater
   - CP14DemiplaneAnimalsSwamp
+  components:
+  - type: Biome
+    template: CP14CavesIndestructibleFill
 
 - type: dungeonConfig
   id: CP14DemiplaneSwampGeode
