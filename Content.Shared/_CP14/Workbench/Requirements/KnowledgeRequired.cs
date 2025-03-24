@@ -1,13 +1,17 @@
+using Content.Shared._CP14.Skill;
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared._CP14.Workbench.Prototypes;
-using Content.Shared._CP14.WorkbenchKnowledge;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Workbench.Requirements;
 
-public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
+public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
 {
     public override bool HideRecipe { get; set; } = true;
+
+    [DataField(required: true)]
+    public List<ProtoId<CP14SkillPrototype>> Skills = new();
 
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
@@ -15,9 +19,19 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
         EntityUid user,
         CP14WorkbenchRecipePrototype recipe)
     {
-        var knowledgeSystem = entManager.System<SharedCP14WorkbenchKnowledgeSystem>();
+        var knowledgeSystem = entManager.System<CP14SkillSystem>();
 
-        return knowledgeSystem.HasKnowledge(user, recipe);
+        var haveAllSkills = true;
+        foreach (var skill in Skills)
+        {
+            if (!knowledgeSystem.HaveSkill(user, skill))
+            {
+                haveAllSkills = false;
+                break;
+            }
+        }
+
+        return haveAllSkills;
     }
 
     public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, EntityUid user)

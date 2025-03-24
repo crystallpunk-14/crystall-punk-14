@@ -9,7 +9,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 5
-  - !type:KnowledgeRequired
   result: CP14ArmorIronCuirass
 
 - type: CP14Recipe
@@ -20,7 +19,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 5
-  - !type:KnowledgeRequired
   result: CP14ArmorGoldCuirass
 
 - type: CP14Recipe
@@ -31,7 +29,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 5
-  - !type:KnowledgeRequired
   result: CP14ArmorCopperCuirass
 
 - type: CP14Recipe
@@ -42,7 +39,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 5
-  - !type:KnowledgeRequired
   result: CP14ArmorMithrilCuirass
 
 # Infantry cuirass
@@ -55,7 +51,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 6
-  - !type:KnowledgeRequired
   result: CP14ArmorIronInfantryCuirass
 
 - type: CP14Recipe
@@ -66,7 +61,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 6
-  - !type:KnowledgeRequired
   result: CP14ArmorGoldInfantryCuirass
 
 - type: CP14Recipe
@@ -77,7 +71,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 6
-  - !type:KnowledgeRequired
   result: CP14ArmorCopperInfantryCuirass
 
 - type: CP14Recipe
@@ -88,7 +81,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 6
-  - !type:KnowledgeRequired
   result: CP14ArmorMithrilInfantryCuirass
 
 # Chainmail
@@ -101,7 +93,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 4
-  - !type:KnowledgeRequired
   result: CP14ArmorIronChainmail
 
 - type: CP14Recipe
@@ -112,7 +103,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 4
-  - !type:KnowledgeRequired
   result: CP14ArmorGoldChainmail
 
 - type: CP14Recipe
@@ -123,7 +113,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 4
-  - !type:KnowledgeRequired
   result: CP14ArmorCopperChainmail
 
 - type: CP14Recipe
@@ -134,5 +123,4 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 4
-  - !type:KnowledgeRequired
   result: CP14ArmorMithrilChainmail

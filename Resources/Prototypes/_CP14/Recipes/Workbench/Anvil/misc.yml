@@ -9,7 +9,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
   result: CP14BaseShield
 
 - type: CP14Recipe
@@ -20,7 +19,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
   result: CP14BaseCrowbar
 
 - type: CP14Recipe
@@ -31,7 +29,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
   result: CP14BaseWrench
 
 - type: CP14Recipe
@@ -42,7 +39,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14PlatePie
 
 - type: CP14Recipe
@@ -53,7 +49,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
   result: CP14Nail20
 
 - type: CP14Recipe
@@ -67,7 +62,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14CrystalLampBlueEmpty
 
 - type: CP14Recipe
@@ -78,7 +72,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14Scissors
 
 - type: CP14Recipe
@@ -89,7 +82,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 4
-  - !type:KnowledgeRequired
   result: CP14ClothingOuterClothingCopperArmor
 
 - type: CP14Recipe
@@ -100,7 +92,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14ClothingGlovesGirdles
 
 - type: CP14Recipe
@@ -111,7 +102,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14CrossboltCopper
   resultCount: 3
 
@@ -123,7 +113,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14CrossboltIron
   resultCount: 3
 
@@ -135,7 +124,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14CrossboltGold
   resultCount: 3
 
@@ -147,7 +135,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14CrossboltMithril
   resultCount: 3
 
@@ -159,7 +146,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14BaseLockpick
 
 - type: CP14Recipe
@@ -170,7 +156,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingHeadCapellina
 
 - type: CP14Recipe
@@ -181,7 +166,6 @@
   - !type:StackResource
     stack: CP14IronBar #Add skin as well?
     count: 4
-  - !type:KnowledgeRequired
   result: CP14ClothingHeadBascinet
 
 - type: CP14Recipe
@@ -198,7 +182,6 @@
   - !type:ProtoIdResource
     protoId: CP14String
     count: 1
-  - !type:KnowledgeRequired
   result: CP14BaseLightCrossbow
 
 - type: CP14Recipe
@@ -209,5 +192,4 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
   result: CP14ClothingMaskSteelMask

@@ -49,4 +49,12 @@ public sealed partial class CP14SkillSystem : EntitySystem
         }
         return true;
     }
+
+    public bool HaveSkill(EntityUid target, ProtoId<CP14SkillPrototype> skill, CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+
+        return component.Skills.Contains(skill);
+    }
 }

@@ -1,35 +1,57 @@
+# Metalls work
+
+- type: cp14Skill
+  id: CopperMetall
+  name: cp14-skill-craft-copper-metall-name
+  desc: cp14-skill-craft-copper-metall-desc
+  tree: Blacksmithing
+  icon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: copper
+
+- type: cp14Skill
+  id: IronMetall
+  name: cp14-skill-craft-iron-metall-name
+  desc: cp14-skill-craft-iron-metall-desc
+  tree: Blacksmithing
+  icon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: iron
+
+- type: cp14Skill
+  id: GoldMetall
+  name: cp14-skill-craft-gold-metall-name
+  desc: cp14-skill-craft-gold-metall-desc
+  tree: Blacksmithing
+  icon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: gold
+
+- type: cp14Skill
+  id: MithrilMetall
+  name: cp14-skill-craft-mithril-metall-name
+  desc: cp14-skill-craft-mithril-metall-desc
+  tree: Blacksmithing
+  icon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: mithril
+
+# Weapons
+
 - type: cp14Skill
   id: CraftArrowTip
   name: cp14-skill-craft-arrowtip-name
-  #desc: cp14-skill-craft-arrowtip-desc
+  desc: cp14-skill-craft-arrowtip-desc
   tree: Blacksmithing
   icon:
-    sprite: _CP14/Actions/Spells/fire.rsi
-    state: fireball
-  effects:
-  - !type:CP14SkillEffectAddWorkbenchKnowledge
-    recipes:
-    - CP14ModularTipCopperArrow
-    - CP14ModularTipIronArrow
-    - CP14ModularTipGoldArrow
-    - CP14ModularTipMithrilArrow
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: arrow
 
 - type: cp14Skill
   id: CraftGarde
   name: cp14-skill-craft-garde-name
-  #desc: cp14-skill-craft-garde-desc
+  desc: cp14-skill-craft-garde-desc
   tree: Blacksmithing
   icon:
-    sprite: _CP14/Actions/Spells/fire.rsi
-    state: fire_music
-  effects:
-  - !type:CP14SkillEffectAddWorkbenchKnowledge
-    recipes:
-    - CP14ModularGardeSharpCopper
-    - CP14ModularGardeSharpIron
-    - CP14ModularGardeSharpGold
-    - CP14ModularGardeSharpMithril
-    - CP14ModularGardeSturdyCopper
-    - CP14ModularGardeSturdyIron
-    - CP14ModularGardeSturdyGold
-    - CP14ModularGardeSturdyMithril
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: garde

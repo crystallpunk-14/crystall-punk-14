@@ -24,6 +24,6 @@ public sealed partial class CP14SkillPrototype : IPrototype
     [DataField(required: true)]
     public SpriteSpecifier Icon = default!;
 
-    [DataField(required: true)]
+    [DataField]
     public List<CP14SkillEffect> Effects = new();
 }

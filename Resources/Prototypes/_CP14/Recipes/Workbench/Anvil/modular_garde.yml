@@ -8,7 +8,10 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - CopperMetall
+    - CraftGarde
   result: CP14ModularGardeSharpCopper
 
 - type: CP14Recipe
@@ -19,7 +22,10 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - IronMetall
+    - CraftGarde
   result: CP14ModularGardeSharpIron
 
 - type: CP14Recipe
@@ -30,7 +36,10 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - GoldMetall
+    - CraftGarde
   result: CP14ModularGardeSharpGold
 
 - type: CP14Recipe
@@ -41,7 +50,10 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - MithrilMetall
+    - CraftGarde
   result: CP14ModularGardeSharpMithril
 
 # Sturdy garde
@@ -54,7 +66,10 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - CopperMetall
+    - CraftGarde
   result: CP14ModularGardeSturdyCopper
 
 - type: CP14Recipe
@@ -65,7 +80,10 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - IronMetall
+    - CraftGarde
   result: CP14ModularGardeSturdyIron
 
 - type: CP14Recipe
@@ -76,7 +94,10 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - GoldMetall
+    - CraftGarde
   result: CP14ModularGardeSturdyGold
 
 - type: CP14Recipe
@@ -87,5 +108,8 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - MithrilMetall
+    - CraftGarde
   result: CP14ModularGardeSturdyMithril

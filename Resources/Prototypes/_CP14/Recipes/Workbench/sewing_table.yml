@@ -10,7 +10,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtCottonBlue
 
 - type: CP14Recipe
@@ -25,7 +24,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtCottonBlack
 
 - type: CP14Recipe
@@ -40,7 +38,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtCottonPurple
 
 - type: CP14Recipe
@@ -55,7 +52,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtCottonRed
 
 - type: CP14Recipe
@@ -68,7 +64,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtCottonWhite
 
 - type: CP14Recipe
@@ -83,7 +78,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtCottonYellow
 
 - type: CP14Recipe
@@ -98,7 +92,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtBlackDress
 
 - type: CP14Recipe
@@ -111,7 +104,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
   result: CP14ClothingPantsTrouserWhite
 
 - type: CP14Recipe
@@ -126,7 +118,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
   result: CP14ClothingPantsTrouserDarkBlue
 
 - type: CP14Recipe
@@ -141,7 +132,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 1
-  - !type:KnowledgeRequired
   result: CP14ClothingHeadHuntersHat
 
 - type: CP14Recipe
@@ -158,7 +148,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingShirtMercenary
 
 - type: CP14Recipe
@@ -177,7 +166,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
   result: CP14ClothingYellowWizardDress
 
 - type: CP14Recipe
@@ -194,7 +182,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
   result: CP14ClothingHeadBeretMercenary
 
 - type: CP14Recipe
@@ -211,7 +198,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
   result: CP14ClothingPantsMercenaryTrousers
 
 # Misc
@@ -240,7 +226,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeBlack
-  - !type:KnowledgeRequired
   result: CP14WallpaperBlack
 
 - type: CP14Recipe
@@ -253,7 +238,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeGreen
-  - !type:KnowledgeRequired
   result: CP14WallpaperGreen
 
 - type: CP14Recipe
@@ -266,7 +250,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyePurple
-  - !type:KnowledgeRequired
   result: CP14WallpaperPurple
 
 - type: CP14Recipe
@@ -279,7 +262,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeRed
-  - !type:KnowledgeRequired
   result: CP14WallpaperRed
 
 - type: CP14Recipe
@@ -290,7 +272,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 10
-  - !type:KnowledgeRequired
   result: CP14WallpaperWhite
 
 - type: CP14Recipe
@@ -301,7 +282,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 10
-  - !type:KnowledgeRequired
   result: CP14WallpaperWhite2
 
 - type: CP14Recipe
@@ -314,5 +294,4 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeYellow
-  - !type:KnowledgeRequired
   result: CP14WallpaperYellow

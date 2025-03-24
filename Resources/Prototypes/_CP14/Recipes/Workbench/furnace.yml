@@ -6,7 +6,6 @@
   - !type:MaterialResource
     material: CP14Copper
     count: 10
-  - !type:KnowledgeRequired
   result: CP14CopperBar1
 
 - type: CP14Recipe
@@ -17,7 +16,6 @@
   - !type:MaterialResource
     material: CP14Iron
     count: 10
-  - !type:KnowledgeRequired
   result: CP14IronBar1
 
 - type: CP14Recipe
@@ -28,7 +26,6 @@
   - !type:MaterialResource
     material: CP14Gold
     count: 10
-  - !type:KnowledgeRequired
   result: CP14GoldBar1
 
 - type: CP14Recipe
@@ -39,7 +36,6 @@
   - !type:MaterialResource
     material: CP14Mithril
     count: 10
-  - !type:KnowledgeRequired
   result: CP14MithrilBar1
 
 - type: CP14Recipe
@@ -49,7 +45,6 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14CrystalShardBase
-  - !type:KnowledgeRequired
   result: CP14GlassSheet1
 
 - type: CP14Recipe
@@ -60,7 +55,6 @@
   - !type:ProtoIdResource
     protoId: CP14GlassShard
     count: 2
-  - !type:KnowledgeRequired
   result: CP14GlassSheet1
 
 - type: CP14Recipe
@@ -71,7 +65,6 @@
   - !type:StackResource
     stack: CP14GlassSheet
     count: 1
-  - !type:KnowledgeRequired
   result: CP14VialTiny
 
 - type: CP14Recipe
@@ -85,7 +78,6 @@
   - !type:StackResource
     stack: CP14GlassSheet
     count: 1
-  - !type:KnowledgeRequired
   result: CP14VialTinyReinforced
 
 - type: CP14Recipe
@@ -96,7 +88,6 @@
   - !type:StackResource
     stack: CP14GlassSheet
     count: 2
-  - !type:KnowledgeRequired
   result: CP14VialSmall
 
 - type: CP14Recipe
@@ -110,7 +101,6 @@
   - !type:StackResource
     stack: CP14GlassSheet
     count: 2
-  - !type:KnowledgeRequired
   result: CP14VialSmallReinforced
 
 - type: CP14Recipe
@@ -121,7 +111,6 @@
   - !type:StackResource
     stack: CP14GlassSheet
     count: 6
-  - !type:KnowledgeRequired
   result: CP14VialMedium
 
 - type: CP14Recipe
@@ -135,7 +124,6 @@
   - !type:StackResource
     stack: CP14GlassSheet
     count: 6
-  - !type:KnowledgeRequired
   result: CP14VialMediumReinforced
 
 - type: CP14Recipe
@@ -149,6 +137,5 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
   result: CP14BaseAlchemyBomb
   

@@ -2,6 +2,21 @@
 # Tip
 
 - type: CP14Recipe
+  id: CP14ModularTipCopperArrow
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:SkillRequired
+    skills:
+    - CopperMetall
+    - CraftArrowTip
+  result: CP14ModularTipCopperArrow
+  resultCount: 4
+
+- type: CP14Recipe
   id: CP14ModularTipIronArrow
   tag: CP14RecipeAnvil
   craftTime: 2
@@ -9,7 +24,10 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - IronMetall
+    - CraftArrowTip
   result: CP14ModularTipIronArrow
   resultCount: 4
 
@@ -21,20 +39,11 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - GoldMetall
+    - CraftArrowTip
   result: CP14ModularTipGoldArrow
-  resultCount: 4
-
-- type: CP14Recipe
-  id: CP14ModularTipCopperArrow
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14CopperBar
-    count: 1
-  - !type:KnowledgeRequired
-  result: CP14ModularTipCopperArrow
   resultCount: 4
 
 - type: CP14Recipe
@@ -45,6 +54,9 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
+  - !type:SkillRequired
+    skills:
+    - MithrilMetall
+    - CraftArrowTip
   result: CP14ModularTipMithrilArrow
   resultCount: 4
