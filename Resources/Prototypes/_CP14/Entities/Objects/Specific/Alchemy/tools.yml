@@ -79,7 +79,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Tag
-    tags: 
+    tags:
     - CP14Pestle
   - type: Item
     size: Tiny
@@ -250,6 +250,9 @@
         maxVol: 10
   - type: Injector
     injectOnly: false
+    transferAmount: 5
+    minTransferAmount: 5
+    maxTransferAmount: 10
     toggleState: Draw
   - type: ExaminableSolution
     solution: injector
