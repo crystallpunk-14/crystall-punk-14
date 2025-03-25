@@ -27,7 +27,7 @@ public abstract partial class CP14SharedSkillSystem
         //Add Skill
         foreach (var skill in _proto.EnumeratePrototypes<CP14SkillPrototype>())
         {
-            if (ent.Comp.Skills.Contains(skill))
+            if (ent.Comp.LearnedSkills.Contains(skill))
                 continue;
 
             args.Verbs.Add(new Verb
@@ -44,7 +44,7 @@ public abstract partial class CP14SharedSkillSystem
         }
 
         //Remove Skill
-        foreach (var skill in ent.Comp.Skills)
+        foreach (var skill in ent.Comp.LearnedSkills)
         {
             if (!_proto.TryIndex(skill, out var indexedSkill))
                 continue;

@@ -8,6 +8,9 @@
   "copyright": "Created by TheShuEd (Github)",
   "states": [
     {
+      "name": "available"
+    },
+    {
       "name": "base"
     },
     {

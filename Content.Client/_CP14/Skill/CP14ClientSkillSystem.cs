@@ -2,7 +2,6 @@ using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
 using Robust.Client.Player;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client._CP14.Skill;
 
@@ -10,7 +9,7 @@ public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
-    public event Action<SkillMenuData>? OnSkillUpdate;
+    public event Action<EntityUid>? OnSkillUpdate;
 
     public override void Initialize()
     {
@@ -21,12 +20,7 @@ public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
 
     private void OnAfterAutoHandleState(Entity<CP14SkillStorageComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        OnSkillUpdate?.Invoke(
-            new SkillMenuData(
-                ent.Owner,
-                ent.Comp.Skills
-            )
-        );
+        OnSkillUpdate?.Invoke(ent.Owner);
     }
 
     public void RequestSkillData()
@@ -36,16 +30,15 @@ public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
         if (!TryComp<CP14SkillStorageComponent>(localPlayer, out var component))
             return;
 
-        OnSkillUpdate?.Invoke(
-            new SkillMenuData(
-                localPlayer.Value,
-                component.Skills
-            )
-        );
+        OnSkillUpdate?.Invoke(localPlayer.Value);
+    }
+
+    public void RequestLearnSkill(EntityUid? target, CP14SkillPrototype? skill)
+    {
+        if (skill == null || target == null)
+            return;
+
+        var netEv = new CP14TryLearnSkillMessage(GetNetEntity(target.Value), skill.ID);
+        RaiseNetworkEvent(netEv);
     }
 }
-
-public readonly record struct SkillMenuData(
-    EntityUid Entity,
-    List<ProtoId<CP14SkillPrototype>> Skills
-);

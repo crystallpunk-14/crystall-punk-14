@@ -44,7 +44,7 @@
                 <Control MinHeight="5"/>
                 <!-- Skill Buttons -->
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <Button Name="LearnButton" Text="{Loc 'cp14-skill-menu-learn-button'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35"/>
+                    <Button Name="LearnButton" Text="{Loc 'cp14-skill-menu-learn-button'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35" Access="Public"/>
                 </BoxContainer>
             </BoxContainer>
         </BoxContainer>

@@ -15,6 +15,9 @@
   learnedIcon:
     sprite: _CP14/Interface/Skills/blacksmithing.rsi
     state: learned
+  availableIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: available
 
 - type: cp14SkillTree
   id: Pyrokinetic
@@ -33,3 +36,6 @@
   learnedIcon:
     sprite: _CP14/Interface/Skills/blacksmithing.rsi
     state: learned
+  availableIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: available

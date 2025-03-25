@@ -26,6 +26,9 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
     [DataField(required: true)]
     public SpriteSpecifier LearnedIcon = default!;
 
+    [DataField(required: true)]
+    public SpriteSpecifier AvailableIcon = default!;
+
     [DataField]
     public LocId? Desc;
 

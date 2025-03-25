@@ -23,6 +23,9 @@ public sealed partial class CP14SkillPrototype : IPrototype
     public ProtoId<CP14SkillTreePrototype> Tree = default!;
 
     [DataField]
+    public float LearnCost = 1f;
+
+    [DataField]
     public HashSet<ProtoId<CP14SkillPrototype>> Prerequisites = new();
 
     [DataField(required: true)]

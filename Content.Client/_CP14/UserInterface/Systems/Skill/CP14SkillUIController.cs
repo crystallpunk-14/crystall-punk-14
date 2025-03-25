@@ -45,9 +45,10 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
         _window.GraphControl.OnNodeSelected += SelectNode;
         _proto.PrototypesReloaded += _ => ReloadSkillTrees();
-
+        _window.LearnButton.OnPressed += _ => _skill.RequestLearnSkill(_player.LocalEntity, _selectedSkill);
         ReloadSkillTrees();
     }
+
 
     public void OnStateExited(GameplayState state)
     {
@@ -111,6 +112,9 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         if (_window is null)
             return;
 
+        if (_player.LocalEntity == null)
+            return;
+
         _selectedSkill = skill;
 
         if (skill == null)
@@ -118,24 +122,27 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             _window.SkillName.Text = string.Empty;
             _window.SkillDescription.Text = string.Empty;
             _window.SkillView.Texture = null;
+            _window.LearnButton.Disabled = true;
         }
         else
         {
             _window.SkillName.Text = Loc.GetString(skill.Name);
             _window.SkillDescription.Text = Loc.GetString(skill.Desc ?? string.Empty);
             _window.SkillView.Texture = skill.Icon.Frame0();
+            _window.LearnButton.Disabled = !_skill.CanLearnSkill(_player.LocalEntity.Value, skill);
         }
     }
 
-    private void SkillUpdate(SkillMenuData data)
+
+    private void SkillUpdate(EntityUid player)
     {
         if (_window is null)
             return;
 
-        if (!EntityManager.TryGetComponent<CP14SkillStorageComponent>(data.Entity, out var storage))
+        if (!EntityManager.TryGetComponent<CP14SkillStorageComponent>(player, out var storage))
             return;
 
-        _window.GraphControl.SetPlayer((data.Entity, storage));
+        _window.GraphControl.SetPlayer((player, storage));
 
         if (_allTrees == null)
             return;
