@@ -1,0 +1,13 @@
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeGuildmaster
+  categories: [ ForkFiltered ]
+  name: guildmaster's rapier garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/guildmaster_garde.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeGuildmaster

@@ -1,0 +1,25 @@
+# Concept
+# + Damage + durability
+
+- type: modularPart
+  id: BaseGardeGuildmaster
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 0.8
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 0.8
+  - !type:EditMeleeWeapon
+    damageMultiplier: 1.2
+  - !type:EditIncreaseDamageOnWield
+    damageMultiplier: 1.2
+
+- type: modularPart
+  id: GardeGuildmaster
+  slots:
+  - Garde
+  rsiPath: _CP14/Objects/ModularTools/Garde/guildmaster_garde.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeGuildmaster
+
