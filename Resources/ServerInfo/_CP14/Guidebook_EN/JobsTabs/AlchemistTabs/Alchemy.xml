@@ -1,8 +1,110 @@
 ﻿<Document>
-# Alchemy
+  # Alchemy
 
-.
-.
-.
+  Alchemy is one of the mechanics that allows players to create potions and other items. Alchemists can use various ingredients to craft potions with different effects. You'll need to experiment with different components to discover new recipes and improve existing ones.
 
+  ## What You'll Work With
+
+  The world contains many "raw" substances - plant juices, blood of living creatures, or even crushed crystals. A skilled alchemist can transform these seemingly useless items into something valuable.
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14BlueAmanita"/>
+    <GuideEntityEmbed Entity="CP14AgaricMushroom"/>
+    <GuideEntityEmbed Entity="CP14Dayflin"/>
+    <GuideEntityEmbed Entity="CP14ChromiumSlime"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="CP14WildSage"/>
+    <GuideEntityEmbed Entity="CP14AirLily"/>
+    <GuideEntityEmbed Entity="CP14LumiMushroom"/>
+    <GuideEntityEmbed Entity="CP14BloodFlower"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="CP14CrystalAir"/>
+    <GuideEntityEmbed Entity="CP14CrystalWater"/>
+    <GuideEntityEmbed Entity="CP14CrystalFire"/>
+    <GuideEntityEmbed Entity="CP14CrystalOrder"/>
+    <GuideEntityEmbed Entity="CP14CrystalChaos"/>
+    <GuideEntityEmbed Entity="CP14CrystalEarth"/>
+  </Box>
+
+  Most "raw" ingredients can first be ground using a mortar and pestle:
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14Mortar"/>
+    <GuideEntityEmbed Entity="CP14Pestle"/>
+  </Box>
+
+  Place raw materials in the mortar and grind them thoroughly by repeatedly clicking with the pestle. Gradually all items will disappear, leaving a liquid in the mortar that you can pour wherever needed.
+
+  To study the liquids in containers, you can use special alchemy glasses available only to the "Alchemist" role.
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14ClothingEyesAlchemyGlasses"/>
+  </Box>
+
+  Other useful tools include:
+  - Dropper: Transfers small liquid doses (0.25u to 1u)
+  - Vials of various sizes and durability
+  - Cauldron: 100u container that can be heated over a bonefire or alchemy furnace
+  - Big vat: Huge 500u container, that can be heated over a bonefire. Great for industrial production.
+  - Alchemy furnace: Wood-fueled furnace for heating solutions
+  - Mana glove: An unsophisticated but aesthetically pleasing blend of technology and magic crystals that allows you to operate with raw mana: siphoning it from some objects and pumping it into others.  An extremely important function of glove for alchemist is [color=#5EABEB]Magical Splitting[/color]. It allows you to split a solution into its component parts. To use it, select [color=#5EABEB]Magical Splitting[/color] in the action bar and click on the container with the solution.
+  <GuideEntityEmbed Entity="CP14ActionSpellMagicSplitting"/>
+  - Solution cleaner: An alchemical device that destroys from a solution poured into it the reagent that is least in the solution. Requires an energy crystal to operate.
+  - Alchemy bomb: 10u vessel that creates effect clouds when thrown
+  - Thaumaturgy glasses: Scan items to see their essences
+  - Essence collector: Being powered by the energy crystal, it will start sucking in all the essence floating in the air and converting it into useful liquid.
+  - Essence splitter: A device capable of splitting objects into magical essence when overloaded with energy.
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14Dropper"/>
+    <GuideEntityEmbed Entity="CP14VialTiny"/>
+    <GuideEntityEmbed Entity="CP14VialSmall"/>
+    <GuideEntityEmbed Entity="CP14VialMedium"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14Cauldron"/>
+    <GuideEntityEmbed Entity="CP14BaseVat"/>
+    <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14ManaOperationGlove"/>
+    <GuideEntityEmbed Entity="CP14AlchemySolutionCleaner"/>
+    <GuideEntityEmbed Entity="CP14BaseAlchemyBomb"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14ClothingEyesThaumaturgyGlasses"/>
+    <GuideEntityEmbed Entity="CP14EssenceCollector"/>
+    <GuideEntityEmbed Entity="CP14EssenceSplitter"/>
+  </Box>
+
+  ## Random Reaction Generation
+
+  Beyond fixed recipes, some reactions have random outcomes generated at round start. You'll need to experiment to discover results.
+
+  ## Dyes
+
+  Alchemists can create dyes for coloring fabrics:
+  - Red: 10u [color=#5c1f0a]Bloodrose nectar[/color] + 1u water(catalyst)
+  - Yellow: 10u [color=#ffe269]Yellow dayfline pulp[/color] + 1u water(catalyst)
+  - Blue: 10u [color=#6bb4bf]Blue amanita[/color] + 1u water(catalyst)
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14DyeRed"/>
+    <GuideEntityEmbed Entity="CP14DyeYellow"/>
+    <GuideEntityEmbed Entity="CP14DyeBlue"/>
+  </Box>
+
+  ## Tips
+
+  - Experiment! Alchemy is fun! Don't fear trying new combinations.
+  - Ask Adventurers for help obtaining rare ingredients.
+  - Not all impurities are useless - some aid potion creation.
+  - The Freeze spell stops furnaces from wasting fuel.
+  <GuideEntityEmbed Entity="CP14ActionSpellFreeze"/>
+  - Chromium slime can invert reagent effects when heated with Empty solution.
 </Document>
