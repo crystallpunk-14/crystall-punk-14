@@ -101,7 +101,7 @@
   - CP14MobDamageable
   - MobRespirator
   - MobAtmosStandard
-  - SimpleSpaceMobBase
+  - SimpleSpaceMobNoLifeBase
   id: CP14SimpleMobNoLifeBase
   suffix: AI
   abstract: true
