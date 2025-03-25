@@ -28,7 +28,6 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     private CP14SkillWindow? _window;
     private CP14SkillPrototype? _selectedSkill;
 
-    private IEnumerable<CP14SkillTreePrototype>? _allTrees;
     private MenuButton? SkillButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.CP14SkillButton;
 
     public void OnStateEntered(GameplayState state)
@@ -44,9 +43,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             .Register<CP14SkillUIController>();
 
         _window.GraphControl.OnNodeSelected += SelectNode;
-        _proto.PrototypesReloaded += _ => ReloadSkillTrees();
         _window.LearnButton.OnPressed += _ => _skill.RequestLearnSkill(_player.LocalEntity, _selectedSkill);
-        ReloadSkillTrees();
     }
 
 
@@ -126,7 +123,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         }
         else
         {
-            _window.SkillName.Text = Loc.GetString(skill.Name);
+            _window.SkillName.Text = _skill.GetSkillName(skill);
             _window.SkillDescription.SetMessage(GetSkillDescription(skill));
             _window.SkillView.Texture = skill.Icon.Frame0();
             _window.LearnButton.Disabled = !_skill.CanLearnSkill(_player.LocalEntity.Value, skill);
@@ -138,7 +135,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         var msg = new FormattedMessage();
 
         //Description
-        msg.TryAddMarkup(Loc.GetString(skill.Desc ?? string.Empty) + "\n", out _);
+        msg.TryAddMarkup(_skill.GetSkillDescription(skill) + "\n", out _);
 
         //Learn cost
         msg.TryAddMarkup($"[color=yellow]{Loc.GetString("cp14-skill-menu-learncost")} {skill.LearnCost}[/color]\n", out _);
@@ -154,38 +151,32 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         if (!EntityManager.TryGetComponent<CP14SkillStorageComponent>(player, out var storage))
             return;
 
-
         _window.GraphControl.SetPlayer((player, storage));
 
         // Reselect for update state
         SelectNode(_selectedSkill);
-        
-        if (_allTrees == null)
-            return;
 
         _window.TreeTabsContainer.RemoveAllChildren();
-        foreach (var tree in _allTrees)
+        foreach (var (tree, progress) in storage.LearnProgress)
         {
+            if (!_proto.TryIndex(tree, out var indexedTree))
+                continue;
+
             var treeButton = new Button()
             {
                 Access = AccessLevel.Public,
-                Text = Loc.GetString(tree.Name),
-                ToolTip = Loc.GetString(tree.Desc ?? string.Empty),
+                Text = Loc.GetString(indexedTree.Name),
+                ToolTip = Loc.GetString(indexedTree.Desc ?? string.Empty),
                 TextAlign = Label.AlignMode.Center,
             };
 
             treeButton.OnPressed += args =>
             {
-                _window.GraphControl.Tree = tree;
+                _window.GraphControl.Tree = indexedTree;
             };
 
             _window.TreeTabsContainer.AddChild(treeButton);
         }
-    }
-
-    private void ReloadSkillTrees()
-    {
-        _allTrees = _proto.EnumeratePrototypes<CP14SkillTreePrototype>();
     }
 
     private void CharacterDetached(EntityUid uid)

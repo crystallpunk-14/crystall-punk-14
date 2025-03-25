@@ -30,10 +30,11 @@ public abstract partial class CP14SharedSkillSystem
             if (ent.Comp.LearnedSkills.Contains(skill))
                 continue;
 
+            var name = Loc.GetString(GetSkillName(skill));
             args.Verbs.Add(new Verb
             {
-                Text = Loc.GetString(skill.Name),
-                Message = Loc.GetString(skill.Name) + ": " + Loc.GetString(skill.Desc ?? string.Empty),
+                Text = name,
+                Message = name + ": " + Loc.GetString(GetSkillDescription(skill)),
                 Category = VerbCategory.CP14AdminSkillAdd,
                 Icon = skill.Icon,
                 Act = () =>
@@ -49,10 +50,11 @@ public abstract partial class CP14SharedSkillSystem
             if (!_proto.TryIndex(skill, out var indexedSkill))
                 continue;
 
+            var name = Loc.GetString(GetSkillName(skill));
             args.Verbs.Add(new Verb
             {
-                Text = Loc.GetString(indexedSkill.Name),
-                Message = Loc.GetString(indexedSkill.Name) + ": " + Loc.GetString(indexedSkill.Desc ?? string.Empty),
+                Text = name,
+                Message = name + ": " + Loc.GetString(GetSkillDescription(skill)),
                 Category = VerbCategory.CP14AdminSkillRemove,
                 Icon = indexedSkill.Icon,
                 Act = () =>

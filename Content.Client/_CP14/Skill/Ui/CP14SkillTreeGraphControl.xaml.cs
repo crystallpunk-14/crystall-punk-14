@@ -45,7 +45,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         _skillSystem = _entManager.System<CP14SharedSkillSystem>();
 
         _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
-        _proto.PrototypesReloaded += _ => _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>().OrderBy(skill => skill.Name).ToList();
+        _proto.PrototypesReloaded += _ => _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>().OrderBy(skill => _skillSystem.GetSkillName(skill)).ToList();
     }
 
     public void SetPlayer(Entity<CP14SkillStorageComponent>? player)
