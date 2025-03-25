@@ -1,0 +1,17 @@
+- type: entity
+  id: CP14ModularGuildmasterRapier
+  parent: CP14ModularGripGuildmaster
+  name: guildmaster's personal rapier
+  description: A personal weapon issued to each guildmaster. Combines reliability and killing power. 
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+      state: icon
+    - sprite: _CP14/Objects/ModularTools/Garde/guildmaster_garde.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronRapier
+    - GardeGuildmaster
