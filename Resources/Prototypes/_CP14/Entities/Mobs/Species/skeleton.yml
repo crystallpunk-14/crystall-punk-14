@@ -1,6 +1,6 @@
 - type: entity
-  parent:
-  - CP14BaseMobSpeciesNoLife
+  parent: 
+  - CP14BaseMobSpecies
   - MobFlammable
   id: CP14BaseMobSkeleton
   name: Mr. Skeleton
