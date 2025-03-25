@@ -16,7 +16,7 @@
   - Sylphoria
   service: !type:CP14SellStackService
     stackId: CP14LucensWoodenPlanks
-    count: 10
+    count: 20
 
 - type: storePositionSell
   id: CP14SpellScrollShadowStep
