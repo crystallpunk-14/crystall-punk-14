@@ -37,6 +37,7 @@
 - type: cp14Skill
   id: MithrilMetall
   skillUiPosition: 4, 2
+  learnCost: 2
   name: cp14-skill-craft-mithril-metall-name
   desc: cp14-skill-craft-mithril-metall-desc
   tree: Blacksmithing

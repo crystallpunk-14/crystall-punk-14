@@ -127,10 +127,22 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         else
         {
             _window.SkillName.Text = Loc.GetString(skill.Name);
-            _window.SkillDescription.Text = Loc.GetString(skill.Desc ?? string.Empty);
+            _window.SkillDescription.SetMessage(GetSkillDescription(skill));
             _window.SkillView.Texture = skill.Icon.Frame0();
             _window.LearnButton.Disabled = !_skill.CanLearnSkill(_player.LocalEntity.Value, skill);
         }
+    }
+
+    private FormattedMessage GetSkillDescription(CP14SkillPrototype skill)
+    {
+        var msg = new FormattedMessage();
+
+        //Description
+        msg.TryAddMarkup(Loc.GetString(skill.Desc ?? string.Empty) + "\n", out _);
+
+        //Learn cost
+        msg.TryAddMarkup($"[color=yellow]{Loc.GetString("cp14-skill-menu-learncost")} {skill.LearnCost}[/color]\n", out _);
+        return msg;
     }
 
 
@@ -142,8 +154,12 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         if (!EntityManager.TryGetComponent<CP14SkillStorageComponent>(player, out var storage))
             return;
 
+
         _window.GraphControl.SetPlayer((player, storage));
 
+        // Reselect for update state
+        SelectNode(_selectedSkill);
+        
         if (_allTrees == null)
             return;
 

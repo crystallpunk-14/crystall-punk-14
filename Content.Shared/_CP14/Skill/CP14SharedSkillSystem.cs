@@ -126,7 +126,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
                 return false;
         }
 
-        ////Experience check
+        //Experience check
         //if (!component.LearnProgress.TryGetValue(indexedSkill.Tree, out var currentExp))
         //    return false;
         //if (currentExp < indexedSkill.LearnCost)
