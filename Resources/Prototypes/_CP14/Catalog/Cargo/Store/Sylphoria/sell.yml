@@ -21,3 +21,12 @@
     sprite:
       sprite: _CP14/Objects/Bureaucracy/paper.rsi
       state: scrolls
+
+#- type: storePositionSell
+#  id: CP14ClothingCloakAmuletGold
+#  price: 80
+#  factions:
+#  - Sylphoria
+#  service: !type:CP14SellPrototypeService
+#    proto: CP14ClothingCloakAmuletGold
+#    count: 1
