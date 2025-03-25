@@ -16,10 +16,7 @@ namespace Content.Client._CP14.Skill.Ui;
 [GenerateTypedNameReferences]
 public sealed partial class CP14SkillTreeGraphControl : BoxContainer
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-
-    private readonly CP14SkillTreePrototype? _tree;
 
     private Entity<CP14SkillStorageComponent>? _player;
 
@@ -27,8 +24,13 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
 
     private CP14SkillPrototype? _hoveredNode;
     private CP14SkillPrototype? _selectedNode;
+    public CP14SkillTreePrototype? Tree;
 
-    private float GridSize = 25f;
+    private bool dragging = false;
+    private Vector2 _previousMousePosition = Vector2.Zero;
+    private Vector2 _globalOffset = new (60,60);
+
+    private const float GridSize = 25f;
 
     public event Action<CP14SkillPrototype?>? OnNodeSelected;
 
@@ -38,9 +40,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         RobustXamlLoader.Load(this);
 
         _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
-        _proto.PrototypesReloaded += _ => _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
-
-        _tree = _proto.Index<CP14SkillTreePrototype>("Blacksmithing");
+        _proto.PrototypesReloaded += _ => _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>().OrderBy(skill => skill.Name).ToList();
     }
 
     public void SetPlayer(Entity<CP14SkillStorageComponent>? player)
@@ -52,15 +52,35 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
     {
         base.KeyBindDown(args);
 
+        if (args.Handled)
+            return;
+
+        if (args.Function == EngineKeyFunctions.UIClick)
+        {
+            dragging = true;
+
+            if (_hoveredNode == null)
+                return;
+
+            OnNodeSelected?.Invoke(_hoveredNode);
+            UserInterfaceManager.ClickSound();
+            _selectedNode = _hoveredNode;
+        }
+
+        if (args.Function == EngineKeyFunctions.UIRightClick)
+        {
+            _globalOffset = new Vector2(60, 60); // Reset offset on right click
+        }
+    }
+
+    protected override void KeyBindUp(GUIBoundKeyEventArgs args)
+    {
+        base.KeyBindUp(args);
+
         if (args.Handled || args.Function != EngineKeyFunctions.UIClick)
             return;
 
-        if (_hoveredNode == null)
-            return;
-
-        OnNodeSelected?.Invoke(_hoveredNode);
-        UserInterfaceManager.ClickSound();
-        _selectedNode = _hoveredNode;
+        dragging = false;
     }
 
     protected override void ExitedTree()
@@ -75,34 +95,43 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         base.Draw(handle);
 
         _hoveredNode = null;
-        if (_player == null || _tree == null)
+        if (_player == null || Tree == null)
         {
             return;
         }
 
         var cursor = (UserInterfaceManager.MousePositionScaled.Position * UIScale) - GlobalPixelPosition;
-        var playerSkills = _player.Value.Comp.Skills;
 
-        var globalOffset = new Vector2(60, 60);
+        if (dragging)
+        {
+            var delta = cursor - _previousMousePosition;
+            _globalOffset += delta;
+        }
+
+        _previousMousePosition = cursor;
+
+        var playerSkills = _player.Value.Comp.Skills;
 
         //Draw connection lines
         foreach (var skill in _allSkills)
         {
-            if (skill.Tree != _tree)
+            if (skill.Tree != Tree)
                 continue;
 
-            var learned = playerSkills.Contains(skill.ID);
-            var canBeLearned = learned || skill.Prerequisites.All(prerequisite => playerSkills.Contains(prerequisite));
-
-            var fromPos = skill.SkillUiPosition * GridSize * UIScale + globalOffset;
+            var fromPos = skill.SkillUiPosition * GridSize * UIScale + _globalOffset;
 
             foreach (var prerequisite in skill.Prerequisites)
             {
                 if (!_proto.TryIndex(prerequisite, out var prerequisiteSkill))
                     continue;
 
-                var toPos = prerequisiteSkill.SkillUiPosition * GridSize * UIScale + globalOffset;
-                var color = canBeLearned ? Color.White : Color.FromSrgb(new Color(0.7f, 0.7f, 0.7f));
+                if (prerequisiteSkill.Tree != Tree)
+                    continue;
+
+                var learned = playerSkills.Contains(skill.ID);
+
+                var toPos = prerequisiteSkill.SkillUiPosition * GridSize * UIScale + _globalOffset;
+                var color = learned ? Color.White : Color.FromSrgb(new Color(0.7f, 0.7f, 0.7f));
                 handle.DrawLine(fromPos, toPos, color);
             }
         }
@@ -110,12 +139,12 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         //Draw skill icons over lines
         foreach (var skill in _allSkills)
         {
-            if (skill.Tree != _tree)
+            if (skill.Tree != Tree)
                 continue;
 
             var learned = playerSkills.Contains(skill.ID);
             var canBeLearned = learned || skill.Prerequisites.All(prerequisite => playerSkills.Contains(prerequisite));
-            var pos = skill.SkillUiPosition * GridSize * UIScale + globalOffset;
+            var pos = skill.SkillUiPosition * GridSize * UIScale + _globalOffset;
 
             // Base skill icon
             var baseTexture = skill.Icon.Frame0();
@@ -125,7 +154,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
             var hovered = (cursor - pos).LengthSquared() <= (baseSize.X / 2) * (baseSize.X / 2);
 
             // Frame
-            var frameTexture = _tree.FrameIcon.Frame0();
+            var frameTexture = Tree.FrameIcon.Frame0();
             var frameSize = new Vector2(frameTexture.Width, frameTexture.Height) * 2;
             var frameQuad = new UIBox2(pos - frameSize / 2, pos + frameSize / 2);
             handle.DrawTextureRect(frameTexture, frameQuad, canBeLearned ? Color.White : Color.FromSrgb(new Color(0.7f, 0.7f, 0.7f)));
@@ -133,7 +162,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
             // Selected Skill
             if (_selectedNode == skill)
             {
-                var selectedTexture = _tree.SelectedIcon.Frame0();
+                var selectedTexture = Tree.SelectedIcon.Frame0();
                 var selectedSize = new Vector2(selectedTexture.Width, selectedTexture.Height) * 2;
                 var selectedQuad = new UIBox2(pos - selectedSize / 2, pos + selectedSize / 2);
                 handle.DrawTextureRect(selectedTexture, selectedQuad, Color.White);
@@ -143,22 +172,21 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
             if (hovered)
             {
                 _hoveredNode = skill;
-                var hoveredTexture = _tree.HoveredIcon.Frame0();
+                var hoveredTexture = Tree.HoveredIcon.Frame0();
                 var hoveredSize = new Vector2(hoveredTexture.Width, hoveredTexture.Height) * 2;
                 var hoveredQuad = new UIBox2(pos - hoveredSize / 2, pos + hoveredSize / 2);
                 handle.DrawTextureRect(hoveredTexture, hoveredQuad, Color.White);
             }
 
-            //Learned Skill
+            // Learned Skill
             if (learned)
             {
-                var learnedTexture = _tree.LearnedIcon.Frame0();
+                var learnedTexture = Tree.LearnedIcon.Frame0();
                 var learnedSize = new Vector2(learnedTexture.Width, learnedTexture.Height) * 2;
                 var learnedQuad = new UIBox2(pos - learnedSize / 2, pos + learnedSize / 2);
                 handle.DrawTextureRect(learnedTexture, learnedQuad, Color.White);
             }
 
-            // Отрисовка основной иконки поверх
             var iconColor = Color.White;
             if (!learned)
                 iconColor = Color.FromSrgb(new Color(0.7f, 0.7f, 0.7f));

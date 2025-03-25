@@ -28,6 +28,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     private CP14SkillWindow? _window;
     private CP14SkillPrototype? _selectedSkill;
 
+    private IEnumerable<CP14SkillTreePrototype>? _allTrees;
     private MenuButton? SkillButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.CP14SkillButton;
 
     public void OnStateEntered(GameplayState state)
@@ -43,6 +44,9 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             .Register<CP14SkillUIController>();
 
         _window.GraphControl.OnNodeSelected += SelectNode;
+        _proto.PrototypesReloaded += _ => ReloadSkillTrees();
+
+        ReloadSkillTrees();
     }
 
     public void OnStateExited(GameplayState state)
@@ -133,21 +137,32 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
         _window.GraphControl.SetPlayer((data.Entity, storage));
 
-        var (entity, skills) = data;
+        if (_allTrees == null)
+            return;
 
-        foreach (var skill in skills)
+        _window.TreeTabsContainer.RemoveAllChildren();
+        foreach (var tree in _allTrees)
         {
-            if (!_proto.TryIndex(skill, out var indexedSkill))
-                continue;
-
-            var knowledgeButton = new Button()
+            var treeButton = new Button()
             {
                 Access = AccessLevel.Public,
-                Text = Loc.GetString(indexedSkill.Name),
-                ToolTip = Loc.GetString(indexedSkill.Desc ?? string.Empty),
+                Text = Loc.GetString(tree.Name),
+                ToolTip = Loc.GetString(tree.Desc ?? string.Empty),
                 TextAlign = Label.AlignMode.Center,
             };
+
+            treeButton.OnPressed += args =>
+            {
+                _window.GraphControl.Tree = tree;
+            };
+
+            _window.TreeTabsContainer.AddChild(treeButton);
         }
+    }
+
+    private void ReloadSkillTrees()
+    {
+        _allTrees = _proto.EnumeratePrototypes<CP14SkillTreePrototype>();
     }
 
     private void CharacterDetached(EntityUid uid)

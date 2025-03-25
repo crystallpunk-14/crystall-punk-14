@@ -66,5 +66,19 @@
                 </BoxContainer>
             </PanelContainer>
         </BoxContainer>
+
+        <!-- Tree Tabs -->
+        <BoxContainer Margin="10 10 10 10" MaxWidth="240" SetWidth="240" Orientation="Vertical"
+                      HorizontalExpand="False" VerticalExpand="True">
+            <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True">
+                        <BoxContainer Name="TreeTabsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Access="Public">
+
+                        </BoxContainer>
+                    </BoxContainer>
+                </ScrollContainer>
+            </BoxContainer>
+        </BoxContainer>
     </BoxContainer>
 </window:CP14SkillWindow>
