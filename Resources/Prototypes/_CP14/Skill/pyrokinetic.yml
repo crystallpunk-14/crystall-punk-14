@@ -1,0 +1,13 @@
+- type: cp14Skill
+  id: SpellFlameCreation
+  skillUiPosition: 0, 0
+  name: cp14-skill-flame-creation-name
+  desc: cp14-skill-flame-creation-desc
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: flame_creation
+  effects:
+  - !type:AddAction
+    actions:
+    - CP14ActionSpellFlameCreation

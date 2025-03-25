@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Skill.Specials;
 
-public sealed partial class CP14SkillEffectAction : CP14SkillEffect
+public sealed partial class AddAction : CP14SkillEffect
 {
     [DataField(required: true)]
     public List<EntProtoId> Actions = new();

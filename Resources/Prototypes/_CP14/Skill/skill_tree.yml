@@ -4,14 +4,32 @@
   desc: cp14-skill-tree-blaksmithing-desc
   color: "#b52400"
   frameIcon:
-    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
     state: base
   hoveredIcon:
-    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
     state: hovered
   selectedIcon:
-    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
     state: selected
   learnedIcon:
-    sprite: _CP14/Interface/Skills/skill_tree.rsi
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: learned
+
+- type: cp14SkillTree
+  id: Pyrokinetic
+  name: cp14-skill-tree-pyrokinetic-name
+  desc: cp14-skill-tree-pyrokinetic-desc
+  color: "#b52400"
+  frameIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: base
+  hoveredIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: hovered
+  selectedIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: selected
+  learnedIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
     state: learned
