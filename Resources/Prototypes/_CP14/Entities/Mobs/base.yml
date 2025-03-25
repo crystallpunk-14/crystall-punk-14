@@ -47,7 +47,7 @@
   - type: CP14MagicUnsafeSleep
   - type: CP14MagicAttuningMind
     autoCopyToMind: true
-  
+
 
 - type: entity
   parent:
@@ -92,6 +92,35 @@
     - Adrenaline
   - type: Bloodstream
     bloodMaxVolume: 150
+  - type: MobPrice
+    price: 150
+  - type: FloatingVisuals
+
+- type: entity
+  parent:
+  - CP14MobDamageable
+  - MobRespirator
+  - MobAtmosStandard
+  - SimpleSpaceMobBase
+  id: CP14SimpleMobNoLifeBase
+  suffix: AI
+  abstract: true
+  components:
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - StaminaModifier
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
   - type: MobPrice
     price: 150
   - type: FloatingVisuals

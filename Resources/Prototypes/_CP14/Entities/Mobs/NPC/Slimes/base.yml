@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobSlimeBase
-  parent: [ CP14SimpleMobBase, MobCombat ]
+  parent: [ CP14SimpleMobNoLifeBase, MobCombat ]
   name: slime
   description: A clot of semi-intelligent slime sensitive to the elemental elements. And happy to slime the skin off your face.
   components:
