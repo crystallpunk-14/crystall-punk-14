@@ -1,4 +1,7 @@
+using System.Linq;
+using System.Numerics;
 using Content.Client._CP14.Skill;
+using Content.Client._CP14.Skill.Ui;
 using Content.Client._CP14.UserInterface.Systems.Skill.Window;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
@@ -42,8 +45,12 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 InputCmdHandler.FromDelegate(_ => ToggleWindow()))
             .Register<CP14SkillUIController>();
 
-        _window.GraphControl.OnNodeSelected += SelectNode;
         _window.LearnButton.OnPressed += _ => _skill.RequestLearnSkill(_player.LocalEntity, _selectedSkill);
+        _window.GraphControl.OnNodeSelected += SelectNode;
+        _window.GraphControl.OnOffsetChanged += offset =>
+        {
+            _window.ParallaxBackground.Offset = -offset * 0.25f + new Vector2(1000,1000); //hardcoding is bad
+        };
     }
 
 
@@ -142,7 +149,6 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         return msg;
     }
 
-
     private void SkillUpdate(EntityUid player)
     {
         if (_window is null)
@@ -156,27 +162,42 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         // Reselect for update state
         SelectNode(_selectedSkill);
 
+        //If tree not selected, select the first one
+        if (_window.GraphControl.Tree == null && storage.LearnProgress.Count > 0)
+        {
+            var firstTree = storage.LearnProgress.First().Key;
+
+            if (_proto.TryIndex(firstTree, out var indexedTree))
+            {
+                SelectTree(indexedTree); // Set the first tree from the player's progress
+            }
+        }
+
         _window.TreeTabsContainer.RemoveAllChildren();
         foreach (var (tree, progress) in storage.LearnProgress)
         {
             if (!_proto.TryIndex(tree, out var indexedTree))
                 continue;
 
-            var treeButton = new Button()
+            var treeButton2 = new CP14SkillTreeButtonControl(indexedTree.Color, Loc.GetString(indexedTree.Name));
+            treeButton2.ToolTip = Loc.GetString(indexedTree.Desc ?? string.Empty);
+            treeButton2.OnPressed += () =>
             {
-                Access = AccessLevel.Public,
-                Text = Loc.GetString(indexedTree.Name),
-                ToolTip = Loc.GetString(indexedTree.Desc ?? string.Empty),
-                TextAlign = Label.AlignMode.Center,
+                SelectTree(indexedTree);
             };
 
-            treeButton.OnPressed += args =>
-            {
-                _window.GraphControl.Tree = indexedTree;
-            };
-
-            _window.TreeTabsContainer.AddChild(treeButton);
+            _window.TreeTabsContainer.AddChild(treeButton2);
         }
+    }
+
+    private void SelectTree(CP14SkillTreePrototype tree)
+    {
+        if (_window == null)
+            return;
+
+        _window.GraphControl.Tree = tree;
+        _window.ParallaxBackground.ParallaxPrototype = tree.Parallax;
+        _window.TreeName.Text = Loc.GetString(tree.Name);
     }
 
     private void CharacterDetached(EntityUid uid)

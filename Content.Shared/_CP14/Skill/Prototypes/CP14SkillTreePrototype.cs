@@ -30,6 +30,9 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
     public SpriteSpecifier AvailableIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/available.png"));
 
     [DataField]
+    public string Parallax = "AspidParallax";
+
+    [DataField]
     public LocId? Desc;
 
     [DataField]

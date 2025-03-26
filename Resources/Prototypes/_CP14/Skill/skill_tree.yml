@@ -8,16 +8,16 @@
   id: Hydrosophistry
   name: cp14-skill-tree-hydrosophistry-name
   desc: cp14-skill-tree-hydrosophistry-desc
-  color: "#b52400"
+  color: "#1554a1"
 
 - type: cp14SkillTree
   id: Metamagic
   name: cp14-skill-tree-metamagic-name
   desc: cp14-skill-tree-metamagic-desc
-  color: "#b52400"
+  color: "#56e5f5"
 
 - type: cp14SkillTree
   id: Illusion
   name: cp14-skill-tree-illusion-name
   desc: cp14-skill-tree-illusion-desc
-  color: "#b52400"
+  color: "#f55faf"

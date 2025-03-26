@@ -3,7 +3,7 @@
     xmlns:window="clr-namespace:Content.Client._CP14.UserInterface.Systems.Skill.Window"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
-    xmlns:ui="clr-namespace:Content.Client.Xenoarchaeology.Ui"
+    xmlns:parallax="clr-namespace:Content.Client.Parallax"
     xmlns:ui1="clr-namespace:Content.Client._CP14.Skill.Ui"
     Title="{Loc 'cp14-skill-info-title'}"
     MinSize="700 350"
@@ -52,33 +52,21 @@
         <customControls:VSeparator StyleClasses="LowDivider" />
 
         <!-- Skills Tree -->
-        <BoxContainer HorizontalExpand="True" VerticalExpand="True">
-            <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" RectClipContent="True">
-                <PanelContainer.PanelOverride>
-                    <graphics:StyleBoxFlat BackgroundColor="#000000FF" />
-                </PanelContainer.PanelOverride>
-
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer HorizontalExpand="True">
+                <Label Name="TreeName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                       HorizontalExpand="True" HorizontalAlignment="Center" />
+            </BoxContainer>
+            <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
+                <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4" Access="Public" SpeedX="10" SpeedY="5"/>
                 <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
-                    <ui1:CP14SkillTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public">
-                        <!-- Procedural generation graph here -->
-                    </ui1:CP14SkillTreeGraphControl>
-
+                    <ui1:CP14SkillTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
+                </BoxContainer>
+                <!-- Tree Tabs -->
+                <BoxContainer Margin="10 10 10 10" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical" VerticalExpand="True">
+                    <BoxContainer Name="TreeTabsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Access="Public"/>
                 </BoxContainer>
             </PanelContainer>
-        </BoxContainer>
-
-        <!-- Tree Tabs -->
-        <BoxContainer Margin="10 10 10 10" MaxWidth="240" SetWidth="240" Orientation="Vertical"
-                      HorizontalExpand="False" VerticalExpand="True">
-            <BoxContainer Orientation="Vertical" VerticalExpand="True">
-                <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
-                    <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True">
-                        <BoxContainer Name="TreeTabsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Access="Public">
-
-                        </BoxContainer>
-                    </BoxContainer>
-                </ScrollContainer>
-            </BoxContainer>
         </BoxContainer>
     </BoxContainer>
 </window:CP14SkillWindow>

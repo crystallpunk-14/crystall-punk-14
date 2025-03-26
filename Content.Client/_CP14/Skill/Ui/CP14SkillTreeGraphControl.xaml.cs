@@ -36,6 +36,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
     private const float GridSize = 25f;
 
     public event Action<CP14SkillPrototype?>? OnNodeSelected;
+    public event Action<Vector2>? OnOffsetChanged;
 
     public CP14SkillTreeGraphControl()
     {
@@ -75,6 +76,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         if (args.Function == EngineKeyFunctions.UIRightClick)
         {
             _globalOffset = new Vector2(60, 60); // Reset offset on right click
+            OnOffsetChanged?.Invoke(_globalOffset);
         }
     }
 
@@ -111,6 +113,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
         {
             var delta = cursor - _previousMousePosition;
             _globalOffset += delta;
+            OnOffsetChanged?.Invoke(_globalOffset);
         }
 
         _previousMousePosition = cursor;
