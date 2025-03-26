@@ -12,6 +12,7 @@ cp14-loadout-general-shoes = Shoes
 cp14-loadout-general-back = Back
 cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-general-spells = Spells
+cp14-loadout-skill-tree = Specialization
 cp14-loadout-general-keys = Keys
 
 # Apprentice

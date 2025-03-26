@@ -39,3 +39,24 @@
   availableIcon:
     sprite: _CP14/Interface/Skills/blacksmithing.rsi
     state: available
+
+- type: cp14SkillTree
+  id: Hydrosophistry
+  name: cp14-skill-tree-hydrosophistry-name
+  desc: cp14-skill-tree-hydrosophistry-desc
+  color: "#b52400"
+  frameIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: base
+  hoveredIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: hovered
+  selectedIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: selected
+  learnedIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: learned
+  availableIcon:
+    sprite: _CP14/Interface/Skills/blacksmithing.rsi
+    state: available

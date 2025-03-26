@@ -12,6 +12,7 @@ cp14-loadout-general-shoes = Обувь
 cp14-loadout-general-back = Спина
 cp14-loadout-general-trinkets = Безделушки
 cp14-loadout-general-spells = Заклинания
+cp14-loadout-skill-tree = Специализация
 cp14-loadout-general-keys = Ключи
 
 # Apprentice

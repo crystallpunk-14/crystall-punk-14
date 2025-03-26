@@ -97,7 +97,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     /// </summary>
     public bool TryAddExperience(EntityUid target,
         ProtoId<CP14SkillTreePrototype> tree,
-        float exp,
+        FixedPoint2 exp,
         CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
@@ -116,7 +116,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     /// </summary>
     public bool TryRemoveExperience(EntityUid target,
         ProtoId<CP14SkillTreePrototype> tree,
-        float exp,
+        FixedPoint2 exp,
         CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))

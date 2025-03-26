@@ -1,0 +1,34 @@
+- type: loadoutGroup
+  id: CP14SkillTree
+  name: cp14-loadout-skill-tree
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CP14SkillTreePyrokinetic
+  - CP14SkillTreeHydrosophistry
+
+- type: loadout
+  id: CP14SkillTreePyrokinetic
+  dummyEntity: CP14ActionSpellFlameCreation #TODO
+  skillTree:
+    Pyrokinetic: 1
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14SkillTreeHydrosophistry
+  dummyEntity: CP14ActionSpellWaterCreation #TODO
+  skillTree:
+    Hydrosophistry: 1
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
