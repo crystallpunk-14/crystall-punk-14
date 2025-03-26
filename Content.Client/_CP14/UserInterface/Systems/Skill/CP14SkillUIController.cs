@@ -7,6 +7,7 @@ using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared.FixedPoint;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.Player;
@@ -69,13 +70,13 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
     public void OnSystemLoaded(CP14ClientSkillSystem system)
     {
-        system.OnSkillUpdate += SkillUpdate;
+        system.OnSkillUpdate += UpdateState;
         _player.LocalPlayerDetached += CharacterDetached;
     }
 
     public void OnSystemUnloaded(CP14ClientSkillSystem system)
     {
-        system.OnSkillUpdate -= SkillUpdate;
+        system.OnSkillUpdate -= UpdateState;
         _player.LocalPlayerDetached -= CharacterDetached;
     }
 
@@ -149,7 +150,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         return msg;
     }
 
-    private void SkillUpdate(EntityUid player)
+    private void UpdateState(EntityUid player)
     {
         if (_window is null)
             return;
@@ -157,7 +158,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         if (!EntityManager.TryGetComponent<CP14SkillStorageComponent>(player, out var storage))
             return;
 
-        _window.GraphControl.SetPlayer((player, storage));
+        _window.GraphControl.UpdateState((player, storage));
 
         // Reselect for update state
         SelectNode(_selectedSkill);
@@ -169,8 +170,15 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
             if (_proto.TryIndex(firstTree, out var indexedTree))
             {
-                SelectTree(indexedTree); // Set the first tree from the player's progress
+                SelectTree(indexedTree, storage); // Set the first tree from the player's progress
             }
+        }
+
+        // Update the experience points for the selected tree
+        var playerProgress = storage.LearnProgress;
+        if (_window.GraphControl.Tree is not null && playerProgress.TryGetValue(_window.GraphControl.Tree, out var skillpoint))
+        {
+            _window.ExpPointLabel.Text = skillpoint.ToString();
         }
 
         _window.TreeTabsContainer.RemoveAllChildren();
@@ -183,14 +191,14 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             treeButton2.ToolTip = Loc.GetString(indexedTree.Desc ?? string.Empty);
             treeButton2.OnPressed += () =>
             {
-                SelectTree(indexedTree);
+                SelectTree(indexedTree, storage);
             };
 
             _window.TreeTabsContainer.AddChild(treeButton2);
         }
     }
 
-    private void SelectTree(CP14SkillTreePrototype tree)
+    private void SelectTree(CP14SkillTreePrototype tree, CP14SkillStorageComponent storage)
     {
         if (_window == null)
             return;
@@ -198,6 +206,9 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         _window.GraphControl.Tree = tree;
         _window.ParallaxBackground.ParallaxPrototype = tree.Parallax;
         _window.TreeName.Text = Loc.GetString(tree.Name);
+
+        var playerProgress = storage.LearnProgress;
+        _window.ExpPointLabel.Text = playerProgress.TryGetValue(tree, out var skillpoint) ? skillpoint.ToString() : "0";
     }
 
     private void CharacterDetached(EntityUid uid)
