@@ -9,9 +9,6 @@
   #Dimension
   - CP14ActionSpellShadowGrab
   #Earth
-  #Fire
-  - CP14ActionSpellFlameCreation
-  - CP14ActionSpellHellBallade
   #Healing
   #- CP14ActionSpellCureWounds
   #- CP14ActionSpellCureBurn
@@ -20,36 +17,12 @@
   #- CP14ActionSpellHealBallade
   - CP14ActionSpellSpeedBallade
   - CP14ActionSpellPeaceBallade
-  #Light
-  - CP14ActionSpellSphereOfLight
-  #Meta
-  - CP14ActionSpellManaManipulation
-  - CP14ActionSpellMagicSplitting
-  - CP14ActionSpellMagicBallade
   #Physical
   - CP14ActionSpellSprint
   - CP14ActionSpellKick
-  #Water
-  - CP14ActionSpellWaterCreation
-  - CP14ActionSpellIceShards
-  - CP14ActionSpellFreeze
-  - CP14ActionSpellBeerCreation
 
 - type: loadout
   id: CP14ActionSpellBase
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-
-- type: loadout
-  id: CP14ActionSpellFlameCreation
-  dummyEntity: CP14ActionSpellFlameCreation
-  actions:
-  - CP14ActionSpellFlameCreation
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
@@ -176,63 +149,6 @@
       - CP14ManaWasting
 
 - type: loadout
-  id: CP14ActionSpellIceShards
-  dummyEntity: CP14ActionSpellIceShards
-  actions:
-  - CP14ActionSpellIceShards
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-
-- type: loadout
-  id: CP14ActionSpellWaterCreation
-  dummyEntity: CP14ActionSpellWaterCreation
-  actions:
-  - CP14ActionSpellWaterCreation
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-
-- type: loadout
-  id: CP14ActionSpellFreeze
-  dummyEntity: CP14ActionSpellFreeze
-  actions:
-  - CP14ActionSpellFreeze
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-
-- type: loadout
-  id: CP14ActionSpellBeerCreation
-  dummyEntity: CP14ActionSpellBeerCreation
-  actions:
-  - CP14ActionSpellBeerCreation
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:SpeciesRequirement
-      species:
-      - CP14Dwarf
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-
-- type: loadout
   id: CP14ActionSpellSprint
   dummyEntity: CP14ActionSpellSprint
   actions:
@@ -289,24 +205,6 @@
       inverted: true
       traits:
       - CP14ManaWasting
-
-- type: loadout
-  id: CP14ActionSpellHellBallade
-  dummyEntity: CP14ActionSpellHellBallade
-  actions:
-  - CP14ActionSpellHellBallade
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:SpeciesRequirement
-      species:
-      - CP14Tiefling
 
 - type: loadout
   id: CP14ActionSpellMagicBallade

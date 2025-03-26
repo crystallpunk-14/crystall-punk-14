@@ -6,12 +6,14 @@
   loadouts:
   - CP14SkillTreePyrokinetic
   - CP14SkillTreeHydrosophistry
+  - CP14SkillTreeIllusion
+  - CP14SkillTreeMetamagic
 
 - type: loadout
   id: CP14SkillTreePyrokinetic
   dummyEntity: CP14ActionSpellFlameCreation #TODO
   skillTree:
-    Pyrokinetic: 1
+    Pyrokinetic: 2
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
@@ -24,7 +26,33 @@
   id: CP14SkillTreeHydrosophistry
   dummyEntity: CP14ActionSpellWaterCreation #TODO
   skillTree:
-    Hydrosophistry: 1
+    Hydrosophistry: 2
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14SkillTreeIllusion
+  dummyEntity: CP14ActionSpellSphereOfLight #TODO
+  skillTree:
+    Illusion: 2
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: loadout
+  id: CP14SkillTreeMetamagic
+  dummyEntity: CP14ActionSpellMagicSplitting #TODO
+  skillTree:
+    Metamagic: 2
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:

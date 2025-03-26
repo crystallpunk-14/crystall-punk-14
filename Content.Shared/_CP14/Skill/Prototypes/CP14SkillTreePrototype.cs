@@ -14,20 +14,20 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
     [DataField(required: true)]
     public LocId Name;
 
-    [DataField(required: true)]
-    public SpriteSpecifier FrameIcon = default!;
+    [DataField]
+    public SpriteSpecifier FrameIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/frame.png"));
 
-    [DataField(required: true)]
-    public SpriteSpecifier HoveredIcon = default!;
+    [DataField]
+    public SpriteSpecifier HoveredIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/hovered.png"));
 
-    [DataField(required: true)]
-    public SpriteSpecifier SelectedIcon = default!;
+    [DataField]
+    public SpriteSpecifier SelectedIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/selected.png"));
 
-    [DataField(required: true)]
-    public SpriteSpecifier LearnedIcon = default!;
+    [DataField]
+    public SpriteSpecifier LearnedIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/learned.png"));
 
-    [DataField(required: true)]
-    public SpriteSpecifier AvailableIcon = default!;
+    [DataField]
+    public SpriteSpecifier AvailableIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/available.png"));
 
     [DataField]
     public LocId? Desc;

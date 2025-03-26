@@ -13,19 +13,6 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         base.Initialize();
 
         InitializeAdmin();
-
-        SubscribeLocalEvent<CP14SkillStorageComponent, MapInitEvent>(OnMapInit);
-    }
-
-    private void OnMapInit(Entity<CP14SkillStorageComponent> ent, ref MapInitEvent args)
-    {
-        //For debug add all skill trees to the player
-
-        AddSkillTreeToPlayer(ent, "Pyrokinetic", ent.Comp);
-        TryAddExperience(ent, "Pyrokinetic", 100, ent.Comp);
-
-        AddSkillTreeToPlayer(ent, "Blacksmithing", ent.Comp);
-        TryAddExperience(ent, "Blacksmithing", 100, ent.Comp);
     }
 
     /// <summary>
@@ -225,8 +212,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!CanLearnSkill(target, skill, component))
             return false;
 
-        //if (!TryRemoveExperience(target, indexedSkill.Tree, indexedSkill.LearnCost, component))
-        //    return false;
+        if (!TryRemoveExperience(target, indexedSkill.Tree, indexedSkill.LearnCost, component))
+            return false;
 
         if (!TryAddSkill(target, skill, component))
             return false;
