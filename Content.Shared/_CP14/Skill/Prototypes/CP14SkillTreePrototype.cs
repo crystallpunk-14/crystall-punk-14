@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -15,19 +16,19 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
     public LocId Name;
 
     [DataField]
-    public SpriteSpecifier FrameIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/frame.png"));
+    public SpriteSpecifier FrameIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "frame");
 
     [DataField]
-    public SpriteSpecifier HoveredIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/hovered.png"));
+    public SpriteSpecifier HoveredIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "hovered");
 
     [DataField]
-    public SpriteSpecifier SelectedIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/selected.png"));
+    public SpriteSpecifier SelectedIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "selected");
 
     [DataField]
-    public SpriteSpecifier LearnedIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/learned.png"));
+    public SpriteSpecifier LearnedIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "learned");
 
     [DataField]
-    public SpriteSpecifier AvailableIcon = new SpriteSpecifier.Texture(new("/Textures/_CP14/Interface/Skills/default.rsi/available.png"));
+    public SpriteSpecifier AvailableIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "available");
 
     [DataField]
     public string Parallax = "AspidParallax";
@@ -37,4 +38,7 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
 
     [DataField]
     public Color Color;
+
+    [DataField]
+    public SoundSpecifier LearnSound = new SoundCollectionSpecifier("CP14LearnSkill");
 }

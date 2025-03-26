@@ -4,4 +4,4 @@ cp14-verb-categories-admin-skill-remove = Remove skill
 cp14-skill-info-title = Skills
 cp14-game-hud-open-skill-menu-button-tooltip = Skill tree
 cp14-skill-menu-learn-button = Learn skill
-cp14-skill-menu-learncost = Points required:
+cp14-skill-menu-learncost = [color=yellow]Points required:[/color]

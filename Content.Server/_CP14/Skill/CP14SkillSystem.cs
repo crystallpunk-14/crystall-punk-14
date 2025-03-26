@@ -3,7 +3,7 @@ using Content.Shared._CP14.Skill.Components;
 
 namespace Content.Server._CP14.Skill;
 
-public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
+public sealed partial class CP14SkillSystem : CP14SharedSkillSystem
 {
     public override void Initialize()
     {
@@ -19,7 +19,6 @@ public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
         if (args.SenderSession.AttachedEntity != entity)
             return;
 
-        if (!TryLearnSkill(entity, ev.Skill))
-            return;
+        TryLearnSkill(entity, ev.Skill);
     }
 }

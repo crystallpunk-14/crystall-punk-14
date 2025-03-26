@@ -135,6 +135,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             _window.SkillDescription.SetMessage(GetSkillDescription(skill));
             _window.SkillView.Texture = skill.Icon.Frame0();
             _window.LearnButton.Disabled = !_skill.CanLearnSkill(_player.LocalEntity.Value, skill);
+            _window.SkillCost.Text = skill.LearnCost.ToString();
         }
     }
 
@@ -145,8 +146,6 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         //Description
         msg.TryAddMarkup(_skill.GetSkillDescription(skill) + "\n", out _);
 
-        //Learn cost
-        msg.TryAddMarkup($"[color=yellow]{Loc.GetString("cp14-skill-menu-learncost")} {skill.LearnCost}[/color]\n", out _);
         return msg;
     }
 
