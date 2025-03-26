@@ -9,10 +9,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:SkillRequired
-    skills:
-    - CopperMetall
-    - CraftArrowTip
   result: CP14ModularTipCopperArrow
   resultCount: 4
 
@@ -24,10 +20,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:SkillRequired
-    skills:
-    - IronMetall
-    - CraftArrowTip
   result: CP14ModularTipIronArrow
   resultCount: 4
 
@@ -39,10 +31,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:SkillRequired
-    skills:
-    - GoldMetall
-    - CraftArrowTip
   result: CP14ModularTipGoldArrow
   resultCount: 4
 
@@ -54,9 +42,5 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:SkillRequired
-    skills:
-    - MithrilMetall
-    - CraftArrowTip
   result: CP14ModularTipMithrilArrow
   resultCount: 4
