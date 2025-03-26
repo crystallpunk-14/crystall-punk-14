@@ -7,7 +7,6 @@ using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
-using Content.Shared.FixedPoint;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.Player;

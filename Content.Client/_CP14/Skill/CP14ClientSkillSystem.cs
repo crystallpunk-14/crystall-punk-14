@@ -32,7 +32,7 @@ public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
     {
         var localPlayer = _playerManager.LocalEntity;
 
-        if (!TryComp<CP14SkillStorageComponent>(localPlayer, out var component))
+        if (!HasComp<CP14SkillStorageComponent>(localPlayer))
             return;
 
         OnSkillUpdate?.Invoke(localPlayer.Value);
