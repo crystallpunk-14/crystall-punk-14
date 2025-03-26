@@ -138,7 +138,7 @@
   parent: MarkerBase
   components:
   - type: GhostRole
-    name: cp14-ghost-role-information-name-skeleton-halberd
+    name: cp14-ghost-role-information-name-skeleton
     allowMovement: true
     description: cp14-ghost-role-information-description-skeleton
     rules: cp14-ghost-role-information-rules-demiplane
@@ -166,7 +166,7 @@
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonSword
   - type: GhostRole
-    name: cp14-ghost-role-information-name-skeleton-sword
+    name: cp14-ghost-role-information-name-skeleton
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonDodger
@@ -179,7 +179,7 @@
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonDodger
   - type: GhostRole
-    name: cp14-ghost-role-information-name-skeleton-dodger
+    name: cp14-ghost-role-information-name-skeleton
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonArcher
@@ -192,7 +192,7 @@
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonArcher
   - type: GhostRole
-    name: cp14-ghost-role-information-name-skeleton-archer
+    name: cp14-ghost-role-information-name-skeleton
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonWizard
@@ -205,7 +205,7 @@
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonWizard
   - type: GhostRole
-    name: cp14-ghost-role-information-name-skeleton-wizard
+    name: cp14-ghost-role-information-name-skeleton
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonBard
@@ -218,4 +218,4 @@
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonBard
   - type: GhostRole
-    name: cp14-ghost-role-information-name-skeleton-bard
+    name: cp14-ghost-role-information-name-skeleton

@@ -135,6 +135,7 @@
   groups:
   - CP14SkillTree
   - CP14GeneralSpells
+  - CP14GuildmasterWeapons
   - CP14GuildmasterOuterClothing
   - CP14GeneralEyes
   - CP14GuildmasterHead

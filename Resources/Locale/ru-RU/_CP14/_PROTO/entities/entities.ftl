@@ -678,7 +678,7 @@ ent-CP14ClothingHeadGildmaster = шляпа гильдмастера
     .desc = Знак безграничного опыта и чести.
 
 ent-CP14ClothingHeadBowler = шляпа-котелок
-    .desc = В нем чувствуется аристократизм...  
+    .desc = В нем чувствуется аристократизм...
 
 ent-CP14ClothingHeadBowlerGolden = позолоченная шляпа-котелок
     .desc = Какая изысканная шляпа. Эту шляпу предпочитают носить только утонченные люди.
@@ -1815,7 +1815,7 @@ ent-CP14KeyRingAlchemist = { ent-CP14BaseKeyRing }
 
 ent-CP14KeyRingMerchant = { ent-CP14BaseKeyRing }
     .desc = { ent-CP14BaseKeyRing.desc }
-    .suffix = Банкир
+    .suffix = Торговец
 
 ent-CP14KeyRingGuard = { ent-CP14BaseKeyRing }
     .desc = { ent-CP14BaseKeyRing.desc }
@@ -3021,11 +3021,11 @@ ent-CP14WallmountFlagBlacksmith = гобелен кузнеца
 ent-CP14WallmountFlagTavern = гобелен таверны
     .desc = Гобелен с символом пива, указывающий на то, что здесь находится таверна.
 
-ent-CP14WallmountFlagBank = гобелен банка
-    .desc = Гобелен с символом денег, указывающий на то, что здесь находится банк.
+ent-CP14WallmountFlagBank = гобелен торговца
+    .desc = Гобелен с символом денег, указывающий на то, что здесь находится лавка торговца.
 
-ent-CP14WallmountFlagBankVault = гобелен банка
-    .desc = Гобелен с символом сейфы, указывающий что здесь находится хранилище банка.
+ent-CP14WallmountFlagBankVault = гобелен торговца
+    .desc = Гобелен с символом сейфа, указывающий что здесь находится хранилище ценностей торговца.
 
 ent-CP14WallmountFlagBankCrates = гобелен хранилища банка
     .desc = Гобелен с символом ящика, указывающим на то, что именно здесь находятся банковские хранилища.
@@ -3577,7 +3577,7 @@ ent-CP14BarrelWildSageSap = { ent-CP14BaseBarrel }
 
 ent-CP14BarrelGroundQuartz = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }
-    .suffix = Грубый кварц
+    .suffix = Размолотый кварц
 
 ent-CP14BarrelLumiMushroom = { ent-CP14BaseBarrel }
     .desc = { ent-CP14BaseBarrel.desc }

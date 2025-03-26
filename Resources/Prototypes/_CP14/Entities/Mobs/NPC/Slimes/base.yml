@@ -40,7 +40,6 @@
         - MobMask
         layer:
         - MobLayer
-        - ItemMask
   - type: NpcFactionMember
     factions:
     - CP14Monster

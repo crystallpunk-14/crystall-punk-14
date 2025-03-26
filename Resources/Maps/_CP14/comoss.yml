@@ -63,6 +63,11 @@ entities:
       data: {}
     - type: BecomesStation
       id: Comoss
+    - type: CP14WeatherController
+      entries:
+      - visuals: CP14Mist
+      - visuals: CP14Rain
+      - visuals: CP14Storm
     - type: LightCycle
     - type: SunShadow
     - type: SunShadowCycle

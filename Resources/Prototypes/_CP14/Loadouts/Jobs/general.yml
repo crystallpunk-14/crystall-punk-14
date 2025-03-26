@@ -165,6 +165,11 @@
   equipment:
     mask: CP14ClothingMaskNeckerchief
 
+- type: loadout
+  id: CP14ClothingMaskBoneHornedMask
+  equipment:
+    mask: CP14ClothingMaskBoneHornedMask
+
 # Head
 
 - type: loadoutGroup
@@ -266,6 +271,7 @@
   loadouts:
   - CP14ClothingShirtCottonBlack
   - CP14ClothingShirtBlackDress
+  - CP14ClothinShirtMaidDress
   - CP14ClothingShirtCottonBlue
   - CP14ClothingShirtCottonBlueCollar
   - CP14ClothingBlueCollarDress
@@ -300,6 +306,11 @@
   id: CP14ClothingShirtBlackDress
   equipment:
     shirt: CP14ClothingShirtBlackDress
+
+- type: loadout
+  id: CP14ClothinShirtMaidDress
+  equipment:
+    shirt: CP14ClothinShirtMaidDress
 
 - type: loadout
   id: CP14ClothingShirtCottonBlue

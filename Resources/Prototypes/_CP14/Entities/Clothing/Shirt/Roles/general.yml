@@ -281,3 +281,13 @@
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothinShirtMaidDress
+  name: maid's dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
