@@ -157,7 +157,7 @@
   requirements:
   - !type:StackResource
     stack: CP14GlassSheet
-    count: 3
+    count: 9
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -166,4 +166,5 @@
   - !type:KnowledgeRequired
     knowledge: MetallMelting
   result: CP14BaseAlchemyBomb
+  resultCount: 3
   
