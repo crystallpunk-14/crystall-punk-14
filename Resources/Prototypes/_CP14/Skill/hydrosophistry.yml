@@ -47,3 +47,13 @@
     state: ice_dagger
   effect: !type:AddAction
     action: CP14ActionSpellIceDagger
+
+- type: cp14Skill
+  id: CP14ActionSpellIceArrow
+  skillUiPosition: 0, 10
+  tree: Hydrosophistry
+  icon:
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: ice_arrow
+  effect: !type:AddAction
+    action: CP14ActionSpellIceArrow

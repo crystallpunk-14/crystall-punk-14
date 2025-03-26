@@ -37,7 +37,7 @@
   name: ice dagger
   parent: BaseItem
   id: CP14IceDagger
-  description: A sharp ice dagger conjured from magic. It's melting and will soon disappear, but you can use it now.
+  description: A sharp ice arrow created with magic. It melts and will soon disappear, but you can shoot it once with your bow.
   categories: [ ForkFiltered ]
   components:
   - type: Sharp
@@ -91,7 +91,7 @@
   - type: DamageOnLand
     damage:
       types:
-        Piercing: 5
+        Blunt: 5
   - type: Fixtures
     fixtures:
       fix1:
