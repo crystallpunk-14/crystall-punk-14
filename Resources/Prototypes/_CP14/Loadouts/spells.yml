@@ -13,11 +13,11 @@
   - CP14ActionSpellFlameCreation
   - CP14ActionSpellHellBallade
   #Healing
-  - CP14ActionSpellCureWounds
-  - CP14ActionSpellCureBurn
-  - CP14ActionSpellBloodPurification
+  #- CP14ActionSpellCureWounds
+  #- CP14ActionSpellCureBurn
+  #- CP14ActionSpellBloodPurification
   - CP14ActionSpellPlantGrowth
-  - CP14ActionSpellHealBallade
+  #- CP14ActionSpellHealBallade
   - CP14ActionSpellSpeedBallade
   - CP14ActionSpellPeaceBallade
   #Light
