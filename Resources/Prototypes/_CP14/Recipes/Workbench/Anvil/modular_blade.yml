@@ -9,8 +9,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronDagger
 
 - type: CP14Recipe
@@ -21,8 +19,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldDagger
 
 - type: CP14Recipe
@@ -33,8 +29,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperDagger
 
 - type: CP14Recipe
@@ -45,8 +39,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilDagger
 
 # Spear
@@ -59,8 +51,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronSpear
 
 - type: CP14Recipe
@@ -71,8 +61,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperSpear
 
 - type: CP14Recipe
@@ -83,8 +71,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldSpear
 
 - type: CP14Recipe
@@ -95,8 +81,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilSpear
 
 # Mace
@@ -109,8 +93,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronMace
 
 - type: CP14Recipe
@@ -121,8 +103,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldMace
 
 - type: CP14Recipe
@@ -133,8 +113,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperMace
 
 - type: CP14Recipe
@@ -145,8 +123,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilMace
 
 # Sword
@@ -159,8 +135,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronSword
 
 - type: CP14Recipe
@@ -171,8 +145,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldSword
 
 - type: CP14Recipe
@@ -183,8 +155,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperSword
 
 - type: CP14Recipe
@@ -195,8 +165,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilSword
 
 # Sickle
@@ -209,8 +177,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronSickle
 
 - type: CP14Recipe
@@ -221,8 +187,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperSickle
 
 - type: CP14Recipe
@@ -233,8 +197,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldSickle
 
 - type: CP14Recipe
@@ -245,8 +207,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilSickle
 
 # Shovel
@@ -259,8 +219,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronShovel
 
 - type: CP14Recipe
@@ -271,8 +229,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldShovel
 
 
@@ -284,8 +240,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperShovel
 
 - type: CP14Recipe
@@ -296,8 +250,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilShovel
 
 # Pickaxe
@@ -310,8 +262,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronPickaxe
 
 - type: CP14Recipe
@@ -322,8 +272,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldPickaxe
 
 - type: CP14Recipe
@@ -334,8 +282,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperPickaxe
 
 - type: CP14Recipe
@@ -346,8 +292,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilPickaxe
 
 # Grip
@@ -360,8 +304,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripIron
 
 - type: CP14Recipe
@@ -372,8 +314,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripCopper
 
 - type: CP14Recipe
@@ -384,8 +324,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripGolden
 
 - type: CP14Recipe
@@ -396,8 +334,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripMithril
 
 # Grip long
@@ -410,8 +346,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripIronLong
 
 - type: CP14Recipe
@@ -422,8 +356,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripCopperLong
 
 - type: CP14Recipe
@@ -434,8 +366,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripGoldLong
 
 - type: CP14Recipe
@@ -446,8 +376,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularGripMithrilLong
 
 # Rapier
@@ -460,8 +388,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronRapier
 
 - type: CP14Recipe
@@ -472,8 +398,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldRapier
 
 - type: CP14Recipe
@@ -484,8 +408,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperRapier
 
 - type: CP14Recipe
@@ -496,8 +418,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilRapier
 
 # Axe
@@ -510,8 +430,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronAxe
 
 - type: CP14Recipe
@@ -522,8 +440,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperAxe
 
 - type: CP14Recipe
@@ -534,8 +450,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldAxe
 
 - type: CP14Recipe
@@ -546,8 +460,6 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilAxe
 
 # Hammer
@@ -560,8 +472,6 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeIronHammer
 
 - type: CP14Recipe
@@ -572,8 +482,6 @@
   - !type:StackResource
     stack: CP14CopperBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeCopperHammer
 
 - type: CP14Recipe
@@ -584,8 +492,6 @@
   - !type:StackResource
     stack: CP14GoldBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeGoldHammer
 
 - type: CP14Recipe
@@ -596,7 +502,5 @@
   - !type:StackResource
     stack: CP14MithrilBar
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: MetallForging
   result: CP14ModularBladeMithrilHammer
   

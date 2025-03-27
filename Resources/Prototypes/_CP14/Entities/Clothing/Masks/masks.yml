@@ -130,3 +130,16 @@
     spawned:
     - id: CP14ClothingMaskBoneMask
       amount: 1
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskMime
+  name: mask of silence
+  description: ...
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/mime_mask.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/mime_mask.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker

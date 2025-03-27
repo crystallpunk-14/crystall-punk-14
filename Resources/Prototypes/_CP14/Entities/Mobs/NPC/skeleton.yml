@@ -19,8 +19,9 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonHalberd
-  - type: CP14AutoLearnAction
-    actions:
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
     - CP14ActionSpellKick
 
 - type: entity
@@ -42,8 +43,9 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonDodger
-  - type: CP14AutoLearnAction
-    actions:
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
     - CP14ActionSpellSprint
 
 - type: entity
@@ -68,8 +70,9 @@
   - type: CP14MagicEnergyDraw
     energy: 1
     delay: 1
-  - type: CP14AutoLearnAction
-    actions:
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
     - CP14ActionSpellIceShards
     - CP14ActionSpellFreeze
     - CP14ActionSpellFlameCreation
@@ -84,8 +87,9 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonBard
-  - type: CP14AutoLearnAction
-    actions:
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
     - CP14ActionSpellHealBallade
     - CP14ActionSpellMagicBallade
     - CP14ActionSpellSpeedBallade

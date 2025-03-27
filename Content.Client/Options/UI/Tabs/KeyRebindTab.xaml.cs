@@ -312,9 +312,8 @@ namespace Content.Client.Options.UI.Tabs
 
             //CP14
             AddHeader("ui-options-header-cp14");
-            AddButton(ContentKeyFunctions.CP14OpenKnowledgeMenu);
+            AddButton(ContentKeyFunctions.CP14OpenSkillMenu);
             //CP14 end
-
             foreach (var control in _keyControls.Values)
             {
                 UpdateKeyControl(control);

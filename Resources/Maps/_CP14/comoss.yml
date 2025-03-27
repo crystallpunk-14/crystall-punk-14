@@ -38457,14 +38457,6 @@ entities:
     - type: Transform
       pos: 6.771952,-30.18434
       parent: 2
-- proto: CP14BookKnowledgeWallpaperCraft
-  entities:
-  - uid: 7131
-    components:
-    - type: Transform
-      parent: 7130
-    - type: Physics
-      canCollide: False
 - proto: CP14BookshelfWoodenFilled
   entities:
   - uid: 7133
@@ -81110,9 +81102,6 @@ entities:
       parent: 2
     - type: Storage
       storedItems:
-        7131:
-          position: 0,0
-          _rotation: South
         7132:
           position: 1,0
           _rotation: South
@@ -81122,7 +81111,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 7131
           - 7132
   - uid: 14258
     components:

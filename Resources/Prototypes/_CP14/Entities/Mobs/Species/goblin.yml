@@ -115,10 +115,6 @@
   - type: CP14MagicEnergyDraw #Cool x3 mana regen!
     energy: 1.5
     delay: 3
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
-    - CP14ActionSpellSprintGoblin
   - type: Hands
     handDisplacement:
       sizeMaps:

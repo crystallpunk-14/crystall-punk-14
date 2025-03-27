@@ -1,0 +1,24 @@
+<Control xmlns="https://spacestation14.io" HorizontalExpand="True">
+    <BoxContainer Name="MainContainer"
+                  Orientation="Horizontal"
+                  HorizontalExpand="True">
+        <Button Name="MainButton"
+                HorizontalExpand="True"
+                VerticalExpand="True"
+                StyleClasses="OpenRight"
+                Margin="0 0 -1 0">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <BoxContainer Orientation="Vertical"
+                              VerticalExpand="True"
+                              HorizontalExpand="True"
+                              Margin="-5 0 0 0">
+                    <Label Name="SkillTreeLabel" />
+                </BoxContainer>
+            </BoxContainer>
+        </Button>
+        <PanelContainer Name="ColorPanel"
+                        VerticalExpand="True"
+                        SetWidth="7"
+                        Margin="0 1 0 0" />
+    </BoxContainer>
+</Control>
