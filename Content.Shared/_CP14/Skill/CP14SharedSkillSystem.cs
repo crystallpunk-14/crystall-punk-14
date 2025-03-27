@@ -36,6 +36,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             indexedSkill.Effect.AddSkill(EntityManager, target);
         }
 
+        component.SkillsSumExperience += indexedSkill.LearnCost;
+
         component.LearnedSkills.Add(skill);
         Dirty(target, component);
         return true;
@@ -61,6 +63,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         {
             indexedSkill.Effect.RemoveSkill(EntityManager, target);
         }
+
+        component.SkillsSumExperience -= indexedSkill.LearnCost;
 
         Dirty(target, component);
         return true;
@@ -90,11 +94,18 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!Resolve(target, ref component, false))
             return false;
 
-        if (!component.LearnProgress.ContainsKey(tree))
-            return false;
+        if (component.Progress.TryGetValue(tree, out var currentExp))
+        {
+            // If the tree already exists, add experience to it
+            component.Progress[tree] = currentExp + exp;
+        }
+        else
+        {
+            // If the tree doesn't exist, initialize it with the experience
+            component.Progress[tree] = exp;
+        }
 
-        component.LearnProgress[tree] += exp;
-
+        Dirty(target, component);
         return true;
     }
 
@@ -109,14 +120,15 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!Resolve(target, ref component, false))
             return false;
 
-        if (!component.LearnProgress.TryGetValue(tree, out var currentExp))
+        if (!component.Progress.TryGetValue(tree, out var currentExp))
             return false;
 
         if (currentExp < exp)
             return false;
 
-        component.LearnProgress[tree] = FixedPoint2.Max(0, component.LearnProgress[tree] - exp);
+        component.Progress[tree] = FixedPoint2.Max(0, component.Progress[tree] - exp);
 
+        Dirty(target, component);
         return true;
     }
 
@@ -137,6 +149,10 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (HaveSkill(target, skill, component))
             return false;
 
+        //Check max cap
+        if (component.SkillsSumExperience + indexedSkill.LearnCost >= component.ExperienceMaxCap)
+            return false;
+
         //Prerequisite check
         foreach (var prerequisite in indexedSkill.Prerequisites)
         {
@@ -145,55 +161,12 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         }
 
         //Experience check
-        if (!component.LearnProgress.TryGetValue(indexedSkill.Tree, out var currentExp))
+        if (!component.Progress.TryGetValue(indexedSkill.Tree, out var currentExp))
             return false;
         if (currentExp < indexedSkill.LearnCost)
             return false;
 
         return true;
-    }
-
-    /// <summary>
-    ///  Adds a skill tree to the player, allowing them to progress in it.
-    /// </summary>
-    public void AddSkillTreeToPlayer(EntityUid target,
-        ProtoId<CP14SkillTreePrototype> tree,
-        CP14SkillStorageComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return;
-
-        if (component.LearnProgress.ContainsKey(tree))
-            return;
-
-        component.LearnProgress[tree] = 0;
-        Dirty(target, component);
-        return;
-    }
-
-    /// <summary>
-    ///  Removes a skill tree from the player, preventing them from progressing in it.
-    /// </summary>
-    public void RemoveSkillTreeFromPlayer(EntityUid target,
-        ProtoId<CP14SkillTreePrototype> tree,
-        CP14SkillStorageComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return;
-
-        if (!component.LearnProgress.Remove(tree))
-            return;
-
-        foreach (var skill in component.LearnedSkills)
-        {
-            if (!_proto.TryIndex(skill, out var indexedSkill))
-                continue;
-
-            if (indexedSkill.Tree == tree)
-                TryRemoveSkill(target, skill, component);
-        }
-
-        Dirty(target, component);
     }
 
     /// <summary>

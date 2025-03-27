@@ -20,8 +20,8 @@
                     <graphics:StyleBoxTexture Modulate="#1B1B1E" PatchMarginBottom="10" PatchMarginLeft="10"
                                               PatchMarginRight="10" PatchMarginTop="10" />
                 </PanelContainer.PanelOverride>
-                <BoxContainer HorizontalExpand="True" VerticalExpand="True" MinSize="128 128">
-                    <TextureRect Name="SkillView" SetSize="64 64" HorizontalAlignment="Center" VerticalAlignment="Center"
+                <BoxContainer HorizontalExpand="True" VerticalExpand="True" >
+                    <TextureRect Stretch="Scale" Name="SkillView" SetSize="64 64" HorizontalAlignment="Center" VerticalAlignment="Center" MinSize="64 64"
                                 HorizontalExpand="True" VerticalExpand="True" Access="Public"/>
                 </BoxContainer>
             </PanelContainer>
@@ -75,8 +75,13 @@
                 </BoxContainer>
                 <!-- Experience Data -->
                 <BoxContainer Margin="10 10 10 10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" VerticalExpand="True">
+                    <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-skillpoints'}" StyleClasses="LabelKeyText"/>
                     <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
-                    <RichTextLabel Name="ExpPointLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
+                    <RichTextLabel Margin="0 0 20 0" Name="ExpPointLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
+
+                    <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-level'}" StyleClasses="LabelKeyText"/>
+                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
+                    <RichTextLabel Margin="0 0 0 0" Name="LevelLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
                 </BoxContainer>
             </PanelContainer>
         </BoxContainer>

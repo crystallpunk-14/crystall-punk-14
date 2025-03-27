@@ -11,6 +11,7 @@
 - type: cp14Skill
   id: CP14ActionSpellManaGift
   skillUiPosition: 0, 2
+  learnCost: 0.5
   tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
@@ -21,6 +22,7 @@
 - type: cp14Skill
   id: CP14ActionSpellManaConsume
   skillUiPosition: 0, 4
+  learnCost: 0.5
   tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi

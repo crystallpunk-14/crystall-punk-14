@@ -47,11 +47,13 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
 
         _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
         _proto.PrototypesReloaded += _ => _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>().OrderBy(skill => _skillSystem.GetSkillName(skill)).ToList();
+        OnOffsetChanged?.Invoke(_globalOffset);
     }
 
     public void UpdateState(Entity<CP14SkillStorageComponent>? player)
     {
         _player = player;
+        OnOffsetChanged?.Invoke(_globalOffset);
     }
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)

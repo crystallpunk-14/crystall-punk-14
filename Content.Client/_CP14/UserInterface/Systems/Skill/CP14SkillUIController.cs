@@ -162,9 +162,9 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         SelectNode(_selectedSkill);
 
         //If tree not selected, select the first one
-        if (_window.GraphControl.Tree == null && storage.LearnProgress.Count > 0)
+        if (_window.GraphControl.Tree == null && storage.Progress.Count > 0)
         {
-            var firstTree = storage.LearnProgress.First().Key;
+            var firstTree = storage.Progress.First().Key;
 
             if (_proto.TryIndex(firstTree, out var indexedTree))
             {
@@ -173,14 +173,16 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         }
 
         // Update the experience points for the selected tree
-        var playerProgress = storage.LearnProgress;
+        var playerProgress = storage.Progress;
         if (_window.GraphControl.Tree is not null && playerProgress.TryGetValue(_window.GraphControl.Tree, out var skillpoint))
         {
             _window.ExpPointLabel.Text = skillpoint.ToString();
         }
 
+        _window.LevelLabel.Text = $"{storage.SkillsSumExperience}/{storage.ExperienceMaxCap}";
+
         _window.TreeTabsContainer.RemoveAllChildren();
-        foreach (var (tree, progress) in storage.LearnProgress)
+        foreach (var (tree, progress) in storage.Progress)
         {
             if (!_proto.TryIndex(tree, out var indexedTree))
                 continue;
@@ -205,7 +207,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         _window.ParallaxBackground.ParallaxPrototype = tree.Parallax;
         _window.TreeName.Text = Loc.GetString(tree.Name);
 
-        var playerProgress = storage.LearnProgress;
+        var playerProgress = storage.Progress;
         _window.ExpPointLabel.Text = playerProgress.TryGetValue(tree, out var skillpoint) ? skillpoint.ToString() : "0";
     }
 

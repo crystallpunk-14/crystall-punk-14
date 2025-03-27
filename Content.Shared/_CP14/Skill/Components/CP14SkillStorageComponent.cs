@@ -17,10 +17,22 @@ public sealed partial class CP14SkillStorageComponent : Component
     public List<ProtoId<CP14SkillPrototype>> LearnedSkills = new();
 
     /// <summary>
+    /// The number of experience points spent on skills. Technically this could be calculated via LearnedSkills, but this is a cached value for optimization.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public FixedPoint2 SkillsSumExperience = 0;
+
+    /// <summary>
     /// Keeps track of progress points in the knowledge areas available to the player. Important: The absence of a specific area means that the player CANNOT progress in that area.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> LearnProgress = new();
+    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> Progress = new();
+
+    /// <summary>
+    /// The maximum ceiling of experience points that can be spent on learning skills. Not tied to a category.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public FixedPoint2 ExperienceMaxCap = 10;
 }
 
 /// <summary>
