@@ -74,10 +74,6 @@
       - id: CP14FoodMeatHuman # Replace it with silva meat, heh.
         amount: 5
   #- type: CP14MagicEnergyPhotosynthesis # Silva special feature #Disabled until sunlight fixed
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    #spells:
-    #- CP14ActionSpellPlantGrowthSilva
   #- type: CP14MagicEnergyDraw #Enabled default mana regen until sunlight fixed
   #  enable: false
   - type: Body
