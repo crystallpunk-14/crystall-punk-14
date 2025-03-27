@@ -45,17 +45,6 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
 
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, CP14CastMagicEffectAttemptEvent>(OnMusicCheck);
-
-        SubscribeLocalEvent<CP14AutoLearnActionComponent, MapInitEvent>(OnAutoLearnAction);
-    }
-
-    private void OnAutoLearnAction(Entity<CP14AutoLearnActionComponent> ent, ref MapInitEvent args)
-    {
-        foreach (var action in ent.Comp.Actions)
-        {
-            _action.AddAction(ent, action);
-        }
-        RemCompDeferred<CP14AutoLearnActionComponent>(ent);
     }
 
     private void OnProjectileHit(Entity<CP14SpellEffectOnHitComponent> ent, ref ThrowDoHitEvent args)

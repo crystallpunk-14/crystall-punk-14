@@ -5,15 +5,37 @@
 Minimal units of being. By obtaining them from splitting items and precursers, and folding them into more complex variants, you can use them to create the alchemical potions you require.
 
 ## Basic 6 essences:
+<Box>
+<GuideEntityEmbed Entity="CP14EssenceAir"/>
+<GuideEntityEmbed Entity="CP14EssenceWater"/>
+<GuideEntityEmbed Entity="CP14EssenceFire"/>
+<GuideEntityEmbed Entity="CP14EssenceOrder"/>
+<GuideEntityEmbed Entity="CP14EssenceChaos"/>
+<GuideEntityEmbed Entity="CP14EssenceEarth"/>
+</Box>
 
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT0"/>
 
 ## First Compound Essences:
-
+<Box>
+<GuideEntityEmbed Entity="CP14EssenceFrost"/>
+<GuideEntityEmbed Entity="CP14EssenceLight"/>
+<GuideEntityEmbed Entity="CP14EssenceMotion"/>
+<GuideEntityEmbed Entity="CP14EssenceCycle"/>
+<GuideEntityEmbed Entity="CP14EssenceEnergia"/>
+<GuideEntityEmbed Entity="CP14EssenceVoid"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="CP14EssencePoison"/>
+<GuideEntityEmbed Entity="CP14EssenceLife"/>
+<GuideEntityEmbed Entity="CP14EssenceCrystal"/>
+</Box>
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT1"/>
 
 ## Second Compound Essences:
-
+<Box>
+<GuideEntityEmbed Entity="CP14EssenceMagic"/>
+</Box>
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT2"/>
 
 </Document>

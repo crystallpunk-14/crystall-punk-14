@@ -34,8 +34,8 @@
     modifiers:
       coefficients:
         Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
+        Slash: 0.85
+        Piercing: 0.90
   - type: ClothingSpeedModifier
-    walkModifier: 0.97
-    sprintModifier: 0.97
+    walkModifier: 0.98
+    sprintModifier: 0.98

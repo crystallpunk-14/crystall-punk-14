@@ -86,6 +86,11 @@ binds:
   type: State
   key: NumpadNum5
 # Misc
+# CP14 Zone
+- function: CP14OpenSkillMenu
+  type: State
+  key: R
+# CP14 Zone end
 - function: ShowEscapeMenu
   type: State
   key: F10

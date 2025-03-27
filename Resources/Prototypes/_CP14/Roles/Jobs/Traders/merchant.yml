@@ -6,10 +6,6 @@
   startingGear: CP14MerchantGear
   icon: "CP14JobIconMerchant"
   supervisors: cp14-job-supervisors-commandant
-  special:
-  - !type:CP14AddKnowledgeSpecial
-    knowledge:
-    - WoodWork
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hours

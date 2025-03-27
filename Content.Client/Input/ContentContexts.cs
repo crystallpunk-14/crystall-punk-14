@@ -84,6 +84,9 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.Arcade1);
             human.AddFunction(ContentKeyFunctions.Arcade2);
             human.AddFunction(ContentKeyFunctions.Arcade3);
+            //CP14 Keys
+            human.AddFunction(ContentKeyFunctions.CP14OpenSkillMenu);
+            //CP14 Keys end
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);
@@ -123,10 +126,6 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.OpenDecalSpawnWindow);
             common.AddFunction(ContentKeyFunctions.OpenAdminMenu);
             common.AddFunction(ContentKeyFunctions.OpenGuidebook);
-
-            //CP14 Keys
-            human.AddFunction(ContentKeyFunctions.CP14OpenKnowledgeMenu);
-            //CP14 Keys end
         }
     }
 }

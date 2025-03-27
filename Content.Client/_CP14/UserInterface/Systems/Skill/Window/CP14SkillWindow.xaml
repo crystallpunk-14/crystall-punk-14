@@ -1,0 +1,89 @@
+<window:CP14SkillWindow
+    xmlns="https://spacestation14.io"
+    xmlns:window="clr-namespace:Content.Client._CP14.UserInterface.Systems.Skill.Window"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:parallax="clr-namespace:Content.Client.Parallax"
+    xmlns:ui1="clr-namespace:Content.Client._CP14.Skill.Ui"
+    Title="{Loc 'cp14-skill-info-title'}"
+    MinSize="700 350"
+    SetSize="980 550">
+
+    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+
+        <!-- Selected Skill -->
+        <BoxContainer Margin="10 10 10 10" MaxWidth="240" SetWidth="240" Orientation="Vertical"
+                      HorizontalExpand="False" VerticalExpand="True">
+            <!-- Skill View -->
+            <PanelContainer Name="BackPanel" HorizontalAlignment="Center">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxTexture Modulate="#1B1B1E" PatchMarginBottom="10" PatchMarginLeft="10"
+                                              PatchMarginRight="10" PatchMarginTop="10" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer HorizontalExpand="True" VerticalExpand="True" >
+                    <TextureRect Stretch="Scale" Name="SkillView" SetSize="64 64" HorizontalAlignment="Center" VerticalAlignment="Center" MinSize="64 64"
+                                HorizontalExpand="True" VerticalExpand="True" Access="Public"/>
+                </BoxContainer>
+            </PanelContainer>
+            <customControls:HSeparator StyleClasses="HighDivider" Margin="0 15 0 10" />
+            <!-- Skill Data -->
+            <BoxContainer Name="NodeViewContainer" Orientation="Vertical" VerticalExpand="True">
+                <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True">
+                        <BoxContainer Name="InfoContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                            <BoxContainer HorizontalExpand="True">
+                                <Label Name="SkillName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                                       HorizontalExpand="True" HorizontalAlignment="Center" />
+                            </BoxContainer>
+                            <!-- Skill Cost -->
+                            <BoxContainer HorizontalExpand="True">
+                                <RichTextLabel HorizontalExpand="True" Access="Public" Text="{Loc 'cp14-skill-menu-learncost'}" Margin="0 10 0 10" />
+                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
+                                <RichTextLabel Name="SkillCost" Access="Public" Text="0"/>
+                            </BoxContainer>
+                            <!-- Skill Description -->
+                            <BoxContainer HorizontalExpand="True">
+                                <RichTextLabel Name="SkillDescription" HorizontalExpand="True" Access="Public"/>
+                            </BoxContainer>
+                        </BoxContainer>
+                    </BoxContainer>
+                </ScrollContainer>
+                <Control MinHeight="5"/>
+                <!-- Skill Buttons -->
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <Button Name="LearnButton" Text="{Loc 'cp14-skill-menu-learn-button'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35" Access="Public"/>
+                </BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+
+        <customControls:VSeparator StyleClasses="LowDivider" />
+
+        <!-- Skills Tree -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer HorizontalExpand="True">
+                <Label Name="TreeName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                       HorizontalExpand="True" HorizontalAlignment="Center" />
+            </BoxContainer>
+            <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
+                <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4" Access="Public" SpeedX="10" SpeedY="5"/>
+                <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+                    <ui1:CP14SkillTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
+                </BoxContainer>
+                <!-- Tree Tabs -->
+                <BoxContainer Margin="10 10 10 10" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical" VerticalExpand="True">
+                    <BoxContainer Name="TreeTabsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Access="Public"/>
+                </BoxContainer>
+                <!-- Experience Data -->
+                <BoxContainer Margin="10 10 10 10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" VerticalExpand="True">
+                    <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-skillpoints'}" StyleClasses="LabelKeyText"/>
+                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
+                    <RichTextLabel Margin="0 0 20 0" Name="ExpPointLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
+
+                    <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-level'}" StyleClasses="LabelKeyText"/>
+                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
+                    <RichTextLabel Margin="0 0 0 0" Name="LevelLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
+    </BoxContainer>
+</window:CP14SkillWindow>

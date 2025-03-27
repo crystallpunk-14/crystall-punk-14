@@ -12,6 +12,7 @@ cp14-loadout-general-shoes = Shoes
 cp14-loadout-general-back = Back
 cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-general-spells = Spells
+cp14-loadout-skill-tree = Specialization
 cp14-loadout-general-keys = Keys
 
 # Apprentice
@@ -28,6 +29,7 @@ cp14-loadout-alchemist-belt = Alchemist's belt
 # Blacksmith
 
 cp14-loadout-blacksmith-cloak = Blacksmith's cloak
+cp14-loadout-blacksmith-gloves = Blacksmith's gloves
 
 # Guard commander
 
@@ -61,3 +63,4 @@ cp14-loadout-guildmaster-shirt = Guildmaster shirt
 cp14-loadout-guildmaster-pants = Guildmaster pants
 cp14-loadout-guildmaster-shoes = Guildmaster shoes
 cp14-loadout-guildmaster-spells = Guildmaster spells
+cp14-loadout-guildmaster-weapons = Guildmaster weapon

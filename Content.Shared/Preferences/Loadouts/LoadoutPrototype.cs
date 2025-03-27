@@ -1,3 +1,5 @@
+using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared.FixedPoint;
 using Content.Shared.Preferences.Loadouts.Effects;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -50,4 +52,10 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// </summary>
     [DataField]
     public List<EntProtoId> Actions { get; set; } = new();
+
+    /// <summary>
+    /// CP14 - it is possible to give skill trees to players who have taken this loadout
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> SkillTree = new();
 }

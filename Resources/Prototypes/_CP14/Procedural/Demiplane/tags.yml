@@ -26,9 +26,6 @@
 
 - type: Tag
   id: CP14DemiplaneCold
-  
-  #Cold
-  
-  #Hot
-  
-  #Dry
+
+- type: Tag
+  id: CP14DemiplaneHot

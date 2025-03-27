@@ -1,0 +1,32 @@
+- type: storePositionSell
+  id: CP14LucenPlanks
+  price: 100
+  factions:
+  - Sylphoria
+  service: !type:CP14SellStackService
+    stackId: CP14LucensWoodenPlanks
+    count: 10
+
+- type: storePositionSell
+  id: CP14SpellScroll
+  price: 150
+  factions:
+  - Sylphoria
+  service: !type:CP14SellWhitelistService
+    whitelist:
+      tags:
+      - CP14SpellScroll
+    count: 5
+    name: cp14-entity-group-spell-scrolls
+    sprite:
+      sprite: _CP14/Objects/Bureaucracy/paper.rsi
+      state: scrolls
+
+#- type: storePositionSell
+#  id: CP14ClothingCloakAmuletGold
+#  price: 80
+#  factions:
+#  - Sylphoria
+#  service: !type:CP14SellPrototypeService
+#    proto: CP14ClothingCloakAmuletGold
+#    count: 1

@@ -77,3 +77,38 @@
   - type: Tag
     tags:
     - StringInstrument
+
+- type: entity
+  parent: BaseHandheldInstrument
+  id: SkeletonGuitarInstrument
+  name: skelute
+  description: A true weapon for brutal rock skeletons. What does "rock" mean?
+  categories: [ ForkFiltered ]
+  components:
+  - type: Instrument
+    program: 27
+  - type: Sprite
+    sprite: _CP14/Objects/Fun/Instruments/skeleton_guitar.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _CP14/Objects/Fun/Instruments/skeleton_guitar.rsi
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    sprite: _CP14/Objects/Fun/Instruments/skeleton_guitar.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: Tag
+    tags:
+    - StringInstrument
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 5
+        Slash: 5
+    soundHit:
+      collection: MetalThud

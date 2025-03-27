@@ -70,7 +70,6 @@
   - type: Clothing
     sprite: _CP14/Clothing/Masks/bone_mask.rsi
   - type: IdentityBlocker
-  - type: IngestionBlocker
   - type: AddAccentClothing
     accent: ReplacementAccent
     replacement: cp14skeleton
@@ -86,29 +85,28 @@
   parent: CP14ClothingMaskBase
   id: CP14ClothingMaskBoneHornedMask
   name: horned bone mask
-  description: An enchanted mask formerly belonging to a magical creature.
+  description: A bone mask of some kind of animal.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Masks/horned_bone_mask.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Masks/horned_bone_mask.rsi
   - type: IdentityBlocker
-  - type: IngestionBlocker
   - type: AddAccentClothing
     accent: ReplacementAccent
     replacement: cp14skeleton
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
 
 - type: entity
   parent: CP14ClothingMaskBoneMask
   id: CP14ClothingMaskBoneMaskMind
-  categories: [ DoNotMap ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: BlockMovement
   - type: Actions
@@ -132,3 +130,16 @@
     spawned:
     - id: CP14ClothingMaskBoneMask
       amount: 1
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskMime
+  name: mask of silence
+  description: ...
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/mime_mask.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/mime_mask.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker

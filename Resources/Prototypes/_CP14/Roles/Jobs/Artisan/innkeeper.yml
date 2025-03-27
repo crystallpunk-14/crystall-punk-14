@@ -6,10 +6,6 @@
   startingGear: CP14InnkeeperGear
   icon: "CP14JobIconInnkeeper"
   supervisors: cp14-job-supervisors-command
-  special:
-  - !type:CP14AddKnowledgeSpecial
-    knowledge:
-    - WoodWork
 
 - type: startingGear
   id: CP14InnkeeperGear

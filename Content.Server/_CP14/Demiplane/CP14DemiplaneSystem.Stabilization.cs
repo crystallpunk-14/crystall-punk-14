@@ -81,6 +81,9 @@ public sealed partial class CP14DemiplaneSystem
 
         while (query.MoveNext(out var uid, out var stabilizer, out var xform))
         {
+            if (!stabilizer.Enabled)
+                continue;
+
             if (TryTeleportOutDemiplane(demiplane, uid))
             {
                 if (!safe)

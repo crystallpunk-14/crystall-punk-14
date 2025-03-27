@@ -15,7 +15,7 @@
     ambientLightColor: "#BFEEFFFF"
   - type: CP14CloudShadows
   - type: Biome
-    template: CP14IceOceanFill
+    template: CP14SandOceanFill
   - type: SunShadow
   - type: SunShadowCycle
   - type: Roof

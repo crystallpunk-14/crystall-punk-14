@@ -27,6 +27,7 @@
       - id: CP14PaperFolderBlue
       - id: CP14PenFeather
         amount: 1
+      - id: CP14WoodenPlanks20
         #Random start resource
       - id: CP14VialMediumEarthEssence
       - id: CP14VialMediumFireEssence
@@ -139,3 +140,4 @@
         amount: 4
       - id: CP14SpellscrollSignalLightRed
         amount: 4
+      - id: CP14ArmorIronСhainmailPresets
