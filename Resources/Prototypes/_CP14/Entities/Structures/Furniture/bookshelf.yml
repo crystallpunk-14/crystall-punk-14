@@ -96,17 +96,6 @@
     - id: CP14BookRandom
       amount: !type:RangeNumberSelector
         range: 0, 15
-    #Random knowledge
-    - !type:GroupSelector
-      prob: 0.15
-      children:
-      - id: CP14BookKnowledgeWoodWork
-      - id: CP14BookKnowledgeMetallMelting
-      - id: CP14BookKnowledgeMetallForging
-      - id: CP14BookKnowledgeGlasswork
-      - id: CP14BookKnowledgeClothingSewing
-      - id: CP14BookKnowledgeWallpaperCraft
-      - id: CP14BookKnowledgeAdvancedClothingSewing
 
 - type: entity
   id: CP14BookshelfWoodenFilled

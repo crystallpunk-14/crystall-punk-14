@@ -114,7 +114,6 @@
   - type: Inventory
     templateId: CP14Human
   - type: TransferMindOnGib
-  - type: CP14KnowledgeStorage
   - type: CP14DemiplaneStabilizer
     enabled: false
 

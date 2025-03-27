@@ -1,0 +1,35 @@
+- type: cp14SkillTree
+  id: Pyrokinetic
+  name: cp14-skill-tree-pyrokinetic-name
+  desc: cp14-skill-tree-pyrokinetic-desc
+  color: "#b52400"
+
+- type: cp14SkillTree
+  id: Hydrosophistry
+  name: cp14-skill-tree-hydrosophistry-name
+  desc: cp14-skill-tree-hydrosophistry-desc
+  color: "#1554a1"
+
+- type: cp14SkillTree
+  id: Illusion
+  name: cp14-skill-tree-illusion-name
+  desc: cp14-skill-tree-illusion-desc
+  color: "#f55faf"
+
+- type: cp14SkillTree
+  id: Metamagic
+  name: cp14-skill-tree-metamagic-name
+  desc: cp14-skill-tree-metamagic-desc
+  color: "#56e5f5"
+
+- type: cp14SkillTree
+  id: Healing
+  name: cp14-skill-tree-healing-name
+  desc: cp14-skill-tree-healing-desc
+  color: "#51cf72"
+
+- type: cp14SkillTree
+  id: Atlethic
+  name: cp14-skill-tree-atlethic-name
+  desc: cp14-skill-tree-atlethic-desc
+  color: "#b32e37"

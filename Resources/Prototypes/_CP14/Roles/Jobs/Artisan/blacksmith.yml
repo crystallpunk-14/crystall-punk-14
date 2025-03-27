@@ -6,13 +6,6 @@
   startingGear: CP14BlacksmithGear
   icon: "CP14JobIconBlacksmith"
   supervisors: cp14-job-supervisors-command
-  special:
-  - !type:CP14AddKnowledgeSpecial
-    knowledge:
-    - WoodWork
-    - MetallMelting
-    - MetallForging
-    - Glasswork
   requirements:
     - !type:RoleTimeRequirement
       role: CP14JobApprentice

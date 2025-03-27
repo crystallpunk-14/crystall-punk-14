@@ -329,27 +329,6 @@ entities:
     - type: Transform
       pos: -2.5,-9.5
       parent: 2
-- proto: CP14BookKnowledgeGlasswork
-  entities:
-  - uid: 67
-    components:
-    - type: Transform
-      pos: 1.7399222,-0.32284212
-      parent: 2
-- proto: CP14BookKnowledgeMetallForging
-  entities:
-  - uid: 68
-    components:
-    - type: Transform
-      pos: 2.2238452,-0.34533072
-      parent: 2
-- proto: CP14BookKnowledgeMetallMelting
-  entities:
-  - uid: 322
-    components:
-    - type: Transform
-      pos: 2.696513,-0.36781955
-      parent: 2
 - proto: CP14WoodenChest
   entities:
   - uid: 205

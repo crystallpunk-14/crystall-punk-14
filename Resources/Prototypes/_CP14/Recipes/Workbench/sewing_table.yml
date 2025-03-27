@@ -10,8 +10,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingShirtCottonBlue
 
 - type: CP14Recipe
@@ -26,8 +24,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingShirtCottonBlack
 
 - type: CP14Recipe
@@ -42,8 +38,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingShirtCottonPurple
 
 - type: CP14Recipe
@@ -58,8 +52,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingShirtCottonRed
 
 - type: CP14Recipe
@@ -72,8 +64,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingShirtCottonWhite
 
 - type: CP14Recipe
@@ -88,8 +78,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingShirtCottonYellow
 
 - type: CP14Recipe
@@ -104,8 +92,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingShirtBlackDress
 
 - type: CP14Recipe
@@ -118,8 +104,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingPantsTrouserWhite
 
 - type: CP14Recipe
@@ -134,8 +118,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingPantsTrouserDarkBlue
 
 - type: CP14Recipe
@@ -150,8 +132,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 1
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14ClothingHeadHuntersHat
 
 - type: CP14Recipe
@@ -168,8 +148,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: AdvancedClothingSewing
   result: CP14ClothingShirtMercenary
 
 - type: CP14Recipe
@@ -188,8 +166,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  - !type:KnowledgeRequired
-    knowledge: AdvancedClothingSewing
   result: CP14ClothingYellowWizardDress
 
 - type: CP14Recipe
@@ -206,8 +182,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: AdvancedClothingSewing
   result: CP14ClothingHeadBeretMercenary
 
 - type: CP14Recipe
@@ -224,8 +198,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 2
-  - !type:KnowledgeRequired
-    knowledge: AdvancedClothingSewing
   result: CP14ClothingPantsMercenaryTrousers
 
 # Misc
@@ -240,8 +212,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 4
-  - !type:KnowledgeRequired
-    knowledge: ClothingSewing
   result: CP14SackFarming
 
 # Wallpaper (TODO: Move to separate workbench?)
@@ -256,8 +226,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeBlack
-  - !type:KnowledgeRequired
-    knowledge: WallpaperCraft
   result: CP14WallpaperBlack
 
 - type: CP14Recipe
@@ -270,8 +238,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeGreen
-  - !type:KnowledgeRequired
-    knowledge: WallpaperCraft
   result: CP14WallpaperGreen
 
 - type: CP14Recipe
@@ -284,8 +250,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyePurple
-  - !type:KnowledgeRequired
-    knowledge: WallpaperCraft
   result: CP14WallpaperPurple
 
 - type: CP14Recipe
@@ -298,8 +262,6 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeRed
-  - !type:KnowledgeRequired
-    knowledge: WallpaperCraft
   result: CP14WallpaperRed
 
 - type: CP14Recipe
@@ -310,8 +272,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 10
-  - !type:KnowledgeRequired
-    knowledge: WallpaperCraft
   result: CP14WallpaperWhite
 
 - type: CP14Recipe
@@ -322,8 +282,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 10
-  - !type:KnowledgeRequired
-    knowledge: WallpaperCraft
   result: CP14WallpaperWhite2
 
 - type: CP14Recipe
@@ -336,6 +294,4 @@
     count: 10
   - !type:ProtoIdResource
     protoId: CP14DyeYellow
-  - !type:KnowledgeRequired
-    knowledge: WallpaperCraft
   result: CP14WallpaperYellow

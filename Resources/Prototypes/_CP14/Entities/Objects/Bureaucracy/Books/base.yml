@@ -63,13 +63,3 @@
     openOnActivation: true
     guides:
     - SS14
-
-- type: entity
-  parent: CP14BookBase
-  id: CP14BookKnowledgeBase
-  abstract: true
-  categories: [ ForkFiltered ]
-  name: knowledge book 
-  description: This book holds valuable knowledge that you can learn... if you're ready for it. 
-  components:
-  - type: CP14KnowledgePaperText

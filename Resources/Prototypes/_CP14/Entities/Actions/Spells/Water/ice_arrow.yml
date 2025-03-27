@@ -1,0 +1,109 @@
+- type: entity
+  id: CP14ActionSpellIceArrow
+  name: Ice arrow
+  description: You create a temporary sharp ice arrow that can be used as a disposable bow projectile.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: ice_arrow
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectWaterCreation
+    - !type:CP14SpellSpawnInHandEntity
+      spawns:
+      - CP14IceArrow
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Sagitta glaciei..."
+    endSpeech: "in manu mea"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneWaterCreation
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/water.rsi
+      state: ice_arrow
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 5
+      breakOnMove: false
+
+- type: entity
+  id: CP14IceArrow
+  parent: BaseItem
+  name: ice arrow
+  description: A sharp ice arrow created with magic. It melts and will soon disappear, but you can shoot it once with your bow.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/ice_arrow.rsi
+    state: icon
+  - type: Item
+    storedRotation: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    embedOnThrow: false
+  - type: ThrowingAngle
+    angle: 0
+  - type: Ammo
+    muzzleFlash: null
+  - type: Tag
+    tags:
+    - CP14Arrow
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Piercing: 17
+        Cold: 5
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: TimedDespawn
+    lifetime: 60
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 10
+
+- type: entity
+  parent: CP14BaseSpellScrollWater
+  id: CP14SpellScrollIceArrow
+  name: ice arrow spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceArrow
