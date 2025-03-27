@@ -150,6 +150,7 @@
   - CP14ClothingMaskSteelMask
   - CP14ClothingMaskNeckerchief
   - CP14ClothingMaskBoneHornedMask
+  - CP14ClothingMaskMime
 
 - type: loadout
   id: CP14ClothingMaskSinner
@@ -170,6 +171,11 @@
   id: CP14ClothingMaskBoneHornedMask
   equipment:
     mask: CP14ClothingMaskBoneHornedMask
+
+- type: loadout
+  id: CP14ClothingMaskMime
+  equipment:
+    mask: CP14ClothingMaskMime
 
 # Head
 

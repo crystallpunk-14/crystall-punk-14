@@ -28,6 +28,7 @@ cp14-loadout-alchemist-belt = Пояс алхимика
 # Blacksmith
 
 cp14-loadout-blacksmith-cloak = Накидка кузнеца
+cp14-loadout-blacksmith-gloves = Перчатки кузнеца
 
 # Guard commander
 
