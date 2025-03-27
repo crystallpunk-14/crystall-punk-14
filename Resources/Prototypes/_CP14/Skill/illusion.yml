@@ -10,7 +10,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellFlashLight
-  skillUiPosition: 0, 2
+  skillUiPosition: 2, 0
   tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
@@ -21,6 +21,7 @@
 - type: cp14Skill
   id: CP14ActionSpellSignalLightRed
   skillUiPosition: 0, 4
+  learnCost: 0.5
   tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
@@ -31,6 +32,7 @@
 - type: cp14Skill
   id: CP14ActionSpellSignalLightYellow
   skillUiPosition: 0, 6
+  learnCost: 0.5
   tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
@@ -41,6 +43,7 @@
 - type: cp14Skill
   id: CP14ActionSpellSignalLightBlue
   skillUiPosition: 0, 8
+  learnCost: 0.5
   tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi

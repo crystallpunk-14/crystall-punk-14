@@ -33,8 +33,8 @@
     delay: 3
   - type: CP14SpellStorage
     grantAccessToSelf: true
-    spells:
-    - CP14ActionSpellManaConsumeElf
+    #spells:
+    #- CP14ActionSpellManaConsumeElf
   - type: Inventory
     templateId: CP14Human
     displacements:

@@ -12,3 +12,11 @@ cp14-skill-tree-metamagic-desc = Explore ways to subtly manipulate magic to affe
 
 cp14-skill-tree-illusion-name = Illusoriness
 cp14-skill-tree-illusion-desc = Explore the nature of light to create illusions, light sources and shadows.
+
+cp14-skill-tree-healing-name = Lifecation
+cp14-skill-tree-healing-desc = Explore the ways in which magic affects living creatures.
+
+# Body
+
+cp14-skill-tree-atlethic-name = Atlethic
+cp14-skill-tree-atlethic-desc = Develop your body by pushing the boundaries of what is available.

@@ -8,10 +8,23 @@
   - CP14SkillTreeHydrosophistry
   - CP14SkillTreeIllusion
   - CP14SkillTreeMetamagic
+  - CP14SkillTreeHealing
+  - CP14SkillTreeAtlethic
+
+
+
+- type: entity
+  id: CP14SkillTreePyrokineticLoadoutDummy
+  name: Pyrokinetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: flame_creation
 
 - type: loadout
   id: CP14SkillTreePyrokinetic
-  dummyEntity: CP14ActionSpellFlameCreation #TODO
+  dummyEntity: CP14SkillTreePyrokineticLoadoutDummy
   skillTree:
     Pyrokinetic: 2
   effects:
@@ -22,9 +35,20 @@
       traits:
       - CP14ManaWasting
 
+
+
+- type: entity
+  id: CP14SkillTreeHydrosophistryLoadoutDummy
+  name: Hydrosophistry
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: water_creation
+
 - type: loadout
   id: CP14SkillTreeHydrosophistry
-  dummyEntity: CP14ActionSpellWaterCreation #TODO
+  dummyEntity: CP14SkillTreeHydrosophistryLoadoutDummy
   skillTree:
     Hydrosophistry: 2
   effects:
@@ -35,9 +59,19 @@
       traits:
       - CP14ManaWasting
 
+
+- type: entity
+  id: CP14SkillTreeIllusionLoadoutDummy
+  name: Illusion
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: sphere_of_light
+
 - type: loadout
   id: CP14SkillTreeIllusion
-  dummyEntity: CP14ActionSpellSphereOfLight #TODO
+  dummyEntity: CP14SkillTreeIllusionLoadoutDummy
   skillTree:
     Illusion: 2
   effects:
@@ -48,11 +82,67 @@
       traits:
       - CP14ManaWasting
 
+
+- type: entity
+  id: CP14SkillTreeMetamagicLoadoutDummy
+  name: Metamagic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana
+
 - type: loadout
   id: CP14SkillTreeMetamagic
-  dummyEntity: CP14ActionSpellMagicSplitting #TODO
+  dummyEntity: CP14SkillTreeMetamagicLoadoutDummy
   skillTree:
     Metamagic: 2
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+
+- type: entity
+  id: CP14SkillTreeHealingLoadoutDummy
+  name: Healing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: plant_growth
+
+- type: loadout
+  id: CP14SkillTreeHealing
+  dummyEntity: CP14SkillTreeHealingLoadoutDummy
+  skillTree:
+    Healing: 2
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+
+- type: entity
+  id: CP14SkillTreeAtlethicLoadoutDummy
+  name: Atlethic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: kick
+
+- type: loadout
+  id: CP14SkillTreeAtlethic
+  dummyEntity: CP14SkillTreeAtlethicLoadoutDummy
+  skillTree:
+    Atlethic: 2
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:

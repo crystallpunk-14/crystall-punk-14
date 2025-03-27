@@ -10,7 +10,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellHellBallade
-  skillUiPosition: 0, 2
+  skillUiPosition: 0, 10
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi

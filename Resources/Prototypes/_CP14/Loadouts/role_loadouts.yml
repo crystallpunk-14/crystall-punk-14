@@ -2,7 +2,6 @@
   id: JobCP14Adventurer
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -20,7 +19,6 @@
   id: JobCP14Apprentice
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -36,7 +34,6 @@
   id: JobCP14Alchemist
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14AlchemistHead #
   - CP14GeneralOuterClothing
   - CP14AlchemistEyes #
@@ -53,7 +50,6 @@
   id: JobCP14Innkeeper
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -69,7 +65,6 @@
   id: JobCP14Blacksmith
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -85,7 +80,6 @@
   id: JobCP14GuardCommander
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14GuardHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -102,7 +96,6 @@
   id: JobCP14Guard
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14GuardHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -119,7 +112,6 @@
   id: JobCP14Commandant
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14CommandantHead
   - CP14MerchantOuterClothing
   - CP14GeneralEyes
@@ -134,7 +126,6 @@
   id: JobCP14Guildmaster
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14GuildmasterWeapons
   - CP14GuildmasterOuterClothing
   - CP14GeneralEyes
@@ -151,7 +142,6 @@
   id: JobCP14Merchant
   groups:
   - CP14SkillTree
-  - CP14GeneralSpells
   - CP14MerchantHead
   - CP14MerchantOuterClothing
   - CP14GeneralEyes

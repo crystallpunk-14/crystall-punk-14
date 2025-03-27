@@ -1,6 +1,6 @@
 - type: cp14Skill
   id: CP14ActionSpellFreeze
-  skillUiPosition: 0, 0
+  skillUiPosition: 0, 4
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
@@ -10,7 +10,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellWaterCreation
-  skillUiPosition: 0, 2
+  skillUiPosition: 0, 0
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
@@ -20,7 +20,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellBeerCreation
-  skillUiPosition: 0, 4
+  skillUiPosition: 2, 0
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
