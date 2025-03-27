@@ -143,10 +143,3 @@
   dummyEntity: CP14SkillTreeAtlethicLoadoutDummy
   skillTree:
     Atlethic: 2
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
