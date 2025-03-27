@@ -38,7 +38,7 @@
                             <!-- Skill Cost -->
                             <BoxContainer HorizontalExpand="True">
                                 <RichTextLabel HorizontalExpand="True" Access="Public" Text="{Loc 'cp14-skill-menu-learncost'}" Margin="0 10 0 10" />
-                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.rsi/p.png"/>
+                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
                                 <RichTextLabel Name="SkillCost" Access="Public" Text="0"/>
                             </BoxContainer>
                             <!-- Skill Description -->
@@ -75,7 +75,7 @@
                 </BoxContainer>
                 <!-- Experience Data -->
                 <BoxContainer Margin="10 10 10 10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" VerticalExpand="True">
-                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.rsi/p.png"/>
+                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
                     <RichTextLabel Name="ExpPointLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
                 </BoxContainer>
             </PanelContainer>
