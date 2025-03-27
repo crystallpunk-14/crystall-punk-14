@@ -387,7 +387,6 @@
   save: false
   parent:
   - BaseMob
-  - MobCombat
   - CP14MobDamageable
   - CP14MobMagical
   id: CP14BaseMobSpeciesNoLife
@@ -600,8 +599,6 @@
   - type: Tag
     tags:
     - FootstepSound
-  - type: CP14DemiplaneStabilizer
-    requireAlive: true
   - type: CanEnterCryostorage
   - type: CP14IgnitionModifier
     ignitionTimeModifier: 2.5
