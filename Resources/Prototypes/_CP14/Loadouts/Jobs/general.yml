@@ -149,6 +149,7 @@
   - CP14ClothingMaskSinner
   - CP14ClothingMaskSteelMask
   - CP14ClothingMaskNeckerchief
+  - CP14ClothingMaskBoneHornedMask
 
 - type: loadout
   id: CP14ClothingMaskSinner
