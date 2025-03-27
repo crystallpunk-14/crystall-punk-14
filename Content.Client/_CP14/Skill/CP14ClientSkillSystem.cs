@@ -25,6 +25,9 @@ public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
 
     private void OnAfterAutoHandleState(Entity<CP14SkillStorageComponent> ent, ref AfterAutoHandleStateEvent args)
     {
+        if (ent != _playerManager.LocalEntity)
+            return;
+
         OnSkillUpdate?.Invoke(ent.Owner);
     }
 
