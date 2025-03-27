@@ -52,7 +52,7 @@
       params:
         volume: 3
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: Slime
   - type: MeleeWeapon
     altDisarm: false
