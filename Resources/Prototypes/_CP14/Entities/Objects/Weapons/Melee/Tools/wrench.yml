@@ -16,7 +16,8 @@
     sprite: _CP14/Objects/Tools/wrench.rsi
     state: icon
   - type: Item
-    sprite: _CP14/Objects/Tools/wrench.rsi #TODO
+    sprite: _CP14/Objects/Tools/wrench.rsi
+    storedRotation: 45
   - type: MeleeWeapon
     wideAnimationRotation: 135
     attackRate: 1.5
