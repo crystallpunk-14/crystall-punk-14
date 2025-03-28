@@ -50,6 +50,7 @@
   id: CP14DustEffectKickSound
   parent: CP14DustEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: EmitSoundOnSpawn
     sound: !type:SoundPathSpecifier

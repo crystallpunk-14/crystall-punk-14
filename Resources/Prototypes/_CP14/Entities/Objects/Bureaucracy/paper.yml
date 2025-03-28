@@ -17,6 +17,7 @@
     size: Tiny
   - type: Appearance
   - type: PaperVisuals
+    contentImageModulate: "#998665"
   - type: Flammable
     fireSpread: true
     alwaysCombustible: true

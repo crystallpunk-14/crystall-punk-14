@@ -26,14 +26,7 @@
   id: CP14SkillTreePyrokinetic
   dummyEntity: CP14SkillTreePyrokineticLoadoutDummy
   skillTree:
-    Pyrokinetic: 2
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
+    Pyrokinetic: 1
 
 
 
@@ -50,14 +43,7 @@
   id: CP14SkillTreeHydrosophistry
   dummyEntity: CP14SkillTreeHydrosophistryLoadoutDummy
   skillTree:
-    Hydrosophistry: 2
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
+    Hydrosophistry: 1
 
 
 - type: entity
@@ -73,14 +59,7 @@
   id: CP14SkillTreeIllusion
   dummyEntity: CP14SkillTreeIllusionLoadoutDummy
   skillTree:
-    Illusion: 2
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
+    Illusion: 1
 
 
 - type: entity
@@ -96,14 +75,7 @@
   id: CP14SkillTreeMetamagic
   dummyEntity: CP14SkillTreeMetamagicLoadoutDummy
   skillTree:
-    Metamagic: 2
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
+    Metamagic: 1
 
 
 - type: entity
@@ -119,14 +91,7 @@
   id: CP14SkillTreeHealing
   dummyEntity: CP14SkillTreeHealingLoadoutDummy
   skillTree:
-    Healing: 2
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
+    Healing: 1
 
 
 - type: entity
@@ -142,11 +107,4 @@
   id: CP14SkillTreeAtlethic
   dummyEntity: CP14SkillTreeAtlethicLoadoutDummy
   skillTree:
-    Atlethic: 2
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
+    Atlethic: 1

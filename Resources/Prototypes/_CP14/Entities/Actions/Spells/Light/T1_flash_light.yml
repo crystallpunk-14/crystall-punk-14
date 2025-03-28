@@ -39,6 +39,7 @@
   id: CP14RuneFlashLight
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#efedff"
@@ -52,6 +53,7 @@
   id: CP14ImpactEffectFlashLight
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:
@@ -62,6 +64,7 @@
 - type: entity
   id: CP14SpawnEffectFlashLight
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: /Textures/Objects/Fun/goldbikehorn.rsi
@@ -79,6 +82,7 @@
 - type: entity
   id: CP14SpellFlashEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
     - type: PointLight
       enabled: true

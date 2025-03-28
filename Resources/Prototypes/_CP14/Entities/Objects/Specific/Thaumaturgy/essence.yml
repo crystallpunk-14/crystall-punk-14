@@ -95,7 +95,7 @@
   name: aer
   components:
   - type: Sprite
-    color: "#def9ff"
+    color: "#fdfe86"
   - type: SolutionContainerManager
     solutions:
       essence:

@@ -49,6 +49,7 @@
   id: CP14RuneMagicSplitting
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#5096d4"
@@ -62,6 +63,7 @@
   id: CP14ImpactEffectMagicSplitting
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: Effects/electricity.rsi

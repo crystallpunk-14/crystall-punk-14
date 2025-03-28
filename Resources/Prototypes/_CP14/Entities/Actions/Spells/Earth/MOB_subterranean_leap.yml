@@ -39,6 +39,7 @@
   id: CP14ImpactEffectDigging
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: _CP14/Effects/material_splash.rsi

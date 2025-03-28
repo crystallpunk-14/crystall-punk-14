@@ -25,6 +25,9 @@
     requiredLegs: 2
   - type: Bloodstream
     bloodReagent: CP14BloodElf
+  - type: CP14SkillStorage
+    progress:
+      Metamagic: 1
   - type: CP14MagicEnergyContainer #Increased mana container
     maxEnergy: 200
     energy: 200
