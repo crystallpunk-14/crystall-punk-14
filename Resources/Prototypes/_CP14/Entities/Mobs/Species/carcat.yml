@@ -41,6 +41,9 @@
   - type: CP14NightVision #Night vision
   - type: FootstepModifier
     footstepSoundCollection: null # Silent footstep
+  - type: CP14SkillStorage
+    progress:
+      Atlethic: 1
   - type: Inventory
     templateId: CP14Carcat # Cant wear shoes
     speciesId: carcat
