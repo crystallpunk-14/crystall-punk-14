@@ -43,6 +43,7 @@
   id: CP14RuneDemiplaneInfiltration
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#5e427e"

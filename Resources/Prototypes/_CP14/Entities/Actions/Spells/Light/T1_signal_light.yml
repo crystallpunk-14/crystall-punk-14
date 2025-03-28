@@ -43,6 +43,7 @@
   id: CP14RuneSignalLightRed
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#db1616"
@@ -87,6 +88,7 @@
   id: CP14RuneSignalLightYellow
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#ebc942"
@@ -131,6 +133,7 @@
   id: CP14RuneSignalLightBlue
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#42aaeb"

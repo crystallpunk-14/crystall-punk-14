@@ -37,6 +37,7 @@
   id: CP14RuneFlameCreation
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#eea911"
@@ -50,6 +51,7 @@
   id: CP14ImpactEffectFlameCreation
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:

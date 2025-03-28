@@ -34,6 +34,7 @@
 - type: entity
   id: CP14AreaEntityEffectHealBallade
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: TimedDespawn
     lifetime: 1.6
@@ -66,6 +67,7 @@
   id: CP14ImpactEffectHealthBallade
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: _CP14/Effects/music.rsi
@@ -78,6 +80,7 @@
   id: CP14RuneHealBallade
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#79b330"
