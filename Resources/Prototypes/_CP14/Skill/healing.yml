@@ -2,7 +2,7 @@
   id: CP14ActionSpellCureBurn
   skillUiPosition: 0, 0
   tree: Healing
-  learnCost: 10 #Temp disable healing
+  learnCost: 1
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: cure_burn
@@ -12,7 +12,7 @@
 - type: cp14Skill
   id: CP14ActionSpellBloodPurification
   skillUiPosition: 2, 0
-  learnCost: 10 #Temp disable healing
+  learnCost: 1
   tree: Healing
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
@@ -23,7 +23,7 @@
 - type: cp14Skill
   id: CP14ActionSpellCureWounds
   skillUiPosition: 4, 0
-  learnCost: 10 #Temp disable healing
+  learnCost: 1
   tree: Healing
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
@@ -44,7 +44,7 @@
 - type: cp14Skill
   id: CP14ActionSpellHealBallade
   skillUiPosition: 0, 6
-  learnCost: 10 #Temp disable healing
+  learnCost: 1
   tree: Healing
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi

@@ -54,6 +54,7 @@
   id: CP14RuneCureBurn
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#328643"
@@ -70,6 +71,7 @@
   id: CP14ImpactEffectCureBurn
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:

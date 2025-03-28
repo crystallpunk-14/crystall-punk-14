@@ -32,6 +32,7 @@
   id: CP14MagicAccelerationDustEffect
   parent: CP14DustEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     drawdepth: Items

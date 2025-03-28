@@ -34,6 +34,7 @@
 - type: entity
   id: CP14AreaEntityEffectPeaceBallade
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: TimedDespawn
     lifetime: 1.6
@@ -59,6 +60,7 @@
   id: CP14ImpactEffectPeaceBallade
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: _CP14/Effects/music.rsi
@@ -71,6 +73,7 @@
   id: CP14RunePeaceBallade
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#bd4fda"
