@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Administration;
@@ -11,21 +12,43 @@ public abstract partial class CP14SharedSkillSystem
 {
     [Dependency] private readonly ISharedAdminManager _admin = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+
+    private IEnumerable<CP14SkillPrototype>? _allSkills;
     private void InitializeAdmin()
     {
         SubscribeLocalEvent<CP14SkillStorageComponent, GetVerbsEvent<Verb>>(OnGetAdminVerbs);
+
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypeReloaded);
+
+        UpdateCachedSkill();
     }
+
+    private void OnPrototypeReloaded(PrototypesReloadedEventArgs ev)
+    {
+        if (!ev.WasModified<CP14SkillPrototype>())
+            return;
+
+        UpdateCachedSkill();
+    }
+
+    private void UpdateCachedSkill()
+    {
+        _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>().ToList().OrderBy(skill => skill.Tree.Id).ThenBy(skill => skill.Name);
+    }
+
 
     private void OnGetAdminVerbs(Entity<CP14SkillStorageComponent> ent, ref GetVerbsEvent<Verb> args)
     {
         if (!_admin.HasAdminFlag(args.User, AdminFlags.Admin))
             return;
 
+        if (_allSkills is null)
+            return;
 
         var target = args.Target;
 
         //Add Skill
-        foreach (var skill in _proto.EnumeratePrototypes<CP14SkillPrototype>())
+        foreach (var skill in _allSkills)
         {
             if (ent.Comp.LearnedSkills.Contains(skill))
                 continue;

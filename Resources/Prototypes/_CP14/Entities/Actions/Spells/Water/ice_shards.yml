@@ -40,6 +40,7 @@
   id: CP14RuneIceShards
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#5eabeb"
@@ -54,6 +55,7 @@
   parent: BaseBullet
   name: ice shard
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#5eabeb"

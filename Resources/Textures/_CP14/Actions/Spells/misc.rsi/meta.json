@@ -9,6 +9,9 @@
   "states": [
     {
       "name": "magical_acceleration"
+    },
+    {
+      "name": "polymorph"
     }
   ]
 }

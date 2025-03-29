@@ -39,6 +39,7 @@
   suffix: Teleport to demiplane crystal
   name: pulsating demiplane rift
   description: This rift is gaining strength, and will trap all nearby creatures in a demiplane in a second!
+  save: false
   components:
   - type: Transform
     anchored: True

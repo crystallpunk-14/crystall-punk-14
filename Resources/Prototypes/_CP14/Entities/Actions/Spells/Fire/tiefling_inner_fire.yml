@@ -42,6 +42,7 @@
   id: CP14ImpactEffectTieflingRevenge
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:
@@ -53,6 +54,7 @@
   id: CP14RuneTieflingRevenge
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#eea911"

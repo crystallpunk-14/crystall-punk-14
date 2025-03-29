@@ -37,6 +37,7 @@
   id: CP14TelegraphyFireRune
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#eea911"
@@ -56,6 +57,7 @@
   id: CP14AreaEntityEffectFireRune
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#eea911"

@@ -43,6 +43,7 @@
   id: CP14RuneFireball
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#eea911"
@@ -59,6 +60,7 @@
   id: CP14ImpactEffectFireball
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:
@@ -69,7 +71,7 @@
 - type: entity
   id: CP14Fireball
   parent: BulletRocket
-  name: artificial flame
+  name: fireball
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight

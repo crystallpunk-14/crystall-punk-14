@@ -47,6 +47,7 @@
   id: CP14ImpactEffectFreeze
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:
@@ -58,6 +59,7 @@
   id: CP14RunePlantFreeze
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#5eabeb"

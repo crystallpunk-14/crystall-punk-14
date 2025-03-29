@@ -1,6 +1,6 @@
 - type: entity
-  parent: 
-  - CP14BaseMobSpecies
+  parent:
+  - CP14BaseMobSpeciesNoLife
   - MobFlammable
   id: CP14BaseMobSkeleton
   name: Mr. Skeleton
@@ -91,10 +91,6 @@
   - type: Damageable
     damageContainer: CP14Biological
     damageModifierSet: Skeleton
-  - type: Hunger
-    baseDecayRate: 0.0003
-  - type: Thirst
-    baseDecayRate: 0.0003
   - type: Destructible
     thresholds:
     - trigger:

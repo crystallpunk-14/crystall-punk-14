@@ -44,6 +44,7 @@
   id: CP14ImpactEffectShadowGrab
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:

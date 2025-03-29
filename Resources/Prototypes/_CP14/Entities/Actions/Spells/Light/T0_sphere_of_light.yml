@@ -38,6 +38,7 @@
   id: CP14RuneSphereOfLight
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#efedff"
@@ -51,6 +52,7 @@
   id: CP14ImpactEffectSphereOfLight
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:

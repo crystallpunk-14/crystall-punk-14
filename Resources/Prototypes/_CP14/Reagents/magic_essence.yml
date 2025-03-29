@@ -51,7 +51,7 @@
   name: cp14-reagent-name-essence-air
   desc: cp14-reagent-desc-essence-air
   group: CP14MagicEssenceT0
-  color: "#def9ff"
+  color: "#fdfe86"
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceAir
@@ -130,7 +130,7 @@
   name: cp14-reagent-name-essence-energia
   desc: cp14-reagent-desc-essence-energia
   group: CP14MagicEssenceT1
-  color: "#caed72"
+  color: "#c0ffff"
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceEnergia
