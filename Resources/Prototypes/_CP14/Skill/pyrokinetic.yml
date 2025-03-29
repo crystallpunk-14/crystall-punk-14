@@ -10,10 +10,26 @@
 
 - type: cp14Skill
   id: CP14ActionSpellHellBallade
-  skillUiPosition: 0, 10
+  skillUiPosition: 0, 2
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fire_music
   effect: !type:AddAction
     action: CP14ActionSpellHellBallade
+  restrictions:
+  - !type:SpeciesWhitelist
+    species: CP14Tiefling
+
+- type: cp14Skill
+  id: CP14ActionSpellTieflingInnerFire
+  skillUiPosition: 0, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: tiefling_revenge
+  effect: !type:AddAction
+    action: CP14ActionSpellTieflingInnerFire
+  restrictions:
+  - !type:SpeciesWhitelist
+    species: CP14Tiefling

@@ -6,7 +6,7 @@ namespace Content.Shared._CP14.Skill.Restrictions;
 
 public sealed partial class NeedPrerequisite : CP14SkillRestriction
 {
-    [DataField]
+    [DataField(required: true)]
     public ProtoId<CP14SkillPrototype> Prerequisite = new();
 
     public override bool Check(IEntityManager entManager, EntityUid target)
