@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._CP14.WeatherEffect;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -33,4 +34,10 @@ public sealed partial class WeatherPrototype : IPrototype
     /// </summary>
     [DataField]
     public float Alpha = 1f;
+
+    /// <summary>
+    /// CP14 Effects
+    /// </summary>
+    [DataField]
+    public List<CP14WeatherEffectConfig> Config = new();
 }
