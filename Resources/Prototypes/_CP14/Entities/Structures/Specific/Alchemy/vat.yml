@@ -25,31 +25,11 @@
         - MachineMask
         layer:
         - WallLayer
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:SpillBehavior
-        solution: vat
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
   - type: Appearance
   - type: Sprite
     drawdepth: Mobs
     sprite: _CP14/Structures/Specific/Alchemy/alchemy_vat.rsi
     noRot: true
-    layers:
-      - state: full
-      - state: liq1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing #TODO
