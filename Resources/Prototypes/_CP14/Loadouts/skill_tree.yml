@@ -1,12 +1,12 @@
 - type: loadoutGroup
   id: CP14SkillTree
   name: cp14-loadout-skill-tree
-  minLimit: 0
+  minLimit: 2
   maxLimit: 2
   loadouts:
-  - CP14SkillTreePyrokinetic
-  - CP14SkillTreeHydrosophistry
   - CP14SkillTreeMetamagic
+  - CP14SkillTreeHydrosophistry
+  - CP14SkillTreePyrokinetic
   - CP14SkillTreeIllusion
   - CP14SkillTreeHealing
   - CP14SkillTreeAtlethic

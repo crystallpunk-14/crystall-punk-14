@@ -19,9 +19,6 @@
     state: cure_poison
   effect: !type:AddAction
     action: CP14ActionSpellBloodPurification
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: CP14ActionSpellCureWounds
 
 - type: cp14Skill
   id: CP14ActionSpellCureWounds
