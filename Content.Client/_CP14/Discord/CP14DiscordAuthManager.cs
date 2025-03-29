@@ -10,6 +10,7 @@ public sealed class DiscordAuthManager
     [Dependency] private readonly IStateManager _stateManager = default!;
 
     public string AuthUrl { get; private set; } = "";
+    public string ErrorMessage { get; private set; } = "";
 
     public void Initialize()
     {
@@ -22,6 +23,7 @@ public sealed class DiscordAuthManager
         if (_stateManager.CurrentState is DiscordAuthState)
             return;
         AuthUrl = msg.AuthUrl;
+        ErrorMessage = msg.ErrorMessage;
         _stateManager.RequestStateChange<DiscordAuthState>();
     }
 }
