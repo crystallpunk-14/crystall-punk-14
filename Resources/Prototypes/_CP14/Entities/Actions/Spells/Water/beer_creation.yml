@@ -7,7 +7,7 @@
     sprite: _CP14/Actions/Spells/water.rsi
     state: beer_creation
   - type: CP14MagicEffectManaCost
-    manaCost: 50
+    manaCost: 20
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
@@ -30,7 +30,7 @@
       sprite: _CP14/Actions/Spells/water.rsi
       state: beer_creation
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 60
+      cooldown: 30
       castDelay: 5
       breakOnMove: true
 
@@ -38,6 +38,7 @@
   id: CP14RuneBeerCreation
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#5eabeb"
@@ -68,6 +69,7 @@
   id: CP14ImpactEffectBeerCreation
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:

@@ -35,6 +35,7 @@
   id: CP14RuneWaterCreation
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#5eabeb"
@@ -144,6 +145,7 @@
   id: CP14ImpactEffectWaterCreation
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:

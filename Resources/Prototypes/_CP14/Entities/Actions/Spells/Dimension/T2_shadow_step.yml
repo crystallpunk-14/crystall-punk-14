@@ -37,6 +37,7 @@
   id: CP14ImpactEffectShadowStep
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:

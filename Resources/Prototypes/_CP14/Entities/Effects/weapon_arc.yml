@@ -2,6 +2,7 @@
   id: CP14WeaponArcSlash
   parent: WeaponArcStatic
   categories: [ HideSpawnMenu ]
+  save: false
   components:
     - type: WeaponArcVisuals
       animation: CPSlash
@@ -10,6 +11,7 @@
   id: CP14WeaponArcThrust
   parent: WeaponArcStatic
   categories: [ HideSpawnMenu ]
+  save: false
   components:
     - type: WeaponArcVisuals
       animation: CPThrust
