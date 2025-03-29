@@ -2,8 +2,8 @@ using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEssence;
 using Content.Shared.Alert;
 using Content.Shared.Audio;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
-using Content.Shared.Inventory;
 using Content.Shared.Rounding;
 
 namespace Content.Shared._CP14.MagicEnergy;
@@ -19,6 +19,8 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentShutdown>(OnComponentShutdown);
+
+        SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
     }
 
     private void OnSlotPowerChanged(Entity<CP14MagicEnergyAmbientSoundComponent> ent, ref CP14SlotCrystalPowerChangedEvent args)
@@ -163,6 +165,17 @@ public partial class SharedCP14MagicEnergySystem : EntitySystem
             (float)ent.Comp.MaxEnergy,
             _alerts.GetMaxSeverity(ent.Comp.MagicAlert.Value));
         _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short)level);
+    }
+
+    private void OnExamined(Entity<CP14MagicEnergyExaminableComponent> ent, ref ExaminedEvent args)
+    {
+        if (!TryComp<CP14MagicEnergyContainerComponent>(ent, out var magicContainer))
+            return;
+
+        if (!args.IsInDetailsRange)
+            return;
+
+        args.PushMarkup(GetEnergyExaminedText(ent, magicContainer));
     }
 }
 
