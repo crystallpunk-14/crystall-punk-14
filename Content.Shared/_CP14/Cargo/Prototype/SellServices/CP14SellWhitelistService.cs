@@ -31,9 +31,6 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
             if (needCount <= 0)
                 break;
 
-            if (!entManager.TryGetComponent<MetaDataComponent>(ent, out var metaData) || metaData.EntityPrototype is null)
-                continue;
-
             if (!whitelistSystem.IsValid(Whitelist, ent))
                 continue;
 
@@ -52,7 +49,7 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
         foreach (var selledEnt in suitable)
         {
             entities.Remove(selledEnt);
-            entManager.QueueDeleteEntity(selledEnt);
+            entManager.DeleteEntity(selledEnt);
         }
 
         return true;
