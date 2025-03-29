@@ -33,12 +33,12 @@
         Blunt: 3
         Shock: 3
   - type: CP14SpellEffectOnHit
-    prob: 0.75
+    prob: 0.3
     effects:
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Electrocute
-        electrocuteTime: 0.5
+        electrocuteTime: 1
         electrocuteDamageScale: 1
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
