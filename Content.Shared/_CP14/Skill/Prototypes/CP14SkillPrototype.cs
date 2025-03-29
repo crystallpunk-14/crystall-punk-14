@@ -1,5 +1,6 @@
 using System.Numerics;
-using Content.Shared._CP14.Skill.Specials;
+using Content.Shared._CP14.Skill.Effects;
+using Content.Shared._CP14.Skill.Restrictions;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -38,12 +39,6 @@ public sealed partial class CP14SkillPrototype : IPrototype
     public float LearnCost = 1f;
 
     /// <summary>
-    ///  Prerequisites for this skill. This is used to determine if the player can learn the skill. If the player does not have all the prerequisites, they cannot learn the skill.
-    /// </summary>
-    [DataField]
-    public HashSet<ProtoId<CP14SkillPrototype>> Prerequisites = new();
-
-    /// <summary>
     ///  Skill UI position. This is used to determine where the skill will be displayed in the skill tree UI.
     /// </summary>
     [DataField(required: true)]
@@ -61,4 +56,10 @@ public sealed partial class CP14SkillPrototype : IPrototype
     /// </summary>
     [DataField]
     public CP14SkillEffect? Effect;
+
+    /// <summary>
+    /// Skill restriction. Limiters on learning. Any reason why a player cannot learn this skill.
+    /// </summary>
+    [DataField]
+    public List<CP14SkillRestriction> Restrictions = new();
 }
