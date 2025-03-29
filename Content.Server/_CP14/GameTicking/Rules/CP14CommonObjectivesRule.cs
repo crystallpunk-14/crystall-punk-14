@@ -117,8 +117,7 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
     {
         base.AppendRoundEndText(uid, component, gameRule, ref args);
 
-        if (!TryComp<MindComponent>(uid, out var stationMind))
-            return;
+        EnsureComp<MindComponent>(uid, out var stationMind);
 
         var query = EntityQueryEnumerator<CP14StationCommonObjectivesComponent>();
         while (query.MoveNext(out var objectives))
