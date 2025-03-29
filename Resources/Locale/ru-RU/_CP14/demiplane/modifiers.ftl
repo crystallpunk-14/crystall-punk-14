@@ -12,6 +12,7 @@ cp14-modifier-explosive = взрывных мин
 cp14-modifier-ruins = древних руин
 cp14-modifier-xeno = ксеноморфов
 cp14-modifier-zombie = толп нежити
+cp14-modifier-slime = слаймов
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = доисторической фауны
 cp14-modifier-mole = хищных кротов
