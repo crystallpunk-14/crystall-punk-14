@@ -17,3 +17,20 @@
     state: sprint
   effect: !type:AddAction
     action: CP14ActionSpellSprint
+
+- type: cp14Skill
+  id: CP14ActionSpellSprintGoblin
+  skillUiPosition: 2, 2
+  learnCost: 0
+  tree: Atlethic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: sprint
+  effect: !type:ReplaceAction
+    oldAction: CP14ActionSpellSprint
+    newAction: CP14ActionSpellSprintGoblin
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14ActionSpellSprint
+  - !type:SpeciesWhitelist
+    species: CP14Goblin
