@@ -5,6 +5,18 @@
   categories: [ ForkFiltered ]
   abstract: true
   components:
+  - type: Damageable
+    damageContainer: CP14Biological
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+    - Cold
+    - Caustic
+    - CP14ManaDepletion
   - type: Destructible
     thresholds:
     - trigger:
