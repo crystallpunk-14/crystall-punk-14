@@ -19,10 +19,10 @@
   id: CP14RoundObjectivesRule
   parent: CP14BaseGameRule
   components:
-  - type: CP14CommonObjectivesRule
-    departmentObjectives:
-      CP14Command:
-      - CP14TownSendObjectiveGroup
+  #- type: CP14CommonObjectivesRule
+  #  departmentObjectives:
+  #    CP14Command:
+  #    - CP14TownSendObjectiveGroup
   - type: CP14PersonalObjectivesRule
     roleObjectives:
       CP14Guildmaster:

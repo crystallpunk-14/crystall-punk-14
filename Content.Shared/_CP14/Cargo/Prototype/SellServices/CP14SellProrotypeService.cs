@@ -39,7 +39,7 @@ public sealed partial class CP14SellPrototypeService : CP14StoreSellService
 
         foreach (var selledEnt in suitable)
         {
-            entManager.QueueDeleteEntity(selledEnt);
+            entManager.DeleteEntity(selledEnt);
         }
 
         return true;

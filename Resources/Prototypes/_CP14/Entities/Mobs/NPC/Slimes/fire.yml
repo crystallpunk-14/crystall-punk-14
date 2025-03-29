@@ -98,7 +98,7 @@
       effects:
       - !type:Jitter
       - !type:FlammableReaction
-        multiplier: 1.5
+        multiplier: 1
       - !type:AdjustTemperature
         amount: 6000
       - !type:Ignite
