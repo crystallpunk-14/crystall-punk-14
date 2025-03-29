@@ -4,4 +4,4 @@
   id: CP14Magic
   name: cp14-damage-group-magic
   damageTypes:
-    - CP14Manadepletion
+    - CP14ManaDepletion

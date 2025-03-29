@@ -103,7 +103,7 @@
     damageCap: 80
     damage:
       types:
-        CP14Manadepletion: -0.05
+        CP14ManaDepletion: -0.05
       groups:
         Burn: -0.2
         Brute: -0.2

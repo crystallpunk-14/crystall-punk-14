@@ -124,7 +124,7 @@
       - !type:HealthChange
         damage:
           types:
-            CP14Manadepletion: -0.5
+            CP14ManaDepletion: -0.5
     Poison:
       effects:
       - !type:HealthChange

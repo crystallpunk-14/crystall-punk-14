@@ -197,7 +197,7 @@
             Asphyxiation: 3
 
 - type: reagent
-  id: CP14BasicEffectHealManadepletion
+  id: CP14BasicEffectHealManaDepletion
   name: cp14-reagent-name-basic-heal-manadepletion
   desc: cp14-reagent-desc-basic-heal-manadepletion
   group: CP14BasicEffect
@@ -212,10 +212,10 @@
       - !type:HealthChange
         damage:
           types:
-            CP14Manadepletion: -10
+            CP14ManaDepletion: -10
 
 - type: reagent
-  id: CP14BasicEffectDamageManadepletion
+  id: CP14BasicEffectDamageManaDepletion
   name: cp14-reagent-name-basic-damage-manadepletion
   desc: cp14-reagent-desc-basic-damage-manadepletion
   group: CP14BasicEffect
@@ -230,7 +230,7 @@
       - !type:HealthChange
         damage:
           types:
-            CP14Manadepletion: 3
+            CP14ManaDepletion: 3
 
 - type: reagent
   id: CP14BasicEffectBloodRestore
