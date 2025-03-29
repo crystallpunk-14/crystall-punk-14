@@ -1,14 +1,4 @@
 - type: entity
-  id: CP14DummyActionSpellManaManipulation
-  name: Mana manipulation
-  description: You can manipulate mana by giving it to other objects or taking it from them.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: mana
-
-- type: entity
   id: CP14ActionSpellManaGift
   name: Mana transfer
   description: You can transfer a small amount of your magical energy to a target entity or magical object.
@@ -53,6 +43,25 @@
       cooldown: 2
       castTime: 10
       breakOnMove: true
+
+- type: entity
+  id: CP14ActionSpellManaGiftElf
+  parent: CP14ActionSpellManaGift
+  name: Carefull mana transfer
+  description: You transfer mana at a tremendous rate without dealing damage to the target.
+  components:
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 20
+        safe: true
 
 - type: entity
   id: CP14RuneManaGift

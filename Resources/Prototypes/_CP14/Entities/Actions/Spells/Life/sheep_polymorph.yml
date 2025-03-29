@@ -24,8 +24,8 @@
       - !type:Polymorph
         prototype: CP14Sheep
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Pellis dolorem..."
-    endSpeech: "non novit"
+    startSpeech: "Pascam et custodiam..."
+    endSpeech: "pecora tua"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSheepPolymorph
   - type: EntityTargetAction

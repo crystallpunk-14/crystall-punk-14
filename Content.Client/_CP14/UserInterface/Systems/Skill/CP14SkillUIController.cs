@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using Content.Client._CP14.Skill;
 using Content.Client._CP14.Skill.Ui;
 using Content.Client._CP14.UserInterface.Systems.Skill.Window;
@@ -18,7 +19,7 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client.UserInterface.Systems.Character;
+namespace Content.Client._CP14.UserInterface.Systems.Skill;
 
 [UsedImplicitly]
 public sealed class CP14SkillUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>,
@@ -26,12 +27,13 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 {
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IEntityManager _entManager = default!;
     [UISystemDependency] private readonly CP14ClientSkillSystem _skill = default!;
 
     private CP14SkillWindow? _window;
     private CP14SkillPrototype? _selectedSkill;
 
-    private MenuButton? SkillButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.CP14SkillButton;
+    private MenuButton? SkillButton => UIManager.GetActiveUIWidgetOrNull<Client.UserInterface.Systems.MenuBar.Widgets.GameTopMenuBar>()?.CP14SkillButton;
 
     public void OnStateEntered(GameplayState state)
     {
@@ -142,8 +144,23 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     {
         var msg = new FormattedMessage();
 
+        if (_player.LocalEntity == null)
+            return msg;
+
+        var sb = new StringBuilder();
+
         //Description
-        msg.TryAddMarkup(_skill.GetSkillDescription(skill) + "\n", out _);
+        sb.Append(_skill.GetSkillDescription(skill) + "\n \n");
+
+        //Restrictions
+        foreach (var req in skill.Restrictions)
+        {
+            var color = req.Check(_entManager, _player.LocalEntity.Value) ? "green" : "red";
+
+            sb.Append($"- [color={color}]{req.GetDescription(_entManager, _proto)}[/color]\n");
+        }
+
+        msg.TryAddMarkup(sb.ToString(), out _);
 
         return msg;
     }

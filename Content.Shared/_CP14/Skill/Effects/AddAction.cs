@@ -1,21 +1,21 @@
 using Content.Shared.Actions;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Skill.Specials;
+namespace Content.Shared._CP14.Skill.Effects;
 
 public sealed partial class AddAction : CP14SkillEffect
 {
     [DataField(required: true)]
     public EntProtoId Action;
 
-    public override void AddSkill(EntityManager entManager, EntityUid target)
+    public override void AddSkill(IEntityManager entManager, EntityUid target)
     {
         var actionsSystem = entManager.System<SharedActionsSystem>();
 
         actionsSystem.AddAction(target, Action);
     }
 
-    public override void RemoveSkill(EntityManager entManager, EntityUid target)
+    public override void RemoveSkill(IEntityManager entManager, EntityUid target)
     {
         var actionsSystem = entManager.System<SharedActionsSystem>();
 
@@ -34,19 +34,13 @@ public sealed partial class AddAction : CP14SkillEffect
         }
     }
 
-    public override string? GetName(EntityManager entMagager, IPrototypeManager protoManager)
+    public override string? GetName(IEntityManager entMagager, IPrototypeManager protoManager)
     {
-        if (!protoManager.TryIndex(Action, out var indexedAction))
-            return String.Empty;
-
-        return indexedAction.Name;
+        return !protoManager.TryIndex(Action, out var indexedAction) ? string.Empty : indexedAction.Name;
     }
 
-    public override string? GetDescription(EntityManager entMagager, IPrototypeManager protoManager)
+    public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager)
     {
-        if (!protoManager.TryIndex(Action, out var indexedAction))
-            return String.Empty;
-
-        return indexedAction.Description;
+        return !protoManager.TryIndex(Action, out var indexedAction) ? string.Empty : indexedAction.Description;
     }
 }
