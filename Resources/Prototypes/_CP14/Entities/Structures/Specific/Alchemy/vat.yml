@@ -2,6 +2,7 @@
   id: CP14BaseVat
   parent: 
   - BaseStructureDynamic
+  - CP14BaseWorkbench
   name: big vat
   description: A very large vat for storing huge amounts of liquid. Heavy, uncomfortable to carry.
   categories: [ ForkFiltered ]
@@ -49,26 +50,9 @@
       - state: liq1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
-  - type: SolutionContainerManager
-    solutions:
-      vat:
-        maxVol: 500
-  - type: CP14SolutionTemperature
-  - type: SolutionContainerVisuals
-    maxFillLevels: 6
-    fillBaseName: liq
-  - type: DrainableSolution
-    solution: vat
-  - type: ExaminableSolution
-    solution: vat
-  - type: MixableSolution
-    solution: vat
-  - type: RefillableSolution
-    solution: vat
-  - type: DrawableSolution
-    solution: vat
-  - type: DumpableSolution
-    solution: vat
-  - type: Drink
-    solution: vat
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing #TODO
+    recipeTags:
+    - CP14RecipeAnvil
   - type: Anchorable
