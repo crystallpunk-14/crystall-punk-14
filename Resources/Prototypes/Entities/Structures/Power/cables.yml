@@ -30,7 +30,7 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  #- type: SubFloorHide #CP14
+  - type: SubFloorHide
   - type: CollideOnAnchor
   - type: Appearance
   - type: Electrified
