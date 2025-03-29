@@ -36,6 +36,7 @@
   description: A furnace fueled by wood, coal, or any other burning material. Handy for heating your alchemical potions.
   components:
   - type: Sprite
+    snapCardinals: false
     sprite: _CP14/Structures/Specific/Alchemy/alchemy_furnace.rsi
     layers:
       - state: base
@@ -76,6 +77,10 @@
         - TableMask
         layer:
         - TableLayer
+  - type: PointLight
+    color: "#99411f"
+    radius: 2
+    energy: 2
   - type: CP14Workbench
     craftSound:
       collection: CP14Sawing #TODO
