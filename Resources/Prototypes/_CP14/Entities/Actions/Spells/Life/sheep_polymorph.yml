@@ -1,0 +1,73 @@
+- type: entity
+  id: CP14ActionSpellSheepPolymorph
+  name: Sheep polymorph
+  description: You curse the target, turning it into a silly sheep for a short period of time.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/misc.rsi
+    state: polymorph
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14MagicEffectManaCost
+    manaCost: 30
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectSheepPolymorph
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectSheepPolymorph
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Polymorph
+        prototype: CP14Sheep
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Pellis dolorem..."
+    endSpeech: "non novit"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneSheepPolymorph
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 3
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/misc.rsi
+      state: polymorph
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 30
+      castDelay: 1.5
+      breakOnMove: false
+ 
+- type: entity
+  id: CP14RuneSheepPolymorph
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#8532a8"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#8532a8"
+      shader: unshaded
+    - state: double_outer
+      color: "#db35c8"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectSheepPolymorph
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#db35c8"
+      shader: unshaded

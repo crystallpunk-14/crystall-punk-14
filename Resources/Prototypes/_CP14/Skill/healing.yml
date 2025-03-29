@@ -71,3 +71,13 @@
     state: speed_music
   effect: !type:AddAction
     action: CP14ActionSpellSpeedBallade
+
+- type: cp14Skill
+  id: CP14ActionSpellSheepPolymorph
+  skillUiPosition: 4, 10
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/misc.rsi
+    state: polymorph
+  effect: !type:AddAction
+    action: CP14ActionSpellSheepPolymorph
