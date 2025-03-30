@@ -4,8 +4,8 @@ meta:
   engineVersion: 248.0.2
   forkId: ""
   forkVersion: ""
-  time: 03/22/2025 21:07:42
-  entityCount: 23486
+  time: 03/30/2025 12:13:47
+  entityCount: 23481
 maps:
 - 2
 grids:
@@ -773,6 +773,18 @@ entities:
     components:
     - type: Transform
       pos: 49.269325,-15.964533
+      parent: 2
+- proto: CP14BaseLockpick
+  entities:
+  - uid: 8337
+    components:
+    - type: Transform
+      pos: 74.42914,23.514683
+      parent: 2
+  - uid: 8340
+    components:
+    - type: Transform
+      pos: 74.30414,23.795933
       parent: 2
 - proto: CP14BaseMop
   entities:
@@ -35002,30 +35014,6 @@ entities:
     components:
     - type: Transform
       pos: -62.5,-31.5
-      parent: 2
-  - uid: 9323
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 80.5,42.5
-      parent: 2
-  - uid: 9324
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 80.5,41.5
-      parent: 2
-  - uid: 9325
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 80.5,40.5
-      parent: 2
-  - uid: 9326
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 80.5,39.5
       parent: 2
   - uid: 9332
     components:
@@ -101255,6 +101243,13 @@ entities:
     - type: Transform
       pos: -0.5,-10.5
       parent: 2
+- proto: CP14DemiplanEnterRoomMarker
+  entities:
+  - uid: 8891
+    components:
+    - type: Transform
+      pos: -2.5,-17.5
+      parent: 2
 - proto: CP14DirtBlock1
   entities:
   - uid: 20424
@@ -105836,87 +105831,24 @@ entities:
     - type: Transform
       pos: 10.158333,-34.388634
       parent: 2
-- proto: CP14OreCopper1
+- proto: CP14OreGold10
   entities:
-  - uid: 9023
+  - uid: 8330
     components:
     - type: Transform
-      parent: 9022
+      parent: 3142
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-  - uid: 9029
+  - uid: 8331
     components:
     - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9031
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9032
-    components:
-    - type: Transform
-      parent: 9022
+      parent: 3142
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
 - proto: CP14OreIron1
   entities:
-  - uid: 9024
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9025
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9026
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9027
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9028
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9030
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9033
-    components:
-    - type: Transform
-      parent: 9022
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
   - uid: 15020
     components:
     - type: Transform
@@ -105935,6 +105867,38 @@ entities:
       rot: 3.141592653589793 rad
       pos: -71.78356,28.329292
       parent: 2
+- proto: CP14OreIron10
+  entities:
+  - uid: 8328
+    components:
+    - type: Transform
+      parent: 3142
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 8329
+    components:
+    - type: Transform
+      parent: 3142
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: CP14OreMithril10
+  entities:
+  - uid: 8332
+    components:
+    - type: Transform
+      parent: 3142
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 8333
+    components:
+    - type: Transform
+      parent: 3142
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CP14Paper
   entities:
   - uid: 1401
@@ -117846,6 +117810,11 @@ entities:
     - type: Transform
       pos: -6.5,-11.5
       parent: 2
+  - uid: 1394
+    components:
+    - type: Transform
+      pos: 79.5,42.5
+      parent: 2
   - uid: 1448
     components:
     - type: Transform
@@ -118469,7 +118438,7 @@ entities:
   - uid: 3010
     components:
     - type: Transform
-      pos: 79.5,42.5
+      pos: 79.5,39.5
       parent: 2
   - uid: 3016
     components:
@@ -118654,7 +118623,7 @@ entities:
   - uid: 3117
     components:
     - type: Transform
-      pos: 79.5,39.5
+      pos: 79.5,41.5
       parent: 2
   - uid: 3122
     components:
@@ -118680,11 +118649,6 @@ entities:
     components:
     - type: Transform
       pos: 84.5,44.5
-      parent: 2
-  - uid: 3133
-    components:
-    - type: Transform
-      pos: 80.5,43.5
       parent: 2
   - uid: 3135
     components:
@@ -119176,6 +119140,16 @@ entities:
     - type: Transform
       pos: 18.5,-15.5
       parent: 2
+  - uid: 8336
+    components:
+    - type: Transform
+      pos: 80.5,43.5
+      parent: 2
+  - uid: 8339
+    components:
+    - type: Transform
+      pos: 79.5,40.5
+      parent: 2
   - uid: 11567
     components:
     - type: Transform
@@ -119185,16 +119159,6 @@ entities:
     components:
     - type: Transform
       pos: 84.5,24.5
-      parent: 2
-  - uid: 14251
-    components:
-    - type: Transform
-      pos: 79.5,40.5
-      parent: 2
-  - uid: 14276
-    components:
-    - type: Transform
-      pos: 79.5,41.5
       parent: 2
   - uid: 14301
     components:
@@ -119888,10 +119852,10 @@ entities:
     - type: Transform
       pos: -8.5,-13.5
       parent: 2
-  - uid: 3142
+  - uid: 3133
     components:
     - type: Transform
-      pos: 80.5,39.5
+      pos: 80.5,41.5
       parent: 2
   - uid: 3216
     components:
@@ -120093,6 +120057,21 @@ entities:
     - type: Transform
       pos: -9.5,-20.5
       parent: 2
+  - uid: 8334
+    components:
+    - type: Transform
+      pos: 80.5,39.5
+      parent: 2
+  - uid: 8335
+    components:
+    - type: Transform
+      pos: 80.5,42.5
+      parent: 2
+  - uid: 8338
+    components:
+    - type: Transform
+      pos: 80.5,40.5
+      parent: 2
   - uid: 8349
     components:
     - type: Transform
@@ -120258,16 +120237,6 @@ entities:
     - type: Transform
       pos: 81.5,21.5
       parent: 2
-  - uid: 8890
-    components:
-    - type: Transform
-      pos: 80.5,41.5
-      parent: 2
-  - uid: 8891
-    components:
-    - type: Transform
-      pos: 80.5,42.5
-      parent: 2
   - uid: 8892
     components:
     - type: Transform
@@ -120277,11 +120246,6 @@ entities:
     components:
     - type: Transform
       pos: 82.5,42.5
-      parent: 2
-  - uid: 8894
-    components:
-    - type: Transform
-      pos: 80.5,40.5
       parent: 2
   - uid: 8896
     components:
@@ -123183,6 +123147,27 @@ entities:
     - type: Transform
       pos: -5.5,-6.5
       parent: 2
+  - uid: 3142
+    components:
+    - type: Transform
+      pos: 77.5,30.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 8328
+          - 8329
+          - 8330
+          - 8331
+          - 8332
+          - 8333
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
   - uid: 4268
     components:
     - type: Transform
@@ -123253,32 +123238,6 @@ entities:
           - 8977
           - 8976
           - 8975
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 9022
-    components:
-    - type: Transform
-      pos: 77.5,30.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 9033
-          - 9032
-          - 9031
-          - 9030
-          - 9029
-          - 9028
-          - 9027
-          - 9026
-          - 9025
-          - 9024
-          - 9023
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -123463,6 +123422,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 79.5,30.5
       parent: 2
+- proto: CP14WorkbenchAnvil
+  entities:
+  - uid: 8894
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 76.5,28.5
+      parent: 2
 - proto: CP14WorkbenchCooking
   entities:
   - uid: 4431
@@ -123485,14 +123452,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.5,-35.5
       parent: 2
-- proto: PlushieLizardInversed
+- proto: SpawnPointGhostDemiplaneSkeleton
   entities:
-  - uid: 17541
+  - uid: 8890
     components:
-    - type: MetaData
-      desc: oooo you like mapping. ur a mapper
-      name: Viator
     - type: Transform
-      pos: -52.729527,-71.3009
+      pos: 74.5,22.5
       parent: 2
 ...
