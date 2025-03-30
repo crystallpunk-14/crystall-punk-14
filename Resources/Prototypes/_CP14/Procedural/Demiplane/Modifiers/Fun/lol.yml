@@ -22,6 +22,29 @@
       maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
+  id: MobRoyalPumpkin
+  levels:
+    min: 1
+    max: 10
+  generationWeight: 0.1
+  generationProb: 0.1
+  categories:
+    Fun: 1
+  requiredTags:
+  - CP14DemiplaneHerbals
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14MobPumpkinKing
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
   id: LucenTree
   levels:
     min: 6
