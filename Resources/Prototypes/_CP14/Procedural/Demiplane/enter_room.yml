@@ -5,7 +5,7 @@
   id: CP14DemiplanEnterRoomMarker
   categories: [ ForkFiltered ]
   parent: BaseRoomMarker
-  name: Demiplan enter room marker
+  name: Demiplane enter room marker
   components:
   - type: RoomFill
     clearExisting: true

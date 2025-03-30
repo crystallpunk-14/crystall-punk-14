@@ -56,6 +56,12 @@
       duration:
         min: 10000
         max: 10000
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: WeatherSnowLight
@@ -94,6 +100,12 @@
       duration:
         min: 10000
         max: 10000
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: WeatherSnowHeavy
@@ -115,6 +127,12 @@
       duration:
         min: 10000
         max: 10000
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CP14ManaMist
@@ -134,6 +152,12 @@
       duration:
         min: 10000
         max: 10000
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CP14AntiManaMist
@@ -153,6 +177,12 @@
       duration:
         min: 10000
         max: 10000
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: CP14FireStorm
@@ -174,3 +204,9 @@
       duration:
         min: 10000
         max: 10000
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
