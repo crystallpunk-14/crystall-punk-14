@@ -1,79 +1,68 @@
 - type: Tag
-  id: CP14DemiplanRuins
+  id: CP14DemiplaneRuins
 
-#- type: entity
-#  id: CP14DemiplanRuinsRoomSpawner
-#  categories: [ ForkFiltered ]
-#  parent: BaseRoomMarker
-#  name: Demiplan ruins room spawner
-#  components:
-#  - type: RoomFill
-#    clearExisting: true
-#    roomWhitelist:
-#      tags:
-#      - CP14DemiplanRuins
+- type: entity
+  id: CP14DemiplaneRuinsRoomSpawner
+  categories: [ ForkFiltered ]
+  parent: BaseRoomMarker
+  name: Demiplane ruins room spawner
+  components:
+  - type: RoomFill
+    clearExisting: true
+    roomWhitelist:
+      tags:
+      - CP14DemiplaneRuins
 
-# 7x7
 - type: dungeonRoom
-  id: CP14GrasslandIslandExterior_7x7_a
-  size: 7,7
-  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  id: CP14DemiplaneRuins_1
+  size: 5,5
+  atlas: /Maps/_CP14/Dungeon/demiplane_ruins.yml
   ignoreTile: FloorShuttlePurple
   offset: 0,0
   tags:
-    - CP14DemiplanRuins
-
-# 5x5
-- type: dungeonRoom
-  id: CP14GrasslandIslandExterior_5x5_a
-  size: 5,5
-  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
-  ignoreTile: FloorShuttlePurple
-  offset: 0,8
-  tags:
-    - CP14DemiplanRuins
+    - CP14DemiplaneRuins
 
 - type: dungeonRoom
-  id: CP14GrasslandIslandExterior_5x5_b
+  id: CP14DemiplaneRuins_2
   size: 5,5
-  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_ruins.yml
   ignoreTile: FloorShuttlePurple
-  offset: 6,8
+  offset: 6,0
   tags:
-    - CP14DemiplanRuins
+    - CP14DemiplaneRuins
 
 - type: dungeonRoom
-  id: CP14GrasslandIslandExterior_5x5_c
+  id: CP14DemiplaneRuins_3
   size: 5,5
-  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_ruins.yml
   ignoreTile: FloorShuttlePurple
-  offset: 12,8
+  offset: 12,0
   tags:
-    - CP14DemiplanRuins
+    - CP14DemiplaneRuins
 
 - type: dungeonRoom
-  id: CP14GrasslandIslandExterior_5x5_d
+  id: CP14DemiplaneRuins_4
   size: 5,5
-  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_ruins.yml
   ignoreTile: FloorShuttlePurple
-  offset: 18,8
+  offset: 18,0
   tags:
-    - CP14DemiplanRuins
+    - CP14DemiplaneRuins
 
 - type: dungeonRoom
-  id: CP14GrasslandIslandExterior_5x5_e
+  id: CP14DemiplaneRuins_5
   size: 5,5
-  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_ruins.yml
   ignoreTile: FloorShuttlePurple
-  offset: 24,8
+  offset: 24,0
   tags:
-    - CP14DemiplanRuins
+    - CP14DemiplaneRuins
 
 - type: dungeonRoom
-  id: CP14GrasslandIslandExterior_5x5_g
+  id: CP14DemiplaneRuins_6
   size: 5,5
-  atlas: /Maps/_CP14/Dungeon/demiplan_ruins.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_ruins.yml
   ignoreTile: FloorShuttlePurple
-  offset: 30,8
+  offset: 30,0
   tags:
-    - CP14DemiplanRuins
+    - CP14DemiplaneRuins

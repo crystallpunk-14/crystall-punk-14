@@ -8,6 +8,11 @@
     params:
       loop: true
       volume: -6
+  effects:
+  - !type:ApplyEntityEffect
+    prob: 0.2
+    effects:
+    - !type:ExtinguishReaction
 
 - type: weather
   id: CP14Storm
@@ -19,6 +24,14 @@
     params:
       loop: true
       volume: -6
+  effects:
+  - !type:ApplyEntityEffect
+    prob: 0.4
+    effects:
+    - !type:ExtinguishReaction
+  - !type:SpawnEntityOnTop
+    prob: 0.0001
+    entity: CP14SkyLightning
 
 - type: weather
   id: CP14Mist
@@ -30,10 +43,53 @@
     state: noise
 
 - type: weather
+  id: CP14ManaMist
+  offsetSpeed: 0.56, -0.36
+  color: "#3d81ff"
+  alpha: 0.7
+  sprite:
+    sprite: /Textures/_CP14/Effects/parallax.rsi
+    state: noise
+  effects:
+  - !type:ApplyEntityEffect
+    prob: 0.5
+    effects:
+      - !type:CP14ManaChange
+        manaDelta: 8
+        safe: false
+
+- type: weather
+  id: CP14AntiManaMist
+  offsetSpeed: -0.56, -0.31
+  color: "#d929d9"
+  alpha: 0.8
+  sprite:
+    sprite: /Textures/_CP14/Effects/parallax.rsi
+    state: noise
+  sound:
+    path: /Audio/Ambience/anomaly_scary.ogg
+    params:
+      loop: true
+      volume: -18
+  effects:
+  - !type:ApplyEntityEffect
+    prob: 0.5
+    effects:
+      - !type:CP14ManaChange
+        manaDelta: -10
+        safe: false
+
+- type: weather
   id: CP14SnowLight
   sprite:
     sprite: /Textures/_CP14/Effects/weather.rsi
     state: snowfall_light
+  #effects:
+  #- !type:ApplyEntityEffect
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: -20000
 
 - type: weather
   id: CP14SnowMedium
@@ -45,6 +101,12 @@
     params:
       loop: true
       volume: -18
+  #effects:
+  #- !type:ApplyEntityEffect
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: -40000
 
 - type: weather
   id: CP14SnowHeavy
@@ -56,3 +118,32 @@
     params:
       loop: true
       volume: -6
+  #effects:
+  #- !type:ApplyEntityEffect
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: -60000
+
+- type: weather
+  id: CP14FireStorm
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: ashfall
+  alpha: 0.6
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -6
+  effects:
+  #- !type:ApplyEntityEffect 
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: 40000
+  - !type:ApplyEntityEffect
+    effects:
+    - !type:FlammableReaction
+      multiplier: 1
+    - !type:Ignite
