@@ -18,6 +18,9 @@ cp14-skill-tree-illusion-desc = Исследуйте природу света, 
 cp14-skill-tree-healing-name = Жизнетворение
 cp14-skill-tree-healing-desc = Изучайте способы влияния магии на живые создания.
 
+cp14-skill-tree-vampire-name = Вампиризм
+cp14-skill-tree-vampire-desc = Откуда вы чёрт возьми знаете это?!
+
 # Body
 
 cp14-skill-tree-atlethic-name = Атлетика

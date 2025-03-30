@@ -6,5 +6,5 @@ cp14-objective-town-send-desc = Ваша задача - добыть и отпр
 cp14-objective-bank-earning-title = Накопить в хранилище{ $coins }
 cp14-objective-bank-earning-desc = В банковском хранилище должно находиться не меньше{ $coins }. Вы можете использовать  любые методы заработка, не нарушающие закон.
 
-cp14-objective-no-demiplane-death-title = Не допустить смертей в демипланах
-cp14-objective-no-demiplane-death-desc = Мне нужно контролировать работу авантюристов, чтобы они не погибали в демипланах. Не больше {$max} смертей!
+cp14-objective-no-demiplane-death-title = Допустить как можно больше смертей в демипланах
+cp14-objective-no-demiplane-death-desc = [color=red]Мне нужно контролировать работу авантюристов, чтобы они погибали в демипланах. Не менее {$min} смертей! Главное не дать им узнать об этом![/color]

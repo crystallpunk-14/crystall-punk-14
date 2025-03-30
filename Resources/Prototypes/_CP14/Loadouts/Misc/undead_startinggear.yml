@@ -24,6 +24,8 @@
     pants: CP14ClothingPantsLoincloth
     neck: CP14ModularSkeletonHalberd
     shoes: CP14ClothingShoesSandals
+  inhand:
+    - CP14MagicHealingStaff
 
 - type: startingGear
   id: CP14MobSkeletonSword
@@ -35,6 +37,7 @@
     head: CP14ClothingHeadMetalHeadband
   inhand:
     - CP14BaseShield
+    - CP14MagicHealingStaff
 
 - type: startingGear
   id: CP14MobSkeletonDodger
@@ -43,6 +46,8 @@
     pants: CP14ClothingPantsLoincloth
     belt1: CP14ModularIronDagger
     belt2: CP14ModularIronDagger
+  inhand:
+    - CP14MagicHealingStaff
 
 - type: startingGear
   id: CP14MobSkeletonArcher
@@ -51,6 +56,8 @@
     pants: CP14ClothingPantsLoincloth
     neck: CP14BowCombat
     belt1: CP14ClothingBeltQuiverCopperArrow
+  inhand:
+    - CP14MagicHealingStaff
 
 - type: startingGear
   id: CP14MobSkeletonWizard
@@ -62,6 +69,7 @@
     cloak: CP14ClothingCloakWhite
   inhand:
     - CP14ManaOperationGlove
+    - CP14MagicHealingStaff
 
 - type: startingGear
   id: CP14MobSkeletonBard
@@ -70,6 +78,8 @@
     pants: CP14ClothingPantsMercenaryTrousers
     shoes: CP14ClothingShoesAristocraticBlack
     neck: SkeletonGuitarInstrument
+  inhand:
+    - CP14MagicHealingStaff
 
 - type: startingGear
   id: CP14MobSkeletonCloset

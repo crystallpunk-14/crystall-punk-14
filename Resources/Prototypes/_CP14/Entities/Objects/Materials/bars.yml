@@ -221,3 +221,19 @@
   components:
   - type: Stack
     count: 10
+
+- type: entity
+  id: CP14MithrilBarFake
+  parent: BaseItem
+  name: mithril bar
+  description: A warm to the touch, soft piece of refined mithril.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/mithril_bar.rsi
+    layers:
+      - state: bar
+        map: ["base"]
+  - type: Appearance
