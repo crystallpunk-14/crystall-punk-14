@@ -11,7 +11,6 @@ public sealed partial class CP14MagicEnergySystem : SharedCP14MagicEnergySystem
     public override void Initialize()
     {
         InitializeDraw();
-        InitializeScanner();
         InitializePortRelay();
     }
 

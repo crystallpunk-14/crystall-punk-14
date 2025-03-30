@@ -29,13 +29,13 @@ public sealed partial class CP14FireSpreadComponent : Component
     /// how often objects will try to set the neighbors on fire. In Seconds
     /// </summary>
     [DataField]
-    public float SpreadCooldownMin = 5f;
+    public float SpreadCooldownMin = 10f;
 
     /// <summary>
     /// how often objects will try to set the neighbors on fire. In Seconds
     /// </summary>
     [DataField]
-    public float SpreadCooldownMax = 10f;
+    public float SpreadCooldownMax = 20f;
 
     /// <summary>
     /// the time of the next fire spread

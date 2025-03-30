@@ -8,7 +8,7 @@
   physicalDesc: cp14-reagent-physical-desc-colorless
 
 # T1 / Simple or Basic solutions
-# Have simple effects, shouldn't be able to replace their occupational 
+# Have simple effects, shouldn't be able to replace their occupational
 
 - type: reagent
   id: CP14BasicEffectHealBrute
@@ -275,7 +275,7 @@
       metabolismRate: 0.05
       effects:
       - !type:CP14ManaChange
-        manaDelta: 30
+        manaDelta: 1.5
         safe: true
 
 - type: reagent
@@ -291,7 +291,7 @@
       metabolismRate: 0.05
       effects:
       - !type:CP14ManaChange
-        manaDelta: -30
+        manaDelta: -1.5
         safe: false
 
 - type: reagent
@@ -333,7 +333,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-        
+
 - type: reagent
   id: CP14BasicEffectSleep
   name: cp14-reagent-name-basic-sleep
@@ -354,7 +354,7 @@
         key: ForcedSleep
         component: ForcedSleeping
         type: Add
-        
+
 - type: reagent
   id: CP14BasicEffectUnsleep
   name: cp14-reagent-name-basic-unsleep
@@ -389,7 +389,7 @@
         amount: -10
 
 # Gimmick solutions, otherwise doesn't give a mechanical benefit
-  
+
 - type: reagent
   id: CP14BasicEffectRainbow
   name: cp14-reagent-name-see-rainbow
