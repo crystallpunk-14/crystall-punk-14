@@ -5,7 +5,7 @@
     forced: true
     revertOnCrit: true
     revertOnDeath: true
-    transferDamage: true
+    transferDamage: false
     polymorphSound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg
     exitPolymorphSound: !type:SoundPathSpecifier

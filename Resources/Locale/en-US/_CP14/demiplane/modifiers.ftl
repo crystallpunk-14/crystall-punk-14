@@ -12,6 +12,7 @@ cp14-modifier-explosive = explosive mines
 cp14-modifier-ruins = ancient ruins
 cp14-modifier-xeno = xenomorphs
 cp14-modifier-zombie = swarms of undead
+cp14-modifier-slime = slimes
 cp14-modifier-skeleton = sentient skeletons
 cp14-modifier-dyno = prehistoric fauna
 cp14-modifier-mole = predatory moles

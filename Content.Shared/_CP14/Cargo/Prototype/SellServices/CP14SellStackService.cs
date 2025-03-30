@@ -40,7 +40,7 @@ public sealed partial class CP14SellStackService : CP14StoreSellService
             if (selledEnt.Key.Comp.Count == selledEnt.Value)
             {
                 entities.Remove(selledEnt.Key);
-                entManager.QueueDeleteEntity(selledEnt.Key);
+                entManager.DeleteEntity(selledEnt.Key);
             }
             else
             {
