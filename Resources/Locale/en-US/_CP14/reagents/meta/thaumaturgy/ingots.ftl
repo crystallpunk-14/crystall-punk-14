@@ -10,7 +10,7 @@ cp14-reagent-name-molten-ingot-gold = Molten gold
 cp14-reagent-desc-molten-ingot-gold = A tasty looking piece of... butter?
 
 cp14-reagent-name-molten-ingot-mithril = Molten mithril
-cp14-reagent-name-molten-ingot-mithril = Conifers transformed into molten form
+cp14-reagent-desc-molten-ingot-mithril = Conifers transformed into molten form
 
 # New alloys
 
