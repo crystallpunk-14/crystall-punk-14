@@ -1,8 +1,7 @@
 - type: soundCollection
   id: FrogsSlippers
   files:
-  - /Audio/_CP14/Effects/Footsteps/frogs_slippers1.ogg
-  - /Audio/_CP14/Effects/Footsteps/frogs_slippers2.ogg
-  - /Audio/_CP14/Effects/Footsteps/frogs_slippers3.ogg
+  - /Audio/_CP14/Effects/Footsteps/frogs_slippers.ogg
+
 
 
