@@ -678,7 +678,7 @@
     tags:
     - Trash
     - Document
-  #- type: Appearance, hide stamp marks until we have some kind of displacement
+  - type: Appearance
   - type: Flammable
     fireSpread: true
     canResistFire: false
