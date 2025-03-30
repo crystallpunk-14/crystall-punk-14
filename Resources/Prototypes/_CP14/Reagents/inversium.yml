@@ -1,0 +1,22 @@
+- type: reaction
+  id: CP14InversiumEffect
+  quantized: true
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    CP14AlloyInversium:
+      amount: 1
+  effects:
+  - !type:CP14InverseEffect
+    inversion:
+    CP14AlloyCoconut: CP14AlloyNotCoconut
+    CP14AlloyNotCoconut: CP14AlloyCoconut
+    #
+    CP14AlloyNormaldaynium: CP14AlloyBaddaynium
+    CP14AlloyBaddaynium: CP14AlloyNormaldaynium
+    #
+    CP14AlloyHealium: CP14AlloyKillium
+    CP14AlloyKillium: CP14AlloyHealium
+    #
+    CP14AlloySpeedrunnium: CP14AlloyTurtle
+    CP14AlloyTurtle: CP14AlloySpeedrunnium
