@@ -6,6 +6,8 @@
   reactants:
     CP14AlloyInversium:
       amount: 1
+  products:
+    CP14MoltenIngotCopper: 1
   effects:
   - !type:CP14InverseEffect
     inversion:
