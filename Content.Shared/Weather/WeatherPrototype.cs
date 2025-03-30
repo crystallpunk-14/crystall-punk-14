@@ -39,5 +39,5 @@ public sealed partial class WeatherPrototype : IPrototype
     /// CP14 Effects
     /// </summary>
     [DataField]
-    public List<CP14WeatherEffectConfig> Config = new();
+    public List<CP14WeatherEffect> Effects = new();
 }

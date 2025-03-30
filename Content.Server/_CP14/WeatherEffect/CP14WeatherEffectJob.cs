@@ -1,11 +1,11 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server.Atmos.Components;
 using Content.Shared._CP14.WeatherEffect;
 using Content.Shared.Weather;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.WeatherEffect;
 
@@ -15,14 +15,14 @@ public sealed class CP14WeatherEffectJob : Job<bool>
     private readonly EntityLookupSystem _lookup;
     private readonly SharedWeatherSystem _weather;
     private readonly SharedMapSystem _mapSystem;
+    private readonly IRobustRandom _random;
 
     private readonly Entity<MapGridComponent> _mapUid;
     private readonly MapId _mapId;
 
-    private readonly CP14WeatherEffectConfig _config;
+    private readonly List<CP14WeatherEffect> _effects;
 
     private EntityQuery<BlockWeatherComponent> _weatherBlockQuery;
-    private EntityQuery<FlammableComponent> _flammableQuery;
 
     private readonly HashSet<Entity<TransformComponent>> _entitiesOnMap = new();
     private readonly HashSet<Entity<TransformComponent>> _affectedEntities = new();
@@ -33,11 +33,11 @@ public sealed class CP14WeatherEffectJob : Job<bool>
         EntityLookupSystem lookup,
         SharedWeatherSystem weather,
         SharedMapSystem mapSystem,
+        IRobustRandom random,
         Entity<MapGridComponent> mapUid,
         MapId mapId,
-        CP14WeatherEffectConfig config,
+        List<CP14WeatherEffect> effects,
         EntityQuery<BlockWeatherComponent> weatherBlockQuery,
-        EntityQuery<FlammableComponent> flammableQuery,
         CancellationToken cancellation = default
     ) : base(maxTime, cancellation)
     {
@@ -45,13 +45,13 @@ public sealed class CP14WeatherEffectJob : Job<bool>
         _lookup = lookup;
         _weather = weather;
         _mapSystem = mapSystem;
+        _random = random;
 
         _mapUid = mapUid;
         _mapId = mapId;
 
-        _config = config;
+        _effects = effects;
         _weatherBlockQuery = weatherBlockQuery;
-        _flammableQuery = flammableQuery;
     }
 
     protected override async Task<bool> Process()
@@ -77,21 +77,14 @@ public sealed class CP14WeatherEffectJob : Job<bool>
                 _affectedEntities.Add(ent);
                 continue;
             }
-
-            //switch (_config.Filter)
-            //{
-            //    case WeatherEntityFilter.Flammable:
-            //        if (_flammableQuery.HasComp())
-            //        break;
-            //}
         }
 
         //Apply weather effects to affected entities
         foreach (var entity in _affectedEntities)
         {
-            foreach (var effect in _config.Effects)
+            foreach (var effect in _effects)
             {
-                effect.ApplyEffect(_entManager, entity);
+                effect.ApplyEffect(_entManager, _random, entity);
             }
         }
 
