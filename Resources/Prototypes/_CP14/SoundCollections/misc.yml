@@ -20,3 +20,10 @@
     - /Audio/_CP14/Effects/skill_up2.ogg
     - /Audio/_CP14/Effects/skill_up3.ogg
     - /Audio/_CP14/Effects/skill_up4.ogg
+
+- type: soundCollection
+  id: CP14LightningFar
+  files:
+    - /Audio/_CP14/Ambience/Lightning/lightning_far1.ogg
+    - /Audio/_CP14/Ambience/Lightning/lightning_far2.ogg
+    - /Audio/_CP14/Ambience/Lightning/lightning_far3.ogg

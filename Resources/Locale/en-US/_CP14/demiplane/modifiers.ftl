@@ -25,3 +25,9 @@ cp14-modifier-air-lily = air lilies
 cp14-modifier-time-limit-10 = temporary disintegration (10 minutes)
 cp14-modifier-shadow-kudzu = spreading astral haze
 cp14-modifier-night = darkness
+
+cp14-modifier-storm = storm
+cp14-modifier-fire-storm = fire storm
+cp14-modifier-snow-storm = snow storm
+cp14-modifier-mana-mist = magic mist
+cp14-modifier-anti-mana-mist = antimagic mist

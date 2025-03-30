@@ -29,6 +29,9 @@
     prob: 0.4
     effects:
     - !type:ExtinguishReaction
+  - !type:SpawnEntityOnTop
+    prob: 0.0001
+    entity: CP14SkyLightning
 
 - type: weather
   id: CP14Mist
@@ -38,6 +41,43 @@
   sprite:
     sprite: /Textures/_CP14/Effects/parallax.rsi
     state: noise
+
+- type: weather
+  id: CP14ManaMist
+  offsetSpeed: 0.56, -0.36
+  color: "#3d81ff"
+  alpha: 0.7
+  sprite:
+    sprite: /Textures/_CP14/Effects/parallax.rsi
+    state: noise
+  effects:
+  - !type:ApplyEntityEffect
+    prob: 0.5
+    effects:
+      - !type:CP14ManaChange
+        manaDelta: 8
+        safe: false
+
+- type: weather
+  id: CP14AntiManaMist
+  offsetSpeed: -0.56, -0.31
+  color: "#d929d9"
+  alpha: 0.8
+  sprite:
+    sprite: /Textures/_CP14/Effects/parallax.rsi
+    state: noise
+  sound:
+    path: /Audio/Ambience/anomaly_scary.ogg
+    params:
+      loop: true
+      volume: -18
+  effects:
+  - !type:ApplyEntityEffect
+    prob: 0.5
+    effects:
+      - !type:CP14ManaChange
+        manaDelta: -10
+        safe: false
 
 - type: weather
   id: CP14SnowLight
@@ -86,10 +126,11 @@
       amount: -60000
 
 - type: weather
-  id: CP14Ashfall
+  id: CP14FireStorm
   sprite:
     sprite: /Textures/Effects/weather.rsi
     state: ashfall
+  alpha: 0.6
   sound:
     path: /Audio/Effects/Weather/snowstorm.ogg
     params:
