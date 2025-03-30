@@ -84,12 +84,12 @@
   sprite:
     sprite: /Textures/_CP14/Effects/weather.rsi
     state: snowfall_light
-  effects:
-  - !type:ApplyEntityEffect
-    prob: 1
-    effects:
-    - !type:AdjustTemperature
-      amount: -20000
+  #effects:
+  #- !type:ApplyEntityEffect
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: -20000
 
 - type: weather
   id: CP14SnowMedium
@@ -101,12 +101,12 @@
     params:
       loop: true
       volume: -18
-  effects:
-  - !type:ApplyEntityEffect
-    prob: 1
-    effects:
-    - !type:AdjustTemperature
-      amount: -40000
+  #effects:
+  #- !type:ApplyEntityEffect
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: -40000
 
 - type: weather
   id: CP14SnowHeavy
@@ -118,12 +118,12 @@
     params:
       loop: true
       volume: -6
-  effects:
-  - !type:ApplyEntityEffect
-    prob: 1
-    effects:
-    - !type:AdjustTemperature
-      amount: -60000
+  #effects:
+  #- !type:ApplyEntityEffect
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: -60000
 
 - type: weather
   id: CP14FireStorm
@@ -137,11 +137,11 @@
       loop: true
       volume: -6
   effects:
-  - !type:ApplyEntityEffect
-    prob: 1
-    effects:
-    - !type:AdjustTemperature
-      amount: 40000
+  #- !type:ApplyEntityEffect 
+  #  prob: 1
+  #  effects:
+  #  - !type:AdjustTemperature
+  #    amount: 40000
   - !type:ApplyEntityEffect
     effects:
     - !type:FlammableReaction
