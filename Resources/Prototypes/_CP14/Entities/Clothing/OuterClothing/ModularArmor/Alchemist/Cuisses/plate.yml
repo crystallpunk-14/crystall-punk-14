@@ -1,0 +1,62 @@
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesBloodflowerPlate
+  name: bloodflower cuisses
+  description: Protects the top of the legs, protection is questionable, weight is decent.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesBloodflowerPlate
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesChromiumslimePlate
+  name: chromium slime cuisses
+  description: Protects the top of the legs, protection is questionable, weight is decent.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesChromiumslimePlate
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesLumimushroomPlate
+  name: lumimushroom cuisses
+  description: Protects the top of the legs, protection is questionable, weight is decent.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#36c98f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesLumimushroomPlate
+  - type: PointLight
+    color: "#36c98f"
+    radius: 3
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesDayflinPlate
+  name: dayflin cuisses
+  description: Protects the top of the legs, protection is questionable, weight is decent.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesDayflinPlate

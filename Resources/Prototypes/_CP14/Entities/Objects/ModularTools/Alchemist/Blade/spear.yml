@@ -1,0 +1,45 @@
+- type: entity
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeBloodflowerSpear
+  categories: [ ForkFiltered ]
+  name: bloodflower spearhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBloodflowerSpear
+
+- type: entity
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeChromiumslimeSpear
+  categories: [ ForkFiltered ]
+  name: chromium slime spearhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeChromiumslimeSpear
+
+- type: entity
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeDayflinSpear
+  categories: [ ForkFiltered ]
+  name: dayflin spearhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeDayflinSpear
+

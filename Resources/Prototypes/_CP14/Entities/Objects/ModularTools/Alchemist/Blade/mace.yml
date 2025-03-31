@@ -1,0 +1,41 @@
+- type: entity
+  parent: CP14ModularBladeMaceBase
+  id: CP14ModularBladeBloodflowerMace
+  name: bloodflower mace ball
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBloodflowerMace
+
+- type: entity
+  parent: CP14ModularBladeMaceBase
+  id: CP14ModularBladeChromiumslimeMace
+  name: chromium slime mace ball
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeChromiumslimeMace
+
+- type: entity
+  parent: CP14ModularBladeMaceBase
+  id: CP14ModularBladeDayflinMace
+  name: dayflin mace ball
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeDayflinMace

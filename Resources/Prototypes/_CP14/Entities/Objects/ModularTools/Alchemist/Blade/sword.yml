@@ -1,0 +1,42 @@
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeBloodflowerSword
+  name: bloodflower sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBloodflowerSword
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeChromiumslimeSword
+  name: chromium slime sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeChromiumslimeSword
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeDayflinSword
+  name: dayflin sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeDayflinSword
+

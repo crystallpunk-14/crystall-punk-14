@@ -7,34 +7,9 @@
     contents:
       - id: CP14Lighter
       - id: CP14ManaOperationGlove
-      - id: CP14Syringe
-        amount: 2
-      - id: CP14Cauldron
-      - id: CP14Pestle
-        amount: 1
-      - id: CP14Mortar
-        amount: 1
-      - id: CP14Dropper
-        amount: 1
-      - id: CP14VialTinyReinforced
-        amount: 1
-      - id: CP14VialTiny
-        amount: 3
-      - id: CP14VialSmallReinforced
-        amount: 1
-      - id: CP14VialSmall
-        amount: 3
       - id: CP14PaperFolderBlue
       - id: CP14PenFeather
         amount: 1
-      - id: CP14WoodenPlanks20
-        #Random start resource
-      - id: CP14VialMediumEarthEssence
-      - id: CP14VialMediumFireEssence
-      - id: CP14VialMediumWaterEssence
-      - id: CP14VialMediumAirEssence
-      - id: CP14VialMediumOrderEssence
-      - id: CP14VialMediumChaosEssence
 
 - type: entity
   parent: CP14WoodenCloset
@@ -73,11 +48,10 @@
   - type: StorageFill
     contents:
       - id: HandLabeler #TODO custom cp14 labeler
-      - id: CP14WoodenPlanks10
-      - id: CP14CopperBar10
-      - id: CP14CopperBar10
-      - id: CP14IronBar10
-      - id: CP14GoldBar5
+      - id: CP14Pestle
+        amount: 1
+      - id: CP14Mortar
+        amount: 1
       - id: CP14PaperFolderRed
       - id: CP14PenFeather
         amount: 1

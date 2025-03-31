@@ -4,6 +4,9 @@
   abstract: true
   categories: [ ForkFiltered ]
   components:
+  - type: Tag
+    tags:
+      - CP14FitInMortar
   - type: Item
     size: Tiny
   - type: RandomSprite
@@ -27,6 +30,11 @@
   - type: CP14Material
     materials:
       CP14Copper: 5
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotCopper
+        Quantity: 5
 
 - type: entity
   id: CP14ScrapIron
@@ -42,6 +50,11 @@
   - type: CP14Material
     materials:
       CP14Iron: 5
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotIron
+        Quantity: 5
 
 - type: entity
   id: CP14ScrapGold
@@ -57,6 +70,11 @@
   - type: CP14Material
     materials:
       CP14Gold: 5
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotGold
+        Quantity: 5
 
 - type: entity
   id: CP14ScrapMithril
@@ -72,3 +90,8 @@
   - type: CP14Material
     materials:
       CP14Mithril: 5
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotMithril
+        Quantity: 5
