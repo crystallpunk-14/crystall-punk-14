@@ -25,3 +25,9 @@ cp14-modifier-air-lily = воздушных лилий
 cp14-modifier-time-limit-10 = временного распада (10 минут)
 cp14-modifier-shadow-kudzu = распространяющгося астрального мрака
 cp14-modifier-night = темноты
+
+cp14-modifier-storm = грозы
+cp14-modifier-fire-storm = огненный шторм
+cp14-modifier-snow-storm = снежный шторм
+cp14-modifier-mana-mist = магического тумана
+cp14-modifier-anti-mana-mist = антимагического тумана
