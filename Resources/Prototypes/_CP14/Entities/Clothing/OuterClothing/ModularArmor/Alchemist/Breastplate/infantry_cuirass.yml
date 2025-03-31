@@ -1,0 +1,116 @@
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorBloodflowerInfantryCuirass
+  name: bloodflower infantry cuirass
+  description: The light infantry cuirass, unlike the original, also protects from the back.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#5c1f0a"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5c1f0a"
+      right:
+      - state: inhand-right
+        color: "#5c1f0a"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.73
+        Slash: 0.94
+        Piercing: 0.64
+        Caustic: 0.58
+  - type: ClothingSpeedModifier
+    walkModifier: 0.64
+    sprintModifier: 0.64
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorBloodflowerInfantryCuirass
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorChromiumslimeInfantryCuirass
+  name: chromium slime infantry cuirass
+  description: The light infantry cuirass, unlike the original, also protects from the back.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#3b487280"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3b487280"
+      right:
+      - state: inhand-right
+        color: "#3b487280"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.27
+        Slash: 1.27
+        Piercing: 1.36
+        Caustic: 1.42
+  - type: ClothingSpeedModifier
+    walkModifier: 1.36
+    sprintModifier: 1.36
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorChromiumslimeInfantryCuirass
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorDayflinInfantryCuirass
+  name: dayflin infantry cuirass
+  description: The light infantry cuirass, unlike the original, also protects from the back.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#ffe269"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe269"
+      right:
+      - state: inhand-right
+        color: "#ffe269"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.54
+        Slash: 1.12
+        Piercing: 1.72
+        Caustic: 1.84
+  - type: ClothingSpeedModifier
+    walkModifier: 1.72
+    sprintModifier: 1.72
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorDayflinInfantryCuirass

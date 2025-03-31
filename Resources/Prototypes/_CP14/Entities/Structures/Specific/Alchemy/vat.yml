@@ -48,5 +48,5 @@
     craftSound:
       collection: CP14Sawing #TODO
     recipeTags:
-    - CP14RecipeAnvil
+    - CP14RecipeVat
   - type: Anchorable

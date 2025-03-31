@@ -1,0 +1,44 @@
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveBloodFlowerChainmail
+  name: bloodflower chainmail greave
+  description: Ringed greaves, comfortable and even protects a bit.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveBloodflowerChainmail
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveChromiumslimeChainmail
+  name: chromium slime chainmail greave
+  description: Ringed greaves, comfortable and even protects a bit.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveChromiumslimeChainmail
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveDayflinChainmail
+  name: dayflin chainmail greave
+  description: Ringed greaves, comfortable and even protects a bit.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveDayflinChainmail

@@ -1,0 +1,62 @@
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesBloodflowerChainmail
+  name: bloodflower chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesBloodflowerChainmail
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesChromiumslimeChainmail
+  name: chromium slime chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesChromiumslimeChainmail
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesLumimushroomChainmail
+  name: lumimushroom chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#36c98f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesLumimushroomChainmail
+  - type: PointLight
+    color: "#36c98f"
+    radius: 2
+
+- type: entity
+  parent: CP14ModularCuissesBase
+  id: CP14ModularCuissesDayflinChainmail
+  name: dayflin chainmail cuisses
+  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - CuissesDayflinChainmail
