@@ -65,11 +65,11 @@ public sealed class CP14WeatherEffectJob : Job<bool>
         foreach (var ent in _entitiesOnMap)
         {
             //All weatherblocker entites should be affected by weather
-            //if (_weatherBlockQuery.HasComp(ent)) //Test disabled
-            //{
-            //    _affectedEntities.Add(ent);
-            //    continue;
-            //}
+            if (_config.CanAffectOnWeatherBlocker && _weatherBlockQuery.HasComp(ent))
+            {
+                _affectedEntities.Add(ent);
+                continue;
+            }
 
             //All entities on weathered tile should be affected by weather
             var tileRef = _mapSystem.GetTileRef(_mapUid, _mapUid.Comp, ent.Comp.Coordinates);

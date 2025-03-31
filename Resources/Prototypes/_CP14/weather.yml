@@ -28,6 +28,7 @@
   config:
   - maxEntities: 2
     frequency: 10
+    canAffectOnWeatherBlocker: false
     effects:
     - !type:ApplyEntityEffect
       prob: 0.4

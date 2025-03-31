@@ -27,4 +27,7 @@ public sealed partial class CP14WeatherEffectConfig
 
     [DataField]
     public TimeSpan NextEffectTime = TimeSpan.Zero;
+
+    [DataField]
+    public bool CanAffectOnWeatherBlocker = true;
 }
