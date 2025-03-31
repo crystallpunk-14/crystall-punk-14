@@ -47,7 +47,16 @@
   id: Atlethic
   name: cp14-skill-tree-atlethic-name
   desc: cp14-skill-tree-atlethic-desc
-  color: "#b32e37"
+  color: "#b32e37"  
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: atlethic
+
+- type: cp14SkillTree
+  id: VampireTree
+  name: cp14-skill-tree-vampire-name
+  desc: cp14-skill-tree-vampire-desc
+  color: "#E511B3"
+  icon:
+    sprite: _CP14/Actions/Spells/vampire.rsi
+    state: blood_moon
