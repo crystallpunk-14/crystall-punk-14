@@ -26,3 +26,10 @@
   id: CP14_TOPSECRET
   name: АБСОЛЮТНО СЕКРЕТНО!!!!!!!!!!!
   text: "/ServerInfo/_CP14/Guidebook_RU/TOPSECRET.xml"
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  locFilter: "en-EN"
+  id: CP14_TOPSECRETEN
+  name: TOP SECRET!!!!!
+  text: "/ServerInfo/_CP14/Guidebook_RU/TOPSECRET.xml"
