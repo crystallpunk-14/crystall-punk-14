@@ -1,5 +1,5 @@
 - type: modularPart
-  id: BaseBladeBloodFlower
+  id: BaseBladeBloodflower
   modifiers:
   - !type:EditDamageableModifier
     multiplier: 0.95
