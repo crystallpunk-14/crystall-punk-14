@@ -1,6 +1,7 @@
 using Content.Server._CP14.GameTicking.Rules.Components;
 using Content.Server._CP14.WeatherControl;
 using Content.Server.GameTicking.Rules;
+using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Events;
 using Content.Server.Weather;
@@ -23,14 +24,18 @@ public sealed class CP14WeatherRule : StationEventSystem<CP14WeatherRuleComponen
     {
         base.Started(uid, component, gameRule, args);
 
-        var query = EntityQueryEnumerator<MapComponent, StationMemberComponent, CP14WeatherControllerComponent>();
-        while (query.MoveNext(out var mapUid, out var station, out var weather))
+        var query = EntityQueryEnumerator<MapComponent, BecomesStationComponent>();
+        while (query.MoveNext(out var mapUid, out var map, out var station))
         {
             if (!_proto.TryIndex(component.Weather, out var indexedWeather))
-                return;
+                continue;
 
-            weather.Enabled = false;
-            _weather.SetWeather(mapUid.MapId, indexedWeather, null);
+            if (TryComp<CP14WeatherControllerComponent>(mapUid, out var controller))
+            {
+                controller.Enabled = false;
+            }
+
+            _weather.SetWeather(map.MapId, indexedWeather, null);
         }
     }
 
@@ -38,13 +43,16 @@ public sealed class CP14WeatherRule : StationEventSystem<CP14WeatherRuleComponen
     {
         base.Ended(uid, component, gameRule, args);
 
-        var query = EntityQueryEnumerator<MapComponent, StationMemberComponent, CP14WeatherControllerComponent>();
-        while (query.MoveNext(out var mapUid, out var station, out var weather))
+        var query = EntityQueryEnumerator<MapComponent, BecomesStationComponent>();
+        while (query.MoveNext(out var mapUid, out var map, out var station))
         {
-            weather.Enabled = true;
+            if (TryComp<CP14WeatherControllerComponent>(mapUid, out var controller))
+            {
+                controller.NextWeatherTime = _timing.CurTime + TimeSpan.FromSeconds(controller.ClearDuration.Max);
+                controller.Enabled = true;
+            }
 
-            _weather.SetWeather(mapUid.MapId, null, null);
-            weather.NextWeatherTime = _timing.CurTime + TimeSpan.FromSeconds(weather.ClearDuration.Max);
+            _weather.SetWeather(map.MapId, null, null);
         }
     }
 }

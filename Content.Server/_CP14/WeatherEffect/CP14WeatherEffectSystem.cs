@@ -61,7 +61,7 @@ public sealed class CP14WeatherEffectSystem : EntitySystem
                 foreach (var config in indexedWeather.Config)
                 {
                     if (_timing.CurTime <= config.NextEffectTime)
-                        return;
+                        continue;
 
                     config.NextEffectTime = _timing.CurTime + config.Frequency;
 
