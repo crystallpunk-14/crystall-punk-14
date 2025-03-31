@@ -4,9 +4,6 @@
   abstract: true
   categories: [ ForkFiltered ]
   components:
-  - type: Tag
-    tags:
-    - CP14FitInMortar
   - type: BadFood
   - type: Item
     size: Tiny
@@ -30,11 +27,6 @@
   - type: FlavorProfile
     flavors:
       - CP14Metallic
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14BloodFlowerSap
-        Quantity: 12
   - type: SolutionContainerManager
     solutions:
       food:
@@ -44,8 +36,6 @@
           Quantity: 12
   - type: Tag
     tags:
-    - CP14FitInMortar
-    - CP14AlchemicalHerbals
     - CP14BloodFlower
 
 - type: entity
@@ -67,11 +57,6 @@
         base3: ""
         base4: ""
         base5: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14AgaricMushroom
-        Quantity: 3
   - type: SolutionContainerManager
     solutions:
       food:
@@ -79,16 +64,12 @@
         reagents:
         - ReagentId: CP14AgaricMushroom
           Quantity: 3
-  - type: Tag
-    tags:
-    - CP14FitInMortar
-    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14ChromiumSlime
   parent: CP14WildProduceBase
   name: chromium slime
-  description: This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.
+  description: This rare thick substance can be found in a stream of water as if it has a mind of its own.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
@@ -101,11 +82,6 @@
         base1: ""
         base2: ""
         base3: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14ChromiumSlime
-        Quantity: 4
   - type: SolutionContainerManager
     solutions:
       food:
@@ -118,7 +94,7 @@
   id: CP14WildSage
   parent: CP14WildProduceBase
   name: wild sage root
-  description: Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.
+  description: Root of a ubiquitous medicinal plant, not bad at healing weapons.
   components:
   - type: Item
     size: Tiny
@@ -135,11 +111,6 @@
         base1: ""
         base2: ""
         base3: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14WildSageSap
-        Quantity: 15
   - type: SolutionContainerManager
     solutions:
       food:
@@ -147,16 +118,12 @@
         reagents:
         - ReagentId: CP14WildSageSap
           Quantity: 15
-  - type: Tag
-    tags:
-    - CP14FitInMortar
-    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14LumiMushroom
   parent: CP14WildProduceBase
   name: lumishroom
-  description: A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.
+  description: A faintly luminous mushroom. Often used by alchemists as a means of concentrating tools.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
@@ -171,11 +138,6 @@
         base3: ""
         base4: ""
         base5: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14LumiMushroom
-        Quantity: 4
   - type: PointLight
     color: "#36c98f"
     radius: 1.2
@@ -186,10 +148,6 @@
         reagents:
         - ReagentId: CP14LumiMushroom
           Quantity: 4
-  - type: Tag
-    tags:
-    - CP14FitInMortar
-    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14BlueAmanita
@@ -207,11 +165,6 @@
     - random:
         base1: ""
         base2: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14BlueAmanita
-        Quantity: 5
   - type: SolutionContainerManager
     solutions:
       food:
@@ -219,10 +172,6 @@
         reagents:
         - ReagentId: CP14BlueAmanita
           Quantity: 5
-  - type: Tag
-    tags:
-    - CP14FitInMortar
-    - CP14AlchemicalHerbals
   
 - type: entity
   id: CP14Dayflin
@@ -240,11 +189,6 @@
     - random:
         base1: ""
         base2: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14YellowDayflinPulp
-        Quantity: 4
   - type: SolutionContainerManager
     solutions:
       food:
@@ -254,15 +198,13 @@
           Quantity: 4
   - type: Tag
     tags:
-    - CP14FitInMortar
-    - CP14AlchemicalHerbals
     - CP14Dayflin
 
 - type: entity
   id: CP14AirLily
   parent: CP14WildProduceBase
   name: air lily
-  description: A light, delicate and airy flower. It is said that its special properties even allow it to breathe underwater...
+  description: A light, delicate and airy flower.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Flora/water_lilies.rsi
@@ -273,11 +215,6 @@
     available:
     - random:
         lily_icon: "" #TODO: more sprites
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14AirLily
-        Quantity: 4
   - type: SolutionContainerManager
     solutions:
       food:
@@ -285,7 +222,3 @@
         reagents:
         - ReagentId: CP14AirLily
           Quantity: 4
-  - type: Tag
-    tags:
-    - CP14FitInMortar
-    - CP14AlchemicalHerbals
