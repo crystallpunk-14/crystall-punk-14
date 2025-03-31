@@ -305,6 +305,7 @@
   group: CP14BasicEffect
   flavor: CP14Magic
   color: "#1497e3"
+  worksOnTheDead: true
   physicalDesc: cp14-reagent-physical-desc-iridescent
   metabolisms:
     Medicine:
@@ -321,6 +322,7 @@
   group: CP14BasicEffect
   flavor: CP14Bitterly
   color: "#6014e3"
+  worksOnTheDead: true
   physicalDesc: cp14-reagent-physical-desc-iridescent
   metabolisms:
     Poison:
