@@ -313,10 +313,6 @@
       - !type:CP14ManaChange
         manaDelta: 1.5
         safe: true
-      - !type:HealthChange
-        damage:
-          types:
-            CP14ManaDepletion: -1
 
 - type: reagent
   id: CP14BasicEffectDamageMana
