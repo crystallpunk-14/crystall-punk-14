@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladeShovelBase
   id: CP14ModularBladeBloodflowerShovel
-  name: bloodflower shovel blade
+  name: BLOODFLOWER SHOVEL BLADE-HEAD
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladeShovelBase
   id: CP14ModularBladeChromiumslimeShovel
-  name: chromium slime shovel blade
+  name: leonid shovel blade
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladeShovelBase
   id: CP14ModularBladeDayflinShovel
-  name: dayflin shovel blade
+  name: dayflin funny name
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi

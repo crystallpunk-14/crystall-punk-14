@@ -1,8 +1,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesBloodflowerChainmail
-  name: bloodflower chainmail cuisses
-  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  name: bloodymemes
+  description: memes from our blood
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
@@ -16,8 +16,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesChromiumslimeChainmail
-  name: chromium slime chainmail cuisses
-  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  name: slimeeeeee
+  description: Who is that
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
@@ -31,8 +31,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesLumimushroomChainmail
-  name: lumimushroom chainmail cuisses
-  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  name: LUMIMUSHROOM????
+  description: ITS LIKE FUCKIN EMERGENCY LIGHT BUT GREEN!!!
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
@@ -49,8 +49,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesDayflinChainmail
-  name: dayflin chainmail cuisses
-  description: Ringed armour for the upper legs, the weight is virtually imperceptible.
+  name: Catty
+  description: Just random cat name
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi

@@ -1,8 +1,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorBloodflowerChainmail
-  name: bloodflower chainmail
-  description: Ringed armour made of many small metal rings.
+  name: the funny flower chainmail
+  description: they just wanted to live
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
@@ -39,8 +39,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorChromiumslimeChainmail
-  name: chromium slime chainmail
-  description: Ringed armour made of many small metal rings.
+  name: who chainmail?
+  description: not armour at all
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
@@ -77,8 +77,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorDayflinChainmail
-  name: dayflin chainmail
-  description: Ringed armour made of many small metal rings.
+  name: speed
+  description: only ugly bastards wear this shit
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
