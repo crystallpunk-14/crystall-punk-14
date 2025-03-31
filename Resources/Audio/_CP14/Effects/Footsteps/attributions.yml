@@ -1,6 +1,14 @@
-- files: ["frogs_slippers.ogg"]
+- files: ["frogs_slippers1.ogg"]
   license: "CC0-1.0"
-  copyright: "Original recording: R01-47-Frog Ribbits by Craig Smith"
-  source: "https://freesound.org/people/egomassive/sounds/536759/"
+  copyright: "Sound from D.jones: https://freesound.org/people/D.jones/"
+  source: "https://freesound.org/people/D.jones/sounds/527846/"
 
+- files: ["frogs_slippers2.ogg"]
+  license: "CC0-1.0"
+  copyright: "Sound from D.jones: https://freesound.org/people/D.jones/"
+  source: "https://freesound.org/people/D.jones/sounds/527846/"
 
+- files: ["frogs_slippers3.ogg"]
+  license: "CC0-1.0"
+  copyright: "Sound from D.jones: https://freesound.org/people/D.jones/"
+  source: "https://freesound.org/people/D.jones/sounds/527846/"
