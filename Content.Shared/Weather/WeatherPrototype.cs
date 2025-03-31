@@ -6,7 +6,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Weather;
 
-[Prototype("weather")]
+[Prototype]
 public sealed partial class WeatherPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;
@@ -39,5 +39,5 @@ public sealed partial class WeatherPrototype : IPrototype
     /// CP14 Effects
     /// </summary>
     [DataField]
-    public List<CP14WeatherEffect> Effects = new();
+    public List<CP14WeatherEffectConfig> Config = new();
 }

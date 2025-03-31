@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobMonsterInvisibleWhistler
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: invisible whistler
   description: A monster invisible to the ordinary eye, adoring to devour victims consumed by fear and misunderstanding.
   categories: [ ForkFiltered ]
@@ -45,8 +45,6 @@
       types:
         Piercing: 6
         Structural: 3
-  - type: Damageable
-    damageContainer: Biological
   - type: Appearance
   - type: Body
     prototype: Animal

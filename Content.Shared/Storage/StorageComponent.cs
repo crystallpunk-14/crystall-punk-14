@@ -1,5 +1,6 @@
 using Content.Shared.Item;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Tag;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
@@ -146,6 +147,12 @@ namespace Content.Shared.Storage
         /// </summary>
         [DataField]
         public EntityWhitelist? CP14Ignorelist;
+
+        /// <summary>
+        /// Entities with this tag won't trigger storage sound.
+        /// </summary>
+        [DataField]
+        public ProtoId<TagPrototype> SilentStorageUserTag = "SilentStorageUser";
 
         [Serializable, NetSerializable]
         public enum StorageUiKey : byte

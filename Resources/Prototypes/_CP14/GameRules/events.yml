@@ -27,9 +27,10 @@
     - id: CP14MosquitoSpawn
     - id: CP14RabbitsSpawn
     - id: CP14FrogsSpawn
+    - id: CP14Storm
 
 - type: entity
-  parent: CP14BaseStationEventShortDelay
+  parent: CP14BaseStationEventLongDelay
   id: CP14ZombiesSpawn
   components:
   - type: StationEvent
@@ -46,7 +47,7 @@
       prob: 0.08
 
 - type: entity
-  parent: CP14BaseStationEventShortDelay
+  parent: CP14BaseStationEventLongDelay
   id: CP14HydrasSpawn
   components:
   - type: StationEvent
@@ -63,7 +64,7 @@
       prob: 0.08
 
 - type: entity
-  parent: CP14BaseStationEventShortDelay
+  parent: CP14BaseStationEventLongDelay
   id: CP14MosquitoSpawn
   components:
   - type: StationEvent
@@ -112,3 +113,18 @@
     entries:
     - id: CP14MobGroupSpawnerFrogs
       prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14Storm
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-storm
+    startAudio:
+      collection: CP14LightningFar
+    earliestStart: 45
+    minimumPlayers: 10
+    duration: 180
+    maxDuration: 600
+  - type: CP14WeatherRule
+    weather: CP14Storm

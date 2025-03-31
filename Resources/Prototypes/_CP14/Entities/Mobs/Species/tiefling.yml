@@ -27,7 +27,7 @@
   - type: Bloodstream
     bloodReagent: CP14BloodTiefling
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: CP14Tiefling
   - type: PassiveDamage
     allowedStates:
