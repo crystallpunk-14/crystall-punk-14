@@ -331,3 +331,41 @@
 
 # CP14BasicEffectSleep
 # CP14BasicEffectUnsleep
+
+- type: reaction
+  id: CP14WaterBrewingHealManaDepletion
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceEnergia:
+      amount: 2
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDrunk: 1
+    CP14BasicEffectHealManaDepletion: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingDamageManaDepletion
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceEnergia:
+      amount: 2
+    CP14BloodVampire:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDrunk: 1
+    CP14BasicEffectDamageManaDepletion: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150

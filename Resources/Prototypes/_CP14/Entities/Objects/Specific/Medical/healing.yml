@@ -20,7 +20,7 @@
     node: cp14herbbandage
   - type: Healing
     damageContainers:
-      - Biological
+      - CP14Biological
     damage:
       types:
         Slash: -2
@@ -72,7 +72,7 @@
     node: cp14gauze
   - type: Healing
     damageContainers:
-      - Biological
+      - CP14Biological
     damage:
       types:
         Slash: -6
