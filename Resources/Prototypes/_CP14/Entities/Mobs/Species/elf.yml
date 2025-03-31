@@ -6,6 +6,16 @@
   components:
   - type: HumanoidAppearance
     species: CP14Elf
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 20
+    damage:
+      types:
+        Heat: -0.07
+        CP14ManaDepletion: -0.07
+      groups:
+        Brute: -0.07
   - type: Hunger
     starvationDamage:
       types:

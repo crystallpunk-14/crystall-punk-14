@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobMonsterMosquito
-  parent: [ SimpleMobBase, FlyingMobBase ]
+  parent: [ CP14SimpleMobBase, FlyingMobBase ]
   name: bloodworm mosquitoes
   description: A bloodthirsty swarm of small mosquitoes just waiting for a soft flesh for a bloody feast.
   categories: [ ForkFiltered ]
@@ -36,7 +36,7 @@
   - type: ReplacementAccent
     accent: xeno
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: CP14LittleInsects
   - type: Appearance
   - type: Stamina

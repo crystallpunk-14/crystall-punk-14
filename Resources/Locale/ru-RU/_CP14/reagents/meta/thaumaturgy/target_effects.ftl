@@ -31,6 +31,12 @@ cp14-reagent-desc-basic-damage-airloss = Вязкая жижа, стремите
 cp14-reagent-name-basic-heal-airloss = Воздушный раствор
 cp14-reagent-desc-basic-heal-airloss = Веющая свежестью жидкость, насыщающая организм воздухом.
 
+cp14-reagent-name-basic-damage-manadepletion = Мана-истощающий раствор
+cp14-reagent-desc-basic-damage-manadepletion =  Опасный раствор, повреждающий участки с маной внутри организма.
+
+cp14-reagent-name-basic-heal-manadepletion = Мана-лечащий раствор
+cp14-reagent-desc-basic-heal-manadepletion = Жидкость, которая воздействует на ману внутри тела, оздоравливая иссушенные маной участки.
+
 cp14-reagent-name-basic-blood-restore = Крововостанавливающий раствор
 cp14-reagent-desc-basic-blood-restore = Вступая в контакт с организмом, восстанавливает уровень крови того же типа, что используется этим организмом.
 

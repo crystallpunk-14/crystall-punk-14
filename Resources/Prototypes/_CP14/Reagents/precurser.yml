@@ -121,6 +121,10 @@
       effects:
       - !type:CP14ManaChange
         manaDelta: 0.5
+      - !type:HealthChange
+        damage:
+          types:
+            CP14ManaDepletion: -0.5
     Poison:
       effects:
       - !type:HealthChange
