@@ -1,8 +1,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorBloodflowerInfantryCuirass
-  name: bloodflower infantry cuirass
-  description: The light infantry cuirass, unlike the original, also protects from the back.
+  name: bloody infantry cuirass
+  description: Cool armour!
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
@@ -40,8 +40,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorChromiumslimeInfantryCuirass
-  name: chromium slime infantry cuirass
-  description: The light infantry cuirass, unlike the original, also protects from the back.
+  name: slime infantry cuirass
+  description: you can see it through
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
@@ -79,8 +79,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorDayflinInfantryCuirass
-  name: dayflin infantry cuirass
-  description: The light infantry cuirass, unlike the original, also protects from the back.
+  name: Funny cuirass
+  description: At the speed of light
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi

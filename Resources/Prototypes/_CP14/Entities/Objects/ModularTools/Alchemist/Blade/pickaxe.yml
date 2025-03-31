@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladePickaxeBase
   id: CP14ModularBladeBloodflowerPickaxe
-  name: bloodflower pickaxe head
+  name: BLOODFLOWEEER PICKAXEEEE HEEEEAAAAD
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladePickaxeBase
   id: CP14ModularBladeChromiumslimePickaxe
-  name: chromium slime pickaxe head
+  name: null pickaxe head
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladePickaxeBase
   id: CP14ModularBladeDayflinPickaxe
-  name: dayflin pickaxe head
+  name: Dimok
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi

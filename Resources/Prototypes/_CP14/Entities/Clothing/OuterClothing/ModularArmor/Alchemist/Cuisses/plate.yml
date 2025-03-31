@@ -1,8 +1,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesBloodflowerPlate
-  name: bloodflower cuisses
-  description: Protects the top of the legs, protection is questionable, weight is decent.
+  name: flower of blood cuisses
+  description: What is cuisses
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
@@ -16,8 +16,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesChromiumslimePlate
-  name: chromium slime cuisses
-  description: Protects the top of the legs, protection is questionable, weight is decent.
+  name: Nothing cuisses
+  description: My fantasy is dead please forgive me
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
@@ -31,8 +31,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesLumimushroomPlate
-  name: lumimushroom cuisses
-  description: Protects the top of the legs, protection is questionable, weight is decent.
+  name: LUMI CUISS
+  description: FUCKIN LIGHT!
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
@@ -49,8 +49,8 @@
 - type: entity
   parent: CP14ModularCuissesBase
   id: CP14ModularCuissesDayflinPlate
-  name: dayflin cuisses
-  description: Protects the top of the legs, protection is questionable, weight is decent.
+  name: day
+  description: night.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi

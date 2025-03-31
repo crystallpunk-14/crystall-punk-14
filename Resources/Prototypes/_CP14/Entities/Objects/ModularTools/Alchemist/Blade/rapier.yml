@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladeRapierBase
   id: CP14ModularBladeBloodflowerRapier
-  name: bloodflower rapier blade
+  name: BLOOD IS FUEL RAPIER BLADE
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladeRapierBase
   id: CP14ModularBladeChromiumslimeRapier
-  name: chromium slime rapier blade
+  name: MANKIND IS DEAD RAPIER BLADE
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladeRapierBase
   id: CP14ModularBladeDayflinRapier
-  name: dayflin rapier blade
+  name: Cat
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi

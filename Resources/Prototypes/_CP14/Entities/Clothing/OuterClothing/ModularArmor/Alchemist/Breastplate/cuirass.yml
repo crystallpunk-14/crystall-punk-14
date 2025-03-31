@@ -1,8 +1,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorBloodflowerCuirass
-  name: bloodflower cuirass
-  description: Light armour plate on the chest, little protection, little heaviness.
+  name: blood
+  description: we're gonna ultrakill it guys
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
@@ -40,8 +40,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorChromiumslimeCuirass
-  name: chromium slime cuirass
-  description: Light armour plate on the chest, little protection, little heaviness.
+  name: chromium
+  description: what is that shit
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi
@@ -79,8 +79,8 @@
 - type: entity
   parent: CP14ModularArmorBase
   id: CP14ArmorDayflinCuirass
-  name: dayflin cuirass
-  description: Light armour plate on the chest, little protection, little heaviness.
+  name: nightflin cuirass
+  description: speedo
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/cuirass.rsi

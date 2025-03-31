@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladeAxeBase
   id: CP14ModularBladeBloodflowerAxe
-  name: bloodflower axe blade
+  name: BLOODFLOWER AXE BLADE!!!!
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladeAxeBase
   id: CP14ModularBladeChromiumslimeAxe
-  name: chromium slime axe blade
+  name: wwho axe blade?
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladeAxeBase
   id: CP14ModularBladeDayflinAxe
-  name: dayflin axe blade
+  name: Oleg
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi

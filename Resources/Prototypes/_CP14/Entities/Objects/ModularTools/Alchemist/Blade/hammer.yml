@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladeHammerBase
   id: CP14ModularBladeBloodflowerHammer
-  name: bloodflower hammerhead
+  name: Lets drop the hammer down *cool music*
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladeHammerBase
   id: CP14ModularBladeChromiumslimeHammer
-  name: chromium slime hammerhead
+  name: nothing we can do head
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladeHammerBase
   id: CP14ModularBladeDayflinHammer
-  name: dayflin hammerhead
+  name: Pushok
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi

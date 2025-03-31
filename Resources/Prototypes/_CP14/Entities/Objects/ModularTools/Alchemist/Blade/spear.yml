@@ -2,7 +2,7 @@
   parent: CP14ModularBladeSpearBase
   id: CP14ModularBladeBloodflowerSpear
   categories: [ ForkFiltered ]
-  name: bloodflower spearhead
+  name: BLOODFLOWER SPEARHEAD
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
@@ -17,7 +17,7 @@
   parent: CP14ModularBladeSpearBase
   id: CP14ModularBladeChromiumslimeSpear
   categories: [ ForkFiltered ]
-  name: chromium slime spearhead
+  name: the i-want-to-sleep spearhead
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
@@ -32,7 +32,7 @@
   parent: CP14ModularBladeSpearBase
   id: CP14ModularBladeDayflinSpear
   categories: [ ForkFiltered ]
-  name: dayflin spearhead
+  name: Dima
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi

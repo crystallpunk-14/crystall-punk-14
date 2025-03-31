@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladeDaggerBase
   id: CP14ModularBladeBloodflowerDagger
-  name: bloodflower dagger blade
+  name: BLOOOOODFLOOOOWEEEER DAGGGEEEEEER BLAAAADE
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladeDaggerBase
   id: CP14ModularBladeChromiumslimeDagger
-  name: chromium slime dagger blade
+  name: i dont know dagger blade
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladeDaggerBase
   id: CP14ModularBladeDayflinDagger
-  name: dayflin dagger blade
+  name: Anton
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
