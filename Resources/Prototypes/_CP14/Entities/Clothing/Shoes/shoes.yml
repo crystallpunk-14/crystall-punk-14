@@ -108,3 +108,22 @@
       collection: FootstepJester
       params:
         variation: 0.07
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesArtifactFrogs
+  name: frog's slippers
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  description: For wednesday's lovers.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/frogs_slippers.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/frogs_slippers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FrogsSlippers
+      params:
+        variation: 0.07
+  - type: NoSlip
