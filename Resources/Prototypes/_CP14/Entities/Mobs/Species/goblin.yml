@@ -111,11 +111,11 @@
     decay: 5 # 3 default
     critThreshold: 120 # 100 default
     stunTime: 4 #6 default
-  - type: CP14MagicEnergyContainer #SMALL mana container
-    maxEnergy: 25
-    energy: 25
-  - type: CP14MagicEnergyDraw #Cool x3 mana regen!
-    energy: 1.5
+  - type: CP14MagicEnergyContainer #Increased mana container
+    maxEnergy: 200
+    energy: 200
+  - type: CP14MagicEnergyDraw #Half of standard mana regeneration
+    energy: 0.5
     delay: 3
   - type: Hands
     handDisplacement:

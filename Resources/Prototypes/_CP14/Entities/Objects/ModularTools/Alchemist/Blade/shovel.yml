@@ -1,0 +1,41 @@
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeBloodflowerShovel
+  name: BLOODFLOWER SHOVEL BLADE-HEAD
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBloodflowerShovel
+
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeChromiumslimeShovel
+  name: leonid shovel blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeChromiumslimeShovel
+
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeDayflinShovel
+  name: dayflin funny name
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeDayflinShovel

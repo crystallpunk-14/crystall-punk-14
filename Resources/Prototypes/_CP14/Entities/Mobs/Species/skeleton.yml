@@ -74,8 +74,8 @@
       50: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      40: 0.8
-      25: 0.6
+      40: 1.2
+      25: 1.5
   - type: Fixtures
     fixtures:
       fix1:

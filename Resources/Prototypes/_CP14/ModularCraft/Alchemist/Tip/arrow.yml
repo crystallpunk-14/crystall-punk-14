@@ -1,0 +1,18 @@
+- type: modularPart
+  id: TipAirlilyArrow
+  slots:
+  - ArrowTip
+  rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
+  color: "#92cae0"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseTipArrow
+  - !type:AddComponents
+    components:
+    - type: Projectile
+      deleteOnCollide: false
+      onlyCollideWhenShot: true
+      damage:
+        groups:
+          Brute: -100 #trollface

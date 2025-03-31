@@ -1,0 +1,26 @@
+- type: CP14Recipe
+  id: CP14ModularBladeBloodflowerShovel
+  tag: CP14RecipeVat
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14BloodFlower
+  result: CP14ModularBladeBloodflowerShovel
+
+- type: CP14Recipe
+  id: CP14ModularBladeChromiumslimeShovel
+  tag: CP14RecipeVat
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ChromiumSlime
+  result: CP14ModularBladeChromiumslimeShovel
+
+- type: CP14Recipe
+  id: CP14ModularBladeDayflinShovel
+  tag: CP14RecipeVat
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Dayflin
+  result: CP14ModularBladeDayflinShovel

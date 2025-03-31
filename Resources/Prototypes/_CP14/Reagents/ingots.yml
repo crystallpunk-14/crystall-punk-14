@@ -1,0 +1,300 @@
+- type: reagent
+  id: CP14MoltenIngotBase
+  abstract: true
+  physicalDesc: cp14-reagent-physical-desc-molten
+  flavor: CP14Metallic
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          groups:
+            Brute: 0.5
+      - !type:Emote
+        emote: Scream
+        probability: 0.3
+  metabolisms:
+    Poison:
+      metabolismRate : 3.00
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: 11.0
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages: [ "generic-reagent-effect-burning-insides" ]
+        probability: 0.33
+      - !type:Emote
+        emote: Scream
+        probability: 0.3
+
+# Base 4
+- type: reagent
+  parent: CP14MoltenIngotBase
+  id: CP14MoltenIngotCopper
+  name: cp14-reagent-name-molten-ingot-copper
+  desc: cp14-reagent-desc-molten-ingot-copper
+  group: CP14MoltenIngot
+  color: "#c57d07"
+
+- type: reagent
+  parent: CP14MoltenIngotBase
+  id: CP14MoltenIngotIron
+  name: cp14-reagent-name-molten-ingot-iron
+  desc: cp14-reagent-desc-molten-ingot-iron
+  group: CP14MoltenIngot
+  color: "#b6b9cb"
+
+- type: reagent
+  parent: CP14MoltenIngotBase
+  id: CP14MoltenIngotGold
+  name: cp14-reagent-name-molten-ingot-gold
+  desc: cp14-reagent-desc-molten-ingot-gold
+  group: CP14MoltenIngot
+  color: "#f1a94b"
+
+- type: reagent
+  parent: CP14MoltenIngotBase
+  id: CP14MoltenIngotMithril
+  name: cp14-reagent-name-molten-ingot-mithril
+  desc: cp14-reagent-desc-molten-ingot-mithril
+  group: CP14MoltenIngot
+  color: "#45d2a4"
+
+# Funny editions
+
+# Brute
+- type: reagent
+  id: CP14AlloyCoconut
+  name: cp14-reagent-name-alloy-coconut
+  desc: cp14-reagent-desc-alloy-coconut
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#baaa9a"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 3.00
+      effects:
+      - !type:ModifyBleedAmount
+        amount: -120
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -360 #trollface
+
+- type: reagent
+  id: CP14AlloyNotCoconut
+  name: cp14-reagent-name-alloy-not-coconut
+  desc: cp14-reagent-desc-alloy-not-coconut
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#c18c38"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  worksOnTheDead: true
+  metabolisms:
+    Poison:
+      metabolismRate: 3.00
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: 180
+
+# Inversium
+- type: reagent
+  parent: CP14MoltenIngotBase
+  id: CP14AlloyInversium
+  name: cp14-reagent-name-alloy-inversium
+  desc: cp14-reagent-desc-alloy-inversium
+  group: CP14Alloy
+  color: "#70b670"
+
+# Temperature
+
+- type: reagent
+  id: CP14AlloyNormaldaynium
+  name: cp14-reagent-name-alloy-normaldaynium
+  desc: cp14-reagent-desc-alloy-normaldaynium
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#d9af7e"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 3.00
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -600
+            Cold: -600
+
+- type: reagent
+  id: CP14AlloyBaddaynium
+  name: cp14-reagent-name-alloy-baddaynium
+  desc: cp14-reagent-desc-alloy-baddaynium
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#ceb398"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 3.00
+      effects:
+      - !type:FlammableReaction
+        multiplier: 1.5
+      - !type:AdjustTemperature
+        amount: 2000
+      - !type:Ignite
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 180
+
+- type: reagent
+  id: CP14AlloyHealium
+  name: cp14-reagent-name-alloy-healium
+  desc: cp14-reagent-desc-alloy-healium
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#d48c1e"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 3.00
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -600
+            Asphyxiation: -600
+      - !type:ModifyBloodLevel
+        amount: 1200
+  
+- type: reagent
+  id: CP14AlloyKillium
+  name: cp14-reagent-name-alloy-killium
+  desc: cp14-reagent-desc-alloy-killium
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#e29a34"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 3.00
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 300
+            Asphyxiation: 300
+      - !type:ModifyBloodLevel
+        amount: -600
+
+- type: reagent
+  id: CP14AlloyDinner
+  name: cp14-reagent-name-alloy-dinner
+  desc: cp14-reagent-desc-alloy-dinner
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#70c88e"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  metabolisms:
+    Food:
+      metabolismRate: 3.00
+      effects:
+      - !type:SatiateHunger
+        factor: 900
+      - !type:SatiateThirst
+        factor: 900
+
+- type: reagent
+  id: CP14AlloySpeedrunnium
+  name: cp14-reagent-name-alloy-speedrunnium
+  desc: cp14-reagent-desc-alloy-speedrunnium
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#90c1be"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  metabolisms:
+    Narcotic:
+      metabolismRate: 3.00
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 1800
+        safe: true
+      - !type:MovespeedModifier
+        walkSpeedModifier: 3
+        sprintSpeedModifier: 3
+        statusLifetime: 4.5
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+
+- type: reagent
+  id: CP14AlloyTurtle
+  name: cp14-reagent-name-alloy-turtle
+  desc: cp14-reagent-desc-alloy-turtle
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#6bcab1"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  metabolisms:
+    Narcotic:
+      metabolismRate: 3.00
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: -1800
+        safe: true
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.1
+        sprintSpeedModifier: 0.1
+        statusLifetime: 4.5
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: StutteringAccent
+
+- type: reagent
+  id: CP14AlloyBreakingbad
+  name: cp14-reagent-name-alloy-breakingbad
+  desc: cp14-reagent-desc-alloy-breakingbad
+  group: CP14Alloy
+  flavor: CP14Metallic
+  color: "#4946d2"
+  physicalDesc: cp14-reagent-physical-desc-molten
+  metabolisms:
+    Narcotic:
+        metabolismRate: 3.00
+        effects:
+        - !type:Emote
+          emote: Yawn
+          showInChat: true
+          probability: 0.7
+        - !type:GenericStatusEffect
+          key: ForcedSleep
+          component: ForcedSleeping
+          type: Add
+        - !type:GenericStatusEffect
+          key: SeeingRainbows
+          component: SeeingRainbows
+          type: Add
+          time: 75
+          refresh: false
+        - !type:Emote
+          showInChat: false
+          emote: Cough
+          probability: 0.7
+        - !type:Drunk
+          boozePower: 45
+        - !type:Jitter

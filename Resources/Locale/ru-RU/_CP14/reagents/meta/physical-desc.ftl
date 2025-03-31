@@ -10,3 +10,4 @@ cp14-reagent-physical-desc-powdery = пудровый
 cp14-reagent-physical-desc-shimmering = мерцающий
 cp14-reagent-physical-desc-grainy = зернистый
 cp14-reagent-physical-desc-slick = скользкий
+cp14-reagent-physical-desc-molten = расплавленное

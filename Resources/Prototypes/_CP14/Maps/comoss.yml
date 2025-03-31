@@ -28,7 +28,7 @@
         - type: CP14StationZLevels
           defaultMapLevel: 0
           levels:
-            -1:
+            1:
               path: /Maps/_CP14/comoss_d.yml
         - type: CP14StationKeyDistribution
           keys:

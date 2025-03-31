@@ -1,0 +1,113 @@
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorBloodflowerChainmail
+  name: the funny flower chainmail
+  description: they just wanted to live
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#5c1f0a"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#5c1f0a"
+      right:
+      - state: inhand-right
+        color: "#5c1f0a"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.94
+        Slash: 0.76
+        Piercing: 0.97
+  - type: ClothingSpeedModifier
+    walkModifier: 0.94
+    sprintModifier: 0.94
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorBloodflowerChainmail
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorChromiumslimeChainmail
+  name: who chainmail?
+  description: not armour at all
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#3b487280"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#3b487280"
+      right:
+      - state: inhand-right
+        color: "#3b487280"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.06
+        Slash: 1.24
+        Piercing: 1.03
+  - type: ClothingSpeedModifier
+    walkModifier: 1.06
+    sprintModifier: 1.06
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorChromiumslimeChainmail
+
+- type: entity
+  parent: CP14ModularArmorBase
+  id: CP14ArmorDayflinChainmail
+  name: speed
+  description: only ugly bastards wear this shit
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: "#ffe269"
+  - type: Item
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ffe269"
+      right:
+      - state: inhand-right
+        color: "#ffe269"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.12
+        Slash: 1.48
+        Piercing: 1.06
+  - type: ClothingSpeedModifier
+    walkModifier: 1.12
+    sprintModifier: 1.12
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ArmorDayflinChainmail

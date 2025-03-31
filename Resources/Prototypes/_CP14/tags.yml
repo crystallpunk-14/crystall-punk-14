@@ -135,3 +135,9 @@
 
 - type: Tag
   id: CP14Sheep
+
+- type: Tag
+  id: CP14RecipeAlchemistFurnace
+
+- type: Tag
+  id: CP14RecipeVat
