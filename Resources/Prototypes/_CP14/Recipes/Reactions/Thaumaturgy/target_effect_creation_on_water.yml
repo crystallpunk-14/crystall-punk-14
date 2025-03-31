@@ -265,10 +265,9 @@
     Water:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 1.5
+    CP14BasicEffectEmpty: 2
     CP14BasicEffectDrunk: 1
     CP14BasicEffectHealMana: 1
-    CP14BasicEffectHealManaDepletion: 0.5
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
