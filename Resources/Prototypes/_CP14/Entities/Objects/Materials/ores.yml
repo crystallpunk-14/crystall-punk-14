@@ -5,6 +5,9 @@
   description: A piece of pale, heavy copper.
   categories: [ ForkFiltered ]
   components:
+  - type: Tag
+    tags:
+      - CP14FitInMortar
   - type: Item
     size: Normal
   - type: Sprite
@@ -24,6 +27,11 @@
   - type: CP14Material
     materials:
       CP14Copper: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotCopper
+        Quantity: 2
 
 - type: entity
   id: CP14OreCopper5
@@ -50,6 +58,9 @@
   description: A piece of cold, heavy iron.
   categories: [ ForkFiltered ]
   components:
+  - type: Tag
+    tags:
+      - CP14FitInMortar
   - type: Item
     size: Normal
   - type: Sprite
@@ -69,6 +80,11 @@
   - type: CP14Material
     materials:
       CP14Iron: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotIron
+        Quantity: 2
 
 - type: entity
   id: CP14OreIron5
@@ -95,6 +111,9 @@
   description: A piece of soft, pure gold.
   categories: [ ForkFiltered ]
   components:
+  - type: Tag
+    tags:
+      - CP14FitInMortar
   - type: Item
     size: Normal
   - type: Sprite
@@ -114,6 +133,11 @@
   - type: CP14Material
     materials:
       CP14Gold: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotGold
+        Quantity: 2
 
 - type: entity
   id: CP14OreGold5
@@ -140,6 +164,9 @@
   description: A piece of enchanted, pure mithril.
   categories: [ ForkFiltered ]
   components:
+  - type: Tag
+    tags:
+      - CP14FitInMortar
   - type: Item
     size: Normal
   - type: Sprite
@@ -159,6 +186,11 @@
   - type: CP14Material
     materials:
       CP14Mithril: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14MoltenIngotMithril
+        Quantity: 2
 
 - type: entity
   id: CP14OreMithril5

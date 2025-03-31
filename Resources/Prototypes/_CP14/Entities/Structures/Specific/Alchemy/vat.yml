@@ -2,6 +2,7 @@
   id: CP14BaseVat
   parent: 
   - BaseStructureDynamic
+  - CP14BaseWorkbench
   name: big vat
   description: A very large vat for storing huge amounts of liquid. Heavy, uncomfortable to carry.
   categories: [ ForkFiltered ]
@@ -32,8 +33,6 @@
         !type:DamageTrigger
         damage: 50
       behaviors:
-      - !type:SpillBehavior
-        solution: vat
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
@@ -44,31 +43,10 @@
     drawdepth: Mobs
     sprite: _CP14/Structures/Specific/Alchemy/alchemy_vat.rsi
     noRot: true
-    layers:
-      - state: full
-      - state: liq1
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false
-  - type: SolutionContainerManager
-    solutions:
-      vat:
-        maxVol: 500
-  - type: CP14SolutionTemperature
-  - type: SolutionContainerVisuals
-    maxFillLevels: 6
-    fillBaseName: liq
-  - type: DrainableSolution
-    solution: vat
-  - type: ExaminableSolution
-    solution: vat
-  - type: MixableSolution
-    solution: vat
-  - type: RefillableSolution
-    solution: vat
-  - type: DrawableSolution
-    solution: vat
-  - type: DumpableSolution
-    solution: vat
-  - type: Drink
-    solution: vat
+    state: full
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing #TODO
+    recipeTags:
+    - CP14RecipeVat
   - type: Anchorable

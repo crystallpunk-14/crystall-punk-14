@@ -63,8 +63,8 @@
   - type: CP14StatisticRangeCondition
     statistic: DemiplaneDeaths
     range:
-      min: 0
-      max: 3 #TODO Adaptive to player count
+      min: 4
+      max: 40 #TODO Adaptive to player count
     objectiveText: cp14-objective-no-demiplane-death-title
     objectiveDescription: cp14-objective-no-demiplane-death-desc
     objectiveSprite:

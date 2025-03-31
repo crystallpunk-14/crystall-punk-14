@@ -519,6 +519,7 @@
   - CP14LuteInstrument
   - CP14LyraInstrument
   - CP14ClothingBeltQuiver
+  - CP14FakeMithril
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -614,6 +615,12 @@
   id: CP14ClothingBeltQuiver
   equipment:
     belt2: CP14ClothingBeltQuiver
+
+- type: loadout
+  id: CP14FakeMithril
+  storage:
+    back:
+    - CP14MithrilBarFake
 
 # Keys
 

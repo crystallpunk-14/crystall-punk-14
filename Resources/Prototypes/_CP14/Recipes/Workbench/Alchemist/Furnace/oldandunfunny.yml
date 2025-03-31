@@ -1,0 +1,32 @@
+- type: CP14Recipe
+  id: CP14BaseAlchemyBomb
+  tag: CP14RecipeAlchemistFurnace
+  craftTime: 30 #trollface
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ChromiumSlime
+  - !type:ProtoIdResource
+    protoId: CP14LumiMushroom
+  result: CP14BaseAlchemyBomb
+
+- type: CP14Recipe
+  id: CP14BaseLockpick
+  tag: CP14RecipeAlchemistFurnace
+  craftTime: 15
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14BloodFlower
+  - !type:ProtoIdResource
+    protoId: CP14Dayflin
+  result: CP14BaseLockpick
+
+- type: CP14Recipe
+  id: CP14VialMedium
+  tag: CP14RecipeAlchemistFurnace
+  craftTime: 14
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14AgaricMushroom
+  - !type:ProtoIdResource
+    protoId: CP14AirLily
+  result: CP14VialMedium

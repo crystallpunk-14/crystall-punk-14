@@ -1,0 +1,194 @@
+- type: entity
+  id: CP14MobPumpkinKing
+  parent: CP14SimpleMobNoLifeBase
+  name: pumpkin king
+  description: It's a pumpkin, and he's the King.
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        12
+      AggroVisionRadius: !type:Single
+        10
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionSpellPumpkinShot
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: Food
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Mobs/Monster/pumpkin_king.rsi
+    layers:
+    - state: pumpkin_king
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 200
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 3
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Inflatable
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+        path: /Audio/Weapons/punch3.ogg
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 650
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 500
+        - ReagentId: Vitamin
+          Quantity: 125
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 80
+      behaviors:
+      - !type:SpillBehavior
+        solution: food
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg # Поменять звук
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14FoodPumpkinSlice:
+            min: 20
+            max: 25
+  - type: CP14MagicCasterSlowdown
+
+- type: entity
+  id: CP14ActionSpellPumpkinShot
+  name: Pumpkin shot
+  description: The Pumpkin King's servants will fly at their enemy.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
+    state: base2 #TODO
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.7
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+    - !type:CP14SpellProjectile
+      prototype: CP14PumpkinShell
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Serve cucurbita..."
+    endSpeech: "fuge ad mortem magnam!"
+  - type: CP14MagicEffectPacifiedBlock
+  - type: EntityWorldTargetAction
+    useDelay: 5
+    range: 15
+    raiseOnUser: true
+    checkCanAccess: false
+    itemIconStyle: BigAction
+    icon:
+      sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
+      state: base2 #TODO
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      hidden: true
+      breakOnMove: false
+      breakOnDamage: false
+      castDelay: 1
+
+- type: entity
+  id: CP14PumpkinShell
+  parent: CP14FoodPumpkin
+  name: pumpkin shell
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Blunt: 5
+  - type: ThrowingAngle
+    angle: 0
+  - type: Ammo
+    muzzleFlash: null
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: Damageable
+    damageContainer: Biological
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 2
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

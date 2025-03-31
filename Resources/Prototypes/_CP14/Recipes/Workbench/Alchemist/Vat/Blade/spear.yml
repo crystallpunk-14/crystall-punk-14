@@ -1,0 +1,26 @@
+- type: CP14Recipe
+  id: CP14ModularBladeBloodflowerSpear
+  tag: CP14RecipeVat
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14BloodFlower
+  result: CP14ModularBladeBloodflowerSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeChromiumslimeSpear
+  tag: CP14RecipeVat
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ChromiumSlime
+  result: CP14ModularBladeChromiumslimeSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeDayflinSpear
+  tag: CP14RecipeVat
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Dayflin
+  result: CP14ModularBladeDayflinSpear

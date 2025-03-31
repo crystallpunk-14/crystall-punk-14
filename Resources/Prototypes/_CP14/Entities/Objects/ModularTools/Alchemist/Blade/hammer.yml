@@ -1,0 +1,41 @@
+- type: entity
+  parent: CP14ModularBladeHammerBase
+  id: CP14ModularBladeBloodflowerHammer
+  name: Lets drop the hammer down *cool music*
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBloodflowerHammer
+
+- type: entity
+  parent: CP14ModularBladeHammerBase
+  id: CP14ModularBladeChromiumslimeHammer
+  name: nothing we can do head
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeChromiumslimeHammer
+
+- type: entity
+  parent: CP14ModularBladeHammerBase
+  id: CP14ModularBladeDayflinHammer
+  name: Pushok
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeDayflinHammer

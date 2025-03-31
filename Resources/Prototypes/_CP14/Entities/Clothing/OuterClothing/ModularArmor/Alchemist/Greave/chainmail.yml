@@ -1,0 +1,44 @@
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveBloodFlowerChainmail
+  name: bloodflower
+  description: It is really a flower?
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveBloodflowerChainmail
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveChromiumslimeChainmail
+  name: nulla
+  description: Nulla
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveChromiumslimeChainmail
+
+- type: entity
+  parent: CP14ModularGreaveBase
+  id: CP14ModularGreaveDayflinChainmail
+  name: Dmitry
+  description: Dima but cooler
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/ModularArmor/Greave/Chainmail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GreaveDayflinChainmail

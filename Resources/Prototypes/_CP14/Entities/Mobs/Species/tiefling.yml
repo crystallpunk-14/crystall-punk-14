@@ -9,7 +9,7 @@
   - type: Hunger
     starvationDamage:
       types:
-        Cold: 0.25
+        Cold: 0.25 # лол им теперь почти не надо есть
         Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Tiefling/parts.rsi
@@ -35,21 +35,22 @@
     - Critical
     damage:
       types:
-        Heat: -0.14 # Around 8 damage a minute healed
+        Cold: -0.14 # Around 8 damage a minute healed
   - type: CP14MagicEnergyDraw
     energy: 0.75
     delay: 3 # 5m to full restore
   - type: CP14MagicEnergyFromDamage
     damage:
-      Heat: 1 #Magic regen from fire
-      Cold: -1
+      Heat: -1 #Magic regen from fire
+      Cold: 1
   - type: CP14MagicManacostModify
     globalModifier: 1.2
     modifiers:
-      Fire: 0.5
+      Water: 0.5
+      Frost: 0.5
   - type: CP14SkillStorage
     progress:
-      Pyrokinetic: 1
+      Hydrosophistry: 1
   - type: CP14SpellStorage
     #grantAccessToSelf: true
     #spells:
