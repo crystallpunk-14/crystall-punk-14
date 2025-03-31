@@ -1,0 +1,16 @@
+- type: modularPart
+  id: GardeSturdyGold
+  slots:
+  - Garde
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+  color: "#36c98f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSturdy
+  - !type:AddComponents
+    components:
+    - type: PointLight
+      color: "#36c98f"
+      radius: 4
