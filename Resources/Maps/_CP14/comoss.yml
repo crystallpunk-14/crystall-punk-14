@@ -67,7 +67,6 @@ entities:
       entries:
       - visuals: CP14Mist
       - visuals: CP14Rain
-      - visuals: CP14Storm
     - type: LightCycle
     - type: SunShadow
     - type: SunShadowCycle

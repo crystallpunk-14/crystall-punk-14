@@ -8,11 +8,12 @@
     params:
       loop: true
       volume: -6
-  effects:
-  - !type:ApplyEntityEffect
-    prob: 0.2
-    effects:
-    - !type:ExtinguishReaction
+  config:
+  - effects:
+    - !type:ApplyEntityEffect
+      prob: 0.2
+      effects:
+      - !type:ExtinguishReaction
 
 - type: weather
   id: CP14Storm
@@ -24,14 +25,17 @@
     params:
       loop: true
       volume: -6
-  effects:
-  - !type:ApplyEntityEffect
-    prob: 0.4
+  config:
+  - maxEntities: 2
+    frequency: 10
     effects:
-    - !type:ExtinguishReaction
-  - !type:SpawnEntityOnTop
-    prob: 0.0001
-    entity: CP14SkyLightning
+    - !type:ApplyEntityEffect
+      prob: 0.4
+      effects:
+      - !type:ExtinguishReaction
+    - !type:SpawnEntityOnTop
+      prob: 0.25
+      entity: CP14SkyLightning
 
 - type: weather
   id: CP14Mist
@@ -45,23 +49,24 @@
 - type: weather
   id: CP14ManaMist
   offsetSpeed: 0.56, -0.36
-  color: "#3d81ff"
+  color: "#91a1bf"
   alpha: 0.7
   sprite:
     sprite: /Textures/_CP14/Effects/parallax.rsi
     state: noise
-  effects:
-  - !type:ApplyEntityEffect
-    prob: 0.5
-    effects:
-      - !type:CP14ManaChange
-        manaDelta: 8
-        safe: true
+  config:
+  - effects:
+    - !type:ApplyEntityEffect
+      prob: 0.5
+      effects:
+        - !type:CP14ManaChange
+          manaDelta: 8
+          safe: true
 
 - type: weather
   id: CP14AntiManaMist
   offsetSpeed: -0.56, -0.31
-  color: "#d929d9"
+  color: "#302a2a"
   alpha: 0.8
   sprite:
     sprite: /Textures/_CP14/Effects/parallax.rsi
@@ -71,25 +76,27 @@
     params:
       loop: true
       volume: -18
-  effects:
-  - !type:ApplyEntityEffect
-    prob: 0.5
-    effects:
-      - !type:CP14ManaChange
-        manaDelta: -10
-        safe: true
+  config:
+  - effects:
+    - !type:ApplyEntityEffect
+      prob: 0.5
+      effects:
+        - !type:CP14ManaChange
+          manaDelta: -10
+          safe: true
 
 - type: weather
   id: CP14SnowLight
   sprite:
     sprite: /Textures/_CP14/Effects/weather.rsi
     state: snowfall_light
-  #effects:
-  #- !type:ApplyEntityEffect
-  #  prob: 1
-  #  effects:
-  #  - !type:AdjustTemperature
-  #    amount: -20000
+  #config:
+  #- effects:
+    #- !type:ApplyEntityEffect
+    #  prob: 1
+    #  effects:
+    #  - !type:AdjustTemperature
+    #    amount: -20000
 
 - type: weather
   id: CP14SnowMedium
@@ -101,12 +108,13 @@
     params:
       loop: true
       volume: -18
-  #effects:
-  #- !type:ApplyEntityEffect
-  #  prob: 1
-  #  effects:
-  #  - !type:AdjustTemperature
-  #    amount: -40000
+  #config:
+  #- effects:
+    #- !type:ApplyEntityEffect
+    #  prob: 1
+    #  effects:
+    #  - !type:AdjustTemperature
+    #    amount: -40000
 
 - type: weather
   id: CP14SnowHeavy
@@ -118,12 +126,13 @@
     params:
       loop: true
       volume: -6
-  #effects:
-  #- !type:ApplyEntityEffect
-  #  prob: 1
-  #  effects:
-  #  - !type:AdjustTemperature
-  #    amount: -60000
+  #config:
+  #- effects:
+    #- !type:ApplyEntityEffect
+    #  prob: 1
+    #  effects:
+    #  - !type:AdjustTemperature
+    #    amount: -60000
 
 - type: weather
   id: CP14FireStorm
@@ -136,14 +145,15 @@
     params:
       loop: true
       volume: -6
-  effects:
-  #- !type:ApplyEntityEffect 
-  #  prob: 1
-  #  effects:
-  #  - !type:AdjustTemperature
-  #    amount: 40000
-  - !type:ApplyEntityEffect
-    effects:
-    - !type:FlammableReaction
-      multiplier: 1
-    - !type:Ignite
+  config:
+  - effects:
+    #- !type:ApplyEntityEffect 
+    #  prob: 1
+    #  effects:
+    #  - !type:AdjustTemperature
+    #    amount: 40000
+    - !type:ApplyEntityEffect
+      effects:
+      - !type:FlammableReaction
+        multiplier: 1
+      - !type:Ignite

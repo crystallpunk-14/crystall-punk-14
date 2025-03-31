@@ -22,17 +22,12 @@ public sealed class CP14WeatherEffectSystem : EntitySystem
     private readonly List<(CP14WeatherEffectJob Job, CancellationTokenSource CancelToken)> _weatherJobs = new();
     private const double JobMaxTime = 0.002;
 
-    private readonly TimeSpan ProcessFreq = TimeSpan.FromSeconds(5f);
-    private TimeSpan NextProcessTime = TimeSpan.Zero;
-
     private EntityQuery<BlockWeatherComponent> _weatherBlockQuery;
     public override void Initialize()
     {
         base.Initialize();
 
         _weatherBlockQuery = GetEntityQuery<BlockWeatherComponent>();
-
-        NextProcessTime = _timing.CurTime + ProcessFreq;
     }
 
     public override void Update(float frameTime)
@@ -50,10 +45,6 @@ public sealed class CP14WeatherEffectSystem : EntitySystem
             }
         }
 
-        if (_timing.CurTime <= NextProcessTime)
-            return;
-
-        NextProcessTime = _timing.CurTime + ProcessFreq;
         ProcessWeather();
     }
 
@@ -62,26 +53,34 @@ public sealed class CP14WeatherEffectSystem : EntitySystem
         var query = EntityQueryEnumerator<WeatherComponent, MapGridComponent>();
         while (query.MoveNext(out var mapUid, out var weather, out var mapComp))
         {
-            foreach (var (proto, data) in weather.Weather)
+            foreach (var (proto, _) in weather.Weather)
             {
                 if (!_proto.TryIndex(proto, out var indexedWeather))
                     continue;
 
-                var cancelToken = new CancellationTokenSource();
-                var job = new CP14WeatherEffectJob(
-                    JobMaxTime,
-                    EntityManager,
-                    _lookup,
-                    _weather,
-                    _mapSystem,
-                    _random,
-                    (mapUid, mapComp),
-                    Transform(mapUid).MapID,
-                    indexedWeather.Effects,
-                    _weatherBlockQuery);
+                foreach (var config in indexedWeather.Config)
+                {
+                    if (_timing.CurTime <= config.NextEffectTime)
+                        return;
 
-                _weatherJobs.Add((job, cancelToken));
-                _weatherQueue.EnqueueJob(job);
+                    config.NextEffectTime = _timing.CurTime + config.Frequency;
+
+                    var cancelToken = new CancellationTokenSource();
+                    var job = new CP14WeatherEffectJob(
+                        JobMaxTime,
+                        EntityManager,
+                        _lookup,
+                        _weather,
+                        _mapSystem,
+                        _random,
+                        (mapUid, mapComp),
+                        Transform(mapUid).MapID,
+                        config,
+                        _weatherBlockQuery);
+
+                    _weatherJobs.Add((job, cancelToken));
+                    _weatherQueue.EnqueueJob(job);
+                }
             }
         }
     }
