@@ -1,8 +1,8 @@
 - type: modularPart
-  id: GardeSturdyGold
+  id: GardeSturdyLumimushroom
   slots:
   - Garde
-  sourcePart: CP14ScrapGold
+  sourcePart: CP14LumiMushroom
   rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
   color: "#36c98f"
   modifiers:
