@@ -4,8 +4,8 @@ meta:
   engineVersion: 248.0.2
   forkId: ""
   forkVersion: ""
-  time: 03/30/2025 12:13:06
-  entityCount: 14453
+  time: 03/31/2025 19:07:07
+  entityCount: 14451
 maps:
 - 2
 grids:
@@ -819,33 +819,11 @@ entities:
     - type: ItemPlacer
       placedEntities:
       - 10904
-  - uid: 4
-    components:
-    - type: Transform
-      pos: -15.5,-19.5
-      parent: 2
-  - uid: 5
-    components:
-    - type: Transform
-      pos: -13.5,-19.5
-      parent: 2
   - uid: 6
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 22.5,15.5
-      parent: 2
-- proto: CP14AlchemySolutionCleaner
-  entities:
-  - uid: 7
-    components:
-    - type: Transform
-      pos: 22.5,14.5
-      parent: 2
-  - uid: 8
-    components:
-    - type: Transform
-      pos: 15.5,0.5
       parent: 2
 - proto: CP14AstralCorrosion
   entities:
@@ -41570,18 +41548,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 16.07972,-4.6309657
       parent: 2
-- proto: CP14EssenceCollector
-  entities:
-  - uid: 7697
-    components:
-    - type: Transform
-      pos: 17.5,0.5
-      parent: 2
-  - uid: 7698
-    components:
-    - type: Transform
-      pos: 22.5,16.5
-      parent: 2
 - proto: CP14FenceIronGrilleGate
   entities:
   - uid: 7699
@@ -45061,6 +45027,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.675974,-34.404755
       parent: 2
+- proto: CP14Mortar
+  entities:
+  - uid: 8
+    components:
+    - type: Transform
+      pos: 30.55681,16.72985
+      parent: 2
+  - uid: 10613
+    components:
+    - type: Transform
+      pos: 28.499714,5.503121
+      parent: 2
 - proto: CP14Nail20
   entities:
   - uid: 8222
@@ -45332,6 +45310,18 @@ entities:
     components:
     - type: Transform
       pos: 17.469593,-42.292152
+      parent: 2
+- proto: CP14Pestle
+  entities:
+  - uid: 7
+    components:
+    - type: Transform
+      pos: 30.40056,16.526726
+      parent: 2
+  - uid: 10612
+    components:
+    - type: Transform
+      pos: 28.499714,5.581246
       parent: 2
 - proto: CP14PlantCabbage
   entities:
@@ -61791,26 +61781,6 @@ entities:
       parent: 2
 - proto: CP14SpawnEssenceNodeRandom
   entities:
-  - uid: 10612
-    components:
-    - type: Transform
-      pos: 109.5,60.5
-      parent: 2
-  - uid: 10613
-    components:
-    - type: Transform
-      pos: 30.5,48.5
-      parent: 2
-  - uid: 10614
-    components:
-    - type: Transform
-      pos: -7.5,21.5
-      parent: 2
-  - uid: 10615
-    components:
-    - type: Transform
-      pos: -11.5,-11.5
-      parent: 2
   - uid: 10616
     components:
     - type: Transform
@@ -81406,6 +81376,66 @@ entities:
       parent: 2
 - proto: CP14WoodenChest
   entities:
+  - uid: 7697
+    components:
+    - type: Transform
+      pos: 30.5,16.5
+      parent: 2
+    - type: EntityStorage
+      open: True
+      removedMasks: 20
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PolygonShape
+            radius: 0.01
+            vertices:
+            - -0.4,-0.4
+            - 0.4,-0.4
+            - 0.4,0.29
+            - -0.4,0.29
+          mask:
+          - Impassable
+          - LowImpassable
+          layer:
+          - BulletImpassable
+          - Opaque
+          density: 50
+          hard: True
+          restitution: 0
+          friction: 0.4
+    - type: PlaceableSurface
+      isPlaceable: True
+  - uid: 7698
+    components:
+    - type: Transform
+      pos: 28.5,5.5
+      parent: 2
+    - type: EntityStorage
+      open: True
+      removedMasks: 20
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PolygonShape
+            radius: 0.01
+            vertices:
+            - -0.4,-0.4
+            - 0.4,-0.4
+            - 0.4,0.29
+            - -0.4,0.29
+          mask:
+          - Impassable
+          - LowImpassable
+          layer:
+          - BulletImpassable
+          - Opaque
+          density: 50
+          hard: True
+          restitution: 0
+          friction: 0.4
+    - type: PlaceableSurface
+      isPlaceable: True
   - uid: 14286
     components:
     - type: Transform
@@ -82099,6 +82129,18 @@ entities:
       parent: 2
 - proto: CP14WorkbenchAnvil
   entities:
+  - uid: 4
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -15.5,-19.5
+      parent: 2
+  - uid: 5
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -13.5,-19.5
+      parent: 2
   - uid: 14399
     components:
     - type: Transform
