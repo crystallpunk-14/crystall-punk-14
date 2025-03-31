@@ -7,7 +7,7 @@
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseTipArroww
+    - BaseTipArrow
   - !type:AddComponents
     components:
     - type: Projectile
