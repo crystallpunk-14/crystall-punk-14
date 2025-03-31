@@ -141,6 +141,28 @@
       - id: CP14VialSmallHealingMana
         amount: 5
 
+- type: storePositionBuy
+  id: CP14VialSmallHealingManaDepletion
+  code: HEAL_MANA_DEPLETION
+  price: 70
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallHealingManaDepletion
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingManaDepletion
+  name: mana-depletion potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingManaDepletion
+        amount: 5
+
 
 - type: storePositionBuy
   id: CP14VialSmallSpeedUp
