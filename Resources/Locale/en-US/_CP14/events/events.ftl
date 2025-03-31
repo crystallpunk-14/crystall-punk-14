@@ -1,2 +1,2 @@
 cp14-event-announcement-demiplane-outbreak = A sense of danger pierces the air... Something from other worlds is invading your town.
-cp14-event-announcement-unstable-demiplane = Tension is building... an wild demiplane has opened somewhere in the settlement. Close it down before the monsters come out.
+cp14-event-announcement-storm = Storm clouds are gathering on the horizon....

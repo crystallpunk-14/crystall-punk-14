@@ -29,6 +29,9 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
             if (_timing.CurTime <= weather.NextWeatherTime)
                 continue;
 
+            if (!weather.Enabled)
+                continue;
+
             var weatherData = _random.Pick(weather.Entries);
 
             if (!_proto.TryIndex(weatherData.Visuals, out var weatherVisualsIndexed))
