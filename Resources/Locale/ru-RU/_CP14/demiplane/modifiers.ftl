@@ -12,6 +12,7 @@ cp14-modifier-explosive = взрывных мин
 cp14-modifier-ruins = древних руин
 cp14-modifier-xeno = ксеноморфов
 cp14-modifier-zombie = толп нежити
+cp14-modifier-slime = слаймов
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = доисторической фауны
 cp14-modifier-mole = хищных кротов
@@ -24,3 +25,9 @@ cp14-modifier-air-lily = воздушных лилий
 cp14-modifier-time-limit-10 = временного распада (10 минут)
 cp14-modifier-shadow-kudzu = распространяющгося астрального мрака
 cp14-modifier-night = темноты
+
+cp14-modifier-storm = грозы
+cp14-modifier-fire-storm = огненный шторм
+cp14-modifier-snow-storm = снежный шторм
+cp14-modifier-mana-mist = магического тумана
+cp14-modifier-anti-mana-mist = антимагического тумана

@@ -8,22 +8,22 @@ namespace Content.Shared._CP14.MagicEnergy.Components;
 /// <summary>
 /// Allows an item to store magical energy within itself.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(SharedCP14MagicEnergySystem))]
 public sealed partial class CP14MagicEnergyContainerComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public FixedPoint2 Energy = 0f;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public FixedPoint2 MaxEnergy = 100f;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public ProtoId<AlertPrototype>? MagicAlert = null;
 
     /// <summary>
     /// Does this container support unsafe energy manipulation?
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool UnsafeSupport = false;
 }

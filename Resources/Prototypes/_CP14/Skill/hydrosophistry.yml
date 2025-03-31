@@ -27,6 +27,9 @@
     state: beer_creation
   effect: !type:AddAction
     action: CP14ActionSpellBeerCreation
+  restrictions:
+  - !type:SpeciesWhitelist
+    species: CP14Dwarf
 
 - type: cp14Skill
   id: CP14ActionSpellIceShards

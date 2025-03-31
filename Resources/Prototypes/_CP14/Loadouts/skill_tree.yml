@@ -1,12 +1,12 @@
 - type: loadoutGroup
   id: CP14SkillTree
   name: cp14-loadout-skill-tree
-  minLimit: 0
+  minLimit: 2
   maxLimit: 2
   loadouts:
-  - CP14SkillTreePyrokinetic
-  - CP14SkillTreeHydrosophistry
   - CP14SkillTreeMetamagic
+  - CP14SkillTreeHydrosophistry
+  - CP14SkillTreePyrokinetic
   - CP14SkillTreeIllusion
   - CP14SkillTreeHealing
   - CP14SkillTreeAtlethic
@@ -19,8 +19,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/fire.rsi
-    state: flame_creation
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro
 
 - type: loadout
   id: CP14SkillTreePyrokinetic
@@ -36,8 +36,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/water.rsi
-    state: water_creation
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: water
 
 - type: loadout
   id: CP14SkillTreeHydrosophistry
@@ -52,8 +52,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/light.rsi
-    state: sphere_of_light
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: light
 
 - type: loadout
   id: CP14SkillTreeIllusion
@@ -68,8 +68,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: mana
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: meta
 
 - type: loadout
   id: CP14SkillTreeMetamagic
@@ -84,8 +84,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: plant_growth
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: heal
 
 - type: loadout
   id: CP14SkillTreeHealing
@@ -100,8 +100,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/physical.rsi
-    state: kick
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: atlethic
 
 - type: loadout
   id: CP14SkillTreeAtlethic

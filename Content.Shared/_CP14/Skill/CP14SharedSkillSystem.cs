@@ -139,10 +139,42 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         ProtoId<CP14SkillPrototype> skill,
         CP14SkillStorageComponent? component = null)
     {
+        if (!_proto.TryIndex(skill, out var indexedSkill))
+            return false;
+
+        return CanLearnSkill(target, indexedSkill, component);
+    }
+
+    /// <summary>
+    ///  Checks if the player can learn the specified skill.
+    /// </summary>
+    public bool CanLearnSkill(EntityUid target,
+        CP14SkillPrototype skill,
+        CP14SkillStorageComponent? component = null)
+    {
         if (!Resolve(target, ref component, false))
             return false;
 
-        if (!_proto.TryIndex(skill, out var indexedSkill))
+        if (!AllowedToLearn(target, skill, component))
+            return false;
+
+        //Experience check
+        if (!component.Progress.TryGetValue(skill.Tree, out var currentExp))
+            return false;
+        if (currentExp < skill.LearnCost)
+            return false;
+
+        return true;
+    }
+
+    /// <summary>
+    /// Is it allowed to learn this skill? The player may not have enough points to learn it, but has already met all the requirements to learn it.
+    /// </summary>
+    public bool AllowedToLearn(EntityUid target,
+        CP14SkillPrototype skill,
+        CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
             return false;
 
         //Already learned
@@ -150,21 +182,15 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             return false;
 
         //Check max cap
-        if (component.SkillsSumExperience + indexedSkill.LearnCost >= component.ExperienceMaxCap)
+        if (component.SkillsSumExperience + skill.LearnCost >= component.ExperienceMaxCap)
             return false;
 
-        //Prerequisite check
-        foreach (var prerequisite in indexedSkill.Prerequisites)
+        //Restrictions check
+        foreach (var req in skill.Restrictions)
         {
-            if (!HaveSkill(target, prerequisite, component))
+            if (!req.Check(EntityManager, target))
                 return false;
         }
-
-        //Experience check
-        if (!component.Progress.TryGetValue(indexedSkill.Tree, out var currentExp))
-            return false;
-        if (currentExp < indexedSkill.LearnCost)
-            return false;
 
         return true;
     }
