@@ -434,7 +434,7 @@
         map: ["base"]
   - type: Healing
     damageContainers:
-      - Biological
+      - CP14Biological
     damage:
       types:
         Slash: -3
