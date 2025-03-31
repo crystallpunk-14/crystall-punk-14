@@ -3,8 +3,7 @@
   id: CP14FloorWaterOptimized
   name: water
   description: A trough of plain water. Clean enough for consumption
-  suffix: Optimized, Ocean
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
     snap:
@@ -66,7 +65,7 @@
 - type: entity
   parent: CP14FloorWaterOptimized
   id: CP14FloorWater
-  suffix: Full
+  categories: [ ForkFiltered ]
   components:
   - type: DrawableSolution
     solution: pool
