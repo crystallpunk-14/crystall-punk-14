@@ -1,0 +1,8 @@
+- type: CP14Recipe
+  id: CP14ModularTipAirlilyArrow
+  tag: CP14RecipeVat
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14AirLily
+  result: CP14ModularTipAirlilyArrow
