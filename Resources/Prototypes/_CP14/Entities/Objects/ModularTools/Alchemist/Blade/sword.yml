@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladeSwordBase
   id: CP14ModularBladeBloodflowerSword
-  name: bloodflower sword blade
+  name: BLOODFLOWEEEEEER SWOOOORD BLAAADE
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladeSwordBase
   id: CP14ModularBladeChromiumslimeSword
-  name: chromium slime sword blade
+  name: who it can be now
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladeSwordBase
   id: CP14ModularBladeDayflinSword
-  name: dayflin sword blade
+  name: Markite
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi

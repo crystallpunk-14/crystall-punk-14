@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14ModularBladeMaceBase
   id: CP14ModularBladeBloodflowerMace
-  name: bloodflower mace ball
+  name: minecraft mace ball
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
@@ -15,7 +15,7 @@
 - type: entity
   parent: CP14ModularBladeMaceBase
   id: CP14ModularBladeChromiumslimeMace
-  name: chromium slime mace ball
+  name: desusssy mace ball
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
@@ -29,7 +29,7 @@
 - type: entity
   parent: CP14ModularBladeMaceBase
   id: CP14ModularBladeDayflinMace
-  name: dayflin mace ball
+  name: nightflin mace ball
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
