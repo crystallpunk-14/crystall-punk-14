@@ -1,0 +1,42 @@
+- type: entity
+  parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeBloodflowerSickle
+  name: bloodflower sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+    layers:
+    - state: icon
+      color: "#5c1f0a"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBloodflowerSickle
+
+- type: entity
+  parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeChromiumslimeSickle
+  name: chromium slime sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+    layers:
+    - state: icon
+      color: "#3b487280"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeChromiumslimeSickle
+
+- type: entity
+  parent: CP14ModularBladeSickleBase
+  id: CP14ModularBladeDayflinSickle
+  name: dayflin sickle blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeDayflinSickle
+
