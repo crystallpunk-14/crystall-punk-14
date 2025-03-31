@@ -4408,7 +4408,7 @@ ent-CP14ModularBladeBloodflowerRapier = БЛАДФЛАВЕР РАПИРАААА�
 
 ent-CP14ModularBladeChromiumslimeRapier = Рапира из воды
 
-ent-CP14ModularBladeRapierBase = Денис
+ent-CP14ModularBladeDayflinRapier = Денис
 
 ent-CP14ModularBladeBloodflowerShovel = БЛАДФЛАВЕР ЛОПАТААААААА
 
