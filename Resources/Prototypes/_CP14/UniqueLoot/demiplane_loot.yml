@@ -36,3 +36,9 @@
   entity: CP14CrayonRainbow
   tags:
   - CP14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: CP14ClothingShoesArtifactFrogs
+  entity: CP14ClothingShoesArtifactFrogs
+  tags:
+  - CP14UniqueSpawnDemiplanetLoot

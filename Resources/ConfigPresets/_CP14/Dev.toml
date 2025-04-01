@@ -47,7 +47,7 @@ preload_grids = false
 auto_call_time = 0
 
 [admin]
-deadmin_on_join = true
+deadmin_on_join = false
 
 [ic]
 flavor_text = true

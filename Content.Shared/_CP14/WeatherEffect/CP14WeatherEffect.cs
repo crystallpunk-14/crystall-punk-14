@@ -12,3 +12,22 @@ public abstract partial class CP14WeatherEffect
 
     public abstract void ApplyEffect(IEntityManager entManager, IRobustRandom random, EntityUid target);
 }
+
+[DataDefinition]
+public sealed partial class CP14WeatherEffectConfig
+{
+    [DataField]
+    public List<CP14WeatherEffect> Effects = new();
+
+    [DataField]
+    public int? MaxEntities = null;
+
+    [DataField]
+    public TimeSpan Frequency = TimeSpan.FromSeconds(5f);
+
+    [DataField]
+    public TimeSpan NextEffectTime = TimeSpan.Zero;
+
+    [DataField]
+    public bool CanAffectOnWeatherBlocker = true;
+}

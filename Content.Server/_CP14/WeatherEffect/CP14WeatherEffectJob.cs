@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared._CP14.WeatherEffect;
@@ -20,12 +21,12 @@ public sealed class CP14WeatherEffectJob : Job<bool>
     private readonly Entity<MapGridComponent> _mapUid;
     private readonly MapId _mapId;
 
-    private readonly List<CP14WeatherEffect> _effects;
+    private readonly CP14WeatherEffectConfig _config;
 
     private EntityQuery<BlockWeatherComponent> _weatherBlockQuery;
 
     private readonly HashSet<Entity<TransformComponent>> _entitiesOnMap = new();
-    private readonly HashSet<Entity<TransformComponent>> _affectedEntities = new();
+    private List<Entity<TransformComponent>> _affectedEntities = new();
 
     public CP14WeatherEffectJob(
         double maxTime,
@@ -36,7 +37,7 @@ public sealed class CP14WeatherEffectJob : Job<bool>
         IRobustRandom random,
         Entity<MapGridComponent> mapUid,
         MapId mapId,
-        List<CP14WeatherEffect> effects,
+        CP14WeatherEffectConfig config,
         EntityQuery<BlockWeatherComponent> weatherBlockQuery,
         CancellationToken cancellation = default
     ) : base(maxTime, cancellation)
@@ -50,7 +51,7 @@ public sealed class CP14WeatherEffectJob : Job<bool>
         _mapUid = mapUid;
         _mapId = mapId;
 
-        _effects = effects;
+        _config = config;
         _weatherBlockQuery = weatherBlockQuery;
     }
 
@@ -64,7 +65,7 @@ public sealed class CP14WeatherEffectJob : Job<bool>
         foreach (var ent in _entitiesOnMap)
         {
             //All weatherblocker entites should be affected by weather
-            if (_weatherBlockQuery.HasComp(ent))
+            if (_config.CanAffectOnWeatherBlocker && _weatherBlockQuery.HasComp(ent))
             {
                 _affectedEntities.Add(ent);
                 continue;
@@ -79,10 +80,18 @@ public sealed class CP14WeatherEffectJob : Job<bool>
             }
         }
 
+        _random.Shuffle(_affectedEntities);
+
+        // Limit the number of affected entities if specified
+        if (_config.MaxEntities.HasValue && _affectedEntities.Count > _config.MaxEntities.Value)
+        {
+            _affectedEntities = _affectedEntities.Take(_config.MaxEntities.Value).ToList();
+        }
+
         //Apply weather effects to affected entities
         foreach (var entity in _affectedEntities)
         {
-            foreach (var effect in _effects)
+            foreach (var effect in _config.Effects)
             {
                 effect.ApplyEffect(_entManager, _random, entity);
             }
