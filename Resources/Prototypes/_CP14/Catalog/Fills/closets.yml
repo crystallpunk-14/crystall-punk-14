@@ -10,6 +10,14 @@
       - id: CP14PaperFolderBlue
       - id: CP14PenFeather
         amount: 1
+      - id: CP14BloodFlower
+        amount: 5
+      - id: CP14Dayflin
+        amount: 5
+      - id: CP14ChromiumSlime
+        amount: 5
+      - id: CP14LumiMushroom
+        amount: 5
 
 - type: entity
   parent: CP14WoodenCloset

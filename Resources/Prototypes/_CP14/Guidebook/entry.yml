@@ -29,7 +29,6 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  locFilter: "en-EN"
   id: CP14_TOPSECRETEN
   name: TOP SECRET!!!!!
-  text: "/ServerInfo/_CP14/Guidebook_RU/TOPSECRET.xml"
+  text: "/ServerInfo/_CP14/Guidebook_EN/TOPSECRET.xml"
