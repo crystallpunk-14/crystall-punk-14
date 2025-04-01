@@ -1,0 +1,142 @@
+- type: CP14Recipe
+  id: CP14CopperBar1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:MaterialResource
+    material: CP14Copper
+    count: 10
+  result: CP14CopperBar1
+
+- type: CP14Recipe
+  id: CP14IronBar1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:MaterialResource
+    material: CP14Iron
+    count: 10
+  result: CP14IronBar1
+
+- type: CP14Recipe
+  id: CP14GoldBar1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:MaterialResource
+    material: CP14Gold
+    count: 10
+  result: CP14GoldBar1
+
+- type: CP14Recipe
+  id: CP14MithrilBar1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:MaterialResource
+    material: CP14Mithril
+    count: 10
+  result: CP14MithrilBar1
+
+- type: CP14Recipe
+  id: CP14GlassSheet1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrystalShardBase
+  result: CP14GlassSheet1
+
+- type: CP14Recipe
+  id: CP14GlassSheetShard1
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14GlassShard
+    count: 2
+  result: CP14GlassSheet1
+
+- type: CP14Recipe
+  id: CP14VialTiny
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 1
+  result: CP14VialTiny
+
+- type: CP14Recipe
+  id: CP14VialTinyReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 1
+  result: CP14VialTinyReinforced
+
+- type: CP14Recipe
+  id: CP14VialSmall
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialSmall
+
+- type: CP14Recipe
+  id: CP14VialSmallReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialSmallReinforced
+
+- type: CP14Recipe
+  id: CP14VialMedium
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 6
+  result: CP14VialMedium
+
+- type: CP14Recipe
+  id: CP14VialMediumReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 6
+  result: CP14VialMediumReinforced
+
+- type: CP14Recipe
+  id: CP14BaseAlchemyBomb
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 9
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14BaseAlchemyBomb
+  resultCount: 3
+  

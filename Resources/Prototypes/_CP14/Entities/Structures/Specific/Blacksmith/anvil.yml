@@ -1,9 +1,9 @@
 - type: entity
   id: CP14WorkbenchAnvil
   parent:
-  - CP14BaseFireplace
-  name: anvil heater
-  description: Kitchen stove with a slight modification
+  - CP14BaseWorkbench
+  name: anvil
+  description: A big piece of metal that allows you to turn square pieces of metal into pieces of metal in other, more useful shapes.
   components:
   - type: Sprite
     snapCardinals: false
@@ -26,9 +26,8 @@
           collection: MetalBreak
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Storage
-    grid:
-    - 0,0,2,2
-    whitelist:
-      tags:
-      - CP14FireplaceFuel
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing #TODO
+    recipeTags:
+    - CP14RecipeAnvil

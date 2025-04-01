@@ -73,8 +73,8 @@
 
 - type: entity
   id: CP14Pestle
-  name: castle
-  description: A cat for conveniently grinding metals into liquid
+  name: pestle
+  description: A device for conveniently grinding various materials into liquid
   parent: BaseItem
   categories: [ ForkFiltered ]
   components:
@@ -94,8 +94,8 @@
 
 - type: entity
   id: CP14Mortar
-  name: cattar
-  description: Alchemical sturdy cat for grinding metals
+  name: mortar
+  description: Alchemical sturdy plate for grinding reagents
   parent: BaseStorageItem
   categories: [ ForkFiltered ]
   components:

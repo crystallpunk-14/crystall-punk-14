@@ -10,7 +10,6 @@
   - CP14SkillTreeIllusion
   - CP14SkillTreeHealing
   - CP14SkillTreeAtlethic
-  - CP14SkillTreeVampire
 
 
 
@@ -109,18 +108,3 @@
   dummyEntity: CP14SkillTreeAtlethicLoadoutDummy
   skillTree:
     Atlethic: 1
-
-- type: entity
-  id: CP14SkillTreeVampireLoadoutDummy
-  name: Vampire
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/vampire.rsi
-    state: bite
-
-- type: loadout
-  id: CP14SkillTreeVampire
-  dummyEntity: CP14SkillTreeVampireLoadoutDummy
-  skillTree:
-    VampireTree: 1

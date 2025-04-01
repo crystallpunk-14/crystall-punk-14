@@ -16,9 +16,6 @@ cp14-skill-tree-illusion-desc = Explore the nature of light to create illusions,
 cp14-skill-tree-healing-name = Lifecation
 cp14-skill-tree-healing-desc = Explore the ways in which magic affects living creatures.
 
-cp14-skill-tree-vampire-name = Vampirism
-cp14-skill-tree-vampire-desc = How the hell do you know this?!
-
 # Body
 
 cp14-skill-tree-atlethic-name = Atlethic

@@ -1,8 +1,0 @@
-- type: CP14Recipe
-  id: CP14ModularGardeSharpLumimushroom
-  tag: CP14RecipeVat
-  craftTime: 4
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14LumiMushroom
-  result: CP14ModularGardeSharpLumimushroom

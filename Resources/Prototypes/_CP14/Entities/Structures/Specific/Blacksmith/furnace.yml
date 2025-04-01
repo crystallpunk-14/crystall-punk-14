@@ -1,9 +1,9 @@
 - type: entity
   id: CP14WorkbenchFurnace
   parent:
-  - BaseStructure
-  name: broken furnace
-  description: Just broken furnace
+  - CP14BaseWorkbench
+  name: melting furnace
+  description: A red-hot stone construction that allows ores to be smelted into pure metal
   components:
   - type: Sprite
     snapCardinals: false
@@ -11,6 +11,8 @@
     sprite: _CP14/Structures/Specific/Blacksmith/furnace.rsi
     layers:
     - state: base
+    - state: fire
+      shader: unshaded
   - type: Icon
     sprite: _CP14/Structures/Specific/Blacksmith/furnace.rsi
     state: base
@@ -28,3 +30,12 @@
           collection: MetalBreak
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: PointLight
+    color: "#99411f"
+    radius: 2
+    energy: 2
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Sawing #TODO
+    recipeTags:
+    - CP14RecipeMeltingFurnace 
