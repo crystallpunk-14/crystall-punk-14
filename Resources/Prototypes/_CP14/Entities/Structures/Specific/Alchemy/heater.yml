@@ -67,17 +67,16 @@
 - type: entity
   id: CP14AlchemyFurnace
   name: alchemy furnace
-  parent: 
-  - CP14BaseWorkbench
+  parent: CP14BaseFireplace
   description: A furnace fueled by wood, coal, or any other burning material. Handy for heating your alchemical potions.
   components:
   - type: Sprite
-    snapCardinals: false
     sprite: _CP14/Structures/Specific/Alchemy/alchemy_furnace.rsi
     layers:
       - state: base
-      - state: burning
-        shader: unshaded
+      - state: fuel1
+        visible: false
+        map: ["fuel"]
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -89,6 +88,16 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.FireplaceFuelVisuals.Status:
+        fuel:
+          Empty: { visible: false }
+          Medium: { visible: true, state: fuel1 }
+          Full: { visible: true, state: fuel2 }
+  - type: FireVisuals
+    sprite: _CP14/Structures/Specific/Alchemy/alchemy_furnace.rsi
+    normalState: burning
   - type: Climbable
   - type: Fixtures
     fixtures:
@@ -113,12 +122,19 @@
         - TableMask
         layer:
         - TableLayer
-  - type: PointLight
-    color: "#99411f"
-    radius: 2
-    energy: 2
-  - type: CP14Workbench
-    craftSound:
-      collection: CP14Sawing #TODO
-    recipeTags:
-    - CP14RecipeAlchemistFurnace
+  - type: Storage
+    grid:
+    - 0,0,2,2
+    whitelist:
+      tags:
+      - CP14FireplaceFuel
+
+- type: entity
+  parent: CP14AlchemyFurnace
+  id: CP14AlchemyFurnaceDebug
+  suffix: Ignited, Infinity
+  categories: [ DoNotMap ]
+  components:
+  - type: CP14AutoIgnite
+  - type: CP14Fireplace
+    fuelDrainingPerUpdate: 0

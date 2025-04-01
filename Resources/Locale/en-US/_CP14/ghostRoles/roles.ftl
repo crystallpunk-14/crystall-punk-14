@@ -1,2 +1,2 @@
-cp14-ghost-role-information-name-skeleton = Undead friendly skeleton
-cp14-ghost-role-information-description-skeleton = A spawn of purest kindness, instilling a living soul into dead bones. Often such souls are controlled by adventurers, forever saving them.
+cp14-ghost-role-information-name-skeleton = Undead skeleton
+cp14-ghost-role-information-description-skeleton = The spawn of necromancy, putting a living soul into dead bones. Often such souls are controlled by the necromancer, doing his bidding.

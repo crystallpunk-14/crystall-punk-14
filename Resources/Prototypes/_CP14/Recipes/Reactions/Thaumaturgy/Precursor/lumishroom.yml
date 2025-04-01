@@ -1,0 +1,49 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: CP14LumiMushroomSplitting
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14LumiMushroom:
+      amount: 1
+  products:
+    CP14EssenceLight: 0.5
+  cp14RandomProducts:
+  - CP14EssenceWater: 0.5
+  - CP14EssenceEarth: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+# Idea: Full randomness
+
+- type: reaction
+  id: CP14LumiMushroomAdmixture
+  minTemp: 500
+  reactants:
+    CP14LumiMushroom:
+      amount: 1
+    CP14BasicEffectEmpty:
+      amount: 1
+  cp14RandomProducts:
+  - CP14BasicEffectHealBrute: 2
+  - CP14BasicEffectDamageBrute: 2
+  - CP14BasicEffectHealHeat: 2
+  - CP14BasicEffectDamageHeat: 2
+  - CP14BasicEffectHealCold: 2
+  - CP14BasicEffectDamageCold: 2
+  - CP14BasicEffectHealPoison: 2
+  - CP14BasicEffectDamagePoison: 2
+  - CP14BasicEffectHealAirloss: 2
+  - CP14BasicEffectDamageAirloss: 2
+  - CP14BasicEffectBloodRestore: 2
+  - CP14BasicEffectBloodAbsorption: 2
+  - CP14BasicEffectSatiateHunger: 2
+  - CP14BasicEffectSatiateThirst: 2
+  - CP14BasicEffectHealMana: 2
+  - CP14BasicEffectDamageMana: 2
+  - CP14BasicEffectSpeedUp: 2
+  - CP14BasicEffectSpeedDown: 2
+  - CP14BasicEffectSleep: 2
+  - CP14BasicEffectUnsleep: 2

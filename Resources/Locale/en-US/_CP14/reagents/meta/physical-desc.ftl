@@ -10,4 +10,3 @@ cp14-reagent-physical-desc-powdery = powdery
 cp14-reagent-physical-desc-shimmering = shimmering
 cp14-reagent-physical-desc-grainy = grainy
 cp14-reagent-physical-desc-slick = slick
-cp14-reagent-physical-desc-molten = molten

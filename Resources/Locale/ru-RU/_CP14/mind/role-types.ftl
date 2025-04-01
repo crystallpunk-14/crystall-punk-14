@@ -1,1 +1,1 @@
-cp14-role-type-demiplane-antag-name = Спасатель демиплана
+cp14-role-type-demiplane-antag-name = Антагонист демиплана

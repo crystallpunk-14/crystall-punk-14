@@ -1,1 +1,1 @@
-cp14-role-type-demiplane-antag-name = The savior of the demiplane
+cp14-role-type-demiplane-antag-name = Demiplane antagonist
