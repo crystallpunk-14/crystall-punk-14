@@ -73,7 +73,7 @@
   id: CP14AlloyCoconut
   name: cp14-reagent-name-alloy-coconut
   desc: cp14-reagent-desc-alloy-coconut
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#baaa9a"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -93,7 +93,7 @@
   id: CP14AlloyNotCoconut
   name: cp14-reagent-name-alloy-not-coconut
   desc: cp14-reagent-desc-alloy-not-coconut
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#c18c38"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -113,7 +113,7 @@
   id: CP14AlloyInversium
   name: cp14-reagent-name-alloy-inversium
   desc: cp14-reagent-desc-alloy-inversium
-  group: CP14Alloy
+  group: CP14AlloyApril
   color: "#70b670"
 
 # Temperature
@@ -122,7 +122,7 @@
   id: CP14AlloyNormaldaynium
   name: cp14-reagent-name-alloy-normaldaynium
   desc: cp14-reagent-desc-alloy-normaldaynium
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#d9af7e"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -141,7 +141,7 @@
   id: CP14AlloyBaddaynium
   name: cp14-reagent-name-alloy-baddaynium
   desc: cp14-reagent-desc-alloy-baddaynium
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#ceb398"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -164,7 +164,7 @@
   id: CP14AlloyHealium
   name: cp14-reagent-name-alloy-healium
   desc: cp14-reagent-desc-alloy-healium
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#d48c1e"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -185,7 +185,7 @@
   id: CP14AlloyKillium
   name: cp14-reagent-name-alloy-killium
   desc: cp14-reagent-desc-alloy-killium
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#e29a34"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -206,7 +206,7 @@
   id: CP14AlloyDinner
   name: cp14-reagent-name-alloy-dinner
   desc: cp14-reagent-desc-alloy-dinner
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#70c88e"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -223,7 +223,7 @@
   id: CP14AlloySpeedrunnium
   name: cp14-reagent-name-alloy-speedrunnium
   desc: cp14-reagent-desc-alloy-speedrunnium
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#90c1be"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -246,7 +246,7 @@
   id: CP14AlloyTurtle
   name: cp14-reagent-name-alloy-turtle
   desc: cp14-reagent-desc-alloy-turtle
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#6bcab1"
   physicalDesc: cp14-reagent-physical-desc-molten
@@ -269,7 +269,7 @@
   id: CP14AlloyBreakingbad
   name: cp14-reagent-name-alloy-breakingbad
   desc: cp14-reagent-desc-alloy-breakingbad
-  group: CP14Alloy
+  group: CP14AlloyApril
   flavor: CP14Metallic
   color: "#4946d2"
   physicalDesc: cp14-reagent-physical-desc-molten
