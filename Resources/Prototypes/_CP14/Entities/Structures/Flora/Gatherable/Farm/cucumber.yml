@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantCucumber
-  parent: CP14GatherablePlantBase
+  parent: CP14GatherablePlantBoringBase
   name: cucumber
   description: Don't trust people who know how to turn into pickles.
   components:
@@ -13,19 +13,6 @@
       visible: false
     - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
-  - type: CP14PlantMetabolizer
-    metabolizerId: Base
-  - type: CP14PlantEnergyFromLight
-    energy: 1
-    daytime: true
-  - type: CP14PlantVisuals
-    growthSteps: 6
-  - type: CP14PlantGrowing
-    energyCost: 1
-    resourceCost: 1
-    growthPerUpdate: 0.05 # 20 minute to full grow
-  - type: CP14PlantFading
-    resourcePerMinute: 0.15
   - type: CP14PlantGatherable
     deleteAfterHarvest: false
     loot:

@@ -82,7 +82,7 @@
 - type: entity
   id: CP14GatherableWaterAirLily
   parent: 
-  - CP14GatherableWildBase
+  - CP14GatherableBase
   - CP14WaterLilies
   name: air lily
   description: A light, delicate and airy flower. It is said that its special properties even allow it to breathe underwater...
@@ -104,7 +104,8 @@
         big_flower2: ""
         big_flower3: ""
         big_flower4: ""
-  - type: Gatherable
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
     loot:
       All: CP14GatherAirLily
 

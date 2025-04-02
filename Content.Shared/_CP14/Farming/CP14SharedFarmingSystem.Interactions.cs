@@ -4,6 +4,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Weapons.Melee.Events;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
@@ -14,86 +15,128 @@ public abstract partial class CP14SharedFarmingSystem
 {
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     private void InitializeInteractions()
     {
         SubscribeLocalEvent<CP14SeedComponent, AfterInteractEvent>(OnSeedInteract);
-        SubscribeLocalEvent<CP14PlantGatherableComponent, ActivateInWorldEvent>(OnActivate);
-        SubscribeLocalEvent<CP14PlantGatherableComponent, AttackedEvent>(OnAttacked);
+        SubscribeLocalEvent<CP14PlantGatherableComponent, InteractUsingEvent>(OnActivate);
+        SubscribeLocalEvent<CP14PlantGatherableComponent, CP14PlantGatherDoAfterEvent>(OnGatherDoAfter);
 
-        SubscribeLocalEvent<CP14SeedComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
+        SubscribeLocalEvent<CP14SeedComponent, CP14PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
     }
 
-    private void OnAttacked(Entity<CP14PlantGatherableComponent> gatherable, ref AttackedEvent args)
+    private void OnActivate(Entity<CP14PlantGatherableComponent> gatherable, ref InteractUsingEvent args)
     {
+        if (args.Handled)
+            return;
+
         if (_whitelist.IsWhitelistFailOrNull(gatherable.Comp.ToolWhitelist, args.Used))
             return;
 
-        TryHarvestPlant(gatherable, out _);
-    }
-
-    private void OnActivate(Entity<CP14PlantGatherableComponent> gatherable, ref ActivateInWorldEvent args)
-    {
-        if (args.Handled || !args.Complex)
-            return;
-
-        if (_whitelist.IsWhitelistFailOrNull(gatherable.Comp.ToolWhitelist, args.User))
-            return;
-
-        TryHarvestPlant(gatherable, out _);
+        TryHarvestPlant(gatherable, args.Used, args.User);
         args.Handled = true;
     }
 
-    public bool TryHarvestPlant(Entity<CP14PlantGatherableComponent> gatheredPlant,
+    private bool CanHarvestPlant(Entity<CP14PlantGatherableComponent> gatherable)
+    {
+        if (PlantQuery.TryComp(gatherable, out var plant))
+        {
+            if (plant.GrowthLevel < gatherable.Comp.GrowthLevelToHarvest)
+                return false;
+        }
+
+        if (gatherable.Comp.Loot == null)
+            return false;
+
+        return true;
+    }
+
+    private bool TryHarvestPlant(Entity<CP14PlantGatherableComponent> gatherable,
+        EntityUid used,
+        EntityUid user)
+    {
+        if (!CanHarvestPlant(gatherable))
+            return false;
+
+        _audio.PlayPvs(gatherable.Comp.GatherSound, Transform(gatherable).Coordinates);
+
+        var doAfterArgs =
+            new DoAfterArgs(EntityManager,
+                user,
+                gatherable.Comp.GatherDelay,
+                new CP14PlantGatherDoAfterEvent(),
+                gatherable,
+                used: used)
+            {
+                BreakOnDamage = true,
+                BlockDuplicate = false,
+                BreakOnMove = true,
+                BreakOnHandChange = true,
+            };
+
+        _doAfter.TryStartDoAfter(doAfterArgs);
+
+        return true;
+    }
+
+    private void OnGatherDoAfter(Entity<CP14PlantGatherableComponent> gatherable, ref CP14PlantGatherDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        if (!CanHarvestPlant(gatherable))
+            return;
+
+        args.Handled = true;
+
+        HarvestPlant(gatherable, out _, args.Used);
+    }
+
+    public void HarvestPlant(Entity<CP14PlantGatherableComponent> gatherable,
         out HashSet<EntityUid> result,
-        EntityUid? gatherer = null)
+        EntityUid? used)
     {
         result = new();
 
-        if (!PlantQuery.TryComp(gatheredPlant, out var plant))
-            return false;
+        if (_net.IsClient)
+            return;
 
-        if (plant.GrowthLevel < gatheredPlant.Comp.GrowthLevelToHarvest)
-            return false;
+        if (gatherable.Comp.Loot == null)
+            return;
 
-        //if (TryComp<SoundOnGatherComponent>(gatheredPlant, out var soundComp))
-        //{
-        //    _audio.PlayPvs(soundComp.Sound, Transform(gatheredPlant).Coordinates);
-        //}
+        var pos = _transform.GetMapCoordinates(gatherable);
 
-        if (gatheredPlant.Comp.Loot == null)
-            return false;
-
-        var pos = _transform.GetMapCoordinates(gatheredPlant);
-
-        if (_net.IsServer)
+        foreach (var (tag, table) in gatherable.Comp.Loot)
         {
-            foreach (var (tag, table) in gatheredPlant.Comp.Loot)
+            if (tag != "All")
             {
-                if (tag != "All")
-                {
-                    if (gatherer != null && !_tag.HasTag(gatherer.Value, tag))
-                        continue;
-                }
-
-                if (!_proto.TryIndex(table, out var getLoot))
+                if (used != null && !_tag.HasTag(used.Value, tag))
                     continue;
+            }
 
-                var spawnLoot = getLoot.GetSpawns(_random);
-                foreach (var loot in spawnLoot)
-                {
-                    var spawnPos = pos.Offset(_random.NextVector2(gatheredPlant.Comp.GatherOffset));
-                    result.Add(Spawn(loot, spawnPos));
-                }
+            if (!_proto.TryIndex(table, out var getLoot))
+                continue;
+
+            var spawnLoot = getLoot.GetSpawns(_random);
+            foreach (var loot in spawnLoot)
+            {
+                var spawnPos = pos.Offset(_random.NextVector2(gatherable.Comp.GatherOffset));
+                result.Add(Spawn(loot, spawnPos));
             }
         }
 
-        if (gatheredPlant.Comp.DeleteAfterHarvest)
-            _destructible.DestroyEntity(gatheredPlant);
-        else
-            AffectGrowth((gatheredPlant, plant), -gatheredPlant.Comp.GrowthCostHarvest);
+        _audio.PlayPvs(gatherable.Comp.GatherSound, Transform(gatherable).Coordinates);
 
-        return true;
+        if (gatherable.Comp.DeleteAfterHarvest)
+            _destructible.DestroyEntity(gatherable);
+        else
+        {
+            if (PlantQuery.TryComp(gatherable, out var plant))
+            {
+                AffectGrowth((gatherable, plant), -gatherable.Comp.GrowthCostHarvest);
+            }
+        }
     }
 
     private void OnSeedInteract(Entity<CP14SeedComponent> seed, ref AfterInteractEvent args)
@@ -108,7 +151,7 @@ public abstract partial class CP14SharedFarmingSystem
             new DoAfterArgs(EntityManager,
                 args.User,
                 seed.Comp.PlantingTime,
-                new PlantSeedDoAfterEvent(GetNetCoordinates(args.ClickLocation)),
+                new CP14PlantSeedDoAfterEvent(GetNetCoordinates(args.ClickLocation)),
                 seed)
             {
                 BreakOnDamage = true,
@@ -121,7 +164,7 @@ public abstract partial class CP14SharedFarmingSystem
         args.Handled = true;
     }
 
-    private void OnSeedPlantedDoAfter(Entity<CP14SeedComponent> ent, ref PlantSeedDoAfterEvent args)
+    private void OnSeedPlantedDoAfter(Entity<CP14SeedComponent> ent, ref CP14PlantSeedDoAfterEvent args)
     {
         if (_net.IsClient || args.Handled || args.Cancelled)
             return;

@@ -78,16 +78,19 @@ public abstract partial class CP14SharedFarmingSystem : EntitySystem
     }
 
     [Serializable, NetSerializable]
-    public sealed partial class PlantSeedDoAfterEvent : DoAfterEvent
+    public sealed partial class CP14PlantSeedDoAfterEvent : DoAfterEvent
     {
         [DataField(required:true)]
         public NetCoordinates Coordinates;
 
-        public PlantSeedDoAfterEvent(NetCoordinates coordinates)
+        public CP14PlantSeedDoAfterEvent(NetCoordinates coordinates)
         {
             Coordinates = coordinates;
         }
 
         public override DoAfterEvent Clone() => this;
     }
+
+    [Serializable, NetSerializable]
+    public sealed partial class CP14PlantGatherDoAfterEvent : SimpleDoAfterEvent;
 }
