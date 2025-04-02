@@ -1,11 +1,11 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Farming.Components;
+namespace Content.Shared._CP14.Farming.Components;
 
 /// <summary>
 /// a component that allows for the creation of the plant entity on the soil
 /// </summary>
-[RegisterComponent, Access(typeof(CP14FarmingSystem))]
+[RegisterComponent, Access(typeof(CP14SharedFarmingSystem))]
 public sealed partial class CP14SeedComponent : Component
 {
     [DataField]

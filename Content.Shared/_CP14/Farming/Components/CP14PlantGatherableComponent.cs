@@ -1,9 +1,8 @@
-
 using Content.Shared.EntityList;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Farming;
+namespace Content.Shared._CP14.Farming.Components;
 
 /// <summary>
 /// Means that the plant can be harvested.

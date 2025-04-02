@@ -1,13 +1,11 @@
-using Content.Server._CP14.Farming.Components;
-using Content.Server.Gatherable.Components;
-using Content.Shared._CP14.Farming;
+using Content.Shared._CP14.Farming.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Weapons.Melee.Events;
 
-namespace Content.Server._CP14.Farming;
+namespace Content.Shared._CP14.Farming;
 
-public sealed partial class CP14FarmingSystem
+public abstract partial class CP14SharedFarmingSystem
 {
     private void InitializeInteractions()
     {
@@ -48,33 +46,35 @@ public sealed partial class CP14FarmingSystem
         if (plant.GrowthLevel < gatheredPlant.Comp.GrowthLevelToHarvest)
             return false;
 
-
-        if (TryComp<SoundOnGatherComponent>(gatheredPlant, out var soundComp))
-        {
-            _audio.PlayPvs(soundComp.Sound, Transform(gatheredPlant).Coordinates);
-        }
+        //if (TryComp<SoundOnGatherComponent>(gatheredPlant, out var soundComp))
+        //{
+        //    _audio.PlayPvs(soundComp.Sound, Transform(gatheredPlant).Coordinates);
+        //}
 
         if (gatheredPlant.Comp.Loot == null)
             return false;
 
         var pos = _transform.GetMapCoordinates(gatheredPlant);
 
-        foreach (var (tag, table) in gatheredPlant.Comp.Loot)
+        if (_net.IsServer)
         {
-            if (tag != "All")
+            foreach (var (tag, table) in gatheredPlant.Comp.Loot)
             {
-                if (gatherer != null && !_tag.HasTag(gatherer.Value, tag))
+                if (tag != "All")
+                {
+                    if (gatherer != null && !_tag.HasTag(gatherer.Value, tag))
+                        continue;
+                }
+
+                if (!_proto.TryIndex(table, out var getLoot))
                     continue;
-            }
 
-            if (!_proto.TryIndex(table, out var getLoot))
-                continue;
-
-            var spawnLoot = getLoot.GetSpawns(_random);
-            foreach (var loot in spawnLoot)
-            {
-                var spawnPos = pos.Offset(_random.NextVector2(gatheredPlant.Comp.GatherOffset));
-                result.Add(Spawn(loot, spawnPos));
+                var spawnLoot = getLoot.GetSpawns(_random);
+                foreach (var loot in spawnLoot)
+                {
+                    var spawnPos = pos.Offset(_random.NextVector2(gatheredPlant.Comp.GatherOffset));
+                    result.Add(Spawn(loot, spawnPos));
+                }
             }
         }
 

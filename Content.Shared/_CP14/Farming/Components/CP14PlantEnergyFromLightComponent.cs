@@ -1,9 +1,9 @@
-namespace Content.Server._CP14.Farming.Components;
+namespace Content.Shared._CP14.Farming.Components;
 
 /// <summary>
 /// allows the plant to receive energy passively, depending on daylight
 /// </summary>
-[RegisterComponent, Access(typeof(CP14FarmingSystem))]
+[RegisterComponent, Access(typeof(CP14SharedFarmingSystem))]
 public sealed partial class CP14PlantEnergyFromLightComponent : Component
 {
     [DataField]

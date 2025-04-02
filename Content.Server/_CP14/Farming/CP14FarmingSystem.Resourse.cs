@@ -1,5 +1,4 @@
-using Content.Server._CP14.Farming.Components;
-using Content.Shared._CP14.Farming;
+using Content.Shared._CP14.Farming.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 
 namespace Content.Server._CP14.Farming;
@@ -11,13 +10,20 @@ public sealed partial class CP14FarmingSystem
         SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(OnTakeEnergyFromLight);
         SubscribeLocalEvent<CP14PlantMetabolizerComponent, CP14PlantUpdateEvent>(OnPlantMetabolizing);
         SubscribeLocalEvent<CP14PlantFadingComponent, CP14PlantUpdateEvent>(OnPlantFade);
+        SubscribeLocalEvent<CP14PlantFadingComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<CP14PlantGrowingComponent, CP14AfterPlantUpdateEvent>(OnPlantGrowing);
     }
 
+    private void OnMapInit(Entity<CP14PlantFadingComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.BirthTime = _timing.CurTime;
+    }
+
     private void OnPlantFade(Entity<CP14PlantFadingComponent> ent, ref CP14PlantUpdateEvent args)
     {
-        var realFade = ent.Comp.ResourcePerMinute * (float)args.Plant.Comp.Age.TotalMinutes;
+        var age = _timing.CurTime - ent.Comp.BirthTime;
+        var realFade = ent.Comp.ResourcePerMinute * (float)age.TotalMinutes;
         if (args.Plant.Comp.Resource < realFade)
         {
             _damageable.TryChangeDamage(ent, ent.Comp.FadeDamage, true);
