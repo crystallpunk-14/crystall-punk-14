@@ -37,6 +37,7 @@ public sealed class DiscordAuthManager
         {"1186566619858731038", "2PAC和奥萨玛歌迷俱乐部"},
         {"1355279097906855968", ""},
         {"550379104193740831", "Old Dishonored Ed testing server"},
+        {"1352009516941705216", ""},
     };
 
     public event EventHandler<ICommonSession>? PlayerVerified;
