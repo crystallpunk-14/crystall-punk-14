@@ -2,8 +2,6 @@ using Content.Shared._CP14.Farming;
 using Content.Shared._CP14.Farming.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -17,7 +15,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
 
     public override void Initialize()
     {
@@ -26,7 +23,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         InitializeResources();
 
         SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<CP14PlantAutoRootComponent, MapInitEvent>(OnAutoRootMapInit);
     }
 
     public override void Update(float frameTime)
@@ -59,30 +55,5 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
     {
         var newTime = _random.NextFloat(plant.Comp.UpdateFrequency);
         plant.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
-    }
-
-    private void OnAutoRootMapInit(Entity<CP14PlantAutoRootComponent> autoRoot, ref MapInitEvent args)
-    {
-        var grid = Transform(autoRoot).GridUid;
-        if (grid == null || !TryComp<MapGridComponent>(grid, out var gridComp))
-            return;
-
-        var targetPos = new EntityCoordinates(grid.Value,Transform(autoRoot).LocalPosition);
-        var anchored = _map.GetAnchoredEntities(grid.Value, gridComp, targetPos);
-
-        foreach (var entt in anchored)
-        {
-            if (!TryComp<CP14SoilComponent>(entt, out var soil))
-                continue;
-
-            soil.PlantUid = autoRoot;
-
-            if (TryComp<CP14PlantComponent>(autoRoot, out var plantComp))
-            {
-                plantComp.SoilUid = entt;
-            }
-
-            break;
-        }
     }
 }

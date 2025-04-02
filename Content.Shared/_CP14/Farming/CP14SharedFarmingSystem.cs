@@ -6,6 +6,7 @@ using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Whitelist;
+using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -26,7 +27,6 @@ public abstract partial class CP14SharedFarmingSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
 
     protected EntityQuery<CP14PlantComponent> PlantQuery;
-    protected EntityQuery<CP14SoilComponent> SoilQuery;
     protected EntityQuery<CP14SeedComponent> SeedQuery;
     protected EntityQuery<SolutionContainerManagerComponent> SolutionQuery;
 
@@ -36,7 +36,6 @@ public abstract partial class CP14SharedFarmingSystem : EntitySystem
         InitializeInteractions();
 
         PlantQuery = GetEntityQuery<CP14PlantComponent>();
-        SoilQuery = GetEntityQuery<CP14SoilComponent>();
         SeedQuery = GetEntityQuery<CP14SeedComponent>();
         SolutionQuery = GetEntityQuery<SolutionContainerManagerComponent>();
 
@@ -79,7 +78,16 @@ public abstract partial class CP14SharedFarmingSystem : EntitySystem
     }
 
     [Serializable, NetSerializable]
-    public sealed partial class PlantSeedDoAfterEvent : SimpleDoAfterEvent
+    public sealed partial class PlantSeedDoAfterEvent : DoAfterEvent
     {
+        [DataField(required:true)]
+        public NetCoordinates Coordinates;
+
+        public PlantSeedDoAfterEvent(NetCoordinates coordinates)
+        {
+            Coordinates = coordinates;
+        }
+
+        public override DoAfterEvent Clone() => this;
     }
 }

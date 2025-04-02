@@ -1,19 +1,25 @@
+using System.Linq;
 using Content.Shared._CP14.Farming.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
+using Content.Shared.Maps;
 using Content.Shared.Weapons.Melee.Events;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 
 namespace Content.Shared._CP14.Farming;
 
 public abstract partial class CP14SharedFarmingSystem
 {
+    [Dependency] private readonly SharedMapSystem _map = default!;
+
     private void InitializeInteractions()
     {
         SubscribeLocalEvent<CP14SeedComponent, AfterInteractEvent>(OnSeedInteract);
         SubscribeLocalEvent<CP14PlantGatherableComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<CP14PlantGatherableComponent, AttackedEvent>(OnAttacked);
 
-        SubscribeLocalEvent<CP14SoilComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
+        SubscribeLocalEvent<CP14SeedComponent, PlantSeedDoAfterEvent>(OnSeedPlantedDoAfter);
     }
 
     private void OnAttacked(Entity<CP14PlantGatherableComponent> gatherable, ref AttackedEvent args)
@@ -36,7 +42,9 @@ public abstract partial class CP14SharedFarmingSystem
         args.Handled = true;
     }
 
-    public bool TryHarvestPlant(Entity<CP14PlantGatherableComponent> gatheredPlant, out HashSet<EntityUid> result, EntityUid? gatherer = null)
+    public bool TryHarvestPlant(Entity<CP14PlantGatherableComponent> gatheredPlant,
+        out HashSet<EntityUid> result,
+        EntityUid? gatherer = null)
     {
         result = new();
 
@@ -91,16 +99,15 @@ public abstract partial class CP14SharedFarmingSystem
         if (args.Handled)
             return;
 
-        if (!SoilQuery.TryComp(args.Target, out var soil))
+        if (!CanPlantSeed(seed, args.ClickLocation, args.User))
             return;
 
-        if (EntityManager.EntityExists(soil.PlantUid))
-        {
-            _popup.PopupEntity(Loc.GetString("cp14-farming-soil-interact-plant-exist"), args.Target.Value, args.User);
-            return;
-        }
         var doAfterArgs =
-            new DoAfterArgs(EntityManager, args.User, seed.Comp.PlantingTime, new PlantSeedDoAfterEvent(), args.Target, args.Used, args.Target)
+            new DoAfterArgs(EntityManager,
+                args.User,
+                seed.Comp.PlantingTime,
+                new PlantSeedDoAfterEvent(GetNetCoordinates(args.ClickLocation)),
+                seed)
             {
                 BreakOnDamage = true,
                 BlockDuplicate = true,
@@ -112,45 +119,47 @@ public abstract partial class CP14SharedFarmingSystem
         args.Handled = true;
     }
 
-    public bool TryPlantSeed(EntityUid seed, EntityUid soil, EntityUid? user)
+    private void OnSeedPlantedDoAfter(Entity<CP14SeedComponent> ent, ref PlantSeedDoAfterEvent args)
     {
-        if (!SoilQuery.TryComp(soil, out var soilComp))
+        var position = GetCoordinates(args.Coordinates);
+        if (!CanPlantSeed(ent, position, args.User))
+            return;
+
+        Spawn(ent.Comp.PlantProto, position);
+    }
+
+    public bool CanPlantSeed(Entity<CP14SeedComponent> seed, EntityCoordinates position, EntityUid? user)
+    {
+        var map = _transform.GetMap(position);
+        if (!TryComp<MapGridComponent>(map, out var gridComp))
             return false;
 
-        if (!SeedQuery.TryComp(seed, out var seedComp))
+        var tileRef = position.GetTileRef();
+
+        if (tileRef is null)
             return false;
 
-        if (Exists(soilComp.PlantUid))
+        var tile = tileRef.Value.Tile.GetContentTileDefinition();
+
+        if (!seed.Comp.SoilTile.Contains(tile))
         {
             if (user is not null)
-                _popup.PopupEntity(Loc.GetString("cp14-farming-soil-interact-plant-exist"), soil, user.Value);
+            {
+                _popup.PopupEntity(Loc.GetString("cp14-farming-soil-wrong", ("seed", MetaData(seed).EntityName)),
+                    user.Value,
+                    user.Value);
+            }
 
             return false;
         }
 
-        var plant = SpawnAttachedTo(seedComp.PlantProto, Transform(soil).Coordinates);
-
-        if (!PlantQuery.TryComp(plant, out var plantComp))
+        if (_map.GetAnchoredEntities((map.Value, gridComp), position).ToList().Count > 0)
+        {
+            if (user is not null)
+                _popup.PopupEntity(Loc.GetString("cp14-farming-soil-occupied"), user.Value, user.Value);
             return false;
-
-        _transform.SetParent(plant, soil);
-        soilComp.PlantUid = plant;
-        plantComp.SoilUid = soil;
+        }
 
         return true;
-    }
-
-    private void OnSeedPlantedDoAfter(Entity<CP14SoilComponent> soil, ref PlantSeedDoAfterEvent args)
-    {
-        if (args.Cancelled || args.Handled || args.Args.Used == null || args.Target == null)
-            return;
-
-        if (!TryPlantSeed(args.Target.Value, soil, args.User))
-            return;
-
-        //Audio
-        QueueDel(args.Target); //delete seed
-
-        args.Handled = true;
     }
 }

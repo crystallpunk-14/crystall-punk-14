@@ -3,16 +3,11 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._CP14.Farming.Components;
 
 /// <summary>
-/// The backbone of any plant. Provides common variables for the plant to other components, and a link to the soil
+/// The backbone of any plant. Provides common variables for the plant to other components
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState(true), Access(typeof(CP14SharedFarmingSystem))]
 public sealed partial class CP14PlantComponent : Component
 {
-    /// <summary>
-    /// Soil link. May be null, as not all plants in the world grow on entity soil (e.g. wild shrubs)
-    /// </summary>
-    public EntityUid? SoilUid;
-
     /// <summary>
     /// The ability to consume a resource for growing
     /// </summary>
@@ -42,6 +37,9 @@ public sealed partial class CP14PlantComponent : Component
 
     [DataField, AutoPausedField]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
+
+    [DataField(required: true)]
+    public string Solution = string.Empty;
 }
 
 /// <summary>

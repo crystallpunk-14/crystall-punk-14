@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Farming.Prototypes;
 
 /// <summary>
-/// Allows the plant to drink chemicals from the soil. The effect of the drank reagents depends on the selected metabolizer.
+/// Allows the plant to drink chemicals. The effect of the drank reagents depends on the selected metabolizer.
 /// </summary>
 [Prototype("CP14PlantMetabolizer")]
 public sealed partial class CP14PlantMetabolizerPrototype : IPrototype
