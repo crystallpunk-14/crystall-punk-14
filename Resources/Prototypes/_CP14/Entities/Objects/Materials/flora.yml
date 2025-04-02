@@ -6,6 +6,7 @@
   suffix: 1
   categories: [ ForkFiltered ]
   components:
+  - type: Appearance
   - type: Item
     size: Normal
   - type: Stack
@@ -39,6 +40,7 @@
   suffix: 1
   categories: [ ForkFiltered ]
   components:
+  - type: Appearance
   - type: Item
     size: Normal
   - type: Stack
@@ -52,7 +54,7 @@
   - type: Sprite
     sprite: _CP14/Objects/Materials/compost.rsi
     layers:
-      - state: grass_material1
+      - state: compost1
         map: ["base"]
   - type: Material
 
