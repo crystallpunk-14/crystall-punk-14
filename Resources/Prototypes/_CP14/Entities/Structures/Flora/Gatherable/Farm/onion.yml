@@ -2,11 +2,15 @@
   id: CP14PlantOnion
   parent: CP14GatherablePlantBase
   name: onion
-  description: OOO # TODO
+  description: He's so cute it brings tears to my eyes to cut him up.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Flora/Farm/onion.rsi
     layers:
+    - state: liq-1
+      sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantMetabolizer

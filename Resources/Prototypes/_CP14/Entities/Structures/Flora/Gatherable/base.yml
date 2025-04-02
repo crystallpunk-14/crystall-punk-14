@@ -12,7 +12,6 @@
   - type: Physics
     canCollide: false
     bodyType: Static
-  - type: CP14PlantAutoRoot
   - type: Damageable
     damageContainer: Biological
   - type: MeleeSound
@@ -75,9 +74,10 @@
     growthSteps: 5
     growState: "grow-"
   - type: CP14Plant
-    resource: 10
-    energy: 0
+    resource: 30
+    energy: 30
     growthLevel: 0
+    solution: plant
   - type: CP14PlantGatherable
     toolWhitelist:
       tags:
@@ -93,3 +93,7 @@
     maxRefill: 50
   - type: ExaminableSolution
     solution: plant
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: liq-
+    solutionName: plant

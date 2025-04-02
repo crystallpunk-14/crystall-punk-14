@@ -6,12 +6,14 @@ using Content.Shared.Maps;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Farming;
 
 public abstract partial class CP14SharedFarmingSystem
 {
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private void InitializeInteractions()
     {
@@ -110,7 +112,7 @@ public abstract partial class CP14SharedFarmingSystem
                 seed)
             {
                 BreakOnDamage = true,
-                BlockDuplicate = true,
+                BlockDuplicate = false,
                 BreakOnMove = true,
                 BreakOnHandChange = true,
             };
@@ -121,11 +123,17 @@ public abstract partial class CP14SharedFarmingSystem
 
     private void OnSeedPlantedDoAfter(Entity<CP14SeedComponent> ent, ref PlantSeedDoAfterEvent args)
     {
+        if (_net.IsClient || args.Handled || args.Cancelled)
+            return;
+
         var position = GetCoordinates(args.Coordinates);
         if (!CanPlantSeed(ent, position, args.User))
             return;
 
+        args.Handled = true;
+
         Spawn(ent.Comp.PlantProto, position);
+        QueueDel(ent);
     }
 
     public bool CanPlantSeed(Entity<CP14SeedComponent> seed, EntityCoordinates position, EntityUid? user)
@@ -143,7 +151,7 @@ public abstract partial class CP14SharedFarmingSystem
 
         if (!seed.Comp.SoilTile.Contains(tile))
         {
-            if (user is not null)
+            if (user is not null && _timing.IsFirstTimePredicted && _net.IsClient)
             {
                 _popup.PopupEntity(Loc.GetString("cp14-farming-soil-wrong", ("seed", MetaData(seed).EntityName)),
                     user.Value,

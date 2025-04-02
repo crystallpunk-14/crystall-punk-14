@@ -14,9 +14,10 @@
   craftTime: 1
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14FoodTomatoesSlice
+    protoId: CP14FoodTomatoes
     count: 1
   result: CP14SeedTomato
+  resultCount: 3
 
 - type: CP14Recipe
   id: CP14SeedCabbage
@@ -24,9 +25,10 @@
   craftTime: 1
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14FoodCabbageSlice
+    protoId: CP14FoodCabbage
     count: 1
   result: CP14SeedCabbage
+  resultCount: 3
 
 - type: CP14Recipe
   id: CP14SeedPumpkin
@@ -34,9 +36,10 @@
   craftTime: 1
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14FoodPumpkinSlice
+    protoId: CP14FoodPumpkin
     count: 1
   result: CP14SeedPumpkin
+  resultCount: 3
 
 - type: CP14Recipe
   id: CP14SeedCucumber
@@ -57,6 +60,7 @@
     protoId: CP14FoodOnion
     count: 1
   result: CP14SeedOnion
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14SeedPepper
@@ -67,3 +71,4 @@
     protoId: CP14FoodPepper
     count: 1
   result: CP14SeedPepper
+  resultCount: 3

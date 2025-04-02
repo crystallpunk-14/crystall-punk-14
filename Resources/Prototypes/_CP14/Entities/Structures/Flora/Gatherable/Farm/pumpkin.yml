@@ -2,11 +2,15 @@
   id: CP14PlantPumpkin
   parent: CP14GatherablePlantBase
   name: pumpkin
-  description: OOO # TODO
+  description: Legends say there is a pumpkin king who stares into your soul through the crowns of trees.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Flora/Farm/pumpkin.rsi
     layers:
+    - state: liq-1
+      sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantMetabolizer

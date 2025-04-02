@@ -10,11 +10,11 @@ namespace Content.Shared._CP14.Farming.Components;
 public sealed partial class CP14SeedComponent : Component
 {
     [DataField]
-    public TimeSpan PlantingTime = TimeSpan.FromSeconds(2f);
+    public TimeSpan PlantingTime = TimeSpan.FromSeconds(1f);
 
     [DataField(required: true)]
     public EntProtoId PlantProto;
 
-    [DataField(required: true)]
-    public HashSet<ProtoId<ContentTileDefinition>> SoilTile = new();
+    [DataField]
+    public HashSet<ProtoId<ContentTileDefinition>> SoilTile = new() { "CP14FloorDirt" };
 }

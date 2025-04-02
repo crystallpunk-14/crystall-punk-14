@@ -2,11 +2,15 @@
   id: CP14PlantCucumber
   parent: CP14GatherablePlantBase
   name: cucumber
-  description: OOO # TODO
+  description: Don't trust people who know how to turn into pickles.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Flora/Farm/cucumber.rsi
     layers:
+    - state: liq-1
+      sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantMetabolizer

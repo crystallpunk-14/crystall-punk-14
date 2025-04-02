@@ -2,11 +2,15 @@
   id: CP14PlantPotato
   parent: CP14GatherablePlantBase
   name: potato
-  description: OOO # TODO
+  description: Some like to associate themselves with potatoes. People like that are not bad people.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Flora/Farm/potato.rsi
     layers:
+    - state: liq-1
+      sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - state: grow-1
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantMetabolizer

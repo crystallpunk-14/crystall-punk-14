@@ -12,7 +12,7 @@ public sealed partial class CP14PlantComponent : Component
     /// The ability to consume a resource for growing
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float Energy = 0f;
+    public float Energy = 30f;
 
     [DataField, AutoNetworkedField]
     public float EnergyMax = 100f;
@@ -21,7 +21,7 @@ public sealed partial class CP14PlantComponent : Component
     /// resource consumed for growth
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float Resource = 0f;
+    public float Resource = 30f;
 
     [DataField, AutoNetworkedField]
     public float ResourceMax = 100f;
