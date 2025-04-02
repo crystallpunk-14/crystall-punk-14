@@ -66,13 +66,13 @@ public sealed partial class CP14FarmingSystem
     private void OnPlantMetabolizing(Entity<CP14PlantMetabolizerComponent> ent, ref CP14PlantUpdateEvent args)
     {
         if (args.Plant.Comp.SoilUid == null ||
-            !TryComp<CP14SoilComponent>(args.Plant.Comp.SoilUid, out var soil) ||
-            !TryComp<CP14PlantComponent>(ent, out var plant) ||
-            !TryComp<SolutionContainerManagerComponent>(args.Plant.Comp.SoilUid, out var solmanager))
+            !SoilQuery.TryComp(args.Plant.Comp.SoilUid, out var soil) ||
+            !PlantQuery.TryComp(ent, out var plant) ||
+            !SolutionQuery.TryComp(args.Plant.Comp.SoilUid, out var solmanager))
             return;
 
         var solEntity = new Entity<SolutionContainerManagerComponent?>(args.Plant.Comp.SoilUid.Value, solmanager);
-        if (!_solutionContainer.TryGetSolution(solEntity, soil.Solution, out var soln, out var solution))
+        if (!_solutionContainer.TryGetSolution(solEntity, soil.Solution, out var soln, out _))
             return;
 
         if (!_proto.TryIndex(ent.Comp.MetabolizerId, out var metabolizer))

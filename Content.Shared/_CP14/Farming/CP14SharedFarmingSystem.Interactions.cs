@@ -40,7 +40,7 @@ public abstract partial class CP14SharedFarmingSystem
     {
         result = new();
 
-        if (!TryComp<CP14PlantComponent>(gatheredPlant, out var plant))
+        if (!PlantQuery.TryComp(gatheredPlant, out var plant))
             return false;
 
         if (plant.GrowthLevel < gatheredPlant.Comp.GrowthLevelToHarvest)
@@ -91,7 +91,7 @@ public abstract partial class CP14SharedFarmingSystem
         if (args.Handled)
             return;
 
-        if (!TryComp<CP14SoilComponent>(args.Target, out var soil))
+        if (!SoilQuery.TryComp(args.Target, out var soil))
             return;
 
         if (EntityManager.EntityExists(soil.PlantUid))
@@ -114,10 +114,10 @@ public abstract partial class CP14SharedFarmingSystem
 
     public bool TryPlantSeed(EntityUid seed, EntityUid soil, EntityUid? user)
     {
-        if (!TryComp<CP14SoilComponent>(soil, out var soilComp))
+        if (!SoilQuery.TryComp(soil, out var soilComp))
             return false;
 
-        if (!TryComp<CP14SeedComponent>(seed, out var seedComp))
+        if (!SeedQuery.TryComp(seed, out var seedComp))
             return false;
 
         if (Exists(soilComp.PlantUid))
@@ -130,7 +130,7 @@ public abstract partial class CP14SharedFarmingSystem
 
         var plant = SpawnAttachedTo(seedComp.PlantProto, Transform(soil).Coordinates);
 
-        if (!TryComp<CP14PlantComponent>(plant, out var plantComp))
+        if (!PlantQuery.TryComp(plant, out var plantComp))
             return false;
 
         _transform.SetParent(plant, soil);
