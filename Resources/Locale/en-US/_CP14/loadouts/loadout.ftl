@@ -63,4 +63,3 @@ cp14-loadout-guildmaster-shirt = Guildmaster shirt
 cp14-loadout-guildmaster-pants = Guildmaster pants
 cp14-loadout-guildmaster-shoes = Guildmaster shoes
 cp14-loadout-guildmaster-spells = Guildmaster spells
-cp14-loadout-guildmaster-weapons = Guildmaster weapon

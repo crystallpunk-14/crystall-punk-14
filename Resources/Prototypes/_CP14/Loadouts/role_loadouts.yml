@@ -126,7 +126,6 @@
   id: JobCP14Guildmaster
   groups:
   - CP14SkillTree
-  - CP14GuildmasterWeapons
   - CP14GuildmasterOuterClothing
   - CP14GeneralEyes
   - CP14GuildmasterHead

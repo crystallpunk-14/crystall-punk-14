@@ -83,18 +83,3 @@
   dummyEntity: CP14ActionSpellMonolithWarp
   actions:
   - CP14ActionSpellMonolithWarp
-
-#Weapons
-
-- type: loadoutGroup
-  id: CP14GuildmasterWeapons
-  name: cp14-loadout-guildmaster-weapons
-  loadouts:
-  - CP14ModularGuildmasterRapier
-  minLimit: 1
-  maxLimit: 1
-- type: loadout
-  id: CP14ModularGuildmasterRapier
-  storage:
-    back:
-    - CP14ModularGuildmasterRapier
