@@ -83,6 +83,13 @@
   maxCount: 10
 
 - type: stack
+  id: CP14Compost
+  name: cp14-stack-compost
+  icon: { sprite: "_CP14/Objects/Materials/compost.rsi", state: compost2 }
+  spawn: CP14CompostMaterial1
+  maxCount: 10
+
+- type: stack
   id: CP14Ash
   name: cp14-stack-ash-pile
   icon: { sprite: "_CP14/Objects/Materials/ash.rsi", state: ash_1 }

@@ -16,40 +16,6 @@
     deleteAfterHarvest: false
     loot:
       All: CP14GatherOnion
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 25
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTypeTrigger
-          damageType: Cellular
-          damage: 1
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14PlantTomatoesDeath:
-                min: 1
-                max: 1
-
-- type: entity
-  id: CP14PlantOnionDeath
-  name: dead onion
-  description: The sad spectacle of wasted food.
-  parent: CP14GatherableBase
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/onion.rsi
-    state: death
-  - type: Gatherable
-    toolWhitelist:
-      tags:
-        - CP14HerbalGathering
 
 - type: entityLootTable
   id: CP14GatherOnion
