@@ -91,7 +91,8 @@
   name: cp14-loadout-guildmaster-weapons
   loadouts:
   - CP14ModularGuildmasterRapier
-
+  minLimit: 1
+  maxLimit: 1
 - type: loadout
   id: CP14ModularGuildmasterRapier
   storage:
