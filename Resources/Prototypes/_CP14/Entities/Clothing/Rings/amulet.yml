@@ -1,7 +1,17 @@
 - type: entity
-  parent: 
-  - CP14ClothingCloakBase
-  - ClothingSlotBase
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingJewelleryBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+  - type: Clothing
+    slots:
+    - ring
+
+- type: entity
+  parent: CP14ClothingJewelleryBase
   id: CP14ClothingCloakAmuletGold
   name: gold amulet
   description: A gold amulet, a valuable trinket.
@@ -15,9 +25,7 @@
       CP14Gold: 5
 
 - type: entity
-  parent: 
-  - CP14ClothingCloakBase
-  - ClothingSlotBase
+  parent: CP14ClothingJewelleryBase
   id: CP14ClothingCloakAmuletMana
   name: mana amulet
   description: A gold amulet with a magical stone inside that helps you conjure more easily.
