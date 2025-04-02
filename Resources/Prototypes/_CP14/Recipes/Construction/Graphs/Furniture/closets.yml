@@ -12,7 +12,5 @@
               amount: 4
             - material: CP14Nail
               amount: 2
-            - tool: CP14Hammering
-              doAfter: 4
     - node: CP14WoodenCloset
       entity: CP14WoodenCloset

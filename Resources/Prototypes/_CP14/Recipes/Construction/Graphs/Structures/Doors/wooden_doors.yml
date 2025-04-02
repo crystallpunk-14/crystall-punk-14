@@ -22,8 +22,8 @@
               amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
         - to: CP14WoodenDoorFrameMirrored
           steps:
             - tool: CP14Hammering
@@ -52,8 +52,8 @@
               amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
         - to: CP14WoodenDoorFrame
           steps:
             - tool: CP14Hammering
@@ -81,8 +81,8 @@
               prototype: CP14WoodenPlanks1
               amount: 2
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
               
     - node: CP14WoodenDoorMirrored
       entity: CP14WoodenDoorMirrored
@@ -93,8 +93,8 @@
               prototype: CP14WoodenPlanks1
               amount: 2
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
               
     - node: CP14WoodenDoorWindowed
       entity: CP14WoodenDoorWindowed
@@ -105,8 +105,8 @@
               prototype: CP14WoodenPlanks1
               amount: 2
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
               
     - node: CP14WoodenDoorWindowedMirrored
       entity: CP14WoodenDoorWindowedMirrored
@@ -117,5 +117,5 @@
               prototype: CP14WoodenPlanks1
               amount: 2
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
