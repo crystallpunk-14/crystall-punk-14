@@ -84,3 +84,12 @@
         - CP14HerbalGathering
       components:
         - Sharp
+  - type: SolutionContainerManager
+    solutions:
+      plant:
+        maxVol: 200
+  - type: RefillableSolution 
+    solution: plant
+    maxRefill: 50
+  - type: ExaminableSolution
+    solution: plant
