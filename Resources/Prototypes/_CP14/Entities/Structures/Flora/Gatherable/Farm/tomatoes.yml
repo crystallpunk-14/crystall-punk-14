@@ -5,13 +5,12 @@
   description: On the one hand, it's a delicious fruit. But why eat it when it's much more fun to use tomatoes as a throwing projectile?
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
     layers:
     - state: liq-1
-      sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
     - state: grow-1
+      sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
     deleteAfterHarvest: false

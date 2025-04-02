@@ -5,13 +5,12 @@
   description: Some like to associate themselves with potatoes. People like that are not bad people.
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/potato.rsi
     layers:
     - state: liq-1
-      sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
     - state: grow-1
+      sprite: _CP14/Structures/Flora/Farm/potato.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantVisuals
     growthSteps: 5

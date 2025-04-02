@@ -5,13 +5,12 @@
   description: Legends say there is a pumpkin king who stares into your soul through the crowns of trees.
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/pumpkin.rsi
     layers:
     - state: liq-1
-      sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
     - state: grow-1
+      sprite: _CP14/Structures/Flora/Farm/pumpkin.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
     deleteAfterHarvest: true

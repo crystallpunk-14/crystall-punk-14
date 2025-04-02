@@ -88,6 +88,8 @@
   parent: CP14GatherablePlantBase
   abstract: true
   components:
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
   - type: CP14PlantMetabolizer
     metabolizerId: Base
   - type: CP14PlantEnergyFromLight
