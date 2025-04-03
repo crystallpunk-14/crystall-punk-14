@@ -22,7 +22,7 @@
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2 "
+          bounds: "-0.2,-0.2,0.2,0.2"
         hard: false
         mask:
         - Opaque
