@@ -73,3 +73,46 @@
   - CP14DemiplaneOpenSky
   components:
   - type: LightCycle
+
+- type: cp14DemiplaneModifier
+  id: MapLightCycleCold
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  generationWeight: 2
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneCold
+  components:
+  - type: LightCycle
+    originalColor: "#7bc2e0"
+
+- type: cp14DemiplaneModifier
+  id: MapLightCycleHot
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHot
+  components:
+  - type: LightCycle
+    originalColor: "#ff8929"
+
+- type: cp14DemiplaneModifier
+  id: MapLightCycleHot2
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHot
+  components:
+  - type: LightCycle
+    originalColor: "#d68787"

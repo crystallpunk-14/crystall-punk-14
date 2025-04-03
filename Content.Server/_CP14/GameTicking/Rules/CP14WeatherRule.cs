@@ -48,7 +48,7 @@ public sealed class CP14WeatherRule : StationEventSystem<CP14WeatherRuleComponen
         {
             if (TryComp<CP14WeatherControllerComponent>(mapUid, out var controller))
             {
-                controller.NextWeatherTime = _timing.CurTime + TimeSpan.FromSeconds(controller.ClearDuration.Max);
+                controller.NextWeatherTime = _timing.CurTime;
                 controller.Enabled = true;
             }
 
