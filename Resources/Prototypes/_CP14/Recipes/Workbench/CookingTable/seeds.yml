@@ -80,6 +80,6 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14WildSage
-    count: 2
+    count: 1
   result: CP14SeedSage
   resultCount: 1
