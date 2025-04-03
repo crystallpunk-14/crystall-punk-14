@@ -4,6 +4,7 @@ cp14-stack-wood-planks = wooden planks
 cp14-stack-nails = nails
 cp14-stack-cloth = rolls of fabric
 cp14-stack-flora = tufts of grass
+cp14-stack-compost = compost piles
 
 cp14-stack-copper-bars = copper bars
 cp14-stack-iron-bars = iron bars

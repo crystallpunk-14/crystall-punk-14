@@ -4,8 +4,8 @@
     "x": 32,
     "y": 32
   },
-  "license": "All right reserved",
-  "copyright": "Created by Prazar",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by TheShuEd",
   "states": [
     {
       "name": "base1"
@@ -15,6 +15,9 @@
     },
     {
       "name": "base3"
+    },
+    {
+      "name": "base4"
     }
   ]
 }

@@ -1,9 +1,9 @@
-namespace Content.Server._CP14.Farming.Components;
+namespace Content.Shared._CP14.Farming.Components;
 
 /// <summary>
 /// Is trying to use up the plant's energy and resources to grow.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14FarmingSystem))]
+[RegisterComponent, Access(typeof(CP14SharedFarmingSystem))]
 public sealed partial class CP14PlantGrowingComponent : Component
 {
     [DataField]

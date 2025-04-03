@@ -309,9 +309,19 @@ CP14BrassChestFilledSmallSpeedUp: CP14WoodenChestFilledSmallSpeedUp
 CP14BrassChestFilledSmallRainbow: CP14WoodenChestFilledSmallRainbow
 CP14BrassChestFilledFarmSeeds: CP14WoodenChestFilledFarmSeeds
 
-
 CP14ClothingHeadCaptainCap: null
 CP14ClothingHeadBeretBlack: null
+
+#2025-02-04
+CP14SeedbedWooden: null
+CP14PlantCabbageDeath: CP14PlantCabbage
+CP14PlantCucumberDeath: CP14PlantCucumber
+CP14PlantOnionDeath: CP14PlantOnion
+CP14PlantPepperDeath: CP14PlantPepper
+CP14PlantPotatoDeath: CP14PlantPotato
+CP14PlantPumpkinDeath: CP14PlantPumpkin
+CP14PlantTomatoesDeath: CP14PlantTomatoes
+CP14PlantWheatDeath: CP14PlantWheat
 
 # <---> CrystallEdge migration zone end
 

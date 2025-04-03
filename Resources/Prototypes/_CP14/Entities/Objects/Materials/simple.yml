@@ -372,39 +372,6 @@
     count: 50
 
 - type: entity
-  id: CP14FloraMaterial1
-  parent: BaseItem
-  name: flora material
-  description: An organic material used for medicinal or construction purposes.
-  suffix: 1
-  categories: [ ForkFiltered ]
-  components:
-  - type: Item
-    size: Normal
-  - type: Stack
-    stackType: CP14FloraMaterial
-    count: 1
-    baseLayer: base
-    layerStates:
-    - grass_material1
-    - grass_material2
-    - grass_material3
-  - type: Sprite
-    sprite: _CP14/Objects/Materials/flora.rsi
-    layers:
-      - state: grass_material1
-        map: ["base"]
-  - type: Material
-
-- type: entity
-  id: CP14FloraMaterial10
-  parent: CP14FloraMaterial1
-  suffix: 10
-  components:
-    - type: Stack
-      count: 10
-
-- type: entity
   id: CP14String
   parent: BaseItem
   name: strings

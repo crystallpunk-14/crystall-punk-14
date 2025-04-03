@@ -15,3 +15,17 @@
   - CP14EssenceChaos: 0.5
 
 # Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+- type: reaction
+  id: CP14WildSageAdmixture1
+  minTemp: 500
+  reactants:
+    CP14WildSageSap:
+      amount: 1
+    CP14BasicEffectEmpty:
+      amount: 1
+    CP14BasicEffectHealManaDepletion:
+      amount: 1
+  products:
+    CP14BasicEffectRainbow: 2
+    CP14BasicEffectEmoteCough: 1
