@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantOnion
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantSingleHarvestBase
   name: onion
   description: He's so cute it brings tears to my eyes to cut him up.
   components:
@@ -13,7 +13,6 @@
       sprite: _CP14/Structures/Flora/Farm/onion.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
-    deleteAfterHarvest: false
     loot:
       All: CP14GatherOnion
 
@@ -21,5 +20,5 @@
   id: CP14GatherOnion
   entries:
   - id: CP14FoodOnion
-    amount: 3
-    maxAmount: 5
+    amount: 1
+    maxAmount: 3

@@ -9,6 +9,8 @@
   generationWeight: 1.5
   categories:
     Danger: 0.3
+  blacklistTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobUndeadZombieRandom

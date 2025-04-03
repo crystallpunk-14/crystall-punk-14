@@ -146,8 +146,8 @@
                 max: 3
 
 - type: entity
-  id: CP14GatherablePlantBoringBase
-  parent: 
+  id: CP14GatherablePlantSingleHarvestBase
+  parent:
   - CP14BaseFlammableSpreading
   - CP14GatherablePlantBase
   abstract: true
@@ -171,3 +171,17 @@
     sprite: _CP14/Effects/fire.rsi
     normalState: full
     alternateState: full2
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
+
+- type: entity
+  id: CP14GatherablePlantMultiHarvestBase
+  parent: CP14GatherablePlantSingleHarvestBase
+  abstract: true
+  components:
+  - type: CP14PlantGrowing
+    growthPerUpdate: 0.025 
+  - type: CP14PlantFading
+    resourcePerMinute: 0.20
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: false

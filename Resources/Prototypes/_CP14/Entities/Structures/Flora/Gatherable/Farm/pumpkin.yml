@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantPumpkin
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantSingleHarvestBase
   name: pumpkin
   description: Legends say there is a pumpkin king who stares into your soul through the crowns of trees.
   components:
@@ -13,7 +13,6 @@
       sprite: _CP14/Structures/Flora/Farm/pumpkin.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
-    deleteAfterHarvest: true
     loot:
       All: CP14GatherPumpkin
 
