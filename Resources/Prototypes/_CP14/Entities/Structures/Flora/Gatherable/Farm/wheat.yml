@@ -13,7 +13,7 @@
       sprite: _CP14/Structures/Flora/Farm/wheat.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantVisuals
-    growthSteps: 3
+    growthSteps: 5
   - type: CP14PlantGatherable
     loot:
       All: CP14GatherWheat
