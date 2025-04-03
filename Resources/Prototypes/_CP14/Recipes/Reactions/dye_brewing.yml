@@ -1,4 +1,3 @@
-# Red color dye
 
 - type: reaction
   id: CP14BloodFlowerBrewing
@@ -19,8 +18,6 @@
   - !type:CreateEntityReactionEffect
       entity: CP14DyeRed
 
-# Yellow color dye
-
 - type: reaction
   id: CP14YellowDayflinBrewing
   impact: Low
@@ -39,8 +36,6 @@
   - !type:CreateEntityReactionEffect
       entity: CP14DyeYellow
 
-# Blue color dye
-
 - type: reaction
   id: CP14BlueAmanitaColor
   minTemp: 393
@@ -58,3 +53,21 @@
     addTemperature: -50
   - !type:CreateEntityReactionEffect
       entity: CP14DyeBlue
+
+- type: reaction
+  id: CP14PurpleSageColor
+  minTemp: 393
+  priority: 1
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    CP14WildSageSap:
+      amount: 10
+    Water:
+      amount: 1
+      catalyst: true
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -50
+  - !type:CreateEntityReactionEffect
+      entity: CP14DyePurple

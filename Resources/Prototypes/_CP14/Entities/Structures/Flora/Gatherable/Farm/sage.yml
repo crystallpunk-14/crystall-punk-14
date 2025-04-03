@@ -1,0 +1,27 @@
+- type: entity
+  id: CP14PlantSage
+  parent: CP14GatherablePlantBoringBase
+  name: sage
+  description: Medicinal sage. Some love it for its medicinal properties, others for its narcotic properties. Which side are you on?
+  components:
+  - type: Sprite
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      sprite: _CP14/Structures/Flora/Farm/sage.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: CP14PlantVisuals
+    growthSteps: 4
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: CP14GatherSage
+
+- type: entityLootTable
+  id: CP14GatherSage
+  entries:
+  - id: CP14WildSage
+    amount: 1
+    maxAmount: 2

@@ -4,6 +4,8 @@
   abstract: true
   categories: [ ForkFiltered ]
   components:
+  - type: PlacementReplacement
+    key: CP14Plant
   - type: Sprite
     snapCardinals: true
     drawdepth: FloorTiles
@@ -70,8 +72,6 @@
   parent: CP14GatherableBase
   abstract: true
   components:
-  - type: PlacementReplacement
-    key: CP14Plant
   - type: CP14PlantVisuals
     growthSteps: 5
     growState: "grow-"
