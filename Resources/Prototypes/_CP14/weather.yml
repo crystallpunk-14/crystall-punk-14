@@ -14,6 +14,10 @@
       prob: 0.2
       effects:
       - !type:ExtinguishReaction
+    - !type:WateringPlant
+      prob: 0.5
+      reagents:
+        Water: 5
 
 - type: weather
   id: CP14Storm
@@ -37,6 +41,10 @@
     - !type:SpawnEntityOnTop
       prob: 0.25
       entity: CP14SkyLightning
+    - !type:WateringPlant
+      prob: 0.5
+      reagents:
+        Water: 5
 
 - type: weather
   id: CP14Mist

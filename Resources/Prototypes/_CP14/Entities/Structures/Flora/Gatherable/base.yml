@@ -48,6 +48,15 @@
         layer:
         - MidImpassable
         - LowImpassable
+      fix2: #For melee or laser
+        hard: true
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        mask:
+        - FullTileMask 
+        layer:
+        - Opaque
   - type: CP14PlantGatherable
     toolWhitelist:
       tags:
@@ -61,6 +70,8 @@
   parent: CP14GatherableBase
   abstract: true
   components:
+  - type: PlacementReplacement
+    key: CP14Plant
   - type: CP14PlantVisuals
     growthSteps: 5
     growState: "grow-"
@@ -73,6 +84,13 @@
     solutions:
       plant:
         maxVol: 200
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+  - type: Food
+    delay: 1.5
   - type: RefillableSolution 
     solution: plant
     maxRefill: 50
@@ -82,38 +100,11 @@
     maxFillLevels: 4
     fillBaseName: liq-
     solutionName: plant
-
-- type: entity
-  id: CP14GatherablePlantBoringBase
-  parent: 
-  - CP14GatherablePlantBase
-  - CP14BaseFlammableSpreading
-  abstract: true
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
-  - type: CP14PlantMetabolizer
-    metabolizerId: Base
-  - type: CP14PlantEnergyFromLight
-    energy: 1
-    daytime: true
-  - type: CP14PlantVisuals
-    growthSteps: 6
-  - type: CP14PlantGrowing
-    energyCost: 1
-    resourceCost: 1
-    growthPerUpdate: 0.05 # 20 minute to full grow
-  - type: CP14PlantFading
-    resourcePerMinute: 0.25 #20 minute from water
-  - type: FireVisuals
-    sprite: _CP14/Effects/fire.rsi
-    normalState: full
-    alternateState: full2
   - type: Destructible
     thresholds:
       - trigger:
           !type:DamageTrigger #Overkill
-          damage: 25
+          damage: 35
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -142,18 +133,6 @@
                 min: 0
                 max: 2
       - trigger:
-          !type:DamageTypeTrigger #Shock
-          damageType: Shock
-          damage: 10
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14Ash1:
-                min: 0
-                max: 2
-      - trigger:
           !type:DamageGroupTrigger #Brute
           damageGroup: Brute
           damage: 10
@@ -165,3 +144,30 @@
               CP14FloraMaterial1:
                 min: 2
                 max: 3
+
+- type: entity
+  id: CP14GatherablePlantBoringBase
+  parent: 
+  - CP14BaseFlammableSpreading
+  - CP14GatherablePlantBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
+  - type: CP14PlantMetabolizer
+    metabolizerId: Base
+  - type: CP14PlantEnergyFromLight
+    energy: 1
+    daytime: true
+  - type: CP14PlantVisuals
+    growthSteps: 6
+  - type: CP14PlantGrowing
+    energyCost: 1
+    resourceCost: 1
+    growthPerUpdate: 0.05 # 20 minute to full grow
+  - type: CP14PlantFading
+    resourcePerMinute: 0.25 #20 minute from water
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
+    alternateState: full2
