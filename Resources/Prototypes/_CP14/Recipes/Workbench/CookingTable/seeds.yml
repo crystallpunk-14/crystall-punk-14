@@ -72,3 +72,14 @@
     count: 1
   result: CP14SeedPepper
   resultCount: 3
+
+- type: CP14Recipe
+  id: CP14SeedSage
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14WildSage
+    count: 2
+  result: CP14SeedSage
+  resultCount: 1
