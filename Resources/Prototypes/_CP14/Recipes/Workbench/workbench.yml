@@ -25,6 +25,16 @@
   result: CP14WoodenBeerMug
 
 - type: CP14Recipe
+  id: CP14SmokingPipe
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 2
+  result: CP14SmokingPipe
+
+- type: CP14Recipe
   id: CP14Plate
   tag: CP14RecipeWorkbench
   craftTime: 3

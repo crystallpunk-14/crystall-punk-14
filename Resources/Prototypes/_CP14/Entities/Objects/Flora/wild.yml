@@ -152,6 +152,16 @@
     tags:
     - CP14FitInMortar
     - CP14AlchemicalHerbals
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02 
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14GroundSage
+    
 
 - type: entity
   id: CP14LumiMushroom
