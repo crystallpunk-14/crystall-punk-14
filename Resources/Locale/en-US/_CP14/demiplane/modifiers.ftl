@@ -16,6 +16,7 @@ cp14-modifier-slime = slimes
 cp14-modifier-skeleton = sentient skeletons
 cp14-modifier-dyno = prehistoric fauna
 cp14-modifier-mole = predatory moles
+cp14-modifier-watcher = watchers
 cp14-modifier-rabbits = rabbits
 cp14-modifier-boars = wild boars
 cp14-modifier-invisible-whistler = invisible whistlers
