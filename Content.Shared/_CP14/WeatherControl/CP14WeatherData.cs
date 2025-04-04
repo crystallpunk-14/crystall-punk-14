@@ -8,8 +8,11 @@ namespace Content.Shared._CP14.WeatherControl;
 public sealed class CP14WeatherData
 {
     [DataField(required: true)]
-    public ProtoId<WeatherPrototype> Visuals { get; set; }
+    public ProtoId<WeatherPrototype>? Visuals { get; set; } = null;
 
     [DataField]
     public MinMax Duration { get; set; } = new(30, 300);
+
+    [DataField]
+    public float Weight { get; set; } = 1f;
 }

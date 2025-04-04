@@ -246,6 +246,8 @@ entities:
       layers: []
     - type: CP14WeatherController
       entries:
+      - visuals: null
+        weight: 2
       - visuals: CP14Mist
     - type: Fixtures
       fixtures: {}

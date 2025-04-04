@@ -144,6 +144,31 @@
     #    amount: -60000
 
 - type: weather
+  id: CP14SnowHeavyWithStorm
+  sprite:
+    sprite: /Textures/_CP14/Effects/weather.rsi
+    state: snowfall_heavy
+  sound:
+    path: /Audio/Effects/Weather/snowstorm.ogg
+    params:
+      loop: true
+      volume: -6
+  config:
+  - maxEntities: 2
+    frequency: 10
+    canAffectOnWeatherBlocker: false
+    effects:
+    - !type:SpawnEntityOnTop
+      prob: 0.25
+      entity: CP14SkyLightning
+  #- effects:
+    #- !type:ApplyEntityEffect
+    #  prob: 1
+    #  effects:
+    #  - !type:AdjustTemperature
+    #    amount: -60000
+
+- type: weather
   id: CP14FireStorm
   sprite:
     sprite: /Textures/Effects/weather.rsi

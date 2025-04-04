@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantCabbage
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantSingleHarvestBase
   name: cabbage
   description: You see a cabbage in front of you. Perhaps you were born in one.
   components:
@@ -13,7 +13,6 @@
       sprite: _CP14/Structures/Flora/Farm/cabbage.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
-    deleteAfterHarvest: true
     loot:
       All: CP14GatherCabbage
 

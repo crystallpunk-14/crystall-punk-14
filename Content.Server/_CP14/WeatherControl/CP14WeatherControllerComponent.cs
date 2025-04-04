@@ -13,12 +13,6 @@ public sealed partial class CP14WeatherControllerComponent : Component
     [DataField]
     public bool Enabled = true;
 
-    /// <summary>
-    /// random time with no weather.
-    /// </summary>
-    [DataField]
-    public MinMax ClearDuration = new(120,1200);
-
     [DataField]
     public HashSet<CP14WeatherData> Entries = new();
 

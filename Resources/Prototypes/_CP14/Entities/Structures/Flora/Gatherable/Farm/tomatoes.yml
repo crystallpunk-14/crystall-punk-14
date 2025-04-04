@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantTomatoes
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantMultiHarvestBase
   name: tomatoes
   description: On the one hand, it's a delicious fruit. But why eat it when it's much more fun to use tomatoes as a throwing projectile?
   components:
@@ -21,5 +21,5 @@
   id: CP14GatherTomatoes
   entries:
   - id: CP14FoodTomatoes
-    amount: 3
-    maxAmount: 5
+    amount: 1
+    maxAmount: 3

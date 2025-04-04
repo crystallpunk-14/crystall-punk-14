@@ -7,11 +7,18 @@
   name: cp14-demiplane-location-cave-magma
   tags:
   - CP14DemiplaneOres
-  - CP14DemiplaneUnderground
+  #- CP14DemiplaneUnderground
+  - CP14DemiplaneOpenSky
   - CP14DemiplaneHot
   components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: CP14CloudShadows
   - type: Biome
     template: CP14LavaOceanFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
 
 - type: dungeonConfig
   id: CP14DemiplaneCavesRing

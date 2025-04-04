@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantPepper
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantSingleHarvestBase
   name: pepper
   description: Russian roulette. Are you hot, or are you sweet peppers?
   components:
@@ -15,7 +15,6 @@
   - type: CP14PlantVisuals
     growthSteps: 5
   - type: CP14PlantGatherable
-    deleteAfterHarvest: false
     loot:
       All: CP14GatherPepper
 
@@ -23,5 +22,5 @@
   id: CP14GatherPepper
   entries:
   - id: CP14FoodPepper
-    amount: 3
-    maxAmount: 5
+    amount: 2
+    maxAmount: 4

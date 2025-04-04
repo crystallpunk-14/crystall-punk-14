@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantWheat
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantSingleHarvestBase
   name: wheat
   description: Most popular crop. Unpretentious, it opens the way to an abundance of flour products.
   components:
@@ -13,9 +13,8 @@
       sprite: _CP14/Structures/Flora/Farm/wheat.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantVisuals
-    growthSteps: 3
+    growthSteps: 5
   - type: CP14PlantGatherable
-    deleteAfterHarvest: true
     loot:
       All: CP14GatherWheat
   - type: CP14WaveShader
@@ -26,5 +25,5 @@
   id: CP14GatherWheat
   entries:
   - id: CP14Wheat
-    amount: 3
-    maxAmount: 5
+    amount: 2
+    maxAmount: 4

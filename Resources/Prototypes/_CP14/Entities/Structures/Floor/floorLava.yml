@@ -12,7 +12,7 @@
     key: floorTile
   - type: TileEmission
     range: 0.5
-    color: "#ff9c40"
+    color: "#ffc691"
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.1

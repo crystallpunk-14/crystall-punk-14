@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantPotato
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantSingleHarvestBase
   name: potato
   description: Some like to associate themselves with potatoes. People like that are not bad people.
   components:
@@ -15,7 +15,6 @@
   - type: CP14PlantVisuals
     growthSteps: 5
   - type: CP14PlantGatherable
-    deleteAfterHarvest: true
     loot:
       All: CP14GatherPotato
 
@@ -23,5 +22,5 @@
   id: CP14GatherPotato
   entries:
   - id: CP14FoodPotato
-    amount: 3
-    maxAmount: 5
+    amount: 2
+    maxAmount: 4

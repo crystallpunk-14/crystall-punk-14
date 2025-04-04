@@ -65,6 +65,8 @@ entities:
       id: Comoss
     - type: CP14WeatherController
       entries:
+      - visuals: null
+        weight: 3
       - visuals: CP14Mist
       - visuals: CP14Rain
     - type: LightCycle

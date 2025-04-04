@@ -141,7 +141,7 @@ public abstract partial class CP14SharedFarmingSystem
 
     private void OnSeedInteract(Entity<CP14SeedComponent> seed, ref AfterInteractEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || !args.CanReach)
             return;
 
         if (!CanPlantSeed(seed, args.ClickLocation, args.User))
@@ -206,7 +206,7 @@ public abstract partial class CP14SharedFarmingSystem
 
         if (_map.GetAnchoredEntities((map.Value, gridComp), position).ToList().Count > 0)
         {
-            if (user is not null)
+            if (user is not null && _timing.IsFirstTimePredicted && _net.IsClient)
                 _popup.PopupEntity(Loc.GetString("cp14-farming-soil-occupied"), user.Value, user.Value);
             return false;
         }

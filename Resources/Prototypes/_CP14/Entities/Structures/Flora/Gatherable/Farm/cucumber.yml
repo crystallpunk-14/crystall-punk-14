@@ -1,6 +1,6 @@
 - type: entity
   id: CP14PlantCucumber
-  parent: CP14GatherablePlantBoringBase
+  parent: CP14GatherablePlantMultiHarvestBase
   name: cucumber
   description: Don't trust people who know how to turn into pickles.
   components:
@@ -13,7 +13,6 @@
       sprite: _CP14/Structures/Flora/Farm/cucumber.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
-    deleteAfterHarvest: false
     loot:
       All: CP14GatherCucumber
 
@@ -21,5 +20,5 @@
   id: CP14GatherCucumber
   entries:
   - id: CP14FoodCucumber
-    amount: 3
-    maxAmount: 5
+    amount: 1
+    maxAmount: 3
