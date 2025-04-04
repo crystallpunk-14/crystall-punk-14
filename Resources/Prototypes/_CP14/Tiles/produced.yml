@@ -190,3 +190,31 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+
+- type: tile
+  editorHidden: false
+  id: CP14FloorDirtSeedbed
+  name: cp14-tiles-dirt-seedbed
+  sprite: /Textures/_CP14/Tiles/DirtSeedBag/seedbed.png
+  variants: 2
+  placementVariants:
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/DirtSeedBag/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/DirtSeedBag/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/DirtSeedBag/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/DirtSeedBag/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/DirtSeedBag/double_edge_S.png
+    East: /Textures/_CP14/Tiles/DirtSeedBag/double_edge_E.png
+    North: /Textures/_CP14/Tiles/DirtSeedBag/double_edge_N.png
+    West: /Textures/_CP14/Tiles/DirtSeedBag/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14DirtEffect
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true

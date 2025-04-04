@@ -13,6 +13,7 @@ cp14-tiles-snow-deep-deep = очень глубокий снег
 
 # Produced
 cp14-tiles-foundation = фундамент
+cp14-tiles-dirt-seedbed = земляная грядка
 
 cp14-tiles-red-woodplanks = красные доски
 cp14-tiles-red-woodplanks-big = большие красные доски

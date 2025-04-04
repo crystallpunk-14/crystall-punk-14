@@ -13,6 +13,7 @@ cp14-tiles-snow-deep-deep = deep deep snow
 
 # Produced
 cp14-tiles-foundation = foundation
+cp14-tiles-dirt-seedbed = dirt seedbed
 
 cp14-tiles-red-woodplanks = red woodplanks
 cp14-tiles-red-woodplanks-big = big red planks
