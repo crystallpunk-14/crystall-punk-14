@@ -48,7 +48,7 @@
     baseWalkSpeed: 5
     baseSprintSpeed: 7
   - type: ProjectileBatteryAmmoProvider
-    proto: CP14WatcherBoltIce
+    proto: WatcherBolt
     fireCost: 50
   - type: BatterySelfRecharger
     autoRecharge: true
@@ -127,7 +127,7 @@
     damageContainer: CP14Biological
     damageModifierSet: CP14WatcherFire
   - type: ProjectileBatteryAmmoProvider
-    proto: CP14WatcherBoltFire
+    proto: WatcherBoltMagmawing
     fireCost: 50
   - type: Butcherable
     spawned:
