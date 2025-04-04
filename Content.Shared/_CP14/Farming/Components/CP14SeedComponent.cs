@@ -16,5 +16,5 @@ public sealed partial class CP14SeedComponent : Component
     public EntProtoId PlantProto;
 
     [DataField]
-    public HashSet<ProtoId<ContentTileDefinition>> SoilTile = new() { "CP14FloorDirt" };
+    public HashSet<ProtoId<ContentTileDefinition>> SoilTile = new() { "CP14FloorDirtSeedbed" };
 }

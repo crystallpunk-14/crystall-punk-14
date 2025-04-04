@@ -170,7 +170,7 @@ public sealed class FloorTileSystem : EntitySystem
         return tileDef.BaseTurf == baseTurf;
     }
 
-    private void PlaceAt(EntityUid user, EntityUid gridUid, MapGridComponent mapGrid, EntityCoordinates location,
+    public void PlaceAt(EntityUid user, EntityUid gridUid, MapGridComponent mapGrid, EntityCoordinates location,
         ushort tileId, SoundSpecifier placeSound, float offset = 0)
     {
         _adminLogger.Add(LogType.Tile, LogImpact.Low, $"{ToPrettyString(user):actor} placed tile {_tileDefinitionManager[tileId].Name} at {ToPrettyString(gridUid)} {location}");

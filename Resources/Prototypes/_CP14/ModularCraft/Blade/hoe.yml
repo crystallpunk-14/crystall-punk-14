@@ -20,6 +20,12 @@
     - type: EmbeddableProjectile
       offset: -0.15,-0.15
       removalTime: 0.5
+    - type: CP14EditTileTool
+      sound:
+        collection: CP14Digging
+      tileReplace:
+        CP14FloorDirt: CP14FloorDirtSeedbed
+        CP14FloorDirtSeedbed: CP14FloorDirt
   - !type:EditMeleeWeapon
     newWideAnimation: CP14WeaponArcThrust
     attackRateMultiplier: 1.5
