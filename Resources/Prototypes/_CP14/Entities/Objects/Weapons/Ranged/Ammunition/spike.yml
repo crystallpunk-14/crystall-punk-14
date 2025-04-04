@@ -7,7 +7,13 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/spike.rsi
-    state: spike
+    layers:
+    - state: spike
+      shader: unshaded
+  - type: PointLight
+    color: "#62316b"
+    radius: 3.0
+    energy: 15.0
   - type: DamageOtherOnHit
     damage:
       types:
