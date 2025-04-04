@@ -503,4 +503,45 @@
     stack: CP14MithrilBar
     count: 2
   result: CP14ModularBladeMithrilHammer
-  
+
+# Sickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronHoe
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperHoe
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldHoe
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilHoe
