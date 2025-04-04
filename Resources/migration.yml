@@ -323,6 +323,7 @@ CP14PlantPumpkinDeath: CP14PlantPumpkin
 CP14PlantTomatoesDeath: CP14PlantTomatoes
 CP14PlantWheatDeath: CP14PlantWheat
 CP14BaseHoe: CP14ModularIronHoe
+CP14PlantOnion: null
 
 # <---> CrystallEdge migration zone end
 

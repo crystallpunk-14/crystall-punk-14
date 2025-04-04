@@ -76,19 +76,6 @@
     plantProto: CP14PlantTomatoes
 
 - type: entity
-  id: CP14SeedOnion
-  name: onion seeds
-  description: Onion seeds, small but strong.
-  parent: CP14BaseSeed
-  components:
-  - type: Sprite
-    layers:
-    - state: bag
-    - state: onion
-  - type: CP14Seed
-    plantProto: CP14PlantOnion
-
-- type: entity
   id: CP14SeedPepper
   name: pepper seeds
   description: Pepper seeds, with a peppercorn inside.
