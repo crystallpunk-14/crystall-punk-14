@@ -20,5 +20,5 @@
   id: CP14GatherOnion
   entries:
   - id: CP14FoodOnion
-    amount: 1
-    maxAmount: 3
+    amount: 2
+    maxAmount: 4

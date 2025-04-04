@@ -13,7 +13,6 @@
       sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
-    deleteAfterHarvest: false
     loot:
       All: CP14GatherTomatoes
 

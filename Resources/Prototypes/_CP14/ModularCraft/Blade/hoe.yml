@@ -1,34 +1,37 @@
 #Concept:
-# + High Throwable damage
-#   Piercing animation
-# - Low Melee Damage
-
+# Copy of dagger with bigger damage, but without throwing
 - type: modularPart
-  id: BaseBladeSpear
+  id: BaseBladeHoe
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseWeaponThrowable
     - BaseWeaponChemical
-    - BaseWeaponSharp
+    - BaseWeaponThrowable
+    #components: TODO Add gathering tag
   - !type:AddComponents
     override: true
     components:
     - type: DamageOtherOnHit
       damage:
         types:
-          Piercing: 16
+          Piercing: 6
     - type: ThrowingAngle
       angle: 135
     - type: EmbeddableProjectile
       offset: -0.15,-0.15
-      removalTime: 1.5
+      removalTime: 0.5
+    - type: CP14EditTileTool
+      sound:
+        collection: CP14Digging
+      tileReplace:
+        CP14FloorDirt: CP14FloorDirtSeedbed
+        CP14FloorDirtSeedbed: CP14FloorDirt
   - !type:EditMeleeWeapon
     newWideAnimation: CP14WeaponArcThrust
-    angleMultiplier: 0
+    attackRateMultiplier: 1.5
     bonusDamage:
       types:
-        Piercing: 8
+        Piercing: 6
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
@@ -40,55 +43,54 @@
   - !type:EditModularSlots
     addSlots:
     - Garde
-    - BladeInlay
 
 - type: modularPart
-  id: BladeIronSpear
+  id: BladeIronHoe
   slots:
   - Blade
   sourcePart: CP14ScrapIron
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeHoe
     - BaseBladeIron
 
 - type: modularPart
-  id: BladeGoldSpear
+  id: BladeGoldHoe
   slots:
   - Blade
   sourcePart: CP14ScrapGold
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
   color: "#ffaf47"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeHoe
     - BaseBladeGold
 
 - type: modularPart
-  id: BladeCopperSpear
+  id: BladeCopperHoe
   slots:
   - Blade
   sourcePart: CP14ScrapCopper
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
   color: "#bd712f"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeHoe
     - BaseBladeCopper
 
 - type: modularPart
-  id: BladeMithrilSpear
+  id: BladeMithrilHoe
   slots:
   - Blade
   sourcePart: CP14ScrapMithril
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
   color: "#45d2a4"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeHoe
     - BaseBladeMithril

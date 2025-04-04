@@ -104,7 +104,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger #Overkill
-          damage: 35
+          damage: 45
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -123,7 +123,7 @@
       - trigger:
           !type:DamageTypeTrigger #Heat
           damageType: Heat
-          damage: 10
+          damage: 20
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -135,7 +135,7 @@
       - trigger:
           !type:DamageGroupTrigger #Brute
           damageGroup: Brute
-          damage: 10
+          damage: 15
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
