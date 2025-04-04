@@ -16,6 +16,7 @@ cp14-modifier-slime = слаймов
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = доисторической фауны
 cp14-modifier-mole = хищных кротов
+cp14-modifier-watcher = наблюдателей
 cp14-modifier-rabbits = кроликов
 cp14-modifier-boars = диких кабанов
 cp14-modifier-sheeps = овец
