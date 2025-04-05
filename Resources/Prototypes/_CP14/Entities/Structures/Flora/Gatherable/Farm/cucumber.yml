@@ -20,5 +20,5 @@
   id: CP14GatherCucumber
   entries:
   - id: CP14FoodCucumber
-    amount: 1
-    maxAmount: 3
+    amount: 2
+    maxAmount: 4
