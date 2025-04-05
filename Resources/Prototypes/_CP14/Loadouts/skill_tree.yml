@@ -10,8 +10,7 @@
   - CP14SkillTreeIllusion
   - CP14SkillTreeHealing
   - CP14SkillTreeAtlethic
-
-
+  - CP14SkillTreeTemporamancy
 
 - type: entity
   id: CP14SkillTreePyrokineticLoadoutDummy
@@ -28,8 +27,6 @@
   skillTree:
     Pyrokinetic: 2
 
-
-
 - type: entity
   id: CP14SkillTreeHydrosophistryLoadoutDummy
   name: Hydrosophistry
@@ -44,7 +41,6 @@
   dummyEntity: CP14SkillTreeHydrosophistryLoadoutDummy
   skillTree:
     Hydrosophistry: 2
-
 
 - type: entity
   id: CP14SkillTreeIllusionLoadoutDummy
@@ -61,7 +57,6 @@
   skillTree:
     Illusion: 2
 
-
 - type: entity
   id: CP14SkillTreeMetamagicLoadoutDummy
   name: Metamagic
@@ -76,7 +71,6 @@
   dummyEntity: CP14SkillTreeMetamagicLoadoutDummy
   skillTree:
     Metamagic: 2
-
 
 - type: entity
   id: CP14SkillTreeHealingLoadoutDummy
@@ -93,7 +87,6 @@
   skillTree:
     Healing: 2
 
-
 - type: entity
   id: CP14SkillTreeAtlethicLoadoutDummy
   name: Atlethic
@@ -108,3 +101,19 @@
   dummyEntity: CP14SkillTreeAtlethicLoadoutDummy
   skillTree:
     Atlethic: 2
+
+- type: entity
+  id: CP14SkillTreeTemporamancyLoadoutDummy
+  name: Temporamancy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: tempo
+
+- type: loadout
+  id: CP14SkillTreeTemporamancy
+  dummyEntity: CP14SkillTreeTemporamancyLoadoutDummy
+  skillTree:
+    Temporamancy: 1
+

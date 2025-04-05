@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14ActionSpellShadowSwap
+  name: Shadow swap
+  description: A warp of space between two living beings
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: shadow_swap
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.8
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectShadowStep
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectShadowStep
+    effects:
+    - !type:CP14SpellCasterSwap
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14ImpactEffectShadowStep
+  - type: CP14MagicEffectSomaticAspect
+  - type: EntityWorldTargetAction
+    range: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/dimension.rsi
+      state: shadow_swap
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 10
+      hidden: true
+      breakOnMove: false

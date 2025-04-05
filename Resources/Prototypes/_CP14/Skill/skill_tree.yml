@@ -51,3 +51,12 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: atlethic
+
+- type: cp14SkillTree
+  id: Temporamancy
+  name: cp14-skill-tree-temporamancy-name
+  desc: cp14-skill-tree-temporamancy-desc
+  color: "#ac66be"
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: tempo
