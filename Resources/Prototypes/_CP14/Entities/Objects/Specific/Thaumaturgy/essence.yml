@@ -287,3 +287,20 @@
         reagents:
         - ReagentId: CP14EssenceMagic
           Quantity: 1
+
+# Complex tier 3
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceTempo
+  name: continuum
+  components:
+  - type: Sprite
+    color: "#623ec6"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceTempo
+          Quantity: 1

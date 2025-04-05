@@ -40,7 +40,7 @@ cp14-reagent-desc-essence-poison = Жидкое воплощение стихи�
 
 cp14-reagent-name-essence-void = Эссенция Vacuos
 cp14-reagent-desc-essence-void = Жидкое воплощение стихии пустоты, неизвестности и скрытности.
- 
+
 cp14-reagent-name-essence-life = Эссенция Victus
 cp14-reagent-desc-essence-life = Жидкое воплощение стихии жизни, еды и пропитания.
 
@@ -51,3 +51,8 @@ cp14-reagent-desc-essence-crystal = Жидкое воплощение стихи
 
 cp14-reagent-name-essence-magic = Эссенция Praecantatio
 cp14-reagent-desc-essence-magic = Жидкое воплощение магии, чар и колдовства.
+
+# Complex tier 3
+
+cp14-reagent-name-essence-tempo = Эссенция Continuum
+cp14-reagent-desc-essence-tempo = Жидкое воплощение пространства, гравитации и времени.

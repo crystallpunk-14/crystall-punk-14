@@ -10,7 +10,7 @@
       - !type:ChemVomit
         probability: 0.25
 
-# Basic 6 
+# Basic 6
 
 - type: reagent
   parent: CP14EssenceBase
@@ -188,6 +188,19 @@
   desc: cp14-reagent-desc-essence-magic
   group: CP14MagicEssenceT2
   color: "#5497d6"
+  tileReactions:
+  - !type:CreateEntityTileReaction
+    entity: CP14EssenceMagic
+
+# Complex tier 3
+
+- type: reagent
+  parent: CP14EssenceBase
+  id: CP14EssenceTempo
+  name: cp14-reagent-name-essence-tempo
+  desc: cp14-reagent-desc-essence-tempo
+  group: CP14MagicEssenceT3
+  color: "#623ec6"
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceMagic
