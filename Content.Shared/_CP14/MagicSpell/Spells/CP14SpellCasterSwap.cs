@@ -1,4 +1,5 @@
 using Content.Shared.Examine;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 
@@ -24,10 +25,13 @@ public sealed partial class CP14SpellCasterSwap : CP14SpellEffect
         var popup = entManager.System<SharedPopupSystem>();
 
         var mobState = entManager.System<MobStateSystem>();
-        if (OnlyAlive && mobState.IsDead(target))
+        if (OnlyAlive)
         {
-            popup.PopupEntity(Loc.GetString("swap-ability-target-dead"), user, user);
-            return;
+            if (entManager.TryGetComponent<MobStateComponent>(target, out var targetMobStateComp))
+                return;
+
+            if (mobState.IsDead(target, targetMobStateComp))
+                return;
         }
 
         var examine = entManager.System<ExamineSystemShared>();
