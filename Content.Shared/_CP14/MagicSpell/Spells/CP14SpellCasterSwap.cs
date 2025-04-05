@@ -22,26 +22,32 @@ public sealed partial class CP14SpellCasterSwap : CP14SpellEffect
         var userPosition = transform.GetMoverCoordinates(user);
         var targetPosition = transform.GetMoverCoordinates(target);
 
-        var popup = entManager.System<SharedPopupSystem>();
+        transform.SetCoordinates(user, targetPosition);
+        transform.SetCoordinates(target, userPosition);
+    }
+
+    public override bool CanCast(EntityManager entManager, CP14SpellEffectBaseArgs args)
+    {
+        if (args.User is not { } user || args.Target is not { } target)
+            return false;
+
+        var transform = entManager.System<SharedTransformSystem>();
+        var targetPosition = transform.GetMoverCoordinates(target);
 
         var mobState = entManager.System<MobStateSystem>();
         if (OnlyAlive)
         {
             if (!entManager.TryGetComponent<MobStateComponent>(target, out var targetMobStateComp))
-                return;
+                return false;
 
             if (mobState.IsDead(target, targetMobStateComp))
-                return;
+                return false;
         }
 
         var examine = entManager.System<ExamineSystemShared>();
         if (NeedVision && !examine.InRangeUnOccluded(user, targetPosition))
-        {
-            popup.PopupEntity(Loc.GetString("swap-ability-cant-see"), user, user);
-            return;
-        }
+            return false;
 
-        transform.SetCoordinates(user, targetPosition);
-        transform.SetCoordinates(target, userPosition);
+        return true;
     }
 }

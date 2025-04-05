@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
@@ -133,15 +134,24 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     /// <summary>
     /// Checking to see if the spell can be used at all
     /// </summary>
-    private bool CanCastSpell(Entity<CP14MagicEffectComponent> ent, EntityUid performer)
+    private bool CanCastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
+        if (args.User is not { } performer)
+            return true;
+
         var ev = new CP14CastMagicEffectAttemptEvent(performer);
         RaiseLocalEvent(ent, ref ev);
-        if (ev.Reason != string.Empty && _net.IsServer)
-        {
-            _popup.PopupEntity(ev.Reason, performer, performer);
-        }
-        return !ev.Cancelled;
+
+        if (ev.Reason != string.Empty)
+            _popup.PopupPredicted(ev.Reason, performer, performer);
+
+        if (ev.Cancelled)
+            return false;
+
+        if (ent.Comp.Effects.Any(effect => !effect.CanCast(EntityManager, args)))
+            return false;
+
+        return true;
     }
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
@@ -160,12 +170,12 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
 
-        if (_net.IsServer)
+       if (_net.IsClient)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
         {
-            foreach (var effect in ent.Comp.Effects)
-            {
-                effect.Effect(EntityManager, args);
-            }
+            effect.Effect(EntityManager, args);
         }
     }
 

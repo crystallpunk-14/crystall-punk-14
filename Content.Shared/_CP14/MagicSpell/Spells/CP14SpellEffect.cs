@@ -8,6 +8,11 @@ namespace Content.Shared._CP14.MagicSpell.Spells;
 public abstract partial class CP14SpellEffect
 {
     public abstract void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args);
+
+    public virtual bool CanCast(EntityManager entManager, CP14SpellEffectBaseArgs args)
+    {
+        return true;
+    }
 }
 
 public record class CP14SpellEffectBaseArgs
