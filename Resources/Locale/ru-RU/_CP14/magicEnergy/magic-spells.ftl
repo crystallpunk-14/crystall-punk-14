@@ -8,6 +8,7 @@ cp14-magic-spell-not-enough-mana-cast-warning-2 = Ваши руки дрожат
 cp14-magic-spell-not-enough-mana-cast-warning-3 = К горлу подступает ком...
 cp14-magic-spell-not-enough-mana-cast-warning-4 = Голова наливается свинцом...
 
+cp14-magic-type = Тип
 cp14-magic-verbal-aspect = Требуется возможность говорить
 cp14-magic-somatic-aspect = Требуются свободные руки:
 cp14-magic-music-aspect = Вы должны играть на музыкальном инструменте

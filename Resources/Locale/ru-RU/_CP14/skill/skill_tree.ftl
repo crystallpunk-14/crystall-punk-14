@@ -18,6 +18,9 @@ cp14-skill-tree-illusion-desc = Исследуйте природу света, 
 cp14-skill-tree-healing-name = Жизнетворение
 cp14-skill-tree-healing-desc = Изучайте способы влияния магии на живые создания.
 
+cp14-skill-tree-temporamancy-name = Темпорамантия
+cp14-skill-tree-temporamancy-desc = Погрузитесь в природу пространства и пустоты.
+
 # Body
 
 cp14-skill-tree-atlethic-name = Атлетика

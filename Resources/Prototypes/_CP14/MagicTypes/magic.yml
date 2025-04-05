@@ -99,3 +99,11 @@
   name: cp14-essence-magic
   color: "#5497d6"
   essenceProto: CP14EssenceMagic
+
+# Complex tier 3
+
+- type: magicType
+  id: Tempo
+  name: cp14-essence-tempo
+  color: "#623ec6"
+  essenceProto: CP14EssenceTempo
