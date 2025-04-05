@@ -27,7 +27,7 @@ public sealed partial class CP14SpellCasterSwap : CP14SpellEffect
         var mobState = entManager.System<MobStateSystem>();
         if (OnlyAlive)
         {
-            if (entManager.TryGetComponent<MobStateComponent>(target, out var targetMobStateComp))
+            if (!entManager.TryGetComponent<MobStateComponent>(target, out var targetMobStateComp))
                 return;
 
             if (mobState.IsDead(target, targetMobStateComp))
