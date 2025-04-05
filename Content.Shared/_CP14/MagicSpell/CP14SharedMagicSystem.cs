@@ -104,7 +104,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         if (_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
         {
-            sb.Append($"\n{Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
+            sb.Append($"\n{Loc.GetString("cp14-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
         }
 
         if (TryComp<CP14MagicEffectVerbalAspectComponent>(ent, out var verbal))
