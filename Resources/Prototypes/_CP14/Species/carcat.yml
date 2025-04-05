@@ -20,6 +20,7 @@
     #Hair: CP14MobCarcatAnyMarking
     #FacialHair: CP14MobCarcatAnyMarking
     Snout: CP14MobCarcatMarkingMatchSkin
+    Tail: CP14MobCarcatMarkingMatchSkin
     Chest: CP14MobCarcatTorso
     Eyes: CP14MobCarcatEyes
     LArm: CP14MobCarcatLArm
@@ -45,6 +46,10 @@
       points: 1
       required: true
       defaultMarkings: [ CP14CarcatNose ]
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14CarcatTail ]
     HeadTop:
       points: 1
       required: true
