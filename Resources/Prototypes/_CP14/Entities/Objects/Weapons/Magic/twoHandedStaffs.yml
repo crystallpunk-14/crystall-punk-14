@@ -80,9 +80,9 @@
   categories: [ DoNotMap ]
   suffix: Artifact
   components:
-  #- type: CP14MagicManacostModify
-  #  modifiers:
-  #   Dimension: 1.4
+  - type: CP14MagicManacostModify
+    modifiers:
+      Tempo: 1.4
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellShadowStep
