@@ -88,7 +88,6 @@
   - type: CP14Seed
     plantProto: CP14PlantPepper
 
-
 - type: entity
   id: CP14SeedSage
   name: sage seeds
