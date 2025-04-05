@@ -20,6 +20,7 @@
       - CP14ImpactEffectShadowStep
     effects:
     - !type:CP14SpellCasterSwap
+      useCustomCastConditions: true
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect

@@ -26,7 +26,7 @@ public sealed partial class CP14SpellCasterSwap : CP14SpellEffect
         transform.SetCoordinates(target, userPosition);
     }
 
-    public override bool CanCast(EntityManager entManager, CP14SpellEffectBaseArgs args)
+    protected override bool OnCanCast(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
         if (args.User is not { } user || args.Target is not { } target)
             return false;
