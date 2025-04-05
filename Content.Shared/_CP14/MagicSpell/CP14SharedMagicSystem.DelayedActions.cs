@@ -56,7 +56,7 @@ public abstract partial class CP14SharedMagicSystem
             _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
     }
 
-    private void UseDelayedAction(ICP14DelayedMagicEffect delayedEffect, Entity<CP14MagicEffectComponent> action, DoAfterEvent doAfter, EntityUid performer, EntityUid? target = null, EntityCoordinates? worldTarget = null)
+    private bool UseDelayedAction(ICP14DelayedMagicEffect delayedEffect, Entity<CP14MagicEffectComponent> action, DoAfterEvent doAfter, EntityUid performer, EntityUid? target = null, EntityCoordinates? worldTarget = null)
     {
         // Eent may return an empty entity with id = 0, which causes bugs
         var currentTarget = target;
@@ -65,20 +65,21 @@ public abstract partial class CP14SharedMagicSystem
 
         var spellArgs = new CP14SpellEffectBaseArgs(performer, action.Comp.SpellStorage, currentTarget, worldTarget);
         if (!CanCastSpell(action, spellArgs))
-            return;
+            return false;
 
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
         {
             _doAfter.Cancel(action.Comp.ActiveDoAfter);
-            return;
+            return false;
         }
 
         if (!TryStartDelayedAction(delayedEffect, doAfter, action, currentTarget, performer))
-            return;
+            return false;
 
         var evStart = new CP14StartCastMagicEffectEvent(performer);
         RaiseLocalEvent(action, ref evStart);
         CastTelegraphy(action, spellArgs);
+        return true;
     }
 
     /// <summary>
@@ -96,7 +97,9 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var doAfter = new CP14DelayedInstantActionDoAfterEvent(args.Cooldown);
-        UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Performer);
+
+        if (!UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Performer))
+            return;
 
         args.Handled = true;
     }
@@ -119,7 +122,9 @@ public abstract partial class CP14SharedMagicSystem
             EntityManager.GetNetCoordinates(args.Coords),
             EntityManager.GetNetEntity(args.Entity),
             args.Cooldown);
-        UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Entity, args.Coords);
+
+        if (!UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Entity, args.Coords))
+            return;
 
         args.Handled = true;
     }
@@ -139,7 +144,9 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var doAfter = new CP14DelayedEntityTargetActionDoAfterEvent(EntityManager.GetNetEntity(args.Target), args.Cooldown);
-        UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Target);
+
+        if (!UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Target))
+            return;
 
         args.Handled = true;
     }

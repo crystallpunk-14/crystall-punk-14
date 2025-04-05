@@ -30,7 +30,7 @@
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
-      state: shadow_step
+      state: shadow_swap
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 10
       hidden: true
