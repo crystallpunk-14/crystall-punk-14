@@ -1,33 +1,43 @@
 - type: entity
-  parent: 
-  - CP14ClothingCloakBase
-  - ClothingSlotBase
+  abstract: true
+  parent: Clothing
+  id: CP14ClothingJewelleryBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+  - type: Clothing
+    slots:
+    - ring
+
+- type: entity
+  parent: CP14ClothingJewelleryBase
   id: CP14ClothingCloakAmuletGold
   name: gold amulet
   description: A gold amulet, a valuable trinket.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Amulet/amulet.rsi
+    sprite: _CP14/Clothing/Rings/Amulet/amulet.rsi
+    layers:
+    - state: icon
   - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Amulet/amulet.rsi
+    sprite: _CP14/Clothing/Rings/Amulet/amulet.rsi
   - type: CP14Material
     materials:
       CP14Gold: 5
 
 - type: entity
-  parent: 
-  - CP14ClothingCloakBase
-  - ClothingSlotBase
+  parent: CP14ClothingJewelleryBase
   id: CP14ClothingCloakAmuletMana
   name: mana amulet
   description: A gold amulet with a magical stone inside that helps you conjure more easily.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Amulet/amulet_mana.rsi
+    sprite: _CP14/Clothing/Rings/Amulet/amulet_mana.rsi
     layers:
     - state: icon
     - state: amethyst_stone
   - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Amulet/amulet_mana.rsi
+    sprite: _CP14/Clothing/Rings/Amulet/amulet_mana.rsi
   - type: CP14MagicManacostModify
     globalModifier: 0.9
