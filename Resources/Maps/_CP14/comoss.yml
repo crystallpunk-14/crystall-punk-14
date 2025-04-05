@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 248.0.2
+  engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/18/2025 21:57:21
-  entityCount: 14429
+  time: 04/05/2025 10:23:32
+  entityCount: 14385
 maps:
 - 2
 grids:
@@ -65,8 +65,8 @@ entities:
       id: Comoss
     - type: CP14WeatherController
       entries:
-      - visuals: null
-        weight: 3
+      - weight: 3
+        visuals: null
       - visuals: CP14Mist
       - visuals: CP14Rain
     - type: LightCycle
@@ -975,24 +975,6 @@ entities:
     components:
     - type: Transform
       pos: -1.7708926,13.337564
-      parent: 2
-- proto: CP14BaseHoe
-  entities:
-  - uid: 33
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -20.17605,-13.383461
-      parent: 2
-  - uid: 34
-    components:
-    - type: Transform
-      pos: -19.952974,-13.253024
-      parent: 2
-  - uid: 35
-    components:
-    - type: Transform
-      pos: 12.486586,-56.600544
       parent: 2
 - proto: CP14BaseLightCrossbow
   entities:
@@ -44740,6 +44722,24 @@ entities:
     - type: Transform
       pos: 10.025342,-7.197178
       parent: 2
+- proto: CP14ModularIronHoe
+  entities:
+  - uid: 33
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -20.17605,-13.383461
+      parent: 2
+  - uid: 34
+    components:
+    - type: Transform
+      pos: -19.952974,-13.253024
+      parent: 2
+  - uid: 35
+    components:
+    - type: Transform
+      pos: 12.486586,-56.600544
+      parent: 2
 - proto: CP14ModularIronMace
   entities:
   - uid: 8182
@@ -61032,228 +61032,6 @@ entities:
     - type: Transform
       pos: 7.7062325,2.3277578
       parent: 2
-- proto: CP14SeedbedWooden
-  entities:
-  - uid: 10509
-    components:
-    - type: Transform
-      pos: -24.5,-11.5
-      parent: 2
-  - uid: 10510
-    components:
-    - type: Transform
-      pos: -23.5,-11.5
-      parent: 2
-  - uid: 10511
-    components:
-    - type: Transform
-      pos: -24.5,-12.5
-      parent: 2
-  - uid: 10512
-    components:
-    - type: Transform
-      pos: -24.5,-13.5
-      parent: 2
-  - uid: 10513
-    components:
-    - type: Transform
-      pos: -24.5,-14.5
-      parent: 2
-  - uid: 10514
-    components:
-    - type: Transform
-      pos: -23.5,-14.5
-      parent: 2
-  - uid: 10515
-    components:
-    - type: Transform
-      pos: -23.5,-13.5
-      parent: 2
-  - uid: 10516
-    components:
-    - type: Transform
-      pos: -23.5,-12.5
-      parent: 2
-  - uid: 10517
-    components:
-    - type: Transform
-      pos: -24.5,-16.5
-      parent: 2
-  - uid: 10518
-    components:
-    - type: Transform
-      pos: -24.5,-17.5
-      parent: 2
-  - uid: 10519
-    components:
-    - type: Transform
-      pos: -24.5,-18.5
-      parent: 2
-  - uid: 10520
-    components:
-    - type: Transform
-      pos: -23.5,-16.5
-      parent: 2
-  - uid: 10521
-    components:
-    - type: Transform
-      pos: -23.5,-17.5
-      parent: 2
-  - uid: 10522
-    components:
-    - type: Transform
-      pos: -23.5,-18.5
-      parent: 2
-  - uid: 10523
-    components:
-    - type: Transform
-      pos: -21.5,-16.5
-      parent: 2
-  - uid: 10524
-    components:
-    - type: Transform
-      pos: -21.5,-17.5
-      parent: 2
-  - uid: 10525
-    components:
-    - type: Transform
-      pos: -21.5,-18.5
-      parent: 2
-  - uid: 10526
-    components:
-    - type: Transform
-      pos: -20.5,-16.5
-      parent: 2
-  - uid: 10527
-    components:
-    - type: Transform
-      pos: -20.5,-17.5
-      parent: 2
-  - uid: 10528
-    components:
-    - type: Transform
-      pos: -20.5,-18.5
-      parent: 2
-  - uid: 10529
-    components:
-    - type: Transform
-      pos: -24.5,-20.5
-      parent: 2
-  - uid: 10530
-    components:
-    - type: Transform
-      pos: -24.5,-21.5
-      parent: 2
-  - uid: 10531
-    components:
-    - type: Transform
-      pos: -24.5,-22.5
-      parent: 2
-  - uid: 10532
-    components:
-    - type: Transform
-      pos: -23.5,-20.5
-      parent: 2
-  - uid: 10533
-    components:
-    - type: Transform
-      pos: -23.5,-21.5
-      parent: 2
-  - uid: 10534
-    components:
-    - type: Transform
-      pos: -23.5,-22.5
-      parent: 2
-  - uid: 10535
-    components:
-    - type: Transform
-      pos: -21.5,-20.5
-      parent: 2
-  - uid: 10536
-    components:
-    - type: Transform
-      pos: -21.5,-21.5
-      parent: 2
-  - uid: 10537
-    components:
-    - type: Transform
-      pos: -21.5,-22.5
-      parent: 2
-  - uid: 10538
-    components:
-    - type: Transform
-      pos: -20.5,-20.5
-      parent: 2
-  - uid: 10539
-    components:
-    - type: Transform
-      pos: -20.5,-21.5
-      parent: 2
-  - uid: 10540
-    components:
-    - type: Transform
-      pos: -20.5,-22.5
-      parent: 2
-  - uid: 10541
-    components:
-    - type: Transform
-      pos: 16.5,-62.5
-      parent: 2
-  - uid: 10542
-    components:
-    - type: Transform
-      pos: 17.5,-62.5
-      parent: 2
-  - uid: 10543
-    components:
-    - type: Transform
-      pos: 18.5,-53.5
-      parent: 2
-  - uid: 10544
-    components:
-    - type: Transform
-      pos: 18.5,-54.5
-      parent: 2
-  - uid: 10545
-    components:
-    - type: Transform
-      pos: 15.5,-54.5
-      parent: 2
-  - uid: 10546
-    components:
-    - type: Transform
-      pos: 15.5,-52.5
-      parent: 2
-  - uid: 10547
-    components:
-    - type: Transform
-      pos: 15.5,-57.5
-      parent: 2
-  - uid: 10548
-    components:
-    - type: Transform
-      pos: 17.5,-57.5
-      parent: 2
-  - uid: 10549
-    components:
-    - type: Transform
-      pos: 15.5,-53.5
-      parent: 2
-  - uid: 10550
-    components:
-    - type: Transform
-      pos: 18.5,-52.5
-      parent: 2
-  - uid: 10551
-    components:
-    - type: Transform
-      pos: 18.5,-57.5
-      parent: 2
-  - uid: 10552
-    components:
-    - type: Transform
-      pos: 16.5,-57.5
-      parent: 2
 - proto: CP14SilverCoin1
   entities:
   - uid: 10553
@@ -61384,14 +61162,13 @@ entities:
           - 8184
           - 8182
           - 8181
-  - uid: 10555
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -12.5,-5.5
-      parent: 2
 - proto: CP14SmallWoodenCrateFilled
   entities:
+  - uid: 10509
+    components:
+    - type: Transform
+      pos: -12.5,-5.5
+      parent: 2
   - uid: 10556
     components:
     - type: Transform
@@ -61783,11 +61560,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,-53.5
-      parent: 2
-  - uid: 10628
-    components:
-    - type: Transform
-      pos: 15.5,-60.5
       parent: 2
   - uid: 10629
     components:
@@ -64380,6 +64152,21 @@ entities:
       fixtures: {}
 - proto: CP14WallmountLampEmpty
   entities:
+  - uid: 1
+    components:
+    - type: Transform
+      pos: -14.5,-5.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 7131
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -16.5,-4.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 11062
     components:
     - type: Transform
@@ -81689,6 +81476,12 @@ entities:
       parent: 2
 - proto: CP14WoodenDoorPersonalHouse3
   entities:
+  - uid: 10510
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -6.5,16.5
+      parent: 2
   - uid: 14352
     components:
     - type: Transform
@@ -81738,12 +81531,6 @@ entities:
       parent: 2
 - proto: CP14WoodenDoorPersonalHouse8
   entities:
-  - uid: 14359
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -6.5,16.5
-      parent: 2
   - uid: 14360
     components:
     - type: Transform
@@ -82154,7 +81941,7 @@ entities:
       pos: 29.5,15.5
       parent: 2
     - type: WarpPoint
-      location: Blacksmith 2
+      location: Blacksmith
   - uid: 14429
     components:
     - type: Transform
@@ -82162,7 +81949,7 @@ entities:
       pos: 14.5,3.5
       parent: 2
     - type: WarpPoint
-      location: Alchemist 2
+      location: Alchemist
   - uid: 14430
     components:
     - type: Transform
