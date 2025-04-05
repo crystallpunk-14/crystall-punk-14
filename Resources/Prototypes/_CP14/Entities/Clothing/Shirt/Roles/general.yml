@@ -276,7 +276,7 @@
   id: CP14ClothingWarriorsGarbDress
   name: warrior's garb
   description: show your strength.
-  components: 
+  components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
   - type: Clothing
@@ -291,3 +291,7 @@
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
+  # Touhou lore
+  - type: CP14MagicManacostModify
+    modifiers:
+      Tempo: 0.9
