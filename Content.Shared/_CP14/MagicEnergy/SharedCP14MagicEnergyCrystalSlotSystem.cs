@@ -4,11 +4,9 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared._CP14.MagicEnergy;
 
-public partial class SharedCP14MagicEnergyCrystalSlotSystem : EntitySystem
+public abstract class SharedCP14MagicEnergyCrystalSlotSystem : EntitySystem
 {
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
 
     public override void Initialize()
     {
