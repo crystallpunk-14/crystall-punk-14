@@ -24,6 +24,9 @@
     },
     {
       "name": "water"
+    },
+    {
+      "name": "skeleton_discipline"
     }
   ]
 }
