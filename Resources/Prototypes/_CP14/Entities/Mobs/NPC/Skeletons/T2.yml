@@ -3,6 +3,7 @@
   parent: CP14BaseMobSkeleton
   name: skeleton
   abstract: true
+  components:
   - type: CP14NightVision
   - type: NpcFactionMember
     factions:
