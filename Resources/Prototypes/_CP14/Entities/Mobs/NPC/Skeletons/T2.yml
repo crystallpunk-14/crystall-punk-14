@@ -121,7 +121,7 @@
         - id: SpawnPointGhostDemiplaneSkeletonSwordT2
         - id: SpawnPointGhostDemiplaneSkeletonDodgerT2
         - id: SpawnPointGhostDemiplaneSkeletonArcherT2
-        - id: SpawnPointGhostDemiplaneSkeletonHalberT2
+        - id: SpawnPointGhostDemiplaneSkeletonHalberdT2
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
