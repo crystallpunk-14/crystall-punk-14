@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "updated or created by Viator, originals by TheShuEd",
+  "states": [
+    {
+      "name": "kick"
+    },
+    {
+      "name": "sprint"
+    },
+    {
+      "name": "acceleration"
+    },
+    {
+      "name": "bone_dagger"
+    },
+    {
+      "name": "bone_shards"
+    },
+    {
+      "name": "cure_dead"
+    },
+    {
+      "name": "rift_arrow"
+    },
+    {
+      "name": "demi_arrow"
+    },
+    {
+      "name": "shadow_step"
+    },
+    {
+      "name": "dead_heal_ballade"
+    }
+  ]
+}

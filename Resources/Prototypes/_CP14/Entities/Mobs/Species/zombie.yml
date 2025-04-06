@@ -149,6 +149,7 @@
   - type: Tag
     tags:
       - CP14Mosquito
+      - CP14DeadHealing
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:

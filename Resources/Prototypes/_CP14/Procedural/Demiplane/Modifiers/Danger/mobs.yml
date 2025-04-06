@@ -73,17 +73,17 @@
       maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
-  id: EnemySkeleton
+  id: EnemySkeletonT1
   levels:
     min: 3
-    max: 10
+    max: 5
   name: cp14-modifier-skeleton
   generationWeight: 1.5
   categories:
     Danger: 0.5
   layers:
     - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneSkeleton
+      entity: SpawnPointGhostDemiplaneSkeletonT1
       count: 1
       minGroupSize: 1
       maxGroupSize: 3
@@ -243,3 +243,40 @@
       count: 2
       minGroupSize: 2
       maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemySkeletonT2
+  levels:
+    min: 6
+    max: 10
+  name: cp14-modifier-skeleton
+  generationWeight: 2.0
+  categories:
+    Danger: 0.5
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneSkeletonT2
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 2
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneSkeletonMagicalT2
+      count: 1
+      minGroupSize: 0
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: EnemySkeletonHidenT1
+  levels:
+    min: 6
+    max: 10
+  name: cp14-modifier-skeleton
+  generationWeight: 1.0
+  categories:
+    Danger: 0.25
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneSkeletonT1
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 2

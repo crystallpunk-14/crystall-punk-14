@@ -1,0 +1,104 @@
+- type: cp14Skill
+  id: CP14ActionSpellKickSkeleton
+  skillUiPosition: 0, 0
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: kick
+  effect: !type:AddAction
+    action: CP14ActionSpellKickSkeleton
+
+- type: cp14Skill
+  id: CP14ActionSpellSprintSkeleton
+  skillUiPosition: 0, 3
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: sprint
+  effect: !type:AddAction
+    action: CP14ActionSpellSprintSkeleton
+
+- type: cp14Skill
+  id: CP14ActionSpellMagicalAccelerationSkeleton
+  skillUiPosition: 4, 0
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: acceleration
+  effect: !type:AddAction
+    action: CP14ActionSpellMagicalAccelerationSkeleton
+
+- type: cp14Skill
+  id: CP14ActionSpellBoneDagger
+  skillUiPosition: 4, 3
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: bone_dagger
+  effect: !type:AddAction
+    action: CP14ActionSpellBoneDagger
+
+- type: cp14Skill
+  id: CP14ActionSpellBoneShards
+  skillUiPosition: 4, 6
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: bone_shards
+  effect: !type:AddAction
+    action: CP14ActionSpellBoneShards
+
+- type: cp14Skill
+  id: CP14ActionSpellCureDeath
+  skillUiPosition: 4, 9
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: cure_dead
+  effect: !type:AddAction
+    action: CP14ActionSpellCureDeath
+
+- type: cp14Skill
+  id: CP14ActionSpellDemiplaneInfiltrationSkeleton
+  skillUiPosition: 8, 0
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: rift_arrow
+  effect: !type:AddAction
+    action: CP14ActionSpellDemiplaneInfiltrationSkeleton
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14UnlockSkeletonShadowMagic
+
+- type: cp14Skill
+  id: CP14UnlockSkeletonShadowMagic
+  name: Shadow magic
+  skillUiPosition: 8, 3
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: demi_arrow
+
+- type: cp14Skill
+  id: CP14ActionSpellShadowStepSkeleton
+  skillUiPosition: 8, 6
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: shadow_step
+  effect: !type:AddAction
+    action: CP14ActionSpellShadowStepSkeleton
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14UnlockSkeletonShadowMagic
+
+- type: cp14Skill
+  id: CP14ActionSpellDeadHealBallade
+  skillUiPosition: 8, 9
+  tree: skeleton_discipline
+  icon:
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: dead_heal_ballade
+  effect: !type:AddAction
+    action: CP14ActionSpellDeadHealBallade
