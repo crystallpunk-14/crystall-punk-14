@@ -53,7 +53,7 @@
     mask: CP14ClothingMaskSteelMask
     shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
-    neck: CP14ModularSkeletonHalberd
+    neck: CP14ModularSkeletonHalberdReinforced
     shoes: CP14ClothingShoesSandals
 
 - type: startingGear
@@ -62,7 +62,7 @@
     outerClothing: CP14ClothingOuterClothingBoneArmorUpgrade
     mask: CP14ClothingMaskSteelMask
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularSkeletonSword
+    belt1: CP14ModularSkeletonSwordReinforced
     shoes: CP14ClothingShoesSandals
   inhand:
     - CP14BaseShield
