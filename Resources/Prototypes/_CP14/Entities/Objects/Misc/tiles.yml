@@ -87,6 +87,11 @@
   - type: Sprite
     state: oak_woodplanks_big
   - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
     outputs:
       - CP14FloorOakWoodPlanksBig
   - type: Stack
@@ -100,6 +105,11 @@
   - type: Sprite
     state: oak_woodplanks_cruciform
   - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
     outputs:
       - CP14FloorOakWoodPlanksCruciform
   - type: Stack
@@ -113,6 +123,11 @@
   - type: Sprite
     state: oak_woodplanks_stairways
   - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
     outputs:
       - CP14FloorOakWoodPlanksStairways
   - type: Stack
