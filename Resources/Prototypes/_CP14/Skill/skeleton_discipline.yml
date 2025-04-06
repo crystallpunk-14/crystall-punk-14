@@ -67,22 +67,10 @@
     state: rift_arrow
   effect: !type:AddAction
     action: CP14ActionSpellDemiplaneInfiltrationSkeleton
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: CP14UnlockSkeletonShadowMagic
-
-- type: cp14Skill
-  id: CP14UnlockSkeletonShadowMagic
-  name: Shadow magic
-  skillUiPosition: 8, 3
-  tree: skeleton_discipline
-  icon:
-    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
-    state: demi_arrow
 
 - type: cp14Skill
   id: CP14ActionSpellShadowStepSkeleton
-  skillUiPosition: 8, 6
+  skillUiPosition: 8, 3
   tree: skeleton_discipline
   icon:
     sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
@@ -91,7 +79,7 @@
     action: CP14ActionSpellShadowStepSkeleton
   restrictions:
   - !type:NeedPrerequisite
-    prerequisite: CP14UnlockSkeletonShadowMagic
+    prerequisite: CP14ActionSpellDemiplaneInfiltrationSkeleton
 
 - type: cp14Skill
   id: CP14ActionSpellDeadHealBallade
