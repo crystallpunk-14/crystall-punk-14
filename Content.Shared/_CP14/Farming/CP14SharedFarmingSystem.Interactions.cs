@@ -204,11 +204,14 @@ public abstract partial class CP14SharedFarmingSystem
             return false;
         }
 
-        if (_map.GetAnchoredEntities((map.Value, gridComp), position).ToList().Count > 0)
+        foreach (var anchored in _map.GetAnchoredEntities((map.Value, gridComp), position))
         {
-            if (user is not null && _timing.IsFirstTimePredicted && _net.IsClient)
-                _popup.PopupEntity(Loc.GetString("cp14-farming-soil-occupied"), user.Value, user.Value);
-            return false;
+            if (PlantQuery.TryComp(anchored, out var plant))
+            {
+                if (user is not null && _timing.IsFirstTimePredicted && _net.IsClient)
+                    _popup.PopupEntity(Loc.GetString("cp14-farming-soil-occupied"), user.Value, user.Value);
+                return false;
+            }
         }
 
         return true;
