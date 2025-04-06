@@ -7,23 +7,10 @@ namespace Content.Shared._CP14.MagicSpell.Spells;
 [MeansImplicitUse]
 public abstract partial class CP14SpellEffect
 {
-    [DataField]
-    public bool UseCustomCastConditions;
-
     public abstract void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args);
-
-    public bool CanCast(EntityManager entManager, CP14SpellEffectBaseArgs args)
-    {
-        return !UseCustomCastConditions || OnCanCast(entManager, args);
-    }
-
-    protected virtual bool OnCanCast(EntityManager entManager, CP14SpellEffectBaseArgs args)
-    {
-        return true;
-    }
 }
 
-public record class CP14SpellEffectBaseArgs
+public record CP14SpellEffectBaseArgs
 {
     public EntityUid? User;
     public EntityUid? Used;

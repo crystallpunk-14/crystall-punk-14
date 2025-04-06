@@ -139,16 +139,13 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         if (args.User is not { } performer)
             return true;
 
-        var ev = new CP14CastMagicEffectAttemptEvent(performer);
-        RaiseLocalEvent(ent, ref ev);
+        var ev = new CP14CastMagicEffectAttemptEvent(performer, args.Used, args.Target, args.Position);
+        RaiseLocalEvent(ent, ev);
 
         if (ev.Reason != string.Empty)
             _popup.PopupPredicted(ev.Reason, performer, performer);
 
         if (ev.Cancelled)
-            return false;
-
-        if (ent.Comp.Effects.Any(effect => !effect.CanCast(EntityManager, args)))
             return false;
 
         return true;

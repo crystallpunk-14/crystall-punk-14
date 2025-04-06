@@ -20,10 +20,10 @@
       - CP14ImpactEffectShadowStep
     effects:
     - !type:CP14SpellCasterSwap
-      useCustomCastConditions: true
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectTargetDeadBlock
   - type: EntityWorldTargetAction
     range: 10
     itemIconStyle: BigAction
