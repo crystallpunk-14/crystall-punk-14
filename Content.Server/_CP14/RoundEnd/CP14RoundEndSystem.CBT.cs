@@ -86,18 +86,22 @@ public sealed partial class CP14RoundEndSystem
         {
             (20, 45, () =>
             {
-                Announce("ВНИМАНИЕ: Сервер автоматически завершит раунд через 15 минут");
+                if (!EnPlaytestActive(now))
+                    Announce("ВНИМАНИЕ: Сервер автоматически завершит раунд через 15 минут");
             }),
             (21, 2, () =>
             {
-                RunCommand("golobby");
+                if (!EnPlaytestActive(now))
+                    RunCommand("golobby");
             }),
-            (7, 45, () =>
+
+
+            (23, 44, () =>
             {
                 if (EnPlaytestActive(now))
                     Announce("WARNING: The server will automatically end the round after 15 minutes");
             }),
-            (8, 2, () =>
+            (23, 59, () =>
             {
                 if (EnPlaytestActive(now))
                     RunCommand("golobby");
@@ -127,14 +131,11 @@ public sealed partial class CP14RoundEndSystem
 
     private static bool RuPlaytestActive(DateTime now)
     {
-        return now.Hour is >= 18 and < 21;
+        return (now.Hour >= 18 || now.Hour < 21) && now.DayOfWeek != DayOfWeek.Saturday;
     }
 
     private static bool EnPlaytestActive(DateTime now)
     {
-        var a = now.Hour >= 22 && now.DayOfWeek == DayOfWeek.Saturday;
-        var b = now.Hour < 8 && now.DayOfWeek == DayOfWeek.Sunday;
-
-        return a || b;
+        return now.Hour >= 16 && now.DayOfWeek == DayOfWeek.Saturday;
     }
 }
