@@ -103,7 +103,7 @@
 # Complex tier 3
 
 - type: magicType
-  id: Tempo
-  name: cp14-essence-tempo
+  id: tempus
+  name: cp14-essence-tempus
   color: "#623ec6"
-  essenceProto: CP14EssenceTempo
+  essenceProto: CP14EssenceTempus

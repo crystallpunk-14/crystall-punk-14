@@ -19,7 +19,10 @@ cp14-essence-crystal = Vitreus
 
 # Complex tier 2
 cp14-essence-magic = Praecantatio
-cp14-essence-tempo = Continuum
+
+
+# Complex tier 3
+cp14-essence-tempus = Tempus
 
 cp14-magic-manacost = Manacost
 cp14-magic-essence = Magic type

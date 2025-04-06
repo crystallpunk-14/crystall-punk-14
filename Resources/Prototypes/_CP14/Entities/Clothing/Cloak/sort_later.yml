@@ -10,7 +10,3 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/maid_apron.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/maid_apron.rsi
-  # Touhou lore
-  - type: CP14MagicManacostModify
-    modifiers:
-      Tempo: 0.95

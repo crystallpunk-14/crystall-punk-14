@@ -54,5 +54,5 @@ cp14-reagent-desc-essence-magic = Жидкое воплощение магии, 
 
 # Complex tier 3
 
-cp14-reagent-name-essence-tempo = Эссенция Continuum
-cp14-reagent-desc-essence-tempo = Жидкое воплощение пространства, гравитации и времени.
+cp14-reagent-name-essence-tempus = Эссенция Tempus
+cp14-reagent-desc-essence-tempus = Жидкое воплощение пространства, гравитации и времени.

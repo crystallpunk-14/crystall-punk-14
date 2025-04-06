@@ -54,5 +54,5 @@ cp14-reagent-desc-essence-magic = The liquid embodiment of the elements of magic
 
 # Complex tier 3
 
-cp14-reagent-name-essence-tempo = Continuum essence
-cp14-reagent-desc-essence-tempo = The liquid embodiment of space, gravity and time.
+cp14-reagent-name-essence-tempus = Tempus essence
+cp14-reagent-desc-essence-tempus = The liquid embodiment of space, gravity and time.

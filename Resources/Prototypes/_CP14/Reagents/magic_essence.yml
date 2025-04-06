@@ -196,11 +196,11 @@
 
 - type: reagent
   parent: CP14EssenceBase
-  id: CP14EssenceTempo
-  name: cp14-reagent-name-essence-tempo
-  desc: cp14-reagent-desc-essence-tempo
+  id: CP14EssenceTempus
+  name: cp14-reagent-name-essence-tempus
+  desc: cp14-reagent-desc-essence-tempus
   group: CP14MagicEssenceT3
   color: "#623ec6"
   tileReactions:
   - !type:CreateEntityTileReaction
-    entity: CP14EssenceMagic
+    entity: CP14EssenceTempus

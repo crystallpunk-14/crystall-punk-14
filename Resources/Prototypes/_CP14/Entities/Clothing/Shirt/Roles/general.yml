@@ -294,4 +294,4 @@
   # Touhou lore
   - type: CP14MagicManacostModify
     modifiers:
-      Tempo: 0.9
+      tempus: 0.9

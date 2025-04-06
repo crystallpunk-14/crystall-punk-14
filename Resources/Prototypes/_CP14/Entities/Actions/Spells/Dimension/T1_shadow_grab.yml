@@ -8,7 +8,6 @@
     state: shadow_grab
   - type: CP14MagicEffectManaCost
   - type: CP14MagicEffect
-    magicType: Tempo
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

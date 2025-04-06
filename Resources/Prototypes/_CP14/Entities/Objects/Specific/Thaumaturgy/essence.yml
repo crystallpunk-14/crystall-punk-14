@@ -292,8 +292,8 @@
 
 - type: entity
   parent: CP14BaseEssence
-  id: CP14EssenceTempo
-  name: continuum
+  id: CP14EssenceTempus
+  name: tempus
   components:
   - type: Sprite
     color: "#623ec6"
@@ -302,5 +302,5 @@
       essence:
         maxVol: 1
         reagents:
-        - ReagentId: CP14EssenceTempo
+        - ReagentId: CP14EssenceTempus
           Quantity: 1

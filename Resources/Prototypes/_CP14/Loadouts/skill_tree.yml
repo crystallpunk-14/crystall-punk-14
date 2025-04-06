@@ -109,7 +109,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Actions/skill_tree.rsi
-    state: tempo
+    state: tempus
 
 - type: loadout
   id: CP14SkillTreeTemporamancy
