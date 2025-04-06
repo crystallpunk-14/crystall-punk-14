@@ -3,7 +3,10 @@
   parent: CP14BaseMobSkeleton
   name: skeleton
   abstract: true
-#  components:
+  - type: CP14NightVision
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
 
 - type: entity
   id: CP14MobUndeadSkeletonHalberdT2
