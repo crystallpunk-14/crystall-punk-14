@@ -36,4 +36,5 @@
       cooldown: 10
       hidden: true
       breakOnMove: false
+      requireCanInteract: false
     checkCanAccess: false

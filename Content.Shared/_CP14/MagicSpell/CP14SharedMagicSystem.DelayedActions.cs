@@ -36,6 +36,7 @@ public abstract partial class CP14SharedMagicSystem
             BlockDuplicate = true,
             BreakOnDropItem = fromItem,
             NeedHand = fromItem,
+            RequireCanInteract = delayedEffect.RequireCanInteract,
         };
 
         if (_doAfter.TryStartDoAfter(doAfterEventArgs, out var doAfterId))
