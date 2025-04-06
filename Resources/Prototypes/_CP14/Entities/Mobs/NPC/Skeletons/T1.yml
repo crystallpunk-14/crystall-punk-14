@@ -10,7 +10,7 @@
     - CP14Monster
 
 - type: entity
-  id: CP14MobUndeadSkeletonHalberd
+  id: CP14MobUndeadSkeletonHalberdT1
   parent: CP14MobUndeadSkeletonDemiplaneT1
   categories: [ ForkFiltered ]
   suffix: Halebard T1
@@ -23,7 +23,7 @@
       Atlethic: 1
 
 - type: entity
-  id: CP14MobUndeadSkeletonSword
+  id: CP14MobUndeadSkeletonSwordT1
   parent: CP14MobUndeadSkeletonDemiplaneT1
   categories: [ ForkFiltered ]
   suffix: Sword T1
@@ -36,7 +36,7 @@
       Atlethic: 1
 
 - type: entity
-  id: CP14MobUndeadSkeletonDodger
+  id: CP14MobUndeadSkeletonDodgerT1
   parent: CP14MobUndeadSkeletonDemiplaneT1
   categories: [ ForkFiltered ]
   suffix: Dodger T1
@@ -49,7 +49,7 @@
       Atlethic: 2
 
 - type: entity
-  id: CP14MobUndeadSkeletonArcher
+  id: CP14MobUndeadSkeletonArcherT1
   parent: CP14MobUndeadSkeletonDemiplaneT1
   categories: [ ForkFiltered ]
   suffix: Archer T1
