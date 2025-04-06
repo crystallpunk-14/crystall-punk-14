@@ -145,15 +145,12 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         if (ev.Reason != string.Empty)
             _popup.PopupPredicted(ev.Reason, performer, performer);
 
-        if (ev.Cancelled)
-            return false;
-
-        return true;
+        return !ev.Cancelled;
     }
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        if (!_net.IsServer)
+        if (_net.IsClient)
             return;
 
         foreach (var effect in ent.Comp.TelegraphyEffects)
