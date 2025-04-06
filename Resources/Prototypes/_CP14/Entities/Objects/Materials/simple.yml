@@ -169,14 +169,6 @@
       types:
         Heat: 1
   - type: Appearance
-  - type: FloorTile
-    placeTileSound:
-      path: /Audio/Effects/woodenclosetclose.ogg
-      params:
-        variation: 0.03
-        volume: 2
-    outputs:
-      - CP14FloorOakWoodPlanks # TODO
   - type: Stack
     stackType: CP14WoodenPlanks
     count: 1
