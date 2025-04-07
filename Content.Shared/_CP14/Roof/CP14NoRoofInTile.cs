@@ -2,6 +2,7 @@ using Content.Shared.Construction;
 using Content.Shared.Construction.Conditions;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 
 namespace Content.Shared._CP14.Roof;
 
@@ -13,21 +14,35 @@ public sealed partial class CP14NoRoofInTile : IConstructionCondition
     {
         return new ConstructionGuideEntry
         {
-            Localization = "cp14-construction-step-condition-no-roof-in-tile",
+            // Localization = "cp14-construction-step-condition-no-roof-in-tile",
+            Localization = "cp14-construction-step-condition-wall-required",
         };
     }
 
     public bool Condition(EntityUid user, EntityCoordinates location, Direction direction)
     {
         var entityManager = IoCManager.Resolve<IEntityManager>();
-        var lookupSystem = entityManager.System<EntityLookupSystem>();
+        var mapSystem = entityManager.System<SharedMapSystem>();
+        var transformSystem = entityManager.System<SharedTransformSystem>();
 
-        foreach (var entity in location.GetEntitiesInTile(LookupFlags.Static))
+        var grid = transformSystem.GetGrid(user);
+
+        if (grid == null || !entityManager.TryGetComponent<MapGridComponent>(grid, out var gridComp))
         {
-            if (entityManager.HasComponent<CP14RoofComponent>(entity))
-                return true;
+            return false;
         }
 
-        return false;
+        var targetPos = transformSystem.ToMapCoordinates(location);
+        var anchored = mapSystem.GetAnchoredEntities(grid.Value, gridComp, targetPos);
+
+        foreach (var entt in anchored)
+        {
+            if (entityManager.HasComponent<CP14RoofComponent>(entt))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
