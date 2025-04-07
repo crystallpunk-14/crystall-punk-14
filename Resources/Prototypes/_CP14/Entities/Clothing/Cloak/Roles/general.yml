@@ -85,3 +85,26 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/insulated_mantle.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/insulated_mantle.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakBlackSyurko
+  name: black syurko
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/black_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/black_syurko.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakRedSyurko
+  name: red syurko
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/red_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/red_syurko.rsi
+
