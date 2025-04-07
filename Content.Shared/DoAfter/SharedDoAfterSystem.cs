@@ -195,7 +195,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         var doAfter = new DoAfter(id.Value.Index, args, GameTiming.CurTime);
 
         // Networking yay
-        args.NetTarget = GetNetEntity(args.Target);Class must be explicitly marked as [Virtual], abstract, static or sealed
+        args.NetTarget = GetNetEntity(args.Target);
         args.NetUsed = GetNetEntity(args.Used);
         args.NetUser = GetNetEntity(args.User);
         args.NetEventTarget = GetNetEntity(args.EventTarget);
