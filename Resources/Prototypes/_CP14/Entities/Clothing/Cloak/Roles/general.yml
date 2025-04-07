@@ -89,7 +89,7 @@
 - type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakBlackSyurko
-  name: black syurko
+  name: black surcoats
   description: A long and roomy cloak that serves to protect your armour.
   components:
   - type: Sprite
@@ -100,7 +100,7 @@
 - type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakRedSyurko
-  name: red syurko
+  name: red surcoats
   description: A long and roomy cloak that serves to protect your armour.
   components:
   - type: Sprite
