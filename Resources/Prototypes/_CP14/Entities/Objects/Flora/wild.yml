@@ -117,8 +117,8 @@
 - type: entity
   id: CP14WildSage
   parent: CP14WildProduceBase
-  name: wild sage root
-  description: Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.
+  name: sage
+  description: Sage flowers. A good medicinal herb that works as a hallucinogen when properly processed.
   components:
   - type: Item
     size: Tiny
@@ -135,6 +135,7 @@
         base1: ""
         base2: ""
         base3: ""
+        base4: ""
   - type: Extractable
     juiceSolution:
       reagents:
@@ -151,6 +152,16 @@
     tags:
     - CP14FitInMortar
     - CP14AlchemicalHerbals
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02 
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14GroundSage
+    
 
 - type: entity
   id: CP14LumiMushroom

@@ -3,7 +3,7 @@
   id: CP14FloorWaterOptimized
   name: water
   description: A trough of plain water. Clean enough for consumption
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
     snap:
@@ -65,13 +65,14 @@
 - type: entity
   parent: CP14FloorWaterOptimized
   id: CP14FloorWater
+  categories: [ ForkFiltered ]
   components:
   - type: DrawableSolution
     solution: pool
   - type: SolutionContainerManager
     solutions:
       pool:
-        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable. 
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
         reagents:
         - ReagentId: Water
           Quantity: 9999999

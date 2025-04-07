@@ -16,6 +16,7 @@ cp14-modifier-slime = слаймов
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = доисторической фауны
 cp14-modifier-mole = хищных кротов
+cp14-modifier-watcher = наблюдателей
 cp14-modifier-rabbits = кроликов
 cp14-modifier-boars = диких кабанов
 cp14-modifier-sheeps = овец
@@ -25,3 +26,9 @@ cp14-modifier-air-lily = воздушных лилий
 cp14-modifier-time-limit-10 = временного распада (10 минут)
 cp14-modifier-shadow-kudzu = распространяющгося астрального мрака
 cp14-modifier-night = темноты
+
+cp14-modifier-storm = грозы
+cp14-modifier-fire-storm = огненный шторм
+cp14-modifier-snow-storm = снежный шторм
+cp14-modifier-mana-mist = магического тумана
+cp14-modifier-anti-mana-mist = антимагического тумана

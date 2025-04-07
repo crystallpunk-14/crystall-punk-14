@@ -10,9 +10,11 @@ cp14-tiles-sand = песок
 cp14-tiles-snow = снег
 cp14-tiles-snow-deep = глубокий снег
 cp14-tiles-snow-deep-deep = очень глубокий снег
+cp14-tiles-marble-cave = мраморный пол
 
 # Produced
 cp14-tiles-foundation = фундамент
+cp14-tiles-dirt-seedbed = земляная грядка
 
 cp14-tiles-red-woodplanks = красные доски
 cp14-tiles-red-woodplanks-big = большие красные доски
@@ -60,7 +62,7 @@ cp14-tiles-stonebricks-small-carved2 = пол из резного кирпича
 cp14-tiles-stonebricks-square-carved = пол из резного кирпича
 cp14-tiles-stonebricks = каменный кирпичный пол
 cp14-tiles-stonebricks-weather = уличный каменный кирпичный пол
-cp14-tiles-stonebricks-marble = мраморный пол
+cp14-tiles-stonebricks-marble = мраморный кирпич
 
 cp14-tiles-lucens-woodplanks = люценcовые доски
 cp14-tiles-lucens-woodplanks-big = большие люценcовые доски

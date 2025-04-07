@@ -27,8 +27,6 @@
         amount: 3
       - id: CP14SeedTomato
         amount: 3
-      - id: CP14SeedOnion
-        amount: 3
       - id: CP14SeedPepper
         amount: 3
 

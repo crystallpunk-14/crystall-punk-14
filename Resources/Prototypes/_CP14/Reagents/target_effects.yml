@@ -197,6 +197,42 @@
             Asphyxiation: 3
 
 - type: reagent
+  id: CP14BasicEffectHealManaDepletion
+  name: cp14-reagent-name-basic-heal-manadepletion
+  desc: cp14-reagent-desc-basic-heal-manadepletion
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#2d4d79"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            CP14ManaDepletion: -10
+
+- type: reagent
+  id: CP14BasicEffectDamageManaDepletion
+  name: cp14-reagent-name-basic-damage-manadepletion
+  desc: cp14-reagent-desc-basic-damage-manadepletion
+  group: CP14BasicEffect
+  flavor: CP14Bitterly
+  color: "#2f6b62"
+  physicalDesc: cp14-reagent-physical-desc-viscous
+  worksOnTheDead: true
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            CP14ManaDepletion: 3
+
+- type: reagent
   id: CP14BasicEffectBloodRestore
   name: cp14-reagent-name-basic-blood-restore
   desc: cp14-reagent-desc-basic-blood-restore

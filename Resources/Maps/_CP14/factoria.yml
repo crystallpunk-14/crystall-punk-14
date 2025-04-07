@@ -70,9 +70,10 @@ entities:
       data: {}
     - type: CP14WeatherController
       entries:
+      - visuals: null
+        weight: 3
       - visuals: CP14Mist
       - visuals: CP14Rain
-      - visuals: CP14Storm
     - type: Biome
       forcedMarkerLayers: []
       markerLayers: []

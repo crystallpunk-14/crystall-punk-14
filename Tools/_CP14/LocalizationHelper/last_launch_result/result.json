@@ -62,6 +62,13 @@
         "parent": "CP14WoodenChest",
         "suffix": null
     },
+    "CP14WoodenChestFilledSmallHealingManaDepletion": {
+        "id": "CP14WoodenChestFilledSmallHealingManaDepletion",
+        "name": "mana-depletion potions chest",
+        "description": null,
+        "parent": "CP14WoodenChest",
+        "suffix": null
+    },
     "CP14WoodenChestFilledSmallSpeedUp": {
         "id": "CP14WoodenChestFilledSmallSpeedUp",
         "name": "accseleration potions chest",
@@ -79,6 +86,13 @@
     "CP14WoodenChestFilledCandles": {
         "id": "CP14WoodenChestFilledCandles",
         "name": "candles chest",
+        "description": null,
+        "parent": "CP14WoodenChest",
+        "suffix": null
+    },
+    "CP14WoodenChestFilledSmokePowder": {
+        "id": "CP14WoodenChestFilledSmokePowder",
+        "name": "smoking powder chest",
         "description": null,
         "parent": "CP14WoodenChest",
         "suffix": null
@@ -202,6 +216,13 @@
         "parent": "CP14WoodenCabinet",
         "suffix": "Guildmaster, Filled"
     },
+    "CP14Fire": {
+        "id": "CP14Fire",
+        "name": "fire",
+        "description": "it's fire!",
+        "parent": null,
+        "suffix": null
+    },
     "CP14BaseFlammableSpreading": {
         "id": "CP14BaseFlammableSpreading",
         "name": null,
@@ -214,13 +235,6 @@
         "name": null,
         "description": null,
         "parent": "CP14BaseFlammableSpreading",
-        "suffix": null
-    },
-    "CP14Fire": {
-        "id": "CP14Fire",
-        "name": "fire",
-        "description": "it's fire!",
-        "parent": null,
         "suffix": null
     },
     "CP14ActionZLevelUp": {
@@ -482,6 +496,69 @@
         "parent": "CP14BaseSpellScrollEarth",
         "suffix": null
     },
+    "CP14ActionSpellFireball": {
+        "id": "CP14ActionSpellFireball",
+        "name": "Fireball",
+        "description": "An effective method of destruction - an explosive fireball",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneFireball": {
+        "id": "CP14RuneFireball",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectFireball": {
+        "id": "CP14ImpactEffectFireball",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14Fireball": {
+        "id": "CP14Fireball",
+        "name": "fireball",
+        "description": null,
+        "parent": "BulletRocket",
+        "suffix": null
+    },
+    "CP14SpellScrollFireball": {
+        "id": "CP14SpellScrollFireball",
+        "name": "fireball spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollFire",
+        "suffix": null
+    },
+    "CP14ActionSpellFireRune": {
+        "id": "CP14ActionSpellFireRune",
+        "name": "Fire rune",
+        "description": "You create an area where a scalding stream of fire occurs with little delay.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14TelegraphyFireRune": {
+        "id": "CP14TelegraphyFireRune",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14AreaEntityEffectFireRune": {
+        "id": "CP14AreaEntityEffectFireRune",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollFireRune": {
+        "id": "CP14SpellScrollFireRune",
+        "name": "fire rune spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollFire",
+        "suffix": null
+    },
     "CP14ActionSpellFlameCreation": {
         "id": "CP14ActionSpellFlameCreation",
         "name": "Flame creation",
@@ -552,69 +629,6 @@
         "parent": "CP14BaseMagicRune",
         "suffix": null
     },
-    "CP14ActionSpellFireball": {
-        "id": "CP14ActionSpellFireball",
-        "name": "Fireball",
-        "description": "An effective method of destruction - an explosive fireball",
-        "parent": null,
-        "suffix": null
-    },
-    "CP14RuneFireball": {
-        "id": "CP14RuneFireball",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicRune",
-        "suffix": null
-    },
-    "CP14ImpactEffectFireball": {
-        "id": "CP14ImpactEffectFireball",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicImpact",
-        "suffix": null
-    },
-    "CP14Fireball": {
-        "id": "CP14Fireball",
-        "name": "artificial flame",
-        "description": null,
-        "parent": "BulletRocket",
-        "suffix": null
-    },
-    "CP14SpellScrollFireball": {
-        "id": "CP14SpellScrollFireball",
-        "name": "fireball spell scroll",
-        "description": null,
-        "parent": "CP14BaseSpellScrollFire",
-        "suffix": null
-    },
-    "CP14ActionSpellFireRune": {
-        "id": "CP14ActionSpellFireRune",
-        "name": "Fire rune",
-        "description": "You create an area where a scalding stream of fire occurs with little delay.",
-        "parent": null,
-        "suffix": null
-    },
-    "CP14TelegraphyFireRune": {
-        "id": "CP14TelegraphyFireRune",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicImpact",
-        "suffix": null
-    },
-    "CP14AreaEntityEffectFireRune": {
-        "id": "CP14AreaEntityEffectFireRune",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicImpact",
-        "suffix": null
-    },
-    "CP14SpellScrollFireRune": {
-        "id": "CP14SpellScrollFireRune",
-        "name": "fire rune spell scroll",
-        "description": null,
-        "parent": "CP14BaseSpellScrollFire",
-        "suffix": null
-    },
     "CP14ActionSpellMagicalAcceleration": {
         "id": "CP14ActionSpellMagicalAcceleration",
         "name": "Magical acceleration",
@@ -634,6 +648,27 @@
         "name": "magical accseleration spell scroll",
         "description": null,
         "parent": "CP14BaseSpellScrollHealing",
+        "suffix": null
+    },
+    "CP14ActionSpellSheepPolymorph": {
+        "id": "CP14ActionSpellSheepPolymorph",
+        "name": "Sheep polymorph",
+        "description": "You curse the target, turning it into a silly sheep for a short period of time.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneSheepPolymorph": {
+        "id": "CP14RuneSheepPolymorph",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectSheepPolymorph": {
+        "id": "CP14ImpactEffectSheepPolymorph",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
         "suffix": null
     },
     "CP14ActionSpellCureBurn": {
@@ -1021,18 +1056,18 @@
         "parent": "CP14BaseMagicImpact",
         "suffix": null
     },
-    "CP14DummyActionSpellManaManipulation": {
-        "id": "CP14DummyActionSpellManaManipulation",
-        "name": "Mana manipulation",
-        "description": "You can manipulate mana by giving it to other objects or taking it from them.",
-        "parent": null,
-        "suffix": null
-    },
     "CP14ActionSpellManaGift": {
         "id": "CP14ActionSpellManaGift",
         "name": "Mana transfer",
         "description": "You can transfer a small amount of your magical energy to a target entity or magical object.",
         "parent": null,
+        "suffix": null
+    },
+    "CP14ActionSpellManaGiftElf": {
+        "id": "CP14ActionSpellManaGiftElf",
+        "name": "Carefull mana transfer",
+        "description": "You transfer mana at a tremendous rate without dealing damage to the target.",
+        "parent": "CP14ActionSpellManaGift",
         "suffix": null
     },
     "CP14RuneManaGift": {
@@ -1161,62 +1196,6 @@
         "parent": "CP14BaseMagicImpact",
         "suffix": null
     },
-    "CP14ActionSpellFreeze": {
-        "id": "CP14ActionSpellFreeze",
-        "name": "Freeze",
-        "description": "You begin to severely cool down the target, slowing its movement speed.",
-        "parent": null,
-        "suffix": null
-    },
-    "CP14ImpactEffectFreeze": {
-        "id": "CP14ImpactEffectFreeze",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicImpact",
-        "suffix": null
-    },
-    "CP14RunePlantFreeze": {
-        "id": "CP14RunePlantFreeze",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicRune",
-        "suffix": null
-    },
-    "CP14SpellScrollFreeze": {
-        "id": "CP14SpellScrollFreeze",
-        "name": "freeze spell scroll",
-        "description": null,
-        "parent": "CP14BaseSpellScrollWater",
-        "suffix": null
-    },
-    "CP14ActionSpellWaterCreation": {
-        "id": "CP14ActionSpellWaterCreation",
-        "name": "Water creation",
-        "description": "Creating a clot of water that is held in a floating balloon shape for some time",
-        "parent": null,
-        "suffix": null
-    },
-    "CP14RuneWaterCreation": {
-        "id": "CP14RuneWaterCreation",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicRune",
-        "suffix": null
-    },
-    "CP14ImpactEffectWaterCreation": {
-        "id": "CP14ImpactEffectWaterCreation",
-        "name": null,
-        "description": null,
-        "parent": "CP14BaseMagicImpact",
-        "suffix": null
-    },
-    "CP14SpellScrollWaterCreation": {
-        "id": "CP14SpellScrollWaterCreation",
-        "name": "water creation spell scroll",
-        "description": null,
-        "parent": "CP14BaseSpellScrollWater",
-        "suffix": null
-    },
     "CP14ActionSpellBeerCreation": {
         "id": "CP14ActionSpellBeerCreation",
         "name": "Beer creation",
@@ -1252,6 +1231,76 @@
         "parent": "CP14BaseSpellScrollWater",
         "suffix": null
     },
+    "CP14ActionSpellFreeze": {
+        "id": "CP14ActionSpellFreeze",
+        "name": "Freeze",
+        "description": "You begin to severely cool down the target, slowing its movement speed.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14ImpactEffectFreeze": {
+        "id": "CP14ImpactEffectFreeze",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14RunePlantFreeze": {
+        "id": "CP14RunePlantFreeze",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14SpellScrollFreeze": {
+        "id": "CP14SpellScrollFreeze",
+        "name": "freeze spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
+    "CP14ActionSpellIceArrow": {
+        "id": "CP14ActionSpellIceArrow",
+        "name": "Ice arrow",
+        "description": "You create a temporary sharp ice arrow that can be used as a disposable bow projectile.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14IceArrow": {
+        "id": "CP14IceArrow",
+        "name": "ice arrow",
+        "description": "A sharp ice arrow created with magic. It melts and will soon disappear, but you can shoot it once with your bow.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14SpellScrollIceArrow": {
+        "id": "CP14SpellScrollIceArrow",
+        "name": "ice arrow spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
+    "CP14ActionSpellIceDagger": {
+        "id": "CP14ActionSpellIceDagger",
+        "name": "Ice dagger",
+        "description": "You form an icy sharp dagger that will do for temporary use.",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14IceDagger": {
+        "id": "CP14IceDagger",
+        "name": "ice dagger",
+        "description": "A sharp ice arrow created with magic. It melts and will soon disappear, but you can shoot it once with your bow.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14SpellScrollIceDagger": {
+        "id": "CP14SpellScrollIceDagger",
+        "name": "ice dagger spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
     "CP14ActionSpellIceShards": {
         "id": "CP14ActionSpellIceShards",
         "name": "Ice Shards",
@@ -1276,6 +1325,34 @@
     "CP14SpellScrollIceShards": {
         "id": "CP14SpellScrollIceShards",
         "name": "ice shards spell scroll",
+        "description": null,
+        "parent": "CP14BaseSpellScrollWater",
+        "suffix": null
+    },
+    "CP14ActionSpellWaterCreation": {
+        "id": "CP14ActionSpellWaterCreation",
+        "name": "Water creation",
+        "description": "Creating a clot of water that is held in a floating balloon shape for some time",
+        "parent": null,
+        "suffix": null
+    },
+    "CP14RuneWaterCreation": {
+        "id": "CP14RuneWaterCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicRune",
+        "suffix": null
+    },
+    "CP14ImpactEffectWaterCreation": {
+        "id": "CP14ImpactEffectWaterCreation",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseMagicImpact",
+        "suffix": null
+    },
+    "CP14SpellScrollWaterCreation": {
+        "id": "CP14SpellScrollWaterCreation",
+        "name": "water creation spell scroll",
         "description": null,
         "parent": "CP14BaseSpellScrollWater",
         "suffix": null
@@ -1700,6 +1777,13 @@
         "parent": "CP14ClothingGlovesBase",
         "suffix": null
     },
+    "CP14ClothingGlovesBlacksmith": {
+        "id": "CP14ClothingGlovesBlacksmith",
+        "name": "blacksmith's gloves",
+        "description": "They say you can get your hands on a newly poured ingot in them. But it's still not worth checking.",
+        "parent": "CP14ClothingGlovesBase",
+        "suffix": null
+    },
     "CP14ClothingHeadBase": {
         "id": "CP14ClothingHeadBase",
         "name": null,
@@ -1871,7 +1955,7 @@
     "CP14ClothingMaskBoneHornedMask": {
         "id": "CP14ClothingMaskBoneHornedMask",
         "name": "horned bone mask",
-        "description": "An enchanted mask formerly belonging to a magical creature.",
+        "description": "A bone mask of some kind of animal.",
         "parent": "CP14ClothingMaskBase",
         "suffix": null
     },
@@ -1880,6 +1964,13 @@
         "name": null,
         "description": null,
         "parent": "CP14ClothingMaskBoneMask",
+        "suffix": null
+    },
+    "CP14ClothingMaskMime": {
+        "id": "CP14ClothingMaskMime",
+        "name": "mask of silence",
+        "description": "...",
+        "parent": "CP14ClothingMaskBase",
         "suffix": null
     },
     "CP14ArmorIronCuirassPresets": {
@@ -2484,6 +2575,13 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
+    "CP14ClothinShirtMaidDress": {
+        "id": "CP14ClothinShirtMaidDress",
+        "name": "maid's dress",
+        "description": null,
+        "parent": "CP14ClothingShirtBase",
+        "suffix": null
+    },
     "CP14ClothingShirtGuardBase": {
         "id": "CP14ClothingShirtGuardBase",
         "name": "guard's chainmail shirt",
@@ -2567,6 +2665,13 @@
         "description": "Everyone around you should know that you exist, buddy.",
         "parent": "CP14ClothingShoesBase",
         "suffix": null
+    },
+    "CP14ClothingShoesArtifactFrogs": {
+        "id": "CP14ClothingShoesArtifactFrogs",
+        "name": "frog's slippers",
+        "description": "For wednesday's lovers.",
+        "parent": "CP14ClothingShoesBase",
+        "suffix": "Artifact"
     },
     "CP14Mist": {
         "id": "CP14Mist",
@@ -3027,7 +3132,7 @@
         "id": "CP14MobMonsterInvisibleWhistler",
         "name": "invisible whistler",
         "description": "A monster invisible to the ordinary eye, adoring to devour victims consumed by fear and misunderstanding.",
-        "parent": "SimpleMobBase",
+        "parent": "CP14SimpleMobBase",
         "suffix": null
     },
     "CP14MobMonsterMole": {
@@ -3046,43 +3151,43 @@
     },
     "CP14MobUndeadSkeletonHalberd": {
         "id": "CP14MobUndeadSkeletonHalberd",
-        "name": "skeleton",
-        "description": "Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.",
+        "name": null,
+        "description": null,
         "parent": "CP14MobUndeadSkeletonDemiplane",
         "suffix": "Halebard"
     },
     "CP14MobUndeadSkeletonSword": {
         "id": "CP14MobUndeadSkeletonSword",
-        "name": "skeleton",
-        "description": "Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.",
+        "name": null,
+        "description": null,
         "parent": "CP14MobUndeadSkeletonDemiplane",
         "suffix": "Sword"
     },
     "CP14MobUndeadSkeletonDodger": {
         "id": "CP14MobUndeadSkeletonDodger",
-        "name": "skeleton",
-        "description": "Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.",
+        "name": null,
+        "description": null,
         "parent": "CP14MobUndeadSkeletonDemiplane",
         "suffix": "Dodger"
     },
     "CP14MobUndeadSkeletonArcher": {
         "id": "CP14MobUndeadSkeletonArcher",
-        "name": "skeleton",
-        "description": "Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.",
+        "name": null,
+        "description": null,
         "parent": "CP14MobUndeadSkeletonDemiplane",
         "suffix": "Archer"
     },
     "CP14MobUndeadSkeletonWizard": {
         "id": "CP14MobUndeadSkeletonWizard",
-        "name": "skeleton",
-        "description": "Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.",
+        "name": null,
+        "description": null,
         "parent": "CP14MobUndeadSkeletonDemiplane",
         "suffix": "Wizard"
     },
     "CP14MobUndeadSkeletonBard": {
         "id": "CP14MobUndeadSkeletonBard",
-        "name": "skeleton",
-        "description": "Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.",
+        "name": null,
+        "description": null,
         "parent": "CP14MobUndeadSkeletonDemiplane",
         "suffix": "Bard"
     },
@@ -3140,6 +3245,20 @@
         "name": null,
         "description": null,
         "parent": "WeaponTurretXeno",
+        "suffix": null
+    },
+    "CP14MobWatcherIce": {
+        "id": "CP14MobWatcherIce",
+        "name": "ice watcher",
+        "description": null,
+        "parent": "CP14MobWatcherBase",
+        "suffix": null
+    },
+    "CP14MobWatcherMagma": {
+        "id": "CP14MobWatcherMagma",
+        "name": "magma watcher",
+        "description": null,
+        "parent": "CP14MobWatcherBase",
         "suffix": null
     },
     "CP14MobXeno": {
@@ -3211,6 +3330,13 @@
         "description": null,
         "parent": "CP14MobUndeadZombie",
         "suffix": "Zombie. Easy"
+    },
+    "CP14MobSlimeBase": {
+        "id": "CP14MobSlimeBase",
+        "name": "slime",
+        "description": "A clot of semi-intelligent slime sensitive to the elemental elements. And happy to slime the skin off your face.",
+        "parent": "CP14SimpleMobNoLifeBase",
+        "suffix": null
     },
     "CP14ActionSpellSlimeJump": {
         "id": "CP14ActionSpellSlimeJump",
@@ -3548,13 +3674,6 @@
         "parent": "CP14BookBase",
         "suffix": "Guidebook"
     },
-    "CP14BookKnowledgeBase": {
-        "id": "CP14BookKnowledgeBase",
-        "name": "knowledge book",
-        "description": "This book holds valuable knowledge that you can learn... if you're ready for it.",
-        "parent": "CP14BookBase",
-        "suffix": null
-    },
     "CP14GuidebookImperialLaws": {
         "id": "CP14GuidebookImperialLaws",
         "name": "imperial laws",
@@ -3575,55 +3694,6 @@
         "description": "A 20-minute adventure: in and out.",
         "parent": "CP14GuidebookBase",
         "suffix": null
-    },
-    "CP14BookKnowledgeWoodWork": {
-        "id": "CP14BookKnowledgeWoodWork",
-        "name": null,
-        "description": null,
-        "parent": "CP14BookKnowledgeBase",
-        "suffix": "Wood Work"
-    },
-    "CP14BookKnowledgeMetallMelting": {
-        "id": "CP14BookKnowledgeMetallMelting",
-        "name": null,
-        "description": null,
-        "parent": "CP14BookKnowledgeBase",
-        "suffix": "Metall Melting"
-    },
-    "CP14BookKnowledgeMetallForging": {
-        "id": "CP14BookKnowledgeMetallForging",
-        "name": null,
-        "description": null,
-        "parent": "CP14BookKnowledgeBase",
-        "suffix": "Metall Forging"
-    },
-    "CP14BookKnowledgeGlasswork": {
-        "id": "CP14BookKnowledgeGlasswork",
-        "name": null,
-        "description": null,
-        "parent": "CP14BookKnowledgeBase",
-        "suffix": "Glasswork"
-    },
-    "CP14BookKnowledgeClothingSewing": {
-        "id": "CP14BookKnowledgeClothingSewing",
-        "name": null,
-        "description": null,
-        "parent": "CP14BookKnowledgeBase",
-        "suffix": "Clothing Sewing"
-    },
-    "CP14BookKnowledgeWallpaperCraft": {
-        "id": "CP14BookKnowledgeWallpaperCraft",
-        "name": null,
-        "description": null,
-        "parent": "CP14BookKnowledgeBase",
-        "suffix": "Wallpaper Craft"
-    },
-    "CP14BookKnowledgeAdvancedClothingSewing": {
-        "id": "CP14BookKnowledgeAdvancedClothingSewing",
-        "name": null,
-        "description": null,
-        "parent": "CP14BookKnowledgeBase",
-        "suffix": "Advanced Clothing Sewing"
     },
     "CP14BookRandom": {
         "id": "CP14BookRandom",
@@ -4383,8 +4453,8 @@
     },
     "CP14WildSage": {
         "id": "CP14WildSage",
-        "name": "wild sage root",
-        "description": "Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.",
+        "name": "sage",
+        "description": "Sage flowers. A good medicinal herb that works as a hallucinogen when properly processed.",
         "parent": "CP14WildProduceBase",
         "suffix": null
     },
@@ -5004,6 +5074,34 @@
         "parent": "CP14BaseDye",
         "suffix": null
     },
+    "CP14FloraMaterial1": {
+        "id": "CP14FloraMaterial1",
+        "name": "flora material",
+        "description": "An organic material used for medicinal or construction purposes.",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14FloraMaterial10": {
+        "id": "CP14FloraMaterial10",
+        "name": null,
+        "description": null,
+        "parent": "CP14FloraMaterial1",
+        "suffix": 10
+    },
+    "CP14CompostMaterial1": {
+        "id": "CP14CompostMaterial1",
+        "name": "compost",
+        "description": "It was once a beautiful and vibrant plant, or food. Now it's a stinking pile of decaying organic matter.",
+        "parent": "BaseItem",
+        "suffix": 1
+    },
+    "CP14CompostMaterial10": {
+        "id": "CP14CompostMaterial10",
+        "name": null,
+        "description": null,
+        "parent": "CP14CompostMaterial1",
+        "suffix": 10
+    },
     "CP14OreCopper1": {
         "id": "CP14OreCopper1",
         "name": "copper ore",
@@ -5227,20 +5325,6 @@
         "description": null,
         "parent": "CP14Nail1",
         "suffix": 50
-    },
-    "CP14FloraMaterial1": {
-        "id": "CP14FloraMaterial1",
-        "name": "flora material",
-        "description": "An organic material used for medicinal or construction purposes.",
-        "parent": "BaseItem",
-        "suffix": 1
-    },
-    "CP14FloraMaterial10": {
-        "id": "CP14FloraMaterial10",
-        "name": null,
-        "description": null,
-        "parent": "CP14FloraMaterial1",
-        "suffix": 10
     },
     "CP14String": {
         "id": "CP14String",
@@ -5564,6 +5648,13 @@
         "parent": "CP14ModularGripShort",
         "suffix": null
     },
+    "CP14ModularGripGuildmaster": {
+        "id": "CP14ModularGripGuildmaster",
+        "name": "guildmaster's rapier grip",
+        "description": null,
+        "parent": "CP14ModularGripShort",
+        "suffix": null
+    },
     "CP14ModularGripWoodenLong": {
         "id": "CP14ModularGripWoodenLong",
         "name": "long wooden grip",
@@ -5737,6 +5828,41 @@
         "name": "mithril hammerhead",
         "description": null,
         "parent": "CP14ModularBladeHammerBase",
+        "suffix": null
+    },
+    "CP14ModularBladeHoeBase": {
+        "id": "CP14ModularBladeHoeBase",
+        "name": null,
+        "description": "A hoe blade without a hilt. A blacksmith can use it as a spare part to create a tool.",
+        "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14ModularBladeIronHoe": {
+        "id": "CP14ModularBladeIronHoe",
+        "name": "iron hoe blade",
+        "description": null,
+        "parent": "CP14ModularBladeHoeBase",
+        "suffix": null
+    },
+    "CP14ModularBladeCopperHoe": {
+        "id": "CP14ModularBladeCopperHoe",
+        "name": "copper hoe blade",
+        "description": null,
+        "parent": "CP14ModularBladeHoeBase",
+        "suffix": null
+    },
+    "CP14ModularBladeGoldHoe": {
+        "id": "CP14ModularBladeGoldHoe",
+        "name": "golden hoe blade",
+        "description": null,
+        "parent": "CP14ModularBladeHoeBase",
+        "suffix": null
+    },
+    "CP14ModularBladeMithrilHoe": {
+        "id": "CP14ModularBladeMithrilHoe",
+        "name": "mithril hoe blade",
+        "description": null,
+        "parent": "CP14ModularBladeSickleBase",
         "suffix": null
     },
     "CP14ModularBladeMaceBase": {
@@ -5996,6 +6122,13 @@
         "name": null,
         "description": "Garde? Garde!",
         "parent": "BaseItem",
+        "suffix": null
+    },
+    "CP14ModularGardeGuildmaster": {
+        "id": "CP14ModularGardeGuildmaster",
+        "name": "guildmaster's rapier garde",
+        "description": null,
+        "parent": "CP14ModularGardeBase",
         "suffix": null
     },
     "CP14ModularGardeSharpIron": {
@@ -6327,6 +6460,13 @@
         "parent": "CP14VialSmall",
         "suffix": "Rainbow and Drunk 20%"
     },
+    "CP14VialSmallHealingManaDepletion": {
+        "id": "CP14VialSmallHealingManaDepletion",
+        "name": "brad's mana-healing potion",
+        "description": null,
+        "parent": "CP14VialSmall",
+        "suffix": "Healing mana 10%"
+    },
     "CP14BaseAlchemyBomb": {
         "id": "CP14BaseAlchemyBomb",
         "name": "alchemical bomb",
@@ -6418,17 +6558,17 @@
         "parent": "CP14BaseSeed",
         "suffix": null
     },
-    "CP14SeedOnion": {
-        "id": "CP14SeedOnion",
-        "name": "onion seeds",
-        "description": "Onion seeds, small but strong.",
-        "parent": "CP14BaseSeed",
-        "suffix": null
-    },
     "CP14SeedPepper": {
         "id": "CP14SeedPepper",
         "name": "pepper seeds",
         "description": "Pepper seeds, with a peppercorn inside.",
+        "parent": "CP14BaseSeed",
+        "suffix": null
+    },
+    "CP14SeedSage": {
+        "id": "CP14SeedSage",
+        "name": "sage seeds",
+        "description": "Sage seeds. It's time to grow some fun herbs!",
         "parent": "CP14BaseSeed",
         "suffix": null
     },
@@ -6824,6 +6964,13 @@
         "parent": "CP14ModularGripWooden",
         "suffix": null
     },
+    "CP14ModularIronHoe": {
+        "id": "CP14ModularIronHoe",
+        "name": "iron hoe",
+        "description": "Hoe. Your perfect tool for tilling the ground and preparing it for gardening.",
+        "parent": "CP14ModularGripWooden",
+        "suffix": null
+    },
     "CP14ModularIronMace": {
         "id": "CP14ModularIronMace",
         "name": "iron mace",
@@ -6836,6 +6983,13 @@
         "name": "iron pickaxe",
         "description": "Notched to perfection, for jamming it into rocks",
         "parent": "CP14ModularGripWoodenLong",
+        "suffix": null
+    },
+    "CP14ModularGuildmasterRapier": {
+        "id": "CP14ModularGuildmasterRapier",
+        "name": "guildmaster's personal rapier",
+        "description": "A personal weapon issued to each guildmaster. Combines reliability and killing power.",
+        "parent": "CP14ModularGripGuildmaster",
         "suffix": null
     },
     "CP14ModularIronShovel": {
@@ -8070,19 +8224,124 @@
         "parent": "BaseStructure",
         "suffix": null
     },
-    "CP14GatherableWildBase": {
-        "id": "CP14GatherableWildBase",
-        "name": null,
-        "description": null,
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
     "CP14GatherablePlantBase": {
         "id": "CP14GatherablePlantBase",
         "name": null,
         "description": null,
         "parent": "CP14GatherableBase",
         "suffix": null
+    },
+    "CP14GatherablePlantMultiHarvestBase": {
+        "id": "CP14GatherablePlantMultiHarvestBase",
+        "name": null,
+        "description": null,
+        "parent": "CP14GatherablePlantSingleHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantCabbage": {
+        "id": "CP14PlantCabbage",
+        "name": "cabbage",
+        "description": "You see a cabbage in front of you. Perhaps you were born in one.",
+        "parent": "CP14GatherablePlantSingleHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantCucumber": {
+        "id": "CP14PlantCucumber",
+        "name": "cucumber",
+        "description": "Don't trust people who know how to turn into pickles.",
+        "parent": "CP14GatherablePlantMultiHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantOnion": {
+        "id": "CP14PlantOnion",
+        "name": "onion",
+        "description": "He's so cute it brings tears to my eyes to cut him up.",
+        "parent": "CP14GatherablePlantSingleHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantPepper": {
+        "id": "CP14PlantPepper",
+        "name": "pepper",
+        "description": "Russian roulette. Are you hot, or are you sweet peppers?",
+        "parent": "CP14GatherablePlantMultiHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantPotato": {
+        "id": "CP14PlantPotato",
+        "name": "potato",
+        "description": "Some like to associate themselves with potatoes. People like that are not bad people.",
+        "parent": "CP14GatherablePlantSingleHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantPumpkin": {
+        "id": "CP14PlantPumpkin",
+        "name": "pumpkin",
+        "description": "Legends say there is a pumpkin king who stares into your soul through the crowns of trees.",
+        "parent": "CP14GatherablePlantSingleHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantSage": {
+        "id": "CP14PlantSage",
+        "name": "sage",
+        "description": "Medicinal sage. Some love it for its medicinal properties, others for its narcotic properties. Which side are you on?",
+        "parent": "CP14GatherablePlantSingleHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantTomatoes": {
+        "id": "CP14PlantTomatoes",
+        "name": "tomatoes",
+        "description": "On the one hand, it's a delicious fruit. But why eat it when it's much more fun to use tomatoes as a throwing projectile?",
+        "parent": "CP14GatherablePlantMultiHarvestBase",
+        "suffix": null
+    },
+    "CP14PlantWheat": {
+        "id": "CP14PlantWheat",
+        "name": "wheat",
+        "description": "Most popular crop. Unpretentious, it opens the way to an abundance of flour products.",
+        "parent": "CP14GatherablePlantSingleHarvestBase",
+        "suffix": null
+    },
+    "CP14GatherableBloodFlower": {
+        "id": "CP14GatherableBloodFlower",
+        "name": "blood rose",
+        "description": "Scarlet flowers growing where blood has been spilled.",
+        "parent": "CP14GatherableBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableBlueAmanita": {
+        "id": "CP14GatherableBlueAmanita",
+        "name": "blue Amanita",
+        "description": "A sky blue flower known for its medicinal and magical properties.",
+        "parent": "CP14GatherableBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableChromiumSlime": {
+        "id": "CP14GatherableChromiumSlime",
+        "name": "chromium slime",
+        "description": "This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.",
+        "parent": "CP14GatherableBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableDayflin": {
+        "id": "CP14GatherableDayflin",
+        "name": "yellow dayflin",
+        "description": "A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.",
+        "parent": "CP14GatherableBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableFlyAgaric": {
+        "id": "CP14GatherableFlyAgaric",
+        "name": "fly agaric",
+        "description": "This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.",
+        "parent": "CP14GatherableBase",
+        "suffix": "Gatherable"
+    },
+    "CP14GatherableLumiMushroom": {
+        "id": "CP14GatherableLumiMushroom",
+        "name": "lumishroom",
+        "description": "A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.",
+        "parent": "CP14GatherableBase",
+        "suffix": "Gatherable"
     },
     "CP14WaterLilies": {
         "id": "CP14WaterLilies",
@@ -8098,166 +8357,12 @@
         "parent": "CP14WaterLilies",
         "suffix": null
     },
-    "CP14GatherableBloodFlower": {
-        "id": "CP14GatherableBloodFlower",
-        "name": "blood rose",
-        "description": "Scarlet flowers growing where blood has been spilled.",
-        "parent": "CP14GatherableWildBase",
-        "suffix": "Gatherable"
-    },
-    "CP14GatherableDayflin": {
-        "id": "CP14GatherableDayflin",
-        "name": "yellow dayflin",
-        "description": "A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.",
-        "parent": "CP14GatherableWildBase",
-        "suffix": "Gatherable"
-    },
-    "CP14GatherableFlyAgaric": {
-        "id": "CP14GatherableFlyAgaric",
-        "name": "fly agaric",
-        "description": "This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.",
-        "parent": "CP14GatherableWildBase",
-        "suffix": "Gatherable"
-    },
-    "CP14GatherableChromiumSlime": {
-        "id": "CP14GatherableChromiumSlime",
-        "name": "chromium slime",
-        "description": "This rare thick substance can be found in a stream of water as if it has a mind of its own. When trying to change the slime itself - the slime changes the reagent it interacts with.",
-        "parent": "CP14GatherableWildBase",
-        "suffix": "Gatherable"
-    },
     "CP14GatherableWildSage": {
         "id": "CP14GatherableWildSage",
         "name": "wild sage",
         "description": "Root of this ubiquitous medicinal plant not bad at healing physical injuries, and inducing coughing.",
-        "parent": "CP14GatherableWildBase",
+        "parent": "CP14GatherableBase",
         "suffix": "Gatherable"
-    },
-    "CP14GatherableLumiMushroom": {
-        "id": "CP14GatherableLumiMushroom",
-        "name": "lumishroom",
-        "description": "A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.",
-        "parent": "CP14GatherableWildBase",
-        "suffix": "Gatherable"
-    },
-    "CP14GatherableBlueAmanita": {
-        "id": "CP14GatherableBlueAmanita",
-        "name": "blue Amanita",
-        "description": "A sky blue flower known for its medicinal and magical properties.",
-        "parent": "CP14GatherableWildBase",
-        "suffix": "Gatherable"
-    },
-    "CP14PlantCabbage": {
-        "id": "CP14PlantCabbage",
-        "name": "cabbage",
-        "description": "OOO",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantCabbageDeath": {
-        "id": "CP14PlantCabbageDeath",
-        "name": "dead cabbage",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
-    "CP14PlantCucumber": {
-        "id": "CP14PlantCucumber",
-        "name": "cucumber",
-        "description": "OOO",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantCucumberDeath": {
-        "id": "CP14PlantCucumberDeath",
-        "name": "dead cucumber",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
-    "CP14PlantOnion": {
-        "id": "CP14PlantOnion",
-        "name": "onion",
-        "description": "OOO",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantOnionDeath": {
-        "id": "CP14PlantOnionDeath",
-        "name": "dead onion",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
-    "CP14PlantPepper": {
-        "id": "CP14PlantPepper",
-        "name": "pepper",
-        "description": "OOO",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantPepperDeath": {
-        "id": "CP14PlantPepperDeath",
-        "name": "dead pepper",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
-    "CP14PlantPotato": {
-        "id": "CP14PlantPotato",
-        "name": "potato",
-        "description": "OOO",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantPotatoDeath": {
-        "id": "CP14PlantPotatoDeath",
-        "name": "dead potato",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
-    "CP14PlantPumpkin": {
-        "id": "CP14PlantPumpkin",
-        "name": "pumpkin",
-        "description": "OOO",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantPumpkinDeath": {
-        "id": "CP14PlantPumpkinDeath",
-        "name": "dead pumpkin",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
-    "CP14PlantTomatoes": {
-        "id": "CP14PlantTomatoes",
-        "name": "tomatoes",
-        "description": "OOO",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantTomatoesDeath": {
-        "id": "CP14PlantTomatoesDeath",
-        "name": "dead tomatoes",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
-    },
-    "CP14PlantWheat": {
-        "id": "CP14PlantWheat",
-        "name": "wheat",
-        "description": "Most popular crop. Unpretentious, it opens the way to an abundance of flour products.",
-        "parent": "CP14GatherablePlantBase",
-        "suffix": null
-    },
-    "CP14PlantWheatDeath": {
-        "id": "CP14PlantWheatDeath",
-        "name": "dead wheat",
-        "description": "The sad spectacle of wasted food.",
-        "parent": "CP14GatherableBase",
-        "suffix": null
     },
     "CP14BarrelWater": {
         "id": "CP14BarrelWater",
@@ -8945,13 +9050,6 @@
         "parent": "CP14TradingPortalBase",
         "suffix": "SpiceStream"
     },
-    "CP14SeedbedWooden": {
-        "id": "CP14SeedbedWooden",
-        "name": "seedbed",
-        "description": "A wooden tub with a pile of earth adapted for growing plants.",
-        "parent": "CP14BaseFarmingSoil",
-        "suffix": null
-    },
     "CP14BaseEssenceNode": {
         "id": "CP14BaseEssenceNode",
         "name": "essence node",
@@ -9222,21 +9320,21 @@
         "id": "CP14ZombiesSpawn",
         "name": null,
         "description": null,
-        "parent": "CP14BaseStationEventShortDelay",
+        "parent": "CP14BaseStationEventLongDelay",
         "suffix": null
     },
     "CP14HydrasSpawn": {
         "id": "CP14HydrasSpawn",
         "name": null,
         "description": null,
-        "parent": "CP14BaseStationEventShortDelay",
+        "parent": "CP14BaseStationEventLongDelay",
         "suffix": null
     },
     "CP14MosquitoSpawn": {
         "id": "CP14MosquitoSpawn",
         "name": null,
         "description": null,
-        "parent": "CP14BaseStationEventShortDelay",
+        "parent": "CP14BaseStationEventLongDelay",
         "suffix": null
     },
     "CP14RabbitsSpawn": {
@@ -9248,6 +9346,13 @@
     },
     "CP14FrogsSpawn": {
         "id": "CP14FrogsSpawn",
+        "name": null,
+        "description": null,
+        "parent": "CP14BaseStationEventLongDelay",
+        "suffix": null
+    },
+    "CP14Storm": {
+        "id": "CP14Storm",
         "name": null,
         "description": null,
         "parent": "CP14BaseStationEventLongDelay",
@@ -9286,6 +9391,48 @@
         "name": null,
         "description": null,
         "parent": "CP14BaseGameRule",
+        "suffix": null
+    },
+    "CP14SkillTreePyrokineticLoadoutDummy": {
+        "id": "CP14SkillTreePyrokineticLoadoutDummy",
+        "name": "Pyrokinetic",
+        "description": null,
+        "parent": null,
+        "suffix": null
+    },
+    "CP14SkillTreeHydrosophistryLoadoutDummy": {
+        "id": "CP14SkillTreeHydrosophistryLoadoutDummy",
+        "name": "Hydrosophistry",
+        "description": null,
+        "parent": null,
+        "suffix": null
+    },
+    "CP14SkillTreeIllusionLoadoutDummy": {
+        "id": "CP14SkillTreeIllusionLoadoutDummy",
+        "name": "Illusion",
+        "description": null,
+        "parent": null,
+        "suffix": null
+    },
+    "CP14SkillTreeMetamagicLoadoutDummy": {
+        "id": "CP14SkillTreeMetamagicLoadoutDummy",
+        "name": "Metamagic",
+        "description": null,
+        "parent": null,
+        "suffix": null
+    },
+    "CP14SkillTreeHealingLoadoutDummy": {
+        "id": "CP14SkillTreeHealingLoadoutDummy",
+        "name": "Healing",
+        "description": null,
+        "parent": null,
+        "suffix": null
+    },
+    "CP14SkillTreeAtlethicLoadoutDummy": {
+        "id": "CP14SkillTreeAtlethicLoadoutDummy",
+        "name": "Atlethic",
+        "description": null,
+        "parent": null,
         "suffix": null
     },
     "CP14BaseTownObjective": {
@@ -9367,7 +9514,14 @@
     },
     "CP14DemiplanEnterRoomMarker": {
         "id": "CP14DemiplanEnterRoomMarker",
-        "name": "Demiplan enter room marker",
+        "name": "Demiplane enter room marker",
+        "description": null,
+        "parent": "BaseRoomMarker",
+        "suffix": null
+    },
+    "CP14DemiplaneRuinsRoomSpawner": {
+        "id": "CP14DemiplaneRuinsRoomSpawner",
+        "name": "Demiplane ruins room spawner",
         "description": null,
         "parent": "BaseRoomMarker",
         "suffix": null
@@ -9419,6 +9573,20 @@
         "name": null,
         "description": null,
         "parent": null,
+        "suffix": null
+    },
+    "CP14ClothingCloakAmuletGold": {
+        "id": "CP14ClothingCloakAmuletGold",
+        "name": "gold amulet",
+        "description": "A gold amulet, a valuable trinket.",
+        "parent": "CP14ClothingCloakBase",
+        "suffix": null
+    },
+    "CP14ClothingCloakAmuletMana": {
+        "id": "CP14ClothingCloakAmuletMana",
+        "name": "mana amulet",
+        "description": "A gold amulet with a magical stone inside that helps you conjure more easily.",
+        "parent": "CP14ClothingCloakBase",
         "suffix": null
     },
     "CP14ClothingCloakMaidArpon": {
@@ -9526,6 +9694,20 @@
         "parent": "CP14MobDamageable",
         "suffix": "AI"
     },
+    "CP14SimpleMobNoLifeBase": {
+        "id": "CP14SimpleMobNoLifeBase",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobDamageable",
+        "suffix": "AI"
+    },
+    "CP14SimpleSpaceMobNoLifeBase": {
+        "id": "CP14SimpleSpaceMobNoLifeBase",
+        "name": null,
+        "description": null,
+        "parent": null,
+        "suffix": "AI"
+    },
     "CP14MobIceSpectre": {
         "id": "CP14MobIceSpectre",
         "name": "icy spectre",
@@ -9537,14 +9719,14 @@
         "id": "CP14MobMonsterMosquito",
         "name": "bloodworm mosquitoes",
         "description": "A bloodthirsty swarm of small mosquitoes just waiting for a soft flesh for a bloody feast.",
-        "parent": null,
+        "parent": "CP14SimpleMobBase",
         "suffix": null
     },
-    "CP14MobSlimeBase": {
-        "id": "CP14MobSlimeBase",
-        "name": "slime",
-        "description": "A clot of semi-intelligent slime sensitive to the elemental elements. And happy to slime the skin off your face.",
-        "parent": "CP14SimpleMobBase",
+    "CP14MobWatcherBase": {
+        "id": "CP14MobWatcherBase",
+        "name": "watcher",
+        "description": "It's like it's staring right through you.",
+        "parent": "CP14SimpleMobNoLifeBase",
         "suffix": null
     },
     "CP14BaseMobSpecies": {
@@ -9561,11 +9743,18 @@
         "parent": "CP14BaseMobSpecies",
         "suffix": null
     },
+    "CP14BaseMobSpeciesNoLife": {
+        "id": "CP14BaseMobSpeciesNoLife",
+        "name": null,
+        "description": null,
+        "parent": "CP14MobDamageable",
+        "suffix": null
+    },
     "CP14BaseMobSkeleton": {
         "id": "CP14BaseMobSkeleton",
         "name": "Mr. Skeleton",
         "description": null,
-        "parent": "CP14BaseMobSpecies",
+        "parent": "CP14BaseMobSpeciesNoLife",
         "suffix": null
     },
     "CP14BaseMobZombie": {
@@ -9628,13 +9817,6 @@
         "id": "CP14BaseCrowbar",
         "name": "crowbar",
         "description": "A versatile and useful iron, for taking apart floors or other objects.",
-        "parent": null,
-        "suffix": null
-    },
-    "CP14BaseHoe": {
-        "id": "CP14BaseHoe",
-        "name": "hoe",
-        "description": "A gardening tool to prepare the soil for planting, or to clear weeds",
         "parent": null,
         "suffix": null
     },
@@ -9972,12 +10154,22 @@
         ],
         "suffix": null
     },
+    "CP14GatherablePlantSingleHarvestBase": {
+        "id": "CP14GatherablePlantSingleHarvestBase",
+        "name": null,
+        "description": null,
+        "parent": [
+            "CP14BaseFlammableSpreading",
+            "CP14GatherablePlantBase"
+        ],
+        "suffix": null
+    },
     "CP14GatherableWaterAirLily": {
         "id": "CP14GatherableWaterAirLily",
         "name": "air lily",
         "description": "A light, delicate and airy flower. It is said that its special properties even allow it to breathe underwater...",
         "parent": [
-            "CP14GatherableWildBase",
+            "CP14GatherableBase",
             "CP14WaterLilies"
         ],
         "suffix": "Gatherable"

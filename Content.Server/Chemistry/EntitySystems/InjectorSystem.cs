@@ -89,13 +89,6 @@ public sealed class InjectorSystem : SharedInjectorSystem
         if (args.Target is not { Valid: true } target || !HasComp<SolutionContainerManagerComponent>(entity))
             return;
 
-
-        //CP14 - Shitcode retarget plant -> soil
-        //TODO: fix it
-        if (TryComp<CP14PlantComponent>(args.Target, out var plant) && plant.SoilUid is not null)
-            target = plant.SoilUid.Value;
-        //CP14 - end shitcode
-
         // Is the target a mob? If yes, use a do-after to give them time to respond.
         if (HasComp<MobStateComponent>(target) || HasComp<BloodstreamComponent>(target))
         {

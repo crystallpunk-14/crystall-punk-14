@@ -197,6 +197,21 @@
     headerMargin: 0.0, 12.0, 0.0, 0.0
 
 - type: entity
+  id: PaperNanoTaskItem
+  parent: Paper
+  name: NanoTask item
+  description: A printed NanoTask item. Can be inserted into your PDA to add it to your tasks.
+  components:
+  - type: Tag
+    tags:
+    - Document
+    - Trash
+    - Paper
+  - type: StaticPrice
+    price: 0
+  - type: NanoTaskPrinted
+
+- type: entity
   id: PaperCargoBountyManifest
   parent: PaperCargoInvoice
   name: bounty manifest
@@ -678,18 +693,18 @@
     tags:
     - Trash
     - Document
-  #- type: Appearance, hide stamp marks until we have some kind of displacement
-  - type: Flammable
-    fireSpread: true
-    canResistFire: false
-    alwaysCombustible: true
-    canExtinguish: true
-    damage:
-      types:
-        Heat: 1
-  - type: FireVisuals
-    sprite: Effects/fire.rsi
-    normalState: fire
+  #- type: Appearance
+  #- type: Flammable
+  #  fireSpread: true
+  #  canResistFire: false
+  #  alwaysCombustible: true
+  #  canExtinguish: true
+  #  damage:
+  #    types:
+  #      Heat: 1
+  #- type: FireVisuals
+  #  sprite: Effects/fire.rsi
+  #  normalState: fire
   - type: Damageable
     damageModifierSet: Wood
   - type: Destructible

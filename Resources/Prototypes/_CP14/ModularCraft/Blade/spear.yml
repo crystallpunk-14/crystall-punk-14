@@ -29,6 +29,10 @@
     bonusDamage:
       types:
         Piercing: 8
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Piercing: 3
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1

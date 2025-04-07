@@ -9,6 +9,8 @@
   generationWeight: 1.5
   categories:
     Danger: 0.3
+  blacklistTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobUndeadZombieRandom
@@ -203,3 +205,41 @@
       count: 3
       minGroupSize: 4
       maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: MobWatcherIce
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-watcher
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneCold
+  blacklistTags:
+  - CP14DemiplaneHot
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeBase
+      count: 2
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: MobWatcherMagma
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-watcher
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneHot
+  blacklistTags:
+  - CP14DemiplaneCold
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeBase
+      count: 2
+      minGroupSize: 2
+      maxGroupSize: 3

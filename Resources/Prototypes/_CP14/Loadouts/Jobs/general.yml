@@ -14,6 +14,8 @@
   - CP14ClothingCloakBlue
   - CP14ClothingCloakFurCoat
   - CP14ClothingCloakInsulated
+  - CP14ClothingCloakBlackSyurko
+  - CP14ClothingCloakRedSyurko
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -24,6 +26,16 @@
   id: CP14ClothingCloakFurcapeBlue
   equipment:
     cloak: CP14ClothingCloakFurcapeBlue
+
+- type: loadout
+  id: CP14ClothingCloakBlackSyurko
+  equipment:
+    cloak: CP14ClothingCloakBlackSyurko
+
+- type: loadout
+  id: CP14ClothingCloakRedSyurko
+  equipment:
+    cloak: CP14ClothingCloakRedSyurko
 
 - type: loadout
   id: CP14ClothingCloakMaidArpon
@@ -190,6 +202,7 @@
   - CP14ClothingHeadJestersCap
   - CP14ClothingHeadHuntersHat
   - CP14ClothingHeadJagermeisterHat
+  - CP14ClothingHeadStrawHat
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -210,6 +223,11 @@
   id: CP14ClothingHeadJestersCap
   equipment:
     head: CP14ClothingHeadJestersCap
+
+- type: loadout
+  id: CP14ClothingHeadStrawHat
+  equipment:
+    head: CP14ClothingHeadStrawHat
 
 - type: loadout
   id: CP14ClothingHeadHuntersHat

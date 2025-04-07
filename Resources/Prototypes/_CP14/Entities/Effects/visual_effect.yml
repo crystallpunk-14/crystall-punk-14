@@ -22,6 +22,9 @@
     tags:
       - HideContextMenu
   - type: AnimationPlayer
+  - type: EmitSoundOnSpawn
+    sound:
+      collection: CP14Digging
   
 - type: entity
   id: CP14SnowEffect

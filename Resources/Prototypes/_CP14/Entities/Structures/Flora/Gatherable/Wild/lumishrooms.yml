@@ -1,0 +1,36 @@
+- type: entity
+  id: CP14GatherableLumiMushroom
+  parent: CP14GatherableBase
+  name: lumishroom
+  description: A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Flora/Wild/lumishroom.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+        world4: ""
+        world5: ""
+        world6: ""
+  - type: PointLight
+    color: "#36c98f"
+    radius: 1.5
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: CP14GatherLumiMushroom
+
+- type: entityLootTable
+  id: CP14GatherLumiMushroom
+  entries:
+  - id: CP14LumiMushroom
+    amount: 1
+    maxAmount: 1

@@ -1,0 +1,96 @@
+#Concept:
+# Copy of dagger with bigger damage, but without throwing
+- type: modularPart
+  id: BaseBladeHoe
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponThrowable
+    #components: TODO Add gathering tag
+  - !type:AddComponents
+    override: true
+    components:
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Piercing: 6
+    - type: ThrowingAngle
+      angle: 135
+    - type: EmbeddableProjectile
+      offset: -0.15,-0.15
+      removalTime: 0.5
+    - type: CP14EditTileTool
+      sound:
+        collection: CP14Digging
+      tileReplace:
+        CP14FloorDirt: CP14FloorDirtSeedbed
+        CP14FloorDirtSeedbed: CP14FloorDirt
+  - !type:EditMeleeWeapon
+    newWideAnimation: CP14WeaponArcThrust
+    attackRateMultiplier: 1.5
+    bonusDamage:
+      types:
+        Piercing: 6
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Piercing: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+
+- type: modularPart
+  id: BladeIronHoe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHoe
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldHoe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHoe
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperHoe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHoe
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilHoe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHoe
+    - BaseBladeMithril

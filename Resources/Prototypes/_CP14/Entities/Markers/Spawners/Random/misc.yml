@@ -9,9 +9,6 @@
     - CP14DirtBlock1
     chance: 1
     deleteSpawnerAfterSpawn: false
-  - type: EmitSoundOnSpawn
-    sound:
-      collection: CP14Digging
 
 - type: entity
   id: CP14RandomSnowLootSpawner

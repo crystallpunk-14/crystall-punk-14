@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using System.Numerics;
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server.Stack;
@@ -15,6 +16,7 @@ using Content.Shared.UserInterface;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Workbench;
 
@@ -29,6 +31,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -100,7 +103,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         //We teleport result to workbench AFTER craft.
         foreach (var resultEntity in resultEntities)
         {
-            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates);
+            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates.Offset(new Vector2(_random.NextFloat(-0.5f, 0.5f), _random.NextFloat(-0.5f, 0.5f))));
         }
 
         UpdateUIRecipes(ent, args.User);

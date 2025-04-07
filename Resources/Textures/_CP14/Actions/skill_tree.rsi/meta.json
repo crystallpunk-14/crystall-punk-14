@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by TheShuEd",
+  "states": [
+    {
+      "name": "atlethic"
+    },
+    {
+      "name": "heal"
+    },
+    {
+      "name": "light"
+    },
+    {
+      "name": "meta"
+    },
+    {
+      "name": "pyro"
+    },
+    {
+      "name": "water"
+    }
+  ]
+}

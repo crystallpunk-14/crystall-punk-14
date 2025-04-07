@@ -8,6 +8,7 @@
     size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Specific/Farming/seeds.rsi
+  - type: CP14Seed
 
 - type: entity
   id: CP14SeedWheat
@@ -75,19 +76,6 @@
     plantProto: CP14PlantTomatoes
 
 - type: entity
-  id: CP14SeedOnion
-  name: onion seeds
-  description: Onion seeds, small but strong.
-  parent: CP14BaseSeed
-  components:
-  - type: Sprite
-    layers:
-    - state: bag
-    - state: onion
-  - type: CP14Seed
-    plantProto: CP14PlantOnion
-
-- type: entity
   id: CP14SeedPepper
   name: pepper seeds
   description: Pepper seeds, with a peppercorn inside.
@@ -99,3 +87,16 @@
     - state: pepper
   - type: CP14Seed
     plantProto: CP14PlantPepper
+
+- type: entity
+  id: CP14SeedSage
+  name: sage seeds
+  description: Sage seeds. It's time to grow some fun herbs!
+  parent: CP14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: sage
+  - type: CP14Seed
+    plantProto: CP14PlantSage

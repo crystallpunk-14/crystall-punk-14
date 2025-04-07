@@ -24,8 +24,8 @@
               amount: 1
             - !type:DeleteEntity {}
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
         - to: CP14FenceIronGrilleGate
           steps:
             - material: CP14IronBar
@@ -43,6 +43,6 @@
               prototype: CP14IronBar1
               amount: 1
           steps:
-            - tool: Screwing #TODO - new tool
-              doAfter: 1
+            - tool: Prying #TODO - new tool
+              doAfter: 5
               
