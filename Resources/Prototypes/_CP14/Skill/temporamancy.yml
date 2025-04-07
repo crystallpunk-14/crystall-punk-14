@@ -1,7 +1,7 @@
 - type: cp14Skill
   id: CP14ActionSpellShadowGrab
   skillUiPosition: 0, 0
-  tree: Temporamancy
+  tree: Dimension
   icon:
     sprite: _CP14/Actions/Spells/dimension.rsi
     state: shadow_grab
@@ -11,7 +11,7 @@
 - type: cp14Skill
   id: CP14ActionSpellShadowSwap
   skillUiPosition: 0, 3
-  tree: Temporamancy
+  tree: Dimension
   icon:
     sprite: _CP14/Actions/Spells/dimension.rsi
     state: shadow_swap

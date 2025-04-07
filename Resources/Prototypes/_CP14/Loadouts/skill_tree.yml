@@ -10,7 +10,7 @@
   - CP14SkillTreeIllusion
   - CP14SkillTreeHealing
   - CP14SkillTreeAtlethic
-  - CP14SkillTreeTemporamancy
+  - CP14SkillTreeDimension
 
 - type: entity
   id: CP14SkillTreePyrokineticLoadoutDummy
@@ -103,17 +103,17 @@
     Atlethic: 2
 
 - type: entity
-  id: CP14SkillTreeTemporamancyLoadoutDummy
-  name: Temporamancy
+  id: CP14SkillTreeDimensionLoadoutDummy
+  name: Dimension
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _CP14/Actions/skill_tree.rsi
-    state: tempus
+    state: dimension
 
 - type: loadout
-  id: CP14SkillTreeTemporamancy
-  dummyEntity: CP14SkillTreeTemporamancyLoadoutDummy
+  id: CP14SkillTreeDimension
+  dummyEntity: CP14SkillTreeDimensionLoadoutDummy
   skillTree:
-    Temporamancy: 2
+    Dimension: 2
 

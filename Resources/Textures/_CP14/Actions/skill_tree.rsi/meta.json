@@ -11,6 +11,9 @@
       "name": "atlethic"
     },
     {
+      "name": "dimension"
+    },
+    {
       "name": "heal"
     },
     {
@@ -21,9 +24,6 @@
     },
     {
       "name": "pyro"
-    },
-    {
-      "name": "tempus"
     },
     {
       "name": "water"
