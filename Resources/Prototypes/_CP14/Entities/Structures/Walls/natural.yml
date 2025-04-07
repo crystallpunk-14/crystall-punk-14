@@ -38,6 +38,15 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
+- type: entity
+  id: CP14WallMarbleStone
+  name: marble
+  parent: CP14WallStone
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/marble_stone.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/marble_stone.rsi
 
 - type: entity
   id: CP14WallStoneIndestructable
