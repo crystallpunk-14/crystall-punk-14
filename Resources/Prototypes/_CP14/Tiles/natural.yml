@@ -64,6 +64,7 @@
   baseTurf: CP14FloorBase
   deconstructTools: [ CP14Digging ]
   isSubfloor: true
+  itemDrop: CP14MarbleBlock1
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
