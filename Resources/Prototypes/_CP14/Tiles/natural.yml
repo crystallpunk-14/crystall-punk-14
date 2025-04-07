@@ -42,6 +42,36 @@
 
 - type: tile
   editorHidden: false
+  id: CP14FloorMarbleCave
+  name: cp14-tiles-marble-cave
+  sprite: /Textures/_CP14/Tiles/marble_cave.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  deconstructTools: [ CP14Digging ]
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  editorHidden: false
   id: CP14FloorSand
   name: cp14-tiles-sand
   sprite: /Textures/_CP14/Tiles/Sand/sand.png
