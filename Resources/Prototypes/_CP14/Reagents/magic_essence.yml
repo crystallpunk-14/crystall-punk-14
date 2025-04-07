@@ -10,7 +10,7 @@
       - !type:ChemVomit
         probability: 0.25
 
-# Basic 6
+# Basic 6 
 
 - type: reagent
   parent: CP14EssenceBase

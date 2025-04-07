@@ -286,12 +286,8 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothinShirtMaidDress
   name: maid's dress
-  components:
+  components: 
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
-  # Touhou lore
-  - type: CP14MagicManacostModify
-    modifiers:
-      tempus: 0.9
