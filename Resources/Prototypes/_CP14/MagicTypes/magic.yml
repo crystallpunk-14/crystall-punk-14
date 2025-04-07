@@ -99,11 +99,3 @@
   name: cp14-essence-magic
   color: "#5497d6"
   essenceProto: CP14EssenceMagic
-
-# Complex tier 3
-
-- type: magicType
-  id: tempus
-  name: cp14-essence-tempus
-  color: "#623ec6"
-  essenceProto: CP14EssenceTempus

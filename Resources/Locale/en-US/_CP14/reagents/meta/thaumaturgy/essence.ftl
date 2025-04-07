@@ -51,8 +51,3 @@ cp14-reagent-desc-essence-crystal = The liquid embodiment of the elements of gla
 
 cp14-reagent-name-essence-magic = Praecantatio essence
 cp14-reagent-desc-essence-magic = The liquid embodiment of the elements of magic, enchantment and sorcery.
-
-# Complex tier 3
-
-cp14-reagent-name-essence-tempus = Tempus essence
-cp14-reagent-desc-essence-tempus = The liquid embodiment of space, gravity and time.

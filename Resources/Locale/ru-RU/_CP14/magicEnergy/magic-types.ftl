@@ -20,9 +20,6 @@ cp14-essence-crystal = Vitreus
 # Complex tier 2
 cp14-essence-magic = Praecantatio
 
-# Complex tier 3
-cp14-essence-tempus = Tempus
-
 cp14-magic-manacost = Затраты маны
 cp14-magic-essence = Тип магии
 cp14-magic-essence-title = Отсюда можно извлечь эссенции:

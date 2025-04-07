@@ -287,20 +287,3 @@
         reagents:
         - ReagentId: CP14EssenceMagic
           Quantity: 1
-
-# Complex tier 3
-
-- type: entity
-  parent: CP14BaseEssence
-  id: CP14EssenceTempus
-  name: tempus
-  components:
-  - type: Sprite
-    color: "#623ec6"
-  - type: SolutionContainerManager
-    solutions:
-      essence:
-        maxVol: 1
-        reagents:
-        - ReagentId: CP14EssenceTempus
-          Quantity: 1

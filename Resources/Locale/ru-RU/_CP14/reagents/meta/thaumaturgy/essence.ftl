@@ -51,8 +51,3 @@ cp14-reagent-desc-essence-crystal = Жидкое воплощение стихи
 
 cp14-reagent-name-essence-magic = Эссенция Praecantatio
 cp14-reagent-desc-essence-magic = Жидкое воплощение магии, чар и колдовства.
-
-# Complex tier 3
-
-cp14-reagent-name-essence-tempus = Эссенция Tempus
-cp14-reagent-desc-essence-tempus = Жидкое воплощение пространства, гравитации и времени.
