@@ -202,6 +202,7 @@
   - CP14ClothingHeadJestersCap
   - CP14ClothingHeadHuntersHat
   - CP14ClothingHeadJagermeisterHat
+  - CP14ClothingHeadStrawHat
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -222,6 +223,11 @@
   id: CP14ClothingHeadJestersCap
   equipment:
     head: CP14ClothingHeadJestersCap
+
+- type: loadout
+  id: CP14ClothingHeadStrawHat
+  equipment:
+    head: CP14ClothingHeadStrawHat
 
 - type: loadout
   id: CP14ClothingHeadHuntersHat
