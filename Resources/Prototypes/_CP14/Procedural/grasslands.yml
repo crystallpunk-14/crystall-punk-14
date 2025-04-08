@@ -127,6 +127,7 @@
         - CP14FloorGrassTall
       entities: 
         - CP14FloraTreeGreen
+        - CP14FloraTreeGreen
         - CP14FloraTreeGreenLarge
         - CP14FloraTreeBirchSmall
         - CP14FloraTreeBirchMedium
@@ -177,6 +178,7 @@
         - CP14FloorGrassLight
         - CP14FloorGrassTall
       entities:
+        - CP14FloraTreeGreen
         - CP14FloraTreeGreen
         - CP14FloraTreeGreenLarge
         - CP14FloraTreeBirchSmall
