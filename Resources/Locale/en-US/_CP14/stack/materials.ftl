@@ -23,3 +23,5 @@ cp14-stack-wallpaper = rolls of wallpaper
 cp14-stack-glass-sheet = glass
 
 cp14-stack-ash-pile = pile of ashes
+
+cp14-stack-group-wooden-planks-any = planks (any)

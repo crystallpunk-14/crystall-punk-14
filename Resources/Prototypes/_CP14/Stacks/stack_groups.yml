@@ -1,0 +1,7 @@
+- type: CP14StackGroup
+  id: WoodenPlanks
+  name: cp14-stack-group-wooden-planks-any
+  stacks:
+  - CP14WoodenPlanks
+  - CP14BirchWoodenPlanks
+  - CP14LucensWoodenPlanks

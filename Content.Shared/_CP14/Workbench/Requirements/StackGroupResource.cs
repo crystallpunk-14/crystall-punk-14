@@ -10,12 +10,12 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Workbench.Requirements;
 
-public sealed partial class StackResource : CP14WorkbenchCraftRequirement
+public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
 {
     public override bool HideRecipe { get; set; } = false;
 
     [DataField(required: true)]
-    public ProtoId<StackPrototype> Stack;
+    public ProtoId<CP14StackGroupPrototype> Group;
 
     [DataField]
     public int Count = 1;
@@ -26,13 +26,16 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         EntityUid user,
         CP14WorkbenchRecipePrototype recipe)
     {
+        if (!protoManager.TryIndex(Group, out var indexedGroup))
+            return false;
+
         var count = 0;
         foreach (var ent in placedEntities)
         {
             if (!entManager.TryGetComponent<StackComponent>(ent, out var stack))
                 continue;
 
-            if (stack.StackTypeId != Stack)
+            if (!indexedGroup.Stacks.Contains(stack.StackTypeId))
                 continue;
 
             count += stack.Count;
@@ -50,13 +53,16 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
+        if (!protoManager.TryIndex(Group, out var indexedGroup))
+            return;
+
         var requiredCount = Count;
         foreach (var placedEntity in placedEntities)
         {
             if (!entManager.TryGetComponent<StackComponent>(placedEntity, out var stack))
                 continue;
 
-            if (stack.StackTypeId != Stack)
+            if (!indexedGroup.Stacks.Contains(stack.StackTypeId))
                 continue;
 
             var count = (int)MathF.Min(requiredCount, stack.Count);
@@ -72,10 +78,9 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
-        if (!protoManager.TryIndex(Stack, out var indexedStack))
-            return "Error stack";
+        var indexedGroup = protoManager.Index(Group);
 
-        return $"{Loc.GetString(indexedStack.Name)} x{Count}";
+        return $"{Loc.GetString(indexedGroup.Name)} x{Count}";
     }
 
     public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
@@ -85,6 +90,8 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
     {
-        return !protoManager.TryIndex(Stack, out var indexedStack) ? null : indexedStack.Icon;
+        var indexedGroup = protoManager.Index(Group);
+
+        return !protoManager.TryIndex(indexedGroup.Stacks.FirstOrNull(), out var indexedStack) ? null : indexedStack.Icon;
     }
 }
