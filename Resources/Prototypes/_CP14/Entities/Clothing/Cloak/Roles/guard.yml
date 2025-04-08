@@ -13,3 +13,14 @@
     sprite: _CP14/Clothing/Cloak/Roles/Guard/blue.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/Guard/blue.rsi
+
+- type: entity
+  parent: CP14ClothingCloakGuardBase
+  id: CP14ClothingCloakGuardSyurko
+  name: guard surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/guard_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/guard_syurko.rsi
