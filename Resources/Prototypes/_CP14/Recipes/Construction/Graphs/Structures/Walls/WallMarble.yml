@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: CP14WallMarbleBrick
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: WallMarbleBrick
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: CP14MarbleStone
+              amount: 3
+              doAfter: 2
+    - node: WallMarbleBrick
+      entity: CP14WallMarbleBrick
