@@ -4,7 +4,7 @@
   graph:
     - node: start
       edges:
-        - to: WallMarbleBrick
+        - to: CP14WallMarbleBrick
           completed:
             - !type:SnapToGrid
               southRotation: true
@@ -12,5 +12,5 @@
             - material: CP14MarbleStone
               amount: 3
               doAfter: 2
-    - node: WallMarbleBrick
+    - node: CP14WallMarbleBrick
       entity: CP14WallMarbleBrick
