@@ -8,7 +8,7 @@
       edges:
         - to: CP14CurtainsWhite
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 1
               doAfter: 2
             - material: CP14Nail

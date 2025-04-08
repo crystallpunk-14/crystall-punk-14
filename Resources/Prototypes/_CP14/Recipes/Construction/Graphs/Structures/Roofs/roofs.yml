@@ -6,7 +6,7 @@
       edges:
         - to: CP14RoofWooden
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
       

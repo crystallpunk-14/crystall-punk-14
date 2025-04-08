@@ -37,7 +37,7 @@
   id: CP14LucensWoodenPlanks
   name: cp14-material-lucens-planks
   spawn: CP14LucensWoodenPlanks1
-  icon: { sprite: _CP14/Objects/Materials/lucens_wood.rsi, state: planks_2 }
+  icon: { sprite: _CP14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
   maxCount: 20
 
 - type: stack
