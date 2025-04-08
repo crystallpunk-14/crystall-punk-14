@@ -128,6 +128,9 @@
       entities: 
         - CP14FloraTreeGreen
         - CP14FloraTreeGreenLarge
+        - CP14FloraTreeBirchSmall
+        - CP14FloraTreeBirchMedium
+        - CP14FloraTreeBirchLarge
     - !type:BiomeEntityLayer # More Rocks
       threshold: 0.7
       noise:
@@ -176,6 +179,9 @@
       entities:
         - CP14FloraTreeGreen
         - CP14FloraTreeGreenLarge
+        - CP14FloraTreeBirchSmall
+        - CP14FloraTreeBirchMedium
+        - CP14FloraTreeBirchLarge
 
 - type: biomeTemplate
   id: CP14GrasslandHills # Холмы
