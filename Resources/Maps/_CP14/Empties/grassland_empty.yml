@@ -61,8 +61,8 @@ entities:
     - type: Broadphase
     - type: Roof
       data: {}
-    - type: BecomesStation
-      id: Comoss
+#    - type: BecomesStation
+#      id: Comoss # ENTER YOUR NAME OR DELETE IT
     - type: CP14WeatherController
       entries:
       - weight: 3
