@@ -22,5 +22,5 @@
   id: CP14GatherPepper
   entries:
   - id: CP14FoodPepper
-    amount: 1
-    maxAmount: 3
+    amount: 2
+    maxAmount: 4

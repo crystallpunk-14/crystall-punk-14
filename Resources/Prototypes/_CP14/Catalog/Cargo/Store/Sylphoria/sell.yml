@@ -9,7 +9,7 @@
 
 - type: storePositionSell
   id: CP14SpellScroll
-  price: 150
+  price: 50
   factions:
   - Sylphoria
   service: !type:CP14SellWhitelistService

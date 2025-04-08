@@ -26,7 +26,7 @@
   id: CP14SkillTreePyrokinetic
   dummyEntity: CP14SkillTreePyrokineticLoadoutDummy
   skillTree:
-    Pyrokinetic: 1
+    Pyrokinetic: 2
 
 
 
@@ -43,7 +43,7 @@
   id: CP14SkillTreeHydrosophistry
   dummyEntity: CP14SkillTreeHydrosophistryLoadoutDummy
   skillTree:
-    Hydrosophistry: 1
+    Hydrosophistry: 2
 
 
 - type: entity
@@ -59,7 +59,7 @@
   id: CP14SkillTreeIllusion
   dummyEntity: CP14SkillTreeIllusionLoadoutDummy
   skillTree:
-    Illusion: 1
+    Illusion: 2
 
 
 - type: entity
@@ -75,7 +75,7 @@
   id: CP14SkillTreeMetamagic
   dummyEntity: CP14SkillTreeMetamagicLoadoutDummy
   skillTree:
-    Metamagic: 1
+    Metamagic: 2
 
 
 - type: entity
@@ -91,7 +91,7 @@
   id: CP14SkillTreeHealing
   dummyEntity: CP14SkillTreeHealingLoadoutDummy
   skillTree:
-    Healing: 1
+    Healing: 2
 
 
 - type: entity
@@ -107,4 +107,4 @@
   id: CP14SkillTreeAtlethic
   dummyEntity: CP14SkillTreeAtlethicLoadoutDummy
   skillTree:
-    Atlethic: 1
+    Atlethic: 2
