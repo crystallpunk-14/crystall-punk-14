@@ -1,7 +1,8 @@
 cp14-stack-dirt-block = dirt blocks
 cp14-stack-stone-block = stone blocks
 cp14-stack-marble-block = marble rocks
-cp14-stack-wood-planks = wooden planks
+cp14-stack-wood-planks = oak planks
+cp14-stack-wood-planks-birch = birch planks
 cp14-stack-nails = nails
 cp14-stack-cloth = rolls of fabric
 cp14-stack-flora = tufts of grass

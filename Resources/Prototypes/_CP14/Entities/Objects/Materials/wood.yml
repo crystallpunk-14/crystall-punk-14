@@ -216,10 +216,26 @@
       - state: planks
         map: ["base"]
   - type: Stack
-    stackType: CP14LucensWoodenPlanks
+    stackType: CP14BirchWoodenPlanks
     count: 1
     baseLayer: base
     layerStates:
     - planks
     - planks_2
     - planks_3
+
+- type: entity
+  id: CP14BirchWoodenPlanks10
+  parent: CP14BirchWoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14BirchWoodenPlanks20
+  parent: CP14BirchWoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
