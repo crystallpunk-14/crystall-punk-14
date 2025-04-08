@@ -24,6 +24,8 @@ public sealed class CP14WeatherRule : StationEventSystem<CP14WeatherRuleComponen
     {
         base.Started(uid, component, gameRule, args);
 
+        return;
+
         var query = EntityQueryEnumerator<MapComponent, BecomesStationComponent>();
         while (query.MoveNext(out var mapUid, out var map, out var station))
         {
@@ -42,6 +44,8 @@ public sealed class CP14WeatherRule : StationEventSystem<CP14WeatherRuleComponen
     protected override void Ended(EntityUid uid, CP14WeatherRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
         base.Ended(uid, component, gameRule, args);
+
+        return;
 
         var query = EntityQueryEnumerator<MapComponent, BecomesStationComponent>();
         while (query.MoveNext(out var mapUid, out var map, out var station))

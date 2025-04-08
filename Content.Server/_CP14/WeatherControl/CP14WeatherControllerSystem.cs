@@ -19,6 +19,8 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        return;
+
         var query = EntityQueryEnumerator<CP14WeatherControllerComponent>();
         while (query.MoveNext(out var uid, out var weather))
         {
