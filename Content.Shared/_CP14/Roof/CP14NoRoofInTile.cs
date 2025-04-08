@@ -14,8 +14,7 @@ public sealed partial class CP14NoRoofInTile : IConstructionCondition
     {
         return new ConstructionGuideEntry
         {
-            // Localization = "cp14-construction-step-condition-no-roof-in-tile",
-            Localization = "cp14-construction-step-condition-wall-required",
+            Localization = "cp14-construction-step-condition-no-roof-in-tile",
         };
     }
 

@@ -13,7 +13,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  condition:
+  conditions:
   - !type:CP14NoRoofInTile
 
 - type: construction
@@ -31,5 +31,5 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  condition:
+  conditions:
   - !type:CP14NoRoofInTile
