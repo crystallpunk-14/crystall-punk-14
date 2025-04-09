@@ -1,4 +1,92 @@
 - type: entity
+  id: CP14DirtBlock1
+  parent: BaseItem
+  name: dirt block
+  description: A block of excellent black soil.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/dirt_block.rsi
+    layers:
+      - state: dirt
+        map: ["base"]
+  - type: FloorTile
+    placeTileSound:
+      collection: CP14Digging
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorDirt
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Dirt
+    count: 1
+    baseLayer: base
+    layerStates:
+    - dirt
+    - dirt_2
+    - dirt_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Dirt: 100
+  - type: CP14MagicEssenceContainer
+    essences:
+      Earth: 1
+
+- type: entity
+  id: CP14DirtBlock10
+  parent: CP14DirtBlock1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14StoneBlock1
+  parent: BaseItem
+  name: stone block
+  description: A block of cold stone.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/stone_block.rsi
+    layers:
+      - state: stone
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Stone
+    count: 1
+    baseLayer: base
+    layerStates:
+    - stone
+    - stone_2
+    - stone_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Stone: 100
+  - type: CP14MagicEssenceContainer
+    essences:
+      Earth: 1
+
+- type: entity
+  id: CP14StoneBlock10
+  parent: CP14StoneBlock1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
   id: CP14WoodLog
   parent: BaseItem
   name: wooden log
@@ -81,6 +169,14 @@
       types:
         Heat: 1
   - type: Appearance
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorOakWoodPlanks # TODO
   - type: Stack
     stackType: CP14WoodenPlanks
     count: 1

@@ -7,17 +7,11 @@
   minLimit: 0
   loadouts:
   - CP14ClothingCloakGuardBlue
-  - CP14ClothingCloakGuardSyurko
 
 - type: loadout
   id: CP14ClothingCloakGuardBlue
   equipment:
     cloak: CP14ClothingCloakGuardBlue
-
-- type: loadout
-  id: CP14ClothingCloakGuardSyurko
-  equipment:
-    cloak: CP14ClothingCloakGuardSyurko
 
 # Head
 

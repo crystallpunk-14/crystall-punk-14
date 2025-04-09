@@ -68,19 +68,6 @@
 
 - type: entity
   parent: CP14FloorTileBase
-  id: CP14FloorTileMarbleSmallbricks
-  name: marble small brick
-  components:
-  - type: Sprite
-    state: marble_smallbricks
-  - type: FloorTile
-    outputs:
-      - CP14FloorMarbleSmallbricks
-  - type: Stack
-    stackType: CP14FloorTileMarbleSmallbricks
-
-- type: entity
-  parent: CP14FloorTileBase
   id: CP14FloorTileOakWoodplanks
   name: oak woodplanks
   components:
@@ -100,11 +87,6 @@
   - type: Sprite
     state: oak_woodplanks_big
   - type: FloorTile
-    placeTileSound:
-      path: /Audio/Effects/woodenclosetclose.ogg
-      params:
-        variation: 0.03
-        volume: 2
     outputs:
       - CP14FloorOakWoodPlanksBig
   - type: Stack
@@ -118,11 +100,6 @@
   - type: Sprite
     state: oak_woodplanks_cruciform
   - type: FloorTile
-    placeTileSound:
-      path: /Audio/Effects/woodenclosetclose.ogg
-      params:
-        variation: 0.03
-        volume: 2
     outputs:
       - CP14FloorOakWoodPlanksCruciform
   - type: Stack
@@ -136,11 +113,6 @@
   - type: Sprite
     state: oak_woodplanks_stairways
   - type: FloorTile
-    placeTileSound:
-      path: /Audio/Effects/woodenclosetclose.ogg
-      params:
-        variation: 0.03
-        volume: 2
     outputs:
       - CP14FloorOakWoodPlanksStairways
   - type: Stack

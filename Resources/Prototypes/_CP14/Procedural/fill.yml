@@ -48,7 +48,7 @@
       allowedTiles:
         - FloorSnow
       entities:
-        - CP14FloorWaterOptimizedDeep
+        - CP14FloorWaterOptimized
 
 - type: biomeTemplate
   id: CP14SandOceanFill
@@ -61,7 +61,7 @@
       allowedTiles:
         - FloorDesert
       entities:
-        - CP14FloorWaterOptimizedDeep
+        - CP14FloorWaterOptimized
 
 - type: biomeTemplate
   id: CP14LavaOceanFill
