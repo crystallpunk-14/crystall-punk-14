@@ -1,0 +1,222 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: CP14Crayon
+  name: crayon
+  description: A colourful crayon.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Thaumaturgy/crayon.rsi
+    layers:
+    - state: handle
+    - state: crayon
+      color: white
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Write
+    - Crayon
+  - type: UserInterface
+    interfaces:
+      enum.CrayonUiKey.Key:
+        type: CrayonBoundUserInterface
+  - type: Crayon
+    capacity: 15
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonWhite
+  name: white crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: white
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: white
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: white
+  - type: Crayon
+    color: white
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonRainbow
+  name: magic rainbow crayon
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: white
+      shader: unshaded
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: white
+        shader: unshaded
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: white
+        shader: unshaded
+  - type: Crayon
+    color: Red
+    selectableColor: true
+    capacity: 1000
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+  - type: RgbLightController
+    layers: [ 1 ]
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonBlack
+  name: black crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: black
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: black
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: black
+  - type: Crayon
+    color: black
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonRed
+  name: red crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: "#ed5f5f"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: "#ed5f5f"
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: "#ed5f5f"
+  - type: Crayon
+    color: "#ed5f5f"
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonYellow
+  name: yellow crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: "#ebe46e"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: "#ebe46e"
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: "#ebe46e"
+  - type: Crayon
+    color: "#ebe46e"
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonGreen
+  name: green crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: "#6eeb87"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: "#6eeb87"
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: "#6eeb87"
+  - type: Crayon
+    color: "#6eeb87"
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonBlue
+  name: blue crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: "#6eaaeb"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: "#6eaaeb"
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: "#6eaaeb"
+  - type: Crayon
+    color: "#6eaaeb"
+
+- type: entity
+  parent: CP14Crayon
+  id: CP14CrayonPurple
+  name: purple crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: "#d46eeb"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: "#d46eeb"
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: "#d46eeb"
+  - type: Crayon
+    color: "#d46eeb"

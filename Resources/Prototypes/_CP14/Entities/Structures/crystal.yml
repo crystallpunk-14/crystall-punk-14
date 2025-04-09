@@ -16,6 +16,10 @@
       - state: crystal1
         map: ["random"]
         shader: unshaded
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
@@ -34,11 +38,6 @@
           - !type:PlaySoundBehavior
             sound:
               collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14QuartzShard:
-                min: 0
-                max: 1
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   - type: Fixtures
@@ -68,6 +67,8 @@
   parent: CP14WallmountCrystalBase
   suffix: Red
   components:
+  - type: Sprite
+    color: "#ff3d0b"
   - type: RandomSprite
     cP14InheritBaseColor: "#ff3d0b"
   - type: PointLight
@@ -78,6 +79,8 @@
   parent: CP14WallmountCrystalBase
   suffix: Yellow
   components:
+  - type: Sprite
+    color: "#ffe269"
   - type: RandomSprite
     cP14InheritBaseColor: "#ffe269"
   - type: PointLight
@@ -88,6 +91,8 @@
   parent: CP14WallmountCrystalBase
   suffix: Green
   components:
+  - type: Sprite
+    color: "#30be81"
   - type: RandomSprite
     cP14InheritBaseColor: "#30be81"
   - type: PointLight
@@ -98,6 +103,8 @@
   parent: CP14WallmountCrystalBase
   suffix: Cyan
   components:
+  - type: Sprite
+    color: "#5eabeb"
   - type: RandomSprite
     cP14InheritBaseColor: "#5eabeb"
   - type: PointLight
@@ -108,6 +115,8 @@
   parent: CP14WallmountCrystalBase
   suffix: Purple
   components:
+  - type: Sprite
+    color: "#a878d1"
   - type: RandomSprite
     cP14InheritBaseColor: "#a878d1"
   - type: PointLight
@@ -118,348 +127,9 @@
   parent: CP14WallmountCrystalBase
   suffix: White
   components:
+  - type: Sprite
+    color: "#f8f8f8"
   - type: RandomSprite
     cP14InheritBaseColor: "#f8f8f8"
   - type: PointLight
-    color: "#f8f8f8"
-
-# Floor Crystal
-
-- type: entity
-  id: CP14CrystalBase
-  abstract: true
-  parent: BaseRock
-  name: sparkling quartz
-  description: bioluminescent quartz crystals that can take on any color - a very handy light source in a deep caves. Unfortunately, the luminous properties are very hard to preserve.
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: _CP14/Structures/crystal.rsi
-    offset: 0, 0.25
-    layers:
-      - state: big
-        shader: unshaded
-    noRot: true
-  - type: InteractionPopup
-    interactSuccessString: popup-cp14crystal-ding
-    messagePerceivedByOthers: popup-cp14crystal-ding
-    interactSuccessSound:
-      collection: CP14CrystalDings
-      params:
-        variation: 0.03
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Glass
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        collection: GlassSmash
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 80
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-            !type:DamageTrigger
-            damage: 20
-        behaviors:
-          - !type:PlaySoundBehavior
-            sound:
-              collection: GlassBreak
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14QuartzShard:
-                min: 1
-                max: 3
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.30
-        density: 60
-        mask:
-          - MachineMask
-        layer:
-          - MidImpassable
-          - LowImpassable
-          - BulletImpassable
-          - Opaque
-
-  - type: PointLight
-    radius: 2
-    energy: 2
-
-- type: entity
-  id: CP14CrystalRubiesSmall
-  parent: CP14CrystalBase
-  suffix: Red, Small
-  components:
-  - type: PointLight
-    color: "#ff3d0b"
-    radius: 1.5
-    energy: 2
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: small
-    color: "#ff3d0b"
-
-- type: entity
-  id: CP14CrystalRubiesMedium
-  parent: CP14CrystalBase
-  suffix: Red, Medium
-  components:
-  - type: PointLight
-    color: "#ff3d0b"
-    radius: 2
-    energy: 2.5
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: medium
-    color: "#ff3d0b"
-
-- type: entity
-  id: CP14CrystalRubiesBig
-  parent: CP14CrystalBase
-  suffix: Red, Big
-  components:
-  - type: PointLight
-    color: "#ff3d0b"
-    radius: 2.5
-    energy: 3
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: big
-    color: "#ff3d0b"
-
-- type: entity
-  id: CP14CrystalTopazesSmall
-  parent: CP14CrystalBase
-  suffix: Yellow, Small
-  components:
-  - type: PointLight
-    color: "#ffe269"
-    radius: 1.5
-    energy: 2
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: small
-    color: "#ffe269"
-
-- type: entity
-  id: CP14CrystalTopazesMedium
-  parent: CP14CrystalBase
-  suffix: Yellow, Medium
-  components:
-  - type: PointLight
-    color: "#ffe269"
-    radius: 2
-    energy: 2.5
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: medium
-    color: "#ffe269"
-
-- type: entity
-  id: CP14CrystalTopazesBig
-  parent: CP14CrystalBase
-  suffix: Yellow, Big
-  components:
-  - type: PointLight
-    color: "#ffe269"
-    radius: 2.5
-    energy: 3
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: big
-    color: "#ffe269"
-
-- type: entity
-  id: CP14CrystalEmeraldsSmall
-  parent: CP14CrystalBase
-  suffix: Green, Small
-  components:
-  - type: PointLight
-    color: "#30be81"
-    radius: 1.5
-    energy: 2
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: small
-    color: "#30be81"
-
-- type: entity
-  id: CP14CrystalEmeraldsMedium
-  parent: CP14CrystalBase
-  suffix: Green, Medium
-  components:
-  - type: PointLight
-    color: "#30be81"
-    radius: 2
-    energy: 2.5
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: medium
-    color: "#30be81"
-
-- type: entity
-  id: CP14CrystalEmeraldsBig
-  parent: CP14CrystalBase
-  suffix: Green, Big
-  components:
-  - type: PointLight
-    color: "#30be81"
-    radius: 2.5
-    energy: 3
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: big
-    color: "#30be81"
-
-- type: entity
-  id: CP14CrystalSapphiresSmall
-  parent: CP14CrystalBase
-  suffix: Cyan, Small
-  components:
-  - type: PointLight
-    color: "#5eabeb"
-    radius: 1.5
-    energy: 2
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: small
-    color: "#5eabeb"
-
-- type: entity
-  id: CP14CrystalSapphiresMedium
-  parent: CP14CrystalBase
-  suffix: Cyan, Medium
-  components:
-  - type: PointLight
-    color: "#5eabeb"
-    radius: 2
-    energy: 2.5
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: medium
-    color: "#5eabeb"
-
-- type: entity
-  id: CP14CrystalSapphiresBig
-  parent: CP14CrystalBase
-  suffix: Cyan, Big
-  components:
-  - type: PointLight
-    color: "#5eabeb"
-    radius: 2.5
-    energy: 3
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: big
-    color: "#5eabeb"
-
-- type: entity
-  id: CP14CrystalAmethystsSmall
-  parent: CP14CrystalBase
-  suffix: Purple, Small
-  components:
-  - type: PointLight
-    color: "#a878d1"
-    radius: 1.5
-    energy: 2
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: small
-    color: "#a878d1"
-
-- type: entity
-  id: CP14CrystalAmethystsMedium
-  parent: CP14CrystalBase
-  suffix: Purple, Medium
-  components:
-  - type: PointLight
-    color: "#a878d1"
-    radius: 2
-    energy: 2.5
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: medium
-    color: "#a878d1"
-
-- type: entity
-  id: CP14CrystalAmethystsBig
-  parent: CP14CrystalBase
-  suffix: Purple, Big
-  components:
-  - type: PointLight
-    color: "#a878d1"
-    radius: 2.5
-    energy: 3
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: big
-    color: "#a878d1"
-
-- type: entity
-  id: CP14CrystalDiamondsSmall
-  parent: CP14CrystalBase
-  suffix: White, Small
-  components:
-  - type: PointLight
-    color: "#f8f8f8"
-    radius: 1.5
-    energy: 2
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: small
-    color: "#f8f8f8"
-
-- type: entity
-  id: CP14CrystalDiamondsMedium
-  parent: CP14CrystalBase
-  suffix: White, Medium
-  components:
-  - type: PointLight
-    color: "#f8f8f8"
-    radius: 2
-    energy: 2.5
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: medium
-    color: "#f8f8f8"
-
-- type: entity
-  id: CP14CrystalDiamondsBig
-  parent: CP14CrystalBase
-  suffix: White, Big
-  components:
-  - type: PointLight
-    color: "#f8f8f8"
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-     - state: big
     color: "#f8f8f8"

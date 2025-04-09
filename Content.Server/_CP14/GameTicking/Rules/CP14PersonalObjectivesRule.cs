@@ -5,6 +5,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Random.Helpers;
@@ -38,7 +39,8 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
         {
             if (!_mind.TryGetMind(args.Player.UserId, out var mindId, out var mind))
             {
-                Log.Error($"{ToPrettyString(args.Mob):player} was trying to get the expedition objectives by {ToPrettyString(uid):rule} but had no mind attached!");
+                Log.Error(
+                    $"{ToPrettyString(args.Mob):player} was trying to get the expedition objectives by {ToPrettyString(uid):rule} but had no mind attached!");
                 return;
             }
 
@@ -56,10 +58,10 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
 
                     if (objective is not null)
                     {
-                        if (!personalObj.PersonalObjectives.ContainsKey((mindId.Value, mind)))
-                            personalObj.PersonalObjectives.Add((mindId.Value, mind), new());
+                        if (!personalObj.PersonalObjectives.ContainsKey(mindId.Value))
+                            personalObj.PersonalObjectives.Add(mindId.Value, new());
 
-                        personalObj.PersonalObjectives[(mindId.Value, mind)].Add(objective.Value);
+                        personalObj.PersonalObjectives[mindId.Value].Add(objective.Value);
                     }
                 }
             }
@@ -84,10 +86,10 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
 
                     if (objective is not null)
                     {
-                        if (!personalObj.PersonalObjectives.ContainsKey((mindId.Value, mind)))
-                            personalObj.PersonalObjectives.Add((mindId.Value, mind), new());
+                        if (!personalObj.PersonalObjectives.ContainsKey(mindId.Value))
+                            personalObj.PersonalObjectives.Add(mindId.Value, new());
 
-                        personalObj.PersonalObjectives[(mindId.Value, mind)].Add(objective.Value);
+                        personalObj.PersonalObjectives[mindId.Value].Add(objective.Value);
                     }
                 }
             }
@@ -106,36 +108,52 @@ public sealed class CP14PersonalObjectivesRule : GameRuleSystem<CP14PersonalObje
 
         foreach (var (mind, objectives) in component.PersonalObjectives)
         {
-            var name = mind.Comp.CharacterName ?? Loc.GetString("cp14-objective-unknown");
+            if (!TryComp<MindComponent>(mind, out var mindComp))
+                continue;
+
+            var name = mindComp.CharacterName ?? Loc.GetString("cp14-objective-unknown");
             var role = Loc.GetString("cp14-objective-unknown");
             var ckey = Loc.GetString("cp14-objective-unknown");
 
             if (_jobs.MindTryGetJob(mind, out var job))
                 role = Loc.GetString(job.Name);
 
-            if (mind.Comp.UserId is not null)
+            if (mindComp.UserId is not null)
             {
-                ckey = _player.GetPlayerData(mind.Comp.UserId.Value).UserName;
+                ckey = _player.GetPlayerData(mindComp.UserId.Value).UserName;
             }
 
-            sb.Append($"[head=3]{name} - {role}[/head]\n");
-            sb.Append($"[color=#949494]{ckey}[/color]\n");
+            //We dont show players without completed objectives
+            var show = false;
+            var sbLocal = new StringBuilder();
+            sbLocal.Append($"[head=3]{name} - {role}[/head]\n");
+            sbLocal.Append($"[color=#949494]{ckey}[/color]\n");
             foreach (var objEnt in objectives)
             {
-                if (!TryComp<ObjectiveComponent>(objEnt, out var objComp))
+                if (!HasComp<ObjectiveComponent>(objEnt))
                     continue;
 
-                var progress = _objectives.GetProgress(objEnt, mind) ?? 0;
+                var progress = _objectives.GetProgress(objEnt, (mind, mindComp)) ?? 0;
+
+                if (progress <= 0.75f)
+                    continue;
+
                 var status = "cp14-objective-endtext-status-failure";
                 if (progress > 0.75f)
                     status = "cp14-objective-endtext-status-success-a";
                 if (progress > 0.99f)
                     status = "cp14-objective-endtext-status-success";
 
+                show = true;
+
                 var meta = MetaData(objEnt);
-                sb.Append($"{meta.EntityName} - {Loc.GetString(status)} ({(int)(progress * 100)}%)\n");
+                sbLocal.Append($"{meta.EntityName} - {Loc.GetString(status)} ({(int)(progress * 100)}%)\n");
             }
+
+            if (show)
+                sb.Append(sbLocal);
         }
+
         args.AddLine(sb.ToString());
     }
 }

@@ -12,3 +12,8 @@
     - shirt
   - type: Sprite
     state: icon
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14Cloth1
+      amount: 2

@@ -1,44 +1,101 @@
+# Basic 6
+
 - type: magicType
   id: Earth
-  name: cp14-magic-type-earth
+  name: cp14-essence-earth
   color: "#70533f"
+  essenceProto: CP14EssenceEarth
 
 - type: magicType
   id: Fire
-  name: cp14-magic-type-fire
+  name: cp14-essence-fire
   color: "#d9741c"
-
-- type: magicType
-  id: Gate
-  name: cp14-magic-type-gate
-  color: "#32597d"
-
-- type: magicType
-  id: Healing
-  name: cp14-magic-type-healing
-  color: "#89e04f"
-
-- type: magicType
-  id: LightDarkness
-  name: cp14-magic-type-light-darkness
-  color: "#ba97b8"
-
-- type: magicType
-  id: Meta
-  name: cp14-magic-type-meta
-  color: "#dcffdb"
-
-- type: magicType
-  id: Movement
-  name: cp14-magic-type-movement
-  color: "#63ceff"
+  essenceProto: CP14EssenceFire
 
 - type: magicType
   id: Water
-  name: cp14-magic-type-water
+  name: cp14-essence-water
   color: "#1c94d9"
+  essenceProto: CP14EssenceWater
 
 - type: magicType
-  id: Necromancy
-  name: cp14-magic-type-necro
-  color: "#55877a"
+  id: Air
+  name: cp14-essence-air
+  color: "#def9ff"
+  essenceProto: CP14EssenceAir
+
+- type: magicType
+  id: Order
+  name: cp14-essence-order
+  color: "#d9d9d9"
+  essenceProto: CP14EssenceOrder
+
+- type: magicType
+  id: Chaos
+  name: cp14-essence-chaos
+  color: "#5c5c5c"
+  essenceProto: CP14EssenceChaos
+
+# Complex tier 1
+
+- type: magicType
+  id: Frost
+  name: cp14-essence-frost
+  color: "#4f91bd"
+  essenceProto: CP14EssenceFrost
+
+- type: magicType
+  id: Light
+  name: cp14-essence-light
+  color: "#ba97b8"
+  essenceProto: CP14EssenceLight
+
+- type: magicType
+  id: Motion
+  name: cp14-essence-motion
+  color: "#575100"
+  essenceProto: CP14EssenceMotion
+
+- type: magicType
+  id: Cycle
+  name: cp14-essence-cycle
+  color: "#063b1f"
+  essenceProto: CP14EssenceCycle
+
+- type: magicType
+  id: Energia
+  name: cp14-essence-energia
+  color: "#caed72"
+  essenceProto: CP14EssenceEnergia
+
+- type: magicType
+  id: Void
+  name: cp14-essence-void
+  color: "#12021c"
+  essenceProto: CP14EssenceVoid
+
+- type: magicType
+  id: Poison
+  name: cp14-essence-poison
+  color: "#619e20"
+  essenceProto: CP14EssencePoison
+
+- type: magicType
+  id: Life
+  name: cp14-essence-life
+  color: "#eb1a3d"
+  essenceProto: CP14EssenceLife
+
+- type: magicType
+  id: Crystal
+  name: cp14-essence-crystal
+  color: "#538cb8"
+  essenceProto: CP14EssenceCrystal
+
+# Complex tier 2
+
+- type: magicType
+  id: Magic
+  name: cp14-essence-magic
+  color: "#5497d6"
+  essenceProto: CP14EssenceMagic

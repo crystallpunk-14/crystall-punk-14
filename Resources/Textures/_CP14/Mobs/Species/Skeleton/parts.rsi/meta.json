@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CLA",
+  "license": "All right reserved",
   "copyright": "Created by KREKS",
   "size": {
     "x": 32,
@@ -8,7 +8,8 @@
   },
   "states": [
     {
-      "name": "full"
+      "name": "full",
+      "directions": 4
     },
     {
       "name": "head",

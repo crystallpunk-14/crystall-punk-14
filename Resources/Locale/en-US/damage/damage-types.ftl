@@ -11,3 +11,4 @@ damage-type-radiation = Radiant
 damage-type-shock = Thunder
 damage-type-slash = Slash
 damage-type-structural = Structural
+damage-type-holy = Holy

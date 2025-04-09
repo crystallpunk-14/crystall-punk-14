@@ -1,0 +1,50 @@
+- type: entity
+  id: CP14ModularIronArrow
+  parent: CP14ModularRodWooden
+  name: iron arrow
+  description: Standard arrow, balance between damage and reliability.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: tail
+    - sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - TipIronArrow
+
+- type: entity
+  id: CP14ModularMithrilArrow
+  parent: CP14ModularRodLucens
+  name: mithril arrow
+  description: An arrow made of expensive wood and magical iron, you shoot money, but the damage matches.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#0398fc"
+    - state: tail
+    - sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+      state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - TipMithrilArrow
+
+- type: entity
+  id: CP14ModularCopperArrow
+  parent: CP14ModularRodLucens
+  name: copper arrow
+  description: It's the cheapest and weakest arrow you've ever seen, but it's better than nothing.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: tail
+    - sprite: _CP14/Objects/ModularTools/Tip/arrow.rsi
+      state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - TipCopperArrow

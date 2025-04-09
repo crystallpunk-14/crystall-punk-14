@@ -1,0 +1,58 @@
+- type: entity
+  id: CP14CarpetBase
+  parent: BaseStructure
+  name: carpet
+  description: "Fancy walking surface."
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+  - type: Icon
+    state: full
+  - type: IconSmooth
+    key: full
+    base: carpet_
+  - type: Tag
+    tags:
+    - Carpet
+    - ForceFixRotations
+  - type: Physics
+    canCollide: false
+  - type: Fixtures
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 2
+    spawned:
+    - id: CP14Cloth1
+      amount: 1
+
+- type: entity
+  id: CP14CarpetBlue
+  parent: CP14CarpetBase
+  suffix: Blue
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/blue_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/blue_carpet.rsi
+
+- type: entity
+  id: CP14CarpetRed
+  parent: CP14CarpetBase
+  suffix: Red
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/red_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/red_carpet.rsi

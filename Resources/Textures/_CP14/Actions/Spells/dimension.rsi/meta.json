@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by TheShuEd. Shadow step and Shadow grab created by .kreks.",
+  "states": [
+    {
+      "name": "demi_arrow"
+    },
+    {
+      "name": "rift_arrow"
+    },
+    {
+      "name": "rift_shield"
+    },
+    {
+      "name": "shadow_grab"
+    },
+    {
+      "name": "shadow_step"
+    }
+  ]
+}

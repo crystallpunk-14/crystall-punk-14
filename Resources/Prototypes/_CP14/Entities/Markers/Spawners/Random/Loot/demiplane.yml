@@ -1,0 +1,102 @@
+# TIER 1
+
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerDemiplaneLootT1
+  name: Demiplane T1 Loot
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Objects/Materials/copper_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 0.7
+      tableId: CP14TableDemiplaneLootT1
+
+- type: entityTable
+  id: CP14TableDemiplaneLootT1
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - !type:GroupSelector
+        children:
+        - id: CP14SpellScrollIceShards
+        - id: CP14SpellScrollShadowGrab
+        - id: CP14SpellScrollSphereOfLight
+        - id: CP14SpellScrollCureWounds
+        - id: CP14SpellScrollBloodPurification
+        - id: CP14SpellScrollCureBurn
+        - id: CP14SpellScrollFlameCreation
+        - id: CP14SpellScrollEarthWall
+        - id: CP14SpellScrollFlashLight
+        - id: CP14SpellScrollWaterCreation
+        - id: CP14SpellScrollPlantGrowth
+        - id: CP14SpellScrollMagicSplitting
+        - id: CP14SpellScrollMagicalAcceleration
+      - id: CP14BaseSharpeningStone
+      - id: CP14ScrapCopper
+      - id: CP14ScrapIron
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: CP14BaseLockpick
+      - id: CP14EnergyCrystalMediumEmpty
+      - id: CP14ClothingCloakAmuletGold
+      # Rare standard village crates loot
+      - !type:NestedSelector
+        tableId: CP14StationCrateLoot
+
+# TIER 2
+
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerDemiplaneLootT2
+  name: Demiplane T2 Loot
+  categories: [ ForkFiltered, DoNotMap ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Objects/Materials/iron_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 0.7
+      tableId: CP14TableDemiplaneLootT2
+
+- type: entityTable
+  id: CP14TableDemiplaneLootT2
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      # T1 loot chance
+      - !type:NestedSelector
+        tableId: CP14TableDemiplaneLootT1
+        weight: 2 #Temp (small amount T2 loot)
+      - !type:GroupSelector
+        children:
+        - id: CP14SpellScrollShadowStep
+        - id: CP14SpellScrollFireball
+        - id: CP14SpellScrollBeerCreation
+          weight: 0.2
+      - id: CP14ScrapGold
+      - id: CP14ScrapMithril
+        weight: 0.5
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - !type:GroupSelector # remove this when players can create their own magic items
+        children:
+        - id: CP14SpellScrollResurrection
+        - id: CP14ClothingCloakAmuletMana

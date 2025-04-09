@@ -15,7 +15,6 @@
   - type: Clickable
   - type: Sprite
     noRot: true
-    sprite: Objects/Decoration/Flora/flora_trees.rsi
     drawdepth: Mobs
     offset: 0,0.9
   - type: Physics
@@ -25,7 +24,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.35,-0.4,0.35,0.4"
+          bounds: "-0.2,-0.2,0.2,0.2"
         density: 1000
         layer:
         - WallLayer
@@ -43,7 +42,7 @@
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 100
+        damage: 50
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
@@ -82,17 +81,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_treeslarge.rsi
     offset: 0,1.55
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
   - type: Destructible
     thresholds:
     - trigger:
@@ -128,84 +117,313 @@
 
 - type: entity
   parent: CP14BaseTree
-  id: CP14FloraTree01
+  id: CP14FloraTreeGreen
   components:
   - type: Sprite
-    state: tree01
+    sprite: Objects/Decoration/Flora/flora_trees.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        tree04: ""
+        tree05: ""
+        tree06: ""
 
 - type: entity
   parent: CP14BaseTree
-  id: CP14FloraTree02
+  id: CP14FloraTreeSnow
   components:
   - type: Sprite
-    state: tree02
+    sprite: _CP14/Structures/Flora/tree_snow.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        tree04: ""
+        tree05: ""
+        tree06: ""
+
+- type: entity
+  parent: CP14BaseTreeLarge
+  id: CP14FloraTreeGreenLarge
+  components:
+  - type: Sprite
+    sprite: Objects/Decoration/Flora/flora_treeslarge.rsi
+    layers:
+    - state: treelarge01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        treelarge01: ""
+        treelarge02: ""
+        treelarge03: ""
+        treelarge04: ""
+        treelarge05: ""
+        treelarge06: ""
+
+- type: entity
+  id: CP14BaseLucensTree
+  parent: CP14BaseTree
+  name: lucens tree
+  components:
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+    color: "#87CEEB"
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Flora/lucens.rsi
+    drawdepth: Mobs
+    offset: 0,0.9
+    layers:
+    - state: tree03
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree03: ""
+        tree04: ""
+        tree05: ""
+        tree06: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14LucensWoodLog:
+            min: 1
+            max: 3
+
+- type: entity
+  parent: CP14BaseLucensTree
+  id: CP14BaseLucensTreeLarge
+  name: large lucens tree
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Flora/lucens.rsi
+    drawdepth: Mobs
+    offset: 0,0.9
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14LucensWoodLog:
+            min: 3
+            max: 6
 
 - type: entity
   parent: CP14BaseTree
-  id: CP14FloraTree03
+  id: CP14FloraTreeBirchSmall
+  suffix: Small
   components:
   - type: Sprite
-    state: tree03
+    offset: 0,1.3
+    sprite: _CP14/Structures/Flora/tree_birch_small.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodLog:
+            min: 1
+            max: 2
 
 - type: entity
   parent: CP14BaseTree
-  id: CP14FloraTree04
+  id: CP14FloraTreeBirchMedium
+  suffix: Medium
   components:
   - type: Sprite
-    state: tree04
+    offset: 0,1.8
+    sprite: _CP14/Structures/Flora/tree_birch_medium.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodLog:
+            min: 2
+            max: 4
 
 - type: entity
   parent: CP14BaseTree
-  id: CP14FloraTree05
+  id: CP14FloraTreeBirchLarge
+  suffix: Large
   components:
   - type: Sprite
-    state: tree05
+    offset: 0,2.6
+    sprite: _CP14/Structures/Flora/tree_birch_big.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodLog:
+            min: 3
+            max: 6
 
-- type: entity
-  parent: CP14BaseTree
-  id: CP14FloraTree06
-  components:
-  - type: Sprite
-    state: tree06
-
-- type: entity
-  parent: CP14BaseTreeLarge
-  id: CP14FloraTreeLarge01
-  components:
-  - type: Sprite
-    state: treelarge01
-
-- type: entity
-  parent: CP14BaseTreeLarge
-  id: CP14FloraTreeLarge02
-  components:
-  - type: Sprite
-    state: treelarge02
-
-- type: entity
-  parent: CP14BaseTreeLarge
-  id: CP14FloraTreeLarge03
-  components:
-  - type: Sprite
-    state: treelarge03
-
-- type: entity
-  parent: CP14BaseTreeLarge
-  id: CP14FloraTreeLarge04
-  components:
-  - type: Sprite
-    state: treelarge04
-
-- type: entity
-  parent: CP14BaseTreeLarge
-  id: CP14FloraTreeLarge05
-  components:
-  - type: Sprite
-    state: treelarge05
-
-- type: entity
-  parent: CP14BaseTreeLarge
-  id: CP14FloraTreeLarge06
-  components:
-  - type: Sprite
-    state: treelarge06

@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "license": "CLA",
+    "license": "CC-BY-SA-4.0",
     "copyright": "Created by omsoyk (Discord)",
     "size": {
       "x": 32,
@@ -18,15 +18,6 @@
       },
       {
         "name": "base4"
-      },
-      {
-        "name": "plate1"
-      },
-      {
-        "name": "plate2"
-      },
-      {
-        "name": "plate3"
       }
     ]
 }

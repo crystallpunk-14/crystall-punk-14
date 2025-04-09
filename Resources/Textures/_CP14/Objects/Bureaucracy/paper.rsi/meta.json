@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CLA",
-  "copyright": "Created by Max Gab, folders by TheShuEd, stamps on paper by viator1748",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by Max Gab, folders and passport by TheShuEd, stamps on paper by viator1748",
   "size": {
     "x": 32,
     "y": 32
@@ -20,27 +20,34 @@
       "name": "paper_filled"
     },
     {
-      "name": "inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "inhand-right",
-      "directions": 4
-    },
-    {
       "name": "approved_on_paper"
     },
     {
       "name": "bank_on_paper"
     },
     {
+      "name": "guard_on_paper"
+    },
+    {
+      "name": "guildmaster_on_paper"
+    },
+    {
       "name": "denied_on_paper"
+    },
+    {
+      "name": "red_on_paper"
     },
     {
       "name": "paper_stamp-generic"
     },
     {
       "name": "magic"
+    },
+    {
+      "name": "passport"
+    },
+    {
+      "name": "scrolls"
     }
   ]
 }

@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: CP14WallmountOrdersBorder
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WallmountOrdersBorder
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 3
+
+    - node: CP14WallmountOrdersBorder
+      entity: CP14WallmountOrdersBorder

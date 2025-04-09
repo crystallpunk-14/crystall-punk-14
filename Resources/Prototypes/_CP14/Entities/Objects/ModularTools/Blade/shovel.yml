@@ -1,0 +1,79 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeShovelBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A shovel blade without a hilt. A blacksmith can use it as a spare part to create a tool.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeIronShovel
+  name: iron shovel blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronShovel
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeGoldShovel
+  name: golden shovel blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldShovel
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeCopperShovel
+  name: copper shovel blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperShovel
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularBladeShovelBase
+  id: CP14ModularBladeMithrilShovel
+  name: mithril shovel blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilShovel
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

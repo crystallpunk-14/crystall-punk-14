@@ -1,0 +1,108 @@
+- type: biomeTemplate
+  id: CP14CavesEmpty
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: CP14FloorBase
+
+- type: biomeTemplate
+  id: CP14CavesFloor
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14CavesEmpty
+    #Entity
+    - !type:BiomeEntityLayer
+      threshold: 0.4
+      noise:
+        seed: 1
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14RockSmall
+ 
+- type: biomeTemplate
+  id: CP14CavesGeneric
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14CavesFloor
+    #Walls
+    - !type:BiomeEntityLayer
+      threshold: -0.75
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.05
+        gain: 0.5
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14WallStone
+    # Lakes
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - CP14FloorBase
+      threshold: 0.8
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.01
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 150
+      entities:
+        - CP14FloorWater
+
+- type: biomeTemplate
+  id: CP14CavesComossResources
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14CavesFloor
+    - !type:BiomeEntityLayer # lumishrooms
+      threshold: 0.8
+      noise:
+        seed: 8
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.045
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14GatherableLumiMushroom
+    #Walls
+    - !type:BiomeEntityLayer
+      threshold: -0.75
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.05
+        gain: 0.5
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14WallStone
+    #Copper
+    - !type:BiomeEntityLayer
+      threshold: 0.7
+      noise:
+        seed: 20
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14WallStoneCopperOre

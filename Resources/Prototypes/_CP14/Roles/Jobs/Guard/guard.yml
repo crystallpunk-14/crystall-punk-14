@@ -6,12 +6,9 @@
   startingGear: CP14GuardGear
   icon: "CP14JobIconGuard"
   supervisors: cp14-job-supervisors-guard-commander
-  special:
-  - !type:CP14AddSkillSpecial
-    skills:
-    - Warcraft
 
 - type: startingGear
   id: CP14GuardGear
   equipment:
+    keys: CP14KeyRingGuard
     belt1: CP14WalletFilledTest

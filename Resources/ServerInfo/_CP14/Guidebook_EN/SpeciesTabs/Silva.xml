@@ -1,0 +1,22 @@
+<Document>
+# Silva
+
+<Box>
+<GuideEntityEmbed Entity="CP14MobSilva" Caption="Silva"/>
+</Box>
+
+The Silva are a race of humanoid plants living in deep relic forests. Emerging from the mother tree in the centre of their cities, the Silvas do not travel the world very often.
+
+## Magical photosynthesis (TEMPORARILY DISABLED)
+
+Silvas regenerate [protodata="CP14MobSilva" comp="CP14MagicEnergyPhotosynthesis" member="DaylightEnergy"/] mana while in sunlight, but without it, mana regeneration is completely absent. 
+
+## Blessing of the silvas
+
+Silvas cannot take the Plant Growth spell, but they have an improved version of it that uses less mana. Silvas are considered plants for these spells, so you can use them to restore hunger, thirst, and health to silvas just like you can restore health and resources to regular plants.
+
+<Box>
+<GuideEntityEmbed Entity="CP14ActionSpellPlantGrowthSilva"/>
+</Box>
+
+</Document>

@@ -1,0 +1,46 @@
+- type: entity
+  id: CP14BaseSharpeningStoneStructure
+  name: stationary sharpening stone
+  description: A strong, durable sharpening stone capable of sharpening weapons without much damage to them.
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  components:
+  - type: Clickable
+  - type: UseDelay
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Blacksmith/sharpening_stone.rsi
+    state: base
+  - type: PlaceableSurface
+  - type: ItemPlacer
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.08,-0.35,0.15,0.25"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassCrack
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: CP14SharpeningStone
+    sharpnessHeal: 0.1
+    targetDamage:
+      types:
+        blunt: 0.5

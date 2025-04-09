@@ -39,11 +39,17 @@ namespace Content.Server.Damage.Systems
             {
                 //CrystallEdge Melee upgrade
                 var damage = component.Damage;
+                var slashDamage = damage.DamageDict.GetValueOrDefault("Slash");
+                var piercingDamage = damage.DamageDict.GetValueOrDefault("Piercing");
 
                 if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
-                    damage *= sharp.Sharpness;
+                {
+                    damage.DamageDict["Slash"] = slashDamage * sharp.Sharpness;
+                    damage.DamageDict["Piercing"] = piercingDamage * sharp.Sharpness;
+                    damage.DamageDict["Blunt"] = (slashDamage + piercingDamage) / 2 * (1f - sharp.Sharpness);
+                }
 
-                var dmg = _damageable.TryChangeDamage(args.Target, damage, component.IgnoreResistances, origin: args.Component.Thrower);
+                var dmg = _damageable.TryChangeDamage(args.Target, damage * _damageable.UniversalThrownDamageModifier, component.IgnoreResistances, origin: args.Component.Thrower);
                 //CrystallEdge Melee upgrade end
 
                 // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
@@ -66,12 +72,19 @@ namespace Content.Server.Damage.Systems
 
         private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
         {
-            var damage = component.Damage;
+            var damage = component.Damage * _damageable.UniversalThrownDamageModifier;
+            var slashDamage = damage.DamageDict.GetValueOrDefault("Slash");
+            var piercingDamage = damage.DamageDict.GetValueOrDefault("Piercing");
 
             if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
-                damage *= sharp.Sharpness;
+            {
+                damage.DamageDict["Slash"] = slashDamage * sharp.Sharpness;
+                damage.DamageDict["Piercing"] = piercingDamage * sharp.Sharpness;
+                damage.DamageDict["Blunt"] = (slashDamage + piercingDamage) / 2 * (1f - sharp.Sharpness);
+            }
 
             _damageExamine.AddDamageExamine(args.Message, damage, Loc.GetString("damage-throw"));
+            //CP14 Sharpening damage apply end
         }
 
         /// <summary>

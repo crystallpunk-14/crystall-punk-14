@@ -121,7 +121,7 @@ public sealed partial class CP14CurrencySystem
         if (ent.Comp.Whitelist is not null && !_whitelist.IsValid(ent.Comp.Whitelist, args.Used))
             return;
 
-        var delta = GetTotalCurrency(args.Used);
+        var delta = GetTotalCurrencyRecursive(args.Used);
         ent.Comp.Balance += delta;
         QueueDel(args.Used);
 
@@ -154,9 +154,59 @@ public sealed partial class CP14CurrencySystem
         return spawns;
     }
 
+    public HashSet<EntityUid> GenerateMoney(
+        int target,
+        EntityCoordinates coordinates)
+    {
+        HashSet<EntityUid> coins = new();
+        var balance = target;
+        //PP
+        if (balance > 0)
+        {
+            var ppCoin = GenerateMoney(PP.Key, balance, coordinates, out var remainder);
+            balance = remainder;
+            foreach (var pp in ppCoin)
+            {
+                coins.Add(pp);
+            }
+        }
+        //GP
+        if (balance > 0)
+        {
+            var gpCoin = GenerateMoney(GP.Key, balance, coordinates, out var remainder);
+            balance = remainder;
+            foreach (var gp in gpCoin)
+            {
+                coins.Add(gp);
+            }
+        }
+        //SP
+        if (balance > 0)
+        {
+            var spCoin = GenerateMoney(SP.Key, balance, coordinates, out var remainder);
+            balance = remainder;
+            foreach (var sp in spCoin)
+            {
+                coins.Add(sp);
+            }
+        }
+        //CP
+        if (balance > 0)
+        {
+            var cpCoin = GenerateMoney(CP.Key, balance, coordinates, out var remainder);
+            balance = remainder;
+            foreach (var cp in cpCoin)
+            {
+                coins.Add(cp);
+            }
+        }
+
+        return coins;
+    }
+
     private bool ProcessEntity(EntityUid ent, ref int remainder, HashSet<EntityUid> spawns)
     {
-        var singleCurrency = GetTotalCurrency(ent);
+        var singleCurrency = GetTotalCurrencyRecursive(ent);
 
         if (singleCurrency > remainder)
         {

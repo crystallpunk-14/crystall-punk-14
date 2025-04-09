@@ -1,0 +1,79 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeHammerBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A hammerhead without a hilt. A blacksmith can use it as a spare part to create a tool.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+
+- type: entity
+  parent: CP14ModularBladeHammerBase
+  id: CP14ModularBladeIronHammer
+  name: iron hammerhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronHammer
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularBladeHammerBase
+  id: CP14ModularBladeGoldHammer
+  name: golden hammerhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldHammer
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularBladeHammerBase
+  id: CP14ModularBladeCopperHammer
+  name: copper hammerhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperHammer
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularBladeHammerBase
+  id: CP14ModularBladeMithrilHammer
+  name: mithril hammerhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilHammer
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

@@ -1,7 +1,7 @@
 - type: gameMap
   id: MeteorArena
   mapName: Meteor Arena
-  mapPath: /Maps/_CP14/meteor-arena.yml
+  mapPath: /Maps/Nonstations/meteor-arena.yml
   minPlayers: 0
   stations:
     Arena:
@@ -12,54 +12,3 @@
         - type: StationJobs
           availableJobs:
             CP14Adventurer: [ -1, -1 ]
-
-- type: gameMap
-  id: Village
-  mapName: Sandbox village
-  mapPath: /Maps/_CP14/tavern.yml
-  maxRandomOffset: 0
-  randomRotation: false
-  minPlayers: 0
-  stations:
-    Village:
-      stationProto: CP14BaseExpedition
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Sandbox village"
-        - type: StationJobs
-          availableJobs:
-            CP14Adventurer: [ -1, -1 ]
-            CP14Alchemist: [ 2, 4 ]
-            CP14Blacksmith: [ 1, 1 ]
-            CP14Innkeeper: [ 3, 4 ]
-            CP14Commandant: [1, 1]
-            CP14Banker: [3, 4]
-            #CP14GuardCommander: [1, 1]
-        - type: CP14StationZLevels
-          defaultMapLevel: 0
-          levels:
-            -1:
-              path: /Maps/_CP14/tavern_cave.yml
-
-- type: gameMap
-  id: Comoss
-  mapName: "Comoss island"
-  mapPath: /Maps/_CP14/comoss.yml
-  maxRandomOffset: 0
-  randomRotation: false
-  minPlayers: 0
-  stations:
-    Comoss:
-      stationProto: CP14BaseExpedition
-      components:
-        - type: StationNameSetup
-          mapNameTemplate: "Comoss island"
-        - type: StationJobs
-          availableJobs:
-            CP14Adventurer: [ -1, -1 ]
-            CP14Alchemist: [ 2, 4 ]
-            CP14Blacksmith: [ 1, 1 ]
-            CP14Innkeeper: [ 3, 4 ]
-            CP14Commandant: [1, 1]
-            CP14Banker: [3, 4]
-            #CP14GuardCommander: [1, 1]

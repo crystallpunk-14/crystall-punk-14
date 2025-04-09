@@ -1,0 +1,229 @@
+# Tavern 
+
+- type: CP14LockType
+  id: TavernHall
+  complexity: 3
+  name: cp14-lock-shape-tavern-hall
+
+- type: CP14LockType
+  id: TavernStaff
+  complexity: 3
+  name: cp14-lock-shape-tavern-staff
+
+- type: CP14LockType
+  id: TavernDorms1
+  group: TavernDorms
+  complexity: 3
+  name: cp14-lock-shape-tavern-dorm1
+
+- type: CP14LockType
+  id: TavernDorms2
+  group: TavernDorms
+  complexity: 3
+  name: cp14-lock-shape-tavern-dorm2
+
+- type: CP14LockType
+  id: TavernDorms3
+  group: TavernDorms
+  complexity: 3
+  name: cp14-lock-shape-tavern-dorm3
+
+- type: CP14LockType
+  id: TavernDorms4
+  group: TavernDorms
+  complexity: 3
+  name: cp14-lock-shape-tavern-dorm4
+
+- type: CP14LockType
+  id: TavernDorms5
+  group: TavernDorms
+  complexity: 3
+  name: cp14-lock-shape-tavern-dorm5
+
+# Artisans 
+
+- type: CP14LockType
+  id: Alchemy1
+  group: Alchemist
+  complexity: 4
+  name: cp14-lock-shape-alchemist1
+  
+- type: CP14LockType
+  id: Alchemy2
+  group: Alchemist
+  complexity: 4
+  name: cp14-lock-shape-alchemist2
+  
+- type: CP14LockType
+  id: Alchemy3
+  group: Alchemist
+  complexity: 4
+  name: cp14-lock-shape-alchemist3
+
+- type: CP14LockType
+  id: Blacksmith1
+  group: Blacksmith
+  complexity: 4
+  name: cp14-lock-shape-blacksmith1
+
+- type: CP14LockType
+  id: Blacksmith2
+  group: Blacksmith
+  complexity: 4
+  name: cp14-lock-shape-blacksmith2
+
+- type: CP14LockType
+  id: Blacksmith3
+  group: Blacksmith
+  complexity: 4
+  name: cp14-lock-shape-blacksmith3
+
+- type: CP14LockType
+  id: Shop1
+  group: Merchant
+  complexity: 6
+  name: cp14-lock-shape-merchant1
+
+- type: CP14LockType
+  id: Shop2
+  group: Merchant
+  complexity: 6
+  name: cp14-lock-shape-merchant2
+
+- type: CP14LockType
+  id: Shop3
+  group: Merchant
+  complexity: 6
+  name: cp14-lock-shape-merchant3
+
+# Mercenary
+
+- type: CP14LockType
+  id: Guildmaster
+  complexity: 5
+  name: cp14-lock-shape-guildmaster
+
+- type: CP14LockType
+  id: DemiplaneCrystal
+  complexity: 5
+  name: cp14-lock-shape-demiplane-crystal
+
+# Personal house
+
+- type: CP14LockType
+  id: PersonalHouse1
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse1
+
+- type: CP14LockType
+  id: PersonalHouse2
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse2
+
+- type: CP14LockType
+  id: PersonalHouse3
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse3
+
+- type: CP14LockType
+  id: PersonalHouse4
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse4
+
+- type: CP14LockType
+  id: PersonalHouse5
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse5
+
+- type: CP14LockType
+  id: PersonalHouse6
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse6
+
+- type: CP14LockType
+  id: PersonalHouse7
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse7
+
+- type: CP14LockType
+  id: PersonalHouse8
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse8
+
+- type: CP14LockType
+  id: PersonalHouse9
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse9
+
+- type: CP14LockType
+  id: PersonalHouse10
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse10
+
+- type: CP14LockType
+  id: PersonalHouse11
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse11
+
+- type: CP14LockType
+  id: PersonalHouse12
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse12
+
+- type: CP14LockType
+  id: PersonalHouse13
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse13
+
+- type: CP14LockType
+  id: PersonalHouse14
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse14
+
+- type: CP14LockType
+  id: PersonalHouse15
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse15
+
+- type: CP14LockType
+  id: PersonalHouse16
+  group: PersonalHouse
+  complexity: 3
+  name: cp14-lock-shape-personalhouse16
+
+# Guard
+
+- type: CP14LockType
+  id: GuardEntrance
+  complexity: 3
+  name: cp14-lock-shaper-guard-entrance
+
+- type: CP14LockType
+  id: Guard
+  complexity: 4
+  name: cp14-lock-shaper-guard-staff
+
+- type: CP14LockType
+  id: GuardCommander
+  complexity: 5
+  name: cp14-lock-shaper-guard-commander
+
+- type: CP14LockType
+  id: GuardWeaponStorage
+  complexity: 5
+  name: cp14-lock-shaper-guard-weapon-storage

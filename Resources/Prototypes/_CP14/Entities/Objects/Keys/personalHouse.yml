@@ -1,0 +1,140 @@
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouseAbstract
+  suffix: Abstract Personal house
+  components:
+  - type: CP14AbstractKey
+    group: PersonalHouse
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouseAbstractLoadoutDummy
+  name: a key to a random personal home (limited per map)
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse1
+  suffix: PersonalHouse1
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse1
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse2
+  suffix: PersonalHouse2
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse2
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse3
+  suffix: PersonalHouse3
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse3
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse4
+  suffix: PersonalHouse4
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse4
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse5
+  suffix: PersonalHouse5
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse5
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse6
+  suffix: PersonalHouse6
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse6
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse7
+  suffix: PersonalHouse7
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse7
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse8
+  suffix: PersonalHouse8
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse8
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse9
+  suffix: PersonalHouse9
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse9
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse10
+  suffix: PersonalHouse10
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse10
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse11
+  suffix: PersonalHouse11
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse11
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse12
+  suffix: PersonalHouse12
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse12
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse13
+  suffix: PersonalHouse13
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse13
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse14
+  suffix: PersonalHouse14
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse14
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse15
+  suffix: PersonalHouse15
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse15
+    
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyPersonalHouse16
+  suffix: PersonalHouse16
+  components:
+  - type: CP14Key
+    autoGenerateShape: PersonalHouse16

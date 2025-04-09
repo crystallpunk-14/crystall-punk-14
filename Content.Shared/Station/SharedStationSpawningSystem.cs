@@ -1,8 +1,10 @@
 using System.Linq;
+using Content.Shared._CP14.Skill;
 using Content.Shared.Actions;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
+using Content.Shared.Item;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Storage;
@@ -24,6 +26,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!; //CP14
+    [Dependency] private readonly CP14SharedSkillSystem _skill = default!; //CP14
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -69,9 +72,14 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     {
         string? name = null;
 
+        if (roleProto.CanCustomizeName)
+        {
+            name = loadout.EntityName;
+        }
+
         if (string.IsNullOrEmpty(name) && PrototypeManager.TryIndex(roleProto.NameDataset, out var nameData))
         {
-            name = _random.Pick(nameData.Values);
+            name = Loc.GetString(_random.Pick(nameData.Values));
         }
 
         if (!string.IsNullOrEmpty(name))
@@ -84,7 +92,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     {
         EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
         EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent);
-        CP14EquipStartingActions(entity, loadout);
+        CP14EquipStartingActions(entity, loadout); //CP14
     }
 
     private void CP14EquipStartingActions(EntityUid entity, LoadoutPrototype loadout)
@@ -92,6 +100,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         foreach (var action in loadout.Actions)
         {
             _action.AddAction(entity, action);
+        }
+
+        foreach (var tree in loadout.SkillTree)
+        {
+            _skill.TryAddExperience(entity, tree.Key, tree.Value);
         }
     }
 
@@ -156,27 +169,23 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         if (startingGear.Storage.Count > 0)
         {
             var coords = _xformSystem.GetMapCoordinates(entity);
-            var ents = new ValueList<EntityUid>();
             _inventoryQuery.TryComp(entity, out var inventoryComp);
 
-            foreach (var (slot, entProtos) in startingGear.Storage)
+            foreach (var (slotName, entProtos) in startingGear.Storage)
             {
-                ents.Clear();
-                if (entProtos.Count == 0)
+                if (entProtos == null || entProtos.Count == 0)
                     continue;
 
                 if (inventoryComp != null &&
-                    InventorySystem.TryGetSlotEntity(entity, slot, out var slotEnt, inventoryComponent: inventoryComp) &&
+                    InventorySystem.TryGetSlotEntity(entity, slotName, out var slotEnt, inventoryComponent: inventoryComp) &&
                     _storageQuery.TryComp(slotEnt, out var storage))
                 {
-                    foreach (var ent in entProtos)
-                    {
-                        ents.Add(Spawn(ent, coords));
-                    }
 
-                    foreach (var ent in ents)
+                    foreach (var entProto in entProtos)
                     {
-                        _storage.Insert(slotEnt.Value, ent, out _, storageComp: storage, playSound: false);
+                        var spawnedEntity = Spawn(entProto, coords);
+
+                        _storage.Insert(slotEnt.Value, spawnedEntity, out _, storageComp: storage, playSound: false);
                     }
                 }
             }

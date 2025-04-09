@@ -37,6 +37,9 @@
   - type: Construction
     graph: CP14WallStonebrick
     node: WallStonebrick
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
   - type: Destructible
     thresholds:
     - trigger:
@@ -48,6 +51,11 @@
           CP14WallStonebrickCrushedMedium:
             min: 1
             max: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: CP14WallpaperHolder
@@ -63,6 +71,25 @@
     sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
   - type: IconSmooth
     base: stonebricks
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WallMarbleBrick
+    node: CP14WallMarbleBrick
   - type: CP14WallpaperHolder
 
 - type: entity
@@ -82,7 +109,6 @@
     - bricksA
     - bricksB
   - type: CP14WallpaperHolder
-
 
 - type: entity
   id: CP14WallWooden
@@ -122,8 +148,21 @@
   - type: CP14WallpaperHolder
 
 - type: entity
+  id: CP14WallWoodenBirch
+  parent: CP14WallWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Construction
+    graph: CP14WallWood
+    node: WallWoodenBirch
+
+- type: entity
   id: CP14WallWoodenPalisade
-  name: wooden wall
+  name: palisade
+  description: A wall of sharp logs. Not that it's a safe haven.
   parent:
   - CP14BaseWall
   - CP14BaseFlammableSpreading
@@ -134,6 +173,8 @@
     sprite: _CP14/Structures/Walls/wooden_palisad.rsi
   - type: IconSmooth
     key: CP14palisade
+    additionalKeys:
+    - CP14wall
     base: wood
   - type: Damageable
     damageContainer: Inorganic
@@ -152,6 +193,11 @@
   - type: Tag
   - type: Occluder
     enabled: false
+  - type: Airtight
+    airBlocked: false
+  - type: Construction
+    graph: CP14WallWoodenPalisade
+    node: CP14WallWoodenPalisade
 
 - type: entity
   id: CP14WallCardboard

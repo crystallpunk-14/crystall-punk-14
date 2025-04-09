@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "By TheShuEd(Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "arrow_d"
+        },
+        {
+            "name": "arrow_u"
+        },
+        {
+            "name": "arrow_l"
+        },
+        {
+            "name": "arrow_r"
+        },
+        {
+            "name": "arrow_dl"
+        },
+        {
+            "name": "arrow_dr"
+        },
+        {
+            "name": "arrow_ur"
+        },
+        {
+            "name": "arrow_ul"
+        },
+        {
+            "name": "point"
+        },
+        {
+            "name": "skull"
+        }
+    ]
+}

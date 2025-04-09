@@ -1,0 +1,28 @@
+- type: entity
+  parent: 
+  - CP14ClothingCloakBase
+  - CP14ClothingBaseContainer
+  id: CP14ClothingCloakBlacksmithArpon
+  name: blacksmith's apron
+  description: Loose leather strips, still actually being clothing. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+  - type: Storage
+    maxItemSize: Small
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,2,1
+    whitelist:
+      tags:
+        - Crayon
+        - CP14Lighter
+        - CP14Scissors
+        - CP14SharpeningStone
+        - CP14Nail

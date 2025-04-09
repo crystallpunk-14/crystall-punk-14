@@ -30,6 +30,16 @@
   flavorType: Base
   description: cp14-flavor-base-magic
 
+- type: flavor
+  id: CP14Salty
+  flavorType: Base
+  description: cp14-flavor-base-salt
+
+- type: flavor
+  id: CP14VerySweet
+  flavorType: Base
+  description: cp14-flavor-base-very-sweet
+
 # Complex
 
 - type: flavor
@@ -46,3 +56,68 @@
   id: CP14Quartz
   flavorType: Complex
   description: cp14-flavor-complex-quartz
+
+- type: flavor
+  id: CP14beer
+  flavorType: Complex
+  description: cp14-flavor-complex-beer
+
+- type: flavor
+  id: CP14dwarfbeer
+  flavorType: Complex
+  description: cp14-flavor-complex-dwarfbeer
+
+- type: flavor
+  id: CP14gerbil
+  flavorType: Complex
+  description: cp14-flavor-complex-gerbil
+
+- type: flavor
+  id: CP14breeze
+  flavorType: Complex
+  description: cp14-flavor-complex-breeze
+
+- type: flavor
+  id: CP14blowLaw
+  flavorType: Complex
+  description: cp14-flavor-complex-blowlaw
+
+- type: flavor
+  id: CP14wine
+  flavorType: Complex
+  description: cp14-flavor-complex-wine
+
+- type: flavor
+  id: CP14zellasianPleasure
+  flavorType: Complex
+  description: cp14-flavor-complex-zellasian-pleasure
+
+- type: flavor
+  id: CP14leeks
+  flavorType: Complex
+  description: cp14-flavor-complex-leeks
+
+- type: flavor
+  id: CP14durandate
+  flavorType: Complex
+  description: cp14-flavor-complex-durandate
+
+- type: flavor
+  id: CP14ale
+  flavorType: Complex
+  description: cp14-flavor-complex-ale
+
+- type: flavor
+  id: CP14bloodyTear
+  flavorType: Complex
+  description: cp14-flavor-complex-bloody-tear
+
+- type: flavor
+  id: CP14bottomless
+  flavorType: Complex
+  description: cp14-flavor-complex-bottomless
+
+- type: flavor
+  id: CP14cucumber
+  flavorType: Complex
+  description: cp14-flavor-complex-cucumber

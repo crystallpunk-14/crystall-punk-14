@@ -1,0 +1,349 @@
+- type: entity
+  id: CP14CraneBarrel
+  parent: [BaseStructure, CP14BarrelSolution, CP14BaseFlammable]
+  name: wooden crane barrel
+  description: Large lying barrel with tap, for storing valuable liquids.
+  suffix: Empty
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel.rsi
+    layers:
+      - state: barrel
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+  - type: Anchorable
+    delay: 3
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 80
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:SpillBehavior
+        solution: barrel
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        maxVol: 500
+  - type: Construction
+    graph: CP14CraneBarrel
+    node: CP14CraneBarrel
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelDwarfBeer
+  suffix: Beer. Dwarf
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14DwarfBeer
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-dwarfbeer
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelBeerGerbil
+  suffix: Beer. Gerbil
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerGerbil
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-gerbil
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelBeerBreeze
+  suffix: Beer. Breeze
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBreeze
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-breeze
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelBeerBlowLaw
+  suffix: Beer. BlowLaw
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBlowLaw
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-blowlaw
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelAleBloodyTear
+  suffix: Ale. BloodyTear
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBloodyTear
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-bloody-tear
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelAleBottomless
+  suffix: Ale. Bottomless
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBottomless
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-bottomless
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelWineZellasianPleasure
+  suffix: Wine. ZellasianPleasure
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14WineZellasianPleasure
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-zellasian-pleasure
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelWineLeeks
+  suffix: Wine. Leeks
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14WineLeeks
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-leeks
+
+- type: entity
+  parent: CP14CraneBarrel
+  id: CP14CraneBarrelWineDurandate
+  suffix: Wine. Durandate
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14WineDurandate
+          Quantity: 500
+  - type: Label
+    currentLabel: cp14-reagent-name-durandate
+
+- type: entity
+  id: CP14CraneBarrelSmall
+  parent: [BaseStructureDynamic, CP14BarrelSolution, CP14BaseFlammable]
+  name: wooden small crane barrel
+  description: A small lying barrel with a tap to quickly pour liquid into mugs.
+  suffix: Empty
+  categories: [ ForkFiltered ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel_small.rsi
+    layers:
+      - state: barrel
+  - type: Transform
+    anchored: true
+  - type: Pullable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 200
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:SpillBehavior
+        solution: barrel
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        maxVol: 50
+  - type: Construction
+    graph: CP14CraneBarrelSmall
+    node: CP14CraneBarrelSmall
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallDwarfBeer
+  suffix: Beer. Dwarf
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14DwarfBeer
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallBeerGerbil
+  suffix: Beer. Gerbil
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerGerbil
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallBeerBreeze
+  suffix: Beer. Breeze
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBreeze
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallBeerBlowLaw
+  suffix: Beer. BlowLaw
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14BeerBlowLaw
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallAleBloodyTear
+  suffix: Ale. BloodyTear
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBloodyTear
+          Quantity: 50
+
+- type: entity
+  parent: CP14CraneBarrelSmall
+  id: CP14CraneBarrelSmallAleBottomless
+  suffix: Ale. Bottomless
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AleBottomless
+          Quantity: 50

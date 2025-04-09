@@ -11,8 +11,7 @@ public sealed partial class EditDamageableModifier : CP14ModularCraftModifier
 
     public override void Effect(EntityManager entManager, Entity<CP14ModularCraftStartPointComponent> start, Entity<CP14ModularCraftPartComponent>? part)
     {
-        if (!entManager.TryGetComponent<CP14DamageableModifierComponent>(start, out var damageable))
-            return;
+        var damageable = entManager.EnsureComponent<CP14DamageableModifierComponent>(start);
 
         damageable.Modifier *= Multiplier;
         entManager.Dirty(start);

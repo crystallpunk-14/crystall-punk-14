@@ -1,0 +1,27 @@
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadGuardBase
+  abstract: true
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.90
+        Heat: 0.95
+
+- type: entity
+  parent: CP14ClothingHeadGuardBase
+  id: CP14ClothingHeadGuardHelmet
+  name: "guard's helmet"
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/Guard/helmet.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/Guard/helmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - HeadTop
+    - HeadSide

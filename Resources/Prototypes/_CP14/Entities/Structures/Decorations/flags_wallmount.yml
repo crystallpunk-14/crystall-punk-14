@@ -1,12 +1,12 @@
 - type: entity
   id: CP14WallmountFlagBase
   abstract: true
-  parent: 
+  parent:
   - CP14BaseWallmount
   - CP14BaseFlammableSpreadingStrong
   categories: [ ForkFiltered ]
   name: tapestry
-  description: A piece of cloth pinned to the wall. 
+  description: A piece of cloth pinned to the wall.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Decoration/flags_wallmount.rsi
@@ -55,11 +55,12 @@
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagTavern
   name: tavern tapestry
-  description: A tapestry with a ?? symbol, indicating that blacksmiths dwell here.
+  description: A tapestry with a beer symbol, indicating that tavern is here.
   components:
   - type: Sprite
     layers:
-    - state: fill_mercenary #TODO: Icon
+    - state: fill_mercenary
+    - state: icon_tavern
 
 # Bank
 
@@ -72,7 +73,8 @@
   - type: Sprite
     layers:
     - state: fill_bank
-    - state: icon_coins
+    - state: icon_coin
+      color: "#ad633b"
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -83,7 +85,20 @@
   - type: Sprite
     layers:
     - state: fill_bank
-    - state: icon_vault
+    - state: icon_safe
+      color: "#ad633b"
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagBankCrates
+  name: bank crates tapestry
+  description: A tapestry with a crates symbol indicating that this is where the bank vaults reside.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_bank
+    - state: icon_crates
+      color: "#ad633b"
 
 - type: entity
   parent: CP14WallmountFlagBase
@@ -95,13 +110,51 @@
     layers:
     - state: fill_bank
     - state: icon_ship
+      color: "#ad633b"
 
 - type: entity
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagBankCommandant
   name: commandant tapestry
-  description: A tapestry with a ?? symbol indicating that the Commandant lives here.
+  description: A tapestry with a star symbol indicating that the commandant lives here.
   components:
   - type: Sprite
     layers:
-    - state: fill_bank #TODO: Icon
+    - state: fill_bank
+    - state: icon_star
+      color: "#ad633b"
+
+# Guard
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagGuardSwords
+  name: guard tapestry
+  description: A tapestry with a swords symbol denoting that the guards are here.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_guard
+    - state: icon_swords
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagGuardShield
+  name: guard tapestry
+  description: A tapestry with a shield symbol denoting that the guards are here.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_guard
+    - state: icon_shield
+
+- type: entity
+  parent: CP14WallmountFlagBase
+  id: CP14WallmountFlagGuardCommander
+  name: guard commander tapestry
+  description: A tapestry with a star symbol indicating that the Guard Commandant lives here.
+  components:
+  - type: Sprite
+    layers:
+    - state: fill_guard
+    - state: icon_star

@@ -1,0 +1,92 @@
+- type: entity
+  id: CP14ActionSpellHealBallade
+  name: Healing ballade
+  description: Your music is filled with healing magic, slowly healing all the creatures around you.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: heal_music
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.8
+  - type: CP14MagicEffectManaCost
+    manaCost: 1
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14AreaEntityEffectHealBallade
+  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneHealBallade
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/healing.rsi
+      state: heal_music
+    event: !type:CP14ToggleableInstantActionEvent
+      effectFrequency: 1
+      cooldown: 15
+      castTime: 120
+      hidden: true
+
+- type: entity
+  id: CP14AreaEntityEffectHealBallade
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 1.6
+  - type: CP14AreaEntityEffect
+    range: 3
+    maxTargets: 4
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectHealthBallade
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -0.70
+            Blunt: -0.70
+            Piercing: -0.70
+            Cold: -0.40
+            Heat: -0.40
+            Shock: -0.40
+            Poison: -0.25
+            Bloodloss: -0.40
+            Caustic: -0.30
+
+- type: entity
+  id: CP14ImpactEffectHealthBallade
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_5
+      color: "#79b330"
+      shader: unshaded
+ 
+- type: entity
+  id: CP14RuneHealBallade
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#79b330"
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_3
+      color: "#79b330"
+      shader: unshaded

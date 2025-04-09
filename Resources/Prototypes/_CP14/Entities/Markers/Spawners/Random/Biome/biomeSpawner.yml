@@ -1,6 +1,7 @@
 - type: entity
   id: CP14BaseBiomeSpawner
   name: biome spawner
+  description: Spawns of various biomes on the map.
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -19,26 +20,25 @@
       components:
       - Portal
       - MindContainer
-      - CP14WorldBounding
   - type: PlacementReplacement
     key: CP14BiomeSpawner
 
 - type: entity
   id: CP14BiomeSpawnerGrassland
   parent: CP14BaseBiomeSpawner
-  suffix: Grassland
+  suffix: T0 Resources, Grassland
   components:
   - type: Sprite
     layers:
       - state: grass
       - state: frame
   - type: CP14BiomeSpawner
-    biome: CP14GrasslandTestResult
+    biome: CP14GrasslandComossResources
 
 - type: entity
   id: CP14BiomeSpawnerCave
   parent: CP14BaseBiomeSpawner
-  suffix: Cave
+  suffix: T0 Resources, Cave Tunnels
   components:
   - type: Sprite
     layers:
@@ -47,7 +47,7 @@
         state: rock0
       - state: frame
   - type: CP14BiomeSpawner
-    biome: CP14CavesGeneric
+    biome: CP14CavesComossResources
 
 - type: entity
   id: CP14BiomeSpawnerCaveEmpty
@@ -72,3 +72,83 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14GrasslandHills
+
+- type: entity
+  id: CP14BiomeSpawnerSnowland
+  parent: CP14BaseBiomeSpawner
+  suffix: Snowland
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14SnowlandTestResult
+
+- type: entity
+  id: CP14BiomeSpawnerSwamp
+  parent: CP14BaseBiomeSpawner
+  suffix: Swamp
+  components:
+  - type: Sprite
+    layers:
+      - state: forest
+      - sprite: _CP14/Tiles/Water/water.rsi
+        state: full
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14SwampFill
+
+- type: entity
+  id: CP14BiomeSpawnerFrozenSwamp
+  parent: CP14BaseBiomeSpawner
+  suffix: Frozen swamp
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+      - sprite: _CP14/Tiles/Water/water.rsi
+        state: full
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14SnowlandSwamp
+
+- type: entity
+  id: CP14BiomeSpawnerFrozenCave
+  parent: CP14BaseBiomeSpawner
+  suffix: Frozen cave
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+        color: blue
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14IceCavesGeneric
+
+- type: entity
+  id: CP14BiomeSpawnerLeafMaze
+  parent: CP14BaseBiomeSpawner
+  suffix: Leaf maze
+  components:
+  - type: Sprite
+    layers:
+      - state: snow
+        color: green
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14LeafMaze
+
+- type: entity
+  id: CP14BiomeSpawnerMarbleCave
+  parent: CP14BaseBiomeSpawner
+  suffix: Marble cave
+  components:
+  - type: Sprite
+    layers:
+      - state: cave
+      - state: frame
+      - sprite: _CP14/Objects/Materials/marble_block.rsi
+        state: stone_3
+  - type: CP14BiomeSpawner
+    biome: CP14MarbleCaves 

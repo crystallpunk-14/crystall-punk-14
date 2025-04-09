@@ -1,0 +1,104 @@
+- type: entity
+  id: CP14MobSlimeFire
+  parent: CP14MobSlimeBase
+  name: fire slime
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: base
+      color: "#f7570c"
+      shader: unshaded
+  - type: PointLight
+    color: "#f7570c"
+    energy: 5
+    radius: 1.8
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        maxVol: 50
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 20
+        - ReagentId: CP14EssenceFire
+          Quantity: 20
+        - ReagentId: CP14BasicEffectDamageHeat
+          Quantity: 10
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+        path: /Audio/Weapons/punch3.ogg
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 3
+        Heat: 3
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            CP14AreaEntityEffectSlimeIgnite:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IgniteOnMeleeHit
+    fireStacks: 1
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: CP14OreCopper1
+          - id: CP14OreIron1
+          - id: CP14ScrapCopper
+          - id: CP14ScrapIron
+          - id: CP14FoodMeatLambCutletCooked
+          - id: CP14ModularInlayQuartzFire
+          - id: CP14CopperCoin1
+          - id: CP14CrystalShardFire
+            weight: 3
+
+- type: entity
+  id: CP14AreaEntityEffectSlimeIgnite
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _CP14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#eea911"
+      scale: 2, 2
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: CP14AreaEntityEffect
+    range: 2
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectTieflingRevenge
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Jitter
+      - !type:FlammableReaction
+        multiplier: 1
+      - !type:AdjustTemperature
+        amount: 6000
+      - !type:Ignite

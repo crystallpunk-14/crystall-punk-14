@@ -28,7 +28,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -59,12 +59,12 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
   editorHidden: false
-  id: CP14FloorRedWoodPlanksCruciform  
+  id: CP14FloorRedWoodPlanksCruciform
   name: cp14-tiles-red-woodplanks-cruciform
   sprite: /Textures/_CP14/Tiles/WoodPlanks/RedWood/red_woodplanks_cruciform.png
   variants: 4
@@ -90,9 +90,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-    
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorRedWoodPlanksStairways
@@ -121,7 +121,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -153,7 +153,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -183,9 +183,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
-  
+
 - type: tile #Cruci
   editorHidden: false
   id: CP14FloorRedWoodPlanksCruciformBroken
@@ -213,9 +213,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-  
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorRedWoodPlanksStairwaysBroken
@@ -243,7 +243,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
@@ -276,11 +276,11 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanks
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -307,16 +307,16 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanksBig
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
   editorHidden: false
-  id: CP14FloorBirchWoodPlanksCruciform  
+  id: CP14FloorBirchWoodPlanksCruciform
   name: cp14-tiles-birch-woodplanks-cruciform
   sprite: /Textures/_CP14/Tiles/WoodPlanks/BirchWood/birch_woodplanks_cruciform.png
   variants: 4
@@ -338,13 +338,13 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanksCruciform
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-    
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorBirchWoodPlanksStairways
@@ -369,11 +369,11 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanksStairs
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -405,7 +405,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -435,9 +435,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
-  
+
 - type: tile #Cruci
   editorHidden: false
   id: CP14FloorBirchWoodPlanksCruciformBroken
@@ -465,9 +465,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-  
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorBirchWoodPlanksStairwaysBroken
@@ -495,7 +495,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
@@ -528,11 +528,11 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileOakWoodplanks
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -559,16 +559,16 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileOakWoodplanksBig
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
   editorHidden: false
-  id: CP14FloorOakWoodPlanksCruciform  
+  id: CP14FloorOakWoodPlanksCruciform
   name: cp14-tiles-oak-woodplanks-cruciform
   sprite: /Textures/_CP14/Tiles/WoodPlanks/OakWood/oak_woodplanks_cruciform.png
   variants: 4
@@ -590,13 +590,13 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileOakWoodplanksCruciform
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-    
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorOakWoodPlanksStairways
@@ -621,11 +621,11 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileOakWoodplanksStairs
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -657,7 +657,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -687,9 +687,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
-  
+
 - type: tile #Cruci
   editorHidden: false
   id: CP14FloorOakWoodPlanksCruciformBroken
@@ -717,9 +717,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-  
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorOakWoodPlanksStairwaysBroken
@@ -747,7 +747,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
@@ -784,7 +784,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -815,12 +815,12 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
 
 - type: tile #Cruci
   editorHidden: false
-  id: CP14FloorDarkWoodPlanksCruciform  
+  id: CP14FloorDarkWoodPlanksCruciform
   name: cp14-tiles-dark-woodplanks-cruciform
   sprite: /Textures/_CP14/Tiles/WoodPlanks/DarkWood/dark_woodplanks_cruciform.png
   variants: 4
@@ -846,9 +846,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-    
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorDarkWoodPlanksStairways
@@ -877,7 +877,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 #broken
@@ -909,7 +909,7 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBurned
 
 - type: tile #Big
@@ -939,9 +939,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksBigBurned
-  
+
 - type: tile #Cruci
   editorHidden: false
   id: CP14FloorDarkWoodPlanksCruciformBroken
@@ -969,9 +969,9 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksCruciformBurned
-  
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorDarkWoodPlanksStairwaysBroken
@@ -999,264 +999,12 @@
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
-  weather: false
+  weather: true
   burnedTile: CP14FloorWoodPlanksStairwaysBurned
 
 
 #/broken
 ### /DARK
-
-### ACACIA
-
-- type: tile #Default
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanks
-  name: cp14-tiles-acacia-woodplanks
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-  burnedTile: CP14FloorWoodPlanksBurned
-
-- type: tile #Big
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanksBig
-  name: cp14-tiles-acacia-woodplanks-big
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks_big.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-  burnedTile: CP14FloorWoodPlanksBigBurned
-
-- type: tile #Cruci
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanksCruciform  
-  name: cp14-tiles-acacia-woodplanks-cruciform
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks_cruciform.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
-  weather: false
-  burnedTile: CP14FloorWoodPlanksCruciformBurned
-    
-- type: tile #Stairways
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanksStairways
-  name: cp14-tiles-acacia-woodplanks-stairways
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks_stairways.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-  burnedTile: CP14FloorWoodPlanksStairwaysBurned
-
-#broken
-
-- type: tile #Default
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanksBroken
-  name: cp14-tiles-acacia-woodplanks-broken
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks_broken.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-  burnedTile: CP14FloorWoodPlanksBurned
-
-- type: tile #Big
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanksBigBroken
-  name: cp14-tiles-acacia-woodplanks-big-broken
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks_big_broken.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-  burnedTile: CP14FloorWoodPlanksBigBurned
-  
-- type: tile #Cruci
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanksCruciformBroken
-  name: cp14-tiles-acacia-woodplanks-cruciform-broken
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks_cruciform_broken.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-  burnedTile: CP14FloorWoodPlanksCruciformBurned
-  
-- type: tile #Stairways
-  editorHidden: false
-  id: CP14FloorAcaciaWoodPlanksStairwaysBroken
-  name: cp14-tiles-acacia-woodplanks-stairways-broken
-  sprite: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_woodplanks_stairways_broken.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  edgeSpritePriority: 101
-  edgeSprites:
-    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SE.png
-    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NE.png
-    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_NW.png
-    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_single_edge_SW.png
-    South: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_S.png
-    East: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_E.png
-    North: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_N.png
-    West: /Textures/_CP14/Tiles/WoodPlanks/AcaciaWood/acacia_double_edge_W.png
-  baseTurf: CP14FloorFoundation
-  isSubfloor: false
-  deconstructTools: [ Prying ]
-  footstepSounds:
-    collection: FootstepWood
-  heatCapacity: 10000
-  weather: false
-  burnedTile: CP14FloorWoodPlanksStairwaysBurned
-
-
-#/broken
-### /ACACIA
 
 ### BURNED
 - type: tile #Default
@@ -1281,7 +1029,6 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
 
 - type: tile #Big
   editorHidden: false
@@ -1305,8 +1052,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
-  
+
 - type: tile #Cruci
   editorHidden: false
   id: CP14FloorWoodPlanksCruciformBurned
@@ -1329,8 +1075,7 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
-  
+
 - type: tile #Stairways
   editorHidden: false
   id: CP14FloorWoodPlanksStairwaysBurned
@@ -1353,6 +1098,251 @@
     collection: FootstepWood
   heatCapacity: 10000
   weather: true
-  color: "#0d0906"
 ### /BURNED
 
+### LUCENS
+- type: tile #Default
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanks
+  name: cp14-tiles-lucens-woodplanks
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  deconstructTools: [ Prying ]
+  itemDrop: CP14LucensWoodenPlanks1
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksBurned
+
+- type: tile #Big
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanksBig
+  name: cp14-tiles-lucens-woodplanks-big
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks_big.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14LucensWoodenPlanks1
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksBigBurned
+
+- type: tile #Cruci
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanksCruciform
+  name: cp14-tiles-lucens-woodplanks-cruciform
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks_cruciform.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14LucensWoodenPlanks1
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksCruciformBurned
+
+- type: tile #Stairways
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanksStairways
+  name: cp14-tiles-lucens-woodplanks-stairways
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks_stairways.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: CP14LucensWoodenPlanks1
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksStairwaysBurned
+
+#broken
+
+- type: tile #Default
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanksBroken
+  name: cp14-tiles-lucens-woodplanks-broken
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks_broken.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksBurned
+
+- type: tile #Big
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanksBigBroken
+  name: cp14-tiles-lucens-woodplanks-big-broken
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks_big_broken.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksBigBurned
+
+- type: tile #Cruci
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanksCruciformBroken
+  name: cp14-tiles-lucens-woodplanks-cruciform-broken
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks_cruciform_broken.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksCruciformBurned
+
+- type: tile #Stairways
+  editorHidden: false
+  id: CP14FloorLucensWoodPlanksStairwaysBroken
+  name: cp14-tiles-lucens-woodplanks-stairways-broken
+  sprite: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_woodplanks_stairways_broken.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_single_edge_SW.png
+    South: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_S.png
+    East: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_E.png
+    North: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_N.png
+    West: /Textures/_CP14/Tiles/WoodPlanks/LucensWood/lucens_double_edge_W.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepWood
+  heatCapacity: 10000
+  weather: true
+  burnedTile: CP14FloorWoodPlanksStairwaysBurned

@@ -1,0 +1,59 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BaseKey
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: key
+  description: A small, intricate piece of metal that opens some locks. Don't give it to anyone!
+  components: 
+  - type: Tag
+    tags:
+    - CP14Key
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/keys.rsi
+    layers:
+    - state: key1
+      map: [ "random" ]
+  - type: RandomSprite
+    available:
+    - random:
+        key1: ""
+        key2: ""
+        key3: ""
+        key4: ""
+        key5: ""
+        key6: ""
+        key7: ""
+        key8: ""
+        key9: ""
+        key10: ""
+        key11: ""
+        key12: ""
+        key13: ""
+        key14: ""
+        key15: ""
+        key16: ""
+        key17: ""
+        key18: ""
+  - type: CP14Key
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/key_drop.ogg
+      params:
+        variation: 0.05
+
+- type: entity
+  parent: BaseItem
+  id: CP14BaseLockpick
+  name: lockpick
+  description: A thief's tool that, with proper skill and skill, allows you to pick any lock.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: Sprite
+    sprite: _CP14/Objects/keys.rsi
+    state: lockpick
+  - type: CP14Lockpick

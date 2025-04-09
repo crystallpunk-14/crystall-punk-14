@@ -3,9 +3,12 @@ using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared._CP14.ModularCraft.Prototypes;
 using Content.Shared.Throwing;
+using Content.Shared.Examine;
+using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.ModularCraft;
 
@@ -17,15 +20,50 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ItemSystem _item = default!;
 
+    [Dependency] private readonly ExamineSystemShared _examine = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14ModularCraftStartPointComponent, MapInitEvent>(OnStartPointMapInit);
-        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, CP14ModularCraftAddPartDoAfter>(OnAddedPart);
+        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, CP14ModularCraftAddPartDoAfter>(OnAddedToStart);
+        SubscribeLocalEvent<CP14ModularCraftPartComponent, CP14ModularCraftAddPartDoAfter>(OnAddedToPart);
+        SubscribeLocalEvent<CP14ModularCraftStartPointComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
     }
 
-    private void OnAddedPart(Entity<CP14ModularCraftStartPointComponent> ent, ref CP14ModularCraftAddPartDoAfter args)
+    private void OnVerbExamine(Entity<CP14ModularCraftStartPointComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        var markup = GetExamine(ent.Comp);
+        _examine.AddDetailedExamineVerb(
+            args,
+            ent.Comp,
+            markup,
+            Loc.GetString("cp14-modular-craft-examine"),
+            "/Textures/Interface/VerbIcons/settings.svg.192dpi.png");
+    }
+
+    private FormattedMessage GetExamine(CP14ModularCraftStartPointComponent comp)
+    {
+        var msg = new FormattedMessage();
+
+        msg.AddMarkupOrThrow(Loc.GetString("cp14-modular-craft-examine-freeslots"));
+
+        foreach (var slot in comp.FreeSlots)
+        {
+            if (!_proto.TryIndex(slot, out var slotProto))
+                continue;
+
+            msg.AddMarkupOrThrow("\n - " + Loc.GetString(slotProto.Name));
+        }
+
+        return msg;
+    }
+
+    private void OnAddedToStart(Entity<CP14ModularCraftStartPointComponent> start, ref CP14ModularCraftAddPartDoAfter args)
     {
         if (args.Cancelled || args.Handled)
             return;
@@ -33,7 +71,23 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!TryComp<CP14ModularCraftPartComponent>(args.Used, out var partComp))
             return;
 
-        if (!TryAddPartToFirstSlot(ent, (args.Used.Value, partComp)))
+        if (!TryAddPartToFirstSlot(start, (args.Used.Value, partComp)))
+            return;
+
+        //TODO: Sound
+
+        args.Handled = true;
+    }
+
+    private void OnAddedToPart(Entity<CP14ModularCraftPartComponent> part, ref CP14ModularCraftAddPartDoAfter args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        if (!TryComp<CP14ModularCraftStartPointComponent>(args.Used, out var startComp))
+            return;
+
+        if (!TryAddPartToFirstSlot((args.Used.Value, startComp), part))
             return;
 
         //TODO: Sound
@@ -65,33 +119,43 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             if (!_proto.TryIndex(partProto, out var partIndexed))
                 continue;
 
-            if (partIndexed.TargetSlot is null)
+            if (partIndexed.Slots.Count == 0)
                 continue;
 
-            if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
-                continue;
-
-            if (TryAddPartToSlot(start, part, partProto, partIndexed.TargetSlot.Value))
+            foreach (var slot in partIndexed.Slots)
             {
-                QueueDel(part);
-                return true;
+                if (!start.Comp.FreeSlots.Contains(slot))
+                    continue;
+
+                if (TryAddPartToSlot(start, part, partProto, slot))
+                {
+                    QueueDel(part);
+                    return true;
+                }
             }
         }
+
         return false;
     }
+
     private bool TryAddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
         ProtoId<CP14ModularCraftPartPrototype> partProto)
     {
         if (!_proto.TryIndex(partProto, out var partIndexed))
             return false;
 
-        if (partIndexed.TargetSlot is null)
+        if (partIndexed.Slots.Count == 0)
             return false;
 
-        if (!start.Comp.FreeSlots.Contains(partIndexed.TargetSlot.Value))
-            return false;
+        foreach (var slot in partIndexed.Slots)
+        {
+            if (!start.Comp.FreeSlots.Contains(slot))
+                continue;
 
-        return TryAddPartToSlot(start, null, partProto, partIndexed.TargetSlot.Value);
+            return TryAddPartToSlot(start, null, partProto, slot);
+        }
+
+        return false;
     }
 
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
@@ -102,9 +166,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         if (!start.Comp.FreeSlots.Contains(slot))
             return false;
 
-        var xform = Transform(start);
-        if (xform.GridUid != xform.ParentUid)
-            return false;
+        //TODO: Size changing broken in gridstorage
 
         AddPartToSlot(start, part, partProto, slot);
         return true;
@@ -119,7 +181,6 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         start.Comp.InstalledParts.Add(partProto);
 
         var indexedPart = _proto.Index(partProto);
-        start.Comp.FreeSlots.AddRange(indexedPart.AddSlots);
 
         foreach (var modifier in indexedPart.Modifiers)
         {

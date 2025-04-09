@@ -11,9 +11,6 @@ public sealed partial class CP14StoreWindow : DefaultWindow
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private TimeSpan? _nextTravelTime;
-    private bool _onStation;
-
     public CP14StoreWindow()
     {
         RobustXamlLoader.Load(this);
@@ -25,24 +22,8 @@ public sealed partial class CP14StoreWindow : DefaultWindow
 
     public void UpdateUI(CP14StoreUiState state)
     {
+        Window.Title = Loc.GetString("cp14-store-ui-title", ("name", state.ShopName));
         UpdateProducts(state);
-
-        _nextTravelTime = state.NextTravelTime;
-        _onStation = state.OnStation;
-    }
-
-    protected override void FrameUpdate(FrameEventArgs args)
-    {
-        base.FrameUpdate(args);
-
-        //Updating time
-        if (_nextTravelTime is not null)
-        {
-            var time = _nextTravelTime.Value - _timing.CurTime;
-
-            TravelTimeLabel.Text =
-                $"{Loc.GetString(_onStation ? "cp14-store-ui-next-travel-out" : "cp14-store-ui-next-travel-in")} {Math.Max(time.Minutes, 0):00}:{Math.Max(time.Seconds, 0):00}";
-        }
     }
 
     private void UpdateProducts(CP14StoreUiState state)

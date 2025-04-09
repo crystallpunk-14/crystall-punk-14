@@ -1,0 +1,102 @@
+- type: constructionGraph
+  id: CP14WoodenDoor
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WoodenDoorFrame
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14WoodenDoorFrame
+      entity: CP14WoodenDoorFrame
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+        - to: CP14WoodenDoorFrameMirrored
+          steps:
+            - tool: CP14Hammering
+              doAfter: 1
+        - to: CP14WoodenDoor
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: CP14WoodenDoorWindowed
+          steps:
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14WoodenDoorFrameMirrored
+      entity: CP14WoodenDoorFrameMirrored
+      edges:
+        - to: start
+          completed:
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+        - to: CP14WoodenDoorFrame
+          steps:
+            - tool: CP14Hammering
+              doAfter: 1
+        - to: CP14WoodenDoorMirrored
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: CP14WoodenDoorWindowedMirrored
+          steps:
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14WoodenDoor
+      entity: CP14WoodenDoor
+      edges:
+        - to: CP14WoodenDoorFrame
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+              
+    - node: CP14WoodenDoorMirrored
+      entity: CP14WoodenDoorMirrored
+      edges:
+        - to: CP14WoodenDoorFrameMirrored
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+              
+    - node: CP14WoodenDoorWindowed
+      entity: CP14WoodenDoorWindowed
+      edges:
+        - to: CP14WoodenDoorFrame
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+              
+    - node: CP14WoodenDoorWindowedMirrored
+      entity: CP14WoodenDoorWindowedMirrored
+      edges:
+        - to: CP14WoodenDoorFrameMirrored
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5

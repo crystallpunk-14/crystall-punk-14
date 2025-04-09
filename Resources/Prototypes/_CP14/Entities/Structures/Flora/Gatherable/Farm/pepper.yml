@@ -1,0 +1,26 @@
+- type: entity
+  id: CP14PlantPepper
+  parent: CP14GatherablePlantMultiHarvestBase
+  name: pepper
+  description: Russian roulette. Are you hot, or are you sweet peppers?
+  components:
+  - type: Sprite
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      sprite: _CP14/Structures/Flora/Farm/pepper.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: CP14PlantVisuals
+    growthSteps: 5
+  - type: CP14PlantGatherable
+    loot:
+      All: CP14GatherPepper
+
+- type: entityLootTable
+  id: CP14GatherPepper
+  entries:
+  - id: CP14FoodPepper
+    amount: 2
+    maxAmount: 4

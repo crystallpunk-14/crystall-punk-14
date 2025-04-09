@@ -20,7 +20,7 @@
         map: [ "light" ]
         visible: false
   - type: PointLight
-    energy: 2
+    energy: 1
     radius: 8
     color: "#b2ceeb"
     enabled: false

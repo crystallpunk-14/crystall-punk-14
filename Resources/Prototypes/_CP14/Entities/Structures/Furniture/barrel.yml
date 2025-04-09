@@ -1,7 +1,27 @@
 - type: entity
+  id: CP14BarrelSolution
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Appearance
+  - type: DrainableSolution
+    solution: barrel
+  - type: MixableSolution
+    solution: barrel
+  - type: RefillableSolution
+    solution: barrel
+  - type: DrawableSolution
+    solution: barrel
+  - type: DumpableSolution
+    solution: barrel
+  - type: Drink
+    solution: barrel
+
+- type: entity
   id: CP14BaseBarrel
   parent:
   - BaseStructureDynamic
+  - CP14BarrelSolution
   - CP14BaseFlammable
   name: wooden barrel
   suffix: Empty
@@ -24,7 +44,7 @@
           False: {visible: true}
   - type: Sprite
     drawdepth: Mobs
-    sprite: _CP14/Structures/Furniture/barrel.rsi
+    sprite: _CP14/Structures/Furniture/Barrels/barrel.rsi
     noRot: true
     layers:
       - state: barrel_open
@@ -35,7 +55,6 @@
         map: ["enum.OpenableVisuals.Layer"]
   - type: Transform
     noRot: true
-  - type: InteractionOutline
   - type: Physics
   - type: Construction
     graph: CP14BaseBarrel
@@ -87,7 +106,6 @@
           collection: WoodDestroy
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Appearance
   - type: SolutionContainerManager
     solutions:
       barrel:
@@ -95,19 +113,7 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq
-  - type: DrainableSolution
-    solution: barrel
   - type: ExaminableSolution
-    solution: barrel
-  - type: MixableSolution
-    solution: barrel
-  - type: RefillableSolution
-    solution: barrel
-  - type: DrawableSolution
-    solution: barrel
-  - type: DumpableSolution
-    solution: barrel
-  - type: Drink
     solution: barrel
 
 - type: entity
@@ -252,4 +258,16 @@
       barrel:
         reagents:
         - ReagentId: CP14YellowDayflinPulp
+          Quantity: 300
+
+- type: entity
+  id: CP14BarrelAirLily
+  parent: CP14BaseBarrel
+  suffix: Air Lily
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: CP14AirLily
           Quantity: 300

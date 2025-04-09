@@ -25,7 +25,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14SharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: new[] { typeof(WieldableSystem) });
+        SubscribeLocalEvent<CP14SharpenedComponent, GetMeleeDamageEvent>(OnGetMeleeDamage, after: new[] { typeof(SharedWieldableSystem) });
         SubscribeLocalEvent<CP14SharpenedComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14SharpenedComponent, MeleeHitEvent>(OnMeleeHit);
 
@@ -67,7 +67,7 @@ public sealed class CP14SharpeningSystem : EntitySystem
         if (!args.CanReach || args.Target == null || !TryComp<CP14SharpenedComponent>(args.Target, out var sharpened))
             return;
 
-        if (TryComp<UseDelayComponent>(stone, out var useDelay) && _useDelay.IsDelayed( new Entity<UseDelayComponent>(stone, useDelay)))
+        if (TryComp<UseDelayComponent>(stone, out var useDelay) && _useDelay.IsDelayed((stone, useDelay)))
             return;
 
         SharpThing(stone, args.Target.Value, sharpened, args.User);
@@ -127,7 +127,12 @@ public sealed class CP14SharpeningSystem : EntitySystem
 
     private void OnGetMeleeDamage(Entity<CP14SharpenedComponent> sharpened, ref GetMeleeDamageEvent args)
     {
-        args.Damage *= sharpened.Comp.Sharpness;
+        var slashDamage = args.Damage.DamageDict.GetValueOrDefault("Slash");
+        var piercingDamage = args.Damage.DamageDict.GetValueOrDefault("Piercing");
+
+        args.Damage.DamageDict["Slash"] = slashDamage * sharpened.Comp.Sharpness;
+        args.Damage.DamageDict["Piercing"] = piercingDamage * sharpened.Comp.Sharpness;
+        args.Damage.DamageDict["Blunt"] = (slashDamage + piercingDamage) / 2 * (1f - sharpened.Comp.Sharpness);
     }
 
 }

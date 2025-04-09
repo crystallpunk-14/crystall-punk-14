@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CLA",
-    "copyright": "sheepmeat and sheepmeat_cooked By omsoyk, sheepmeat_slice and sheepmeat_slice_cooked by TheShuEd, cutlet and cutlet_cooked and meat_slice by Artista.rar",
+    "license": "All right reserved",
+    "copyright": "sheepmeat and sheepmeat_cooked By omsoyk, sheepmeat_slice and sheepmeat_slice_cooked, frog_leg_cooked by TheShuEd, cutlet and cutlet_cooked and meat_slice by Artista.rar, frog_leg, human_meat, dino_meat, fish_meat, rabbit_meat, pig_meat, mole_meat by Max Gab",
     "size": {
         "x": 32,
         "y": 32
@@ -39,6 +39,78 @@
         },
         {
             "name": "sheepmeat_slice3_cooked"
+        },
+        {
+            "name": "frog_leg"
+        },
+        {
+            "name": "frog_leg_cooked"
+        },
+        {
+            "name": "human_meat1"
+        },
+        {
+            "name": "human_meat2"
+        },
+        {
+            "name": "dino_meat1"
+        },
+        {
+            "name": "dino_meat2"
+        },
+        {
+            "name": "fish_meat1"
+        },
+        {
+            "name": "fish_meat2"
+        },
+        {
+            "name": "fish_meat3"
+        },
+        {
+            "name": "rabbit_meat1"
+        },
+        {
+            "name": "rabbit_meat2"
+        },
+        {
+            "name": "pig_meat1"
+        },
+        {
+            "name": "pig_meat2"
+        },
+        {
+            "name": "pig_meat3"
+        },
+        {
+            "name": "pig_meat4"
+        },
+        {
+            "name": "pig_meat5"
+        },
+        {
+            "name": "pig_meat6"
+        },
+        {
+            "name": "mole_meat1"
+        },
+        {
+            "name": "mole_meat2"
+        },
+        {
+            "name": "mole_meat3"
+        },
+        {
+            "name": "mole_meat4"
+        },
+        {
+            "name": "mole_meat5"
+        },
+        {
+            "name": "mole_meat6"
+        },
+        {
+            "name": "different_meat_slice"
         }
     ]
 }

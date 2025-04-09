@@ -4,7 +4,7 @@
     "x": 32,
     "y": 32
   },
-  "license": "CLA",
+  "license": "CC-BY-SA-4.0",
   "copyright": "Created by TheShuEd (Github) ",
   "states": [
     {
@@ -29,7 +29,16 @@
       "name": "tomato"
     },
     {
+      "name": "onion"
+    },
+    {
+      "name": "pepper"
+    },
+    {
       "name": "wheat"
+    },
+    {
+      "name": "sage"
     }
   ]
 }

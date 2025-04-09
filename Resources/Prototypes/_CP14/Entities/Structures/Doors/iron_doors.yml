@@ -27,9 +27,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  #- type: Construction
-  #  graph: CP14WoodenDoor
-  #  node: CP14WoodenDoor
+  - type: Construction
+    graph: CP14IronDoor
+    node: CP14IronDoor
 
 - type: entity
   id: CP14IronDoorMirrored
@@ -39,83 +39,6 @@
   - type: Door
     openSpriteState: open_mirrored
     closedSpriteState: closed_mirrored
-  #- type: Construction
-  #  graph: CP14WoodenDoor
-  #  node: CP14WoodenDoorMirrored
-
-#Blacksmith
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBlacksmith
-  suffix: Blacksmith
-  components:
-  - type: CP14Lock
-    autoGenerateShape: Blacksmith
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: 
-  - CP14IronDoorBlacksmith
-  - CP14IronDoorMirrored
-  id: CP14IronDoorMirroredBlacksmith
-  suffix: Blacksmith, Mirrored
-
-# Bank
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankStaff
-  suffix: Bank Staff
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankStaff
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: 
-  - CP14IronDoorBankStaff
-  - CP14IronDoorMirrored
-  id: CP14IronDoorMirroredBankStaff
-  suffix: Bank Staff, Mirrored
-
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankVault
-  suffix: Bank Vault
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankVault
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: 
-  - CP14IronDoorBankVault
-  - CP14IronDoorMirrored
-  id: CP14IronDoorMirroredBankVault
-  suffix: Bank Vault, Mirrored
-
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankSafe
-  suffix: Bank Safe
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankSafe
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorBankCommandantRoom
-  suffix: Bank Commandant room
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankCommandantRoom
-  - type: Lock
-    locked: true
+  - type: Construction
+    graph: CP14IronDoor
+    node: CP14IronDoorMirrored

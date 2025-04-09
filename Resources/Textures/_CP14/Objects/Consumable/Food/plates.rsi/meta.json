@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "license": "CLA",
+    "license": "All right reserved",
     "copyright": "Created bby KREKS",
     "size": {
         "x": 32,
@@ -8,31 +8,7 @@
     },
     "states": [
         {
-            "name": "ceramic"
-        },
-        {
-            "name": "iron"
-        },
-        {
-            "name": "wood1"
-        },
-        {
-            "name": "wood2"
-        },
-        {
-            "name": "liq-1"
-        },
-        {
-            "name": "liq-2"
-        },
-        {
-            "name": "liq-3"
-        },
-        {
-            "name": "liq-4"
-        },
-        {
-            "name": "liq-5"
+            "name": "plate"
         }
     ]
 }

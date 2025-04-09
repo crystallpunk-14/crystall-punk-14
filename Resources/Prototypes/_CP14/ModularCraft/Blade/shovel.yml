@@ -1,0 +1,84 @@
+- type: modularPart
+  id: BaseBladeShovel
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: Shovel
+    - type: ToolTileCompatible
+    - type: Tool
+      qualities:
+        - CP14Digging
+      useSound:
+        collection: CP14Digging
+        params:
+          variation: 0.03
+          volume: 2
+  - !type:EditMeleeWeapon
+    angleMultiplier: 1.2
+    bonusDamage:
+      types:
+        Slash: 2
+        Blunt: 3
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: 1
+        Blunt: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilShovel
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeShovel
+    - BaseBladeMithril

@@ -13,6 +13,24 @@
   components:
     - type: PermanentBlindness
 
+- type: trait
+  id: CP14ManaWasting
+  name: cp14-trait-mana-wasting-name
+  description: cp14-trait-mana-wasting-desc
+  category: CP14PhysicalTraits
+  cost: -2
+  whitelist:
+    components:
+      - CP14MagicEnergyContainer
+  components:
+  - type: Accentless
+    removes:
+    - type: CP14MagicEnergyContainer
+    - type: CP14MagicEnergyDraw
+    - type: CP14MagicUnsafeDamage
+    - type: CP14MagicUnsafeSleep
+    - type: CP14MagicAttuningMind
+
 # -1
 
 - type: trait
@@ -48,6 +66,15 @@
   category: CP14PhysicalTraits
   components:
     - type: Muted
+
+- type: trait
+  id: CP14PainNumbness
+  name: trait-painnumbness-name
+  description: trait-painnumbness-desc
+  cost: -1
+  category: CP14PhysicalTraits
+  components:
+  - type: PainNumbness
 
 # 0
 

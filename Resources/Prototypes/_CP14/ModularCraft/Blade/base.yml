@@ -1,0 +1,47 @@
+- type: modularPart
+  id: BaseBladeBone
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 2
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 3
+  - !type:EditMeleeWeapon
+    damageMultiplier: 0.75
+  - !type:EditIncreaseDamageOnWield
+    damageMultiplier: 0.75
+
+- type: modularPart
+  id: BaseBladeIron
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 1
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 1
+
+- type: modularPart
+  id: BaseBladeCopper
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 1.5
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 1.5
+
+- type: modularPart
+  id: BaseBladeGold
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 2
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 3
+
+- type: modularPart
+  id: BaseBladeMithril
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 0.80
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 0.80
+  - !type:EditMeleeWeapon
+    damageMultiplier: 1.25
+  - !type:EditIncreaseDamageOnWield
+    damageMultiplier: 1.25

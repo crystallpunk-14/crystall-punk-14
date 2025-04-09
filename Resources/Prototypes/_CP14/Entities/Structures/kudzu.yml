@@ -1,0 +1,39 @@
+- type: entity
+  name: astral haze
+  id: CP14AstralHaze
+  categories: [ ForkFiltered ]
+  parent:
+  - BaseKudzu
+  - BaseShadow
+  components:
+    - type: Physics
+      canCollide: false
+    - type: Occluder
+    - type: Sprite
+      drawdepth: Effects
+      sprite: Effects/spookysmoke.rsi
+      layers:
+      - state: spookysmoke
+        color: "#793a80dd"
+        map: [base]
+    - type: Kudzu
+      growthTickChance: 0.2
+      spreadChance: 0.99
+    - type: RandomSpawner
+      deleteSpawnerAfterSpawn: false
+      rareChance: 0.05
+      offset: 0.2
+      chance: 0.45
+      prototypes:
+      - CP14AstralCorrosion
+    - type: Tag
+      tags:
+        - HideContextMenu
+        - SpookyFog
+    - type: OptionsVisualizer
+      visuals:
+        base:
+        - options: Default
+          data: { state: spookysmoke }
+        - options: ReducedMotion
+          data: { state: spookysmoke_static }

@@ -17,8 +17,9 @@
   showInVote: true
   cP14Allowed: true
   rules:
-    - CP14SociopathsRule
+    - CP14SubGamemodesRule
     - CP14RoundObjectivesRule
+    - CP14BasicStationEventScheduler
 
 - type: gamePreset
   id: CP14Sandbox
@@ -29,5 +30,6 @@
   showInVote: true # For playtest period only
   cP14Allowed: true
   rules:
-    - Sandbox
     - CP14RoundObjectivesRule
+    - CP14BasicStationEventScheduler
+    - Sandbox

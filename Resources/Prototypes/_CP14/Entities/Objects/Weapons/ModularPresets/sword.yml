@@ -7,8 +7,56 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/iron_sword.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeIronSword
+
+- type: entity
+  id: CP14ModularGuardHalberd
+  parent: CP14ModularGripIronLongGuard
+  name: "guard's halberd"
+  description: The standard issue armament of the imperial guard. A long iron halberd adorned with blue feathers and brass
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+      state: icon
+    - sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronSword
+    - GardeSharpIron
+
+- type: entity
+  id: CP14ModularSkeletonHalberd
+  parent: CP14ModularGripWoodenLong
+  name: bone halberd
+  description: Monstrous weapons of bone.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeBoneSword
+
+- type: entity
+  id: CP14ModularSkeletonSword
+  parent: CP14ModularGripWooden
+  name: bone sword
+  description: Monstrous weapons of bone.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeBoneSword

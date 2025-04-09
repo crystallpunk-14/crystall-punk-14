@@ -1,0 +1,29 @@
+- type: soundCollection
+  id: CP14LobbyMusic
+  files:
+    - /Audio/_CP14/Lobby/crystal.ogg
+    - /Audio/_CP14/Lobby/eldermourne.ogg
+    - /Audio/_CP14/Lobby/arcane_winds.ogg
+
+- type: soundCollection
+  id: CP14DemiplaneIntro
+  files:
+    - /Audio/_CP14/Ambience/Demiplane/intro1.ogg
+    - /Audio/_CP14/Ambience/Demiplane/intro2.ogg
+    - /Audio/_CP14/Ambience/Demiplane/intro3.ogg
+    - /Audio/_CP14/Ambience/Demiplane/intro4.ogg
+
+- type: soundCollection
+  id: CP14LearnSkill
+  files:
+    - /Audio/_CP14/Effects/skill_up1.ogg
+    - /Audio/_CP14/Effects/skill_up2.ogg
+    - /Audio/_CP14/Effects/skill_up3.ogg
+    - /Audio/_CP14/Effects/skill_up4.ogg
+
+- type: soundCollection
+  id: CP14LightningFar
+  files:
+    - /Audio/_CP14/Ambience/Lightning/lightning_far1.ogg
+    - /Audio/_CP14/Ambience/Lightning/lightning_far2.ogg
+    - /Audio/_CP14/Ambience/Lightning/lightning_far3.ogg

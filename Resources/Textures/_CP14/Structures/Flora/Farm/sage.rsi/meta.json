@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by TheShuEd (Discord)",
+    "size": {
+      "x": 48,
+      "y": 48
+    },
+    "states": [
+      {
+        "name": "grow-1"
+      },
+      {
+        "name": "grow-2"
+      },
+      {
+        "name": "grow-3"
+      },
+      {
+        "name": "grow-4"
+      }
+    ]
+}

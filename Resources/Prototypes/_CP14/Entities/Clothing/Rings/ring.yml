@@ -33,7 +33,8 @@
   parent: CP14ClothingRingBase
   name: fireball conductive ring
   description: A standard mana-conductive ring that allows the user to summon fireballs.
-  suffix: Fireball
+  categories: [ DoNotMap ]
+  suffix: Fireball, Artifact
   components:
   - type: Sprite
     layers:

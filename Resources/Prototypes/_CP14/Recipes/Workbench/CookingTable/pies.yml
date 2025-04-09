@@ -1,0 +1,45 @@
+- type: CP14Recipe
+  id: CP14FoodPieAppleRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
+    protoId: CP14FoodAppleSlice
+    count: 4
+  result: CP14FoodPieAppleRaw
+
+- type: CP14Recipe
+  id: CP14FoodPieMeatRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMediumFlat
+  - !type:TagResource
+    tag: CP14RawMeatSlice
+    count: 3
+    title: cp14-recipe-title-meat
+    texture:
+      sprite: _CP14/Objects/Consumable/Food/meat.rsi
+      state: different_meat_slice
+  result: CP14FoodPieMeatRaw
+
+- type: CP14Recipe
+  id: CP14FoodPiePumpkinRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
+    protoId: CP14FoodPumpkinSlice
+    count: 5
+  result: CP14FoodPiePumpkinRaw

@@ -41,7 +41,7 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
         while (query.MoveNext(out var stationUid, out var stationObj))
         {
             var mindComp = EnsureComp<MindComponent>(stationUid);
-            component.StationMind = (stationUid, mindComp);
+            component.StationMind = stationUid;
 
             foreach (var jobObj in component.JobObjectives)
             {
@@ -52,7 +52,7 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
 
                     var objectiveProto = weightGroup.Pick(_random);
 
-                    if (!_objectives.TryCreateObjective(component.StationMind.Value, objectiveProto, out var objective))
+                    if (!_objectives.TryCreateObjective((component.StationMind.Value, mindComp), objectiveProto, out var objective))
                         continue;
 
                     stationObj.JobObjectives.Add(objective.Value, jobObj.Key);
@@ -68,7 +68,7 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
 
                     var objectiveProto = weightGroup.Pick(_random);
 
-                    if (!_objectives.TryCreateObjective(component.StationMind.Value, objectiveProto, out var objective))
+                    if (!_objectives.TryCreateObjective((component.StationMind.Value, mindComp), objectiveProto, out var objective))
                         continue;
 
                     stationObj.DepartmentObjectives.Add(objective.Value, depObj.Key);
@@ -117,6 +117,8 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
     {
         base.AppendRoundEndText(uid, component, gameRule, ref args);
 
+        EnsureComp<MindComponent>(uid, out var stationMind);
+
         var query = EntityQueryEnumerator<CP14StationCommonObjectivesComponent>();
         while (query.MoveNext(out var objectives))
         {
@@ -144,7 +146,8 @@ public sealed class CP14CommonObjectivesRule : GameRuleSystem<CP14CommonObjectiv
                     if (component.StationMind is null)
                         continue;
 
-                    var progress = _objectives.GetProgress(objEnt, component.StationMind.Value) ?? 0;
+                    var progress = _objectives.GetProgress(objEnt, (component.StationMind.Value, stationMind)) ?? 0;
+
                     var status = "cp14-objective-endtext-status-failure";
                     if (progress > 0.75f)
                         status = "cp14-objective-endtext-status-success-a";

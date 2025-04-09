@@ -1,10 +1,10 @@
 {
     "version": 1,
-    "license": "CLA",
+    "license": "CC-BY-SA-4.0",
     "copyright": "Created by Prazat, recolored by TheShuEd",
     "size": {
-        "x": 32,
-        "y": 32
+        "x": 48,
+        "y": 48
     },
     "states": [
         {

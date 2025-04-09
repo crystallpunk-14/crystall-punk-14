@@ -15,7 +15,7 @@ public sealed partial class CP14MagicRitualPhaseComponent : Component
     /// A link to the ritual itself in which this phase is found
     /// </summary>
     [DataField]
-    public Entity<CP14MagicRitualComponent>? Ritual;
+    public EntityUid? Ritual;
 
     [DataField]
     public Color PhaseColor = Color.White;

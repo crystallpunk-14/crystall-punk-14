@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CLA",
+  "license": "CC-BY-SA-4.0",
   "copyright": "Created by omsoyk (Discord)",
   "size": {
     "x": 48,
@@ -12,14 +12,6 @@
     },
     {
       "name": "equipped-HELMET",
-      "directions": 4
-    },
-    {
-      "name": "inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "inhand-right",
       "directions": 4
     }
   ]

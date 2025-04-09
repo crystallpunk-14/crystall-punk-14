@@ -1,0 +1,169 @@
+- type: entity
+  save: false
+  parent: MobDamageable
+  id: CP14MobDamageable
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: CP14Biological
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+    - Cold
+    - Caustic
+    - CP14ManaDepletion
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 1500
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          CP14Ash1:
+            min: 2
+            max: 3
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+
+- type: entity
+  id: CP14MobMagical
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: CP14MagicCasterSlowdown
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 100
+    energy: 100
+    unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: 1
+    delay: 3 # 5m to full restore
+  - type: CP14MagicUnsafeDamage
+  - type: CP14MagicUnsafeSleep
+  - type: CP14MagicAttuningMind
+    autoCopyToMind: true
+
+
+- type: entity
+  parent:
+  - CP14MobDamageable
+  - MobRespirator
+  - MobAtmosStandard
+  - SimpleSpaceMobBase
+  id: CP14SimpleMobBase
+  suffix: AI
+  abstract: true
+  components:
+  - type: Hunger
+    thresholds:
+      Overfed: 100
+      Okay: 50
+      Peckish: 25
+      Starving: 10
+      Dead: 0
+    baseDecayRate: 0.00925925925926
+  - type: Thirst
+    thresholds:
+      OverHydrated: 200
+      Okay: 150
+      Thirsty: 100
+      Parched: 50
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - StaminaModifier
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
+  - type: Bloodstream
+    bloodMaxVolume: 150
+  - type: MobPrice
+    price: 150
+  - type: FloatingVisuals
+
+- type: entity
+  parent:
+  - CP14MobDamageable
+  - MobRespirator
+  - MobAtmosStandard
+  - CP14SimpleSpaceMobNoLifeBase
+  id: CP14SimpleMobNoLifeBase
+  suffix: AI
+  abstract: true
+  components:
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - StaminaModifier
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
+  - type: MobPrice
+    price: 150
+  - type: FloatingVisuals
+
+- type: entity
+  abstract: true
+  parent:
+  - BaseSimpleMob
+  - MobCombat
+  - MobFlammable
+  id: CP14SimpleSpaceMobNoLifeBase
+  suffix: AI
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CP14Neutrals
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+  - type: Body
+    prototype: Animal
+  - type: Climbing
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: MobPrice
+    price: 1000 # Living critters are valuable in space.
+  - type: Perishable

@@ -1,0 +1,37 @@
+- type: entity
+  parent: BaseItem
+  id: CP14Passport
+  categories: [ ForkFiltered ]
+  name: passport
+  description: Identification document.
+  components:
+  - type: Paper
+  - type: PaperLabelType
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Document
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    layers:
+    - state: passport
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_book.svg.96dpi.png"
+    headerImagePath: "/Textures/_CP14/Interface/Paper/paper_passport.png"
+    headerMargin: 0.0, 0.0, 0.0, 4.0
+    backgroundImageTile: false
+    backgroundPatchMargin: 23.0, 16.0, 14.0, 15.0
+    contentMargin: 12.0, 0.0, 6.0, 0.0
+    maxWritableArea: 300.0, 246.0
+    backgroundModulate: "#baa580"
+    backgroundScale: 2, 2
+    contentImagePath: "/Textures/Interface/Paper/paper_content_lined.svg.96dpi.png"
+    contentImageModulate: "#998665"

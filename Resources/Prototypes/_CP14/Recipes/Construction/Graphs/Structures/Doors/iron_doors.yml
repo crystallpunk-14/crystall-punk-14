@@ -1,0 +1,121 @@
+- type: constructionGraph
+  id: CP14IronDoor
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14IronDoorFrame
+          steps:
+            - material: CP14IronBar
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14IronDoorFrame
+      entity: CP14IronDoorFrame
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+        - to: CP14IronDoorFrameMirrored
+          steps:
+            - tool: CP14Hammering
+              doAfter: 1
+        - to: CP14IronDoor
+          steps:
+            - material: CP14IronBar
+              amount: 2
+              doAfter: 2
+        - to: CP14IronDoorWindowed
+          steps:
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - material: CP14IronBar
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14IronDoorFrameMirrored
+      entity: CP14IronDoorFrameMirrored
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+        - to: CP14IronDoorFrame
+          steps:
+            - tool: CP14Hammering
+              doAfter: 1
+        - to: CP14IronDoorMirrored
+          steps:
+            - material: CP14IronBar
+              amount: 2
+              doAfter: 2
+        - to: CP14IronDoorWindowedMirrored
+          steps:
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - material: CP14IronBar
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14IronDoor
+      entity: CP14IronDoor
+      edges:
+        - to: CP14IronDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 2
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+              
+    - node: CP14IronDoorMirrored
+      entity: CP14IronDoorMirrored
+      edges:
+        - to: CP14IronDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 2
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+              
+    - node: CP14IronDoorWindowed
+      entity: CP14IronDoorWindowed
+      edges:
+        - to: CP14IronDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 2
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5
+              
+    - node: CP14IronDoorWindowedMirrored
+      entity: CP14IronDoorWindowedMirrored
+      edges:
+        - to: CP14IronDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 2
+          steps:
+            - tool: Prying #TODO - new tool
+              doAfter: 5

@@ -1,0 +1,99 @@
+#Concept:
+# hammer tool!
+# High blunt damage
+# Loow speed
+
+- type: modularPart
+  id: BaseBladeHammer
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponThrowable
+  - !type:AddComponents
+    components:
+    - type: Tool
+      qualities:
+        - CP14Hammering
+      useSound:
+        collection: CP14Hammering
+        params:
+          variation: 0.03
+          volume: 2
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Blunt: 7
+    - type: DamageOnLand
+      damage:
+        types:
+          Blunt: 7
+    - type: StaminaDamageOnHit
+      damage: 4
+  - !type:EditMeleeWeapon
+    bonusDamage:
+      types:
+        Blunt: 7
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Blunt: 5
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditDamageableModifier # How you can break a hammer?
+    multiplier: 0.8
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronHammer
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHammer
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldHammer
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHammer
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperHammer
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHammer
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilHammer
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeHammer
+    - BaseBladeMithril

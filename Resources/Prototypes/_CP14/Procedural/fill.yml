@@ -1,0 +1,77 @@
+- type: biomeTemplate
+  id: CP14CavesIndestructibleFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorBasalt
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - FloorBasalt
+      entities:
+        - CP14WallStoneIndestructable
+
+- type: biomeTemplate
+  id: CP14ChasmFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: CP14FloorBase
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - CP14FloorBase
+      entities:
+        - CP14Chasm
+
+- type: biomeTemplate
+  id: CP14IceChasmFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorSnow
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - FloorSnow
+      entities:
+        - CP14Chasm
+
+- type: biomeTemplate
+  id: CP14IceOceanFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorSnow
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - FloorSnow
+      entities:
+        - CP14FloorWaterOptimizedDeep
+
+- type: biomeTemplate
+  id: CP14SandOceanFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorDesert
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - FloorDesert
+      entities:
+        - CP14FloorWaterOptimizedDeep
+
+- type: biomeTemplate
+  id: CP14LavaOceanFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorBasalt
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - FloorBasalt
+      entities:
+        - CP14FloorLava

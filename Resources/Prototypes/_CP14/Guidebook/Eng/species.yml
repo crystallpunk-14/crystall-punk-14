@@ -1,0 +1,47 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Species
+  name: Playable species
+  text: "/ServerInfo/_CP14/Guidebook_EN/Species.xml"
+  children:
+  - CP14_EN_Human
+  - CP14_EN_Silva
+  - CP14_EN_Elf
+  - CP14_EN_Tiefling
+  - CP14_EN_Goblin
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Human
+  name: Human
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Human.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Silva
+  name: Silva
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Silva.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Elf
+  name: Elf
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Elf.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Tiefling
+  name: Tiefling
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Tiefling.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Goblin
+  name: Goblin
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Goblin.xml"
+  filterEnabled: True

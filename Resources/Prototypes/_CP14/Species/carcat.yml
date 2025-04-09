@@ -1,0 +1,162 @@
+- type: species
+  id: CP14Carcat
+  name: cp14-species-name-carcat
+  roundStart: true
+  prototype: CP14MobCarcat
+  sprites: CP14MobCarcatSprites
+  markingLimits: CP14MobCarcatMarkingLimits
+  dollPrototype: CP14MobCarcatDummy
+  skinColoration: VoxFeathers
+  defaultSkinTone: "#4a382f"
+  maleFirstNames: CP14_Names_Carcat_First
+  femaleFirstNames: CP14_Names_Carcat_First
+  naming: First
+
+- type: speciesBaseSprites
+  id: CP14MobCarcatSprites
+  sprites:
+    Head: CP14MobCarcatHead
+    HeadTop: CP14MobCarcatMarkingMatchSkin
+    #Hair: CP14MobCarcatAnyMarking
+    #FacialHair: CP14MobCarcatAnyMarking
+    Snout: CP14MobCarcatMarkingMatchSkin
+    Tail: CP14MobCarcatMarkingMatchSkin
+    Chest: CP14MobCarcatTorso
+    Eyes: CP14MobCarcatEyes
+    LArm: CP14MobCarcatLArm
+    RArm: CP14MobCarcatRArm
+    LHand: CP14MobCarcatLHand
+    RHand: CP14MobCarcatRHand
+    LLeg: CP14MobCarcatLLeg
+    RLeg: CP14MobCarcatRLeg
+    LFoot: CP14MobCarcatLFoot
+    RFoot: CP14MobCarcatRFoot
+
+- type: markingPoints
+  id: CP14MobCarcatMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 1
+      required: false
+    #FacialHair:
+    #  points: 1
+    #  required: false
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14CarcatNose ]
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14CarcatTail ]
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14CarcatEars ]
+    #Chest:
+    #  points: 1
+    #  required: false
+    #Legs:
+    #  points: 2
+    #  required: false
+    #Arms:
+    #  points: 2
+    #  required: false
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatEyes
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatAnyMarking
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatHead
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatHeadMale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatHeadFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatTorso
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatTorsoMale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatTorsoFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatLLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatLArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatLHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatLFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatRLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatRArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatRHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobCarcatRFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: r_foot

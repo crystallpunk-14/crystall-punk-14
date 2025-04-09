@@ -7,6 +7,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Storage;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Currency;
@@ -28,12 +29,14 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         SubscribeLocalEvent<CP14CurrencyExaminableComponent, ExaminedEvent>(OnExamine);
 
         SubscribeLocalEvent<CP14CurrencyComponent, CP14GetCurrencyEvent>(OnGetCurrency);
-        //SubscribeLocalEvent<EntityStorageComponent, CP14GetCurrencyEvent>(OnEntityStorageGetCurrency);
-        //SubscribeLocalEvent<StorageComponent, CP14GetCurrencyEvent>(OnStorageGetCurrency);
+        SubscribeLocalEvent<ContainerManagerComponent, CP14GetCurrencyEvent>(OnContainerGetCurrency);
     }
 
     private void OnGetCurrency(Entity<CP14CurrencyComponent> ent, ref CP14GetCurrencyEvent args)
     {
+        if (args.CheckedEntities.Contains(ent))
+            return;
+
         var total = ent.Comp.Currency;
         if (TryComp<StackComponent>(ent, out var stack))
         {
@@ -41,33 +44,26 @@ public sealed partial class CP14CurrencySystem : CP14SharedCurrencySystem
         }
 
         args.Currency += total;
+        args.CheckedEntities.Add(ent);
     }
 
-    //private void OnEntityStorageGetCurrency(Entity<EntityStorageComponent> ent, ref CP14GetCurrencyEvent args)
-    //{
-    //    var total = 0;
-    //    foreach (var entity in ent.Comp.Contents.ContainedEntities)
-    //    {
-    //        total += GetTotalCurrency(entity);
-    //    }
-//
-    //    args.Currency += total;
-    //}
-//
-    //private void OnStorageGetCurrency(Entity<StorageComponent> ent, ref CP14GetCurrencyEvent args)
-    //{
-    //    var total = 0;
-    //    foreach (var entity in ent.Comp.StoredItems)
-    //    {
-    //        total += GetTotalCurrency(entity.Key);
-    //    }
-//
-    //    args.Currency += total;
-    //}
+    private void OnContainerGetCurrency(Entity<ContainerManagerComponent> ent, ref CP14GetCurrencyEvent args)
+    {
+        var total = 0;
+        foreach (var container in ent.Comp.Containers.Values)
+        {
+            foreach (var containedEnt in container.ContainedEntities)
+            {
+                total += GetTotalCurrencyRecursive(containedEnt);
+            }
+        }
+
+        args.Currency += total;
+    }
 
     private void OnExamine(Entity<CP14CurrencyExaminableComponent> currency, ref ExaminedEvent args)
     {
-        var total = GetTotalCurrency(currency);
+        var total = GetTotalCurrencyRecursive(currency);
 
         var push = Loc.GetString("cp14-currency-examine-title");
         push += GetCurrencyPrettyString(total);

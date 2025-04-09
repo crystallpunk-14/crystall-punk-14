@@ -1,7 +1,8 @@
 
-# Jobs
+# Artisans
+
 - type: playTimeTracker
-  id: CP14JobAdventurer
+  id: CP14JobApprentice
 
 - type: playTimeTracker
   id: CP14JobAlchemist
@@ -12,14 +13,26 @@
 - type: playTimeTracker
   id: CP14JobInnkeeper
 
+# Mercenary
+
+- type: playTimeTracker
+  id: CP14JobGuildmaster
+
+- type: playTimeTracker
+  id: CP14JobAdventurer
+
+# Guard
+
 - type: playTimeTracker
   id: CP14JobGuardCommander
 
 - type: playTimeTracker
   id: CP14JobGuard
 
+# Trade guild
+
 - type: playTimeTracker
   id: CP14JobCommandant
 
 - type: playTimeTracker
-  id: CP14JobBanker
+  id: CP14JobMerchant

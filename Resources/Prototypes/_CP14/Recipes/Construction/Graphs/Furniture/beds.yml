@@ -1,0 +1,17 @@
+- type: constructionGraph
+  id: CP14WoodenBed
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WoodenBed
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+            - material: CP14Cloth
+              amount: 1
+              doAfter: 2
+    - node: CP14WoodenBed
+      entity: CP14WoodenBed

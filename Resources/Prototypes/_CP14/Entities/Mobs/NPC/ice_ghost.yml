@@ -1,0 +1,92 @@
+- type: entity
+  id: CP14MobIceSpectre
+  parent: 
+  - BaseMob
+  - MobCombat
+  categories: [ ForkFiltered ]
+  name: icy spectre
+  description: The unburied soul of frozen adventurers. Her rage against the world robs her of her reason.
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        16
+      AggroVisionRadius: !type:Single
+        12
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 5
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer 
+        - Opaque
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionSpellIceShardsGhost
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Cold: 8
+  - type: MovementIgnoreGravity
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 2
+    friction: 0.5
+    acceleration: 3
+  - type: Sprite
+    sprite: _CP14/Mobs/Monster/ice_spectre.rsi
+    layers:
+    - state: base
+      shader: unshaded
+    drawdepth: Mobs
+  - type: Damageable
+    damageContainer: CP14Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: CP14MagicCasterSlowdown
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 100
+    energy: 100
+  - type: CP14MagicEnergyDraw
+    energy: 2
+    delay: 4
+  - type: AmbientSound
+    volume: -1
+    range: 12
+    sound:
+      path: /Audio/_CP14/Animals/ghost_ambi.ogg
+
+- type: entity
+  parent: CP14ActionSpellIceShards
+  id: CP14ActionSpellIceShardsGhost
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -2.0
+  - type: EntityWorldTargetAction
+    useDelay: 1
+    checkCanAccess: true
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 0.5
+      castDelay: 0.2
+      breakOnMove: false
+      hidden: true

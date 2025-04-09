@@ -1,0 +1,30 @@
+- type: constructionGraph
+  id: CP14WoodenChest
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WoodenChestFrame
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14WoodenChestFrame
+      entity: CP14WoodenChestFrame
+      edges:
+        - to: CP14WoodenChest
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - tool: CP14Hammering
+              doAfter: 2
+
+    - node: CP14WoodenChest
+      entity: CP14WoodenChest

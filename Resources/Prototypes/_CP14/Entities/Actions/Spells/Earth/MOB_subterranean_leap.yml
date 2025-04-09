@@ -1,0 +1,47 @@
+- type: entity
+  id: CP14ActionMoleSpellSubterraneanLeap
+  name: Subterranean leap
+  description: Make a subterranean leap, quickly approaching the victim.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: -1.0
+  - type: CP14MagicEffectManaCost
+    manaCost: 5
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectDigging
+    effects:
+    - !type:CP14SpellCasterTeleport
+      needVision: false
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectDigging
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14ImpactEffectDigging
+  - type: EntityWorldTargetAction
+    useDelay: 8
+    range: 10
+    checkCanAccess: false
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/gib3.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/earth.rsi
+      state: subterranean_leap
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      hidden: true
+      breakOnMove: false
+    raiseOnUser: true
+
+- type: entity
+  id: CP14ImpactEffectDigging
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/material_splash.rsi
+    layers:
+    - state: dirt1

@@ -1,3 +1,4 @@
+using Content.Server.Weather;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
@@ -10,7 +11,7 @@ namespace Content.Server.Fluids.EntitySystems;
 public sealed partial class PuddleSystem
 {
     [Dependency] private readonly SharedMapSystem _maps = default!; //CP14
-    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!; //CP14
+    [Dependency] private readonly WeatherSystem _weather = default!; //CP14
     private static readonly TimeSpan EvaporationCooldown = TimeSpan.FromSeconds(1);
 
     private void OnEvaporationMapInit(Entity<EvaporationComponent> entity, ref MapInitEvent args)
@@ -23,9 +24,7 @@ public sealed partial class PuddleSystem
         if (TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
         {
             var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
-            var tileDef = (ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId];
-
-            entity.Comp.CP14ForceEvaporation = tileDef.Weather;
+            entity.Comp.CP14ForceEvaporation = _weather.CanWeatherAffect(xform.GridUid.Value, mapGrid, tileRef);
         }
         //CP14 End force evaporation under sky
     }
@@ -78,6 +77,8 @@ public sealed partial class PuddleSystem
                 Spawn("PuddleSparkle", xformQuery.GetComponent(uid).Coordinates);
                 QueueDel(uid);
             }
+
+            _solutionContainerSystem.UpdateChemicals(puddle.Solution.Value);
         }
     }
 }

@@ -1,0 +1,41 @@
+- type: CP14Recipe
+  id: CP14FoodMeatLamb
+  tag: CP14RecipeCooking
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatLambSlice
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14FoodEgg
+  result: CP14FoodMeatLambCutlet
+
+- type: CP14Recipe
+  id: CP14FoodDoughLarge
+  tag: CP14RecipeCooking
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMedium
+    count: 4
+  result: CP14FoodDoughLarge
+
+- type: CP14Recipe
+  id: CP14FoodDoughMedium
+  tag: CP14RecipeCooking
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Wheat
+    count: 2
+  result: CP14FoodDoughMedium
+
+- type: CP14Recipe
+  id: CP14FoodDoughMediumFlat
+  tag: CP14RecipeCooking
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodDoughMedium
+    count: 1
+  result: CP14FoodDoughMediumFlat

@@ -1,0 +1,101 @@
+- type: entity
+  id: CP14MobMonsterMole
+  parent: CP14SimpleMobBase
+  name: predatory mole
+  description: Hunts in the dark and loves the taste of meat and blood in its mouth.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        16
+      AggroVisionRadius: !type:Single
+        12
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionMoleSpellSubterraneanLeap
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Monster/mole.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 300
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.8
+  - type: Stamina
+    critThreshold: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 3
+        Piercing: 3
+        Structural: 3
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatMole
+      amount: 3
+    - id: CP14FoodMeatPig
+      amount: 1
+      prob: 0.3
+    - id: CP14FoodMeatMoleLeg
+      amount: 1
+      prob: 0.6
+  - type: Bloodstream
+    bloodMaxVolume: 200
+    bloodReagent: CP14BloodAnimal
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: CP14MagicCasterSlowdown
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 100
+    energy: 100
+  - type: CP14MagicEnergyDraw
+    energy: 2
+    delay: 4
+  - type: Tag
+    tags:
+      - FootstepSound
+      - CP14Mosquito
+  - type: StealTarget
+    stealGroup: CP14Mole

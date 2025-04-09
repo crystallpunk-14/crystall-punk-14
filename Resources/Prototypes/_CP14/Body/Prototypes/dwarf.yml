@@ -18,10 +18,10 @@
         - right_leg
         - left_leg
       organs:
-        heart: OrganHumanHeart
+        heart: CP14OrganDwarfHeart
         lungs: OrganHumanLungs
-        stomach: OrganHumanStomach
-        liver: OrganHumanLiver
+        stomach: CP14DwarfOrganDwarfStomach
+        liver: CP14DwarfOrganDwarfLiver
         kidneys: OrganHumanKidneys
     right_arm:
       part: CP14RightArmHuman

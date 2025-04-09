@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: CP14Torch
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cp14torch
+      steps:
+      - material: CP14WoodenPlanks
+        amount: 3
+      - material: CP14Cloth
+        amount: 1
+        doAfter: 4
+
+  - node: cp14torch
+    entity: CP14Torch

@@ -1,0 +1,78 @@
+- type: entity
+  name: sack
+  id: CP14SackFarming
+  parent: BaseStorageItem
+  description: A bag for various fruits, vegetables, plants and anything else that grows in the bed.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Storage/sack.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,6,3
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+        - CP14FarmFood
+        - CP14FitInMortar
+  - type: Dumpable
+
+- type: entity
+  id: CP14SackFarmingVegetables
+  parent: CP14SackFarming
+  categories: [ ForkFiltered ]
+  suffix: Vegetables
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Wheat
+        amount: 4
+      - id: CP14FoodCabbage
+        orGroup: LargeVegetables
+        amount: 3
+      - id: CP14FoodPumpkin
+        orGroup: LargeVegetables
+        amount: 3
+      - id: CP14FoodPotato
+        amount: 3
+      - id: CP14FoodCucumber
+        amount: 3
+      - id: CP14FoodTomatoes
+        amount: 3
+
+- type: entity
+  id: CP14SackFarmingApple
+  parent: CP14SackFarming
+  suffix: Apple
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14FoodApple
+        amount: 6
+      - id: CP14FoodApple
+        amount: 5
+        prob: 0.6
+      - id: CP14FoodApple
+        amount: 5
+        prob: 0.4
+
+- type: entity
+  id: CP14SackFarmingWheat
+  parent: CP14SackFarming
+  suffix: Wheat
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Wheat
+        amount: 8
+      - id: CP14Wheat
+        amount: 5
+        prob: 0.6
+      - id: CP14Wheat
+        amount: 5
+        prob: 0.4

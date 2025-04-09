@@ -1,0 +1,293 @@
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonBlack
+  name: cotton black shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/black.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/black.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtBlackDress
+  name: cotton black dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/black_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/black_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonBlue
+  name: cotton blue shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/blue.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonBlueCollar
+  name: cotton blue collar shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/blue_collar.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/blue_collar.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingBlueCollarDress
+  name: cotton blue collar dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/blue_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/blue_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtMercenary
+  name: mercenary shirt
+  description: A mercenary's colourful shirt.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/mercenary.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/mercenary.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtBlueOpen
+  name: cotton blue open shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/open_blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/open_blue.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingBlueOpenDress
+  name: cotton blue open dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/blue_open_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/blue_open_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtRedOpen
+  name: cotton red open shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/open_red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/open_red.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingRedOpenDress
+  name: cotton red open dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/open_red_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/open_red_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtYellowOpen
+  name: cotton yellow open shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/open_yellow.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/open_yellow.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingYellowOpenDress
+  name: cotton yellow open dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/open_yellow_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/open_yellow_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonPurple
+  name: cotton purple shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/purple.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/purple.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonRed
+  name: cotton red shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/red.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingCottonRedDress
+  name: cotton red dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/red_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/red_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonWhite
+  name: cotton white shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/white.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingCottonWhiteDress
+  name: cotton white dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/white_brown_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/white_brown_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonWhiteCollar
+  name: cotton white collar shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/white_collar.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/white_collar.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingCottonWhiteCollarDress
+  name: cotton white collar dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/white_collar_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/white_collar_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonYellow
+  name: cotton yellow shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/yellow.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/yellow.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtJestersAttire
+  name: jester's attire
+  description: It's rags, but it's colorful.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingShirtCottonYellowCollar
+  name: cotton yellow collar shirt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/yellow_collar.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/yellow_collar.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingCottonYellowCollarDress
+  name: cotton yellow collar dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/yellow_collar_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/yellow_collar_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingYellowWizardDress
+  name: yellow wizard robe
+  description: A loose magician's shirt, comfortable and nice looking.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothinGreenBeltDress
+  name: green skirt with belt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothinGreenBeltDress2
+  name: green skirt with belt
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothinGreenLightDress
+  name: light green dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothingWarriorsGarbDress
+  name: warrior's garb
+  description: show your strength.
+  components: 
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
+
+- type: entity
+  parent: CP14ClothingShirtBase
+  id: CP14ClothinShirtMaidDress
+  name: maid's dress
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi

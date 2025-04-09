@@ -42,6 +42,11 @@
         reagents:
         - ReagentId: CP14BloodFlowerSap
           Quantity: 12
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
+    - CP14BloodFlower
 
 - type: entity
   id: CP14AgaricMushroom
@@ -74,9 +79,10 @@
         reagents:
         - ReagentId: CP14AgaricMushroom
           Quantity: 3
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateAgaric
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14ChromiumSlime
@@ -107,15 +113,12 @@
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 4
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateChromiumSlime
 
 - type: entity
   id: CP14WildSage
   parent: CP14WildProduceBase
-  name: wild sage root
-  description: Root of a ubiquitous medicinal plant, not bad at healing physical injuries, and inducing coughing.
+  name: sage
+  description: Sage flowers. A good medicinal herb that works as a hallucinogen when properly processed.
   components:
   - type: Item
     size: Tiny
@@ -132,6 +135,7 @@
         base1: ""
         base2: ""
         base3: ""
+        base4: ""
   - type: Extractable
     juiceSolution:
       reagents:
@@ -144,39 +148,20 @@
         reagents:
         - ReagentId: CP14WildSageSap
           Quantity: 15
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateWildSage
-
-- type: entity
-  id: CP14QuartzShard
-  parent: BaseItem
-  name: rough quartz
-  description: a natural crystal that is a natural storage of magical energy. Its color reflects the quality of the crystal - the higher the emission spectrum, the higher the level of energy leakage.
-  categories: [ ForkFiltered ]
-  components:
   - type: Tag
     tags:
     - CP14FitInMortar
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: _CP14/Structures/crystal.rsi
-    layers:
-      - state: shard
-        map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        shard: ""
-        shard2: ""
-        shard3: ""
-        shard4: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14GroundQuartz
-        Quantity: 7
+    - CP14AlchemicalHerbals
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02 
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14GroundSage
+    
 
 - type: entity
   id: CP14LumiMushroom
@@ -212,9 +197,10 @@
         reagents:
         - ReagentId: CP14LumiMushroom
           Quantity: 4
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateLumiMushroom
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
 
 - type: entity
   id: CP14BlueAmanita
@@ -244,6 +230,10 @@
         reagents:
         - ReagentId: CP14BlueAmanita
           Quantity: 5
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
   
 - type: entity
   id: CP14Dayflin
@@ -273,3 +263,40 @@
         reagents:
         - ReagentId: CP14YellowDayflinPulp
           Quantity: 4
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals
+    - CP14Dayflin
+
+- type: entity
+  id: CP14AirLily
+  parent: CP14WildProduceBase
+  name: air lily
+  description: A light, delicate and airy flower. It is said that its special properties even allow it to breathe underwater...
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/water_lilies.rsi
+    layers:
+      - state: lily_icon
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        lily_icon: "" #TODO: more sprites
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14AirLily
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14AirLily
+          Quantity: 4
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals

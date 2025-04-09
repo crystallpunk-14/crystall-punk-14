@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: CP14WoodenCloset
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14WoodenCloset
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+            - material: CP14Nail
+              amount: 2
+    - node: CP14WoodenCloset
+      entity: CP14WoodenCloset

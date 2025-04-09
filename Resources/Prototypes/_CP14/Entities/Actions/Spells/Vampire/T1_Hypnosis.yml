@@ -1,0 +1,72 @@
+- type: entity
+  id: CP14ActionSpellVampireHypnosis
+  name: Hypnosis
+  description: You look at the victim with your OWN gaze, shutting down their consciousness and putting them to sleep.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/vampire.rsi
+    state: blood_moon
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectVampireHypnosis
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectVampireHypnosis
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Jitter
+      - !type:GenericStatusEffect
+        key: ForcedSleep
+        time: 20
+        component: ForcedSleeping
+        type: Add
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneVampireHypnosis
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 5
+    itemIconStyle: BigAction
+    canTargetSelf: false
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: blood_moon
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 30
+      castDelay: 1.5
+      breakOnMove: false
+ 
+- type: entity
+  id: CP14RuneVampireHypnosis
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: red
+  - type: Sprite
+    layers:
+    - state: double_outer
+      color: red
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectVampireHypnosis
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    layers:
+    - state: electrified
+      color: red
+      shader: unshaded

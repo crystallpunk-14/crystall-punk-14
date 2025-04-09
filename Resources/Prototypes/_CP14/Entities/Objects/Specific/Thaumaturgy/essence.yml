@@ -1,0 +1,289 @@
+- type: entity
+  abstract: true
+  id: CP14BaseEssence
+  categories: [ ForkFiltered ]
+  name: magic essence
+  description: Particles of magical energy polarised into a particular type of magic. Will be gone soon, so try to collect them as soon as possible!
+  components:
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _CP14/Objects/Specific/Thaumaturgy/essence.rsi
+    layers:
+    - state: small
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 60
+  - type: CanMoveInAir
+  - type: RandomWalk
+    minSpeed: 0.25
+    maxSpeed: 0.75
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        #- ItemMask # CP14 swap ItemMask to Impassable only
+        - Impassable
+        restitution: 0.3  # fite me
+        friction: 0.2
+  - type: ChasingWalk
+    maxChaseRadius: 5
+    minSpeed: 0.5
+    maxSpeed: 1
+    chasingComponent:
+    - type: CP14MagicEssenceAttractor
+  - type: CP14MagicEssence
+
+# Basic 6
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceEarth
+  name: terra
+  components:
+  - type: Sprite
+    color: "#70533f"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceEarth
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceFire
+  name: ignis
+  components:
+  - type: Sprite
+    color: "#d9741c"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceFire
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceWater
+  name: aqua
+  components:
+  - type: Sprite
+    color: "#1c94d9"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceWater
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceAir
+  name: aer
+  components:
+  - type: Sprite
+    color: "#fdfe86"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceAir
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceOrder
+  name: ordo
+  components:
+  - type: Sprite
+    color: "#d9d9d9"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceOrder
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceChaos
+  name: perditio
+  components:
+  - type: Sprite
+    color: "#4d4d4d"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceChaos
+          Quantity: 1
+
+# Complex tier 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceFrost
+  name: gelum
+  components:
+  - type: Sprite
+    color: "#4f91bd"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceFrost
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceLight
+  name: lux
+  components:
+  - type: Sprite
+    color: "#ba97b8"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceLight
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceMotion
+  name: motus
+  components:
+  - type: Sprite
+    color: "#575100"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceMotion
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceCycle
+  name: permutatio
+  components:
+  - type: Sprite
+    color: "#063b1f"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceCycle
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceEnergia
+  name: energia
+  components:
+  - type: Sprite
+    color: "#caed72"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceEnergia
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssencePoison
+  name: venenum
+  components:
+  - type: Sprite
+    color: "#619e20"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssencePoison
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceVoid
+  name: vacuos
+  components:
+  - type: Sprite
+    color: "#12021c"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceVoid
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceLife
+  name: victus
+  components:
+  - type: Sprite
+    color: "#eb1a3d"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceLife
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceCrystal
+  name: vitreus
+  components:
+  - type: Sprite
+    color: "#538cb8"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceCrystal
+          Quantity: 1
+
+# Complex tier 2
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceMagic
+  name: praecantatio
+  components:
+  - type: Sprite
+    color: "#5497d6"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceMagic
+          Quantity: 1

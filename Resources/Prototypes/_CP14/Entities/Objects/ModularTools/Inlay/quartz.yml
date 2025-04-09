@@ -1,0 +1,102 @@
+- type: entity
+  parent: CP14ModularInlayBase
+  id: CP14ModularInlayQuartzBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+
+- type: entity
+  parent: CP14ModularInlayQuartzBase
+  id: CP14ModularInlayQuartzWater
+  name: water quartz inlay
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+    layers:
+    - state: item
+      color: "#5eabeb"
+    - state: frame
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - InlayQuartzWater
+
+- type: entity
+  parent: CP14ModularInlayQuartzBase
+  id: CP14ModularInlayQuartzHealing
+  name: healing quartz inlay
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+    layers:
+    - state: item
+      color: "#79b330"
+    - state: frame
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - InlayQuartzHealing
+
+- type: entity
+  parent: CP14ModularInlayQuartzBase
+  id: CP14ModularInlayQuartzFire
+  name: fire quartz inlay
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+    layers:
+    - state: item
+      color: "#ed731c"
+    - state: frame
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - InlayQuartzFire
+
+- type: entity
+  parent: CP14ModularInlayQuartzBase
+  id: CP14ModularInlayQuartzLight
+  name: light quartz inlay
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+    layers:
+    - state: item
+      color: "#f1c7ff"
+      shader: unshaded
+    - state: frame
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - InlayQuartzLight
+  - type: PointLight
+    radius: 2
+    color: "#f1c7ff"
+    netsync: false
+
+- type: entity
+  parent: CP14ModularInlayQuartzBase
+  id: CP14ModularInlayQuartzElectric
+  name: electric quartz inlay
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+    layers:
+    - state: item
+      color: "#e6ff6b"
+    - state: frame
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - InlayQuartzElectric
+
+- type: entity
+  parent: CP14ModularInlayQuartzBase
+  id: CP14ModularInlayQuartzDarkness
+  name: darkness quartz inlay
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+    layers:
+    - state: item
+      color: "#391c57"
+    - state: frame
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - InlayQuartzDarkness

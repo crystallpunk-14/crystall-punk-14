@@ -22,16 +22,6 @@
         - id: CP14MobUndeadZombieGearEasy1
         - id: CP14MobUndeadZombieGearEasy2
         - id: CP14MobUndeadZombieGearEasy3
-      - !type:GroupSelector
-        weight: 30
-        children:
-        - id: CP14MobUndeadZombieGearMedium1
-        - id: CP14MobUndeadZombieGearMedium2
-      - !type:GroupSelector
-        weight: 10
-        children:
-        - id: CP14MobUndeadZombieGearHard1
-        - id: CP14MobUndeadZombieGearHard2
 
 # Animal
 
@@ -82,6 +72,38 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobBoar
+
+- type: entity
+  name: frog spawner
+  id: CP14SpawnMobFrog
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/frog.rsi
+      state: frog
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobFrog
+
+- type: entity
+  name: sheep spawner
+  id: CP14SpawnMobSheep
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/sheep.rsi
+      state: sheep
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobSheep
 
 # Dino
 
@@ -150,3 +172,19 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobMonsterMosquito
+
+- type: entity
+  name: invisible whistler spawner
+  id: CP14SpawnMobMonsterInvisibleWhistler
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/invisible_whistler.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobMonsterInvisibleWhistler

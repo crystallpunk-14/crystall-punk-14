@@ -1,0 +1,45 @@
+# ANCHORABLE PROBLEMS
+
+#- type: storePositionBuy
+#  id: DwarfBeer
+#  code: BEER_DWARF
+#  special: true
+#  nameOverride: cp14-reagent-name-dwarfbeer
+#  price: 150
+#  factions:
+#  - SpiceStream
+#  service: !type:CP14BuyItemsService
+#    product: CP14CraneBarrelDwarfBeer
+#
+#- type: storePositionBuy
+#  id: BeerGerbil
+#  code: BEER_BREEZE
+#  special: true
+#  nameOverride: cp14-reagent-name-breeze
+#  price: 70
+#  factions:
+#  - SpiceStream
+#  service: !type:CP14BuyItemsService
+#    product: CP14CraneBarrelSmallBeerBreeze
+#
+#- type: storePositionBuy
+#  id: AleBottomless
+#  code: BEER_BOTTOMLESS
+#  special: true
+#  nameOverride: cp14-reagent-name-bottomless
+#  price: 70
+#  factions:
+#  - SpiceStream
+#  service: !type:CP14BuyItemsService
+#    product: CP14CraneBarrelSmallAleBottomless
+#
+#- type: storePositionBuy
+#  id: WineZellasian
+#  code: WINE_ZELLASIAN
+#  special: true
+#  nameOverride: cp14-reagent-name-zellasian-pleasure
+#  price: 150
+#  factions:
+#  - SpiceStream
+#  service: !type:CP14BuyItemsService
+#    product: CP14CraneBarrelWineZellasianPleasure

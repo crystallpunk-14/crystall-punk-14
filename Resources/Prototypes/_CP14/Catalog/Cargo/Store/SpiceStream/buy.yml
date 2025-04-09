@@ -1,0 +1,190 @@
+- type: storePositionBuy
+  id: FarmSeeds
+  code: SEEDS
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Farming/seeds.rsi
+    state: seeds
+  price: 70
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledFarmSeeds
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledFarmSeeds
+  name: farm seeds chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14SeedWheat
+        amount: 3
+      - id: CP14SeedPumpkin
+        amount: 3
+      - id: CP14SeedCabbage
+        amount: 3
+      - id: CP14SeedCucumber
+        amount: 3
+      - id: CP14SeedTomato
+        amount: 3
+      - id: CP14SeedPepper
+        amount: 3
+
+
+- type: storePositionBuy
+  id: Cheese
+  code: CHEESE
+  iconOverride: 
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: cheese_wheel
+  price: 100
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledCheese
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledCheese
+  name: cheese chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14FoodCheeseWheel
+        amount: 5
+
+
+- type: storePositionBuy
+  id: Wood
+  code: WOOD
+  price: 50
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenPlanks10
+    count: 5
+
+
+- type: storePositionBuy
+  id: Fabric
+  code: FABRIC
+  price: 30
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14Cloth10
+    count: 3
+
+- type: storePositionBuy
+  id: CP14String
+  code: STRINGS
+  price: 30
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14String
+    count: 5
+
+- type: storePositionBuy
+  id: CopperBar
+  code: COPPER
+  price: 250
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14CopperBar10
+
+
+- type: storePositionBuy
+  id: IronBar
+  code: IRON
+  price: 500
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14IronBar10
+
+
+- type: storePositionBuy
+  id: GoldBar
+  code: GOLD
+  price: 2000
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14GoldBar10
+
+
+- type: storePositionBuy
+  id: Demiplane
+  code: DEMIPLANE_1
+  price: 100
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14DemiplaneKeyT1
+    count: 5
+
+- type: storePositionBuy
+  id: Demiplane2
+  code: DEMIPLANE_2
+  price: 200
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14DemiplaneKeyT2
+    count: 5
+
+- type: storePositionBuy
+  id: Bureaucracy
+  code: PAPER
+  iconOverride: 
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    state: folder_red
+  price: 100
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledBureaucracy
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledBureaucracy
+  name: bureaucracy chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14PaperFolderBlue
+        amount: 5
+      - id: CP14PaperFolderRed
+        amount: 5
+      - id: CP14Paper
+        amount: 5
+      - id: CP14PenFeather
+        amount: 3
+ 
+- type: storePositionBuy
+  id: EnergyCrystals
+  code: ENERGY
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi 
+    state: icon
+  price: 150
+  factions:
+  - SpiceStream
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledEnergyCrystals
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledEnergyCrystals
+  name: energy crystals chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14EnergyCrystalSmallEmpty
+        amount: 5
+      - id: CP14EnergyCrystalMediumEmpty
+        amount: 3
+      - id: CP14ManaOperationGlove
+        amount: 2

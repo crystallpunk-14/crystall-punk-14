@@ -1,0 +1,121 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BaseKeyRing
+  suffix: Empty
+  name: key ring
+  description: Allows you to comfortably store a large number of keys in one place.
+  categories: [ ForkFiltered ]
+  components:
+  - type: CP14KeyRing
+  - type: Sprite
+    sprite: _CP14/Objects/keys.rsi
+    layers:
+    - state: keyring
+    - state: ring-0
+      map: ["enum.StorageFillLayers.Fill"]
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 4
+    fillBaseName: ring
+  - type: Storage
+    grid:
+    - 0,0,5,1
+    maxItemSize: Small
+    whitelist:
+      tags:
+        - CP14Key
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - keys
+    - belt
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingInnkeeper
+  suffix: Innkeeper
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyTavernHall
+    - id: CP14KeyTavernStaff
+    - id: CP14KeyTavernDormsAbstract # TODO: Move to main innkeeper
+    - id: CP14KeyTavernDormsAbstract
+    - id: CP14KeyTavernDormsAbstract
+    - id: CP14KeyTavernDormsAbstract
+    - id: CP14KeyTavernDormsAbstract
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingBlacksmith
+  suffix: Blacksmith
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyTavernBlacksmithAbstract
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingPersonalHouse
+  suffix: Personal House
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyPersonalHouseAbstract
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingAlchemist
+  suffix: Alchemist
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyTavernAlchemistAbstract
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingMerchant
+  suffix: Merchant
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyTavernMerchantShopAbstract
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingGuard
+  suffix: Guardian
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyGuardEntrance
+    - id: CP14KeyGuard
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingGuardCommander
+  suffix: Guard Commander
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyGuardEntrance
+    - id: CP14KeyGuard
+    - id: CP14KeyGuardCommander
+    #- id: CP14KeyGuardWeaponStorage
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingGuildmaster
+  suffix: Guildmaster
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyGuildmaster
+    - id: CP14KeyDemiplaneCrystal

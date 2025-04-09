@@ -1,0 +1,29 @@
+<Control xmlns="https://spacestation14.io"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:parallax="clr-namespace:Content.Client.Parallax"
+          xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    <parallax:ParallaxControl />
+    <Control HorizontalAlignment="Center" VerticalAlignment="Center">
+        <PanelContainer StyleClasses="AngleRect" />
+        <BoxContainer Orientation="Vertical">
+            <BoxContainer Orientation="Horizontal">
+                <Label Margin="8 0 0 0" Text="{Loc 'cp14-discord-auth-title'}"
+                       StyleClasses="LabelHeading" VAlign="Center" />
+                <Button Name="QuitButton" Text="{Loc 'cp14-discord-auth-quit-btn'}"
+                        HorizontalAlignment="Right" HorizontalExpand="True" />
+            </BoxContainer>
+            <controls:HighDivider />
+            <BoxContainer Orientation="Vertical" Margin="50 20 50 20">
+                <RichTextLabel Name="InfoLabel"  />
+            </BoxContainer>
+            <BoxContainer HorizontalExpand="True">
+                <LineEdit Editable="False" Name="AuthLinkEdit" HorizontalExpand="True" />
+                <LineEdit Editable="False" Name="DLinkEdit" HorizontalExpand="True" />
+            </BoxContainer>
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Button Name="AuthorizeButton" Text="{Loc 'cp14-discord-auth-text'}" HorizontalExpand="True" StyleClasses="OpenRight" />
+                <Button Name="DiscordButton" Text="{Loc 'cp14-discord-auth-browser-btn'}" HorizontalExpand="True" StyleClasses="OpenRight" />
+            </BoxContainer>
+        </BoxContainer>
+    </Control>
+</Control>

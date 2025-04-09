@@ -24,6 +24,7 @@
     whitelist:
       tags:
         - CP14Coin
+        - Dice
   - type: UseDelay
     delay: 0.3
   - type: Appearance
@@ -46,9 +47,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: CP14CopperCoin1
-    - id: CP14CopperCoin1
-    - id: CP14CopperCoin1
-    - id: CP14CopperCoin1
-    - id: CP14CopperCoin1
+    - id: CP14SilverCoin5
     - id: CP14SilverCoin1
+    - id: CP14SilverCoin1
+    - id: CP14CopperCoin
+    - id: CP14CopperCoin
+    - id: CP14CopperCoin

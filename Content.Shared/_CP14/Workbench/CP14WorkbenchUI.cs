@@ -30,7 +30,6 @@ public sealed class CP14WorkbenchUiCraftMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public sealed class CP14WorkbenchUiRecipesState : BoundUserInterfaceState
 {
-    // It's list (not hashset) BECAUSE CP14WorkbenchComponent contains list of recipes (WHY???)
     public readonly List<CP14WorkbenchUiRecipesEntry> Recipes;
 
     public CP14WorkbenchUiRecipesState(List<CP14WorkbenchUiRecipesEntry> recipes)

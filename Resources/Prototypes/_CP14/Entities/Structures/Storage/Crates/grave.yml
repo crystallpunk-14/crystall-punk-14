@@ -1,0 +1,102 @@
+- type: entity
+  parent: CrateGeneric
+  id: CP14CrateDirtPitGrave
+  categories: [ ForkFiltered ]
+  name: dirt pit
+  description: "There's something buried here... or someone..."
+  components:
+  - type: Sprite
+    noRot: false
+    snapCardinals: true
+    sprite: _CP14/Structures/Storage/dirt_pit.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200 # discourage just beating the grave to break it open
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: CP14Digging
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14DirtBlock1:
+            min: 2
+            max: 3
+  - type: Fixtures
+    fixtures:
+      rune:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        hard: false
+        mask:
+          - ItemMask
+        layer:
+          - SlipLayer
+  - type: Physics
+    bodyType: Static
+  - type: Grave
+  - type: EntityStorage
+    airtight: true
+    isCollidableWhenOpen: false
+    closeSound:
+      collection: CP14Digging
+    openSound:
+      collection: CP14Digging
+  - type: Construction
+    graph: CP14CrateDirtPitGrave
+    node: CP14CrateDirtPitGrave
+
+- type: entity
+  parent: CP14CrateDirtPitGrave
+  id: CP14CrateDirtPitGraveFilled
+  suffix: Random filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: CP14TombstoneTable
+        rolls: !type:ConstantNumberSelector
+          value: 4
+
+- type: entityTable
+  id: CP14TombstoneTable
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector # Body parts
+      children:
+      - id: CP14TorsoZombie
+      - id: CP14LeftArmZombie
+      - id: CP14LeftFootZombie
+      - id: CP14LeftHandZombie
+      - id: CP14LeftLegZombie
+      - id: CP14RightArmZombie
+      - id: CP14RightFootZombie
+      - id: CP14RightHandZombie
+      - id: CP14RightLegZombie
+      - id: CP14HeadZombie
+        weight: 2
+      - id: CP14TorsoSkeleton
+      - id: CP14LeftArmSkeleton
+      - id: CP14LeftFootSkeleton
+      - id: CP14LeftHandSkeleton
+      - id: CP14LeftLegSkeleton
+      - id: CP14RightArmSkeleton
+      - id: CP14RightFootSkeleton
+      - id: CP14RightHandSkeleton
+      - id: CP14RightLegSkeleton
+      - id: CP14HeadSkeleton
+        weight: 2
+    - !type:GroupSelector # Rarities
+      weight: 0.2
+      children:
+      - id: CP14ModularSkeletonHalberd
+      - !type:NestedSelector
+        tableId: CP14StationCrateLoot

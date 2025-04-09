@@ -1,0 +1,77 @@
+#Concept:
+# + High Wielded damage
+# - Low AttackRate
+
+- type: modularPart
+  id: BaseBladeMace
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+  - !type:EditMeleeWeapon
+    resetOnHandSelected: true # Disable fast swap
+    attackRateMultiplier: 0.85
+    bonusDamage:
+      types:
+        Blunt: 5
+        Piercing: 2
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Blunt: 8
+        Piercing: 4
+  - !type:EditItem
+    newSize: Large
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+
+- type: modularPart
+  id: BladeIronMace
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeMace
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldMace
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeMace
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperMace
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeMace
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilMace
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mace/metall_mace.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeMace
+    - BaseBladeMithril

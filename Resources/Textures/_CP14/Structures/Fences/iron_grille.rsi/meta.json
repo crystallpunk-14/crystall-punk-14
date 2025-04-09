@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CLA",
+  "license": "All right reserved",
   "copyright": "by TheShuEd (github)",
   "size": {
     "x": 32,
@@ -12,15 +12,15 @@
       "directions": 4
     },
     {
-      "name": "corner",
-      "directions": 4
-    },
-    {
       "name": "door_closed",
       "directions": 4
     },
     {
       "name": "door_opened",
+      "directions": 4
+    },
+    {
+      "name": "door_closed_frame",
       "directions": 4
     }
   ]

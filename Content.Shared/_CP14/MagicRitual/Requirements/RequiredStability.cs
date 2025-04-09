@@ -29,8 +29,9 @@ public sealed partial class RequiredStability : CP14RitualRequirement
         if (phaseEnt.Comp.Ritual is null)
             return false;
 
-        var s = phaseEnt.Comp.Ritual.Value.Comp.Stability;
+        if (!entManager.TryGetComponent<CP14MagicRitualComponent>(phaseEnt, out var ritualComp))
+            return false;
 
-        return !(s < Min) && !(s > Max);
+        return !(ritualComp.Stability < Min) && !(ritualComp.Stability > Max);
     }
 }

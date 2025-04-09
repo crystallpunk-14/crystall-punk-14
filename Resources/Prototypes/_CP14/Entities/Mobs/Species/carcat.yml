@@ -1,0 +1,181 @@
+- type: entity
+  parent: CP14BaseMobSpeciesOrganic
+  id: CP14BaseMobCarcat
+  name: Mr. Cat
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: CP14Carcat
+  - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
+  - type: Icon
+    sprite: _CP14/Mobs/Species/Carcat/parts.rsi
+    state: full
+  - type: Vocal
+    sounds:
+      Male: CP14UnisexCarcat
+      Female: CP14UnisexCarcat
+      Unsexed: CP14UnisexCarcat
+  - type: Speech
+    speechSounds: CP14Carcat
+  - type: Thirst
+  - type: Wagging
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: CP14FoodMeatHuman
+        amount: 3
+  - type: Body
+    prototype: CP14Human
+    requiredLegs: 2
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5 # 5 slash
+  - type: CP14NightVision #Night vision
+  - type: FootstepModifier
+    footstepSoundCollection: null # Silent footstep
+  - type: CP14SkillStorage
+    progress:
+      Atlethic: 1
+  - type: Inventory
+    templateId: CP14Carcat # Cant wear shoes
+    speciesId: carcat
+    displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      back:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: eyes
+      head:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+  - type: Hands
+    leftHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_left
+    rightHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_right
+
+- type: entity
+  parent: CP14BaseSpeciesDummy
+  id: CP14MobCarcatDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: CP14Carcat
+  - type: Inventory
+    templateId: CP14Carcat
+    speciesId: carcat
+    displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      back:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: eyes
+      head:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+          48:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+  - type: Hands
+    leftHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_left
+    rightHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_right

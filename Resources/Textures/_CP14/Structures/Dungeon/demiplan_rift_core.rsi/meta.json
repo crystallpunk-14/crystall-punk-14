@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC0-1.0",
-  "copyright": "Created by TheShuEd (github) for ss14",
+  "copyright": "Core created by TheShuEd, connective created by omsoyk",
   "size": {
     "x": 32,
     "y": 32
@@ -11,13 +11,19 @@
       "name": "core"
     },
     {
-      "name": "pulse",
+      "name": "connective",
       "delays": [
         [
-          0.15625,
-          0.15625,
-          0.15625,
-          0.15625
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15
         ]
       ]
     }

@@ -14,13 +14,6 @@
       map: ["enum.StorageVisualLayers.Base"]
     - state: base_door
       map: ["enum.StorageVisualLayers.Door"]
-  - type: ItemSlots
-  - type: DamageOnHighSpeedImpact
-    damage:
-      types:
-        Blunt: 5
-    soundHit:
-      collection: MetalThud
   - type: InteractionOutline
   - type: Physics
     bodyType: Static
@@ -38,7 +31,7 @@
   - type: EntityStorage
     isCollidableWhenOpen: true
     enteringOffset: 0, -0.4
-    enteringRange: 0.06
+    enteringRange: 0.10
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
@@ -97,60 +90,9 @@
         spawn:
           CP14WoodenPlanks1:
             min: 2
-            max: 5
-
-- type: entity
-  name: safe
-  parent:
-  - CP14ClosetBase
-  id: CP14Safe
-  description: A giant iron box for storing your most precious possessions. Extremely heavy and extremely strong.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Storage/Dressers/vault.rsi
-    state: base
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.05,0.45,0.45"
-        density: 2000
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 350
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-          params:
-            volume: -6
-  - type: Lock
-    locked: true
-  - type: CP14Lock
-    autoGenerateShape: BankSafe
-
-- type: entity
-  parent: CP14Safe
-  id: CP14SafeVault
-  name: vault safe
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankVault
+            max: 4
+  - type: Construction
+    graph: CP14WoodenCloset
+    node: CP14WoodenCloset
+    containers:
+    - entity_storage

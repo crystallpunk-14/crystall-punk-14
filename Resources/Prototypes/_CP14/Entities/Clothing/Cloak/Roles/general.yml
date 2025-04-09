@@ -1,0 +1,110 @@
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakFurcapeBlack
+  name: furcape
+  description: Brutal woolen wool cape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/furcape2.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/furcape2.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakFurcapeBlue
+  name: furcape
+  description: Brutal woolen wool cape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/furcape.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/furcape.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakRitualAttireLeather
+  name: ritual attire with leather
+  description: The traditional attire of Southern mages who have undergone the ritual.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/cheetah_skin.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/cheetah_skin.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakWhite
+  name: white cloak
+  description: A spacious white coat. For those who like to look aesthetically pleasing.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/white.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakGreen
+  name: green cloak
+  description: A spacious green coat. For those who like to look aesthetically pleasing.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/green.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/green.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakBlue
+  name: blue cloak
+  description: Blue cape covering her entire body.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/blue.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakFurCoat
+  name: fur coat
+  description: Warm in the rain, warm in the snow, warm in the wind. Nice.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakInsulated
+  name: insulated mantle
+  description: Winter is coming...
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/insulated_mantle.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/insulated_mantle.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakBlackSyurko
+  name: black surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/black_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/black_syurko.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakRedSyurko
+  name: red surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/red_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/red_syurko.rsi
+

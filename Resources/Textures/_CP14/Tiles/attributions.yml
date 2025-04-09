@@ -1,18 +1,13 @@
 # Attempted to keep the files in alphabetical order so its easier to audit.
 # Finding individual authors is an unfeasible task. If you can reference the author please do so.
 
-- files: ["cave.png"]
+- files: ["cave.png", "foundation.png", "ice.png", "marble_cave.png"]
   license: "CC-BY-SA-3.0"
   copyright: "Space Station 14, recolored by TheShuEd"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
-- files: ["foundation.png"]
-  license: "CC-BY-SA-3.0"
-  copyright: "by TheShuEd"
-  source: "https://github.com/crystallpunk-14/crystall-punk-14/"
-
 - files: ["stonebricks.png", "stonebricks_small_carved_1.png", "stonebricks_small_carved_2.png", "stonebricks_square_carved.png"]
-  license: "CLA"
+  license: "All right reserved"
   copyright: "Created by Jaraten"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
 
@@ -27,6 +22,6 @@
   source: "https://github.com/tgstation/tgstation/"
 
 - files: ["woodplanks_big_burned.png", "woodplanks_burned.png", "woodplanks_cruciform_burned.png", "woodplanks_stairways_burned.png"]
-  license: "CLA"
+  license: "All right reserved"
   copyright: "Created by Jaraten"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"

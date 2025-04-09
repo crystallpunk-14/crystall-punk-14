@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "copyright": "Taken from https://github.com/Citadel-Station-13/Citadel-Station-13-RP/tree/5781addfa1193c2811408f64d15176139395d670 and edited by vladimir.s (Discord)",
+  "copyright": "Taken from https://github.com/Citadel-Station-13/Citadel-Station-13-RP/tree/5781addfa1193c2811408f64d15176139395d670 and edited by vladimir.s (Discord). Snowfalls by vladimir.s",
   "license": "CC-BY-SA-3.0",
   "size": {
     "x": 32,
@@ -42,6 +42,63 @@
           0.03,
           0.03,
           0.03
+        ]
+      ]
+    },
+    {
+      "name": "snowfall_light",
+      "delays": [
+        [
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11,
+          0.11
+        ]
+      ]
+    },
+    {
+      "name": "snowfall_med",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "snowfall_heavy",
+      "delays": [
+        [
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08
         ]
       ]
     }

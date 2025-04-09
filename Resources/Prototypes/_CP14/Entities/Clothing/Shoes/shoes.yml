@@ -13,8 +13,8 @@
     state: icon
   - type: Item
     size: Normal
-  - type: CP14FootprintHolder
-    
+  - type: ProtectedFromStepTriggers
+
 - type: entity
   parent: CP14ClothingShoesBase
   id: CP14ClothingShoesBlack
@@ -47,3 +47,83 @@
     sprite: _CP14/Clothing/Shoes/sandals.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/sandals.rsi
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesArtifactFlightboots
+  name: flight boots
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  description: Enchanted boots that allow their wearer to walk through the air a short distance from the ground. It looks extremely spectacular!
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/flightboots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/flightboots.rsi
+  - type: AntiGravityClothing
+  - type: ClothingSpeedModifier
+    walkModifier: 2
+    sprintModifier: 2
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesArtifactSpeedboots
+  name: hermes boots
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  description: Enchanted boots that allow their wearer to walk through the air a short distance from the ground. It looks extremely spectacular!
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/speedboots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/speedboots.rsi
+  - type: CP14SpellStorageAccessWearing
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellMagicalAcceleration
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14LongLeatherBoots
+  name: long leather boots
+  description: the perfect tool for kicking left and right
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesJestersRingers
+  name: jester's ringers
+  description: Everyone around you should know that you exist, buddy.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/jesters_ringers.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/jesters_ringers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepJester
+      params:
+        variation: 0.07
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesArtifactFrogs
+  name: frog's slippers
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  description: For wednesday's lovers.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/frogs_slippers.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/frogs_slippers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FrogsSlippers
+      params:
+        variation: 0.07
+  - type: NoSlip

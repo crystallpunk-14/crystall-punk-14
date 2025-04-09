@@ -1,0 +1,78 @@
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingGreenVest
+  name: green vest
+  description: Stylish green vest with gold buttons.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/green.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/green.rsi
+
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingRedVest
+  name: red vest
+  description: Stylish red vest with gold flecks.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/red.rsi
+
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingBrownVest1
+  name: brown vest
+  description: A simple, decent leather vest. It's kind of stylish.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/brown.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/brown.rsi
+
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingBrownVest2
+  name: brown vest with clasps
+  description: The same plain brown leather vest, but with clasps.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/brown_2.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/brown_2.rsi
+
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingBrownVest3
+  name: lightweight leather vest
+  description: Two flaps of leather connected by a belt from below.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/brown_3.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/brown_3.rsi
+
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingJagermeisterWaistcoat
+  name: jagermeister's waistcoat
+  description: Doesn't interfere with movement, looks restrained. Time to go hunting.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/jagermeister_waistcoat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/jagermeister_waistcoat.rsi
+

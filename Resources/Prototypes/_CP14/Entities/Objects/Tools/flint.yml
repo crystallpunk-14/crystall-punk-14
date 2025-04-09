@@ -2,7 +2,7 @@
   parent: BaseItem
   id: CP14Lighter
   name: flint and steel
-  description: "Setting things on fire. Absolutely, 100% not from minecraft." # TODO: remove minecraft sprite and desc
+  description: Setting things on fire
   categories: [ ForkFiltered ]
   components:
   - type: Item
@@ -13,3 +13,6 @@
   - type: CP14DelayedIgnitionSource
     enabled: true
   # TODO: Damageable, Ignite attempt self damage, Ignite prob
+  - type: Tag
+    tags:
+    - CP14Lighter

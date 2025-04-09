@@ -49,7 +49,7 @@
   id: CP14StampCommandant
   parent: CP14StampBase
   name: commandant stamp
-  suffix: DO NOT MAP
+  categories: [ DoNotMap ]
   components:
   - type: Stamp
     stampedName: cp14-stamp-bank
@@ -57,3 +57,29 @@
     stampState: "bank_on_paper"
   - type: Sprite
     state: bank
+
+- type: entity
+  id: CP14StampGuardCommander
+  parent: CP14StampBase
+  name: guard commander stamp
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: cp14-stamp-guard-commander
+    stampedColor: "#436a92"
+    stampState: "guard_on_paper"
+  - type: Sprite
+    state: guard
+
+- type: entity
+  id: CP14StampGuildmaster
+  parent: CP14StampBase
+  name: guildmaster stamp
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: cp14-stamp-guildmaster
+    stampedColor: "#115c41"
+    stampState: "guildmaster_on_paper"
+  - type: Sprite
+    state: guildmaster

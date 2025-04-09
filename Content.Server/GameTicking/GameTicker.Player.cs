@@ -57,7 +57,7 @@ namespace Content.Server.GameTicking
 
                     // Make the player actually join the game.
                     // timer time must be > tick length
-                    Timer.Spawn(0, () => _playerManager.JoinGame(args.Session));
+                    //Timer.Spawn(0, () => _playerManager.JoinGame(args.Session)); //CP14 Discord AuthManager | Moved to DiscordAuthManager & JoinQueueManager
 
                     var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&

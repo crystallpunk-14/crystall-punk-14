@@ -8,13 +8,12 @@
       slotFlags: RING
       uiWindowPos: 0,1
       strippingWindowPos: 0,3
-      dependsOn: pants
       displayName: Ring
     - name: mask
       slotTexture: mask
       slotFlags: MASK
       uiWindowPos: 0,2
-      strippingWindowPos: 1,2
+      strippingWindowPos: 2,0
       displayName: Mask
     - name: eyes
       slotTexture: eyes
@@ -60,10 +59,16 @@
       uiWindowPos: 2,1
       strippingWindowPos: 2,3
       displayName: Ring
+    - name: outerClothing
+      slotTexture: suit
+      slotFlags: OUTERCLOTHING
+      uiWindowPos: 2,2
+      strippingWindowPos: 2,1
+      displayName: Armor
     - name: cloak
       slotTexture: cloak
       slotFlags: CLOAK
-      uiWindowPos: 2,2
+      uiWindowPos: 2,3
       strippingWindowPos: 2,2
       displayName: Cloak
     # Main hotbar

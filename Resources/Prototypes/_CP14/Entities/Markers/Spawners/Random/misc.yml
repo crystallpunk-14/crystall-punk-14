@@ -9,3 +9,21 @@
     - CP14DirtBlock1
     chance: 1
     deleteSpawnerAfterSpawn: false
+
+- type: entity
+  id: CP14RandomSnowLootSpawner
+  name: snow spawner
+  parent: CP14SnowEffect
+  categories: [ ForkFiltered ]
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - CP14Snowball
+    chance: 1
+    deleteSpawnerAfterSpawn: false
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Effects/snowball.ogg
+      params:
+        variation: 0.250
+        volume: 15

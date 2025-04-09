@@ -4,6 +4,8 @@
   abstract: true
   categories: [ ForkFiltered ]
   components:
+  - type: Sprite
+    noRot: true
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -51,6 +53,29 @@
     maxTransferAmount: 10
     transferAmount: 1
     toggleState: 1 # draw
+  - type: Tag
+    tags:
+    - CP14Vial
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: ItemSlots
 
 - type: entity
   parent: CP14BaseVial
@@ -92,11 +117,13 @@
       types:
         Blunt: 5
 
+# Vials 
+
 - type: entity
   id: CP14VialTiny
-  parent: CP14BaseVial
+  parent: CP14BaseVialFragile
   name: tiny vial
-  description: A sturdy glass vial to hold a tiny amount of liquid.
+  description: A fragile glass vial to hold a tiny amount of liquid.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -105,6 +132,40 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 5
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: Injector
+    maxTransferAmount: 5
+
+- type: entity
+  id: CP14VialTinyReinforced
+  parent: CP14BaseVial
+  name: reinforced tiny vial
+  description: A reinforced glass vial to hold a tiny amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
@@ -131,6 +192,9 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
   - type: Item
     size: Tiny
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
@@ -142,102 +206,92 @@
     maxFillLevels: 5
     fillBaseName: liq-
 
-# Filled small
-
 - type: entity
-  id: CP14VialSmallBloodFlowerSap
-  parent: CP14VialSmall
-  suffix: Bloodflower sap
+  id: CP14VialSmallReinforced
+  parent: CP14BaseVial
+  name: reinforced small vial
+  description: A reinforced glass vial to hold a small amount of liquid.
   components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
   - type: SolutionContainerManager
     solutions:
       vial:
-        reagents:
-        - ReagentId: CP14BloodFlowerSap
-          Quantity: 10
+        maxVol: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
 
 - type: entity
-  id: CP14VialSmallAgaricMushroom
-  parent: CP14VialSmall
-  suffix: Fly agaric juice
+  id: CP14VialMedium
+  parent: CP14BaseVialFragile
+  name: medium vial
+  description: A fragile glass vial to hold a medium amount of liquid.
   components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: vial
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
   - type: SolutionContainerManager
     solutions:
       vial:
-        reagents:
-        - ReagentId: CP14AgaricMushroom
-          Quantity: 10
+        maxVol: 50
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq- 
 
 - type: entity
-  id: CP14VialSmallGroundQuartz
-  parent: CP14VialSmall
-  suffix: Ground Quartz
+  id: CP14VialMediumReinforced
+  parent: CP14BaseVial
+  name: reinforced medium vial
+  description: A reinforced glass vial to hold a medium amount of liquid.
   components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: vial
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
   - type: SolutionContainerManager
     solutions:
       vial:
-        reagents:
-        - ReagentId: CP14GroundQuartz
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallWildSage
-  parent: CP14VialSmall
-  suffix: Wild sage Sap
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14WildSageSap
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallBlueAmanita
-  parent: CP14VialSmall
-  suffix: Blue Amanita
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14BlueAmanita
-          Quantity: 10
-
-- type: entity
-  id: CP14VialSmallDayflin
-  parent: CP14VialSmall
-  suffix: Dayflin
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14YellowDayflinPulp
-          Quantity: 10
-
-# Filled tiny
-
-- type: entity
-  id: CP14VialTinyChromiumSlime
-  parent: CP14VialTiny
-  suffix: Chromium Slime
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14ChromiumSlime
-          Quantity: 5
-
-- type: entity
-  id: CP14VialTinyLumiMushroom
-  parent: CP14VialTiny
-  suffix: LumiShroom
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      vial:
-        reagents:
-        - ReagentId: CP14LumiMushroom
-          Quantity: 5
+        maxVol: 50
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: Injector
+    transferAmount: 10

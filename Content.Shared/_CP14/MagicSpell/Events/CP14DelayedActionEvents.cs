@@ -5,6 +5,21 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
 
+public interface ICP14DelayedMagicEffect
+{
+    public float Cooldown { get; }
+
+    public float CastDelay { get; }
+
+    public bool BreakOnMove { get; }
+
+    public bool BreakOnDamage { get; }
+
+    public float DistanceThreshold { get; }
+
+    public bool Hidden{ get; }
+}
+
 public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorldTargetActionEvent,
     ICP14DelayedMagicEffect
 {
@@ -21,10 +36,10 @@ public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorl
     public bool BreakOnDamage { get; private set; } = true;
 
     [DataField]
-    public bool Hidden { get; private set; } = false;
+    public float DistanceThreshold { get; private set; } = 100f;
 
     [DataField]
-    public float EntityDistance { get; private set; } = 100f;
+    public bool Hidden { get; private set; } = false;
 }
 
 //Entity Target
@@ -44,10 +59,10 @@ public sealed partial class CP14DelayedEntityTargetActionEvent : EntityTargetAct
     public bool BreakOnDamage { get; private set; } = true;
 
     [DataField]
-    public bool Hidden { get; private set; } = false;
+    public float DistanceThreshold { get; private set; } = 100f;
 
     [DataField]
-    public float EntityDistance { get; private set; } = 100f;
+    public bool Hidden { get; private set; } = false;
 }
 
 public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, ICP14DelayedMagicEffect
@@ -65,10 +80,10 @@ public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, 
     public bool BreakOnDamage { get; private set; } = true;
 
     [DataField]
-    public bool Hidden { get; private set; } = false;
+    public float DistanceThreshold { get; private set; } = 100f;
 
     [DataField]
-    public float EntityDistance { get; private set; } = 100f;
+    public bool Hidden { get; private set; } = false;
 }
 
 [Serializable, NetSerializable]

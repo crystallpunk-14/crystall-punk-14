@@ -5,42 +5,54 @@
   components:
   - type: GameRule
     cP14Allowed: true
-  - type: CP14RoundSeed
+
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14SubGamemodesRule
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: CP14Vampire
+      prob: 0.5
 
 - type: entity
   id: CP14RoundObjectivesRule
   parent: CP14BaseGameRule
   components:
-  - type: CP14CommonObjectivesRule
-    departmentObjectives:
-      CP14Command:
-      - CP14TownSendObjectiveGroup
-      CP14Bank:
-      - CP14BankEarningObjectiveGroup
+  #- type: CP14CommonObjectivesRule
+  #  departmentObjectives:
+  #    CP14Command:
+  #    - CP14TownSendObjectiveGroup
   - type: CP14PersonalObjectivesRule
-    departmentObjectives:
-      CP14Mercenary:
+    roleObjectives:
+      CP14Guildmaster:
+      - CP14GuildmasterNoDemiplaneObjectiveGroup
+      CP14Adventurer:
       - CP14PersonalCurrencyCollectObjectiveGroup
+      CP14Alchemist:
+      - CP14PersonalCurrencyCollectObjectiveGroup
+      CP14Apprentice:
+      - CP14PersonalCurrencyCollectObjectiveGroup
+      CP14Blacksmith:
+      - CP14PersonalCurrencyCollectObjectiveGroup
+      CP14Innkeeper:
+      - CP14PersonalCurrencyCollectObjectiveGroup
+      CP14Merchant:
+      - CP14PersonalObjectiveRichestMerchantGroup
+
+# event schedulers
 
 - type: entity
-  id: CP14SociopathsRule
+  id: CP14BasicStationEventScheduler
   parent: CP14BaseGameRule
   components:
-  - type: GameRule
-    minPlayers: 2 #Increase when bigger online
-  - type: AntagSelection
-    definitions:
-    - prefRoles: [ CP14Sociopath ]
-      startingGear: CP14SociopathGear
-      max: 8
-      playerRatio: 10
-      #blacklist:
-      #  components:
-      #  - AntagImmune
-      lateJoinAdditional: true
-      mindRoles:
-      - CP14MindRoleSociopath
-      briefing:
-        text: cp14-roles-antag-sociopath-briefing
-        color: "#cc3010"
-        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: CP14BasicGameRulesTable
+
+- type: entityTable
+  id: CP14BasicGameRulesTable
+  table: !type:AllSelector
+    children:
+      - !type:NestedSelector
+        tableId: CP14BasicCalmEventsTable

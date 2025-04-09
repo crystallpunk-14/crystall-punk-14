@@ -66,6 +66,8 @@
   description: A thin slice of delicious smelling cheese.
   categories: [ ForkFiltered ]
   components:
+  - type: Item
+    size: Tiny
   - type: FlavorProfile
     flavors:
       - cheesy
@@ -87,6 +89,3 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.4
-  - type: FoodSequenceElement
-    entries:
-      CP14Plate: CP14PlateCheeseSlice

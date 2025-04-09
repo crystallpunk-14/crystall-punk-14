@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.ModularCraft.Prototypes;
 
@@ -10,4 +11,7 @@ public sealed partial class CP14ModularCraftSlotPrototype : IPrototype
 
     [DataField(required: true)]
     public LocId Name = string.Empty;
+
+    [DataField]
+    public SpriteSpecifier? IconDisplacement { get; private set; }
 }

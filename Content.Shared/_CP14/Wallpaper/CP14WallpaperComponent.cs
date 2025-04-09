@@ -6,7 +6,6 @@ namespace Content.Shared._CP14.Wallpaper;
 [RegisterComponent, Access(typeof(CP14SharedWallpaperSystem))]
 public sealed partial class CP14WallpaperComponent : Component
 {
-
     [DataField]
     public float Delay = 1f;
 

@@ -1,4 +1,4 @@
-tiles-space = space
+tiles-space = ocean
 tiles-plating = plating
 tiles-lattice = lattice
 tiles-lattice-train = train lattice
@@ -128,4 +128,5 @@ tiles-mowed-astro-grass = mowed astro-grass
 tiles-jungle-astro-grass = jungle astro-grass
 tiles-astro-ice = astro-ice
 tiles-astro-snow = astro-snow
+tiles-astro-asteroid-sand = asteroid astro-sand
 tiles-wood-large = large wood

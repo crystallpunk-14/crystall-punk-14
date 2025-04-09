@@ -17,6 +17,9 @@ public sealed partial class CP14ManaChange : EntityEffect
     [DataField]
     public bool Safe = false;
 
+    [DataField]
+    public bool ScaleByQuantity;
+
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         return Loc.GetString(ManaDelta >= 0 ? "cp14-reagent-effect-guidebook-mana-add" : "cp14-reagent-effect-guidebook-mana-remove",
@@ -30,11 +33,13 @@ public sealed partial class CP14ManaChange : EntityEffect
 
         if (args is EntityEffectReagentArgs reagentArgs)
         {
-            scale = reagentArgs.Quantity * reagentArgs.Scale;
+            scale = ScaleByQuantity ? reagentArgs.Quantity * reagentArgs.Scale : reagentArgs.Scale;
         }
 
         var magicSystem = args.EntityManager.System<CP14MagicEnergySystem>();
-        magicSystem.ChangeEnergy(args.TargetEntity, ManaDelta * scale, Safe);
+        magicSystem.ChangeEnergy(args.TargetEntity, ManaDelta * scale, out var changed, out var overload, safe: Safe);
+
+        scale -= FixedPoint2.Abs(changed + overload);
 
         if (args.EntityManager.TryGetComponent<CP14MagicEnergyCrystalSlotComponent>(args.TargetEntity,
                 out var crystalSlot))

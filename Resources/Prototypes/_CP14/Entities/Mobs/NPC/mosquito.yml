@@ -1,0 +1,80 @@
+- type: entity
+  id: CP14MobMonsterMosquito
+  parent: [ CP14SimpleMobBase, FlyingMobBase ]
+  name: bloodworm mosquitoes
+  description: A bloodthirsty swarm of small mosquitoes just waiting for a soft flesh for a bloody feast.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14ApproachEnemyCompound
+    blackboard:
+      VisionRadius: !type:Single
+        8
+      AggroVisionRadius: !type:Single
+        7
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - sprite: _CP14/Mobs/Monster/mosquito.rsi
+      state: mosquitos
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 5
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+        - Opaque
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Damageable
+    damageContainer: CP14Biological
+    damageModifierSet: CP14LittleInsects
+  - type: Appearance
+  - type: Stamina
+    critThreshold: 50
+  - type: DamageContacts
+    damage:
+      types:
+        Piercing: 1
+        Bloodloss: 1
+    ignoreWhitelist:
+      tags:
+      - CP14Mosquito
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.9
+    sprintSpeedModifier: 0.9
+    ignoreWhitelist:
+      tags:
+      - CP14Mosquito
+  - type: MovementIgnoreGravity
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2
+    friction: 0.5
+    acceleration: 3
+  - type: AmbientSound
+    volume: -1
+    range: 8
+    sound:
+      path: /Audio/_CP14/Animals/swarm.ogg
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: MeleeSound
+    soundGroups:
+      Burn:
+        path: /Audio/_CP14/Animals/swarm_hit.ogg

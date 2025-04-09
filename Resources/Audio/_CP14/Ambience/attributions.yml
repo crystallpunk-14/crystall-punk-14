@@ -32,3 +32,8 @@
   license: "CC0-1.0"
   copyright: 'by xkeril of Freesound.org.'
   source: "https://freesound.org/people/xkeril/sounds/706092/"
+
+- files: ["event_boom.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by juskiddink of Freesound.org.'
+  source: "https://freesound.org/people/juskiddink/sounds/130890/"

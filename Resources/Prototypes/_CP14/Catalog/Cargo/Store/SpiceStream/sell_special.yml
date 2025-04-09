@@ -1,0 +1,129 @@
+- type: storePositionSell
+  id: CP14DyeRed
+  special: true
+  price: 75
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeRed
+    count: 5
+
+- type: storePositionSell
+  id: CP14DyeYellow
+  special: true
+  price: 75
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeYellow
+    count: 5
+
+- type: storePositionSell
+  id: CP14DyeBlue
+  special: true
+  price: 75
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14DyeBlue
+    count: 5
+
+- type: storePositionSell
+  id: CP14FoodPieMeat
+  special: true
+  price: 60
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodPieMeat
+    count: 1
+
+- type: storePositionSell
+  id: CP14FoodPiePumpkin
+  special: true
+  price: 60
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodPiePumpkin
+    count: 1
+
+- type: storePositionSell
+  id: CP14FoodBreadBun
+  special: true
+  price: 20
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodBreadBun
+    count: 3
+
+- type: storePositionSell
+  id: CP14FoodCabbage
+  special: true
+  price: 80
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodCabbage
+    count: 10
+
+- type: storePositionSell
+  id: CP14FoodPumpkin
+  special: true
+  price: 80
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodPumpkin
+    count: 10
+
+- type: storePositionSell
+  id: CP14FoodPotato
+  special: true
+  price: 80
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodPotato
+    count: 10
+
+- type: storePositionSell
+  id: CP14FoodCucumber
+  special: true
+  price: 80
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodCucumber
+    count: 10
+
+- type: storePositionSell
+  id: CP14FoodTomatoes
+  special: true
+  price: 80
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodTomatoes
+    count: 10
+
+- type: storePositionSell
+  id: CP14FoodPepper
+  special: true
+  price: 80
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodPepper
+    count: 10
+
+- type: storePositionSell
+  id: CP14FoodOnion
+  special: true
+  price: 80
+  factions:
+  - SpiceStream
+  service: !type:CP14SellPrototypeService
+    proto: CP14FoodOnion
+    count: 10

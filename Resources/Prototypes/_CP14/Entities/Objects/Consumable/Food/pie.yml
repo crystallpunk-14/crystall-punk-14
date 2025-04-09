@@ -1,0 +1,287 @@
+# base
+
+- type: entity
+  parent: FoodInjectableBase
+  id: CP14FoodPieBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+    storedRotation: -90
+  - type: Temperature
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/pie.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Food
+    trash:
+    - CP14PlatePie
+  - type: Tag
+    tags:
+    - Pie
+
+- type: entity
+  parent: FoodInjectableBase
+  id: CP14FoodPieBaseRaw
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+    storedRotation: -90
+  - type: Temperature
+  - type: FlavorProfile
+    flavors:
+      - raw dough
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/pie.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Food
+    trash:
+    - CP14PlatePie
+
+# pie
+
+- type: entity
+  name: raw apple pie
+  parent: CP14FoodPieBaseRaw
+  id: CP14FoodPieAppleRaw
+  description: Raw dough with apples seems like a cnr you shouldn't be eating right now.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - raw dough
+      - apple
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: apple_raw
+  - type: Tag
+    tags:
+    - Fruit
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodPieApple
+
+- type: entity
+  name: apple pie
+  parent: CP14FoodPieBase
+  id: CP14FoodPieApple
+  description: Apple pie beckons with its smells.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - apple
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: apple
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  name: raw meat pie
+  parent: CP14FoodPieBaseRaw
+  id: CP14FoodPieMeatRaw
+  description: Raw dough with raw meat, not the best dish at the moment.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - raw dough
+      - meaty
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: meat_raw
+  - type: Tag
+    tags:
+    - Meat
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodPieMeat
+
+- type: entity
+  name: meat pie
+  parent: CP14FoodPieBase
+  id: CP14FoodPieMeat
+  description: Oh that wonderful aroma of bread and meat, I could eat that right now.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: meat
+  - type: Tag
+    tags:
+    - Meat
+    - Pie
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  name: raw fish pie
+  parent: CP14FoodPieBaseRaw
+  id: CP14FoodPieFishRaw
+  description: Raw dough with raw fish..... Where did they get the fish?!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - raw dough
+      - fishy
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: fisht_raw
+  - type: Tag
+    tags:
+    - Meat
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodPieFish
+
+- type: entity
+  name: fish pie
+  parent: CP14FoodPieBase
+  id: CP14FoodPieFish
+  description: Fish pie, a good alternative among meat dishes.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: fish
+  - type: Tag
+    tags:
+    - Meat
+    - Pie
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  name: raw pumpkin pie
+  parent: CP14FoodPieBaseRaw
+  id: CP14FoodPiePumpkinRaw
+  description: Raw dough with pumpkin, can be a satisfyingly flavorful dish.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - raw dough
+      - pumpkin
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: pumpkin_raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 2
+        - ReagentId: PumpkinFlesh
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Fruit
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodPiePumpkin
+
+- type: entity
+  name: pumpkin pie
+  parent: CP14FoodPieBase
+  id: CP14FoodPiePumpkin
+  description: Delicious pumpkin pie, with a toasted crust on the outside.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: pumpkin
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 2
+        - ReagentId: PumpkinFlesh
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1

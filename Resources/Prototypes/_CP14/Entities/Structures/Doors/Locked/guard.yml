@@ -1,0 +1,63 @@
+
+# Iron
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuard
+  suffix: Guard
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Guard
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuardCommandantRoom
+  suffix: Guard Commander
+  components:
+  - type: CP14Lock
+    autoGenerateShape: GuardCommander
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuardWeaponStorage
+  suffix: Guard, Weapon Storage
+  components:
+  - type: CP14Lock
+    autoGenerateShape: GuardWeaponStorage
+  - type: Lock
+    locked: true
+
+# Iron windowed
+
+- type: entity
+  parent: CP14IronDoorWindowed
+  id: CP14IronDoorWindowedGuardEntrance
+  suffix: Guard, Entrance
+  components:
+  - type: CP14Lock
+    autoGenerateShape: GuardEntrance
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent:
+  - CP14IronDoorWindowedGuardEntrance
+  - CP14IronDoorWindowedMirrored
+  id: CP14IronDoorWindowedMirroredGuardEntrance
+  suffix: Guard, Entrance, Mirrored
+
+# Grill Gate
+
+- type: entity
+  parent: CP14FenceIronGrilleGate
+  id: CP14FenceIronGrilleGateGuard
+  suffix: Guard
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Guard
+  - type: Lock
+    locked: true

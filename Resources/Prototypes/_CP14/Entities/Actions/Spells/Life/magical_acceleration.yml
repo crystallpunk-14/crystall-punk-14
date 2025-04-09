@@ -1,0 +1,67 @@
+- type: entity
+  id: CP14ActionSpellMagicalAcceleration
+  name: Magical acceleration
+  description: At the cost of magic energy, you significantly accelerate your movement speed
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/misc.rsi
+    state: magical_acceleration
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 1.3
+  - type: CP14MagicEffectManaCost
+    manaCost: 3
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14MagicAccelerationDustEffect
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/misc.rsi
+      state: magical_acceleration
+    event: !type:CP14ToggleableInstantActionEvent
+      effectFrequency: 0.2
+      cooldown: 2
+      castTime: 10
+      hidden: true
+
+- type: entity
+  id: CP14MagicAccelerationDustEffect
+  parent: CP14DustEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    drawdepth: Items
+    sprite: _CP14/Effects/dust.rsi
+    layers:
+    - state: dust
+      shader: unshaded
+      color: "#4097bd"
+  - type: PointLight
+    color: "#4097bd"
+
+- type: entity
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollMagicalAcceleration
+  name: magical accseleration spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellMagicalAcceleration
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            CP14Ash1:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

@@ -5,8 +5,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingAlchemist
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14Lighter
+      - id: CP14ManaOperationGlove
       - id: CP14Syringe
         amount: 2
       - id: CP14Cauldron
@@ -16,34 +16,33 @@
         amount: 1
       - id: CP14Dropper
         amount: 1
+      - id: CP14VialTinyReinforced
+        amount: 1
       - id: CP14VialTiny
-        amount: 7
+        amount: 3
+      - id: CP14VialSmallReinforced
+        amount: 1
       - id: CP14VialSmall
-        amount: 5
+        amount: 3
+      - id: CP14PaperFolderBlue
+      - id: CP14PenFeather
+        amount: 1
+      - id: CP14WoodenPlanks20
         #Random start resource
-      - id: CP14VialSmallGroundQuartz
-        prob: 0.9
-      - id: CP14VialSmallBloodFlowerSap
-        prob: 0.7
-      - id: CP14VialSmallAgaricMushroom
-        prob: 0.7
-      - id: CP14VialSmallWildSage
-        prob: 0.7
-      - id: CP14VialSmallBlueAmanita
-        prob: 0.7
-      - id: CP14VialTinyChromiumSlime
-        prob: 0.3
-      - id: CP14VialTinyLumiMushroom
-        prob: 0.3
+      - id: CP14VialMediumEarthEssence
+      - id: CP14VialMediumFireEssence
+      - id: CP14VialMediumWaterEssence
+      - id: CP14VialMediumAirEssence
+      - id: CP14VialMediumOrderEssence
+      - id: CP14VialMediumChaosEssence
 
 - type: entity
   parent: CP14WoodenCloset
-  id: CP14WoodenClosetBankerFilled
-  suffix: Banker, Filled
+  id: CP14WoodenClosetMerchantFilled
+  suffix: Merchant, Filled
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingBanker
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14StampDenied
       - id: CP14StampApproved
@@ -68,52 +67,77 @@
 
 - type: entity
   parent: CP14WoodenCloset
-  id: CP14WoodenClosetCommandantFilled
-  suffix: Commandant, Filled
+  id: CP14WoodenClosetBlacksmithFilled
+  suffix: Blacksmith, Filled
   components:
   - type: StorageFill
     contents:
-      - id: CP14KeyRingCommandant
       - id: HandLabeler #TODO custom cp14 labeler
-      - id: CP14StampDenied
-      - id: CP14StampApproved
-      - id: CP14StampCommandant
-
-- type: entity
-  parent: CP14SafeVault
-  id: CP14SafeVaultFilled25
-  suffix: Vault, Filled 25gp
-  components:
-  - type: EntityTableContainerFill
-    containers: 
-      entity_storage: !type:GroupSelector
-        children:
-          - id: CP14JewelryRuby
-            weight: 0.1
-          - !type:GroupSelector
-            children:
-            # or 5gp
-            - id: CP14GoldCoin5
-            # or 50sp
-            - !type:AllSelector
-              children:
-              - id: CP14SilverCoin
-              - id: CP14SilverCoin
-              - id: CP14SilverCoin
-              - id: CP14SilverCoin 
-              - id: CP14SilverCoin
-            rolls: !type:ConstantNumberSelector
-              value: 5
+      - id: CP14WoodenPlanks10
+      - id: CP14CopperBar10
+      - id: CP14CopperBar10
+      - id: CP14IronBar10
+      - id: CP14GoldBar5
+      - id: CP14PaperFolderRed
+      - id: CP14PenFeather
+        amount: 1
 
 - type: entity
   parent: CP14WoodenCloset
-  id: CP14WoodenClosetBlacksmithFilled
-  suffix: Blacksmith, Filled
-  #components:
-  #- type: StorageFill
-  #  contents:
-  #    - id: CP14KeyRingCommandant
-  #    - id: HandLabeler #TODO custom cp14 labeler
-  #    - id: CP14StampDenied
-  #    - id: CP14StampApproved
-  #    - id: CP14StampCommandant
+  id: CP14WoodenClosetGuardFilled
+  suffix: Guard, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Rope
+        amount: 2
+      - id: Bola
+        amount: 2
+      - id: CP14ModularGuardHalberd
+      - id: CP14BaseShield
+      - id: CP14ModularGripIronLongGuard
+        amount: 2
+      - id: CP14BaseLightCrossbow
+      - id: CP14CrossboltIron
+        amount: 5
+      - id: CP14EnergyCrystalSmall
+      - id: CP14CrystalLampBlueEmpty
+
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetGuardCommanderFilled
+  suffix: Guard Commander, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Rope
+        amount: 2
+      - id: Bola
+      - id: Bola
+      - id: CP14ModularGuardHalberd
+      - id: CP14BaseShield
+      - id: CP14ModularGripIronLongGuard
+        amount: 2
+      - id: CP14EnergyCrystalSmall
+      - id: CP14CrystalLampBlueEmpty
+      - id: CP14StampGuardCommander
+
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetGuildmasterFilled
+  suffix: Guildmaster, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14StampGuildmaster
+      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14StampDenied
+      - id: CP14StampApproved
+      - id: CP14PaperFolderBlue
+      - id: CP14SpellscrollSignalLightBlue
+        amount: 4
+      - id: CP14SpellscrollSignalLightYellow
+        amount: 4
+      - id: CP14SpellscrollSignalLightRed
+        amount: 4
+      - id: CP14ArmorIronСhainmailPresets

@@ -1,0 +1,60 @@
+- type: Tag
+  id: CP14DemiplaneArtifactRoom
+
+- type: entity
+  id: CP14DemiplaneArtifactRoomSpawner
+  categories: [ ForkFiltered ]
+  parent: BaseRoomMarker
+  name: Demiplane artifact room spawner
+  components:
+  - type: RoomFill
+    clearExisting: true
+    roomWhitelist:
+      tags:
+      - CP14DemiplaneArtifactRoom
+
+# 7x7
+- type: dungeonRoom
+  id: CP14DemiplaneArtifactRoom_7x7_a
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/artifact_room.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - CP14DemiplaneArtifactRoom
+
+- type: dungeonRoom
+  id: CP14DemiplaneArtifactRoom_7x7_b
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/artifact_room.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - CP14DemiplaneArtifactRoom
+
+- type: dungeonRoom
+  id: CP14DemiplaneArtifactRoom_7x7_c
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/artifact_room.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - CP14DemiplaneArtifactRoom
+
+- type: dungeonRoom
+  id: CP14DemiplaneArtifactRoom_7x7_d
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/artifact_room.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - CP14DemiplaneArtifactRoom
+
+- type: dungeonRoom
+  id: CP14DemiplaneArtifactRoom_7x7_e
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/artifact_room.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 32,0
+  tags:
+    - CP14DemiplaneArtifactRoom

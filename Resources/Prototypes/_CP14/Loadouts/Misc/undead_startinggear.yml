@@ -17,46 +17,61 @@
     mask: CP14ClothingMaskSinner
 
 - type: startingGear
-  id: CP14MobUndeadMedium1
+  id: CP14MobSkeletonHalberd
   equipment:
-    cloak: CP14ClothingCloakCuirass
-    shirt: CP14ClothingShirtCottonRed
-    pants: CP14ClothingPantsTrouserWhite
+    outerClothing: CP14ClothingOuterClothingBoneArmor
+    shirt: CP14ClothingWarriorsGarbDress
+    pants: CP14ClothingPantsLoincloth
+    neck: CP14ModularSkeletonHalberd
+    shoes: CP14ClothingShoesSandals
 
 - type: startingGear
-  id: CP14MobUndeadMedium2
+  id: CP14MobSkeletonSword
   equipment:
-    cloak: CP14ClothingCloakCuirass
-    shirt: CP14ClothingShirtCottonRed
-    pants: CP14ClothingPantsTrouserWhite
-    head: CP14ClothingHeadBeretRed
+    outerClothing: CP14ClothingOuterClothingBoneArmor
+    pants: CP14ClothingPantsLoincloth
+    belt1: CP14ModularSkeletonSword
+    shoes: CP14ClothingShoesSandals
+    head: CP14ClothingHeadMetalHeadband
+  inhand:
+    - CP14BaseShield
 
 - type: startingGear
-  id: CP14MobUndeadHard1
+  id: CP14MobSkeletonDodger
   equipment:
-    cloak: CP14ClothingCloakInfantryCuirass
+    mask: CP14ClothingMaskSinner
+    pants: CP14ClothingPantsLoincloth
+    belt1: CP14ModularIronDagger
+    belt2: CP14ModularIronDagger
+
+- type: startingGear
+  id: CP14MobSkeletonArcher
+  equipment:
+    shirt: CP14ClothingWarriorsGarbDress
+    pants: CP14ClothingPantsLoincloth
+    neck: CP14BowCombat
+    belt1: CP14ClothingBeltQuiverCopperArrow
+
+- type: startingGear
+  id: CP14MobSkeletonWizard
+  equipment:
+    head: CP14ClothingHeadTriangularHat
+    shirt: CP14ClothingShirtCottonBlack
+    pants: CP14ClothingPantsBrown
+    shoes: CP14LongLeatherBoots
+    cloak: CP14ClothingCloakWhite
+  inhand:
+    - CP14ManaOperationGlove
+
+- type: startingGear
+  id: CP14MobSkeletonBard
+  equipment:
     shirt: CP14ClothingShirtMercenary
     pants: CP14ClothingPantsMercenaryTrousers
-    shoes: CP14ClothingShoesBlack
-    back: CP14BaseTwoHandedSword
-    head: CP14ClothingHeadBeretMercenary
+    shoes: CP14ClothingShoesAristocraticBlack
+    neck: SkeletonGuitarInstrument
 
 - type: startingGear
-  id: CP14MobUndeadHard2
-  equipment:
-    cloak: CP14ClothingCloakCuirassLoincloth
-    shirt: CP14ClothingShirtMercenary
-    pants: CP14ClothingPantsMercenaryTrousers
-    shoes: CP14ClothingShoesBlack
-    back: CP14BaseShield
-    head: CP14ClothingHeadCapellina
-    mask: CP14ClothingMaskSteelMask
-
-- type: startingGear
-  id: CP14MobSkeleton
+  id: CP14MobSkeletonCloset
   equipment:
     pants: CP14ClothingPantsLoincloth
-    neck: CP14ModularIronSword
-    belt1: CP14ModularIronDagger
-  inhand:
-    - CP14TorchIgnited

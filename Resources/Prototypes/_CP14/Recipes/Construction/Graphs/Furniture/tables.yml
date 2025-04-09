@@ -8,8 +8,8 @@
       edges:
         - to: CP14TableWooden
           steps:
-            - material: CP14WoodenPlanks
-              amount: 2
+            - stackGroup: WoodenPlanks
+              amount: 3
               doAfter: 2
     - node: CP14TableWooden
       entity: CP14TableWooden
@@ -24,8 +24,8 @@
       edges:
         - to: CP14TableWoodenRound
           steps:
-            - material: CP14WoodenPlanks
-              amount: 2
+            - stackGroup: WoodenPlanks
+              amount: 3
               doAfter: 2
     - node: CP14TableWoodenRound
       entity: CP14TableWoodenRound
@@ -40,8 +40,8 @@
       edges:
         - to: CP14TableWoodenCounter
           steps:
-            - material: CP14WoodenPlanks
-              amount: 2
+            - stackGroup: WoodenPlanks
+              amount: 3
               doAfter: 2
     - node: CP14TableWoodenCounter
       entity: CP14TableWoodenCounter
@@ -56,8 +56,8 @@
       edges:
         - to: CP14Workbench
           steps:
-            - material: CP14WoodenPlanks
-              amount: 2
+            - stackGroup: WoodenPlanks
+              amount: 3
               doAfter: 2
     - node: CP14Workbench
       entity: CP14Workbench
@@ -72,8 +72,8 @@
       edges:
         - to: CP14WorkbenchCooking
           steps:
-            - material: CP14WoodenPlanks
-              amount: 2
+            - stackGroup: WoodenPlanks
+              amount: 3
               doAfter: 2
     - node: CP14WorkbenchCooking
       entity: CP14WorkbenchCooking
@@ -88,8 +88,8 @@
       edges:
         - to: CP14WorkbenchSewing
           steps:
-            - material: CP14WoodenPlanks
-              amount: 2
+            - stackGroup: WoodenPlanks
+              amount: 3
               doAfter: 2
     - node: CP14WorkbenchSewing
       entity: CP14WorkbenchSewing

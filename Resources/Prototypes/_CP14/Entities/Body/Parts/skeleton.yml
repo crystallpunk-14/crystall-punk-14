@@ -11,10 +11,44 @@
   id: CP14HeadSkeleton
   parent: CP14HeadHuman
   categories: [ ForkFiltered ]
+  name: skull
+  description: Alas poor Yorick...
   components:
   - type: Sprite
     sprite: _CP14/Mobs/Species/Skeleton/parts.rsi
+    noRot: true
     state: head
+  - type: Gibbable
+  - type: Speech
+    speechVerb: Skeleton
+  - type: SkeletonAccent
+  - type: Actions
+  - type: Vocal
+    sounds:
+      Male: Skeleton
+      Female: Skeleton
+      Unsexed: Skeleton
+  - type: Emoting
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Examiner
+  - type: DoAfter
+  - type: MobState
+    allowedStates:
+      - Alive
+  - type: Tag
+    tags:
+    - MindTransferTarget
+    - Head
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: CP14LeftArmSkeleton

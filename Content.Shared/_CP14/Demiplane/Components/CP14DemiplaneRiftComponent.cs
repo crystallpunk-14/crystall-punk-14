@@ -8,7 +8,7 @@ public sealed partial class CP14DemiplaneRiftComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly)]
     [DataField]
-    public Entity<CP14DemiplaneComponent>? Demiplan;
+    public EntityUid? Demiplane;
 
     /// <summary>
     /// Checks if the map on which this rift is initialized is a demiplane to automatically bind to it. QoL thing.

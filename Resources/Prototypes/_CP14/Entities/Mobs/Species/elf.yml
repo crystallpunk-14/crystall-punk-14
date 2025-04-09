@@ -6,7 +6,21 @@
   components:
   - type: HumanoidAppearance
     species: CP14Elf
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 20
+    damage:
+      types:
+        Heat: -0.07
+        CP14ManaDepletion: -0.07
+      groups:
+        Brute: -0.07
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Elf/parts.rsi
     state: full
@@ -14,20 +28,85 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
-        amount: 5
+      - id: CP14FoodMeatHuman
+        amount: 4
   - type: Body
     prototype: CP14Elf
     requiredLegs: 2
-  - type: Inventory
-    templateId: CP14Human
   - type: Bloodstream
     bloodReagent: CP14BloodElf
+  - type: CP14SkillStorage
+    progress:
+      Metamagic: 1
+  - type: CP14MagicEnergyContainer #Increased mana container
+    maxEnergy: 200
+    energy: 200
+  - type: CP14MagicEnergyDraw #Half of standard mana regeneration
+    energy: 0.5
+    delay: 3
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+    femaleDisplacements:
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt
 
 - type: entity
   parent: CP14BaseSpeciesDummy
   id: CP14MobElfDummy
   categories: [ HideSpawnMenu ]
   components:
-    - type: HumanoidAppearance
-      species: CP14Elf
+  - type: HumanoidAppearance
+    species: CP14Elf
+  - type: Inventory
+    templateId: CP14Human
+    displacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+    femaleDisplacements:
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt

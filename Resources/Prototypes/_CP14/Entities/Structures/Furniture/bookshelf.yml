@@ -1,0 +1,108 @@
+- type: entity
+  id: CP14BookshelfWooden
+  categories: [ ForkFiltered ]
+  parent: 
+  - BaseStructureDynamic
+  - CP14BaseFlammable
+  name: wooden bookshelf
+  description: Mostly filled with books.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/bookshelf.rsi
+    layers:
+      - state: base
+      - state: book-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Storage
+    grid:
+    - 0,0,5,7
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - Document
+        - Folder
+        - Write
+        - Book
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Anchorable
+  - type: Rotatable
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 28
+    fillBaseName: book
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.05,0.45,0.45"
+        density: 75
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 2
+            max: 4
+
+- type: entityTable
+  id: CP14BookshelfEntityTable
+  table: !type:AllSelector
+    children:
+    #Guidebooks
+    - !type:GroupSelector
+      children:
+      - id: CP14GuidebookImperialLaws
+      - id: CP14GuidebookAlchemy
+      - id: CP14GuidebookDemiplanes
+    #Empty random
+    - id: CP14BookRandom
+      amount: !type:RangeNumberSelector
+        range: 0, 15
+
+- type: entity
+  id: CP14BookshelfWoodenFilled
+  parent: CP14BookshelfWooden
+  suffix: Random filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: CP14BookshelfEntityTable

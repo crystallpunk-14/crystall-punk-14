@@ -15,7 +15,7 @@
         true
   - type: NpcFactionMember
     factions:
-    - CP14Undead
+    - CP14Monster
 
 - type: entity
   id: CP14MobUndeadZombieGearEasy1
@@ -43,39 +43,3 @@
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadEasy3 ]
-
-- type: entity
-  id: CP14MobUndeadZombieGearMedium1
-  parent: CP14MobUndeadZombie
-  suffix: Zombie. Medium
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Loadout
-    prototypes: [ CP14MobUndeadMedium1 ]
-
-- type: entity
-  id: CP14MobUndeadZombieGearMedium2
-  parent: CP14MobUndeadZombie
-  suffix: Zombie. Medium
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Loadout
-    prototypes: [ CP14MobUndeadMedium2 ]
-
-- type: entity
-  id: CP14MobUndeadZombieGearHard1
-  parent: CP14MobUndeadZombie
-  suffix: Zombie. Hard
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Loadout
-    prototypes: [ CP14MobUndeadHard1 ]
-
-- type: entity
-  id: CP14MobUndeadZombieGearHard2
-  parent: CP14MobUndeadZombie
-  suffix: Zombie. Hard
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Loadout
-    prototypes: [ CP14MobUndeadHard2 ]

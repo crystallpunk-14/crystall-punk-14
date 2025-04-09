@@ -14,7 +14,7 @@
       "name": "alchemist"
     },
     {
-      "name": "banker"
+      "name": "merchant"
     },
     {
       "name": "blacksmith"
@@ -30,6 +30,9 @@
     },
     {
       "name": "guard_commander"
+    },
+    {
+      "name": "guildmaster"
     },
     {
       "name": "workman"

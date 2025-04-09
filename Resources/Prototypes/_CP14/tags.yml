@@ -29,9 +29,6 @@
   id: CP14AmbientWater
 
 - type: Tag
-  id: CP14Plate
-
-- type: Tag
   id: CP14InkwellFittable
 
 - type: Tag
@@ -63,3 +60,78 @@
 
 - type: Tag
   id: CP14Mosquito
+
+- type: Tag
+  id: CP14Dye
+
+- type: Tag
+  id: CP14DyeRed
+
+- type: Tag
+  id: CP14DyeYellow
+
+- type: Tag
+  id: CP14DyeBlue
+
+- type: Tag
+  id: CP14DyeGreen
+
+- type: Tag
+  id: CP14DyePurple
+
+- type: Tag
+  id: CP14DyeBlack
+
+- type: Tag
+  id: CP14Meat
+
+- type: Tag
+  id: CP14MeatSlice
+
+- type: Tag
+  id: CP14RawMeatSlice
+
+- type: Tag
+  id: CP14Torch
+
+- type: Tag
+  id: CP14SpellScroll
+
+- type: Tag
+  id: CP14Arrow
+
+- type: Tag
+  id: CP14Plate
+
+- type: Tag
+  id: CP14PlatePie
+
+- type: Tag
+  id: CP14FarmFood
+
+- type: Tag
+  id: CP14AlchemicalHerbals
+
+- type: Tag
+  id: CP14Lighter
+
+- type: Tag
+  id: CP14Scissors
+
+- type: Tag
+  id: CP14SharpeningStone
+
+- type: Tag
+  id: CP14Nail
+
+- type: Tag
+  id: CP14Vial
+
+- type: Tag
+  id: CP14BloodFlower
+
+- type: Tag
+  id: CP14Dayflin
+
+- type: Tag
+  id: CP14Sheep

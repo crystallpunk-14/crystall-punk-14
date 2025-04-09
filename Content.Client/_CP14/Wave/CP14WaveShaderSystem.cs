@@ -1,8 +1,6 @@
-﻿using Content.Shared._CP14.Configuration;
+﻿using Content.Shared.CCVar;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Client.Placement;
-using Robust.Client.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -23,7 +21,7 @@ public sealed class CP14WaveShaderSystem : EntitySystem
         base.Initialize();
 
         _shader = _protoMan.Index<ShaderPrototype>("Wave").InstanceUnique();
-        _enabled = _configuration.GetCVar(CP14ConfigVars.WaveShaderEnabled);
+        _enabled = _configuration.GetCVar(CCVars.WaveShaderEnabled);
 
         SubscribeLocalEvent<CP14WaveShaderComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<CP14WaveShaderComponent, ComponentShutdown>(OnShutdown);

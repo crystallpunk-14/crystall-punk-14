@@ -1,0 +1,73 @@
+- type: modularPart
+  id: BaseBladePickaxe
+  modifiers:
+  - !type:EditMeleeWeapon
+    attackRateMultiplier: 0.75
+    angleMultiplier: 1.2
+    bonusDamage:
+      types:
+        Piercing: 9
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Piercing: 4
+        Structural: 14
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 1, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronPickaxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldPickaxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperPickaxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilPickaxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladePickaxe
+    - BaseBladeMithril

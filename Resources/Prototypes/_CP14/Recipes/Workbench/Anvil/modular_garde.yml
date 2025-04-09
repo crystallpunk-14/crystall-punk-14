@@ -1,0 +1,83 @@
+# Sharp garde
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpCopper
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularGardeSharpCopper
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpIron
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularGardeSharpIron
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpGold
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularGardeSharpGold
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpMithril
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularGardeSharpMithril
+
+# Sturdy garde
+
+- type: CP14Recipe
+  id: CP14ModularGardeSturdyCopper
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularGardeSturdyCopper
+
+- type: CP14Recipe
+  id: CP14ModularGardeSturdyIron
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularGardeSturdyIron
+
+- type: CP14Recipe
+  id: CP14ModularGardeSturdyGold
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularGardeSturdyGold
+
+- type: CP14Recipe
+  id: CP14ModularGardeSturdyMithril
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularGardeSturdyMithril

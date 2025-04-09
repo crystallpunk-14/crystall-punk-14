@@ -1,0 +1,11 @@
+- type: entity
+  parent: 
+  - CP14ClothingCloakBase
+  id: CP14ClothingCloakCommandantJacket #TODO: Rename from Jacket to Cape
+  name: commandant's cape
+  description: The colors white and gold tell you that you're looking at a higher power.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/Commandant/commandant_cape.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/Commandant/commandant_cape.rsi

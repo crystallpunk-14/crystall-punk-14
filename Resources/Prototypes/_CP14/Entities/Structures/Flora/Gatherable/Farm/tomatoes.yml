@@ -1,69 +1,24 @@
 - type: entity
   id: CP14PlantTomatoes
-  parent: CP14GatherablePlantBase
+  parent: CP14GatherablePlantMultiHarvestBase
   name: tomatoes
-  description: OOO # TODO
+  description: On the one hand, it's a delicious fruit. But why eat it when it's much more fun to use tomatoes as a throwing projectile?
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
     layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - state: grow-1
+      sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
       map: ["enum.PlantVisualLayers.Base"]
-  - type: CP14PlantMetabolizer
-    metabolizerId: Base
-  - type: CP14PlantEnergyFromLight
-    energy: 1
-    daytime: true
-  - type: CP14PlantVisuals
-    growthSteps: 6
-  - type: CP14PlantGrowing
-    energyCost: 1
-    resourceCost: 1
-    growthPerUpdate: 0.05 # 20 minute to full grow
-  - type: CP14PlantFading
-    resourcePerMinute: 0.15
   - type: CP14PlantGatherable
-    deleteAfterHarvest: false
     loot:
       All: CP14GatherTomatoes
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 25
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTypeTrigger
-          damageType: Cellular
-          damage: 1
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14PlantTomatoesDeath:
-                min: 1
-                max: 1
-
-- type: entity
-  id: CP14PlantTomatoesDeath
-  name: dead tomatoes
-  description: The sad spectacle of wasted food.
-  parent: CP14GatherableBase
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/tomatoes.rsi
-    state: death
-  - type: Gatherable
-    toolWhitelist:
-      tags:
-        - CP14HerbalGathering
 
 - type: entityLootTable
   id: CP14GatherTomatoes
   entries:
   - id: CP14FoodTomatoes
-    amount: 1
-    maxAmount: 3
+    amount: 2
+    maxAmount: 4

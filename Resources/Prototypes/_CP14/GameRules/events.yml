@@ -1,0 +1,130 @@
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14BaseStationEventShortDelay
+  abstract: true
+  components:
+  - type: GameRule
+    delay:
+      min:  10
+      max:  20
+
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14BaseStationEventLongDelay
+  abstract: true
+  components:
+  - type: GameRule
+    delay:
+      min:  40
+      max:  60
+
+- type: entityTable
+  id: CP14BasicCalmEventsTable
+  table: !type:AllSelector
+    children:
+    - id: CP14ZombiesSpawn
+    - id: CP14HydrasSpawn
+    - id: CP14MosquitoSpawn
+    - id: CP14RabbitsSpawn
+    - id: CP14FrogsSpawn
+    - id: CP14Storm
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14ZombiesSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-demiplane-outbreak
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: CP14MobGroupSpawnerZombie
+      prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14HydrasSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-demiplane-outbreak
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: CP14MobGroupSpawnerHydras
+      prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14MosquitoSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-demiplane-outbreak
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: CP14MobGroupSpawnerMosquito
+      prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14RabbitsSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-demiplane-outbreak
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 10
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: CP14MobGroupSpawnerRabbits
+      prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14FrogsSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-demiplane-outbreak
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    earliestStart: 20
+    minimumPlayers: 10
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: CP14MobGroupSpawnerFrogs
+      prob: 0.08
+
+- type: entity
+  parent: CP14BaseStationEventLongDelay
+  id: CP14Storm
+  components:
+  - type: StationEvent
+    startAnnouncement: cp14-event-announcement-storm
+    startAudio:
+      collection: CP14LightningFar
+    earliestStart: 45
+    minimumPlayers: 10
+    duration: 180
+    maxDuration: 600
+  - type: CP14WeatherRule
+    weather: CP14Storm

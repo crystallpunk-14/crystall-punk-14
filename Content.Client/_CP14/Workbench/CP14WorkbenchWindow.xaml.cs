@@ -19,19 +19,22 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
+    private CP14WorkbenchUiRecipesState? _cachedState;
+
     public event Action<CP14WorkbenchUiRecipesEntry>? OnCraft;
+    public event Action<string>? OnTextUpdated;
 
-    private readonly SpriteSystem _sprite;
-
-    private CP14WorkbenchUiRecipesEntry? _selectedEntry ;
+    private CP14WorkbenchUiRecipesEntry? _selectedEntry;
 
     public CP14WorkbenchWindow()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        _sprite = _entity.System<SpriteSystem>();
-
+        SearchBar.OnTextChanged += _ =>
+        {
+            OnTextUpdated?.Invoke(SearchBar.Text);
+        };
         CraftButton.OnPressed += _ =>
         {
             if (_selectedEntry is null)
@@ -41,16 +44,37 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         };
     }
 
-    public void UpdateRecipes(CP14WorkbenchUiRecipesState recipesState)
+    public void UpdateFilter(string? search)
     {
+        if (_cachedState is null)
+            return;
+
+        UpdateRecipes(_cachedState, search);
+    }
+
+    public void UpdateRecipes(CP14WorkbenchUiRecipesState recipesState, string? search = null)
+    {
+        _cachedState = recipesState;
         CraftsContainer.RemoveAllChildren();
 
         List<CP14WorkbenchUiRecipesEntry> uncraftableList = new();
         foreach (var entry in recipesState.Recipes)
         {
+            if (search is not null && search != "")
+            {
+                if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
+                    continue;
+
+                if (!_prototype.TryIndex(indexedEntry.Result, out var indexedResult))
+                    continue;
+
+                if (!indexedResult.Name.Contains(search))
+                    continue;
+            }
+
             if (entry.Craftable)
             {
-                var control = new CP14WorkbenchRequirementControl(entry);
+                var control = new CP14WorkbenchRecipeControl(entry);
                 control.OnSelect += RecipeSelect;
                 CraftsContainer.AddChild(control);
             }
@@ -60,7 +84,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         foreach (var entry in uncraftableList)
         {
-            var control = new CP14WorkbenchRequirementControl(entry);
+            var control = new CP14WorkbenchRecipeControl(entry);
             control.OnSelect += RecipeSelect;
             CraftsContainer.AddChild(control);
         }
@@ -89,19 +113,16 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         var result = _prototype.Index(recipe.Result);
 
-        ItemView.Texture = _sprite.GetPrototypeIcon(recipe.Result).Default;
-        ItemName.Text = result.Name;
+        ItemView.SetPrototype(recipe.Result);
+        var counter = recipe.ResultCount > 1 ? $" x{recipe.ResultCount}" : "";
+        ItemName.Text = result.Name + counter;
         ItemDescription.Text = result.Description;
 
         ItemRequirements.RemoveAllChildren();
-        foreach (var (entProtoId, count) in recipe.Entities)
-        {
-            ItemRequirements.AddChild(new CP14WorkbenchRecipeControl(_prototype.Index(entProtoId), count));
-        }
 
-        foreach (var (stackProtoId, count) in recipe.Stacks)
+        foreach (var requirement in recipe.Requirements)
         {
-            ItemRequirements.AddChild(new CP14WorkbenchRecipeControl(_prototype.Index(stackProtoId), count));
+            ItemRequirements.AddChild(new CP14WorkbenchRequirementControl(requirement));
         }
 
         CraftButton.Disabled = !entry.Craftable;

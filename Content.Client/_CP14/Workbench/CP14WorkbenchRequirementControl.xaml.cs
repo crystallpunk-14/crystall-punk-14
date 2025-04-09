@@ -14,7 +14,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._CP14.Workbench;
 
 [GenerateTypedNameReferences]
-public sealed partial class CP14WorkbenchRequirementControl : Control
+public sealed partial class CP14WorkbenchRecipeControl : Control
 {
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -26,7 +26,7 @@ public sealed partial class CP14WorkbenchRequirementControl : Control
     private readonly CP14WorkbenchRecipePrototype _recipePrototype;
     private readonly bool _craftable;
 
-    public CP14WorkbenchRequirementControl(CP14WorkbenchUiRecipesEntry entry)
+    public CP14WorkbenchRecipeControl(CP14WorkbenchUiRecipesEntry entry)
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
@@ -54,11 +54,12 @@ public sealed partial class CP14WorkbenchRequirementControl : Control
     private void UpdateName()
     {
         var result = _prototype.Index(_recipePrototype.Result);
-        Name.Text = Loc.GetString(result.Name);
+        var counter = _recipePrototype.ResultCount > 1 ? $" x{_recipePrototype.ResultCount}" : "";
+        Name.Text = $"{Loc.GetString(result.Name)} {counter}" ;
     }
 
     private void UpdateView()
     {
-        View.Texture = _sprite.GetPrototypeIcon(_recipePrototype.Result).Default;
+        View.SetPrototype(_recipePrototype.Result);
     }
 }

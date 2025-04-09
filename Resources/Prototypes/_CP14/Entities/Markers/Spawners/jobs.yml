@@ -38,36 +38,6 @@
       - state: green
       - state: guard
 
-# Bank
-
-- type: entity
-  id: CP14SpawnPointCommandant
-  parent: CP14SpawnPointJobBase
-  name: commandant
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Commandant
-  - type: Sprite
-    layers:
-      - state: green
-      - state: commandant
-
-- type: entity
-  id: CP14SpawnPointBanker
-  parent: CP14SpawnPointJobBase
-  name: merchant
-  categories:
-  - Spawner
-  components:
-  - type: SpawnPoint
-    job_id: CP14Banker
-  - type: Sprite
-    layers:
-      - state: green
-      - state: banker
-
 # Mercenary
 
 - type: entity
@@ -83,6 +53,50 @@
     layers:
       - state: green
       - state: adventurer
+
+- type: entity
+  id: CP14SpawnPointGuildmaster
+  parent: CP14SpawnPointJobBase
+  name: guildmaster
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Guildmaster
+  - type: Sprite
+    layers:
+      - state: green
+      - state: guildmaster
+
+# Artisans
+
+- type: entity
+  id: CP14SpawnPointApprentice
+  parent: CP14SpawnPointJobBase
+  name: apprentice
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Apprentice
+  - type: Sprite
+    layers:
+      - state: green
+      - state: workman #TODO Replace
+
+- type: entity
+  id: CP14SpawnPointMerchant
+  parent: CP14SpawnPointJobBase
+  name: merchant
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Merchant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: merchant
 
 - type: entity
   id: CP14SpawnPointAlchemist

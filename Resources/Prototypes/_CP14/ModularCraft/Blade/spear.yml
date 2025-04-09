@@ -1,0 +1,94 @@
+#Concept:
+# + High Throwable damage
+#   Piercing animation
+# - Low Melee Damage
+
+- type: modularPart
+  id: BaseBladeSpear
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponThrowable
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:AddComponents
+    override: true
+    components:
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Piercing: 16
+    - type: ThrowingAngle
+      angle: 135
+    - type: EmbeddableProjectile
+      offset: -0.15,-0.15
+      removalTime: 1.5
+  - !type:EditMeleeWeapon
+    newWideAnimation: CP14WeaponArcThrust
+    angleMultiplier: 0
+    bonusDamage:
+      types:
+        Piercing: 8
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Piercing: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSpear
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSpear
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSpear
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilSpear
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSpear
+    - BaseBladeMithril

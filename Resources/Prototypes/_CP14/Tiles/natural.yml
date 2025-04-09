@@ -39,7 +39,37 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
-  color: "#452f27"
+
+- type: tile
+  editorHidden: false
+  id: CP14FloorMarbleCave
+  name: cp14-tiles-marble-cave
+  sprite: /Textures/_CP14/Tiles/marble_cave.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  deconstructTools: [ CP14Digging ]
+  isSubfloor: true
+  itemDrop: CP14MarbleBlock1
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
 
 - type: tile
   editorHidden: false
@@ -71,7 +101,6 @@
     collection: FootstepSnow #TODO
   heatCapacity: 10000
   weather: true
-  color: "#dccd9e"
 
 - type: tile
   id: CP14FloorGrass
@@ -104,7 +133,6 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  color: "#4a613a"
 
 - type: tile
   id: CP14FloorGrassLight
@@ -137,7 +165,6 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  color: "#4a613a"
 
 - type: tile
   id: CP14FloorGrassTall
@@ -170,4 +197,118 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  color: "#4a613a"
+
+- type: tile
+  id: CP14FloorSnowDeepDeep
+  editorHidden: false
+  name: cp14-tiles-snow-deep-deep
+  sprite: /Textures/_CP14/Tiles/SnowDeepDeep/snow.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1000 # Because snowfall!
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/SnowDeepDeep/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_S.png
+    East: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_E.png
+    North: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_N.png
+    West: /Textures/_CP14/Tiles/SnowDeepDeep/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomSnowLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorSnowDeep
+  editorHidden: false
+  name: cp14-tiles-snow-deep
+  sprite: /Textures/_CP14/Tiles/SnowDeep/snow.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1001 # Because snowfall!
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/SnowDeep/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/SnowDeep/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/SnowDeep/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/SnowDeep/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/SnowDeep/double_edge_S.png
+    East: /Textures/_CP14/Tiles/SnowDeep/double_edge_E.png
+    North: /Textures/_CP14/Tiles/SnowDeep/double_edge_N.png
+    West: /Textures/_CP14/Tiles/SnowDeep/double_edge_W.png
+  baseTurf: CP14FloorSnowDeepDeep
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomSnowLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorSnow
+  editorHidden: false
+  name: cp14-tiles-snow
+  sprite: /Textures/_CP14/Tiles/Snow/snow.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1002 # Because snowfall!
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Snow/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Snow/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Snow/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Snow/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Snow/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Snow/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Snow/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Snow/double_edge_W.png
+  baseTurf: CP14FloorSnowDeep
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomSnowLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorIce
+  editorHidden: false
+  name: tiles-ice
+  sprite: /Textures/_CP14/Tiles/ice.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  isSubfloor: false
+  heatCapacity: 10000
+  mobFriction: 0.5
+  mobFrictionNoInput: 0.05
+  mobAcceleration: 2
+  weather: true

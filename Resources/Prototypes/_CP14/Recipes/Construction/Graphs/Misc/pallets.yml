@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: CP14WoodenPallet
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WoodenPallet
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+    - node: CP14WoodenPallet
+      entity: CP14WoodenPallet

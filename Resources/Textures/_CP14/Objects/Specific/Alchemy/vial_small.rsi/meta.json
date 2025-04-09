@@ -4,11 +4,17 @@
     "x": 32,
     "y": 32
   },
-  "license": "CLA",
+  "license": "CC-BY-SA-4.0",
   "copyright": "Created by TheShuEd (Github) ",
   "states": [
     {
       "name": "vial"
+    },
+    {
+      "name": "bomb"
+    },
+    {
+      "name": "label"
     },
     {
       "name": "liq-1"
@@ -24,6 +30,12 @@
     },
     {
       "name": "liq-5"
+    },
+    {
+      "name": "reinforcement"
+    },
+    {
+      "name": "reinforcement_back"
     }
   ]
 }

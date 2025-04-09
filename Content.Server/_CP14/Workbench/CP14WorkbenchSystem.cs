@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using System.Numerics;
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server.Stack;
@@ -15,6 +16,7 @@ using Content.Shared.UserInterface;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Workbench;
 
@@ -29,6 +31,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -64,10 +67,9 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
     private void OnBeforeUIOpen(Entity<CP14WorkbenchComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        UpdateUIRecipes(ent);
+        UpdateUIRecipes(ent, args.User);
     }
 
-    // TODO: Replace Del to QueueDel when it's will be works with events
     private void OnCraftFinished(Entity<CP14WorkbenchComponent> ent, ref CP14CraftDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
@@ -76,77 +78,41 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         if (!_proto.TryIndex(args.Recipe, out var recipe))
             return;
 
-        var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates, ent.Comp.WorkbenchRadius, LookupFlags.Uncontained);
+        var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates,
+            ent.Comp.WorkbenchRadius,
+            LookupFlags.Uncontained);
 
-        if (!CanCraftRecipe(recipe, placedEntities))
+        if (!CanCraftRecipe(recipe, placedEntities, args.User))
         {
-            _popup.PopupEntity(Loc.GetString("cp14-workbench-no-resource"), ent, args.User);
+            _popup.PopupEntity(Loc.GetString("cp14-workbench-cant-craft"), ent, args.User);
             return;
         }
 
-        var resultEntity = Spawn(_proto.Index(args.Recipe).Result);
-        _stack.TryMergeToContacts(resultEntity);
-
-        _solutionContainer.TryGetSolution(resultEntity, recipe.Solution, out var resultSoln, out var resultSolution);
-        if (recipe.TryMergeSolutions && resultSoln is not null)
+        var resultEntities = new HashSet<EntityUid>();
+        for (int i = 0; i < recipe.ResultCount; i++)
         {
-            resultSoln.Value.Comp.Solution.MaxVolume = 0;
-            _solutionContainer.RemoveAllSolution(resultSoln.Value); //If we combine ingredient solutions, we do not use the default solution prescribed in the entity.
+            var resultEntity = Spawn(recipe.Result);
+            resultEntities.Add(resultEntity);
         }
 
-        foreach (var requiredIngredient  in recipe.Entities)
+        foreach (var req in recipe.Requirements)
         {
-            var requiredCount = requiredIngredient.Value;
-            foreach (var placedEntity in placedEntities)
-            {
-                if (!TryComp<MetaDataComponent>(placedEntity, out var metaData) || metaData.EntityPrototype is null)
-                    continue;
-
-                var placedProto = metaData.EntityPrototype.ID;
-                if (placedProto == requiredIngredient.Key && requiredCount > 0)
-                {
-                    // Trying merge solutions
-                    if (recipe.TryMergeSolutions
-                        && resultSoln is not null
-                        && _solutionContainer.TryGetSolution(placedEntity, recipe.Solution, out var ingredientSoln, out var ingredientSolution))
-                    {
-                        resultSoln.Value.Comp.Solution.MaxVolume += ingredientSoln.Value.Comp.Solution.MaxVolume;
-                        _solutionContainer.TryAddSolution(resultSoln.Value, ingredientSolution);
-                    }
-
-                    requiredCount--;
-                    Del(placedEntity);
-                }
-            }
+            req.PostCraft(EntityManager, _proto, placedEntities, args.User);
         }
 
-        foreach (var requiredStack in recipe.Stacks)
+        //We teleport result to workbench AFTER craft.
+        foreach (var resultEntity in resultEntities)
         {
-            var requiredCount = requiredStack.Value;
-            foreach (var placedEntity in placedEntities)
-            {
-                if (!_stackQuery.TryGetComponent(placedEntity, out var stack))
-                    continue;
-
-                if (stack.StackTypeId != requiredStack.Key)
-                    continue;
-
-                var count = (int)MathF.Min(requiredCount, stack.Count);
-
-                if (stack.Count - count <= 0)
-                    Del(placedEntity);
-                else
-                    _stack.SetCount(placedEntity, stack.Count - count, stack);
-
-                requiredCount -= count;
-            }
+            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates.Offset(new Vector2(_random.NextFloat(-0.25f, 0.25f), _random.NextFloat(-0.25f, 0.25f))));
         }
-        _transform.SetCoordinates(resultEntity,  Transform(ent).Coordinates);
-        UpdateUIRecipes(ent);
+
+        UpdateUIRecipes(ent, args.User);
         args.Handled = true;
     }
 
-    private void StartCraft(Entity<CP14WorkbenchComponent> workbench, EntityUid user, CP14WorkbenchRecipePrototype recipe)
+    private void StartCraft(Entity<CP14WorkbenchComponent> workbench,
+        EntityUid user,
+        CP14WorkbenchRecipePrototype recipe)
     {
         var craftDoAfter = new CP14CraftDoAfterEvent
         {
@@ -169,70 +135,14 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
         _audio.PlayPvs(recipe.OverrideCraftSound ?? workbench.Comp.CraftSound, workbench);
     }
 
-    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities)
+    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities, EntityUid user)
     {
-        var indexedIngredients = IndexIngredients(entities);
-        foreach (var requiredIngredient  in recipe.Entities)
+        foreach (var req in recipe.Requirements)
         {
-            if (!indexedIngredients.TryGetValue(requiredIngredient.Key, out var availableQuantity) ||
-                availableQuantity < requiredIngredient.Value)
+            if (!req.CheckRequirement(EntityManager, _proto, entities, user, recipe))
                 return false;
         }
 
-        foreach (var (key, value) in recipe.Stacks)
-        {
-            var count = 0;
-            foreach (var ent in entities)
-            {
-                if (_stackQuery.TryGetComponent(ent, out var stack))
-                {
-                    if (stack.StackTypeId != key)
-                        continue;
-
-                    count += stack.Count;
-                }
-            }
-
-            if (count < value)
-                return false;
-        }
         return true;
-    }
-
-    private string GetCraftRecipeMessage(string desc, CP14WorkbenchRecipePrototype recipe)
-    {
-        var result = desc + "\n \n" + Loc.GetString("cp14-workbench-recipe-list")+ "\n";
-
-        foreach (var pair in recipe.Entities)
-        {
-            var proto = _proto.Index(pair.Key);
-            result += $"{proto.Name} x{pair.Value}\n";
-        }
-
-        foreach (var pair in recipe.Stacks)
-        {
-            var proto = _proto.Index(pair.Key);
-            result += $"{proto.Name} x{pair.Value}\n";
-        }
-
-        return result;
-    }
-
-    private Dictionary<EntProtoId, int> IndexIngredients(HashSet<EntityUid> ingredients)
-    {
-        var indexedIngredients = new Dictionary<EntProtoId, int>();
-
-        foreach (var ingredient in ingredients)
-        {
-            var protoId = _metaQuery.GetComponent(ingredient).EntityPrototype?.ID;
-            if (protoId == null)
-                continue;
-
-            if (indexedIngredients.ContainsKey(protoId))
-                indexedIngredients[protoId]++;
-            else
-                indexedIngredients[protoId] = 1;
-        }
-        return indexedIngredients;
     }
 }

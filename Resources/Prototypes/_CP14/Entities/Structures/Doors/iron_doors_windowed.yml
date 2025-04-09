@@ -30,9 +30,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  #- type: Construction
-  #  graph: CP14WoodenDoor
-  #  node: CP14WoodenDoor
+  - type: Construction
+    graph: CP14IronDoor
+    node: CP14IronDoor
 
 - type: entity
   id: CP14IronDoorWindowedMirrored
@@ -42,42 +42,6 @@
   - type: Door
     openSpriteState: open_mirrored
     closedSpriteState: closed_mirrored
-  #- type: Construction
-  #  graph: CP14WoodenDoor
-  #  node: CP14WoodenDoorMirrored
-
-# Bank
-
-- type: entity
-  parent: CP14IronDoorWindowed
-  id: CP14IronDoorWindowedBankEntrance
-  suffix: Bank Entrance
-  components:
-  - type: CP14Lock
-    autoGenerateShape: BankEntrance
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: 
-  - CP14IronDoorWindowedBankEntrance
-  - CP14IronDoorWindowedMirrored
-  id: CP14IronDoorWindowedMirroredBankEntrance
-  suffix: Bank Entrance, Mirrored
-
-- type: entity
-  parent: CP14IronDoorWindowed
-  id: CP14IronDoorWindowedBlacksmith
-  suffix: Blacksmith
-  components:
-  - type: CP14Lock
-    autoGenerateShape: Blacksmith
-  - type: Lock
-    locked: true
-
-- type: entity
-  parent: 
-  - CP14IronDoorWindowedBlacksmith
-  - CP14IronDoorWindowedMirrored
-  id: CP14IronDoorWindowedMirroredBlacksmith
-  suffix: Blacksmith, Mirrored
+  - type: Construction
+    graph: CP14IronDoor
+    node: CP14IronDoorMirrored

@@ -1,0 +1,17 @@
+- type: sourcePort
+  id: CP14Pressed
+  name: cp14-signal-port-name-pressed
+  description: cp14-signal-port-description-pressed
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: CP14Released
+  name: cp14-signal-port-name-released
+  description: cp14-signal-port-description-released
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: CP14PowerSource
+  name: cp14-signal-port-name-power-source
+  description: cp14-signal-port-description-power-source
+  defaultLinks: [ CP14PowerTarget ]

@@ -14,6 +14,8 @@
     state: filler
   - type: ActivatableUI
     key: enum.CP14WorkbenchUiKey.Key
+    requiresComplex: true
+    singleUser: true
   - type: Climbable
   - type: Clickable
   - type: CP14Workbench
@@ -24,19 +26,6 @@
     interfaces:
       enum.CP14WorkbenchUiKey.Key:
         type: CP14WorkbenchBoundUserInterface
-
-- type: entity
-  parent:
-  - CP14BaseWorkbench
-  - CP14BaseFlammable
-  id: CP14Workbench
-  name: workbench
-  description: Table for the production of various basic tools.
-  components:
-  - type: Sprite
-    state: workbench
-  - type: Icon
-    state: workbench
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -66,6 +55,19 @@
           CP14WoodenPlanks1:
             min: 1
             max: 2
+
+- type: entity
+  parent:
+  - CP14BaseWorkbench
+  - CP14BaseFlammable
+  id: CP14Workbench
+  name: workbench
+  description: Table for the production of various basic tools.
+  components:
+  - type: Sprite
+    state: workbench
+  - type: Icon
+    state: workbench
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
@@ -120,65 +122,3 @@
       collection: CP14Sawing #TODO
     recipeTags:
     - CP14RecipeSewing
-
-- type: entity
-  id: CP14WorkbenchAnvil
-  parent:
-  - CP14BaseWorkbench
-  name: anvil
-  description: I feel really bad, please someone fix this.
-  components:
-  - type: Sprite
-    state: anvil
-  - type: Icon
-    state: anvil
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 250
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: CP14Workbench
-    craftSound:
-      collection: CP14Sawing #TODO
-    recipeTags:
-    - CP14RecipeAnvil
-
-- type: entity
-  id: CP14WorkbenchFurnace
-  parent:
-  - CP14BaseWorkbench
-  name: melting furnace
-  description: I feel really bad, please someone fix this.
-  components:
-  - type: Sprite
-    state: furnace
-  - type: Icon
-    state: furnace
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 150
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: CP14Workbench
-    craftSound:
-      collection: CP14Sawing #TODO
-    recipeTags:
-    - CP14RecipeMeltingFurnace

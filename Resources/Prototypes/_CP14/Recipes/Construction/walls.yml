@@ -1,6 +1,6 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden wall
+  name: wooden wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WoodenWall
   graph: CP14WallWood
@@ -18,7 +18,43 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden window
+  name: wooden birch wall
+  description: Sturdy enough to cover you from threats or cold winds.
+  id: CP14WoodenWallBirch
+  graph: CP14WallWood
+  startNode: start
+  targetNode: WallWoodenBirch
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: palisade
+  description: A wall of sharp logs. Not that it's a safe haven.
+  id: CP14WallWoodenPalisade
+  graph: CP14WallWoodenPalisade
+  startNode: start
+  targetNode: CP14WallWoodenPalisade
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/wooden_palisad.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: wooden window
   description: A wooden wall with a glass window in it.
   id: CP14WindowWooden
   graph: CP14WallWood
@@ -36,7 +72,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Earth cliffs
+  name: earth cliffs
   description: A tall pile of dirt. Can a house be built from it?
   id: CP14WallDirt
   graph: CP14WallDirt
@@ -54,7 +90,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Stone wall
+  name: stonebrick wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WallStonebrick
   graph: CP14WallStonebrick
@@ -67,5 +103,61 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: marble brick wall
+  description: Sturdy enough to cover you from threats or cold winds.
+  id: CP14WallMarbleBrick
+  graph: CP14WallMarbleBrick
+  startNode: start
+  targetNode: CP14WallMarbleBrick
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: iron grille
+  description: Strong iron grille.
+  id: CP14FenceIronGrilleStraight
+  graph: CP14FenceIronGrilleStraight
+  startNode: start
+  targetNode: CP14FenceIronGrilleStraight
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Fences/iron_grille.rsi
+    state: straight
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: iron grille window
+  description: The upper half of the solid grid.
+  id: CP14FenceIronGrilleWindowStraight
+  graph: CP14FenceIronGrilleWindowStraight
+  startNode: start
+  targetNode: CP14FenceIronGrilleWindowStraight
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Fences/iron_grille_top.rsi
+    state: straight
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
   conditions:
     - !type:TileNotBlocked

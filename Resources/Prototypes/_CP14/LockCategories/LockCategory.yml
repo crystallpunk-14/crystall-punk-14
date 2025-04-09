@@ -1,66 +1,14 @@
-- type: CP14LockCategory
-  id: Debug
-  complexity: 10
+- type: CP14LockGroup
+  id: TavernDorms
 
-# Bank
-
-- type: CP14LockCategory
-  id: BankEntrance
-  complexity: 3
-
-- type: CP14LockCategory
-  id: BankStaff
-  complexity: 5
-
-- type: CP14LockCategory
-  id: BankVault
-  complexity: 7
-
-- type: CP14LockCategory
-  id: BankCommandantRoom
-  complexity: 7
-
-- type: CP14LockCategory
-  id: BankSafe
-  complexity: 5
-
-# Tavern 
-
-- type: CP14LockCategory
-  id: TavernHall
-  complexity: 3
-
-- type: CP14LockCategory
-  id: TavernStaff
-  complexity: 5
-
-
-- type: CP14LockCategory
-  id: TavernDorms1
-  complexity: 3
-
-- type: CP14LockCategory
-  id: TavernDorms2
-  complexity: 3
-
-- type: CP14LockCategory
-  id: TavernDorms3
-  complexity: 3
-
-- type: CP14LockCategory
-  id: TavernDorms4
-  complexity: 3
-
-- type: CP14LockCategory
-  id: TavernDorms5
-  complexity: 3
-
-# Mercenary 
-
-- type: CP14LockCategory
-  id: Alchemy
-  complexity: 5
-
-- type: CP14LockCategory
+- type: CP14LockGroup
   id: Blacksmith
-  complexity: 5
+
+- type: CP14LockGroup
+  id: Alchemist
+
+- type: CP14LockGroup
+  id: PersonalHouse
+
+- type: CP14LockGroup
+  id: Merchant

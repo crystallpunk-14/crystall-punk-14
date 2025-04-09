@@ -5,8 +5,9 @@
   name: Welcome to CrystallEdge
   text: "/ServerInfo/_CP14/Guidebook_EN/Welcome.xml"
   children:
-  - CP14_EN_Alchemy
-  - CP14_EN_Demiplanes
+  - CP14_EN_Species
+  - CP14_EN_Jobs
+  - CP14_EN_Imperial_Laws
 
 - type: guideEntry
   crystallPunkAllowed: true
@@ -15,5 +16,6 @@
   name: Добро пожаловать в CrystallEdge
   text: "/ServerInfo/_CP14/Guidebook_RU/Welcome.xml"
   children:
-  - CP14_RU_Alchemy
-  - CP14_RU_Demiplanes
+  - CP14_RU_Species
+  - CP14_RU_Jobs
+  - CP14_RU_Imperial_Laws

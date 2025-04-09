@@ -1,0 +1,125 @@
+- type: marking
+  id: CP14SilvaHeadBark1
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark1
+
+- type: marking
+  id: CP14SilvaHeadBark2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark2
+
+- type: marking
+  id: CP14SilvaHeadBark3
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark3
+
+- type: marking
+  id: CP14SilvaHeadBark4
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark4
+
+- type: marking
+  id: CP14SilvaHeadBark5
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark5
+
+- type: marking
+  id: CP14SilvaHeadBark6
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d977c2" #Pink flowers!
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark6
+
+- type: marking
+  id: CP14SilvaHeadBark7
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d977c2" #Pink flowers!
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark7
+
+- type: marking
+  id: CP14SilvaHeadBark8
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark8
+
+- type: marking
+  id: CP14SilvaHeadBark9
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Silva ]
+  coloring: 
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _CP14/Mobs/Customization/silva_head_bark.rsi
+    state: bark9

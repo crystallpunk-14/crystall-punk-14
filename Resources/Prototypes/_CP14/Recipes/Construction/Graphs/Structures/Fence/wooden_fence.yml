@@ -1,0 +1,56 @@
+- type: constructionGraph
+  id: CP14FenceWood
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14FenceWoodSmallStraight
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: CP14FenceWoodSmallCorner
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: CP14FenceWoodSmallGate
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: CP14FenceWoodStraight
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+              doAfter: 2
+        - to: CP14FenceWoodCorner
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+              doAfter: 2
+        - to: CP14FenceWoodGate
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+              doAfter: 2
+              
+    - node: CP14FenceWoodSmallStraight
+      entity: CP14FenceWoodSmallStraight
+              
+    - node: CP14FenceWoodSmallCorner
+      entity: CP14FenceWoodSmallCorner
+              
+    - node: CP14FenceWoodSmallGate
+      entity: CP14FenceWoodSmallGate
+
+    - node: CP14FenceWoodStraight
+      entity: CP14FenceWoodStraight
+              
+    - node: CP14FenceWoodCorner
+      entity: CP14FenceWoodCorner
+              
+    - node: CP14FenceWoodGate
+      entity: CP14FenceWoodGate

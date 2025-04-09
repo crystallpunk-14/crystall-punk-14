@@ -6,17 +6,21 @@
   - BaseStationAllEventsEligible
   - BaseStationJobsSpawning
   - BaseStationAlertLevels #Checks fail without it
-  - CP14BaseTrading
-  - CP14BaseCommonObjectives
+  - BaseStationRecords # Required for lobby manifest + cryo leave
+  - CP14BaseStationCommonObjectives
+  - CP14BaseStationSalary
 
 - type: entity
-  id: CP14BaseTrading
-  abstract: true
-  components:
-    - type: CP14StationTravelingStoreShipTarget
-
-- type: entity
-  id: CP14BaseCommonObjectives
+  id: CP14BaseStationCommonObjectives
   abstract: true
   components:
     - type: CP14StationCommonObjectives
+
+- type: entity
+  id: CP14BaseStationSalary
+  abstract: true
+  components:
+    - type: CP14StationSalary
+      #frequency: every 20 minutes
+      salary:
+        CP14Guard: 550

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CLA",
+  "license": "All right reserved",
   "copyright": "Created by vladimir.s ",
   "size": {
     "x": 64,
@@ -21,6 +21,29 @@
     },
     {
       "name": "eyes"
+    },
+    {
+      "name": "anim",
+      "delays": [
+        [
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7,
+          0.7
+        ]
+      ]
+    },
+    {
+      "name": "wire"
     }
   ]
 }

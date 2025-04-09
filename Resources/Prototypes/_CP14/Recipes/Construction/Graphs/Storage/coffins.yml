@@ -1,0 +1,19 @@
+- type: constructionGraph
+  id: CP14CrateCoffin
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14CrateCoffin
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+            - material: CP14Cloth
+              amount: 2
+            - material: CP14Nail
+              amount: 1
+              doAfter: 4
+    - node: CP14CrateCoffin
+      entity: CP14CrateCoffin

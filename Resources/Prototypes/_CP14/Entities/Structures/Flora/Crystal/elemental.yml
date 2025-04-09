@@ -1,0 +1,259 @@
+- type: entity
+  id: CP14CrystalBase
+  abstract: true
+  parent: BaseRock
+  name: quartz
+  description: Natural quartz crystals that can absorb the magical energy of the world around them. 
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Flora/Crystal/crystal.rsi
+    layers:
+      - state: medium1
+        map: ["random"]
+        shader: unshaded
+    offset: 0, 0.25
+    noRot: true
+  - type: InteractionPopup
+    interactSuccessString: popup-cp14crystal-ding
+    messagePerceivedByOthers: popup-cp14crystal-ding
+    interactSuccessSound:
+      collection: CP14CrystalDings
+      params:
+        variation: 0.03
+  - type: Damageable 
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 60
+        mask:
+          - MachineMask
+        layer:
+          - MidImpassable
+          - LowImpassable
+          - BulletImpassable
+          - Opaque
+  - type: RandomSprite
+    available:
+    - random:
+        big0: Inherit
+        big1: Inherit
+        big2: Inherit
+        medium0: Inherit
+        medium1: Inherit
+        medium2: Inherit
+        medium3: Inherit
+        medium4: Inherit
+        small0: Inherit
+        small1: Inherit
+        small2: Inherit
+        small3: Inherit
+        small4: Inherit
+        small5: Inherit
+  - type: PointLight
+    netSync: false
+    radius: 2.5
+    energy: 1
+
+# Normal
+
+- type: entity
+  id: CP14CrystalEmpty
+  suffix: Normal
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
+    layers:
+      - state: medium1
+        map: ["random"] #Disabling unshaded
+  - type: PointLight
+    enabled: false
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardBase:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalEarth
+  parent: CP14CrystalBase
+  suffix: Terra
+  components:
+  - type: PointLight
+    color: "#70533f"
+  - type: Sprite
+    color: "#70533f"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardEarth:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalFire
+  parent: CP14CrystalBase
+  suffix: Ignis
+  components:
+  - type: PointLight
+    color: "#d9741c"
+  - type: Sprite
+    color: "#d9741c"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardFire:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalWater
+  parent: CP14CrystalBase
+  suffix: Aqua
+  components:
+  - type: PointLight
+    color: "#1c94d9"
+  - type: Sprite
+    color: "#1c94d9"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardWater:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalAir
+  parent: CP14CrystalBase
+  suffix: Aer
+  components:
+  - type: PointLight
+    color: "#fdfe86"
+  - type: Sprite
+    color: "#fdfe86"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardAir:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalOrder
+  parent: CP14CrystalBase
+  suffix: Ordo
+  components:
+  - type: PointLight
+    color: "#d9d9d9"
+  - type: Sprite
+    color: "#d9d9d9"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardOrder:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalChaos
+  parent: CP14CrystalBase
+  suffix: Perditio
+  components:
+  - type: PointLight
+    color: "#5c5c5c"
+  - type: Sprite
+    color: "#5c5c5c"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardChaos:
+                min: 1
+                max: 2
+          - !type:TriggerBehavior
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]

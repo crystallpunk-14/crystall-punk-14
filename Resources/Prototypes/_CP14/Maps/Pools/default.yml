@@ -2,6 +2,7 @@
   id: DefaultMapPool
   maps:
    - Comoss
+   #- Factoria
 
 - type: gameMapPool
   id: DeathMatchMapPool

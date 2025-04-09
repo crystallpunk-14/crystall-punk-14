@@ -1,0 +1,104 @@
+- type: entity
+  id: CP14ActionSpellFlashLight
+  name: Flash Light
+  description: Creates a flash of bright, blinding light.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: flash_light
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectFlashLight
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SpawnEffectFlashLight
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Lux clara..."
+    endSpeech: "excaecant inimicos meos"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFlashLight
+  - type: EntityWorldTargetAction
+    range: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/light.rsi
+      state: flash_light
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 5
+      castDelay: 0.5
+      breakOnMove: false
+
+- type: entity
+  id: CP14RuneFlashLight
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#efedff"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#efedff"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectFlashLight
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#efedff"
+      shader: unshaded
+
+- type: entity
+  id: CP14SpawnEffectFlashLight
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: /Textures/Objects/Fun/goldbikehorn.rsi
+    visible: false
+    state: icon
+  - type: TriggerOnSpawn   
+  - type: TimedDespawn
+    lifetime: 5
+  - type: FlashOnTrigger
+    range: 4
+    duration: 4
+  - type: SpawnOnTrigger
+    proto: CP14SpellFlashEffect
+
+- type: entity
+  id: CP14SpellFlashEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+    - type: PointLight
+      enabled: true
+      radius: 5
+      energy: 14
+      netsync: false
+    - type: LightFade
+      duration: 0.5
+    - type: TimedDespawn
+      lifetime: 0.5
+
+- type: entity
+  parent: CP14BaseSpellScrollLight
+  id: CP14SpellScrollFlashLight
+  name: flash light spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFlashLight

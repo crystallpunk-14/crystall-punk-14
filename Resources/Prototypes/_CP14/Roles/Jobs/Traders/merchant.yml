@@ -1,0 +1,21 @@
+- type: job
+  id: CP14Merchant
+  name: cp14-job-name-merchant
+  description: cp14-job-desc-merchant
+  playTimeTracker: CP14JobMerchant
+  startingGear: CP14MerchantGear
+  icon: "CP14JobIconMerchant"
+  supervisors: cp14-job-supervisors-commandant
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600 # 1 hours
+
+- type: startingGear
+  id: CP14MerchantGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalSmall
+  equipment:
+    belt1: CP14WalletFilledTest
+    keys: CP14KeyRingMerchant

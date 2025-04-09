@@ -1,0 +1,64 @@
+[whitelist]
+enabled = true
+
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+level = 1
+enabled = false
+
+[net]
+tickrate = 30
+port = 1212
+bindto = "::,0.0.0.0"
+max_connections = 100
+
+[game]
+hostname = "⚔️  CrystallEdge [RU] ⚔️ Status: Whitelist only"
+desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in fantasy style"
+lobbyenabled = true
+soft_max_players = 40
+maxplayers = 80
+lobbyduration = 300
+role_timers = true
+
+[server]
+rules_file = "CP14SandboxRU"
+
+[hub]
+advertise = true
+tags = "lang:ru, lang:en, rp:med, region:eu_e"
+server_url = ""
+hub_urls = "https://hub.spacestation14.com/"
+
+[infolinks]
+discord = "https://discord.gg/8BEPa9JbZ6"
+
+[procgen]
+preload = false
+
+[gateway]
+generator_enabled = false
+
+[shuttle]
+arrivals = false
+arrivals_planet = false
+preload_grids = false
+auto_call_time = 0
+
+[admin]
+deadmin_on_join = false
+
+[ic]
+flavor_text = true
+
+[tips]
+dataset = "CP14Tips"
+
+[ooc]
+show_ooc_patron_color = false
+enable_during_round = true
+
+[cp14]
+discord_auth_enabled = true
+closet_beta_test = true

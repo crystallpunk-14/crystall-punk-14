@@ -1,3 +1,5 @@
+using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared.FixedPoint;
 using Content.Shared.Preferences.Loadouts.Effects;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -11,7 +13,7 @@ namespace Content.Shared.Preferences.Loadouts;
 public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
 {
     [IdDataField]
-    public string ID { get; } = string.Empty;
+    public string ID { get; private set; } = string.Empty;
 
     /*
      * You can either use an existing StartingGearPrototype or specify it inline to avoid bloating yaml.
@@ -50,4 +52,10 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// </summary>
     [DataField]
     public List<EntProtoId> Actions { get; set; } = new();
+
+    /// <summary>
+    /// CP14 - it is possible to give skill trees to players who have taken this loadout
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> SkillTree = new();
 }

@@ -1,0 +1,36 @@
+- type: job
+  id: CP14Guildmaster
+  name: cp14-job-name-guildmaster
+  description: cp14-job-desc-guildmaster
+  playTimeTracker: CP14JobGuildmaster
+  startingGear: CP14GuildmasterGear
+  icon: "CP14JobIconGuildmaster"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  canBeAntag: false
+  supervisors: cp14-job-supervisors-command
+  weight: 2
+  requirements:
+    - !type:RoleTimeRequirement
+      role: CP14JobBlacksmith
+      time: 3600 # 1 hours
+    - !type:RoleTimeRequirement
+      role: CP14JobAlchemist
+      time: 3600 # 1 hours
+    - !type:RoleTimeRequirement
+      role: CP14JobAdventurer
+      time: 7200 # 2 hours
+    - !type:TraitsRequirement
+      inverted: true
+      traits:
+      - CP14ManaWasting
+
+- type: startingGear
+  id: CP14GuildmasterGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+  equipment:
+    belt1: CP14WalletFilledTest
+    keys: CP14KeyRingGuildmaster
+    belt2: CP14ModularGuildmasterRapier

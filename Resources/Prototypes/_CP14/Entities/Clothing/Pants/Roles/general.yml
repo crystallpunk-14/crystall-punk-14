@@ -1,0 +1,80 @@
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsTrouserWhite
+  name: white trouser
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Trousers/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Trousers/white.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsTrouserDarkBlue
+  name: dark trouser
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsLoincloth
+  name: loincloth
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/loincloth.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/loincloth.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsMercenaryTrousers
+  name: mercenary trousers
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsGreen
+  name: green pants
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/green.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/green.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsBrown
+  name: brown pants
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/brown.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/brown.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsJestersPantaloons
+  name: jester's pantaloons
+  description: It's like regular pantaloons. But you can be seen from two miles away.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/Trousers/jesters_pantaloons.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/Trousers/jesters_pantaloons.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsJagermeisterTrousers
+  name: jagermeister's trousers
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/jagermeister_trousers.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/jagermeister_trousers.rsi

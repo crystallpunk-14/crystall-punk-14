@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularIronAxe
+  parent: CP14ModularGripWoodenLong
+  name: iron axe
+  description: A heavy axe for cutting firewood or heads.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronAxe

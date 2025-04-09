@@ -57,3 +57,13 @@
   license: "CC0-1.0"
   copyright: 'by egomassive of Freesound.org.'
   source: "https://freesound.org/people/egomassive/sounds/536728/"
+
+- files: ["ghost_ambi.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by Litruv of Freesound.org.'
+  source: "https://freesound.org/people/Litruv/sounds/175944/"
+
+- files: ["frog1.ogg, frog2.ogg, frog3.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by iainmccurdy of Freesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/iainmccurdy/sounds/743820/"

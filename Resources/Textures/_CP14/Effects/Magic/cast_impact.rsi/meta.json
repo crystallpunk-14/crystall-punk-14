@@ -4,9 +4,39 @@
     "x": 48,
     "y": 48
   },
-  "license": "CLA",
+  "license": "CC-BY-SA-4.0",
   "copyright": "Created by TheShuEd",
   "states": [
+    {
+      "name": "circle_decrease",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "circle_increase",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
     {
       "name": "particles_down",
       "delays": [

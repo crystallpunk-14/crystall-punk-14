@@ -1,8 +1,7 @@
 using System.Numerics;
 using Content.Client.Parallax;
 using Content.Client.Weather;
-using Content.Shared._CP14.DayCycle.Components;
-using Content.Shared._CP14.WorldEdge;
+using Content.Shared._CP14.CloudShadow;
 using Content.Shared.Salvage;
 using Content.Shared.Weather;
 using Robust.Client.GameObjects;
@@ -26,6 +25,7 @@ public sealed partial class StencilOverlay : Overlay
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     private readonly ParallaxSystem _parallax;
     private readonly SharedTransformSystem _transform;
+    private readonly SharedMapSystem _map;
     private readonly SpriteSystem _sprite;
     private readonly WeatherSystem _weather;
 
@@ -35,11 +35,12 @@ public sealed partial class StencilOverlay : Overlay
 
     private readonly ShaderInstance _shader;
 
-    public StencilOverlay(ParallaxSystem parallax, SharedTransformSystem transform, SpriteSystem sprite, WeatherSystem weather)
+    public StencilOverlay(ParallaxSystem parallax, SharedTransformSystem transform, SharedMapSystem map, SpriteSystem sprite, WeatherSystem weather)
     {
         ZIndex = ParallaxSystem.ParallaxZIndex + 1;
         _parallax = parallax;
         _transform = transform;
+        _map = map;
         _sprite = sprite;
         _weather = weather;
         IoCManager.InjectDependencies(this);
@@ -61,7 +62,7 @@ public sealed partial class StencilOverlay : Overlay
         {
             foreach (var (proto, weather) in comp.Weather)
             {
-                if (!_protoManager.TryIndex<WeatherPrototype>(proto, out var weatherProto))
+                if (!_protoManager.TryIndex(proto, out var weatherProto))
                     continue;
 
                 var alpha = _weather.GetPercent(weather, mapUid);
@@ -79,13 +80,6 @@ public sealed partial class StencilOverlay : Overlay
         if (_entManager.TryGetComponent<CP14CloudShadowsComponent>(mapUid, out var shadows))
         {
             DrawCloudShadows(args, shadows, invMatrix);
-        }
-        //CP14 Overlays end
-
-        //CP14 Overlays
-        if (_entManager.TryGetComponent<CP14WorldEdgeComponent>(mapUid, out var worldEdge))
-        {
-            DrawWorldEdge(args, worldEdge, invMatrix);
         }
         //CP14 Overlays end
 

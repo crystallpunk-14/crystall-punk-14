@@ -72,6 +72,9 @@
   - type: CP14DelayedIgnitionSource
   - type: CP14IgnitionModifier
     hideCaution: true
+  - type: Construction
+    graph: CP14Torch
+    node: cp14torch
   - type: MeleeWeapon
     attackRate: 1.5
     wideAnimationRotation: 240
@@ -87,9 +90,13 @@
       params:
         variation: 0.05
         volume: 10
+  - type: Tag
+    tags:
+    - CP14Torch
 
 - type: entity
   parent: CP14Torch
   id: CP14TorchIgnited
+  suffix: Ignited
   components:
   - type: CP14AutoIgnite

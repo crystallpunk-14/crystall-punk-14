@@ -23,19 +23,19 @@
 
 - type: jobIcon
   parent: CP14JobIcon
+  id: CP14JobIconApprentice
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Apprentice
+  jobName: cp14-job-name-apprentice
+
+- type: jobIcon
+  parent: CP14JobIcon
   id: CP14JobIconInnkeeper
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
     state: Innkeeper
   jobName: cp14-job-name-innkeeper
-
-- type: jobIcon
-  parent: CP14JobIcon
-  id: CP14JobIconCaptain
-  icon:
-    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Captain
-  jobName: cp14-job-name-captain
 
 - type: jobIcon
   parent: CP14JobIcon
@@ -55,19 +55,11 @@
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconCommandant
+  id: CP14JobIconMerchant
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Commandant
-  jobName: cp14-job-name-commandant
-
-- type: jobIcon
-  parent: CP14JobIcon
-  id: CP14JobIconBanker
-  icon:
-    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
-    state: Banker
-  jobName: cp14-job-name-banker
+    state: Merchant
+  jobName: cp14-job-name-merchant
 
 - type: jobIcon
   parent: CP14JobIcon
@@ -76,3 +68,11 @@
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
     state: Blacksmith
   jobName: cp14-job-name-blacksmith
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGuildmaster
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Guildmaster
+  jobName: cp14-job-name-guildmaster

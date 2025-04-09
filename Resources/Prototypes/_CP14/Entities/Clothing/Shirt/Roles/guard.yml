@@ -15,15 +15,6 @@
   
 - type: entity
   parent: CP14ClothingShirtGuardBase
-  id: CP14ClothingShirtGuardsChainmailShirtWB
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Shirt/Roles/Guard/wb_chainmail.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Shirt/Roles/Guard/wb_chainmail.rsi
-  
-- type: entity
-  parent: CP14ClothingShirtGuardBase
   id: CP14ClothingShirtGuardsChainmailShirtB
   components:
   - type: Sprite

@@ -1,0 +1,17 @@
+- type: job
+  id: CP14Innkeeper
+  name: cp14-job-name-innkeeper
+  description: cp14-job-desc-innkeeper
+  playTimeTracker: CP14JobInnkeeper
+  startingGear: CP14InnkeeperGear
+  icon: "CP14JobIconInnkeeper"
+  supervisors: cp14-job-supervisors-command
+
+- type: startingGear
+  id: CP14InnkeeperGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+  equipment:
+    belt1: CP14WalletFilledTest
+    keys: CP14KeyRingInnkeeper

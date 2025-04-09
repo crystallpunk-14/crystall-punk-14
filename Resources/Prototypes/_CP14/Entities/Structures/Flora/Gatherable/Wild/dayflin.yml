@@ -1,0 +1,32 @@
+- type: entity
+  id: CP14GatherableDayflin
+  parent: CP14GatherableBase
+  name: yellow dayflin
+  description: A yellow sun flower that smells like melted milk. Can be processed into a yellow dye.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Flora/Flowers/yellow_dayflin.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+        world4: ""
+        world5: ""
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: CP14GatherDayflin
+
+- type: entityLootTable
+  id: CP14GatherDayflin
+  entries:
+  - id: CP14Dayflin
+    amount: 1
+    maxAmount: 2

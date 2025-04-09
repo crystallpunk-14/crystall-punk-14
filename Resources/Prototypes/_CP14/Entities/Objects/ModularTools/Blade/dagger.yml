@@ -1,0 +1,79 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeDaggerBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A dagger blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5
+
+- type: entity
+  parent: CP14ModularBladeDaggerBase
+  id: CP14ModularBladeIronDagger
+  name: iron dagger blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronDagger
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularBladeDaggerBase
+  id: CP14ModularBladeGoldDagger
+  name: golden dagger blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldDagger
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularBladeDaggerBase
+  id: CP14ModularBladeCopperDagger
+  name: copper dagger blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperDagger
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularBladeDaggerBase
+  id: CP14ModularBladeMithrilDagger
+  name: mithril dagger blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilDagger
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

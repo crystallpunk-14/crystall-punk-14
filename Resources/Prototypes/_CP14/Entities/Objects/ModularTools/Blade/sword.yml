@@ -1,0 +1,90 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularBladeSwordBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: A sword blade without a hilt. A blacksmith can use it as a spare part to create a weapon.
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,1
+    storedOffset: 0, 10
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeIronSword
+  name: iron sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeIronSword
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeGoldSword
+  name: golden sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#ffaf47"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeGoldSword
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeCopperSword
+  name: copper sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#bd712f"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeCopperSword
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeMithrilSword
+  name: mithril sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    layers:
+    - state: icon
+      color: "#45d2a4"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeMithrilSword
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeBoneSword
+  name: bone sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBoneSword

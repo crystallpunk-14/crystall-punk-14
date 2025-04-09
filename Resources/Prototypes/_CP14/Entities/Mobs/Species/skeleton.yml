@@ -1,6 +1,6 @@
 - type: entity
-  parent: 
-  - BaseMobSpecies
+  parent:
+  - CP14BaseMobSpeciesNoLife
   - MobFlammable
   id: CP14BaseMobSkeleton
   name: Mr. Skeleton
@@ -14,19 +14,24 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false #Skeleton vampire? Lol?
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "shirt" ]
-    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]
@@ -84,7 +89,7 @@
         layer:
           - MobLayer
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: Skeleton
   - type: Destructible
     thresholds:
@@ -92,19 +97,21 @@
         !type:DamageTrigger
         damage: 50
       behaviors:
-      - !type:GibBehavior { }
+      - !type:GibBehavior
   - type: Vocal
     sounds:
       Male: Skeleton
       Female: Skeleton
       Unsexed: Skeleton
-  #- type: ReplacementAccent
-  #  accent: Skeleton
+  - type: SkeletonAccent
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
   - type: ContainerContainer
   - type: Inventory
     templateId: CP14Human
+  - type: TransferMindOnGib
+  - type: CP14DemiplaneStabilizer
+    enabled: false
 
 - type: entity
   parent: CP14BaseSpeciesDummy

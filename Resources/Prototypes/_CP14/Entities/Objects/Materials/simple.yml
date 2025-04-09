@@ -1,220 +1,4 @@
 - type: entity
-  id: CP14DirtBlock1
-  parent: BaseItem
-  name: dirt block
-  description: A block of excellent black soil.
-  categories: [ ForkFiltered ]
-  components:
-  - type: Item
-    size: Normal
-  - type: Sprite
-    noRot: true
-    sprite: _CP14/Objects/Materials/dirt_block.rsi
-    layers:
-      - state: dirt
-        map: ["base"]
-  - type: FloorTile
-    placeTileSound:
-      collection: CP14Digging
-      params:
-        variation: 0.03
-        volume: 2
-    outputs:
-      - CP14FloorDirt
-  - type: Appearance
-  - type: Stack
-    stackType: CP14Dirt
-    count: 1
-    baseLayer: base
-    layerStates:
-    - dirt
-    - dirt_2
-    - dirt_3
-  - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14Dirt: 100
-
-- type: entity
-  id: CP14DirtBlock10
-  parent: CP14DirtBlock1
-  suffix: 10
-  components:
-  - type: Stack
-    count: 10
-
-- type: entity
-  id: CP14StoneBlock1
-  parent: BaseItem
-  name: stone block
-  description: A block of cold stone.
-  categories: [ ForkFiltered ]
-  components:
-  - type: Item
-    size: Normal
-  - type: Sprite
-    noRot: true
-    sprite: _CP14/Objects/Materials/stone_block.rsi
-    layers:
-      - state: stone
-        map: ["base"]
-  - type: FloorTile
-    placeTileSound:
-      collection: CP14Digging #TODO
-      params:
-        variation: 0.03
-        volume: 2
-    outputs:
-      - CP14FloorFoundation
-  - type: Appearance
-  - type: Stack
-    stackType: CP14Stone
-    count: 1
-    baseLayer: base
-    layerStates:
-    - stone
-    - stone_2
-    - stone_3
-  - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14Stone: 100
-
-- type: entity
-  id: CP14StoneBlock10
-  parent: CP14StoneBlock1
-  suffix: 10
-  components:
-  - type: Stack
-    count: 10
-
-- type: entity
-  id: CP14WoodLog
-  parent: BaseItem
-  name: wooden log
-  description: A piece of unprocessed wood. Good material for building, or starting a fire.
-  categories: [ ForkFiltered ]
-  components:
-  - type: Item
-    size: Normal
-    shape:
-    - 0,0,1,0
-  - type: Sprite
-    sprite: _CP14/Objects/Materials/wood.rsi
-    layers:
-      - state: log
-        map: ["random"]
-  - type: RandomSprite
-    available:
-      - random:
-          log: ""
-          log_2: ""
-          log_3: ""
-  - type: Tag
-    tags:
-    - CP14FireplaceFuel
-    - Wooden
-  - type: Flammable
-    fireSpread: false
-    canResistFire: false
-    alwaysCombustible: true
-    canExtinguish: true
-    cP14FireplaceFuel: 30
-    damage:
-      types:
-        Heat: 1
-  - type: Log
-    spawnedPrototype: CP14WoodenPlanks1
-    spawnCount: 3
-  - type: Appearance
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-
-- type: entity
-  id: CP14WoodenPlanks1
-  parent: BaseItem
-  name: wooden planks
-  description: Treated and ready-to-use wood.
-  categories: [ ForkFiltered ]
-  suffix: 1
-  components:
-  - type: Item
-    size: Normal
-  - type: Sprite
-    sprite: _CP14/Objects/Materials/wood.rsi
-    layers:
-      - state: planks
-        map: ["base"]
-  - type: Tag
-    tags:
-    - CP14FireplaceFuel
-    - Wooden
-  - type: Flammable
-    fireSpread: false
-    canResistFire: false
-    alwaysCombustible: true
-    canExtinguish: true
-    cP14FireplaceFuel: 12
-    damage:
-      types:
-        Heat: 1
-  - type: Appearance
-  - type: FloorTile
-    placeTileSound:
-      path: /Audio/Effects/woodenclosetclose.ogg
-      params:
-        variation: 0.03
-        volume: 2
-    outputs:
-      - CP14FloorOakWoodPlanks # TODO
-  - type: Stack
-    stackType: CP14WoodenPlanks
-    count: 1
-    baseLayer: base
-    layerStates:
-    - planks
-    - planks_2
-    - planks_3
-  - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14WoodenPlanks: 100
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 25
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-
-- type: entity
-  id: CP14WoodenPlanks10
-  parent: CP14WoodenPlanks1
-  suffix: 10
-  components:
-  - type: Stack
-    count: 10
-
-- type: entity
   id: CP14Nail1
   parent: BaseItem
   name: nails
@@ -273,63 +57,25 @@
     slipSound:
       path: /Audio/Effects/weak_hit2.ogg
     launchForwardsMultiplier: 0
-
-- type: entity
-  id: CP14Nail10
-  parent: CP14Nail1
-  suffix: 10
-  components:
-  - type: Stack
-    count: 10
-
-- type: entity
-  id: CP14FloraMaterial1
-  parent: BaseItem
-  name: flora material
-  description: An organic material used for medicinal or construction purposes.
-  suffix: 1
-  categories: [ ForkFiltered ]
-  components:
-  - type: Item
-    size: Tiny
-  - type: Stack
-    stackType: CP14FloraMaterial
-    count: 1
-  - type: Sprite
-    sprite: _CP14/Objects/Materials/flora.rsi
-    layers:
-      - state: grass_material1
-        map: ["random"]
-  - type: RandomSprite
-    available:
-      - random:
-          grass_material1: ""
-          grass_material2: ""
-          grass_material3: ""
   - type: Tag
     tags:
-    - CP14FireplaceFuel
-  - type: Flammable
-    fireSpread: false
-    canResistFire: false
-    alwaysCombustible: true
-    canExtinguish: true
-    cP14FireplaceFuel: 5
-    damage:
-      types:
-        Heat: 1
-  - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14FloraMaterial: 100
+    - CP14Nail
 
 - type: entity
-  id: CP14FloraMaterial2
-  parent: CP14FloraMaterial1
-  suffix: 2
+  id: CP14Nail20
+  parent: CP14Nail1
+  suffix: 20
   components:
-    - type: Stack
-      count: 2
+  - type: Stack
+    count: 20
+
+- type: entity
+  id: CP14Nail50
+  parent: CP14Nail1
+  suffix: 50
+  components:
+  - type: Stack
+    count: 50
 
 - type: entity
   id: CP14String
@@ -359,6 +105,18 @@
     layers:
       - state: cloth_1
         map: ["base"]
+  - type: Healing
+    damageContainers:
+      - CP14Biological
+    damage:
+      types:
+        Slash: -3
+        Piercing: -3
+    bloodlossModifier: -8
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
   - type: Appearance
   - type: Stack
     stackType: CP14Cloth
@@ -396,3 +154,83 @@
       - enum.DamageStateVisualLayers.Base:
           shard1: ""
           shard2: ""
+
+- type: entity
+  id: CP14Snowball
+  parent:
+  - BaseItem
+  - ItemHeftyBase
+  categories: [ ForkFiltered ]
+  name: snowball
+  description: A small handful of snow, handy for throwing.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/snowball.rsi
+    layers:
+    - state: ball
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        hard: true
+        mask:
+        - ItemMask
+  - type: LandAtCursor
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 1 # 1 hits
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 3
+  - type: MeleeWeapon
+    attackRate: 1.8
+    wideAnimationRotation: 225
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Cold: 0
+    soundHit:
+      path: /Audio/_CP14/Effects/snowball.ogg
+      params:
+        variation: 0.250
+        volume: 15
+    cPAnimationLength: 0.15
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Cold: 0
+  - type: StaminaDamageOnCollide
+    damage: 5
+    sound:
+      path: /Audio/Effects/pop.ogg
+      params:
+        variation: 0.250
+        volume: 15
+  - type: Damageable
+  - type: Destructible
+    thresholds: 
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_CP14/Effects/snowball.ogg
+          params:
+            variation: 0.250
+            volume: 15
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SnowEffect:
+            min: 1
+            max: 1

@@ -70,6 +70,14 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_4.rsi
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 2
 
 - type: entity
   parent: CP14DrinkBaseMug

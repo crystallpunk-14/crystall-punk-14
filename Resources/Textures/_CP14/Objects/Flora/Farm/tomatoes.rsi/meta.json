@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "license": "CLA",
+    "license": "CC-BY-SA-4.0",
     "copyright": "Created by omsoyk (Discord), slice created by Artista, plate created by TheShuEd",
     "size": {
       "x": 32,
@@ -18,12 +18,6 @@
       },
       {
         "name": "slice1"
-      },
-      {
-        "name": "plate1"
-      },
-      {
-        "name": "plate2"
       }
     ]
 }

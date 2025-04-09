@@ -2,29 +2,30 @@
   crystallPunkAllowed: true
   id: CP14_RU_Alchemy
   name: Алхимия
-  text: "/ServerInfo/_CP14/Guidebook_RU/Alchemy.xml"
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/Alchemy.xml"
   children:
-  - CP14_RU_BasicAlchemy
-  - CP14_RU_Biological
+  - CP14_RU_Precurser
+  - CP14_RU_ThaumaturgyEssence
+  - CP14_RU_TargetEffects
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_BasicAlchemy
-  name: Базовые алхимические растворы
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/BasicAlchemy.xml"
+  id: CP14_RU_Precurser
+  name: Природные исходники
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Precurser.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Biological
-  name: Биологические растворы
-  text: "/ServerInfo/_CP14/Guidebook_RU/AlchemyTabs/Biological.xml"
+  id: CP14_RU_ThaumaturgyEssence
+  name: Тауматургические эссенции
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Essence.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Demiplanes
-  name: Исследование демипланов
-  text: "/ServerInfo/_CP14/Guidebook_RU/Demiplanes.xml"
+  id: CP14_RU_TargetEffects
+  name: Целевые алхимические растворы
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
   filterEnabled: True

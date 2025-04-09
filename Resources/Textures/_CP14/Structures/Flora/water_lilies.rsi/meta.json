@@ -1,0 +1,74 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by Max Gab",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "big_flower1"
+        },
+        {
+            "name": "big_flower2"
+        },
+        {
+            "name": "big_flower3"
+        },
+        {
+            "name": "big_flower4"
+        },
+        {
+            "name": "big1"
+        },
+        {
+            "name": "big2"
+        },
+        {
+            "name": "big3"
+        },
+        {
+            "name": "big4"
+        },
+        {
+            "name": "lily_icon"
+        },
+        {
+            "name": "small_flower1"
+        },
+        {
+            "name": "small_flower2"
+        },
+        {
+            "name": "small_flower3"
+        },
+        {
+            "name": "small_flower4"
+        },
+        {
+            "name": "small1"
+        },
+        {
+            "name": "small2"
+        },
+        {
+            "name": "small3"
+        },
+        {
+            "name": "small4"
+        },
+        {
+            "name": "small5"
+        },
+        {
+            "name": "small6"
+        },
+        {
+            "name": "small7"
+        },
+        {
+            "name": "small8"
+        }
+    ]
+}

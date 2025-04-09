@@ -1,0 +1,16 @@
+{
+    "version": 1,
+    "size": {
+      "x": 48,
+      "y": 48
+    },
+    "copyright": "dismas by creamy",
+    "license": "All right reserved",
+    "states": [
+      {
+        "name": "dismas",
+        "directions": 4
+      }
+      
+    ]
+  }

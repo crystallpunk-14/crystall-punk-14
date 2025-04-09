@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by TheShuEd",
+  "size": {
+    "x": 32,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "cross"
+    },
+    {
+      "name": "cross2"
+    },
+    {
+      "name": "tomb",
+      "directions": 4
+    }
+  ]
+}

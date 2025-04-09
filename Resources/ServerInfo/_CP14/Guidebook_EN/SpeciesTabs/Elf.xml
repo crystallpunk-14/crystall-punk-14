@@ -1,0 +1,22 @@
+<Document>
+# Elves
+
+<Box>
+<GuideEntityEmbed Entity="CP14MobElf" Caption="Elf"/>
+</Box>
+
+Elves are a race very similar to humans, but have no common ancestors. They can be found in any corner of Sileitha, but most often living near forests or reserves.
+
+## Ancient Magic
+
+Elves have a magic reserve 2 times higher than normal, but their natural regeneration of magical energy is 2 times weaker. 
+
+## Careful Mana Manipulation
+
+Elves can't take the Mana Absorption spell, but they have an improved version of it that absorbs energy 2x faster, and is safe for the target.
+
+<Box>
+<GuideEntityEmbed Entity="CP14ActionSpellManaConsumeElf"/>
+</Box>
+
+</Document>

@@ -1,0 +1,168 @@
+- type: cp14DemiplaneModifier
+  id: WeatherNone
+  generationWeight: 3
+  categories:
+    Weather: 1
+
+- type: cp14DemiplaneModifier
+  id: WeatherInfinityMist
+  categories:
+    Weather: 1
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14Mist
+
+- type: cp14DemiplaneModifier
+  id: WeatherRain
+  categories:
+    Weather: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: null
+      duration:
+        min: 30
+        max: 120
+    - visuals: CP14Rain
+      duration:
+        min: 180
+        max: 240
+
+- type: cp14DemiplaneModifier
+  id: WeatherInfinityStorm
+  levels:
+    min: 3
+    max: 10
+  name: cp14-modifier-storm
+  categories:
+    Weather: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14Storm
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: WeatherSnow
+  levels:
+    min: 1
+    max: 4
+  categories:
+    Weather: 1
+  requiredTags:
+  - CP14DemiplaneCold
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14SnowLight
+      duration:
+        min: 30
+        max: 180
+    - visuals: CP14SnowMedium
+      duration:
+        min: 30
+        max: 180
+
+- type: cp14DemiplaneModifier
+  id: WeatherSnowHeavy
+  levels:
+    min: 5
+    max: 10
+  name: cp14-modifier-snow-storm
+  categories:
+    Weather: 1
+  requiredTags:
+  - CP14DemiplaneCold
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14SnowHeavyWithStorm 
+      duration:
+        min: 30
+        max: 180
+    - visuals: SnowfallHeavy 
+      duration:
+        min: 30
+        max: 60
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CP14ManaMist
+  name: cp14-modifier-mana-mist
+  levels:
+    min: 0
+    max: 10
+  categories:
+    Weather: 1
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14ManaMist
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CP14AntiManaMist
+  name: cp14-modifier-anti-mana-mist
+  levels:
+    min: 4
+    max: 10
+  categories:
+    Weather: 1
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: CP14AntiManaMist
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: CP14FireStormPeriod
+  name: cp14-modifier-fire-storm
+  levels:
+    min: 4
+    max: 10
+  requiredTags:
+  - CP14DemiplaneHot
+  categories:
+    Weather: 1
+  components:
+  - type: CP14WeatherController
+    entries:
+    - visuals: AshfallLight
+      duration:
+        min: 30
+        max: 180
+    - visuals: CP14FireStorm
+      duration:
+        min: 30
+        max: 60
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1

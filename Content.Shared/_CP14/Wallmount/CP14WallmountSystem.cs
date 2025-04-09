@@ -40,6 +40,9 @@ public sealed class CP14WallmountSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        if (_net.IsClient)
+            return;
+
         var query = EntityQueryEnumerator<CP14WallmountComponent>();
         while (query.MoveNext(out var uid, out var wallmount))
         {
@@ -51,8 +54,7 @@ public sealed class CP14WallmountSystem : EntitySystem
 
             if (wallmount.AttachAttempts <= 0)
             {
-                if (_net.IsServer)
-                    QueueDel(uid);
+                QueueDel(uid);
                 continue;
             }
 

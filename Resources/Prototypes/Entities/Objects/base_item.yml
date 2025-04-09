@@ -5,6 +5,7 @@
   components:
   - type: Item
     size: Small
+  - type: Animateable
   - type: Clickable
   - type: InteractionOutline
   - type: MovedByPressure
@@ -34,7 +35,8 @@
           bounds: "-0.25,-0.25,0.25,0.25"
         density: 20
         mask:
-        - ItemMask
+        #- ItemMask # CP14 swap ItemMask to Impassable only
+        - Impassable
         restitution: 0.3  # fite me
         friction: 0.2
   - type: Sprite

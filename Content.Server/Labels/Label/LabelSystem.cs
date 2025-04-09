@@ -47,6 +47,16 @@ namespace Content.Server.Labels
             label.CurrentLabel = text;
             NameMod.RefreshNameModifiers(uid);
 
+
+            //CP14 Events
+            var ev = new CP14LabeledEvent()
+            {
+                LabeledEntity = uid,
+                Text = text,
+            };
+            RaiseLocalEvent(uid, ev);
+            //CP14 Events end
+
             Dirty(uid, label);
         }
 

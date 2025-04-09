@@ -40,7 +40,7 @@
   - type: CP14FlammableAmbientSound
   - type: AmbientSound
     enabled: false
-    volume: -5
+    volume: -15
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
@@ -90,11 +90,11 @@
         shader: unshaded
   - type: PointLight
     color: "#e67c34"
-    energy: 5
+    energy: 2
     radius: 8
   - type: AmbientSound
     enabled: true
-    volume: -5
+    volume: -15
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
@@ -130,6 +130,9 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: Construction
+    graph: CP14WallmountBarShelfA
+    node: CP14WallmountBarShelfA
 
 - type: entity
   id: CP14WallmountBarShelfB
@@ -143,3 +146,6 @@
     - map: ["enum.StorageFillLayers.Fill"]
   - type: StorageFillVisualizer
     fillBaseName: bottleB
+  - type: Construction
+    graph: CP14WallmountBarShelfB
+    node: CP14WallmountBarShelfB

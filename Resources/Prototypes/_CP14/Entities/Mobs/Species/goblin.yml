@@ -4,9 +4,65 @@
   name: Mr. Goblin
   abstract: true
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: goblin # Goblin fangs state
+      visible: false
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - shader: StencilClear
+      sprite: _CP14/Mobs/Species/Human/parts.rsi
+      state: l_leg
+    - shader: StencilMask
+      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+      sprite: Mobs/Customization/masking_helpers.rsi
+      state: unisex_full
+      visible: false
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
+    - map: [ "enum.HumanoidVisualLayers.LHand" ]
+    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "gloves" ]
+    - map: [ "ears" ]
+    - map: [ "outerClothing" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt1" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
   - type: HumanoidAppearance
     species: CP14Goblin
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Goblin/parts.rsi
     state: full
@@ -19,13 +75,48 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
-        amount: 5
+      - id: CP14FoodMeatHuman
+        amount: 3
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
   - type: Bloodstream
     bloodReagent: CP14BloodGoblin
+  - type: Fixtures
+    fixtures: # Smaller hitbox & less weight
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Damageable
+    damageContainer: CP14Biological
+    damageModifierSet: CP14Goblin #+25% all damage, -50% poison
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 80
+    damage:
+      types:
+        CP14ManaDepletion: -0.05
+      groups:
+        Burn: -0.2
+        Brute: -0.2
+  - type: Stamina
+    decay: 5 # 3 default
+    critThreshold: 120 # 100 default
+    stunTime: 4 #6 default
+  - type: CP14MagicEnergyContainer #SMALL mana container
+    maxEnergy: 25
+    energy: 25
+  - type: CP14MagicEnergyDraw #Cool x3 mana regen!
+    energy: 1.5
+    delay: 3
   - type: Hands
     handDisplacement:
       sizeMaps:
@@ -42,6 +133,11 @@
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: belt
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
@@ -102,6 +198,11 @@
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: belt
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi

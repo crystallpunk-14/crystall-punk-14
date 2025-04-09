@@ -1,0 +1,82 @@
+- type: entity
+  id: CP14ActionSpellIceShards
+  name: Ice Shards
+  description: Fast ice needles, for rapid shooting of targets.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: ice_shards
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.75
+  - type: CP14MagicEffectManaCost
+    manaCost: 5
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellProjectile
+      prototype: CP14IceShard
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectWaterCreation
+  - type: CP14MagicEffectVerbalAspect
+    endSpeech: "Glacies acus!"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneIceShards
+  - type: CP14MagicEffectPacifiedBlock
+  - type: EntityWorldTargetAction
+    repeat: true
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 60
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/water.rsi
+      state: ice_shards
+    event: !type:CP14EntityWorldTargetActionEvent
+      cooldown: 0.5
+
+- type: entity
+  id: CP14RuneIceShards
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5eabeb"
+  - type: Sprite
+    layers:
+    - state: double_outer
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: CP14IceShard
+  parent: BaseBullet
+  name: ice shard
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5eabeb"
+    radius: 1.1
+    energy: 1.0
+  - type: Projectile
+    damage:
+      types:
+        Cold: 4
+        Piercing: 4
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/ice_shard.rsi
+    layers:
+    - state: shard
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollWater
+  id: CP14SpellScrollIceShards
+  name: ice shards spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceShards

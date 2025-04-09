@@ -1,18 +1,18 @@
 - type: entity
   id: CP14MobDino
-  parent: SimpleMobBase
+  parent: CP14SimpleMobBase
   name: dino
   abstract: true
   components:
   - type: NpcFactionMember
     factions:
-    - CP14AggressiveAnimals
+    - CP14Monster
   - type: Sprite
     drawdepth: Mobs
   - type: ReplacementAccent
     accent: xeno
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: CP14Dinosaur
   - type: Appearance
   - type: Body
@@ -30,7 +30,7 @@
       Dead:
         Base: dead
   - type: Bloodstream
-    bloodReagent: CP14Blood
+    bloodReagent: CP14BloodAnimal
   - type: Tag
     tags:
       - FootstepSound
@@ -92,8 +92,8 @@
   - type: Climbing
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatLamb # to replace the dino meat
-      amount: 5
+    - id: CP14FoodMeatDino
+      amount: 4
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: SpamEmitSound
@@ -164,7 +164,7 @@
     acceleration: 16.0
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatLamb # to replace the dino meat
+    - id: CP14FoodMeatHydra
       amount: 2
   - type: Bloodstream
     bloodMaxVolume: 100

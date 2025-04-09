@@ -32,3 +32,48 @@
   license: "CC-BY-4.0"
   copyright: 'by EminYILDIRIM of Freesound.org.'
   source: "https://freesound.org/people/EminYILDIRIM/sounds/536105/"
+
+- files: ["snowball.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by bajko of Freesound.org.'
+  source: "https://freesound.org/people/bajko/sounds/378058/"
+
+- files: ["wood_down_stairs.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by qubodup of Freesound.org.'
+  source: "https://freesound.org/people/qubodup/sounds/442770/"
+
+- files: ["wood_up_stairs.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by qubodup of Freesound.org.'
+  source: "https://freesound.org/people/qubodup/sounds/442771/"
+
+- files: ["round_start.ogg", "round_end.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'Created by MIXnikita'
+  source: "https://github.com/crystallpunk-14/crystall-punk-14"
+
+- files: ["ship_start.ogg", "ship_end.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'Created by MIXnikita'
+  source: "https://github.com/crystallpunk-14/crystall-punk-14"
+
+- files: ["demiplane_heartbeat.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by SpaceLife on Freesound.org'
+  source: "https://freesound.org/people/SpaceLife/sounds/545938/"
+
+- files: ["essence_consume.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by DustyWind on Freesound.org'
+  source: "https://freesound.org/people/DustyWind/sounds/715784/"
+
+- files: ["vampire_bite.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by magnuswaker on Freesound.org'
+  source: "https://freesound.org/people/magnuswaker/sounds/563491/"
+
+- files: ["skill_up1.ogg", "skill_up2.ogg", "skill_up3.ogg", "skill_up3.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by IENBA on Freesound.org'
+  source: "https://freesound.org/people/IENBA/sounds/752275/"

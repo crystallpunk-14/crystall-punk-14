@@ -1,0 +1,177 @@
+- type: entity
+  id: CP14OreCopper1
+  parent: BaseItem
+  name: copper ore
+  description: A piece of pale, heavy copper.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/copper_ore.rsi
+    layers:
+      - state: ore1
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14OreCopper
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: CP14Material
+    materials:
+      CP14Copper: 2
+
+- type: entity
+  id: CP14OreCopper5
+  parent: CP14OreCopper1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14OreCopper10
+  parent: CP14OreCopper1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+
+
+- type: entity
+  id: CP14OreIron1
+  parent: BaseItem
+  name: iron ore
+  description: A piece of cold, heavy iron.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/iron_ore.rsi
+    layers:
+      - state: ore1
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14OreIron
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: CP14Material
+    materials:
+      CP14Iron: 2
+
+- type: entity
+  id: CP14OreIron5
+  parent: CP14OreIron1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14OreIron10
+  parent: CP14OreIron1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+
+
+- type: entity
+  id: CP14OreGold1
+  parent: BaseItem
+  name: gold ore
+  description: A piece of soft, pure gold.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/gold_ore.rsi
+    layers:
+      - state: ore1
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14OreGold
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: CP14Material
+    materials:
+      CP14Gold: 2
+
+- type: entity
+  id: CP14OreGold5
+  parent: CP14OreGold1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14OreGold10
+  parent: CP14OreGold1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+
+
+- type: entity
+  id: CP14OreMithril1
+  parent: BaseItem
+  name: mithril ore
+  description: A piece of enchanted, pure mithril.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/mithril_ore.rsi
+    layers:
+      - state: ore1
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14OreMithril
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: CP14Material
+    materials:
+      CP14Mithril: 2
+
+- type: entity
+  id: CP14OreMithril5
+  parent: CP14OreMithril1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14OreMithril10
+  parent: CP14OreMithril1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10

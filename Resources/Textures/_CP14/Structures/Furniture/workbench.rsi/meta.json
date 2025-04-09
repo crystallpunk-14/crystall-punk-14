@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CLA",
+  "license": "All right reserved",
   "copyright": "Created by jaraten(discord) , modified by vladimir.s. Cooking table by Max Gab",
   "size": {
     "x": 48,
@@ -21,9 +21,6 @@
     },
     {
       "name": "furnace"
-    },
-    {
-      "name": "anvil"
     }
   ]
 }

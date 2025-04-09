@@ -1,0 +1,96 @@
+- type: modularPart
+  id: BaseTipArrow
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponRangedChemical
+  - !type:EditMeleeWeapon
+    resetOnHandSelected: true # Disable fast swap #Ed: Wtf? Why arrows have melee buffs??
+    attackRateMultiplier: 1.4
+    bonusDamage:
+      types:
+        Piercing: 3
+  - !type:EditItem
+    newSize: Small
+  - !type:EditModularSlots
+    addSlots:
+    - Rod
+
+- type: modularPart
+  id: TipIronArrow
+  slots:
+  - ArrowTip
+  rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseTipArrow
+    - BaseBladeIron
+  - !type:AddComponents
+    components:
+    - type: Projectile
+      deleteOnCollide: false
+      onlyCollideWhenShot: true
+      damage:
+        types:
+          Piercing: 25
+
+- type: modularPart
+  id: TipGoldArrow
+  slots:
+  - ArrowTip
+  rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseTipArrow
+    - BaseBladeGold
+  - !type:AddComponents
+    components:
+    - type: Projectile
+      deleteOnCollide: false
+      onlyCollideWhenShot: true
+      damage:
+        types:
+          Piercing: 15
+
+- type: modularPart
+  id: TipCopperArrow
+  slots:
+  - ArrowTip
+  rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseTipArrow
+    - BaseBladeCopper
+  - !type:AddComponents
+    components:
+    - type: Projectile
+      deleteOnCollide: false
+      onlyCollideWhenShot: true
+      damage:
+        types:
+          Piercing: 15
+
+- type: modularPart
+  id: TipMithrilArrow
+  slots:
+  - ArrowTip
+  rsiPath: _CP14/Objects/ModularTools/Tip/arrow.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseTipArrow
+    - BaseBladeMithril
+  - !type:AddComponents
+    components:
+    - type: Projectile
+      deleteOnCollide: false
+      onlyCollideWhenShot: true
+      damage:
+        types:
+          Piercing: 30

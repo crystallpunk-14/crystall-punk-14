@@ -10,7 +10,7 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField]
-    public ProtoId<CP14ModularCraftSlotPrototype>? TargetSlot;
+    public List<ProtoId<CP14ModularCraftSlotPrototype>> Slots = new();
 
     /// <summary>
     /// An entity that can drop out of the final modular item when destroyed.
@@ -20,16 +20,19 @@ public sealed partial class CP14ModularCraftPartPrototype : IPrototype
     public EntProtoId? SourcePart;
 
     [DataField]
-    public float DestroyProb = 0.25f;
+    public float DestroyProb;
 
     [DataField(serverOnly: true)]
     public List<CP14ModularCraftModifier> Modifiers = new();
 
     [DataField]
-    public HashSet<ProtoId<CP14ModularCraftSlotPrototype>> AddSlots = new();
-
-    [DataField]
     public string? RsiPath;
+
+    /// <summary>
+    /// Automatic colored all states, QoL for YML size reducing
+    /// </summary>
+    [DataField]
+    public Color? Color;
 
     [DataField]
     public List<PrototypeLayerData>? IconSprite;

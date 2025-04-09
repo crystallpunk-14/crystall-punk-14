@@ -16,6 +16,7 @@
     damage:
       types:
         Heat: 1
+  - type: Appearance
   - type: FireVisuals
     sprite: Effects/fire.rsi
     normalState: fire
@@ -28,7 +29,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-            Ash:
+            CP14Ash1:
               min: 1
               max: 1
       - !type:DoActsBehavior
@@ -52,6 +53,7 @@
   - type: Tag
     tags:
     - Document
+    - CP14SpellScroll
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorageUseDamage
     damagePerMana:
@@ -88,18 +90,6 @@
 
 - type: entity
   abstract: true
-  id: CP14BaseSpellScrollGate
-  parent: CP14BaseSpellScroll
-  components:
-  - type: Sprite
-    layers:
-    - state: paper_filled
-    - state: magic
-      shader: unshaded
-      color: "#32597d"
-
-- type: entity
-  abstract: true
   id: CP14BaseSpellScrollHealing
   parent: CP14BaseSpellScroll
   components:
@@ -112,7 +102,7 @@
 
 - type: entity
   abstract: true
-  id: CP14BaseSpellScrollLightDarkness
+  id: CP14BaseSpellScrollLight
   parent: CP14BaseSpellScroll
   components:
   - type: Sprite
@@ -136,7 +126,7 @@
 
 - type: entity
   abstract: true
-  id: CP14BaseSpellScrollMovement
+  id: CP14BaseSpellScrollDimension
   parent: CP14BaseSpellScroll
   components:
   - type: Sprite
@@ -144,7 +134,7 @@
     - state: paper_filled
     - state: magic
       shader: unshaded
-      color: "#63ceff"
+      color: "#5e427e"
 
 - type: entity
   abstract: true

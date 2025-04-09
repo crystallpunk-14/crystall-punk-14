@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularGardeBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  description: Garde? Garde!
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5

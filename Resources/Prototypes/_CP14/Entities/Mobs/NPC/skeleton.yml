@@ -1,25 +1,139 @@
 - type: entity
-  id: CP14MobUndeadSkeleton
+  id: CP14MobUndeadSkeletonDemiplane
   parent: CP14BaseMobSkeleton
   name: skeleton
-  description: animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
-  categories: [ ForkFiltered ]
+  description: Animated by the dark magic of a fragile skeleton. Skeletons are usually extremely intelligent creatures, controlled by a recently deceased soul.
+  abstract: true
   components:
+  - type: CP14NightVision
   - type: NpcFactionMember
     factions:
-    - CP14Undead
+    - CP14Monster
+
+- type: entity
+  id: CP14MobUndeadSkeletonHalberd
+  parent: CP14MobUndeadSkeletonDemiplane
+  categories: [ ForkFiltered ]
+  suffix: Halebard
+  components:
   - type: Loadout
-    prototypes: 
-    - CP14MobSkeleton
-  - type: CP14SkillsStorage
-  - type: CP14AutoAddSkill
-    skills:
-    - Warcraft
+    prototypes:
+    - CP14MobSkeletonHalberd
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellKick
+
+- type: entity
+  id: CP14MobUndeadSkeletonSword
+  parent: CP14MobUndeadSkeletonDemiplane
+  categories: [ ForkFiltered ]
+  suffix: Sword
+  components:
+  - type: Loadout
+    prototypes:
+    - CP14MobSkeletonSword
+
+- type: entity
+  id: CP14MobUndeadSkeletonDodger
+  parent: CP14MobUndeadSkeletonDemiplane
+  categories: [ ForkFiltered ]
+  suffix: Dodger
+  components:
+  - type: Loadout
+    prototypes:
+    - CP14MobSkeletonDodger
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellSprint
+
+- type: entity
+  id: CP14MobUndeadSkeletonArcher
+  parent: CP14MobUndeadSkeletonDemiplane
+  categories: [ ForkFiltered ]
+  suffix: Archer
+  components:
+  - type: Loadout
+    prototypes:
+    - CP14MobSkeletonArcher
+
+- type: entity
+  id: CP14MobUndeadSkeletonWizard
+  parent: CP14MobUndeadSkeletonDemiplane
+  categories: [ ForkFiltered ]
+  suffix: Wizard
+  components:
+  - type: Loadout
+    prototypes:
+    - CP14MobSkeletonWizard
+  - type: CP14MagicEnergyDraw
+    energy: 1
+    delay: 1
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellIceShards
+    - CP14ActionSpellFreeze
+    - CP14ActionSpellFlameCreation
+    - CP14ActionSpellCureWounds
+
+- type: entity
+  id: CP14MobUndeadSkeletonBard
+  parent: CP14MobUndeadSkeletonDemiplane
+  categories: [ ForkFiltered ]
+  suffix: Bard
+  components:
+  - type: Loadout
+    prototypes:
+    - CP14MobSkeletonBard
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellHealBallade
+    - CP14ActionSpellMagicBallade
+    - CP14ActionSpellSpeedBallade
+    - CP14ActionSpellPeaceBallade
+    - CP14ActionSpellHellBallade
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeleton
   name: ghost role spawn point
-  suffix: skeleton
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton random
+  categories: [ ForkFiltered ]
+  parent: MarkerBase
+  components:
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 15
+        children:
+        - id: SpawnPointGhostDemiplaneSkeletonWizard
+        - id: SpawnPointGhostDemiplaneSkeletonBard
+      - !type:GroupSelector
+        weight: 20
+        children:
+        - id: SpawnPointGhostDemiplaneSkeletonHalberd
+      - !type:GroupSelector
+        weight: 60
+        children:
+        - id: SpawnPointGhostDemiplaneSkeletonSword
+        - id: SpawnPointGhostDemiplaneSkeletonDodger
+        - id: SpawnPointGhostDemiplaneSkeletonArcher
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _CP14/Mobs/Species/Skeleton/parts.rsi
+        state: full
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonHalberd
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Halebard
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
@@ -28,13 +142,80 @@
     allowMovement: true
     description: cp14-ghost-role-information-description-skeleton
     rules: cp14-ghost-role-information-rules-demiplane
+    mindRoles:
+    - CP14MindRoleDemiplaneAntag
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
-    prototype: CP14MobUndeadSkeleton
+    prototype: CP14MobUndeadSkeletonHalberd
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
       - state: green
       - sprite: _CP14/Mobs/Species/Skeleton/parts.rsi
         state: full
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonSword
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Sword
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeletonSword
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonDodger
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Dodger
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeletonDodger
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonArcher
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Archer
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeletonArcher
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonWizard
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Wizard
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeletonWizard
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonBard
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Bard
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberd
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeletonBard
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-skeleton

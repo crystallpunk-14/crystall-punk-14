@@ -24,7 +24,24 @@
   - type: IncreaseDamageOnWield
     damage:
       types: 
-        Blunt: 6
+        Blunt: 3
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 1 # 50 hits
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   - type: MeleeWeapon
     angle: 100
     attackRate: 1.3
@@ -33,7 +50,7 @@
     wideAnimation: CP14WeaponArcSlash
     damage:
       types:
-        Blunt: 6
+        Blunt: 3
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.3
@@ -47,10 +64,31 @@
     - CP14ActionSpellCureBurn
     - CP14ActionSpellBloodPurification
     - CP14ActionSpellResurrection
-  - type: CP14MagicManacostModify
-    modifiers:
-     Healing: 1.4
+  #- type: CP14MagicManacostModify
+  #  modifiers:
+  #   Life: 1.4
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
     energy: 80
     maxEnergy: 80
+
+- type: entity
+  id: CP14MagicShadowStaff
+  parent: CP14MagicHealingStaff
+  name: magic shadow staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into shadow spells.
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  #- type: CP14MagicManacostModify
+  #  modifiers:
+  #   Dimension: 1.4
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellShadowStep
+    - CP14ActionSpellShadowGrab
+    - CP14ActionSpellDemiplaneInfiltration
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi

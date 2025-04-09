@@ -46,6 +46,7 @@
     solutionName: vat
     injectOnly: false
     ignoreMobs: true
+    ignoreClosed: false
     minTransferAmount: 10
     maxTransferAmount: 100
     transferAmount: 15
@@ -78,7 +79,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Tag
-    tags: 
+    tags:
     - CP14Pestle
   - type: Item
     size: Tiny
@@ -86,10 +87,6 @@
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: pestle
   - type: CP14Pestle
-  - type: CP14SkillRequirement
-    fuckupChance: 0.05
-    requiredSkills:
-    - Alchemy
   - type: GuideHelp
     guides:
     - CP14_RU_Alchemy
@@ -138,6 +135,7 @@
     solutionName: mortar
     injectOnly: false
     ignoreMobs: true
+    ignoreClosed: false
     minTransferAmount: 1
     maxTransferAmount: 10
     transferAmount: 5
@@ -209,6 +207,7 @@
     solutionName: vial
     injectOnly: false
     ignoreMobs: true
+    ignoreClosed: false
     minTransferAmount: 0.25
     maxTransferAmount: 1
     transferAmount: 0.25
@@ -251,6 +250,9 @@
         maxVol: 10
   - type: Injector
     injectOnly: false
+    transferAmount: 5
+    minTransferAmount: 5
+    maxTransferAmount: 10
     toggleState: Draw
   - type: ExaminableSolution
     solution: injector

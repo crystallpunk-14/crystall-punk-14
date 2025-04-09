@@ -19,8 +19,8 @@
       slotTexture: suit
       slotFlags: OUTERCLOTHING
       stripTime: 6
-      uiWindowPos: 1,1
-      strippingWindowPos: 1,2
+      uiWindowPos: 1,2
+      strippingWindowPos: 1,1
       displayName: Suit
     - name: gloves
       slotTexture: gloves
@@ -37,8 +37,8 @@
     - name: mask
       slotTexture: mask
       slotFlags: MASK
-      uiWindowPos: 1,2
-      strippingWindowPos: 1,1
+      uiWindowPos: 1,1
+      strippingWindowPos: 1,2
       displayName: Mask
     - name: eyes
       slotTexture: glasses

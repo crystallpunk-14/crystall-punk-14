@@ -1,0 +1,102 @@
+- type: entity
+  id: CP14ActionSpellManaGift
+  name: Mana transfer
+  description: You can transfer a small amount of your magical energy to a target entity or magical object.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_gift
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+    canModifyManacost: false
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 10
+        safe: false
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneManaGift
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
+      - CP14MagicEnergyCrystalSlot
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    canTargetSelf: true
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: mana_gift
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 2
+      castTime: 10
+      breakOnMove: true
+
+- type: entity
+  id: CP14ActionSpellManaGiftElf
+  parent: CP14ActionSpellManaGift
+  name: Carefull mana transfer
+  description: You transfer mana at a tremendous rate without dealing damage to the target.
+  components:
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 20
+        safe: true
+
+- type: entity
+  id: CP14RuneManaGift
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5096d4"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#5096d4"
+      shader: unshaded
+    - state: double_outer
+      color: "#5096d4"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectManaGift
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5096d4"
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollMeta
+  id: CP14SpellScrollManaGift
+  name: mana gift spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaGift

@@ -1,0 +1,57 @@
+# Concept
+# + Durability
+
+- type: modularPart
+  id: BaseGardeSturdy
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 0.8
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 0.8
+
+- type: modularPart
+  id: GardeSturdyIron
+  slots:
+  - Garde
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSturdy
+
+- type: modularPart
+  id: GardeSturdyGold
+  slots:
+  - Garde
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSturdy
+
+- type: modularPart
+  id: GardeSturdyCopper
+  slots:
+  - Garde
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSturdy
+
+- type: modularPart
+  id: GardeSturdyMithril
+  slots:
+  - Garde
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Garde/metall_sturdy.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseGardeSturdy

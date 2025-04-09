@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularInlayBase
+  categories: [ ForkFiltered ]
+  description: A small piece that can be inlaid into your weapon or tool.
+  abstract: true
+  components:
+  - type: Item
+    storedRotation: 45
+    shape:
+    - 0,0,0,0
+    storedOffset: 0, 5

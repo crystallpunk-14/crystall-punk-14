@@ -1,0 +1,547 @@
+
+# Dagger
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronDagger
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronDagger
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldDagger
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldDagger
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperDagger
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperDagger
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilDagger
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilDagger
+
+# Spear
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilSpear
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilSpear
+
+# Mace
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronMace
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldMace
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperMace
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilMace
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilMace
+
+# Sword
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14ModularBladeIronSword
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14ModularBladeGoldSword
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14ModularBladeCopperSword
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilSword
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14ModularBladeMithrilSword
+
+# Sickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronSickle
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronSickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperSickle
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperSickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldSickle
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldSickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilSickle
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilSickle
+
+# Shovel
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronShovel
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldShovel
+
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperShovel
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilShovel
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilShovel
+
+# Pickaxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14ModularBladeIronPickaxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14ModularBladeGoldPickaxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14ModularBladeCopperPickaxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilPickaxe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14ModularBladeMithrilPickaxe
+
+# Grip
+
+- type: CP14Recipe
+  id: CP14ModularGripIron
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularGripIron
+
+- type: CP14Recipe
+  id: CP14ModularGripCopper
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularGripCopper
+
+- type: CP14Recipe
+  id: CP14ModularGripGolden
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularGripGolden
+
+- type: CP14Recipe
+  id: CP14ModularGripMithril
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularGripMithril
+
+# Grip long
+
+- type: CP14Recipe
+  id: CP14ModularGripIronLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14ModularGripIronLong
+
+- type: CP14Recipe
+  id: CP14ModularGripCopperLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14ModularGripCopperLong
+
+- type: CP14Recipe
+  id: CP14ModularGripGoldLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14ModularGripGoldLong
+
+- type: CP14Recipe
+  id: CP14ModularGripMithrilLong
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14ModularGripMithrilLong
+
+# Rapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilRapier
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilRapier
+
+# Axe
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14ModularBladeIronAxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14ModularBladeCopperAxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14ModularBladeGoldAxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilAxe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14ModularBladeMithrilAxe
+
+# Hammer
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronHammer
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14ModularBladeIronHammer
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperHammer
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14ModularBladeCopperHammer
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldHammer
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14ModularBladeGoldHammer
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilHammer
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14ModularBladeMithrilHammer
+
+# Sickle
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularBladeIronHoe
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularBladeCopperHoe
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularBladeGoldHoe
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilHoe
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularBladeMithrilHoe

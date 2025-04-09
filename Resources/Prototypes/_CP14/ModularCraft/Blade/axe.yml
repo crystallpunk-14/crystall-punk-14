@@ -1,0 +1,82 @@
+#Concept:
+# + Very high damage
+# - Very low attack speed
+
+- type: modularPart
+  id: BaseBladeAxe
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:EditMeleeWeapon
+    resetOnHandSelected: true # Disable fast swap
+    attackRateMultiplier: 0.6
+    angleMultiplier: 1.2
+    bonusDamage:
+      types:
+        Slash: 14
+        Piercing: 3
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: 11
+        Piercing: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronAxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldAxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperAxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilAxe
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Axe/metall_axe.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeAxe
+    - BaseBladeMithril

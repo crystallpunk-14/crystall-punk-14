@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Ghost;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedGhostSystem))]
-[AutoGenerateComponentState(true)]
+[AutoGenerateComponentState(true), AutoGenerateComponentPause]
 public sealed partial class GhostComponent : Component
 {
     // Actions
@@ -39,9 +39,29 @@ public sealed partial class GhostComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? BooActionEntity;
 
+    //CP14 Ghost abilities
+    [DataField]
+    public EntProtoId CP14ZLevelUpAction = "CP14ActionZLevelUp";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CP14ZLevelUpActionEntity;
+
+    [DataField]
+    public EntProtoId CP14ZLevelDownAction = "CP14ActionZLevelDown";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CP14ZLevelDownActionEntity;
+
+    [DataField]
+    public EntProtoId CP14ToggleRoofAction = "CP14ActionToggleRoofs";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? CP14ToggleRoofActionEntity;
+    //CP14 Ghost entities end
+
     // End actions
 
-    [ViewVariables(VVAccess.ReadWrite), DataField]
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoPausedField]
     public TimeSpan TimeOfDeath = TimeSpan.Zero;
 
     [DataField("booRadius"), ViewVariables(VVAccess.ReadWrite)]
@@ -86,8 +106,8 @@ public sealed partial class GhostComponent : Component
     /// Ghost color
     /// </summary>
     /// <remarks>Used to allow admins to change ghost colors. Should be removed if the capability to edit existing sprite colors is ever added back.</remarks>
-    [DataField("color"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public Color color = Color.White;
+    [DataField, AutoNetworkedField]
+    public Color Color = Color.White;
 
     [DataField("canReturnToBody"), AutoNetworkedField]
     private bool _canReturnToBody;

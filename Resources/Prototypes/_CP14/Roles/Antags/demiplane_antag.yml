@@ -1,0 +1,6 @@
+- type: antag
+  id: CP14DemiplaneAntag
+  name: cp14-role-type-demiplane-antag-name
+  antagonist: true
+  setPreference: false
+  objective: cp14-ghost-role-information-rules-demiplane

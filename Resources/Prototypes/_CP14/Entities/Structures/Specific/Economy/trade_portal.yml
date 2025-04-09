@@ -1,0 +1,120 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14TradingPortalBase
+  abstract: true
+  name: trade cabinet
+  description: A dimensional closet connected to a similar closet elsewhere. Not capable of moving living creatures, but great for trading at a distance.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Icon
+    sprite: _CP14/Structures/Specific/Economy/trade_portal.rsi
+    state: base
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Specific/Economy/trade_portal.rsi
+  - type: Clickable
+  - type: InteractionOutline
+  - type: CP14TradingPortal
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 50
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: ResistLocker
+  - type: Appearance
+  - type: ContainerContainer
+    containers:
+      entity_storage: !type:Container
+  - type: EntityStorage
+    open: true
+    isCollidableWhenOpen: true
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+    enteringOffset: 0, -0.4
+    enteringRange: 0.20
+  - type: PlaceableSurface
+    isPlaceable: false # defaults to closed.
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: base_open
+    stateDoorClosed: base_door
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Trading
+    - CP14_EN_Trading
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalSylphoria
+  suffix: Sylphoria
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_sylphoria
+  - type: CP14TradingPortal
+    faction: Sylphoria
+    specialSellPositionCount: 5
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalHelmirWeapon
+  suffix: HelmirWeapon
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_helmir
+  - type: CP14TradingPortal
+    faction: HelmirWeapon
+    specialSellPositionCount: 5
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalBradFamily
+  suffix: BradFamily
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_bard
+  - type: CP14TradingPortal
+    faction: BradFamily
+    specialSellPositionCount: 5
+
+- type: entity
+  parent: CP14TradingPortalBase
+  id: CP14TradingPortalSpiceStream
+  suffix: SpiceStream
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: base_door
+      map: ["enum.StorageVisualLayers.Door"]
+      shader: unshaded
+    - state: flag_spice
+  - type: CP14TradingPortal
+    faction: SpiceStream
+    specialSellPositionCount: 5

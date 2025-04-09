@@ -2,243 +2,217 @@
   id: CP14ClothingShirtCottonBlue
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlue: 1
-  stacks:
-    CP14Cloth: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
   result: CP14ClothingShirtCottonBlue
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonBlack
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlack: 1
-  stacks:
-    CP14Cloth: 3
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlack
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
   result: CP14ClothingShirtCottonBlack
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonPurple
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyePurple: 1
-  stacks:
-    CP14Cloth: 3
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyePurple
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
   result: CP14ClothingShirtCottonPurple
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonRed
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeRed: 1
-  stacks:
-    CP14Cloth: 3
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
   result: CP14ClothingShirtCottonRed
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonWhite
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-  stacks:
-    CP14Cloth: 3
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
   result: CP14ClothingShirtCottonWhite
 
 - type: CP14Recipe
   id: CP14ClothingShirtCottonYellow
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeYellow: 1
-  stacks:
-    CP14Cloth: 3
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeYellow
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
   result: CP14ClothingShirtCottonYellow
 
 - type: CP14Recipe
-  id: CP14ClothingShirtMercenary
+  id: CP14ClothingShirtBlackDress
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlue: 1
-    CP14DyeRed: 1
-  stacks:
-    CP14Cloth: 3
-  result: CP14ClothingShirtMercenary
-
-- type: CP14Recipe
-  id: CP14ClothingShirtYellowWizard
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeYellow: 1
-    CP14DyeBlue: 1
-    CP14DyeRed: 1
-  stacks:
-    CP14Cloth: 3
-  result: CP14ClothingShirtYellowWizard
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlack
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
+  result: CP14ClothingShirtBlackDress
 
 - type: CP14Recipe
   id: CP14ClothingPantsTrouserWhite
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-  stacks:
-    CP14Cloth: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
   result: CP14ClothingPantsTrouserWhite
 
 - type: CP14Recipe
   id: CP14ClothingPantsTrouserDarkBlue
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlue: 1
-  stacks:
-    CP14Cloth: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
   result: CP14ClothingPantsTrouserDarkBlue
 
 - type: CP14Recipe
-  id: CP14ClothingDressBlack
+  id: CP14ClothingHeadHuntersHat
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlack: 1
-  stacks:
-    CP14Cloth: 2
-  result: CP14ClothingDressBlack
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlack
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  result: CP14ClothingHeadHuntersHat
 
 - type: CP14Recipe
-  id: CP14ClothingPantsSouthernMagician
+  id: CP14ClothingShirtMercenary
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeYellow: 1
-  stacks:
-    CP14Cloth: 2
-  result: CP14ClothingPantsSouthernMagician
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
+  result: CP14ClothingShirtMercenary
 
 - type: CP14Recipe
-  id: CP14ClothingPantsMercenaryTrousers
+  id: CP14ClothingYellowWizardDress
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlue: 1
-    CP14DyeRed: 1
-  stacks:
-    CP14Cloth: 2
-  result: CP14ClothingPantsMercenaryTrousers
-
-- type: CP14Recipe
-  id: CP14ClothingHeadBeretRed
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeRed: 1
-  stacks:
-    CP14Cloth: 1
-  result: CP14ClothingHeadBeretRed
-
-- type: CP14Recipe
-  id: CP14ClothingHeadBeretPurple
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyePurple: 1
-  stacks:
-    CP14Cloth: 1
-  result: CP14ClothingHeadBeretPurple
-
-- type: CP14Recipe
-  id: CP14ClothingHeadBeretYellow
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeYellow: 1
-  stacks:
-    CP14Cloth: 1
-  result: CP14ClothingHeadBeretYellow
-
-- type: CP14Recipe
-  id: CP14ClothingHeadBeretBlue
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlue: 1
-  stacks:
-    CP14Cloth: 1
-  result: CP14ClothingHeadBeretBlue
-
-- type: CP14Recipe
-  id: CP14ClothingHeadBeretBlack
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeBlack: 1
-  stacks:
-    CP14Cloth: 1
-  result: CP14ClothingHeadBeretBlack
-
-- type: CP14Recipe
-  id: CP14ClothingHeadBandanaWhite
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-  stacks:
-    CP14Cloth: 2
-  result: CP14ClothingHeadBandanaWhite
-
-- type: CP14Recipe
-  id: CP14ClothingHeadBandanaYellow
-  tag: CP14RecipeSewing
-  craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeYellow: 1
-  stacks:
-    CP14Cloth: 2
-  result: CP14ClothingHeadBandanaYellow
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeYellow
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
+  result: CP14ClothingYellowWizardDress
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretMercenary
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14String: 1
-    CP14DyeRed: 1
-    CP14DyeBlue: 1
-  stacks:
-    CP14Cloth: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
   result: CP14ClothingHeadBeretMercenary
 
 - type: CP14Recipe
-  id: CP14ClothingHeadWreath
+  id: CP14ClothingPantsMercenaryTrousers
   tag: CP14RecipeSewing
   craftTime: 2
-  entities:
-    CP14BloodFlower: 2
-    CP14Dayflin: 2
-  result: CP14ClothingHeadWreath
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14ClothingPantsMercenaryTrousers
+
+# Misc
+
+- type: CP14Recipe
+  id: CP14SackFarming
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 4
+  result: CP14SackFarming
 
 # Wallpaper (TODO: Move to separate workbench?)
 
@@ -246,64 +220,78 @@
   id: CP14WallpaperBlack
   tag: CP14RecipeSewing
   craftTime: 2
-  stacks:
-    CP14Cloth: 10
-  entities:
-    CP14DyeBlack: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlack
   result: CP14WallpaperBlack
 
 - type: CP14Recipe
   id: CP14WallpaperGreen
   tag: CP14RecipeSewing
   craftTime: 2
-  stacks:
-    CP14Cloth: 10
-  entities:
-    CP14DyeGreen: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14DyeGreen
   result: CP14WallpaperGreen
 
 - type: CP14Recipe
   id: CP14WallpaperPurple
   tag: CP14RecipeSewing
   craftTime: 2
-  stacks:
-    CP14Cloth: 10
-  entities:
-    CP14DyePurple: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14DyePurple
   result: CP14WallpaperPurple
 
 - type: CP14Recipe
   id: CP14WallpaperRed
   tag: CP14RecipeSewing
   craftTime: 2
-  stacks:
-    CP14Cloth: 10
-  entities:
-    CP14DyeRed: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
   result: CP14WallpaperRed
 
 - type: CP14Recipe
   id: CP14WallpaperWhite
   tag: CP14RecipeSewing
   craftTime: 2
-  stacks:
-    CP14Cloth: 10
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
   result: CP14WallpaperWhite
 
 - type: CP14Recipe
   id: CP14WallpaperWhite2
   tag: CP14RecipeSewing
   craftTime: 2
-  stacks:
-    CP14Cloth: 10
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
   result: CP14WallpaperWhite2
 
 - type: CP14Recipe
   id: CP14WallpaperYellow
   tag: CP14RecipeSewing
   craftTime: 2
-  stacks:
-    CP14Cloth: 10
-  entities:
-    CP14DyeYellow: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14DyeYellow
   result: CP14WallpaperYellow

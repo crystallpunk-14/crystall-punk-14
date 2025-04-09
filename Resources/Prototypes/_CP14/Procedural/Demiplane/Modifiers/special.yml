@@ -1,0 +1,52 @@
+- type: cp14DemiplaneModifier
+  id: EntryRoom
+  generationProb: 0
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplanEnterRoomMarker
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: Ruins
+  levels:
+    min: 0
+    max: 10
+  categories:
+    Reward: 0.1
+  generationProb: 0.8
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 8
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: Exit
+  generationProb: 0
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplanePassway
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+    - !type:OreDunGen
+      entity: CP14DemiplaneHint
+      count: 20
+      minGroupSize: 1
+      maxGroupSize: 1 
+    - !type:OreDunGen
+      entity: CP14AstralCorrosion
+      count: 15
+      minGroupSize: 3
+      maxGroupSize: 10 
+
+- type: cp14DemiplaneModifier
+  id: TimeLimit10
+  generationProb: 0
+  name: cp14-modifier-time-limit-10
+  components:
+    - type: CP14DemiplaneTimedDestruction
+      timeToDestruction: 600 # 10 minutes

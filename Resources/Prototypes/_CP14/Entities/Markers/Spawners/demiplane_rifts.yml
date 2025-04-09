@@ -1,0 +1,142 @@
+- type: entity
+  id: CP14VentCritterMarker
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  name: Mob spawners marker
+  description: random creatures breaking out of the demiplanes will spawn at this location
+  components:
+  - type: VentCritterSpawnLocation
+  - type: Sprite
+    layers:
+    - state: pink
+    - sprite: /Textures/_CP14/Mobs/Monster/mole.rsi
+      state: live
+
+- type: entity
+  id: CP14BaseMobGroupSpawner
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: pulsating demiplane rift
+  description: Something from the demiplanes is bursting into your world! Look out!
+  components:
+  - type: Transform
+    anchored: True
+  - type: Clickable
+  - type: Physics
+    canCollide: false
+    bodyType: Static
+  - type: Sprite
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+      color: red
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: "#851531"
+    netsync: false
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: TimedDespawn
+    lifetime: 6
+  - type: SingularityDistortion
+    falloffPower: 1.5
+    intensity: 50
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/Effects/demon_dies.ogg
+      params:
+        variation: 0.3
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerZombie
+  suffix: 1-3 Zombie
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 1, 3
+      children:
+      - id: CP14MobUndeadZombie
+        weight: 2
+      - id: CP14MobUndeadZombieGearEasy1
+      - id: CP14MobUndeadZombieGearEasy2
+      - id: CP14MobUndeadZombieGearEasy3
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerHydras
+  suffix: 1-3 Hydras
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 1, 3
+      children:
+      - id: CP14MobDinoSmallHydra
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerMosquito
+  suffix: 2-3 Mosquito
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobMonsterMosquito
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerRabbits
+  suffix: 2-3 Rabbits
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobRabbit
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerFrogs
+  suffix: 2-3 Frogs
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobFrog
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerIceSpectres
+  suffix: 1-2 Ice spectres
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 1, 2
+      children:
+      - id: CP14MobIceSpectre

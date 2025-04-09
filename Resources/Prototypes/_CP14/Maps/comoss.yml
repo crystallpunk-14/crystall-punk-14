@@ -1,0 +1,53 @@
+- type: gameMap
+  id: Comoss
+  mapName: "Comoss island"
+  mapPath: /Maps/_CP14/comoss.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Comoss:
+      stationProto: CP14BaseExpedition
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Comoss island"
+        - type: StationJobs
+          availableJobs:
+            #Mercenary
+            CP14Guildmaster: [1, 1]
+            CP14Adventurer: [ -1, -1 ]
+            #Artisans
+            CP14Apprentice: [ 5, 5 ]
+            CP14Alchemist: [ 2, 2 ]
+            CP14Blacksmith: [ 2, 2 ]
+            CP14Innkeeper: [ 3, 4 ]
+            CP14Merchant: [2, 2]
+            #Guard
+            CP14Guard: [8, 8]
+            CP14GuardCommander: [1, 1]
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_CP14/comoss_d.yml
+        - type: CP14StationKeyDistribution
+          keys:
+          - Alchemy1
+          - Alchemy2
+          - Blacksmith1
+          - Blacksmith2
+          - Shop1
+          - Shop2
+          - PersonalHouse1
+          - PersonalHouse2
+          - PersonalHouse3
+          - PersonalHouse4
+          #- PersonalHouse5 -free to build
+          - PersonalHouse6
+          - PersonalHouse7
+          - PersonalHouse8
+          - PersonalHouse9
+          - PersonalHouse10
+          - PersonalHouse11
+          - PersonalHouse12
+          - PersonalHouse13

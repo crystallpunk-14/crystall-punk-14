@@ -1,0 +1,32 @@
+- type: entity
+  parent: FoodInjectableBase
+  id: CP14PartsMonsterGlands
+  name: venom glands
+  description: The venom glands of a dangerous monster, maybe there's something left in them.
+  categories: [ ForkFiltered ]
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - minty
+  - type: Food
+    forceFeedDelay: 1
+    transferAmount: null
+  - type: BadFood
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/venom_glands.rsi
+    state: glands
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: CP14WhistlerPoison
+          Quantity: 15
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - CP14FitInMortar

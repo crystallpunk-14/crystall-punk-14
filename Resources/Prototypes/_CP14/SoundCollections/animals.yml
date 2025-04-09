@@ -4,3 +4,10 @@
   - /Audio/_CP14/Animals/dino1.ogg
   - /Audio/_CP14/Animals/dino2.ogg
   - /Audio/_CP14/Animals/dino3.ogg
+
+- type: soundCollection
+  id: CP14Frog
+  files:
+  - /Audio/_CP14/Animals/frog1.ogg
+  - /Audio/_CP14/Animals/frog2.ogg
+  - /Audio/_CP14/Animals/frog3.ogg

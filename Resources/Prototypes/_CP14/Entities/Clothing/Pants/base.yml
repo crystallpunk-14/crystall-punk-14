@@ -3,6 +3,7 @@
   parent: Clothing
   id: CP14ClothingPantsBase
   categories: [ ForkFiltered ]
+  description: Pants to cover my thighs from the cold.
   components:
   - type: Clothing
     equipDelay: 1
@@ -11,3 +12,20 @@
     - pants
   - type: Sprite
     state: icon
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14Cloth1
+      amount: 1
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsDress
+  abstract: true
+  description: A roomy, feminine skirt
+  components:
+  - type: Clothing
+    equipDelay: 1.5
+    unequipDelay: 1
+    slots:
+    - pants

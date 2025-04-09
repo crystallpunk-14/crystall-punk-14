@@ -35,6 +35,9 @@ public abstract partial class SharedLabelSystem : EntitySystem
         if (!Resolve(uid, ref label))
             return;
 
+        if (!label.Examinable)
+            return;
+
         if (label.CurrentLabel == null)
             return;
 
@@ -48,4 +51,11 @@ public abstract partial class SharedLabelSystem : EntitySystem
         if (!string.IsNullOrEmpty(entity.Comp.CurrentLabel))
             args.AddModifier("comp-label-format", extraArgs: ("label", entity.Comp.CurrentLabel));
     }
+}
+
+//CP14 Labeling Event
+public sealed class CP14LabeledEvent : EntityEventArgs
+{
+    public EntityUid? LabeledEntity;
+    public string? Text;
 }

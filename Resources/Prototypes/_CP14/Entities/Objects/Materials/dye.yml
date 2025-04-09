@@ -10,6 +10,9 @@
     size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Materials/dye.rsi
+  - type: Tag
+    tags:
+    - CP14Dye
 
 - type: entity
   id: CP14DyeRed
@@ -21,6 +24,10 @@
     - state: base
     - state: powder
       color: "#bd2b26"
+  - type: Tag
+    tags:
+    - CP14Dye
+    - CP14DyeRed
 
 - type: entity
   id: CP14DyeYellow
@@ -32,6 +39,10 @@
     - state: base
     - state: powder
       color: "#ffe269"
+  - type: Tag
+    tags:
+    - CP14Dye
+    - CP14DyeYellow
 
 - type: entity
   id: CP14DyeBlue
@@ -43,6 +54,10 @@
     - state: base
     - state: powder
       color: "#5eabeb"
+  - type: Tag
+    tags:
+    - CP14Dye
+    - CP14DyeBlue
 
 - type: entity
   id: CP14DyeGreen
@@ -54,6 +69,10 @@
     - state: base
     - state: powder
       color: "#85903e"
+  - type: Tag
+    tags:
+    - CP14Dye
+    - CP14DyeGreen
 
 - type: entity
   id: CP14DyePurple
@@ -65,6 +84,10 @@
     - state: base
     - state: powder
       color: "#8241cc"
+  - type: Tag
+    tags:
+    - CP14Dye
+    - CP14DyePurple
 
 - type: entity
   id: CP14DyeBlack
@@ -76,3 +99,7 @@
     - state: base
     - state: powder
       color: "#242329"
+  - type: Tag
+    tags:
+    - CP14Dye
+    - CP14DyeBlack

@@ -1,35 +1,56 @@
 - type: entity
   id: CP14DirtEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
-  - type: TimedDespawn
-    lifetime: 2
   - type: Sprite
+    sprite: _CP14/Effects/material_splash.rsi
     drawdepth: Effects
     noRot: true
     layers:
-      - sprite: _CP14/Effects/dirt.rsi
-        state: dirt1
+      - state: dirt1
         map: [ "random" ]
-  - type: EffectVisuals
-  - type: Tag
-    tags:
-      - HideContextMenu
-  - type: AnimationPlayer
   - type: RandomSprite
     available:
       - random:
           dirt1: ""
           dirt2: ""
+  - type: TimedDespawn
+    lifetime: 2
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
+  - type: EmitSoundOnSpawn
+    sound:
+      collection: CP14Digging
+  
+- type: entity
+  id: CP14SnowEffect
+  parent: CP14DirtEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+      - state: snow1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          snow1: ""
+          snow2: ""
 
 - type: entity
   id: CP14DustEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: TimedDespawn
     lifetime: 0.4
   - type: Sprite
-    drawdepth: Effects
+    drawdepth: Items
     sprite: _CP14/Effects/dust.rsi
     state: dust
   - type: EffectVisuals
@@ -41,6 +62,7 @@
 - type: entity
   id: CP14MagicBeam1
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Effects/Beams/magic.rsi
@@ -53,6 +75,25 @@
   - type: Beam
   - type: TimedDespawn
     lifetime: 3
+  - type: Tag
+    tags:
+      - HideContextMenu
+
+- type: entity
+  id: CP14ElectrifiedEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    drawdepth: Effects
+    layers:
+    - state: electrified
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: TimedDespawn
+    lifetime: 2
   - type: Tag
     tags:
       - HideContextMenu

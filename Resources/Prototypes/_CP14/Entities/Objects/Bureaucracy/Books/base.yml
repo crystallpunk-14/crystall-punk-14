@@ -1,0 +1,65 @@
+- type: entity
+  id: CP14BookBase
+  name: book
+  description: A hardcover book.
+  abstract: true
+  categories: [ ForkFiltered ]
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#332d27"
+      map: [ "cover" ]
+    - state: decor_wingette
+      color: "#453f3a"
+      map: [ "decor" ]
+    - state: icon_eye
+      map: [ "icon" ]
+    - state: overlay_null
+      map: [ "overlay" ]
+  - type: Tag
+    tags:
+    - Book
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1
+
+- type: entity
+  id: CP14BookWriteableBase
+  abstract: true
+  parent: CP14BookBase
+  components:
+  - type: Paper
+    contentSize: 12000
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_book.svg.96dpi.png"
+    backgroundPatchMargin: 23.0, 16.0, 14.0, 15.0
+    contentMargin: 20.0, 20.0, 20.0, 20.0
+
+- type: entity
+  id: CP14GuidebookBase
+  abstract: true
+  suffix: Guidebook
+  parent: CP14BookBase
+  components:
+  - type: GuideHelp
+    openOnActivation: true
+    guides:
+    - SS14

@@ -5,13 +5,14 @@
   playTimeTracker: CP14JobAdventurer
   startingGear: CP14AdventurerGear
   icon: "CP14JobIconAdventurer"
-  supervisors: cp14-job-supervisors-command
-  special:
-  - !type:CP14AddSkillSpecial
-    skills:
-    - Warcraft
+  supervisors: cp14-job-supervisors-guildmaster
 
 - type: startingGear
   id: CP14AdventurerGear
+  storage:
+    back:
+    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalSmall
   equipment:
+    keys: CP14BaseKeyRing
     belt1: CP14WalletFilledTest

@@ -1,0 +1,70 @@
+- type: entity
+  name: safe
+  parent:
+  - CP14ClosetBase
+  id: CP14Safe
+  abstract: true
+  description: A giant iron box for storing your most precious possessions. Extremely heavy and extremely strong.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Dressers/vault.rsi
+    state: base
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.05,0.45,0.45"
+        density: 2000
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: CP14Safe
+  id: CP14SafeMerchant1
+  name: merchant shop 1 safe
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop1
+
+- type: entity
+  parent: CP14Safe
+  id: CP14SafeMerchant2
+  name: merchant shop 2 safe
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop2
+
+- type: entity
+  parent: CP14Safe
+  id: CP14SafeMerchant3
+  name: merchant shop 3 safe
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Shop3

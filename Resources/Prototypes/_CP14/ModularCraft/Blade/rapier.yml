@@ -1,0 +1,84 @@
+#Concept:
+# + Additional range
+# + High Damage! And speed
+# - Required Warcraft skill
+
+- type: modularPart
+  id: BaseBladeRapier
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:AddComponents
+    components:
+  - !type:EditMeleeWeapon
+    newWideAnimation: CP14WeaponArcThrust
+    resetOnHandSelected: true # Disable fast swap
+    bonusRange: 0.2
+    angleMultiplier: 0
+    attackRateMultiplier: 1.4
+    bonusDamage:
+      types:
+        Piercing: 11
+  - !type:EditItem
+    newSize: Large
+    adjustShape: 0, 2
+    storedOffsetBonus: 0, 10
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay
+  - !type:EditDamageableModifier # Only 1 ingot t craft, so less health
+    multiplier: 2
+
+- type: modularPart
+  id: BladeIronRapier
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeRapier
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldRapier
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeRapier
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperRapier
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeRapier
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilRapier
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeRapier
+    - BaseBladeMithril

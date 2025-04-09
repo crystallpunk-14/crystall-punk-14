@@ -41,7 +41,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.29"
+          bounds: "-0.5,-0.15,0.5,0.15"
         density: 1000
         mask:
         - FullTileMask
@@ -49,42 +49,9 @@
         - MidImpassable
         - LowImpassable
         - WallLayer
-
-- type: entity
-  parent: 
-  - CP14BaseFenceCorner
-  - CP14FenceIronGrilleBase
-  id: CP14FenceIronGrilleCorner
-  suffix: Corner
-  components:
-  - type: Icon
-    state: corner
-  - type: Sprite
-    state: corner
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.29"
-        density: 1000
-        mask:
-        - TableMask
-        layer:
-        - MidImpassable
-        - LowImpassable
-        - WallLayer
-      fix2:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "0.29,-0.49,0.49,0.49"
-        density: 1000
-        mask:
-        - TableMask
-        layer:
-        - MidImpassable
-        - LowImpassable
-        - WallLayer
+  - type: Construction
+    graph: CP14FenceIronGrilleStraight
+    node: CP14FenceIronGrilleStraight
 
 - type: entity
   parent:
@@ -105,3 +72,25 @@
       collection: MetalScrape
     closeSound:
       collection: MetalScrape
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.15,0.5,0.15"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - WallLayer
+  - type: CP14DoorInteractionPopup
+    interactSound:
+      collection: CP14Doorknob
+      params:
+        variation: 0.03
+        volume: -5
+  - type: Construction
+    graph: CP14FenceIronGrilleGate
+    node: CP14FenceIronGrilleGate

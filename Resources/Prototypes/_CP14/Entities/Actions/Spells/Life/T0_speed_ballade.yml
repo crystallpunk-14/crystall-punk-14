@@ -1,0 +1,84 @@
+- type: entity
+  id: CP14ActionSpellSpeedBallade
+  name: Speed ballade
+  description: Your music is filled with accelerating magic, speeding up the movement of all creatures nearby
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: speed_music
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 1
+  - type: CP14MagicEffectManaCost
+    manaCost: 1
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14AreaEntityEffectSpeedBallade
+  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneSpeedBallade
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/healing.rsi
+      state: speed_music
+    event: !type:CP14ToggleableInstantActionEvent
+      effectFrequency: 1
+      cooldown: 15
+      castTime: 120
+      hidden: true
+
+- type: entity
+  id: CP14AreaEntityEffectSpeedBallade
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 1.6
+  - type: CP14AreaEntityEffect
+    range: 3
+    maxTargets: 4
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectSpeedBallade
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.15
+        sprintSpeedModifier: 1.15
+        statusLifetime: 1.8
+
+- type: entity
+  id: CP14ImpactEffectSpeedBallade
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_5
+      color: "#e8cb56"
+      shader: unshaded
+ 
+- type: entity
+  id: CP14RuneSpeedBallade
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#e8cb56"
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_3
+      color: "#e8cb56"
+      shader: unshaded

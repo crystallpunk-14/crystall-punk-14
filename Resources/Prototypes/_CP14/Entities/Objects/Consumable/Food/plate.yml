@@ -1,95 +1,33 @@
 - type: entity
-  id: CP14BasePlate
+  id: CP14Plate
   parent: BaseItem
-  abstract: true
+  name: plate
   description: This is your plate for a delicious meal!
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/plates.rsi
+    state: plate
   - type: Item
     shape:
     - 0,0,1,0
-  - type: FoodSequenceStartPoint
-    key: CP14Plate
-    maxLayers: 10
-    nameGeneration: cp14-food-sequence-plate-gen
-    contentSeparator: ", "
-    minLayerOffset: -0.02, -0.02
-    maxLayerOffset: 0.02, 0.02
-  - type: Food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        canReact: false # Dont want cause reactions inside plates after merging ingredients
-        maxVol: 5
-  - type: FlavorProfile
-  - type: RefillableSolution
-    solution: food
-  - type: SolutionContainerVisuals
-    maxFillLevels: 5
-    fillBaseName: liq-
-  - type: Appearance
+  - type: Tag
+    tags:
+    - CP14Plate
 
 - type: entity
-  id: CP14PlateWooden
-  parent: CP14BasePlate
-  name: wooden plate
+  id: CP14PlatePie
+  parent: BaseItem
+  name: pie plate
+  description: A mould for making a delicious pie.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
-    layers:
-    - state: wood1
-    - state: liq-1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
-    - map: ["foodSequenceLayers"]
-  - type: Food
-    trash: 
-    - CP14PlateWooden
-
-- type: entity
-  id: CP14PlateWooden2
-  parent: CP14PlateWooden
-  components:
-  - type: Sprite
-    layers:
-    - state: wood2
-    - state: liq-1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
-    - map: ["foodSequenceLayers"]
-  - type: Food
-    trash: 
-    - CP14PlateWooden2
-
-- type: entity
-  id: CP14PlateCeramic
-  parent: CP14BasePlate
-  name: ceramic plate
-  components:
-  - type: Sprite
-    layers:
-    - state: ceramic
-    - state: liq-1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
-    - map: ["foodSequenceLayers"]
-  - type: Food
-    trash: 
-    - CP14PlateCeramic
-
-- type: entity
-  id: CP14PlateIron
-  parent: CP14BasePlate
-  name: iron plate
-  components:
-  - type: Sprite
-    layers:
-    - state: iron
-    - state: liq-1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
-    - map: ["foodSequenceLayers"]
-  - type: Food
-    trash: 
-    - CP14PlateIron
+    sprite: _CP14/Objects/Consumable/Food/pie.rsi
+    state: tin
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Tag
+    tags:
+    - CP14PlatePie

@@ -1,0 +1,78 @@
+#Concept:
+# Copy of dagger with bigger damage, but without throwing
+- type: modularPart
+  id: BaseBladeSickle
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+    #components: TODO Add gathering tag
+  - !type:EditMeleeWeapon
+    attackRateMultiplier: 1.5
+    bonusDamage:
+      types:
+        Slash: 8
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronSickle
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSickle
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldSickle
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSickle
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperSickle
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSickle
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilSickle
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSickle
+    - BaseBladeMithril

@@ -1,0 +1,21 @@
+- type: entity
+  name: wood bench
+  id: CP14BenchWood
+  parent: 
+  - SeatBase
+  - CP14BaseFlammable
+  description: A bench carved from wood, a comfortable part of the interior designed for sitting and relaxing.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/bench.rsi
+    layers:
+    - state: wooden
+  - type: Physics
+    bodyType: Static
+  - type: Construction
+    graph: CP14BenchWood
+    node: CP14BenchWood

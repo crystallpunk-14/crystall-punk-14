@@ -1,0 +1,20 @@
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsAristocratic
+  name: aristocrat's pants
+  description: Pants with enough quality fabric that you don't want to cave in them.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/aristocratic.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/aristocratic.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsMerchantsPantaloons
+  name: merchant's pantaloons
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/merchants_pantaloons.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/merchants_pantaloons.rsi

@@ -1,5 +1,4 @@
 using Content.Server._CP14.Objectives.Components;
-using Content.Server.Objectives.Components.Targets;
 using Content.Shared._CP14.Cargo;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
@@ -26,7 +25,6 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
         _stealQuery = GetEntityQuery<StealTargetComponent>();
         _stackQuery = GetEntityQuery<StackComponent>();
 
-        SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveAssignedEvent>(OnAssigned);
         SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveAfterAssignEvent>(OnAfterAssign);
         SubscribeLocalEvent<CP14TownSendConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
 
@@ -72,12 +70,6 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
         }
     }
 
-    private void OnAssigned(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveAssignedEvent args)
-    {
-        //TODO: Add ability to create mindfree objectives to Wizden
-        //condition.Comp.CollectionSize = _random.Next(condition.Comp.MinCollectionSize, condition.Comp.MaxCollectionSize);
-    }
-
     //Set the visual, name, icon for the objective.
     private void OnAfterAssign(Entity<CP14TownSendConditionComponent> condition, ref ObjectiveAfterAssignEvent args)
     {
@@ -86,7 +78,7 @@ public sealed class CP14TownSendConditionSystem : EntitySystem
         var group = _proto.Index(condition.Comp.CollectGroup);
 
         var title = Loc.GetString(condition.Comp.ObjectiveText, ("itemName",  Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
-        var description = Loc.GetString(condition.Comp.DescriptionText, ("itemName", Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
+        var description = Loc.GetString(condition.Comp.ObjectiveDescription, ("itemName", Loc.GetString(group.Name)), ("count", condition.Comp.CollectionSize));
 
         _metaData.SetEntityName(condition.Owner, title, args.Meta);
         _metaData.SetEntityDescription(condition.Owner, description, args.Meta);

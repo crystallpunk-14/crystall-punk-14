@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "All right reserved",
+    "copyright": "Created by omsoyk (Discord)",
+    "size": {
+      "x": 48,
+      "y": 48
+    },
+    "states": [
+      {
+        "name": "grow-1"
+      },
+      {
+        "name": "grow-2"
+      },
+      {
+        "name": "grow-3"
+      },
+      {
+        "name": "grow-4"
+      },
+      {
+        "name": "grow-5"
+      },
+      {
+        "name": "grow-6"
+      }
+    ]
+}

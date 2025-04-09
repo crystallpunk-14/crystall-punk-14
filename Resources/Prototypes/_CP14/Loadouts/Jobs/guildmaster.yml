@@ -1,0 +1,85 @@
+
+# Head
+- type: loadoutGroup
+  id: CP14GuildmasterHead
+  name: cp14-loadout-guildmaster-head
+  loadouts:
+  - CP14ClothingHeadGildmaster
+
+- type: loadout
+  id: CP14ClothingHeadGildmaster
+  equipment:
+    head: CP14ClothingHeadGildmaster
+     
+# Cloak
+
+- type: loadoutGroup
+  id: CP14GuildmasterCloak
+  name: cp14-loadout-guildmaster-cloak
+  loadouts:
+  - CP14ClothingCloakGuildmasterCape
+
+- type: loadout
+  id: CP14ClothingCloakGuildmasterCape
+  equipment:
+    cloak: CP14ClothingCloakGuildmasterCape
+
+# OuterClothing
+
+- type: loadoutGroup
+  id: CP14GuildmasterOuterClothing
+  name: cp14-loadout-guildmaster-outer
+  loadouts:
+  - CP14ClothingOuterClothingGreenVest
+
+- type: loadout
+  id: CP14ClothingOuterClothingGreenVest
+  equipment:
+    outerClothing: CP14ClothingOuterClothingGreenVest
+
+# Shirt
+
+- type: loadoutGroup
+  id: CP14GuildmasterShirt
+  name: cp14-loadout-guildmaster-shirt
+  loadouts:
+  - CP14ClothingShirtCottonWhite
+
+# Pants
+
+- type: loadoutGroup
+  id: CP14GuildmasterPants
+  name: cp14-loadout-guildmaster-pants
+  loadouts:
+  - CP14ClothingPantsAristocratic
+
+# Shoes
+
+- type: loadoutGroup
+  id: CP14GuildmasterShoes
+  name: cp14-loadout-guildmaster-shoes
+  loadouts:
+  - CP14ShoesAristocraticBlack
+
+# Spells
+
+- type: loadoutGroup
+  id: CP14GuildmasterSpells
+  name: cp14-loadout-guildmaster-spells
+  minLimit: 2
+  maxLimit: 2
+  loadouts:
+  - CP14ActionSpellDemiplaneInfiltration
+  - CP14ActionSpellMonolithWarp
+
+- type: loadout
+  id: CP14ActionSpellDemiplaneInfiltration
+  dummyEntity: CP14ActionSpellDemiplaneInfiltration
+  actions:
+  - CP14ActionSpellDemiplaneInfiltration
+
+- type: loadout
+  id: CP14ActionSpellMonolithWarp
+  dummyEntity: CP14ActionSpellMonolithWarp
+  actions:
+  - CP14ActionSpellMonolithWarp

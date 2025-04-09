@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: TimedDespawn
-    lifetime: 10
+    lifetime: 120
   - type: Sprite
     noRot: true
     drawDepth: FloorTiles
@@ -35,3 +35,4 @@
     drawdepth: Effects
     sprite: _CP14/Effects/Magic/cast_impact.rsi
     noRot: true
+  - type: CP14SpawnOutOfDemiplane

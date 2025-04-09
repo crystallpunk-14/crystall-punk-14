@@ -18,7 +18,7 @@
     minCollectionSize: 5
     maxCollectionSize: 10
     objectiveText: cp14-objective-town-send-title
-    descriptionText: cp14-objective-town-send-desc
+    objectiveDescription: cp14-objective-town-send-desc
   - type: Objective
 
 - type: entity
@@ -28,7 +28,7 @@
   - type: CP14TownSendCondition
     collectGroup: CP14Dino
     minCollectionSize: 10
-    maxCollectionSize: 50
+    maxCollectionSize: 20
 
 - type: entity
   parent: CP14BaseTownSendObjective
@@ -37,7 +37,7 @@
   - type: CP14TownSendCondition
     collectGroup: CP14Mole
     minCollectionSize: 10
-    maxCollectionSize: 50
+    maxCollectionSize: 20
 
 - type: entity
   parent: CP14BaseTownSendObjective
@@ -45,8 +45,8 @@
   components:
   - type: CP14TownSendCondition
     collectGroup: CP14Boar
-    minCollectionSize: 10
-    maxCollectionSize: 50
+    minCollectionSize: 15
+    maxCollectionSize: 20
 
 - type: weightedRandom
   id: CP14TownSendObjectiveGroup
@@ -55,36 +55,23 @@
     CP14TownSendMoleObjective: 1
     CP14TownSendBoarObjective: 1
 
-#Bank money
+# No Demiplane death objective
 - type: entity
-  abstract: true
   parent: CP14BaseTownObjective
-  id: CP14BaseTownBankEarningObjective
+  id: CP14GuildmasterNoDemiplaneDeathObjective
   components:
-  - type: CP14CurrencyStoredCondition
-    objectiveText: cp14-objective-bank-earning-title
-    objectiveDescription: cp14-objective-bank-earning-desc
+  - type: CP14StatisticRangeCondition
+    statistic: DemiplaneDeaths
+    range:
+      min: 0
+      max: 3 #TODO Adaptive to player count
+    objectiveText: cp14-objective-no-demiplane-death-title
+    objectiveDescription: cp14-objective-no-demiplane-death-desc
     objectiveSprite:
-      sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
-      state: coin10
-  - type: Objective
-
-- type: entity
-  parent: CP14BaseTownBankEarningObjective
-  id: CP14TownBankEarningObjectiveMedium
-  components:
-  - type: CP14CurrencyStoredCondition
-    currency: 20000
-
-- type: entity
-  parent: CP14BaseTownBankEarningObjective
-  id: CP14TownBankEarningObjectiveBig
-  components:
-  - type: CP14CurrencyStoredCondition
-    currency: 30000
+      sprite: /Textures/_CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+      state: tool
 
 - type: weightedRandom
-  id: CP14BankEarningObjectiveGroup
+  id: CP14GuildmasterNoDemiplaneObjectiveGroup
   weights:
-    CP14TownBankEarningObjectiveMedium: 0.6
-    CP14TownBankEarningObjectiveBig: 0.3
+    CP14GuildmasterNoDemiplaneDeathObjective: 1

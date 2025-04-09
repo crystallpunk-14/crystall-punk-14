@@ -1,0 +1,101 @@
+- type: biomeTemplate
+  id: CP14LeafMaze
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14Grassland
+    - !type:BiomeTileLayer
+      tile: CP14FloorDirt
+      threshold: 0.2
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.2
+    - !type:BiomeEntityLayer # More Trees
+      threshold: 0.4
+      noise:
+        seed: 4
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 1.5
+      allowedTiles:
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      entities:
+        - CP14FloraTreeGreen
+        - CP14FloraTreeGreenLarge
+    - !type:BiomeEntityLayer # Walls
+      threshold: -0.6
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.15
+        gain: 0.5
+      allowedTiles:
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      entities:
+        - CP14WallLeaf
+    - !type:BiomeEntityLayer # Walls
+      threshold: -0.6
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.15
+        gain: 0.5
+      allowedTiles:
+        - CP14FloorDirt
+      entities:
+        - CP14WallDirt
+    - !type:BiomeEntityLayer # Tall grass!
+      threshold: -0.3
+      noise:
+        seed: 23
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - CP14FloorGrassTall
+      entities:
+        - CP14RandomBushOffsetSpawner
+    - !type:BiomeEntityLayer #Water!
+      allowedTiles:
+        - CP14FloorDirt
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      threshold: 0.6
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.03
+      entities:
+        - CP14FloorWaterReeds
+    - !type:BiomeEntityLayer #Water!
+      allowedTiles:
+        - CP14FloorDirt
+        - CP14FloorGrass
+        - CP14FloorGrassLight
+        - CP14FloorGrassTall
+      threshold: 0.7
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.03
+      entities:
+        - CP14FloorWaterLilies

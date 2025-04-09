@@ -1,0 +1,56 @@
+- type: constructionGraph
+  id: CP14BaseBarrel
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14BaseBarrel
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 5
+              doAfter: 3
+            - material: CP14Nail
+              amount: 2
+              doAfter: 2
+    - node: CP14BaseBarrel
+      entity: CP14BaseBarrel
+
+- type: constructionGraph
+  id: CP14CraneBarrel
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14CraneBarrel
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 5
+              doAfter: 3
+            - material: CP14Nail
+              amount: 2
+              doAfter: 2
+    - node: CP14CraneBarrel
+      entity: CP14CraneBarrel
+
+- type: constructionGraph
+  id: CP14CraneBarrelSmall
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14CraneBarrelSmall
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 3
+            - material: CP14Nail
+              amount: 2
+              doAfter: 2
+    - node: CP14CraneBarrelSmall
+      entity: CP14CraneBarrelSmall

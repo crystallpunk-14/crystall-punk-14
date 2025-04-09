@@ -1,18 +1,12 @@
 - type: entity
-  id: CP14BankStorageMarker
   parent: MarkerBase
+  id: CP14DemiplaneEntryPointMarker
+  name: demiplane entry point
   categories: [ ForkFiltered ]
-  name: Bank vault marker
-  suffix: ONCE ON MAP
-  description: Marks the specified area as a “bank vault” to credit all bankers with treasure storage goals
   components:
-    - type: Sprite
-      layers:
-      - state: pink
-      - sprite: /Textures/_CP14/Objects/Economy/jewelry.rsi
-        state: ruby1
-    - type: StealArea
-      range: 2
-    - type: CP14StealAreaAutoJobConnect
-      departments:
-      - CP14Bank
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+      state: pulse
+  - type: CP14DemiplaneRift

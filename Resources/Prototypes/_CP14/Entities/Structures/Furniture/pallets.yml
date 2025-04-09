@@ -12,6 +12,9 @@
     drawdepth: FloorTiles
   - type: Transform
     anchored: true
+  - type: Tag
+    tags:
+      - Catwalk
 
 - type: entity
   id: CP14WoodenPallet
@@ -19,7 +22,7 @@
   - CP14BasePallets
   - CP14BaseFlammable
   name: wooden pallet
-  description: wooden goods stand
+  description: Wooden goods stand.
   components:
   - type: Sprite
     state: wooden
@@ -48,13 +51,15 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WoodenPallet
+    node: CP14WoodenPallet
 
 - type: entity
   id: CP14WoodenPalletSell
   parent: CP14WoodenPallet
   name: selling wooden pallet
   components:
-  - type: CP14SellingPalett
   - type: Sprite
     layers:
     - state: wooden
@@ -65,7 +70,6 @@
   parent: CP14WoodenPallet
   name: buying wooden pallet
   components:
-  - type: CP14BuyingPalett
   - type: Sprite
     layers:
     - state: wooden

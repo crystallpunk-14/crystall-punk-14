@@ -1,33 +1,9 @@
 - type: entity
-  parent: BaseStructure
-  id: CP14TravelingShop
-  name: city trading information board
-  description: Allows you to track what the city is selling and buying right now. 
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    snapCardinals: true
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: filler
-  - type: Icon
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: filler
-  - type: ActivatableUI
-    key: enum.CP14StoreUiKey.Key
-  - type: Clickable
-  - type: InteractionOutline
-  - type: CP14CargoStore
-  - type: UserInterface
-    interfaces:
-      enum.CP14StoreUiKey.Key:
-        type: CP14StoreBoundUserInterface
-
-- type: entity
   id: CP14DPSMeter
   parent: BaseStructureDynamic
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   name: DPS Meter
-  suffix: Debug, DO NOT MAP
+  description: Counts the average damage per second. If you stop hitting it, it shows the result.
   components:
   - type: Sprite
     sprite: Objects/Specific/Security/target.rsi

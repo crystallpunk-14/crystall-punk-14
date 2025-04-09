@@ -7,7 +7,7 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/iron_pickaxe.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:

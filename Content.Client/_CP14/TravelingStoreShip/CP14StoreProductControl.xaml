@@ -1,15 +1,24 @@
 <Control xmlns="https://spacestation14.io">
     <Button Name="ProductButton" Access="Public">
-        <BoxContainer Orientation="Vertical">
-            <BoxContainer Orientation="Horizontal">
-                <TextureRect Name="View"
-                             MinSize="48 48"
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Top"
-                             Stretch="KeepAspectCentered"/>
-                <RichTextLabel Name="ProductName" VerticalAlignment="Center" Access="Public"/>
-                <BoxContainer Name="PriceHolder" VerticalAlignment="Center" HorizontalExpand="True" HorizontalAlignment="Right"/>
+        <BoxContainer Orientation="Horizontal">
+            <EntityPrototypeView Name="EntityView"
+                                 MinSize="48 48"
+                                 MaxSize="48 48"
+                                 Scale="2,2"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 Visible="False"/>
+            <TextureRect Name="View"
+                         MinSize="48 48"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Top"
+                         Stretch="KeepAspectCentered"
+                         Visible="False"/>
+            <BoxContainer Orientation="Vertical">
+                <RichTextLabel Name="SpecialLabel" Text="{Loc 'cp14-store-ui-tab-special'}" VerticalAlignment="Center" Access="Public" Visible="False" />
+                <RichTextLabel Name="ProductName" VerticalAlignment="Center" Access="Public" />
             </BoxContainer>
+            <BoxContainer Name="PriceHolder" VerticalAlignment="Center" HorizontalExpand="True" HorizontalAlignment="Right" />
         </BoxContainer>
     </Button>
 </Control>

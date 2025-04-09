@@ -1,0 +1,58 @@
+- type: entity
+  id: CP14SkyLightning
+  categories: [ ForkFiltered ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/sky_lightning.rsi
+    drawdepth: Mobs
+    noRot: true
+    offset: 0,2.5
+    layers:
+      - state: bombom
+        shader: unshaded
+  - type: TimedDespawn
+    lifetime: 2
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: PointLight
+    color: "#73efff"
+    enabled: true
+    radius: 50
+    energy: 8
+    netsync: false
+  - type: LightFade
+    duration: 1
+  - type: CP14Lighthouse
+  - type: CP14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Electrocute
+        electrocuteTime: 6
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 30
+      - !type:FlammableReaction
+        multiplier: 2.5
+      - !type:AdjustTemperature
+        amount: 30000
+      - !type:Ignite
+  - type: TriggerOnSpawn
+  - type: FlashOnTrigger
+    range: 4
+  - type: CP14FarSound
+    closeSound:
+      path: /Audio/_CP14/Ambience/Lightning/lightning_close1.ogg
+      params:
+        variation: 0.2
+        maxDistance: 20
+        volume: 20
+    farSound:
+      collection: CP14LightningFar
+      params:
+        variation: 0.2

@@ -1,0 +1,148 @@
+- type: construction
+  crystallPunkAllowed: true
+  name: dirt pit
+  description: You're wasting dirt to create a hole. Makes sense, doesn't it? Can only be built on dirt tiles.
+  id: CP14CrateDirtPitGrave
+  graph: CP14CrateDirtPitGrave
+  startNode: start
+  targetNode: CP14CrateDirtPitGrave
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Storage/dirt_pit.rsi
+    state: open
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+    - !type:TileType
+      targets:
+        - CP14FloorDirt
+
+- type: construction
+  crystallPunkAllowed: true
+  name: wooden chest
+  description: A simple wooden chest for easy storage of junk.
+  id: CP14WoodenChest
+  graph: CP14WoodenChest
+  startNode: start
+  targetNode: CP14WoodenChest
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: small wooden crate
+  description: A small wooden crate for storing everything.
+  id: CP14SmallWoodenCrate
+  graph: CP14SmallWoodenCrate
+  startNode: start
+  targetNode: CP14SmallWoodenCrate
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/small_wooden_crate.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: large wooden crate
+  description: A large wooden crate for storing a lot of things.
+  id: CP14LargeWoodenCrate
+  graph: CP14LargeWoodenCrate
+  startNode: start
+  targetNode: CP14LargeWoodenCrate
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/large_wooden_crate.rsi
+    state: icon
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: coffin
+  description: A comfortable and nice looking coffin to comfortably await your resurrection.
+  id: CP14CrateCoffin
+  graph: CP14CrateCoffin
+  startNode: start
+  targetNode: CP14CrateCoffin
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Storage/Crates/coffin.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: wooden barrel
+  description: The simplest design for storing liquids.
+  id: CP14BaseBarrel
+  graph: CP14BaseBarrel
+  startNode: start
+  targetNode: CP14BaseBarrel
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Furniture/Barrels/barrel.rsi
+    state: icon
+  objectType: Structure
+  placementMode: PlaceFree
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: wooden crane barrel
+  description: Large lying barrel with tap, for storing valuable liquids.
+  id: CP14CraneBarrel
+  graph: CP14CraneBarrel
+  startNode: start
+  targetNode: CP14CraneBarrel
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel.rsi
+    state: barrel
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: wooden small crane barrel
+  description: A small lying barrel with a tap to quickly pour liquid into mugs.
+  id: CP14CraneBarrelSmall
+  graph: CP14CraneBarrelSmall
+  startNode: start
+  targetNode: CP14CraneBarrelSmall
+  category: construction-category-storage
+  icon:
+    sprite: _CP14/Structures/Furniture/Barrels/crane_barrel_small.rsi
+    state: barrel
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

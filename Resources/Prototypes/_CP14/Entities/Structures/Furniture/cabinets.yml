@@ -70,14 +70,17 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 3
-            max: 6
+            min: 1
+            max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WoodenCabinet
+    node: CP14WoodenCabinet
 
 - type: entity
   parent: CP14CabinetBase
-  id: C14IronCabinet
+  id: CP14IronCabinet
   name: iron cabinet
   description: an iron cabinet. Sturdy, lockable. You can store your valuables here without fear of some burglar taking it all for himself.
   components:
@@ -96,13 +99,13 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14IronBar1:
+            min: 1
+            max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-
-- type: entity
-  parent: C14IronCabinet
-  id: C14IronCabinetCargo
-  name: trade box
-  description: An armored vault for storing money for trade with the city. City workers will unload their earnings here, or take them from here when you want to buy something.
-  components:
-  - type: CP14CargoMoneyBox
+  - type: Construction
+    graph: CP14WoodenCabinet
+    node: CP14WoodenCabinet

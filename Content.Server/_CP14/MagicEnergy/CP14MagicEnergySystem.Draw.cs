@@ -1,24 +1,37 @@
-using System.Numerics;
 using Content.Server._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared.Damage;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._CP14.MagicEnergy;
 
 public partial class CP14MagicEnergySystem
 {
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+
     private void InitializeDraw()
     {
         SubscribeLocalEvent<CP14MagicEnergyDrawComponent, MapInitEvent>(OnDrawMapInit);
-        SubscribeLocalEvent<CP14RandomAuraNodeComponent, MapInitEvent>(OnRandomRangeMapInit);
+        SubscribeLocalEvent<CP14MagicEnergyFromDamageComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
-    private void OnRandomRangeMapInit(Entity<CP14RandomAuraNodeComponent> random, ref MapInitEvent args)
+    private void OnDamageChanged(Entity<CP14MagicEnergyFromDamageComponent> ent, ref DamageChangedEvent args)
     {
-        if (!TryComp<CP14AuraNodeComponent>(random, out var draw))
+        if (args.DamageDelta is null || !args.DamageIncreased)
             return;
 
-        draw.Energy = _random.NextFloat(random.Comp.MinDraw, random.Comp.MaxDraw);
-        draw.Range = _random.NextFloat(random.Comp.MinRange, random.Comp.MaxRange);
+        foreach (var dict in args.DamageDelta.DamageDict)
+        {
+            if (dict.Value <= 0)
+                continue;
+
+            if (!ent.Comp.Damage.TryGetValue(dict.Key, out var modifier))
+                continue;
+
+            ChangeEnergy(ent, modifier * dict.Value, out _, out _, safe: true);
+        }
     }
 
     private void OnDrawMapInit(Entity<CP14MagicEnergyDrawComponent> ent, ref MapInitEvent args)
@@ -30,7 +43,6 @@ public partial class CP14MagicEnergySystem
     {
         UpdateEnergyContainer();
         UpdateEnergyCrystalSlot();
-        UpdateEnergyRadiusDraw();
     }
 
     private void UpdateEnergyContainer()
@@ -38,12 +50,43 @@ public partial class CP14MagicEnergySystem
         var query = EntityQueryEnumerator<CP14MagicEnergyDrawComponent, CP14MagicEnergyContainerComponent>();
         while (query.MoveNext(out var uid, out var draw, out var magicContainer))
         {
+            if (!draw.Enable)
+                continue;
+
             if (draw.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsAlive(uid, mobState))
                 continue;
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            ChangeEnergy(uid, magicContainer, draw.Energy, safe: draw.Safe);
+            ChangeEnergy(uid, draw.Energy, out _, out _, magicContainer, draw.Safe);
+        }
+
+        var query2 = EntityQueryEnumerator<CP14MagicEnergyPhotosynthesisComponent, CP14MagicEnergyContainerComponent>();
+        while (query2.MoveNext(out var uid, out var draw, out var magicContainer))
+        {
+            if (draw.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsAlive(uid, mobState))
+                continue;
+
+            draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
+
+            var daylight = false;
+
+            //if (TryComp<MapLightComponent>(Transform(uid).MapUid, out var mapLight))
+            //{
+            //    var color = mapLight.AmbientLightColor;
+            //    var medium = (color.R + color.G + color.B) / 3f;
+            //
+            //    if (medium > draw.LightThreshold)
+            //        daylight = true;
+            //}
+
+            ChangeEnergy(uid, daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
         }
     }
 
@@ -63,31 +106,7 @@ public partial class CP14MagicEnergySystem
             if (!_magicSlot.TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp))
                 continue;
 
-            ChangeEnergy(energyEnt.Value, energyComp, draw.Energy, draw.Safe);
-        }
-    }
-
-    private void UpdateEnergyRadiusDraw()
-    {
-        var query = EntityQueryEnumerator<CP14AuraNodeComponent>();
-        while (query.MoveNext(out var uid, out var draw))
-        {
-            if (!draw.Enable)
-                continue;
-
-            if (draw.NextUpdateTime >= _gameTiming.CurTime)
-                continue;
-
-            draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
-
-            var containers = _lookup.GetEntitiesInRange<CP14MagicEnergyContainerComponent>(Transform(uid).Coordinates, draw.Range);
-            foreach (var container in containers)
-            {
-                var distance = Vector2.Distance(_transform.GetWorldPosition(uid), _transform.GetWorldPosition(container));
-                var energyDraw = draw.Energy * (1 - distance / draw.Range);
-
-                ChangeEnergy(container, container.Comp, energyDraw, true);
-            }
+            ChangeEnergy(energyEnt.Value, draw.Energy, out _, out _, energyComp, draw.Safe);
         }
     }
 }

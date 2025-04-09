@@ -18,3 +18,7 @@
 - type: lobbyBackground
   id: GobWay
   background: /Textures/_CP14/LobbyScreens/gob_way.webp
+
+- type: lobbyBackground
+  id: Angel
+  background: /Textures/_CP14/LobbyScreens/angel.webp

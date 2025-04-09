@@ -1,0 +1,108 @@
+# TIER 1
+
+- type: cp14DemiplaneModifier
+  id: LootT1
+  levels:
+    min: 1
+    max: 4
+  generationWeight: 2
+  categories:
+    Reward: 0.35
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnerDemiplaneLootT1
+      count: 20
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: Rabbits
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-rabbits
+  generationWeight: 0.4
+  categories:
+    Reward: 0.2
+  requiredTags:
+  - CP14DemiplanePeacefulAnimals
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobRabbit
+      count: 3
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: Boar
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-boars
+  generationWeight: 0.4
+  categories:
+    Reward: 0.2
+  requiredTags:
+  - CP14DemiplanePeacefulAnimals
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobBoar
+      count: 3
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: Frog
+  levels:
+    min: 1
+    max: 10
+  generationWeight: 0.4
+  categories:
+    Reward: 0.2
+  requiredTags:
+  - CP14DemiplaneAnimalsSwamp
+  layers:
+    - !type:OreDunGen
+      tileMask: 
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      entity: CP14MobFrog
+      count: 3
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: Sheep
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-sheeps
+  generationWeight: 0.4
+  categories:
+    Reward: 0.2
+  requiredTags:
+  - CP14DemiplanePeacefulAnimals
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSheep
+      count: 1
+      minGroupSize: 4
+      maxGroupSize: 5
+
+# TIER 2
+
+- type: cp14DemiplaneModifier
+  id: LootT2
+  levels:
+    min: 5
+    max: 10
+  generationWeight: 2
+  categories:
+    Reward: 0.35
+  layers:
+    - !type:OreDunGen
+      entity: CP14SpawnerDemiplaneLootT2
+      count: 20
+      minGroupSize: 2
+      maxGroupSize: 3

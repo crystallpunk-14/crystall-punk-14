@@ -16,7 +16,7 @@
       state: fill-1
       visible: false
   - type: Item
-    size: Normal
+    size: Ginormous
   - type: SolutionContainerManager
     solutions:
       bucket:
@@ -25,6 +25,7 @@
     solutionName: bucket
     injectOnly: false
     ignoreMobs: true
+    ignoreClosed: false
     minTransferAmount: 1
     maxTransferAmount: 50
     transferAmount: 50

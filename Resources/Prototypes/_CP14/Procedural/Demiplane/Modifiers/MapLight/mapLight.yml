@@ -1,0 +1,118 @@
+- type: cp14DemiplaneModifier
+  id: MapLightDarkness
+  levels:
+    min: 3
+    max: 10
+  generationWeight: 2
+  categories:
+    MapLight: 1
+  name: cp14-modifier-night
+  components:
+  - type: MapLight
+    ambientLightColor: "#000000"
+
+- type: cp14DemiplaneModifier
+  id: MapLightDarkRed
+  levels:
+    min: 5
+    max: 10
+  categories:
+    MapLight: 1
+  name: cp14-modifier-night
+  components:
+  - type: MapLight
+    ambientLightColor: "#0f0104"
+
+- type: cp14DemiplaneModifier
+  id: MapLightDarkPurple
+  levels:
+    min: 1
+    max: 5
+  categories:
+    MapLight: 1
+  name: cp14-modifier-night
+  components:
+  - type: MapLight
+    ambientLightColor: "#09010f"
+
+- type: cp14DemiplaneModifier
+  id: MapLightDarkGreen
+  levels:
+    min: 1
+    max: 5
+  categories:
+    MapLight: 1
+  name: cp14-modifier-night
+  components:
+  - type: MapLight
+    ambientLightColor: "#000502"
+
+- type: cp14DemiplaneModifier
+  id: MapLightDarkNight
+  levels:
+    min: 1
+    max: 5
+  categories:
+    MapLight: 1
+  name: cp14-modifier-night
+  components:
+  - type: MapLight
+    ambientLightColor: "#010714"
+
+# Open sky time entries
+
+- type: cp14DemiplaneModifier
+  id: MapLightCycleDefault
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  generationWeight: 2
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  components:
+  - type: LightCycle
+
+- type: cp14DemiplaneModifier
+  id: MapLightCycleCold
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  generationWeight: 2
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneCold
+  components:
+  - type: LightCycle
+    originalColor: "#7bc2e0"
+
+- type: cp14DemiplaneModifier
+  id: MapLightCycleHot
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHot
+  components:
+  - type: LightCycle
+    originalColor: "#ff8929"
+
+- type: cp14DemiplaneModifier
+  id: MapLightCycleHot2
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHot
+  components:
+  - type: LightCycle
+    originalColor: "#d68787"

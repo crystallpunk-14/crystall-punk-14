@@ -17,6 +17,7 @@
     size: Tiny
   - type: Appearance
   - type: PaperVisuals
+    contentImageModulate: "#998665"
   - type: Flammable
     fireSpread: true
     alwaysCombustible: true
@@ -36,7 +37,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-            Ash:
+            CP14Ash1:
               min: 1
               max: 1
       - !type:DoActsBehavior

@@ -4,7 +4,7 @@
     "x": 32,
     "y": 32
   },
-  "license": "CLA",
+  "license": "CC-BY-SA-4.0",
   "copyright": "Created by TheShuEd (Github)",
   "states": [
     {
@@ -21,15 +21,6 @@
     },
     {
       "name": "base5"
-    },
-    {
-      "name": "plate1"
-    },
-    {
-      "name": "plate2"
-    },
-    {
-      "name": "plate3"
     }
   ]
 }

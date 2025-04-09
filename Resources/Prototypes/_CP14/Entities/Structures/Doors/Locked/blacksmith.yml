@@ -1,0 +1,50 @@
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBlacksmith1
+  suffix: Blacksmith 1
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Blacksmith1
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorBlacksmith1
+  - CP14IronDoorMirrored
+  id: CP14IronDoorMirroredBlacksmith1
+  suffix: Blacksmith 1, Mirrored
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBlacksmith2
+  suffix: Blacksmith 2
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Blacksmith2
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorBlacksmith2
+  - CP14IronDoorMirrored
+  id: CP14IronDoorMirroredBlacksmith2
+  suffix: Blacksmith 2, Mirrored
+
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorBlacksmith3
+  suffix: Blacksmith 3
+  components:
+  - type: CP14Lock
+    autoGenerateShape: Blacksmith3
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: 
+  - CP14IronDoorBlacksmith3
+  - CP14IronDoorMirrored
+  id: CP14IronDoorMirroredBlacksmith3
+  suffix: Blacksmith 3, Mirrored

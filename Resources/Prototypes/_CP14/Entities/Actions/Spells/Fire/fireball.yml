@@ -1,0 +1,109 @@
+- type: entity
+  id: CP14ActionSpellFireball
+  name: Fireball
+  description: An effective method of destruction - an explosive fireball
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: fireball
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.3
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectFireball
+    - !type:CP14SpellProjectile
+      prototype: CP14Fireball
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Quaeso, quemdam inter vos quaero... "
+    endSpeech: "A pila!"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFireball
+  - type: CP14MagicEffectPacifiedBlock
+  - type: EntityWorldTargetAction
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 60
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: fireball
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 25
+      castDelay: 1.5
+      breakOnMove: false
+
+- type: entity
+  id: CP14RuneFireball
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+    - state: medium_circle
+      color: "#fdda5d"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectFireball
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14Fireball
+  parent: BulletRocket
+  name: fireball
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#E25822"
+    radius: 2.0
+    energy: 5.0
+  - type: Projectile
+    damage:
+      types:
+        Heat: 10
+  - type: IgnitionSource
+    temperature: 400
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.35
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: Explosive
+    explosionType: FireBomb
+    totalIntensity: 15
+    intensitySlope: 1
+    maxIntensity: 6
+    canCreateVacuum: false
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollFireball
+  name: fireball spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFireball

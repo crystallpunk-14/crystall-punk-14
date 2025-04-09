@@ -24,13 +24,13 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 3
-            max: 5
+            min: 1
+            max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Climbable
   - type: Sprite
-    snapCardinals: true
+    noRot: true
     drawdepth: Mobs
     layers:
       - map: [ base ]
@@ -60,9 +60,9 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.4"
-        density: 255
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 525
         mask:
         - MachineMask
         layer:
@@ -77,9 +77,9 @@
     fixtures:
       fix1:
         shape:
-          !type:PhysShapeAabb
-          bounds: "-0.3,-0.3,0.3,0.3"
-        density: 135
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 300
         mask:
         - MachineMask
         layer:
@@ -104,15 +104,15 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 3
-            max: 5
+            min: 1
+            max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
 - type: entity
   id: CP14LargeWoodenCrate
   name: large wooden crate
-  description: solid wooden crate
+  description: Solid wooden crate.
   parent: 
   - CP14BaseCrate
   - CP14BaseFlammable
@@ -133,16 +133,19 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
-            min: 1
+          CP14WoodenPlanks1:
+            min: 2
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14LargeWoodenCrate
+    node: CP14LargeWoodenCrate
 
 - type: entity
   id: CP14SmallWoodenCrate
   name: small wooden crate
-  description: solid wooden crate
+  description: Solid wooden crate.
   parent: 
   - CP14BaseSmallCrate
   - CP14BaseFlammable
@@ -163,8 +166,11 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialWoodPlank1:
+          CP14WoodenPlanks1:
             min: 1
-            max: 4
+            max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14SmallWoodenCrate
+    node: CP14SmallWoodenCrate

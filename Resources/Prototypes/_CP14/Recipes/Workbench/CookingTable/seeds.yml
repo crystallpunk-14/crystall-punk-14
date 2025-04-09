@@ -1,0 +1,74 @@
+- type: CP14Recipe
+  id: CP14SeedWheat
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Wheat
+    count: 1
+  result: CP14SeedWheat
+
+- type: CP14Recipe
+  id: CP14SeedTomato
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodTomatoes
+    count: 1
+  result: CP14SeedTomato
+  resultCount: 3
+
+- type: CP14Recipe
+  id: CP14SeedCabbage
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodCabbage
+    count: 1
+  result: CP14SeedCabbage
+  resultCount: 3
+
+- type: CP14Recipe
+  id: CP14SeedPumpkin
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPumpkin
+    count: 1
+  result: CP14SeedPumpkin
+  resultCount: 3
+
+- type: CP14Recipe
+  id: CP14SeedCucumber
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodCucumber
+    count: 1
+  result: CP14SeedCucumber
+
+- type: CP14Recipe
+  id: CP14SeedPepper
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPepper
+    count: 1
+  result: CP14SeedPepper
+  resultCount: 3
+
+- type: CP14Recipe
+  id: CP14SeedSage
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14WildSage
+    count: 1
+  result: CP14SeedSage
+  resultCount: 1

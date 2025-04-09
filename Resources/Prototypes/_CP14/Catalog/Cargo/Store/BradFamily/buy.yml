@@ -1,0 +1,275 @@
+- type: storePositionBuy
+  id: AlchemyVials
+  code: VIALS
+  price: 40
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledAlchemy
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledAlchemy
+  name: alchemical vials chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialTiny
+        amount: 5
+      - id: CP14VialSmall
+        amount: 5
+      - id: CP14VialMedium
+        amount: 5
+      - id: CP14GlassShard #Lol. Something broken
+        prob: 0.2
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingBrute
+  code: HEAL_BRUTE
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallHealingBrute
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingBrute
+  name: healing potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingBrute
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingPoison
+  code: HEAL_POISON
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallHealingPoison
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingPoison
+  name: antidote potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingPoison
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingAirloss
+  code: HEAL_AIRLOSS
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallHealingAirloss
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingAirloss
+  name: airloss healing potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingAirloss
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingBlood
+  code: HEAL_BLOOD
+  price: 50
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallHealingBlood
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingBlood
+  name: blood restoration potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingBlood
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingMana
+  code: HEAL_MANA
+  price: 70
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallHealingMana
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingMana
+  name: mana potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingMana
+        amount: 5
+
+- type: storePositionBuy
+  id: CP14VialSmallHealingManaDepletion
+  code: HEAL_MANA_DEPLETION
+  price: 70
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallHealingManaDepletion
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallHealingManaDepletion
+  name: mana-depletion potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallHealingManaDepletion
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallSpeedUp
+  code: SPEED_UP
+  price: 70
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallSpeedUp
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallSpeedUp
+  name: accseleration potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallSpeedUp
+        amount: 5
+
+
+- type: storePositionBuy
+  id: CP14VialSmallRainbow
+  code: FUNNY_POTION
+  price: 100
+  iconOverride: 
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmallRainbow
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmallRainbow
+  name: funny potions chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14VialSmallRainbow
+        amount: 5
+
+
+- type: storePositionBuy
+  id: Candles
+  code: CANDLES
+  price: 100
+  iconOverride: 
+    sprite: Objects/Misc/candles.rsi
+    state: loadout
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledCandles
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledCandles
+  name: candles chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14CandleRed
+        amount: 2
+      - id: CP14CandleBlue
+        amount: 2
+      - id: CP14CandleBlack
+        amount: 2
+      - id: CP14CandleGreen
+        amount: 2
+      - id: CP14CandlePurple
+        amount: 2
+      - id: CP14CandleRedSmall
+        amount: 2
+      - id: CP14CandleBlueSmall
+        amount: 2
+      - id: CP14CandleBlackSmall
+        amount: 2
+      - id: CP14CandleGreenSmall
+        amount: 2
+      - id: CP14CandlePurpleSmall
+        amount: 2
+
+- type: storePositionBuy
+  id: SmokePowder
+  code: TOBACCO
+  price: 80
+  iconOverride: 
+    sprite: _CP14/Objects/Misc/reagent_fillings.rsi
+    state: tobacco_small
+  factions:
+  - BradFamily
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledSmokePowder
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledSmokePowder
+  name: smoking powder chest
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14GroundTobacco
+        amount: 10
+      - id: CP14GroundSage
+        amount: 5

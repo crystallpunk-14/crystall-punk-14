@@ -23,6 +23,9 @@
     - bar_2
     - bar_3
   - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Copper: 10
 
 - type: entity
   id: CP14CopperBar5
@@ -67,6 +70,9 @@
     - bar_2
     - bar_3
   - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Iron: 10
 
 - type: entity
   id: CP14IronBar5
@@ -110,6 +116,9 @@
     - bar_2
     - bar_3
   - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Gold: 10
 
 - type: entity
   id: CP14GoldBar5
@@ -164,6 +173,50 @@
 - type: entity
   id: CP14GlassSheet10
   parent: CP14GlassSheet1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14MithrilBar1
+  parent: BaseItem
+  name: mithril bar
+  description: A warm to the touch, soft piece of refined mithril.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/mithril_bar.rsi
+    layers:
+      - state: bar
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14MithrilBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  #- type: CP14Material
+  #  materials:
+  #    CP14Mithril: 10
+
+- type: entity
+  id: CP14MithrilBar5
+  parent: CP14MithrilBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14MithrilBar10
+  parent: CP14MithrilBar1
   suffix: 10
   components:
   - type: Stack

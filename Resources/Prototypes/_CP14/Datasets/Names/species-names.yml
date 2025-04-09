@@ -92,3 +92,25 @@
   values:
     prefix: cp14-species-name-goblin-female-first-
     count: 24
+
+# Silva
+
+- type: localizedDataset
+  id: CP14_Names_Silva_Male_First
+  values:
+    prefix: cp14-species-name-silva-male-first-
+    count: 20
+
+- type: localizedDataset
+  id: CP14_Names_Silva_Female_First
+  values:
+    prefix: cp14-species-name-silva-female-first-
+    count: 20
+
+# Carcat
+
+- type: localizedDataset
+  id: CP14_Names_Carcat_First
+  values:
+    prefix: cp14-species-name-carcat-first-
+    count: 50

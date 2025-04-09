@@ -1,0 +1,29 @@
+- type: constructionGraph
+  id: CP14RoofWooden
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14RoofWooden
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+      
+    - node: CP14RoofWooden
+      entity: CP14RoofWooden
+
+- type: constructionGraph
+  id: CP14RoofStone
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14RoofStone
+          steps:
+            - material: CP14Stone
+              amount: 2
+              doAfter: 2
+      
+    - node: CP14RoofStone
+      entity: CP14RoofStone

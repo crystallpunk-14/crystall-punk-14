@@ -7,12 +7,44 @@
       state: 3oclock
 
 - type: marking
+  id: CP14HumanFacialHair5oclockmoustache
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: 5oclockmoustache
+
+- type: marking
+  id: CP14HumanFacialHair7oclock
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: 7oclock
+
+- type: marking
+  id: CP14HumanFacialHair7oclockmoustache
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: 7oclockmoustache
+
+- type: marking
   id: CP14HumanFacialHairAbe
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
       state: abe
+
+- type: marking
+  id: CP14HumanFacialHairChinlessbeard
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: chinlessbeard
 
 - type: marking
   id: CP14HumanFacialHairDwarf
@@ -23,7 +55,47 @@
       state: dwarf
 
 - type: marking
-  id: CP14HumanFacialHairGoateeMush
+  id: CP14HumanFacialHairDwarf2
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: dwarf2
+
+- type: marking
+  id: CP14HumanFacialHairElvis
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: elvis
+
+- type: marking
+  id: CP14HumanFacialHairFiveoclock
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: fiveoclock
+
+- type: marking
+  id: CP14HumanFacialHairFullbeard
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: fullbeard
+
+- type: marking
+  id: CP14HumanFacialHairFumanchu
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: fumanchu
+
+- type: marking
+  id: CP14HumanFacialHairGoateemush
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
@@ -31,44 +103,76 @@
       state: goateemush
 
 - type: marking
-  id: CP14HumanFacialHairBriefs
+  id: CP14HumanFacialHairGt
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: briefs
+      state: gt
 
 - type: marking
-  id: CP14HumanFacialHairCircle
+  id: CP14HumanFacialHairHip
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: circle
+      state: hip
 
 - type: marking
-  id: CP14HumanFacialHairEspanol
+  id: CP14HumanFacialHairHogan
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: espanol
+      state: hogan
 
 - type: marking
-  id: CP14HumanFacialHairImperial
+  id: CP14HumanFacialHairJensen
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: imperial
+      state: jensen
 
 - type: marking
-  id: CP14HumanFacialHairMachete
+  id: CP14HumanFacialHairLongbeard
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: machete
+      state: longbeard
+
+- type: marking
+  id: CP14HumanFacialHairMartialartist
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: martialartist
+
+- type: marking
+  id: CP14HumanFacialHairMartialartist2
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: martialartist2
+  
+- type: marking
+  id: CP14HumanFacialHairMoonshiner
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: moonshiner
+
+- type: marking
+  id: CP14HumanFacialHairMoustache
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: moustache
 
 - type: marking
   id: CP14HumanFacialHairMutton
@@ -79,20 +183,76 @@
       state: mutton
 
 - type: marking
-  id: CP14HumanFacialHairPigtail
+  id: CP14HumanFacialHairMuttonmus
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: pigtail
+      state: muttonmus
 
 - type: marking
-  id: CP14HumanFacialHairSage
+  id: CP14HumanFacialHairNeckbeard
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: sage
+      state: neckbeard
+
+- type: marking
+  id: CP14HumanFacialHairPencilstache
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: pencilstache
+
+- type: marking
+  id: CP14HumanFacialHairSelleck
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: selleck
+
+- type: marking
+  id: CP14HumanFacialHairSideburn
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: sideburn
+
+- type: marking
+  id: CP14HumanFacialHairSmallstache
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: smallstache
+
+- type: marking
+  id: CP14HumanFacialHairVandyke
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: vandyke
+
+- type: marking
+  id: CP14HumanFacialHairVolaju
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: volaju
+
+- type: marking
+  id: CP14HumanFacialHairWalrus
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: walrus
 
 - type: marking
   id: CP14HumanFacialHairWatson
@@ -103,9 +263,9 @@
       state: watson
 
 - type: marking
-  id: CP14HumanFacialHairWhiskers
+  id: CP14HumanFacialHairWise
   bodyPart: FacialHair
   markingCategory: FacialHair
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
-      state: whiskers
+      state: wise

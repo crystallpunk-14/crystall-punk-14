@@ -99,6 +99,9 @@ public partial class CP14SharedWallpaperSystem : EntitySystem
 
         if (TryComp<CP14WallpaperRemoverComponent>(args.Used, out var remover))
         {
+            if (holder.Comp.Layers.Count == 0)
+                return;
+
             var doAfterArgs = new DoAfterArgs(EntityManager, args.User, remover.Delay, new CP14WallpaperRemoveLayersDoAfterEvent(), holder, holder, args.Used)
             {
                 BreakOnDamage = true,

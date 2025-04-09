@@ -25,7 +25,6 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: CP14CloudShadows
-    - type: CP14MapFloorOccluder
     - type: MapLight
     - type: MapAtmosphere
       space: False
@@ -46,28 +45,7 @@ entities:
         - 0
         - 0
         - 0
-    - type: CP14DayCycle
-      timeEntries:
-      - duration: 80
-        color: '#754A4AFF'
-      - duration: 80
-        color: '#E0BA87FF'
-      - duration: 80
-        color: '#BFEEFFFF'
-      - period: Night
-        duration: 80
-        color: '#385163FF'
-      - period: Night
-        duration: 80
-        color: '#060D12FF'
-      - period: Night
-        duration: 80
-        color: '#000000FF'
-      - period: Night
-        duration: 80
-        color: '#000000FF'
-      - duration: 80
-        color: '#120906FF'
+    - type: LightCycle
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg

@@ -7,10 +7,13 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 public sealed partial class CP14MagicEffectVerbalAspectComponent : Component
 {
     [DataField]
-    public string StartSpeech = string.Empty;
+    public string StartSpeech = string.Empty; //Not LocId!
 
     [DataField]
-    public string EndSpeech = string.Empty;
+    public string EndSpeech = string.Empty; //Not LocId!
+
+    [DataField]
+    public bool Emote = false;
 }
 
 /// <summary>
@@ -22,4 +25,6 @@ public sealed class CP14VerbalAspectSpeechEvent : EntityEventArgs
     public EntityUid? Performer { get; init; }
 
     public string? Speech { get; init; }
+
+    public bool Emote { get; init; }
 }

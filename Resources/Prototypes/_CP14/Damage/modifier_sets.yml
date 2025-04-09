@@ -45,3 +45,35 @@
     Heat: 1.3
     Cold: 0.8
     Poison: 0.2
+
+- type: damageModifierSet
+  id: CP14WatcherIce
+  coefficients:
+    Heat: 1.4
+    Cold: 0.2
+
+- type: damageModifierSet
+  id: CP14WatcherFire
+  coefficients:
+    Heat: 0.2
+    Cold: 1.4
+
+# Species
+
+- type: damageModifierSet
+  id: CP14Tiefling
+  coefficients:
+    Heat: 0.5
+    Cold: 1.5
+
+- type: damageModifierSet
+  id: CP14Goblin
+  coefficients:
+    Blunt: 1.25
+    Slash: 1.25
+    Piercing: 1.25
+    Heat: 1.25
+    Cold: 1.25
+    Shock: 1.25
+    Poison: 0.5
+    Caustic: 0.5

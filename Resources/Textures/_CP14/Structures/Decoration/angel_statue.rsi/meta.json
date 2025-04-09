@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "All right reserved",
+  "copyright": "Created by vladimir.s ",
+  "size": {
+    "x": 112,
+    "y": 80
+  },
+  "states": [
+    {
+      "name": "statue1"
+    },
+    {
+      "name": "statue2"
+    },
+    {
+      "name": "statue3"
+    },
+    {
+      "name": "glow"
+    }
+  ]
+}

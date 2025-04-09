@@ -1,0 +1,80 @@
+- type: constructionGraph
+  id: CP14TargetStake
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14targetStake
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: CP14targetStake
+      entity: CP14TargetStake
+      edges:
+        - to: start
+          completed:
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Screwing
+              doAfter: 1
+        - to: CP14target
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 1
+            - material: CP14Nail
+              amount: 1
+              doAfter: 1
+            - tag: CP14DyeRed
+              name: red dye
+              icon:
+                sprite: _CP14/Objects/Materials/dye.rsi
+                state: powder
+              doAfter: 0.5
+            - tool: CP14Hammering
+              doAfter: 1
+              
+    - node: CP14target
+      entity: CP14Target
+      edges:
+        - to: CP14targetStake
+          completed:
+            - !type:GivePrototype
+              prototype: CP14WoodenPlanks1
+              amount: 3
+          steps:
+            - tool: CP14Hammering
+              doAfter: 2
+
+- type: constructionGraph
+  id: CP14TargetEffigy
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14targetEffigy
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 5
+            - material: CP14Cloth
+              amount: 2
+            - tag: CP14DyeRed
+              name: red dye
+              icon:
+                sprite: _CP14/Objects/Materials/dye.rsi
+                state: powder
+            - tag: CP14Wheat
+              name: wheat bushel
+              icon:
+                sprite: _CP14/Objects/Flora/Farm/wheat.rsi
+                state: base1
+              doAfter: 4
+    - node: CP14targetEffigy
+      entity: CP14TargetEffigy

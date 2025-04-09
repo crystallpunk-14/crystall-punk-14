@@ -7,26 +7,31 @@
   minLimit: 0
   loadouts:
   - CP14ClothingCloakGuardBlue
-  - CP14ClothingCloakGuardWhite
-
-- type: loadout
-  id: CP14ClothingCloakGuardWhite
-  equipment:
-    cloak: CP14ClothingCloakGuardWhite
+  - CP14ClothingCloakGuardSyurko
 
 - type: loadout
   id: CP14ClothingCloakGuardBlue
   equipment:
     cloak: CP14ClothingCloakGuardBlue
 
+- type: loadout
+  id: CP14ClothingCloakGuardSyurko
+  equipment:
+    cloak: CP14ClothingCloakGuardSyurko
+
 # Head
 
 - type: loadoutGroup
   id: CP14GuardHead
   name: cp14-loadout-guard-head
-  minLimit: 0
+  minLimit: 1
   loadouts:
-  - CP14ClothingHeadMetalHeadband
+  - CP14ClothingHeadGuardHelmet
+
+- type: loadout
+  id: CP14ClothingHeadGuardHelmet
+  equipment:
+    head: CP14ClothingHeadGuardHelmet
 
 # Pants
 
@@ -47,15 +52,23 @@
   id: CP14GuardShirt
   name: cp14-loadout-guard-shirt
   loadouts:
-  - CP14ClothingShirtGuardsChainmailShirtWB
   - CP14ClothingShirtGuardsChainmailShirtB
-
-- type: loadout
-  id: CP14ClothingShirtGuardsChainmailShirtWB
-  equipment:
-    shirt: CP14ClothingShirtGuardsChainmailShirtWB
 
 - type: loadout
   id: CP14ClothingShirtGuardsChainmailShirtB
   equipment:
     shirt: CP14ClothingShirtGuardsChainmailShirtB
+
+# Spells
+
+- type: loadoutGroup
+  id: CP14GuardSpells
+  name: cp14-loadout-guard-spells
+  loadouts:
+  - CP14ActionSpellFlashLight
+
+- type: loadout
+  id: CP14ActionSpellFlashLight
+  dummyEntity: CP14ActionSpellFlashLight
+  actions:
+  - CP14ActionSpellFlashLight

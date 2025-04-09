@@ -21,3 +21,27 @@ cp14-reagent-effect-guidebook-mana-remove =
         [1] Burns off {$amount} mana
         *[other] to burn {$amount} mana
     }
+
+cp14-reagent-effect-guidebook-plant-add-resource = 
+    { $chance ->
+        [1] Restores {$amount} plant resource
+        *[other] to restore {$amount} plant resource
+    }
+
+cp14-reagent-effect-guidebook-plant-remove-resource = 
+    { $chance ->
+        [1] Absorbes {$amount} plant resource
+        *[other] to abrorb {$amount} plant resource
+    }
+
+cp14-reagent-effect-guidebook-plant-add-energy = 
+    { $chance ->
+        [1] Restores {$amount} plant energy
+        *[other] to restore {$amount} plant energy
+    }
+
+cp14-reagent-effect-guidebook-plant-remove-energy = 
+    { $chance ->
+        [1] Absorbes {$amount} plant energy
+        *[other] to abrorb {$amount} plant energy
+    }

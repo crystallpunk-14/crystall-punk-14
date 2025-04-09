@@ -38,6 +38,39 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
+- type: entity
+  id: CP14WallMarbleStone
+  name: marble
+  parent: CP14WallStone
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/marble_stone.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/marble_stone.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14MarbleBlock1:
+            min: 2
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: CP14WallStoneIndestructable
@@ -97,144 +130,135 @@
     node: WallDirt
 
 - type: entity
-  id: CP14WallStoneCopperOre
-  suffix: copper ore
-  parent: CP14WallStone
-  description: A solid stone natural wall. You can see the sharp flecks of copper in it.
+  id: CP14WallLeaf
+  parent: 
+  - CP14BaseFlammableSpreading
+  - CP14BaseWall
+  name: leaf wall
+  description: Dense, marginal bushes. You can climb through them, but watch out for thorny branches!
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_copper.rsi
+    sprite: _CP14/Structures/Walls/Natural/leaf.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_copper.rsi
+    sprite: _CP14/Structures/Walls/Natural/leaf.rsi
+  - type: IconSmooth
+    key: CP14wallLeaf
+    base: wall
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: CP14GrassGathering
+        params:
+          variation: 0.05
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+      fix2: #For melee or laser
+        hard: true
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        mask:
+        - FullTileMask 
+        layer:
+        - Opaque
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 250
+        damage: 100
       behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 50
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/Effects/break_stone.ogg
+          collection: CP14GrassGathering
           params:
-            volume: -6
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14OreCopper:
+          CP14FloraMaterial1:
             min: 1
             max: 3
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.25
+    sprintSpeedModifier: 0.25
+  - type: EmitSoundOnTrigger
+    sound:
+      params:
+        volume: -8
+      collection: CP14GrassGathering
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: DamageContacts
+    damage:
+      types:
+        Slash: 0.2
+        Piercing: 0.2
+  - type: Airtight
+    airBlocked: false
 
 - type: entity
-  id: CP14WallStoneIronOre
-  suffix: iron ore
-  parent: CP14WallStone
-  description: A solid stone natural wall. You can see the sharp flecks of iron in it.
+  id: CP14WallSnow
+  name: snow wall
+  parent: CP14BaseWall
+  description: A tall pile of snow. Can a house be built from it?
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_iron.rsi
+    sprite: _CP14/Structures/Walls/Natural/snow_wall.rsi
   - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_iron.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/break_stone.ogg
-          params:
-            volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14OreIron:
-            min: 1
-            max: 3
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-
-- type: entity
-  id: CP14WallStoneGoldOre
-  suffix: gold ore
-  parent: CP14WallStone
-  description: A solid stone natural wall. You see the tantalizing particles of gold in it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_gold.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/Natural/cave_stone_gold.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/break_stone.ogg
-          params:
-            volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14OreGold:
-            min: 1
-            max: 3
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
+    sprite: _CP14/Structures/Walls/Natural/snow_wall.rsi
   - type: IconSmooth
     base: wall
-
-# We dont have silver now
-
-#- type: entity
-#  id: CP14WallStoneSilverOre
-#  suffix: silver ore
-#  parent: CP14WallStone
-#  description: A solid stone natural wall. You see the tantalizing particles of silver in it.
-#  components:
-#  - type: Sprite
-#    sprite: _CP14/Structures/Walls/Natural/cave_stone_silver.rsi
-#  - type: Icon
-#    sprite: _CP14/Structures/Walls/Natural/cave_stone_silver.rsi
-#  - type: Destructible
-#    thresholds:
-#    - trigger:
-#        !type:DamageTrigger
-#        damage: 100
-#      behaviors:
-#      - !type:DoActsBehavior
-#        acts: ["Destruction"]
-#      - !type:PlaySoundBehavior
-#        sound:
-#          path: /Audio/Effects/break_stone.ogg
-#          params:
-#            volume: -6
-#      - !type:SpawnEntitiesBehavior
-#        spawn:
-#          CP14OreSilver:
-#            min: 1
-#            max: 5
-#          CP14StoneBlock1:
-#            min: 2
-#            max: 3
-#  - type: IconSmooth
-#    base: wall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_CP14/Effects/snowball.ogg
+          params:
+            variation: 0.250
+            volume: 15
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Snowball:
+            min: 3
+            max: 5
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SnowEffect:
+            min: 2
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

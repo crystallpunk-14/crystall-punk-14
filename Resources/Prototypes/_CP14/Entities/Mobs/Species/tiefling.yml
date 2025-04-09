@@ -7,6 +7,10 @@
   - type: HumanoidAppearance
     species: CP14Tiefling
   - type: Hunger
+    starvationDamage:
+      types:
+        Cold: 0.25
+        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Tiefling/parts.rsi
     state: full
@@ -14,7 +18,7 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodMeatHuman
+      - id: CP14FoodMeatHuman
         amount: 5
   - type: Body
     prototype: CP14Tiefling
@@ -22,9 +26,43 @@
   - type: Wagging
   - type: Bloodstream
     bloodReagent: CP14BloodTiefling
+  - type: Damageable
+    damageContainer: CP14Biological
+    damageModifierSet: CP14Tiefling
+  - type: PassiveDamage
+    damageCap: 0
+    allowedStates:
+    - Alive
+    - Critical
+    damage:
+      types:
+        Heat: -0.14 # Around 8 damage a minute healed
+  - type: CP14MagicEnergyDraw
+    energy: 0.75
+    delay: 3 # 5m to full restore
+  - type: CP14MagicEnergyFromDamage
+    damage:
+      Heat: 1 #Magic regen from fire
+      Cold: -1
+  - type: CP14MagicManacostModify
+    globalModifier: 1.2
+    modifiers:
+      Fire: 0.5
+  - type: CP14SkillStorage
+    progress:
+      Pyrokinetic: 1
+  - type: CP14SpellStorage
+    #grantAccessToSelf: true
+    #spells:
+    #- CP14ActionSpellTieflingInnerFire
   - type: Inventory
     templateId: CP14Human
     femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
       cloak:
         sizeMaps:
           32:
@@ -58,6 +96,11 @@
     templateId: CP14Human
     femaleDisplacements:
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi

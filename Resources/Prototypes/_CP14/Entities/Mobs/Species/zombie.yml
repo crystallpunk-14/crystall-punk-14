@@ -1,5 +1,6 @@
 - type: entity
-  parent: 
+  parent:
+  - CP14MobDamageable
   - BaseSimpleMob
   - MobFlammable
   - MobCombat
@@ -15,20 +16,25 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false #Zombie vampire?
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "shirt" ]
-    - map: [ "pants" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "cloak" ]
+    - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt1" ]
     - map: [ "belt2" ]
@@ -76,11 +82,13 @@
       30: 0.4
   - type: StatusEffects
     allowed:
+    - Stun
     - KnockedDown
     - SlowedDown
     - Electrocution
     - Stutter
     - TemporaryBlindness
+    - Pacified
   - type: RotationVisuals
     defaultRotation: 90
     horizontalRotation: 90
@@ -96,7 +104,7 @@
         layer:
           - MobLayer
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: CP14Zombie
   - type: PassiveDamage
     allowedStates:
@@ -144,6 +152,11 @@
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
       cloak:
         sizeMaps:
           32:
@@ -171,6 +184,11 @@
     templateId: CP14Partial
     femaleDisplacements:
       cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi

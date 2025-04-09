@@ -26,8 +26,6 @@
         acts: ["Destruction"]
   - type: CP14SharpeningStone
     sharpnessHeal: 0.1
-  - type: CP14SkillRequirement
-    fuckupChance: 0.6
-    requiredSkills:
-    - Warcraft
-    - Blacksmith
+  - type: Tag
+    tags:
+    - CP14SharpeningStone

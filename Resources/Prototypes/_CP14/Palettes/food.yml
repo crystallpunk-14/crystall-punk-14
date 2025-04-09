@@ -1,0 +1,5 @@
+﻿- type: palette
+  id: CP14cookedMeat
+  name: CP14CookedMeat
+  colors:
+    meat: "#c98367"

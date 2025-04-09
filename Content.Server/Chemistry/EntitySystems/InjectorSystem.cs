@@ -1,7 +1,6 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared._CP14.Farming;
-using Content.Shared._CP14.Skills;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -35,8 +34,6 @@ public sealed class InjectorSystem : SharedInjectorSystem
 
     private bool TryUseInjector(Entity<InjectorComponent> injector, EntityUid target, EntityUid user)
     {
-        RaiseLocalEvent(injector, new CP14TrySkillIssueEvent(user)); //CP14 Skill issue event
-
         var isOpenOrIgnored = injector.Comp.IgnoreClosed || !_openable.IsClosed(target);
         // Handle injecting/drawing for solutions
         if (injector.Comp.ToggleState == InjectorToggleMode.Inject)
@@ -91,13 +88,6 @@ public sealed class InjectorSystem : SharedInjectorSystem
         //Make sure we have the attacking entity
         if (args.Target is not { Valid: true } target || !HasComp<SolutionContainerManagerComponent>(entity))
             return;
-
-
-        //CP14 - Shitcode retarget plant -> soil
-        //TODO: fix it
-        if (TryComp<CP14PlantComponent>(args.Target, out var plant) && plant.SoilUid is not null)
-            target = plant.SoilUid.Value;
-        //CP14 - end shitcode
 
         // Is the target a mob? If yes, use a do-after to give them time to respond.
         if (HasComp<MobStateComponent>(target) || HasComp<BloodstreamComponent>(target))

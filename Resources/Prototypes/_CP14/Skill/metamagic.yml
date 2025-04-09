@@ -1,0 +1,75 @@
+- type: cp14Skill
+  id: CP14ActionSpellMagicSplitting
+  skillUiPosition: 0, 0
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: counter_spell
+  effect: !type:AddAction
+    action: CP14ActionSpellMagicSplitting
+    
+- type: cp14Skill
+  id: CP14ActionSpellManaGift
+  skillUiPosition: 0, 2
+  learnCost: 0.5
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_gift
+  effect: !type:AddAction
+    action: CP14ActionSpellManaGift
+    
+- type: cp14Skill
+  id: CP14ActionSpellManaGiftElf
+  skillUiPosition: 2, 2
+  learnCost: 0.5
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_gift
+  effect: !type:ReplaceAction
+    oldAction: CP14ActionSpellManaGift
+    newAction: CP14ActionSpellManaGiftElf
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14ActionSpellManaGift
+  - !type:SpeciesWhitelist
+    species: CP14Elf
+    
+- type: cp14Skill
+  id: CP14ActionSpellManaConsume
+  skillUiPosition: 0, 4
+  learnCost: 0.5
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_consume
+  effect: !type:AddAction
+    action: CP14ActionSpellManaConsume
+    
+- type: cp14Skill
+  id: CP14ActionSpellManaConsumeElf
+  skillUiPosition: 2, 4
+  learnCost: 0.5
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_consume
+  effect: !type:ReplaceAction
+    oldAction: CP14ActionSpellManaConsume
+    newAction: CP14ActionSpellManaConsumeElf
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14ActionSpellManaConsume
+  - !type:SpeciesWhitelist
+    species: CP14Elf
+    
+- type: cp14Skill
+  id: CP14ActionSpellMagicBallade
+  skillUiPosition: 0, 6
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_music
+  effect: !type:AddAction 
+    action: CP14ActionSpellMagicBallade

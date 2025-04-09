@@ -1,0 +1,89 @@
+#Concept:
+# + Fast attackRate
+#   fast swing
+# - Low damage
+
+- type: modularPart
+  id: BaseBladeDagger
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponThrowable
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:AddComponents
+    components:
+    - type: ThrowingAngle
+      angle: 135
+    - type: EmbeddableProjectile
+      offset: -0.15,-0.15
+      removalTime: 0.5
+  - !type:EditMeleeWeapon
+    attackRateMultiplier: 1.5
+    bonusDamage:
+      types:
+        Slash: 4
+        Piercing: 3
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Piercing: 3
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  color: "#ffaf47"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  color: "#bd712f"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilDagger
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+  color: "#45d2a4"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeDagger
+    - BaseBladeMithril
