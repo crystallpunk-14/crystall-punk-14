@@ -276,7 +276,7 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanks
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -307,7 +307,7 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanksBig
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -338,7 +338,7 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanksCruciform
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000
@@ -369,7 +369,7 @@
   baseTurf: CP14FloorFoundation
   isSubfloor: false
   deconstructTools: [ Prying ]
-  itemDrop: CP14WoodenPlanks1
+  itemDrop: CP14FloorTileBirchWoodplanksStairs
   footstepSounds:
     collection: FootstepWood
   heatCapacity: 10000

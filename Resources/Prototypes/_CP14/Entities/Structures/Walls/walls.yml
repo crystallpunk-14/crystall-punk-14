@@ -148,6 +148,18 @@
   - type: CP14WallpaperHolder
 
 - type: entity
+  id: CP14WallWoodenBirch
+  parent: CP14WallWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Construction
+    graph: CP14WallWood
+    node: WallWoodenBirch
+
+- type: entity
   id: CP14WallWoodenPalisade
   name: palisade
   description: A wall of sharp logs. Not that it's a safe haven.

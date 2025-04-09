@@ -8,7 +8,7 @@
       edges:
         - to: CP14WoodenBed
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
             - material: CP14Cloth
               amount: 1

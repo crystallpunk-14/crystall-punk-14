@@ -44,7 +44,7 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager,
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
         EntityUid user)
     {

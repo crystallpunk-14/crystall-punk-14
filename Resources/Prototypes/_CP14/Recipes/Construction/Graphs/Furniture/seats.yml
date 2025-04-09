@@ -8,7 +8,7 @@
       edges:
         - to: CP14ChairWooden
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
     - node: CP14ChairWooden
@@ -24,7 +24,7 @@
       edges:
         - to: CP14BenchWood
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 3
               doAfter: 2
     - node: CP14BenchWood
