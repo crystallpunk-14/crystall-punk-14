@@ -33,11 +33,13 @@ public sealed class DiscordAuthManager
 
     private Dictionary<string, string> _blockedGuilds = new()
     {
-        {"1346922008000204891", "Sunrise SQUAD"},
-        {"1186566619858731038", "2PAC和奥萨玛歌迷俱乐部"},
+        {"1346922008000204891", ""},
+        {"1186566619858731038", ""},
         {"1355279097906855968", ""},
-        {"550379104193740831", "Old Dishonored Ed testing server"},
         {"1352009516941705216", ""},
+        {"1359476387190145034", ""},
+        {"1294276016117911594", ""},
+        {"1278755078315970620", ""},
     };
 
     public event EventHandler<ICommonSession>? PlayerVerified;
