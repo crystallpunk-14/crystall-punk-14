@@ -71,7 +71,6 @@
   suffix: Deep, Air damage
   components:
   - type: Sprite
-    drawdepth: OverMobs
     color: "#869dc2"
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.2
