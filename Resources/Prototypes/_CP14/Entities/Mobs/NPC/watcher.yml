@@ -45,8 +45,8 @@
       0: Alive
       50: Dead
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5
-    baseSprintSpeed: 7
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
     friction: 0.5
     acceleration: 3
   - type: ProjectileBatteryAmmoProvider
