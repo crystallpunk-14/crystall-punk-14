@@ -41,10 +41,10 @@
       biomeTemplate: CP14CavesFloor
       tileMask:
       - CP14FloorGrass
-    - !type:BiomeDunGen
-      biomeTemplate: CP14MarbleCaves
-      tileMask:
-      - CP14FloorMarble
+    #- !type:BiomeDunGen
+    #  biomeTemplate: CP14MarbleCaves
+    #  tileMask:
+    #  - CP14FloorMarble
 
 - type: dungeonConfig
   id: CP14DemiplaneCavesRingFloorMaskStone
@@ -106,9 +106,9 @@
   - !type:NoiseDistanceDunGen
     size: 50, 50
     distanceConfig: !type:DunGenEuclideanSquaredDistance
-      blendWeight: 0.8
+      blendWeight: 0.6
     layers:
-    - tile: CP14FloorMarble
+    - tile: Space
       threshold: 0.50
       noise:
         frequency: 0.010
