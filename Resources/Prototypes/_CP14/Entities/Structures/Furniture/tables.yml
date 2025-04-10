@@ -141,22 +141,22 @@
     node: CP14TableWoodenCounter
 
 - type: entity
-  parent: CP14TableBase
+  parent: CP14TableWoodenCounter #CP14TableBase
   id: CP14TableMarble
   name: marble table
   description: Exquisite white marble table.
-  components:
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Metallic
-  - type: Sprite
-    sprite: _CP14/Structures/Furniture/Tables/marble.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Furniture/Tables/marble.rsi
-    state: full
-  - type: IconSmooth
-    key: state
-    base: state
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepFloor
+  #components:
+  #- type: Damageable
+  #  damageContainer: StructuralInorganic
+  #  damageModifierSet: Metallic
+  #- type: Sprite
+  #  sprite: _CP14/Structures/Furniture/Tables/marble.rsi
+  #- type: Icon
+  #  sprite: _CP14/Structures/Furniture/Tables/marble.rsi
+  #  state: full
+  #- type: IconSmooth
+  #  key: state
+  #  base: state
+  #- type: FootstepModifier
+  #  footstepSoundCollection:
+  #    collection: FootstepFloor
