@@ -8,6 +8,18 @@
   },
   "states": [
     {
+      "name": "birch_woodplanks"
+    },
+    {
+      "name": "birch_woodplanks_big"
+    },
+    {
+      "name": "birch_woodplanks_cruciform"
+    },
+    {
+      "name": "birch_woodplanks_stairways"
+    },
+    {
       "name": "foundation"
     },
     {

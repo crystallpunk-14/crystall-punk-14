@@ -8,7 +8,7 @@
       edges:
         - to: CP14WoodenPallet
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
     - node: CP14WoodenPallet

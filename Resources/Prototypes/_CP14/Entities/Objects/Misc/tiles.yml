@@ -74,6 +74,11 @@
   - type: Sprite
     state: oak_woodplanks
   - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
     outputs:
       - CP14FloorOakWoodPlanks
   - type: Stack
@@ -184,3 +189,76 @@
       - CP14FloorStonebricksSquareCarved
   - type: Stack
     stackType: CP14FloorTileStonebricksSquareCarved
+
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanks
+  name: birch woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanks
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanks
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanksBig
+  name: birch big woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks_big
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanksBig
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanksBig
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanksCruciform
+  name: birch cruciform woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks_cruciform
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanksCruciform
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanksCruciform
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanksStairs
+  name: birch stairs woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks_stairways
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanksStairways
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanksStairs

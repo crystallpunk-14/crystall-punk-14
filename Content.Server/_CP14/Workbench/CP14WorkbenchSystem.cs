@@ -97,13 +97,13 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
         foreach (var req in recipe.Requirements)
         {
-            req.PostCraft(EntityManager, placedEntities, args.User);
+            req.PostCraft(EntityManager, _proto, placedEntities, args.User);
         }
 
         //We teleport result to workbench AFTER craft.
         foreach (var resultEntity in resultEntities)
         {
-            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates.Offset(new Vector2(_random.NextFloat(-0.5f, 0.5f), _random.NextFloat(-0.5f, 0.5f))));
+            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates.Offset(new Vector2(_random.NextFloat(-0.25f, 0.25f), _random.NextFloat(-0.25f, 0.25f))));
         }
 
         UpdateUIRecipes(ent, args.User);

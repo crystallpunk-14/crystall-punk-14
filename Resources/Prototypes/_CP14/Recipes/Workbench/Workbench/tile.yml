@@ -107,3 +107,47 @@
     count: 1
   result: CP14FloorTileOakWoodplanksStairs
   resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanks
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanks
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanksBig
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanksBig
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanksCruciform
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanksCruciform
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanksStairs
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanksStairs
+  resultCount: 4
