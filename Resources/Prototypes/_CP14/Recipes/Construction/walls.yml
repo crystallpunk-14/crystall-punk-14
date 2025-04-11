@@ -90,7 +90,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: stone wall
+  name: stonebrick wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WallStonebrick
   graph: CP14WallStonebrick
@@ -99,6 +99,24 @@
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: marble brick wall
+  description: Sturdy enough to cover you from threats or cold winds.
+  id: CP14WallMarbleBrick
+  graph: CP14WallMarbleBrick
+  startNode: start
+  targetNode: CP14WallMarbleBrick
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
     state: full
   objectType: Structure
   placementMode: SnapgridCenter
