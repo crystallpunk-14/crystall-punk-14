@@ -25,5 +25,5 @@
   id: CP14GatherWheat
   entries:
   - id: CP14Wheat
-    amount: 2
-    maxAmount: 4
+    amount: 3
+    maxAmount: 5
