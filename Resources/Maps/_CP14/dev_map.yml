@@ -43,9 +43,10 @@ entities:
       data: {}
     - type: CP14CloudShadows
     - type: MapLight
-    - type: LightCycle
+      ambientLightColor: "#DDDDDDFF"
     - type: SunShadow
-    - type: SunShadowCycle
+      alpha: 0.8
+      direction: 1, -1.5
     - type: Biome
       forcedMarkerLayers: []
       markerLayers: []

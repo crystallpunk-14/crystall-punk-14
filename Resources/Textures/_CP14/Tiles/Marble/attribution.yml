@@ -1,6 +1,7 @@
 - files:
   - marble.png
   - double_edge_S.png
-  license: "CLA"
+  - small_bricks
+  license: "All Right Reserved"
   copyright: "Created by TheShuEd"
-  source: "https://github.com/crystallpunk-14/crystall-punk-14/pull/502"
+  source: "https://github.com/crystallpunk-14/crystall-punk-14"

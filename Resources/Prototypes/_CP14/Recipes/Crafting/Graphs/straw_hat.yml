@@ -1,0 +1,17 @@
+- type: constructionGraph
+  id: CP14StrawHat
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cp14headstrawhat
+      steps:
+      - tag: CP14Wheat
+        name: wheat
+        icon:
+          sprite: _CP14/Objects/Flora/Farm/wheat.rsi
+          state: base1
+        doAfter: 4
+
+  - node: cp14headstrawhat
+    entity: CP14ClothingHeadStrawHat

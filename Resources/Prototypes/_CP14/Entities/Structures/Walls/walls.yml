@@ -71,6 +71,25 @@
     sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
   - type: IconSmooth
     base: stonebricks
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WallMarbleBrick
+    node: CP14WallMarbleBrick
   - type: CP14WallpaperHolder
 
 - type: entity

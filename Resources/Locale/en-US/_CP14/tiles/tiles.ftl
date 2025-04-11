@@ -10,6 +10,7 @@ cp14-tiles-sand = sand
 cp14-tiles-snow = snow
 cp14-tiles-snow-deep = deep snow
 cp14-tiles-snow-deep-deep = deep deep snow
+cp14-tiles-marble-cave = marble floor
 
 # Produced
 cp14-tiles-foundation = foundation
@@ -61,7 +62,7 @@ cp14-tiles-stonebricks-small-carved2 = carved brick floor
 cp14-tiles-stonebricks-square-carved = carved brick floor
 cp14-tiles-stonebricks = stonebrick floor
 cp14-tiles-stonebricks-weather = street stonebrick floor
-cp14-tiles-stonebricks-marble = marble floor
+cp14-tiles-stonebricks-marble = marble brick floor
 
 cp14-tiles-lucens-woodplanks = lucens woodplanks
 cp14-tiles-lucens-woodplanks-big = big lucens planks
