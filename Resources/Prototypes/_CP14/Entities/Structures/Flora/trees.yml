@@ -24,7 +24,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.35,-0.4,0.35,0.4"
+          bounds: "-0.2,-0.2,0.2,0.2"
         density: 1000
         layer:
         - WallLayer
@@ -82,15 +82,6 @@
   components:
   - type: Sprite
     offset: 0,1.55
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
   - type: Destructible
     thresholds:
     - trigger:
@@ -148,7 +139,7 @@
   id: CP14FloraTreeSnow
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/snow_trees.rsi
+    sprite: _CP14/Structures/Flora/tree_snow.rsi
     layers:
     - state: tree01
       map: ["random"]
@@ -256,15 +247,6 @@
     - random:
         tree01: ""
         tree02: ""
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
-        density: 2000
-        layer:
-        - WallLayer
   - type: Destructible
     thresholds:
     - trigger:
@@ -297,3 +279,151 @@
           CP14LucensWoodLog:
             min: 3
             max: 6
+
+- type: entity
+  parent: CP14BaseTree
+  id: CP14FloraTreeBirchSmall
+  suffix: Small
+  components:
+  - type: Sprite
+    offset: 0,1.3
+    sprite: _CP14/Structures/Flora/tree_birch_small.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodLog:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: CP14BaseTree
+  id: CP14FloraTreeBirchMedium
+  suffix: Medium
+  components:
+  - type: Sprite
+    offset: 0,1.8
+    sprite: _CP14/Structures/Flora/tree_birch_medium.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodLog:
+            min: 2
+            max: 4
+
+- type: entity
+  parent: CP14BaseTree
+  id: CP14FloraTreeBirchLarge
+  suffix: Large
+  components:
+  - type: Sprite
+    offset: 0,2.6
+    sprite: _CP14/Structures/Flora/tree_birch_big.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodLog:
+            min: 3
+            max: 6
+

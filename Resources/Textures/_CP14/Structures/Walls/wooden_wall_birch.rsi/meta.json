@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "license": "All right reserved",
+  "copyright": "Created by jaraten (Discord/Github), recolor by omsoyk",
+  "states": [
+    {
+      "name": "wood0",
+      "directions": 4
+    },
+    {
+      "name": "wood1",
+      "directions": 4
+    },
+    {
+      "name": "wood2",	
+      "directions": 4
+    },
+    {
+      "name": "wood3",
+      "directions": 4
+    },
+    {
+      "name": "wood4",
+      "directions": 4
+    },
+    {
+      "name": "wood5",
+      "directions": 4
+    },
+    {
+      "name": "wood6",
+      "directions": 4
+    },
+    {
+      "name": "wood7",
+      "directions": 4
+    },
+    {
+      "name": "full"
+    }
+  ]
+}

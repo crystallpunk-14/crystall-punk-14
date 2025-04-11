@@ -8,32 +8,32 @@
       edges:
         - to: CP14FenceWoodSmallStraight
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
         - to: CP14FenceWoodSmallCorner
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
         - to: CP14FenceWoodSmallGate
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
         - to: CP14FenceWoodStraight
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 4
               doAfter: 2
         - to: CP14FenceWoodCorner
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 4
               doAfter: 2
         - to: CP14FenceWoodGate
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 4
               doAfter: 2
               

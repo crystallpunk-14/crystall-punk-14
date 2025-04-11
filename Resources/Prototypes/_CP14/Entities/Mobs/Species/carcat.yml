@@ -22,6 +22,7 @@
   - type: Speech
     speechSounds: CP14Carcat
   - type: Thirst
+  - type: Wagging
   - type: Butcherable
     butcheringType: Spike
     spawned:

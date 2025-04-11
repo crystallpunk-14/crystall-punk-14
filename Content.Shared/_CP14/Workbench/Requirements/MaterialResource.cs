@@ -59,7 +59,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 

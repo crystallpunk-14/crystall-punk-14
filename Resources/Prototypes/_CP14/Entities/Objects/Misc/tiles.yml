@@ -1,0 +1,264 @@
+- type: entity
+  parent: BaseItem
+  id: CP14FloorTileBase
+  description: Makes the floor more pleasant for your feet. And your eyes.
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Tile/tile.rsi
+  - type: Item
+    sprite: _CP14/Objects/Tile/tile.rsi
+    size: Normal
+  - type: Stack
+    count: 1
+  - type: FloorTile
+    placeTileSound:
+      collection: CP14Digging #TODO
+      params:
+        variation: 0.03
+        volume: 2
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -8
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileFoundation
+  name: foundation floor tile
+  components:
+  - type: Sprite
+    state: foundation
+  - type: FloorTile
+    outputs:
+      - CP14FloorFoundation
+  - type: Stack
+    stackType: CP14FloorTileFoundation
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileMarbleBrick
+  name: marble brick
+  components:
+  - type: Sprite
+    state: marble
+  - type: FloorTile
+    outputs:
+      - CP14FloorMarble
+  - type: Stack
+    stackType: CP14FloorTileMarbleBrick
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileOakWoodplanks
+  name: oak woodplanks
+  components:
+  - type: Sprite
+    state: oak_woodplanks
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorOakWoodPlanks
+  - type: Stack
+    stackType: CP14FloorTileOakWoodplanks
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileOakWoodplanksBig
+  name: oak big woodplanks
+  components:
+  - type: Sprite
+    state: oak_woodplanks_big
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorOakWoodPlanksBig
+  - type: Stack
+    stackType: CP14FloorTileOakWoodplanksBig
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileOakWoodplanksCruciform
+  name: oak cruciform woodplanks
+  components:
+  - type: Sprite
+    state: oak_woodplanks_cruciform
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorOakWoodPlanksCruciform
+  - type: Stack
+    stackType: CP14FloorTileOakWoodplanksCruciform
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileOakWoodplanksStairs
+  name: oak stairs woodplanks
+  components:
+  - type: Sprite
+    state: oak_woodplanks_stairways
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorOakWoodPlanksStairways
+  - type: Stack
+    stackType: CP14FloorTileOakWoodplanksStairs
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileStonebricks
+  name: stonebrick
+  components:
+  - type: Sprite
+    state: stonebrick
+  - type: FloorTile
+    outputs:
+      - CP14FloorStonebricks
+  - type: Stack
+    stackType: CP14FloorTileStonebricks
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileStonebricksSmallCarved
+  name: small carved stonebricks
+  components:
+  - type: Sprite
+    state: stonebrick_small_carved
+  - type: FloorTile
+    outputs:
+      - CP14FloorStonebricksSmallCarved1
+  - type: Stack
+    stackType: CP14FloorTileStonebricksSmallCarved
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileStonebricksSmallCarved2
+  name: small carved stonebricks 2
+  components:
+  - type: Sprite
+    state: stonebrick_small_carved2
+  - type: FloorTile
+    outputs:
+      - CP14FloorStonebricksSmallCarved2
+  - type: Stack
+    stackType: CP14FloorTileStonebricksSmallCarved2
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileStonebricksSquareCarved
+  name: square carved stonebricks
+  components:
+  - type: Sprite
+    state: stonebrick_square_carved
+  - type: FloorTile
+    outputs:
+      - CP14FloorStonebricksSquareCarved
+  - type: Stack
+    stackType: CP14FloorTileStonebricksSquareCarved
+
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanks
+  name: birch woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanks
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanks
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanksBig
+  name: birch big woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks_big
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanksBig
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanksBig
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanksCruciform
+  name: birch cruciform woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks_cruciform
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanksCruciform
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanksCruciform
+
+- type: entity
+  parent: CP14FloorTileBase
+  id: CP14FloorTileBirchWoodplanksStairs
+  name: birch stairs woodplanks
+  components:
+  - type: Sprite
+    state: birch_woodplanks_stairways
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorBirchWoodPlanksStairways
+  - type: Stack
+    stackType: CP14FloorTileBirchWoodplanksStairs
