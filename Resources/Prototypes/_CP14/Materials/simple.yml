@@ -26,15 +26,6 @@
   price: 0
 
 - type: material
-  id: CP14MarbleStone
-  stackEntity: CP14MarbleBlock1
-  name: cp14-material-stone-block #TODO
-  unit: materials-unit-chunk
-  icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
-  color: "#555963"
-  price: 0
-
-- type: material
   id: CP14Nail
   stackEntity: CP14Nail1
   name: cp14-material-nail
@@ -93,7 +84,7 @@
   stackEntity: CP14LucensWoodenPlanks1
   name: cp14-material-lucens-planks
   unit: materials-unit-bar
-  icon: { sprite: _CP14/Objects/Materials/lucens_wood.rsi, state: planks_2 }
+  icon: { sprite: _CP14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
   color: "#1a1e22"
   price: 0
 

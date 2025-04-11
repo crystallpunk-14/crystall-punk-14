@@ -3,8 +3,8 @@
   tag: CP14RecipeWorkbench
   craftTime: 2
   requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
+  - !type:StackGroupResource
+    group: WoodenPlanks
     count: 3
   - !type:ProtoIdResource
     protoId: CP14Rope
@@ -16,8 +16,8 @@
   tag: CP14RecipeWorkbench
   craftTime: 3
   requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
+  - !type:StackGroupResource
+    group: WoodenPlanks
     count: 2
   - !type:StackResource
     stack: CP14Nail
@@ -29,8 +29,8 @@
   tag: CP14RecipeWorkbench
   craftTime: 3
   requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
+  - !type:StackGroupResource
+    group: WoodenPlanks
     count: 2
   result: CP14SmokingPipe
 
@@ -39,8 +39,8 @@
   tag: CP14RecipeWorkbench
   craftTime: 3
   requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
+  - !type:StackGroupResource
+    group: WoodenPlanks
     count: 2
   result: CP14Plate
 
@@ -49,8 +49,8 @@
   tag: CP14RecipeWorkbench
   craftTime: 3
   requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
+  - !type:StackGroupResource
+    group: WoodenPlanks
     count: 2
   - !type:StackResource
     stack: CP14Cloth
@@ -115,8 +115,8 @@
   tag: CP14RecipeWorkbench
   craftTime: 2
   requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
+  - !type:StackGroupResource
+    group: WoodenPlanks
     count: 4
   - !type:ProtoIdResource
     protoId: CP14String
@@ -150,8 +150,8 @@
   tag: CP14RecipeWorkbench
   craftTime: 1
   requirements:
-  - !type:StackResource
-    stack: CP14WoodenPlanks
+  - !type:StackGroupResource
+    group: WoodenPlanks
   - !type:ProtoIdResource
     protoId: CP14CrystalShardBase
   result: CP14CrayonWhite

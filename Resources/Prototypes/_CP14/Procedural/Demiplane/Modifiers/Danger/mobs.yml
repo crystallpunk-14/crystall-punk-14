@@ -220,7 +220,7 @@
   - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
-      entity: CP14MobSlimeBase
+      entity: CP14MobWatcherIce
       count: 2
       minGroupSize: 2
       maxGroupSize: 3
@@ -239,7 +239,7 @@
   - CP14DemiplaneCold
   layers:
     - !type:OreDunGen
-      entity: CP14MobSlimeBase
+      entity: CP14MobWatcherMagma
       count: 2
       minGroupSize: 2
       maxGroupSize: 3
