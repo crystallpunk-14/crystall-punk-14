@@ -70,7 +70,6 @@ namespace Content.IntegrationTests.Tests
             "Dev",
             "MeteorArena",
             "Comoss",
-            "Factoria",
             //CrystallEdge Map replacement end
         };
 
