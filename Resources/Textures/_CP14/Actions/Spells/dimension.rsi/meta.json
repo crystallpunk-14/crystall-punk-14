@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "All right reserved",
-  "copyright": "Created by TheShuEd. Shadow step and Shadow grab created by .kreks.",
+  "copyright": "Created by TheShuEd. Shadow step and Shadow grab created by .kreks. Shadow swap created by TornadoTech.",
   "states": [
     {
       "name": "demi_arrow"
@@ -21,6 +21,9 @@
     },
     {
       "name": "shadow_step"
+    },
+    {
+      "name": "shadow_swap"
     }
   ]
 }

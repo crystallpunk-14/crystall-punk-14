@@ -40,7 +40,7 @@ cp14-reagent-desc-essence-poison = The liquid embodiment of the elements of pois
 
 cp14-reagent-name-essence-void = Vacuos essence
 cp14-reagent-desc-essence-void = The liquid embodiment of the elements of emptiness, obscurity, and secrecy.
- 
+
 cp14-reagent-name-essence-life = Victus essence
 cp14-reagent-desc-essence-life = The liquid embodiment of the elements of life, food, and sustenance.
 
@@ -51,8 +51,3 @@ cp14-reagent-desc-essence-crystal = The liquid embodiment of the elements of gla
 
 cp14-reagent-name-essence-magic = Praecantatio essence
 cp14-reagent-desc-essence-magic = The liquid embodiment of the elements of magic, enchantment and sorcery.
-
-
-
-
-

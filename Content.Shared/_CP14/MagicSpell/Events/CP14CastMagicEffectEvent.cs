@@ -1,7 +1,9 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Components;
+using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
@@ -9,19 +11,24 @@ namespace Content.Shared._CP14.MagicSpell.Events;
 /// <summary>
 /// Called first to verify that all conditions are met and the spell can be performed.
 /// </summary>
-[ByRefEvent]
 public sealed class CP14CastMagicEffectAttemptEvent : CancellableEntityEventArgs
 {
     /// <summary>
     /// The Performer of the event, to check if they meet the requirements.
     /// </summary>
-    public EntityUid Performer { get; init; }
+    public readonly EntityUid Performer;
+    public readonly EntityUid? Used;
+    public readonly EntityUid? Target;
+    public readonly EntityCoordinates? Position;
 
     public string Reason = string.Empty;
 
-    public CP14CastMagicEffectAttemptEvent(EntityUid performer)
+    public CP14CastMagicEffectAttemptEvent(EntityUid performer, EntityUid? used, EntityUid? target, EntityCoordinates? position)
     {
         Performer = performer;
+        Used = used;
+        Target = target;
+        Position = position;
     }
 
     public void PushReason(string reason)

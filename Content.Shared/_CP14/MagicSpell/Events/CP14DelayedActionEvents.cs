@@ -17,7 +17,9 @@ public interface ICP14DelayedMagicEffect
 
     public float DistanceThreshold { get; }
 
-    public bool Hidden{ get; }
+    public bool Hidden { get; }
+
+    public bool RequireCanInteract { get; }
 }
 
 public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorldTargetActionEvent,
@@ -40,6 +42,9 @@ public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorl
 
     [DataField]
     public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public bool RequireCanInteract { get; private set; } = true;
 }
 
 //Entity Target
@@ -63,6 +68,9 @@ public sealed partial class CP14DelayedEntityTargetActionEvent : EntityTargetAct
 
     [DataField]
     public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public bool RequireCanInteract { get; private set; } = true;
 }
 
 public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, ICP14DelayedMagicEffect
@@ -84,6 +92,9 @@ public sealed partial class CP14DelayedInstantActionEvent : InstantActionEvent, 
 
     [DataField]
     public bool Hidden { get; private set; } = false;
+
+    [DataField]
+    public bool RequireCanInteract { get; private set; } = true;
 }
 
 [Serializable, NetSerializable]
