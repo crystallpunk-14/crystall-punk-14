@@ -34,9 +34,9 @@
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
   - type: IconSmooth
     base: stonebricks
-  - type: Construction
-    graph: CP14WallStonebrick
-    node: WallStonebrick
+  #- type: Construction
+  #  graph: CP14WallStonebrick
+  #  node: WallStonebrick
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Rock
@@ -87,9 +87,9 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Construction
-    graph: CP14WallMarbleBrick
-    node: CP14WallMarbleBrick
+  #- type: Construction
+  #  graph: CP14WallMarbleBrick
+  #  node: CP14WallMarbleBrick
   - type: CP14WallpaperHolder
 
 - type: entity

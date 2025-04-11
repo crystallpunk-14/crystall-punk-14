@@ -13,9 +13,9 @@
       - state: full-1
         visible: false
       - map: ["enum.StorageFillLayers.Fill"]
-  - type: Construction
-    graph: CP14Bonfire
-    node: CP14Bonfire
+  #- type: Construction
+  #  graph: CP14Bonfire
+  #  node: CP14Bonfire
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood

@@ -1,23 +1,23 @@
-- type: construction
-  crystallPunkAllowed: true
-  name: dirt pit
-  description: You're wasting dirt to create a hole. Makes sense, doesn't it? Can only be built on dirt tiles.
-  id: CP14CrateDirtPitGrave
-  graph: CP14CrateDirtPitGrave
-  startNode: start
-  targetNode: CP14CrateDirtPitGrave
-  category: construction-category-storage
-  icon:
-    sprite: _CP14/Structures/Storage/dirt_pit.rsi
-    state: open
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-    - !type:TileType
-      targets:
-        - CP14FloorDirt
+#- type: construction
+#  crystallPunkAllowed: true
+#  name: dirt pit
+#  description: You're wasting dirt to create a hole. Makes sense, doesn't it? Can only be built on dirt tiles.
+#  id: CP14CrateDirtPitGrave
+#  graph: CP14CrateDirtPitGrave
+#  startNode: start
+#  targetNode: CP14CrateDirtPitGrave
+#  category: construction-category-storage
+#  icon:
+#    sprite: _CP14/Structures/Storage/dirt_pit.rsi
+#    state: open
+#  objectType: Structure
+#  placementMode: SnapgridCenter
+#  canBuildInImpassable: false
+#  conditions:
+#    - !type:TileNotBlocked
+#    - !type:TileType
+#      targets:
+#        - CP14FloorDirt
 
 - type: construction
   crystallPunkAllowed: true

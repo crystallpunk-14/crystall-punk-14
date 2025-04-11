@@ -88,9 +88,9 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Construction
-    graph: CP14RoofStone
-    node: CP14RoofStone
+  #- type: Construction
+  #  graph: CP14RoofStone
+  #  node: CP14RoofStone
 
 - type: entity
   parent: 

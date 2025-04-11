@@ -50,9 +50,9 @@
       collection: CP14Digging
     openSound:
       collection: CP14Digging
-  - type: Construction
-    graph: CP14CrateDirtPitGrave
-    node: CP14CrateDirtPitGrave
+  #- type: Construction
+  #  graph: CP14CrateDirtPitGrave
+  #  node: CP14CrateDirtPitGrave
 
 - type: entity
   parent: CP14CrateDirtPitGrave

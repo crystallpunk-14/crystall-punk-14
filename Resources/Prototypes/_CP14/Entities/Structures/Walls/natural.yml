@@ -64,11 +64,11 @@
           path: /Audio/Effects/break_stone.ogg
           params:
             volume: -6
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14MarbleBlock1:
-            min: 2
-            max: 3
+      #- !type:SpawnEntitiesBehavior
+      #  spawn:
+      #    CP14MarbleBlock1:
+      #      min: 2
+      #      max: 3
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
@@ -125,9 +125,9 @@
             max: 3
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Construction
-    graph: CP14WallDirt
-    node: WallDirt
+  #- type: Construction
+  #  graph: CP14WallDirt
+  #  node: WallDirt
 
 - type: entity
   id: CP14WallLeaf
