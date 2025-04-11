@@ -47,9 +47,12 @@ public partial class CP14MagicEssenceSystem : EntitySystem
     private void OnPowerChanged(Entity<CP14MagicEssenceCollectorComponent> ent, ref CP14SlotCrystalPowerChangedEvent args)
     {
         if (args.Powered)
+        {
             EnsureComp<CP14MagicEssenceAttractorComponent>(ent);
-        else
-            RemCompDeferred<CP14MagicEssenceAttractorComponent>(ent);
+            return;
+        }
+
+        RemCompDeferred<CP14MagicEssenceAttractorComponent>(ent);
     }
 
     private void OnCollectorCollide(Entity<CP14MagicEssenceCollectorComponent> ent, ref StartCollideEvent args)
@@ -86,7 +89,7 @@ public partial class CP14MagicEssenceSystem : EntitySystem
         if (!TryComp<CP14MagicEnergyContainerComponent>(ent, out var energyContainer))
             return;
 
-        _magicEnergy.ChangeEnergy(ent, -energyContainer.Energy, out _, out _, energyContainer, safe: true);
+        _magicEnergy.ChangeEnergy((ent, energyContainer), -energyContainer.Energy, out _, out _, safe: true);
 
         //TODO move to server
         if (_net.IsClient)
