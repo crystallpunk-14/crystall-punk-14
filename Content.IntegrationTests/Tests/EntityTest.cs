@@ -129,7 +129,7 @@ namespace Content.IntegrationTests.Tests
                 foreach (var (uid, meta) in entityMetas)
                 {
                     if (!meta.EntityDeleted)
-                        entityMan.QueueDeleteEntity(uid); //CP14 - replace DeleteEntity to QueueDeleteEntity
+                        entityMan.DeleteEntity(uid);
                 }
 
                 Assert.That(entityMan.EntityCount, Is.Zero);
