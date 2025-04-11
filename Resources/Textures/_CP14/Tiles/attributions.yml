@@ -1,7 +1,7 @@
 # Attempted to keep the files in alphabetical order so its easier to audit.
 # Finding individual authors is an unfeasible task. If you can reference the author please do so.
 
-- files: ["cave.png", "foundation.png", "ice.png", "marble_cave.png"]
+- files: ["cave.png", "foundation.png", "ice.png"]
   license: "CC-BY-SA-3.0"
   copyright: "Space Station 14, recolored by TheShuEd"
   source: "https://github.com/crystallpunk-14/crystall-punk-14/"
