@@ -1,0 +1,45 @@
+- type: modularPart
+  id: FishingRodShaftWooden
+  targetSlot: FishingRodShaft
+  sourcePart: CP14FishingRodShaftWooden
+  rsiPath: _CP14/Objects/Fishing/Shafts/wooden.rsi
+  modifiers:
+  - !type:AddComponents
+    components:
+    # I like the idea of parrying with a fishing rod,
+    # it's too cool to take away
+    - type: CP14MeleeParriable
+    - type: CP14FishingRod
+
+- type: modularPart
+  id: FishingRodShaftCopper
+  targetSlot: FishingRodShaft
+  sourcePart: CP14FishingRodShaftCopper
+  rsiPath: _CP14/Objects/Fishing/Shafts/copper.rsi
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14MeleeParriable
+    - type: CP14FishingRod
+
+- type: modularPart
+  id: FishingRodShaftIron
+  targetSlot: FishingRodShaft
+  sourcePart: CP14FishingRodShaftIron
+  rsiPath: _CP14/Objects/Fishing/Shafts/iron.rsi
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14MeleeParriable
+    - type: CP14FishingRod
+
+- type: modularPart
+  id: FishingRodShaftGold
+  targetSlot: FishingRodShaft
+  sourcePart: CP14FishingRodShaftGold
+  rsiPath: _CP14/Objects/Fishing/Shafts/gold.rsi
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14MeleeParriable
+    - type: CP14FishingRod
