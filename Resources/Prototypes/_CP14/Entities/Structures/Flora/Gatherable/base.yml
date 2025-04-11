@@ -157,16 +157,14 @@
   - type: CP14PlantMetabolizer
     metabolizerId: Base
   - type: CP14PlantEnergyFromLight
-    energy: 1
+    energy: 0.5
     daytime: true
   - type: CP14PlantVisuals
     growthSteps: 6
   - type: CP14PlantGrowing
-    energyCost: 1
-    resourceCost: 1
-    growthPerUpdate: 0.05 # 20 minute to full grow
-  - type: CP14PlantFading
-    resourcePerMinute: 0.25 #20 minute from water
+    energyCost: 0.25
+    resourceCost: 0.25
+    growthPerUpdate: 0.02 # 20 minute to full grow
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
@@ -180,8 +178,6 @@
   abstract: true
   components:
   - type: CP14PlantGrowing
-    growthPerUpdate: 0.025 
-  - type: CP14PlantFading
-    resourcePerMinute: 0.20
+    growthPerUpdate: 0.12
   - type: CP14PlantGatherable
     deleteAfterHarvest: false
