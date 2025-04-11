@@ -11,7 +11,7 @@
             - material: CP14Stone
               amount: 3
               doAfter: 2
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
 

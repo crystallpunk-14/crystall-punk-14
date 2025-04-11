@@ -8,7 +8,7 @@
       edges:
         - to: CP14WoodenDoorFrame
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
               
@@ -30,7 +30,7 @@
               doAfter: 1
         - to: CP14WoodenDoor
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
         - to: CP14WoodenDoorWindowed
@@ -47,9 +47,6 @@
       edges:
         - to: start
           completed:
-            - !type:SpawnPrototype
-              prototype: CP14WoodenPlanks1
-              amount: 2
             - !type:DeleteEntity {}
           steps:
             - tool: Prying #TODO - new tool
@@ -76,10 +73,6 @@
       entity: CP14WoodenDoor
       edges:
         - to: CP14WoodenDoorFrame
-          completed:
-            - !type:SpawnPrototype
-              prototype: CP14WoodenPlanks1
-              amount: 2
           steps:
             - tool: Prying #TODO - new tool
               doAfter: 5
@@ -88,10 +81,6 @@
       entity: CP14WoodenDoorMirrored
       edges:
         - to: CP14WoodenDoorFrameMirrored
-          completed:
-            - !type:SpawnPrototype
-              prototype: CP14WoodenPlanks1
-              amount: 2
           steps:
             - tool: Prying #TODO - new tool
               doAfter: 5
@@ -100,10 +89,6 @@
       entity: CP14WoodenDoorWindowed
       edges:
         - to: CP14WoodenDoorFrame
-          completed:
-            - !type:SpawnPrototype
-              prototype: CP14WoodenPlanks1
-              amount: 2
           steps:
             - tool: Prying #TODO - new tool
               doAfter: 5
@@ -112,10 +97,6 @@
       entity: CP14WoodenDoorWindowedMirrored
       edges:
         - to: CP14WoodenDoorFrameMirrored
-          completed:
-            - !type:SpawnPrototype
-              prototype: CP14WoodenPlanks1
-              amount: 2
           steps:
             - tool: Prying #TODO - new tool
               doAfter: 5

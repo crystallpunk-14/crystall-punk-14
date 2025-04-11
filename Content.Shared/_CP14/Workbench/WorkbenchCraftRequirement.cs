@@ -33,6 +33,7 @@ public abstract partial class CP14WorkbenchCraftRequirement
     /// An event that is triggered after crafting. This is the place to put important things like removing items, spending stacks or other things.
     /// </summary>
     public abstract void PostCraft(EntityManager entManager,
+        IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
         EntityUid user);
 

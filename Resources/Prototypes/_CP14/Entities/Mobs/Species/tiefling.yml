@@ -30,6 +30,7 @@
     damageContainer: CP14Biological
     damageModifierSet: CP14Tiefling
   - type: PassiveDamage
+    damageCap: 0
     allowedStates:
     - Alive
     - Critical
