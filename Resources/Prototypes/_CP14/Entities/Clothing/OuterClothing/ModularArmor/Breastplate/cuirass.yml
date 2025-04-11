@@ -35,6 +35,8 @@
     sprintModifier: 0.95
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorIronCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 1.2
   - type: CP14Material
     materials:
       CP14Iron: 50
@@ -77,6 +79,8 @@
     sprintModifier: 0.90
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorGoldCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 1.1
   - type: CP14Material
     materials:
       CP14Gold: 50
@@ -119,6 +123,8 @@
     sprintModifier: 0.98
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorCopperCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 1.15
   - type: CP14Material
     materials:
       CP14Copper: 50
@@ -161,6 +167,8 @@
     sprintModifier: 0.98
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorMithrilCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 0.95
   - type: CP14Material
     materials:
       CP14Mithril: 50
