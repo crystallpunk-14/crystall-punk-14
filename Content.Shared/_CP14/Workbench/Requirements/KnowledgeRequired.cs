@@ -34,7 +34,7 @@ public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
         return haveAllSkills;
     }
 
-    public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
     {
     }
 

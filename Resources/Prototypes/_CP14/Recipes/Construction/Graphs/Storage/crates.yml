@@ -8,7 +8,7 @@
           completed:
             - !type:SnapToGrid
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
             - material: CP14Nail
               amount: 1
@@ -26,7 +26,7 @@
           completed:
             - !type:SnapToGrid
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 4
             - material: CP14Nail
               amount: 2

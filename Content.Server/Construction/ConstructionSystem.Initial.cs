@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Construction.Components;
+using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Prototypes;
@@ -236,6 +237,36 @@ namespace Content.Server.Construction
                         }
 
                         break;
+
+                    //CP14 stack group support
+                    case CP14StackGroupConstructionGraphStep stackGroupStep:
+                        foreach (var entity in new HashSet<EntityUid>(EnumerateNearby(user)))
+                        {
+                            if (!stackGroupStep.EntityValid(entity, out var stack))
+                                continue;
+
+                            if (used.Contains(entity))
+                                continue;
+
+                            var splitStack = _stackSystem.Split(entity, stackGroupStep.Amount, user.ToCoordinates(0, 0), stack);
+
+                            if (splitStack == null)
+                                continue;
+
+                            if (string.IsNullOrEmpty(stackGroupStep.Store))
+                            {
+                                if (!_container.Insert(splitStack.Value, container))
+                                    continue;
+                            }
+                            else if (!_container.Insert(splitStack.Value, GetContainer(stackGroupStep.Store)))
+                                continue;
+
+                            handled = true;
+                            break;
+                        }
+
+                        break;
+                    //CP14 stack group support end
                 }
 
                 if (handled == false)

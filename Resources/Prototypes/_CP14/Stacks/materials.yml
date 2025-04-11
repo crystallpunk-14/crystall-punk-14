@@ -13,17 +13,24 @@
   maxCount: 10
 
 - type: stack
-  id: CP14MarbleStone
-  name: cp14-stack-marble-block
-  spawn: CP14MarbleBlock1
-  icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
-  maxCount: 10
-
-- type: stack
   id: CP14WoodenPlanks
   name: cp14-stack-wood-planks
   spawn: CP14WoodenPlanks1
   icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
+  id: CP14BirchWoodenPlanks
+  name: cp14-stack-wood-planks-birch
+  spawn: CP14BirchWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood_birch.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
+  id: CP14LucensWoodenPlanks
+  name: cp14-material-lucens-planks
+  spawn: CP14LucensWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
   maxCount: 20
 
 - type: stack
@@ -67,13 +74,6 @@
   spawn: CP14MithrilBar1
   icon: { sprite: _CP14/Objects/Materials/mithril_bar.rsi, state: bar_2 }
   maxCount: 10
-
-- type: stack
-  id: CP14LucensWoodenPlanks
-  name: cp14-material-lucens-planks
-  spawn: CP14LucensWoodenPlanks1
-  icon: { sprite: _CP14/Objects/Materials/lucens_wood.rsi, state: planks_2 }
-  maxCount: 20
 
 - type: stack
   id: CP14GlassSheet

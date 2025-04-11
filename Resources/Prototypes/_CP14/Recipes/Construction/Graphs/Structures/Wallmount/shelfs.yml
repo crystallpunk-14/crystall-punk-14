@@ -8,7 +8,7 @@
       edges:
         - to: CP14WallmountBarShelfA
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
     - node: CP14WallmountBarShelfA
@@ -24,7 +24,7 @@
       edges:
         - to: CP14WallmountBarShelfB
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
     - node: CP14WallmountBarShelfB

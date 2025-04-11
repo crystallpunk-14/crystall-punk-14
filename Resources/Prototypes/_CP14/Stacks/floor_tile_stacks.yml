@@ -13,13 +13,6 @@
   maxCount: 30
 
 - type: stack
-  id: CP14FloorTileMarbleSmallbricks
-  name: marble small brick
-  spawn: CP14FloorTileMarbleSmallbricks
-  icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: marble_smallbricks }
-  maxCount: 30
-
-- type: stack
   id: CP14FloorTileOakWoodplanks
   name: oak woodplanks
   spawn: CP14FloorTileOakWoodplanks
@@ -73,4 +66,32 @@
   name: square carved stonebricks
   spawn: CP14FloorTileStonebricksSquareCarved
   icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: stonebrick_square_carved }
+  maxCount: 30
+
+- type: stack
+  id: CP14FloorTileBirchWoodplanks
+  name: birch woodplanks
+  spawn: CP14FloorTileOakWoodplanks
+  icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: birch_woodplanks }
+  maxCount: 30
+
+- type: stack
+  id: CP14FloorTileBirchWoodplanksBig
+  name: birch big woodplanks
+  spawn: CP14FloorTileBirchWoodplanksBig
+  icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: birch_woodplanks_big }
+  maxCount: 30
+
+- type: stack
+  id: CP14FloorTileBirchWoodplanksCruciform
+  name: birch cruciform woodplanks
+  spawn: CP14FloorTileBirchWoodplanksCruciform
+  icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: birch_woodplanks_cruciform }
+  maxCount: 30
+
+- type: stack
+  id: CP14FloorTileBirchWoodplanksStairs
+  name: birch stairs woodplanks
+  spawn: CP14FloorTileBirchWoodplanksStairs
+  icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: birch_woodplanks_stairways }
   maxCount: 30
