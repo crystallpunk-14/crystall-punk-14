@@ -2,9 +2,8 @@
   parent: BaseStructure
   id: CP14FloorWaterOptimized
   name: water
-  suffix: Optimized, Empty
   description: A trough of plain water. Clean enough for consumption
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   placement:
     mode: SnapgridCenter
     snap:
@@ -62,29 +61,11 @@
   - type: TileEntityEffect
     effects:
     - !type:ExtinguishReaction
-  - type: FrictionContacts
-
-- type: entity
-  parent: CP14FloorWaterOptimized
-  id: CP14FloorWaterOptimizedDeep
-  name: deep water
-  suffix: Deep, Air damage
-  components:
-  - type: Sprite
-    color: "#869dc2"
-  - type: SpeedModifierContacts
-    walkSpeedModifier: 0.2
-    sprintSpeedModifier: 0.2
-  - type: FrictionContacts
-  - type: DamageContacts
-    damage:
-      types:
-        Asphyxiation: 2.5
 
 - type: entity
   parent: CP14FloorWaterOptimized
   id: CP14FloorWater
-  suffix: Normal
+  categories: [ ForkFiltered ]
   components:
   - type: DrawableSolution
     solution: pool
