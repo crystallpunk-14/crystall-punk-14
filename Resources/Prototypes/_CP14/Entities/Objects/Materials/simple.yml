@@ -1,4 +1,282 @@
 - type: entity
+  id: CP14DirtBlock1
+  parent: BaseItem
+  name: dirt block
+  description: A block of excellent black soil.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/dirt_block.rsi
+    layers:
+      - state: dirt
+        map: ["base"]
+  - type: FloorTile
+    placeTileSound:
+      collection: CP14Digging
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorDirt
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Dirt
+    count: 1
+    baseLayer: base
+    layerStates:
+    - dirt
+    - dirt_2
+    - dirt_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Dirt: 100
+  - type: CP14MagicEssenceContainer
+    essences:
+      Earth: 1
+
+- type: entity
+  id: CP14DirtBlock10
+  parent: CP14DirtBlock1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14StoneBlock1
+  parent: BaseItem
+  name: stone block
+  description: A block of cold stone.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Materials/stone_block.rsi
+    layers:
+      - state: stone
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14Stone
+    count: 1
+    baseLayer: base
+    layerStates:
+    - stone
+    - stone_2
+    - stone_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14Stone: 100
+  - type: CP14MagicEssenceContainer
+    essences:
+      Earth: 1
+
+- type: entity
+  id: CP14StoneBlock10
+  parent: CP14StoneBlock1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14WoodLog
+  parent: BaseItem
+  name: wooden log
+  description: A piece of unprocessed wood. Good material for building, or starting a fire.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/wood.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 30
+    damage:
+      types:
+        Heat: 1
+  - type: Log
+    spawnedPrototype: CP14WoodenPlanks1
+    spawnCount: 3
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14WoodenPlanks1
+  parent: BaseItem
+  name: wooden planks
+  description: Treated and ready-to-use wood.
+  categories: [ ForkFiltered ]
+  suffix: 1
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/wood.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 12
+    damage:
+      types:
+        Heat: 1
+  - type: Appearance
+  - type: Stack
+    stackType: CP14WoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+  - type: Material
+  - type: PhysicalComposition # точно ли это нужно?
+    materialComposition:
+      CP14WoodenPlanks: 100
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14WoodenPlanks10
+  parent: CP14WoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14WoodenPlanks20
+  parent: CP14WoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
+
+- type: entity
+  id: CP14LucensWoodLog
+  parent: CP14WoodLog
+  name: lucens log
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/lucens_wood.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Log
+    spawnedPrototype: CP14LucensWoodenPlanks1
+    spawnCount: 3
+
+- type: entity
+  id: CP14LucensWoodenPlanks1
+  parent: CP14WoodenPlanks1
+  name: lucens planks
+  suffix: 1
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/lucens_wood.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Stack
+    stackType: CP14LucensWoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+  - type: FloorTile
+    placeTileSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorLucensWoodPlanks
+
+- type: entity
+  id: CP14LucensWoodenPlanks10
+  parent: CP14LucensWoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14LucensWoodenPlanks20
+  parent: CP14LucensWoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
+
+- type: entity
   id: CP14Nail1
   parent: BaseItem
   name: nails

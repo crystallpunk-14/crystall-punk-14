@@ -138,17 +138,3 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14LeafMaze
-
-- type: entity
-  id: CP14BiomeSpawnerMarbleCave
-  parent: CP14BaseBiomeSpawner
-  suffix: Marble cave
-  components:
-  - type: Sprite
-    layers:
-      - state: cave
-      - state: frame
-      - sprite: _CP14/Objects/Materials/marble_block.rsi
-        state: stone_3
-  - type: CP14BiomeSpawner
-    biome: CP14MarbleCaves 
