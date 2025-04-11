@@ -1,6 +1,5 @@
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.EntitySystems;
 using Robust.Shared.Serialization;
@@ -10,7 +9,7 @@ namespace Content.Shared._CP14.ModularCraft;
 public abstract class CP14SharedModularCraftSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedLabelSystem _label = default!;
+    [Dependency] private readonly LabelSystem _label = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
 
     public override void Initialize()
