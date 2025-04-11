@@ -20,6 +20,20 @@
   maxCount: 20
 
 - type: stack
+  id: CP14BirchWoodenPlanks
+  name: cp14-stack-wood-planks-birch
+  spawn: CP14BirchWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood_birch.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
+  id: CP14LucensWoodenPlanks
+  name: cp14-material-lucens-planks
+  spawn: CP14LucensWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
   id: CP14Nail
   name: cp14-stack-nails
   spawn: CP14Nail1
@@ -60,13 +74,6 @@
   spawn: CP14MithrilBar1
   icon: { sprite: _CP14/Objects/Materials/mithril_bar.rsi, state: bar_2 }
   maxCount: 10
-
-- type: stack
-  id: CP14LucensWoodenPlanks
-  name: cp14-material-lucens-planks
-  spawn: CP14LucensWoodenPlanks1
-  icon: { sprite: _CP14/Objects/Materials/lucens_wood.rsi, state: planks_2 }
-  maxCount: 20
 
 - type: stack
   id: CP14GlassSheet

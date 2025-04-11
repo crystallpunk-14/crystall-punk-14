@@ -26,6 +26,8 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileFoundation
 
 - type: tile
   editorHidden: false
@@ -59,6 +61,8 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileStonebricks
 
 - type: tile
   editorHidden: false
@@ -92,6 +96,8 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileStonebricks
 
 - type: tile
   editorHidden: false
@@ -117,6 +123,8 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileStonebricksSmallCarved
 
 - type: tile
   editorHidden: false
@@ -142,6 +150,8 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileStonebricksSmallCarved2
 
 - type: tile
   editorHidden: false
@@ -167,6 +177,8 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileStonebricksSquareCarved
 
 - type: tile
   editorHidden: false
@@ -190,6 +202,8 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileMarbleBrick
 
 - type: tile
   editorHidden: false
