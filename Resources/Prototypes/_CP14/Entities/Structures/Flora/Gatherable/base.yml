@@ -109,18 +109,6 @@
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
       - trigger:
-          !type:DamageGroupTrigger #Rot
-          damageGroup: Genetic
-          damage: 1
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14CompostMaterial1:
-                min: 2
-                max: 3
-      - trigger:
           !type:DamageTypeTrigger #Heat
           damageType: Heat
           damage: 20
