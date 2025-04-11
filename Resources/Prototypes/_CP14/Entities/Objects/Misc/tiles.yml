@@ -68,19 +68,6 @@
 
 - type: entity
   parent: CP14FloorTileBase
-  id: CP14FloorTileMarbleSmallbricks
-  name: marble small brick
-  components:
-  - type: Sprite
-    state: marble_smallbricks
-  - type: FloorTile
-    outputs:
-      - CP14FloorMarbleSmallbricks
-  - type: Stack
-    stackType: CP14FloorTileMarbleSmallbricks
-
-- type: entity
-  parent: CP14FloorTileBase
   id: CP14FloorTileOakWoodplanks
   name: oak woodplanks
   components:
