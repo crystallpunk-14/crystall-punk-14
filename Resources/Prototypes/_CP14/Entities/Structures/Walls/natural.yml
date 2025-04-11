@@ -32,7 +32,7 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14StoneBlock1:
+          CP14DirtEffect:
             min: 2
             max: 3
       - !type:DoActsBehavior
@@ -120,7 +120,7 @@
             volume: -6
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14DirtBlock1:
+          CP14DirtEffect:
             min: 2
             max: 3
       - !type:DoActsBehavior

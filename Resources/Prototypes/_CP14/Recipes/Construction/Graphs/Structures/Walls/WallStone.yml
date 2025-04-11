@@ -1,16 +1,16 @@
-- type: constructionGraph
-  id: CP14WallStonebrick
-  start: start
-  graph:
-    - node: start
-      edges:
-        - to: WallStonebrick
-          completed:
-            - !type:SnapToGrid
-              southRotation: true
-          steps:
-            - material: CP14Stone
-              amount: 3
-              doAfter: 2
-    - node: WallStonebrick
-      entity: CP14WallStonebrick
+#- type: constructionGraph
+#  id: CP14WallStonebrick
+#  start: start
+#  graph:
+#    - node: start
+#      edges:
+#        - to: WallStonebrick
+#          completed:
+#            - !type:SnapToGrid
+#              southRotation: true
+#          steps:
+#            - material: CP14Stone
+#              amount: 3
+#              doAfter: 2
+#    - node: WallStonebrick
+#      entity: CP14WallStonebrick

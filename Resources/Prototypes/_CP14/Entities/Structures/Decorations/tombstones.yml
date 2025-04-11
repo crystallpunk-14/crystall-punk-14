@@ -44,7 +44,7 @@
           acts: [ "Destruction" ]
         - !type:SpawnEntitiesBehavior
           spawn:
-            CP14StoneBlock1:
+            CP14DirtEffect:
               min: 1
               max: 4
   - type: Climbable

@@ -1,13 +1,13 @@
-- type: CP14Recipe
-  id: CP14FloorTileFoundation
-  tag: CP14RecipeWorkbench
-  craftTime: 1
-  requirements:
-  - !type:StackResource
-    stack: CP14Stone
-    count: 1
-  result: CP14FloorTileFoundation
-  resultCount: 4
+#- type: CP14Recipe
+#  id: CP14FloorTileFoundation
+#  tag: CP14RecipeWorkbench
+#  craftTime: 1
+#  requirements:
+#  - !type:StackResource
+#    stack: CP14Stone
+#    count: 1
+#  result: CP14FloorTileFoundation
+#  resultCount: 4
 
 - type: CP14Recipe
   id: CP14FloorTileMarbleBrick
@@ -31,49 +31,49 @@
   result: CP14FloorTileMarbleSmallbricks
   resultCount: 4
 
-- type: CP14Recipe
-  id: CP14FloorTileStonebricks
-  tag: CP14RecipeWorkbench
-  craftTime: 1
-  requirements:
-  - !type:StackResource
-    stack: CP14Stone
-    count: 1
-  result: CP14FloorTileStonebricks
-  resultCount: 4
+#- type: CP14Recipe
+#  id: CP14FloorTileStonebricks
+#  tag: CP14RecipeWorkbench
+#  craftTime: 1
+#  requirements:
+#  - !type:StackResource
+#    stack: CP14Stone
+#    count: 1
+#  result: CP14FloorTileStonebricks
+#  resultCount: 4
+#
+#- type: CP14Recipe
+#  id: CP14FloorTileStonebricksSmallCarved
+#  tag: CP14RecipeWorkbench
+#  craftTime: 1
+#  requirements:
+#  - !type:StackResource
+#    stack: CP14Stone
+#    count: 1
+#  result: CP14FloorTileStonebricksSmallCarved
+#  resultCount: 4
 
-- type: CP14Recipe
-  id: CP14FloorTileStonebricksSmallCarved
-  tag: CP14RecipeWorkbench
-  craftTime: 1
-  requirements:
-  - !type:StackResource
-    stack: CP14Stone
-    count: 1
-  result: CP14FloorTileStonebricksSmallCarved
-  resultCount: 4
-
-- type: CP14Recipe
-  id: CP14FloorTileStonebricksSmallCarved2
-  tag: CP14RecipeWorkbench
-  craftTime: 1
-  requirements:
-  - !type:StackResource
-    stack: CP14Stone
-    count: 1
-  result: CP14FloorTileStonebricksSmallCarved2
-  resultCount: 4
-
-- type: CP14Recipe
-  id: CP14FloorTileStonebricksSquareCarved
-  tag: CP14RecipeWorkbench
-  craftTime: 1
-  requirements:
-  - !type:StackResource
-    stack: CP14Stone
-    count: 1
-  result: CP14FloorTileStonebricksSquareCarved
-  resultCount: 4
+#- type: CP14Recipe
+#  id: CP14FloorTileStonebricksSmallCarved2
+#  tag: CP14RecipeWorkbench
+#  craftTime: 1
+#  requirements:
+#  - !type:StackResource
+#    stack: CP14Stone
+#    count: 1
+#  result: CP14FloorTileStonebricksSmallCarved2
+#  resultCount: 4
+#
+#- type: CP14Recipe
+#  id: CP14FloorTileStonebricksSquareCarved
+#  tag: CP14RecipeWorkbench
+#  craftTime: 1
+#  requirements:
+#  - !type:StackResource
+#    stack: CP14Stone
+#    count: 1
+#  result: CP14FloorTileStonebricksSquareCarved
+#  resultCount: 4
 
 - type: CP14Recipe
   id: CP14FloorTileOakWoodplanks

@@ -1,19 +1,19 @@
-- type: constructionGraph
-  id: CP14Bonfire
-  start: start
-  graph:
-    - node: start
-      actions:
-        - !type:DestroyEntity {}
-      edges:
-        - to: CP14Bonfire
-          steps:
-            - material: CP14Stone
-              amount: 3
-              doAfter: 2
-            - stackGroup: WoodenPlanks
-              amount: 2
-              doAfter: 2
-
-    - node: CP14Bonfire
-      entity: CP14Bonfire
+#- type: constructionGraph
+#  id: CP14Bonfire
+#  start: start
+#  graph:
+#    - node: start
+#      actions:
+#        - !type:DestroyEntity {}
+#      edges:
+#        - to: CP14Bonfire
+#          steps:
+#            - material: CP14Stone
+#              amount: 3
+#              doAfter: 2
+#            - stackGroup: WoodenPlanks
+#              amount: 2
+#              doAfter: 2
+#
+#    - node: CP14Bonfire
+#      entity: CP14Bonfire

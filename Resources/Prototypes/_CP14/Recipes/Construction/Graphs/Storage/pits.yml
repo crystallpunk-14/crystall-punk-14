@@ -1,16 +1,16 @@
-- type: constructionGraph
-  id: CP14CrateDirtPitGrave
-  start: start
-  graph:
-    - node: start
-      actions:
-        - !type:DestroyEntity {}
-      edges:
-        - to: CP14CrateDirtPitGrave
-          steps:
-            - material: CP14Dirt
-              amount: 3
-              doAfter: 5
-              
-    - node: CP14CrateDirtPitGrave
-      entity: CP14CrateDirtPitGrave
+#- type: constructionGraph
+#  id: CP14CrateDirtPitGrave
+#  start: start
+#  graph:
+#    - node: start
+#      actions:
+#        - !type:DestroyEntity {}
+#      edges:
+#        - to: CP14CrateDirtPitGrave
+#          steps:
+#            - material: CP14Dirt
+#              amount: 3
+#              doAfter: 5
+#              
+#    - node: CP14CrateDirtPitGrave
+#      entity: CP14CrateDirtPitGrave

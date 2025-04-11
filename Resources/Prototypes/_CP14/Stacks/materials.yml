@@ -1,23 +1,23 @@
-- type: stack
-  id: CP14Dirt
-  name: cp14-stack-dirt-block
-  spawn: CP14DirtBlock1
-  icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
-  maxCount: 10
-
-- type: stack
-  id: CP14Stone
-  name: cp14-stack-stone-block
-  spawn: CP14StoneBlock1
-  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
-  maxCount: 10
-
-- type: stack
-  id: CP14MarbleStone
-  name: cp14-stack-marble-block
-  spawn: CP14MarbleBlock1
-  icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
-  maxCount: 10
+#- type: stack
+#  id: CP14Dirt
+#  name: cp14-stack-dirt-block
+#  spawn: CP14DirtBlock1
+#  icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
+#  maxCount: 10
+#
+#- type: stack
+#  id: CP14Stone
+#  name: cp14-stack-stone-block
+#  spawn: CP14StoneBlock1
+#  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
+#  maxCount: 10
+#
+#- type: stack
+#  id: CP14MarbleStone
+#  name: cp14-stack-marble-block
+#  spawn: CP14MarbleBlock1
+#  icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
+#  maxCount: 10
 
 - type: stack
   id: CP14WoodenPlanks

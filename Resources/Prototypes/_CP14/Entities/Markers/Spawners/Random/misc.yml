@@ -6,7 +6,7 @@
   components:
   - type: RandomSpawner
     prototypes:
-    - CP14DirtBlock1
+    - CP14DirtEffect #- CP14DirtBlock1
     chance: 1
     deleteSpawnerAfterSpawn: false
 

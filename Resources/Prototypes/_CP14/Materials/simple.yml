@@ -7,32 +7,32 @@
   color: "#874d3a"
   price: 0
 
-- type: material
-  id: CP14Dirt
-  stackEntity: CP14DirtBlock1
-  name: cp14-material-dirt-block
-  unit: materials-unit-chunk
-  icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
-  color: "#5e3f31"
-  price: 0
+#- type: material
+#  id: CP14Dirt
+#  stackEntity: CP14DirtBlock1
+#  name: cp14-material-dirt-block
+#  unit: materials-unit-chunk
+#  icon: { sprite: _CP14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
+#  color: "#5e3f31"
+#  price: 0
 
-- type: material
-  id: CP14Stone
-  stackEntity: CP14StoneBlock1
-  name: cp14-material-stone-block
-  unit: materials-unit-chunk
-  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
-  color: "#555963"
-  price: 0
+#- type: material
+#  id: CP14Stone
+#  stackEntity: CP14StoneBlock1
+#  name: cp14-material-stone-block
+#  unit: materials-unit-chunk
+#  icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
+#  color: "#555963"
+#  price: 0
 
-- type: material
-  id: CP14MarbleStone
-  stackEntity: CP14MarbleBlock1
-  name: cp14-material-stone-block #TODO
-  unit: materials-unit-chunk
-  icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
-  color: "#555963"
-  price: 0
+#- type: material
+#  id: CP14MarbleStone
+#  stackEntity: CP14MarbleBlock1
+#  name: cp14-material-stone-block #TODO
+#  unit: materials-unit-chunk
+#  icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
+#  color: "#555963"
+#  price: 0
 
 - type: material
   id: CP14Nail

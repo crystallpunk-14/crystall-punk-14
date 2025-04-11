@@ -52,7 +52,7 @@
             volume: -4
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14StoneBlock1:
+          CP14DirtEffect:
             min: 4
             max: 5
   - type: CP14MagicRitual
@@ -181,7 +181,7 @@
             volume: -4
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14StoneBlock1:
+          CP14DirtEffect:
             min: 4
             max: 5
   - type: CP14MagicRitual
@@ -258,7 +258,7 @@
             volume: -4
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14StoneBlock1:
+          CP14DirtEffect:
             min: 4
             max: 5
 
@@ -316,6 +316,6 @@
             volume: -4
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14StoneBlock1:
+          CP14DirtEffect:
             min: 2
             max: 3

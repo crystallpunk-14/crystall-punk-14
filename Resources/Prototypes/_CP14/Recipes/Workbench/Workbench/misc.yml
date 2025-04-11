@@ -57,18 +57,18 @@
     count: 1
   result: CP14BaseMop
 
-- type: CP14Recipe
-  id: CP14Lighter
-  tag: CP14RecipeWorkbench
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14Stone
-    count: 2
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 1
-  result: CP14Lighter
+#- type: CP14Recipe
+#  id: CP14Lighter
+#  tag: CP14RecipeWorkbench
+#  craftTime: 4
+#  requirements:
+#  - !type:StackResource
+#    stack: CP14Stone
+#    count: 2
+#  - !type:StackResource
+#    stack: CP14IronBar
+#    count: 1
+#  result: CP14Lighter
 
 - type: CP14Recipe
   id: CP14ModularGripWooden
