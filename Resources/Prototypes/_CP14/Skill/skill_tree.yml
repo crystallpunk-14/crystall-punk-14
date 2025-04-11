@@ -51,3 +51,12 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: atlethic
+
+- type: cp14SkillTree
+  id: skeleton_discipline
+  name: cp14-skill-tree-skeleton-name
+  desc: cp14-skill-tree-skeleton-desc
+  color: "#36937b"
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: skeleton_discipline

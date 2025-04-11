@@ -88,3 +88,16 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeBoneSword
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeBoneSwordReinforced
+  name: bone sword blade
+  suffix: Reinforced
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+    state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeBoneSwordReinforced

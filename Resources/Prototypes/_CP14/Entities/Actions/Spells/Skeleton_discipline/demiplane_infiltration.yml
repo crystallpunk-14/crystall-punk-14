@@ -1,0 +1,42 @@
+- type: entity
+  id: CP14ActionSpellDemiplaneInfiltrationSkeleton
+  name: Demiplane infiltration
+  description: You get inside the demiplane of your choice.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: rift_arrow
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffectStaminaCost
+    stamina: 60
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectShadowStep
+    effects:
+    - !type:CP14SpellDemiplaneInfiltration
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Ego intrabo et..."
+    endSpeech: "interficiam inimicos meos"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneDemiplaneInfiltration
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14DemiplaneRift
+    canTargetSelf: false
+    checkCanAccess: true
+    range: 3
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+      state: rift_arrow
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 50
+      castDelay: 5
+      distanceThreshold: 3
+      breakOnMove: true

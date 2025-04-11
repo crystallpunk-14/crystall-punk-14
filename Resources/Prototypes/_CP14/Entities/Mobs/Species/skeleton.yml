@@ -107,6 +107,9 @@
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
   - type: ContainerContainer
+  - type: Tag
+    tags:
+      - CP14DeadHealing
   - type: Inventory
     templateId: CP14Human
   - type: TransferMindOnGib
