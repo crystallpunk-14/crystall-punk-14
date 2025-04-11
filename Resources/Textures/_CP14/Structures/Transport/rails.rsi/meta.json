@@ -1,0 +1,75 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+	"license": "All rights reserved",
+	"copyright": "Created by Jaraten (discord/github)",
+    "states": [
+        {
+            "name": "rails_0"
+
+        },
+        {
+            "name": "rails_1"
+
+        },
+        {
+            "name": "rails_2"
+
+        },
+        {
+            "name": "rails_3"
+
+        },
+        {
+            "name": "rails_4"
+
+        },
+        {
+            "name": "rails_5"
+
+        },
+        {
+            "name": "rails_6"
+
+        },
+        {
+            "name": "rails_7"
+
+        },
+        {
+            "name": "rails_8"
+
+        },
+        {
+            "name": "rails_9"
+
+        },
+        {
+            "name": "rails_10"
+
+        },
+        {
+            "name": "rails_11"
+
+        },
+        {
+            "name": "rails_12"
+
+        },
+        {
+            "name": "rails_13"
+
+        },
+        {
+            "name": "rails_14"
+
+        },
+        {
+            "name": "rails_15"
+
+        }
+    ]
+}
