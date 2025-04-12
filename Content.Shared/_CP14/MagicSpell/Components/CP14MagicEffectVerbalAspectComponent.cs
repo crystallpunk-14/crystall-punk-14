@@ -11,16 +11,13 @@ public sealed partial class CP14MagicEffectVerbalAspectComponent : Component
 
     [DataField]
     public string EndSpeech = string.Empty; //Not LocId!
-
-    [DataField]
-    public bool Emote = false;
 }
 
 /// <summary>
 /// patch to send an event to the server for saying a phrase out loud
 /// </summary>
 [ByRefEvent]
-public sealed class CP14VerbalAspectSpeechEvent : EntityEventArgs
+public sealed class CP14SpellSpeechEvent : EntityEventArgs
 {
     public EntityUid? Performer { get; init; }
 

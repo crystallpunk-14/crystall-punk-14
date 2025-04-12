@@ -88,6 +88,21 @@
       minGroupSize: 1
       maxGroupSize: 3
 
+- type: cp14DemiplaneModifier
+  id: EnemyWendigo
+  levels:
+    min: 3
+    max: 10
+  generationWeight: 1.5
+  categories:
+    Danger: 0.5
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneWendigo
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+
 # TIER 2
 
 - type: cp14DemiplaneModifier
