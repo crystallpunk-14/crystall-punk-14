@@ -3,6 +3,7 @@
   parent: CP14SimpleMobBase
   name: wendigo
   description: The spirit of hunger and night. Hunting lonely wanderers lost in the dark forest.
+  categories: [ HideSpawnMenu ]
   components:
   - type: NpcFactionMember
     factions:
@@ -32,6 +33,7 @@
   - type: Tag
     tags:
       - FootstepSound
+      - HideContextMenu
   - type: DamageStateVisuals
     states:
       Alive:
@@ -67,7 +69,7 @@
         Piercing: 2
         Structural: 5
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5
+    baseWalkSpeed: 2
     baseSprintSpeed: 6
     acceleration: 16.0
   - type: Climbing
