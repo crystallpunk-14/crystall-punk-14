@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared._CP14.WeatherEffect;
+using Content.Shared._CP14.WeatherEffect.Effects;
 using Content.Shared.Weather;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;

@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._CP14.WeatherEffect;
+using Content.Shared._CP14.WeatherEffect.Effects;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;

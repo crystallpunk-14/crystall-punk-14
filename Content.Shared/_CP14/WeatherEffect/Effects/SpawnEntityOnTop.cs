@@ -1,8 +1,7 @@
-using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Shared._CP14.WeatherEffect;
+namespace Content.Shared._CP14.WeatherEffect.Effects;
 
 public sealed partial class SpawnEntityOnTop : CP14WeatherEffect
 {
