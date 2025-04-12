@@ -22,5 +22,5 @@
   id: CP14GatherSage
   entries:
   - id: CP14WildSage
-    amount: 2
-    maxAmount: 4
+    amount: 4
+    maxAmount: 8
