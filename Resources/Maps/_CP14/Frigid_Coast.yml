@@ -85,7 +85,7 @@ entities:
       entities: {}
       decals: {}
       modifiedTiles: {}
-      template: CP14SandOceanFill
+      template: CP14IceWallFill
       layers: []
     - type: MapGrid
       chunks:

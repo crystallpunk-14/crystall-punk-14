@@ -6,7 +6,7 @@
   randomRotation: false
   minPlayers: 0
   stations:
-    Comoss:
+    Frigid_Coast:
       stationProto: CP14BaseExpedition
       components:
         - type: StationNameSetup
