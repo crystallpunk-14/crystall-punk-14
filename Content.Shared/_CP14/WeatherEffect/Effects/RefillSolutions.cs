@@ -1,12 +1,11 @@
-using Content.Shared._CP14.Farming.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Shared._CP14.WeatherEffect;
+namespace Content.Shared._CP14.WeatherEffect.Effects;
 
-public sealed partial class WateringPlant : CP14WeatherEffect
+public sealed partial class RefillSolutions : CP14WeatherEffect
 {
     [DataField(required: true)]
     public Dictionary<ProtoId<ReagentPrototype>, float> Reagents = new();
@@ -16,12 +15,12 @@ public sealed partial class WateringPlant : CP14WeatherEffect
         if (!random.Prob(Prob))
             return;
 
-        if (!entManager.TryGetComponent<CP14PlantComponent>(target, out var plant))
+        if (!entManager.TryGetComponent<CP14WeatherRefillableComponent>(target, out var refillable))
             return;
 
         var solutionSystem = entManager.System<SharedSolutionContainerSystem>();
 
-        solutionSystem.TryGetSolution(target, plant.Solution, out var ent, out var solution);
+        solutionSystem.TryGetSolution(target, refillable.Solution, out var ent, out var solution);
 
         if (ent is null)
             return;

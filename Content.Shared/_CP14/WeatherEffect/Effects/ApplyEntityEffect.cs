@@ -1,9 +1,9 @@
 using Content.Shared.EntityEffects;
 using Robust.Shared.Random;
 
-namespace Content.Shared._CP14.WeatherEffect;
+namespace Content.Shared._CP14.WeatherEffect.Effects;
 
-public sealed partial class ApplyEntityEffect : CP14WeatherEffect
+public sealed partial class ApplyEntityEffect : Effects.CP14WeatherEffect
 {
     [DataField(required: true, serverOnly: true)]
     public List<EntityEffect> Effects = new();
