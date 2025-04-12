@@ -2,7 +2,6 @@
   id: DefaultMapPool
   maps:
    - Comoss
-   #- Factoria
    - Frigid_Coast
 
 - type: gameMapPool
