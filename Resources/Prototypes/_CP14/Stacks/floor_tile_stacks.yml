@@ -13,6 +13,13 @@
   maxCount: 30
 
 - type: stack
+  id: CP14FloorTileMarbleSmallbricks
+  name: marble small brick
+  spawn: CP14FloorTileMarbleSmallbricks
+  icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: marble_smallbricks }
+  maxCount: 30
+
+- type: stack
   id: CP14FloorTileOakWoodplanks
   name: oak woodplanks
   spawn: CP14FloorTileOakWoodplanks
