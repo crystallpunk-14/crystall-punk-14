@@ -75,3 +75,16 @@
         - FloorBasalt
       entities:
         - CP14FloorLava
+
+- type: biomeTemplate
+  id: CP14IceWallFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorSnow
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - FloorSnow
+      entities:
+        - CP14WindowIceBlock
