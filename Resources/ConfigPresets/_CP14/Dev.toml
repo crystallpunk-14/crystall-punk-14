@@ -1,5 +1,5 @@
 [whitelist]
-enabled = true
+enabled = false
 
 [log]
 path = "logs"
@@ -14,13 +14,13 @@ bindto = "::,0.0.0.0"
 max_connections = 100
 
 [game]
-hostname = "⚔️  CrystallEdge [RU] ⚔️ Status: Whitelist only"
+hostname = "⚔️  CrystallEdge [EN] ⚔️ Status: Whitelist Open playtest"
 desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in fantasy style"
 lobbyenabled = true
 soft_max_players = 40
 maxplayers = 80
 lobbyduration = 300
-role_timers = true
+role_timers = false
 
 [server]
 rules_file = "CP14SandboxRU"
@@ -47,7 +47,7 @@ preload_grids = false
 auto_call_time = 0
 
 [admin]
-deadmin_on_join = false
+deadmin_on_join = true
 
 [ic]
 flavor_text = true
@@ -61,4 +61,4 @@ enable_during_round = true
 
 [cp14]
 discord_auth_enabled = true
-closet_beta_test = true
+closet_beta_test = false
