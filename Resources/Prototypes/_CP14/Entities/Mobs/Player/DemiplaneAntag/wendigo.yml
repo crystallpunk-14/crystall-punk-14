@@ -100,7 +100,7 @@
     - CP14ActionSpellWendigoWarp
   - type: SpamEmitSound
     minInterval: 20
-    maxInterval: 40
+    maxInterval: 80
     sound:
       path: /Audio/_CP14/Effects/Wendigo/ambient.ogg
       params:

@@ -10,10 +10,12 @@
     stamina: 20
   - type: CP14MagicEffect
     telegraphyEffects:
+    - !type:CP14SpellRevealStealthUser
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14WendigoRitualSound
     effects:
+    - !type:CP14SpellRevealStealthUser
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Paralyze
@@ -46,4 +48,3 @@
       distanceThreshold: 1.5
       breakOnMove: false
       breakOnDamage: true
-      hidden: true

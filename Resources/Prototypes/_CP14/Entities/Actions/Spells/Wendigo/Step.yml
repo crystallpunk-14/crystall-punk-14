@@ -6,8 +6,6 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/wendigo.rsi
     state: step
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.8
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

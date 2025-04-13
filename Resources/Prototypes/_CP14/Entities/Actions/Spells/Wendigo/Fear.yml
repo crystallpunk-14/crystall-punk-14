@@ -10,9 +10,13 @@
     speedMultiplier: 0.2
   - type: CP14MagicEffect
     effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14RuneWendigoFearImpact
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectWendigoFear
+    - !type:CP14SpellRevealStealthUser
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:MovespeedModifier
@@ -56,7 +60,8 @@
     sprite: _CP14/Effects/Magic/cast_impact.rsi
     layers:
     - state: particles_down
-      color: "#2b2c32"
+      color: "#6c5f82"
+      shader: unshaded
  
 - type: entity
   id: CP14RuneWendigoFear
@@ -64,9 +69,27 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
-    color: "#2b2c32"
+    color: "#6c5f82"
   - type: Sprite
     layers:
     - state: double_outer
-      color: "#2b2c32"
+      color: "#6c5f82"
       shader: unshaded
+ 
+- type: entity
+  id: CP14RuneWendigoFearImpact
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#6c5f82"
+    radius: 3
+    energy: 8
+    netsync: false
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#6c5f82"
+      shader: unshaded
+  - type: LightFade
+    duration: 1
