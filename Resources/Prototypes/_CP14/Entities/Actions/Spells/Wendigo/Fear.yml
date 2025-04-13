@@ -7,7 +7,7 @@
     sprite: _CP14/Actions/Spells/wendigo.rsi
     state: fear
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.2
+    speedMultiplier: 0.4
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnUser
