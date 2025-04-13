@@ -64,6 +64,12 @@ public sealed class CP14WeatherEffectJob : Job<bool>
         //Calculate all affected entities by weather
         foreach (var ent in _entitiesOnMap)
         {
+            //Contained entities not affected by weather
+            if (ent.Comp.ParentUid != _mapUid.Owner)
+            {
+                continue;
+            }
+
             //All weatherblocker entites should be affected by weather
             if (_config.CanAffectOnWeatherBlocker && _weatherBlockQuery.HasComp(ent))
             {
