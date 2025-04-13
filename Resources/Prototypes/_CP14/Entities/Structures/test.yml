@@ -40,7 +40,7 @@
     snapCardinals: true
     sprite: Effects/weather.rsi
     state: snowfall_med
-    color: "#f2636355"
+    color: "#f26363"
   - type: Physics
     bodyType: Static
   - type: Fixtures
