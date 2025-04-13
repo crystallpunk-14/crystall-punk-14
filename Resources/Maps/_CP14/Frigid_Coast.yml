@@ -74,6 +74,7 @@ entities:
       - visuals: CP14SnowMedium
       - visuals: CP14SnowHeavy
     - type: LightCycle
+      originalColor: '#29A4D100'
     - type: SunShadow
     - type: SunShadowCycle
     - type: Biome
