@@ -24,3 +24,34 @@
   - type: Physics
   - type: Damageable
   - type: CP14DPSMeter
+
+- type: entity
+  parent: BaseStructure
+  id: CP14RoundLeaver
+  name: distance fog
+  description: You have reached the edge of the game map. There's nothing further. You can use this fog to get out of the game.
+  categories: [ ForkFiltered ]
+  components:
+  - type: PlacementReplacement
+    key: roundLeaver
+  - type: CP14RoundLeave
+  - type: SyncSprite
+  - type: Sprite
+    snapCardinals: true
+    sprite: Effects/weather.rsi
+    state: snowfall_med
+    color: "#f2636355"
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
