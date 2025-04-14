@@ -13,10 +13,6 @@
         {
             "name": "equipped-HAND",
             "directions": 4
-        },
-        {
-            "name": "equipped-HAND-carcat",
-            "directions": 4
         }
     ]
 }
