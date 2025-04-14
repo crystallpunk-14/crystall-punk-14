@@ -46,9 +46,9 @@
   suffix: Wooden
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Fence/big_wooden.rsi
+    sprite: _CP14/Structures/Fence/wooden_big.rsi
   - type: Icon
-    sprite: _CP14/Structures/Fence/big_wooden.rsi
+    sprite: _CP14/Structures/Fence/wooden_big.rsi
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -68,3 +68,13 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: CP14FenceGateBigWooden
+  id: CP14FenceGateBigWoodenBirch
+  suffix: Wooden Birch
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
