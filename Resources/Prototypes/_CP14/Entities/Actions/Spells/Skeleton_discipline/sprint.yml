@@ -7,9 +7,9 @@
     sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
     state: sprint
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 1.3
+    speedMultiplier: 1.4
   - type: CP14MagicEffectStaminaCost
-    stamina: 3
+    stamina: 2
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
