@@ -8,7 +8,7 @@
       edges:
         - to: CP14CurtainsWhite
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 1
               doAfter: 2
             - material: CP14Nail
@@ -34,7 +34,7 @@
               amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Screwing #TODO - new tool
+            - tool: Prying #TODO - new tool
               doAfter: 1
         - to: CP14CurtainsBlue
           steps:
@@ -62,7 +62,7 @@
               prototype: CP14DyeBlue
               amount: 1
           steps:
-            - tool: Screwing #TODO - new tool
+            - tool: Prying #TODO - new tool
               doAfter: 1
 
     - node: CP14CurtainsRed
@@ -74,5 +74,5 @@
               prototype: CP14DyeRed
               amount: 1
           steps:
-            - tool: Screwing #TODO - new tool
+            - tool: Prying #TODO - new tool
               doAfter: 1

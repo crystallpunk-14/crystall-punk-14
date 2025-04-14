@@ -8,11 +8,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledFarmSeeds
+    product: CP14WoodenChestFilledFarmSeeds
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledFarmSeeds
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledFarmSeeds
   name: farm seeds chest
   components:
   - type: StorageFill
@@ -26,8 +26,6 @@
       - id: CP14SeedCucumber
         amount: 3
       - id: CP14SeedTomato
-        amount: 3
-      - id: CP14SeedOnion
         amount: 3
       - id: CP14SeedPepper
         amount: 3
@@ -43,11 +41,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledCheese
+    product: CP14WoodenChestFilledCheese
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledCheese
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledCheese
   name: cheese chest
   components:
   - type: StorageFill
@@ -147,11 +145,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledBureaucracy
+    product: CP14WoodenChestFilledBureaucracy
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledBureaucracy
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledBureaucracy
   name: bureaucracy chest
   components:
   - type: StorageFill
@@ -164,35 +162,6 @@
         amount: 5
       - id: CP14PenFeather
         amount: 3
-
-
-- type: storePositionBuy
-  id: CP14BookKnowledgeMetallMelting
-  code: KNOWLEDGE_MELTING
-  price: 100
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14BookKnowledgeMetallMelting
-
-- type: storePositionBuy
-  id: CP14BookKnowledgeMetallForging
-  code: KNOWLEDGE_FORGING
-  price: 100
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14BookKnowledgeMetallForging
-
-- type: storePositionBuy
-  id: CP14BookKnowledgeGlasswork
-  code: KNOWLEDGE_GLASSWORK
-  price: 100
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14BookKnowledgeGlasswork
-
  
 - type: storePositionBuy
   id: EnergyCrystals
@@ -204,11 +173,11 @@
   factions:
   - SpiceStream
   service: !type:CP14BuyItemsService
-    product: CP14BrassChestFilledEnergyCrystals
+    product: CP14WoodenChestFilledEnergyCrystals
 
 - type: entity
-  parent: CP14BrassChest
-  id: CP14BrassChestFilledEnergyCrystals
+  parent: CP14WoodenChest
+  id: CP14WoodenChestFilledEnergyCrystals
   name: energy crystals chest
   components:
   - type: StorageFill

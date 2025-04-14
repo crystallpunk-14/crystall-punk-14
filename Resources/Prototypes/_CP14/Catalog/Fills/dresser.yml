@@ -64,6 +64,8 @@
     contents:
       - id: CP14ClothingCloakBlacksmithArpon
         prob: 1
+      - id: CP14ClothingGlovesBlacksmith
+        prob: 0.8
 
 - type: entity
   parent: CP14WoodenCabinet

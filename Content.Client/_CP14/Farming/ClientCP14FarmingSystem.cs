@@ -1,4 +1,5 @@
 using Content.Shared._CP14.Farming;
+using Content.Shared._CP14.Farming.Components;
 using Content.Shared.Rounding;
 using Robust.Client.GameObjects;
 
@@ -32,7 +33,7 @@ public sealed class ClientCP14FarmingSystem : CP14SharedFarmingSystem
         if (!TryComp<SpriteComponent>(visuals, out var sprite))
             return;
 
-        if (!TryComp<CP14PlantComponent>(visuals, out var plant))
+        if (!PlantQuery.TryComp(visuals, out var plant))
             return;
 
         var growthState = ContentHelpers.RoundToNearestLevels(plant.GrowthLevel, 1, visuals.Comp.GrowthSteps);

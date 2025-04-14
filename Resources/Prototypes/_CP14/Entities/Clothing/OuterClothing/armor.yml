@@ -1,0 +1,43 @@
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingCopperArmor
+  name: copper armor
+  description: Quality copper armour, has good protection and is not too heavy.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/brass_armor.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/brass_armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.92
+        Piercing: 0.95
+        Heat: 0.94
+        Caustic: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 0.96
+    sprintModifier: 0.96
+  - type: CP14MagicManacostModify
+    globalModifier: 1.1
+
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingBoneArmor
+  name: bone armor
+  description: Bone armour... not the best or most attractive defence.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/bone_armor.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/bone_armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.85
+        Piercing: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.98

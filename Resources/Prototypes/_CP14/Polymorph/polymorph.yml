@@ -1,0 +1,13 @@
+- type: polymorph
+  id: CP14Sheep
+  configuration:
+    entity: CP14MobSheep
+    forced: true
+    revertOnCrit: true
+    revertOnDeath: true
+    transferDamage: false
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    duration: 15

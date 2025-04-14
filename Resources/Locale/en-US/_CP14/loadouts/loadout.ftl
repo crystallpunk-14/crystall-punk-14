@@ -12,6 +12,7 @@ cp14-loadout-general-shoes = Shoes
 cp14-loadout-general-back = Back
 cp14-loadout-general-trinkets = Trinkets
 cp14-loadout-general-spells = Spells
+cp14-loadout-skill-tree = Specialization
 cp14-loadout-general-keys = Keys
 
 # Apprentice
@@ -23,10 +24,12 @@ cp14-loadout-apprentice-bundle = Apprentice bundle
 cp14-loadout-alchemist-head = Alchemist's head
 cp14-loadout-alchemist-cloak = Alchemist's cloak
 cp14-loadout-alchemist-eyes = Alchemical goggles
+cp14-loadout-alchemist-belt = Alchemist's belt
 
 # Blacksmith
 
 cp14-loadout-blacksmith-cloak = Blacksmith's cloak
+cp14-loadout-blacksmith-gloves = Blacksmith's gloves
 
 # Guard commander
 

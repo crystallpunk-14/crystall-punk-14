@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseStructure
-  id: CP14FloorWater
+  id: CP14FloorWaterOptimized
   name: water
+  suffix: Optimized, Empty
   description: A trough of plain water. Clean enough for consumption
   categories: [ ForkFiltered ]
   placement:
@@ -19,6 +20,8 @@
     state: full
   - type: IconSmooth
     key: CP14Water
+    additionalKeys:
+    - CP14wall
     base: water
   - type: FloorOccluder
   - type: Transform
@@ -46,19 +49,6 @@
       collection: FootstepWater
       params:
         volume: 8
-  - type: DrawableSolution
-    solution: pool
-  - type: SolutionContainerManager
-    solutions:
-      pool:
-        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable. 
-        reagents:
-        - ReagentId: Water
-          Quantity: 9999999
-  - type: DrainableSolution
-    solution: pool
-  - type: Drink
-    solution: pool
   - type: Tag
     tags:
       - HideContextMenu
@@ -68,10 +58,47 @@
     intersectRatio: 0.1
     blacklist:
       tags:
-      - Catwalk # Если ты проходишь по мостику над водой, то ты не должен потушится
+      - Catwalk
   - type: TileEntityEffect
     effects:
     - !type:ExtinguishReaction
+  - type: FrictionContacts
+
+- type: entity
+  parent: CP14FloorWaterOptimized
+  id: CP14FloorWaterOptimizedDeep
+  name: deep water
+  suffix: Deep, Air damage
+  components:
+  - type: Sprite
+    color: "#869dc2"
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.2
+    sprintSpeedModifier: 0.2
+  - type: FrictionContacts
+  - type: DamageContacts
+    damage:
+      types:
+        Asphyxiation: 2.5
+
+- type: entity
+  parent: CP14FloorWaterOptimized
+  id: CP14FloorWater
+  suffix: Normal
+  components:
+  - type: DrawableSolution
+    solution: pool
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
+        reagents:
+        - ReagentId: Water
+          Quantity: 9999999
+  - type: DrainableSolution
+    solution: pool
+  - type: Drink
+    solution: pool
   - type: RandomSpawner
     prototypes:
     - CP14GatherableChromiumSlime

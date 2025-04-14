@@ -1,0 +1,26 @@
+- type: entity
+  id: CP14ActionToggleNightVision
+  name: Toggle Night Vision
+  description: You begin to see the world in a special way that allows you to see even in total darkness.
+  components:
+  - type: InstantAction
+    icon: Interface/VerbIcons/light.svg.192dpi.png
+    clientExclusive: true
+    checkCanInteract: false
+    event: !type:CP14ToggleNightVisionEvent
+
+- type: entity
+  id: CP14NightVisionLight
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: PointLight
+    radius: 15
+    energy: 1.3
+    softness: 10
+    color: "#ffa38c"
+    netsync: false
+    mask: /Textures/_CP14/Effects/LightMasks/crystal_cone.png
+    autoRot: true

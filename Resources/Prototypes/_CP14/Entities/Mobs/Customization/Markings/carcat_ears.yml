@@ -1,0 +1,54 @@
+- type: marking
+  id: CP14CarcatEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_ears.rsi
+      state: 1
+
+- type: marking
+  id: CP14CarcatEars2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_ears.rsi
+      state: 2
+
+- type: marking
+  id: CP14CarcatEars3
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_ears.rsi
+      state: 3
+
+- type: marking
+  id: CP14CarcatEars4
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_ears.rsi
+      state: 4
+
+- type: marking
+  id: CP14CarcatEars5
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ CP14Carcat ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carcat_ears.rsi
+      state: 5

@@ -90,7 +90,9 @@
         - CP14FloorSnowDeep
         - CP14FloorSnowDeepDeep
       entities:
+        - CP14FloraTreeDead
         - CP14FloraTreeSnow
+        - CP14FloraTreeDeadSmall
         #- CP14FloraTreeGreenLarge
 
 # Hills

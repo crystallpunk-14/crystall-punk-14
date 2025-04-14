@@ -8,12 +8,10 @@
           completed:
             - !type:SnapToGrid
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 3
             - material: CP14Nail
               amount: 2
-            - tool: CP14Hammering
-              doAfter: 2
     - node: CP14WoodenCabinet
       entity: CP14WoodenCabinet
 

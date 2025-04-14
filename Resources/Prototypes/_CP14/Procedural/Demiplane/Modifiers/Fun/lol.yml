@@ -1,9 +1,8 @@
 - type: cp14DemiplaneModifier
   id: RoyalPumpkin
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 1
+    max: 10
   generationWeight: 0.1
   generationProb: 0.1
   categories:
@@ -24,10 +23,9 @@
 
 - type: cp14DemiplaneModifier
   id: LucenTree
-  tiers:
-    - 1
-    - 2
-    - 3
+  levels:
+    min: 6
+    max: 10
   generationWeight: 0.1
   generationProb: 0.1
   categories:
@@ -42,6 +40,29 @@
       - CP14FloorGrassLight
       - CP14FloorGrassTall
       entity: CP14BaseLucensTreeLarge
-      count: 10
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: StatueStoneHead
+  levels:
+    min: 2
+    max: 6
+  generationWeight: 0.1
+  generationProb: 0.1
+  categories:
+    Fun: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  layers:
+    - !type:OreDunGen
+      entity: CP14StatueStoneHeadHigh
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+    - !type:OreDunGen
+      entity: CP14StatueStoneHeadLow
+      count: 1
       minGroupSize: 1
       maxGroupSize: 1

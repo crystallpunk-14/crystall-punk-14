@@ -1,39 +1,46 @@
-using Content.Shared._CP14.Knowledge;
-using Content.Shared._CP14.Knowledge.Prototypes;
+using Content.Shared._CP14.Skill;
+using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared._CP14.Workbench.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Workbench.Requirements;
 
-public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
+public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
 {
-    /// <summary>
-    /// If the player does not have this knowledge, the recipe will not be displayed in the workbench.
-    /// </summary>
+    public override bool HideRecipe { get; set; } = true;
+
     [DataField(required: true)]
-    public ProtoId<CP14KnowledgePrototype> Knowledge;
+    public List<ProtoId<CP14SkillPrototype>> Skills = new();
 
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        EntityUid user,
+        CP14WorkbenchRecipePrototype recipe)
     {
-        var knowledgeSystem = entManager.System<SharedCP14KnowledgeSystem>();
+        var knowledgeSystem = entManager.System<CP14SharedSkillSystem>();
 
-        return knowledgeSystem.HasKnowledge(user, Knowledge);
+        var haveAllSkills = true;
+        foreach (var skill in Skills)
+        {
+            if (!knowledgeSystem.HaveSkill(user, skill))
+            {
+                haveAllSkills = false;
+                break;
+            }
+        }
+
+        return haveAllSkills;
     }
 
-    public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
     {
-        var knowledgeSystem = entManager.System<SharedCP14KnowledgeSystem>();
-        knowledgeSystem.TryUseKnowledge(user, Knowledge);
     }
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
-        return !protoManager.TryIndex(Knowledge, out var indexedKnowledge)
-            ? "Error knowledge"
-            : $"{Loc.GetString("cp14-knowledge")}: {Loc.GetString(indexedKnowledge.Name)}";
+        return string.Empty;
     }
 
     public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
@@ -41,8 +48,8 @@ public sealed partial class KnowledgeRequired : CP14WorkbenchCraftRequirement
         return null;
     }
 
-    public override SpriteSpecifier GetRequirementTexture(IPrototypeManager protoManager)
+    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
     {
-        return new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/students-cap.svg.192dpi.png"));
+        return null;
     }
 }

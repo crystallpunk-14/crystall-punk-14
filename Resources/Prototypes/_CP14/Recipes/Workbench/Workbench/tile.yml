@@ -1,0 +1,164 @@
+- type: CP14Recipe
+  id: CP14FloorTileFoundation
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Stone
+    count: 1
+  result: CP14FloorTileFoundation
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileMarbleBrick
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14MarbleStone
+    count: 1
+  result: CP14FloorTileMarbleBrick
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileMarbleSmallbricks
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14MarbleStone
+    count: 1
+  result: CP14FloorTileMarbleSmallbricks
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileStonebricks
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Stone
+    count: 1
+  result: CP14FloorTileStonebricks
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileStonebricksSmallCarved
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Stone
+    count: 1
+  result: CP14FloorTileStonebricksSmallCarved
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileStonebricksSmallCarved2
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Stone
+    count: 1
+  result: CP14FloorTileStonebricksSmallCarved2
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileStonebricksSquareCarved
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Stone
+    count: 1
+  result: CP14FloorTileStonebricksSquareCarved
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileOakWoodplanks
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 1
+  result: CP14FloorTileOakWoodplanks
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileOakWoodplanksBig
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 1
+  result: CP14FloorTileOakWoodplanksBig
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileOakWoodplanksCruciform
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 1
+  result: CP14FloorTileOakWoodplanksCruciform
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileOakWoodplanksStairs
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 1
+  result: CP14FloorTileOakWoodplanksStairs
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanks
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanks
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanksBig
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanksBig
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanksCruciform
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanksCruciform
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14FloorTileBirchWoodplanksStairs
+  tag: CP14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 1
+  result: CP14FloorTileBirchWoodplanksStairs
+  resultCount: 4

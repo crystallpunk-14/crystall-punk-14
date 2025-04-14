@@ -4,7 +4,6 @@
   name: admin observer
   categories: [ HideSpawnMenu ]
   components:
-  - type: CP14AllKnowing
   - type: ContentEye
     maxZoom: 8.916104, 8.916104
   - type: Tag
@@ -14,6 +13,7 @@
     - BypassInteractionRangeChecks
     - BypassDropChecks
     - NoConsoleSound
+    - SilentStorageUser
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -31,6 +31,7 @@
   - type: Access
     groups:
     - AllAccess
+    - Silicon
     tags:
     - NuclearOperative
     - SyndicateAgent

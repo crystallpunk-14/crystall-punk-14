@@ -9,7 +9,7 @@
             - !type:SnapToGrid
               southRotation: true
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
 
@@ -35,6 +35,16 @@
               doAfter: 1
             - tool: CP14Hammering
               doAfter: 2
+        - to: WallWoodenBirch
+          steps:
+            - material: CP14BirchWoodenPlanks
+              amount: 2
+              doAfter: 1
+            - material: CP14Nail
+              amount: 2
+              doAfter: 1
+            - tool: CP14Hammering
+              doAfter: 2
         - to: WindowWooden
           steps:
             - material: CP14GlassSheet
@@ -49,5 +59,30 @@
             - tool: CP14Hammering
               doAfter: 2
               
+    - node: WallWoodenBirch
+      entity: CP14WallWoodenBirch
+      edges:
+        - to: FrameWooden
+          steps:
+            - tool: CP14Hammering
+              doAfter: 2
+              
     - node: WindowWooden
       entity: CP14WindowWooden
+
+
+- type: constructionGraph
+  id: CP14WallWoodenPalisade
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14WallWoodenPalisade
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+              doAfter: 2
+    - node: CP14WallWoodenPalisade
+      entity: CP14WallWoodenPalisade

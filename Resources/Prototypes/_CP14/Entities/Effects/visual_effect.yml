@@ -1,6 +1,7 @@
 - type: entity
   id: CP14DirtEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: _CP14/Effects/material_splash.rsi
@@ -21,11 +22,15 @@
     tags:
       - HideContextMenu
   - type: AnimationPlayer
+  - type: EmitSoundOnSpawn
+    sound:
+      collection: CP14Digging
   
 - type: entity
   id: CP14SnowEffect
   parent: CP14DirtEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     layers:
@@ -40,6 +45,7 @@
 - type: entity
   id: CP14DustEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: TimedDespawn
     lifetime: 0.4
@@ -56,6 +62,7 @@
 - type: entity
   id: CP14MagicBeam1
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Effects/Beams/magic.rsi
@@ -75,6 +82,7 @@
 - type: entity
   id: CP14ElectrifiedEffect
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: Effects/electricity.rsi

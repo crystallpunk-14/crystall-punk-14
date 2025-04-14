@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Server.GameTicking.Events;
 using Content.Shared._CP14.UniqueLoot;
 using Content.Shared.GameTicking;
 using Content.Shared.Tag;
@@ -19,10 +18,11 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
 
         SubscribeLocalEvent<CP14UniqueLootSpawnerComponent, MapInitEvent>(OnMapInit);
+
+        RefreshUniqueLoot();
     }
 
     private void OnMapInit(Entity<CP14UniqueLootSpawnerComponent> ent, ref MapInitEvent args)
@@ -32,21 +32,18 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
         if (loot == null)
             return;
 
-        if (!Deleted(ent))
-            SpawnAtPosition(loot, Transform(ent).Coordinates);
+        if (TerminatingOrDeleted(ent) || !Exists(ent))
+            return;
 
-        if (!TerminatingOrDeleted(ent) && Exists(ent))
-            QueueDel(ent);
+        var coords = Transform(ent).Coordinates;
+
+        EntityManager.SpawnEntity(loot, coords);
     }
 
-    private void OnRoundStart(RoundStartingEvent ev)
-    {
-        RefreshUniqueLoot();
-    }
 
     private void OnCleanup(RoundRestartCleanupEvent ev)
     {
-        _uniqueLootCount.Clear();
+        RefreshUniqueLoot();
     }
 
     private void RefreshUniqueLoot()

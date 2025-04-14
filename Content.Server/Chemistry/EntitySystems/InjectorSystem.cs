@@ -1,7 +1,6 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared._CP14.Farming;
-using Content.Shared._CP14.Knowledge;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -89,13 +88,6 @@ public sealed class InjectorSystem : SharedInjectorSystem
         //Make sure we have the attacking entity
         if (args.Target is not { Valid: true } target || !HasComp<SolutionContainerManagerComponent>(entity))
             return;
-
-
-        //CP14 - Shitcode retarget plant -> soil
-        //TODO: fix it
-        if (TryComp<CP14PlantComponent>(args.Target, out var plant) && plant.SoilUid is not null)
-            target = plant.SoilUid.Value;
-        //CP14 - end shitcode
 
         // Is the target a mob? If yes, use a do-after to give them time to respond.
         if (HasComp<MobStateComponent>(target) || HasComp<BloodstreamComponent>(target))

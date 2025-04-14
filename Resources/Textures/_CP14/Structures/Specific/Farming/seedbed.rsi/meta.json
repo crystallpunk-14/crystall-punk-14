@@ -1,27 +1,12 @@
 {
   "version": 1,
   "license": "All right reserved",
-  "copyright": "Created by Jaraten(Discord/Github)",
+  "copyright": "Created by TheShuEd",
   "size": {
-    "x": 35,
-    "y": 35
+    "x": 32,
+    "y": 32
   },
   "states": [
-    {
-      "name": "seedbed_default"
-    },
-    {
-      "name": "seedbed_default_east"
-    },
-    {
-      "name": "seedbed_default_west"
-    },
-    {
-      "name": "seedbed_default_north"
-    },
-    {
-      "name": "seedbed_default_south"
-    },
     {
       "name": "liq-1"
     },

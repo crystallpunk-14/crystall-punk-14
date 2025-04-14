@@ -1,3 +1,4 @@
+using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -30,14 +31,16 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
             if (needCount <= 0)
                 break;
 
-            if (!entManager.TryGetComponent<MetaDataComponent>(ent, out var metaData) || metaData.EntityPrototype is null)
-                continue;
-
             if (!whitelistSystem.IsValid(Whitelist, ent))
                 continue;
 
+            var count = 1;
+
+            if (entManager.TryGetComponent<StackComponent>(ent, out var stack))
+                count = stack.Count;
+
             suitable.Add(ent);
-            needCount -= 1;
+            needCount -= count;
         }
 
         if (needCount > 0)
@@ -46,7 +49,7 @@ public sealed partial class CP14SellWhitelistService : CP14StoreSellService
         foreach (var selledEnt in suitable)
         {
             entities.Remove(selledEnt);
-            entManager.QueueDeleteEntity(selledEnt);
+            entManager.DeleteEntity(selledEnt);
         }
 
         return true;

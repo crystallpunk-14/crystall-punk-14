@@ -82,6 +82,53 @@
   - type: CP14AutoIgnite
   - type: CP14ActiveFireSpreading
   - type: TimedDespawn
-    lifetime: 60
+    lifetime: 120
   - type: CP14FireSpread
   - type: CP14DespawnOnExtinguish
+
+- type: entity
+  id: CP14BaseFlammable
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: CP14FlammableAmbientSound
+  - type: AmbientSound
+    enabled: false
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg #TODO replace
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: Flammable
+    fireSpread: true
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 0.25
+    firestackFade: 0.15
+    damage:
+      types:
+        Heat: 0.25
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: small
+
+- type: entity
+  id: CP14BaseFlammableSpreading
+  parent: CP14BaseFlammable
+  abstract: true
+  components:
+  - type: CP14FireSpread
+
+- type: entity
+  id: CP14BaseFlammableSpreadingStrong
+  parent: CP14BaseFlammableSpreading
+  abstract: true
+  components:
+  - type: CP14FireSpread
+    spreadCooldownMin: 1
+    spreadCooldownMax: 3

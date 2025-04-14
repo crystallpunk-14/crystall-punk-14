@@ -1,0 +1,41 @@
+<Document>
+# Trade with the outside world
+
+Trade outposts are one of the main ways where you can spend money, or from where you can acquire it.
+
+<Box>
+<GuideEntityEmbed Entity="CP14TradingPortalSylphoria"/>
+<GuideEntityEmbed Entity="CP14TradingPortalHelmirWeapon"/>
+<GuideEntityEmbed Entity="CP14TradingPortalBradFamily"/>
+</Box>
+
+There are trading outposts belonging to different factions that can be found in different locations throughout the game map. They are located in different places each round, so they have yet to be found.
+
+Different factions offer different items for sale or purchase. If you want to buy weapons, you'll obviously need to find an outpost of Helmir's Descendants.
+
+<Box>
+<GuideEntityEmbed Entity="CP14TradingBoardBase"/>
+</Box>
+
+## Sel
+
+To sell an item - put the requested items into an open outpost, and close it. After a few seconds, the item will be picked up and payment will be thrown to you.
+
+<Box>
+<GuideEntityEmbed Entity="CP14PenFeather"/>
+<GuideEntityEmbed Entity="CP14Paper"/>
+</Box>
+
+### Purchase
+
+To buy an item - you need to compose a paper with an order. Each purchase item has a unique code that you can see in the sales table. It starts with the symbol #.
+
+On any paper, write any number of these unique codes, each starting with #, with a quill pen.
+
+Put the paper with your order and the required amount of money in the outpost. In a few seconds, your order will be delivered to you and your change will be returned.
+
+## One-time offers
+
+Many outposts have "One Time Offers" - special items to buy or sell that are upgraded after use. These items are often particularly lucrative, and you can make more money with them.
+
+</Document>

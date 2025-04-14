@@ -29,7 +29,7 @@
   targetNode: CP14WoodenChest
   category: construction-category-storage
   icon:
-    sprite: _CP14/Structures/Storage/Crates/woodenchest.rsi
+    sprite: _CP14/Structures/Storage/Crates/chest.rsi
     state: icon
   objectType: Structure
   placementMode: SnapgridCenter

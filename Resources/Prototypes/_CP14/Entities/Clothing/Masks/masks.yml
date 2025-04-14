@@ -58,3 +58,88 @@
     sprite: _CP14/Clothing/Masks/neckerchief.rsi
   - type: IdentityBlocker
   - type: IngestionBlocker
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskBoneMask
+  name: bone mask
+  description: An enchanted mask formerly belonging to a magical creature.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/bone_mask.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/bone_mask.rsi
+  - type: IdentityBlocker
+  - type: AddAccentClothing
+    accent: ReplacementAccent
+    replacement: cp14skeleton
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.90
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskBoneHornedMask
+  name: horned bone mask
+  description: A bone mask of some kind of animal.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/horned_bone_mask.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/horned_bone_mask.rsi
+  - type: IdentityBlocker
+  - type: AddAccentClothing
+    accent: ReplacementAccent
+    replacement: cp14skeleton
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+
+- type: entity
+  parent: CP14ClothingMaskBoneMask
+  id: CP14ClothingMaskBoneMaskMind
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BlockMovement
+  - type: Actions
+  - type: Emoting
+  - type: DoAfter
+  - type: SkeletonAccent
+  - type: Speech
+    speechVerb: Skeleton
+  - type: Vocal
+    sounds:
+      Male: Skeleton
+      Female: Skeleton
+      Unsexed: Skeleton
+  - type: Organ
+  - type: Brain
+  - type: Tag
+    tags:
+      - MindTransferTarget
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14ClothingMaskBoneMask
+      amount: 1
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskMime
+  name: mask of silence
+  description: ...
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/mime_mask.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/mime_mask.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker

@@ -5,7 +5,7 @@
     copyFrom:
     - BaseWeaponRangedChemical
   - !type:EditMeleeWeapon
-    resetOnHandSelected: true # Disable fast swap
+    resetOnHandSelected: true # Disable fast swap #Ed: Wtf? Why arrows have melee buffs??
     attackRateMultiplier: 1.4
     bonusDamage:
       types:

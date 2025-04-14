@@ -1,0 +1,118 @@
+- type: entity
+  id: CP14MobSlimeIce
+  parent: CP14MobSlimeBase
+  name: ice slime
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: base
+      color: "#0cb1f7"
+      shader: unshaded
+  - type: PointLight
+    color: "#0cb1f7"
+    energy: 5
+    radius: 1.8
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        maxVol: 50
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 20
+        - ReagentId: CP14EssenceWater
+          Quantity: 30
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+        path: /Audio/Weapons/punch3.ogg
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 3
+        Cold: 3
+  - type: CP14SpellEffectOnHit
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectFreeze
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.75
+        sprintSpeedModifier: 0.75
+        statusLifetime: 2
+      - !type:AdjustTemperature
+        amount: -6000
+      - !type:ExtinguishReaction
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            CP14AreaEntityEffectSlimeFroze:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: CP14OreCopper1
+          - id: CP14OreIron1
+          - id: CP14ScrapCopper
+          - id: CP14ScrapIron
+          - id: CP14Snowball
+          - id: CP14CopperCoin1
+          - id: CP14ModularInlayQuartzWater
+          - id: CP14CrystalShardWater
+            weight: 3
+ 
+- type: entity
+  id: CP14AreaEntityEffectSlimeFroze
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#0cb1f7"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _CP14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#0cb1f7"
+      scale: 2, 2
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: CP14AreaEntityEffect
+    range: 2
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectFreeze
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.5
+        sprintSpeedModifier: 0.5
+        statusLifetime: 5
+      - !type:AdjustTemperature
+        amount: -82000
+      - !type:ExtinguishReaction

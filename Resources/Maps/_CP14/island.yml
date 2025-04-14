@@ -25,7 +25,6 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: CP14CloudShadows
-    - type: CP14MapFloorOccluder
     - type: MapLight
     - type: MapAtmosphere
       space: False
@@ -46,7 +45,7 @@ entities:
         - 0
         - 0
         - 0
-    - type: CP14DayCycle
+    - type: LightCycle
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg

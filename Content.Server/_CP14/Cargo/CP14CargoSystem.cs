@@ -5,7 +5,9 @@ using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._CP14.Cargo;
 using Content.Shared._CP14.Cargo.Prototype;
+using Content.Shared._CP14.Currency;
 using Content.Shared.Paper;
+using Content.Shared.Stacks;
 using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -105,7 +107,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private void AddRandomBuySpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    public void AddRandomBuySpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
     {
         if (_buyProto is null)
             return;
@@ -137,7 +139,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         }
     }
 
-    private void AddRandomSellSpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
+    public void AddRandomSellSpecialPosition(Entity<CP14TradingPortalComponent> portal, int count)
     {
         if (_sellProto is null)
             return;
@@ -215,10 +217,15 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
         var cash = 0;
         foreach (var stored in storage.Contents.ContainedEntities)
         {
-            var price = _currency.GetTotalCurrency(stored);
-            if (price > 0)
+            if (TryComp<CP14CurrencyComponent>(stored, out var currency))
             {
-                cash += price;
+                //fix currency calculation
+                var c = currency.Currency;
+
+                if (TryComp<StackComponent>(stored, out var stack))
+                    c *= stack.Count;
+
+                cash += c;
                 QueueDel(stored);
             }
         }

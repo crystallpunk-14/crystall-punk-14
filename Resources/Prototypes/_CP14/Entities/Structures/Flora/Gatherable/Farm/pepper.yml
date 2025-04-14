@@ -1,69 +1,26 @@
 - type: entity
   id: CP14PlantPepper
-  parent: CP14GatherablePlantBase
+  parent: CP14GatherablePlantMultiHarvestBase
   name: pepper
-  description: OOO # TODO
+  description: Russian roulette. Are you hot, or are you sweet peppers?
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/pepper.rsi
     layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
     - state: grow-1
+      sprite: _CP14/Structures/Flora/Farm/pepper.rsi
       map: ["enum.PlantVisualLayers.Base"]
-  - type: CP14PlantMetabolizer
-    metabolizerId: Base
-  - type: CP14PlantEnergyFromLight
-    energy: 1
-    daytime: true
   - type: CP14PlantVisuals
     growthSteps: 5
-  - type: CP14PlantGrowing
-    energyCost: 1
-    resourceCost: 1
-    growthPerUpdate: 0.05 # 20 minute to full grow
-  - type: CP14PlantFading
-    resourcePerMinute: 0.15
   - type: CP14PlantGatherable
-    deleteAfterHarvest: false
     loot:
       All: CP14GatherPepper
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 25
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTypeTrigger
-          damageType: Cellular
-          damage: 1
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CP14PlantTomatoesDeath:
-                min: 1
-                max: 1
-
-- type: entity
-  id: CP14PlantPepperDeath
-  name: dead pepper
-  description: The sad spectacle of wasted food.
-  parent: CP14GatherableBase
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Farm/pepper.rsi
-    state: death
-  - type: Gatherable
-    toolWhitelist:
-      tags:
-        - CP14HerbalGathering
 
 - type: entityLootTable
   id: CP14GatherPepper
   entries:
   - id: CP14FoodPepper
-    amount: 3
-    maxAmount: 5
+    amount: 4
+    maxAmount: 8

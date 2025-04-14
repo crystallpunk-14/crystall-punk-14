@@ -4,6 +4,8 @@
   abstract: true
   categories: [ ForkFiltered ]
   components:
+  - type: PlacementReplacement
+    key: CP14Plant
   - type: Sprite
     snapCardinals: true
     drawdepth: FloorTiles
@@ -12,7 +14,6 @@
   - type: Physics
     canCollide: false
     bodyType: Static
-  - type: CP14PlantAutoRoot
   - type: Damageable
     damageContainer: Biological
   - type: MeleeSound
@@ -49,38 +50,124 @@
         layer:
         - MidImpassable
         - LowImpassable
-
-- type: entity
-  id: CP14GatherableWildBase
-  parent: CP14GatherableBase
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-      - HideContextMenu
-  - type: Gatherable
-    toolWhitelist:
-      tags:
-        - CP14HerbalGathering
-      components:
-        - Sharp
-
-- type: entity
-  id: CP14GatherablePlantBase
-  parent: CP14GatherableBase
-  abstract: true
-  components:
-  - type: Appearance
-  - type: CP14PlantVisuals
-    growthSteps: 5
-    growState: "grow-"
-  - type: CP14Plant
-    resource: 10
-    energy: 0
-    growthLevel: 0
+      fix2: #For melee or laser
+        hard: true
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        mask:
+        - FullTileMask 
+        layer:
+        - Opaque
   - type: CP14PlantGatherable
     toolWhitelist:
       tags:
         - CP14HerbalGathering
       components:
         - Sharp
+  - type: Appearance
+
+- type: entity
+  id: CP14GatherablePlantBase
+  parent: CP14GatherableBase
+  abstract: true
+  components:
+  - type: CP14PlantVisuals
+    growthSteps: 5
+    growState: "grow-"
+  - type: CP14Plant
+    resource: 30
+    energy: 30
+    growthLevel: 0
+    solution: plant
+  - type: SolutionContainerManager
+    solutions:
+      plant:
+        maxVol: 200
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+  - type: Food
+    delay: 1.5
+  - type: CP14WeatherRefillable
+    solution: plant
+  - type: RefillableSolution 
+    solution: plant
+    maxRefill: 50
+  - type: ExaminableSolution
+    solution: plant
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: liq-
+    solutionName: plant
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger #Overkill
+          damage: 45
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTypeTrigger #Heat
+          damageType: Heat
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14Ash1:
+                min: 0
+                max: 2
+      - trigger:
+          !type:DamageGroupTrigger #Brute
+          damageGroup: Brute
+          damage: 15
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14FloraMaterial1:
+                min: 2
+                max: 3
+
+- type: entity
+  id: CP14GatherablePlantSingleHarvestBase
+  parent:
+  - CP14BaseFlammableSpreading
+  - CP14GatherablePlantBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Farming/seedbed.rsi
+  - type: CP14PlantMetabolizer
+    metabolizerId: Base
+  - type: CP14PlantEnergyFromLight
+    energy: 0.5
+    daytime: true
+  - type: CP14PlantVisuals
+    growthSteps: 6
+  - type: CP14PlantGrowing
+    energyCost: 0.25
+    resourceCost: 0.25
+    growthPerUpdate: 0.02 # 20 minute to full grow
+  - type: FireVisuals
+    sprite: _CP14/Effects/fire.rsi
+    normalState: full
+    alternateState: full2
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
+
+- type: entity
+  id: CP14GatherablePlantMultiHarvestBase
+  parent: CP14GatherablePlantSingleHarvestBase
+  abstract: true
+  components:
+  - type: CP14PlantGrowing
+    growthPerUpdate: 0.12
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: false

@@ -1,0 +1,7 @@
+# Damage caused by magic or its various manifestations
+# Mana depletion is damage dealt due to lack of or too much mana.
+- type: damageGroup
+  id: CP14Magic
+  name: cp14-damage-group-magic
+  damageTypes:
+    - CP14ManaDepletion

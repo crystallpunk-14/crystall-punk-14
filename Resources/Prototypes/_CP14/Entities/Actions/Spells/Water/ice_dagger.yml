@@ -1,0 +1,146 @@
+- type: entity
+  id: CP14ActionSpellIceDagger
+  name: Ice dagger
+  description: You form an icy sharp dagger that will do for temporary use.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: ice_dagger
+  - type: CP14MagicEffectManaCost
+    manaCost: 15
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectWaterCreation
+    - !type:CP14SpellSpawnInHandEntity
+      spawns:
+      - CP14IceDagger
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Un pittore sulla..."
+    endSpeech: "soglia della mano"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneWaterCreation
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/water.rsi
+      state: ice_dagger
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 20
+      breakOnMove: false
+
+- type: entity
+  name: ice dagger
+  parent: BaseItem
+  id: CP14IceDagger
+  description: A sharp ice arrow created with magic. It melts and will soon disappear, but you can shoot it once with your bow.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sharp
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/ice_dagger.rsi
+    state: icon
+  - type: MeleeWeapon
+    resetOnHandSelected: false #Fast swap
+    range: 1.0 # 1.5 standart
+    cPAnimationOffset: -0.75 #-1 standart
+    attackRate: 1.5 # 1 standart
+    angle: 45
+    wideAnimationRotation: 135
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Slash: 2
+        Piercing: 5
+        Cold: 3
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
+  - type: CP14MeleeParriable
+  - type: Item
+    shape:
+    - 0,0,0,1
+    storedOffset: 0, 5
+    storedRotation: 45
+    size: Normal
+  - type: ExaminableDamage
+    messages: CP14WeaponMessages
+  - type: DisarmMalus
+  - type: ThrowingAngle
+    angle: 135
+  - type: EmbeddableProjectile
+    offset: -0.15,-0.15
+    removalTime: 0.5
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 10
+        Cold: 5
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.40,-0.30
+            - -0.30,-0.40
+            - 0.40,0.30
+            - 0.30,0.40
+        density: 10
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: CP14SharpeningStone
+  - type: UseDelay
+  - type: Tool
+    qualities:
+      - Slicing
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
+  - type: Utensil
+    types:
+      - Knife
+  - type: CP14WallpaperRemover
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 1 # 10 hits
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: TimedDespawn
+    lifetime: 60
+
+- type: entity
+  parent: CP14BaseSpellScrollWater
+  id: CP14SpellScrollIceDagger
+  name: ice dagger spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceDagger

@@ -51,7 +51,7 @@ public abstract class SharedArmorSystem : EntitySystem
 
     private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess)
+        if (!args.CanInteract || !args.CanAccess || !component.ShowArmorOnExamine)
             return;
 
         var examineMarkup = GetArmorExamine(component.Modifiers);
@@ -103,19 +103,19 @@ public abstract class SharedArmorSystem : EntitySystem
         //Merge old and new coefficients
         foreach (var (armorType, coefficient) in modifiers.Coefficients)
         {
-            if (armor.Modifiers.Coefficients.ContainsKey(armorType))
-                armor.Modifiers.Coefficients[armorType] += coefficient;
-            else
-                armor.Modifiers.Coefficients[armorType] = coefficient;
+            if (!armor.Modifiers.Coefficients.ContainsKey(armorType))
+                armor.Modifiers.Coefficients[armorType] = 1;
+
+            armor.Modifiers.Coefficients[armorType] += coefficient;
         }
 
         //Merge old and new flat reductions
         foreach (var (armorType, reduction) in modifiers.FlatReduction)
         {
-            if (armor.Modifiers.FlatReduction.ContainsKey(armorType))
-                armor.Modifiers.FlatReduction[armorType] += reduction;
-            else
-                armor.Modifiers.FlatReduction[armorType] = reduction;
+            if (!armor.Modifiers.FlatReduction.ContainsKey(armorType))
+                armor.Modifiers.FlatReduction[armorType] = 0;
+
+            armor.Modifiers.FlatReduction[armorType] += reduction;
         }
     }
     //CP14 public armor edit API end

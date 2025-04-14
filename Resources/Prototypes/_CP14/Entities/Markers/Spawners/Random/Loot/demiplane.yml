@@ -39,7 +39,6 @@
         - id: CP14SpellScrollPlantGrowth
         - id: CP14SpellScrollMagicSplitting
         - id: CP14SpellScrollMagicalAcceleration
-      - id: CP14EnergyCrystalSmallEmpty
       - id: CP14BaseSharpeningStone
       - id: CP14ScrapCopper
       - id: CP14ScrapIron
@@ -49,6 +48,7 @@
       children:
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
+      - id: CP14ClothingCloakAmuletGold
       # Rare standard village crates loot
       - !type:NestedSelector
         tableId: CP14StationCrateLoot
@@ -89,7 +89,6 @@
         - id: CP14SpellScrollFireball
         - id: CP14SpellScrollBeerCreation
           weight: 0.2
-      - id: CP14EnergyCrystalMediumEmpty
       - id: CP14ScrapGold
       - id: CP14ScrapMithril
         weight: 0.5
@@ -100,5 +99,4 @@
       - !type:GroupSelector # remove this when players can create their own magic items
         children:
         - id: CP14SpellScrollResurrection
-        - id: CP14ClothingRingIceShards
-        - id: CP14ClothingRingFlashLight
+        - id: CP14ClothingCloakAmuletMana

@@ -1,98 +1,3 @@
-# Berets
-
-- type: entity
-  parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadBeretBase
-  abstract: true
-  description: this is beret.
-
-- type: entity
-  parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadBeretRed
-  name: red beret
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/beret_red.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/beret_red.rsi
-
-- type: entity
-  parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadBeretPurple
-  name: purple beret
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/beret_purple.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/beret_purple.rsi
-
-- type: entity
-  parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadBeretYellow
-  name: yellow beret
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/beret_yellow.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/beret_yellow.rsi
-
-- type: entity
-  parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadBeretBlue
-  name: blue beret
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/beret_blue.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/beret_blue.rsi
-
-- type: entity
-  parent: CP14ClothingHeadBeretBase
-  id: CP14ClothingHeadBeretBlack
-  name: black beret
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/beret_black.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/beret_black.rsi
-
-# Bandanas
-
-- type: entity
-  parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadBandanaBase
-  abstract: true
-  description: Favorite mage headdress
-  components:
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - Snout
-    - HeadTop
-    - HeadSide
-
-- type: entity
-  parent: CP14ClothingHeadBandanaBase
-  id: CP14ClothingHeadBandanaWhite
-  name: white bandana
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/bandana_white.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/bandana_white.rsi
-
-- type: entity
-  parent: CP14ClothingHeadBandanaBase
-  id: CP14ClothingHeadBandanaYellow
-  name: yellow bandana
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/bandana_yellow.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/bandana_yellow.rsi
-
-#
-
 - type: entity
   parent: CP14ClothingHeadBase
   id: CP14ClothingHeadBeretMercenary
@@ -169,3 +74,28 @@
     sprite: _CP14/Clothing/Head/Roles/General/jesters_cap.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/jesters_cap.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadJagermeisterHat
+  name: jagermeister's hat
+  description: The mark of a professional in his field. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/jagermeister_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/jagermeister_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadStrawHat
+  name: straw hat
+  description: Easy to make, not too bad to lose.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/straw_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/straw_hat.rsi
+  - type: Construction
+    graph: CP14StrawHat
+    node: cp14headstrawhat

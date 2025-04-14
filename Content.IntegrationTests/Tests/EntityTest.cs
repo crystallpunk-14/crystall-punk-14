@@ -40,6 +40,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
+                    .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // CP14 this component delete all entities on this tile
                     .Select(p => p.ID)
                     .ToList();
 
@@ -103,6 +104,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
+                    .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // CP14 this component delete all entities on this tile
                     .Select(p => p.ID)
                     .ToList();
                 foreach (var protoId in protoIds)
@@ -344,6 +346,7 @@ namespace Content.IntegrationTests.Tests
                 "DebugExceptionStartup",
                 "GridFill",
                 "RoomFill",
+                "CP14BiomeSpawner", // CP14 this component delete all entities on this tile
                 "Map", // We aren't testing a map entity in this test
                 "MapGrid",
                 "Broadphase",

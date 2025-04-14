@@ -183,9 +183,9 @@
   suffix: Aer
   components:
   - type: PointLight
-    color: "#def9ff"
+    color: "#fdfe86"
   - type: Sprite
-    color: "#def9ff"
+    color: "#fdfe86"
   - type: Destructible
     thresholds:
       - trigger:

@@ -12,7 +12,7 @@ cp14-job-name-commandant = Commandant
 cp14-job-desc-commandant = Control the economy of the settlement by trading with the Empire. Manage stocks and finances by directing resources to the laboring hands.
 
 cp14-job-name-merchant = Merchant
-cp14-job-desc-merchant = You have the ability to buy and sell almost anything in your hands! Use it to enrich yourself and your trade guild.
+cp14-job-desc-merchant = You have the ability to buy and sell almost anything in your hands! Use this opportunity to surpass your competitors in wealth.
 
 # Mercenary
 

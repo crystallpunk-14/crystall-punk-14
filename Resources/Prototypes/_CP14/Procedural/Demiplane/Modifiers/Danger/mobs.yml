@@ -2,12 +2,15 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyZombie
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-zombie
   generationWeight: 1.5
   categories:
     Danger: 0.3
+  blacklistTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobUndeadZombieRandom
@@ -17,9 +20,9 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyDyno
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 3
+    max: 8
   name: cp14-modifier-dyno
   categories:
     Danger: 0.4
@@ -35,14 +38,16 @@
 
 - type: cp14DemiplaneModifier
   id: MonsterMosquito
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-dyno
   categories:
     Danger: 0.2
   requiredTags:
   - CP14DemiplaneHerbals
+  blacklistTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14SpawnMobMonsterMosquito
@@ -52,8 +57,9 @@
 
 - type: cp14DemiplaneModifier
   id: SmallHydra
-  tiers:
-    - 1
+  levels:
+    min: 1
+    max: 4
   name: cp14-modifier-dyno
   categories:
     Danger: 0.3
@@ -68,13 +74,13 @@
 
 - type: cp14DemiplaneModifier
   id: EnemySkeleton
-  tiers:
-    - 1
-    - 2
+  levels:
+    min: 3
+    max: 10
   name: cp14-modifier-skeleton
   generationWeight: 1.5
   categories:
-    Danger: 0.5
+    Danger: 0.55
   layers:
     - !type:OreDunGen
       entity: SpawnPointGhostDemiplaneSkeleton
@@ -82,12 +88,28 @@
       minGroupSize: 1
       maxGroupSize: 3
 
+- type: cp14DemiplaneModifier
+  id: EnemyWendigo
+  levels:
+    min: 3
+    max: 10
+  generationWeight: 0.33
+  categories:
+    Danger: 0.55
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneWendigo
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+
 # TIER 2
 
 - type: cp14DemiplaneModifier
   id: EnemyMole
-  tiers:
-    - 2
+  levels:
+    min: 6
+    max: 10
   name: cp14-modifier-mole
   categories:
     Danger: 0.4
@@ -102,13 +124,16 @@
 
 - type: cp14DemiplaneModifier
   id: EnemyIceSpectre
-  tiers:
-    - 2
+  levels:
+    min: 6
+    max: 10
   name: cp14-modifier-zombie
   categories:
     Danger: 0.4
   requiredTags:
   - CP14DemiplaneCold
+  blacklistTags:
+  - CP14DemiplaneHot
   layers:
     - !type:OreDunGen
       entity: CP14MobIceSpectre
@@ -116,18 +141,120 @@
       minGroupSize: 1
       maxGroupSize: 2
 
+#- type: cp14DemiplaneModifier #Removed to Whistler rebalance
+#  id: EnemyInvisibleWhistler
+#  levels:
+#    min: 6
+#    max: 10
+#  name: cp14-modifier-invisible-whistler
+#  categories:
+#    Danger: 0.4
+#  requiredTags:
+#  - CP14DemiplaneUnderground
+#  layers:
+#    - !type:OreDunGen
+#      entity: CP14MobMonsterInvisibleWhistler
+#      count: 2
+#      minGroupSize: 1
+#      maxGroupSize: 2
+
 - type: cp14DemiplaneModifier
-  id: EnemyInvisibleWhistler
-  tiers:
-    - 2
-  name: cp14-modifier-invisible-whistler
+  id: MobSlimeElectric
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-slime
   categories:
-    Danger: 0.4
-  requiredTags:
-  - CP14DemiplaneUnderground
+    Danger: 0.3
   layers:
     - !type:OreDunGen
-      entity: CP14MobMonsterInvisibleWhistler
+      entity: CP14MobSlimeElectric
+      count: 3
+      minGroupSize: 4
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: MobSlimeFire
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-slime
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneHot
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeFire
+      count: 3
+      minGroupSize: 4
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: MobSlimeIce
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-slime
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneCold
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeIce
+      count: 3
+      minGroupSize: 4
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: MobSlimeBase
+  levels:
+    min: 1
+    max: 10
+  categories:
+    Danger: 0.25
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobSlimeBase
+      count: 3
+      minGroupSize: 4
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: MobWatcherIce
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-watcher
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneCold
+  blacklistTags:
+  - CP14DemiplaneHot
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobWatcherIce
       count: 2
-      minGroupSize: 1
-      maxGroupSize: 2
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: MobWatcherMagma
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-watcher
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneHot
+  blacklistTags:
+  - CP14DemiplaneCold
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobWatcherMagma
+      count: 2
+      minGroupSize: 2
+      maxGroupSize: 3

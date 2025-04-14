@@ -1,5 +1,6 @@
 using Content.Shared.Item;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Tag;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
@@ -147,11 +148,24 @@ namespace Content.Shared.Storage
         [DataField]
         public EntityWhitelist? CP14Ignorelist;
 
+        /// <summary>
+        /// Entities with this tag won't trigger storage sound.
+        /// </summary>
+        [DataField]
+        public ProtoId<TagPrototype> SilentStorageUserTag = "SilentStorageUser";
+
         [Serializable, NetSerializable]
         public enum StorageUiKey : byte
         {
             Key,
         }
+
+        /// <summary>
+        /// Allow or disallow showing the "open/close storage" verb.
+        /// This is desired on items that we don't want to be accessed by the player directly.
+        /// </summary>
+        [DataField]
+        public bool ShowVerb = true;
     }
 
     [Serializable, NetSerializable]

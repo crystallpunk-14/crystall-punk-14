@@ -1,7 +1,7 @@
 - type: roleLoadout
   id: JobCP14Adventurer
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -18,7 +18,7 @@
 - type: roleLoadout
   id: JobCP14Apprentice
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -33,13 +33,14 @@
 - type: roleLoadout
   id: JobCP14Alchemist
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14AlchemistHead #
   - CP14GeneralOuterClothing
   - CP14AlchemistEyes #
   - CP14AlchemistCloak #
   - CP14GeneralGloves
   - CP14GeneralShirt
+  - CP14AlchemistBelt #
   - CP14GeneralPants
   - CP14GeneralShoes
   - CP14GeneralBack
@@ -48,7 +49,7 @@
 - type: roleLoadout
   id: JobCP14Innkeeper
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -63,12 +64,12 @@
 - type: roleLoadout
   id: JobCP14Blacksmith
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14BlacksmithCloak
-  - CP14GeneralGloves
+  - CP14BlacksmithGloves
   - CP14GeneralShirt
   - CP14GeneralPants
   - CP14GeneralShoes
@@ -78,7 +79,7 @@
 - type: roleLoadout
   id: JobCP14GuardCommander
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14GuardHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -94,7 +95,7 @@
 - type: roleLoadout
   id: JobCP14Guard
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14GuardHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -110,7 +111,7 @@
 - type: roleLoadout
   id: JobCP14Commandant
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14CommandantHead
   - CP14MerchantOuterClothing
   - CP14GeneralEyes
@@ -124,7 +125,7 @@
 - type: roleLoadout
   id: JobCP14Guildmaster
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14GuildmasterOuterClothing
   - CP14GeneralEyes
   - CP14GuildmasterHead
@@ -139,7 +140,7 @@
 - type: roleLoadout
   id: JobCP14Merchant
   groups:
-  - CP14GeneralSpells
+  - CP14SkillTree
   - CP14MerchantHead
   - CP14MerchantOuterClothing
   - CP14GeneralEyes

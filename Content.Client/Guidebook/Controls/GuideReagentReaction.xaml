@@ -4,8 +4,7 @@
               HorizontalAlignment="Stretch"
               HorizontalExpand="True"
               Margin="0 0 0 5">
-    <BoxContainer
-        Orientation="Horizontal">
+    <BoxContainer Orientation="Horizontal">
         <BoxContainer Name="ReactantsContainer" Orientation="Vertical" HorizontalExpand="True"
                       VerticalAlignment="Center">
             <RichTextLabel Name="ReactantsLabel"
@@ -30,24 +29,25 @@
                            VerticalAlignment="Center"
                            Access="Public"
                            Visible="False" />
-            <!-- CP14 random reactions begin -->
-            <BoxContainer Name="RandomVariations"
-                          Orientation="Vertical"
-                          VerticalExpand="True"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Center">
-                <controls:SplitBar MinHeight="10">
-                </controls:SplitBar>
-                <Label Name="RandomVariationsLabel"
-                       Text="{Loc 'cp14-guidebook-random-variations-title'}"
-                       Visible="False"
-                       HorizontalAlignment="Center"
-                       FontColorOverride="#1e6651" />
-                <controls:SplitBar MinHeight="10">
-                </controls:SplitBar>
-            </BoxContainer>
-            <!-- CP14 random reactions end -->
         </BoxContainer>
+        <!-- CP14 random reactions begin -->
+        <BoxContainer Name="RandomVariations"
+                      Orientation="Vertical"
+                      VerticalExpand="True"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center">
+            <controls:SplitBar MinHeight="10">
+            </controls:SplitBar>
+            <Label Name="RandomVariationsLabel"
+                   Text="{Loc 'cp14-guidebook-random-variations-title'}"
+                   Visible="False"
+                   HorizontalAlignment="Center"
+                   FontColorOverride="#1e6651" />
+            <controls:SplitBar MinHeight="10">
+            </controls:SplitBar>
+        </BoxContainer>
+        <!-- CP14 random reactions end -->
+
     </BoxContainer>
     <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 5" />
 </BoxContainer>

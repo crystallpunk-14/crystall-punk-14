@@ -8,7 +8,7 @@
       edges:
         - to: CP14WoodenChestFrame
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
               
@@ -17,7 +17,7 @@
       edges:
         - to: CP14WoodenChest
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks
               amount: 2
               doAfter: 2
             - material: CP14Nail

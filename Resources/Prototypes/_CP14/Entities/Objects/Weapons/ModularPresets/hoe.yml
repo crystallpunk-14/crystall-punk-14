@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularIronHoe
+  parent: CP14ModularGripWooden
+  name: iron hoe
+  description: Hoe. Your perfect tool for tilling the ground and preparing it for gardening.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronHoe

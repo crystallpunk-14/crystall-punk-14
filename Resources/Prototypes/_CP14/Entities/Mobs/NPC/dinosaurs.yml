@@ -12,7 +12,7 @@
   - type: ReplacementAccent
     accent: xeno
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: CP14Dinosaur
   - type: Appearance
   - type: Body

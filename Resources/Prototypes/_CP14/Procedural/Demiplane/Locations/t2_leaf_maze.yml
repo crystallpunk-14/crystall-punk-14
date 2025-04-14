@@ -1,6 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1LeafMaze
-  tier: 1
+  levels:
+    min: 4
+    max: 10
   locationConfig: CP14DemiplaneLeafMaze
   name: cp14-demiplane-location-leaf-maze
   tags:
@@ -9,22 +11,25 @@
   - CP14DemiplanePeacefulAnimals
   - CP14DemiplaneWater
   - CP14DemiplaneAnimalsSwamp
+  components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: Biome
+    template: CP14CavesIndestructibleFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
+  - type: CP14CloudShadows
 
 - type: dungeonConfig
   id: CP14DemiplaneLeafMaze
   layers:
     # Masks
     - !type:PrototypeDunGen
-      proto: CP14DemiplanePlatingMaskBorder
-    - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskStone
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskAir
     # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesIndestructibleFill
-      tileMask:
-      - Plating
     - !type:BiomeDunGen
       biomeTemplate: CP14LeafMaze
       tileMask:

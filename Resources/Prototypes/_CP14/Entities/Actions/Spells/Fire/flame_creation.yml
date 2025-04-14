@@ -1,0 +1,155 @@
+- type: entity
+  id: CP14ActionSpellFlameCreation
+  name: Flame creation
+  description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: flame_creation
+  - type: CP14MagicEffectManaCost
+    manaCost: 5
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectFlameCreation
+    - !type:CP14SpellSpawnInHandEntity
+      spawns:
+      - CP14FlameCreationArtificialFlame
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Et conteret ignis..."
+    endSpeech: "in manu mea"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFlameCreation
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: flame_creation
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 10
+      breakOnMove: false
+
+- type: entity
+  id: CP14RuneFlameCreation
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectFlameCreation
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14FlameCreationArtificialFlame
+  parent: 
+  - BaseItem
+  - ItemHeftyBase
+  name: artificial flame
+  description: A magically created artificial flame burning directly into the air. Not a bad light source, or a weapon if you throw it in someone's face.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Ginormous
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: TimedDespawn
+    lifetime: 120 # 2 min
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/artificial_flame.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: PointLight
+    color: "#eea911"
+    energy: 0.5
+    radius: 2.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        hard: true
+        mask:
+        - ItemMask
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 3
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+          params:
+            variation: 0.250
+            volume: -12
+  - type: ThrowingAngle
+    angle: 0
+  - type: LandAtCursor
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5 # 2 hits
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Heat: 12
+  - type: MeleeWeapon
+    attackRate: 1.8
+    wideAnimationRotation: 225
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Heat: 8
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -12
+    cPAnimationLength: 0.15
+  - type: CP14DelayedIgnitionSource
+    enabled: true
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollFlameCreation
+  name: flame creation spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFlameCreation

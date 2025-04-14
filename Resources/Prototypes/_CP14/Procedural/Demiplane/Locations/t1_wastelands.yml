@@ -1,0 +1,43 @@
+- type: cp14DemiplaneLocation
+  id: T1Wastelands
+  levels:
+    min: 1
+    max: 4
+  locationConfig: CP14DemiplaneWastelandsIsland
+  name: cp14-demiplane-location-wastelands
+  tags:
+  - CP14DemiplaneOres
+  - CP14DemiplaneOpenSky
+  components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: CP14CloudShadows
+  - type: Biome
+    template: CP14ChasmFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
+
+- type: dungeonConfig
+  id: CP14DemiplaneWastelandsIsland
+  layers:
+    # Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandFloorMaskSand
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandFloorMaskGrass
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandFloorMaskStone
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesGeneric
+      tileMask:
+      - CP14FloorBase
+    - !type:BiomeDunGen
+      biomeTemplate: CP14Wastelands
+      tileMask:
+      - CP14FloorGrass
+    - !type:BiomeDunGen
+      biomeTemplate: CP14Wastelands
+      tileMask:
+      - CP14FloorSand

@@ -52,6 +52,28 @@
         emote: Cough
         probability: 0.3
 
+- type: reagent
+  id: CP14WildSageSap
+  group: CP14Precurser
+  name: cp14-reagent-name-wild-sage-sap
+  desc: cp14-reagent-desc-wild-sage-sap
+  flavor: CP14Sweetly
+  color: "#b06bc7"
+  physicalDesc: cp14-reagent-physical-desc-cloudy
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: -1
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 3
+        refresh: false
+
 # Fungus based
 
 - type: reagent
@@ -121,34 +143,16 @@
       effects:
       - !type:CP14ManaChange
         manaDelta: 0.5
+      - !type:HealthChange
+        damage:
+          types:
+            CP14ManaDepletion: -0.5
     Poison:
       effects:
       - !type:HealthChange
         damage:
           types:
             Poison: 0.1
-
-# Root based
-
-- type: reagent
-  id: CP14WildSageSap
-  group: CP14Precurser
-  name: cp14-reagent-name-wild-sage-sap
-  desc: cp14-reagent-desc-wild-sage-sap
-  flavor: CP14Sweetly
-  color: "#6b462c"
-  physicalDesc: cp14-reagent-physical-desc-cloudy
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Blunt: -1
-      - !type:Emote
-        emote: Cough
-        showInChat: true
-        probability: 0.15
 
 # Slime based
 

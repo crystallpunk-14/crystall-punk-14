@@ -231,6 +231,30 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
+- type: entity
+  parent: CP14ModularGripShort
+  id: CP14ModularGripGuildmaster
+  name: guildmaster's rapier grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/guildmaster_grip.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripIron
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120 #x2.4 durability
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
 # Long
 - type: entity
   parent: CP14ModularGripLong

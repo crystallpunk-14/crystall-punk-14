@@ -1,19 +1,7 @@
-using Content.Server._CP14.DayCycle;
-using Content.Server._CP14.Farming.Components;
-using Content.Server.Destructible;
-using Content.Server.DoAfter;
-using Content.Server.Popups;
-using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming;
+using Content.Shared._CP14.Farming.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
-using Content.Shared.Tag;
-using Content.Shared.Examine;
-using Content.Shared.Whitelist;
-using Robust.Server.Audio;
-using Robust.Server.GameObjects;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -22,32 +10,19 @@ namespace Content.Server._CP14.Farming;
 
 public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 {
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly DestructibleSystem _destructible = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        InitializeInteractions();
         InitializeResources();
 
-        SubscribeLocalEvent<CP14PlantComponent, EntityUnpausedEvent>(OnUnpaused);
         SubscribeLocalEvent<CP14PlantComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<CP14PlantAutoRootComponent, MapInitEvent>(OnAutoRootMapInit);
-        SubscribeLocalEvent<CP14PlantComponent, ExaminedEvent>(OnExamine);
     }
 
     public override void Update(float frameTime)
@@ -62,7 +37,6 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
 
             var newTime = _random.NextFloat(plant.UpdateFrequency);
             plant.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
-            plant.Age += TimeSpan.FromSeconds(plant.UpdateFrequency);
 
             var ev = new CP14PlantUpdateEvent((uid, plant));
             RaiseLocalEvent(uid, ev);
@@ -77,51 +51,9 @@ public sealed partial class CP14FarmingSystem : CP14SharedFarmingSystem
         }
     }
 
-    private void OnUnpaused(Entity<CP14PlantComponent> ent, ref EntityUnpausedEvent args)
-    {
-        ent.Comp.NextUpdateTime += args.PausedTime;
-    }
-
     private void OnMapInit(Entity<CP14PlantComponent> plant, ref MapInitEvent args)
     {
         var newTime = _random.NextFloat(plant.Comp.UpdateFrequency);
         plant.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
-    }
-
-    private void OnExamine(EntityUid uid, CP14PlantComponent component, ExaminedEvent args)
-    {
-        if (component.Energy <= 0)
-            args.PushMarkup(Loc.GetString("cp14-farming-low-energy"));
-
-        if (component.Resource <= 0)
-            args.PushMarkup(Loc.GetString("cp14-farming-low-resources"));
-    }
-
-    private void OnAutoRootMapInit(Entity<CP14PlantAutoRootComponent> autoRoot, ref MapInitEvent args)
-    {
-        var grid = Transform(autoRoot).GridUid;
-        if (grid == null || !TryComp<MapGridComponent>(grid, out var gridComp))
-            return;
-
-
-        var targetPos = new EntityCoordinates(grid.Value,Transform(autoRoot).LocalPosition);
-        var anchored = _map.GetAnchoredEntities(grid.Value, gridComp, targetPos);
-
-        foreach (var entt in anchored)
-        {
-            if (!TryComp<CP14SoilComponent>(entt, out var soil))
-                continue;
-
-            //Generally, this SHOULD change the parent, but it made the entity unanchored, which caused a bugs: hammer hits could push plants around
-            //_transform.SetParent(autoRoot, entt);
-            soil.PlantUid = autoRoot;
-
-            if (TryComp<CP14PlantComponent>(autoRoot, out var plantComp))
-            {
-                plantComp.SoilUid = entt;
-            }
-
-            break;
-        }
     }
 }

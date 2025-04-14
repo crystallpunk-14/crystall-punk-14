@@ -1,6 +1,6 @@
 - type: entity
-  parent: 
-  - CP14BaseMobSpecies
+  parent:
+  - CP14BaseMobSpeciesNoLife
   - MobFlammable
   id: CP14BaseMobSkeleton
   name: Mr. Skeleton
@@ -89,7 +89,7 @@
         layer:
           - MobLayer
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
     damageModifierSet: Skeleton
   - type: Destructible
     thresholds:
@@ -110,9 +110,9 @@
   - type: Inventory
     templateId: CP14Human
   - type: TransferMindOnGib
-  - type: CP14KnowledgeStorage
   - type: CP14DemiplaneStabilizer
     enabled: false
+  - type: GhostTakeoverAvailable
 
 - type: entity
   parent: CP14BaseSpeciesDummy

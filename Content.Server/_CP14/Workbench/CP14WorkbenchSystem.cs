@@ -3,10 +3,10 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using System.Numerics;
 using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server.Stack;
-using Content.Shared._CP14.Knowledge;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Chemistry.EntitySystems;
@@ -16,6 +16,7 @@ using Content.Shared.UserInterface;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Workbench;
 
@@ -30,7 +31,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedCP14KnowledgeSystem _knowledge = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -96,13 +97,13 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
 
         foreach (var req in recipe.Requirements)
         {
-            req.PostCraft(EntityManager, placedEntities, args.User);
+            req.PostCraft(EntityManager, _proto, placedEntities, args.User);
         }
 
         //We teleport result to workbench AFTER craft.
         foreach (var resultEntity in resultEntities)
         {
-            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates);
+            _transform.SetCoordinates(resultEntity, Transform(ent).Coordinates.Offset(new Vector2(_random.NextFloat(-0.25f, 0.25f), _random.NextFloat(-0.25f, 0.25f))));
         }
 
         UpdateUIRecipes(ent, args.User);
@@ -138,7 +139,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     {
         foreach (var req in recipe.Requirements)
         {
-            if (!req.CheckRequirement(EntityManager, _proto, entities, user))
+            if (!req.CheckRequirement(EntityManager, _proto, entities, user, recipe))
                 return false;
         }
 

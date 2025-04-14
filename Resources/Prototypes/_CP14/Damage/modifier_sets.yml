@@ -46,6 +46,18 @@
     Cold: 0.8
     Poison: 0.2
 
+- type: damageModifierSet
+  id: CP14WatcherIce
+  coefficients:
+    Heat: 1.4
+    Cold: 0.2
+
+- type: damageModifierSet
+  id: CP14WatcherFire
+  coefficients:
+    Heat: 0.2
+    Cold: 1.4
+
 # Species
 
 - type: damageModifierSet

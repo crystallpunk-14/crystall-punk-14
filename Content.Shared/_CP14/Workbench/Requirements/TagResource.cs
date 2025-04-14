@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -11,6 +12,8 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class TagResource : CP14WorkbenchCraftRequirement
 {
+    public override bool HideRecipe { get; set; } = false;
+
     [DataField(required: true)]
     public ProtoId<TagPrototype> Tag;
 
@@ -23,7 +26,12 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
     [DataField(required: true)]
     public SpriteSpecifier? Texture;
 
-    public override bool CheckRequirement(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override bool CheckRequirement(
+        EntityManager entManager,
+        IPrototypeManager protoManager,
+        HashSet<EntityUid> placedEntities,
+        EntityUid user,
+        CP14WorkbenchRecipePrototype recipe)
     {
         var tagSystem = entManager.System<TagSystem>();
 
@@ -42,7 +50,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
     {
         var tagSystem = entManager.System<TagSystem>();
 
@@ -51,6 +59,9 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         {
             if (!tagSystem.HasTag(placedEntity, Tag))
                 continue;
+
+            if (requiredCount <= 0)
+                break;
 
             requiredCount--;
             entManager.DeleteEntity(placedEntity);

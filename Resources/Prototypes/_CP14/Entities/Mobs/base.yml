@@ -5,6 +5,18 @@
   categories: [ ForkFiltered ]
   abstract: true
   components:
+  - type: Damageable
+    damageContainer: CP14Biological
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+    - Cold
+    - Caustic
+    - CP14ManaDepletion
   - type: Destructible
     thresholds:
     - trigger:
@@ -47,7 +59,7 @@
   - type: CP14MagicUnsafeSleep
   - type: CP14MagicAttuningMind
     autoCopyToMind: true
-  
+
 
 - type: entity
   parent:
@@ -95,3 +107,63 @@
   - type: MobPrice
     price: 150
   - type: FloatingVisuals
+
+- type: entity
+  parent:
+  - CP14MobDamageable
+  - MobRespirator
+  - MobAtmosStandard
+  - CP14SimpleSpaceMobNoLifeBase
+  id: CP14SimpleMobNoLifeBase
+  suffix: AI
+  abstract: true
+  components:
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - StaminaModifier
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
+  - type: MobPrice
+    price: 150
+  - type: FloatingVisuals
+
+- type: entity
+  abstract: true
+  parent:
+  - BaseSimpleMob
+  - MobCombat
+  - MobFlammable
+  id: CP14SimpleSpaceMobNoLifeBase
+  suffix: AI
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CP14Neutrals
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+  - type: Body
+    prototype: Animal
+  - type: Climbing
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: MobPrice
+    price: 1000 # Living critters are valuable in space.
+  - type: Perishable

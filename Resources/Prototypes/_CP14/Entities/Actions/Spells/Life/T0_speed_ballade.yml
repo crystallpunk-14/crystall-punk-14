@@ -34,6 +34,7 @@
 - type: entity
   id: CP14AreaEntityEffectSpeedBallade
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: TimedDespawn
     lifetime: 1.6
@@ -58,6 +59,7 @@
   id: CP14ImpactEffectSpeedBallade
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: Sprite
     sprite: _CP14/Effects/music.rsi
@@ -70,6 +72,7 @@
   id: CP14RuneSpeedBallade
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
+  save: false
   components:
   - type: PointLight
     color: "#e8cb56"
