@@ -273,7 +273,8 @@ namespace Content.IntegrationTests.Tests
 
         private void CP14CheckOnlyForkFiltered(ResPath map, YamlNode node, IPrototypeManager protoManager)
         {
-            if (DoNotMapWhitelist.Contains(map.ToString()))
+            //ignore all vanilla maps
+            if (!map.ToString().Contains("CP14"))
                 return;
 
             var yamlEntities = node["entities"];
