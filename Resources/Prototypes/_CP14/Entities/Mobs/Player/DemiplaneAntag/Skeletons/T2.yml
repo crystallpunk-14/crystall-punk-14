@@ -102,9 +102,6 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonBardT2
-  - type: CP14SkillStorage
-    progress:
-      skeleton_discipline: 2
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
