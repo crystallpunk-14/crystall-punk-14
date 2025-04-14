@@ -52,12 +52,12 @@
 
 # Grill Gate
 
-- type: entity
-  parent: CP14FenceIronGrilleGate
-  id: CP14FenceIronGrilleGateGuard
-  suffix: Guard
-  components:
-  - type: CP14Lock
-    autoGenerateShape: Guard
-  - type: Lock
-    locked: true
+#- type: entity
+#  parent: CP14FenceIronGrilleGate
+#  id: CP14FenceIronGrilleGateGuard
+#  suffix: Guard
+#  components:
+#  - type: CP14Lock
+#    autoGenerateShape: Guard
+#  - type: Lock
+#    locked: true

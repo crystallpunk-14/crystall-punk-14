@@ -1,0 +1,71 @@
+- type: entity
+  parent: CP14BaseFence
+  id: CP14BaseFenceGate
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: fence gate
+  description: You have two paths. You can open the door like a normal person, or you can climb over the door like a funny person.
+  components:
+  - type: Sprite
+    layers:
+    - state: door_closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Icon
+    state: door_closed
+  - type: IconSmooth
+    mode: NoSprite
+  - type: InteractionOutline
+  - type: Appearance
+  - type: Door
+    openSpriteState: door_opened
+    closedSpriteState: door_closed
+    canPry: false
+    occludes: false
+    changeAirtight: false
+    bumpOpen: false
+    clickOpen: true
+    canCrush: false
+    closeTimeOne: 0
+    closeTimeTwo: 0
+    openTimeOne: 0
+    openTimeTwo: 0
+    closedDrawDepth: Mobs
+    openDrawDepth: Mobs
+    openingAnimationTime: 0
+    closingAnimationTime: 0
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
+
+- type: entity
+  parent: 
+  - CP14BaseFenceGate
+  - CP14BaseFlammableSpreading
+  id: CP14FenceGateWooden
+  categories: [ ForkFiltered ]
+  suffix: Wooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Fence/wooden.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Fence/wooden.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

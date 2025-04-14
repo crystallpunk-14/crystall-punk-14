@@ -324,6 +324,21 @@ CP14PlantWheatDeath: CP14PlantWheat
 CP14BaseHoe: CP14ModularIronHoe
 CP14PlantOnion: null
 
+#2025-14-04
+CP14FenceWoodStraight: null
+CP14FenceWoodCorner: null
+CP14FenceWoodGate: null
+CP14FenceWoodSmallStraight: CP14FenceWooden
+CP14FenceWoodSmallCorner: CP14FenceWooden
+CP14FenceWoodSmallGate: CP14FenceGateWooden
+CP14FenceIronGrilleStraight: null # migrate
+CP14FenceIronGrilleGate: null # migrate
+CP14FenceIronGrilleGateGuard: null # migrate
+CP14FenceIronGrilleWindowBase: null # migrate
+CP14FenceIronGrilleWindowStraight: null # migrate
+CP14FenceIronGrilleGateDemiplaneCrystal: null # migrate
+CP14FenceIronGrilleGateGuildmaster: null # migrate
+
 # <---> CrystallEdge migration zone end
 
 
