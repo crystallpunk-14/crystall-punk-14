@@ -59,6 +59,9 @@ dataset = "CP14Tips"
 show_ooc_patron_color = false
 enable_during_round = true
 
+[movement]
+mob_pushing = true
+
 [cp14]
 discord_auth_enabled = true
 closet_beta_test = true
