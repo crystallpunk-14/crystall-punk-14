@@ -80,13 +80,28 @@
   name: cp14-modifier-skeleton
   generationWeight: 1.5
   categories:
-    Danger: 0.5
+    Danger: 0.55
   layers:
     - !type:OreDunGen
       entity: SpawnPointGhostDemiplaneSkeletonT1
       count: 1
       minGroupSize: 1
       maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemyWendigo
+  levels:
+    min: 3
+    max: 10
+  generationWeight: 0.33
+  categories:
+    Danger: 0.55
+  layers:
+    - !type:OreDunGen
+      entity: SpawnPointGhostDemiplaneWendigo
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
 
 # TIER 2
 

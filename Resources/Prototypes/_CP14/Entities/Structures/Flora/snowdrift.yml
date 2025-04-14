@@ -20,6 +20,8 @@
   - type: IconSmooth
     key: CP14Snowdrift
     base: state
+    additionalKeys:
+    - CP14wall
   - type: FloorOccluder
   - type: Transform
     anchored: true

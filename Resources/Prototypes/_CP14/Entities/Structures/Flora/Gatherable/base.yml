@@ -91,6 +91,8 @@
           Quantity: 25
   - type: Food
     delay: 1.5
+  - type: CP14WeatherRefillable
+    solution: plant
   - type: RefillableSolution 
     solution: plant
     maxRefill: 50

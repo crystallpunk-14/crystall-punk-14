@@ -42,6 +42,8 @@
         Blunt: 0
   - type: Spillable
     solution: bucket
+  - type: CP14WeatherRefillable
+    solution: bucket
   - type: RefillableSolution
     solution: bucket
   - type: SolutionItemStatus

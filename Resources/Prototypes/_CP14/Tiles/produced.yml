@@ -207,6 +207,34 @@
 
 - type: tile
   editorHidden: false
+  id: CP14FloorMarbleSmallbricks
+  name: cp14-tiles-stonebricks-marble
+  sprite: /Textures/_CP14/Tiles/Marble/small_bricks.png
+  variants: 9
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 102
+  edgeSprites:
+    South: /Textures/_CP14/Tiles/Marble/double_edge_S.png
+  baseTurf: CP14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: CP14FloorTileMarbleSmallbricks
+
+- type: tile
+  editorHidden: false
   id: CP14FloorDirtSeedbed
   name: cp14-tiles-dirt-seedbed
   sprite: /Textures/_CP14/Tiles/DirtSeedBag/seedbed.png

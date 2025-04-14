@@ -6,7 +6,7 @@
   sprites: CP14MobCarcatSprites
   markingLimits: CP14MobCarcatMarkingLimits
   dollPrototype: CP14MobCarcatDummy
-  skinColoration: VoxFeathers
+  skinColoration: Hues
   defaultSkinTone: "#4a382f"
   maleFirstNames: CP14_Names_Carcat_First
   femaleFirstNames: CP14_Names_Carcat_First

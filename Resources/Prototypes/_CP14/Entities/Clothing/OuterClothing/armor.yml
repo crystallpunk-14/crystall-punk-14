@@ -19,6 +19,8 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.96
     sprintModifier: 0.96
+  - type: CP14MagicManacostModify
+    globalModifier: 1.1
 
 - type: entity
   parent: CP14ClothingOuterClothingBase

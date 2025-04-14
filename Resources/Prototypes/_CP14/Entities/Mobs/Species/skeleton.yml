@@ -115,6 +115,7 @@
   - type: TransferMindOnGib
   - type: CP14DemiplaneStabilizer
     enabled: false
+  - type: GhostTakeoverAvailable
 
 - type: entity
   parent: CP14BaseSpeciesDummy

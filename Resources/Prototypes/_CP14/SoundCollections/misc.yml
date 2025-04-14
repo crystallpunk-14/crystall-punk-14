@@ -27,3 +27,10 @@
     - /Audio/_CP14/Ambience/Lightning/lightning_far1.ogg
     - /Audio/_CP14/Ambience/Lightning/lightning_far2.ogg
     - /Audio/_CP14/Ambience/Lightning/lightning_far3.ogg
+
+- type: soundCollection
+  id: CP14WendigoRitual
+  files:
+    - /Audio/_CP14/Effects/Wendigo/ritual1.ogg
+    - /Audio/_CP14/Effects/Wendigo/ritual2.ogg
+    - /Audio/_CP14/Effects/Wendigo/ritual3.ogg

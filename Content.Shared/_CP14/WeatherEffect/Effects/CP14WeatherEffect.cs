@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Robust.Shared.Random;
 
-namespace Content.Shared._CP14.WeatherEffect;
+namespace Content.Shared._CP14.WeatherEffect.Effects;
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]

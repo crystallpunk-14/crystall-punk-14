@@ -1,0 +1,95 @@
+- type: entity
+  id: CP14ActionSpellWendigoFear
+  name: Primal terror
+  description: You plunge the target into primal terror, robbing them of the ability to fight and speak. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/wendigo.rsi
+    state: fear
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.4
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14RuneWendigoFearImpact
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectWendigoFear
+    - !type:CP14SpellRevealStealthUser
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.2
+        sprintSpeedModifier: 0.2
+        statusLifetime: 2
+      - !type:Jitter
+      - !type:GenericStatusEffect
+        key: Pacified
+        component: Pacified
+        type: Add
+        time: 2
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneWendigoFear
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 15
+    itemIconStyle: BigAction
+    canTargetSelf: false
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/wendigo.rsi
+      state: fear
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 30
+      castTime: 30
+      breakOnMove: false
+      hidden: true
+
+- type: entity
+  id: CP14ImpactEffectWendigoFear
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    layers:
+    - state: particles_down
+      color: "#6c5f82"
+      shader: unshaded
+ 
+- type: entity
+  id: CP14RuneWendigoFear
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#6c5f82"
+  - type: Sprite
+    layers:
+    - state: double_outer
+      color: "#6c5f82"
+      shader: unshaded
+ 
+- type: entity
+  id: CP14RuneWendigoFearImpact
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#6c5f82"
+    radius: 3
+    energy: 8
+    netsync: false
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#6c5f82"
+      shader: unshaded
+  - type: LightFade
+    duration: 1

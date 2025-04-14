@@ -27,10 +27,9 @@
         damage:
           types:
             Blunt: 5
-  - type: CP14MagicEffectVerbalAspect
-    startSpeech: cp14-kick-emote-start
-    endSpeech: cp14-kick-emote
-    emote: true
+  - type: CP14MagicEffectEmoting
+    startEmote: cp14-kick-emote-start
+    endEmote: cp14-kick-emote
   - type: CP14MagicEffectPacifiedBlock
   - type: EntityTargetAction
     canTargetSelf: false

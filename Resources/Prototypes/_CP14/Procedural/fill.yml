@@ -16,11 +16,11 @@
   layers:
     - !type:BiomeTileLayer
       threshold: -1.0
-      tile: CP14FloorBase
+      tile: FloorBasalt
     - !type:BiomeEntityLayer
       threshold: -1
       allowedTiles:
-        - CP14FloorBase
+        - FloorBasalt
       entities:
         - CP14Chasm
 
@@ -48,7 +48,7 @@
       allowedTiles:
         - FloorSnow
       entities:
-        - CP14FloorWaterOptimized
+        - CP14FloorWaterOptimizedDeep
 
 - type: biomeTemplate
   id: CP14SandOceanFill
@@ -61,7 +61,7 @@
       allowedTiles:
         - FloorDesert
       entities:
-        - CP14FloorWaterOptimized
+        - CP14FloorWaterOptimizedDeep
 
 - type: biomeTemplate
   id: CP14LavaOceanFill
@@ -75,3 +75,16 @@
         - FloorBasalt
       entities:
         - CP14FloorLava
+
+- type: biomeTemplate
+  id: CP14IceWallFill
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorSnow
+    - !type:BiomeEntityLayer
+      threshold: -1
+      allowedTiles:
+        - FloorSnow
+      entities:
+        - CP14WindowIceBlock
