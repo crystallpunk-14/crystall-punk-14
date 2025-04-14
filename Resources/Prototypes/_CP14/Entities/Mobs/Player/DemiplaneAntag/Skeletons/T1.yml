@@ -60,6 +60,10 @@
   - type: CP14SkillStorage
     progress:
       Atlethic: 1
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellIceArrow
 
 - type: entity
   id: SpawnPointGhostDemiplaneSkeletonT1

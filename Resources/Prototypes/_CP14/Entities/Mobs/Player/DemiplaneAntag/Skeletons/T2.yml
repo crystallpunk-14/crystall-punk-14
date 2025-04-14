@@ -18,9 +18,13 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonHalberdT2
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellKickSkeleton
   - type: CP14SkillStorage
     progress:
-      skeleton_discipline: 2
+      Atlethic: 1
 
 - type: entity
   id: CP14MobUndeadSkeletonSwordT2
@@ -33,7 +37,7 @@
     - CP14MobSkeletonSwordT2
   - type: CP14SkillStorage
     progress:
-      skeleton_discipline: 2
+      Atlethic: 1
 
 - type: entity
   id: CP14MobUndeadSkeletonDodgerT2
@@ -44,10 +48,11 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonDodgerT2
-  - type: CP14SkillStorage
-    progress:
-      skeleton_discipline: 2
-      Atlethic: 1
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellKickSkeleton
+    - CP14ActionSpellSprintSkeleton
 
 - type: entity
   id: CP14MobUndeadSkeletonArcherT2
@@ -60,7 +65,12 @@
     - CP14MobSkeletonArcherT2
   - type: CP14SkillStorage
     progress:
-      skeleton_discipline: 2
+      Atlethic: 1
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellShadowStepSkeleton
+    - CP14ActionSpellIceArrow
 
 - type: entity
   id: CP14MobUndeadSkeletonWizardT2
@@ -74,9 +84,14 @@
   - type: CP14MagicEnergyDraw
     energy: 1
     delay: 1
-  - type: CP14SkillStorage
-    progress:
-      skeleton_discipline: 5
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellBoneDagger
+    - CP14ActionSpellBoneShards
+    - CP14ActionSpellCureDeath
+    - CP14ActionSpellShadowStepSkeleton
+    - CP14ActionSpellShadowGrabSkeleton
 
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
@@ -93,7 +108,7 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellHealBallade
+    - CP14ActionSpellDeadHealBallade
     - CP14ActionSpellMagicBallade
     - CP14ActionSpellSpeedBallade
     - CP14ActionSpellPeaceBallade

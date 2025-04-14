@@ -14,9 +14,6 @@
       "name": "sprint"
     },
     {
-      "name": "acceleration"
-    },
-    {
       "name": "bone_dagger"
     },
     {
@@ -24,15 +21,6 @@
     },
     {
       "name": "cure_dead"
-    },
-    {
-      "name": "rift_arrow"
-    },
-    {
-      "name": "demi_arrow"
-    },
-    {
-      "name": "shadow_step"
     },
     {
       "name": "dead_heal_ballade"
