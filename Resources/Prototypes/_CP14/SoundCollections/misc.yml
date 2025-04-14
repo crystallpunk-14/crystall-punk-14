@@ -34,3 +34,8 @@
     - /Audio/_CP14/Effects/Wendigo/ritual1.ogg
     - /Audio/_CP14/Effects/Wendigo/ritual2.ogg
     - /Audio/_CP14/Effects/Wendigo/ritual3.ogg
+
+- type: soundCollection
+  id: CP14Bell
+  files:
+    - /Audio/_CP14/Effects/bell.ogg
