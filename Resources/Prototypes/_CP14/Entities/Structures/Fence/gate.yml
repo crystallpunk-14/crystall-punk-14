@@ -43,7 +43,6 @@
   - CP14BaseFenceGate
   - CP14BaseFlammableSpreading
   id: CP14FenceGateWooden
-  categories: [ ForkFiltered ]
   suffix: Wooden
   components:
   - type: Sprite
@@ -69,3 +68,13 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: CP14FenceGateWooden
+  id: CP14FenceGateWoodenBirch
+  suffix: Wooden Birch
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Fence/wooden_birch.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Fence/wooden_birch.rsi
