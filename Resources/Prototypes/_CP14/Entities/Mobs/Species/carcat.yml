@@ -97,6 +97,11 @@
           32:
             sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
             state: shirt
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: gloves
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
@@ -168,6 +173,11 @@
           32:
             sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
             state: shirt
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
+            state: gloves
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
