@@ -62,10 +62,22 @@ public sealed partial class CP14RoundEndSystem
         if (englishDay && curLang != "en-US")
         {
             _cfg.SetCVar(CCVars.Language, "en-US");
+
+            _chatSystem.DispatchGlobalAnnouncement(
+                "WARNING: The server changes its language to English. For the changes to apply to your device, reconnect to the server.",
+                announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                sender: "Server"
+            );
         }
         else if (!englishDay && curLang != "ru-RU")
         {
             _cfg.SetCVar(CCVars.Language, "ru-RU");
+
+            _chatSystem.DispatchGlobalAnnouncement(
+                "WARNING: The server changes its language to Russian. For the changes to apply to your device, reconnect to the server.",
+                announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                sender: "Server"
+            );
         }
     }
 
