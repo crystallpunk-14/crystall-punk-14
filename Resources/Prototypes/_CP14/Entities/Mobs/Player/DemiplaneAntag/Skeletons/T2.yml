@@ -8,6 +8,10 @@
   - type: NpcFactionMember
     factions:
     - CP14Monster
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      90: Dead
 
 - type: entity
   id: CP14MobUndeadSkeletonHalberdT2
@@ -92,6 +96,7 @@
     - CP14ActionSpellCureDeath
     - CP14ActionSpellShadowStepSkeleton
     - CP14ActionSpellShadowGrabSkeleton
+    - CP14ActionSpellShadowPunchSkeleton
 
 - type: entity
   id: CP14MobUndeadSkeletonBardT2

@@ -12,13 +12,14 @@
     manaCost: 4
   - type: CP14MagicEffect
     telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget # TODO заставить работать только на нежить
+    - !type:CP14SpellSpawnEntityOnTarget 
       spawns:
       - CP14ImpactEffectResurrection
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectResurrection
+    - !type:CP14SpellResurrectionEffect # TODO заставить работать только на нежить
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
@@ -36,6 +37,7 @@
             Radiation: -2
             Shock: -2
             Slash: -2
+  - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Surge, hominem mortuum!"
   - type: CP14MagicEffectCastingVisual

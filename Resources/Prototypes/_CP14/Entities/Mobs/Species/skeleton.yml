@@ -71,11 +71,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      70: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      40: 0.8
-      25: 0.6
+      60: 0.8
+      40: 0.6
+  - type: PassiveDamage
+    allowedStates:
+    - Dead
+    damage:
+      groups:
+        Brute: 100 # необходимо чтобы при большем хп рассыпался сразу после смерти
   - type: Fixtures
     fixtures:
       fix1:
@@ -95,7 +101,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 120
       behaviors:
       - !type:GibBehavior
   - type: Vocal
