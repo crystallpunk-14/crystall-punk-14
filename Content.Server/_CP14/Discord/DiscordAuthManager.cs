@@ -28,18 +28,17 @@ public sealed class DiscordAuthManager
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
 
-    //TODO unhardcode
     private string _discordGuild = "1221923073759121468"; //CrystallEdge server required
 
-    private Dictionary<string, string> _blockedGuilds = new()
+    private HashSet<string> _blockedGuilds = new()
     {
-        {"1346922008000204891", ""},
-        {"1186566619858731038", ""},
-        {"1355279097906855968", ""},
-        {"1352009516941705216", ""},
-        {"1359476387190145034", ""},
-        {"1294276016117911594", ""},
-        {"1278755078315970620", ""},
+        "1346922008000204891",
+        "1186566619858731038",
+        "1355279097906855968",
+        "1352009516941705216",
+        "1359476387190145034",
+        "1294276016117911594",
+        "1278755078315970620",
     };
 
     public event EventHandler<ICommonSession>? PlayerVerified;
@@ -146,10 +145,11 @@ public sealed class DiscordAuthManager
 
         foreach (var guild in guilds.Guilds)
         {
-            if (_blockedGuilds.TryGetValue(guild.Id, out var blockedGuildName))
+            if (_blockedGuilds.Contains(guild.Id))
             {
-                _sawmill.Debug($"Player {userId} is in blocked guild {guild.Id}");
-                return new AuthData { Verified = false, ErrorMessage = $"You are in a blocked guild: {blockedGuildName}" };
+                var encodedMessage = "RXJyb3IgMjcwMQ==";
+                var errorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(encodedMessage));
+                return new AuthData { Verified = false, ErrorMessage = errorMessage };
             }
         }
 
