@@ -9,26 +9,8 @@ public sealed partial class CP14FarmingSystem
     {
         SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(OnTakeEnergyFromLight);
         SubscribeLocalEvent<CP14PlantMetabolizerComponent, CP14PlantUpdateEvent>(OnPlantMetabolizing);
-        SubscribeLocalEvent<CP14PlantFadingComponent, CP14PlantUpdateEvent>(OnPlantFade);
-        SubscribeLocalEvent<CP14PlantFadingComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<CP14PlantGrowingComponent, CP14AfterPlantUpdateEvent>(OnPlantGrowing);
-    }
-
-    private void OnMapInit(Entity<CP14PlantFadingComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.BirthTime = _timing.CurTime;
-    }
-
-    private void OnPlantFade(Entity<CP14PlantFadingComponent> ent, ref CP14PlantUpdateEvent args)
-    {
-        var age = _timing.CurTime - ent.Comp.BirthTime;
-        var realFade = ent.Comp.ResourcePerMinute * (float)age.TotalMinutes;
-        if (args.Plant.Comp.Resource < realFade)
-        {
-            _damageable.TryChangeDamage(ent, ent.Comp.FadeDamage, true);
-        }
-        AffectResource(args.Plant, -realFade);
     }
 
     private void OnTakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)

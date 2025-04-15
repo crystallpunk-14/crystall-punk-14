@@ -50,7 +50,7 @@ preload_grids = false
 auto_call_time = 0
 
 [admin]
-deadmin_on_join = false
+deadmin_on_join = true
 
 [ic]
 flavor_text = true
@@ -61,6 +61,9 @@ dataset = "CP14Tips"
 [ooc]
 show_ooc_patron_color = false
 enable_during_round = true
+
+[movement]
+mob_pushing = true
 
 [cp14]
 discord_auth_enabled = true

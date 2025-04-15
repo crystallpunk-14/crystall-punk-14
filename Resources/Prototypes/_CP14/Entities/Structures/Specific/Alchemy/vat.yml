@@ -69,6 +69,8 @@
     solution: vat
   - type: DumpableSolution
     solution: vat
+  - type: CP14WeatherRefillable
+    solution: vat
   - type: Drink
     solution: vat
   - type: Anchorable

@@ -110,6 +110,8 @@
     solutions:
       barrel:
         maxVol: 300
+  - type: CP14WeatherRefillable
+    solution: barrel
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq

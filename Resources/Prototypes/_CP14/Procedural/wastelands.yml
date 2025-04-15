@@ -1,0 +1,91 @@
+- type: biomeTemplate
+  id: CP14Wastelands
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: CP14FloorBase
+    - !type:BiomeTileLayer 
+      tile: CP14FloorDirt
+      threshold: 0
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+    - !type:BiomeEntityLayer # More Rocks
+      threshold: 0.5
+      noise:
+        seed: 18
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 4
+      allowedTiles:
+        - CP14FloorBase
+        - CP14FloorDirt
+      entities:
+        - CP14RockSmall
+        - CP14RockBig
+    - !type:BiomeEntityLayer # More Rocks
+      threshold: 0.8
+      noise:
+        seed: 78
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 6
+      allowedTiles:
+        - CP14FloorDirt
+      entities:
+        - CP14CrateDirtPitGraveFilled
+    - !type:BiomeEntityLayer # More Trees
+      threshold: 0.4
+      noise:
+        seed: 4
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - CP14FloorDirt
+      entities:
+        - CP14FloraTreeDead
+        - CP14FloraTreeDeadSmall
+    - !type:BiomeEntityLayer # Walls
+      allowedTiles:
+        - CP14FloorDirt
+      threshold: 0.5
+      noise:
+        seed: 12
+        noiseType: OpenSimplex2
+        frequency: 0.03
+        lacunarity: 2
+        fractalType: Ridged
+        octaves: 1
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance
+        cellularJitterModifier: 0.7
+        domainWarpType: OpenSimplex2Reduced
+        domainWarpAmp: 285
+      entities:
+        - CP14WallDirt
+    - !type:BiomeEntityLayer # Walls
+      allowedTiles:
+        - CP14FloorBase
+      threshold: 0.5
+      noise:
+        seed: 13
+        noiseType: OpenSimplex2
+        frequency: 0.03
+        lacunarity: 2
+        fractalType: Ridged
+        octaves: 1
+        cellularDistanceFunction: Euclidean
+        cellularReturnType: Distance
+        cellularJitterModifier: 0.7
+        domainWarpType: OpenSimplex2Reduced
+        domainWarpAmp: 285
+      entities:
+        - CP14WallStone

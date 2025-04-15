@@ -1,8 +1,7 @@
 - type: entity
   parent:
   - BaseStructure
-  - CP14BaseFlammable
-  id: CP14WoodenTableBase
+  id: CP14TableBase
   categories: [ ForkFiltered ]
   abstract: true
   components:
@@ -17,6 +16,31 @@
         - TableMask
         layer:
         - TableLayer
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/picaxe2.ogg
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHull
+  - type: Climbable
+  - type: PlaceableSurface
+
+- type: entity
+  parent:
+  - CP14TableBase
+  - CP14BaseFlammable
+  id: CP14WoodenTableBase
+  abstract: true
+  components:
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -52,8 +76,6 @@
   - type: FireVisuals
     sprite: _CP14/Effects/fire.rsi
     normalState: full
-  - type: Climbable
-  - type: PlaceableSurface
 
 - type: entity
   parent: CP14WoodenTableBase
@@ -117,3 +139,24 @@
   - type: Construction
     graph: CP14TableWoodenCounter
     node: CP14TableWoodenCounter
+
+- type: entity
+  parent: CP14TableBase
+  id: CP14TableMarble
+  name: marble table
+  description: Exquisite white marble table.
+  components:
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Tables/marble.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/marble.rsi
+    state: full
+  - type: IconSmooth
+    key: state
+    base: state
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepFloor

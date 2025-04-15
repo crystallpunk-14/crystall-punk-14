@@ -19,6 +19,8 @@
     sprintModifier: 0.99
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorIronChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 1.15
   - type: CP14Material
     materials:
       CP14Iron: 40
@@ -60,6 +62,8 @@
     sprintModifier: 0.98
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorGoldChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 1.05
   - type: CP14Material
     materials:
       CP14Gold: 40
@@ -98,6 +102,8 @@
         Piercing: 0.99
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorCopperChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 1.1
   - type: CP14Material
     materials:
       CP14Copper: 40
@@ -139,6 +145,8 @@
     sprintModifier: 0.99
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorMithrilChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 0.96
   - type: CP14Material
     materials:
       CP14Mithril: 40
