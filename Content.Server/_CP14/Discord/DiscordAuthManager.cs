@@ -34,6 +34,7 @@ public sealed class DiscordAuthManager
 
     private HashSet<string> _blockedGuilds = new()
     {
+        "1361786483073093673", //Testing one
         "1346922008000204891",
         "1186566619858731038",
         "1355279097906855968",
@@ -124,7 +125,6 @@ public sealed class DiscordAuthManager
         var isWhitelisted = await _db.GetWhitelistStatusAsync(userId);
         if (isWhitelisted)
         {
-            _sawmill.Debug($"Player {userId} is whitelisted");
             return new AuthData { Verified = true };
         }
 
@@ -156,8 +156,7 @@ public sealed class DiscordAuthManager
         {
             if (_blockedGuilds.Contains(guild.Id))
             {
-                var encodedMessage = "RXJyb3IgMjcwMQ==";
-                var errorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(encodedMessage));
+                var errorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String("RXJyb3IgMjcwMQ=="));
                 return new AuthData { Verified = false, ErrorMessage = errorMessage };
             }
         }
