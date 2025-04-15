@@ -20,5 +20,5 @@
   id: CP14GatherTomatoes
   entries:
   - id: CP14FoodTomatoes
-    amount: 2
-    maxAmount: 4
+    amount: 4
+    maxAmount: 8

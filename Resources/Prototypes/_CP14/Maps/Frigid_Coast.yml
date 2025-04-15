@@ -1,0 +1,47 @@
+- type: gameMap
+  id: Frigid_Coast
+  mapName: "Frigid Coast"
+  mapPath: /Maps/_CP14/Frigid_Coast.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Frigid_Coast:
+      stationProto: CP14BaseExpedition
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Frigid Coast"
+        - type: StationJobs
+          availableJobs:
+            #Mercenary
+            CP14Guildmaster: [1, 1]
+            CP14Adventurer: [ -1, -1 ]
+            #Artisans
+            CP14Apprentice: [ 3, 3 ]
+            CP14Alchemist: [ 2, 2 ]
+            CP14Blacksmith: [ 2, 2 ]
+            CP14Innkeeper: [ 2, 3 ]
+            CP14Merchant: [2, 2]
+            #Guard
+            CP14Guard: [5, 5]
+            CP14GuardCommander: [1, 1]
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_CP14/Frigid_Coast_d.yml
+        - type: CP14StationKeyDistribution
+          keys:
+          - Alchemy1
+          - Alchemy2
+          - Blacksmith1
+          - Blacksmith2
+          - Shop1
+          - Shop2
+          - PersonalHouse1
+          - PersonalHouse2
+          - PersonalHouse3
+          - PersonalHouse4
+          - PersonalHouse5
+          - PersonalHouse6
+          - PersonalHouse7
