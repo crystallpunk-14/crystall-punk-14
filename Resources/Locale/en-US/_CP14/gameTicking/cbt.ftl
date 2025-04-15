@@ -1,0 +1,1 @@
+cp14-cbt-close-15m = WARNING: The server will automatically end the round after 15 minutes

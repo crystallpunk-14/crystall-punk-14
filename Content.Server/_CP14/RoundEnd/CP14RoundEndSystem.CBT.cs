@@ -15,14 +15,11 @@ public sealed partial class CP14RoundEndSystem
 
     private bool _enabled;
 
-    private string? _currentLang;
-    private bool? _whitelistEnabled;
-
     private void InitCbt()
     {
-        _enabled = _configManager.GetCVar(CCVars.CP14ClosedBetaTest);
-        _configManager.OnValueChanged(CCVars.CP14ClosedBetaTest,
-            _ => { _enabled = _configManager.GetCVar(CCVars.CP14ClosedBetaTest); },
+        _enabled = _cfg.GetCVar(CCVars.CP14ClosedBetaTest);
+        _cfg.OnValueChanged(CCVars.CP14ClosedBetaTest,
+            _ => { _enabled = _cfg.GetCVar(CCVars.CP14ClosedBetaTest); },
             true);
     }
 
@@ -36,36 +33,47 @@ public sealed partial class CP14RoundEndSystem
         _nextUpdateTime = _timing.CurTime + _updateFrequency;
         var now = DateTime.UtcNow.AddHours(3); // Moscow time
 
-        ApplyLanguageAndWhitelistRules(now);
-        ApplyRoundTimers(now);
+        OpenWeekendRule(now);
+        EnglishDayRule(now);
+        LimitPlaytimeRule(now);
         ApplyAnnouncements(now);
     }
 
-    private void ApplyLanguageAndWhitelistRules(DateTime now)
+    private void OpenWeekendRule(DateTime now)
     {
-        var isEng = EnPlaytestActive(now);
+        var curWhitelist = _cfg.GetCVar(CCVars.WhitelistEnabled);
+        var isOpenWeened = now.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday;
 
-        var desiredLang = isEng ? "en-US" : "ru-RU";
-        var desiredWhitelist = !isEng;
-
-        if (_currentLang != desiredLang)
+        if (isOpenWeened && curWhitelist)
         {
-            _configManager.SetCVar(CCVars.Language, desiredLang);
-            _currentLang = desiredLang;
+            _cfg.SetCVar(CCVars.WhitelistEnabled, false);
         }
-
-        if (_whitelistEnabled != desiredWhitelist)
+        else if (!isOpenWeened && !curWhitelist)
         {
-            _configManager.SetCVar(CCVars.WhitelistEnabled, desiredWhitelist);
-            _whitelistEnabled = desiredWhitelist;
+            _cfg.SetCVar(CCVars.WhitelistEnabled, true);
         }
     }
 
-    private void ApplyRoundTimers(DateTime now)
+    private void EnglishDayRule(DateTime now)
     {
-        var openedServer = RuPlaytestActive(now) || EnPlaytestActive(now);
+        var curLang = _cfg.GetCVar(CCVars.Language);
+        var englishDay = now.DayOfWeek == DayOfWeek.Saturday;
 
-        if (openedServer)
+        if (englishDay && curLang != "en-US")
+        {
+            _cfg.SetCVar(CCVars.Language, "en-US");
+        }
+        else if (!englishDay && curLang != "ru-RU")
+        {
+            _cfg.SetCVar(CCVars.Language, "ru-RU");
+        }
+    }
+
+    private void LimitPlaytimeRule(DateTime now)
+    {
+        var playtime = now.Hour is >= 18 and < 21;
+
+        if (playtime)
         {
             if (_ticker.Paused)
                 _ticker.TogglePause();
@@ -86,25 +94,15 @@ public sealed partial class CP14RoundEndSystem
         {
             (20, 45, () =>
             {
-                if (!EnPlaytestActive(now))
-                    Announce("ВНИМАНИЕ: Сервер автоматически завершит раунд через 15 минут");
+                _chatSystem.DispatchGlobalAnnouncement(
+                    Loc.GetString("cp14-cbt-close-15m"),
+                    announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                    sender: "Server"
+                );
             }),
             (21, 2, () =>
             {
-                if (!EnPlaytestActive(now))
-                    RunCommand("golobby");
-            }),
-
-
-            (23, 44, () =>
-            {
-                if (EnPlaytestActive(now))
-                    Announce("WARNING: The server will automatically end the round after 15 minutes");
-            }),
-            (23, 59, () =>
-            {
-                if (EnPlaytestActive(now))
-                    RunCommand("golobby");
+                _consoleHost.ExecuteCommand("golobby");
             }),
         };
 
@@ -113,29 +111,5 @@ public sealed partial class CP14RoundEndSystem
             if (now.Hour == hour && now.Minute == minute)
                 action.Invoke();
         }
-    }
-
-    private void Announce(string message)
-    {
-        _chatSystem.DispatchGlobalAnnouncement(
-            message,
-            announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
-            sender: "Server"
-        );
-    }
-
-    private void RunCommand(string command)
-    {
-        _consoleHost.ExecuteCommand(command);
-    }
-
-    private static bool RuPlaytestActive(DateTime now)
-    {
-        return (now.Hour >= 18 || now.Hour < 21) && now.DayOfWeek != DayOfWeek.Saturday;
-    }
-
-    private static bool EnPlaytestActive(DateTime now)
-    {
-        return now.Hour >= 16 && now.DayOfWeek == DayOfWeek.Saturday;
     }
 }
