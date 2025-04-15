@@ -6,6 +6,7 @@ using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server.Database;
 using Content.Shared._CP14.Discord;
 using Content.Shared.CCVar;
 using Robust.Server.Player;
@@ -21,6 +22,7 @@ public sealed class DiscordAuthManager
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IPlayerManager _playerMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IServerDbManager _db = default!;
 
     private ISawmill _sawmill = default!;
     private readonly HttpClient _httpClient = new();
@@ -119,6 +121,13 @@ public sealed class DiscordAuthManager
 
     private async Task<AuthData> CheckGuilds(NetUserId userId, CancellationToken cancel = default)
     {
+        var isWhitelisted = await _db.GetWhitelistStatusAsync(userId);
+        if (isWhitelisted)
+        {
+            _sawmill.Debug($"Player {userId} is whitelisted");
+            return new AuthData { Verified = true };
+        }
+
         _sawmill.Debug($"Checking guilds for {userId}");
 
         var requestUrl = $"{_apiUrl}/api/guilds?method=uid&id={userId}";
