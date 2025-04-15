@@ -1,6 +1,9 @@
 [whitelist]
 enabled = true
 
+[localization]
+language = "ru-RU"
+
 [log]
 path = "logs"
 format = "log_%(date)s-%(time)s.txt"
