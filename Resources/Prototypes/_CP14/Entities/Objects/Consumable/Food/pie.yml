@@ -126,7 +126,7 @@
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CP14Ash1
+      transformTo: CP14FoodPieBurnt
 
 - type: entity
   name: raw meat pie
@@ -170,7 +170,7 @@
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CP14Ash1
+      transformTo: CP14FoodPieBurnt
 
 - type: entity
   name: raw fish pie
@@ -214,7 +214,7 @@
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CP14Ash1
+      transformTo: CP14FoodPieBurnt
 
 - type: entity
   name: raw pumpkin pie
@@ -284,4 +284,32 @@
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CP14Ash1
+      transformTo: CP14FoodPieBurnt
+
+- type: entity
+  name: burnt pie
+  parent: CP14FoodPieBaseRaw
+  id: CP14FoodPieBurnt
+  description: The pie is burnt and is a burnt and inedible mass.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - terrible
+  - type: Sprite
+    layers:
+    - state: tin
+    - state: burnt_pie
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: CP14BurntFood
+          Quantity: 8
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14PlatePie
+      amount: 1
