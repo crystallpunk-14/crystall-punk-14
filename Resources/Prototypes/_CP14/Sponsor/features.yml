@@ -2,3 +2,14 @@
   id: LoadoutCustomization
   forRoles:
   - Contributor
+  - Sponsor1
+  - Sponsor2
+  - Sponsor3
+
+- type: sponsorFeature
+  id: PriorityJoin
+  forRoles:
+  - Contributor
+  - Sponsor1
+  - Sponsor2
+  - Sponsor3

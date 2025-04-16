@@ -1,4 +1,19 @@
 - type: sponsorRole
   id: Contributor
-  name: cp14-sponsor-contributor
+  name: Contributor
   discordRoleId: "1224637355193929818"
+
+- type: sponsorRole
+  id: Sponsor1
+  name: Sponsorship I
+  discordRoleId: "1254132975897935986"
+
+- type: sponsorRole
+  id: Sponsor2
+  name: Sponsorship II
+  discordRoleId: "1316306142833414195"
+
+- type: sponsorRole
+  id: Sponsor3
+  name: Sponsorship III
+  discordRoleId: "1327377639882752052"

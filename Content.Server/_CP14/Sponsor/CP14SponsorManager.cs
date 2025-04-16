@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Content.Server._CP14.Discord;
+using Content.Shared._CP14.Sponsor;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -99,13 +100,10 @@ public sealed class SponsorManager
         }
     }
 
-    public bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature)
+    public bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
     {
         if (!_enabled)
-            return false;
-
-        if (!_cachedRoles.TryGetValue(userId, out var roles))
-            return false;
+            return ifDisabledSponsorhip;
 
         if (!_prototype.TryIndex(feature, out var indexedFeature))
             return false;
