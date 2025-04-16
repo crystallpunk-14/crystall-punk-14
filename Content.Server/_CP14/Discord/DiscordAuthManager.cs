@@ -30,11 +30,10 @@ public sealed class DiscordAuthManager
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
 
-    private string _discordGuild = "1221923073759121468"; //CrystallEdge server required
+    public const string DISCORD_GUILD = "1221923073759121468"; //CrystallEdge server required
 
     private HashSet<string> _blockedGuilds = new()
     {
-        "1361786483073093673", //Testing one
         "1346922008000204891",
         "1186566619858731038",
         "1355279097906855968",
@@ -161,9 +160,9 @@ public sealed class DiscordAuthManager
             }
         }
 
-        if (guilds.Guilds.All(guild => guild.Id != _discordGuild))
+        if (guilds.Guilds.All(guild => guild.Id != DISCORD_GUILD))
         {
-            _sawmill.Debug($"Player {userId} is not in required guild {_discordGuild}");
+            _sawmill.Debug($"Player {userId} is not in required guild {DISCORD_GUILD}");
             return new AuthData { Verified = false, ErrorMessage = "You are not a member of the CrystallEdge server." };
         }
 

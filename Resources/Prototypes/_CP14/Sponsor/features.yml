@@ -1,0 +1,4 @@
+- type: sponsorFeature
+  id: LoadoutCustomization
+  forRoles:
+  - Contributor

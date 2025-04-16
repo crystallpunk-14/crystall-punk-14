@@ -1,5 +1,6 @@
 using Content.Server._CP14.Discord;
 using Content.Server._CP14.JoinQueue;
+using Content.Server._CP14.Sponsor;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -106,6 +107,7 @@ namespace Content.Server.Entry
                 //CP14
                 IoCManager.Resolve<DiscordAuthManager>().Initialize();
                 IoCManager.Resolve<JoinQueueManager>().Initialize();
+                IoCManager.Resolve<SponsorManager>().Initialize();
                 //CP14 end
 
                 IoCManager.Resolve<IAdminLogManager>().Initialize();
