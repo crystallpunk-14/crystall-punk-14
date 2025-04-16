@@ -12,6 +12,12 @@ public sealed partial class CP14SponsorRolePrototype : IPrototype
 
     [DataField(required: true)]
     public string DiscordRoleId = string.Empty;
+
+    [DataField]
+    public Color? ColorOOC = null;
+
+    [DataField]
+    public float ColorPriority = 0;
 }
 
 [Prototype("sponsorFeature")]

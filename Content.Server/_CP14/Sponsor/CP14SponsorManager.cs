@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -28,7 +29,7 @@ public sealed class SponsorManager
 
     private ISawmill _sawmill = null!;
 
-    private Dictionary<NetUserId, HashSet<CP14SponsorRolePrototype>> _cachedRoles = new();
+    private Dictionary<NetUserId, HashSet<CP14SponsorRolePrototype>> _cachedSponsors = new();
 
     public void Initialize()
     {
@@ -81,10 +82,10 @@ public sealed class SponsorManager
             if (!roles.Contains(role.DiscordRoleId))
                 continue;
 
-            if (!_cachedRoles.TryGetValue(e.UserId, out var value))
+            if (!_cachedSponsors.TryGetValue(e.UserId, out var value))
             {
                 value = new HashSet<CP14SponsorRolePrototype>();
-                _cachedRoles[e.UserId] = value;
+                _cachedSponsors[e.UserId] = value;
             }
 
             value.Add(role);
@@ -94,9 +95,9 @@ public sealed class SponsorManager
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
     {
         //Remove cached roles
-        if (_cachedRoles.ContainsKey(e.Channel.UserId))
+        if (_cachedSponsors.ContainsKey(e.Channel.UserId))
         {
-            _cachedRoles.Remove(e.Channel.UserId);
+            _cachedSponsors.Remove(e.Channel.UserId);
         }
     }
 
@@ -108,7 +109,7 @@ public sealed class SponsorManager
         if (!_prototype.TryIndex(feature, out var indexedFeature))
             return false;
 
-        if (!_cachedRoles.TryGetValue(userId, out var userRoles))
+        if (!_cachedSponsors.TryGetValue(userId, out var userRoles))
             return false;
 
         foreach (var role in userRoles)
@@ -118,6 +119,26 @@ public sealed class SponsorManager
         }
 
         return false;
+    }
+
+    public bool TryGetSponsorOOCColor(NetUserId userId, [NotNullWhen(true)] out Color? color)
+    {
+        color = null;
+
+        if (!_enabled)
+            return false;
+
+        if (!_cachedSponsors.TryGetValue(userId, out var sponsorRoles))
+            return false;
+
+        var priority = 0;
+        foreach (var role in sponsorRoles)
+        {
+            if (role.ColorOOC is not null && role.ColorPriority > priority)
+                color = role.ColorOOC;
+        }
+
+        return color is not null;
     }
 
     private sealed class RolesResponse

@@ -2,18 +2,26 @@
   id: Contributor
   name: Contributor
   discordRoleId: "1224637355193929818"
+  colorPriority: 1.5
+  color: "#52ab93"
 
 - type: sponsorRole
   id: Sponsor1
   name: Sponsorship I
   discordRoleId: "1254132975897935986"
+  colorPriority: 1
+  color: "#bf608f"
 
 - type: sponsorRole
   id: Sponsor2
   name: Sponsorship II
   discordRoleId: "1316306142833414195"
+  colorPriority: 2
+  color: "#de5479"
 
 - type: sponsorRole
   id: Sponsor3
   name: Sponsorship III
   discordRoleId: "1327377639882752052"
+  colorPriority: 3
+  color: "#f23857"
