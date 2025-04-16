@@ -26,5 +26,5 @@ public sealed partial class CP14SponsorFeaturePrototype : IPrototype
     [IdDataField] public string ID { get; } = string.Empty;
 
     [DataField(required: true)]
-    public HashSet<CP14SponsorRolePrototype> ForRoles = new();
+    public HashSet<ProtoId<CP14SponsorRolePrototype>> ForRoles = new();
 }
