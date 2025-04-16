@@ -26,6 +26,7 @@ using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
+using Content.Shared._CP14.Sponsor;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
@@ -42,7 +43,7 @@ namespace Content.Server.IoC
             //CP14
             IoCManager.Register<DiscordAuthManager>();
             IoCManager.Register<JoinQueueManager>();
-            IoCManager.Register<SponsorSystem>();
+            IoCManager.Register<ICP14SponsorManager, SponsorSystem>();
             //CP14 end
             IoCManager.Register<IChatManager, ChatManager>();
             IoCManager.Register<ISharedChatManager, ChatManager>();

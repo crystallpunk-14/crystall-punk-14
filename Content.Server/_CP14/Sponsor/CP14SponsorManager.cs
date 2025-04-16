@@ -15,8 +15,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Sponsor;
 
-public sealed class SponsorSystem : SharedSponsorSystem
+public sealed class SponsorSystem : ICP14SponsorManager
 {
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
     [Dependency] private readonly INetManager _netMgr = default!;
@@ -29,9 +30,9 @@ public sealed class SponsorSystem : SharedSponsorSystem
 
     private ISawmill _sawmill = null!;
 
-    private Dictionary<NetUserId, HashSet<CP14SponsorRolePrototype>> _cachedSponsors = new();
+    private Dictionary<NetUserId, CP14SponsorRolePrototype> _cachedSponsors = new();
 
-    public override void Initialize()
+    public void Initialize()
     {
         _sawmill = Logger.GetSawmill("sponsors");
 
@@ -78,28 +79,20 @@ public sealed class SponsorSystem : SharedSponsorSystem
         if (roles is null)
             return;
 
-        foreach (var role in Proto.EnumeratePrototypes<CP14SponsorRolePrototype>())
+        float priority = 0;
+        foreach (var role in _proto.EnumeratePrototypes<CP14SponsorRolePrototype>())
         {
             if (!roles.Contains(role.DiscordRoleId))
                 continue;
 
-            if (!_cachedSponsors.TryGetValue(e.UserId, out var value))
+            if (role.Priority > priority)
             {
-                value = new HashSet<CP14SponsorRolePrototype>();
-                _cachedSponsors[e.UserId] = value;
+                priority = role.Priority;
+                _cachedSponsors[e.UserId] = role;
             }
-
-            value.Add(role);
         }
 
-        //Send roles to client
-        HashSet<ProtoId<CP14SponsorRolePrototype>> payload = new();
-        foreach (var role in _cachedSponsors[e.UserId])
-        {
-            payload.Add(role.ID);
-        }
-
-        var msg = new CP14SponsorRolesEvent(payload);
+        var msg = new CP14SponsorRoleEvent(_cachedSponsors[e.UserId]);
         _entNetManager.SendSystemNetworkMessage(msg, e.Channel);
     }
 
@@ -112,24 +105,18 @@ public sealed class SponsorSystem : SharedSponsorSystem
         }
     }
 
-    public override bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
+    public bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
     {
         if (!_enabled)
             return ifDisabledSponsorhip;
 
-        if (!Proto.TryIndex(feature, out var indexedFeature))
+        if (!_proto.TryIndex(feature, out var indexedFeature))
             return false;
 
         if (!_cachedSponsors.TryGetValue(userId, out var userRoles))
             return false;
 
-        foreach (var role in userRoles)
-        {
-            if (role.Priority >= indexedFeature.MinPriority)
-                return true;
-        }
-
-        return false;
+        return _cachedSponsors[userId].Priority >= indexedFeature.MinPriority;
     }
 
     public bool TryGetSponsorOOCColor(NetUserId userId, [NotNullWhen(true)] out Color? color)
@@ -139,15 +126,10 @@ public sealed class SponsorSystem : SharedSponsorSystem
         if (!_enabled)
             return false;
 
-        if (!_cachedSponsors.TryGetValue(userId, out var sponsorRoles))
+        if (!_cachedSponsors.TryGetValue(userId, out var sponsorRole))
             return false;
 
-        var priority = 0;
-        foreach (var role in sponsorRoles)
-        {
-            if (role.Color is not null && role.Priority > priority)
-                color = role.Color;
-        }
+        color = sponsorRole.Color;
 
         return color is not null;
     }

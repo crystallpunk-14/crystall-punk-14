@@ -9,6 +9,7 @@ using Content.Server.Connection.IPIntel;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Preferences.Managers;
+using Content.Shared._CP14.Sponsor;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Players.PlayTimeTracking;
@@ -65,7 +66,7 @@ namespace Content.Server.Connection
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IHttpClientHolder _http = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly SponsorSystem _sponsor = default!; //CP14 Priority Join
+        [Dependency] private readonly ICP14SponsorManager _sponsor = default!; //CP14 Priority Join
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];

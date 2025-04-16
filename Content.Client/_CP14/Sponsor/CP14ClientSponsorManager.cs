@@ -1,36 +1,39 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared._CP14.Sponsor;
+using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._CP14.Sponsor;
 
-public sealed class ClientSponsorSystem : SharedSponsorSystem
+public sealed class ClientSponsorSystem : ICP14SponsorManager, IEntityEventSubscriber
 {
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IClientEntityManager _entityManager = default!;
 
-    private HashSet<CP14SponsorRolePrototype> _sponsorRoles = new();
+    private CP14SponsorRolePrototype _sponsorRole = new();
 
-    public override void Initialize()
+    public void Initialize()
     {
-        base.Initialize();
-
-        SubscribeNetworkEvent<CP14SponsorRolesEvent>(OnGetSponsorRoles);
+        _entityManager.EventBus.SubscribeSessionEvent<CP14SponsorRoleEvent>(EventSource.Network, this, OnGetSponsorRoles);
     }
 
-    private void OnGetSponsorRoles(CP14SponsorRolesEvent ev)
+    private void OnGetSponsorRoles(CP14SponsorRoleEvent ev, EntitySessionEventArgs args)
     {
-        _sponsorRoles.Clear();
-        foreach (var role in ev.Roles)
-        {
-            if (!Proto.TryIndex(role, out var indexedRole))
-                continue;
+        if (!_proto.TryIndex(ev.Role, out var indexedRole))
+            return;
 
-            _sponsorRoles.Add(indexedRole);
-        }
+        _sponsorRole = indexedRole;
     }
 
-    public override bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
+    public bool TryGetSponsorOOCColor(NetUserId userId, [NotNullWhen(true)] out Color? color)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
     {
         if (_player.LocalUser is null)
             return false;
@@ -39,15 +42,9 @@ public sealed class ClientSponsorSystem : SharedSponsorSystem
         if (_player.LocalUser != userId)
             return false;
 
-        if (!Proto.TryIndex(feature, out var indexedFeature))
+        if (!_proto.TryIndex(feature, out var indexedFeature))
             return false;
 
-        foreach (var role in _sponsorRoles)
-        {
-            if (role.Priority >= indexedFeature.MinPriority)
-                return true;
-        }
-
-        return false;
+        return _sponsorRole.Priority >= indexedFeature.MinPriority;
     }
 }

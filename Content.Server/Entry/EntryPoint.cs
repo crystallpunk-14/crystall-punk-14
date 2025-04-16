@@ -26,6 +26,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
+using Content.Shared._CP14.Sponsor;
 using Content.Shared.CCVar;
 using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
@@ -107,6 +108,7 @@ namespace Content.Server.Entry
                 //CP14
                 IoCManager.Resolve<DiscordAuthManager>().Initialize();
                 IoCManager.Resolve<JoinQueueManager>().Initialize();
+                IoCManager.Resolve<ICP14SponsorManager>().Initialize();
                 //CP14 end
 
                 IoCManager.Resolve<IAdminLogManager>().Initialize();

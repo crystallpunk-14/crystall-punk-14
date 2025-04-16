@@ -32,7 +32,7 @@ public sealed partial class CP14SponsorFeatureRequired : JobRequirement
         if (userId is null)
             return false;
 
-        var sponsorship = IoCManager.Resolve<SharedSponsorSystem>();
+        var sponsorship = IoCManager.Resolve<ICP14SponsorManager>();
 
         var haveFeature = sponsorship.UserHasFeature(userId.Value, Feature);
 
@@ -42,7 +42,7 @@ public sealed partial class CP14SponsorFeatureRequired : JobRequirement
         var prototypeMan = IoCManager.Resolve<IPrototypeManager>();
 
         var indexedFeature = prototypeMan.Index(Feature);
-        var lowestRole = sponsorship.GetLowestPriorityRole(indexedFeature.MinPriority);
+        var lowestRole = GetLowestPriorityRole(indexedFeature.MinPriority, prototypeMan);
         prototypeMan.TryIndex(lowestRole, out var indexedRole);
 
         if (indexedRole == null)
@@ -50,5 +50,25 @@ public sealed partial class CP14SponsorFeatureRequired : JobRequirement
         reason = FormattedMessage.FromMarkupPermissive(Loc.GetString("cp14-role-req-sponsor-feature-req", ("role", indexedRole.Name)));
 
         return false;
+    }
+
+    public ProtoId<CP14SponsorRolePrototype>? GetLowestPriorityRole(float priority, IPrototypeManager protoMan)
+    {
+        ProtoId<CP14SponsorRolePrototype>? lowestRole = null;
+        float lowestPriority = float.MaxValue;
+
+        foreach (var role in protoMan.EnumeratePrototypes<CP14SponsorRolePrototype>())
+        {
+            if (!role.Examinable)
+                continue;
+
+            if (role.Priority >= priority && role.Priority < lowestPriority)
+            {
+                lowestPriority = role.Priority;
+                lowestRole = role.ID;
+            }
+        }
+
+        return lowestRole;
     }
 }
