@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._CP14.Sponsor;
 using Robust.Client.GameObjects;
-using Robust.Client.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
@@ -10,7 +9,6 @@ namespace Content.Client._CP14.Sponsor;
 public sealed class ClientSponsorSystem : ICP14SponsorManager, IEntityEventSubscriber
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IClientEntityManager _entityManager = default!;
 
     private CP14SponsorRolePrototype _sponsorRole = new();
@@ -35,13 +33,6 @@ public sealed class ClientSponsorSystem : ICP14SponsorManager, IEntityEventSubsc
 
     public bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
     {
-        if (_player.LocalUser is null)
-            return false;
-
-        //Client dont know about other players
-        if (_player.LocalUser != userId)
-            return false;
-
         if (!_proto.TryIndex(feature, out var indexedFeature))
             return false;
 
