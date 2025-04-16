@@ -14,10 +14,13 @@ public sealed partial class CP14SponsorRolePrototype : IPrototype
     public string DiscordRoleId = string.Empty;
 
     [DataField]
-    public Color? ColorOOC = null;
+    public Color? Color = null;
 
     [DataField]
-    public float ColorPriority = 0;
+    public float Priority = 0;
+
+    [DataField]
+    public bool Examinable = false;
 }
 
 [Prototype("sponsorFeature")]
@@ -25,6 +28,6 @@ public sealed partial class CP14SponsorFeaturePrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = string.Empty;
 
-    [DataField(required: true)]
-    public HashSet<ProtoId<CP14SponsorRolePrototype>> ForRoles = new();
+    [DataField]
+    public float MinPriority = 1;
 }

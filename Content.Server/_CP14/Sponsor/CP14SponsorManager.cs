@@ -15,12 +15,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Sponsor;
 
-public sealed class SponsorManager
+public sealed class SponsorManager : SharedSponsorManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
     [Dependency] private readonly INetManager _netMgr = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IEntityNetworkManager _entNetManager = default!;
 
     private readonly HttpClient _httpClient = new();
     private string _apiUrl = string.Empty;
@@ -77,7 +77,7 @@ public sealed class SponsorManager
         if (roles is null)
             return;
 
-        foreach (var role in _prototype.EnumeratePrototypes<CP14SponsorRolePrototype>())
+        foreach (var role in Proto.EnumeratePrototypes<CP14SponsorRolePrototype>())
         {
             if (!roles.Contains(role.DiscordRoleId))
                 continue;
@@ -90,6 +90,16 @@ public sealed class SponsorManager
 
             value.Add(role);
         }
+
+        //Send roles to client
+        HashSet<ProtoId<CP14SponsorRolePrototype>> payload = new();
+        foreach (var role in _cachedSponsors[e.UserId])
+        {
+            payload.Add(role.ID);
+        }
+
+        var msg = new CP14SponsorRolesEvent(payload);
+        _entNetManager.SendSystemNetworkMessage(msg, e.Channel);
     }
 
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
@@ -101,12 +111,12 @@ public sealed class SponsorManager
         }
     }
 
-    public bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
+    public override bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
     {
         if (!_enabled)
             return ifDisabledSponsorhip;
 
-        if (!_prototype.TryIndex(feature, out var indexedFeature))
+        if (!Proto.TryIndex(feature, out var indexedFeature))
             return false;
 
         if (!_cachedSponsors.TryGetValue(userId, out var userRoles))
@@ -114,7 +124,7 @@ public sealed class SponsorManager
 
         foreach (var role in userRoles)
         {
-            if (indexedFeature.ForRoles.Contains(role))
+            if (role.Priority >= indexedFeature.MinPriority)
                 return true;
         }
 
@@ -134,8 +144,8 @@ public sealed class SponsorManager
         var priority = 0;
         foreach (var role in sponsorRoles)
         {
-            if (role.ColorOOC is not null && role.ColorPriority > priority)
-                color = role.ColorOOC;
+            if (role.Color is not null && role.Priority > priority)
+                color = role.Color;
         }
 
         return color is not null;

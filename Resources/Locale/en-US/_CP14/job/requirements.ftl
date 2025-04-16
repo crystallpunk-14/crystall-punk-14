@@ -1,0 +1,1 @@
+cp14-role-req-sponsor-feature-req = You must have at least the “{$role}” role in the discord server to access this.

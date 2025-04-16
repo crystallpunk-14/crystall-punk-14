@@ -1,15 +1,7 @@
 - type: sponsorFeature
   id: LoadoutCustomization
-  forRoles:
-  - Contributor
-  - Sponsor1
-  - Sponsor2
-  - Sponsor3
+  minPriority: 1
 
 - type: sponsorFeature
   id: PriorityJoin
-  forRoles:
-  - Contributor
-  - Sponsor1
-  - Sponsor2
-  - Sponsor3
+  minPriority: 0.5
