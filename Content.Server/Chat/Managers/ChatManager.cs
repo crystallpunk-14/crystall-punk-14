@@ -45,7 +45,7 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly INetConfigurationManager _netConfigManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
-    [Dependency] private readonly SponsorManager _sponsor = default!; //CP14 OCC color
+    [Dependency] private readonly SponsorSystem _sponsor = default!; //CP14 OCC color
 
     /// <summary>
     /// The maximum length a player-sent message can be sent

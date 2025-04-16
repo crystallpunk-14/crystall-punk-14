@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._CP14.Sponsor;
 
-public sealed class ClientSponsorManager : SharedSponsorManager
+public sealed class ClientSponsorSystem : SharedSponsorSystem
 {
     [Dependency] private readonly IPlayerManager _player = default!;
 
@@ -14,6 +14,7 @@ public sealed class ClientSponsorManager : SharedSponsorManager
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeNetworkEvent<CP14SponsorRolesEvent>(OnGetSponsorRoles);
     }
 

@@ -15,7 +15,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Sponsor;
 
-public sealed class SponsorManager : SharedSponsorManager
+public sealed class SponsorSystem : SharedSponsorSystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
@@ -31,13 +31,13 @@ public sealed class SponsorManager : SharedSponsorManager
 
     private Dictionary<NetUserId, HashSet<CP14SponsorRolePrototype>> _cachedSponsors = new();
 
-    public void Initialize()
+    public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("sponsors");
 
-        _cfg.OnValueChanged(CCVars.DiscordAuthEnabled, val => { _enabled = val; }, true);
-        _cfg.OnValueChanged(CCVars.DiscordAuthUrl, val => { _apiUrl = val; }, true);
-        _cfg.OnValueChanged(CCVars.DiscordAuthToken, val => { _apiKey = val; }, true);
+        _cfg.OnValueChanged(CCVars.SponsorsEnabled, val => { _enabled = val; }, true);
+        _cfg.OnValueChanged(CCVars.SponsorsApiUrl, val => { _apiUrl = val; }, true);
+        _cfg.OnValueChanged(CCVars.SponsorsApiKey, val => { _apiKey = val; }, true);
 
         _discordAuthManager.PlayerVerified += OnPlayerVerified;
         _netMgr.Disconnect += OnDisconnect;
@@ -48,7 +48,7 @@ public sealed class SponsorManager : SharedSponsorManager
 
     private async Task<List<string>?> GetRoles(NetUserId userId)
     {
-        var requestUrl = $"{_apiUrl}/roles?method=uid&id={userId}&guildId={DiscordAuthManager.DISCORD_GUILD}";
+        var requestUrl = $"{_apiUrl}/api/roles?method=uid&id={userId}&guildId={DiscordAuthManager.DISCORD_GUILD}";
         var response = await _httpClient.GetAsync(requestUrl);
 
         if (!response.IsSuccessStatusCode)
@@ -61,6 +61,7 @@ public sealed class SponsorManager : SharedSponsorManager
 
         if (responseContent is not null)
         {
+            _sawmill.Debug($"Roles retrieved for user {userId}: {string.Join(", ", responseContent.Roles)}");
             return responseContent.Roles.ToList();
         }
 

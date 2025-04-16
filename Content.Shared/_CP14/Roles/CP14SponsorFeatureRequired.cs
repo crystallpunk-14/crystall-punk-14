@@ -32,8 +32,7 @@ public sealed partial class CP14SponsorFeatureRequired : JobRequirement
         if (userId is null)
             return false;
 
-        var sponsorship = IoCManager.Resolve<SharedSponsorManager>();
-
+        var sponsorship = IoCManager.Resolve<SharedSponsorSystem>();
 
         var haveFeature = sponsorship.UserHasFeature(userId.Value, Feature);
 

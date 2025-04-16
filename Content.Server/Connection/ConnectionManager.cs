@@ -65,7 +65,7 @@ namespace Content.Server.Connection
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IHttpClientHolder _http = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly SponsorManager _sponsor = default!; //CP14 Priority Join
+        [Dependency] private readonly SponsorSystem _sponsor = default!; //CP14 Priority Join
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];

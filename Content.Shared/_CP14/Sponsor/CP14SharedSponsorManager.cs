@@ -4,13 +4,16 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Sponsor;
 
-public abstract class SharedSponsorManager : EntitySystem
+public class SharedSponsorSystem : EntitySystem
 {
     [Dependency] protected readonly IPrototypeManager Proto = default!;
 
-    public abstract bool UserHasFeature(NetUserId userId,
+    public virtual bool UserHasFeature(NetUserId userId,
         ProtoId<CP14SponsorFeaturePrototype> feature,
-        bool ifDisabledSponsorhip = true);
+        bool ifDisabledSponsorhip = true)
+    {
+        return ifDisabledSponsorhip;
+    }
 
     public ProtoId<CP14SponsorRolePrototype>? GetLowestPriorityRole(float priority)
     {

@@ -107,7 +107,6 @@ namespace Content.Server.Entry
                 //CP14
                 IoCManager.Resolve<DiscordAuthManager>().Initialize();
                 IoCManager.Resolve<JoinQueueManager>().Initialize();
-                IoCManager.Resolve<SponsorManager>().Initialize();
                 //CP14 end
 
                 IoCManager.Resolve<IAdminLogManager>().Initialize();
