@@ -68,3 +68,4 @@ mob_pushing = true
 [cp14]
 discord_auth_enabled = true
 closet_beta_test = true
+sponsor_enabled = true

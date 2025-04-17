@@ -24,6 +24,7 @@ using Content.Client.Singularity;
 using Content.Client.Stylesheets;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Shared._CP14.Sponsor;
 using Content.Shared.Ame.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Gravity;
@@ -48,6 +49,7 @@ namespace Content.Client.Entry
         //CP14
         [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
         [Dependency] private readonly JoinQueueManager _joinQueueManager = default!;
+        [Dependency] private readonly ICP14SponsorManager _sponsorManager = default!;
         //CP14 end
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IGameController _gameController = default!;
@@ -170,6 +172,7 @@ namespace Content.Client.Entry
             _overlayManager.AddOverlay(new CP14BasePostProcessOverlay());
             _discordAuth.Initialize();
             _joinQueueManager.Initialize();
+            _sponsorManager.Initialize();
             //CP14 end
             _overlayManager.AddOverlay(new SingularityOverlay());
             _overlayManager.AddOverlay(new RadiationPulseOverlay());
