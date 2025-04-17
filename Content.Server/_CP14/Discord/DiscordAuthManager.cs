@@ -136,7 +136,6 @@ public sealed class DiscordAuthManager
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
 
         var response = await _httpClient.SendAsync(request, cancel);
-        _sawmill.Debug($"Guilds response: {await response.Content.ReadAsStringAsync(cancel)}");
         _sawmill.Debug($"(int) response.StatusCode: {(int)response.StatusCode}");
         if (!response.IsSuccessStatusCode)
         {

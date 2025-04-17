@@ -21,7 +21,7 @@ public sealed class SponsorSystem : ICP14SponsorManager
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
     [Dependency] private readonly INetManager _netMgr = default!;
-    [Dependency] private readonly IEntityNetworkManager _entNetManager = default!;
+    [Dependency] private readonly IServerNetManager _netManager = default!;
 
     private readonly HttpClient _httpClient = new();
     private string _apiUrl = string.Empty;
@@ -36,11 +36,17 @@ public sealed class SponsorSystem : ICP14SponsorManager
     {
         _sawmill = Logger.GetSawmill("sponsors");
 
+        _netManager.RegisterNetMessage<CP14SponsorRoleUpdate>();
+
         _cfg.OnValueChanged(CCVars.SponsorsEnabled, val => { _enabled = val; }, true);
         _cfg.OnValueChanged(CCVars.SponsorsApiUrl, val => { _apiUrl = val; }, true);
         _cfg.OnValueChanged(CCVars.SponsorsApiKey, val => { _apiKey = val; }, true);
 
-        _discordAuthManager.PlayerVerified += OnPlayerVerified;
+        _discordAuthManager.PlayerVerified += async (_, e) =>
+        {
+            await OnPlayerVerified(e);
+        };
+
         _netMgr.Disconnect += OnDisconnect;
 
         _httpClient.DefaultRequestHeaders.Authorization =
@@ -62,7 +68,6 @@ public sealed class SponsorSystem : ICP14SponsorManager
 
         if (responseContent is not null)
         {
-            _sawmill.Debug($"Roles retrieved for user {userId}: {string.Join(", ", responseContent.Roles)}");
             return responseContent.Roles.ToList();
         }
 
@@ -70,7 +75,7 @@ public sealed class SponsorSystem : ICP14SponsorManager
         return null;
     }
 
-    private async void OnPlayerVerified(object? sender, ICommonSession e)
+    private async Task OnPlayerVerified(ICommonSession e)
     {
         if (!_enabled)
             return;
@@ -79,21 +84,28 @@ public sealed class SponsorSystem : ICP14SponsorManager
         if (roles is null)
             return;
 
-        float priority = 0;
+        CP14SponsorRolePrototype? targetRole = null;
         foreach (var role in _proto.EnumeratePrototypes<CP14SponsorRolePrototype>())
         {
             if (!roles.Contains(role.DiscordRoleId))
                 continue;
 
-            if (role.Priority > priority)
+            if (targetRole is null || role.Priority > targetRole.Priority)
             {
-                priority = role.Priority;
-                _cachedSponsors[e.UserId] = role;
+                targetRole = role;
             }
         }
 
-        var msg = new CP14SponsorRoleEvent(_cachedSponsors[e.UserId]);
-        _entNetManager.SendSystemNetworkMessage(msg, e.Channel);
+        if (targetRole is not null)
+            _cachedSponsors[e.UserId] = targetRole;
+
+        if (_cachedSponsors.TryGetValue(e.UserId, out var cachedRole))
+        {
+            e.Channel.SendMessage(new CP14SponsorRoleUpdate
+            {
+                Role = cachedRole,
+            });
+        }
     }
 
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
@@ -105,7 +117,9 @@ public sealed class SponsorSystem : ICP14SponsorManager
         }
     }
 
-    public bool UserHasFeature(NetUserId userId, ProtoId<CP14SponsorFeaturePrototype> feature, bool ifDisabledSponsorhip = true)
+    public bool UserHasFeature(NetUserId userId,
+        ProtoId<CP14SponsorFeaturePrototype> feature,
+        bool ifDisabledSponsorhip = true)
     {
         if (!_enabled)
             return ifDisabledSponsorhip;

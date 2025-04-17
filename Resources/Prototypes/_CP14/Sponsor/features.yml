@@ -4,4 +4,4 @@
 
 - type: sponsorFeature
   id: LoadoutCustomization
-  minPriority: 1
+  minPriority: 0.4
