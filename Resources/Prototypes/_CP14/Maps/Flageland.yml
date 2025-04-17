@@ -29,7 +29,7 @@
           defaultMapLevel: 0
           levels:
             -1:
-              path: /Maps/_CP14/flageland_d.yml
+              path: /Maps/_CP14/Flageland_d.yml
         - type: CP14StationKeyDistribution
           keys:
           - Alchemy1
