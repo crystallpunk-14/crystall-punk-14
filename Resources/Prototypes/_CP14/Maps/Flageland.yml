@@ -1,7 +1,7 @@
 - type: gameMap
   id: Flageland
   mapName: "Flageland"
-  mapPath: /Maps/_CP14/flageland.yml
+  mapPath: /Maps/_CP14/Flageland.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
