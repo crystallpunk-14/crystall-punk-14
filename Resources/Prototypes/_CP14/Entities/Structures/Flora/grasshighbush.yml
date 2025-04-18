@@ -39,15 +39,6 @@
         - TableMask
         layer:
         - TableLayer
-      fix2: #For melee or laser
-        hard: true
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.35,-0.35,0.35,0.35"
-        mask:
-        - FullTileMask 
-        layer:
-        - Opaque
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
