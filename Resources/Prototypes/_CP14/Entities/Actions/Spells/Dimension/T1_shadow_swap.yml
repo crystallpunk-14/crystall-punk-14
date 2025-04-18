@@ -24,17 +24,20 @@
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectTargetDeadBlock
-  - type: EntityWorldTargetAction
-    range: 10
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 5
     itemIconStyle: BigAction
+    interactOnMiss: false
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: shadow_swap
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
-      cooldown: 10
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 45
       hidden: true
       breakOnMove: false
       requireCanInteract: false
-    checkCanAccess: false

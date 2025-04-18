@@ -10,11 +10,22 @@
 
 - type: cp14Skill
   id: CP14ActionSpellShadowSwap
-  skillUiPosition: 0, 3
+  skillUiPosition: 0, 2
   tree: Dimension
   icon:
     sprite: _CP14/Actions/Spells/dimension.rsi
     state: shadow_swap
   effect: !type:AddAction
     action: CP14ActionSpellShadowSwap
+
+- type: cp14Skill
+  id: CP14ActionSpellShadowStep
+  skillUiPosition: 0, 4
+  learnCost: 2
+  tree: Dimension
+  icon:
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: shadow_step
+  effect: !type:AddAction
+    action: CP14ActionSpellShadowStep
 
