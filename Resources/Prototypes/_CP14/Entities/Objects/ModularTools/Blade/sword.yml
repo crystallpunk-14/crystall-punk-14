@@ -91,7 +91,7 @@
 
 - type: entity
   parent: CP14ModularBladeSwordBase
-  id: CP14ModularBladeBoneSwordReinforced
+  id: CP14ModularBladeBoneSwordUpgrade
   name: bone sword blade
   suffix: Reinforced
   components:
@@ -100,4 +100,4 @@
     state: icon
   - type: CP14ModularCraftPart
     possibleParts:
-    - BladeBoneSwordReinforced
+    - BladeBoneSwordUpgrade
