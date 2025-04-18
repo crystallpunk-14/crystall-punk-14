@@ -69,7 +69,7 @@
   id: SpawnPointGhostDemiplaneSkeletonT1
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton random
+  suffix: skeleton random T1
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
@@ -100,7 +100,7 @@
   id: SpawnPointGhostDemiplaneSkeletonHalberdT1
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Halebard
+  suffix: skeleton Halebard T1
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
@@ -126,7 +126,7 @@
   id: SpawnPointGhostDemiplaneSkeletonSwordT1
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Sword
+  suffix: skeleton Sword T1
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT1
   components:
@@ -139,7 +139,7 @@
   id: SpawnPointGhostDemiplaneSkeletonDodgerT1
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Dodger
+  suffix: skeleton Dodger T1
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT1
   components:
@@ -152,7 +152,7 @@
   id: SpawnPointGhostDemiplaneSkeletonArcherT1
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Archer
+  suffix: skeleton Archer T1
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT1
   components:

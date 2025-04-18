@@ -1,37 +1,30 @@
 - type: entity
   id: CP14ActionSpellShadowPunchSkeleton
   name: Shadow punch
-  description: You attract a ghostly hand that draws an object or entity to you
+  description: You send a ghostly hand that pushes an object or entity away from you.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/dimension.rsi
-    state: shadow_grab
+    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    state: shadow_punch
   - type: CP14MagicEffectManaCost
     manaCost: 20
-  - type: CP14MagicEffectStaminaCost
-    stamina: 40
   - type: CP14MagicEffect
     telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectShadowStep
-    - !type:CP14SpellSpawnEntityOnUser
-      spawns:
-      - CP14ImpactEffectShadowGrab
-    effects:
     - !type:CP14SpellThrowFromUser
       throwPower: 10
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectShadowStep
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Paralyze
         paralyzeTime: 0.5
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Idie, NAH!"
+    startSpeech: "Idie.."
+    endSpeech: "NAH!"
   - type: CP14MagicEffectSomaticAspect
   - type: EntityTargetAction
+    whitelist:
+      components:
+      - Item
+      - MobState
     canTargetSelf: false
     range: 10
     itemIconStyle: BigAction
@@ -42,6 +35,5 @@
       state: shadow_punch
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
-      castDelay: 1.5
+      castDelay: 2.0
       breakOnMove: false
-      breakOnDamage: false

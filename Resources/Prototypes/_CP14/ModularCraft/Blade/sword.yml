@@ -96,17 +96,3 @@
     copyFrom:
     - BaseBladeSword
     - BaseBladeBone
-
-- type: modularPart
-  id: BladeBoneSwordReinforced
-  slots:
-  - Blade
-  sourcePart: CP14ModularBladeBoneSword
-  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
-  modifiers:
-  - !type:Inherit
-    copyFrom:
-    - BaseBladeSword
-    - BaseBladeBone
-  - !type:EditMeleeWeapon
-    damageMultiplier: 1.5

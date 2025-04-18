@@ -137,7 +137,4 @@
   id: CP14Sheep
 
 - type: Tag
-  id: CP14DeadHealing
-
-- type: Tag
   id: CP14Lockpick

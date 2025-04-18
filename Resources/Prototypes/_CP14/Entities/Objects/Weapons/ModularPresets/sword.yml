@@ -62,7 +62,7 @@
     - BladeBoneSword
 
 - type: entity
-  id: CP14ModularSkeletonHalberdReinforced
+  id: CP14ModularSkeletonHalberdUpgrade
   parent: CP14ModularGripWoodenLong
   name: bone halberd
   suffix: Reinforced
@@ -75,10 +75,11 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSwordReinforced
+    - BladeBoneSword
+    - GardeSharpIron
 
 - type: entity
-  id: CP14ModularSkeletonSwordReinforced
+  id: CP14ModularSkeletonSwordUpgrade
   parent: CP14ModularGripWooden
   name: bone sword
   suffix: Reinforced
@@ -91,4 +92,5 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSwordReinforced
+    - BladeBoneSword
+    - GardeSharpIron

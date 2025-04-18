@@ -1,4 +1,5 @@
 - type: entity
+  parent: CP14ActionSpellKick
   id: CP14ActionSpellKickSkeleton
   name: Kick
   description: You perform an epic leg kick at your chosen object, pushing it away from you.
@@ -6,8 +7,6 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
     state: kick
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.6
   - type: CP14MagicEffectStaminaCost
     stamina: 35
   - type: CP14MagicEffect
@@ -27,10 +26,7 @@
         damage:
           types:
             Blunt: 10
-  - type: CP14MagicEffectPacifiedBlock
   - type: EntityTargetAction
-    canTargetSelf: false
-    range: 1.1
     itemIconStyle: BigAction
     icon:
       sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
@@ -38,6 +34,3 @@
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
       castDelay: 0.4
-      distanceThreshold: 1.5
-      breakOnMove: false
-      breakOnDamage: false

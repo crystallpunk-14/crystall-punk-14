@@ -1,4 +1,5 @@
 - type: entity
+  parent: CP14ActionSpellShadowGrab
   id: CP14ActionSpellShadowGrabSkeleton
   name: Shadow grab
   description: You attract a ghostly hand that draws an object or entity to you
@@ -7,9 +8,7 @@
     sprite: _CP14/Actions/Spells/dimension.rsi
     state: shadow_grab
   - type: CP14MagicEffectManaCost
-    manaCost: 20
-  - type: CP14MagicEffectStaminaCost
-    stamina: 20
+    manaCost: 25
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
@@ -28,17 +27,16 @@
       effects:
       - !type:Paralyze
         paralyzeTime: 0.5
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Venite ad..."
+    endSpeech: "me omnes"
   - type: CP14MagicEffectSomaticAspect
   - type: EntityTargetAction
-    canTargetSelf: false
-    range: 10
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
-    icon:
-      sprite: _CP14/Actions/Spells/dimension.rsi
-      state: shadow_grab
+    whitelist:
+      components:
+      - Item
+      - MobState
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
-      castDelay: 1.5
+      castDelay: 2.0
       breakOnMove: false

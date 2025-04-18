@@ -18,9 +18,6 @@ cp14-skill-tree-illusion-desc = Исследуйте природу света, 
 cp14-skill-tree-healing-name = Жизнетворение
 cp14-skill-tree-healing-desc = Изучайте способы влияния магии на живые создания.
 
-cp14-skill-tree-skeleton-name = Дисциплина скелетов
-cp14-skill-tree-skeleton-desc = Изучите секретные техники скелетов.
-
 # Body
 
 cp14-skill-tree-atlethic-name = Атлетика

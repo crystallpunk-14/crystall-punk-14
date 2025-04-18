@@ -8,10 +8,6 @@
   - type: NpcFactionMember
     factions:
     - CP14Monster
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      90: Dead
 
 - type: entity
   id: CP14MobUndeadSkeletonHalberdT2
@@ -73,7 +69,7 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellShadowStepSkeleton
+    - CP14ActionSpellShadowStep
     - CP14ActionSpellIceArrow
 
 - type: entity
@@ -91,10 +87,11 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellBoneDagger
-    - CP14ActionSpellBoneShards
+    - CP14ActionSpellFreeze
+    - CP14ActionSpellIceShards
+    - CP14ActionSpellIceDagger
     - CP14ActionSpellCureDeath
-    - CP14ActionSpellShadowStepSkeleton
+    - CP14ActionSpellShadowStep
     - CP14ActionSpellShadowGrabSkeleton
     - CP14ActionSpellShadowPunchSkeleton
 
@@ -120,7 +117,7 @@
   id: SpawnPointGhostDemiplaneSkeletonT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton random
+  suffix: skeleton random T2
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
@@ -150,7 +147,7 @@
   id: SpawnPointGhostDemiplaneSkeletonMagicalT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton random
+  suffix: skeleton random T2
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
@@ -176,7 +173,7 @@
   id: SpawnPointGhostDemiplaneSkeletonHalberdT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Halebard
+  suffix: skeleton Halebard T2
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
@@ -202,7 +199,7 @@
   id: SpawnPointGhostDemiplaneSkeletonSwordT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Sword
+  suffix: skeleton Sword T2
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT2
   components:
@@ -215,7 +212,7 @@
   id: SpawnPointGhostDemiplaneSkeletonDodgerT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Dodger
+  suffix: skeleton Dodger T2
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT2
   components:
@@ -228,7 +225,7 @@
   id: SpawnPointGhostDemiplaneSkeletonArcherT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Archer
+  suffix: skeleton Archer T2
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT2
   components:
@@ -241,7 +238,7 @@
   id: SpawnPointGhostDemiplaneSkeletonWizardT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Wizard
+  suffix: skeleton Wizard T2
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT2
   components:
@@ -254,7 +251,7 @@
   id: SpawnPointGhostDemiplaneSkeletonBardT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
-  suffix: skeleton Bard
+  suffix: skeleton Bard T2
   categories: [ ForkFiltered ]
   parent: SpawnPointGhostDemiplaneSkeletonHalberdT2
   components:
