@@ -1,7 +1,7 @@
 - type: entity
-  id: CP14ActionSpellCureDeath
-  name: Cure death
-  description: You restore a living corpse.
+  id: CP14ActionSpellCureFromDeath
+  name: Cure from death
+  description: You heal the target from all kinds of damage.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/skeleton_discipline.rsi

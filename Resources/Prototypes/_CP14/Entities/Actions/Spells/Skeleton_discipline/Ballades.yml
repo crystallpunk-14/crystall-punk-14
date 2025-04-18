@@ -1,6 +1,6 @@
 - type: entity
-  id: CP14ActionSpellDeadHealBallade
-  name: Healing ballade
+  id: CP14ActionSpellHealFromDeathBallade
+  name: Healing from death ballade
   description: Your music is filled with healing magic, slowly healing all the creatures around you.
   components:
   - type: Sprite

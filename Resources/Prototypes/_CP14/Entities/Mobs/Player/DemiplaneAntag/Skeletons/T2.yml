@@ -90,7 +90,7 @@
     - CP14ActionSpellFreeze
     - CP14ActionSpellIceShards
     - CP14ActionSpellIceDagger
-    - CP14ActionSpellCureDeath
+    - CP14ActionSpellCureFromDeath
     - CP14ActionSpellShadowStep
     - CP14ActionSpellShadowGrabSkeleton
     - CP14ActionSpellShadowPunchSkeleton
@@ -107,7 +107,7 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellDeadHealBallade
+    - CP14ActionSpellHealFromDeathBallade
     - CP14ActionSpellMagicBallade
     - CP14ActionSpellSpeedBallade
     - CP14ActionSpellPeaceBallade
