@@ -59,7 +59,7 @@ public abstract partial class CP14SharedMagicSystem
 
     private bool UseDelayedAction(ICP14DelayedMagicEffect delayedEffect, Entity<CP14MagicEffectComponent> action, DoAfterEvent doAfter, EntityUid performer, EntityUid? target = null, EntityCoordinates? worldTarget = null)
     {
-        // Eent may return an empty entity with id = 0, which causes bugs
+        // Event may return an empty entity with id = 0, which causes bugs
         var currentTarget = target;
         if (currentTarget is not null && currentTarget == EntityUid.Invalid)
             currentTarget = null;
