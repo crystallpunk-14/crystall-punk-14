@@ -11,6 +11,7 @@ cp14-tiles-snow = snow
 cp14-tiles-snow-deep = deep snow
 cp14-tiles-snow-deep-deep = deep deep snow
 cp14-tiles-marble-cave = marble floor
+cp14-tiles-cobblestone = cobblestone
 
 # Produced
 cp14-tiles-foundation = foundation
