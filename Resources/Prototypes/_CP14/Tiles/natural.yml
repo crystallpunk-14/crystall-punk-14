@@ -42,6 +42,37 @@
 
 - type: tile
   editorHidden: false
+  id: CP14FloorCobblestone
+  name: cp14-tiles-cobblestone
+  sprite: /Textures/_CP14/Tiles/Cobblestone/cobble.png
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 2
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Cobblestone/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Cobblestone/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Cobblestone/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Cobblestone/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Cobblestone/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Cobblestone/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Cobblestone/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Cobblestone/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomStoneLootSpawner
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  editorHidden: false
   id: CP14FloorMarbleCave
   name: cp14-tiles-marble-cave
   sprite: /Textures/_CP14/Tiles/marble_cave.png
@@ -83,7 +114,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 2
+  edgeSpritePriority: 3
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/Sand/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/Sand/single_edge_NE.png
@@ -115,7 +146,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 3
+  edgeSpritePriority: 4
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/Grass/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/Grass/single_edge_NE.png
@@ -147,7 +178,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 4
+  edgeSpritePriority: 5
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_NE.png
@@ -179,7 +210,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 5
+  edgeSpritePriority: 6
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_NE.png
