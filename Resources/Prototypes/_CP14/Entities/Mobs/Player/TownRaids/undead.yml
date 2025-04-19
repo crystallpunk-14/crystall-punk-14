@@ -39,7 +39,7 @@
     offset: 1
     table: !type:GroupSelector
       rolls: !type:RangeNumberSelector
-        range: 1, 3
+        range: 1, 5
       children:
       - id: CP14MobUndeadZombie
         weight: 2
