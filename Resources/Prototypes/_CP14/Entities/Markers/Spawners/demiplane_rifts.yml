@@ -153,3 +153,59 @@
         range: 2, 3
       children:
       - id: CP14MobWatcherMagma
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlimeIce
+  suffix: 2-3 Ice Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeIce
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlimeFire
+  suffix: 2-3 Fire Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeFire
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlimeElectric
+  suffix: 2-3 Electric Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeElectric
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlime
+  suffix: 2-3 Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeBase
