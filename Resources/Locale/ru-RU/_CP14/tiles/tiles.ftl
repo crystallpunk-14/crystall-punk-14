@@ -11,6 +11,7 @@ cp14-tiles-snow = снег
 cp14-tiles-snow-deep = глубокий снег
 cp14-tiles-snow-deep-deep = очень глубокий снег
 cp14-tiles-marble-cave = мраморный пол
+cp14-tiles-cobblestone = булыжник
 
 # Produced
 cp14-tiles-foundation = фундамент

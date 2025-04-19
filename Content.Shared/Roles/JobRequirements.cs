@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Preferences;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -9,6 +10,7 @@ namespace Content.Shared.Roles;
 public static class JobRequirements
 {
     public static bool TryRequirementsMet(
+        NetUserId userId,  //CP14 add NetUserId for sponsorship checks
         JobPrototype job,
         IReadOnlyDictionary<string, TimeSpan> playTimes,
         [NotNullWhen(false)] out FormattedMessage? reason,
@@ -24,7 +26,7 @@ public static class JobRequirements
 
         foreach (var requirement in requirements)
         {
-            if (!requirement.Check(entManager, protoManager, profile, playTimes, out reason))
+            if (!requirement.Check(userId, entManager, protoManager, profile, playTimes, out reason)) //CP14 add NetUserId for sponsorship checks
                 return false;
         }
 
@@ -43,6 +45,7 @@ public abstract partial class JobRequirement
     public bool Inverted;
 
     public abstract bool Check(
+        NetUserId? userId, //CP14 Sponsorship Checks
         IEntityManager entManager,
         IPrototypeManager protoManager,
         HumanoidCharacterProfile? profile,
