@@ -38,7 +38,7 @@
     sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldSpear
@@ -56,7 +56,7 @@
     sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperSpear
@@ -74,7 +74,7 @@
     sprite: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilSpear
