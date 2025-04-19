@@ -78,7 +78,7 @@
   copyright: 'by IENBA on Freesound.org'
   source: "https://freesound.org/people/IENBA/sounds/752275/"
 
-- files: ["bell.ogg"]
+- files: ["bell.ogg", "bell_short"]
   license: "CC0-1.0"
   copyright: 'Created by Fenodyrie on Freesound.org'
   source: "https://freesound.org/people/Fenodyrie/sounds/583950/"

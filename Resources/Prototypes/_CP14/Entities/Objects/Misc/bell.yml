@@ -33,7 +33,7 @@
           volume: 3
   - type: EmitSoundOnLand
     sound:
-      collection: CP14Bell
+      path: /Audio/_CP14/Effects/bell_short.ogg
       params:
           variation: 0.03
           volume: 3
@@ -42,7 +42,7 @@
   - type: MeleeWeapon
     wideAnimationRotation: 180
     soundHit:
-      collection: CP14Bell
+      path: /Audio/_CP14/Effects/bell_short.ogg
       params:
           variation: 0.03
           volume: 3
