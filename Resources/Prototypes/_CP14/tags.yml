@@ -138,3 +138,6 @@
 
 - type: Tag
   id: CP14Lockpick
+
+- type: Tag
+  id: CP14RaidLeader

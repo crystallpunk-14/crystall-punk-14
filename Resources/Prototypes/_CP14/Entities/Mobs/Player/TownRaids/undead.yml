@@ -1,0 +1,60 @@
+- type: entity
+  id: CP14SpawnPointTownRaid
+  parent: MarkerBase
+  abstract: true
+  name: town raid ghost role spawn point
+  suffix: Town Raid
+  categories: [ ForkFiltered ]
+  components:
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-raid-undead
+    allowMovement: true
+    description: cp14-ghost-role-information-description-raid-undead
+    rules: cp14-ghost-role-information-rules-raid
+    mindRoles:
+    - CP14MindRoleRaidAntag
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _CP14/Mobs/Species/Skeleton/parts.rsi
+        state: full
+
+# Easy 
+
+- type: entity
+  id: CP14MobUndeadSkeletonWizardTownRaid
+  parent: CP14MobUndeadSkeletonWizard
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - CP14BaseMobGroupSpawner #VFX
+    chance: 1
+    deleteSpawnerAfterSpawn: false
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 1, 3
+      children:
+      - id: CP14MobUndeadZombie
+        weight: 2
+      - id: CP14MobUndeadZombieGearEasy1
+      - id: CP14MobUndeadZombieGearEasy2
+      - id: CP14MobUndeadZombieGearEasy3
+  - type: Tag
+    tags:
+    - FootstepSound
+    - CP14RaidLeader
+
+- type: entity
+  id: CP14SpawnPointTownRaidUndeadEasy
+  parent: CP14SpawnPointTownRaid
+  suffix: Town Raid (Undead, Easy)
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobUndeadSkeletonWizardTownRaid
