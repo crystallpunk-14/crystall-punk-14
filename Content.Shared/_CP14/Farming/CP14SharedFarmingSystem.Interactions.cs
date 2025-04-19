@@ -71,6 +71,7 @@ public abstract partial class CP14SharedFarmingSystem
             {
                 BreakOnDamage = true,
                 BlockDuplicate = false,
+                CancelDuplicate = false,
                 BreakOnMove = true,
                 BreakOnHandChange = true,
             };
@@ -156,6 +157,7 @@ public abstract partial class CP14SharedFarmingSystem
             {
                 BreakOnDamage = true,
                 BlockDuplicate = false,
+                CancelDuplicate = false,
                 BreakOnMove = true,
                 BreakOnHandChange = true,
             };

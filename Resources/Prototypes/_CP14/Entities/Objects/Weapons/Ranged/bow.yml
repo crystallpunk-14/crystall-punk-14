@@ -78,3 +78,18 @@
         base:
           True: { state: wielded }
           False: { state: unwielded }
+
+- type: entity
+  name: ice bow
+  description: A magic bow that needs no ammunition. 
+  id: CP14BowIceArtifact
+  parent: CP14BowCombat
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/ice_bow.rsi
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceArrow
+  - type: CP14SpellStorageAccessHolding

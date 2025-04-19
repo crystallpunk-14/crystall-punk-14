@@ -77,3 +77,16 @@
     Shock: 1.25
     Poison: 0.5
     Caustic: 0.5
+
+- type: damageModifierSet
+  id: CP14Skeleton
+  coefficients:
+    Blunt: 1.2
+    Slash: 0.8
+    Piercing: 0.6
+    Cold: 0.0
+    Poison: 0.0
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    Bloodloss: 0.0
+    Cellular: 0.0

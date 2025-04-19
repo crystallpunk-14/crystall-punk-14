@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Preferences;
 using JetBrains.Annotations;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -17,7 +18,8 @@ public sealed partial class AgeRequirement : JobRequirement
     [DataField(required: true)]
     public int RequiredAge;
 
-    public override bool Check(IEntityManager entManager,
+    public override bool Check(NetUserId? userId,  //CP14 Sponsorship Checks
+        IEntityManager entManager,
         IPrototypeManager protoManager,
         HumanoidCharacterProfile? profile,
         IReadOnlyDictionary<string, TimeSpan> playTimes,

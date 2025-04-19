@@ -1,10 +1,13 @@
+using Content.Shared.CCVar;
 using Content.Shared.Localizations;
 using Robust.Client.GameObjects;
+using Robust.Shared.Configuration;
 
 namespace Content.Client._CP14.Localization;
 
 public sealed class CP14LocalizationVisualsSystem : EntitySystem
 {
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -19,7 +22,7 @@ public sealed class CP14LocalizationVisualsSystem : EntitySystem
 
         foreach (var (map, pDictionary) in visuals.Comp.MapStates)
         {
-            if (!pDictionary.TryGetValue(ContentLocalizationManager.Culture, out var state))
+            if (!pDictionary.TryGetValue(_cfg.GetCVar(CCVars.Language), out var state))
                 return;
 
             if (sprite.LayerMapTryGet(map, out _))

@@ -678,16 +678,7 @@ entities:
       inherent: True
       enabled: True
     - type: Biome
-      forcedMarkerLayers: []
-      markerLayers: []
-      loadedMarkers: {}
-      pendingMarkers: {}
-      loadedChunks: []
-      entities: {}
-      decals: {}
-      modifiedTiles: {}
       template: CP14CavesIndestructibleFill
-      layers: []
     - type: DecalGrid
       chunkCollection:
         version: 2
