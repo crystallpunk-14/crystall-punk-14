@@ -38,6 +38,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
 
+            _loc.AddFunction(culture, "MANY", FormatMany); // TODO: Temporary fix for MANY() fluent errors. Remove after resolve errors.
 
             /*
              * The following language functions are specific to the english localization. When working on your own
@@ -49,8 +50,16 @@ namespace Content.Shared.Localizations
             if (!_loc.HasCulture(cultureEn))
                 _loc.LoadCulture(cultureEn);
             _loc.SetFallbackCluture(cultureEn); // I don't think there's any reason to change the fallback culture.
+
+            //CP14 Functions
             _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
             _loc.AddFunction(cultureEn, "MANY", FormatMany);
+            _loc.AddFunction(cultureEn, "NATURALFIXED", FormatNaturalFixed);
+            _loc.AddFunction(cultureEn, "LOC", FormatLoc);
+            _loc.AddFunction(cultureEn, "NATURALPERCENT", FormatNaturalPercent);
+            _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
+            _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
+            //CP14 Functions end
 
             _cfg.OnValueChanged(CCVars.Language, OnCultureUpdate, true);
         }
