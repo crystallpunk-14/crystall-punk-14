@@ -1,0 +1,66 @@
+- type: entity
+  id: CP14ActionSpellHeat
+  name: Heat
+  description: You begin to severely cool down the target, slowing its movement speed.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: heat
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.8
+  - type: CP14MagicEffectManaCost
+    manaCost: 7
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectHeat
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:AdjustTemperature
+        amount: 36000
+      - !type:ExtinguishReaction
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Vos adepto calidum..."
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RunePlantHeat
+  - type: EntityTargetAction
+    range: 5
+    interactOnMiss: false
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: heat
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 8
+      castTime: 10
+      distanceThreshold: 5
+      breakOnMove: false
+
+- type: entity
+  id: CP14ImpactEffectHeat
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: circle_increase
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14RunePlantHeat
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded

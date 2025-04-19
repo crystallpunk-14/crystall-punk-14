@@ -9,6 +9,26 @@
     action: CP14ActionSpellFlameCreation
 
 - type: cp14Skill
+  id: CP14ActionSpellBurningSpiritSummon
+  skillUiPosition: 2, 0
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: tiefling_revenge
+  effect: !type:AddAction
+    action: CP14ActionSpellBurningSpiritSummon
+
+- type: cp14Skill
+  id: CP14ActionSpellHeat
+  skillUiPosition: 4, 0
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: tiefling_revenge
+  effect: !type:AddAction
+    action: CP14ActionSpellHeat
+
+- type: cp14Skill
   id: CP14ActionSpellHellBallade
   skillUiPosition: 0, 2
   tree: Pyrokinetic
