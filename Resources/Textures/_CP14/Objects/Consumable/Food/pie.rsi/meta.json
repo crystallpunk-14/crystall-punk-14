@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by Artista, pumpkin by aeoli (discord)",
+  "copyright": "Created by Artista, pumpkin by aeoli (discord), burnt_pie by nimfar11",
   "states": [
     {
       "name": "apple"
@@ -30,6 +30,9 @@
     },
     {
       "name": "pumpkin_raw"
+    },
+    {
+      "name": "burnt_pie"
     },
     {
       "name": "tin"
