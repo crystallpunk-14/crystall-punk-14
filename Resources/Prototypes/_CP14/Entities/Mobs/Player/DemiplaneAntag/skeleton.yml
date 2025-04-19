@@ -110,18 +110,18 @@
       - !type:GroupSelector
         weight: 15
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonWizard
-        - id: SpawnPointGhostDemiplaneSkeletonBard
+        - id: CP14SpawnPointGhostDemiplaneSkeletonWizard
+        - id: CP14SpawnPointGhostDemiplaneSkeletonBard
       - !type:GroupSelector
         weight: 20
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonHalberd
+        - id: CP14SpawnPointGhostDemiplaneSkeletonHalberd
       - !type:GroupSelector
         weight: 60
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonSword
-        - id: SpawnPointGhostDemiplaneSkeletonDodger
-        - id: SpawnPointGhostDemiplaneSkeletonArcher
+        - id: CP14SpawnPointGhostDemiplaneSkeletonSword
+        - id: CP14SpawnPointGhostDemiplaneSkeletonDodger
+        - id: CP14SpawnPointGhostDemiplaneSkeletonArcher
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
