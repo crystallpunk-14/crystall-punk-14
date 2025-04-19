@@ -14,20 +14,20 @@
   - type: InteractionPopup
     successChance: 1
     interactSuccessSound:
-      collection: CP14Bell
+      path: /Audio/_CP14/Effects/bell.ogg
       params:
         variation: 0.03
         volume: 3
     onActivate: true
   - type: EmitSoundOnUse
     sound:
-      collection: CP14Bell
+      path: /Audio/_CP14/Effects/bell.ogg
       params:
           variation: 0.03
           volume: 3
   - type: EmitSoundOnTrigger
     sound:
-      collection: CP14Bell
+      path: /Audio/_CP14/Effects/bell.ogg
       params:
           variation: 0.03
           volume: 3
