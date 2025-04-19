@@ -70,9 +70,6 @@
             min: 1
             max: 3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14WoodenPlanks: 100
 
 - type: entity
   parent: CP14BaseTree
