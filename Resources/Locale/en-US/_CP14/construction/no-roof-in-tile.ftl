@@ -1,0 +1,1 @@
+cp14-construction-step-condition-no-roof-in-tile = Must not have a roof.
