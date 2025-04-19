@@ -22,6 +22,9 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectShadowStep
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
   - type: EntityTargetAction
     whitelist:
