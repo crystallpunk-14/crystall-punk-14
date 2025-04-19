@@ -2,7 +2,7 @@
 enabled = true
 
 [localization]
-language = "ru-RU"
+language = "en-US"
 
 [log]
 path = "logs"

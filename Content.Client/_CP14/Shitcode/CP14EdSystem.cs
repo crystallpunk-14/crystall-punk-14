@@ -16,7 +16,7 @@ public sealed class CP14EdSystem : EntitySystem
         _cfg.SetCVar(CVars.EntitiesCategoryFilter, "ForkFiltered");
 
         _cfg.OnValueChanged(CCVars.Language, OnLanguageChange, true);
-        
+
         _cfg.SetCVar(CVars.LocCultureName, _cfg.GetCVar(CCVars.Language));
     }
 
