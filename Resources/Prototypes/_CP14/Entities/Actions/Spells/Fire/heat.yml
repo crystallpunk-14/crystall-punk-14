@@ -64,3 +64,12 @@
     - state: sun
       color: "#eea911"
       shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollHeat
+  name: heat spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellHeat
