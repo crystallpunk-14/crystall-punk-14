@@ -66,9 +66,9 @@
 
 - type: entity
   id: CP14DistoratedSpaceCrystal
-  name: The point of distortion
+  name: The crystal of distortion
   parent: BaseStructure
-  description: A lump of bright light in the shape of a sphere.
+  description: A crystal that distorts the space nearby.
   categories: [ ForkFiltered ]
   components:
   - type: Transform
