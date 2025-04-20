@@ -14,8 +14,7 @@
 
 - type: entity
   id: CP14BaseMobGroupSpawner
-  abstract: true
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, HideSpawnMenu ]
   name: pulsating demiplane rift
   description: Something from the demiplanes is bursting into your world! Look out!
   components:
@@ -115,20 +114,6 @@
 
 - type: entity
   parent: CP14BaseMobGroupSpawner
-  id: CP14MobGroupSpawnerFrogs
-  suffix: 2-3 Frogs
-  components:
-  - type: EntityTableSpawner
-    deleteSpawnerAfterSpawn: false
-    offset: 1
-    table: !type:GroupSelector
-      rolls: !type:RangeNumberSelector
-        range: 2, 3
-      children:
-      - id: CP14MobFrog
-
-- type: entity
-  parent: CP14BaseMobGroupSpawner
   id: CP14MobGroupSpawnerIceSpectres
   suffix: 1-2 Ice spectres
   components:
@@ -140,3 +125,87 @@
         range: 1, 2
       children:
       - id: CP14MobIceSpectre
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerWatcherIce
+  suffix: 2-3 Ice Watchers
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobWatcherIce
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerWatcherMagma
+  suffix: 2-3 Magma Watchers
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobWatcherMagma
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlimeIce
+  suffix: 2-3 Ice Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeIce
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlimeFire
+  suffix: 2-3 Fire Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeFire
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlimeElectric
+  suffix: 2-3 Electric Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeElectric
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSlime
+  suffix: 2-3 Slimes
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobSlimeBase

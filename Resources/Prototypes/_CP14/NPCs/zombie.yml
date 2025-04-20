@@ -6,4 +6,7 @@
           task: CP14MeleeWeaponlessCombatCompound
     - tasks:
         - !type:HTNCompoundTask
+          task: FollowCompound
+    - tasks:
+        - !type:HTNCompoundTask
           task: IdleCompound

@@ -5,7 +5,7 @@
   description: Light in the darkness.
   categories: [ ForkFiltered ]
   components:
-  - type: CP14Lighthouse
+  - type: CP14PvsOverride
   - type: Sprite
     noRot: true
     sprite: Structures/Decoration/bonfire.rsi

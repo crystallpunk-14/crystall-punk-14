@@ -25,7 +25,7 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesGoldChainmail
@@ -43,7 +43,7 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesCopperChainmail
@@ -61,7 +61,7 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesMithrilChainmail
