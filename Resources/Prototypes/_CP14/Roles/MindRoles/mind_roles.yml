@@ -9,6 +9,15 @@
 
 - type: entity
   parent: BaseMindRoleAntag
+  id: CP14MindRoleRaidAntag
+  name: Raid Antag Role
+  components:
+  - type: MindRole
+    roleType: CP14RaidAntagonist
+    antagPrototype: CP14RaidAntag
+
+- type: entity
+  parent: BaseMindRoleAntag
   id: CP14MindRoleVampire
   categories: [ ForkFiltered ]
   name: Vampire Role

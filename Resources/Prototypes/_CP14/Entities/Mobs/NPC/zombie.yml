@@ -16,6 +16,10 @@
   - type: NpcFactionMember
     factions:
     - CP14Monster
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      tags:
+      - CP14RaidLeader
 
 - type: entity
   id: CP14MobUndeadZombieGearEasy1

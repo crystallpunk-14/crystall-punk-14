@@ -42,3 +42,9 @@
   entity: CP14ClothingShoesArtifactFrogs
   tags:
   - CP14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: CP14BowIceArtifact
+  entity: CP14BowIceArtifact
+  tags:
+  - CP14UniqueSpawnDemiplanetLoot

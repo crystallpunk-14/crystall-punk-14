@@ -35,22 +35,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#ffaf47"
+        color: "#ffe269"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#ffaf47"
+        color: "#ffe269"
       right:
       - state: inhand-right
-        color: "#ffaf47"
+        color: "#ffe269"
   - type: Armor
     modifiers:
       coefficients:
@@ -78,22 +78,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#bd712f"
+        color: "#e28f08"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#bd712f"
+        color: "#e28f08"
       right:
       - state: inhand-right
-        color: "#bd712f"
+        color: "#e28f08"
   - type: Armor
     modifiers:
       coefficients:
@@ -118,22 +118,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#45d2a4"
+        color: "#38f0b3"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#45d2a4"
+        color: "#38f0b3"
       right:
       - state: inhand-right
-        color: "#45d2a4"
+        color: "#38f0b3"
   - type: Armor
     modifiers:
       coefficients:

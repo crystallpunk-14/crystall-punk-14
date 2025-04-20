@@ -122,7 +122,7 @@
   name: wendigo ritual far sound
   categories: [ ForkFiltered ]
   components:
-  - type: CP14Lighthouse
+  - type: CP14PvsOverride
   - type: TriggerOnSpawn
   - type: CP14FarSound
     closeSound:
