@@ -1,4 +1,4 @@
-- type: entity
+- type: entity 
   id: CP14ActionSpellManaTrance
   name: Mana trance
   description: You go into a trance for a while, restoring mana. 
