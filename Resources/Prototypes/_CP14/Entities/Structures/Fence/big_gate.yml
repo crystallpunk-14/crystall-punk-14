@@ -78,3 +78,33 @@
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
   - type: Icon
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
+
+- type: entity
+  parent: 
+  - CP14BaseFenceGateBig
+  id: CP14FenceGateBigIron
+  suffix: Iron
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Fence/iron_big.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Fence/iron_big.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

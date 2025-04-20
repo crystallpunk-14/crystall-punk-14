@@ -315,7 +315,7 @@ CP14FenceWoodSmallStraight: CP14FenceWooden
 CP14FenceWoodSmallCorner: CP14FenceWooden
 CP14FenceWoodSmallGate: CP14FenceGateWooden
 CP14FenceIronGrilleStraight: CP14FenceBigIron
-CP14FenceIronGrilleGate: null # migrate
+CP14FenceIronGrilleGate: CP14FenceGateBigIron
 CP14FenceIronGrilleGateGuard: null # migrate
 CP14FenceIronGrilleWindowBase: null # migrate
 CP14FenceIronGrilleWindowStraight: null # migrate
