@@ -1,0 +1,73 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14BaseFenceWindow
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: fence window
+  description: You can slip an object in here, but you sure as hell can't fit through.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    drawdepth: Mobs
+  - type: Icon
+    state: full
+  - type: PlacementReplacement
+    key: walls
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Weapons/boxingpunch1.ogg"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        density: 1000
+        mask:
+        - Impassable
+        layer:
+        - MidImpassable
+        - HighImpassable
+  - type: IconSmooth
+    key: CP14fencebig
+    base: fence
+    additionalKeys:
+    - CP14wall
+
+- type: entity
+  parent: CP14BaseFenceWindow
+  id: CP14FenceWindowIron
+  suffix: Iron 
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Fence/iron_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Fence/iron_window.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
