@@ -14,7 +14,7 @@
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
-    state: tiefling_revenge
+    state: burning_war_spirit
   effect: !type:AddAction
     action: CP14ActionSpellBurningSpiritSummon
 
@@ -24,7 +24,7 @@
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
-    state: tiefling_revenge
+    state: heat
   effect: !type:AddAction
     action: CP14ActionSpellHeat
 

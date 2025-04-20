@@ -50,3 +50,14 @@
     state: signal_light_blue
   effect: !type:AddAction
     action: CP14ActionSpellSignalLightBlue
+
+- type: cp14Skill
+  id: CP14ActionSpellDistorationSpace
+  skillUiPosition: 6, 0
+  learnCost: 1.0
+  tree: Illusion
+  icon:
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: distoration_space
+  effect: !type:AddAction
+    action: CP14ActionSpellDistorationSpace
