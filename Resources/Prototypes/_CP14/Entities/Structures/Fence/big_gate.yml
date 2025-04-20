@@ -37,6 +37,12 @@
       path: /Audio/Effects/door_open.ogg
     closeSound:
       path: /Audio/Effects/door_close.ogg
+  - type: CP14DoorInteractionPopup
+    interactSound:
+      collection: CP14Doorknob
+      params:
+        variation: 0.03
+        volume: -5
 
 - type: entity
   parent: 
