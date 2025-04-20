@@ -77,6 +77,14 @@
   - type: CP14MagicEssenceContainer
     essences:
       Earth: 1
+  - type: FloorTile
+    placeTileSound:
+      collection: CP14Digging #TODO
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - CP14FloorCobblestone
 
 - type: entity
   id: CP14StoneBlock10

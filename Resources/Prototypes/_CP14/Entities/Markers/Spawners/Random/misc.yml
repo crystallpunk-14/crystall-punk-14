@@ -11,6 +11,18 @@
     deleteSpawnerAfterSpawn: false
 
 - type: entity
+  id: CP14RandomStoneLootSpawner
+  name: dirt spawner
+  parent: CP14DirtEffect
+  categories: [ ForkFiltered ]
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - CP14StoneBlock1
+    chance: 1
+    deleteSpawnerAfterSpawn: false
+
+- type: entity
   id: CP14RandomSnowLootSpawner
   name: snow spawner
   parent: CP14SnowEffect

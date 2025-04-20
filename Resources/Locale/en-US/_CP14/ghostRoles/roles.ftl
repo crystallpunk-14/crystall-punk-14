@@ -3,3 +3,6 @@ cp14-ghost-role-information-description-skeleton = The spawn of necromancy, putt
 
 cp14-ghost-role-information-name-wendigo = Wendigo
 cp14-ghost-role-information-description-wendigo = A spirit of night and hunger that preys on loners separated from their companions.
+
+cp14-ghost-role-information-name-raid-undead = Undead raid
+cp14-ghost-role-information-description-raid-undead = Lead the attack on the city by the forces of the dead. Destroy the demiplane communication crystal at any cost.

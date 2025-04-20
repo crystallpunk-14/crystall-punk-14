@@ -1,0 +1,57 @@
+﻿- type: entity
+  id: CP14Chasm
+  categories: [ ForkFiltered ]
+  name: chasm
+  description: You can't even see the bottom.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: PlacementReplacement
+    key: floorTile
+  - type: Sprite
+    drawdepth: BelowFloor
+    sprite: _CP14/Tiles/chasm.rsi
+  - type: Icon
+    sprite: _CP14/Tiles/chasm.rsi
+    state: full
+  - type: IconSmooth
+    key: chasm
+    additionalKeys:
+    - CP14wall
+    base: chasm_
+  - type: Transform
+    anchored: true
+  - type: Chasm
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.4
+    blacklist:
+      tags:
+      - Catwalk  #TODO
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        layer:
+        - WallLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+      fix2: # For block AI movement
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 30
+        mask:
+        - ItemMask
+  - type: Tag
+    tags:
+    - HideContextMenu

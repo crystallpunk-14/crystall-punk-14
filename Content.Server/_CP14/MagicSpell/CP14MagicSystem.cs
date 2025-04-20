@@ -8,6 +8,7 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.Actions;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
@@ -62,6 +63,12 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
 
     private void OnMeleeHit(Entity<CP14SpellEffectOnHitComponent> ent, ref MeleeHitEvent args)
     {
+        if (HasComp<PacifiedComponent>(args.User)) //IDK how to check if the user is pacified in a better way
+            return;
+
+        if (!args.IsHit)
+            return;
+
         if (!_random.Prob(ent.Comp.Prob))
             return;
 

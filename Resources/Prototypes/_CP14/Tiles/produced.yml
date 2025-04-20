@@ -158,8 +158,11 @@
   id: CP14FloorStonebricksSquareCarved
   name: cp14-tiles-stonebricks-square-carved
   sprite: /Textures/_CP14/Tiles/Stonebricks/stonebricks_square_carved.png
-  variants: 1
+  variants: 4
   placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
   - 1.0
   edgeSpritePriority: 101
   edgeSprites:
