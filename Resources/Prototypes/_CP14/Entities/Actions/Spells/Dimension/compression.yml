@@ -32,7 +32,7 @@
     whitelist:
       components:
       - Item
-      - Anchorable
+      - Storage
     range: 3
     itemIconStyle: BigAction
     interactOnMiss: false

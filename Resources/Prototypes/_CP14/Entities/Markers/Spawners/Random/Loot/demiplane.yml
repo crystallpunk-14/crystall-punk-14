@@ -96,6 +96,7 @@
           weight: 0.2
       - id: CP14ScrapGold
       - id: CP14ScrapMithril
+      - id: CP14ActionSpellCompression
         weight: 0.5
     # Rare
     - !type:GroupSelector
