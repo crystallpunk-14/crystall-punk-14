@@ -32,7 +32,7 @@
       state: mana_trance
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 120
-      castTime: 5.0
+      castDelay: 5.0
       hidden: true
 
 - type: entity
