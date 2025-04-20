@@ -89,7 +89,7 @@
         - MidImpassable
         - LowImpassable
   - type: TimedDespawn
-    lifetime: 180 # 3 min
+    lifetime: 90 # 1.5 min
   - type: Sprite
     noRot: true
     sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_small.rsi
