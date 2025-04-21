@@ -114,7 +114,7 @@
     - CP14ActionSpellHellBallade
 
 - type: entity
-  id: SpawnPointGhostDemiplaneSkeletonT2
+  id: CP14SpawnPointGhostDemiplaneSkeletonT2
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
   suffix: skeleton random T2
@@ -127,15 +127,15 @@
       - !type:GroupSelector
         weight: 40
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonWizardT2
-        - id: SpawnPointGhostDemiplaneSkeletonBardT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonWizardT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
       - !type:GroupSelector
         weight: 60
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonSwordT2
-        - id: SpawnPointGhostDemiplaneSkeletonDodgerT2
-        - id: SpawnPointGhostDemiplaneSkeletonArcherT2
-        - id: SpawnPointGhostDemiplaneSkeletonHalberdT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonSwordT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonDodgerT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonArcherT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonHalberdT2
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -155,13 +155,13 @@
     table: !type:GroupSelector
       children:
       - !type:GroupSelector
-        weight: 1
+        weight: 2
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonWizardT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonWizardT2
       - !type:GroupSelector
         weight: 1
         children:
-        - id: SpawnPointGhostDemiplaneSkeletonBardT2
+        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
