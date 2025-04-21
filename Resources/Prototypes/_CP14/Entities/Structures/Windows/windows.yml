@@ -79,8 +79,8 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/wooden_window.rsi
   - type: Construction
-    graph: CP14WallWood
-    node: WindowWooden
+    graph: CP14WallWooden
+    node: CP14WindowWooden
 
 - type: entity
   id: CP14WindowIceBlock
