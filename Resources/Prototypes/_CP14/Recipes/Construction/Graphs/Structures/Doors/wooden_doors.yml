@@ -22,7 +22,7 @@
               amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
         - to: CP14WoodenDoorFrameMirrored
           steps:
@@ -47,9 +47,12 @@
       edges:
         - to: start
           completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
         - to: CP14WoodenDoorFrame
           steps:
@@ -73,30 +76,58 @@
       entity: CP14WoodenDoor
       edges:
         - to: CP14WoodenDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
               
     - node: CP14WoodenDoorMirrored
       entity: CP14WoodenDoorMirrored
       edges:
         - to: CP14WoodenDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
               
     - node: CP14WoodenDoorWindowed
       entity: CP14WoodenDoorWindowed
       edges:
         - to: CP14WoodenDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
               
     - node: CP14WoodenDoorWindowedMirrored
       entity: CP14WoodenDoorWindowedMirrored
       edges:
         - to: CP14WoodenDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5

@@ -72,7 +72,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: earth cliffs
+  name: earth wall
   description: A tall pile of dirt. Can a house be built from it?
   id: CP14WallDirt
   graph: CP14WallDirt

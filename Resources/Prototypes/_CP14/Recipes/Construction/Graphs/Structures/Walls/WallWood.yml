@@ -23,28 +23,18 @@
               amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Screwing #TODO - new tool
+            - tool: Prying
               doAfter: 1
         - to: WallWooden
           steps:
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 1
-            - material: CP14Nail
-              amount: 2
-              doAfter: 1
-            - tool: CP14Hammering
-              doAfter: 2
         - to: WallWoodenBirch
           steps:
             - material: CP14BirchWoodenPlanks
               amount: 2
               doAfter: 1
-            - material: CP14Nail
-              amount: 2
-              doAfter: 1
-            - tool: CP14Hammering
-              doAfter: 2
         - to: WindowWooden
           steps:
             - material: CP14GlassSheet
@@ -58,6 +48,10 @@
           steps:
             - tool: CP14Hammering
               doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
               
     - node: WallWoodenBirch
       entity: CP14WallWoodenBirch
@@ -66,6 +60,10 @@
           steps:
             - tool: CP14Hammering
               doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanksBirch1
+              amount: 2
               
     - node: WindowWooden
       entity: CP14WindowWooden
