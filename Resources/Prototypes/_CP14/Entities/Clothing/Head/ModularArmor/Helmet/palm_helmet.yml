@@ -1,0 +1,130 @@
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetIronPalmHelmet
+  name: iron palm helmet
+  description: A tight fitting helmet that protects your head from impact.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.92
+        Slash: 0.97
+        Piercing: 0.95
+        Heat: 0.98
+  - type: ClothingSpeedModifier
+    walkModifier: 0.97
+    sprintModifier: 0.97
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetIronCapellina
+  - type: CP14MagicManacostModify
+    globalModifier: 1.05
+  - type: CP14Material
+    materials:
+      CP14Iron: 20
+
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetGoldPalmHelmet
+  name: golden palm helmet
+  description: A tight fitting helmet that protects your head from impact.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffe269"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.96
+        Piercing: 0.96
+  - type: ClothingSpeedModifier
+    walkModifier: 0.96
+    sprintModifier: 0.96
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetGoldPalmHelmet
+  - type: CP14MagicManacostModify
+    globalModifier: 1.01
+  - type: CP14Material
+    materials:
+      CP14Gold: 20
+
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetCopperPalmHelmet
+  name: copper palm helmet
+  description: A tight fitting helmet that protects your head from impact.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+    layers:
+    - state: icon
+      color: "#e28f08"
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#e28f08"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.94
+        Slash: 0.98
+        Piercing: 0.96
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.98
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetCopperPalmHelmet
+  - type: CP14MagicManacostModify
+    globalModifier: 1.03
+  - type: CP14Material
+    materials:
+      CP14Copper: 20
+
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetMithrilPalmHelmet
+  name: mithril palm helmet
+  description: A tight fitting helmet that protects your head from impact.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+    layers:
+    - state: icon
+      color: "#38f0b3"
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/palm_helmet.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#38f0b3"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.95
+        Piercing: 0.93
+        Heat: 0.98
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.98
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetMithrilPalmHelmet
+  - type: CP14MagicManacostModify
+    globalModifier: 0.98
+  - type: CP14Material
+    materials:
+      CP14Mithril: 20

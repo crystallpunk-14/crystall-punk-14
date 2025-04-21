@@ -1,27 +1,7 @@
 - type: entity
   parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadCapellina
-  name: capellina
-  description: Protects against large object strikes to the head.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Produced/Armor/capellina.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Produced/Armor/capellina.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.92
-        Slash: 0.93
-        Piercing: 0.96
-  - type: ClothingSpeedModifier
-    walkModifier: 0.97
-    sprintModifier: 0.97
-
-- type: entity
-  parent: CP14ClothingHeadBase
   id: CP14ClothingHeadBascinet
-  name: bascinet
+  name: bascinet # will need to be modularised
   description: Protects most of the head, but the face is still not worth catching blows.
   components:
   - type: Sprite

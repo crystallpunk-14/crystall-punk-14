@@ -1,0 +1,92 @@
+- type: modularPart
+  id: BaseVisorPlate
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseClothingArmor
+
+- type: modularPart
+  id: VisorIronPlate
+  slots:
+  - Visor
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.04
+        Slash: -0.02
+        Piercing: -0.05
+        Heat: -0.04
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
+
+- type: modularPart
+  id: VisorGoldPlate
+  slots:
+  - Visor
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+  color: "#ffe269"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.01
+        Slash: -0.01
+        Piercing: -0.03
+  - !type:EditClothingSpeed
+    walkModifier: 0.98
+    sprintModifier: 0.98
+
+- type: modularPart
+  id: VisorCopperPlate
+  slots:
+  - Visor
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+  color: "#e28f08"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.03
+        Slash: -0.01
+        Piercing: -0.03
+        Heat: -0.02
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
+
+- type: modularPart
+  id: VisorMithrilPlate
+  slots:
+  - Visor
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+  color: "#38f0b3"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.06
+        Slash: -0.03
+        Piercing: -0.08
+        Heat: -0.08
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
