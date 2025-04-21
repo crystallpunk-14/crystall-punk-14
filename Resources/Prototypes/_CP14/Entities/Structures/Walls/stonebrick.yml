@@ -26,7 +26,7 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14StoneBlock1:
-            min: 2
+            min: 1
             max: 2
       - !type:PlaySoundBehavior
         sound:
@@ -62,7 +62,7 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14StoneBlock1:
-            min: 2
+            min: 1
             max: 2
       - !type:ChangeConstructionNodeBehavior
         node: CP14WallFrameStonebrick
@@ -103,7 +103,7 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14MarbleBlock1:
-            min: 2
+            min: 1
             max: 2
       - !type:PlaySoundBehavior
         sound:
@@ -141,8 +141,10 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14MarbleBlock1:
-            min: 2
+            min: 1
             max: 2
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WallFrameMarblebrick
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
