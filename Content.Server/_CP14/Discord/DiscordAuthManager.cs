@@ -41,6 +41,7 @@ public sealed class DiscordAuthManager
         "1359476387190145034",
         "1294276016117911594",
         "1278755078315970620",
+        "1330772249644630157",
     };
 
     public event EventHandler<ICommonSession>? PlayerVerified;

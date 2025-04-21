@@ -32,7 +32,7 @@
   - Cuisses
   sourcePart: CP14ScrapGold
   rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
-  color: "#ffaf47"
+  color: "#ffe269"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -53,7 +53,7 @@
   - Cuisses
   sourcePart: CP14ScrapCopper
   rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
-  color: "#bd712f"
+  color: "#e28f08"
   modifiers:
   - !type:Inherit
     copyFrom:
@@ -75,7 +75,7 @@
   - Cuisses
   sourcePart: CP14ScrapMithril
   rsiPath: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
-  color: "#45d2a4"
+  color: "#38f0b3"
   modifiers:
   - !type:Inherit
     copyFrom:

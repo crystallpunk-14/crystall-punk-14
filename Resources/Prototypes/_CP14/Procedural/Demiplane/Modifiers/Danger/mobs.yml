@@ -83,7 +83,7 @@
     Danger: 0.55
   layers:
     - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneSkeletonT1
+      entity: CP14SpawnPointGhostDemiplaneSkeletonT1
       count: 1
       minGroupSize: 1
       maxGroupSize: 3
@@ -270,12 +270,12 @@
     Danger: 0.5
   layers:
     - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneSkeletonT2
+      entity: CP14SpawnPointGhostDemiplaneSkeletonT2
       count: 1
       minGroupSize: 1
       maxGroupSize: 2
     - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneSkeletonMagicalT2
+      entity: CP14SpawnPointGhostDemiplaneSkeletonMagicalT2
       count: 1
       minGroupSize: 0
       maxGroupSize: 1
@@ -291,7 +291,7 @@
     Danger: 0.25
   layers:
     - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneSkeletonT1
+      entity: CP14SpawnPointGhostDemiplaneSkeletonT1
       count: 1
       minGroupSize: 1
       maxGroupSize: 2

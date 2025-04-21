@@ -3,3 +3,6 @@ cp14-ghost-role-information-description-skeleton = Порождение некр
 
 cp14-ghost-role-information-name-wendigo = Вендиго
 cp14-ghost-role-information-description-wendigo = Дух ночи и голода, охотящийся за одиночками, отделившихся от своих товарищей.
+
+cp14-ghost-role-information-name-raid-undead = Рейд нежити
+cp14-ghost-role-information-description-raid-undead = Возглавьте атаку на город силами мертвых. Уничтожьте кристалл связи с демипланами любой ценой.
