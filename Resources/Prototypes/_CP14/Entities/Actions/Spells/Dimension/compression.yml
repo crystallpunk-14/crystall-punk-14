@@ -66,11 +66,6 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellCompression
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 30
 
 - type: entity
   parent: BaseItem
