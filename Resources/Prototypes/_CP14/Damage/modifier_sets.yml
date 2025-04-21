@@ -52,6 +52,33 @@
     Piercing: 10
     Structural: 10
 
+- type: damageModifierSet
+  id: CP14Metallic
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.5
+    Piercing: 0.7
+    Shock: 1.2
+    Structural: 0.5
+  flatReductions:
+    Blunt: 5
+    Heat: 5
+
+- type: damageModifierSet
+  id: CP14MetallicStructural
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.5
+    Piercing: 0.7
+    Shock: 1.2
+    Structural: 0.5
+  flatReductions:
+    Blunt: 10
+    Slash: 10
+    Piercing: 10
+    Heat: 10
+    Structural: 10
+
 # Mobs
 
 - type: damageModifierSet

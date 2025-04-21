@@ -30,7 +30,7 @@
     state: closed
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: CP14WoodStructural
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -70,7 +70,7 @@
     state: closed
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: CP14Metallic
   - type: Destructible
     thresholds:
     - trigger:
