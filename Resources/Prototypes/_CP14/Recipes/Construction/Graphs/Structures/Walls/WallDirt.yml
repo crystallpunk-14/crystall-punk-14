@@ -10,7 +10,7 @@
               southRotation: true
           steps:
             - material: CP14Dirt
-              amount: 2
+              amount: 3
               doAfter: 2
     - node: WallDirt
       entity: CP14WallDirt
