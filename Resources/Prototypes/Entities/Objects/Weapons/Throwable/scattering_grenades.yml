@@ -157,7 +157,7 @@
       map: ["Base"]
     - state: primed
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ScatteringGrenade #CP14 disabled (type !ent0 in discord)
+  - type: ScatteringGrenade 
     fillPrototype: BulletFoam
     capacity: 30
     velocity: 30
