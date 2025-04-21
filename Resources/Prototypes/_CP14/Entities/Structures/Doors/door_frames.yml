@@ -30,7 +30,7 @@
     state: closed
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: CP14Wood
+    damageModifierSet: CP14WoodStructural
   - type: Destructible
     thresholds:
     - trigger:

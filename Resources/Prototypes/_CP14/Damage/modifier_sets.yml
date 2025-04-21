@@ -59,7 +59,7 @@
     Slash: 0.5
     Piercing: 0.7
     Shock: 1.2
-    Structural: 0.5
+    Structural: 0.8
   flatReductions:
     Blunt: 5
     Heat: 5
@@ -71,7 +71,7 @@
     Slash: 0.5
     Piercing: 0.7
     Shock: 1.2
-    Structural: 0.5
+    Structural: 0.8
   flatReductions:
     Blunt: 10
     Slash: 10

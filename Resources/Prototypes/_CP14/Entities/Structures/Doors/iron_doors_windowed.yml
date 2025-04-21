@@ -30,6 +30,8 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14IronDoorFrame
   - type: Construction
     graph: CP14IronDoor
     node: CP14IronDoor
