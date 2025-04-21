@@ -8,6 +8,9 @@
   "copyright": "Created by Skilets (Discord) ",
   "states": [
     {
+      "name": "full"
+    },
+    {
       "name": "skulls0",
       "directions": 4
     },
