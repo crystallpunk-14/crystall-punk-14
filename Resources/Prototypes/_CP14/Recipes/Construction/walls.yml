@@ -23,7 +23,7 @@
   id: CP14WoodenWallBirch
   graph: CP14WallWoodenBirch
   startNode: start
-  targetNode: CP14WoodenWallBirch
+  targetNode: CP14WallWoodenBirch
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
@@ -95,7 +95,7 @@
   id: CP14WallStonebrick
   graph: CP14WallStonebrick
   startNode: start
-  targetNode: WallStonebrick
+  targetNode: CP14WallStonebrick
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
