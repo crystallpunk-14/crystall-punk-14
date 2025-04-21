@@ -49,7 +49,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+      sprite: _CP14/Actions/Spells/necromancy.rsi
       state: cure_dead
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 2

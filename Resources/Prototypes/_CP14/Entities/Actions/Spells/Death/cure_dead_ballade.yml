@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellHealFromDeathBallade
   name: Healing from death ballade
-  description: Your music is filled with healing magic, slowly healing all the creatures around you.
+  description: Your music is filled with healing magic, fast healing all the creatures around you.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
@@ -23,7 +23,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+      sprite: _CP14/Actions/Spells/necromancy.rsi
       state: dead_heal_ballade
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 1

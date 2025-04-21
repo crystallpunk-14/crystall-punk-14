@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14ActionSpellShadowPunchSkeleton
+  id: CP14ActionSpellShadowPunch
   name: Shadow punch
   description: You send a ghostly hand that pushes an object or entity away from you.
   components:
