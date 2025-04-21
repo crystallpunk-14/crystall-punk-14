@@ -144,8 +144,7 @@
         state: full
 
 - type: entity
-  id: SpawnPointGhostDemiplaneSkeletonMagicalT2
-  id: CP14SpawnPointGhostDemiplaneSkeletonHalberd
+  id: CP14SpawnPointGhostDemiplaneSkeletonMagicalT2
   parent: MarkerBase
   name: ghost role spawn point
   description: A ghost role for a bloodthirsty and cunning skeleton.
