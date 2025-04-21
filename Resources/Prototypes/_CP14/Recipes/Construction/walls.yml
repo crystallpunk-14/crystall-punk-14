@@ -3,9 +3,9 @@
   name: wooden wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WoodenWall
-  graph: CP14WallWood
+  graph: CP14WallWooden
   startNode: start
-  targetNode: WallWooden
+  targetNode: CP14WallWooden
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/wooden_wall.rsi
@@ -21,9 +21,9 @@
   name: wooden birch wall
   description: Sturdy enough to cover you from threats or cold winds.
   id: CP14WoodenWallBirch
-  graph: CP14WallWood
+  graph: CP14WallWoodenBirch
   startNode: start
-  targetNode: WallWoodenBirch
+  targetNode: CP14WoodenWallBirch
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
@@ -57,9 +57,9 @@
   name: wooden window
   description: A wooden wall with a glass window in it.
   id: CP14WindowWooden
-  graph: CP14WallWood
+  graph: CP14WallWooden
   startNode: start
-  targetNode: WindowWooden
+  targetNode: CP14WindowWooden
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Windows/wooden_window.rsi
@@ -88,38 +88,38 @@
   conditions:
     - !type:TileNotBlocked
 
-- type: construction
-  crystallPunkAllowed: true
-  name: stonebrick wall
-  description: Sturdy enough to cover you from threats or cold winds.
-  id: CP14WallStonebrick
-  graph: CP14WallStonebrick
-  startNode: start
-  targetNode: WallStonebrick
-  category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-    state: full
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  name: marble brick wall
-  description: Sturdy enough to cover you from threats or cold winds.
-  id: CP14WallMarbleBrick
-  graph: CP14WallMarbleBrick
-  startNode: start
-  targetNode: CP14WallMarbleBrick
-  category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
-    state: full
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
+#- type: construction
+#  crystallPunkAllowed: true
+#  name: stonebrick wall
+#  description: Sturdy enough to cover you from threats or cold winds.
+#  id: CP14WallStonebrick
+#  graph: CP14WallStonebrick
+#  startNode: start
+#  targetNode: WallStonebrick
+#  category: construction-category-structures
+#  icon:
+#    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+#    state: full
+#  objectType: Structure
+#  placementMode: SnapgridCenter
+#  canBuildInImpassable: false
+#  conditions:
+#    - !type:TileNotBlocked
+#
+#- type: construction
+#  crystallPunkAllowed: true
+#  name: marble brick wall
+#  description: Sturdy enough to cover you from threats or cold winds.
+#  id: CP14WallMarbleBrick
+#  graph: CP14WallMarbleBrick
+#  startNode: start
+#  targetNode: CP14WallMarbleBrick
+#  category: construction-category-structures
+#  icon:
+#    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
+#    state: full
+#  objectType: Structure
+#  placementMode: SnapgridCenter
+#  canBuildInImpassable: false
+#  conditions:
+#    - !type:TileNotBlocked
