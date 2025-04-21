@@ -53,6 +53,9 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
     state: full
+  - type: Construction
+    graph: CP14WallStonebrick
+    node: CP14WallStonebrick
 
 - type: entity
   id: CP14WindowMarbleBrick
@@ -65,6 +68,9 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
     state: full
+  - type: Construction
+    graph: CP14WallMarbleBrick
+    node: CP14WindowMarbleBrick
 
 - type: entity
   id: CP14WindowWooden
