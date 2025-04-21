@@ -53,7 +53,7 @@
       - !type:GroupSelector
         children:
         - id: CP14SpellScrollBurningSpiritSummon
-        - id: CP14BaseSpellScrollDimension
+        - id: CP14SpellScrollCompression
       # Rare standard village crates loot
       - !type:NestedSelector
         tableId: CP14StationCrateLoot
@@ -96,7 +96,7 @@
           weight: 0.2
       - id: CP14ScrapGold
       - id: CP14ScrapMithril
-      - id: CP14BaseSpellScrollDimension
+      - id: CP14SpellScrollCompression
         weight: 0.5
     # Rare
     - !type:GroupSelector
