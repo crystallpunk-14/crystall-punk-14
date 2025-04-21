@@ -62,7 +62,7 @@
               doAfter: 2
           completed:
             - !type:SpawnPrototype
-              prototype: CP14WoodenPlanksBirch1
+              prototype: CP14BirchWoodenPlanks1
               amount: 2
               
     - node: WindowWooden
