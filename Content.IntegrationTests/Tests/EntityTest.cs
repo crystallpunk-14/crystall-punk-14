@@ -41,6 +41,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
                     .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // CP14 this component delete all entities on this tile
+                    .Where(p => !p.Components.ContainsKey("CP14AreaEntityEffect")) // CP14 lightning detonates ents
                     .Select(p => p.ID)
                     .ToList();
 
@@ -105,6 +106,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
                     .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // CP14 this component delete all entities on this tile
+                    .Where(p => !p.Components.ContainsKey("CP14AreaEntityEffect")) // CP14 lightning detonates ents
                     .Select(p => p.ID)
                     .ToList();
                 foreach (var protoId in protoIds)
@@ -347,6 +349,7 @@ namespace Content.IntegrationTests.Tests
                 "GridFill",
                 "RoomFill",
                 "CP14BiomeSpawner", // CP14 this component delete all entities on this tile
+                "CP14AreaEntityEffect", // CP14 lightning detonates ents
                 "Map", // We aren't testing a map entity in this test
                 "MapGrid",
                 "Broadphase",
