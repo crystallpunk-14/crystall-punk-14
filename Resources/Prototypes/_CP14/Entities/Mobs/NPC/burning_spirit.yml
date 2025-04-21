@@ -52,6 +52,7 @@
     drawdepth: Mobs
   - type: Damageable
     damageContainer: CP14Biological
+    damageModifierSet: CP14BurningSpirit
   - type: Destructible
     thresholds:
     - trigger:
