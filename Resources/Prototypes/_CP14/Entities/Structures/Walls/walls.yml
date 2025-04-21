@@ -39,12 +39,12 @@
     node: WallStonebrick
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14RockStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 34 #Low health, but we have 2 crushed state by 33 health each (100 health in sum)
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
@@ -73,18 +73,23 @@
     base: stonebricks
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14RockStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 100
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg
           params:
             volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14MarbleBlock1:
+            min: 2
+            max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
@@ -103,6 +108,22 @@
     sprite: _CP14/Structures/Walls/bricks_wall.rsi
   - type: IconSmooth
     base: bricksA
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Appearance
   - type: RandomIconSmooth
     randomStates:
@@ -130,7 +151,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 34 #Low health, but we have 2 crushed state by 33 health each (100 health in sum)
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -183,7 +204,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 100
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -200,36 +221,6 @@
     node: CP14WallWoodenPalisade
 
 - type: entity
-  id: CP14WallCardboard
-  name: cardboard Wall
-  description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
-  parent:
-  - CP14WallWooden
-  - CP14BaseFlammableSpreadingStrong
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14FrameWooden:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: CP14WallpaperHolder
-
-- type: entity
   id: CP14WallCyan
   name: cyan wall
   parent: CP14BaseWall
@@ -240,6 +231,22 @@
     sprite: _CP14/Structures/Walls/cyan_wall.rsi
   - type: IconSmooth
     base: wall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: CP14WallpaperHolder
 
 - type: entity
@@ -258,5 +265,21 @@
     - skulls
     - skullsA
     - skullsB
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Appearance
   - type: CP14WallpaperHolder

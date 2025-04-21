@@ -44,18 +44,8 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 40
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-    - trigger:
         !type:DamageTrigger
-        damage: 60
+        damage: 33
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
@@ -121,13 +111,13 @@
     noRot: false
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14WoodStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 20
+        damage: 33
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
@@ -171,13 +161,13 @@
     noRot: false
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14WoodStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 20
+        damage: 33
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -210,13 +200,13 @@
     anchored: true
     noRot: false
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 33
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
@@ -242,13 +232,13 @@
     anchored: true
     noRot: false
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 33
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
