@@ -323,8 +323,8 @@ CP14FenceIronGrilleWindowStraight: CP14FenceWindowIron
 
 #2025-21-04
 CP14WallBrownbrick: CP14WallMarbleBrick
-CP14FrameWoodenCrushedMedium: null
-CP14FrameWoodenCrushedLow: null
+CP14FrameWoodenCrushedMedium: CP14WallFrameWooden
+CP14FrameWoodenCrushedLow: CP14WallFrameWooden
 CP14WallStonebrickCrushedMedium: CP14WallFrameStonebrick
 CP14WallStonebrickCrushedLow: CP14WallFrameStonebrick
 CP14WallCyan: CP14WallStonebrick
