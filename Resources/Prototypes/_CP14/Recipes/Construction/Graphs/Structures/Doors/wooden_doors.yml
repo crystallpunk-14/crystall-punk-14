@@ -8,7 +8,7 @@
       edges:
         - to: CP14WoodenDoorFrame
           steps:
-            - stackGroup: WoodenPlanks
+            - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
               
@@ -23,21 +23,18 @@
             - !type:DeleteEntity {}
           steps:
             - tool: Prying
-              doAfter: 5
+              doAfter: 4
         - to: CP14WoodenDoorFrameMirrored
           steps:
             - tool: CP14Hammering
               doAfter: 1
         - to: CP14WoodenDoor
           steps:
-            - stackGroup: WoodenPlanks
+            - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
         - to: CP14WoodenDoorWindowed
           steps:
-            - material: CP14Nail
-              amount: 1
-              doAfter: 1
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
@@ -53,7 +50,7 @@
             - !type:DeleteEntity {}
           steps:
             - tool: Prying
-              doAfter: 5
+              doAfter: 4
         - to: CP14WoodenDoorFrame
           steps:
             - tool: CP14Hammering
@@ -65,9 +62,6 @@
               doAfter: 2
         - to: CP14WoodenDoorWindowedMirrored
           steps:
-            - material: CP14Nail
-              amount: 1
-              doAfter: 1
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
@@ -85,7 +79,7 @@
             locked: false
           steps:
             - tool: Prying
-              doAfter: 5
+              doAfter: 4
               
     - node: CP14WoodenDoorMirrored
       entity: CP14WoodenDoorMirrored
@@ -100,7 +94,7 @@
             locked: false
           steps:
             - tool: Prying
-              doAfter: 5
+              doAfter: 4
               
     - node: CP14WoodenDoorWindowed
       entity: CP14WoodenDoorWindowed
@@ -115,7 +109,7 @@
             locked: false
           steps:
             - tool: Prying
-              doAfter: 5
+              doAfter: 4
               
     - node: CP14WoodenDoorWindowedMirrored
       entity: CP14WoodenDoorWindowedMirrored
@@ -130,4 +124,4 @@
             locked: false
           steps:
             - tool: Prying
-              doAfter: 5
+              doAfter: 4
