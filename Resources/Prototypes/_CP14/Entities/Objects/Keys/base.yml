@@ -13,14 +13,69 @@
     size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
-    layers:
-    - state: key_iron
   - type: CP14Key
   - type: EmitSoundOnLand
     sound:
       path: /Audio/_CP14/Items/key_drop.ogg
       params:
         variation: 0.05
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyCopperBlank
+  components:
+  - type: Sprite
+    state: key_copper
+  - type: CP14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyIronBlank
+  components:
+  - type: Sprite
+    state: key_iron
+  - type: CP14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyGoldBlank
+  components:
+  - type: Sprite
+    state: key_gold
+  - type: CP14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+
+- type: entity
+  parent: CP14BaseKey
+  id: CP14KeyMithrilBlank
+  components:
+  - type: Sprite
+    state: key_mithril
+  - type: CP14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
 
 - type: entity
   parent: BaseItem

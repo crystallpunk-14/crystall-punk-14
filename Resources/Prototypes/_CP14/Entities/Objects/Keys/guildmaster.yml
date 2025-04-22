@@ -1,5 +1,5 @@
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyGoldBlank
   id: CP14KeyGuildmaster
   suffix: Guildmaster
   components:
@@ -7,7 +7,7 @@
     autoGenerateShape: Guildmaster
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyGoldBlank
   id: CP14KeyDemiplaneCrystal
   suffix: Demiplane Crystal
   components:

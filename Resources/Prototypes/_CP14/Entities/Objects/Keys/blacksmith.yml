@@ -1,5 +1,5 @@
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyIronBlank
   id: CP14KeyTavernBlacksmithAbstract
   suffix: Abstract Blacksmith
   components:
@@ -7,7 +7,7 @@
     group: Blacksmith
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyIronBlank
   id: CP14KeyBlacksmith
   suffix: Blacksmith 1
   components:
@@ -15,7 +15,7 @@
     autoGenerateShape: Blacksmith1
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyIronBlank
   id: CP14KeyBlacksmith2
   suffix: Blacksmith 2
   components:

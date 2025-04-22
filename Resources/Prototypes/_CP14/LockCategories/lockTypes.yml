@@ -45,67 +45,67 @@
 - type: CP14LockType
   id: Alchemy1
   group: Alchemist
-  complexity: 4
+  complexity: 5
   name: cp14-lock-shape-alchemist1
   
 - type: CP14LockType
   id: Alchemy2
   group: Alchemist
-  complexity: 4
+  complexity: 5
   name: cp14-lock-shape-alchemist2
   
 - type: CP14LockType
   id: Alchemy3
   group: Alchemist
-  complexity: 4
+  complexity: 5
   name: cp14-lock-shape-alchemist3
 
 - type: CP14LockType
   id: Blacksmith1
   group: Blacksmith
-  complexity: 4
+  complexity: 5
   name: cp14-lock-shape-blacksmith1
 
 - type: CP14LockType
   id: Blacksmith2
   group: Blacksmith
-  complexity: 4
+  complexity: 5
   name: cp14-lock-shape-blacksmith2
 
 - type: CP14LockType
   id: Blacksmith3
   group: Blacksmith
-  complexity: 4
+  complexity: 5
   name: cp14-lock-shape-blacksmith3
 
 - type: CP14LockType
   id: Shop1
   group: Merchant
-  complexity: 6
+  complexity: 5
   name: cp14-lock-shape-merchant1
 
 - type: CP14LockType
   id: Shop2
   group: Merchant
-  complexity: 6
+  complexity: 5
   name: cp14-lock-shape-merchant2
 
 - type: CP14LockType
   id: Shop3
   group: Merchant
-  complexity: 6
+  complexity: 5
   name: cp14-lock-shape-merchant3
 
 # Mercenary
 
 - type: CP14LockType
   id: Guildmaster
-  complexity: 5
+  complexity: 6
   name: cp14-lock-shape-guildmaster
 
 - type: CP14LockType
   id: DemiplaneCrystal
-  complexity: 5
+  complexity: 6
   name: cp14-lock-shape-demiplane-crystal
 
 # Personal house
@@ -210,20 +210,20 @@
 
 - type: CP14LockType
   id: GuardEntrance
-  complexity: 3
+  complexity: 5
   name: cp14-lock-shaper-guard-entrance
 
 - type: CP14LockType
   id: Guard
-  complexity: 4
+  complexity: 5
   name: cp14-lock-shaper-guard-staff
 
 - type: CP14LockType
   id: GuardCommander
-  complexity: 5
+  complexity: 7
   name: cp14-lock-shaper-guard-commander
 
 - type: CP14LockType
   id: GuardWeaponStorage
-  complexity: 5
+  complexity: 7
   name: cp14-lock-shaper-guard-weapon-storage
