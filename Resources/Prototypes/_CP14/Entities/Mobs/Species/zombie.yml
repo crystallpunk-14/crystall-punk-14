@@ -74,12 +74,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      40: Critical
-      120: Dead
+      35: Critical
+      90: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
       10: 0.8
-      30: 0.4
+      20: 0.4
+      30: 0.2
   - type: StatusEffects
     allowed:
     - Stun
@@ -122,8 +123,7 @@
       path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Slash: 5
-        Structural: 6
+        Slash: 8
   - type: Pullable
   - type: SpamEmitSound
     minInterval: 10

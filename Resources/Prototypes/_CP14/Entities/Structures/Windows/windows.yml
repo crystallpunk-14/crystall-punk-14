@@ -13,6 +13,9 @@
     base: window
   - type: PlacementReplacement
     key: walls
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
   - type: Destructible
     thresholds:
     - trigger:
@@ -50,6 +53,9 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
     state: full
+  - type: Construction
+    graph: CP14WallStonebrick
+    node: CP14WallStonebrick
 
 - type: entity
   id: CP14WindowMarbleBrick
@@ -62,6 +68,9 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
     state: full
+  - type: Construction
+    graph: CP14WallMarbleBrick
+    node: CP14WindowMarbleBrick
 
 - type: entity
   id: CP14WindowWooden
@@ -71,16 +80,13 @@
   name: wooden window
   description: A wooden wall with a glass window in it.
   components:
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: CP14WoodStructural
   - type: Sprite
     sprite: _CP14/Structures/Windows/wooden_window.rsi
   - type: Icon
     sprite: _CP14/Structures/Windows/wooden_window.rsi
   - type: Construction
-    graph: CP14WallWood
-    node: WindowWooden
+    graph: CP14WallWooden
+    node: CP14WindowWooden
 
 - type: entity
   id: CP14WindowIceBlock
@@ -108,9 +114,6 @@
     soundGroups:
       Brute:
         collection: GlassSmash
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Glass
   - type: InteractionPopup
     interactSuccessString: popup-cp14crystal-ding
     messagePerceivedByOthers: popup-cp14crystal-ding

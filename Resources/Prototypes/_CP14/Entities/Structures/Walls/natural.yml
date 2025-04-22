@@ -12,7 +12,7 @@
     base: wall
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14RockStructural
   - type: Destructible
     thresholds:
     - trigger:
@@ -33,8 +33,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14StoneBlock1:
-            min: 2
-            max: 3
+            min: 5
+            max: 7
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
@@ -67,8 +67,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14MarbleBlock1:
-            min: 2
-            max: 3
+            min: 5
+            max: 7
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
@@ -100,7 +100,7 @@
     base: wall
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: Rock # "Soft"
   - type: Destructible
     thresholds:
     - trigger:
@@ -121,8 +121,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14DirtBlock1:
-            min: 2
-            max: 3
+            min: 3
+            max: 5
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Construction
@@ -230,7 +230,7 @@
   - type: IconSmooth
     base: wall
   - type: Damageable
-    damageContainer: StructuralInorganic
+    damageContainer: Inorganic
     damageModifierSet: Rock
   - type: Destructible
     thresholds:

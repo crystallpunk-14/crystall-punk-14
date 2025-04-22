@@ -65,7 +65,7 @@
     damage:
       types:
         Cold: 4
-        Piercing: 4
+        Piercing: 6
   - type: Sprite
     sprite: _CP14/Effects/Magic/ice_shard.rsi
     layers:

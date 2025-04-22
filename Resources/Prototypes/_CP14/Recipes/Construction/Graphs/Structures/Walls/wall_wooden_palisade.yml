@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: CP14WallWoodenPalisade
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14WallWoodenPalisade
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+              doAfter: 2
+    - node: CP14WallWoodenPalisade
+      entity: CP14WallWoodenPalisade
