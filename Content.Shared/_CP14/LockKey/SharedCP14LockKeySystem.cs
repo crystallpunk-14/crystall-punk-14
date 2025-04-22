@@ -40,7 +40,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
         SubscribeLocalEvent<CP14KeyComponent, GetVerbsEvent<UtilityVerb>>(OnKeyToLockVerb);
 
-        SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(OnLockPickToLockVerb);
+        SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(GetLockpickVerbs);
         SubscribeLocalEvent<CP14LockComponent, LockPickHackDoAfterEvent>(OnLockHacked);
     }
 
@@ -95,7 +95,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnLockPickToLockVerb(Entity<CP14LockpickComponent> lockPick, ref GetVerbsEvent<UtilityVerb> args)
+    private void GetLockpickVerbs(Entity<CP14LockpickComponent> lockPick, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -103,7 +103,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!_lockQuery.TryComp(args.Target, out var lockComp) || !lockComp.Locked)
             return;
 
-        if (!_cp14LockQuery.TryComp(args.Target, out _))
+        if (!_cp14LockQuery.HasComp(args.Target))
             return;
 
         var target = args.Target;

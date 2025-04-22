@@ -31,4 +31,10 @@ public sealed partial class CP14LockComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<CP14LockTypePrototype>? AutoGenerateShape = null;
+
+    /// <summary>
+    /// If not null, the lock will automatically generate a random shape on initialization with selected numbers of elements. Useful for random dungeons for example.
+    /// </summary>
+    [DataField]
+    public int? AutoGenerateRandomShape = null;
 }

@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Text;
 using Content.Server.Labels;
 using Content.Shared._CP14.LockKey;
 using Content.Shared._CP14.LockKey.Components;
@@ -49,6 +50,10 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         {
             SetShape(lockEnt, lockEnt.Comp.AutoGenerateShape.Value);
         }
+        else if (lockEnt.Comp.AutoGenerateRandomShape != null)
+        {
+            SetRandomShape(lockEnt, lockEnt.Comp.AutoGenerateRandomShape.Value);
+        }
     }
     #endregion
 
@@ -61,14 +66,14 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         if (key.Comp.LockShape == null)
             return;
 
-        var markup = Loc.GetString("cp14-lock-examine-key", ("item", MetaData(key).EntityName));
-        markup += " (";
+        var sb = new StringBuilder(Loc.GetString("cp14-lock-examine-key", ("item", MetaData(key).EntityName)));
+        sb.Append(" (");
         foreach (var item in key.Comp.LockShape)
         {
-            markup += $"{item} ";
+            sb.Append($"{item} ");
         }
-        markup += ")";
-        args.PushMarkup(markup);
+        sb.Append(")");
+        args.PushMarkup(sb.ToString());
     }
 
     private List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
@@ -97,6 +102,15 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         var indexedType = _proto.Index(type);
         if (indexedType.Name is not null)
             _label.Label(lockEnt, Loc.GetString(indexedType.Name.Value));
+    }
+
+    public void SetRandomShape(Entity<CP14LockComponent> keyEnt, int complexity)
+    {
+        keyEnt.Comp.LockShape = new List<int>();
+        for (var i = 0; i < complexity; i++)
+        {
+            keyEnt.Comp.LockShape.Add(_random.Next(-SharedCP14LockKeySystem.DepthComplexity, SharedCP14LockKeySystem.DepthComplexity));
+        }
     }
 
     private List<int> GenerateNewUniqueLockData(ProtoId<CP14LockTypePrototype> category)
