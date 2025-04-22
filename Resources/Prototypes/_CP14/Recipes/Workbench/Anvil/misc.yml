@@ -193,3 +193,44 @@
     stack: CP14IronBar
     count: 2
   result: CP14ClothingMaskSteelMask
+
+- type: CP14Recipe
+  id: CP14KeyCopperBlank
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14KeyCopperBlank
+
+- type: CP14Recipe
+  id: CP14KeyIronBlank
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14KeyIronBlank
+
+- type: CP14Recipe
+  id: CP14KeyGoldBlank
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14KeyGoldBlank
+
+- type: CP14Recipe
+  id: CP14KeyMithrilBlank
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14KeyMithrilBlank
+
