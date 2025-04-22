@@ -2,16 +2,17 @@
   id: BaseBladePickaxe
   modifiers:
   - !type:EditMeleeWeapon
-    attackRateMultiplier: 0.75
+    attackRateMultiplier: 0.55
     angleMultiplier: 1.2
     bonusDamage:
       types:
-        Piercing: 9
+        Piercing: 10
+        Structural: 6
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Piercing: 4
-        Structural: 14
+        Piercing: 8
+        Structural: 17
   - !type:EditItem
     newSize: Normal
     adjustShape: 1, 1

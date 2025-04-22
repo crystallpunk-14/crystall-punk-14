@@ -70,7 +70,7 @@
     state: closed
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: CP14Metallic
   - type: Destructible
     thresholds:
     - trigger:

@@ -32,9 +32,13 @@
           !type:PhysShapeAabb
           bounds: "-0.3,-0.3,0.3,0.3"
         density: 1000
+        mask:
+        - Impassable
         layer:
         - LowImpassable
         - MidImpassable
+        - HighImpassable
+        - InteractImpassable
   - type: IconSmooth
     key: CP14fencebig
     base: fence
