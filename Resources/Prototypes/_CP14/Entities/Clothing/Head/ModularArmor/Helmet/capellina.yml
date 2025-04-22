@@ -1,0 +1,143 @@
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ModularHeadBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: CP14LabeledRenaming
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - Visor
+    - Aventail
+
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetIronCapellina
+  name: iron capellina
+  description: Protects against large object strikes to the head.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.93
+        Slash: 0.94
+        Piercing: 0.97
+  - type: ClothingSpeedModifier
+    walkModifier: 0.97
+    sprintModifier: 0.97
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetIronCapellina
+  - type: CP14MagicManacostModify
+    globalModifier: 1.05
+  - type: CP14Material
+    materials:
+      CP14Iron: 20
+
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetGoldCapellina
+  name: golden capellina
+  description: Protects against large object strikes to the head.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#ffe269"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.96
+        Slash: 0.98
+        Piercing: 0.99
+  - type: ClothingSpeedModifier
+    walkModifier: 0.96
+    sprintModifier: 0.96
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetGoldCapellina
+  - type: CP14MagicManacostModify
+    globalModifier: 1.01
+  - type: CP14Material
+    materials:
+      CP14Gold: 20
+
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetCopperCapellina
+  name: copper capellina
+  description: Protects against large object strikes to the head.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+    layers:
+    - state: icon
+      color: "#e28f08"
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#e28f08"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.96
+        Piercing: 0.98
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.98
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetCopperCapellina
+  - type: CP14MagicManacostModify
+    globalModifier: 1.03
+  - type: CP14Material
+    materials:
+      CP14Copper: 20
+
+- type: entity
+  parent: CP14ModularHeadBase
+  id: CP14HelmetMithrilCapellina
+  name: mithril capellina
+  description: Protects against large object strikes to the head.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+    layers:
+    - state: icon
+      color: "#38f0b3"
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/ModularArmor/Helmet/capellina.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#38f0b3"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.91
+        Slash: 0.92
+        Piercing: 0.95
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.98
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14HelmetMithrilCapellina
+  - type: CP14MagicManacostModify
+    globalModifier: 0.98
+  - type: CP14Material
+    materials:
+      CP14Mithril: 20

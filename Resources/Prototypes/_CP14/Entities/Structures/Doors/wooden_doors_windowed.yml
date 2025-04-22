@@ -27,10 +27,17 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 250
+        damage: 75
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WoodenDoorFrame
   - type: Construction
     graph: CP14WoodenDoor
     node: CP14WoodenDoorWindowed

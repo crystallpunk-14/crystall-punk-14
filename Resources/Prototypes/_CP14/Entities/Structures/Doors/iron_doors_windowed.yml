@@ -21,15 +21,17 @@
       path: /Audio/Effects/door_close.ogg
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: CP14MetallicStructural
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500
+        damage: 75
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14IronDoorFrame
   - type: Construction
     graph: CP14IronDoor
     node: CP14IronDoor
