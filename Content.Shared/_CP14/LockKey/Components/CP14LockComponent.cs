@@ -1,3 +1,4 @@
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.LockKey.Components;
@@ -5,19 +6,19 @@ namespace Content.Shared._CP14.LockKey.Components;
 /// <summary>
 /// A component of a lock that stores its keyhole shape, complexity, and current state.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentState]
+[RegisterComponent, AutoGenerateComponentState(fieldDeltas: true), NetworkedComponent]
 public sealed partial class CP14LockComponent : Component
 {
     [DataField, AutoNetworkedField]
     public List<int>? LockShape = null;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float LockPickDamageChance = 0.2f;
 
     /// <summary>
     /// On which element of the shape sequence the lock is now located. It's necessary for the mechanics of breaking and entering.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int LockPickStatus = 0;
 
     /// <summary>

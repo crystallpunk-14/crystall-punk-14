@@ -5,6 +5,7 @@ using Content.Shared._CP14.LockKey;
 using Content.Shared._CP14.LockKey.Components;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
+using Content.Shared.Lock;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -89,6 +90,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     public void SetShape(Entity<CP14KeyComponent> keyEnt, ProtoId<CP14LockTypePrototype> type)
     {
         keyEnt.Comp.LockShape = GetKeyLockData(type);
+        DirtyField(keyEnt, keyEnt.Comp, nameof(CP14KeyComponent.LockShape));
 
         var indexedType = _proto.Index(type);
         if (indexedType.Name is not null)
@@ -102,15 +104,19 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         var indexedType = _proto.Index(type);
         if (indexedType.Name is not null)
             _label.Label(lockEnt, Loc.GetString(indexedType.Name.Value));
+
+        DirtyField(lockEnt, lockEnt.Comp, nameof(CP14LockComponent.LockShape));
     }
 
-    public void SetRandomShape(Entity<CP14LockComponent> keyEnt, int complexity)
+    public void SetRandomShape(Entity<CP14LockComponent> lockEnt, int complexity)
     {
-        keyEnt.Comp.LockShape = new List<int>();
+        lockEnt.Comp.LockShape = new List<int>();
         for (var i = 0; i < complexity; i++)
         {
-            keyEnt.Comp.LockShape.Add(_random.Next(-SharedCP14LockKeySystem.DepthComplexity, SharedCP14LockKeySystem.DepthComplexity));
+            lockEnt.Comp.LockShape.Add(_random.Next(-SharedCP14LockKeySystem.DepthComplexity, SharedCP14LockKeySystem.DepthComplexity));
         }
+
+        DirtyField(lockEnt, lockEnt.Comp, nameof(CP14LockComponent.LockShape));
     }
 
     private List<int> GenerateNewUniqueLockData(ProtoId<CP14LockTypePrototype> category)

@@ -93,3 +93,17 @@
   - type: Tag
     tags:
     - CP14Lockpick
+
+- type: entity
+  parent: BaseItem
+  id: CP14KeyFile
+  name: key file
+  description: A file, ideal for sharpening keys, and reshaping them.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    storedRotation: -45
+  - type: Sprite
+    sprite: _CP14/Objects/keys.rsi
+    state: file
+  - type: CP14KeyFile

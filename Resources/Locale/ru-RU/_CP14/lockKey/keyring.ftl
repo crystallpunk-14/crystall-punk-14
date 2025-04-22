@@ -1,4 +1,5 @@
 verb-categories-lock-pick = Взломать замок
+verb-categories-key-file = Подточить ключ
 
 cp14-lock-verb-lock-pick-use-text = Надавить:
 cp14-lock-verb-lock-pick-use-message = Если вы в правильной последовательности заденете зубчики замка, вы сможете разблокировать его.
@@ -21,3 +22,5 @@ cp14-lock-examine-lock-slot = Здесь висит {$lock}
 cp14-lock-examine-lock-lockpicked = {$lock} выглядит потрепанным.
 
 cp14-lock-examine-key = {$item} имеет зубцы следующей формы: 
+
+cp14-lock-key-file-use-hint = Сточить зубец: {$old} -> {$new}

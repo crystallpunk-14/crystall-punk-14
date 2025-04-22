@@ -35,6 +35,26 @@ namespace Content.Shared.Verbs
             IconsOnly = iconsOnly;
         }
 
+        //CP14 verbs
+        public static readonly VerbCategory CP14LockPick =
+            new("verb-categories-lock-pick", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
+        public static readonly VerbCategory CP14KeyFile =
+            new("verb-categories-key-file", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
+
+        public static readonly VerbCategory CP14ModularCraft =
+            new("verb-categories-modular-craft", "/Textures/Interface/AdminActions/unbolt.png");
+
+        public static readonly VerbCategory CP14RitualBook = new("cp14-verb-categories-ritual-book", null);
+
+        public static readonly VerbCategory CP14CurrencyConvert = new("cp14-verb-categories-currency-converter", null); //CP14
+
+        public static readonly VerbCategory CP14AdminSkillAdd =
+            new ("cp14-verb-categories-admin-skill-add", null, iconsOnly: true) { Columns = 6 };
+
+        public static readonly VerbCategory CP14AdminSkillRemove =
+            new ("cp14-verb-categories-admin-skill-remove", null, iconsOnly: true) { Columns = 6 };
+        //CP14 verbs
+
         public static readonly VerbCategory Admin =
             new("verb-categories-admin", "/Textures/Interface/character.svg.192dpi.png");
 
@@ -76,12 +96,6 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory InstrumentStyle =
             new("verb-categories-instrument-style", null);
 
-        public static readonly VerbCategory CP14LockPick =
-            new("verb-categories-lock-pick", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
-
-        public static readonly VerbCategory CP14ModularCraft =
-            new("verb-categories-modular-craft", "/Textures/Interface/AdminActions/unbolt.png");
-
         public static readonly VerbCategory ChannelSelect = new("verb-categories-channel-select", null);
 
         public static readonly VerbCategory SetSensor = new("verb-categories-set-sensor", null);
@@ -91,15 +105,5 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory SelectType = new("verb-categories-select-type", null);
 
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
-
-        public static readonly VerbCategory CP14RitualBook = new("cp14-verb-categories-ritual-book", null); //CP14
-
-        public static readonly VerbCategory CP14CurrencyConvert = new("cp14-verb-categories-currency-converter", null); //CP14
-
-        public static readonly VerbCategory CP14AdminSkillAdd =
-            new ("cp14-verb-categories-admin-skill-add", null, iconsOnly: true) { Columns = 6 }; //CP14
-
-        public static readonly VerbCategory CP14AdminSkillRemove =
-            new ("cp14-verb-categories-admin-skill-remove", null, iconsOnly: true) { Columns = 6 }; //CP14
     }
 }
