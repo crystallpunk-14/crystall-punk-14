@@ -24,140 +24,38 @@
     key: walls
 
 - type: entity
-  id: CP14WallStonebrick
-  name: stone brick wall
-  parent: CP14BaseWall
+  id: CP14BaseWallFrame
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  abstract: true
+  description: This wall is now in an indeterminate state between existence and non-existence.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
-  - type: IconSmooth
-    base: stonebricks
-  - type: Construction
-    graph: CP14WallStonebrick
-    node: WallStonebrick
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Rock
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 150
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14WallStonebrickCrushedMedium:
-            min: 1
-            max: 1
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/break_stone.ogg
-          params:
-            volume: -6
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: CP14WallpaperHolder
-
-- type: entity
-  id: CP14WallMarbleBrick
-  name: marble brick wall
-  parent: CP14BaseWall
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
-  - type: IconSmooth
-    base: stonebricks
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Rock
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/break_stone.ogg
-          params:
-            volume: -6
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Construction
-    graph: CP14WallMarbleBrick
-    node: CP14WallMarbleBrick
-  - type: CP14WallpaperHolder
-
-- type: entity
-  id: CP14WallBrownbrick
-  name: brick wall
-  parent: CP14BaseWall
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/bricks_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/bricks_wall.rsi
-  - type: IconSmooth
-    base: bricksA
-  - type: Appearance
-  - type: RandomIconSmooth
-    randomStates:
-    - bricksA
-    - bricksB
-  - type: CP14WallpaperHolder
-
-- type: entity
-  id: CP14WallWooden
-  name: wooden wall
-  parent:
-  - CP14BaseWall
-  - CP14BaseFlammableSpreading
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/wooden_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/wooden_wall.rsi
-  - type: IconSmooth
-    base: wood
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: CP14WoodStructural
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14FrameWooden:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: Construction
-    graph: CP14WallWood
-    node: WallWooden
-  - type: CP14WallpaperHolder
-
-- type: entity
-  id: CP14WallWoodenBirch
-  parent: CP14WallWooden
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
-  - type: Construction
-    graph: CP14WallWood
-    node: WallWoodenBirch
+    drawdepth: Mobs
+    snapCardinals: true
+  - type: PlacementReplacement
+    key: walls
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: SpriteFade
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
 
 - type: entity
   id: CP14WallWoodenPalisade
@@ -183,7 +81,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 300
+        damage: 100
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -200,49 +98,6 @@
     node: CP14WallWoodenPalisade
 
 - type: entity
-  id: CP14WallCardboard
-  name: cardboard Wall
-  description: A thin, flimsy wall made of paper and cardboard. Popular in warm countries.
-  parent:
-  - CP14WallWooden
-  - CP14BaseFlammableSpreadingStrong
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/cardboard_wall.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14FrameWooden:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: CP14WallpaperHolder
-
-- type: entity
-  id: CP14WallCyan
-  name: cyan wall
-  parent: CP14BaseWall
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Walls/cyan_wall.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Walls/cyan_wall.rsi
-  - type: IconSmooth
-    base: wall
-  - type: CP14WallpaperHolder
-
-- type: entity
   id: CP14WallSkulls
   name: skulls wall
   parent: CP14BaseWall
@@ -253,10 +108,20 @@
     sprite: _CP14/Structures/Walls/wall_of_skulls.rsi
   - type: IconSmooth
     base: skulls
-  - type: RandomIconSmooth
-    randomStates:
-    - skulls
-    - skullsA
-    - skullsB
-  - type: Appearance
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: CP14WallpaperHolder

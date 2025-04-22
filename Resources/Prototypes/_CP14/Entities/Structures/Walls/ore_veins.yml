@@ -29,8 +29,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14OreCopper1:
-            min: 1
-            max: 3
+            min: 3
+            max: 6
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
@@ -64,8 +64,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14OreIron1:
-            min: 1
-            max: 3
+            min: 3
+            max: 6
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
@@ -99,8 +99,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14OreGold1:
-            min: 1
-            max: 3
+            min: 3
+            max: 6
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
@@ -136,8 +136,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14OreMithril1:
-            min: 1
-            max: 3
+            min: 3
+            max: 6
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
