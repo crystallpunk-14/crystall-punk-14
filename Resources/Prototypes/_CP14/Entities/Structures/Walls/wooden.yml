@@ -115,7 +115,7 @@
     sprite: _CP14/Structures/Walls/wooden_wall_birch.rsi
   - type: Construction
     graph: CP14WallWoodenBirch
-    node: WallWoodenBirch
+    node: CP14WallWoodenBirch
   - type: Destructible
     thresholds:
     - trigger:
