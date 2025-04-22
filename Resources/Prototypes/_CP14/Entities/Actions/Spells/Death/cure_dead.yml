@@ -4,7 +4,7 @@
   description: You heal the target from all kinds of damage.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    sprite: _CP14/Actions/Spells/necromancy.rsi
     state: cure_dead
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.7

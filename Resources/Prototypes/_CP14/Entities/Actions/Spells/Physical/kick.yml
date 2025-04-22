@@ -65,8 +65,8 @@
   description: You perform an epic leg kick at your chosen object, pushing it away from you.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
-    state: kick
+    sprite: _CP14/Actions/Spells/_CP14/Actions/Spells/physical.rsi
+    state: kick_skull
   - type: CP14MagicEffectStaminaCost
     stamina: 35
   - type: CP14MagicEffect

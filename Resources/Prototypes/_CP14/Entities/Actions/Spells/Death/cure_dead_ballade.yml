@@ -4,7 +4,7 @@
   description: Your music is filled with healing magic, fast healing all the creatures around you.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/skeleton_discipline.rsi
+    sprite: _CP14/Actions/Spells/necromancy.rsi
     state: dead_heal_ballade
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1.0
