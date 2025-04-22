@@ -68,6 +68,9 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!_cp14LockQuery.TryComp(args.Target, out var cp14LockComp))
             return;
 
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         foreach (var (key, _) in storageComp.StoredItems)
         {
             if (!_keyQuery.TryComp(key, out var keyComp))
@@ -101,6 +104,9 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!_cp14LockQuery.TryComp(args.Target, out var cp14LockComp))
             return;
 
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         TryUseKeyOnLock(args.User, new Entity<CP14LockComponent>(args.Target.Value, cp14LockComp), key);
         args.Handled = true;
     }
@@ -119,9 +125,12 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!TryComp<CP14LockpickComponent>(args.Used, out var lockPick))
             return;
 
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         if (args.Height == ent.Comp.LockShape[ent.Comp.LockPickStatus]) //Success
         {
-            _audio.PlayPvs(lockPick.SuccessSound, ent);
+            _audio.PlayPredicted(lockPick.SuccessSound, ent, args.User);
             ent.Comp.LockPickStatus++;
             DirtyField(ent, ent.Comp, nameof(CP14LockComponent.LockPickStatus));
             if (ent.Comp.LockPickStatus >= ent.Comp.LockShape.Count) // Final success
@@ -129,12 +138,10 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                 if (lockComp.Locked)
                 {
                     _lock.TryUnlock(ent, args.User, lockComp);
-                    if (_timing.IsFirstTimePredicted)
-                    {
-                        _popup.PopupPredicted(Loc.GetString("cp14-lock-unlock", ("lock", MetaData(ent).EntityName)),
-                            ent,
-                            args.User);
-                    }
+                    _popup.PopupPredicted(Loc.GetString("cp14-lock-unlock", ("lock", MetaData(ent).EntityName)),
+                        ent,
+                        args.User);
+
                     ent.Comp.LockPickStatus = 0;
                     DirtyField(ent, ent.Comp, nameof(CP14LockComponent.LockPickStatus));
                     return;
@@ -142,55 +149,47 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
 
                 _lock.TryLock(ent, args.User, lockComp);
 
-                if (_timing.IsFirstTimePredicted)
-                {
-                    _popup.PopupPredicted(Loc.GetString("cp14-lock-lock", ("lock", MetaData(ent).EntityName)),
-                        ent,
-                        args.User);
-                    ent.Comp.LockPickStatus = 0;
-                }
+                _popup.PopupPredicted(Loc.GetString("cp14-lock-lock", ("lock", MetaData(ent).EntityName)),
+                    ent,
+                    args.User);
+                ent.Comp.LockPickStatus = 0;
+
                 DirtyField(ent, ent.Comp, nameof(CP14LockComponent.LockPickStatus));
                 return;
             }
 
-            if (_timing.IsFirstTimePredicted)
-                _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-success"), ent, args.User);
+            _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-success"), ent, args.User);
         }
         else //Fail
         {
-            _audio.PlayPvs(lockPick.FailSound, ent);
-            if (_random.Prob(ent.Comp.LockPickDamageChance)) // Damage lock pick
+            _audio.PlayPredicted(lockPick.FailSound, ent, args.User);
+            if (_net.IsServer)
             {
-                lockPick.Health--;
-                if (lockPick.Health > 0)
+                if (_random.Prob(ent.Comp.LockPickDamageChance)) // Damage lock pick
                 {
-                    if (_timing.IsFirstTimePredicted)
+                    lockPick.Health--;
+                    if (lockPick.Health > 0)
                     {
-                        _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-failed-damage",
+                        _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed-damage",
                                 ("lock", MetaData(ent).EntityName)),
                             ent,
                             args.User);
                     }
+                    else
+                    {
+                        _popup.PopupEntity(
+                            Loc.GetString("cp14-lock-lock-pick-failed-break", ("lock", MetaData(ent).EntityName)),
+                            ent,
+                            args.User);
+                        QueueDel(args.Used);
+                    }
                 }
                 else
                 {
-                    if (_timing.IsFirstTimePredicted)
-                    {
-                        _popup.PopupClient(
-                        Loc.GetString("cp14-lock-lock-pick-failed-break", ("lock", MetaData(ent).EntityName)),
+                    _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-failed", ("lock", MetaData(ent).EntityName)),
                         ent,
                         args.User);
-
-                    }
-                    if (_net.IsServer)
-                        QueueDel(args.Used);
                 }
-            }
-            else
-            {
-                _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-failed", ("lock", MetaData(ent).EntityName)),
-                    ent,
-                    args.User);
             }
 
             ent.Comp.LockPickedFailMarkup = true;
@@ -253,9 +252,16 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                     if (keyComp.LockShape[i1] <= -DepthComplexity)
                         return;
 
+                    if (!_timing.IsFirstTimePredicted)
+                        return;
+
+                    if (!_net.IsServer)
+                        return;
+
                     keyComp.LockShape[i1]--;
                     DirtyField(target, keyComp, nameof(CP14KeyComponent.LockShape));
-                    //_popup.PopupEntity(Loc.GetString("cp14-lock-key-file-use"), target, user);
+                    _audio.PlayPvs(ent.Comp.SharpeningSound, Transform(target).Coordinates);
+                    Spawn("EffectSparks", Transform(target).Coordinates);
                 },
                 IconEntity = GetNetEntity(ent),
                 Category = VerbCategory.CP14KeyFile,
@@ -334,27 +340,16 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         {
             if (lockComp.Locked)
             {
-                if (_lock.TryUnlock(target, user) && _timing.IsFirstTimePredicted)
-                {
-                    _popup.PopupPredicted(Loc.GetString("cp14-lock-unlock", ("lock", MetaData(target).EntityName)),
-                        target,
-                        user);
-                }
+                _lock.TryUnlock(target, user);
             }
             else
             {
-                if (_lock.TryLock(target, user) && _timing.IsFirstTimePredicted)
-                {
-                    _popup.PopupPredicted(Loc.GetString("cp14-lock-lock", ("lock", MetaData(target).EntityName)),
-                        target,
-                        user);
-                }
+                _lock.TryLock(target, user);
             }
         }
         else
         {
-            if (_timing.IsFirstTimePredicted)
-                _popup.PopupPredicted(Loc.GetString("cp14-lock-key-no-fit"), target, user);
+            _popup.PopupClient(Loc.GetString("cp14-lock-key-no-fit"), target, user);
         }
     }
 }
