@@ -80,7 +80,7 @@
     - GreaveMithrilPlate
 
 - type: entity
-  id: CP14ArmorIronСhainmailPresets
+  id: CP14ArmorIronChainmailPresets
   parent: CP14ArmorIronChainmail
   name: full iron chainmail
   description: Full iron ringed armour, lightweight and has decent protection.
@@ -98,7 +98,7 @@
     - GreaveIronChainmail
 
 - type: entity
-  id: CP14ArmorMithrilСhainmailPresets
+  id: CP14ArmorMithrilChainmailPresets
   parent: CP14ArmorMithrilChainmail
   name: full mithril chainmail
   description: A full mithril armour that may have been slowly and painstakingly assembled by dwarven smiths. A most valuable piece of work.

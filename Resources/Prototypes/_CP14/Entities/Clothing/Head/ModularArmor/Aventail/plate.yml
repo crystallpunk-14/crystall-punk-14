@@ -1,0 +1,70 @@
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailIronPlate
+  name: iron aventail plate
+  description: An iron sheet aventail to protect the neck from blows and piercing in vital places. Uncomfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailIronPlate
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailGoldPlate
+  name: golden aventail plate
+  description: An golden sheet aventail to protect the neck from blows and piercing in vital places. Uncomfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailGoldPlate
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailCopperPlate
+  name: copper aventail plate
+  description: An copper sheet aventail to protect the neck from blows and piercing in vital places. Uncomfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+    layers:
+    - state: icon
+      color: "#e28f08"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailCopperPlate
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailMithrilPlate
+  name: mithril aventail plate
+  description: An mithril sheet aventail to protect the neck from blows and piercing in vital places. Uncomfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+    layers:
+    - state: icon
+      color: "#38f0b3"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailMithrilPlate
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

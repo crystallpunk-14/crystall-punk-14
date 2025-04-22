@@ -1,0 +1,70 @@
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorIronPlate
+  name: iron visor plate
+  description: A iron plate visor that protects the face from nasty damage and leaves the wearer looking all that good-looking. Not as comfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorIronPlate
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorGoldPlate
+  name: golden visor plate
+  description: A golden plate visor that protects the face from nasty damage and leaves the wearer looking all that good-looking. Very uncomfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorGoldPlate
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorCopperPlate
+  name: copper visor plate
+  description: A copper plate visor that protects the face from nasty damage and leaves the wearer looking all that good-looking. Not as comfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+    layers:
+    - state: icon
+      color: "#e28f08"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorCopperPlate
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorMithrilPlate
+  name: mithril visor plate
+  description: A mithril plate visor that protects the face from nasty damage and leaves the wearer looking all that good-looking.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/plate.rsi
+    layers:
+    - state: icon
+      color: "#38f0b3"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorMithrilPlate
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

@@ -25,3 +25,11 @@
 - type: modularSlot
   id: Greave
   name: cp14-modular-slot-greave
+
+- type: modularSlot
+  id: Visor
+  name: cp14-modular-slot-visor
+
+- type: modularSlot
+  id: Aventail
+  name: cp14-modular-slot-aventail
