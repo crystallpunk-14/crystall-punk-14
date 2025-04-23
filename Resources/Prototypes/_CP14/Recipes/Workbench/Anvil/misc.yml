@@ -224,3 +224,43 @@
     count: 1
   result: CP14KeyFile
 
+- type: CP14Recipe
+  id: CP14LockCopper
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14LockCopper
+
+- type: CP14Recipe
+  id: CP14LockIron
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14LockIron
+
+- type: CP14Recipe
+  id: CP14LockGold
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14LockGold
+
+- type: CP14Recipe
+  id: CP14LockMithril
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14LockMithril
+

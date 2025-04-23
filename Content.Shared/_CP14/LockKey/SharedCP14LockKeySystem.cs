@@ -49,6 +49,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         SubscribeLocalEvent<CP14KeyComponent, GetVerbsEvent<UtilityVerb>>(GetKeysVerbs);
         SubscribeLocalEvent<CP14KeyFileComponent, GetVerbsEvent<UtilityVerb>>(GetKeyFileVerbs);
         SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(GetLockpickVerbs);
+        SubscribeLocalEvent<CP14LockEditerComponent, GetVerbsEvent<UtilityVerb>>(GetLockEditerVerbs);
 
         SubscribeLocalEvent<CP14LockComponent, LockPickHackDoAfterEvent>(OnLockHacked);
     }
@@ -194,7 +195,6 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                 }
             }
 
-            ent.Comp.LockPickedFailMarkup = true;
             ent.Comp.LockPickStatus = 0;
             DirtyField(ent, ent.Comp, nameof(CP14LockComponent.LockPickStatus));
         }
@@ -232,9 +232,6 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
 
     private void GetKeyFileVerbs(Entity<CP14KeyFileComponent> ent, ref GetVerbsEvent<UtilityVerb> args)
     {
-        if (TryComp<UseDelayComponent>(ent, out var useDelayComp) && _useDelay.IsDelayed((ent, useDelayComp)))
-            return;
-
         if (!args.CanInteract || !args.CanAccess)
             return;
 
@@ -261,12 +258,16 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                     if (!_timing.IsFirstTimePredicted)
                         return;
 
+                    if (TryComp<UseDelayComponent>(ent, out var useDelayComp) && _useDelay.IsDelayed((ent, useDelayComp)))
+                        return;
+
                     if (!_net.IsServer)
                         return;
 
+
                     keyComp.LockShape[i1]--;
                     DirtyField(target, keyComp, nameof(CP14KeyComponent.LockShape));
-                    _audio.PlayPvs(ent.Comp.SharpeningSound, Transform(target).Coordinates);
+                    _audio.PlayPvs(ent.Comp.UseSound, Transform(target).Coordinates);
                     Spawn("EffectSparks", Transform(target).Coordinates);
                     var shapeString = "[" + string.Join(", ", keyComp.LockShape) + "]";
                     _popup.PopupEntity(Loc.GetString("cp14-lock-key-file-updated") + shapeString, target, user);
@@ -327,6 +328,58 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
 
             args.Verbs.Add(verb);
         }
+    }
+
+    private void GetLockEditerVerbs(Entity<CP14LockEditerComponent> ent, ref GetVerbsEvent<UtilityVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        if (!_cp14LockQuery.TryComp(args.Target, out var lockComp) || !lockComp.CanEmbedded)
+            return;
+
+        if (lockComp.LockShape is null)
+            return;
+
+        var target = args.Target;
+        var user = args.User;
+
+        var lockShapeCount = lockComp.LockShape.Count;
+        for (var i = 0; i <= lockShapeCount - 1; i++)
+        {
+            var i1 = i;
+            var verb = new UtilityVerb
+            {
+                Act = () =>
+                {
+                    if (!_timing.IsFirstTimePredicted)
+                        return;
+
+                    if (TryComp<UseDelayComponent>(ent, out var useDelayComp) && _useDelay.IsDelayed((ent, useDelayComp)))
+                        return;
+
+                    if (!_net.IsServer)
+                        return;
+
+                    lockComp.LockShape[i1]--;
+                    if (lockComp.LockShape[i1] < -DepthComplexity)
+                        lockComp.LockShape[i1] = DepthComplexity; //Cycle back to max
+
+                    DirtyField(target, lockComp, nameof(CP14KeyComponent.LockShape));
+                    _audio.PlayPvs(ent.Comp.UseSound, Transform(target).Coordinates);
+                    var shapeString = "[" + string.Join(", ", lockComp.LockShape) + "]";
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-editor-updated") + shapeString, target, user);
+                    _useDelay.TryResetDelay(ent);
+                },
+                IconEntity = GetNetEntity(ent),
+                Category = VerbCategory.CP14EditLock,
+                Priority = -i,
+                Text = Loc.GetString("cp14-lock-editor-use-hint", ("num", i)),
+                CloseMenu = false,
+            };
+            args.Verbs.Add(verb);
+        }
+
     }
 
     private void TryUseKeyOnLock(EntityUid user, Entity<CP14LockComponent> target, Entity<CP14KeyComponent> key)

@@ -2,3 +2,12 @@
   parent: Screwdriver
   id: CP14Screwdriver
   categories: [ ForkFiltered ]
+  components:
+  - type: CP14LockEditer
+  - type: UseDelay
+    delay: 1.0
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Piercing: 4

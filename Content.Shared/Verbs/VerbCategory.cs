@@ -40,6 +40,8 @@ namespace Content.Shared.Verbs
             new("verb-categories-lock-pick", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
         public static readonly VerbCategory CP14KeyFile =
             new("verb-categories-key-file", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
+        public static readonly VerbCategory CP14EditLock =
+            new("verb-categories-edit-lock", "/Textures/Interface/VerbIcons/lock.svg.192dpi.png");
 
         public static readonly VerbCategory CP14ModularCraft =
             new("verb-categories-modular-craft", "/Textures/Interface/AdminActions/unbolt.png");

@@ -1,5 +1,6 @@
 verb-categories-lock-pick = Pick the lock
 verb-categories-key-file = Modify key
+verb-categories-edit-lock = Edit lock
 
 cp14-lock-verb-lock-pick-use-text = Push:
 cp14-lock-verb-lock-pick-use-message = If you engage the lock prongs in the correct sequence, you can unlock the lock.
@@ -22,3 +23,6 @@ cp14-lock-examine-key = The {$item} has prongs of the following shape:
 
 cp14-lock-key-file-use-hint = Grind tooth: {$num}
 cp14-lock-key-file-updated = New key shape:
+
+cp14-lock-editor-use-hint = Edit tooth: {$num}
+cp14-lock-editor-updated = New lock shape:

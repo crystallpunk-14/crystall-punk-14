@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BaseLockpick
+  name: lockpick
+  description: A thief's tool that, with proper skill and skill, allows you to pick any lock.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: Sprite
+    sprite: _CP14/Objects/keys.rsi
+    state: lockpick
+  - type: CP14Lockpick
+  - type: Tag
+    tags:
+    - CP14Lockpick
+
+- type: entity
+  parent: BaseItem
+  id: CP14KeyFile
+  name: key file
+  description: A file, ideal for sharpening keys, and reshaping them.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    storedRotation: -45
+  - type: Sprite
+    sprite: _CP14/Objects/keys.rsi
+    state: file
+  - type: CP14KeyFile
+  - type: UseDelay
+    delay: 1.0
