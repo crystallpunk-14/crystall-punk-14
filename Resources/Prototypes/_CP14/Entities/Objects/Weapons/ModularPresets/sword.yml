@@ -68,6 +68,11 @@
   suffix: Reinforced
   description: Monstrous weapons of bone.
   components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeBoneSword
@@ -80,6 +85,11 @@
   suffix: Reinforced
   description: Monstrous weapons of bone.
   components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeBoneSword
