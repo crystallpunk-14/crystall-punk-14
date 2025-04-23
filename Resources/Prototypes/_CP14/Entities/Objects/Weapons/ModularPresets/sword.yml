@@ -63,7 +63,7 @@
 
 - type: entity
   id: CP14ModularSkeletonHalberdUpgrade
-  parent: CP14ModularGripWooden
+  parent: CP14ModularGripWoodenLong
   name: bone halberd
   suffix: Reinforced
   description: Monstrous weapons of bone.
