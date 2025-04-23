@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Text;
 using Content.Shared._CP14.LockKey.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -7,6 +8,7 @@ using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Content.Shared.Doors.Components;
+using Content.Shared.Examine;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -52,6 +54,9 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         SubscribeLocalEvent<CP14LockEditerComponent, GetVerbsEvent<UtilityVerb>>(GetLockEditerVerbs);
 
         SubscribeLocalEvent<CP14LockComponent, LockPickHackDoAfterEvent>(OnLockHacked);
+
+        SubscribeLocalEvent<CP14KeyComponent, ExaminedEvent>(OnKeyExamine);
+        SubscribeLocalEvent<CP14LockComponent, ExaminedEvent>(OnLockExamine);
     }
 
     private void OnKeyRingInteract(Entity<CP14KeyRingComponent> keyring, ref AfterInteractEvent args)
@@ -189,7 +194,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                 }
                 else
                 {
-                    _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-failed", ("lock", MetaData(ent).EntityName)),
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed", ("lock", MetaData(ent).EntityName)),
                         ent,
                         args.User);
                 }
@@ -409,6 +414,47 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         {
             _popup.PopupClient(Loc.GetString("cp14-lock-key-no-fit"), target, user);
         }
+    }
+
+    private void OnKeyExamine(Entity<CP14KeyComponent> ent, ref ExaminedEvent args)
+    {
+        var parent = Transform(ent).ParentUid;
+        if (parent != args.Examiner)
+            return;
+
+        if (ent.Comp.LockShape == null)
+            return;
+
+        var sb = new StringBuilder(Loc.GetString("cp14-lock-examine-key", ("item", MetaData(ent).EntityName)));
+        sb.Append(" (");
+        foreach (var item in ent.Comp.LockShape)
+        {
+            sb.Append($"{item} ");
+        }
+        sb.Append(")");
+        args.PushMarkup(sb.ToString());
+    }
+
+    private void OnLockExamine(Entity<CP14LockComponent> ent, ref ExaminedEvent args)
+    {
+        if (!ent.Comp.CanEmbedded)
+            return;
+
+        var parent = Transform(ent).ParentUid;
+        if (parent != args.Examiner)
+            return;
+
+        if (ent.Comp.LockShape == null)
+            return;
+
+        var sb = new StringBuilder(Loc.GetString("cp14-lock-examine-key", ("item", MetaData(ent).EntityName)));
+        sb.Append(" (");
+        foreach (var item in ent.Comp.LockShape)
+        {
+            sb.Append($"{item} ");
+        }
+        sb.Append(")");
+        args.PushMarkup(sb.ToString());
     }
 }
 

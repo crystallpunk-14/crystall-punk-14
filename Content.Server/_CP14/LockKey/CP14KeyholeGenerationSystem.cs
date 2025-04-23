@@ -1,11 +1,8 @@
 using System.Linq;
-using System.Text;
 using Content.Server.Labels;
 using Content.Shared._CP14.LockKey;
 using Content.Shared._CP14.LockKey.Components;
-using Content.Shared.Examine;
 using Content.Shared.GameTicking;
-using Content.Shared.Lock;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -17,7 +14,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly LabelSystem _label = default!;
 
-    private Dictionary<ProtoId<CP14LockTypePrototype>, List<int>> _roundKeyData = new();
+    private Dictionary<ProtoId<CP14LockTypePrototype>, List<int>> _roundKeyData = new(); //TODO: it won't survive saving and loading. This data must be stored in some component.
 
     public override void Initialize()
     {
@@ -27,8 +24,6 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
 
         SubscribeLocalEvent<CP14LockComponent, MapInitEvent>(OnLockInit);
         SubscribeLocalEvent<CP14KeyComponent, MapInitEvent>(OnKeyInit);
-
-        SubscribeLocalEvent<CP14KeyComponent, ExaminedEvent>(OnKeyExamine);
     }
 
     #region Init
@@ -57,25 +52,6 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         }
     }
     #endregion
-
-    private void OnKeyExamine(Entity<CP14KeyComponent> key, ref ExaminedEvent args)
-    {
-        var parent = Transform(key).ParentUid;
-        if (parent != args.Examiner)
-            return;
-
-        if (key.Comp.LockShape == null)
-            return;
-
-        var sb = new StringBuilder(Loc.GetString("cp14-lock-examine-key", ("item", MetaData(key).EntityName)));
-        sb.Append(" (");
-        foreach (var item in key.Comp.LockShape)
-        {
-            sb.Append($"{item} ");
-        }
-        sb.Append(")");
-        args.PushMarkup(sb.ToString());
-    }
 
     private List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
     {
