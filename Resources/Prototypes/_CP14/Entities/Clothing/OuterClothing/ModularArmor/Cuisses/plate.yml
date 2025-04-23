@@ -40,7 +40,7 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesGoldPlate
@@ -58,7 +58,7 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesCopperPlate
@@ -76,7 +76,7 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Cuisses/Cuirass/cuirass.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesMithrilPlate

@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 247.2.0
+  engineVersion: 251.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/03/2025 20:01:58
-  entityCount: 467
+  time: 04/16/2025 14:42:51
+  entityCount: 465
 maps:
 - 2
 grids:
@@ -43,18 +43,15 @@ entities:
       data: {}
     - type: CP14CloudShadows
     - type: MapLight
-    - type: LightCycle
+      ambientLightColor: '#DDDDDDFF'
     - type: SunShadow
-    - type: SunShadowCycle
+      alpha: 0.8
+      direction: 1,-1.5
     - type: Biome
       forcedMarkerLayers: []
       markerLayers: []
       loadedMarkers: {}
       pendingMarkers: {}
-      loadedChunks: []
-      entities: {}
-      decals: {}
-      modifiedTiles: {}
       template: CP14SandOceanFill
       layers: []
     - type: MapAtmosphere
@@ -117,6 +114,7 @@ entities:
       angularDamping: 0.05
       linearDamping: 0.05
       fixedRotation: False
+      canCollide: False
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
@@ -152,6 +150,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -8.5,3.5
+      parent: 2
+- proto: CP14AlchemyFurnaceDebug
+  entities:
+  - uid: 301
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -10.5,3.5
       parent: 2
 - proto: CP14AlchemySolutionCleaner
   entities:
@@ -291,6 +297,30 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.0021405,5.4289904
       parent: 2
+- proto: CP14BaseSharpeningStone
+  entities:
+  - uid: 295
+    components:
+    - type: Transform
+      pos: 7.7443175,4.699526
+      parent: 2
+  - uid: 296
+    components:
+    - type: Transform
+      pos: 7.7755675,4.933901
+      parent: 2
+  - uid: 297
+    components:
+    - type: Transform
+      pos: 7.8068175,5.090151
+      parent: 2
+- proto: CP14BaseSharpeningStoneStructure
+  entities:
+  - uid: 298
+    components:
+    - type: Transform
+      pos: 7.5,-2.5
+      parent: 2
 - proto: CP14BaseShield
   entities:
   - uid: 403
@@ -328,20 +358,6 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-9.5
-      parent: 2
-- proto: CP14WoodenChest
-  entities:
-  - uid: 205
-    components:
-    - type: Transform
-      pos: 4.5,5.5
-      parent: 2
-- proto: CP14WoodenChestFilledFarmSeeds
-  entities:
-  - uid: 290
-    components:
-    - type: Transform
-      pos: -13.5,3.5
       parent: 2
 - proto: CP14CashConverter
   entities:
@@ -1580,6 +1596,13 @@ entities:
     - type: Transform
       pos: -9.751752,-4.1693068
       parent: 2
+- proto: CP14Nail50
+  entities:
+  - uid: 294
+    components:
+    - type: Transform
+      pos: 3.585257,-4.25154
+      parent: 2
 - proto: CP14OreCopper10
   entities:
   - uid: 350
@@ -1655,68 +1678,6 @@ entities:
     components:
     - type: Transform
       pos: -12.42116,-7.515691
-      parent: 2
-- proto: CP14SeedbedWooden
-  entities:
-  - uid: 291
-    components:
-    - type: Transform
-      pos: -11.5,1.5
-      parent: 2
-  - uid: 292
-    components:
-    - type: Transform
-      pos: -11.5,2.5
-      parent: 2
-  - uid: 293
-    components:
-    - type: Transform
-      pos: -12.5,1.5
-      parent: 2
-  - uid: 294
-    components:
-    - type: Transform
-      pos: -12.5,2.5
-      parent: 2
-  - uid: 295
-    components:
-    - type: Transform
-      pos: -13.5,1.5
-      parent: 2
-  - uid: 296
-    components:
-    - type: Transform
-      pos: -13.5,2.5
-      parent: 2
-  - uid: 297
-    components:
-    - type: Transform
-      pos: -13.5,5.5
-      parent: 2
-  - uid: 298
-    components:
-    - type: Transform
-      pos: -13.5,4.5
-      parent: 2
-  - uid: 299
-    components:
-    - type: Transform
-      pos: -12.5,5.5
-      parent: 2
-  - uid: 300
-    components:
-    - type: Transform
-      pos: -12.5,4.5
-      parent: 2
-  - uid: 301
-    components:
-    - type: Transform
-      pos: -11.5,5.5
-      parent: 2
-  - uid: 302
-    components:
-    - type: Transform
-      pos: -11.5,4.5
       parent: 2
 - proto: CP14SpawnEssenceNodeRandom
   entities:
@@ -2350,6 +2311,30 @@ entities:
       parent: 2
 - proto: CP14TradingBoardBase
   entities:
+  - uid: 1
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -9.5,11.5
+      parent: 2
+  - uid: 67
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,11.5
+      parent: 2
+  - uid: 291
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -9.5,7.5
+      parent: 2
+  - uid: 299
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,7.5
+      parent: 2
   - uid: 418
     components:
     - type: Transform
@@ -2361,6 +2346,34 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 0.5,11.5
+      parent: 2
+- proto: CP14TradingPortalBradFamily
+  entities:
+  - uid: 293
+    components:
+    - type: Transform
+      pos: -7.5,11.5
+      parent: 2
+- proto: CP14TradingPortalHelmirWeapon
+  entities:
+  - uid: 292
+    components:
+    - type: Transform
+      pos: -10.5,11.5
+      parent: 2
+- proto: CP14TradingPortalSpiceStream
+  entities:
+  - uid: 68
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -10.5,7.5
+      parent: 2
+  - uid: 300
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,7.5
       parent: 2
 - proto: CP14VialMedium
   entities:
@@ -2939,6 +2952,20 @@ entities:
     - type: Transform
       pos: 4.5,-0.5
       parent: 2
+- proto: CP14WoodenChest
+  entities:
+  - uid: 205
+    components:
+    - type: Transform
+      pos: 4.5,5.5
+      parent: 2
+- proto: CP14WoodenChestFilledFarmSeeds
+  entities:
+  - uid: 290
+    components:
+    - type: Transform
+      pos: -13.5,3.5
+      parent: 2
 - proto: CP14WoodenClosetAlchemyFilled
   entities:
   - uid: 23
@@ -2962,6 +2989,11 @@ entities:
       parent: 2
 - proto: CP14WoodenPlanks20
   entities:
+  - uid: 302
+    components:
+    - type: Transform
+      pos: -5.3642898,3.741877
+      parent: 2
   - uid: 344
     components:
     - type: Transform

@@ -1,22 +1,5 @@
 # <---> CrystallEdge migration zone
 
-#2024-09-25
-CP14IronGrilleStraight: CP14FenceIronGrilleStraight
-CP14IronGrilleCorner: null
-CP14IronGrilleGate: CP14FenceIronGrilleGate
-CP14IronGrilleTJunction: null
-CP14FenceWoodSmallTJunction: null
-CP14FenceWoodHighCorner: null
-CP14FenceWoodHighGate: null
-CP14FenceWoodHighStraight: null
-CP14IronGrilleGateLockedTavern: null
-
-CP14ClothingHeadMercenaryBeret: CP14ClothingHeadBeretMercenary
-
-#2024-09-28
-CP14MeltingMoldBlank: null
-CP14WorkbenchMeltingMolds: null
-
 #2024-10-04
 CP14BloodGrass: CP14BloodFlower
 CP14FlowersRed: CP14BloodFlower
@@ -42,7 +25,6 @@ CP14VialSmallLumiMushroom: null
 #2024-10-20
 CP14SpawnPointHouseKeeper: null
 CP14WoodenDoorTavernDorms: null
-CP14WallWhitebrick: CP14WallMarbleBrick
 
 #2024-10-24
 CP14SpawnPointQuartermaster: null
@@ -324,6 +306,29 @@ CP14PlantTomatoesDeath: CP14PlantTomatoes
 CP14PlantWheatDeath: CP14PlantWheat
 CP14BaseHoe: CP14ModularIronHoe
 CP14PlantOnion: null
+
+#2025-14-04
+CP14FenceWoodStraight: CP14FenceBigWooden
+CP14FenceWoodCorner: CP14FenceBigWooden
+CP14FenceWoodGate: CP14FenceGateBigWooden
+CP14FenceWoodSmallStraight: CP14FenceWooden
+CP14FenceWoodSmallCorner: CP14FenceWooden
+CP14FenceWoodSmallGate: CP14FenceGateWooden
+CP14FenceIronGrilleStraight: CP14FenceBigIron
+CP14FenceIronGrilleGate: CP14FenceGateBigIron
+CP14FenceIronGrilleGateGuard: CP14FenceGateBigIronGuard
+CP14FenceIronGrilleGateGuildmaster: CP14FenceGateBigIronGuildmaster 
+CP14FenceIronGrilleGateDemiplaneCrystal: CP14FenceGateBigIronDemiplaneCrystal
+CP14FenceIronGrilleWindowStraight: CP14FenceWindowIron
+
+#2025-21-04
+CP14WallBrownbrick: CP14WallMarbleBrick
+CP14FrameWoodenCrushedMedium: CP14WallFrameWooden
+CP14FrameWoodenCrushedLow: CP14WallFrameWooden
+CP14WallStonebrickCrushedMedium: CP14WallFrameStonebrick
+CP14WallStonebrickCrushedLow: CP14WallFrameStonebrick
+CP14WallCyan: CP14WallStonebrick
+CP14FrameWooden: CP14WallFrameWooden
 
 # <---> CrystallEdge migration zone end
 

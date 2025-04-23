@@ -70,9 +70,6 @@
             min: 1
             max: 3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
-    materialComposition:
-      CP14WoodenPlanks: 100
 
 - type: entity
   parent: CP14BaseTree
@@ -152,6 +149,47 @@
         tree04: ""
         tree05: ""
         tree06: ""
+
+- type: entity
+  parent: CP14BaseTree
+  id: CP14FloraTreeDead
+  components:
+  - type: Sprite
+    offset: 0,1.1
+    sprite: _CP14/Structures/Flora/tree_died.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        tree04: ""
+  - type: CP14WaveShader
+    speed: 0.3
+    dis: 3
+
+- type: entity
+  parent: CP14BaseTree
+  id: CP14FloraTreeDeadSmall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/tree_died_small.rsi
+    layers:
+    - state: tree01
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        tree01: ""
+        tree02: ""
+        tree03: ""
+        tree04: ""
+  - type: CP14WaveShader
+    speed: 0.3
+    dis: 3
 
 - type: entity
   parent: CP14BaseTreeLarge

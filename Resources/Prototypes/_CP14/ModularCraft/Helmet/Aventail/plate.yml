@@ -1,0 +1,92 @@
+- type: modularPart
+  id: BaseAventailPlate
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseClothingArmor
+
+- type: modularPart
+  id: AventailIronPlate
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.04
+        Slash: -0.02
+        Piercing: -0.05
+        Heat: -0.04
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
+
+- type: modularPart
+  id: AventailGoldPlate
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+  color: "#ffe269"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.01
+        Slash: -0.01
+        Piercing: -0.03
+  - !type:EditClothingSpeed
+    walkModifier: 0.98
+    sprintModifier: 0.98
+
+- type: modularPart
+  id: AventailCopperPlate
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+  color: "#e28f08"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.03
+        Slash: -0.01
+        Piercing: -0.03
+        Heat: -0.02
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99
+
+- type: modularPart
+  id: AventailMithrilPlate
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/plate.rsi
+  color: "#38f0b3"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailPlate
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.06
+        Slash: -0.03
+        Piercing: -0.08
+        Heat: -0.08
+  - !type:EditClothingSpeed
+    walkModifier: 0.99
+    sprintModifier: 0.99

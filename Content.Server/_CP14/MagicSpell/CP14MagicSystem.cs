@@ -8,6 +8,7 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.Actions;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
@@ -18,7 +19,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._CP14.MagicSpell;
 
-public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
+public sealed  class CP14MagicSystem : CP14SharedMagicSystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
@@ -26,7 +27,6 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedActionsSystem _action = default!;
 
     public override void Initialize()
     {
@@ -37,7 +37,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
 
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14VerbalAspectSpeechEvent>(OnSpellSpoken);
+        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14SpellSpeechEvent>(OnSpellSpoken);
 
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
@@ -63,6 +63,12 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
 
     private void OnMeleeHit(Entity<CP14SpellEffectOnHitComponent> ent, ref MeleeHitEvent args)
     {
+        if (HasComp<PacifiedComponent>(args.User)) //IDK how to check if the user is pacified in a better way
+            return;
+
+        if (!args.IsHit)
+            return;
+
         if (!_random.Prob(ent.Comp.Prob))
             return;
 
@@ -100,7 +106,7 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
         }
     }
 
-    private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14VerbalAspectSpeechEvent args)
+    private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14SpellSpeechEvent args)
     {
         if (args.Performer is not null && args.Speech is not null)
             _chat.TrySendInGameICMessage(args.Performer.Value, args.Speech, args.Emote ? InGameICChatType.Emote : InGameICChatType.Speak, true);
@@ -132,16 +138,14 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
             var spellEv = new CP14SpellFromSpellStorageUsedEvent(args.Performer, (ent, magicEffect), requiredMana);
             RaiseLocalEvent(magicEffect.SpellStorage.Value, ref spellEv);
 
-            _magicEnergy.ChangeEnergy(magicEffect.SpellStorage.Value, -requiredMana, out var changedEnergy, out var overloadedEnergy, magicStorage, safe: false);
+            _magicEnergy.ChangeEnergy((magicEffect.SpellStorage.Value, magicStorage), -requiredMana, out var changedEnergy, out var overloadedEnergy, safe: false);
             requiredMana -= FixedPoint2.Abs(changedEnergy + overloadedEnergy);
         }
 
         //Second - action user
         if (requiredMana > 0 &&
             TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var playerMana))
-        {
-            _magicEnergy.ChangeEnergy(args.Performer.Value, -requiredMana, out _, out _, playerMana, safe: false);
-        }
+            _magicEnergy.ChangeEnergy((args.Performer.Value, playerMana), -requiredMana, out _, out _, safe: false);
     }
 
     private void OnMusicCheck(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
@@ -160,10 +164,10 @@ public sealed partial class CP14MagicSystem : CP14SharedMagicSystem
             break;
         }
 
-        if (!passed)
-        {
-            args.PushReason(Loc.GetString("cp14-magic-music-aspect"));
-            args.Cancel();
-        }
+        if (passed)
+            return;
+
+        args.PushReason(Loc.GetString("cp14-magic-music-aspect"));
+        args.Cancel();
     }
 }

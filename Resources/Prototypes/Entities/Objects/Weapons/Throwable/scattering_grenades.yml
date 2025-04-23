@@ -157,7 +157,7 @@
       map: ["Base"]
     - state: primed
       map: ["enum.TriggerVisualLayers.Base"]
-  - type: ScatteringGrenade
+  - type: ScatteringGrenade 
     fillPrototype: BulletFoam
     capacity: 30
     velocity: 30

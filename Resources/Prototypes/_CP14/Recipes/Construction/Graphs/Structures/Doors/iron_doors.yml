@@ -18,11 +18,11 @@
         - to: start
           completed:
             - !type:SpawnPrototype
-              prototype: CP14IronBar1
+              prototype: CP14ScrapIron
               amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
         - to: CP14IronDoorFrameMirrored
           steps:
@@ -46,13 +46,16 @@
       entity: CP14IronDoorFrameMirrored
       edges:
         - to: start
+          conditions:
+          - !type:Locked
+            locked: false
           completed:
             - !type:SpawnPrototype
-              prototype: CP14IronBar1
+              prototype: CP14ScrapIron
               amount: 2
             - !type:DeleteEntity {}
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
         - to: CP14IronDoorFrame
           steps:
@@ -76,46 +79,58 @@
       entity: CP14IronDoor
       edges:
         - to: CP14IronDoorFrame
+          conditions:
+          - !type:Locked
+            locked: false
           completed:
             - !type:SpawnPrototype
-              prototype: CP14IronBar1
+              prototype: CP14ScrapIron
               amount: 2
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
               
     - node: CP14IronDoorMirrored
       entity: CP14IronDoorMirrored
       edges:
         - to: CP14IronDoorFrameMirrored
+          conditions:
+          - !type:Locked
+            locked: false
           completed:
             - !type:SpawnPrototype
-              prototype: CP14IronBar1
+              prototype: CP14ScrapIron
               amount: 2
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
               
     - node: CP14IronDoorWindowed
       entity: CP14IronDoorWindowed
       edges:
         - to: CP14IronDoorFrame
+          conditions:
+          - !type:Locked
+            locked: false
           completed:
             - !type:SpawnPrototype
-              prototype: CP14IronBar1
+              prototype: CP14ScrapIron
               amount: 2
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5
               
     - node: CP14IronDoorWindowedMirrored
       entity: CP14IronDoorWindowedMirrored
       edges:
         - to: CP14IronDoorFrameMirrored
+          conditions:
+          - !type:Locked
+            locked: false
           completed:
             - !type:SpawnPrototype
-              prototype: CP14IronBar1
+              prototype: CP14ScrapIron
               amount: 2
           steps:
-            - tool: Prying #TODO - new tool
+            - tool: Prying
               doAfter: 5

@@ -1,0 +1,45 @@
+- type: entity
+  id: CP14ActionSpellWendigoWarp
+  name: Shadow step
+  description: A step through the gash of reality that allows you to cover a small of distance quickly.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/wendigo.rsi
+    state: step
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectWendigoStep
+    effects:
+    - !type:CP14SpellCasterTeleport
+      needVision: false
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14WendigoRitualSound
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneWendigoFear
+  - type: EntityWorldTargetAction
+    checkCanAccess: false
+    range: 10
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/wendigo.rsi
+      state: step
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 30
+      hidden: true
+      breakOnMove: false
+
+- type: entity
+  id: CP14ImpactEffectWendigoStep
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: "#2b2c32"

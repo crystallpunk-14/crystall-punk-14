@@ -11,8 +11,8 @@
 # Grill Gate
 
 - type: entity
-  parent: CP14FenceIronGrilleGate
-  id: CP14FenceIronGrilleGateGuildmaster
+  parent: CP14FenceGateBigIron
+  id: CP14FenceGateBigIronGuildmaster
   suffix: Guildmaster
   components:
   - type: CP14Lock
@@ -21,8 +21,8 @@
     locked: true
 
 - type: entity
-  parent: CP14FenceIronGrilleGate
-  id: CP14FenceIronGrilleGateDemiplaneCrystal
+  parent: CP14FenceGateBigIron
+  id: CP14FenceGateBigIronDemiplaneCrystal
   suffix: DemiplaneCrystal
   components:
   - type: CP14Lock

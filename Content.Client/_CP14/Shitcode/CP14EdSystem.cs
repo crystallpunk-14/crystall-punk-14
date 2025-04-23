@@ -1,3 +1,4 @@
+using Content.Shared.CCVar;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 
@@ -13,5 +14,14 @@ public sealed class CP14EdSystem : EntitySystem
     public override void Initialize()
     {
         _cfg.SetCVar(CVars.EntitiesCategoryFilter, "ForkFiltered");
+
+        _cfg.OnValueChanged(CCVars.Language, OnLanguageChange, true);
+
+        _cfg.SetCVar(CVars.LocCultureName, _cfg.GetCVar(CCVars.Language));
+    }
+
+    private void OnLanguageChange(string obj)
+    {
+        _cfg.SetCVar(CVars.LocCultureName, obj);
     }
 }

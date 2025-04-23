@@ -57,3 +57,6 @@
     sprite: _CP14/Objects/keys.rsi
     state: lockpick
   - type: CP14Lockpick
+  - type: Tag
+    tags:
+    - CP14Lockpick

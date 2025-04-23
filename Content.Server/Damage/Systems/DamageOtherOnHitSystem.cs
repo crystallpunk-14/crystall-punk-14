@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Damage.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared._CP14.MeleeWeapon.Components;
+using Content.Shared._CP14.MeleeWeapon.EntitySystems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
@@ -44,6 +45,7 @@ namespace Content.Server.Damage.Systems
 
                 if (TryComp<CP14SharpenedComponent>(uid, out var sharp))
                 {
+                    CP14SharpeningSystem.ReduceSharpness((uid, sharp), damage);
                     damage.DamageDict["Slash"] = slashDamage * sharp.Sharpness;
                     damage.DamageDict["Piercing"] = piercingDamage * sharp.Sharpness;
                     damage.DamageDict["Blunt"] = (slashDamage + piercingDamage) / 2 * (1f - sharp.Sharpness);

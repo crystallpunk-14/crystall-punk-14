@@ -165,7 +165,7 @@
     sprite: _CP14/Objects/ModularTools/Grip/metall_grip.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripGolden
   - type: Destructible
@@ -190,7 +190,7 @@
     sprite: _CP14/Objects/ModularTools/Grip/metall_grip.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripCopper
   - type: Destructible
@@ -215,7 +215,7 @@
     sprite: _CP14/Objects/ModularTools/Grip/metall_grip.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripMithril
   - type: Destructible
@@ -346,7 +346,7 @@
     sprite: _CP14/Objects/ModularTools/GripLong/metall_grip_long.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripGoldLong
   - type: Destructible
@@ -371,7 +371,7 @@
     sprite: _CP14/Objects/ModularTools/GripLong/metall_grip_long.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripCopperLong
   - type: Destructible
@@ -397,7 +397,7 @@
     sprite: _CP14/Objects/ModularTools/GripLong/metall_grip_long.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripMithrilLong
   - type: Destructible

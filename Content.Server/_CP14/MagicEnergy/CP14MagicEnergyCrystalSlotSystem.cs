@@ -9,7 +9,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Server._CP14.MagicEnergy;
 
-public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCrystalSlotSystem
+public sealed class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEnergyCrystalSlotSystem
 {
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
@@ -19,125 +19,120 @@ public sealed partial class CP14MagicEnergyCrystalSlotSystem : SharedCP14MagicEn
 
     public override void Initialize()
     {
+        base.Initialize();
+
         SubscribeLocalEvent<CP14MagicEnergyCrystalComponent, CP14MagicEnergyLevelChangeEvent>(OnEnergyChanged);
+
         SubscribeLocalEvent<CP14MagicEnergyCrystalSlotComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14MagicEnergyCrystalSlotComponent, CP14SlotCrystalChangedEvent>(OnCrystalChanged);
     }
 
     private void OnCrystalChanged(Entity<CP14MagicEnergyCrystalSlotComponent> ent, ref CP14SlotCrystalChangedEvent args)
     {
-        var realPowered = TryGetEnergyCrystalFromSlot(ent, out var energyEnt, out var energyComp);
+        var realPowered = TryGetEnergyCrystalFromSlot((ent, ent), out var energyComp);
+        if (energyComp is not null)
+            realPowered = energyComp.Value.Comp.Energy > 0;
 
-        if (energyComp != null)
-            realPowered = energyComp.Energy > 0;
+        if (ent.Comp.Powered == realPowered)
+            return;
 
-        if (ent.Comp.Powered != realPowered)
-        {
-            ent.Comp.Powered = realPowered;
-            _appearance.SetData(ent, CP14MagicSlotVisuals.Powered, realPowered);
-            RaiseLocalEvent(ent, new CP14SlotCrystalPowerChangedEvent(realPowered));
-        }
+        ent.Comp.Powered = realPowered;
+        _appearance.SetData(ent, CP14MagicSlotVisuals.Powered, realPowered);
+
+        RaiseLocalEvent(ent, new CP14SlotCrystalPowerChangedEvent(realPowered));
     }
 
     private void OnEnergyChanged(Entity<CP14MagicEnergyCrystalComponent> crystal, ref CP14MagicEnergyLevelChangeEvent args)
     {
-        if (_container.TryGetContainingContainer(crystal, out var container)
-            && TryComp(container.Owner, out CP14MagicEnergyCrystalSlotComponent? slot)
-            && _itemSlots.TryGetSlot(container.Owner, slot.SlotId, out var itemSlot))
-        {
-            if (itemSlot.Item == crystal)
-            {
-                RaiseLocalEvent(container.Owner, new CP14SlotCrystalChangedEvent(false));
-            }
-        }
+        if (!_container.TryGetContainingContainer((crystal.Owner, null, null), out var container))
+            return;
+
+        if (!TryComp(container.Owner, out CP14MagicEnergyCrystalSlotComponent? slot))
+            return;
+
+        if (!_itemSlots.TryGetSlot(container.Owner, slot.SlotId, out var itemSlot))
+            return;
+
+        if (itemSlot.Item != crystal)
+            return;
+
+        RaiseLocalEvent(container.Owner, new CP14SlotCrystalChangedEvent(false));
     }
 
     private void OnExamined(Entity<CP14MagicEnergyCrystalSlotComponent> ent, ref ExaminedEvent args)
     {
-        if (!TryGetEnergyCrystalFromSlot(ent, out var crystalUid, out var crystalComp, ent.Comp))
+        if (!TryGetEnergyCrystalFromSlot((ent, ent), out var energyEnt))
             return;
 
         if (!args.IsInDetailsRange)
             return;
 
-        //var scanEvent = new CP14MagicEnergyScanEvent();
-        //RaiseLocalEvent(args.Examiner, scanEvent);
-//
-        //if (!scanEvent.CanScan)
+        // TODO: scan energy ability
+        // var scanEvent = new CP14MagicEnergyScanEvent();
+        // RaiseLocalEvent(args.Examiner, scanEvent);
+        //
+        // if (!scanEvent.CanScan)
         //    return;
 
-        args.PushMarkup(_magicEnergy.GetEnergyExaminedText(crystalUid.Value, crystalComp));
+        args.PushMarkup(_magicEnergy.GetEnergyExaminedText((energyEnt.Value, energyEnt)));
     }
 
-    public bool TryGetEnergyCrystalFromSlot(EntityUid uid,
-        [NotNullWhen(true)] out CP14MagicEnergyContainerComponent? energyComp,
-        CP14MagicEnergyCrystalSlotComponent? component = null)
+    public bool TryGetEnergyCrystalFromSlot(Entity<CP14MagicEnergyCrystalSlotComponent?> ent,
+        [NotNullWhen(true)] out Entity<CP14MagicEnergyContainerComponent>? energyEnt)
     {
-        return TryGetEnergyCrystalFromSlot(uid, out _, out energyComp, component);
-    }
-
-    public bool TryGetEnergyCrystalFromSlot(EntityUid uid,
-        [NotNullWhen(true)] out EntityUid? energyEnt,
-        [NotNullWhen(true)] out CP14MagicEnergyContainerComponent? energyComp,
-        CP14MagicEnergyCrystalSlotComponent? component = null)
-    {
-        if (!Resolve(uid, ref component, false))
-        {
-            energyEnt = null;
-            energyComp = null;
-            return false;
-        }
-
-        if (_itemSlots.TryGetSlot(uid, component.SlotId, out ItemSlot? slot))
-        {
-            energyEnt = slot.Item;
-            return TryComp(slot.Item, out energyComp);
-        }
-
         energyEnt = null;
-        energyComp = null;
-        return false;
-    }
 
-    public bool HasEnergy(EntityUid uid,
-        FixedPoint2 energy,
-        CP14MagicEnergyCrystalSlotComponent? component = null,
-        EntityUid? user = null)
-    {
-        if (!TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp, component))
-        {
-            if (user != null)
-                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), uid,user.Value);
-
+        if (!Resolve(ent, ref ent.Comp, false))
             return false;
-        }
 
-        if (energyComp.Energy < energy)
-        {
-            if (user != null)
-                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-insufficient"), uid, user.Value);
-
+        if (!_itemSlots.TryGetSlot(ent, ent.Comp.SlotId, out var slot))
             return false;
-        }
 
+        if (slot.Item is null)
+            return false;
+
+        if (!TryComp<CP14MagicEnergyContainerComponent>(slot.Item, out var energyComp))
+            return false;
+
+        energyEnt = (slot.Item.Value, energyComp);
         return true;
     }
 
-    public bool TryChangeEnergy(EntityUid uid,
+    public bool HasEnergy(Entity<CP14MagicEnergyCrystalSlotComponent?> ent,
         FixedPoint2 energy,
-        CP14MagicEnergyCrystalSlotComponent? component = null,
-        EntityUid? user = null,
-        bool safe = false)
+        EntityUid? user = null)
     {
-        if (!TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp, component))
+        if (!TryGetEnergyCrystalFromSlot(ent, out var energyEnt))
         {
-            if (user != null)
-                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), uid, user.Value);
+            if (user is not null)
+                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), ent,user.Value);
 
             return false;
         }
 
-        _magicEnergy.ChangeEnergy(energyEnt.Value, energy, out _, out _, energyComp, safe);
+        if (energyEnt.Value.Comp.Energy >= energy)
+            return true;
+
+        if (user is not null)
+            _popup.PopupEntity(Loc.GetString("cp14-magic-energy-insufficient"), ent, user.Value);
+
+        return false;
+    }
+
+    public bool TryChangeEnergy(Entity<CP14MagicEnergyCrystalSlotComponent?> ent,
+        FixedPoint2 energy,
+        EntityUid? user = null,
+        bool safe = false)
+    {
+        if (!TryGetEnergyCrystalFromSlot(ent, out var energyEnt))
+        {
+            if (user is not null)
+                _popup.PopupEntity(Loc.GetString("cp14-magic-energy-no-crystal"), ent, user.Value);
+
+            return false;
+        }
+
+        _magicEnergy.ChangeEnergy((energyEnt.Value, energyEnt.Value), energy, out _, out _, safe);
         return true;
     }
 }

@@ -1,0 +1,82 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularVisorBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+    storedRotation: 0
+    shape:
+    - 0,0,0,0
+
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorIronChainmail
+  name: iron visor chainmail
+  description: A chainmail visor that protects the face from nasty damage and leaves the wearer looking all that beautiful. And the skin breathes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorIronChainmail
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorGoldChainmail
+  name: golden visor chainmail
+  description: A chainmail visor that protects the face from nasty damage and leaves the wearer looking all that beautiful. And the skin breathes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorGoldChainmail
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorCopperChainmail
+  name: copper visor chainmail
+  description: A chainmail visor that protects the face from nasty damage and leaves the wearer looking all that beautiful. And the skin breathes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#e28f08"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorCopperChainmail
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularVisorBase
+  id: CP14ModularVisorMithrilChainmail
+  name: mithril visor chainmail
+  description: A chainmail visor that protects the face from nasty damage and leaves the wearer looking all that beautiful. And the skin breathes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#38f0b3"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - VisorMithrilChainmail
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

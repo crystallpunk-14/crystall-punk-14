@@ -13,17 +13,17 @@ namespace Content.Shared._CP14.MagicEnergy.Components;
 public sealed partial class CP14MagicEnergyContainerComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public FixedPoint2 Energy = 0f;
+    public FixedPoint2 Energy = 0;
 
     [DataField, AutoNetworkedField]
-    public FixedPoint2 MaxEnergy = 100f;
+    public FixedPoint2 MaxEnergy = 100;
 
     [DataField, AutoNetworkedField]
-    public ProtoId<AlertPrototype>? MagicAlert = null;
+    public ProtoId<AlertPrototype>? MagicAlert;
 
     /// <summary>
     /// Does this container support unsafe energy manipulation?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool UnsafeSupport = false;
+    public bool UnsafeSupport;
 }

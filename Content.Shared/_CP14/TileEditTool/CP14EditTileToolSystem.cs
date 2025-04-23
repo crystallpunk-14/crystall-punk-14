@@ -37,6 +37,7 @@ public sealed class CP14EditTileToolSystem : EntitySystem
             {
                 BreakOnDamage = true,
                 BlockDuplicate = false,
+                CancelDuplicate = false,
                 BreakOnMove = true,
                 BreakOnHandChange = true,
             };
@@ -65,7 +66,7 @@ public sealed class CP14EditTileToolSystem : EntitySystem
             return;
 
         args.Handled = true;
-        
+
         _map.SetTile((map.Value, gridComp), location, new Tile(_proto.Index(replaceTile).TileId));
         _audio.PlayPredicted(ent.Comp.Sound, location, args.User);
     }

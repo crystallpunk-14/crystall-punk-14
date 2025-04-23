@@ -12,7 +12,7 @@
     base: wall
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14RockStructural
   - type: Destructible
     thresholds:
     - trigger:
@@ -33,11 +33,44 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14StoneBlock1:
-            min: 2
-            max: 3
+            min: 5
+            max: 7
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
+- type: entity
+  id: CP14WallMarbleStone
+  name: marble
+  parent: CP14WallStone
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/marble_stone.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/marble_stone.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14MarbleBlock1:
+            min: 5
+            max: 7
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
 
 - type: entity
   id: CP14WallStoneIndestructable
@@ -67,7 +100,7 @@
     base: wall
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: Rock # "Soft"
   - type: Destructible
     thresholds:
     - trigger:
@@ -88,8 +121,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14DirtBlock1:
-            min: 2
-            max: 3
+            min: 3
+            max: 5
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Construction
@@ -197,7 +230,7 @@
   - type: IconSmooth
     base: wall
   - type: Damageable
-    damageContainer: StructuralInorganic
+    damageContainer: Inorganic
     damageModifierSet: Rock
   - type: Destructible
     thresholds:

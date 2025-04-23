@@ -1,6 +1,7 @@
 - type: entity
   id: CP14SkyLightning
   categories: [ ForkFiltered ]
+  name: sky lighting
   save: false
   components:
   - type: Sprite
@@ -25,7 +26,7 @@
     netsync: false
   - type: LightFade
     duration: 1
-  - type: CP14Lighthouse
+  - type: CP14PvsOverride
   - type: CP14AreaEntityEffect
     range: 1
     effects:
@@ -56,3 +57,41 @@
       collection: CP14LightningFar
       params:
         variation: 0.2
+
+#- type: entity
+#  parent: CP14SkyLightning
+#  id: CP14SkyLightningWendigoRitual
+#  name: wendigo lightning
+#  suffix: 1000 Blunt damage
+#  components:
+#  - type: Sprite
+#    color: "#ed1367"
+#  - type: PointLight
+#    color: "#ed1367"
+#  - type: CP14AreaEntityEffect
+#    whitelist:
+#      components:
+#      - MobState
+#    range: 1
+#    effects:
+#    - !type:CP14SpellApplyEntityEffect
+#      effects:
+#      - !type:HealthChange
+#        damage:
+#          types:
+#            Blunt: 1000
+#  - type: CP14FarSound
+#    closeSound:
+#      path: /Audio/_CP14/Ambience/Lightning/lightning_close1.ogg
+#      params:
+#        variation: 0.2
+#        maxDistance: 20
+#        volume: -3
+#    farSound:
+#      collection: CP14LightningFar
+#      params:
+#        variation: 0.2
+#        volume: -3
+#  - type: ConditionalSpawner
+#    prototypes:
+#    - CP14WendigoRitualSound
