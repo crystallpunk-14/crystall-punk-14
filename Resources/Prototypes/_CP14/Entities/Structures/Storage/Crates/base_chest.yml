@@ -67,4 +67,6 @@
   - type: ItemSlots
   - type: StaticPrice
     price: 50
-  
+  - type: CP14Lock #Empty, for installing new locks
+  - type: Lock
+    locked: false

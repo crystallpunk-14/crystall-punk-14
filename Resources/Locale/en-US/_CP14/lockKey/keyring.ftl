@@ -9,7 +9,6 @@ cp14-lock-key-no-fit = The key does not fit!
 
 cp14-lock-lock-pick-success = One of the lock elements clicks quietly.
 cp14-lock-lock-pick-failed = {$lock} is reset to its original position.
-cp14-lock-lock-pick-failed-damage = {$lock} is reset to its original position, damaging your lockpick.
 cp14-lock-lock-pick-failed-break = {$lock} resets to its original position, breaking your lockpick.
 
 cp14-lock-verb-use-key-text-open = Open the lock with {$item}.
@@ -26,3 +25,6 @@ cp14-lock-key-file-updated = New key shape:
 
 cp14-lock-editor-use-hint = Edit tooth: {$num}
 cp14-lock-editor-updated = New lock shape:
+
+cp14-lock-insert-fail-have-lock = {$name} already has a lock installed!
+cp14-lock-insert-success = The new lock has been successfully installed in {$name}!

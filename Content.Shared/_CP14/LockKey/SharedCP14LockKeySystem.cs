@@ -45,15 +45,20 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         _keyQuery = GetEntityQuery<CP14KeyComponent>();
         _doorQuery = GetEntityQuery<DoorComponent>();
 
+        //Interact
         SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
+        SubscribeLocalEvent<CP14LockComponent, AfterInteractEvent>(OnLockInteract);
+        SubscribeLocalEvent<CP14LockRemoverComponent, AfterInteractEvent>(OnLockRemoverInteract);
 
+        //Verbs
         SubscribeLocalEvent<CP14KeyComponent, GetVerbsEvent<UtilityVerb>>(GetKeysVerbs);
         SubscribeLocalEvent<CP14KeyFileComponent, GetVerbsEvent<UtilityVerb>>(GetKeyFileVerbs);
         SubscribeLocalEvent<CP14LockpickComponent, GetVerbsEvent<UtilityVerb>>(GetLockpickVerbs);
         SubscribeLocalEvent<CP14LockEditerComponent, GetVerbsEvent<UtilityVerb>>(GetLockEditerVerbs);
 
         SubscribeLocalEvent<CP14LockComponent, LockPickHackDoAfterEvent>(OnLockHacked);
+        SubscribeLocalEvent<CP14LockComponent, LockInsertDoAfterEvent>(OnLockInserted);
 
         SubscribeLocalEvent<CP14KeyComponent, ExaminedEvent>(OnKeyExamine);
         SubscribeLocalEvent<CP14LockComponent, ExaminedEvent>(OnLockExamine);
@@ -119,6 +124,73 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         args.Handled = true;
     }
 
+    private void OnLockInteract(Entity<CP14LockComponent> ent, ref AfterInteractEvent args)
+    {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        if (!ent.Comp.CanEmbedded)
+            return;
+
+        if (!_lockQuery.TryComp(args.Target, out _))
+            return;
+
+        if (!_cp14LockQuery.TryComp(args.Target, out var targetCp14LockComp))
+            return;
+
+        if (targetCp14LockComp.LockShape is not null)
+        {
+            _popup.PopupPredicted(Loc.GetString("cp14-lock-insert-fail-have-lock",
+                    ("name", MetaData(args.Target.Value).EntityName)),
+                ent,
+                args.User);
+            return;
+        }
+
+        //Ok, all checks passed, we ready to install lock into entity
+
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
+            args.User,
+            TimeSpan.FromSeconds(2f), //Boo, hardcoding
+            new LockInsertDoAfterEvent(),
+            args.Target,
+            args.Target,
+            ent)
+        {
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            BreakOnDropItem = true,
+            BreakOnHandChange = true,
+        });
+    }
+    
+    private void OnLockRemoverInteract(Entity<CP14LockRemoverComponent> ent, ref AfterInteractEvent args)
+    {
+        throw new NotImplementedException();
+    }
+
+
+    private void OnLockInserted(Entity<CP14LockComponent> ent, ref LockInsertDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        if (!TryComp<CP14LockComponent>(args.Used, out var usedLock))
+            return;
+
+        ent.Comp.LockShape = usedLock.LockShape;
+        DirtyField(ent, ent.Comp, nameof(CP14LockComponent.LockShape));
+
+        _popup.PopupPredicted(Loc.GetString("cp14-lock-insert-success", ("name", MetaData(ent).EntityName)),
+            ent,
+            args.User);
+
+        _audio.PlayPredicted(usedLock.EmbedSound, ent, args.User);
+
+        if (_net.IsServer)
+            QueueDel(args.Used);
+    }
+
     private void OnLockHacked(Entity<CP14LockComponent> ent, ref LockPickHackDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
@@ -166,37 +238,30 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                 return;
             }
 
-            _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-success") + $" ({ent.Comp.LockPickStatus}/{ent.Comp.LockShape.Count})", ent, args.User);
+            _popup.PopupClient(Loc.GetString("cp14-lock-lock-pick-success") +
+                               $" ({ent.Comp.LockPickStatus}/{ent.Comp.LockShape.Count})",
+                ent,
+                args.User);
         }
         else //Fail
         {
             _audio.PlayPredicted(lockPick.FailSound, ent, args.User);
             if (_net.IsServer)
             {
-                if (_random.Prob(ent.Comp.LockPickDamageChance)) // Damage lock pick
-                {
-                    lockPick.Health--;
-                    if (lockPick.Health > 0)
-                    {
-                        _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed-damage",
-                                ("lock", MetaData(ent).EntityName)),
-                            ent,
-                            args.User);
-                    }
-                    else
-                    {
-                        _popup.PopupEntity(
-                            Loc.GetString("cp14-lock-lock-pick-failed-break", ("lock", MetaData(ent).EntityName)),
-                            ent,
-                            args.User);
-                        QueueDel(args.Used);
-                    }
-                }
-                else
+                lockPick.Health--;
+                if (lockPick.Health > 0)
                 {
                     _popup.PopupEntity(Loc.GetString("cp14-lock-lock-pick-failed", ("lock", MetaData(ent).EntityName)),
                         ent,
                         args.User);
+                }
+                else
+                {
+                    _popup.PopupEntity(
+                        Loc.GetString("cp14-lock-lock-pick-failed-break", ("lock", MetaData(ent).EntityName)),
+                        ent,
+                        args.User);
+                    QueueDel(args.Used);
                 }
             }
 
@@ -263,7 +328,8 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                     if (!_timing.IsFirstTimePredicted)
                         return;
 
-                    if (TryComp<UseDelayComponent>(ent, out var useDelayComp) && _useDelay.IsDelayed((ent, useDelayComp)))
+                    if (TryComp<UseDelayComponent>(ent, out var useDelayComp) &&
+                        _useDelay.IsDelayed((ent, useDelayComp)))
                         return;
 
                     if (!_net.IsServer)
@@ -359,7 +425,8 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                     if (!_timing.IsFirstTimePredicted)
                         return;
 
-                    if (TryComp<UseDelayComponent>(ent, out var useDelayComp) && _useDelay.IsDelayed((ent, useDelayComp)))
+                    if (TryComp<UseDelayComponent>(ent, out var useDelayComp) &&
+                        _useDelay.IsDelayed((ent, useDelayComp)))
                         return;
 
                     if (!_net.IsServer)
@@ -431,6 +498,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         {
             sb.Append($"{item} ");
         }
+
         sb.Append(")");
         args.PushMarkup(sb.ToString());
     }
@@ -453,6 +521,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         {
             sb.Append($"{item} ");
         }
+
         sb.Append(")");
         args.PushMarkup(sb.ToString());
     }
@@ -471,3 +540,6 @@ public sealed partial class LockPickHackDoAfterEvent : DoAfterEvent
 
     public override DoAfterEvent Clone() => this;
 }
+
+[Serializable, NetSerializable]
+public sealed partial class LockInsertDoAfterEvent : SimpleDoAfterEvent;

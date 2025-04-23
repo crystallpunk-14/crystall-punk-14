@@ -9,7 +9,7 @@ namespace Content.Shared._CP14.LockKey.Components;
 public sealed partial class CP14LockpickComponent : Component
 {
     [DataField]
-    public int Health = 3;
+    public int Health = 10;
 
     [DataField]
     public TimeSpan HackTime = TimeSpan.FromSeconds(1.0f);

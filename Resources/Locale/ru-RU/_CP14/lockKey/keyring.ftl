@@ -9,7 +9,6 @@ cp14-lock-key-no-fit = Ключ не подходит!
 
 cp14-lock-lock-pick-success = Один из элементов замка тихо щелкает.
 cp14-lock-lock-pick-failed = {$lock} сбрасывается в исходное положение.
-cp14-lock-lock-pick-failed-damage = {$lock} сбрасывается в исходное положение, повреждая вашу отмычку.
 cp14-lock-lock-pick-failed-break = {$lock} сбрасывается в исходное положение, ломая вашу отмычку.
 
 cp14-lock-verb-use-key-text-open = Открыть замок при помощи {$item}
@@ -26,3 +25,6 @@ cp14-lock-key-file-updated = Новая форма ключа:
 
 cp14-lock-editor-use-hint = Настроить зубец: {$num}
 cp14-lock-editor-updated = Новая форма замка:
+
+cp14-lock-insert-fail-have-lock = В {$name} уже установлен замок!
+cp14-lock-insert-success = Новый замок успешно установлен в {$name}!

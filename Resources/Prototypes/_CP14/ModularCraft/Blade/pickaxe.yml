@@ -10,6 +10,7 @@
       useSound:
         path: /Audio/Items/crowbar.ogg
     - type: ToolTileCompatible
+    - type: CP14LockRemover
     - type: Prying
     - type: EmitSoundOnLand
       sound:
@@ -20,11 +21,11 @@
     bonusDamage:
       types:
         Piercing: 10
-        Structural: 6
+        Structural: 4
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Piercing: 8
+        Piercing: 6
         Structural: 17
   - !type:EditItem
     newSize: Normal

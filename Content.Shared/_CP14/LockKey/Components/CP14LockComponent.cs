@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -11,9 +12,6 @@ public sealed partial class CP14LockComponent : Component
 {
     [DataField, AutoNetworkedField]
     public List<int>? LockShape = null;
-
-    [DataField, AutoNetworkedField]
-    public float LockPickDamageChance = 0.2f;
 
     /// <summary>
     /// On which element of the shape sequence the lock is now located. It's necessary for the mechanics of breaking and entering.
@@ -40,4 +38,12 @@ public sealed partial class CP14LockComponent : Component
     /// </summary>
     [DataField]
     public bool CanEmbedded = false;
+
+    [DataField]
+    public SoundSpecifier EmbedSound = new SoundPathSpecifier("/Audio/_CP14/Items/lockpick_use.ogg")
+    {
+        Params = AudioParams.Default
+        .WithVariation(0.05f)
+        .WithVolume(0.5f),
+    };
 }
