@@ -10,7 +10,6 @@
       useSound:
         path: /Audio/Items/crowbar.ogg
     - type: ToolTileCompatible
-    - type: CP14LockRemover
     - type: Prying
     - type: EmitSoundOnLand
       sound:

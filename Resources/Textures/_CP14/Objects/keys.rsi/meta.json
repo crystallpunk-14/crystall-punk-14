@@ -35,7 +35,10 @@
       "name": "lock_mithril"
     },
     {
-      "name": "lockpick"
+      "name": "lockpick_iron"
+    },
+    {
+      "name": "lockpick_mithril"
     },
     {
       "name": "keyring"

@@ -9,6 +9,7 @@ using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Content.Shared.Doors.Components;
 using Content.Shared.Examine;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -49,7 +50,6 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         SubscribeLocalEvent<CP14KeyComponent, AfterInteractEvent>(OnKeyInteract);
         SubscribeLocalEvent<CP14KeyRingComponent, AfterInteractEvent>(OnKeyRingInteract);
         SubscribeLocalEvent<CP14LockComponent, AfterInteractEvent>(OnLockInteract);
-        SubscribeLocalEvent<CP14LockRemoverComponent, AfterInteractEvent>(OnLockRemoverInteract);
 
         //Verbs
         SubscribeLocalEvent<CP14KeyComponent, GetVerbsEvent<UtilityVerb>>(GetKeysVerbs);
@@ -83,6 +83,8 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
 
         if (!_timing.IsFirstTimePredicted)
             return;
+
+        args.Handled = true;
 
         foreach (var (key, _) in storageComp.StoredItems)
         {
@@ -120,12 +122,17 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!_timing.IsFirstTimePredicted)
             return;
 
+        args.Handled = true;
+
         TryUseKeyOnLock(args.User, new Entity<CP14LockComponent>(args.Target.Value, cp14LockComp), key);
         args.Handled = true;
     }
 
     private void OnLockInteract(Entity<CP14LockComponent> ent, ref AfterInteractEvent args)
     {
+        if (args.Handled)
+            return;
+
         if (!_timing.IsFirstTimePredicted)
             return;
 
@@ -138,6 +145,8 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!_cp14LockQuery.TryComp(args.Target, out var targetCp14LockComp))
             return;
 
+        args.Handled = true;
+
         if (targetCp14LockComp.LockShape is not null)
         {
             _popup.PopupPredicted(Loc.GetString("cp14-lock-insert-fail-have-lock",
@@ -148,6 +157,12 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         }
 
         //Ok, all checks passed, we ready to install lock into entity
+
+        args.Handled = true;
+
+        _popup.PopupPredicted(Loc.GetString("cp14-lock-insert-start", ("name", MetaData(args.Target.Value).EntityName), ("player", Identity.Name(args.User, EntityManager))),
+            ent,
+            args.User);
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
             args.User,
@@ -163,19 +178,13 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             BreakOnHandChange = true,
         });
     }
-    
-    private void OnLockRemoverInteract(Entity<CP14LockRemoverComponent> ent, ref AfterInteractEvent args)
-    {
-        throw new NotImplementedException();
-    }
-
 
     private void OnLockInserted(Entity<CP14LockComponent> ent, ref LockInsertDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
             return;
 
-        if (!TryComp<CP14LockComponent>(args.Used, out var usedLock))
+        if (!_cp14LockQuery.TryComp(args.Used, out var usedLock))
             return;
 
         ent.Comp.LockShape = usedLock.LockShape;

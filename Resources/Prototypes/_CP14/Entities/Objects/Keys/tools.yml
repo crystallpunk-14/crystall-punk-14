@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
   id: CP14BaseLockpick
-  name: lockpick
+  name: iron lockpick
   description: A thief's tool that, with proper skill and skill, allows you to pick any lock.
   categories: [ ForkFiltered ]
   components:
@@ -9,11 +9,22 @@
     storedRotation: -90
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
-    state: lockpick
+    state: lockpick_iron
   - type: CP14Lockpick
+    health: 10
   - type: Tag
     tags:
     - CP14Lockpick
+
+- type: entity
+  parent: CP14BaseLockpick
+  id: CP14LockpickMithril
+  name: mithril lockpick
+  components:
+  - type: CP14Lockpick
+    health: 50
+  - type: Sprite
+    state: lockpick_mithril
 
 - type: entity
   parent: BaseItem

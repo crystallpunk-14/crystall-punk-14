@@ -149,6 +149,16 @@
   result: CP14BaseLockpick
 
 - type: CP14Recipe
+  id: CP14LockpickMithril
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14LockpickMithril
+
+- type: CP14Recipe
   id: CP14BaseLightCrossbow
   tag: CP14RecipeAnvil
   craftTime: 4

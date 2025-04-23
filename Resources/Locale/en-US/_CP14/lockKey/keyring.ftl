@@ -26,5 +26,6 @@ cp14-lock-key-file-updated = New key shape:
 cp14-lock-editor-use-hint = Edit tooth: {$num}
 cp14-lock-editor-updated = New lock shape:
 
+cp14-lock-insert-start = {$player} starts installing a lock on {$name}.
 cp14-lock-insert-fail-have-lock = {$name} already has a lock installed!
 cp14-lock-insert-success = The new lock has been successfully installed in {$name}!
