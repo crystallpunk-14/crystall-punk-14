@@ -12,7 +12,7 @@ public sealed partial class CP14LockpickComponent : Component
     public int Health = 3;
 
     [DataField]
-    public TimeSpan HackTime = TimeSpan.FromSeconds(1.5f);
+    public TimeSpan HackTime = TimeSpan.FromSeconds(1.0f);
 
     [DataField]
     public SoundSpecifier SuccessSound = new SoundPathSpecifier("/Audio/_CP14/Items/lockpick_use.ogg")
