@@ -53,8 +53,8 @@
 # Grill Gate
 
 - type: entity
-  parent: CP14FenceIronGrilleGate
-  id: CP14FenceIronGrilleGateGuard
+  parent: CP14FenceGateBigIron
+  id: CP14FenceGateBigIronGuard
   suffix: Guard
   components:
   - type: CP14Lock

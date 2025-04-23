@@ -1,0 +1,72 @@
+- type: modularPart
+  id: BaseVisorChainmail
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseClothingArmor
+
+- type: modularPart
+  id: VisorIronChainmail
+  slots:
+  - Visor
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Slash: -0.06
+        Piercing: -0.01
+
+- type: modularPart
+  id: VisorGoldChainmail
+  slots:
+  - Visor
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+  color: "#ffe269"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Slash: -0.03
+
+- type: modularPart
+  id: VisorCopperChainmail
+  slots:
+  - Visor
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+  color: "#e28f08"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Slash: -0.04
+
+- type: modularPart
+  id: VisorMithrilChainmail
+  slots:
+  - Visor
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Visor/chainmail.rsi
+  color: "#38f0b3"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseVisorChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.03
+        Slash: -0.07
+        Piercing: -0.02

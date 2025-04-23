@@ -30,7 +30,7 @@ public partial class CP14MagicEnergySystem
             if (!ent.Comp.Damage.TryGetValue(dict.Key, out var modifier))
                 continue;
 
-            ChangeEnergy(ent, modifier * dict.Value, out _, out _, safe: true);
+            ChangeEnergy(ent.Owner, modifier * dict.Value, out _, out _, safe: true);
         }
     }
 
@@ -61,7 +61,7 @@ public partial class CP14MagicEnergySystem
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            ChangeEnergy(uid, draw.Energy, out _, out _, magicContainer, draw.Safe);
+            ChangeEnergy((uid, magicContainer), draw.Energy, out _, out _, draw.Safe);
         }
 
         var query2 = EntityQueryEnumerator<CP14MagicEnergyPhotosynthesisComponent, CP14MagicEnergyContainerComponent>();
@@ -86,7 +86,7 @@ public partial class CP14MagicEnergySystem
             //        daylight = true;
             //}
 
-            ChangeEnergy(uid, daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, magicContainer, true);
+            ChangeEnergy((uid, magicContainer), daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, true);
         }
     }
 
@@ -103,10 +103,10 @@ public partial class CP14MagicEnergySystem
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            if (!_magicSlot.TryGetEnergyCrystalFromSlot(uid, out var energyEnt, out var energyComp))
+            if (!_magicSlot.TryGetEnergyCrystalFromSlot(uid, out var energyEnt))
                 continue;
 
-            ChangeEnergy(energyEnt.Value, draw.Energy, out _, out _, energyComp, draw.Safe);
+            ChangeEnergy((energyEnt.Value, energyEnt.Value), draw.Energy, out _, out _, draw.Safe);
         }
     }
 }

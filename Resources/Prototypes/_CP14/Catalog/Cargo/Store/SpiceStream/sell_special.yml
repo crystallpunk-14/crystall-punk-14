@@ -31,7 +31,7 @@
 - type: storePositionSell
   id: CP14FoodPieMeat
   special: true
-  price: 60
+  price: 100
   factions:
   - SpiceStream
   service: !type:CP14SellPrototypeService
@@ -41,7 +41,7 @@
 - type: storePositionSell
   id: CP14FoodPiePumpkin
   special: true
-  price: 60
+  price: 100
   factions:
   - SpiceStream
   service: !type:CP14SellPrototypeService

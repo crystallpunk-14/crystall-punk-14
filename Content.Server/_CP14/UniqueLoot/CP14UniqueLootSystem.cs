@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared._CP14.UniqueLoot;
 using Content.Shared.GameTicking;
 using Content.Shared.Tag;
+using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -11,6 +12,7 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private readonly Dictionary<CP14UniqueLootPrototype, int> _uniqueLootCount = new();
 
@@ -37,7 +39,8 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
 
         var coords = Transform(ent).Coordinates;
 
-        EntityManager.SpawnEntity(loot, coords);
+        var spawned = Spawn(loot, coords);
+        _transform.SetWorldRotation(spawned, _transform.GetWorldRotation(ent));
     }
 
 

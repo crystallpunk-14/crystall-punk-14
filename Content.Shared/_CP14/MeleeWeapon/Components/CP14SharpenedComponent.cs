@@ -13,5 +13,14 @@ public sealed partial class CP14SharpenedComponent : Component
     public float Sharpness = 1f;
 
     [DataField]
+    public Dictionary<float, string> SharpnessExamineThresholds { get; private set; } = new()
+    {
+        { 0.95f, "sharpening-examined-95" },
+        { 0.75f, "sharpening-examined-75" },
+        { 0.5f, "sharpening-examined-50" },
+        { 0, "sharpening-examined-25" },
+    };
+
+    [DataField]
     public float SharpnessDamageBy1Damage = 0.001f; //1000 damage
 }

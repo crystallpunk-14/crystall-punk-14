@@ -24,6 +24,7 @@
     whitelist:
       tags:
         - CP14Key
+        - CP14Lockpick
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

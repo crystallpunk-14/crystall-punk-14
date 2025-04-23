@@ -41,9 +41,7 @@ public partial class CP14MagicEnergySystem
                 }
 
                 if (passed)
-                {
-                    TransferEnergy(uid, sinkUid, relay.Energy, out _, out _, container, safe: relay.Safe);
-                }
+                    TransferEnergy((uid, container), sinkUid, relay.Energy, out _, out _, safe: relay.Safe);
             }
 
             relay.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(relay.Delay);

@@ -83,7 +83,7 @@
     Danger: 0.55
   layers:
     - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneSkeleton
+      entity: CP14SpawnPointGhostDemiplaneSkeleton
       count: 1
       minGroupSize: 1
       maxGroupSize: 3

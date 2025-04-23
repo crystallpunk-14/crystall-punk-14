@@ -41,6 +41,9 @@
     },
     {
       "name": "full"
+    },
+    {
+      "name": "frame"
     }
   ]
 }
