@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14ActionSpellLurkerWarp
+  id: CP14ActionSpellLurkerStep
   name: Shadow step
   description: A step through the gash of reality that allows you to cover a small of distance quickly.
   components:
