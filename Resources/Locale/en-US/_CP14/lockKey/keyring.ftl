@@ -20,4 +20,5 @@ cp14-lock-examine-lock-lockpicked = {$lock} looks shabby.
 
 cp14-lock-examine-key = The {$item} has prongs of the following shape: 
 
-cp14-lock-key-file-use-hint = Grind tooth: {$old} -> {$new}
+cp14-lock-key-file-use-hint = Grind tooth: {$num}
+cp14-lock-key-file-updated = New key shape:

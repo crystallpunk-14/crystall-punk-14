@@ -107,3 +107,5 @@
     sprite: _CP14/Objects/keys.rsi
     state: file
   - type: CP14KeyFile
+  - type: UseDelay
+    delay: 1.0

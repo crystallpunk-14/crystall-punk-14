@@ -20,4 +20,5 @@ cp14-lock-examine-lock-lockpicked = {$lock} выглядит потрепанн�
 
 cp14-lock-examine-key = {$item} имеет зубцы следующей формы: 
 
-cp14-lock-key-file-use-hint = Сточить зубец: {$old} -> {$new}
+cp14-lock-key-file-use-hint = Сточить зубец: {$num}
+cp14-lock-key-file-updated = Новая форма ключа:

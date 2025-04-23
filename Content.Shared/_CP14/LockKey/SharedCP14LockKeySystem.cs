@@ -7,6 +7,7 @@ using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
 using Content.Shared.Doors.Components;
+using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Random;
@@ -24,6 +25,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly UseDelaySystem _useDelay = default!;
 
     private EntityQuery<LockComponent> _lockQuery;
     private EntityQuery<CP14LockComponent> _cp14LockQuery;
@@ -230,6 +232,9 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
 
     private void GetKeyFileVerbs(Entity<CP14KeyFileComponent> ent, ref GetVerbsEvent<UtilityVerb> args)
     {
+        if (TryComp<UseDelayComponent>(ent, out var useDelayComp) && _useDelay.IsDelayed((ent, useDelayComp)))
+            return;
+
         if (!args.CanInteract || !args.CanAccess)
             return;
 
@@ -240,6 +245,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             return;
 
         var target = args.Target;
+        var user = args.User;
 
         var lockShapeCount = keyComp.LockShape.Count;
         for (var i = 0; i <= lockShapeCount - 1; i++)
@@ -262,15 +268,16 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
                     DirtyField(target, keyComp, nameof(CP14KeyComponent.LockShape));
                     _audio.PlayPvs(ent.Comp.SharpeningSound, Transform(target).Coordinates);
                     Spawn("EffectSparks", Transform(target).Coordinates);
+                    var shapeString = "[" + string.Join(", ", keyComp.LockShape) + "]";
+                    _popup.PopupEntity(Loc.GetString("cp14-lock-key-file-updated") + shapeString, target, user);
+                    _useDelay.TryResetDelay(ent);
                 },
                 IconEntity = GetNetEntity(ent),
                 Category = VerbCategory.CP14KeyFile,
                 Priority = -i,
                 Disabled = keyComp.LockShape[i] <= -DepthComplexity,
-                Text = Loc.GetString("cp14-lock-key-file-use-hint",
-                    ("num", i),
-                    ("old", keyComp.LockShape[i]),
-                    ("new", keyComp.LockShape[i] - 1)),
+                Text = Loc.GetString("cp14-lock-key-file-use-hint", ("num", i)),
+                CloseMenu = false,
             };
             args.Verbs.Add(verb);
         }

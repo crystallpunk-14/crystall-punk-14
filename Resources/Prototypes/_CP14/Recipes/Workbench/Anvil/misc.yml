@@ -22,6 +22,16 @@
   result: CP14BaseWrench
 
 - type: CP14Recipe
+  id: CP14Screwdriver
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14Screwdriver
+
+- type: CP14Recipe
   id: CP14PlatePie
   tag: CP14RecipeAnvil
   craftTime: 4
