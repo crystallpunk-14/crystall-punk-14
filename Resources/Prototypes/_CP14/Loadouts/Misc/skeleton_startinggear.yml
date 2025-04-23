@@ -12,6 +12,7 @@
   id: CP14MobSkeletonHalberdT1
   equipment:
     outerClothing: CP14ClothingOuterClothingBoneArmor
+    cloak: CP14ClothingCloakBone
     shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14ModularSkeletonHalberd
@@ -21,6 +22,7 @@
   id: CP14MobSkeletonSwordT1
   equipment:
     outerClothing: CP14ClothingOuterClothingBoneArmor
+    cloak: CP14ClothingCloakBone
     pants: CP14ClothingPantsLoincloth
     belt1: CP14ModularSkeletonSword
     shoes: CP14ClothingShoesSandals
@@ -50,6 +52,7 @@
   id: CP14MobSkeletonHalberdT2
   equipment:
     outerClothing: CP14ClothingOuterClothingBoneArmorUpgrade
+    cloak: CP14ClothingCloakBone
     mask: CP14ClothingMaskSteelMask
     shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
@@ -60,6 +63,7 @@
   id: CP14MobSkeletonSwordT2
   equipment:
     outerClothing: CP14ClothingOuterClothingBoneArmorUpgrade
+    cloak: CP14ClothingCloakBone
     mask: CP14ClothingMaskSteelMask
     pants: CP14ClothingPantsLoincloth
     belt1: CP14ModularSkeletonSwordUpgrade
@@ -73,10 +77,8 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     mask: CP14ClothingMaskBoneHornedMask
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularIronDagger
-    belt2: CP14ModularIronDagger
-    pocket1: CP14ModularInlayQuartzWater
-    pocket2: CP14ModularInlayQuartzElectric
+    belt1: CP14ModularIronDaggerTundra
+    belt2: CP14ModularIronDaggerAgony
     shoes: CP14ClothingShoesSandals
 
 - type: startingGear
@@ -94,12 +96,13 @@
 - type: startingGear
   id: CP14MobSkeletonWizardT2
   equipment:
-    outerClothing: CP14ClothingOuterClothingBoneArmorMage
+    outerClothing: CP14ClothingOuterClothingBoneArmor
+    cloak: CP14ClothingCloakBoneMage
     head: CP14ClothingHeadTriangularHatGolden
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     shoes: CP14LongLeatherBoots
-    cloak: CP14ClothingCloakAmuletMana
+    ring2: CP14ClothingCloakAmuletMana
     belt1: CP14ModularSkeletonSword
   inhand:
     - CP14ManaOperationGlove

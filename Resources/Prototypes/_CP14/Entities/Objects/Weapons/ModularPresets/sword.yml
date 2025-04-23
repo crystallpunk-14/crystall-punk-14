@@ -63,22 +63,24 @@
 
 - type: entity
   id: CP14ModularSkeletonHalberdUpgrade
-  parent: CP14ModularSkeletonHalberd
+  parent: CP14ModularGripWooden
   name: bone halberd
   suffix: Reinforced
   description: Monstrous weapons of bone.
   components:
   - type: CP14ModularCraftAutoAssemble
     details:
+    - BladeBoneSword
     - GardeSharpIron
 
 - type: entity
   id: CP14ModularSkeletonSwordUpgrade
-  parent: CP14ModularSkeletonSword
+  parent: CP14ModularGripWooden
   name: bone sword
   suffix: Reinforced
   description: Monstrous weapons of bone.
   components:
   - type: CP14ModularCraftAutoAssemble
     details:
+    - BladeBoneSword
     - GardeSharpIron
