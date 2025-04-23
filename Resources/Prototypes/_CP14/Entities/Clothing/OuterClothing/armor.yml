@@ -54,14 +54,3 @@
         Blunt: 0.85
         Slash: 0.80
         Piercing: 0.90
-
-- type: entity
-  parent: CP14ClothingOuterClothingBoneArmor
-  id: CP14ClothingOuterClothingBoneArmorMage
-  name: bone armor with cloak
-  description: bone armor... It even looks beautiful with this cloak.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/OuterClothing/bone_mage_armor.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/OuterClothing/bone_mage_armor.rsi
