@@ -7,7 +7,7 @@
     <BoxContainer Orientation="Horizontal">
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
             <!-- Product list (left side UI) -->
-            <TabContainer MinWidth="400" MaxWidth="400" Name="Tabs" HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
+            <TabContainer MinWidth="400" Name="Tabs" HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
                 <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
                     <BoxContainer Name="BuyProductsContainer" Orientation="Vertical" HorizontalExpand="True"/>
                 </ScrollContainer>
@@ -16,7 +16,7 @@
                 </ScrollContainer>
             </TabContainer>
             <!-- Station trading data (right side UI) -->
-            <BoxContainer MinWidth="400" MaxWidth="400" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="0 0 10 0">
+            <BoxContainer MinWidth="400" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="0 0 10 0">
                 <controls:StripeBack>
                     <PanelContainer>
                         <Label Text="{Loc 'cp14-store-ui-order'}" Align="Center" Margin="0 5 0 3"/>
