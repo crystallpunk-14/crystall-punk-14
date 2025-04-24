@@ -73,13 +73,3 @@
     state: magic_music
   effect: !type:AddAction 
     action: CP14ActionSpellMagicBallade
-
-- type: cp14Skill
-  id: CP14ActionSpellManaTrance
-  skillUiPosition: 4, 0
-  tree: Metamagic
-  icon:
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: mana_trance
-  effect: !type:AddAction
-    action: CP14ActionSpellManaTrance
