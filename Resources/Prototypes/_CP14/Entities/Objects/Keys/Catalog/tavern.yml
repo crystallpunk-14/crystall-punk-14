@@ -1,5 +1,5 @@
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernHall
   suffix: Tavern Hall
   components:
@@ -7,7 +7,7 @@
     autoGenerateShape: TavernHall
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernStaff
   suffix: Tavern Staff
   components:
@@ -15,7 +15,7 @@
     autoGenerateShape: TavernStaff
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernDormsAbstract
   suffix: Abstract Tavern Dorms
   components:
@@ -23,7 +23,7 @@
     group: TavernDorms
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernDorms1
   suffix: Tavern Dorms 1
   components:
@@ -31,7 +31,7 @@
     autoGenerateShape: TavernDorms1
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernDorms2
   suffix: Tavern Dorms 2
   components:
@@ -39,7 +39,7 @@
     autoGenerateShape: TavernDorms2
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernDorms3
   suffix: Tavern Dorms 3
   components:
@@ -47,7 +47,7 @@
     autoGenerateShape: TavernDorms3
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernDorms4
   suffix: Tavern Dorms 4
   components:
@@ -55,7 +55,7 @@
     autoGenerateShape: TavernDorms4
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyTavernDorms5
   suffix: Tavern Dorms 5
   components:

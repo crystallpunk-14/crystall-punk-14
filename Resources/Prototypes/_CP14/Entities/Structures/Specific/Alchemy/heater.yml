@@ -99,6 +99,7 @@
     sprite: _CP14/Structures/Specific/Alchemy/alchemy_furnace.rsi
     normalState: burning
   - type: Climbable
+  - type: Anchorable
   - type: Fixtures
     fixtures:
       fix1:
