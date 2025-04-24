@@ -12,16 +12,6 @@
   result: CP14BaseShield
 
 - type: CP14Recipe
-  id: CP14BaseCrowbar
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 2
-  result: CP14BaseCrowbar
-
-- type: CP14Recipe
   id: CP14BaseWrench
   tag: CP14RecipeAnvil
   craftTime: 4
@@ -30,6 +20,16 @@
     stack: CP14IronBar
     count: 2
   result: CP14BaseWrench
+
+- type: CP14Recipe
+  id: CP14Screwdriver
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14Screwdriver
 
 - type: CP14Recipe
   id: CP14PlatePie
@@ -149,6 +149,16 @@
   result: CP14BaseLockpick
 
 - type: CP14Recipe
+  id: CP14LockpickMithril
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14LockpickMithril
+
+- type: CP14Recipe
   id: CP14BaseLightCrossbow
   tag: CP14RecipeAnvil
   craftTime: 4
@@ -173,3 +183,94 @@
     stack: CP14IronBar
     count: 2
   result: CP14ClothingMaskSteelMask
+
+- type: CP14Recipe
+  id: CP14KeyCopperBlank
+  tag: CP14RecipeAnvil
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14KeyCopperBlank
+
+- type: CP14Recipe
+  id: CP14KeyIronBlank
+  tag: CP14RecipeAnvil
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14KeyIronBlank
+
+- type: CP14Recipe
+  id: CP14KeyGoldBlank
+  tag: CP14RecipeAnvil
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14KeyGoldBlank
+
+- type: CP14Recipe
+  id: CP14KeyMithrilBlank
+  tag: CP14RecipeAnvil
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14KeyMithrilBlank
+
+- type: CP14Recipe
+  id: CP14KeyFile
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14KeyFile
+
+- type: CP14Recipe
+  id: CP14LockCopper
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14LockCopper
+
+- type: CP14Recipe
+  id: CP14LockIron
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14LockIron
+
+- type: CP14Recipe
+  id: CP14LockGold
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14LockGold
+
+- type: CP14Recipe
+  id: CP14LockMithril
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14LockMithril
+
