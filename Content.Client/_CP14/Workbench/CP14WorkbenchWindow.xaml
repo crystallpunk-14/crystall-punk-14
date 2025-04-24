@@ -8,7 +8,7 @@
         <!-- Main -->
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
             <!-- Product list (left side UI) -->
-            <BoxContainer SizeFlagsStretchRatio="0.5" HorizontalExpand="True" Orientation="Vertical" Margin="0 0 10 0">
+            <BoxContainer MinWidth="350" MaxWidth="350" HorizontalExpand="True" Orientation="Vertical" Margin="0 0 10 0">
                 <!-- Search Bar -->
                 <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Search" HorizontalExpand="True" />
                 <!-- Crafts container -->
@@ -18,7 +18,7 @@
             </BoxContainer>
 
             <!-- Craft view (right side UI) -->
-            <BoxContainer SizeFlagsStretchRatio="0.5" Orientation="Vertical" HorizontalExpand="True"
+            <BoxContainer MinWidth="350" MaxWidth="350" Orientation="Vertical" HorizontalExpand="True"
                           VerticalExpand="True">
                 <PanelContainer HorizontalExpand="True" VerticalExpand="True">
                     <!-- Background -->
