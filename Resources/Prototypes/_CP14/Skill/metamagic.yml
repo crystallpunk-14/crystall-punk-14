@@ -75,7 +75,7 @@
     action: CP14ActionSpellMagicBallade
 
 - type: cp14Skill
-  id: CP14ActionSpellManaTrance
+  id: CP14ActionSpellManaTrance 
   skillUiPosition: 4, 0
   tree: Metamagic
   icon:
