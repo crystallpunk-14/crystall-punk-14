@@ -9,7 +9,7 @@
     action: CP14ActionSpellFlameCreation
 
 - type: cp14Skill
-  id: CP14ActionSpellBurningSpiritSummon
+  id: CP14ActionSpellBurningSpiritSummon 
   skillUiPosition: 2, 0
   tree: Pyrokinetic
   icon:
