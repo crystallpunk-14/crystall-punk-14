@@ -1,0 +1,47 @@
+- type: entity
+  id: CP14ActionSpellManaTrance
+  name: Mana trance
+  description: You go into a trance for a while, restoring mana. 
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_trance
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 10
+        safe: true
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.7
+        sprintSpeedModifier: 0.7
+        statusLifetime: 1.5
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneManaTrance
+  - type: InstantAction
+    itemIconStyle: BigAction
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: mana_trance
+    event: !type:CP14ToggleableInstantActionEvent
+      cooldown: 120
+      castTime: 60
+      hidden: true
+
+- type: entity
+  id: CP14RuneManaTrance
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5096d4"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#5096d4"
+      shader: unshaded
