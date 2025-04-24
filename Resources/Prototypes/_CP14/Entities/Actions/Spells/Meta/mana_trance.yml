@@ -10,29 +10,26 @@
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14RuneManaTrance
+      - CP14ImpactEffectManaGift
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: 50
+        manaDelta: 10
         safe: true
-      - !type:GenericStatusEffect
-        key: ForcedSleep
-        time: 20
-        component: ForcedSleeping
-        type: Add
       - !type:MovespeedModifier
         walkSpeedModifier: 0.7
         sprintSpeedModifier: 0.7
-        statusLifetime: 40
+        statusLifetime: 1.5
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneManaTrance
   - type: InstantAction
     itemIconStyle: BigAction
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_trance
-    event: !type:CP14DelayedInstantActionEvent
+    event: !type:CP14ToggleableInstantActionEvent
       cooldown: 120
-      castDelay: 5.0
+      castTime: 60
       hidden: true
 
 - type: entity
@@ -48,5 +45,3 @@
     - state: sun
       color: "#5096d4"
       shader: unshaded
-  - type: TimedDespawn
-    lifetime: 20.0
