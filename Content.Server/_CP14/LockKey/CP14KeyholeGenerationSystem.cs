@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Server.Labels;
 using Content.Shared._CP14.LockKey;
 using Content.Shared._CP14.LockKey.Components;
-using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -15,7 +14,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly LabelSystem _label = default!;
 
-    private Dictionary<ProtoId<CP14LockTypePrototype>, List<int>> _roundKeyData = new();
+    private Dictionary<ProtoId<CP14LockTypePrototype>, List<int>> _roundKeyData = new(); //TODO: it won't survive saving and loading. This data must be stored in some component.
 
     public override void Initialize()
     {
@@ -25,8 +24,6 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
 
         SubscribeLocalEvent<CP14LockComponent, MapInitEvent>(OnLockInit);
         SubscribeLocalEvent<CP14KeyComponent, MapInitEvent>(OnKeyInit);
-
-        SubscribeLocalEvent<CP14KeyComponent, ExaminedEvent>(OnKeyExamine);
     }
 
     #region Init
@@ -49,27 +46,12 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         {
             SetShape(lockEnt, lockEnt.Comp.AutoGenerateShape.Value);
         }
+        else if (lockEnt.Comp.AutoGenerateRandomShape != null)
+        {
+            SetRandomShape(lockEnt, lockEnt.Comp.AutoGenerateRandomShape.Value);
+        }
     }
     #endregion
-
-    private void OnKeyExamine(Entity<CP14KeyComponent> key, ref ExaminedEvent args)
-    {
-        var parent = Transform(key).ParentUid;
-        if (parent != args.Examiner)
-            return;
-
-        if (key.Comp.LockShape == null)
-            return;
-
-        var markup = Loc.GetString("cp14-lock-examine-key", ("item", MetaData(key).EntityName));
-        markup += " (";
-        foreach (var item in key.Comp.LockShape)
-        {
-            markup += $"{item} ";
-        }
-        markup += ")";
-        args.PushMarkup(markup);
-    }
 
     private List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
     {
@@ -84,6 +66,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     public void SetShape(Entity<CP14KeyComponent> keyEnt, ProtoId<CP14LockTypePrototype> type)
     {
         keyEnt.Comp.LockShape = GetKeyLockData(type);
+        DirtyField(keyEnt, keyEnt.Comp, nameof(CP14KeyComponent.LockShape));
 
         var indexedType = _proto.Index(type);
         if (indexedType.Name is not null)
@@ -97,6 +80,19 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
         var indexedType = _proto.Index(type);
         if (indexedType.Name is not null)
             _label.Label(lockEnt, Loc.GetString(indexedType.Name.Value));
+
+        DirtyField(lockEnt, lockEnt.Comp, nameof(CP14LockComponent.LockShape));
+    }
+
+    public void SetRandomShape(Entity<CP14LockComponent> lockEnt, int complexity)
+    {
+        lockEnt.Comp.LockShape = new List<int>();
+        for (var i = 0; i < complexity; i++)
+        {
+            lockEnt.Comp.LockShape.Add(_random.Next(-SharedCP14LockKeySystem.DepthComplexity, SharedCP14LockKeySystem.DepthComplexity));
+        }
+
+        DirtyField(lockEnt, lockEnt.Comp, nameof(CP14LockComponent.LockShape));
     }
 
     private List<int> GenerateNewUniqueLockData(ProtoId<CP14LockTypePrototype> category)

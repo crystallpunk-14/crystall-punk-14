@@ -1,17 +1,30 @@
 - type: modularPart
   id: BaseBladePickaxe
   modifiers:
+  - !type:AddComponents
+    override: true
+    components:
+    - type: Tool
+      qualities:
+        - Prying
+      useSound:
+        path: /Audio/Items/crowbar.ogg
+    - type: ToolTileCompatible
+    - type: Prying
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/Items/crowbar_drop.ogg #Add to all modular weapons?
   - !type:EditMeleeWeapon
     attackRateMultiplier: 0.55
     angleMultiplier: 1.2
     bonusDamage:
       types:
         Piercing: 10
-        Structural: 6
+        Structural: 4
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Piercing: 8
+        Piercing: 6
         Structural: 17
   - !type:EditItem
     newSize: Normal

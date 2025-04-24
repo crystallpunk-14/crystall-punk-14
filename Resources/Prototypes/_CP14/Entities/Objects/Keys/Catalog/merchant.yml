@@ -1,5 +1,5 @@
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyIronBlank
   id: CP14KeyTavernMerchantShopAbstract
   suffix: Abstract Merchant shop
   components:
@@ -7,7 +7,7 @@
     group: Merchant
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyIronBlank
   id: CP14KeyMercantShop1
   suffix: Merchant shop 1
   components:
@@ -15,7 +15,7 @@
     autoGenerateShape: Shop1
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyIronBlank
   id: CP14KeyMercantShop2
   suffix: Merchant shop 2
   components:
@@ -23,7 +23,7 @@
     autoGenerateShape: Shop2
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyIronBlank
   id: CP14KeyMercantShop3
   suffix: Merchant shop 3
   components:
