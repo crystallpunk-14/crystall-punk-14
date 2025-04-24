@@ -48,7 +48,6 @@ public sealed partial class ContentAudioSystem
 
        _nextUpdateTime = _timing.CurTime + _updateFrequency;
 
-
        if (_state.CurrentState is not GameplayState)
            return;
 

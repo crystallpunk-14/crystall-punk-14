@@ -8,9 +8,12 @@
         <!-- Main -->
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
             <!-- Product list (left side UI) -->
-            <BoxContainer MinWidth="350" MaxWidth="350" HorizontalExpand="True" Orientation="Vertical" Margin="0 0 10 0">
-                <!-- Search Bar -->
-                <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Search" HorizontalExpand="True" />
+            <BoxContainer MinWidth="350" HorizontalExpand="True" Orientation="Vertical" Margin="0 0 10 0">
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <!-- Search Bar -->
+                    <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Search" HorizontalExpand="True" />
+                    <OptionButton Name="OptionCategories" Access="Public" MinSize="130 0"/>
+                </BoxContainer>
                 <!-- Crafts container -->
                 <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
                     <BoxContainer Name="CraftsContainer" Orientation="Vertical" HorizontalExpand="True" />
@@ -18,7 +21,7 @@
             </BoxContainer>
 
             <!-- Craft view (right side UI) -->
-            <BoxContainer MinWidth="350" MaxWidth="350" Orientation="Vertical" HorizontalExpand="True"
+            <BoxContainer MinWidth="350" Orientation="Vertical" HorizontalExpand="True"
                           VerticalExpand="True">
                 <PanelContainer HorizontalExpand="True" VerticalExpand="True">
                     <!-- Background -->

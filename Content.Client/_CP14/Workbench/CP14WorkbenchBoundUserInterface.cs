@@ -41,7 +41,7 @@ public sealed class CP14WorkbenchBoundUserInterface : BoundUserInterface
         switch (state)
         {
             case CP14WorkbenchUiRecipesState recipesState:
-                _window?.UpdateRecipes(recipesState, _search);
+                _window?.UpdateState(recipesState, _search);
                 break;
         }
     }
