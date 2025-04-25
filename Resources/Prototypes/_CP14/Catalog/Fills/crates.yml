@@ -90,6 +90,7 @@
   table: !type:GroupSelector
     children:
     - id: CP14FoodPotato
+    - id: CP14FoodOnion
     - id: CP14AgaricMushroom #dont eat
     - id: CP14Cloth10
     - id: CP14CrayonWhite
