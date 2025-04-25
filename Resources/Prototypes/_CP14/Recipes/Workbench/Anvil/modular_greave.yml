@@ -4,6 +4,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveIronPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -14,6 +15,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveGoldPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -24,6 +26,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveCopperPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -34,6 +37,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveMithrilPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -46,6 +50,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveIronChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -56,6 +61,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveGoldChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -66,6 +72,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveCopperChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -76,6 +83,7 @@
 - type: CP14Recipe
   id: CP14ModularGreaveMithrilChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
