@@ -61,6 +61,32 @@
 
 - type: entity
   parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskRedNeckerchief
+  name: red neckerchief
+  description: It hides your face to the best of its ability.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/red_neckerchief.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/red_neckerchief.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+
+- type: entity
+  parent: CP14ClothingMaskBase
+  id: CP14ClothingMaskGreenNeckerchief
+  name: green neckerchief
+  description: It hides your face to the best of its ability.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/green_neckerchief.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Masks/green_neckerchief.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+
+- type: entity
+  parent: CP14ClothingMaskBase
   id: CP14ClothingMaskBoneMask
   name: bone mask
   description: An enchanted mask formerly belonging to a magical creature.
