@@ -87,7 +87,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         RecipeSelect(_cachedState);
     }
 
-    public void UpdateState(CP14WorkbenchUiRecipesState recipesState, string? search = null)
+    public void UpdateState(CP14WorkbenchUiRecipesState recipesState)
     {
         _cachedState = recipesState;
 
