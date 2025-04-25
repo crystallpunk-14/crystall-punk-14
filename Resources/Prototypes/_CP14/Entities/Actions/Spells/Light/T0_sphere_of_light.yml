@@ -30,7 +30,7 @@
       sprite: _CP14/Actions/Spells/light.rsi
       state: sphere_of_light
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 100
+      cooldown: 30
       castDelay: 0.5
       breakOnMove: false
 
@@ -68,7 +68,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: TimedDespawn
-    lifetime: 180 # 3 min
+    lifetime: 120 # 2 min
   - type: Sprite
     sprite: _CP14/Effects/Magic/sphere_of_light.rsi
     noRot: true
@@ -77,24 +77,15 @@
       shader: unshaded
   - type: Item
     size: Ginormous
-  - type: Tag
-    tags:
-    - ForceableFollow
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.2,-0.2,0.2,0.2"
-        density: 30
-        hard: true
-        mask:
-        - ItemMask
-        layer:
-        - Opaque
+    inhandVisuals:
+      left:
+      - state: inhand-left-unshaded
+        shader: unshaded
+      right:
+      - state: inhand-right-unshaded
+        shader: unshaded
   - type: LandAtCursor
   - type: MovementIgnoreGravity
-  - type: CP14FollowOnUseInHand
   - type: PointLight
     radius: 5.0
     energy: 1
@@ -105,20 +96,6 @@
       path: /Audio/Effects/drop.ogg
       params:
         volume: -100 #Yes, it's stupid, but it's easier
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 10
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
-          params:
-            variation: 0.250
-            volume: -12
 
 - type: entity
   parent: CP14BaseSpellScrollLight
