@@ -11,8 +11,8 @@ namespace Content.Shared._CP14.Workbench.Prototypes;
 public sealed class CP14WorkbenchRecipeCategoryPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; private set; } = string.Empty;
 
     [DataField(required: true)]
-    public LocId Name = default!;
+    public LocId Name;
 }
