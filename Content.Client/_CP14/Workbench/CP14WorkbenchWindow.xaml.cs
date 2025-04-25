@@ -78,13 +78,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             CraftsContainer.AddChild(control);
         }
 
-        if (_selectedEntry is not null)
-        {
-            RecipeSelect(_selectedEntry.Value);
-            return;
-        }
-
-        RecipeSelect(_cachedState);
+        RecipeSelectNull();
     }
 
     public void UpdateState(CP14WorkbenchUiRecipesState recipesState)
@@ -145,7 +139,6 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
     private void OnCategoryItemSelected(OptionButton.ItemSelectedEventArgs obj)
     {
         OptionCategories.SelectId(obj.Id);
-        SearchBar.SetText(string.Empty);
         UpdateRecipesVisibility();
     }
 
@@ -229,5 +222,15 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         }
 
         CraftButton.Disabled = !entry.Craftable;
+    }
+
+    private void RecipeSelectNull()
+    {
+        _selectedEntry = null;
+        ItemView.SetPrototype(null);
+        ItemName.Text = string.Empty;
+        ItemDescription.Text = string.Empty;
+        ItemRequirements.RemoveAllChildren();
+        CraftButton.Disabled = true;
     }
 }

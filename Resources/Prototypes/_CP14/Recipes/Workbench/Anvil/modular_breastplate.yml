@@ -4,6 +4,7 @@
 - type: CP14Recipe
   id: CP14ArmorIronCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -14,6 +15,7 @@
 - type: CP14Recipe
   id: CP14ArmorGoldCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -24,6 +26,7 @@
 - type: CP14Recipe
   id: CP14ArmorCopperCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -34,6 +37,7 @@
 - type: CP14Recipe
   id: CP14ArmorMithrilCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -46,6 +50,7 @@
 - type: CP14Recipe
   id: CP14ArmorIronInfantryCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -56,6 +61,7 @@
 - type: CP14Recipe
   id: CP14ArmorGoldInfantryCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -66,6 +72,7 @@
 - type: CP14Recipe
   id: CP14ArmorCopperInfantryCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -76,6 +83,7 @@
 - type: CP14Recipe
   id: CP14ArmorMithrilInfantryCuirass
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -88,6 +96,7 @@
 - type: CP14Recipe
   id: CP14ArmorIronChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 8
   requirements:
   - !type:StackResource
@@ -98,6 +107,7 @@
 - type: CP14Recipe
   id: CP14ArmorGoldChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 8
   requirements:
   - !type:StackResource
@@ -108,6 +118,7 @@
 - type: CP14Recipe
   id: CP14ArmorCopperChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 8
   requirements:
   - !type:StackResource
@@ -118,6 +129,7 @@
 - type: CP14Recipe
   id: CP14ArmorMithrilChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 8
   requirements:
   - !type:StackResource
