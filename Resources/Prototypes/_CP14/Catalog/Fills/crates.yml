@@ -44,7 +44,7 @@
     children:
     - !type:GroupSelector
       children:
-      - id: CP14BaseCrowbar
+      - id: CP14Screwdriver
         weight: 2
       - id: CP14BaseWrench
         weight: 2

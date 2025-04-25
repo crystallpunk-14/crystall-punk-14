@@ -1,5 +1,5 @@
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouseAbstract
   suffix: Abstract Personal house
   components:
@@ -7,12 +7,12 @@
     group: PersonalHouse
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouseAbstractLoadoutDummy
   name: a key to a random personal home (limited per map)
 
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse1
   suffix: PersonalHouse1
   components:
@@ -20,7 +20,7 @@
     autoGenerateShape: PersonalHouse1
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse2
   suffix: PersonalHouse2
   components:
@@ -28,7 +28,7 @@
     autoGenerateShape: PersonalHouse2
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse3
   suffix: PersonalHouse3
   components:
@@ -36,7 +36,7 @@
     autoGenerateShape: PersonalHouse3
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse4
   suffix: PersonalHouse4
   components:
@@ -44,7 +44,7 @@
     autoGenerateShape: PersonalHouse4
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse5
   suffix: PersonalHouse5
   components:
@@ -52,7 +52,7 @@
     autoGenerateShape: PersonalHouse5
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse6
   suffix: PersonalHouse6
   components:
@@ -60,7 +60,7 @@
     autoGenerateShape: PersonalHouse6
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse7
   suffix: PersonalHouse7
   components:
@@ -68,7 +68,7 @@
     autoGenerateShape: PersonalHouse7
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse8
   suffix: PersonalHouse8
   components:
@@ -76,7 +76,7 @@
     autoGenerateShape: PersonalHouse8
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse9
   suffix: PersonalHouse9
   components:
@@ -84,7 +84,7 @@
     autoGenerateShape: PersonalHouse9
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse10
   suffix: PersonalHouse10
   components:
@@ -92,7 +92,7 @@
     autoGenerateShape: PersonalHouse10
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse11
   suffix: PersonalHouse11
   components:
@@ -100,7 +100,7 @@
     autoGenerateShape: PersonalHouse11
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse12
   suffix: PersonalHouse12
   components:
@@ -108,7 +108,7 @@
     autoGenerateShape: PersonalHouse12
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse13
   suffix: PersonalHouse13
   components:
@@ -116,7 +116,7 @@
     autoGenerateShape: PersonalHouse13
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse14
   suffix: PersonalHouse14
   components:
@@ -124,7 +124,7 @@
     autoGenerateShape: PersonalHouse14
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse15
   suffix: PersonalHouse15
   components:
@@ -132,7 +132,7 @@
     autoGenerateShape: PersonalHouse15
     
 - type: entity
-  parent: CP14BaseKey
+  parent: CP14KeyCopperBlank
   id: CP14KeyPersonalHouse16
   suffix: PersonalHouse16
   components:

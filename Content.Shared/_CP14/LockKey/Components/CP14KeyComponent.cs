@@ -1,3 +1,4 @@
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.LockKey.Components;
@@ -5,10 +6,10 @@ namespace Content.Shared._CP14.LockKey.Components;
 /// <summary>
 /// a key component that can be used to unlock and lock locks from CPLockComponent
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentState(fieldDeltas: true), NetworkedComponent]
 public sealed partial class CP14KeyComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public List<int>? LockShape = null;
 
     /// <summary>

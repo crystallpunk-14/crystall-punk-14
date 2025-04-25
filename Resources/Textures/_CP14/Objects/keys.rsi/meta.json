@@ -8,64 +8,37 @@
   "copyright": "Created by TheShuEd (Github) ",
   "states": [
     {
-      "name": "key1"
+      "name": "file"
     },
     {
-      "name": "key2"
+      "name": "key_iron"
     },
     {
-      "name": "key3"
+      "name": "key_gold"
     },
     {
-      "name": "key4"
+      "name": "key_copper"
     },
     {
-      "name": "key5"
+      "name": "key_mithril"
     },
     {
-      "name": "key6"
+      "name": "lock_iron"
     },
     {
-      "name": "key7"
+      "name": "lock_copper"
     },
     {
-      "name": "key8"
+      "name": "lock_gold"
     },
     {
-      "name": "key9"
+      "name": "lock_mithril"
     },
     {
-      "name": "key10"
+      "name": "lockpick_iron"
     },
     {
-      "name": "key11"
-    },
-    {
-      "name": "key12"
-    },
-    {
-      "name": "key13"
-    },
-    {
-      "name": "key14"
-    },
-    {
-      "name": "key15"
-    },
-    {
-      "name": "key16"
-    },
-    {
-      "name": "key17"
-    },
-    {
-      "name": "key18"
-    },
-    {
-      "name": "lock"
-    },
-    {
-      "name": "lockpick"
+      "name": "lockpick_mithril"
     },
     {
       "name": "keyring"
@@ -81,9 +54,6 @@
     },
     {
       "name": "ring-3"
-    },
-    {
-      "name": "vault_key"
     }
   ]
 }
