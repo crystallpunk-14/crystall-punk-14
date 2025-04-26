@@ -4,6 +4,7 @@
 - type: CP14Recipe
   id: CP14ModularTipCopperArrow
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -15,6 +16,7 @@
 - type: CP14Recipe
   id: CP14ModularTipIronArrow
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -26,6 +28,7 @@
 - type: CP14Recipe
   id: CP14ModularTipGoldArrow
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -37,6 +40,7 @@
 - type: CP14Recipe
   id: CP14ModularTipMithrilArrow
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 2
   requirements:
   - !type:StackResource

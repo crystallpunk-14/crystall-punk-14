@@ -12,9 +12,6 @@ public sealed class CP14WorkbenchBoundUserInterface : BoundUserInterface
 {
     private CP14WorkbenchWindow? _window;
 
-    [ViewVariables]
-    private string _search = string.Empty;
-
     public CP14WorkbenchBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
@@ -26,12 +23,6 @@ public sealed class CP14WorkbenchBoundUserInterface : BoundUserInterface
         _window = this.CreateWindow<CP14WorkbenchWindow>();
 
         _window.OnCraft += entry => SendMessage(new CP14WorkbenchUiCraftMessage(entry.ProtoId));
-
-        _window.OnTextUpdated += search =>
-        {
-            _search = search.Trim().ToLowerInvariant();
-            _window.UpdateFilter(_search);
-        };
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -41,7 +32,7 @@ public sealed class CP14WorkbenchBoundUserInterface : BoundUserInterface
         switch (state)
         {
             case CP14WorkbenchUiRecipesState recipesState:
-                _window?.UpdateRecipes(recipesState, _search);
+                _window?.UpdateState(recipesState);
                 break;
         }
     }

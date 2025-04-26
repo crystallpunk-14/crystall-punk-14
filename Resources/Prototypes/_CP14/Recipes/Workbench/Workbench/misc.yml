@@ -1,6 +1,7 @@
 - type: CP14Recipe
   id: CP14Bucket
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackGroupResource
@@ -60,6 +61,7 @@
 - type: CP14Recipe
   id: CP14Lighter
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -73,6 +75,7 @@
 - type: CP14Recipe
   id: CP14ModularGripWooden
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -83,6 +86,7 @@
 - type: CP14Recipe
   id: CP14ModularGripWoodenLong
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -93,6 +97,7 @@
 - type: CP14Recipe
   id: CP14ModularGripLucens
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -103,6 +108,7 @@
 - type: CP14Recipe
   id: CP14ModularGripLucensLong
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -113,6 +119,7 @@
 - type: CP14Recipe
   id: CP14Bow
   tag: CP14RecipeWorkbench
+  category: Weapon
   craftTime: 2
   requirements:
   - !type:StackGroupResource
@@ -126,6 +133,7 @@
 - type: CP14Recipe
   id: CP14ModularRodWooden
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 3
   requirements:
   - !type:StackResource
@@ -137,6 +145,7 @@
 - type: CP14Recipe
   id: CP14ModularRodLucens
   tag: CP14RecipeWorkbench
+  category: Tools
   craftTime: 3
   requirements:
   - !type:StackResource
