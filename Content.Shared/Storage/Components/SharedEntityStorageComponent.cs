@@ -86,7 +86,7 @@ public abstract partial class SharedEntityStorageComponent : Component
     /// Whether or not the container is sealed and traps air inside of it
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool Airtight = true;
+    public bool Airtight = false; //CP14 false - bandaid fix: dont work with MapAtmosphere
 
     /// <summary>
     /// Whether or not the entitystorage is open or closed

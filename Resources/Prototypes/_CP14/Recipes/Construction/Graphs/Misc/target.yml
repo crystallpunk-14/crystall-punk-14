@@ -27,9 +27,6 @@
             - stackGroup: WoodenPlanks
               amount: 3
               doAfter: 1
-            - material: CP14Nail
-              amount: 1
-              doAfter: 1
             - tag: CP14DyeRed
               name: red dye
               icon:
