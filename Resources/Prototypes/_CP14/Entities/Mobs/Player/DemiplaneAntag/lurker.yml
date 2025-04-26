@@ -98,16 +98,7 @@
     spells:
     - CP14ActionSpellLurkerFear
     - CP14ActionSpellLurkerKick
-    - CP14ActionSpellLurkerWarp
-  #- type: SpamEmitSound
-  #  minInterval: 20
-  #  maxInterval: 80
-  #  sound:
-  #    path: /Audio/_CP14/Effects/Lurker/ambient.ogg
-  #    params:
-  #      volume: -8
-  #      variation: 0.125
-  #- type: SoundWhileAlive
+    - CP14ActionSpellLurkerStep
   - type: Stealth
     enabledOnDeath: false
     maxVisibility: 1.2

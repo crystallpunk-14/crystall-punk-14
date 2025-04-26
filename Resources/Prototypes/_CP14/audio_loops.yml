@@ -19,7 +19,7 @@
   id: Lurker
   sound:
     params:
-      volume: -8
+      volume: -12
     path: /Audio/_CP14/Effects/Lurker/ambient.ogg
   rules: NearLurker
 
