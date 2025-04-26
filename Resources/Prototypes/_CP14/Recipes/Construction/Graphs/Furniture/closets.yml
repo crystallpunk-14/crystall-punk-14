@@ -10,7 +10,5 @@
           steps:
             - stackGroup: WoodenPlanks
               amount: 4
-            - material: CP14Nail
-              amount: 2
     - node: CP14WoodenCloset
       entity: CP14WoodenCloset

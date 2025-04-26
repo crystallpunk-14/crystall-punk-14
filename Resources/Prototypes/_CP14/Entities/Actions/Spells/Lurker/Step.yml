@@ -1,24 +1,24 @@
 - type: entity
-  id: CP14ActionSpellWendigoWarp
+  id: CP14ActionSpellLurkerStep
   name: Shadow step
   description: A step through the gash of reality that allows you to cover a small of distance quickly.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/wendigo.rsi
+    sprite: _CP14/Actions/Spells/lurker.rsi
     state: step
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectWendigoStep
+      - CP14ImpactEffectLurkerStep
     effects:
     - !type:CP14SpellCasterTeleport
       needVision: false
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14WendigoRitualSound
+      - CP14LurkerRitualSound
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneWendigoFear
+    proto: CP14RuneLurkerFear
   - type: EntityWorldTargetAction
     checkCanAccess: false
     range: 10
@@ -26,7 +26,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Actions/Spells/wendigo.rsi
+      sprite: _CP14/Actions/Spells/lurker.rsi
       state: step
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 30
@@ -34,7 +34,7 @@
       breakOnMove: false
 
 - type: entity
-  id: CP14ImpactEffectWendigoStep
+  id: CP14ImpactEffectLurkerStep
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
