@@ -1,0 +1,5 @@
+- type: entity
+  id: CP14StatusEffectTestRegeneration
+  components:
+  - type: CP14StatusEffect
+    alert: CP14VampireStarving
