@@ -165,14 +165,14 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
 
             // Base skill icon
             var baseTexture = skill.Icon.Frame0();
-            var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 2;
+            var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * UIScale;
             var baseQuad = new UIBox2(pos - baseSize / 2, pos + baseSize / 2);
 
             var hovered = (cursor - pos).LengthSquared() <= (baseSize.X / 2) * (baseSize.X / 2);
 
             // Frame
             var frameTexture = Tree.FrameIcon.Frame0();
-            var frameSize = new Vector2(frameTexture.Width, frameTexture.Height) * 2;
+            var frameSize = new Vector2(frameTexture.Width, frameTexture.Height) * 1.5f * UIScale;
             var frameQuad = new UIBox2(pos - frameSize / 2, pos + frameSize / 2);
             handle.DrawTextureRect(frameTexture, frameQuad, canBeLearned ? Color.White : Color.FromSrgb(new Color(0.7f, 0.7f, 0.7f)));
 
@@ -180,7 +180,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
             if (_selectedNode == skill)
             {
                 var selectedTexture = Tree.SelectedIcon.Frame0();
-                var selectedSize = new Vector2(selectedTexture.Width, selectedTexture.Height) * 2;
+                var selectedSize = new Vector2(selectedTexture.Width, selectedTexture.Height) * 1.5f * UIScale;
                 var selectedQuad = new UIBox2(pos - selectedSize / 2, pos + selectedSize / 2);
                 handle.DrawTextureRect(selectedTexture, selectedQuad, Color.White);
             }
@@ -190,7 +190,7 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
             {
                 _hoveredNode = skill;
                 var hoveredTexture = Tree.HoveredIcon.Frame0();
-                var hoveredSize = new Vector2(hoveredTexture.Width, hoveredTexture.Height) * 2;
+                var hoveredSize = new Vector2(hoveredTexture.Width, hoveredTexture.Height) * 1.5f * UIScale;
                 var hoveredQuad = new UIBox2(pos - hoveredSize / 2, pos + hoveredSize / 2);
                 handle.DrawTextureRect(hoveredTexture, hoveredQuad, Color.White);
             }
@@ -202,14 +202,14 @@ public sealed partial class CP14SkillTreeGraphControl : BoxContainer
             if (learned)
             {
                 var learnedTexture = Tree.LearnedIcon.Frame0();
-                var learnedSize = new Vector2(learnedTexture.Width, learnedTexture.Height) * 2;
+                var learnedSize = new Vector2(learnedTexture.Width, learnedTexture.Height) * 1.5f * UIScale;
                 var learnedQuad = new UIBox2(pos - learnedSize / 2, pos + learnedSize / 2);
                 handle.DrawTextureRect(learnedTexture, learnedQuad, Color.White);
             }
             else if (canBeLearned)
             {
                 var availableTexture = Tree.AvailableIcon.Frame0();
-                var availableSize = new Vector2(availableTexture.Width, availableTexture.Height) * 2;
+                var availableSize = new Vector2(availableTexture.Width, availableTexture.Height) * 1.5f * UIScale;
                 var availableQuad = new UIBox2(pos - availableSize / 2, pos + availableSize / 2);
                 handle.DrawTextureRect(availableTexture, availableQuad, Color.White);
             }

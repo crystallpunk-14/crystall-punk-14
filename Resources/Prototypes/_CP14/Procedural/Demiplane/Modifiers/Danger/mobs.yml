@@ -34,7 +34,7 @@
       entity: CP14SpawnMobDinoYumkaraptor
       count: 5
       minGroupSize: 1
-      maxGroupSize: 1
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: MonsterMosquito
@@ -79,8 +79,9 @@
     max: 10
   name: cp14-modifier-skeleton
   generationWeight: 1.5
+  generationProb: 0.5
   categories:
-    Danger: 0.55
+    GhostRoleDanger: 1
   layers:
     - !type:OreDunGen
       entity: CP14SpawnPointGhostDemiplaneSkeleton
@@ -94,8 +95,9 @@
     min: 3
     max: 10
   generationWeight: 0.33
+  generationProb: 0.25
   categories:
-    Danger: 0.55
+    GhostRoleDanger: 1
   layers:
     - !type:OreDunGen
       entity: SpawnPointGhostDemiplaneLurker
@@ -120,7 +122,7 @@
       entity: CP14MobMonsterMole
       count: 6
       minGroupSize: 1
-      maxGroupSize: 2
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: EnemyIceSpectre
@@ -139,7 +141,7 @@
       entity: CP14MobIceSpectre
       count: 6
       minGroupSize: 1
-      maxGroupSize: 2
+      maxGroupSize: 3
 
 #- type: cp14DemiplaneModifier #Removed to Whistler rebalance
 #  id: EnemyInvisibleWhistler
@@ -169,9 +171,9 @@
   layers:
     - !type:OreDunGen
       entity: CP14MobSlimeElectric
-      count: 3
-      minGroupSize: 4
-      maxGroupSize: 5
+      count: 6
+      minGroupSize: 2
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: MobSlimeFire
@@ -186,9 +188,9 @@
   layers:
     - !type:OreDunGen
       entity: CP14MobSlimeFire
-      count: 3
-      minGroupSize: 4
-      maxGroupSize: 5
+      count: 6
+      minGroupSize: 2
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: MobSlimeIce
@@ -203,9 +205,9 @@
   layers:
     - !type:OreDunGen
       entity: CP14MobSlimeIce
-      count: 3
-      minGroupSize: 4
-      maxGroupSize: 5
+      count: 6
+      minGroupSize: 2
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: MobSlimeBase
@@ -217,9 +219,9 @@
   layers:
     - !type:OreDunGen
       entity: CP14MobSlimeBase
-      count: 3
-      minGroupSize: 4
-      maxGroupSize: 5
+      count: 6
+      minGroupSize: 2
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: MobWatcherIce
@@ -236,7 +238,7 @@
   layers:
     - !type:OreDunGen
       entity: CP14MobWatcherIce
-      count: 2
+      count: 8
       minGroupSize: 2
       maxGroupSize: 3
 
@@ -255,6 +257,6 @@
   layers:
     - !type:OreDunGen
       entity: CP14MobWatcherMagma
-      count: 2
+      count: 8
       minGroupSize: 2
       maxGroupSize: 3

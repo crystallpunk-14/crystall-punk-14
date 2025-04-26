@@ -22,7 +22,7 @@ Non-legalese summary of the terms of this agreement (This is not a replacement f
 
 # Approved licenses:
 The following licenses are permitted to be used in this project if you are not the original copyright owner:
-- The following Creative Commons 4.0 (or later) licenses: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en), CC-[BY-ND](https://creativecommons.org/licenses/by-nd/4.0/legalcode.en),(ND licenses are discouraged, but accepted) or an earlier version with *permission from the author*.
+- The following Creative Commons 4.0 (or later) licenses: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en), [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en), [CC-BY-ND](https://creativecommons.org/licenses/by-nd/4.0/legalcode.en), (ND licenses are discouraged, but accepted) or an earlier version with *permission from the author*.
 - [The MIT License](https://opensource.org/license/MIT)
 - Public domain content under [CC0](https://creativecommons.org/public-domain/cc0/), etc. NOTE: The absence of a copyright mark means **all rights reserved** *not* public domain, public domain must be explicitly marked/stated. Attribution is still required for public domain works.
 

@@ -44,6 +44,13 @@
           - ItemMask
         density: 1000
         hard: false
+      fix2: # For block AI movement
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 30
+        mask:
+        - ItemMask
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWater
@@ -62,7 +69,6 @@
   - type: TileEntityEffect
     effects:
     - !type:ExtinguishReaction
-  - type: FrictionContacts
 
 - type: entity
   parent: CP14FloorWaterOptimized
@@ -75,7 +81,6 @@
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.2
     sprintSpeedModifier: 0.2
-  - type: FrictionContacts
   - type: DamageContacts
     damage:
       types:
