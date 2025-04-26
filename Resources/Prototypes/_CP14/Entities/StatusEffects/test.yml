@@ -1,5 +1,7 @@
 - type: entity
   id: CP14StatusEffectTestRegeneration
+  name: Regeneration
+  description: Welp, we healing now!
   components:
   - type: CP14StatusEffect
     alert: CP14VampireStarving

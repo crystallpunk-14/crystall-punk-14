@@ -45,6 +45,12 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
             RaiseLocalEvent(effect.AppliedTo.Value, ev);
             RaiseLocalEvent(ent, ev);
 
+            EnsureComp<CP14StatusEffectContainerComponent>(effect.AppliedTo.Value, out var container);
+
+            var meta = MetaData(ent);
+            if (meta.EntityPrototype is not null)
+                container.ActiveStatusEffects.Remove(meta.EntityPrototype);
+
             QueueDel(ent);
         }
     }
@@ -61,6 +67,7 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
     {
         if (!_effectQuery.TryComp(effect, out var effectComp))
             return;
+
         if (effectComp.AppliedTo is null)
             return;
 
@@ -103,7 +110,6 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
 /// <summary>
 /// Calls on both effect entity and target entity, when a status effect is applied.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed class CP14StatusEffectApplied(EntityUid target, EntityUid effect) : EntityEventArgs
 {
     public EntityUid Target = target;
@@ -113,7 +119,6 @@ public sealed class CP14StatusEffectApplied(EntityUid target, EntityUid effect) 
 /// <summary>
 /// Calls on both effect entity and target entity, when a status effect is removed.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed class CP14StatusEffectRemoved(EntityUid target, EntityUid effect) : EntityEventArgs
 {
     public EntityUid Target = target;
