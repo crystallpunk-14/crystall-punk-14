@@ -1,45 +1,48 @@
 {
   "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "By omsoyk (GitHub/discord)",
   "size": {
-    "x": 48,
+    "x": 32,
     "y": 64
   },
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Created by Skilets (Discord) ",
   "states": [
     {
       "name": "full"
     },
     {
-      "name": "skulls0",
+      "name": "frame"
+    },
+    {
+      "name": "stonebricks0",
       "directions": 4
     },
     {
-      "name": "skulls1",
+      "name": "stonebricks1",
       "directions": 4
     },
     {
-      "name": "skulls2",	
+      "name": "stonebricks2",
       "directions": 4
     },
     {
-      "name": "skulls3",
+      "name": "stonebricks3",
       "directions": 4
     },
     {
-      "name": "skulls4",
+      "name": "stonebricks4",
       "directions": 4
     },
     {
-      "name": "skulls5",
+      "name": "stonebricks5",
       "directions": 4
     },
     {
-      "name": "skulls6",
+      "name": "stonebricks6",
       "directions": 4
     },
     {
-      "name": "skulls7",
+      "name": "stonebricks7",
       "directions": 4
     }
   ]

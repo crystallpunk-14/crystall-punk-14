@@ -331,6 +331,9 @@ CP14WallCyan: CP14WallStonebrick
 CP14FrameWooden: CP14WallFrameWooden
 CP14BaseCrowbar: CP14ModularIronPickaxe
 
+#2025-26-04
+CP14WallSkulls: CP14WallStonebrickOld
+
 # <---> CrystallEdge migration zone end
 
 
