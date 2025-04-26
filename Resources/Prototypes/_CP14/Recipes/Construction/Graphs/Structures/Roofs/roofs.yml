@@ -45,7 +45,7 @@
         - to: start
           completed:
             - !type:SpawnPrototype
-              prototype: CP14Stone1
+              prototype: CP14StoneBlock1
               amount: 1
             - !type:DeleteEntity {}
           steps:
