@@ -1,10 +1,13 @@
 - type: entity
   id: CP14StatusEffectTestRegeneration
-  name: Regeneration
-  description: Welp, we healing now!
+  name: WeeWooWeeWoo
+  description: Welp, we muted now!
   components:
   - type: CP14StatusEffect
     alert: CP14VampireStarving
     whitelist:
       components:
         - MobState
+  - type: CP14StatusEffectAdditionalComponents
+    components:
+    - type: Muted

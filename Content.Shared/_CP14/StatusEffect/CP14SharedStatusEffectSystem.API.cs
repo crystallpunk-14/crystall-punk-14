@@ -46,7 +46,7 @@ public sealed partial class CP14SharedStatusEffectSystem
         container.ActiveStatusEffects.Add(effectProto, effect);
         effectComp.AppliedTo = uid;
 
-        var ev = new CP14StatusEffectApplied(uid, effect);
+        var ev = new CP14StatusEffectApplied(uid, (effect, effectComp));
         RaiseLocalEvent(uid, ev);
         RaiseLocalEvent(effect, ev);
 
@@ -58,14 +58,17 @@ public sealed partial class CP14SharedStatusEffectSystem
         if (!_containerQuery.TryComp(uid, out var container))
             return false;
 
-        if (!container.ActiveStatusEffects.TryGetValue(effectProto, out var statusEffect))
+        if (!container.ActiveStatusEffects.TryGetValue(effectProto, out var effect))
             return false;
 
-        var ev = new CP14StatusEffectRemoved(uid, statusEffect);
-        RaiseLocalEvent(uid, ev);
-        RaiseLocalEvent(statusEffect, ev);
+        if (!_effectQuery.TryComp(effect, out var effectComp))
+            return false;
 
-        QueueDel(statusEffect);
+        var ev = new CP14StatusEffectRemoved(uid, (effect, effectComp));
+        RaiseLocalEvent(uid, ev);
+        RaiseLocalEvent(effect, ev);
+
+        QueueDel(effect);
         container.ActiveStatusEffects.Remove(effectProto);
         return true;
     }
