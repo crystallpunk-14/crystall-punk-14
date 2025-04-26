@@ -75,7 +75,6 @@
         - id: CP14CrystalLampBlueEmpty
         - id: CP14CrystalLampOrangeEmpty
       - id: CP14Rope
-      - id: CP14Nail20
       - id: CP14EnergyCrystalSmall
       - id: CP14d20Dice
       - id: CP14d6Dice
@@ -90,6 +89,7 @@
   table: !type:GroupSelector
     children:
     - id: CP14FoodPotato
+    - id: CP14FoodOnion
     - id: CP14AgaricMushroom #dont eat
     - id: CP14Cloth10
     - id: CP14CrayonWhite

@@ -151,3 +151,31 @@
     graph: CP14WallMarbleBrick
     node: CP14WallMarbleBrick
   - type: CP14WallpaperHolder
+
+- type: entity
+  id: CP14WallStonebrickOld
+  name: old stonebrick wall
+  parent: CP14BaseWall
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/brick_stone_old_wall.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/brick_stone_old_wall.rsi
+  - type: IconSmooth
+    base: stonebricks
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

@@ -170,7 +170,6 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
 
         var defaultKey = $"cp14-modular-clothing-layer-{args.Slot}";
 
-        var counterPart = 0;
         foreach (var part in start.Comp.InstalledParts)
         {
             var indexedPart = _proto.Index(part);
@@ -180,7 +179,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                 var i = 0;
                 foreach (var layer in layers)
                 {
-                    var key = $"{defaultKey}-{counterPart}-{i}";
+                    var key = $"{defaultKey}-{indexedPart.ID}-{i}";
                     args.Layers.Add((key, layer));
                     i++;
                 }
@@ -210,7 +209,7 @@ public sealed class CP14ClientModularCraftSystem : CP14SharedModularCraftSystem
                     Color = indexedPart.Color,
                 };
 
-                var key = $"{defaultKey}-{counterPart}-default";
+                var key = $"{defaultKey}-{indexedPart.ID}-default";
                 args.Layers.Add((key, defaultLayer));
             }
         }

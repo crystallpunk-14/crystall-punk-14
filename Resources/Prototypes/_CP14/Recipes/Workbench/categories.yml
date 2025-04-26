@@ -1,0 +1,15 @@
+- type: CP14RecipeCategory
+  id: FloorTile
+  name: cp14-recipe-category-tile
+
+- type: CP14RecipeCategory
+  id: Tools
+  name: cp14-recipe-category-tool
+
+- type: CP14RecipeCategory
+  id: Weapon
+  name: cp14-recipe-category-weapon
+
+- type: CP14RecipeCategory
+  id: Armor
+  name: cp14-recipe-category-armor

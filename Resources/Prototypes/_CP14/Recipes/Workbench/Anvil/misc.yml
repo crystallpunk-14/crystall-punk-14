@@ -1,6 +1,7 @@
 - type: CP14Recipe
   id: CP14BaseShield
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -14,6 +15,7 @@
 - type: CP14Recipe
   id: CP14BaseWrench
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -24,6 +26,7 @@
 - type: CP14Recipe
   id: CP14Screwdriver
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -42,18 +45,9 @@
   result: CP14PlatePie
 
 - type: CP14Recipe
-  id: CP14Nail20
-  tag: CP14RecipeAnvil
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 2
-  result: CP14Nail20
-
-- type: CP14Recipe
   id: CP14CrystalLampBlueEmpty
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -67,6 +61,7 @@
 - type: CP14Recipe
   id: CP14Scissors
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -77,6 +72,7 @@
 - type: CP14Recipe
   id: CP14ClothingOuterClothingCopperArmor
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -87,6 +83,7 @@
 - type: CP14Recipe
   id: CP14ClothingGlovesGirdles
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -97,6 +94,7 @@
 - type: CP14Recipe
   id: CP14CrossboltCopper
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -108,6 +106,7 @@
 - type: CP14Recipe
   id: CP14CrossboltIron
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -119,6 +118,7 @@
 - type: CP14Recipe
   id: CP14CrossboltGold
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -130,6 +130,7 @@
 - type: CP14Recipe
   id: CP14CrossboltMithril
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -141,6 +142,7 @@
 - type: CP14Recipe
   id: CP14BaseLockpick
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -151,6 +153,7 @@
 - type: CP14Recipe
   id: CP14LockpickMithril
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -161,6 +164,7 @@
 - type: CP14Recipe
   id: CP14BaseLightCrossbow
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -177,6 +181,7 @@
 - type: CP14Recipe
   id: CP14ClothingMaskSteelMask
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -187,6 +192,7 @@
 - type: CP14Recipe
   id: CP14KeyCopperBlank
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 3
   requirements:
   - !type:StackResource
@@ -197,6 +203,7 @@
 - type: CP14Recipe
   id: CP14KeyIronBlank
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 3
   requirements:
   - !type:StackResource
@@ -207,6 +214,7 @@
 - type: CP14Recipe
   id: CP14KeyGoldBlank
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 3
   requirements:
   - !type:StackResource
@@ -217,6 +225,7 @@
 - type: CP14Recipe
   id: CP14KeyMithrilBlank
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 3
   requirements:
   - !type:StackResource
@@ -227,6 +236,7 @@
 - type: CP14Recipe
   id: CP14KeyFile
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -237,6 +247,7 @@
 - type: CP14Recipe
   id: CP14LockCopper
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -247,6 +258,7 @@
 - type: CP14Recipe
   id: CP14LockIron
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -257,6 +269,7 @@
 - type: CP14Recipe
   id: CP14LockGold
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -267,6 +280,7 @@
 - type: CP14Recipe
   id: CP14LockMithril
   tag: CP14RecipeAnvil
+  category: Tools
   craftTime: 2
   requirements:
   - !type:StackResource

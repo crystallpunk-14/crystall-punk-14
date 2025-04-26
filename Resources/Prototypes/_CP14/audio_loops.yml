@@ -16,6 +16,14 @@
   rules: NearWater
 
 - type: ambientLoop
+  id: Lurker
+  sound:
+    params:
+      volume: -12
+    path: /Audio/_CP14/Effects/Lurker/ambient.ogg
+  rules: NearLurker
+
+- type: ambientLoop
   id: Cave
   sound:
     params:
@@ -73,3 +81,13 @@
         tags:
           - CP14AmbientWater
       range: 4
+
+- type: rules
+  id: NearLurker
+  rules:
+    - !type:NearbyEntitiesRule
+      count: 1
+      whitelist:
+        tags:
+          - CP14AmbientLurker
+      range: 6

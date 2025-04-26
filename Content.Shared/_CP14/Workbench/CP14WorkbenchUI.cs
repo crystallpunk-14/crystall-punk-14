@@ -50,6 +50,11 @@ public readonly struct CP14WorkbenchUiRecipesEntry : IEquatable<CP14WorkbenchUiR
         Craftable = craftable;
     }
 
+    public int CompareTo(CP14WorkbenchUiRecipesEntry other)
+    {
+        return Craftable.CompareTo(other.Craftable);
+    }
+
     public override bool Equals(object? obj)
     {
         return obj is CP14WorkbenchUiRecipesEntry other && Equals(other);
@@ -63,5 +68,15 @@ public readonly struct CP14WorkbenchUiRecipesEntry : IEquatable<CP14WorkbenchUiR
     public override int GetHashCode()
     {
         return HashCode.Combine(ProtoId, Craftable);
+    }
+
+    public override string ToString()
+    {
+        return $"{ProtoId} ({Craftable})";
+    }
+
+    public static int CompareTo(CP14WorkbenchUiRecipesEntry left, CP14WorkbenchUiRecipesEntry right)
+    {
+        return right.CompareTo(left);
     }
 }

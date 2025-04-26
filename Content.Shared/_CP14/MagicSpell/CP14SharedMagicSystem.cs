@@ -68,9 +68,24 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnEndCast(Entity<CP14MagicEffectComponent> ent, ref CP14EndCastMagicEffectEvent args)
     {
-        if (TryComp<CP14MagicCasterComponent>(args.Performer, out var caster))
+        if (!TryComp<CP14MagicCasterComponent>(args.Performer, out var caster))
+            return;
+
+        caster.CastedSpells.Remove(ent);
+
+        //Break all casts
+        List<EntityUid> castedSpells = new();
+        foreach (var casted in caster.CastedSpells)
         {
-            caster.CastedSpells.Remove(ent);
+            castedSpells.Add(casted);
+        }
+
+        foreach (var casted in castedSpells)
+        {
+            if (!_magicEffectQuery.TryComp(casted, out var castedComp))
+                continue;
+
+            _doAfter.Cancel(castedComp.ActiveDoAfter);
         }
     }
 
