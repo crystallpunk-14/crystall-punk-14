@@ -19,21 +19,26 @@ public sealed partial class CP14SharedStatusEffectSystem
             }
         }
 
+        // We make this checks before status effect entity spawned
         if (!_proto.TryIndex(effectProto, out var effectProtoData))
             return false;
 
-        if (!effectProtoData.TryGetComponent<CP14StatusEffectComponent>(out var effectComp, _compFactory))
+        if (!effectProtoData.TryGetComponent<CP14StatusEffectComponent>(out var effectProtoComp, _compFactory))
         {
             Log.Error($"Entity {effectProto} does not have a {nameof(CP14StatusEffectComponent)} component, but tried to apply it as a status effect on {ToPrettyString(uid)}.");
             return false;
         }
 
-        if (effectComp.Whitelist is not null && !_whitelist.IsValid(effectComp.Whitelist, uid))
+        if (effectProtoComp.Whitelist is not null && !_whitelist.IsValid(effectProtoComp.Whitelist, uid))
             return false;
 
         EnsureComp<CP14StatusEffectContainerComponent>(uid, out var container);
 
+        //And only if all checks passed we spawn the effect
         var effect = Spawn(effectProto);
+
+        if (!_effectQuery.TryComp(effect, out var effectComp))
+            return false;
 
         if (duration != null)
             effectComp.EndEffectTime = _timing.CurTime + duration;

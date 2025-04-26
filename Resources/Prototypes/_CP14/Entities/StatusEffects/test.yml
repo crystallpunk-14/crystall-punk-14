@@ -5,3 +5,6 @@
   components:
   - type: CP14StatusEffect
     alert: CP14VampireStarving
+    whitelist:
+      components:
+        - MobState
