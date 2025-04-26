@@ -1,5 +1,6 @@
 using Content.Shared.Alert;
-using Robust.Shared.Serialization;
+using Content.Shared.Whitelist;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.StatusEffect;
@@ -8,6 +9,9 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IComponentFactory _compFactory = default!;
 
     private EntityQuery<CP14StatusEffectContainerComponent> _containerQuery;
     private EntityQuery<CP14StatusEffectComponent> _effectQuery;

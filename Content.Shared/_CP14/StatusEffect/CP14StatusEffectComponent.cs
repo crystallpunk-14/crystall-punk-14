@@ -1,4 +1,5 @@
 using Content.Shared.Alert;
+using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -20,4 +21,10 @@ public sealed partial class CP14StatusEffectComponent : Component
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField, AutoNetworkedField]
     public TimeSpan? EndEffectTime;
+
+    /// <summary>
+    /// Whitelist, by which it is determined whether this status effect can be imposed on a particular entity.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Whitelist = null;
 }

@@ -6,44 +6,44 @@ public sealed partial class CP14SharedStatusEffectSystem
 {
     public bool TryAddStatusEffect(EntityUid uid, EntProtoId effectProto, TimeSpan? duration = null)
     {
-        EntityUid? effect = null;
-        if (TryGetStatusEffect(uid, effectProto, out effect))
+        if (TryGetStatusEffect(uid, effectProto, out var existedEffect))
         {
-            //We dont need to add the effect if it already exists
+            //We don't need to add the effect if it already exists
             if (duration is null)
                 return true;
 
-            if (effect != null)
+            if (existedEffect != null)
             {
-                AddStatusEffectTime(uid, effect.Value, duration.Value);
+                AddStatusEffectTime(uid, existedEffect.Value, duration.Value);
                 return true;
             }
         }
 
-        EnsureComp<CP14StatusEffectContainerComponent>(uid, out var container);
+        if (!_proto.TryIndex(effectProto, out var effectProtoData))
+            return false;
 
-        effect = Spawn(effectProto);
-
-        if (!_effectQuery.TryComp(effect, out var effectComp))
+        if (!effectProtoData.TryGetComponent<CP14StatusEffectComponent>(out var effectComp, _compFactory))
         {
-            Log.Error(
-                $"Entity {effect} does not have a {nameof(CP14StatusEffectComponent)} component, but tried to apply it as a status effect on {ToPrettyString(uid):player}.");
-            QueueDel(effect);
+            Log.Error($"Entity {effectProto} does not have a {nameof(CP14StatusEffectComponent)} component, but tried to apply it as a status effect on {ToPrettyString(uid)}.");
             return false;
         }
 
-        // Duration configure
-        if (duration != null)
-        {
-            effectComp.EndEffectTime = _timing.CurTime + duration;
-        }
+        if (effectComp.Whitelist is not null && !_whitelist.IsValid(effectComp.Whitelist, uid))
+            return false;
 
-        container.ActiveStatusEffects.Add(effectProto, effect.Value);
+        EnsureComp<CP14StatusEffectContainerComponent>(uid, out var container);
+
+        var effect = Spawn(effectProto);
+
+        if (duration != null)
+            effectComp.EndEffectTime = _timing.CurTime + duration;
+
+        container.ActiveStatusEffects.Add(effectProto, effect);
         effectComp.AppliedTo = uid;
 
-        var ev = new CP14StatusEffectApplied(uid, effect.Value);
+        var ev = new CP14StatusEffectApplied(uid, effect);
         RaiseLocalEvent(uid, ev);
-        RaiseLocalEvent(effect.Value, ev);
+        RaiseLocalEvent(effect, ev);
 
         return true;
     }
