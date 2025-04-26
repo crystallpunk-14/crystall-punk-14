@@ -2,6 +2,9 @@
   id: Danger
 
 - type: cp14DemiplaneModifierCategory
+  id: GhostRoleDanger
+
+- type: cp14DemiplaneModifierCategory
   id: Reward
 
 - type: cp14DemiplaneModifierCategory

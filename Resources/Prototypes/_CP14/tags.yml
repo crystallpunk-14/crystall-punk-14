@@ -29,6 +29,9 @@
   id: CP14AmbientWater
 
 - type: Tag
+  id: CP14AmbientLurker
+
+- type: Tag
   id: CP14InkwellFittable
 
 - type: Tag
@@ -120,9 +123,6 @@
 
 - type: Tag
   id: CP14SharpeningStone
-
-- type: Tag
-  id: CP14Nail
 
 - type: Tag
   id: CP14Vial

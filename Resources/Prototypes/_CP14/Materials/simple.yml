@@ -35,15 +35,6 @@
   price: 0
 
 - type: material
-  id: CP14Nail
-  stackEntity: CP14Nail1
-  name: cp14-material-nail
-  unit: materials-unit-piece
-  icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
-  color: "#555963"
-  price: 0
-
-- type: material
   id: CP14Cloth
   stackEntity: CP14Cloth1
   name: cp14-material-cloth

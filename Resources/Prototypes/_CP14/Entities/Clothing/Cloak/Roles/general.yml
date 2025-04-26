@@ -77,6 +77,17 @@
 
 - type: entity
   parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakBrownFurCoat
+  name: brown fur coat
+  description: Warm in the rain, warm in the snow, warm in the wind. Nice.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat_brown.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/fur_coat_brown.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
   id: CP14ClothingCloakInsulated
   name: insulated mantle
   description: Winter is coming...
@@ -108,3 +119,46 @@
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/red_syurko.rsi
 
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakBlueSyurko
+  name: blue surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/blue_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/blue_syurko.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakGreenSyurko
+  name: green surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/green_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/green_syurko.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakWhiteSyurko
+  name: white surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/white_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/white_syurko.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakYellowSyurko
+  name: yellow surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/yellow_syurko.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/yellow_syurko.rsi

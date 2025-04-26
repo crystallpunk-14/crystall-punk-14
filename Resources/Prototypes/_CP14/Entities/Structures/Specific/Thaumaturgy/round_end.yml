@@ -6,7 +6,6 @@
   description: Maintains communication with the demiplanes while charged. Causes mosnters from the demiplanes to attack the city. Once it is discharged, the game is over.
   suffix: ONE TO MAP
   components:
-  - type: SpriteFade
   - type: Fixtures
     fixtures:
       fix1:
