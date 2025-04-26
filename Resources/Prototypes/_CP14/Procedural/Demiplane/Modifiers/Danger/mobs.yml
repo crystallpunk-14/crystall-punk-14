@@ -90,7 +90,7 @@
       maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
-  id: EnemyWendigo
+  id: EnemyLurker
   levels:
     min: 3
     max: 10
@@ -100,7 +100,7 @@
     GhostRoleDanger: 1
   layers:
     - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneWendigo
+      entity: SpawnPointGhostDemiplaneLurker
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
