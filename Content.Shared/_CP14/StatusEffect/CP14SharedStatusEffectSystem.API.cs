@@ -4,6 +4,16 @@ namespace Content.Shared._CP14.StatusEffect;
 
 public sealed partial class CP14SharedStatusEffectSystem
 {
+    /// <summary>
+    /// Attempts to add a status effect to the specified entity. Returns True if the effect is added or exists
+    /// and has been successfully extended in time, returns False if the status effect cannot be applied to this entity,
+    /// or for any other reason
+    /// </summary>
+    /// <param name="uid">The target entity on which the effect is added</param>
+    /// <param name="effectProto">ProtoId of the status effect entity. Make sure it has CP14StatusEffectComponent on it</param>
+    /// <param name="duration">Duration of status effect. Leave null and the effect will be permanent until it is removed using <c>TryRemoveStatusEffect</c>
+    /// In the other case, the effect will either be added for the specified time or its time will be extended for the specified time.</param>
+    /// <returns></returns>
     public bool TryAddStatusEffect(EntityUid uid, EntProtoId effectProto, TimeSpan? duration = null)
     {
         if (TryGetStatusEffect(uid, effectProto, out var existedEffect))
@@ -53,6 +63,9 @@ public sealed partial class CP14SharedStatusEffectSystem
         return true;
     }
 
+    /// <summary>
+    /// Attempting to remove a status effect from an entity. Returns True if the status effect existed on the entity and was successfully removed, and False in any other case.
+    /// </summary>
     public bool TryRemoveStatusEffect(EntityUid uid, EntProtoId effectProto)
     {
         if (!_containerQuery.TryComp(uid, out var container))
@@ -73,6 +86,9 @@ public sealed partial class CP14SharedStatusEffectSystem
         return true;
     }
 
+    /// <summary>
+    /// Checks whether the specified entity is under a specific status effect.
+    /// </summary>
     public bool HasStatusEffect(EntityUid uid, EntProtoId effectProto)
     {
         if (!_containerQuery.TryComp(uid, out var container))
@@ -81,6 +97,9 @@ public sealed partial class CP14SharedStatusEffectSystem
         return container.ActiveStatusEffects.ContainsKey(effectProto);
     }
 
+    /// <summary>
+    /// Attempting to retrieve the EntityUid of a status effect from an entity.
+    /// </summary>
     public bool TryGetStatusEffect(EntityUid uid, EntProtoId effectProto, out EntityUid? effect)
     {
         if (!_containerQuery.TryComp(uid, out var container))
