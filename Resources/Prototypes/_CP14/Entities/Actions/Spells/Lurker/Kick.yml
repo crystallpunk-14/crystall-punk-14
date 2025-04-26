@@ -1,10 +1,10 @@
 - type: entity
-  id: CP14ActionSpellWendigoKick
+  id: CP14ActionSpellLurkerKick
   name: Crushing attack
   description: You prepare a powerful melee strike that will knock your target back with force and stun them for a long time.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/wendigo.rsi
+    sprite: _CP14/Actions/Spells/lurker.rsi
     state: kick
   - type: CP14MagicEffectStaminaCost
     stamina: 20
@@ -13,7 +13,7 @@
     - !type:CP14SpellRevealStealthUser
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14WendigoRitualSound
+      - CP14LurkerRitualSound
     effects:
     - !type:CP14SpellRevealStealthUser
     - !type:CP14SpellApplyEntityEffect
@@ -32,15 +32,15 @@
           types:
             Blunt: 5
   - type: CP14MagicEffectEmoting
-    startEmote: cp14-kick-wendigo-start
-    endEmote: cp14-kick-wendigo
+    startEmote: cp14-kick-lurker-start
+    endEmote: cp14-kick-lurker
   - type: CP14MagicEffectPacifiedBlock
   - type: EntityTargetAction
     canTargetSelf: false
     range: 2
     itemIconStyle: BigAction
     icon:
-      sprite: _CP14/Actions/Spells/wendigo.rsi
+      sprite: _CP14/Actions/Spells/lurker.rsi
       state: kick
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 20

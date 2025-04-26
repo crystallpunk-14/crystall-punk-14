@@ -1,7 +1,7 @@
 - type: entity
-  id: CP14MobWendigo
+  id: CP14MobLurker
   parent: CP14SimpleMobBase
-  name: wendigo
+  name: lurker
   description: The spirit of hunger and night. Hunting lonely wanderers lost in the dark forest.
   categories: [ HideSpawnMenu ]
   components:
@@ -12,7 +12,7 @@
     drawdepth: Mobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      sprite: _CP14/Mobs/Monster/wendigo.rsi
+      sprite: _CP14/Mobs/Monster/lurker.rsi
       state: live
   - type: ReplacementAccent
     accent: xeno
@@ -34,6 +34,7 @@
     tags:
       - FootstepSound
       - HideContextMenu
+      - CP14AmbientLurker
   - type: DamageStateVisuals
     states:
       Alive:
@@ -95,18 +96,18 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellWendigoFear
-    - CP14ActionSpellWendigoKick
-    - CP14ActionSpellWendigoWarp
-  - type: SpamEmitSound
-    minInterval: 20
-    maxInterval: 80
-    sound:
-      path: /Audio/_CP14/Effects/Wendigo/ambient.ogg
-      params:
-        volume: -8
-        variation: 0.125
-  - type: SoundWhileAlive
+    - CP14ActionSpellLurkerFear
+    - CP14ActionSpellLurkerKick
+    - CP14ActionSpellLurkerWarp
+  #- type: SpamEmitSound
+  #  minInterval: 20
+  #  maxInterval: 80
+  #  sound:
+  #    path: /Audio/_CP14/Effects/Lurker/ambient.ogg
+  #    params:
+  #      volume: -8
+  #      variation: 0.125
+  #- type: SoundWhileAlive
   - type: Stealth
     enabledOnDeath: false
     maxVisibility: 1.2
@@ -115,51 +116,51 @@
     movementVisibilityRate: 0.55
   - type: ConditionalSpawner
     prototypes:
-    - CP14WendigoRitualSound
+    - CP14LurkerRitualSound
 
 - type: entity
-  id: CP14WendigoRitualSound
-  name: wendigo ritual far sound
+  id: CP14LurkerRitualSound
+  name: lurker ritual far sound
   categories: [ ForkFiltered ]
   components:
   - type: CP14PvsOverride
   - type: TriggerOnSpawn
   - type: CP14FarSound
     closeSound:
-      collection: CP14WendigoRitual
+      collection: CP14LurkerRitual
       params:
         variation: 0.2
         maxDistance: 20
         volume: 50
     farSound:
-      collection: CP14WendigoRitual
+      collection: CP14LurkerRitual
       params:
         variation: 0.2
   - type: TimedDespawn
     lifetime: 2
 
 - type: entity
-  id: SpawnPointGhostDemiplaneWendigo
+  id: SpawnPointGhostDemiplaneLurker
   name: ghost role spawn point
-  description: A ghost role for a wendigo
-  suffix: Wendigo
+  description: A ghost role for a lurker
+  suffix: Lurker
   categories: [ ForkFiltered ]
   parent: MarkerBase
   components:
   - type: GhostRole
-    name: cp14-ghost-role-information-name-wendigo
+    name: cp14-ghost-role-information-name-lurker
     allowMovement: true
-    description: cp14-ghost-role-information-description-wendigo
+    description: cp14-ghost-role-information-description-lurker
     rules: cp14-ghost-role-information-rules-demiplane
     mindRoles:
     - CP14MindRoleDemiplaneAntag
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
-    prototype: CP14MobWendigo
+    prototype: CP14MobLurker
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
       - state: green
-      - sprite: _CP14/Mobs/Monster/wendigo.rsi
+      - sprite: _CP14/Mobs/Monster/lurker.rsi
         state: live
