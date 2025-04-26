@@ -48,6 +48,23 @@ public sealed partial class CP14SharedStatusEffectSystem
         return true;
     }
 
+    public bool TryRemoveStatusEffect(EntityUid uid, EntProtoId effectProto)
+    {
+        if (!_containerQuery.TryComp(uid, out var container))
+            return false;
+
+        if (!container.ActiveStatusEffects.TryGetValue(effectProto, out var statusEffect))
+            return false;
+
+        var ev = new CP14StatusEffectRemoved(uid, statusEffect);
+        RaiseLocalEvent(uid, ev);
+        RaiseLocalEvent(statusEffect, ev);
+
+        QueueDel(statusEffect);
+        container.ActiveStatusEffects.Remove(effectProto);
+        return true;
+    }
+
     public bool HasStatusEffect(EntityUid uid, EntProtoId effectProto)
     {
         if (!_containerQuery.TryComp(uid, out var container))

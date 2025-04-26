@@ -41,17 +41,12 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
             if (effect.AppliedTo is null)
                 continue;
 
-            var ev = new CP14StatusEffectRemoved(effect.AppliedTo.Value, ent);
-            RaiseLocalEvent(effect.AppliedTo.Value, ev);
-            RaiseLocalEvent(ent, ev);
-
-            EnsureComp<CP14StatusEffectContainerComponent>(effect.AppliedTo.Value, out var container);
-
             var meta = MetaData(ent);
-            if (meta.EntityPrototype is not null)
-                container.ActiveStatusEffects.Remove(meta.EntityPrototype);
 
-            QueueDel(ent);
+            if (meta.EntityPrototype is null)
+                continue;
+
+            TryRemoveStatusEffect(effect.AppliedTo.Value, meta.EntityPrototype);
         }
     }
 
