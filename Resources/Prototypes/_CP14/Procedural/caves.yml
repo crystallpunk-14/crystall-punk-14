@@ -96,12 +96,12 @@
         - CP14WallStone
     #Copper
     - !type:BiomeEntityLayer
-      threshold: 0.7
+      threshold: 0.75
       noise:
         seed: 20
         noiseType: OpenSimplex2
         fractalType: FBm
-        frequency: 2
+        frequency: 1.75
       allowedTiles:
         - CP14FloorBase
       entities:

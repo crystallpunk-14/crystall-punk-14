@@ -43,13 +43,10 @@ public sealed partial class ContentAudioSystem
 
    private void CP14UpdateAmbientLoops()
    {
-       return; //DISABLED UNTIL CLIENT ERROR SPAM FIXED
-
        if (_timing.CurTime <= _nextUpdateTime)
            return;
 
        _nextUpdateTime = _timing.CurTime + _updateFrequency;
-
 
        if (_state.CurrentState is not GameplayState)
            return;

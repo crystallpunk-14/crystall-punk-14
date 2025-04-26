@@ -81,6 +81,9 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (!_cp14LockQuery.TryComp(args.Target, out var cp14LockComp))
             return;
 
+        if (cp14LockComp.LockShape == null)
+            return;
+
         if (!_timing.IsFirstTimePredicted)
             return;
 
@@ -91,7 +94,10 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             if (!_keyQuery.TryComp(key, out var keyComp))
                 continue;
 
-            if (keyComp.LockShape != cp14LockComp.LockShape)
+            if (keyComp.LockShape == null)
+                continue;
+
+            if (!keyComp.LockShape.SequenceEqual(cp14LockComp.LockShape))
                 continue;
 
             TryUseKeyOnLock(args.User,
