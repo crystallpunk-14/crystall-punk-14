@@ -1,1 +1,1 @@
-cp14-construction-step-condition-no-roof-in-tile = Must not have a roof.
+cp14-construction-step-condition-no-roof-in-tile = There shouldn't be a roof.
