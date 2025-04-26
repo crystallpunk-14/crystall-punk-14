@@ -20,9 +20,6 @@
   - !type:StackGroupResource
     group: WoodenPlanks
     count: 2
-  - !type:StackResource
-    stack: CP14Nail
-    count: 1
   result: CP14WoodenBeerMug
 
 - type: CP14Recipe

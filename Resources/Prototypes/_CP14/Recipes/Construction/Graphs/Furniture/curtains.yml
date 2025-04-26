@@ -11,9 +11,6 @@
             - stackGroup: WoodenPlanks
               amount: 1
               doAfter: 2
-            - material: CP14Nail
-              amount: 4
-              doAfter: 1
             - material: CP14Cloth
               amount: 2
               doAfter: 1
@@ -26,9 +23,6 @@
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
               amount: 1
-            - !type:SpawnPrototype
-              prototype: CP14Nail1
-              amount: 4
             - !type:SpawnPrototype
               prototype: CP14Cloth1
               amount: 2
