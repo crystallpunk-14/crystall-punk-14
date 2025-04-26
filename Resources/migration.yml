@@ -175,7 +175,7 @@ CP14OreCopper: CP14OreCopper1
 CP14OreIron: CP14OreIron1
 CP14OreGold: CP14OreGold1
 CP14OreMithril: CP14OreMithril1
-CP14Nail10: CP14Nail20
+CP14Nail10: null
 
 #2025-07-02
 CP14SpawnPointBanker: CP14SpawnPointMerchant
