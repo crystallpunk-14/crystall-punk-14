@@ -123,6 +123,7 @@
       - id: CP14EnergyCrystalSmall
       - id: CP14CrystalLampBlueEmpty
       - id: CP14StampGuardCommander
+      - id: CP14ClothingCloakAristocraticCloak
 
 - type: entity
   parent: CP14WoodenCloset
