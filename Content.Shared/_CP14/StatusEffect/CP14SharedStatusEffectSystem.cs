@@ -134,17 +134,11 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
 /// <summary>
 /// Calls on both effect entity and target entity, when a status effect is applied.
 /// </summary>
-public sealed class CP14StatusEffectApplied(EntityUid target, Entity<CP14StatusEffectComponent> effect) : EntityEventArgs
-{
-    public EntityUid Target = target;
-    public Entity<CP14StatusEffectComponent> Effect = effect;
-}
+[ByRefEvent]
+public readonly record struct CP14StatusEffectApplied(EntityUid Target, Entity<CP14StatusEffectComponent> Effect);
 
 /// <summary>
 /// Calls on both effect entity and target entity, when a status effect is removed.
 /// </summary>
-public sealed class CP14StatusEffectRemoved(EntityUid target, Entity<CP14StatusEffectComponent> effect) : EntityEventArgs
-{
-    public EntityUid Target = target;
-    public Entity<CP14StatusEffectComponent> Effect = effect;
-}
+[ByRefEvent]
+public readonly record struct CP14StatusEffectRemoved(EntityUid Target, Entity<CP14StatusEffectComponent> Effect);

@@ -66,8 +66,8 @@ public sealed partial class CP14SharedStatusEffectSystem
         effectComp.AppliedTo = uid;
 
         var ev = new CP14StatusEffectApplied(uid, (effect, effectComp));
-        RaiseLocalEvent(uid, ev);
-        RaiseLocalEvent(effect, ev);
+        RaiseLocalEvent(uid, ref ev);
+        RaiseLocalEvent(effect, ref ev);
 
         return true;
     }
@@ -87,8 +87,8 @@ public sealed partial class CP14SharedStatusEffectSystem
             return false;
 
         var ev = new CP14StatusEffectRemoved(uid, (effect, effectComp));
-        RaiseLocalEvent(uid, ev);
-        RaiseLocalEvent(effect, ev);
+        RaiseLocalEvent(uid, ref ev);
+        RaiseLocalEvent(effect, ref ev);
 
         QueueDel(effect);
         container.ActiveStatusEffects.Remove(effectProto);
