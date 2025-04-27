@@ -43,7 +43,7 @@ public sealed partial class CP14SharedStatusEffectSystem
             return false;
         }
 
-        if (effectProtoComp.Whitelist is not null && !_whitelist.IsValid(effectProtoComp.Whitelist, uid))
+        if (!_whitelist.CheckBoth(uid, effectProtoComp.Blacklist, effectProtoComp.Whitelist))
             return false;
 
         //Technically, on the client, all checks have been successful and we do not need to execute further code related to entity spawning, as this is the server's responsibility

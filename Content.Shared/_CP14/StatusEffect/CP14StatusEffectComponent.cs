@@ -36,4 +36,10 @@ public sealed partial class CP14StatusEffectComponent : Component
     /// </summary>
     [DataField]
     public EntityWhitelist? Whitelist = null;
+
+    /// <summary>
+    ///
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Blacklist = null;
 }
