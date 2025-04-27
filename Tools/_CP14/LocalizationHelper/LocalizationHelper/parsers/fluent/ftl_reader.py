@@ -12,7 +12,7 @@ def read_ftl(path: str) -> dict:
         logger.debug("%s: %s", LogText.READING_DATA_FROM_FILE, path)
         with open(path, encoding="utf-8") as file:
             for line in file.readlines():
-                if line.startswith("#") or line.startswith("\n") or line.startswith(" \n"):
+                if line.startswith("#") or line.startswith("\n"):
                     continue
 
                 if not line.startswith(" "):
