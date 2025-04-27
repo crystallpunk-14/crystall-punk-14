@@ -60,7 +60,7 @@ public sealed partial class CP14SharedStatusEffectSystem
             if (statusEffect.AppliedTo is null)
                 continue;
 
-            spellEffect.NextUpdateTime = _timing.CurTime + spellEffect.UpdateFrequency;
+            spellEffect.NextUpdateTime += spellEffect.UpdateFrequency;
 
             foreach (var effect in spellEffect.UpdateEffect)
             {
