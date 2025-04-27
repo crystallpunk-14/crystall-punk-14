@@ -64,8 +64,6 @@
         prob: 0.2
       - id: CP14SilverCoin1
         prob: 0.2
-      - id: CP14ClothingCloakAristocraticCloak
-        prob: 0.2
 
 - type: entity
   parent: CP14WoodenCloset
