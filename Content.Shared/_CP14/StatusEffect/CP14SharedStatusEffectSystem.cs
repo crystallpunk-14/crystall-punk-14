@@ -37,6 +37,8 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        UpdateEffects(frameTime);
+
         var query = EntityQueryEnumerator<CP14StatusEffectComponent>();
         while (query.MoveNext(out var ent, out var effect))
         {

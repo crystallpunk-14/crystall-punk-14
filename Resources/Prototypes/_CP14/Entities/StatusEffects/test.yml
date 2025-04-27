@@ -11,3 +11,25 @@
   - type: CP14StatusEffectAdditionalComponents
     components:
     - type: Muted
+  - type: CP14StatusEffectApplySpellEffect
+    updateEffect:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectCureWounds
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -1
+            Blunt: -1
+            Piercing: -1
+      - !type:Jitter
+    endEffect:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectSheepPolymorph
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Polymorph
+        prototype: CP14Sheep
