@@ -162,3 +162,14 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/yellow_syurko.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/yellow_syurko.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakAristocraticCloak
+  name: aristocratic cloak
+  description: Aristocratic red coat with fur collar, very expensive, very cool, a little uncomfortable.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi

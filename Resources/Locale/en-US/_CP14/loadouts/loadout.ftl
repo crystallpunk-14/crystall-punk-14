@@ -49,6 +49,7 @@ cp14-loadout-commandant-head = Commandant's hat
 cp14-loadout-commandant-cloak = Commandant's cloak
 
 cp14-loadout-merchant-head = Merchant's hat
+cp14-loadout-merchant-cloak = Merchant's cloak
 cp14-loadout-merchant-outer = Merchant's waistcoat
 cp14-loadout-merchant-shirt = Merchant's shirt
 cp14-loadout-merchant-pants = Merchant's pants

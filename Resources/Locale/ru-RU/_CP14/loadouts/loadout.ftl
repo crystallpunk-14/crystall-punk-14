@@ -49,6 +49,7 @@ cp14-loadout-commandant-head = Шляпа коменданта
 cp14-loadout-commandant-cloak = Накидка коменданта
 
 cp14-loadout-merchant-head = Шляпа торговца
+cp14-loadout-merchant-cloak = Накидка торговца
 cp14-loadout-merchant-outer = Жилет торговца
 cp14-loadout-merchant-shirt = Рубашка торговца
 cp14-loadout-merchant-pants = Штаны торговца
