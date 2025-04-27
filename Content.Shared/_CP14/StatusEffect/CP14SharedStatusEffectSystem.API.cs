@@ -53,7 +53,8 @@ public sealed partial class CP14SharedStatusEffectSystem
         EnsureComp<CP14StatusEffectContainerComponent>(uid, out var container);
 
         //And only if all checks passed we spawn the effect
-        var effect = Spawn(effectProto);
+        var effect = SpawnAttachedTo(effectProto, Transform(uid).Coordinates);
+        _transform.SetParent(effect, uid);
 
         if (!_effectQuery.TryComp(effect, out var effectComp))
             return false;

@@ -3,6 +3,22 @@
   name: WeeWooWeeWoo
   description: Welp, we muted now!
   components:
+  # Visual
+  - type: Sprite
+    drawDepth: Effects
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    layers:
+    - state: particles_down
+      color: "#6c5f82"
+      shader: unshaded
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    netsync: false
+  # Logic
   - type: CP14StatusEffect
     alert: CP14VampireStarving
     whitelist:
