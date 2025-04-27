@@ -1,3 +1,4 @@
+using System.Numerics;
 using System.Threading;
 using Content.Server._CP14.Demiplane.Jobs;
 using Content.Server._CP14.RoundStatistic;
@@ -5,7 +6,10 @@ using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Flash;
 using Content.Server.Procedural;
+using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
+using Content.Server.Spawners.Components;
+using Content.Server.Spawners.EntitySystems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared.Popups;
@@ -22,7 +26,6 @@ namespace Content.Server._CP14.Expedition;
 
 public sealed class CP14StationExpeditionSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
@@ -50,6 +53,8 @@ public sealed class CP14StationExpeditionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14StationExpeditionComponent, StationPostInitEvent>(StationInit);
+
+        SubscribeLocalEvent<PlayerSpawningEvent>(HandlePlayerSpawning, before: new []{ typeof(SpawnPointSystem) });
     }
     public override void Update(float frameTime)
     {
@@ -99,5 +104,63 @@ public sealed class CP14StationExpeditionSystem : EntitySystem
 
         _expeditionJobs.Add((job, cancelToken));
         _expeditionQueue.EnqueueJob(job);
+
+        //Second - spawn expedition shuttle and FTL to expedition map
+        var dummyMap = _mapSystem.CreateMap(out var dummyMapId, true);
+        if (_loader.TryLoadGrid(dummyMapId, ent.Comp.ShuttlePath, out var shuttle))
+        {
+            var shuttleComp = Comp<ShuttleComponent>(shuttle.Value);
+            EnsureComp<CP14ExpeditionShipComponent>(shuttle.Value);
+
+            _shuttles.FTLToCoordinates(shuttle.Value, shuttleComp, new EntityCoordinates(expeditionMap, new Vector2(0,0)), Angle.Zero, hyperspaceTime: 30, startupTime: 0.5f);
+        }
+    }
+
+    public bool TryGetExpeditionShip(out EntityUid? uid)
+    {
+        uid = null;
+        var arrivalsQuery = EntityQueryEnumerator<CP14ExpeditionShipComponent>();
+
+        while (arrivalsQuery.MoveNext(out var tempUid, out _))
+        {
+            uid = tempUid;
+            return true;
+        }
+
+        return false;
+    }
+
+    public void HandlePlayerSpawning(PlayerSpawningEvent args)
+    {
+        if (args.SpawnResult != null)
+            return;
+
+        TryGetExpeditionShip(out var ship);
+        if (!TryComp(ship, out TransformComponent? shipXform))
+            return;
+        var gridUid = shipXform.GridUid;
+
+        var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+        var possiblePositions = new List<EntityCoordinates>();
+        while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
+        {
+            if (args.Job != null && spawnPoint.Job != args.Job)
+                continue;
+
+            if (xform.GridUid != gridUid)
+                continue;
+
+            possiblePositions.Add(xform.Coordinates);
+        }
+
+        if (possiblePositions.Count <= 0)
+            return;
+
+        var spawnLoc = _random.Pick(possiblePositions);
+        args.SpawnResult = _stationSpawning.SpawnPlayerMob(
+            spawnLoc,
+            args.Job,
+            args.HumanoidCharacterProfile,
+            args.Station);
     }
 }

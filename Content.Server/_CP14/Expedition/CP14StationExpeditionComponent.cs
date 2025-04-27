@@ -1,5 +1,6 @@
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Expedition;
 
@@ -14,4 +15,7 @@ public sealed partial class CP14StationExpeditionComponent : Component
 
     [DataField(required: true)]
     public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = new();
+
+    [DataField]
+    public ResPath ShuttlePath = new("/Maps/_CP14/Shuttles/arrivals.yml");
 }

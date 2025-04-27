@@ -1,12 +1,12 @@
 - type: gameMap
   id: GrasslandExpansion
   mapName: "Grassland Expansion"
-  mapPath: /Maps/_CP14/template.yml #Will be removed be procgen
+  mapPath: /Maps/_CP14/comoss.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
   stations:
-    Expansion:
+    Comoss:
       stationProto: CP14BaseExpansion
       components:
         - type: StationNameSetup
