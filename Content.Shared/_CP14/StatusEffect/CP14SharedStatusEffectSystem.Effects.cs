@@ -10,17 +10,11 @@ public sealed partial class CP14SharedStatusEffectSystem
 
     private void AdditionalComponentsApply(Entity<CP14StatusEffectAdditionalComponentsComponent> ent, ref CP14StatusEffectApplied args)
     {
-        if (args.Effect.Comp.AppliedTo is null)
-            return;
-
-        EntityManager.AddComponents(args.Effect.Comp.AppliedTo.Value, ent.Comp.Components, ent.Comp.Overridde);
+        EntityManager.AddComponents(args.Target, ent.Comp.Components, ent.Comp.Overridde);
     }
 
     private void AdditionalComponentsRemove(Entity<CP14StatusEffectAdditionalComponentsComponent> ent, ref CP14StatusEffectRemoved args)
     {
-        if (args.Effect.Comp.AppliedTo is null)
-            return;
-
-        EntityManager.RemoveComponents(args.Effect.Comp.AppliedTo.Value, ent.Comp.Components);
+        EntityManager.RemoveComponents(args.Target, ent.Comp.Components);
     }
 }

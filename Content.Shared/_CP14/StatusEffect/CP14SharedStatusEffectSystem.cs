@@ -1,5 +1,6 @@
 using Content.Shared.Alert;
 using Content.Shared.Whitelist;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -12,6 +13,7 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     private EntityQuery<CP14StatusEffectContainerComponent> _containerQuery;
     private EntityQuery<CP14StatusEffectComponent> _effectQuery;
@@ -75,6 +77,24 @@ public sealed partial class CP14SharedStatusEffectSystem : EntitySystem
         if (effectComp.Alert is not null)
         {
             effectComp.EndEffectTime += duration;
+            _alerts.ShowAlert(
+                effectComp.AppliedTo.Value,
+                effectComp.Alert.Value,
+                cooldown: effectComp.EndEffectTime is null ? null : (_timing.CurTime, effectComp.EndEffectTime.Value));
+        }
+    }
+
+    private void SetStatusEffectTime(EntityUid ent, EntityUid effect, TimeSpan duration)
+    {
+        if (!_effectQuery.TryComp(effect, out var effectComp))
+            return;
+
+        if (effectComp.AppliedTo is null)
+            return;
+
+        if (effectComp.Alert is not null)
+        {
+            effectComp.EndEffectTime = _timing.CurTime + duration;
             _alerts.ShowAlert(
                 effectComp.AppliedTo.Value,
                 effectComp.Alert.Value,

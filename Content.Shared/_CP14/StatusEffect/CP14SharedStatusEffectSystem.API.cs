@@ -11,10 +11,11 @@ public sealed partial class CP14SharedStatusEffectSystem
     /// </summary>
     /// <param name="uid">The target entity on which the effect is added</param>
     /// <param name="effectProto">ProtoId of the status effect entity. Make sure it has CP14StatusEffectComponent on it</param>
-    /// <param name="duration">Duration of status effect. Leave null and the effect will be permanent until it is removed using <c>TryRemoveStatusEffect</c>
+    /// <param name="duration">Duration of status effect. Leave null and the effect will be permanent until it is removed using <c>TryRemoveStatusEffect</c></param>
+    /// <param name="resetCooldown">if True, the effect duration time will be reset and reapplied. If False, the effect duration time will be overlaid with the existing one.
     /// In the other case, the effect will either be added for the specified time or its time will be extended for the specified time.</param>
     /// <returns></returns>
-    public bool TryAddStatusEffect(EntityUid uid, EntProtoId effectProto, TimeSpan? duration = null)
+    public bool TryAddStatusEffect(EntityUid uid, EntProtoId effectProto, TimeSpan? duration = null, bool resetCooldown = false)
     {
         if (TryGetStatusEffect(uid, effectProto, out var existedEffect))
         {
@@ -24,7 +25,10 @@ public sealed partial class CP14SharedStatusEffectSystem
 
             if (existedEffect != null)
             {
-                AddStatusEffectTime(uid, existedEffect.Value, duration.Value);
+                if (resetCooldown)
+                    SetStatusEffectTime(uid, existedEffect.Value, duration.Value);
+                else
+                    AddStatusEffectTime(uid, existedEffect.Value, duration.Value);
                 return true;
             }
         }
@@ -41,6 +45,10 @@ public sealed partial class CP14SharedStatusEffectSystem
 
         if (effectProtoComp.Whitelist is not null && !_whitelist.IsValid(effectProtoComp.Whitelist, uid))
             return false;
+
+        //Technically, on the client, all checks have been successful and we do not need to execute further code related to entity spawning, as this is the server's responsibility
+        if (_net.IsClient)
+            return true;
 
         EnsureComp<CP14StatusEffectContainerComponent>(uid, out var container);
 
