@@ -33,3 +33,13 @@
     - CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
     - Sandbox
+
+- type: gamePreset
+  id: CP14Expansion
+  name: cp14-gamemode-title-expansion
+  description: cp14-gamemode-desc-expansion
+  showInVote: true 
+  cP14Allowed: true
+  #supportedMaps: DeathMatchMapPool
+  rules:
+    - Sandbox # For playtest period only

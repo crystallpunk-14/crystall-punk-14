@@ -14,8 +14,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Robust.Shared.Map.Components;
-
 
 namespace Content.Server._CP14.Demiplane;
 
@@ -311,14 +309,14 @@ public sealed partial class CP14DemiplaneSystem
             var passed = true;
             foreach (var category in selectedModifier.Categories)
             {
-                if (!limits.ContainsKey(category.Key))
+                if (!limits.TryGetValue(category.Key, out var limit))
                 {
                     suitableModifiersWeights.Remove(selectedModifier);
                     passed = false;
                     break;
                 }
 
-                if (limits[category.Key] - category.Value < 0)
+                if (limit - category.Value < 0)
                 {
                     suitableModifiersWeights.Remove(selectedModifier);
                     passed = false;
