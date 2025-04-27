@@ -3,6 +3,11 @@
   maps:
    - Comoss
    - Frigid_Coast
+   
+- type: gameMapPool
+  id: CP14Expedition
+  maps:
+   - GrasslandExpansion
 
 - type: gameMapPool
   id: DeathMatchMapPool

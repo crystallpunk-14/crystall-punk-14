@@ -7,7 +7,7 @@
   minPlayers: 0
   stations:
     Frigid_Coast:
-      stationProto: CP14BaseExpedition
+      stationProto: CP14BaseTown
       components:
         - type: StationNameSetup
           mapNameTemplate: "Frigid Coast"

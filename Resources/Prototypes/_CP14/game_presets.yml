@@ -40,6 +40,6 @@
   description: cp14-gamemode-desc-expansion
   showInVote: true 
   cP14Allowed: true
-  #supportedMaps: DeathMatchMapPool
+  supportedMaps: CP14Expedition
   rules:
     - Sandbox # For playtest period only
