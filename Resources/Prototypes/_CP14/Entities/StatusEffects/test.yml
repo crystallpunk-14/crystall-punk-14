@@ -1,19 +1,25 @@
 - type: entity
-  id: CP14StatusEffectTestRegeneration
-  name: WeeWooWeeWoo
-  description: Welp, we muted now!
+  id: CP14StatusEffectBase
+  abstract: true
+  components:
+  - type: Sprite
+    drawDepth: Effects
+    noRot: true
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: CP14StatusEffectTest
+  parent: CP14StatusEffectBase
   components:
   # Visual
   - type: Sprite
-    drawDepth: Effects
     sprite: _CP14/Effects/Magic/cast_impact.rsi
     layers:
     - state: particles_down
       color: "#6c5f82"
       shader: unshaded
-  - type: Tag
-    tags:
-    - HideContextMenu
   - type: PointLight
     radius: 1.5
     energy: 2.5
