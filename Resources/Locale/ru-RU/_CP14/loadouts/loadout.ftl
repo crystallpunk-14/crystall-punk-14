@@ -43,11 +43,6 @@ cp14-loadout-guard-pants = Штаны стражи
 cp14-loadout-guard-shirt = Рубашка стражи
 cp14-loadout-guard-spells = Заклинания стражи
 
-# Trade guild
-
-cp14-loadout-commandant-head = Шляпа коменданта
-cp14-loadout-commandant-cloak = Накидка коменданта
-
 cp14-loadout-merchant-head = Шляпа торговца
 cp14-loadout-merchant-cloak = Накидка торговца
 cp14-loadout-merchant-outer = Жилет торговца

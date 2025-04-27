@@ -43,11 +43,6 @@ cp14-loadout-guard-pants = Guard's pants
 cp14-loadout-guard-shirt = Guard's shirt
 cp14-loadout-guard-spells = Guard's spells
 
-# Trade guild
-
-cp14-loadout-commandant-head = Commandant's hat
-cp14-loadout-commandant-cloak = Commandant's cloak
-
 cp14-loadout-merchant-head = Merchant's hat
 cp14-loadout-merchant-cloak = Merchant's cloak
 cp14-loadout-merchant-outer = Merchant's waistcoat
