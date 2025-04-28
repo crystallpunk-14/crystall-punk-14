@@ -1,14 +1,34 @@
 - type: alertLevels
   id: stationAlerts
-  defaultLevel: green
+  defaultLevel: safe
   levels:
+    safe: #CP14
+      announcement: alert-level-safe-announcement
+      sound: /Audio/_CP14/Misc/safe-alert.ogg
+      color: Green
+      emergencyLightColor: LawnGreen
+      shuttleTime: 600
+    minor: #CP14
+      announcement: alert-level-minor-announcement
+      sound: /Audio/_CP14/Misc/minor-alert.ogg
+      color: DodgerBlue
+      emergencyLightColor: DodgerBlue
+      shuttleTime: 600
+    major: #CP14
+      announcement: alert-level-major-announcement
+      sound: /Audio/_CP14/Misc/major-alert.ogg
+      color: Red
+      emergencyLightColor: Red
+      shuttleTime: 600
     green:
       announcement: alert-level-green-announcement
+      selectable: false #CP14
       color: Green
       emergencyLightColor: LawnGreen
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
+      selectable: false #CP14
       sound: /Audio/Misc/bluealert.ogg
       color: DodgerBlue
       forceEnableEmergencyLights: true
@@ -16,6 +36,7 @@
       shuttleTime: 600
     violet:
       announcement: alert-level-violet-announcement
+      selectable: false #CP14
       sound: /Audio/Misc/notice1.ogg
       color: Violet
       emergencyLightColor: Violet
@@ -23,6 +44,7 @@
       shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
+      selectable: false #CP14
       sound: /Audio/Misc/notice1.ogg
       color: Yellow
       emergencyLightColor: Goldenrod
@@ -30,6 +52,7 @@
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
+      selectable: false #CP14
       sound: /Audio/Misc/redalert.ogg
       color: Red
       emergencyLightColor: Red

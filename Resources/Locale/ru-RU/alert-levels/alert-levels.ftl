@@ -1,4 +1,4 @@
-alert-level-announcement = Внимание! Уровень угрозы станции теперь { $name }! { $announcement }
+alert-level-announcement = Внимание! Уровень угрозы города теперь { $name }! { $announcement }
 alert-level-unknown = Неизвестный.
 alert-level-unknown-instructions = Неизвестно.
 alert-level-green = Зелёный
