@@ -554,7 +554,7 @@ ent-CP14ActionSpellIceDagger = Ледяной кинжал
 
 ent-CP14SpellScrollIceDagger = свиток заклинания ледяного кинжала
     .desc = { ent-CP14BaseSpellScrollWater.desc }
- 
+
 ent-CP14ActionSpellIceShards = Ледяные осколки
     .desc = Быстрые ледяные иглы для быстрой стрельбы по мишеням.
 
