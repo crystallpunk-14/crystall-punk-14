@@ -18,7 +18,8 @@ public sealed class AlertLevelSystem : EntitySystem
     [Dependency] private readonly StationSystem _stationSystem = default!;
 
     // Until stations are a prototype, this is how it's going to have to be.
-    public const string DefaultAlertLevelSet = "stationAlerts";
+    // public const string DefaultAlertLevelSet = "stationAlerts"; // OLD VANILA. Changed by CP14.
+    public const string DefaultAlertLevelSet = "CP14TownAlerts";
 
     public override void Initialize()
     {
@@ -170,7 +171,8 @@ public sealed class AlertLevelSystem : EntitySystem
         }
 
         // The full announcement to be spat out into chat.
-        var announcementFull = Loc.GetString("alert-level-announcement", ("name", name), ("announcement", announcement));
+        //  var announcementFull = Loc.GetString("alert-level-announcement", ("name", name), ("announcement", announcement)); // OLD VANILA. Changed by CP14.
+        var announcementFull = Loc.GetString("cp14-alert-level-announcement", ("name", name), ("announcement", announcement));
 
         var playDefault = false;
         if (playSound)
