@@ -438,7 +438,7 @@ ent-CP14SignalLightBlue = { ent-CP14SignalLightBase }
     .suffix = Синий
 
 ent-CP14ActionSpellLurkerFear = Первобытный ужас
-    .desc = Вы погружаете цель в первобытный ужас, лишая ее способности сражаться и говорить.
+    .desc = Вы погружаете цель в первобытный ужас, лишая её способности сражаться и говорить.
 
 ent-CP14ImpactEffectLurkerFear = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -450,7 +450,7 @@ ent-CP14RuneLurkerFearImpact = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
 ent-CP14ActionSpellLurkerKick = Сокрушительная атака
-    .desc = Вы готовите мощный удар ближнего боя, который с силой отбросит вашу цель назад и надолго оглушит ее.
+    .desc = Вы готовите мощный удар ближнего боя, который с силой отбросит вашу цель назад и надолго оглушит её.
 
 ent-CP14ActionSpellLurkerStep = Теневой шаг
     .desc = Шаг сквозь прореху реальности, позволяющий быстро преодолеть небольшое расстояние.
