@@ -12,7 +12,7 @@
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key
   - type: CommunicationsConsole
-    title: comms-console-announcement-title-station
+    title: cp14-guard-bell-menu-title
   - type: UserInterface
     interfaces:
       enum.CommunicationsConsoleUiKey.Key:

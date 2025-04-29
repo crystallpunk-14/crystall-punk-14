@@ -101,7 +101,7 @@
   abstract: true
   components:
     - type: AlertLevel
-      alertLevelPrototype: CP14TownAlerts #CP14
+      alertLevelPrototype: stationAlerts
 
 - type: entity
   id: BaseStationExpeditions

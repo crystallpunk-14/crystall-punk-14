@@ -5,7 +5,7 @@
   - BaseStation
   - BaseStationAllEventsEligible
   - BaseStationJobsSpawning
-  - BaseStationAlertLevels #Checks fail without it
+  - CP14BaseTownAlerts #Checks fail without it
   - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationCommonObjectives
   - CP14BaseStationSalary
@@ -24,3 +24,10 @@
       #frequency: every 20 minutes
       salary:
         CP14Guard: 550
+
+- type: entity
+  id: CP14BaseTownAlerts
+  abstract: true
+  components:
+    - type: AlertLevel
+      alertLevelPrototype: CP14TownAlerts

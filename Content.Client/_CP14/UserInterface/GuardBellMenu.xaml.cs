@@ -57,7 +57,7 @@ namespace Content.Client._CP14.UserInterface
             if (alerts == null)
             {
                 var name = currentAlert;
-                if (_loc.TryGetString($"alert-level-{currentAlert}", out var locName))
+                if (_loc.TryGetString($"cp14-alert-level-{currentAlert}", out var locName))
                 {
                     name = locName;
                 }
@@ -69,7 +69,7 @@ namespace Content.Client._CP14.UserInterface
                 foreach (var alert in alerts)
                 {
                     var name = alert;
-                    if (_loc.TryGetString($"alert-level-{alert}", out var locName))
+                    if (_loc.TryGetString($"cp14-alert-level-{alert}", out var locName))
                     {
                         name = locName;
                     }
