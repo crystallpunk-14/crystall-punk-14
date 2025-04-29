@@ -4647,7 +4647,6 @@ ent-CP14WallWoodenPalisade = частокол
     .desc = Стена из острых бревен. Не то чтобы это было безопасное убежище.
 
 ent-CP14WallFrameWooden = деревянная настенная рама
-    .desc = CONFLICT{ ent-['CP14BaseWallFrame', 'CP14BaseFlammableSpreading'].desc }
 
 ent-CP14WallWooden = деревянная стена
 
