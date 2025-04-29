@@ -29,6 +29,8 @@
         amount: 3
       - id: CP14SeedPepper
         amount: 3
+      - id: CP14SeedCotton
+        amount: 3
 
 
 - type: storePositionBuy
