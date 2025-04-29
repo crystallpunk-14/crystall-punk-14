@@ -33,7 +33,7 @@
       state: mana_trance
     event: !type:CP14ToggleableInstantActionEvent
       cooldown: 120
-      castTime: 600
+      castTime: 600 
       hidden: true
       breakOnMove: true
 
