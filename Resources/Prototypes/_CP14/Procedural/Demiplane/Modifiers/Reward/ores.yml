@@ -18,8 +18,8 @@
       - CP14WallStone
       entity: CP14WallStoneIronOre
       count: 15
-      minGroupSize: 1
-      maxGroupSize: 3
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: IronOreUnderground
@@ -38,9 +38,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 10
+      minGroupSize: 4
+      maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
   id: CopperOre
@@ -60,8 +60,8 @@
       - CP14WallStone
       entity: CP14WallStoneCopperOre
       count: 15
-      minGroupSize: 1
-      maxGroupSize: 3
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: CopperOreUnderground
@@ -80,9 +80,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 10
+      minGroupSize: 4
+      maxGroupSize: 6
 
 # TIER 2
 
@@ -103,9 +103,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneGoldOre
-      count: 5
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 10
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: GoldOreUnderground
@@ -124,9 +124,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneGoldOre
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 15
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: MithrilOre
@@ -146,8 +146,8 @@
       - CP14WallStone
       entity: CP14WallStoneMithrilOre 
       count: 10
-      minGroupSize: 1
-      maxGroupSize: 3
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: MithrilOreUnderground
@@ -167,5 +167,5 @@
       - CP14WallStone
       entity: CP14WallStoneMithrilOre 
       count: 15
-      minGroupSize: 1
-      maxGroupSize: 3
+      minGroupSize: 2
+      maxGroupSize: 4

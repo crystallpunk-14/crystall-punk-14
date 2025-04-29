@@ -8,3 +8,4 @@ marking-CP14TieflingHorns5Broken = Сломленный дьявол
 marking-CP14TieflingHorns6 = Барашек
 marking-CP14TieflingHorns7 = Облегающие
 marking-CP14TieflingHorns8 = Корона
+marking-CP14TieflingHorns9 = Единорог
