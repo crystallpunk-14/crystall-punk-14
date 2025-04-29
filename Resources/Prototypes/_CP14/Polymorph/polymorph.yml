@@ -11,17 +11,3 @@
     exitPolymorphSound: !type:SoundPathSpecifier
       path: /Audio/Magic/forcewall.ogg
     duration: 15
-
-- type: polymorph
-  id: CP14CompressionStone
-  configuration:
-    entity: CP14CompressionStone
-    forced: true
-    revertOnCrit: true
-    revertOnDeath: true
-    transferDamage: false
-    polymorphSound: !type:SoundPathSpecifier
-      path: /Audio/Magic/forcewall.ogg
-    exitPolymorphSound: !type:SoundPathSpecifier
-      path: /Audio/Magic/forcewall.ogg
-    duration: 300
