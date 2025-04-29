@@ -3,17 +3,30 @@
   start: start
   graph:
     - node: start
+      actions:
+        - !type:DestroyEntity {}
       edges:
         - to: CP14CrateCoffin
           completed:
             - !type:SnapToGrid
           steps:
-            - stackGroup: WoodenPlanks
-              amount: 3
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 2
             - material: CP14Cloth
               amount: 2
-            - material: CP14Nail
-              amount: 1
-              doAfter: 4
+              doAfter: 2
     - node: CP14CrateCoffin
       entity: CP14CrateCoffin
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: CP14Cloth1
+              amount: 2

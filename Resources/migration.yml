@@ -175,7 +175,6 @@ CP14OreCopper: CP14OreCopper1
 CP14OreIron: CP14OreIron1
 CP14OreGold: CP14OreGold1
 CP14OreMithril: CP14OreMithril1
-CP14Nail10: CP14Nail20
 
 #2025-07-02
 CP14SpawnPointBanker: CP14SpawnPointMerchant
@@ -330,6 +329,13 @@ CP14WallStonebrickCrushedLow: CP14WallFrameStonebrick
 CP14WallCyan: CP14WallStonebrick
 CP14FrameWooden: CP14WallFrameWooden
 CP14BaseCrowbar: CP14ModularIronPickaxe
+
+#2025-26-04
+CP14WallSkulls: CP14WallStonebrickOld
+CP14WoodenChestFrame: null
+CP14Nail1: null
+CP14Nail20: null
+CP14Nail50: null
 
 # <---> CrystallEdge migration zone end
 

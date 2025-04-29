@@ -1,0 +1,157 @@
+- type: entity
+  id: CP14MobLurker
+  parent: CP14SimpleMobBase
+  name: lurker
+  description: The spirit of hunger and night. Hunting lonely wanderers lost in the dark forest.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Monster/lurker.rsi
+      state: live
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Damageable
+    damageContainer: CP14Biological
+    damageModifierSet: CP14Dinosaur
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: CombatMode
+  - type: Stamina
+    critThreshold: 200
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Bloodstream
+    bloodReagent: CP14BloodAnimal
+  - type: Tag
+    tags:
+      - FootstepSound
+      - HideContextMenu
+      - CP14AmbientLurker
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.6
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 4
+        Piercing: 2
+        Structural: 5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 6
+    acceleration: 16.0
+  - type: Climbing
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatDino
+      amount: 4
+    - id: CP14ClothingMaskBoneHornedMask
+      amount: 1
+  - type: FloorOcclusion
+  - type: Puller
+    needsHands: false
+  - type: GhostTakeoverAvailable
+  - type: TypingIndicator
+    proto: alien
+  - type: NoSlip
+  - type: Speech
+    speechSounds: CP14Carcat
+  - type: CP14NightVision
+  - type: FootstepModifier
+    footstepSoundCollection: null # Silent footstep
+  - type: CP14MagicCasterSlowdown
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellLurkerFear
+    - CP14ActionSpellLurkerKick
+    - CP14ActionSpellLurkerStep
+  - type: Stealth
+    enabledOnDeath: false
+    maxVisibility: 1.2
+  - type: StealthOnMove
+    passiveVisibilityRate: -0.55
+    movementVisibilityRate: 0.55
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14LurkerRitualSound
+
+- type: entity
+  id: CP14LurkerRitualSound
+  name: lurker ritual far sound
+  categories: [ ForkFiltered ]
+  components:
+  - type: CP14PvsOverride
+  - type: TriggerOnSpawn
+  - type: CP14FarSound
+    closeSound:
+      collection: CP14LurkerRitual
+      params:
+        variation: 0.2
+        maxDistance: 20
+        volume: 50
+    farSound:
+      collection: CP14LurkerRitual
+      params:
+        variation: 0.2
+  - type: TimedDespawn
+    lifetime: 2
+
+- type: entity
+  id: SpawnPointGhostDemiplaneLurker
+  name: ghost role spawn point
+  description: A ghost role for a lurker
+  suffix: Lurker
+  categories: [ ForkFiltered ]
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-lurker
+    allowMovement: true
+    description: cp14-ghost-role-information-description-lurker
+    rules: cp14-ghost-role-information-rules-demiplane
+    mindRoles:
+    - CP14MindRoleDemiplaneAntag
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobLurker
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _CP14/Mobs/Monster/lurker.rsi
+        state: live

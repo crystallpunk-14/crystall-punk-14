@@ -41,13 +41,6 @@
   maxCount: 20
 
 - type: stack
-  id: CP14Nail
-  name: cp14-stack-nails
-  spawn: CP14Nail1
-  icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
-  maxCount: 50
-
-- type: stack
   id: CP14Cloth
   name: cp14-stack-cloth
   spawn: CP14Cloth1

@@ -11,9 +11,6 @@
             - stackGroup: WoodenPlanks
               amount: 5
               doAfter: 3
-            - material: CP14Nail
-              amount: 2
-              doAfter: 2
     - node: CP14BaseBarrel
       entity: CP14BaseBarrel
 
@@ -30,9 +27,6 @@
             - stackGroup: WoodenPlanks
               amount: 5
               doAfter: 3
-            - material: CP14Nail
-              amount: 2
-              doAfter: 2
     - node: CP14CraneBarrel
       entity: CP14CraneBarrel
 
@@ -49,8 +43,5 @@
             - stackGroup: WoodenPlanks
               amount: 3
               doAfter: 3
-            - material: CP14Nail
-              amount: 2
-              doAfter: 2
     - node: CP14CraneBarrelSmall
       entity: CP14CraneBarrelSmall

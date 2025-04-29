@@ -3,6 +3,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSharpCopper
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -13,6 +14,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSharpIron
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -23,6 +25,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSharpGold
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -33,6 +36,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSharpMithril
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -45,6 +49,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSturdyCopper
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -55,6 +60,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSturdyIron
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -65,6 +71,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSturdyGold
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -75,6 +82,7 @@
 - type: CP14Recipe
   id: CP14ModularGardeSturdyMithril
   tag: CP14RecipeAnvil
+  category: Weapon
   craftTime: 4
   requirements:
   - !type:StackResource

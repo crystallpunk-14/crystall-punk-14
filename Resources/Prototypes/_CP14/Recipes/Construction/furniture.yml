@@ -57,7 +57,7 @@
   name: wooden counter
   description: A simple table made of boards.
   id: CP14TableWoodenCounter
-  graph: CP14TableWoodenCounter
+  graph: CP14TableWooden
   startNode: start
   targetNode: CP14TableWoodenCounter
   category: construction-category-furniture

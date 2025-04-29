@@ -4,6 +4,7 @@ using Content.Shared.Alert;
 using Content.Shared.Audio;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
+using Content.Shared.Rejuvenate;
 using Content.Shared.Rounding;
 
 namespace Content.Shared._CP14.MagicEnergy;
@@ -17,9 +18,15 @@ public abstract class SharedCP14MagicEnergySystem : EntitySystem
     {
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentStartup>(OnComponentStartup);
         SubscribeLocalEvent<CP14MagicEnergyContainerComponent, ComponentShutdown>(OnComponentShutdown);
+        SubscribeLocalEvent<CP14MagicEnergyContainerComponent, RejuvenateEvent>(OnRejuvenate);
 
         SubscribeLocalEvent<CP14MagicEnergyExaminableComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CP14MagicEnergyAmbientSoundComponent, CP14SlotCrystalPowerChangedEvent>(OnSlotPowerChanged);
+    }
+
+    private void OnRejuvenate(Entity<CP14MagicEnergyContainerComponent> ent, ref RejuvenateEvent args)
+    {
+        ChangeEnergy((ent, ent.Comp), ent.Comp.MaxEnergy - ent.Comp.Energy, out var deltaEnergy, out var overloadEnergy, true);
     }
 
     private void OnComponentStartup(Entity<CP14MagicEnergyContainerComponent> ent, ref ComponentStartup args)

@@ -14,6 +14,11 @@
     - state: ring-0
       map: ["enum.StorageFillLayers.Fill"]
   - type: Appearance
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/key_drop.ogg
+      params:
+        variation: 0.05
   - type: StorageFillVisualizer
     maxFillLevels: 4
     fillBaseName: ring

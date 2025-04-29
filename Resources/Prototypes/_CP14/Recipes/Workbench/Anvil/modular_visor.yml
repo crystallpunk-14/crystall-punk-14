@@ -4,6 +4,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorIronPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -14,6 +15,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorGoldPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -24,6 +26,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorCopperPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -34,6 +37,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorMithrilPlate
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -46,6 +50,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorIronChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -56,6 +61,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorGoldChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -66,6 +72,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorCopperChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -76,6 +83,7 @@
 - type: CP14Recipe
   id: CP14ModularVisorMithrilChainmail
   tag: CP14RecipeAnvil
+  category: Armor
   craftTime: 6
   requirements:
   - !type:StackResource
