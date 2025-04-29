@@ -1,0 +1,185 @@
+- type: entity
+  id: CP14BaseTorch
+  abstract: true
+  description: A good, reliable light source. Too bad it doesn't last.
+  categories: [ ForkFiltered ]
+  components:
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 30
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: CP14FlammableAmbientSound
+  - type: AmbientSound
+    enabled: false
+    volume: -15
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 0.5
+    damage:
+      types:
+        Heat: 0
+  - type: CP14Fireplace
+    deleteOnEmpty: true
+    maxFuelLimit: 1800
+    fuel: 1800
+  - type: Appearance
+  - type: CP14IgnitionModifier
+    hideCaution: true
+
+- type: entity
+  id: CP14FloorTorch
+  parent: 
+  - CP14BaseTorch
+  - BaseStructure
+  name: floor torch
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/torch_floor.rsi
+    offset: 0, 0.3
+    layers:
+      - state: base
+        map: ["fuel"]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 1000
+        layer:
+        - LowImpassable
+        - MidImpassable
+  - type: FireVisuals
+    sprite: _CP14/Structures/Furniture/torch_floor.rsi
+    normalState: fire
+  - type: GenericVisualizer
+    visuals:
+      enum.FireplaceFuelVisuals.Status:
+        fuel:
+          Empty: { state: burned }
+          Medium: { state: base }
+          Full: { state: base }
+  - type: Construction
+    graph: CP14FloorTorch
+    node: CP14FloorTorch
+
+- type: entity
+  parent: CP14FloorTorch
+  id: CP14FloorTorchIgnited
+  suffix: Ignited
+  components:
+  - type: CP14AutoIgnite
+
+- type: entity
+  id: CP14FloorTorchAlwaysPowered
+  name: floor torch
+  parent: BaseStructure
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Debug, Infinite, DO NOT MAP
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/torch_floor.rsi
+    offset: 0, 0.3
+    layers:
+      - state: base
+      - state: fire
+        shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 1000
+        layer:
+        - LowImpassable
+        - MidImpassable
+  - type: PointLight
+    color: "#e67c34"
+    energy: 2
+    radius: 8
+  - type: AmbientSound
+    enabled: true
+    volume: -15
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+
+- type: entity
+  id: CP14WallmountTorch
+  parent:
+  - CP14BaseTorch
+  - CP14BaseWallmount
+  name: wallmount torch
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
+    layers:
+      - state: base
+        map: ["fuel"]
+  - type: FireVisuals
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
+    normalState: fire
+  - type: GenericVisualizer
+    visuals:
+      enum.FireplaceFuelVisuals.Status:
+        fuel:
+          Empty: { state: burned }
+          Medium: { state: base }
+          Full: { state: base }
+  - type: Construction
+    graph: CP14WallmountTorch
+    node: CP14WallmountTorch
+
+- type: entity
+  parent: CP14WallmountTorch
+  id: CP14WallmountTorchIgnited
+  suffix: Ignited
+  components:
+  - type: CP14AutoIgnite
+
+- type: entity
+  id: CP14WallmountTorchAlwaysPowered
+  name: wallmount torch
+  parent: CP14BaseWallmount
+  suffix: Debug, Infinite, DO NOT MAP
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
+    layers:
+      - state: base
+      - state: fire
+        shader: unshaded
+  - type: PointLight
+    color: "#e67c34"
+    energy: 2
+    radius: 8
+  - type: AmbientSound
+    enabled: true
+    volume: -15
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg

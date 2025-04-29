@@ -9,7 +9,7 @@
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
-    state: fire
+    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -17,6 +17,24 @@
   conditions:
     - !type:TileNotBlocked
     - !type:CP14WallRequired
+
+- type: construction
+  crystallPunkAllowed: true
+  name: floor torch
+  description: A good, reliable light source. Too bad it doesn't last.
+  id: CP14FloorTorch
+  graph: CP14FloorTorch
+  startNode: start
+  targetNode: CP14FloorTorch
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Furniture/torch_floor.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true

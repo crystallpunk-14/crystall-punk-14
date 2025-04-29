@@ -9,14 +9,34 @@
         - to: CP14WallmountTorch
           steps:
             - stackGroup: WoodenPlanks
-              amount: 3
-              doAfter: 3
+              amount: 1
+              doAfter: 1
             - material: CP14Cloth
               amount: 1
               doAfter: 1
 
     - node: CP14WallmountTorch
       entity: CP14WallmountTorch
+
+- type: constructionGraph
+  id: CP14FloorTorch
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14FloorTorch
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 1
+              doAfter: 1
+            - material: CP14Cloth
+              amount: 1
+              doAfter: 1
+
+    - node: CP14FloorTorch
+      entity: CP14FloorTorch
 
 - type: constructionGraph
   id: CP14WallmountLampEmpty
