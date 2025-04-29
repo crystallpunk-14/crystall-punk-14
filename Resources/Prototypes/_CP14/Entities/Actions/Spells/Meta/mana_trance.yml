@@ -14,15 +14,15 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: 5
+        manaDelta: 1
         safe: true
       - !type:HealthChange
         damage:
           types:
-            CP14ManaDepletion: -1
+            CP14ManaDepletion: -0.1
       - !type:MovespeedModifier
-        walkSpeedModifier: 0.7
-        sprintSpeedModifier: 0.7
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
         statusLifetime: 1.5
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaTrance
@@ -33,7 +33,7 @@
       state: mana_trance
     event: !type:CP14ToggleableInstantActionEvent
       cooldown: 120
-      castTime: 60
+      castTime: 600
       hidden: true
       breakOnMove: true
 
