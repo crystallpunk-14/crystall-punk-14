@@ -8,3 +8,4 @@ marking-CP14TieflingHorns5Broken = Broken Devil
 marking-CP14TieflingHorns6 = Lamb
 marking-CP14TieflingHorns7 = Horny horns
 marking-CP14TieflingHorns8 = Crown
+marking-CP14TieflingHorns9 = Unicorn
