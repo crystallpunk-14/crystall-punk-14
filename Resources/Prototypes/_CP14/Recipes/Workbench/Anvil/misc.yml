@@ -288,3 +288,16 @@
     count: 1
   result: CP14LockMithril
 
+- type: CP14Recipe
+  id: CP14EnergyCrystalMediumEmpty
+  tag: CP14RecipeAnvil
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14CrystalShardQuartz
+    count: 1
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14EnergyCrystalMediumEmpty

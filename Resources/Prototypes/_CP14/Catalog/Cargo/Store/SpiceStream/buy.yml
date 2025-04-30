@@ -29,6 +29,8 @@
         amount: 3
       - id: CP14SeedPepper
         amount: 3
+      - id: CP14SeedCotton
+        amount: 3
 
 
 - type: storePositionBuy
@@ -182,9 +184,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14EnergyCrystalSmallEmpty
-        amount: 5
       - id: CP14EnergyCrystalMediumEmpty
-        amount: 3
+        amount: 5
       - id: CP14ManaOperationGlove
         amount: 2

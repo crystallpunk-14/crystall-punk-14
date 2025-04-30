@@ -9,7 +9,7 @@
         - to: CP14WallmountOrdersBorder
           steps:
             - stackGroup: WoodenPlanks
-              amount: 3
+              amount: 1
               doAfter: 3
 
     - node: CP14WallmountOrdersBorder

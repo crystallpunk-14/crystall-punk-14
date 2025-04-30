@@ -7,7 +7,6 @@
     sprite: _CP14/Actions/Spells/dimension.rsi
     state: shadow_grab
   - type: CP14MagicEffectManaCost
-    manaCost: 10
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

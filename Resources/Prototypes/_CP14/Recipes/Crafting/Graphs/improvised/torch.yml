@@ -7,7 +7,7 @@
     - to: cp14torch
       steps:
       - material: CP14WoodenPlanks
-        amount: 3
+        amount: 1
       - material: CP14Cloth
         amount: 1
         doAfter: 4

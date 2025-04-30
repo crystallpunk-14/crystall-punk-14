@@ -9,10 +9,10 @@
         - to: CP14Bonfire
           steps:
             - material: CP14Stone
-              amount: 3
+              amount: 2
               doAfter: 2
             - stackGroup: WoodenPlanks
-              amount: 2
+              amount: 1
               doAfter: 2
 
     - node: CP14Bonfire

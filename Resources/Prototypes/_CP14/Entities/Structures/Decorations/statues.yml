@@ -11,10 +11,6 @@
     sprite: _CP14/Structures/Decoration/statue_gob.rsi
     layers:
     - state: gob
-    - state: eyes
-      map: ["ritual"]
-      visible: false
-      shader: unshaded
     - state: wire
       map: ["wire"]
       visible: false
@@ -55,8 +51,6 @@
           CP14StoneBlock1:
             min: 4
             max: 5
-  - type: CP14MagicRitual
-    startPhase: CP14_NeutralCluster_Root
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -82,10 +76,6 @@
   - type: Sprite
     layers:
     - state: gob_vines
-    - state: eyes
-      map: ["ritual"]
-      visible: false
-      shader: unshaded
     - state: wire
       map: ["wire"]
       visible: false
@@ -102,10 +92,6 @@
   - type: Sprite
     layers:
     - state: gob_ruined
-    - state: eyes
-      map: ["ritual"]
-      visible: false
-      shader: unshaded
     - state: wire
       map: ["wire"]
       visible: false
@@ -122,10 +108,6 @@
   - type: Sprite
     layers:
     - state: gob_ruined_vines
-    - state: eyes
-      map: ["ritual"]
-      visible: false
-      shader: unshaded
     - state: wire
       map: ["wire"]
       visible: false
@@ -146,10 +128,6 @@
     sprite: _CP14/Structures/Decoration/angel_statue.rsi
     layers:
     - state: statue1
-    - state: glow
-      map: ["ritual"]
-      visible: false
-      shader: unshaded
     drawdepth: Mobs
     offset: "0.0,0.5"
   - type: Fixtures
@@ -184,8 +162,6 @@
           CP14StoneBlock1:
             min: 4
             max: 5
-  - type: CP14MagicRitual
-    startPhase: CP14_NeutralCluster_Root
   - type: Appearance
 
 - type: entity
@@ -196,10 +172,6 @@
   - type: Sprite
     layers:
     - state: statue2
-    - state: glow
-      map: ["ritual"]
-      visible: false
-      shader: unshaded
 
 - type: entity
   id: CP14StatueAngelLimestone
@@ -209,10 +181,6 @@
   - type: Sprite
     layers:
     - state: statue3
-    - state: glow
-      map: ["ritual"]
-      visible: false
-      shader: unshaded
 
 - type: entity
   id: CP14StatueStoneHeadHigh
