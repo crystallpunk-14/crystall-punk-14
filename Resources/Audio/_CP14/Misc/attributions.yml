@@ -1,0 +1,16 @@
+# Attempted to keep the files in alphabetical order so its easier to audit.
+# Finding individual authors is an unfeasible task. If you can reference the author please do so.
+- files: ["safe-alert.ogg"]
+  license: "Attribution 4.0"
+  copyright: "Created by kevp888"
+  source: "https://freesound.org/s/688445"
+
+- files: ["minor-alert.ogg"]
+  license: "Creative Commons 0"
+  copyright: "Created by Horrormarkus"
+  source: "https://freesound.org/s/659672"
+
+- files: ["major-alert.ogg"]
+  license: "Creative Commons 0"
+  copyright: "Created by Aeonomi"
+  source: "https://freesound.org/s/180329"
