@@ -17,9 +17,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 5
-      minGroupSize: 10
-      maxGroupSize: 15
+      count: 15
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: IronOreUnderground
@@ -39,8 +39,8 @@
       - CP14WallStone
       entity: CP14WallStoneIronOre
       count: 10
-      minGroupSize: 10
-      maxGroupSize: 15
+      minGroupSize: 4
+      maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
   id: CopperOre
@@ -59,9 +59,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 10
-      minGroupSize: 5
-      maxGroupSize: 7
+      count: 15
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: CopperOreUnderground
@@ -80,16 +80,16 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 20
-      minGroupSize: 5
-      maxGroupSize: 7
+      count: 10
+      minGroupSize: 4
+      maxGroupSize: 6
 
 # TIER 2
 
 - type: cp14DemiplaneModifier
   id: GoldOre
   levels:
-    min: 3
+    min: 5
     max: 6
   name: cp14-modifier-gold-ore
   unique: false
@@ -102,10 +102,10 @@
     - !type:OreDunGen
       entityMask: 
       - CP14WallStone
-      entity: CP14WallStoneGoldOre # Hellish gold 666
-      count: 6
-      minGroupSize: 6
-      maxGroupSize: 6
+      entity: CP14WallStoneGoldOre
+      count: 10
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: GoldOreUnderground
@@ -123,10 +123,10 @@
     - !type:OreDunGen
       entityMask: 
       - CP14WallStone
-      entity: CP14WallStoneGoldOre # Hellish gold 666
-      count: 10
-      minGroupSize: 6
-      maxGroupSize: 6
+      entity: CP14WallStoneGoldOre
+      count: 15
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: MithrilOre
@@ -145,9 +145,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneMithrilOre 
-      count: 5
-      minGroupSize: 4
-      maxGroupSize: 8
+      count: 10
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: MithrilOreUnderground
@@ -166,6 +166,6 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneMithrilOre 
-      count: 8
-      minGroupSize: 4
-      maxGroupSize: 8
+      count: 15
+      minGroupSize: 2
+      maxGroupSize: 4

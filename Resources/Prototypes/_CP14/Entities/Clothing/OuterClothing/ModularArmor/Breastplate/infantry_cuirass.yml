@@ -20,6 +20,8 @@
     sprintModifier: 0.93
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorIronInfantryCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 1.24
   - type: CP14Material
     materials:
       CP14Iron: 60
@@ -34,22 +36,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#ffaf47"
+        color: "#ffe269"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#ffaf47"
+        color: "#ffe269"
       right:
       - state: inhand-right
-        color: "#ffaf47"
+        color: "#ffe269"
   - type: Armor
     modifiers:
       coefficients:
@@ -62,6 +64,8 @@
     sprintModifier: 0.88
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorGoldInfantryCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 1.14
   - type: CP14Material
     materials:
       CP14Gold: 60
@@ -76,22 +80,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#bd712f"
+        color: "#e28f08"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#bd712f"
+        color: "#e28f08"
       right:
       - state: inhand-right
-        color: "#bd712f"
+        color: "#e28f08"
   - type: Armor
     modifiers:
       coefficients:
@@ -104,6 +108,8 @@
     sprintModifier: 0.96
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorCopperInfantryCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 1.18
   - type: CP14Material
     materials:
       CP14Copper: 60
@@ -118,22 +124,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#45d2a4"
+        color: "#38f0b3"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Cuirass/infantry_cuirass.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#45d2a4"
+        color: "#38f0b3"
       right:
       - state: inhand-right
-        color: "#45d2a4"
+        color: "#38f0b3"
   - type: Armor
     modifiers:
       coefficients:
@@ -146,6 +152,8 @@
     sprintModifier: 0.96
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorMithrilInfantryCuirass
+  - type: CP14MagicManacostModify
+    globalModifier: 0.92
   - type: CP14Material
     materials:
       CP14Mithril: 60

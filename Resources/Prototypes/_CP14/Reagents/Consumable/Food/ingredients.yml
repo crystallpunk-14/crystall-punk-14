@@ -1,0 +1,22 @@
+- type: reagent
+  id: CP14BurntFood
+  name: cp14-reagent-name-burnt-food
+  group: Foods
+  desc: cp14-reagent-desc-burnt-food
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: terrible
+  color: black
+  recognizable: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateThirst
+        factor: -0.2
+      - !type:AdjustReagent
+        reagent: Nutriment
+        amount: 0.1
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 3
+        probability: 0.3

@@ -19,6 +19,8 @@
     sprintModifier: 0.99
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorIronChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 1.15
   - type: CP14Material
     materials:
       CP14Iron: 40
@@ -33,22 +35,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#ffaf47"
+      color: "#ffe269"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#ffaf47"
+        color: "#ffe269"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#ffaf47"
+        color: "#ffe269"
       right:
       - state: inhand-right
-        color: "#ffaf47"
+        color: "#ffe269"
   - type: Armor
     modifiers:
       coefficients:
@@ -60,6 +62,8 @@
     sprintModifier: 0.98
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorGoldChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 1.05
   - type: CP14Material
     materials:
       CP14Gold: 40
@@ -74,22 +78,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#bd712f"
+      color: "#e28f08"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#bd712f"
+        color: "#e28f08"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#bd712f"
+        color: "#e28f08"
       right:
       - state: inhand-right
-        color: "#bd712f"
+        color: "#e28f08"
   - type: Armor
     modifiers:
       coefficients:
@@ -98,6 +102,8 @@
         Piercing: 0.99
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorCopperChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 1.1
   - type: CP14Material
     materials:
       CP14Copper: 40
@@ -112,22 +118,22 @@
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     layers:
     - state: icon
-      color: "#45d2a4"
+      color: "#38f0b3"
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
-        color: "#45d2a4"
+        color: "#38f0b3"
   - type: Item
     sprite: _CP14/Clothing/OuterClothing/ModularArmor/Breastplate/Chainmail/chainmail.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#45d2a4"
+        color: "#38f0b3"
       right:
       - state: inhand-right
-        color: "#45d2a4"
+        color: "#38f0b3"
   - type: Armor
     modifiers:
       coefficients:
@@ -139,6 +145,8 @@
     sprintModifier: 0.99
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ArmorMithrilChainmail
+  - type: CP14MagicManacostModify
+    globalModifier: 0.96
   - type: CP14Material
     materials:
       CP14Mithril: 40

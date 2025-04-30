@@ -26,11 +26,11 @@
   price: 0
 
 - type: material
-  id: CP14Nail
-  stackEntity: CP14Nail1
-  name: cp14-material-nail
-  unit: materials-unit-piece
-  icon: { sprite: _CP14/Objects/Materials/nails.rsi, state: nail_2 }
+  id: CP14MarbleStone
+  stackEntity: CP14MarbleBlock1
+  name: cp14-material-stone-block #TODO
+  unit: materials-unit-chunk
+  icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
   color: "#555963"
   price: 0
 

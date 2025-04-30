@@ -6,3 +6,6 @@ cp14-modular-slot-arrow-tip = arrow tip
 
 cp14-modular-slot-cuisses = cuisses
 cp14-modular-slot-greave = greave
+
+cp14-modular-slot-visor = visor
+cp14-modular-slot-aventail = aventail

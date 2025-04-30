@@ -75,7 +75,7 @@ public abstract partial class CP14SharedMagicSystem
         var evStart = new CP14StartCastMagicEffectEvent(performer);
         RaiseLocalEvent(action, ref evStart);
 
-        var fromItem = action.Comp.SpellStorage is not null;
+        var fromItem = action.Comp.SpellStorage is not null && action.Comp.SpellStorage.Value != performer;
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, toggleable.CastTime, doAfter, action, used: action.Comp.SpellStorage, target: _target)
         {

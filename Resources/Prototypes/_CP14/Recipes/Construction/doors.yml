@@ -149,22 +149,3 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-
-- type: construction
-  crystallPunkAllowed: true
-  id: CP14FenceIronGrilleGate
-  name: iron grille gate
-  description: Heavy iron gates in bars. Looks serious.
-  graph: CP14FenceIronGrilleGate
-  startNode: start
-  targetNode: CP14FenceIronGrilleGate
-  category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Fences/iron_grille.rsi
-    state: door_closed
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked

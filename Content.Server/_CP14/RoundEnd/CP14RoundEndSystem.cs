@@ -17,7 +17,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private TimeSpan _roundEndMoment = TimeSpan.Zero;
 
@@ -77,7 +77,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
 
     private void StartRoundEndTimer()
     {
-        var roundEndDelay = TimeSpan.FromMinutes(_configManager.GetCVar(CCVars.CP14RoundEndMinutes));
+        var roundEndDelay = TimeSpan.FromMinutes(_cfg.GetCVar(CCVars.CP14RoundEndMinutes));
 
         _roundEndMoment = _timing.CurTime + roundEndDelay;
 

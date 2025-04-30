@@ -1,0 +1,72 @@
+- type: modularPart
+  id: BaseAventailChainmail
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseClothingArmor
+
+- type: modularPart
+  id: AventailIronChainmail
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Slash: -0.06
+        Piercing: -0.01
+
+- type: modularPart
+  id: AventailGoldChainmail
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+  color: "#ffe269"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Slash: -0.03
+
+- type: modularPart
+  id: AventailCopperChainmail
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+  color: "#e28f08"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Slash: -0.04
+
+- type: modularPart
+  id: AventailMithrilChainmail
+  slots:
+  - Aventail
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+  color: "#38f0b3"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseAventailChainmail
+  - !type:EditArmor
+    modifiers:
+      coefficients:
+        Blunt: -0.03
+        Slash: -0.07
+        Piercing: -0.02

@@ -32,4 +32,7 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
 
     [DataField]
     public int ResultCount = 1;
+
+    [DataField]
+    public ProtoId<CP14WorkbenchRecipeCategoryPrototype>? Category;
 }

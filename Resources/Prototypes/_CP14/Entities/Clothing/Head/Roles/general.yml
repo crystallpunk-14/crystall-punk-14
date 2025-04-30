@@ -66,6 +66,28 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadGreenHuntersHat
+  name: green hunter's hat
+  description: A headdress revered by hunters on undead.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/green_hunter_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/green_hunter_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadRedHuntersHat
+  name: red hunter's hat
+  description: A headdress revered by hunters on undead.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/red_hunter_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/red_hunter_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
   id: CP14ClothingHeadJestersCap
   name: jester's cap
   description: You are the fun. You are noise. You are the jester.
@@ -85,3 +107,17 @@
     sprite: _CP14/Clothing/Head/Roles/General/jagermeister_hat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/jagermeister_hat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadStrawHat
+  name: straw hat
+  description: Easy to make, not too bad to lose.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/General/straw_hat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/General/straw_hat.rsi
+  - type: Construction
+    graph: CP14StrawHat
+    node: cp14headstrawhat

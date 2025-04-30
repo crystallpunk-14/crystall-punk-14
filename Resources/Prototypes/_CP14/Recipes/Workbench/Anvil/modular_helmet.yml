@@ -1,0 +1,92 @@
+
+# Capellina
+
+- type: CP14Recipe
+  id: CP14HelmetIronCapellina
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14HelmetIronCapellina
+
+- type: CP14Recipe
+  id: CP14HelmetGoldCapellina
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14HelmetGoldCapellina
+
+- type: CP14Recipe
+  id: CP14HelmetCopperCapellina
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14HelmetCopperCapellina
+
+- type: CP14Recipe
+  id: CP14HelmetMithrilCapellina
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14HelmetMithrilCapellina
+
+# Palm Helmet
+
+- type: CP14Recipe
+  id: CP14HelmetIronPalmHelmet
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14HelmetIronPalmHelmet
+
+- type: CP14Recipe
+  id: CP14HelmetGoldPalmHelmet
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14HelmetGoldPalmHelmet
+
+- type: CP14Recipe
+  id: CP14HelmetCopperPalmHelmet
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14HelmetCopperPalmHelmet
+
+- type: CP14Recipe
+  id: CP14HelmetMithrilPalmHelmet
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14HelmetMithrilPalmHelmet

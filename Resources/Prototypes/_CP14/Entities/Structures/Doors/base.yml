@@ -17,6 +17,7 @@
     openDrawDepth: Mobs
   - type: Lock
     locked: false
+  - type: CP14Lock #Empty, for installing new locks
   - type: PlacementReplacement
     key: walls
   - type: CP14DoorInteractionPopup

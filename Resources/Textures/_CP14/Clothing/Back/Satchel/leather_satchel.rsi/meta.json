@@ -19,11 +19,19 @@
       "directions": 4
     },
     {
+      "name": "equipped-BACKPACK-carcat",
+      "directions": 4
+    },
+    {
       "name": "flipped-equipped-BACKPACK",
       "directions": 4
     },
     {
       "name": "flipped-equipped-BACKPACK-goblin",
+      "directions": 4
+    },
+    {
+      "name": "flipped-equipped-BACKPACK-carcat",
       "directions": 4
     },
     {

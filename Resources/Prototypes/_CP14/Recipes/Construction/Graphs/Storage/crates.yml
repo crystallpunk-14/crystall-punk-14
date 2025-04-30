@@ -3,33 +3,49 @@
   start: start
   graph:
     - node: start
+      actions:
+        - !type:DestroyEntity {}
       edges:
         - to: CP14SmallWoodenCrate
           completed:
             - !type:SnapToGrid
           steps:
             - stackGroup: WoodenPlanks
-              amount: 2
-            - material: CP14Nail
               amount: 1
-              doAfter: 4
     - node: CP14SmallWoodenCrate
       entity: CP14SmallWoodenCrate 
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 1
 
 - type: constructionGraph
   id: CP14LargeWoodenCrate
   start: start
   graph:
     - node: start
+      actions:
+        - !type:DestroyEntity {}
       edges:
         - to: CP14LargeWoodenCrate
           completed:
             - !type:SnapToGrid
           steps:
             - stackGroup: WoodenPlanks
-              amount: 4
-            - material: CP14Nail
               amount: 2
-              doAfter: 4
     - node: CP14LargeWoodenCrate
-      entity: CP14LargeWoodenCrate 
+      entity: CP14LargeWoodenCrate
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2

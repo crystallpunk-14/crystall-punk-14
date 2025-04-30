@@ -4,3 +4,10 @@
   antagonist: true
   setPreference: false
   objective: cp14-ghost-role-information-rules-demiplane
+
+- type: antag
+  id: CP14RaidAntag
+  name: cp14-role-type-raid-antag-name
+  antagonist: true
+  setPreference: false
+  objective: cp14-ghost-role-information-rules-raid

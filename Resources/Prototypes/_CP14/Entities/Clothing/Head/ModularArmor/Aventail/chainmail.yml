@@ -1,0 +1,82 @@
+- type: entity
+  parent: BaseItem
+  id: CP14ModularAventailBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+    storedRotation: 0
+    shape:
+    - 0,0,0,0
+
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailIronChainmail
+  name: iron aventail chainmail
+  description: A aventail of chainmail to protect the neck from blows and piercing at vital points.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailIronChainmail
+  - type: CP14Material
+    materials:
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailGoldChainmail
+  name: golden aventail chainmail
+  description: A aventail of chainmail to protect the neck from blows and piercing at vital points.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#ffe269"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailGoldChainmail
+  - type: CP14Material
+    materials:
+      CP14Gold: 10
+
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailCopperChainmail
+  name: copper aventail chainmail
+  description: A aventail of chainmail to protect the neck from blows and piercing at vital points.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#e28f08"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailCopperChainmail
+  - type: CP14Material
+    materials:
+      CP14Copper: 10
+
+- type: entity
+  parent: CP14ModularAventailBase
+  id: CP14ModularAventailMithrilChainmail
+  name: mithril aventail chainmail
+  description: A aventail of chainmail to protect the neck from blows and piercing at vital points.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/ModularArmor/Aventail/chainmail.rsi
+    layers:
+    - state: icon
+      color: "#38f0b3"
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - AventailMithrilChainmail
+  - type: CP14Material
+    materials:
+      CP14Mithril: 10

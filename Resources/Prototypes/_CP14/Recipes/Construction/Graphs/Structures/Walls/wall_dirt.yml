@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: CP14WallDirt
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: WallDirt
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: CP14Dirt
+              amount: 5
+              doAfter: 2
+    - node: WallDirt
+      entity: CP14WallDirt

@@ -24,7 +24,7 @@ public abstract partial class CP14SharedMagicSystem
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             return false;
 
-        var fromItem = action.Comp.SpellStorage is not null;
+        var fromItem = action.Comp.SpellStorage is not null && action.Comp.SpellStorage.Value != performer;
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, performer, MathF.Max(delayedEffect.CastDelay, 0.3f), doAfter, action, used: action.Comp.SpellStorage, target: target)
         {

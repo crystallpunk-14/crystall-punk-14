@@ -3,7 +3,6 @@ cp14-stack-stone-block = каменные блоки
 cp14-stack-marble-block = мраморные камни
 cp14-stack-wood-planks = дубовые доски
 cp14-stack-wood-planks-birch = березовые доски
-cp14-stack-nails = гвозди
 cp14-stack-cloth = рулоны ткани
 cp14-stack-flora = пучки травы
 cp14-stack-compost = кучи компоста

@@ -6,13 +6,60 @@
       actions:
         - !type:DestroyEntity {}
       edges:
+        - to: CP14TableWoodenFrame
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 1
+              doAfter: 1
+    
+    - node: CP14TableWoodenFrame
+      entity: CP14TableWoodenFrame
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 1
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 1
         - to: CP14TableWooden
           steps:
-            - stackGroup: WoodenPlanks
-              amount: 3
-              doAfter: 2
+            - material: CP14WoodenPlanks
+              amount: 1
+              doAfter: 1
+    
     - node: CP14TableWooden
       entity: CP14TableWooden
+      edges:
+        - to: CP14TableWoodenFrame
+          steps:
+            - tool: Prying
+              doAfter: 1
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 1
+        - to: CP14TableWoodenCounter
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 1
+              doAfter: 1
+
+    - node: CP14TableWoodenCounter
+      entity: CP14TableWoodenCounter
+      edges:
+        - to: CP14TableWooden
+          steps:
+            - tool: Prying
+              doAfter: 1
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 1
+
+
+
 
 - type: constructionGraph
   id: CP14TableWoodenRound
@@ -29,22 +76,6 @@
               doAfter: 2
     - node: CP14TableWoodenRound
       entity: CP14TableWoodenRound
-
-- type: constructionGraph
-  id: CP14TableWoodenCounter
-  start: start
-  graph:
-    - node: start
-      actions:
-        - !type:DestroyEntity {}
-      edges:
-        - to: CP14TableWoodenCounter
-          steps:
-            - stackGroup: WoodenPlanks
-              amount: 3
-              doAfter: 2
-    - node: CP14TableWoodenCounter
-      entity: CP14TableWoodenCounter
               
 - type: constructionGraph
   id: CP14Workbench

@@ -1,0 +1,92 @@
+
+# Plate
+
+- type: CP14Recipe
+  id: CP14ModularVisorIronPlate
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularVisorIronPlate
+
+- type: CP14Recipe
+  id: CP14ModularVisorGoldPlate
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularVisorGoldPlate
+
+- type: CP14Recipe
+  id: CP14ModularVisorCopperPlate
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularVisorCopperPlate
+
+- type: CP14Recipe
+  id: CP14ModularVisorMithrilPlate
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularVisorMithrilPlate
+
+# Chainmail
+
+- type: CP14Recipe
+  id: CP14ModularVisorIronChainmail
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ModularVisorIronChainmail
+
+- type: CP14Recipe
+  id: CP14ModularVisorGoldChainmail
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14ModularVisorGoldChainmail
+
+- type: CP14Recipe
+  id: CP14ModularVisorCopperChainmail
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14ModularVisorCopperChainmail
+
+- type: CP14Recipe
+  id: CP14ModularVisorMithrilChainmail
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14ModularVisorMithrilChainmail

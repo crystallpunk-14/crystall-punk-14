@@ -90,7 +90,7 @@
           - MobLayer
   - type: Damageable
     damageContainer: CP14Biological
-    damageModifierSet: Skeleton
+    damageModifierSet: CP14Skeleton
   - type: Destructible
     thresholds:
     - trigger:
@@ -112,6 +112,7 @@
   - type: TransferMindOnGib
   - type: CP14DemiplaneStabilizer
     enabled: false
+  - type: GhostTakeoverAvailable
 
 - type: entity
   parent: CP14BaseSpeciesDummy

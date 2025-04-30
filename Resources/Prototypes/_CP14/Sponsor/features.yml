@@ -1,0 +1,3 @@
+- type: sponsorFeature
+  id: PriorityJoin # Allows you to connect to the server by bypassing the queue
+  minPriority: 1

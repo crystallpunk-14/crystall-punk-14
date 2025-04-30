@@ -24,10 +24,10 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectAliveTargetRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
 
         //Verbal speaking
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(
-            OnVerbalAspectStartCast);
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(
-            OnVerbalAspectAfterCast);
+        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
+        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
+        SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14StartCastMagicEffectEvent>(OnEmoteStartCast);
+        SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14MagicEffectConsumeResourceEvent>(OnEmoteEndCast);
     }
 
     /// <summary>
@@ -151,11 +151,11 @@ public abstract partial class CP14SharedMagicSystem
     private void OnVerbalAspectStartCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
         ref CP14StartCastMagicEffectEvent args)
     {
-        var ev = new CP14VerbalAspectSpeechEvent
+        var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,
             Speech = Loc.GetString(ent.Comp.StartSpeech),
-            Emote = ent.Comp.Emote
+            Emote = false,
         };
         RaiseLocalEvent(ent, ref ev);
     }
@@ -166,11 +166,37 @@ public abstract partial class CP14SharedMagicSystem
         if (_net.IsClient)
             return;
 
-        var ev = new CP14VerbalAspectSpeechEvent
+        var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,
             Speech = Loc.GetString(ent.Comp.EndSpeech),
-            Emote = ent.Comp.Emote
+            Emote = false
+        };
+        RaiseLocalEvent(ent, ref ev);
+    }
+
+    private void OnEmoteStartCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14StartCastMagicEffectEvent args)
+    {
+        var ev = new CP14SpellSpeechEvent
+        {
+            Performer = args.Performer,
+            Speech = Loc.GetString(ent.Comp.StartEmote),
+            Emote = true,
+        };
+        RaiseLocalEvent(ent, ref ev);
+    }
+
+
+    private void OnEmoteEndCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    {
+        if (_net.IsClient)
+            return;
+
+        var ev = new CP14SpellSpeechEvent
+        {
+            Performer = args.Performer,
+            Speech = Loc.GetString(ent.Comp.EndEmote),
+            Emote = true
         };
         RaiseLocalEvent(ent, ref ev);
     }

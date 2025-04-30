@@ -7,7 +7,7 @@
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_arrow
   - type: CP14MagicEffectManaCost
-    manaCost: 20
+    manaCost: 15
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget

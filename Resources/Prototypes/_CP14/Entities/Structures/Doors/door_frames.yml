@@ -70,7 +70,7 @@
     state: closed
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: CP14Metallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -97,33 +97,3 @@
   - type: Construction
     graph: CP14IronDoor
     node: CP14IronDoorFrameMirrored
-
-- type: entity
-  parent: CP14BaseDoorFrame
-  id: CP14FenceIronGrilleGateFrame
-  name: iron grille gate frame
-  description: An unfinished iron grille gate.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Fences/iron_grille.rsi
-    drawdepth: Mobs
-    state: door_closed_frame
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StructuralMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14IronBar1:
-            min: 1
-            max: 2
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-  - type: Construction
-    graph: CP14FenceIronGrilleGate
-    node: CP14FenceIronGrilleGateFrame

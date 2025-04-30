@@ -554,7 +554,7 @@ ent-CP14ActionSpellIceDagger = Ледяной кинжал
 
 ent-CP14SpellScrollIceDagger = свиток заклинания ледяного кинжала
     .desc = { ent-CP14BaseSpellScrollWater.desc }
- 
+
 ent-CP14ActionSpellIceShards = Ледяные осколки
     .desc = Быстрые ледяные иглы для быстрой стрельбы по мишеням.
 
@@ -2165,18 +2165,6 @@ ent-CP14LucensWoodenPlanks10 = { ent-CP14LucensWoodenPlanks1 }
 ent-CP14LucensWoodenPlanks20 = { ent-CP14LucensWoodenPlanks1 }
     .desc = { ent-CP14LucensWoodenPlanks1.desc }
     .suffix = 20
-
-ent-CP14Nail1 = гвозди
-    .desc = Основной столярный инструмент, позволяющий делать с деревом невообразимые вещи.
-    .suffix = 1
-
-ent-CP14Nail20 = { ent-CP14Nail1 }
-    .desc = { ent-CP14Nail1.desc }
-    .suffix = 20
-
-ent-CP14Nail50 = { ent-CP14Nail1 }
-    .desc = { ent-CP14Nail1.desc }
-    .suffix = 50
 
 ent-CP14String = нитки
     .desc = Тонкая нить. Материал для починки одежды или пошива новой.
