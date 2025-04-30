@@ -56,6 +56,15 @@ public sealed partial class LabelSystem : EntitySystem
         label.CurrentLabel = text;
         _nameModifier.RefreshNameModifiers(uid);
 
+        //CP14 Events
+        var ev = new CP14LabeledEvent()
+        {
+            LabeledEntity = uid,
+            Text = text,
+        };
+        RaiseLocalEvent(uid, ev);
+        //CP14 Events end
+
         Dirty(uid, label);
     }
 
@@ -141,4 +150,11 @@ public sealed partial class LabelSystem : EntitySystem
         if (TryComp<PaperLabelTypeComponent>(slot.Item, out var type))
             _appearance.SetData(ent, PaperLabelVisuals.LabelType, type.PaperType, ent.Comp2);
     }
+}
+
+//CP14 Labeling Event
+public sealed class CP14LabeledEvent : EntityEventArgs
+{
+    public EntityUid? LabeledEntity;
+    public string? Text;
 }

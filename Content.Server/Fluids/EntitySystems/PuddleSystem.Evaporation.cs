@@ -68,11 +68,13 @@ public sealed partial class PuddleSystem
                 puddleSolution.SplitSolutionWithOnly(reagentTick, evaporatingReagent);
             }
 
+            //CP14 force evaporation under sky
             if (evaporation.CP14ForceEvaporation)
             {
                 var reagentTick = evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds;
                 puddleSolution.SplitSolution(reagentTick);
             }
+            //CP14 force evaporation under sky end
 
             // Despawn if we're done
             if (puddleSolution.Volume == FixedPoint2.Zero)
