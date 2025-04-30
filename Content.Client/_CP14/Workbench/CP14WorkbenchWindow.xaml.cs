@@ -78,7 +78,8 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             CraftsContainer.AddChild(control);
         }
 
-        RecipeSelectNull();
+        if (_selectedEntry is not null && !recipes.Contains(_selectedEntry.Value))
+            RecipeSelectNull();
     }
 
     public void UpdateState(CP14WorkbenchUiRecipesState recipesState)
@@ -227,6 +228,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
     private void RecipeSelectNull()
     {
         _selectedEntry = null;
+
         ItemView.SetPrototype(null);
         ItemName.Text = string.Empty;
         ItemDescription.Text = string.Empty;

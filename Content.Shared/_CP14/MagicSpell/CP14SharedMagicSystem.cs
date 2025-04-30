@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
@@ -68,9 +69,24 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnEndCast(Entity<CP14MagicEffectComponent> ent, ref CP14EndCastMagicEffectEvent args)
     {
-        if (TryComp<CP14MagicCasterComponent>(args.Performer, out var caster))
+        if (!TryComp<CP14MagicCasterComponent>(args.Performer, out var caster))
+            return;
+
+        caster.CastedSpells.Remove(ent);
+
+        //Break all casts
+        List<EntityUid> castedSpells = new();
+        foreach (var casted in caster.CastedSpells)
         {
-            caster.CastedSpells.Remove(ent);
+            castedSpells.Add(casted);
+        }
+
+        foreach (var casted in castedSpells)
+        {
+            if (!_magicEffectQuery.TryComp(casted, out var castedComp))
+                continue;
+
+            _doAfter.Cancel(castedComp.ActiveDoAfter);
         }
     }
 
@@ -103,7 +119,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         if (_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
         {
-            sb.Append($"\n{Loc.GetString("cp14-magic-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
+            sb.Append($"\n{Loc.GetString("cp14-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
         }
 
         if (TryComp<CP14MagicEffectVerbalAspectComponent>(ent, out var verbal))
@@ -133,20 +149,23 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     /// <summary>
     /// Checking to see if the spell can be used at all
     /// </summary>
-    private bool CanCastSpell(Entity<CP14MagicEffectComponent> ent, EntityUid performer)
+    private bool CanCastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        var ev = new CP14CastMagicEffectAttemptEvent(performer);
-        RaiseLocalEvent(ent, ref ev);
-        if (ev.Reason != string.Empty && _net.IsServer)
-        {
-            _popup.PopupEntity(ev.Reason, performer, performer);
-        }
+        if (args.User is not { } performer)
+            return true;
+
+        var ev = new CP14CastMagicEffectAttemptEvent(performer, args.Used, args.Target, args.Position);
+        RaiseLocalEvent(ent, ev);
+
+        if (ev.Reason != string.Empty)
+            _popup.PopupPredicted(ev.Reason, performer, performer);
+
         return !ev.Cancelled;
     }
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        if (!_net.IsServer)
+        if (_net.IsClient)
             return;
 
         foreach (var effect in ent.Comp.TelegraphyEffects)
@@ -160,12 +179,12 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
 
-        if (_net.IsServer)
+       if (_net.IsClient)
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
         {
-            foreach (var effect in ent.Comp.Effects)
-            {
-                effect.Effect(EntityManager, args);
-            }
+            effect.Effect(EntityManager, args);
         }
     }
 

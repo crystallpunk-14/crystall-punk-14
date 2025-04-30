@@ -13,6 +13,8 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  conditions:
+  - !type:CP14NoRoofInTile
 
 - type: construction
   crystallPunkAllowed: true
@@ -29,3 +31,5 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  conditions:
+  - !type:CP14NoRoofInTile

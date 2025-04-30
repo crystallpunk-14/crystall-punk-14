@@ -102,6 +102,12 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
                     ConsumeFuel(uid, fireplace, fuel.Value);
 
                 flammable.FirestackFade = -fireplace.FireFadeDelta;
+
+                if (flammable.FireStacks == 0 && fireplace.DeleteOnEmpty)
+                {
+                    QueueDel(uid);
+                    return;
+                }
             }
         }
     }

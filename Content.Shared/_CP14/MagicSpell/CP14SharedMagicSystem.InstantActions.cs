@@ -21,11 +21,10 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        if (!CanCastSpell((args.Action, magicEffect), args.Performer))
-            return;
+        var spellArgs = new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Performer, Transform(args.Performer).Coordinates);
 
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Performer, Transform(args.Performer).Coordinates);
+        if (!CanCastSpell((args.Action, magicEffect), spellArgs))
+            return;
 
         CastSpell((args.Action, magicEffect), spellArgs);
         _action.CP14StartCustomDelay(args.Action, args.Cooldown);
@@ -39,11 +38,10 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        if (!CanCastSpell((args.Action, magicEffect), args.Performer))
-            return;
+        var spellArgs = new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Entity, args.Coords);
 
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Entity, args.Coords);
+        if (!CanCastSpell((args.Action, magicEffect), spellArgs))
+            return;
 
         CastSpell((args.Action, magicEffect), spellArgs);
         _action.CP14StartCustomDelay(args.Action, args.Cooldown);
@@ -57,11 +55,10 @@ public abstract partial class CP14SharedMagicSystem
         if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
             return;
 
-        if (!CanCastSpell((args.Action, magicEffect), args.Performer))
-            return;
+        var spellArgs = new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Target, Transform(args.Target).Coordinates);
 
-        var spellArgs =
-            new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Target, Transform(args.Target).Coordinates);
+        if (!CanCastSpell((args.Action, magicEffect), spellArgs))
+            return;
 
         CastSpell((args.Action, magicEffect), spellArgs);
         _action.CP14StartCustomDelay(args.Action, args.Cooldown);

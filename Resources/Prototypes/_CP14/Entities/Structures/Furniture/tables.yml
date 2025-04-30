@@ -90,6 +90,9 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Tables/wood.rsi
     state: frame
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14TableWoodenFrame
 
 - type: entity
   parent: CP14WoodenTableBase
@@ -137,7 +140,7 @@
     sprite: _CP14/Structures/Furniture/Tables/wood_counter.rsi
     state: full
   - type: Construction
-    graph: CP14TableWoodenCounter
+    graph: CP14TableWooden
     node: CP14TableWoodenCounter
 
 - type: entity

@@ -11,7 +11,7 @@
             - !type:SnapToGrid { }
           steps:
             - stackGroup: WoodenPlanks
-              amount: 5
+              amount: 2
               doAfter: 3
     - node: CP14mannequin
       entity: CP14Mannequin
@@ -21,7 +21,7 @@
             - !type:EmptyAllContainers
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
-              amount: 5
+              amount: 2
           steps:
             - tool: CP14Hammering
               doAfter: 3

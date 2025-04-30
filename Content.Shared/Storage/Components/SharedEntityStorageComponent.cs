@@ -86,7 +86,7 @@ public abstract partial class SharedEntityStorageComponent : Component
     /// Whether or not the container is sealed and traps air inside of it
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool Airtight = true;
+    public bool Airtight = false; //CP14 false - bandaid fix: dont work with MapAtmosphere
 
     /// <summary>
     /// Whether or not the entitystorage is open or closed
@@ -159,7 +159,7 @@ public readonly record struct StorageBeforeOpenEvent;
 public readonly record struct StorageAfterOpenEvent;
 
 [ByRefEvent]
-public record struct StorageCloseAttemptEvent(bool Cancelled = false);
+public record struct StorageCloseAttemptEvent(EntityUid? User, bool Cancelled = false);
 
 [ByRefEvent]
 public readonly record struct StorageBeforeCloseEvent(HashSet<EntityUid> Contents, HashSet<EntityUid> BypassChecks);

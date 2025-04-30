@@ -97,7 +97,7 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
             if (keyComp.LockShape == null)
                 continue;
 
-            if (keyComp.LockShape.SequenceEqual(cp14LockComp.LockShape))
+            if (!keyComp.LockShape.SequenceEqual(cp14LockComp.LockShape))
                 continue;
 
             TryUseKeyOnLock(args.User,

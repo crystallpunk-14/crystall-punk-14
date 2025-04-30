@@ -20,9 +20,6 @@
   - !type:StackGroupResource
     group: WoodenPlanks
     count: 2
-  - !type:StackResource
-    stack: CP14Nail
-    count: 1
   result: CP14WoodenBeerMug
 
 - type: CP14Recipe
@@ -162,7 +159,7 @@
   - !type:StackGroupResource
     group: WoodenPlanks
   - !type:ProtoIdResource
-    protoId: CP14CrystalShardBase
+    protoId: CP14CrystalShardQuartz
   result: CP14CrayonWhite
 
 - type: CP14Recipe

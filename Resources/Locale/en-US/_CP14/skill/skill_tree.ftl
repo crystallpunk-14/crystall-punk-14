@@ -16,6 +16,9 @@ cp14-skill-tree-illusion-desc = Explore the nature of light to create illusions,
 cp14-skill-tree-healing-name = Lifecation
 cp14-skill-tree-healing-desc = Explore the ways in which magic affects living creatures.
 
+cp14-skill-tree-dimension-name = Dimensium
+cp14-skill-tree-dimension-desc = Immerse yourself in the nature of space and void.
+
 # Body
 
 cp14-skill-tree-atlethic-name = Atlethic

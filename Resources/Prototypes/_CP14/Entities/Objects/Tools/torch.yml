@@ -1,6 +1,8 @@
 - type: entity
   id: CP14Torch
-  parent: BaseItem
+  parent: 
+  - BaseItem
+  - CP14BaseTorch
   name: torch
   description: At its core, a stick burning on one side. Used to light up the area.
   categories: [ ForkFiltered ]
@@ -15,30 +17,6 @@
     shape:
     - 0,0,0,2
     storedRotation: -65
-  - type: CP14FlammableAmbientSound
-  - type: AmbientSound
-    enabled: false
-    volume: -5
-    range: 5
-    sound:
-      path: /Audio/Ambience/Objects/fireplace.ogg
-  - type: Appearance
-  - type: Reactive
-    groups:
-      Flammable: [ Touch ]
-      Extinguish: [ Touch ]
-  - type: Flammable
-    fireSpread: false
-    canResistFire: false
-    alwaysCombustible: true
-    canExtinguish: true
-    firestacksOnIgnite: 0.5
-    damage:
-      types:
-        Heat: 0
-  - type: CP14Fireplace
-    maxFuelLimit: 200
-    fuel: 200
   - type: FireVisuals
     sprite: _CP14/Objects/Tools/torch.rsi
     normalState: lit-overlay
@@ -58,17 +36,6 @@
           Empty: { state: torch-spent }
           Medium: { state: torch-unlit }
           Full: { state: torch-unlit }
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Wood
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: CP14DelayedIgnitionSource
   - type: CP14IgnitionModifier
     hideCaution: true
@@ -86,7 +53,7 @@
   - type: UseDelay
   - type: ExtinguishOnInteract
     extinguishAttemptSound:
-      path: /Audio/Items/candle_blowing.ogg #TODO sound
+      path: /Audio/Items/candle_blowing.ogg
       params:
         variation: 0.05
         volume: 10

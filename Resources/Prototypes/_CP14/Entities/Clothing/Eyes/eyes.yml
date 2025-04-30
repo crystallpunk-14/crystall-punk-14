@@ -23,6 +23,7 @@
     sprite: _CP14/Clothing/Eyes/monocle.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/monocle.rsi
+  - type: VisionCorrection
 
 - type: entity
   parent: CP14ClothingEyesBase
@@ -41,6 +42,7 @@
     sprite: _CP14/Clothing/Eyes/glasses.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/glasses.rsi
+  - type: VisionCorrection
 
 - type: entity
   parent: CP14ClothingEyesBase
@@ -64,6 +66,7 @@
     guides:
     - CP14_RU_Alchemy
     - CP14_EN_Alchemy
+  - type: VisionCorrection
 
 - type: entity
   parent: CP14ClothingEyesBase
@@ -80,6 +83,7 @@
     guides:
     - CP14_RU_Alchemy
     - CP14_EN_Alchemy
+  - type: VisionCorrection
 
 - type: entity
   parent: CP14ClothingEyesBase
@@ -99,6 +103,7 @@
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
   - type: CP14MagicEssenceScanner
+  - type: VisionCorrection
 
 - type: entity
   parent: CP14ClothingEyesBase
