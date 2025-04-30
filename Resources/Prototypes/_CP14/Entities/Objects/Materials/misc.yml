@@ -1,0 +1,29 @@
+- type: entity
+  id: CP14CrystalShardQuartz
+  parent: BaseItem
+  name: quartz shard
+  description: Natural quartz crystals that can absorb the magical energy of the world around them.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/Crystal/crystal_shard.rsi
+    layers:
+      - state: shard0
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        shard0: ""
+        shard1: ""
+        shard2: ""
+        shard3: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14GroundQuartz
+        Quantity: 7

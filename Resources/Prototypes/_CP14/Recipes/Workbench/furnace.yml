@@ -44,7 +44,8 @@
   craftTime: 4
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14CrystalShardBase
+    protoId: CP14CrystalShardQuartz
+    count: 2
   result: CP14GlassSheet1
 
 - type: CP14Recipe
