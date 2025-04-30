@@ -3,6 +3,7 @@
   id: CP14GuardBell
   name: guard bell
   description: A bell used to set the appropriate alert level.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     drawdepth: Mobs
