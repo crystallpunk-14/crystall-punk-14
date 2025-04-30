@@ -290,7 +290,7 @@
 
 
 - type: CP14Recipe
-  id: CP14LockMithril
+  id: CP14EnergyCrystalMediumEmpty
   tag: CP14RecipeAnvil
   category: Tools
   craftTime: 2
