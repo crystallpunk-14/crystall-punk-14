@@ -75,7 +75,7 @@
   - type: ItemSlots
     slots:
       crystal_slot:
-        startingItem: CP14EnergyCrystalSmall
+        startingItem: CP14EnergyCrystalMedium
         insertSound: 
           path: /Audio/_CP14/Items/crystal_insert.ogg
           params:

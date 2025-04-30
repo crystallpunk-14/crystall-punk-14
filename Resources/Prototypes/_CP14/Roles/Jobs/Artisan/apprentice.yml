@@ -11,8 +11,8 @@
   id: CP14ApprenticeGear
   storage:
     back:
-    - CP14EnergyCrystalSmall
-    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalMedium
+    - CP14EnergyCrystalMedium
   equipment:
     keys: CP14BaseKeyRing
     belt1: CP14WalletFilledTest

@@ -314,6 +314,9 @@ CP14CrystalAir: CP14CrystalQuartz
 CP14CrystalOrder: CP14CrystalQuartz
 CP14CrystalChaos: CP14CrystalQuartz
 
+CP14EnergyCrystalSmallEmpty: CP14EnergyCrystalMediumEmpty
+CP14EnergyCrystalSmall: CP14EnergyCrystalMedium
+
 # <---> CrystallEdge migration zone end
 
 

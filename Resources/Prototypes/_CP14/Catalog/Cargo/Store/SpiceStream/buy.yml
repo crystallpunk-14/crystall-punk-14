@@ -184,9 +184,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14EnergyCrystalSmallEmpty
-        amount: 5
       - id: CP14EnergyCrystalMediumEmpty
-        amount: 3
+        amount: 5
       - id: CP14ManaOperationGlove
         amount: 2
