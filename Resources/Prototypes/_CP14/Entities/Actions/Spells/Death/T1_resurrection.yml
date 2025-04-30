@@ -10,6 +10,8 @@
     speedMultiplier: 0.2
   - type: CP14MagicEffectManaCost
     manaCost: 100
+  - type: CP14MagicEffectAliveTargetRequired
+    inverted: true
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

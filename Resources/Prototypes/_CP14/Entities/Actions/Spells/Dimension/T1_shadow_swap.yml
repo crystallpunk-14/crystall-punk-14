@@ -23,7 +23,7 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
-  - type: CP14MagicEffectTargetDeadBlock
+  - type: CP14MagicEffectAliveTargetRequired
   - type: EntityTargetAction
     whitelist:
       components:
