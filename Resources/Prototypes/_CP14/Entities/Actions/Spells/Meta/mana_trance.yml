@@ -20,10 +20,6 @@
         damage:
           types:
             CP14ManaDepletion: -0.1
-      - !type:MovespeedModifier
-        walkSpeedModifier: 0.8
-        sprintSpeedModifier: 0.8
-        statusLifetime: 1.5
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaTrance
   - type: InstantAction
