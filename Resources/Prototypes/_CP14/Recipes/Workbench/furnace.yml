@@ -41,11 +41,11 @@
 - type: CP14Recipe
   id: CP14GlassSheet1
   tag: CP14RecipeMeltingFurnace
-  craftTime: 4
+  craftTime: 2
   requirements:
   - !type:ProtoIdResource
     protoId: CP14CrystalShardQuartz
-    count: 2
+    count: 1
   result: CP14GlassSheet1
 
 - type: CP14Recipe
