@@ -94,8 +94,8 @@
   id: CP14FloorTorchAlwaysPowered
   name: floor torch
   parent: BaseStructure
-  categories: [ ForkFiltered, DoNotMap ]
-  suffix: Debug, Infinite, DO NOT MAP
+  categories: [ ForkFiltered ]
+  suffix: Debug, Infinite
   components:
   - type: Sprite
     noRot: true
@@ -164,8 +164,7 @@
   id: CP14WallmountTorchAlwaysPowered
   name: wallmount torch
   parent: CP14BaseWallmount
-  suffix: Debug, Infinite, DO NOT MAP
-  categories: [ DoNotMap ]
+  suffix: Debug, Infinite
   components:
   - type: Sprite
     sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
