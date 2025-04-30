@@ -1,4 +1,14 @@
 - type: CP14Recipe
+  id: CP14ClothMaterialCotton
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 2
+  result: CP14Cloth1
+
+- type: CP14Recipe
   id: CP14ClothingShirtCottonBlue
   tag: CP14RecipeSewing
   craftTime: 2

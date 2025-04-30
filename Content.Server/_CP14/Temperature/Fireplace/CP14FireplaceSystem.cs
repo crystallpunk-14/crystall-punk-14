@@ -88,7 +88,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             if (_timing.CurTime <= fireplace.NextUpdateTime)
                 continue;
 
-            fireplace.NextUpdateTime = _timing.CurTime + fireplace.UpdateFrequency;
+            fireplace.NextUpdateTime += fireplace.UpdateFrequency;
 
             if (fireplace.Fuel >= fireplace.FuelDrainingPerUpdate)
             {
@@ -102,6 +102,12 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
                     ConsumeFuel(uid, fireplace, fuel.Value);
 
                 flammable.FirestackFade = -fireplace.FireFadeDelta;
+
+                if (flammable.FireStacks == 0 && fireplace.DeleteOnEmpty)
+                {
+                    QueueDel(uid);
+                    return;
+                }
             }
         }
     }
