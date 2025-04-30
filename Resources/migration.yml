@@ -176,11 +176,6 @@ CP14Crossbolt: CP14CrossboltIron
 #2025-26-02
 CP14BookImperialLawsHandBook: CP14GuidebookImperialLaws
 
-CP14CrystalShardHealing: CP14CrystalShardOrder
-CP14CrystalShardLight: CP14CrystalShardAir
-CP14CrystalShardElectric: CP14CrystalShardAir
-CP14CrystalShardDarkness: CP14CrystalShardChaos
-
 CP14AlchemyNormalizer: CP14AlchemySolutionCleaner
 CP14VialSmallBloodFlowerSap: CP14VialSmall
 CP14VialSmallAgaricMushroom: CP14VialSmall
