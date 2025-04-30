@@ -58,6 +58,15 @@
       visible: false
   - type: HumanoidAppearance
     species: CP14Goblin
+    markingsDisplacement:
+      Hair:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: hair
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: hair
   - type: Hunger
     starvationDamage:
       types:
@@ -188,6 +197,15 @@
   components:
   - type: HumanoidAppearance
     species: CP14Goblin
+    markingsDisplacement:
+      Hair:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: hair
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: hair
   - type: Inventory
     templateId: CP14Human
     speciesId: goblin
