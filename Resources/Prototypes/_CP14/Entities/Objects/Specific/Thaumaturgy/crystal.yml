@@ -14,59 +14,18 @@
   - type: CP14MagicEnergyExaminable
 
 - type: entity
-  id: CP14EnergyCrystalSmall
-  parent: CP14EnergyCrystalBase
-  name: small energyshard
-  suffix: Full
-  components:
-  - type: Sprite
-    layers:
-      - state: small1
-        shader: unshaded
-        map: ["random"]
-      - state: small_connector
-  - type: RandomSprite
-    available:
-    - random:
-        small1: ""
-        small2: ""
-        small3: ""
-  - type: CP14MagicEnergyContainer
-    energy: 30
-    maxEnergy: 30
-
-- type: entity
-  id: CP14EnergyCrystalSmallEmpty
-  parent: CP14EnergyCrystalSmall
-  suffix: Empty
-  components:
-  - type: CP14MagicEnergyContainer
-    energy: 0
-
-
-- type: entity
   id: CP14EnergyCrystalMedium
   parent: CP14EnergyCrystalBase
   name: energyshard
   suffix: Full
   components:
-  - type: PointLight
-    radius: 1.2
   - type: Sprite
     layers:
-      - state: medium1
-        shader: unshaded
-        map: ["random"]
+      - state: medium
       - state: medium_connector
-  - type: RandomSprite
-    available:
-    - random:
-        medium1: ""
-        medium2: ""
-        medium3: ""
   - type: CP14MagicEnergyContainer
-    energy: 100
-    maxEnergy: 100
+    energy: 50
+    maxEnergy: 50
 
 - type: entity
   id: CP14EnergyCrystalMediumEmpty

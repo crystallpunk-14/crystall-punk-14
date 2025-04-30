@@ -100,7 +100,7 @@
       - id: CP14BaseLightCrossbow
       - id: CP14CrossboltIron
         amount: 5
-      - id: CP14EnergyCrystalSmall
+      - id: CP14EnergyCrystalMedium
       - id: CP14CrystalLampBlueEmpty
 
 - type: entity
@@ -118,7 +118,7 @@
       - id: CP14BaseShield
       - id: CP14ModularGripIronLongGuard
         amount: 2
-      - id: CP14EnergyCrystalSmall
+      - id: CP14EnergyCrystalMedium
       - id: CP14CrystalLampBlueEmpty
       - id: CP14StampGuardCommander
 

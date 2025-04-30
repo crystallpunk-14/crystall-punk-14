@@ -59,7 +59,7 @@ public partial class CP14MagicEnergySystem
             if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsAlive(uid, mobState))
                 continue;
 
-            draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
+            draw.NextUpdateTime += TimeSpan.FromSeconds(draw.Delay);
 
             ChangeEnergy((uid, magicContainer), draw.Energy, out _, out _, draw.Safe);
         }

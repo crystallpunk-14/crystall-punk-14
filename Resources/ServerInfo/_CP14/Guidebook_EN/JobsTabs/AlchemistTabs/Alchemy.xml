@@ -19,14 +19,6 @@
     <GuideEntityEmbed Entity="CP14LumiMushroom"/>
     <GuideEntityEmbed Entity="CP14BloodFlower"/>
   </Box>
-  <Box>
-    <GuideEntityEmbed Entity="CP14CrystalAir"/>
-    <GuideEntityEmbed Entity="CP14CrystalWater"/>
-    <GuideEntityEmbed Entity="CP14CrystalFire"/>
-    <GuideEntityEmbed Entity="CP14CrystalOrder"/>
-    <GuideEntityEmbed Entity="CP14CrystalChaos"/>
-    <GuideEntityEmbed Entity="CP14CrystalEarth"/>
-  </Box>
 
   Most "raw" ingredients can first be ground using a mortar and pestle:
 
