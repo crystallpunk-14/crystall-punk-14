@@ -13,6 +13,10 @@
     {
       "name": "head",
       "directions": 4
+    },
+    {
+      "name": "hair",
+      "directions": 4
     }
   ]
 }
