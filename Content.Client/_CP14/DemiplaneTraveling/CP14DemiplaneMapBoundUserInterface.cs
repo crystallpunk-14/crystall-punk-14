@@ -9,6 +9,7 @@ public sealed class CP14DemiplaneMapBoundUserInterface : BoundUserInterface
 
     public CP14DemiplaneMapBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
+        IoCManager.InjectDependencies(this);
     }
 
     protected override void Open()

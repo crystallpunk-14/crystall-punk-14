@@ -5,15 +5,15 @@ using Robust.Shared.Utility;
 namespace Content.Client._CP14.UserInterface.Systems.NodeTree;
 
 [Serializable, NetSerializable]
-public sealed class CP14NodeTreeElement(string nodeKey, bool gained ,bool active, Vector2 uiPosition, HashSet<string> childrens, SpriteSpecifier icon)
+public sealed class CP14NodeTreeElement(string nodeKey, bool gained ,bool active, Vector2 uiPosition, HashSet<string>? childrens = null, SpriteSpecifier? icon = null)
 {
     public string NodeKey = nodeKey;
     public bool Gained = gained;
     public bool Active = active;
 
     public Vector2 UiPosition = uiPosition;
-    public HashSet<string> Childrens = childrens;
-    public SpriteSpecifier Icon = icon;
+    public HashSet<string> Childrens = childrens ?? new HashSet<string>();
+    public SpriteSpecifier? Icon = icon;
 }
 
 [Serializable, NetSerializable]

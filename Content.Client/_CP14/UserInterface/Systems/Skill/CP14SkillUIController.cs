@@ -258,7 +258,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 skill.ID,
                 gained: learned.Contains(skill),
                 active: _skill.CanLearnSkill(_targetPlayer.Value, skill),
-                skill.SkillUiPosition * 30f,
+                skill.SkillUiPosition * 25f,
                 childrens,
                 skill.Icon);
             nodeTreeElements.Add(nodeTreeElement);

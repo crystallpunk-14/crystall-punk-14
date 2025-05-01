@@ -164,11 +164,14 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             }
 
             // Base Node icon
-            var baseTexture = node.Icon.Frame0();
-            var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * UIScale;
-            var baseQuad = new UIBox2(pos - baseSize / 2, pos + baseSize / 2);
-            var tint = node.Gained || _hoveredNode == node ? Color.White : node.Active ? Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f)) : Color.Black;
-            handle.DrawTextureRect(baseTexture, baseQuad, tint);
+            if (node.Icon is not null)
+            {
+                var baseTexture = node.Icon.Frame0();
+                var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * UIScale;
+                var baseQuad = new UIBox2(pos - baseSize / 2, pos + baseSize / 2);
+                var tint = node.Gained || _hoveredNode == node ? Color.White : node.Active ? Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f)) : Color.Black;
+                handle.DrawTextureRect(baseTexture, baseQuad, tint);
+            }
         }
     }
 }

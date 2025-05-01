@@ -1,5 +1,7 @@
 
 using System.Numerics;
+using Content.Shared._CP14.Demiplane.Prototypes;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.DemiplaneTraveling;
@@ -17,7 +19,11 @@ public sealed class CP14DemiplaneMapUiState(HashSet<CP14DemiplaneMapNode> nodes)
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14DemiplaneMapNode(Vector2 position)
+public sealed class CP14DemiplaneMapNode(string key, Vector2 uiPosition, ProtoId<CP14DemiplaneLocationPrototype> location, List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers)
 {
-    public Vector2 Position = position;
+    public string NodeKey = key;
+    public Vector2 UiPosition = uiPosition;
+
+    public ProtoId<CP14DemiplaneLocationPrototype> Location = location;
+    public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = modifiers;
 }

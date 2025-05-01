@@ -22,6 +22,7 @@
   - type: ActivatableUI
     key: enum.CP14DemiplaneMapUiKey.Key
     requiresComplex: true
+  - type: CP14DemiplaneMap
   - type: UserInterface
     interfaces:
       enum.CP14DemiplaneMapUiKey.Key:
