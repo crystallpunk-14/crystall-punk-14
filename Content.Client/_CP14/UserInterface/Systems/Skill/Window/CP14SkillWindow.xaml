@@ -5,6 +5,7 @@
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:parallax="clr-namespace:Content.Client.Parallax"
     xmlns:ui1="clr-namespace:Content.Client._CP14.Skill.Ui"
+    xmlns:nodeTree="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
     Title="{Loc 'cp14-skill-info-title'}"
     MinSize="700 350"
     SetSize="980 550">
@@ -67,7 +68,7 @@
             <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
                 <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4" Access="Public" SpeedX="10" SpeedY="5"/>
                 <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
-                    <ui1:CP14SkillTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
+                    <nodeTree:CP14NodeTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
                 </BoxContainer>
                 <!-- Tree Tabs -->
                 <BoxContainer Margin="10 10 10 10" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical" VerticalExpand="True">
