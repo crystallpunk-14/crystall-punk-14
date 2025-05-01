@@ -117,13 +117,13 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
 
                     // Draw line to child node
                     var childPos = possibleChildNode.UiPosition * UIScale + _globalOffset;
-                    handle.DrawLine(fromPos, childPos, Color.White);
+                    handle.DrawLine(fromPos, childPos, possibleChildNode.Active ? Color.White : Color.White.WithAlpha(0.6f));
                     break;
                 }
             }
         }
 
-        //Draw skill icons over lines
+        //Draw Node icons over lines
         foreach (var node in _state.Nodes)
         {
             var pos = node.UiPosition * UIScale + _globalOffset;
@@ -134,13 +134,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             var frameQuad = new UIBox2(pos - frameSize / 2, pos + frameSize / 2);
             handle.DrawTextureRect(frameTexture, frameQuad, node.Active ? Color.White : Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f)));
 
-            // Base skill icon
-            var baseTexture = node.Icon.Frame0();
-            var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * UIScale;
-            var baseQuad = new UIBox2(pos - baseSize / 2, pos + baseSize / 2);
-            handle.DrawTextureRect(baseTexture, baseQuad, node.Active ? Color.White : Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f)));
-
-            // Selected Skill
+            // Selected Node
             if (_selectedNode == node)
             {
                 var selectedTexture = _state.SelectedIcon.Frame0();
@@ -149,25 +143,32 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
                 handle.DrawTextureRect(selectedTexture, selectedQuad, Color.White);
             }
 
-            // Hovered Skill
-            var hovered = (cursor - pos).LengthSquared() <= (baseSize.X / 2) * (baseSize.X / 2);
+            // Hovered Node
+            var hovered = (cursor - pos).LengthSquared() <= (frameSize.X / 2) * (frameSize.X / 2);
             if (hovered)
             {
                 _hoveredNode = node;
-                var hoveredTexture = _state.SelectedIcon.Frame0();
+                var hoveredTexture = _state.HoveredIcon.Frame0();
                 var hoveredSize = new Vector2(hoveredTexture.Width, hoveredTexture.Height) * 1.5f * UIScale;
                 var hoveredQuad = new UIBox2(pos - hoveredSize / 2, pos + hoveredSize / 2);
                 handle.DrawTextureRect(hoveredTexture, hoveredQuad, Color.White);
             }
 
-            // Learned Skill
-            if (node.Active)
+            // Learned Node
+            if (node.Gained)
             {
                 var learnedTexture = _state.LearnedIcon.Frame0();
                 var learnedSize = new Vector2(learnedTexture.Width, learnedTexture.Height) * 1.5f * UIScale;
                 var learnedQuad = new UIBox2(pos - learnedSize / 2, pos + learnedSize / 2);
                 handle.DrawTextureRect(learnedTexture, learnedQuad, Color.White);
             }
+
+            // Base Node icon
+            var baseTexture = node.Icon.Frame0();
+            var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * UIScale;
+            var baseQuad = new UIBox2(pos - baseSize / 2, pos + baseSize / 2);
+            var tint = node.Gained || _hoveredNode == node ? Color.White : node.Active ? Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f)) : Color.Black;
+            handle.DrawTextureRect(baseTexture, baseQuad, tint);
         }
     }
 }
