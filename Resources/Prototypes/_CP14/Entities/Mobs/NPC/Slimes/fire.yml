@@ -64,8 +64,6 @@
           - id: CP14FoodMeatLambCutletCooked
           - id: CP14ModularInlayQuartzFire
           - id: CP14CopperCoin1
-          - id: CP14CrystalShardFire
-            weight: 3
 
 - type: entity
   id: CP14AreaEntityEffectSlimeIgnite

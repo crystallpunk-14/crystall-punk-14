@@ -37,7 +37,10 @@ public sealed partial class CP14FireplaceComponent : Component
     public float FuelDrainingPerUpdate = 1f;
 
     [DataField]
-    public TimeSpan UpdateFrequency = TimeSpan.FromSeconds(2f);
+    public bool DeleteOnEmpty = false;
+
+    [DataField]
+    public TimeSpan UpdateFrequency = TimeSpan.FromSeconds(1f);
 
     [DataField]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;

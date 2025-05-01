@@ -23,7 +23,7 @@
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
-      types: 
+      types:
         Blunt: 3
   - type: Damageable
     damageContainer: Inorganic
@@ -80,13 +80,14 @@
   categories: [ DoNotMap ]
   suffix: Artifact
   components:
-  #- type: CP14MagicManacostModify
-  #  modifiers:
-  #   Dimension: 1.4
+  # - type: CP14MagicManacostModify
+  #   modifiers:
+  #     tempus: 1.4
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellShadowStep
     - CP14ActionSpellShadowGrab
+    - CP14ActionSpellShadowSwap
     - CP14ActionSpellDemiplaneInfiltration
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
