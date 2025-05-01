@@ -1,8 +1,10 @@
+using System.Linq;
 using System.Numerics;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.DemiplaneTraveling;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.DemiplaneTraveling;
 
@@ -10,6 +12,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 {
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -38,8 +41,114 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
     {
         ent.Comp.Nodes.Clear();
 
-        ent.Comp.Nodes.Add(new CP14DemiplaneMapNode("one", Vector2.Zero, "T1SwampGeode", ["RoyalPumpkin", "RoyalPumpkin"]));
-        ent.Comp.Nodes.Add(new CP14DemiplaneMapNode("two", Vector2.One, "T1SwampGeode", ["RoyalPumpkin", "RoyalPumpkin"]));
-        ent.Comp.Nodes.Add(new CP14DemiplaneMapNode("the", Vector2.Pi, "T1SwampGeode", ["RoyalPumpkin", "RoyalPumpkin"]));
+        int gridSize = 10;
+        var center = new Vector2i(5, 5);
+
+
+        var directions = new List<Vector2i> {
+            new (0, -1), // top
+            new (0, 1),  // down
+            new (-1, 0), // left
+            new (1, 0),  // right
+        };
+
+        var grid = new Dictionary<Vector2i, CP14DemiplaneMapNode>();
+        var used = new HashSet<Vector2i>();
+
+        // 1. Выбрать 5 целевых точек на границах
+        List<Vector2i> targetRooms = new();
+        while (targetRooms.Count < 5)
+        {
+            var x = _random.Next(0, gridSize);
+            var y = _random.Next(0, gridSize);
+            if ((x == 0 || x == 9 || y == 0 || y == 9) && new Vector2i(x, y) != center)
+            {
+                var p = new Vector2i(x, y);
+                if (!targetRooms.Contains(p))
+                    targetRooms.Add(p);
+            }
+        }
+
+        // 2. Создать центр
+        var centerKey = $"node_{center.X}_{center.Y}";
+        var centerNode = new CP14DemiplaneMapNode(centerKey, new Vector2(center.X, center.Y), "T1SwampGeode", [ "RoyalPumpkin" ]);
+        grid[center] = centerNode;
+        used.Add(center);
+
+        // 3. Прокладываем путь до каждой цели
+        foreach (var target in targetRooms)
+        {
+            var current = center;
+            while (current != target)
+            {
+                var candidates = directions
+                    .Select(d => new Vector2i(current.X + d.X, current.Y + d.Y))
+                    .Where(p => p.X >= 0 && p.X < gridSize && p.Y >= 0 && p.Y < gridSize)
+                    .ToList();
+
+                Vector2i next;
+
+                if (_random.Prob(0.3f)) // 30% шанс сделать случайный шаг
+                {
+                    next = candidates
+                        .Where(p => p != current)
+                        .OrderBy(_ => _random.Next())
+                        .First();
+                }
+                else
+                {
+                    next = candidates
+                        .OrderBy(p => Distance(p, target) + (used.Contains(p) ? 5 : 0))
+                        .First();
+                }
+
+                // создать комнату если нужно
+                if (!grid.ContainsKey(next))
+                {
+                    string key = $"node_{next.X}_{next.Y}";
+                    var pos = new Vector2(next.X, next.Y);
+                    var node = new CP14DemiplaneMapNode(key, pos, "T1SwampGeode", [ "RoyalPumpkin" ]);
+                    grid[next] = node;
+                    used.Add(next);
+                }
+
+                // создать связь от current к next
+                grid[current].Childrens.Add($"node_{next.X}_{next.Y}");
+                current = next;
+            }
+        }
+
+        // 4. Добавить случайный сдвиг координат в пределах 0.5
+        foreach (var node in grid.Values)
+        {
+            var x = node.UiPosition.X + _random.NextFloat(-0.2f, 0.2f);
+            var y = node.UiPosition.Y + _random.NextFloat(-0.2f, 0.2f);
+            node.UiPosition = new Vector2(x, y);
+        }
+
+        // 5. Случайные связи между соседями
+        foreach (var kvp in grid)
+        {
+            var pos = kvp.Key;
+            var node = kvp.Value;
+            foreach (var dir in directions)
+            {
+                var neighborPos = pos + dir;
+                if (grid.ContainsKey(neighborPos) && _random.Prob(0.10f))
+                    node.Childrens.Add($"node_{neighborPos.X}_{neighborPos.Y}");
+            }
+        }
+
+        // 6. Добавить все узлы в сущность
+        foreach (var node in grid.Values)
+        {
+            ent.Comp.Nodes.Add(node);
+        }
+    }
+
+    // Евклидово расстояние (можно заменить Manhattan)
+    private float Distance(Vector2i a, Vector2i b)
+    {
+        return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
     }
 }

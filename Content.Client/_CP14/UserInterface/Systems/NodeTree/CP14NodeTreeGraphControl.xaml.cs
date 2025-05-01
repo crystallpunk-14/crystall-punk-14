@@ -117,7 +117,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
 
                     // Draw line to child node
                     var childPos = possibleChildNode.UiPosition * UIScale + _globalOffset;
-                    handle.DrawLine(fromPos, childPos, possibleChildNode.Active ? Color.White : Color.White.WithAlpha(0.6f));
+                    handle.DrawLine(fromPos, childPos, Color.White);
                     break;
                 }
             }
