@@ -1,0 +1,48 @@
+- type: cp14SpecialDemiplane
+  id: Test
+  levels:
+    min: 1
+    max: 2
+  location: T1GrasslandIsland
+
+- type: cp14SpecialDemiplane
+  id: Test2
+  levels:
+    min: 5
+    max: 5
+  location: T1Caves
+
+- type: cp14SpecialDemiplane
+  id: Test3
+  levels:
+    min: 5
+    max: 5
+  location: T1IceCaves
+
+- type: cp14SpecialDemiplane
+  id: Test4
+  levels:
+    min: 5
+    max: 5
+  location: T1MagmaCaves
+
+- type: cp14SpecialDemiplane
+  id: Test5
+  levels:
+    min: 5
+    max: 5
+  location: T1SnowIsland
+
+- type: cp14SpecialDemiplane
+  id: Test6
+  levels:
+    min: 5
+    max: 5
+  location: T1SnowIsland
+
+- type: cp14SpecialDemiplane
+  id: Test7
+  levels:
+    min: 9
+    max: 9
+  location: T1MagmaCaves

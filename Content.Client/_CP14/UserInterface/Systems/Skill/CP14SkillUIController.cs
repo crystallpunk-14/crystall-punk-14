@@ -175,6 +175,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             _window.LearnButton.Disabled = !_skill.CanLearnSkill(_playerManager.LocalEntity.Value, skill);
             _window.SkillCost.Text = skill.LearnCost.ToString();
         }
+
         UpdateGraphControl();
     }
 
@@ -227,13 +228,13 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
         HashSet<CP14NodeTreeElement> nodeTreeElements = new();
 
+        HashSet<(string, string)> nodeTreeEdges = new();
+
         var learned = storage.LearnedSkills;
         foreach (var skill in _allSkills)
         {
             if (skill.Tree != _selectedSkillTree)
                 continue;
-
-            HashSet<string> childrens = new();
 
             foreach (var req in skill.Restrictions)
             {
@@ -246,10 +247,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                         if (prerequisiteSkill.Tree != _selectedSkillTree)
                             continue;
 
-                        if (learned.Contains(prerequisiteSkill.ID))
-                        {
-                            childrens.Add(prerequisiteSkill.ID);
-                        }
+                        nodeTreeEdges.Add((skill.ID, prerequisiteSkill.ID));
                         break;
                 }
             }
@@ -259,7 +257,6 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 gained: learned.Contains(skill),
                 active: _skill.CanLearnSkill(_targetPlayer.Value, skill),
                 skill.SkillUiPosition * 25f,
-                childrens,
                 skill.Icon);
             nodeTreeElements.Add(nodeTreeElement);
         }
@@ -267,12 +264,13 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         _window.GraphControl.UpdateState(
             new CP14NodeTreeUiState(
                 nodes: nodeTreeElements,
+                edges: nodeTreeEdges,
                 frameIcon: _selectedSkillTree.FrameIcon,
                 hoveredIcon: _selectedSkillTree.HoveredIcon,
                 selectedIcon: _selectedSkillTree.SelectedIcon,
                 learnedIcon: _selectedSkillTree.LearnedIcon
-                )
-            );
+            )
+        );
     }
 
     private void UpdateState(EntityUid player)

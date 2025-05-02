@@ -1,9 +1,11 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Station.Systems;
+using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.DemiplaneTraveling;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.DemiplaneTraveling;
@@ -12,6 +14,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 {
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
@@ -29,97 +32,133 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
         if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap))
             return;
 
-        _userInterface.SetUiState(ent.Owner, CP14DemiplaneMapUiKey.Key, new CP14DemiplaneMapUiState(stationMap.Nodes));
+        _userInterface.SetUiState(ent.Owner, CP14DemiplaneMapUiKey.Key, new CP14DemiplaneMapUiState(stationMap.Nodes, stationMap.Edges));
     }
 
     private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref ComponentInit args)
     {
-        GenerateDemiplaneMap(ent);
+        NewGenerateDemiplaneMap(ent);
     }
 
-    private void GenerateDemiplaneMap(Entity<CP14StationDemiplaneMapComponent> ent)
+    private void NewGenerateDemiplaneMap(Entity<CP14StationDemiplaneMapComponent> ent)
     {
         ent.Comp.Nodes.Clear();
+        ent.Comp.Edges.Clear();
 
-        int gridSize = 9;
-        var center = new Vector2i(4, 4);
-
-        var directions = new List<Vector2i>
-        {
-            new (0, -1), // top
-            new (0, 1),  // down
-            new (-1, 0), // left
-            new (1, 0),  // right
-        };
+        var allSpecials = _proto.EnumeratePrototypes<CP14SpecialDemiplanePrototype>().ToList();
+        _random.Shuffle(allSpecials);
 
         var grid = new Dictionary<Vector2i, CP14DemiplaneMapNode>();
         var used = new HashSet<Vector2i>();
-
-        // 1. Выбрать 5 целевых точек на границах
-        List<Vector2i> targetRooms = new();
-        while (targetRooms.Count < 5)
+        var directions = new List<Vector2i>
         {
-            var x = _random.Next(0, gridSize);
-            var y = _random.Next(0, gridSize);
-            if ((x == 0 || x == 9 || y == 0 || y == 9) && new Vector2i(x, y) != center)
+            new(0, -1), // top
+            new(0, 1), // down
+            new(-1, 0), // left
+            new(1, 0), // right
+        };
+
+        //Spawn start room at 0 0
+        var startPos = new Vector2i(0, 0);
+        var startNode = new CP14DemiplaneMapNode("node_0_0", startPos, true);
+        grid[startPos] = startNode;
+        used.Add(startPos);
+
+        //Spawn special rooms
+        var specialCount = _random.Next(ent.Comp.Specials.Min, ent.Comp.Specials.Max + 1);
+        var placedSpecials = 0;
+        var specialPositions = new List<Vector2i>();
+
+        foreach (var special in allSpecials)
+        {
+            if (placedSpecials >= specialCount)
+                break;
+
+            var specialLevel = special.Levels.Next(_random);
+
+            var possiblePositions = new List<Vector2i>();
+            for (var x = -specialLevel; x <= specialLevel; x++)
             {
-                var p = new Vector2i(x, y);
-                if (!targetRooms.Contains(p))
-                    targetRooms.Add(p);
+                var y = specialLevel - Math.Abs(x);
+                if (y != 0)
+                    possiblePositions.Add(new Vector2i(x, y));
+                possiblePositions.Add(new Vector2i(x, -y));
             }
+
+            _random.Shuffle(possiblePositions);
+
+            Vector2i specialPos = new Vector2i(0, 0);
+            foreach (var pos in possiblePositions)
+            {
+                if (!grid.ContainsKey(pos))
+                {
+                    specialPos = pos;
+                    break;
+                }
+            }
+
+            if (grid.ContainsKey(specialPos))
+                continue;
+
+            var specialKey = $"node_{specialPos.X}_{specialPos.Y}";
+            var specialNode = new CP14DemiplaneMapNode(
+                specialKey,
+                new Vector2(specialPos.X, specialPos.Y),
+                false,
+                location: special.Location,
+                modifiers: special.Modifiers
+            );
+            grid[specialPos] = specialNode;
+            used.Add(specialPos);
+            specialPositions.Add(specialPos);
+            placedSpecials++;
         }
 
-        // 2. Создать центр
-        var centerKey = $"node_{center.X}_{center.Y}";
-        var centerNode = new CP14DemiplaneMapNode(centerKey, new Vector2(center.X, center.Y), true, "T1Caves", [ "RoyalPumpkin" ]);
-        grid[center] = centerNode;
-        used.Add(center);
-
-        // 3. Прокладываем путь до каждой цели
-        foreach (var target in targetRooms)
+        // Build meandering paths to each special room and add edges
+        foreach (var specialPos in specialPositions)
         {
-            var current = center;
-            while (current != target)
+            var current = startPos;
+
+            while (current != specialPos)
             {
-                var candidates = directions
-                    .Select(d => new Vector2i(current.X + d.X, current.Y + d.Y))
-                    .Where(p => p.X >= 0 && p.X < gridSize && p.Y >= 0 && p.Y < gridSize)
-                    .ToList();
+                var delta = specialPos - current;
+                var options = new List<Vector2i>();
 
-                Vector2i next;
+                if (delta.X != 0) options.Add(new Vector2i(Math.Sign(delta.X), 0));
+                if (delta.Y != 0) options.Add(new Vector2i(0, Math.Sign(delta.Y)));
 
-                if (_random.Prob(0.3f)) // 30% шанс сделать случайный шаг
+                // Добавим возможность "ошибочного" хода в сторону
+                if (_random.Prob(0.3f)) // 30% шанс сделать шаг вбок
                 {
-                    next = candidates
-                        .Where(p => p != current)
-                        .OrderBy(_ => _random.Next())
-                        .First();
-                }
-                else
-                {
-                    next = candidates
-                        .OrderBy(p => Distance(p, target) + (used.Contains(p) ? 5 : 0))
-                        .First();
+                    if (delta.X != 0 && delta.Y != 0)
+                    {
+                        // добавить "вбок" движение
+                        options.Add(new Vector2i(0, Math.Sign(delta.Y)) * -1);
+                        options.Add(new Vector2i(Math.Sign(delta.X), 0) * -1);
+                    }
                 }
 
-                // создать комнату если нужно
-                if (!grid.ContainsKey(next))
+                _random.Shuffle(options);
+                var step = options[0];
+                var next = current + step;
+
+                if (!grid.TryGetValue(next, out var nextNode))
                 {
-                    string key = $"node_{next.X}_{next.Y}";
-                    var pos = new Vector2(next.X, next.Y);
-                    var location = _random.Pick(new[] { "T1GrasslandIsland", "T1Caves","T1MagmaCaves", "T1IceCaves", "T1SnowIsland" });
-                    var node = new CP14DemiplaneMapNode(key, pos, false, location, [ "RoyalPumpkin" ]);
-                    grid[next] = node;
+                    var key = $"node_{next.X}_{next.Y}";
+                    nextNode = new CP14DemiplaneMapNode(key, new Vector2(next.X, next.Y), false);
+                    grid[next] = nextNode;
                     used.Add(next);
                 }
 
-                // создать связь от current к next
-                grid[current].Childrens.Add($"node_{next.X}_{next.Y}");
+                var fromKey = $"node_{current.X}_{current.Y}";
+                var toKey = $"node_{next.X}_{next.Y}";
+                ent.Comp.Edges.Add((fromKey, toKey));
+
                 current = next;
             }
         }
 
-        // 4. Добавить случайный сдвиг координат в пределах 0.5
+        // Random visual offset
         foreach (var node in grid.Values)
         {
             var x = node.UiPosition.X + _random.NextFloat(-0.2f, 0.2f);
@@ -127,45 +166,10 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
             node.UiPosition = new Vector2(x, y);
         }
 
-        // 5. Случайные связи между соседями
-        //var existingEdges = new HashSet<(string, string)>();
-//
-        //foreach (var kvp in grid)
-        //{
-        //    var pos = kvp.Key;
-        //    var node = kvp.Value;
-        //    var fromKey = $"node_{pos.X}_{pos.Y}";
-//
-        //    foreach (var dir in directions)
-        //    {
-        //        var neighborPos = pos + dir;
-        //        if (!grid.TryGetValue(neighborPos, out var neighbor))
-        //            continue;
-//
-        //        var toKey = $"node_{neighborPos.X}_{neighborPos.Y}";
-//
-        //        // проверка, есть ли уже связь в любом направлении
-        //        if (existingEdges.Contains((fromKey, toKey)) || existingEdges.Contains((toKey, fromKey)))
-        //            continue;
-//
-        //        if (_random.Prob(0.10f))
-        //        {
-        //            node.Childrens.Add(toKey);
-        //            existingEdges.Add((fromKey, toKey));
-        //        }
-        //    }
-        //}
-
-        // 6. Добавить все узлы в сущность
+        //Add all rooms into component
         foreach (var node in grid.Values)
         {
             ent.Comp.Nodes.Add(node);
         }
-    }
-
-    // Евклидово расстояние (можно заменить Manhattan)
-    private float Distance(Vector2i a, Vector2i b)
-    {
-        return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
     }
 }

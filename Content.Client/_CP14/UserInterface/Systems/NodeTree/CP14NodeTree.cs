@@ -5,20 +5,20 @@ using Robust.Shared.Utility;
 namespace Content.Client._CP14.UserInterface.Systems.NodeTree;
 
 [Serializable, NetSerializable]
-public sealed class CP14NodeTreeElement(string nodeKey, bool gained ,bool active, Vector2 uiPosition, HashSet<string>? childrens = null, SpriteSpecifier? icon = null)
+public sealed class CP14NodeTreeElement(string nodeKey, bool gained ,bool active, Vector2 uiPosition, SpriteSpecifier? icon = null)
 {
     public string NodeKey = nodeKey;
     public bool Gained = gained;
     public bool Active = active;
 
     public Vector2 UiPosition = uiPosition;
-    public HashSet<string> Childrens = childrens ?? new HashSet<string>();
     public SpriteSpecifier? Icon = icon;
 }
 
 [Serializable, NetSerializable]
 public sealed class CP14NodeTreeUiState(
     HashSet<CP14NodeTreeElement> nodes,
+    HashSet<(string, string)>? edges = null,
     SpriteSpecifier? frameIcon = null,
     SpriteSpecifier? hoveredIcon = null,
     SpriteSpecifier? selectedIcon = null,
@@ -27,6 +27,7 @@ public sealed class CP14NodeTreeUiState(
     ) : BoundUserInterfaceState
 {
     public HashSet<CP14NodeTreeElement> Nodes = nodes;
+    public HashSet<(string, string)> Edges = edges ?? new HashSet<(string, string)>();
 
     public SpriteSpecifier FrameIcon = frameIcon ?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "frame");
     public SpriteSpecifier HoveredIcon = hoveredIcon ?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "hovered");

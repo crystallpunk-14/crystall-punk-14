@@ -33,14 +33,11 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
 
     public void UpdateState(CP14DemiplaneMapUiState state)
     {
+        _cachedState = state;
+
         HashSet<CP14NodeTreeElement> nodeTreeElements = new();
         foreach (var node in state.Nodes)
         {
-            if (!_prototype.TryIndex(node.Location, out var location))
-            {
-                Sawmill.Error($"No location prototype {node.Location} retrieved from cache found");
-                continue;
-            }
 
             if (node.Start)
             {
@@ -49,25 +46,26 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                     gained: true,
                     active: true,
                     node.UiPosition * 100,
-                    childrens: node.Childrens,
                     icon: new SpriteSpecifier.Rsi(new ResPath("_CP14/Interface/NodeTree/demiplane_map.rsi"), "center"));
                 nodeTreeElements.Add(startElement);
             }
             else
             {
+                _prototype.TryIndex(node.Location, out var location);
+
                 var treeElement = new CP14NodeTreeElement(
                     nodeKey: node.NodeKey,
                     gained: false,
                     active: true,
                     node.UiPosition * 100,
-                    childrens: node.Childrens,
-                    icon: location.Icon);
+                    icon: location?.Icon);
                 nodeTreeElements.Add(treeElement);
             }
         }
         GraphControl.UpdateState(
             new CP14NodeTreeUiState(
                 nodeTreeElements,
+                edges: state.Edges,
                 frameIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"), "frame"),
                 hoveredIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"), "hovered"),
                 selectedIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"), "selected"),

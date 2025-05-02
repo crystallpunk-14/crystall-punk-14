@@ -1,3 +1,5 @@
+using Content.Shared.Destructible.Thresholds;
+
 namespace Content.Shared._CP14.DemiplaneTraveling;
 
 /// <summary>
@@ -8,4 +10,13 @@ public sealed partial class CP14StationDemiplaneMapComponent : Component
 {
     [DataField]
     public HashSet<CP14DemiplaneMapNode> Nodes = new();
+
+    [DataField]
+    public HashSet<(string, string)> Edges = new();
+
+    /// <summary>
+    /// Count of special rooms that can be generated in the demiplane map.
+    /// </summary>
+    [DataField]
+    public MinMax Specials = new(30, 30);
 }

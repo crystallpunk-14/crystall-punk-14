@@ -20,6 +20,8 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
     private CP14NodeTreeElement? _hoveredNode;
     private CP14NodeTreeElement? _selectedNode;
 
+    private Dictionary<string, CP14NodeTreeElement> _nodeDict = new();
+
     private bool _dragging = false;
     private Vector2 _previousMousePosition = Vector2.Zero;
     private Vector2 _globalOffset = new (60,60);
@@ -38,6 +40,13 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
     public void UpdateState(CP14NodeTreeUiState state)
     {
         _state = state;
+
+        _nodeDict.Clear();
+        foreach (var node in state.Nodes)
+        {
+            _nodeDict[node.NodeKey] = node;
+        }
+
         OnOffsetChanged?.Invoke(_globalOffset);
     }
 
@@ -105,23 +114,15 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
         _previousMousePosition = cursor;
 
         //Draw connection lines
-        foreach (var node in _state.Nodes)
+        foreach (var edge in _state.Edges)
         {
-            var fromPos = node.UiPosition * UIScale + _globalOffset;
+            var node1 = _nodeDict[edge.Item1];
+            var node2 = _nodeDict[edge.Item2];
+            var fromPos = node1.UiPosition * UIScale + _globalOffset;
+            var toPos = node2.UiPosition * UIScale + _globalOffset;
 
-            foreach (var child in node.Childrens)
-            {
-                foreach (var possibleChildNode in _state.Nodes)
-                {
-                    if (possibleChildNode.NodeKey != child)
-                        continue;
-
-                    // Draw line to child node
-                    var childPos = possibleChildNode.UiPosition * UIScale + _globalOffset;
-                    handle.DrawLine(fromPos, childPos, node.Gained ? _state.ActiveLineColor : _state.LineColor);
-                    break;
-                }
-            }
+            var lineColor = node1.Active && node2.Active ? _state.ActiveLineColor : _state.LineColor;
+            handle.DrawLine(fromPos, toPos, lineColor);
         }
 
         //Draw Node icons over lines
