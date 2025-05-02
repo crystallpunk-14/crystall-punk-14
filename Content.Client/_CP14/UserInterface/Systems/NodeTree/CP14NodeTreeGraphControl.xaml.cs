@@ -121,7 +121,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             var fromPos = node1.UiPosition * UIScale + _globalOffset;
             var toPos = node2.UiPosition * UIScale + _globalOffset;
 
-            var lineColor = node1.Active && node2.Active ? _state.ActiveLineColor : _state.LineColor;
+            var lineColor = node1.Gained && node2.Gained ? _state.ActiveLineColor : _state.LineColor;
             handle.DrawLine(fromPos, toPos, lineColor);
         }
 

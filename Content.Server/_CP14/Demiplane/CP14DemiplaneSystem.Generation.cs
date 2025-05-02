@@ -201,41 +201,44 @@ public sealed partial class CP14DemiplaneSystem
         UseGenerator((ent, generator), args.User);
     }
 
+    public CP14DemiplaneLocationPrototype GenerateDemiplaneLocation(int level)
+    {
+        CP14DemiplaneLocationPrototype? selectedConfig = null;
+
+        HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
+        foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())
+        {
+            suitableConfigs.Add(locationConfig);
+        }
+
+        while (suitableConfigs.Count > 0)
+        {
+            var randomConfig = _random.Pick(suitableConfigs);
+
+            //LevelRange filter
+            if (level < randomConfig.Levels.Min || level > randomConfig.Levels.Max)
+            {
+                suitableConfigs.Remove(randomConfig);
+                continue;
+            }
+
+            selectedConfig = randomConfig;
+            break;
+        }
+
+        if (selectedConfig is null)
+            throw new Exception($"No suitable demiplane location config found for level {level}!");
+
+        return selectedConfig;
+    }
+
     private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
     {
         CP14DemiplaneLocationPrototype? selectedConfig = null;
         //Location generation
         if (generator.Comp.Location is null)
         {
-            HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
-            foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())
-            {
-                suitableConfigs.Add(locationConfig);
-            }
-
-            while (suitableConfigs.Count > 0)
-            {
-                var randomConfig = _random.Pick(suitableConfigs);
-
-                //LevelRange filter
-                if (generator.Comp.Level < randomConfig.Levels.Min || generator.Comp.Level > randomConfig.Levels.Max)
-                {
-                    suitableConfigs.Remove(randomConfig);
-                    continue;
-                }
-
-                selectedConfig = randomConfig;
-                break;
-            }
-
-            if (selectedConfig is null)
-            {
-                // We dont should be here
-
-                Log.Warning("Expedition mission generation failed: No suitable location configs.");
-                QueueDel(generator);
-                return;
-            }
+            selectedConfig = GenerateDemiplaneLocation(generator.Comp.Level);
             generator.Comp.Location = selectedConfig;
         }
         else

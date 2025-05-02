@@ -1,8 +1,8 @@
 - type: cp14SpecialDemiplane
   id: Test
   levels:
-    min: 1
-    max: 2
+    min: 5
+    max: 5
   location: T1GrasslandIsland
 
 - type: cp14SpecialDemiplane

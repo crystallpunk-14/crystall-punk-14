@@ -1,8 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1SwampGeode
   levels:
-    min: 4
-    max: 10
+    min: 2
+    max: 5
   locationConfig: CP14DemiplaneSwampGeode
   name: cp14-demiplane-location-cave-grass
   tags:

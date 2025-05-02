@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server._CP14.Demiplane;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.DemiplaneTraveling;
@@ -16,6 +17,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
 
     public override void Initialize()
     {
@@ -60,7 +62,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
         //Spawn start room at 0 0
         var startPos = new Vector2i(0, 0);
-        var startNode = new CP14DemiplaneMapNode("node_0_0", startPos, true);
+        var startNode = new CP14DemiplaneMapNode("node_0_0", 0, startPos, true);
         grid[startPos] = startNode;
         used.Add(startPos);
 
@@ -103,6 +105,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
             var specialKey = $"node_{specialPos.X}_{specialPos.Y}";
             var specialNode = new CP14DemiplaneMapNode(
                 specialKey,
+                specialLevel,
                 new Vector2(specialPos.X, specialPos.Y),
                 false,
                 location: special.Location,
@@ -145,7 +148,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
                 if (!grid.TryGetValue(next, out var nextNode))
                 {
                     var key = $"node_{next.X}_{next.Y}";
-                    nextNode = new CP14DemiplaneMapNode(key, new Vector2(next.X, next.Y), false);
+                    nextNode = new CP14DemiplaneMapNode(key, Math.Abs(next.X) + Math.Abs(next.Y), new Vector2(next.X, next.Y), false);
                     grid[next] = nextNode;
                     used.Add(next);
                 }
@@ -156,6 +159,16 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
                 current = next;
             }
+        }
+
+        //Fill nodes with random data
+        foreach (var node in grid.Values)
+        {
+            if (node.Level == 0)
+                continue;
+
+            if (node.Location is null)
+                node.Location = _demiplane.GenerateDemiplaneLocation(node.Level);
         }
 
         // Random visual offset

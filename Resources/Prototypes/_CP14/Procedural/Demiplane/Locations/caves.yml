@@ -2,7 +2,7 @@
   id: T1Caves
   levels:
     min: 1
-    max: 4
+    max: 5
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi
     state: caves

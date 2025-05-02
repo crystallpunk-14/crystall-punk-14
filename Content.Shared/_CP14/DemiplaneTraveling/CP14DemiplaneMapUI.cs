@@ -20,9 +20,10 @@ public sealed class CP14DemiplaneMapUiState(HashSet<CP14DemiplaneMapNode> nodes,
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14DemiplaneMapNode(string key, Vector2 uiPosition, bool start, ProtoId<CP14DemiplaneLocationPrototype>? location = null, List<ProtoId<CP14DemiplaneModifierPrototype>>? modifiers = null)
+public sealed class CP14DemiplaneMapNode(string key, int level, Vector2 uiPosition, bool start, ProtoId<CP14DemiplaneLocationPrototype>? location = null, List<ProtoId<CP14DemiplaneModifierPrototype>>? modifiers = null)
 {
     public string NodeKey = key;
+    public int Level = level;
     public Vector2 UiPosition = uiPosition;
     public bool Start = start;
 

@@ -1,8 +1,8 @@
 - type: cp14DemiplaneLocation
   id: T1Wastelands
   levels:
-    min: 1
-    max: 4
+    min: 5
+    max: 7
   locationConfig: CP14DemiplaneWastelandsIsland
   name: cp14-demiplane-location-wastelands
   tags:
