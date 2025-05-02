@@ -6,8 +6,8 @@
     xmlns:nodeTree="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
     xmlns:demiplaneTraveling="clr-namespace:Content.Client._CP14.DemiplaneTraveling"
     Title="{Loc 'cp14-skill-info-title'}"
-    MinSize="700 350"
-    SetSize="1280 850">
+    MinSize="1200 850"
+    SetSize="1200 850">
 
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
 

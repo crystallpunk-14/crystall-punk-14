@@ -42,14 +42,28 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 continue;
             }
 
-            var treeElement = new CP14NodeTreeElement(
-                nodeKey: node.NodeKey,
-                gained: false,
-                active: true,
-                node.UiPosition * 100,
-                childrens: node.Childrens,
-                icon: location.Icon);
-            nodeTreeElements.Add(treeElement);
+            if (node.Start)
+            {
+                var startElement = new CP14NodeTreeElement(
+                    nodeKey: node.NodeKey,
+                    gained: true,
+                    active: true,
+                    node.UiPosition * 100,
+                    childrens: node.Childrens,
+                    icon: new SpriteSpecifier.Rsi(new ResPath("_CP14/Interface/NodeTree/demiplane_map.rsi"), "center"));
+                nodeTreeElements.Add(startElement);
+            }
+            else
+            {
+                var treeElement = new CP14NodeTreeElement(
+                    nodeKey: node.NodeKey,
+                    gained: false,
+                    active: true,
+                    node.UiPosition * 100,
+                    childrens: node.Childrens,
+                    icon: location.Icon);
+                nodeTreeElements.Add(treeElement);
+            }
         }
         GraphControl.UpdateState(
             new CP14NodeTreeUiState(

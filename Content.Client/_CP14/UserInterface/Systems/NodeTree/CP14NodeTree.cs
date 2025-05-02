@@ -33,5 +33,6 @@ public sealed class CP14NodeTreeUiState(
     public SpriteSpecifier SelectedIcon = selectedIcon?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "selected");
     public SpriteSpecifier LearnedIcon = learnedIcon?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "learned");
 
-    public Color LineColor = lineColor ?? Color.White;
+    public Color LineColor = lineColor ?? Color.Gray;
+    public Color ActiveLineColor = lineColor ?? Color.White;
 }

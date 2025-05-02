@@ -6,6 +6,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Shared.Input;
+using Serilog;
 
 namespace Content.Client._CP14.UserInterface.Systems.NodeTree;
 
@@ -117,7 +118,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
 
                     // Draw line to child node
                     var childPos = possibleChildNode.UiPosition * UIScale + _globalOffset;
-                    handle.DrawLine(fromPos, childPos, _state.LineColor);
+                    handle.DrawLine(fromPos, childPos, node.Gained ? _state.ActiveLineColor : _state.LineColor);
                     break;
                 }
             }

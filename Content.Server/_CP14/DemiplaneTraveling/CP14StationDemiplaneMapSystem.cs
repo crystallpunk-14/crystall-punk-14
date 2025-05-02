@@ -41,11 +41,11 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
     {
         ent.Comp.Nodes.Clear();
 
-        int gridSize = 10;
-        var center = new Vector2i(5, 5);
+        int gridSize = 9;
+        var center = new Vector2i(4, 4);
 
-
-        var directions = new List<Vector2i> {
+        var directions = new List<Vector2i>
+        {
             new (0, -1), // top
             new (0, 1),  // down
             new (-1, 0), // left
@@ -71,7 +71,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
         // 2. Создать центр
         var centerKey = $"node_{center.X}_{center.Y}";
-        var centerNode = new CP14DemiplaneMapNode(centerKey, new Vector2(center.X, center.Y), "T1Caves", [ "RoyalPumpkin" ]);
+        var centerNode = new CP14DemiplaneMapNode(centerKey, new Vector2(center.X, center.Y), true, "T1Caves", [ "RoyalPumpkin" ]);
         grid[center] = centerNode;
         used.Add(center);
 
@@ -107,8 +107,8 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
                 {
                     string key = $"node_{next.X}_{next.Y}";
                     var pos = new Vector2(next.X, next.Y);
-                    var location = _random.Pick(new[] { "T1GrasslandIsland", "T1Caves", "T1IceCaves", "T1SnowIsland" });
-                    var node = new CP14DemiplaneMapNode(key, pos, location, [ "RoyalPumpkin" ]);
+                    var location = _random.Pick(new[] { "T1GrasslandIsland", "T1Caves","T1MagmaCaves", "T1IceCaves", "T1SnowIsland" });
+                    var node = new CP14DemiplaneMapNode(key, pos, false, location, [ "RoyalPumpkin" ]);
                     grid[next] = node;
                     used.Add(next);
                 }
@@ -128,17 +128,33 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
         }
 
         // 5. Случайные связи между соседями
-        foreach (var kvp in grid)
-        {
-            var pos = kvp.Key;
-            var node = kvp.Value;
-            foreach (var dir in directions)
-            {
-                var neighborPos = pos + dir;
-                if (grid.ContainsKey(neighborPos) && _random.Prob(0.10f))
-                    node.Childrens.Add($"node_{neighborPos.X}_{neighborPos.Y}");
-            }
-        }
+        //var existingEdges = new HashSet<(string, string)>();
+//
+        //foreach (var kvp in grid)
+        //{
+        //    var pos = kvp.Key;
+        //    var node = kvp.Value;
+        //    var fromKey = $"node_{pos.X}_{pos.Y}";
+//
+        //    foreach (var dir in directions)
+        //    {
+        //        var neighborPos = pos + dir;
+        //        if (!grid.TryGetValue(neighborPos, out var neighbor))
+        //            continue;
+//
+        //        var toKey = $"node_{neighborPos.X}_{neighborPos.Y}";
+//
+        //        // проверка, есть ли уже связь в любом направлении
+        //        if (existingEdges.Contains((fromKey, toKey)) || existingEdges.Contains((toKey, fromKey)))
+        //            continue;
+//
+        //        if (_random.Prob(0.10f))
+        //        {
+        //            node.Childrens.Add(toKey);
+        //            existingEdges.Add((fromKey, toKey));
+        //        }
+        //    }
+        //}
 
         // 6. Добавить все узлы в сущность
         foreach (var node in grid.Values)
