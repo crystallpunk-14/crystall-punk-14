@@ -28,5 +28,5 @@ public sealed class CP14DemiplaneMapNode(string key, int level, Vector2 uiPositi
     public bool Start = start;
 
     public ProtoId<CP14DemiplaneLocationPrototype>? Location = location;
-    public List<ProtoId<CP14DemiplaneModifierPrototype>>? Modifiers = modifiers;
+    public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = modifiers ?? new();
 }

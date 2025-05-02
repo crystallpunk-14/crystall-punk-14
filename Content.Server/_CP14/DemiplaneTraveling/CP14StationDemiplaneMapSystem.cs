@@ -167,8 +167,24 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
             if (node.Level == 0)
                 continue;
 
+            var location = _demiplane.GenerateDemiplaneLocation(node.Level);
             if (node.Location is null)
-                node.Location = _demiplane.GenerateDemiplaneLocation(node.Level);
+                node.Location = location;
+
+            var limits = new Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float>
+            {
+                { "Danger", node.Level * 0.2f },
+                { "GhostRoleDanger", node.Level * 0.2f },
+                { "Reward", Math.Max(node.Level * 0.2f, 0.5f) },
+                { "Fun", 1f },
+                { "Weather", 1f },
+                { "MapLight", 1f },
+            };
+            var mods = _demiplane.GenerateDemiplaneModifiers(node.Level, location, limits);
+            foreach (var mod in mods)
+            {
+                node.Modifiers.Add(mod);
+            }
         }
 
         // Random visual offset

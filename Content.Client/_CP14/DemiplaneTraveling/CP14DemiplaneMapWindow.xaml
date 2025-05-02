@@ -35,12 +35,6 @@
                                 <Label Name="SkillName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
                                        HorizontalExpand="True" HorizontalAlignment="Center" />
                             </BoxContainer>
-                            <!-- Skill Cost -->
-                            <BoxContainer HorizontalExpand="True">
-                                <RichTextLabel HorizontalExpand="True" Access="Public" Text="{Loc 'cp14-skill-menu-learncost'}" Margin="0 10 0 10" />
-                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
-                                <RichTextLabel Name="SkillCost" Access="Public" Text="0"/>
-                            </BoxContainer>
                             <!-- Skill Description -->
                             <BoxContainer HorizontalExpand="True">
                                 <RichTextLabel Name="SkillDescription" HorizontalExpand="True" Access="Public"/>

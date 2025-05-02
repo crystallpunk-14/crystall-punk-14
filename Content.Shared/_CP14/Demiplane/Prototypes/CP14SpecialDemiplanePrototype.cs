@@ -1,5 +1,4 @@
 using Content.Shared.Destructible.Thresholds;
-using Content.Shared.Procedural;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Demiplane.Prototypes;

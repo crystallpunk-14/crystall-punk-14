@@ -232,20 +232,13 @@ public sealed partial class CP14DemiplaneSystem
         return selectedConfig;
     }
 
-    private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
+
+    public List<CP14DemiplaneModifierPrototype> GenerateDemiplaneModifiers(
+        int level,
+        CP14DemiplaneLocationPrototype location,
+        Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>,float> modifierLimits)
     {
-        CP14DemiplaneLocationPrototype? selectedConfig = null;
-        //Location generation
-        if (generator.Comp.Location is null)
-        {
-            selectedConfig = GenerateDemiplaneLocation(generator.Comp.Level);
-            generator.Comp.Location = selectedConfig;
-        }
-        else
-        {
-            if (!_proto.TryIndex(generator.Comp.Location, out selectedConfig))
-                return;
-        }
+        List<CP14DemiplaneModifierPrototype> selectedModifiers = new();
 
         //Modifier generation
         Dictionary<CP14DemiplaneModifierPrototype, float> suitableModifiersWeights = new();
@@ -265,14 +258,14 @@ public sealed partial class CP14DemiplaneSystem
             //Levels filter
             if (passed)
             {
-                if (generator.Comp.Level < modifier.Levels.Min || generator.Comp.Level > modifier.Levels.Max)
+                if (level < modifier.Levels.Min || level > modifier.Levels.Max)
                 {
                     passed = false;
                 }
             }
 
             //Tag blacklist filter
-            foreach (var configTag in selectedConfig.Tags)
+            foreach (var configTag in location.Tags)
             {
                 if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
                 {
@@ -286,7 +279,7 @@ public sealed partial class CP14DemiplaneSystem
             {
                 foreach (var reqTag in modifier.RequiredTags)
                 {
-                    if (!selectedConfig.Tags.Contains(reqTag))
+                    if (!location.Tags.Contains(reqTag))
                     {
                         passed = false;
                         break;
@@ -301,10 +294,11 @@ public sealed partial class CP14DemiplaneSystem
 
         //Limits calculation
         Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> limits = new();
-        foreach (var limit in generator.Comp.Limits)
+        foreach (var limit in modifierLimits)
         {
             limits.Add(limit.Key, limit.Value);
         }
+
 
         while (suitableModifiersWeights.Count > 0)
         {
@@ -332,7 +326,7 @@ public sealed partial class CP14DemiplaneSystem
             if (!passed)
                 continue;
 
-            generator.Comp.SelectedModifiers.Add(selectedModifier);
+            selectedModifiers.Add(selectedModifier);
 
             foreach (var category in selectedModifier.Categories)
             {
@@ -343,9 +337,34 @@ public sealed partial class CP14DemiplaneSystem
                 suitableModifiersWeights.Remove(selectedModifier);
         }
 
-        //Scenario generation
+        return selectedModifiers;
+    }
 
-        //ETC generation
+    private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
+    {
+        CP14DemiplaneLocationPrototype? selectedConfig = null;
+        //Location generation
+        if (generator.Comp.Location is null)
+        {
+            selectedConfig = GenerateDemiplaneLocation(generator.Comp.Level);
+            generator.Comp.Location = selectedConfig;
+        }
+        else
+        {
+            if (!_proto.TryIndex(generator.Comp.Location, out selectedConfig))
+                return;
+        }
+
+        //Modifier generation
+        var newModifiers = GenerateDemiplaneModifiers(
+            generator.Comp.Level,
+            selectedConfig,
+            generator.Comp.Limits);
+
+        foreach (var mod in newModifiers)
+        {
+            generator.Comp.SelectedModifiers.Add(mod);
+        }
 
         if (HasComp<CP14DemiplaneAutoOpenComponent>(generator))
             UseGenerator(generator);
