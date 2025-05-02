@@ -38,7 +38,7 @@
                             <!-- Skill Cost -->
                             <BoxContainer HorizontalExpand="True">
                                 <RichTextLabel HorizontalExpand="True" Access="Public" Text="{Loc 'cp14-skill-menu-learncost'}" Margin="0 10 0 10" />
-                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
+                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
                                 <RichTextLabel Name="SkillCost" Access="Public" Text="0"/>
                             </BoxContainer>
                             <!-- Skill Description -->
@@ -65,7 +65,7 @@
                        HorizontalExpand="True" HorizontalAlignment="Center" />
             </BoxContainer>
             <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
-                <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4" Access="Public" SpeedX="10" SpeedY="5"/>
+                <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4" ParallaxPrototype="CP14Astral" Access="Public" SpeedX="10" SpeedY="5"/>
                 <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
                     <nodeTree:CP14NodeTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
                 </BoxContainer>

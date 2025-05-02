@@ -264,7 +264,15 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             nodeTreeElements.Add(nodeTreeElement);
         }
 
-        _window.GraphControl.UpdateState(new CP14NodeTreeUiState(nodeTreeElements));
+        _window.GraphControl.UpdateState(
+            new CP14NodeTreeUiState(
+                nodes: nodeTreeElements,
+                frameIcon: _selectedSkillTree.FrameIcon,
+                hoveredIcon: _selectedSkillTree.HoveredIcon,
+                selectedIcon: _selectedSkillTree.SelectedIcon,
+                learnedIcon: _selectedSkillTree.LearnedIcon
+                )
+            );
     }
 
     private void UpdateState(EntityUid player)

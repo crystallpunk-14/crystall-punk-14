@@ -71,7 +71,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
         // 2. Создать центр
         var centerKey = $"node_{center.X}_{center.Y}";
-        var centerNode = new CP14DemiplaneMapNode(centerKey, new Vector2(center.X, center.Y), "T1SwampGeode", [ "RoyalPumpkin" ]);
+        var centerNode = new CP14DemiplaneMapNode(centerKey, new Vector2(center.X, center.Y), "T1Caves", [ "RoyalPumpkin" ]);
         grid[center] = centerNode;
         used.Add(center);
 
@@ -107,7 +107,8 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
                 {
                     string key = $"node_{next.X}_{next.Y}";
                     var pos = new Vector2(next.X, next.Y);
-                    var node = new CP14DemiplaneMapNode(key, pos, "T1SwampGeode", [ "RoyalPumpkin" ]);
+                    var location = _random.Pick(new[] { "T1GrasslandIsland", "T1Caves", "T1IceCaves", "T1SnowIsland" });
+                    var node = new CP14DemiplaneMapNode(key, pos, location, [ "RoyalPumpkin" ]);
                     grid[next] = node;
                     used.Add(next);
                 }

@@ -1,26 +1,23 @@
 {
   "version": 1,
   "size": {
-    "x": 48,
-    "y": 48
+    "x": 32,
+    "y": 32
   },
   "license": "CC-BY-SA-4.0",
   "copyright": "Created by TheShuEd (Github)",
   "states": [
     {
-      "name": "available"
+      "name": "caves"
     },
     {
-      "name": "frame"
+      "name": "grassland_island"
     },
     {
-      "name": "hovered"
+      "name": "ice_caves"
     },
     {
-      "name": "selected"
-    },
-    {
-      "name": "learned"
+      "name": "snow_island"
     }
   ]
 }

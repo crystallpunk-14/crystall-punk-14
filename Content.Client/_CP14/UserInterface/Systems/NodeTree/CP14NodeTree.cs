@@ -17,13 +17,21 @@ public sealed class CP14NodeTreeElement(string nodeKey, bool gained ,bool active
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14NodeTreeUiState(HashSet<CP14NodeTreeElement> nodes)
+public sealed class CP14NodeTreeUiState(
+    HashSet<CP14NodeTreeElement> nodes,
+    SpriteSpecifier? frameIcon = null,
+    SpriteSpecifier? hoveredIcon = null,
+    SpriteSpecifier? selectedIcon = null,
+    SpriteSpecifier? learnedIcon = null,
+    Color? lineColor = null
+    ) : BoundUserInterfaceState
 {
     public HashSet<CP14NodeTreeElement> Nodes = nodes;
 
-    //TODO: customazible
-    public SpriteSpecifier FrameIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "frame");
-    public SpriteSpecifier HoveredIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "hovered");
-    public SpriteSpecifier SelectedIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "selected");
-    public SpriteSpecifier LearnedIcon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Skills/default.rsi"), "learned");
+    public SpriteSpecifier FrameIcon = frameIcon ?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "frame");
+    public SpriteSpecifier HoveredIcon = hoveredIcon ?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "hovered");
+    public SpriteSpecifier SelectedIcon = selectedIcon?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "selected");
+    public SpriteSpecifier LearnedIcon = learnedIcon?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "learned");
+
+    public Color LineColor = lineColor ?? Color.White;
 }
