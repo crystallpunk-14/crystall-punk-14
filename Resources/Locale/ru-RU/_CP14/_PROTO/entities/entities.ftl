@@ -1200,61 +1200,6 @@ ent-CP14MobMonsterMole = хищный крот
     .desc = Охотится в темноте и любит вкус мяса и крови во рту.
     .suffix = AI
 
-ent-CP14MobUndeadSkeletonDemiplane = скелет
-    .desc = Оживленный темной магией хрупкий скелет. Обычно скелеты - чрезвычайно разумные существа, управляемые недавно умершей душой.
-
-ent-CP14MobUndeadSkeletonHalberd = { ent-CP14MobUndeadSkeletonDemiplane }
-    .desc = { ent-CP14MobUndeadSkeletonDemiplane.desc }
-    .suffix = Алебардщик
-
-ent-CP14MobUndeadSkeletonSword = { ent-CP14MobUndeadSkeletonDemiplane }
-    .desc = { ent-CP14MobUndeadSkeletonDemiplane.desc }
-    .suffix = Мечник
-
-ent-CP14MobUndeadSkeletonDodger = { ent-CP14MobUndeadSkeletonDemiplane }
-    .desc = { ent-CP14MobUndeadSkeletonDemiplane.desc }
-    .suffix = Кинжал
-
-ent-CP14MobUndeadSkeletonArcher = { ent-CP14MobUndeadSkeletonDemiplane }
-    .desc = { ent-CP14MobUndeadSkeletonDemiplane.desc }
-    .suffix = Лучник
-
-ent-CP14MobUndeadSkeletonWizard = { ent-CP14MobUndeadSkeletonDemiplane }
-    .desc = { ent-CP14MobUndeadSkeletonDemiplane.desc }
-    .suffix = Маг
-
-ent-CP14MobUndeadSkeletonBard = { ent-CP14MobUndeadSkeletonDemiplane }
-    .desc = { ent-CP14MobUndeadSkeletonDemiplane.desc }
-    .suffix = Бард
-
-ent-SpawnPointGhostDemiplaneSkeleton = точка спавна роли призрака
-    .desc = { ent-SpawnPointGhostDemiplaneSkeleton.desc }
-    .suffix = случайный скелет
-
-ent-SpawnPointGhostDemiplaneSkeletonHalberd = точка спавна роли призрака
-    .desc = { ent-SpawnPointGhostDemiplaneSkeleton.desc }
-    .suffix = скелет-алебардщик
-
-ent-SpawnPointGhostDemiplaneSkeletonSword = точка спавна роли призрака
-    .desc = { ent-SpawnPointGhostDemiplaneSkeleton.desc }
-    .suffix = скелет-мечник
-
-ent-SpawnPointGhostDemiplaneSkeletonDodger = точка спавна роли призрака
-    .desc = { ent-SpawnPointGhostDemiplaneSkeleton.desc }
-    .suffix = скелет-кинжальщик
-
-ent-SpawnPointGhostDemiplaneSkeletonArcher = точка спавна роли призрака
-    .desc = { ent-SpawnPointGhostDemiplaneSkeleton.desc }
-    .suffix = скелет-лучник
-
-ent-SpawnPointGhostDemiplaneSkeletonWizard = точка спавна роли призрака
-    .desc = { ent-SpawnPointGhostDemiplaneSkeleton.desc }
-    .suffix = скелет-маг
-
-ent-SpawnPointGhostDemiplaneSkeletonBard = точка спавна роли призрака
-    .desc = { ent-SpawnPointGhostDemiplaneSkeleton.desc }
-    .suffix = скелет-бард
-
 ent-CP14MobWatcherIce = ледяной наблюдатель
     .desc = { ent-CP14MobWatcherBase.desc }
 

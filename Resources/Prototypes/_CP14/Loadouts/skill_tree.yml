@@ -10,7 +10,7 @@
   - CP14SkillTreeIllusion
   - CP14SkillTreeHealing
   - CP14SkillTreeAtlethic
-  - CP14SkillTreeDimension
+  #- CP14SkillTreeDimension Disabled until teleport & grab collider fix
 
 - type: entity
   id: CP14SkillTreePyrokineticLoadoutDummy
