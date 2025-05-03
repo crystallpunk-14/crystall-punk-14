@@ -39,10 +39,10 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
     private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref ComponentInit args)
     {
-        NewGenerateDemiplaneMap(ent);
+        GenerateDemiplaneMap(ent);
     }
 
-    private void NewGenerateDemiplaneMap(Entity<CP14StationDemiplaneMapComponent> ent)
+    private void GenerateDemiplaneMap(Entity<CP14StationDemiplaneMapComponent> ent)
     {
         ent.Comp.Nodes.Clear();
         ent.Comp.Edges.Clear();
@@ -51,20 +51,11 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
         _random.Shuffle(allSpecials);
 
         var grid = new Dictionary<Vector2i, CP14DemiplaneMapNode>();
-        var used = new HashSet<Vector2i>();
-        var directions = new List<Vector2i>
-        {
-            new(0, -1), // top
-            new(0, 1), // down
-            new(-1, 0), // left
-            new(1, 0), // right
-        };
 
         //Spawn start room at 0 0
         var startPos = new Vector2i(0, 0);
-        var startNode = new CP14DemiplaneMapNode("node_0_0", 0, startPos, true);
+        var startNode = new CP14DemiplaneMapNode(0, startPos, true);
         grid[startPos] = startNode;
-        used.Add(startPos);
 
         //Spawn special rooms
         var specialCount = _random.Next(ent.Comp.Specials.Min, ent.Comp.Specials.Max + 1);
@@ -89,7 +80,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
             _random.Shuffle(possiblePositions);
 
-            Vector2i specialPos = new Vector2i(0, 0);
+            var specialPos = new Vector2i(0, 0);
             foreach (var pos in possiblePositions)
             {
                 if (!grid.ContainsKey(pos))
@@ -102,9 +93,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
             if (grid.ContainsKey(specialPos))
                 continue;
 
-            var specialKey = $"node_{specialPos.X}_{specialPos.Y}";
             var specialNode = new CP14DemiplaneMapNode(
-                specialKey,
                 specialLevel,
                 new Vector2(specialPos.X, specialPos.Y),
                 false,
@@ -112,7 +101,6 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
                 modifiers: special.Modifiers
             );
             grid[specialPos] = specialNode;
-            used.Add(specialPos);
             specialPositions.Add(specialPos);
             placedSpecials++;
         }
@@ -127,15 +115,16 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
                 var delta = specialPos - current;
                 var options = new List<Vector2i>();
 
-                if (delta.X != 0) options.Add(new Vector2i(Math.Sign(delta.X), 0));
-                if (delta.Y != 0) options.Add(new Vector2i(0, Math.Sign(delta.Y)));
+                if (delta.X != 0)
+                    options.Add(new Vector2i(Math.Sign(delta.X), 0));
+                if (delta.Y != 0)
+                    options.Add(new Vector2i(0, Math.Sign(delta.Y)));
 
-                // Добавим возможность "ошибочного" хода в сторону
-                if (_random.Prob(0.3f)) // 30% шанс сделать шаг вбок
+                // Add the possibility of a "mistaken" step to the side
+                if (_random.Prob(0.3f)) // 30% chance to take a side step
                 {
                     if (delta.X != 0 && delta.Y != 0)
                     {
-                        // добавить "вбок" движение
                         options.Add(new Vector2i(0, Math.Sign(delta.Y)) * -1);
                         options.Add(new Vector2i(Math.Sign(delta.X), 0) * -1);
                     }
@@ -147,14 +136,12 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
                 if (!grid.TryGetValue(next, out var nextNode))
                 {
-                    var key = $"node_{next.X}_{next.Y}";
-                    nextNode = new CP14DemiplaneMapNode(key, Math.Abs(next.X) + Math.Abs(next.Y), new Vector2(next.X, next.Y), false);
+                    nextNode = new CP14DemiplaneMapNode(Math.Abs(next.X) + Math.Abs(next.Y), new Vector2(next.X, next.Y), false);
                     grid[next] = nextNode;
-                    used.Add(next);
                 }
 
-                var fromKey = $"node_{current.X}_{current.Y}";
-                var toKey = $"node_{next.X}_{next.Y}";
+                var fromKey = current.ToString();
+                var toKey = next.ToString();
                 ent.Comp.Edges.Add((fromKey, toKey));
 
                 current = next;
@@ -168,8 +155,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
                 continue;
 
             var location = _demiplane.GenerateDemiplaneLocation(node.Level);
-            if (node.Location is null)
-                node.Location = location;
+            node.Location ??= location;
 
             var limits = new Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float>
             {
@@ -196,9 +182,11 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
         }
 
         //Add all rooms into component
-        foreach (var node in grid.Values)
-        {
-            ent.Comp.Nodes.Add(node);
-        }
+        ent.Comp.Nodes = grid;
+    }
+
+    public bool CanEjectCoordinates(Entity<CP14StationDemiplaneMapComponent> ent, string key)
+    {
+        return false;
     }
 }

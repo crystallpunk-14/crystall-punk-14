@@ -3,7 +3,7 @@
 - type: cp14DemiplaneModifier
   id: Chasm
   levels:
-    min: 4
+    min: 3
     max: 10
   name: cp14-modifier-chasm
   generationWeight: 0.6
@@ -60,7 +60,7 @@
       maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
-  id: ShadowKudzuDebug
+  id: ShadowKudzu
   levels:
     min: 7
     max: 10

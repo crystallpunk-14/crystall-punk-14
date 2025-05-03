@@ -18,9 +18,9 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
     [Dependency] private readonly ILogManager _log = default!;
 
     private CP14DemiplaneMapUiState? _cachedState;
-    private Dictionary<string, CP14DemiplaneMapNode> _nodeDict = new();
     private CP14DemiplaneMapNode? _selectedNode;
     private ISawmill Sawmill { get; init; }
+
     public CP14DemiplaneMapWindow()
     {
         RobustXamlLoader.Load(this);
@@ -42,41 +42,48 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
         HashSet<CP14NodeTreeElement> nodeTreeElements = new();
         foreach (var node in state.Nodes)
         {
-            _nodeDict[node.NodeKey] = node;
-            if (node.Start)
+            if (node.Value.Start)
             {
                 var startElement = new CP14NodeTreeElement(
-                    nodeKey: node.NodeKey,
+                    nodeKey: node.Key.ToString(),
                     gained: true,
                     active: true,
-                    node.UiPosition * 100,
+                    node.Value.UiPosition * 100,
                     icon: new SpriteSpecifier.Rsi(new ResPath("_CP14/Interface/NodeTree/demiplane_map.rsi"), "center"));
                 nodeTreeElements.Add(startElement);
             }
             else
             {
-                _prototype.TryIndex(node.Location, out var location);
+                _prototype.TryIndex(node.Value.Location, out var location);
 
                 var treeElement = new CP14NodeTreeElement(
-                    nodeKey: node.NodeKey,
+                    nodeKey: node.Key.ToString(),
                     gained: false,
                     active: true,
-                    node.UiPosition * 100,
+                    node.Value.UiPosition * 100,
                     icon: location?.Icon);
                 nodeTreeElements.Add(treeElement);
             }
         }
+
         GraphControl.UpdateState(
             new CP14NodeTreeUiState(
                 nodeTreeElements,
                 edges: state.Edges,
-                frameIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"), "frame"),
-                hoveredIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"), "hovered"),
-                selectedIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"), "selected"),
-                learnedIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"), "learned"),
+                frameIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    "frame"),
+                hoveredIcon: new SpriteSpecifier.Rsi(
+                    new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    "hovered"),
+                selectedIcon: new SpriteSpecifier.Rsi(
+                    new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    "selected"),
+                learnedIcon: new SpriteSpecifier.Rsi(
+                    new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    "learned"),
                 lineColor: new Color(172, 102, 190)
-                )
-            );
+            )
+        );
     }
 
     private void SelectNode(CP14NodeTreeElement? node)
@@ -93,7 +100,10 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
             return;
         }
 
-        if (_nodeDict.TryGetValue(node.NodeKey, out var mapNode))
+        if (node.NodeKey.Trim('(', ')').Split(',') is { Length: 2 } parts
+        && int.TryParse(parts[0], out var x)
+        && int.TryParse(parts[1], out var y)
+        && _cachedState.Nodes.TryGetValue(new Vector2i(x, y), out var mapNode))
         {
             SelectNode(mapNode);
         }
@@ -142,6 +152,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
             {
                 sb.Append("- " + Loc.GetString(name) + "\n");
             }
+
             Description.Text = sb.ToString();
             LocationView.Texture = location?.Icon?.Frame0();
         }

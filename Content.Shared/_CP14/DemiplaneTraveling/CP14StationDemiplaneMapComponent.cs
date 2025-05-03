@@ -9,7 +9,7 @@ namespace Content.Shared._CP14.DemiplaneTraveling;
 public sealed partial class CP14StationDemiplaneMapComponent : Component
 {
     [DataField]
-    public HashSet<CP14DemiplaneMapNode> Nodes = new();
+    public Dictionary<Vector2i, CP14DemiplaneMapNode> Nodes = new();
 
     [DataField]
     public HashSet<(string, string)> Edges = new();

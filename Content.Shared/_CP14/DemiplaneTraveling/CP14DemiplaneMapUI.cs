@@ -13,19 +13,28 @@ public enum CP14DemiplaneMapUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14DemiplaneMapUiState(HashSet<CP14DemiplaneMapNode> nodes, HashSet<(string, string)>? edges = null) : BoundUserInterfaceState
+public sealed class CP14DemiplaneMapUiState(Dictionary<Vector2i, CP14DemiplaneMapNode> nodes, HashSet<(string, string)>? edges = null) : BoundUserInterfaceState
 {
-    public HashSet<CP14DemiplaneMapNode> Nodes = nodes;
+    public Dictionary<Vector2i, CP14DemiplaneMapNode> Nodes = nodes;
     public HashSet<(string, string)> Edges = edges ?? new();
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14DemiplaneMapNode(string key, int level, Vector2 uiPosition, bool start, ProtoId<CP14DemiplaneLocationPrototype>? location = null, List<ProtoId<CP14DemiplaneModifierPrototype>>? modifiers = null)
+public sealed class CP14DemiplaneMapNode(int level, Vector2 uiPosition, bool start, ProtoId<CP14DemiplaneLocationPrototype>? location = null, List<ProtoId<CP14DemiplaneModifierPrototype>>? modifiers = null)
 {
-    public string NodeKey = key;
     public int Level = level;
     public Vector2 UiPosition = uiPosition;
     public bool Start = start;
+
+    /// <summary>
+    /// Exploring right now!
+    /// </summary>
+    public bool Active = false;
+
+    /// <summary>
+    /// Exploration finished!
+    /// </summary>
+    public bool Finished = start;
 
     public ProtoId<CP14DemiplaneLocationPrototype>? Location = location;
     public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = modifiers ?? new();
