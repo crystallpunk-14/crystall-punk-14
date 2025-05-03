@@ -276,8 +276,12 @@
   - type: IconSmooth
     base: wall
   - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: CP14RockStructural
+    damageContainer: Inorganic
+    damageModifierSet: CP14Rock
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
   - type: Destructible
     thresholds:
     - trigger:
@@ -288,18 +292,16 @@
         acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 30
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/break_stone.ogg
-          params:
-            volume: -6
+        - !type:PlaySoundBehavior
+          sound:
+            collection: GlassBreak
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
       #- !type:SpawnEntitiesBehavior
       #  spawn:
       #    CP14StoneBlock1:
       #      min: 5
       #      max: 7
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
   

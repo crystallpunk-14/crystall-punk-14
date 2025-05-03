@@ -24,6 +24,16 @@
       maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
+  id: Core
+  generationProb: 0
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplanCoreRoomMarker
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
   id: Exit
   generationProb: 0
   layers:
@@ -37,11 +47,25 @@
       count: 20
       minGroupSize: 1
       maxGroupSize: 1 
+
+- type: cp14DemiplaneModifier
+  id: DemiplaneDecor
+  generationProb: 0
+  layers:
     - !type:OreDunGen
       entity: CP14AstralCorrosion
       count: 15
       minGroupSize: 3
       maxGroupSize: 10 
+    - !type:OreDunGen
+      entityMask: 
+      - CP14WallStone
+      - CP14WallDirt
+      - CP14WallSnow
+      entity: CP14WallDimensit
+      count: 5
+      minGroupSize: 3
+      maxGroupSize: 5
 
 - type: cp14DemiplaneModifier
   id: TimeLimit10

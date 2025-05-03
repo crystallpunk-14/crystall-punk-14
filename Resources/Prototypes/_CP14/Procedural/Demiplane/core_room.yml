@@ -1,0 +1,50 @@
+- type: Tag
+  id: CP14DemiplanCoreRoom
+
+- type: entity
+  id: CP14DemiplanCoreRoomMarker
+  categories: [ ForkFiltered ]
+  parent: BaseRoomMarker
+  name: Demiplane Core room marker
+  components:
+  - type: RoomFill
+    clearExisting: true
+    roomWhitelist:
+      tags:
+      - CP14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanCoreRoom_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - CP14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanCoreRoom_2
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - CP14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanCoreRoom_3
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - CP14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanCoreRoom_4
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - CP14DemiplanCoreRoom

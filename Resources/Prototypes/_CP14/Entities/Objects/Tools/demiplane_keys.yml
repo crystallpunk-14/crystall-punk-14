@@ -18,6 +18,8 @@
   - type: CP14DemiplaneUsingOpen
   - type: CP14DemiplaneData
     selectedModifiers:
+    - DemiplaneDecor
+    - Core
     - EntryRoom
     - Exit
 
