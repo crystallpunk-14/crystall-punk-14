@@ -20,7 +20,7 @@ public sealed class CP14DemiplaneMapUiState(Dictionary<Vector2i, CP14DemiplaneMa
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14DemiplaneMapNode(int level, Vector2 uiPosition, bool start, ProtoId<CP14DemiplaneLocationPrototype>? location = null, List<ProtoId<CP14DemiplaneModifierPrototype>>? modifiers = null)
+public sealed class CP14DemiplaneMapNode(int level, Vector2 uiPosition, bool start, ProtoId<CP14DemiplaneLocationPrototype>? locationConfig = null, List<ProtoId<CP14DemiplaneModifierPrototype>>? modifiers = null)
 {
     public int Level = level;
     public Vector2 UiPosition = uiPosition;
@@ -29,13 +29,13 @@ public sealed class CP14DemiplaneMapNode(int level, Vector2 uiPosition, bool sta
     /// <summary>
     /// Exploring right now!
     /// </summary>
-    public bool Active = false;
+    public bool Ejectable = false;
 
     /// <summary>
     /// Exploration finished!
     /// </summary>
     public bool Finished = start;
 
-    public ProtoId<CP14DemiplaneLocationPrototype>? Location = location;
+    public ProtoId<CP14DemiplaneLocationPrototype>? LocationConfig = locationConfig;
     public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = modifiers ?? new();
 }

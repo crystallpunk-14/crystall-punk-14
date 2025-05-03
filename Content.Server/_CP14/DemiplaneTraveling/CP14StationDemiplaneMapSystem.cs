@@ -24,7 +24,25 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         base.Initialize();
 
         SubscribeLocalEvent<CP14StationDemiplaneMapComponent, ComponentInit>(OnMapInit);
+        SubscribeLocalEvent<CP14DemiplaneMapComponent, CP14DemiplaneMapEjectMessage>(DemiplaneEjectAttempt);
         SubscribeLocalEvent<CP14DemiplaneMapComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUiOpen);
+    }
+
+    private void DemiplaneEjectAttempt(Entity<CP14DemiplaneMapComponent> ent, ref CP14DemiplaneMapEjectMessage args)
+    {
+        var station = _station.GetOwningStation(ent, Transform(ent));
+
+        if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap))
+            return;
+
+        if (!stationMap.Nodes.TryGetValue(args.Position, out var node))
+            return;
+
+        if (!node.Ejectable)
+            return;
+
+        //Eject!
+        SpawnAttachedTo("CP14DemiplaneKeyT1", Transform(ent).Coordinates);
     }
 
     private void OnBeforeActivatableUiOpen(Entity<CP14DemiplaneMapComponent> ent, ref BeforeActivatableUIOpenEvent args)
@@ -40,6 +58,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
     private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref ComponentInit args)
     {
         GenerateDemiplaneMap(ent);
+        UpdateNodeStatus(ent);
     }
 
     public void UpdateUIStates()
@@ -111,7 +130,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
                 specialLevel,
                 new Vector2(specialPos.X, specialPos.Y),
                 false,
-                location: special.Location,
+                locationConfig: special.Location,
                 modifiers: special.Modifiers
             );
             grid[specialPos] = specialNode;
@@ -167,7 +186,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
                 continue;
 
             var location = _demiplane.GenerateDemiplaneLocation(node.Level);
-            node.Location ??= location;
+            node.LocationConfig ??= location;
 
             var limits = new Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float>
             {
@@ -195,5 +214,15 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
 
         //Add all rooms into component
         ent.Comp.Nodes = grid;
+    }
+
+    private void UpdateNodeStatus(Entity<CP14StationDemiplaneMapComponent> ent)
+    {
+        foreach (var node in ent.Comp.Nodes)
+        {
+            node.Value.Ejectable = CanEjectCoordinates(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
+        }
+
+        UpdateUIStates();
     }
 }

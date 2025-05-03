@@ -1,3 +1,5 @@
+using Robust.Shared.Serialization;
+
 namespace Content.Shared._CP14.DemiplaneTraveling;
 
 public abstract partial class CP14SharedStationDemiplaneMapSystem : EntitySystem
@@ -7,7 +9,7 @@ public abstract partial class CP14SharedStationDemiplaneMapSystem : EntitySystem
         if (!nodes.TryGetValue(key, out var node))
             return false;
 
-        if (node.Finished || node.Active || node.Start)
+        if (node.Finished || node.Ejectable || node.Start)
             return false;
 
         //return false if no finished or start nodes near
@@ -29,3 +31,10 @@ public abstract partial class CP14SharedStationDemiplaneMapSystem : EntitySystem
         return false;
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class CP14DemiplaneMapEjectMessage(Vector2i position) : BoundUserInterfaceMessage
+{
+    public readonly Vector2i Position = position;
+}
+
