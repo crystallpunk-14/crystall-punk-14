@@ -46,6 +46,10 @@
     {
       "name": "horn8",
       "directions": 4
+    },
+    {
+      "name": "horn9",
+      "directions": 4
     }
   ]
 }

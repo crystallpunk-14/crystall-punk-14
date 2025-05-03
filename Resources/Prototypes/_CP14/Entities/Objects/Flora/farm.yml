@@ -1,13 +1,12 @@
 - type: entity
   id: CP14Wheat
-  parent: ProduceBase
+  parent: BaseItem
   name: wheat bushel
   description: You have the choice of either planting the grains again or grinding them into flour.
   categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Tiny
-  - type: Produce
   - type: Sprite
     sprite: _CP14/Objects/Flora/Farm/wheat.rsi
     layers:
@@ -21,4 +20,28 @@
   - type: Tag
     tags:
     - CP14Wheat
+    - CP14FarmFood
+
+- type: entity
+  id: CP14Cotton
+  parent: BaseItem
+  name: cotton
+  description: A plant raw fiber used to make cotton fabric.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/cotton.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+        base3: ""
+  - type: Tag
+    tags:
     - CP14FarmFood

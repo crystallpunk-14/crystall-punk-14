@@ -10,7 +10,7 @@ namespace Content.Shared._CP14.ModularCraft;
 public abstract class CP14SharedModularCraftSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedLabelSystem _label = default!;
+    [Dependency] private readonly LabelSystem _label = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
 
     public override void Initialize()
