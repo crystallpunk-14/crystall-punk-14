@@ -5,54 +5,54 @@
     xmlns:parallax="clr-namespace:Content.Client.Parallax"
     xmlns:nodeTree="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
     xmlns:demiplaneTraveling="clr-namespace:Content.Client._CP14.DemiplaneTraveling"
-    Title="{Loc 'cp14-skill-info-title'}"
+    Title="{Loc 'cp14-demiplane-map-title'}"
     MinSize="1200 850"
     SetSize="1200 850">
 
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
 
-        <!-- Selected Skill -->
+        <!-- Selected Location -->
         <BoxContainer Margin="10 10 10 10" MaxWidth="240" SetWidth="240" Orientation="Vertical"
                       HorizontalExpand="False" VerticalExpand="True">
-            <!-- Skill View -->
+            <!-- Location View -->
             <PanelContainer Name="BackPanel" HorizontalAlignment="Center">
                 <PanelContainer.PanelOverride>
                     <graphics:StyleBoxTexture Modulate="#1B1B1E" PatchMarginBottom="10" PatchMarginLeft="10"
                                               PatchMarginRight="10" PatchMarginTop="10" />
                 </PanelContainer.PanelOverride>
                 <BoxContainer HorizontalExpand="True" VerticalExpand="True" >
-                    <TextureRect Stretch="Scale" Name="SkillView" SetSize="64 64" HorizontalAlignment="Center" VerticalAlignment="Center" MinSize="64 64"
+                    <TextureRect Stretch="Scale" Name="LocationView" SetSize="64 64" HorizontalAlignment="Center" VerticalAlignment="Center" MinSize="64 64"
                                 HorizontalExpand="True" VerticalExpand="True" Access="Public"/>
                 </BoxContainer>
             </PanelContainer>
             <customControls:HSeparator StyleClasses="HighDivider" Margin="0 15 0 10" />
-            <!-- Skill Data -->
+            <!-- Location Data -->
             <BoxContainer Name="NodeViewContainer" Orientation="Vertical" VerticalExpand="True">
                 <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
                     <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True">
                         <BoxContainer Name="InfoContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
                             <BoxContainer HorizontalExpand="True">
-                                <Label Name="SkillName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                                <Label Name="Name" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
                                        HorizontalExpand="True" HorizontalAlignment="Center" />
                             </BoxContainer>
-                            <!-- Skill Description -->
+                            <!-- Description -->
                             <BoxContainer HorizontalExpand="True">
-                                <RichTextLabel Name="SkillDescription" HorizontalExpand="True" Access="Public"/>
+                                <RichTextLabel Name="Description" HorizontalExpand="True" Access="Public"/>
                             </BoxContainer>
                         </BoxContainer>
                     </BoxContainer>
                 </ScrollContainer>
                 <Control MinHeight="5"/>
-                <!-- Skill Buttons -->
+                <!-- Buttons -->
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <Button Name="LearnButton" Text="{Loc 'cp14-skill-menu-learn-button'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35" Access="Public"/>
+                    <Button Name="EjectButton" Text="{Loc 'cp14-demiplane-map-eject'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35" Access="Public"/>
                 </BoxContainer>
             </BoxContainer>
         </BoxContainer>
 
         <customControls:VSeparator StyleClasses="LowDivider" />
 
-        <!-- Skills Tree -->
+        <!-- Demiplane map Tree -->
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer HorizontalExpand="True">
                 <Label Name="TreeName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"

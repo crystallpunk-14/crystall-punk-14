@@ -122,7 +122,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
         if (node.Location != null && _prototype.TryIndex(node.Location, out var location))
         {
             if (location.Name is not null)
-                SkillName.Text = Loc.GetString(location.Name);
+                Name.Text = Loc.GetString(location.Name);
 
             //Generate description
             List<LocId> modifierNames = new();
@@ -142,24 +142,24 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
             {
                 sb.Append("- " + Loc.GetString(name) + "\n");
             }
-            SkillDescription.Text = sb.ToString();
-            SkillView.Texture = location?.Icon?.Frame0();
+            Description.Text = sb.ToString();
+            LocationView.Texture = location?.Icon?.Frame0();
         }
         else
         {
-            SkillName.Text = string.Empty;
-            SkillDescription.Text = string.Empty;
-            SkillView.Texture = null;
+            Name.Text = string.Empty;
+            Description.Text = string.Empty;
+            LocationView.Texture = null;
         }
 
-        //LearnButton.Disabled = node.Gained || node.Start;
+        //EjectButton.Disabled = node.Gained || node.Start;
     }
 
     private void DeselectNode()
     {
-        SkillName.Text = string.Empty;
-        SkillDescription.Text = string.Empty;
-        SkillView.Texture = null;
-        LearnButton.Disabled = true;
+        Name.Text = string.Empty;
+        Description.Text = string.Empty;
+        LocationView.Texture = null;
+        EjectButton.Disabled = true;
     }
 }
