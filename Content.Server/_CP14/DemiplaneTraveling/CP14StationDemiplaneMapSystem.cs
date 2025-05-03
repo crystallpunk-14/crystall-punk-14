@@ -50,6 +50,10 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             demiData.Location = node.LocationConfig;
             demiData.SelectedModifiers = node.Modifiers;
         }
+
+        EnsureComp<CP14DemiplaneMapNodeBlockerComponent>(key, out var blockerComp);
+        blockerComp.Position = args.Position;
+        blockerComp.Station = station;
     }
 
     private void OnBeforeActivatableUiOpen(Entity<CP14DemiplaneMapComponent> ent, ref BeforeActivatableUIOpenEvent args)
@@ -65,7 +69,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
     private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref ComponentInit args)
     {
         GenerateDemiplaneMap(ent);
-        UpdateNodeStatus(ent);
+        UpdateNodesStatus(ent);
     }
 
     public void UpdateUIStates()
@@ -223,11 +227,25 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         ent.Comp.Nodes = grid;
     }
 
-    private void UpdateNodeStatus(Entity<CP14StationDemiplaneMapComponent> ent)
+    private void UpdateNodesStatus(Entity<CP14StationDemiplaneMapComponent> ent)
     {
+        //Ejectable status
         foreach (var node in ent.Comp.Nodes)
         {
             node.Value.Ejectable = CanEjectCoordinates(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
+        }
+
+        //Opened status
+        var query = EntityQueryEnumerator<CP14DemiplaneMapNodeBlockerComponent>();
+        while (query.MoveNext(out var uid, out var blocker))
+        {
+            if (!TryComp<CP14StationDemiplaneMapComponent>(blocker.Station, out var stationMap))
+                continue;
+
+            if (!stationMap.Nodes.TryGetValue(blocker.Position, out var node))
+                continue;
+
+            node.Ejectable = false;
         }
 
         UpdateUIStates();

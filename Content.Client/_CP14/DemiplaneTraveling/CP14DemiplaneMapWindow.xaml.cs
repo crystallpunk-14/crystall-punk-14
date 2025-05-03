@@ -22,6 +22,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
     private CP14DemiplaneMapNode? _selectedNode;
 
     public event Action<Vector2i>? OnEject;
+    public event Action<Vector2i>? OnRevoke;
     private ISawmill Sawmill { get; init; }
 
     public CP14DemiplaneMapWindow()
@@ -201,5 +202,6 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
         Description.Text = string.Empty;
         LocationView.Texture = null;
         EjectButton.Disabled = true;
+        RevokeButton.Disabled = true;
     }
 }

@@ -38,3 +38,10 @@ public sealed class CP14DemiplaneMapEjectMessage(Vector2i position) : BoundUserI
     public readonly Vector2i Position = position;
 }
 
+
+[Serializable, NetSerializable]
+public sealed class CP14DemiplaneMapRevokeMessage(Vector2i position) : BoundUserInterfaceMessage
+{
+    public readonly Vector2i Position = position;
+}
+

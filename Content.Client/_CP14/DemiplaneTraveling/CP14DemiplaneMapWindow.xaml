@@ -45,7 +45,10 @@
                 <Control MinHeight="5"/>
                 <!-- Buttons -->
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <Button Name="EjectButton" Text="{Loc 'cp14-demiplane-map-eject'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35" Access="Public"/>
+                    <Button Name="EjectButton" Text="{Loc 'cp14-demiplane-map-eject'}" ToolTip="{Loc 'cp14-demiplane-map-eject-tooltip'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35" Access="Public"/>
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <Button Name="RevokeButton" Text="{Loc 'cp14-demiplane-map-revoke'}" ToolTip="{Loc 'cp14-demiplane-map-revoke-tooltip'}" StyleClasses="OpenRight" HorizontalExpand="True" MinHeight="35" Access="Public"/>
                 </BoxContainer>
             </BoxContainer>
         </BoxContainer>
