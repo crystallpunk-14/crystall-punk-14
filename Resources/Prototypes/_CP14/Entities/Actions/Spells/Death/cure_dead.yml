@@ -43,6 +43,9 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneResurrection
   - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
     range: 10
     itemIconStyle: BigAction
     interactOnMiss: false

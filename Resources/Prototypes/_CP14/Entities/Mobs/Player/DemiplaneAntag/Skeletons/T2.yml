@@ -88,8 +88,8 @@
     - CP14ActionSpellIceDagger
     - CP14ActionSpellCureFromDeath
     - CP14ActionSpellShadowStep
+    - CP14ActionSpellShadowSwap
     - CP14ActionSpellShadowGrab
-    - CP14ActionSpellShadowPunch
 
 - type: entity
   id: CP14MobUndeadSkeletonBardT2

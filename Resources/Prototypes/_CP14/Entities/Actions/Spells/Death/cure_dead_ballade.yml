@@ -19,6 +19,9 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneDeadHealBallade
   - type: InstantAction
+    whitelist:
+      components:
+      - MobState
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
