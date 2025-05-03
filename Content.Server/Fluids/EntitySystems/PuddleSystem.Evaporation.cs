@@ -1,5 +1,6 @@
 using Content.Server.Weather;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Maps;
@@ -36,7 +37,7 @@ public sealed partial class PuddleSystem
             return;
         }
 
-        if (solution.GetTotalPrototypeQuantity(EvaporationReagents) > FixedPoint2.Zero)
+        if (solution.GetTotalPrototypeQuantity(GetEvaporatingReagents(solution)) > FixedPoint2.Zero)
         {
             var evaporation = AddComp<EvaporationComponent>(uid);
             evaporation.NextTick = _timing.CurTime + EvaporationCooldown;
@@ -61,14 +62,19 @@ public sealed partial class PuddleSystem
             if (!_solutionContainerSystem.ResolveSolution(uid, puddle.SolutionName, ref puddle.Solution, out var puddleSolution))
                 continue;
 
-            var reagentTick = evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds;
+            foreach ((string evaporatingReagent, FixedPoint2 evaporatingSpeed) in GetEvaporationSpeeds(puddleSolution))
+            {
+                var reagentTick = evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds * evaporatingSpeed;
+                puddleSolution.SplitSolutionWithOnly(reagentTick, evaporatingReagent);
+            }
 
-            //CP14 Force evaporation
-            if (!evaporation.CP14ForceEvaporation)
-                puddleSolution.SplitSolutionWithOnly(reagentTick, EvaporationReagents);
-            else
+            //CP14 force evaporation under sky
+            if (evaporation.CP14ForceEvaporation)
+            {
+                var reagentTick = evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds;
                 puddleSolution.SplitSolution(reagentTick);
-            //CP14 end force evaporation
+            }
+            //CP14 force evaporation under sky end
 
             // Despawn if we're done
             if (puddleSolution.Volume == FixedPoint2.Zero)

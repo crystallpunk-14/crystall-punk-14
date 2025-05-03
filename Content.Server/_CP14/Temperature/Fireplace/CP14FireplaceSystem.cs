@@ -88,7 +88,7 @@ public sealed partial class CP14FireplaceSystem : EntitySystem
             if (_timing.CurTime <= fireplace.NextUpdateTime)
                 continue;
 
-            fireplace.NextUpdateTime += fireplace.UpdateFrequency;
+            fireplace.NextUpdateTime = _timing.CurTime + fireplace.UpdateFrequency;
 
             if (fireplace.Fuel >= fireplace.FuelDrainingPerUpdate)
             {
