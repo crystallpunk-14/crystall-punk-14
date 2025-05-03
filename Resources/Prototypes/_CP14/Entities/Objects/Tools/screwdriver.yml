@@ -33,8 +33,3 @@
       - Screwing
     useSound:
       collection: Screwdriver
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 100
-  - type: StaticPrice
-    price: 30
