@@ -6,7 +6,10 @@ using Content.Server.Station.Systems;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.DemiplaneTraveling;
+using Content.Shared.Damage;
+using Content.Shared.Destructible;
 using Content.Shared.Popups;
+using Content.Shared.Pulling.Events;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -36,6 +39,39 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
 
         SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUiOpen);
         SubscribeLocalEvent<CP14DemiplaneMapNodeBlockerComponent, ComponentShutdown>(OnNodeBlockerShutdown);
+
+        SubscribeLocalEvent<CP14DemiplaneCoreComponent, MapInitEvent>(OnCoreInit);
+        SubscribeLocalEvent<CP14DemiplaneCoreComponent, BeingPulledAttemptEvent>(OnCorePull);
+        SubscribeLocalEvent<CP14DemiplaneCoreComponent, DamageChangedEvent>(OnCoreDamaged);
+    }
+
+    private void OnCoreDamaged(Entity<CP14DemiplaneCoreComponent> ent, ref DamageChangedEvent args)
+    {
+        if (!args.DamageIncreased)
+            return;
+
+        if (!TryComp<CP14DemiplaneComponent>(ent.Comp.Demiplane, out var demiplane))
+            return;
+
+        _demiplane.StartDestructDemiplane((ent.Comp.Demiplane.Value, demiplane));
+    }
+
+    private void OnCorePull(Entity<CP14DemiplaneCoreComponent> ent, ref BeingPulledAttemptEvent args)
+    {
+        if (!TryComp<CP14DemiplaneComponent>(ent.Comp.Demiplane, out var demiplane))
+            return;
+
+        _demiplane.StartDestructDemiplane((ent.Comp.Demiplane.Value, demiplane));
+    }
+
+    private void OnCoreInit(Entity<CP14DemiplaneCoreComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.Demiplane = Transform(ent).MapUid;
+        if (!TryComp<CP14DemiplaneMapNodeBlockerComponent>(ent.Comp.Demiplane, out var blocker))
+            return;
+
+        ent.Comp.Station = blocker.Station;
+        ent.Comp.Position = blocker.Position;
     }
 
     private void OnNodeBlockerShutdown(Entity<CP14DemiplaneMapNodeBlockerComponent> ent, ref ComponentShutdown args)
@@ -105,7 +141,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             //If it's a demiplane, initiate closure. If not, just delete it.
             if (TryComp<CP14DemiplaneComponent>(uid, out var demiplane))
             {
-                EnsureComp<CP14DemiplaneTimedDestructionComponent>(uid, out _);
+                _demiplane.StartDestructDemiplane((uid, demiplane));
                 _popup.PopupEntity(Loc.GetString("cp14-demiplane-revoke-map"), ent);
             }
             else

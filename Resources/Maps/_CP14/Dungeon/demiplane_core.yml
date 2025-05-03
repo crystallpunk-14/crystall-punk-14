@@ -126,7 +126,7 @@ entities:
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: RadiationGridResistance
-- proto: CP14StatueGobRuined
+- proto: CP14DemiplaneCore
   entities:
   - uid: 14
     components:
