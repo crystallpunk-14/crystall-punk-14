@@ -1,0 +1,92 @@
+- type: entity
+  id: CP14ActionSpellHealFromDeathBallade
+  name: Healing from death ballade
+  description: Your music is filled with healing magic, fast healing all the creatures around you.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/necromancy.rsi
+    state: dead_heal_ballade
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 1.0
+  - type: CP14MagicEffectManaCost
+    manaCost: 1
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget # TODO заставить работать только на нежить
+      spawns:
+      - CP14AreaEntityEffectDeadHealBallade
+  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneDeadHealBallade
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/necromancy.rsi
+      state: dead_heal_ballade
+    event: !type:CP14ToggleableInstantActionEvent
+      effectFrequency: 1
+      cooldown: 15
+      castTime: 120
+      hidden: true
+
+- type: entity
+  id: CP14AreaEntityEffectDeadHealBallade
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 1.6
+  - type: CP14AreaEntityEffect
+    range: 3
+    maxTargets: 4
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectDeadHealBallade
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -1.0
+            Blunt: -1.0
+            Piercing: -1.0
+            Cold: -0.80
+            Heat: -0.80
+            Shock: -0.80
+            Poison: -1.0
+            Bloodloss: -1.5
+            Caustic: -0.5
+
+- type: entity
+  id: CP14ImpactEffectDeadHealBallade
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_5
+      color: "#36937b"
+      shader: unshaded
+ 
+- type: entity
+  id: CP14RuneDeadHealBallade
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#54e194"
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_3
+      color: "#54e194"
+      shader: unshaded
