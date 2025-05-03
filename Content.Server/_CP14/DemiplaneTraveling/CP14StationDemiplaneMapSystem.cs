@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server._CP14.Demiplane;
+using Content.Server._CP14.Demiplane.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.DemiplaneTraveling;
@@ -24,6 +25,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         base.Initialize();
 
         SubscribeLocalEvent<CP14StationDemiplaneMapComponent, ComponentInit>(OnMapInit);
+
         SubscribeLocalEvent<CP14DemiplaneMapComponent, CP14DemiplaneMapEjectMessage>(DemiplaneEjectAttempt);
         SubscribeLocalEvent<CP14DemiplaneMapComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUiOpen);
     }
@@ -42,7 +44,12 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             return;
 
         //Eject!
-        SpawnAttachedTo("CP14DemiplaneKeyT1", Transform(ent).Coordinates);
+        var key = SpawnAttachedTo("CP14BaseDemiplaneKey", Transform(ent).Coordinates);
+        if (TryComp<CP14DemiplaneDataComponent>(key, out var demiData))
+        {
+            demiData.Location = node.LocationConfig;
+            demiData.SelectedModifiers = node.Modifiers;
+        }
     }
 
     private void OnBeforeActivatableUiOpen(Entity<CP14DemiplaneMapComponent> ent, ref BeforeActivatableUIOpenEvent args)

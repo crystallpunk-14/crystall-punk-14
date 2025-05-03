@@ -30,13 +30,13 @@ public sealed partial class CP14DemiplaneSystem
 
     private void InitGeneration()
     {
-        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, MapInitEvent>(GeneratorMapInit);
+        SubscribeLocalEvent<CP14DemiplaneRandomGeneratorComponent, MapInitEvent>(GeneratorMapInit);
         SubscribeLocalEvent<CP14DemiplaneUsingOpenComponent, UseInHandEvent>(GeneratorUsedInHand);
 
-        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
+        SubscribeLocalEvent<CP14DemiplaneDataComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
     }
 
-    private void OnVerbExamine(Entity<CP14DemiplaneGeneratorDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    private void OnVerbExamine(Entity<CP14DemiplaneDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -50,7 +50,7 @@ public sealed partial class CP14DemiplaneSystem
             "/Textures/Interface/VerbIcons/dot.svg.192dpi.png"); //TODO custom icon
     }
 
-    private FormattedMessage GetDemiplanExamine(CP14DemiplaneGeneratorDataComponent comp)
+    private FormattedMessage GetDemiplanExamine(CP14DemiplaneDataComponent comp)
     {
         var msg = new FormattedMessage();
 
@@ -136,7 +136,7 @@ public sealed partial class CP14DemiplaneSystem
         _expeditionQueue.EnqueueJob(job);
     }
 
-    private void UseGenerator(Entity<CP14DemiplaneGeneratorDataComponent> generator, EntityUid? user = null)
+    private void UseGenerator(Entity<CP14DemiplaneDataComponent> generator, EntityUid? user = null)
     {
         //block the opening of demiplanes after the end of a round
         if (_gameTicker.RunLevel != GameRunLevel.InRound)
@@ -195,7 +195,7 @@ public sealed partial class CP14DemiplaneSystem
 
     private void GeneratorUsedInHand(Entity<CP14DemiplaneUsingOpenComponent> ent, ref UseInHandEvent args)
     {
-        if (!TryComp<CP14DemiplaneGeneratorDataComponent>(ent, out var generator))
+        if (!TryComp<CP14DemiplaneDataComponent>(ent, out var generator))
             return;
 
         UseGenerator((ent, generator), args.User);
@@ -340,18 +340,21 @@ public sealed partial class CP14DemiplaneSystem
         return selectedModifiers;
     }
 
-    private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
+    private void GeneratorMapInit(Entity<CP14DemiplaneRandomGeneratorComponent> generator, ref MapInitEvent args)
     {
+        if (!TryComp<CP14DemiplaneDataComponent>(generator, out var data))
+            return;
+
         CP14DemiplaneLocationPrototype? selectedConfig = null;
         //Location generation
-        if (generator.Comp.Location is null)
+        if (data.Location is null || generator.Comp.OverrideLocation)
         {
             selectedConfig = GenerateDemiplaneLocation(generator.Comp.Level);
-            generator.Comp.Location = selectedConfig;
+            data.Location = selectedConfig;
         }
         else
         {
-            if (!_proto.TryIndex(generator.Comp.Location, out selectedConfig))
+            if (!_proto.TryIndex(data.Location, out selectedConfig))
                 return;
         }
 
@@ -363,11 +366,8 @@ public sealed partial class CP14DemiplaneSystem
 
         foreach (var mod in newModifiers)
         {
-            generator.Comp.SelectedModifiers.Add(mod);
+            data.SelectedModifiers.Add(mod);
         }
-
-        if (HasComp<CP14DemiplaneAutoOpenComponent>(generator))
-            UseGenerator(generator);
     }
 
 
