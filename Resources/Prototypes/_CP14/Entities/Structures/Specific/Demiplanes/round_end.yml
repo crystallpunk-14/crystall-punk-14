@@ -52,6 +52,14 @@
     range: 10
     sound:
       path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
+  - type: ActivatableUI
+    key: enum.CP14DemiplaneMapUiKey.Key
+    requiresComplex: true
+  - type: CP14DemiplaneNavigationMap
+  - type: UserInterface
+    interfaces:
+      enum.CP14DemiplaneMapUiKey.Key:
+        type: CP14DemiplaneMapBoundUserInterface
 
 - type: entity
   id: CP14PortalFrameCrystal

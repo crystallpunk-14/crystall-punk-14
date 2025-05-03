@@ -4,12 +4,12 @@ namespace Content.Shared._CP14.DemiplaneTraveling;
 
 public abstract partial class CP14SharedStationDemiplaneMapSystem : EntitySystem
 {
-    public static bool CanEjectCoordinates(Dictionary<Vector2i,CP14DemiplaneMapNode> nodes, HashSet<(Vector2i, Vector2i)> edges, Vector2i key)
+    public static bool NodeInAcessedFronrierZone(Dictionary<Vector2i,CP14DemiplaneMapNode> nodes, HashSet<(Vector2i, Vector2i)> edges, Vector2i key)
     {
         if (!nodes.TryGetValue(key, out var node))
             return false;
 
-        if (node.Finished || node.Ejectable || node.Start)
+        if (node.Finished || node.InFrontierZone || node.Start)
             return false;
 
         //return false if no finished or start nodes near

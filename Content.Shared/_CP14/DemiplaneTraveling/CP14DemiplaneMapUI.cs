@@ -27,9 +27,10 @@ public sealed class CP14DemiplaneMapNode(int level, Vector2 uiPosition, bool sta
     public bool Start = start;
 
     /// <summary>
-    /// Exploring right now!
+    /// This demiplane is now unexplored by anyone and its coordinates can be retrieved
     /// </summary>
-    public bool Ejectable = false;
+    public bool InFrontierZone = false;
+    public bool CoordinatesExtracted = false;
 
     /// <summary>
     /// Exploration finished!

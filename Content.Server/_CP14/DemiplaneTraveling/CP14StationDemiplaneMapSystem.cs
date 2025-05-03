@@ -3,10 +3,12 @@ using System.Numerics;
 using Content.Server._CP14.Demiplane;
 using Content.Server._CP14.Demiplane.Components;
 using Content.Server.Station.Systems;
+using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.DemiplaneTraveling;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -19,18 +21,21 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14StationDemiplaneMapComponent, ComponentInit>(OnMapInit);
+        SubscribeLocalEvent<CP14StationDemiplaneMapComponent, MapInitEvent>(OnMapInit);
 
-        SubscribeLocalEvent<CP14DemiplaneMapComponent, CP14DemiplaneMapEjectMessage>(DemiplaneEjectAttempt);
-        SubscribeLocalEvent<CP14DemiplaneMapComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUiOpen);
+        SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, CP14DemiplaneMapEjectMessage>(DemiplaneEjectAttempt);
+        SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, CP14DemiplaneMapRevokeMessage>(DemiplaneRevokeAttempt);
+        
+        SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUiOpen);
     }
 
-    private void DemiplaneEjectAttempt(Entity<CP14DemiplaneMapComponent> ent, ref CP14DemiplaneMapEjectMessage args)
+    private void DemiplaneEjectAttempt(Entity<CP14DemiplaneNavigationMapComponent> ent, ref CP14DemiplaneMapEjectMessage args)
     {
         var station = _station.GetOwningStation(ent, Transform(ent));
 
@@ -40,11 +45,13 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         if (!stationMap.Nodes.TryGetValue(args.Position, out var node))
             return;
 
-        if (!node.Ejectable)
+        if (!node.InFrontierZone)
             return;
 
         //Eject!
-        var key = SpawnAttachedTo("CP14BaseDemiplaneKey", Transform(ent).Coordinates);
+        var key = SpawnAttachedTo(ent.Comp.KeyProto, Transform(ent).Coordinates);
+        _audio.PlayPvs(ent.Comp.EjectSound, Transform(key).Coordinates);
+
         if (TryComp<CP14DemiplaneDataComponent>(key, out var demiData))
         {
             demiData.Location = node.LocationConfig;
@@ -56,25 +63,51 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         blockerComp.Station = station;
     }
 
-    private void OnBeforeActivatableUiOpen(Entity<CP14DemiplaneMapComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    private void DemiplaneRevokeAttempt(Entity<CP14DemiplaneNavigationMapComponent> ent, ref CP14DemiplaneMapRevokeMessage args)
+    {
+        var station = _station.GetOwningStation(ent, Transform(ent));
+
+        var query = EntityQueryEnumerator<CP14DemiplaneMapNodeBlockerComponent>();
+        while (query.MoveNext(out var uid, out var blocker))
+        {
+            if (blocker.Station != station)
+                continue;
+
+            if (blocker.Position != args.Position)
+                continue;
+
+            //If it's a demiplane, initiate closure. If not, just delete it.
+            if (TryComp<CP14DemiplaneComponent>(uid, out var demiplane))
+            {
+                _demiplane.DeleteDemiplane((uid, demiplane));
+            }
+            else
+            {
+                QueueDel(uid);
+            }
+        }
+    }
+
+    private void OnBeforeActivatableUiOpen(Entity<CP14DemiplaneNavigationMapComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
         var station = _station.GetOwningStation(ent, Transform(ent));
 
         if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap))
             return;
 
+        UpdateNodesStatus((station.Value, stationMap));
+
         _userInterface.SetUiState(ent.Owner, CP14DemiplaneMapUiKey.Key, new CP14DemiplaneMapUiState(stationMap.Nodes, stationMap.Edges));
     }
 
-    private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref ComponentInit args)
+    private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref MapInitEvent args)
     {
         GenerateDemiplaneMap(ent);
-        UpdateNodesStatus(ent);
     }
 
     public void UpdateUIStates()
     {
-        var query = EntityQueryEnumerator<CP14DemiplaneMapComponent>();
+        var query = EntityQueryEnumerator<CP14DemiplaneNavigationMapComponent>();
         while (query.MoveNext(out var uid, out var demiplaneMap))
         {
             var station = _station.GetOwningStation(uid, Transform(uid));
@@ -229,13 +262,12 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
 
     private void UpdateNodesStatus(Entity<CP14StationDemiplaneMapComponent> ent)
     {
-        //Ejectable status
         foreach (var node in ent.Comp.Nodes)
         {
-            node.Value.Ejectable = CanEjectCoordinates(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
+            node.Value.InFrontierZone = NodeInAcessedFronrierZone(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
+            node.Value.CoordinatesExtracted = false;
         }
 
-        //Opened status
         var query = EntityQueryEnumerator<CP14DemiplaneMapNodeBlockerComponent>();
         while (query.MoveNext(out var uid, out var blocker))
         {
@@ -245,7 +277,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             if (!stationMap.Nodes.TryGetValue(blocker.Position, out var node))
                 continue;
 
-            node.Ejectable = false;
+            node.CoordinatesExtracted = true;
         }
 
         UpdateUIStates();

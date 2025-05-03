@@ -5,7 +5,7 @@ namespace Content.Server._CP14.Demiplane.Components;
 /// <summary>
 /// The existence of an entity with this component will block the discovery of a particular coordinate in the demiplane navigation map.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14StationDemiplaneMapSystem))]
+[RegisterComponent, Access(typeof(CP14StationDemiplaneMapSystem), typeof(CP14DemiplaneSystem))]
 public sealed partial class CP14DemiplaneMapNodeBlockerComponent : Component
 {
     [DataField]

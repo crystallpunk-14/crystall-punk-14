@@ -164,6 +164,13 @@ public sealed partial class CP14DemiplaneSystem
         if (ev.Demiplane is null)
         {
             SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.SelectedModifiers, out demiplane, out var mapId);
+            if (demiplane is not null && TryComp<CP14DemiplaneMapNodeBlockerComponent>(generator, out var blocker))
+            {
+                EnsureComp<CP14DemiplaneMapNodeBlockerComponent>(demiplane.Value, out var blockerMap);
+
+                blockerMap.Position = blocker.Position;
+                blockerMap.Station = blocker.Station;
+            }
         }
         else
         {

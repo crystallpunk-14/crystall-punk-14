@@ -41,7 +41,7 @@ public sealed partial class CP14DemiplaneSystem
             return;
 
         RemoveDemiplaneRandomEntryPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);
-        RemoveDemiplanRandomExitPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);
+        RemoveDemiplaneRandomExitPoint((rift.Comp.Demiplane.Value, riftDemiplane), rift);
     }
 
     /// <summary>
@@ -57,7 +57,7 @@ public sealed partial class CP14DemiplaneSystem
     /// <summary>
     /// Removing the demiplane exit point, one of which the player can exit to
     /// </summary>
-    private void RemoveDemiplanRandomExitPoint(Entity<CP14DemiplaneComponent>? demiplane,
+    private void RemoveDemiplaneRandomExitPoint(Entity<CP14DemiplaneComponent>? demiplane,
         EntityUid exitPoint)
     {
         if (!TryComp<CP14DemiplaneRiftComponent>(exitPoint, out var riftComp))
@@ -69,7 +69,7 @@ public sealed partial class CP14DemiplaneSystem
             riftComp.Demiplane = null;
         }
 
-        if (riftComp.DeleteAfterDisconnect)
+        if (riftComp.DeleteAfterDisconnect && exitPoint.Valid)
             QueueDel(exitPoint);
     }
 
@@ -95,7 +95,7 @@ public sealed partial class CP14DemiplaneSystem
             riftComp.Demiplane = null;
         }
 
-        if (riftComp.DeleteAfterDisconnect)
+        if (riftComp.DeleteAfterDisconnect && entryPoint.Valid)
             QueueDel(entryPoint);
     }
 

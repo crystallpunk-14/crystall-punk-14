@@ -33,11 +33,31 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
         Sawmill = _log.GetSawmill("cp14_demiplane_map_window");
 
         EjectButton.OnPressed += EjectPressed;
+        RevokeButton.OnPressed += RevokePressed;
         GraphControl.OnOffsetChanged += offset =>
         {
             ParallaxBackground.Offset = -offset * 0.25f + new Vector2(1000, 1000); //hardcoding is bad
         };
         GraphControl.OnNodeSelected += SelectNode;
+    }
+
+    private void RevokePressed(BaseButton.ButtonEventArgs obj)
+    {
+        if (_selectedNode == null)
+            return;
+
+        if (_cachedState == null)
+            return;
+
+        foreach (var node in _cachedState.Nodes)
+        {
+            if (node.Value != _selectedNode)
+                continue;
+
+            OnRevoke?.Invoke(node.Key);
+            Close();
+            return;
+        }
     }
 
     private void EjectPressed(BaseButton.ButtonEventArgs obj)
@@ -83,7 +103,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 var treeElement = new CP14NodeTreeElement(
                     nodeKey: node.Key.ToString(),
                     gained: false,
-                    active: node.Value.Ejectable || node.Value.Finished,
+                    active: node.Value.InFrontierZone || node.Value.Finished,
                     node.Value.UiPosition * 100,
                     icon: location?.Icon);
                 nodeTreeElements.Add(treeElement);
@@ -193,7 +213,8 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
             LocationView.Texture = null;
         }
 
-        EjectButton.Disabled = !node.Ejectable;
+        EjectButton.Disabled = !node.InFrontierZone || node.CoordinatesExtracted;
+        RevokeButton.Disabled = !node.CoordinatesExtracted;
     }
 
     private void DeselectNode()
