@@ -31,7 +31,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
 
         SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, CP14DemiplaneMapEjectMessage>(DemiplaneEjectAttempt);
         SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, CP14DemiplaneMapRevokeMessage>(DemiplaneRevokeAttempt);
-        
+
         SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUiOpen);
     }
 
@@ -55,7 +55,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         if (TryComp<CP14DemiplaneDataComponent>(key, out var demiData))
         {
             demiData.Location = node.LocationConfig;
-            demiData.SelectedModifiers = node.Modifiers;
+            demiData.SelectedModifiers.AddRange(node.Modifiers);
         }
 
         EnsureComp<CP14DemiplaneMapNodeBlockerComponent>(key, out var blockerComp);
@@ -79,7 +79,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             //If it's a demiplane, initiate closure. If not, just delete it.
             if (TryComp<CP14DemiplaneComponent>(uid, out var demiplane))
             {
-                _demiplane.DeleteDemiplane((uid, demiplane));
+                EnsureComp<CP14DemiplaneTimedDestructionComponent>(uid, out var destruction);
             }
             else
             {
@@ -103,20 +103,6 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
     private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref MapInitEvent args)
     {
         GenerateDemiplaneMap(ent);
-    }
-
-    public void UpdateUIStates()
-    {
-        var query = EntityQueryEnumerator<CP14DemiplaneNavigationMapComponent>();
-        while (query.MoveNext(out var uid, out var demiplaneMap))
-        {
-            var station = _station.GetOwningStation(uid, Transform(uid));
-
-            if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap))
-                continue;
-
-            _userInterface.SetUiState(uid, CP14DemiplaneMapUiKey.Key, new CP14DemiplaneMapUiState(stationMap.Nodes, stationMap.Edges));
-        }
     }
 
     private void GenerateDemiplaneMap(Entity<CP14StationDemiplaneMapComponent> ent)
@@ -264,7 +250,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
     {
         foreach (var node in ent.Comp.Nodes)
         {
-            node.Value.InFrontierZone = NodeInAcessedFronrierZone(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
+            node.Value.InFrontierZone = NodeInFronrierZone(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
             node.Value.CoordinatesExtracted = false;
         }
 
@@ -279,7 +265,5 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
 
             node.CoordinatesExtracted = true;
         }
-
-        UpdateUIStates();
     }
 }
