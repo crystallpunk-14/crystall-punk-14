@@ -13,4 +13,7 @@ public sealed partial class CP14DemiplaneMapNodeBlockerComponent : Component
 
     [DataField]
     public Vector2i Position = new (0,0);
+
+    [DataField]
+    public int IncreaseNodeDifficulty = 0;
 }

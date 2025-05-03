@@ -23,19 +23,14 @@ public sealed class CP14DemiplaneMapUiState(Dictionary<Vector2i, CP14DemiplaneMa
 public sealed class CP14DemiplaneMapNode(int level, Vector2 uiPosition, bool start, ProtoId<CP14DemiplaneLocationPrototype>? locationConfig = null, List<ProtoId<CP14DemiplaneModifierPrototype>>? modifiers = null)
 {
     public int Level = level;
+    public int AdditionalLevel = 0;
     public Vector2 UiPosition = uiPosition;
     public bool Start = start;
 
-    /// <summary>
-    /// This demiplane is now unexplored by anyone and its coordinates can be retrieved
-    /// </summary>
     public bool InFrontierZone = false;
-    public bool CoordinatesExtracted = false;
-
-    /// <summary>
-    /// Exploration finished!
-    /// </summary>
-    public bool Finished = start;
+    public bool InUsing = false;
+    public bool Destroyed = false;
+    public bool Scanned = start;
 
     public ProtoId<CP14DemiplaneLocationPrototype>? LocationConfig = locationConfig;
     public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = modifiers ?? new();

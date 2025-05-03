@@ -6,6 +6,7 @@ using Content.Server.Station.Systems;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared._CP14.DemiplaneTraveling;
+using Content.Shared.Popups;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -22,6 +23,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -33,6 +35,22 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, CP14DemiplaneMapRevokeMessage>(DemiplaneRevokeAttempt);
 
         SubscribeLocalEvent<CP14DemiplaneNavigationMapComponent, BeforeActivatableUIOpenEvent>(OnBeforeActivatableUiOpen);
+        SubscribeLocalEvent<CP14DemiplaneMapNodeBlockerComponent, ComponentShutdown>(OnNodeBlockerShutdown);
+    }
+
+    private void OnNodeBlockerShutdown(Entity<CP14DemiplaneMapNodeBlockerComponent> ent, ref ComponentShutdown args)
+    {
+        if (!TryComp<CP14StationDemiplaneMapComponent>(ent.Comp.Station, out var stationMap))
+            return;
+
+        if (!stationMap.Nodes.TryGetValue(ent.Comp.Position, out var node))
+            return;
+
+        if (ent.Comp.IncreaseNodeDifficulty == 0)
+            return;
+
+        node.AdditionalLevel += ent.Comp.IncreaseNodeDifficulty;
+        GenerateNodeData(node, clearOldModifiers: true);
     }
 
     private void DemiplaneEjectAttempt(Entity<CP14DemiplaneNavigationMapComponent> ent, ref CP14DemiplaneMapEjectMessage args)
@@ -76,19 +94,32 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             if (blocker.Position != args.Position)
                 continue;
 
+            if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var demiStation))
+                continue;
+
+            if (!demiStation.Nodes.TryGetValue(args.Position, out var node))
+                continue;
+
+            SpawnAttachedTo("CP14ImpactEffectMagicSplitting", Transform(ent).Coordinates);
+
             //If it's a demiplane, initiate closure. If not, just delete it.
             if (TryComp<CP14DemiplaneComponent>(uid, out var demiplane))
             {
-                EnsureComp<CP14DemiplaneTimedDestructionComponent>(uid, out var destruction);
+                EnsureComp<CP14DemiplaneTimedDestructionComponent>(uid, out _);
+                _popup.PopupEntity(Loc.GetString("cp14-demiplane-revoke-map"), ent);
             }
             else
             {
+                SpawnAttachedTo("CP14ImpactEffectMagicSplitting", Transform(uid).Coordinates);
+                _popup.PopupEntity(Loc.GetString("cp14-demiplane-revoke-item"), ent);
+                _popup.PopupEntity(Loc.GetString("cp14-demiplane-revoke-item"), uid);
                 QueueDel(uid);
             }
         }
     }
 
-    private void OnBeforeActivatableUiOpen(Entity<CP14DemiplaneNavigationMapComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    private void OnBeforeActivatableUiOpen(Entity<CP14DemiplaneNavigationMapComponent> ent,
+        ref BeforeActivatableUIOpenEvent args)
     {
         var station = _station.GetOwningStation(ent, Transform(ent));
 
@@ -97,7 +128,9 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
 
         UpdateNodesStatus((station.Value, stationMap));
 
-        _userInterface.SetUiState(ent.Owner, CP14DemiplaneMapUiKey.Key, new CP14DemiplaneMapUiState(stationMap.Nodes, stationMap.Edges));
+        _userInterface.SetUiState(ent.Owner,
+            CP14DemiplaneMapUiKey.Key,
+            new CP14DemiplaneMapUiState(stationMap.Nodes, stationMap.Edges));
     }
 
     private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref MapInitEvent args)
@@ -199,7 +232,9 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
 
                 if (!grid.TryGetValue(next, out var nextNode))
                 {
-                    nextNode = new CP14DemiplaneMapNode(Math.Abs(next.X) + Math.Abs(next.Y), new Vector2(next.X, next.Y), false);
+                    nextNode = new CP14DemiplaneMapNode(Math.Abs(next.X) + Math.Abs(next.Y),
+                        new Vector2(next.X, next.Y),
+                        false);
                     grid[next] = nextNode;
                 }
 
@@ -212,26 +247,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         //Fill nodes with random data
         foreach (var node in grid.Values)
         {
-            if (node.Level == 0)
-                continue;
-
-            var location = _demiplane.GenerateDemiplaneLocation(node.Level);
-            node.LocationConfig ??= location;
-
-            var limits = new Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float>
-            {
-                { "Danger", node.Level * 0.2f },
-                { "GhostRoleDanger", node.Level * 0.2f },
-                { "Reward", Math.Max(node.Level * 0.2f, 0.5f) },
-                { "Fun", 1f },
-                { "Weather", 1f },
-                { "MapLight", 1f },
-            };
-            var mods = _demiplane.GenerateDemiplaneModifiers(node.Level, location, limits);
-            foreach (var mod in mods)
-            {
-                node.Modifiers.Add(mod);
-            }
+            GenerateNodeData(node);
         }
 
         // Random visual offset
@@ -246,12 +262,39 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         ent.Comp.Nodes = grid;
     }
 
+    private void GenerateNodeData(CP14DemiplaneMapNode node, bool clearOldModifiers = false)
+    {
+        if (node.Level == 0)
+            return;
+
+        var location = _demiplane.GenerateDemiplaneLocation(node.Level);
+        node.LocationConfig ??= location;
+
+        var limits = new Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float>
+        {
+            { "Danger", (node.Level + node.AdditionalLevel) * 0.2f },
+            { "GhostRoleDanger", node.Level * 0.2f },
+            { "Reward", Math.Max(node.Level * 0.2f, 0.5f) },
+            { "Fun", 1f },
+            { "Weather", 1f },
+            { "MapLight", 1f },
+        };
+        var mods = _demiplane.GenerateDemiplaneModifiers(node.Level, location, limits);
+
+        if (clearOldModifiers)
+            node.Modifiers.Clear();
+        foreach (var mod in mods)
+        {
+            node.Modifiers.Add(mod);
+        }
+    }
+
     private void UpdateNodesStatus(Entity<CP14StationDemiplaneMapComponent> ent)
     {
         foreach (var node in ent.Comp.Nodes)
         {
             node.Value.InFrontierZone = NodeInFronrierZone(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
-            node.Value.CoordinatesExtracted = false;
+            node.Value.InUsing = false;
         }
 
         var query = EntityQueryEnumerator<CP14DemiplaneMapNodeBlockerComponent>();
@@ -263,7 +306,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             if (!stationMap.Nodes.TryGetValue(blocker.Position, out var node))
                 continue;
 
-            node.CoordinatesExtracted = true;
+            node.InUsing = true;
         }
     }
 }

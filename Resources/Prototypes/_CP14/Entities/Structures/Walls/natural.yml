@@ -262,3 +262,44 @@
             max: 3
       - !type:DoActsBehavior
         acts: ["Destruction"]
+
+- type: entity
+  id: CP14WallDimensit
+  parent: CP14BaseWall
+  name: dimensit wall
+  description: The solid form of the interdimensional continuum.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/cave_dimensit.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cave_dimensit.rsi
+  - type: IconSmooth
+    base: wall
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      #- !type:SpawnEntitiesBehavior
+      #  spawn:
+      #    CP14StoneBlock1:
+      #      min: 5
+      #      max: 7
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  

@@ -103,7 +103,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 var treeElement = new CP14NodeTreeElement(
                     nodeKey: node.Key.ToString(),
                     gained: false,
-                    active: node.Value.InFrontierZone || node.Value.Finished,
+                    active: node.Value.InFrontierZone || node.Value.Scanned,
                     node.Value.UiPosition * 100,
                     icon: location?.Icon);
                 nodeTreeElements.Add(treeElement);
@@ -203,8 +203,27 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 sb.Append("- " + Loc.GetString(name) + "\n");
             }
 
+            sb.Append("\n");
+            if (!node.InFrontierZone && !node.Scanned)
+                sb.Append(Loc.GetString("cp14-demiplane-map-status-blocked"));
+            else if (node.InFrontierZone && !node.InUsing)
+                sb.Append(Loc.GetString("cp14-demiplane-map-status-allowed"));
+            else if (node.InUsing)
+                sb.Append(Loc.GetString("cp14-demiplane-map-status-used"));
+
+            //todo destroyed
+            //todo scanned
+
+            sb.Append("\n \n");
+
+            if (node.AdditionalLevel > 0)
+            {
+                sb.Append(Loc.GetString("cp14-demiplane-map-add-level", ("count", node.AdditionalLevel))+"\n");
+                sb.Append(Loc.GetString("cp14-demiplane-map-add-level-tooltip")+"\n");
+            }
+
             Description.Text = sb.ToString();
-            LocationView.Texture = location?.Icon?.Frame0();
+            LocationView.Texture = location.Icon?.Frame0();
         }
         else
         {
@@ -213,8 +232,8 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
             LocationView.Texture = null;
         }
 
-        EjectButton.Disabled = !node.InFrontierZone || node.CoordinatesExtracted;
-        RevokeButton.Disabled = !node.CoordinatesExtracted;
+        EjectButton.Disabled = !node.InFrontierZone || node.InUsing;
+        RevokeButton.Disabled = !node.InUsing;
     }
 
     private void DeselectNode()
