@@ -19,9 +19,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneDeadHealBallade
   - type: InstantAction
-    whitelist:
-      components:
-      - MobState
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
@@ -44,6 +41,9 @@
   - type: CP14AreaEntityEffect
     range: 3
     maxTargets: 4
+    whitelist:
+      components:
+      - MobState
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
