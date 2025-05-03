@@ -11,7 +11,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._CP14.DemiplaneTraveling;
 
-public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
+public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDemiplaneMapSystem
 {
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -40,6 +40,20 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
     private void OnMapInit(Entity<CP14StationDemiplaneMapComponent> ent, ref ComponentInit args)
     {
         GenerateDemiplaneMap(ent);
+    }
+
+    public void UpdateUIStates()
+    {
+        var query = EntityQueryEnumerator<CP14DemiplaneMapComponent>();
+        while (query.MoveNext(out var uid, out var demiplaneMap))
+        {
+            var station = _station.GetOwningStation(uid, Transform(uid));
+
+            if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap))
+                continue;
+
+            _userInterface.SetUiState(uid, CP14DemiplaneMapUiKey.Key, new CP14DemiplaneMapUiState(stationMap.Nodes, stationMap.Edges));
+        }
     }
 
     private void GenerateDemiplaneMap(Entity<CP14StationDemiplaneMapComponent> ent)
@@ -140,9 +154,7 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
                     grid[next] = nextNode;
                 }
 
-                var fromKey = current.ToString();
-                var toKey = next.ToString();
-                ent.Comp.Edges.Add((fromKey, toKey));
+                ent.Comp.Edges.Add((current, next));
 
                 current = next;
             }
@@ -183,10 +195,5 @@ public sealed partial class CP14SharedDemiplaneMapSystem : EntitySystem
 
         //Add all rooms into component
         ent.Comp.Nodes = grid;
-    }
-
-    public bool CanEjectCoordinates(Entity<CP14StationDemiplaneMapComponent> ent, string key)
-    {
-        return false;
     }
 }

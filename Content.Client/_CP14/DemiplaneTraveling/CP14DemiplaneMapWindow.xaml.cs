@@ -47,7 +47,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 var startElement = new CP14NodeTreeElement(
                     nodeKey: node.Key.ToString(),
                     gained: true,
-                    active: true,
+                    active: false,
                     node.Value.UiPosition * 100,
                     icon: new SpriteSpecifier.Rsi(new ResPath("_CP14/Interface/NodeTree/demiplane_map.rsi"), "center"));
                 nodeTreeElements.Add(startElement);
@@ -59,17 +59,22 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 var treeElement = new CP14NodeTreeElement(
                     nodeKey: node.Key.ToString(),
                     gained: false,
-                    active: true,
+                    active: CP14SharedStationDemiplaneMapSystem.CanEjectCoordinates(state.Nodes, state.Edges, node.Key),
                     node.Value.UiPosition * 100,
                     icon: location?.Icon);
                 nodeTreeElements.Add(treeElement);
             }
         }
 
+        var edges = new HashSet<(string, string)>();
+        foreach (var edge in state.Edges)
+        {
+            edges.Add((edge.Item1.ToString(), edge.Item2.ToString()));
+        }
         GraphControl.UpdateState(
             new CP14NodeTreeUiState(
                 nodeTreeElements,
-                edges: state.Edges,
+                edges: edges,
                 frameIcon: new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
                     "frame"),
                 hoveredIcon: new SpriteSpecifier.Rsi(
@@ -81,7 +86,8 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 learnedIcon: new SpriteSpecifier.Rsi(
                     new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
                     "learned"),
-                lineColor: new Color(172, 102, 190)
+                activeLineColor: new Color(172, 102, 190),
+                lineColor: new Color(83, 40, 121)
             )
         );
     }
@@ -163,7 +169,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
             LocationView.Texture = null;
         }
 
-        //EjectButton.Disabled = node.Gained || node.Start;
+        EjectButton.Disabled = !node.Active;
     }
 
     private void DeselectNode()

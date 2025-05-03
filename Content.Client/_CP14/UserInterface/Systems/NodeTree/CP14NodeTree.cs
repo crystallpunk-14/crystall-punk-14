@@ -23,7 +23,8 @@ public sealed class CP14NodeTreeUiState(
     SpriteSpecifier? hoveredIcon = null,
     SpriteSpecifier? selectedIcon = null,
     SpriteSpecifier? learnedIcon = null,
-    Color? lineColor = null
+    Color? lineColor = null,
+    Color? activeLineColor = null
     ) : BoundUserInterfaceState
 {
     public HashSet<CP14NodeTreeElement> Nodes = nodes;
@@ -35,5 +36,5 @@ public sealed class CP14NodeTreeUiState(
     public SpriteSpecifier LearnedIcon = learnedIcon?? new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/NodeTree/default.rsi"), "learned");
 
     public Color LineColor = lineColor ?? Color.Gray;
-    public Color ActiveLineColor = lineColor ?? Color.White;
+    public Color ActiveLineColor = activeLineColor ?? Color.White;
 }

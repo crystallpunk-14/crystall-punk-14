@@ -121,7 +121,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             var fromPos = node1.UiPosition * UIScale + _globalOffset;
             var toPos = node2.UiPosition * UIScale + _globalOffset;
 
-            var lineColor = node1.Gained && node2.Gained ? _state.ActiveLineColor : _state.LineColor;
+            var lineColor = node1.Gained || node2.Gained ? _state.ActiveLineColor : _state.LineColor;
             handle.DrawLine(fromPos, toPos, lineColor);
         }
 
@@ -134,7 +134,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             var frameTexture = _state.FrameIcon.Frame0();
             var frameSize = new Vector2(frameTexture.Width, frameTexture.Height) * 1.5f * UIScale;
             var frameQuad = new UIBox2(pos - frameSize / 2, pos + frameSize / 2);
-            handle.DrawTextureRect(frameTexture, frameQuad, node.Active ? Color.White : Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f)));
+            handle.DrawTextureRect(frameTexture, frameQuad);
 
             // Selected Node
             if (_selectedNode == node)
@@ -142,7 +142,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
                 var selectedTexture = _state.SelectedIcon.Frame0();
                 var selectedSize = new Vector2(selectedTexture.Width, selectedTexture.Height) * 1.5f * UIScale;
                 var selectedQuad = new UIBox2(pos - selectedSize / 2, pos + selectedSize / 2);
-                handle.DrawTextureRect(selectedTexture, selectedQuad, Color.White);
+                handle.DrawTextureRect(selectedTexture, selectedQuad);
             }
 
             // Hovered Node
@@ -153,7 +153,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
                 var hoveredTexture = _state.HoveredIcon.Frame0();
                 var hoveredSize = new Vector2(hoveredTexture.Width, hoveredTexture.Height) * 1.5f * UIScale;
                 var hoveredQuad = new UIBox2(pos - hoveredSize / 2, pos + hoveredSize / 2);
-                handle.DrawTextureRect(hoveredTexture, hoveredQuad, Color.White);
+                handle.DrawTextureRect(hoveredTexture, hoveredQuad);
             }
 
             // Learned Node
@@ -162,7 +162,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
                 var learnedTexture = _state.LearnedIcon.Frame0();
                 var learnedSize = new Vector2(learnedTexture.Width, learnedTexture.Height) * 1.5f * UIScale;
                 var learnedQuad = new UIBox2(pos - learnedSize / 2, pos + learnedSize / 2);
-                handle.DrawTextureRect(learnedTexture, learnedQuad, Color.White);
+                handle.DrawTextureRect(learnedTexture, learnedQuad);
             }
 
             // Base Node icon
@@ -171,7 +171,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
                 var baseTexture = node.Icon.Frame0();
                 var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * UIScale;
                 var baseQuad = new UIBox2(pos - baseSize / 2, pos + baseSize / 2);
-                var tint = node.Gained || _hoveredNode == node ? Color.White : node.Active ? Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f)) : Color.Black;
+                var tint = node.Gained || node.Active ? Color.White : Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f));
                 handle.DrawTextureRect(baseTexture, baseQuad, tint);
             }
         }

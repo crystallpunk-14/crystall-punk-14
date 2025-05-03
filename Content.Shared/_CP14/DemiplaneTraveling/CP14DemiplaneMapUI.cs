@@ -13,10 +13,10 @@ public enum CP14DemiplaneMapUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14DemiplaneMapUiState(Dictionary<Vector2i, CP14DemiplaneMapNode> nodes, HashSet<(string, string)>? edges = null) : BoundUserInterfaceState
+public sealed class CP14DemiplaneMapUiState(Dictionary<Vector2i, CP14DemiplaneMapNode> nodes, HashSet<(Vector2i, Vector2i)>? edges = null) : BoundUserInterfaceState
 {
     public Dictionary<Vector2i, CP14DemiplaneMapNode> Nodes = nodes;
-    public HashSet<(string, string)> Edges = edges ?? new();
+    public HashSet<(Vector2i, Vector2i)> Edges = edges ?? new();
 }
 
 [Serializable, NetSerializable]

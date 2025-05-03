@@ -12,7 +12,7 @@ public sealed partial class CP14StationDemiplaneMapComponent : Component
     public Dictionary<Vector2i, CP14DemiplaneMapNode> Nodes = new();
 
     [DataField]
-    public HashSet<(string, string)> Edges = new();
+    public HashSet<(Vector2i, Vector2i)> Edges = new();
 
     /// <summary>
     /// Count of special rooms that can be generated in the demiplane map.
