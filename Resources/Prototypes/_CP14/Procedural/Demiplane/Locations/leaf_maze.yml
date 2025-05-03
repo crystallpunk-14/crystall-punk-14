@@ -3,6 +3,9 @@
   levels:
     min: 3
     max: 5
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: leaf_maze
   locationConfig: CP14DemiplaneLeafMaze
   name: cp14-demiplane-location-leaf-maze
   tags:

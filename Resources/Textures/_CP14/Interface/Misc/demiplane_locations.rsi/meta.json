@@ -17,10 +17,19 @@
       "name": "ice_caves"
     },
     {
+      "name": "leaf_maze"
+    },
+    {
       "name": "magma_caves"
     },
     {
       "name": "snow_island"
+    },
+    {
+      "name": "swamp_caves"
+    },
+    {
+      "name": "wastelands"
     }
   ]
 }
