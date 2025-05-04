@@ -4,7 +4,6 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.UserInterface.Systems.NodeTree;
 
-[Serializable, NetSerializable]
 public sealed class CP14NodeTreeElement(string nodeKey, bool gained ,bool active, Vector2 uiPosition, SpriteSpecifier? icon = null)
 {
     public string NodeKey = nodeKey;
