@@ -15,7 +15,6 @@ public sealed class CP14NodeTreeElement(string nodeKey, bool gained ,bool active
     public SpriteSpecifier? Icon = icon;
 }
 
-[Serializable, NetSerializable]
 public sealed class CP14NodeTreeUiState(
     HashSet<CP14NodeTreeElement> nodes,
     HashSet<(string, string)>? edges = null,
