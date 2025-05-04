@@ -41,27 +41,23 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         SubscribeLocalEvent<CP14DemiplaneMapNodeBlockerComponent, ComponentShutdown>(OnNodeBlockerShutdown);
 
         SubscribeLocalEvent<CP14DemiplaneCoreComponent, MapInitEvent>(OnCoreInit);
-        SubscribeLocalEvent<CP14DemiplaneCoreComponent, BeingPulledAttemptEvent>(OnCorePull);
-        SubscribeLocalEvent<CP14DemiplaneCoreComponent, DamageChangedEvent>(OnCoreDamaged);
+        SubscribeLocalEvent<CP14DemiplaneCoreComponent, DestructionEventArgs>(OnCoreDestroyed);
     }
 
-    private void OnCoreDamaged(Entity<CP14DemiplaneCoreComponent> ent, ref DamageChangedEvent args)
+    private void OnCoreDestroyed(Entity<CP14DemiplaneCoreComponent> ent, ref DestructionEventArgs args)
     {
-        if (!args.DamageIncreased)
-            return;
+        if (TryComp<CP14DemiplaneComponent>(ent.Comp.Demiplane, out var demiplane))
+        {
+            _demiplane.StartDestructDemiplane((ent.Comp.Demiplane.Value, demiplane));
+        }
 
-        if (!TryComp<CP14DemiplaneComponent>(ent.Comp.Demiplane, out var demiplane))
-            return;
+        var station = _station.GetOwningStation(ent, Transform(ent));
 
-        _demiplane.StartDestructDemiplane((ent.Comp.Demiplane.Value, demiplane));
-    }
-
-    private void OnCorePull(Entity<CP14DemiplaneCoreComponent> ent, ref BeingPulledAttemptEvent args)
-    {
-        if (!TryComp<CP14DemiplaneComponent>(ent.Comp.Demiplane, out var demiplane))
-            return;
-
-        _demiplane.StartDestructDemiplane((ent.Comp.Demiplane.Value, demiplane));
+        if (TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap) &&
+            stationMap.Nodes.TryGetValue(ent.Comp.Position, out var node) && ent.Comp.Station == station)
+        {
+            node.Scanned = true;
+        }
     }
 
     private void OnCoreInit(Entity<CP14DemiplaneCoreComponent> ent, ref MapInitEvent args)

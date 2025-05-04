@@ -102,7 +102,7 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
 
                 var treeElement = new CP14NodeTreeElement(
                     nodeKey: node.Key.ToString(),
-                    gained: false,
+                    gained: node.Value.Scanned,
                     active: node.Value.InFrontierZone || node.Value.Scanned,
                     node.Value.UiPosition * 100,
                     icon: location?.Icon);
@@ -210,13 +210,12 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
                 sb.Append(Loc.GetString("cp14-demiplane-map-status-allowed"));
             else if (node.InUsing)
                 sb.Append(Loc.GetString("cp14-demiplane-map-status-used"));
-
-            //todo destroyed
-            //todo scanned
+            else if (node.Scanned)
+                sb.Append(Loc.GetString("cp14-demiplane-map-status-scanned"));
 
             sb.Append("\n \n");
 
-            if (node.AdditionalLevel > 0)
+            if (node.AdditionalLevel > 0 && !node.Scanned)
             {
                 sb.Append(Loc.GetString("cp14-demiplane-map-add-level", ("count", node.AdditionalLevel))+"\n");
                 sb.Append(Loc.GetString("cp14-demiplane-map-add-level-tooltip")+"\n");

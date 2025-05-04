@@ -29,7 +29,6 @@ public sealed class CP14DemiplaneMapNode(int level, Vector2 uiPosition, bool sta
 
     public bool InFrontierZone = false;
     public bool InUsing = false;
-    public bool Destroyed = false;
     public bool Scanned = start;
 
     public ProtoId<CP14DemiplaneLocationPrototype>? LocationConfig = locationConfig;

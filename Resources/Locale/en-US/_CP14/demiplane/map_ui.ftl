@@ -12,5 +12,4 @@ cp14-demiplane-map-add-level-tooltip = This demiplane has been opened several ti
 cp14-demiplane-map-status-blocked = [color=red]This demiplane cannot be opened: You must explore any nearby demiplane to unlock the coordinates.[/color]
 cp14-demiplane-map-status-allowed = [color=green]The demiplane is available for exploration.[/color].
 cp14-demiplane-map-status-used = [color=yellow]The coordinates of this demiplane are already in use. It is not possible to create a copy.[/color]
-cp14-demiplane-map-status-destroyed = [color=red]The demiplane core has been destroyed, but not scanned. Demiplane reopening is impossible, coordinates of neighboring demiplanes are not available.[/color]
-cp14-demiplane-map-status-passed = [color=pink]The demiplane core has been destroyed and successfully scanned. Demiplane reopening is impossible, coordinates of neighboring demiplanes are available for research.[/color]
+cp14-demiplane-map-status-scanned = [color=purple]The demiplane core has been destroyed and successfully scanned. Demiplane reopening is impossible, coordinates of neighboring demiplanes are available for research.[/color]
