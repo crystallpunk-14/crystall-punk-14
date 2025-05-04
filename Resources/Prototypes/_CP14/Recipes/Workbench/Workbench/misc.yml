@@ -216,3 +216,15 @@
   - !type:ProtoIdResource
     protoId: CP14DyePurple
   result: CP14CrayonPurple
+
+- type: CP14Recipe
+  id: CP14Screwdriver
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ModularGripWooden
+  - !type:ProtoIdResource
+    protoId: CP14CrossboltIron
+  result: CP14Screwdriver
