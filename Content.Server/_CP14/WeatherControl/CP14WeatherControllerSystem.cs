@@ -30,6 +30,9 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
 
             var weatherData = PickWeatherDataByWeight(uid, weather.Entries);
 
+            if (weatherData is null)
+                continue;
+
             if (!_proto.TryIndex(weatherData.Visuals, out var weatherVisualsIndexed))
             {
                 var weatherDuration = TimeSpan.FromSeconds(weatherData.Duration.Next(_random));
@@ -45,7 +48,7 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
         }
     }
 
-    private CP14WeatherData PickWeatherDataByWeight(EntityUid map, HashSet<CP14WeatherData> entries)
+    private CP14WeatherData? PickWeatherDataByWeight(EntityUid map, HashSet<CP14WeatherData> entries)
     {
         var filteredEntries = new HashSet<CP14WeatherData>(entries);
 
@@ -59,6 +62,9 @@ public sealed class CP14WeatherControllerSystem : EntitySystem
                 filteredEntries.RemoveWhere(entry => entry.Visuals == weatherPrototype);
             }
         }
+
+        if (filteredEntries.Count == 0)
+            return null;
 
         var totalWeight = filteredEntries.Sum(entry => entry.Weight);
         var randomWeight = _random.NextFloat() * totalWeight;

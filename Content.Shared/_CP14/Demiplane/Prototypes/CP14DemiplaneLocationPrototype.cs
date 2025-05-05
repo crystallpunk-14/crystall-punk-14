@@ -2,6 +2,7 @@ using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Procedural;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Demiplane.Prototypes;
 
@@ -39,4 +40,7 @@ public sealed partial class CP14DemiplaneLocationPrototype : IPrototype
 
     [DataField]
     public float ExamineProb = 0.75f;
+
+    [DataField]
+    public SpriteSpecifier? Icon = null;
 }

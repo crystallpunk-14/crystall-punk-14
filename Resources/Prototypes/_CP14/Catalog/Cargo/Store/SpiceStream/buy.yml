@@ -116,27 +116,6 @@
   service: !type:CP14BuyItemsService
     product: CP14GoldBar10
 
-
-- type: storePositionBuy
-  id: Demiplane
-  code: DEMIPLANE_1
-  price: 100
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14DemiplaneKeyT1
-    count: 5
-
-- type: storePositionBuy
-  id: Demiplane2
-  code: DEMIPLANE_2
-  price: 200
-  factions:
-  - SpiceStream
-  service: !type:CP14BuyItemsService
-    product: CP14DemiplaneKeyT2
-    count: 5
-
 - type: storePositionBuy
   id: Bureaucracy
   code: PAPER

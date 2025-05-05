@@ -1,0 +1,113 @@
+- type: cp14DemiplaneLocation
+  id: T1GrasslandIslandRing
+  levels:
+    min: 1
+    max: 2
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: grassland_island
+  locationConfig: CP14DemiplaneGrasslandIslandRing
+  name: cp14-demiplane-location-grassland-island
+  tags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHerbals
+  - CP14DemiplanePeacefulAnimals
+  components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: CP14CloudShadows
+  - type: Biome
+    template: CP14SandOceanFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrasslandIslandRing
+  layers:
+    # Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandRingFloorMaskSand
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandRingFloorMaskGrass
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandRingFloorMaskSand2
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandRingFloorMaskWater
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14GrasslandTestResult
+      tileMask:
+      - CP14FloorGrass
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrasslandIslandRingFloorMaskSand
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 210, 210
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.005
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrasslandIslandRingFloorMaskGrass
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 190, 190
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorGrass
+      threshold: 0.50
+      noise:
+        frequency: 0.005
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrasslandIslandRingFloorMaskSand2
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 120, 120
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.005
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrasslandIslandRingFloorMaskWater
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 110, 110
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: Space
+      threshold: 0.50
+      noise:
+        frequency: 0.005
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5

@@ -1,0 +1,35 @@
+- type: cp14DemiplaneLocation
+  id: T1IceCaves
+  levels:
+    min: 4
+    max: 7
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: ice_caves
+  locationConfig: CP14DemiplaneIceCaves
+  name: cp14-demiplane-location-ice-cave
+  tags:
+  - CP14DemiplaneOres
+  - CP14DemiplaneUnderground
+  - CP14DemiplaneCold
+  components:
+  - type: Biome
+    template: CP14IceChasmFill
+
+- type: dungeonConfig
+  id: CP14DemiplaneIceCaves
+  layers:
+    # Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneCavesFloorMaskStone
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneCavesFloorMaskAir
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14IceCavesGeneric
+      tileMask:
+      - CP14FloorSand
+    - !type:BiomeDunGen
+      biomeTemplate: CP14IceCavesFloor
+      tileMask:
+      - CP14FloorGrass
