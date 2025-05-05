@@ -7,7 +7,7 @@
     max: 10
   name: cp14-modifier-dayflin
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
@@ -29,7 +29,7 @@
     max: 10
   name: cp14-modifier-fly-agaric
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
@@ -51,7 +51,7 @@
     max: 10
   name: cp14-modifier-blue-amanita
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
@@ -72,7 +72,7 @@
     max: 10
   name: cp14-modifier-blood-flower
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
@@ -93,7 +93,7 @@
     max: 10
   name: cp14-modifier-wild-sage
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
@@ -115,7 +115,7 @@
     max: 10
   name: cp14-modifier-air-lily
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplaneHerbals
   - CP14DemiplaneWater
@@ -138,7 +138,7 @@
     max: 10
   name: cp14-modifier-lumisroom
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplaneUnderground
   layers:

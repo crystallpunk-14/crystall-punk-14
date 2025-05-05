@@ -55,6 +55,7 @@
   - type: ActivatableUI
     key: enum.CP14DemiplaneMapUiKey.Key
     requiresComplex: true
+    singleUser: true
   - type: CP14DemiplaneNavigationMap
   - type: UserInterface
     interfaces:
@@ -183,3 +184,8 @@
             collection: GlassBreak
         - !type:DoActsBehavior
           acts: ["Destruction"]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14DimensitCrystal:
+              min: 4
+              max: 6

@@ -8,7 +8,7 @@
   name: cp14-modifier-chasm
   generationWeight: 0.6
   categories:
-    Danger: 0.33
+    Danger: 0.25
   layers:
     - !type:OreDunGen
       entity: CP14Chasm
@@ -28,7 +28,7 @@
     max: 10
   generationWeight: 0.3
   categories:
-    Danger: 0.33
+    Danger: 0.25
   blacklistTags:
   - CP14DemiplaneCold
   - CP14DemiplaneHerbals
@@ -66,7 +66,7 @@
     max: 10
   name: cp14-modifier-shadow-kudzu
   categories:
-    Danger: 0.3
+    Danger: 0.25
   layers:
     - !type:OreDunGen
       entity: CP14AstralHaze

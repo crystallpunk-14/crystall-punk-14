@@ -7,7 +7,7 @@
     max: 5
   generationWeight: 2
   categories:
-    Reward: 0.35
+    Reward: 0.15
   layers:
     - !type:OreDunGen
       entity: CP14SpawnerDemiplaneLootT1
@@ -23,7 +23,7 @@
   name: cp14-modifier-rabbits
   generationWeight: 0.4
   categories:
-    Reward: 0.1
+    Reward: 0.15
   requiredTags:
   - CP14DemiplanePeacefulAnimals
   layers:
@@ -58,7 +58,7 @@
     max: 10
   generationWeight: 0.4
   categories:
-    Reward: 0.05
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneAnimalsSwamp
   layers:
@@ -80,7 +80,7 @@
   name: cp14-modifier-sheeps
   generationWeight: 0.4
   categories:
-    Reward: 0.2
+    Reward: 0.15
   requiredTags:
   - CP14DemiplanePeacefulAnimals
   layers:
@@ -97,7 +97,7 @@
     max: 10
   name: cp14-modifier-ruins
   categories:
-    Reward: 0.15
+    Reward: 0.2
   generationProb: 0.8
   layers:
     - !type:OreDunGen
@@ -115,7 +115,7 @@
     max: 10
   generationWeight: 2
   categories:
-    Reward: 0.35
+    Reward: 0.15
   layers:
     - !type:OreDunGen
       entity: CP14SpawnerDemiplaneLootT2
