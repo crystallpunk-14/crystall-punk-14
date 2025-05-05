@@ -312,6 +312,10 @@ CP14CrystalChaos: CP14CrystalQuartz
 CP14EnergyCrystalSmallEmpty: CP14EnergyCrystalMediumEmpty
 CP14EnergyCrystalSmall: CP14EnergyCrystalMedium
 
+#2025-05-05
+CP14DemiplaneKeyT1: null
+CP14DemiplaneKeyT2: null
+
 # <---> CrystallEdge migration zone end
 
 

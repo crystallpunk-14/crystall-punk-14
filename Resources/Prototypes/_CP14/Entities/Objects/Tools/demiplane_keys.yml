@@ -23,36 +23,36 @@
     - EntryRoom
     - Exit
 
-- type: entity
-  id: CP14DemiplaneKeyT1
-  parent: CP14BaseDemiplaneKey
-  suffix: Level 3
-  components:
-  - type: CP14DemiplaneRandomGenerator
-    level: 3
-    limits:
-      Reward: 1
-      Danger: 1
-      GhostRoleDanger: 1
-      Fun: 1
-      Weather: 1
-      MapLight: 1
-
-- type: entity
-  id: CP14DemiplaneKeyT2
-  parent: CP14BaseDemiplaneKey
-  suffix: Level 6
-  components:
-  - type: Sprite
-    layers:
-    - state: core
-      color: red
-  - type: CP14DemiplaneRandomGenerator
-    level: 6
-    limits:
-      Reward: 1
-      Danger: 1.5
-      GhostRoleDanger: 1
-      Fun: 1
-      Weather: 1
-      MapLight: 1
+#- type: entity
+#  id: CP14DemiplaneKeyT1
+#  parent: CP14BaseDemiplaneKey
+#  suffix: Level 3
+#  components:
+#  - type: CP14DemiplaneRandomGenerator
+#    level: 3
+#    limits:
+#      Reward: 1
+#      Danger: 1
+#      GhostRoleDanger: 1
+#      Fun: 1
+#      Weather: 1
+#      MapLight: 1
+#
+#- type: entity
+#  id: CP14DemiplaneKeyT2
+#  parent: CP14BaseDemiplaneKey
+#  suffix: Level 6
+#  components:
+#  - type: Sprite
+#    layers:
+#    - state: core
+#      color: red
+#  - type: CP14DemiplaneRandomGenerator
+#    level: 6
+#    limits:
+#      Reward: 1
+#      Danger: 1.5
+#      GhostRoleDanger: 1
+#      Fun: 1
+#      Weather: 1
+#      MapLight: 1
