@@ -13,6 +13,7 @@
   levels:
     min: 0
     max: 10
+  name: cp14-modifier-ruins
   categories:
     Reward: 0.1
   generationProb: 0.8
@@ -66,11 +67,3 @@
       count: 5
       minGroupSize: 3
       maxGroupSize: 5
-
-- type: cp14DemiplaneModifier
-  id: TimeLimit10
-  generationProb: 0
-  name: cp14-modifier-time-limit-10
-  components:
-    - type: CP14DemiplaneTimedDestruction
-      timeToDestruction: 600 # 10 minutes
