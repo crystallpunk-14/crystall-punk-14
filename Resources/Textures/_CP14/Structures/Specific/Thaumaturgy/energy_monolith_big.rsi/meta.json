@@ -11,6 +11,9 @@
       "name": "dimension"
     },
     {
+      "name": "dimension_core"
+    },
+    {
       "name": "frame"
     }
   ]

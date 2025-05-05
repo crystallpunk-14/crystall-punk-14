@@ -1,7 +1,6 @@
 - type: entity
   parent: BaseItem
-  id: CP14BaseSubdimensionalKey
-  abstract: true
+  id: CP14BaseDemiplaneKey
   categories: [ ForkFiltered ]
   name: demiplane key
   description: The core that connects the real world to the demiplane. Use it to open a temporary passage to the other world.
@@ -17,43 +16,43 @@
     - CP14_RU_Demiplanes
     - CP14_EN_Demiplanes
   - type: CP14DemiplaneUsingOpen
-
-- type: entity
-  id: CP14DemiplaneKeyT1
-  parent: CP14BaseSubdimensionalKey
-  suffix: Level 3
-  components:
-  - type: CP14DemiplaneGeneratorData
-    level: 3
-    limits:
-      Reward: 1
-      Danger: 1
-      GhostRoleDanger: 1
-      Fun: 1
-      Weather: 1
-      MapLight: 1
+  - type: CP14DemiplaneData
     selectedModifiers:
+    - DemiplaneDecor
+    - Core
     - EntryRoom
     - Exit
 
-- type: entity
-  id: CP14DemiplaneKeyT2
-  parent: CP14BaseSubdimensionalKey
-  suffix: Level 6
-  components:
-  - type: Sprite
-    layers:
-    - state: core
-      color: red
-  - type: CP14DemiplaneGeneratorData
-    level: 6
-    limits:
-      Reward: 1
-      Danger: 1.5
-      GhostRoleDanger: 1
-      Fun: 1
-      Weather: 1
-      MapLight: 1
-    selectedModifiers:
-    - EntryRoom
-    - Exit
+#- type: entity
+#  id: CP14DemiplaneKeyT1
+#  parent: CP14BaseDemiplaneKey
+#  suffix: Level 3
+#  components:
+#  - type: CP14DemiplaneRandomGenerator
+#    level: 3
+#    limits:
+#      Reward: 1
+#      Danger: 1
+#      GhostRoleDanger: 1
+#      Fun: 1
+#      Weather: 1
+#      MapLight: 1
+#
+#- type: entity
+#  id: CP14DemiplaneKeyT2
+#  parent: CP14BaseDemiplaneKey
+#  suffix: Level 6
+#  components:
+#  - type: Sprite
+#    layers:
+#    - state: core
+#      color: red
+#  - type: CP14DemiplaneRandomGenerator
+#    level: 6
+#    limits:
+#      Reward: 1
+#      Danger: 1.5
+#      GhostRoleDanger: 1
+#      Fun: 1
+#      Weather: 1
+#      MapLight: 1

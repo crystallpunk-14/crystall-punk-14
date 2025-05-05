@@ -1,0 +1,18 @@
+- type: parallax
+  id: CP14Astral
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/Parallaxes/KettleParallaxBG.png"
+      slowness: 0.998046875
+      scale: "1, 1"
+    - texture:
+        !type:GeneratedParallaxTextureSource
+        id: "hq_wizard_stars"
+        configPath: "/Prototypes/_CP14/Parallax/stars_purple.toml"
+      slowness: 0.696625
+    - texture:
+        !type:GeneratedParallaxTextureSource
+        id: "hq_wizard_stars"
+        configPath: "/Prototypes/_CP14/Parallax/stars_purple_2.toml"
+      slowness: 0.896625

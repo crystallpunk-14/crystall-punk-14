@@ -118,7 +118,7 @@ CP14DungeonExitAutoLink: CP14LaddersUpStoneAutoLink
 CP14BaseBroom: null
 
 #2024-15-12
-CP14DemiplanKey: CP14DemiplaneKeyT1
+CP14DemiplanKey: null
 CP14SpawnerExpeditionLootCommon: CP14SpawnerDemiplaneLootT1
 
 #2025-06-01
@@ -311,6 +311,10 @@ CP14CrystalChaos: CP14CrystalQuartz
 
 CP14EnergyCrystalSmallEmpty: CP14EnergyCrystalMediumEmpty
 CP14EnergyCrystalSmall: CP14EnergyCrystalMedium
+
+#2025-05-05
+CP14DemiplaneKeyT1: null
+CP14DemiplaneKeyT2: null
 
 # <---> CrystallEdge migration zone end
 

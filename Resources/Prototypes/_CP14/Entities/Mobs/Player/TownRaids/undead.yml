@@ -26,7 +26,7 @@
 
 - type: entity
   id: CP14MobUndeadSkeletonWizardTownRaid
-  parent: CP14MobUndeadSkeletonWizard
+  parent: CP14MobUndeadSkeletonWizardT2
   categories: [ HideSpawnMenu ]
   components:
   - type: RandomSpawner

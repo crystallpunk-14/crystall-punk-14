@@ -12,3 +12,6 @@ cp14-round-end = The demiplane link crystal was completely discharged. The conne
 cp14-demiplane-echoes = Echoes of voices
 
 cp14-demiplane-countdown = The Demiplane is beginning to collapse! You have {$duration} minutes to escape!
+
+cp14-demiplane-revoke-item = The bound key has been destroyed!
+cp14-demiplane-revoke-map = The process of destroying the bound demiplane has been initiated!

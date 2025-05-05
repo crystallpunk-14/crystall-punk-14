@@ -1,0 +1,91 @@
+- type: cp14DemiplaneLocation
+  id: T1SwampCaves
+  levels:
+    min: 2
+    max: 5
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: swamp_caves
+  locationConfig: CP14DemiplaneSwampGeode
+  name: cp14-demiplane-location-cave-grass
+  tags:
+  - CP14DemiplaneOres
+  - CP14DemiplaneHerbals
+  - CP14DemiplaneUnderground
+  - CP14DemiplaneWater
+  - CP14DemiplaneAnimalsSwamp
+  components:
+  - type: Biome
+    template: CP14CavesIndestructibleFill
+
+- type: dungeonConfig
+  id: CP14DemiplaneSwampGeode
+  layers:
+    # Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFloorMaskStone
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrassGeodeFloorMaskAir
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14SwampFill
+      tileMask:
+      - CP14FloorGrass
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesGeneric
+      tileMask:
+      - CP14FloorSand
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFloorMaskAir
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 80, 80
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorGrass
+      threshold: 0.50
+      noise:
+        frequency: 0.030
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFloorMaskStone
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 120, 120
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.9
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+
+- type: dungeonConfig
+  id: CP14DemiplaneGrassGeodeFloorMaskBorder
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 130, 130
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 1
+    layers:
+    - tile: CP14FloorBase
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
