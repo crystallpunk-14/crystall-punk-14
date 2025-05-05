@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Server._CP14.Demiplane;
 using Content.Server._CP14.Demiplane.Components;
+using Content.Server.Destructible;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
@@ -27,6 +28,8 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
     [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly DestructibleSystem _destructible = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     public override void Initialize()
     {
@@ -41,10 +44,10 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         SubscribeLocalEvent<CP14DemiplaneMapNodeBlockerComponent, ComponentShutdown>(OnNodeBlockerShutdown);
 
         SubscribeLocalEvent<CP14DemiplaneCoreComponent, MapInitEvent>(OnCoreInit);
-        SubscribeLocalEvent<CP14DemiplaneCoreComponent, ComponentRemove>(OnCoreShutdown);
+        SubscribeLocalEvent<CP14DemiplaneCoreComponent, DestructionEventArgs>(OnCoreShutdown);
     }
 
-    private void OnCoreShutdown(Entity<CP14DemiplaneCoreComponent> ent, ref ComponentRemove args)
+    private void OnCoreShutdown(Entity<CP14DemiplaneCoreComponent> ent, ref DestructionEventArgs args)
     {
         if (TryComp<CP14DemiplaneComponent>(ent.Comp.Demiplane, out var demiplane))
         {
@@ -151,7 +154,8 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
                 SpawnAttachedTo("CP14ImpactEffectMagicSplitting", Transform(uid).Coordinates);
                 _popup.PopupEntity(Loc.GetString("cp14-demiplane-revoke-item"), ent);
                 _popup.PopupEntity(Loc.GetString("cp14-demiplane-revoke-item"), uid);
-                QueueDel(uid);
+                _damageable.TryChangeDamage(uid, ent.Comp.RevokeDamage, true);
+                _destructible.DestroyEntity(uid);
             }
         }
     }

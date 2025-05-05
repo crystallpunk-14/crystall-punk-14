@@ -17,7 +17,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 15
+      count: 20
       minGroupSize: 2
       maxGroupSize: 4
 
@@ -38,7 +38,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 10
+      count: 15
       minGroupSize: 4
       maxGroupSize: 6
 
@@ -59,7 +59,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 15
+      count: 20
       minGroupSize: 2
       maxGroupSize: 4
 
@@ -80,7 +80,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 10
+      count: 15
       minGroupSize: 4
       maxGroupSize: 6
 

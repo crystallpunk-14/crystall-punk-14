@@ -1,3 +1,4 @@
+using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -17,4 +18,13 @@ public sealed partial class CP14DemiplaneNavigationMapComponent : Component
 
     [DataField]
     public SoundSpecifier EjectSound = new SoundPathSpecifier("/Audio/Magic/ethereal_exit.ogg");
+
+    [DataField]
+    public DamageSpecifier RevokeDamage = new()
+    {
+        DamageDict = new()
+        {
+            { "Blunt", 100 },
+        },
+    };
 }
