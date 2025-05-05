@@ -9,22 +9,6 @@
       maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
-  id: Ruins
-  levels:
-    min: 0
-    max: 10
-  name: cp14-modifier-ruins
-  categories:
-    Reward: 0.1
-  generationProb: 0.8
-  layers:
-    - !type:OreDunGen
-      entity: CP14DemiplaneRuinsRoomSpawner
-      count: 8
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
   id: Core
   generationProb: 0
   layers:
