@@ -44,5 +44,12 @@
   id: Test7
   levels:
     min: 9
-    max: 9
+    max: 10
   location: T1MagmaCaves
+
+- type: cp14SpecialDemiplane
+  id: Test7
+  levels:
+    min: 9
+    max: 10
+  location: T1Wastelands
