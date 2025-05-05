@@ -171,6 +171,7 @@
   description: A ghost role for a bloodthirsty and cunning skeleton.
   suffix: skeleton Halebard T2
   categories: [ ForkFiltered ]
+  parent: MarkerBase
   components:
   - type: GhostRole
     name: cp14-ghost-role-information-name-skeleton
