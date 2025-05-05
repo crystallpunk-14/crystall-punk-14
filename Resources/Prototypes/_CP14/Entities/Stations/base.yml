@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14BaseExpedition
+  id: CP14BaseTown
   categories: [ HideSpawnMenu ]
   parent:
   - BaseStation
@@ -9,6 +9,15 @@
   - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationCommonObjectives
   - CP14BaseStationSalary
+
+- type: entity
+  id: CP14BaseExpansion
+  parent:
+  - BaseStation
+  - BaseStationAllEventsEligible
+  - BaseStationJobsSpawning
+  - BaseStationAlertLevels #Checks fail without it
+  - BaseStationRecords # Required for lobby manifest + cryo leave
 
 - type: entity
   id: CP14BaseStationCommonObjectives

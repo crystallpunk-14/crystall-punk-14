@@ -1,0 +1,49 @@
+- type: gameMap
+  id: GrasslandExpansion
+  mapName: "Grassland Expansion"
+  mapPath: /Maps/_CP14/comoss.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Comoss:
+      stationProto: CP14BaseExpansion
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Green island" #TODO - some random generation
+        - type: CP14StationExpedition
+          location: GrasslandIsland
+          modifiers:
+          - CrystalNormal
+          - Dayflin
+          - BloodFlower
+          - WildSage
+          - Boar
+          - Sheep
+          - Rabbits
+          - IronOre
+          - CopperOre
+          - CrystalNormal
+          - Dayflin
+          - BloodFlower
+          - WildSage
+          - Boar
+          - Sheep
+          - Rabbits
+          - IronOre
+          - CopperOre
+          - CrystalNormal
+          - Dayflin
+          - BloodFlower
+          - WildSage
+          - Boar
+          - Sheep
+          - Rabbits
+          - IronOre
+          - CopperOre
+          - WeatherRain
+          - MapLightCycleDefault
+        - type: StationJobs
+          availableJobs:
+            #Mercenary
+            CP14Adventurer: [ -1, -1 ] #TODO

@@ -7,7 +7,7 @@
   minPlayers: 0
   stations:
     Comoss:
-      stationProto: CP14BaseExpedition
+      stationProto: CP14BaseTown
       components:
         - type: StationNameSetup
           mapNameTemplate: "Comoss island"
