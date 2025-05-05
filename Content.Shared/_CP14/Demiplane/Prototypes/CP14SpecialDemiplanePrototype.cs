@@ -4,7 +4,9 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Demiplane.Prototypes;
 
 /// <summary>
-///
+/// A prototype “Special Demiplane” that can appear on the demiplane map as the final room of a chain of demiplanes.
+/// It is supposed to be used as a special demiplane with special modifiers, and mining resources and
+/// equipment from here is the main task of adventurers
 /// </summary>
 [Prototype("cp14SpecialDemiplane")]
 public sealed partial class CP14SpecialDemiplanePrototype : IPrototype

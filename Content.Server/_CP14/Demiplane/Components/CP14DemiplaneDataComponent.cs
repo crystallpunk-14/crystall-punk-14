@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CP14.Demiplane.Components;
 
 /// <summary>
-///
+/// Stores all the information needed to generate a new demiplane
 /// </summary>
 [RegisterComponent, Access(typeof(CP14DemiplaneSystem), typeof(CP14StationDemiplaneMapSystem))]
 public sealed partial class CP14DemiplaneDataComponent : Component

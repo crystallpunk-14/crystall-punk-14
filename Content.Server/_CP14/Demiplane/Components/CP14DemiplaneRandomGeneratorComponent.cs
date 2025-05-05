@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._CP14.Demiplane.Components;
 
 /// <summary>
-///
+/// Fills the DemiplaneDataComponent with random modifiers and location
 /// </summary>
 [RegisterComponent, Access(typeof(CP14DemiplaneSystem))]
 public sealed partial class CP14DemiplaneRandomGeneratorComponent : Component

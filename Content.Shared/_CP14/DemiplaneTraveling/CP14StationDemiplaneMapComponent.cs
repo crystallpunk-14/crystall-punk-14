@@ -3,7 +3,7 @@ using Content.Shared.Destructible.Thresholds;
 namespace Content.Shared._CP14.DemiplaneTraveling;
 
 /// <summary>
-///
+/// A station component that stores information about the current map of demiplanes, their research status and relationships.
 /// </summary>
 [RegisterComponent]
 public sealed partial class CP14StationDemiplaneMapComponent : Component
