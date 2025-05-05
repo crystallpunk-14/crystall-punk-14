@@ -41,10 +41,10 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         SubscribeLocalEvent<CP14DemiplaneMapNodeBlockerComponent, ComponentShutdown>(OnNodeBlockerShutdown);
 
         SubscribeLocalEvent<CP14DemiplaneCoreComponent, MapInitEvent>(OnCoreInit);
-        SubscribeLocalEvent<CP14DemiplaneCoreComponent, DestructionEventArgs>(OnCoreDestroyed);
+        SubscribeLocalEvent<CP14DemiplaneCoreComponent, ComponentRemove>(OnCoreShutdown);
     }
 
-    private void OnCoreDestroyed(Entity<CP14DemiplaneCoreComponent> ent, ref DestructionEventArgs args)
+    private void OnCoreShutdown(Entity<CP14DemiplaneCoreComponent> ent, ref ComponentRemove args)
     {
         if (TryComp<CP14DemiplaneComponent>(ent.Comp.Demiplane, out var demiplane))
         {
