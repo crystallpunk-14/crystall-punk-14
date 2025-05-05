@@ -60,14 +60,20 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         }
     }
 
-    private void OnCoreInit(Entity<CP14DemiplaneCoreComponent> ent, ref MapInitEvent args)
+    private void OnCoreInit(Entity<CP14DemiplaneCoreComponent> core, ref MapInitEvent args)
     {
-        ent.Comp.Demiplane = Transform(ent).MapUid;
-        if (!TryComp<CP14DemiplaneMapNodeBlockerComponent>(ent.Comp.Demiplane, out var blocker))
+        core.Comp.Demiplane = Transform(core).MapUid;
+        if (!TryComp<CP14DemiplaneMapNodeBlockerComponent>(core.Comp.Demiplane, out var demiBlocker))
             return;
 
-        ent.Comp.Station = blocker.Station;
-        ent.Comp.Position = blocker.Position;
+        core.Comp.Station = demiBlocker.Station;
+        core.Comp.Position = demiBlocker.Position;
+
+        EnsureComp<CP14DemiplaneMapNodeBlockerComponent>(core, out var coreBlocker);
+
+        coreBlocker.Position = core.Comp.Position;
+        coreBlocker.Station = core.Comp.Station;
+        coreBlocker.IncreaseNodeDifficulty = 0;
     }
 
     private void OnNodeBlockerShutdown(Entity<CP14DemiplaneMapNodeBlockerComponent> ent, ref ComponentShutdown args)
