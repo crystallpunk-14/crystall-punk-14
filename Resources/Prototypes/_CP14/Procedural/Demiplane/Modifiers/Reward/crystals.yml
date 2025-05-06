@@ -9,6 +9,7 @@
     - !type:OreDunGen
       tileMask: 
       - CP14FloorBase
+      - CP14FloorIce
       entity: CP14CrystalQuartz
       count: 30
       minGroupSize: 1
