@@ -290,7 +290,7 @@
   name: burnt pie
   parent: CP14FoodPieBaseRaw
   id: CP14FoodPieBurnt
-  description: The pie is burnt and is a burnt and inedible mass.
+  description: The pie is burnt and is a burnt and inedible mass. It's best to clean that up with a knife.
   components:
   - type: FlavorProfile
     flavors:
