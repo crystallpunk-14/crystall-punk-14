@@ -8,7 +8,7 @@
   name: cp14-modifier-iron-ore
   unique: false
   categories:
-    Reward: 0.4
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -17,7 +17,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 15
+      count: 20
       minGroupSize: 2
       maxGroupSize: 4
 
@@ -29,7 +29,7 @@
   name: cp14-modifier-iron-ore
   unique: false
   categories:
-    Reward: 0.4
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -38,7 +38,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 10
+      count: 15
       minGroupSize: 4
       maxGroupSize: 6
 
@@ -50,7 +50,7 @@
   name: cp14-modifier-copper-ore
   unique: false
   categories:
-    Reward: 0.3
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -59,7 +59,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 15
+      count: 20
       minGroupSize: 2
       maxGroupSize: 4
 
@@ -71,7 +71,7 @@
   name: cp14-modifier-copper-ore
   unique: false
   categories:
-    Reward: 0.3
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -80,7 +80,7 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 10
+      count: 15
       minGroupSize: 4
       maxGroupSize: 6
 
@@ -94,7 +94,7 @@
   name: cp14-modifier-gold-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -115,7 +115,7 @@
   name: cp14-modifier-gold-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -136,7 +136,7 @@
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -157,7 +157,7 @@
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground

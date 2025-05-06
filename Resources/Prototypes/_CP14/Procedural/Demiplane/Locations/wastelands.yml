@@ -1,7 +1,7 @@
 - type: cp14DemiplaneLocation
   id: T1Wastelands
   levels:
-    min: 5
+    min: 3
     max: 7
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi

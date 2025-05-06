@@ -1,7 +1,7 @@
 - type: cp14DemiplaneLocation
   id: T1SnowIsland
   levels:
-    min: 3
+    min: 2
     max: 5
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi

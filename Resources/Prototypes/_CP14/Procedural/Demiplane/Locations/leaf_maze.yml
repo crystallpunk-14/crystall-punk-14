@@ -2,7 +2,7 @@
   id: T1LeafMaze
   levels:
     min: 3
-    max: 5
+    max: 6
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi
     state: leaf_maze

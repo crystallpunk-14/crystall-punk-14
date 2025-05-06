@@ -299,8 +299,3 @@
             collection: GlassBreak
         - !type:DoActsBehavior
           acts: ["Destruction"]
-      #- !type:SpawnEntitiesBehavior
-      #  spawn:
-      #    CP14StoneBlock1:
-      #      min: 5
-      #      max: 7

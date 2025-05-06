@@ -8,7 +8,7 @@
   name: cp14-modifier-zombie
   generationWeight: 1.5
   categories:
-    Danger: 0.3
+    Danger: 0.25
   blacklistTags:
   - CP14DemiplaneHot
   layers:
@@ -43,7 +43,7 @@
     max: 5
   name: cp14-modifier-dyno
   categories:
-    Danger: 0.2
+    Danger: 0.25
   requiredTags:
   - CP14DemiplaneHerbals
   blacklistTags:
@@ -62,7 +62,7 @@
     max: 5
   name: cp14-modifier-dyno
   categories:
-    Danger: 0.3
+    Danger: 0.25
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
@@ -71,39 +71,6 @@
       count: 4
       minGroupSize: 2
       maxGroupSize: 3
-
-- type: cp14DemiplaneModifier
-  id: EnemySkeletonT1
-  levels:
-    min: 3
-    max: 5
-  name: cp14-modifier-skeleton
-  generationWeight: 1.5
-  generationProb: 0.5
-  categories:
-    GhostRoleDanger: 1
-  layers:
-    - !type:OreDunGen
-      entity: CP14SpawnPointGhostDemiplaneSkeletonT1
-      count: 1
-      minGroupSize: 1
-      maxGroupSize: 3
-
-- type: cp14DemiplaneModifier
-  id: EnemyLurker
-  levels:
-    min: 1
-    max: 10
-  generationWeight: 0.33
-  generationProb: 0.25
-  categories:
-    GhostRoleDanger: 1
-  layers:
-    - !type:OreDunGen
-      entity: SpawnPointGhostDemiplaneLurker
-      count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
 
 # TIER 2
 
@@ -213,7 +180,7 @@
   id: MobSlimeBase
   levels:
     min: 1
-    max: 10
+    max: 5
   categories:
     Danger: 0.25
   layers:
