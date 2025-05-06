@@ -112,10 +112,8 @@
   id: JobCP14Commandant
   groups:
   - CP14SkillTree
-  - CP14CommandantHead
   - CP14MerchantOuterClothing
   - CP14GeneralEyes
-  - CP14CommandantCloak
   - CP14MerchantShirt
   - CP14MerchantPants
   - CP14MerchantShoes
