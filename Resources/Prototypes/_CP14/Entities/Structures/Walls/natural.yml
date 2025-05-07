@@ -214,6 +214,9 @@
       types:
         Slash: 0.2
         Piercing: 0.2
+    ignoreWhitelist:
+      tags:
+      - CP14WallLeafDamage
   - type: Airtight
     airBlocked: false
 

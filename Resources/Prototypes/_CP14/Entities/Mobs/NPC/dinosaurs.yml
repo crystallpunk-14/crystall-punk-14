@@ -34,6 +34,7 @@
   - type: Tag
     tags:
       - FootstepSound
+      - CP14WallLeafDamage
 
 - type: entity
   id: CP14MobDinoYumkaraptor
