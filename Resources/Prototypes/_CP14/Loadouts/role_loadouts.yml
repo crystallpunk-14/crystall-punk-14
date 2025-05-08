@@ -136,6 +136,20 @@
   - CP14GuildmasterSpells
 
 - type: roleLoadout
+  id: JobCP14Guildworker
+  groups:
+  - CP14SkillTree
+  - CP14GuildmasterOuterClothing
+  - CP14GeneralEyes
+  - CP14GeneralCloak
+  - CP14GuildmasterShirt
+  - CP14GuildmasterPants
+  - CP14GuildmasterShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+  - CP14GuildmasterSpells
+
+- type: roleLoadout
   id: JobCP14Merchant
   groups:
   - CP14SkillTree

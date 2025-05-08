@@ -1,5 +1,5 @@
-department-CP14Mercenary = Mercenaries
-department-CP14Mercenary-desc = Free people trying to make money in this crazy world.
+department-CP14Mercenary = Adventurer's Guild
+department-CP14Mercenary-desc = Settlement substructure focused on resource extraction.
 
 department-CP14Command = Command
 department-CP14Command-desc = Persons responsible for carrying out the task assigned from the empire, and managing everything that happens in the settlement.

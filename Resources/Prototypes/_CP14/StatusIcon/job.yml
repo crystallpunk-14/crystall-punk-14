@@ -76,3 +76,11 @@
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
     state: Guildmaster
   jobName: cp14-job-name-guildmaster
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGuildworker
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Guildworker
+  jobName: cp14-job-name-guildworker

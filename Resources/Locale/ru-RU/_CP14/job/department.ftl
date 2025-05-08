@@ -1,5 +1,5 @@
-department-CP14Mercenary = Наемники
-department-CP14Mercenary-desc = Свободные люди, старающиеся заработать денег в этом безумном мире.
+department-CP14Mercenary = Гильдия авантюристов
+department-CP14Mercenary-desc = Подструктура поселения, сосредоточенная на добыче ресурсов.
 
 department-CP14Command = Мэрия
 department-CP14Command-desc = Лица, ответственные за выполнение поставленной от империи задачи, и управляющие всем, что происходит в поселении.

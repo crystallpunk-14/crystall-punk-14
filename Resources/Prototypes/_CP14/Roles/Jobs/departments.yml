@@ -40,4 +40,5 @@
   color: "#588151"
   roles:
   - CP14Guildmaster
+  - CP14Guildworker
   - CP14Adventurer
