@@ -76,10 +76,6 @@
                 </BoxContainer>
                 <!-- Experience Data -->
                 <BoxContainer Margin="10 10 10 10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" VerticalExpand="True">
-                    <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-skillpoints'}" StyleClasses="LabelKeyText"/>
-                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
-                    <RichTextLabel Margin="0 0 20 0" Name="ExpPointLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
-
                     <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-level'}" StyleClasses="LabelKeyText"/>
                     <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
                     <RichTextLabel Margin="0 0 0 0" Name="LevelLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
