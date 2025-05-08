@@ -104,8 +104,13 @@
   name: cp14-lock-shape-guildmaster
 
 - type: CP14LockType
+  id: AdventurersGuild
+  complexity: 5
+  name: cp14-lock-shape-guild
+
+- type: CP14LockType
   id: DemiplaneCrystal
-  complexity: 6
+  complexity: 5
   name: cp14-lock-shape-demiplane-crystal
 
 # Personal house

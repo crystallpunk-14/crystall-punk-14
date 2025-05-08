@@ -7,6 +7,14 @@
     autoGenerateShape: Guildmaster
 
 - type: entity
+  parent: CP14KeyIronBlank
+  id: CP14KeyAdventurersGuild
+  suffix: Adventurers Guild
+  components:
+  - type: CP14Key
+    autoGenerateShape: AdventurersGuild
+
+- type: entity
   parent: CP14KeyGoldBlank
   id: CP14KeyDemiplaneCrystal
   suffix: Demiplane Crystal

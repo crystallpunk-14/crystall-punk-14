@@ -68,6 +68,20 @@
       - state: green
       - state: guildmaster
 
+- type: entity
+  id: CP14SpawnPointGuildworker
+  parent: CP14SpawnPointJobBase
+  name: guildworker
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Guildworker
+  - type: Sprite
+    layers:
+      - state: green
+      - state: guildmaster #TODO replace
+
 # Artisans
 
 - type: entity
