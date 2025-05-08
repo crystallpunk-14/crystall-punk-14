@@ -3,7 +3,7 @@
   parent: CP14ClothingHeadBase
   id: CP14ClothingHeadSlimeCrown
   name: slime crown
-  description: This proclaims its wearer the Lord of the Slimes.
+  description: Earl of Ooze. Grand Duke of Goo. Lord of the Slimes.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Head/slime_crown.rsi
@@ -19,3 +19,13 @@
         Caustic: 0.9
   - type: FactionClothing
     faction: CP14Slimes
+  - type: Storage
+    grid:
+    - 0,0,0,0
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container

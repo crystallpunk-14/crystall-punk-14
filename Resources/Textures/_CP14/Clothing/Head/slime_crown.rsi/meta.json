@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by ripmax",
+  "copyright": "Created by paige404",
   "size": {
     "x": 48,
     "y": 48
@@ -12,7 +12,33 @@
     },
     {
       "name": "equipped-HELMET",
-      "directions": 4
+      "directions": 4,
+      "delays": [
+        [
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ],
+        [
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ],
+        [
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ],
+        [
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ]
+      ]
     }
   ]
 }
