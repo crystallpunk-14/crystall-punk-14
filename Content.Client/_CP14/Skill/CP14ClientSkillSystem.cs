@@ -49,6 +49,9 @@ public sealed partial class CP14ClientSkillSystem : CP14SharedSkillSystem
         var netEv = new CP14TryLearnSkillMessage(GetNetEntity(target.Value), skill.ID);
         RaiseNetworkEvent(netEv);
 
-        _audio.PlayGlobal(skill.LearnSound, target.Value, AudioParams.Default.WithVolume(6f));
+        if (_proto.TryIndex(skill.Tree, out var indexedTree))
+        {
+            _audio.PlayGlobal(indexedTree.LearnSound, target.Value, AudioParams.Default.WithVolume(6f));
+        }
     }
 }

@@ -23,6 +23,12 @@ public sealed partial class CP14SkillStorageComponent : Component
     public FixedPoint2 SkillsSumExperience = 0;
 
     /// <summary>
+    /// Keeps track of progress points in the knowledge areas available to the player. Important: The absence of a specific area means that the player CANNOT progress in that area.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> Progress = new();
+
+    /// <summary>
     /// The maximum ceiling of experience points that can be spent on learning skills. Not tied to a category.
     /// </summary>
     [DataField, AutoNetworkedField]

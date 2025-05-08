@@ -1,6 +1,7 @@
 - type: cp14Skill
   id: CP14ActionSpellFlameCreation
   skillUiPosition: 0, 0
+  tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: flame_creation
@@ -9,7 +10,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellHellBallade
-  skillUiPosition: 0, 0
+  skillUiPosition: 0, 2
+  tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fire_music
@@ -21,7 +23,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellTieflingInnerFire
-  skillUiPosition: 0, 0
+  skillUiPosition: 0, 4
+  tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: tiefling_revenge

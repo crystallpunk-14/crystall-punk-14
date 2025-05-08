@@ -1,7 +1,6 @@
 using System.Numerics;
 using Content.Shared._CP14.Skill.Effects;
 using Content.Shared._CP14.Skill.Restrictions;
-using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -26,6 +25,12 @@ public sealed partial class CP14SkillPrototype : IPrototype
     /// </summary>
     [DataField]
     public LocId? Desc;
+
+    /// <summary>
+    /// The tree this skill belongs to. This is used to group skills together in the UI.
+    /// </summary>
+    [DataField(required: true)]
+    public ProtoId<CP14SkillTreePrototype> Tree = default!;
 
     /// <summary>
     ///  The cost to learn this skill. This is used to determine how many progress points are needed to learn the skill.
@@ -57,7 +62,4 @@ public sealed partial class CP14SkillPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<CP14SkillRestriction> Restrictions = new();
-
-    [DataField]
-    public SoundSpecifier LearnSound = new SoundCollectionSpecifier("CP14LearnSkill");
 }

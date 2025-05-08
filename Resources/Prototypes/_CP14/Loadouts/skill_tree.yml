@@ -1,0 +1,119 @@
+- type: loadoutGroup
+  id: CP14SkillTree
+  name: cp14-loadout-skill-tree
+  minLimit: 2
+  maxLimit: 2
+  loadouts:
+  - CP14SkillTreeMetamagic
+  - CP14SkillTreeHydrosophistry
+  - CP14SkillTreePyrokinetic
+  - CP14SkillTreeIllusion
+  - CP14SkillTreeHealing
+  - CP14SkillTreeAtlethic
+  #- CP14SkillTreeDimension Disabled until teleport & grab collider fix
+
+- type: entity
+  id: CP14SkillTreePyrokineticLoadoutDummy
+  name: Pyrokinetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro
+
+- type: loadout
+  id: CP14SkillTreePyrokinetic
+  dummyEntity: CP14SkillTreePyrokineticLoadoutDummy
+  skillTree:
+    Pyrokinetic: 2
+
+- type: entity
+  id: CP14SkillTreeHydrosophistryLoadoutDummy
+  name: Hydrosophistry
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: water
+
+- type: loadout
+  id: CP14SkillTreeHydrosophistry
+  dummyEntity: CP14SkillTreeHydrosophistryLoadoutDummy
+  skillTree:
+    Hydrosophistry: 2
+
+- type: entity
+  id: CP14SkillTreeIllusionLoadoutDummy
+  name: Illusion
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: light
+
+- type: loadout
+  id: CP14SkillTreeIllusion
+  dummyEntity: CP14SkillTreeIllusionLoadoutDummy
+  skillTree:
+    Illusion: 2
+
+- type: entity
+  id: CP14SkillTreeMetamagicLoadoutDummy
+  name: Metamagic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: meta
+
+- type: loadout
+  id: CP14SkillTreeMetamagic
+  dummyEntity: CP14SkillTreeMetamagicLoadoutDummy
+  skillTree:
+    Metamagic: 2
+
+- type: entity
+  id: CP14SkillTreeHealingLoadoutDummy
+  name: Healing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: heal
+
+- type: loadout
+  id: CP14SkillTreeHealing
+  dummyEntity: CP14SkillTreeHealingLoadoutDummy
+  skillTree:
+    Healing: 2
+
+- type: entity
+  id: CP14SkillTreeAtlethicLoadoutDummy
+  name: Atlethic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: atlethic
+
+- type: loadout
+  id: CP14SkillTreeAtlethic
+  dummyEntity: CP14SkillTreeAtlethicLoadoutDummy
+  skillTree:
+    Atlethic: 2
+
+- type: entity
+  id: CP14SkillTreeDimensionLoadoutDummy
+  name: Dimension
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: dimension
+
+- type: loadout
+  id: CP14SkillTreeDimension
+  dummyEntity: CP14SkillTreeDimensionLoadoutDummy
+  skillTree:
+    Dimension: 2
+
