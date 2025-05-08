@@ -304,7 +304,17 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         _window.TreeTabsContainer.RemoveAllChildren();
         foreach (var tree in _allTrees)
         {
-            var treeButton2 = new CP14SkillTreeButtonControl(tree.Color, Loc.GetString(tree.Name));
+            float learnedPoints = 0;
+            foreach (var skillId in storage.LearnedSkills)
+            {
+                //TODO: Loop indexing each skill is bad
+                if (_proto.TryIndex(skillId, out var skill) && skill.Tree == tree)
+                {
+                    learnedPoints += skill.LearnCost;
+                }
+            }
+
+            var treeButton2 = new CP14SkillTreeButtonControl(tree.Color, Loc.GetString(tree.Name), learnedPoints);
             treeButton2.ToolTip = Loc.GetString(tree.Desc ?? string.Empty);
             treeButton2.OnPressed += () =>
             {
